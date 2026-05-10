@@ -1,0 +1,26 @@
+# Keep the Docker build context small and reproducible.
+# Anything not needed at runtime is excluded.
+
+# Python build / cache artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+
+# Local-only files
+.env
+.env.local
+.venv/
+venv/
+
+# Editor / OS noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Docs and dev-only files (keep README.md so curl /docs viewers can grep it
+# in the image if they ever shell in; nothing else needed)
+.gitignore

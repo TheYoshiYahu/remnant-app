@@ -1,0 +1,58 @@
+# render.yaml — Render Blueprint for the production environment.
+#
+# Phase 4 wheel #3 (hosting decision). Describes the FastAPI Web Service and the
+# managed Postgres database that back The Remnant of Promise Official Study Bible.
+# When this file is in a Git repo connected to a Render Blueprint, "New → Blueprint"
+# in the Render dashboard provisions both services, wires DATABASE_URL automatically
+# from the Postgres service into the web service's env, and stands the stack up.
+#
+# The production custom domain `bible.remnantofpromise.org` is added in the Render
+# dashboard at Web Service → Settings → Custom Domains AFTER first deploy succeeds —
+# Render then provisions a Let's Encrypt cert automatically. That step is Phase 4
+# wheel #4 (DNS).
+#
+# Schema and seed data are NOT bundled. After first deploy, run from operator
+# laptop (one-time):
+#     cd ~/Desktop/App/api
+#     DATABASE_URL=<render-postgres-external-url> python seed.py --bootstrap
+# That drops `public`, applies ../data-schema/schema.sql, and seeds the four parsed
+# Restored Names JSONs (4 editions / 17 books / 436 chapters / 12,019 verses).
+#
+# Reseed flow (when extras republish): same command with `--seed-only` instead of
+# `--bootstrap`. Cascade-deletes the four extras editions and reloads. User data
+# (study notes, subscriptions, founder pricing counter, reading positions) is
+# untouched.
+
+databases:
+  - name: remnant-app-db
+    databaseName: remnant_app
+    user: remnant_app
+    plan: basic-256mb
+    region: oregon
+    postgresMajorVersion: "16"
+    # ipAllowList intentionally empty — only the linked Render web service connects.
+    # Operator laptop seed runs use the external connection string with TLS, on demand,
+    # not via persistent allow-list.
+    ipAllowList: []
+
+services:
+  - type: web
+    name: remnant-app-api
+    runtime: docker
+    plan: starter
+    region: oregon
+    rootDir: api
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    healthCheckPath: /v1/health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: remnant-app-db
+          property: connectionString
+      - key: CORS_ORIGINS
+        # Production PWA domain + the localhost dev origin for occasional debug.
+        # When SSO wheel lands and adds the WordPress origin, append it here.
+        value: https://bible.remnantofpromise.org,http://localhost:5173
+      - key: PYTHONUNBUFFERED
+        value: "1"

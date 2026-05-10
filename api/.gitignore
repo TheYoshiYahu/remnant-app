@@ -1,0 +1,13 @@
+# Local env file (copy of .env.example with real secrets).
+.env
+
+# Python build artefacts.
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor cruft.
+.DS_Store
+.vscode/
+.idea/
