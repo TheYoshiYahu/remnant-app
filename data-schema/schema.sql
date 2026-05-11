@@ -94,7 +94,8 @@ CREATE TYPE purchase_kind AS ENUM (
 -- base it was restored FROM, when the pipeline ran, and which
 -- pipeline version produced it.
 CREATE TYPE restoration_pipeline_version AS ENUM (
-    'phase3-v1'   -- restore.py self-test 50/50 + Enoch defensive 4 → 54/54 (2026-05-10)
+    'phase3-v1',  -- restore.py self-test 50/50 + Enoch defensive 4 → 54/54 (2026-05-10)
+    'phase4-v1'   -- + Melchisedec NT-spelling variant (KJV NT Heb 5-7) → 56/56 (2026-05-11, session 13)
 );
 
 -- Witness category for a book's stance in the canon vs. the extras vs.
@@ -573,8 +574,8 @@ CREATE TABLE schema_version (
 );
 
 INSERT INTO schema_version (version, notes) VALUES (
-    '1.0.0-phase4-session9',
-    'Initial Phase 4 data schema. Books/chapters/verses + Strong''s slots + cross-references + commentary surface + Statement of Faith mirror + users/subscriptions/purchase_records + user study notes/highlights/reading positions + tier-satisfaction helper.'
+    '1.0.0-phase4-session13',
+    'Phase 4 schema with Protestant 66 canon ingest landed (66 books / 1189 chapters / 31102 verses, eBible USFX 1769 Blayney source, restoration pipeline phase4-v1 with Melchisedec NT-spelling variant). Adds phase4-v1 to restoration_pipeline_version enum. Books/chapters/verses + Strong''s slots + cross-references + commentary surface + Statement of Faith mirror + users/subscriptions/purchase_records + user study notes/highlights/reading positions + tier-satisfaction helper.'
 );
 
 

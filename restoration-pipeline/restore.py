@@ -220,10 +220,16 @@ RULES: list[Rule] = [
     # --- COMPOUND COVENANT FIGURES ---
 
     # "Melchizedek" -> "Melek Tsadiq (Melchizedek)"
-    # LANDED 2026-05-09, pipeline-enforced per Section IX Q1
+    # LANDED 2026-05-09, pipeline-enforced per Section IX Q1.
+    # Variant spellings covered (session 13 finding): the KJV uses
+    # "Melchizedek" in the OT (Genesis 14, Psalm 110) but "Melchisedec"
+    # in the NT (Hebrews 5-7) — the Latin/Greek transliteration form.
+    # Also defensively covers Melchisedech (Vulgate) and Melchizedec
+    # (rare KJV variant). All variants normalize to the OT spelling
+    # in the parenthetical per YOSHI_RENDERED_PASSAGES.md.
     Rule(
         name="melchizedek",
-        pattern=re.compile(rf"(?<!Melek Tsadiq \(){LB}Melchizedek{RB}(?!\))"),
+        pattern=re.compile(rf"(?<!Melek Tsadiq \(){LB}Melchi[zs]ede[ck]h?{RB}(?!\))"),
         replacement=r"Melek Tsadiq (Melchizedek)",
     ),
 
@@ -591,6 +597,16 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "Melchizedek",
         "after the order of Melchizedek",
         "after the order of Melek Tsadiq (Melchizedek)",
+    ),
+    (
+        "Melchisedec (KJV NT spelling) — session 13 finding, pipeline now matches the variant",
+        "after the order of Melchisedec",
+        "after the order of Melek Tsadiq (Melchizedek)",
+    ),
+    (
+        "Melchisedec mid-sentence (Heb 7:1)",
+        "For this Melchisedec, king of Salem, priest of the most high God",
+        "For this Melek Tsadiq (Melchizedek), king of Salem, priest of the most high Elohim (God)",
     ),
     (
         "Son of Man as Messianic title",

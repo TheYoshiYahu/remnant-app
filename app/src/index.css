@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Reading-typography baseline. Serif body for the verse text reads more
+   naturally for long-form scripture; sans for chrome (nav, toolbars).
+   Light mode only for now — the reader benefits from a clean white page. */
+
+:root {
+  color-scheme: light;
+  --reader-text: #1a1a1a;
+  --reader-muted: #6b6b6b;
+  --reader-rule: #e5e5e5;
+  --reader-bg: #fafaf7;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: var(--reader-bg);
+  color: var(--reader-text);
+  font-family: ui-serif, Georgia, "Iowan Old Style", "Apple Garamond", serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Verse-number superscripts: small, muted, slightly raised. */
+.verse-number {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: var(--reader-muted);
+  vertical-align: super;
+  margin-right: 0.2em;
+  user-select: none;
+}
+
+/* The Hebrew names in restored verses (e.g., Yahuah, Elohim, Yashar'el)
+   should sit naturally inline. The parenthetical English equivalent
+   ("(God)", "(Israel)") is the same weight and family — readers see a
+   single phrase, not two. No special styling beyond the verse default. */

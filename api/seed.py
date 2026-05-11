@@ -1,11 +1,13 @@
 """
-Seed the four parsed Restored Names extras editions into the schema.
+Seed the parsed editions (Protestant 66 canon + four Restored Names extras)
+into the schema.
 
 Reads:
-  ~/Desktop/App/source-texts/parsed/apocrypha.json
-  ~/Desktop/App/source-texts/parsed/enoch.json
-  ~/Desktop/App/source-texts/parsed/jasher.json
-  ~/Desktop/App/source-texts/parsed/jubilees.json
+  ~/Desktop/App/source-texts/parsed/canon.json       (free tier — 66/1189/31102)
+  ~/Desktop/App/source-texts/parsed/apocrypha.json   (extras — 14/187/5711)
+  ~/Desktop/App/source-texts/parsed/enoch.json       (extras — 1/108/1367)
+  ~/Desktop/App/source-texts/parsed/jasher.json      (extras — 1/91/3903)
+  ~/Desktop/App/source-texts/parsed/jubilees.json    (extras — 1/50/1038)
 
 JSON shape (per the parser, validated 2026-05-10):
     edition := { edition_id, title, source_file, front_matter, books[] }
@@ -51,19 +53,34 @@ import asyncpg
 from config import settings
 
 
-# Edition slug → (witness_category, public_domain_base, tier_required, sort_offset).
-# The four extras editions parsed from Yoshi's published Restored Names
-# Editions. Tier is 'extras' for all four; canon ('free' tier) lands in
-# a future canon-ingest wheel. canonical_order is offset_per_edition +
-# book_index so the apocrypha set sorts ahead of pseudepigrapha and so
-# on, predictably.
+# Edition slug → profile (witness_category, base, tier, sort_offset, pipeline_version).
+# canonical_order is sort_offset + book_index so editions sort predictably:
+# canon (0) → apocrypha (200) → enoch (300) → jubilees (310) → jasher (320).
+#
+# pipeline_version reflects the restoration pipeline that produced the verse
+# text in the JSON. The four extras were already restored when published, so
+# their JSONs are parses of Yoshi's published Restored Names Editions and
+# carry the phase3-v1 stamp (the parser's version, by convention). The
+# canon goes through restore.py at ingest time, so it carries the pipeline
+# version that ran against it (phase4-v1 in session 13: phase3-v1 + the
+# Melchisedec NT-spelling variant added when canon ingest surfaced 9 misses
+# in Hebrews 5-7).
 EDITION_PROFILES: dict[str, dict[str, Any]] = {
+    "canon": {
+        "title": "The Holy Bible — King James Version (Restored Names)",
+        "public_domain_base": "KJV 1769 Blayney (eBible USFX)",
+        "witness_category": "canon",
+        "tier_required": "free",
+        "sort_offset": 0,
+        "pipeline_version": "phase4-v1",
+    },
     "apocrypha": {
         "title": "The Apocrypha — Restored Names Edition",
         "public_domain_base": "KJV 1611 Apocrypha",
         "witness_category": "apocrypha",
         "tier_required": "extras",
         "sort_offset": 200,
+        "pipeline_version": "phase3-v1",
     },
     "enoch": {
         "title": "The Book of Enoch — Restored Names Edition",
@@ -71,6 +88,7 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
         "witness_category": "pseudepigrapha",
         "tier_required": "extras",
         "sort_offset": 300,
+        "pipeline_version": "phase3-v1",
     },
     "jubilees": {
         "title": "The Book of Jubilees — Restored Names Edition",
@@ -78,6 +96,7 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
         "witness_category": "pseudepigrapha",
         "tier_required": "extras",
         "sort_offset": 310,
+        "pipeline_version": "phase3-v1",
     },
     "jasher": {
         "title": "The Book of Jasher — Restored Names Edition",
@@ -85,11 +104,14 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
         "witness_category": "pseudepigrapha",
         "tier_required": "extras",
         "sort_offset": 320,
+        "pipeline_version": "phase3-v1",
     },
 }
 
-# Map the JSON's edition_id → seed profile key.
+# Map the JSON's edition_id → seed profile key. Canon listed first so it
+# loads first; the order matches the sort_offset progression above.
 JSON_FILE_FOR_EDITION = {
+    "canon": "canon.json",
     "apocrypha": "apocrypha.json",
     "enoch": "enoch.json",
     "jubilees": "jubilees.json",
@@ -147,11 +169,13 @@ async def upsert_edition(
         )
         await conn.execute(
             "UPDATE editions SET title = $1, public_domain_base = $2, "
-            "                    front_matter = $3, restoration_pipeline_version = 'phase3-v1' "
-            " WHERE id = $4",
+            "                    front_matter = $3, "
+            "                    restoration_pipeline_version = $4::restoration_pipeline_version "
+            " WHERE id = $5",
             profile["title"],
             profile["public_domain_base"],
             edition_doc.get("front_matter") or None,
+            profile["pipeline_version"],
             edition_id,
         )
         print(f"  [edition] replaced existing '{edition_slug}' (id={edition_id})")
@@ -160,11 +184,12 @@ async def upsert_edition(
     edition_id = await conn.fetchval(
         "INSERT INTO editions "
         "  (slug, title, public_domain_base, restoration_pipeline_version, front_matter) "
-        "VALUES ($1, $2, $3, 'phase3-v1', $4) "
+        "VALUES ($1, $2, $3, $4::restoration_pipeline_version, $5) "
         "RETURNING id",
         edition_slug,
         profile["title"],
         profile["public_domain_base"],
+        profile["pipeline_version"],
         edition_doc.get("front_matter") or None,
     )
     print(f"  [edition] inserted '{edition_slug}' (id={edition_id})")
