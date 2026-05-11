@@ -5,12 +5,22 @@
 # the picked launch host (see ~/Desktop/App/hosting/HOSTING_DECISION.md), but
 # nothing in this image is Render-specific.
 #
-# Build context expectation: this Dockerfile sits at ~/Desktop/App/api/Dockerfile
-# and the build context is ~/Desktop/App/api/ (the api/ directory itself). The
-# parsed Restored Names JSONs and the schema.sql are deliberately NOT bundled into
-# the runtime image — they're seed-time artifacts, run from the operator's machine
-# pointing at the production DATABASE_URL via `python seed.py --bootstrap` /
-# `--seed-only`. This keeps the image small and the deploy fast.
+# Build context: REPO ROOT (~/Desktop/App/). The Dockerfile itself lives at
+# ~/Desktop/App/api/Dockerfile but the build is invoked from the repo root so it
+# can reach api/, data-schema/, and source-texts/parsed/ in a single COPY pass.
+# `render.yaml` sets `dockerfilePath: ./api/Dockerfile` and leaves rootDir at the
+# repo default.
+#
+# What's bundled and why:
+#   - api/                       → /app/         (FastAPI source + seed.py)
+#   - data-schema/schema.sql     → /data-schema/ (one-time bootstrap from Shell)
+#   - source-texts/parsed/*.json → /source-texts/parsed/ (extras seed data)
+#
+# Original design (session 11) was to ship a slim runtime image and run seed.py
+# from the operator's laptop against the external Postgres URL. Session 12 hit
+# the wall that Render's external Postgres requires an explicit IP allowlist
+# entry — running the seed via the Render dashboard Shell against the internal
+# hostname is cleaner. That makes seed.py a first-class part of the image.
 
 FROM python:3.12-slim AS base
 
@@ -20,15 +30,24 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1
 
-# Working directory inside the image.
+# Working directory for the API at runtime.
 WORKDIR /app
 
-# Install dependencies first so the layer caches across code-only edits.
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Install Python dependencies first so the layer caches across code-only edits.
+COPY api/requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
-# Copy the API source. The .dockerignore controls what does and doesn't ship.
-COPY . .
+# Copy the API source. The .dockerignore at the repo root keeps __pycache__,
+# .env, editor noise, and the rest of the repo's non-runtime tree out.
+COPY api/ /app/
+
+# Seed-time artifacts. seed.py's defaults (config.py) resolve schema_sql_path to
+# <repo_root>/data-schema/schema.sql and parsed_json_dir to
+# <repo_root>/source-texts/parsed. Inside the container, _REPO_ROOT computes to
+# `/` (the parent of /app), so these COPY targets must sit at `/data-schema/`
+# and `/source-texts/parsed/` respectively.
+COPY data-schema/ /data-schema/
+COPY source-texts/parsed/ /source-texts/parsed/
 
 # Liveness / DB-reachability check. Render (and any other host) can hit this
 # directly to determine whether to route traffic; matches the route registered

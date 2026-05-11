@@ -41,8 +41,15 @@ services:
     runtime: docker
     plan: starter
     region: oregon
-    rootDir: api
-    dockerfilePath: ./Dockerfile
+    # rootDir is the repo root (default) so the Dockerfile can reach api/,
+    # data-schema/, and source-texts/parsed/ in a single build context.
+    # Session 12 restructure: the original `rootDir: api` design assumed
+    # schema + parsed JSONs would arrive via operator-laptop seed against
+    # the external Postgres URL, but Render's external Postgres requires
+    # explicit IP allowlist entries — running seed.py from inside the
+    # Render Shell against the internal hostname is cleaner, which means
+    # schema.sql and the parsed JSONs need to live inside the image.
+    dockerfilePath: ./api/Dockerfile
     autoDeploy: true
     healthCheckPath: /v1/health
     envVars:

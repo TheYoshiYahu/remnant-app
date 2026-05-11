@@ -1,0 +1,64 @@
+# Repo-root .dockerignore — applies to the Docker build context for
+# api/Dockerfile when render.yaml's `dockerfilePath: ./api/Dockerfile` is used
+# without rootDir (build context = repo root).
+#
+# The Dockerfile only `COPY`s three top-level paths (api/, data-schema/,
+# source-texts/parsed/), so anything outside those is already excluded from
+# the image. This file mainly keeps the build context Docker uploads to the
+# daemon small — faster builds, less log noise.
+
+# Python / build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local secrets — never ship a real .env into an image
+**/.env
+**/.env.local
+**/.env.*.local
+*.pem
+*.key
+
+# Editor / OS noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local scratch — Yoshi's workspaces, not for the image
+_scratch/
+_inbox/
+
+# Source trees that the Dockerfile does not COPY (kept out of build context
+# for build-speed reasons — already not in the image regardless).
+restoration-pipeline/
+source-texts/existing-restored-editions/
+source-texts/extras/
+source-texts/kjv/
+source-texts/strongs-greek/
+source-texts/strongs-hebrew/
+commentary/
+app/
+
+# Project tracking / docs (not runtime)
+BIBLE_APP_ROADMAP.md
+
+# Git internals
+.git/
+.gitignore
+
+# Old api/.dockerignore — leftover from the rootDir:api design; not used now
+# that the build context is the repo root, but kept in the repo for history.
