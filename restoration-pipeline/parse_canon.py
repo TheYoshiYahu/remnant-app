@@ -33,6 +33,7 @@ from typing import List
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from parse_published_editions import Edition, Book, Chapter, Verse  # noqa: E402
 from restore import Restorer  # noqa: E402
+from yoshi_overrides import Overrides, load_overrides  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -223,6 +224,7 @@ def _parse_book_section(
     book_id: str,
     book_title: str,
     restorer: Restorer,
+    overrides: Overrides,
 ) -> Book:
     book = Book(book_id=book_id, book_title=book_title)
     chapter_matches = list(_CHAPTER_RE.finditer(section))
@@ -233,6 +235,13 @@ def _parse_book_section(
         ch_body = section[ch_start:ch_end]
 
         chapter = Chapter(number=ch_num, title=f"Chapter {ch_num}")
+
+        # Attach chapter-level Yoshi commentary if the registry carries one
+        # for this (book, chapter). The pipeline picks it up here so the
+        # downstream JSON / API carries the commentary on the chapter object.
+        chapter_footnote = overrides.chapter_footnote(book_id, ch_num)
+        if chapter_footnote:
+            chapter.commentary = chapter_footnote
 
         verse_matches = list(_VERSE_OPEN_RE.finditer(ch_body))
         for j, vm in enumerate(verse_matches):
@@ -250,8 +259,26 @@ def _parse_book_section(
             cleaned = _clean_usfx_verse(raw_text)
             if not cleaned:
                 continue
-            restored = restorer.restore_text(cleaned)
-            chapter.verses.append(Verse(number=v_num, text=restored))
+
+            # Yoshi-rendering override check.
+            # The registry of LANDED Yoshi renderings is loaded once at the
+            # top of parse_canon(). If this (book, chapter, verse) has a
+            # LANDED override, substitute it for the standard-pipeline
+            # output and tag the verse with source_type="yoshi-rendering"
+            # so the data layer can distinguish it from the regex-restored
+            # base text. The chapter-level footnote (loaded above) carries
+            # the apologetic for the entire chapter's rendering.
+            override = overrides.verse(book_id, ch_num, v_num)
+            if override is not None:
+                chapter.verses.append(Verse(
+                    number=v_num,
+                    text=override.text,
+                    source_type=override.source_type,
+                    footnote=override.footnote_id,
+                ))
+            else:
+                restored = restorer.restore_text(cleaned)
+                chapter.verses.append(Verse(number=v_num, text=restored))
 
         book.chapters.append(chapter)
     return book
@@ -264,6 +291,10 @@ def parse_canon(text: str) -> Edition:
         source_file="eng-kjv_usfx.xml",
     )
     restorer = Restorer()
+    # Load the Yoshi-rendering registry once at the top of the parse. The
+    # _parse_book_section helper uses this to substitute LANDED renderings
+    # for the standard pipeline output on the registered verses.
+    overrides = load_overrides()
     book_sections = _split_books(text)
 
     for code, title, slug in PROTESTANT_66:
@@ -275,6 +306,7 @@ def parse_canon(text: str) -> Edition:
             book_id=slug,
             book_title=title,
             restorer=restorer,
+            overrides=overrides,
         )
         edition.books.append(book)
 

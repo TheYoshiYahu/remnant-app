@@ -95,7 +95,8 @@ CREATE TYPE purchase_kind AS ENUM (
 -- pipeline version produced it.
 CREATE TYPE restoration_pipeline_version AS ENUM (
     'phase3-v1',  -- restore.py self-test 50/50 + Enoch defensive 4 → 54/54 (2026-05-10)
-    'phase4-v1'   -- + Melchisedec NT-spelling variant (KJV NT Heb 5-7) → 56/56 (2026-05-11, session 13)
+    'phase4-v1', -- + Melchisedec NT-spelling variant (KJV NT Heb 5-7) → 56/56 (2026-05-11, session 13)
+    'phase4-v2'  -- + general possessive-handling patch (session 19) → 83/83 self-test; drives the corpus-expansion editions (josephus, pseudepigrapha, apocrypha-charles-vol1, mrjames-apocryphal-nt, lightfoot-apostolic-fathers, ascension-isaiah). Landed in seed.py session 34; matching ALTER TYPE on live DB session 35.
 );
 
 -- Witness category for a book's stance in the canon vs. the extras vs.
@@ -148,19 +149,27 @@ COMMENT ON COLUMN editions.public_domain_base IS
 CREATE TABLE books (
     id              SERIAL PRIMARY KEY,
     edition_id      INT NOT NULL REFERENCES editions(id) ON DELETE RESTRICT,
-    slug            TEXT NOT NULL UNIQUE,            -- 'genesis', 'matthew', '1-enoch', 'jasher', 'jubilees', 'wisdom-of-solomon'
+    -- Slug is unique PER EDITION, not globally — the same canonical book
+    -- (e.g., 1 Esdras, Tobit, Judith) appears in multiple editions
+    -- (KJV-1611 apocrypha + Charles 1913 vol 1 apocrypha) with the same
+    -- simple slug. Session 35 widened from a global UNIQUE constraint to
+    -- this composite to clear the seed.py --apply on the session-32
+    -- corpus expansion (11 editions / 153 books / 50,535 verses).
+    slug            TEXT NOT NULL,                   -- 'genesis', 'matthew', '1-enoch', 'jasher', 'jubilees', 'wisdom-of-solomon', '1-esdras', ...
     title           TEXT NOT NULL,                   -- 'Genesis', 'The Book of Enoch', 'Wisdom of Solomon'
     short_title     TEXT,                            -- 'Gen', 'Enoch', 'Wis'
     canonical_order INT NOT NULL,                    -- ordering for display: canon 1-66, then extras starting at 100, etc.
     witness_category witness_category NOT NULL,
     tier_required   content_tier NOT NULL,           -- 'free' for canon; 'extras' for extras tier
     abstract        TEXT,                            -- short paragraph for the book-list UI
-    created_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+    UNIQUE (edition_id, slug)
 );
 
 CREATE INDEX idx_books_canonical_order ON books(canonical_order);
 CREATE INDEX idx_books_tier_required   ON books(tier_required);
 CREATE INDEX idx_books_witness         ON books(witness_category);
+CREATE INDEX idx_books_slug            ON books(slug);  -- index alone (composite unique uses (edition_id, slug); plain slug index keeps lookups fast where the API filters by slug + an edition join)
 
 COMMENT ON TABLE books IS
     'A book in the canon or extras manifest. Canon = 66 (free tier). Extras = ~50 (extras tier and up).';

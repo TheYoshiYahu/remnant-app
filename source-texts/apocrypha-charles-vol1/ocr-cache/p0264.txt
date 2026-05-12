@@ -1,0 +1,70 @@
+# CHARLES_VOL1_OCR_V2_FLAT
+THE BOOK OF JUDITH
+
+e.g. xiv. 5-7 comes at the end of xiii; i. 12"-16 and iv. 3 are omitted ; iv. 13-15 is altered ; additions
+are made after xiv. 12 and elsewhere; names and numbers often differ. In fact, if compared with
+the Greek, the Vulgate presents the appearance of a paraphrastic recension. On the other hand,
+apart from these material differences, it often follows VL closely even in diction (cf. cap. 16), and the
+resemblance throughout is sufficient to show that Jerome used MSS. of the VL, which he merely
+adapted and corrected, as he considered, by the help of his ‘Chaldee’ text. It is evident from his
+own remarks (huic unam lucubratiunculam dedi, magis sensum e sensu, quam ex verbo verbum
+transferens’) that he spent very little time or trouble on it, and for this reason its style is less like
+Jerome's than the rest of the Vulgate.
+
+As to the ‘ Chaldee’ text, we have no other evidence. It will be remembered that he speaks
+in the same way of a Chaldee-text of Tobit, and that an Aramaic recension of that book was actually
+found and published by Neubauer (Oxford, 1878). No such text of Judith is now known, but as
+Jerome’s statement is explicit with regard to both books, we have to inquire what the text was.
+Probably the answer is to be found in a sentence in the preface to Judith, ‘Chaldaeo tamen sermone
+conscriptus inter historias computatur.’ If Azstorias represents nvwyn, he means that the story of
+Judith was regarded as a myyn, such as we find embodied in midrashim, or even composed separately
+for use on special occasions. Later forms of the story, in Hebrew (see § 8), were composed and so
+used, and in Neubauer’s midrashic MS. the story of Tobit is called as a matter of course ma)p awyD.
+We may therefore conclude that Jerome, finding no Hebrew text of the book, used an Aramaic
+myn (Astoria) containing a free treatment, not a translation, of the story, derived probably from the
+Greek. He evidently attached more importance to it than to VL, since he included in his own work
+only what he found in the Chaldee, but in language he was naturally influenced by VL where the
+two coincide. Thus the Vulgate of Judith is a hurried version of an Aramaic midrash containing a
+free presentation of the story, rather than a translation of any given text. It omits about one-fifth
+of the book.
+
+§ 5. DaTE OF THE ORIGINAL, AND OF THE VERSIONS.
+
+(a) The existing versions thus all go back, through the existing Greek, to the same original,
+their differences being due to alterations within the versions. It is now generally agreed (against
+earlier scholars such as Fabricius, Jahn, and Eichhorn) that this original was Semitic, and Hebrew
+rather than Aramaic. Indeed there can be no possibility of doubt if we consider the style of the
+Greek and the nature of some of the mistakes in it. The language is not merely that popular Greek
+which we now know from papyri of the early centuries A.D. to have been identical with the xow
+dudAextos of the New Testament, even when independent of any Semitic idiom. The translation is
+so literal that it can be put back into Hebrew with ease, and in some cases becomes fully intelligible
+only when so re-translated. Moreover, the unusual lack of particles shows that the writer was under
+the influence of a foreign idiom, while the constant recurrence of phrases uncommon in late Greek
+but frequent in Hebrew shows incontestably the language of the original. Such are e.g. ano
+TposoTov =D, els Tpdcwnov ='395, the frequent use of opddpa = IND, év = 3, and many more: see
+the notes on iv. 2, v. 12, 19, vii. 10, 28, xii. 4, xiii. 4, 8, 13, 16, xiv. 2,6, 11. The same conclusion
+is indicated by the confusion in the geographical names, due to uncertainty in the mind of the
+translator as well as to mistakes of copyists, so far as it is not intentional on the part of the author
+(see §6). So also in other names, e. g- Achior no doubt = 717nx, chosen as meaning ‘friend of the
+Jews’, with the common confusion of 7 and 4.
+
+Against this comparative certainty we have the express statement of Origen (ad Afric. 13),
+ovde TH ‘lovd}O (xypGvtat) ovde yap Exovow adra Kal év anoxptpots —EBpatoti, ws am’ avTey pabdvTes eyydxaper,
+as well as the fact that Jerome did not use a Hebrew text, which he certainly would have done if he
+had found one. It is possible that in the statement which Origen received from his Jewish informants,
+stress should be laid on ypévra rather than éxovauy, and that it had fallen out of use and was not even
+included among the apocryphal books at the beginning of the third century. This must have been
+only temporary, since in 398 Jerome says ‘Apud Hebraeos liber Judith inter apocrypha legitur’.
+Jerome’s preface is all rather obscure, and it may be that he really means here to indicate a Hebrew text
+which he knew to exist but did not possess. In the very next sentence he speaks of the Chaldee
+which ‘inter historias computatur ’, a degree lower than apocrypha, and seems to draw a distinction
+between them. No trace of the Hebrew original now survives.
+
+The story is represented as taking place just after the return from the exile (iv. 3). The author
+does not, however, represent himself (as e.g. Daniel) as contemporary with the events recorded. In
+fact, he must have written much later. The return is far enough away to have become a sort of
+golden age, a time of simple happiness granted by God in consequence of the piety of the people.
+{n this, as in its details, the description is wholly at variance with history (see § 6), either because the
+
+244
+

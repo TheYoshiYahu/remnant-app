@@ -1,0 +1,70 @@
+# CHARLES_VOL1_OCR_V2_FLAT
+INTRODUCTION
+
+reason for this being that the Greek text of which the Authorized version is a translation is that
+represented by a number of cursives belonging to the thirteenth and fourteenth centuries, a text
+which is also to a large extent represented in the Old Latin version, and in the quotations from
+Sirach in the writings of some of the Church Fathers. These great divergences, then, in the
+Greek MSS., all of which, as we have just seen, go back to one copy in which the great displacement
+was already present, occasion a difficult problem. Two points, however, emerge clearly; in the
+face of the striking and numerous divergences and additions it is evident that all the MSS. cannot
+ultimately all go back to one original form of text; and, again, since all the extant Greek MSS.
+are descended from one copy in which the displacement was already found, the divergences and
+additions must have been in existence at a very early period. The matter can be put in another
+way ; Cod. B, for example, represents one type of Greek text, Codd. 248, 253 represent another type,
+that, namely, which contains the additions: both have the great displacement, and therefore both,
+presumably, must ultimately go back to one and the same copy, although in the actual dates of
+these two manuscripts there is a difference of, roughly speaking, a thousand years. But how can it
+be possible that these two manuscripts should go back to onc original copy when one of them has
+so many variations and additions as compared with the other? Here let us note another factor
+which is of real assistance in helping to arrive at a solution of the problem—the Old Latin version,
+which is a translation of the Greek, has the additions, but has ot got the displacement. Now the
+Old Latin version represents a condition of affairs which is older than either the great uncial codices
+or the cursives as we now have them; this, therefore, proves that the type of text represented by
+Codd. 248, 253 was extant in some MSS. before the existence of the archetypal MS. which contained
+the displacement.
+
+It seems clear that there existed at a very early period, probably as early as the last century
+B.C., two types of the Greek text, a prémary text, which lies at the back of a// the Greek MSS., and
+which represents the original translation of Ben-Sira’s grandson, and a secondary text. The former
+of these, the przmary text, is represented by the great uncials Bx A and the group of cursives 68,
+155, 157, 296, 307, 308, as well as in the Aldine and Sixtine editions. The secondary text is
+represented in varying degrees by the group of cursives 55, 70, 106, 248, 253, 254, and in the MS.
+used by the seventh-century corrector of Cod. Siniaticus, x°* ; of these the foremost representative
+is 248; this type of text is also reflected in the Old Latin and the Syriac versions, as well as in
+the Syro-Hexaplar (in this latter many of the passages belonging to the secondary text are marked
+with the asterisk), and in the Complutensian text; it also has the support of Clement of Alexandrta
+and Chrysostom in their quotations from our book. This secondary Greek text was, like the
+primary one, translated from the Hebrew.! In the Talmud, and in some other Jewish writings,
+there are Rabbinical Hebrew quotations from Sirach which vary from the text of the great
+uncials (the primary text), but which are represented in the secondary Greek text. Again, in some
+cases the secondary Hebrew text, remnants of which are preserved in the recently-found Hebrew
+MSS., is represented in the ‘248 group’, but not in the uncials and their followers. And there is
+this further fact that many of the additions found in the ‘ 248 group’ can, on account of their form,
+only be explained on the supposition of their having been translated direct from a Hebrew original.
+These points go to show that the additions which belong to the secondary Greek text are not
+interpolations, but are based in the main upon a secondary Hebrew original.
+
+To come back again, then, to the question with which we started ; how are the two (apparently
+contradictory) following facts to be explained? There are great divergences in our Greek MSS.,
+and yet all go back to one archetype, because all have the same great displacement. The most
+probable hypothesis would seem to be that the archetype responsible for the displacement was
+a Greek MS. which contained the primary text represented by the uncials. From this MS. the
+uncials were directly derived, but at the same time other Greek MSS. were in existence which
+contained the secondary text and were without the displacement.2 As copies were multi-
+plied of the former group the distorted order was adhered to, while in some cases the variant text
+of the MSS. representing the secondary recension was adopted and embodied ; hence two varieties
+of text, both of which contain the displacement, come into existence. The purest extant form of
+the text of the secondary recension is represented apparently by the Old Latin version ; the text
+of Cod. 248 only partially embodies the variants and additions of the Greek MSS. behind the
+Old Latin.
+
+But although there are some half-dozen Greek MSS., in addition to the Syriac and Old Latin
+versions and the Syro-Hexaplar, in which the secondary Greek text is represented, it is certain that
+no one of these actually contains that text as such; all that can be said is that these authorities
+
+1 On the primary and secondary Hebrew texts see the preceding section, § 3 (esp. (c)).
+? It should be noted that #9 agrees with i, &c., in having the true order; it has not the displacement.
+
+281
+

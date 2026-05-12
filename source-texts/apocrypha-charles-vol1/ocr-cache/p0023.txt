@@ -1,0 +1,72 @@
+INTRODUCTION
+
+It is a significant fact that, as emphasized by Whiston in 1722, the Jewish historian Josephus
+uses & for his account of King Josiah, follows its order of events, and is influenced by its language,
+although for the other books he employs the LXX. Equally significant is the appearance of £ with
+the canonical E-N in the best Greek MSS., either before (G*4, and presumably N) or after (@")
+these. It is quoted by several early Greek and Latin Fathers, and Augustine and Origen cite
+iv. 41 and 59 respectively from ‘ Esdras’ without indicating that another than the canonical book is
+meant. Moreover, a Greek synopsis (Lag. 84) and a Syriac Catena (see on & ix. 55) treat E as
+1 Esdras, and give the title 2 Esdras to N*. But Jerome meanwhile had condemned the two
+apocryphal books of Esdras with their ‘dreams’ (Praef. Esd. et Neh.), and his ruling was confirmed
+in due course by the Church. / is wanting in the early MSS. of the Vulgate, and it was rejected
+by the Council of Florence (1442). It is found in the Latin bibles of 1474, 1480, &c., but is regarded
+as apocryphal by De Lyra (1498), Karlstadt (1520), and Stephanus (1528). It is wanting in the Com-
+plutensian Polyglot (1514-17), and Luther ignored it—though not perhaps primarily (Bayer, 6 seq.)
+—for its triviality. There was even a belief that it did not exist in Greek (Torrey, 13 n.1). The
+Council of Trent rejected it in 1546, but it is printed in an appendix in small type in the Tridentine
+edition of the Vulgate. Although it appears as 1 Esdras in the 1587 edition of the Septuagint
+(Rome), it was omitted three years later from the Sixtine Vulgate (Rome, 1590). In spite of the
+occasional attention paid to it by a few scholars, & has since too often been overlooked and neglected,
+and has only recently come into deserved prominence through the persistence of Sir Henry H.
+Howorth from 1893 onwards (see further Torrey, 13 seqq.).
+
+£, on closer inspection, proves to be no free or less careful treatment of the Greek translation
+of the canonical books, as had been held by Keil, Zockler, Bissell, Konig (Z7lettung, § 97), and
+formerly Schiirer (contrast his Gesch. Volk. [sr., 3rd ed., iii. 328). There is an overwhelming body
+of opinion that it is translated from a Semitic (Hebrew and Aramaic) original. There are, it is true,
+various readings, identical or apparently connected with the literal Greek translation, but they do
+not outweigh the many considerable and characteristic differences of rendering, the variations in the
+transliteration or translation of proper names, and the numerous readings in & which can be ex-
+plained only from the MT (see especially Bayer, 156 seqq.). That & is an independent version older
+than the @ of the canonical books was suggested by Grotius (1644, see PSBA, xxv. 139), Whiston
+(1722), Pohlmann (1859), Ewald (1864), Lagarde (1874), and others, and has since been more
+cogently shown by Howorth and Torrey. It is pointed out that the @ of E-N presents features
+characteristic of Theodotion’s translation (viz. transliteration of gentilics, and of difficult or uncertain
+words) and parallel to his translation of Daniel. The @ of £, on the other hand, as Gwynn also
+noticed, finds parallels in the ‘ Septuagint’ text of Daniel, especially the first six chapters. Moreover,
+the S of £ claims to be made from the Septuagint, and it is very probable that £ took the place
+of the @ of E-N in Origen’s Hexapla. Volz, however, has properly drawn attention to the varying
+quality of the different sections of £, a feature which ‘ excludes the supposition that the Greek version
+can have been produced aus einem Guss’. In general, all the evidence tends to show that & held
+a more authoritative position than has been usually conceded to it (in consequence of Jerome), but
+that its unevenness as a translation and the complexity of its contents make its true origin and
+structure a more intricate problem.®
+
+§ 3. TEXT VERSIONS, DATE, ETC.
+
+(a) Character of Translation. E,on account of its peculiar relationship to the O.T., cannot be
+studied textually apart from the versions based directly upon the MT (see more fully, Torrey 62-114).
+While the G@ of E-N is un-Greek, literal and mechanical, & is the very reverse of servile, and its
+language both elegant and idiomatic. The vocabulary is extensive, containing several words that
+occur nowhere else in ‘ Septuagint’ Greek, or only in other books of the Apocrypha, notably 2 Macc.
+(see Moulton’s list, ZA TW, xix. 232 seqq.). Semitic idioms are usually happily replaced by natural
+Grecisms. There is often a free treatment of the article, pronouns, and conjunctions ; hypotaxis for
+the parataxis of MT ; active verbs for passive. Condensation, paraphrase, and re-arrangement are
+frequent, and the translator has generally made the best of the original text, gliding over or
+concealing the difficulties. Sometimes he has misunderstood the original; but the rendering is
+carefully worded and thus presents an apparently plausible result (see e.g. i, 10-12, 38, 51). He
+
+? e.g. Tertullian, Clement of Alexandria, Athanasius; see Pohlmann, 263 seqq., and the tables in André, 22 seqq.
+
+? Augustine, also, in a list of canonical books (de doctr. Christ. ii, 8) enumerates two books of Ezra ‘of which our
+1 Esd. was certainly one’ (Volz). See, on the other hand, Bayer, 4.
+
+2 See Howorth, PSBA, xxiii. 156 seqq., xxiv. 164 seqq., xxix. 31 seqq., xxxiii. 26 seqq.; Torrey, ib. xxv. 139 seqq.,
+and his Ezra Studies, Chap. 1; J. Gwynn, Dict. Christ. Biog., ‘Theodotion’, and Extracts from the Syro-Hex.
+Version of the LXX (London, 1909), xx. seqq.
+
+”
+
+o
+

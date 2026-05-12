@@ -1,0 +1,70 @@
+# CHARLES_VOL1_OCR_V2_FLAT
+INTRODUCTION
+
+given by Torrey (£.8. 2865) that Josephus ‘omitted the portion of 1 Macc. containing the mention
+of Numenius and the golden shield, but took occasion to introduce this important name, and the
+most interesting details, at the next opportunity’, is not very illuminating. Probably Willrich is
+right in regarding the passage as a later interpolation, added because it seemed appropriate in
+
+a place where Simon’s treaty with Rome was mentioned (of. c7¢. p. 72); this conclusion was arrived
+at independently by the present writer, on the following grounds:—Numenius is mentioned in
+1 Macc. in connexion with an embassy to Rome in xii. 16, in the letter of Yoxathan to the Spartans,
+which, as we have already seen reasons to believe, is a ‘later interpolation ; he is also referred to
+incidentally in a similar connexion in the time of Szaon xiv. 24, cp. xv. 15. But a Numenius, in
+all respects identical, so far as description and name are concerned, is mentioned by Josephus as
+taking part in an embassy to the Romans, and-having presented a shield of gold of a thousand
+pounds’ weight, in the reign of Hyrcanus //; it seems, on the face of it, highly improbable that both
+references can be correct ; either the episode of the shield in connexion with Numenius took place in
+the reign of Szimon, or in that of Hyrcanus IJ. The account given by Josephus, and the letter as
+quoted by him (Azézg. XIV. viii. 5), appear to be undoubtedly genuine ; it follows that 1 Macc. xv.
+15-24 is due to an interpolator; there are also independent reasons for regarding this passage as an
+interpolation, since it breaks the narrative in a very obvious and awkward manner. The interpolator,
+knowing that negotiations had actually taken place between Simon and the Romans, has transferred
+an incident describing a Jewish embassy to Rome, which belongs to a later period, to the time of
+Simon. Josephus, in his edition of 1 Macc., did not read the section xv. 15-24 as we have it (see
+Antig. XIII. vii. 3); he does, however, follow 1 Macc. xii. 16 ff. (see Antig. XIII. v. 8) in associating
+Numenius, the son of Antiochus, and Antipater, the son of Jason, with an embassy sent to Rome in
+the reign of Fonathan; but we have already seen that the whole of this letter in 1 Macc. is a later
+interpolation; it follows, therefore, that Josephus had this interpolation in his copy of 1 Macc.,
+though the Lucius letter (xv. 16-24) seems to have been absent from the text he used.
+
+§ 8. THE GREEK MANUSCRIPTS.
+
+The most important of these are the three uncials Cod. Sinaiticus (x), Cod. Alexandrinus (A),
+Cod. Venetus (V), the latter belonging to the eighth or ninth century. Cod. Vaticanus (B) does
+not contain the books of the Maccabees. The text represented in & V is, on the whole, better
+than that represented in A; but all three are undoubtedly the offspring of a single Greek MS.
+Whether, however, it can be said that a// our texts, as well as the Versions, come from one
+Greek MS. (Torrey, in £.B. 2867) is not so certain; for there are isolated readings (small in
+number, it is true) in some of the cursives which presuppose a better text in the passages .in
+question than that represented in the three uncials; in some cases these readings are supported by
+one or other of the Versions. Of the cursives which have been used, 52, 106, 107 follow, now NA
+against V, now & V against A; in a somewhat less degree this is also true of 56, 62, as well as of 55;
+but this latter has retained some readings, peculiar to itself, which are superior to those in any other
+MS., uncial or cursive (see e. g. iii. 47, 48, 49, iv. 61, v. 22, 67, vii. 7, 38), and it is possible that these
+represent echoes of a MS. or MSS. other than the single Greek MS. which is the parent of the three
+uncials ; at the same time the fact is not lost sight of that in other cases the variations in 55 are
+merely explanatory additions, and in this, as well as in its agreement at times with S'¥° (see below),
+betrays a Lucianic colouring. Another group is formed by 19, 64, 93;1 these are Lucianic in
+character, but 64 less so than the other two; with these three 8°* sometimes agrees against all
+other Greek MSS.; very frequently 19, 93 ‘and sive (see below) go together against all other
+authorities ; this occurs in about fifty cases. The cursive 71 offers a curious phenomenon on account
+of its large number of omissions ; these are usually skilfully manipulated ; they have been recorded
+in the apparatus criticus because it quite looks as if in some instances a better reading were afforded by
+the omission. That in spite of these omissions 71 here and there shows signs of Lucianic colouring
+is an interesting fact. So far as the cursives are concerned, with the exception of 19, 64, 93, and 71,
+only those readings are recorded in the apparatus criticus which seemed to be of importance.
+
+The collations used for the above are, for the uncials, Swete’s The Old Testament in Greek, vol. iii.,
+and for the cursives the apparatus criticus of Holmes and Parsons.
+
+§9. THE SYRIAC AND LATIN VERSIONS.
+
+(a) The Syriac text exists in two forms; one is represented in Cod. Ambrosianus (sixth century) ;?
+this follows in the main the text of the Greek uncials (S% in the ap. criz.), and is preserved up to
+
+1 = Luc in the apparatus criticus.
+2 Edited by Ceriani (Milan, 1876).
+
+65
+

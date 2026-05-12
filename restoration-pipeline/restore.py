@@ -93,9 +93,15 @@ def _not_in_paren(hebrew_prefix: str) -> str:
     return rf"(?<!{re.escape(hebrew_prefix)} \()"
 
 
-# Word-boundary helpers using ASCII word chars + apostrophe (for "Yashar'el")
-LB = r"(?<![A-Za-z'])"   # left boundary — no letter or apostrophe before
-RB = r"(?![A-Za-z'])"    # right boundary — no letter or apostrophe after
+# Word-boundary helpers using ASCII word chars + apostrophe (for "Yashar'el").
+# Both ASCII apostrophe (U+0027) and typographic right single quotation mark
+# (U+2019) are excluded from the boundary so that possessive forms like
+# "God's" / "God’s" / "Lord's" / "Lord’s" don't accidentally match the base
+# singular rule (which would leave "Elohim (God)'s" / "Yahuah (Lord)’s"
+# garbage). Possessive forms are handled by the dedicated POSSESSIVE FORMS
+# block below — surfaced 2026-05-11 session 19 by Whiston Josephus residuals.
+LB = r"(?<![A-Za-z'’])"   # left boundary — no letter or apostrophe before
+RB = r"(?![A-Za-z'’])"    # right boundary — no letter or apostrophe after
 
 
 # ---------------------------------------------------------------------------
@@ -103,6 +109,191 @@ RB = r"(?![A-Za-z'])"    # right boundary — no letter or apostrophe after
 # ---------------------------------------------------------------------------
 
 RULES: list[Rule] = [
+    # --- POSSESSIVE FORMS (session 19, 2026-05-11) — run FIRST ---
+    # Surfaced 2026-05-11 session 18 close by Whiston Josephus restoration
+    # residuals. The base rules below use RB = (?![A-Za-z'’]) which by
+    # design refuses to match the noun when an apostrophe follows it — that
+    # keeps 'Lordship' from misfiring as 'Lord', but it also means 'Lord's',
+    # 'God's', 'Jews'', 'Israel's', 'Judah's', 'Christ's', 'Jesus'', etc.
+    # would be left untouched if no possessive rules existed. This block
+    # restores possessives explicitly.
+    #
+    # Ordering: this block runs FIRST so compound possessives ('Lord God's',
+    # 'Jesus Christ's') get matched before base singular rules ('Lord_mixed',
+    # 'jesus_alone') could consume the head word and leave a broken half-
+    # restored possessive trailing. Within this block, compound possessives
+    # come before single-noun possessives (longer phrases win, parallel to
+    # the base block's ordering).
+    #
+    # Yoshi's session-19 call: patch restore.py for general possessive
+    # handling (option i) — one-time fix that stamps onto every text the
+    # pipeline touches (canon, Apocrypha, pseudepigrapha, the seven W-2
+    # master PDFs, every future extraction).
+    #
+    # Apostrophe-tolerance: both ASCII U+0027 and typographic U+2019
+    # accepted in the source; the Hebrew head uses ASCII apostrophe for the
+    # possessive marker (the canonical form), and the captured source
+    # apostrophe is echoed inside the English parenthetical so the rendered
+    # output preserves the source punctuation style (Whiston is ASCII,
+    # Yoshi's commentary prose mixes both).
+    #
+    # The already-restored stash + the per-rule re-stash guarantee no
+    # double-wrap: e.g., "Elohim's (God's)" gets re-stashed immediately
+    # after this rule fires so subsequent rules don't see the inner 'God'.
+    # Idempotency is verified by the self-test below and by the
+    # --idempotency-check command run against the restored Whiston output.
+
+    # Compound possessives — must run before any base rule (compound or
+    # singular) that could consume part of the compound's head.
+
+    # "the LORD God's" / "the Lord God's" -> "Yahuah Elohim's (the LORD God's)"
+    Rule(
+        name="lord_god_compound_possessive",
+        pattern=re.compile(rf"{LB}the\s+(LORD|Lord)\s+God(['’])s{RB}"),
+        replacement=r"Yahuah Elohim's (the LORD God\2s)",
+    ),
+    # "LORD God's" / "Lord God's" (no leading "the")
+    Rule(
+        name="lord_god_naked_possessive",
+        pattern=re.compile(rf"{LB}(LORD|Lord)\s+God(['’])s{RB}"),
+        replacement=r"Yahuah Elohim's (LORD God\2s)",
+    ),
+    # "Jesus Christ's" -> "Yahusha HaMashiach's (Jesus Christ's)"
+    Rule(
+        name="jesus_christ_possessive",
+        pattern=re.compile(rf"{LB}Jesus\s+Christ(['’])s{RB}"),
+        replacement=r"Yahusha HaMashiach's (Jesus Christ\1s)",
+    ),
+    # "Christ Jesus's" / "Christ Jesus'" -> "HaMashiach Yahusha's (Christ Jesus's)"
+    Rule(
+        name="christ_jesus_possessive",
+        pattern=re.compile(rf"{LB}Christ\s+Jesus(['’]s?){RB}"),
+        replacement=r"HaMashiach Yahusha's (Christ Jesus\1)",
+    ),
+
+    # "Holy Spirit's" / "Holy Ghost's" -> "Ruach HaKodesh's (Holy Spirit's)"
+    Rule(
+        name="holy_spirit_possessive",
+        pattern=re.compile(rf"{LB}Holy\s+(Spirit|Ghost)(['’])s{RB}"),
+        replacement=r"Ruach HaKodesh's (Holy \1\2s)",
+    ),
+
+    # Single-noun possessives.
+
+    # "LORD's" (all-caps) -> "Yahuah's (LORD's)"
+    Rule(
+        name="LORD_possessive",
+        pattern=re.compile(rf"{LB}LORD(['’])s{RB}"),
+        replacement=r"Yahuah's (LORD\1s)",
+    ),
+    # "Lord's" -> "Yahuah's (Lord's)"
+    # The preserved-phrases pass stashes:
+    #   (a) "the Lord's Supper/Prayer/Day" (Christian institutional terms)
+    #   (b) "[possessive-pronoun] Lord" (secular vocative addressing humans)
+    # before this rule fires, so this rule only sees divine "Lord's" in
+    # genitive position where restoration is correct.
+    Rule(
+        name="Lord_possessive",
+        pattern=re.compile(rf"{LB}Lord(['’])s{RB}"),
+        replacement=r"Yahuah's (Lord\1s)",
+    ),
+    # "Jesus'" / "Jesus's" -> "Yahusha's (Jesus' / Jesus's)"
+    # English convention for names ending in 's' allows either form; both
+    # appear in Whiston, KJV, and Yoshi's prose. The capturing group catches
+    # the apostrophe plus optional s so the parenthetical preserves source
+    # fidelity.
+    Rule(
+        name="Jesus_possessive",
+        pattern=re.compile(rf"{LB}Jesus(['’]s?){RB}"),
+        replacement=r"Yahusha's (Jesus\1)",
+    ),
+    # "Christ's" -> "Messiah's (Christ's)"
+    Rule(
+        name="Christ_possessive",
+        pattern=re.compile(rf"{LB}Christ(['’])s{RB}"),
+        replacement=r"Messiah's (Christ\1s)",
+    ),
+    # "God's" -> "Elohim's (God's)"
+    # Same conservative scope as god_cap — capitalized only; lowercase
+    # "god's" (false gods) stays.
+    Rule(
+        name="God_possessive",
+        pattern=re.compile(rf"{LB}God(['’])s{RB}"),
+        replacement=r"Elohim's (God\1s)",
+    ),
+
+    # Covenant people-name possessives.
+
+    # "Israel's" -> "Yashar'el's (Israel's)"
+    Rule(
+        name="Israel_possessive",
+        pattern=re.compile(rf"{LB}Israel(['’])s{RB}"),
+        replacement=r"Yashar'el's (Israel\1s)",
+    ),
+    # "Judah's" -> "Yahudah's (Judah's)"
+    Rule(
+        name="Judah_possessive",
+        pattern=re.compile(rf"{LB}Judah(['’])s{RB}"),
+        replacement=r"Yahudah's (Judah\1s)",
+    ),
+    # "Jews'" (plural possessive — apostrophe-only convention) ->
+    # "Yahudim's (Jews')"
+    # Must run before Jew_possessive (parallel to the base block running
+    # jews/jewish before jew). The RB after the apostrophe excludes any
+    # trailing 's', so this rule only fires on the well-formed plural
+    # possessive "Jews'" and never on the malformed "Jews's".
+    Rule(
+        name="Jews_possessive",
+        pattern=re.compile(rf"{LB}Jews(['’]){RB}"),
+        replacement=r"Yahudim's (Jews\1)",
+    ),
+    # "Jew's" (singular possessive) -> "Yahudi's (Jew's)"
+    Rule(
+        name="Jew_possessive",
+        pattern=re.compile(rf"{LB}Jew(['’])s{RB}"),
+        replacement=r"Yahudi's (Jew\1s)",
+    ),
+
+    # Compound covenant figure possessive.
+
+    # "Melchizedek's" (with KJV / Vulgate spelling variants) ->
+    # "Melek Tsadiq's (Melchizedek's)". Variants covered identically to the
+    # base melchizedek rule.
+    Rule(
+        name="melchizedek_possessive",
+        pattern=re.compile(rf"{LB}Melchi[zs]ede[ck]h?(['’])s{RB}"),
+        replacement=r"Melek Tsadiq's (Melchizedek\1s)",
+    ),
+
+    # Son-of-Adam possessives — must run before the base Son_of_Adam rules
+    # (which use RB that excludes apostrophe — same as the singular rules —
+    # so the base rules would leave 'son of Adam's' unmatched).
+
+    # "Son of Man's" (Messianic title possessive) -> "Son of Adam's"
+    Rule(
+        name="Son_of_man_title_possessive",
+        pattern=re.compile(rf"{LB}Son\s+of\s+[Mm]an(['’])s{RB}"),
+        replacement=r"Son of Adam\1s",
+    ),
+    # "son of man's" (generic possessive) -> "son of Adam's"
+    Rule(
+        name="son_of_man_generic_possessive",
+        pattern=re.compile(rf"{LB}son\s+of\s+man(['’])s{RB}"),
+        replacement=r"son of Adam\1s",
+    ),
+    # "sons of men's" / "sons of men'" -> "sons of Adam's" / "sons of Adam'"
+    Rule(
+        name="sons_of_men_possessive",
+        pattern=re.compile(rf"{LB}sons\s+of\s+men(['’])s?{RB}"),
+        replacement=r"sons of Adam\1",
+    ),
+    # "Sons of men's" / "Sons of men'" (capitalized) -> "Sons of Adam's"
+    Rule(
+        name="Sons_of_men_possessive_cap",
+        pattern=re.compile(rf"{LB}Sons\s+of\s+men(['’])s?{RB}"),
+        replacement=r"Sons of Adam\1",
+    ),
+
     # --- COMPOUND DIVINE NAMES (run first; longer phrases win) ---
 
     # "the LORD God" / "the Lord God" -> "Yahuah Elohim (the LORD God)"
@@ -814,6 +1005,153 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "idempotent: 'Yahuah (Lord) of Spirits' already-restored stays put",
         "And the Yahuah (Lord) of Spirits shall abide over them",
         "And the Yahuah (Lord) of Spirits shall abide over them",
+    ),
+
+    # --- POSSESSIVE FORMS (session 19, 2026-05-11) ---
+    # Whiston Josephus session-18-close residual scan surfaced these classes.
+    # The patch route (option i) extends restore.py with general possessive
+    # rules so the fix stamps onto every text the pipeline touches. These
+    # tests anchor the new behavior and protect against regressions on
+    # subsequent W-2 PDFs (Charles, Lightfoot, Malan, M.R. James, Box).
+    (
+        "possessive: God's restores to Elohim's (God's)",
+        "the heavens declare God's glory",
+        "the heavens declare Elohim's (God's) glory",
+    ),
+    (
+        "possessive: typographic apostrophe God’s also restores",
+        "the heavens declare God’s glory",
+        "the heavens declare Elohim's (God’s) glory",
+    ),
+    (
+        "possessive: Lord's restores to Yahuah's (Lord's)",
+        "they walked in the Lord's ways",
+        "they walked in the Yahuah's (Lord's) ways",
+    ),
+    (
+        "possessive: LORD's (all-caps) restores to Yahuah's (LORD's)",
+        "the LORD's anointed",
+        "the Yahuah's (LORD's) anointed",
+    ),
+    (
+        "possessive: Christ's restores to Messiah's (Christ's)",
+        "by Christ's atonement",
+        "by Messiah's (Christ's) atonement",
+    ),
+    (
+        "possessive: Jesus' (apostrophe-only) restores to Yahusha's (Jesus')",
+        "Jesus' disciples followed him",
+        "Yahusha's (Jesus') disciples followed him",
+    ),
+    (
+        "possessive: Jesus's (apostrophe-s) restores to Yahusha's (Jesus's)",
+        "Jesus's disciples followed him",
+        "Yahusha's (Jesus's) disciples followed him",
+    ),
+    (
+        "possessive: Israel's restores to Yashar'el's (Israel's)",
+        "Israel's God is one",
+        "Yashar'el's (Israel's) Elohim (God) is one",
+    ),
+    (
+        "possessive: Judah's restores to Yahudah's (Judah's)",
+        "Judah's portion was great",
+        "Yahudah's (Judah's) portion was great",
+    ),
+    (
+        "possessive: Jews' (plural apostrophe-only) restores to Yahudim's (Jews')",
+        "the Jews' customs were strict",
+        "the Yahudim's (Jews') customs were strict",
+    ),
+    (
+        "possessive: Jew's (singular) restores to Yahudi's (Jew's)",
+        "the Jew's covenant identity",
+        "the Yahudi's (Jew's) covenant identity",
+    ),
+    (
+        "possessive: Holy Spirit's restores to Ruach HaKodesh's (Holy Spirit's)",
+        "by the Holy Spirit's power",
+        "by the Ruach HaKodesh's (Holy Spirit's) power",
+    ),
+    (
+        "possessive: Holy Ghost's (KJV) restores to Ruach HaKodesh's (Holy Ghost's)",
+        "by the Holy Ghost's power",
+        "by the Ruach HaKodesh's (Holy Ghost's) power",
+    ),
+    (
+        "possessive: Melchizedek's restores to Melek Tsadiq's (Melchizedek's)",
+        "after Melchizedek's order",
+        "after Melek Tsadiq's (Melchizedek's) order",
+    ),
+    (
+        "possessive: Melchisedec's (NT spelling) also restores",
+        "after Melchisedec's order",
+        "after Melek Tsadiq's (Melchizedek's) order",
+    ),
+    (
+        "possessive: Lord God's compound restores to Yahuah Elohim's (LORD God's)",
+        "Lord God's commandments",
+        "Yahuah Elohim's (LORD God's) commandments",
+    ),
+    (
+        "possessive: the Lord God's compound restores cleanly",
+        "the Lord God's mighty hand",
+        "Yahuah Elohim's (the LORD God's) mighty hand",
+    ),
+    (
+        "possessive: Jesus Christ's compound restores to Yahusha HaMashiach's (Jesus Christ's)",
+        "by Jesus Christ's blood",
+        "by Yahusha HaMashiach's (Jesus Christ's) blood",
+    ),
+    (
+        "possessive: son of man's restores to son of Adam's",
+        "the son of man's heart was troubled",
+        "the son of Adam's heart was troubled",
+    ),
+    (
+        "possessive: Son of Man's (Messianic title) restores to Son of Adam's",
+        "the Son of Man's coming",
+        "the Son of Adam's coming",
+    ),
+
+    # Idempotency — possessive restored forms must stay put on re-run.
+    (
+        "idempotent possessive: Elohim's (God's) stays put",
+        "the heavens declare Elohim's (God's) glory",
+        "the heavens declare Elohim's (God's) glory",
+    ),
+    (
+        "idempotent possessive: Yahuah's (Lord's) stays put",
+        "they walked in the Yahuah's (Lord's) ways",
+        "they walked in the Yahuah's (Lord's) ways",
+    ),
+    (
+        "idempotent possessive: Yahudim's (Jews') stays put",
+        "the Yahudim's (Jews') customs were strict",
+        "the Yahudim's (Jews') customs were strict",
+    ),
+    (
+        "idempotent possessive: Yahusha's (Jesus') stays put",
+        "Yahusha's (Jesus') disciples followed him",
+        "Yahusha's (Jesus') disciples followed him",
+    ),
+
+    # Negative cases — preserved phrases must not be touched by the new
+    # possessive rules.
+    (
+        "preserved: 'the Lord's Supper' still preserved when followed by Supper",
+        "what Christianity called the Lord's Supper",
+        "what Christianity called the Lord's Supper",
+    ),
+    (
+        "preserved: secular 'my Lord' (no possessive '') still preserved",
+        "And he said unto his father, My Lord, shew me the way.",
+        "And he said unto his father, My Lord, shew me the way.",
+    ),
+    (
+        "no false trigger: 'gods' (lowercase, false gods) stays unchanged",
+        "they served the gods' altars",
+        "they served the gods' altars",
     ),
 ]
 

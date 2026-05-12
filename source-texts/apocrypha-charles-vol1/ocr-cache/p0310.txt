@@ -1,0 +1,70 @@
+# CHARLES_VOL1_OCR_V2_FLAT
+SIRACH
+
+The question as to whether the Old Latin version was made from a MS. representing the
+primary or secondary Greek text is one of extreme complexity; at first sight one would feel
+impelled to postulate the secondary Greek text as the basis of the Latin version, but the fact that
+many of the additions belonging to the secondary Greek text are preserved in the Syro-Hexaplar
+but not in the Old Latin goes to show that the latter cannot have been made directly from the
+secondary Greek text. And yet, as Smend has shown, the copy from which the Old Latin was
+made was more influenced by the secondary Greek text than any other known Greek MS., though
+that copy did not in itself represent the secondary Greek text; for, as Smend says, ‘trotz aller
+sckundiren Elemente, die die Vorlage enthielt, und trotz aller Bearbeitung, von der der urspriing-
+liche Text des Lateiners betroffen sein mag,— durch Massenbeobachtung lasst sich nachweisen,
+dass die Vorlage des Lateiners im Wesentlichen der griechische Vulgartext war, den der Latciner
+nicht nur in alten guten Lesarten, die freilich auch aus Gr. II’ (i.e. the secondary Greek text)
+“stammen kinnten, sondern auch in héchst sekundiarer Entartung vor sich hatte’ (of. czt., p. cxxiv).
+The proof of this is minutely worked out by him. The conclusion which Smend draws from this
+complicated state of affairs is that the foundation of the text from which the Old Latin Version
+was made was the primary Greek one, but that in that text was incorporated a later recension of
+the secondary Greek text, the offspring, perhaps, of a Hebrew original.'| And it must be confessed
+that only on this hypothesis can all the phenomena of the Old Latin version be explained.
+
+iti, The Syro-Hexaplar.
+
+This is the Syriac version made by Paul of Tella from the Greek (c. A.D. 616). ‘If we retain
+the designation Syro-Hexaplar,’ says Nestle, ‘we must bear in mind that Sirach had no place in
+Origen’s Hexapla; but in one particular respect this: Syriac version reminds us of the Hexapla; one
+of the critical marks of Origen, the asteriscus, appears also in Sirach, at least in its first part up to
+chap. xiii’? Hart, on the other hand, remarks: ‘ Origen valued the Book of Jesus Ben-Sira, and
+its text required a settlement. It seems reasonable to accept the evidence—direct and indirect—as
+it stands, and to conclude that he attempted to purge the current Greek version of its accretions,
+and that his disciples removed them bodily, and sometimes parts of the true text with them’
+(op. cit., p. 359). It is true we are nowhere told that Origen incorporated the books of the
+Apocrypha in his Hexapla, but the way in which he quotes from them, speaking of them as
+‘Holy Scripture’ (see below, § 8), would naturally lead to the supposition that he did so incorporate
+them. There is also the fact that in the Syro-Hexaplar the Book of Baruch undergoes much the
+same treatment with regard to the Hexaplaric signs as the canonical books. As Smend says :
+‘The excellence of Syro-Hexaplaric Sirach text would not be unworthy of Origen.’ In general
+the text of this version follows very closely a MS. with which Cod. 253 was intimately related, but
+the translator also utilized the Peshitta when for one reason or another he found it convenient
+to do so. The translation is in parts very free. There are a number of marginal notes which
+were presumably taken from the Greek MS. which the translator had before him; these not
+infrequently present the better reading.
+
+iv. The Sahidic Versioi.
+
+The MS. containing this version, which is based on a Greek text closely related to the Greek
+uncials, has suffered a good deal of mutilation; the Prologue is almost entirely wanting through
+this cause ; in addition to this a good many s¢ichot are omitted. Other Coptic versions of more
+or less value are the Bohairic and Akmimic; only fragmentary remnants of these are extant. For
+the published texts of them see Smend, op. cit., p. CXXx f.
+
+v. The Ethiopic Version.
+; This version is rendered from the Greek, of which it is often a literal translation, but in his
+desire to make the meaning of the original before him clear the translator often interprets, i.e. he
+
+gives a paraphrastic rendering. Smend (of. cz¢., p. cxxxii) gives as an example of this xxiv. 21, whére
+for the Greek:
+
+of é€oOlovrés pe Ert mEtvdoovow, Kal of mivovtés pe Ere Supyoovow,
+
+* Cp. the words of Herkenne (De Veteris Latinae Ecclesiastici capitibus i-xliii [1899]): ‘Nititur Vetus Latina
+textu vulgari Graeco ad textum Hebraicum alius recensionis Graece castigato’; quoted by Nestle in Hastings’s DB,
+iv. 545.
+
+* In Hastings’s DZ, iv. 544. There are altogether forty-five asterisks, about twenty of which are placed against
+words and sentences belonging to the secondary Greek text.
+
+290
+

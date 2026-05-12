@@ -82,7 +82,7 @@ Confirmed via Yoshi's screenshots of cepher.net's Ha'avoth publication (2026-05-
 | Book (cepher Hebrew name) | English title | Public-domain base |
 |---|---|---|
 | YARAH H'ASGAR SHENIYM | The Didache | J.B. Lightfoot *Apostolic Fathers* 1885 — public domain |
-| BESORAH TOLDAH MIRYAM | Gospel of Mary | M.R. James 1924 — public domain |
+| ~~BESORAH TOLDAH MIRYAM~~ | ~~Gospel of Mary~~ | **DROPPED 2026-05-12 (session 32).** Cepher's attribution to M.R. James 1924 is a cataloguing error; the Berlin Codex Gnostic text is not in James 1924. Voice-skill pre-screen surfaced an explicit anti-Torah teaching ("do not give a law like the lawgiver") and a salvation-by-gnosis architecture (same family as Gospel of Thomas). Yoshi cut from manifest. |
 | BESORAH YA'AQOV | Gospel of James (Protoevangelium) | M.R. James 1924 — public domain |
 | BESORAH NIQODYMON | Gospel of Nicodemus (Acts of Pilate) | M.R. James 1924 — public domain |
 | BESORAH KEPHA | Gospel of Peter | M.R. James 1924 — public domain |
@@ -230,3 +230,4 @@ Sources actually pulled, dated, with version/SHA identifier. (To be populated as
 | 2026-05-09 | Apocrypha source (KJV 1611 modernized, 14 .txt files) | `~/Desktop/Claude the Apocrypha/source/01-1_Esdras.txt` through `14-2_Maccabees.txt` | located on disk | not duplicated; referenced in place |
 | 2026-05-09 | Apocrypha modernization script (existing reference) | `~/Desktop/Claude the Apocrypha/working/modernize.py` | 21,857 bytes, ~600 lines of regex rules | `restoration-pipeline/_reference_modernize_from_apocrypha.py` |
 | 2026-05-09 | Apocrypha compile-to-docx script (existing reference) | `~/Desktop/Claude the Apocrypha/working/compile.py` | 17,724 bytes | `restoration-pipeline/_reference_compile_from_apocrypha.py` |
+| 2026-05-12 | Ascension of Isaiah (Charles 1900, full composite ch 1–11) | https://www.earlychristianwritings.com/text/ascension.html | session 32 fetch | `ascension-isaiah/_charles1900_raw.md` → `ascension-isaiah/ascension-isaiah.txt` (45,932 bytes) → `ascension-isaiah/ascension-isaiah-restored.txt` (after `restore.py`) → `parsed/ascension-isaiah.json` (1 book, 11 chapters, 296 verses). Replaces the previous Charles vol 2 martyrdom-isaiah entry. |

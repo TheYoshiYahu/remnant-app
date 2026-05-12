@@ -1,0 +1,68 @@
+# CHARLES_VOL1_OCR_V2_FLAT
+INTRODUCTION
+
+apparently represent what the translator believed to be the general meaning of the original, which
+he did not understand in all its details ; in yet other cases these paraphrases were evidently due to the
+desire to give a Christian sense to a passage. But perhaps the most serious blemish in this version
+is the large number of omissions ; Smend says that these amount to 370 stéchoz, or one-ninth of the
+whole book. In many cases it is evident that the Syriac translator had what seemed to him good
+reasons for omitting certain passages; thus, as a Christian he felt justified in omitting such words
+as these:
+Thanksgiving perisheth from the dead as from one that is not,
+(But) he that liveth and is in health praiseth the Lord (xvii. 28).
+
+It was probably owing to an anti-Jewish tendency that he omitted xxxvii. 25:
+
+The life of a man (numbers) days but few,
+But the life of Jeshurun days innumerable.
+
+A similar reason would account for the omission of xxxviii. 11, xlv. 8-14, parts of 1, 18-21, and
+the litany after li. 12, though this last is also omitted in the Greek version. Quite comprehensible
+are the omissions of xxxiii. 26 (@ xxx. 35) and xxxvi. 21, 23 (& 26, 28); but why such passages,
+e.g., as xli. 14—xlii. 2, and most of xliii. 11-33 should have been passed over it is impossible to say,
+excepting on the supposition that they are difficult ones to translate, and the Syriac translator did
+not feel inclined to undertake the task.
+
+It will thus be seen that while the Syriac version has a distinct value of its own and can
+certainly not be neglected, it must nevertheless be used with great caution ; indeed, the student will
+be wise never to utilize it without at the same time referring tothe Greek. It should be added that
+in this version the right order of the chapters is preserved.
+
+ii. The Old Latin Version.
+
+This is the oldest ' and most important of the daughter-versions of the Greek. Like the Syriac
+version, while in some respects it is valuable for correcting the Greek, in other respects it presents
+grave drawbacks. As we shall see later on (§ 8), Jerome left the Latin text of Sirach as he found
+it—a matter for congratulation, since as the version now stands it contains many really ancient
+elements which would probably have been lost altogether if Jerome had undertaken a translation of
+his own. That it contains, as we have already seen (p. 281), the chapters in the right order is also
+a fact of importance. But the text of the Old Latin version has come down to us in a deplorable
+condition, added to which it has the further disadvantage of having been made from a Greek text
+which was in a worse condition than that represented by any extant Greek MS. Moreover, the
+Old Latin text is full of scribal errors, and many arbitrary alterations have been introduced ;
+quotations from this version in the writings of the Latin Fathers are of little use for emending its
+text. Emendation is made the more difficult in that the original translation was apparently
+subjected to constant correction on the basis of different Greek texts; one example out of a great
+many may be given: in xiii. 8 the Greek text runs:
+
+TpOTEXE gr) ATromAaVNOHs (V 106 248 253 Syro-Hex add 17) d:avota cov),
+Kal pi TavretvwO7s ev edppootvy (248, &c. add xapdias) cov.
+
+For this the Latin has:
+
+Attende ne seductus
+In stultitiam humilieris.
+Noli esse humilis in sapientia tua,
+Ne humiliatus tn stultitiam seducaris (= vv. 10, 11 in Latin).
+
+In cases like this the question arises as to whether the ,additions have been inserted from other
+Latin texts, or whether they are doublets due to the incorporation of marginal notes into the text ;
+in other words, do they represent different Greek texts from which Latin translations were made,
+or are they merely Latin variations of one and the same Greek text? It is by no means always
+possible to decide which, a fact which materially increases one’s difficulties when utilizing the
+Latin version.
+
+1 Of its date nothing further can be said, but the earliest known citations are found in Cyprian.
+
+289
+

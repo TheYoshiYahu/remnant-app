@@ -1,0 +1,72 @@
+# CHARLES_VOL1_OCR_V2_FLAT
+INTRODUCTION
+
+former is no doubt somewhat out of proportion, and the author dwells at rather unnecessary length
+on the military details. In spite, however, of these defects of composition, the literary excellence of
+the work is universally recognized even through the uncomely disguise of the Greck translation. It
+was originally written in Hebrew (now lost) for Jewish readers, with the object of encouraging and
+edifying the people in a time of trial or persecution. In order to carry conviction the more, it aims
+at the appearance of being historical, in its use of well-known names and of precise details, but this
+historical character is only apparent. The author is concerned with theology rather than with history,
+of which perhaps he had a not very exact knowledge, although he adopted this form as the most
+suitable for his purpose.. He seems to have had in mind the time of Artaxerxes Ochus, with whose
+campaign in Syria many of the incidents agree, but it would be unsafe to assume that he is consciously
+depicting an episode in that campaign. The name and date of the author are alike unknown. He
+must have written at a time of oppression, such as the Jewish race often suffered, and various indica-
+tions point to the second century B.C. as the most probable date. It is, however, possible that the
+author adopted an existing story or popular tradition, purposely confusing his historical allusions in
+order to disguise it.
+
+$2. TITLE OF THE Book.
+
+The title of the book in Greek is simply “Iovdei@ (or “lovd7, or “lovdié). In Hebrew it would
+
+have been nim nb, like anos nbio and piayoow nbyo, or nen AyD, derived from the name of the
+principal character. The name, of course, simply means ‘ Jewess’, and hence Grotius, explaining
+the story allegorically, makes it represent the Jewish people. But apart from the fact that this
+method of interpretation is forced and unconvincing, there is no need to suppose that the name
+suggested this meaning. It is used personally in Gen. xxvi. 34 as belonging to the Hittite wife of
+Esau, where at any rate it cannot mean ‘ Jewess’.
+
+$3. MSS.
+
+The Hebrew original (see § 5) being lost, the earliest form'in which we have the book is that of
+the Greek translation, the only primary version existing. Of this there are three recensions: (1) the
+usual and no doubt the most original form, represented by the MSS. x, A and B (Swete’s text) ;
+(2) that contained in codd. 19, 108; (3) that of cod. 58, with which the Old Latin version (VL) and
+the Syriac (Syr) agree in a remarkable manner. All three recensions, however, represent the same
+version and go back to the same original. Their differences are due to corrections made not on
+a fresh comparison with the Hebrew, but subjectively by editors of the version, and though consider-
+able, they concern the form rather than the matter. Such ‘corrections’ are most evident in the
+second and third classes of MSS., and vary even within the same class.
+
+In the notes here added to the English (R.V.) variants are only mentioned where they materially
+affect the sense.
+
+$4. THE ANCIENT VERSIONS.
+
+The Greek version, at least as contained in & A B, is as a rule easily intelligible and probably
+a correct rendering of the original, but it is very hebraistic.. From it were made the Syriac and the
+Old Latin, both of them fairly close and agreeing in general with cod. 58, as will be seen from
+the notes. VL is rough, often merely latinized hebraistic Greek, and sometimes misunderstands the
+Greek which it translates. The MSS., of which Sabatier used five for his text, have been much
+corrected, perhaps from different Greek MSS., so that they vary considerably in minor details,
+though all derived from one text.
+
+The Syriac version was first printed in Walton’s Polyglot. It was derived from two late MSS.,
+now in the Bodleian Library, of which one, dated 1614, belonged to Pococke (MS. Poc. 391), and
+the other was copied for Ussher in 1627 (MS. Bodl. or. 141). With these a Cambridge MS. was
+collated and the variants are given (by Thorndyke) in vol. vi of the Po/yglot. The version has been
+edited by Lagarde, in his Libri V. T. apocryphi Syriace (Lipsiae, 1861), from a tenth-century MS.
+in the British Museum (from the Nitrian collection) with a full apparatus criticus. The Museum
+possesses two other MSS.., of the twelfth and seventeenth century respectively.
+
+A third version, the Vulgate, is of less value for textual purposes. Jerome’s own account of it,
+in his preface, is not altogether clear. He says that he found great variations in the MSS. (‘ multorum
+codicum varietatem vitiosissimam amputavi’) and implies that he endeavoured to produce a consistent
+text by embodying in his work only what he found in the ‘Chaldee’. The questions which naturally
+present themselves are, What were these divergent MSS. and what was the ‘Chaldee’ text? The
+MSS. cannot have been Greek, because the Vulgate differs from that version in important particulars :
+
+243
+

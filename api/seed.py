@@ -106,6 +106,145 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
         "sort_offset": 320,
         "pipeline_version": "phase3-v1",
     },
+    # Josephus — W-3 wire-up landed session 19, 2026-05-11. The historical_
+    # witness witness_category is NEW with this entry (extends the enum at
+    # schema-bump time; the dry-run path doesn't validate against the live
+    # enum since it doesn't talk to the DB). The phase4-v2 pipeline_version
+    # captures the possessive-handling patch added to restore.py session 19
+    # (the patch stamps onto every text the pipeline touches, but Josephus
+    # is the first edition seeded under v2 because the others were last
+    # seeded under v1 in session 13 and aren't re-seeded until W-7 anyway).
+    # Slug, witness_category, and book-count all locked in
+    # _WHISTON_BOUNDARIES.md session 18.
+    "josephus": {
+        "title": "The Works of Flavius Josephus (Whiston 1737) — Restored Names Edition",
+        "public_domain_base": "Whiston 1737",
+        "witness_category": "historical_witness",
+        "tier_required": "extras",
+        "sort_offset": 400,
+        "pipeline_version": "phase4-v2",
+    },
+    # Pseudepigrapha (Charles 1913 vol 2) — W-3 wire-up landed session 23,
+    # 2026-05-11. 15 labeled books (Aristeas, Adam-Eve, Martyrdom Isaiah,
+    # Testaments XII Patriarchs, Sibylline Oracles, Assumption of Moses,
+    # 2 Enoch, 2 Baruch, 3 Baruch, 4 Ezra, Psalms of Solomon, 4 Maccabees,
+    # Pirké Aboth, Ahikar, Zadokite Fragments). Jubilees and 1 Enoch
+    # explicitly HELD per _CHARLES_VOL2_BOUNDARIES.md Decisions §1–§2
+    # (the existing `enoch` and `jubilees` single-book editions stay as-is).
+    # `pseudepigrapha` witness_category already in the schema.sql enum
+    # (line 106) — enoch/jubilees/jasher already use it; no enum extension
+    # needed for this edition. Slug, granularity, edition title, and 15-book
+    # boundary all locked in _CHARLES_VOL2_BOUNDARIES.md Decisions §4–§5.
+    # sort_offset=500 places this edition after Josephus (400) in the
+    # canonical order; pipeline_version=phase4-v2 matches Josephus's stamp
+    # since this edition was restored under the same restore.py-3 pipeline.
+    "pseudepigrapha": {
+        "title": "The Pseudepigrapha (Charles 1913) — Restored Names Edition",
+        "public_domain_base": "Charles 1913 vol 2",
+        "witness_category": "pseudepigrapha",
+        "tier_required": "extras",
+        "sort_offset": 500,
+        "pipeline_version": "phase4-v2",
+    },
+    # Apocrypha (Charles 1913 vol 1) — W-2 wire-up landed session 27,
+    # 2026-05-11. NEW edition `apocrypha-charles-vol1` per the session-25
+    # Yoshi Decision §1 (clean parallel to vol 2's pattern). 15 labeled
+    # books — 1 Esdras, 1/2/3 Maccabees, Tobit, Judith, Sirach, Wisdom of
+    # Solomon, 1 Baruch, Epistle of Jeremy, Prayer of Manasses, Song of
+    # Three (kept combined per session-26 Yoshi decision), Susanna, Bel
+    # and the Dragon, Additions to Esther. All 15 books overlap with the
+    # existing wired `apocrypha` edition (Brenton 1851 + KJV-1611 base)
+    # EXCEPT 3 Maccabees which is net-new to the pipeline. 4 Ezra is NOT
+    # in vol 1 (Charles transferred it to vol 2 per the preface; the
+    # existing apocrypha edition's 2 Esdras already carries the Bensly
+    # inline-restoration from vol 2's Box translation, session 23).
+    # `apocrypha` witness_category already in schema.sql; no enum
+    # extension needed. sort_offset=550 places this edition immediately
+    # after pseudepigrapha (500) in canonical order. pipeline_version=
+    # phase4-v2 matches Pseudepigrapha and Josephus since this edition
+    # was restored under the same restore.py-3 pipeline. Slug,
+    # granularity, edition title, and 15-book boundary all locked in
+    # _CHARLES_VOL1_BOUNDARIES.md Decisions §1–§7 (session 25–27).
+    "apocrypha-charles-vol1": {
+        "title": "The Apocrypha (Charles 1913) — Restored Names Edition",
+        "public_domain_base": "Charles 1913 vol 1",
+        "witness_category": "apocrypha",
+        "tier_required": "extras",
+        "sort_offset": 550,
+        "pipeline_version": "phase4-v2",
+    },
+    # 2026-05-12. NEW edition `mrjames-apocryphal-nt` — session 29 pilot
+    # extraction of Montague Rhodes James, *The Apocryphal New Testament*
+    # (Oxford, Clarendon Press, 1924). Pilot scope: 11 books (Gospels /
+    # Infancy / Passion / Acts / Epistles / Apocalypses sections). Full
+    # 50-80 book extraction queued for session 30 once pilot validates.
+    # witness_category=apocryphal_gospels — aligned Session 35 to the
+    # schema.sql underscore convention; previously declared as
+    # `apocryphal-nt`, which is not an enum value. The closest existing
+    # schema value (`apocryphal_gospels`, line 108 of schema.sql) covers
+    # exactly this material (Mary, James / Protoevangelium, Nicodemus,
+    # Peter), so no enum extension is needed. sort_offset=600 places this
+    # edition after the apocrypha-charles-vol1 (550). pipeline_version=
+    # phase4-v2 matches the other restore.py-3-driven editions.
+    "mrjames-apocryphal-nt": {
+        "title": "M.R. James, The Apocryphal New Testament (1924) — Restored Names Edition (Pilot)",
+        "public_domain_base": "M.R. James 1924",
+        "witness_category": "apocryphal_gospels",
+        "tier_required": "extras",
+        "sort_offset": 600,
+        "pipeline_version": "phase4-v2",
+    },
+    # 2026-05-12. NEW edition `lightfoot-apostolic-fathers` — session 30
+    # extraction of J.B. Lightfoot & J.R. Harmer, *The Apostolic Fathers*
+    # (London: Macmillan, 1891 single-volume revision). Source: archive.org
+    # apostolicfathers00ligh full-text HTML (1.46 MB, OCR clean enough for
+    # body-text anchoring). 17 books — 15 traditional Apostolic Fathers
+    # entries + Fragments of Papias + Reliques of the Elders in Irenaeus.
+    # witness_category=apostolic_fathers — aligned Session 35 to the
+    # schema.sql underscore convention; previously declared as
+    # `apostolic-fathers`, which is not an enum value. The schema's
+    # `apostolic_fathers` (line 107) was added at schema-creation time
+    # exactly for this material (Didache, Ignatius, Clement, Polycarp,
+    # Hermas, Barnabas) — no enum extension needed. sort_offset=650
+    # places this edition after mrjames-apocryphal-nt (600).
+    # pipeline_version=phase4-v2 matches the other restore.py-3-driven
+    # editions.
+    "lightfoot-apostolic-fathers": {
+        "title": "J.B. Lightfoot & J.R. Harmer, The Apostolic Fathers (1891) — Restored Names Edition",
+        "public_domain_base": "Lightfoot+Harmer 1891",
+        "witness_category": "apostolic_fathers",
+        "tier_required": "extras",
+        "sort_offset": 650,
+        "pipeline_version": "phase4-v2",
+    },
+    # Ascension of Isaiah (Charles 1900) — W-2 wire-up landed session 34,
+    # 2026-05-12. NEW edition `ascension-isaiah` per session-32 sourcing:
+    # the Vision of Isaiah's seventh-heaven hierarchy in ch 9–10 (Great
+    # Glory / Lord / submission / right hand) is a real external structural
+    # witness to the Formless/Formed teaching from the voice skill —
+    # pre-Nicene, late-1st / early-2nd CE, before the Constantine-era
+    # Trinity construct hardened. Yoshi's words at session 32 sourcing:
+    # *"your quote of isaih is the first witness ive heard of that aligns
+    # with what the spirit revealed to me about the formless father and the
+    # formed of the formless... im going to read it next."* Charles 1900
+    # full English fetched from earlychristianwritings.com; restore.py
+    # applied; parsed as 1 book / 11 chapters / 296 verses. Retired the
+    # martyrdom-isaiah fragment that had been in pseudepigrapha-charles-vol2
+    # (chapters 1–5 only) — the unified Charles 1900 source now carries the
+    # full composite. `pseudepigrapha` witness_category already in
+    # schema.sql; no enum extension needed. sort_offset=330 places this
+    # edition with the individual-pseudepigrapha cluster (enoch=300,
+    # jubilees=310, jasher=320), before the Charles-vol-2 compendium (500).
+    # pipeline_version=phase4-v2 matches the other restore.py-driven
+    # editions seeded under v2.
+    "ascension-isaiah": {
+        "title": "The Ascension of Isaiah (Charles 1900) — Restored Names Edition",
+        "public_domain_base": "Charles 1900",
+        "witness_category": "pseudepigrapha",
+        "tier_required": "extras",
+        "sort_offset": 330,
+        "pipeline_version": "phase4-v2",
+    },
 }
 
 # Map the JSON's edition_id → seed profile key. Canon listed first so it
@@ -116,6 +255,12 @@ JSON_FILE_FOR_EDITION = {
     "enoch": "enoch.json",
     "jubilees": "jubilees.json",
     "jasher": "jasher.json",
+    "josephus": "josephus.json",
+    "pseudepigrapha": "pseudepigrapha-charles-vol2.json",
+    "apocrypha-charles-vol1": "apocrypha-charles-vol1.json",
+    "mrjames-apocryphal-nt": "mrjames-apocryphal-nt.json",
+    "lightfoot-apostolic-fathers": "lightfoot-apostolic-fathers.json",
+    "ascension-isaiah": "ascension-isaiah.json",
 }
 
 

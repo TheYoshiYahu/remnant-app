@@ -1,0 +1,78 @@
+# CHARLES_VOL1_OCR_V2_FLAT
+INTRODUCTION
+
+v.g as the words of Jeremiah. Somewhat later (A.D. 176-178) Athenagoras, in his Apologza, addressed
+to the emperor, M. Aurelius, cites (§ 69) Bar. ili. 35 as the words of an inspired prophet in close
+connexion with passages from Isaiah.
+
+§ 9. THE VERSIONS.
+
+I: Among the versions, the Greek was the first to appear, and secured thereby a wider currency
+for the entire work among the scattered Jewish population, and subsequently among the Christian
+communities of the Roman Empire.
+
+Opinions are divided on the question whether a single hand or two hands have worked at the
+Greek translation. Both Fritzsche and Schiirer have argued for a single hand, as earlier scholars
+(e.g. De Wette and Hitzig) have done. Fritzsche (p. 172) acknowledges that differences in style
+are to be found between ch. i. 1-iii. 8 and the remainder of the work, but the language in both
+portions is in the main the same, while other scholars account for the difference by difference of
+subject-matter. Kneucker, on the other hand, contends strongly that two hands have worked at the
+Greek translation, and submits the entire book to a careful scrutiny (pp. 76-82). It should be noticed,
+however, that in his comparisons a very large number of the divergences in style are found in
+ch. iv. 5-v. 9, which we have already shown good reason for regarding as originally composed in
+Greek. This of itself would involve a considerable difference in style from the earlier portion trans-
+lated from an original Hebrew text. Thus Kneucker observes the frequent employment of the Greek
+particle ydp in iv. 7, 9, 10, 11, 15, 18, 19, 22, 23, 24, 27, 28, 29, 33, 35, V- 3, 4,6, 7, 9 (in nearly every
+case reproduced in Syr. by sax), also a more independent and free arrangement of words, iv. 9, 24,
+25, Vv. 1,2. Inch. iv. 10, 11 tiv alxpadwoiay Téy viGy pov Kal TOv Ovyatepwy without the repetition of
+tiv aixy. before réy dvy. Also the genit. before the governing noun, iv. 25, 37, v. 5, 7, and the
+qualifying adj. or adjectival phrase preceding the noun: tijy mapa Tod Oeod tpov owrnpiay (iv. 24),
+Thy Tapa Tod Beod éneAOodcay iyuiy dpyyy (iv. 25); cf. iv. 29, 31, 33, 36, V- 3-
+
+Another point to which the same writer calls attention is the close connexion between LXX on
+Jeremiah and our own text in those cases where borrowings from Jeremiah have taken place; e.g.
+Bar. i. 9, cf. Jer.xxiv. 1; Bar.ii. 3, cf. Jer. xix. 9; Bar. ii. 4, cf. Jer. xlii. 18; Bar. ii. 11, cf Jer. xxxil. 21;
+Bar. ii. 13, cf. Jer. xlii. 2; Bar. ii. 21, 22, cf. Jer. xxxiv. 10,9; Bar. ii. 23, cf. Jer. xxv. 10,11, &c. These
+close resemblances are explained by some (Dillmann, Fritzsche, and Ewald) as due to the fact that
+the same Greek translator has produced the LXX of Jeremiah and the Greek rendering of Baruch.
+This theory, however, does not explain the differences as well as the coincidences of language. A
+more probable theory is that of Havernick, Schiirer, and (in later years) of Hitzig that the Greek
+translator of Baruch was acquainted with and made use of the LXX Jeremiah. This view will be
+found to be in some respects parallel to that which we shall have to adopt in reference to the Syriac
+version. The Greek translator of the document A was evidently familiar with Theodotion’s version
+of Daniel (G9) or its groundwork, as we have indicated frequently in the notes."
+
+The MSS. of the LXX from which our text is obtained are, in the order of importance:
+
+1, The Codex Vaticanus (B), written in uncials of the fourth century.
+
+2. Cod. Alexandrinus (A), written in uncials of the fifth century, now in the British Museum.
+
+3. Cod. Marchalianus, written in uncials not later, according to Ceriani, than the sixth century,
+designated Q.
+
+ON ae Venetus (numbered 23), ‘written in sloping uncials of the eighth and ninth centuries’
+
+Swete).
+: In addition to these we have twenty-two cursive MSS. The famous Szxaztic codex (x) and the
+Codex Ephrém Syri (C) do not contain the Book of Baruch.
+
+II. A Syriac version which ranks next in importance to the Greek must have been made before
+the time of Ephrém Syrus (about the middle of the fourth century), who specially cites the Book of
+Baruch. This version is identified by Ewald, Ceriani, and Schiirer with the Peshitta, while Kneucker
+disputes this view, holding that the Pesh. did not contain the books of the Apocrypha. We have
+a Syriac version in two forms:
+
+(1) That which is contained in Walton’s Polyglott, vol. iv, based on the Pocock Codex as well as
+the Cod. Usserianus. Upon this version we have chiefly relied in the accompanying commentary.
+This version has been amended by Paul de Lagarde in his work Libri Veterts Testamenti Apocryphi
+Syriace, &c. (1861).
+
+(2) We have also the Syro-Hexaplar translation of Bishop Paul of Tela, executed at the
+instigation of the Monophysite patriarch Athanasius of Antioch in the year A. D. 617 at Alexandria.
+
+1 Theodotion is mentioned in the Syro-Hexaplar as textual authority for the Greek (cited in margin of Ceriani’s
+edition with initial 1), Cp. Excycl. Bib/., ‘Text and Versions,’ § 50.
+
+577
+

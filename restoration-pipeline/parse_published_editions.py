@@ -91,6 +91,8 @@ os.makedirs(OUT_DIR, exist_ok=True)
 class Verse:
     number: int
     text: str
+    source_type: str = "restored-names-kjv"
+    footnote: str = ""
 
 
 @dataclass

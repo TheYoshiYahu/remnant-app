@@ -1,0 +1,83 @@
+# CHARLES_VOL1_OCR_V2_FLAT
+INTRODUCTION
+
+i. CODEX SINAITICUS (&). This MS. presents the longest and clearest text, with only two
+lacunae of great importance! and eight slight and practically unimportant ones,? a comparatively
+trustworthy orthography of proper names,’ only one or two additions to the original text,t and only
+a few—mostly natural—cases of internal textual corruption.’ All the evidence, as will be seen,
+points to the comparative originality of the recension of Tobit contained in x, which stands
+in a few cases alone, but is supported especially by the Old Latin, very frequently by the Aramaic,
+often by the Miinster Hebrew, and—by no means rarely—by the recension of the Greek which we
+shall term R°. Some of those scholars, who regard & as only secondary, have described it as che
+B ¢ext, or simply B, a nomenclature which, apart from prejudging the problem, at least introduces
+considerable confusion since B is universally recognized as the symbol for Codex Vaticanus,
+which, according to these scholars, along with Cod. Alex., represents the A text. In the
+following pages, therefore, we have avoided this begging of the question and much confusion by
+referring to the text of & and its auxiliaries not as ¢#e A ¢ext (as we believe it to be) but as RS, i.e.
+the Sinaitic recension, the nearest approach which can be made to the original text whether the latter
+jirst appeared tn Greek or in a Semitic. language. It is this text which -has been translated and
+commented upon in the following pages.‘ The corrector denoted by 8“ began to emend the first
+scribe’s text of x, but seems to have recognized that it was essentially divergent from the later one
+better known in his time and abandoned the task.
+
+ii. CODEX VATICANUS (B) AND CODEX ALEXANDRINUS (A) give the second type of text. It
+is accepted in some quarters as more original than x. In the following pages it is referred to as RY,
+i, e. the recension best preserved in Cod. Vat. A number of minuscules*® belong to this class, but
+their practical unimportance, except in one or two isolated cases,® is admitted by all scholars. The
+differences between Codd. A and B are comparatively few,!° and the Syriac, when it follows RY,
+follows it practically unerringly and continuously, as do some other versions mentioned below.'! On
+the other hand, the differences between RY as a whole and RS in its original form are extraordi-
+narily numerous and important in spite of the number of points in which they agree. When R®
+faithfully records an incident in detail, RY summarizes ; when RS retains the poetic and aesthetic
+beauty of the original, RY ruthlessly substitutes a brief prosaic narrative. That the text of RY
+was finally settled in the reign of Antoninus Pius, not in Christian but in Jewish circles of the Diaspora
+in touch with the official] heads of the Jewish Church in Palestine, is more than sufficiently proved by
+its general presuppositions and ideas, historical background, and its religious and theological develop-
+ments in comparison with RS‘. RY, moreover, in spite of its own internal solidity, presents a much
+corrupted text with the proper names badly written, its grammar that of the vernacular and its style
+
+1 viz. iv. 6-19; xiii. 6°10, They are peculiar to this MS., not derived from its archetype, not destructive of its
+reputation for general reliability, and easily explicable; see notes ad doc.
+
+2 viz. i. 2, 4, 5; ii. 2,8; ix. 5; xi. 12,13; xiii. 11, chiefly single words, at times only the copula and a conjunction.
+
+$ See notes to i. I, 2, 153 v.63 vi. 133 xi. 183 xiv. 10, 15.
+
+* xi. 15, due simply to dittography ; xii. 9 (merely a gloss).
+
+5 ii. 1 (case ending), 12; iv. 19 (owing to the omission in verses 6-19); v. 6 (already mentioned in previous
+note) ; vi. 13 (12)3 viii. 3, 155 xi. I (2), 43 xili. 16; exclusive of xiv. 4 where the textual corruption N shares with all
+extant MSS. and versions is outweighed by its unique preservation of the original Vahum.
+
+® Miller’s © for RS and 3% for RY avoid this difficulty, but lay too much stress on the comparative length of the
+two recensions to the exclusion of more important and characteristic differences.
+
+7 The text of & is printed by Swete below that of B in vol. ii of Ze Old Testament in Greek with the variations
+of A noted at the bottom of each page, an arrangement which, in addition to the premium it allows B, has led, as
+Nestle, Septuagintastudien, iii, 1899, has shown, to some slight confusion in the critical apparatus. This text has,
+however, been used for the present translation. Swete’s verse-numbering of & has also been adopted, that of the
+Revised English Version appearing in brackets wherever it differs from Swete’s. In Fritzsche’s Aursgefasstes
+exegetisches Handbuch zu den Apokryphen, 1853, the readings of the Alexandrine and Sinaitic are at times inter-
+changed! In La Sainte Bible Polyglotte, Ancien Testament, vol. iii, 1902, edited by F. Vigouroux, B appears on the
+extreme left, next to it 8, on the right-hand page the Vulgate and a French translation. This work is therefore more
+convenient to consult, but is not ideal, since its critical apparatus notices only a #zzmimum of variants of &, B, A,
+P? (= Holmes 243), P® (a hitherto uncollated MS. identical, it is claimed, with Holmes 106), and makes no com-
+parative collation of any of the other MSS. and versions. As long ago as 1870 Fr. H. Reusch published an emended
+text of & with a carefully constructed synopsis of the various readings of the Old Latin MSS. in his Lzded/us Tobit
+e codice Sinattico editus et recensitus—a work, to which the present writer is much indebted, though it presents no
+synopsis at all of the various recensions of RY and R© nor even of the more important translations other than the Old
+Latin.
+
+8 Their variations are noted by Fritzsche in most cases, but only a few instances, e.g. in ch. vi, appear in our
+critical synopsis.
+
+° e.g. xiv. 153 cf. note ad loc.
+
+1 Cod. A is not, however, quite unimportant since it frequently inclines to RS, thus showing the antiquity of this
+latter redaction and its refusal to be ousted entirely by RY. For the relation of these two MSS. to each other, see
+Schulte, Biblische Zeitschr., 1908, pp. 262-5.
+
+N The solidity of RY is naturally no guarantee of its antiquity.
+
+175
+

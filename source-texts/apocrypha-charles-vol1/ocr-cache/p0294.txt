@@ -1,0 +1,74 @@
+# CHARLES_VOL1_OCR_V2_FLAT
+SIRACH
+
+Here (1) (6) (7) substantially = @: and (2) (3) and (4) = & (see crit. note on xxxi. 23 in the fol-
+lowing commentary): (5) is a doublet of (4) and (7). It is noticeable that ® does not, as it stands,
+yield an exactly corresponding text either to & or 8, while it provides one doublet (5) and (7) which
+corresponds to neither. The simplest explanation is that # embodies variants from different recen-
+sions of the original text that lie behind G and 4.1. Not improbably ® itself has been glossed and
+emended by scribes. The variant in (7) above (‘its freshness is abated’) may, perhaps, be explained
+in this way (from Deut. xxxiv. 7). As another example of a gloss in Q to which nothing corresponds
+in & or $8 xxxi, 2 may be cited. Here # adds the following two lines:
+
+ADAM Wan pox yr
+Yan 38 TD yn,
+
+Reproach putteth to flight the faithful friend,
+But he that hideth a secret loveth (a friend) as his own soul.
+
+As this couplet does not harmonize with the context it is probably a gloss (? from the margin of
+a MS.). In general #” has many scribal errors and corruptions in its text, which is also marked by
+the occasional presence of strong Syriasms? and late Rabbinical expressions.®
+
+In the case of #* the number of marginal variants is comparatively small. There are a certain
+number of doublets which exhibit features on the whole similar to those of #” illustrated above. But
+%) diverges more from the text of & than is the case with #”—it very rarely sides with &@ against 8.
+It has certain orthographical peculiarities of its own, and is marked by a number of errors due to
+the carelessness of the copyist.4 In the case of 9”, which covers xxxvi. 29-xxxvili. 1, and provides
+(with #") a duplicate text for this section of the beok, we have, on the whole, a text superior to
+that of #", though there are numerous cases of corruption. In two instances it yields a text which
+agrees with % against the common text of G, viz. in xxxvii. 26°, where it reads 1)32 (= dd£av 248
+and #) against aforw of the ordinary text of @; and in xxxvii. 286 where, against 2” which = G,
+it rage: snan qr Sp iar Sad why
+which = & (et nou omni animae omne genus placet). In this MS. late Hebrew expressions are of
+frequent occurrence. In the three fragments of selections which make up # a type of text is preserved
+which is, on the whole, remarkably free from tHe corruptions and blemishes which disfigure the other
+MSS. It agrees sometimes with &, sometimes with S, and occasionally with neither (e.g. v. 11). In
+those parts of the book where it coincides with ®* it often agrees with the text of & against 3.
+
+The relation of the Hebrew fragments to the citations of Sirach that occur in the Talmudic.
+and Rabbinic literature ° is not easy to determine owing to the uncertain state of the Talmudic and
+Rabbinic texts, and also to the loose way in which such citations are often made. It would appear
+that in some cases the two Talmuds had different texts of Ben-Sira before them. Thus iii. 21 is
+cited in one form in T.J. Hag. 77 ¢ (agreeing with #* in first and last word), and in another (doublet)
+form in T.B. Hag. 134 (also in Afidr. rabba Gen. viii). In the latter the fitst couplet agrees with $
+and & (and partly with ®*); the second diverges considerably from all the other forms of the text
+(though agreeing in one word with ®*, and in another with T.J. Hag.). The most natural inference
+to draw from these phenomena is that two divergent types of text of Sirach were current in the
+fifth century A.D. The citations from Sirach in Sa‘adya (Sefer ha-galuy) are of a different character.
+They agree much more closely with the text of &, give the impression of being more exact citations,
+and are apparently derived from substantially the same text as that represented in the Hebrew
+fragments.
+
+It is important to note, in this connexion, that collections of detached sayings derived from
+Sirach were apparently in existence in the Talmudic period. The only long continuous quotation
+from Ben-Sira given in the Talmud (T.B. Sanhedrin 100 b) is apparently made from such a flori-
+legium. It consists of the following passages in the following order: xxvi. 1-4; ix. 8, 9; xi. 29-34,
+and vi. 10. Another such collection is represented in the fragments denoted 3°. Such collections
+
+1 See further the discussion in the next subsection.
+
+7 e.g. YNDD xlii. 5, which apparently = inf, Pael (Syr. #émahdyu) ; WIAD xlii. 12, ‘converse’=Syr. ’estawwed=
+Gutheiy : TD xlii. 12 = perhaps ‘among’ (Syr. dé¢h). :
+
+5 e.g. 12 N¥VYD xxxviii. 17, ‘such as befits him’ (in 8; also in 4 x. 28); 'WIID M93 li. 23.
+
+* Of differences of diction the following is the most notable; i writes }D°) where 2#)® has 10°). See further
+Taylor-Schechter, WBS, pp. 7-12. c
+
+° This verse is wanting in #8.
+_ _° Fora collection of the citations conveniently grouped together see Cowley-Neub., pp. xix-xxx ; also Schechter
+in /QR, iil. 682-706 (with full critical notes).
+
+274
+

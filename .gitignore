@@ -48,6 +48,9 @@ logs/
 restoration-pipeline/validation-reports/*.txt
 restoration-pipeline/validation-reports/*.json
 
+# Pre-patch backup snapshots of parsed JSONs (kept locally for safety, not version control)
+source-texts/parsed/*.pre-*
+
 # Large unparsed source texts — parsed/ JSONs are committed; raw sources can be re-fetched
 # (Uncomment if source-texts/ grows past comfortable repo size)
 # source-texts/extras/

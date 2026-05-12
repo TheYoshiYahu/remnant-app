@@ -1,0 +1,70 @@
+INTRODUCTION
+
+furnishes for a comparative study of the traditions encircling the names and events of the period from
+Josiah to the Samaritan schism. Jos. is the earliest witness to £ ; the relationship is unmistakable
+as regards material and even language (Eichhorn, £zzleit. Apokr. [1795], 347 seqq-; Treuenfels,
+Der Orient [1850-1]; H. Bloch, Quellen d. I'l. Fos. [1879], 69 seqq.). There are several points of
+agreement with @* as against G@" (Thackeray, 7624), and also with G*; Torrey (103) assigns the
+text an intermediate position. Unfortunately, Jos. is often extremely paraphrastic, and is therefore
+no safe guide for restoring the original of £. None the less, it is noteworthy that he is without the
+faults of Z i. 29, 34 seq., he presupposes a text more complete and older than that in vi. 18, viii. 55,
+he uses a slightly different version of iii. (see Biichler, 64, 100), and, while obviously harmonizing in
+some places, elsewhere presents singular divergences or additions which do not appear to be arbitrary.
+In particular, his treatment of the stories of E and N is highly suggestive (s¢e appendix to note on
+ix. 55). Besides utilizing the canonical sources (Jer., Dan., Est.), he has had access (as in Est.)
+to other Jewish traditions (see on vii. 15), and possessed some acquaintance with external history
+(see p. 11, and oni. 25). But although Jos. is not a direct witness to £’s text—and G. Holscher
+has suggested that he made use of Alexander Polyhistor (Quellen d. Fos. [1904], 36, 43 seqq., 51)—
+he testifies to the authority of Z’s history, and it is unnecessary to assume (Swete, Thackeray,
+Bayer, 1.40) that he used it simply because it was written in good Greek.
+
+(¢) Date and place. ‘While Jos. is evidence for the earlier existence of £, it is not certain that
+it then had precisely its present form. As a translation the linguistic features suggest that it belongs
+to the time of the old Greek translation of Daniel, and was perhaps due to the same translator
+(Torrey, 84 seq.). The date of the original is bound up with that of Chron.-E-z.-Neh., and must be
+some time after 333 B.C. The Persian period was past, and its history had become obscure, the
+identity of Darius and Apame (iv. 29) was forgotten, and the points of contact with Dan. and Est.
+(not necessarily in their present form), would suggest the late Greek age. The problem also involves
+the question whether iii. 1-v. 6 is a secondary insertion or part of the original compilation, and this
+naturally affects the discussion of the home of the book (see pp. 29, 32). Although the section seems
+to some scholars to point to the influence of Alexandrian thought and philosophy (Lupton, André,
+Thackeray, Volz), to others it is Palestinian (Zunz), or not necessarily Alexandrian (Torrey). The
+identification of Apame speaks for Egypt or Antioch ; the knowledge of the topography of Jerusalem
+(v. 47, ix. 38) is not that of the compiler or translator but of his source, and therefore cannot be
+claimed to support a Palestinian home. Egypt is suggested by the free irony in iii., iv., the unveiled
+women (iv. 18), the references to navigation (iv. 15, 23), and piracy (v. 27),and clsewhere by the use
+of Coelesyria (see ii. 17). Thackeray (762 @) compares the ‘friends’ of the king (viii. 26; E G
+ovpBovdor) with the ‘ first friends’ who were third in scale of the courtiers at Alexandria, and with
+ay paivytar cou (ii. 21, not in E) the phrase éayv aivyra: in Aristeas and frequently in Egyptian
+papyri. In so far as these data point to Egypt one may recall the interest in history-writing among
+the Hellenists Demetrios, Eupolemos, Artapanos, Alexander Polyhistor and others.
+
+(f) English versions. It may be added that the old Geneva Bible, according to Lupton (6), is
+‘in some respects closer to the Greek than that of 1611’. Various improvements to the A.V. are
+suggested by Ball in the Vartoruim Apocrypha, and even the R.V. is not such an advance as might
+have been anticipated. Note, for example, the archaic ‘ Artaxerxes his letters’ (ii. 30), ‘ cousin’ (iti. 7),
+‘Jewry’ (v. 7), and the gliding over of the obscurities of an imperfect © in viit. 8, and especially in
+the concluding words, ix. 55.
+
+§ 4. PROBLEMS OF LITERARY AND HISTORICAL CRITICISM.
+
+I. The Period.
+
+The problems of Z and its relation to E-N involve that more complete and continuous series
+Chronicles-Ezra-Nehemiah which is united by sequence of contents and the recurrence throughout
+of similar features of language, interest, standpoint, and compilation. The ‘chronicler’s history’!
+of the post-exilic period deals with the fall of Jerusalem (586 B.C.), the return from exile under
+Zerubbabel and Jeshua, the reorganization of the Jewish people, the restoration of the Temple and
+
+1 By ‘chronicler’ is meant the hand which, by writing, compiling, or revising, brought the three consecutive
+books into practically their present form. Owing to the complexity of the compilation the term may not be an
+adequate one, but there seems no reason to doubt that there has been a single editorial process a¢ some stage in the
+literary growth (the objections of Jampel, i. 108, 112, 115 Seqq., and Davies, 16 are unnecessary). In any case,
+historical criticism cannot start from the untrustworthiness of Chronicles, and minimize the extent of the ‘ chronicler °
+in E-N (Davies, 16 seq.), or exaggerate it (Torrey, 145 Seqq., on the E-story), or assume that all other records are
+necessarily relatively superior (so apparently Meyer, Z7/s¢ehung). See below, pp. 17-19.
+
+=
+
+i)
+
