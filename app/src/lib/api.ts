@@ -7,10 +7,43 @@
  *
  * Override at build time with VITE_API_BASE if pointing at staging
  * or a local FastAPI uvicorn instance.
+ *
+ * SSO (Session 36): the bible-app reader picks up a WordPress-issued
+ * JWT from the `rop_jwt` cross-subdomain cookie (set at
+ * Domain=.remnantofpromise.org by the Session-37 WordPress login
+ * handler). When present, it's attached as `Authorization: Bearer`
+ * on every API call. The API also accepts the cookie directly (sent
+ * automatically via `credentials: 'include'`) for callers that don't
+ * read document.cookie themselves. Anonymous callers — no cookie, no
+ * header — see the 66-book free canon.
  */
 
 const API_BASE: string =
   import.meta.env.VITE_API_BASE ?? "https://bible.remnantofpromise.org/v1";
+
+const SSO_COOKIE_NAME = "rop_jwt";
+
+/**
+ * Read the JWT from the `rop_jwt` cookie if present.
+ *
+ * Returns null when the cookie is not set, when document is undefined
+ * (SSR safety), or when the cookie value is empty. The fetch helper
+ * still sends the cookie via credentials: 'include' regardless — this
+ * function is the JS-side path that attaches a Bearer header for
+ * direct-API debug + future mobile-client parity.
+ */
+function readJwtCookie(): string | null {
+  if (typeof document === "undefined") return null;
+  const prefix = `${SSO_COOKIE_NAME}=`;
+  const parts = document.cookie ? document.cookie.split("; ") : [];
+  for (const part of parts) {
+    if (part.startsWith(prefix)) {
+      const value = part.slice(prefix.length);
+      return value ? decodeURIComponent(value) : null;
+    }
+  }
+  return null;
+}
 
 // ----- Response shapes (mirror api/models.py) ----------------------------
 
@@ -80,8 +113,18 @@ export interface HealthResponse {
 // ----- Fetch helper ------------------------------------------------------
 
 async function get<T>(path: string): Promise<T> {
+  const headers: Record<string, string> = { Accept: "application/json" };
+  const token = readJwtCookie();
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
   const res = await fetch(`${API_BASE}${path}`, {
-    headers: { Accept: "application/json" },
+    headers,
+    // Include the rop_jwt cookie on cross-subdomain requests. The API
+    // accepts the cookie directly when no Authorization header is
+    // present; sending both is the belt-and-suspenders default so
+    // SSR/incognito/cookie-block edge cases still resolve cleanly.
+    credentials: "include",
   });
   if (!res.ok) {
     throw new Error(`API ${path} → ${res.status} ${res.statusText}`);

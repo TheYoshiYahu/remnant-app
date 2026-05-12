@@ -1,7 +1,7 @@
 """
 The Remnant of Promise Official Study Bible — FastAPI skeleton.
 
-Phase 4 wheel #2 (FastAPI skeleton). Five route surfaces:
+Phase 4 wheel #2 (FastAPI skeleton). Six route surfaces:
 
     GET /v1/health
     GET /v1/books
@@ -10,13 +10,19 @@ Phase 4 wheel #2 (FastAPI skeleton). Five route surfaces:
     GET /v1/books/{book_slug}/chapters/{chapter_number}
     GET /v1/verses/search?q=...
 
-Auth is NOT wired this session — that's the SSO-with-WordPress wheel,
-later in Phase 4. For now the books endpoint returns the
-free-tier-and-extras superset (everything currently seedable, since the
-canon hasn't been ingested yet). When the SSO wheel lands, the same
-handler will read the user's effective tier off the JWT and apply
-tier_satisfies(...) as the access gate. The shape of the response
-won't change.
+Auth: Phase 4 wheel #6 (Session 36) wires the JWT-aware tier filter on
+the four /v1/books routes. The dependency at ``auth.get_current_user_optional``
+decodes a WordPress-issued JWT from either the ``rop_jwt`` cross-subdomain
+cookie or an ``Authorization: Bearer`` header, surfaces a typed
+``User | None``, and the route handlers use the PG ``tier_satisfies()``
+function to filter the response by the caller's partner tier. Anonymous
+callers resolve to the 'free' tier — 66-book canon only. Single-book
+endpoints return 404 when the caller's tier doesn't satisfy the book's
+``tier_required`` (hides existence rather than 401-revealing).
+
+``/v1/verses/search`` is NOT yet tier-filtered — search hits could surface
+verses from books the caller can't normally read. Tracked as a follow-up;
+not part of the Session 36 wheel scope.
 
 Run: uvicorn main:app --reload
 """
@@ -30,6 +36,7 @@ from typing import List, Optional
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
+from auth import User, get_current_user_optional, user_tier
 from config import settings
 from db import close_pool, get_pool, open_pool
 from models import (
@@ -60,10 +67,10 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Remnant of Promise Official Study Bible — API",
-    version="0.1.0-phase4-skeleton",
+    version="0.2.0-phase4-session36",
     description=(
-        "Read-only Phase 4 skeleton: books, chapters, verses, trigram search. "
-        "Auth, billing, and write surfaces land in subsequent Phase 4 wheels."
+        "Read-only Phase 4 API: books, chapters, verses, trigram search. "
+        "Session 36 wired the JWT-aware tier filter on the /v1/books routes."
     ),
     lifespan=lifespan,
 )
@@ -138,18 +145,21 @@ async def list_books(
             "historical_witness, disputed_witness."
         ),
     ),
+    current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> List[BookSummary]:
     """
     List books visible to the requester.
 
-    Tier filter (Phase 4 placeholder): SSO is not wired this wheel. The
-    response includes free-tier-and-extras-superset content — i.e. every
-    book currently in the schema — until the JWT-aware version of this
-    handler lands in the SSO wheel. The order is canonical_order so the
-    free canon appears first, then the extras manifest in inventory
-    order.
+    Tier filter (Session 36): the response is filtered by the caller's
+    partner tier against each book's ``tier_required``, using the
+    schema's ``tier_satisfies()`` lattice function. Anonymous callers
+    and the 'free' tier see the 66-book canon; 'extras' and above see
+    the full 153-book corpus. The order is canonical_order so the free
+    canon appears first, then the extras manifest in inventory order.
     """
     pool = get_pool()
+    tier = user_tier(current_user)
+
     sql = (
         "SELECT b.id, b.slug, b.title, b.short_title, b.canonical_order, "
         "       b.witness_category::text AS witness_category, "
@@ -157,10 +167,11 @@ async def list_books(
         "       b.abstract, e.slug AS edition_slug "
         "  FROM books b "
         "  JOIN editions e ON e.id = b.edition_id "
+        " WHERE tier_satisfies($1::content_tier, b.tier_required) "
     )
-    params: list = []
+    params: list = [tier]
     if witness_category is not None:
-        sql += " WHERE b.witness_category = $1::witness_category"
+        sql += "   AND b.witness_category = $2::witness_category"
         params.append(witness_category)
     sql += " ORDER BY b.canonical_order ASC, b.id ASC"
 
@@ -170,9 +181,17 @@ async def list_books(
 
 
 @app.get("/v1/books/{book_slug}", response_model=BookDetail)
-async def get_book(book_slug: str) -> BookDetail:
-    """One book — by slug — with a chapter count for the reader UI."""
+async def get_book(
+    book_slug: str,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> BookDetail:
+    """One book — by slug — with a chapter count for the reader UI.
+
+    Returns 404 when the caller's tier doesn't satisfy the book's
+    ``tier_required`` (hides existence rather than 401-revealing).
+    """
     pool = get_pool()
+    tier = user_tier(current_user)
     async with pool.acquire() as conn:
         row = await conn.fetchrow(
             "SELECT b.id, b.slug, b.title, b.short_title, b.canonical_order, "
@@ -182,8 +201,10 @@ async def get_book(book_slug: str) -> BookDetail:
             "       (SELECT count(*)::int FROM chapters c WHERE c.book_id = b.id) AS chapter_count "
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
-            " WHERE b.slug = $1",
+            " WHERE b.slug = $1 "
+            "   AND tier_satisfies($2::content_tier, b.tier_required)",
             book_slug,
+            tier,
         )
     if row is None:
         raise HTTPException(status_code=404, detail=f"Book '{book_slug}' not found.")
@@ -192,9 +213,17 @@ async def get_book(book_slug: str) -> BookDetail:
 
 
 @app.get("/v1/books/{book_slug}/chapters", response_model=BookChaptersResponse)
-async def list_chapters(book_slug: str) -> BookChaptersResponse:
-    """All chapters for a book, with verse counts. No verse text."""
+async def list_chapters(
+    book_slug: str,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> BookChaptersResponse:
+    """All chapters for a book, with verse counts. No verse text.
+
+    Returns 404 when the caller's tier doesn't satisfy the book's
+    ``tier_required``.
+    """
     pool = get_pool()
+    tier = user_tier(current_user)
     async with pool.acquire() as conn:
         book_row = await conn.fetchrow(
             "SELECT b.id, b.slug, b.title, b.short_title, b.canonical_order, "
@@ -203,8 +232,10 @@ async def list_chapters(book_slug: str) -> BookChaptersResponse:
             "       b.abstract, e.slug AS edition_slug "
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
-            " WHERE b.slug = $1",
+            " WHERE b.slug = $1 "
+            "   AND tier_satisfies($2::content_tier, b.tier_required)",
             book_slug,
+            tier,
         )
         if book_row is None:
             raise HTTPException(status_code=404, detail=f"Book '{book_slug}' not found.")
@@ -236,9 +267,18 @@ async def list_chapters(book_slug: str) -> BookChaptersResponse:
     "/v1/books/{book_slug}/chapters/{chapter_number}",
     response_model=ChapterDetail,
 )
-async def get_chapter(book_slug: str, chapter_number: int) -> ChapterDetail:
-    """One chapter — full verse list, in verse_number order."""
+async def get_chapter(
+    book_slug: str,
+    chapter_number: int,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> ChapterDetail:
+    """One chapter — full verse list, in verse_number order.
+
+    Returns 404 when the caller's tier doesn't satisfy the book's
+    ``tier_required``.
+    """
     pool = get_pool()
+    tier = user_tier(current_user)
     async with pool.acquire() as conn:
         book_row = await conn.fetchrow(
             "SELECT b.id, b.slug, b.title, b.short_title, b.canonical_order, "
@@ -247,8 +287,10 @@ async def get_chapter(book_slug: str, chapter_number: int) -> ChapterDetail:
             "       b.abstract, e.slug AS edition_slug "
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
-            " WHERE b.slug = $1",
+            " WHERE b.slug = $1 "
+            "   AND tier_satisfies($2::content_tier, b.tier_required)",
             book_slug,
+            tier,
         )
         if book_row is None:
             raise HTTPException(status_code=404, detail=f"Book '{book_slug}' not found.")

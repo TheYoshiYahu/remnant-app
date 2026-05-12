@@ -59,7 +59,18 @@ services:
           property: connectionString
       - key: CORS_ORIGINS
         # Production PWA domain + the localhost dev origin for occasional debug.
-        # When SSO wheel lands and adds the WordPress origin, append it here.
-        value: https://bible.remnantofpromise.org,http://localhost:5173
+        # Session 36 added the WordPress origin (https://remnantofpromise.org)
+        # so the WP-side login redirect can POST to /wp-json/jwt-auth/v1/token
+        # against the API across the subdomain boundary if/when needed. The
+        # bible-app reader at bible.remnantofpromise.org reads cookies set by
+        # the WP origin via Domain=.remnantofpromise.org; CORS allows credentials.
+        value: https://bible.remnantofpromise.org,https://remnantofpromise.org,http://localhost:5173
+      - key: JWT_SECRET
+        # Shared secret with WordPress's JWT_AUTH_SECRET_KEY in wp-config.php.
+        # Set manually in the Render dashboard (Web Service → Environment).
+        # sync: false tells Render to keep this out of the blueprint export so
+        # the secret never appears in git. See _scratch/_session36_wp_install.md
+        # for the generation + paste flow (Session 36 wheel).
+        sync: false
       - key: PYTHONUNBUFFERED
         value: "1"
