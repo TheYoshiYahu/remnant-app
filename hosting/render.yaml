@@ -72,5 +72,29 @@ services:
         # the secret never appears in git. See _scratch/_session36_wp_install.md
         # for the generation + paste flow (Session 36 wheel).
         sync: false
+      # ---- Session 37: Stripe + WP-side partner_tier sync ----------------
+      # All five values are sync: false — set in the Render dashboard, never
+      # in git. See _scratch/_session37_stripe_setup.md (steps 4 + 6) for
+      # where each value comes from.
+      - key: STRIPE_SECRET_KEY
+        # Stripe secret API key (sk_test_... in test mode, sk_live_... in live).
+        # Stripe Dashboard → Developers → API keys → Secret key (reveal).
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        # Webhook signing secret (whsec_...). Stripe Dashboard → Developers →
+        # Webhooks → your endpoint → Signing secret (reveal).
+        sync: false
+      - key: WP_API_BASE
+        # Base URL the webhook hits to push partner_tier back to WordPress.
+        # e.g. https://remnantofpromise.org/wp-json
+        sync: false
+      - key: WP_API_USER
+        # WordPress admin username for the REST API push (Application Password auth).
+        sync: false
+      - key: WP_API_APP_PASSWORD
+        # WordPress Application Password for partner_tier sync. Generated at
+        # WP admin → Users → your user → Application Passwords. WordPress shows
+        # it ONCE; copy with the spaces.
+        sync: false
       - key: PYTHONUNBUFFERED
         value: "1"

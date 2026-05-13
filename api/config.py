@@ -39,6 +39,35 @@ class Settings(BaseSettings):
         description="Comma-separated list of allowed CORS origins.",
     )
 
+    # ---- Session 37: Stripe + WordPress sync env vars ------------------
+    # All four are sync: false in render.yaml (set in dashboard, never
+    # in git). Empty default = the corresponding feature degrades
+    # gracefully (checkout 503s, webhook 503s, WP-sync logs and skips).
+
+    stripe_secret_key: str = Field(
+        default="",
+        description="Stripe secret API key (sk_test_... or sk_live_...).",
+    )
+    stripe_webhook_secret: str = Field(
+        default="",
+        description="Stripe webhook signing secret (whsec_...).",
+    )
+    wp_api_base: str = Field(
+        default="",
+        description=(
+            "Base URL for the WordPress REST API "
+            "(e.g. https://remnantofpromise.org/wp-json)."
+        ),
+    )
+    wp_api_user: str = Field(
+        default="",
+        description="WordPress admin username for partner_tier sync.",
+    )
+    wp_api_app_password: str = Field(
+        default="",
+        description="WordPress Application Password for partner_tier sync.",
+    )
+
     model_config = SettingsConfigDict(
         env_file=str(_API_DIR / ".env"),
         env_file_encoding="utf-8",

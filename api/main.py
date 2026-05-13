@@ -1,14 +1,17 @@
 """
-The Remnant of Promise Official Study Bible — FastAPI skeleton.
+The Remnant of Promise Official Study Bible — FastAPI app.
 
-Phase 4 wheel #2 (FastAPI skeleton). Six route surfaces:
+Route surfaces:
 
-    GET /v1/health
-    GET /v1/books
-    GET /v1/books/{book_slug}
-    GET /v1/books/{book_slug}/chapters
-    GET /v1/books/{book_slug}/chapters/{chapter_number}
-    GET /v1/verses/search?q=...
+    GET  /v1/health
+    GET  /v1/books
+    GET  /v1/books/{book_slug}
+    GET  /v1/books/{book_slug}/chapters
+    GET  /v1/books/{book_slug}/chapters/{chapter_number}
+    GET  /v1/verses/search?q=...
+    POST /v1/subscriptions/checkout         (Session 37, JWT-gated)
+    POST /v1/subscriptions/webhook          (Session 37, Stripe-signed)
+    GET  /v1/subscriptions/me               (Session 37, JWT-gated)
 
 Auth: Phase 4 wheel #6 (Session 36) wires the JWT-aware tier filter on
 the four /v1/books routes. The dependency at ``auth.get_current_user_optional``
@@ -23,6 +26,14 @@ endpoints return 404 when the caller's tier doesn't satisfy the book's
 ``/v1/verses/search`` is NOT yet tier-filtered — search hits could surface
 verses from books the caller can't normally read. Tracked as a follow-up;
 not part of the Session 36 wheel scope.
+
+Subscriptions (Session 37, Phase 4 wheel #7): Stripe Checkout + webhook +
+me-endpoint for the everything-annual tier and its founder-pricing variant
+(first 100 partners at 50% off forever-locked). The webhook syncs
+partner_tier back to WordPress via the WP REST API on subscription
+activation so the next JWT issuance picks up the new tier. See
+``subscriptions.py`` for the wheel scope and the ``_scratch/_session37_*``
+files for the operator-onboarding paths.
 
 Run: uvicorn main:app --reload
 """
@@ -50,6 +61,7 @@ from models import (
     VerseSearchHit,
     VerseSearchResponse,
 )
+from subscriptions import router as subscriptions_router
 
 
 # ----- App lifespan -------------------------------------------------------
@@ -67,10 +79,11 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Remnant of Promise Official Study Bible — API",
-    version="0.2.0-phase4-session36",
+    version="0.3.0-phase4-session37",
     description=(
-        "Read-only Phase 4 API: books, chapters, verses, trigram search. "
-        "Session 36 wired the JWT-aware tier filter on the /v1/books routes."
+        "Phase 4 API: books, chapters, verses, trigram search, plus the "
+        "Session 37 Stripe subscription surface (checkout + webhook + me) "
+        "for the everything-annual + founder-pricing pair."
     ),
     lifespan=lifespan,
 )
@@ -83,6 +96,10 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
+
+
+# Subscriptions router — Session 37 wheel.
+app.include_router(subscriptions_router, prefix="/v1/subscriptions")
 
 
 # ----- Helpers ------------------------------------------------------------
