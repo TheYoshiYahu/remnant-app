@@ -50,6 +50,27 @@ export default function App() {
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
+  // Dev-only: ?dev_jwt=<token> in the URL sets the rop_jwt cookie at
+  // localhost and reloads the page. Used in development against the live
+  // production API when no WordPress login redirect is wired locally —
+  // Session 39 added this when Safari's DevTools console refused
+  // document.cookie pastes. Stripped from production builds via
+  // import.meta.env.DEV (Vite injects DEV=false when `npm run build`
+  // runs, so this whole block becomes dead code under production).
+  useEffect(() => {
+    if (!import.meta.env.DEV) return;
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const devJwt = params.get("dev_jwt");
+    if (!devJwt) return;
+    document.cookie = `rop_jwt=${devJwt}; path=/; max-age=86400`;
+    // Drop the query param so the JWT doesn't sit in the URL after
+    // navigation. Then reload so the API client picks up the cookie.
+    const cleanUrl = window.location.pathname + window.location.hash;
+    window.history.replaceState({}, "", cleanUrl);
+    window.location.reload();
+  }, []);
+
   if (pathname === "/manage" || pathname.startsWith("/manage")) {
     return <Manage />;
   }
