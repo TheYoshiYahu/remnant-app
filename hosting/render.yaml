@@ -128,10 +128,14 @@ services:
   # /index.html so React's pathname switch can take over. Without the
   # rewrite, a partner navigating directly to /manage gets a 404 from
   # the static server before any JS loads.
+  #
+  # No `region` field on this service — Render rejects region= on
+  # static sites because they serve from the global CDN edge, not a
+  # single region. Only Web Services (Docker / Node / etc.) and
+  # Postgres carry region. Caught at Blueprint sync (Session 40 close).
   - type: web
     name: remnant-app-pwa
     runtime: static
-    region: oregon
     rootDir: .
     buildCommand: cd app && npm install && npm run build
     staticPublishPath: app/dist
