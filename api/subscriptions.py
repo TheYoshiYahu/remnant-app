@@ -1,5 +1,5 @@
 """
-Subscriptions router — Phase 4 wheel #7 (Session 37).
+Subscriptions router — Phase 4 wheel #7 (Session 37) + #8 (Session 38).
 
 Three endpoints, mounted on the main app at prefix /v1/subscriptions:
 
@@ -7,9 +7,18 @@ Three endpoints, mounted on the main app at prefix /v1/subscriptions:
     POST /v1/subscriptions/webhook      (Stripe-signed, anonymous)
     GET  /v1/subscriptions/me           (JWT-gated)
 
-Wheel scope: everything-annual + the founder-pricing variant of the
-everything-annual pair, end-to-end. Other tiers / cadences / cancellation
-flow / paywall UX land in subsequent wheels (Session 38+).
+Session 37 wheel scope: everything-annual + the founder-pricing variant
+of the everything-annual pair, end-to-end.
+
+Session 38 wheel scope: extended to all eight tier × cadence rows
+(study_notes / extras / complete_study × monthly + annual, plus
+everything-monthly standard, plus the two everything-annual rows
+Session 37 already landed) AND lightweight Stripe promotion-code
+support — checkout sessions carry allow_promotion_codes=True, and a
+checkout that redeems a code sets subscriptions.is_promo_subscriber=
+TRUE and bypasses the founder-cap claim (friends-and-family / tester
+comp doesn't consume founder slots, per Yoshi 2026-05-12). Cancellation
+flow + WP companion plugin land in Session 39+.
 
 Architecture notes:
 
@@ -98,9 +107,10 @@ class CheckoutCreateRequest(BaseModel):
     is_founder: bool = Field(
         default=False,
         description=(
-            "TRUE to request founder pricing for this row. Only the "
-            "everything-annual pair has a founder variant in Session 37; "
-            "subsequent wheels add the others."
+            "TRUE to request founder pricing for this row. The founder "
+            "variant exists only for the everything-annual pair "
+            "(first-100-partners, ~half-off, forever-locked). Any other "
+            "tier/cadence combo with is_founder=True returns 404."
         ),
     )
     success_url: str = Field(
@@ -135,6 +145,7 @@ class SubscriptionMeResponse(BaseModel):
     tier: Optional[PartnerTier] = None
     cadence: Optional[Literal["monthly", "annual"]] = None
     is_founder_pricing: bool = False
+    is_promo_subscriber: bool = False
     locked_price_cents: Optional[int] = None
     current_period_end: Optional[str] = None
     cancel_at_period_end: bool = False
@@ -312,14 +323,21 @@ async def create_checkout_session(
 ) -> CheckoutCreateResponse:
     """Create a Stripe Checkout Session for the requested tier × cadence.
 
-    Session 37 wheel scope: only the ``everything`` tier × ``annual``
-    cadence (with or without founder pricing) is wired against a Stripe
-    Price. Other combinations 404 — they land in subsequent wheels.
+    Session 38 expands coverage to all eight tier × cadence rows in
+    ``subscription_tier_prices``. The lookup is parametric — anything
+    that exists in the catalog (seeded via the operator file) is
+    purchasable. Combinations not in the catalog return 404.
+
+    Promotion codes: ``allow_promotion_codes=True`` is passed to Stripe
+    on every checkout session. Stripe surfaces the "Add promotion code"
+    field in its hosted checkout UI. Code minting + revocation lives in
+    the Stripe dashboard (see _scratch/_session38_stripe_pricing_expansion.md).
 
     Founder-pricing precheck: if ``is_founder=True``, we verify the
     founder pool has slots remaining before creating the checkout. The
     actual atomic claim happens in the webhook on
-    checkout.session.completed (see _claim_founder_slot).
+    checkout.session.completed (see _claim_founder_slot). Promo-code
+    redemptions skip the claim entirely (friends/family bypass cap).
     """
     pool = get_pool()
     sdk = _stripe_client()
@@ -334,9 +352,8 @@ async def create_checkout_session(
                 status_code=404,
                 detail=(
                     f"No active price for tier={body.tier} cadence={body.cadence} "
-                    f"is_founder={body.is_founder}. Wheel coverage in Session 37 is "
-                    f"the everything-annual pair only; other combinations land in "
-                    f"subsequent wheels."
+                    f"is_founder={body.is_founder}. Operator step pending — "
+                    f"see _scratch/_session38_stripe_pricing_expansion.md."
                 ),
             )
 
@@ -368,6 +385,14 @@ async def create_checkout_session(
             success_url=body.success_url,
             cancel_url=body.cancel_url,
             client_reference_id=user_uuid,
+            # Session 38: surface the Stripe-hosted "Add promotion code"
+            # field. Codes themselves are minted in the Stripe dashboard
+            # (REMNANT_GIFT generic 100%-off + any per-recipient codes
+            # Yoshi adds later) — the API doesn't need to know the code
+            # strings. The webhook detects redemption via the
+            # total_details.amount_discount / discounts fields on the
+            # completed checkout session.
+            allow_promotion_codes=True,
             metadata={
                 "tier": body.tier,
                 "cadence": body.cadence,
@@ -481,6 +506,15 @@ async def _handle_checkout_completed(
     obj is a stripe.checkout.Session dict. metadata carries our tier /
     cadence / founder / wp_user_id; client_reference_id carries our
     users.id UUID. The Stripe Subscription ID lives on obj['subscription'].
+
+    Session 38: promotion-code detection. If the completed session has
+    a non-zero discount applied (total_details.amount_discount > 0 OR
+    the discounts array is non-empty), the row is recorded as a promo
+    subscriber: is_promo_subscriber=TRUE, is_founder_pricing=FALSE, no
+    founder-slot claim. locked_price_cents records the actual amount
+    paid (amount_total from Stripe), which is what the partner is locked
+    at going forward — $0 for the generic 100%-off code, partial-off for
+    any percent-off codes Yoshi adds later.
     """
     user_uuid = obj.get("client_reference_id")
     metadata = obj.get("metadata") or {}
@@ -499,7 +533,20 @@ async def _handle_checkout_completed(
         )
         return
 
-    # Look up the catalog row to lock the price at signup time.
+    # ---- Promo-code detection (Session 38) --------------------------------
+    #
+    # Stripe surfaces a redeemed promotion code via TWO complementary
+    # fields on the completed checkout session:
+    #   total_details.amount_discount  — cents discounted on this checkout
+    #   discounts                      — array of {coupon, promotion_code}
+    # Either signal alone is sufficient; we treat the redemption as
+    # detected if either is present.
+    total_details = obj.get("total_details") or {}
+    amount_discount = int(total_details.get("amount_discount") or 0)
+    discounts = obj.get("discounts") or []
+    is_promo = (amount_discount > 0) or bool(discounts)
+
+    # Look up the catalog row to read price_cents for the standard path.
     price_row = await _lookup_tier_price_row(conn, tier, cadence, is_founder)
     if price_row is None:
         logger.warning(
@@ -509,6 +556,15 @@ async def _handle_checkout_completed(
         return
     locked_price_cents = price_row["price_cents"]
 
+    # When a promo code was applied, the partner's locked price is what
+    # they actually paid (amount_total), not the catalog price. amount_total
+    # is cents inclusive of any discount, so $0 for the 100%-off code, $X
+    # for any percent-off code.
+    if is_promo:
+        amount_total = obj.get("amount_total")
+        if amount_total is not None:
+            locked_price_cents = int(amount_total)
+
     async with conn.transaction():
         # Atomic founder-slot claim BEFORE the subscription insert. If
         # the cap was exhausted between checkout creation and webhook
@@ -516,8 +572,16 @@ async def _handle_checkout_completed(
         # the locked_price_cents is taken from the founder catalog row,
         # but is_founder_pricing flips False. Better outcome than a hard
         # fail (the user already paid).
+        #
+        # Promo-code redemptions skip the claim entirely (friends/family
+        # bypass the founder cap per Yoshi's Session 38 call). The catalog
+        # row may still be the founder Price (a friend who redeems a code
+        # on the founder pricing card), but is_founder_pricing is forced
+        # FALSE and is_promo_subscriber is recorded TRUE.
         actual_is_founder = is_founder
-        if is_founder:
+        if is_promo:
+            actual_is_founder = False
+        elif is_founder:
             claimed = await _claim_founder_slot(conn)
             if not claimed:
                 logger.warning(
@@ -540,10 +604,11 @@ async def _handle_checkout_completed(
             "  user_id, tier, cadence, status, "
             "  stripe_subscription_id, stripe_customer_id, "
             "  locked_price_cents, locked_at_tier, is_founder_pricing, "
+            "  is_promo_subscriber, "
             "  current_period_start, current_period_end"
             ") VALUES ("
             "  $1::uuid, $2::content_tier, $3::billing_cadence, 'active', "
-            "  $4, $5, $6, $2::content_tier, $7, "
+            "  $4, $5, $6, $2::content_tier, $7, $8, "
             "  now(), NULL"
             ") "
             "ON CONFLICT (stripe_subscription_id) DO UPDATE SET "
@@ -551,7 +616,7 @@ async def _handle_checkout_completed(
             "  current_period_start = COALESCE(subscriptions.current_period_start, now())",
             user_uuid, tier, cadence,
             stripe_subscription_id, stripe_customer_id,
-            locked_price_cents, actual_is_founder,
+            locked_price_cents, actual_is_founder, is_promo,
         )
 
     # WP-side sync (outside the transaction — best-effort, doesn't roll back the DB).
@@ -683,7 +748,8 @@ async def get_my_subscription(
     async with pool.acquire() as conn:
         row = await conn.fetchrow(
             "SELECT s.status::text, s.tier::text, s.cadence::text, "
-            "       s.is_founder_pricing, s.locked_price_cents, "
+            "       s.is_founder_pricing, s.is_promo_subscriber, "
+            "       s.locked_price_cents, "
             "       s.current_period_end, s.cancel_at_period_end "
             "  FROM subscriptions s "
             "  JOIN users u ON u.id = s.user_id "
@@ -701,6 +767,7 @@ async def get_my_subscription(
         tier=row["tier"],
         cadence=row["cadence"],
         is_founder_pricing=row["is_founder_pricing"],
+        is_promo_subscriber=row["is_promo_subscriber"],
         locked_price_cents=row["locked_price_cents"],
         current_period_end=(
             row["current_period_end"].isoformat()

@@ -3,10 +3,13 @@ import {
   type BookChaptersResponse,
   type BookSummary,
   type ChapterDetail,
+  type SubscriptionMe,
   getChapter,
+  getSubscriptionMe,
   listBooks,
   listChapters,
 } from "./lib/api";
+import Pricing from "./routes/Pricing";
 
 /**
  * Session 13 minimum-useful checkpoint:
@@ -14,13 +17,38 @@ import {
  *   showing Genesis 1 from the Protestant 66 canon (KJV-restored) by default
  *   and letting the reader pick any other canon book / chapter.
  *
- * No auth, no persisted state, no installable manifest yet — those land in
- * session 14 (PWA installable + production deploy). The voice gate runs
- * server-side at ingest, so the reader just renders verse.text as the
- * already-restored prose ("Yahuah (God)", "Yashar'el (Israel)", "Melek
- * Tsadiq (Melchizedek)", etc.).
+ * Session 36 — JWT-aware: cookie + Authorization header attached on every
+ *   API call via api.ts; the API filters book list by partner_tier.
+ *
+ * Session 38 — pathname-based view switch + me-aware chrome:
+ *   "/" → Reader; "/pricing" → Pricing surface. GET /v1/subscriptions/me
+ *   on mount; chrome shows "Manage subscription" if status=active else
+ *   "Become a partner" linking to /pricing.
+ *
+ * No router library — single pathname check at App-render time is enough
+ * for two routes and keeps the dep list at React-only. Stripe checkout
+ * navigates the browser away via window.location.href so we never need
+ * client-side route swapping mid-flow.
  */
 export default function App() {
+  // Pathname-based view switch. Recomputed only at mount + on popstate;
+  // navigation in the app is browser-native (window.location.href = ...).
+  const [pathname, setPathname] = useState<string>(
+    typeof window !== "undefined" ? window.location.pathname : "/"
+  );
+  useEffect(() => {
+    const onPop = () => setPathname(window.location.pathname);
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []);
+
+  if (pathname === "/pricing" || pathname.startsWith("/pricing")) {
+    return <Pricing />;
+  }
+  return <Reader />;
+}
+
+function Reader() {
   const [books, setBooks] = useState<BookSummary[]>([]);
   const [booksError, setBooksError] = useState<string | null>(null);
 
@@ -35,6 +63,11 @@ export default function App() {
   const [chapterLoading, setChapterLoading] = useState<boolean>(false);
   const [chapterError, setChapterError] = useState<string | null>(null);
 
+  // Session 38: me-fetch for the chrome's Manage/Upgrade decision.
+  // 401 (no JWT cookie) is non-fatal — we just don't show the partner
+  // chrome at all in that case.
+  const [me, setMe] = useState<SubscriptionMe | null>(null);
+
   // Books load once on mount.
   useEffect(() => {
     listBooks()
@@ -43,6 +76,15 @@ export default function App() {
         setBooksError(null);
       })
       .catch((e) => setBooksError(String(e)));
+  }, []);
+
+  // /v1/subscriptions/me once on mount. Failure is silent — anonymous
+  // reader still works as before; the chrome just hides the partner
+  // link.
+  useEffect(() => {
+    getSubscriptionMe()
+      .then(setMe)
+      .catch(() => setMe(null));
   }, []);
 
   // Chapters list reloads when the selected book changes.
@@ -87,12 +129,31 @@ export default function App() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-8">
       <header className="mb-6 border-b border-[var(--reader-rule)] pb-4">
-        <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-text)]">
-          The Remnant of Promise Official Study Bible
-        </h1>
-        <p className="mt-1 text-sm text-[var(--reader-muted)]">
-          Restored Names Edition · Session 13 dev preview
-        </p>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-text)]">
+              The Remnant of Promise Official Study Bible
+            </h1>
+            <p className="mt-1 text-sm text-[var(--reader-muted)]">
+              Restored Names Edition
+            </p>
+          </div>
+          {me && me.status === "active" ? (
+            <a
+              href="/pricing"
+              className="self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-white px-3 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+            >
+              Manage partnership
+            </a>
+          ) : me && me.status === "none" ? (
+            <a
+              href="/pricing"
+              className="self-start whitespace-nowrap rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
+            >
+              Become a partner
+            </a>
+          ) : null}
+        </div>
       </header>
 
       {booksError && (

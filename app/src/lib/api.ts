@@ -110,7 +110,56 @@ export interface HealthResponse {
   checked_at: string;
 }
 
-// ----- Fetch helper ------------------------------------------------------
+// ----- Subscription types (Session 38) -----------------------------------
+//
+// Mirror api/subscriptions.py's request/response shapes. The me-endpoint
+// returns status='none' when the partner has no subscription row yet —
+// the reader chrome uses that to decide between "Upgrade" and "Manage".
+
+export type SubscriptionStatus =
+  | "none"
+  | "trialing"
+  | "active"
+  | "past_due"
+  | "canceled"
+  | "unpaid"
+  | "incomplete"
+  | "incomplete_expired";
+
+export type BillingCadence = "monthly" | "annual";
+
+export type PartnerTier =
+  | "free"
+  | "study_notes"
+  | "extras"
+  | "complete_study"
+  | "everything";
+
+export interface SubscriptionMe {
+  status: SubscriptionStatus;
+  tier: PartnerTier | null;
+  cadence: BillingCadence | null;
+  is_founder_pricing: boolean;
+  is_promo_subscriber: boolean;
+  locked_price_cents: number | null;
+  current_period_end: string | null;
+  cancel_at_period_end: boolean;
+}
+
+export interface CheckoutCreateRequest {
+  tier: Exclude<PartnerTier, "free">;
+  cadence: BillingCadence;
+  is_founder: boolean;
+  success_url: string;
+  cancel_url: string;
+}
+
+export interface CheckoutCreateResponse {
+  checkout_url: string;
+  stripe_session_id: string;
+}
+
+// ----- Fetch helpers -----------------------------------------------------
 
 async function get<T>(path: string): Promise<T> {
   const headers: Record<string, string> = { Accept: "application/json" };
@@ -132,10 +181,67 @@ async function get<T>(path: string): Promise<T> {
   return (await res.json()) as T;
 }
 
+async function post<TReq, TRes>(path: string, body: TReq): Promise<TRes> {
+  const headers: Record<string, string> = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  };
+  const token = readJwtCookie();
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+  const res = await fetch(`${API_BASE}${path}`, {
+    method: "POST",
+    headers,
+    credentials: "include",
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    // Try to surface the FastAPI {detail: "..."} message; fall back to status text.
+    let detail = res.statusText;
+    try {
+      const json = (await res.json()) as { detail?: string };
+      if (json.detail) detail = json.detail;
+    } catch {
+      // Body wasn't JSON; keep statusText.
+    }
+    throw new Error(`API ${path} → ${res.status} ${detail}`);
+  }
+  return (await res.json()) as TRes;
+}
+
 // ----- Endpoints ---------------------------------------------------------
 
 export function getHealth(): Promise<HealthResponse> {
   return get<HealthResponse>("/health");
+}
+
+/**
+ * Fetch the requester's most-recent subscription row.
+ *
+ * Returns `{status: "none"}` for partners with no row (anonymous +
+ * SSO-authenticated-but-not-yet-subscribed). 401 is thrown when no JWT
+ * cookie is present at all — the reader treats that as anonymous +
+ * routes to the WordPress sign-in flow before showing /pricing.
+ */
+export function getSubscriptionMe(): Promise<SubscriptionMe> {
+  return get<SubscriptionMe>("/subscriptions/me");
+}
+
+/**
+ * Create a Stripe Checkout Session for the requested tier × cadence ×
+ * founder tuple. Returns the URL the browser navigates to (the Stripe-
+ * hosted checkout page). The page surfaces an "Add promotion code"
+ * field automatically because the API sets `allow_promotion_codes=True`
+ * on the session.
+ */
+export function createCheckoutSession(
+  body: CheckoutCreateRequest
+): Promise<CheckoutCreateResponse> {
+  return post<CheckoutCreateRequest, CheckoutCreateResponse>(
+    "/subscriptions/checkout",
+    body
+  );
 }
 
 export function listBooks(opts?: {

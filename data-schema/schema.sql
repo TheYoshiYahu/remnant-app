@@ -431,18 +431,23 @@ CREATE TABLE subscriptions (
     cancel_at_period_end    BOOLEAN NOT NULL DEFAULT FALSE,
     canceled_at             TIMESTAMPTZ,
     started_at              TIMESTAMPTZ NOT NULL DEFAULT now(),
-    ended_at                TIMESTAMPTZ
+    ended_at                TIMESTAMPTZ,
+    is_promo_subscriber     BOOLEAN NOT NULL DEFAULT FALSE   -- Session 38: TRUE when checkout redeemed a Stripe promotion code (friends/family/tester comp). Bypasses founder-cap claim; still counted as a partner in dashboard metrics per Yoshi's Session 38 call.
 );
 
 CREATE INDEX idx_subs_user      ON subscriptions(user_id);
 CREATE INDEX idx_subs_status    ON subscriptions(status);
 CREATE INDEX idx_subs_active    ON subscriptions(user_id) WHERE status IN ('trialing','active','past_due');
+CREATE INDEX idx_subs_promo     ON subscriptions(is_promo_subscriber) WHERE is_promo_subscriber = TRUE;
 
 COMMENT ON COLUMN subscriptions.locked_price_cents IS
     'Permanent price-lock per Section III. The price the user signed up at, in cents. Never updated, even if subscription_tier_prices changes. The commitment Yoshi locked 2026-05-10.';
 
 COMMENT ON COLUMN subscriptions.is_founder_pricing IS
     'TRUE if this row is one of the first 1,000 everything-tier subscriptions, locked at $9.99/mo for life vs the $14.99 standard. The 1,000-cap is enforced at signup time by the application server, not by this column.';
+
+COMMENT ON COLUMN subscriptions.is_promo_subscriber IS
+    'Session 38: TRUE when this subscription was created via a Stripe promotion code (friends-and-family / tester comp). is_founder_pricing stays FALSE for these rows (they did not consume a founder slot); is_promo_subscriber is the distinguishing flag. Still counted as a partner in dashboard partner-count metrics per Yoshi 2026-05-12.';
 
 
 -- Founder-pricing counter. A single-row table the application uses to

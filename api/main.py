@@ -35,6 +35,20 @@ activation so the next JWT issuance picks up the new tier. See
 ``subscriptions.py`` for the wheel scope and the ``_scratch/_session37_*``
 files for the operator-onboarding paths.
 
+Subscriptions expansion (Session 38, Phase 4 wheel #8): all eight tier ×
+cadence rows now purchasable (study_notes / extras / complete_study ×
+monthly + annual, plus everything-monthly standard + founder), and
+``allow_promotion_codes=True`` is passed on every Stripe Checkout
+session. Promo-code redemptions (FRIENDS_FAMILY 100% off + FOUNDER50
+50% off) are detected webhook-side via Stripe's discount fields, get
+``subscriptions.is_promo_subscriber=TRUE``, and bypass the founder-cap
+claim — friends/family and honorary-founder partners don't consume one
+of the 100 founder slots. ``subscription_tier_prices`` catalog is fully
+seeded; ``schema_version`` lifts to ``1.0.0-phase4-session38``. See
+``_scratch/_session38_stripe_pricing_expansion.md`` for the operator
+walkthrough and the new ``app/src/routes/Pricing.tsx`` for the partner-
+facing surface.
+
 Run: uvicorn main:app --reload
 """
 
@@ -79,7 +93,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Remnant of Promise Official Study Bible — API",
-    version="0.3.0-phase4-session37",
+    version="0.4.0-phase4-session38",
     description=(
         "Phase 4 API: books, chapters, verses, trigram search, plus the "
         "Session 37 Stripe subscription surface (checkout + webhook + me) "
