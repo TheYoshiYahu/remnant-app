@@ -159,6 +159,26 @@ export interface CheckoutCreateResponse {
   stripe_session_id: string;
 }
 
+/**
+ * Session 39 — partner-initiated cancellation response.
+ *
+ * Mirrors SubscriptionMe so the Manage surface can swap rendered state
+ * in place from the response without a follow-up /me fetch. tier /
+ * cadence / locked_price_cents are preserved through the wind-down —
+ * the partner keeps access through current_period_end and the forever-
+ * locked price stays with them if they resubscribe later.
+ */
+export interface CancelResponse {
+  status: SubscriptionStatus;
+  tier: PartnerTier | null;
+  cadence: BillingCadence | null;
+  is_founder_pricing: boolean;
+  is_promo_subscriber: boolean;
+  locked_price_cents: number | null;
+  current_period_end: string | null;
+  cancel_at_period_end: boolean;
+}
+
 // ----- Fetch helpers -----------------------------------------------------
 
 async function get<T>(path: string): Promise<T> {
@@ -241,6 +261,23 @@ export function createCheckoutSession(
   return post<CheckoutCreateRequest, CheckoutCreateResponse>(
     "/subscriptions/checkout",
     body
+  );
+}
+
+/**
+ * Cancel the partner's active subscription.
+ *
+ * Sets cancel_at_period_end=True on Stripe; access continues through
+ * the end of the current billing period and the locked price is
+ * preserved on the row. Idempotent — clicking Cancel twice no-ops the
+ * second call and returns the current row state. Throws on 4xx/5xx
+ * (handled by the caller — surface the API's `detail` string as the
+ * partner-facing error).
+ */
+export function cancelSubscription(): Promise<CancelResponse> {
+  return post<Record<string, never>, CancelResponse>(
+    "/subscriptions/cancel",
+    {}
   );
 }
 

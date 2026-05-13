@@ -11,6 +11,7 @@ Route surfaces:
     GET  /v1/verses/search?q=...
     POST /v1/subscriptions/checkout         (Session 37, JWT-gated)
     POST /v1/subscriptions/webhook          (Session 37, Stripe-signed)
+    POST /v1/subscriptions/cancel           (Session 39, JWT-gated)
     GET  /v1/subscriptions/me               (Session 37, JWT-gated)
 
 Auth: Phase 4 wheel #6 (Session 36) wires the JWT-aware tier filter on
@@ -48,6 +49,21 @@ seeded; ``schema_version`` lifts to ``1.0.0-phase4-session38``. See
 ``_scratch/_session38_stripe_pricing_expansion.md`` for the operator
 walkthrough and the new ``app/src/routes/Pricing.tsx`` for the partner-
 facing surface.
+
+Cancellation flow (Session 39, Phase 4 wheel #9): partner-initiated
+cancellation lands as POST /v1/subscriptions/cancel (JWT-gated) plus a
+new partner-facing Manage surface at /manage. The endpoint calls
+Stripe's Subscription.modify(cancel_at_period_end=True), so access
+continues through the end of the current billing period and the
+forever-locked price is preserved on the local row (resubscribe before
+period-end via the Stripe customer portal restores the same price).
+The Manage UI's confirm dialog runs through the voice gate — no
+"are you sure", no "we'll miss you", no spiritual-consequences framing;
+the honest message is *your access continues through the period end,
+you can resubscribe anytime, and your forever-locked price is preserved*.
+The customer.subscription.updated webhook (Session 37) already syncs
+cancel_at_period_end back from Stripe, so the local row converges to
+canonical state without further wiring.
 
 Run: uvicorn main:app --reload
 """
@@ -93,11 +109,12 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Remnant of Promise Official Study Bible — API",
-    version="0.4.0-phase4-session38",
+    version="0.5.0-phase4-session39",
     description=(
         "Phase 4 API: books, chapters, verses, trigram search, plus the "
-        "Session 37 Stripe subscription surface (checkout + webhook + me) "
-        "for the everything-annual + founder-pricing pair."
+        "Stripe subscription surface — checkout, webhook, me, and (Session "
+        "39) partner-initiated cancellation that flips Stripe's "
+        "cancel_at_period_end and preserves the forever-locked price."
     ),
     lifespan=lifespan,
 )

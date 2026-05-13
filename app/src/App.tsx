@@ -10,6 +10,7 @@ import {
   listChapters,
 } from "./lib/api";
 import Pricing from "./routes/Pricing";
+import Manage from "./routes/Manage";
 
 /**
  * Session 13 minimum-useful checkpoint:
@@ -25,8 +26,15 @@ import Pricing from "./routes/Pricing";
  *   on mount; chrome shows "Manage subscription" if status=active else
  *   "Become a partner" linking to /pricing.
  *
+ * Session 39 — cancellation flow:
+ *   "/manage" → Manage surface (current subscription details + Cancel
+ *   button with voice-gated confirm copy: no "are you sure", no "we'll
+ *   miss you", no spiritual-consequences framing — the partner is told
+ *   their access continues through period-end, they can resubscribe
+ *   anytime, and the forever-locked price stays with them).
+ *
  * No router library — single pathname check at App-render time is enough
- * for two routes and keeps the dep list at React-only. Stripe checkout
+ * for three routes and keeps the dep list at React-only. Stripe checkout
  * navigates the browser away via window.location.href so we never need
  * client-side route swapping mid-flow.
  */
@@ -42,6 +50,9 @@ export default function App() {
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
+  if (pathname === "/manage" || pathname.startsWith("/manage")) {
+    return <Manage />;
+  }
   if (pathname === "/pricing" || pathname.startsWith("/pricing")) {
     return <Pricing />;
   }
@@ -140,7 +151,7 @@ function Reader() {
           </div>
           {me && me.status === "active" ? (
             <a
-              href="/pricing"
+              href="/manage"
               className="self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-white px-3 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
             >
               Manage partnership

@@ -1,10 +1,11 @@
 """
-Subscriptions router — Phase 4 wheel #7 (Session 37) + #8 (Session 38).
+Subscriptions router — Phase 4 wheel #7 (Session 37) + #8 (Session 38) + #9 (Session 39).
 
-Three endpoints, mounted on the main app at prefix /v1/subscriptions:
+Four endpoints, mounted on the main app at prefix /v1/subscriptions:
 
     POST /v1/subscriptions/checkout     (JWT-gated)
     POST /v1/subscriptions/webhook      (Stripe-signed, anonymous)
+    POST /v1/subscriptions/cancel       (JWT-gated, Session 39)
     GET  /v1/subscriptions/me           (JWT-gated)
 
 Session 37 wheel scope: everything-annual + the founder-pricing variant
@@ -17,8 +18,17 @@ Session 37 already landed) AND lightweight Stripe promotion-code
 support — checkout sessions carry allow_promotion_codes=True, and a
 checkout that redeems a code sets subscriptions.is_promo_subscriber=
 TRUE and bypasses the founder-cap claim (friends-and-family / tester
-comp doesn't consume founder slots, per Yoshi 2026-05-12). Cancellation
-flow + WP companion plugin land in Session 39+.
+comp doesn't consume founder slots, per Yoshi 2026-05-12).
+
+Session 39 wheel scope: partner-initiated cancellation. POST /cancel
+calls Stripe's subscription.modify(cancel_at_period_end=True) so the
+partner keeps access through the end of their current period and the
+locked_price_cents row is preserved (resubscribe before period-end via
+the Stripe customer portal restores the same locked price). The local
+row's cancel_at_period_end + current_period_end fields are updated
+immediately for UX responsiveness; the customer.subscription.updated
+webhook (already handled in _handle_subscription_change) syncs Stripe's
+canonical state back when the dust settles.
 
 Architecture notes:
 
@@ -149,6 +159,35 @@ class SubscriptionMeResponse(BaseModel):
     locked_price_cents: Optional[int] = None
     current_period_end: Optional[str] = None
     cancel_at_period_end: bool = False
+
+
+class CancelResponse(BaseModel):
+    """Response payload from POST /v1/subscriptions/cancel.
+
+    Mirrors SubscriptionMeResponse so the Manage surface can swap its
+    rendered state in place from the response without a follow-up /me
+    fetch. tier/cadence/locked_price_cents are preserved so the partner
+    can see exactly what their forever-locked price is during the wind-
+    down period.
+    """
+
+    status: Literal[
+        "none",
+        "trialing",
+        "active",
+        "past_due",
+        "canceled",
+        "unpaid",
+        "incomplete",
+        "incomplete_expired",
+    ]
+    tier: Optional[PartnerTier] = None
+    cadence: Optional[Literal["monthly", "annual"]] = None
+    is_founder_pricing: bool = False
+    is_promo_subscriber: bool = False
+    locked_price_cents: Optional[int] = None
+    current_period_end: Optional[str] = None
+    cancel_at_period_end: bool = True
 
 
 # ---- Stripe SDK initialisation --------------------------------------------
@@ -774,6 +813,205 @@ async def get_my_subscription(
             if row["current_period_end"] is not None else None
         ),
         cancel_at_period_end=row["cancel_at_period_end"],
+    )
+
+
+# ---- POST /cancel ---------------------------------------------------------
+
+
+@router.post("/cancel", response_model=CancelResponse)
+async def cancel_subscription(
+    current_user: User = Depends(get_current_user_required),
+) -> CancelResponse:
+    """Set cancel_at_period_end=True on the partner's active subscription.
+
+    The partner keeps access through the end of their current Stripe
+    billing period. locked_price_cents stays on the local row so a
+    resubscribe before the period-end via the Stripe customer portal
+    restores the same forever-locked price.
+
+    Behavior:
+        - 404 when the partner has no row at all (`status='none'`).
+        - 200 when the partner has a subscription that Stripe can modify.
+          Calls stripe.Subscription.modify(cancel_at_period_end=True), and
+          mirrors cancel_at_period_end + current_period_end onto the local
+          row immediately for UX responsiveness (the
+          customer.subscription.updated webhook will resync Stripe's
+          canonical state when it lands a moment later).
+        - 200 when the row already carries cancel_at_period_end=True
+          (idempotent — partner clicked Cancel twice; we no-op the Stripe
+          call and return the current row state).
+        - 200 when the row's status is already 'canceled' or 'unpaid' or
+          one of the terminal states — no Stripe call, just returns the
+          row.
+        - 502 when Stripe rejects the modify call (rate limit, bad ID,
+          dashboard-side cancellation race, etc.). Local row is unchanged.
+
+    Voice gate: this endpoint is the assembly's response to a partner
+    choosing to leave. The framework reading: cancellation is the partner's
+    free choice. The endpoint does not gate-keep, does not require a
+    reason, does not implore the partner to stay. The Manage UI's confirm
+    dialog should match — no "are you sure", no "we'll miss you", no
+    spiritual-consequences framing. The honest message is: your access
+    continues through the period end, your forever-locked price is
+    preserved, and you can resubscribe anytime.
+    """
+    pool = get_pool()
+    wp_user_id = int(current_user.id)
+
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT s.id::text AS sub_uuid, s.stripe_subscription_id, "
+            "       s.status::text AS status, s.tier::text AS tier, "
+            "       s.cadence::text AS cadence, "
+            "       s.is_founder_pricing, s.is_promo_subscriber, "
+            "       s.locked_price_cents, "
+            "       s.current_period_end, s.cancel_at_period_end "
+            "  FROM subscriptions s "
+            "  JOIN users u ON u.id = s.user_id "
+            " WHERE u.wordpress_user_id = $1 "
+            " ORDER BY s.started_at DESC "
+            " LIMIT 1",
+            wp_user_id,
+        )
+
+    if row is None:
+        raise HTTPException(
+            status_code=404,
+            detail=(
+                "No active partnership found on this account. "
+                "Sign in with the WordPress account that holds the partnership."
+            ),
+        )
+
+    # Terminal states — nothing to cancel; return the row as-is. This is
+    # idempotent for the partner who clicks Cancel after their subscription
+    # has already wound down.
+    terminal_states = ("canceled", "unpaid", "incomplete_expired")
+    if row["status"] in terminal_states:
+        return CancelResponse(
+            status=row["status"],
+            tier=row["tier"],
+            cadence=row["cadence"],
+            is_founder_pricing=row["is_founder_pricing"],
+            is_promo_subscriber=row["is_promo_subscriber"],
+            locked_price_cents=row["locked_price_cents"],
+            current_period_end=(
+                row["current_period_end"].isoformat()
+                if row["current_period_end"] is not None else None
+            ),
+            cancel_at_period_end=row["cancel_at_period_end"],
+        )
+
+    # Already-cancelled-at-period-end — no Stripe call needed, just echo
+    # the current row. Idempotent for the partner clicking Cancel twice.
+    if row["cancel_at_period_end"]:
+        return CancelResponse(
+            status=row["status"],
+            tier=row["tier"],
+            cadence=row["cadence"],
+            is_founder_pricing=row["is_founder_pricing"],
+            is_promo_subscriber=row["is_promo_subscriber"],
+            locked_price_cents=row["locked_price_cents"],
+            current_period_end=(
+                row["current_period_end"].isoformat()
+                if row["current_period_end"] is not None else None
+            ),
+            cancel_at_period_end=True,
+        )
+
+    stripe_subscription_id = row["stripe_subscription_id"]
+    if not stripe_subscription_id:
+        # The local row exists but has no Stripe linkage — shouldn't
+        # happen in practice (checkout webhook always writes the ID), but
+        # surface it cleanly rather than silently passing through.
+        raise HTTPException(
+            status_code=409,
+            detail=(
+                "Subscription is in an inconsistent state (no Stripe ID on "
+                "file). Please contact the assembly."
+            ),
+        )
+
+    # ---- Stripe-side flip --------------------------------------------------
+    sdk = _stripe_client()
+    try:
+        stripe_sub = sdk.Subscription.modify(
+            stripe_subscription_id,
+            cancel_at_period_end=True,
+        )
+    except stripe.StripeError as e:
+        logger.error(
+            "[stripe] cancel failed user=%s sub=%s err=%r",
+            current_user.id, stripe_subscription_id, e,
+        )
+        raise HTTPException(
+            status_code=502,
+            detail=(
+                "Stripe could not process the cancellation: "
+                f"{e.user_message or str(e)}"
+            ),
+        )
+
+    # Stripe's response carries the authoritative current_period_end as an
+    # epoch second; we mirror it back to the local row. Failure to read it
+    # back is non-fatal — the webhook will reconcile.
+    stripe_period_end = None
+    try:
+        stripe_period_end = int(getattr(stripe_sub, "current_period_end", None)
+                                or stripe_sub["current_period_end"])
+    except (KeyError, TypeError, ValueError):
+        stripe_period_end = None
+
+    # ---- Local mirror (UX responsiveness) ----------------------------------
+    async with pool.acquire() as conn:
+        if stripe_period_end is not None:
+            await conn.execute(
+                "UPDATE subscriptions SET "
+                "  cancel_at_period_end = TRUE, "
+                "  current_period_end = to_timestamp($1) "
+                "WHERE stripe_subscription_id = $2",
+                stripe_period_end, stripe_subscription_id,
+            )
+        else:
+            await conn.execute(
+                "UPDATE subscriptions SET cancel_at_period_end = TRUE "
+                "WHERE stripe_subscription_id = $1",
+                stripe_subscription_id,
+            )
+
+        # Re-read the row so the response reflects the post-update state
+        # (current_period_end may have been updated above; the rest is
+        # unchanged from the initial fetch).
+        updated = await conn.fetchrow(
+            "SELECT status::text AS status, tier::text AS tier, "
+            "       cadence::text AS cadence, "
+            "       is_founder_pricing, is_promo_subscriber, "
+            "       locked_price_cents, current_period_end, "
+            "       cancel_at_period_end "
+            "  FROM subscriptions "
+            " WHERE stripe_subscription_id = $1",
+            stripe_subscription_id,
+        )
+
+    if updated is None:
+        # The row vanished between the modify and the re-read — extremely
+        # unlikely (would require an explicit DELETE), but fall through to
+        # the initial row's values rather than 500.
+        updated = row
+
+    return CancelResponse(
+        status=updated["status"],
+        tier=updated["tier"],
+        cadence=updated["cadence"],
+        is_founder_pricing=updated["is_founder_pricing"],
+        is_promo_subscriber=updated["is_promo_subscriber"],
+        locked_price_cents=updated["locked_price_cents"],
+        current_period_end=(
+            updated["current_period_end"].isoformat()
+            if updated["current_period_end"] is not None else None
+        ),
+        cancel_at_period_end=True,
     )
 
 
