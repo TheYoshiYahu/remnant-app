@@ -65,6 +65,25 @@ The customer.subscription.updated webhook (Session 37) already syncs
 cancel_at_period_end back from Stripe, so the local row converges to
 canonical state without further wiring.
 
+Pre-PWA-deploy polish (Session 40, Phase 4 wheel #10): two source-level
+bugs surfaced during Session 39's live-verification dance and land
+ahead of the PWA static-site deploy. (i) Stripe deprecated the
+top-level Subscription.current_period_end in API version
+2024-09-30.acacia and moved it to subscription.items.data[0].
+current_period_end; both cancel_subscription and the
+customer.subscription.updated handler were reading the deprecated
+path and quietly populating None into the local row's period_end.
+Shared _extract_period_end helper walks both paths so live and
+fixture payloads resolve. (ii) The Reader's book-picker option keys
+move from b.slug to b.id — Session 35's composite UNIQUE on
+books.(edition_id, slug) means slugs aren't unique across editions
+anymore (judith / 1-esdras / tobit / 1-maccabees / 2-maccabees each
+appear in both apocrypha and apocrypha-charles-vol1), and React was
+flooding the console with duplicate-key warnings on every Reader
+render. The picker fix is a one-line front-end change. The third
+piece of the Session 40 wheel — the PWA static-site deploy itself —
+lives in hosting/render.yaml + DNS, not in this module.
+
 Run: uvicorn main:app --reload
 """
 
@@ -109,12 +128,14 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Remnant of Promise Official Study Bible — API",
-    version="0.5.0-phase4-session39",
+    version="0.6.0-phase4-session40",
     description=(
         "Phase 4 API: books, chapters, verses, trigram search, plus the "
-        "Stripe subscription surface — checkout, webhook, me, and (Session "
-        "39) partner-initiated cancellation that flips Stripe's "
-        "cancel_at_period_end and preserves the forever-locked price."
+        "Stripe subscription surface — checkout, webhook, me, partner-"
+        "initiated cancellation (cancel_at_period_end + forever-locked "
+        "price preserved). Session 40 patches the period_end extraction "
+        "path to handle Stripe API 2024-09-30.acacia's move of "
+        "current_period_end from the Subscription onto items.data[0]."
     ),
     lifespan=lifespan,
 )

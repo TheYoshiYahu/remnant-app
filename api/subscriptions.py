@@ -1,5 +1,5 @@
 """
-Subscriptions router — Phase 4 wheel #7 (Session 37) + #8 (Session 38) + #9 (Session 39).
+Subscriptions router — Phase 4 wheel #7 (Session 37) + #8 (Session 38) + #9 (Session 39) + #10 (Session 40).
 
 Four endpoints, mounted on the main app at prefix /v1/subscriptions:
 
@@ -29,6 +29,21 @@ row's cancel_at_period_end + current_period_end fields are updated
 immediately for UX responsiveness; the customer.subscription.updated
 webhook (already handled in _handle_subscription_change) syncs Stripe's
 canonical state back when the dust settles.
+
+Session 40 wheel scope: pre-PWA-deploy polish. Stripe deprecated the
+top-level Subscription.current_period_end field in API version
+2024-09-30.acacia and moved it to subscription.items.data[0].
+current_period_end (single-item subscriptions — our model — get one
+period_end per row, exposed on the item). Both cancel_subscription
+and _handle_subscription_change were reading the deprecated path and
+quietly receiving None; the local row's current_period_end stayed
+NULL on every subscription written under the post-acacia API. The
+Session 40 fix adds a shared _extract_period_end helper that walks
+both paths, used by both call sites. Smoke-test extension covers the
+items.data fallback case so future Stripe API version bumps don't
+regress this silently. Sibling Session 40 work (PWA static-site
+deploy, render.yaml second service, picker-key fix) is non-API and
+lives outside this module.
 
 Architecture notes:
 
@@ -210,6 +225,68 @@ def _stripe_client() -> stripe:
         )
     stripe.api_key = settings.stripe_secret_key
     return stripe
+
+
+# ---- Stripe object readers ------------------------------------------------
+
+
+def _extract_period_end(stripe_sub) -> Optional[int]:
+    """Return current_period_end (epoch seconds) from a Stripe Subscription.
+
+    Stripe deprecated the top-level current_period_end on the Subscription
+    object in API version 2024-09-30.acacia and moved it onto each
+    SubscriptionItem (subscription.items.data[N].current_period_end). For a
+    single-item subscription (our model — one tier, one price), the items
+    share one period_end; we read items.data[0].
+
+    Tries the deprecated top-level path first (older API-version pins and
+    older fixture shapes still populate it), then falls back to the items
+    path. Returns None if neither path yields a readable integer. The
+    None case is non-fatal upstream: the local row keeps its previous
+    current_period_end and the customer.subscription.updated webhook
+    resyncs when Stripe next delivers an event.
+
+    Accepts either a stripe.Subscription SDK object or a plain dict (e.g.
+    event["data"]["object"] from a parsed webhook payload). Both shapes
+    expose item-style access; we use only get-style reads so neither
+    shape raises on absent fields.
+    """
+    if stripe_sub is None:
+        return None
+
+    def _read(obj, key):
+        if obj is None:
+            return None
+        if isinstance(obj, dict):
+            return obj.get(key)
+        # stripe.StripeObject supports .get() and attribute access. Prefer
+        # .get() so absent fields return None rather than raise.
+        try:
+            return obj.get(key)
+        except (AttributeError, TypeError):
+            return getattr(obj, key, None)
+
+    # Deprecated top-level path (still populated under legacy API pins).
+    top = _read(stripe_sub, "current_period_end")
+    if top is not None:
+        try:
+            return int(top)
+        except (TypeError, ValueError):
+            pass
+
+    # Modern path: items.data[0].current_period_end (API 2024-09-30.acacia+).
+    items = _read(stripe_sub, "items")
+    data = _read(items, "data")
+    if data:
+        first = data[0] if len(data) > 0 else None
+        nested = _read(first, "current_period_end")
+        if nested is not None:
+            try:
+                return int(nested)
+            except (TypeError, ValueError):
+                pass
+
+    return None
 
 
 # ---- DB helpers -----------------------------------------------------------
@@ -673,7 +750,10 @@ async def _handle_subscription_change(
     stripe_subscription_id = obj.get("id")
     status = obj.get("status")
     cancel_at_period_end = obj.get("cancel_at_period_end", False)
-    current_period_end = obj.get("current_period_end")  # epoch seconds
+    # Stripe API 2024-09-30.acacia+ moved current_period_end from the top
+    # of the Subscription onto items.data[0]. Use the shared helper so
+    # both pre-acacia fixtures and post-acacia live payloads resolve.
+    current_period_end = _extract_period_end(obj)  # epoch seconds or None
 
     if not stripe_subscription_id or not status:
         logger.warning(
@@ -955,13 +1035,11 @@ async def cancel_subscription(
 
     # Stripe's response carries the authoritative current_period_end as an
     # epoch second; we mirror it back to the local row. Failure to read it
-    # back is non-fatal — the webhook will reconcile.
-    stripe_period_end = None
-    try:
-        stripe_period_end = int(getattr(stripe_sub, "current_period_end", None)
-                                or stripe_sub["current_period_end"])
-    except (KeyError, TypeError, ValueError):
-        stripe_period_end = None
+    # back is non-fatal — the webhook will reconcile. _extract_period_end
+    # walks both the deprecated top-level path and the post-acacia
+    # items.data[0] path so the local mirror lands populated on both API
+    # version pins.
+    stripe_period_end = _extract_period_end(stripe_sub)
 
     # ---- Local mirror (UX responsiveness) ----------------------------------
     async with pool.acquire() as conn:

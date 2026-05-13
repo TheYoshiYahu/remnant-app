@@ -33,6 +33,16 @@ import Manage from "./routes/Manage";
  *   their access continues through period-end, they can resubscribe
  *   anytime, and the forever-locked price stays with them).
  *
+ * Session 40 — PWA on production:
+ *   The Vite-built bundle now ships as a Render Static Site at the bare
+ *   bible.remnantofpromise.org subdomain (per hosting/render.yaml's new
+ *   remnant-app-pwa service). The FastAPI API moved to
+ *   api.bible.remnantofpromise.org (lib/api.ts's default API_BASE). The
+ *   book-picker option key fix (b.id, not b.slug) clears the duplicate-
+ *   key console warnings that landed when Session 35 widened books.slug
+ *   UNIQUE to composite (edition_id, slug). The dev-only ?dev_jwt=
+ *   handler stays — production builds strip it via import.meta.env.DEV.
+ *
  * No router library — single pathname check at App-render time is enough
  * for three routes and keeps the dep list at React-only. Stripe checkout
  * navigates the browser away via window.location.href so we never need
@@ -208,7 +218,16 @@ function Reader() {
             {Object.entries(booksByCategory).map(([cat, list]) => (
               <optgroup key={cat} label={prettyCategory(cat)}>
                 {list.map((b) => (
-                  <option key={b.slug} value={b.slug}>
+                  // Session 40 fix: Session 35 widened books.slug UNIQUE to
+                  // composite (edition_id, slug); slugs like 'judith',
+                  // '1-esdras', 'tobit', '1-maccabees', '2-maccabees' now
+                  // appear in both apocrypha (KJV-1611) and
+                  // apocrypha-charles-vol1. b.id (numeric primary key) is
+                  // the unique React key. value={b.slug} stays for now —
+                  // the picker's downstream consumers still use slug, and
+                  // the duplicate value is a separate UX concern logged
+                  // for a later wheel.
+                  <option key={b.id} value={b.slug}>
                     {b.title}
                   </option>
                 ))}
@@ -281,7 +300,7 @@ function Reader() {
       <footer className="mt-12 border-t border-[var(--reader-rule)] pt-4 font-sans text-xs text-[var(--reader-muted)]">
         Live from{" "}
         <code className="rounded bg-white px-1 py-0.5">
-          bible.remnantofpromise.org/v1
+          api.bible.remnantofpromise.org/v1
         </code>
       </footer>
     </div>

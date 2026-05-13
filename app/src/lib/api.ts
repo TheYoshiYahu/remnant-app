@@ -1,25 +1,27 @@
 /**
  * Typed client for the Remnant of Promise Bible API.
  *
- * Production API: https://bible.remnantofpromise.org/v1/...
- * Local dev hits the production API directly — render.yaml's
- * CORS_ORIGINS includes http://localhost:5173.
+ * Production API: https://api.bible.remnantofpromise.org/v1/...
+ *   (Session 40 lock — moved off bible.remnantofpromise.org so the PWA
+ *   can claim the bare subdomain. The api. subdomain serves the FastAPI
+ *   service; the bare subdomain serves the static PWA.)
  *
- * Override at build time with VITE_API_BASE if pointing at staging
- * or a local FastAPI uvicorn instance.
+ * Override at build time with VITE_API_BASE — Render Static Site sets
+ * this in the build env per hosting/render.yaml; localhost dev can set
+ * it in app/.env.local to point at a local FastAPI uvicorn instance.
  *
- * SSO (Session 36): the bible-app reader picks up a WordPress-issued
- * JWT from the `rop_jwt` cross-subdomain cookie (set at
- * Domain=.remnantofpromise.org by the Session-37 WordPress login
- * handler). When present, it's attached as `Authorization: Bearer`
- * on every API call. The API also accepts the cookie directly (sent
- * automatically via `credentials: 'include'`) for callers that don't
- * read document.cookie themselves. Anonymous callers — no cookie, no
- * header — see the 66-book free canon.
+ * SSO (Session 36 + Session 40): the cross-subdomain cookie at
+ * Domain=.remnantofpromise.org is visible to both
+ * bible.remnantofpromise.org (the PWA) and api.bible.remnantofpromise.org
+ * (the API), so the existing rop_jwt cookie flow keeps working across
+ * the subdomain split. When present, the JWT is also attached as
+ * Authorization: Bearer on every API call. The API still allows
+ * credentials via CORS, and includes the PWA origin in CORS_ORIGINS.
+ * Anonymous callers — no cookie, no header — see the 66-book free canon.
  */
 
 const API_BASE: string =
-  import.meta.env.VITE_API_BASE ?? "https://bible.remnantofpromise.org/v1";
+  import.meta.env.VITE_API_BASE ?? "https://api.bible.remnantofpromise.org/v1";
 
 const SSO_COOKIE_NAME = "rop_jwt";
 
