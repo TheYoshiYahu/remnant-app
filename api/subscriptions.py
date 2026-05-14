@@ -1,5 +1,5 @@
 """
-Subscriptions router — Phase 4 wheel #7 (Session 37) + #8 (Session 38) + #9 (Session 39) + #10 (Session 40).
+Subscriptions router — Phase 4 wheel #7 (Session 37) + #8 (Session 38) + #9 (Session 39) + #10 (Session 40) + #11 (Session 42).
 
 Four endpoints, mounted on the main app at prefix /v1/subscriptions:
 
@@ -29,6 +29,21 @@ row's cancel_at_period_end + current_period_end fields are updated
 immediately for UX responsiveness; the customer.subscription.updated
 webhook (already handled in _handle_subscription_change) syncs Stripe's
 canonical state back when the dust settles.
+
+Session 42 wheel scope: WP companion plugin v2 — replaces the Session
+37 WordPress Application Password path for the partner_tier sync
+with an HMAC-signed POST to a dedicated bible-companion plugin
+endpoint (POST /wp-json/rop/v1/partner-tier with X-ROP-Signature +
+X-ROP-Timestamp headers). The plugin only writes the one
+rop_partner_tier user-meta key, so the secret it shares with the API
+has no admin scope and a compromised Render env-var store can't be
+walked sideways into the rest of /wp/v2/*. Application Password path
+stays in the source as the fallback transport when
+WP_COMPANION_SECRET is unset (graceful Session 42 → Session 43
+rollout — operator installs the plugin + pastes the secret, then
+retires the Application Password env vars in a follow-up). Both env
+groups unset = log-and-skip (existing shape). API version bumps
+0.6.0-phase4-session40 → 0.7.0-phase4-session42.
 
 Session 40 wheel scope: pre-PWA-deploy polish. Stripe deprecated the
 top-level Subscription.current_period_end field in API version
@@ -83,9 +98,12 @@ Architecture notes:
 
 from __future__ import annotations
 
+import hashlib
+import hmac
 import json
 import logging
 import os
+import time
 from typing import Literal, Optional
 
 import asyncpg
@@ -376,31 +394,133 @@ async def _claim_founder_slot(conn: asyncpg.Connection) -> bool:
 # ---- WordPress sync helper ------------------------------------------------
 
 
+def _sign_companion_request(
+    timestamp: int, body_bytes: bytes, secret: str
+) -> str:
+    """Compute HMAC-SHA256 signature for the bible-companion plugin.
+
+    Signing input mirrors the PHP plugin's verification logic in
+    ``wp-companion/bible-companion/bible-companion.php``:
+
+        signing_input = f"{timestamp}.{body_bytes}"
+        sig           = hex(HMAC-SHA256(signing_input, secret))
+
+    The plugin recomputes the same value and constant-time compares
+    with the X-ROP-Signature header. ``timestamp`` is sent in a
+    separate X-ROP-Timestamp header so the plugin can range-check the
+    drift window (±300s) before any cryptographic work.
+
+    Pulled out of ``_sync_partner_tier_to_wp`` so the smoke test can
+    exercise the signing path directly and so the plugin and the API
+    have one shared mental model for the wire shape.
+    """
+    signing_input = f"{timestamp}.".encode("utf-8") + body_bytes
+    digest = hmac.new(
+        secret.encode("utf-8"),
+        signing_input,
+        hashlib.sha256,
+    ).hexdigest()
+    return digest
+
+
 async def _sync_partner_tier_to_wp(
     wp_user_id: int, tier: str
 ) -> bool:
     """Best-effort push of the partner_tier value back to WordPress.
 
-    Posts to WP REST API with the configured Application Password. The
-    next JWT issuance from the WP plugin picks up the updated user-meta
-    via the ``jwt_auth_token_before_dispatch`` filter Yoshi installed
-    at Session 36 close.
+    Two transport paths, picked by configuration:
+
+    1. **HMAC path (preferred, Session 42).** When
+       ``WP_COMPANION_SECRET`` is set, POST to
+       ``{wp_api_base}/rop/v1/partner-tier`` with the
+       ``X-ROP-Signature`` + ``X-ROP-Timestamp`` headers the
+       ``bible-companion`` WP plugin verifies. The plugin only writes
+       the one ``rop_partner_tier`` user-meta key — no admin scope on
+       the secret, no Application Password sitting in env vars.
+
+    2. **Application Password path (Session 37 fallback).** When
+       ``WP_COMPANION_SECRET`` is unset but ``WP_API_USER`` and
+       ``WP_API_APP_PASSWORD`` are set, fall back to POSTing the WP
+       core ``/wp/v2/users/{id}`` user-meta path with Basic auth. This
+       keeps Session 37 deployments working through the Session 42 →
+       Session 43 transition window while the plugin install + secret
+       paste roll out.
+
+    Both unset → log-and-skip (existing degrade-gracefully shape from
+    Session 37). The next JWT issuance from ``rop-sso-bridge`` picks up
+    whatever value is currently in user-meta — if the sync skipped,
+    the partner sees their previous tier until the next webhook event.
 
     Returns True on success, False on any failure. NEVER raises — the
-    webhook caller treats failure as a logged-and-skip, so Stripe still
-    sees 200 and doesn't retry the whole event over a WP-side blip.
+    webhook caller treats failure as a logged-and-skip, so Stripe
+    still sees 200 and doesn't retry the whole event over a WP-side
+    blip.
     """
-    if not all([
+    if settings.wp_companion_secret:
+        return await _sync_partner_tier_via_companion(wp_user_id, tier)
+    if all([
         settings.wp_api_base,
         settings.wp_api_user,
         settings.wp_api_app_password,
     ]):
+        return await _sync_partner_tier_via_app_password(wp_user_id, tier)
+    logger.warning(
+        "[wp-sync] skipped wp_user_id=%s tier=%s — neither "
+        "WP_COMPANION_SECRET nor WP_API_* env vars are set",
+        wp_user_id, tier,
+    )
+    return False
+
+
+async def _sync_partner_tier_via_companion(
+    wp_user_id: int, tier: str
+) -> bool:
+    """HMAC-signed POST to the bible-companion endpoint."""
+    if not settings.wp_api_base:
         logger.warning(
-            "[wp-sync] skipped wp_user_id=%s tier=%s — WP_API_* env vars unset",
+            "[wp-sync/hmac] skipped wp_user_id=%s tier=%s — "
+            "WP_COMPANION_SECRET set but WP_API_BASE missing",
             wp_user_id, tier,
         )
         return False
 
+    base = settings.wp_api_base.rstrip("/")
+    url = f"{base}/rop/v1/partner-tier"
+    body_obj = {"wp_user_id": int(wp_user_id), "partner_tier": tier}
+    body_bytes = json.dumps(body_obj, separators=(",", ":")).encode("utf-8")
+    timestamp = int(time.time())
+    signature = _sign_companion_request(
+        timestamp, body_bytes, settings.wp_companion_secret
+    )
+    headers = {
+        "Content-Type": "application/json",
+        "X-ROP-Timestamp": str(timestamp),
+        "X-ROP-Signature": signature,
+    }
+
+    try:
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            resp = await client.post(url, content=body_bytes, headers=headers)
+        if resp.status_code == 200:
+            return True
+        logger.warning(
+            "[wp-sync/hmac] failed wp_user_id=%s tier=%s status=%s body=%s",
+            wp_user_id, tier, resp.status_code, resp.text[:300],
+        )
+        return False
+    except Exception as e:  # noqa: BLE001 — best-effort, log everything
+        logger.warning(
+            "[wp-sync/hmac] exception wp_user_id=%s tier=%s err=%r",
+            wp_user_id, tier, e,
+        )
+        return False
+
+
+async def _sync_partner_tier_via_app_password(
+    wp_user_id: int, tier: str
+) -> bool:
+    """Session 37's Application Password path. Kept as the fallback
+    transport while the bible-companion plugin install rolls out."""
     url = f"{settings.wp_api_base.rstrip('/')}/wp/v2/users/{wp_user_id}"
     auth = (settings.wp_api_user, settings.wp_api_app_password)
     body = {"meta": {"rop_partner_tier": tier}}
@@ -411,13 +531,14 @@ async def _sync_partner_tier_to_wp(
         if resp.status_code in (200, 201):
             return True
         logger.warning(
-            "[wp-sync] failed wp_user_id=%s tier=%s status=%s body=%s",
+            "[wp-sync/app-password] failed wp_user_id=%s tier=%s "
+            "status=%s body=%s",
             wp_user_id, tier, resp.status_code, resp.text[:300],
         )
         return False
     except Exception as e:  # noqa: BLE001 — best-effort, log everything
         logger.warning(
-            "[wp-sync] exception wp_user_id=%s tier=%s err=%r",
+            "[wp-sync/app-password] exception wp_user_id=%s tier=%s err=%r",
             wp_user_id, tier, e,
         )
         return False

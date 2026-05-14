@@ -108,6 +108,25 @@ services:
         # WordPress Application Password for partner_tier sync. Generated at
         # WP admin → Users → your user → Application Passwords. WordPress shows
         # it ONCE; copy with the spaces.
+        #
+        # Session 42: this is now the FALLBACK transport. When
+        # WP_COMPANION_SECRET (below) is set, the partner_tier sync uses
+        # the HMAC path to the bible-companion plugin instead, and these
+        # WP_API_USER + WP_API_APP_PASSWORD vars can be retired in a
+        # follow-up session once the plugin path is live-verified.
+        sync: false
+      # ---- Session 42: bible-companion HMAC partner_tier sync -----------
+      # Shared HMAC secret with the `bible-companion` WordPress plugin
+      # (wp-companion/bible-companion/). Same string that lives in
+      # wp-config.php as ROP_COMPANION_SECRET. When set, the
+      # partner_tier sync POSTs an HMAC-signed request to the plugin's
+      # /wp-json/rop/v1/partner-tier endpoint — which only writes the
+      # one rop_partner_tier user-meta key — instead of using the
+      # broad-scope Application Password path above. Generate a 64-char
+      # hex string (32 bytes entropy); paste the SAME value here and in
+      # wp-config.php. sync: false — set in the Render dashboard, never
+      # in git.
+      - key: WP_COMPANION_SECRET
         sync: false
       - key: PYTHONUNBUFFERED
         value: "1"

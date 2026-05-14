@@ -128,14 +128,18 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Remnant of Promise Official Study Bible — API",
-    version="0.6.0-phase4-session40",
+    version="0.7.0-phase4-session42",
     description=(
         "Phase 4 API: books, chapters, verses, trigram search, plus the "
         "Stripe subscription surface — checkout, webhook, me, partner-"
         "initiated cancellation (cancel_at_period_end + forever-locked "
         "price preserved). Session 40 patches the period_end extraction "
         "path to handle Stripe API 2024-09-30.acacia's move of "
-        "current_period_end from the Subscription onto items.data[0]."
+        "current_period_end from the Subscription onto items.data[0]. "
+        "Session 42 swaps the WP partner_tier sync from an admin "
+        "Application Password (Session 37) to an HMAC-signed call to "
+        "the bible-companion WP plugin's dedicated partner-tier "
+        "endpoint."
     ),
     lifespan=lifespan,
 )

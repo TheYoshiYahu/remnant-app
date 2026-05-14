@@ -68,6 +68,24 @@ class Settings(BaseSettings):
         description="WordPress Application Password for partner_tier sync.",
     )
 
+    # ---- Session 42: bible-companion HMAC partner_tier sync ------------
+    # When set, _sync_partner_tier_to_wp uses the HMAC-signed
+    # POST /wp-json/rop/v1/partner-tier path exposed by the
+    # `bible-companion` WP plugin (wp-companion/bible-companion/), which
+    # only writes the one user-meta key and never holds admin-scope
+    # credentials. When unset, the sync falls back to the Session 37
+    # Application Password path (wp_api_user + wp_api_app_password).
+    # Both unset = log-and-skip (existing degrade-gracefully shape).
+    wp_companion_secret: str = Field(
+        default="",
+        description=(
+            "HMAC shared secret for the bible-companion WP plugin. "
+            "Same string that lives in wp-config.php as "
+            "ROP_COMPANION_SECRET. When set, this path takes "
+            "precedence over the Application Password path."
+        ),
+    )
+
     model_config = SettingsConfigDict(
         env_file=str(_API_DIR / ".env"),
         env_file_encoding="utf-8",
