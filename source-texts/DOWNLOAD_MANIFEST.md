@@ -11,13 +11,15 @@
 > **12 seed-wired editions / 154 books / 50,561 verses** (`seed.py --dry-run`);
 > the authoritative current state is the `JSON_FILE_FOR_EDITION` map in
 > `api/seed.py` and the files in `source-texts/parsed/`, not this manifest.
-> Sonnini Acts 29 was parsed and wired Session 48. The genuinely-still-unsourced
-> items are: Books of Adam and Eve I & II (Malan 1882), Apocalypse of Abraham
-> (Box 1918), Alphabet of Ben Sirach, and the Bucket A items — all web-fetch
-> blocked as of Session 48 (`web_fetch` returns empty for sacred-texts.com).
-> Brit HaTorah and Alphabet of David remain source-unresolved (Q5, Q6). A
-> full row-by-row reconciliation of this manifest against `seed.py` and
-> `parsed/` is a pending follow-up task.
+> Sonnini Acts 29 was parsed and wired Session 48. **Session 49 (2026-05-15)
+> sourced, restored, parsed, and seed-wired the First and Second Books of Adam
+> and Eve** (`adam-eve-conflict` edition — 2 books / 101 ch / 1,242 vv). The
+> genuinely-still-unsourced items are now: Apocalypse of Abraham (Box 1918),
+> Alphabet of Ben Sirach, and the Bucket A items. `web_fetch` is dead for
+> sacred-texts.com *and* gutenberg.org (returns empty) — Chrome browser tools
+> are the working path. Brit HaTorah and Alphabet of David remain
+> source-unresolved (Q5, Q6). A full row-by-row reconciliation of this manifest
+> against `seed.py` and `parsed/` is a pending follow-up task.
 
 The discipline (locked session 16): the canon and extras manifest needs to be COMPLETE on disk before the seed runs and before commentary is written. This file tracks every source we need to pull, the public-domain English base for each, the URL, and the status. Each future session reads this on open and resumes where the prior session left off.
 
@@ -289,3 +291,28 @@ Sessions 17–31 ran parser work against mrjames-apocryphal-nt, lightfoot-aposto
 | **TOTAL** | **153** | **2,435** | **50,535** |
 
 The honest corpus floor for the locked manifest is ~50–53k verses once remaining items are sourced (Bucket A Cepher Hidden Gems, Sonnini Acts 29 parse, remaining Shamayim and Ha'avoth, Adam-Eve, Bucket C decisions). Seed.py held for explicit gate — no live-DB writes this session.
+
+### Session 49 (2026-05-15)
+
+**Chrome-sourcing wheel — First and Second Books of Adam and Eve landed.**
+
+**Source-base decision (Yoshi, Session 49) — recorded here per the verbal-answers-transcribe discipline.** Asked whether to use the modernized Gutenberg/mirror Platt text or the archaic-register sacred-texts text for the Adam-Eve books (and the same call for Apocalypse of Abraham). Yoshi: *"we are restoring the language and sacred names, so you choose, we are going to have it modernized either way."* Decision applied: the modernized Platt register is the accepted base for these editions; restore.py runs on top regardless. This is an edition-base decision, not a corpus-wide rule — it is recorded, not elevated.
+
+**Operational note — web_fetch.** `web_fetch` returns empty for *both* sacred-texts.com and gutenberg.org. The Claude-in-Chrome browser tools are the working path. Large-page extraction through the JS bridge is output-capped at ~1 KB per call (impractical for book-length text); the working mechanism is an in-page `fetch()` + Blob download with `application/octet-stream` MIME (a `text/plain` Blob does not reliably download) into `~/Downloads`, then read off disk.
+
+**Done this session — `adam-eve-conflict` edition (NEW):**
+- **Book I** sourced from Project Gutenberg #398 (`~/Downloads/pg398_first_book_adam_eve.txt`) — the modernized Platt text. 79 chapters / 920 verses. The Dennis Hawkins 1995 editorial "Prologue" is NOT republished (it describes the 1995 electronic conversion itself — same standing practice the Sonnini parser applies to the Covenant Publishing introduction).
+- **Book II** sourced from the reluctant-messenger.com single-page mirror of the same modernized Platt text (`~/Downloads/eden_2_raw.html`). 22 chapters / 322 verses. One verse-marker typo in the mirror corrected and logged: Chapter 13's final verse was labelled "18" where sacred-texts' FBE shows "13" for the same verse text (cross-checked against `sacred-texts.com/bib/fbe/fbe097.htm`); verse text is faithful, only the marker was renumbered.
+- Pipeline: `restoration-pipeline/_session49_build_adam_eve_source.py` (one-off source builder) → `source-texts/adam-eve/{1,2}-adam-eve.txt` → `restore.py` → `{1,2}-adam-eve-restored.txt` → `restoration-pipeline/parse_adam_eve_edition.py` → `source-texts/parsed/adam-eve-conflict.json`.
+- Wired into `api/seed.py`: `EDITION_PROFILES["adam-eve-conflict"]` (witness_category `pseudepigrapha`, tier `extras`, sort_offset 340, pipeline phase4-v2) + `JSON_FILE_FOR_EDITION`. `seed.py --dry-run` lifts clean: **13 editions / 156 books / 2,537 chapters / 51,803 verses** (Adam-Eve delta: +1 edition, +2 books, +101 chapters, +1,242 verses).
+- The Malan 1882 scan `~/Downloads/malan-1882-adam-and-eve.pdf` (already on disk from a prior session) was checked — its OCR text layer is unusable; kept as a reference scan only.
+
+**Still open after Session 49:**
+- **Apocalypse of Abraham (Box 1918).** The attributed public-domain source is on disk: `~/Downloads/box-1918-apoc-abraham.pdf` (176 pp; the translation runs chapters I–XXXII after a long introduction). Session 49 assessment, for whoever picks this up:
+  - **Use `pdftotext -layout`, not plain `pdftotext`.** Plain mode scrambles footnotes and body text together unrecoverably. `-layout` mode gives clean, readable, properly-ordered text (extracted to `outputs/box_layout.txt` Session 49 — 8,949 lines; the translation is lines ~1447–5301, before `APPENDIX I`).
+  - **Footnotes still need stripping.** In `-layout` output each page is `[body text][footnote block][page-header line(s)]`. Footnote blocks sit at the page tail, start with a marker (`1`, then OCR'd symbols `^ ' * °`), and end at the next page-header line (a lone page number, or `NN  APOCALYPSE OF ABRAHAM  [chap, x]`, or `CHAP. N]  PART I/II  NN`). A page-tail heuristic should separate them.
+  - **OCR cleanup needed.** Systematic artifacts: "Abrahaffl"→"Abraham", "APOCALYfeE"→"APOCALYPSE", "Tared"→"Jared", "Roog (Reu)"→"Reu", chapter markers mangled ("n."→"II.", "VIIL"→"VIII"). A correction map handles most.
+  - **OPEN DECISION FOR YOSHI — verse division.** Box 1918 divides the text into 32 chapters of continuous prose with **no verse numbers**. Every other corpus edition is verse-numbered. Options: (a) one chapter = one verse; (b) sentence-split into verses; (c) adopt the standard modern AoA versification (the verse divisions carried by Cepher / the Rubinkiewicz line). This is a corpus-structural call — it should be Yoshi's, not invented in the parser.
+  - The pseudepigrapha.com page carries two clean verse-numbered translations but both are "Translator unknown" (likely the copyrighted Rubinkiewicz OTP text) — not safe to republish.
+  - **Recommend:** a focused Box-1918 parse wheel, opened with the verse-division decision.
+- **Alphabet of Ben Sirach.** Still source-unresolved AND carries a voice-skill content concern: the medieval *Alphabet of Ben Sira* is a satirical/legendary text with crude and bawdy content (the Lilith narrative, scatological humour). It should get a Yoshi voice-skill pre-screen — like the Gospel of Mary pre-screen in Session 32 — *before* any sourcing, not after.

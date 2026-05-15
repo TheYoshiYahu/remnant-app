@@ -245,6 +245,40 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
         "sort_offset": 330,
         "pipeline_version": "phase4-v2",
     },
+    # The First and Second Books of Adam and Eve (The Conflict of Adam
+    # and Eve with Satan) — W-2 wire-up landed Session 49, 2026-05-15.
+    # NEW edition `adam-eve-conflict`. Ethiopic Christian pseudepigraphon
+    # (underlying composition commonly dated 6th c. CE; preserves older
+    # Adam-and-Eve traditions). English lineage carried here:
+    # Malan & Trumpp 1882 (from the Arabic and Ethiopic) -> Platt 1926
+    # (The Forgotten Books of Eden) -> 1995 modernization. Source-base
+    # decision (Yoshi, Session 49): the corpus restores language and
+    # sacred names regardless, so the modernized Platt register is the
+    # accepted base — Book I from Project Gutenberg #398, Book II from
+    # the reluctant-messenger.com single-page mirror of the same text,
+    # both Chrome-sourced Session 49. The Malan 1882 scan is on disk as a
+    # reference scan only (unusable OCR text layer). The Dennis Hawkins
+    # 1995 editorial "Prologue" is NOT republished — same standing
+    # practice the Sonnini parser applies to the Covenant Publishing
+    # introduction. restore.py applied Session 49; parsed by
+    # parse_adam_eve_edition.py as 2 books / 101 chapters / 1,242 verses
+    # (Book I: 79 ch / 920 vv; Book II: 22 ch / 322 vv).
+    # witness_category=pseudepigrapha — already in schema.sql; no enum
+    # extension needed. sort_offset=340 places this edition with the
+    # individual-pseudepigrapha cluster (enoch=300, jubilees=310,
+    # jasher=320, ascension-isaiah=330), before the Charles-vol-2
+    # compendium (500). pipeline_version=phase4-v2 matches the other
+    # restore.py-driven editions.
+    "adam-eve-conflict": {
+        "title": ("The First and Second Books of Adam and Eve "
+                  "(The Conflict of Adam and Eve with Satan) — "
+                  "Restored Names Edition"),
+        "public_domain_base": "Malan & Trumpp 1882 / Platt 1926 (modernized)",
+        "witness_category": "pseudepigrapha",
+        "tier_required": "extras",
+        "sort_offset": 340,
+        "pipeline_version": "phase4-v2",
+    },
     # Acts 29 — The Sonnini Manuscript — W-2 wire-up landed session 48,
     # 2026-05-14. NEW edition `sonnini-acts-29`. The "Long Lost Chapter of
     # Acts" — published 1801, interleaved in a copy of Sonnini's *Travels
@@ -288,6 +322,7 @@ JSON_FILE_FOR_EDITION = {
     "mrjames-apocryphal-nt": "mrjames-apocryphal-nt.json",
     "lightfoot-apostolic-fathers": "lightfoot-apostolic-fathers.json",
     "ascension-isaiah": "ascension-isaiah.json",
+    "adam-eve-conflict": "adam-eve-conflict.json",
     "sonnini-acts-29": "sonnini-acts-29.json",
 }
 
