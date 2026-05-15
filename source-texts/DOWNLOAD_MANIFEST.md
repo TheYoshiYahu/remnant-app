@@ -2,6 +2,23 @@
 
 **Started Session 16, 2026-05-11.**
 
+> **⚠ DRIFT NOTICE — added Session 48, 2026-05-14.** This manifest is stale and
+> should not be trusted row-by-row until rewritten. Many items still labeled
+> "NOT FETCHED" below were in fact fetched, parsed, and wired into `seed.py`
+> across Sessions 19–34 — including all of Josephus, the Lightfoot Apostolic
+> Fathers, the M.R. James Apocryphal NT pilot, the Charles vol 1 + vol 2
+> editions, and the Ascension of Isaiah. As of Session 48 the corpus has
+> **12 seed-wired editions / 154 books / 50,561 verses** (`seed.py --dry-run`);
+> the authoritative current state is the `JSON_FILE_FOR_EDITION` map in
+> `api/seed.py` and the files in `source-texts/parsed/`, not this manifest.
+> Sonnini Acts 29 was parsed and wired Session 48. The genuinely-still-unsourced
+> items are: Books of Adam and Eve I & II (Malan 1882), Apocalypse of Abraham
+> (Box 1918), Alphabet of Ben Sirach, and the Bucket A items — all web-fetch
+> blocked as of Session 48 (`web_fetch` returns empty for sacred-texts.com).
+> Brit HaTorah and Alphabet of David remain source-unresolved (Q5, Q6). A
+> full row-by-row reconciliation of this manifest against `seed.py` and
+> `parsed/` is a pending follow-up task.
+
 The discipline (locked session 16): the canon and extras manifest needs to be COMPLETE on disk before the seed runs and before commentary is written. This file tracks every source we need to pull, the public-domain English base for each, the URL, and the status. Each future session reads this on open and resumes where the prior session left off.
 
 The work splits into three buckets:

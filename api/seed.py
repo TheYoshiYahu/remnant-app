@@ -245,6 +245,33 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
         "sort_offset": 330,
         "pipeline_version": "phase4-v2",
     },
+    # Acts 29 — The Sonnini Manuscript — W-2 wire-up landed session 48,
+    # 2026-05-14. NEW edition `sonnini-acts-29`. The "Long Lost Chapter of
+    # Acts" — published 1801, interleaved in a copy of Sonnini's *Travels
+    # in Turkey and Greece* (London: Longman & Rees). Public-domain 1801
+    # English; the 2011 Covenant Publishing editorial introduction is NOT
+    # republished. Source text landed session 16 at
+    # source-texts/sonnini-acts-29/sonnini-manuscript-1801.md (26 verses,
+    # single chapter); restore.py applied session 48 ->
+    # sonnini-acts-29-restored.txt; parsed by
+    # parse_sonnini_acts29_edition.py as 1 book / 1 chapter (Chapter 29) /
+    # 26 verses. witness_category=disputed_witness — already in the
+    # schema.sql enum (line 111), added at schema-creation time
+    # specifically for this text per Yoshi's 2026-05-09 inventory note; no
+    # enum extension needed. The UI labels it "Acts 29 (Sonnini
+    # Manuscript) — disputed authenticity, included for study and
+    # discernment." sort_offset=700 places this edition last in canonical
+    # order, after lightfoot-apostolic-fathers (650). pipeline_version=
+    # phase4-v2 matches the other restore.py-driven editions (restore.py
+    # unchanged since session 19's possessive-handling patch).
+    "sonnini-acts-29": {
+        "title": "Acts 29 — The Sonnini Manuscript (Restored Names Edition)",
+        "public_domain_base": "Sonnini 1801",
+        "witness_category": "disputed_witness",
+        "tier_required": "extras",
+        "sort_offset": 700,
+        "pipeline_version": "phase4-v2",
+    },
 }
 
 # Map the JSON's edition_id → seed profile key. Canon listed first so it
@@ -261,6 +288,7 @@ JSON_FILE_FOR_EDITION = {
     "mrjames-apocryphal-nt": "mrjames-apocryphal-nt.json",
     "lightfoot-apostolic-fathers": "lightfoot-apostolic-fathers.json",
     "ascension-isaiah": "ascension-isaiah.json",
+    "sonnini-acts-29": "sonnini-acts-29.json",
 }
 
 
