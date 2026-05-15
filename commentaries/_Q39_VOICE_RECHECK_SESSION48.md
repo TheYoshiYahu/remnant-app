@@ -13,14 +13,21 @@ ch6 (Watchers / seed-war / tares), ch71 (Enoch's exaltation, the Charles
 redirect, the two registers of *son of Adam*).
 
 **Scope finding — read this first.** Of the three books Q39 names, **only Enoch
-carries chapter commentary in the piped corpus.** `parsed/jasher.json` and
+carries chapter commentary in the *piped* corpus.** `parsed/jasher.json` and
 `parsed/jubilees.json` have **zero** chapters with a populated `commentary`
-field. The published Jasher and Jubilees Restored Names editions on disk may
-carry commentary that the parsers never extracted, or those editions may not
-have chapter-level commentary at all — **Yoshi needs to confirm which.** If
-Jasher/Jubilees commentary exists in the published `.docx`/`.txt` editions, a
-parser pass is needed before it can be gated. As things stand, the Q39 gate has
-a single real subject: the Enoch commentary.
+field. But the commentary is not missing — **Yoshi confirmed (Session 48) that
+he has written the full book and commentary for both Jasher and Jubilees.** It
+lives in the published Restored Names editions on his Mac
+(`source-texts/existing-restored-editions/Jasher-Restored-Names-Edition.txt`,
+1.77 MB; `Jubilees-Restored-Names-Edition.txt`, 620 KB — both show ~85
+"commentary" occurrences on a keyword grep). The gap is a **parser gap**: the
+Jasher and Jubilees edition parsers never carried the commentary into the
+parsed JSON `commentary` field the way the Enoch parser did. **Before the Q39
+gate can run on Jasher and Jubilees, those two editions need a parser pass to
+extract their commentary into the JSON.** As things stand *this session*, the
+gate had a single runnable subject — the Enoch commentary — but the full Q39
+scope is genuinely Enoch + Jasher + Jubilees, all three with existing
+commentary.
 
 ---
 
@@ -150,9 +157,11 @@ the Red Line #12 exposure and is worth its own wheel right after the ship.
 
 ## Open items handed to Yoshi
 
-1. **Jasher / Jubilees commentary** — does it exist in the published editions?
-   If yes, it needs a parser pass before it can be gated. If no, Q39's
-   Enoch/Jasher/Jubilees scope is really Enoch-only and the roadmap should say so.
+1. **Jasher / Jubilees commentary** — confirmed to exist (Yoshi wrote full book +
+   commentary for both). It needs a **parser pass** to extract it from the
+   published editions into the parsed JSON `commentary` field, after which the
+   Q39 gate runs on it the same way it ran on Enoch this session. Worth its own
+   bounded wheel.
 2. **"Ancient of Days" vs. "Head of Days"** — confirm the edition-level
    convention so the consistency pass has a target.
 3. **Which fix option (A / B / C)** lands before the ship.
