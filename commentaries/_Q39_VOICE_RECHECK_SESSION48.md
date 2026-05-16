@@ -165,3 +165,68 @@ the Red Line #12 exposure and is worth its own wheel right after the ship.
 2. **"Ancient of Days" vs. "Head of Days"** — confirm the edition-level
    convention so the consistency pass has a target.
 3. **Which fix option (A / B / C)** lands before the ship.
+
+---
+
+## Closure — Session 57 (b) (2026-05-16)
+
+**Option C — Yoshi's pick at Session 52 — landed.** Phase D sequencing held: the
+S52→S53 restoration-pass wheel landed first on the restored Enoch corpus, then
+S57 (b) resumed Q39 against `parsed/enoch.json` (Phase D re-parse). Voice skill
+loaded fresh at session open (16 marker hits across 2 `Yahuah Elohayka` +
+14 `source-echo`). All six Q39 findings applied:
+
+- **Ch6 scaffolding line deleted** (one-line "Now I have everything…
+  Supplemental Commentary Sections" authoring artifact).
+- **Ch46 duplicate Formless/Formed exposition removed** — the later block headed
+  "The Head of Days and the Elect One — The Formless and the Formed" (the
+  restated copy); the earlier "The Elect One, the Head of Days, and the
+  Formless/Formed Structure" block kept (carries the chapter's flow + the
+  Lord-of-Spirits context).
+- **Son of Adam commentary sweep** — 74 USE-case restorations across 21 chapters
+  (Son of Man → Son of Adam; son of man → son of Adam; sons of men → sons of
+  Adam). **MENTION cases preserved (9 instances)** — the inherited English
+  phrase is kept where the commentary is *meta-discussing the phrase* (ch71's
+  etymology "Son of man — ben adam — means son of Adam", ch71's Charles-redirect
+  history, ch46/ch37/ch62's scare-quoted "Son of Man" references discussing the
+  title as a title). Carve-out is consistent with the Q39 report's own
+  identification of ch71 as "the model the rest should match" — running an
+  auto-pass on ch71 would break its pedagogy. Kaph-comparative cases (Daniel
+  7:13, Rev 1:13, Rev 14:14) require separate hand-review for "like a" preservation
+  in cross-refs — flagged for follow-up if any remain non-comparative.
+- **Head of Days reconciliation** — 5 chapters touched. First bare "Ancient of
+  Days" in each chapter → "Head of Days (Ancient of Days)" (S52 convention,
+  reader orientation per chapter), subsequent → "Head of Days". Bare AoD inside
+  scripture cross-ref parentheticals (e.g. "Daniel 7:9 (Ancient of Days…)")
+  preserved — the canonical English in cross-refs is intentional.
+- **Name-restoration mechanics in prose** — 17 chapters touched. Israel →
+  Yashar'el (Israel); Jesus Christ → Yahusha HaMashiach (Jesus Christ); Holy
+  Spirit → Ruach HaKodesh (Holy Spirit). Avoids re-restoring already-restored
+  instances.
+- **Lord of Spirits straggler** (ch39) → Yahuah (God) of Spirits, matching the
+  220 existing instances in commentary and the 145 in verse text (S52 decision —
+  name restoration, not retranslation; not the elevated Yahuah Tseva'oth).
+- **Typo fixes** — `Spiritsand` (ch48 commentary), `Spiritscommanded` (ch54
+  commentary) reverted via Phase D re-parse, fixed again here. `sheepbrought`
+  (ch89 verse 16) is on the verse-text side; not in scope for the commentary
+  fix and confirmed absent from current commentary state.
+
+**Numbers.** 47 total changes. Verse-text drift: **0** (commentary-only fix —
+verses entirely untouched). Commentary delta: −3,035 chars (net of scaffold +
+duplicate deletions minus name-restoration expansions). Self-test 108/108
+passing. Validation reports (`enoch-diff.md`, `enoch-verse-diff.md`)
+byte-identical to S56 close — the fix doesn't touch what `restore.py` is
+producing against the published edition.
+
+**Open carry to next session.**
+
+- **Jasher / Jubilees Q39 gate** — Phase D landed the commentary into the
+  parsed JSON. Jasher and Jubilees have not yet had the Q39 gate run on them.
+  Own bounded wheel.
+- **Kaph-comparative scan** — Daniel 7:13 / Rev 1:13 / Rev 14:14 cross-references
+  in Enoch commentary that may currently read "Son of Adam coming with the
+  clouds" need a pass to restore the comparative ("like a son of Adam") per
+  Red Line #12's carve-out. Small focused review.
+- **Convention answers carried** — Head of Days (S52); name restoration over
+  Yahuah Tseva'oth (S52); 15 verse-text son-of-man restorations (S53 — already
+  landed in `verses[].text`).
