@@ -248,6 +248,66 @@ def is_real_chapter_heading(
     return bool(re.search(r"(?:^|[\s\n])1[\.\s]", body))
 
 
+def _split_at_verse_list_end(body: str) -> tuple[str, str]:
+    """
+    Split a chapter body into (scripture, commentary) at the point where
+    the numbered-verse list ends and free prose begins.
+
+    Used for editions that have no explicit "Commentary" header (Jasher).
+    Walks the body paragraph-by-paragraph (paragraphs separated by blank
+    lines). A "numbered paragraph" is one that begins with `<digit>+. `
+    at column 0 — i.e., a numbered verse opening.
+
+    Algorithm:
+      - Find the indices of all numbered paragraphs.
+      - Scripture = paragraphs[first_numbered : last_numbered + 1]
+        (preserves any interleaved prose between verses — monotonic
+        verse filtering in split_verses handles spurious numbers in
+        such interjections).
+      - Commentary = paragraphs[last_numbered + 1 :].
+      - Anything before the first numbered paragraph is dropped — this
+        is typically a wrapped continuation of a multi-line chapter
+        title (e.g., Jasher's "the Ground" after "First Blood on").
+        The single-line heading regex already captured the title's
+        first line; the continuation is discarded.
+
+    Returns ("", "") for an empty body. If no numbered paragraphs are
+    found, returns (body, "") so a non-verse chapter falls back to the
+    legacy behavior rather than disappearing.
+    """
+    if not body.strip():
+        return "", ""
+
+    paragraphs = re.split(r"\n\s*\n", body)
+    verse_num_re = re.compile(r"^\s*(\d+)\.\s")
+
+    # Walk paragraphs forward, following a strict monotonic +1 chain
+    # starting at verse 1. A paragraph is part of the verse list only if
+    # it starts with `N. ` where N is the next expected verse number.
+    # This stops the chain at the boundary between scripture and prose,
+    # and (crucially for Jasher) it ignores back-matter paragraphs like
+    # "1. Forward Index" or "2. Reverse Index" that would otherwise look
+    # like verses to a naive "starts-with-digit-period-space" matcher.
+    first_verse_idx = -1
+    last_verse_idx = -1
+    expected = 1
+
+    for i, p in enumerate(paragraphs):
+        m = verse_num_re.match(p)
+        if m and int(m.group(1)) == expected:
+            if first_verse_idx == -1:
+                first_verse_idx = i
+            last_verse_idx = i
+            expected += 1
+
+    if first_verse_idx == -1:
+        return body, ""
+
+    scripture = "\n\n".join(paragraphs[first_verse_idx : last_verse_idx + 1])
+    commentary = "\n\n".join(paragraphs[last_verse_idx + 1 :]).strip()
+    return scripture, commentary
+
+
 # ---------------------------------------------------------------------------
 # Per-edition parsers
 # ---------------------------------------------------------------------------
@@ -266,6 +326,8 @@ def _parse_single_book_edition(
     require_real_heading: bool = True,
     look_ahead_chars: int = 400,
     allow_verse_gaps: bool = False,
+    commentary_strategy: str = "marker",
+    commentary_required_marker: Optional[str] = None,
 ) -> Edition:
     """
     Common machinery for the three single-book editions
@@ -322,13 +384,30 @@ def _parse_single_book_edition(
                 break
         body = text[body_start:body_end]
 
-        com_match = commentary_pat.search(body)
-        if com_match:
-            scripture = body[: com_match.start()]
-            commentary = body[com_match.end():].strip()
-        else:
-            scripture = body
-            commentary = ""
+        if commentary_strategy == "verse_end":
+            # Used for editions without an explicit "Commentary" header
+            # (Jasher). Split at the boundary between the numbered verse
+            # list and the following prose.
+            scripture, commentary = _split_at_verse_list_end(body)
+            if (
+                commentary
+                and commentary_required_marker
+                and commentary_required_marker not in commentary
+            ):
+                print(
+                    f"WARN: {edition_id} chapter {ch_num} commentary "
+                    f"missing expected marker "
+                    f"'{commentary_required_marker}'",
+                    file=sys.stderr,
+                )
+        else:  # "marker" — split at the first commentary_pat match
+            com_match = commentary_pat.search(body)
+            if com_match:
+                scripture = body[: com_match.start()]
+                commentary = body[com_match.end():].strip()
+            else:
+                scripture = body
+                commentary = ""
 
         chapter = Chapter(
             number=ch_num,
@@ -387,7 +466,10 @@ def parse_jubilees(text: str) -> Edition:
         book_id="jubilees",
         book_title="Book of Jubilees",
         heading_pat=re.compile(r"^Chapter\s+(\d+)\s+—\s+(.+)$", re.MULTILINE),
-        commentary_pat=re.compile(r"^Commentary on Chapter\s+\d+\s*$", re.MULTILINE),
+        # Each chapter ends with a bare `Commentary` line on its own
+        # (S56 D1.b: was `^Commentary on Chapter \d+\s*$`, which matched zero
+        # markers in this edition — 50 markers fire under the corrected form).
+        commentary_pat=re.compile(r"^Commentary\s*$", re.MULTILINE),
         allow_implicit_verse_1=True,
         # Jubilees verse-1 prose can run ~800-1500 chars before the first
         # explicit marker; look-ahead must be large to avoid dropping real
@@ -418,7 +500,19 @@ def parse_jasher(text: str) -> Edition:
         book_title="Book of Jasher",
         # Require ': <Title>' (forces colon + title — filters out bare 'Chapter N' lines)
         heading_pat=re.compile(r"^Chapter\s+(\d+):\s*(.+)$", re.MULTILINE),
+        # Jasher has no explicit "Commentary" header in the body. Each
+        # chapter goes: numbered verses → free prose → `Cross-references:`
+        # closing line → next Chapter heading. The `verse_end` strategy
+        # splits at the first non-numbered paragraph after the verse list.
+        # commentary_pat below is unused under verse_end but kept for
+        # interface uniformity with the other dispatchers.
+        # (S56 D1.b: was `^Commentary on Chapter \d+\s*$`, which matched
+        # zero markers — the entire commentary block was leaking into the
+        # last verse's text. Cross-references count = chapter count = 91,
+        # so the verse-end split has a 1:1 sanity check.)
         commentary_pat=re.compile(r"^Commentary on Chapter\s+\d+\s*$", re.MULTILINE),
+        commentary_strategy="verse_end",
+        commentary_required_marker="Cross-references:",
         allow_implicit_verse_1=False,
     )
 
