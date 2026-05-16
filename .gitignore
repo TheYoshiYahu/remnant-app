@@ -39,6 +39,7 @@ Thumbs.db
 dist/
 build/
 *.tar.gz
+bible-companion.zip
 
 # Logs
 *.log
