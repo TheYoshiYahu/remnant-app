@@ -2191,3 +2191,15 @@ The handoff prompt is the *minimum context* a fresh session needs to load Yoshi'
 *(Section XI carries the active Session 35 prompt plus two stale-for-reference prompts kept as cautionary markers: the Session 34 prompt that named six edition profiles for wiring when five of the six were already on disk — second-strike lesson (s) territory, and the cleanest demonstration that the lesson now travels at the open of every session — and the Session 22 prompt that named the "mrjames-b half-2 expansion" Yoshi caught as drift — lesson (r) territory. The Session 33 prompt was rolled off into git history at session-34 close. Older session prompts remain accessible in git history. Read both stale prompts as cautionary tales, not as forward plans.)*
 
 ---
+
+## Session 54 addendum (2026-05-15) — tier-content note transcribed pending full Section X back-fill
+
+The roadmap drift (Section X stopping at Session 48; Sessions 49–54 logged into `source-texts/DOWNLOAD_MANIFEST.md` instead) is still pending Yoshi's call whether to back-fill. This Session 54 entry exists specifically to transcribe one in-conversation decision per the Verbal-Answers-Transcribe discipline so it survives the session, without trying to back-fill the whole drift.
+
+**Tier-content decision (Yoshi, Session 54).** *Free tier gets Strong's concordance only. The $1.99 tier gets BDB (Brown-Driver-Briggs Hebrew lexicon) and other advanced lexical tools.* The decision was raised mid-Session-54 (during the Sacred Names construct expansion wheel) and captured here so the call lands in writing before any UI / tier wiring work picks it up.
+
+**Open sub-question** (Session 55+): does the $1.99 tier in this content map equal the existing "Notes" tier from the Session 47 Free/Notes/Library lock, or is it a distinct tier between Free and Notes? The pricing-tier structure currently has Free / $1.99 / $4.99 as the three active ship tiers (Section III); whether the $1.99 in this content map points at the existing $1.99 tier or names a new one needs Yoshi's confirmation before tier-wiring work begins. Surface to Yoshi at Session 55 open and either (a) confirm $1.99 = the existing Notes tier and update Section III's tier-content map to add Strong's-vs-BDB to it, or (b) introduce a new tier and revise the tier structure accordingly.
+
+This sits as a roadmap-content note pending the full Section X back-fill of Sessions 49–54. When the back-fill happens, this addendum can be promoted into Section X (Session 54 entry) and Section IX Q40 (founder-pricing-revisit thread continues).
+
+---

@@ -279,6 +279,46 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
         "sort_offset": 340,
         "pipeline_version": "phase4-v2",
     },
+    # The Apocalypse of Abraham (Chizayon Avraham) — W-2 wire-up landed
+    # Session 50, 2026-05-15. NEW edition `apocalypse-of-abraham`. Jewish
+    # pseudepigraphon surviving only in Old Church Slavonic (underlying
+    # composition commonly dated late 1st / early 2nd c. CE). English
+    # carried here: G. H. Box's 1918 translation (SPCK "Translations of
+    # Early Documents"), made with J. I. Landsman from Codex S. Box 1918
+    # is public domain; Chrome-sourced to ~/Downloads/box-1918-apoc-
+    # abraham.pdf, extracted Session 50. The body/footnote split was
+    # hand-verified against the `pdftotext -layout` output for all 51
+    # pages of the translation (Box's footnote apparatus is discursive
+    # scholarly prose that content-heuristics could not separate cleanly).
+    # Box's running headers, page folios, full footnote apparatus,
+    # editorial section sub-headings, square-bracket MS-variant markers,
+    # and the post-text editorial sections (Additional Notes, Appendices,
+    # the long Introduction) are NOT republished — the same standing
+    # practice the Sonnini and Adam-Eve parsers apply to their editorial
+    # front/back matter. Versification decision (Session 50, Yoshi-
+    # delegated): Box 1918 has 32 chapters and NO verse numbers, and no
+    # standard public-domain AoA versification exists (the standard line
+    # belongs to the copyrighted Cepher / OTP editions, which
+    # DOWNLOAD_MANIFEST.md bars republishing) — so sentence-split was
+    # adopted (each sentence = one verse; mechanical and reproducible).
+    # The incipit/genealogy superscription (Box's "Title" section) is
+    # carried as front_matter, preserving Box's 32-chapter structure.
+    # restore.py applied Session 50; parsed by
+    # parse_apocalypse_abraham_edition.py as 1 book / 32 chapters /
+    # 293 verses. witness_category=pseudepigrapha — already in schema.sql;
+    # no enum extension needed. sort_offset=350 places this edition with
+    # the individual-pseudepigrapha cluster (enoch=300, jubilees=310,
+    # jasher=320, ascension-isaiah=330, adam-eve-conflict=340), before
+    # the Charles-vol-2 compendium (500). pipeline_version=phase4-v2
+    # matches the other restore.py-driven editions.
+    "apocalypse-of-abraham": {
+        "title": "The Apocalypse of Abraham — Restored Names Edition",
+        "public_domain_base": "Box 1918",
+        "witness_category": "pseudepigrapha",
+        "tier_required": "extras",
+        "sort_offset": 350,
+        "pipeline_version": "phase4-v2",
+    },
     # Acts 29 — The Sonnini Manuscript — W-2 wire-up landed session 48,
     # 2026-05-14. NEW edition `sonnini-acts-29`. The "Long Lost Chapter of
     # Acts" — published 1801, interleaved in a copy of Sonnini's *Travels
@@ -323,6 +363,7 @@ JSON_FILE_FOR_EDITION = {
     "lightfoot-apostolic-fathers": "lightfoot-apostolic-fathers.json",
     "ascension-isaiah": "ascension-isaiah.json",
     "adam-eve-conflict": "adam-eve-conflict.json",
+    "apocalypse-of-abraham": "apocalypse-of-abraham.json",
     "sonnini-acts-29": "sonnini-acts-29.json",
 }
 

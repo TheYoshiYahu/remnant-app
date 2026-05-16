@@ -577,6 +577,100 @@ Per-verse is the validator going forward.
 
 ---
 
+## Session 53 (2026-05-15) — The Restoration Pass Was Landed
+
+Phase 3 validated the pipeline output for Enoch / Jasher / Jubilees but never
+landed it: `parse_published_editions.py` parsed the published `.txt` editions
+straight into `parsed/*.json` without invoking `restore.py`, so the parsed JSONs
+the app seeds from were the raw published parses. Session 53 ran the locked
+restoration-pass wheel and landed the validated sweep.
+
+### `(Lord)` → `(God)` reconciliation in `restore.py`
+
+The `Lord_mixed` rule produced `Yahuah (Lord)`. The voice-skill Sacred Names
+Convention restores both *the LORD* and *the Lord* to `Yahuah (God)`; the
+published Restored Names editions use `(God)`; and `restore.py`'s own module
+docstring already documented `(God)`. Per Yoshi's Session-52 decision 2, the
+`Lord_mixed` rule and the five affected self-tests were reconciled to
+`Yahuah (God)`. Self-test suite holds at **83/83 pass**. The possessive-form
+rule (`Lord's` → `Yahuah's (Lord's)`) was left untouched — a different rule with
+an echo-the-input convention, out of scope for the Session-52 decision; flagged
+as an open consistency question.
+
+### Enoch — fully landed
+
+All 64 validated verse-text diffs were applied to `parsed/enoch.json` (with the
+`(God)` reconciliation). `validate_verse_diff.py enoch` now reports **0/1,367
+(100%)** — the parsed JSON matches validated pipeline output and is idempotent.
+Only `verses[].text` changed; `front_matter` and `chapter.commentary` untouched.
+
+**Enoch — three pre-existing missing-space typos fixed (new intentional
+variances from the published `.docx`).** `sheepbrought` → `sheep brought`
+(verse 89:16), `Spiritsand` → `Spirits and` (ch.48 commentary),
+`Spiritscommanded` → `Spirits commanded` (ch.54 commentary). All three are
+present in the published `Enoch-Restored-Names-Edition.txt`; fixing them in the
+app JSON is a deliberate Session-53 variance (Yoshi: "fix all three now"). Flag
+for the next `.docx` revision pass.
+
+### Jasher / Jubilees — corpus-structural finding, fully landed (in two steps)
+
+Unlike Enoch (commentary in a populated separate `chapter.commentary` field),
+`jasher.json` and `jubilees.json` have `chapter.commentary` **empty** — the
+inline commentary is embedded inside `verses[].text`. Each chapter's `verses[]`
+array mixes genuine short scripture verses (~50–450 chars) with a few entries
+carrying large appended commentary blobs (2,000–184,000 chars; Jasher ch.91 also
+carries cross-reference apparatus). This is the open commentary-parser-pass item
+(d) — still needed; restoring the text in place does not separate commentary
+from verse, it just restores it where it sits.
+
+The verse-text sweep was landed in two steps within Session 53:
+
+- **Step 1 — pure scripture verses.** Jasher 562 + Jubilees 3 (criterion:
+  `len(text) ≤ 600` and no `« • • •` marker). Verified to contain **zero**
+  `Lord` → `Yahuah` restorations (only `Israel` / `Judah` / `sons of men` /
+  `Melchizedek`).
+- **Step 2 — the previously-held commentary-embedded set.** Jasher 106 +
+  Jubilees 7. **Yoshi's decision: land all of it now with the current (flat)
+  construct**, accepting that the `Lord`/`God` cases in commentary are resolved
+  by the flat map for now. Fully reversible — `restore.py` is deterministic and
+  every original is in git at `HEAD` — so those cases will be re-run when the
+  fuller Sacred Names construct is built and `restore.py` is reworked.
+
+Post-landing: `validate_verse_diff.py` reports `enoch`, `jasher`, and `jubilees`
+all at **0 diffs (100%)** — all three editions' `verses[].text` now match
+deterministic pipeline output and are idempotent under `restore.py`.
+
+**Yoshi's caution (Session 53), transcribed and now RESOLVED (Session 54):**
+The caution was *not every time "Lord" is mentioned is Yahuah* — the flat
+`Lord` → `Yahuah (God)` map flattened distinctions the source typography
+and English phrasing carried (Jasher 91:18 / Psalm 110:1's *David's Lord*
+being the canonical example). Session 54 ran the Sacred Names construct
+expansion wheel that resolves it. 21 new compound rules were elevated to
+pipeline-enforced: the Yahuah Elohayka possessive family (Elohayka /
+Elohaychem / Eloheinu / Elohai / Elohav), Yahuah Tseva'ot, the four
+Jehovah-X place names (Yireh / Nissi / Shalom + Tsidkenu + Shammah +
+Rapha + Ra'ah), El Shaddai, El Elyon, El Olam, El Roi, El Gibbor,
+Avi-ad, Sar Shalom, Ehyeh asher Ehyeh, plus the canon-only Adonai Yahuah
+construction (fires on `the Lord GOD` with `<nd>`-preserved canon parse).
+The base singles also flipped to universal source-echo per Q5: `LORD`
+→ `Yahuah (LORD)`, `Lord` → `Yahuah (Lord)`, every parenthetical now
+preserves source casing. Session 53's flat-construct restorations of
+Enoch / Jasher / Jubilees are slated for full re-run under the new
+construct in Phase D (Session 55+) — alongside a re-parse of the canon
+from `eng-kjv_usfx.xml` with `<nd>` preservation, and a re-parse of all
+14 editions from their raw sources (Yoshi's Session 54 call: trash the
+existing parses and re-run end-to-end). The flat `Lord` cases that
+flattened the distinction will be re-handled when each compound rule
+fires on its specific English signal, with Psalm 110:1's *David's Lord*
+specifically landing as `Yahuah (Lord)` (source-echo, not Yahuah-the-
+tetragrammaton) and the `Adonai Yahuah` rule firing on the typography-
+signaled `the Lord GOD` construction after re-parse.
+
+Landing scripts: `_session53_land_enoch_restoration.py`,
+`_session53_land_jasher_jubilees.py`.
+
+---
+
 ## How to Add a New Variance Entry
 
 When `validate_verse_diff.py` surfaces a diff that is *not* a pipeline bug:

@@ -146,17 +146,19 @@ RULES: list[Rule] = [
     # Compound possessives — must run before any base rule (compound or
     # singular) that could consume part of the compound's head.
 
-    # "the LORD God's" / "the Lord God's" -> "Yahuah Elohim's (the LORD God's)"
+    # "the LORD God's" / "the Lord God's" -> source-echo parenthetical.
+    # Session 54: captures source casing of "the" and LORD/Lord variant.
     Rule(
         name="lord_god_compound_possessive",
-        pattern=re.compile(rf"{LB}the\s+(LORD|Lord)\s+God(['’])s{RB}"),
-        replacement=r"Yahuah Elohim's (the LORD God\2s)",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+God(['’])s{RB}"),
+        replacement=r"Yahuah Elohim's (\1 \2 God\3s)",
     ),
-    # "LORD God's" / "Lord God's" (no leading "the")
+    # "LORD God's" / "Lord God's" (no leading "the") -> source-echo.
+    # Session 54: captures source casing.
     Rule(
         name="lord_god_naked_possessive",
         pattern=re.compile(rf"{LB}(LORD|Lord)\s+God(['’])s{RB}"),
-        replacement=r"Yahuah Elohim's (LORD God\2s)",
+        replacement=r"Yahuah Elohim's (\1 God\2s)",
     ),
     # "Jesus Christ's" -> "Yahusha HaMashiach's (Jesus Christ's)"
     Rule(
@@ -296,17 +298,21 @@ RULES: list[Rule] = [
 
     # --- COMPOUND DIVINE NAMES (run first; longer phrases win) ---
 
-    # "the LORD God" / "the Lord God" -> "Yahuah Elohim (the LORD God)"
+    # "the LORD God" / "the Lord God" -> Yahuah Elohim, source-echo parenthetical.
+    # Session 54: replacement now captures source casing of both "the" and the
+    # LORD/Lord variant, so source "the Lord God" yields "Yahuah Elohim (the Lord God)"
+    # and source "The LORD God" yields "Yahuah Elohim (The LORD God)".
     Rule(
         name="lord_god_compound",
-        pattern=re.compile(rf"{LB}the\s+(LORD|Lord)\s+God{RB}"),
-        replacement=r"Yahuah Elohim (the LORD God)",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+God{RB}"),
+        replacement=r"Yahuah Elohim (\1 \2 God)",
     ),
-    # "LORD God" / "Lord God" (no leading "the") -> same
+    # "LORD God" / "Lord God" (no leading "the") -> Yahuah Elohim, source-echo.
+    # Session 54: replacement captures source casing.
     Rule(
         name="lord_god_naked",
         pattern=re.compile(rf"{LB}(LORD|Lord)\s+God{RB}"),
-        replacement=r"Yahuah Elohim (LORD God)",
+        replacement=r"Yahuah Elohim (\1 God)",
     ),
 
     # --- HOLY SPIRIT / HOLY GHOST ---
@@ -328,14 +334,189 @@ RULES: list[Rule] = [
         replacement=r"HaMashiach Yahusha (Christ Jesus)",
     ),
 
+    # --- SESSION 54 SACRED NAMES CONSTRUCT EXPANSION ---
+    # The 21 compound names elevated in Session 54 (Q1/Q2) plus the canon-only
+    # Adonai Yahuah construction. Each fires on its specific English signal.
+    # Patterns are disjoint by construction. Parenthetical echoes source per Q5.
+
+    # === Yahuah-compounds (descriptive phrases) ===
+
+    # "The LORD is my shepherd" / "The Lord is my shepherd" (Psalm 23:1)
+    Rule(
+        name="yahuah_raah",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+is\s+my\s+shepherd{RB}"),
+        replacement=r"Yahuah Ra'ah (\1 \2 is my shepherd)",
+    ),
+    # "the LORD that healeth thee" / "the Lord that healeth thee" (Exodus 15:26)
+    Rule(
+        name="yahuah_rapha",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+that\s+healeth\s+thee{RB}"),
+        replacement=r"Yahuah Rapha (\1 \2 that healeth thee)",
+    ),
+    # "The LORD is there" / "The Lord is there" (Ezekiel 48:35)
+    Rule(
+        name="yahuah_shammah",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+is\s+there{RB}"),
+        replacement=r"Yahuah Shammah (\1 \2 is there)",
+    ),
+
+    # === Yahuah-compounds (possessive constructions — "the LORD <pronoun> God") ===
+
+    # "the LORD thy God" / "the Lord thy God" (2nd singular)
+    Rule(
+        name="yahuah_elohayka",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+thy\s+God{RB}"),
+        replacement=r"Yahuah Elohayka (\1 \2 thy God)",
+    ),
+    # "the LORD your God" / "the Lord your God" (2nd plural)
+    Rule(
+        name="yahuah_elohaychem",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+your\s+God{RB}"),
+        replacement=r"Yahuah Elohaychem (\1 \2 your God)",
+    ),
+    # "the LORD our God" / "the Lord our God"
+    Rule(
+        name="yahuah_eloheinu",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+our\s+God{RB}"),
+        replacement=r"Yahuah Eloheinu (\1 \2 our God)",
+    ),
+    # "the LORD my God" / "the Lord my God"
+    Rule(
+        name="yahuah_elohai",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+my\s+God{RB}"),
+        replacement=r"Yahuah Elohai (\1 \2 my God)",
+    ),
+    # "the LORD his God" / "the Lord his God"
+    Rule(
+        name="yahuah_elohav",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+his\s+God{RB}"),
+        replacement=r"Yahuah Elohav (\1 \2 his God)",
+    ),
+
+    # === Yahuah-compounds (titles and exact phrases) ===
+
+    # "THE LORD OUR RIGHTEOUSNESS" (Jeremiah 23:6, 33:16 — all-caps title)
+    Rule(
+        name="yahuah_tsidkenu",
+        pattern=re.compile(rf"{LB}THE\s+LORD\s+OUR\s+RIGHTEOUSNESS{RB}"),
+        replacement=r"Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)",
+    ),
+    # "the LORD of hosts" / "the Lord of hosts" (with article)
+    Rule(
+        name="yahuah_tseva_ot_with_the",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+of\s+hosts{RB}"),
+        replacement=r"Yahuah Tseva'ot (\1 \2 of hosts)",
+    ),
+    # "LORD of hosts" / "Lord of hosts" (no leading "the")
+    Rule(
+        name="yahuah_tseva_ot",
+        pattern=re.compile(rf"{LB}(LORD|Lord)\s+of\s+hosts{RB}"),
+        replacement=r"Yahuah Tseva'ot (\1 of hosts)",
+    ),
+
+    # === Yahuah-compounds (KJV transliterated place names) ===
+
+    # "Jehovah-jireh" (Genesis 22:14)
+    Rule(
+        name="yahuah_yireh",
+        pattern=re.compile(rf"{LB}Jehovah-jireh{RB}"),
+        replacement=r"Yahuah Yireh (Jehovah-jireh)",
+    ),
+    # "Jehovah-nissi" (Exodus 17:15)
+    Rule(
+        name="yahuah_nissi",
+        pattern=re.compile(rf"{LB}Jehovah-nissi{RB}"),
+        replacement=r"Yahuah Nissi (Jehovah-nissi)",
+    ),
+    # "Jehovah-shalom" (Judges 6:24)
+    Rule(
+        name="yahuah_shalom",
+        pattern=re.compile(rf"{LB}Jehovah-shalom{RB}"),
+        replacement=r"Yahuah Shalom (Jehovah-shalom)",
+    ),
+
+    # === Adonai Yahuah (canon-only, requires <nd> preservation in re-parsed canon) ===
+
+    # "the Lord GOD" / "the Lord GOD" (mixed-case Lord + small-caps GOD).
+    # In the current flattened canon parse this never fires because small-caps
+    # GOD is lost. After the Phase D re-parse with <nd> markers preserved,
+    # the canon's GOD will be distinguishable from God and this rule activates.
+    # Pattern: "Lord GOD" (mixed-case Lord + ALL CAPS GOD). The all-caps GOD
+    # is the textual signal for YHWH-in-Adonai-construction in the post-re-parse
+    # canon. This rule is dormant until that re-parse lands.
+    Rule(
+        name="adonai_yahuah",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+Lord\s+GOD{RB}"),
+        replacement=r"Adonai Yahuah (\1 Lord GOD)",
+    ),
+
+    # === El-compounds ===
+
+    # "the everlasting God" (Genesis 21:33) — Yahuah El Olam
+    Rule(
+        name="el_olam",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(everlasting)\s+God{RB}"),
+        replacement=r"El Olam (\1 \2 God)",
+    ),
+    # "most high God" / "Most High God" / variants (with God) — fires before el_elyon_high
+    Rule(
+        name="el_elyon_with_god",
+        pattern=re.compile(rf"{LB}((?:most|Most)\s+(?:high|High))\s+God{RB}"),
+        replacement=r"El Elyon (\1 God)",
+    ),
+    # "most High" / "Most High" (standalone, no God) — fires after el_elyon_with_god
+    Rule(
+        name="el_elyon_high",
+        pattern=re.compile(rf"{LB}((?:most|Most)\s+High){RB}"),
+        replacement=r"El Elyon (\1)",
+    ),
+    # "The mighty God" / "the mighty God" (Isaiah 9:6)
+    Rule(
+        name="el_gibbor",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+mighty\s+God{RB}"),
+        replacement=r"El Gibbor (\1 mighty God)",
+    ),
+    # "God Almighty" / "Almighty God" — El Shaddai (Genesis 17:1, 28:3, 35:11, etc.)
+    Rule(
+        name="el_shaddai",
+        pattern=re.compile(rf"{LB}(God\s+Almighty|Almighty\s+God){RB}"),
+        replacement=r"El Shaddai (\1)",
+    ),
+
+    # === Isaiah 9:6 compound titles ===
+
+    # "The everlasting Father" / "the everlasting Father"
+    Rule(
+        name="avi_ad",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+(everlasting)\s+Father{RB}"),
+        replacement=r"Avi-ad (\1 \2 Father)",
+    ),
+    # "The Prince of Peace" / "the Prince of Peace"
+    Rule(
+        name="sar_shalom",
+        pattern=re.compile(rf"{LB}([Tt]he)\s+Prince\s+of\s+Peace{RB}"),
+        replacement=r"Sar Shalom (\1 Prince of Peace)",
+    ),
+
+    # === Ehyeh asher Ehyeh (Exodus 3:14) ===
+
+    # "I AM THAT I AM" — the divine self-naming
+    Rule(
+        name="ehyeh_asher_ehyeh",
+        pattern=re.compile(rf"{LB}I\s+AM\s+THAT\s+I\s+AM{RB}"),
+        replacement=r"Ehyeh asher Ehyeh (I AM THAT I AM)",
+    ),
+
     # --- SINGLE DIVINE NAMES ---
     # Idempotency guards: don't touch words already inside parentheticals.
 
-    # "LORD" (all-caps; the YHWH render in KJV) -> "Yahuah (God)"
+    # "LORD" (all-caps; the YHWH render in KJV) -> "Yahuah (LORD)"
+    # Session 54: source-echo per Q5 — parenthetical preserves source casing
+    # (was "Yahuah (God)" under Session 53 normalization; reversed Session 54).
     Rule(
         name="LORD_caps",
         pattern=re.compile(rf"(?<!Yahuah \(){LB}LORD{RB}(?!\))"),
-        replacement=r"Yahuah (God)",
+        replacement=r"Yahuah (LORD)",
     ),
     # "Lord" (mixed case; usually divine in KJV when standalone) -> Yahuah
     # NOTE: This is conservative. Some "Lord" instances refer to human
@@ -349,6 +530,11 @@ RULES: list[Rule] = [
     Rule(
         name="Lord_mixed",
         pattern=re.compile(rf"(?<!Yahuah \(){LB}Lord{RB}(?!\))"),
+        # Session 54: reverses Session 53 normalization. Q5 source-echo —
+        # every parenthetical preserves source casing. Source "Lord" yields
+        # "Yahuah (Lord)"; source "LORD" yields "Yahuah (LORD)" via LORD_caps.
+        # The pipeline is now internally consistent (every parenthetical echoes
+        # source); voice skill Sacred Names Convention updated to match.
         replacement=r"Yahuah (Lord)",
     ),
 
@@ -513,13 +699,35 @@ ARTICLE_FIXUPS: list[Rule] = [
 # the Jubilees diff (El Shaddai (God Almighty) had its inner "God" re-wrapped
 # by the god_cap rule because El Shaddai was not in this list).
 _HEBREW_HEADS = [
+    # Multi-word heads first (longest match wins in the regex below).
     "Yahusha HaMashiach",
     "HaMashiach Yahusha",
+    "Ehyeh asher Ehyeh",
+    "Yahuah Elohayka",
+    "Yahuah Elohaychem",
+    "Yahuah Eloheinu",
+    "Yahuah Elohai",
+    "Yahuah Elohav",
+    "Yahuah Tseva'ot",
+    "Yahuah Tsidkenu",
+    "Yahuah Shammah",
+    "Yahuah Shalom",
+    "Yahuah Rapha",
+    "Yahuah Ra'ah",
+    "Yahuah Yireh",
+    "Yahuah Nissi",
     "Yahuah Elohim",
+    "Adonai Yahuah",
     "Ruach HaKodesh",
     "Melek Tsadiq",
+    "Sar Shalom",
     "El Shaddai",
+    "El Gibbor",
     "El Elyon",
+    "El Olam",
+    "El Roi",
+    "Avi-ad",
+    "Adonai",
     "Yahusha",
     "Yahuah",
     "Elohim",
@@ -529,6 +737,8 @@ _HEBREW_HEADS = [
     "Yahudim",
     "Yahudi",
     "HaMashiach",
+    "El",
+    "Yah",
 ]
 # Sort by length descending so the regex tries longest matches first.
 _HEBREW_HEADS_SORTED = sorted(_HEBREW_HEADS, key=len, reverse=True)
@@ -739,15 +949,26 @@ class Restorer:
 
 SELF_TESTS: list[tuple[str, str, str]] = [
     # (description, input, expected_output)
+    # Session 54: source-echo per Q5 — parentheticals preserve source casing.
     (
-        "single LORD (article kept — Yoshi's convention)",
+        "single LORD source-echo (article kept)",
         "And the LORD said unto Moses",
-        "And the Yahuah (God) said unto Moses",
+        "And the Yahuah (LORD) said unto Moses",
     ),
     (
-        "compound LORD God",
+        "single Lord source-echo (mixed-case, divine)",
+        "the Lord said unto Moses",
+        "the Yahuah (Lord) said unto Moses",
+    ),
+    (
+        "compound the LORD God source-echo",
         "I am the LORD God of Israel",
         "I am Yahuah Elohim (the LORD God) of Yashar'el (Israel)",
+    ),
+    (
+        "compound the Lord God source-echo",
+        "I am the Lord God of Israel",
+        "I am Yahuah Elohim (the Lord God) of Yashar'el (Israel)",
     ),
     (
         "Jesus Christ as compound",
@@ -795,9 +1016,9 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "after the order of Melek Tsadiq (Melchizedek)",
     ),
     (
-        "Melchisedec mid-sentence (Heb 7:1)",
+        "Melchisedec mid-sentence (Heb 7:1) — El Elyon fires on 'most high God' (Session 54)",
         "For this Melchisedec, king of Salem, priest of the most high God",
-        "For this Melek Tsadiq (Melchizedek), king of Salem, priest of the most high Elohim (God)",
+        "For this Melek Tsadiq (Melchizedek), king of Salem, priest of the El Elyon (most high God)",
     ),
     (
         "Son of Man as Messianic title",
@@ -821,8 +1042,8 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     ),
     (
         "idempotency — full restored mix",
-        "Yahusha HaMashiach (Jesus Christ) is Yahuah (Lord) of Yashar'el (Israel)",
-        "Yahusha HaMashiach (Jesus Christ) is Yahuah (Lord) of Yashar'el (Israel)",
+        "Yahusha HaMashiach (Jesus Christ) is Yahuah (God) of Yashar'el (Israel)",
+        "Yahusha HaMashiach (Jesus Christ) is Yahuah (God) of Yashar'el (Israel)",
     ),
     (
         "no false trigger on 'godly'",
@@ -837,12 +1058,12 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     (
         "the LORD (article kept — Yoshi's published convention preserves 'the' in genitive position)",
         "Behold, the LORD reigns",
-        "Behold, the Yahuah (God) reigns",
+        "Behold, the Yahuah (LORD) reigns",
     ),
     (
         "newline does not break substitution boundary",
         "And he said\nLORD is my shepherd",
-        "And he said\nYahuah (God) is my shepherd",
+        "And he said\nYahuah (LORD) is my shepherd",
     ),
     (
         "Apocrypha: Jesus the son of Sirach (NOT the Messiah) is preserved",
@@ -893,7 +1114,7 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     (
         "divine: 'my Lord God' restores via compound rule (Lord God beats secular preservation)",
         "praise my Lord God for ever",
-        "praise my Yahuah Elohim (LORD God) for ever",
+        "praise my Yahuah Elohim (Lord God) for ever",
     ),
     (
         "divine: bare 'the Lord' still restores (no possessive prefix)",
@@ -940,9 +1161,9 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "the priest of the El Elyon (Most High)",
     ),
     (
-        "El Shaddai NOT pipeline-enforced — bare 'God Almighty' still restores 'God'",
+        "El Shaddai pipeline-enforced (Session 54) — 'God Almighty' fires El Shaddai rule",
         "the God Almighty of all flesh",
-        "the Elohim (God) Almighty of all flesh",
+        "the El Shaddai (God Almighty) of all flesh",
     ),
 
     # --- Christian institutional terms (Jubilees session 7) ---
@@ -979,10 +1200,10 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "the Yahudi (Jew) came up to the temple",
     ),
 
-    # --- apocalyptic divine compound titles (Enoch session 8) ---
+    # --- apocalyptic divine compound titles (Enoch session 8; (God) reconcile session 53) ---
     # Defensive lock-in: 1 Enoch's "Lord of Spirits" (the Parables, chs. 37-69)
     # and "Lord of the sheep" (the Animal Apocalypse, chs. 85-90) are divine
-    # compound titles that get standard Lord -> Yahuah (Lord) restoration.
+    # compound titles that get standard Lord -> Yahuah (God) restoration.
     # They must NOT match the secular-Lord preserve list (which is human-king
     # vocatives only). These tests guard against any future regression that
     # accidentally extends secular preservation into divine apocalyptic titles.
@@ -1002,9 +1223,9 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "Yahuah (Lord) of lords, Elohim (God) of elohiym, King of kings",
     ),
     (
-        "idempotent: 'Yahuah (Lord) of Spirits' already-restored stays put",
-        "And the Yahuah (Lord) of Spirits shall abide over them",
-        "And the Yahuah (Lord) of Spirits shall abide over them",
+        "idempotent: 'Yahuah (God) of Spirits' already-restored stays put",
+        "And the Yahuah (God) of Spirits shall abide over them",
+        "And the Yahuah (God) of Spirits shall abide over them",
     ),
 
     # --- POSSESSIVE FORMS (session 19, 2026-05-11) ---
@@ -1089,14 +1310,14 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "after Melek Tsadiq's (Melchizedek's) order",
     ),
     (
-        "possessive: Lord God's compound restores to Yahuah Elohim's (LORD God's)",
+        "possessive: Lord God's compound restores to Yahuah Elohim's (Lord God's) [source-echo]",
         "Lord God's commandments",
-        "Yahuah Elohim's (LORD God's) commandments",
+        "Yahuah Elohim's (Lord God's) commandments",
     ),
     (
-        "possessive: the Lord God's compound restores cleanly",
+        "possessive: the Lord God's compound restores cleanly [source-echo]",
         "the Lord God's mighty hand",
-        "Yahuah Elohim's (the LORD God's) mighty hand",
+        "Yahuah Elohim's (the Lord God's) mighty hand",
     ),
     (
         "possessive: Jesus Christ's compound restores to Yahusha HaMashiach's (Jesus Christ's)",
@@ -1153,6 +1374,122 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "they served the gods' altars",
         "they served the gods' altars",
     ),
+    # === Session 54 new compound rule tests ===
+    (
+        "LORD of hosts",
+        "thus saith the LORD of hosts",
+        "thus saith Yahuah Tseva'ot (the LORD of hosts)",
+    ),
+    (
+        "Lord of hosts (mixed case)",
+        "thus saith the Lord of hosts",
+        "thus saith Yahuah Tseva'ot (the Lord of hosts)",
+    ),
+    (
+        "LORD thy God (Elohayka)",
+        "thou shalt love the LORD thy God",
+        "thou shalt love Yahuah Elohayka (the LORD thy God)",
+    ),
+    (
+        "Lord our God (Eloheinu)",
+        "hear O Israel the Lord our God is one Lord",
+        "hear O Yashar'el (Israel) Yahuah Eloheinu (the Lord our God) is one Yahuah (Lord)",
+    ),
+    (
+        "God Almighty (El Shaddai)",
+        "I am the God Almighty",
+        "I am the El Shaddai (God Almighty)",
+    ),
+    (
+        "Almighty God (El Shaddai)",
+        "I am the Almighty God",
+        "I am the El Shaddai (Almighty God)",
+    ),
+    (
+        "most high God (El Elyon with God)",
+        "Melchizedek priest of the most high God",
+        "Melek Tsadiq (Melchizedek) priest of the El Elyon (most high God)",
+    ),
+    (
+        "most High (El Elyon standalone)",
+        "saints of the most High",
+        "saints of the El Elyon (most High)",
+    ),
+    (
+        "the everlasting God (El Olam) — article absorbed into parenthetical",
+        "called on the name of the everlasting God",
+        "called on the name of El Olam (the everlasting God)",
+    ),
+    (
+        "the mighty God (El Gibbor — Isaiah 9:6)",
+        "his name shall be called The mighty God",
+        "his name shall be called El Gibbor (The mighty God)",
+    ),
+    (
+        "Yahuah Ra'ah (Psalm 23:1)",
+        "The LORD is my shepherd",
+        "Yahuah Ra'ah (The LORD is my shepherd)",
+    ),
+    (
+        "Yahuah Rapha (Exodus 15:26)",
+        "I am the LORD that healeth thee",
+        "I am Yahuah Rapha (the LORD that healeth thee)",
+    ),
+    (
+        "Yahuah Shammah (Ezekiel 48:35)",
+        "the name of the city shall be The LORD is there",
+        "the name of the city shall be Yahuah Shammah (The LORD is there)",
+    ),
+    (
+        "Yahuah Tsidkenu (Jeremiah 23:6)",
+        "his name shall be called THE LORD OUR RIGHTEOUSNESS",
+        "his name shall be called Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)",
+    ),
+    (
+        "Yahuah Yireh (Genesis 22:14)",
+        "Abraham called the name of that place Jehovah-jireh",
+        "Abraham called the name of that place Yahuah Yireh (Jehovah-jireh)",
+    ),
+    (
+        "Yahuah Nissi (Exodus 17:15) — Moses is translator's call, not pipeline-restored",
+        "Moses built an altar and called the name of it Jehovah-nissi",
+        "Moses built an altar and called the name of it Yahuah Nissi (Jehovah-nissi)",
+    ),
+    (
+        "Yahuah Shalom (Judges 6:24)",
+        "Gideon built an altar there and called it Jehovah-shalom",
+        "Gideon built an altar there and called it Yahuah Shalom (Jehovah-shalom)",
+    ),
+    (
+        "Avi-ad (Isaiah 9:6)",
+        "his name shall be called The everlasting Father",
+        "his name shall be called Avi-ad (The everlasting Father)",
+    ),
+    (
+        "Sar Shalom (Isaiah 9:6)",
+        "his name shall be called The Prince of Peace",
+        "his name shall be called Sar Shalom (The Prince of Peace)",
+    ),
+    (
+        "Ehyeh asher Ehyeh (Exodus 3:14) — God restores via god_cap; Moses stays (translator's call)",
+        "And God said unto Moses I AM THAT I AM",
+        "And Elohim (God) said unto Moses Ehyeh asher Ehyeh (I AM THAT I AM)",
+    ),
+    (
+        "adonai_yahuah dormant (no <nd> in current parse — pattern fires on literal Lord GOD)",
+        "Thus saith the Lord GOD",
+        "Thus saith Adonai Yahuah (the Lord GOD)",
+    ),
+    (
+        "no double-wrap: already-restored Yahuah Tseva'ot stays put (idempotency)",
+        "thus saith Yahuah Tseva'ot (the LORD of hosts)",
+        "thus saith Yahuah Tseva'ot (the LORD of hosts)",
+    ),
+    (
+        "no double-wrap: already-restored El Shaddai stays put",
+        "I am the El Shaddai (God Almighty)",
+        "I am the El Shaddai (God Almighty)",
+    ),
 ]
 
 
@@ -1183,9 +1520,9 @@ APOCRYPHA_MODE_TESTS: list[tuple[str, str, str]] = [
         "neither is he as the son of Adam",
     ),
     (
-        "apocrypha mode: other names still restore (Israel, God, LORD)",
+        "apocrypha mode: other names still restore (Israel, God, LORD) [source-echo]",
         "the children of Israel cried unto the LORD their God",
-        "the children of Yashar'el (Israel) cried unto the Yahuah (God) their Elohim (God)",
+        "the children of Yashar'el (Israel) cried unto the Yahuah (LORD) their Elohim (God)",
     ),
 ]
 
