@@ -128,7 +128,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Remnant of Promise Official Study Bible — API",
-    version="0.7.0-phase4-session42",
+    version="0.8.0-phase4-session59",
     description=(
         "Phase 4 API: books, chapters, verses, trigram search, plus the "
         "Stripe subscription surface — checkout, webhook, me, partner-"
