@@ -15,6 +15,7 @@ Each output JSON has the shape:
       "title": "Book of Enoch",
       "source_file": "Enoch-Restored-Names-Edition.txt",
       "front_matter": "<introductory text before the first chapter>",
+      "back_matter": "<text after the final chapter's commentary boundary>",
       "books": [
         {
           "book_id": "1-enoch",
@@ -116,6 +117,7 @@ class Edition:
     title: str
     source_file: str
     front_matter: str = ""
+    back_matter: str = ""
     books: List[Book] = field(default_factory=list)
 
 
@@ -328,6 +330,7 @@ def _parse_single_book_edition(
     allow_verse_gaps: bool = False,
     commentary_strategy: str = "marker",
     commentary_required_marker: Optional[str] = None,
+    edition_back_matter_marker: Optional[str] = None,
 ) -> Edition:
     """
     Common machinery for the three single-book editions
@@ -421,6 +424,29 @@ def _parse_single_book_edition(
         )
         book.chapters.append(chapter)
 
+    # Edition-level back matter split. Some editions (e.g. Jasher) trail
+    # the final chapter's commentary with book-wide back matter — translator's
+    # note, scripture cross-reference index, about-the-author, closing
+    # meditation. When edition_back_matter_marker is set, locate it in the
+    # final chapter's commentary, keep everything up to and including the
+    # marker as that chapter's commentary, and move everything after it into
+    # edition.back_matter. The marker phrase itself is preserved on the
+    # commentary side so the chapter reads as a complete unit.
+    if edition_back_matter_marker and book.chapters:
+        last = book.chapters[-1]
+        idx = last.commentary.find(edition_back_matter_marker)
+        if idx >= 0:
+            split_at = idx + len(edition_back_matter_marker)
+            edition.back_matter = last.commentary[split_at:].strip()
+            last.commentary = last.commentary[:split_at].strip()
+        else:
+            print(
+                f"WARN: {edition_id} edition_back_matter_marker "
+                f"{edition_back_matter_marker!r} not found in final "
+                f"chapter commentary — back_matter left empty",
+                file=sys.stderr,
+            )
+
     edition.books.append(book)
     return edition
 
@@ -513,6 +539,15 @@ def parse_jasher(text: str) -> Edition:
         commentary_pat=re.compile(r"^Commentary on Chapter\s+\d+\s*$", re.MULTILINE),
         commentary_strategy="verse_end",
         commentary_required_marker="Cross-references:",
+        # S57(a): Jasher ch91's commentary block is ~288 KB and contains
+        # book-wide back matter (essay, scripture↔Jasher cross-reference
+        # index, about-the-author, closing meditation) trailing the actual
+        # chapter commentary. The marker below closes the per-chapter
+        # commentary and opens the back matter. Verses on ch91 are clean
+        # (17, ending "THE END") and unaffected.
+        edition_back_matter_marker=(
+            "The commentary for the Book of Jasher is now complete."
+        ),
         allow_implicit_verse_1=False,
     )
 
