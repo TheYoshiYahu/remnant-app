@@ -626,18 +626,45 @@ RULES: list[Rule] = [
         pattern=re.compile(rf"{LB}son\s+of\s+man{RB}"),
         replacement=r"son of Adam",
     ),
-    # "sons of men" -> "sons of Adam"
-    Rule(
-        name="sons_of_men",
-        pattern=re.compile(rf"{LB}sons\s+of\s+men{RB}"),
-        replacement=r"sons of Adam",
-    ),
-    # "Sons of men" (sentence-start / poetic) -> "Sons of Adam"
-    Rule(
-        name="Sons_of_men_cap",
-        pattern=re.compile(rf"{LB}Sons\s+of\s+men{RB}"),
-        replacement=r"Sons of Adam",
-    ),
+    # --- PLURAL "sons of men" — REMOVED at S62 (Book-of-Life rule) ---
+    #
+    # Prior (pre-S62) wheel: an unconditional plural substitution
+    #
+    #     "sons of men"  -> "sons of Adam"
+    #     "Sons of men"  -> "Sons of Adam"
+    #
+    # fired everywhere "sons of men" appeared. That overreach baked
+    # 24 plural "sons of Adam" into parsed/canon.json — most of them
+    # in passages where the phrase reads as humanity-broadly (Psalms
+    # 4:2, 33:13, 57:4, 58:1, 145:12; Proverbs 8:31; Ecclesiastes
+    # 2:3, 2:8, 3:10, 3:18, 3:19, 8:11, 9:3, 9:12; Isaiah 52:14;
+    # Jeremiah 32:19; Daniel 5:21, 10:16; Joel 1:12; Micah 5:7;
+    # Mark 3:28; Ephesians 3:5; and the contrast-pair at Psalm 31:19).
+    #
+    # The Book-of-Life rule (logged in the voice skill): "sons of
+    # Adam" names the seed of promise — those whose names are
+    # written in the Book of Life from the foundation of the world
+    # (Revelation 13:8; 17:8). It is spiritual, not biological. It
+    # never refers to humanity-broadly. Context is paragraph- and
+    # chapter-level, not grammar.
+    #
+    # The plural substitution therefore cannot be a global default.
+    # The default is "sons of men" (the source-language plain
+    # rendering); the Book-of-Life keep is the named exception, and
+    # the named exceptions live in YOSHI_RENDERED_PASSAGES.md as
+    # verse-level overrides — currently Deuteronomy 32:8 only,
+    # where El Elyon sets the bounds of the nations by reference
+    # to *the number of the children of Yashar'el (Israel)* — the
+    # covenant body, the seed line. The separated *sons of Adam*
+    # at the boundary-setting is the seed distinguished out from
+    # the nations.
+    #
+    # Singular rules above (`son_of_man_title`, `son_of_man_generic`)
+    # stay intact — Red Line #12 is absolute: every singular "son of
+    # man" (Messianic title in the gospels, Ezekiel vocative, Psalm 8
+    # generic) restores to "son of Adam". The kaph-comparative cases
+    # (Daniel 7:13 *kbar enash,* Revelation 1:13, 14:14) preserve the
+    # *like a son of Adam* comparative and are handled elsewhere.
 ]
 
 
@@ -1031,9 +1058,14 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "Behold, son of Adam, what they do",
     ),
     (
-        "sons of men poetic",
+        # S62 (Book-of-Life rule): the global plural "sons of men" -> "sons
+        # of Adam" rule was removed. Plural "sons of men" now stays as the
+        # default; the named Book-of-Life keeps (Deut 32:8, etc.) live in
+        # YOSHI_RENDERED_PASSAGES.md as verse-level overrides, not as a
+        # pipeline rule. Test asserts the new default.
+        "sons of men plural — default stays (S62 Book-of-Life rule)",
         "the sons of men do this",
-        "the sons of Adam do this",
+        "the sons of men do this",
     ),
     (
         "idempotency — already restored verse",

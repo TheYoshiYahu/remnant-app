@@ -122,6 +122,32 @@ The full chapter rendering, verse by verse:
 
 ---
 
+### Deuteronomy 32 (32:8 only) — LANDED 2026-05-16
+
+**Reference:** Deuteronomy 32:8. The Yoshi rendering covers v.8 only — every other verse in Deuteronomy 32 passes through the standard restoration pipeline unchanged.
+
+**Standard reading.** The KJV reads: *When the most High divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Israel.* With the standard restoration pipeline applied (Sacred Names, Yashar'el / Israel), the verse becomes *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar'el (Israel).*
+
+**The problem this entry exists to fix.** This is not a translation error — the KJV's *sons of Adam* (Hebrew *bĕnê adam*) is right. The issue is downstream of the *general* "sons of men → sons of Adam" substitution rule the pipeline used to carry, which fired everywhere "sons of men" appeared in the source — including 23 other passages in the canon where the phrase plainly reads as humanity-broadly (Psalms 4:2, 33:13, 57:4, 58:1, 145:12; Psalm 31:19's contrast-pair; Proverbs 8:31; Ecclesiastes 2:3, 2:8, 3:10, 3:18, 3:19, 8:11, 9:3, 9:12; Isaiah 52:14; Jeremiah 32:19; Daniel 5:21, 10:16; Joel 1:12; Micah 5:7; Mark 3:28; Ephesians 3:5). That global rule has been removed (see `restore.py`, comment block above the `son_of_man_generic` rule). The default is now *sons of men*; the named keeps live here as verse-level overrides. Deuteronomy 32:8 is the first such named keep.
+
+**Why this verse keeps "sons of Adam" — the Book-of-Life rule.** *Sons of Adam* names the seed of promise — those whose names are written in the Book of Life from the foundation of the world (Revelation 13:8; 17:8). The title is spiritual, not biological. It never refers to humanity-broadly. Cain's line, the sons of Belial, the tares, the wicked generation are not sons of Adam even though they trace biological descent through Adam.
+
+In Deuteronomy 32:8, El Elyon (most High) is shown setting the bounds of the nations *according to the number of the children of Yashar'el (Israel)* — the covenant body, the seed line. The act of *separating the sons of Adam* at that founding division is the act of distinguishing the seed of promise out from the nations. The verse's own structure compels the reading: the boundary-setting reference is the covenant body; the separated *sons of Adam* is what that covenant body comes out of. The seed is the referent. *Sons of Adam* stands.
+
+**Yoshi rendering — LANDED.**
+
+32:8 — When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar'el (Israel).
+
+**Footnote (LANDED — chapter-level, attached at Deut 32:8 keep):**
+
+> *The phrase rendered "sons of Adam" here is preserved against the general pattern — the canon-wide default is "sons of men" (the source plain rendering), and "sons of Adam" stands only where the passage in context obviously names the seed of promise, those whose names are written in the Book of Life from the foundation of the world. In Deuteronomy 32:8, the El Elyon (most High) sets the boundaries of the nations by reference to **the number of the children of Yashar'el (Israel)** — the covenant body, the seed line. The act of separating the sons of Adam at this founding division is the act of distinguishing the seed of promise out from the nations. The seed is the referent the verse's own structure compels. The phrase is spiritual, not biological — Cain's line, the sons of Belial, the tares, and the wicked generation are not sons of Adam even though they trace biological descent through Adam.*
+
+**Status:** LANDED 2026-05-16. The rendering replaces the standard restoration-pipeline output for Deuteronomy 32:8 only. Other verses in Deut 32 pass through the standard pipeline.
+
+**Cross-reference:** The Book-of-Life rule landed first at Session 61 against the Book of Jasher, where eleven specific Jasher passages (ch3 v7×2, v8, v12, v27, v29, v31 — Enoch's reign and ascension scene — plus four Yoshi-original commentary mentions including the Deut 32:8 quotation in both DSS and Masoretic forms at ch7 and ch61, and the framework statement at ch91) preserve "sons of Adam" while all other plural occurrences in Jasher were reverted to "sons of men". This canon-side entry continues the same rule. The two flagged ambiguous passages — Joel 1:12 (chapter-level audience is covenant-body but the phrase itself is generic-poetic register) and Micah 5:7 (the remnant of Jacob is the dew; the sons of Adam in the parallelism is the human powers the remnant is positioned among, not the remnant itself) — were slow-read at Session 62 and both reverted to *sons of men*.
+
+---
+
 ### Psalm 81:3 — the dark / concealed moon
 
 **Reference:** Psalm 81:3 (and downstream feast-calendar passages affected by the same Hebrew word).

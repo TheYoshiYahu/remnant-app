@@ -3,6 +3,7 @@
   "title": "The Holy Bible — King James Version (Restored Names)",
   "source_file": "eng-kjv_usfx.xml",
   "front_matter": "",
+  "back_matter": "",
   "books": [
     {
       "book_id": "genesis",
@@ -35923,8 +35924,8 @@
             {
               "number": 8,
               "text": "When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar'el (Israel).",
-              "source_type": "restored-names-kjv",
-              "footnote": ""
+              "source_type": "yoshi-rendering",
+              "footnote": "yoshi-fn-0002"
             },
             {
               "number": 9,
@@ -36191,7 +36192,7 @@
               "footnote": ""
             }
           ],
-          "commentary": ""
+          "commentary": "The phrase rendered \"sons of Adam\" here is preserved against the general pattern — the canon-wide default is \"sons of men\" (the source plain rendering), and \"sons of Adam\" stands only where the passage in context obviously names the seed of promise, those whose names are written in the Book of Life from the foundation of the world. In Deuteronomy 32:8, the El Elyon (most High) sets the boundaries of the nations by reference to **the number of the children of Yashar'el (Israel)** — the covenant body, the seed line. The act of separating the sons of Adam at this founding division is the act of distinguishing the seed of promise out from the nations. The seed is the referent the verse's own structure compels. The phrase is spiritual, not biological — Cain's line, the sons of Belial, the tares, and the wicked generation are not sons of Adam even though they trace biological descent through Adam."
         },
         {
           "number": 33,
@@ -87291,7 +87292,7 @@
             },
             {
               "number": 2,
-              "text": "O ye sons of Adam, how long will ye turn my glory into shame? how long will ye love vanity, and seek after leasing? Selah.",
+              "text": "O ye sons of men, how long will ye turn my glory into shame? how long will ye love vanity, and seek after leasing? Selah.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -89778,7 +89779,7 @@
             },
             {
               "number": 19,
-              "text": "Oh how great is thy goodness, which thou hast laid up for them that fear thee; which thou hast wrought for them that trust in thee before the sons of Adam!",
+              "text": "Oh how great is thy goodness, which thou hast laid up for them that fear thee; which thou hast wrought for them that trust in thee before the sons of men!",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -89966,7 +89967,7 @@
             },
             {
               "number": 13,
-              "text": "The Yahuah (LORD) looketh from heaven; he beholdeth all the sons of Adam.",
+              "text": "The Yahuah (LORD) looketh from heaven; he beholdeth all the sons of men.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -92492,7 +92493,7 @@
             },
             {
               "number": 4,
-              "text": "My soul is among lions: and I lie even among them that are set on fire, even the sons of Adam, whose teeth are spears and arrows, and their tongue a sharp sword.",
+              "text": "My soul is among lions: and I lie even among them that are set on fire, even the sons of men, whose teeth are spears and arrows, and their tongue a sharp sword.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -92547,7 +92548,7 @@
           "verses": [
             {
               "number": 1,
-              "text": "Do ye indeed speak righteousness, O congregation? do ye judge uprightly, O ye sons of Adam?",
+              "text": "Do ye indeed speak righteousness, O congregation? do ye judge uprightly, O ye sons of men?",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -102468,7 +102469,7 @@
             },
             {
               "number": 12,
-              "text": "To make known to the sons of Adam his mighty acts, and the glorious majesty of his kingdom.",
+              "text": "To make known to the sons of men his mighty acts, and the glorious majesty of his kingdom.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -104371,7 +104372,7 @@
             },
             {
               "number": 31,
-              "text": "Rejoicing in the habitable part of his earth; and my delights were with the sons of Adam.",
+              "text": "Rejoicing in the habitable part of his earth; and my delights were with the sons of men.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -108770,7 +108771,7 @@
             },
             {
               "number": 3,
-              "text": "I sought in mine heart to give myself unto wine, yet acquainting mine heart with wisdom; and to lay hold on folly, till I might see what was that good for the sons of Adam, which they should do under the heaven all the days of their life.",
+              "text": "I sought in mine heart to give myself unto wine, yet acquainting mine heart with wisdom; and to lay hold on folly, till I might see what was that good for the sons of men, which they should do under the heaven all the days of their life.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -108800,7 +108801,7 @@
             },
             {
               "number": 8,
-              "text": "I gathered me also silver and gold, and the peculiar treasure of kings and of the provinces: I gat me men singers and women singers, and the delights of the sons of Adam, as musical instruments, and that of all sorts.",
+              "text": "I gathered me also silver and gold, and the peculiar treasure of kings and of the provinces: I gat me men singers and women singers, and the delights of the sons of men, as musical instruments, and that of all sorts.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -108975,7 +108976,7 @@
             },
             {
               "number": 10,
-              "text": "I have seen the travail, which Elohim (God) hath given to the sons of Adam to be exercised in it.",
+              "text": "I have seen the travail, which Elohim (God) hath given to the sons of men to be exercised in it.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -109023,13 +109024,13 @@
             },
             {
               "number": 18,
-              "text": "I said in mine heart concerning the estate of the sons of Adam, that Elohim (God) might manifest them, and that they might see that they themselves are beasts.",
+              "text": "I said in mine heart concerning the estate of the sons of men, that Elohim (God) might manifest them, and that they might see that they themselves are beasts.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
             {
               "number": 19,
-              "text": "For that which befalleth the sons of Adam befalleth beasts; even one thing befalleth them: as the one dieth, so dieth the other; yea, they have all one breath; so that a man hath no preeminence above a beast: for all is vanity.",
+              "text": "For that which befalleth the sons of men befalleth beasts; even one thing befalleth them: as the one dieth, so dieth the other; yea, they have all one breath; so that a man hath no preeminence above a beast: for all is vanity.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -109610,7 +109611,7 @@
             },
             {
               "number": 11,
-              "text": "Because sentence against an evil work is not executed speedily, therefore the heart of the sons of Adam is fully set in them to do evil.",
+              "text": "Because sentence against an evil work is not executed speedily, therefore the heart of the sons of men is fully set in them to do evil.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -109671,7 +109672,7 @@
             },
             {
               "number": 3,
-              "text": "This is an evil among all things that are done under the sun, that there is one event unto all: yea, also the heart of the sons of Adam is full of evil, and madness is in their heart while they live, and after that they go to the dead.",
+              "text": "This is an evil among all things that are done under the sun, that there is one event unto all: yea, also the heart of the sons of men is full of evil, and madness is in their heart while they live, and after that they go to the dead.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -109725,7 +109726,7 @@
             },
             {
               "number": 12,
-              "text": "For man also knoweth not his time: as the fishes that are taken in an evil net, and as the birds that are caught in the snare; so are the sons of Adam snared in an evil time, when it falleth suddenly upon them.",
+              "text": "For man also knoweth not his time: as the fishes that are taken in an evil net, and as the birds that are caught in the snare; so are the sons of men snared in an evil time, when it falleth suddenly upon them.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -117516,7 +117517,7 @@
             },
             {
               "number": 14,
-              "text": "As many were astonied at thee; his visage was so marred more than any man, and his form more than the sons of Adam:",
+              "text": "As many were astonied at thee; his visage was so marred more than any man, and his form more than the sons of men:",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -124084,7 +124085,7 @@
             },
             {
               "number": 19,
-              "text": "Great in counsel, and mighty in work: for thine eyes are open upon all the ways of the sons of Adam: to give every one according to his ways, and according to the fruit of his doings:",
+              "text": "Great in counsel, and mighty in work: for thine eyes are open upon all the ways of the sons of men: to give every one according to his ways, and according to the fruit of his doings:",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -137518,7 +137519,7 @@
             },
             {
               "number": 21,
-              "text": "And he was driven from the sons of Adam; and his heart was made like the beasts, and his dwelling was with the wild asses: they fed him with grass like oxen, and his body was wet with the dew of heaven; till he knew that the El Elyon (most high God) ruled in the kingdom of men, and that he appointeth over it whomsoever he will.",
+              "text": "And he was driven from the sons of men; and his heart was made like the beasts, and his dwelling was with the wild asses: they fed him with grass like oxen, and his body was wet with the dew of heaven; till he knew that the El Elyon (most high God) ruled in the kingdom of men, and that he appointeth over it whomsoever he will.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -138369,7 +138370,7 @@
             },
             {
               "number": 16,
-              "text": "And, behold, one like the similitude of the sons of Adam touched my lips: then I opened my mouth, and spake, and said unto him that stood before me, O my lord, by the vision my sorrows are turned upon me, and I have retained no strength.",
+              "text": "And, behold, one like the similitude of the sons of men touched my lips: then I opened my mouth, and spake, and said unto him that stood before me, O my lord, by the vision my sorrows are turned upon me, and I have retained no strength.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -140132,7 +140133,7 @@
             },
             {
               "number": 12,
-              "text": "The vine is dried up, and the fig tree languisheth; the pomegranate tree, the palm tree also, and the apple tree, even all the trees of the field, are withered: because joy is withered away from the sons of Adam.",
+              "text": "The vine is dried up, and the fig tree languisheth; the pomegranate tree, the palm tree also, and the apple tree, even all the trees of the field, are withered: because joy is withered away from the sons of men.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -142325,7 +142326,7 @@
             },
             {
               "number": 7,
-              "text": "And the remnant of Jacob shall be in the midst of many people as a dew from the Yahuah (LORD), as the showers upon the grass, that tarrieth not for man, nor waiteth for the sons of Adam.",
+              "text": "And the remnant of Jacob shall be in the midst of many people as a dew from the Yahuah (LORD), as the showers upon the grass, that tarrieth not for man, nor waiteth for the sons of men.",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -152863,7 +152864,7 @@
             },
             {
               "number": 28,
-              "text": "Verily I say unto you, All sins shall be forgiven unto the sons of Adam, and blasphemies wherewith soever they shall blaspheme:",
+              "text": "Verily I say unto you, All sins shall be forgiven unto the sons of men, and blasphemies wherewith soever they shall blaspheme:",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
@@ -183531,7 +183532,7 @@
             },
             {
               "number": 5,
-              "text": "Which in other ages was not made known unto the sons of Adam, as it is now revealed unto his holy apostles and prophets by the Spirit;",
+              "text": "Which in other ages was not made known unto the sons of men, as it is now revealed unto his holy apostles and prophets by the Spirit;",
               "source_type": "restored-names-kjv",
               "footnote": ""
             },
