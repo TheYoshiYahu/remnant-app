@@ -182,7 +182,12 @@ def _clean_usfx_verse(raw: str) -> str:
     s = _WJ_TAG_RE.sub("", s)
     s = _W_TAG_RE.sub(r"\1", s)
     s = _ADD_TAG_RE.sub(r"\1", s)
-    s = _NDREMARK_RE.sub(r"\1", s)
+    # <nd> = USFX "name of deity" (small-caps formatting in print). Preserve
+    # the small-caps signal as ALL CAPS in the flattened plain-text output
+    # (Phase D / Session 55): <nd>God</nd> -> GOD, <nd>Lord</nd> -> LORD.
+    # This activates the adonai_yahuah rule in restore.py, which keys on
+    # the literal "the Lord GOD" (mixed-case Lord + all-caps GOD) construct.
+    s = _NDREMARK_RE.sub(lambda m: m.group(1).upper(), s)
     s = _TL_TAG_RE.sub(r"\1", s)
     s = _SC_TAG_RE.sub(r"\1", s)
     s = _BD_TAG_RE.sub(r"\1", s)
