@@ -78,7 +78,14 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
         "title": "The Apocrypha — Restored Names Edition",
         "public_domain_base": "KJV 1611 Apocrypha",
         "witness_category": "apocrypha",
-        "tier_required": "extras",
+        # Locked Session 72, 2026-05-17 — the KJV 1611 Apocrypha (14
+        # books) sits at the Notes tier ($1.99) per the Section III
+        # ship-tier lock. Every paid tier inherits it via the strict-
+        # chain lattice in schema.sql Section 9. The Charles 1913 vol 1
+        # apocrypha edition (slug 'apocrypha-charles-vol1') is a
+        # scholarly parallel of largely the same books and stays at
+        # 'extras' per its own profile below.
+        "tier_required": "study_notes",
         "sort_offset": 200,
         "pipeline_version": "phase3-v1",
     },

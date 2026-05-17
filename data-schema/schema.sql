@@ -13,19 +13,24 @@
 -- the join key. The PWA never owns passwords.
 --
 -- Tier model: five subscription tiers per the locked pricing in
--- Section III — free / study_notes ($1.99) / extras ($4.99) /
--- complete_study ($9.99) / everything ($14.99). Each content row
--- carries a tier_required value; the application checks the user's
--- effective tier against tier_required on every fetch. Tier hierarchy
--- (lower entitlement implies higher requirement):
---   free < study_notes
---   free < extras
---   study_notes < complete_study
---   extras < complete_study
---   complete_study < everything
--- complete_study covers everything study_notes and extras cover.
--- everything covers all four below it. The tier_satisfies(user_tier,
--- required_tier) function at the end of this file encodes the lattice.
+-- Section III — free / study_notes ($1.99, user-facing "Notes") /
+-- extras ($4.99) / complete_study ($9.99) / everything ($14.99). Each
+-- content row carries a tier_required value; the application checks
+-- the user's effective tier against tier_required on every fetch.
+-- Tier hierarchy is a STRICT CHAIN (locked Session 72, 2026-05-17,
+-- closes the S54 sub-question on $1.99 tier wiring):
+--   free < study_notes < extras < complete_study < everything
+-- Every higher tier inherits every content row gated to a lower tier
+-- AND every feature gated to a lower tier. Stepping up a tier never
+-- loses content or features. The tier_satisfies(user_tier,
+-- required_tier) function at the end of this file encodes the chain.
+--
+-- The bifurcated lattice (study_notes and extras as siblings; complete_
+-- study as their join) was the original Session 9 implementation. It
+-- contradicted the locked Section III pricing text, which puts the
+-- Apocrypha (14 books) inside the $1.99 ship tier AND inside the $4.99
+-- extras tier. The strict chain resolves this: Apocrypha books carry
+-- tier_required = 'study_notes' and every paid tier inherits them.
 --
 -- Permanent price-lock: every subscription carries the price the user
 -- signed up at in subscriptions.locked_price_cents. The price field on
@@ -548,26 +553,41 @@ CREATE TABLE reading_positions (
 -- can access content gated to required_tier. Used in row-level
 -- security policies and in application-level access checks.
 --
--- Lattice:
---   free <  study_notes <  complete_study <  everything
---   free <  extras      <  complete_study <  everything
--- complete_study covers BOTH study_notes and extras. everything covers
--- all four below.
+-- Lattice (STRICT CHAIN — locked Session 72, 2026-05-17):
+--   free < study_notes < extras < complete_study < everything
+-- Every higher tier inherits every lower tier's content and features.
+-- Apocrypha (KJV 1611, 14 books) sits at tier_required = 'study_notes'
+-- and surfaces to every paid tier. The rest of the extras (Enoch,
+-- Jubilees, Jasher, Charles 1913 vol 1 + vol 2 pseudepigrapha, Josephus,
+-- and the wider Cepher catalog) sit at tier_required = 'extras' and
+-- surface to extras and above. The framework commentary and the
+-- Statement-of-Faith deeper-dive sections sit at 'complete_study'.
+-- The Yoshi concepts and concept-derived everything-tier perks sit at
+-- 'everything'.
 
 CREATE OR REPLACE FUNCTION tier_satisfies(user_tier content_tier, required_tier content_tier)
 RETURNS BOOLEAN
 LANGUAGE SQL
 IMMUTABLE
 AS $$
-    SELECT CASE
-        WHEN required_tier = 'free' THEN TRUE
-        WHEN user_tier = 'everything' THEN TRUE
-        WHEN user_tier = 'complete_study' AND required_tier IN ('free','study_notes','extras','complete_study') THEN TRUE
-        WHEN user_tier = 'study_notes'    AND required_tier IN ('free','study_notes') THEN TRUE
-        WHEN user_tier = 'extras'         AND required_tier IN ('free','extras') THEN TRUE
-        WHEN user_tier = 'free'           AND required_tier = 'free' THEN TRUE
-        ELSE FALSE
-    END;
+    -- Strict-chain rank. Higher rank = higher tier. user must rank >= required.
+    SELECT (
+        CASE user_tier
+            WHEN 'free'           THEN 0
+            WHEN 'study_notes'    THEN 1
+            WHEN 'extras'         THEN 2
+            WHEN 'complete_study' THEN 3
+            WHEN 'everything'     THEN 4
+        END
+    ) >= (
+        CASE required_tier
+            WHEN 'free'           THEN 0
+            WHEN 'study_notes'    THEN 1
+            WHEN 'extras'         THEN 2
+            WHEN 'complete_study' THEN 3
+            WHEN 'everything'     THEN 4
+        END
+    );
 $$;
 
 COMMENT ON FUNCTION tier_satisfies(content_tier, content_tier) IS
@@ -588,8 +608,8 @@ CREATE TABLE schema_version (
 );
 
 INSERT INTO schema_version (version, notes) VALUES (
-    '1.0.0-phase4-session13',
-    'Phase 4 schema with Protestant 66 canon ingest landed (66 books / 1189 chapters / 31102 verses, eBible USFX 1769 Blayney source, restoration pipeline phase4-v1 with Melchisedec NT-spelling variant). Adds phase4-v1 to restoration_pipeline_version enum. Books/chapters/verses + Strong''s slots + cross-references + commentary surface + Statement of Faith mirror + users/subscriptions/purchase_records + user study notes/highlights/reading positions + tier-satisfaction helper.'
+    '1.0.0-phase4-session72',
+    'Session 72 (2026-05-17) — tier lattice flipped from bifurcated (study_notes and extras as siblings, complete_study as their join) to a strict chain (free < study_notes < extras < complete_study < everything) per the locked Section III pricing in BIBLE_APP_ROADMAP.md. Closes the S54 sub-question on $1.99 tier wiring (standing since S43): $1.99 plugs into the existing study_notes enum value, user-facing label "Notes" per Q21. Apocrypha (KJV 1611, 14 books) re-tiered from extras to study_notes — every paid tier inherits the Apocrypha via the chain. tier_satisfies(user_tier, required_tier) rewritten as a rank-comparison. No new enum values; no schema structural change beyond the function body. Prior version: 1.0.0-phase4-session13.'
 );
 
 

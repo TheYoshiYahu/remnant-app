@@ -72,7 +72,7 @@ The schema is designed to be loaded into Postgres 15+ on whichever host the Phas
 
 **`editions`** — one row per Restored Names edition. Five rows expected at v1: KJV-RNE (the canon), Apocrypha-RNE, Enoch-RNE, Jubilees-RNE, Jasher-RNE. Each carries the public-domain base it was restored from (KJV 1769 Blayney for the canon, KJV 1611 for the Apocrypha, Charles 1912 for Enoch, Charles 1902 for Jubilees, Noah 1840 for Jasher) and the pipeline version that produced it (`phase3-v1`).
 
-**`books`** — every book in the app, canon and extras together in one table. The Protestant 66 carry `tier_required = 'free'`; the ~50 extras carry `'extras'` (or higher where applicable). `canonical_order` sorts the book list — canon 1–66, then extras at 100+. `witness_category` drives UI placement and labeling: canon, apocrypha, pseudepigrapha, apostolic_fathers, apocryphal_gospels, historical_witness (Josephus), and disputed_witness (Acts 29 / Sonnini). Acts 29 is explicitly `'disputed_witness'` per Yoshi's 2026-05-09 inventory note — the UI will label it *Acts 29 (Sonnini Manuscript) — disputed authenticity, included for study and discernment*.
+**`books`** — every book in the app, canon and extras together in one table. The Protestant 66 carry `tier_required = 'free'`. The KJV-1611 Apocrypha (14 books, the `apocrypha` edition) carries `'study_notes'` per the Session 72 locked decision — the Notes tier ($1.99) is where the Apocrypha first surfaces, and the strict-chain lattice means every higher paid tier inherits it. The rest of the extras (Enoch, Jubilees, Jasher, Charles 1913 vol 1 + vol 2 pseudepigrapha, Josephus, and the wider Cepher catalog) carry `'extras'`. `canonical_order` sorts the book list — canon 1–66, then extras at 100+. `witness_category` drives UI placement and labeling: canon, apocrypha, pseudepigrapha, apostolic_fathers, apocryphal_gospels, historical_witness (Josephus), and disputed_witness (Acts 29 / Sonnini). Acts 29 is explicitly `'disputed_witness'` per Yoshi's 2026-05-09 inventory note — the UI will label it *Acts 29 (Sonnini Manuscript) — disputed authenticity, included for study and discernment*.
 
 **`chapters`** — chapter-within-book. `chapter_title` is nullable; most canon chapters are just numbered, but Charles 1912's Enoch carries chapter sub-headings (e.g., 1 Enoch chs 56:4 carries a Roman-numbered subhead) and those land in `chapter_title`. `chapter_intro` holds chapter-level prose preceding verse 1 when present.
 
@@ -131,14 +131,19 @@ The check constraint `chapter_id IS NOT NULL OR verse_id IS NOT NULL` keeps the 
 
 **`tier_satisfies(user_tier, required_tier)`** — encodes the tier lattice as an `IMMUTABLE` SQL function. Returns `TRUE` if a user holding `user_tier` can access content gated to `required_tier`.
 
-The lattice:
+The lattice is a **strict chain** (locked Session 72, 2026-05-17):
 
 ```
-free   <  study_notes  <  complete_study  <  everything
-free   <  extras       <  complete_study  <  everything
+free  <  study_notes  <  extras  <  complete_study  <  everything
 ```
 
-`complete_study` is the join — covers both `study_notes` and `extras`. `everything` covers all four below. The application can call this function in row-level security policies and in any application-layer access check that needs to know "does this user's tier satisfy this content's requirement?"
+Every higher tier inherits every lower tier's content and features. Stepping up a tier never loses anything. The Apocrypha (KJV 1611, 14 books) sits at `study_notes` and surfaces to every paid tier. The rest of the extras (Enoch, Jubilees, Jasher, the Charles 1913 vol 1 + vol 2 pseudepigrapha, Josephus, and the wider Cepher catalog) sit at `extras` and surface to extras-and-above. The Statement-of-Faith deeper-dive sections sit at `complete_study`. The `concepts` rows default to `everything`.
+
+The implementation is a rank comparison: each tier maps to an integer 0–4, and `tier_satisfies` returns TRUE when the user's rank is at or above the required rank.
+
+The application calls this function in row-level security policies and in any application-layer access check that needs to know "does this user's tier satisfy this content's requirement?"
+
+**Prior shape (S9 → S71).** The original lattice was bifurcated — `study_notes` and `extras` as siblings, with `complete_study` as their join. That implementation contradicted the locked Section III pricing text, which puts the Apocrypha inside both the $1.99 ship tier (Notes) and the $4.99 ship tier (Extras). Session 72 flipped the lattice to a strict chain so the wiring matches the locked pricing without needing per-book multi-tier grants.
 
 ### Section 10 — Schema version stamp
 
