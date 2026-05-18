@@ -429,17 +429,23 @@ async def get_chapter_cross_references(
 ) -> ChapterEndCardResponse:
     """Chapter-end cross-reference card per ``api/CHAPTER_END_CARD_CONTRACT.md``.
 
-    Returns the comprehensive baseline (every verse in the chapter that
-    has at least one cross-reference target) plus the framework-
-    diagnostic threads (each thread that has at least one member whose
-    source verse falls in this chapter).
+    Returns the per-verse cross-reference list (every verse in the
+    chapter that has at least one curated cross-reference target) plus
+    the framework-diagnostic threads (each thread that has at least one
+    member whose source verse falls in this chapter). Every row in
+    ``cross_references`` is a curated framework-bearing call that
+    passed the 12 Red Lines and the 12-point editorial checklist before
+    it landed — there is no neutral baseline underneath. The Session 75
+    rollback of the TSK comprehensive-baseline direction is recorded
+    in the contract; the apparatus grows by curated threads on Yoshi's
+    design call, not by mass corpus ingestion.
 
-    At Session 74 the baseline is empty for most chapters — the
-    Treasury of Scripture Knowledge corpus is queued for v1.1 ingest.
-    The threads cover the five framework readings the v1 card needs to
-    surface: post-harvest-sifting (S73), grace-from-names-sake,
-    new-heart, scattered-seed-gathering, and false-inclusion-rebuttal
-    (S74).
+    The v1 threads cover the five framework readings the card needs to
+    surface from launch: post-harvest-sifting (S73), grace-from-names-
+    sake, new-heart, scattered-seed-gathering, and false-inclusion-
+    rebuttal (S74). Most chapters return both lists empty until the
+    curated apparatus reaches them; the PWA hides the card entirely on
+    that state.
 
     Tier filter: rows the caller can't unlock are still returned with
     their full ``tier_required`` field so the PWA can render a lock
@@ -448,9 +454,9 @@ async def get_chapter_cross_references(
     every S73/S74 row sits at anyway).
 
     Edition resolution: canon-only at v1. The contract reserves
-    ``?edition=<slug>`` for v1.1+ when apocrypha cross-references land.
-    Returns 404 when the book + chapter don't resolve in the canon
-    edition under the caller's tier.
+    ``?edition=<slug>`` for when apocrypha-anchored curated threads
+    land. Returns 404 when the book + chapter don't resolve in the
+    canon edition under the caller's tier.
     """
     pool = get_pool()
     tier = user_tier(current_user)

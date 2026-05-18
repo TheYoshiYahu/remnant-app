@@ -181,10 +181,13 @@ class ChapterEndCardChapterRef(BaseModel):
 class CrossRefTarget(BaseModel):
     """One cross-reference target verse, fully resolved.
 
-    Used inside both the baseline list (one per (source, target) pair)
-    and the thread members list. Carries `source` so the PWA can label
-    the row (manual / TSK / teaching_corpus) and `tier_required` so it
-    can grey out rows the caller can't unlock yet.
+    Used inside both the per-verse cross-reference list (one per
+    (source, target) pair) and the thread members list. Carries
+    `source` so the PWA can label the row (``manual`` for the curated
+    framework-bearing pairs that ship today; ``teaching_corpus``
+    reserved for future entries authored against the Teaching Corpus
+    concept work) and `tier_required` so it can grey out rows the
+    caller can't unlock yet.
     """
 
     verse_id: int

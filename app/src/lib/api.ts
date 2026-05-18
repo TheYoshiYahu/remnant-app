@@ -115,12 +115,15 @@ export interface HealthResponse {
 // ----- Chapter-end cross-reference card (Session 74) ---------------------
 //
 // Mirrors api/models.py ChapterEndCardResponse. The endpoint returns
-// both the comprehensive baseline (one block per chapter verse that has
-// at least one cross-reference target — empty at v1 pending TSK
-// ingestion, populated at v1.1) and the framework-diagnostic threads
-// (each thread that has at least one member whose source verse falls
-// in the rendered chapter). The PWA hides the card entirely when both
-// baseline and threads are empty.
+// the per-verse cross-reference list (one block per chapter verse that
+// has at least one curated target) plus the framework-diagnostic
+// threads (each thread that has at least one member whose source verse
+// falls in the rendered chapter). Every cross_references row is a
+// curated framework-bearing call — the Session 75 rollback closed the
+// TSK comprehensive-baseline direction, so the apparatus grows by
+// curated threads on Yoshi's design call, not by corpus ingestion. The
+// PWA hides the card entirely when both lists come back empty (the
+// expected state for any chapter the apparatus hasn't reached yet).
 
 export interface CrossRefTarget {
   verse_id: number;
@@ -392,13 +395,17 @@ export function getChapter(
 /**
  * Chapter-end cross-reference card.
  *
- * Returns the comprehensive baseline (empty at v1; populated at v1.1
- * once TSK ingestion lands) plus the framework-diagnostic threads
- * (the five-thread overlay seeded in Sessions 73 and 74). The reader
- * UI calls this after a chapter renders and hides the card entirely
- * when both `baseline` and `threads` come back empty.
+ * Returns the per-verse cross-reference list (one entry per chapter
+ * verse with at least one curated target) plus the framework-
+ * diagnostic threads (the five-thread overlay seeded in Sessions 73
+ * and 74). Every cross_references row is curated and framework-
+ * bearing — the TSK comprehensive-baseline direction rolled back at
+ * Session 75. The reader UI calls this after a chapter renders and
+ * hides the card entirely when both `baseline` and `threads` come
+ * back empty.
  *
- * Canon-only at v1; `?edition=` lands when apocrypha cross-refs land.
+ * Canon-only at v1; `?edition=` lands when apocrypha-anchored curated
+ * threads land.
  */
 export function getChapterCrossReferences(
   slug: string,

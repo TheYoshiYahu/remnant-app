@@ -298,10 +298,11 @@ function Reader() {
 
           {/*
             Session 74 — chapter-end cross-reference card. Renders the
-            framework-diagnostic threads (and the comprehensive baseline
-            once TSK ingestion lands at v1.1) per
-            api/CHAPTER_END_CARD_CONTRACT.md. Hides itself silently when
-            both baseline and threads come back empty.
+            per-verse curated cross-references plus the framework-
+            diagnostic threads per api/CHAPTER_END_CARD_CONTRACT.md.
+            Every row is curated and framework-bearing; the TSK
+            comprehensive-baseline direction rolled back at S75. The
+            card hides itself silently when both lists come back empty.
           */}
           <ChapterEndCard
             bookSlug={chapterDetail.book.slug}

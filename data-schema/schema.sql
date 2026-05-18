@@ -264,20 +264,27 @@ COMMENT ON TABLE verse_words IS
 
 
 -- =====================================================================
--- Section 4 — Cross-references (Treasury of Scripture Knowledge + future)
+-- Section 4 — Cross-references (curated framework-bearing pairs)
 -- =====================================================================
+-- Every row is a curated cross-reference that passed the 12 Red Lines
+-- and the 12-point editorial checklist before it landed. The Session 75
+-- rollback closed the TSK comprehensive-baseline direction (see
+-- api/CHAPTER_END_CARD_CONTRACT.md "ROLLED BACK at Session 75" for the
+-- framework grounds — cross-references are interpretive artifacts, not
+-- neutral data). The apparatus grows by curated threads on Yoshi's
+-- design call, not by mass corpus ingestion.
 
 CREATE TABLE cross_references (
     id              BIGSERIAL PRIMARY KEY,
     source_verse_id BIGINT NOT NULL REFERENCES verses(id) ON DELETE CASCADE,
     target_verse_id BIGINT NOT NULL REFERENCES verses(id) ON DELETE CASCADE,
-    source          TEXT NOT NULL,                   -- 'TSK', 'manual', 'teaching_corpus'
+    source          TEXT NOT NULL,                   -- 'manual' (curated framework-bearing pairs that ship today); 'teaching_corpus' reserved for future entries authored against the Teaching Corpus concept work.
     relevance_score INT,                             -- 0-100 if available; null if unranked
-    note            TEXT,                            -- optional one-liner for manual cross-refs
+    note            TEXT,                            -- optional one-liner; the curated pairs carry a 'thread:<slug> | <note>' prefix that surfaces alongside the thread membership
     tier_required   content_tier NOT NULL DEFAULT 'free',   -- Session 73: flipped from 'study_notes' to 'free' (chapter-end apparatus is a free-tier feature; every paid tier inherits via the strict chain).
     CHECK (source_verse_id <> target_verse_id),
     -- Dedupe guard (added Session 73). A single pair may exist once per
-    -- source — TSK + manual + teaching_corpus can each carry the same
+    -- source — 'manual' and 'teaching_corpus' can each carry the same
     -- pair, but no duplicate rows within a single source.
     CONSTRAINT cross_references_source_target_source_uniq
         UNIQUE (source_verse_id, target_verse_id, source)
@@ -287,18 +294,18 @@ CREATE INDEX idx_xref_source ON cross_references(source_verse_id);
 CREATE INDEX idx_xref_target ON cross_references(target_verse_id);
 
 COMMENT ON TABLE cross_references IS
-    'Verse-to-verse links. Default tier_required flipped from study_notes to free in Session 73 — the chapter-end cross-reference apparatus is a free-tier feature; every paid tier inherits via the strict chain. Holds both the comprehensive baseline (Treasury of Scripture Knowledge, Torrey 1880, public domain — queued for v1.1) and the framework-diagnostic curated overlay (rows tagged by cross_reference_thread_members).';
+    'Verse-to-verse links. Default tier_required flipped from study_notes to free in Session 73 — the chapter-end cross-reference apparatus is a free-tier feature; every paid tier inherits via the strict chain. Every row is a curated framework-bearing call that passed the 12 Red Lines and the 12-point editorial checklist before it landed; the Session 75 rollback closed the TSK comprehensive-baseline direction (cross-references are interpretive artifacts, not neutral data — Red Line #2). The framework-diagnostic threads in cross_reference_thread_members are the named grouping of the same curated rows around a thematic anchor.';
 
 
 -- =====================================================================
 -- Section 4b — Cross-reference threads (Session 73)
 -- =====================================================================
--- The framework-diagnostic curated overlay. Each thread is anchored on
+-- The framework-diagnostic curated grouping. Each thread is anchored on
 -- a Tanakh passage and groups a set of cross-reference pairs under a
--- named theme. The chapter-end card renders the comprehensive baseline
--- first (every cross_references row whose source falls in the chapter)
--- and surfaces thread callouts underneath whenever a thread has
--- members in the rendered chapter.
+-- named theme. The chapter-end card renders the per-verse cross-
+-- references first (every cross_references row whose source falls in
+-- the chapter) and surfaces thread callouts whenever a thread has
+-- members in the rendered chapter — same curated rows, two surfaces.
 
 CREATE TABLE cross_reference_threads (
     id                      SERIAL PRIMARY KEY,
@@ -656,8 +663,8 @@ CREATE TABLE schema_version (
 );
 
 INSERT INTO schema_version (version, notes) VALUES (
-    '1.0.0-phase4-session73',
-    'Session 73 (2026-05-17) — end-of-chapter cross-reference apparatus, free tier. cross_references.tier_required default flipped from study_notes to free (the apparatus moves into the free tier; every paid tier inherits via the strict chain). UNIQUE (source_verse_id, target_verse_id, source) added for dedupe safety. New tables cross_reference_threads (curated framework-diagnostic overlay with Tanakh anchor and tier gate) and cross_reference_thread_members (many-to-many join). Seeded first thread: post-harvest-sifting, anchored on Ezekiel 20:33-44, with 12 cross-reference pairs into the gospels (Matthew 7:23, 25:30/32/33/41, 8:12, 13:42, 22:13, 24:51 and Luke 13:27-28). The thread surfaces a Red Line #11 reading directly into the chapter-end card: sheep/goats, depart-from-me, and weeping-and-gnashing-of-teeth all trace to Ezekiel 20''s wilderness sifting of the gathered house, not to eternal-hell judgment of unbelievers. Treasury of Scripture Knowledge comprehensive baseline ingestion remains queued for v1.1. Prior version: 1.0.0-phase4-session72.'
+    '1.0.0-phase4-session74',
+    'Sessions 73–74 (2026-05-17) — end-of-chapter cross-reference apparatus, free tier. cross_references.tier_required default flipped from study_notes to free (the apparatus moves into the free tier; every paid tier inherits via the strict chain). UNIQUE (source_verse_id, target_verse_id, source) added for dedupe safety. New tables cross_reference_threads (curated framework-diagnostic grouping with Tanakh anchor and tier gate) and cross_reference_thread_members (many-to-many join). Seeded five v1 threads: post-harvest-sifting (Ezek 20:33-44, 12 pairs), grace-from-names-sake (Ezek 36:22-32, 7 pairs), new-heart (Ezek 36:26-27, 9 pairs), scattered-seed-gathering (Hosea 1:9-10, 8 pairs), false-inclusion-rebuttal (Rom 11:17-24, 11 pairs). Every cross-reference pair is a curated framework-bearing call (Red Lines #2, #10, #11 surfaced through the threads). Session 75 closed the TSK comprehensive-baseline direction on framework grounds (Red Line #2 / #10) — cross-references are interpretive artifacts, the curated threads ARE the apparatus, and the apparatus grows by curated threads on Yoshi''s design call rather than by mass corpus ingestion. Prior version: 1.0.0-phase4-session72.'
 );
 
 

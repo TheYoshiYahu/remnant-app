@@ -5,14 +5,15 @@
  * api/CHAPTER_END_CARD_CONTRACT.md. Mounted by the Reader after the
  * last verse and before the next-chapter navigation. Hides itself
  * entirely when both baseline and threads come back empty (the
- * expected state at v1 for any chapter not yet covered by the
- * framework threads — TSK comprehensive baseline lands at v1.1).
+ * expected state for any chapter the curated apparatus hasn't
+ * reached yet). Every cross_references row is a curated framework-
+ * bearing call; the TSK comprehensive-baseline direction rolled back
+ * at Session 75.
  *
- * Layer 1 — comprehensive baseline. One block per verse in the
- * rendered chapter that has at least one cross-reference target,
- * with the source verse preview, followed by an indented list of
- * target verses (book chapter:verse — preview). Empty at v1 pending
- * TSK ingestion.
+ * Layer 1 — per-verse cross-references. One block per verse in the
+ * rendered chapter that has at least one curated cross-reference
+ * target, with the source verse preview, followed by an indented
+ * list of target verses (book chapter:verse — preview).
  *
  * Layer 2 — framework threads. One callout per thread surfacing in
  * this chapter, with the thread title, the summary_md rendered as
@@ -22,7 +23,7 @@
  *
  * Tier-locked rendering: any row whose tier_required exceeds the
  * caller's tier renders greyed-out with an "Unlock with [tier]"
- * tooltip. Dormant at v1/v1.1 (every row is free-tier).
+ * tooltip. Dormant at v1 (every curated row is free-tier).
  *
  * Markdown: summary_md is rendered through `renderSummaryMd` —
  * paragraph splitting on `\n\n`, single-line breaks on `\n`, and

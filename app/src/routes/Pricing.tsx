@@ -45,11 +45,11 @@ const TIERS: TierCard[] = [
     monthlyPriceLabel: "$1.99 / month",
     annualPriceLabel: "$19.90 / year",
     annualNoteLabel: "two months free",
-    blurb: "Framework commentary on every chapter of the canon, Strong's tap-on-word lookup, and cross-references via the Treasury of Scripture Knowledge.",
+    blurb: "Framework commentary on every chapter of the canon, Strong's tap-on-word lookup, and curated cross-reference threads that anchor every passage in its Tanakh source.",
     bullets: [
       "Yoshi's framework commentary on every chapter of the 66 books",
       "Strong's lookup on every word — tap to open the lemma",
-      "Cross-references via Treasury of Scripture Knowledge",
+      "Curated cross-reference threads — every passage grounded in its Tanakh source",
       "Everything in the free reader",
     ],
   },

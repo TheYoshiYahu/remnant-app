@@ -1,6 +1,6 @@
 # Chapter-End Cross-Reference Card — API + Render Contract
 
-Session 73 wheel deliverable, 2026-05-17. Free-tier feature; every paid tier inherits via the strict chain locked Session 72.
+Session 73 wheel deliverable, 2026-05-17. Free-tier feature; every paid tier inherits via the strict chain locked Session 72. Architecture revised at Session 75 close — the comprehensive-baseline-as-future-TSK-ingestion direction is rolled back; cross-references are interpretive artifacts, every pair is a curated framework-bearing call, the threads ARE the apparatus.
 
 This document is the **contract** between the FastAPI service and the PWA reader. The schema sits behind it (data-schema/schema.sql, Section 4 + Section 4b); this file describes what the API returns and how the reader renders it.
 
@@ -8,11 +8,11 @@ This document is the **contract** between the FastAPI service and the PWA reader
 
 ## The user story
 
-A reader finishes Matthew 25 in the reader UI. Below the last verse, before the next-chapter affordance, a card appears titled *Tanakh Sources for Matthew 25*. The card has two layers.
+A reader finishes Matthew 25 in the reader UI. Below the last verse, before the next-chapter affordance, a card appears titled *Tanakh Sources for Matthew 25*. The card has two layers, both populated from the same curated `cross_references` table.
 
-**Layer 1 — comprehensive baseline.** For every verse in Matthew 25 that has a cross-reference back to the Tanakh, the card lists the source verse, the target verse(s), and a short prose preview of each target. This is the comprehensive cross-reference apparatus — the public-domain Treasury of Scripture Knowledge corpus (queued for v1.1 ingestion).
+**Layer 1 — per-verse cross-references.** For every verse in Matthew 25 that has at least one curated cross-reference back to the Tanakh, the card lists the source verse, the target verse(s), and a short prose preview of each target. Every row in the table is a framework-bearing call that passed the 12 Red Lines and the 12-point editorial checklist before it landed — there is no neutral baseline underneath. The Reformation's idea of a "comprehensive" cross-reference corpus assumes neutrality the framework refuses (Red Line #2); the apparatus grows by curated threads, not by mass ingestion.
 
-**Layer 2 — framework threads.** Underneath the baseline list, any *cross-reference thread* whose members include verses from this chapter surfaces as a callout. The callout opens with the thread's title and summary (markdown), then lists the thread's members with per-member notes. Threads are the curated framework-diagnostic overlay — they make Yoshi's reading of the passage visible without imposing commentary on top of the text.
+**Layer 2 — framework threads.** Above (or beside) the per-verse list, any *cross-reference thread* whose members include verses from this chapter surfaces as a callout. The callout opens with the thread's title and summary (markdown), then lists the thread's members with per-member notes. Every member is also a Layer 1 row — threads are the named-and-anchored grouping of the same curated pairs around a framework-diagnostic theme. They make Yoshi's reading of the passage visible without imposing commentary on top of the text.
 
 The reader meets the Tanakh source-grounding through the verses themselves, not through prose telling them what to think. The framework speaks through what scripture references what.
 
@@ -192,10 +192,10 @@ The card lives at `<ChapterEndCard chapterId={chapter.id} />`, rendered after th
 ```
 
 **Empty states.**
-- If both `baseline` and `threads` are empty, the card does not render at all.
-- If `baseline` is empty but `threads` is non-empty (current state at S73 — no TSK ingestion yet), the baseline section is omitted and the threads section renders directly under the card title.
+- If both `baseline` and `threads` are empty (current state for any chapter the curated apparatus hasn't reached yet), the card does not render at all.
+- If `baseline` is empty but `threads` is non-empty, the baseline section is omitted and the threads section renders directly under the card title. (Architecturally: every Layer 1 row in the v1 ship is also a Layer 2 thread member, so a non-empty threads list implies a non-empty baseline. The split-rendering exists for future cases where a curated cross-reference is added without yet being grouped into a thread.)
 
-**Tier-locked rows.** Any row with `tier_required` above the user's tier renders as a greyed-out item with a small lock affordance and an "Unlock with [Tier name]" tooltip. At S73 nothing is gated above `free`, so this path is dormant until v1.1+ rows arrive.
+**Tier-locked rows.** Any row with `tier_required` above the user's tier renders as a greyed-out item with a small lock affordance and an "Unlock with [Tier name]" tooltip. At v1 every curated row is `free` (the apparatus is free-tier per Session 73), so this path is dormant until higher-tier curated rows arrive — by direct authoring on Yoshi's call, not by corpus ingestion.
 
 **Markdown rendering.** `summary_md` is rendered through the standard PWA markdown component (the same one that renders commentary entries). Sacred names already carry parentheticals in the seed data — the renderer treats `Yahuah (the LORD)` as plain inline text, never linkified.
 
@@ -230,9 +230,11 @@ cross_reference_thread_members   (new at S73)
 
 ## Next-session work (queued)
 
-1. **Threads 2–5** — grace-from-name's-sake (Ezekiel 36:22, Deuteronomy 9:5–6 → grace passages), new-heart (Ezekiel 36:26–27, 11:19, Jeremiah 31:31–34 → Hebrews 8, 2 Cor 3, Romans 2:29), scattered-seed-gathering (Hosea 1:9–10, Jeremiah 31:10 → Romans 9:25–26), false-inclusion-rebuttal (the Romans 11 olive tree thread → Red Line #7).
-2. **Endpoint implementation** — wire `GET /api/chapters/{book_slug}/{chapter_number}/cross-references` in api/main.py against the schema described above.
-3. **PWA component** — implement `<ChapterEndCard />` against this contract.
-4. **TSK ingestion (v1.1)** — public-domain corpus into `cross_references` with `source='TSK'`, `tier_required='free'`.
-5. **Apocrypha-aware rendering** — when the reader is in an extras edition, cross-references that point into the apocrypha should resolve cleanly. Schema already supports this through `editions.slug`.
+1. **Threads 2–5 — LANDED at Session 74.** grace-from-name's-sake (Ezekiel 36:22, Deuteronomy 9:5–6 → grace passages), new-heart (Ezekiel 36:26–27, 11:19, Jeremiah 31:31–34 → Hebrews 8, 2 Cor 3, Romans 2:29), scattered-seed-gathering (Hosea 1:9–10, Jeremiah 31:10 → Romans 9:25–26), false-inclusion-rebuttal (the Romans 11 olive tree thread → Red Line #11). Migration: `data-schema/migrations/session74_cross_reference_threads_2_to_5.sql`.
+2. **Endpoint implementation — LANDED at Session 74.** `GET /v1/books/{slug}/chapters/{n}/cross-references` in `api/main.py`, models in `api/models.py`.
+3. **PWA component — LANDED at Session 74.** `<ChapterEndCard />` at `app/src/components/ChapterEndCard.tsx`.
+4. **Additional curated threads.** Threads anchored on Red Lines the v1 set hasn't surfaced yet — sabbath restoration, sacred-names lineage, three-categories, false inclusion rebuttal expansion, Adam and the tares, the four costumes, the Daniel 7 kaph-comparative carve-out, the seed war from Genesis 6, the lo-ammi → sons-of-the-living-Elohim arc. Each a thread anchored on Tanakh with curated members through the 12 Red Lines + the 12-point editorial checklist. The apparatus grows one curated thread at a time, on Yoshi's design call.
+5. **Apocrypha-aware rendering** — when the reader is in an extras edition, cross-references that point into the apocrypha should resolve cleanly. Schema already supports this through `editions.slug`; endpoint `?edition=` parameter wires when apocrypha-anchored curated threads land.
 6. **Migration-into-API-startup wiring** — currently the migration is applied manually via psql paste-block; future schema changes should apply on push. Standing item per the S72 deferral log.
+
+**ROLLED BACK at Session 75.** *TSK comprehensive baseline ingestion as v1.1.* The direction was opened in the original S73 contract draft as "Layer 1 = TSK public-domain corpus." Yoshi rolled it back mid-S75 on Red Line #2 / #10 grounds — cross-references are interpretive artifacts, not neutral data; Torrey's TSK is the codified cross-reference grammar of the inherited Reformation reading (the grammar that can't see grace as the means of return to the commandments because the Tanakh sources for it — Ezekiel 36:22, Deuteronomy 9:5–6, Psalm 25:11, Psalm 79:9 — sit outside the Reformation's reading). The volume-ratio inversion of ~340k TSK pairs underneath ~50 curated framework pairs makes the inherited grammar the page and the framework the footnote — Red Line #2 forbids that. Direction is closed; do not propose TSK or any Christian-corpus import as future work on this surface.

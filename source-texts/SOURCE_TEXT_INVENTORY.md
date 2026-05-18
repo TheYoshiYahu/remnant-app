@@ -31,11 +31,9 @@ Recommended source: OpenScriptures strongs repo on GitHub. Public domain. Clean 
 Bundled into the SWORD KJV2006 module above. Every word in the KJV is tagged with its underlying Strong's number (H#### for Hebrew, G#### for Greek). This is what powers tap-on-word lookup in Phase 5.
 
 ### Cross-references (for in-app cross-reference suggestions)
-**Treasury of Scripture Knowledge** (R.A. Torrey, 1880). Public domain. The classical cross-reference work. ~500,000 cross-references covering virtually every verse.
+**Curated framework-bearing pairs, authored under the 12 Red Lines.** Not an ingested third-party corpus. Sessions 73 and 74 seeded the v1 apparatus: five framework-diagnostic threads (post-harvest-sifting, grace-from-names-sake, new-heart, scattered-seed-gathering, false-inclusion-rebuttal) with 47 cross-reference pairs total, every pair voice-gated against the Red Lines and the 12-point editorial checklist before it landed.
 
-Candidate sources:
-- **OpenScriptures TSK repo** (github.com/openscriptures/cross-references)
-- **The SWORD Project** TSK module
+The Treasury of Scripture Knowledge (R.A. Torrey, 1880, public domain) was scoped as a v1.1 comprehensive-baseline ingestion candidate at the original S73 contract, then rolled back at Session 75 on framework grounds (Red Line #2 / #10): TSK is the codified cross-reference grammar of the inherited Reformation reading, and a ~340k-pair TSK baseline underneath ~50 curated framework pairs makes the inherited grammar the page and the framework the footnote — the volume-ratio inversion Red Line #2 forbids. The apparatus grows by curated threads on Yoshi's design call, not by ingestion of any Christian-corpus cross-reference work.
 
 ---
 
