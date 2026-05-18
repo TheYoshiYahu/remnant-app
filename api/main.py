@@ -100,12 +100,22 @@ from auth import User, get_current_user_optional, user_tier
 from config import settings
 from db import close_pool, get_pool, open_pool
 from models import (
+    BaselineEntry,
+    BaselineSourceVerse,
     BookChaptersResponse,
     BookDetail,
     BookSummary,
     ChapterDetail,
+    ChapterEndCardBookRef,
+    ChapterEndCardChapterRef,
+    ChapterEndCardResponse,
+    ChapterEndThread,
     ChapterSummary,
+    CrossRefTarget,
     HealthResponse,
+    ThreadAnchor,
+    ThreadMember,
+    ThreadMemberTarget,
     Verse,
     VerseSearchHit,
     VerseSearchResponse,
@@ -402,6 +412,227 @@ async def get_chapter(
         ),
         chapter_intro=chapter_row["chapter_intro"],
         verses=verses,
+    )
+
+
+# ----- Chapter-end cross-reference card (Session 74 wheel) ---------------
+
+
+@app.get(
+    "/v1/books/{book_slug}/chapters/{chapter_number}/cross-references",
+    response_model=ChapterEndCardResponse,
+)
+async def get_chapter_cross_references(
+    book_slug: str,
+    chapter_number: int,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> ChapterEndCardResponse:
+    """Chapter-end cross-reference card per ``api/CHAPTER_END_CARD_CONTRACT.md``.
+
+    Returns the comprehensive baseline (every verse in the chapter that
+    has at least one cross-reference target) plus the framework-
+    diagnostic threads (each thread that has at least one member whose
+    source verse falls in this chapter).
+
+    At Session 74 the baseline is empty for most chapters — the
+    Treasury of Scripture Knowledge corpus is queued for v1.1 ingest.
+    The threads cover the five framework readings the v1 card needs to
+    surface: post-harvest-sifting (S73), grace-from-names-sake,
+    new-heart, scattered-seed-gathering, and false-inclusion-rebuttal
+    (S74).
+
+    Tier filter: rows the caller can't unlock are still returned with
+    their full ``tier_required`` field so the PWA can render a lock
+    affordance. Auth is the same JWT pattern as the other reader
+    routes — anonymous callers resolve to 'free' tier (which is what
+    every S73/S74 row sits at anyway).
+
+    Edition resolution: canon-only at v1. The contract reserves
+    ``?edition=<slug>`` for v1.1+ when apocrypha cross-references land.
+    Returns 404 when the book + chapter don't resolve in the canon
+    edition under the caller's tier.
+    """
+    pool = get_pool()
+    tier = user_tier(current_user)
+
+    async with pool.acquire() as conn:
+        # Resolve the canon book + chapter. The book tier filter
+        # mirrors the other reader routes — 404 hides existence when
+        # the caller's tier doesn't satisfy.
+        book_row = await conn.fetchrow(
+            "SELECT b.id AS book_id, b.slug, b.title, e.slug AS edition_slug "
+            "  FROM books b "
+            "  JOIN editions e ON e.id = b.edition_id "
+            " WHERE b.slug = $1 "
+            "   AND e.slug = 'canon' "
+            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            book_slug,
+            tier,
+        )
+        if book_row is None:
+            raise HTTPException(
+                status_code=404, detail=f"Book '{book_slug}' not found in canon."
+            )
+
+        chapter_row = await conn.fetchrow(
+            "SELECT id, chapter_number, chapter_title "
+            "  FROM chapters "
+            " WHERE book_id = $1 AND chapter_number = $2",
+            book_row["book_id"],
+            chapter_number,
+        )
+        if chapter_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Chapter {chapter_number} not found in '{book_slug}'.",
+            )
+
+        # Baseline — every cross-ref row with source in this chapter.
+        baseline_rows = await conn.fetch(
+            "SELECT x.source AS xref_source, "
+            "       x.tier_required::text AS xref_tier, "
+            "       sv.verse_number AS source_verse_number, "
+            "       sv.text AS source_text, "
+            "       tv.id AS target_verse_id, "
+            "       tb.slug AS target_book_slug, "
+            "       tc.chapter_number AS target_chapter, "
+            "       tv.verse_number AS target_verse_number, "
+            "       tv.text AS target_text "
+            "  FROM cross_references x "
+            "  JOIN verses sv  ON sv.id = x.source_verse_id "
+            "  JOIN verses tv  ON tv.id = x.target_verse_id "
+            "  JOIN chapters tc ON tc.id = tv.chapter_id "
+            "  JOIN books tb    ON tb.id = tc.book_id "
+            " WHERE sv.chapter_id = $1 "
+            "   AND tier_satisfies($2::content_tier, x.tier_required) "
+            " ORDER BY sv.verse_number, tb.canonical_order, tc.chapter_number, tv.verse_number",
+            chapter_row["id"],
+            tier,
+        )
+
+        # Threads — denormalized join: one row per (thread, in-chapter
+        # member). Threads with zero in-chapter members are excluded by
+        # the join. We aggregate by thread on the Python side rather
+        # than building a json_agg roll-up in SQL — the result set is
+        # small (handful of threads × handful of members each) and the
+        # Python grouping reads cleaner.
+        thread_member_rows = await conn.fetch(
+            "SELECT t.id AS thread_id, "
+            "       t.slug AS thread_slug, "
+            "       t.title AS thread_title, "
+            "       t.summary_md AS thread_summary_md, "
+            "       t.tier_required::text AS thread_tier, "
+            "       t.sort_order AS thread_sort, "
+            "       ab.slug AS anchor_book_slug, "
+            "       ac.chapter_number AS anchor_chapter, "
+            "       av.verse_number AS anchor_v_start, "
+            "       ev.verse_number AS anchor_v_end, "
+            "       m.sort_order AS member_sort, "
+            "       m.member_note AS member_note, "
+            "       sv.verse_number AS member_source_verse_number, "
+            "       tv.verse_number AS member_target_verse_number, "
+            "       tc.chapter_number AS member_target_chapter, "
+            "       tb.slug AS member_target_book_slug, "
+            "       tv.text AS member_target_text "
+            "  FROM cross_reference_threads t "
+            "  JOIN cross_reference_thread_members m "
+            "    ON m.thread_id = t.id "
+            "  JOIN cross_references x ON x.id = m.cross_reference_id "
+            "  JOIN verses sv ON sv.id = x.source_verse_id "
+            "  JOIN verses tv ON tv.id = x.target_verse_id "
+            "  JOIN chapters tc ON tc.id = tv.chapter_id "
+            "  JOIN books    tb ON tb.id = tc.book_id "
+            "  LEFT JOIN verses av  ON av.id = t.anchor_verse_id_start "
+            "  LEFT JOIN chapters ac ON ac.id = av.chapter_id "
+            "  LEFT JOIN books    ab ON ab.id = ac.book_id "
+            "  LEFT JOIN verses ev  ON ev.id = t.anchor_verse_id_end "
+            " WHERE sv.chapter_id = $1 "
+            "   AND tier_satisfies($2::content_tier, t.tier_required) "
+            " ORDER BY t.sort_order, t.title, m.sort_order",
+            chapter_row["id"],
+            tier,
+        )
+
+    # --- Aggregate baseline rows by source verse ----------------------
+    baseline_by_verse: dict[int, BaselineEntry] = {}
+    for r in baseline_rows:
+        v_num = r["source_verse_number"]
+        if v_num not in baseline_by_verse:
+            baseline_by_verse[v_num] = BaselineEntry(
+                source_verse=BaselineSourceVerse(
+                    verse_number=v_num,
+                    preview=r["source_text"],
+                ),
+                targets=[],
+            )
+        baseline_by_verse[v_num].targets.append(
+            CrossRefTarget(
+                verse_id=r["target_verse_id"],
+                book_slug=r["target_book_slug"],
+                chapter_number=r["target_chapter"],
+                verse_number=r["target_verse_number"],
+                preview=r["target_text"],
+                source=r["xref_source"],
+                tier_required=r["xref_tier"],
+            )
+        )
+    baseline = [baseline_by_verse[k] for k in sorted(baseline_by_verse.keys())]
+
+    # --- Aggregate thread rows ---------------------------------------
+    threads_by_id: dict[int, ChapterEndThread] = {}
+    thread_order: list[int] = []  # preserve sort order from SQL
+    for r in thread_member_rows:
+        t_id = r["thread_id"]
+        if t_id not in threads_by_id:
+            anchor: Optional[ThreadAnchor] = None
+            if (
+                r["anchor_book_slug"]
+                and r["anchor_chapter"] is not None
+                and r["anchor_v_start"] is not None
+                and r["anchor_v_end"] is not None
+            ):
+                anchor = ThreadAnchor(
+                    book_slug=r["anchor_book_slug"],
+                    chapter_number=r["anchor_chapter"],
+                    verse_start=r["anchor_v_start"],
+                    verse_end=r["anchor_v_end"],
+                )
+            threads_by_id[t_id] = ChapterEndThread(
+                slug=r["thread_slug"],
+                title=r["thread_title"],
+                summary_md=r["thread_summary_md"],
+                anchor=anchor,
+                tier_required=r["thread_tier"],
+                members_in_chapter=[],
+            )
+            thread_order.append(t_id)
+        threads_by_id[t_id].members_in_chapter.append(
+            ThreadMember(
+                sort_order=r["member_sort"],
+                source_verse_number=r["member_source_verse_number"],
+                target=ThreadMemberTarget(
+                    book_slug=r["member_target_book_slug"],
+                    chapter_number=r["member_target_chapter"],
+                    verse_number=r["member_target_verse_number"],
+                    preview=r["member_target_text"],
+                ),
+                member_note=r["member_note"],
+            )
+        )
+    threads = [threads_by_id[t_id] for t_id in thread_order]
+
+    return ChapterEndCardResponse(
+        book=ChapterEndCardBookRef(
+            slug=book_row["slug"],
+            title=book_row["title"],
+            edition_slug=book_row["edition_slug"],
+        ),
+        chapter=ChapterEndCardChapterRef(
+            number=chapter_row["chapter_number"],
+            title=chapter_row["chapter_title"],
+        ),
+        baseline=baseline,
+        threads=threads,
     )
 
 

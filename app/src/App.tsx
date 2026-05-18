@@ -11,6 +11,7 @@ import {
 } from "./lib/api";
 import Pricing from "./routes/Pricing";
 import Manage from "./routes/Manage";
+import ChapterEndCard from "./components/ChapterEndCard";
 
 /**
  * Session 13 minimum-useful checkpoint:
@@ -294,6 +295,19 @@ function Reader() {
               <p>{chapterDetail.chapter_intro}</p>
             </aside>
           )}
+
+          {/*
+            Session 74 — chapter-end cross-reference card. Renders the
+            framework-diagnostic threads (and the comprehensive baseline
+            once TSK ingestion lands at v1.1) per
+            api/CHAPTER_END_CARD_CONTRACT.md. Hides itself silently when
+            both baseline and threads come back empty.
+          */}
+          <ChapterEndCard
+            bookSlug={chapterDetail.book.slug}
+            chapterNumber={chapterDetail.chapter.chapter_number}
+            userTier={me?.tier ?? "free"}
+          />
         </article>
       )}
 

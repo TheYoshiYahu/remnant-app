@@ -112,6 +112,84 @@ export interface HealthResponse {
   checked_at: string;
 }
 
+// ----- Chapter-end cross-reference card (Session 74) ---------------------
+//
+// Mirrors api/models.py ChapterEndCardResponse. The endpoint returns
+// both the comprehensive baseline (one block per chapter verse that has
+// at least one cross-reference target — empty at v1 pending TSK
+// ingestion, populated at v1.1) and the framework-diagnostic threads
+// (each thread that has at least one member whose source verse falls
+// in the rendered chapter). The PWA hides the card entirely when both
+// baseline and threads are empty.
+
+export interface CrossRefTarget {
+  verse_id: number;
+  book_slug: string;
+  chapter_number: number;
+  verse_number: number;
+  preview: string;
+  source: string;
+  tier_required: ContentTier;
+}
+
+export interface BaselineSourceVerse {
+  verse_number: number;
+  preview: string;
+}
+
+export interface BaselineEntry {
+  source_verse: BaselineSourceVerse;
+  targets: CrossRefTarget[];
+}
+
+export interface ThreadAnchor {
+  book_slug: string;
+  chapter_number: number;
+  verse_start: number;
+  verse_end: number;
+}
+
+export interface ThreadMemberTarget {
+  book_slug: string;
+  chapter_number: number;
+  verse_number: number;
+  preview: string;
+}
+
+export interface ThreadMember {
+  sort_order: number;
+  source_verse_number: number;
+  target: ThreadMemberTarget;
+  member_note: string | null;
+}
+
+export interface ChapterEndThread {
+  slug: string;
+  title: string;
+  summary_md: string;
+  anchor: ThreadAnchor | null;
+  tier_required: ContentTier;
+  members_in_chapter: ThreadMember[];
+}
+
+export interface ChapterEndCardBookRef {
+  slug: string;
+  title: string;
+  edition_slug: string;
+}
+
+export interface ChapterEndCardChapterRef {
+  number: number;
+  title: string | null;
+}
+
+export interface ChapterEndCardResponse {
+  book: ChapterEndCardBookRef;
+  chapter: ChapterEndCardChapterRef;
+  baseline: BaselineEntry[];
+  threads: ChapterEndThread[];
+}
+
 // ----- Subscription types (Session 38) -----------------------------------
 //
 // Mirror api/subscriptions.py's request/response shapes. The me-endpoint
@@ -308,5 +386,25 @@ export function getChapter(
 ): Promise<ChapterDetail> {
   return get<ChapterDetail>(
     `/books/${encodeURIComponent(slug)}/chapters/${chapterNumber}`
+  );
+}
+
+/**
+ * Chapter-end cross-reference card.
+ *
+ * Returns the comprehensive baseline (empty at v1; populated at v1.1
+ * once TSK ingestion lands) plus the framework-diagnostic threads
+ * (the five-thread overlay seeded in Sessions 73 and 74). The reader
+ * UI calls this after a chapter renders and hides the card entirely
+ * when both `baseline` and `threads` come back empty.
+ *
+ * Canon-only at v1; `?edition=` lands when apocrypha cross-refs land.
+ */
+export function getChapterCrossReferences(
+  slug: string,
+  chapterNumber: number
+): Promise<ChapterEndCardResponse> {
+  return get<ChapterEndCardResponse>(
+    `/books/${encodeURIComponent(slug)}/chapters/${chapterNumber}/cross-references`
   );
 }

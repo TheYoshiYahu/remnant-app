@@ -158,3 +158,112 @@ class HealthResponse(BaseModel):
     schema_version: Optional[str] = None
     db_reachable: bool
     checked_at: datetime
+
+
+# ----- Chapter-end cross-reference card (Session 73 schema, S74 endpoint) -
+
+
+class ChapterEndCardBookRef(BaseModel):
+    """Book identity surfaced in the chapter-end card response."""
+
+    slug: str
+    title: str
+    edition_slug: str
+
+
+class ChapterEndCardChapterRef(BaseModel):
+    """Chapter identity surfaced in the chapter-end card response."""
+
+    number: int
+    title: Optional[str] = None
+
+
+class CrossRefTarget(BaseModel):
+    """One cross-reference target verse, fully resolved.
+
+    Used inside both the baseline list (one per (source, target) pair)
+    and the thread members list. Carries `source` so the PWA can label
+    the row (manual / TSK / teaching_corpus) and `tier_required` so it
+    can grey out rows the caller can't unlock yet.
+    """
+
+    verse_id: int
+    book_slug: str
+    chapter_number: int
+    verse_number: int
+    preview: str
+    source: str
+    tier_required: ContentTier
+
+
+class BaselineSourceVerse(BaseModel):
+    """The source-side anchor for one baseline entry."""
+
+    verse_number: int
+    preview: str
+
+
+class BaselineEntry(BaseModel):
+    """One verse in the rendered chapter, with all of its cross-ref targets."""
+
+    source_verse: BaselineSourceVerse
+    targets: List[CrossRefTarget]
+
+
+class ThreadAnchor(BaseModel):
+    """Tanakh anchor passage for a framework-diagnostic thread."""
+
+    book_slug: str
+    chapter_number: int
+    verse_start: int
+    verse_end: int
+
+
+class ThreadMemberTarget(BaseModel):
+    """The target side of a thread-member cross-reference.
+
+    Slimmer than `CrossRefTarget` — the thread member already lives
+    inside a thread block (which has its own tier_required and source
+    convention), so we don't repeat them per row.
+    """
+
+    book_slug: str
+    chapter_number: int
+    verse_number: int
+    preview: str
+
+
+class ThreadMember(BaseModel):
+    """One thread member whose source verse falls in the rendered chapter."""
+
+    sort_order: int
+    source_verse_number: int
+    target: ThreadMemberTarget
+    member_note: Optional[str] = None
+
+
+class ChapterEndThread(BaseModel):
+    """One framework-diagnostic thread surfacing in this chapter."""
+
+    slug: str
+    title: str
+    summary_md: str
+    anchor: Optional[ThreadAnchor] = None
+    tier_required: ContentTier
+    members_in_chapter: List[ThreadMember]
+
+
+class ChapterEndCardResponse(BaseModel):
+    """GET /v1/books/{book_slug}/chapters/{chapter_number}/cross-references.
+
+    Per `api/CHAPTER_END_CARD_CONTRACT.md`. Both `baseline` and
+    `threads` may be empty; the PWA hides the card entirely when both
+    are. The contract draft used path `/api/chapters/...`; the actual
+    endpoint follows the running `/v1/books/{slug}/chapters/{n}/...`
+    convention to align with the other reader routes.
+    """
+
+    book: ChapterEndCardBookRef
+    chapter: ChapterEndCardChapterRef
+    baseline: List[BaselineEntry]
+    threads: List[ChapterEndThread]
