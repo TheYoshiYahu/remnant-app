@@ -88,7 +88,15 @@ The Phase 5 tap-on-word UX walks: tap a word → look up `verse_words` by `verse
 
 ### Section 4 — Cross-references
 
-**`cross_references`** — verse-to-verse links. The big seed corpus is Treasury of Scripture Knowledge (Torrey 1880, public domain) — about 500,000 cross-references. `source` field tags each row's origin (`'TSK'`, `'manual'`, `'teaching_corpus'`). `tier_required` defaults to `'study_notes'` because Phase 7 puts cross-reference UX behind the lowest paid tier.
+**`cross_references`** — verse-to-verse links. The big seed corpus is Treasury of Scripture Knowledge (Torrey 1880, public domain) — about 500,000 cross-references — queued for v1.1 ingestion. `source` field tags each row's origin (`'TSK'`, `'manual'`, `'teaching_corpus'`). `tier_required` defaults to `'free'` (Session 73 flip from `'study_notes'`): the chapter-end cross-reference apparatus is a free-tier feature; every paid tier inherits via the strict chain. A UNIQUE constraint on `(source_verse_id, target_verse_id, source)` (Session 73) guards against duplicate pairs within a single source.
+
+**`cross_reference_threads`** (Session 73) — the curated framework-diagnostic overlay. Each row names a thread (slug like `post-harvest-sifting`), carries a Tanakh anchor passage as a `verse_id` range, and stores a markdown summary that introduces the thread in the chapter-end card. Threads are tier-gated independently of their member cross-references; default is `'free'`.
+
+**`cross_reference_thread_members`** (Session 73) — many-to-many join from a thread to its constituent cross-reference pairs. `sort_order` controls render order. A single cross-reference may belong to multiple threads (the same Tanakh→NT pair often serves more than one framework thread).
+
+The chapter-end card render query: given a chapter, fetch all `cross_references` rows whose source verse falls in the chapter (the comprehensive baseline once TSK lands), then fetch all `cross_reference_threads` that have any member with source in the chapter (the curated overlay), surfacing the thread's `summary_md` and the ordered list of members underneath.
+
+**Seeded threads at S73:** `post-harvest-sifting` — Ezekiel 20:33–44 → 12 gospel pairs (Matthew 7:23, 25:30/32/33/41, 8:12, 13:42, 22:13, 24:51 and Luke 13:27–28). Establishes the Red Line #11 reading: sheep/goats, depart-from-me, and weeping-and-gnashing-of-teeth all trace to Ezekiel 20's wilderness sifting of the gathered house, not to eternal-hell judgment of unbelievers.
 
 ### Section 5 — Commentary surface (Phase 6)
 

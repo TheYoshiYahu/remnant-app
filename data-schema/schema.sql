@@ -274,15 +274,63 @@ CREATE TABLE cross_references (
     source          TEXT NOT NULL,                   -- 'TSK', 'manual', 'teaching_corpus'
     relevance_score INT,                             -- 0-100 if available; null if unranked
     note            TEXT,                            -- optional one-liner for manual cross-refs
-    tier_required   content_tier NOT NULL DEFAULT 'study_notes',
-    CHECK (source_verse_id <> target_verse_id)
+    tier_required   content_tier NOT NULL DEFAULT 'free',   -- Session 73: flipped from 'study_notes' to 'free' (chapter-end apparatus is a free-tier feature; every paid tier inherits via the strict chain).
+    CHECK (source_verse_id <> target_verse_id),
+    -- Dedupe guard (added Session 73). A single pair may exist once per
+    -- source — TSK + manual + teaching_corpus can each carry the same
+    -- pair, but no duplicate rows within a single source.
+    CONSTRAINT cross_references_source_target_source_uniq
+        UNIQUE (source_verse_id, target_verse_id, source)
 );
 
 CREATE INDEX idx_xref_source ON cross_references(source_verse_id);
 CREATE INDEX idx_xref_target ON cross_references(target_verse_id);
 
 COMMENT ON TABLE cross_references IS
-    'Treasury of Scripture Knowledge (Torrey 1880, public domain) cross-references plus any manually curated additions. Phase 5/6 deliverable.';
+    'Verse-to-verse links. Default tier_required flipped from study_notes to free in Session 73 — the chapter-end cross-reference apparatus is a free-tier feature; every paid tier inherits via the strict chain. Holds both the comprehensive baseline (Treasury of Scripture Knowledge, Torrey 1880, public domain — queued for v1.1) and the framework-diagnostic curated overlay (rows tagged by cross_reference_thread_members).';
+
+
+-- =====================================================================
+-- Section 4b — Cross-reference threads (Session 73)
+-- =====================================================================
+-- The framework-diagnostic curated overlay. Each thread is anchored on
+-- a Tanakh passage and groups a set of cross-reference pairs under a
+-- named theme. The chapter-end card renders the comprehensive baseline
+-- first (every cross_references row whose source falls in the chapter)
+-- and surfaces thread callouts underneath whenever a thread has
+-- members in the rendered chapter.
+
+CREATE TABLE cross_reference_threads (
+    id                      SERIAL PRIMARY KEY,
+    slug                    TEXT NOT NULL UNIQUE,
+    title                   TEXT NOT NULL,
+    summary_md              TEXT NOT NULL,
+    anchor_verse_id_start   BIGINT REFERENCES verses(id) ON DELETE SET NULL,
+    anchor_verse_id_end     BIGINT REFERENCES verses(id) ON DELETE SET NULL,
+    tier_required           content_tier NOT NULL DEFAULT 'free',
+    sort_order              INT NOT NULL DEFAULT 0,
+    created_at              TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX idx_xref_threads_slug ON cross_reference_threads(slug);
+
+COMMENT ON TABLE cross_reference_threads IS
+    'Curated framework-diagnostic threads grouping cross-reference pairs under a named theme (e.g., post-harvest sifting, grace-from-name''s-sake, new-heart). Each thread has a Tanakh anchor passage (verse_id range) and surfaces in the chapter-end card whenever any member cross-reference falls in the rendered chapter.';
+
+
+CREATE TABLE cross_reference_thread_members (
+    thread_id           INT NOT NULL REFERENCES cross_reference_threads(id) ON DELETE CASCADE,
+    cross_reference_id  BIGINT NOT NULL REFERENCES cross_references(id) ON DELETE CASCADE,
+    sort_order          INT NOT NULL DEFAULT 0,
+    member_note         TEXT,
+    PRIMARY KEY (thread_id, cross_reference_id)
+);
+
+CREATE INDEX idx_xref_thread_members_thread ON cross_reference_thread_members(thread_id);
+CREATE INDEX idx_xref_thread_members_xref   ON cross_reference_thread_members(cross_reference_id);
+
+COMMENT ON TABLE cross_reference_thread_members IS
+    'Join from a thread to its constituent cross-reference pairs. A single cross-reference may belong to multiple threads (the same Tanakh→NT pair often serves more than one framework thread). sort_order controls render order under the thread callout.';
 
 
 -- =====================================================================
@@ -608,8 +656,8 @@ CREATE TABLE schema_version (
 );
 
 INSERT INTO schema_version (version, notes) VALUES (
-    '1.0.0-phase4-session72',
-    'Session 72 (2026-05-17) — tier lattice flipped from bifurcated (study_notes and extras as siblings, complete_study as their join) to a strict chain (free < study_notes < extras < complete_study < everything) per the locked Section III pricing in BIBLE_APP_ROADMAP.md. Closes the S54 sub-question on $1.99 tier wiring (standing since S43): $1.99 plugs into the existing study_notes enum value, user-facing label "Notes" per Q21. Apocrypha (KJV 1611, 14 books) re-tiered from extras to study_notes — every paid tier inherits the Apocrypha via the chain. tier_satisfies(user_tier, required_tier) rewritten as a rank-comparison. No new enum values; no schema structural change beyond the function body. Prior version: 1.0.0-phase4-session13.'
+    '1.0.0-phase4-session73',
+    'Session 73 (2026-05-17) — end-of-chapter cross-reference apparatus, free tier. cross_references.tier_required default flipped from study_notes to free (the apparatus moves into the free tier; every paid tier inherits via the strict chain). UNIQUE (source_verse_id, target_verse_id, source) added for dedupe safety. New tables cross_reference_threads (curated framework-diagnostic overlay with Tanakh anchor and tier gate) and cross_reference_thread_members (many-to-many join). Seeded first thread: post-harvest-sifting, anchored on Ezekiel 20:33-44, with 12 cross-reference pairs into the gospels (Matthew 7:23, 25:30/32/33/41, 8:12, 13:42, 22:13, 24:51 and Luke 13:27-28). The thread surfaces a Red Line #11 reading directly into the chapter-end card: sheep/goats, depart-from-me, and weeping-and-gnashing-of-teeth all trace to Ezekiel 20''s wilderness sifting of the gathered house, not to eternal-hell judgment of unbelievers. Treasury of Scripture Knowledge comprehensive baseline ingestion remains queued for v1.1. Prior version: 1.0.0-phase4-session72.'
 );
 
 
