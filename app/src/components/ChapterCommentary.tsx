@@ -155,13 +155,13 @@ function CommentaryBlock({
     return (
       <article className="rounded-lg border border-dashed border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
         <header className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-          <h4 className="text-base font-semibold text-[var(--reader-text)]">
+          <h4 className="text-lg font-semibold text-[var(--reader-text)]">
             {headerLabel}
           </h4>
           <TierBadge tier={entry.tier_required} locked />
         </header>
         <div className="mt-3 rounded border border-[var(--reader-rule)] bg-[var(--reader-bg,#fafafa)] p-4 text-center">
-          <p className="mb-3 text-sm text-[var(--reader-text)]">
+          <p className="mb-3 text-base text-[var(--reader-text)]">
             {ctaCopyForSurface(entry.surface_kind)}
           </p>
           <a
@@ -199,7 +199,7 @@ function CommentaryBlock({
       )}
       {expanded && entry.body && (
         <>
-          <div className="prose-paragraphs mt-2 text-[1.025rem] leading-relaxed text-[var(--reader-text)] space-y-0">
+          <div className="prose-paragraphs mt-2 leading-relaxed text-[var(--reader-text)] space-y-0">
             {renderCommentaryBody(entry.body)}
           </div>
           <button

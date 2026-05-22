@@ -129,7 +129,7 @@ export default function Manage() {
   if (view.kind === "anonymous") {
     return (
       <PageShell title="Manage partnership">
-        <p className="text-sm text-[var(--reader-muted)]">
+        <p className="text-base text-[var(--reader-muted)]">
           Sign in at{" "}
           <a
             href="https://remnantofpromise.org/login?redirect=/manage"
@@ -167,7 +167,7 @@ export default function Manage() {
   if (view.kind === "no_subscription") {
     return (
       <PageShell title="Manage partnership">
-        <p className="mb-4 text-sm text-[var(--reader-muted)]">
+        <p className="mb-4 text-base text-[var(--reader-muted)]">
           You don't have an active partnership on this account.
         </p>
         <a
@@ -190,7 +190,7 @@ export default function Manage() {
 
     return (
       <PageShell title="Manage partnership">
-        <div className="mb-6 rounded border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+        <div className="mb-6 rounded border border-emerald-300 bg-emerald-50 px-4 py-3 text-base text-emerald-900">
           <div className="font-medium">Cancellation set.</div>
           {periodEndLabel ? (
             <p className="mt-1">
@@ -247,7 +247,7 @@ export default function Manage() {
           </span>
         </div>
 
-        <dl className="mt-3 space-y-1.5 text-sm">
+        <dl className="mt-3 space-y-1.5 text-base">
           {cadenceLabel && (
             <Row label="Billing" value={`${cadenceLabel}`} />
           )}
@@ -299,7 +299,7 @@ export default function Manage() {
             </button>
           ) : (
             <div className="rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
-              <p className="text-sm text-[var(--reader-text)]">
+              <p className="text-base text-[var(--reader-text)]">
                 Your access continues through
                 {periodEndLabel ? (
                   <>
@@ -310,7 +310,7 @@ export default function Manage() {
                   " the end of your current period."
                 )}
               </p>
-              <p className="mt-2 text-sm text-[var(--reader-text)]">
+              <p className="mt-2 text-base text-[var(--reader-text)]">
                 You can resubscribe anytime
                 {priceLabel
                   ? `. Your ${priceLabel}${
@@ -355,7 +355,7 @@ export default function Manage() {
 
       {/* Already-winding-down banner */}
       {isAlreadyWindingDown && !isTerminal && (
-        <div className="mb-4 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+        <div className="mb-4 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-base text-amber-900">
           <div className="font-medium">Cancellation already set.</div>
           {periodEndLabel ? (
             <p className="mt-1">
@@ -386,7 +386,7 @@ export default function Manage() {
 
       {/* Terminal-state banner */}
       {isTerminal && (
-        <div className="mb-4 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-sm text-[var(--reader-muted)]">
+        <div className="mb-4 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-base text-[var(--reader-muted)]">
           This partnership has ended. You can become a partner again from the{" "}
           <a href="/pricing" className="underline">
             partnership page

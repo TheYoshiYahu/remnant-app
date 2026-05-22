@@ -203,7 +203,7 @@ export default function HighlightPicker({
           onClick={(e) => e.stopPropagation()}
         >
           <div className="mb-3 flex items-baseline justify-between">
-            <h3 className="text-base font-semibold">Color meanings</h3>
+            <h3 className="text-lg font-semibold">Color meanings</h3>
             <button
               type="button"
               onClick={() => setEditingLabels(false)}
@@ -212,7 +212,7 @@ export default function HighlightPicker({
               Cancel
             </button>
           </div>
-          <p className="mb-3 text-sm text-[var(--reader-muted)]">
+          <p className="mb-3 text-base text-[var(--reader-muted)]">
             Assign your own meaning to each color. Leave blank to clear.
           </p>
           <div className="space-y-2">

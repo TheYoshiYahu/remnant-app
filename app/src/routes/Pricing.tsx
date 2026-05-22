@@ -176,12 +176,12 @@ export default function Pricing() {
         <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-text)]">
           Become a Partner
         </h1>
-        <p className="mt-2 text-sm text-[var(--reader-muted)]">
+        <p className="mt-2 text-base text-[var(--reader-muted)]">
           The 66-book canon stays open to anyone. The tiers below open the rest —
           the extras library, the framework commentary, Strong's lookup, and the
           Teaching Corpus — and the work the assembly carries forward.
         </p>
-        <p className="mt-2 text-sm text-[var(--reader-muted)]">
+        <p className="mt-2 text-base text-[var(--reader-muted)]">
           <span className="font-medium text-[var(--reader-text)]">
             The price you pay today is the price you pay forever.
           </span>{" "}
@@ -226,7 +226,7 @@ export default function Pricing() {
           reactivation path — banner copy explains, button below stays
           enabled (S113 hotfix). */}
       {hasActiveSubscription && !reactivationOpen && (
-        <div className="mb-6 rounded border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+        <div className="mb-6 rounded border border-emerald-300 bg-emerald-50 px-4 py-3 text-base text-emerald-900">
           You're an active partner at the{" "}
           <span className="font-medium">{me?.tier}</span>{" "}
           tier ({me?.cadence}).
@@ -235,7 +235,7 @@ export default function Pricing() {
         </div>
       )}
       {reactivationOpen && (
-        <div className="mb-6 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+        <div className="mb-6 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-base text-amber-900">
           Your subscription is set to end at the current period.
           Pick a tier below to reactivate — your access continues
           uninterrupted, and your locked price is preserved.
@@ -277,10 +277,10 @@ export default function Pricing() {
                   </div>
                 )}
               </div>
-              <p className="mt-3 text-sm text-[var(--reader-muted)]">
+              <p className="mt-3 text-base text-[var(--reader-muted)]">
                 {t.blurb}
               </p>
-              <ul className="mt-3 flex-1 space-y-1.5 text-sm text-[var(--reader-text)]">
+              <ul className="mt-3 flex-1 space-y-1.5 text-base text-[var(--reader-text)]">
                 {t.bullets.map((b) => (
                   <li key={b} className="flex gap-2">
                     <span aria-hidden className="text-[var(--reader-muted)]">
@@ -336,7 +336,7 @@ export default function Pricing() {
       </div>
 
       {/* Footer: promo-code hint + permanent-price-lock reminder */}
-      <footer className="mt-10 border-t border-[var(--reader-rule)] pt-4 text-sm text-[var(--reader-muted)]">
+      <footer className="mt-10 border-t border-[var(--reader-rule)] pt-4 text-base text-[var(--reader-muted)]">
         <p>
           Have a partner code? Enter it on the Stripe checkout page that opens
           after you click Subscribe — there's a field for it on the right side

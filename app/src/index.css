@@ -51,12 +51,19 @@ html, body, #root {
    line-height. Lora replaced Cormorant Garamond at S116 after fresh-
    eyes comparison on the actual black reader pane. The reader's verse
    text and any element without an explicit Tailwind size class
-   inherits all three. Chrome elements with explicit Tailwind weight /
-   size / line-height classes still override the body defaults — this
-   is a known surface gap (notes, commentary, and chrome currently
-   carry text-base / font-normal that win over body); the Tailwind-
-   override sweep is the next-wheel work that propagates the body
-   register to those surfaces. See REBUILD_STATE.md "Next wheels". */
+   inherits all three.
+
+   S117 — Tailwind chrome-register sweep landed. Body-prose chrome
+   surfaces (commentary card body, thread summaries, cross-reference
+   snippets, banner messages, tier blurbs, modal descriptions) now
+   inherit body 18px (or land at text-base 16px for compact-card
+   banners) instead of carrying text-sm overrides. Control chrome
+   (buttons, badges, picker chips, form labels, status indicators)
+   intentionally stays at its smaller register — those are affordances,
+   not reading text. Card titles inside commentary and thread cards
+   bumped to text-lg so the heading sits above body register. Verse
+   text intentionally NOT touched (already-shipped S116 register,
+   outside the chrome sweep scope). */
 body {
   font-weight: 500;
   font-size: 18px;

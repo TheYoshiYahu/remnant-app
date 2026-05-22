@@ -566,7 +566,7 @@ function Reader() {
           {chapterDetail.chapter.chapter_title &&
             chapterDetail.chapter.chapter_title !==
               `Chapter ${chapterDetail.chapter.chapter_number}` && (
-              <p className="mb-3 text-sm italic text-[var(--reader-muted)]">
+              <p className="mb-3 text-base italic text-[var(--reader-muted)]">
                 {chapterDetail.chapter.chapter_title}
               </p>
             )}
@@ -637,7 +637,7 @@ function Reader() {
           </div>
 
           {chapterDetail.chapter_intro && (
-            <aside className="mt-8 border-t border-[var(--reader-rule)] pt-4 text-sm text-[var(--reader-muted)]">
+            <aside className="mt-8 border-t border-[var(--reader-rule)] pt-4 text-[var(--reader-muted)]">
               <h3 className="mb-2 font-sans font-semibold uppercase tracking-wide text-xs">
                 Commentary
               </h3>

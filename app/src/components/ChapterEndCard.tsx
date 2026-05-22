@@ -123,7 +123,7 @@ function BaselineList({
   userTier: ContentTier;
 }) {
   return (
-    <ul className="space-y-3 text-sm">
+    <ul className="space-y-3">
       {entries.map((entry) => (
         <li key={entry.source_verse.verse_number}>
           <div className="text-[var(--reader-text)]">
@@ -194,7 +194,7 @@ function ThreadCallout({
       title={locked ? `Unlock with ${prettyTier(thread.tier_required)}` : undefined}
     >
       <header className="mb-2">
-        <h4 className="text-base font-semibold text-[var(--reader-text)]">
+        <h4 className="text-lg font-semibold text-[var(--reader-text)]">
           {thread.title}
         </h4>
         {thread.anchor && (
@@ -211,7 +211,7 @@ function ThreadCallout({
         )}
       </header>
 
-      <div className="prose-paragraphs text-sm leading-relaxed text-[var(--reader-text)]">
+      <div className="prose-paragraphs leading-relaxed text-[var(--reader-text)]">
         {renderMarkdownParagraph(firstParagraph)}
         {rest.length > 0 && expanded && (
           <>
@@ -238,7 +238,7 @@ function ThreadCallout({
           <p className="mb-2 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
             Cross-references in this chapter
           </p>
-          <ul className="space-y-1 text-sm text-[var(--reader-text)]">
+          <ul className="space-y-1 text-[var(--reader-text)]">
             {thread.members_in_chapter.map((m) => (
               <ThreadMemberRow key={`${m.sort_order}-${m.source_verse_number}`} member={m} />
             ))}
