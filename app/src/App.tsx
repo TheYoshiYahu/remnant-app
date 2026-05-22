@@ -21,7 +21,30 @@ import HighlightPicker, {
   markCssVarsFor,
 } from "./components/HighlightPicker";
 import { renderMarkdownBody } from "./lib/markdown";
+import { useTheme } from "./lib/theme";
 import paragraphStartsData from "./data/paragraph_starts.json";
+
+// S115 Wheel 3 — chrome theme toggle. Small icon-button placed to the
+// left of the subscription CTA. Sun glyph when dark (click to go light);
+// moon glyph when light (click to go dark). The button itself uses the
+// existing light/bordered chrome button styling so it reads as part of
+// the chrome button family. Persistence + DOM-attribute flip lives in
+// lib/theme.ts; this component is the surface.
+function ThemeToggle() {
+  const { theme, toggle } = useTheme();
+  const isDark = theme === "dark";
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      title={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      className="self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+    >
+      <span aria-hidden="true">{isDark ? "☼" : "☾"}</span>
+    </button>
+  );
+}
 
 // Map of {book_slug: {chapter_number_string: [verse numbers that start paragraphs]}}.
 // Extracted from the KJV USFX XML at restoration-pipeline build time;
@@ -244,7 +267,7 @@ function Reader() {
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-8">
-      <header className="mb-6 border-b border-[var(--reader-rule)] pb-4">
+      <header className="mb-6 border-b border-[var(--reader-accent)] pb-4">
         <div className="flex items-start justify-between gap-4">
           <div>
             <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-text)]">
@@ -254,33 +277,36 @@ function Reader() {
               Restored Names Edition
             </p>
           </div>
-          {me && (me.status === "active" || me.status === "trialing") ? (
-            <a
-              href="/manage"
-              className="self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-white px-3 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
-            >
-              Manage partnership
-            </a>
-          ) : me && me.status === "none" ? (
-            <a
-              href="/pricing"
-              className="self-start whitespace-nowrap rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
-            >
-              Become a partner
-            </a>
-          ) : me &&
-            (me.status === "canceled" ||
-              me.status === "past_due" ||
-              me.status === "unpaid" ||
-              me.status === "incomplete" ||
-              me.status === "incomplete_expired") ? (
-            <a
-              href="/pricing"
-              className="self-start whitespace-nowrap rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
-            >
-              Resubscribe
-            </a>
-          ) : null}
+          <div className="flex items-start gap-2">
+            <ThemeToggle />
+            {me && (me.status === "active" || me.status === "trialing") ? (
+              <a
+                href="/manage"
+                className="self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+              >
+                Manage partnership
+              </a>
+            ) : me && me.status === "none" ? (
+              <a
+                href="/pricing"
+                className="self-start whitespace-nowrap rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+              >
+                Become a partner
+              </a>
+            ) : me &&
+              (me.status === "canceled" ||
+                me.status === "past_due" ||
+                me.status === "unpaid" ||
+                me.status === "incomplete" ||
+                me.status === "incomplete_expired") ? (
+              <a
+                href="/pricing"
+                className="self-start whitespace-nowrap rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+              >
+                Resubscribe
+              </a>
+            ) : null}
+          </div>
         </div>
       </header>
 
@@ -299,7 +325,7 @@ function Reader() {
               setSelectedBookSlug(e.target.value);
               setSelectedChapter(1);
             }}
-            className="rounded border border-[var(--reader-rule)] bg-white px-2 py-1 text-[var(--reader-text)]"
+            className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-[var(--reader-text)]"
           >
             {Object.entries(booksByCategory).map(([cat, list]) => (
               <optgroup key={cat} label={prettyCategory(cat)}>
@@ -327,7 +353,7 @@ function Reader() {
           <select
             value={selectedChapter}
             onChange={(e) => setSelectedChapter(Number(e.target.value))}
-            className="rounded border border-[var(--reader-rule)] bg-white px-2 py-1 text-[var(--reader-text)]"
+            className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-[var(--reader-text)]"
           >
             {chaptersForBook.map((c) => (
               <option key={c.chapter_number} value={c.chapter_number}>
@@ -515,7 +541,7 @@ function Reader() {
           </a>
           <span>
             Live from{" "}
-            <code className="rounded bg-white px-1 py-0.5">
+            <code className="rounded bg-[var(--reader-surface)] px-1 py-0.5">
               api.bible.remnantofpromise.org/v1
             </code>
           </span>

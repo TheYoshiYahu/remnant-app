@@ -105,7 +105,11 @@ const FOUNDER_ANNUAL_LABEL = "$75 / year — forever locked";
 const FOUNDER_MONTHLY_LABEL = "$7.49 / month — forever locked";
 
 export default function Pricing() {
-  const [cadence, setCadence] = useState<BillingCadence>("annual");
+  // S113 hotfix: default to monthly. The $1.99 first paid tier reads
+  // more accessibly at the monthly price; partners who want the annual
+  // discount can toggle. Annual was the prior default (S38) — flipped
+  // after Yoshi's S113-verification feedback.
+  const [cadence, setCadence] = useState<BillingCadence>("monthly");
   const [busy, setBusy] = useState<string | null>(null); // which card is checking out
   const [me, setMe] = useState<SubscriptionMe | null>(null);
   const [meError, setMeError] = useState<string | null>(null);
@@ -122,7 +126,18 @@ export default function Pricing() {
   }, []);
 
   const isSignedIn = me !== null && meError === null;
+  // S113 hotfix: separate the "is this partner an active subscriber"
+  // question (used for the banner copy) from the "is the Subscribe
+  // button disabled" question (used for click-gating). A partner whose
+  // subscription is active but cancel_at_period_end=true is technically
+  // still active until period_end, but they need a reactivation path —
+  // disabling their button locked them out. Fix: hasActiveSubscription
+  // still flips the banner on; reactivationOpen flips the button to
+  // "Reactivate" and re-enables it.
   const hasActiveSubscription = me?.status === "active" || me?.status === "trialing";
+  const reactivationOpen =
+    hasActiveSubscription && me?.cancel_at_period_end === true;
+  const buttonDisabled = hasActiveSubscription && !reactivationOpen;
 
   async function handleCheckout(
     tier: Exclude<PartnerTier, "free">,
@@ -187,8 +202,8 @@ export default function Pricing() {
           onClick={() => setCadence("monthly")}
           className={`rounded border px-4 py-1.5 ${
             cadence === "monthly"
-              ? "border-[var(--reader-text)] bg-[var(--reader-text)] text-white"
-              : "border-[var(--reader-rule)] bg-white text-[var(--reader-text)]"
+              ? "border-[var(--reader-text)] bg-[var(--reader-text)] text-[var(--reader-bg)]"
+              : "border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-text)]"
           }`}
         >
           Monthly
@@ -198,22 +213,32 @@ export default function Pricing() {
           onClick={() => setCadence("annual")}
           className={`rounded border px-4 py-1.5 ${
             cadence === "annual"
-              ? "border-[var(--reader-text)] bg-[var(--reader-text)] text-white"
-              : "border-[var(--reader-rule)] bg-white text-[var(--reader-text)]"
+              ? "border-[var(--reader-text)] bg-[var(--reader-text)] text-[var(--reader-bg)]"
+              : "border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-text)]"
           }`}
         >
           Annual <span className="text-xs opacity-75">— two months free</span>
         </button>
       </div>
 
-      {/* Already-active banner */}
-      {hasActiveSubscription && (
+      {/* Already-active banner. When cancel_at_period_end=true the
+          partner is still active until period_end but needs a
+          reactivation path — banner copy explains, button below stays
+          enabled (S113 hotfix). */}
+      {hasActiveSubscription && !reactivationOpen && (
         <div className="mb-6 rounded border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
           You're an active partner at the{" "}
           <span className="font-medium">{me?.tier}</span>{" "}
           tier ({me?.cadence}).
           {me?.is_founder_pricing && " Founder pricing — forever locked."}
           {me?.is_promo_subscriber && " Promotional partner — bypass the founder cap."}
+        </div>
+      )}
+      {reactivationOpen && (
+        <div className="mb-6 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          Your subscription is set to end at the current period.
+          Pick a tier below to reactivate — your access continues
+          uninterrupted, and your locked price is preserved.
         </div>
       )}
 
@@ -235,8 +260,8 @@ export default function Pricing() {
               key={t.tier}
               className={`flex flex-col rounded-lg border ${
                 isEverything
-                  ? "border-[var(--reader-text)] bg-white"
-                  : "border-[var(--reader-rule)] bg-white"
+                  ? "border-[var(--reader-text)] bg-[var(--reader-surface)]"
+                  : "border-[var(--reader-rule)] bg-[var(--reader-surface)]"
               } p-5`}
             >
               <h2 className="text-lg font-semibold text-[var(--reader-text)]">
@@ -268,22 +293,24 @@ export default function Pricing() {
 
               <button
                 type="button"
-                disabled={busy !== null || hasActiveSubscription}
+                disabled={busy !== null || buttonDisabled}
                 onClick={() => handleCheckout(t.tier, false)}
                 className={`mt-5 rounded border px-4 py-2 text-sm font-medium ${
-                  hasActiveSubscription
-                    ? "cursor-not-allowed border-[var(--reader-rule)] bg-white text-[var(--reader-muted)]"
-                    : "border-[var(--reader-text)] bg-[var(--reader-text)] text-white hover:opacity-90"
+                  buttonDisabled
+                    ? "cursor-not-allowed border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-muted)]"
+                    : "border-[var(--reader-text)] bg-[var(--reader-text)] text-[var(--reader-bg)] hover:opacity-90"
                 } disabled:opacity-60`}
               >
                 {busy === checkoutKey
                   ? "Starting checkout…"
-                  : hasActiveSubscription
+                  : buttonDisabled
                   ? "Already a partner"
+                  : reactivationOpen
+                  ? "Reactivate"
                   : "Subscribe"}
               </button>
 
-              {isEverything && !hasActiveSubscription && (
+              {isEverything && !buttonDisabled && (
                 <div className="mt-3 rounded border border-amber-300 bg-amber-50 p-3 text-xs text-amber-900">
                   <div className="font-medium">First 100 founder partners</div>
                   <div className="mt-1">{founderLabel}</div>

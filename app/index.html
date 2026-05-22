@@ -2,12 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- S115 Wheel 3: no-flash theme boot. Runs synchronously before
+         paint so a partner who stored "light" doesn't see a flash of
+         dark first. Default with no preference = dark (matches :root). -->
+    <script>
+      (function () {
+        try {
+          var stored = window.localStorage.getItem("reader-theme");
+          if (stored === "light") {
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (e) {
+          /* localStorage unavailable (private mode, etc.) — stays dark */
+        }
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Remnant of Promise Official Study Bible</title>
     <meta
       name="description"
       content="The Remnant of Promise Official Study Bible — Restored Names Edition. Protestant 66 plus extras."
+    />
+    <!-- Cormorant Garamond — mirrors the website's locked Royal & Priestly
+         palette typography (S13 lock). Loaded with display=swap so the
+         system serif fallback paints immediately while the webfont
+         streams in. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
     />
   </head>
   <body>

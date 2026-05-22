@@ -1,15 +1,35 @@
 @import "tailwindcss";
 
-/* Reading-typography baseline. Serif body for the verse text reads more
-   naturally for long-form scripture; sans for chrome (nav, toolbars).
-   Light mode only for now — the reader benefits from a clean white page. */
+/* Reading-typography baseline. Serif body (Cormorant Garamond, mirroring
+   the website's locked Royal & Priestly palette per S13) for the verse
+   text reads more naturally for long-form scripture; sans for chrome
+   (nav, toolbars).
+
+   Theme model (S115 Wheel 3): dark default per DESIGN_LANGUAGE §1
+   (black bg + white serif body is the signature aesthetic, brand-
+   defining, not equally weighted with the alternate). Parchment/sepia
+   light mode is the opt-in off-ramp, activated by [data-theme="light"]
+   on <html>. A no-flash boot script in index.html applies the stored
+   preference before paint. */
 
 :root {
+  color-scheme: dark;
+  --reader-bg: #000000;
+  --reader-text: #ffffff;
+  --reader-muted: #a3a3a3;       /* mid-gray, AA contrast on black */
+  --reader-rule: #2a2a2a;        /* generic borders, subtle on black */
+  --reader-surface: #0a0a0a;     /* cards / dropdowns / light-button surface, a hair above pure black for depth */
+  --reader-accent: #0084ff;      /* 470nm spectral blue — chapter divider, verse numbers (DESIGN_LANGUAGE §5 register, Yoshi-elected accent at S115) */
+}
+
+[data-theme="light"] {
   color-scheme: light;
+  --reader-bg: #fafaf7;
   --reader-text: #1a1a1a;
   --reader-muted: #6b6b6b;
   --reader-rule: #e5e5e5;
-  --reader-bg: #fafaf7;
+  --reader-surface: #ffffff;
+  --reader-accent: #0084ff;
 }
 
 html, body, #root {
@@ -17,17 +37,21 @@ html, body, #root {
   margin: 0;
   background: var(--reader-bg);
   color: var(--reader-text);
-  font-family: ui-serif, Georgia, "Iowan Old Style", "Apple Garamond", serif;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, "Iowan Old Style", "Apple Garamond", serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Verse-number superscripts: small, muted, slightly raised. */
+/* Verse-number superscripts: small, accent-tinted, slightly raised.
+   Per DESIGN_LANGUAGE §5, the chrome accent (verse numbers + chapter
+   header divider) carries the framework's chrome register. S115 elected
+   470nm spectral blue (--reader-accent) for this surface. */
 .verse-number {
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-size: 0.7em;
   font-weight: 600;
-  color: var(--reader-muted);
+  color: var(--reader-accent);
+  opacity: 0.85;
   vertical-align: super;
   margin-right: 0.2em;
   user-select: none;
@@ -97,7 +121,7 @@ html, body, #root {
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--reader-rule);
   cursor: pointer;
   transition: transform 0.08s ease-in-out;
 }

@@ -153,7 +153,7 @@ function CommentaryBlock({
   // CTA card with a clear "Unlock with [Tier]" call to action.
   if (entry.locked) {
     return (
-      <article className="rounded-lg border border-dashed border-[var(--reader-rule)] bg-white px-4 py-4">
+      <article className="rounded-lg border border-dashed border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
         <header className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
           <h4 className="text-base font-semibold text-[var(--reader-text)]">
             {headerLabel}
@@ -166,7 +166,7 @@ function CommentaryBlock({
           </p>
           <a
             href="/pricing"
-            className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-1.5 text-sm font-medium text-white hover:opacity-90"
+            className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
           >
             Unlock with {prettyTier(entry.tier_required)} (
             {priceForTier(entry.tier_required)})
@@ -181,7 +181,7 @@ function CommentaryBlock({
   // wants to read verses isn't immediately scrolled into 12k-word
   // commentary; one click expands when they want it.
   return (
-    <article className="rounded-lg border border-[var(--reader-rule)] bg-white px-4 py-4">
+    <article className="rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
       <header className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
         <h4 className="text-base font-semibold text-[var(--reader-text)]">
           {headerLabel}
@@ -287,7 +287,7 @@ function TierBadge({
       className={
         "font-sans text-xs font-medium px-2 py-0.5 rounded " +
         (locked
-          ? "bg-[var(--reader-text)] text-white"
+          ? "bg-[var(--reader-text)] text-[var(--reader-bg)]"
           : "bg-[var(--reader-rule)] text-[var(--reader-muted)]")
       }
     >

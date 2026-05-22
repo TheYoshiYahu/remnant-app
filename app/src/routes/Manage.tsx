@@ -172,7 +172,7 @@ export default function Manage() {
         </p>
         <a
           href="/pricing"
-          className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
+          className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
         >
           Become a partner
         </a>
@@ -211,7 +211,7 @@ export default function Manage() {
         </div>
         <a
           href="/"
-          className="inline-block rounded border border-[var(--reader-rule)] bg-white px-4 py-2 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+          className="inline-block rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-2 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
         >
           ← back to the reader
         </a>
@@ -237,7 +237,7 @@ export default function Manage() {
   return (
     <PageShell title="Manage partnership">
       {/* Subscription summary */}
-      <div className="mb-6 rounded-lg border border-[var(--reader-rule)] bg-white p-5">
+      <div className="mb-6 rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
         <div className="flex items-baseline justify-between">
           <h2 className="text-lg font-semibold text-[var(--reader-text)]">
             {tierLabel}
@@ -293,12 +293,12 @@ export default function Manage() {
                 setShowConfirm(true);
                 setCancelError(null);
               }}
-              className="rounded border border-[var(--reader-rule)] bg-white px-4 py-2 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+              className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-2 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
             >
               Cancel partnership
             </button>
           ) : (
-            <div className="rounded-lg border border-[var(--reader-rule)] bg-white p-5">
+            <div className="rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
               <p className="text-sm text-[var(--reader-text)]">
                 Your access continues through
                 {periodEndLabel ? (
@@ -332,7 +332,7 @@ export default function Manage() {
                   type="button"
                   disabled={submitting}
                   onClick={handleCancelConfirmed}
-                  className="rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 disabled:opacity-60"
+                  className="rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90 disabled:opacity-60"
                 >
                   {submitting ? "Working…" : "Confirm cancellation"}
                 </button>
@@ -343,7 +343,7 @@ export default function Manage() {
                     setShowConfirm(false);
                     setCancelError(null);
                   }}
-                  className="rounded border border-[var(--reader-rule)] bg-white px-4 py-2 text-sm font-medium text-[var(--reader-text)] hover:opacity-90 disabled:opacity-60"
+                  className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-2 text-sm font-medium text-[var(--reader-text)] hover:opacity-90 disabled:opacity-60"
                 >
                   Keep partnership
                 </button>
@@ -376,7 +376,7 @@ export default function Manage() {
           <div className="mt-3">
             <a
               href="/pricing"
-              className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
+              className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
             >
               Reactivate
             </a>
@@ -386,7 +386,7 @@ export default function Manage() {
 
       {/* Terminal-state banner */}
       {isTerminal && (
-        <div className="mb-4 rounded border border-[var(--reader-rule)] bg-white px-4 py-3 text-sm text-[var(--reader-muted)]">
+        <div className="mb-4 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-sm text-[var(--reader-muted)]">
           This partnership has ended. You can become a partner again from the{" "}
           <a href="/pricing" className="underline">
             partnership page
@@ -395,7 +395,7 @@ export default function Manage() {
           <div className="mt-3">
             <a
               href="/pricing"
-              className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
+              className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
             >
               Resubscribe
             </a>

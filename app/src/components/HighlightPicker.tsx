@@ -199,7 +199,7 @@ export default function HighlightPicker({
         onClick={onClose}
       >
         <div
-          className="max-h-[85vh] w-full max-w-md overflow-y-auto rounded-lg border border-[var(--reader-rule)] bg-white p-4 shadow-xl"
+          className="max-h-[85vh] w-full max-w-md overflow-y-auto rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 shadow-xl"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="mb-3 flex items-baseline justify-between">
@@ -249,7 +249,7 @@ export default function HighlightPicker({
               type="button"
               onClick={handleSaveLabels}
               disabled={saving}
-              className="rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white disabled:opacity-50"
+              className="rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] disabled:opacity-50"
             >
               {saving ? "Saving…" : "Save"}
             </button>
@@ -265,7 +265,7 @@ export default function HighlightPicker({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-md rounded-lg border border-[var(--reader-rule)] bg-white p-4 shadow-xl"
+        className="w-full max-w-md rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-3 flex items-baseline justify-between">
@@ -311,8 +311,8 @@ export default function HighlightPicker({
                 }}
                 className={`flex-1 rounded border px-2 py-1.5 text-xs font-medium capitalize ${
                   selected
-                    ? "border-[var(--reader-text)] bg-[var(--reader-text)] text-white"
-                    : "border-[var(--reader-rule)] bg-white text-[var(--reader-text)]"
+                    ? "border-[var(--reader-text)] bg-[var(--reader-text)] text-[var(--reader-bg)]"
+                    : "border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-text)]"
                 } ${locked ? "opacity-50" : ""}`}
                 title={
                   locked
@@ -401,7 +401,7 @@ export default function HighlightPicker({
               type="button"
               onClick={() => handleSave()}
               disabled={saving}
-              className="rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white disabled:opacity-50"
+              className="rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] disabled:opacity-50"
             >
               {saving ? "Saving…" : current ? "Update" : "Mark verse"}
             </button>

@@ -188,7 +188,7 @@ function ThreadCallout({
   return (
     <article
       className={
-        "rounded border border-[var(--reader-rule)] bg-white px-4 py-4 " +
+        "rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4 " +
         (locked ? "opacity-50" : "")
       }
       title={locked ? `Unlock with ${prettyTier(thread.tier_required)}` : undefined}
