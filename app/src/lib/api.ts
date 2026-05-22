@@ -220,6 +220,119 @@ export interface ChapterCommentaryResponse {
   entries: ChapterCommentaryEntry[];
 }
 
+// ----- Highlights (Session 113) ------------------------------------------
+//
+// Locked per DESIGN_LANGUAGE.md §6, §7, §8 (S77/S78):
+//   - 12 tribe-palette colors + 1 neon-yellow free baseline
+//   - 3 mark styles: fill (translucent tinted background), underline
+//     (3px body solid colored line), outline (4-direction text-shadow,
+//     same technique as the sacred-name treatment in §2)
+//   - Free tier: 1 color (neon_yellow) × 1 style (fill) = 1 mark config
+//   - $1.99+: 13 colors × 3 styles = 39 mark configs (12 × 3 paid +
+//     neon_yellow × 3 — the neon-yellow free baseline still works at
+//     paid tiers + the underline/outline styles unlock for it too)
+//   - One mark per (user, verse) — re-marking replaces
+//   - Free-form color-meaning dictionary at $1.99 (empty by default,
+//     no preloaded framework labels in V1)
+
+export type HighlightColor =
+  | "neon_yellow"
+  | "crimson"
+  | "tangerine"
+  | "honey"
+  | "sage"
+  | "emerald"
+  | "teal"
+  | "sky_blue"
+  | "periwinkle"
+  | "lilac"
+  | "magenta"
+  | "rose"
+  | "parchment";
+
+export type MarkStyle = "fill" | "underline" | "outline";
+
+/** The canonical picker render order. Mirrors PALETTE_ORDER in api/main.py. */
+export const HIGHLIGHT_PALETTE_ORDER: readonly HighlightColor[] = [
+  "neon_yellow",
+  "crimson",
+  "tangerine",
+  "honey",
+  "sage",
+  "emerald",
+  "teal",
+  "sky_blue",
+  "periwinkle",
+  "lilac",
+  "magenta",
+  "rose",
+  "parchment",
+] as const;
+
+/** The 12 tribe-palette colors (without neon_yellow). */
+export const HIGHLIGHT_TRIBE_COLORS: readonly HighlightColor[] =
+  HIGHLIGHT_PALETTE_ORDER.slice(1);
+
+/** Exact hex per DESIGN_LANGUAGE.md §6 + §7. */
+export const HIGHLIGHT_HEX: Record<HighlightColor, string> = {
+  neon_yellow: "#FFE600",
+  crimson: "#D14555",
+  tangerine: "#F0A050",
+  honey: "#E8C04A",
+  sage: "#97C459",
+  emerald: "#4DAE7F",
+  teal: "#5FB8B0",
+  sky_blue: "#87C5E8",
+  periwinkle: "#9F9FE0",
+  lilac: "#D4B0E0",
+  magenta: "#E060A5",
+  rose: "#D17BA4",
+  parchment: "#C5B795",
+};
+
+export const MARK_STYLES: readonly MarkStyle[] = [
+  "fill",
+  "underline",
+  "outline",
+] as const;
+
+export interface Highlight {
+  id: string;
+  verse_id: number;
+  color: HighlightColor;
+  style: MarkStyle;
+  created_at: string;
+}
+
+export interface ChapterHighlightsResponse {
+  highlights: Highlight[];
+}
+
+export interface CreateHighlightRequest {
+  verse_id: number;
+  color: HighlightColor;
+  style: MarkStyle;
+}
+
+export interface HighlightLabel {
+  color: HighlightColor;
+  label: string;
+  tier_required: ContentTier;
+}
+
+export interface HighlightLabelsResponse {
+  labels: HighlightLabel[];
+}
+
+export interface UpdateHighlightLabelEntry {
+  color: HighlightColor;
+  label: string;
+}
+
+export interface UpdateHighlightLabelsRequest {
+  labels: UpdateHighlightLabelEntry[];
+}
+
 // ----- Subscription types (Session 38) -----------------------------------
 //
 // Mirror api/subscriptions.py's request/response shapes. The me-endpoint
@@ -338,6 +451,57 @@ async function post<TReq, TRes>(path: string, body: TReq): Promise<TRes> {
     throw new Error(`API ${path} → ${res.status} ${detail}`);
   }
   return (await res.json()) as TRes;
+}
+
+async function put<TReq, TRes>(path: string, body: TReq): Promise<TRes> {
+  const headers: Record<string, string> = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  };
+  const token = readJwtCookie();
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+  const res = await fetch(`${API_BASE}${path}`, {
+    method: "PUT",
+    headers,
+    credentials: "include",
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    let detail = res.statusText;
+    try {
+      const json = (await res.json()) as { detail?: string };
+      if (json.detail) detail = json.detail;
+    } catch {
+      // not JSON
+    }
+    throw new Error(`API ${path} → ${res.status} ${detail}`);
+  }
+  return (await res.json()) as TRes;
+}
+
+async function del(path: string): Promise<void> {
+  const headers: Record<string, string> = { Accept: "application/json" };
+  const token = readJwtCookie();
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+  const res = await fetch(`${API_BASE}${path}`, {
+    method: "DELETE",
+    headers,
+    credentials: "include",
+  });
+  if (!res.ok && res.status !== 204) {
+    let detail = res.statusText;
+    try {
+      const json = (await res.json()) as { detail?: string };
+      if (json.detail) detail = json.detail;
+    } catch {
+      // not JSON
+    }
+    throw new Error(`API ${path} → ${res.status} ${detail}`);
+  }
 }
 
 // ----- Endpoints ---------------------------------------------------------
@@ -465,5 +629,48 @@ export function getChapterCommentary(
 ): Promise<ChapterCommentaryResponse> {
   return get<ChapterCommentaryResponse>(
     `/books/${encodeURIComponent(slug)}/chapters/${chapterNumber}/commentary`
+  );
+}
+
+/**
+ * Highlights (Session 113).
+ *
+ * Per-partner verse marks. The picker UI calls these on long-press of a
+ * verse + on swatch selection. All five endpoints require auth — free
+ * callers can list / create / delete their own marks (with the tier-
+ * restricted color + style); $1.99+ unlocks the full palette and the
+ * free-form color-meaning dictionary.
+ */
+export function listChapterHighlights(
+  bookSlug: string,
+  chapterNumber: number
+): Promise<ChapterHighlightsResponse> {
+  const qs = new URLSearchParams({
+    book_slug: bookSlug,
+    chapter_number: String(chapterNumber),
+  });
+  return get<ChapterHighlightsResponse>(`/highlights?${qs.toString()}`);
+}
+
+export function createOrReplaceHighlight(
+  body: CreateHighlightRequest
+): Promise<Highlight> {
+  return post<CreateHighlightRequest, Highlight>("/highlights", body);
+}
+
+export function deleteHighlight(highlightId: string): Promise<void> {
+  return del(`/highlights/${encodeURIComponent(highlightId)}`);
+}
+
+export function getHighlightLabels(): Promise<HighlightLabelsResponse> {
+  return get<HighlightLabelsResponse>("/highlights/labels");
+}
+
+export function updateHighlightLabels(
+  body: UpdateHighlightLabelsRequest
+): Promise<HighlightLabelsResponse> {
+  return put<UpdateHighlightLabelsRequest, HighlightLabelsResponse>(
+    "/highlights/labels",
+    body
   );
 }

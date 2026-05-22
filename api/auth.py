@@ -63,7 +63,7 @@ import os
 from typing import Literal, Optional
 
 import jwt
-from fastapi import Cookie, Depends, Header
+from fastapi import Cookie, Depends, Header, HTTPException, status
 from pydantic import BaseModel
 
 
@@ -197,6 +197,29 @@ async def get_current_user_optional(
     return None
 
 
+async def get_current_user_required(
+    user: Optional[User] = Depends(get_current_user_optional),
+) -> User:
+    """FastAPI dependency: return the WordPress user; 401 if none.
+
+    The auth-required twin of ``get_current_user_optional``. Every
+    per-user write endpoint (highlights, notes, reading-positions,
+    subscriptions) depends on this. Anonymous callers get a 401 with a
+    Bearer realm so the front-end can route them to the WP login surface.
+
+    Added in S113 alongside the highlights wheel. Mirrors the same JWT-
+    decode path as ``get_current_user_optional`` — there's no separate
+    secret or claim to validate; only the None case is different.
+    """
+    if user is None:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Authentication required.",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    return user
+
+
 def user_tier(user: Optional[User]) -> PartnerTier:
     """Effective tier for filter queries.
 
@@ -215,5 +238,6 @@ __all__ = [
     "PartnerTier",
     "SSO_COOKIE_NAME",
     "get_current_user_optional",
+    "get_current_user_required",
     "user_tier",
 ]

@@ -93,12 +93,17 @@ from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from typing import List, Optional
 
-from fastapi import Depends, FastAPI, HTTPException, Query
+from fastapi import Depends, FastAPI, HTTPException, Query, Response
 from fastapi.middleware.cors import CORSMiddleware
 
-from auth import User, get_current_user_optional, user_tier
+from auth import (
+    User,
+    get_current_user_optional,
+    get_current_user_required,
+    user_tier,
+)
 from config import settings
-from db import close_pool, get_pool, open_pool
+from db import close_pool, get_pool, open_pool, upsert_user
 from models import (
     BaselineEntry,
     BaselineSourceVerse,
@@ -112,12 +117,20 @@ from models import (
     ChapterEndCardChapterRef,
     ChapterEndCardResponse,
     ChapterEndThread,
+    ChapterHighlightsResponse,
     ChapterSummary,
+    CreateHighlightRequest,
     CrossRefTarget,
     HealthResponse,
+    Highlight,
+    HighlightColor,
+    HighlightLabel,
+    HighlightLabelsResponse,
+    MarkStyle,
     ThreadAnchor,
     ThreadMember,
     ThreadMemberTarget,
+    UpdateHighlightLabelsRequest,
     Verse,
     VerseSearchHit,
     VerseSearchResponse,
@@ -775,6 +788,317 @@ async def get_chapter_commentary(
         ),
         entries=entries,
     )
+
+
+# ----- Highlights (Session 113 wheel) ------------------------------------
+#
+# Locked design per DESIGN_LANGUAGE.md §6, §7, §8 (S77/S78):
+#
+#   - Free tier: 1 color (neon_yellow, deliberately outside the tribe
+#     palette) + 1 style (fill). Every free mark hits the upgrade trigger
+#     visually — "highlighter on Bible" rather than "curated mark in a
+#     designed system."
+#   - $1.99-and-above: 12 tribe-palette colors + 3 mark styles = 36
+#     mark configurations. Plus the free-form color-meaning dictionary
+#     (this file's PUT /v1/highlights/labels endpoint).
+#
+# Endpoints:
+#   GET    /v1/highlights                   — list highlights on a chapter
+#   POST   /v1/highlights                   — create or replace (tier-validated)
+#   DELETE /v1/highlights/{highlight_id}    — remove one
+#   GET    /v1/highlights/labels            — partner's color-meaning dictionary
+#   PUT    /v1/highlights/labels            — update labels ($1.99+)
+
+# The free-tier color. Sits outside the tribe palette by design.
+_FREE_COLOR: str = "neon_yellow"
+
+# The 12 tribe-palette colors unlocked at $1.99-and-above, in the
+# canonical render order around the wheel per DESIGN_LANGUAGE.md §6.
+_TRIBE_COLORS: tuple[str, ...] = (
+    "crimson", "tangerine", "honey", "sage", "emerald", "teal",
+    "sky_blue", "periwinkle", "lilac", "magenta", "rose", "parchment",
+)
+
+# Full picker render order: free baseline first, then the 12 tribe
+# colors. The /v1/highlights/labels response returns one entry per
+# color in this sequence.
+PALETTE_ORDER: tuple[str, ...] = (_FREE_COLOR, *_TRIBE_COLORS)
+
+# Tier-required to APPLY each color to a verse. Free for neon_yellow,
+# study_notes (i.e. $1.99-and-above) for each of the 12 tribe colors.
+_PALETTE_TIER_REQUIRED: dict[str, str] = {
+    _FREE_COLOR: "free",
+    **{c: "study_notes" for c in _TRIBE_COLORS},
+}
+
+# Three mark styles per §8. Free locked to fill; $1.99+ unlocks all three.
+_FREE_STYLES: frozenset[str] = frozenset({"fill"})
+_PAID_STYLES: frozenset[str] = frozenset({"fill", "underline", "outline"})
+
+
+def _allowed_colors_for_tier(tier: str) -> frozenset[str]:
+    """Return the colors a caller at ``tier`` may apply to a verse.
+
+    Free callers can only apply neon_yellow; every paid tier (lattice:
+    study_notes / extras / complete_study / everything) gets the full
+    palette including neon_yellow (so a partner who downgrades doesn't
+    lose access to a color they were using).
+    """
+    if tier == "free":
+        return frozenset({_FREE_COLOR})
+    return frozenset({_FREE_COLOR, *_TRIBE_COLORS})
+
+
+def _allowed_styles_for_tier(tier: str) -> frozenset[str]:
+    """Return the mark styles a caller at ``tier`` may apply.
+
+    Free callers locked to 'fill'; every paid tier gets fill + underline
+    + outline.
+    """
+    return _FREE_STYLES if tier == "free" else _PAID_STYLES
+
+
+async def _build_labels_response(
+    conn, user_uuid: str
+) -> HighlightLabelsResponse:
+    """Build the labels response — one entry per palette color, with the
+    partner's assigned label (empty string when unset, per the V1 design:
+    no framework defaults are preloaded; tribe + gemstone symbolic mapping
+    is open as a V2 enrichment per DESIGN_LANGUAGE.md §6)."""
+    rows = await conn.fetch(
+        "SELECT color, label "
+        "  FROM user_highlight_labels "
+        " WHERE user_id = $1::uuid",
+        user_uuid,
+    )
+    custom = {r["color"]: r["label"] for r in rows}
+    labels: list[HighlightLabel] = []
+    for color in PALETTE_ORDER:
+        labels.append(
+            HighlightLabel(
+                color=color,  # type: ignore[arg-type]
+                label=custom.get(color, ""),
+                tier_required=_PALETTE_TIER_REQUIRED[color],  # type: ignore[arg-type]
+            )
+        )
+    return HighlightLabelsResponse(labels=labels)
+
+
+@app.get("/v1/highlights", response_model=ChapterHighlightsResponse)
+async def list_chapter_highlights(
+    book_slug: str = Query(...),
+    chapter_number: int = Query(..., ge=1),
+    current_user: User = Depends(get_current_user_required),
+) -> ChapterHighlightsResponse:
+    """Return the requesting partner's highlights for one chapter.
+
+    Scoped to the canon edition (mirrors the commentary endpoint's
+    edition-resolution discipline). Returns 404 when the book or
+    chapter doesn't resolve. The endpoint does NOT tier-filter rows —
+    partners always see their own existing highlights even if they
+    later downgrade tiers (no silent data deletion on downgrade).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+
+        chapter_row = await conn.fetchrow(
+            "SELECT c.id "
+            "  FROM chapters c "
+            "  JOIN books    b ON c.book_id    = b.id "
+            "  JOIN editions e ON b.edition_id = e.id "
+            " WHERE b.slug = $1 AND e.slug = 'canon' "
+            "   AND c.chapter_number = $2",
+            book_slug,
+            chapter_number,
+        )
+        if chapter_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Chapter {chapter_number} of '{book_slug}' not found in canon.",
+            )
+
+        rows = await conn.fetch(
+            "SELECT vh.id::text AS id, vh.verse_id, vh.color, vh.style, "
+            "       vh.created_at "
+            "  FROM verse_highlights vh "
+            "  JOIN verses v ON vh.verse_id = v.id "
+            " WHERE vh.user_id = $1::uuid "
+            "   AND v.chapter_id = $2 "
+            " ORDER BY vh.created_at ASC, vh.id ASC",
+            user_uuid,
+            chapter_row["id"],
+        )
+
+    return ChapterHighlightsResponse(
+        highlights=[Highlight(**dict(r)) for r in rows]
+    )
+
+
+@app.post("/v1/highlights", response_model=Highlight, status_code=201)
+async def create_or_replace_highlight(
+    body: CreateHighlightRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> Highlight:
+    """Create or replace the mark on one verse. Tier-validated.
+
+    One mark per (user, verse) per the design lock — POSTing replaces
+    the previous mark's color and style. Free callers can only apply
+    (color='neon_yellow', style='fill'); $1.99-and-above can apply any
+    of the 12 tribe palette colors plus neon_yellow, in any of the 3
+    styles (fill, underline, outline).
+    """
+    tier = user_tier(current_user)
+    allowed_colors = _allowed_colors_for_tier(tier)
+    allowed_styles = _allowed_styles_for_tier(tier)
+
+    if body.color not in allowed_colors:
+        raise HTTPException(
+            status_code=403,
+            detail=(
+                f"Color '{body.color}' requires a higher tier than '{tier}'. "
+                f"Allowed at your tier: {sorted(allowed_colors)}."
+            ),
+        )
+    if body.style not in allowed_styles:
+        raise HTTPException(
+            status_code=403,
+            detail=(
+                f"Mark style '{body.style}' requires a higher tier than '{tier}'. "
+                f"Allowed at your tier: {sorted(allowed_styles)}."
+            ),
+        )
+
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+
+        verse_row = await conn.fetchrow(
+            "SELECT id FROM verses WHERE id = $1",
+            body.verse_id,
+        )
+        if verse_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Verse id={body.verse_id} not found.",
+            )
+
+        # Upsert on the (user_id, verse_id) constraint — one mark per
+        # verse per user, re-marking replaces. RETURNING brings back
+        # the row (whether the insert created it or the update touched
+        # it).
+        row = await conn.fetchrow(
+            "INSERT INTO verse_highlights (user_id, verse_id, color, style) "
+            "VALUES ($1::uuid, $2, $3, $4) "
+            "ON CONFLICT ON CONSTRAINT verse_highlights_user_verse_unique "
+            "DO UPDATE SET color = EXCLUDED.color, style = EXCLUDED.style "
+            "RETURNING id::text, verse_id, color, style, created_at",
+            user_uuid,
+            body.verse_id,
+            body.color,
+            body.style,
+        )
+
+    return Highlight(**dict(row))
+
+
+@app.delete("/v1/highlights/{highlight_id}", status_code=204)
+async def delete_highlight(
+    highlight_id: str,
+    current_user: User = Depends(get_current_user_required),
+) -> Response:
+    """Remove one highlight. Idempotent — deleting a missing or
+    already-deleted row returns 204 (not 404). The partner's PWA may
+    have raced; the user-facing result is the same either way.
+
+    Scoped to the requesting user — passing another user's highlight_id
+    silently no-ops (the WHERE user_id = ... clause never matches).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        await conn.execute(
+            "DELETE FROM verse_highlights "
+            " WHERE id = $1::uuid AND user_id = $2::uuid",
+            highlight_id,
+            user_uuid,
+        )
+    return Response(status_code=204)
+
+
+@app.get("/v1/highlights/labels", response_model=HighlightLabelsResponse)
+async def get_highlight_labels(
+    current_user: User = Depends(get_current_user_required),
+) -> HighlightLabelsResponse:
+    """Return the partner's effective labels for the six palette colors.
+
+    Order matches ``PALETTE_ORDER``. Every color appears exactly once
+    in the response; ``is_custom=False`` means the label is the
+    framework default, ``is_custom=True`` means the partner has
+    overridden it.
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        return await _build_labels_response(conn, user_uuid)
+
+
+@app.put("/v1/highlights/labels", response_model=HighlightLabelsResponse)
+async def update_highlight_labels(
+    body: UpdateHighlightLabelsRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> HighlightLabelsResponse:
+    """Update one or more palette labels for the partner.
+
+    Tier-gated: the free-form color-meaning dictionary is a $1.99
+    feature per DESIGN_LANGUAGE.md §9 / COMPETITIVE_LANDSCAPE.md
+    line 267. Free callers get a 403 (they only have the neon yellow
+    color and the upgrade trigger needs to fire on every interaction
+    that hints at the paid feature). Reads are still free at every
+    tier so the PWA can render the dictionary surface alongside the
+    upgrade affordance.
+
+    Atomic across all entries (single transaction). Empty / whitespace
+    ``label`` clears the partner's label for that color (deletes the
+    row); non-empty trimmed ``label`` upserts. Returns the merged
+    labels response so the PWA can re-render the picker without a
+    follow-up GET.
+    """
+    tier = user_tier(current_user)
+    if tier == "free":
+        raise HTTPException(
+            status_code=403,
+            detail=(
+                "The free-form color-meaning dictionary is a $1.99 "
+                "feature. Upgrade to Notes ($1.99/mo) to label your "
+                "highlight colors."
+            ),
+        )
+
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        async with conn.transaction():
+            for entry in body.labels:
+                trimmed = (entry.label or "").strip()
+                if not trimmed:
+                    await conn.execute(
+                        "DELETE FROM user_highlight_labels "
+                        " WHERE user_id = $1::uuid AND color = $2",
+                        user_uuid,
+                        entry.color,
+                    )
+                else:
+                    await conn.execute(
+                        "INSERT INTO user_highlight_labels (user_id, color, label) "
+                        "VALUES ($1::uuid, $2, $3) "
+                        "ON CONFLICT (user_id, color) DO UPDATE "
+                        "  SET label = EXCLUDED.label, updated_at = now()",
+                        user_uuid,
+                        entry.color,
+                        trimmed,
+                    )
+        return await _build_labels_response(conn, user_uuid)
 
 
 # ----- Search -------------------------------------------------------------

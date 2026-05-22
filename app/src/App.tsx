@@ -1,18 +1,25 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   type BookChaptersResponse,
   type BookSummary,
   type ChapterDetail,
+  type ContentTier,
+  type Highlight,
   type SubscriptionMe,
   getChapter,
   getSubscriptionMe,
   listBooks,
   listChapters,
+  listChapterHighlights,
 } from "./lib/api";
 import Pricing from "./routes/Pricing";
 import Manage from "./routes/Manage";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ChapterCommentary from "./components/ChapterCommentary";
+import HighlightPicker, {
+  markClassFor,
+  markCssVarsFor,
+} from "./components/HighlightPicker";
 import { renderMarkdownBody } from "./lib/markdown";
 import paragraphStartsData from "./data/paragraph_starts.json";
 
@@ -121,6 +128,41 @@ function Reader() {
   // chrome at all in that case.
   const [me, setMe] = useState<SubscriptionMe | null>(null);
 
+  // Session 113: per-chapter highlights map + picker state.
+  // `highlightsByVerse` keys are verse_id; one mark per verse per the
+  // design lock. `pickerVerseId` opens the HighlightPicker for a single
+  // verse on long-press / right-click; null = picker closed.
+  const [highlightsByVerse, setHighlightsByVerse] = useState<
+    Record<number, Highlight>
+  >({});
+  const [pickerVerseId, setPickerVerseId] = useState<number | null>(null);
+
+  // Long-press detection: pointerdown starts a 500ms timer; pointerup /
+  // pointercancel / pointerleave clears it. If the timer fires, the
+  // picker opens for that verse. Click + drag don't trigger.
+  const longPressTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const longPressFiredRef = useRef<boolean>(false);
+  function handlePointerDown(verseId: number) {
+    longPressFiredRef.current = false;
+    if (longPressTimerRef.current) {
+      clearTimeout(longPressTimerRef.current);
+    }
+    longPressTimerRef.current = setTimeout(() => {
+      longPressFiredRef.current = true;
+      setPickerVerseId(verseId);
+    }, 500);
+  }
+  function handlePointerCancel() {
+    if (longPressTimerRef.current) {
+      clearTimeout(longPressTimerRef.current);
+      longPressTimerRef.current = null;
+    }
+  }
+  function handleContextMenu(verseId: number, e: React.MouseEvent) {
+    e.preventDefault();
+    setPickerVerseId(verseId);
+  }
+
   // Books load once on mount.
   useEffect(() => {
     listBooks()
@@ -162,6 +204,27 @@ function Reader() {
       .catch((e) => {
         setChapterError(String(e));
         setChapterLoading(false);
+      });
+  }, [selectedBookSlug, selectedChapter]);
+
+  // S113: highlights reload alongside the chapter. Fetch is best-effort —
+  // a 401 (anonymous caller) just leaves the map empty; the reader still
+  // displays verses, just without any mark visuals. The picker enforces
+  // sign-in when an anonymous caller actually long-presses.
+  useEffect(() => {
+    if (!selectedBookSlug || !selectedChapter) return;
+    setHighlightsByVerse({});
+    setPickerVerseId(null);
+    listChapterHighlights(selectedBookSlug, selectedChapter)
+      .then((r) => {
+        const map: Record<number, Highlight> = {};
+        for (const h of r.highlights) {
+          map[h.verse_id] = h;
+        }
+        setHighlightsByVerse(map);
+      })
+      .catch(() => {
+        // Anonymous or transient failure — leave the map empty.
       });
   }, [selectedBookSlug, selectedChapter]);
 
@@ -313,12 +376,41 @@ function Reader() {
               }
               return groups.map((verses, gIdx) => (
                 <p key={`p-${gIdx}-${verses[0].id}`} className="mb-3 indent-0">
-                  {verses.map((v) => (
-                    <span key={v.id}>
-                      <sup className="verse-number mr-1">{v.verse_number}</sup>
-                      {v.text}{" "}
-                    </span>
-                  ))}
+                  {verses.map((v) => {
+                    // S113 — apply mark visual when the partner has a
+                    // highlight on this verse. The mark classes live in
+                    // index.css; the color is supplied via inline CSS
+                    // variables computed in HighlightPicker.markCssVarsFor.
+                    const mark = highlightsByVerse[v.id];
+                    const markClass = mark ? markClassFor(mark.style) : "";
+                    const markStyle = mark
+                      ? markCssVarsFor(mark.color)
+                      : undefined;
+                    return (
+                      <span
+                        key={v.id}
+                        className={`verse-interactive ${markClass}`}
+                        style={markStyle}
+                        onPointerDown={() => handlePointerDown(v.id)}
+                        onPointerUp={handlePointerCancel}
+                        onPointerCancel={handlePointerCancel}
+                        onPointerLeave={handlePointerCancel}
+                        onContextMenu={(e) => handleContextMenu(v.id, e)}
+                        onClick={(e) => {
+                          // Suppress click event if long-press already fired
+                          // (so opening the picker doesn't also count as a
+                          // verse-text tap if we wire that in later).
+                          if (longPressFiredRef.current) {
+                            e.preventDefault();
+                            longPressFiredRef.current = false;
+                          }
+                        }}
+                      >
+                        <sup className="verse-number mr-1">{v.verse_number}</sup>
+                        {v.text}{" "}
+                      </span>
+                    );
+                  })}
                 </p>
               ));
             })()}
@@ -373,6 +465,32 @@ function Reader() {
             userTier={me?.tier ?? "free"}
           />
         </article>
+      )}
+
+      {/*
+        Session 113 — highlight picker. Renders as a fixed-position
+        modal overlay when a verse is long-pressed (touch) or right-
+        clicked (desktop). One picker per render — opening for verse B
+        while picker is on verse A replaces the picker; the close
+        callback resets state to null.
+      */}
+      {pickerVerseId !== null && (
+        <HighlightPicker
+          verseId={pickerVerseId}
+          current={highlightsByVerse[pickerVerseId] ?? null}
+          userTier={(me?.tier ?? "free") as ContentTier}
+          onSaved={(h) =>
+            setHighlightsByVerse((prev) => ({ ...prev, [h.verse_id]: h }))
+          }
+          onDeleted={(verseId) =>
+            setHighlightsByVerse((prev) => {
+              const next = { ...prev };
+              delete next[verseId];
+              return next;
+            })
+          }
+          onClose={() => setPickerVerseId(null)}
+        />
       )}
 
       <footer className="mt-12 border-t border-[var(--reader-rule)] pt-4 font-sans text-xs text-[var(--reader-muted)]">

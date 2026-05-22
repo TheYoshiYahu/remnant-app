@@ -37,3 +37,74 @@ html, body, #root {
    should sit naturally inline. The parenthetical English equivalent
    ("(God)", "(Israel)") is the same weight and family — readers see a
    single phrase, not two. No special styling beyond the verse default. */
+
+/* ----- Highlight marks (Session 113) -----------------------------------
+   Three mark styles per DESIGN_LANGUAGE.md §8:
+
+     - .mark-fill     — translucent tinted background (~33% alpha
+                        chromatic, ~22% parchment). The reader can still
+                        read the verse text through the colored "pane."
+     - .mark-underline — solid colored line below the marked text,
+                        3px body / 4px chrome. No transparency.
+     - .mark-outline  — 4-direction text-shadow exterior outline, 1px
+                        body / 2px chrome. Same CSS technique as the
+                        sacred-name treatment in §2 — same family,
+                        different semantic register.
+
+   Color is set per element via inline `style` (CSS variables
+   --mark-color + --mark-color-fill) from the React component, computed
+   from HIGHLIGHT_HEX in lib/api.ts. This keeps the CSS dimensionality
+   to three classes total rather than 13 × 3 = 39 selectors.
+   ----------------------------------------------------------------------- */
+
+.mark-fill {
+  background-color: var(--mark-color-fill);
+  /* Small horizontal padding so the tinted background feels intentional
+     rather than a cramped highlighter swipe. Negative margin keeps the
+     verse layout stable. */
+  padding: 0 0.1em;
+  margin: 0 -0.1em;
+  border-radius: 2px;
+}
+
+.mark-underline {
+  text-decoration-line: underline;
+  text-decoration-color: var(--mark-color);
+  text-decoration-thickness: 3px;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+}
+
+.mark-outline {
+  text-shadow:
+     1px 0  0 var(--mark-color),
+    -1px 0  0 var(--mark-color),
+     0  1px 0 var(--mark-color),
+     0 -1px 0 var(--mark-color);
+}
+
+/* Verses respond to long-press / right-click on touchable surfaces.
+   The cursor + user-select hint that they are interactive without
+   creating tap-jitter on a regular read. */
+.verse-interactive {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The 13-swatch picker grid. Sits in a small popover positioned next
+   to the tapped verse; locked swatches dim + add the upgrade chip. */
+.swatch {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.08s ease-in-out;
+}
+.swatch:hover { transform: scale(1.08); }
+.swatch.is-locked { opacity: 0.4; cursor: not-allowed; }
+.swatch.is-locked:hover { transform: none; }
+.swatch.is-selected {
+  outline: 2px solid var(--reader-text);
+  outline-offset: 2px;
+}

@@ -114,7 +114,7 @@ from pydantic import BaseModel, Field
 
 from auth import PartnerTier, User, get_current_user_optional
 from config import settings
-from db import get_pool
+from db import get_pool, upsert_user
 
 
 logger = logging.getLogger(__name__)
@@ -310,28 +310,11 @@ def _extract_period_end(stripe_sub) -> Optional[int]:
 # ---- DB helpers -----------------------------------------------------------
 
 
-async def _upsert_user(
-    conn: asyncpg.Connection, current_user: User
-) -> str:
-    """Lazy-upsert the WP user into our ``users`` table; return UUID.
-
-    The schema declares ``users.wordpress_user_id`` UNIQUE; we conflict
-    on it. Email and display_name are mirrored from the JWT payload (or
-    NULL if the WP-side filter hasn't shipped them yet). Returns the
-    users.id UUID as a str.
-    """
-    wp_user_id = int(current_user.id)
-    user_uuid = await conn.fetchval(
-        "INSERT INTO users (wordpress_user_id, display_name, last_seen_at) "
-        "VALUES ($1, $2, now()) "
-        "ON CONFLICT (wordpress_user_id) DO UPDATE SET "
-        "  display_name = COALESCE(EXCLUDED.display_name, users.display_name), "
-        "  last_seen_at = now() "
-        "RETURNING id::text",
-        wp_user_id,
-        current_user.display_name,
-    )
-    return user_uuid
+# NOTE (S113): ``_upsert_user`` moved to ``db.upsert_user`` so every
+# write-route surface (subscriptions + highlights + future notes /
+# reading-positions) shares one helper. Call ``upsert_user`` directly
+# from db; this comment marker preserves the original location for git-
+# blame readers.
 
 
 async def _lookup_tier_price_row(
@@ -607,7 +590,7 @@ async def create_checkout_session(
                 )
 
         # 3. Upsert user — get the local UUID for client_reference_id.
-        user_uuid = await _upsert_user(conn, current_user)
+        user_uuid = await upsert_user(conn, current_user)
 
     # 4. Stripe Checkout Session creation.
     #

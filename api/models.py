@@ -327,3 +327,140 @@ class ChapterCommentaryResponse(BaseModel):
     book: ChapterEndCardBookRef
     chapter: ChapterEndCardChapterRef
     entries: List[ChapterCommentaryEntry]
+
+
+# ----- Highlights (Session 113) -------------------------------------------
+#
+# Locked design per DESIGN_LANGUAGE.md §6, §7, §8 (S77/S78):
+#
+#   - 12 tribe-palette colors at $1.99 (study_notes-and-above)
+#     + 1 neon-yellow free-tier color, deliberately OUTSIDE the
+#     tribe palette so every free mark hits the upgrade trigger
+#     visually.
+#   - 3 mark styles: fill (translucent tinted background), underline
+#     (solid colored line below text), outline (4-direction text-
+#     shadow, same CSS technique as the sacred-name treatment in
+#     DESIGN_LANGUAGE.md §2). Free tier = fill only. $1.99+ = all 3.
+#     3 × 12 = 36 mark configurations at $1.99-and-above.
+#   - One mark per (user, verse) — re-marking replaces. The unique
+#     constraint in the schema (Session 113 migration) is on
+#     (user_id, verse_id), not on the triple.
+#   - Free-form color-meaning dictionary at $1.99 — partner-assigned
+#     labels per color (empty by default; no framework labels
+#     preloaded in V1). Tribe + breastplate-gemstone symbolic
+#     mapping is open as a V2 enrichment per §6.
+
+# The 12 tribe-palette colors + 1 free-tier neon yellow, in the
+# canonical picker render order around the wheel (red → orange →
+# yellow → yellow-green → green → blue-green → blue → blue-violet
+# → violet → pink-violet → pink → neutral), with neon yellow first
+# as the free baseline.
+HighlightColor = Literal[
+    "neon_yellow",  # FREE (FFE600) — outside the tribe palette
+    "crimson",      # D14555 — true red
+    "tangerine",    # F0A050 — orange
+    "honey",        # E8C04A — yellow
+    "sage",         # 97C459 — yellow-green
+    "emerald",      # 4DAE7F — green
+    "teal",         # 5FB8B0 — blue-green
+    "sky_blue",     # 87C5E8 — pale blue
+    "periwinkle",   # 9F9FE0 — blue-violet
+    "lilac",        # D4B0E0 — light violet
+    "magenta",      # E060A5 — pink-violet
+    "rose",         # D17BA4 — soft pink
+    "parchment",    # C5B795 — warm neutral
+]
+
+# Three mark styles per DESIGN_LANGUAGE.md §8. Free locked to 'fill';
+# $1.99+ unlocks all three. The 'outline' style shares its CSS
+# technique with the sacred-name treatment in §2 (same family,
+# different semantic register).
+MarkStyle = Literal["fill", "underline", "outline"]
+
+
+class Highlight(BaseModel):
+    """A single verse_highlights row scoped to the requesting partner.
+
+    One mark per (user, verse) per the design lock — POSTing a new
+    (color, style) for a verse the partner already marked replaces
+    the previous mark.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    verse_id: int
+    color: HighlightColor
+    style: MarkStyle
+    created_at: datetime
+
+
+class ChapterHighlightsResponse(BaseModel):
+    """GET /v1/highlights?book_slug=&chapter_number= — partner's highlights
+    on every verse of one chapter. Returned in stable created-ascending
+    order so the PWA can render them deterministically."""
+
+    highlights: List[Highlight]
+
+
+class CreateHighlightRequest(BaseModel):
+    """POST /v1/highlights body.
+
+    Tier-aware validation runs in the route handler:
+      - free tier: must be (color='neon_yellow', style='fill').
+      - $1.99-and-above: any (color in tribe palette + neon_yellow,
+        style in all three).
+    """
+
+    verse_id: int
+    color: HighlightColor
+    style: MarkStyle = "fill"
+
+
+class HighlightLabel(BaseModel):
+    """One color's partner-assigned label.
+
+    ``label`` is empty string when the partner has not assigned a
+    meaning to this color yet. ``tier_required`` is the tier needed
+    to APPLY this color to a verse — separate from the tier needed
+    to label it ($1.99-and-above for label writes; reads work at
+    every tier so the PWA can render the dictionary surface).
+    """
+
+    color: HighlightColor
+    label: str
+    tier_required: ContentTier
+
+
+class HighlightLabelsResponse(BaseModel):
+    """GET /v1/highlights/labels — partner's color-meaning dictionary.
+
+    Returns one entry per palette color in the canonical render order
+    (neon_yellow first, then crimson through parchment around the wheel).
+    Labels are free-form text the partner has assigned; empty string
+    where the partner has not yet defined a meaning.
+    """
+
+    labels: List[HighlightLabel]
+
+
+class UpdateHighlightLabelEntry(BaseModel):
+    """One (color, label) pair in the PUT /v1/highlights/labels body.
+
+    Empty / whitespace ``label`` clears the partner's label for that
+    color (deletes the row); non-empty ``label`` upserts.
+    """
+
+    color: HighlightColor
+    label: str
+
+
+class UpdateHighlightLabelsRequest(BaseModel):
+    """PUT /v1/highlights/labels body — list of label entries to update.
+
+    Atomic: all entries land in one transaction, or none do. Restricted
+    to $1.99-and-above per the design spec (free-form color-meaning
+    dictionary is a $1.99 feature; free callers get a 403).
+    """
+
+    labels: List[UpdateHighlightLabelEntry] = Field(..., min_length=1)
