@@ -44,7 +44,14 @@ _inbox/
 
 # Source trees that the Dockerfile does not COPY (kept out of build context
 # for build-speed reasons — already not in the image regardless).
-restoration-pipeline/
+# Exception (S112): the tiered commentary loader at
+# restoration-pipeline/_session112_load_matthew_tiered_commentary.py IS
+# copied into the image so it can be run from Render Shell. Negate the
+# broad restoration-pipeline/ exclusion at file granularity: exclude all
+# immediate children of restoration-pipeline/, then re-include the one
+# loader file we ship.
+restoration-pipeline/*
+!restoration-pipeline/_session112_load_matthew_tiered_commentary.py
 source-texts/existing-restored-editions/
 source-texts/extras/
 source-texts/kjv/
