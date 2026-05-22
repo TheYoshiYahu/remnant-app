@@ -34,6 +34,20 @@ the user has no subscription), the User object's ``partner_tier`` is
 land before the WordPress-side custom-meta filter is wired; once the
 filter is in place, the same code lights up the paid tiers.
 
+S114 — DB-wins-over-JWT tier resolution. The JWT ``partner_tier``
+claim is now treated as informational. After ``_decode_token``
+returns a User, ``get_current_user_optional`` re-resolves the
+partner's tier from the ``subscriptions`` table and overwrites the
+JWT claim with the DB value. This eliminates the WP-side sync drift
+that surfaced in S113 testing — where a partner whose WP
+``rop_partner_tier`` user-meta had fallen out of sync with their
+DB row saw the chrome treating them as paid (chrome reads
+``/v1/subscriptions/me`` which is DB-backed) while API write
+endpoints 403'd on paid-only features (those trusted the JWT). With
+DB-wins active, the ``subscriptions`` table is the single source of
+truth for API tier resolution; WP user-meta drift becomes a
+chrome-only concern outside the API's correctness path.
+
 Token payload contract (the WP plugin's stock shape):
 
     {
@@ -59,12 +73,17 @@ install file at ``_scratch/_session36_wp_install.md``.
 
 from __future__ import annotations
 
+import logging
 import os
 from typing import Literal, Optional
 
 import jwt
 from fastapi import Cookie, Depends, Header, HTTPException, status
 from pydantic import BaseModel
+
+from db import get_pool
+
+logger = logging.getLogger(__name__)
 
 
 # Cookie name the SSO bridge sets. Lowercase + snake_case so it
@@ -166,6 +185,92 @@ def _decode_token(token: str) -> Optional[User]:
         return None
 
 
+async def _resolve_tier_from_db(wp_user_id_str: str) -> Optional[PartnerTier]:
+    """Resolve the partner's tier from the ``subscriptions`` table.
+
+    The single source of truth for API tier resolution (S114). The
+    JWT's ``partner_tier`` claim is informational — it's seeded by
+    the WP-side ``rop_partner_tier`` user-meta, which can drift out
+    of sync with our ``subscriptions`` table when a webhook fails,
+    arrives before the WP companion plugin was installed, or simply
+    never fired (the row predates the sync architecture). The DB
+    always wins.
+
+    Query semantics — newest non-terminal subscription row wins. The
+    terminal-status list (``canceled``, ``unpaid``,
+    ``incomplete_expired``) matches ``_handle_subscription_change``
+    in ``subscriptions.py`` exactly, so the same statuses that
+    downgrade WP to free here also resolve to free.
+    ``cancel_at_period_end=True`` partners stay on their paid tier
+    until ``status`` flips to ``canceled`` at period_end — they're
+    still ``active`` in the row, so they fall through to the paid
+    tier.
+
+    Returns:
+        - The partner's active tier ('study_notes' / 'extras' /
+          'complete_study' / 'everything') if they have a
+          non-terminal subscription row.
+        - ``'free'`` if the partner has a users row but no
+          non-terminal subscription.
+        - ``None`` on transient DB failure — caller falls back to
+          the JWT claim as graceful degradation, so a flaky DB
+          doesn't kick every partner down to free mid-session.
+    """
+    try:
+        wp_user_id = int(wp_user_id_str)
+    except (TypeError, ValueError):
+        return None
+
+    try:
+        pool = get_pool()
+        async with pool.acquire() as conn:
+            tier = await conn.fetchval(
+                "SELECT s.tier::text "
+                "  FROM subscriptions s "
+                "  JOIN users u ON u.id = s.user_id "
+                " WHERE u.wordpress_user_id = $1 "
+                "   AND s.status NOT IN ('canceled', 'unpaid', 'incomplete_expired') "
+                " ORDER BY s.created_at DESC "
+                " LIMIT 1",
+                wp_user_id,
+            )
+    except Exception as exc:
+        # Transient DB failure (pool exhausted, connection reset,
+        # etc.) — degrade gracefully to the JWT claim rather than
+        # silently downgrading every partner to free.
+        logger.warning(
+            "[auth] db-tier lookup failed wp_user_id=%s err=%s",
+            wp_user_id_str, exc,
+        )
+        return None
+
+    if tier is None:
+        # No matching users row, OR the users row exists but carries
+        # no non-terminal subscription. Either way, the partner is
+        # at the free tier — same effective result as the JWT
+        # claim defaulting to 'free'.
+        return "free"
+
+    if tier not in {
+        "free",
+        "study_notes",
+        "extras",
+        "complete_study",
+        "everything",
+    }:
+        # Defensive: the DB enum should not carry anything outside
+        # the PartnerTier Literal, but if a future tier landed in
+        # the schema without the API code catching up, downgrade
+        # rather than letting an unknown value escape upward.
+        logger.warning(
+            "[auth] db returned unknown tier=%r wp_user_id=%s — downgrading to free",
+            tier, wp_user_id_str,
+        )
+        return "free"
+
+    return tier  # type: ignore[return-value]
+
+
 async def get_current_user_optional(
     rop_jwt: Optional[str] = Cookie(default=None, alias=SSO_COOKIE_NAME),
     authorization: Optional[str] = Header(default=None),
@@ -178,23 +283,40 @@ async def get_current_user_optional(
     redirect lands. The Authorization-header branch stays for direct
     API testing, the front-end's belt-and-suspenders attach, and
     future mobile clients.
+
+    Tier resolution (S114): after decoding the token, the dependency
+    re-resolves ``partner_tier`` from the ``subscriptions`` table
+    and overwrites the JWT claim with the DB value. DB wins. The
+    JWT claim becomes graceful fallback for transient DB failures
+    only — see ``_resolve_tier_from_db``.
     """
+    user: Optional[User] = None
+
     # Cookie path first — the SSO default.
     if rop_jwt:
         user = _decode_token(rop_jwt)
-        if user is not None:
-            return user
 
     # Authorization-header fallback. Accept the literal "Bearer "
     # prefix (case-insensitive on the scheme) per RFC 6750.
-    if authorization:
+    if user is None and authorization:
         parts = authorization.split(None, 1)
         if len(parts) == 2 and parts[0].lower() == "bearer":
             token = parts[1].strip()
             if token:
-                return _decode_token(token)
+                user = _decode_token(token)
 
-    return None
+    if user is None:
+        return None
+
+    # DB-wins tier resolution. On lookup success, the DB value
+    # overrides the JWT claim. On transient failure (None return),
+    # the JWT claim stays — partner keeps whatever access the cookie
+    # bought them rather than getting kicked to free.
+    db_tier = await _resolve_tier_from_db(user.id)
+    if db_tier is not None and db_tier != user.partner_tier:
+        user = user.model_copy(update={"partner_tier": db_tier})
+
+    return user
 
 
 async def get_current_user_required(

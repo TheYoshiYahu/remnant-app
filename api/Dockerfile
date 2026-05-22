@@ -58,6 +58,13 @@ COPY source-texts/parsed/ /source-texts/parsed/
 COPY restoration-pipeline/_session112_*.py /restoration-pipeline/
 COPY commentaries/ /commentaries/
 
+# Session 114 — partner-tier reconciliation script. One-time historical
+# drift cleanup paired with the auth.py DB-wins-over-JWT fix. Reads from
+# the subscriptions table and re-fires _sync_partner_tier_to_wp for every
+# non-terminal row. Idempotent. Runs from Render Shell on the API service
+# so it has both DATABASE_URL and the WP companion-plugin env vars in scope.
+COPY restoration-pipeline/_session114_*.py /restoration-pipeline/
+
 # Liveness / DB-reachability check. Render (and any other host) can hit this
 # directly to determine whether to route traffic; matches the route registered
 # in main.py.

@@ -48,10 +48,13 @@ _inbox/
 # restoration-pipeline/_session112_load_matthew_tiered_commentary.py IS
 # copied into the image so it can be run from Render Shell. Negate the
 # broad restoration-pipeline/ exclusion at file granularity: exclude all
-# immediate children of restoration-pipeline/, then re-include the one
-# loader file we ship.
+# immediate children of restoration-pipeline/, then re-include the loader
+# files we ship.
+# Exception (S114): the partner-tier reconciliation script also ships in
+# the image — same Render-Shell-from-the-API-service pattern.
 restoration-pipeline/*
 !restoration-pipeline/_session112_load_matthew_tiered_commentary.py
+!restoration-pipeline/_session114_reconcile_partner_tiers.py
 source-texts/existing-restored-editions/
 source-texts/extras/
 source-texts/kjv/
