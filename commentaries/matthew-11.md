@@ -1,174 +1,263 @@
 # Commentary on Matthew 11
 
-**Framework apologetic for the Yoshi rendering. LANDED 2026-05-19 (session 83).**
-
-The eleventh chapter of the Matthew sweep. The transitional-chapter between the Matt 10 commissioning and the Matt 12 Shabbat-controversies. Five major movements land: Yochanan's (John's) question from prison and the Isaiah-35-credential answer (vv.2-6); Yahusha's (Jesus's) testimony of Yochanan as *more than a prophet* and the Eliyahu (Elijah)-pattern locked (vv.7-15); the *children in the marketplaces* complaint about both Yochanan's austerity and Yahusha's (Jesus's) festivity (vv.16-19); the woes upon Chorazin, Beit-Tsaida (Bethsaida), and Kfar-Nachum (Capernaum) with the *more tolerable for Sodom* eschatological-graduated-accountability frame (vv.20-24); the Father-Son revelation-economy prayer (vv.25-27) — *no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son* — direct framework-statement of the Formless-Formed nature-of-God reading; and the *come unto me, all ye that labour and are heavy laden* invitation with the *my yoke is easy, and my burden is light* contrast against the Pharisaic-burden-system (vv.28-30). Reads against `_COMMENTARY_SUMMATION.md` as the chapter-level lens, against the voice skill as the spine. Cross-reference apparatus at §7.
+Matthew 11 is the transitional chapter between the Matthew 10 commissioning and the Matthew 12 Shabbat-controversies. Five major movements land. First, Yochanan's (John's) question from prison and the King's Isaiah-credential answer (vv.2-6). Second, Yahusha's (Jesus's) testimony of Yochanan (John) as *more than a prophet* and the Eliyahu (Elijah)-pattern locked through the Malachi 3 / Malachi 4 citations (vv.7-15). Third, the children-in-the-marketplaces diagnosis of the system's inconsistent-rejection of both Yochanan's-austerity and Yahusha's-festivity (vv.16-19). Fourth, the woes upon Korazin, Beit-Tsaida (Bethsaida), and Kfar-Nachum (Capernaum) with the graduated-accountability eschatological frame extending the Matthew 10:14-15 shake-the-dust-off pattern (vv.20-24). Fifth, the chapter's two framework-major moments — the Father-Son revelation-economy prayer (vv.25-27) and the *come unto me, all ye that labour and are heavy laden* / *my yoke is easy* invitation (vv.28-30). The first names the Formless-Formed nature-of-God reading explicitly; the second names the heart-Torah-yoke against the Pharisaic-burden-system at the most-load-bearing reframing in the gospel of what the *yoke* is.
 
 ---
 
-## §1. Yochanan's (John's) question from prison — the Isaiah-35 credential answer
+## §1. Yochanan's (John's) question from prison — the Isaiah-credential answer
 
-*Now when Yochanan (John) had heard in the prison the works of Messiah (Christ), he sent two of his disciples, And said unto him, Art thou he that should come, or do we look for another?* (vv.2-3).
+*Now when Yochanan (John) had heard in the prison the works of Messiah (Christ), he sent two of his disciples, And said unto him, Art thou he that should come, or do we look for another?* (Matthew 11:2-3)
 
-The framework reads Yochanan's (John's) prison-question carefully. The Eliyahu (Elijah)-pattern prophet of Matt 3 — the wilderness-camel-hair-Yarden (Jordan)-immerser who proclaimed the kingdom at hand, who recognized Yahusha (Jesus) at the immersion (*Behold the Lamb of Elohim (God), which taketh away the sin of the world,* John 1:29), who heard the Father's voice at the immersion (Matt 3:17) — is now imprisoned by Herod Antipas (Matt 14:3-4 will detail; the imprisonment follows from Yochanan's (John's) public condemnation of Herod's marriage to Herodias). From prison, Yochanan (John) sends his disciples with the question: *art thou he that should come, or do we look for another?*
+**The Eliyahu-pattern prophet in prison.** Yochanan (John) is the Matthew 3 wilderness-camel-hair-Yarden (Jordan)-immerser who proclaimed *the kingdom of heaven is at hand* (Matthew 3:2), who recognized Yahusha (Jesus) at the immersion — *Behold the Lamb of Elohim (God), which taketh away the sin of the world* (John 1:29) — and who heard the Father's voice at the Yarden (Jordan), *This is my beloved Son, in whom I am well pleased* (Matthew 3:17). He is now imprisoned by Herod Antipas; Matthew 14:3-4 will detail the imprisonment following his public condemnation of Herod's marriage to Herodias. From prison Yochanan (John) sends his disciples with the question: *art thou he that should come, or do we look for another?*
 
-The framework rejects the Christian commentary tradition that has often read this verse as Yochanan (John) doubting-his-own-recognition. The framework reads the question in framework-register. Yochanan (John) is the Eliyahu-pattern prophet; he recognized the King at the immersion; he is now in prison facing execution. The question is not a faith-failure but a clarification-seek — possibly for his disciples' sake (so they know explicitly), possibly for his own confirmation of the timeline (the kingdom-at-hand he proclaimed has not yet visibly-arrived in the way he expected; the Day-of-Yahuah (the LORD) typology Yochanan (John) preached at Matt 3:7-12 has not yet landed; his imprisonment puts pressure on the timeline-expectation).
+The Christian commentary tradition has often read this as a faith-failure — the great prophet doubting his own recognition under execution-pressure. The framework reads the question differently. Yochanan (John) is operating with the prophetic-compression the Tanakh-prophets generally carried — the first-coming and the second-coming visible as a single horizon. His own preaching at Matthew 3:7-12 carried the full prophetic-compression:
 
-The framework reads Yochanan's (John's) prison-question as the legitimate-question of a prophet caught in the kingdom's-inaugurated-but-not-yet-consummated tension. The kingdom-at-hand has been proclaimed; the King has been credentialed; the gathering-mission has been launched. But the eschatological-day-of-fire Yochanan (John) prophesied has not landed. The framework's eschatological-filter per `_COMMENTARY_SUMMATION.md` §IV applies: the dreadful-day is still ahead. Yochanan (John) is operating with the prophetic-compression that the Tanakh-prophets generally carried — the first-coming and second-coming events run together in the prophetic-vision without the present-age-gap visible. The gap is becoming visible to Yochanan (John) in prison; he asks for clarification.
+*And now also the axe is laid unto the root of the trees: therefore every tree which bringeth not forth good fruit is hewn down, and cast into the fire. ... He shall baptize you with the Ruach HaKodesh (Holy Spirit), and with fire: Whose fan is in his hand, and he will throughly purge his floor, and gather his wheat into the garner; but he will burn up the chaff with unquenchable fire.* (Matthew 3:10-12)
 
-**Yahusha's (Jesus's) answer — the Isaiah-35 citation** (vv.4-5). *Yahusha (Jesus) answered and said unto them, Go and shew Yochanan (John) again those things which ye do hear and see: The blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, and the dead are raised up, and the poor have the gospel preached to them.*
+From his vantage at the Yarden (Jordan) Yochanan (John) saw the kingdom-at-hand AND the dreadful-day-of-Yahuah (the LORD) as one motion. But the motion has not landed the way he proclaimed it. He is in prison; the King is teaching and healing; the day-of-fire has not arrived. The question from prison is the gap becoming visible to him — the kingdom's-inaugurated-but-not-yet-consummated tension pressing on a prophet caught at the wrong end of the gap.
 
-The framework reads the answer as Yahusha (Jesus) citing the Yeshayahu (Isaiah) 35 / Yeshayahu (Isaiah) 61 / Yeshayahu (Isaiah) 29 Messianic-credential chain. The specific verses Yahusha (Jesus) is referencing:
+**Yahusha's (Jesus's) answer — the Isaiah-credential citation.**
 
-- Yeshayahu (Isaiah) 35:5-6 — *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped. Then shall the lame man leap as an hart, and the tongue of the dumb sing.*
-- Yeshayahu (Isaiah) 29:18-19 — *And in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity, and out of darkness. The meek also shall increase their joy in Yahuah (the LORD), and the poor among men shall rejoice in the Holy One of Yashar'el (Israel).*
-- Yeshayahu (Isaiah) 26:19 — *Thy dead men shall live ... Awake and sing, ye that dwell in dust.*
-- Yeshayahu (Isaiah) 61:1 — *Yahuah (the LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound.*
+*Yahusha (Jesus) answered and said unto them, Go and shew Yochanan (John) again those things which ye do hear and see: The blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, and the dead are raised up, and the poor have the gospel preached to them.* (Matthew 11:4-5)
 
-The framework notes the citation's-deliberate-incompleteness. Yahusha (Jesus) cites the Yeshayahu (Isaiah) 35 and Yeshayahu (Isaiah) 61 messianic-signs of the eschatological-age that have been visibly-fulfilled IN HIS MINISTRY — blind seeing, lame walking, lepers cleansed, deaf hearing, dead raised, poor receiving good-news. But he OMITS the day-of-vengeance-of-Elohim (God) language that follows in Yeshayahu (Isaiah) 61:2 (*to proclaim the acceptable year of Yahuah (the LORD), and the day of vengeance of Yahuah Elohim (the LORD God)*). The framework reads the omission as deliberate signaling-to-Yochanan: *the credential of the first-coming is being fulfilled; the day-of-vengeance you prophesied has not yet landed because we are in the inaugurated-but-not-yet-consummated tension.*
+The King answers by citing the Tanakh-prophetic-credential of the Messianic-age. The four Isaiah anchors:
 
-The framework reads the citation-pattern as Yahusha's (Jesus's) careful-pedagogy of the prophetic-timeline. The same pattern appears at the Nazareth-synagogue reading of Yeshayahu (Isaiah) 61 at Luke 4:18-19 — Yahusha (Jesus) reads up to *the acceptable year of Yahuah (the LORD)* and CLOSES THE SCROLL, before the *day of vengeance* of v.2. The framework reads this as the King's deliberate-disclosure of the present-age scope of his first-coming, with the day-of-vengeance reserved for the second-coming.
+*Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped. Then shall the lame man leap as an hart, and the tongue of the dumb sing: for in the wilderness shall waters break out, and streams in the desert.* (Isaiah 35:5-6)
 
-**The blessing** (v.6). *And blessed is he, whosoever shall not be offended in me.*
+*And in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity, and out of darkness. The meek also shall increase their joy in Yahuah (the LORD), and the poor among men shall rejoice in the Holy One of Yashar'el (Israel).* (Isaiah 29:18-19)
 
-The framework reads this as Yahusha's (Jesus's) gentle-address-to-Yochanan's-question. The verse is NOT a rebuke of Yochanan (John). Yahusha (Jesus) acknowledges the offence-trip-up potential — the kingdom's-not-arriving-the-way-it-was-expected is precisely the kind of test the prophets-of-Yashar'el (Israel) faced repeatedly (Yirmeyahu (Jeremiah) 20:7-9 carries the same tension). The blessing names the disposition that endures the inaugurated-but-not-yet tension without falling away. Yochanan (John) is being addressed with the same disposition Yahusha (Jesus) addressed the disciples at the storm-stilling (Matt 8:26 *O ye of little faith*) — kindness-with-correction.
+*Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast them out.* (Isaiah 26:19)
+
+*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (the LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound; To proclaim the acceptable year of Yahuah (the LORD), and the day of vengeance of our Elohim (God); to comfort all that mourn.* (Isaiah 61:1-2)
+
+**The deliberate-incompleteness of the citation.** The framework reads Yahusha's (Jesus's) citation as deliberately incomplete. He invokes the Isaiah-35 and Isaiah-61 Messianic-credentials that have been visibly fulfilled in his ministry — blind seeing, lame walking, lepers cleansed, deaf hearing, dead raised, poor receiving good-news. He OMITS the *day of vengeance of our Elohim (God)* clause that follows in Isaiah 61:2. The omission is not accidental. The same deliberate-stopping happened at the Nazareth synagogue, where Luke records Yahusha (Jesus) reading the Isaiah 61 passage and closing the scroll mid-verse:
+
+*And there was delivered unto him the book of the prophet Yeshayahu (Isaiah). And when he had opened the book, he found the place where it was written, The Spirit of Yahuah (the LORD) is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised, To preach the acceptable year of Yahuah (the LORD). And he closed the book, and he gave it again to the minister, and sat down ... And he began to say unto them, This day is this scripture fulfilled in your ears.* (Luke 4:17-21)
+
+Twice the King handles the same prophet's text the same way: cite the first-coming credential; reserve the day-of-vengeance for the second-coming. The signal to Yochanan (John) — and to his disciples returning to the prison — is the gap itself. *The time of the gathering-and-healing is now; the day-of-vengeance is not now.* The prophetic-compression Yochanan (John) preached at the Yarden (Jordan) is being unfolded into the two-stage timeline only the King sees fully.
+
+**The blessing.**
+
+*And blessed is he, whosoever shall not be offended in me.* (Matthew 11:6)
+
+The framework reads this as kindness-with-correction, not rebuke. Yahusha (Jesus) acknowledges the offence-trip-up potential — the kingdom's-not-arriving-the-way-it-was-expected is the test the prophets-of-Yashar'el (Israel) repeatedly faced. Yirmeyahu (Jeremiah) named the same tension in his own prophetic-prison:
+
+*O Yahuah (LORD), thou hast deceived me, and I was deceived: thou art stronger than I, and hast prevailed: I am in derision daily, every one mocketh me. ... Then I said, I will not make mention of him, nor speak any more in his name. But his word was in mine heart as a burning fire shut up in my bones, and I was weary with forbearing, and I could not stay.* (Jeremiah 20:7, 9)
+
+The prophet caught at the wrong end of the gap is a recurring biblical figure. The blessing of Matthew 11:6 names the disposition that endures the inaugurated-but-not-yet tension without falling away. Yochanan (John) is being addressed with the same tone Yahusha (Jesus) uses with the disciples at the storm-stilling (*O ye of little faith,* Matthew 8:26) — kindness-with-correction from the King who knows the timeline the prophet does not yet see whole.
 
 ## §2. Yahusha's (Jesus's) testimony of Yochanan — *more than a prophet* and the Eliyahu-pattern locked
 
-*And as they departed, Yahusha (Jesus) began to say unto the multitudes concerning Yochanan (John), What went ye out into the wilderness to see? A reed shaken with the wind?* (v.7).
+*And as they departed, Yahusha (Jesus) began to say unto the multitudes concerning Yochanan (John), What went ye out into the wilderness to see? A reed shaken with the wind? But what went ye out for to see? A man clothed in soft raiment? behold, they that wear soft clothing are in kings' houses. But what went ye out for to see? A prophet? yea, I say unto you, and more than a prophet.* (Matthew 11:7-9)
 
-The framework reads Yahusha's (Jesus's) public-testimony-of-Yochanan as the deliberate-defense of the prophet's-credential at a moment when the imprisonment could have appeared to discredit him. The framework notes this is the King's voice protecting his forerunner's-public-standing while Yochanan (John) is in chains.
+The framework reads Yahusha's (Jesus's) public-testimony as the deliberate-defense of the prophet's-credential at a moment when his imprisonment could have appeared to discredit him. The King's voice is protecting his forerunner's-public-standing while Yochanan (John) is in chains. The *reed shaken with the wind* image may allude to Herod Antipas's earlier coinage which bore a reed-image referring to the reeds of the Galilee; in which case the contrast is direct — Yochanan (John) is NOT a creature of Herod's court but the prophet opposed to Herod's court. The *soft raiment* contrast names the wilderness-camel-hair Yochanan (John) wore (Matthew 3:4) against the Herodian palace-luxury. Yochanan (John) is not court-furniture; he is prophet. And *more than a prophet.*
 
-**The reed-with-the-wind / soft-raiment contrasts** (vv.7-8). *A reed shaken with the wind? But what went ye out for to see? A man clothed in soft raiment? behold, they that wear soft clothing are in kings' houses.*
+**The Malachi 3:1 citation — implicit-Christology.**
 
-The framework reads the rhetorical questions in framework-register. The *reed* image — Yahusha (Jesus) may be alluding to the Herodian dynasty's coinage (Herod Antipas's earlier coins bore a reed-image referring to the reeds of the Galilee), in which case the contrast is: Yochanan (John) is NOT a creature of Herod's court; he is the prophet OPPOSED to Herod's court. The *soft raiment* contrast is between the wilderness-camel-hair Yochanan (John) wore (Matt 3:4) and the court-luxury of the Herodian palace. Yochanan (John) is not court-furniture; he is prophet.
+*For this is he, of whom it is written, Behold, I send my messenger before thy face, which shall prepare thy way before thee.* (Matthew 11:10)
 
-**The Malachi 3 citation** (vv.9-10). *But what went ye out for to see? A prophet? yea, I say unto you, and more than a prophet. For this is he, of whom it is written, Behold, I send my messenger before thy face, which shall prepare thy way before thee.*
+Yahusha (Jesus) cites Malachi 3:1 directly. The Tanakh-text:
 
-Yahusha (Jesus) cites Malachi 3:1 directly — *Behold, I will send my messenger, and he shall prepare the way before me: and Yahuah (the LORD), whom ye seek, shall suddenly come to his temple.* The framework reads the citation as Yahusha (Jesus) IDENTIFYING Yochanan (John) as the messenger of Malachi 3:1 — the forerunner of *Yahuah (the LORD)* who suddenly comes to his temple. The framework notes the implicit-Christology: Yahusha (Jesus) is identifying himself as the Yahuah (LORD) whose way Yochanan (John) prepares.
+*Behold, I will send my messenger, and he shall prepare the way before me: and Yahuah (the LORD), whom ye seek, shall suddenly come to his temple, even the messenger of the covenant, whom ye delight in: behold, he shall come, saith Yahuah Tseva'ot (the LORD of hosts).* (Malachi 3:1)
 
-**The *greatest among them that are born of women*** (v.11). *Verily I say unto you, Among them that are born of women there hath not risen a greater than Yochanan (John) the Immerser: notwithstanding he that is least in the kingdom of heaven is greater than he.*
+The framework reads the implicit-Christology at full strength. Malachi names the messenger as preparing the way for *Yahuah (the LORD)* — *Yahuah (the LORD) whom ye seek, shall suddenly come to his temple.* When Yahusha (Jesus) cites this verse and identifies Yochanan (John) as the messenger, the King is identifying himself as the *Yahuah (LORD)* whose way Yochanan (John) prepares. The Father is the Formless-source whom no mortal eye has seen; the Son is the Formed who appears in the temple Malachi names. The Tanakh-substance the prophet carried is now flesh in the speaker.
 
-The framework reads the verse-pair as the kingdom-citizenship transformation-of-status statement. Yochanan (John) carries the highest-prophetic-stature in the prophetic-tradition-of-the-Tanakh; yet the kingdom-citizens — including the smallest among them — are positioned in a different category that exceeds even the highest of the prophetic-tradition. The framework reads this as the new-heart of Yechezk'el (Ezekiel) 36:26-27 substance — the heart-Torah-walking kingdom-citizen carries the indwelling-Ruach in a way that even the greatest prophets of the Tanakh-period did not.
+**The kingdom-citizenship transformation-of-status.**
 
-This does NOT diminish Yochanan (John) and does NOT diminish the Tanakh-prophets. It names the kingdom's-new-substance — the new-covenant Torah-internalization that operates in the post-resurrection assembly through the indwelling-Ruach.
+*Verily I say unto you, Among them that are born of women there hath not risen a greater than Yochanan (John) the Immerser: notwithstanding he that is least in the kingdom of heaven is greater than he.* (Matthew 11:11)
 
-**The kingdom-suffereth-violence saying** (v.12). *And from the days of Yochanan (John) the Immerser until now the kingdom of heaven suffereth violence, and the violent take it by force.*
+The verse-pair is the kingdom-citizenship transformation-of-status statement. Yochanan (John) carries the highest prophetic-stature in the prophetic-tradition-of-the-Tanakh; yet the kingdom-citizens — including the smallest among them — are positioned in a different category that exceeds even the highest of the prophetic-tradition.
 
-The framework reads this difficult-verse in framework-register. Two reading-trajectories are within the framework:
+The framework reads this as the new-heart substance of the new-covenant taking effect. What the prophet served from outside the indwelling-Ruach (Spirit), the kingdom-citizen carries from inside it. The Tanakh-anchors:
 
-First — the persecution-trajectory reading: *the kingdom of heaven is being treated violently (Yochanan (John) imprisoned, persecution-expectation of Matt 10:17-23) and the violent (the persecutors) are trying to seize it by force.* This reading lands the *biazetai* as passive (*suffers violence*) and the *biastai harpazousin autēn* as the persecutors-attempting-seizure.
+*But this shall be the covenant that I will make with the house of Yashar'el (Israel); After those days, saith Yahuah (the LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33)
 
-Second — the active-pursuit reading: *the kingdom is forcefully advancing and the forceful seize it (lay claim to it).* This reading lands the *biazetai* as middle (*forces its way forward*) and the *biastai harpazousin autēn* as the kingdom-citizens earnestly-pressing-in.
+*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:26-27)
 
-The framework reads BOTH trajectories as possible-within-the-framework and the verse-itself as deliberately-ambivalent. The kingdom's-inaugural-period is marked by BOTH dynamics — the persecutory-violence from the system AND the earnest-pursuit by the responding-citizens. The framework's posture from `_COMMENTARY_SUMMATION.md` §VII applies: *sit out the counterfeit; speak up against the abominations; do not raise arms against the system but cry out.* The kingdom-citizens' earnest-pursuit is the cry-out-and-press-in disposition; the persecutory-violence from the system is the seed-war-pattern operating.
+The verse does not diminish Yochanan (John) and does not diminish the Tanakh-prophets. It names the kingdom's-new-substance — the new-covenant Torah-internalization that operates in the post-resurrection assembly through the indwelling-Ruach.
 
-**The Malachi 4 citation — *this is Eliyahu (Elijah), which was for to come*** (vv.13-14). *For all the prophets and the law prophesied until Yochanan (John). And if ye will receive it, this is Eliyahu (Elijah), which was for to come.*
+**The kingdom-suffereth-violence saying.**
 
-Yahusha (Jesus) explicitly identifies Yochanan (John) as the Eliyahu (Elijah)-figure of Malachi 4:5-6 — *Behold, I will send you Eliyahu (Elijah) the prophet before the coming of the great and dreadful day of Yahuah (the LORD): And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.*
+*And from the days of Yochanan (John) the Immerser until now the kingdom of heaven suffereth violence, and the violent take it by force.* (Matthew 11:12)
 
-The framework reads the *if ye will receive it* qualifier carefully. The framework's eschatological-filter holds: the dreadful-day-of-Yahuah (the LORD) has not yet landed; the Malachi 4:5-6 prophecy's full-eschatological-fulfillment is still ahead. The framework reads Yochanan (John) as the inaugural-Eliyahu-pattern-fulfillment — the messenger-before-the-King's-first-coming — with the dreadful-day-of-Yahuah's-second-coming reserved for the future. Some commentators within the framework's broader Torah-observant community have read Hitgalut (Revelation) 11's two-witnesses-pericope as carrying an Eliyahu-fulfillment-at-the-second-coming; the framework does not need to specify this beyond saying the dreadful-day is still ahead and the Malachi 4 prophecy's-full-eschatological-substance is reserved.
+The framework reads this difficult-verse in framework-register and holds two reading-trajectories as both within the framework. The persecution-trajectory reading: the kingdom of heaven is being treated violently (Yochanan (John) imprisoned, persecution-expectation of Matthew 10:17-23) and the violent (the persecutors) are trying to seize it by force. The active-pursuit reading: the kingdom is forcefully advancing and the forceful seize it (lay claim to it) — the kingdom-citizens earnestly pressing in. The framework reads both trajectories as operative in the kingdom's-inaugural-period — the persecutory-violence from the system AND the earnest-pursuit by the responding-citizens. The kingdom-citizens' disposition is to sit out the counterfeit, speak up against the abominations, refuse to chase the unwilling, and press into the substance the Father offers. The verse names both dynamics in the same beat.
 
-The framework's `yochanan-as-eliyahu-pattern-prophet` thread from Matt 3 locks at framework-major weight here. The King himself identifies Yochanan (John) as the Malachi 4 Eliyahu-figure.
+**The Malachi 4 citation — Yochanan as Eliyahu (Elijah).**
 
-## §3. The children-in-the-marketplaces — the seed-war-pattern of system-rejection of both Yochanan and Yahusha
+*For all the prophets and the law prophesied until Yochanan (John). And if ye will receive it, this is Eliyahu (Elijah), which was for to come. He that hath ears to hear, let him hear.* (Matthew 11:13-15)
 
-*But whereunto shall I liken this generation? It is like unto children sitting in the markets, and calling unto their fellows, And saying, We have piped unto you, and ye have not danced; we have mourned unto you, and ye have not lamented* (vv.16-17).
+The King explicitly identifies Yochanan (John) as the Eliyahu (Elijah)-figure of Malachi 4:
 
-The framework reads the children-in-the-marketplaces parable as the diagnosis of the system's-inconsistent-rejection of both Yochanan (John) and Yahusha (Jesus). The Pharisaic-Sadducean-leadership-system rejected Yochanan (John) for his austerity (*neither eating nor drinking,* v.18 — wilderness-fasting Nazarite-discipline); rejected Yahusha (Jesus) for his festivity (*eating and drinking,* v.19 — table-fellowship with sinners and tax-collectors per Matt 9:10-13). The system finds reason-to-reject both, in opposite-directions, because the rejection precedes the reasons.
+*Behold, I will send you Eliyahu (Elijah) the prophet before the coming of the great and dreadful day of Yahuah (the LORD): And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* (Malachi 4:5-6)
 
-**The framework reads this as the seed-war-pattern of generation-of-vipers-disposition that Matt 3:7 first named.** The system-credentialed cannot hear because they have-already-decided-against-hearing; the children-in-the-marketplaces complaint is the cover-story over the prior decision. The framework's posture per the `pharisaic-sadducean-system-as-judaizer-predecessor` thread applies: the institutional-religious-system's pattern of finding-reasons-not-to-respond operates against whichever prophet-or-messenger is present.
+The *if ye will receive it* qualifier matters. The framework reads the qualifier carefully. The dreadful-day-of-Yahuah (the LORD) has not yet landed; the Malachi 4:5-6 prophecy's full-eschatological-fulfillment is still ahead. Yochanan (John) is the inaugural-Eliyahu-pattern-fulfillment — the messenger-before-the-King's-first-coming — with the dreadful-day-of-Yahuah's-second-coming reserved for the future. The angelic-naming at Yochanan's (John's) conception had already set the pattern:
 
-**The *gluttonous man, and a winebibber, a friend of publicans and sinners* slander** (v.19). The Pharisaic-rejection of Yahusha (Jesus) takes the form of moral-character-slander against the table-fellowship pattern Yahusha (Jesus) practiced. The framework notes the slander operates as Matt 9's table-fellowship critique expanded — the Pharisees have moved from questioning the disciples (Matt 9:11) to direct character-attack on the King.
+*For he shall be great in the sight of Yahuah (the Lord), and shall drink neither wine nor strong drink; and he shall be filled with the Ruach HaKodesh (Holy Ghost), even from his mother's womb. ... And he shall go before him in the spirit and power of Eliyahu (Elias), to turn the hearts of the fathers to the children, and the disobedient to the wisdom of the just; to make ready a people prepared for Yahuah (the Lord).* (Luke 1:15, 17)
 
-**The *wisdom is justified of her children*** (v.19c). The framework reads the closing-line as the kingdom-citizens'-recognition-of-substance. The wisdom-tradition of Tanakh (Mishle (Proverbs) 1:20-33, Mishle (Proverbs) 8) personifies divine-wisdom as a feminine-figure who calls in the streets and is heard by the wise-and-rejected by the fools. The framework reads the *children of wisdom* as the kingdom-citizens — those whose ears are opened to the Father's-call — who recognize the substance in both Yochanan's-austerity and Yahusha's-festivity because they perceive the heart-Torah-substance operating in both. The system rejects both; the children-of-wisdom recognize both.
+Yahusha (Jesus) will confirm the identification again after the transfiguration:
 
-## §4. Woes upon Chorazin, Beit-Tsaida, Kfar-Nachum — the eschatological-graduated-accountability frame
+*And his disciples asked him, saying, Why then say the scribes that Eliyahu (Elijah) must first come? And Yahusha (Jesus) answered and said unto them, Eliyahu (Elijah) truly shall first come, and restore all things. But I say unto you, That Eliyahu (Elijah) is come already, and they knew him not, but have done unto him whatsoever they listed. Likewise shall also the Son of Adam suffer of them. Then the disciples understood that he spake unto them of Yochanan (John) the Immerser.* (Matthew 17:10-13)
 
-*Then began he to upbraid the cities wherein most of his mighty works were done, because they repented not* (v.20).
+The Eliyahu (Elijah)-pattern is locked. Yochanan (John) was the messenger of Malachi 3:1 and the Eliyahu (Elijah) of Malachi 4:5-6 — the inaugural beat of a prophecy whose full eschatological substance still waits for the dreadful day.
 
-The framework reads vv.20-24 as the deliberate-extension of the Matt 10:14-15 shake-the-dust-off pattern to the specific cities of Galilee where Yahusha's (Jesus's) ministry had been concentrated. The pursuit ends where the rejection lands; the eschatological-judgment-frame applies.
+## §3. The children-in-the-marketplaces — the system's-inconsistent-rejection
 
-**Chorazin and Beit-Tsaida (vv.21-22).** *Woe unto thee, Chorazin! woe unto thee, Beit-Tsaida (Bethsaida)! for if the mighty works, which were done in you, had been done in Tyre and Tsidon (Sidon), they would have repented long ago in sackcloth and ashes. But I say unto you, It shall be more tolerable for Tyre and Tsidon (Sidon) at the day of judgment, than for you.*
+*But whereunto shall I liken this generation? It is like unto children sitting in the markets, and calling unto their fellows, And saying, We have piped unto you, and ye have not danced; we have mourned unto you, and ye have not lamented. For Yochanan (John) came neither eating nor drinking, and they say, He hath a devil. The Son of Adam came eating and drinking, and they say, Behold a man gluttonous, and a winebibber, a friend of publicans and sinners. But wisdom is justified of her children.* (Matthew 11:16-19)
 
-The framework reads the Tyre-and-Tsidon-comparison in Tanakh-substance. Tyre and Tsidon (Sidon) are the Phoenician city-states whom the Tanakh-prophets repeatedly indicted (Yeshayahu (Isaiah) 23, Yechezk'el (Ezekiel) 26-28, Yoel (Joel) 3:4-8, Amos 1:9-10, Zekharyah (Zechariah) 9:1-4). The framework notes the comparison-irony: the Tanakh's-most-indicted-pagan-cities would have responded to the Messianic-credential the Galilean-cities did not respond to. The eschatological-graduated-accountability applies: those who saw the mighty-works and rejected bear greater accountability than those who never saw them.
+The framework reads the children-in-the-marketplaces parable as the diagnosis of the system's-inconsistent-rejection of both Yochanan (John) and Yahusha (Jesus). The Pharisaic-Sadducean-leadership-system rejected Yochanan (John) for his austerity (the wilderness-fasting Nazirite-discipline that came as *neither eating nor drinking* by their measure); rejected Yahusha (Jesus) for his festivity (the table-fellowship with sinners and tax-collectors of Matthew 9:10-13). The system finds reason-to-reject both, in opposite-directions, because the rejection precedes the reasons.
 
-**Kfar-Nachum (vv.23-24).** *And thou, Kfar-Nachum (Capernaum), which art exalted unto heaven, shalt be brought down to hell: for if the mighty works, which have been done in thee, had been done in Sodom, it would have remained until this day. But I say unto you, That it shall be more tolerable for the land of Sodom in the day of judgment, than for thee.*
+The framework reads this as the generation-of-vipers-disposition Matthew 3:7 first named — the institutional-religious-system's pattern of finding-reasons-not-to-respond operates against whichever prophet-or-messenger is present. The system-credentialed cannot hear because they have-already-decided-against-hearing; the children-in-the-marketplaces complaint is the cover-story over the prior decision. *He fasts too much. He eats too much. He stays at the Yarden (Jordan). He goes to the publicans' tables.* The system's complaint is the cover-story for the rejection it has already chosen.
 
-The framework reads the Kfar-Nachum-Sodom comparison at the same graduated-accountability frame as Matt 10:15. The framework notes Kfar-Nachum was Yahusha's (Jesus's) ministry-base in Galilee (Matt 4:13; Matt 8:5; Matt 9:1's *his own city*). The credentialing-density there was higher than anywhere else; the responsiveness was therefore measured against a higher accountability-floor.
+**The *gluttonous man, and a winebibber, a friend of publicans and sinners* slander.** The Pharisaic-rejection of Yahusha (Jesus) takes the form of moral-character-slander against the table-fellowship pattern Yahusha (Jesus) practiced. The slander operates as Matthew 9's table-fellowship critique expanded — the Pharisees have moved from questioning the disciples (Matthew 9:11) to direct character-attack on the King. The trajectory will continue at Matthew 12:24 with the Beelzebul-attribution. The pattern is the diagnostic-end-point of a system confronted with what it cannot deny: when the visible-fact stands, the system reaches for any framework — even self-contradicting ones — that lets it reject what it cannot acknowledge.
 
-The framework reads the *exalted unto heaven / brought down to hell (hadēs)* language in Yeshayahu (Isaiah) 14:13-15 echo — the King-of-Babel's-elevation-and-fall pattern. The framework's eschatological-filter holds: the *day of judgment* is the not-yet-fulfilled future-day per `_COMMENTARY_SUMMATION.md` §IV; the graduated-accountability is the Tanakh-and-Apocrypha-substance reading of the judgment-with-degrees, not the inherited Christian-monolithic-hell-doctrine. *Hadēs* in this verse carries the Tanakh's *Sheol* substance — the underworld-of-the-dead — not the Christian-eternal-conscious-torment specifically.
+**The *wisdom is justified of her children* closing.** The wisdom-tradition of the Tanakh personifies divine-wisdom as a feminine-figure who calls in the streets:
 
-The framework reads the woes as the King's prophetic-grief-and-judgment over the Galilean cities. The compassion of Matt 9:36 (the sheep-without-shepherd multitudes) is consistent with the grief of Matt 11:20-24 (the specific-cities-that-rejected-the-Shepherd); both are the Yechezk'el (Ezekiel) 34 shepherd's-substance operating across the kingdom-mission.
+*Wisdom crieth without; she uttereth her voice in the streets: She crieth in the chief place of concourse, in the openings of the gates: in the city she uttereth her words, saying, How long, ye simple ones, will ye love simplicity? and the scorners delight in their scorning, and fools hate knowledge? Turn you at my reproof: behold, I will pour out my spirit unto you, I will make known my words unto you.* (Proverbs 1:20-23)
 
-## §5. The Father-Son revelation-economy — direct framework-statement of the Formless-Formed nature-of-God
+The *children of wisdom* are those whose ears are opened to her call. The framework reads them as the kingdom-citizens — those who recognize the heart-Torah-substance operating in both Yochanan's (John's) austerity and Yahusha's (Jesus's) festivity, because they perceive the substance underneath the register. The system rejects both; the children-of-wisdom recognize both.
 
-*At that time Yahusha (Jesus) answered and said, I thank thee, O Father, Lord of heaven and earth, because thou hast hid these things from the wise and prudent, and hast revealed them unto babes. Even so, Father: for so it seemed good in thy sight. All things are delivered unto me of my Father: and no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son, and he to whomsoever the Son will reveal him* (vv.25-27).
+## §4. The woes upon Korazin, Beit-Tsaida, Kfar-Nachum — the graduated-accountability frame
 
-**The framework reads vv.25-27 as the chapter's framework-major direct-statement of the Formless-Formed nature-of-God reading.** The Father-Son relational-architecture is named explicitly by the King. The framework reads each phrase:
+*Then began he to upbraid the cities wherein most of his mighty works were done, because they repented not: Woe unto thee, Korazin! woe unto thee, Beit-Tsaida (Bethsaida)! for if the mighty works, which were done in you, had been done in Tyre and Tsidon (Sidon), they would have repented long ago in sackcloth and ashes. But I say unto you, It shall be more tolerable for Tyre and Tsidon (Sidon) at the day of judgment, than for you.* (Matthew 11:20-22)
 
-**The address — *I thank thee, O Father, Lord of heaven and earth*** (v.25). The Father is named *Yahuah Tseva'ot (Lord of heaven and earth)* — the Tanakh's-cosmic-sovereign title (Bereshit (Genesis) 14:19's *El Elyon (most High Elohim (God)), possessor of heaven and earth*; Devarim (Deuteronomy) 10:14's *the heaven and the heaven of heavens is Yahuah's (the LORD's), thy Elohim (God), the earth also, with all that therein is*). The framework reads the address as the Formed-Yahusha (Jesus) addressing the Formless-Father in framework-language.
+The framework reads vv.20-24 as the deliberate-extension of the Matthew 10:14-15 shake-the-dust-off pattern to the specific cities of Galilee where Yahusha's (Jesus's) ministry had been concentrated. The pursuit ends where the rejection lands; the eschatological-judgment-frame applies.
 
-**The revelation-economy — *hid from the wise and prudent, revealed unto babes*** (v.25b). The framework reads this as the seed-war-hearing-pattern explicitly named. The credentialed-of-the-system (*the wise and prudent,* *sophōn kai synetōn*) cannot hear because the credential-without-substance pattern blocks the hearing; the un-credentialed-receptive (*the babes,* *nēpiois*) can hear because nothing blocks the Father's-call from reaching them. The Father's-sovereign-choice in the revelation-distribution lines up with the kingdom-citizens' covenant-substance — those whose names are written in the Lamb's book of life from the foundation of the world (per Red Line #11) are the ones whose hearing is unblocked.
+**Tyre and Tsidon as comparison-cities.** Tyre and Tsidon (Sidon) are the Phoenician city-states whom the Tanakh-prophets repeatedly indicted. The Tanakh-anchors:
 
-The framework reads the *babes* substance against the Beatitudes' *anawim*-disposition (the *poor in spirit* of Matt 5:3); the kingdom-citizens-roster of Matt 5:3-12 names the same un-credentialed-receptive-substance as the *babes* of Matt 11:25.
+*The burden of Tyre. Howl, ye ships of Tarshish; for it is laid waste, so that there is no house, no entering in: from the land of Chittim it is revealed to them.* (Isaiah 23:1)
 
-**The Son's-derived-authority — *all things are delivered unto me of my Father*** (v.27a). *Panta moi paredothē hypo tou patros mou.* The framework reads this as direct-statement of the Son's-receipt-of-authority from the Father. The Formed receives from the Formless; the Father delegates to the Son; the framework's nature-of-God reading holds.
+*The word of Yahuah (the LORD) came again unto me, saying, Son of Adam, set thy face against Tsidon (Sidon), and prophesy against it, And say, Thus saith Adonai Yahuah (the Lord GOD); Behold, I am against thee, O Tsidon (Sidon); and I will be glorified in the midst of thee.* (Ezekiel 28:20-22)
 
-The framework notes the verse foreshadows Matt 28:18 — *all power is given unto me in heaven and in earth* — and locks the same framework-statement: the Son operates with authority received from the Father; the Son is not an independent-source but the Formed-expression of the Formless-source.
+The framework reads the comparison-irony at full weight: the Tanakh's-most-indicted-pagan-cities would have responded to the Messianic-credential the Galilean-cities did not respond to. The eschatological-graduated-accountability applies — those who saw the mighty works and rejected bear greater accountability than those who never saw them.
 
-**The mutual-knowledge — *no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son*** (v.27b-c). *Oudeis epiginōskei ton huion ei mē ho patēr, oude ton patera tis epiginōskei ei mē ho huios.*
+**Kfar-Nachum (Capernaum) and Sodom.**
 
-The framework reads this as the relational-substance of the Father-Son framework. The Formed and the Formless know each other in a unique-mutual-substance that no third-party-knowledge accesses without revelation. The framework's nature-of-God reading lands here at maximum-strength:
+*And thou, Kfar-Nachum (Capernaum), which art exalted unto heaven, shalt be brought down to hell: for if the mighty works, which have been done in thee, had been done in Sodom, it would have remained until this day. But I say unto you, That it shall be more tolerable for the land of Sodom in the day of judgment, than for thee.* (Matthew 11:23-24)
 
-- The Father knows the Son in the unique-substance of the One-who-formed-knowing-the-Formed.
-- The Son knows the Father in the unique-substance of the Formed-knowing-the-Source-from-which-formed.
-- All other knowledge of the Father is mediated through the Son's-revelation. *He to whomsoever the Son will reveal him.*
+Kfar-Nachum (Capernaum) had been the King's ministry-base in Galilee — *his own city* of Matthew 9:1, the home-base of the centurion's-servant healing at Matthew 8:5, the site from which the gathering-mission was launched. The credentialing-density there was higher than anywhere else; the responsiveness was therefore measured against a higher accountability-floor. The *exalted unto heaven / brought down to hell* language carries the Tanakh-echo of the King-of-Babel's pride-and-fall:
 
-The framework reads this as Matt's-internal anchor of the framework's reading of John 1:18 — *No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him* — and John 14:6-9 — *He that hath seen me hath seen the Father.* The same nature-of-God substance carries across the gospels.
+*For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God): I will sit also upon the mount of the congregation, in the sides of the north: I will ascend above the heights of the clouds; I will be like the most High. Yet thou shalt be brought down to hell, to the sides of the pit.* (Isaiah 14:13-15)
+
+The *hell* here translates the Greek *hadēs,* which carries the Tanakh's *Sheol* substance — the underworld of the dead — not the inherited Christian eternal-conscious-torment specifically. The framework reads the *day of judgment* as the Tanakh's *yom Yahuah* (the day of the LORD) — the specific eschatological event with graduated-degrees-of-accountability the prophets named, not a flat monolithic-overlay. The Sodom-comparison's Tanakh-anchor stands at Bereshit (Genesis) 19:
+
+*Then Yahuah (the LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (the LORD) out of heaven; And he overthrew those cities, and all the plain, and all the inhabitants of the cities, and that which grew upon the ground.* (Genesis 19:24-25)
+
+The judgment Yahusha (Jesus) pronounces on the Galilean cities is the prophetic-grief-and-judgment of the Shepherd whose own ministry-base did not respond. The compassion of Matthew 9:36 over the multitudes and the grief of Matthew 11:20-24 over the cities-that-rejected are the same Yechezk'el (Ezekiel) 34 shepherd-substance operating in different beats.
+
+## §5. The Father-Son revelation-economy — direct statement of the Formless-Formed nature-of-God reading
+
+*At that time Yahusha (Jesus) answered and said, I thank thee, O Father, Lord of heaven and earth, because thou hast hid these things from the wise and prudent, and hast revealed them unto babes. Even so, Father: for so it seemed good in thy sight. All things are delivered unto me of my Father: and no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son, and he to whomsoever the Son will reveal him.* (Matthew 11:25-27)
+
+**The framework reads vv.25-27 as the chapter's framework-major direct-statement of the Formless-Formed nature-of-God reading.** The Father-Son relational-architecture is named explicitly by the King himself in three discrete moves.
+
+**The address — *I thank thee, O Father, Lord of heaven and earth*** (v.25a). The Father is named as the cosmic-sovereign — the Tanakh's title that runs from Avraham's (Abraham's) blessing at Genesis 14 through the Sinai theology:
+
+*And he blessed him, and said, Blessed be Avram (Abram) of El Elyon (the most high God), possessor of heaven and earth.* (Genesis 14:19)
+
+*Behold, the heaven and the heaven of heavens is Yahuah's (the LORD's) thy Elohim (God), the earth also, with all that therein is.* (Deuteronomy 10:14)
+
+The framework reads the address as the Formed-Yahusha (Jesus) addressing the Formless-Father in framework-language — the Son speaks to the Source.
+
+**The revelation-economy — *hid from the wise and prudent, revealed unto babes*** (v.25b). The framework reads this as the seed-war-hearing-pattern explicitly named. The credentialed-of-the-system (*the wise and prudent,* *sophōn kai synetōn*) cannot hear because the credential-without-substance pattern blocks the hearing; the un-credentialed-receptive (*the babes,* *nēpiois*) can hear because nothing blocks the Father's-call from reaching them. The Father's sovereign-choice in the revelation-distribution aligns with the substance — those who are sheep before the foundation of the world hear when the Shepherd calls; those who are not, do not. The hearing reveals what was already true; the hearing does not create what was not. The *babes* of Matthew 11:25 are the *poor in spirit* of the Beatitudes (Matthew 5:3) — the *anawim*-disposition that has nothing to defend against the Father's-call. The wisdom-tradition of Paul restates the same architecture:
+
+*Hath not Elohim (God) made foolish the wisdom of this world? ... Elohim (God) hath chosen the foolish things of the world to confound the wise; and Elohim (God) hath chosen the weak things of the world to confound the things which are mighty.* (1 Corinthians 1:20, 27)
+
+The same revelation-economy: the system's wisdom is foolish before the Father; the system's strength is weakness before the Father; the chosen are the foolish-and-weak by the system's measure because the Father's choice does not align with the system's credentials.
+
+**The Son's-derived-authority — *all things are delivered unto me of my Father*** (v.27a). *Panta moi paredothē hypo tou patros mou.* The Greek is precise: *all things have been delivered to me by my Father.* The Son receives from the Father; the delivery is the Father's act and the Son's reception. The framework reads this as direct-statement of the Son's-receipt-of-authority from the Father.
+
+The verse foreshadows Matthew 28:18 — *All power is given unto me in heaven and in earth* — and locks the same framework-statement at both ends of the gospel: the Son operates with authority received from the Father; the Son is not an independent-source but the Formed-expression of the Formless-source. Yochanan (John) records the same architecture in the King's voice at the Upper-Room discourse:
+
+*The Son can do nothing of himself, but what he seeth the Father do: for what things soever he doeth, these also doeth the Son likewise. ... For as the Father raiseth up the dead, and quickeneth them; even so the Son quickeneth whom he will. For the Father judgeth no man, but hath committed all judgment unto the Son: That all men should honour the Son, even as they honour the Father.* (John 5:19, 21-23)
+
+The Son acts from what he sees the Father do; the Father commits judgment to the Son; the honour of the Son is the honour of the Father. The asymmetric architecture is consistent across the canon.
+
+**The mutual-knowledge — *no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son*** (v.27b-c). *Oudeis epiginōskei ton huion ei mē ho patēr, oude ton patera tis epiginōskei ei mē ho huios.* The Father knows the Son in the unique-substance of the One-who-formed-knowing-the-Formed. The Son knows the Father in the unique-substance of the Formed-knowing-the-Source-from-which-formed. All other knowledge of the Father is mediated through the Son's-revelation. The Yochanan (John) prologue carries the same architecture:
+
+*No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.* (John 1:18)
+
+And the Upper-Room discourse:
+
+*Yahusha (Jesus) saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me. If ye had known me, ye should have known my Father also: and from henceforth ye know him, and have seen him. Philippos (Philip) saith unto him, Lord, shew us the Father, and it sufficeth us. Yahusha (Jesus) saith unto him, Have I been so long time with you, and yet hast thou not known me, Philippos (Philip)? he that hath seen me hath seen the Father.* (John 14:6-9)
+
+The same nature-of-God substance lands across the canon. The Father is the Formless-source whom no mortal eye has seen; the Son is the Formed-expression who appears in flesh and reveals the Father; the relational-architecture is asymmetric (the Son receives from the Father, reveals the Father, does what he sees the Father do, returns to the Father). All theophany in the Tanakh is the Formed — the walking-in-the-garden of Genesis 3:8, the appearing-to-Avraham (Abraham) at the oaks of Mamre in Genesis 18, the wrestling-with-Ya'aqov (Jacob) at the Yabbok in Genesis 32, the burning-bush of Exodus 3, the standing-on-Sinai of Exodus 19-20. The Formless never appears directly to mortal eyes:
+
+*And he said, Thou canst not see my face: for there shall no man see me, and live.* (Exodus 33:20)
+
+At Matthew 1:23 the Formed has come in flesh as *Immanuel — Elohim (God) with us;* at Matthew 11:25-27 the Formed names the relational-architecture explicitly to his disciples.
+
+The framework rules out the Trinitarian-three-co-equal-persons construction AND the modalist-collapse. The Father is named distinctly; the Son is named distinctly; the mutual-knowledge-relation is the substance. The Formed proceeds-from-the-Formless and reveals-the-Formless; the relational-architecture is asymmetric (the Son receives from the Father, not vice-versa). The Trinitarian construction flattens the asymmetry into co-equality; the modalist-collapse dissolves the distinction into single-substance-in-different-modes. The framework reads what the King names: distinction with asymmetric relation, the Son revealing the Father, the Father unseen by mortal eyes except through the Son.
 
 The framework reads vv.25-27 as the chapter's framework-major moment. The Father-Son revelation-economy named here is the substance behind every prior credentialing-display of the chapter and the gospel: the works of the King are the Father's-works through the Son; the recognition of the King is the Father's-revelation through the Son; the rejection of the King is the rejection of the Father's-revelation.
 
-The framework rules out the Trinitarian-construction (three-co-equal-persons) AND the modalist-collapse (Father-and-Son as one-undifferentiated-being). The Father is named distinctly; the Son is named distinctly; the mutual-knowledge-relation is the substance. The Formed proceeds-from-the-Formless and reveals-the-Formless; the relational-architecture is asymmetric (the Son receives from the Father, not vice-versa). The framework's nature-of-God reading is the framework's reading.
+## §6. *Come unto me, all ye that labour and are heavy laden* — the kingdom-citizens' rest-substance against the Pharisaic-burden
 
-## §6. *Come unto me, all ye that labour and are heavy laden* — the kingdom-citizens' rest-substance against the Pharisaic-burden-system
+*Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light.* (Matthew 11:28-30)
 
-*Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light* (vv.28-30).
+**The framework reads vv.28-30 as the chapter's second framework-major moment on the heart-Torah-vs-Pharisaic-burden front.** This is the most load-bearing reframing of the *yoke* concept in the gospel.
 
-The framework reads vv.28-30 as the kingdom-citizens' rest-substance invitation against the Pharisaic-burden-system. **This is the chapter's framework-major moment on the heart-Torah-vs-Pharisaic-burden front.**
+**The *labour and heavy laden* substance** (v.28a). *Pantes hoi kopiōntes kai pephortismenoi.* The Greek is precise: *all the ones laboring and the ones loaded-down.* The framework reads the substance against the Pharisaic-oral-tradition-system's burden-pattern. The system's *takkanot* (rabbinic enactments) and *gezerot* (rabbinic restrictions) and *seyag latorah* (fence around the Torah) had built up around the Torah for centuries by Yahusha's (Jesus's) day, layering external-credential-requirements on every aspect of life — Shabbat-observance fenced with hundreds of derivative-prohibitions, table-purity fenced with elaborate hand-washing protocols, tithing fenced down to the smallest garden herbs. The people-of-the-land (*am ha'aretz*) carried the burden of this architecture without the resources of the credentialed-Pharisees to discharge it. Matthew 23:4 will name the pattern explicitly:
 
-**The *labour and heavy laden* substance** (v.28a). *Pantes hoi kopiōntes kai pephortismenoi.* The Greek is precise: *all the ones laboring and the ones loaded-down.* The framework reads the substance against the Pharisaic-oral-tradition-system's burden-pattern. Matt 23:4 will name the Pharisaic-burden-pattern explicitly: *they bind heavy burdens and grievous to be borne, and lay them on men's shoulders; but they themselves will not move them with one of their fingers.* The Pharisaic-system layered the takkanot and gezerot and oral-tradition-fences upon the people; the people-of-the-land (*am ha'aretz*) carried the burden of the system's-ever-expanding-credential-architecture.
+*For they bind heavy burdens and grievous to be borne, and lay them on men's shoulders; but they themselves will not move them with one of their fingers.* (Matthew 23:4)
 
-The framework reads Yahusha's (Jesus's) invitation against this background. The *labour and heavy laden* are the people-of-the-land bearing the Pharisaic-burden-system. The King addresses them directly: *come unto me, I will give you rest.*
+The *labour and heavy laden* of Matthew 11:28 are the *labour and heavy laden* of Matthew 23:4 — the same people, the same burden, the same system.
 
-**The *take my yoke upon you* substance** (v.29a). *Arate ton zygon mou eph' hymas.* The *yoke* (*zygos*) in second-temple Yahudim (Jewish) rabbinic-vocabulary was a technical-term for the body-of-teaching one accepted from a rabbi. *The yoke of the kingdom of heaven* and *the yoke of the Torah* were rabbinic-phrases for the accepted-corpus-of-teaching the disciple-of-a-rabbi took on. *Take my yoke upon you* is a rabbinic-invitation: become my disciple; learn from me; carry my teaching.
+**The *take my yoke upon you* substance** (v.29a). *Arate ton zygon mou eph' hymas.* The *yoke* (*zygos*) in second-temple rabbinic vocabulary was a technical-term for the body-of-teaching one accepted from a rabbi. *The yoke of the kingdom of heaven* and *the yoke of the Torah* were standard phrases for the accepted-corpus-of-teaching the disciple-of-a-rabbi took on. *Take my yoke upon you* is a rabbinic-invitation: become my disciple; learn from me; carry my teaching.
 
-The framework reads the substance carefully. Yahusha (Jesus) is NOT inviting the labour-and-heavy-laden to be DISCIPLES-WITHOUT-A-YOKE. He is inviting them to EXCHANGE THE YOKE THEY ARE BEARING for HIS YOKE. The contrast is not yoke-vs-no-yoke; the contrast is Pharisaic-burden-yoke vs the King's-rest-yoke.
+The framework reads the contrast carefully. Yahusha (Jesus) is NOT inviting the labour-and-heavy-laden to be DISCIPLES-WITHOUT-A-YOKE. He is inviting them to EXCHANGE THE YOKE THEY ARE BEARING for HIS YOKE. The contrast is not yoke-vs-no-yoke; the contrast is Pharisaic-oral-tradition-yoke vs the King's-rest-yoke.
 
-**The King's yoke IS the heart-Torah-walking.** The framework reads Yahusha's (Jesus's) yoke as the substance of the Sermon on the Mount — the Beatitudes-as-citizens-of-the-kingdom-roster, the load-bearing anti-antinomian declaration of Matt 5:17-19, the six antitheses as oral-tradition correction, the new-heart of Jer 31:33 / Ezek 36:26-27 lived out. The Torah is preserved; the Pharisaic-oral-tradition-fences are removed; the heart-substance is the operative-mode.
+**The King's yoke IS the heart-Torah-walking.** The framework reads Yahusha's (Jesus's) yoke as the substance of the Sermon on the Mount — the Beatitudes-as-citizens-of-the-kingdom-roster, the load-bearing anti-antinomian declaration of Matthew 5:17-19, the six antitheses as oral-tradition correction, the new-heart of Yirmeyahu (Jeremiah) 31:33 and Yechezk'el (Ezekiel) 36:26-27 lived out. The Torah is preserved; the Pharisaic-oral-tradition-fences are removed; the heart-substance is the operative-mode.
 
-**Why the King's yoke is *easy* and the burden *light*** (v.30). *Chrēstos / elaphron.* The framework reads the contrast against the Pharisaic-burden's-heaviness. The Pharisaic-burden was heavy because the oral-tradition-fences multiplied without limit and the credential-architecture demanded performance-without-substance. The King's yoke is easy and light because:
+**Why the King's yoke is easy and the burden light** (v.30). *Chrēstos / elaphron.* The framework reads the contrast against the Pharisaic-burden's-heaviness:
 
 - The Torah is internalized in the heart, not enforced through external-fence-tradition.
-- The new-heart of Yechezk'el (Ezekiel) 36:26-27 CAUSES the disciple to walk in the statutes (the new-heart enables what the old-heart could not produce).
+- The new-heart of Ezekiel 36:26-27 CAUSES the disciple to walk in the statutes (the new-heart enables what the old-heart could not produce).
 - The Ruach HaKodesh (Holy Spirit) supplies the substance the credential-without-substance pattern lacked.
 - The community-of-fellow-disciples carries the yoke together; the disciple is not alone.
-- The King carries the yoke with his disciples (*yoke* as a two-handled-implement that two oxen carry together — the King and the disciple as the two-yoked together).
-- The eschatological-rest-orientation (Tehillim (Psalm) 23, Yeshayahu (Isaiah) 28:12 — *This is the rest wherewith ye may cause the weary to rest; and this is the refreshing*) lands the disciple's-life in the kingdom-citizens' present-age-foretaste of the eschatological-Shabbat.
+- The King carries the yoke with his disciples (the *yoke* in agricultural use is a two-handled implement that two oxen carry together — the King-yoked-with-the-disciple is the yoke's actual operative-shape).
+- The eschatological-rest-orientation lands the disciple's-life in the kingdom-citizens' present-age-foretaste of the eschatological-Shabbat.
 
-**The Yirmeyahu (Jeremiah) 6:16 Tanakh-anchor.** *Thus saith Yahuah (the LORD), Stand ye in the ways, and see, and ask for the old paths, where is the good way, and walk therein, and ye shall find rest for your souls.* The framework reads Yahusha's (Jesus's) *ye shall find rest unto your souls* as direct-citation of Jeremiah 6:16. The good-way the prophet named is the heart-Torah-walking the King is teaching. The rest-for-souls substance is the same in both verses. The framework reads this as the King citing the prophet's-rest-call and applying it to the heart-Torah-walking life.
+**The Yirmeyahu (Jeremiah) 6:16 Tanakh-anchor.** The framework reads Yahusha's (Jesus's) *ye shall find rest unto your souls* as direct-citation of the prophet's-rest-call:
 
-**Acts 15:10 as the apostolic-restatement.** Kefa (Peter) at the Yerushalayim (Jerusalem) Council names the Pharisaic-burden-yoke explicitly: *Now therefore why tempt ye Elohim (God), to put a yoke upon the neck of the disciples, which neither our fathers nor we were able to bear?* The framework reads Kefa's (Peter's) statement as confirmation of the framework's-reading of Matt 11:28-30. The yoke Kefa (Peter) is rejecting is the Pharisaic-oral-tradition-yoke (the *fathers' tradition* of Galatians 1:14), NOT the Torah itself. The framework's `pharisaic-sadducean-system-as-judaizer-predecessor` thread reads Acts 15:10 in continuity with Matt 11:28-30.
+*Thus saith Yahuah (the LORD), Stand ye in the ways, and see, and ask for the old paths, where is the good way, and walk therein, and ye shall find rest for your souls. But they said, We will not walk therein.* (Jeremiah 6:16)
+
+The good-way the prophet named is the heart-Torah-walking the King is teaching. The rest-for-souls substance is the same in both verses. The King is citing the prophet's-rest-call and applying it to the heart-Torah-walking life.
+
+Yeshayahu (Isaiah) had named the same rest-substance:
+
+*To whom he said, This is the rest wherewith ye may cause the weary to rest; and this is the refreshing: yet they would not hear.* (Isaiah 28:12)
+
+And the Tanakh's-foundational rest-substance stands at the wilderness — the Father's-presence-as-rest:
+
+*And he said, My presence shall go with thee, and I will give thee rest.* (Exodus 33:14)
+
+The rest the King offers at Matthew 11:28-30 is the Tanakh's rest-substance lived in person — the Shabbat of the Father's-creation, the rest-promised at the entry into the land, the rest-of-the-good-way the prophet named, the rest-of-the-Father's-presence at Sinai. All of it lands at the King's invitation.
+
+**The apostolic-restatement at Acts 15:10.** Kefa (Peter) at the Yerushalayim (Jerusalem) Council names the Pharisaic-burden-yoke explicitly when the Yahudi (Jewish) Pharisaic-believers attempt to impose the oral-tradition-architecture on the scattered-seed returning to the assembly:
+
+*Now therefore why tempt ye Elohim (God), to put a yoke upon the neck of the disciples, which neither our fathers nor we were able to bear?* (Acts 15:10)
+
+The framework reads Kefa's (Peter's) statement as confirmation of the Matthew 11:28-30 reading. The yoke Kefa (Peter) is rejecting is the Pharisaic-oral-tradition-yoke specifically — the *traditions of the fathers* Paul also names at Galatians 1:14 — NOT the Torah itself. The same architecture, the same diagnostic, the same kingdom-economy.
+
+Yochanan (John) the apostle restates the substance in his first letter:
+
+*For this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous.* (1 John 5:3)
+
+The commandments of the Father — the Torah he gave at Sinai — are not the heavy burden. The Pharisaic-fence-architecture wrapped around them was. The kingdom-citizens, with the new-heart of Ezekiel 36 and the indwelling-Ruach of Jeremiah 31, walk the commandments as the easy yoke and the light burden — because the Spirit who lives in them is the Spirit who spoke the commandments at Sinai. He does not lead them away from himself. Spirit-led life IS Torah life.
 
 **What this passage rules out.**
 
 - Any reading that flattens *my yoke is easy* into *the Torah is abolished.* The framework reads the contrast as Pharisaic-oral-tradition vs heart-Torah, not Torah vs no-Torah.
 - Any reading that uses *come unto me ... I will give you rest* as a generic-emotional-comfort statement divorced from the heart-Torah-substance. The rest Yahusha (Jesus) offers is the rest-of-walking-in-the-good-way (Jeremiah 6:16), not the rest-of-having-no-obligations.
-- Any reading that pits the King's-yoke against the Father's-Torah. The King's yoke IS the Father's-Torah-internalized.
+- Any reading that pits the King's-yoke against the Father's-Torah. The King's yoke IS the Father's-Torah-internalized. The institutional-Christian reading that opposes them is the antichrist reading — the same flesh-credential gospel the Pharisees and the Galatian agitators carried, in a different costume.
 
-The framework reads Matt 11:28-30 as the chapter's invitation to the people-of-the-land bearing the Pharisaic-burden — and to every modern reader bearing any analogous credential-burden (the institutional-Christian works-righteousness despite its lip-service-to-grace; the Hebrew-Roots-credential-pressure; the Muslim-five-pillars-burden) — to come to the King for the heart-Torah-walking that is the easy yoke and the light burden.
+The framework reads Matthew 11:28-30 as the chapter's invitation to the people-of-the-land bearing the Pharisaic-burden — and to every modern reader bearing any analogous credential-burden (the institutional-Christian works-righteousness despite its lip-service-to-grace; the Hebrew Roots credential-pressure with its inherited replacement-theology in Torah-clothing; the Islamic five-pillars-burden; the modern Pharisaic-rabbinic Yahudi (Jewish) burden) — to come to the King for the heart-Torah-walking that is the easy yoke and the light burden.
+
+The chapter closes on the invitation. Matthew 12 will open on the Shabbat-controversies that test the invitation. The King has named the substance; the system will challenge it; the King will answer from the substance the chapter just laid down.
 
 ## §7. Cross-Reference Apparatus
+
+*This section seeds the chapter-end card per `api/CHAPTER_END_CARD_CONTRACT.md`. Layer 1 = per-verse cross-references (curated framework-bearing rows for the `cross_references` table). Layer 2 = framework threads surfacing in this chapter (existing thread members + new threads marked PROPOSED for Yoshi's design call). This section is staging data for the engineering migration pass; it does not surface in the reader UI once the data lives in the database.*
 
 ### Layer 2 — Threads surfacing in Matthew 11
 
@@ -186,7 +275,7 @@ The framework reads Matt 11:28-30 as the chapter's invitation to the people-of-t
 | 8 | Matt 11:28-30 | 1 John 5:3 | *His commandments are not grievous* — the apostolic-affirmation of the easy-yoke / not-grievous-burden framework. |
 | 9 | Matt 11:28-30 | Matt 5:17-19 | The load-bearing anti-antinomian declaration of the Sermon — the Torah Yahusha (Jesus) is yoking the disciples to is the Father's-Torah-internalized. |
 
-**PROPOSED new thread: `father-son-revelation-economy`** *(for Yoshi's design call).* Anchor: Matthew 11:25-27 (the Father-Son revelation-economy prayer). Summary: *The framework's nature-of-God reading explicitly stated in Matt 11:25-27. The Father is the Formless-Source; the Son is the Formed-Expression; the Father delegates authority to the Son (*all things are delivered unto me of my Father*); the Father and the Son know each other in unique-mutual-substance (*no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son*); all knowledge of the Father is mediated through the Son's-revelation (*he to whomsoever the Son will reveal him*). The thread carries the explicit Father-Son relational-architecture statements across the New Testament (John 1:18, John 5:19-23, John 10:30, John 14:6-9, John 17:1-26, 1 Corinthians 8:6, Hebrews 1:1-3, Colossians 1:15-17). The framework's reading rules out both the Trinitarian-three-co-equal-persons construction AND the modalist-collapse. The Formed proceeds-from-the-Formless asymmetrically; the framework's nature-of-God reading per Red Line #6 lands here at Matthean-anchor strength.*
+**PROPOSED new thread: `father-son-revelation-economy`** *(for Yoshi's design call).* Anchor: Matthew 11:25-27 (the Father-Son revelation-economy prayer). Summary: *The framework's nature-of-God reading explicitly stated in Matt 11:25-27. The Father is the Formless-Source; the Son is the Formed-Expression; the Father delegates authority to the Son (*all things are delivered unto me of my Father*); the Father and the Son know each other in unique-mutual-substance (*no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son*); all knowledge of the Father is mediated through the Son's-revelation (*he to whomsoever the Son will reveal him*). The thread carries the explicit Father-Son relational-architecture statements across the New Testament. The framework's reading rules out both the Trinitarian-three-co-equal-persons construction AND the modalist-collapse. The Formed proceeds-from-the-Formless asymmetrically.*
 
 | Sort | Source | Target | Member note |
 |---|---|---|---|
@@ -241,7 +330,7 @@ The framework reads Matt 11:28-30 as the chapter's invitation to the people-of-t
 | Matt 11:25-27 | Matt 3:17 | *This is my beloved Son, in whom I am well pleased* — the Father's-voice naming the Son at the immersion; vv.25-27 elaborates the relational-substance. |
 | Matt 11:27 | John 1:18 | *No man hath seen Elohim (God) at any time; the only begotten Son ... he hath declared him* — the same revelation-economy. |
 
-**Thread: `isaiah-35-messianic-credential`** *(NEW PROPOSED for Yoshi's design call, surfacing this chapter — for the apparatus, see the Matt 11:5 row in Layer 1 below).* The thread will run from Matt 8:17 (Isaiah 53:4 healing-credential) through Matt 9 (the credentialing-display) through Matt 10:8 (the apostolic-extension) to the explicit-citation here at Matt 11:5, plus the Tanakh-anchors (Isaiah 29:18-19, 35:5-6, 26:19, 61:1). Surfaced for design call without full member-rows in this commentary to keep the apparatus economical — design call can populate from the cited verses.
+**PROPOSED new thread: `isaiah-35-messianic-credential`** *(for Yoshi's design call).* Anchor: Matthew 11:5 (Yahusha's (Jesus's) explicit citation of the Isaiah Messianic-credential chain). Summary: *The credentialing-signs of the Messianic-age — blind seeing, lame walking, lepers cleansed, deaf hearing, dead raised, poor receiving good-news — run from the Tanakh-anchors (Isaiah 29:18-19, 35:5-6, 26:19, 61:1) through the King's-ministry (Matt 8-9) to the apostolic-extension (Matt 10:8) to Yahusha's (Jesus's) self-citation here at Matt 11:5. The framework reads Yahusha's (Jesus's) deliberate-omission of the Isaiah 61:2 day-of-vengeance clause as signal to Yochanan (John) of the inaugurated-but-not-yet kingdom tension — the first-coming credential fulfilled; the dreadful-day reserved for the second-coming. Thread populates from cited verses at design call.*
 
 ### Layer 1 — Per-verse cross-references
 
@@ -253,13 +342,14 @@ The framework reads Matt 11:28-30 as the chapter's invitation to the people-of-t
 | Isaiah 29:18-19 | *And in that day shall the deaf hear ... the poor among men shall rejoice in the Holy One of Yashar'el (Israel).* |
 | Isaiah 26:19 | *Thy dead men shall live ... Awake and sing, ye that dwell in dust* — the resurrection-substance. |
 | Isaiah 61:1 | *To preach good tidings unto the meek; he hath sent me to bind up the brokenhearted* — Yahusha's (Jesus's) Nazareth-citation at Luke 4:18; the framework's-omission-of-the-day-of-vengeance carries through both citations. |
+| Luke 4:17-21 | The Nazareth-synagogue reading where Yahusha (Jesus) closes the scroll mid-verse, omitting the same day-of-vengeance clause. |
 
 **Matt 11:10** — *Behold, I send my messenger before thy face.*
 
 | Target | Member note |
 |---|---|
 | Malachi 3:1 | The direct citation. |
-| Isaiah 40:3 | *Prepare ye the way of Yahuah (the LORD)* — the parallel Tanakh-anchor for the Yochanan-pattern. |
+| Isaiah 40:3 | *Prepare ye the way of Yahuah (the LORD)* — the parallel Tanakh-anchor for the Yochanan (John)-pattern. |
 
 **Matt 11:14** — *This is Eliyahu (Elijah), which was for to come.*
 
@@ -267,9 +357,9 @@ The framework reads Matt 11:28-30 as the chapter's invitation to the people-of-t
 |---|---|
 | Malachi 4:5-6 | The direct prophecy. |
 | Matt 17:10-13 | The post-transfiguration confirmation. |
-| Luke 1:17 | The angelic-naming of the Eliyahu-pattern at Yochanan's (John's) conception. |
+| Luke 1:17 | The angelic-naming of the Eliyahu (Elijah)-pattern at Yochanan's (John's) conception. |
 
-**Matt 11:21** — *Woe unto thee, Chorazin! woe unto thee, Beit-Tsaida (Bethsaida)!*
+**Matt 11:21** — *Woe unto thee, Korazin! woe unto thee, Beit-Tsaida (Bethsaida)!*
 
 | Target | Member note |
 |---|---|
@@ -290,7 +380,8 @@ The framework reads Matt 11:28-30 as the chapter's invitation to the people-of-t
 | Luke 10:21-22 | The parallel passage in Luke. |
 | John 5:19-23 | The Son's-derived-substance from the Father. |
 | John 10:14-15 | *As the Father knoweth me, even so know I the Father* — the same mutual-knowledge architecture in John. |
-| 1 Corinthians 1:18-29 | *Hath not Elohim (God) made foolish the wisdom of this world? ... Elohim (God) hath chosen the foolish things of the world to confound the wise* — Paul's-restatement of the babes-over-wise revelation-economy. |
+| 1 Corinthians 1:18-29 | *Hath not Elohim (God) made foolish the wisdom of this world? ... Elohim (God) hath chosen the foolish things of the world to confound the wise* — Paul's restatement of the babes-over-wise revelation-economy. |
+| Exodus 33:20 | *Thou canst not see my face: for there shall no man see me, and live* — the Tanakh-substance of the Formless-Father's-invisibility that the Son's-revelation mediates. |
 
 **Matt 11:28-30** — *Come unto me, all ye that labour and are heavy laden ... my yoke is easy, and my burden is light.*
 
@@ -302,20 +393,4 @@ The framework reads Matt 11:28-30 as the chapter's invitation to the people-of-t
 | Matt 23:4 | The Pharisaic-burden the King's-yoke contrasts against. |
 | Acts 15:10 | Kefa's (Peter's) apostolic-restatement. |
 | 1 John 5:3 | *His commandments are not grievous.* |
-
----
-
-## Standing chapter-level position (for the summation appendix)
-
-**Primary place on the seed/scattering/gathering arc**: the gathering's-credential authenticated against the question of the prophet, the Eliyahu-pattern locked, the system's-inconsistent-rejection diagnosed, the eschatological-graduated-accountability declared, the Father-Son revelation-economy named directly, and the invitation to exchange the Pharisaic-burden-yoke for the King's heart-Torah-yoke laid down. The chapter is transitional and load-bearing — the King's-self-disclosure deepens at the Father-Son-revelation prayer and the come-unto-me invitation.
-
-**Framework hooks:**
-1. **Yochanan's (John's) prison-question and the Isaiah-35 credential answer** — the legitimate-question of a prophet caught in the inaugurated-but-not-yet tension; Yahusha's (Jesus's) deliberately-incomplete citation (Isaiah 35 / Isaiah 29 / Isaiah 26 / Isaiah 61) that omits the day-of-vengeance language reserved for the second-coming — same pattern as the Luke 4:18-19 Nazareth-citation; the kingdom-citizens' enduring-disposition through the inaugurated-but-not-yet tension.
-2. **The Malachi 3-and-Malachi 4 citations locking Yochanan (John) as the Eliyahu-pattern prophet** — *more than a prophet;* implicit-Christology in citing Malachi 3:1 (Yahusha (Jesus) is the Yahuah (LORD) whose way Yochanan (John) prepares); *if ye will receive it, this is Eliyahu (Elijah) which was for to come* with the *if ye will receive it* qualifier reserving the Malachi 4 dreadful-day for the second-coming per the eschatological-filter.
-3. **The kingdom-suffereth-violence saying (v.12)** — the dual reading-trajectory (persecution-trajectory + active-pursuit-trajectory); both within the framework; the kingdom's-inaugural-period marked by both dynamics; the framework's *sit out the counterfeit, speak up against the abominations* posture per `_COMMENTARY_SUMMATION.md` §VII.
-4. **The children-in-the-marketplaces diagnosis** — the Pharisaic-Sadducean-system's-inconsistent-rejection of Yochanan's-austerity and Yahusha's-festivity; the rejection precedes the reasons; *wisdom is justified of her children* names the kingdom-citizens' recognition-of-substance.
-5. **The woes upon Chorazin, Beit-Tsaida, Kfar-Nachum** — the eschatological-graduated-accountability frame; Tyre-and-Tsidon and Sodom Tanakh-substance; *more tolerable in the day of judgment* per Matt 10:15 frame; the Yeshayahu (Isaiah) 14 Babel-echo at Kfar-Nachum's *exalted-unto-heaven / brought-down-to-hell;* `shake-the-dust-off-rejection-response` thread extended.
-6. **FRAMEWORK-MAJOR — the Father-Son revelation-economy prayer at vv.25-27** — direct framework-statement of the Formless-Formed nature-of-God reading; the Father as the Formless-Source addressed as *Lord of heaven and earth*; the Son as the Formed-Expression receiving *all things ... delivered;* the unique-mutual-knowledge architecture (*no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son*); all knowledge of the Father mediated through the Son's-revelation; rules out both the Trinitarian-three-co-equal-persons construction AND the modalist-collapse; new PROPOSED thread `father-son-revelation-economy` anchored here.
-7. **FRAMEWORK-MAJOR — the *come unto me, all ye that labour* invitation at vv.28-30** — the kingdom-citizens' rest-substance against the Pharisaic-burden-system; the *yoke* in rabbinic-vocabulary as the body-of-teaching the disciple-of-a-rabbi accepts; Yahusha's (Jesus's) yoke = the heart-Torah-walking life of the Sermon on the Mount, NOT the abolition of Torah; the contrast is Pharisaic-oral-tradition-yoke vs King's-heart-Torah-yoke, NOT yoke vs no-yoke; the new-heart of Yechezk'el (Ezekiel) 36:26-27 makes the yoke easy; the Yirmeyahu (Jeremiah) 6:16 *good way / rest for your souls* citation Yahusha (Jesus) deploys directly; Acts 15:10's apostolic-restatement of the *yoke ... which neither our fathers nor we were able to bear* naming the Pharisaic-oral-tradition specifically; new PROPOSED thread `yoke-of-torah-easy-vs-pharisaic-burden-heavy` anchored here.
-
-**Cross-reference apparatus seeded:** 2 new PROPOSED framework-major threads (`yoke-of-torah-easy-vs-pharisaic-burden-heavy` — 9 members; `father-son-revelation-economy` — 9 members); 1 new PROPOSED thread surfaced for design-call population (`isaiah-35-messianic-credential`); 4 members added to PROPOSED `yochanan-as-eliyahu-pattern-prophet` thread; 4 members added to PROPOSED `shake-the-dust-off-rejection-response` thread; 3 members added to PROPOSED `pharisaic-sadducean-system-as-judaizer-predecessor` thread; 2 members added to PROPOSED `grace-and-the-opportunity-that-can-be-lost` thread; 3 critical members added to PROPOSED `nature-of-god-formed-in-flesh` thread. Layer 1 per-verse rows for v.5, v.10, v.14, v.21, v.23, v.25-27, v.28-30.
+| Galatians 1:14 | *The traditions of my fathers* — Paul naming the Pharisaic-oral-tradition the kingdom-citizens are released from. |
