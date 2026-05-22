@@ -22,6 +22,11 @@ import HighlightPicker, {
 } from "./components/HighlightPicker";
 import { renderMarkdownBody } from "./lib/markdown";
 import { useTheme } from "./lib/theme";
+import {
+  cancelPendingSave,
+  loadInitialPosition,
+  saveReadingPositionDebounced,
+} from "./lib/reading-position";
 import paragraphStartsData from "./data/paragraph_starts.json";
 
 // S115 Wheel 3 — chrome theme toggle. Small icon-button placed to the
@@ -138,6 +143,19 @@ function Reader() {
   const [selectedBookSlug, setSelectedBookSlug] = useState<string>("genesis");
   const [selectedChapter, setSelectedChapter] = useState<number>(1);
 
+  // S116 — reading-position persistence. `currentVerse` tracks the
+  // topmost-visible verse via IntersectionObserver (initial 1, updated
+  // as the partner scrolls). `hydrated` gates the save effect so the
+  // initial paint at Genesis/1/1 doesn't overwrite the saved position
+  // before the hydrate completes. `initialScrollVerse` is set during
+  // hydrate when the saved position isn't verse 1; cleared after the
+  // post-load scrollIntoView fires.
+  const [currentVerse, setCurrentVerse] = useState<number>(1);
+  const [hydrated, setHydrated] = useState<boolean>(false);
+  const [initialScrollVerse, setInitialScrollVerse] = useState<number | null>(
+    null
+  );
+
   const [chaptersResp, setChaptersResp] =
     useState<BookChaptersResponse | null>(null);
   const [chapterDetail, setChapterDetail] = useState<ChapterDetail | null>(
@@ -165,6 +183,16 @@ function Reader() {
   // picker opens for that verse. Click + drag don't trigger.
   const longPressTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const longPressFiredRef = useRef<boolean>(false);
+
+  // S116 — IntersectionObserver for verse-precise reading-position
+  // tracking. Observes every verse span in the current chapter,
+  // maintains a Map<verseNumber, boundingRectTop> of currently
+  // intersecting verses, and emits the topmost (smallest top value)
+  // as `currentVerse` whenever the set changes. The observer is
+  // recreated each time chapterDetail changes (chapter-load fires
+  // fresh DOM nodes).
+  const verseObserverRef = useRef<IntersectionObserver | null>(null);
+  const visibleVersesRef = useRef<Map<number, number>>(new Map());
   function handlePointerDown(verseId: number) {
     longPressFiredRef.current = false;
     if (longPressTimerRef.current) {
@@ -203,6 +231,39 @@ function Reader() {
     getSubscriptionMe()
       .then(setMe)
       .catch(() => setMe(null));
+  }, []);
+
+  // S116 — hydrate saved reading position on mount. Resolution order
+  // (handled inside loadInitialPosition): API row → localStorage row
+  // → null (caller stays at the Genesis/1/1 defaults). When a saved
+  // position resolves to a non-verse-1 anchor, `initialScrollVerse`
+  // is set so the post-chapter-load effect can scrollIntoView. The
+  // `hydrated` flag flips true once this completes regardless of
+  // outcome — that gates the save effect so the initial paint at
+  // Genesis/1/1 never overwrites the saved row before hydrate.
+  useEffect(() => {
+    let cancelled = false;
+    loadInitialPosition()
+      .then((pos) => {
+        if (cancelled) return;
+        if (pos !== null) {
+          setSelectedBookSlug(pos.bookSlug);
+          setSelectedChapter(pos.chapter);
+          setCurrentVerse(pos.verseNumber);
+          if (pos.verseNumber > 1) {
+            setInitialScrollVerse(pos.verseNumber);
+          }
+        }
+        setHydrated(true);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setHydrated(true);
+      });
+    return () => {
+      cancelled = true;
+      cancelPendingSave();
+    };
   }, []);
 
   // Chapters list reloads when the selected book changes.
@@ -250,6 +311,117 @@ function Reader() {
         // Anonymous or transient failure — leave the map empty.
       });
   }, [selectedBookSlug, selectedChapter]);
+
+  // S116 — IntersectionObserver attach. Recreates the observer each
+  // time chapterDetail changes (chapter-load swaps the verse DOM
+  // nodes). Maintains a Map<verseNumber, boundingRectTop> of
+  // currently intersecting verses; on every callback batch, emits the
+  // verse with the smallest top value (topmost on screen) as the
+  // current reading position. rootMargin tightens the intersection
+  // band to roughly the upper third of the viewport so a partner
+  // who's reading toward the bottom of the visible area doesn't
+  // accidentally save the verse just below their gaze.
+  //
+  // Gated on initialScrollVerse===null so that the first attach after
+  // a hydrate-driven scroll waits until the scroll has landed. Without
+  // the gate, the observer would fire once with verse 1 (browser
+  // un-scrolled), trigger a localStorage write of verse 1, then fire
+  // again with the saved verse after the scroll — causing a brief
+  // window where a refresh would resume to verse 1 instead of the
+  // saved verse.
+  useEffect(() => {
+    if (!chapterDetail) return;
+    if (initialScrollVerse !== null) return;
+    // Clean up any previous observer + reset the visible map.
+    if (verseObserverRef.current) {
+      verseObserverRef.current.disconnect();
+      verseObserverRef.current = null;
+    }
+    visibleVersesRef.current.clear();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const vnAttr = (entry.target as HTMLElement).dataset.verseNumber;
+          if (!vnAttr) continue;
+          const vn = Number(vnAttr);
+          if (entry.isIntersecting) {
+            visibleVersesRef.current.set(vn, entry.boundingClientRect.top);
+          } else {
+            visibleVersesRef.current.delete(vn);
+          }
+        }
+        // Find topmost visible verse (smallest top value).
+        let topVerse: number | null = null;
+        let topVerseY = Infinity;
+        for (const [vn, y] of visibleVersesRef.current) {
+          if (y < topVerseY) {
+            topVerseY = y;
+            topVerse = vn;
+          }
+        }
+        if (topVerse !== null) {
+          setCurrentVerse(topVerse);
+        }
+      },
+      {
+        // Upper-third band — verses below the middle of the viewport
+        // don't compete for the "topmost" slot until the partner
+        // scrolls them up.
+        rootMargin: "0px 0px -50% 0px",
+        threshold: [0, 0.25, 0.5, 1],
+      }
+    );
+
+    // Attach to every verse span rendered for this chapter.
+    document
+      .querySelectorAll<HTMLElement>("[data-verse-number]")
+      .forEach((el) => observer.observe(el));
+    verseObserverRef.current = observer;
+
+    return () => {
+      observer.disconnect();
+      verseObserverRef.current = null;
+      visibleVersesRef.current.clear();
+    };
+  }, [chapterDetail, initialScrollVerse]);
+
+  // S116 — scroll to saved verse once the chapter renders. Fires when
+  // hydrate determined an initialScrollVerse > 1 and the chapterDetail
+  // has loaded (verse DOM is present). After scrolling, clears the
+  // target so subsequent chapter-changes don't re-scroll.
+  useEffect(() => {
+    if (!chapterDetail) return;
+    if (initialScrollVerse === null) return;
+    // Small delay to let the IntersectionObserver attach + paint settle.
+    const handle = setTimeout(() => {
+      const el = document.querySelector<HTMLElement>(
+        `[data-verse-number="${initialScrollVerse}"]`
+      );
+      if (el) {
+        el.scrollIntoView({ behavior: "auto", block: "start" });
+      }
+      setInitialScrollVerse(null);
+    }, 50);
+    return () => clearTimeout(handle);
+  }, [chapterDetail, initialScrollVerse]);
+
+  // S116 — debounced save on position change. Gated on `hydrated` so
+  // the Genesis/1/1 default never overwrites a real saved row before
+  // hydrate completes. Anonymous callers still get a localStorage
+  // write through saveReadingPositionDebounced (the API call inside
+  // is best-effort and 401s silently). Debounce window lives in
+  // lib/reading-position.ts (~1500ms); rapid scrolls collapse to one
+  // API write at the end of the burst.
+  useEffect(() => {
+    if (!hydrated) return;
+    if (!selectedBookSlug || !selectedChapter || !currentVerse) return;
+    saveReadingPositionDebounced({
+      bookSlug: selectedBookSlug,
+      chapter: selectedChapter,
+      verseNumber: currentVerse,
+    });
+  }, [hydrated, selectedBookSlug, selectedChapter, currentVerse]);
 
   // Books grouped by witness_category for the picker.
   const booksByCategory = useMemo(() => {
@@ -324,6 +496,10 @@ function Reader() {
             onChange={(e) => {
               setSelectedBookSlug(e.target.value);
               setSelectedChapter(1);
+              // S116 — picker change resets verse to 1 so the save
+              // effect doesn't briefly persist the previous chapter's
+              // last-visible verse against the new book/chapter pair.
+              setCurrentVerse(1);
             }}
             className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-[var(--reader-text)]"
           >
@@ -352,7 +528,12 @@ function Reader() {
           <span>Chapter</span>
           <select
             value={selectedChapter}
-            onChange={(e) => setSelectedChapter(Number(e.target.value))}
+            onChange={(e) => {
+              setSelectedChapter(Number(e.target.value));
+              // S116 — chapter picker change resets verse to 1 for
+              // the same reason as the book picker above.
+              setCurrentVerse(1);
+            }}
             className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-[var(--reader-text)]"
           >
             {chaptersForBook.map((c) => (
@@ -427,6 +608,7 @@ function Reader() {
                     return (
                       <span
                         key={v.id}
+                        data-verse-number={v.verse_number}
                         className={`verse-interactive ${markClass}`}
                         style={markStyle}
                         onPointerDown={() => handlePointerDown(v.id)}

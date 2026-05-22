@@ -464,3 +464,50 @@ class UpdateHighlightLabelsRequest(BaseModel):
     """
 
     labels: List[UpdateHighlightLabelEntry] = Field(..., min_length=1)
+
+
+# ----- Reading position (Session 116) -------------------------------------
+#
+# Single-row-per-user "where I left off" pointer. Schema at
+# data-schema/schema.sql lines 597-601 — user_id (PK) + verse_id +
+# updated_at, designed at S77 and built at S110. The API surface stays
+# in slug/chapter/verse_number register (PWA-readable); the opaque
+# verse_id stays server-side as the pointer.
+#
+# Per DESIGN_LANGUAGE.md §9, reading history (last position, recently
+# read) is a free-tier feature — every authenticated partner gets the
+# resume regardless of tier. Anonymous partners use localStorage on the
+# PWA side as a parallel fallback.
+
+
+class ReadingPositionResponse(BaseModel):
+    """GET /v1/reading-position — the partner's most-recently-saved
+    reading position, resolved to the PWA-readable book + chapter +
+    verse_number register.
+
+    The API returns 404 when the partner has no row yet (first-ever
+    visit, or row never written from the client). The PWA falls
+    through to its localStorage value, then to Genesis 1.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    book_slug: str
+    chapter_number: int
+    verse_number: int
+    updated_at: datetime
+
+
+class UpsertReadingPositionRequest(BaseModel):
+    """PUT /v1/reading-position body — the (book, chapter, verse) the
+    partner is currently viewing.
+
+    Server resolves to verse_id by (book_slug, chapter_number,
+    verse_number) and upserts with ON CONFLICT (user_id) DO UPDATE.
+    No tier gate — reading position is a free-tier feature per
+    DESIGN_LANGUAGE.md §9, available to every authenticated partner.
+    """
+
+    book_slug: str
+    chapter_number: int = Field(..., ge=1)
+    verse_number: int = Field(..., ge=1)

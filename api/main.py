@@ -127,10 +127,12 @@ from models import (
     HighlightLabel,
     HighlightLabelsResponse,
     MarkStyle,
+    ReadingPositionResponse,
     ThreadAnchor,
     ThreadMember,
     ThreadMemberTarget,
     UpdateHighlightLabelsRequest,
+    UpsertReadingPositionRequest,
     Verse,
     VerseSearchHit,
     VerseSearchResponse,
@@ -1099,6 +1101,132 @@ async def update_highlight_labels(
                         trimmed,
                     )
         return await _build_labels_response(conn, user_uuid)
+
+
+# ----- Reading position (Session 116) -------------------------------------
+#
+# Per DESIGN_LANGUAGE.md §9: "reading history (last position, recently
+# read)" is a free-tier feature. Schema is the reading_positions table
+# (data-schema/schema.sql lines 597-601), one row per user with the
+# verse_id pointer + updated_at timestamp.
+#
+# The API exposes the position in PWA-readable slug/chapter/verse_number
+# register. The opaque verse_id stays server-side — the PWA never sees
+# it (and shouldn't, since it ties to the canon edition's verse rows
+# which are an implementation detail).
+#
+# Endpoints:
+#   GET  /v1/reading-position  — return the partner's saved position
+#                                 (404 when none saved yet)
+#   PUT  /v1/reading-position  — upsert the partner's saved position
+#
+# No tier gate. Every authenticated partner has reading-position resume.
+# Anonymous callers use localStorage on the PWA side as a parallel
+# fallback (they get a 401 here, which the PWA treats the same as "no
+# saved row" and falls through to localStorage / Genesis 1).
+
+
+@app.get("/v1/reading-position", response_model=ReadingPositionResponse)
+async def get_reading_position(
+    current_user: User = Depends(get_current_user_required),
+) -> ReadingPositionResponse:
+    """Return the partner's saved reading position, resolved to the
+    PWA-readable slug/chapter/verse_number register.
+
+    Scoped to the canon edition (mirrors the highlights endpoint's
+    edition-resolution discipline). Returns 404 when the partner has
+    no row yet — first-ever visit, or row never written from the
+    client. The PWA falls through to its localStorage value, then to
+    Genesis 1.
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        row = await conn.fetchrow(
+            "SELECT b.slug AS book_slug, "
+            "       c.chapter_number, "
+            "       v.verse_number, "
+            "       rp.updated_at "
+            "  FROM reading_positions rp "
+            "  JOIN verses   v ON rp.verse_id   = v.id "
+            "  JOIN chapters c ON v.chapter_id  = c.id "
+            "  JOIN books    b ON c.book_id     = b.id "
+            "  JOIN editions e ON b.edition_id  = e.id "
+            " WHERE rp.user_id = $1::uuid "
+            "   AND e.slug = 'canon'",
+            user_uuid,
+        )
+    if row is None:
+        raise HTTPException(
+            status_code=404,
+            detail="No reading position saved yet for this partner.",
+        )
+    return ReadingPositionResponse(**dict(row))
+
+
+@app.put("/v1/reading-position", response_model=ReadingPositionResponse)
+async def upsert_reading_position(
+    body: UpsertReadingPositionRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> ReadingPositionResponse:
+    """Save the partner's current reading position.
+
+    Upserts on (user_id) — one row per partner, last-write-wins.
+    Resolves the (book_slug, chapter_number, verse_number) triple to
+    verse_id by joining books → chapters → verses, scoped to the canon
+    edition. Returns 404 if the triple doesn't resolve to a real verse
+    (catches typos / stale chapter numbers / book-slug drift). No tier
+    gate — free-tier feature per DESIGN_LANGUAGE.md §9.
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+
+        verse_row = await conn.fetchrow(
+            "SELECT v.id AS verse_id "
+            "  FROM books    b "
+            "  JOIN chapters c ON c.book_id    = b.id "
+            "  JOIN verses   v ON v.chapter_id = c.id "
+            "  JOIN editions e ON b.edition_id = e.id "
+            " WHERE b.slug            = $1 "
+            "   AND c.chapter_number  = $2 "
+            "   AND v.verse_number    = $3 "
+            "   AND e.slug            = 'canon' "
+            " LIMIT 1",
+            body.book_slug,
+            body.chapter_number,
+            body.verse_number,
+        )
+        if verse_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=(
+                    f"Verse not found in canon: book_slug='{body.book_slug}', "
+                    f"chapter={body.chapter_number}, verse={body.verse_number}."
+                ),
+            )
+
+        # Upsert on the PK (user_id). RETURNING updated_at gives the
+        # canonical timestamp; the request body already carries the
+        # resolved (slug, chapter, verse) triple, so we echo it back
+        # with the timestamp the DB set.
+        upserted = await conn.fetchrow(
+            "INSERT INTO reading_positions (user_id, verse_id) "
+            "VALUES ($1::uuid, $2) "
+            "ON CONFLICT (user_id) DO UPDATE "
+            "  SET verse_id   = EXCLUDED.verse_id, "
+            "      updated_at = now() "
+            "RETURNING updated_at",
+            user_uuid,
+            verse_row["verse_id"],
+        )
+
+    return ReadingPositionResponse(
+        book_slug=body.book_slug,
+        chapter_number=body.chapter_number,
+        verse_number=body.verse_number,
+        updated_at=upserted["updated_at"],
+    )
 
 
 # ----- Search -------------------------------------------------------------

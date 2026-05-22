@@ -674,3 +674,55 @@ export function updateHighlightLabels(
     body
   );
 }
+
+// ----- Reading position (Session 116) ------------------------------------
+//
+// Single-row-per-user "where I left off" pointer. Schema-side and
+// API-side documented in api/models.py + api/main.py. The PWA stores
+// the same shape in localStorage as a parallel fallback for anonymous
+// readers and for when the API is unreachable.
+//
+// Free-tier feature per DESIGN_LANGUAGE.md §9. No tier gate on either
+// endpoint — every authenticated partner can resume.
+
+export interface ReadingPositionResponse {
+  book_slug: string;
+  chapter_number: number;
+  verse_number: number;
+  updated_at: string;
+}
+
+export interface UpsertReadingPositionRequest {
+  book_slug: string;
+  chapter_number: number;
+  verse_number: number;
+}
+
+/**
+ * Fetch the authenticated partner's saved reading position.
+ *
+ * Returns the row when present; the caller catches and handles 404
+ * ("no row yet — fall through to localStorage / Genesis 1") and 401
+ * ("anonymous — fall through to localStorage / Genesis 1") the same
+ * way. Both are normal first-visit / anonymous states, not errors.
+ */
+export function getReadingPosition(): Promise<ReadingPositionResponse> {
+  return get<ReadingPositionResponse>("/reading-position");
+}
+
+/**
+ * Save the partner's current reading position.
+ *
+ * The PWA calls this debounced (~1500ms) on chapter-change and on the
+ * topmost-visible verse changing (IntersectionObserver). Anonymous
+ * callers get a 401 from the API; the helper module
+ * (lib/reading-position.ts) catches and writes localStorage instead.
+ */
+export function putReadingPosition(
+  body: UpsertReadingPositionRequest
+): Promise<ReadingPositionResponse> {
+  return put<UpsertReadingPositionRequest, ReadingPositionResponse>(
+    "/reading-position",
+    body
+  );
+}
