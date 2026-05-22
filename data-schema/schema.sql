@@ -580,13 +580,29 @@ CREATE INDEX idx_notes_user_chapter  ON study_notes(user_id, chapter_id);
 -- A user-authored highlight on a verse range. The reader UX wants
 -- inline highlighting more than verse-level full notes for many
 -- readers; this is the lighter-weight surface.
+--
+-- S113 added the `style` column (fill / underline / outline) per
+-- DESIGN_LANGUAGE.md §8 and tightened the unique constraint to
+-- (user_id, verse_id) — one mark per verse per user, re-marking
+-- replaces.
+--
+-- S117 relaxed the unique constraint to (user_id, verse_id, color,
+-- style) per Yoshi's S114 ask: same exact (color, style) tuple is
+-- unique on a verse, but different combos coexist — crimson fill +
+-- emerald underline + sky_blue outline all live on the same verse
+-- simultaneously; multiple underlines in different colors stack via
+-- nested PWA spans with text-underline-offset increments. Cap of 3
+-- marks per verse enforced at the PWA picker layer.
 CREATE TABLE verse_highlights (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id         UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     verse_id        BIGINT NOT NULL REFERENCES verses(id) ON DELETE CASCADE,
     color           TEXT NOT NULL DEFAULT 'yellow',
+    style           TEXT NOT NULL DEFAULT 'fill'
+                        CHECK (style IN ('fill', 'underline', 'outline')),
     created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
-    UNIQUE (user_id, verse_id, color)
+    CONSTRAINT verse_highlights_user_verse_color_style_unique
+        UNIQUE (user_id, verse_id, color, style)
 );
 
 CREATE INDEX idx_highlights_user ON verse_highlights(user_id);

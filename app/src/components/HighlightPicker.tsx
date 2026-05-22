@@ -1,19 +1,30 @@
 /**
- * HighlightPicker — Session 113 wheel.
+ * HighlightPicker — Session 113 wheel, rebuilt at Session 117 for
+ * multi-mark.
  *
  * Long-press-triggered popover that lets the partner mark a verse with
- * one of the 13 palette colors × 3 mark styles. Locked per
+ * one or more (color, style) combinations. Locked per
  * DESIGN_LANGUAGE.md §6, §7, §8:
  *
  *   - Free tier: neon_yellow + fill style only. The other 12 colors
  *     and the underline / outline styles render dimmed with the
  *     upgrade affordance.
  *   - $1.99-and-above: all 13 colors × 3 styles, plus the free-form
- *     color-meaning dictionary (gear icon → inline editor).
+ *     color-meaning dictionary (paid-tier "+ Add color labels" gear).
+ *
+ * S117 multi-mark — schema unique is (user_id, verse_id, color, style),
+ * so different (color, style) combos coexist on a single verse:
+ * crimson fill + emerald underline + sky_blue outline all live on the
+ * same verse simultaneously, and multiple underlines in different
+ * colors stack via PWA-side nested spans with text-underline-offset
+ * increments. The same exact (color, style) tuple on the same verse is
+ * a no-op (insert-or-no-op semantics on the API side). Picker enforces
+ * a 3-mark hard cap per verse for readability.
  *
  * Props give the picker the verse it was opened on, the partner's
- * effective tier, the current mark (if any), and callbacks for save /
- * delete / close / labels-changed.
+ * existing marks on that verse (array, possibly empty), the effective
+ * tier, and callbacks for save / per-mark-delete / close / labels-
+ * changed.
  */
 
 import { useEffect, useState } from "react";
@@ -34,14 +45,14 @@ import {
 
 interface HighlightPickerProps {
   verseId: number;
-  /** The partner's current mark on this verse, or null if unmarked. */
-  current: Highlight | null;
+  /** The partner's existing marks on this verse (empty array if none). */
+  current: Highlight[];
   /** Caller's effective tier. */
   userTier: ContentTier;
-  /** Callback after a successful save — parent updates the highlights map. */
+  /** Callback after a successful save — parent appends/dedup-merges into the highlights map. */
   onSaved: (h: Highlight) => void;
-  /** Callback after a successful delete — parent removes from the map. */
-  onDeleted: (verseId: number) => void;
+  /** Callback after a successful delete — parent removes the matching mark by id. */
+  onDeleted: (highlightId: string) => void;
   /** Callback when the picker should close (background tap, save, delete). */
   onClose: () => void;
 }
@@ -52,6 +63,11 @@ const PRO_TIERS: ContentTier[] = [
   "complete_study",
   "everything",
 ];
+
+/** S117 — hard cap on marks per verse. Picker prevents Add at this count.
+ *  Schema doesn't enforce; the cap lives in the UI per the design lock at
+ *  DESIGN_LANGUAGE.md §8 (S117 update). */
+const MAX_MARKS_PER_VERSE = 3;
 
 function isPaid(tier: ContentTier): boolean {
   return PRO_TIERS.includes(tier);
@@ -67,6 +83,11 @@ function fillHexFor(color: HighlightColor): string {
   return `${hex}${a}`;
 }
 
+/** Pretty-print a style name for chip labels. */
+function prettyStyle(style: MarkStyle): string {
+  return style; // 'fill' | 'underline' | 'outline' — already reader-friendly
+}
+
 export default function HighlightPicker({
   verseId,
   current,
@@ -76,13 +97,16 @@ export default function HighlightPicker({
   onClose,
 }: HighlightPickerProps) {
   const paid = isPaid(userTier);
+  const capReached = current.length >= MAX_MARKS_PER_VERSE;
 
-  const [selectedColor, setSelectedColor] = useState<HighlightColor>(
-    current?.color ?? "neon_yellow"
-  );
-  const [selectedStyle, setSelectedStyle] = useState<MarkStyle>(
-    current?.style ?? "fill"
-  );
+  // S117 — initial picker state defaults to neon_yellow + fill. Earlier
+  // versions seeded from `current` (the single existing mark) because
+  // re-marking replaced; under multi-mark there's no "the existing
+  // mark" to seed from (there can be 0..3 of them), so we default and
+  // let the partner pick whatever new combo they want to add.
+  const [selectedColor, setSelectedColor] =
+    useState<HighlightColor>("neon_yellow");
+  const [selectedStyle, setSelectedStyle] = useState<MarkStyle>("fill");
   const [labels, setLabels] = useState<HighlightLabel[]>([]);
   const [editingLabels, setEditingLabels] = useState<boolean>(false);
   const [labelDraft, setLabelDraft] = useState<Record<HighlightColor, string>>(
@@ -133,17 +157,26 @@ export default function HighlightPicker({
     return found?.label ?? "";
   }
 
-  async function handleSave(
-    color: HighlightColor = selectedColor,
-    style: MarkStyle = selectedStyle
-  ) {
+  /** S117 — true when the selected (color, style) tuple is already a
+   *  mark on this verse. Mark button disables in this state so the
+   *  partner can't queue a no-op insert (the API would no-op too, but
+   *  the picker should communicate the state clearly). */
+  function selectedTupleAlreadyMarked(): boolean {
+    return current.some(
+      (m) => m.color === selectedColor && m.style === selectedStyle
+    );
+  }
+
+  async function handleSave() {
+    if (capReached) return; // belt-and-suspenders — UI also disables
+    if (selectedTupleAlreadyMarked()) return;
     setError(null);
     setSaving(true);
     try {
       const saved = await createOrReplaceHighlight({
         verse_id: verseId,
-        color,
-        style,
+        color: selectedColor,
+        style: selectedStyle,
       });
       onSaved(saved);
       onClose();
@@ -154,17 +187,17 @@ export default function HighlightPicker({
     }
   }
 
-  async function handleDelete() {
-    if (!current) {
-      onClose();
-      return;
-    }
+  /** S117 — per-mark delete via chip ×. The chip carries the mark's id
+   *  through the closure; the API delete is by id. */
+  async function handleDeleteMark(mark: Highlight) {
     setError(null);
     setSaving(true);
     try {
-      await deleteHighlight(current.id);
-      onDeleted(verseId);
-      onClose();
+      await deleteHighlight(mark.id);
+      onDeleted(mark.id);
+      // Don't close — partner may want to add a replacement or remove
+      // another. The chip disappears via the parent state update; the
+      // picker stays open.
     } catch (e) {
       setError(String(e));
     } finally {
@@ -268,144 +301,186 @@ export default function HighlightPicker({
         className="w-full max-w-md rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Header row — title + (paid only) "Add color labels" gear. The
+            free-tier "$1.99 — Labels" tag is intentionally hidden at S117:
+            the bottom-of-picker upgrade prompt already explains what
+            $1.99 unlocks; inline-pricing a single button gave the wrong
+            impression that every action was individually-priced. */}
         <div className="mb-3 flex items-baseline justify-between">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
             Mark verse
           </h3>
-          {paid ? (
+          {paid && (
             <button
               type="button"
               onClick={() => setEditingLabels(true)}
               className="font-sans text-xs text-[var(--reader-muted)] hover:text-[var(--reader-text)] hover:underline"
-              aria-label="Edit color labels"
-              title="Edit color meanings"
+              aria-label="Add color labels"
+              title="Assign your own meaning to each color"
             >
-              ⚙ Labels
+              + Add color labels
             </button>
-          ) : (
-            <a
-              href="/pricing"
-              className="font-sans text-xs text-[var(--reader-muted)] hover:text-[var(--reader-text)] hover:underline"
-              title="Unlock label customization with Notes ($1.99/mo)"
-            >
-              ⚙ Labels — $1.99
-            </a>
           )}
         </div>
 
-        {/* Style toggle row */}
-        <div className="mb-3 flex gap-2">
-          {MARK_STYLES.map((style) => {
-            const locked = styleIsLocked(style);
-            const selected = style === selectedStyle;
-            return (
-              <button
-                key={style}
-                type="button"
-                onClick={() => {
-                  if (locked) {
-                    window.location.href = "/pricing";
-                    return;
-                  }
-                  setSelectedStyle(style);
-                }}
-                className={`flex-1 rounded border px-2 py-1.5 text-xs font-medium capitalize ${
-                  selected
-                    ? "border-[var(--reader-text)] bg-[var(--reader-text)] text-[var(--reader-bg)]"
-                    : "border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-text)]"
-                } ${locked ? "opacity-50" : ""}`}
-                title={
-                  locked
-                    ? `${style} — unlock with Notes ($1.99/mo)`
-                    : style
-                }
+        {/* S117 chips row — existing marks on this verse, each with × to
+            remove. Empty when no marks; tight row that takes minimal
+            vertical space when populated. */}
+        {current.length > 0 && (
+          <div className="mb-3 flex flex-wrap gap-1.5">
+            {current.map((mark) => (
+              <span
+                key={mark.id}
+                className="inline-flex items-center gap-1.5 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-xs"
+                title={`${mark.color} — ${prettyStyle(mark.style)}`}
               >
-                {style}
-                {locked && " 🔒"}
-              </button>
-            );
-          })}
-        </div>
+                <span
+                  className="inline-block h-3 w-3 rounded-full border border-[var(--reader-rule)]"
+                  style={{ backgroundColor: HIGHLIGHT_HEX[mark.color] }}
+                  aria-hidden="true"
+                />
+                <span className="text-[var(--reader-text)]">
+                  {prettyStyle(mark.style)}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => handleDeleteMark(mark)}
+                  disabled={saving}
+                  className="ml-0.5 text-[var(--reader-muted)] hover:text-[var(--reader-text)] disabled:opacity-50"
+                  aria-label={`Remove ${mark.color} ${mark.style} mark`}
+                  title={`Remove ${mark.color} ${mark.style} mark`}
+                >
+                  ×
+                </button>
+              </span>
+            ))}
+          </div>
+        )}
 
-        {/* Color swatch grid */}
-        <div className="mb-3 grid grid-cols-7 gap-2">
-          {HIGHLIGHT_PALETTE_ORDER.map((color) => {
-            const locked = colorIsLocked(color);
-            const selected = color === selectedColor;
-            const labelText = labelFor(color);
-            return (
-              <button
-                key={color}
-                type="button"
-                onClick={() => {
-                  if (locked) {
-                    window.location.href = "/pricing";
-                    return;
-                  }
-                  setSelectedColor(color);
-                }}
-                className={`swatch ${selected ? "is-selected" : ""} ${
-                  locked ? "is-locked" : ""
-                }`}
-                style={{ backgroundColor: HIGHLIGHT_HEX[color] }}
-                title={
-                  locked
-                    ? `${color} — unlock with Notes ($1.99/mo)`
-                    : labelText
-                      ? `${color} — ${labelText}`
-                      : color
-                }
-                aria-label={
-                  locked
-                    ? `${color} — unlock with Notes`
-                    : labelText || color
-                }
-              />
-            );
-          })}
-        </div>
-
-        {/* Label for the currently selected color, if set */}
-        {labelFor(selectedColor) && (
-          <p className="mb-3 text-xs italic text-[var(--reader-muted)]">
-            {labelFor(selectedColor)}
+        {/* S117 cap-reached notice — replaces the swatch/style picker when
+            the verse already has MAX_MARKS_PER_VERSE marks. Partner must
+            remove one to add another. */}
+        {capReached ? (
+          <p className="mb-3 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-2 text-sm text-[var(--reader-muted)]">
+            This verse has {MAX_MARKS_PER_VERSE} marks — the maximum. Remove
+            one of the chips above to add another.
           </p>
+        ) : (
+          <>
+            {/* Style toggle row */}
+            <div className="mb-3 flex gap-2">
+              {MARK_STYLES.map((style) => {
+                const locked = styleIsLocked(style);
+                const selected = style === selectedStyle;
+                return (
+                  <button
+                    key={style}
+                    type="button"
+                    onClick={() => {
+                      if (locked) {
+                        window.location.href = "/pricing";
+                        return;
+                      }
+                      setSelectedStyle(style);
+                    }}
+                    className={`flex-1 rounded border px-2 py-1.5 text-xs font-medium capitalize ${
+                      selected
+                        ? "border-[var(--reader-text)] bg-[var(--reader-text)] text-[var(--reader-bg)]"
+                        : "border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-text)]"
+                    } ${locked ? "opacity-50" : ""}`}
+                    title={
+                      locked
+                        ? `${style} — unlock with Notes ($1.99/mo)`
+                        : style
+                    }
+                  >
+                    {style}
+                    {locked && " 🔒"}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Color swatch grid */}
+            <div className="mb-3 grid grid-cols-7 gap-2">
+              {HIGHLIGHT_PALETTE_ORDER.map((color) => {
+                const locked = colorIsLocked(color);
+                const selected = color === selectedColor;
+                const labelText = labelFor(color);
+                return (
+                  <button
+                    key={color}
+                    type="button"
+                    onClick={() => {
+                      if (locked) {
+                        window.location.href = "/pricing";
+                        return;
+                      }
+                      setSelectedColor(color);
+                    }}
+                    className={`swatch ${selected ? "is-selected" : ""} ${
+                      locked ? "is-locked" : ""
+                    }`}
+                    style={{ backgroundColor: HIGHLIGHT_HEX[color] }}
+                    title={
+                      locked
+                        ? `${color} — unlock with Notes ($1.99/mo)`
+                        : labelText
+                          ? `${color} — ${labelText}`
+                          : color
+                    }
+                    aria-label={
+                      locked
+                        ? `${color} — unlock with Notes`
+                        : labelText || color
+                    }
+                  />
+                );
+              })}
+            </div>
+
+            {/* Label for the currently selected color, if set */}
+            {labelFor(selectedColor) && (
+              <p className="mb-3 text-xs italic text-[var(--reader-muted)]">
+                {labelFor(selectedColor)}
+              </p>
+            )}
+          </>
         )}
 
         {error && (
           <p className="mb-3 text-sm text-red-600">{error}</p>
         )}
 
-        <div className="flex flex-wrap justify-between gap-2">
-          {current ? (
+        <div className="flex flex-wrap justify-end gap-2">
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded border border-[var(--reader-rule)] px-3 py-1.5 text-sm"
+          >
+            {current.length > 0 ? "Done" : "Cancel"}
+          </button>
+          {!capReached && (
             <button
               type="button"
-              onClick={handleDelete}
-              disabled={saving}
-              className="rounded border border-red-200 px-3 py-1.5 text-sm text-red-700 hover:bg-red-50 disabled:opacity-50"
-            >
-              Remove mark
-            </button>
-          ) : (
-            <span />
-          )}
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={onClose}
-              className="rounded border border-[var(--reader-rule)] px-3 py-1.5 text-sm"
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              onClick={() => handleSave()}
-              disabled={saving}
+              onClick={handleSave}
+              disabled={saving || selectedTupleAlreadyMarked()}
               className="rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] disabled:opacity-50"
+              title={
+                selectedTupleAlreadyMarked()
+                  ? "This color and style is already on the verse"
+                  : "Add this mark to the verse"
+              }
             >
-              {saving ? "Saving…" : current ? "Update" : "Mark verse"}
+              {saving
+                ? "Saving…"
+                : selectedTupleAlreadyMarked()
+                  ? "Already marked"
+                  : current.length > 0
+                    ? "Add mark"
+                    : "Mark verse"}
             </button>
-          </div>
+          )}
         </div>
 
         {!paid && (
@@ -423,7 +498,10 @@ export default function HighlightPicker({
 }
 
 /** Read-only helper: compute the inline style props for rendering a
- *  marked verse span with the given (color, style). */
+ *  marked verse span with the given (color, style). Underline-offset
+ *  is set per-mark by the verse-render layer in App.tsx based on the
+ *  mark's index among the underline marks on that verse (multi-underline
+ *  stacking — first underline at the CSS-default 2px, then 7px, 12px). */
 export function markCssVarsFor(color: HighlightColor): React.CSSProperties {
   return {
     ["--mark-color" as string]: HIGHLIGHT_HEX[color],

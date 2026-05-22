@@ -118,6 +118,8 @@ Symbolic mapping to the 12 tribes is open as a V2 enrichment (tribe + breastplat
 
 User selects style AND color at the moment of marking. Free tier: fill only. $1.99+: all three styles available across all 12 colors (3 × 12 = 36 mark configurations).
 
+**Multi-mark per verse (S117 lock).** Up to **three marks** can coexist on a single verse — the schema unique is `(user_id, verse_id, color, style)`, and the PWA picker enforces the 3-mark cap. The three (color, style) combos render layered: a verse can carry crimson fill + emerald underline + sky_blue outline at the same time, and the framework's intended use case — *multiple underlines in different colors on the same verse* — is supported by stacking the underline marks via nested PWA spans with `text-underline-offset` increments (2px, 7px, 12px). The same exact (color, style) tuple can't double-stack on a verse (the schema unique prevents it). Re-applying an exact duplicate is a no-op; applying a new (color, style) inserts a new mark alongside existing ones; the picker shows existing marks as chips at the top with × to remove each. The 3-mark cap is a PWA-side rule for readability ("2-3 stack reads clean; beyond that gets muddy") — schema doesn't enforce it. If the cap ever needs to change, it's a single constant in `HighlightPicker.tsx` (`MAX_MARKS_PER_VERSE`) and a paragraph update here. Earlier sessions (S77/S78/S113) didn't explicitly say "one mark per verse" — that was an S113 implementation choice, not a locked decision. S117 lifts it.
+
 ---
 
 ## 9. Tier-Feature Matrix

@@ -942,13 +942,21 @@ async def create_or_replace_highlight(
     body: CreateHighlightRequest,
     current_user: User = Depends(get_current_user_required),
 ) -> Highlight:
-    """Create or replace the mark on one verse. Tier-validated.
+    """Create-or-no-op a mark on one verse. Tier-validated.
 
-    One mark per (user, verse) per the design lock — POSTing replaces
-    the previous mark's color and style. Free callers can only apply
-    (color='neon_yellow', style='fill'); $1.99-and-above can apply any
-    of the 12 tribe palette colors plus neon_yellow, in any of the 3
-    styles (fill, underline, outline).
+    S117 multi-mark: the unique constraint is (user_id, verse_id,
+    color, style). Re-applying an exact (color, style) duplicate on
+    the same verse is a no-op (ON CONFLICT DO UPDATE matches the
+    existing row and the EXCLUDED values are identical — RETURNING
+    gives back the existing row). Applying a different (color, style)
+    on the same verse INSERTs a new row alongside the existing marks
+    — multiple marks can coexist on one verse (different colors and
+    styles compose visually via nested PWA spans).
+
+    Cap of 3 marks per verse enforced at the PWA picker layer.
+    Free callers can only apply (color='neon_yellow', style='fill');
+    $1.99-and-above can apply any of the 12 tribe palette colors plus
+    neon_yellow, in any of the 3 styles (fill, underline, outline).
     """
     tier = user_tier(current_user)
     allowed_colors = _allowed_colors_for_tier(tier)
@@ -985,14 +993,19 @@ async def create_or_replace_highlight(
                 detail=f"Verse id={body.verse_id} not found.",
             )
 
-        # Upsert on the (user_id, verse_id) constraint — one mark per
-        # verse per user, re-marking replaces. RETURNING brings back
-        # the row (whether the insert created it or the update touched
-        # it).
+        # S117 multi-mark: insert on the (user_id, verse_id, color,
+        # style) unique tuple. DO UPDATE is effectively a no-op
+        # (EXCLUDED.color = existing.color and EXCLUDED.style =
+        # existing.style on conflict, so the row is unchanged) — but
+        # RETURNING gives us the existing row back, which keeps the
+        # response shape consistent whether the insert created a new
+        # mark or matched an existing duplicate-tuple call. Different
+        # (color, style) tuples on the same verse INSERT new rows
+        # alongside existing marks — coexistence is the whole point.
         row = await conn.fetchrow(
             "INSERT INTO verse_highlights (user_id, verse_id, color, style) "
             "VALUES ($1::uuid, $2, $3, $4) "
-            "ON CONFLICT ON CONSTRAINT verse_highlights_user_verse_unique "
+            "ON CONFLICT ON CONSTRAINT verse_highlights_user_verse_color_style_unique "
             "DO UPDATE SET color = EXCLUDED.color, style = EXCLUDED.style "
             "RETURNING id::text, verse_id, color, style, created_at",
             user_uuid,

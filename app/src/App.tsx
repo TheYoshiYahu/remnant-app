@@ -29,12 +29,16 @@ import {
 } from "./lib/reading-position";
 import paragraphStartsData from "./data/paragraph_starts.json";
 
-// S115 Wheel 3 — chrome theme toggle. Small icon-button placed to the
+// S115 Wheel 3 — chrome theme toggle. Small button placed to the
 // left of the subscription CTA. Sun glyph when dark (click to go light);
 // moon glyph when light (click to go dark). The button itself uses the
 // existing light/bordered chrome button styling so it reads as part of
 // the chrome button family. Persistence + DOM-attribute flip lives in
 // lib/theme.ts; this component is the surface.
+//
+// S117 — visible "Theme" text label added next to the glyph per Yoshi's
+// feedback that the icon-only version was hard to find. Glyph stays as
+// the visual hook; the word "Theme" makes the affordance discoverable.
 function ThemeToggle() {
   const { theme, toggle } = useTheme();
   const isDark = theme === "dark";
@@ -44,9 +48,10 @@ function ThemeToggle() {
       onClick={toggle}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       title={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      className="self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+      className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
     >
       <span aria-hidden="true">{isDark ? "☼" : "☾"}</span>
+      <span>Theme</span>
     </button>
   );
 }
@@ -169,12 +174,16 @@ function Reader() {
   // chrome at all in that case.
   const [me, setMe] = useState<SubscriptionMe | null>(null);
 
-  // Session 113: per-chapter highlights map + picker state.
-  // `highlightsByVerse` keys are verse_id; one mark per verse per the
-  // design lock. `pickerVerseId` opens the HighlightPicker for a single
-  // verse on long-press / right-click; null = picker closed.
+  // S113 → S117: per-chapter highlights map + picker state.
+  // `highlightsByVerse` keys are verse_id and values are ARRAYS of
+  // marks on that verse (S117 multi-mark: schema unique is
+  // (user_id, verse_id, color, style), so a verse can carry up to 3
+  // marks per the picker cap; different (color, style) tuples coexist
+  // visually via nested spans). `pickerVerseId` opens the
+  // HighlightPicker for a single verse on long-press / right-click;
+  // null = picker closed.
   const [highlightsByVerse, setHighlightsByVerse] = useState<
-    Record<number, Highlight>
+    Record<number, Highlight[]>
   >({});
   const [pickerVerseId, setPickerVerseId] = useState<number | null>(null);
 
@@ -301,9 +310,14 @@ function Reader() {
     setPickerVerseId(null);
     listChapterHighlights(selectedBookSlug, selectedChapter)
       .then((r) => {
-        const map: Record<number, Highlight> = {};
+        // S117 multi-mark — bucket marks by verse_id into arrays.
+        // Order preserved from the API response; the verse-render
+        // layer iterates the array in order and computes per-underline
+        // text-underline-offset so multiple underlines on the same
+        // verse stack cleanly.
+        const map: Record<number, Highlight[]> = {};
         for (const h of r.highlights) {
-          map[h.verse_id] = h;
+          (map[h.verse_id] ??= []).push(h);
         }
         setHighlightsByVerse(map);
       })
@@ -596,21 +610,50 @@ function Reader() {
               return groups.map((verses, gIdx) => (
                 <p key={`p-${gIdx}-${verses[0].id}`} className="mb-3 indent-0">
                   {verses.map((v) => {
-                    // S113 — apply mark visual when the partner has a
-                    // highlight on this verse. The mark classes live in
-                    // index.css; the color is supplied via inline CSS
-                    // variables computed in HighlightPicker.markCssVarsFor.
-                    const mark = highlightsByVerse[v.id];
-                    const markClass = mark ? markClassFor(mark.style) : "";
-                    const markStyle = mark
-                      ? markCssVarsFor(mark.color)
-                      : undefined;
+                    // S113 → S117 multi-mark — layer 0..3 marks on the
+                    // verse via nested spans. Each mark wraps the inner
+                    // content with its own mark-{style} class + per-color
+                    // CSS variables. Multi-underline stacking: for each
+                    // underline mark, compute text-underline-offset based
+                    // on its index among the underline marks (2px, 7px,
+                    // 12px) so multiple colored underlines render as
+                    // distinct stacked lines instead of overlapping.
+                    const marks = highlightsByVerse[v.id] || [];
+                    let content: React.ReactNode = (
+                      <>
+                        <sup className="verse-number mr-1">
+                          {v.verse_number}
+                        </sup>
+                        {v.text}{" "}
+                      </>
+                    );
+                    let underlineIdx = 0;
+                    for (const mark of marks) {
+                      const inlineStyle: React.CSSProperties = {
+                        ...markCssVarsFor(mark.color),
+                      };
+                      if (mark.style === "underline") {
+                        // 2, 7, 12 — readable stack to 3 levels per the
+                        // S117 cap.
+                        inlineStyle.textUnderlineOffset = `${
+                          2 + underlineIdx * 5
+                        }px`;
+                        underlineIdx++;
+                      }
+                      content = (
+                        <span
+                          className={markClassFor(mark.style)}
+                          style={inlineStyle}
+                        >
+                          {content}
+                        </span>
+                      );
+                    }
                     return (
                       <span
                         key={v.id}
                         data-verse-number={v.verse_number}
-                        className={`verse-interactive ${markClass}`}
-                        style={markStyle}
+                        className="verse-interactive"
                         onPointerDown={() => handlePointerDown(v.id)}
                         onPointerUp={handlePointerCancel}
                         onPointerCancel={handlePointerCancel}
@@ -626,8 +669,7 @@ function Reader() {
                           }
                         }}
                       >
-                        <sup className="verse-number mr-1">{v.verse_number}</sup>
-                        {v.text}{" "}
+                        {content}
                       </span>
                     );
                   })}
@@ -697,15 +739,34 @@ function Reader() {
       {pickerVerseId !== null && (
         <HighlightPicker
           verseId={pickerVerseId}
-          current={highlightsByVerse[pickerVerseId] ?? null}
+          current={highlightsByVerse[pickerVerseId] ?? []}
           userTier={(me?.tier ?? "free") as ContentTier}
           onSaved={(h) =>
-            setHighlightsByVerse((prev) => ({ ...prev, [h.verse_id]: h }))
-          }
-          onDeleted={(verseId) =>
+            // S117 multi-mark — append the new mark, dedup'ing on the
+            // (color, style) tuple in case the API returned an existing
+            // row for an exact-duplicate insert (insert-or-no-op
+            // semantics).
             setHighlightsByVerse((prev) => {
-              const next = { ...prev };
-              delete next[verseId];
+              const existing = prev[h.verse_id] ?? [];
+              const filtered = existing.filter(
+                (m) => !(m.color === h.color && m.style === h.style)
+              );
+              return { ...prev, [h.verse_id]: [...filtered, h] };
+            })
+          }
+          onDeleted={(highlightId) =>
+            // S117 multi-mark — delete by mark id (not by verse id).
+            // Filter the mark out of every verse's array; drop the
+            // verse key when the resulting array is empty so the map
+            // stays clean.
+            setHighlightsByVerse((prev) => {
+              const next: Record<number, Highlight[]> = {};
+              for (const [verseIdStr, marks] of Object.entries(prev)) {
+                const filtered = marks.filter((m) => m.id !== highlightId);
+                if (filtered.length > 0) {
+                  next[Number(verseIdStr)] = filtered;
+                }
+              }
               return next;
             })
           }
