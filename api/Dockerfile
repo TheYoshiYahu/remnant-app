@@ -65,6 +65,15 @@ COPY commentaries/ /commentaries/
 # so it has both DATABASE_URL and the WP companion-plugin env vars in scope.
 COPY restoration-pipeline/_session114_*.py /restoration-pipeline/
 
+# Session 117 — multi-mark highlights schema migration loader. Applies
+# data-schema/migrations/session117_multi_mark.sql via asyncpg (the API
+# image doesn't carry the postgres client tools, so psql can't run from
+# Render Shell — this loader is the pattern). Idempotent migration SQL +
+# idempotent loader, so re-runs are safe. Establishes the per-session
+# COPY line as the canonical pattern: every future migration loader needs
+# its own COPY here, or it doesn't ship in the image.
+COPY restoration-pipeline/_session117_*.py /restoration-pipeline/
+
 # Liveness / DB-reachability check. Render (and any other host) can hit this
 # directly to determine whether to route traffic; matches the route registered
 # in main.py.
