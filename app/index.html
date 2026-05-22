@@ -24,14 +24,23 @@
       name="description"
       content="The Remnant of Promise Official Study Bible — Restored Names Edition. Protestant 66 plus extras."
     />
-    <!-- Cormorant Garamond — mirrors the website's locked Royal & Priestly
-         palette typography (S13 lock). Loaded with display=swap so the
+    <!-- Lora — body face for long-form scripture reading on screen
+         (S116 pick after fresh-eyes comparison against Cormorant Garamond,
+         EB Garamond, Crimson Pro, and Spectral on the actual black reader
+         pane with techelet / argaman sacred-name outlines and the 470nm
+         verse-number accent). Cormorant's display-leaning strokes read
+         thin at body sizes even at 500 weight; Lora is a book-screen
+         workhorse designed for long-form reading and holds the colored
+         outline weight cleanly. Website stays Cormorant per S13 Royal &
+         Priestly palette — PWA-vs-website typographic unity is broken
+         intentionally because the PWA is the long-form-reading surface
+         where legibility wins over palette-mirror. display=swap so the
          system serif fallback paints immediately while the webfont
          streams in. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
   </head>

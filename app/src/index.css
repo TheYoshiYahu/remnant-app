@@ -1,9 +1,14 @@
 @import "tailwindcss";
 
-/* Reading-typography baseline. Serif body (Cormorant Garamond, mirroring
-   the website's locked Royal & Priestly palette per S13) for the verse
-   text reads more naturally for long-form scripture; sans for chrome
-   (nav, toolbars).
+/* Reading-typography baseline. Serif body (Lora — S116 swap from
+   Cormorant Garamond after fresh-eyes comparison; Cormorant's display-
+   leaning strokes read thin at body sizes even at 500 weight, Lora is
+   a book-screen workhorse designed for long-form reading and holds the
+   sacred-name outline weight cleanly) for the verse text reads more
+   naturally for long-form scripture; sans for chrome (nav, toolbars).
+   The website stays on Cormorant per S13 — PWA-vs-website typographic
+   unity broken intentionally because the PWA is the long-form-reading
+   surface where legibility wins over palette-mirror.
 
    Theme model (S115 Wheel 3): dark default per DESIGN_LANGUAGE §1
    (black bg + white serif body is the signature aesthetic, brand-
@@ -37,21 +42,25 @@ html, body, #root {
   margin: 0;
   background: var(--reader-bg);
   color: var(--reader-text);
-  font-family: "Cormorant Garamond", ui-serif, Georgia, "Iowan Old Style", "Apple Garamond", serif;
+  font-family: Lora, ui-serif, Georgia, "Iowan Old Style", "Apple Garamond", serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* S115 Wheel 3 patch — Cormorant at the default 400 weight reads
-   anemic on most screens and looks blurry on non-Retina displays.
-   Bumping body to 500 weight (already imported in index.html) and
-   18px body size. Verse text and any element without an explicit
-   Tailwind size class inherits both. Chrome elements with explicit
-   Tailwind weight + size classes are unaffected (their classes
-   override the body defaults). */
+/* S115/S116 body rule — Lora at 500 weight, 18px body size, 1.7
+   line-height. Lora replaced Cormorant Garamond at S116 after fresh-
+   eyes comparison on the actual black reader pane. The reader's verse
+   text and any element without an explicit Tailwind size class
+   inherits all three. Chrome elements with explicit Tailwind weight /
+   size / line-height classes still override the body defaults — this
+   is a known surface gap (notes, commentary, and chrome currently
+   carry text-base / font-normal that win over body); the Tailwind-
+   override sweep is the next-wheel work that propagates the body
+   register to those surfaces. See REBUILD_STATE.md "Next wheels". */
 body {
   font-weight: 500;
   font-size: 18px;
+  line-height: 1.7;
 }
 
 /* Verse-number superscripts: small, accent-tinted, slightly raised.
