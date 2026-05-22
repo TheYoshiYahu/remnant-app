@@ -193,6 +193,33 @@ export interface ChapterEndCardResponse {
   threads: ChapterEndThread[];
 }
 
+// ----- Tiered commentary surface (Session 112) ---------------------------
+//
+// Mirrors api/models.py ChapterCommentaryResponse. Returns every
+// commentary_entries row scoped to the chapter (chapter_id matches,
+// verse_id is null) with tier-gating applied per row. Locked rows come
+// back with body=null + locked=true so the PWA can render an upgrade
+// affordance in place of the content. The free chapter_intro is NOT
+// included here — it rides on ChapterDetail.chapter_intro and renders
+// above this surface in the PWA stack.
+
+export type SurfaceKind = "inline" | "featured" | "deep_dive";
+
+export interface ChapterCommentaryEntry {
+  id: number;
+  title: string | null;
+  body: string | null;
+  surface_kind: SurfaceKind;
+  tier_required: ContentTier;
+  locked: boolean;
+}
+
+export interface ChapterCommentaryResponse {
+  book: ChapterEndCardBookRef;
+  chapter: ChapterEndCardChapterRef;
+  entries: ChapterCommentaryEntry[];
+}
+
 // ----- Subscription types (Session 38) -----------------------------------
 //
 // Mirror api/subscriptions.py's request/response shapes. The me-endpoint
@@ -413,5 +440,30 @@ export function getChapterCrossReferences(
 ): Promise<ChapterEndCardResponse> {
   return get<ChapterEndCardResponse>(
     `/books/${encodeURIComponent(slug)}/chapters/${chapterNumber}/cross-references`
+  );
+}
+
+/**
+ * Tiered chapter commentary (Session 112).
+ *
+ * Returns every commentary_entries row scoped to the chapter, with
+ * tier-gating applied. Rows the caller's tier satisfies come back with
+ * body populated; locked rows come back with body=null + locked=true
+ * so the PWA can render an upgrade affordance (Yoshi's "catch the eye"
+ * locked-state requirement). The free chapter_intro is NOT included
+ * here — it stays on ChapterDetail.chapter_intro and renders above
+ * the tiered stack in the reader.
+ *
+ * Canon-only at v1, same as the cross-references endpoint. Returns an
+ * empty entries[] when the chapter has no commentary_entries rows yet
+ * (most non-Matthew chapters as of S112); the renderer hides the
+ * whole stack in that case.
+ */
+export function getChapterCommentary(
+  slug: string,
+  chapterNumber: number
+): Promise<ChapterCommentaryResponse> {
+  return get<ChapterCommentaryResponse>(
+    `/books/${encodeURIComponent(slug)}/chapters/${chapterNumber}/commentary`
   );
 }

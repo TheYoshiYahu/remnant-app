@@ -12,6 +12,7 @@ import {
 import Pricing from "./routes/Pricing";
 import Manage from "./routes/Manage";
 import ChapterEndCard from "./components/ChapterEndCard";
+import ChapterCommentary from "./components/ChapterCommentary";
 import { renderMarkdownBody } from "./lib/markdown";
 import paragraphStartsData from "./data/paragraph_starts.json";
 
@@ -342,6 +343,23 @@ function Reader() {
           )}
 
           {/*
+            Session 112 — tiered commentary stack. Renders the Basic and
+            Deeper Dive layers (matt-N-short.md + matt-N.md) gated at the
+            extras ($4.99 Library) tier. Locked rows show an eye-catching
+            upgrade affordance so free / Notes-tier partners see what the
+            tier ladder unlocks. The component hides itself silently when
+            the chapter has no commentary_entries rows yet (most non-
+            Matthew chapters as of S112). A global "Hide commentary"
+            toggle inside the component persists per-user via localStorage
+            for partners who want to read straight verses without chrome.
+          */}
+          <ChapterCommentary
+            bookSlug={chapterDetail.book.slug}
+            chapterNumber={chapterDetail.chapter.chapter_number}
+            userTier={me?.tier ?? "free"}
+          />
+
+          {/*
             Session 74 — chapter-end cross-reference card. Renders the
             per-verse curated cross-references plus the framework-
             diagnostic threads per api/CHAPTER_END_CARD_CONTRACT.md.
@@ -358,10 +376,20 @@ function Reader() {
       )}
 
       <footer className="mt-12 border-t border-[var(--reader-rule)] pt-4 font-sans text-xs text-[var(--reader-muted)]">
-        Live from{" "}
-        <code className="rounded bg-white px-1 py-0.5">
-          api.bible.remnantofpromise.org/v1
-        </code>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <a
+            href="https://remnantofpromise.org"
+            className="font-medium text-[var(--reader-muted)] underline-offset-2 hover:underline hover:text-[var(--reader-text)]"
+          >
+            ← Back to Remnant of Promise
+          </a>
+          <span>
+            Live from{" "}
+            <code className="rounded bg-white px-1 py-0.5">
+              api.bible.remnantofpromise.org/v1
+            </code>
+          </span>
+        </div>
       </footer>
     </div>
   );

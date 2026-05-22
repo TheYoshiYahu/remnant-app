@@ -270,3 +270,60 @@ class ChapterEndCardResponse(BaseModel):
     chapter: ChapterEndCardChapterRef
     baseline: List[BaselineEntry]
     threads: List[ChapterEndThread]
+
+
+# ----- Tiered commentary surface (Session 112) ----------------------------
+
+
+class ChapterCommentaryEntry(BaseModel):
+    """One commentary_entries row, with tier-gating applied.
+
+    When `locked=True`, the row's `body` is stripped (None) — the PWA
+    sees the entry exists, knows what `tier_required` would unlock it,
+    and can render an upgrade affordance without ever receiving the
+    locked content. The `title` is always returned (header is what the
+    PWA uses for the upgrade CTA's framing).
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    title: Optional[str] = None
+    body: Optional[str] = Field(
+        default=None,
+        description=(
+            "The commentary body markdown. None when the caller's tier "
+            "does not satisfy tier_required (the PWA renders the "
+            "upgrade affordance instead of the body)."
+        ),
+    )
+    surface_kind: Literal["inline", "featured", "deep_dive"]
+    tier_required: ContentTier
+    locked: bool = Field(
+        ...,
+        description=(
+            "True when the caller's tier does not satisfy tier_required. "
+            "The PWA uses this to render a locked-state header + upgrade "
+            "CTA in place of the body."
+        ),
+    )
+
+
+class ChapterCommentaryResponse(BaseModel):
+    """GET /v1/books/{book_slug}/chapters/{chapter_number}/commentary.
+
+    Returns all commentary_entries rows scoped to the chapter (verse-
+    scoped entries deferred to the per-verse commentary surface that
+    ships later). Free-tier chapter_intro is NOT included here — it
+    rides on the existing /v1/books/{slug}/chapters/{n} response as
+    `chapter_intro` and renders in the PWA above this surface.
+
+    Entries are returned in a stable rendering order: inline (Basic)
+    first, then deep_dive (Deeper Dive), then any featured entries.
+    The PWA stacks them below the free chapter_intro and above the
+    ChapterEndCard cross-reference apparatus.
+    """
+
+    book: ChapterEndCardBookRef
+    chapter: ChapterEndCardChapterRef
+    entries: List[ChapterCommentaryEntry]

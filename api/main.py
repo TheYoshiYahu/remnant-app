@@ -105,6 +105,8 @@ from models import (
     BookChaptersResponse,
     BookDetail,
     BookSummary,
+    ChapterCommentaryEntry,
+    ChapterCommentaryResponse,
     ChapterDetail,
     ChapterEndCardBookRef,
     ChapterEndCardChapterRef,
@@ -639,6 +641,139 @@ async def get_chapter_cross_references(
         ),
         baseline=baseline,
         threads=threads,
+    )
+
+
+# ----- Tiered commentary surface (Session 112 wheel) ---------------------
+
+
+@app.get(
+    "/v1/books/{book_slug}/chapters/{chapter_number}/commentary",
+    response_model=ChapterCommentaryResponse,
+)
+async def get_chapter_commentary(
+    book_slug: str,
+    chapter_number: int,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> ChapterCommentaryResponse:
+    """Tiered commentary entries for a chapter.
+
+    Returns every ``commentary_entries`` row scoped to the chapter
+    (``chapter_id`` matches, ``verse_id`` IS NULL) with tier-gating
+    applied per row. Rows the caller's tier satisfies are returned
+    with their ``body`` populated; rows the caller cannot unlock are
+    returned with ``body=None`` and ``locked=true``, plus their
+    ``tier_required`` so the PWA can render the upgrade affordance.
+
+    Free-tier chapter_intro is NOT included here — it rides on the
+    existing ``/v1/books/{slug}/chapters/{n}`` response under the
+    ``chapter_intro`` field. The PWA stacks the three layers:
+
+        1. Free chapter intro (from chapter detail)
+        2. Basic + Deeper Dive (from this endpoint)
+        3. Cross-references (from the chapter-end card endpoint)
+
+    Edition resolution: canon-only at v1 (mirrors the cross-references
+    endpoint). The extras-tier framework reading lives entirely on
+    canon books for now; commentary on the extras-canon books (Enoch,
+    Jubilees, Jasher, etc.) is queued for later wheels.
+
+    Returns 404 when the book + chapter don't resolve in the canon
+    edition under the caller's tier (hides existence rather than 401-
+    revealing — same pattern as the other reader routes).
+    """
+    pool = get_pool()
+    tier = user_tier(current_user)
+
+    async with pool.acquire() as conn:
+        # Resolve the canon book + chapter under the caller's tier.
+        book_row = await conn.fetchrow(
+            "SELECT b.id AS book_id, b.slug, b.title, e.slug AS edition_slug "
+            "  FROM books b "
+            "  JOIN editions e ON e.id = b.edition_id "
+            " WHERE b.slug = $1 "
+            "   AND e.slug = 'canon' "
+            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            book_slug,
+            tier,
+        )
+        if book_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Book '{book_slug}' not found in canon.",
+            )
+
+        chapter_row = await conn.fetchrow(
+            "SELECT id, chapter_number, chapter_title "
+            "  FROM chapters "
+            " WHERE book_id = $1 AND chapter_number = $2",
+            book_row["book_id"],
+            chapter_number,
+        )
+        if chapter_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Chapter {chapter_number} not found in '{book_slug}'.",
+            )
+
+        # Fetch every commentary_entries row for the chapter — both rows
+        # the caller can unlock AND rows they can't (the locked rows are
+        # returned with body stripped + locked=true so the PWA renders
+        # the upgrade affordance). The locked-row visibility is what makes
+        # the tier ladder visible to free / Notes-tier partners.
+        entry_rows = await conn.fetch(
+            "SELECT id, title, body, surface_kind, "
+            "       tier_required::text AS tier_required "
+            "  FROM commentary_entries "
+            " WHERE chapter_id = $1 "
+            "   AND verse_id IS NULL "
+            " ORDER BY "
+            "   CASE surface_kind "
+            "     WHEN 'featured'  THEN 0 "
+            "     WHEN 'inline'    THEN 1 "
+            "     WHEN 'deep_dive' THEN 2 "
+            "     ELSE 3 "
+            "   END, "
+            "   id ASC",
+            chapter_row["id"],
+        )
+
+        # Per-row tier gate. Use the same lattice the schema's
+        # tier_satisfies() function encodes; we apply it in Python here
+        # so we can shape the response (body=None + locked=true) rather
+        # than just filtering rows out of the query.
+        tier_rank = {
+            "free": 0, "study_notes": 1, "extras": 2,
+            "complete_study": 3, "everything": 4,
+        }
+        user_rank = tier_rank.get(tier, 0)
+
+    entries: list[ChapterCommentaryEntry] = []
+    for r in entry_rows:
+        row_tier = r["tier_required"]
+        locked = user_rank < tier_rank.get(row_tier, 4)
+        entries.append(
+            ChapterCommentaryEntry(
+                id=r["id"],
+                title=r["title"],
+                body=None if locked else r["body"],
+                surface_kind=r["surface_kind"],
+                tier_required=row_tier,
+                locked=locked,
+            )
+        )
+
+    return ChapterCommentaryResponse(
+        book=ChapterEndCardBookRef(
+            slug=book_row["slug"],
+            title=book_row["title"],
+            edition_slug=book_row["edition_slug"],
+        ),
+        chapter=ChapterEndCardChapterRef(
+            number=chapter_row["chapter_number"],
+            title=chapter_row["chapter_title"],
+        ),
+        entries=entries,
     )
 
 
