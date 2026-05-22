@@ -49,6 +49,15 @@ COPY api/ /app/
 COPY data-schema/ /data-schema/
 COPY source-texts/parsed/ /source-texts/parsed/
 
+# Session 112 — post-seed loader artifacts. The tiered-commentary loader and
+# its source .md files ship in the image so they can be run from Render Shell
+# (internal-network DB connection — sidesteps the external-Postgres SSL/IP
+# issues that blocked Path A at S112). Same pattern any future loader can use:
+# drop the script under /restoration-pipeline/ and the source data wherever
+# the script's APP_ROOT resolution expects (here, /commentaries/).
+COPY restoration-pipeline/_session112_*.py /restoration-pipeline/
+COPY commentaries/ /commentaries/
+
 # Liveness / DB-reachability check. Render (and any other host) can hit this
 # directly to determine whether to route traffic; matches the route registered
 # in main.py.
