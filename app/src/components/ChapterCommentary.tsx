@@ -37,7 +37,14 @@ import { renderMarkdownBody } from "../lib/markdown";
 interface ChapterCommentaryProps {
   bookSlug: string;
   chapterNumber: number;
-  /** Caller's effective tier — drives which rows show as locked. */
+  /**
+   * Caller's effective tier. Reserved — currently the API computes
+   * locked-state per row and the PWA renders based on the row's
+   * `locked` flag, so this prop is not used at render time. Kept in
+   * the interface for forward-compatibility: when the renderer wants
+   * to vary CTA copy by tier (e.g., "Upgrade from Notes to Library"),
+   * the prop is already plumbed through from App.tsx.
+   */
   userTier?: ContentTier;
 }
 
@@ -46,7 +53,6 @@ const HIDE_COMMENTARY_KEY = "rop_hide_commentary_v1";
 export default function ChapterCommentary({
   bookSlug,
   chapterNumber,
-  userTier = "free",
 }: ChapterCommentaryProps) {
   const [data, setData] = useState<ChapterCommentaryResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -122,7 +128,7 @@ export default function ChapterCommentary({
       {!hideCommentary && (
         <div className="space-y-4">
           {data.entries.map((entry) => (
-            <CommentaryBlock key={entry.id} entry={entry} userTier={userTier} />
+            <CommentaryBlock key={entry.id} entry={entry} />
           ))}
         </div>
       )}
@@ -134,10 +140,8 @@ export default function ChapterCommentary({
 
 function CommentaryBlock({
   entry,
-  userTier,
 }: {
   entry: ChapterCommentaryEntry;
-  userTier: ContentTier;
 }) {
   const [expanded, setExpanded] = useState<boolean>(false);
 
