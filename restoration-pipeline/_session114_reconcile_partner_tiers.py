@@ -136,7 +136,7 @@ async def reconcile(database_url: str, *, dry_run: bool) -> dict[str, int]:
             "       u.wordpress_user_id AS wp_user_id "
             "  FROM subscriptions s "
             "  JOIN users u ON u.id = s.user_id "
-            " ORDER BY u.wordpress_user_id, s.created_at DESC"
+            " ORDER BY u.wordpress_user_id, s.started_at DESC"
         )
     finally:
         await conn.close()

@@ -230,7 +230,7 @@ async def _resolve_tier_from_db(wp_user_id_str: str) -> Optional[PartnerTier]:
                 "  JOIN users u ON u.id = s.user_id "
                 " WHERE u.wordpress_user_id = $1 "
                 "   AND s.status NOT IN ('canceled', 'unpaid', 'incomplete_expired') "
-                " ORDER BY s.created_at DESC "
+                " ORDER BY s.started_at DESC "
                 " LIMIT 1",
                 wp_user_id,
             )
