@@ -373,6 +373,14 @@ export default function Manage() {
               ? `. Your ${priceLabel} price stays locked to you.`
               : ". Your forever-locked price stays with you."}
           </p>
+          <div className="mt-3">
+            <a
+              href="/pricing"
+              className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
+            >
+              Reactivate
+            </a>
+          </div>
         </div>
       )}
 
@@ -384,6 +392,14 @@ export default function Manage() {
             partnership page
           </a>
           .
+          <div className="mt-3">
+            <a
+              href="/pricing"
+              className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
+            >
+              Resubscribe
+            </a>
+          </div>
         </div>
       )}
 

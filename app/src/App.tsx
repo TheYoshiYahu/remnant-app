@@ -254,7 +254,7 @@ function Reader() {
               Restored Names Edition
             </p>
           </div>
-          {me && me.status === "active" ? (
+          {me && (me.status === "active" || me.status === "trialing") ? (
             <a
               href="/manage"
               className="self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-white px-3 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
@@ -267,6 +267,18 @@ function Reader() {
               className="self-start whitespace-nowrap rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
             >
               Become a partner
+            </a>
+          ) : me &&
+            (me.status === "canceled" ||
+              me.status === "past_due" ||
+              me.status === "unpaid" ||
+              me.status === "incomplete" ||
+              me.status === "incomplete_expired") ? (
+            <a
+              href="/pricing"
+              className="self-start whitespace-nowrap rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-white hover:opacity-90"
+            >
+              Resubscribe
             </a>
           ) : null}
         </div>
