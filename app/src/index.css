@@ -42,6 +42,18 @@ html, body, #root {
   text-rendering: optimizeLegibility;
 }
 
+/* S115 Wheel 3 patch — Cormorant at the default 400 weight reads
+   anemic on most screens and looks blurry on non-Retina displays.
+   Bumping body to 500 weight (already imported in index.html) and
+   18px body size. Verse text and any element without an explicit
+   Tailwind size class inherits both. Chrome elements with explicit
+   Tailwind weight + size classes are unaffected (their classes
+   override the body defaults). */
+body {
+  font-weight: 500;
+  font-size: 18px;
+}
+
 /* Verse-number superscripts: small, accent-tinted, slightly raised.
    Per DESIGN_LANGUAGE §5, the chrome accent (verse numbers + chapter
    header divider) carries the framework's chrome register. S115 elected
