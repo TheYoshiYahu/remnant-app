@@ -79,12 +79,19 @@ COMMENTARIES_DIR = APP_ROOT / "commentaries"
 
 MATTHEW_CHAPTERS = list(range(1, 29))  # 1..28 inclusive
 
-# Per Yoshi (S112): both deeper layers gate at extras ($4.99 Library tier)
-# in v1. The free tier still gets the chapter_intro (loaded at S110); the
-# Notes tier ($1.99) inherits free + adds notes/colors/etc but does NOT
-# unlock the framework commentary — that's the Library tier's draw alongside
-# the full extras book library and the BDB / Thayer's / Gesenius tools.
-SHORT_TIER = "extras"
+# Per Yoshi (S112, S112 correction): tier-mapping uses a graduated reveal
+# across the v1 ladder so each paid tier earns its keep on the chapter
+# reading surface.
+#   - free  → chapter_intro (already loaded at S110)
+#   - $1.99 Notes  → Basic (this loader, surface_kind='inline')
+#   - $4.99 Library → Deeper Dive (this loader, surface_kind='deep_dive')
+# The Notes tier gets the chapter-length framework walk (substantial — 2k-
+# 12k words per chapter) on top of its highlights + colors + notes
+# capabilities. The Library tier adds the section-by-section Deeper Dive
+# (also substantial) on top of the full ~50-book extras library + the
+# BDB / Thayer's / Gesenius tools + Josephus. Library inherits Notes via
+# the strict-chain lattice, so Library partners get both layers.
+SHORT_TIER = "study_notes"
 DEEP_TIER = "extras"
 
 # Header / cut-point patterns.
