@@ -12,6 +12,7 @@ import {
 import Pricing from "./routes/Pricing";
 import Manage from "./routes/Manage";
 import ChapterEndCard from "./components/ChapterEndCard";
+import { renderMarkdownBody } from "./lib/markdown";
 
 /**
  * Session 13 minimum-useful checkpoint:
@@ -289,10 +290,19 @@ function Reader() {
 
           {chapterDetail.chapter_intro && (
             <aside className="mt-8 border-t border-[var(--reader-rule)] pt-4 text-sm text-[var(--reader-muted)]">
-              <h3 className="mb-1 font-sans font-semibold uppercase tracking-wide text-xs">
+              <h3 className="mb-2 font-sans font-semibold uppercase tracking-wide text-xs">
                 Commentary
               </h3>
-              <p>{chapterDetail.chapter_intro}</p>
+              {/*
+                Session 110 Round-1 italic-fix: render chapter_intro through
+                the shared markdown helper so `*italic*` spans render as
+                <em> and `\n\n` paragraph breaks produce real <p> elements.
+                Sacred names are already restored with parentheticals at
+                the seed-data layer and render as plain inline text.
+              */}
+              <div className="space-y-0">
+                {renderMarkdownBody(chapterDetail.chapter_intro)}
+              </div>
             </aside>
           )}
 
