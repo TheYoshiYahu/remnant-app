@@ -144,11 +144,20 @@ export default function Pricing() {
     isFounder: boolean
   ) {
     if (!isSignedIn) {
-      // Route the partner to WordPress sign-in first. After login the
-      // WordPress side sets the rop_jwt cookie and redirects back; the
-      // partner clicks Subscribe again with a token in hand.
+      // Route the partner to the WordPress login surface first. After
+      // auth, WordPress sets the rop_jwt cookie and redirects back;
+      // the partner clicks Subscribe again with a token in hand.
+      //
+      // S119 swap: /login 404s because the login slug was moved to
+      // /goshen/ for anti-spam (WPS Hide Login or equivalent). The
+      // S118 /account combined-surface spec is still on the queue
+      // for a future wheel — that builds out the create-account path
+      // for new partners. Until that lands, anonymous-checkout routes
+      // existing partners to /goshen/ where they sign in via the
+      // working WP login. Query param renamed redirect= → redirect_to=
+      // to match WordPress's native post-login bounce convention.
       window.location.href =
-        "https://remnantofpromise.org/login?redirect=" +
+        "https://remnantofpromise.org/goshen/?redirect_to=" +
         encodeURIComponent(window.location.href);
       return;
     }
