@@ -13,6 +13,14 @@ import Pricing from "./routes/Pricing";
 import Manage from "./routes/Manage";
 import ChapterEndCard from "./components/ChapterEndCard";
 import { renderMarkdownBody } from "./lib/markdown";
+import paragraphStartsData from "./data/paragraph_starts.json";
+
+// Map of {book_slug: {chapter_number_string: [verse numbers that start paragraphs]}}.
+// Extracted from the KJV USFX XML at restoration-pipeline build time;
+// see /tmp/extract_paragraphs.py in S110. Used to render the reader chapter
+// with proper pericope-style paragraph breaks rather than verse-per-line or
+// one giant run-on paragraph.
+const paragraphStarts = paragraphStartsData as Record<string, Record<string, number[]>>;
 
 /**
  * Session 13 minimum-useful checkpoint:
@@ -280,20 +288,39 @@ function Reader() {
               </p>
             )}
           {/*
-            Session 110 round-1 follow-up: render each verse as its own <p>
-            so the chapter doesn't read as one giant run-on paragraph. The
-            seed canon does not carry pericope/paragraph markers, so a
-            verse-per-paragraph layout (the historical KJV layout) is the
-            cleanest fix without that data. Modern "paragraph Bibles"
-            require pericope data we can layer in later when authored.
+            Session 110 round-1 follow-up: render the chapter with proper
+            pericope-style paragraph breaks. The break points come from
+            paragraphStarts (extracted from KJV USFX XML). For each chapter,
+            we group consecutive verses into <p> elements, opening a new
+            paragraph whenever a verse number appears in the paragraph_starts
+            list for that book + chapter.
           */}
           <div className="mt-4 leading-relaxed text-[1.05rem] text-[var(--reader-text)]">
-            {chapterDetail.verses.map((v) => (
-              <p key={v.id} className="mb-2 indent-0">
-                <sup className="verse-number mr-1">{v.verse_number}</sup>
-                {v.text}
-              </p>
-            ))}
+            {(() => {
+              const bookStarts =
+                paragraphStarts[chapterDetail.book.slug]?.[
+                  String(chapterDetail.chapter.chapter_number)
+                ] || [];
+              const startsSet = new Set(bookStarts);
+              const groups: Array<typeof chapterDetail.verses> = [];
+              for (const v of chapterDetail.verses) {
+                if (groups.length === 0 || startsSet.has(v.verse_number)) {
+                  groups.push([v]);
+                } else {
+                  groups[groups.length - 1].push(v);
+                }
+              }
+              return groups.map((verses, gIdx) => (
+                <p key={`p-${gIdx}-${verses[0].id}`} className="mb-3 indent-0">
+                  {verses.map((v) => (
+                    <span key={v.id}>
+                      <sup className="verse-number mr-1">{v.verse_number}</sup>
+                      {v.text}{" "}
+                    </span>
+                  ))}
+                </p>
+              ));
+            })()}
           </div>
 
           {chapterDetail.chapter_intro && (

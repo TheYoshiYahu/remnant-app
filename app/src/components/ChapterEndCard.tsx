@@ -236,7 +236,7 @@ function ThreadCallout({
       {thread.members_in_chapter.length > 0 && (
         <div className="mt-4 border-t border-[var(--reader-rule)] pt-3">
           <p className="mb-2 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
-            Members in this chapter
+            Cross-references in this chapter
           </p>
           <ul className="space-y-1 text-sm text-[var(--reader-text)]">
             {thread.members_in_chapter.map((m) => (
