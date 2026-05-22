@@ -158,7 +158,7 @@ function BaselineList({
                         tgt.verse_number
                       )}
                     </span>{" "}
-                    <span className="italic">{truncate(tgt.preview, 120)}</span>
+                    <span className="italic">{tgt.preview}</span>
                   </span>
                 </li>
               );
@@ -265,7 +265,7 @@ function ThreadMemberRow({ member }: { member: ThreadMember }) {
         )}
       </span>
       <span className="basis-full italic ml-5 text-[var(--reader-text)]">
-        {truncate(member.target.preview, 140)}
+        {member.target.preview}
       </span>
       {member.member_note && (
         <span className="basis-full ml-5 font-sans text-xs text-[var(--reader-muted)]">
@@ -331,11 +331,6 @@ function prettyBookSlug(slug: string): string {
       /^\d+$/.test(part) ? part : part.charAt(0).toUpperCase() + part.slice(1)
     )
     .join(" ");
-}
-
-function truncate(text: string, max: number): string {
-  if (text.length <= max) return text;
-  return text.slice(0, max).trimEnd() + "…";
 }
 
 function prettyTier(tier: ContentTier): string {

@@ -279,12 +279,20 @@ function Reader() {
                 {chapterDetail.chapter.chapter_title}
               </p>
             )}
+          {/*
+            Session 110 round-1 follow-up: render each verse as its own <p>
+            so the chapter doesn't read as one giant run-on paragraph. The
+            seed canon does not carry pericope/paragraph markers, so a
+            verse-per-paragraph layout (the historical KJV layout) is the
+            cleanest fix without that data. Modern "paragraph Bibles"
+            require pericope data we can layer in later when authored.
+          */}
           <div className="mt-4 leading-relaxed text-[1.05rem] text-[var(--reader-text)]">
             {chapterDetail.verses.map((v) => (
-              <span key={v.id}>
-                <sup className="verse-number">{v.verse_number}</sup>
-                {v.text}{" "}
-              </span>
+              <p key={v.id} className="mb-2 indent-0">
+                <sup className="verse-number mr-1">{v.verse_number}</sup>
+                {v.text}
+              </p>
             ))}
           </div>
 
