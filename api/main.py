@@ -128,6 +128,8 @@ from models import (
     HighlightLabelsResponse,
     MarkStyle,
     ReadingPositionResponse,
+    ChapterVerseWords,
+    ChapterWordsResponse,
     StrongEntry,
     ThreadAnchor,
     ThreadMember,
@@ -1347,6 +1349,89 @@ async def get_verse_words(verse_id: int) -> VerseWordsResponse:
                 strong_number=r["strong_number"],
             )
             for r in rows
+        ],
+    )
+
+
+@app.get(
+    "/v1/books/{book_slug}/chapters/{chapter_number}/words",
+    response_model=ChapterWordsResponse,
+)
+async def get_chapter_words(
+    book_slug: str,
+    chapter_number: int,
+) -> ChapterWordsResponse:
+    """Batched Strong's-tagged-token alignment for an entire chapter
+    in one round trip (S121, Wheel 3).
+
+    The PWA fires this alongside the existing
+    /v1/books/{slug}/chapters/{n} endpoint after a chapter loads, so
+    tap-on-word becomes available without firing N parallel per-verse
+    requests (which serializes badly on long chapters like Psalm 119
+    against the browser's ~6-per-host concurrent-connection cap).
+
+    No auth, no tier gate (free-tier feature per §9). Returns the
+    chapter id + a per-verse list (each verse's words array may be
+    empty for extras books outside the canon load). 404 when the
+    book/chapter doesn't exist.
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        chapter_row = await conn.fetchrow(
+            "SELECT c.id, c.chapter_number "
+            "  FROM chapters c "
+            "  JOIN books b ON b.id = c.book_id "
+            " WHERE b.slug = $1 AND c.chapter_number = $2",
+            book_slug,
+            chapter_number,
+        )
+        if chapter_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=(
+                    f"Chapter {chapter_number} not found in book "
+                    f"'{book_slug}'."
+                ),
+            )
+        verse_rows = await conn.fetch(
+            "SELECT id, verse_number "
+            "  FROM verses "
+            " WHERE chapter_id = $1 "
+            " ORDER BY verse_number ASC",
+            chapter_row["id"],
+        )
+        # One query for all words across all verses in this chapter.
+        # JOIN against verses to enforce the chapter scoping.
+        word_rows = await conn.fetch(
+            "SELECT vw.verse_id, vw.position, vw.surface, vw.strong_number "
+            "  FROM verse_words vw "
+            "  JOIN verses v ON v.id = vw.verse_id "
+            " WHERE v.chapter_id = $1 "
+            " ORDER BY vw.verse_id, vw.position",
+            chapter_row["id"],
+        )
+
+    # Bucket the words by verse_id so we can attach them to the
+    # verse rows in one pass.
+    words_by_verse: dict[int, list[VerseWord]] = {}
+    for r in word_rows:
+        words_by_verse.setdefault(r["verse_id"], []).append(
+            VerseWord(
+                position=r["position"],
+                surface=r["surface"],
+                strong_number=r["strong_number"],
+            )
+        )
+
+    return ChapterWordsResponse(
+        chapter_id=chapter_row["id"],
+        verses=[
+            ChapterVerseWords(
+                verse_id=vr["id"],
+                verse_number=vr["verse_number"],
+                words=words_by_verse.get(vr["id"], []),
+            )
+            for vr in verse_rows
         ],
     )
 

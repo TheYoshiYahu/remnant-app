@@ -143,6 +143,29 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* S121 W3 — individual Strong's-tagged word inside a verse. Tappable
+   for the Strong's-lookup quick-tap path; also a long-press anchor
+   for the contextual VerseActionMenu (which routes to Strong's,
+   Highlight, future tools).
+
+   Visual register: invisible at rest per DESIGN_LANGUAGE §1's clean
+   reading-surface principle. A faint dotted underline on hover
+   confirms the affordance without breaking the prose visually; on
+   touch-only surfaces (no hover state), partners discover tappability
+   through use. The underline color is the §5 spectral-blue accent so
+   the tap affordance signals the same visual family as verse numbers
+   and chapter dividers. */
+.word-tappable {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (hover: hover) {
+  .word-tappable:hover {
+    text-decoration: underline dotted var(--reader-accent) 1px;
+    text-underline-offset: 3px;
+  }
+}
+
 /* The 13-swatch picker grid. Sits in a small popover positioned next
    to the tapped verse; locked swatches dim + add the upgrade chip. */
 .swatch {

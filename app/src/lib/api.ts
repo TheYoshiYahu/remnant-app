@@ -726,3 +726,64 @@ export function putReadingPosition(
     body
   );
 }
+
+// ----- Strong's tap-on-word (Session 121, Wheel 3) -----------------------
+//
+// Two client surfaces:
+//   - getChapterWords(slug, chapter) — batched per-chapter fetch of every
+//     verse's Strong's-tagged tokens, in one round trip. PWA fires this
+//     alongside getChapter so tap-on-word becomes available without
+//     firing N parallel /v1/verses/{id}/words requests (browsers cap
+//     ~6 concurrent connections per host; long chapters like Psalm 119
+//     would serialize badly).
+//   - getStrongEntry(strongNumber) — one lexicon entry by primary key.
+//     PWA fires this when a tagged word is tapped, modal renders the
+//     response.
+//
+// Both endpoints public per §9 (free-tier feature). Anonymous callers
+// get the same data; no auth/tier gate.
+
+export type StrongLanguage = "hebrew" | "greek" | "aramaic";
+
+export interface StrongEntry {
+  strong_number: string;
+  language: StrongLanguage;
+  lemma: string;
+  transliteration: string;
+  pronunciation: string | null;
+  short_definition: string | null;
+  definition: string;
+  derivation: string | null;
+}
+
+export interface VerseWord {
+  position: number;
+  surface: string;
+  strong_number: string | null;
+}
+
+export interface ChapterVerseWords {
+  verse_id: number;
+  verse_number: number;
+  words: VerseWord[];
+}
+
+export interface ChapterWordsResponse {
+  chapter_id: number;
+  verses: ChapterVerseWords[];
+}
+
+/** Batched chapter-level Strong's-tagged-token alignment. */
+export function getChapterWords(
+  slug: string,
+  chapterNumber: number
+): Promise<ChapterWordsResponse> {
+  return get<ChapterWordsResponse>(
+    `/books/${encodeURIComponent(slug)}/chapters/${chapterNumber}/words`
+  );
+}
+
+/** One Strong's lexicon entry. 'H0001' / 'G3056' canonical form. */
+export function getStrongEntry(strongNumber: string): Promise<StrongEntry> {
+  return get<StrongEntry>(`/strongs/${encodeURIComponent(strongNumber)}`);
+}

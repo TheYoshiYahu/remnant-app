@@ -3,10 +3,13 @@ import {
   type BookChaptersResponse,
   type BookSummary,
   type ChapterDetail,
+  type ChapterWordsResponse,
   type ContentTier,
   type Highlight,
   type SubscriptionMe,
+  type VerseWord,
   getChapter,
+  getChapterWords,
   getSubscriptionMe,
   listBooks,
   listChapters,
@@ -20,6 +23,11 @@ import HighlightPicker, {
   markClassFor,
   markCssVarsFor,
 } from "./components/HighlightPicker";
+import StrongsLookup from "./components/StrongsLookup";
+import VerseActionMenu, {
+  type MenuItem,
+} from "./components/VerseActionMenu";
+import { alignVerse, type Segment } from "./lib/verse-align";
 import { renderMarkdownBody } from "./lib/markdown";
 import { useTheme } from "./lib/theme";
 import {
@@ -180,18 +188,50 @@ function Reader() {
   // chrome at all in that case.
   const [me, setMe] = useState<SubscriptionMe | null>(null);
 
-  // S113 → S117: per-chapter highlights map + picker state.
+  // S113 → S117: per-chapter highlights map.
   // `highlightsByVerse` keys are verse_id and values are ARRAYS of
   // marks on that verse (S117 multi-mark: schema unique is
   // (user_id, verse_id, color, style), so a verse can carry up to 3
   // marks per the picker cap; different (color, style) tuples coexist
-  // visually via nested spans). `pickerVerseId` opens the
-  // HighlightPicker for a single verse on long-press / right-click;
-  // null = picker closed.
+  // visually via nested spans).
   const [highlightsByVerse, setHighlightsByVerse] = useState<
     Record<number, Highlight[]>
   >({});
+
+  // S121 W3 — modal stack state. Replaces the direct
+  // pickerVerseId-driven path. Long-press / right-click fires the
+  // VerseActionMenu first, which routes to either HighlightPicker or
+  // StrongsLookup. Quick-tap on a tappable word bypasses the menu
+  // and opens StrongsLookup directly.
+  //
+  // menuState carries the verse + (optional) word context for the
+  // long-press menu. pickerVerseId opens the HighlightPicker (now
+  // routed through the menu). strongsState opens StrongsLookup
+  // (routed either via menu OR quick-tap fast path).
   const [pickerVerseId, setPickerVerseId] = useState<number | null>(null);
+  const [menuState, setMenuState] = useState<
+    | {
+        verseId: number;
+        word: { strong: string; surface: string } | null;
+      }
+    | null
+  >(null);
+  const [strongsState, setStrongsState] = useState<
+    { strong: string; surface: string } | null
+  >(null);
+
+  // S121 W3 — per-chapter Strong's-tagged-words map. Keys are
+  // verse_id; values are the position-ordered VerseWord list for
+  // that verse. Fetched alongside the chapter detail via the
+  // batched /v1/books/{slug}/chapters/{n}/words endpoint so
+  // tap-on-word becomes available without firing N parallel
+  // per-verse requests. Empty until the batched fetch returns; the
+  // verse-align helper degrades gracefully to all-plain rendering
+  // until words arrive (progressive enrichment — verse text renders
+  // instantly; tap-ability lights up a moment later).
+  const [wordsByVerse, setWordsByVerse] = useState<
+    Record<number, VerseWord[]>
+  >({});
 
   // Long-press detection: pointerdown starts a 500ms timer; pointerup /
   // pointercancel / pointerleave clears it. If the timer fires, the
@@ -208,14 +248,22 @@ function Reader() {
   // fresh DOM nodes).
   const verseObserverRef = useRef<IntersectionObserver | null>(null);
   const visibleVersesRef = useRef<Map<number, number>>(new Map());
-  function handlePointerDown(verseId: number) {
+  // S121 W3 — long-press / right-click now opens the VerseActionMenu
+  // instead of going straight to HighlightPicker. The menu routes to
+  // the right modal based on the user's choice. Word context is set
+  // by the per-word handlers below when a tappable word is the
+  // long-press anchor; verse context (no word) is the default.
+  function handlePointerDown(
+    verseId: number,
+    word: { strong: string; surface: string } | null = null
+  ) {
     longPressFiredRef.current = false;
     if (longPressTimerRef.current) {
       clearTimeout(longPressTimerRef.current);
     }
     longPressTimerRef.current = setTimeout(() => {
       longPressFiredRef.current = true;
-      setPickerVerseId(verseId);
+      setMenuState({ verseId, word });
     }, 500);
   }
   function handlePointerCancel() {
@@ -224,9 +272,25 @@ function Reader() {
       longPressTimerRef.current = null;
     }
   }
-  function handleContextMenu(verseId: number, e: React.MouseEvent) {
+  function handleContextMenu(
+    verseId: number,
+    e: React.MouseEvent,
+    word: { strong: string; surface: string } | null = null
+  ) {
     e.preventDefault();
-    setPickerVerseId(verseId);
+    setMenuState({ verseId, word });
+  }
+
+  // S121 W3 — quick-tap on a tappable word opens StrongsLookup
+  // directly (fast path for the highest-frequency action). Only
+  // fires if the long-press timer did NOT fire; the swipe-handler's
+  // 10px movement check also kills this if the user dragged.
+  function handleWordQuickTap(word: { strong: string; surface: string }) {
+    if (longPressFiredRef.current) {
+      longPressFiredRef.current = false;
+      return;
+    }
+    setStrongsState(word);
   }
 
   // Books load once on mount.
@@ -314,6 +378,8 @@ function Reader() {
     if (!selectedBookSlug || !selectedChapter) return;
     setHighlightsByVerse({});
     setPickerVerseId(null);
+    setMenuState(null);
+    setStrongsState(null);
     listChapterHighlights(selectedBookSlug, selectedChapter)
       .then((r) => {
         // S117 multi-mark — bucket marks by verse_id into arrays.
@@ -329,6 +395,29 @@ function Reader() {
       })
       .catch(() => {
         // Anonymous or transient failure — leave the map empty.
+      });
+  }, [selectedBookSlug, selectedChapter]);
+
+  // S121 W3 — chapter Strong's-words reload alongside the chapter.
+  // Single batched fetch (replaces N parallel per-verse calls). Public
+  // endpoint, no auth, no tier gate — all partners get tap-on-word.
+  // Failure leaves the map empty and verses render plain text (no
+  // tappability) — graceful degradation per the publish-then-edit
+  // posture.
+  useEffect(() => {
+    if (!selectedBookSlug || !selectedChapter) return;
+    setWordsByVerse({});
+    getChapterWords(selectedBookSlug, selectedChapter)
+      .then((r: ChapterWordsResponse) => {
+        const map: Record<number, VerseWord[]> = {};
+        for (const v of r.verses) {
+          map[v.verse_id] = v.words;
+        }
+        setWordsByVerse(map);
+      })
+      .catch(() => {
+        // Network / 404 / transient — leave the map empty; verses
+        // render plain text until the next chapter load.
       });
   }, [selectedBookSlug, selectedChapter]);
 
@@ -837,12 +926,65 @@ function Reader() {
                     // 12px) so multiple colored underlines render as
                     // distinct stacked lines instead of overlapping.
                     const marks = highlightsByVerse[v.id] || [];
+                    // S121 W3 — align verse text against the chapter
+                    // verse_words so individual Strong's-tagged words
+                    // render as tappable spans. Falls back to a single
+                    // plain segment if the words for this verse
+                    // haven't arrived yet (progressive enrichment).
+                    const verseWords = wordsByVerse[v.id] || [];
+                    const segments: Segment[] =
+                      verseWords.length > 0
+                        ? alignVerse(v.text, verseWords, String(v.id))
+                        : [{ kind: "plain", text: v.text }];
                     let content: React.ReactNode = (
                       <>
                         <sup className="verse-number mr-1">
                           {v.verse_number}
                         </sup>
-                        {v.text}{" "}
+                        {segments.map((seg, segIdx) => {
+                          if (seg.kind === "plain") {
+                            // Render with a trailing space so tokens
+                            // join visually; the tokenizer dropped
+                            // whitespace, render rebuilds it.
+                            return (
+                              <span key={`p-${segIdx}`}>{seg.text} </span>
+                            );
+                          }
+                          // tappable
+                          const word = {
+                            strong: seg.strong,
+                            surface: seg.surface,
+                          };
+                          return (
+                            <span
+                              key={seg.key}
+                              className="word-tappable"
+                              onPointerDown={(e) => {
+                                e.stopPropagation();
+                                handlePointerDown(v.id, word);
+                              }}
+                              onPointerUp={(e) => {
+                                e.stopPropagation();
+                                handlePointerCancel();
+                              }}
+                              onPointerCancel={(e) => {
+                                e.stopPropagation();
+                                handlePointerCancel();
+                              }}
+                              onPointerLeave={handlePointerCancel}
+                              onContextMenu={(e) => {
+                                e.stopPropagation();
+                                handleContextMenu(v.id, e, word);
+                              }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleWordQuickTap(word);
+                              }}
+                            >
+                              {seg.text}
+                            </span>
+                          );
+                        })}
                       </>
                     );
                     let underlineIdx = 0;
@@ -879,7 +1021,7 @@ function Reader() {
                         onContextMenu={(e) => handleContextMenu(v.id, e)}
                         onClick={(e) => {
                           // Suppress click event if long-press already fired
-                          // (so opening the picker doesn't also count as a
+                          // (so opening the menu doesn't also count as a
                           // verse-text tap if we wire that in later).
                           if (longPressFiredRef.current) {
                             e.preventDefault();
@@ -1017,12 +1159,30 @@ function Reader() {
       )}
 
       {/*
-        Session 113 — highlight picker. Renders as a fixed-position
-        modal overlay when a verse is long-pressed (touch) or right-
-        clicked (desktop). One picker per render — opening for verse B
-        while picker is on verse A replaces the picker; the close
-        callback resets state to null.
+        S121 W3 — modal stack. Long-press / right-click opens the
+        VerseActionMenu first; menu items route to HighlightPicker
+        (S113) or StrongsLookup (S121). Quick-tap on a tappable word
+        bypasses the menu and opens StrongsLookup directly.
       */}
+      {menuState !== null && (
+        <VerseActionMenu
+          scopeLabel={menuState.word ? menuState.word.surface : "Verse actions"}
+          items={buildMenuItems(menuState, {
+            onStrongs: (w) => setStrongsState(w),
+            onHighlight: (vid) => setPickerVerseId(vid),
+          })}
+          onClose={() => setMenuState(null)}
+        />
+      )}
+
+      {strongsState !== null && (
+        <StrongsLookup
+          strongNumber={strongsState.strong}
+          surface={strongsState.surface}
+          onClose={() => setStrongsState(null)}
+        />
+      )}
+
       {pickerVerseId !== null && (
         <HighlightPicker
           verseId={pickerVerseId}
@@ -1079,6 +1239,47 @@ function Reader() {
       </footer>
     </div>
   );
+}
+
+/**
+ * S121 W3 — build the contextual menu items for VerseActionMenu.
+ * Word-scoped context (long-pressed on a tappable word) shows
+ * Strong's at the top + a divider + verse-scoped actions below.
+ * Verse-scoped context shows verse-scoped actions only.
+ *
+ * Future wheels (Notes — W5, Bookmarks — W5, Share-with-watermark —
+ * W6, Interlinear — W10, Recommendations — W12) extend this by
+ * appending new MenuItems to the appropriate scope. The component
+ * itself is item-driven so no further refactor is needed downstream.
+ */
+function buildMenuItems(
+  state: {
+    verseId: number;
+    word: { strong: string; surface: string } | null;
+  },
+  handlers: {
+    onStrongs: (w: { strong: string; surface: string }) => void;
+    onHighlight: (verseId: number) => void;
+  }
+): MenuItem[] {
+  const items: MenuItem[] = [];
+  if (state.word) {
+    items.push({
+      key: "strongs",
+      label: "Strong's lookup",
+      icon: state.word.strong.startsWith("G") ? "G" : "H",
+      hint: state.word.strong,
+      onSelect: () => handlers.onStrongs(state.word!),
+    });
+    items.push({ key: "divider", label: "", onSelect: () => {} });
+  }
+  items.push({
+    key: "highlight",
+    label: state.word ? "Highlight verse" : "Highlight",
+    icon: "✎",
+    onSelect: () => handlers.onHighlight(state.verseId),
+  });
+  return items;
 }
 
 function prettyCategory(cat: string): string {

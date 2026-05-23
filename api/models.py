@@ -593,3 +593,38 @@ class VerseWordsResponse(BaseModel):
 
     verse_id: int
     words: List[VerseWord]
+
+
+class ChapterVerseWords(BaseModel):
+    """One verse's worth of tagged tokens in the batched chapter-words
+    response. Same shape as a row of VerseWordsResponse but verse-keyed
+    so the PWA can map directly to verse_id without a second hop."""
+
+    model_config = ConfigDict(from_attributes=True)
+
+    verse_id: int
+    verse_number: int
+    words: List[VerseWord]
+
+
+class ChapterWordsResponse(BaseModel):
+    """GET /v1/books/{slug}/chapters/{n}/words (S121, Wheel 3 batched
+    endpoint). Returns every verse's Strong's-tagged tokens for the
+    entire chapter in one round trip.
+
+    Why batched: Psalm 119 has 176 verses; firing 176 parallel
+    /v1/verses/{id}/words requests from the PWA hits the browser's
+    ~6-concurrent-connections-per-host cap and serializes into a
+    visible lag. This endpoint folds the per-verse loop onto the
+    server side where a single JOIN-and-fetch returns everything in
+    one ~10-30KB JSON blob.
+
+    Public — no auth, no tier gate (free-tier feature per §9). The
+    per-verse endpoint stays alive for single-verse needs (search
+    result preview, share-verse hover, etc.).
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    chapter_id: int
+    verses: List[ChapterVerseWords]

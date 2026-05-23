@@ -384,3 +384,79 @@ Every navigation action — swipe, arrow-key, chrome button, bottom-of-chapter b
 - **Edge-of-canon wrap.** Considered and declined per the bounce lock above.
 - **Swipe-velocity prediction / inertia.** The threshold + angle constraints are sufficient for V1. Velocity-based prediction is a refinement available if the static threshold reads heavy in practice.
 - **Hover-revealed arrows on desktop.** The brief explicitly calls for *visible* arrow buttons — always-visible in the chrome and at the bottom-of-chapter continuation row, not hover-revealed.
+
+---
+
+## 20. Tap-on-Word + Contextual Verse Action Menu (locked S121, Wheel 3 of the pre-launch sweep)
+
+Per-word interaction surface for the free-tier Strong's lookup (§9), plus the menu architecture that scales as Wheels 5-13 add more per-verse tools (Notes, Bookmarks, Share-with-watermark, Hebrew/Greek interlinear, verse-highlight recommendations). Replaces the S113 single-purpose "long-press → HighlightPicker" model with a routed-via-menu model — partners learn one interaction grammar across the whole tool surface.
+
+### Two input paths, three modal surfaces
+
+- **Quick-tap on a tappable word.** Fast path — bypasses the menu and opens the **StrongsLookup** modal directly. Highest-frequency action gets the lightest interaction. Quick-tap is defined as `pointerdown → pointerup` within 500ms with less than 10px of horizontal movement (the same long-press timer used at S113; movement budget shared with the S121 W2 swipe handler).
+
+- **Long-press or right-click anywhere on a verse.** Opens the **VerseActionMenu** with items scoped to where the gesture landed. Long-press on a tappable word → word scope (Strong's lookup at the top + divider + verse-scoped actions below). Long-press on plain text between words (or on a word without a Strong's tag) → verse scope (verse-scoped actions only). The menu routes to the right modal when a menu item is selected.
+
+The three modal surfaces all share the same visual register — fixed-position overlay with a `bg-black/40` backdrop, bottom-sheet on mobile (`items-end`), centered on desktop (`sm:items-center`), bordered-chrome panel using `bg-[var(--reader-surface)]`. Same shape as S113 HighlightPicker so partners learn one modal layout.
+
+### VerseActionMenu — extensible item architecture
+
+Menu items are passed in via the `items` prop so the caller decides what's available in the current scope. As future wheels add tools, they append to the items array in App.tsx's `buildMenuItems` helper:
+
+- **Wheel 3 (now)** — Strong's lookup (word scope), Highlight verse (verse scope, routes to S113 HighlightPicker).
+- **Wheel 5** — Add note (verse scope, free-tier single-notepad or paid-tier scoped note), Bookmark (verse scope).
+- **Wheel 6** — Share verse with watermark (verse scope).
+- **Wheel 9-10** — Reference library lookup (word scope, $4.99-gated), Interlinear (verse scope, $4.99-gated).
+- **Wheel 12** — Recommendations from this verse (verse scope, $4.99-gated).
+
+Each future wheel adds one or two MenuItem objects with `{ key, label, icon?, hint?, onSelect, disabled? }`. The component itself does not change. Items marked `disabled` render dimmed (40% opacity) with no-op tap — used when a tier-gated tool is invoked by a partner whose tier doesn't unlock it; gives them the affordance + the upgrade path without breaking the menu shape.
+
+Word-scoped items always sit at the top; a visual divider separates word-scoped from verse-scoped items when both are present. The scopeLabel header at the top of the modal reads the surface English word ("God", "created") when scope is word, and "Verse actions" when scope is verse.
+
+### StrongsLookup modal contents
+
+Header: surface English word + Strong's badge (`H####` / `G####`, badge background in the §5 spectral-blue accent register) + language tag (Hebrew / Greek / Aramaic).
+
+Body:
+
+- **Lemma** — original-script form rendered at 2xl with a Hebrew or Greek font stack (`'SBL Hebrew', 'Ezra SIL', 'Times New Roman'` for Hebrew with `direction: rtl`; `'SBL Greek', 'GFS Didot', 'Times New Roman'` for Greek). Falls back to system serif if the SBL fonts aren't installed (most browsers will still render Hebrew/Greek codepoints via the OS font fallback chain).
+- **Transliteration** — inline italic next to the lemma.
+- **Pronunciation** — small sans-serif `/.../` notation when present, else hidden.
+- **Gloss (short_definition)** — bolded "Gloss:" label + short phrase, when present.
+- **Definition** — the full Strong's body, in body register.
+- **Derivation** — small sans-serif "Derivation:" label + etymology, when present.
+
+Close affordances: tap-outside-to-close, ✕ button in the header, `Escape` key on desktop.
+
+### Verse-render alignment
+
+The verse renderer splits the restored verse text into a mix of plain runs and tappable spans via `lib/verse-align.ts`. Alignment respects the restored sacred-name register from §3 — `"Elohim (God)"` renders as a tappable `Elohim` (→ H0430) + a plain `(God)` orientation half; `"Yahuah Elohim (the LORD God)"` renders as `Yahuah` (→ H3068) + `Elohim` (→ H0430) + plain `(the LORD God)`. The parenthetical English equivalent is always non-tappable — it's the orientation half of the source-echo, not a separate word with its own Strong's number.
+
+The alignment is computed client-side at render time using the position-ordered `verse_words` data from the new batched chapter-level endpoint (`GET /v1/books/{slug}/chapters/{n}/words`). One round trip per chapter loads alignment for every verse, fired alongside the existing chapter endpoint so tap-on-word becomes available shortly after the verse text renders (progressive enrichment — verse text shows instantly via the existing chapter endpoint; tap-ability lights up when the words endpoint resolves). The per-verse endpoint stays alive for single-verse needs (search result hover, share-verse preview, etc.).
+
+### Visual register for tappable words
+
+Per §1's clean reading-surface principle, tappable words are **invisible at rest**. The reading surface stays pure prose — no underlines, no color tints, no markers competing with the §3 sacred-name register or the §6 user highlights. A faint dotted underline in the §5 spectral-blue accent fires on hover (`@media (hover: hover)`), confirming the affordance to mouse users without breaking visual density. Touch-only surfaces (no hover state) discover tap-ability through use — same pattern as how partners learned the S113 long-press picker.
+
+This is a deliberate trade against an always-visible underline or color tint. Partners who haven't yet learned the tap surface lose nothing visually; partners who have learned it know any word can be probed. The §16 strategic-frame principle — *the reading surface is the brand-defining signature* — wins over teach-by-affordance for V1. Discovery copy at first-time-install (the §10 conversion-surface work) can mention "tap any word for its Strong's entry" so partners who would never explore on their own get told.
+
+### Interaction-conflict resolution with prior wheels
+
+- **S113 long-press picker.** Now routed through the menu — long-press fires the menu, partner picks "Highlight verse," HighlightPicker opens as before. No behavior changed inside HighlightPicker; the only change is the entry path. Partners who learned "long-press → picker" at S113 hit one extra tap in V1; the menu's clarity benefit (especially as Wheels 5-13 land) outweighs the one-tap regression.
+- **S121 W2 swipe nav.** The 10px horizontal-movement check in the swipe handler kills the long-press timer if the user is swiping. Tap-on-word's quick-tap path is also protected — `longPressFiredRef` gates click suppression so a quick-tap that became a swipe doesn't open Strong's mid-swipe.
+- **S113 verse-level pointer events.** The word-tappable spans use `e.stopPropagation()` on all pointer events so the verse-level handler doesn't also fire when a word is tapped. Quick-tap on plain text between words still uses the verse-level handler (currently a no-op except for menu-suppression-on-long-press; future wheels may add a "verse info" or default action).
+
+### Accessibility
+
+- StrongsLookup modal: `role="dialog"`, `aria-label="Strong's lexicon entry"`, `Escape`-to-close, ✕ button with `aria-label="Close"`.
+- VerseActionMenu: `role="menu"`, items with `role="menuitem"`, `Escape`-to-close, dividers with `role="separator"`.
+- Word-tappable spans: inherit the parent verse-interactive's keyboard accessibility (the verse is keyboard-reachable via tab; word-level keyboard activation is a future-wheel refinement).
+- Hit targets: menu items meet the §13 44pt iOS / 48dp Android floor (`minHeight: 2.75rem`). Word-tappable spans inherit verse-text size — at the S116-locked Lora 18px / 1.7 line-height, body word targets are ~16-24px tall × variable width; comfortable for thumb taps on common-length words, harder for one-letter words. Edge case captured for post-launch refinement if reports surface.
+
+### What this section deliberately does NOT prescribe
+
+- **Always-visible tappability affordance.** Considered (faint underline at rest on every tappable word) and declined — the §1 clean reading-surface principle wins. If discovery becomes a real adoption blocker post-launch, a `Settings → Highlight tappable words` toggle is the future-wheel refinement.
+- **Hover preview of the Strong's entry.** A tooltip-on-hover showing the short_definition was considered for desktop and declined — opens a different UX register (passive vs intentional) and creates a teach-them-two-things problem. Quick-tap stays the one path.
+- **Tap-and-hold for full definition; quick-tap for gloss only.** Considered (gradient depth of interaction) and declined — adds a third gesture and the modal isn't heavy enough to justify a "preview" intermediate.
+- **Per-word bookmark / mark-this-word-as-studied.** Word-scoped highlights are a meaningful future feature but are NOT in V1 — verse-scoped highlights (S113) remain the only highlight surface. The menu architecture leaves room to add word-scoped highlight at a later wheel without rework.
+- **Cross-references from a tapped word.** A "see other verses with this Strong's number" action would be powerful but requires the Wheel 12 recommendations engine + a word-anchored thread store. Deferred.
