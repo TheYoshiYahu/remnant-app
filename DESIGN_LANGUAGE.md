@@ -419,7 +419,7 @@ The scopeLabel header at the top of the modal reads the surface English word ("G
 
 **Copy implementation note (locked S121).** Copy uses `navigator.clipboard.writeText(formattedText)` directly with the verse text + reference. Bypasses DOM selection entirely — no fight with the long-press picker, no whitespace artifacts from selecting across the W3 word-tappable span structure. Format: `"{Book} {Chapter}:{Verse} — {Verse text}\n\n— Remnant of Promise Official Study Bible"`. The watermark line is the same brand-mark watermark that Wheel 6 will overlay on the visual share — every Copy is a viral surface even before W6 ships.
 
-**Verse-range Copy + Share deferred to Wheel 6 — no Cepher-style cap.** V1 Copy is single-verse. Yoshi flagged at S121 that social-media-debate use cases need multi-verse range (the Cepher's 5-verse limit was named as bad UX). The range-selection mechanic (tap first verse → "Start range here" → tap last verse → "Copy/Share range") is its own UX surface and ships with Wheel 6's share-with-watermark work. **No cap.** Partners can range any size they want — single verse to entire chapter to multi-chapter spans. The framework's diagnostic often runs across passages the Reformation traditions truncate; the app should never reproduce that truncation in its sharing affordances.
+**Verse-range Copy + Share deferred to Wheel 7 — no Cepher-style cap; ride on the §21 shared range-selection mechanic landing at Wheel 4.** V1 Copy is single-verse. Yoshi flagged at S121 that social-media-debate use cases need multi-verse range (the Cepher's 5-verse limit was named as bad UX). The S122 sweep re-sequence pulled the range mechanic forward to its own architectural wheel (W4) ahead of the share/copy consumers — the mechanic is locked at §21 below with multi-verse highlight as the first consumer; W7's Copy + Share with watermark become two additional Live items in the §21 post-capture action picker as they ship. **No cap.** Partners can range any size they want — single verse to entire chapter, and (when W7 lands cross-chapter) to multi-chapter spans. The framework's diagnostic often runs across passages the Reformation traditions truncate; the app should never reproduce that truncation in its sharing affordances.
 
 ### Disabled-state stubs and tier-locked surfaces (locked S122)
 
@@ -457,10 +457,10 @@ S121 shipped the menu architecture with three live items (Strong's, Highlight, C
 |  | Nave's topical | Tier-locked | W9 | Library |
 |  | Related passages | Tier-locked | W12 | Library |
 | **Share** *(verse scope)* | Copy verse | Live | — | Free |
-|  | Share with watermark | Coming soon | W6 | Free |
-|  | Multi-verse range | Coming soon | W6 | Free |
+|  | Share with watermark | Coming soon | W7 | Free |
+| **Range** *(verse scope, added S123)* | Start range here | Live | W4 | Free |
 
-For a Hebrew word in word scope at S122 lock, the menu shows 15 items (5 Word-study + 2 Marking + 2 Notes + 3 Cross-references + 3 Share). For a Greek word, 14 items (Nikkudot drops; BDB swaps to Thayer's). For verse scope, 10 items (no Word-study section). Bottom-sheet on mobile scrolls cleanly via the new max-h + overflow-y-auto from above.
+For a Hebrew word in word scope at S123 lock (updated from S122 — Share's "Multi-verse range" stub promoted to its own Range section as a Live "Start range here" item per §21), the menu shows 15 items (5 Word-study + 2 Marking + 2 Notes + 3 Cross-references + 2 Share + 1 Range). For a Greek word, 14 items (Nikkudot drops; BDB swaps to Thayer's). For verse scope, 10 items (no Word-study section). Bottom-sheet on mobile scrolls cleanly via the new max-h + overflow-y-auto from above.
 
 **MenuItem interface (S122 extension).** Two optional fields added to the S121 shape so the helper in App.tsx can declare an item's state cleanly:
 
@@ -527,3 +527,93 @@ This is a deliberate trade against an always-visible underline or color tint. Pa
 - **Tap-and-hold for full definition; quick-tap for gloss only.** Considered (gradient depth of interaction) and declined — adds a third gesture and the modal isn't heavy enough to justify a "preview" intermediate.
 - **Per-word bookmark / mark-this-word-as-studied.** Word-scoped highlights are a meaningful future feature but are NOT in V1 — verse-scoped highlights (S113) remain the only highlight surface. The menu architecture leaves room to add word-scoped highlight at a later wheel without rework.
 - **Cross-references from a tapped word.** A "see other verses with this Strong's number" action would be powerful but requires the Wheel 12 recommendations engine + a word-anchored thread store. Deferred.
+
+---
+
+## 21. Range-Selection Mechanic — Shared Across Multi-verse Highlight, Copy, and Share (locked S123, Wheel 4 of the pre-launch sweep)
+
+The shared mechanic for capturing a range of verses, plus its first consumer — multi-verse highlight. Three known consumers across the pre-launch sweep route through one capture flow: Wheel 4 multi-verse highlight (ships with this section), Wheel 7 multi-verse Copy, and Wheel 7 range Share-with-watermark. The architecture-now-beats-retrofit-later forward standard governs the wheel — third instance after the S121 W3 menu architecture and the S122 partner-tier resolution. The mechanic is the wheel; multi-verse highlight is the verification surface.
+
+### One shared menu entry, one capture flow, one branching action picker
+
+Yoshi's S123 lock: one menu item across all three consumers, one capture flow that does not differentiate by destination action, one small action picker that branches at commit time. Rationale (verbal-answers-transcribe from the S123 spec-then-build gate): *"why wouldnt we have the same shared click, unless we can explain to users the different gestures."* The alternative considered — three separate menu items ("Highlight range" / "Copy range" / "Share range") — was declined because there's no clean story for why range-selection would be three different gestures rather than one mechanic with three destinations. The shared-click answer is the architectural cleaner read, and it matches the post-S121 menu-routing grammar partners already learned.
+
+**The menu item: "Start range here"** lives in a new **Range** section at the bottom of the VerseActionMenu (verse scope; one item; Live tier-Free this wheel). The S122-locked Share-section "Multi-verse range" Coming-soon stub is removed — its placeholder role is fulfilled by the new Range section. Future wheels do NOT add new top-level menu items for range-Copy or range-Share; instead they add Live items to the post-capture action picker (described below).
+
+**The capture flow:**
+
+1. Partner long-presses verse N → VerseActionMenu opens.
+2. Partner taps "Start range here" → menu closes, app enters **range mode** with verse N anchored as the start verse.
+3. Partner taps any other verse M in the currently-loaded chapter → range captured as `[min(N, M), max(N, M)]` (auto-normalized; see *Reversed-range handling* below).
+4. Post-capture **action picker** opens (small modal in the bordered-chrome family) with the destination actions: Highlight range (Live this wheel) + Copy range with watermark (Coming soon, W7) + Share range with watermark (Coming soon, W7). The same Coming-soon visual register from §20's S122 stub catalog applies — 40% opacity + `Coming soon` italic muted hint + no-op tap on the Coming-soon entries.
+5. Partner taps an action → action's modal opens (HighlightPicker for the Live path) applied to all N verses in the captured range → on commit, action fires N times (one API write per verse) → range mode exits.
+
+**Cancel paths.** Range mode can exit at any time without commit via: (a) tap-outside on the range-mode banner, (b) explicit Cancel button in the range-mode banner, (c) Escape key on desktop. Chapter navigation (W2 swipe, arrow keys, picker, bottom-of-chapter continuation row) also cancels range mode silently per the same-chapter-only scope below.
+
+### Same-chapter scope for Wheel 4 UX; helper is fully general
+
+W4 UX confines range selection to the currently-loaded chapter — entering range mode in Genesis 50 means the end verse must also be in Genesis 50. If partner navigates away (W2 surfaces or the picker), range mode silently cancels. This is a UX scope decision, not an architecture limit.
+
+**The helper itself** (`app/src/lib/range-selection.ts`) is built fully general from W4 — state machine + pure functions that accept verse references and produce ordered verse_id lists across any boundary. W7's Copy + Share consumers will inherit cross-chapter (and cross-book within a witness category — same boundary rule as §19 chapter navigation) without extending the helper. The architecture-now win: when W7 lands, the only new work is the action picker rendering Copy/Share as Live + the consumer wiring; the capture flow + the range math + the verse-id resolution all already exist.
+
+### Visual register — range mode
+
+- **Range-mode banner** at the top of the reader: small bordered-chrome panel with a left-aligned label *"Range mode — tap an end verse"* and a right-aligned Cancel button (using the same bordered-chrome button family per §1). Banner uses `bg-[var(--reader-surface)]` and a 1px `var(--reader-rule)` border; text in body register, Cancel chip in the affordance register. Sticks below the chrome header at all times while range mode is active.
+- **Start anchor verse** rendered with a 2px left-border accent in §5 spectral-blue and a faint `bg-[var(--reader-accent)]` tint at ~8% alpha. The accent reads as "this is your anchor" without competing with the existing S113/S117 highlight marks (which live on the verse text itself, not the verse container).
+- **Captured-range verses** (after end verse tapped, briefly before action picker opens) get the same low-alpha spectral-blue tint to confirm the range visually. The tint clears on action commit or cancel.
+- **No hover preview** of the prospective range — touch-first surface, no hover register to spend complexity on. Partners learn the range by committing to it; if the commit was wrong, cancel and start over.
+
+### Action picker — the post-capture modal
+
+Reuses the §20 bordered-chrome modal family — fixed-position overlay with `bg-black/40` backdrop, bottom-sheet on mobile (`items-end`), centered on desktop (`sm:items-center`), `max-w-md` width matching the S122-locked VerseActionMenu.
+
+**Header:** `"Range captured — {N} verses"` with the verse-reference span underneath in §5 spectral-blue accent register (e.g., *Genesis 1:3–1:5*). Where the helper supports cross-chapter ranges (W7+), the reference span carries the cross-chapter format (e.g., *Genesis 50:26 → Exodus 1:1*).
+
+**Body:** three action items in the S122-locked menu-item visual register — Highlight range (Live), Copy range with watermark (Coming soon, W7), Share range with watermark (Coming soon, W7). Same state-rendering rules as §20's S122 stub catalog (40% opacity for Coming-soon; tap behavior per state).
+
+**Close affordances:** ✕ in the header, tap-outside-to-close, Escape on desktop, explicit Cancel button at the bottom of the picker. Any close path exits range mode entirely (captured state cleared, banner removed, anchor + range visual treatment cleared). The simpler "close = cancel" model was chosen over "close keeps captured state" during S123 build because the alternative needed an explicit re-engage affordance (long-press → "Re-pick end verse" menu item or similar) that didn't justify its complexity in V1 — partners who mis-tap the end verse start over via long-press → "Start range here." If reports surface that mis-tap recovery is a real friction point post-launch, the sticky-captured model is a future-wheel refinement.
+
+### HighlightPicker multi-target mode (the W4 Live consumer)
+
+The S117 HighlightPicker gets a multi-target rendering mode. When invoked from the range-selection action picker with `targetVerseIds: number[]` of length > 1, the picker renders:
+
+- **Title:** `"Mark {N} verses"` instead of `"Mark verse"`. Same chip register.
+- **Existing-marks chips at top:** disabled / hidden. Multi-target highlight is a fresh apply, not a per-verse edit — the existing-marks UI from S117 stays only for single-verse highlighting where the partner is iterating on one verse's marks.
+- **Color + style picker:** unchanged from S117. Free tier locked to (neon_yellow, fill); $1.99+ unlocks all 39 (color, style) configurations.
+- **Mark verse → "Mark {N} verses"** button. On tap, the picker fires POST /v1/highlights N times (one per verse_id in `targetVerseIds`) in parallel via `Promise.all`, with optimistic UI updating `highlightsByVerse` for all N verses before the requests complete. Per-verse failures are logged + the optimistic entry rolled back for that verse only (the other N-1 commits stand) — partial-failure is acceptable for a non-critical free-tier feature. If the partner already has 3 marks on any verse in the range, that verse's commit is skipped silently (the 3-mark cap per §8 applies per-verse, not per-range).
+- **No bulk-remove from the multi-target picker.** Bulk-removal is a future-wheel surface (W5 Notes-tier or beyond); multi-target apply is the V1 scope.
+
+### Schema — no migration needed
+
+Multi-verse highlight uses the existing `verse_highlights` table (S113 schema + S117 multi-mark constraint update) with N rows — one (user_id, verse_id, color, style) row per verse in the range. The `verse_highlights_user_verse_color_style_unique` constraint from S117 still applies per-verse — re-applying the same (color, style) to a verse already carrying it is a no-op via `ON CONFLICT DO NOTHING`. No schema changes for this wheel.
+
+### Interaction-conflict resolution with prior wheels
+
+- **S113 / S117 single-verse highlight.** Untouched. Single-verse highlight still fires via long-press → menu → "Highlight verse" → HighlightPicker (single-target mode). Range mode is a parallel path entered via long-press → menu → "Start range here." Partners who never use range mode see no behavior change.
+- **S121 W2 chapter navigation.** Chapter nav (swipe, arrow keys, picker, bottom-of-chapter continuation row) silently cancels range mode if active. Range mode is intentionally same-chapter-scope for W4 per the gate, so a chapter-change implies the partner abandoned the range.
+- **S121 W3 quick-tap on word + StrongsLookup.** Quick-tap on a tappable word during range mode is treated as the end-verse tap (the verse the word lives in is the end verse) rather than opening StrongsLookup. Word-level Strong's tap is suppressed inside range mode so partners can use words as range-end targets without accidentally opening a lexicon modal. Quick-tap on words outside range mode behaves as S121 W3.
+- **S121 W3 VerseActionMenu.** The new Range section appears at the bottom of every verse-scope long-press, regardless of partner tier (Free-tier feature). The S122 partner-tier-aware rendering rule does not apply to "Start range here" since it's Live for all tiers — same treatment as Highlight verse + Copy verse.
+- **S122 menu stub catalog.** The Share-section "Multi-verse range" Coming-soon stub is removed (its placeholder role is fulfilled by the actual Range section + action picker). The §20 stub catalog table above reflects the S123 update.
+
+### Accessibility
+
+- Range-mode banner: `role="status"` with `aria-live="polite"` so screen readers announce range mode entry / verse-anchor changes. Cancel button: `aria-label="Cancel range selection"`.
+- Anchor verse + captured-range verses: `aria-selected="true"` on the verse container; `aria-roledescription="Range start"` on the anchor verse.
+- Action picker: `role="dialog"`, `aria-label="Range action picker"`, Escape-to-close.
+- Hit targets: anchor + range-tappable verse containers meet the §13 44pt iOS / 48dp Android floor (`minHeight: 2.75rem`); the existing verse-row padding from the S113 long-press surface already satisfies this — no new minHeight rule needed.
+- Keyboard navigation: Tab cycles between range-mode banner Cancel button + the verses in the chapter (verse containers are tab-reachable via the existing S113 pointer-event handlers' `tabIndex={0}`). Enter on a focused verse during range mode commits as end-verse.
+
+### Helper API surface (lib/range-selection.ts)
+
+Pure state machine + pure functions. No React imports; no global state. Consumers (App.tsx for W4; future Copy/Share consumers at W7) hold the state in their own component state and call the helper functions to advance the state machine.
+
+The state shape carries the minimum needed for the same-chapter case and the cross-chapter case (W7+) uniformly — start verse-ref + end verse-ref + a status enum. The helper exposes pure functions for: starting a selection from an anchor verse-ref; committing an end verse-ref to a selecting state (auto-normalizing direction); canceling to idle; resolving the captured range to an ordered verse_id list given a chapter's verse table (same-chapter optimized path) or a cross-chapter lookup (W7+ via an injected resolver). Boundary cases — same-chapter, cross-chapter (deferred test surface but covered by the helper), cross-book (witness-category boundary rule from §19 honored), range-of-one (start === end → 1-verse range, treated identically to single-verse highlight), range-reversed (end < start → auto-normalized to [end, start]) — all covered by node sanity tests per the post-S121/S122 forward standard.
+
+### What this section deliberately does NOT prescribe
+
+- **Drag-to-extend gesture.** A pointerdown-on-verse → drag-to-other-verse → pointerup-to-commit gesture was considered (mirrors text-selection UX) and declined for V1 — too easy to trigger accidentally while scrolling on touch surfaces, and the long-press → menu → "Start range here" → tap-end flow is the deliberate-intent path that matches partner mental models post-S121/S122. Drag-to-extend is a future-wheel refinement if reports surface that the menu-routed path feels too heavy.
+- **Cap on range size.** Per the §20 *no Cepher-style cap* lock — partners can range any size they want. The framework's diagnostic often runs across passages the Reformation traditions truncate (Matthew 23-24 unity, Romans 9-11 unity, the gospel-fulfilling structure of Isaiah 53-55 with Hosea 1-2); the app should never reproduce that truncation.
+- **Persistent "saved ranges" surface.** Saving a captured range as a named reusable object (e.g., "My Romans 9-11 study range") was considered and declined for V1 — pushes into the same surface as Bookmarks (W5) and Notes (W5+W8); range-as-mechanism stays ephemeral for now. If partners want to refer to a passage repeatedly, the bookmark-with-short-description surface (W5) is the right place.
+- **Range-aware verse-actions across modal surfaces.** The Strong's lookup, the chapter-end card, and the future reference-library cards (W9) stay single-verse / single-word in their action surfaces. Range applies only to the verse-render → menu → range mode → action picker path; the modals don't carry their own range affordances. Simpler mental model; one place range lives.
+- **Visual range preview during the selecting phase.** Hover-preview of the prospective range (anchor verse → mouse-hover verse → show what the range WOULD be if committed here) was considered for desktop and declined — touch-first surface, no hover register to spend complexity on, and the captured-range tint right before the action picker opens gives partners the confirmation moment they need.
+- **Multi-anchor / non-contiguous selection.** Selecting verses 3, 7, and 12 (skipping 4-6, 8-11) was considered and declined for V1 — the use cases that surfaced for it (color-coding a thematic argument across non-contiguous verses) are better served by single-verse highlight in repeated taps. Range mode is for contiguous passages; non-contiguous selection is a future-wheel question if it surfaces as a real need.

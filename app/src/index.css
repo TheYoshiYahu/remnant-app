@@ -143,6 +143,29 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* S123 W4 — range-selection visual treatment per DESIGN_LANGUAGE.md §21.
+   Anchor: the long-pressed start verse during selecting mode. Renders a
+   2px left-border accent in §5 spectral-blue + a faint accent tint at
+   ~8% alpha so partners see "this is your anchor" without the accent
+   competing with the existing S113/S117 highlight marks (which live on
+   the verse text itself, not the verse container).
+
+   Captured: every verse in [start, end] of a captured range, until the
+   action picker commits the action or cancels. Uses the same accent
+   tint so the partner sees the visual confirmation of what they
+   selected before committing to the action. */
+.verse-interactive.range-anchor {
+  border-left: 2px solid var(--reader-accent);
+  padding-left: 4px;
+  margin-left: -6px;
+  background-color: color-mix(in srgb, var(--reader-accent) 8%, transparent);
+  border-radius: 2px;
+}
+.verse-interactive.range-captured {
+  background-color: color-mix(in srgb, var(--reader-accent) 8%, transparent);
+  border-radius: 2px;
+}
+
 /* S121 W3 — individual Strong's-tagged word inside a verse. Tappable
    for the Strong's-lookup quick-tap path; also a long-press anchor
    for the contextual VerseActionMenu (which routes to Strong's,

@@ -29,7 +29,19 @@ import VerseActionMenu, {
   type MenuItem,
   type MenuSection,
 } from "./components/VerseActionMenu";
+import RangeActionPicker from "./components/RangeActionPicker";
 import { alignVerse, type Segment } from "./lib/verse-align";
+import {
+  IDLE_STATE as RANGE_IDLE,
+  type RangeSelectionState,
+  type RangeVerseRef,
+  cancel as rangeCancel,
+  commitEnd as rangeCommitEnd,
+  isSameChapter as rangeIsSameChapter,
+  resolveSameChapterRange,
+  sameChapterRangeSize,
+  startSelecting as rangeStartSelecting,
+} from "./lib/range-selection";
 import { renderMarkdownBody } from "./lib/markdown";
 import { useTheme } from "./lib/theme";
 import {
@@ -222,6 +234,23 @@ function Reader() {
     { strong: string; surface: string } | null
   >(null);
 
+  // S123 W4 — range-selection state + post-capture action picker target.
+  // rangeState holds the shared mechanic per DESIGN_LANGUAGE.md §21:
+  //   - idle: no range active; verses render normally
+  //   - selecting: anchor verse pinned (start); waiting for end-verse tap
+  //   - captured: both endpoints in; rangePickerOpen drives the
+  //     post-capture action picker; on commit, pickerRangeVerseIds
+  //     drives the HighlightPicker in multi-target mode
+  //
+  // pickerRangeVerseIds is set when "Highlight range" is chosen from the
+  // RangeActionPicker — it triggers HighlightPicker's multi-target render.
+  const [rangeState, setRangeState] =
+    useState<RangeSelectionState>(RANGE_IDLE);
+  const [rangePickerOpen, setRangePickerOpen] = useState<boolean>(false);
+  const [pickerRangeVerseIds, setPickerRangeVerseIds] = useState<
+    number[] | null
+  >(null);
+
   // S121 W3 — per-chapter Strong's-tagged-words map. Keys are
   // verse_id; values are the position-ordered VerseWord list for
   // that verse. Fetched alongside the chapter detail via the
@@ -287,12 +316,88 @@ function Reader() {
   // directly (fast path for the highest-frequency action). Only
   // fires if the long-press timer did NOT fire; the swipe-handler's
   // 10px movement check also kills this if the user dragged.
-  function handleWordQuickTap(word: { strong: string; surface: string }) {
+  //
+  // S123 W4 — when range mode is active (selecting), word-level quick-
+  // taps are reinterpreted as end-verse commits. Partners can pick
+  // either plain-text or a tappable word as the end verse without
+  // accidentally opening the lexicon mid-selection per DESIGN_LANGUAGE.md
+  // §21 interaction-conflict resolution.
+  function handleWordQuickTap(
+    word: { strong: string; surface: string },
+    verseId: number
+  ) {
     if (longPressFiredRef.current) {
       longPressFiredRef.current = false;
       return;
     }
+    if (rangeState.status === "selecting") {
+      commitEndVerse(verseId);
+      return;
+    }
     setStrongsState(word);
+  }
+
+  // S123 W4 — build a RangeVerseRef from a verse_id in the currently
+  // loaded chapter. Returns null if the verse isn't found in chapterDetail
+  // (defensive — shouldn't happen because the handlers are only attached
+  // to rendered verses).
+  function buildVerseRef(verseId: number): RangeVerseRef | null {
+    if (!chapterDetail) return null;
+    const v = chapterDetail.verses.find((vv) => vv.id === verseId);
+    if (!v) return null;
+    return {
+      verseId: v.id,
+      verseNumber: v.verse_number,
+      bookSlug: chapterDetail.book.slug,
+      chapterNumber: chapterDetail.chapter.chapter_number,
+    };
+  }
+
+  // S123 W4 — enter range mode with the long-pressed verse as the
+  // anchor. Called from buildMenuSections's "Start range here" item.
+  function startRangeFromVerse(verseId: number) {
+    const ref = buildVerseRef(verseId);
+    if (ref === null) return;
+    setRangeState(rangeStartSelecting(ref));
+  }
+
+  // S123 W4 — commit an end verse to the in-progress range. Same-chapter
+  // scope (per the §21 lock); cross-chapter taps are silently ignored
+  // because chapterDetail's verses only carry the loaded chapter's ids.
+  // After commit, open the post-capture action picker (RangeActionPicker)
+  // which routes to HighlightPicker in multi-target mode for the Live
+  // consumer.
+  function commitEndVerse(verseId: number) {
+    if (rangeState.status !== "selecting") return;
+    const endRef = buildVerseRef(verseId);
+    if (endRef === null) return;
+    const next = rangeCommitEnd(rangeState, endRef);
+    if (next.status !== "captured") return;
+    if (!rangeIsSameChapter(next)) {
+      // Defense in depth — same-chapter UX scope per §21 should prevent
+      // this branch from firing in practice (end verses outside the
+      // loaded chapter aren't in chapterDetail.verses), but if a
+      // cross-chapter ref ever slips through, we cancel rather than
+      // commit a state the W4 resolver can't handle.
+      setRangeState(RANGE_IDLE);
+      return;
+    }
+    setRangeState(next);
+    setRangePickerOpen(true);
+  }
+
+  // S123 W4 — cancel range mode back to idle. Used by:
+  //   - explicit Cancel button in the range-mode banner
+  //   - Escape key (registered in a useEffect below)
+  //   - chapter navigation (W2 surfaces silently cancel via the
+  //     navigation-cancels-range useEffect below)
+  //   - RangeActionPicker's Cancel / backdrop / Escape — any close path
+  //     exits range mode entirely per the §21 "close = cancel" model.
+  //     Partners who mis-tap the end verse start over via long-press →
+  //     "Start range here."
+  function cancelRange() {
+    setRangeState(rangeCancel());
+    setRangePickerOpen(false);
   }
 
   // Books load once on mount.
@@ -667,6 +772,43 @@ function Reader() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevTarget, nextTarget]);
 
+  // S123 W4 — chapter navigation silently cancels range mode. Per
+  // DESIGN_LANGUAGE.md §21, W4's range-selection UX is same-chapter
+  // scope; a chapter-change implies the partner abandoned the range
+  // (or arrived here from a navigation surface that fired during range
+  // mode for an unrelated reason). Fires for every change to
+  // selectedBookSlug or selectedChapter, including the S116 initial
+  // hydrate (harmless because rangeState is already IDLE at mount).
+  useEffect(() => {
+    if (rangeState.status !== "idle") {
+      setRangeState(RANGE_IDLE);
+      setRangePickerOpen(false);
+      setPickerRangeVerseIds(null);
+    }
+    // Intentionally only fires on chapter-change, not on rangeState
+    // change (that would cause re-entry into the effect's own cancel).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedBookSlug, selectedChapter]);
+
+  // S123 W4 — Escape key cancels range mode at the App level. The
+  // RangeActionPicker has its own Escape-to-close that closes the
+  // picker (which calls cancelRange via onClose), so this only fires
+  // for the SELECTING state (after "Start range here" but before the
+  // end verse is tapped) where no modal owns Escape. The window-level
+  // listener is registered for all rangeState states but no-ops outside
+  // selecting to avoid stealing Escape from other surfaces.
+  useEffect(() => {
+    if (rangeState.status !== "selecting") return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        cancelRange();
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rangeState.status]);
+
   // S121 — touch-swipe state. pointerdown records the start position
   // and pointer type; pointermove cancels the long-press timer if the
   // user is swiping (so a swipe over a verse doesn't open the picker
@@ -880,6 +1022,33 @@ function Reader() {
           onPointerCancel={onArticlePointerCancel}
           style={{ touchAction: "pan-y" }}
         >
+          {/* S123 W4 — range-mode banner. Renders whenever the partner
+              is in selecting mode (anchor pinned, waiting for end-verse
+              tap). The captured state doesn't render this banner — the
+              RangeActionPicker takes over the UI focus once a range is
+              captured. Locked at DESIGN_LANGUAGE.md §21. */}
+          {rangeState.status === "selecting" && (
+            <div
+              role="status"
+              aria-live="polite"
+              className="mb-3 flex items-center justify-between gap-3 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-2"
+            >
+              <span className="text-base text-[var(--reader-text)]">
+                <span className="text-[var(--reader-accent)]">Range mode</span>
+                <span className="text-[var(--reader-muted)]">
+                  {" "}— tap an end verse
+                </span>
+              </span>
+              <button
+                type="button"
+                onClick={cancelRange}
+                className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-1 font-sans text-xs text-[var(--reader-text)] hover:bg-[var(--reader-bg)]"
+                aria-label="Cancel range selection"
+              >
+                Cancel
+              </button>
+            </div>
+          )}
           <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)]">
             {chapterDetail.book.title}{" "}
             <span className="font-normal text-[var(--reader-muted)]">
@@ -989,7 +1158,7 @@ function Reader() {
                                 }}
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  handleWordQuickTap(word);
+                                  handleWordQuickTap(word, v.id);
                                 }}
                               >
                                 {seg.text}
@@ -1022,11 +1191,34 @@ function Reader() {
                         </span>
                       );
                     }
+                    // S123 W4 — range-mode visual + interaction state for
+                    // this verse. Anchor = the start verse of an
+                    // in-progress or captured range. inCapturedRange =
+                    // any verse in [start, end] of a captured range
+                    // (rendered with the tint until the action picker
+                    // commits or cancels).
+                    const isRangeAnchor =
+                      (rangeState.status === "selecting" ||
+                        rangeState.status === "captured") &&
+                      rangeState.start?.verseId === v.id;
+                    const inCapturedRange =
+                      rangeState.status === "captured" &&
+                      rangeState.start !== null &&
+                      rangeState.end !== null &&
+                      rangeIsSameChapter(rangeState) &&
+                      v.verse_number >= rangeState.start.verseNumber &&
+                      v.verse_number <= rangeState.end.verseNumber;
+                    const rangeClass =
+                      isRangeAnchor && rangeState.status === "selecting"
+                        ? " range-anchor"
+                        : inCapturedRange
+                          ? " range-captured"
+                          : "";
                     return (
                       <span
                         key={v.id}
                         data-verse-number={v.verse_number}
-                        className="verse-interactive"
+                        className={`verse-interactive${rangeClass}`}
                         onPointerDown={() => handlePointerDown(v.id)}
                         onPointerUp={handlePointerCancel}
                         onPointerCancel={handlePointerCancel}
@@ -1039,6 +1231,17 @@ function Reader() {
                           if (longPressFiredRef.current) {
                             e.preventDefault();
                             longPressFiredRef.current = false;
+                            return;
+                          }
+                          // S123 W4 — in range-selecting mode, any verse
+                          // click is the end-verse commit. The
+                          // word-tappable spans' own onClick handles the
+                          // word-level case via handleWordQuickTap's
+                          // selecting-mode branch; this is the
+                          // plain-text-between-words case (and the
+                          // fallback when verse_words haven't arrived).
+                          if (rangeState.status === "selecting") {
+                            commitEndVerse(v.id);
                           }
                         }}
                       >
@@ -1195,6 +1398,7 @@ function Reader() {
             {
               onStrongs: (w) => setStrongsState(w),
               onHighlight: (vid) => setPickerVerseId(vid),
+              onStartRange: (vid) => startRangeFromVerse(vid),
             }
           )}
           onClose={() => setMenuState(null)}
@@ -1224,6 +1428,77 @@ function Reader() {
             }
           }}
           onClose={() => setStrongsState(null)}
+        />
+      )}
+
+      {/*
+        S123 W4 — RangeActionPicker opens automatically when the
+        range-selection mechanic captures a range (rangeState transitions
+        to "captured" via commitEndVerse). Three actions in the picker:
+        Highlight range (Live this wheel) + Copy/Share with watermark
+        (Coming-soon, W7). Any close path (Cancel, ✕, backdrop, Escape)
+        exits range mode entirely per §21 "close = cancel" model.
+      */}
+      {rangePickerOpen &&
+        rangeState.status === "captured" &&
+        chapterDetail &&
+        rangeIsSameChapter(rangeState) && (
+          <RangeActionPicker
+            rangeRef={`${chapterDetail.book.title} ${chapterDetail.chapter.chapter_number}:${rangeState.start!.verseNumber}${
+              rangeState.start!.verseNumber !== rangeState.end!.verseNumber
+                ? `–${rangeState.end!.verseNumber}`
+                : ""
+            }`}
+            rangeSize={sameChapterRangeSize(rangeState)}
+            onHighlight={() => {
+              const ids = resolveSameChapterRange(
+                rangeState,
+                chapterDetail.verses
+              );
+              if (ids.length === 0) return;
+              setPickerRangeVerseIds(ids);
+              setRangePickerOpen(false);
+              // Leave rangeState as captured for the duration of the
+              // multi-target HighlightPicker session; cleared when the
+              // picker closes (see HighlightPicker invocation below).
+            }}
+            onClose={cancelRange}
+          />
+        )}
+
+      {/*
+        S123 W4 — multi-target HighlightPicker invocation. Distinct from
+        the single-verse pickerVerseId branch below so the two modes
+        stay cleanly separable (single-verse keeps the S117 chips +
+        cap UX unchanged; multi-target uses the new mode HighlightPicker
+        rendering). targetVerseIds is what flips the picker into
+        multi-target mode.
+      */}
+      {pickerRangeVerseIds !== null && pickerRangeVerseIds.length > 0 && (
+        <HighlightPicker
+          verseId={pickerRangeVerseIds[0]}
+          current={[]}
+          userTier={(me?.tier ?? "free") as ContentTier}
+          targetVerseIds={pickerRangeVerseIds}
+          onSaved={(h) =>
+            // Each successful per-verse commit calls back here once.
+            // Reuse the S117 multi-mark reducer: append + dedup-on-tuple.
+            setHighlightsByVerse((prev) => {
+              const existing = prev[h.verse_id] ?? [];
+              const filtered = existing.filter(
+                (m) => !(m.color === h.color && m.style === h.style)
+              );
+              return { ...prev, [h.verse_id]: [...filtered, h] };
+            })
+          }
+          // onDeleted is unused in multi-target mode (chips row hidden)
+          // but the prop is required by the component.
+          onDeleted={() => {}}
+          onClose={() => {
+            setPickerRangeVerseIds(null);
+            // Exit range mode fully on picker close (success or cancel).
+            cancelRange();
+          }}
         />
       )}
 
@@ -1381,6 +1656,9 @@ function buildMenuSections(
   handlers: {
     onStrongs: (w: { strong: string; surface: string }) => void;
     onHighlight: (verseId: number) => void;
+    /** S123 W4 — "Start range here" in the new Range section. Anchors the
+     *  long-pressed verse as the range start and enters selecting mode. */
+    onStartRange: (verseId: number) => void;
   }
 ): MenuSection[] {
   // ── Word study (word scope only) ─────────────────────────────────
@@ -1492,9 +1770,21 @@ function buildMenuSections(
     ...makeFreeComingSoonStub("share-watermark", "Share with watermark"),
     icon: "↗",
   });
-  share.push({
-    ...makeFreeComingSoonStub("verse-range", "Multi-verse range"),
+
+  // ── Range (verse scope, added S123 — Wheel 4 of the pre-launch sweep) ─
+  // One shared menu entry for the range-selection mechanic per
+  // DESIGN_LANGUAGE.md §21. Replaces the S122-locked Share-section
+  // "Multi-verse range" Coming-soon stub — its placeholder role is
+  // fulfilled by the actual Range section + post-capture action picker.
+  // Live + Free tier this wheel because multi-verse highlight is free
+  // per §9; future W7 Copy + Share-with-watermark land as additional
+  // Live items in the RangeActionPicker, not as new top-level menu items.
+  const range: MenuItem[] = [];
+  range.push({
+    key: "start-range",
+    label: "Start range here",
     icon: "↔",
+    onSelect: () => handlers.onStartRange(state.verseId),
   });
 
   return [
@@ -1503,6 +1793,7 @@ function buildMenuSections(
     { title: "Notes", items: notes },
     { title: "Cross-references", items: crossRefs },
     { title: "Share", items: share },
+    { title: "Range", items: range },
   ];
 }
 

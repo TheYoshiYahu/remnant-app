@@ -55,6 +55,24 @@ interface HighlightPickerProps {
   onDeleted: (highlightId: string) => void;
   /** Callback when the picker should close (background tap, save, delete). */
   onClose: () => void;
+  /**
+   * S123 multi-target mode (W4 of the pre-launch sweep — range-selection's
+   * first consumer per DESIGN_LANGUAGE.md §21). When present and length > 1,
+   * the picker fires the chosen (color, style) against every verse in the
+   * list via parallel POSTs. UI changes when multi-target is active:
+   *
+   *   - Title reads "Mark N verses" instead of "Mark verse".
+   *   - The S117 chips row (existing marks on this verse) is hidden — the
+   *     multi-target apply is a fresh stroke, not a per-verse edit.
+   *   - The S117 cap-reached banner is skipped at picker time — per-verse
+   *     cap is enforced at commit time (verses already at 3 marks silently
+   *     skip; the other verses in the range still commit).
+   *   - Save button reads "Mark N verses".
+   *
+   * Length 0 or 1 (or undefined) → single-verse mode (existing behavior).
+   * Single-verse mode falls back to the S117 chips + cap UX unchanged.
+   */
+  targetVerseIds?: number[];
 }
 
 const PRO_TIERS: ContentTier[] = [
@@ -95,9 +113,16 @@ export default function HighlightPicker({
   onSaved,
   onDeleted,
   onClose,
+  targetVerseIds,
 }: HighlightPickerProps) {
   const paid = isPaid(userTier);
-  const capReached = current.length >= MAX_MARKS_PER_VERSE;
+  // S123 — multi-target mode is active when targetVerseIds carries >1 ids.
+  // Single-verse mode (existing behavior) when undefined OR length <= 1.
+  const multiTarget = !!targetVerseIds && targetVerseIds.length > 1;
+  const targetCount = multiTarget ? targetVerseIds!.length : 1;
+  // S117 chips + cap apply to single-verse mode only. Multi-target hides
+  // both because the apply is a fresh stroke against N verses.
+  const capReached = !multiTarget && current.length >= MAX_MARKS_PER_VERSE;
 
   // S117 — initial picker state defaults to neon_yellow + fill. Earlier
   // versions seeded from `current` (the single existing mark) because
@@ -160,8 +185,15 @@ export default function HighlightPicker({
   /** S117 — true when the selected (color, style) tuple is already a
    *  mark on this verse. Mark button disables in this state so the
    *  partner can't queue a no-op insert (the API would no-op too, but
-   *  the picker should communicate the state clearly). */
+   *  the picker should communicate the state clearly).
+   *
+   *  Multi-target mode: never flags as already-marked. The S117 cap +
+   *  per-verse dedup are enforced at commit time per-verse — picker
+   *  doesn't pre-check across N verses because that would require
+   *  fetching every verse's marks, which we don't have at picker open.
+   */
   function selectedTupleAlreadyMarked(): boolean {
+    if (multiTarget) return false;
     return current.some(
       (m) => m.color === selectedColor && m.style === selectedStyle
     );
@@ -173,6 +205,52 @@ export default function HighlightPicker({
     setError(null);
     setSaving(true);
     try {
+      if (multiTarget) {
+        // S123 multi-target — fire N parallel POSTs, one per verse in the
+        // captured range. ON CONFLICT DO NOTHING semantics on the API
+        // (S117 insert-or-no-op constraint) means re-marking a verse that
+        // already carries (color, style) is a silent no-op. Per-verse
+        // failures are caught individually so partial-failure is
+        // acceptable — the successful commits stand, the failed ones
+        // produce inline error feedback. Non-critical free-tier feature
+        // per the publish-then-edit posture.
+        const results = await Promise.allSettled(
+          targetVerseIds!.map((vid) =>
+            createOrReplaceHighlight({
+              verse_id: vid,
+              color: selectedColor,
+              style: selectedStyle,
+            })
+          )
+        );
+        let failures = 0;
+        for (const r of results) {
+          if (r.status === "fulfilled") {
+            onSaved(r.value);
+          } else {
+            failures++;
+          }
+        }
+        if (failures > 0 && failures === results.length) {
+          // Total failure — show an error and keep the picker open so
+          // the partner can retry.
+          setError(`Failed to mark ${failures} verses.`);
+          return;
+        }
+        if (failures > 0) {
+          // Partial failure — log silently and close. The marks that
+          // succeeded are already in the verse-highlights map via
+          // onSaved; the partner sees them on the verses they landed on.
+          if (typeof console !== "undefined") {
+            console.warn(
+              `Multi-target highlight: ${failures} of ${results.length} commits failed.`
+            );
+          }
+        }
+        onClose();
+        return;
+      }
+      // Single-verse mode (existing behavior).
       const saved = await createOrReplaceHighlight({
         verse_id: verseId,
         color: selectedColor,
@@ -308,7 +386,7 @@ export default function HighlightPicker({
             impression that every action was individually-priced. */}
         <div className="mb-3 flex items-baseline justify-between">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
-            Mark verse
+            {multiTarget ? `Mark ${targetCount} verses` : "Mark verse"}
           </h3>
           {paid && (
             <button
@@ -325,8 +403,10 @@ export default function HighlightPicker({
 
         {/* S117 chips row — existing marks on this verse, each with × to
             remove. Empty when no marks; tight row that takes minimal
-            vertical space when populated. */}
-        {current.length > 0 && (
+            vertical space when populated. S123: hidden entirely in
+            multi-target mode (apply is a fresh stroke against N verses,
+            not a per-verse edit). */}
+        {!multiTarget && current.length > 0 && (
           <div className="mb-3 flex flex-wrap gap-1.5">
             {current.map((mark) => (
               <span
@@ -458,7 +538,7 @@ export default function HighlightPicker({
             onClick={onClose}
             className="rounded border border-[var(--reader-rule)] px-3 py-1.5 text-sm"
           >
-            {current.length > 0 ? "Done" : "Cancel"}
+            {multiTarget ? "Cancel" : current.length > 0 ? "Done" : "Cancel"}
           </button>
           {!capReached && (
             <button
@@ -474,11 +554,13 @@ export default function HighlightPicker({
             >
               {saving
                 ? "Saving…"
-                : selectedTupleAlreadyMarked()
-                  ? "Already marked"
-                  : current.length > 0
-                    ? "Add mark"
-                    : "Mark verse"}
+                : multiTarget
+                  ? `Mark ${targetCount} verses`
+                  : selectedTupleAlreadyMarked()
+                    ? "Already marked"
+                    : current.length > 0
+                      ? "Add mark"
+                      : "Mark verse"}
             </button>
           )}
         </div>
