@@ -140,6 +140,15 @@ class VerseSearchHit(BaseModel):
     similarity: float = Field(
         ..., description="pg_trgm similarity score (0.0–1.0); higher = closer match."
     )
+    tier_required: str = Field(
+        ...,
+        description=(
+            "books.tier_required for the source book. Added Session 125 (W6 Search "
+            "V1 UI) so the PWA can render the §23 tier-aware snippet card client-"
+            "side without a second round trip. Values match the content_tier enum: "
+            "'free', 'study_notes', 'extras', 'complete_study', 'everything'."
+        ),
+    )
 
 
 class VerseSearchResponse(BaseModel):

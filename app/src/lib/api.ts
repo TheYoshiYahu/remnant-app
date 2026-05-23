@@ -404,7 +404,10 @@ export interface CancelResponse {
 
 // ----- Fetch helpers -----------------------------------------------------
 
-async function get<T>(path: string): Promise<T> {
+async function get<T>(
+  path: string,
+  options?: { signal?: AbortSignal },
+): Promise<T> {
   const headers: Record<string, string> = { Accept: "application/json" };
   const token = readJwtCookie();
   if (token) {
@@ -417,6 +420,11 @@ async function get<T>(path: string): Promise<T> {
     // present; sending both is the belt-and-suspenders default so
     // SSR/incognito/cookie-block edge cases still resolve cleanly.
     credentials: "include",
+    // Session 125 (W6 Search V1 UI) — optional AbortSignal so the
+    // SearchModal can cancel in-flight requests when the partner types
+    // faster than the debounce window resolves. AbortError must be
+    // swallowed by the caller (not surfaced as a real error).
+    signal: options?.signal,
   });
   if (!res.ok) {
     throw new Error(`API ${path} → ${res.status} ${res.statusText}`);
@@ -925,4 +933,52 @@ export function listNotes(): Promise<NotesResponse> {
 /** Append a new entry to the partner's notepad. */
 export function appendNote(body: CreateNoteRequest): Promise<NoteEntry> {
   return post<CreateNoteRequest, NoteEntry>("/notes", body);
+}
+
+// ----- Search V1 (Session 125 — Wheel 6) ----------------------------------
+//
+// Per DESIGN_LANGUAGE.md §23 (locked S125): pg_trgm trigram search across
+// the verses.text body of every book in every edition. Public endpoint
+// (no auth), no tier filter — the PWA renders the gate-(c) tier-aware
+// snippet card client-side via the new tier_required field on each hit,
+// using the existing partnerAtOrAboveTier() helper in App.tsx for the
+// tier-ladder resolution. See §23 *API surface* for the inline
+// justification on client-side rendering vs server-side filtering.
+
+export interface VerseSearchHit {
+  verse_id: number;
+  book_slug: string;
+  book_title: string;
+  chapter_number: number;
+  verse_number: number;
+  text: string;
+  /** pg_trgm similarity score (0.0–1.0); higher = closer match. */
+  similarity: number;
+  /** books.tier_required for the source book; values match the
+   *  content_tier enum: 'free' | 'study_notes' | 'extras' |
+   *  'complete_study' | 'everything'. */
+  tier_required: string;
+}
+
+export interface VerseSearchResponse {
+  query: string;
+  total: number;
+  hits: VerseSearchHit[];
+}
+
+/**
+ * Run a verse-text search. Pass `signal` from an AbortController so a
+ * fast-typing partner's old queries are cancelled before their late-
+ * arriving responses can overwrite the current results render.
+ *
+ * Throws if the fetch fails. AbortError is the caller's signal that the
+ * request was cancelled on purpose; the SearchModal swallows it.
+ */
+export function searchVerses(
+  q: string,
+  limit = 25,
+  signal?: AbortSignal,
+): Promise<VerseSearchResponse> {
+  const qs = new URLSearchParams({ q, limit: String(limit) });
+  return get<VerseSearchResponse>(`/verses/search?${qs.toString()}`, { signal });
 }

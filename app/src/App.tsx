@@ -10,6 +10,7 @@ import {
   type NoteEntry,
   type PartnerTier,
   type SubscriptionMe,
+  type VerseSearchHit,
   type VerseWord,
   getChapter,
   getChapterWords,
@@ -37,6 +38,7 @@ import VerseActionMenu, {
 import RangeActionPicker from "./components/RangeActionPicker";
 import BookmarkSheet from "./components/BookmarkSheet";
 import NotesPanel, { type PendingAnchor } from "./components/NotesPanel";
+import SearchModal from "./components/SearchModal";
 import { alignVerse, type Segment } from "./lib/verse-align";
 import {
   IDLE_STATE as RANGE_IDLE,
@@ -285,6 +287,14 @@ function Reader() {
   const [pendingNoteAnchor, setPendingNoteAnchor] =
     useState<PendingAnchor | null>(null);
 
+  // S125 W6 — Search V1 UI state per DESIGN_LANGUAGE.md §23. Single
+  // boolean drives the SearchModal render branch; the modal owns its
+  // own query state, debounce timer, and in-flight AbortController so
+  // re-opening starts fresh (no stale query from a previous open).
+  // Per §23 the chrome cluster becomes
+  // [Search][Notes][Theme][Subscription CTA].
+  const [searchOpen, setSearchOpen] = useState<boolean>(false);
+
   // S121 W3 — per-chapter Strong's-tagged-words map. Keys are
   // verse_id; values are the position-ordered VerseWord list for
   // that verse. Fetched alongside the chapter detail via the
@@ -480,6 +490,42 @@ function Reader() {
   }
   function handleNoteSaved(entry: NoteEntry) {
     setNotes((prev) => [...prev, entry]);
+  }
+
+  // S125 W6 — Search V1 handlers per §23.
+  //
+  // openSearchModal: opens the SearchModal from chrome (button click or
+  //   Cmd-K/Ctrl-K shortcut). Side-effects per §23 interaction-conflict
+  //   resolution — closes any open verse-scope modal (HighlightPicker,
+  //   VerseActionMenu, RangeActionPicker, BookmarkSheet, NotesPanel)
+  //   via the tap-outside semantics those modals already honor; in
+  //   practice their backdrops already capture the click before this
+  //   handler fires, so we just open search.
+  // jumpToSearchResult: tap on a Live result row. Sets the W2 nav
+  //   state-reset contract (book / chapter / currentVerse) PLUS
+  //   initialScrollVerse so the S116 post-chapter-load effect scrolls
+  //   the destination into view. Closes the modal.
+  // upgradeFromLockedSearchRow: tap on a tier-locked result's upgrade
+  //   card. Routes to /pricing via the existing browser-native pattern
+  //   (same as §20 stubs) and closes the modal.
+  function openSearchModal() {
+    setSearchOpen(true);
+  }
+  function closeSearchModal() {
+    setSearchOpen(false);
+  }
+  function jumpToSearchResult(hit: VerseSearchHit) {
+    setSelectedBookSlug(hit.book_slug);
+    setSelectedChapter(hit.chapter_number);
+    setCurrentVerse(hit.verse_number);
+    setInitialScrollVerse(hit.verse_number);
+    setSearchOpen(false);
+  }
+  function upgradeFromLockedSearchRow() {
+    if (typeof window !== "undefined") {
+      window.location.href = "/pricing";
+    }
+    setSearchOpen(false);
   }
 
   // Books load once on mount.
@@ -889,6 +935,42 @@ function Reader() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [prevTarget, nextTarget]);
 
+  // S125 W6 — Cmd-K (macOS) / Ctrl-K (Windows/Linux) opens the search
+  // modal per DESIGN_LANGUAGE.md §23. Fires only when the modal is
+  // closed (re-opening from inside is a no-op); skips when focus is
+  // in an input/select/textarea/contenteditable so a partner typing
+  // in a Notes textarea can use Ctrl-K for whatever the OS routes it
+  // to without interception. Escape inside the modal handles close
+  // through SearchModal's own keydown listener.
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== "k" && e.key !== "K") return;
+      // Require exactly one of Meta (macOS) or Ctrl (Windows/Linux).
+      // Both held → let OS / browser handle it.
+      const hasMeta = e.metaKey;
+      const hasCtrl = e.ctrlKey;
+      if (hasMeta === hasCtrl) return; // both true or both false → skip
+      if (e.altKey || e.shiftKey) return;
+      if (searchOpen) return; // already open
+      const target = e.target as HTMLElement | null;
+      if (target) {
+        const tag = target.tagName;
+        if (
+          tag === "INPUT" ||
+          tag === "SELECT" ||
+          tag === "TEXTAREA" ||
+          target.isContentEditable
+        ) {
+          return;
+        }
+      }
+      e.preventDefault();
+      setSearchOpen(true);
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [searchOpen]);
+
   // S123 W4 — chapter navigation silently cancels range mode. Per
   // DESIGN_LANGUAGE.md §21, W4's range-selection UX is same-chapter
   // scope; a chapter-change implies the partner abandoned the range
@@ -992,6 +1074,25 @@ function Reader() {
             </p>
           </div>
           <div className="flex items-start gap-2">
+            {/* S125 W6 — chrome Search button. Opens the SearchModal
+                pop-up per DESIGN_LANGUAGE.md §23. Cmd-K/Ctrl-K is the
+                keyboard equivalent (window-level listener above). Per
+                §23 the chrome cluster becomes
+                [Search][Notes][Theme][Subscription CTA] — same
+                bordered-chrome button family per §1. Search is chrome-
+                scope, not verse-scope, so it sits in the chrome cluster
+                rather than the §20 VerseActionMenu. */}
+            <button
+              type="button"
+              onClick={openSearchModal}
+              aria-label="Open search"
+              aria-keyshortcuts="Meta+K Control+K"
+              title="Open search (Cmd-K / Ctrl-K)"
+              className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+            >
+              <span aria-hidden="true">⌕</span>
+              <span>Search</span>
+            </button>
             {/* S124 W5 — chrome Notes button. Opens the NotesPanel
                 without an anchor (free-form path) so partners can
                 read existing notes or add free-form entries without
@@ -1755,6 +1856,22 @@ function Reader() {
           pendingAnchor={pendingNoteAnchor}
           onSaved={handleNoteSaved}
           onClose={closeNotesPanel}
+        />
+      )}
+
+      {/*
+        S125 W6 — SearchModal per DESIGN_LANGUAGE.md §23. Pop-up search
+        from chrome (button click or Cmd-K/Ctrl-K). Tap-on-result jumps
+        to verse via jumpToSearchResult (sets the W2 nav state-reset
+        contract + initialScrollVerse for S116 post-load scroll). Tap
+        on a tier-locked row's upgrade card routes to /pricing.
+      */}
+      {searchOpen && (
+        <SearchModal
+          partnerTier={me?.tier ?? null}
+          onSelectResult={jumpToSearchResult}
+          onUpgradeFromLockedRow={upgradeFromLockedSearchRow}
+          onClose={closeSearchModal}
         />
       )}
 

@@ -1556,6 +1556,15 @@ async def search_verses(
     threshold and ranking are kept simple; richer ranking lands when the
     Strong's-aware concordance and the Teaching-Corpus-aware concept
     search land in Phase 5/6.
+
+    Session 125 (W6 Search V1 UI — DESIGN_LANGUAGE.md §23) adds
+    ``books.tier_required`` to the response so the PWA can render the
+    gate-(c) tier-aware snippet card client-side without a second round
+    trip. The endpoint stays public (no auth) — search itself does not
+    tier-gate; the tier-aware rendering happens in the PWA via the new
+    field plus the existing ``partnerAtOrAboveTier()`` helper, mirroring
+    how §20 menu stubs resolve. See §23 *API surface* for the inline
+    justification on client-side rendering vs server-side filtering.
     """
     pool = get_pool()
     async with pool.acquire() as conn:
@@ -1563,6 +1572,7 @@ async def search_verses(
             "SELECT v.id AS verse_id, "
             "       b.slug AS book_slug, b.title AS book_title, "
             "       c.chapter_number, v.verse_number, v.text, "
+            "       b.tier_required AS tier_required, "
             "       similarity(v.text, $1) AS sim "
             "  FROM verses v "
             "  JOIN chapters c ON c.id = v.chapter_id "
@@ -1584,6 +1594,7 @@ async def search_verses(
             verse_number=r["verse_number"],
             text=r["text"],
             similarity=float(r["sim"] or 0.0),
+            tier_required=r["tier_required"],
         )
         for r in rows
     ]
