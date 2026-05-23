@@ -6,6 +6,7 @@ import {
   type ChapterWordsResponse,
   type ContentTier,
   type Highlight,
+  type PartnerTier,
   type SubscriptionMe,
   type VerseWord,
   getChapter,
@@ -1186,6 +1187,11 @@ function Reader() {
             ) ?? null,
             chapterDetail.book.title,
             chapterDetail.chapter.chapter_number,
+            // S122 — partner tier drives stub state. Tier-locked stubs
+            // render as Coming soon (not locked) for partners already at
+            // or above the required tier; /pricing routes only fire for
+            // partners who genuinely need to upgrade.
+            me?.tier ?? null,
             {
               onStrongs: (w) => setStrongsState(w),
               onHighlight: (vid) => setPickerVerseId(vid),
@@ -1281,21 +1287,31 @@ function Reader() {
 
 /**
  * S121 W3 — build the section-grouped menu for VerseActionMenu.
+ * S122 — full stub catalog. Every future-wheel item renders today as
+ * a dimmed stub (tier-locked or coming-soon) so partners see the full
+ * tool catalog up front. See DESIGN_LANGUAGE.md §20 for the locked
+ * stub catalog + the three render states.
  *
  * Five locked categories per DESIGN_LANGUAGE.md §20:
  *
- *   - Word study (word scope) — Strong's now; BDB / Thayer's / Vine's /
- *     interlinear / nikkudot when Wheels 9-11 ship
- *   - Marking (verse scope) — Highlight now; Bookmark when W5 ships
- *   - Notes (verse scope) — when W5 ships
- *   - Cross-references (verse scope) — when Wheels 9 (Treasury) + 12
- *     (recommendations) ship
- *   - Share (verse scope) — Copy now; Share-with-watermark + range
- *     selection when W6 ships
+ *   - Word study (word scope) — Strong's (live); BDB / Thayer's /
+ *     Vine's / interlinear / nikkudot stubs (Wheels 9-11; Library)
+ *   - Marking (verse scope) — Highlight (live); Bookmark stub (W5)
+ *   - Notes (verse scope) — Add note stub (W5, Free); Open notes
+ *     for this verse stub (W5, Notes)
+ *   - Cross-references (verse scope) — Treasury / Nave's / Related
+ *     passages stubs (Wheels 9, 12; Library)
+ *   - Share (verse scope) — Copy verse (live); Share-with-watermark
+ *     + Multi-verse range stubs (W6, Free)
  *
- * Empty sections are dropped by the component; future wheels append
- * MenuItems to the appropriate section without touching the
- * VerseActionMenu component itself.
+ * Word-study stubs are language-conditional: BDB + Nikkudot fire on
+ * H#### words only, Thayer's fires on G#### words only. The other
+ * stubs are scope-conditional only.
+ *
+ * Partner-tier-aware: a tier-locked stub renders as Coming soon (not
+ * locked) when the partner is already at or above the required tier.
+ * The /pricing route is reserved for partners who genuinely need to
+ * upgrade to use the eventual feature.
  *
  * Copy uses navigator.clipboard.writeText directly with the verse
  * text + reference, bypassing DOM selection entirely. This avoids the
@@ -1303,6 +1319,56 @@ function Reader() {
  * problem of selecting-across-spans inside the W3 word-tappable
  * structure.
  */
+function partnerAtOrAboveTier(
+  partnerTier: PartnerTier | null,
+  required: "notes" | "library"
+): boolean {
+  if (!partnerTier || partnerTier === "free") return false;
+  if (required === "notes") {
+    // Any paid tier qualifies for Notes-tier features.
+    return (
+      partnerTier === "study_notes" ||
+      partnerTier === "extras" ||
+      partnerTier === "complete_study" ||
+      partnerTier === "everything"
+    );
+  }
+  // Library tier — study_notes is below.
+  return (
+    partnerTier === "extras" ||
+    partnerTier === "complete_study" ||
+    partnerTier === "everything"
+  );
+}
+
+function makeTierStub(
+  key: string,
+  label: string,
+  tier: "notes" | "library",
+  partnerTier: PartnerTier | null
+): MenuItem {
+  if (partnerAtOrAboveTier(partnerTier, tier)) {
+    // Partner already qualifies; render as Coming soon (no /pricing route).
+    return { key, label, comingSoon: true, onSelect: () => {} };
+  }
+  return {
+    key,
+    label,
+    lockedTier: tier,
+    onSelect: () => {
+      // Browser-native navigation per App.tsx routing model (see line
+      // 119 comment) — no react-router import needed.
+      if (typeof window !== "undefined") {
+        window.location.href = "/pricing";
+      }
+    },
+  };
+}
+
+function makeFreeComingSoonStub(key: string, label: string): MenuItem {
+  return { key, label, comingSoon: true, onSelect: () => {} };
+}
+
 function buildMenuSections(
   state: {
     verseId: number;
@@ -1311,22 +1377,50 @@ function buildMenuSections(
   verse: { id: number; verse_number: number; text: string } | null,
   bookTitle: string,
   chapterNumber: number,
+  partnerTier: PartnerTier | null,
   handlers: {
     onStrongs: (w: { strong: string; surface: string }) => void;
     onHighlight: (verseId: number) => void;
   }
 ): MenuSection[] {
+  // ── Word study (word scope only) ─────────────────────────────────
   const wordStudy: MenuItem[] = [];
   if (state.word) {
+    const isHebrew = state.word.strong.startsWith("H");
+    const isGreek = state.word.strong.startsWith("G");
+
     wordStudy.push({
       key: "strongs",
       label: "Strong's lookup",
-      icon: state.word.strong.startsWith("G") ? "G" : "H",
+      icon: isGreek ? "G" : "H",
       hint: state.word.strong,
       onSelect: () => handlers.onStrongs(state.word!),
     });
+    if (isHebrew) {
+      wordStudy.push(makeTierStub("bdb", "BDB", "library", partnerTier));
+    }
+    if (isGreek) {
+      wordStudy.push(makeTierStub("thayers", "Thayer's", "library", partnerTier));
+    }
+    wordStudy.push(
+      makeTierStub("vines", "Vine's expository", "library", partnerTier)
+    );
+    wordStudy.push(
+      makeTierStub(
+        "interlinear",
+        isGreek ? "Greek interlinear" : "Hebrew interlinear",
+        "library",
+        partnerTier
+      )
+    );
+    if (isHebrew) {
+      wordStudy.push(
+        makeTierStub("nikkudot", "Nikkudot siblings", "library", partnerTier)
+      );
+    }
   }
 
+  // ── Marking (verse scope) ────────────────────────────────────────
   const marking: MenuItem[] = [];
   marking.push({
     key: "highlight",
@@ -1334,7 +1428,36 @@ function buildMenuSections(
     icon: "✎",
     onSelect: () => handlers.onHighlight(state.verseId),
   });
+  marking.push({
+    ...makeFreeComingSoonStub("bookmark", "Bookmark"),
+    icon: "⚑",
+  });
 
+  // ── Notes (verse scope) ──────────────────────────────────────────
+  const notes: MenuItem[] = [];
+  notes.push({
+    ...makeFreeComingSoonStub("add-note", "Add note"),
+    icon: "✏",
+  });
+  notes.push({
+    ...makeTierStub(
+      "open-notes-for-verse",
+      "Open notes for this verse",
+      "notes",
+      partnerTier
+    ),
+    icon: "☰",
+  });
+
+  // ── Cross-references (verse scope) ───────────────────────────────
+  const crossRefs: MenuItem[] = [];
+  crossRefs.push(makeTierStub("treasury", "Treasury (TSK)", "library", partnerTier));
+  crossRefs.push(makeTierStub("naves", "Nave's topical", "library", partnerTier));
+  crossRefs.push(
+    makeTierStub("related-passages", "Related passages", "library", partnerTier)
+  );
+
+  // ── Share (verse scope) ──────────────────────────────────────────
   const share: MenuItem[] = [];
   if (verse) {
     share.push({
@@ -1365,10 +1488,20 @@ function buildMenuSections(
       },
     });
   }
+  share.push({
+    ...makeFreeComingSoonStub("share-watermark", "Share with watermark"),
+    icon: "↗",
+  });
+  share.push({
+    ...makeFreeComingSoonStub("verse-range", "Multi-verse range"),
+    icon: "↔",
+  });
 
   return [
     { title: "Word study", items: wordStudy },
     { title: "Marking", items: marking },
+    { title: "Notes", items: notes },
+    { title: "Cross-references", items: crossRefs },
     { title: "Share", items: share },
   ];
 }

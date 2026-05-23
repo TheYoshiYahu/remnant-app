@@ -411,13 +411,64 @@ Menu items group into named sections so the menu stays scannable as the tool cat
 | **Cross-references** | verse | — | Treasury (TSK) + Nave's topical + Related passages recommendations (Wheels 9, 12; $4.99-gated) |
 | **Share** | verse | Copy verse | Share with watermark + verse-range selection (Wheel 6) |
 
-Empty sections drop out of the render (no "Notes" header on a verse before W5 ships). Future wheels append `MenuItem` objects to the appropriate section in App.tsx's `buildMenuSections` helper. Items use `{ key, label, icon?, hint?, onSelect, disabled? }`. Items marked `disabled` render dimmed (40% opacity) with no-op tap — used for tier-gated tools a partner can't unlock; gives them the affordance + the upgrade path without breaking the menu shape.
+Empty sections drop out of the render (no header at all when a section has zero items in the current partner's view). Future wheels append `MenuItem` objects to the appropriate section in App.tsx's `buildMenuSections` helper without touching the `VerseActionMenu` component. **The S121 default behavior — empty sections drop — has been narrowed at S122: sections drop only if they have zero items across all states (live, tier-locked, coming-soon). Once any stub is added, the section header renders and the stubs sit dimmed inside it.** See *Disabled-state stubs and tier-locked surfaces* below for the locked S122 stub catalog + visual register.
 
 The scopeLabel header at the top of the modal reads the surface English word ("God", "created") when scope is word, and "Verse actions" when scope is verse. Each section header renders in §5 spectral-blue accent at small uppercase-tracked register so partners scan sections as visual chunks.
+
+**Modal sizing for the S122 fuller menu.** Modal max-width grows from `max-w-sm` (S121 lock when the menu carried 1-3 live items) to `max-w-md` to accommodate the full stub catalog without horizontal cramping. Modal also gets `max-h-[85vh]` + `overflow-y-auto` so the bottom-sheet on mobile scrolls cleanly when the menu runs tall (word-scope on a Hebrew word can carry 15 items at S122 lock). Scope-label register stays as the S121 uppercase-tracked spectral-blue treatment.
 
 **Copy implementation note (locked S121).** Copy uses `navigator.clipboard.writeText(formattedText)` directly with the verse text + reference. Bypasses DOM selection entirely — no fight with the long-press picker, no whitespace artifacts from selecting across the W3 word-tappable span structure. Format: `"{Book} {Chapter}:{Verse} — {Verse text}\n\n— Remnant of Promise Official Study Bible"`. The watermark line is the same brand-mark watermark that Wheel 6 will overlay on the visual share — every Copy is a viral surface even before W6 ships.
 
 **Verse-range Copy + Share deferred to Wheel 6 — no Cepher-style cap.** V1 Copy is single-verse. Yoshi flagged at S121 that social-media-debate use cases need multi-verse range (the Cepher's 5-verse limit was named as bad UX). The range-selection mechanic (tap first verse → "Start range here" → tap last verse → "Copy/Share range") is its own UX surface and ships with Wheel 6's share-with-watermark work. **No cap.** Partners can range any size they want — single verse to entire chapter to multi-chapter spans. The framework's diagnostic often runs across passages the Reformation traditions truncate; the app should never reproduce that truncation in its sharing affordances.
+
+### Disabled-state stubs and tier-locked surfaces (locked S122)
+
+S121 shipped the menu architecture with three live items (Strong's, Highlight, Copy) and two empty sections that dropped out of the render. S122 fills the menu with stubs for every future-wheel item so partners see the full tool catalog up front. **The menu becomes a visible roadmap of what's coming, what they have, and what an upgrade unlocks.** Honest catalog rendering paired with the §16 strategic-frame principle: trust is built by showing the real product trajectory, not by hiding it.
+
+**Three item states with differentiated treatment.** Every menu item is in exactly one of these three states at render time, computed per-partner from current tier + ship status:
+
+| State | Visual | Right-side hint | Tap behavior | Cursor |
+|---|---|---|---|---|
+| **Live** | full opacity | item-specific (e.g., book reference for Copy, Strong's number for Strong's) | invokes the item's `onSelect` + closes menu | `pointer` |
+| **Tier-locked** | 40% opacity | tier-name chip badge (`Notes` or `Library`, name not price per the S117 lesson against inline-priced surfaces) | routes to `/pricing` + closes menu | `pointer` |
+| **Coming soon** | 40% opacity | `Coming soon` in italic muted register | no-op (closes menu) | `not-allowed` |
+
+**Partner-tier-aware rendering.** A tier-locked stub renders as *Coming soon* (NOT as locked) when the partner is already at or above the required tier. A free-tier partner sees BDB as `Library`-badged + tappable-to-pricing; a Library-tier partner sees BDB as `Coming soon` because they don't need to upgrade — they're just waiting for it to ship. The /pricing route is reserved for partners who genuinely need to upgrade to use the eventual feature.
+
+**Tier badge chip — visual register.** Small rounded pill on the right of the item label. Border 1px `var(--reader-rule)`, background `var(--reader-bg)` (matches the outer reader chrome), text 11px sans in `var(--reader-muted)`, padding `px-1.5 py-0.5`. Two badge values: `Notes` (for $1.99 Notes-tier features) and `Library` (for $4.99 Library-tier features). Higher tiers ($9.99 / $14.99) stay invisible per the S118 product-surface decision until those tiers are scoped.
+
+**Coming-soon hint — visual register.** Italic right-aligned text, 11px sans, `var(--reader-muted)`. Reads simply `Coming soon` — no wheel-number, no ship-date promise (those leak roadmap-internal vocabulary that doesn't translate to partner mental models).
+
+**Locked stub catalog (S122).** Each section carries the live item(s) from S121 + every future-wheel item from the §20 table as a state-typed stub. Word-study stubs are language-conditional (BDB + Nikkudot only fire on Hebrew words; Thayer's only on Greek words). Other stubs are scope-conditional only (verse-scope or word-scope, no language filter).
+
+| Section | Item | State | Wheel | Tier when shipped |
+|---|---|---|---|---|
+| **Word study** *(word scope)* | Strong's lookup | Live | — | Free |
+|  | BDB | Tier-locked (Hebrew only) | W9 | Library |
+|  | Thayer's | Tier-locked (Greek only) | W9 | Library |
+|  | Vine's expository | Tier-locked | W9 | Library |
+|  | Hebrew/Greek interlinear | Tier-locked | W10 | Library |
+|  | Nikkudot siblings | Tier-locked (Hebrew only) | W11 | Library |
+| **Marking** *(verse scope)* | Highlight verse | Live | — | Free |
+|  | Bookmark | Coming soon | W5 | Free |
+| **Notes** *(verse scope)* | Add note | Coming soon | W5 | Free |
+|  | Open notes for this verse | Tier-locked | W5 | Notes |
+| **Cross-references** *(verse scope)* | Treasury (TSK) | Tier-locked | W9 | Library |
+|  | Nave's topical | Tier-locked | W9 | Library |
+|  | Related passages | Tier-locked | W12 | Library |
+| **Share** *(verse scope)* | Copy verse | Live | — | Free |
+|  | Share with watermark | Coming soon | W6 | Free |
+|  | Multi-verse range | Coming soon | W6 | Free |
+
+For a Hebrew word in word scope at S122 lock, the menu shows 15 items (5 Word-study + 2 Marking + 2 Notes + 3 Cross-references + 3 Share). For a Greek word, 14 items (Nikkudot drops; BDB swaps to Thayer's). For verse scope, 10 items (no Word-study section). Bottom-sheet on mobile scrolls cleanly via the new max-h + overflow-y-auto from above.
+
+**MenuItem interface (S122 extension).** Two optional fields added to the S121 shape so the helper in App.tsx can declare an item's state cleanly:
+
+- `lockedTier?: "notes" | "library"` — when set, item is tier-locked. The component reads partner tier from a new `partnerTier` prop on `VerseActionMenu`; if partner is below the locked tier, render with tier badge + /pricing-route tap; if at or above, render as Coming soon.
+- `comingSoon?: boolean` — when true, item is not-yet-shipped (regardless of tier). Renders dimmed + Coming soon hint + no-op tap.
+- The existing `disabled?: boolean` stays as the catchall no-op flag for any future use; `lockedTier` and `comingSoon` are the two named S122 states that supersede it for partner-visible reasons.
+
+**App.tsx `buildMenuSections` is the single source of truth for the stub catalog.** Component changes stay tiny — just the new render branches for the three states. Future wheels mutate `buildMenuSections` only: when W5 ships Bookmark, the `comingSoon: true` flag on the Bookmark item gets removed and an `onSelect` handler gets wired up. The menu shape never changes; items just promote across states as their wheels land.
 
 ### StrongsLookup modal contents
 
