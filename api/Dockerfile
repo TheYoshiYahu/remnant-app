@@ -74,6 +74,23 @@ COPY restoration-pipeline/_session114_*.py /restoration-pipeline/
 # its own COPY here, or it doesn't ship in the image.
 COPY restoration-pipeline/_session117_*.py /restoration-pipeline/
 
+# Session 120 — Strong's tap-on-word data ingestion (Wheel 1 of the
+# pre-launch sweep). Two loaders, run in order from Render Shell:
+#   _session120_load_strong_entries.py — Hebrew + Greek lexicon entries
+#     from OpenScriptures XML (source-texts/strongs-hebrew/ +
+#     source-texts/strongs-greek/).
+#   _session120_load_verse_words.py — Strong's-tagged token alignment
+#     parsed from source-texts/kjv/eng-kjv_usfx.xml (already on disk,
+#     fully <w s="H/G####"> tagged).
+# Both loaders need their source-text XML files inside the image, so the
+# three source-texts/ subdirectories below also COPY in. They were
+# previously excluded by .dockerignore for build-context size; the
+# exclusions are removed at S120 so the loaders can run.
+COPY restoration-pipeline/_session120_*.py /restoration-pipeline/
+COPY source-texts/strongs-hebrew/ /source-texts/strongs-hebrew/
+COPY source-texts/strongs-greek/ /source-texts/strongs-greek/
+COPY source-texts/kjv/ /source-texts/kjv/
+
 # Liveness / DB-reachability check. Render (and any other host) can hit this
 # directly to determine whether to route traffic; matches the route registered
 # in main.py.

@@ -511,3 +511,85 @@ class UpsertReadingPositionRequest(BaseModel):
     book_slug: str
     chapter_number: int = Field(..., ge=1)
     verse_number: int = Field(..., ge=1)
+
+
+# ----- Strong's tap-on-word (Session 120 — Wheel 1) -----------------------
+#
+# Free-tier feature per DESIGN_LANGUAGE.md §9. Every partner gets the
+# Strong's number + brief lexicon entry on every word of every verse, no
+# auth required, no tier gate. Two endpoints power the PWA tap-on-word UI:
+#
+#   GET /v1/verses/{verse_id}/words
+#     Returns the position-ordered list of Strong's-tagged tokens for one
+#     verse. The PWA uses this to overlay click handlers on the rendered
+#     verse text (surface-matched, position-ordered).
+#
+#   GET /v1/strongs/{strong_number}
+#     Returns one strong_entries row by primary key. The PWA calls this
+#     when a tagged word is tapped, opens a modal with the lexicon entry.
+#
+# Both endpoints are public (no auth, no tier). Strong's data is public
+# domain (1890); the lookup is a §9 free-tier promise.
+
+
+StrongLanguage = Literal["hebrew", "greek", "aramaic"]
+
+
+class StrongEntry(BaseModel):
+    """One Strong's lexicon entry — Hebrew, Greek, or Aramaic.
+
+    Surfaced via GET /v1/strongs/{strong_number}. The short_definition
+    is the tooltip-friendly gloss; the (full) definition is the body the
+    modal renders. Pronunciation + derivation are nullable extras.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    strong_number: str = Field(
+        ...,
+        description="4-digit zero-padded: 'H0001', 'G3056'. Schema PK.",
+    )
+    language: StrongLanguage
+    lemma: str = Field(..., description="Original-script lemma (אָב, λόγος).")
+    transliteration: str = Field(..., description="Romanized form: 'ʼâb', 'logos'.")
+    pronunciation: Optional[str] = None
+    short_definition: Optional[str] = Field(
+        None,
+        description="Single-phrase gloss for tooltip use.",
+    )
+    definition: str = Field(
+        ...,
+        description="Full Strong's meaning text — what the modal renders.",
+    )
+    derivation: Optional[str] = Field(
+        None,
+        description="Etymology / source root info if available.",
+    )
+
+
+class VerseWord(BaseModel):
+    """One position-ordered Strong's-tagged token inside a verse.
+
+    `strong_number` is nullable — verses can have un-tagged tokens
+    (rare; punctuation and supplied italics are excluded from the
+    loader entirely, so this field is in practice almost always set).
+    When set, the PWA tap fires GET /v1/strongs/{strong_number} for
+    the lexicon entry.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    position: int = Field(..., description="1-based source order within the verse.")
+    surface: str = Field(..., description="English surface form ('God', 'made').")
+    strong_number: Optional[str] = None
+
+
+class VerseWordsResponse(BaseModel):
+    """GET /v1/verses/{verse_id}/words — the tap-on-word alignment for
+    one verse. Tokens returned in 1-based position order, every row
+    a Strong's-tagged English word. The PWA overlays click handlers
+    by surface-matching this list against the rendered verse text.
+    """
+
+    verse_id: int
+    words: List[VerseWord]

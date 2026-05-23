@@ -128,6 +128,7 @@ from models import (
     HighlightLabelsResponse,
     MarkStyle,
     ReadingPositionResponse,
+    StrongEntry,
     ThreadAnchor,
     ThreadMember,
     ThreadMemberTarget,
@@ -136,6 +137,8 @@ from models import (
     Verse,
     VerseSearchHit,
     VerseSearchResponse,
+    VerseWord,
+    VerseWordsResponse,
 )
 from subscriptions import router as subscriptions_router
 
@@ -1290,6 +1293,113 @@ async def search_verses(
         for r in rows
     ]
     return VerseSearchResponse(query=q, total=len(hits), hits=hits)
+
+
+# ----- Strong's tap-on-word (Session 120 — Wheel 1) -----------------------
+#
+# Free-tier feature per DESIGN_LANGUAGE.md §9 — every partner gets
+# Strong's number + brief lexicon entry on every word of every verse,
+# no auth required, no tier gate. Two endpoints power the PWA UI:
+# verse-words alignment for click-handler overlay, plus per-Strong's
+# lexicon entry lookup. Data loaded by
+# restoration-pipeline/_session120_load_strong_entries.py +
+# _session120_load_verse_words.py from OpenScriptures public-domain XML
+# and the existing source-texts/kjv/eng-kjv_usfx.xml respectively.
+
+
+@app.get(
+    "/v1/verses/{verse_id}/words",
+    response_model=VerseWordsResponse,
+)
+async def get_verse_words(verse_id: int) -> VerseWordsResponse:
+    """
+    Position-ordered list of Strong's-tagged English tokens for one
+    verse. The PWA uses this to overlay tap handlers on the rendered
+    verse text — for each word in the rendered prose, surface-match
+    against this list to find the strong_number, attach a click
+    handler that fires GET /v1/strongs/{strong_number}.
+
+    No auth, no tier gate (free-tier feature). 404 when the verse_id
+    doesn't exist; empty `words` list when the verse exists but has
+    no tagged tokens yet (e.g., extras books outside the canon load).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        verse_exists = await conn.fetchval(
+            "SELECT EXISTS (SELECT 1 FROM verses WHERE id = $1)",
+            verse_id,
+        )
+        if not verse_exists:
+            raise HTTPException(status_code=404, detail="verse not found")
+        rows = await conn.fetch(
+            "SELECT position, surface, strong_number "
+            "  FROM verse_words "
+            " WHERE verse_id = $1 "
+            " ORDER BY position ASC",
+            verse_id,
+        )
+    return VerseWordsResponse(
+        verse_id=verse_id,
+        words=[
+            VerseWord(
+                position=r["position"],
+                surface=r["surface"],
+                strong_number=r["strong_number"],
+            )
+            for r in rows
+        ],
+    )
+
+
+@app.get("/v1/strongs/{strong_number}", response_model=StrongEntry)
+async def get_strong_entry(strong_number: str) -> StrongEntry:
+    """
+    One Strong's lexicon entry by primary key. 4-digit zero-padded
+    form: H#### for Hebrew, G#### for Greek. The PWA modal renders
+    `lemma` + `transliteration` + `short_definition` + `definition`
+    (and optionally pronunciation + derivation if present).
+
+    No auth, no tier gate (free-tier feature). 404 when the
+    strong_number doesn't exist in the loaded lexicon. Path-param
+    casing is normalized — both 'h1' and 'H0001' resolve to 'H0001'.
+    """
+    # Normalize to canonical 4-digit zero-padded form.
+    raw = strong_number.strip()
+    if not raw or raw[0].lower() not in ("h", "g"):
+        raise HTTPException(
+            status_code=400,
+            detail="strong_number must start with 'H' (Hebrew) or 'G' (Greek)",
+        )
+    prefix = raw[0].upper()
+    digits = "".join(c for c in raw[1:] if c.isdigit())
+    if not digits:
+        raise HTTPException(
+            status_code=400,
+            detail="strong_number must contain numeric digits after the prefix",
+        )
+    canonical = f"{prefix}{int(digits):04d}"
+
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT strong_number, language, lemma, transliteration, "
+            "       pronunciation, short_definition, definition, derivation "
+            "  FROM strong_entries "
+            " WHERE strong_number = $1",
+            canonical,
+        )
+    if row is None:
+        raise HTTPException(status_code=404, detail="strong_number not found")
+    return StrongEntry(
+        strong_number=row["strong_number"],
+        language=row["language"],
+        lemma=row["lemma"],
+        transliteration=row["transliteration"],
+        pronunciation=row["pronunciation"],
+        short_definition=row["short_definition"],
+        definition=row["definition"],
+        derivation=row["derivation"],
+    )
 
 
 # ----- Root ---------------------------------------------------------------

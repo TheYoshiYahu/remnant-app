@@ -52,14 +52,18 @@ _inbox/
 # files we ship.
 # Exception (S114): the partner-tier reconciliation script also ships in
 # the image — same Render-Shell-from-the-API-service pattern.
+# Exception (S117): the multi-mark migration loader ships in the image.
+# Exception (S120): the Strong's data ingestion loaders ship in the image
+# AND the source-texts/kjv + source-texts/strongs-{hebrew,greek} directories
+# they read are also un-excluded so the loaders have their inputs at runtime.
 restoration-pipeline/*
 !restoration-pipeline/_session112_load_matthew_tiered_commentary.py
 !restoration-pipeline/_session114_reconcile_partner_tiers.py
+!restoration-pipeline/_session117_apply_multi_mark_migration.py
+!restoration-pipeline/_session120_load_strong_entries.py
+!restoration-pipeline/_session120_load_verse_words.py
 source-texts/existing-restored-editions/
 source-texts/extras/
-source-texts/kjv/
-source-texts/strongs-greek/
-source-texts/strongs-hebrew/
 commentary/
 app/
 

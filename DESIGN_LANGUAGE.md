@@ -1,4 +1,4 @@
-# Remnant of Promise Study Bible — Design Language & Tier Matrix
+# Remnant of Promise Official Study Bible — Design Language & Tier Matrix
 
 The consolidated record of all design and product decisions for the V1 app build, settled across S77 and S78. This file is the authoritative starting point for any future build session — every visual decision, every tier feature, every architectural commitment lives here.
 
@@ -143,7 +143,7 @@ The V1 ladder, ordered by tier. Each tier's `tier_satisfies` covers everything b
 - Search across canon + extras
 - Reading history (last position, recently read)
 - Basic bookmarks (favorite a verse without coloring it)
-- Share / send verse with subtle "Remnant of Promise Study Bible" watermark — every share is a viral acquisition channel
+- Share / send verse with subtle "Remnant of Promise Official Study Bible" watermark — every share is a viral acquisition channel
 - Offline downloads (canon-only default, additional content downloadable from settings within tier permissions)
 - Pull-down refresh for content updates
 
