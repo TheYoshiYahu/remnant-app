@@ -56,12 +56,18 @@ _inbox/
 # Exception (S120): the Strong's data ingestion loaders ship in the image
 # AND the source-texts/kjv + source-texts/strongs-{hebrew,greek} directories
 # they read are also un-excluded so the loaders have their inputs at runtime.
+# Exception (S124): the Bookmarks + Notes V1 migration loader ships in the
+# image. Forward-fix lesson — this .dockerignore allow-list must update
+# alongside every Dockerfile COPY for a new loader, OR the COPY matches
+# zero files and Docker silently no-ops. Three-artifacts-in-lockstep
+# (SQL + loader + Dockerfile COPY) becomes FOUR: + .dockerignore negate.
 restoration-pipeline/*
 !restoration-pipeline/_session112_load_matthew_tiered_commentary.py
 !restoration-pipeline/_session114_reconcile_partner_tiers.py
 !restoration-pipeline/_session117_apply_multi_mark_migration.py
 !restoration-pipeline/_session120_load_strong_entries.py
 !restoration-pipeline/_session120_load_verse_words.py
+!restoration-pipeline/_session124_apply_bookmarks_and_notes_v1.py
 source-texts/existing-restored-editions/
 source-texts/extras/
 commentary/
