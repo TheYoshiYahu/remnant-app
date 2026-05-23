@@ -23,6 +23,7 @@ import {
 } from "./lib/api";
 import Pricing from "./routes/Pricing";
 import Manage from "./routes/Manage";
+import SignIn from "./routes/SignIn";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ChapterCommentary from "./components/ChapterCommentary";
 import HighlightPicker, {
@@ -171,6 +172,9 @@ export default function App() {
 
   if (pathname === "/manage" || pathname.startsWith("/manage")) {
     return <Manage />;
+  }
+  if (pathname === "/sign-in" || pathname.startsWith("/sign-in")) {
+    return <SignIn />;
   }
   if (pathname === "/pricing" || pathname.startsWith("/pricing")) {
     return <Pricing />;

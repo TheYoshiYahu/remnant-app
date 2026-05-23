@@ -144,20 +144,28 @@ export default function Pricing() {
     isFounder: boolean
   ) {
     if (!isSignedIn) {
-      // Route the partner to the WordPress login surface first. After
-      // auth, WordPress sets the rop_jwt cookie and redirects back;
-      // the partner clicks Subscribe again with a token in hand.
+      // Route the partner to the new /sign-in intermediate landing
+      // page first. After they pick Log In or Create Account there,
+      // WordPress handles auth and bounces them back via the
+      // redirect_to= contract.
       //
-      // S119 swap: /login 404s because the login slug was moved to
-      // /goshen/ for anti-spam (WPS Hide Login or equivalent). The
-      // S118 /account combined-surface spec is still on the queue
-      // for a future wheel — that builds out the create-account path
-      // for new partners. Until that lands, anonymous-checkout routes
-      // existing partners to /goshen/ where they sign in via the
-      // working WP login. Query param renamed redirect= → redirect_to=
-      // to match WordPress's native post-login bounce convention.
+      // S126 swap: the prior direct route to /goshen/?redirect_to=...
+      // was bouncing first-time visitors straight to a login-only WP
+      // page with no visible create-account path. The new /sign-in
+      // PWA route surfaces both Log In and Create Account up front
+      // so first-time visitors have a clear path to subscription.
+      // See SignIn.tsx for the page itself; both buttons there honor
+      // the return_to query value below.
+      //
+      // S119 swap (prior): /login 404'd because the login slug had
+      // been moved to /goshen/. That swap landed live; /sign-in now
+      // wraps it with the two-button intermediate page.
+      //
+      // The full S118 /account combined surface in WordPress (single-
+      // page combined Log-In + Create-Account form) stays queued for
+      // when WP email deliverability is fixed.
       window.location.href =
-        "https://remnantofpromise.org/goshen/?redirect_to=" +
+        "/sign-in?return_to=" +
         encodeURIComponent(window.location.href);
       return;
     }
