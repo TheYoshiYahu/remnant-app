@@ -85,6 +85,24 @@ body {
   user-select: none;
 }
 
+/* S124 W5 — bookmark glyph next to the verse number per
+   DESIGN_LANGUAGE.md §22. Visibility-only marker (NOT a tap target —
+   partners access bookmarks via long-press → menu → Bookmark, keeping
+   the §1 clean-reading-surface principle intact and avoiding the
+   S121 W3 word-tappable interaction-conflict). Renders in §5
+   spectral-blue accent at 0.85 opacity by default; the inline `color`
+   style on the JSX element overrides to the bookmark's color_tint
+   hex when set, so the partner's color vocabulary surfaces inline. */
+.verse-bookmark-glyph {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8em;
+  color: var(--reader-accent);
+  opacity: 0.85;
+  margin-right: 0.25em;
+  user-select: none;
+  pointer-events: none;
+}
+
 /* The Hebrew names in restored verses (e.g., Yahuah, Elohim, Yashar'el)
    should sit naturally inline. The parenthetical English equivalent
    ("(God)", "(Israel)") is the same weight and family — readers see a

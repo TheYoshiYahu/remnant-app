@@ -671,3 +671,158 @@ class StrongOccurrencesResponse(BaseModel):
     strong_number: str
     total_count: int
     occurrences: List[StrongOccurrence]
+
+
+# ----- Bookmarks (Session 124 — Wheel 5) ---------------------------------
+#
+# Per DESIGN_LANGUAGE.md §22 (locked S124): single-verse flag with richer
+# metadata (Yoshi's S124 gate chose "richer card" over a simple sheet).
+# All endpoints auth-required, all Free-tier (no tier gate per §9).
+# Distinct surface from highlights (color-only marking) and notes (study
+# content) — a verse can carry a bookmark AND notes AND up to 3 highlights
+# simultaneously.
+#
+# Endpoints:
+#   GET    /v1/bookmarks?book_slug=&chapter_number=
+#   POST   /v1/bookmarks
+#   DELETE /v1/bookmarks/{bookmark_id}
+#
+# The color_tint enum reuses the §6 13-color HighlightColor literal
+# exactly so partners learn one color vocabulary across both surfaces.
+# Free tier gets all 13 colors here because color on a bookmark is a
+# personal-organization affordance, NOT the marking vocabulary that
+# creates the upgrade gate per §7. The $1.99 W8 upgrade is the cross-
+# bookmark hub (filter / group by color), not the colors themselves.
+
+
+# Alias for clarity at call sites. Same Literal under the hood.
+BookmarkColorTint = HighlightColor
+
+
+class Bookmark(BaseModel):
+    """A single bookmarks row scoped to the requesting partner.
+
+    One bookmark per (user, verse) per the §22 lock — POSTing on a
+    verse the partner already bookmarked edits the existing row via
+    ON CONFLICT (user_id, verse_id) DO UPDATE in the handler. All
+    three metadata fields are nullable: a partner can save a verse
+    with no metadata (just the flag), or with any subset.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    verse_id: int
+    short_description: Optional[str] = None
+    tags: Optional[List[str]] = None
+    color_tint: Optional[BookmarkColorTint] = None
+    created_at: datetime
+    updated_at: datetime
+
+
+class ChapterBookmarksResponse(BaseModel):
+    """GET /v1/bookmarks?book_slug=&chapter_number= — partner's
+    bookmarks on every verse of one chapter. Returned in stable
+    created-ascending order so the PWA can render the glyphs
+    deterministically."""
+
+    bookmarks: List[Bookmark]
+
+
+class CreateOrReplaceBookmarkRequest(BaseModel):
+    """POST /v1/bookmarks body.
+
+    All metadata fields optional — partner can commit a bare flag
+    (just verse_id) or a fully labeled bookmark. Re-POSTing on a verse
+    the partner already bookmarked replaces the metadata (ON CONFLICT
+    (user_id, verse_id) DO UPDATE) — semantically a save.
+
+    No tier gate at the handler level (§9 Free-tier feature). All 13
+    color_tint values valid for every tier.
+    """
+
+    verse_id: int
+    short_description: Optional[str] = None
+    tags: Optional[List[str]] = None
+    color_tint: Optional[BookmarkColorTint] = None
+
+
+# ----- Notes V1 (Session 124 — Wheel 5) ----------------------------------
+#
+# Per DESIGN_LANGUAGE.md §22 (locked S124): single global notepad for the
+# Free tier with verse-anchor injection (Add note from a verse appends
+# a new entry with the verse reference as a bold header; chrome Notes
+# button opens the notepad without an anchor for free-form writing).
+#
+# Schema: existing study_notes table (S9), with the legacy CHECK on
+# (chapter_id OR verse_id) NOT NULL relaxed at S124 to support the
+# chrome-button free-form path (rows with both anchor fields NULL).
+#
+# Endpoints:
+#   GET  /v1/notes      — list partner's entries, created_at ASC
+#   POST /v1/notes      — append a new entry (verse_id optional)
+#
+# W8 ($1.99 Notes tier) adds per-verse-named-notes + the central hub
+# surface; the same table carries both modes via nullable scope columns.
+# V1 ships GET/POST only — edit/delete per-entry is a W8 affordance.
+
+
+class NoteEntry(BaseModel):
+    """A single study_notes row scoped to the requesting partner.
+
+    Free V1 entries carry one of two shapes:
+      (a) verse_id set, title NULL — Add-note-from-verse path; the
+          panel renders the bold verse-reference header above the body.
+      (b) verse_id NULL, title NULL — chrome-Notes-button free-form
+          path; the panel renders the body without a header.
+
+    W8 entries carry verse_id-or-chapter_id-or-both with title set
+    (named per-verse / per-chapter notes); those return through the
+    same shape with title populated.
+
+    `verse_ref` is server-resolved from the verse_id at fetch / insert
+    time (e.g., "Hosea 1:10") so the PWA can render entry headers
+    consistently across all chapters without N+1 client round trips.
+    Null when verse_id is null (free-form path) or when the verse
+    can't resolve in the canon edition.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    verse_id: Optional[int] = None
+    chapter_id: Optional[int] = None
+    title: Optional[str] = None
+    body: str
+    verse_ref: Optional[str] = None
+    created_at: datetime
+    updated_at: datetime
+
+
+class NotesResponse(BaseModel):
+    """GET /v1/notes — partner's notes ordered chronologically.
+
+    Returns ALL of the partner's non-archived study_notes rows in
+    created_at ASC. Free V1 renders the array as a chronological
+    journal in the bottom-slide-up panel; W8 ($1.99 Notes tier) adds
+    filtering / per-verse hub views over the same row set.
+    """
+
+    notes: List[NoteEntry]
+
+
+class CreateNoteRequest(BaseModel):
+    """POST /v1/notes body.
+
+    `verse_id` is optional — Add-note-from-verse provides it; the
+    chrome-Notes-button free-form path posts without it. `body` is
+    required and non-empty (the textarea Save commits whatever the
+    partner typed). The handler stamps user_id from the JWT and
+    leaves title NULL for V1 (W8 will set title for named per-verse
+    notes).
+
+    No tier gate (§9 Free-tier feature).
+    """
+
+    verse_id: Optional[int] = None
+    body: str = Field(..., min_length=1)

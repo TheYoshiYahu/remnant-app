@@ -825,3 +825,104 @@ export function getStrongOccurrences(
     }`
   );
 }
+
+// ----- Bookmarks (Session 124 — Wheel 5) ----------------------------------
+//
+// Per DESIGN_LANGUAGE.md §22 (locked S124): single-verse flag with richer
+// metadata. All endpoints auth-required, all Free-tier (no tier gate per
+// §9). All 13 color_tint values valid for every tier (bookmark color is
+// personal organization, NOT marking vocabulary that creates the upgrade
+// gate per §7).
+//
+// Distinct surface from highlights and notes — a verse can carry a
+// bookmark AND notes AND up to 3 highlights simultaneously.
+
+/** color_tint reuses the §6 13-color palette exactly. Alias for clarity. */
+export type BookmarkColorTint = HighlightColor;
+
+export interface Bookmark {
+  id: string;
+  verse_id: number;
+  short_description: string | null;
+  tags: string[] | null;
+  color_tint: BookmarkColorTint | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ChapterBookmarksResponse {
+  bookmarks: Bookmark[];
+}
+
+export interface CreateOrReplaceBookmarkRequest {
+  verse_id: number;
+  short_description?: string | null;
+  tags?: string[] | null;
+  color_tint?: BookmarkColorTint | null;
+}
+
+/** List the partner's bookmarks for one chapter. */
+export function listChapterBookmarks(
+  bookSlug: string,
+  chapterNumber: number
+): Promise<ChapterBookmarksResponse> {
+  const qs = new URLSearchParams({
+    book_slug: bookSlug,
+    chapter_number: String(chapterNumber),
+  });
+  return get<ChapterBookmarksResponse>(`/bookmarks?${qs.toString()}`);
+}
+
+/** Create-or-edit a bookmark on one verse. */
+export function createOrReplaceBookmark(
+  body: CreateOrReplaceBookmarkRequest
+): Promise<Bookmark> {
+  return post<CreateOrReplaceBookmarkRequest, Bookmark>("/bookmarks", body);
+}
+
+/** Remove one bookmark. Idempotent — 204 even if already deleted. */
+export function deleteBookmark(bookmarkId: string): Promise<void> {
+  return del(`/bookmarks/${encodeURIComponent(bookmarkId)}`);
+}
+
+// ----- Notes V1 (Session 124 — Wheel 5) -----------------------------------
+//
+// Per DESIGN_LANGUAGE.md §22 (locked S124): single global notepad for the
+// Free tier with verse-anchor injection. The PWA panel renders the
+// chronological journal (oldest entry top → newest entry bottom). All
+// endpoints auth-required, all Free-tier (no tier gate per §9).
+//
+// V1 ships GET/POST only. Edit/delete per-entry is a W8 ($1.99) affordance.
+
+export interface NoteEntry {
+  id: string;
+  verse_id: number | null;
+  chapter_id: number | null;
+  title: string | null;
+  body: string;
+  /** Server-resolved verse reference (e.g. "Hosea 1:10") for verse-
+   *  anchored entries. Null when the entry is free-form (verse_id null)
+   *  or when the verse can't resolve in the canon edition. */
+  verse_ref: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface NotesResponse {
+  notes: NoteEntry[];
+}
+
+export interface CreateNoteRequest {
+  verse_id?: number | null;
+  body: string;
+}
+
+/** List the partner's notes, ordered chronologically (oldest first). */
+export function listNotes(): Promise<NotesResponse> {
+  return get<NotesResponse>("/notes");
+}
+
+/** Append a new entry to the partner's notepad. */
+export function appendNote(body: CreateNoteRequest): Promise<NoteEntry> {
+  return post<CreateNoteRequest, NoteEntry>("/notes", body);
+}

@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   type BookChaptersResponse,
+  type Bookmark,
   type BookSummary,
   type ChapterDetail,
   type ChapterWordsResponse,
   type ContentTier,
   type Highlight,
+  type NoteEntry,
   type PartnerTier,
   type SubscriptionMe,
   type VerseWord,
@@ -14,7 +16,9 @@ import {
   getSubscriptionMe,
   listBooks,
   listChapters,
+  listChapterBookmarks,
   listChapterHighlights,
+  listNotes,
 } from "./lib/api";
 import Pricing from "./routes/Pricing";
 import Manage from "./routes/Manage";
@@ -24,12 +28,15 @@ import HighlightPicker, {
   markClassFor,
   markCssVarsFor,
 } from "./components/HighlightPicker";
+import { HIGHLIGHT_HEX } from "./lib/api";
 import StrongsLookup from "./components/StrongsLookup";
 import VerseActionMenu, {
   type MenuItem,
   type MenuSection,
 } from "./components/VerseActionMenu";
 import RangeActionPicker from "./components/RangeActionPicker";
+import BookmarkSheet from "./components/BookmarkSheet";
+import NotesPanel, { type PendingAnchor } from "./components/NotesPanel";
 import { alignVerse, type Segment } from "./lib/verse-align";
 import {
   IDLE_STATE as RANGE_IDLE,
@@ -251,6 +258,33 @@ function Reader() {
     number[] | null
   >(null);
 
+  // S124 W5 — Bookmarks state.
+  // `bookmarksByVerse` keys are verse_id; values are the partner's
+  // single bookmark on that verse (one per (user, verse) per the §22
+  // UNIQUE constraint). Fetched alongside highlights on chapter load.
+  // bookmarkSheetVerseId drives the BookmarkSheet modal — set to a
+  // verse_id when the partner taps "Bookmark" in the menu (sheet opens
+  // in create-mode for unbookmarked verses, edit-mode for bookmarked).
+  const [bookmarksByVerse, setBookmarksByVerse] = useState<
+    Record<number, Bookmark>
+  >({});
+  const [bookmarkSheetVerseId, setBookmarkSheetVerseId] = useState<
+    number | null
+  >(null);
+
+  // S124 W5 — Notes V1 state. Single global notepad per §22 (Free
+  // tier; per-verse separate notes + hub are W8 / $1.99). `notes`
+  // carries every entry across all chapters (server-resolved
+  // verse_ref on each entry powers the per-entry header). `notesOpen`
+  // drives the NotesPanel render. `pendingNoteAnchor` is set when the
+  // panel was opened via the verse-scope Add-note path (drives the
+  // "Adding to: {verseRef}" strip + the verse_id on POST); null when
+  // opened via the chrome Notes button (free-form path).
+  const [notes, setNotes] = useState<NoteEntry[]>([]);
+  const [notesOpen, setNotesOpen] = useState<boolean>(false);
+  const [pendingNoteAnchor, setPendingNoteAnchor] =
+    useState<PendingAnchor | null>(null);
+
   // S121 W3 — per-chapter Strong's-tagged-words map. Keys are
   // verse_id; values are the position-ordered VerseWord list for
   // that verse. Fetched alongside the chapter detail via the
@@ -400,6 +434,54 @@ function Reader() {
     setRangePickerOpen(false);
   }
 
+  // S124 W5 — Bookmark handlers. openBookmarkSheet sets the target
+  // verse_id; the BookmarkSheet renders in create-mode if the verse
+  // has no existing bookmark, edit-mode if it does (looked up against
+  // bookmarksByVerse). Save / Remove update the map optimistically
+  // via the callbacks below.
+  function openBookmarkSheet(verseId: number) {
+    setBookmarkSheetVerseId(verseId);
+  }
+  function handleBookmarkSaved(bm: Bookmark) {
+    setBookmarksByVerse((prev) => ({ ...prev, [bm.verse_id]: bm }));
+  }
+  function handleBookmarkDeleted(bookmarkId: string) {
+    setBookmarksByVerse((prev) => {
+      const next: Record<number, Bookmark> = {};
+      for (const [vid, bm] of Object.entries(prev)) {
+        if (bm.id !== bookmarkId) next[Number(vid)] = bm;
+      }
+      return next;
+    });
+  }
+
+  // S124 W5 — Notes handlers. Two open paths per §22:
+  //   - openNotesPanelWithAnchor: from the verse-scope Add-note menu;
+  //     sets pendingAnchor so the panel renders the strip + the save
+  //     POSTs with verse_id.
+  //   - openNotesPanel: from the chrome Notes button (free-form);
+  //     pendingAnchor stays null; save POSTs with verse_id null.
+  // handleNoteSaved appends the new entry to the chronological array.
+  function openNotesPanelWithAnchor(verseId: number) {
+    if (!chapterDetail) return;
+    const verse = chapterDetail.verses.find((vv) => vv.id === verseId);
+    if (!verse) return;
+    const verseRef = `${chapterDetail.book.title} ${chapterDetail.chapter.chapter_number}:${verse.verse_number}`;
+    setPendingNoteAnchor({ verseId, verseRef });
+    setNotesOpen(true);
+  }
+  function openNotesPanel() {
+    setPendingNoteAnchor(null);
+    setNotesOpen(true);
+  }
+  function closeNotesPanel() {
+    setNotesOpen(false);
+    setPendingNoteAnchor(null);
+  }
+  function handleNoteSaved(entry: NoteEntry) {
+    setNotes((prev) => [...prev, entry]);
+  }
+
   // Books load once on mount.
   useEffect(() => {
     listBooks()
@@ -504,6 +586,41 @@ function Reader() {
         // Anonymous or transient failure — leave the map empty.
       });
   }, [selectedBookSlug, selectedChapter]);
+
+  // S124 W5 — bookmarks reload alongside the chapter. Same best-effort
+  // pattern as highlights — 401 (anonymous) leaves the map empty;
+  // partner sees no bookmark glyphs but the reader still works. Sheet
+  // open state also resets on chapter change so stale ids don't render.
+  useEffect(() => {
+    if (!selectedBookSlug || !selectedChapter) return;
+    setBookmarksByVerse({});
+    setBookmarkSheetVerseId(null);
+    listChapterBookmarks(selectedBookSlug, selectedChapter)
+      .then((r) => {
+        const map: Record<number, Bookmark> = {};
+        for (const bm of r.bookmarks) {
+          map[bm.verse_id] = bm;
+        }
+        setBookmarksByVerse(map);
+      })
+      .catch(() => {
+        // Anonymous or transient failure — leave the map empty.
+      });
+  }, [selectedBookSlug, selectedChapter]);
+
+  // S124 W5 — notes load once on mount. Single global notepad scope:
+  // every entry across every chapter comes back in one fetch (server-
+  // resolved verse_ref on each entry powers per-entry headers without
+  // chapter-local resolution). Refreshes on Save via the onSaved
+  // callback appending the new entry. 401 (anonymous) leaves the array
+  // empty; the panel renders the empty-state copy.
+  useEffect(() => {
+    listNotes()
+      .then((r) => setNotes(r.notes))
+      .catch(() => {
+        // Anonymous or transient failure — empty state stands.
+      });
+  }, []);
 
   // S121 W3 — chapter Strong's-words reload alongside the chapter.
   // Single batched fetch (replaces N parallel per-verse calls). Public
@@ -875,6 +992,22 @@ function Reader() {
             </p>
           </div>
           <div className="flex items-start gap-2">
+            {/* S124 W5 — chrome Notes button. Opens the NotesPanel
+                without an anchor (free-form path) so partners can
+                read existing notes or add free-form entries without
+                anchoring to a specific verse. Per §22, the chrome
+                cluster becomes [Notes][Theme][Subscription CTA] —
+                same bordered-chrome button family per §1. */}
+            <button
+              type="button"
+              onClick={openNotesPanel}
+              aria-label="Open notes"
+              title="Open notes"
+              className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+            >
+              <span aria-hidden="true">✎</span>
+              <span>Notes</span>
+            </button>
             <ThemeToggle />
             {me && (me.status === "active" || me.status === "trialing") ? (
               <a
@@ -1107,11 +1240,41 @@ function Reader() {
                       verseWords.length > 0
                         ? alignVerse(v.text, verseWords, String(v.id))
                         : [{ kind: "plain", text: v.text }];
+                    // S124 W5 — bookmark glyph after the verse number
+                    // for any verse with a bookmark on it. Per §22, the
+                    // glyph renders in §5 spectral-blue accent at 0.85
+                    // opacity, OR in the bookmark's color_tint when set
+                    // (partner's color vocabulary surfaces inline). Not
+                    // a tap target — partner accesses the bookmark
+                    // sheet via the standard long-press → menu →
+                    // Bookmark path so we avoid the S121 W3 word-
+                    // tappable interaction-conflict surface.
+                    const bookmark = bookmarksByVerse[v.id];
+                    const bookmarkGlyphColor: string | undefined =
+                      bookmark?.color_tint
+                        ? HIGHLIGHT_HEX[bookmark.color_tint]
+                        : undefined;
                     let content: React.ReactNode = (
                       <>
                         <sup className="verse-number mr-1">
                           {v.verse_number}
                         </sup>
+                        {bookmark && (
+                          <span
+                            className="verse-bookmark-glyph"
+                            aria-label="Verse bookmarked"
+                            title={
+                              bookmark.short_description ?? "Bookmarked"
+                            }
+                            style={
+                              bookmarkGlyphColor
+                                ? { color: bookmarkGlyphColor }
+                                : undefined
+                            }
+                          >
+                            {"⚑"}
+                          </span>
+                        )}
                         {segments.map((seg, segIdx) => {
                           // S121 W3 — every segment ends with a trailing
                           // space so adjacent-segment renders preserve
@@ -1399,6 +1562,8 @@ function Reader() {
               onStrongs: (w) => setStrongsState(w),
               onHighlight: (vid) => setPickerVerseId(vid),
               onStartRange: (vid) => startRangeFromVerse(vid),
+              onBookmark: (vid) => openBookmarkSheet(vid),
+              onAddNote: (vid) => openNotesPanelWithAnchor(vid),
             }
           )}
           onClose={() => setMenuState(null)}
@@ -1540,6 +1705,59 @@ function Reader() {
         />
       )}
 
+      {/*
+        S124 W5 — BookmarkSheet. Opens when bookmarkSheetVerseId is
+        set (long-press → menu → Bookmark). Pre-fills from
+        bookmarksByVerse if a bookmark already exists on the target
+        verse (edit-mode); otherwise renders empty (create-mode).
+        Suggested tags pool aggregated from every bookmark across the
+        partner's full chapter set (deduplicated, sorted by recency).
+      */}
+      {bookmarkSheetVerseId !== null && chapterDetail && (() => {
+        const targetVerse = chapterDetail.verses.find(
+          (vv) => vv.id === bookmarkSheetVerseId
+        );
+        if (!targetVerse) return null;
+        const verseRef = `${chapterDetail.book.title} ${chapterDetail.chapter.chapter_number}:${targetVerse.verse_number}`;
+        // Suggested tags pool — every distinct tag from every bookmark
+        // on every verse currently in bookmarksByVerse. Free V1 only
+        // has per-chapter bookmarks loaded; a future cross-chapter
+        // pool would need a separate /v1/bookmarks/tags endpoint.
+        const suggestedTags = Array.from(
+          new Set(
+            Object.values(bookmarksByVerse).flatMap(
+              (bm) => bm.tags ?? []
+            )
+          )
+        );
+        return (
+          <BookmarkSheet
+            verseId={bookmarkSheetVerseId}
+            verseRef={verseRef}
+            versePreview={targetVerse.text}
+            current={bookmarksByVerse[bookmarkSheetVerseId] ?? null}
+            suggestedTags={suggestedTags}
+            onSaved={handleBookmarkSaved}
+            onDeleted={handleBookmarkDeleted}
+            onClose={() => setBookmarkSheetVerseId(null)}
+          />
+        );
+      })()}
+
+      {/*
+        S124 W5 — NotesPanel. Opens via either the verse-scope Add-note
+        menu path (sets pendingNoteAnchor with the verseRef) or the
+        chrome Notes button (pendingNoteAnchor null = free-form mode).
+      */}
+      {notesOpen && (
+        <NotesPanel
+          notes={notes}
+          pendingAnchor={pendingNoteAnchor}
+          onSaved={handleNoteSaved}
+          onClose={closeNotesPanel}
+        />
+      )}
+
       <footer className="mt-12 border-t border-[var(--reader-rule)] pt-4 font-sans text-xs text-[var(--reader-muted)]">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <a
@@ -1659,6 +1877,14 @@ function buildMenuSections(
     /** S123 W4 — "Start range here" in the new Range section. Anchors the
      *  long-pressed verse as the range start and enters selecting mode. */
     onStartRange: (verseId: number) => void;
+    /** S124 W5 — "Bookmark" in the Marking section. Opens BookmarkSheet
+     *  for the targeted verse in create-mode or edit-mode based on
+     *  whether a bookmark already exists on the verse. */
+    onBookmark: (verseId: number) => void;
+    /** S124 W5 — "Add note" in the Notes section. Opens NotesPanel with
+     *  the targeted verse pinned as the pending anchor; Save commits a
+     *  new entry row with verse_id set. */
+    onAddNote: (verseId: number) => void;
   }
 ): MenuSection[] {
   // ── Word study (word scope only) ─────────────────────────────────
@@ -1706,17 +1932,28 @@ function buildMenuSections(
     icon: "✎",
     onSelect: () => handlers.onHighlight(state.verseId),
   });
+  // S124 W5 — Bookmark promoted from Coming-soon to Live (Free).
   marking.push({
-    ...makeFreeComingSoonStub("bookmark", "Bookmark"),
+    key: "bookmark",
+    label: "Bookmark",
     icon: "⚑",
+    onSelect: () => handlers.onBookmark(state.verseId),
   });
 
   // ── Notes (verse scope) ──────────────────────────────────────────
   const notes: MenuItem[] = [];
+  // S124 W5 — Add note promoted from Coming-soon to Live (Free).
   notes.push({
-    ...makeFreeComingSoonStub("add-note", "Add note"),
+    key: "add-note",
+    label: "Add note",
     icon: "✏",
+    onSelect: () => handlers.onAddNote(state.verseId),
   });
+  // Open notes for this verse stays Tier-locked at Notes ($1.99).
+  // Per-verse hub is W8, not W5 (drift on the §20 catalog table
+  // attribution was fixed in the same edit that promoted the W5 Live
+  // items — fifth drift-caught-while-editing-the-doc instance per
+  // the forward standard).
   notes.push({
     ...makeTierStub(
       "open-notes-for-verse",

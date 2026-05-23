@@ -557,9 +557,23 @@ COMMENT ON TABLE purchase_records IS
 -- Section 8 — User study notes (private user content)
 -- =====================================================================
 
--- A user-authored private note attached to a verse or chapter.
+-- A user-authored private note attached to a verse, chapter, or
+-- neither (the Free V1 single-global-notepad free-form path).
 -- Distinct from commentary_entries (which is Yoshi-authored, public).
 -- Notes are user-private; no row leaves the requesting user's scope.
+--
+-- S124 (Wheel 5 of the pre-launch sweep, DESIGN_LANGUAGE.md §22):
+-- relaxed the original S9 CHECK that required (chapter_id OR verse_id)
+-- NOT NULL. Free V1 single-global-notepad supports three insert paths:
+--   (a) Add-note from a verse → row carries verse_id (header-per-entry).
+--   (b) Chrome Notes button → row carries no anchor (chapter_id NULL,
+--       verse_id NULL); the free-form path locked at §22.
+--   (c) W8 Notes-tier per-verse-or-chapter notes → row carries one or
+--       both anchors with title (named scope).
+-- The API layer enforces validity per path; the schema accepts all
+-- three. The original CHECK was defensive against client bugs from
+-- the S9 $1.99-per-verse design; the API layer has covered that
+-- responsibility since S37.
 CREATE TABLE study_notes (
     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id         UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -569,12 +583,60 @@ CREATE TABLE study_notes (
     body            TEXT NOT NULL,
     is_archived     BOOLEAN NOT NULL DEFAULT FALSE,
     created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
-    updated_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
-    CHECK (chapter_id IS NOT NULL OR verse_id IS NOT NULL)
+    updated_at      TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
 CREATE INDEX idx_notes_user_verse    ON study_notes(user_id, verse_id);
 CREATE INDEX idx_notes_user_chapter  ON study_notes(user_id, chapter_id);
+-- S124 — chronological ordering for the Free V1 single-global-notepad
+-- (GET /v1/notes returns rows in created_at ASC; partner's notepad
+-- renders as a chronological study journal per §22).
+CREATE INDEX idx_notes_user_created  ON study_notes(user_id, created_at);
+
+
+-- A user-authored bookmark on a single verse. Distinct surface from
+-- both highlights (color-only marking, no descriptive text) and notes
+-- (study content). DESIGN_LANGUAGE.md §22 (locked S124, Wheel 5):
+-- bookmark = "find this again, here's why"; note = study content.
+-- A verse can carry BOTH a bookmark and one-or-more notes plus up to
+-- three highlight marks simultaneously — three independent surfaces.
+--
+-- S124 spec (Yoshi's S124 gate: "richer card with metadata" chosen
+-- over a simple short_description-only sheet):
+--   short_description : multi-line "why I saved this" text, nullable.
+--   tags              : partner-defined free-text array, nullable;
+--                       GIN-indexed for the W8 cross-bookmark hub.
+--   color_tint        : §6 13-color palette reused — partners learn
+--                       one color vocabulary across highlights and
+--                       bookmarks. Free-tier has access to all 13
+--                       (color on a bookmark is personal organization,
+--                       NOT marking vocabulary that creates the
+--                       upgrade gate per §7's locked free-tier
+--                       neon_yellow-only marking rule). Nullable
+--                       (default = no tint; partner opts in).
+--   UNIQUE (user_id, verse_id) : one bookmark per verse per partner;
+--                       re-bookmarking edits the existing row via
+--                       ON CONFLICT DO UPDATE in the POST handler.
+CREATE TABLE bookmarks (
+    id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id             UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    verse_id            BIGINT NOT NULL REFERENCES verses(id) ON DELETE CASCADE,
+    short_description   TEXT,
+    tags                TEXT[],
+    color_tint          TEXT
+                            CHECK (color_tint IS NULL OR color_tint IN (
+                                'neon_yellow', 'crimson', 'tangerine', 'honey',
+                                'sage', 'emerald', 'teal', 'sky_blue',
+                                'periwinkle', 'lilac', 'magenta', 'rose',
+                                'parchment'
+                            )),
+    created_at          TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at          TIMESTAMPTZ NOT NULL DEFAULT now(),
+    CONSTRAINT bookmarks_user_verse_unique UNIQUE (user_id, verse_id)
+);
+
+CREATE INDEX idx_bookmarks_user_verse ON bookmarks(user_id, verse_id);
+CREATE INDEX idx_bookmarks_tags_gin   ON bookmarks USING GIN (tags);
 
 
 -- A user-authored highlight on a verse range. The reader UX wants

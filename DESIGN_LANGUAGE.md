@@ -452,7 +452,7 @@ S121 shipped the menu architecture with three live items (Strong's, Highlight, C
 | **Marking** *(verse scope)* | Highlight verse | Live | — | Free |
 |  | Bookmark | Coming soon | W5 | Free |
 | **Notes** *(verse scope)* | Add note | Coming soon | W5 | Free |
-|  | Open notes for this verse | Tier-locked | W5 | Notes |
+|  | Open notes for this verse | Tier-locked | W8 | Notes |
 | **Cross-references** *(verse scope)* | Treasury (TSK) | Tier-locked | W9 | Library |
 |  | Nave's topical | Tier-locked | W9 | Library |
 |  | Related passages | Tier-locked | W12 | Library |
@@ -617,3 +617,139 @@ The state shape carries the minimum needed for the same-chapter case and the cro
 - **Range-aware verse-actions across modal surfaces.** The Strong's lookup, the chapter-end card, and the future reference-library cards (W9) stay single-verse / single-word in their action surfaces. Range applies only to the verse-render → menu → range mode → action picker path; the modals don't carry their own range affordances. Simpler mental model; one place range lives.
 - **Visual range preview during the selecting phase.** Hover-preview of the prospective range (anchor verse → mouse-hover verse → show what the range WOULD be if committed here) was considered for desktop and declined — touch-first surface, no hover register to spend complexity on, and the captured-range tint right before the action picker opens gives partners the confirmation moment they need.
 - **Multi-anchor / non-contiguous selection.** Selecting verses 3, 7, and 12 (skipping 4-6, 8-11) was considered and declined for V1 — the use cases that surfaced for it (color-coding a thematic argument across non-contiguous verses) are better served by single-verse highlight in repeated taps. Range mode is for contiguous passages; non-contiguous selection is a future-wheel question if it surfaces as a real need.
+
+---
+
+## 22. Bookmarks + Notes V1 — Two Distinct Surfaces Sharing the Session (locked S124, Wheel 5 of the pre-launch sweep)
+
+The W5 ship: two §9 Free-tier surfaces — **Bookmarks** (single-verse flag with rich metadata) and **Notes V1** (single global notepad with verse-anchor injection). Both are auth-required, both Free-tier (no upgrade gate per §9). A verse can carry BOTH a bookmark AND a note — distinct schemas, distinct intents (bookmark = "find this again, here's why"; note = study content). Per the S122 architecture-lock conversation: bookmarks and notes are NOT the same surface with two doors; they are two surfaces, distinct enough that the partner picks the right one without confusion.
+
+The S121/S122/S123 spec-then-build discipline holds — both surfaces' UX is locked here at wheel-open before any code. Yoshi's three S124 gates settle the UX shape (verbal-answers-transcribe from the AskUserQuestion settled at wheel-open):
+
+1. **Bookmark commit surface = richer card with metadata** (chosen over a simple short_description-only sheet) — partners want the bookmark to carry meaningful context, not just a flag.
+2. **Notes V1 placement = bottom slide-up panel** (chosen over full-screen overlay or split-pane drawer) — matches the established §20/§21 bordered-chrome modal family.
+3. **Verse-anchor injection = header per entry** (chosen over at-cursor or top-of-notepad) — turns the single global notepad into a chronological study journal that self-organizes without a hub. **Amends the §9 line that previously said "auto-inserted at cursor."**
+
+### Bookmark — the richer card
+
+Modal in the bordered-chrome family (same register as HighlightPicker / RangeActionPicker / StrongsLookup / VerseActionMenu) — fixed-position overlay with `bg-black/40` backdrop, bottom-sheet on mobile (`items-end`), centered on desktop (`sm:items-center`), `max-w-md` width. Opens when partner taps the **Bookmark** item in the verse-scope Marking section of the VerseActionMenu (S122 catalog row promoted from Coming-soon to Live this wheel).
+
+**Card composition, top to bottom:**
+
+- **Header.** Verse reference in §5 spectral-blue accent register (e.g., *Hosea 1:10*) + ✕ close button. Same header treatment as the §20 StrongsLookup modal.
+- **Verse preview.** The verse text rendered in muted italic register, 2-3 line clamp via `line-clamp-3 italic text-[var(--reader-muted)]`. Confirms which verse is being bookmarked without competing with the form below.
+- **Short_description field.** Multi-line auto-expanding textarea (1 line minimum, expands to 6 lines), placeholder *"Why are you saving this verse?"*. Body register (Lora 18/1.7 to match the reader). Pre-fills when editing an existing bookmark.
+- **Tags row.** Chip-style multi-tag input — partner types tag text and presses Enter to add a chip; tap chip `×` to remove. Existing tags from the partner's prior bookmarks surface as autocomplete suggestions in a small dropdown below the input. Tags are partner-defined free text; no preset taxonomy. Empty by default; optional throughout.
+- **Color tint row.** Small swatch picker reusing the §6 13-color palette (12 tribe colors + neon_yellow) plus the §6 parchment off-ramp, with an explicit "no tint" affordance as the leftmost option (selected by default). Locked spec — partners learn one color vocabulary across highlights and bookmarks, and the $1.99 free-form color-meaning dictionary (§9) carries forward (rose still means whatever the partner said rose means, whether on a highlight or a bookmark). Free tier has access to all 13 colors here because color on a bookmark is a personal-organization affordance, not a highlight-marking one — tier-locking would invert the §9 Free-tier intent for bookmarks.
+- **Footer.** *Saved {date}* in muted small text (only when editing an existing bookmark; hidden on new-bookmark commit). Save button (primary filled, right-aligned). Remove button (secondary outlined, left-aligned, only when editing).
+
+**Behavior:**
+
+- Tap Save → optimistic UI updates `bookmarksByVerse` immediately + closes modal; API call to `POST /v1/bookmarks` fires in background with `ON CONFLICT (user_id, verse_id) DO UPDATE` semantics; failure rolls back the optimistic entry + surfaces an inline error toast at chrome level.
+- Tap Remove → optimistic delete + closes modal; API call to `DELETE /v1/bookmarks/{id}`; failure rolls back.
+- Tap-outside / ✕ / Escape → discards unsaved changes with no confirm prompt (V1 forgives the mis-tap; partner re-opens and re-types if they wanted to commit). Future-wheel refinement if partners report lost-work pain.
+
+### Bookmark visibility on the reading surface
+
+A bookmarked verse renders a small bookmark glyph (final SVG choice during build — leaning bookmark-ribbon shape over emoji 🔖 for consistency with §5's clean register) immediately after the verse number, in §5 spectral-blue accent at ~0.85 opacity (matching the verse-number opacity treatment). The glyph is the visible marker partners use to spot their bookmarks while reading without needing a separate list view.
+
+If the bookmark carries a `color_tint`, the glyph renders in that color instead of spectral-blue — the partner's color-vocabulary surfaces inline. If no tint, the glyph stays in spectral-blue (consistent with the verse-number accent register per §5).
+
+The glyph is NOT a separate tap target in V1 — partner accesses the bookmark sheet via the standard long-press → menu → Bookmark path (which, on a verse that already has a bookmark, opens the sheet in edit mode with all fields pre-filled). Single-purpose glyph: visibility only, no tap behavior. Keeps the §1 clean-reading-surface principle intact (one tap surface per visual element) and avoids the S121 W3 word-tappable-vs-verse-tap interaction-conflict surface.
+
+### Notes V1 — the bottom slide-up panel
+
+Modal in the bordered-chrome family, taller than the picker modals to give the notepad room — `max-h-[70vh]` on mobile (vs the `max-h-[85vh]` cap for the §20 fuller menu), centered with `max-w-2xl` on desktop. Body region scrolls; the input area at the bottom stays pinned (text input is the primary action; partner shouldn't have to scroll to reach the cursor when typing).
+
+**Panel composition, top to bottom:**
+
+- **Header.** Title *"Notes"* + ✕ close. Single title — no per-verse scoping at Free V1 (per-verse-named notes is W8 / $1.99 Notes tier).
+- **Saved-entries body region.** The single global notepad rendered as a vertical scroll of entry blocks (see *Verse-anchor injection* below for the entry structure). Empty-state placeholder when the partner has no entries: muted text *"Tap any verse → Add note to start a thread here."* Default scroll position on open is bottom (most recent entry visible).
+- **Pending-anchor strip** (only shown when the panel was opened via the verse-scope Add note path). A small horizontal-rule-separated strip directly above the input region carrying the verse reference in §5 spectral-blue accent (e.g., **Adding to: Hosea 1:10**) — orients the partner to which verse the in-progress entry will anchor to. Strip is hidden when the panel was opened via the chrome-level Notes button without an anchor.
+- **Input region.** Multi-line auto-expanding textarea pinned to panel footer (3 lines min, 8 lines max), placeholder *"Add to your notes…"*. Save button to the right of the textarea. Body register (Lora 18/1.7).
+
+### Verse-anchor injection — header per entry
+
+When the partner taps the **Add note** item in the verse-scope Notes section of the VerseActionMenu (S122 catalog row promoted from Coming-soon to Live this wheel), the Notes panel opens with that verse_id set as the **pending anchor** (carried in panel state, surfaced in the pending-anchor strip above the input region). The partner types into the textarea; on Save, the API persists a new entry row with `{verse_id: pendingAnchor, body: typedContent}`. The saved-entries body region updates optimistically to include the new entry at the bottom of the scroll, rendered with:
+
+- **A bold verse-reference header** in §5 spectral-blue accent register (e.g., **Hosea 1:10** on its own line, body register weight 600).
+- **The entry body** below the header, in body register prose.
+- **A horizontal rule** above the new header, separating it from prior entries.
+
+Each subsequent Add-note tap on a different verse creates another entry row on Save — the notepad self-organizes into a chronological study journal. Same verse tapped twice creates two separate entries (intentional: the partner's second visit is its own moment, not necessarily an edit of the first).
+
+**The textarea is the single write surface.** It only commits new entries; saved entries are read-only in the V1 panel. Editing past entries is a W8 / Notes-tier affordance (the per-verse notes hub at $1.99 carries the full per-entry edit/delete surface). If a Free partner wants to revisit an old entry, they tap the verse again → Add note → a new entry block commits with the same verse reference; the partner writes the addendum there.
+
+This is a deliberate V1 simplification — single-write surface keeps the Free notepad cleanly a "stream of consciousness with verse anchors," and reserves the full edit/delete UX for the $1.99 tier where per-verse named notes (W8) actually need it.
+
+### Notepad access without an anchor entry
+
+Partners need a way to **read** their notes without anchoring a new entry. New chrome-level **Notes button** placed in the App.tsx chrome header to the left of the ThemeToggle: text-only "Notes" label with a small leading glyph (✎) — tap opens the Notes panel scrolled to bottom (most recent entry visible). The pending-anchor strip is hidden on this path; the textarea is empty and ready for free-form input. A Save on free-form input (no anchor) commits an entry row with `verse_id NULL` — the entry surfaces in the chronological scroll without a verse-reference header (rendered with a muted *Free-form note* label or just the body, final visual treatment at build).
+
+Chrome layout becomes: `[Notes button] [ThemeToggle] [Subscription CTA]` — three-element cluster on the right of the chrome header. All three in the bordered-chrome button family per §1. The Notes button uses the same affordance register as the ThemeToggle "Theme" label that landed at S117 (glyph + word label) — discoverable without expanding the chrome's visual footprint.
+
+### Schema implications
+
+**NEW `bookmarks` table** (this wheel's migration):
+
+- `id BIGSERIAL PRIMARY KEY`
+- `user_id BIGINT NOT NULL REFERENCES users(id)`
+- `verse_id BIGINT NOT NULL REFERENCES verses(id)`
+- `short_description TEXT` (multi-line, no length cap per §1's no-truncation principle; nullable per "optional" intent)
+- `tags TEXT[]` (Postgres array; nullable; GIN index for future W8 hub queries — junction table considered and declined for V1 since per-tag cross-bookmark queries don't ship until W8 and the array form is simpler to read/write from a single endpoint)
+- `color_tint VARCHAR` (nullable; CHECK constraint matches the §6 13-color enum: `neon_yellow`, `crimson`, `tangerine`, `honey`, `sage`, `emerald`, `teal`, `sky_blue`, `periwinkle`, `lilac`, `magenta`, `rose`, `parchment`)
+- `created_at TIMESTAMPTZ NOT NULL DEFAULT now()`
+- `updated_at TIMESTAMPTZ NOT NULL DEFAULT now()`
+- `UNIQUE (user_id, verse_id)` — one bookmark per verse per partner; re-bookmarking edits the existing row
+
+**Existing `study_notes` table reused for Notes V1.** Current schema TBD until shape is read at build-time per the brief's "read its current shape FIRST" gate. Free-tier single-global mode requires per-entry rows ordered by `created_at` (one row per Add-note commit), with `verse_id` nullable to support the chrome-button free-form path. If the existing schema is close (`id, user_id, verse_id, body, created_at, updated_at` shape), V1 ships with no or near-no delta. If `verse_id` is currently NOT NULL or the schema is per-user-singleton, a small migration relaxes the constraint / decomposes the singleton row into per-entry rows. The Free-tier rows coexist with the future W8 $1.99 named-scope rows — same table, schema accommodates both modes via nullable scope columns.
+
+**Two-surface deploy per the S117 three-artifacts-in-lockstep standard:** SQL under `data-schema/migrations/session124_bookmarks_and_notes_v1.sql` + Python loader at `restoration-pipeline/_session124_bookmarks_and_notes_v1.py` (asyncpg + argparse + dry-run + verify, per the established pattern) + matching `COPY restoration-pipeline/_session124_bookmarks_and_notes_v1.py /restoration-pipeline/` line in `api/Dockerfile`. Migration runs from Render Shell per the S117/S120 pattern (sidesteps external-Postgres SSL/IP rejection).
+
+### API surface
+
+All endpoints auth-required, all Free-tier (no tier gate per §9).
+
+- `GET /v1/bookmarks?book_slug=&chapter_number=` — list bookmarks for a chapter; returns flat array with `verse_id` + `short_description` + `tags` + `color_tint` + `created_at` + `updated_at`. Mirrors the S113 highlights `GET` shape.
+- `POST /v1/bookmarks` — create-or-replace bookmark `{verse_id, short_description?, tags?, color_tint?}`. UNIQUE (user_id, verse_id) means re-POST on an existing bookmark uses `ON CONFLICT (user_id, verse_id) DO UPDATE SET short_description = EXCLUDED.short_description, tags = EXCLUDED.tags, color_tint = EXCLUDED.color_tint, updated_at = now() RETURNING *`. Returns the row.
+- `DELETE /v1/bookmarks/{id}` — delete bookmark; 204 on success; 404 if not the requesting user's bookmark.
+- `GET /v1/notes` — return all entries for the partner ordered by `created_at ASC`. Returns array of `{id, verse_id, body, created_at, updated_at}` rows. (Free V1 returns all rows; W8 per-verse-hub adds query params for filtering.)
+- `POST /v1/notes` — append a new entry: `{verse_id?, body}`. `verse_id` is nullable (chrome-button free-form path). Returns the saved row.
+
+Existing `verse_highlights` and `reading_positions` endpoints stay untouched.
+
+### Menu stub promotions in `buildMenuSections`
+
+Two S122 catalog rows promote from Coming-soon to Live this wheel:
+
+- **Marking → Bookmark.** `comingSoon: true` flag removed; `onSelect` wired to `openBookmarkSheet(verseId)` handler in App.tsx. State carries the bookmark for the targeted verse (lookup against `bookmarksByVerse` map); sheet renders in create-mode if no bookmark exists, edit-mode if one does.
+- **Notes → Add note.** `comingSoon: true` flag removed; `onSelect` wired to `openNotesPanelWithAnchor(verseId)` handler which opens the Notes panel + sets the pending anchor to that verse.
+
+**Notes → Open notes for this verse stays Tier-locked at Notes tier.** The per-verse hub is W8, not W5. The §20 catalog table previously showed this row as wheel W5 (drift carried since the S122 catalog lock — was correct when bookmarks-and-notes was one combined W5 in the original sweep; the S122 re-sequence pulled the per-verse-hub work to its own W8 wheel but the catalog wasn't updated). **Fixed in the same edit that promotes the W5 Live items — fifth drift-caught-while-editing-the-doc instance after S88 john-1 names, S120 product-name-three-files, S121 §5 gold→blue, S122 duplicate Wheel-3 placeholder, S123 §20 Multi-verse-range-stub removal.**
+
+### Interaction-conflict resolution with prior wheels
+
+- **S113 / S117 highlights.** Highlights and bookmarks are independent surfaces on the same verse — a verse can carry up to 3 highlight marks (§8 cap) AND a bookmark AND any number of note entries simultaneously. The bookmark glyph renders to the right of the verse number; highlight marks render on the verse text itself; both visible at once without competing.
+- **S121 W2 chapter navigation.** Notes panel + bookmark sheet stay open across chapter changes (they're modal-on-reader, not coupled to chapter state). Useful for the partner who opens Notes mid-read and navigates while the notepad is up. The pending anchor (if set) survives chapter nav — partner can pick up the typing in the new chapter without losing the verse target.
+- **S121 W3 / S122 menu stubs.** Two stubs promote (Bookmark, Add note). Open notes for this verse stays Tier-locked at Notes tier with wheel attribution fixed from W5 to W8 in the §20 catalog drift fix.
+- **S123 W4 range mode.** Bookmark and Add note are single-verse actions in W5 — range-mode bookmark and range-mode notes are NOT V1 scope. Range mode + open menu → only Live "Highlight range" item in the action picker remains; no Bookmark-range or Note-range items added at W5. If range-mode bookmark surfaces as a partner ask post-launch, it's a future-wheel refinement; for now, range mode is highlight-only at the action picker.
+
+### Accessibility
+
+- Bookmark sheet: `role="dialog"`, `aria-label="Edit bookmark"` (editing) / `aria-label="Create bookmark"` (creating), Escape-to-close.
+- Notes panel: `role="dialog"`, `aria-label="Notes"`, Escape-to-close. Textarea has `aria-label="Note input"`. Pending-anchor strip has `role="status"` + `aria-live="polite"` so screen readers announce the verse anchor.
+- Bookmark glyph on verse: `aria-label="Verse bookmarked"` so screen readers announce the state; not focusable since the glyph carries no tap behavior at V1.
+- Chrome Notes button: `aria-label="Open notes"`.
+- Hit targets: bookmark sheet form elements + Notes panel textarea + Save / Remove buttons meet the §13 44pt iOS / 48dp Android floor.
+- Tab order in bookmark sheet: short_description → tag input → color swatch picker (left-to-right) → Save → Remove.
+- Color swatch picker: each swatch is a button with `aria-label="Color tint: {name}"`; selected swatch has `aria-pressed="true"`.
+
+### What this section deliberately does NOT prescribe
+
+- **Bookmark hub / list view at Free V1.** Partners discover bookmarks by (a) the glyph on the verse while reading, or (b) the long-press → menu → Bookmark path which opens the existing bookmark for that verse. The cross-bookmark hub view organized by tag or color is a $1.99 W8 feature per §9 ("Bookmark-by-color topical study view"). If partners report "I have lots of bookmarks and can't find them" post-launch, a simple Free-tier bookmarks-by-book list is a small future-wheel refinement before W8.
+- **Per-entry edit / delete in Notes V1.** The single global notepad is append-only at Free V1. Edit/delete per-entry surfaces with the W8 / Notes tier per-verse notes hub. Free partners who want to revisit an old entry tap the verse again — a new entry block commits and they can write their addendum there.
+- **Tagging on notes.** Tags belong to bookmarks at V1 — they're the bookmark's "find this again, in this group" affordance. Notes carry verse anchors as their structural grouping; tags would duplicate the affordance without adding clarity. If W8 surfaces note-tagging as needed for the per-verse hub, it's that wheel's call.
+- **Cross-device sync conflict resolution.** Standard last-write-wins per the existing S116 reading-position pattern. No vector clocks, no merge UI, no offline-edit-conflict surfaces — if the partner edits a bookmark on phone and laptop simultaneously, the later write wins. Acceptable for V1 single-user surfaces.
+- **Export / import.** Bookmarks-and-notes export to PDF is a $4.99 Library tier feature per §9 ("Notes export to PDF" → W14). Free V1 has no export path; partners are bookmarked/noted within the app only.
+- **Bookmark color tint as a sortable index at Free V1.** Color tint is a personal organization affordance at V1 — partners can see their tints inline (glyph color on the verse) but can't sort or filter by color at Free tier. The $1.99 W8 bookmark-by-color topical study view is where color becomes a sortable index.
+- **Auto-save / draft preservation on Notes input.** V1 commits on explicit Save tap only; Escape / tap-outside / panel close discards unsaved input without confirm. Auto-save-as-draft (preserve typed-but-uncommitted text across panel close) was considered and declined for V1 simplicity. Future-wheel refinement if partners report lost-work pain.

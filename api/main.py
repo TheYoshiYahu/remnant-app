@@ -109,7 +109,9 @@ from models import (
     BaselineSourceVerse,
     BookChaptersResponse,
     BookDetail,
+    Bookmark,
     BookSummary,
+    ChapterBookmarksResponse,
     ChapterCommentaryEntry,
     ChapterCommentaryResponse,
     ChapterDetail,
@@ -120,6 +122,8 @@ from models import (
     ChapterHighlightsResponse,
     ChapterSummary,
     CreateHighlightRequest,
+    CreateNoteRequest,
+    CreateOrReplaceBookmarkRequest,
     CrossRefTarget,
     HealthResponse,
     Highlight,
@@ -127,6 +131,8 @@ from models import (
     HighlightLabel,
     HighlightLabelsResponse,
     MarkStyle,
+    NoteEntry,
+    NotesResponse,
     ReadingPositionResponse,
     ChapterVerseWords,
     ChapterWordsResponse,
@@ -1247,6 +1253,291 @@ async def upsert_reading_position(
         verse_number=body.verse_number,
         updated_at=upserted["updated_at"],
     )
+
+
+# ----- Bookmarks (Session 124 — Wheel 5) ----------------------------------
+#
+# Per DESIGN_LANGUAGE.md §22 (locked S124): single-verse flag with richer
+# metadata. Yoshi's S124 gate chose "richer card" over a simple
+# short_description-only sheet. All endpoints auth-required, all Free-tier
+# (no tier gate per §9). All 13 color_tint values valid for every tier
+# (color on a bookmark is personal organization, NOT the marking
+# vocabulary that creates the upgrade gate per §7).
+#
+# Distinct surface from highlights and notes — a verse can carry a
+# bookmark AND notes AND up to 3 highlights simultaneously.
+#
+# Endpoints:
+#   GET    /v1/bookmarks?book_slug=&chapter_number=
+#   POST   /v1/bookmarks                          (create-or-replace)
+#   DELETE /v1/bookmarks/{bookmark_id}
+
+
+@app.get("/v1/bookmarks", response_model=ChapterBookmarksResponse)
+async def list_chapter_bookmarks(
+    book_slug: str = Query(...),
+    chapter_number: int = Query(..., ge=1),
+    current_user: User = Depends(get_current_user_required),
+) -> ChapterBookmarksResponse:
+    """Return the requesting partner's bookmarks for one chapter.
+
+    Scoped to the canon edition (mirrors the highlights + reading-position
+    endpoints' edition-resolution discipline). Returns 404 when the book
+    or chapter doesn't resolve. The endpoint does NOT tier-filter — every
+    Free partner sees their full bookmark set unchanged.
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+
+        chapter_row = await conn.fetchrow(
+            "SELECT c.id "
+            "  FROM chapters c "
+            "  JOIN books    b ON c.book_id    = b.id "
+            "  JOIN editions e ON b.edition_id = e.id "
+            " WHERE b.slug = $1 AND e.slug = 'canon' "
+            "   AND c.chapter_number = $2",
+            book_slug,
+            chapter_number,
+        )
+        if chapter_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Chapter {chapter_number} of '{book_slug}' not found in canon.",
+            )
+
+        rows = await conn.fetch(
+            "SELECT bm.id::text AS id, bm.verse_id, bm.short_description, "
+            "       bm.tags, bm.color_tint, bm.created_at, bm.updated_at "
+            "  FROM bookmarks bm "
+            "  JOIN verses    v  ON bm.verse_id = v.id "
+            " WHERE bm.user_id = $1::uuid "
+            "   AND v.chapter_id = $2 "
+            " ORDER BY bm.created_at ASC, bm.id ASC",
+            user_uuid,
+            chapter_row["id"],
+        )
+
+    return ChapterBookmarksResponse(
+        bookmarks=[Bookmark(**dict(r)) for r in rows]
+    )
+
+
+@app.post("/v1/bookmarks", response_model=Bookmark, status_code=201)
+async def create_or_replace_bookmark(
+    body: CreateOrReplaceBookmarkRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> Bookmark:
+    """Create-or-replace the partner's bookmark on one verse.
+
+    UNIQUE (user_id, verse_id) means re-POST on a verse the partner
+    already bookmarked is an EDIT (ON CONFLICT (user_id, verse_id) DO
+    UPDATE) — the new short_description / tags / color_tint replace
+    the prior values; updated_at refreshes to now(). This matches the
+    §22 partner mental model: tapping Bookmark on an already-
+    bookmarked verse opens the edit sheet with all fields pre-filled.
+
+    All metadata fields optional — partner can commit a bare flag or
+    fully labeled. No tier gate; all 13 color_tint values valid for
+    every tier per §22's inversion-of-§7 (bookmark color is personal
+    organization, not the marking vocabulary).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+
+        # Resolve the verse_id so we 404 cleanly on stale / drift
+        # references rather than letting Postgres raise an FK violation.
+        verse_row = await conn.fetchrow(
+            "SELECT id FROM verses WHERE id = $1",
+            body.verse_id,
+        )
+        if verse_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Verse id={body.verse_id} not found.",
+            )
+
+        # Create-or-edit on (user_id, verse_id). EXCLUDED.* references
+        # the values from the attempted INSERT; the DO UPDATE applies
+        # them to the existing row when the unique constraint matches.
+        # updated_at = now() refreshes even if the metadata is unchanged
+        # so the partner sees a "last edited" timestamp that reflects
+        # the most recent save action.
+        row = await conn.fetchrow(
+            "INSERT INTO bookmarks "
+            "    (user_id, verse_id, short_description, tags, color_tint) "
+            "VALUES ($1::uuid, $2, $3, $4, $5) "
+            "ON CONFLICT ON CONSTRAINT bookmarks_user_verse_unique "
+            "DO UPDATE SET "
+            "    short_description = EXCLUDED.short_description, "
+            "    tags              = EXCLUDED.tags, "
+            "    color_tint        = EXCLUDED.color_tint, "
+            "    updated_at        = now() "
+            "RETURNING id::text, verse_id, short_description, tags, "
+            "          color_tint, created_at, updated_at",
+            user_uuid,
+            body.verse_id,
+            body.short_description,
+            body.tags,
+            body.color_tint,
+        )
+
+    return Bookmark(**dict(row))
+
+
+@app.delete("/v1/bookmarks/{bookmark_id}", status_code=204)
+async def delete_bookmark(
+    bookmark_id: str,
+    current_user: User = Depends(get_current_user_required),
+) -> Response:
+    """Remove one bookmark. Idempotent — deleting a missing or
+    already-deleted row returns 204 (not 404). The partner's PWA may
+    have raced; the user-facing result is the same either way.
+
+    Scoped to the requesting user — passing another user's bookmark_id
+    silently no-ops (the WHERE user_id = ... clause never matches).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        await conn.execute(
+            "DELETE FROM bookmarks "
+            " WHERE id = $1::uuid AND user_id = $2::uuid",
+            bookmark_id,
+            user_uuid,
+        )
+    return Response(status_code=204)
+
+
+# ----- Notes V1 (Session 124 — Wheel 5) -----------------------------------
+#
+# Per DESIGN_LANGUAGE.md §22 (locked S124): single global notepad for the
+# Free tier with verse-anchor injection. Schema is the existing
+# study_notes table (S9) with the legacy CHECK relaxed at S124 so rows
+# with both chapter_id and verse_id NULL are valid (the chrome-button
+# free-form path).
+#
+# All endpoints auth-required, all Free-tier (no tier gate per §9).
+#
+# Endpoints:
+#   GET  /v1/notes      — list all partner's entries, created_at ASC
+#   POST /v1/notes      — append a new entry (verse_id optional)
+#
+# V1 ships GET/POST only. Edit/delete per-entry is a W8 ($1.99 Notes
+# tier) affordance — the single global notepad is append-only at Free.
+# Per the §22 design: "Free partners who want to revisit an old entry
+# tap the verse again → Add note → a new entry block commits with the
+# same verse reference; the partner writes the addendum there."
+
+
+@app.get("/v1/notes", response_model=NotesResponse)
+async def list_notes(
+    current_user: User = Depends(get_current_user_required),
+) -> NotesResponse:
+    """Return the partner's notes, ordered chronologically (oldest
+    first). The PWA panel renders this as the single-global-notepad
+    chronological journal — most-recent entry at the bottom, panel
+    scrolls to bottom on open.
+
+    Returns all non-archived rows. W8 ($1.99 Notes tier) will add
+    filtering query params over this same row set; V1 returns the full
+    set every call (the Free notepad is one stream, not per-verse).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        # LEFT JOIN against verses/chapters/books/editions to compute
+        # the human-readable verse_ref string for each entry. Scoped to
+        # the canon edition (same edition discipline as the highlights /
+        # reading-position endpoints). Free-form entries (verse_id NULL)
+        # get verse_ref NULL; out-of-canon-edition resolves get NULL too
+        # (defensive — shouldn't happen for V1 since Add-note only fires
+        # on canon verses, but kept honest).
+        rows = await conn.fetch(
+            "SELECT n.id::text AS id, n.verse_id, n.chapter_id, n.title, "
+            "       n.body, n.created_at, n.updated_at, "
+            "       CASE WHEN n.verse_id IS NULL THEN NULL "
+            "            ELSE b.title || ' ' || c.chapter_number::text || "
+            "                 ':' || v.verse_number::text "
+            "       END AS verse_ref "
+            "  FROM study_notes n "
+            "  LEFT JOIN verses   v ON n.verse_id = v.id "
+            "  LEFT JOIN chapters c ON v.chapter_id = c.id "
+            "  LEFT JOIN books    b ON c.book_id = b.id "
+            "  LEFT JOIN editions e ON b.edition_id = e.id AND e.slug = 'canon' "
+            " WHERE n.user_id = $1::uuid "
+            "   AND n.is_archived = FALSE "
+            " ORDER BY n.created_at ASC, n.id ASC",
+            user_uuid,
+        )
+    return NotesResponse(notes=[NoteEntry(**dict(r)) for r in rows])
+
+
+@app.post("/v1/notes", response_model=NoteEntry, status_code=201)
+async def append_note(
+    body: CreateNoteRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> NoteEntry:
+    """Append a new entry to the partner's notepad.
+
+    Two V1 paths per §22:
+      (a) Add-note-from-verse — body carries verse_id; entry renders
+          with the bold verse-reference header in the panel.
+      (b) Chrome-Notes-button free-form — body has verse_id=None; the
+          entry renders without a header.
+
+    No tier gate (§9 Free-tier). title is left NULL for V1 (W8 will
+    set title for named per-verse notes). chapter_id stays NULL for
+    V1 — verse-anchor is sufficient ground for the Free notepad's
+    chronological journal model.
+
+    If verse_id is provided but doesn't resolve to a real verse, 404
+    (catches client drift before silently writing an orphaned row).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+
+        if body.verse_id is not None:
+            verse_row = await conn.fetchrow(
+                "SELECT id FROM verses WHERE id = $1",
+                body.verse_id,
+            )
+            if verse_row is None:
+                raise HTTPException(
+                    status_code=404,
+                    detail=f"Verse id={body.verse_id} not found.",
+                )
+
+        # INSERT + immediately resolve verse_ref via a single CTE so
+        # the response carries the same shape GET /v1/notes returns.
+        # The LEFT JOINs scope to the canon edition mirroring the GET
+        # path; free-form inserts (verse_id NULL) get verse_ref NULL.
+        row = await conn.fetchrow(
+            "WITH inserted AS ( "
+            "    INSERT INTO study_notes (user_id, verse_id, body) "
+            "    VALUES ($1::uuid, $2, $3) "
+            "    RETURNING id, verse_id, chapter_id, title, body, "
+            "              created_at, updated_at "
+            ") "
+            "SELECT n.id::text AS id, n.verse_id, n.chapter_id, n.title, "
+            "       n.body, n.created_at, n.updated_at, "
+            "       CASE WHEN n.verse_id IS NULL THEN NULL "
+            "            ELSE b.title || ' ' || c.chapter_number::text || "
+            "                 ':' || v.verse_number::text "
+            "       END AS verse_ref "
+            "  FROM inserted n "
+            "  LEFT JOIN verses   v ON n.verse_id = v.id "
+            "  LEFT JOIN chapters c ON v.chapter_id = c.id "
+            "  LEFT JOIN books    b ON c.book_id = b.id "
+            "  LEFT JOIN editions e ON b.edition_id = e.id AND e.slug = 'canon'",
+            user_uuid,
+            body.verse_id,
+            body.body,
+        )
+
+    return NoteEntry(**dict(row))
 
 
 # ----- Search -------------------------------------------------------------

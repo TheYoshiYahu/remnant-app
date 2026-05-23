@@ -91,6 +91,14 @@ COPY source-texts/strongs-hebrew/ /source-texts/strongs-hebrew/
 COPY source-texts/strongs-greek/ /source-texts/strongs-greek/
 COPY source-texts/kjv/ /source-texts/kjv/
 
+# Session 124 — Bookmarks + Notes V1 schema migration loader (Wheel 5
+# of the pre-launch sweep). Creates the new `bookmarks` table per
+# DESIGN_LANGUAGE.md §22 + relaxes the legacy study_notes CHECK that
+# blocks the Free-tier single-global-notepad free-form path. Idempotent
+# loader + idempotent migration SQL; re-runs are safe. Runs from Render
+# Shell after deploy per the S117 / S120 pattern.
+COPY restoration-pipeline/_session124_*.py /restoration-pipeline/
+
 # Liveness / DB-reachability check. Render (and any other host) can hit this
 # directly to determine whether to route traffic; matches the route registered
 # in main.py.
