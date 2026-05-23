@@ -399,19 +399,25 @@ Per-word interaction surface for the free-tier Strong's lookup (§9), plus the m
 
 The three modal surfaces all share the same visual register — fixed-position overlay with a `bg-black/40` backdrop, bottom-sheet on mobile (`items-end`), centered on desktop (`sm:items-center`), bordered-chrome panel using `bg-[var(--reader-surface)]`. Same shape as S113 HighlightPicker so partners learn one modal layout.
 
-### VerseActionMenu — extensible item architecture
+### VerseActionMenu — extensible section-grouped architecture
 
-Menu items are passed in via the `items` prop so the caller decides what's available in the current scope. As future wheels add tools, they append to the items array in App.tsx's `buildMenuItems` helper:
+Menu items group into named sections so the menu stays scannable as the tool catalog grows. Yoshi's S121 lock: five sections in render order, each carrying word-scope OR verse-scope items, future wheels appending to the appropriate section without changing the component.
 
-- **Wheel 3 (now)** — Strong's lookup (word scope), Highlight verse (verse scope, routes to S113 HighlightPicker).
-- **Wheel 5** — Add note (verse scope, free-tier single-notepad or paid-tier scoped note), Bookmark (verse scope).
-- **Wheel 6** — Share verse with watermark (verse scope).
-- **Wheel 9-10** — Reference library lookup (word scope, $4.99-gated), Interlinear (verse scope, $4.99-gated).
-- **Wheel 12** — Recommendations from this verse (verse scope, $4.99-gated).
+| Section | Scope | Wheel 3 (now) | Future wheels |
+|---|---|---|---|
+| **Word study** | word | Strong's lookup | BDB / Thayer's / Vine's / interlinear / nikkudot consonantal-form siblings (Wheels 9-11; $4.99-gated) |
+| **Marking** | verse | Highlight verse | Bookmark (Wheel 5) |
+| **Notes** | verse | — | Add note + Open notes for this verse (Wheel 5) |
+| **Cross-references** | verse | — | Treasury (TSK) + Nave's topical + Related passages recommendations (Wheels 9, 12; $4.99-gated) |
+| **Share** | verse | Copy verse | Share with watermark + verse-range selection (Wheel 6) |
 
-Each future wheel adds one or two MenuItem objects with `{ key, label, icon?, hint?, onSelect, disabled? }`. The component itself does not change. Items marked `disabled` render dimmed (40% opacity) with no-op tap — used when a tier-gated tool is invoked by a partner whose tier doesn't unlock it; gives them the affordance + the upgrade path without breaking the menu shape.
+Empty sections drop out of the render (no "Notes" header on a verse before W5 ships). Future wheels append `MenuItem` objects to the appropriate section in App.tsx's `buildMenuSections` helper. Items use `{ key, label, icon?, hint?, onSelect, disabled? }`. Items marked `disabled` render dimmed (40% opacity) with no-op tap — used for tier-gated tools a partner can't unlock; gives them the affordance + the upgrade path without breaking the menu shape.
 
-Word-scoped items always sit at the top; a visual divider separates word-scoped from verse-scoped items when both are present. The scopeLabel header at the top of the modal reads the surface English word ("God", "created") when scope is word, and "Verse actions" when scope is verse.
+The scopeLabel header at the top of the modal reads the surface English word ("God", "created") when scope is word, and "Verse actions" when scope is verse. Each section header renders in §5 spectral-blue accent at small uppercase-tracked register so partners scan sections as visual chunks.
+
+**Copy implementation note (locked S121).** Copy uses `navigator.clipboard.writeText(formattedText)` directly with the verse text + reference. Bypasses DOM selection entirely — no fight with the long-press picker, no whitespace artifacts from selecting across the W3 word-tappable span structure. Format: `"{Book} {Chapter}:{Verse} — {Verse text}\n\n— Remnant of Promise Official Study Bible"`. The watermark line is the same brand-mark watermark that Wheel 6 will overlay on the visual share — every Copy is a viral surface even before W6 ships.
+
+**Verse-range Copy + Share deferred to Wheel 6 — no Cepher-style cap.** V1 Copy is single-verse. Yoshi flagged at S121 that social-media-debate use cases need multi-verse range (the Cepher's 5-verse limit was named as bad UX). The range-selection mechanic (tap first verse → "Start range here" → tap last verse → "Copy/Share range") is its own UX surface and ships with Wheel 6's share-with-watermark work. **No cap.** Partners can range any size they want — single verse to entire chapter to multi-chapter spans. The framework's diagnostic often runs across passages the Reformation traditions truncate; the app should never reproduce that truncation in its sharing affordances.
 
 ### StrongsLookup modal contents
 
@@ -427,6 +433,16 @@ Body:
 - **Derivation** — small sans-serif "Derivation:" label + etymology, when present.
 
 Close affordances: tap-outside-to-close, ✕ button in the header, `Escape` key on desktop.
+
+### Strong's concordance (S121 W3 iteration — locked after Yoshi's "kinda weak" call on lexicon-card-only)
+
+Below the lexicon entry, the modal renders an "Other verses using this word" section listing every verse where the Strong's number appears, in canonical book → chapter → verse order. Powered by the new `GET /v1/strongs/{strong_number}/occurrences?limit=&offset=` endpoint (paginated because common words have thousands of occurrences — H0430 Elohim ~2600, H3068 Yahuah ~6800). First page (25 occurrences) loads in parallel with the lexicon entry; "Show more" button paginates 25 at a time.
+
+Each row renders: reference (Genesis 1:1) in §5 spectral-blue accent + verse snippet. Tap-to-navigate: tapping a row sets `selectedBookSlug` + `selectedChapter` + `currentVerse` (mirroring the W2 nav handlers' state-reset contract), closes the modal, and the partner lands at the chosen verse with the S116 reading-position save firing automatically. The concordance becomes a study driver — partner walks the canon's pattern of usage one tap at a time, with the framework's diagnostic emerging from the repetition pattern itself.
+
+Concordance failure is non-fatal — if the endpoint 404s or the network drops, the modal still renders the lexicon entry alone. The "Other verses" section just doesn't appear. Graceful degradation per the publish-then-edit posture.
+
+Without the concordance, the modal is a vocab card. With it, it's a real study tool. Yoshi's call at S121: lexicon-card-only is "kinda weak"; the canon's usage-pattern is where the framework's diagnostic lands. Concordance is now part of the locked tap-on-word baseline.
 
 ### Verse-render alignment
 

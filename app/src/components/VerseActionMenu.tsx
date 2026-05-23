@@ -41,15 +41,42 @@ export interface MenuItem {
   disabled?: boolean;
 }
 
-interface VerseActionMenuProps {
+/**
+ * One named group of menu items rendered together under a section
+ * header. Yoshi's S121 categorization call: as Wheels 5-13 add per-
+ * verse tools (Notes, Bookmarks, Share, Interlinear, Recommendations),
+ * a flat menu becomes an unscannable wall of items. Sections turn it
+ * into a scannable two-column-cognitively (header → items) menu while
+ * keeping every action one tap away.
+ *
+ * Locked categories (DESIGN_LANGUAGE.md §20):
+ *
+ *   - "Word study"     — Strong's, BDB, Thayer's, Vine's, Hebrew/Greek
+ *                        interlinear, nikkudot consonantal-form
+ *                        siblings (word scope; some tier-gated)
+ *   - "Marking"        — Highlight verse, Bookmark
+ *   - "Notes"          — Add note, Open notes for this verse
+ *   - "Cross-references" — Treasury (TSK), Nave's topical, related-
+ *                        passages recommendations
+ *   - "Share"          — Share with watermark, Copy verse (incl. ref)
+ *
+ * Future wheels append items to the appropriate section in App.tsx's
+ * `buildMenuSections`; the component itself does not change.
+ */
+export interface MenuSection {
+  title: string;
   items: MenuItem[];
+}
+
+interface VerseActionMenuProps {
+  sections: MenuSection[];
   /** Short scope label rendered as the modal header. */
   scopeLabel: string;
   onClose: () => void;
 }
 
 export default function VerseActionMenu({
-  items,
+  sections,
   scopeLabel,
   onClose,
 }: VerseActionMenuProps) {
@@ -62,6 +89,11 @@ export default function VerseActionMenu({
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
+  // Drop empty sections — caller may pass them when a section has no
+  // items in the current scope (e.g., Word study is empty in
+  // verse-scope when no tappable word was the long-press anchor).
+  const visibleSections = sections.filter((s) => s.items.length > 0);
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-4 sm:items-center"
@@ -73,65 +105,61 @@ export default function VerseActionMenu({
         role="menu"
         aria-label="Verse actions"
       >
-        <div className="mb-2 px-2 pt-1">
+        <div className="mb-3 px-2 pt-1">
           <h3 className="font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
             {scopeLabel}
           </h3>
         </div>
-        <ul className="space-y-1">
-          {items.map((item, idx) => {
-            // Insert a visual divider before the first verse-scoped
-            // item when both word and verse items are present. Caller
-            // can also pass an item with key="divider" + label="" to
-            // force a divider; here we just render visually.
-            const isDivider =
-              item.key === "divider" || item.label === "";
-            if (isDivider) {
-              return (
-                <li
-                  key={`div-${idx}`}
-                  className="my-1 border-t border-[var(--reader-rule)]"
-                  role="separator"
-                  aria-hidden="true"
-                />
-              );
+        {visibleSections.map((section, sIdx) => (
+          <div
+            key={section.title}
+            className={
+              sIdx > 0
+                ? "mt-3 border-t border-[var(--reader-rule)] pt-3"
+                : ""
             }
-            return (
-              <li key={item.key} role="none">
-                <button
-                  type="button"
-                  role="menuitem"
-                  disabled={item.disabled}
-                  onClick={() => {
-                    if (!item.disabled) {
-                      item.onSelect();
-                      onClose();
-                    }
-                  }}
-                  className="flex w-full items-center justify-between gap-3 rounded px-3 py-2.5 text-left font-sans text-base text-[var(--reader-text)] hover:bg-[var(--reader-bg)] disabled:cursor-not-allowed disabled:opacity-40"
-                  style={{ minHeight: "2.75rem" }}
-                >
-                  <span className="flex items-center gap-2">
-                    {item.icon && (
-                      <span
-                        aria-hidden="true"
-                        className="text-[var(--reader-accent)]"
-                      >
-                        {item.icon}
+          >
+            <h4 className="mb-1 px-3 font-sans text-xs font-semibold uppercase tracking-wider text-[var(--reader-accent)]">
+              {section.title}
+            </h4>
+            <ul className="space-y-0.5">
+              {section.items.map((item) => (
+                <li key={item.key} role="none">
+                  <button
+                    type="button"
+                    role="menuitem"
+                    disabled={item.disabled}
+                    onClick={() => {
+                      if (!item.disabled) {
+                        item.onSelect();
+                        onClose();
+                      }
+                    }}
+                    className="flex w-full items-center justify-between gap-3 rounded px-3 py-2.5 text-left font-sans text-base text-[var(--reader-text)] hover:bg-[var(--reader-bg)] disabled:cursor-not-allowed disabled:opacity-40"
+                    style={{ minHeight: "2.75rem" }}
+                  >
+                    <span className="flex items-center gap-2">
+                      {item.icon && (
+                        <span
+                          aria-hidden="true"
+                          className="text-[var(--reader-accent)]"
+                        >
+                          {item.icon}
+                        </span>
+                      )}
+                      <span>{item.label}</span>
+                    </span>
+                    {item.hint && (
+                      <span className="font-sans text-xs text-[var(--reader-muted)]">
+                        {item.hint}
                       </span>
                     )}
-                    <span>{item.label}</span>
-                  </span>
-                  {item.hint && (
-                    <span className="text-xs text-[var(--reader-muted)]">
-                      {item.hint}
-                    </span>
-                  )}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

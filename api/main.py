@@ -131,6 +131,8 @@ from models import (
     ChapterVerseWords,
     ChapterWordsResponse,
     StrongEntry,
+    StrongOccurrence,
+    StrongOccurrencesResponse,
     ThreadAnchor,
     ThreadMember,
     ThreadMemberTarget,
@@ -1484,6 +1486,99 @@ async def get_strong_entry(strong_number: str) -> StrongEntry:
         short_definition=row["short_definition"],
         definition=row["definition"],
         derivation=row["derivation"],
+    )
+
+
+@app.get(
+    "/v1/strongs/{strong_number}/occurrences",
+    response_model=StrongOccurrencesResponse,
+)
+async def get_strong_occurrences(
+    strong_number: str,
+    limit: int = 25,
+    offset: int = 0,
+) -> StrongOccurrencesResponse:
+    """Concordance — every verse where a given Strong's number appears
+    (S121 Wheel 3 concordance addition).
+
+    Paginates because common words have thousands of occurrences
+    (H0430 Elohim ~2600; H3068 Yahuah ~6800). PWA renders the first
+    page in the StrongsLookup modal under an "Other verses using this
+    word" section with a "Show more" affordance.
+
+    The position field comes back so the PWA can highlight the
+    matched word in the rendered snippet — partner sees in context
+    where the word lands, not just a flat verse list.
+
+    Tap-to-navigate is wired client-side: tapping a row sets the
+    book/chapter/verse and the S116 reading-position save fires
+    automatically.
+
+    No auth, no tier gate (free-tier feature per §9). limit capped at
+    100 server-side to keep payloads sane.
+    """
+    # Normalize the strong_number same way the entry endpoint does.
+    raw = strong_number.strip()
+    if not raw or raw[0].lower() not in ("h", "g"):
+        raise HTTPException(
+            status_code=400,
+            detail="strong_number must start with 'H' (Hebrew) or 'G' (Greek)",
+        )
+    prefix = raw[0].upper()
+    digits = "".join(c for c in raw[1:] if c.isdigit())
+    if not digits:
+        raise HTTPException(
+            status_code=400,
+            detail="strong_number must contain numeric digits after the prefix",
+        )
+    canonical = f"{prefix}{int(digits):04d}"
+
+    if limit < 1:
+        limit = 25
+    if limit > 100:
+        limit = 100
+    if offset < 0:
+        offset = 0
+
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        total = await conn.fetchval(
+            "SELECT count(*)::int FROM verse_words WHERE strong_number = $1",
+            canonical,
+        )
+        rows = await conn.fetch(
+            "SELECT vw.verse_id, vw.position, "
+            "       v.verse_number, v.text AS verse_text, "
+            "       c.chapter_number, "
+            "       b.slug AS book_slug, b.title AS book_title, "
+            "       b.canonical_order "
+            "  FROM verse_words vw "
+            "  JOIN verses v ON v.id = vw.verse_id "
+            "  JOIN chapters c ON c.id = v.chapter_id "
+            "  JOIN books b ON b.id = c.book_id "
+            " WHERE vw.strong_number = $1 "
+            " ORDER BY b.canonical_order ASC, c.chapter_number ASC, "
+            "          v.verse_number ASC, vw.position ASC "
+            " LIMIT $2 OFFSET $3",
+            canonical,
+            limit,
+            offset,
+        )
+    return StrongOccurrencesResponse(
+        strong_number=canonical,
+        total_count=total or 0,
+        occurrences=[
+            StrongOccurrence(
+                verse_id=r["verse_id"],
+                book_slug=r["book_slug"],
+                book_title=r["book_title"],
+                chapter_number=r["chapter_number"],
+                verse_number=r["verse_number"],
+                verse_text=r["verse_text"],
+                position=r["position"],
+            )
+            for r in rows
+        ],
     )
 
 

@@ -26,6 +26,7 @@ import HighlightPicker, {
 import StrongsLookup from "./components/StrongsLookup";
 import VerseActionMenu, {
   type MenuItem,
+  type MenuSection,
 } from "./components/VerseActionMenu";
 import { alignVerse, type Segment } from "./lib/verse-align";
 import { renderMarkdownBody } from "./lib/markdown";
@@ -942,10 +943,19 @@ function Reader() {
                           {v.verse_number}
                         </sup>
                         {segments.map((seg, segIdx) => {
+                          // S121 W3 — every segment ends with a trailing
+                          // space so adjacent-segment renders preserve
+                          // the original verse text's word spacing. The
+                          // tokenizer dropped whitespace; the renderer
+                          // rebuilds it. Without this, two tappable
+                          // segments side-by-side (compound clusters
+                          // like "Yahuah Elohim") render as "YahuahElohim",
+                          // and tappable-then-plain ("Elohim" + "(God)")
+                          // renders as "Elohim(God)". The trailing-space
+                          // pattern matches the existing pattern for
+                          // plain segments and reconstructs the source
+                          // spacing accurately.
                           if (seg.kind === "plain") {
-                            // Render with a trailing space so tokens
-                            // join visually; the tokenizer dropped
-                            // whitespace, render rebuilds it.
                             return (
                               <span key={`p-${segIdx}`}>{seg.text} </span>
                             );
@@ -956,32 +966,34 @@ function Reader() {
                             surface: seg.surface,
                           };
                           return (
-                            <span
-                              key={seg.key}
-                              className="word-tappable"
-                              onPointerDown={(e) => {
-                                e.stopPropagation();
-                                handlePointerDown(v.id, word);
-                              }}
-                              onPointerUp={(e) => {
-                                e.stopPropagation();
-                                handlePointerCancel();
-                              }}
-                              onPointerCancel={(e) => {
-                                e.stopPropagation();
-                                handlePointerCancel();
-                              }}
-                              onPointerLeave={handlePointerCancel}
-                              onContextMenu={(e) => {
-                                e.stopPropagation();
-                                handleContextMenu(v.id, e, word);
-                              }}
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleWordQuickTap(word);
-                              }}
-                            >
-                              {seg.text}
+                            <span key={seg.key}>
+                              <span
+                                className="word-tappable"
+                                onPointerDown={(e) => {
+                                  e.stopPropagation();
+                                  handlePointerDown(v.id, word);
+                                }}
+                                onPointerUp={(e) => {
+                                  e.stopPropagation();
+                                  handlePointerCancel();
+                                }}
+                                onPointerCancel={(e) => {
+                                  e.stopPropagation();
+                                  handlePointerCancel();
+                                }}
+                                onPointerLeave={handlePointerCancel}
+                                onContextMenu={(e) => {
+                                  e.stopPropagation();
+                                  handleContextMenu(v.id, e, word);
+                                }}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleWordQuickTap(word);
+                                }}
+                              >
+                                {seg.text}
+                              </span>
+                              {" "}
                             </span>
                           );
                         })}
@@ -1164,13 +1176,21 @@ function Reader() {
         (S113) or StrongsLookup (S121). Quick-tap on a tappable word
         bypasses the menu and opens StrongsLookup directly.
       */}
-      {menuState !== null && (
+      {menuState !== null && chapterDetail && (
         <VerseActionMenu
           scopeLabel={menuState.word ? menuState.word.surface : "Verse actions"}
-          items={buildMenuItems(menuState, {
-            onStrongs: (w) => setStrongsState(w),
-            onHighlight: (vid) => setPickerVerseId(vid),
-          })}
+          sections={buildMenuSections(
+            menuState,
+            chapterDetail.verses.find(
+              (v) => v.id === menuState.verseId
+            ) ?? null,
+            chapterDetail.book.title,
+            chapterDetail.chapter.chapter_number,
+            {
+              onStrongs: (w) => setStrongsState(w),
+              onHighlight: (vid) => setPickerVerseId(vid),
+            }
+          )}
           onClose={() => setMenuState(null)}
         />
       )}
@@ -1179,6 +1199,24 @@ function Reader() {
         <StrongsLookup
           strongNumber={strongsState.strong}
           surface={strongsState.surface}
+          onNavigate={(bookSlug, chapterNumber, verseNumber) => {
+            // S121 W3 iteration — concordance tap-to-navigate.
+            // Mirrors the S121 W2 nav handlers' state-reset
+            // contract: set book/chapter together and reset
+            // currentVerse so the S116 save effect doesn't briefly
+            // persist the previous chapter's last-visible verse
+            // against the new (book, chapter) pair. The target
+            // verseNumber is set as currentVerse so a refresh
+            // resumes at the right place; the post-load scroll
+            // effect lands the partner on the verse via the
+            // initialScrollVerse path (set when target > 1).
+            setSelectedBookSlug(bookSlug);
+            setSelectedChapter(chapterNumber);
+            setCurrentVerse(verseNumber);
+            if (verseNumber > 1) {
+              setInitialScrollVerse(verseNumber);
+            }
+          }}
           onClose={() => setStrongsState(null)}
         />
       )}
@@ -1242,44 +1280,97 @@ function Reader() {
 }
 
 /**
- * S121 W3 — build the contextual menu items for VerseActionMenu.
- * Word-scoped context (long-pressed on a tappable word) shows
- * Strong's at the top + a divider + verse-scoped actions below.
- * Verse-scoped context shows verse-scoped actions only.
+ * S121 W3 — build the section-grouped menu for VerseActionMenu.
  *
- * Future wheels (Notes — W5, Bookmarks — W5, Share-with-watermark —
- * W6, Interlinear — W10, Recommendations — W12) extend this by
- * appending new MenuItems to the appropriate scope. The component
- * itself is item-driven so no further refactor is needed downstream.
+ * Five locked categories per DESIGN_LANGUAGE.md §20:
+ *
+ *   - Word study (word scope) — Strong's now; BDB / Thayer's / Vine's /
+ *     interlinear / nikkudot when Wheels 9-11 ship
+ *   - Marking (verse scope) — Highlight now; Bookmark when W5 ships
+ *   - Notes (verse scope) — when W5 ships
+ *   - Cross-references (verse scope) — when Wheels 9 (Treasury) + 12
+ *     (recommendations) ship
+ *   - Share (verse scope) — Copy now; Share-with-watermark + range
+ *     selection when W6 ships
+ *
+ * Empty sections are dropped by the component; future wheels append
+ * MenuItems to the appropriate section without touching the
+ * VerseActionMenu component itself.
+ *
+ * Copy uses navigator.clipboard.writeText directly with the verse
+ * text + reference, bypassing DOM selection entirely. This avoids the
+ * fight with the S113 long-press picker AND the whitespace-artifact
+ * problem of selecting-across-spans inside the W3 word-tappable
+ * structure.
  */
-function buildMenuItems(
+function buildMenuSections(
   state: {
     verseId: number;
     word: { strong: string; surface: string } | null;
   },
+  verse: { id: number; verse_number: number; text: string } | null,
+  bookTitle: string,
+  chapterNumber: number,
   handlers: {
     onStrongs: (w: { strong: string; surface: string }) => void;
     onHighlight: (verseId: number) => void;
   }
-): MenuItem[] {
-  const items: MenuItem[] = [];
+): MenuSection[] {
+  const wordStudy: MenuItem[] = [];
   if (state.word) {
-    items.push({
+    wordStudy.push({
       key: "strongs",
       label: "Strong's lookup",
       icon: state.word.strong.startsWith("G") ? "G" : "H",
       hint: state.word.strong,
       onSelect: () => handlers.onStrongs(state.word!),
     });
-    items.push({ key: "divider", label: "", onSelect: () => {} });
   }
-  items.push({
+
+  const marking: MenuItem[] = [];
+  marking.push({
     key: "highlight",
     label: state.word ? "Highlight verse" : "Highlight",
     icon: "✎",
     onSelect: () => handlers.onHighlight(state.verseId),
   });
-  return items;
+
+  const share: MenuItem[] = [];
+  if (verse) {
+    share.push({
+      key: "copy",
+      label: "Copy verse",
+      icon: "⧉",
+      hint: `${bookTitle} ${chapterNumber}:${verse.verse_number}`,
+      onSelect: () => {
+        // Format: "Genesis 1:1 — In the beginning..."
+        //          "  — Remnant of Promise Official Study Bible"
+        // Bypasses DOM selection entirely; uses the in-memory v.text
+        // which has the correct spacing regardless of how the
+        // tappable-span render produces visible output.
+        const text =
+          `${bookTitle} ${chapterNumber}:${verse.verse_number} — ` +
+          `${verse.text}\n\n— Remnant of Promise Official Study Bible`;
+        if (
+          typeof navigator !== "undefined" &&
+          navigator.clipboard &&
+          typeof navigator.clipboard.writeText === "function"
+        ) {
+          navigator.clipboard.writeText(text).catch(() => {
+            // Clipboard API can fail in some contexts (insecure
+            // origin, permissions denied). Silent fallback — partner
+            // can use the Share item when W6 ships.
+          });
+        }
+      },
+    });
+  }
+
+  return [
+    { title: "Word study", items: wordStudy },
+    { title: "Marking", items: marking },
+    { title: "Share", items: share },
+  ];
 }
 
 function prettyCategory(cat: string): string {

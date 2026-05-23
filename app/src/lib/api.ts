@@ -787,3 +787,41 @@ export function getChapterWords(
 export function getStrongEntry(strongNumber: string): Promise<StrongEntry> {
   return get<StrongEntry>(`/strongs/${encodeURIComponent(strongNumber)}`);
 }
+
+export interface StrongOccurrence {
+  verse_id: number;
+  book_slug: string;
+  book_title: string;
+  chapter_number: number;
+  verse_number: number;
+  verse_text: string;
+  position: number;
+}
+
+export interface StrongOccurrencesResponse {
+  strong_number: string;
+  total_count: number;
+  occurrences: StrongOccurrence[];
+}
+
+/**
+ * Concordance — every verse where the Strong's number appears, in
+ * canonical book / chapter / verse order. Paginated (limit + offset)
+ * because common words have thousands of occurrences. PWA renders the
+ * first page inside the StrongsLookup modal under "Other verses using
+ * this word" with a "Show more" affordance.
+ */
+export function getStrongOccurrences(
+  strongNumber: string,
+  opts?: { limit?: number; offset?: number }
+): Promise<StrongOccurrencesResponse> {
+  const params = new URLSearchParams();
+  if (opts?.limit !== undefined) params.set("limit", String(opts.limit));
+  if (opts?.offset !== undefined) params.set("offset", String(opts.offset));
+  const qs = params.toString();
+  return get<StrongOccurrencesResponse>(
+    `/strongs/${encodeURIComponent(strongNumber)}/occurrences${
+      qs ? `?${qs}` : ""
+    }`
+  );
+}

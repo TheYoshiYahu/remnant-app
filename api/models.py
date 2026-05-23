@@ -628,3 +628,46 @@ class ChapterWordsResponse(BaseModel):
 
     chapter_id: int
     verses: List[ChapterVerseWords]
+
+
+class StrongOccurrence(BaseModel):
+    """One verse where a given Strong's number appears — concordance
+    row. Surfaced inside the StrongsLookup modal so a partner can see
+    every place the word appears across the canon and tap to navigate.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    verse_id: int
+    book_slug: str
+    book_title: str
+    chapter_number: int
+    verse_number: int
+    verse_text: str
+    position: int = Field(
+        ...,
+        description=(
+            "1-based position within the verse — UI can use to highlight "
+            "the matched word in the rendered snippet."
+        ),
+    )
+
+
+class StrongOccurrencesResponse(BaseModel):
+    """GET /v1/strongs/{strong_number}/occurrences (S121 Wheel 3
+    concordance endpoint). Returns paginated verse references where
+    the Strong's number appears.
+
+    Common Hebrew/Greek words have thousands of occurrences (H0430
+    Elohim alone has ~2600), so the endpoint paginates: caller passes
+    ?limit= and ?offset= and gets back the slice plus the total_count
+    so the PWA can render "showing N of M, load more" affordance.
+
+    Public — no auth, no tier gate (free-tier feature per §9).
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    strong_number: str
+    total_count: int
+    occurrences: List[StrongOccurrence]

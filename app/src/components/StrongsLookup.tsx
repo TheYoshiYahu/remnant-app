@@ -28,33 +28,83 @@
  */
 
 import { useEffect, useState } from "react";
-import { type StrongEntry, getStrongEntry } from "../lib/api";
+import {
+  type StrongEntry,
+  type StrongOccurrence,
+  getStrongEntry,
+  getStrongOccurrences,
+} from "../lib/api";
+
+const OCCURRENCES_PAGE_SIZE = 25;
 
 interface StrongsLookupProps {
   strongNumber: string;
   /** The English surface word the partner tapped (for context in the header). */
   surface: string;
+  /**
+   * Tap-to-navigate from the concordance — when set, occurrence rows
+   * become tappable buttons that fire this callback with the target
+   * verse coordinates. App.tsx sets book/chapter/verseNumber state
+   * and the S116 reading-position save fires automatically.
+   */
+  onNavigate?: (
+    bookSlug: string,
+    chapterNumber: number,
+    verseNumber: number
+  ) => void;
   onClose: () => void;
 }
 
 export default function StrongsLookup({
   strongNumber,
   surface,
+  onNavigate,
   onClose,
 }: StrongsLookupProps) {
   const [entry, setEntry] = useState<StrongEntry | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  // S121 W3 iteration — concordance state. Per Yoshi's call,
+  // "Strong's needs to be able to link other places the word is
+  // used." Lexicon-card-only is "kinda weak"; the real study tool
+  // surfaces every verse where the word appears, with tap-to-
+  // navigate so the partner can walk the canon's usage pattern.
+  const [occurrences, setOccurrences] = useState<StrongOccurrence[]>([]);
+  const [totalCount, setTotalCount] = useState<number>(0);
+  const [loadingMore, setLoadingMore] = useState<boolean>(false);
+
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
     setError(null);
     setEntry(null);
-    getStrongEntry(strongNumber)
-      .then((e) => {
+    setOccurrences([]);
+    setTotalCount(0);
+    // Two parallel fetches — entry + first page of occurrences.
+    // The entry is the lexicon card; occurrences power the
+    // concordance section. Either can fail independently.
+    Promise.all([
+      getStrongEntry(strongNumber).then((e) => {
         if (cancelled) return;
         setEntry(e);
+      }),
+      getStrongOccurrences(strongNumber, {
+        limit: OCCURRENCES_PAGE_SIZE,
+        offset: 0,
+      })
+        .then((r) => {
+          if (cancelled) return;
+          setOccurrences(r.occurrences);
+          setTotalCount(r.total_count);
+        })
+        .catch(() => {
+          // Concordance failure is non-fatal — the entry alone is
+          // still useful. Leave the concordance section empty.
+        }),
+    ])
+      .then(() => {
+        if (cancelled) return;
         setLoading(false);
       })
       .catch((err) => {
@@ -66,6 +116,22 @@ export default function StrongsLookup({
       cancelled = true;
     };
   }, [strongNumber]);
+
+  function loadMoreOccurrences() {
+    if (loadingMore) return;
+    setLoadingMore(true);
+    getStrongOccurrences(strongNumber, {
+      limit: OCCURRENCES_PAGE_SIZE,
+      offset: occurrences.length,
+    })
+      .then((r) => {
+        setOccurrences((prev) => [...prev, ...r.occurrences]);
+        setLoadingMore(false);
+      })
+      .catch(() => {
+        setLoadingMore(false);
+      });
+  }
 
   // Escape-to-close — consistent with the menu (and a universal modal
   // expectation on desktop).
@@ -182,6 +248,73 @@ export default function StrongsLookup({
                 <span className="font-semibold">Derivation:</span>{" "}
                 {entry.derivation}
               </p>
+            )}
+          </div>
+        )}
+
+        {/* S121 W3 iteration — concordance. Other verses using this
+            Strong's number, paginated, with tap-to-navigate. */}
+        {!loading && !error && totalCount > 0 && (
+          <div className="mt-5 border-t border-[var(--reader-rule)] pt-4">
+            <h4 className="mb-2 font-sans text-xs font-semibold uppercase tracking-wider text-[var(--reader-accent)]">
+              Other verses using this word
+            </h4>
+            <p className="mb-3 font-sans text-xs text-[var(--reader-muted)]">
+              Showing {occurrences.length.toLocaleString()} of{" "}
+              {totalCount.toLocaleString()}
+            </p>
+            <ul className="space-y-2 max-h-72 overflow-y-auto pr-1">
+              {occurrences.map((occ) => {
+                const ref = `${occ.book_title} ${occ.chapter_number}:${occ.verse_number}`;
+                const navigable = typeof onNavigate === "function";
+                const inner = (
+                  <>
+                    <span className="font-sans text-xs font-semibold text-[var(--reader-accent)]">
+                      {ref}
+                    </span>
+                    <span className="ml-2 text-[var(--reader-text)]">
+                      {occ.verse_text}
+                    </span>
+                  </>
+                );
+                return (
+                  <li key={`${occ.verse_id}-${occ.position}`}>
+                    {navigable ? (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          onNavigate!(
+                            occ.book_slug,
+                            occ.chapter_number,
+                            occ.verse_number
+                          );
+                          onClose();
+                        }}
+                        className="block w-full rounded px-2 py-2 text-left hover:bg-[var(--reader-bg)]"
+                      >
+                        {inner}
+                      </button>
+                    ) : (
+                      <div className="px-2 py-2">{inner}</div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+            {occurrences.length < totalCount && (
+              <button
+                type="button"
+                onClick={loadMoreOccurrences}
+                disabled={loadingMore}
+                className="mt-3 w-full rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-2 font-sans text-sm font-medium text-[var(--reader-text)] hover:opacity-90 disabled:opacity-40"
+              >
+                {loadingMore
+                  ? "Loading…"
+                  : `Show ${Math.min(
+                      OCCURRENCES_PAGE_SIZE,
+                      totalCount - occurrences.length
+                    )} more`}
+              </button>
             )}
           </div>
         )}
