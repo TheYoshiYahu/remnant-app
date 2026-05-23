@@ -27,6 +27,12 @@ import {
   loadInitialPosition,
   saveReadingPositionDebounced,
 } from "./lib/reading-position";
+import {
+  lastChapterNumber,
+  nextChapterTarget,
+  prevChapterTarget,
+  targetLabel,
+} from "./lib/chapter-nav";
 import paragraphStartsData from "./data/paragraph_starts.json";
 
 // S115 Wheel 3 — chrome theme toggle. Small button placed to the
@@ -451,6 +457,178 @@ function Reader() {
 
   const chaptersForBook = chaptersResp?.chapters ?? [];
 
+  // S121 — chapter navigation (W2). Three input surfaces (touch swipe,
+  // arrow keys, visible chrome buttons) converge on one navigation
+  // handler. The handler resets currentVerse to 1 alongside the
+  // book/chapter setters so the S116 reading-position save effect
+  // doesn't briefly persist the previous chapter's last-visible verse
+  // against the new chapter. Per DESIGN_LANGUAGE.md §19.
+  //
+  // Bounce affordance: when nav lands at a witness_category edge
+  // (Genesis 1 prev / Revelation 22 next in canon; equivalent edges
+  // in other categories), the disabled-direction arrow shakes briefly
+  // to confirm the input was registered without changing the chapter.
+  const [bouncePrev, setBouncePrev] = useState<boolean>(false);
+  const [bounceNext, setBounceNext] = useState<boolean>(false);
+
+  // Pre-compute targets so the chrome buttons can render disabled
+  // when at a category edge. Recomputes on books/selection change.
+  const prevTarget = useMemo(
+    () => prevChapterTarget(books, selectedBookSlug, selectedChapter),
+    [books, selectedBookSlug, selectedChapter]
+  );
+  const nextTarget = useMemo(
+    () => nextChapterTarget(books, selectedBookSlug, selectedChapter, chaptersResp),
+    [books, selectedBookSlug, selectedChapter, chaptersResp]
+  );
+
+  function triggerBouncePrev() {
+    setBouncePrev(true);
+    setTimeout(() => setBouncePrev(false), 300);
+  }
+  function triggerBounceNext() {
+    setBounceNext(true);
+    setTimeout(() => setBounceNext(false), 300);
+  }
+
+  // Core navigator. Both arrow buttons, the keyboard listener, the
+  // swipe handler, and the bottom-of-chapter continuation row all
+  // funnel here. Async because the prev-across-book-boundary case
+  // needs to fetch the previous book's chapter count to learn its
+  // last chapter number; forward navigation across a book boundary
+  // is always chapter 1 so no fetch is needed there.
+  async function navigatePrev() {
+    if (prevTarget === null) {
+      triggerBouncePrev();
+      return;
+    }
+    if (prevTarget.chapter === "last") {
+      // Cross-book backward — fetch the destination book's chapter
+      // list to learn its last chapter number, then set state.
+      try {
+        const resp = await listChapters(prevTarget.bookSlug);
+        const lastCh = lastChapterNumber(resp);
+        setSelectedBookSlug(prevTarget.bookSlug);
+        setSelectedChapter(lastCh);
+        setCurrentVerse(1);
+      } catch {
+        // If the chapters fetch fails (network), fall back to
+        // chapter 1 of the destination book rather than leaving the
+        // nav in limbo.
+        setSelectedBookSlug(prevTarget.bookSlug);
+        setSelectedChapter(1);
+        setCurrentVerse(1);
+      }
+    } else {
+      setSelectedBookSlug(prevTarget.bookSlug);
+      setSelectedChapter(prevTarget.chapter);
+      setCurrentVerse(1);
+    }
+  }
+
+  function navigateNext() {
+    if (nextTarget === null) {
+      triggerBounceNext();
+      return;
+    }
+    // nextTarget.chapter is always a number (1 across book boundary;
+    // currentChapter+1 within a book) per the helper contract.
+    const ch =
+      nextTarget.chapter === "last" ? 1 : nextTarget.chapter;
+    setSelectedBookSlug(nextTarget.bookSlug);
+    setSelectedChapter(ch);
+    setCurrentVerse(1);
+  }
+
+  // S121 — global keyboard listener (left/right arrow keys). Skips
+  // when focus is in an input/select/textarea/contenteditable so
+  // typing in the picker doesn't pull the chapter sideways. Skips
+  // when any modifier key is held so browser back/forward shortcuts
+  // (Cmd+←, Alt+←) are unaffected.
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const target = e.target as HTMLElement | null;
+      if (target) {
+        const tag = target.tagName;
+        if (
+          tag === "INPUT" ||
+          tag === "SELECT" ||
+          tag === "TEXTAREA" ||
+          target.isContentEditable
+        ) {
+          return;
+        }
+      }
+      e.preventDefault();
+      if (e.key === "ArrowLeft") {
+        navigatePrev();
+      } else {
+        navigateNext();
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+    // navigatePrev / navigateNext close over prevTarget + nextTarget;
+    // re-bind whenever those change so the listener always sees the
+    // freshest selection state.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [prevTarget, nextTarget]);
+
+  // S121 — touch-swipe state. pointerdown records the start position
+  // and pointer type; pointermove cancels the long-press timer if the
+  // user is swiping (so a swipe over a verse doesn't open the picker
+  // mid-swipe); pointerup checks the threshold + angle constraint and
+  // navigates. Per DESIGN_LANGUAGE.md §19: 60px horizontal threshold,
+  // |dx| > |dy| * 1.5 angle constraint, single-touch only, touch
+  // pointerType only (mouse drag / stylus drag don't trigger nav).
+  const swipeStartRef = useRef<{
+    x: number;
+    y: number;
+    pointerType: string;
+  } | null>(null);
+
+  function onArticlePointerDown(e: React.PointerEvent) {
+    if (e.pointerType !== "touch") {
+      swipeStartRef.current = null;
+      return;
+    }
+    swipeStartRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+      pointerType: e.pointerType,
+    };
+  }
+  function onArticlePointerMove(e: React.PointerEvent) {
+    const start = swipeStartRef.current;
+    if (!start) return;
+    const dx = e.clientX - start.x;
+    if (Math.abs(dx) > 10) {
+      // The user is swiping — cancel the verse-level long-press timer
+      // so the swipe doesn't accidentally open the picker.
+      handlePointerCancel();
+    }
+  }
+  function onArticlePointerUp(e: React.PointerEvent) {
+    const start = swipeStartRef.current;
+    swipeStartRef.current = null;
+    if (!start) return;
+    const dx = e.clientX - start.x;
+    const dy = e.clientY - start.y;
+    if (Math.abs(dx) < 60) return;
+    if (Math.abs(dx) <= Math.abs(dy) * 1.5) return;
+    // Swipe LEFT (dx < 0) = next chapter; swipe RIGHT (dx > 0) = prev.
+    if (dx < 0) {
+      navigateNext();
+    } else {
+      navigatePrev();
+    }
+  }
+  function onArticlePointerCancel() {
+    swipeStartRef.current = null;
+  }
+
   return (
     <div className="mx-auto max-w-3xl px-6 py-8">
       <header className="mb-6 border-b border-[var(--reader-accent)] pb-4">
@@ -502,7 +680,27 @@ function Reader() {
         </div>
       )}
 
-      <div className="mb-6 flex flex-wrap gap-3 font-sans">
+      <div className="mb-6 flex flex-wrap items-center gap-3 font-sans">
+        {/*
+          S121 — chrome chapter-nav arrows (W2). Bordered-chrome button
+          family per DESIGN_LANGUAGE.md §1 + §19; chevron glyph carries
+          the §5 spectral-blue accent. Disabled state at category edges
+          with 200ms shake on click for bounce affordance. 44px+ hit
+          target per §13 accessibility floor.
+        */}
+        <button
+          type="button"
+          onClick={navigatePrev}
+          aria-label="Previous chapter"
+          aria-disabled={prevTarget === null}
+          title="Previous chapter (← arrow key)"
+          className={`flex items-center justify-center rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-1.5 text-base font-semibold text-[var(--reader-accent)] hover:opacity-90 ${
+            prevTarget === null ? "opacity-30" : ""
+          } ${bouncePrev ? "nav-bounce" : ""}`}
+          style={{ minHeight: "2.5rem", minWidth: "2.5rem" }}
+        >
+          <span aria-hidden="true">←</span>
+        </button>
         <label className="flex items-center gap-2 text-sm text-[var(--reader-muted)]">
           <span>Book</span>
           <select
@@ -557,6 +755,20 @@ function Reader() {
             ))}
           </select>
         </label>
+        {/* S121 — chrome next arrow (W2). Mirrors the prev arrow above. */}
+        <button
+          type="button"
+          onClick={navigateNext}
+          aria-label="Next chapter"
+          aria-disabled={nextTarget === null}
+          title="Next chapter (→ arrow key)"
+          className={`flex items-center justify-center rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-1.5 text-base font-semibold text-[var(--reader-accent)] hover:opacity-90 ${
+            nextTarget === null ? "opacity-30" : ""
+          } ${bounceNext ? "nav-bounce" : ""}`}
+          style={{ minHeight: "2.5rem", minWidth: "2.5rem" }}
+        >
+          <span aria-hidden="true">→</span>
+        </button>
       </div>
 
       {chapterError && (
@@ -570,7 +782,13 @@ function Reader() {
       )}
 
       {chapterDetail && (
-        <article>
+        <article
+          onPointerDown={onArticlePointerDown}
+          onPointerMove={onArticlePointerMove}
+          onPointerUp={onArticlePointerUp}
+          onPointerCancel={onArticlePointerCancel}
+          style={{ touchAction: "pan-y" }}
+        >
           <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)]">
             {chapterDetail.book.title}{" "}
             <span className="font-normal text-[var(--reader-muted)]">
@@ -726,6 +944,75 @@ function Reader() {
             chapterNumber={chapterDetail.chapter.chapter_number}
             userTier={me?.tier ?? "free"}
           />
+
+          {/*
+            S121 — bottom-of-chapter continuation row (W2). Duplicate
+            prev/next pair after the cross-reference card, before the
+            footer, as the natural reading-flow continuation. Larger
+            affordance than the chrome arrows; shows the destination
+            chapter's label as a preview when known. The reader who
+            finishes a chapter does not have to scroll back up to the
+            picker. Per DESIGN_LANGUAGE.md §19.
+          */}
+          <nav
+            aria-label="Chapter navigation"
+            className="mt-10 flex items-stretch justify-between gap-3 border-t border-[var(--reader-rule)] pt-6 font-sans"
+          >
+            <button
+              type="button"
+              onClick={navigatePrev}
+              aria-label="Previous chapter"
+              aria-disabled={prevTarget === null}
+              disabled={prevTarget === null}
+              className={`flex flex-1 items-center justify-start gap-3 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-left text-base text-[var(--reader-text)] hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed ${
+                bouncePrev ? "nav-bounce" : ""
+              }`}
+            >
+              <span
+                aria-hidden="true"
+                className="text-lg font-semibold text-[var(--reader-accent)]"
+              >
+                ←
+              </span>
+              <span className="flex flex-col">
+                <span className="text-xs uppercase tracking-wide text-[var(--reader-muted)]">
+                  Previous
+                </span>
+                <span className="font-medium">
+                  {prevTarget
+                    ? targetLabel(books, prevTarget)
+                    : "—"}
+                </span>
+              </span>
+            </button>
+            <button
+              type="button"
+              onClick={navigateNext}
+              aria-label="Next chapter"
+              aria-disabled={nextTarget === null}
+              disabled={nextTarget === null}
+              className={`flex flex-1 items-center justify-end gap-3 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-right text-base text-[var(--reader-text)] hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed ${
+                bounceNext ? "nav-bounce" : ""
+              }`}
+            >
+              <span className="flex flex-col">
+                <span className="text-xs uppercase tracking-wide text-[var(--reader-muted)]">
+                  Next
+                </span>
+                <span className="font-medium">
+                  {nextTarget
+                    ? targetLabel(books, nextTarget)
+                    : "—"}
+                </span>
+              </span>
+              <span
+                aria-hidden="true"
+                className="text-lg font-semibold text-[var(--reader-accent)]"
+              >
+                →
+              </span>
+            </button>
+          </nav>
         </article>
       )}
 

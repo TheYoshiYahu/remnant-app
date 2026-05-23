@@ -160,3 +160,29 @@ body {
   outline: 2px solid var(--reader-text);
   outline-offset: 2px;
 }
+
+/* ----- Chapter navigation (Session 121, Wheel 2) ----------------------
+   Bounce shake fired when the partner taps prev/next at a witness-
+   category edge (Genesis 1 prev / Revelation 22 next in canon; the
+   equivalent edges in any other witness_category). Confirms the input
+   was registered without changing the chapter. Per DESIGN_LANGUAGE.md
+   §19. 300ms total — short enough to read as feedback, long enough to
+   register.
+
+   Honors prefers-reduced-motion: a partner who has asked for reduced
+   motion at the OS level still sees the disabled-opacity affordance but
+   doesn't see the shake.
+   ----------------------------------------------------------------------- */
+@keyframes nav-bounce-shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-4px); }
+  40%      { transform: translateX(4px); }
+  60%      { transform: translateX(-3px); }
+  80%      { transform: translateX(2px); }
+}
+.nav-bounce {
+  animation: nav-bounce-shake 300ms ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-bounce { animation: none; }
+}

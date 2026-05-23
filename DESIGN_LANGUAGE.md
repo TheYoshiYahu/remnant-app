@@ -11,6 +11,8 @@ The consolidated record of all design and product decisions for the V1 app build
 
 The black-default theme is what the app looks like in screenshots, marketing material, the App Store / Play Store listing images, and every external surface.
 
+**Reader chrome — navigation and affordances stay in the same minimal register.** Picker selects, theme toggle, subscription CTAs, and the chapter-navigation arrows (§19) all use the same bordered-chrome button family on the surface tier — they read as control affordances rather than primary content. Primary CTAs (Become a partner, Resubscribe) invert to filled-primary so the call-to-action sits visually above the navigation chrome. The navigation chrome never competes with the reading surface; it sits at the picker row above the chapter and at the chapter-end continuation row below it, both in the same surface register as the rest of the chrome.
+
 ---
 
 ## 2. Outline Technique — 4-Direction `text-shadow`
@@ -66,14 +68,16 @@ Two color registers:
 
 ---
 
-## 5. Chrome Accents — Gold
+## 5. Chrome Accents — Spectral Blue (S115 swap from gold)
 
-`#D4AF37` — subtle gold for:
+`#0084FF` — 470nm spectral blue, elected by Yoshi at S115 in place of the original gold (`#D4AF37`) spec. The blue holds visible-accent presence against the pure-black reader pane more cleanly than gold did at small typographic sizes. The CSS variable is `--reader-accent`. Applied to:
 
-- **Verse numbers**: small superscript, font-size 11px, vertical-align: super, opacity 0.85
-- **Section divider lines** under chapter headers: 1px solid, opacity 0.7
-- **Chapter header label** color: matches divider gold, letter-spaced sans-serif
+- **Verse numbers**: small superscript via `.verse-number` (font-family ui-sans-serif, font-size 0.7em, font-weight 600, opacity 0.85, vertical-align super)
+- **Chapter-header divider line**: 1px solid border-bottom on the header element
+- **Chapter-navigation arrow glyphs (§19)**: the chevron itself carries the accent color inside the bordered-chrome button shell so the directional cue reads cleanly; the button shell uses the surface-tier chrome register so the affordance doesn't compete with the reading surface
 - **Small ornamental accents** as needed
+
+**Carrier-forward observation (S115, deferred).** Yoshi observed at S115 that the 470nm blue reads pastel rather than vivid in deployed conditions; second-opinion check pending before any saturation re-pick. The current `#0084FF` is what ships; a saturation-tuned candidate is on the table as a possible follow-up wheel if confirmed.
 
 ---
 
@@ -328,3 +332,55 @@ The cross-reference apparatus is the load-bearing surface that distinguishes thi
 ## 18. Cross-promotion of Yoshi's books (carry-forward, deferred)
 
 The S87 design-spec carry-forward to write a cross-promotion-of-Yoshi's-books design specification (the back-matter-zones-only architecture surfaced in S87) remains open. Seven specific patterns were named in S87; the write-up still awaits. Deferred from S88 (which focused on the John 1 sweep + the commentary-architecture restructure). To be picked up in a future session when the more pressing architecture decisions have landed.
+
+---
+
+## 19. Chapter Navigation — Swipe, Arrow Keys, and Visible Arrow Buttons (locked S121, Wheel 2 of the pre-launch sweep)
+
+The reader navigates chapter-to-chapter through three coordinated affordances that all converge on the same `(bookSlug, chapter)` setter — they're three input surfaces over one navigation model. All tiers, all surfaces, all editions. PWA-only (no API changes, no server work); integrates transparently with the §9 free-tier reading-position persistence (S116) because the position-save effect fires on `selectedBookSlug` / `selectedChapter` / `currentVerse` changes regardless of what triggered them.
+
+### Three input surfaces, one navigation model
+
+- **Touch swipe (mobile, tablet, Capacitor wraps).** Horizontal swipe-left advances to the next chapter; swipe-right returns to the previous chapter. Listener attached to the article element so vertical-only swipes (the normal reading scroll) never trigger horizontal navigation. Threshold and angle constraints below.
+
+- **Arrow keys (desktop, web).** `←` previous chapter, `→` next chapter. Window-level keydown listener. Skipped when focus is in an `<input>`, `<select>`, `<textarea>`, or `contenteditable` element so typing in the picker doesn't navigate the chapter. Skipped when any modifier key (`Cmd` / `Ctrl` / `Alt` / `Meta`) is held so the browser's own keyboard shortcuts (back, forward, history) are unaffected.
+
+- **Visible arrow buttons in chrome (desktop, web, PWA-on-mobile).** A pair of bordered-chrome buttons in the picker row — `[←] Book ▾ Chapter ▾ [→]` — always visible at every tier on every surface. Glyph carries the §5 spectral-blue accent; button shell uses the surface-tier bordered-chrome register (same family as the theme toggle and the picker selects). 44pt+ minimum hit target per §13 accessibility floor.
+
+- **Bottom-of-chapter continuation row (all surfaces).** A duplicate prev/next pair renders after the chapter-end cross-reference card, before the footer, as the natural reading-flow continuation. Larger affordance than the chrome arrows; shows the destination chapter's label as a preview when known (e.g., `← Genesis 1` / `Genesis 3 →`). The reader who finishes a chapter does not have to scroll back up to the picker.
+
+### Swipe gesture spec
+
+- **Horizontal threshold:** 60px. A swipe shorter than 60px is ignored.
+- **Angle constraint:** `|deltaX| > |deltaY| * 1.5`. A diagonal swipe with significant vertical motion is treated as a scroll, not a navigation. This protects the reader's normal vertical-scrolling motion from accidentally pulling the chapter sideways.
+- **Pointer source:** Pointer Events API with `pointerType === "touch"` only. Mouse drag and stylus drag do not trigger navigation (those interactions are reserved for text selection and the future $9.99 keys system).
+- **Single-touch only:** multi-finger gestures (pinch-zoom, two-finger pan) are passed through to the browser.
+- **Long-press protected:** the existing 500ms long-press picker (S113) takes precedence — a long-press that becomes a swipe still opens the picker; the picker tap-out closes it without navigating.
+
+### Book-boundary behavior
+
+- **Within a book:** prev decrements `chapter`; next increments `chapter`. No bookSlug change.
+- **At end of book N within the same witness_category:** next advances to book N+1 (per `canonical_order` within the category), chapter 1.
+- **At chapter 1 of book N within the same witness_category:** prev returns to book N-1's last chapter. Requires a one-shot `listChapters(prevBookSlug)` fetch to learn the chapter count; the request is fired in the navigation handler and resolves before the state setters fire.
+- **At edition edges (Genesis 1 prev; Revelation 22 next in canon; the equivalent edges in any other witness_category):** bounce. The chapter does not change. The chrome arrow corresponding to the unavailable direction renders in a `disabled` state with reduced opacity, and a brief 200ms shake animation fires on the disabled arrow to confirm the input was registered. The keyboard arrow at an edge fires the same shake on the corresponding chrome button.
+- **Within witness_category only.** The canon's 66 books form one continuous swipe sequence; the apocrypha (KJV-1611), the apocrypha (Charles vol 1), the pseudepigrapha, and the other witness categories each form their own continuous sequences. Crossing from canon into apocrypha (or any other category boundary) is a deliberate picker action, not a swipe. This keeps the reader's mental model anchored on the edition they chose.
+- **Genesis 1 prev = bounce, Revelation 22 next = bounce (locked S121).** Honors the canon's directionality (creation → new creation). A wrap-to-the-other-end alternative was considered and declined — wrapping flattens the canon's narrative arc, and the bounce affordance gives a clearer signal at the edges. If the reader's expectation drifts toward wrap behavior over time, this is one constant in `lib/chapter-nav.ts` and a paragraph update here.
+
+### Reading-position integration (S116)
+
+Every navigation action — swipe, arrow-key, chrome button, bottom-of-chapter button — calls the same `navigateToChapter(targetBookSlug, targetChapter)` handler, which sets `selectedBookSlug` + `selectedChapter` + resets `currentVerse` to 1 (mirroring the existing book / chapter picker handlers from S116). The position-save effect already fires on those state changes, so the saved position lands at the new chapter without any nav-specific glue. The 1500ms debounce holds; rapid nav (a reader who arrow-keys through five chapters quickly) collapses to one API write at the end of the burst.
+
+### Accessibility
+
+- Chrome arrow buttons carry `aria-label="Previous chapter"` / `aria-label="Next chapter"` and `title` attributes for hover affordance.
+- Disabled-edge state is communicated via `aria-disabled="true"` plus visual opacity reduction.
+- Keyboard navigation works without the chrome buttons being focused — the global keydown listener captures `←` / `→` at the window level.
+- Touch target meets the §13 44pt iOS / 48dp Android floor.
+- Focus order: picker selects come first, then the prev/next arrows after them in tab order, so a keyboard-only navigator reaches the same controls a touch reader does, in a natural left-to-right reading order.
+
+### What this section deliberately does NOT prescribe
+
+- **Cross-edition swipe (canon → apocrypha → pseudepigrapha as one continuous sequence).** Considered and declined for V1 — the witness-category boundary is the natural mental model and the picker handles cross-edition jumps. If user research after launch shows readers wanting one continuous swipe across editions, this is a single change in `lib/chapter-nav.ts`.
+- **Edge-of-canon wrap.** Considered and declined per the bounce lock above.
+- **Swipe-velocity prediction / inertia.** The threshold + angle constraints are sufficient for V1. Velocity-based prediction is a refinement available if the static threshold reads heavy in practice.
+- **Hover-revealed arrows on desktop.** The brief explicitly calls for *visible* arrow buttons — always-visible in the chrome and at the bottom-of-chapter continuation row, not hover-revealed.
