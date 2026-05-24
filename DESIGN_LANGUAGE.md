@@ -902,3 +902,204 @@ Node sanity tests at `/Users/mtm/Desktop/App/_s125_search_sanity.mjs` covering: 
 - **Per-book / per-tier filter pills on the search input.** *"Search canon only"*, *"Search apocrypha only"*, *"Search complete library only"* filter chips above the input were considered and declined for V1 — the grouped-by-book result panel already makes the per-book distribution visible at a glance, and collapsing groups the partner doesn't want gives the same filtering outcome without a separate UI surface. The pills add chrome footprint without unlocking new capability at the V1 result-set size.
 - **Server-side tier filtering of search results.** As described under *API surface* above, the V1 endpoint returns all hits regardless of partner tier and the PWA renders the tier-aware snippet card client-side. A `?show_locked=false` query-param toggle is the future-wheel landing pattern if partners explicitly opt into hiding content they can't read; the default stays show-locked-with-upgrade-card to preserve search as an acquisition surface.
 - **Boolean operators, exact-phrase quoting, field-scoped search.** No `AND` / `OR` / `NOT` / `"exact phrase"` / `book:Genesis` syntax at V1. pg_trgm's substring-and-similarity matching covers the common case (a partner typing *"living water"* gets verses containing both words, with the strongest matches first). Power-user search syntax is a future-wheel refinement; the V1 surface stays a natural-language typing surface for the partner who isn't running a Boolean query in their head.
+
+---
+
+## 24. Share-and-Copy-with-Watermark — Canvas-PNG Render, Reserved-Footer-Band Layout (locked S126, Wheel 7 of the pre-launch sweep)
+
+The shared render path for every watermark-bearing export from the app — single-verse Share, single-verse Copy, multi-verse range Share, multi-verse range Copy. Closes the §9 Free-tier *"Share verse with watermark"* promise, promotes the §21 RangeActionPicker Copy/Share items from Coming-soon to Live, and upgrades the §20 single-verse Copy path from text-only-clipboard to canvas-PNG (with text-only fallback). Built on the locked S123 range-selection helper for any multi-verse case — the share/copy consumers are the second and third Live consumers of the same captured-state pipeline after S123's multi-verse highlight. The same brand-mark asset doubles as the locked App Store / Play Store listing image surface per §1.
+
+### The brand-mark — locked asset (S126, v4 argaman-tribes upgrade)
+
+`~/Desktop/App/brand-assets/brand-mark-blue-on-black-v4-argaman-tribes-share-card-watermark-240x360.png` (240×360, PNG-24, ~120 KB). Source-of-truth lives in the project's `brand-assets/` directory; the PWA bundle imports the same file via Vite's static-asset pipeline so the bytes ship into the deployed app at a content-hashed URL and survive aggressive CDN caching. The full-size `brand-mark-blue-on-black-v4-argaman-tribes-832x1248.png` is the same composition rendered at hero scale for marketing / App Store / landing-page use (see §1 cross-reference + the S118 landing-page spec). The pre-v4 gold-accents-with-blue-tribes variant (`brand-mark-blue-on-black-v3-gold-accents-*`) stays in `brand-assets/` as an alternate but is NOT the share-card watermark; v3 is also preserved in `brand-assets/_pre-v4/` for rollback.
+
+**Composition (locked S126, v4 upgrade).** Stencil-style render against pure black, using all three locked §3 sacred-color registers: **techelet `#1A6FE5` (divinity)** carries the title text *The Remnant of Promise* + the base text *Official Study Bible* in deep-blue Lombardic letterforms and the blue olive-branch motif with silver-blue leaves; **argaman `#8E4FB3` (covenant body)** carries the **JUDAH** label on the left and the **EPHRAIM** label on the right in saturated purple Lombardic letterforms; **gold** anchors the menorahs flanking the central trunk and the central light/trunk itself. The brand-mark thus reads as a complete summary of the §3 sacred-color palette in one image — the same color registers the reader encounters inside the app body text, present on the cover. The composition reads at corner-of-share-card scale and at App Store thumbnail scale.
+
+**Theological reading of the three-register composition.** Techelet on the title carries the divine-name register — the brand-voice speaks in the same color the canon's divine names render in. Argaman on JUDAH + EPHRAIM carries the covenant-body register per §3's lock on *Yahudah (Judah)*, *Yashar'el (Israel)*, *Yahudim (Jews)*, *Yahudi*. JUDAH-in-argaman is a direct §3 sacred-color hit; EPHRAIM-in-argaman is a slight extension of the strict §3 list (Ephraim isn't named in the §3 word list) but treating JUDAH + EPHRAIM as one matched argaman pair reads them as the Ezekiel 37 two-sticks restoration — the two houses of Israel rejoined. The extension is theologically grounded, not arbitrary. Gold on the menorahs + central trunk carries the priestly-witness register and the divine-presence motif — the menorahs are the covenant witnesses, the central light is Yahuah's presence at the joining of the branches.
+
+**Saturation lock (locked S126).** 25% saturation lift baked into the PNG via PIL.ImageEnhance.Color from the Grok-delivered source, pre-saturation original preserved at `brand-assets/_pre-saturation/` (v3) and `brand-assets/_pre-v4/` (v3 itself preserved when v4 superseded it). The lift is baked into the pixels rather than applied via CSS filter at render time, so the lifted version travels with the asset across every surface (PWA share renderer, landing-page hero, App Store image, future Capacitor wraps) without per-surface CSS coordination. Post-lift sampled medians: techelet title `~#0a2d84` (much deeper than the §3 reader-text techelet `#1A6FE5`); argaman tribe labels `~#670faf` (JUDAH) / `~#6a0fb2` (EPHRAIM) — both deeper than the §3 reader-text argaman `#8E4FB3`. The hex divergence from §3 is intentional and acceptable — the brand-mark is its own surface register, the §3 colors are the body-text outline register, and what matters is each color in the brand-mark reads cleanly as its §3 register (blue → techelet, purple → argaman, gold → priestly).
+
+**Why this asset over the alternates.** A nine-candidate A/B was run at S126 across the original Grok blue (`#5197d0`), CSS-filter-shifted variants pushed toward techelet `#1A6FE5` / deeper indigo / softer cyan / monochrome silver / gold-on-brown raw / gold-on-brown screen-blend, plus two native Grok regenerates (deeper blue + silver vs deeper blue + gold accents). The gold-accent regenerate won the initial round (v3) on three counts: (a) native Grok render preserves the metallic gradient cleanly vs CSS-filter lossiness, (b) theological stack — blue carries the divine-name register from §3, gold anchors the covenant witnesses (menorahs) and the central presence motif (trunk/light), and (c) brand-mark distinctiveness at watermark scale — the gold accents read in a feed at 240×360 where pure blue recedes. **The v4 upgrade adds a fourth count (d): full §3 sacred-color palette completeness via the argaman JUDAH + EPHRAIM tribe labels.** v3 used two of the three §3 registers (techelet + gold); v4 uses all three (techelet + argaman + gold), giving the brand-mark theological density that summarizes every sacred-color register the reader will encounter inside the app. The argaman tribes also visually differentiate the labels from the surrounding blue title text, so JUDAH + EPHRAIM read as named-tribe identifiers rather than as continuation of the title — improving brand-mark legibility at thumbnail scale alongside the theological win. The gold-on-brown alternate from earlier rounds stays in `brand-assets/` as the warm-surface variant for book covers, print, and Assembly back matter where the warm field matches the surface; it is NOT the share-card watermark.
+
+### Share card dimensions + format
+
+**1080 × 1350 PNG-24** (IG portrait, 4:5 aspect ratio). Selected as the V1 share format because IG portrait is the most universally-rendering aspect across iMessage / Twitter / Facebook / WhatsApp preview cards / IG Story / IG Feed; cards render without crop on every modern share target. PNG-24 (not JPEG) because the share card carries text at small point sizes — JPEG compression introduces ringing artifacts around letterforms that read as visible noise at the techelet outline and at the spectral-blue verse numbers. The PNG size budget runs ~200-400 KB per card depending on verse-text density; acceptable across every share channel's attachment limits.
+
+**Background** is `#000` per §1 default theme — the share register IS the reader register, partners share what they read. **No alternate themes for V1**: parchment / sepia / gradient variants are not exposed; the black default is the locked share card. A future-wheel "theme-aware export" surface is possible once V2 telemetry shows partner demand.
+
+### Three-zone layout — the reserved-footer-band rule (locked S126)
+
+The card is composed as three vertically-stacked zones with mathematically-enforced boundaries — verse text NEVER overlaps the brand-mark watermark regardless of verse length, range size, or auto-fit font scaling. This is the load-bearing layout rule that distinguishes the locked S126 design from a naive corner-float watermark.
+
+| Zone | Height | Top | Bottom | Contents |
+|---|---|---|---|---|
+| Header band | 9% | 0% | 9% | Small brand tag left (`Remnant of Promise`) + scope label right (`Official Study Bible`) in chrome-register sans-serif, uppercase, letter-spaced |
+| Body zone | 73% | 9% | 82% | Verse text — serif body register matching §1, sacred-name techelet outline per §3, verse-number spectral blue per §5, auto-fit font-size |
+| Footer band | 18% | 82% | 100% | Verse reference left (`{range-header} · ROP Official Study Bible`) in chrome register + locked watermark right at 240×360 proportion |
+
+**Hairline divider** at the footer band's top edge (1px solid `rgba(255,255,255,0.08)`, 8% horizontal inset on each side) signals the band boundary visually without competing with the watermark or verse text. The header band has no divider — the breathing room between header text and verse body is sufficient.
+
+**Why three zones rather than corner-float.** The S126 A/B mockup ran the original spec (corner-floating watermark at bottom-right with verse text spanning the full card) and the partner correctly flagged that verse text was overlapping a letter of the brand-mark. The root problem was geometric: corner-float places the watermark on top of an unconstrained text region, and any verse text long enough to reach the bottom-right of the card collides with the watermark. The fix is to make the body zone's bottom boundary the SAME pixel line as the footer band's top boundary — auto-fit then shrinks verse text into the body zone, and no collision is geometrically possible. The footer band is reserved; the body zone is constrained; the rule holds regardless of partner content.
+
+### Verse body rendering
+
+**Typography.** Iowan Old Style with fallbacks to Palatino Linotype / Palatino / Georgia / serif — matches the §1 reader body register so the share card reads as the app, not as a separate design. Font-weight 400. Line-height 1.42 for comfortable wrapping at the wider card width (vs the narrower reader column).
+
+**Auto-fit font-size.** A pure helper (`lib/share-card-render.ts` → `computeBodyFontSize(verses, zoneHeight, zoneWidth)`) computes the largest pixel size at which the rendered verse text fits within the body zone given verse count, total character length, and line-height. The helper iterates downward from a maximum (calibrated against single short verses like Psalm 23:1) and stops at the first size that fits. Floor: 14px equivalent at 1080 width (smaller and the text becomes unreadable in a phone-screen IG preview). A range exceeding the 14px floor triggers the multi-card warning described under *Range handling* below.
+
+**Sacred-name rendering (techelet outline per §3).** The share-card render reproduces the same 4-direction `text-shadow` outline the reader uses, scaled proportionally to the auto-fit font size. The techelet color `#1A6FE5` is preserved exactly — partners share the same divine-name treatment they read in body text. Canvas implementation: four `ctx.fillText()` calls at cardinal offsets in techelet color, then one `ctx.fillText()` call in white at center. Stroke weight = 1/17 of the auto-fit font-size (matches the reader's 1px-on-17px-body ratio).
+
+**Verse numbers (spectral blue per §5).** Small superscript before each verse, sans-serif, font-size 55% of body, color `#0084FF`, opacity 0.85, baseline raised — same treatment as the reader. Canvas implementation: separate `ctx.fillText()` call with the smaller font + raised baseline before each verse-body span.
+
+**Range stack.** Verses render on separate lines, each prefixed with its verse number, ordered ascending per the §21 range-selection helper output. No paragraph indentation between verses; a single line-height gap separates each verse from the next.
+
+### Footer composition
+
+**Left side** — reference line in chrome-register sans-serif, color `var(--muted)` from the reader register (`#A8A8A8` on the black background), letter-spacing 0.4px. Format: `{range-header} · ROP Official Study Bible` where the range-header is the same span format §21 already locks at the RangeActionPicker header:
+
+| Range type | Format | Example |
+|---|---|---|
+| Single verse | `{Book} {chapter}:{verse}` | `Psalm 23:1` |
+| Same-chapter range | `{Book} {chapter}:{start}–{end}` | `Psalm 23:1–3` |
+| Cross-chapter range (W7+) | `{Book} {chapter₁}:{verse₁} → {chapter₂}:{verse₂}` | `Genesis 50:26 → Exodus 1:1` |
+| Cross-book range (W7+) | `{Book₁} {chapter₁}:{verse₁} → {Book₂} {chapter₂}:{verse₂}` | `Genesis 50:26 → Exodus 1:1` |
+
+The footer phrasing uses *ROP Official Study Bible* (not the full *The Remnant of Promise Official Study Bible*) so the reference line stays within the left half of the footer band without crowding the watermark on the right. The full product name is carried by the brand-mark's own embedded title text on the right — the footer is summary, not duplication.
+
+**Right side** — locked watermark at 240×360 anchored bottom-right with `4%` outer padding (matches the header band's horizontal padding for visual alignment). The watermark renders at its native pixel dimensions; canvas does NOT scale it (the asset was generated at the exact share-card size needed). Canvas implementation: `ctx.drawImage(brandMarkImage, x, y, 240, 360)` with the brand-mark Image object loaded once at module init and cached.
+
+### Canvas-PNG render path
+
+**Library:** `app/src/lib/share-card-render.ts` — pure functions, no React imports, no global state, test-friendly per the post-S121 W2 / W3 / S122 / S123 / S125 forward standard. The consumer (a hook in App.tsx or a component-local effect) calls the helper with verse data and receives a canvas; the helper does not touch the DOM beyond the canvas it creates.
+
+**Helper API surface:**
+
+```ts
+// Compose the share card and return the canvas.
+renderShareCard(
+  verses: VerseRender[],          // ordered list of verses (single-verse arrays for single-verse share)
+  rangeHeader: string,             // pre-formatted per the §21 reference-line format table above
+  opts?: { width?: number; height?: number; brandMark?: HTMLImageElement }
+): Promise<HTMLCanvasElement>
+
+// Export to a Blob for navigator.share / clipboard.write / a-download.
+shareCardToBlob(canvas: HTMLCanvasElement): Promise<Blob>
+
+// Export to a File for navigator.share with native iOS/Android share sheet.
+shareCardToFile(
+  canvas: HTMLCanvasElement,
+  filename: string                 // canonical: `remnant-of-promise-{book-slug}-{chapter}-{verse}.png`
+): Promise<File>
+
+// Pure helper — exposed for testing the auto-fit math separately from canvas.
+computeBodyFontSize(
+  verses: VerseRender[],
+  zoneHeight: number,
+  zoneWidth: number
+): number
+```
+
+The brand-mark Image object loads once via `new Image() + img.src = brandMarkUrl` at module init and is awaited via `img.decode()` before any render. If the Image fails to load (network failure on first session, asset 404), the render falls back to text-only — the watermark slot draws *The Remnant of Promise · Official Study Bible* in the same chrome register as the reference line. Failure is non-fatal — partners always get a shareable card.
+
+**Export path.** Three transport modes in priority order:
+
+1. **`navigator.share({ files: [file] })`** — iOS Safari 15+, Chrome Android, Capacitor on both platforms. The OS-native share sheet handles the destination picker (iMessage / WhatsApp / IG Story / etc.). This is the primary path for >90% of partners on mobile.
+2. **`navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])`** — Chrome/Edge desktop, Safari 17+ desktop. For the Copy-with-watermark action: partner copies the rendered PNG and pastes into their target app. This is the desktop primary path.
+3. **`<a href={canvas.toDataURL('image/png')} download={filename}>` synthesized click** — fallback for any browser without share API or clipboard image support. Partner downloads the file and manually attaches it wherever they want.
+
+The helper attempts (1), then (2) for Copy-actions only, then (3). Each path's availability is feature-detected at the call site, not pre-declared in the helper.
+
+**Text-only fallback for Copy-actions when image clipboard write fails.** If `navigator.clipboard.write` rejects (browser supports the API but the OS clipboard rejects PNG, observed on some Linux desktop environments), the helper falls back to `navigator.clipboard.writeText` with a text-only watermark line. Format:
+
+```
+{verse text}
+{verse text}
+…
+
+— {range-header} · The Remnant of Promise Official Study Bible
+```
+
+Partner gets the verses + the attribution line as plain text. The PNG is then offered as a manual download via transport (3) so the partner can attach it separately if they want the visual card.
+
+### Range handling — no cap, single-card-only-with-warning for V1
+
+**No cap on range size.** Per the S121 W3 lock + §21's range-selection mechanic, the app does not impose a Cepher-style 5-verse limit on Copy or Share. The framework's diagnostic runs across passages the Reformation traditions truncate; the app NEVER reproduces that truncation in its sharing affordances. A partner can range-Share an entire chapter, multiple chapters, or (when W7 cross-chapter resolution lands) cross-book passages. The §21 helper produces the ordered verse_id list; the share-card render walks it.
+
+**Single-card-only for V1 with multi-card warning.** A range that auto-fits below the 14px font-size floor triggers a warning modal: *"This range is too long for a single share card. Splitting into N cards is coming in a future release. For now you can: (a) share as text-only, (b) share each chapter separately, or (c) download the over-long card and accept smaller text."* The partner picks; the helper proceeds with their selection. Multi-card export (split a long range into multiple stitched PNGs) is V2 — the V1 render path stays single-canvas.
+
+The auto-fit floor is conservative; a typical full chapter of Psalms or Proverbs fits comfortably within the body zone at 14-16px without triggering the warning. The warning is the relief valve for outlier cases (a partner ranging Genesis 1 + Genesis 2 together, or Psalm 119), not the common case.
+
+### §20 + §21 stub catalog promotions (W7 ship deltas)
+
+When W7 ships at S127, the following stub-catalog rows update per the §20 / §21 promotion mechanic:
+
+**§20 Share section (single verse).** *Share with watermark* — Coming soon (W7) → **Live**. Tap routes to `renderShareCard([thisVerse], …) → navigator.share(...)`. *Copy verse* — already Live as text-only clipboard via S121 W3; W7 upgrades the implementation to canvas-PNG-with-text-fallback per the *Text-only fallback* sub-section above. The menu label and tier stay unchanged.
+
+**§21 RangeActionPicker.** *Copy range with watermark* — Coming soon (W7) → **Live**. *Share range with watermark* — Coming soon (W7) → **Live**. Tap routes the captured range through `renderShareCard(verseList, rangeHeader, …)` and the appropriate transport. The Highlight range action (W4-locked Live) stays unchanged.
+
+**Drift surface to watch.** The line-412 table in §20 already reads `**Share** | verse | Copy verse | Share with watermark (Wheel 7)` per the S125 drift-catch fix. When W7 actually ships, the right column drops the "(Wheel 7)" parenthetical since the surface is now Live. Same for the S122 stub catalog table at line 459-460 — *Share with watermark* row's Status column flips from `Coming soon` to `Live`, Wheel column to `—`. Both edits happen at S127 ship-time as part of the §20 / §22-catalog patches.
+
+### Visual register — what the partner sees
+
+The share card register is intentionally **close to but distinct from** the reader register. Same body typography, same sacred-name treatment, same verse numbers — partners recognize their reading surface. But the card adds two chrome elements the reader doesn't carry: the header band's brand tag (right side: *Official Study Bible*) and the footer band's reference line. These signal "this is a shareable artifact, not a screenshot of the app" — important for partners who want to share without confusion about what they're sharing.
+
+The brand-mark in the footer's right slot is the load-bearing recognition element. At thumbnail scale in a feed, a partner scrolling past the card sees the gold-and-blue mark first; the verse text is secondary. This is the acquisition mechanism: every share is a brand impression for partners who don't yet have the app.
+
+### App Store / Play Store listing image — same asset (locked S126)
+
+The 832×1248 full-size variant (`brand-assets/brand-mark-blue-on-black-v4-argaman-tribes-832x1248.png`) is the locked App Store / Play Store listing hero image per §1's *"The black-default theme is what the app looks like in screenshots, marketing material, the App Store / Play Store listing images, and every external surface"*. This section names the actual artwork that fulfills that locked surface — not a separate design pass.
+
+**Standard-resolution deliverables generated from the same source asset** when the Capacitor wraps reach App Store / Play Store submission (still queued per the Next-wheels list in REBUILD_STATE.md):
+
+- **App icon** — 1024×1024 PNG (App Store) + 512×512 PNG (Play Store). The brand-mark cropped to its square center region (drop the title text band; keep the branches + central light + menorahs + JUDAH/EPHRAIM labels). The title text is on the icon's host surface, not the icon itself, per platform convention.
+- **iPhone screenshots** — 1290×2796 (6.7" display, primary). The brand-mark + landing surface render at full device size as the hero screenshot, with 3-5 additional screenshots walking the reader → menu → Strong's lookup → highlights / notes / search flows per the §9 free-tier surface ladder.
+- **iPad screenshots** — 2048×2732 (12.9"). Same composition adapted to tablet aspect.
+- **Play Store feature graphic** — 1024×500. The brand-mark composited against the black field with the title text "The Remnant of Promise Official Study Bible" rendered larger to fill the wider aspect.
+
+These deliverables are generated downstream from the same locked asset at the Capacitor-wrap wheel; this section names them so the asset register stays unified across share-card + App Store surfaces. **No re-rendering / re-Grok of the brand-mark for App Store deliverables** — the bytes are identical, only the framing changes per platform requirement.
+
+### Interaction-conflict resolution with prior wheels
+
+- **§19 chapter swipe + arrow keys.** Share action is modal — the OS-native share sheet (transport 1) or the canvas-render-then-clipboard-then-download path (transports 2-3) all suspend keyboard / swipe handlers via the same in-modal check pattern from §20 / §22 / §23. Once the share sheet dismisses or the download completes, handlers resume.
+- **§20 long-press / right-click menu.** Share / Copy menu items are inside the verse-scope action menu; tap → menu-close → canvas render. The menu's close affordance fires before the canvas mounts, so no race between menu and modal.
+- **§21 range mode.** Copy-range / Share-range fire from the RangeActionPicker per §21's post-capture flow. The picker stays open with a *"Rendering…"* state on the tapped item until the canvas resolves and the transport fires, then closes via the same "action complete = exit range mode" path §21 already specs.
+- **§22 BookmarkSheet / NotesPanel.** No conflict — bookmark and notes are inspection surfaces; share/copy is an export surface; they don't share interaction territory. A partner can have a bookmark on a verse and share that verse — the share action does not interact with bookmark or notes state.
+- **§23 search.** Search results have NO share/copy affordance at V1 — share is verse-scope or range-scope, not search-result-scope. A partner who wants to share a found verse taps the result to jump to the reader, then uses the §20 menu to share from there. Adding share-from-search-result is a possible future-wheel refinement once partner usage validates the demand.
+- **S116 reading-position persistence.** Share / Copy actions do NOT update the reading position — the partner is sharing what they're reading, not navigating away. The reading-position write effect only fires on `selectedBookSlug` / `selectedChapter` / `currentVerse` changes, none of which the share / copy path triggers.
+
+### Accessibility
+
+- **Share affordance.** `aria-label="Share verse with watermark"` (single-verse path from §20 menu) / `aria-label="Share {N} verses with watermark"` (range path from §21 picker). Hit target meets the §13 44pt iOS / 48dp Android floor — inherits the menu-item register from §20 / picker-item register from §21.
+- **Copy affordance.** `aria-label="Copy verse with watermark"` / `aria-label="Copy {N} verses with watermark"`. Same hit target as above.
+- **In-render state.** During the canvas render + transport selection (typically 100-400ms), the tapped action shows a small inline spinner with `role="status"` + `aria-live="polite"` announcing *"Preparing share card"* / *"Preparing copy"*. Screen-reader partners hear the state transition without losing context.
+- **Share sheet / clipboard / download.** Transports 1 (OS share sheet) and 2 (clipboard) inherit OS-level accessibility — the OS reads the share sheet items aloud, the clipboard state is announced by the OS notification region. Transport 3 (download) uses a standard `<a download>` element; screen readers announce *"link, download {filename}"* per HTML semantics. Filename pattern: `remnant-of-promise-{book-slug}-{chapter}-{verse}.png` for single-verse, `remnant-of-promise-{book-slug}-{chapter}-{start}-{end}.png` for same-chapter range; cross-chapter / cross-book ranges use `remnant-of-promise-{book-slug₁}-{chapter₁}-{verse₁}--{book-slug₂}-{chapter₂}-{verse₂}.png`. The canonical filename pattern is generated by a small pure helper alongside the renderer; consistent regardless of share target.
+- **Fallback warning modal (over-long range).** Standard `role="dialog"` + `aria-modal="true"` + descriptive `aria-label`. The three options (text-only / per-chapter / accept-small-text) are buttons with explicit labels; no icon-only affordances.
+- **Color contrast.** The footer's chrome-register muted text on `#000` clears WCAG AA 4.5:1 at the rendered point size (verified at the same calibration used for the reader's chrome). The brand-mark's color contrast is owned by the asset itself, not by this section.
+
+### Schema — no migration needed
+
+Share / Copy with watermark are pure render operations against existing verse data and the existing range-selection helper from §21. No new tables. No new API endpoints. The brand-mark asset is bundled into the PWA build (Vite static-asset pipeline) and served from the same CDN as the rest of the PWA bundle. Zero backend impact at the W7 ship; the wheel is PWA-only at S127.
+
+If V2 layers per-share analytics on top (share counts, click-through tracking), THAT wheel adds a small instrumentation endpoint; V1 ships with no instrumentation per the *"V1 ships when the foundation is right, iterate on real user data, build V2 features once funding supports the cycle"* posture from §16. The acquisition mechanism is the watermarked image itself — partners who share visible-brand cards drive cold-installer signups without per-share telemetry.
+
+### Helper API + sanity-test surface (the forward standard from S121 W2 / W3 / S122 / S123 / S125)
+
+The render helper is logic-light by design — most of the work is canvas API calls, which test poorly without a full canvas mock. The pure logic worth extracting + testing:
+
+- `formatRangeHeader(range)` — produces the *Book Ch:V* / *Book Ch:S–E* / cross-chapter / cross-book strings per the table above. Pure function, easy to unit-test across all four range types.
+- `computeBodyFontSize(verses, zoneHeight, zoneWidth)` — the auto-fit math. Pure function with deterministic output given inputs; sanity-test sweeps single short verse / single long verse / 3-verse range / full Psalm 119-scale range / cross-chapter range against expected font-size buckets.
+- `buildShareFilename(verses, rangeHeader)` — produces the canonical filename per the patterns under *Accessibility* above. Pure function, sanity-test single-verse / same-chapter / cross-chapter / cross-book inputs.
+- `buildTextOnlyFallback(verses, rangeHeader)` — produces the plain-text watermark-line block per the *Text-only fallback* sub-section. Pure function, sanity-test verse-formatting + line-break handling.
+
+The canvas render itself (`renderShareCard`) is integration-tested manually at S127 via the visual review of rendered PNG output across single-verse / same-chapter range / cross-chapter range / over-long range cases. No headless-canvas mocking at V1.
+
+### What this section deliberately does NOT prescribe
+
+- **Multi-card splitting for over-long ranges.** A range that auto-fits below the 14px floor triggers the warning modal, not an automatic split. Multi-card stitched PNGs (where the helper produces card 1 of N, card 2 of N, etc.) is a V2 feature once partner telemetry validates the demand. The V1 single-canvas path keeps the render logic simple and predictable.
+- **Custom card themes / partner-selectable backgrounds.** No parchment variant, no gradient, no partner-uploaded background images. The black default is the locked share register per §1; a theme-aware export surface is V2-territory once V1 ships and partner feedback identifies the gap (if any — partners who want a parchment-themed share might be a smaller cohort than the cost of building the variant).
+- **Editable watermark text.** The watermark IS the brand-mark asset. Partners cannot replace it with their own text, cannot remove it, cannot resize or reposition it. The watermark is the acquisition mechanism — making it editable would break the "every share is a brand impression" property that the whole §10 / §16 distribution model depends on. **Watermark removal is explicitly out of scope at every tier including the unbuilt $14.99 Pro tier — the brand-mark stays on every share, every tier, every render path forever.**
+- **Branded fonts / custom title typography on the share card.** The card uses the reader register's serif body + sans-serif chrome — no Lombardic title text rendered on top of the canvas (the Lombardic title sits inside the brand-mark asset on the right of the footer band, where it's been rendered once at Grok and never re-rendered). Adding a card-specific title font would inflate bundle size + introduce typography-licensing scope without unlocking partner value.
+- **Per-card share analytics in V1.** Share counts, target-platform breakdowns, click-through-from-watermark-to-install — all V2 instrumentation once funding from $1.99 + $4.99 conversions supports the V2 cycle per §16. V1 ships dark; the acquisition mechanism runs on the visible watermark, not on telemetry.
+- **Animated / video share targets.** No animated PNG, no MP4, no boomerang-style export. The share card is a still PNG only. Animated formats raise format-compatibility scope across share targets that PNG sidesteps cleanly, and the framework's prose-and-canon body doesn't benefit from animation the way a product screenshot or a UI demo would.
+- **Per-tier watermark variants.** All tiers share the same brand-mark. No "Free partners get a bigger watermark" / "Library partners get a smaller watermark" / "Pro partners get a custom watermark" variants. The brand-mark is the brand; tier differentiation lives in the §9 feature matrix, not in the watermark's visual treatment.
+- **Cross-app deep-link tracking from shared cards.** No QR codes, no URL overlays, no UTM-parameterized deep links rendered onto the card. A partner who taps a shared card lands on the app via natural channels (App Store search / Play Store search / typing the URL); attribution from share-to-install is post-launch instrumentation territory once V2 telemetry lands. The share card stays clean — text + watermark, nothing else.
