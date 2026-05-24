@@ -23,6 +23,31 @@
  * verses without commentary chrome can switch it off and have that
  * preference remembered. Off by default — the study Bible looks naked
  * without commentary, and free users need to see the value lattice.
+ *
+ * S129 — additive-expand fix. The bug: expanding a paid-tier block
+ * re-renders the same opening paragraphs the partner just read in the
+ * free chapter_intro (and again from Basic when Deeper Dive expands).
+ * The fix matches the website's SoF `.sof-deeper` / `.sof-long` pattern
+ * where expand reveals the next paragraphs below what's already on
+ * screen, additive only — no re-render of the prior layer:
+ *
+ *   1. Switch the expander chrome from button+state to a native
+ *      <details>/<summary> element, mirroring the SoF semantic pattern
+ *      one-for-one. The DOM is genuinely additive — collapsed = only
+ *      the <summary> exists, expanded = <summary> + body unfold below.
+ *
+ *   2. The renderer always strips a leading H1 (`# File Title` line at
+ *      the top of matt-N-short.md / matt-N.md) — that's a file-level
+ *      header, not reader content. Already-shipped sources carry an H1;
+ *      stripping it at render time leaves the source unchanged.
+ *
+ *   3. Source markdown may opt into truly-additive expand by including
+ *      a marker line `<!-- additive-from-here -->` somewhere in the
+ *      body. The renderer splits on the marker and renders only the
+ *      portion AFTER it. Bodies without the marker render unchanged
+ *      (backward-compatible) — the content team adds markers chapter
+ *      by chapter as bodies get re-shaped to "what's NEW beyond the
+ *      prior layer." Marker is on its own line; trimmed both sides.
  */
 
 import { useEffect, useState, type ReactNode } from "react";
@@ -143,10 +168,9 @@ function CommentaryBlock({
 }: {
   entry: ChapterCommentaryEntry;
 }) {
-  const [expanded, setExpanded] = useState<boolean>(false);
-
   const headerLabel = entry.title || labelForSurface(entry.surface_kind);
   const expanderLabel = expanderLabelForSurface(entry.surface_kind);
+  const collapseLabel = collapseLabelForSurface(entry.surface_kind);
 
   // Locked state — eye-catching upgrade affordance (Yoshi's pattern A,
   // Session 112). Header visible with the tier badge, body is a styled
@@ -176,10 +200,32 @@ function CommentaryBlock({
     );
   }
 
-  // Unlocked state — collapsible body with a "Read [Basic / Deeper Dive]"
-  // expander. Default-collapsed for paid surfaces so a partner who just
-  // wants to read verses isn't immediately scrolled into 12k-word
-  // commentary; one click expands when they want it.
+  // S129 — additive-expand. Pre-process the body before render:
+  //   (1) strip leading `# File Title` H1 — file-level header, not
+  //       reader content
+  //   (2) if a `<!-- additive-from-here -->` marker exists, slice the
+  //       body to keep only what's after the marker — the "additive
+  //       extension" the partner hasn't already read above
+  //
+  // Bodies without the marker render unchanged (current behavior), so
+  // existing chapters keep working until their sources are re-shaped.
+  // Returns null when the post-processing leaves nothing to render
+  // (e.g., a body that's just a stripped H1) so we hide the surface
+  // gracefully instead of showing an empty expander.
+  const renderableBody = entry.body ? prepareAdditiveBody(entry.body) : null;
+  if (!renderableBody) {
+    // Body absent or post-processing left nothing meaningful — hide
+    // the whole block rather than render an empty expander.
+    return null;
+  }
+
+  // Unlocked state — collapsible body inside a native <details>/<summary>
+  // element. This mirrors the website's SoF `.sof-deeper` / `.sof-long`
+  // chrome one-for-one: collapsed = only the <summary> is in the DOM;
+  // expanded = the body unfolds BELOW the <summary>, additive (no React
+  // state, no re-render of any prior layer above). Default-collapsed for
+  // paid surfaces so a partner who just wants to read verses isn't
+  // immediately scrolled into 12k-word commentary.
   return (
     <article className="rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
       <header className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
@@ -188,31 +234,76 @@ function CommentaryBlock({
         </h4>
         <TierBadge tier={entry.tier_required} locked={false} />
       </header>
-      {!expanded && (
-        <button
-          type="button"
-          onClick={() => setExpanded(true)}
-          className="font-sans text-sm font-medium text-[var(--reader-text)] underline-offset-2 hover:underline"
-        >
-          {expanderLabel}
-        </button>
-      )}
-      {expanded && entry.body && (
-        <>
-          <div className="prose-paragraphs mt-2 leading-relaxed text-[var(--reader-text)] space-y-0">
-            {renderCommentaryBody(entry.body)}
-          </div>
-          <button
-            type="button"
-            onClick={() => setExpanded(false)}
-            className="mt-4 font-sans text-xs font-medium text-[var(--reader-muted)] underline-offset-2 hover:underline"
-          >
-            Collapse
-          </button>
-        </>
-      )}
+      <details className="commentary-deeper group">
+        <summary className="cursor-pointer list-none font-sans text-sm font-medium text-[var(--reader-text)] underline-offset-2 hover:underline marker:hidden">
+          <span className="group-open:hidden">{expanderLabel}</span>
+          <span className="hidden group-open:inline text-[var(--reader-muted)]">
+            {collapseLabel}
+          </span>
+        </summary>
+        <div className="prose-paragraphs mt-2 leading-relaxed text-[var(--reader-text)] space-y-0">
+          {renderCommentaryBody(renderableBody)}
+        </div>
+      </details>
     </article>
   );
+}
+
+// ---- S129 additive-expand pre-processor ---------------------------------
+
+/**
+ * Marker that opts a commentary body into truly-additive expand. When
+ * present on its own line in the source markdown, the renderer drops
+ * everything above the marker and renders only what follows — the
+ * "additive extension" the partner hasn't already read in the layer
+ * immediately above (chapter_intro for Basic; chapter_intro + Basic for
+ * Deeper Dive). Bodies without the marker render unchanged.
+ *
+ * Convention: the marker goes on a line by itself, after the recap
+ * paragraphs the source author would otherwise repeat from the prior
+ * layer. The marker line is consumed by the splitter; surrounding blank
+ * lines collapse cleanly. Example:
+ *
+ *     # Short-form commentary on Matthew 1
+ *
+ *     Matthew opens the canon with seventeen verses of names...
+ *     [recap paragraphs that overlap with chapter_intro]
+ *
+ *     <!-- additive-from-here -->
+ *
+ *     [new paragraphs the partner hasn't read above]
+ */
+const ADDITIVE_MARKER = "<!-- additive-from-here -->";
+
+/**
+ * Pre-process a commentary body for additive render:
+ *   1. Drop a leading `# File Title` H1 (and the blank line following).
+ *      File-level headers — not reader content.
+ *   2. If ADDITIVE_MARKER is present, slice off everything above it
+ *      (inclusive) and return the additive tail.
+ *
+ * Returns null when post-processing leaves the body empty or
+ * whitespace-only, so the caller can skip rendering an empty surface.
+ */
+function prepareAdditiveBody(body: string): string | null {
+  if (!body) return null;
+  let work = body;
+
+  // (1) Strip leading H1. Tolerate optional leading whitespace / BOM.
+  // Only the very first non-blank line is considered — a `# foo` later
+  // in the body is a real H1 the author placed inline and we leave
+  // alone (the matt-N.md sections use ## for §-headings, never #).
+  const leadingH1 = /^\s*#\s+[^\n]*\n+/;
+  work = work.replace(leadingH1, "");
+
+  // (2) If the additive marker is present, slice to its right.
+  const markerIdx = work.indexOf(ADDITIVE_MARKER);
+  if (markerIdx >= 0) {
+    work = work.slice(markerIdx + ADDITIVE_MARKER.length);
+  }
+
+  work = work.trim();
+  return work.length > 0 ? work : null;
 }
 
 // ---- Markdown renderer that also handles `## §N. Title` sub-headings ----
@@ -319,6 +410,22 @@ function expanderLabelForSurface(
       return "Read the deeper dive →";
     case "featured":
       return "Read →";
+  }
+}
+
+// S129 — paired collapse-state label for the SoF-style <summary>. The
+// SoF chrome shows two strings, one when closed and one when open,
+// switched via group-open: visibility classes. Same shape here.
+function collapseLabelForSurface(
+  kind: ChapterCommentaryEntry["surface_kind"]
+): string {
+  switch (kind) {
+    case "inline":
+      return "Close the basic walk";
+    case "deep_dive":
+      return "Close the deeper dive";
+    case "featured":
+      return "Close";
   }
 }
 

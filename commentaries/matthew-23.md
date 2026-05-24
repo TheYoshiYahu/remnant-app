@@ -39,8 +39,6 @@ The framework reads the introduction-substance as-substantially-setting-up the s
 
 ## §2. FRAMEWORK-MAJOR — the seven-woes-on-the-scribes-and-Pharisees + (one textual-variant-additional woe in some manuscripts)
 
-### The first woe — *ye shut up the kingdom of heaven against men*
-
 *But woe unto you, scribes and Pharisees, hypocrites! for ye shut up the kingdom of heaven against men: for ye neither go in yourselves, neither suffer ye them that are entering to go in* (v.13).
 
 **The framework reads v.13 as the first-woe — the scribes-and-Pharisees-substance shuts-up-the-kingdom-substance against-the-substance-of-the-substance-coming-home-substance.** The substance is-substantial — the substance-of-substantial-substance-of-the-leadership-substance entrusted-with-the-substance-of-the-kingdom-stewardship-substance per Matt 21:33-46 substance walks-the-substance-of-substantial-substance-of-NOT-going-in + the substantial-substance-of-NOT-letting-others-go-in. The substance ties into `_COMMENTARY_SUMMATION.md` §VII's-system-not-people posture — the system-substance categorically-keeps-the-people-substance-from-walking-the-kingdom-substance.

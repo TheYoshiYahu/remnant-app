@@ -1,10 +1,10 @@
 /**
- * RangeActionPicker — S123, Wheel 4 of the pre-launch sweep.
+ * RangeActionPicker — S123 Wheel 4 architecture; S127 Wheel 7 promotions.
  *
  * Small modal that opens after the range-selection mechanic captures
  * a range. Branches to the three known consumers of the shared
- * mechanic: Highlight range (Live this wheel) + Copy range with
- * watermark (Coming soon, W7) + Share with watermark (Coming soon, W7).
+ * mechanic: Highlight range (Live since W4), Copy range with watermark
+ * (Live since W7), Share range with watermark (Live since W7).
  *
  * Visual register mirrors the S121/S122 VerseActionMenu so partners
  * learn one modal shape across the app — fixed-position overlay with
@@ -12,12 +12,13 @@
  * on desktop (sm:items-center), bordered-chrome panel using
  * `bg-[var(--reader-surface)]`.
  *
- * The two Coming-soon stubs render with the S122-locked treatment
- * (40% opacity, "Coming soon" italic hint, no-op tap) so partners see
- * the W7 roadmap. As W7 ships, the comingSoon flags flip off and the
- * Live onSelect handlers wire up — the picker shape never changes.
+ * S127 W7 — Copy + Share-with-watermark items promoted from S123's
+ * Coming-soon stubs to Live. The picker shape did NOT change; only the
+ * two onClick handlers wired up + the dimmed/Coming-soon visual
+ * treatment dropped on the upgraded items, per the §22 stub-catalog
+ * promotion mechanic.
  *
- * Locked at DESIGN_LANGUAGE.md §21.
+ * Locked at DESIGN_LANGUAGE.md §21 + §24.
  */
 
 import { useEffect } from "react";
@@ -30,29 +31,25 @@ interface RangeActionPickerProps {
   /** Fires when the partner taps "Highlight range" — opens HighlightPicker
    *  in multi-target mode against the resolved verse_id list. */
   onHighlight: () => void;
+  /** S127 W7 — fires when the partner taps "Copy range with watermark".
+   *  The handler is expected to render the share card via
+   *  share-card-render.executeCopy and exit range mode. */
+  onCopyRange: () => void;
+  /** S127 W7 — fires when the partner taps "Share range with watermark".
+   *  The handler is expected to render the share card via
+   *  share-card-render.executeShare and exit range mode. */
+  onShareRange: () => void;
   /** Cancel — closes the picker. The range stays captured so the partner
    *  can re-open this picker by re-engaging with the range. */
   onClose: () => void;
-}
-
-/** "Coming soon" italic hint for not-yet-shipped stubs. Same shape as
- *  VerseActionMenu.tsx; duplicated here to keep RangeActionPicker
- *  standalone without a cross-component coupling. */
-function ComingSoonHint() {
-  return (
-    <span
-      className="font-sans text-[11px] italic text-[var(--reader-muted)]"
-      aria-label="Coming soon"
-    >
-      Coming soon
-    </span>
-  );
 }
 
 export default function RangeActionPicker({
   rangeRef,
   rangeSize,
   onHighlight,
+  onCopyRange,
+  onShareRange,
   onClose,
 }: RangeActionPickerProps) {
   // Escape-to-close.
@@ -110,14 +107,19 @@ export default function RangeActionPicker({
               </button>
             </li>
 
-            {/* Copy range with watermark — Coming soon, W7 */}
+            {/* Copy range with watermark — S127 W7 Live (Free). */}
             <li role="none">
               <button
                 type="button"
                 role="menuitem"
-                aria-disabled="true"
-                onClick={onClose}
-                className="flex w-full cursor-not-allowed items-center justify-between gap-3 rounded px-3 py-2.5 text-left font-sans text-base text-[var(--reader-text)] opacity-40 hover:bg-[var(--reader-bg)]"
+                aria-label={`Copy ${rangeSize} ${
+                  rangeSize === 1 ? "verse" : "verses"
+                } with watermark`}
+                onClick={() => {
+                  onCopyRange();
+                  onClose();
+                }}
+                className="flex w-full items-center justify-between gap-3 rounded px-3 py-2.5 text-left font-sans text-base text-[var(--reader-text)] hover:bg-[var(--reader-bg)]"
                 style={{ minHeight: "2.75rem" }}
               >
                 <span className="flex items-center gap-2">
@@ -126,18 +128,22 @@ export default function RangeActionPicker({
                   </span>
                   <span>Copy range with watermark</span>
                 </span>
-                <ComingSoonHint />
               </button>
             </li>
 
-            {/* Share range with watermark — Coming soon, W7 */}
+            {/* Share range with watermark — S127 W7 Live (Free). */}
             <li role="none">
               <button
                 type="button"
                 role="menuitem"
-                aria-disabled="true"
-                onClick={onClose}
-                className="flex w-full cursor-not-allowed items-center justify-between gap-3 rounded px-3 py-2.5 text-left font-sans text-base text-[var(--reader-text)] opacity-40 hover:bg-[var(--reader-bg)]"
+                aria-label={`Share ${rangeSize} ${
+                  rangeSize === 1 ? "verse" : "verses"
+                } with watermark`}
+                onClick={() => {
+                  onShareRange();
+                  onClose();
+                }}
+                className="flex w-full items-center justify-between gap-3 rounded px-3 py-2.5 text-left font-sans text-base text-[var(--reader-text)] hover:bg-[var(--reader-bg)]"
                 style={{ minHeight: "2.75rem" }}
               >
                 <span className="flex items-center gap-2">
@@ -146,7 +152,6 @@ export default function RangeActionPicker({
                   </span>
                   <span>Share range with watermark</span>
                 </span>
-                <ComingSoonHint />
               </button>
             </li>
           </ul>

@@ -6,11 +6,7 @@ Matthew 12 is the chapter where the rejection-trajectory the gospel has been tra
 
 ## §1. The disciples plucking grain on Shabbat — *the Son of Adam is Lord even of the Shabbat*
 
-*At that time Yahusha (Jesus) went on the Shabbat day through the corn; and his disciples were an hungred, and began to pluck the ears of corn, and to eat. But when the Pharisees saw it, they said unto him, Behold, thy disciples do that which is not lawful to do upon the Shabbat day.* (Matthew 12:1-2)
-
 **The Pharisaic objection requires a careful read.** The Torah explicitly permits the traveler-in-someone-else's-field to pluck-by-hand for immediate consumption:
-
-*When thou comest into the standing corn of thy neighbour, then thou mayest pluck the ears with thine hand; but thou shalt not move a sickle unto thy neighbour's standing corn.* (Deuteronomy 23:25)
 
 The disciples are within the Torah's permission. The Pharisees know this. Their objection is not to the plucking-and-eating itself; their objection is to the rubbing-of-grain-in-hands on the Shabbat, which their oral tradition had categorized as *threshing* under the thirty-nine forbidden work-categories — the rabbinic *melachot* derived from the categories of work involved in the tabernacle-construction — that the *takkanot* and *gezerot* of the Pharisaic oral tradition had built up outward from the Torah's-substance.
 
@@ -38,23 +34,15 @@ David's eating of the showbread is preserved in the Tanakh-narrative without div
 
 The Torah's own witness against the absolutized-Pharisaic-Shabbat-fence. The Torah commands multiple forms of work to be performed on the Shabbat by the priests — the morning-and-evening daily sacrifice augmented with the additional Shabbat-offering:
 
-*And on the Shabbat day two lambs of the first year without spot, and two tenth deals of flour for a meat offering, mingled with oil, and the drink offering thereof: This is the burnt offering of every Shabbat, beside the continual burnt offering, and his drink offering.* (Numbers 28:9-10)
-
 The showbread was replaced every Shabbat — bread-baked-and-arranged-on-the-Shabbat for the new week:
 
-*Every Shabbat he shall set it in order before Yahuah (the LORD) continually, being taken from the children of Yashar'el (Israel) by an everlasting covenant.* (Leviticus 24:8)
-
 Circumcision-on-the-eighth-day occurred on the Shabbat whenever the birth-day made it so. Yochanan (John) records the King deploying the same circumcision-on-Shabbat argument later in the gospel:
-
-*Mosheh (Moses) therefore gave unto you circumcision; (not because it is of Mosheh (Moses), but of the fathers;) and ye on the Shabbat day circumcise a man. If a man on the Shabbat day receive circumcision, that the law of Mosheh (Moses) should not be broken; are ye angry at me, because I have made a man every whit whole on the Shabbat day?* (John 7:22-23)
 
 The Torah's-own-architecture demonstrates that some-work IS Shabbat-keeping when the work serves the covenant-substance of the day. The priests' temple-work on the Shabbat is Torah-mandated; the Pharisaic-fence-absolutization-of-Shabbat-as-no-work-at-all is contradicted by the Torah itself.
 
 **Third — *I will have mercy, and not sacrifice* — the second Hosea 6:6 citation** (vv.6-7). *But I say unto you, That in this place is one greater than the temple. But if ye had known what this meaneth, I will have mercy, and not sacrifice, ye would not have condemned the guiltless.*
 
 The Tanakh-source the King cites:
-
-*For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.* (Hosea 6:6)
 
 The deliberate-repetition matters. Yahusha (Jesus) cites Hosea 6:6 for the second time in Matthew — the first was at Matthew 9:13 in the table-fellowship-with-sinners controversy where the Pharisees objected to the King eating with tax-collectors and sinners. Both controversies — the social-table-fellowship and the Shabbat-keeping — get the same Hosea 6:6 diagnostic. The Pharisaic counterfeit-righteousness fails at the same point in both: external-credential architecture without internal mercy-substance.
 
@@ -64,25 +52,17 @@ The deliberate-repetition matters. Yahusha (Jesus) cites Hosea 6:6 for the secon
 
 This is the chapter's first framework-major Christological-statement. The restoration of *son of man* to *Son of Adam* preserves the seed-of-Adam lineage-weight the English translators flattened away. The Son of Adam is the *Lord* — the *kurios,* the Owner-and-Definer — of the Shabbat because he is the One-who-sanctified-the-Shabbat at creation:
 
-*And Elohim (God) blessed the seventh day, and sanctified it: because that in it he had rested from all his work which Elohim (God) created and made.* (Genesis 2:3)
-
 The Formed-Voice that spoke the Shabbat into its consecrated status is the speaker at Matthew 12:8. The Shabbat is his. As the One who established the Shabbat, he is the One who defines what the Shabbat is. The Pharisaic-fence-architecture is not the Shabbat-substance; the King's own definition is the Shabbat-substance.
 
 **What this declaration RULES OUT.** The Christian commentary tradition has frequently read *Lord of the Shabbat* as authorizing Yahusha (Jesus) to abolish or redefine-away the Shabbat. The text does not. *Lord of the Shabbat* means *Owner-and-Definer of the Shabbat,* not *abolisher of the Shabbat.* Mark records the parallel saying that nails the framework reading:
 
-*And he said unto them, The Shabbat was made for man, and not man for the Shabbat: Therefore the Son of Adam is Lord also of the Shabbat.* (Mark 2:27-28)
-
 The Shabbat is a gift to humanity; the Pharisaic-fence had inverted it into a burden; the Lord-of-the-Shabbat restores the gift-substance. The post-resurrection assembly's continued Shabbat-keeping in the book of Acts (the apostles teaching in the synagogues on the Shabbat at Antioch in Pisidia at Acts 13:14 and 13:44, Ya'aqov's (James's) statement at the Jerusalem council at Acts 15:21 that *Mosheh (Moses) of old time hath in every city them that preach him, being read in the synagogues every Shabbat day,* the early-assembly gathered at the riverside on the Shabbat at Acts 16:13, Paul reasoning in the synagogue every Shabbat at Acts 17:2 and 18:4) demonstrates that the early assembly understood the Lord-of-the-Shabbat as preserving and restoring the Shabbat, not abolishing it. The Letter to the Hebrews puts it directly:
-
-*There remaineth therefore a rest to the people of Elohim (God). For he that is entered into his rest, he also hath ceased from his own works, as Elohim (God) did from his.* (Hebrews 4:9-10)
 
 The word translated *rest* there is *sabbatismos* — Shabbat-keeping. The apostolic letter affirms an ongoing Shabbat-keeping for the people of Elohim (God) decades after the resurrection.
 
 The institutional-Christian Sunday Law that rose under Constantine in 321 AD and was ratified at the Council of Laodicea in 363 AD has often been read backward into Matthew 12:8 as if the King authorized the change. The text does not. The change-of-day was the work of the system that arose in the centuries after the apostles — the same system the prophet Daniel saw operating from a small horn that *shall speak great words against the most High, and shall wear out the saints of the most High, and think to change times and laws* (Daniel 7:25). The Lord-of-the-Shabbat at Matthew 12:8 is doing the opposite of what the Sunday-Law tradition claims for him. He is restoring the day to its Torah-substance against the burdens his contemporaries had laid on it.
 
 ## §2. Healing the man with the withered hand — the heart-Shabbat mercy-substance
-
-*And when he was departed thence, he went into their synagogue: And, behold, there was a man which had his hand withered. And they asked him, saying, Is it lawful to heal on the Shabbat days? that they might accuse him.* (Matthew 12:9-10)
 
 The chapter's second Shabbat-controversy, with the King exercising the Lord-of-the-Shabbat authority just declared in immediate-application. The Pharisees' question — *is it lawful to heal on the Shabbat days?* — is asked-to-accuse rather than asked-to-learn. The seed-war-pattern is operative: confronted with a man-with-a-withered-hand-in-need-of-healing, the Pharisaic-disposition is to use-the-situation-as-a-trap rather than to extend mercy.
 
@@ -111,8 +91,6 @@ Matthew quotes Isaiah 42:1-4 in vv.18-21 — the longest Tanakh-citation in Matt
 **The citation** (vv.18-21). *Behold my servant, whom I have chosen; my beloved, in whom my soul is well pleased: I will put my spirit upon him, and he shall shew judgment to the goyim. He shall not strive, nor cry; neither shall any man hear his voice in the streets. A bruised reed shall he not break, and smoking flax shall he not quench, till he send forth judgment unto victory. And in his name shall the goyim trust.*
 
 The Tanakh-source:
-
-*Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles. He shall not cry, nor lift up, nor cause his voice to be heard in the street. A bruised reed shall he not break, and the smoking flax shall he not quench: he shall bring forth judgment unto truth. He shall not fail nor be discouraged, till he have set judgment in the earth: and the isles shall wait for his law.* (Isaiah 42:1-4)
 
 The framework reads each phrase carefully.
 
@@ -196,8 +174,6 @@ The King is the good-shepherd-gathering-the-flock; those-who-do-not-gather-with-
 
 **What the blasphemy-against-the-Ruach IS.** The blasphemy-against-the-Ruach is the deliberate-attribution-of-the-Ruach's-credentialing-work to demonic-agency, sustained against evidence, hardened against correction. The Pharisaic-attribution Yahusha (Jesus) is responding to IS the diagnostic. They have seen the Ruach's-work in the casting-out-of-the-demon at v.22; they cannot deny the visible-fact; they have reattributed the source to Beelzebul. The framework reads the blasphemy as the SETTLED-DISPOSITION-OF-THE-HEART that has chosen this attribution and refuses correction. Mark's parallel locks the diagnostic with an explanatory clause:
 
-*Verily I say unto you, All sins shall be forgiven unto the sons of men, and blasphemies wherewith soever they shall blaspheme: But he that shall blaspheme against the Ruach HaKodesh (Holy Spirit) hath never forgiveness, but is in danger of eternal damnation: Because they said, He hath an unclean spirit.* (Mark 3:28-30)
-
 *Because they said, He hath an unclean spirit* — attributing the Ruach's work to an unclean spirit is what the blasphemy is.
 
 **What the framework reads as different between blasphemy-against-the-Son-of-Adam and blasphemy-against-the-Ruach.** A *word-against-the-Son-of-Adam* in the present-age can be the word of one who has not-yet-seen the credentialing-clearly. Pre-Damascus-Road Sha'ul (Saul) blasphemed against the Name:
@@ -205,8 +181,6 @@ The King is the good-shepherd-gathering-the-flock; those-who-do-not-gather-with-
 *And I punished them oft in every synagogue, and compelled them to blaspheme; and being exceedingly mad against them, I persecuted them even unto strange cities.* (Acts 26:11)
 
 The framework reads this as the *word against the Son of Adam* substance, forgivable, because Sha'ul (Saul) had not yet-seen the credentialing-clearly. The apostle himself names this directly in his letter to Timothy:
-
-*Who was before a blasphemer, and a persecutor, and injurious: but I obtained mercy, because I did it ignorantly in unbelief.* (1 Timothy 1:13)
 
 The blasphemy-against-the-Ruach is different in substance: the actor has seen the Ruach's-credentialing-clearly and chosen to attribute it to demonic-agency anyway. The seeing-clearly is what changes the diagnostic. The Pharisaic-attribution Yahusha (Jesus) is responding to is the diagnostic-instance.
 
@@ -226,19 +200,11 @@ The chapter applies the same test at the words-level. The framework reads *every
 
 ## §5. The sign of Yonah (Jonah) — the resurrection-credential pre-announcement
 
-*Then certain of the scribes and of the Pharisees answered, saying, Master, we would see a sign from thee. But he answered and said unto them, An evil and adulterous generation seeketh after a sign; and there shall no sign be given to it, but the sign of the prophet Yonah (Jonah): For as Yonah (Jonah) was three days and three nights in the whale's belly; so shall the Son of Adam be three days and three nights in the heart of the earth.* (Matthew 12:38-40)
-
 The chapter's third framework-major moment.
 
 **The sign-seek-refusal** (vv.38-39a). The Pharisaic-and-scribal-request-for-a-sign is the credential-on-demand pattern. The signs-already-given through Matthew 8-9 (leper, paralytic, raising-of-the-ruler's-daughter, exorcism, healing-of-the-blind-and-mute) are not enough for the system that has already-decided-against-hearing. The system asks for MORE signs in the cover-story-mode while not hearing the signs already given.
 
 The *evil and adulterous generation* phrase echoes the Tanakh-prophetic-language for covenant-faithlessness. The faithful-city become a harlot:
-
-*How is the faithful city become an harlot! it was full of judgment; righteousness lodged in it; but now murderers.* (Isaiah 1:21)
-
-The harlotry of the northern kingdom and Yahudah (Judah):
-
-*Yahuah (the LORD) said also unto me in the days of Yoshiyahu (Josiah) the king, Hast thou seen that which backsliding Yashar'el (Israel) hath done? she is gone up upon every high mountain and under every green tree, and there hath played the harlot.* (Jeremiah 3:6)
 
 And the extended harlotry-metaphor of Yechezk'el (Ezekiel) 16 and 23 — *Wherefore, O harlot, hear the word of Yahuah (the LORD)* (Ezekiel 16:35). Yahusha (Jesus) is using Tanakh-prophetic-vocabulary against the system that should know the substance. The system is the *evil and adulterous generation* the prophets named.
 
@@ -260,8 +226,6 @@ The eschatological-graduated-accountability frame extended from Matthew 10:15 (*
 
 The queen of Sheva came to Shelomoh (Solomon):
 
-*And when the queen of Sheba heard of the fame of Shelomoh (Solomon) concerning the name of Yahuah (the LORD), she came to prove him with hard questions. ... And she said to the king, It was a true report that I heard in mine own land of thy acts and of thy wisdom.* (1 Kings 10:1, 10:6)
-
 The *greater than Yonah / greater than Shelomoh (Solomon)* sayings are direct-Messianic-stature claims. The King exceeds the Tanakh's-prophet (Yonah) AND the Tanakh's-king-of-wisdom (Shelomoh). He is the prophet-greater-than-Mosheh (Moses) the Torah itself promised:
 
 *Yahuah thy Elohim (the LORD thy God) will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken.* (Deuteronomy 18:15)
@@ -270,11 +234,7 @@ And he is the King-greater-than-David-and-Shelomoh whom David himself called *Lo
 
 ## §6. The empty-house parable — partial-deliverance-without-internal-replacement
 
-*When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none. Then he saith, I will return into my house from whence I came out; and when he is come, he findeth it empty, swept, and garnished. Then goeth he, and taketh with himself seven other spirits more wicked than himself, and they enter in and dwell there: and the last state of that man is worse than the first. Even so shall it be also unto this wicked generation.* (Matthew 12:43-45)
-
 The apostasy-pattern-warning. The substance: deliverance-without-internal-replacement leaves the soul vulnerable to deeper bondage. The framework reads this in the kingdom-citizens'-internal-Torah-substance architecture — the new-heart of the Tanakh-prophet's promise is the INTERNAL-REPLACEMENT the deliverance-process requires:
-
-*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:26-27)
 
 Without the new-heart taking up residence, the deliverance leaves the house empty-swept-garnished — clean but empty — and the empty house is more-vulnerable-to-deeper-bondage than the originally-occupied house.
 
@@ -290,17 +250,11 @@ The institutional-Christian-conversion-pattern of generations-of-altar-call-with
 
 ## §7. The kinship-redefinition — *whosoever shall do the will of my Father*
 
-*While he yet talked to the people, behold, his mother and his brethren stood without, desiring to speak with him. Then one said unto him, Behold, thy mother and thy brethren stand without, desiring to speak with thee. But he answered and said unto him that told him, Who is my mother? and who are my brethren? And he stretched forth his hand toward his disciples, and said, Behold my mother and my brethren! For whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.* (Matthew 12:46-50)
-
 The chapter's closing kinship-redefinition.
 
 **The Torah's-family-substance preserved.** The Christian-commentary-tradition has sometimes used this passage as anti-family. The framework rules this out. Yahusha (Jesus) elsewhere honors his mother. At the cross he entrusts her to the disciple-whom-he-loved:
 
-*When Yahusha (Jesus) therefore saw his mother, and the disciple standing by, whom he loved, he saith unto his mother, Woman, behold thy son! Then saith he to the disciple, Behold thy mother! And from that hour that disciple took her unto his own home.* (John 19:26-27)
-
 And he defends the fifth-commandment against the Pharisaic *Corban* evasion at Mark 7:
-
-*For Mosheh (Moses) said, Honour thy father and thy mother; and, Whoso curseth father or mother, let him die the death: But ye say, If a man shall say to his father or mother, It is Corban, that is to say, a gift, by whatsoever thou mightest be profited by me; he shall be free. And ye suffer him no more to do ought for his father or his mother; Making the word of Elohim (God) of none effect through your tradition, which ye have received.* (Mark 7:10-13)
 
 The Torah's-family-substance stands.
 
@@ -311,8 +265,6 @@ The Torah's-family-substance stands.
 The same *doing-of-the-Father's-will* substance is the kingdom-citizenship-criterion AND the kingdom-family-recognition-criterion. The two passages are joined at framework-substance. The *will of the Father* substance is the heart-Torah-walking life — the Sermon on the Mount's substance, the new-heart's-Torah-internalization-substance, the *anomia*-rejection diagnostic Matthew 7:23 named. The kingdom-family is the heart-Torah-walking community.
 
 Yochanan (John) carries the apostolic-restatement of the same substance in his letter:
-
-*And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.* (1 John 2:3-4)
 
 This is the 1234 of Truth — the master-filter the framework holds against every interpretation. The kingdom-family is identified by the same standard the Sermon on the Mount named: the keeping of his commandments from the new-heart the Ruach HaKodesh (Holy Spirit) gives. The chapter that opened with the Pharisaic challenge to the disciples' Shabbat-keeping closes with the King naming the kingdom-family by the same standard the Shabbat-keeping serves: the *doing of the will of my Father.* The Shabbat-fence the chapter dismantled was credential without substance. The kingdom-family the chapter announces is substance bearing fruit.
 

@@ -6,31 +6,17 @@ Matthew opens the canon of the New Testament with seventeen verses of names. The
 
 ## §1. The genealogy is covenant-architecture, not biography
 
-The opening sentence sets the structure.
-
-*The book of the generation of Yahusha HaMashiach (Jesus Christ), the son of David, the son of Avraham (Abraham).* (Matthew 1:1)
-
 Three names. The Messiah, identified by two ancestors. Not picked at random. David carries the kingship promise; Avraham (Abraham) carries the seed-promise. The Messiah holds both.
 
-*And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom. He shall build an house for my name, and I will stablish the throne of his kingdom for ever.* (2 Samuel 7:12-13)
-
 *Now Yahuah (the LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father's house, unto a land that I will shew thee: And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing: And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed.* (Genesis 12:1-3)
-
-*And in thy seed shall all the nations of the earth be blessed; because thou hast obeyed my voice.* (Genesis 22:18)
 
 Matthew's opening sentence names the covenant lineage Yahusha (Jesus) arrives to complete. The kingship promise lives in David. The seed-promise lives in Avraham (Abraham). The Messiah holds both.
 
 The phrasing *the book of the generation* — *biblos genéseōs* in the Greek — deliberately echoes the Septuagint of Genesis 5:1.
 
-*This is the book of the generations of Adam. In the day that Elohim (God) created man, in the likeness of Elohim (God) made he him.* (Genesis 5:1)
-
 Matthew is signaling that the canon-opening genealogy of Yahusha (Jesus) sits in the same literary register as the canon-opening *toledot* of Genesis. The Adamic-line continuity is in view from the first phrase. The genealogy is being placed in conversation with Genesis 5, not with first-century pedigree records.
 
 ## §2. Three sets of fourteen — David's signature, deliberate
-
-Verse 17 declares the structure plainly.
-
-*So all the generations from Avraham (Abraham) to David are fourteen generations; and from David until the carrying away into Babylon are fourteen generations; and from the carrying away into Babylon unto the Messiah (Christ) are fourteen generations.* (Matthew 1:17)
 
 Fourteen, fourteen, fourteen.
 
@@ -92,15 +78,9 @@ The Christian read that treats the four as *Gentile foreshadowing* inverts what 
 
 Verses 11 and 12 name the deportation, and verse 17 names it twice more.
 
-*And Josias begat Jechonias and his brethren, about the time they were carried away to Babylon: and after they were brought to Babylon, Jechonias begat Salathiel; and Salathiel begat Zorobabel.* (Matthew 1:11-12)
-
 Four mentions of the captivity in seventeen verses. Matthew refuses to let the reader miss it.
 
 The framework reading hears the captivity as the prophetic hinge it actually is. The Babylonian captivity — the southern house, Yahudah, deported 605–586 BCE — closes a story that began with the Assyrian captivity, the northern house, Yashar'el (Israel), deported 722 BCE, with the ten tribes scattered and never returning to the land in any prophetically-named gathering. Both houses are scattered by the time the genealogy hits its second hinge. The seventy years in Babylon for Yahudah (Judah) ends with a partial return under Zerubbavel (Zerubbabel) and Ezra and Nechemyah (Nehemiah), but the prophetic ingathering of all twelve tribes does not happen. The post-exilic community is a Yahudite-and-Levitical remnant in the land, not the restored twelve-tribe nation the prophets named. The northern house is still scattered. The full ingathering is still ahead. The prophets had named that ingathering with precision.
-
-*Then shall the children of Yahudah (Judah) and the children of Yashar'el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel.* (Hosea 1:11)
-
-*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar'el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* (Isaiah 11:12)
 
 *Behold, I will take the stick of Yosef (Joseph), which is in the hand of Ephraim, and the tribes of Yashar'el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand. ... And I will make them one nation in the land upon the mountains of Yashar'el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all.* (Ezekiel 37:19, 22)
 
@@ -142,8 +122,6 @@ The Greek *dikaios* — *just* — is the same word the Septuagint uses for the 
 
 Yoseph's (Joseph's) first response to apparent betrayal is mercy within the framework of the Torah. The text presents this as righteousness. The framework reads this as the Torah at work in a Torah-righteous man — the Torah's allowance for the bill of divorcement operating as the merciful path when the appearance of unfaithfulness presents itself.
 
-*But while he thought on these things, behold, the angel of Yahuah (the Lord) appeared unto him in a dream, saying, Yoseph (Joseph), thou son of David, fear not to take unto thee Miryam (Mary) thy wife: for that which is conceived in her is of the Ruach HaKodesh (Holy Spirit). And she shall bring forth a son, and thou shalt call his name Yahusha (Jesus): for he shall save his people from their sins.* (Matthew 1:20-21)
-
 The angel addresses Yoseph (Joseph) as *son of David.* The address itself is the cue: Yoseph (Joseph) carries the Davidic legal lineage, and the angel is invoking that lineage as the reason Yoseph (Joseph) must take Miryam (Mary) as wife. The legal adoption of the conceived child by Yoseph (Joseph) is the mechanism by which the child becomes the Davidic legal heir. The angel is naming the legal mechanism by which the kingship claim will be carried.
 
 The naming at v.21 is the assignment of identity and mission in one move. The name *Yahusha* — *Yah saves* — is the gospel inside the name. The reason given is *for he shall save his people from their sins.* The reason is a translation of the name. The angel is saying: name him what he is, because he is what he is named.
@@ -153,10 +131,6 @@ The naming at v.21 is the assignment of identity and mission in one move. The na
 The phrase *his people* in verse 21 carries the whole framework reading of who Yahusha (Jesus) was sent to. The Reformation has flattened *his people* to *everyone who would later believe* — projecting the post-resurrection Great Commission backwards onto the first-century Messianic mission. The framework reading: in v.21 the phrase *his people* names the specific covenant people the prophets named, the lost sheep of the house of Yashar'el (Israel), the scattered seed that the Babylonian-captivity-hinge has just made visible.
 
 Two passages in Matthew lock this reading and they cannot be read past.
-
-*These twelve Yahusha (Jesus) sent forth, and commanded them, saying, Go not into the way of the Gentiles, and into any city of the Samaritans enter ye not: but go rather to the lost sheep of the house of Yashar'el (Israel).* (Matthew 10:5-6)
-
-*But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).* (Matthew 15:24)
 
 Read in the framework, these two passages are not pre-cross limitations later expanded. They are the lock on the meaning of *his people* in Matthew 1:21. The Messianic mission of the first coming was to the scattered seed — the lost sheep of the house of Yashar'el (Israel) — to gather them back from the scattering judgment of the captivity hinge. The post-resurrection commission to disciple all the nations is not the abolition of the first-mission scope.
 
@@ -170,13 +144,9 @@ The audience of the gospel is the citizens. The practice is broad proclamation, 
 
 *From their sins.* The Reformation reads *from their sins* as *from the legal guilt incurred by sin that condemned them to hell.* The framework reading: *from their sins* is the prophetic phrase for the deliverance of the covenant people from the condition of sin that produced the scattering. Sin → exile → repentance → restoration is the Tanakh's covenant cycle, named explicitly in Deuteronomy 28-30, in Leviticus 26, and walked out in the Former and Latter Prophets. *Saved from their sins* in v.21 means *delivered from the sin-condition that scattered them, so the gathering can happen.* The verse is naming the prophetic ingathering as the meaning of the Messianic salvation. Ezekiel carries the same exact arc.
 
-*For I will take you from among the heathen, and gather you out of all countries, and will bring you into your own land. Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you. A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:24-27)
-
 The gathering and the cleansing-from-sin are the same prophetic motion. Matthew 1:21 is naming Ezekiel 36 as the meaning of *Yahusha (Jesus).*
 
 The naming is also the lock on the name's-sake grammar. The gathering is by Yah's name, for Yah's name — not for the gathered people's righteousness.
-
-*Therefore say unto the house of Yashar'el (Israel), Thus saith Adonai Yahuah (the Lord GOD); I do not this for your sakes, O house of Yashar'el (Israel), but for mine holy name's sake, which ye have profaned among the heathen, whither ye went.* (Ezekiel 36:22)
 
 *Not for thy righteousness, or for the uprightness of thine heart, dost thou go to possess their land: but for the wickedness of these nations Yahuah Elohayka (the LORD thy God) doth drive them out from before thee, and that he may perform the word which Yahuah (the LORD) sware unto thy fathers, Abraham, Isaac, and Jacob. Understand therefore, that Yahuah Elohayka (the LORD thy God) giveth thee not this good land to possess it for thy righteousness; for thou art a stiffnecked people.* (Deuteronomy 9:5-6)
 
@@ -186,19 +156,11 @@ The prior-promise structure is the framework grammar of grace. The Messiah's nam
 
 Verses 22-23 quote Isaiah 7:14.
 
-*Now all this was done, that it might be fulfilled which was spoken of the Yahuah (Lord) by the prophet, saying, Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Immanuel, which being interpreted is, Elohim (God) with us.* (Matthew 1:22-23)
-
-*Therefore the Yahuah (Lord) himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel.* (Isaiah 7:14)
-
 The Reformation's hottest fight on this verse has been over whether the Hebrew *almah* in Isaiah 7:14 means *virgin* (as Matthew renders it through the Greek *parthenos*) or *young woman* (as the modern critical reading argues from secular Hebrew usage). The fight is real, the Septuagint settles it on the side of *virgin* — the Septuagint translators in the third century BCE, working centuries before any Christian polemic, rendered *almah* as *parthenos* — and Matthew settles it on the apostolic authority of *parthenos* in the New Testament canon. The framework joins Matthew and the Septuagint on the virgin reading.
 
 But the deeper move in v.23 is the apposition: *they shall call his name Immanuel, which being interpreted is, Elohim (God) with us.* The Messiah is being identified as Elohim (God) in the flesh. The naming is theological, not merely descriptive of his role. The child in the manger IS Elohim (God) with his people. The framework reading hears this at the depth it carries.
 
 The framework's nature-of-God reading holds that Yahuah (God) the Father is the formless infinite — the source — and that Yahusha (Jesus) is the Formed, the expressed Word drawn from the Formless, the God who interacted with the patriarchs and the prophets in the Tanakh, who came in the flesh as Yahusha (Jesus). The Yahuah who walked with Adam in the cool of the day, who appeared to Avraham (Abraham) at Mamre, who wrestled with Ya'aqov (Jacob) at Peniel, who spoke from the burning bush, who stood on the mountain at Sinai — was the Formed. The Father, the formless infinite, is not seen by mortal eyes.
-
-*And he said, Thou canst not see my face: for there shall no man see me, and live.* (Exodus 33:20)
-
-*No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.* (John 1:18)
 
 The Formed is what every theophany has always been.
 
@@ -227,8 +189,6 @@ The framework restores the name to its Hebrew form, with the parenthetical *(Jes
 The framework also holds that the Hebrew pronunciation *Yahusha* (Yah-oo-shah) preserves the divine-name component intact in a way that *Jesus* (Jee-zuss) does not. The Reformation's preference for *Jesus* over *Yahusha* is the same kind of editorial move the Reformation made when it removed *Yahuah* from the Old Testament and substituted *the LORD.* The divine-name elements are softened, transliterated, and eventually obscured. The restoration of *Yahusha (Jesus)* on every mention is, on the surface, a name-rendering choice; underneath, it is the same restoration of the third-commandment honor of the name that the Old Testament restoration carries.
 
 The Old Testament precedent for the name is *Yahoshua* (Joshua) — the same root, *Yah saves.* The renaming was theological. Mosheh (Moses) renamed Hoshea — *salvation* — the son of Nun to *Yahoshua* — *Yah saves* — at the moment of his commissioning to lead the entry into the land.
-
-*And Mosheh (Moses) called Oshea the son of Nun Yahoshua (Jehoshua).* (Numbers 13:16)
 
 Yahoshua led the entry into the land of promise. The Messiah whose name is *Yahusha* leads the entry into the prophetic ingathering. The two leaders bear functionally the same name in different registers — the first into the land at the close of the wilderness wandering, the second into the gathering at the close of the long exile. Peter will lock the same architecture before the Sanhedrin.
 

@@ -1,12 +1,8 @@
 # Commentary on Matthew 2
 
-Matthew 2 is the gathering-of-the-scattered walking out its first scenes. The chapter opens with the arrival of the Magi from the east, walks the infant Messiah down to Egypt and back, names the Beth-lehem slaughter against the chapter that promised the gathering and the new covenant, and lands at Natsareth (Nazareth) where the village name itself is the Branch-prophecy made geographic. The Christian Christmas-card reading flattens almost every beat of the chapter. The framework reads what Matthew actually carries.
-
 ---
 
 ## §1. The Magi from the east — inheritors of the Daniel-prophetic-tradition among the dispersion, not generic Gentile worshippers
-
-*Now when Yahusha (Jesus) was born in Beth-lehem of Yahudah (Judaea) in the days of Herod the king, behold, there came wise men from the east to Yerushalayim (Jerusalem), saying, Where is he that is born King of the Yahudim (Jews)? for we have seen his star in the east, and are come to worship him.* (Matthew 2:1-2)
 
 Inherited Christian commentary romanticizes the *wise men from the east* as the first Gentile worshippers of the Messiah — proof, in the standard reading, that the gospel was always going to expand beyond Yashar'el (Israel) to all peoples. Greeting cards, nativity scenes, and pulpit Christmas messages have treated the Magi as the foundation stone of the Gentile-inclusion thesis. The framework reads them differently.
 
@@ -15,8 +11,6 @@ The Greek *magoi* (μάγοι) is a specific term. It does not mean *random wise
 *Then the king commanded to call the magicians, and the astrologers, and the sorcerers, and the Chaldeans, for to shew the king his dreams. So they came and stood before the king.* (Daniel 2:2)
 
 *Then came in the magicians, the astrologers, the Chaldeans, and the soothsayers: and I told the dream before them; but they did not make known unto me the interpretation thereof.* (Daniel 4:7)
-
-*Then the king made Daniel a great man, and gave him many great gifts, and made him ruler over the whole province of Babylon, and chief of the governors over all the wise men of Babylon.* (Daniel 2:48)
 
 The Magi-caste of the Persian and Babylonian courts is the institutional context Daniel served in for decades, and the institution Daniel was placed over as chief governor. The framework reading hears this lineage in the Matthew 2 Magi. They are the descendants — direct or institutional — of the caste over which Daniel presided during the Babylonian and Medo-Persian courts. Daniel taught them. Daniel's prophetic visions of the Son of Adam coming in the clouds of heaven, of the kingdom that shall not be destroyed, of the seventy weeks unto the Messiah the Prince, were known in the caste he led.
 
@@ -40,8 +34,6 @@ The framework reading: the Magi are not the first Gentiles to worship the Messia
 
 The star they saw was not generic astrology. The Magi were inheritors of Hebrew prophetic tradition; the star they recognized was the prophetic sign Balaam's oracle had named.
 
-*I shall see him, but not now: I shall behold him, but not nigh: there shall come a Star out of Ya'aqov (Jacob), and a Sceptre shall rise out of Yashar'el (Israel), and shall smite the corners of Moab, and destroy all the children of Sheth.* (Numbers 24:17)
-
 The Star and the Sceptre were the prophetic doublet identifying the Messianic king.
 
 Christian commentary debates the astronomical mechanism — was it a planetary conjunction (Jupiter and Saturn in Pisces, ca. 7 BCE, Kepler's hypothesis), a supernova, a comet, or a supernatural sign with no astronomical analog? The framework reading does not require resolution of the astronomical question. Whatever the visible mechanism, the framework reading holds that the star was the Numbers-24 sign as the Magi recognized it. They saw it; they knew what the Tanakh said it meant; they came.
@@ -61,8 +53,6 @@ Herod's troubling and the parallel troubling of Yerushalayim (Jerusalem) — lik
 The framework reading hears the Edomite-on-the-Davidic-throne in panic. Herod the Great was an Edomite (Idumean) by ethnicity — his father Antipater was Idumean, his mother Cypros was Nabataean. The Edomites had been forced-converted to Yahudaism (Judaism) under the Hasmonean John Hyrcanus I's conquest of Edom (~125 BCE), bringing them under the political-religious authority of the Hasmonean state. Rome installed Herod as King of the Yahudim (Jews) in 37 BCE, displacing the Hasmonean line. He sat on the throne of David as an Edomite. He was not of the seed of David, not of the tribe of Yahudah (Judah), not even of Yashar'el (Israel) by paternal blood. He was the latest beat of the Esau-against-Ya'aqov pattern — Esau, Edom's progenitor, hating Ya'aqov, Yashar'el's progenitor, the elder grasping at the inheritance of the younger, carried forward across millennia.
 
 The Tanakh tradition of Esau-Edom hatred for Ya'aqov-Yashar'el is dense and consistent. The pattern opens at Genesis 27.
-
-*And Esau hated Ya'aqov (Jacob) because of the blessing wherewith his father blessed him: and Esau said in his heart, The days of mourning for my father are at hand; then will I slay my brother Ya'aqov (Jacob).* (Genesis 27:41)
 
 Edom refuses passage to Yashar'el at the wilderness border.
 
@@ -96,8 +86,6 @@ The framework reading does not collapse Herod-the-individual into Edom-the-peopl
 
 Matthew quotes Hosea.
 
-*When Yashar'el (Israel) was a child, then I loved him, and called my son out of Egypt.* (Hosea 11:1)
-
 In Hosea's context, the verse names Yashar'el (Israel) as Yahuah's (God's) firstborn son brought out of Egyptian bondage at the Exodus. The Christian reading of Matthew's quotation is that this is one more "fulfillment" tag — Matthew finding an Old Testament verse that vaguely resembles the Egypt-sojourn of the infant Yahusha (Jesus) and applying it.
 
 The framework reads the quotation at the depth it carries. Matthew is doing identification, not loose proof-texting. Yahusha (Jesus) IS Yashar'el (Israel). He carries the people's identity in his own person. He recapitulates their history. He walks the path the people walked. The exodus from Egypt becomes the Messiah's own infancy-exodus from Egypt. The wilderness wandering will become the Messiah's own forty-day wilderness temptation in Matthew 4. The mountain-instruction at Sinai will become the Messiah's own mountain-instruction in the Sermon on the Mount of Matthew 5–7. The crossing into the land will become the Messiah's own ministry in the land. The framework reads the Matthean structure as a deliberate recapitulation-Christology: Yahusha (Jesus) is the seed of Yashar'el (Israel) who carries the people's history in his own person and walks the path the people walked.
@@ -126,15 +114,11 @@ The narrative reads as deliberate. Yahusha (Jesus) is walking the path Mosheh wa
 
 Matthew quotes Jeremiah.
 
-*Thus saith Yahuah (the LORD); A voice was heard in Ramah, lamentation, and bitter weeping; Rahel (Rachel) weeping for her children refused to be comforted for her children, because they were not.* (Jeremiah 31:15)
-
 The framework reading attends to the context Jeremiah 31:15 sits in. Jeremiah 31 is one of the most concentrated gathering-prophecies in the prophetic corpus.
 
 *At the same time, saith Yahuah (the LORD), will I be the Elohim (God) of all the families of Yashar'el (Israel), and they shall be my people.* (Jeremiah 31:1)
 
 The chapter opens with the families of Yashar'el — all of them, both houses — and the gathering promise that follows in the next verses.
-
-*Behold, I will bring them from the north country, and gather them from the coasts of the earth, and with them the blind and the lame, the woman with child and her that travaileth with child together: a great company shall return thither. ... He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.* (Jeremiah 31:8, 10)
 
 The Ephraim-firstborn naming follows directly.
 
@@ -142,11 +126,7 @@ The Ephraim-firstborn naming follows directly.
 
 Then verse 15 — the Rachel-weeping verse Matthew quotes. And immediately after the weeping, the chapter answers it.
 
-*Thus saith Yahuah (the LORD); Refrain thy voice from weeping, and thine eyes from tears: for thy work shall be rewarded, saith Yahuah (the LORD); and they shall come again from the land of the enemy. And there is hope in thine end, saith Yahuah (the LORD), that thy children shall come again to their own border.* (Jeremiah 31:16-17)
-
 The chapter then continues through repentance, restoration, and the climactic new-covenant promise.
-
-*Behold, the days come, saith Yahuah (the LORD), that I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah): Not according to the covenant that I made with their fathers in the day that I took them by the hand to bring them out of the land of Egypt; which my covenant they brake, although I was an husband unto them, saith Yahuah (the LORD): But this shall be the covenant that I will make with the house of Yashar'el (Israel); After those days, saith Yahuah (the LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:31-33)
 
 The Rachel-weeping verse Matthew quotes sits between the gathering-prophecy that opens the chapter and the new-covenant promise that closes the chapter. The weeping is the matriarchal grief over the children scattered into exile — Rachel as the mother of Yoseph (Joseph) and Binyamin (Benjamin), the tribes most associated with the northern house's scattering. The answer is the gathering and the new covenant. Matthew is not pulling a random sad verse to color the Herod slaughter. He is quoting the verse that names the weeping which the rest of the chapter answers — and the Messianic child who has been protected from Herod's slaughter is the one through whom the new covenant of Jeremiah 31:31-34 will be enacted.
 
@@ -168,21 +148,13 @@ Herod ordered the killing of the Beth-lehem infants, and Yahusha (Jesus) — the
 
 ## §6. Natsareth (Nazareth) and the *netser* (branch) reading
 
-*And he came and dwelt in a city called Natsareth (Nazareth): that it might be fulfilled which was spoken by the prophets, He shall be called a Nazarene.* (Matthew 2:23)
-
 The interpretive crux: no Old Testament passage explicitly says *he shall be called a Nazarene.* Matthew attributes the saying to *the prophets* (plural), suggesting a theme drawn from across the prophetic corpus rather than a single verse-citation. Christian commentary has proposed three main readings.
 
 **The *netser* (branch) reading.** The Hebrew *netser* (נֵצֶר) means *branch* or *shoot,* and is one of the Branch-words in the Messianic-Branch passages.
 
-*And there shall come forth a rod out of the stem of Yishai (Jesse), and a Branch [netser] shall grow out of his roots.* (Isaiah 11:1)
-
 Matthew's *Natsareth* and the *Nazōraios* (Nazarene) word both etymologically connect to *netser.* The framework's preferred reading: Matthew is hearing the village name *Natsareth* as resonating with the Isaiah-11 *netser* and the broader Branch-Messianic prophecies.
 
-*Behold, the days come, saith Yahuah (the LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.* (Jeremiah 23:5)
-
 *In those days, and at that time, will I cause the Branch of righteousness to grow up unto David; and he shall execute judgment and righteousness in the land.* (Jeremiah 33:15)
-
-*Hear now, O Yahoshua (Joshua) the high priest, thou, and thy fellows that sit before thee: for they are men wondered at: for, behold, I will bring forth my servant the BRANCH.* (Zechariah 3:8)
 
 *And speak unto him, saying, Thus speaketh Yahuah Tseva'ot (the LORD of hosts), saying, Behold the man whose name is The BRANCH; and he shall grow up out of his place, and he shall build the temple of Yahuah (the LORD).* (Zechariah 6:12)
 

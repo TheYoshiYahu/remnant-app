@@ -1,20 +1,12 @@
 # Commentary on Matthew 4
 
-Matthew 4 carries the wilderness temptation, the move to Kfar-Nachum (Capernaum) where Yeshayahu (Isaiah) 9's prophetic light dawns on the tribal territory of Zevulun (Zebulun) and Naphtali, the continuation of Yochanan's (John's) kingdom-at-hand proclamation in the King's own voice, and the calling of the first four disciples as Jeremiah-16 fishers of the scattered seed. The chapter completes the recapitulation-Christology Matthew has been building since chapter 2 — Yahusha (Jesus) walking the path Yashar'el (Israel) walked, in his own body, succeeding where the people failed.
-
 ---
 
 ## §1. The wilderness temptation as recapitulation — Yahusha (Jesus) walking the path Yashar'el (Israel) walked
 
-*Then was Yahusha (Jesus) led up of the Ruach (Spirit) into the wilderness to be tempted of the devil. And when he had fasted forty days and forty nights, he was afterward an hungred.* (Matthew 4:1-2)
-
 The framework reading carries forward from the Matthew 2 commentary — Yahusha (Jesus) IS Yashar'el (Israel). He carries the people's identity in his own person and recapitulates their history. Matthew 2 walked the Egypt-sojourn-and-return. Matthew 3 walked the Yarden (Jordan) immersion that parallels the Yashar'el-under-Yahoshua (Joshua) crossing into the land. Matthew 4 walks the wilderness-testing — forty days corresponding to Yashar'el's forty years in the Sinai wilderness through the canon's own day-for-year prophetic-equivalence formula.
 
-*After the number of the days in which ye searched the land, even forty days, each day for a year, shall ye bear your iniquities, even forty years, and ye shall know my breach of promise.* (Numbers 14:34)
-
 The Ruach (Spirit) led Yahusha into the wilderness deliberately. The framework reads this as the Father authorizing the recapitulation. Yashar'el was led into the wilderness by Yahuah via Mosheh (Moses) at the Exodus, and the wilderness experience was Yahuah's testing of the people.
-
-*And thou shalt remember all the way which Yahuah Elohayka (the LORD thy God) led thee these forty years in the wilderness, to humble thee, and to prove thee, to know what was in thine heart, whether thou wouldest keep his commandments, or no.* (Deuteronomy 8:2)
 
 Yahusha is led into the wilderness by the Ruach for the same kind of testing — to walk the same testing-arc Yashar'el walked, in his own body, as the seed-of-Yashar'el-in-flesh.
 
@@ -26,11 +18,7 @@ The framework reading hears this as the credential. The Messiah saves *his peopl
 
 **First temptation — stones to bread.**
 
-*And when the tempter came to him, he said, If thou be the Son of Elohim (God), command that these stones be made bread. But he answered and said, It is written, Man shall not live by bread alone, but by every word that proceedeth out of the mouth of Elohim (God).* (Matthew 4:3-4)
-
 Yahusha quotes Deuteronomy.
-
-*And he humbled thee, and suffered thee to hunger, and fed thee with manna, which thou knewest not, neither did thy fathers know; that he might make thee know that man doth not live by bread only, but by every word that proceedeth out of the mouth of Yahuah (the LORD) doth man live.* (Deuteronomy 8:3)
 
 The Deuteronomy verse is Mosheh's commentary on the manna-experience of Exodus, where Yashar'el grumbled against Mosheh and Yahuah for bread before Yahuah had provided it.
 
@@ -40,11 +28,7 @@ The failure of Yashar'el was demanding bread on their timing rather than receivi
 
 **Second temptation — temple pinnacle, Psalm 91 misquoted.**
 
-*Then the devil taketh him up into the holy city, and setteth him on a pinnacle of the temple, and saith unto him, If thou be the Son of Elohim (God), cast thyself down: for it is written, He shall give his angels charge concerning thee: and in their hands they shall bear thee up, lest at any time thou dash thy foot against a stone. Yahusha (Jesus) said unto him, It is written again, Thou shalt not tempt Yahuah (the Lord) thy Elohim (God).* (Matthew 4:5-7)
-
 Yahusha quotes Deuteronomy.
-
-*Ye shall not tempt Yahuah Elohaychem (the LORD your God), as ye tempted him in Massah.* (Deuteronomy 6:16)
 
 Massah was the place in the wilderness where Yashar'el demanded water and tested whether Yahuah was among them.
 
@@ -54,8 +38,6 @@ The failure of Yashar'el was demanding a sign of Yah's presence rather than trus
 
 The devil's temptation to Yahusha is the same shape: cast yourself down from the pinnacle to force the Father to display his protection visibly — a sign-test of the Father's presence. The devil quotes the Psalm.
 
-*For he shall give his angels charge over thee, to keep thee in all thy ways. They shall bear thee up in their hands, lest thou dash thy foot against a stone.* (Psalm 91:11-12)
-
 The qualifier the devil omits is *to keep thee in all thy ways.* The Psalm-promise of angelic protection is for the one walking in Yahuah's ways; the devil cuts the qualifier to make the promise read as a blank-check angelic protection valid even for presumption-jumping from temple pinnacles. Yahusha does not debate the misquote line-by-line. He cites the OVERRIDING Torah-word that closes the door: *Thou shalt not tempt Yahuah (the Lord) thy Elohim (God).*
 
 The framework reading hears this as the master-pattern for handling scripture-twisting. The devil quotes scripture, but selectively and out of context. The answer is not to debate the misquote on its own terms; the answer is to harmonize with the whole of scripture by citing the Torah-word that rules out the misuse. This is the same canon-harmonization discipline that the framework reads in the *like the Son of Adam* kaph-comparative passages — strict-literal in isolation can produce open conclusions that do not survive when the whole of scripture is brought to bear; the harmonization is the discipline; being led by the Ruach HaKodesh (Holy Spirit) while reading is what keeps the reader from being captured by isolated technicalities. Yahusha walks the discipline at Matthew 4:7. He does not debate Psalm 91 as if Psalm 91 were the only word; he brings Deuteronomy 6:16 into the conversation and lets the canon-harmonized standard speak.
@@ -63,8 +45,6 @@ The framework reading hears this as the master-pattern for handling scripture-tw
 This is also the master-template for handling the inherited Christian readings of Paul. Romans, Galatians, and Hebrews can be quoted selectively to produce the antinomian gospel; the answer is not to debate the antinomian quote line-by-line within its own framing; the answer is to bring the Torah-word and the prophets and the whole of the canon into the conversation, and let the harmonized standard speak. The Pharisaic-Sadducean leadership-system at Matthew 3 was identified as the *vipers* — the front-end of the antichrist system. The actual antichrist — the devil himself — quotes scripture in Matthew 4 in the same selective-misuse pattern the leadership-system uses. Yahusha's response is the model.
 
 **Third temptation — kingdoms for worship.**
-
-*Again, the devil taketh him up into an exceeding high mountain, and sheweth him all the kingdoms of the world, and the glory of them; and saith unto him, All these things will I give thee, if thou wilt fall down and worship me. Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah (the Lord) thy Elohim (God), and him only shalt thou serve.* (Matthew 4:8-10)
 
 Yahusha quotes Deuteronomy.
 
@@ -78,17 +58,9 @@ The pattern: trading worship of Yahuah for the offer of a kingdom-promise from a
 
 The devil's temptation to Yahusha is the same shape on its largest scale: trade worship of the Father for ALL the kingdoms of the world delivered immediately. The devil's offer assumes the kingdoms are his to give — and at the present age, in the framework reading, the kingdoms of this world ARE under the dominion of the principalities and powers that fell with the watcher-rebellion.
 
-*But the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Mikha'el (Michael), one of the chief princes, came to help me; and I remained there with the kings of Persia. ... Then said he, Knowest thou wherefore I come unto thee? and now will I return to fight with the prince of Persia: and when I am gone forth, lo, the prince of Grecia shall come.* (Daniel 10:13, 20)
-
-*For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.* (Ephesians 6:12)
-
-*And we know that we are of Elohim (God), and the whole world lieth in wickedness.* (1 John 5:19)
-
 The devil's offer is not an empty bluff in the framework reading. The kingdoms ARE temporarily under the dominion of the rebel powers. He IS offering what he currently administers. The offer is real — and the price is worship.
 
 Yahusha refuses on the Torah-standard: *him only shalt thou serve.* The kingdom-promise that matters is the kingdom the Father gives in his timing through the path the Father has set — the cross, the resurrection, the ascension to the Father's right hand, and the Daniel-7 transfer of the everlasting kingdom.
-
-*I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him. And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* (Daniel 7:13-14)
 
 The kaph-comparative — *like the Son of Adam* — is preserved as incarnation-honoring; when the canon is harmonized, the figure is Yahusha himself, the Formed who took on flesh and remains who he was, is, and is to come. The everlasting kingdom Daniel saw is the kingdom Yahusha refused to short-circuit at the wilderness temptation. The devil offers the kingdoms now without the cross; Yahusha chooses the cross and waits for the Father's timing on the kingdoms. The golden-calf failure of Yashar'el was the same shape — choosing an immediate-kingdom-deliverance through a counterfeit-worship rather than waiting on Mosheh's return with the Torah from the mountain. Yahusha inverts the failure: he waits.
 
@@ -130,8 +102,6 @@ Yahusha's move at Matthew 4:7 is the model. The discipline is not debate-on-the-
 
 ## §4. *Galilee of the goyim (Gentiles)* — Isaiah 9 read in the framework, not the Christian inclusion read
 
-*Now when Yahusha (Jesus) had heard that Yochanan (John) was cast into prison, he departed into Galilee; and leaving Natsareth (Nazareth), he came and dwelt in Kfar-Nachum (Capernaum), which is upon the sea coast, in the borders of Zevulun (Zebulun) and Naphtali: that it might be fulfilled which was spoken by Yeshayahu (Isaiah) the prophet, saying, The land of Zevulun (Zebulun), and the land of Naphtali, by the way of the sea, beyond Yarden (Jordan), Galilee of the goyim (Gentiles); The people which sat in darkness saw great light; and to them which sat in the region and shadow of death light is sprung up.* (Matthew 4:12-16)
-
 Matthew quotes Yeshayahu (Isaiah).
 
 *Nevertheless the dimness shall not be such as was in her vexation, when at the first he lightly afflicted the land of Zevulun (Zebulun) and the land of Naphtali, and afterward did more grievously afflict her by the way of the sea, beyond Yarden (Jordan), in Galilee of the nations. The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined.* (Isaiah 9:1-2)
@@ -139,8 +109,6 @@ Matthew quotes Yeshayahu (Isaiah).
 The Christian commentary tradition has read *Galilee of the goyim* as the early-gospel proof that the Messiah was sent to the Gentiles from the start — universal-inclusion confirmed by the Galilean ministry's *Gentile* designation. That read collapses the scattered seed of Yashar'el into a spiritual category open to self-selection and splices unrelated peoples into Yashar'el by faith-confession, and it misreads the geographic-prophetic substance of Yeshayahu 9.
 
 The framework reading recovers the substance. *Galilee of the goyim* — *gelil ha-goyim* in the Hebrew — names the territory of the northern tribes (Zevulun, Naphtali, Asher, Yissakhar) that had been most heavily depopulated and resettled with foreign peoples after the Assyrian deportation of 722 BCE. The Assyrian policy is recorded in 2 Kings.
-
-*And the king of Assyria brought men from Babylon, and from Cuthah, and from Ava, and from Hamath, and from Sepharvaim, and placed them in the cities of Samaria instead of the children of Yashar'el (Israel): and they possessed Samaria, and dwelt in the cities thereof.* (2 Kings 17:24)
 
 The northern tribes were taken east and foreigners were imported west to fill the depopulated territory. By the time of Yeshayahu 9 — written shortly before or during the Assyrian deportation — the prophet is naming what the territory has become: *Galilee of the goyim,* Galilee of the mixed peoples, the territory where the descendants of the resettled foreigners now lived alongside whatever northern-tribe remnant remained.
 
@@ -157,8 +125,6 @@ He goes to the territory of the lost sheep. He preaches the gathering where the 
 The *goyim* in *Galilee of the goyim* names the demographic state of the territory after the Assyrian deportation — the foreign peoples resettled there — but the prophetic substance is the scattered-northern-tribe-in-darkness who shall see the great light. The Christian inclusion-gospel collapses the demographic descriptor into a doctrinal universal-Gentile-inclusion declaration; the framework recovers the geographic-tribal substance the text is actually carrying.
 
 ## §5. *Repent: for the kingdom of heaven is at hand* — Yahusha (Jesus) picks up Yochanan's (John's) words exactly
-
-*From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand.* (Matthew 4:17)
 
 Yahusha's opening preaching-formula is identical to Yochanan's at Matthew 3.
 

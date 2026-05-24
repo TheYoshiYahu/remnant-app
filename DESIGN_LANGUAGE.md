@@ -409,7 +409,7 @@ Menu items group into named sections so the menu stays scannable as the tool cat
 | **Marking** | verse | Highlight verse | Bookmark (Wheel 5) |
 | **Notes** | verse | — | Add note + Open notes for this verse (Wheel 5) |
 | **Cross-references** | verse | — | Treasury (TSK) + Nave's topical + Related passages recommendations (Wheels 9, 12; $4.99-gated) |
-| **Share** | verse | Copy verse | Share with watermark (Wheel 7) |
+| **Share** | verse | Copy verse | Share with watermark |
 
 Empty sections drop out of the render (no header at all when a section has zero items in the current partner's view). Future wheels append `MenuItem` objects to the appropriate section in App.tsx's `buildMenuSections` helper without touching the `VerseActionMenu` component. **The S121 default behavior — empty sections drop — has been narrowed at S122: sections drop only if they have zero items across all states (live, tier-locked, coming-soon). Once any stub is added, the section header renders and the stubs sit dimmed inside it.** See *Disabled-state stubs and tier-locked surfaces* below for the locked S122 stub catalog + visual register.
 
@@ -457,7 +457,7 @@ S121 shipped the menu architecture with three live items (Strong's, Highlight, C
 |  | Nave's topical | Tier-locked | W9 | Library |
 |  | Related passages | Tier-locked | W12 | Library |
 | **Share** *(verse scope)* | Copy verse | Live | — | Free |
-|  | Share with watermark | Coming soon | W7 | Free |
+|  | Share with watermark | Live | — | Free |
 | **Range** *(verse scope, added S123)* | Start range here | Live | W4 | Free |
 
 For a Hebrew word in word scope at S123 lock (updated from S122 — Share's "Multi-verse range" stub promoted to its own Range section as a Live "Start range here" item per §21), the menu shows 15 items (5 Word-study + 2 Marking + 2 Notes + 3 Cross-references + 2 Share + 1 Range). For a Greek word, 14 items (Nikkudot drops; BDB swaps to Thayer's). For verse scope, 10 items (no Word-study section). Bottom-sheet on mobile scrolls cleanly via the new max-h + overflow-y-auto from above.
@@ -966,7 +966,7 @@ The card is composed as three vertically-stacked zones with mathematically-enfor
 
 The footer phrasing uses *ROP Official Study Bible* (not the full *The Remnant of Promise Official Study Bible*) so the reference line stays within the left half of the footer band without crowding the watermark on the right. The full product name is carried by the brand-mark's own embedded title text on the right — the footer is summary, not duplication.
 
-**Right side** — locked watermark at 240×360 anchored bottom-right with `4%` outer padding (matches the header band's horizontal padding for visual alignment). The watermark renders at its native pixel dimensions; canvas does NOT scale it (the asset was generated at the exact share-card size needed). Canvas implementation: `ctx.drawImage(brandMarkImage, x, y, 240, 360)` with the brand-mark Image object loaded once at module init and cached.
+**Right side** — locked watermark anchored bottom-right with `4%` outer padding (matches the header band's horizontal padding for visual alignment). Source asset is 240×360 native; canvas scales it aspect-preserved (2:3) to fit the footer band's available vertical slot — band height minus the `4%` bottom pad — so the watermark's top edge lands exactly on the footer band's top edge and the locked 9% / 73% / 18% zone proportions hold geometrically. At the V1 1080×1350 card this resolves to ~162×243 rendered pixels; the v4 Grok-rendered detail (Lombardic letterforms, JUDAH/EPHRAIM argaman labels, menorah branches) reads cleanly at this scale and at App Store thumbnail scale. Canvas implementation: `ctx.drawImage(brandMarkImage, x, y, wmW, wmH)` where `wmH = footerHeight - sidePadY` and `wmW = wmH × (240/360)`; the brand-mark Image object is loaded once at module init and cached.
 
 ### Canvas-PNG render path
 

@@ -6,15 +6,9 @@ Matthew 9 is the post-Sermon healing ministry deepening into the territory of FO
 
 ## §1. The paralytic healed and forgiven — the Formed Voice's authority to forgive sins
 
-*And he entered into a ship, and passed over, and came into his own city. And, behold, they brought to him a man sick of the palsy, lying on a bed: and Yahusha (Jesus) seeing their faith said unto the sick of the palsy; Son, be of good cheer; thy sins be forgiven thee.* (Matthew 9:1-2)
-
 The framework reads the paralytic-healing as the deliberate Matthean-narrative-staging of the FORGIVENESS-CLAIM that the post-Sermon ministry now lays down explicitly. The leper-cleansing of Matthew 8:1-4 demonstrated the King's authority over the purity-architecture's defiling-flows; the centurion-pericope demonstrated his authority over disease-at-distance; the storm-stilling demonstrated his authority over creation; the Gergesene exorcism demonstrated his authority over the principalities. Matthew 9:1-8 now demonstrates the King's authority to FORGIVE SINS — the Father's-prerogative the Tanakh assigns to Yahuah (the LORD) alone — demonstrated in flesh by the Formed-in-flesh.
 
 The Tanakh-anchor of the forgiveness-prerogative stands at Yeshayahu (Isaiah) 43 and Tehillim (Psalm) 103.
-
-*I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins.* (Isaiah 43:25)
-
-*Bless Yahuah (the LORD), O my soul, and forget not all his benefits: Who forgiveth all thine iniquities; who healeth all thy diseases.* (Psalm 103:3)
 
 The forgiveness and the healing are paired in the Tanakh's own architecture. Matthew 9:1-8 is the in-person demonstration of the pairing in a single body — the same Voice that spoke Psalm 103 through David is in the room speaking in flesh.
 
@@ -44,8 +38,6 @@ The kaph-comparative — *one like the Son of Adam* — preserves both the resem
 
 ## §2. The calling of Mattityahu (Matthew) the tax-collector — *I will have mercy, and not sacrifice*
 
-*And as Yahusha (Jesus) passed forth from thence, he saw a man, named Mattityahu (Matthew), sitting at the receipt of custom: and he saith unto him, Follow me. And he arose, and followed him.* (Matthew 9:9)
-
 The framework reads the Mattityahu-calling as the deliberate-display of the system-not-people posture made flesh. Tax-collectors in the contemporary Yashar'el (Israel) community were despised on two grounds. First, they collected tribute for Roman occupation — a collaborator-with-the-occupying-power role that placed them in the categorical-traitor class to the kingdom-aspirations of contemporary Yahudim (Jewish) nationalism. Second, the Pharisaic-purity-system treated them as defiling because they handled Hellenistic-coin-currency with imperial-cult imagery and they interacted continually with Gentile travelers and merchants. Mattityahu was a Yahudi (Jew) in the categorical-sinner class by Pharisaic-counterfeit-righteousness standards.
 
 Yahusha (Jesus) calls him to be among the twelve. The framework reads this as deliberate-system-defiance. The kingdom-citizens-roster has just been named at the Beatitudes (Matthew 5:3-12) — the *anawim,* the Ezekiel-9 mourners, the *tsedaqah*-hungerers, the *chesed*-merciful, the new-heart pure. None of those markers exclude the tax-collector who hears the Shepherd's voice and rises to follow. The Pharisaic-counterfeit-righteousness's CATEGORICAL exclusion of the tax-collector class is precisely what the King is dismantling.
@@ -64,33 +56,15 @@ The framework reads the meal-fellowship as direct-defiance of the Pharisaic-puri
 
 This is the framework crux of the chapter on the diagnostic-system. Yahusha (Jesus) cites Hosea 6:6 and tells the Pharisees to *learn what that meaneth.* He will cite the same verse again at Matthew 12:7 in the Shabbat-controversy context. The Hosea 6:6 citation is the recurring Tanakh-prophetic-anchor Yahusha (Jesus) deploys against the Pharisaic-counterfeit-righteousness.
 
-*For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings.* (Hosea 6:6)
-
 The Tanakh-prophetic-stream behind the citation is long, and Yahusha (Jesus) is standing in all of it. The first articulation surfaces at Shemu'el's (Samuel's) confrontation with Sha'ul (Saul).
-
-*And Shemu'el (Samuel) said, Hath Yahuah (the LORD) as great delight in burnt offerings and sacrifices, as in obeying the voice of Yahuah (the LORD)? Behold, to obey is better than sacrifice, and to hearken than the fat of rams.* (1 Samuel 15:22)
-
-The Psalms carry it.
-
-*Sacrifice and offering thou didst not desire; mine ears hast thou opened: burnt offering and sin offering hast thou not required.* (Psalm 40:6)
-
-*For thou desirest not sacrifice; else would I give it: thou delightest not in burnt offering. The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise.* (Psalm 51:16-17)
 
 Yeshayahu (Isaiah) carries it.
 
-*To what purpose is the multitude of your sacrifices unto me? saith Yahuah (the LORD): I am full of the burnt offerings of rams, and the fat of fed beasts; and I delight not in the blood of bullocks, or of lambs, or of he goats... Wash you, make you clean; put away the evil of your doings from before mine eyes; cease to do evil; Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow.* (Isaiah 1:11, 16-17)
-
 Yirmeyahu (Jeremiah) carries it.
-
-*For I spake not unto your fathers, nor commanded them in the day that I brought them out of the land of Mitsrayim (Egypt), concerning burnt offerings or sacrifices: But this thing commanded I them, saying, Obey my voice, and I will be your Elohim (God), and ye shall be my people: and walk ye in all the ways that I have commanded you, that it may be well unto you.* (Jeremiah 7:22-23)
 
 Amos carries it.
 
-*I hate, I despise your feast days, and I will not smell in your solemn assemblies... But let judgment run down as waters, and righteousness as a mighty stream.* (Amos 5:21, 24)
-
 Mikhah (Micah) carries it.
-
-*He hath shewed thee, O man, what is good; and what doth Yahuah (the LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8)
 
 Yahusha (Jesus) is standing in this whole prophetic-stream when he cites Hosea 6:6. The Pharisaic-counterfeit-righteousness's failure is precisely the failure these prophets indicted — external-religiosity-without-heart-substance, sacrifice-without-mercy, credential-without-covenant. The Hosea 6:6 *go and learn what that meaneth* is the Tanakh-pedagogical-prescription — they have the text; they have not learned the substance.
 
@@ -102,23 +76,15 @@ The framework reads Mattityahu's own response as the contrast-pattern in person.
 
 ## §3. The fasting question and the new-wineskins parables — the bridegroom in present age, and the new-heart container
 
-*Then came to him the disciples of Yochanan (John), saying, Why do we and the Pharisees fast oft, but thy disciples fast not?* (Matthew 9:14)
-
 The framework reads the fasting-question with care. The disciples-of-Yochanan join the indirection-pattern (v.11) — they ask about Yahusha's (Jesus's) practice rather than directly questioning him. The Pharisees and Yochanan (John)'s disciples were both observing Pharisaic-style twice-weekly voluntary fasts on Mondays and Thursdays (per second-temple-period practice, attested in Luke 18:12 and the Didache 8:1). Yahusha's (Jesus's) disciples were not. The challenge is operating from the assumption that this voluntary-fasting is the standard-of-piety.
 
 **Yahusha's (Jesus's) response — the bridegroom-self-identification** (v.15). *And Yahusha (Jesus) said unto them, Can the children of the bridechamber mourn, as long as the bridegroom is with them? but the days will come, when the bridegroom shall be taken from them, and then shall they fast.*
 
 The bridegroom-language is direct Messianic-self-claim. The framework reads the Tanakh-anchors:
 
-*For as a young man marrieth a virgin, so shall thy sons marry thee: and as the bridegroom rejoiceth over the bride, so shall thy Elohim (God) rejoice over thee.* (Isaiah 62:5)
-
-*For thy Maker is thine husband; Yahuah Tseva'ot (the LORD of hosts) is his name; and thy Redeemer the Holy One of Yashar'el (Israel); the Elohim (God) of the whole earth shall he be called.* (Isaiah 54:5)
-
 *Turn, O backsliding children, saith Yahuah (the LORD); for I am married unto you: and I will take you one of a city, and two of a family, and I will bring you to Tsiyon (Zion).* (Jeremiah 3:14)
 
 And the prophecy that ties the bridegroom-substance directly to the gathering-of-the-scattered-and-divorced-house stands at Hosea 2.
-
-*And I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies. I will even betroth thee unto me in faithfulness: and thou shalt know Yahuah (the LORD).* (Hosea 2:19-20)
 
 Hosea 2 is addressing the scattered-and-divorced northern house — the same house the chapter has named with the *Lo-Ammi (not my people)* of 1:9 and the gathering-prophecy of 1:10-11.
 
@@ -142,11 +108,7 @@ The framework reads the parable in the FASTING-CONTEXT Yahusha (Jesus) just gave
 
 **What the new wine IS in the framework reading.** The new wine is the heart-Torah-walking life Yahusha (Jesus) is teaching. It is the new-heart of Yechezk'el (Ezekiel) 36.
 
-*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:26-27)
-
 It is the new-covenant Torah-internalization of Yirmeyahu (Jeremiah) 31.
-
-*But this shall be the covenant that I will make with the house of Yashar'el (Israel); After those days, saith Yahuah (the LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33)
 
 **What the old wineskin IS in the framework reading.** The old wineskin is the Pharisaic-rabbinic-oral-tradition-system — the *takkanot* and *gezerot* and inherited-rabbinic-fences that built up around the Torah. It is the SYSTEM that cannot contain the heart-Torah-walking the King is teaching. The system's external-credential-architecture, its purity-fencing, its sacrifice-without-mercy, its categorical-classification-of-sinners — these cannot hold the heart-Torah-living kingdom-citizens. Old wineskin = the Pharisaic-system; the same architecture the King has been dismantling at the table with Mattityahu (Matthew); the same architecture that will become the Judaizer party in the apostolic age.
 
@@ -158,8 +120,6 @@ It is the new-covenant Torah-internalization of Yirmeyahu (Jeremiah) 31.
 
 ## §4. Yair's daughter and the hemorrhaging woman — the King's authority over death and the defiling flows
 
-*While he spake these things unto them, behold, there came a certain ruler, and worshipped him, saying, My daughter is even now dead: but come and lay thy hand upon her, and she shall live. And Yahusha (Jesus) arose, and followed him, and so did his disciples.* (Matthew 9:18-19)
-
 The framework reads the Yair-and-the-bleeding-woman intercalation as a deliberate-paired pericope. Mark 5:22 and Luke 8:41 identify the ruler as Ya'ir (*he will enlighten / awaken* — Hebrew *Ya'ir* from *or* light + *yiph'il*-causative). The framework notes the synagogue-ruler is a system-credentialed figure who recognizes the King — confirming the system-not-people posture; not all of the contemporary Yashar'el (Israel) leadership is on the wrong side. Nakdimon (Nicodemus) at John 3 and Yoseph (Joseph) of Arimathea at Matthew 27:57-60 are the other framework-noted contemporary-leadership figures who turned. The credentials do not predetermine the hearing.
 
 **The pattern of intercalation** (vv.18-26). Matthew's account compresses Mark 5:21-43 and Luke 8:40-56. Yair approaches; Yahusha (Jesus) follows; the hemorrhaging woman touches his garment en route; Yahusha (Jesus) responds to the woman; the journey continues to Yair's house; the maid is raised. Mark and Luke both record the time-pressure (the messenger arriving with *thy daughter is dead, why troublest thou the Master any further?* in Mark 5:35); Matthew's compression assumes the reader's familiarity with the synoptic pattern.
@@ -167,8 +127,6 @@ The framework reads the Yair-and-the-bleeding-woman intercalation as a deliberat
 **The hemorrhaging woman's twelve-year condition** (vv.20-21). *And, behold, a woman, which was diseased with an issue of blood twelve years, came behind him, and touched the hem of his garment: For she said within herself, If I may but touch his garment, I shall be whole.*
 
 Under the Torah, a chronic-discharge of blood from a woman renders her ritually-impure for as long as the discharge continues.
-
-*And if a woman have an issue of her blood many days out of the time of her separation, or if it run beyond the time of her separation; all the days of the issue of her uncleanness shall be as the days of her separation: she shall be unclean. Every bed whereon she lieth all the days of her issue shall be unto her as the bed of her separation: and whatsoever she sitteth upon shall be unclean, as the uncleanness of her separation. And whosoever toucheth those things shall be unclean, and shall wash his clothes, and bathe himself in water, and be unclean until the even.* (Leviticus 15:25-27)
 
 For twelve years this woman has been categorically-isolated under the purity-architecture — unable to participate in the temple-worship, unable to enter the assembly for normal religious-life, treated as defiling-by-contact in every social interaction.
 
@@ -187,8 +145,6 @@ The *thy faith hath made thee whole* phrase carries the framework's hearing-reve
 **The *not dead, but sleepeth* teaching** (v.24). *He said unto them, Give place: for the maid is not dead, but sleepeth. And they laughed him to scorn.*
 
 The framework reads the death-as-sleep language as deliberate-eschatological-teaching anchored in the Tanakh's resurrection-stream.
-
-*And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2)
 
 *But go thou thy way till the end be: for thou shalt rest, and stand in thy lot at the end of the days.* (Daniel 12:13)
 
@@ -216,13 +172,9 @@ The framework reads this in the same anti-defilement pattern as the leper (Matth
 
 The framework notes the credentialing-display of the raising-of-the-dead. The Yeshayahu (Isaiah) 26 prophecy anchors the resurrection-substance.
 
-*Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast them out.* (Isaiah 26:19)
-
 The raising of Yair's daughter is the inaugural-display in the gospel's narrative-arc (the widow of Nain at Luke 7 and Lazaros (Lazarus) at John 11 will continue the credentialing); each is a present-age-foretaste of the resurrection-at-the-end-of-the-age.
 
 ## §5. The two blind men — *Son of David, have mercy on us*
-
-*And when Yahusha (Jesus) departed thence, two blind men followed him, crying, and saying, Thou Son of David, have mercy on us.* (Matthew 9:27)
 
 The framework reads the two-blind-men pericope as the Messianic-credential extending into the *Son of David* recognition by the marginalized. The blind, the lame, the leprous, the demoniacs — those whom the system credentials cannot help — perceive what the credentialed-with-sight do not.
 
@@ -234,15 +186,9 @@ Yeshayahu (Isaiah) carries the Davidic-Messianic stream forward.
 
 *Of the increase of his government and peace there shall be no end, upon the throne of David, and upon his kingdom, to order it, and to establish it with judgment and with justice from henceforth even for ever. The zeal of Yahuah Tseva'ot (the LORD of hosts) will perform this.* (Isaiah 9:7)
 
-*And there shall come forth a rod out of the stem of Yishai (Jesse), and a Branch shall grow out of his roots: And the spirit of Yahuah (the LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (the LORD).* (Isaiah 11:1-2)
-
 Yirmeyahu (Jeremiah) carries it.
 
-*Behold, the days come, saith Yahuah (the LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth. In his days Yahudah (Judah) shall be saved, and Yashar'el (Israel) shall dwell safely: and this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS).* (Jeremiah 23:5-6)
-
 Yechezk'el (Ezekiel) carries it.
-
-*And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd. And I Yahuah (the LORD) will be their Elohim (God), and my servant David a prince among them; I Yahuah (the LORD) have spoken it.* (Ezekiel 34:23-24)
 
 *And David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them... and my servant David shall be their prince for ever.* (Ezekiel 37:24-25)
 
@@ -272,8 +218,6 @@ The healing of the two blind men is one of the inaugurating-credential-displays 
 
 ## §6. The mute demoniac and the *prince of the devils* slander — the first appearance of the blasphemy trajectory
 
-*As they went out, behold, they brought to him a dumb man possessed with a devil. And when the devil was cast out, the dumb spake: and the multitudes marvelled, saying, It was never so seen in Yashar'el (Israel). But the Pharisees said, He casteth out devils through the prince of the devils.* (Matthew 9:32-34)
-
 The framework reads the mute-demoniac pericope as the first-appearance of the Beelzebul-attribution that Matthew 12:22-30 will dismantle with the blasphemy-against-the-Ruach warning. The same slander; the same Pharisaic-response-pattern; the trajectory begins here.
 
 **The crowd's recognition.** *It was never so seen in Yashar'el (Israel).* The multitudes name the credentialing-display at the Yashar'el-historical level — there has been no comparable demonstration in the people's collective memory. The framework reads this as legitimate-recognition that nonetheless does not yet reach the Formed-from-the-Formless identification. The crowd has the data but not yet the framework.
@@ -300,8 +244,6 @@ The framework notes this trajectory is operative not just historically but in th
 
 ## §7. The harvest is plenteous, the labourers are few — the gathering-mission framing for Matthew 10
 
-*And Yahusha (Jesus) went about all the cities and villages, teaching in their synagogues, and preaching the gospel of the kingdom, and healing every sickness and every disease among the people. But when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd.* (Matthew 9:35-36)
-
 The framework reads the closing pericope as the deliberate-setup for the Matthew 10 commission of the twelve. Three framework-thick phrases lock the framing.
 
 **First: *the gospel of the kingdom*** (v.35). The framework reads this in continuity with Matthew 4:23's same phrase — *good news of the gathering* per the framework's gathering-thesis. The gospel Yahusha (Jesus) is proclaiming is the news of the gathering of the scattered seed; the multitudes coming to him are the citizens of the gathering being drawn to the King.
@@ -324,10 +266,6 @@ And Yechezk'el (Ezekiel) 34 carries the prophetic-thunder at full-weight — the
 
 The Yechezk'el-34 vision is not only diagnostic — it is restoration-promise.
 
-*For thus saith Adonai Yahuah (the Lord GOD); Behold, I, even I, will both search my sheep, and seek them out. As a shepherd seeketh out his flock in the day that he is among his sheep that are scattered; so will I seek out my sheep, and will deliver them out of all places where they have been scattered in the cloudy and dark day.* (Ezekiel 34:11-12)
-
-*And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.* (Ezekiel 34:23)
-
 And the prophet Zekharyah (Zechariah) carries the same thread.
 
 *For the idols have spoken vanity, and the diviners have seen a lie, and have told false dreams; they comfort in vain: therefore they went their way as a flock, they were troubled, because there was no shepherd.* (Zechariah 10:2)
@@ -340,13 +278,9 @@ The framework reads *fainted, and were scattered abroad* (*eskulmenoi kai errimm
 
 **Third: *the harvest truly is plenteous, but the labourers are few*** (v.37).
 
-*Then saith he unto his disciples, The harvest truly is plenteous, but the labourers are few; Pray ye therefore the Lord of the harvest, that he will send forth labourers into his harvest.* (Matthew 9:37-38)
-
 Direct harvest-language. The framework reads this in continuity with the Tanakh's harvest-stream.
 
 *Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.* (Joel 3:13)
-
-*And it shall come to pass in that day, that Yahuah (the LORD) shall beat off from the channel of the river unto the stream of Mitsrayim (Egypt), and ye shall be gathered one by one, O ye children of Yashar'el (Israel).* (Isaiah 27:12)
 
 The Sermon's own framing at Matthew 3:12 carries the wheat-and-chaff harvest pattern.
 

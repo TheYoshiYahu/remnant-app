@@ -44,15 +44,11 @@ THE good gift is the Ruach HaKodesh (Holy Spirit). The kingdom-citizens prayer-p
 
 *But this shall be the covenant that I will make with the house of Yashar'el (Israel); After those days, saith Yahuah (the LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33)
 
-*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:26-27)
-
 The Father's covenant-care for the gathered is most fundamentally the gift of the Spirit who enables the kingdom-walking. The Matthew 7:11 *good things* — the Greek *agatha* — name the kingdom-substance the Father gives, with the Spirit at the center. The Spirit gift, the heart-Torah-writing, the cause-to-walk-in-the-statutes — all of these the Father has been promising since Jeremiah and Ezekiel, and Yahusha (Jesus) at Matthew 7:11 is saying *this is the substance the Father has been waiting to give to those who ask.*
 
 The framework rules out the prosperity-gospel misuse of vv.7-11. The *ask / seek / knock* is not a wealth-and-blessing-claim formula. The Father gives *good things,* and the framework definition of *good* is the kingdom-substance — the Spirit, the heart-Torah, the gathering-promise, the daily-bread of Matthew 6:11, the deliverance from the evil one of Matthew 6:13. The vv.7-11 verses sit inside the Sermon's broader teaching on the kingdom-citizens orientation; they do not turn into a wealth-promise template apart from that teaching.
 
 ## §3. The Golden Rule named by Yahusha (Jesus) as *the law and the prophets* (v.12)
-
-*Therefore all things whatsoever ye would that men should do to you, do ye even so to them: for this is the law and the prophets.* (Matthew 7:12)
 
 The framework reads v.12 as a load-bearing Torah-affirmation. Yahusha (Jesus) himself names the principle *do unto others as ye would that they should do to you* as the summary of *the law and the prophets* — the Greek *houtos gar estin ho nomos kai hoi prophētai.* The Torah and the prophets. The whole Tanakh-revelation.
 
@@ -72,8 +68,6 @@ The Tanakh's prohibitions on theft and false witness and covetousness, the proph
 
 ## §4. The narrow gate and the few — remnant-language at full voltage (vv.13-14)
 
-*Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat: Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* (Matthew 7:13-14)
-
 The framework reads the narrow-gate teaching as remnant-language and rules out the Christian-universalist softening that has often diluted it.
 
 The structure is binary and quantitatively-asymmetric: TWO gates, TWO ways, TWO destinations. The wide gate / broad way leads to destruction; *many there be which go in thereat.* The strait gate / narrow way leads to life; *few there be that find it.* The numerical-asymmetry is explicit. The framework will not soften it.
@@ -87,8 +81,6 @@ The remnant is by definition a subset; the *consumption decreed* names the large
 *I will also leave in the midst of thee an afflicted and poor people, and they shall trust in the name of Yahuah (the LORD). The remnant of Yashar'el (Israel) shall not do iniquity, nor speak lies; neither shall a deceitful tongue be found in their mouth: for they shall feed and lie down, and none shall make them afraid.* (Zephaniah 3:12-13)
 
 And through Zecharyah (Zechariah), at the end of the prophetic canon, in the most explicit numerical-asymmetric form:
-
-*And it shall come to pass, that in all the land, saith Yahuah (the LORD), two parts therein shall be cut off and die; but the third shall be left therein. And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear them: I will say, It is my people: and they shall say, Yahuah (The LORD) is my Elohim (God).* (Zechariah 13:8-9)
 
 The same prophet had named the third-part survivors with even more precision — those who look on the pierced one:
 
@@ -122,8 +114,6 @@ The *good tree / corrupt tree* dichotomy at vv.16-18 names the lineage-identific
 
 The framework reading: false prophets are identifiable by their fruit. The fruit-test is concrete and walkable. The Tanakh-stream is the Torah's own false-prophet diagnostic, given in two passages of Devarim (Deuteronomy):
 
-*If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder, And the sign or the wonder come to pass, whereof he spake unto thee, saying, Let us go after other gods, which thou hast not known, and let us serve them; Thou shalt not hearken unto the words of that prophet, or that dreamer of dreams: for Yahuah Elohaychem (the LORD your God) proveth you, to know whether ye love Yahuah Elohaychem (the LORD your God) with all your heart and with all your soul.* (Deuteronomy 13:1-3)
-
 The prophet whose sign-or-wonder COMES TO PASS is still false if his teaching leads after other gods. The signs are real; the prophet is false. Signs-and-wonders are not the proof. The second passage names the second test:
 
 *But the prophet, which shall presume to speak a word in my name, which I have not commanded him to speak, or that shall speak in the name of other gods, even that prophet shall die. And if thou say in thine heart, How shall we know the word which Yahuah (the LORD) hath not spoken? When a prophet speaketh in the name of Yahuah (the LORD), if the thing follow not, nor come to pass, that is the thing which Yahuah (the LORD) hath not spoken, but the prophet hath spoken it presumptuously: thou shalt not be afraid of him.* (Deuteronomy 18:20-22)
@@ -134,8 +124,6 @@ The word that does not come to pass is the false-prophet diagnostic in the inver
 
 The apostle Yochanan (John) walked the same test in his first letter, articulating it as the master-filter of all teaching:
 
-*And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.* (1 John 2:3-4)
-
 This is the contrary-to-Torah test the framework applies as the master filter of every teacher's fruit. The teaching that leads away from the commandments is false. The teacher who voids the Torah is a false prophet by the master filter, regardless of the apparent fruit of his ministry-success.
 
 This is the framework's diagnostic against the antichrist-system's teachers in every age. The Pharisaic-leadership of the first century — false prophets in the sheep's-clothing of religious-leadership. The post-apostolic teachers who voided the heart-Torah by subtraction across the centuries — false prophets in the sheep's-clothing of bishop-and-pope. The modern institutional-Christian pulpit teaching the antinomian gospel — false prophets in the sheep's-clothing of pastor-and-televangelist. The Hebrew-Roots false-inclusion teachers who teach that anyone who confesses Yahusha (Jesus) and Torah-keeps becomes Yashar'el (Israel) — false prophets in the sheep's-clothing of restoration-teacher. The Islamic teachers who deny the gathering of the twelve tribes and transfer the covenant to Ishmael — false prophets in the sheep's-clothing of Abrahamic religion. The fruit-test exposes all of them: the teaching that voids the Torah, the teaching that adds to or subtracts from the commandments, the teaching that produces a community without the heart-Torah, the teaching whose word does not come to pass — all stand under the false-prophet identification.
@@ -145,8 +133,6 @@ This is the framework's diagnostic against the antichrist-system's teachers in e
 The framework reads this against the identical statement Yochanan (John) the Immerser made at Matthew 3:10 — *the axe is laid unto the root of the trees: therefore every tree which bringeth not forth good fruit is hewn down, and cast into the fire.* The same imagery, the same warning. The unfruitful tree is hewn down. The post-harvest sifting language: the tares are gathered and burned at the harvest; the wheat is gathered and stored; and the gathered wheat itself passes through a second sifting in which the unfruitful are removed. The fire is the eschatological-judgment fire of the day of Yahuah (the LORD), not a metaphor for natural-consequences.
 
 ## §6. *Lord, Lord* — the load-bearing anti-antinomian declaration of the Sermon (vv.21-23)
-
-*Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven. Many will say to me in that day, Lord, Lord, have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works? And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.* (Matthew 7:21-23)
 
 These three verses are the most load-bearing passage in Matthew 7 for the framework — and one of the most load-bearing passages in the whole New Testament. The institutional-Christian system has either ignored this passage or developed elaborate exegesis to neutralize it. The framework reads it directly.
 
@@ -167,8 +153,6 @@ And the same Paul wrote, against the wresting of his own letters that was happen
 Peter — writing about Paul — names the wresting of Paul's letters as a known phenomenon that destroys the unstable. The institutional-Christian collapse of Paul into an anti-Torah gospel is the wresting Peter warned about, two thousand years downstream. No Christian doctrine standing on the wrested Paul can stand as load-bearing against the King's own teaching at Matthew 7:21. The actual entry-criterion is *doing the will of the Father.* The framework reads the *will of the Father* as the heart-Torah-walking — the same Father's will the Lord's Prayer petitions for in the previous chapter when it asks *thy will be done in earth, as it is in heaven.* The doer-of-the-Father's-will enters the kingdom; the verbal-confessor without the doing does not.
 
 The contrary-to-Torah test the apostle Yochanan (John) named is the same diagnostic at v.21:
-
-*And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.* (1 John 2:3-4)
 
 The 1 John 2:3-4 test and the Matthew 7:21 declaration say the same thing in two registers. The verbal-confession-without-the-walking is the *liar* of 1 John 2:4 and the *Lord-Lord* sayer of Matthew 7:21. The doer-of-the-Father's-will is the keeper-of-the-commandments. Both verses indict the verbal-confession-without-the-walking pattern.
 
@@ -206,8 +190,6 @@ Yahusha (Jesus) is quoting David's psalm against the supernatural-ministry commu
 
 The apostle Yochanan (John) defined sin itself with the same Greek word:
 
-*Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law.* (1 John 3:4)
-
 The *transgression of the law* is *anomia* in the Greek. Sin is Torah-violation, defined directly. Sin is what the workers of *anomia* DO; the workers of *anomia* are sinners by Yochanan's (John's) own definition. And Paul names the operative system of the present age in the same vocabulary:
 
 *For the mystery of iniquity doth already work: only he who now letteth will let, until he be taken out of the way. And then shall that Wicked be revealed, whom the Adonai (Lord) shall consume with the spirit of his mouth, and shall destroy with the brightness of his coming.* (2 Thessalonians 2:7-8)
@@ -234,8 +216,6 @@ These were people who had received the gift — they could prophesy, they could 
 
 ## §7. The two builders — *na'aseh v'nishma* hearing-AND-doing as the kingdom-citizens foundation (vv.24-27)
 
-*Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock: And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock. And every one that heareth these sayings of mine, and doeth them not, shall be likened unto a foolish man, which built his house upon the sand: And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell: and great was the fall of it.* (Matthew 7:24-27)
-
 The framework reads the closing parable as the Sermon-on-the-Mount summary at the foundation-level. The DIFFERENTIATOR between the wise and the foolish is *heareth ... AND doeth them.* Both the wise and the foolish HEAR the sayings of Yahusha (Jesus); the wise hears AND does; the foolish hears AND does not. The hearing alone is not the foundation; the hearing-AND-doing is.
 
 The framework reads this against the Tanakh-pattern of *na'aseh v'nishma* — Exodus 24:7's *we will do, and we will hear:*
@@ -261,8 +241,6 @@ The apostle Ya'aqov (James) carried the same diagnostic forward into the apostol
 Ya'aqov names the same hearer-AND-doer standard, names the Torah as the *perfect law of liberty,* and locks the *doer of the work* as the one who is blessed. The Tanakh's *na'aseh v'nishma* pattern, Yahusha's (Jesus's) two-builders parable, and Ya'aqov's (James's) doer-of-the-word standard are the same teaching in three registers. The Reformation hierarchy that elevates hearing over doing, faith over works, grace over obedience runs straight into the Sermon's closing parable and into Ya'aqov's first chapter. The doing is not a downstream-fruit-that-may-or-may-not-follow; the doing IS the foundation-establishing act.
 
 ## §8. *Authority, not as the scribes* — the second-Sinai voice locked at chapter-close (vv.28-29)
-
-*And it came to pass, when Yahusha (Jesus) had ended these sayings, the people were astonished at his doctrine: For he taught them as one having authority, and not as the scribes.* (Matthew 7:28-29)
 
 The Sermon closes on the multitudes' response. *Astonished* — the Greek *ekplēssomai* — struck out of themselves, knocked-loose-from-the-default. The teaching landed at a register the listeners had not heard before.
 

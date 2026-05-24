@@ -2,15 +2,11 @@
 
 Matthew 6 is the middle of the Sermon on the Mount. The chapter walks one diagnostic across three Tanakh-substantial practices — alms (vv.1-4), prayer (vv.5-8), and fasting (vv.16-18) — sets the Lord's Prayer at the center as the kingdom-citizens prayer-pattern in seven phrases (vv.9-13), couples the forgiveness-economy to the citizens' own forgiveness-extension (vv.14-15), and then turns to the heart-orientation and economic-orientation of the kingdom-citizens against the principalities-administration of the present age (vv.19-34). The chapter is the practical specification of the Pharisaic-counterfeit-righteousness Yahusha (Jesus) named at the head of the Sermon's middle.
 
-*For I say unto you, That except your righteousness shall exceed the righteousness of the scribes and Pharisees, ye shall in no case enter into the kingdom of heaven.* (Matthew 5:20)
-
 Where the six antitheses of Matthew 5:21-48 corrected the oral tradition at six commandment cruxes, Matthew 6 walks three practices the covenant had always commanded and contrasts the Pharisaic display-form with the kingdom-citizens secret-form. The diagnostic structure is identical in each unit: the *to be seen of men* refrain identifies the counterfeit, the *thy Father which seeth in secret* refrain names the kingdom-citizens form, and the Father's reward-economy is the same in each.
 
 ---
 
 ## §1. The display-vs-secret diagnostic — one structure walked across three practices (vv.1-18 frame)
-
-*Take heed that ye do not your alms before men, to be seen of them: otherwise ye have no reward of your Father which is in heaven.* (Matthew 6:1)
 
 The opening verse frames the next seventeen. The Greek *prosechete* — *take heed* — is the watchful imperative; the disciples are to keep watch on the motive that drives the act. The framework reads vv.1-18 as a unified three-part diagnostic. Yahusha (Jesus) names three core practices of covenant-life — alms, prayer, fasting — and walks the same display-vs-secret contrast through each. The pattern is identical in all three units: the Pharisaic-counterfeit form practices the act *to be seen of men* and receives its reward in the seeing; the kingdom-citizens form practices the act *in secret* and the Father who *seeth in secret* rewards openly.
 
@@ -31,8 +27,6 @@ Matthew 5:16's *seen* is the visible-life-of-covenant-faithfulness that glorifie
 The framework reads *the hypocrites* — the Greek *hupokritai,* stage-actors playing roles for an audience — as the Pharisaic-leadership-system Yahusha (Jesus) has been identifying through the Sermon and will indict fully at Matthew 23. The *trumpet* image is hyperbolic — there is no historical evidence of literal trumpet-sounding for alms-giving in first-century Yerushalayim — but the rhetorical force is the visibility-engineering pattern. The Pharisaic-counterfeit form announces alms by whatever means available; the kingdom-citizens form practices alms so quietly that *the left hand* does not know what the right does — an idiom for the practice's freedom from any self-witnessing apparatus, including the disciple's own admiration of his own giving.
 
 The Tanakh-substance behind the practice is dense. Alms-giving is not a New Testament invention; it is a Torah command and a wisdom-tradition lifeway:
-
-*If there be among you a poor man of one of thy brethren within any of thy gates in thy land which Yahuah Elohayka (the LORD thy God) giveth thee, thou shalt not harden thine heart, nor shut thine hand from thy poor brother: But thou shalt open thine hand wide unto him, and shalt surely lend him sufficient for his need, in that which he wanteth.* (Deuteronomy 15:7-8)
 
 *And when ye reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest. And thou shalt not glean thy vineyard, neither shalt thou gather every grape of thy vineyard; thou shalt leave them for the poor and stranger: I am Yahuah Elohaychem (the LORD your God).* (Leviticus 19:9-10)
 
@@ -64,8 +58,6 @@ The framework rules out the misuse of v.6 against public prayer categorically. T
 
 Yahusha (Jesus) himself prayed publicly at the raising of El'azar (Lazarus) and named the public posture explicitly:
 
-*Father, I thank thee that thou hast heard me. And I knew that thou hearest me always: but because of the people which stand by I said it, that they may believe that thou hast sent me.* (John 11:41-42)
-
 The Matthew 6:5-6 prohibition is against performative prayer — prayer engineered for self-display — not against gathered-community prayer. The motive separates the two forms; both are practiced in the kingdom-citizens community. What the closet-prayer establishes is the private foundation; what the gathered prayer extends is the corporate worship of citizens who already pray in secret.
 
 The *for your Father knoweth what things ye have need of, before ye ask him* lock at v.8 frames prayer in the relational register the Lord's Prayer will articulate. Prayer is not the conveying of information the Father lacks; prayer is the kingdom-citizens orientation of the heart toward the Father, the alignment of the citizens' wills with the Father's kingdom, the practice of trust in the Father's foreknowledge and provision. The Tanakh-substance:
@@ -75,8 +67,6 @@ The *for your Father knoweth what things ye have need of, before ye ask him* loc
 The Father knows before the citizens ask. Prayer continues anyway, because prayer is not transactional. The relational-purpose of prayer is the relation itself.
 
 ## §4. The Lord's Prayer — the kingdom-citizens prayer-pattern in seven Tanakh-rooted phrases (vv.9-13)
-
-*After this manner therefore pray ye: Our Father which art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done in earth, as it is in heaven. Give us this day our daily bread. And forgive us our debts, as we forgive our debtors. And lead us not into temptation, but deliver us from evil: For thine is the kingdom, and the power, and the glory, for ever. Amen.* (Matthew 6:9-13)
 
 The framework reads the Lord's Prayer as the kingdom-citizens prayer-pattern, not a rote-recitation magic-formula. *After this manner* — the Greek *houtōs* — *in this way, on this pattern.* Yahusha (Jesus) is teaching the SHAPE of kingdom-citizens prayer; he is not commanding the words be recited verbatim as a religious-practice. The Christian commentary tradition's reduction of the Lord's Prayer to a recitation-formula has often emptied the framework substance; the framework recovers it phrase by phrase.
 
@@ -94,8 +84,6 @@ The kingdom-citizens address the Father in the family-frame the Tanakh has alrea
 
 *Hallowed be thy name* — the Greek *hagiazō,* the verb form of *qadosh,* set apart, sanctified. The framework reads this against the Ezekiel 36 substance that the Tanakh has already attached to the sanctifying-of-the-Name:
 
-*And I will sanctify my great name, which was profaned among the heathen, which ye have profaned in the midst of them; and the heathen shall know that I am Yahuah (the LORD), saith Adonai Yahuah (the Lord GOD), when I shall be sanctified in you before their eyes. For I will take you from among the heathen, and gather you out of all countries, and will bring you into your own land.* (Ezekiel 36:23-24)
-
 The sanctifying-of-the-Name happens THROUGH the gathering of the scattered house. The Name has been profaned in the lands of the scattering — every time the scattered seed of Yashar'el (Israel) failed under judgment among the nations, the Name was profaned, because the nations took the scattering as evidence that the Elohim (God) of the covenant was unable to keep his people. The gathering reverses the profanation. When Yahuah (God) brings the scattered home, the Name is sanctified in the eyes of the nations who watched the scattering. The kingdom-citizens prayer for the sanctification of the Name is the prayer for the gathering. *Hallowed be thy name* is a gathering-prayer.
 
 **Phrase 2 — *Thy kingdom come.*** The eschatological-kingdom prayer. Daniel saw the everlasting kingdom set up at the close of the four world-kingdoms:
@@ -103,8 +91,6 @@ The sanctifying-of-the-Name happens THROUGH the gathering of the scattered house
 *And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.* (Daniel 2:44)
 
 Daniel also saw the kingdom-transfer in the night vision:
-
-*I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him. And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* (Daniel 7:13-14)
 
 The kaph at *like the Son of Adam* in Daniel 7:13 — the Aramaic *kbar enash* — is preserved in the rendering because the kaph is the text's own move. The kaph honors the incarnation: the figure resembled mortal-man because he took on flesh, while remaining the Formed cloud-rider. Read in isolation, the comparative leaves the identification technically open. Read against the rest of the canon harmonized, the figure is Yahusha (Jesus) — v.14's everlasting and indestructible kingdom belongs to him alone; the counterfeit's dominion is never everlasting; the architecture of the vision shows the Ancient of Days as the Father and the *kbar enash* as the Son receiving the everlasting kingdom from him. The kingdom-citizens at Matthew 6:10 pray for the consummation of THIS kingdom — the same kingdom Yahusha (Jesus) refused to short-circuit when the devil offered the kingdoms of the world from the high mountain in the wilderness narrative just behind this Sermon. The kingdom is at hand (Matthew 3:2, 4:17); the citizens pray for its consummation; the timing is the Father's.
 
@@ -136,8 +122,6 @@ The petition is not *do not cause us to be tempted* but *do not lead us into the
 
 *And we know that we are of Elohim (God), and the whole world lieth in wickedness.* (1 John 5:19)
 
-*For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.* (Ephesians 6:12)
-
 The disciples Yahusha (Jesus) called and is now teaching will face the same kind of testing he just faced in the wilderness; the petition is for the Father's protective leading through it.
 
 **Phrase 7 — *For thine is the kingdom, and the power, and the glory, for ever. Amen.*** The doxology. The manuscript evidence varies — some early manuscripts include this clause, others do not — but the framework does not adjudicate the textual question and reads the doxology's substance as Tanakh-anchored in David's prayer at the dedication of the temple-materials:
@@ -149,8 +133,6 @@ The kingdom-citizens close the prayer-pattern with the kingdom-power-glory-etern
 The seven phrases together form the kingdom-citizens prayer pattern: address-the-Father in the family-frame; sanctify-the-Name through the gathering; pray for the kingdom's consummation; pray for the will done on earth as it is in heaven; petition for daily provision in the manna-trust; petition for forgiveness in the forgiveness-economy that conditions its receiving on its extension; petition for protection from the testing and the principalities; close in the doxology that names the kingdom-power-glory-eternity as the Father's. This is the framework-grammar of kingdom-citizens prayer.
 
 ## §5. The forgiveness-economy and the grace that can be forfeited (vv.14-15)
-
-*For if ye forgive men their trespasses, your heavenly Father will also forgive you: But if ye forgive not men their trespasses, neither will your Father forgive your trespasses.* (Matthew 6:14-15)
 
 Yahusha (Jesus) appends a direct elaboration of the *as we forgive our debtors* petition of v.12. The framework reads vv.14-15 as the conditional-forgiveness teaching the Christian commentary tradition has frequently softened by various exegetical maneuvers — *if ye forgive* read as *because ye were forgiven you now show it,* the conditional collapsed into a corollary. The framework reads the verses plainly.
 
@@ -166,11 +148,7 @@ This is the chapter's clearest collapse of the institutional-Christian *once sav
 
 The Tanakh has been teaching the same architecture for centuries. Grace freely given, grace that can be forfeited by the redeemed who turn away from the redeeming hand. Hosea names it directly:
 
-*Woe unto them! for they have fled from me: destruction unto them! because they have transgressed against me: though I have redeemed them, yet they have spoken lies against me.* (Hosea 7:13)
-
 The redeemed who speak lies against the Redeemer forfeit the redemption — Hosea's own phrasing. Ezekiel walks the same pattern explicitly:
-
-*But when the righteous turneth away from his righteousness, and committeth iniquity, and doeth according to all the abominations that the wicked man doeth, shall he live? All his righteousness that he hath done shall not be mentioned: in his trespass that he hath trespassed, and in his sin that he hath sinned, in them shall he die.* (Ezekiel 18:24)
 
 *Therefore thou son of Adam, say unto the children of thy people, The righteousness of the righteous shall not deliver him in the day of his transgression: as for the wickedness of the wicked, he shall not fall thereby in the day that he turneth from his wickedness; neither shall the righteous be able to live for his righteousness in the day that he sinneth. When I shall say to the righteous, that he shall surely live; if he trust to his own righteousness, and commit iniquity, all his righteousnesses shall not be remembered; but for his iniquity that he hath committed, he shall die for it.* (Ezekiel 33:12-13)
 
@@ -220,15 +198,9 @@ The three-part display-vs-secret diagnostic closes at v.18. Alms, prayer, fastin
 
 ## §7. Treasures in heaven — the heart-orientation diagnostic (vv.19-21)
 
-*Lay not up for yourselves treasures upon earth, where moth and rust doth corrupt, and where thieves break through and steal: But lay up for yourselves treasures in heaven, where neither moth nor rust doth corrupt, and where thieves do not break through nor steal: For where your treasure is, there will your heart be also.* (Matthew 6:19-21)
-
 The framework reads the treasures-in-heaven teaching as the continuation of the display-vs-secret diagnostic at the broader economic-orientation level. The Pharisaic-counterfeit-righteousness accumulates visible-credential — religious-display, public-recognition, social-honor — which is *treasure on earth.* The kingdom-citizens-righteousness accumulates *treasure in heaven* — the eschatological-reward the Father stores for the citizens who walk the kingdom in secret. Earth-treasure is vulnerable to moth (the Greek *sēs*), to rust (the Greek *brōsis,* corrosion or eating-away), and to thieves; heaven-treasure is permanent.
 
 The Tanakh's wisdom-stream has named the futility of earth-treasure since the Proverbs were collected:
-
-*Riches profit not in the day of wrath: but righteousness delivereth from death.* (Proverbs 11:4)
-
-*Labour not to be rich: cease from thine own wisdom. Wilt thou set thine eyes upon that which is not? for riches certainly make themselves wings; they fly away as an eagle toward heaven.* (Proverbs 23:4-5)
 
 *Be not thou afraid when one is made rich, when the glory of his house is increased; For when he dieth he shall carry nothing away: his glory shall not descend after him.* (Psalm 49:16-17)
 
@@ -238,25 +210,15 @@ The futility-of-riches psalm and the wisdom-stream's economic teaching had alrea
 
 ## §8. The good-eye / evil-eye Hebrew idiom — generosity vs. stinginess (vv.22-23)
 
-*The light of the body is the eye: if therefore thine eye be single, thy whole body shall be full of light. But if thine eye be evil, thy whole body shall be full of darkness. If therefore the light that is in thee be darkness, how great is that darkness!* (Matthew 6:22-23)
-
 The framework reads vv.22-23 with particular care because the Christian commentary tradition has chronically spiritualized the *single eye / evil eye* contrast into a generic spiritual-vision metaphor — *single eye* read as singleness-of-spiritual-focus, *evil eye* read as misdirected gaze. The framework recovers the Hebrew idiom that the Tanakh and the wisdom-stream have used since the Torah.
 
 In Hebrew, *good of eye* (*tov-ayin*) and *evil of eye* (*ra-ayin*) describe GENEROSITY and STINGINESS — the open-handed heart that gives to the poor and the grasping heart that withholds. The idiom is not exotic; it sits in plain view across four canonical witnesses:
 
-*He that hath a bountiful eye shall be blessed; for he giveth of his bread to the poor.* (Proverbs 22:9)
-
 The Hebrew of *bountiful eye* is *tov-ayin* — literally *good of eye.* The verse explains the idiom directly: the good-eye person is generous; *he giveth of his bread to the poor.*
-
-*Eat thou not the bread of him that hath an evil eye, neither desire thou his dainty meats: For as he thinketh in his heart, so is he: Eat and drink, saith he to thee; but his heart is not with thee.* (Proverbs 23:6-7)
 
 The Hebrew of *evil eye* here is *ra-ayin* — *evil of eye.* The verse explains the idiom directly: the evil-eye person is stingy; the heart is grasping; the hospitality is performative-but-not-substantive. The evil-eye host offers food while begrudging it; the eating is unblessed because the heart is closed.
 
-*Beware that there be not a thought in thy wicked heart, saying, The seventh year, the year of release, is at hand; and thine eye be evil against thy poor brother, and thou givest him nought; and he cry unto Yahuah (the LORD) against thee, and it be sin unto thee.* (Deuteronomy 15:9)
-
 The Torah's own use of the evil-eye idiom — *thine eye be evil against thy poor brother* — naming the stinginess-toward-the-poor that the Torah forbids in the year-of-release context. The Tanakh idiom is in the Torah itself.
-
-*He that hasteth to be rich hath an evil eye, and considereth not that poverty shall come upon him.* (Proverbs 28:22)
 
 A fourth wisdom-stream witness: hastening-to-be-rich produces evil-eye stinginess as a heart-condition.
 
@@ -268,15 +230,11 @@ The *how great is that darkness!* lamentation at v.23 closes the unit. The frame
 
 ## §9. Mammon as principality — the forced choice (v.24)
 
-*No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon.* (Matthew 6:24)
-
 The Mammon-or-Elohim binary closes the economic-orientation block. The framework reads the Aramaic *mamona* — untranslated by Matthew, deliberately so — because the term names the personified-power of wealth, not just the wealth itself. *Mammon* is treated as a master, a competing lord. The disciple either serves Elohim (God) or serves Mammon; the two are mutually exclusive.
 
 The framework reads Mammon against the principalities-of-this-age architecture that the apostolic writings name. The kingdoms of the present age stand under a temporary delegation that came down with the watcher-rebellion the Tanakh and the restored library both describe — the powers that fell with the Watchers, the *gods of the nations* assigned to the seventy peoples and the seventy shepherds who corrupted their charge, the *principalities* and *powers* and *rulers of the darkness of this world* Paul names. Mammon is one of the systemic powers in that administration — wealth treated as the organizing-power of life. When the devil offered Yahusha (Jesus) the kingdoms-and-the-glory-of-them on the high mountain of Matthew 4:8-10 in exchange for worship, the trade was the same trade Mammon offers every disciple in another register — wealth-as-master in exchange for whole-heart-allegiance. The disciple cannot serve both.
 
 The Tanakh-stream is consistent. The first commandment rules out competing masters categorically:
-
-*Thou shalt have no other gods before me.* (Exodus 20:3)
 
 The Shema's whole-heart standard makes the dual-allegiance impossible:
 
@@ -284,11 +242,7 @@ The Shema's whole-heart standard makes the dual-allegiance impossible:
 
 Eliyahu (Elijah) at Mount Carmel named the same forced-choice in the form the prophets used to name idolatry:
 
-*And Eliyahu (Elijah) came unto all the people, and said, How long halt ye between two opinions? if Yahuah (the LORD) be Elohim (God), follow him: but if Baal, then follow him. And the people answered him not a word.* (1 Kings 18:21)
-
 Matthew 6:24 is the Carmel-confrontation in the disciple's own economic life. The kingdom-citizens cannot serve both Yahuah (God) and the principality the Aramaic names *Mammon.* The apostolic naming of the structure lands the same architecture at Ephesians:
-
-*For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.* (Ephesians 6:12)
 
 And the apostolic naming of the love-of-money as the root from which the evil flows lands at Paul's first letter to Timothy:
 

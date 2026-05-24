@@ -6,8 +6,6 @@ Matthew 5 opens the Sermon on the Mount — the King ascending the mountain, the
 
 ## §1. The mountain — the second-Sinai motif, the heart-Torah in the King's own voice
 
-*And seeing the multitudes, he went up into a mountain: and when he was set, his disciples came unto him: And he opened his mouth, and taught them.* (Matthew 5:1-2)
-
 The framework reads the setting deliberately. The mountain is not incidental scenery. Mosheh (Moses) ascended a mountain to receive Torah from Yahuah (the LORD) and brought it DOWN to the people at the base. Matthew 5 inverts the spatial frame: the Messiah goes UP, and the people come up *to him.* The teacher does not descend with a tablet — the teacher SITS, the rabbinic posture of teaching with authority, and the disciples draw near. The Torah is now spoken in the King's own voice, from the mountain, to those gathering to hear.
 
 The framework reading hears this as the second-Sinai motif Matthew has been preparing since chapter 2. Yahusha (Jesus) recapitulates Yashar'el (Israel) in his own body — the Egypt-sojourn of chapter 2, the Yarden (Jordan) immersion of chapter 3, the wilderness testing of chapter 4 — and now arrives at the mountain. But this is not a repetition of Sinai. This is its continuation by the same Voice. Per the Formless-Formed reading established at the *Immanuel — Elohim (God) with us* of Matthew 1:23 and the immersion-voice of Matthew 3:17, the Yahuah who spoke at the burning bush, who descended on Sinai in fire, who spoke the ten words to Mosheh, is the Formed — the Son drawn from the Formless — who has now taken flesh and stands on the mountain teaching. The same Voice. The same Torah. The intensification is in the unveiling of the heart-Torah the Sinai-Torah always carried in its substance.
@@ -24,21 +22,15 @@ The framework reading lifts the mountain-and-multitude composition as deliberate
 
 *Blessed are the poor in spirit: for theirs is the kingdom of heaven. Blessed are they that mourn: for they shall be comforted. Blessed are the meek: for they shall inherit the earth. Blessed are they which do hunger and thirst after righteousness: for they shall be filled. Blessed are the merciful: for they shall obtain mercy. Blessed are the pure in heart: for they shall see Elohim (God). Blessed are the peacemakers: for they shall be called the children of Elohim (God). Blessed are they which are persecuted for righteousness' sake: for theirs is the kingdom of heaven. Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely, for my sake. Rejoice, and be exceeding glad: for great is your reward in heaven: for so persecuted they the prophets which were before you.* (Matthew 5:3-12)
 
-The Christian commentary tradition has often read the Beatitudes as a how-to roster — a graduated ladder of dispositions one must achieve to attain the kingdom. The framework rejects that reading. The Beatitudes are a description of the citizens of the kingdom *already* — a roster of the postures by which the gathered remnant can be identified. Each Beatitude names a prophetic-remnant marker the Tanakh has already established. Yahusha (Jesus) is not telling the disciples *become these things to enter the kingdom;* he is naming them as those who *are* these things because the Father has drawn them.
-
 This matters for the framework's audience-identification posture. The Beatitudes are how the lost sheep recognize themselves. They read the list and find their own posture named. They are gathered because they ARE these things, not made these things by gathering. The cause-and-effect reversal the canon teaches — *if you hear, you are sons of Avraham (Abraham); hearing reveals, hearing does not make* — applies to the Beatitudes too. The poor in spirit hear *theirs is the kingdom of heaven* and know themselves named.
 
 **Poor in spirit (verse 3).** The *anawim* of the Tanakh — the broken, the contrite, the destitute-in-self.
-
-*For thus saith the high and lofty One that inhabiteth eternity, whose name is Holy; I dwell in the high and holy place, with him also that is of a contrite and humble spirit, to revive the spirit of the humble, and to revive the heart of the contrite ones.* (Isaiah 57:15)
 
 *For all those things hath mine hand made, and all those things have been, saith Yahuah (the LORD): but to this man will I look, even to him that is poor and of a contrite spirit, and trembleth at my word.* (Isaiah 66:2)
 
 The poor in spirit is the one whose self-trust has emptied; the kingdom belongs to such because such are the only ones who can receive the kingdom on the kingdom's terms. The Pharisaic-Sadducean righteousness-credential at Matthew 3:9 — *we have Avraham (Abraham) to our father* — is the OPPOSITE posture: full of credential, empty of contrition. The kingdom is for the empty.
 
 **Mourn (verse 4).** The framework reads this through Ezekiel 9 directly.
-
-*And Yahuah (the LORD) said unto him, Go through the midst of the city, through the midst of Yerushalayim (Jerusalem), and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof.* (Ezekiel 9:4)
 
 The mourners are those whose hearts have been broken by the abominations in the holy city — those who weep over what the system has become, who carry the prophetic sorrow that the leadership-pulpit has voided the heart-Torah. They are MARKED for preservation through the day of judgment. The comfort they shall receive is Yeshayahu (Isaiah)'s comfort to all that mourn in Tsion (Zion).
 
@@ -47,8 +39,6 @@ The mourners are those whose hearts have been broken by the abominations in the 
 The mourners are the gathered remnant of the prophetic-cry posture. This is also the Beatitude that closes the door on Christian sentimentalism that reads *blessed are they that mourn* as a generic-grief-comfort. The mourning Yahusha names is the prophetic mourning over abominations — the same mourning that brings the Ezekiel-9 mark.
 
 **Meek (verse 5).** Yahusha quotes Psalm 37 directly.
-
-*But the meek shall inherit the earth; and shall delight themselves in the abundance of peace.* (Psalm 37:11)
 
 The Hebrew is *anavim* — close cousin of *anawim* — the humble, the bowed, the unviolent-in-strength. Psalm 37 is the framework Tanakh-context: the meek inherit the LAND (*ha-arets* in the Hebrew, *gēn* in the LXX), and the wicked are cut off from the land in the same psalm.
 
@@ -76,8 +66,6 @@ The merciful shall obtain mercy — the law of measure-for-measure the Tanakh re
 
 **Pure in heart (verse 8).** This is the heart-Torah Beatitude — the direct echo of the new-heart promises of Yirmeyahu (Jeremiah) 31:33 and Yechezk'el (Ezekiel).
 
-*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:26-27)
-
 The pure-in-heart shall SEE Elohim (God) — the unique covenantal vision-promise. *No man hath seen Elohim (God) at any time* (John 1:18) of the Father, the Formless; the pure-in-heart see the Formed — the Son who is the visible image of the Formless — and through him know the Father. This is the gathered-remnant promise lived out: the new-heart citizens of the kingdom see the King. Psalm 24 names the Tanakh-anchor of the pure-heart ascent.
 
 *Who shall ascend into the hill of Yahuah (the LORD)? or who shall stand in his holy place? He that hath clean hands, and a pure heart; who hath not lifted up his soul unto vanity, nor sworn deceitfully.* (Psalm 24:3-4)
@@ -100,8 +88,6 @@ The framework reads the salt-and-light naming in two registers. First, the immed
 
 Salt in the Tanakh carries the covenant-preservation register.
 
-*And every oblation of thy meat offering shalt thou season with salt; neither shalt thou suffer the salt of the covenant of thy Elohim (God) to be lacking from thy meat offering: with all thine offerings thou shalt offer salt.* (Leviticus 2:13)
-
 *All the heave offerings of the holy things, which the children of Yashar'el (Israel) offer unto Yahuah (the LORD), have I given thee, and thy sons and thy daughters with thee, by a statute for ever: it is a covenant of salt for ever before Yahuah (the LORD) unto thee and to thy seed with thee.* (Numbers 18:19)
 
 *Ought ye not to know that Yahuah (the LORD) Elohim (God) of Yashar'el (Israel) gave the kingdom over Yashar'el (Israel) to David for ever, even to him and to his sons by a covenant of salt?* (2 Chronicles 13:5)
@@ -109,8 +95,6 @@ Salt in the Tanakh carries the covenant-preservation register.
 Salt is the preserving-of-covenant substance. The disciples are salt of the earth because they preserve the covenant in the earth — the heart-Torah, the prophetic witness, the Sabbath, the feasts, the names. The system that voids the heart-Torah is the salt that has lost its savour and is cast out. The framework reads the loss-of-savour warning as direct — the leadership-pulpit that voids the commandments has lost the preserving function.
 
 Light in the Tanakh carries the revealing-and-instructing register, particularly in the gathering-of-Yashar'el frame of Yeshayahu.
-
-*And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Ya'aqov (Jacob), and to restore the preserved of Yashar'el (Israel): I will also give thee for a light to the goyim (Gentiles), that thou mayest be my salvation unto the end of the earth.* (Isaiah 49:6)
 
 The framework reads this carefully. The servant is the light to the goyim — and the goyim, in Yeshayahu 49's frame, are the lands of the scattering where the seed of Yashar'el has been dispersed; verse 6 follows verse 5's *bring Ya'aqov (Jacob) again to him* and *gather Yashar'el (Israel) to him* — the gathering of Yashar'el is the FIRST mission; the light to the goyim is the SECOND mission. The servant illuminates; the light reaches the lost sheep in the lands of their scattering; the gathered remnant carries the light onward. The Christian commentary that flattens Yeshayahu 49:6 into a generic Gentile-inclusion proof-text misses the gathering-substance the prophet is naming. The framework recovers it.
 
@@ -126,8 +110,6 @@ The visible city is the eschatological gathering-place; the disciples on the sec
 
 ## §4. *Think not that I am come to destroy the law* — the load-bearing anti-antinomian declaration
 
-*Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil. For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled. Whosoever therefore shall break one of these least commandments, and shall teach men so, shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven.* (Matthew 5:17-19)
-
 These three verses are the load-bearing centerpiece of Matthew 5 for the framework. The institutional-Christian system that voids the commandments has either ignored these verses entirely or developed elaborate exegesis to neutralize them. The framework reads the verses plainly.
 
 **Verse 17 — *Think not that I am come to destroy.*** Yahusha opens with a PREEMPTIVE denial. *Think not* — *me nomisēte* — *do not even suppose.* He knows the misreading is coming. He is teaching the heart-Torah at a depth no one before him has unfolded, and he knows that some will read his teaching as an attack on the written Torah. So he closes the door before the door can be opened.
@@ -139,8 +121,6 @@ These three verses are the load-bearing centerpiece of Matthew 5 for the framewo
 *Yahuah (the LORD) is well pleased for his righteousness' sake; he will magnify the law, and make it honourable.* (Isaiah 42:21)
 
 The framework reading turns this verse on its plain meaning: the very Torah that the institutional-Christian leadership-pulpit has taught is *abolished, replaced, fulfilled-and-thereby-ended* is the Torah Yahusha said he came NOT to destroy. The horn's pulpit has spoken precisely the opposite of the King's opening declaration. The contrary-to-Torah test of John's first letter applies the moment the antinomian reading enters: the system that voids the commandments cannot know him.
-
-*And hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him.* (1 John 2:3-4)
 
 **Verse 18 — *Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law.*** The eschatological terminus is the dissolution of the present heavens and earth — the consummation.
 
@@ -177,8 +157,6 @@ Ya'aqov (James) names the same standing-of-the-Torah on the apostolic side.
 Matthew 5:19 is the New Testament companion of John's first letter. Both verses say the same thing in different grammar: keeping the commandments — and teaching others to keep them — is the proof of knowing him.
 
 ## §5. *Except your righteousness exceed* — the Pharisaic-righteousness contrast
-
-*For I say unto you, That except your righteousness shall exceed the righteousness of the scribes and Pharisees, ye shall in no wise enter into the kingdom of heaven.* (Matthew 5:20)
 
 Verse 20 is the bridge-verse from the load-bearing anti-antinomian declaration of verses 17 through 19 to the six antitheses of verses 21 through 48. The framework reading hears the verse precisely.
 
@@ -300,11 +278,7 @@ The framework reads this antithesis with special care because it surfaces the mo
 
 The Torah's actual command was love-of-neighbor AND love-of-stranger.
 
-*But the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt: I am Yahuah Elohaychem (the LORD your God).* (Leviticus 19:34)
-
 The Torah also commanded positive-action toward the enemy.
-
-*If thou meet thine enemy's ox or his ass going astray, thou shalt surely bring it back to him again. If thou see the ass of him that hateth thee lying under his burden, and wouldest forbear to help him, thou shalt surely help with him.* (Exodus 23:4-5)
 
 *If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink: For thou shalt heap coals of fire upon his head, and Yahuah (the LORD) shall reward thee.* (Proverbs 25:21-22)
 
@@ -316,13 +290,7 @@ The *hate thine enemy* clause is the addition-violation; the truncations of anti
 
 The framework reading also rules out the Christian-pacifist misuse of this antithesis, paralleling the same misuse on antithesis 5. The personal-disciple ethic is love-of-enemy; the judicial-Torah is preserved; the eschatological-judgment of Yahuah against the abominations of the counterfeit-system is preserved. He brings desolation on the false-system for her abominations at the day; he stands on the Mount of Olives to war with all the nations who gather against Yerushalayim. The disciple loves the personal enemy and does not personally administer judgment; Yahuah administers eschatological judgment on the systems and the principalities in his timing.
 
-*Be ye therefore perfect, even as your Father which is in heaven is perfect.* (Matthew 5:48)
-
 The six antitheses close with the heart-Torah climax. *Perfect* — *teleios* — is the Greek translation of the Hebrew *tamim,* which in the Tanakh means *whole, complete, blameless.*
-
-*And when Avram (Abram) was ninety years old and nine, Yahuah (the LORD) appeared to Avram (Abram), and said unto him, I am El Shaddai (the Almighty God); walk before me, and be thou perfect.* (Genesis 17:1)
-
-*Thou shalt be perfect with Yahuah Elohayka (the LORD thy God).* (Deuteronomy 18:13)
 
 The Beatitudes' *pure in heart* finds its completion at verse 48. The heart-Torah Yahusha has just unfolded across six antitheses calls the disciple to whole-hearted *tamim*-walk before the Father — the same standard the Torah has always named. Kefa (Peter) names the same Tanakh-pattern on the apostolic side.
 

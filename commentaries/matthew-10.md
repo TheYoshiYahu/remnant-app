@@ -6,21 +6,13 @@ Matthew 10 is the commissioning of the twelve, falling in the gospel-arc exactly
 
 ## §1. The twelve named — twelve apostles for twelve tribes, the gathering-architecture made flesh
 
-*And when he had called unto him his twelve disciples, he gave them power against unclean spirits, to cast them out, and to heal all manner of sickness and all manner of disease. Now the names of the twelve apostles are these; The first, Shim'on (Simon), who is called Kefa (Peter), and Andreas (Andrew) his brother; Ya'aqov (James) the son of Zavdai (Zebedee), and Yochanan (John) his brother; Philippos (Philip), and Bar-Talmai (Bartholomew); Toma (Thomas), and Mattityahu (Matthew) the publican; Ya'aqov (James) the son of Halphai (Alphaeus), and Lebbaios (Lebbaeus), whose surname was Taddai (Thaddaeus); Shim'on (Simon) the Canaanite, and Yahudah (Judah) Iscariot, who also betrayed him.* (Matthew 10:1-4)
-
 The number is the architecture. Yahusha (Jesus) appoints TWELVE apostles. The twelve will sit on twelve thrones judging the twelve tribes of Yashar'el (Israel) at the consummation:
-
-*And Yahusha (Jesus) said unto them, Verily I say unto you, That ye which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel).* (Matthew 19:28)
 
 The same throne-promise lands again at the last supper:
 
 *That ye may eat and drink at my table in my kingdom, and sit on thrones judging the twelve tribes of Yashar'el (Israel).* (Luke 22:30)
 
 And the new-Yerushalayim (Jerusalem) carries the same architecture into the consummation — the twelve apostolic-names on the wall's foundations and the twelve tribal-names on the gates:
-
-*And the wall of the city had twelve foundations, and in them the names of the twelve apostles of the Lamb.* (Revelation 21:14)
-
-*And had a wall great and high, and had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar'el (Israel).* (Revelation 21:12)
 
 The sealed firstfruits of the gathering are numbered the same way — twelve thousand from each of the twelve tribes by name:
 
@@ -43,8 +35,6 @@ The combination of Mattityahu the Roman-tribute-collaborator AND Shim'on (Simon)
 
 ## §2. The mission-scope crux — *Go rather to the lost sheep of the house of Yashar'el (Israel)*
 
-*These twelve Yahusha (Jesus) sent forth, and commanded them, saying, Go not into the way of the Gentiles, and into any city of the Samaritans enter ye not: But go rather to the lost sheep of the house of Yashar'el (Israel).* (Matthew 10:5-6)
-
 **This is the most load-bearing scope-statement in the gospel for the gathering-of-the-scattered-seed thesis.** The verse is the direct-and-explicit textual-anchor for the kingdom-mission's audience: the scattered seed, the lost sheep of the house of Yashar'el (Israel), the people the prophets named.
 
 **The mission-scope is positive AND negative — three clauses with two exclusions.** Yahusha (Jesus) does not merely say *go to the lost sheep.* He brackets the positive scope between two explicit exclusions. *Go NOT into the way of the Gentiles.* *Into any city of the Samaritans enter ye not.* *BUT go rather to the lost sheep of the house of Yashar'el (Israel).* The exclusions are explicit; the scope-statement cannot be softened.
@@ -57,29 +47,17 @@ The combination of Mattityahu the Roman-tribute-collaborator AND Shim'on (Simon)
 
 The *house of Yashar'el (Israel)* in the Tanakh-prophetic vocabulary is the technical-term for the northern kingdom — the ten tribes scattered by the Assyrian captivity in 722 BCE. The two-house formulation stands at Yirmeyahu (Jeremiah) 31:
 
-*Behold, the days come, saith Yahuah (the LORD), that I will make a new covenant with the house of Yashar'el (Israel), and with the house of Yahudah (Judah).* (Jeremiah 31:31)
-
 The *house of Yashar'el (Israel)* and the *house of Yahudah (Judah)* are two distinct entities. The *house of Yashar'el (Israel)* names the northern kingdom; the *house of Yahudah (Judah)* names the southern kingdom — Yahudah (Judah) and the portions of Levi and Binyamin (Benjamin) that remained, deported to Babylon and partially returned under Zerubavel (Zerubbabel), Ezra, and Nechemyah (Nehemiah). Both houses are scattered in different waves; both are named in the new-covenant promise; both are the scope of the gathering.
 
 The Tanakh-anchor of the seeking-shepherd substance stands at Yechezk'el (Ezekiel) 34, and Yahusha (Jesus) was already drawing on this chapter at Matthew 9:36 when he saw the multitudes *as sheep having no shepherd:*
-
-*For thus saith Adonai Yahuah (the Lord GOD); Behold, I, even I, will both search my sheep, and seek them out. As a shepherd seeketh out his flock in the day that he is among his sheep that are scattered; so will I seek out my sheep, and will deliver them out of all places where they have been scattered in the cloudy and dark day. And I will bring them out from the people, and gather them from the countries, and will bring them to their own land, and feed them upon the mountains of Yashar'el (Israel) by the rivers, and in all the inhabited places of the country.* (Ezekiel 34:11-13)
-
-Yirmeyahu (Jeremiah) had named the lost-sheep condition explicitly:
-
-*My people hath been lost sheep: their shepherds have caused them to go astray, they have turned them away on the mountains: they have gone from mountain to hill, they have forgotten their restingplace.* (Jeremiah 50:6)
 
 And Hoshea (Hosea) had named the *Lo-Ammi* (Not-my-people) disowning-judgment in the same chapter where he named the immediate-reversal-promise:
 
 *Then said Elohim (God), Call his name Lo-Ammi: for ye are not my people, and I will not be your Elohim (God).* (Hosea 1:9)
 
-*Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God). Then shall the children of Yahudah (Judah) and the children of Yashar'el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel.* (Hosea 1:10-11)
-
 The *lost sheep of the house of Yashar'el (Israel)* at Matthew 10:6 are the *Lo-Ammi* of Hosea 1 — the scattered northern house Yahuah (the LORD) had divorced and is now gathering home. Paul will quote this same Hosea 1:10 reversal-promise at Romans 9:25-26 when he names Yahuah's (the LORD's) mercy-act in calling those who were not his people his people again. The seed-of-the-prophets' gathering-promise is what the Matthew 10 mission scope sends the twelve to enact.
 
 **The King's own scope-statement at Matthew 15:24.** Yahusha (Jesus) will himself state the same scope to the Canaanite woman in Hellenistic territory two chapters past Matthew 14:
-
-*But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).* (Matthew 15:24)
 
 The disciples' Matthew 10 commission scope is IDENTICAL to the King's own self-stated scope. The framework reads the consistency as deliberate. The King's mission-scope and the commissioned-twelve's mission-scope are one. The gathering is for the scattered seed. The Canaanite-woman pericope at Matthew 15 will be the test-case for whether the scope extends. Her *Son of David, have mercy on me* (Matthew 15:22) is recognized by the King because the recognition is itself the hearing-pattern that reveals her lineage — she is descended from scattered-seed lineage that the mixed-Hellenistic-Phoenician geographic context obscured, not a generic-pagan-with-faith. The Matthew 10:5-6 scope holds; Matthew 15:24 confirms it; the Canaanite woman's recognition is not a counter-example but a confirmation that the gathering is reaching the scattered seed where the geographic context had been hiding them.
 
@@ -95,19 +73,11 @@ The framework's posture is clear: Matthew 10:5-6 is the kingdom-mission's struct
 
 ## §3. The kingdom-substance freely given — *freely ye have received, freely give*
 
-*And as ye go, preach, saying, The kingdom of heaven is at hand. Heal the sick, cleanse the lepers, raise the dead, cast out devils: freely ye have received, freely give.* (Matthew 10:7-8)
-
 **The proclamation-content unchanged.** *The kingdom of heaven is at hand* is verbally-identical to Yochanan's (John) the Immerser's message at Matthew 3:2 and Yahusha's (Jesus's) own at Matthew 4:17 — *From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand.* The proclamation does not change because the disciples are now its bearers. They continue the same proclamation in unbroken-continuity. The kingdom-substance the King has been bringing is the kingdom-substance the disciples now carry.
 
 **The four-fold credentialing.** *Heal the sick, cleanse the lepers, raise the dead, cast out devils.* The signs that authenticated the King's ministry across Matthew 8-9 are now authorized for the apostles — the leper at 8:1-4, the paralytic at 9:1-8, the raising of Yair's daughter at 9:18-26, and the casting out of demons at 8:28-34 and 9:32-34. The framework reads this as the apostolic-extension of the Yeshayahu (Isaiah) 35 Messianic-credential:
 
-*Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped. Then shall the lame man leap as an hart, and the tongue of the dumb sing: for in the wilderness shall waters break out, and streams in the desert.* (Isaiah 35:5-6)
-
 Yahusha (Jesus) will himself cite the same prophetic-credential when Yochanan (John) the Immerser sends from prison to ask whether he is the one:
-
-*Yahusha (Jesus) answered and said unto them, Go and shew Yochanan (John) again those things which ye do hear and see: The blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, the dead are raised up, and the poor have the gospel preached to them.* (Matthew 11:4-5)
-
-The credential is consistent across the King's ministry and the apostles' mission. The Isaiah 35 signature authenticates both.
 
 **The *freely ye have received, freely give* economy.** The kingdom-economy is the inverse of the watcher-rebellion-administration's economy that frames the Mammon-or-Elohim binary Yahusha (Jesus) had taught at the Sermon:
 
@@ -151,8 +121,6 @@ The same pattern Yahusha (Jesus) had already taught at the Sermon on the Mount, 
 
 The Gergesene townspeople of Matthew 8:34, who asked the King to leave because of the swine-loss, modeled the response Matthew 10:14 codifies. Acts will record the apostolic-application directly. Paul and Bar-Naba (Barnabas) at Antioch in Pisidia apply the principle exactly as Yahusha (Jesus) commissioned it:
 
-*But they shook off the dust of their feet against them, and came unto Iconium.* (Acts 13:51)
-
 Paul will reach for the same disposition at Corinth when the synagogue-leadership rejects the message:
 
 *And when they opposed themselves, and blasphemed, he shook his raiment, and said unto them, Your blood be upon your own heads; I am clean: from henceforth I will go unto the Gentiles.* (Acts 18:6)
@@ -183,11 +151,7 @@ The Sodom-and-Gomorrah destruction the comparison references is the Bereshit (Ge
 
 ## §5. *Sheep in the midst of wolves* and the persecution-expectation
 
-*Behold, I send you forth as sheep in the midst of wolves: be ye therefore wise as serpents, and harmless as doves.* (Matthew 10:16)
-
 **The *wolves* of Yechezk'el (Ezekiel) 22.** The framework reads the *wolves* against Yechezk'el (Ezekiel) 22:27, where the prophet names the predatory-leadership of contemporary Yashar'el (Israel) by the same image:
-
-*Her princes in the midst thereof are like wolves ravening the prey, to shed blood, and to destroy souls, to get dishonest gain.* (Ezekiel 22:27)
 
 The wolves Yahusha (Jesus) names are the same wolves Yechezk'el (Ezekiel) had named — the institutional-leadership-system that consumes the flock it should feed. Yechezk'el (Ezekiel) 34's false-shepherds and Yechezk'el (Ezekiel) 22's wolves-princes name the same diagnostic from two angles. The disciples move as sheep in the midst of that predatory-system, recognizable to the wolves as wheat-to-be-devoured.
 
@@ -201,39 +165,23 @@ The serpent in the garden used shrewdness against Chavah (Eve) — *Yea, hath El
 
 The *harmless as doves* draws on the Bereshit (Genesis) 8 dove of new-creation after the flood and on the Matthew 3:16 dove of the Ruach (Spirit) descending at the King's own immersion:
 
-*And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noach (Noah) knew that the waters were abated from off the earth.* (Genesis 8:11)
-
-*And Yahusha (Jesus), when he was baptized, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Ruach (Spirit) of Elohim (God) descending like a dove, and lighting upon him.* (Matthew 3:16)
-
 The dove is the messenger of new-creation after judgment AND the form-and-substance of the Ruach (Spirit) at the King's commissioning. The disciples carry the dove-substance of the Ruach with the serpent-shrewdness of practical wisdom — both together, neither alone. The Spirit-led life is not naïve; the practical-wisdom is not Spirit-less.
 
 **The persecution-expectation extended.** Yahusha (Jesus) lays out the persecution-disclosure stretching beyond the immediate Matthew 10 mission into the apostolic-age and the broader present-age:
-
-*But beware of men: for they will deliver you up to the councils, and they will scourge you in their synagogues; And ye shall be brought before governors and kings for my sake, for a testimony against them and the Gentiles. But when they deliver you up, take no thought how or what ye shall speak: for it shall be given you in that same hour what ye shall speak. For it is not ye that speak, but the Spirit of your Father which speaketh in you. And the brother shall deliver up the brother to death, and the father the child: and the children shall rise up against their parents, and cause them to be put to death. And ye shall be hated of all men for my name's sake: but he that endureth to the end shall be saved.* (Matthew 10:17-22)
 
 The disclosure is comprehensive: the judicial-prosecution before councils (the Sanhedrin and the local *synedria*), the physical-persecution in the gathering-places of the contemporary religious-community, the imperial-and-civil-authority appearances, the Ruach-supplied words in the persecution-encounter, the family-betrayal-pattern, and the perseverance-and-saving frame at v.22.
 
 **The *endure to the end shall be saved* perseverance-and-grace-that-can-be-lost frame.** The framework reads v.22 as a load-bearing prooftext for the perseverance-architecture the King teaches and the apostolic letters confirm. The saving-disposition is the enduring-disposition. Yahusha (Jesus) will repeat the same language in the Olivet-discourse:
 
-*And because iniquity shall abound, the love of many shall wax cold. But he that shall endure unto the end, the same shall be saved.* (Matthew 24:12-13)
-
 The apostolic letters carry the architecture forward:
-
-*For ye have need of patience, that, after ye have done the will of Elohim (God), ye might receive the promise. ... Now the just shall live by faith: but if any man draw back, my soul shall have no pleasure in him. But we are not of them who draw back unto perdition; but of them that believe to the saving of the soul.* (Hebrews 10:36-39)
-
-*If we deny him, he also will deny us.* (2 Timothy 2:12)
 
 The institutional-Christian *once saved, always saved* doctrine flattens the perseverance-architecture the King himself lays down at Matthew 10:22 and 24:13. The grace can be lost. The faith can grow cold. The drawing-back is named as drawing-back-unto-perdition. The Reformation grammar that truncates the gospel sentence — *saved by grace through faith,* full stop — becomes the antichrist-gospel in covenant-clothing when it stands alone. The complete sentence runs: saved by grace through faith FOR the purpose of return to him and his ways, with the door home and the operative consequence-system standing together as one motion of one love. The cross is the door home; the cross is not the cancellation of the curse-system. Sin still leads to death. Walking-out is still possible. The enduring-to-the-end is the credentialing-disposition.
 
 **The *till the Son of Adam be come* present-age mission-tense.**
 
-*But when they persecute you in this city, flee ye into another: for verily I say unto you, Ye shall not have gone over the cities of Yashar'el (Israel), till the Son of Adam be come.* (Matthew 10:23)
-
 The framework reads the verse with particular care. The Christian commentary tradition has produced multiple readings — preterist (the *coming* as the 70 AD destruction of Yerushalayim/Jerusalem); dispensationalist (the *coming* as a future second-coming with an unfinished mission-to-Israel-at-the-end); various amillennial compositions. The framework reads the verse in continuity with the canon's eschatological architecture.
 
 The *coming of the Son of Adam* is the future-coming-in-glory at the consummation — the figure of Daniel 7:13-14 to whom dominion is given:
-
-*I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him. And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* (Daniel 7:13-14)
 
 The kaph-comparative — *one like the Son of Adam* — preserves the resemblance (he became flesh) and the named Standard (he remains the Formed) in view at the same time. When scripture harmonizes with itself, the figure of Daniel 7:13-14 is Yahusha (Jesus) himself — the Formed cloud-rider, the One who rides Yahuah's (the LORD's) clouds, who took on flesh and remains who he was, is, and is to come. The v.14 everlasting kingdom belongs to him; the counterfeit's dominion is never everlasting.
 
@@ -242,8 +190,6 @@ The 70 AD destruction was a judgment within history pointing forward to the day,
 The *cities of Yashar'el (Israel)* in the extended-reading includes both the literal-cities-of-the-contemporary-land AND the cities-of-the-dispersion where the scattered seed live. The mission-scope is one-and-the-same from Matthew 10:5-6 to Matthew 28:19 to the present age — the scope is the scattered seed; the territory expands with the dispersion's reach. The kingdom-gospel's present-age-tense is *not yet*. The gathering is ongoing.
 
 ## §6. The disciple-as-master-extended and the Beelzebul-attribution carrying into the household
-
-*The disciple is not above his master, nor the servant above his lord. It is enough for the disciple that he be as his master, and the servant as his lord. If they have called the master of the house Beelzebub, how much more shall they call them of his household?* (Matthew 10:24-25)
 
 The framework reads the disciple-as-master-extended principle as the kingdom-citizens' identification-with-the-King. The persecution-the-disciples-receive is the persecution-the-King-receives; the slander-of-the-King is the slander-of-the-disciples. There is no kingdom-citizenship that bypasses the King's own treatment.
 
@@ -277,13 +223,9 @@ The framework reads this verse with careful Tanakh-and-Apocrypha eschatological-
 
 *And he defiled Topheth, which is in the valley of the children of Hinnom, that no man might make his son or his daughter to pass through the fire to Molech.* (2 Kings 23:10)
 
-*And they have built the high places of Topheth, which is in the valley of the son of Hinnom, to burn their sons and their daughters in the fire; which I commanded them not, neither came it into my heart. Therefore, behold, the days come, saith Yahuah (the LORD), that it shall no more be called Topheth, nor the valley of the son of Hinnom, but the valley of slaughter: for they shall bury in Topheth, till there be no place.* (Jeremiah 7:31-32)
-
 *Thus saith Yahuah (the LORD), Go and get a potter's earthen bottle, and take of the ancients of the people, and of the ancients of the priests; And go forth unto the valley of the son of Hinnom, which is by the entry of the east gate, and proclaim there the words that I shall tell thee.* (Jeremiah 19:1-2)
 
 And the Tanakh's closing-image of the eschatological-aftermath stands at Yeshayahu (Isaiah) 66:
-
-*And they shall go forth, and look upon the carcases of the men that have transgressed against me: for their worm shall not die, neither shall their fire be quenched; and they shall be an abhorring unto all flesh.* (Isaiah 66:24)
 
 The framework reads Yahusha's (Jesus's) gehenna-language in its native-Tanakh-substance. The Christian commentary tradition has frequently translated the verse into the eternal-conscious-torment doctrine, but the framework reads the verse in continuity with the Tanakh's substance: the judgment includes both soul-and-body destruction (*apolesai* — to destroy / kill / lose), in the eschatological-location named by the prophets. The destruction-of-both-soul-and-body is the second-death of the Revelation:
 
@@ -301,8 +243,6 @@ The framework reads the Father's-care-for-the-disciples as the inverse-balance t
 
 ## §8. *Whosoever shall confess me before men* — the confession-credentialing pattern
 
-*Whosoever therefore shall confess me before men, him will I confess also before my Father which is in heaven. But whosoever shall deny me before men, him will I also deny before my Father which is in heaven.* (Matthew 10:32-33)
-
 The framework reads vv.32-33 as the confession-credentialing-pattern that ties back into the diagnostic-architecture of the Sermon's close. The Christian commentary tradition has often weaponized the verse as a confession-as-credential-alone proof-text — *just say you confess Jesus and you are in.* The framework reads the verse against Matthew 7:21-23's standing diagnostic:
 
 *Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven. Many will say to me in that day, Lord, Lord, have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works? And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.* (Matthew 7:21-23)
@@ -317,19 +257,13 @@ The disciple who lives-the-confession in the present age — under the persecuti
 
 ## §9. The sword-not-peace family-division and the take-up-your-cross discipleship-cost
 
-*Think not that I am come to send peace on earth: I came not to send peace, but a sword. For I am come to set a man at variance against his father, and the daughter against her mother, and the daughter in law against her mother in law. And a man's foes shall be they of his own household.* (Matthew 10:34-36)
-
 The framework reads vv.34-36 with care. The Christian commentary tradition has read this passage in multiple-directions — some softening it to *Jesus didn't really mean a sword,* others reading it as a categorical-anti-family teaching. Both readings miss the framework.
 
 The *sword* is the seed-war-pattern surfacing in family-relationships. The kingdom-citizens' hearing-of-the-Shepherd's-voice creates a division-line that runs through family-relationships — those who hear are on one side, those who do not are on the other; the family-relationships do not insulate from the division. The framework reads this as Bereshit (Genesis) 3:15 — the enmity between the two seeds — operating at the family-relationship-level:
 
-*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15)
-
 The seed-war is not abstract; it runs through every household where some hear and others do not. The King does not command the strife; the hearing-of-his-voice produces it where the household is divided over whether to hear.
 
 **The Tanakh-anchor — Mikhah (Micah) 7:6.** Yahusha (Jesus) is citing Mikhah (Micah) directly. The prophet had named the moral-collapse of contemporary-Yashar'el (Israel) in this exact language:
-
-*For the son dishonoureth the father, the daughter riseth up against her mother, the daughter in law against her mother in law; a man's enemies are the men of his own house.* (Micah 7:6)
 
 Mikhah (Micah) was describing his own day's household-betrayal. Yahusha (Jesus) reapplies the language to the kingdom-division-pattern — the household-betrayal Mikhah (Micah) named is recurring in the kingdom-division economy.
 

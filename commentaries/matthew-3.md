@@ -1,20 +1,12 @@
 # Commentary on Matthew 3
 
-Matthew 3 opens the public ministry phase by walking the reader to the Yarden (Jordan), where the Eliyahu-pattern prophet has come out of the wilderness calling the covenant people to repentance. The chapter announces the kingdom at hand, identifies the Pharisaic-Sadducean leadership-system as the serpent-seed-within-the-covenant by name, rejects the lineage-claim-without-fruit, and publicly invests the Messiah for his ministry with the Father's voice from heaven and the Ruach (Spirit) descending dove-form on the water. The Christian preaching tradition has flattened most of these beats; the framework reads what the chapter actually carries.
-
 ---
 
 ## §1. Yochanan (John) the Immerser as the Eliyahu-pattern prophet at the wilderness threshold
 
-*In those days came Yochanan (John) the Immerser, preaching in the wilderness of Yahudah (Judaea), and saying, Repent ye: for the kingdom of heaven is at hand. For this is he that was spoken of by the prophet Yeshayahu (Isaiah), saying, The voice of one crying in the wilderness, Prepare ye the way of Yahuah (the Lord), make his paths straight.* (Matthew 3:1-3)
-
 Yochanan (John) is the Eliyahu-pattern prophet. The Tanakh closes — in the Christian arrangement — with Malachi's prophecy of an Eliyahu sent before the day of Yahuah.
 
-*Behold, I will send you Eliyahu (Elijah) the prophet before the coming of the great and dreadful day of Yahuah (the LORD): And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* (Malachi 4:5-6)
-
 The Tanakh's closing prophecy and the gospel's opening prophet meet at the Yarden (Jordan). Yahusha (Jesus) will explicitly identify Yochanan (John) as the promised Eliyahu twice in this gospel.
-
-*And if ye will receive it, this is Elias, which was for to come.* (Matthew 11:14)
 
 *And his disciples asked him, saying, Why then say the scribes that Elias must first come? And Yahusha (Jesus) answered and said unto them, Elias truly shall first come, and restore all things. But I say unto you, That Elias is come already, and they knew him not, but have done unto him whatsoever they listed. Likewise shall also the Son of Adam suffer of them. Then the disciples understood that he spake unto them of Yochanan (John) the Immerser.* (Matthew 17:10-13)
 
@@ -27,10 +19,6 @@ Yochanan stands at the analogous threshold. The people are not in Egypt-style ex
 *And they answered him, He was an hairy man, and girt with a girdle of leather about his loins. And he said, It is Eliyahu (Elijah) the Tishbite.* (2 Kings 1:8)
 
 *And the same Yochanan (John) had his raiment of camel's hair, and a leathern girdle about his loins; and his meat was locusts and wild honey.* (Matthew 3:4)
-
-The Yeshayahu (Isaiah) 40:3 quotation sits in the chapter that opens Yeshayahu's second-half gathering-and-return prophecies.
-
-*Comfort ye, comfort ye my people, saith your Elohim (God). Speak ye comfortably to Yerushalayim (Jerusalem), and cry unto her, that her warfare is accomplished, that her iniquity is pardoned: for she hath received of Yahuah's (the LORD's) hand double for all her sins. The voice of him that crieth in the wilderness, Prepare ye the way of Yahuah (the LORD), make straight in the desert a highway for our Elohim (God).* (Isaiah 40:1-3)
 
 In Yeshayahu's context, the wilderness-voice is the prophetic preparation for the return from Babylonian exile — and chapters 40 through 66 are densely concerned with the return of the scattered seed and the comforting of Yerushalayim. The framework reading hears Matthew identifying Yochanan as the prophet preparing the way for the deeper return — the full return from the long scattering that the Babylonian-Persian partial return did not address. The wilderness location is the deliberate echo of the Tanakh-pattern: Yashar'el was constituted as a covenant people in the wilderness, the prophets denounced the syncretism by calling people back to the wilderness-covenant-standard, and the future ingathering of Ezekiel 20 is to be conducted by Yahuah bringing the scattered seed *into the wilderness of the peoples* for the rod-sifting.
 
@@ -62,19 +50,13 @@ The framework holds that *kingdom at hand* names the inauguration, not the consu
 
 ## §3. *Generation of vipers* — the Pharisees and Sadducees identified through the seed-war lens
 
-*But when he saw many of the Pharisees and Sadducees come to his immersion, he said unto them, O generation of vipers, who hath warned you to flee from the wrath to come?* (Matthew 3:7)
-
 The Pharisees and Sadducees come down to the Yarden — apparently to be immersed, or possibly to observe. Yochanan does not welcome them. He identifies them as *generation of vipers* — *gennēmata echidnōn* in the Greek, literally *offspring of vipers.* The identification is not generic insult. It is a seed-war identification.
 
 The framework reading places this against the seed-war prophecy of Genesis.
 
-*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15)
-
 The serpent-seed pattern surfaces across the Tanakh in different forms: Cain killing his brother Hevel (Abel) and the line continuing through the substitute Sheth; the Nephilim of Genesis 6 (the offspring of the fallen watchers and the daughters of men, fused into the seed-line in ways that need careful reading — the seed-war runs within every people, with sons of Adam whose names were written in the Book of Life from the foundation of the world running alongside the tares who were woven in by the fallen watchers); the giants of the land Yashar'el (Israel) was commanded to displace; the persistent enemies of the covenant people across the Tanakh.
 
 Yochanan calling the Pharisees and Sadducees *offspring of vipers* is identifying them as the contemporary face of the serpent-seed within the covenant community. Yahusha will use the same identification later.
-
-*Ye serpents, ye generation of vipers, how can ye escape the damnation of hell?* (Matthew 23:33)
 
 *Ye are of your father the devil, and the lusts of your father ye will do. He was a murderer from the beginning, and abode not in the truth, because there is no truth in him. When he speaketh a lie, he speaketh of his own: for he is a liar, and the father of it.* (John 8:44)
 
@@ -83,8 +65,6 @@ The identification is consistent across the gospel; it is not Yochanan's persona
 The system, not the people inside it. Many of the Pharisees as individuals were sincere men trying to keep Torah within the system handed to them; some, like Nicodemus and Yoseph (Joseph) of Arimathea, will turn and follow Yahusha. The system is the *vipers* identification; individual Pharisees who turn are received. The framework's posture toward people — patience, not condescension — applies to Pharisees as it does to every people. The Eliyahu-pattern prophet calls the system out by name — *generation of vipers* — and offers the door of repentance to anyone inside who will turn.
 
 ## §4. *We have Avraham (Abraham) to our father* — the lineage-claim, the fruit-demand, and what the framework does NOT say here
-
-*Bring forth therefore fruits meet for repentance: And think not to say within yourselves, We have Avraham (Abraham) to our father: for I say unto you, that Elohim (God) is able of these stones to raise up children unto Avraham (Abraham). And now also the axe is laid unto the root of the trees: therefore every tree which bringeth not forth good fruit is hewn down, and cast into the fire.* (Matthew 3:8-10)
 
 This is one of the most carefully-walked passages in the chapter for the framework. The Christian inclusion-gospel reads it as the proof-text for *anyone can become a child of Avraham by faith — even Gentiles, even stones — because lineage does not matter, only confession matters.* That reading collapses the scattered seed of Yashar'el (Israel) into a spiritual category open to self-selection by faith — which the prophets do not authorize; the seed is a paternal blood line named, traced, and promised gathering. It splices unrelated peoples into Yashar'el by faith-confession — which the olive-tree architecture of Romans 11 forbids; both branches on the tree are Yashar'el, with no non-olive branch grafted in. And it imports a false-inclusion grafting reading into a passage that does not carry it. The framework reads the passage at the depth it actually carries, and the framework does NOT read it as the Christian inclusion-gospel reads it.
 
@@ -104,11 +84,7 @@ The seed of Avraham by paternal blood is not automatically the seed of Avraham b
 
 The framework reading goes further: the *stones* image plausibly echoes Yeshayahu (Isaiah) 51.
 
-*Hearken to me, ye that follow after righteousness, ye that seek Yahuah (the LORD): look unto the rock whence ye are hewn, and to the hole of the pit whence ye are digged. Look unto Avraham (Abraham) your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him.* (Isaiah 51:1-2)
-
 In Yeshayahu 51, Avraham himself is named as the *rock* from which the seed of Yashar'el was hewn. Yochanan saying that Elohim can raise up children unto Avraham from stones reads naturally as the Yeshayahu-51 image: Elohim can recover the seed of Avraham from the rock-hewn lineage in ways the Pharisaic-Sadducean leadership-system cannot control. The scattered seed in the dispersion — Hosea's Lo-Ammi children who are to be told *ye are the sons of the living Elohim* — are the stones-into-children-of-Avraham Yochanan is pointing at.
-
-*Yet the number of the children of Yashar'el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10)
 
 The verse is the gathering-of-the-scattered prophecy in compressed form, not the inclusion-of-the-nations doctrine.
 
@@ -178,13 +154,9 @@ The voice is the Father's signature mode of self-revelation throughout the Tanak
 
 **The Ruach (Spirit).** The Ruach (Spirit) of Elohim descends like a dove. The Ruach is the breath / wind / spirit of Yahuah — the divine animating presence that hovered over the waters at creation, that fell on the seventy elders, that empowered the prophets, that Yahuah promises to put within his people in Ezekiel.
 
-*And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of Elohim (God) moved upon the face of the waters.* (Genesis 1:2)
-
 *A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:26-27)
 
 The framework reading does not require the Ruach to be a third co-equal person of a Trinity. The Ruach is Yahuah's own presence in the action-mode — the same divine breath that moved over the waters at creation now moving over the water at Yahusha's immersion to signal the new-creation Yahusha is initiating. The dove-form echoes both Genesis 1:2 (the Ruach *hovering* — the Hebrew *merachefet* carrying bird-imagery in the verb) and the dove of Genesis 8.
-
-*And the dove came in to him in the evening; and, lo, in her mouth was an olive leaf pluckt off: so Noach (Noah) knew that the waters were abated from off the earth.* (Genesis 8:11)
 
 Both creation-scene precedents inform the dove-descent here.
 

@@ -6,8 +6,6 @@ Matthew 8 opens the post-Sermon-on-the-Mount ministry. The Sermon delivered the 
 
 ## §1. The leper healed — the Torah-affirming first-miracle of the post-Sermon ministry (vv.1-4)
 
-*When he was come down from the mountain, great multitudes followed him. And, behold, there came a leper and worshipped him, saying, Lord, if thou wilt, thou canst make me clean. And Yahusha (Jesus) put forth his hand, and touched him, saying, I will; be thou clean. And immediately his leprosy was cleansed. And Yahusha (Jesus) saith unto him, See thou tell no man; but go thy way, shew thyself to the priest, and offer the gift that Mosheh (Moses) commanded, for a testimony unto them.* (Matthew 8:1-4)
-
 The framework reads the leper-healing as a deliberate first-miracle after the Sermon on the Mount. The Sermon delivered the heart-Torah teaching across chapters 5–7; the ministry now turns to the credentialing-miracles that authenticate the kingdom-at-hand proclamation. And the FIRST miracle Matthew records after the Sermon is a healing that ends with an explicit Torah-affirming instruction.
 
 The leper's approach itself is framework-significant. He addresses Yahusha (Jesus) as *Lord* — the Greek *kurios* — and confesses both Yahusha's (Jesus's) WILL (*if thou wilt*) and CAPACITY (*thou canst make me clean*) as the operative variables. The faith-confession is in the King-recognition form — recognition of authority, recognition of capacity, submission to the King's will. The leper does not demand; he requests.
@@ -42,8 +40,6 @@ The framework reads the centurion-pericope with particular care because the Chri
 
 **Who the centurion is.** Luke's parallel narrative supplies background data Matthew condenses:
 
-*And when they came to Yahusha (Jesus), they besought him instantly, saying, That he was worthy for whom he should do this: For he loveth our nation, and he hath built us a synagogue.* (Luke 7:4-5)
-
 The Jewish-elders intercede on his behalf, naming his standing in the local Yashar'el (Israel) community. He is a God-fearer (perhaps a proselyte) embedded in the Kfar-Nachum (Capernaum) gathering — exactly the kind of figure the framework would expect in the post-Assyrian-resettlement-and-proselytization mixed-territory Galilee. The framework reads him as a man who has ATTACHED himself to the covenant-community as far as a non-Israelite could under the second-temple architecture, not as a random pagan-Roman with no covenant-relationship. This matters for the framework's reading of v.10. He is not the test-case for *Gentile-faith-replaces-covenant-people-faith.* He is the test-case for what KIND of faith stands out in the contemporary Yashar'el (Israel) community.
 
 **The centurion's authority-recognition.** The centurion recognizes Yahusha's (Jesus's) authority — the Greek *exousia* — as the mechanism of the cosmic-rule structure. *I am a man under authority* — the centurion sees himself in the chain-of-command of Roman military-administration. *Having soldiers under me* — he gives orders that operate at distance. He maps this onto Yahusha (Jesus): the King has authority over disease, over the principalities-and-powers, over the cosmic-administration; the King speaks and the effect carries at distance. This is precisely the *authority* the multitudes recognized at Matthew 7:28-29 — and the centurion has internalized it more deeply than any of the credentialed Yahudim (Jewish) leaders Yahusha (Jesus) has encountered.
@@ -62,19 +58,9 @@ The framework also notes the centurion's confession-from-OUTSIDE the system. He 
 
 The prophets had named the gathering of the scattered seed in the directional-formula long before Matthew 8. Four canonical witnesses carry the same Tanakh-substance:
 
-*Fear not: for I am with thee: I will bring thy seed from the east, and gather thee from the west; I will say to the north, Give up; and to the south, Keep not back: bring my sons from far, and my daughters from the ends of the earth.* (Isaiah 43:5-6)
-
-*Behold, these shall come from far: and, lo, these from the north and from the west; and these from the land of Sinim.* (Isaiah 49:12)
-
-*Let the redeemed of Yahuah (the LORD) say so, whom he hath redeemed from the hand of the enemy; And gathered them out of the lands, from the east, and from the west, from the north, and from the south.* (Psalm 107:2-3)
-
-*Thus saith Yahuah Tseva'ot (the LORD of hosts); Behold, I will save my people from the east country, and from the west country; And I will bring them, and they shall dwell in the midst of Yerushalayim (Jerusalem): and they shall be my people, and I will be their Elohim (God), in truth and in righteousness.* (Zechariah 8:7-8)
-
 The *east and west* phrase Yahusha (Jesus) uses at Matthew 8:11 is the Tanakh-prophetic-gathering directional-formula. The many who *shall come from east and west* are the GATHERED SCATTERED SEED of Yashar'el (Israel) coming home from the lands of their dispersion. They sit down with Avraham (Abraham), Yitschaq (Isaac), and Ya'aqov (Jacob) in the kingdom because they ARE the SEED of the patriarchs gathered home. The framework reading recovers the gathering-substance the Christian inclusion-read has obscured for centuries.
 
 **The *children of the kingdom* — who are they?** The Greek is *hoi huioi tēs basileias.* The phrase names those with the STANDING of kingdom-children — those who held the position-by-lineage-claim, those who considered themselves children of the kingdom by virtue of their relationship to the covenant. In the contemporary Yashar'el (Israel) context Yahusha (Jesus) addresses, this includes the Pharisaic-Sadducean-leadership-system AND those within the present-Yahudim (Jewish) community who relied on lineage-claim alone without the heart-Torah walk. Yochanan (John) the Immerser had already been explicit about the diagnosis:
-
-*And think not to say within yourselves, We have Avraham (Abraham) to our father: for I say unto you, that Elohim (God) is able of these stones to raise up children unto Avraham (Abraham).* (Matthew 3:9)
 
 Lineage-claim alone is not the qualifying credential. The framework reads v.12 against the post-harvest sifting of the wheat. The wheat is gathered from all nations into the wilderness for sifting; the unfruitful are purged; only the fruitful pass through to the kingdom-citizenship. Ezekiel had named the architecture explicitly:
 
@@ -152,8 +138,6 @@ The framework reads Matthew 8:22 as the kingdom-priority-clarification at the ur
 
 The framework reads the stilling-of-the-storm against the Tanakh-pattern of Yahuah's (God's) authority over creation. The Psalms had named the Voice that rules the sea:
 
-*O Yahuah Elohim (LORD God) of hosts, who is a strong Yah like unto thee? or to thy faithfulness round about thee? Thou rulest the raging of the sea: when the waves thereof arise, thou stillest them.* (Psalm 89:8-9)
-
 *They that go down to the sea in ships, that do business in great waters; These see the works of Yahuah (the LORD), and his wonders in the deep. For he commandeth, and raiseth the stormy wind, which lifteth up the waves thereof. They mount up to the heaven, they go down again to the depths: their soul is melted because of trouble ... Then they cry unto Yahuah (the LORD) in their trouble, and he bringeth them out of their distresses. He maketh the storm a calm, so that the waves thereof are still.* (Psalm 107:23-29)
 
 And the wisdom-tradition had named the Voice that set the sea's boundaries at creation:
@@ -189,8 +173,6 @@ After the Assyrian deportation of 722 BCE, the eastern tribes were among the mos
 The framework reads Yahusha's (Jesus's) crossing-to-the-other-side as the same gathering-territory pull noted at Matthew 4:25's mention of multitudes from beyond the Yarden (Jordan). The eastern-tribal-territories' representatives among the multitudes are surfaced again here; the King goes to the territory of the scattered eastern tribes; he ministers in the lands of their inheritance even though the territory's contemporary population is mixed.
 
 **The swine.** *An herd of many swine feeding.* The swine are unclean-animals under Torah-law:
-
-*And the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you. Of their flesh shall ye not eat, and their carcase shall ye not touch; they are unclean to you.* (Leviticus 11:7-8)
 
 The presence of a large swine-herd in the territory confirms the contemporary administration is Hellenistic-Gentile, not Torah-walking. The framework reads the swine-herd as the visible-marker of the unclean-economy operating in the eastern-tribal-inheritance under the post-deportation-and-resettlement administration.
 

@@ -24,6 +24,7 @@ import {
 import Pricing from "./routes/Pricing";
 import Manage from "./routes/Manage";
 import SignIn from "./routes/SignIn";
+import Landing from "./routes/Landing";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ChapterCommentary from "./components/ChapterCommentary";
 import HighlightPicker, {
@@ -37,6 +38,13 @@ import VerseActionMenu, {
   type MenuSection,
 } from "./components/VerseActionMenu";
 import RangeActionPicker from "./components/RangeActionPicker";
+import {
+  executeCopy,
+  executeShare,
+  preloadBrandMark,
+  type RangeMeta,
+  type VerseRender,
+} from "./lib/share-card-render";
 import BookmarkSheet from "./components/BookmarkSheet";
 import NotesPanel, { type PendingAnchor } from "./components/NotesPanel";
 import SearchModal from "./components/SearchModal";
@@ -74,9 +82,15 @@ import paragraphStartsData from "./data/paragraph_starts.json";
 // the chrome button family. Persistence + DOM-attribute flip lives in
 // lib/theme.ts; this component is the surface.
 //
-// S117 — visible "Theme" text label added next to the glyph per Yoshi's
+// S117 — visible text label added next to the glyph per Yoshi's
 // feedback that the icon-only version was hard to find. Glyph stays as
-// the visual hook; the word "Theme" makes the affordance discoverable.
+// the visual hook; the label makes the affordance discoverable.
+//
+// S127 — label + aria/title renamed to "Urim & Thummim" to match the
+// website's theme switcher (`Toggle light and dark mode (Urim and
+// Thummim)`). Cross-product naming unity per Yoshi's request — the
+// priestly oracle stones used for divine guidance become the
+// theological frame for the partner's surface-choice affordance.
 function ThemeToggle() {
   const { theme, toggle } = useTheme();
   const isDark = theme === "dark";
@@ -84,12 +98,12 @@ function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      title={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      aria-label="Toggle light and dark mode (Urim and Thummim)"
+      title="Toggle light and dark mode (Urim and Thummim)"
       className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
     >
       <span aria-hidden="true">{isDark ? "☼" : "☾"}</span>
-      <span>Theme</span>
+      <span>Urim &amp; Thummim</span>
     </button>
   );
 }
@@ -149,6 +163,16 @@ export default function App() {
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
+  // S127 W7 — preload + img.decode() the share-card brand-mark at app
+  // init per DESIGN_LANGUAGE.md §24, so the first Copy/Share tap
+  // renders without an asset-fetch round-trip in the canvas pipeline.
+  // Fires once at mount; the loader is a singleton so additional calls
+  // are no-ops. Failure is non-fatal — the canvas render falls back to
+  // a text-only watermark slot.
+  useEffect(() => {
+    void preloadBrandMark();
+  }, []);
+
   // Dev-only: ?dev_jwt=<token> in the URL sets the rop_jwt cookie at
   // localhost and reloads the page. Used in development against the live
   // production API when no WordPress login redirect is wired locally —
@@ -179,7 +203,17 @@ export default function App() {
   if (pathname === "/pricing" || pathname.startsWith("/pricing")) {
     return <Pricing />;
   }
-  return <Reader />;
+  // S129 — Reader moves from `/` to `/read` so the bare bible
+  // subdomain serves the new Landing surface instead of dropping
+  // partners straight into the verse pane. Existing deep-links into
+  // sub-paths (/pricing, /manage, /sign-in) keep working unchanged.
+  // The Reader doesn't carry book/chapter in the URL — saved reading
+  // position rehydrates from the API/localStorage on mount, so the
+  // path swap doesn't break bookmarked positions.
+  if (pathname === "/read" || pathname.startsWith("/read")) {
+    return <Reader />;
+  }
+  return <Landing />;
 }
 
 function Reader() {
@@ -1657,6 +1691,7 @@ function Reader() {
               (v) => v.id === menuState.verseId
             ) ?? null,
             chapterDetail.book.title,
+            chapterDetail.book.slug,
             chapterDetail.chapter.chapter_number,
             // S122 — partner tier drives stub state. Tier-locked stubs
             // render as Coming soon (not locked) for partners already at
@@ -1731,6 +1766,46 @@ function Reader() {
               // Leave rangeState as captured for the duration of the
               // multi-target HighlightPicker session; cleared when the
               // picker closes (see HighlightPicker invocation below).
+            }}
+            onCopyRange={() => {
+              // S127 W7 — Copy-range-with-watermark Live.
+              const ids = resolveSameChapterRange(
+                rangeState,
+                chapterDetail.verses
+              );
+              if (ids.length === 0) return;
+              const verses = buildVerseRenderList(ids, chapterDetail.verses);
+              if (verses.length === 0) return;
+              const meta = buildSameChapterRangeMeta(
+                chapterDetail.book.title,
+                chapterDetail.book.slug,
+                chapterDetail.chapter.chapter_number,
+                rangeState.start!.verseNumber,
+                rangeState.end!.verseNumber
+              );
+              setRangePickerOpen(false);
+              cancelRange();
+              void executeCopy({ verses, meta });
+            }}
+            onShareRange={() => {
+              // S127 W7 — Share-range-with-watermark Live.
+              const ids = resolveSameChapterRange(
+                rangeState,
+                chapterDetail.verses
+              );
+              if (ids.length === 0) return;
+              const verses = buildVerseRenderList(ids, chapterDetail.verses);
+              if (verses.length === 0) return;
+              const meta = buildSameChapterRangeMeta(
+                chapterDetail.book.title,
+                chapterDetail.book.slug,
+                chapterDetail.chapter.chapter_number,
+                rangeState.start!.verseNumber,
+                rangeState.end!.verseNumber
+              );
+              setRangePickerOpen(false);
+              cancelRange();
+              void executeShare({ verses, meta });
             }}
             onClose={cancelRange}
           />
@@ -1979,8 +2054,60 @@ function makeTierStub(
   };
 }
 
-function makeFreeComingSoonStub(key: string, label: string): MenuItem {
-  return { key, label, comingSoon: true, onSelect: () => {} };
+/**
+ * S127 W7 — build the VerseRender[] list for a captured same-chapter
+ * range. Maps the resolver's ordered verse-id list back to verse
+ * number + text from chapterDetail.verses. Returns [] if any id can't
+ * be matched (defensive — should never happen given the resolver
+ * walks the same chapterVerses array).
+ */
+function buildVerseRenderList(
+  verseIds: number[],
+  chapterVerses: { id: number; verse_number: number; text: string }[]
+): VerseRender[] {
+  const byId = new Map(chapterVerses.map((v) => [v.id, v]));
+  const out: VerseRender[] = [];
+  for (const id of verseIds) {
+    const v = byId.get(id);
+    if (!v) return [];
+    out.push({ verseNumber: v.verse_number, text: v.text });
+  }
+  return out;
+}
+
+/**
+ * S127 W7 — build the RangeMeta discriminator for a captured same-
+ * chapter range. Range-of-one (start === end) collapses to kind="single"
+ * so the range-header / filename use the cleaner single-verse format
+ * (e.g., "Psalm 23:1" not "Psalm 23:1–1"). Cross-chapter / cross-book
+ * are W7+ deferred and handled by the range-selection helper's
+ * resolver when it lands; this builder produces same-chapter or single
+ * only, matching the W4 UX scope.
+ */
+function buildSameChapterRangeMeta(
+  bookTitle: string,
+  bookSlug: string,
+  chapterNumber: number,
+  startVerseNumber: number,
+  endVerseNumber: number
+): RangeMeta {
+  if (startVerseNumber === endVerseNumber) {
+    return {
+      kind: "single",
+      bookTitle,
+      bookSlug,
+      chapter: chapterNumber,
+      verse: startVerseNumber,
+    };
+  }
+  return {
+    kind: "same-chapter",
+    bookTitle,
+    bookSlug,
+    chapter: chapterNumber,
+    startVerse: startVerseNumber,
+    endVerse: endVerseNumber,
+  };
 }
 
 function buildMenuSections(
@@ -1990,6 +2117,7 @@ function buildMenuSections(
   },
   verse: { id: number; verse_number: number; text: string } | null,
   bookTitle: string,
+  bookSlug: string,
   chapterNumber: number,
   partnerTier: PartnerTier | null,
   handlers: {
@@ -2094,40 +2222,53 @@ function buildMenuSections(
   );
 
   // ── Share (verse scope) ──────────────────────────────────────────
+  // S127 W7 — Copy verse promoted from text-only clipboard to canvas-
+  // PNG-with-text-fallback (same renderer as Share with watermark).
+  // Share with watermark promoted from Coming-soon stub to Live. Both
+  // route through the shared share-card-render pipeline; the transport
+  // chain (navigator.share → clipboard.write → <a download>) is owned
+  // by the lib, not by App.tsx — App.tsx only assembles the
+  // VerseRender[] + RangeMeta inputs.
   const share: MenuItem[] = [];
   if (verse) {
+    const singleVerseMeta: RangeMeta = {
+      kind: "single",
+      bookTitle,
+      bookSlug,
+      chapter: chapterNumber,
+      verse: verse.verse_number,
+    };
+    const singleVerseVerses: VerseRender[] = [
+      { verseNumber: verse.verse_number, text: verse.text },
+    ];
     share.push({
       key: "copy",
       label: "Copy verse",
       icon: "⧉",
       hint: `${bookTitle} ${chapterNumber}:${verse.verse_number}`,
       onSelect: () => {
-        // Format: "Genesis 1:1 — In the beginning..."
-        //          "  — Remnant of Promise Official Study Bible"
-        // Bypasses DOM selection entirely; uses the in-memory v.text
-        // which has the correct spacing regardless of how the
-        // tappable-span render produces visible output.
-        const text =
-          `${bookTitle} ${chapterNumber}:${verse.verse_number} — ` +
-          `${verse.text}\n\n— Remnant of Promise Official Study Bible`;
-        if (
-          typeof navigator !== "undefined" &&
-          navigator.clipboard &&
-          typeof navigator.clipboard.writeText === "function"
-        ) {
-          navigator.clipboard.writeText(text).catch(() => {
-            // Clipboard API can fail in some contexts (insecure
-            // origin, permissions denied). Silent fallback — partner
-            // can use the Share item when W6 ships.
-          });
-        }
+        // Fire-and-forget — transport pipeline handles every failure
+        // mode (share-sheet abort, clipboard.write rejected, etc.) and
+        // returns a TransportResult. We don't block the UI on it; the
+        // menu has already closed by the time the pipeline runs.
+        void executeCopy({
+          verses: singleVerseVerses,
+          meta: singleVerseMeta,
+        });
+      },
+    });
+    share.push({
+      key: "share-watermark",
+      label: "Share with watermark",
+      icon: "↗",
+      onSelect: () => {
+        void executeShare({
+          verses: singleVerseVerses,
+          meta: singleVerseMeta,
+        });
       },
     });
   }
-  share.push({
-    ...makeFreeComingSoonStub("share-watermark", "Share with watermark"),
-    icon: "↗",
-  });
 
   // ── Range (verse scope, added S123 — Wheel 4 of the pre-launch sweep) ─
   // One shared menu entry for the range-selection mechanic per
