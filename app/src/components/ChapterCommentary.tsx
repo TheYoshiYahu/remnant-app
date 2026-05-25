@@ -210,9 +210,25 @@ function CommentaryBlock({
         <TierBadge tier={entry.tier_required} locked={false} />
       </header>
       <details className="commentary-deeper group">
-        <summary className="cursor-pointer list-none font-sans text-sm font-medium text-[var(--reader-text)] underline-offset-2 hover:underline marker:hidden">
-          <span className="group-open:hidden">{expanderLabel}</span>
-          <span className="hidden group-open:inline text-[var(--reader-muted)]">
+        {/*
+          S130 — metallic-emerald button styling per Yoshi's call. The
+          bright-emerald gradient documented in DESIGN_LANGUAGE.md §6
+          (divine-speech bracket palette: #04321E → #15A86A → #2EFFA1)
+          carries the "this is the next layer" affordance with the
+          eye-catching weight Yoshi asked for. Dark base, lighter mid,
+          dark return — reads as a metallic sweep against the pure-black
+          reader pane. Reduces opacity slightly on hover for the press
+          feel; flips to a quieter muted-text "Close" affordance when
+          open so the open state doesn't compete with the body it just
+          revealed.
+        */}
+        <summary className="cursor-pointer list-none marker:hidden">
+          <span
+            className="group-open:hidden inline-block rounded-md border border-[#2EFFA1] bg-gradient-to-r from-[#04321E] via-[#15A86A] to-[#04321E] px-4 py-2 font-sans text-sm font-semibold text-[#E6FFF2] shadow-md hover:opacity-90"
+          >
+            {expanderLabel}
+          </span>
+          <span className="hidden group-open:inline font-sans text-sm font-medium text-[var(--reader-muted)] underline-offset-2 hover:underline">
             {collapseLabel}
           </span>
         </summary>
