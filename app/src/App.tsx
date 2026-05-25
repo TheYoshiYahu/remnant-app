@@ -1619,7 +1619,15 @@ function Reader() {
 
           {!hideCommentary && chapterDetail.chapter_intro && (
             <aside className="mt-4 text-[var(--reader-muted)]">
-              <h3 className="mb-2 font-sans font-semibold uppercase tracking-wide text-xs">
+              {/*
+                S130 — section header in techelet #1A6FE5 per
+                COLOR_PALETTE.md §9 chrome-header rule. Matches the
+                "More on X" and "Cross-References in X" headers below.
+                Body text below the header stays muted via the
+                aside's parent text color (the free overview reads
+                intentionally quieter than the paid commentary blocks).
+              */}
+              <h3 className="mb-2 font-sans font-semibold uppercase tracking-wide text-xs text-[#1A6FE5]">
                 Commentary
               </h3>
               {/*
