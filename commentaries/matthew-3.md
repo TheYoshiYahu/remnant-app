@@ -14,11 +14,7 @@ The framework reading attends to what the Eliyahu-pattern carries. Eliyahu was t
 
 *And Eliyahu (Elijah) came unto all the people, and said, How long halt ye between two opinions? if Yahuah (the LORD) be Elohim (God), follow him: but if Ba'al, then follow him. And the people answered him not a word.* (1 Kings 18:21)
 
-Yochanan stands at the analogous threshold. The people are not in Egypt-style external oppression but in internal religious corruption; the temple-system has become a Pharisaic-Sadducean apparatus that has crowded out the prophetic-covenant standard; the day of Yahuah's action against the system is approaching. The Eliyahu-Yochanan parallel is structural, not merely temperamental. Both are wilderness-camel-hair prophets calling the covenant people to repentance before the day of Yahuah. The garment-detail is itself an Eliyahu-echo.
-
-*And they answered him, He was an hairy man, and girt with a girdle of leather about his loins. And he said, It is Eliyahu (Elijah) the Tishbite.* (2 Kings 1:8)
-
-*And the same Yochanan (John) had his raiment of camel's hair, and a leathern girdle about his loins; and his meat was locusts and wild honey.* (Matthew 3:4)
+Yochanan stands at the analogous threshold. The people are not in Egypt-style external oppression but in internal religious corruption; the temple-system has become a Pharisaic-Sadducean apparatus that has crowded out the prophetic-covenant standard; the day of Yahuah's action against the system is approaching.
 
 In Yeshayahu's context, the wilderness-voice is the prophetic preparation for the return from Babylonian exile — and chapters 40 through 66 are densely concerned with the return of the scattered seed and the comforting of Yerushalayim. The framework reading hears Matthew identifying Yochanan as the prophet preparing the way for the deeper return — the full return from the long scattering that the Babylonian-Persian partial return did not address. The wilderness location is the deliberate echo of the Tanakh-pattern: Yashar'el was constituted as a covenant people in the wilderness, the prophets denounced the syncretism by calling people back to the wilderness-covenant-standard, and the future ingathering of Ezekiel 20 is to be conducted by Yahuah bringing the scattered seed *into the wilderness of the peoples* for the rod-sifting.
 
@@ -130,11 +126,7 @@ The framework reading deepens the *fulfill all righteousness* phrase. Yahusha is
 
 *And it came to pass, when the people removed from their tents, to pass over Yarden (Jordan), and the priests bearing the ark of the covenant before the people; And as they that bare the ark were come unto Yarden (Jordan), and the feet of the priests that bare the ark were dipped in the brim of the water, (for Yarden (Jordan) overfloweth all his banks all the time of harvest,) that the waters which came down from above stood and rose up upon an heap very far from the city Adam, that is beside Tsaretan (Zaretan): and those that came down toward the sea of the plain, even the salt sea, failed, and were cut off: and the people passed over right against Yericho (Jericho).* (Joshua 3:14-16)
 
-Yahusha — bearing the same name as Yahoshua, *Yah saves* — crosses the same water as the symbolic entry into his own ministry of leading the prophetic-ingathering into the kingdom. The first Yahoshua led the entry into the land at the close of the wilderness wandering; the second Yahusha leads the entry into the kingdom-restoration at the close of the long exile. The water is the same. The action is parallel. The framework reads the choice of Yarden immersion as deliberate prophetic-action. The same Yarden also carries the Eliyahu / Elisha mantle-transfer.
-
-*And Eliyahu (Elijah) took his mantle, and wrapped it together, and smote the waters, and they were divided hither and thither, so that they two went over on dry ground. ... He took up also the mantle of Eliyahu (Elijah) that fell from him, and went back, and stood by the bank of Yarden (Jordan); And he took the mantle of Eliyahu (Elijah) that fell from him, and smote the waters, and said, Where is Yahuah (the LORD) Elohim (God) of Eliyahu (Elijah)? and when he also had smitten the waters, they parted hither and thither: and Elisha went over.* (2 Kings 2:8, 13-14)
-
-The river of the prophetic mantle is the river of the Messianic investiture. The choice is not accidental.
+Yahusha — bearing the same name as Yahoshua, *Yah saves* — crosses the same water as the symbolic entry into his own ministry of leading the prophetic-ingathering into the kingdom. The first Yahoshua led the entry into the land at the close of the wilderness wandering; the second Yahusha leads the entry into the kingdom-restoration at the close of the long exile. The water is the same. The action is parallel.
 
 *And Yahusha (Jesus), when he was immersed, went up straightway out of the water: and, lo, the heavens were opened unto him, and he saw the Ruach (Spirit) of Elohim (God) descending like a dove, and lighting upon him: And lo a voice from heaven, saying, This is my beloved Son, in whom I am well pleased.* (Matthew 3:16-17)
 
