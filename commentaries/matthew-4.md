@@ -56,13 +56,7 @@ The third wilderness-failure was the golden calf — Yashar'el worshipping a fas
 
 The pattern: trading worship of Yahuah for the offer of a kingdom-promise from a counterfeit source.
 
-The devil's temptation to Yahusha is the same shape on its largest scale: trade worship of the Father for ALL the kingdoms of the world delivered immediately. The devil's offer assumes the kingdoms are his to give — and at the present age, in the framework reading, the kingdoms of this world ARE under the dominion of the principalities and powers that fell with the watcher-rebellion.
-
-The devil's offer is not an empty bluff in the framework reading. The kingdoms ARE temporarily under the dominion of the rebel powers. He IS offering what he currently administers. The offer is real — and the price is worship.
-
-Yahusha refuses on the Torah-standard: *him only shalt thou serve.* The kingdom-promise that matters is the kingdom the Father gives in his timing through the path the Father has set — the cross, the resurrection, the ascension to the Father's right hand, and the Daniel-7 transfer of the everlasting kingdom.
-
-The kaph-comparative — *like the Son of Adam* — is preserved as incarnation-honoring; when the canon is harmonized, the figure is Yahusha himself, the Formed who took on flesh and remains who he was, is, and is to come. The everlasting kingdom Daniel saw is the kingdom Yahusha refused to short-circuit at the wilderness temptation. The devil offers the kingdoms now without the cross; Yahusha chooses the cross and waits for the Father's timing on the kingdoms. The golden-calf failure of Yashar'el was the same shape — choosing an immediate-kingdom-deliverance through a counterfeit-worship rather than waiting on Mosheh's return with the Torah from the mountain. Yahusha inverts the failure: he waits.
+The golden-calf failure of Yashar'el (Israel) was the same shape — choosing an immediate-kingdom-deliverance through a counterfeit-worship rather than waiting on Mosheh's (Moses's) return with the Torah from the mountain. Yahusha (Jesus) inverts the failure: he waits. He refuses the shortcut-kingdom and trusts the Father's timing on the path the Father has set — the cross, the resurrection, the ascension to the Father's right hand, and the Daniel-7 transfer of the everlasting kingdom.
 
 *Then the devil leaveth him, and, behold, angels came and ministered unto him.* (Matthew 4:11)
 
@@ -106,21 +100,13 @@ Matthew quotes Yeshayahu (Isaiah).
 
 *Nevertheless the dimness shall not be such as was in her vexation, when at the first he lightly afflicted the land of Zevulun (Zebulun) and the land of Naphtali, and afterward did more grievously afflict her by the way of the sea, beyond Yarden (Jordan), in Galilee of the nations. The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined.* (Isaiah 9:1-2)
 
-The Christian commentary tradition has read *Galilee of the goyim* as the early-gospel proof that the Messiah was sent to the Gentiles from the start — universal-inclusion confirmed by the Galilean ministry's *Gentile* designation. That read collapses the scattered seed of Yashar'el into a spiritual category open to self-selection and splices unrelated peoples into Yashar'el by faith-confession, and it misreads the geographic-prophetic substance of Yeshayahu 9.
+The Christian commentary tradition has read *Galilee of the goyim* as the early-gospel proof that the Messiah was sent to the Gentiles from the start — universal-inclusion confirmed by the Galilean ministry's *Gentile* designation. That read collapses the scattered seed of Yashar'el (Israel) into a spiritual category open to self-selection and splices unrelated peoples into Yashar'el by faith-confession, and it misreads the geographic-prophetic substance of Yeshayahu 9. The Yeshayahu 9 prophecy is a gathering-prophecy: the light comes to the people of the scattered northern tribes in the very territory they were torn from.
 
-The framework reading recovers the substance. *Galilee of the goyim* — *gelil ha-goyim* in the Hebrew — names the territory of the northern tribes (Zevulun, Naphtali, Asher, Yissakhar) that had been most heavily depopulated and resettled with foreign peoples after the Assyrian deportation of 722 BCE. The Assyrian policy is recorded in 2 Kings.
-
-The northern tribes were taken east and foreigners were imported west to fill the depopulated territory. By the time of Yeshayahu 9 — written shortly before or during the Assyrian deportation — the prophet is naming what the territory has become: *Galilee of the goyim,* Galilee of the mixed peoples, the territory where the descendants of the resettled foreigners now lived alongside whatever northern-tribe remnant remained.
-
-The prophetic identification in Yeshayahu 9 is the TRIBAL identification, not the demographic-mixed-population identification. *The land of Zevulun, and the land of Naphtali* — the specific tribal territories — *the people which sat in darkness saw great light.* The people in darkness are the people of Zevulun and Naphtali — the scattered northern tribes whose territory had become Galilee-of-the-mixed-peoples. The light is dawning on the SCATTERED NORTHERN HOUSE in the territory of their tribal inheritance. The Yeshayahu 9 prophecy is a gathering-prophecy: the light comes to the people of the scattered tribes in the very territory they were torn from.
-
-The framework reads Matthew's quotation as the locking-in of this reading. Yahusha leaves Natsareth (Nazareth) and dwells in Kfar-Nachum (Capernaum) *in the borders of Zevulun and Naphtali* — Matthew names the tribal-territories explicitly. The Messiah goes to the northern-tribal-territory of the scattered seed. This is the lost-sheep-mission scope set at Matthew 1:21 and locked at the explicit instructions to the twelve and the Canaanite-woman pericope, lived out geographically.
+The lost-sheep-mission scope set at Matthew 1:21 is locked verbally elsewhere in the gospel — at the explicit instructions to the twelve and at the Canaanite-woman pericope.
 
 *These twelve Yahusha (Jesus) sent forth, and commanded them, saying, Go not into the way of the Gentiles, and into any city of the Samaritans enter ye not: but go rather to the lost sheep of the house of Yashar'el (Israel).* (Matthew 10:5-6)
 
 *But he answered and said, I am not sent but unto the lost sheep of the house of Yashar'el (Israel).* (Matthew 15:24)
-
-He goes to the territory of the lost sheep. He preaches the gathering where the gathering is to begin.
 
 The *goyim* in *Galilee of the goyim* names the demographic state of the territory after the Assyrian deportation — the foreign peoples resettled there — but the prophetic substance is the scattered-northern-tribe-in-darkness who shall see the great light. The Christian inclusion-gospel collapses the demographic descriptor into a doctrinal universal-Gentile-inclusion declaration; the framework recovers the geographic-tribal substance the text is actually carrying.
 
@@ -179,99 +165,3 @@ Yahusha healing every manner of sickness fulfills the Messianic-credential proph
 *Now when Yochanan (John) had heard in the prison the works of the Messiah (Christ), he sent two of his disciples, And said unto him, Art thou he that should come, or do we look for another? Yahusha (Jesus) answered and said unto them, Go and shew Yochanan (John) again those things which ye do hear and see: The blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, the dead are raised up, and the poor have the gospel preached to them.* (Matthew 11:2-5)
 
 The Yeshayahu 35 credential is the answer.
-
----
-
-## §8. Cross-Reference Apparatus
-
-*This section seeds the chapter-end card per `api/CHAPTER_END_CARD_CONTRACT.md`. Layer 1 = per-verse cross-references (curated framework-bearing rows for the `cross_references` table). Layer 2 = framework threads surfacing in this chapter (existing thread members + new threads marked PROPOSED for Yoshi's design call). This section is staging data for the engineering migration pass; it does not surface in the reader UI once the data lives in the database.*
-
-### Layer 2 — Threads surfacing in Matthew 4
-
-**Thread: `scattered-seed-gathering`** *(LANDED at S74).* Adds members from Matthew 4.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 4:15-16 | Isaiah 9:1-2 | The OT prophetic source — the light dawning on the people of Zevulun (Zebulun) and Naphtali, the scattered-northern-tribe-in-darkness in their tribal territory. |
-| Matt 4:19 | Jeremiah 16:14-16 | *Behold, I will send for many fishers, saith Yahuah (the LORD), and they shall fish them* — the prophetic Jeremiah-16 fishers as the agents of the second-Exodus gathering of the scattered seed; Matthew 4:19's *fishers of men* is the explicit identification of the disciples with the Jer 16 fishers. |
-| Matt 4:25 | Ezekiel 37:21 | *I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* — the early-ministry geographic-scope summary as the beginning of the Ezek 37 gathering. |
-
-**Thread: `lost-sheep-mission-scope`** *(PROPOSED at Matt 1, awaiting Yoshi's design call).* Adds members from Matthew 4.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 4:13-16 | Isaiah 9:1-2 | The Messiah's geographic settling in Zevulun (Zebulun) and Naphtali fulfills the prophetic-tribal-territorial identification — the lost sheep of the northern house, in their tribal territory. |
-| Matt 4:19 | Jeremiah 16:14-15 | The fishers' assignment is to the scattered seed in the lands of the dispersion — same scope as the *his people* of Matt 1:21. |
-| Matt 4:23-25 | Ezekiel 34:11-16 | The shepherd seeking the scattered sheep — Yahusha's (Jesus's) early-ministry healing and teaching across the gathering-territory is the Ezek 34 shepherd's work. |
-
-**Thread: `messianic-recapitulation-of-yashar'el`** *(PROPOSED at Matt 2, awaiting Yoshi's design call).* Adds members from Matthew 4 — the wilderness recapitulation.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 4:1-2 | Deuteronomy 8:2-3 | The forty days of Yahusha's (Jesus's) wilderness fast recapitulates the forty years of Yashar'el's (Israel's) wilderness testing; Deuteronomy 8 is Mosheh's (Moses's) instruction on the meaning of that testing. |
-| Matt 4:1 | Numbers 14:33-34 | *A day for a year, even forty years* — the prophetic-equivalence formula for the forty-year wilderness; Yahusha's (Jesus's) forty days walk the same testing on the compressed-timing. |
-| Matt 4:3-4 | Exodus 16:2-4 | Yashar'el's (Israel's) grumbling for bread, the manna-test — Yahusha's (Jesus's) first temptation inverts this failure. |
-| Matt 4:3-4 | Deuteronomy 8:3 | Mosheh's (Moses's) Torah-commentary on the manna-experience — the Deut 8:3 quote Yahusha (Jesus) uses against the first temptation. |
-| Matt 4:5-7 | Exodus 17:1-7 | The water-at-Massah test, *Is Yahuah (the LORD) among us, or not?* — Yashar'el (Israel) demanding a sign; Yahusha's (Jesus's) second temptation inverts this failure. |
-| Matt 4:5-7 | Deuteronomy 6:16 | The Torah-instruction Mosheh (Moses) gave in response to Massah — the Deut 6:16 quote Yahusha (Jesus) uses against the second temptation. |
-| Matt 4:8-10 | Exodus 32:1-10 | The golden-calf worship — Yashar'el (Israel) trading worship of Yahuah (the LORD) for an immediate-kingdom-deliverance from a counterfeit source; Yahusha's (Jesus's) third temptation inverts this failure on the largest scale. |
-| Matt 4:8-10 | Deuteronomy 6:13 | The Torah-instruction on whom-to-worship and whom-to-serve — the Deut 6:13 quote Yahusha (Jesus) uses against the third temptation. |
-
-**PROPOSED new thread: `scripture-twisting-and-the-harmonization-discipline`** *(for Yoshi's design call).* Anchor: Matthew 4:5-7 (the devil quoting Psalm 91 with the qualifier omitted; Yahusha (Jesus) responding by bringing Deuteronomy 6:16 into the conversation). Summary: *The devil at Matthew 4 quotes scripture selectively — a real verse (Psalm 91:11-12) with the qualifier (*to keep thee in all thy ways*) omitted, repurposing the verse for presumption. Yahusha (Jesus) does not debate the cut-quote line-by-line; he brings the OVERRIDING Torah-word (Deuteronomy 6:16) into the conversation and lets the canon-harmonized standard close the door. This is the master-discipline for handling every scripture-twisting case: Pharisaic-Sadducean selective-Torah-citation, the post-apostolic antinomian-Paul construction, the Hebrew-Roots false-inclusion-grafting reading, the Islamic-Quran selective-prior-scripture move. The discipline is harmonization-with-the-whole-canon, led by the Ruach HaKodesh (Holy Spirit), with 1 John 2:3-4's commandment-keeping filter as the master-test.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 4:5-7 | Psalm 91:11-12 | The verse the devil quoted, with the qualifier *to keep thee in all thy ways* (v.11) omitted in the devil's citation. |
-| 2 | Matt 4:5-7 | Deuteronomy 6:16 | The OVERRIDING Torah-word Yahusha (Jesus) brought into the conversation — the canon-harmonized response. |
-| 3 | Matt 4:5-7 | 1 John 2:3-4 | *He that saith, I know him, and keepeth not his commandments, is a liar* — the 1234-of-Truth filter that rules out any scripture-reading that voids the commandments; the meta-test that disqualifies the devil's Psalm-91 misuse and every parallel misuse. |
-| 4 | Matt 4:5-7 | Matt 22:29 | *Ye do err, not knowing the scriptures, nor the power of Elohim (God)* — Yahusha (Jesus) naming the Sadducees' selective-scripture reading as the source of their error; the same diagnostic. |
-| 5 | Matt 4:5-7 | 2 Peter 3:16 | *Some things hard to be understood, which they that are unlearned and unstable wrest, as they do also the other scriptures, unto their own destruction* — the apostolic naming of the scripture-twisting pattern. |
-
-**Thread: `yochanan-as-eliyahu-pattern-prophet`** *(PROPOSED at Matt 3, awaiting Yoshi's design call).* Adds members from Matthew 4 — the Eliyahu-Elisha calling-pattern.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 4:18-22 | 1 Kings 19:19-21 | Eliyahu (Elijah) calling Elisha by casting his mantle as Elisha was plowing; Elisha leaves the plow and follows. The same prophet-calls-the-vocational-worker-out-of-the-vocation pattern Yahusha (Jesus) walks at Matt 4:18-22. |
-| Matt 4:17 | Mark 1:14-15 | The parallel Synoptic record of the kingdom-at-hand proclamation; Mark's *the time is fulfilled, and the kingdom of Elohim (God) is at hand: repent ye* is verbally close. |
-
-**PROPOSED new thread: `kingdoms-now-under-watcher-rebellion-administration`** *(for Yoshi's design call).* Anchor: Matthew 4:8-10 (the devil's offer of *all the kingdoms of the world, and the glory of them*; the framework reading that the offer is not an empty bluff because the kingdoms of this age ARE temporarily under the dominion of the principalities and powers that fell with the watcher-rebellion). Summary: *The kingdoms of this world are presently under the temporary administration of the fallen principalities and powers (Daniel 10:13, 20; Ephesians 6:12; 1 John 5:19). The devil's offer to Yahusha (Jesus) at Matt 4:9 was a real offer of what he currently administered — the kingdoms now, without the cross, in exchange for worship. Yahusha (Jesus) refused on the Torah-standard and chose the cross, the resurrection, the ascension, and the Daniel-7 transfer of the everlasting kingdom from the Ancient of Days to the Son-of-Adam-in-flesh in the Father's timing.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 4:8-9 | Daniel 10:13, 20 | The prince of Persia, the prince of Grecia — the principalities administering the world's kingdoms in Daniel's vision. |
-| 2 | Matt 4:8-9 | Ephesians 6:12 | *We wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world* — the apostolic naming of the present-age power-structure. |
-| 3 | Matt 4:8-9 | 1 John 5:19 | *The whole world lieth in wickedness* — the present-age administration described. |
-| 4 | Matt 4:8-10 | Daniel 7:13-14 | *One like the Son of Adam came with the clouds of heaven ... and there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him* — the Father's-timing transfer of the everlasting kingdom that Yahusha (Jesus) waits for; the kaph-comparative preserved as incarnation-honoring. |
-| 5 | Matt 4:8-10 | Revelation 11:15 | *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* — the future consummation of the kingdom-transfer Yahusha (Jesus) refused to short-circuit. |
-| 6 | Matt 4:8-10 | Genesis 3:15 | The original promise of the seed-of-the-woman bruising the serpent's head — the cross is the bruise; the temptation to take the kingdoms without the cross is the temptation to skip the prophecy. |
-
-### Layer 1 — Per-verse cross-references (additional rows)
-
-**Matt 4:6** — *He shall give his angels charge concerning thee: and in their hands they shall bear thee up, lest at any time thou dash thy foot against a stone.*
-
-| Target | Member note |
-|---|---|
-| Psalm 91:11-12 | The OT source the devil quotes — with the qualifier *to keep thee in all thy ways* (v.11) omitted. |
-| Psalm 91:14 | *Because he hath set his love upon me, therefore will I deliver him* — another qualifier-verse in the Psalm establishing the covenant-faithfulness condition of the promise. |
-
-**Matt 4:11** — *Then the devil leaveth him, and, behold, angels came and ministered unto him.*
-
-| Target | Member note |
-|---|---|
-| Hebrews 1:14 | *Are they not all ministering spirits, sent forth to minister for them who shall be heirs of salvation* — the standing angelic-ministry role; Matt 4:11 is the unforced fulfillment of what the devil had wanted to manipulate as a sign-test at vv.5-7. |
-| 1 Kings 19:5-8 | Eliyahu (Elijah) ministered to by an angel after the contest at Carmel — the Tanakh-pattern of angelic ministry to the prophet after spiritual conflict. |
-
-**Matt 4:17** — *From that time Yahusha (Jesus) began to preach, and to say, Repent: for the kingdom of heaven is at hand.*
-
-| Target | Member note |
-|---|---|
-| Matt 3:2 | The verbally-identical preaching-formula of Yochanan (John) the Immerser; the deliberate continuity of message between Yochanan (John) and Yahusha (Jesus). |
-| Daniel 2:44 | *In the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed* — the Tanakh-source of the everlasting kingdom Yahusha (Jesus) names as *at hand.* |
-| Daniel 7:13-14 | The Son-of-Adam-kingdom-transfer prophecy (kaph-comparative preserved); the kingdom-at-hand is this kingdom. |
-
-**Matt 4:23** — *And Yahusha (Jesus) went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom, and healing all manner of sickness and all manner of disease among the people.*
-
-| Target | Member note |
-|---|---|
-| Isaiah 35:4-6 | *Then the eyes of the blind shall be opened ... the lame man leap as an hart* — the Messianic-credential prophecy authenticated by Yahusha's (Jesus's) healing ministry; Yahusha (Jesus) cites this credential himself at Matt 11:2-5 when Yochanan (John) sends from prison to ask. |
-| Isaiah 61:1-2 | *He hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound* — the Messianic-mission summary Yahusha (Jesus) will explicitly quote at Luke 4:18-19 in his Natsareth (Nazareth) synagogue declaration. |
