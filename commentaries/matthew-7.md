@@ -50,15 +50,9 @@ The framework rules out the prosperity-gospel misuse of vv.7-11. The *ask / seek
 
 ## §3. The Golden Rule named by Yahusha (Jesus) as *the law and the prophets* (v.12)
 
-The framework reads v.12 as a load-bearing Torah-affirmation. Yahusha (Jesus) himself names the principle *do unto others as ye would that they should do to you* as the summary of *the law and the prophets* — the Greek *houtos gar estin ho nomos kai hoi prophētai.* The Torah and the prophets. The whole Tanakh-revelation.
+The framework reads v.12 as a load-bearing Torah-affirmation (the restoration-not-innovation framing — Tobit 4:15, Hillel's negative-form rule, and the heart-substance of the Tanakh-revelation behind the Rule — is walked in the chapter's short-form commentary). The long-form develops one further architectural move: the Rule is the heart-substance of the Torah, NOT a replacement of the Torah's specific commandments. Yahusha (Jesus) has just spent Matthew 5:17-19 binding himself and the kingdom-citizens to every jot and tittle of the Torah; he has spent Matthew 5:21-48 restoring the heart-Torah at six commandment cruxes; he has spent Matthew 6:1-18 specifying the kingdom-citizens form of three core practices. The Golden Rule at Matthew 7:12 cannot abolish what the King has just affirmed. The Christian commentary tradition that flattens the Rule into a generic ethical principle replacing the Torah's specifics — *the Torah was complicated but Yahusha (Jesus) simplified it to just love your neighbor* — collapses the verse against the Sermon's whole architecture. Yahusha (Jesus) is naming the heart of what the Torah and the prophets EXPRESS; he is not voiding what they express.
 
-Two framework observations.
-
-First, the principle is NOT a replacement of the Torah's specific commandments. Yahusha (Jesus) has just spent Matthew 5:17-19 binding himself and the kingdom-citizens to every jot and tittle of the Torah; he has spent Matthew 5:21-48 restoring the heart-Torah at six commandment cruxes; he has spent Matthew 6:1-18 specifying the kingdom-citizens form of three core practices. The Golden Rule at Matthew 7:12 cannot abolish what the King has just affirmed. The Rule is the HEART-SUBSTANCE of the Torah and the prophets in summary-form, not a substitute for them. The Christian commentary tradition that flattens the Rule into a generic ethical principle replacing the Torah's specifics — *the Torah was complicated but Jesus simplified it to just love your neighbor* — collapses the verse against the Sermon's whole architecture. Yahusha (Jesus) is naming the heart of what the Torah and prophets EXPRESS; he is not voiding what they express.
-
-Second, the parallel rabbinic-formulation. The school of Hillel, a generation before Yahusha (Jesus), had a famous version of the principle: *what is hateful to you, do not do to your fellow; this is the whole Torah, the rest is commentary — go and learn.* The framework reads Hillel's formulation as a Tanakh-substantial summary the Pharisaic-tradition itself had carried; Yahusha (Jesus) walks the same teaching, articulated in the positive direction (*do unto others* rather than *do not do*). This is significant because it shows Yahusha (Jesus) is not contradicting the Tanakh-substance of the rabbinic-teaching at its best; he is contradicting the oral-tradition DISTORTIONS layered over the Torah, the antitheses of Matthew 5:21-48. Where the rabbis articulated the heart of the Torah faithfully, Yahusha (Jesus) walks the same teaching. The framework distinguishes between the Tanakh-substance the Pharisaic-tradition occasionally preserved and the oral-tradition distortions the Pharisaic-system overlaid; Matthew 7:12 is the kind of substance-affirmation the framework can name without inheriting the system's distortions.
-
-The framework reads Matthew 7:12 as the heart-Torah's social-application summary. The Tanakh's commandments toward the neighbor and the stranger are summed in the Rule's substance:
+The Tanakh's commandments toward the neighbor and the stranger are summed in the Rule's substance:
 
 *Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (the LORD).* (Leviticus 19:18)
 
@@ -251,113 +245,3 @@ The framework's nature-of-God reading from earlier chapters surfaces again here.
 *And they were astonished at his doctrine: for he taught them as one that had authority, and not as the scribes.* (Mark 1:22)
 
 The chapter closes on the recognition-of-authority by the multitudes — not on their committed-discipleship. The multitudes are astonished; some will follow; many will not. The Sermon has been delivered. The wide gate / narrow gate distinction has been named. The post-harvest sifting has been previewed. The two builders have been contrasted. The Father's-will-doing as the kingdom-entry-criterion has been locked. The multitudes hear the authority; what they do with it now reveals what they are.
-
----
-
-## §9. Cross-Reference Apparatus
-
-*This section seeds the chapter-end card per `api/CHAPTER_END_CARD_CONTRACT.md`. Layer 1 = per-verse cross-references (curated framework-bearing rows for the `cross_references` table). Layer 2 = framework threads surfacing in this chapter (existing thread members + new threads marked PROPOSED for Yoshi's design call). This section is staging data for the engineering migration pass; it does not surface in the reader UI once the data lives in the database.*
-
-### Layer 2 — Threads surfacing in Matthew 7
-
-**PROPOSED new thread: `lord-lord-and-torahlessness`** *(for Yoshi's design call; major framework anchor).* Anchor: Matthew 7:21-23. Summary: *Yahusha (Jesus) at Matt 7:21-23 names the institutional-Christian antinomian-gospel community in advance: many at the judgment-day will confess him as Lord twice over, claim active supernatural-ministry under his name (prophesying, casting out demons, doing wonderful works), and hear in return: I NEVER KNEW YOU; depart from me, ye workers of ANOMIA — torahlessness. The Greek anomia is literally without-Torah. The credentials are real-but-insufficient; the verbal-confession is explicit-but-insufficient; the supernatural-acts are evident-but-insufficient. The doing-of-the-Father's-will (= heart-Torah-walking) is what separates the wheat from the unfruitful-wheat at the post-harvest sifting. This is the most-load-bearing NT verse for the contrary-to-Torah test of 1 John 2:3-4 applied to the modern Judaizer movement (institutional Christianity). The thread connects v.21-23 to the Tanakh false-prophet diagnostics (Deut 13, Deut 18), the post-harvest sifting (Ezekiel 20:33-38, Matt 25:31-46, Matt 13:30), the wheat-vs-unfruitful-wheat distinction (the wheat can be sifted into fruitful and unfruitful after the harvest), the grace-that-can-be-lost stream (Hosea 7:13, Ezekiel 18, Ezekiel 33), and the contrary-to-Torah test master-filter (1 John 2:3-4).*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 7:21-23 | 1 John 2:3-4 | *Hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar* — the master-filter; Matt 7:21-23 is the King's own articulation of the same diagnostic. |
-| 2 | Matt 7:21 | Matt 12:50 | *Whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother* — the doing-of-the-Father's-will as the kingdom-family-identification criterion; same standard. |
-| 3 | Matt 7:21 | Matt 25:31-46 | The sheep-and-goats judgment scene — separated by what they DID, not what they said; the practical-walking diagnostic Matt 7:21 articulates in proposition. |
-| 4 | Matt 7:22 | Deut 13:1-3 | *If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder, And the sign or the wonder come to pass ... thou shalt not hearken unto the words of that prophet* — the Tanakh false-prophet diagnostic; signs-and-wonders are not the proof; the Torah-fidelity is. |
-| 5 | Matt 7:22 | Deut 18:20-22 | *That prophet, which shall presume to speak a word in my name, which I have not commanded him to speak ... shall die* — the false-prophet-in-the-Name diagnostic. |
-| 6 | Matt 7:22 | 2 Corinthians 11:13-15 | *Such are false apostles, deceitful workers, transforming themselves into the apostles of HaMashiach (Christ). And no marvel; for Satan himself is transformed into an angel of light* — the apostolic confirmation that supernatural-credentials can attend false ministers. |
-| 7 | Matt 7:23 | Ezekiel 20:37-38 | *I will purge out from among you the rebels, and them that transgress against me* — the post-harvest sifting language Matt 7:23's *depart from me* echoes; the discrimination of the wheat after the gathering. |
-| 8 | Matt 7:23 | Psalm 6:8 | *Depart from me, all ye workers of iniquity; for Yahuah (the LORD) hath heard the voice of my weeping* — David's psalm-anchor of the *depart from me, workers of iniquity* formula Yahusha (Jesus) quotes verbatim. |
-| 9 | Matt 7:23 | 2 Thessalonians 2:7-8 | *For the mystery of iniquity (anomia, torahlessness) doth already work* — the apostolic naming of the *anomia* — the mystery of TORAHLESSNESS — operating in the present age. |
-| 10 | Matt 7:23 | 1 John 3:4 | *Whosoever committeth sin transgresseth also the law: for sin is the transgression of the law (anomia)* — the apostolic-direct equation of sin with *anomia.* |
-
-**Thread: `heart-torah-not-abolition`** *(PROPOSED at Matt 5).* Adds members from Matthew 7.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 7:12 | Lev 19:18 | *Thou shalt love thy neighbour as thyself* — the love-of-neighbor Torah-commandment the Golden Rule sums in heart-substance. |
-| Matt 7:12 | Lev 19:34 | *The stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself* — the love-of-stranger commandment also summed by the Rule. |
-| Matt 7:12 | Romans 13:8-10 | *Love worketh no ill to his neighbour: therefore love is the fulfilling of the law* — Paul's apostolic articulation of the same Golden-Rule = Torah-heart-substance principle. |
-| Matt 7:21 | Matt 5:17-19 | The same Torah-affirmation in inverse direction; Matt 5:17-19 binds Yahusha (Jesus) and the kingdom-citizens to every jot and tittle; Matt 7:21 names the doing-of-the-Father's-will as the kingdom-entry-criterion. |
-| Matt 7:24-27 | Matt 5:17-19 | The Sermon-summary lock: the hearer-AND-doer builds on the rock; the heart-Torah of Matt 5:17-19 is what is done. |
-| Matt 7:24-27 | Deut 4:2 | *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments* — the Torah's own fence around itself; the hearer-AND-doer keeps the commandments without addition or subtraction. |
-
-**Thread: `grace-and-the-opportunity-that-can-be-lost`** *(PROPOSED at Matt 6; CANDIDATE for free-tier promotion).* Adds members from Matthew 7.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 7:21-23 | Hosea 7:13 | The anchor verse of the thread; the redeemed who walk away forfeit the redemption; the *Lord-Lord* prophesiers who lived torahless walked the same pattern in the New Testament register. |
-| Matt 7:21-23 | Ezekiel 33:12-13 | The righteous-turned-to-iniquity have their righteousness not remembered; the Matt 7:22 community had active ministry-credentials and lost them. |
-| Matt 7:21-23 | Hebrews 6:4-6 | *It is impossible for those who were once enlightened, and have tasted of the heavenly gift, and were made partakers of the Ruach HaKodesh (Holy Spirit) ... if they shall fall away, to renew them again unto repentance* — the apostolic warning to a community that had received the gift. |
-| Matt 7:23 | Revelation 22:19 | *If any man shall take away from the words of the book of this prophecy, Elohim (God) shall take away his part out of the book of life* — the blotting-out warning given to the wheat; consistent with the Matt 7:23 *I never knew you* outcome at the post-harvest sifting. |
-
-**Thread: `pharisaic-sadducean-system-as-judaizer-predecessor`** *(PROPOSED at Matt 3).* Adds members from Matthew 7.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 7:15-20 | Matt 23:1-39 | The Matt 23 indictment of the scribes-and-Pharisees as wolves-in-sheep's-clothing; the false-prophet diagnostic of Matt 7:15-20 applied to the leadership-system at full length. |
-| Matt 7:21-23 | Galatians 1:6-9 | *Though we, or an angel from heaven, preach any other gospel unto you ... let him be accursed* — Paul's apostolic naming of the false-gospel teachers who would have stood indicted under Matt 7:22-23's framework had they confessed Yahusha (Jesus) verbally while teaching torahlessness. |
-| Matt 7:28-29 | Mark 1:22 | *They were astonished at his doctrine: for he taught them as one that had authority, and not as the scribes* — Markan parallel; same scribe-authority contrast. |
-
-**PROPOSED new thread: `paul-and-the-wresting-of-his-letters`** *(for Yoshi's design call).* Anchor: 2 Peter 3:15-17. Summary: *Peter writing about Paul names the wresting of Paul's letters by the unlearned and unstable as a known phenomenon producing destruction. The institutional-Christian collapse of Paul's letters into an antinomian gospel is the wresting Peter warned about, two thousand years downstream. The framework reads Paul as harmonizing with the King's own teaching at Matt 7:21, not contradicting him. The Romans 10:9-10 confession-and-belief is the journey's beginning, not its full completion; the King at Matt 7:21 names the doing-of-the-Father's-will as the entry-criterion at the judgment-day; the two are not in conflict when Paul is read with the rest of the canon harmonized. The thread connects Peter's warning to the specific Pauline passages most wrested (Romans 10:9-10, Romans 3-4 on faith and works, Galatians 3 on the law as schoolmaster, Hebrews 7-10 on the priesthood and the sacrifice, Ephesians 2:8-9 on grace through faith) and to Paul's own counter-articulations (Romans 3:31 on establishing the law, Romans 7:12 on the holy and just and good law, Romans 8:4 on the righteousness of the law fulfilled in those who walk after the Spirit, Galatians 5:6 on faith working through love, Hebrews 8:10 on the new covenant as Torah written on the heart).*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | 2 Peter 3:15-17 | Romans 10:9-10 | The confession-and-belief verses most-wrested by the institutional-Christian system into a verbal-confession-only entry-criterion. |
-| 2 | 2 Peter 3:15-17 | Romans 3:31 | *Do we then make void the law through faith? Elohim (God) forbid: yea, we establish the law* — Paul's own counter to the antinomian-wrest. |
-| 3 | 2 Peter 3:15-17 | Romans 7:12 | *Wherefore the law is holy, and the commandment holy, and just, and good* — Paul's own affirmation of the Torah. |
-| 4 | 2 Peter 3:15-17 | Galatians 5:6 | *Faith which worketh by love* — the integration Paul names that the wresting collapses. |
-| 5 | 2 Peter 3:15-17 | Matt 7:21-23 | The King's own statement that the verbal-confession without the walking is not the entry; reads against the wrested Paul; harmonizes with Paul read whole. |
-
-### Layer 1 — Per-verse cross-references (additional rows)
-
-**Matt 7:1-2** — *Judge not, that ye be not judged.*
-
-| Target | Member note |
-|---|---|
-| Lev 19:17-18 | *Thou shalt in any wise rebuke thy neighbour, and not suffer sin upon him ... thou shalt love thy neighbour as thyself* — the Torah's command to rebuke combined with the love-of-neighbor command. |
-| John 7:24 | *Judge not according to the appearance, but judge righteous judgment* — Yahusha's (Jesus's) explicit reframing that locks Matt 7:1 as a kind-of-judgment-correction, not abolition of judgment. |
-
-**Matt 7:6** — *Give not that which is holy unto the dogs.*
-
-| Target | Member note |
-|---|---|
-| Proverbs 23:9 | *Speak not in the ears of a fool: for he will despise the wisdom of thy words* — the wisdom-stream's discrimination of audience; consistent with the pearls-before-swine principle. |
-| Matt 10:14 | *Whosoever shall not receive you, nor hear your words, when ye depart out of that house or city, shake off the dust of your feet* — Yahusha's (Jesus's) instruction to the disciples on the same discrimination-of-audience pattern. |
-
-**Matt 7:11** — *How much more shall your Father which is in heaven give good things to them that ask him?*
-
-| Target | Member note |
-|---|---|
-| Luke 11:13 | *How much more shall your heavenly Father give the Holy Spirit to them that ask him?* — Lukan parallel; specifies *good things* as the Ruach HaKodesh (Holy Spirit). |
-| Jeremiah 31:33 | *I will put my law in their inward parts, and write it in their hearts* — the new-heart promise the Spirit-gift enables. |
-| Ezekiel 36:26-27 | *A new heart also will I give you ... and cause you to walk in my statutes* — the Spirit-empowered Torah-walking promise the good gift produces. |
-
-**Matt 7:13-14** — *Strait is the gate, and narrow is the way, which leadeth unto life.*
-
-| Target | Member note |
-|---|---|
-| Isaiah 10:20-22 | The remnant-of-Yashar'el (Israel) Tanakh-pattern — only a remnant returns. |
-| Zechariah 13:8-9 | *Two parts therein shall be cut off and die; but the third shall be left therein* — the third-part remnant; explicit numerical-minority structure. |
-| Zephaniah 3:12-13 | *I will also leave in the midst of thee an afflicted and poor people, and they shall trust in the name of Yahuah (the LORD). The remnant of Yashar'el (Israel) shall not do iniquity* — the remnant defined by Torah-walking. |
-| Luke 13:23-24 | *Strive to enter in at the strait gate: for many, I say unto you, will seek to enter in, and shall not be able* — Lukan parallel that intensifies the *few* of Matt 7:14. |
-
-**Matt 7:15** — *Beware of false prophets, which come to you in sheep's clothing.*
-
-| Target | Member note |
-|---|---|
-| Ezekiel 22:27 | *Her princes in the midst thereof are like wolves ravening the prey* — the prophet's identification of the leadership-system as wolves in the Tanakh-pattern. |
-| Acts 20:29-30 | Paul's warning to the Ephesian elders — *grievous wolves enter in among you, not sparing the flock. Also of your own selves shall men arise, speaking perverse things* — the apostolic confirmation of the false-prophets-among-the-gathering pattern. |
-
-**Matt 7:24-27** — The two builders.
-
-| Target | Member note |
-|---|---|
-| Exodus 24:7 | *All that Yahuah (the LORD) hath said will we do, and be obedient (na'aseh v'nishma)* — the do-and-hear Tanakh-pattern Matt 7:24-27 walks. |
-| Deuteronomy 32:4 | *He is the Rock, his work is perfect* — the Tanakh's foundation-rock identification of Yahuah (the LORD). |
-| Psalm 18:2 | *Yahuah (the LORD) is my rock, and my fortress* — the foundation-rock prayer-substance. |
-| James 1:22-25 | *But be ye doers of the word, and not hearers only ... whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed* — Ya'aqov's (James's) apostolic restatement of the Matt 7:24-27 hearer-AND-doer standard. |

@@ -10,9 +10,7 @@ Where the six antitheses of Matthew 5:21-48 corrected the oral tradition at six 
 
 The opening verse frames the next seventeen. The Greek *prosechete* — *take heed* — is the watchful imperative; the disciples are to keep watch on the motive that drives the act. The framework reads vv.1-18 as a unified three-part diagnostic. Yahusha (Jesus) names three core practices of covenant-life — alms, prayer, fasting — and walks the same display-vs-secret contrast through each. The pattern is identical in all three units: the Pharisaic-counterfeit form practices the act *to be seen of men* and receives its reward in the seeing; the kingdom-citizens form practices the act *in secret* and the Father who *seeth in secret* rewards openly.
 
-This is the Pharisaic-counterfeit-righteousness of Matthew 5:20 specified in practice. The Matthew 5:17-19 declaration locked the Torah as the kingdom's standard; v.20 named the Pharisaic righteousness as the standard the kingdom-citizens exceed; vv.21-48 walked the antitheses to show oral-tradition correction at six cruxes; and now vv.1-18 walk three practical cases where the Pharisaic-counterfeit-form of the practice — alms, prayer, fasting — is contrasted with the kingdom-citizens form. The same diagnostic structure, now applied to practice rather than to commandment-handling.
-
-The framework reading hears the *to be seen of men* refrain as the seed-marker of the Judaizer-predecessor system the framework has been naming throughout the Sermon. The Pharisaic-counterfeit-righteousness is performance-for-credential, public-display for honor-from-men, religious-act for visible-reputation. It is the same flesh-credential gospel the framework identifies in every costume it has taken across history — Pharisaic, Galatian-agitator, institutional-Christian, modern Hebrew-roots-false-inclusion, Islamic — the architecture of self-display-for-honor by which the system claims standing without the heart-Torah the covenant requires. Yahusha (Jesus) is naming the architecture at the level of motive, where it actually lives.
+This is the Pharisaic-counterfeit-righteousness of Matthew 5:20 specified in practice. Where the antitheses of vv.21-48 corrected oral-tradition handling of the commandments, vv.1-18 walk three practical cases where the Pharisaic-counterfeit-form of the practice — alms, prayer, fasting — is contrasted with the kingdom-citizens form. The *to be seen of men* refrain names the flesh-credential gospel architecture the framework identifies in every costume across history — Pharisaic, Galatian-agitator, institutional-Christian, Hebrew-Roots-false-inclusion, Islamic. Yahusha (Jesus) himself names the architecture at the level of motive by quoting Isaiah 29:13 at the Pharisees at Mark 7:6-8 — *this people honoureth me with their lips, but their heart is far from me; howbeit in vain do they worship me, teaching for doctrines the commandments of men.* The diagnostic he names at Mark 7 is identical to what vv.1-18 walks at the practice-level: surface-act honoring with the mouth, heart far from the Father, doctrines-of-men replacing the heart-Torah.
 
 The kingdom-citizens righteousness, by contrast, is heart-Torah for the Father's eyes alone — with the visible witness of *good works* flowing as the natural outcome, not as the engineered purpose. This is critical, because the Sermon has already said:
 
@@ -138,17 +136,7 @@ Yahusha (Jesus) appends a direct elaboration of the *as we forgive our debtors* 
 
 The structure is conditional. *If ye forgive ... your heavenly Father will also forgive.* *If ye forgive NOT ... neither will your Father forgive.* The receiving of forgiveness from the Father is coupled to the giving of forgiveness to the brother. This is not a transactional-quid-pro-quo earning-of-forgiveness; this is the relational-economy of the kingdom. The kingdom-citizens carry the forgiveness-substance in both directions — receiving from the Father, extending to the brother — or the substance is broken at the kingdom-citizens end and the receiving-side closes.
 
-Yahusha (Jesus) will return to this exact pattern in narrative form at the parable of the unforgiving servant:
-
-*Then his lord, after that he had called him, said unto him, O thou wicked servant, I forgave thee all that debt, because thou desiredst me: Shouldest not thou also have had compassion on thy fellowservant, even as I had pity on thee? And his lord was wroth, and delivered him to the tormentors, till he should pay all that was due unto him. So likewise shall my heavenly Father do also unto you, if ye from your hearts forgive not every one his brother their trespasses.* (Matthew 18:32-35)
-
-The king in the parable forgives the servant the great debt, then reverses the forgiveness the moment the forgiven servant refuses to extend forgiveness to a fellow-servant who owed a small debt. The lord's word is plain: *so likewise shall my heavenly Father do also unto you.* The parable is the dramatized form of Matthew 6:14-15.
-
-This is the chapter's clearest collapse of the institutional-Christian *once saved, always saved* doctrine — the teaching that the believer who once received forgiveness is permanently secured in that forgiveness regardless of subsequent walking. The verse names a continuing-conditional structure to the receiving of forgiveness; the parable enacts the same conditional. The grace is real; the grace is freely offered; the grace can be forfeited by the citizens who refuse to walk its economy.
-
-The Tanakh has been teaching the same architecture for centuries. Grace freely given, grace that can be forfeited by the redeemed who turn away from the redeeming hand. Hosea names it directly:
-
-The redeemed who speak lies against the Redeemer forfeit the redemption — Hosea's own phrasing. Ezekiel walks the same pattern explicitly:
+Yahusha (Jesus) returns to this exact pattern in narrative form at the parable of the unforgiving servant at Matthew 18:32-35 — the king forgives the great debt, then REVERSES the forgiveness the moment the forgiven servant refuses to extend it. The same conditional-grammar appears at the close of the Sermon at Matthew 7:21-23, where the *I never knew you* lands on the prophets-and-wonder-workers who invoked the right name and walked a counterfeit walk. The conditional of vv.14-15 sits inside a canon-wide architecture the Tanakh has been teaching for centuries. Ezekiel walks the pattern explicitly:
 
 *Therefore thou son of Adam, say unto the children of thy people, The righteousness of the righteous shall not deliver him in the day of his transgression: as for the wickedness of the wicked, he shall not fall thereby in the day that he turneth from his wickedness; neither shall the righteous be able to live for his righteousness in the day that he sinneth. When I shall say to the righteous, that he shall surely live; if he trust to his own righteousness, and commit iniquity, all his righteousnesses shall not be remembered; but for his iniquity that he hath committed, he shall die for it.* (Ezekiel 33:12-13)
 
@@ -164,13 +152,7 @@ The apostolic writings name the same architecture explicitly when the Hebrews-le
 
 *For if we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins, But a certain fearful looking for of judgment and fiery indignation, which shall devour the adversaries. He that despised Mosheh's (Moses's) law died without mercy under two or three witnesses: Of how much sorer punishment, suppose ye, shall he be thought worthy, who hath trodden under foot the Son of Elohim (God), and hath counted the blood of the covenant, wherewith he was sanctified, an unholy thing, and hath done despite unto the Ruach (Spirit) of grace?* (Hebrews 10:26-29)
 
-The warning is addressed to those who have received the knowledge of the truth and been sanctified by the blood of the covenant — the redeemed, in other words, not the unevangelized — and it names the forfeit as real. Yahusha (Jesus) himself locks the same warning at the close of the Sermon:
-
-*Not every one that saith unto me, Adonai (Lord), Adonai (Lord), shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven. Many will say to me in that day, Adonai (Lord), Adonai (Lord), have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works? And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.* (Matthew 7:21-23)
-
-The *I never knew you* in Matthew 7 is spoken to wheat that did not bear fruit — the prophets-in-his-name and the demon-casters-in-his-name and the workers-of-wonders-in-his-name are not random pagans; they invoked the right name and walked a counterfeit walk. The Father's reckoning at that day is not about names spoken; it is about the will done. The same conditional-grammar at Matthew 6:14-15 governs Matthew 7:21-23 governs the whole canonical pattern of grace-that-can-be-lost.
-
-The framework's reading of Matthew 6:14-15: the verse is one of the load-bearing New Testament witnesses to the architecture that the Tanakh has been teaching since Mosheh (Moses) — grace freely given, grace that can be forfeited, the redeemed who depart from the redeeming hand losing what they had. Institutional Christianity inherited the lie that says otherwise. The verse will not bear the lie. The grace is real, the gathering is real, the salvation is real — and the kingdom-citizens carry the forgiveness-economy in both directions or they break the connection at their own end.
+The warning is addressed to those who have received the knowledge of the truth and been sanctified by the blood of the covenant — the redeemed, in other words, not the unevangelized — and it names the forfeit as real. The Reformation's *saved by grace through faith* sentence is true; the Reformation cut the second half of the sentence off. The conditional-grammar of vv.14-15, the parable of the unforgiving servant, the *I never knew you* of Matthew 7:21-23, and the Hebrews-10 warning to the redeemed all put the second half back. Grace is the means of return to the Father's commandments, not a permanent standing outside the operation of the covenant. The kingdom-citizens carry the forgiveness-economy in both directions — receiving from the Father, extending to the brother — or they break the connection at their own end. The 1 John 2:3-4 test stands at full force on this verse as on every verse.
 
 ## §6. Fasting in secret — the third practice and the Isaiah 58 substance (vv.16-18)
 
@@ -222,7 +204,7 @@ The Torah's own use of the evil-eye idiom — *thine eye be evil against thy poo
 
 A fourth wisdom-stream witness: hastening-to-be-rich produces evil-eye stinginess as a heart-condition.
 
-The Greek of Matthew 6:22-23 — *haplous* for *single,* *ponēros* for *evil* — carries the Hebrew idiom into the Septuagint vocabulary. *Haplous* in Septuagint usage renders Hebrew *tam* — sound, whole, generous-without-double-mind. *Ponēros* renders Hebrew *ra* — evil, including the grasping-stinginess sense in the Mishlei (Proverbs) passages above. The Tanakh-idiom carries into the Greek of the gospel.
+The Greek of Matthew 6:22-23 — *haplous* for *single,* *ponēros* for *evil* — carries the Hebrew idiom into the Septuagint vocabulary. *Haplous* in Septuagint usage renders Hebrew *tam* — sound, whole, generous-without-double-mind. *Ponēros* renders Hebrew *ra* — evil, including the grasping-stinginess sense in the Proverbs passages above. The Tanakh-idiom carries into the Greek of the gospel.
 
 The framework reading is locked by the literary context. Matthew 6:22-23 sits BETWEEN the treasures-in-heaven teaching (vv.19-21) and the Mammon-or-Elohim binary (v.24). The whole block is about economic orientation. The *single eye* whose body is *full of light* is the GENEROUS person who lays up treasure in heaven through generous-giving; the *evil eye* whose body is *full of darkness* is the STINGY person who lays up treasure on earth through grasping. The Tanakh-idiom precisely fits the surrounding teaching on the disciple's economic orientation. The Christian-spiritualization of *single eye* into a generic spiritual-vision-purity loses the framework substance entirely and reads the verses as a free-floating metaphor in the middle of an economic discourse.
 
@@ -289,163 +271,3 @@ The delighting comes first; the desires-of-the-heart follow as the kingdom-citiz
 The *take no thought for the morrow* and *sufficient unto the day is the evil thereof* close the Sermon-middle on the day-by-day frame. The kingdom-citizens walk one day at a time in the Father's provision. The manna-pattern of the wilderness. The wilderness-trust that the Yashar'el (Israel) of the Exodus generation failed at — gathering more than the day required, hoarding against tomorrow, eating yesterday's manna full of worms — and that Yahusha (Jesus) walked perfectly at Matthew 4 in his own forty-day wilderness. The disciples now learn the same daily-trust the Father has been teaching since the wilderness. *Sufficient unto the day is the evil thereof* — each day carries its own portion of trouble; the kingdom-citizens trust the Father's daily-grace for the daily-portion, and let the morrow take its own thought when the morrow comes.
 
 Matthew 6 closes here. The chapter has walked the practical specification of the kingdom-citizens-righteousness against the Pharisaic-counterfeit form. Alms, prayer, and fasting in secret. The Lord's Prayer as the kingdom-citizens prayer-pattern in seven Tanakh-rooted phrases. The forgiveness-economy that conditions the receiving on the giving. Treasures laid up in heaven by the open hand of the *good eye.* The forced-choice between Yahuah (God) and Mammon-the-principality. The seek-first-the-kingdom priority and the daily-trust in the Father's covenant-provision. The chapter does not abolish a single Torah practice; it names what the practice looks like when the heart that walks it has been brought home.
-
----
-
-## §11. Cross-Reference Apparatus
-
-*This section seeds the chapter-end card per `api/CHAPTER_END_CARD_CONTRACT.md`. Layer 1 = per-verse cross-references (curated framework-bearing rows for the `cross_references` table). Layer 2 = framework threads surfacing in this chapter (existing thread members + new threads marked PROPOSED for Yoshi's design call). This section is staging data for the engineering migration pass; it does not surface in the reader UI once the data lives in the database.*
-
-### Layer 2 — Threads surfacing in Matthew 6
-
-**Thread: `pharisaic-sadducean-system-as-judaizer-predecessor`** *(PROPOSED at Matt 3).* Adds members from Matthew 6.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 6:1-4 | Matt 23:5 | *But all their works they do for to be seen of men* — the explicit Matt 23 indictment of the Pharisaic-display-pattern that Matt 6:1-4 corrects in alms-practice. |
-| Matt 6:5-8 | Luke 18:9-14 | The parable of the Pharisee and the publican in the temple — the Pharisee's prayer-display-for-self-glory contrasted with the publican's heart-cry; the parable Matt 6:5-6 frames generically is illustrated in narrative form at Luke 18. |
-| Matt 6:16-18 | Luke 18:12 | *I fast twice in the week* — the Pharisaic-display-fast Matt 6:16-18 corrects. |
-
-**Thread: `scattered-seed-gathering`** *(LANDED at S74).* Adds members from Matthew 6.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 6:9 | Ezekiel 36:23-24 | *I will sanctify my great name ... when I shall be sanctified in you before their eyes ... For I will take you from among the heathen, and gather you out of all countries* — *Hallowed be thy name* is the gathering-prayer; the Name is sanctified through the gathering of the scattered. |
-| Matt 6:10 | Daniel 7:13-14 | *Thy kingdom come* — the eschatological-kingdom prayer; the Daniel kingdom-transfer Yahusha (Jesus) refused to short-circuit at Matt 4:8-10. |
-| Matt 6:10 | Daniel 2:44 | The Elohim-of-heaven kingdom that breaks all the kingdoms of the present age — what the kingdom-citizens pray come. |
-
-**Thread: `kingdoms-now-under-watcher-rebellion-administration`** *(PROPOSED at Matt 4).* Adds members from Matthew 6.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 6:13 | 1 John 5:19 | *The whole world lieth in wickedness* — the present-age principalities-administration context for *deliver us from evil.* |
-| Matt 6:24 | Ephesians 6:12 | *We wrestle not against flesh and blood, but against principalities, against powers* — the Mammon-or-Elohim binary names one of the principalities specifically (Mammon-as-personified-power); the apostolic naming of the structure. |
-| Matt 6:24 | Matt 4:8-10 | The same kingdoms-now-under-watcher-rebellion-administration context — the devil offered kingdoms-and-glory in exchange for worship at Matt 4; Mammon offers wealth-as-master in exchange for whole-heart-allegiance at Matt 6:24; same trade-architecture. |
-| Matt 6:24 | 1 Timothy 6:10 | *For the love of money is the root of all evil: which while some coveted after, they have erred from the faith* — the apostolic confirmation that Mammon-service is a departure-from-the-faith. |
-
-**Thread: `grace-from-name's-sake`** *(LANDED at S74).* Adds members from Matthew 6.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 6:9 | Ezekiel 36:22 | The sanctification of the Name is *for mine holy name's sake* — the grace-from-name's-sake grammar that the *Hallowed be thy name* prayer presupposes. |
-| Matt 6:12 | Leviticus 16:30 | *For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before Yahuah (the LORD)* — the Yom Kippur atonement architecture the forgiveness-petition draws on. |
-| Matt 6:14-15 | Matt 18:32-35 | The parable of the unforgiving servant — the king reverses the forgiveness when the servant refuses to extend it; the exact pattern Matt 6:14-15 names in proposition. |
-
-**PROPOSED new thread: `grace-and-the-opportunity-that-can-be-lost`** *(for Yoshi's design call; also a CANDIDATE for promotion to free-tier per the design-language register).* Anchor: Hosea 7:13 (*Though I have redeemed them, yet they have spoken lies against me*). Summary: *The institutional-Christian once-saved-always-saved doctrine collapses on Matt 6:14-15 and on the broader Tanakh-and-New-Testament stream. The kingdom-citizens are gathered by grace; the gathering is by grace alone; and the grace can be forfeited by the redeemed who depart from the redeeming hand. The thread runs Hosea 7:13 (the redeemed who speak lies forfeit the redemption) through Ezekiel 18:24 (the righteous who turn to iniquity die in the iniquity), Ezekiel 33:12-13 (the righteousness of the righteous shall not deliver him in the day of his transgression), Exodus 32:33 (whosoever hath sinned against me, him will I blot out of my book), Psalm 69:28 (let them be blotted out of the book of the living), Deuteronomy 28 (the curse-side of the covenant for the disobedient), Jeremiah 18:7-10 (the repenting-and-relenting structure), Numbers 14 (the wilderness generation excluded), 1 Samuel 15 (the kingdom rejected from Sha'ul (Saul)), Ezekiel 20:33-38 (the rod-of-the-covenant sifting the wheat) and on through the NT: Hebrews 6:4-6, Hebrews 10:26-29, Matt 7:21-23, 2 Peter 2:20-22, James 5:19-20, Revelation 3:5, Revelation 22:19, Galatians 5:4, 1 Corinthians 9:27, Romans 11:20-22, John 15:1-6, 1 Corinthians 10:1-12, 2 Peter 1:5-10, Matt 6:14-15, Matt 18:23-35. The Tanakh teaches it; the NT names it again because the Tanakh teaches it. Counters institutional Christianity's once-saved-always-saved lie at the data layer.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 6:14-15 | Hosea 7:13 | *Though I have redeemed them, yet they have spoken lies against me* — the anchor verse for the grace-and-the-opportunity-that-can-be-lost teaching. |
-| 2 | Matt 6:14-15 | Ezekiel 18:24 | *When the righteous turneth away from his righteousness, and committeth iniquity ... all his righteousness that he hath done shall not be mentioned* — the righteous can fall away. |
-| 3 | Matt 6:14-15 | Ezekiel 33:12-13 | *The righteousness of the righteous shall not deliver him in the day of his transgression* — explicit naming of the conditional-continuation. |
-| 4 | Matt 6:14-15 | Exodus 32:33 | *Whosoever hath sinned against me, him will I blot out of my book* — names can be blotted out for lawlessness; the warning is to the wheat, not to the tares. |
-| 5 | Matt 6:14-15 | Psalm 69:28 | *Let them be blotted out of the book of the living* — the Psalmist's invocation of the blotting-out architecture. |
-| 6 | Matt 6:14-15 | Matt 18:32-35 | The parable of the unforgiving servant — the king reverses the forgiveness; the framework's NT illustration of the principle. |
-| 7 | Matt 6:14-15 | Hebrews 10:26-29 | *If we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins* — the apostolic warning that the redeemed who walk away forfeit the redemption. |
-| 8 | Matt 6:14-15 | Matt 7:21-23 | *I never knew you: depart from me, ye that work iniquity* — Yahusha's (Jesus's) own naming of the forfeit at the close of the Sermon, addressed to those who invoked his name. |
-| 9 | Matt 6:14-15 | 1 John 1:9 | *If we confess our sins, he is faithful and just to forgive us our sins* — the standing-receipt of forgiveness contingent on the confession-and-walking-in-light posture; Matt 6:14-15 names the kingdom-citizen's forgiveness-extension as the parallel condition. |
-
-### Layer 1 — Per-verse cross-references (additional rows not already captured in Layer 2 threads)
-
-**Matt 6:1** — *Take heed that ye do not your alms before men, to be seen of them.*
-
-| Target | Member note |
-|---|---|
-| Deuteronomy 15:7-8 | The Torah's command on generous alms-giving — the practice Yahusha (Jesus) is correcting the motive on, not the practice itself. |
-| Leviticus 19:9-10 | The gleaning-rights of the poor — the Torah's social-economy in which alms-giving is embedded. |
-| Deuteronomy 24:19 | The forgotten-sheaf law for the stranger, fatherless, and widow — Tanakh-substance of alms-giving. |
-| Psalm 41:1 | *Blessed is he that considereth the poor* — the wisdom-stream's alms-substance. |
-| Proverbs 19:17 | *He that hath pity upon the poor lendeth unto Yahuah (the LORD)* — second wisdom-stream alms-substance witness. |
-| Matt 5:16 | *Let your light so shine before men, that they may see your good works, and glorify your Father* — the apparent-tension verse the framework resolves by motive-distinction. |
-
-**Matt 6:5-8** — *And when thou prayest ... pray to thy Father which is in secret.*
-
-| Target | Member note |
-|---|---|
-| 1 Kings 8:22-53 | Shlomo's (Solomon's) temple-dedication prayer — the Tanakh's longest public-prayer record, demonstrating that public prayer is not what Matt 6:5-6 prohibits. |
-| Acts 1:14 | The apostolic-community gathered prayer — the New Testament's pattern of corporate prayer in the disciples Yahusha (Jesus) is now teaching. |
-| Acts 2:42 | *They continued stedfastly in the apostles' doctrine and fellowship, and in breaking of bread, and in prayers* — the gathered prayer as a defining mark of the early assembly. |
-| Acts 4:24 | The first assembly's gathered prayer at the release of Kepha (Peter) and Yochanan (John). |
-| John 11:41-42 | Yahusha's (Jesus's) own public prayer at the raising of El'azar (Lazarus) — *I said it, that they may believe that thou hast sent me* — naming the public posture explicitly. |
-| Psalm 139:1-4 | *Thou understandest my thought afar off ... there is not a word in my tongue, but, lo, O Yahuah (LORD), thou knowest it altogether* — the Father-knows-before-the-asking Tanakh substance the lock at Matt 6:8 rests on. |
-
-**Matt 6:9** — *Our Father which art in heaven, Hallowed be thy name.*
-
-| Target | Member note |
-|---|---|
-| Isaiah 63:16 | *Thou, O Yahuah (LORD), art our father, our redeemer* — first Tanakh-Father-address anchor. |
-| Isaiah 64:8 | *But now, O Yahuah (LORD), thou art our Father* — second Tanakh-Father-address anchor. |
-| Deuteronomy 32:6 | *Is not he thy Father that hath bought thee?* — third Tanakh-Father-address anchor. |
-
-**Matt 6:11** — *Give us this day our daily bread.*
-
-| Target | Member note |
-|---|---|
-| Exodus 16:4 | The manna-pattern — *that I may prove them, whether they will walk in my law, or no* — the daily-bread Tanakh-substance. |
-| Proverbs 30:8-9 | *Give me neither poverty nor riches; feed me with food convenient for me* — the wisdom-stream's daily-bread petition. |
-| Matt 4:4 | *Man shall not live by bread alone, but by every word that proceedeth out of the mouth of Elohim (God)* — Yahusha's (Jesus's) wilderness-citation of Deuteronomy 8:3; the daily-bread carries both physical and Torah-bread registers. |
-
-**Matt 6:13** — *And lead us not into temptation, but deliver us from evil.*
-
-| Target | Member note |
-|---|---|
-| Matt 4:1-11 | The wilderness-temptation Yahusha (Jesus) just walked — the petition is for the Father's protective leading the disciples will need as they walk what their Master walked. |
-| 1 Corinthians 10:13 | *Elohim (God) is faithful, who will not suffer you to be tempted above that ye are able* — the apostolic confirmation of the petition's substance. |
-| James 1:13 | *Elohim (God) cannot be tempted with evil, neither tempteth he any man* — the apostolic clarification that the petition is not about *do not cause us to be tempted.* |
-
-**Matt 6:13b** — *For thine is the kingdom, and the power, and the glory, for ever. Amen.*
-
-| Target | Member note |
-|---|---|
-| 1 Chronicles 29:11 | *Thine, O Yahuah (LORD), is the greatness, and the power, and the glory ... thine is the kingdom* — David's dedication-prayer; the Tanakh-anchor of the doxology. |
-
-**Matt 6:16-18** — *Moreover when ye fast.*
-
-| Target | Member note |
-|---|---|
-| Leviticus 23:27-28 | The Yom Kippur fast — *ye shall afflict your souls* — the Torah's central fast-command. |
-| Joel 1:14 | The prophet's call for a national fast — *sanctify ye a fast, call a solemn assembly* — Tanakh-substance of corporate fasting. |
-| Isaiah 58:6-8 | *Is not this the fast that I have chosen? to loose the bands of wickedness ... to deal thy bread to the hungry* — the Tanakh-charter of the kingdom-citizens fast; substance-correction beneath the Matt 6:16-18 form-correction. |
-| Matt 4:2 | Yahusha's (Jesus's) own forty-day wilderness fast — the immediate framework-prefigure. |
-
-**Matt 6:20** — *But lay up for yourselves treasures in heaven.*
-
-| Target | Member note |
-|---|---|
-| Proverbs 11:4 | *Riches profit not in the day of wrath: but righteousness delivereth from death* — the wisdom-stream futility-of-earth-treasure. |
-| Proverbs 23:4-5 | *Riches certainly make themselves wings; they fly away as an eagle toward heaven* — second wisdom-stream witness. |
-| Psalm 49:16-17 | The futility-of-riches psalm — *when he dieth he shall carry nothing away.* |
-| Luke 12:33-34 | The Lukan parallel of Matt 6:19-21 — *provide yourselves bags which wax not old, a treasure in the heavens that faileth not.* |
-
-**Matt 6:22-23** — *The light of the body is the eye: if therefore thine eye be single, thy whole body shall be full of light.*
-
-| Target | Member note |
-|---|---|
-| Proverbs 22:9 | *He that hath a bountiful eye (tov-ayin) shall be blessed; for he giveth of his bread to the poor* — the Hebrew-idiom anchor; good-eye = generous heart. |
-| Proverbs 23:6-7 | *Eat thou not the bread of him that hath an evil eye (ra-ayin)* — the contrasting idiom; evil-eye = stingy/grasping heart. |
-| Deuteronomy 15:9 | *Thine eye be evil against thy poor brother* — the same evil-eye idiom in Torah-context, naming the stinginess-toward-the-poor that the Torah forbids; locks the Hebrew-idiom reading of Matt 6:22-23. |
-| Proverbs 28:22 | *He that hasteth to be rich hath an evil eye* — fourth wisdom-stream witness of the evil-eye = stingy-heart idiom. |
-
-**Matt 6:24** — *Ye cannot serve Elohim (God) and mammon.*
-
-| Target | Member note |
-|---|---|
-| Exodus 20:3 | *Thou shalt have no other gods before me* — the first commandment ruling out competing masters categorically. |
-| Deuteronomy 6:4-5 | *Hear, O Yashar'el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD): And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart* — the Shema's whole-heart standard the dual-allegiance breaks. |
-| 1 Kings 18:21 | *How long halt ye between two opinions?* — Eliyahu (Elijah)'s Carmel-confrontation as the Tanakh-pattern of the forced-choice Matt 6:24 articulates. |
-
-**Matt 6:26** — *Behold the fowls of the air ... your heavenly Father feedeth them.*
-
-| Target | Member note |
-|---|---|
-| Psalm 147:9 | *He giveth to the beast his food, and to the young ravens which cry* — the Father's covenant-care for the creatures. |
-| Job 38:4-7 | The creation-care testimony from the whirlwind — the architectural-witness to the Father's sustaining of every creature. |
-| Psalm 104:10-14 | The comprehensive creation-care psalm — *He causeth the grass to grow for the cattle.* |
-
-**Matt 6:33** — *But seek ye first the kingdom of Elohim (God), and his righteousness.*
-
-| Target | Member note |
-|---|---|
-| 1 Kings 3:11-13 | Shlomo's (Solomon's) Gibeon-dream — he asked for wisdom rather than wealth, and Yahuah (the LORD) added the wealth; the Tanakh-pattern of *seek first the kingdom, and these things shall be added.* |
-| Psalm 37:4 | *Delight thyself also in Yahuah (the LORD); and he shall give thee the desires of thine heart* — the priority-orientation pattern. |
-| Matt 5:6 | *Blessed are they which do hunger and thirst after righteousness: for they shall be filled* — the Beatitude that Matt 6:33 names in practice. |

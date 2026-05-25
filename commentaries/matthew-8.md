@@ -106,11 +106,7 @@ The framework also reads the *cast out the spirits with his word* phrase at v.16
 
 *Now when Yahusha (Jesus) saw great multitudes about him, he gave commandment to depart unto the other side. And a certain scribe came, and said unto him, Master, I will follow thee whithersoever thou goest. And Yahusha (Jesus) saith unto him, The foxes have holes, and the birds of the air have nests; but the Son of Adam hath not where to lay his head. And another of his disciples said unto him, Lord, suffer me first to go and bury my father. But Yahusha (Jesus) said unto him, Follow me; and let the dead bury their dead.* (Matthew 8:18-22)
 
-The framework restores *Son of Man* at v.20 to *Son of Adam* — the lineage-weight preserved. The Hebrew *ben adam* and the Greek *huios tou anthrōpou* both carry the seed-of-Adam-line-of-promise the framework's whole architecture rests on. The English translators flattened *son of Adam* to *son of man* and lost the connection to the Adamic seed. Yahusha (Jesus) identifies himself as the Son of Adam, the seed-of-Adam-line-of-promise that Matthew's chapter-1 genealogy and the Lukan parallel both trace:
-
-*Which was the son of Enos, which was the son of Seth, which was the son of Adam, which was the son of Elohim (God).* (Luke 3:38)
-
-Luke runs the genealogy backward to *Adam, the son of Elohim,* establishing Yahusha (Jesus) as the biological seed-of-Adam-line-of-promise the Messianic title *Son of Adam* throughout the gospels names. The framework's restoration carries this lineage-weight at every occurrence.
+The framework's restoration of *son of man* to *Son of Adam* (Red Line #12 — the named-title Messianic usage at v.20 capitalized; distinct from the kaph-comparative cases at Daniel 7:13 / Revelation 1:13 / Revelation 14:14 where the comparative is preserved as *like the Son of Adam*) and the 1 Enoch 46:1-3 Hebrew library named-title parallel are walked in the chapter's short-form commentary. The long-form develops the two would-be followers' filtering moves.
 
 **First would-be follower** (vv.19-20). A scribe approaches with a confession of all-in commitment. Yahusha (Jesus) does not embrace; he warns. *The foxes have holes, and the birds of the air have nests; but the Son of Adam hath not where to lay his head.* The framework reads this as a deliberate-disclosure of the present-age cost. The King has no home in the present age. The kingdoms-of-this-world are under the temporary delegation that came down with the watcher-rebellion administration — the same principalities-and-powers Paul names at Ephesians 6:12; the same kingdoms the devil offered the King from a mountain at Matthew 4:8-10; the same architecture operative in every era between the inauguration and the consummation. The King is operating in the territory-of-his-enemy through the visible-creation that he himself called into being but that has been temporarily delegated to the rebel-administrators. The scribe's *whithersoever thou goest* needs to grasp this: there is no resting-place in the present age. The would-be follower is being filtered.
 
@@ -148,15 +144,7 @@ The framework's nature-of-God reading surfaces here. The Voice that spoke creati
 
 The framework reads *O ye of little faith* at v.26 consistent with the same phrase at Matthew 6:30 — kindness-with-correction, not dismissal. The disciples' faith is small but real; the King is teaching them to grow in the trust the Lord's Prayer's *give us this day our daily bread* and *deliver us from evil* petitions presuppose. The storm is a teaching-moment.
 
-The Tanakh-stream of Yonah (Jonah) 1 hovers over the episode. The prophet Yonah (Jonah) slept through a storm; the sailors woke him; the storm calmed when he was thrown into the sea:
-
-*But Yonah (Jonah) was gone down into the sides of the ship; and he lay, and was fast asleep. So the shipmaster came to him, and said unto him, What meanest thou, O sleeper? arise, call upon thy Elohim (God), if so be that Elohim (God) will think upon us, that we perish not.* (Jonah 1:5-6)
-
-The Matthew 8:23-27 episode echoes Yonah (Jonah) deliberately and inverts the resolution-mechanism. Yonah (Jonah) was the cause-of-the-storm whose removal calmed it; Yahusha (Jesus) is the AUTHORITY-OVER-THE-STORM whose word calms it. The framework reads this as the *greater than Yonah (Jonah)* foreshadowing the King will name explicitly downstream:
-
-*The men of Ninveh (Nineveh) shall rise in judgment with this generation, and shall condemn it: because they repented at the preaching of Yonah (Jonah); and, behold, a greater than Yonah (Jonah) is here.* (Matthew 12:41)
-
-The storm-stilling is one of the early demonstrations of the *greater than* that Matthew 12:41 will name in full.
+The Yonah (Jonah) 1 inversion-pattern at vv.23-27 — Yonah (Jonah) as cause-of-storm-removed vs. Yahusha (Jesus) as authority-over-storm-whose-word-calms-it — and the *greater than Yonah (Jonah)* foreshadowing of Matthew 12:41 are walked in the chapter's short-form commentary.
 
 ## §6. The Gadarene demoniacs and the swine — the eastern-tribal-inheritance and the unclean-economy (vv.28-34)
 
@@ -199,120 +187,3 @@ The pursuit ends where the rejection lands. The framework's gathering-mission po
 *Howbeit Yahusha (Jesus) suffered him not, but saith unto him, Go home to thy friends, and tell them how great things Adonai (the Lord) hath done for thee, and hath had compassion on thee. And he departed, and began to publish in Decapolis how great things Yahusha (Jesus) had done for him: and all men did marvel.* (Mark 5:19-20)
 
 The witnesses-left-behind are the testimony to any in the territory who later turn. The pursuit ended; the witness remained.
-
----
-
-## §7. Cross-Reference Apparatus
-
-*This section seeds the chapter-end card per `api/CHAPTER_END_CARD_CONTRACT.md`. Layer 1 = per-verse cross-references (curated framework-bearing rows for the `cross_references` table). Layer 2 = framework threads surfacing in this chapter (existing thread members + new threads marked PROPOSED for Yoshi's design call). This section is staging data for the engineering migration pass; it does not surface in the reader UI once the data lives in the database.*
-
-### Layer 2 — Threads surfacing in Matthew 8
-
-**PROPOSED new thread: `messiah-as-torah-affirming-healer`** *(for Yoshi's design call).* Anchor: Matthew 8:4 (*shew thyself to the priest, and offer the gift that Mosheh (Moses) commanded*). Summary: *Yahusha's (Jesus's) first-miracle after the Sermon on the Mount sends the cleansed leper to the priest with the Mosheh (Moses)-commanded offering. The Torah-affirming pattern is locked at the inauguration of the post-Sermon healing ministry. Across the gospel, Yahusha (Jesus) repeatedly walks healings that AFFIRM the Torah's covenant-architecture rather than ABOLISH it — the leper to the priest at Matt 8:4, the healed-paralytic carrying his bed in violation of the Pharisaic SHABBAT-fence but not the Torah's SHABBAT (Matt 9 / John 5), the healings on Shabbat that demonstrate the Torah's mercy-substance against the oral-tradition's restriction (Matt 12:9-14), the second-leper episode at Luke 17 also sending to the priest. The pattern collapses the institutional-Christian narrative of Yahusha (Jesus) as the abolisher-of-the-Torah; the King is the heart-Torah-walker and the heart-Torah-affirmer.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 8:4 | Leviticus 14:2-4 | The Torah's cleansing-of-the-leper procedure Yahusha (Jesus) directs the healed man to fulfill. |
-| 2 | Matt 8:4 | Luke 17:14 | The second leper-episode in Luke; Yahusha (Jesus) again sends the cleansed to the priest. |
-| 3 | Matt 8:4 | Matt 5:17-19 | The Torah-affirming Sermon-on-the-Mount declaration the first-miracle illustrates in practice. |
-| 4 | Matt 8:4 | Matt 12:9-14 | The Shabbat-healing of the man with the withered hand — same heart-Torah-walking-in-practice pattern; the oral-tradition Shabbat-fence broken; the Torah's mercy-substance preserved. |
-| 5 | Matt 8:4 | Mark 7:10-13 | Yahusha's (Jesus's) explicit distinction between the Torah of Elohim (God) and the *tradition of men;* the heart-Torah affirmed, the oral-tradition distortions corrected. |
-| 6 | Matt 8:4 | Acts 6:7 | *A great company of the priests were obedient to the faith* — the eventual response of some priests to the testimony the leper-cleansings constituted. |
-
-**Thread: `scattered-seed-gathering`** *(LANDED at S74).* Adds members from Matthew 8.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 8:11 | Isaiah 43:5-6 | *I will bring thy seed from the east, and gather thee from the west* — the framework reading of *many shall come from east and west* as the gathering-prophecy of the scattered seed; NOT the Christian inclusion-replacement read. |
-| Matt 8:11 | Psalm 107:2-3 | *Gathered them out of the lands, from the east, and from the west, from the north, and from the south* — the redeemed-from-the-lands directional-formula. |
-| Matt 8:11 | Zechariah 8:7-8 | *I will save my people from the east country, and from the west country* — the gathering-to-Yerushalayim (Jerusalem) directional-formula. |
-| Matt 8:11 | Isaiah 49:12 | *Behold, these shall come from far: and, lo, these from the north and from the west; and these from the land of Sinim* — the directional-formula of the gathering. |
-| Matt 8:11 | Isaiah 11:11-12 | The second-gathering prophecy; *shall assemble the outcasts of Yashar'el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* |
-| Matt 8:11 | Ezekiel 37:21 | *I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone* — the Ezekiel 37 gathering-prophecy companion. |
-| Matt 8:28 | Joshua 13:24-29 | The eastern-tribal-inheritance allotment to Gad and the half-tribe of Manasheh (Manasseh) — the territory Yahusha (Jesus) enters at the Gergesene/Gadarene exorcism; the gathering-ministry reaches the eastern tribes' land. |
-
-**Thread: `lord-lord-and-torahlessness`** *(PROPOSED at Matt 7).* Adds members from Matthew 8.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 8:11-12 | Matt 7:21-23 | The same post-harvest-sifting standard articulated in the centurion-episode: *children of the kingdom cast out into outer darkness* is the lineage-claim-alone version of the *I never knew you / depart from me, ye that work iniquity* dismissal; the wheat-vs-unfruitful-wheat distinction applies. |
-| Matt 8:11-12 | Ezekiel 20:34-38 | *I will purge out from among you the rebels, and them that transgress against me* — the post-harvest sifting Tanakh-anchor; the gathered are sifted before they enter the land. |
-| Matt 8:12 | Matt 3:9 | *Think not to say within yourselves, We have Avraham (Abraham) to our father* — the explicit prohibition on lineage-claim-alone-without-fruit; the same disposition Matt 8:12 names at the post-harvest sifting. |
-
-**Thread: `kingdoms-now-under-watcher-rebellion-administration`** *(PROPOSED at Matt 4).* Adds members from Matthew 8.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 8:16 | Matt 4:24 | The early-ministry deliverance-pattern continued; the King's word carries authority over the principalities. |
-| Matt 8:20 | Matt 4:8-10 | *The Son of Adam hath not where to lay his head* — the present-age cost of operating in the kingdoms-of-this-world under the temporary delegation of the rebel-administration; the same kingdoms the devil offered the King at Matt 4. |
-| Matt 8:29 | James 2:19 | *The devils also believe, and tremble* — cognitive-recognition without submission; consistent with the Matt 8:29 demoniacs' recognition. |
-| Matt 8:29 | Revelation 20:10 | *The devil that deceived them was cast into the lake of fire and brimstone* — the *time* the demons reference at *art thou come hither to torment us before the time?* is the appointed eschatological-judgment. |
-
-### Layer 1 — Per-verse cross-references (additional rows)
-
-**Matt 8:1-4** — The leper healed.
-
-| Target | Member note |
-|---|---|
-| Leviticus 13:45-46 | The leper's required posture under the Torah's purity-architecture; the defiling-condition Yahusha's (Jesus's) touch reverses. |
-| Luke 17:11-19 | The second-leper episode; Yahusha (Jesus) again directs the cleansed (ten lepers) to *go shew yourselves unto the priests* — same Torah-procedure affirmation. |
-
-**Matt 8:5-13** — The centurion.
-
-| Target | Member note |
-|---|---|
-| Luke 7:1-10 | The Lukan parallel with the additional detail of the Jewish-elders' intercession and the centurion's standing in the Kfar-Nachum (Capernaum) gathering. |
-
-**Matt 8:11** — *Many shall come from the east and west.*
-
-| Target | Member note |
-|---|---|
-| Jeremiah 31:8-10 | The Yirmeyahu (Jeremiah) 31 gathering-prophecy chapter Matthew has been weaving through the gospel since Matt 2:18. |
-
-**Matt 8:17** — *Himself took our infirmities, and bare our sicknesses.*
-
-| Target | Member note |
-|---|---|
-| Isaiah 53:4 | The direct prophetic source; the Suffering-Servant chapter Matthew applies to the healing ministry. |
-| Isaiah 35:5-6 | The Messianic-credential prophecy the healing-ministry authenticates; Yahusha (Jesus) will cite this credential himself at Matt 11:5. |
-| Matt 11:4-5 | The future self-citation of the Isaiah 35 credential when Yochanan (John) the Immerser sends from prison. |
-
-**Matt 8:20** — *The foxes have holes, and the birds of the air have nests; but the Son of Adam hath not where to lay his head.*
-
-| Target | Member note |
-|---|---|
-| Psalm 8:4 | *What is mortal man, that thou art mindful of him? and the son of Adam, that thou visitest him?* — the son-of-Adam Tanakh-substance the title carries. |
-| Luke 3:38 | *Adam, which was the son of Elohim (God)* — the Lukan genealogy's seed-of-Adam-line-of-promise anchor; the Son of Adam at Matt 8:20 stands in this lineage. |
-
-**Matt 8:22** — *Follow me; and let the dead bury their dead.*
-
-| Target | Member note |
-|---|---|
-| Exodus 20:12 | The fifth commandment; the Torah-substance the framework preserves; Yahusha (Jesus) is not abolishing parent-honor at Matt 8:22. |
-| Genesis 50:5 | *Let me go up, I pray thee, and bury my father* — the patriarchal-burial Tanakh-pattern. |
-| Mark 7:10-13 | Yahusha's (Jesus's) explicit defense of the fifth commandment against the *Corban* oral-tradition workaround. |
-
-**Matt 8:26** — *Then he arose, and rebuked the winds and the sea; and there was a great calm.*
-
-| Target | Member note |
-|---|---|
-| Psalm 89:8-9 | *Thou rulest the raging of the sea: when the waves thereof arise, thou stillest them* — the Tanakh-creation-authority of Yahuah (the LORD) the Formed exercises in person. |
-| Psalm 107:23-29 | The sailors-in-the-storm psalm; *He maketh the storm a calm, so that the waves thereof are still.* |
-| Job 38:8-11 | *Hitherto shalt thou come, but no further: and here shall thy proud waves be stayed* — the creation-ruling Tanakh-voice the disciples are recognizing. |
-| Jonah 1:5-6 | *Yonah (Jonah) was gone down into the sides of the ship; and he lay, and was fast asleep* — the Jonah-1 parallel Matt 8:23-27 inverts; the *greater than Yonah (Jonah)* foreshadowing. |
-| Matt 12:41 | *A greater than Yonah (Jonah) is here* — the future explicit naming of the same foreshadowing. |
-
-**Matt 8:29** — *What have we to do with thee, Yahusha (Jesus), thou Son of Elohim (God)? art thou come hither to torment us before the time?*
-
-| Target | Member note |
-|---|---|
-| 1 John 3:8 | *For this purpose the Son of Elohim (God) was manifested, that he might destroy the works of the devil* — the apostolic naming of the King's mission against the principalities; the demons recognize what they are facing. |
-| 2 Peter 2:4 | *Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* — the bound-angels-reserved-for-judgment architecture; the *time* the demons reference is this appointed judgment. |
-| Jude 6 | *And the angels which kept not their first estate ... he hath reserved in everlasting chains under darkness unto the judgment of the great day* — same architecture, same appointed time. |
-
-**Matt 8:30-32** — The swine.
-
-| Target | Member note |
-|---|---|
-| Leviticus 11:7-8 | The swine as unclean-animals under Torah-law; the visible-marker that the Gergesene/Gadarene territory was under Hellenistic-Gentile administration, not Torah-walking. |
-| Deuteronomy 14:8 | Second Torah-witness on the swine's unclean status. |
