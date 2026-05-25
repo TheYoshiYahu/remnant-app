@@ -73,7 +73,11 @@ interface ChapterCommentaryProps {
   userTier?: ContentTier;
 }
 
-const HIDE_COMMENTARY_KEY = "rop_hide_commentary_v1";
+// S130 — the hide-commentary toggle moved up to App.tsx and now gates
+// chapter_intro + this stack + the chapter-end cross-reference card
+// together (one button, two states). This component no longer owns the
+// toggle state or button — App.tsx omits the component entirely when
+// the toggle is off.
 
 export default function ChapterCommentary({
   bookSlug,
@@ -84,21 +88,6 @@ export default function ChapterCommentary({
   // Errors are silent — a missing commentary surface isn't load-bearing
   // for the verse read. We just hide the component on failure.
   const [, setError] = useState<string | null>(null);
-
-  // Global hide-commentary preference, persisted per-user in localStorage.
-  const [hideCommentary, setHideCommentary] = useState<boolean>(false);
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const stored = window.localStorage.getItem(HIDE_COMMENTARY_KEY);
-    setHideCommentary(stored === "true");
-  }, []);
-  const toggleHide = () => {
-    const next = !hideCommentary;
-    setHideCommentary(next);
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(HIDE_COMMENTARY_KEY, String(next));
-    }
-  };
 
   useEffect(() => {
     let cancelled = false;
@@ -132,31 +121,17 @@ export default function ChapterCommentary({
       className="mt-8 border-t border-[var(--reader-rule)] pt-6"
       aria-labelledby="chapter-commentary-title"
     >
-      <div className="mb-4 flex items-center justify-between gap-3">
-        <h3
-          id="chapter-commentary-title"
-          className="font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]"
-        >
-          More on {data.book.title} {data.chapter.number}
-        </h3>
-        <button
-          type="button"
-          onClick={toggleHide}
-          className="font-sans text-xs font-medium text-[var(--reader-muted)] underline-offset-2 hover:underline"
-          aria-pressed={hideCommentary}
-          title="Persists across chapters and reloads"
-        >
-          {hideCommentary ? "Show commentary" : "Hide commentary"}
-        </button>
+      <h3
+        id="chapter-commentary-title"
+        className="mb-4 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]"
+      >
+        More on {data.book.title} {data.chapter.number}
+      </h3>
+      <div className="space-y-4">
+        {data.entries.map((entry) => (
+          <CommentaryBlock key={entry.id} entry={entry} />
+        ))}
       </div>
-
-      {!hideCommentary && (
-        <div className="space-y-4">
-          {data.entries.map((entry) => (
-            <CommentaryBlock key={entry.id} entry={entry} />
-          ))}
-        </div>
-      )}
     </section>
   );
 }

@@ -223,6 +223,29 @@ function Reader() {
   const [selectedBookSlug, setSelectedBookSlug] = useState<string>("genesis");
   const [selectedChapter, setSelectedChapter] = useState<number>(1);
 
+  // S130 — single global toggle: scripture-only ↔ full study Bible.
+  // Hides chapter_intro, the Basic/Deeper-Dive commentary stack, AND
+  // the chapter-end cross-reference card all at once. One button, two
+  // states, persisted per-user via localStorage so the reader's choice
+  // travels across chapters and reloads. Reuses the existing S112 key
+  // so partners who'd already toggled "Hide commentary" keep their
+  // preference — the toggle's scope just widened to cover everything
+  // study-aid (per Yoshi: "you either want the extras or just the
+  // scripture, that's it, that's simple").
+  const [hideCommentary, setHideCommentary] = useState<boolean>(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const stored = window.localStorage.getItem("rop_hide_commentary_v1");
+    setHideCommentary(stored === "true");
+  }, []);
+  const toggleHideCommentary = () => {
+    const next = !hideCommentary;
+    setHideCommentary(next);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("rop_hide_commentary_v1", String(next));
+    }
+  };
+
   // S116 — reading-position persistence. `currentVerse` tracks the
   // topmost-visible verse via IntersectionObserver (initial 1, updated
   // as the partner scrolls). `hydrated` gates the save effect so the
@@ -1556,8 +1579,32 @@ function Reader() {
             })()}
           </div>
 
-          {chapterDetail.chapter_intro && (
-            <aside className="mt-8 border-t border-[var(--reader-rule)] pt-4 text-[var(--reader-muted)]">
+          {/*
+            S130 — single global study-aid toggle. One colored button,
+            two states: hide everything but the verses, or show the
+            full study Bible (chapter_intro + commentary stack +
+            chapter-end cross-reference card). Per Yoshi: "you either
+            want the extras or just the scripture, thats it thats
+            simple." The toggle replaces the muted-text version that
+            previously lived inside ChapterCommentary and only gated
+            the Basic/Deeper-Dive blocks. Now it gates all three
+            study-aid surfaces in one motion. Techelet fill so the
+            button reads clearly against the dark surface.
+          */}
+          <div className="mt-8 flex items-center justify-end border-t border-[var(--reader-rule)] pt-4">
+            <button
+              type="button"
+              onClick={toggleHideCommentary}
+              aria-pressed={hideCommentary}
+              title="Show or hide all study aids (chapter intro, commentary, cross-references). Persists across chapters and reloads."
+              className="rounded-md border border-[var(--reader-accent)] bg-[var(--reader-accent)] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-bg)] shadow-sm hover:opacity-90"
+            >
+              {hideCommentary ? "Show study aids" : "Hide study aids"}
+            </button>
+          </div>
+
+          {!hideCommentary && chapterDetail.chapter_intro && (
+            <aside className="mt-4 text-[var(--reader-muted)]">
               <h3 className="mb-2 font-sans font-semibold uppercase tracking-wide text-xs">
                 Commentary
               </h3>
@@ -1581,15 +1628,17 @@ function Reader() {
             upgrade affordance so free / Notes-tier partners see what the
             tier ladder unlocks. The component hides itself silently when
             the chapter has no commentary_entries rows yet (most non-
-            Matthew chapters as of S112). A global "Hide commentary"
-            toggle inside the component persists per-user via localStorage
-            for partners who want to read straight verses without chrome.
+            Matthew chapters as of S112). S130: the local hide-commentary
+            toggle inside this component is gone — gating moved up to the
+            App-level scripture-only toggle above.
           */}
-          <ChapterCommentary
-            bookSlug={chapterDetail.book.slug}
-            chapterNumber={chapterDetail.chapter.chapter_number}
-            userTier={me?.tier ?? "free"}
-          />
+          {!hideCommentary && (
+            <ChapterCommentary
+              bookSlug={chapterDetail.book.slug}
+              chapterNumber={chapterDetail.chapter.chapter_number}
+              userTier={me?.tier ?? "free"}
+            />
+          )}
 
           {/*
             Session 74 — chapter-end cross-reference card. Renders the
@@ -1598,12 +1647,15 @@ function Reader() {
             Every row is curated and framework-bearing; the TSK
             comprehensive-baseline direction rolled back at S75. The
             card hides itself silently when both lists come back empty.
+            S130: also gated by the App-level scripture-only toggle.
           */}
-          <ChapterEndCard
-            bookSlug={chapterDetail.book.slug}
-            chapterNumber={chapterDetail.chapter.chapter_number}
-            userTier={me?.tier ?? "free"}
-          />
+          {!hideCommentary && (
+            <ChapterEndCard
+              bookSlug={chapterDetail.book.slug}
+              chapterNumber={chapterDetail.chapter.chapter_number}
+              userTier={me?.tier ?? "free"}
+            />
+          )}
 
           {/*
             S121 — bottom-of-chapter continuation row (W2). Duplicate

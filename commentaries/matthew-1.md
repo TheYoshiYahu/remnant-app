@@ -1,46 +1,16 @@
 # Commentary on Matthew 1
 
-Matthew opens the canon of the New Testament with seventeen verses of names. The Reformation's preaching tradition has skipped them as *the begats* — the dull pre-chapter the reader endures to reach the story. That tradition reads the genealogy as biographical filler establishing that Yahusha (Jesus) was a real first-century Yahudi (Jew). The genealogy is doing far more than that. It is a deliberate architectural argument about the covenant line, the kingship lineage, and the prophetic restoration the Messiah arrives to fulfill — and it is constructed so densely that a single reading carries the whole structure of the gathering hope laid out in the prophets.
+## §1. The four women in the genealogy — case by case
 
----
+The chapter overview names the four women as markers of seed-preservation by Yahuah's (God's) sovereign hand. The substance lives in the individual cases.
 
-## §1. The genealogy is covenant-architecture, not biography
-
-Three names. The Messiah, identified by two ancestors. Not picked at random. David carries the kingship promise; Avraham (Abraham) carries the seed-promise. The Messiah holds both.
-
-*Now Yahuah (the LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father's house, unto a land that I will shew thee: And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing: And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed.* (Genesis 12:1-3)
-
-Matthew's opening sentence names the covenant lineage Yahusha (Jesus) arrives to complete. The kingship promise lives in David. The seed-promise lives in Avraham (Abraham). The Messiah holds both.
-
-The phrasing *the book of the generation* — *biblos genéseōs* in the Greek — deliberately echoes the Septuagint of Genesis 5:1.
-
-Matthew is signaling that the canon-opening genealogy of Yahusha (Jesus) sits in the same literary register as the canon-opening *toledot* of Genesis. The Adamic-line continuity is in view from the first phrase. The genealogy is being placed in conversation with Genesis 5, not with first-century pedigree records.
-
-## §2. Three sets of fourteen — David's signature, deliberate
-
-Fourteen, fourteen, fourteen.
-
-The number fourteen is the gematria of *David* in Hebrew. *Dalet — vav — dalet,* 4 + 6 + 4 = 14. Matthew is constructing the genealogy on a triple-Davidic signature. The first set is the climb to David. The second set is the descent of the Davidic monarchy to its catastrophic collapse in the Babylonian deportation. The third set is the long quiet ascent through exile and partial restoration to the Messiah. Each set is labeled with David's number. Each is a different movement in the same Davidic argument.
-
-The construction requires editorial choices. Matthew skips kings between Yoram (Jehoram) and Uzziah — Ahaziah, Yo'ash, and Amatsyah are omitted — to land the second set on fourteen. Reformation commentators have treated this as an embarrassment to be defended; the framework reads it as deliberate architecture. The skipped kings are still there in the line — the genealogy is not erasing them; it is grouping the line to make a Davidic-signature pattern visible. The construction is the argument.
-
-The hinge between the second and third sets is the Babylonian deportation. Matthew names it explicitly — not once but twice, at v.11 and v.12, and again in the summary at v.17. He will not let the reader miss it. The deportation is the centerpiece of the genealogy's middle term. The whole genealogy is, in effect, framed as the story of how the Davidic line walked into exile and how Yahuah (God) brought the Messianic heir out of exile to fulfill the kingship promise the exile appeared to have ended.
-
-The framework's reading is what the structure of the chapter actually carries: the Messiah arrives as the answer to the scattering. The genealogy's three-fourteen architecture names the scattering as the central feature of the line he descends from. He is not the heir of an unbroken royal succession. He is the heir who emerges from the shattered line, restoring what the exile broke.
-
-## §3. The four women in the genealogy — preservation of the Davidic seed-line by Yahuah's (God's) sovereign hand, not the Gentile-inclusion read
-
-Matthew names four women in the genealogy. This is unusual; Hebrew genealogies normally name fathers only. The four are Tamar (v.3), Rachab (v.5), Ruth (v.5), and *her that had been the wife of Uriah* — Bathsheba, named by reference to her dead husband (v.6). Inherited Christian commentary reads the four as the early signal of *Gentile inclusion in the line of Christ* — proof that the gospel was always going to expand beyond Yashar'el (Israel) to all peoples. That read fails on three counts. It imposes the Jew-and-Gentile binary on a text that does not carry it — the binary the framework refuses, because the prophetic covenant people are not Judah-and-everyone-else but the three categories of Judah, the scattered seed of Yashar'el (Israel), and the nations. It collapses the scattered seed of Yashar'el (Israel) into a spiritual category open to self-selection through faith or practice, which the prophets do not authorize — the seed is a paternal blood line named, traced, and promised gathering. It splices unrelated peoples into Yashar'el (Israel) by faith-confession, which the olive-tree architecture of Romans 11 forbids — both branches on the olive tree are Yashar'el (Israel), with no non-olive branch grafted in. The framework reads the four women differently.
-
-What they are doing, individually and as a group, is making visible the sovereign preservation of the Davidic seed-line through impossible situations and through human failure. Each woman enters the line through a narrative that should have broken the line — and the line is preserved through her by Yahuah's (God's) deliberate hand. The framework reading: the four women are markers of *seed-preservation by sovereign decree,* not a doctrinal pattern of inclusion-by-faith. Each is a specific case ordained by Yahuah (God) to keep the Davidic line standing. None is a precedent for ongoing or universal grafting of unrelated peoples into the covenant body.
-
-**§3a. Tamar.** Genesis 38. Tamar's lineage in the text is not specified — the popular reading that she was Canaanite is inferred from Yahudah's (Judah's) location at the time, not stated in the text. The text simply names her as the woman Yahudah (Judah) took for his firstborn Er. After the deaths of Er and Onan, Yahudah (Judah) withholds his third son Shelah from her in violation of the levirate obligation that protected the seed-line of a man dying without issue. Tamar disguises herself as a roadside woman, conceives twins by her father-in-law, and is brought out to be burned for her supposed unfaithfulness. She produces the signet and staff Yahudah (Judah) had given her.
+**§1a. Tamar.** Genesis 38. Tamar's lineage in the text is not specified — the popular reading that she was Canaanite is inferred from Yahudah's (Judah's) location at the time, not stated in the text. The text simply names her as the woman Yahudah (Judah) took for his firstborn Er. After the deaths of Er and Onan, Yahudah (Judah) withholds his third son Shelah from her in violation of the levirate obligation that protected the seed-line of a man dying without issue. Tamar disguises herself as a roadside woman, conceives twins by her father-in-law, and is brought out to be burned for her supposed unfaithfulness. She produces the signet and staff Yahudah (Judah) had given her.
 
 *And Yahudah (Judah) acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son. And he knew her again no more.* (Genesis 38:26)
 
-The seed-line of the tribe of Yahudah (Judah) — the kingship tribe — would have died with Er and Onan had Tamar not acted. The whole Davidic monarchy descends through Perets, one of Tamar's twins. The framework reading: Tamar's case is internal to the patriarchal family. Whatever her lineage of birth, she is functioning here as the woman Yahudah (Judah) himself acknowledged as more righteous than himself for keeping the levirate obligation he had refused. Her appearance in the Matthean genealogy marks the preservation of the kingship-tribe line through Yahudah's (Judah's) own failure. She is not a Gentile-inclusion proof-text; she is the instrument by which the line was kept standing when the patriarch tried to end it.
+The seed-line of the tribe of Yahudah (Judah) — the kingship tribe — would have died with Er and Onan had Tamar not acted. The whole Davidic monarchy descends through Perets, one of Tamar's twins. Tamar's case is internal to the patriarchal family. Whatever her lineage of birth, she is functioning here as the woman Yahudah (Judah) himself acknowledged as more righteous than himself for keeping the levirate obligation he had refused. Her appearance in the Matthean genealogy marks the preservation of the kingship-tribe line through Yahudah's (Judah's) own failure. She is not a Gentile-inclusion proof-text; she is the instrument by which the line was kept standing when the patriarch tried to end it.
 
-**§3b. Rachab.** Joshua 2 and 6. Rachab is a Yerichonite — a Canaanite by birth, a member of the seven nations under herem, the devotion to destruction. She hides the two spies and confesses Yahuah (the LORD).
+**§1b. Rachab.** Joshua 2 and 6. Rachab is a Yerichonite — a Canaanite by birth, a member of the seven nations under herem, the devotion to destruction. She hides the two spies and confesses Yahuah (the LORD).
 
 *And as soon as we had heard these things, our hearts did melt, neither did there remain any more courage in any man, because of you: for Yahuah Elohaychem (the LORD your God), he is Elohim (God) in heaven above, and in earth beneath.* (Joshua 2:11)
 
@@ -48,9 +18,9 @@ Her household alone of all Yericho (Jericho) is spared. Joshua 6 records that sh
 
 *And Yahoshua (Joshua) saved Rachab the harlot alive, and her father's household, and all that she had; and she dwelleth in Yashar'el (Israel) even unto this day; because she hid the messengers, which Yahoshua (Joshua) sent to spy out Yericho (Jericho).* (Joshua 6:25)
 
-The framework reads her case as a specific Yah-ordained exception to the herem of the seven nations — Yahuah (God) sovereignly preserves Rachab and her father's house through her confession, in service of his own plan for the Davidic seed-line that will emerge through Boaz, her son. Her case is not a doctrine of universal grafting of the nations by confession. It is a singular act of sovereign preservation: Yahuah (God) keeps alive the specific Yerichonite household whose son will be the great-grandfather of David, because the Davidic line is what is being preserved. The line that flows forward from Boaz is reckoned Yashar'eli (Israelite) through the tribe of Yahudah (Judah) — Boaz being a Yahudite through Salmon his father per v.5. The principle on display is sovereign seed-preservation, not a generalized inclusion rule.
+Rachab's case is a specific Yah-ordained exception to the herem of the seven nations — Yahuah (God) sovereignly preserves Rachab and her father's house through her confession, in service of his own plan for the Davidic seed-line that will emerge through Boaz, her son. Her case is not a doctrine of universal grafting of the nations by confession. It is a singular act of sovereign preservation: Yahuah (God) keeps alive the specific Yerichonite household whose son will be the great-grandfather of David, because the Davidic line is what is being preserved. The line that flows forward from Boaz is reckoned Yashar'eli (Israelite) through the tribe of Yahudah (Judah) — Boaz being a Yahudite through Salmon his father per v.5. The principle on display is sovereign seed-preservation, not a generalized inclusion rule.
 
-**§3c. Ruth.** The book of Ruth. Ruth is a Moavitess — and here the framework recovers a detail Christian commentary tends to skip. Moav (Moab) is descended from Lot, and Lot is Avraham's (Abraham's) nephew.
+**§1c. Ruth.** The book of Ruth. Ruth is a Moavitess — and here the framework recovers a detail Christian commentary tends to skip. Moav (Moab) is descended from Lot, and Lot is Avraham's (Abraham's) nephew.
 
 *And the firstborn bare a son, and called his name Moab: the same is the father of the Moabites unto this day.* (Genesis 19:37)
 
@@ -62,33 +32,15 @@ Ruth's voluntary attachment to Naomi's people and Naomi's Elohim (God) names her
 
 *And Ruth said, Intreat me not to leave thee, or to return from following after thee: for whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy Elohim (God) my Elohim (God).* (Ruth 1:16)
 
-Boaz is her kinsman-redeemer; their son Oved is the father of Yishai (Jesse), the father of David. The framework reading: Ruth's case is another Yah-ordained exception, this time involving a peripheral-Avrahamic descendant transferred into the covenant body through the kinsman-redemption mechanism that the book of Ruth is itself a meditation on. The book of Ruth is the Tanakh-prefiguring of Yahusha (Jesus) as the kinsman-redeemer of his scattered people. Ruth's specific case is not a doctrine of open grafting; it is a singular instance of sovereign preservation that walks out the kinsman-redemption pattern the Messiah will fulfill.
+Boaz is her kinsman-redeemer; their son Oved is the father of Yishai (Jesse), the father of David. Ruth's case is another Yah-ordained exception, this time involving a peripheral-Avrahamic descendant transferred into the covenant body through the kinsman-redemption mechanism that the book of Ruth is itself a meditation on. The book of Ruth is the Tanakh-prefiguring of Yahusha (Jesus) as the kinsman-redeemer of his scattered people. Ruth's specific case is not a doctrine of open grafting; it is a singular instance of sovereign preservation that walks out the kinsman-redemption pattern the Messiah will fulfill.
 
-**§3d. Bathsheba — named as *her that had been the wife of Uriah.*** Matthew refuses to give her name. He names her by her dead husband's name. The construction is deliberate. Bathsheba is the daughter of Eliam, a Yahudite line — Yashar'eli (Israelite) by birth, her grafting not in question. The construction *her that had been the wife of Uriah* foregrounds David's sin rather than Bathsheba's lineage. Uriah the Hittite — Hittite by ethnicity but Yashar'eli by faith and oath as a member of David's mighty men, possibly a convert-of-conquest in service to David's army — is the man David had killed to cover the adultery. Matthew names David's sin by naming Uriah, not Bathsheba.
+**§1d. Bathsheba — named as *her that had been the wife of Uriah.*** Matthew refuses to give her name. He names her by her dead husband's name. The construction is deliberate. Bathsheba is the daughter of Eliam, a Yahudite line — Yashar'eli (Israelite) by birth, her grafting not in question. The construction *her that had been the wife of Uriah* foregrounds David's sin rather than Bathsheba's lineage. Uriah the Hittite — Hittite by ethnicity but Yashar'eli by faith and oath as a member of David's mighty men, possibly a convert-of-conquest in service to David's army — is the man David had killed to cover the adultery. Matthew names David's sin by naming Uriah, not Bathsheba.
 
 *But the thing that David had done displeased Yahuah (the LORD).* (2 Samuel 11:27)
 
-The genealogy carries the corruption in its own kingship line. The Messianic line passes through Solomon — the son born of the marriage David formed after Uriah's murder — and through him to all the kings of the divided monarchy. The framework reading: the fourth woman is the catch in the kingship-claim itself. The line that produces the King-Messiah passes through David's own adultery and through the woman whose husband he killed. The Messiah does not arrive as the descendant of an unblemished royal house. He arrives as the descendant of a line scarred by the kind of sin that the Torah and the prophets denounce — and his arrival is the deliverance from the kind of corruption his own ancestry carries. The naming-by-Uriah is Matthew's refusal to let the genealogy whitewash the line.
+The genealogy carries the corruption in its own kingship line. The Messianic line passes through Solomon — the son born of the marriage David formed after Uriah's murder — and through him to all the kings of the divided monarchy. The fourth woman is the catch in the kingship-claim itself. The line that produces the King-Messiah passes through David's own adultery and through the woman whose husband he killed. The Messiah does not arrive as the descendant of an unblemished royal house. He arrives as the descendant of a line scarred by the kind of sin that the Torah and the prophets denounce — and his arrival is the deliverance from the kind of corruption his own ancestry carries. The naming-by-Uriah is Matthew's refusal to let the genealogy whitewash the line.
 
-**The pattern across the four.** Every case involves Yahuah's (God's) sovereign intervention against human action: Yahudah's (Judah's) failure to honor levirate, the herem of Yericho (Jericho) that would have erased Rachab's house, the famine that drove Naomi out and the dead husbands that should have closed her line, David's own adultery and murder of Uriah. In every case the seed-line is preserved by Yahuah's (God's) sovereign hand, not by human faithfulness. The four women are markers of seed-preservation by sovereign decree, not a doctrinal pattern of inclusion-by-faith. Tamar's case is internal to the patriarchal family; Rachab and Ruth are Yah-ordained exception-grafts whose specific function is to carry the Davidic line forward; Bathsheba is Yashar'eli (Israelite) by birth and her presence flags the kingship's own sin.
-
-The Christian read that treats the four as *Gentile foreshadowing* inverts what Matthew is doing. He is not opening the door to the nations. He is shutting the door on the idea that the Davidic line stands on its own kings' righteousness. The line stands because Yahuah (God) kept it standing. The four women are markers of the keeping.
-
-## §4. The Babylonian captivity is the hinge — the scattering judgment named at the front door of the New Testament
-
-Verses 11 and 12 name the deportation, and verse 17 names it twice more.
-
-Four mentions of the captivity in seventeen verses. Matthew refuses to let the reader miss it.
-
-The framework reading hears the captivity as the prophetic hinge it actually is. The Babylonian captivity — the southern house, Yahudah, deported 605–586 BCE — closes a story that began with the Assyrian captivity, the northern house, Yashar'el (Israel), deported 722 BCE, with the ten tribes scattered and never returning to the land in any prophetically-named gathering. Both houses are scattered by the time the genealogy hits its second hinge. The seventy years in Babylon for Yahudah (Judah) ends with a partial return under Zerubbavel (Zerubbabel) and Ezra and Nechemyah (Nehemiah), but the prophetic ingathering of all twelve tribes does not happen. The post-exilic community is a Yahudite-and-Levitical remnant in the land, not the restored twelve-tribe nation the prophets named. The northern house is still scattered. The full ingathering is still ahead. The prophets had named that ingathering with precision.
-
-*Behold, I will take the stick of Yosef (Joseph), which is in the hand of Ephraim, and the tribes of Yashar'el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand. ... And I will make them one nation in the land upon the mountains of Yashar'el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all.* (Ezekiel 37:19, 22)
-
-Matthew is naming the deportation as the central feature of the line his Messiah descends from because the deportation is the unfinished business his Messiah arrives to address. The Messianic mission is not to redeem-from-hell. It is to gather-the-scattered. The mission scope itself will be the load-bearing argument of §7 below — Matthew 10 and Matthew 15 will lock the meaning of *his people* in the Messianic naming-mission of v.21 — and both passages will name *the lost sheep of the house of Yashar'el (Israel)* as the specific covenant body being gathered. The genealogy of Matthew 1 is the front-door announcement that the Messiah is descending from the line of the scattering, to address the scattering, in fulfillment of the prophetic promise of the gathering. The Babylonian-captivity-as-hinge is the framework's reading of why Matthew won't shut up about it.
-
-The Reformation reads the captivity hinge as historical color — *and then the Yahudim (Jews) went to Babylon for a while.* The framework reads it as the entire prophetic architecture of the chapter being made visible. The captivity hinge is the *gospel-of-the-gathering* announcement at the head of the New Testament. The whole gospel is in the genealogy if the reader can hear what Matthew is naming.
-
-## §5. Matthew's genealogy and Luke's genealogy — legal Davidic descent and biological Adamic descent
+## §2. Matthew's genealogy and Luke's genealogy — legal Davidic descent and biological Adamic descent
 
 Luke 3 gives a different genealogy of Yahusha (Jesus). It runs backwards from Yahusha (Jesus) up through Miryam (Mary)'s line — on the Hebrew legal-tradition reading that Heli is Miryam's father, not Yoseph's (Joseph's) biological father, with Yoseph (Joseph) reckoned as Heli's son-in-law in the absence of male issue — back through David through *Nathan,* David's son by Bathsheba, the brother of Solomon, never king but biological, back through Yahudah (Judah), back through Avraham (Abraham), back through *Adam.* Luke names *Adam* at the head of the line.
 
@@ -104,105 +56,51 @@ The two genealogies are not contradictory. They are doing two different framewor
 
 The framework reading also surfaces what Luke is doing at the head of his line. *Adam, which was the son of Elohim (God).* Luke is naming Adam — the specific seed-line that the framework treats as distinct from the nations of Genesis 1 — as the son of Elohim (God). The Lukan genealogy is, in framework terms, the seed-of-Adam descent on which the whole *son of Adam* restoration rests. Yahusha (Jesus) is the Son of Adam in the Lukan genealogy in the most literal biological sense: he is descended from Adam in the flesh. The Messianic title *Son of Adam* that he carries through the gospels is not a metaphor; it is a biological-lineage claim that Luke walks out for the reader name by name. The Hebrew *ben adam* — son of Adam — names the lineage the English translators flattened into *son of man.* Where the gospels record Yahusha (Jesus) calling himself *the Son of Adam,* he is naming the same seed-line Luke traces.
 
-## §6. The conception by Ruach HaKodesh (Holy Spirit) and Yoseph's (Joseph's) dream
+## §3. Yoseph's Torah-righteous response and the *son of David* legal-adoption mechanism
 
-Verses 18-25 narrate the conception, Yoseph's (Joseph's) discovery and reaction, the dream, the angelic instruction, and the naming. The narrative is dense; every verse carries framework freight.
-
-*Now the birth of Yahusha HaMashiach (Jesus Christ) was on this wise: When as his mother Miryam (Mary) was espoused to Yoseph (Joseph), before they came together, she was found with child of the Ruach HaKodesh (Holy Spirit).* (Matthew 1:18)
-
-The conception is the work of the Spirit. The verse names the divine agency before it narrates any human response. The reader is told first what is the case: the child is the work of the Ruach HaKodesh (Holy Spirit), and the conception is not Yoseph's (Joseph's). Everything else is the framing around that fact.
-
-*Then Yoseph (Joseph) her husband, being a just man, and not willing to make her a publick example, was minded to put her away privily.* (Matthew 1:19)
-
-The Greek *dikaios* — *just* — is the same word the Septuagint uses for the Torah-righteous individual. Yoseph (Joseph) is a Torah-righteous man, and the Torah-righteous response to the situation as he understands it — Miryam (Mary) is pregnant by another, but their espousal is binding as a legal marriage requiring divorce to dissolve — is the quiet divorce that protects her from public shame and from the death-penalty exposure the Torah permits in cases of adultery.
+The Greek *dikaios* in verse 19 — *just* — is the same word the Septuagint uses for the Torah-righteous individual. Yoseph (Joseph) is a Torah-righteous man, and the Torah-righteous response to the situation as he understands it — Miryam (Mary) is pregnant by another, but their espousal is binding as a legal marriage requiring divorce to dissolve — is the quiet divorce that protects her from public shame and from the death-penalty exposure the Torah permits in cases of adultery.
 
 *If a damsel that is a virgin be betrothed unto an husband, and a man find her in the city, and lie with her; then ye shall bring them both out unto the gate of that city, and ye shall stone them with stones that they die; the damsel, because she cried not, being in the city; and the man, because he hath humbled his neighbour's wife: so thou shalt put away evil from among you.* (Deuteronomy 22:23-24)
 
 *When a man hath taken a wife, and married her, and it come to pass that she find no favour in his eyes, because he hath found some uncleanness in her: then let him write her a bill of divorcement, and give it in her hand, and send her out of his house.* (Deuteronomy 24:1)
 
-Yoseph's (Joseph's) first response to apparent betrayal is mercy within the framework of the Torah. The text presents this as righteousness. The framework reads this as the Torah at work in a Torah-righteous man — the Torah's allowance for the bill of divorcement operating as the merciful path when the appearance of unfaithfulness presents itself.
+Yoseph's (Joseph's) first response to apparent betrayal is mercy within the framework of the Torah. The text presents this as righteousness. The Torah at work in a Torah-righteous man — the Torah's allowance for the bill of divorcement operating as the merciful path when the appearance of unfaithfulness presents itself. The Christian reading that pits Yoseph's (Joseph's) *justness* against his *mercy* — as if the just response would have been to expose her, and his mercy was an over-ride of the just response — has the framework upside-down. Mercy is *inside* the Torah's allowances, not against them.
 
-The angel addresses Yoseph (Joseph) as *son of David.* The address itself is the cue: Yoseph (Joseph) carries the Davidic legal lineage, and the angel is invoking that lineage as the reason Yoseph (Joseph) must take Miryam (Mary) as wife. The legal adoption of the conceived child by Yoseph (Joseph) is the mechanism by which the child becomes the Davidic legal heir. The angel is naming the legal mechanism by which the kingship claim will be carried.
+The angel's address at v.20 — *Yoseph (Joseph), thou son of David* — is the cue. Yoseph (Joseph) carries the Davidic legal lineage, and the angel is invoking that lineage as the reason Yoseph (Joseph) must take Miryam (Mary) as wife. The legal adoption of the conceived child by Yoseph (Joseph) is the mechanism by which the child becomes the Davidic legal heir. The angel is naming the legal mechanism by which the kingship claim will be carried. Without Yoseph's (Joseph's) adoption — without his obedience to the angelic instruction — there is no legal-Davidic claim. The chapter's whole genealogy is preserved or lost in Yoseph's (Joseph's) decision to take Miryam (Mary) as wife.
 
-The naming at v.21 is the assignment of identity and mission in one move. The name *Yahusha* — *Yah saves* — is the gospel inside the name. The reason given is *for he shall save his people from their sins.* The reason is a translation of the name. The angel is saying: name him what he is, because he is what he is named.
+## §4. The *almah* / *parthenos* defense and the Formless / Formed reading at v.23
 
-## §7. *His people from their sins* — the lost-sheep-of-the-house-of-Yashar'el (Israel) mission set at v.21
+The Reformation's hottest fight on Isaiah 7:14 has been over whether the Hebrew *almah* means *virgin* (as Matthew renders it through the Greek *parthenos*) or *young woman* (as the modern critical reading argues from secular Hebrew usage). The fight is real, the Septuagint settles it on the side of *virgin* — the Septuagint translators in the third century BCE, working centuries before any Christian polemic, rendered *almah* as *parthenos* — and Matthew settles it on the apostolic authority of *parthenos* in the New Testament canon. The framework joins Matthew and the Septuagint on the virgin reading.
 
-The phrase *his people* in verse 21 carries the whole framework reading of who Yahusha (Jesus) was sent to. The Reformation has flattened *his people* to *everyone who would later believe* — projecting the post-resurrection Great Commission backwards onto the first-century Messianic mission. The framework reading: in v.21 the phrase *his people* names the specific covenant people the prophets named, the lost sheep of the house of Yashar'el (Israel), the scattered seed that the Babylonian-captivity-hinge has just made visible.
+The deeper move at v.23 is the nature-of-God reading. The framework holds that Yahuah (God) the Father is the formless infinite — the source — and that Yahusha (Jesus) is the Formed, the expressed Word drawn from the Formless, the God of every Tanakh theophany. The Yahuah who walked with Adam in the cool of the day, who appeared to Avraham (Abraham) at Mamre, who wrestled with Ya'aqov (Jacob) at Peniel, who spoke from the burning bush, who stood on Sinai — was the Formed. The Father, the formless infinite, is not seen by mortal eyes.
 
-Two passages in Matthew lock this reading and they cannot be read past.
+*And he said, Thou canst not see my face: for there shall no man see me, and live.* (Exodus 33:20)
 
-Read in the framework, these two passages are not pre-cross limitations later expanded. They are the lock on the meaning of *his people* in Matthew 1:21. The Messianic mission of the first coming was to the scattered seed — the lost sheep of the house of Yashar'el (Israel) — to gather them back from the scattering judgment of the captivity hinge. The post-resurrection commission to disciple all the nations is not the abolition of the first-mission scope.
+*No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.* (John 1:18)
 
-*Go ye therefore, and teach all nations, baptizing them in the name of the Father, and of the Son, and of the Ruach HaKodesh (Holy Ghost): Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world.* (Matthew 28:19-20)
-
-It is the proclamation of the gathering broadcast through the nations, where the lost sheep are scattered, so that the lost sheep who hear his voice will respond and come home.
-
-*But ye believe not, because ye are not of my sheep, as I said unto you. My sheep hear my voice, and I know them, and they follow me.* (John 10:26-27)
-
-The audience of the gospel is the citizens. The practice is broad proclamation, because the citizens are scattered and only the citizens hear.
-
-*From their sins.* The Reformation reads *from their sins* as *from the legal guilt incurred by sin that condemned them to hell.* The framework reading: *from their sins* is the prophetic phrase for the deliverance of the covenant people from the condition of sin that produced the scattering. Sin → exile → repentance → restoration is the Tanakh's covenant cycle, named explicitly in Deuteronomy 28-30, in Leviticus 26, and walked out in the Former and Latter Prophets. *Saved from their sins* in v.21 means *delivered from the sin-condition that scattered them, so the gathering can happen.* The verse is naming the prophetic ingathering as the meaning of the Messianic salvation. Ezekiel carries the same exact arc.
-
-The gathering and the cleansing-from-sin are the same prophetic motion. Matthew 1:21 is naming Ezekiel 36 as the meaning of *Yahusha (Jesus).*
-
-The naming is also the lock on the name's-sake grammar. The gathering is by Yah's name, for Yah's name — not for the gathered people's righteousness.
-
-*Not for thy righteousness, or for the uprightness of thine heart, dost thou go to possess their land: but for the wickedness of these nations Yahuah Elohayka (the LORD thy God) doth drive them out from before thee, and that he may perform the word which Yahuah (the LORD) sware unto thy fathers, Abraham, Isaac, and Jacob. Understand therefore, that Yahuah Elohayka (the LORD thy God) giveth thee not this good land to possess it for thy righteousness; for thou art a stiffnecked people.* (Deuteronomy 9:5-6)
-
-The prior-promise structure is the framework grammar of grace. The Messiah's name is the announcement that the prior promise is now being kept. The gospel is name-grace, not merit-grace — grace flowing from Yah's own name's-sake honor, not from any earned standing in the people being gathered.
-
-## §8. *Immanuel — Elohim (God) with us* — the nature-of-God spine on page one
-
-Verses 22-23 quote Isaiah 7:14.
-
-The Reformation's hottest fight on this verse has been over whether the Hebrew *almah* in Isaiah 7:14 means *virgin* (as Matthew renders it through the Greek *parthenos*) or *young woman* (as the modern critical reading argues from secular Hebrew usage). The fight is real, the Septuagint settles it on the side of *virgin* — the Septuagint translators in the third century BCE, working centuries before any Christian polemic, rendered *almah* as *parthenos* — and Matthew settles it on the apostolic authority of *parthenos* in the New Testament canon. The framework joins Matthew and the Septuagint on the virgin reading.
-
-But the deeper move in v.23 is the apposition: *they shall call his name Immanuel, which being interpreted is, Elohim (God) with us.* The Messiah is being identified as Elohim (God) in the flesh. The naming is theological, not merely descriptive of his role. The child in the manger IS Elohim (God) with his people. The framework reading hears this at the depth it carries.
-
-The framework's nature-of-God reading holds that Yahuah (God) the Father is the formless infinite — the source — and that Yahusha (Jesus) is the Formed, the expressed Word drawn from the Formless, the God who interacted with the patriarchs and the prophets in the Tanakh, who came in the flesh as Yahusha (Jesus). The Yahuah who walked with Adam in the cool of the day, who appeared to Avraham (Abraham) at Mamre, who wrestled with Ya'aqov (Jacob) at Peniel, who spoke from the burning bush, who stood on the mountain at Sinai — was the Formed. The Father, the formless infinite, is not seen by mortal eyes.
-
-The Formed is what every theophany has always been.
-
-*Immanuel — Elohim (God) with us* in Matthew 1:23 is the nature-of-God spine being laid at page one of the New Testament. The Formed has come in flesh. The God of every theophany — the Formed — has taken on the seed of Adam through Miryam (Mary)'s line and has been adopted into the legal Davidic lineage through Yoseph (Joseph). The Trinity controversy that Christianity will later import into this verse — three co-equal persons sharing one divine substance, Nicaea 325 AD and the subsequent councils — is reading a later framework backwards into Matthew 1. The framework reading lets v.23 say what it says: the child is Elohim (God) with his people, the Formed in flesh, the *Immanuel* the prophets named. The Father is not in the manger; the Formed is. The Father remains where he always is — the formless infinite from whom the Formed proceeds eternally. The Son submitted before, submits now in the flesh, and submits in the eschaton, and the Father remains the head of the Son.
+The Formless never appears; the Formed is everywhere the Tanakh records a theophany; and at Matthew 1:23 the Formed has come in flesh. The Trinity controversy of the fourth century reads three-co-equal-persons-in-one-divine-substance backwards into this verse — the verse itself does not carry that architecture. It carries the architecture the canon has been showing all along: one Yahuah (God), Formless in source, Formed in expression, and the Formed has tabernacled among us. The texts that lock the Father / Son register carry into the eschaton.
 
 *And when all things shall be subdued unto him, then shall the Son also himself be subject unto him that put all things under him, that Elohim (God) may be all in all.* (1 Corinthians 15:28)
 
 *But I would have you know, that the head of every man is the Messiah (Christ); and the head of the woman is the man; and the head of the Messiah (Christ) is Elohim (God).* (1 Corinthians 11:3)
 
-Both statements are true in their proper register. Matthew 1:23 names the second statement — the Formed in flesh is *Elohim with us* — without thereby denying the first — the Father remains the source.
+The Trinity's co-equal-persons frame cannot account for the eschatological submission of 1 Cor 15:28; the framework's Formless-and-Formed reading carries it natively. The Son submitted before, submits in the flesh, and submits in the eschaton; the Father remains the formless infinite source.
 
-The framework reads Matthew 1:23 as the load-bearing nature-of-God anchor for everything Matthew will narrate. When Yahusha (Jesus) calms the sea, raises the dead, forgives sin, declares himself one with the Father, the reader has already been told who he is: the Formed in flesh, the Elohim (God) of the theophanies now walking the dust of Galilee in the form of a man.
+The same nature-of-God reading sets up the careful work the framework will do later when the text reaches a *like the Son of Adam* construction. Daniel 7:13's Aramaic *kbar enash* and Revelation 1:13 and 14:14 each preserve a kaph-comparative in the original — *like a son of mortal-man* rather than the title-naming *the Son of Adam.* Read in isolation, the comparative leaves the identification open. Read against Matthew 1:23 and the rest of the canon harmonized, the figure in each verse is Yahusha (Jesus) — the kaph honors his incarnation. He resembled mortal-man because he took on flesh, while remaining the Formed cloud-rider. The nature-of-God reading is consistent from the front door of the gospel through the Apocalypse.
 
-The same reading sets up the careful work the framework will do later when the text reaches a *like the Son of Adam* construction. Daniel 7:13's Aramaic *kbar enash* and Revelation 1:13 and 14:14 each preserve a kaph-comparative in the original — *like a son of mortal-man* rather than the title-naming *the Son of Adam.* Read in isolation, the comparative leaves the identification open. Read against Matthew 1:23 and the rest of the canon harmonized, the figure in each verse is Yahusha (Jesus) — the kaph honors his incarnation. He resembled mortal-man because he took on flesh, while remaining the Formed cloud-rider. The nature-of-God reading is consistent from the front door of the gospel through the Apocalypse.
+## §5. The exaltation of the name — Acts and Philippians
 
-## §9. The naming as Yahusha (Jesus) — the gospel inside the name
-
-*And she shall bring forth a son, and thou shalt call his name Yahusha (Jesus): for he shall save his people from their sins.* (Matthew 1:21)
-
-*Then Yoseph (Joseph) being raised from sleep did as the angel of Yahuah (the Lord) had bidden him, and took unto him his wife: and knew her not till she had brought forth her firstborn son: and he called his name Yahusha (Jesus).* (Matthew 1:25)
-
-The name itself is the gospel. *Yahusha* is the Hebrew form of the name — *Yahu* (the short divine name) plus *sha* (from *yasha,* *to save*) — *Yah saves.* The Greek *Iēsous* (which the King James further latinized to *Jesus*) is the transliteration of the Hebrew Yahusha through the Septuagint convention used for the name Yahoshua (Joshua / Yeshua) in the Old Testament, the same root — but the Hebrew weight of *Yahusha* is what Matthew 1:21 is invoking when it says *for he shall save his people from their sins.* The reason clause is the Hebrew etymology of the name made visible.
-
-The framework restores the name to its Hebrew form, with the parenthetical *(Jesus)* preserved on every mention so the reader meeting the Latinized name for the first time is not lost. The reader who opens the app to Matthew 1 and sees *Yahusha (Jesus)* is being met where the Reformation translation left them, while being shown what the original name actually was. The name is the gospel. *Yah saves.* The Messiah's name is the announcement of what he was sent to do, and the *who* doing the saving is named in the first syllable: *Yah.* The same Yah who scattered, gathers. The same Yah who exiled, brings home. The Messiah's name is the assurance that the gathering is by the same hand that did the scattering.
-
-The framework also holds that the Hebrew pronunciation *Yahusha* (Yah-oo-shah) preserves the divine-name component intact in a way that *Jesus* (Jee-zuss) does not. The Reformation's preference for *Jesus* over *Yahusha* is the same kind of editorial move the Reformation made when it removed *Yahuah* from the Old Testament and substituted *the LORD.* The divine-name elements are softened, transliterated, and eventually obscured. The restoration of *Yahusha (Jesus)* on every mention is, on the surface, a name-rendering choice; underneath, it is the same restoration of the third-commandment honor of the name that the Old Testament restoration carries.
-
-The Old Testament precedent for the name is *Yahoshua* (Joshua) — the same root, *Yah saves.* The renaming was theological. Mosheh (Moses) renamed Hoshea — *salvation* — the son of Nun to *Yahoshua* — *Yah saves* — at the moment of his commissioning to lead the entry into the land.
-
-Yahoshua led the entry into the land of promise. The Messiah whose name is *Yahusha* leads the entry into the prophetic ingathering. The two leaders bear functionally the same name in different registers — the first into the land at the close of the wilderness wandering, the second into the gathering at the close of the long exile. Peter will lock the same architecture before the Sanhedrin.
+Peter before the Sanhedrin locks the name's saving authority.
 
 *Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.* (Acts 4:12)
 
-Paul names the same exaltation of the name.
+Paul carries the same exaltation forward.
 
 *Wherefore Elohim (God) also hath highly exalted him, and given him a name which is above every name: That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth; and that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Yahuah (Lord), to the glory of Elohim (God) the Father.* (Philippians 2:9-11)
 
-The Tanakh prepares the reader for the name. The prophets prepare the reader for the gospel. The angel at Matthew 1:21 announces both with one word.
+The Tanakh prepares the reader for the name. The prophets prepare the reader for the gospel. The angel at Matthew 1:21 announces both with one word. The apostles confess what the angel announced. The name is the gospel and the name is the means.
 
----
-
-## §10. Cross-Reference Apparatus
+## §6. Cross-Reference Apparatus
 
 *This section seeds the chapter-end card per `api/CHAPTER_END_CARD_CONTRACT.md`. Layer 1 = per-verse cross-references (curated framework-bearing rows for the `cross_references` table). Layer 2 = framework threads surfacing in this chapter (existing thread members + new threads marked PROPOSED for Yoshi's design call). This section is staging data for the engineering migration pass; it does not surface in the reader UI once the data lives in the database.*
 
