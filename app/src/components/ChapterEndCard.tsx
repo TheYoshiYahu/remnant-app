@@ -310,7 +310,7 @@ function ThreadCallout({
           {thread.title}
         </h4>
         {thread.anchor && (
-          <p className="mt-0.5 font-sans text-xs text-[var(--reader-muted)]">
+          <p className="mt-0.5 font-sans text-xs text-[var(--reader-accent)]">
             Anchor:{" "}
             {prettyRef(
               thread.anchor.book_slug,
@@ -338,7 +338,7 @@ function ThreadCallout({
           <button
             type="button"
             onClick={() => setExpanded((v) => !v)}
-            className="mt-2 font-sans text-xs font-medium text-[var(--reader-muted)] underline-offset-2 hover:underline"
+            className="mt-2 font-sans text-xs font-medium text-[#15A86A] underline-offset-2 hover:underline"
           >
             {expanded ? "Show less" : "Show more"}
           </button>
@@ -347,7 +347,7 @@ function ThreadCallout({
 
       {thread.members_in_chapter.length > 0 && (
         <div className="mt-4 border-t border-[var(--reader-rule)] pt-3">
-          <p className="mb-2 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
+          <p className="mb-2 font-sans text-xs font-semibold uppercase tracking-wide text-[#1A6FE5]">
             Cross-references in this chapter
           </p>
           <ul className="space-y-1 text-[var(--reader-text)]">

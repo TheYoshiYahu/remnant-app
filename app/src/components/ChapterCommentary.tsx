@@ -121,9 +121,14 @@ export default function ChapterCommentary({
       className="mt-8 border-t border-[var(--reader-rule)] pt-6"
       aria-labelledby="chapter-commentary-title"
     >
+      {/*
+        S130 — section header recolored to techelet #1A6FE5 per
+        COLOR_PALETTE.md §9 chrome-header rule (same register as the
+        "Cross-References in X" header in ChapterEndCard).
+      */}
       <h3
         id="chapter-commentary-title"
-        className="mb-4 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]"
+        className="mb-4 font-sans text-xs font-semibold uppercase tracking-wide text-[#1A6FE5]"
       >
         More on {data.book.title} {data.chapter.number}
       </h3>
@@ -228,7 +233,7 @@ function CommentaryBlock({
           >
             {expanderLabel}
           </span>
-          <span className="hidden group-open:inline font-sans text-sm font-medium text-[var(--reader-muted)] underline-offset-2 hover:underline">
+          <span className="hidden group-open:inline font-sans text-sm font-medium text-[#15A86A] underline-offset-2 hover:underline">
             {collapseLabel}
           </span>
         </summary>
@@ -340,7 +345,7 @@ function renderCommentaryBody(body: string): ReactNode {
   return sections.map((section, idx) => (
     <div key={idx} className={idx > 0 ? "mt-6" : ""}>
       {section.heading && (
-        <h5 className="mb-2 font-sans text-sm font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
+        <h5 className="mb-2 font-sans text-sm font-semibold uppercase tracking-wide text-[#1A6FE5]">
           {section.heading}
         </h5>
       )}

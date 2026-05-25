@@ -186,11 +186,28 @@ Cross-reference labels in the chapter-end card render with color tied to source 
 |---|---|---|---|
 | Section header ("Cross-References in *Book Chapter*") | Techelet | `#1A6FE5` | §1 divine-name |
 | Source-verse group labels ("Verse 1", "Verse 3", etc.) | Spectral blue | `#0084FF` | §2 reader chrome accent (matches in-body verse numbers — consistent "verse-number pointer" register) |
+| Thread anchor label ("Anchor: Matthew X:Y") | Spectral blue | `#0084FF` | §2 — same verse-pointer register as source-verse group labels |
+| Thread inner sub-header ("Cross-references in this chapter") | Techelet | `#1A6FE5` | §1 divine-name — chrome sub-header at thread scope, mirroring §9 main header |
+| Thread summary toggle ("Show more" / "Show less") | Bracket-emerald midtone | `#15A86A` | §3 expansion register — same family as expander buttons |
 | Old Testament / Tanakh refs (Genesis, Joshua, Isaiah, etc.) | Bracket-emerald midtone | `#15A86A` | §3 divine-speech / expansion |
 | New Testament refs (Matthew, John, Romans, etc.) | Brand-mark gold midtone | `#B4A078` | §1 priestly-witness |
 | Extra-canonical refs (1 Enoch, Jubilees, Jasher, Apocrypha, Adam & Eve Conflict, Sonnini's Acts of Paul, etc.) | Argaman | `#8E4FB3` | §1 covenant-body |
 
 The expander **buttons** keep the full metallic emerald gradient treatment per §3 above. The cross-reference per-target labels use the matching solid midtones at small text sizes so they don't compete visually with the body italic verse-preview text.
+
+### Companion rule — commentary surface labels (locked S130)
+
+The same logic carries to the `<ChapterCommentary>` stack that sits ABOVE the cross-reference card:
+
+| Label | Color | Hex | Register |
+|---|---|---|---|
+| Section header ("More on *Book Chapter*") | Techelet | `#1A6FE5` | §1 divine-name — chrome-section header consistent with cross-ref section header |
+| Sub-section headings inside Deeper Dive body ("§1. THE FOUR WOMEN…", etc.) | Techelet | `#1A6FE5` | §1 — smaller `<h5>` scale for hierarchy beneath the section `<h3>` |
+| Expander close-state labels ("Close the basic walk", "Close the deeper dive") | Bracket-emerald midtone | `#15A86A` | §3 expansion register — the open-state of the green expand buttons |
+
+**What stays muted (intentional):** tier badges ("Notes", "Library") — these signal price/tier and read as quiet metadata, not chrome labels. Ornamental arrows (`→`) in cross-ref rows. Member-note body prose inside threads (that's commentary content, not chrome). Verse-preview italic text. Locked-row opacity-reduced labels (kept in their source-type color at 40% opacity so the source register stays readable; opacity carries the locked signal).
+
+**What lives in other surfaces (deferred):** muted-grey labels inside modal/drawer chrome — `BookmarkSheet`, `NotesPanel`, `HighlightPicker`, `SearchModal`, `Pricing`, `StrongsLookup`, `VerseActionMenu`, `RangeActionPicker`. Those surfaces use muted-grey for chrome that shouldn't compete with the active content; their color treatment is a separate sweep deferred to a future wheel.
 
 **Tier-locked targets** (when the corpus overhaul adds extras-tier cross-reference targets) render at 40% opacity and route to `/pricing` on click. The argaman color is preserved at reduced opacity so the reader sees "this is the extras register, locked" without any color register being lost.
 
