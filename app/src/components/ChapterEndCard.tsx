@@ -181,33 +181,30 @@ function classifyBookSlug(slug: string): SourceClass {
 }
 
 function colorForSourceClass(cls: SourceClass): string {
-  // Hex values mirror COLOR_PALETTE.md §9. Keep in sync if either side
-  // moves. The midtones (#B4A078, #8E4FB3) are picked so the labels read
-  // cleanly at body-text scale on the dark reader pane. Tanakh is the
-  // exception — see classNameForSourceClass below for the gradient.
+  // Solid color used by NT and Extras refs via inline style. Tanakh
+  // refs render as a mini pill button (see classNameForSourceClass)
+  // and don't read this color directly.
   switch (cls) {
-    case "tanakh": return "#15A86A";  // unused (Tanakh uses the gradient class)
+    case "tanakh": return "#15A86A";  // unused (Tanakh uses the pill class)
     case "nt":     return "#B4A078";  // brand-mark gold midtone
     case "extras": return "#8E4FB3";  // argaman
   }
 }
 
-// S130 follow-up — Tanakh refs render with a metallic gradient sweep
-// (emerald midtone → bright emerald → techelet hint) via background-clip
-// per Yoshi's call: the flat solid emerald read dull next to the
-// metallic expander buttons. The gradient gives the Tanakh refs the
-// same metallic feel and finishes on a techelet accent so the §3
-// expansion register and the §1 divine-name register both speak in the
-// same label. Applied via Tailwind classes (not the inline style hex)
-// because background-clip/text-transparent is class-driven. NT and
-// extras stay solid through the inline-style path.
+// S130 follow-up — Tanakh refs render as mini-pill buttons using the
+// SAME metallic gradient + border + light-text treatment as the §3
+// expander buttons ("Read the basic walk →" / "Read the deeper dive →")
+// per Yoshi's call: "use this green" pointing at the expander buttons.
+// Scaled down for inline use inside cross-reference rows. NT and Extras
+// keep their solid color via inline style for now — separate pill
+// treatments in their own registers are a deferred follow-up.
 function classNameForSourceClass(cls: SourceClass): string {
   switch (cls) {
     case "tanakh":
-      return "bg-gradient-to-r from-[#15A86A] via-[#2EFFA1] to-[#1A6FE5] bg-clip-text text-transparent";
+      return "inline-block rounded border border-[#2EFFA1] bg-gradient-to-r from-[#04321E] via-[#15A86A] to-[#04321E] px-2 py-0.5 text-[#E6FFF2] shadow-sm hover:opacity-90";
     case "nt":
     case "extras":
-      return "";
+      return "underline-offset-2 hover:underline";
   }
 }
 
@@ -285,8 +282,7 @@ function BaselineList({
                           : `Go to ${prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)}`
                       }
                       className={
-                        "font-sans text-xs font-semibold underline-offset-2 hover:underline " +
-                        gradientClasses
+                        "font-sans text-xs font-semibold " + gradientClasses
                       }
                       style={isTanakh ? undefined : { color: labelColor }}
                     >
@@ -428,8 +424,7 @@ function ThreadMemberRow({
         }}
         title={`Go to ${prettyRef(member.target.book_slug, member.target.chapter_number, member.target.verse_number)}`}
         className={
-          "font-sans text-xs font-semibold underline-offset-2 hover:underline " +
-          gradientClasses
+          "font-sans text-xs font-semibold " + gradientClasses
         }
         style={isTanakh ? undefined : { color: labelColor }}
       >

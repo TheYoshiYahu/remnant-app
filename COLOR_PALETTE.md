@@ -192,7 +192,7 @@ Cross-reference labels in the chapter-end card render with color tied to source 
 | Thread anchor label ("Anchor: Matthew X:Y") | Spectral blue | `#0084FF` | §2 — same verse-pointer register as source-verse group labels |
 | Thread inner sub-header ("Cross-references in this chapter") | Techelet | `#1A6FE5` | §1 divine-name — chrome sub-header at thread scope, mirroring §9 main header |
 | Thread summary toggle ("Show more" / "Show less") | Bracket-emerald midtone | `#15A86A` | §3 expansion register — same family as expander buttons |
-| Old Testament / Tanakh refs (Genesis, Joshua, Isaiah, etc.) | Metallic emerald → techelet gradient | `#15A86A → #2EFFA1 → #1A6FE5` (left-to-right via `bg-clip-text`) | §3 expansion register sweeping into §1 divine-name register — gives the OT refs the same metallic feel as the expander buttons + a techelet finish so the cross-ref label carries both registers in one sweep |
+| Old Testament / Tanakh refs (Genesis, Joshua, Isaiah, etc.) | Metallic emerald mini-pill (same treatment as the expander buttons, scaled down) | bg `linear-gradient #04321E → #15A86A → #2EFFA1` + border `#2EFFA1` + text `#E6FFF2` | §3 expansion register — Tanakh refs render as inline mini-buttons using the exact same metallic-emerald pill treatment as the `<details>` expander buttons (per Yoshi's S130 call: "use this green," pointing at the expander buttons). NT and Extras stay as solid inline colored text until pill versions in their own registers ship. |
 | New Testament refs (Matthew, John, Romans, etc.) | Brand-mark gold midtone | `#B4A078` | §1 priestly-witness |
 | Extra-canonical refs (1 Enoch, Jubilees, Jasher, Apocrypha, Adam & Eve Conflict, Sonnini's Acts of Paul, etc.) | Argaman | `#8E4FB3` | §1 covenant-body |
 
