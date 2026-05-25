@@ -84,23 +84,17 @@ Eight Beatitudes — eight markers of the gathered citizens of the kingdom. The 
 
 *Ye are the salt of the earth: but if the salt have lost his savour, wherewith shall it be salted? it is thenceforth good for nothing, but to be cast out, and to be trodden under foot of men. Ye are the light of the world. A city that is set on an hill cannot be hid. Neither do men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house. Let your light so shine before men, that they may see your good works, and glorify your Father which is in heaven.* (Matthew 5:13-16)
 
-The framework reads the salt-and-light naming in two registers. First, the immediate naming of the disciples as those who already ARE the salt and the light — not those who are commanded to become so. The Greek *este* is indicative not imperative: *you are.* The Beatitudes have just named who they are; the salt-and-light verses continue the identification. Second, the prophetic Tanakh-background that supplies the substance of what salt and light mean covenantally.
-
-Salt in the Tanakh carries the covenant-preservation register.
+The framework reads the salt-and-light naming in two registers — the disciples already ARE the salt and the light (the Greek *este* is indicative not imperative), and the Tanakh-substance underneath each term carries the covenant-preservation register (salt) and the gathering-of-Yashar'el register (light) the Christian commentary tradition has flattened into generic personal-witness motifs. Salt is the preserving-of-covenant substance — the *covenant of salt* names a forever-covenant standard.
 
 *All the heave offerings of the holy things, which the children of Yashar'el (Israel) offer unto Yahuah (the LORD), have I given thee, and thy sons and thy daughters with thee, by a statute for ever: it is a covenant of salt for ever before Yahuah (the LORD) unto thee and to thy seed with thee.* (Numbers 18:19)
 
-*Ought ye not to know that Yahuah (the LORD) Elohim (God) of Yashar'el (Israel) gave the kingdom over Yashar'el (Israel) to David for ever, even to him and to his sons by a covenant of salt?* (2 Chronicles 13:5)
+The disciples are salt of the earth because they preserve the covenant the Father gave: the heart-Torah, the prophetic witness, the Sabbath, the feasts, the names. The system that voids the heart-Torah is the salt that has lost its savour and is cast out — the leadership-pulpit that voids the commandments has lost the preserving function.
 
-Salt is the preserving-of-covenant substance. The disciples are salt of the earth because they preserve the covenant in the earth — the heart-Torah, the prophetic witness, the Sabbath, the feasts, the names. The system that voids the heart-Torah is the salt that has lost its savour and is cast out. The framework reads the loss-of-savour warning as direct — the leadership-pulpit that voids the commandments has lost the preserving function.
-
-Light in the Tanakh carries the revealing-and-instructing register, particularly in the gathering-of-Yashar'el frame of Yeshayahu.
-
-The framework reads this carefully. The servant is the light to the goyim — and the goyim, in Yeshayahu 49's frame, are the lands of the scattering where the seed of Yashar'el has been dispersed; verse 6 follows verse 5's *bring Ya'aqov (Jacob) again to him* and *gather Yashar'el (Israel) to him* — the gathering of Yashar'el is the FIRST mission; the light to the goyim is the SECOND mission. The servant illuminates; the light reaches the lost sheep in the lands of their scattering; the gathered remnant carries the light onward. The Christian commentary that flattens Yeshayahu 49:6 into a generic Gentile-inclusion proof-text misses the gathering-substance the prophet is naming. The framework recovers it.
+Light in the Tanakh carries the revealing-and-instructing register, particularly in the gathering-of-Yashar'el frame of Yeshayahu. The Yeshayahu 49:6 sequence — gathering of Ya'aqov FIRST, light to the goyim SECOND — names the gathering-light the gathered carry into the lands of the scattering. Yeshayahu 60 widens the same scene at the consummation.
 
 *Arise, shine; for thy light is come, and the glory of Yahuah (the LORD) is risen upon thee. For, behold, the darkness shall cover the earth, and gross darkness the people: but Yahuah (the LORD) shall arise upon thee, and his glory shall be seen upon thee. And the goyim (Gentiles) shall come to thy light, and kings to the brightness of thy rising.* (Isaiah 60:1-3)
 
-*A city that is set on an hill cannot be hid.* The framework reads this against Yeshayahu 2 and Mikah 4.
+*A city that is set on an hill cannot be hid.* The framework reads this against Yeshayahu 2 and Mikah (Micah) 4.
 
 *And it shall come to pass in the last days, that the mountain of Yahuah's (the LORD's) house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it. And many people shall go and say, Come ye, and let us go up to the mountain of Yahuah (the LORD), to the house of the Elohim (God) of Ya'aqov (Jacob); and he will teach us of his ways, and we will walk in his paths: for out of Tsion (Zion) shall go forth the law, and the word of Yahuah (the LORD) from Yerushalayim (Jerusalem).* (Isaiah 2:2-3)
 
@@ -174,11 +168,7 @@ The heart-Torah Yahusha will now teach in verses 21 through 48 is the *exceeding
 
 The six *ye have heard ... but I say unto you* exchanges of verses 21 through 48 are the bulk of Matthew 5 and the most-frequently-misread block in the Sermon on the Mount. The Christian commentary tradition has often read them as Yahusha ABROGATING the Torah by setting his own authority above Mosheh's. That reading collapses Yahusha into the *destroy the law* posture he just rejected at verse 17. The framework reads the antitheses on a different axis.
 
-**The methodological key.** Yahusha is not contrasting himself with the written Torah of Mosheh. He is contrasting himself with the ORAL TRADITION of the Pharisaic-Sadducean leadership-system — the *takkanot* and *gezerot,* the fence-around-the-Torah teachings, the truncations and additions that had been laid over the Torah by the rabbinic schools across the centuries. The *ye have heard* formula — *ēkousate* — references what the people HEARD from the synagogue teachers, not what was WRITTEN in the scroll. Yahusha's *but I say unto you* is the corrective restoration of the original Torah's substance, set against the rabbinic-tradition distortion of it. He will name the same oral-tradition-over-Torah pattern explicitly at Mark 7.
-
-*Howbeit in vain do they worship me, teaching for doctrines the commandments of men. For laying aside the commandment of Elohim (God), ye hold the tradition of men, as the washing of pots and cups: and many other such like things ye do. And he said unto them, Full well ye reject the commandment of Elohim (God), that ye may keep your own tradition. ... Making the word of Elohim (God) of none effect through your tradition, which ye have delivered: and many such like things do ye.* (Mark 7:7-9, 13)
-
-The framework reading recovers the pattern at each of the six instances. Yahusha is doing the SAME WORK he did at Matthew 4:5-7 with the devil's selective Psalm-91 quote — bringing the OVERRIDING Torah-word into the conversation against the partial-citation distortion. The discipline is the same: harmonization-with-the-whole-canon, restoration of the heart-substance the surface-citation has voided. The antitheses are the Pharisaic-counter applied to six specific cases.
+**The methodological key.** Yahusha (Jesus) is not contrasting himself with the written Torah of Mosheh (Moses); he is contrasting himself with the ORAL TRADITION of the Pharisaic-Sadducean leadership-system — the *takkanot* and *gezerot,* the truncations and additions laid over the Torah by the rabbinic schools across the centuries. Yahusha's *but I say unto you* is the corrective restoration of the original Torah's substance set against the rabbinic-tradition distortion of it. The framework reading recovers the pattern at each of the six instances — six cases of the same add-or-diminish violation the Torah itself names at Deuteronomy 4:2.
 
 **Antithesis 1 — murder and anger (verses 21-26).**
 
@@ -282,11 +272,7 @@ The Torah also commanded positive-action toward the enemy.
 
 *If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink: For thou shalt heap coals of fire upon his head, and Yahuah (the LORD) shall reward thee.* (Proverbs 25:21-22)
 
-The Torah's command was love-of-neighbor AND love-of-stranger AND positive-action toward the enemy. The oral tradition had inserted a hate-of-enemy clause; Yahusha strips the addition off and restores the Torah's actual command, extending the love-command to the enemy as the heart-completion of what the Torah had always carried. The Torah forbids adding to or subtracting from the commandments.
-
-*Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* (Deuteronomy 4:2)
-
-The *hate thine enemy* clause is the addition-violation; the truncations of antitheses 1, 2, and 4 are the diminish-violations. The six antitheses are six cases of the same diagnostic.
+The Torah's command was love-of-neighbor AND love-of-stranger AND positive-action toward the enemy. The oral tradition had inserted a hate-of-enemy clause; Yahusha (Jesus) strips the addition off and restores the Torah's actual command, extending the love-command to the enemy as the heart-completion of what the Torah had always carried. The *hate thine enemy* clause is the clearest *add*-violation; the truncations of antitheses 1, 2, and 4 are the *diminish*-violations; the six antitheses are six cases of the same Deuteronomy 4:2 diagnostic.
 
 The framework reading also rules out the Christian-pacifist misuse of this antithesis, paralleling the same misuse on antithesis 5. The personal-disciple ethic is love-of-enemy; the judicial-Torah is preserved; the eschatological-judgment of Yahuah against the abominations of the counterfeit-system is preserved. He brings desolation on the false-system for her abominations at the day; he stands on the Mount of Olives to war with all the nations who gather against Yerushalayim. The disciple loves the personal enemy and does not personally administer judgment; Yahuah administers eschatological judgment on the systems and the principalities in his timing.
 
@@ -319,128 +305,3 @@ The Sermon's references to *the kingdom of heaven* at verses 3, 10, 19, and 20 s
 The framework reading of the Beatitudes' future-tense promises — *they shall be comforted; they shall inherit the earth; they shall be filled; they shall obtain mercy; they shall see Elohim (God); they shall be called the children of Elohim (God)* — lands in this eschatological frame. The future tenses are the consummation-tenses. The citizens of the kingdom ARE now (present indicative); they shall RECEIVE the consummation-blessings then (future passive). The earth-inheritance of the meek at verse 5 is the prophetic-land-inheritance at the consummation. The seeing of Elohim by the pure in heart at verse 8 is the eschatological-vision promise the prophets have named.
 
 This eschatological filter rules out the Christian-amillennial collapse of the future-promises into present-spiritual-fulfillments. The meek do not currently *inherit the earth* in a spiritualized internal sense; they shall inherit the earth at the day of Yahuah — the same earth, restored, after the dreadful day has cleansed the abominations. The kingdom of heaven is not entirely realized in the present; the kingdom is at hand, the King is sitting on the mountain, and the consummation is ahead.
-
----
-
-## §9. Cross-Reference Apparatus
-
-*This section seeds the chapter-end card per `api/CHAPTER_END_CARD_CONTRACT.md`. Layer 1 = per-verse cross-references (curated framework-bearing rows for the `cross_references` table). Layer 2 = framework threads surfacing in this chapter (existing thread members + new threads marked PROPOSED for Yoshi's design call). This section is staging data for the engineering migration pass; it does not surface in the reader UI once the data lives in the database.*
-
-### Layer 2 — Threads surfacing in Matthew 5
-
-**Thread: `scattered-seed-gathering`** *(LANDED at S74).* Adds members from Matthew 5.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 5:1-2 | Isaiah 2:2-3 / Micah 4:1-2 | *The mountain of the house of Yahuah (the LORD) shall be established in the top of the mountains, and all nations shall flow unto it ... for out of Tsion (Zion) shall go forth the law* — the second-Sinai mountain-and-multitude pattern Yahusha (Jesus) walks at Matt 5; the eschatological gathering-to-the-mountain prefigured by the King teaching from the mountain in the present age. |
-| Matt 5:5 | Psalm 37:9-11 | *The meek shall inherit the earth* — the Beatitude is a verbatim quotation of Psalm 37:11; the surrounding context (vv.9-11, 22, 29, 34) is the gathering-and-land-inheritance arc the Beatitude lands on. |
-| Matt 5:14 | Isaiah 49:6 / Isaiah 60:1-3 | *I will also give thee for a light to the goyim (Gentiles)* (Isa 49:6 in the gathering-of-Yashar'el context); *Arise, shine; for thy light is come* (Isa 60:1) — the framework reading: the gathered remnant carries the light to the lost sheep in the lands of their scattering. |
-
-**Thread: `lost-sheep-mission-scope`** *(PROPOSED at Matt 1).* Adds members from Matthew 5.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 5:1-2 | Matt 10:5-6 | The Sermon's audience is the disciples-and-multitudes-from-Galilee context of Matt 4:23-25; the disciples named in Matt 5:1 are the same disciples who will be sent at Matt 10:5-6 to the lost sheep of the house of Yashar'el (Israel) — the audience-scope-and-mission-scope alignment. |
-| Matt 5:3-12 | Isaiah 61:1-3 | The Beatitudes' description of the citizens of the kingdom maps onto Isaiah 61's *anointed-one mission to the meek, the brokenhearted, the captives, the mourners* — the Messianic-mission audience-identification Yahusha (Jesus) will explicitly cite at Luke 4:18-19; the audience of the Beatitudes and the audience of the Yeshayahu (Isaiah) 61 servant are the same people: the lost sheep being gathered. |
-
-**PROPOSED new thread: `heart-torah-not-abolition`** *(for Yoshi's design call).* Anchor: Matthew 5:17-19. Summary: *Yahusha (Jesus) at Matt 5:17-19 preemptively denies the antinomian misreading of his ministry. He has NOT come to destroy the law or the prophets; he has come to FILL them up to their intended substance. Until heaven and earth pass, one jot or one tittle does not pass from the law. The pulpit that teaches the breaking of even the least commandment is named LEAST in the kingdom of heaven. Matthew 5:19 is the New Testament companion of 1 John 2:3-4 — both verses say the same thing in different grammar: keeping the commandments — and teaching others to keep them — is the proof of knowing him. The thread carries the load-bearing anti-antinomian declaration of the Sermon on the Mount, tied back to the Tanakh's continuing-Torah witnesses and forward to every NT passage that reaffirms the Torah's standing.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 5:17 | Isaiah 8:20 | *To the law and to the testimony: if they speak not according to this word, it is because there is no light in them* — the prophetic-testimony that any teaching that contradicts the Torah and the testimony lacks the light; the Tanakh's own anti-antinomian standard. |
-| 2 | Matt 5:18 | Isaiah 40:8 | *The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever* — the Torah-as-eternal-word standard; Yahusha's (Jesus's) *one jot or one tittle* declaration walks the same prophetic stream. |
-| 3 | Matt 5:18 | Psalm 119:89 | *For ever, O Yahuah (the LORD), thy word is settled in heaven* — the Tanakh's standing-of-the-Torah affirmation. |
-| 4 | Matt 5:19 | 1 John 2:3-4 | *Hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar* — the New Testament companion of Matt 5:19; the 1234-of-Truth master filter. Both verses indict the antinomian gospel. |
-| 5 | Matt 5:19 | Romans 3:31 | *Do we then make void the law through faith? Elohim (God) forbid: yea, we establish the law* — Paul's own explicit denial of the antinomian misreading of his ministry; the Torah is established by faith, not voided. |
-| 6 | Matt 5:19 | Romans 7:12 | *Wherefore the law is holy, and the commandment holy, and just, and good* — Paul's positive affirmation of the Torah's continuing-goodness. |
-| 7 | Matt 5:17-19 | Jeremiah 31:33 | *I will put my law in their inward parts, and write it in their hearts* — the new-covenant promise that fills the Torah with its heart-substance; Yahusha's (Jesus's) *fulfil* at v.17 is the Yirmeyahu (Jeremiah) 31:33 work. |
-| 8 | Matt 5:17-19 | Ezekiel 36:26-27 | *A new heart also will I give you ... and cause you to walk in my statutes, and ye shall keep my judgments, and do them* — the Spirit-empowered Torah-walking promise; the framework reading of the *fulfilled* Torah. |
-| 9 | Matt 5:17-19 | Hebrews 8:10 | *I will put my laws into their mind, and write them in their hearts* — the apostolic quotation of Yirmeyahu (Jeremiah) 31:33 applied to the new-covenant gathering. |
-| 10 | Matt 5:19 | James 2:8-11 | *If ye fulfil the royal law according to the scripture, Thou shalt love thy neighbour as thyself, ye do well ... whosoever shall keep the whole law, and yet offend in one point, he is guilty of all* — Ya'aqov's (James's) affirmation of the Torah's continuing-binding force and the unity of its commandments. |
-
-**PROPOSED new thread: `oral-tradition-correction-not-torah-supersession`** *(for Yoshi's design call).* Anchor: Matthew 5:21-48 (the six antitheses). Summary: *The six *ye have heard / but I say unto you* exchanges of Matt 5:21-48 are NOT Yahusha (Jesus) abrogating the written Torah of Mosheh (Moses); they are Yahusha (Jesus) correcting the oral-tradition distortions the Pharisaic-Sadducean leadership-system had layered over the Torah. The *ye have heard* formula references what the people HEARD from the synagogue teachers, not what was WRITTEN in the scroll. The pattern: the oral tradition truncated commandments (antitheses 1, 2, 4 — act-only readings), inverted concessions (antithesis 3 — divorce-permission), confused spheres (antithesis 5 — judicial vs personal), and added clauses with no Torah-warrant (antithesis 6 — *hate thine enemy*). Yahusha (Jesus) restores the original Torah's heart-substance at each crux. The Torah is intensified, not abolished. Same discipline Yahusha (Jesus) walks at Matt 4:5-7 against the devil's selective Psalm-91 quote.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 5:21-22 | Leviticus 19:17 | *Thou shalt not hate thy brother in thine heart* — the Torah's heart-substance of the sixth commandment; the oral tradition stopped at the act, the Torah always taught the heart-root. |
-| 2 | Matt 5:23-24 | Hosea 6:6 / Micah 6:6-8 | *I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* — the prophetic stream Yahusha (Jesus) walks at the altar-rule; heart-reconciliation precedes worship in the Tanakh's prophetic teaching. |
-| 3 | Matt 5:27-28 | Exodus 20:17 | *Thou shalt not covet thy neighbour's wife* — the tenth commandment, naming the heart-coveting that precedes the act of adultery; the Torah already named the heart-substance. |
-| 4 | Matt 5:31-32 | Genesis 2:24 | *Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh* — the original marriage-design Yahusha (Jesus) restores; Yahusha (Jesus) will explicitly cite this at Matt 19:4-9 as the framework against the Pharisees' Devarim (Deuteronomy) 24:1 question. |
-| 5 | Matt 5:31-32 | Matt 19:8 | *Mosheh (Moses) because of the hardness of your hearts suffered you to put away your wives: but from the beginning it was not so* — Yahusha's (Jesus's) explicit interpretation of Devarim (Deuteronomy) 24:1 as concession-to-hardness, not Torah-mandate-of-permission. |
-| 6 | Matt 5:33-37 | Numbers 30:2 | *If a man vow a vow unto Yahuah (the LORD), or swear an oath to bind his soul with a bond; he shall not break his word, he shall do according to all that proceedeth out of his mouth* — the Torah's binding-of-oaths standard; Yahusha (Jesus) does not abolish the oath-form but cuts the gradation-evasion-system the oral tradition built. |
-| 7 | Matt 5:33-37 | Matt 23:16-22 | Yahusha (Jesus) at Matt 23 indicts the same gradation-system explicitly — *whosoever shall swear by the temple, it is nothing; but whosoever shall swear by the gold of the temple, he is a debtor* — confirming that Matt 5:33-37 is correction of the oral-tradition apparatus, not abolition of all oath-taking. |
-| 8 | Matt 5:38-42 | Exodus 21:24 / Leviticus 24:20 / Deuteronomy 19:21 | The *lex talionis* in its Tanakh-judicial frame — a proportional-justice principle administered by the courts, not a license for personal-vengeance. |
-| 9 | Matt 5:38-42 | Romans 13:3-4 | *Rulers are not a terror to good works ... he beareth not the sword in vain: for he is the minister of Elohim (God), a revenger to execute wrath upon him that doeth evil* — the apostolic confirmation that the judicial-sphere retains the sword and the *lex talionis* function; Matt 5:38-42 is personal-disciple ethic, not abolition of the judicial Torah. |
-| 10 | Matt 5:43-44 | Leviticus 19:18 | *Thou shalt love thy neighbour as thyself* — the Torah's actual word, the part of the oral-tradition quote that IS in the Torah. |
-| 11 | Matt 5:43-44 | Leviticus 19:34 | *The stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself* — the Torah's extension of the love-command to the stranger, the part the oral tradition had ignored. |
-| 12 | Matt 5:43-44 | Exodus 23:4-5 | *If thou meet thine enemy's ox or his ass going astray, thou shalt surely bring it back to him again ... thou shalt surely help with him* — the Torah's positive command toward the enemy; there is no *hate thine enemy* command anywhere in the Tanakh. |
-| 13 | Matt 5:43-48 | Proverbs 25:21-22 | *If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink* — the wisdom-stream's love-of-enemy ethic; Paul quotes this directly at Romans 12:20. |
-| 14 | Matt 5:48 | Genesis 17:1 | *I am El Shaddai (the Almighty God); walk before me, and be thou perfect (tamim)* — the *tamim*-standard from the Torah; *teleios* at Matt 5:48 is the Greek translation of *tamim.* |
-| 15 | Matt 5:48 | Deuteronomy 18:13 | *Thou shalt be perfect (tamim) with Yahuah (the LORD) thy Elohim (God)* — the Torah's direct command to *tamim*-walk; Yahusha (Jesus) restates the same command at the close of the antitheses. |
-
-**Thread: `pharisaic-sadducean-system-as-judaizer-predecessor`** *(PROPOSED at Matt 3).* Adds members from Matthew 5.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 5:20 | Matt 23:13-33 | The full indictment of the scribes-and-Pharisees as the *generation of vipers* and the *blind guides* — the same system named at Matt 3:7 and contrasted at Matt 5:20; Matt 23 unfolds the complete diagnostic. |
-| Matt 5:20 | Galatians 2:16 | *A man is not justified by the works of the law, but by the faith of Yahusha HaMashiach (Jesus Christ)* — Paul's diagnosis of the same Pharisaic-counterfeit-righteousness pattern in its post-Pentecost form (the circumcision party's flesh-credential gospel); the Pharisaic-righteousness Yahusha (Jesus) names at 5:20 is the same system Paul will dismantle in Galatians. |
-| Matt 5:21-48 | Mark 7:8-13 | *Laying aside the commandment of Elohim (God), ye hold the tradition of men ... making the word of Elohim (God) of none effect through your tradition* — Yahusha's (Jesus's) explicit diagnosis of the oral-tradition-over-Torah pattern; the same diagnostic Matt 5:21-48 walks through the six antitheses. |
-
-**Thread: `scripture-twisting-and-the-harmonization-discipline`** *(PROPOSED at Matt 4).* Adds members from Matthew 5.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 5:21-48 | Matt 4:5-7 | The same discipline Yahusha (Jesus) walked against the devil's selective Psalm-91 quote; the antitheses apply the same harmonization-with-the-whole-canon method to the oral-tradition's selective and inverted citations of the Torah. |
-| Matt 5:43-44 | Deut 4:2 | *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it* — the Torah's own prohibition on adding to or subtracting from the commandments; the *hate thine enemy* clause is the addition-violation; the oral tradition's truncations of antitheses 1, 2, and 4 are the diminish-violations. |
-
-### Layer 1 — Per-verse cross-references (additional rows)
-
-**Matt 5:3** — *Blessed are the poor in spirit: for theirs is the kingdom of heaven.*
-
-| Target | Member note |
-|---|---|
-| Isaiah 57:15 | *I dwell in the high and holy place, with him also that is of a contrite and humble spirit* — the Tanakh-anchor of the *anawim*-posture. |
-| Isaiah 66:2 | *To this man will I look, even to him that is poor and of a contrite spirit, and trembleth at my word* — the prophetic-marker of the gathered remnant. |
-
-**Matt 5:4** — *Blessed are they that mourn: for they shall be comforted.*
-
-| Target | Member note |
-|---|---|
-| Ezekiel 9:4 | *Set a mark upon the foreheads of the men that sigh and that cry for all the abominations* — the framework reading: mourning is the prophetic-cry against abominations; the mark of Yahuah (the LORD) falls on this posture. |
-| Isaiah 61:2-3 | *To comfort all that mourn; to appoint unto them that mourn in Tsion (Zion), to give unto them beauty for ashes, the oil of joy for mourning* — the Yeshayahu (Isaiah) 61 comfort-promise that fills the Beatitude. |
-
-**Matt 5:6** — *Blessed are they which do hunger and thirst after righteousness: for they shall be filled.*
-
-| Target | Member note |
-|---|---|
-| Psalm 42:1-2 | *As the hart panteth after the water brooks, so panteth my soul after thee, O Elohim (God)* — the Tanakh-hunger-and-thirst posture. |
-| Jeremiah 23:5-6 | *In his days Yahudah (Judah) shall be saved, and Yashar'el (Israel) shall dwell safely: and this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* — the Messianic-source of the *tsedaqah* the hungering ones are filled with. |
-
-**Matt 5:8** — *Blessed are the pure in heart: for they shall see Elohim (God).*
-
-| Target | Member note |
-|---|---|
-| Psalm 24:3-4 | *Who shall ascend into the hill of Yahuah (the LORD)? or who shall stand in his holy place? He that hath clean hands, and a pure heart* — the Tanakh-anchor of the pure-heart ascent. |
-| Jeremiah 31:33 | *I will put my law in their inward parts, and write it in their hearts* — the new-heart promise that produces the *pure in heart*. |
-| Ezekiel 36:26 | *A new heart also will I give you* — the new-heart promise companion. |
-
-**Matt 5:17** — *Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil.*
-
-| Target | Member note |
-|---|---|
-| Isaiah 42:21 | *Yahuah (the LORD) is well pleased for his righteousness' sake; he will magnify the law, and make it honourable* — the Messianic-mission as Torah-magnification, not Torah-abolition; Yahusha (Jesus) walks Yeshayahu (Isaiah) 42:21. |
-| Luke 16:17 | *It is easier for heaven and earth to pass, than one tittle of the law to fail* — the Lukan parallel of Matt 5:18, confirming the framework reading. |
-
-**Matt 5:19** — *Whosoever therefore shall break one of these least commandments, and shall teach men so, shall be called the least in the kingdom of heaven.*
-
-| Target | Member note |
-|---|---|
-| 1 John 2:3-4 | The master filter; the 1234 of Truth. |
-| James 2:10 | *Whosoever shall keep the whole law, and yet offend in one point, he is guilty of all* — Ya'aqov's (James's) affirmation of the unity of the commandments; the breaking of *even the least* is named gravely. |
-
-**Matt 5:48** — *Be ye therefore perfect, even as your Father which is in heaven is perfect.*
-
-| Target | Member note |
-|---|---|
-| Leviticus 11:44 / Leviticus 19:2 | *Be ye holy; for I Yahuah (the LORD) your Elohim (God) am holy* — the Torah-pattern Yahusha (Jesus) restates in *teleios*-form. |
-| 1 Peter 1:15-16 | *But as he which hath called you is holy, so be ye holy in all manner of conversation; Because it is written, Be ye holy; for I am holy* — Kefa's (Peter's) NT carry-forward of the same Torah-pattern. |
