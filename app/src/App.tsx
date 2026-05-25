@@ -2322,7 +2322,7 @@ function buildMenuSections(
     icon: "✏",
     onSelect: () => handlers.onAddNote(state.verseId),
   });
-  // Open notes for this verse stays Tier-locked at Notes ($1.99).
+  // Open notes for this verse stays Tier-locked at the Study Notes tier.
   // Per-verse hub is W8, not W5 (drift on the §20 catalog table
   // attribution was fixed in the same edit that promoted the W5 Live
   // items — fifth drift-caught-while-editing-the-doc instance per

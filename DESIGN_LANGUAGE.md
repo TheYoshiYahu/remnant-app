@@ -130,49 +130,68 @@ User selects style AND color at the moment of marking. Free tier: fill only. $1.
 
 The V1 ladder, ordered by tier. Each tier's `tier_satisfies` covers everything below per the existing schema pattern.
 
+**Tier display names + bundle reconciliation (locked S140).** The four paid tiers ship with the display names **Study Notes** ($1.99 / `study_notes` slug), **Library** ($4.99 / `extras` slug), **Companion** ($9.99 / `complete_study` slug), and **Scribe** ($14.99 / `everything` slug). The CTA convention across the Bible app is *"Unlock in [Name] tier"*; every reader-facing surface uses the tier name, never a price, except the Pricing surface (`app/src/routes/Pricing.tsx`) where prices live. Backend `content_tier` enum slugs are unchanged.
+
+The S140 reconciliation aligns the feature bundles below against `Pricing.tsx` as the canonical truth for what each tier actually delivers. The headline features per tier come from the Pricing surface's blurbs and bullets; ancillary features previously documented here (lexicons, interlinear, mark styles, notes hub, Deeper Dive long-form commentary, Yoshi's preloaded keys, chronological toggle, Nikkudot strip, color-meaning dictionary, verse-highlight recommendations engine) are preserved at their best-fit tier. Where a previously-documented feature's tier assignment shifted in the reconciliation, the move is called out inline. Four headline shifts the reconciliation makes:
+
+1. **Framework commentary on the canon** moves from $4.99 down to $1.99 (the Study Notes tier) per the live Pricing copy.
+2. **The restored extras-library editions** move from free up to $4.99 (the Library tier) per the live Pricing copy.
+3. **Strong's reference lookup stays free** (a Pricing.tsx draft mis-listed it at $1.99; corrected in the same pass).
+4. **Cross-edition search runs across the full restored library at free tier** — the *advanced search across canon and library* feature is NOT a Companion-tier gate. Every reader, regardless of tier, can search across canon + every restored edition the corpus carries. Hits from paid-tier editions surface in the result list with a tier-lock badge + locked-preview + upgrade affordance. Search becomes the upgrade funnel: a free reader who searches *"Watchers"* or *"Sheol"* or *"Lo-Ammi"* sees the canonical hits open AND a list of hits from 1 Enoch / Jubilees / the Apocrypha with the Library badge, and reads the locked-preview-result list as discovery. Curiosity does the selling without the gate ever doing it.
+
+The free tier holds the canon (restored names) + Strong's lookup + cross-edition search (with locked-preview funnel) + the two framework-bearing free chapter-end threads + the funnel-sample commentary on key chapters + the basic reading-and-marking experience.
+
 **Commentary architecture (locked S88, scope refined S89).** Each chapter's commentary surface is layered. The short-form layer is a focused paragraph commentary (the 1 Corinthians 11 STRUCTURAL model on the live site — framework-bearing prose, walks the reader through the chapter's most weight-bearing moments, lands without going book-length) with the chapter-end cross-reference card tables underneath. The long-form layer is the book-style deep commentary (the §1-§N stand-alone-italics-every-scripture-quoted Logos-killer treatment, like the post-S88 john-1.md rewrite) accessed via a *Deeper Dive* button. Same progressive-disclosure pattern as the Statement of Faith: the short-form is what reads by default; the deep-form opens when the reader clicks the button. The two layers are authored separately per chapter but share the same chapter-end card data underneath.
 
 **Important S89 refinement of the 1 Corinthians 11 reference.** The "1 Corinthians 11 model" names the STRUCTURAL pattern (focused paragraph commentary + chapter-end card tables under it). The PROSE execution currently shipped on the live site is not yet at the come-and-see standard locked in the voice skill at S88 — the visible commentary cites *(2 Samuel 15:30, Esther 6:12, Jeremiah 14:4)*, *(Exodus 28, Leviticus 8, Ezekiel 44)*, *(Acts 18:18)* and other passages without quoting them in stand-alone italics. The 1 Corinthians 11 commentary file goes on the audit list alongside the Matthew rebuild and gets its body rewritten to the same standard before it again serves as the prose-execution model. Until then, the post-S88 john-1.md is the prose-execution proof-of-concept; 1 Corinthians 11 is the structural pattern only.
 
 ### Free
-- Restored sacred names (the canon as Yahuah names it)
-- Apocrypha + pseudepigrapha library (Enoch, Jubilees, Jasher, Charles vol 1 + 2, Josephus, Sonnini disputed witness)
-- **Strong's reference lookup** — tap any word to see its Strong's number + brief lexicon entry
+- Restored sacred names (the canon as Yahuah names it) — the 66-book canon stays open to anyone
+- **Strong's reference lookup** — tap any word to see its Strong's number + brief lexicon entry. Free for every reader, every word, every chapter.
 - **Chapter-end cross-reference card — two framework-distinctive threads visible at free tier on every chapter** (architectural anchor: `api/CHAPTER_END_CARD_CONTRACT.md`; rows with `tier_required = 'free'`):
   - **The Kingdom Gospel / Good News of the Gathering** — the framework's central thesis (the gospel is the news of the gathering of the scattered seed) made visible through curated cross-references drawing from the full restored library. Every chapter that touches the gathering surfaces the framework reading through scripture itself.
   - **Grace and the Opportunity That Can Be Lost** — anchored on Hosea 7:13 (*"Woe unto them! for they have fled from me: destruction unto them! because they have transgressed against me: though I have redeemed them, yet they have spoken lies against me"*); every passage that teaches the gift can be lost (Heb 6:4-6, Heb 10:26-29, Matt 7:21-23, 2 Pet 2:20-22, James 5:19-20, Rev 3:5, Rev 22:19, Gal 5:4, 1 Cor 9:27, Rom 11:20-22, John 15:1-6, 1 Cor 10:1-12, 2 Pet 1:5-10) cross-referenced back to its source (Hosea 7:13, Ezekiel 18, Ezekiel 33:12-13, Exodus 32:33, Psalm 69:28, Deuteronomy 28, Jeremiah 18:7-10, Numbers 14, 1 Samuel 15, Ezekiel 20:33-38). Counters institutional Christianity's "once saved, always saved" lie at the data layer.
-- **Commentary on author-curated key chapters only** — Yoshi designates a hand-picked set of *key chapters* (the chapters where the framework's diagnostic hits hardest and a new reader walks away with the inherited lie taken off — candidates include John 1, Romans 11, Hosea 1, Galatians 3, Matthew 5, Matthew 23, Acts 2, Hebrews 8, Revelation 7; final set is Yoshi's editorial call once the commentary sweep is closer to complete). On those key chapters, the full short-form layered commentary displays for free as the funnel sample. On all other chapters, commentary is locked behind $4.99. The free reader hits a key chapter, the commentary lands, the upgrade lands.
+- **Commentary on author-curated key chapters only** — Yoshi designates a hand-picked set of *key chapters* (the chapters where the framework's diagnostic hits hardest and a new reader walks away with the inherited lie taken off — candidates include John 1, Romans 11, Hosea 1, Galatians 3, Matthew 5, Matthew 23, Acts 2, Hebrews 8, Revelation 7; final set is Yoshi's editorial call once the commentary sweep is closer to complete). On those key chapters, the full short-form layered commentary displays for free as the funnel sample. On all other chapters, commentary is locked behind the Study Notes tier. The free reader hits a key chapter, the commentary lands, the upgrade lands.
 - 1 highlight color: neon yellow `#FFE600`, fill style only
 - Single global notepad with verse-anchor support (tap verse → Add note → opens the one notepad with verse reference auto-inserted at cursor)
-- Search across canon + extras
+- **Search across the full library** — canon, Apocrypha, 1 Enoch, Jubilees, Jasher, Pseudepigrapha, Apostolic Fathers, M.R. James apocryphal NT, Ascension of Isaiah, Josephus, every restored edition. Free readers see hits from every edition the corpus carries. Hits from paid-tier editions render with the source-class badge (Tanakh emerald / NT gold / Extras argaman) AND a tier-lock badge (*"Library"* / *"Companion"*) AND a brief preview + locked-treatment + upgrade affordance. The free reader who searches *"Watchers"* sees the canonical hits open, sees a list of hits from 1 Enoch with the Library badge, and learns by reading the result list that the framework reaches further into the library than the canon alone carries. Curiosity does the selling. (Architectural note: cross-edition search universal at free tier — Locked hits surface as discovery + upgrade-pull, not as content-walled-off-from-search.)
 - Reading history (last position, recently read)
 - Basic bookmarks (favorite a verse without coloring it)
 - Share / send verse with subtle "Remnant of Promise Official Study Bible" watermark — every share is a viral acquisition channel
 - Offline downloads (canon-only default, additional content downloadable from settings within tier permissions)
 - Pull-down refresh for content updates
 
-### $1.99
+### Study Notes — $1.99
 Everything in free, plus:
+- **Yoshi's framework commentary on every chapter of the 66 books** — the focused paragraph commentary (the 1 Corinthians 11 STRUCTURAL model: framework-bearing prose, walks the reader through the chapter's most weight-bearing moments, lands without going book-length; with every scripture invoked quoted in full in stand-alone italics on its own line per the voice skill's come-and-see posture — the post-S88 john-1.md rewrite is the prose-execution proof-of-concept until the 1 Corinthians 11 commentary itself is rebuilt to the same standard). The free reader gets commentary only on key chapters as a funnel sample; Study Notes opens commentary on every chapter. (Moved here from $4.99 in the S140 reconciliation per Pricing.tsx.)
+- **Curated cross-reference threads** — every passage grounded in its Tanakh source. The chapter-end card expands beyond the two free-tier threads (Kingdom Gospel + Grace That Can Be Lost) to surface every curated thread plus all per-verse curated cross-references. Both layers of the chapter-end card per `api/CHAPTER_END_CARD_CONTRACT.md`. Cross-reference data is drawn from the full restored library bidirectionally — canon, apocrypha, pseudepigrapha, 1 Enoch, Jubilees, Jasher, Adam-Eve, Apocalypse of Abraham, Ascension of Isaiah, Havoth, Shamayim, Cepher additions, Sonnini's *Acts of Paul,* and every other restored-and-treated-as-canonical text in the library (see §17 for the architecture). (Moved here from $4.99 in the S140 reconciliation per Pricing.tsx.)
 - All 12 tribe-palette colors
 - All 3 mark styles (fill, underline, border outline)
 - Separate notes per book / chapter / verse — distinct, named, scoped notes
 - Note central hub — single screen showing all notes, organized by color category, by book/chapter, with filter and search
 - Free-form color-meaning dictionary — user assigns whatever label they want to each color (e.g., "rose = the Father's love"); label propagates through picker, note central, study views, anywhere the color is referenced
 - Bookmark-by-color topical study view — all passages marked in a given color gathered into a thematic study collection
-- Tease of $4.99 features (small affordance showing what's available at the next tier)
+- **Verse-highlight recommendations engine** — when user highlights a verse, the app surfaces related passages from Yoshi's curated thematic cross-reference threads (the same curated data as the chapter-end card, surfaced through the marks UI). **100% curated theological data, AI-free at every stage including preprocessing** — no LLM inference at runtime, no AI-generated similarity. The engine grows as Yoshi authors more threads.
+- Tease of Library tier features (small affordance showing what's available at the next tier)
 
-### $4.99
-Everything in $1.99, plus:
+### Library — $4.99
+Everything in Study Notes, plus:
+- **The full restored library beyond the canon** (moved here from free in the S140 reconciliation per Pricing.tsx):
+  - Apocrypha (KJV-1611, restored)
+  - 1 Enoch, Jubilees, Jasher — already-published Restored Names editions
+  - Charles vol 1 apocrypha
+  - Apostolic Fathers (Lightfoot)
+  - M.R. James apocryphal NT
+  - Ascension of Isaiah
+  - Josephus's *Wars of the Jews* and *Antiquities of the Jews*
 - Notes export to PDF (full notes content, formatted, downloadable)
-- **Short-form layered commentary on every chapter** — the focused paragraph commentary (the 1 Corinthians 11 STRUCTURAL model: framework-bearing prose, walks the reader through the chapter's most weight-bearing moments, lands without going book-length; with every scripture invoked quoted in full in stand-alone italics on its own line per the voice skill's come-and-see posture — the post-S88 john-1.md rewrite is the prose-execution proof-of-concept until the 1 Corinthians 11 commentary itself is rebuilt to the same standard) PLUS the chapter-end cross-reference card tables underneath. Every chapter has this; the locked-only-for-key-chapters gate at the free tier is removed.
-- **Full cross-reference apparatus unlocked** — the chapter-end cross-reference card expands beyond the free-tier Kingdom-Gospel + Grace-That-Can-Be-Lost threads to surface every curated thread plus all per-verse curated cross-references. Both layers of the chapter-end card per `api/CHAPTER_END_CARD_CONTRACT.md`. Cross-reference data is drawn from the full restored library bidirectionally — canon, apocrypha, pseudepigrapha, 1 Enoch, Jubilees, Jasher, Adam-Eve, Apocalypse of Abraham, Ascension of Isaiah, Havoth, Shamayim, Cepher additions, Sonnini's *Acts of Paul,* and every other restored-and-treated-as-canonical text in the library (see §17 for the architecture).
-- **Live-UI fixes for chapter-end card rendering (locked S88, refined S89):**
+- **Live-UI fixes for chapter-end card rendering (locked S88, refined S89, extended S140 with Option C tier-locked thread rendering):**
   - **Snippet truncation retires.** Verse snippets render in full — no mid-sentence `…` truncation. There's no paper to save on a screen.
   - **"MEMBERS IN THIS CHAPTER" sub-header retires entirely (locked S89).** Originally captured at S88 as "retires-as-DB-jargon, replaced with reader-facing language or just the verse rows without a header." Yoshi's S89 question — *why is that even a label?* — landed the cleaner answer: the sub-header was the API field name `members_in_chapter` leaking into UI copy. The reader is already on the chapter-end card; the thread card is nested inside it; the rows shown are obviously the ones in this chapter. The sub-header adds no information the reader doesn't already have. Drop it. The thread card becomes: thread title → anchor → summary → list of verse-pair rows directly. Each row is self-describing under the established thread context.
   - **"TANAKH SOURCES FOR [CHAPTER]" panel header — naming OPEN.** Current live label frames the cross-reference panel as Tanakh-only when §17 locks the pool as the full restored library bidirectionally. Replacement naming is deferred until Romans is in active scope (Yoshi's S89 instruction). Engineering work uses a placeholder until then.
   - **Paragraph-style lead-in option.** Cards may carry a short paragraph-style lead-in that orients the reader before listing the verse-by-verse connections — the post-rebuild short-form commentary paragraph is the prose-flow model. Where a thread carries a summary, surface it as a lead-in. Where no summary exists, fall back to the verse list directly.
-- **Verse-highlight recommendations engine** — when user highlights a verse, the app surfaces related passages from Yoshi's curated thematic cross-reference threads (the same curated data as the chapter-end card, surfaced through the marks UI). **100% curated theological data, AI-free at every stage including preprocessing** — no LLM inference at runtime, no AI-generated similarity. The engine grows as Yoshi authors more threads.
-- Full public domain reference library:
+  - **Option C tier-locked thread rendering (S140).** Tier-locked thread callouts render with title + anchor + ~70-word teaser of the summary + linear-gradient fade-to-surface + locked-count line + a single *"Unlock in [Name] tier"* CTA. Members hidden. Replaces the prior greyed-out-but-readable policy. See `api/CHAPTER_END_CARD_CONTRACT.md` for the full render contract.
+- **Full public domain reference library** (paid tier per S140 reconciliation — preserved at Library since these are companion-text resources to the restored library):
   - Brown-Driver-Briggs (BDB) Hebrew lexicon
   - Thayer's Greek lexicon
   - Vine's Expository Dictionary
@@ -184,14 +203,16 @@ Everything in $1.99, plus:
 - **Hebrew/Greek interlinear** — word-by-word original-language alignment with English, with lexicon entries inline. Public domain data (Westcott-Hort Greek + BDB Hebrew alignments).
 - **Nikkudot-strip feature** — when looking up a Hebrew word, see the alternate-reading sibling list (other Hebrew words sharing the same consonantal form but different vowel points). Surfaces the interpretive layer the Masoretes added; aligns with the framework's posture of letting the text say what it says.
 
-### $9.99
-Everything in $4.99, plus:
-- **Deeper Dive button on every chapter** — unlocks the long-form book-style commentary on every chapter (the §1-§N stand-alone-italics-every-scripture-quoted Logos-killer treatment, the kind of work the post-S88 john-1.md rewrite represents). Click the button on any chapter's commentary panel and the full book-style exposition opens. Where the $4.99 reader gets the framework on every chapter, the $9.99 reader gets the *book-on-every-chapter.* The depth that displaces Logos sits behind this button.
+### Companion — $9.99
+Everything in Study Notes and Library, combined. Plus:
+- **Framework commentary extended to the restored library** — Yoshi's chapter commentary doesn't stop at the canon. Every chapter of 1 Enoch, Jubilees, Jasher, the Apocrypha, the Pseudepigrapha, the Ascension of Isaiah, the Apocrypha of Abraham, and the other restored editions gets the same framework-bearing prose treatment. Where the Study Notes reader gets framework commentary on the 66 books, the Companion reader gets framework commentary on the whole restored library.
+- **Deeper-dive Statement of Faith sections surfaced inline** — the long-form Statement of Faith depth (the doctrine treatments behind the front-page §VII-style summaries) opens inline at relevant verses.
+- **Deeper Dive button on every chapter** — unlocks the long-form book-style commentary on every chapter (the §1-§N stand-alone-italics-every-scripture-quoted Logos-killer treatment, the kind of work the post-S88 john-1.md rewrite represents). Click the button on any chapter's commentary panel and the full book-style exposition opens. Where the Study Notes reader gets the framework on every chapter, the Companion reader gets the *book-on-every-chapter.* The depth that displaces Logos sits behind this button.
 - **Yoshi's pre-loaded keys** — the canon comes pre-marked with Yoshi's highlights, underlines, and outlines, each tied to an end-of-chapter note and a deeper teaching expansion. Read the Bible alongside the teacher who walked it.
 - **Chronological order toggle** — read the canon in the historical sequence of events rather than book order. Job in Genesis-era; Psalms interleaved with David's life; Paul's epistles aligned with Acts; prophets positioned alongside the kings they prophesied to. **Mapping reflects Yoshi's framework dating, not generic scholarly chronology** — a value-add other apps cannot replicate.
 
-### $14.99 (V2 build)
-Spec deferred. Likely direct-access elements (members-only forum, monthly group call, Q&A surface), early-access (preview new books/threads before public release), family-plan / multi-seat, or founder/patron tier with named acknowledgment.
+### Scribe — $14.99
+Everything in Companion, plus the live sermons feed, courses platform (when launched), full Teaching Corpus access, early access to new books and chapters, video integration with the assembly's YouTube channel, and partner-only Sabbath teachings. Naming anchor: *"Every scribe which is instructed unto the kingdom of heaven is like unto a man that is an householder, which bringeth forth out of his treasure things new and old"* (Matthew 13:52) — the kingdom-scribe pulls from the treasury of new-and-old, which is exactly what this tier opens.
 
 ---
 

@@ -380,10 +380,11 @@ export default function HighlightPicker({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header row — title + (paid only) "Add color labels" gear. The
-            free-tier "$1.99 — Labels" tag is intentionally hidden at S117:
-            the bottom-of-picker upgrade prompt already explains what
-            $1.99 unlocks; inline-pricing a single button gave the wrong
-            impression that every action was individually-priced. */}
+            free-tier "Study Notes — Labels" tag is intentionally hidden at
+            S117: the bottom-of-picker upgrade prompt already explains
+            what the Study Notes tier unlocks; inline-pricing a single
+            button gave the wrong impression that every action was
+            individually-priced (S140 tier-name overhaul + price removal). */}
         <div className="mb-3 flex items-baseline justify-between">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
             {multiTarget ? `Mark ${targetCount} verses` : "Mark verse"}
@@ -470,7 +471,7 @@ export default function HighlightPicker({
                     } ${locked ? "opacity-50" : ""}`}
                     title={
                       locked
-                        ? `${style} — unlock with Notes ($1.99/mo)`
+                        ? `${style} — unlock in Study Notes tier`
                         : style
                     }
                   >
@@ -504,14 +505,14 @@ export default function HighlightPicker({
                     style={{ backgroundColor: HIGHLIGHT_HEX[color] }}
                     title={
                       locked
-                        ? `${color} — unlock with Notes ($1.99/mo)`
+                        ? `${color} — unlock in Study Notes tier`
                         : labelText
                           ? `${color} — ${labelText}`
                           : color
                     }
                     aria-label={
                       locked
-                        ? `${color} — unlock with Notes`
+                        ? `${color} — unlock in Study Notes tier`
                         : labelText || color
                     }
                   />
@@ -567,9 +568,9 @@ export default function HighlightPicker({
 
         {!paid && (
           <p className="mt-3 text-center text-xs text-[var(--reader-muted)]">
-            Unlock 12 more colors + underline + outline styles with{" "}
+            Unlock 12 more colors + underline + outline styles in the{" "}
             <a href="/pricing" className="underline">
-              Notes ($1.99/mo)
+              Study Notes tier
             </a>
             .
           </p>

@@ -41,12 +41,13 @@ type ViewState =
   | { kind: "active"; sub: SubscriptionMe }
   | { kind: "load_error"; message: string };
 
+// Display names per S140 tier-name overhaul. Backend slugs unchanged.
 const TIER_LABELS: Record<string, string> = {
   free: "Free",
   study_notes: "Study Notes",
-  extras: "Extras",
-  complete_study: "Complete Study",
-  everything: "Everything",
+  extras: "Library",
+  complete_study: "Companion",
+  everything: "Scribe",
 };
 
 const STATUS_LABELS: Record<string, string> = {

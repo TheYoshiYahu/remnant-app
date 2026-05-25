@@ -21,9 +21,16 @@
  * and the in-chapter members listed as source-verse / target-verse
  * pairs with per-member notes.
  *
- * Tier-locked rendering: any row whose tier_required exceeds the
- * caller's tier renders greyed-out with an "Unlock with [tier]"
- * tooltip. Dormant at v1 (every curated row is free-tier).
+ * Tier-locked rendering (S140 — Option C):
+ *   - Baseline rows: target verse renders at 40% opacity with an
+ *     "Unlock in [Name] tier" tooltip; click routes to /pricing.
+ *   - Thread callouts: title + anchor + ~70-word teaser of summary_md
+ *     with a fade-to-surface gradient over the bottom of the teaser,
+ *     a locked-count line ("Full summary + N verse pairings in this
+ *     chapter"), and a single "Unlock in [Name] tier" CTA. Members
+ *     hidden. The free reader is pulled into the start of a framework-
+ *     bearing reading and stopped at the gate. Replaces the prior
+ *     greyed-out-but-readable policy locked at S73 in the contract.
  *
  * Markdown: summary_md is rendered through `renderSummaryMd` —
  * paragraph splitting on `\n\n`, single-line breaks on `\n`, and
@@ -287,7 +294,7 @@ function BaselineList({
                       }}
                       title={
                         locked
-                          ? `Unlock with ${prettyTier(tgt.tier_required)}`
+                          ? `Unlock in ${prettyTier(tgt.tier_required)} tier`
                           : `Go to ${prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)}`
                       }
                       className={
@@ -329,14 +336,25 @@ function ThreadCallout({
   const rest = paragraphs.slice(1);
   const locked = !tierSatisfies(userTier, thread.tier_required);
 
+  // S140 — Option C rendering for tier-locked threads. The free reader
+  // sees the thread title + anchor + a teaser (first ~70 words of the
+  // summary) that fades into a paywall, a single "Unlock in [Name] tier"
+  // CTA, and a count line summarizing what they're missing. No member
+  // rows, no full summary, no per-row lock icons. The narrative motion
+  // pulls the reader into a framework-bearing reading and stops them at
+  // the gate. Replaces the prior render policy (greyed-out-but-readable)
+  // locked in CHAPTER_END_CARD_CONTRACT.md line 198.
+  if (locked) {
+    return (
+      <LockedThreadCallout
+        thread={thread}
+        teaser={teaserFromSummary(firstParagraph)}
+      />
+    );
+  }
+
   return (
-    <article
-      className={
-        "rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4 " +
-        (locked ? "opacity-50" : "")
-      }
-      title={locked ? `Unlock with ${prettyTier(thread.tier_required)}` : undefined}
-    >
+    <article className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
       <header className="mb-2">
         <h4 className="text-lg font-semibold text-[var(--reader-text)]">
           {thread.title}
@@ -395,6 +413,116 @@ function ThreadCallout({
       )}
     </article>
   );
+}
+
+// ---- S140: Option C locked-thread render ---------------------------------
+//
+// Title + anchor + ~70-word teaser of the summary + linear-gradient fade
+// to surface + locked-count line + single tier-name CTA. Members hidden
+// entirely. The locked thread reads as a deliberate tease — the free
+// reader is pulled into the start of a framework-bearing reading, hits
+// the fade exactly where the substance gets interesting, and the gate
+// names the tier they cross to continue.
+
+function LockedThreadCallout({
+  thread,
+  teaser,
+}: {
+  thread: ChapterEndCardResponse["threads"][number];
+  teaser: string;
+}) {
+  const tierName = prettyTier(thread.tier_required);
+  const memberCount = thread.members_in_chapter.length;
+  const goToPricing = () => {
+    if (typeof window !== "undefined") {
+      window.location.href = "/pricing";
+    }
+  };
+  return (
+    <article className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
+      <header className="mb-2">
+        <h4 className="text-lg font-semibold text-[var(--reader-text)]">
+          {thread.title}
+        </h4>
+        {thread.anchor && (
+          <p className="mt-0.5 font-sans text-xs text-[var(--reader-accent)]">
+            Anchor:{" "}
+            {prettyRef(
+              thread.anchor.book_slug,
+              thread.anchor.chapter_number,
+              thread.anchor.verse_start
+            )}
+            {thread.anchor.verse_end !== thread.anchor.verse_start &&
+              `–${thread.anchor.verse_end}`}
+          </p>
+        )}
+      </header>
+
+      <div className="relative">
+        <div className="prose-paragraphs leading-relaxed text-[var(--reader-text)]">
+          {renderMarkdownParagraph(teaser)}
+        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 -bottom-1 h-14"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent, var(--reader-surface))",
+          }}
+        />
+      </div>
+
+      <div className="mt-3 flex items-center gap-2 font-sans text-xs text-[var(--reader-muted)]">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          className="h-3.5 w-3.5"
+          fill="currentColor"
+        >
+          <path d="M10 2a4 4 0 00-4 4v2H5a1 1 0 00-1 1v8a1 1 0 001 1h10a1 1 0 001-1V9a1 1 0 00-1-1h-1V6a4 4 0 00-4-4zm-2 6V6a2 2 0 114 0v2H8z" />
+        </svg>
+        <span>
+          Full summary + {memberCount}{" "}
+          {memberCount === 1 ? "verse pairing" : "verse pairings"} in this
+          chapter
+        </span>
+      </div>
+
+      <button
+        type="button"
+        onClick={goToPricing}
+        className="mt-3 w-full rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 font-sans text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+      >
+        Unlock in {tierName} tier
+      </button>
+    </article>
+  );
+}
+
+/**
+ * Teaser truncation for locked-thread render. Pulls ~70 words from the
+ * first paragraph of summary_md, ends on a word boundary, appends a
+ * trailing ellipsis. The fade-to-surface gradient sits over the bottom
+ * of the rendered teaser, so the visible cut-line is soft regardless of
+ * where the word boundary lands. Preserves the `*italic*` markup so
+ * scripture quotations in the teaser still render italicized.
+ */
+function teaserFromSummary(firstParagraph: string): string {
+  const TEASER_WORD_TARGET = 70;
+  const words = firstParagraph.split(/\s+/);
+  if (words.length <= TEASER_WORD_TARGET) return firstParagraph;
+  const head = words.slice(0, TEASER_WORD_TARGET).join(" ");
+  // Don't cut inside a `*...*` italic span — extend to the next closing
+  // asterisk if we're sitting inside one.
+  const openCount = (head.match(/\*/g) || []).length;
+  if (openCount % 2 === 1) {
+    const remaining = words.slice(TEASER_WORD_TARGET).join(" ");
+    const closeIdx = remaining.indexOf("*");
+    if (closeIdx !== -1) {
+      return head + " " + remaining.slice(0, closeIdx + 1) + "…";
+    }
+  }
+  return head + "…";
 }
 
 function ThreadMemberRow({
@@ -507,17 +635,20 @@ function prettyBookSlug(slug: string): string {
 }
 
 function prettyTier(tier: ContentTier): string {
+  // Display names per S140 tier-name overhaul. Backend slugs unchanged;
+  // every reader-facing surface uses these strings + the
+  // "Unlock in [Name] tier" CTA pattern.
   switch (tier) {
     case "free":
       return "Free";
     case "study_notes":
-      return "Notes";
+      return "Study Notes";
     case "extras":
-      return "Extras";
+      return "Library";
     case "complete_study":
-      return "Complete Study";
+      return "Companion";
     case "everything":
-      return "Everything";
+      return "Scribe";
   }
 }
 

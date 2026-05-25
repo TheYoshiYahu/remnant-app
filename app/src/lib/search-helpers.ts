@@ -17,12 +17,22 @@
  *                           <mark>-style emphasis on matched substrings.
  *   isResultLocked       — hit + partner tier → locked? (drives the
  *                          gate-(c) snippet swap).
- *   tierBadgeLabel       — content_tier value → 'Notes' | 'Library' | null
- *                          (Notes for $1.99, Library for $4.99; higher
- *                          tiers stay invisible per the S118 product-
- *                          surface decision).
+ *   tierBadgeLabel       — content_tier value → 'Study Notes' | 'Library' | null
+ *                          (Study Notes for study_notes content, Library
+ *                          for extras content; higher tiers stay invisible
+ *                          per the S118 product-surface decision). S140
+ *                          confirmed display labels: Study Notes / Library
+ *                          / Companion / Scribe.
  *   formatHitCount       — group size → '1 hit' | 'N hits'.
  *   formatTotalSummary   — groups → 'N hits across M books' footer text.
+ *   teaserOfVerse        — verse text + query → ~25-word teaser centered
+ *                          on the match so the free reader actually sees
+ *                          what matched in a tier-locked result.
+ *                          Powers the S140 free-tier cross-edition search
+ *                          funnel — a free reader who searches "Watchers"
+ *                          sees canon hits open AND a teaser of every
+ *                          1 Enoch / Jubilees hit with the matched word
+ *                          visible and the Library-tier chip inline.
  */
 
 import type { PartnerTier, VerseSearchHit } from "./api";
@@ -176,16 +186,17 @@ export function isResultLocked(
 
 /**
  * Map a content_tier value to the partner-facing tier badge label. Per
- * §23 the tier name register matches §20 — Notes for $1.99 content,
- * Library for $4.99 content. Higher tiers ($9.99 / $14.99) stay
- * invisible per the S118 product-surface decision until those tiers
+ * §23 the tier name register matches §20 — Study Notes for study_notes
+ * content, Library for extras content. Higher tiers (Companion / Scribe)
+ * stay invisible per the S118 product-surface decision until those tiers
  * are scoped. 'free' returns null (no badge shown — those rows aren't
- * locked).
+ * locked). S140 confirmed display labels: Study Notes / Library /
+ * Companion / Scribe.
  */
 export function tierBadgeLabel(
   tierRequired: string,
-): "Notes" | "Library" | null {
-  if (tierRequired === "study_notes") return "Notes";
+): "Study Notes" | "Library" | null {
+  if (tierRequired === "study_notes") return "Study Notes";
   if (tierRequired === "extras") return "Library";
   return null;
 }
@@ -203,4 +214,59 @@ export function formatTotalSummary(groups: BookGroup[]): string {
   const hitWord = hitCount === 1 ? "hit" : "hits";
   const bookWord = bookCount === 1 ? "book" : "books";
   return `${hitCount} ${hitWord} across ${bookCount} ${bookWord}`;
+}
+
+// ----- teaserOfVerse ------------------------------------------------------
+//
+// Given a verse text and the search query, return a ~25-word teaser
+// centered on the first occurrence of the query (case-insensitive). If
+// the match falls within the first 25 words, the teaser is the first
+// 25 words with a trailing "…". If the match is deeper into the verse,
+// the teaser pulls ~10 words before + the match + ~14 words after, with
+// a leading "…" to signal the cut. If no match is found (defensive
+// fallback — shouldn't happen since this only runs on hits), the teaser
+// is the first 25 words with a trailing "…". Used for tier-locked
+// search-result rendering so the free reader sees what their search
+// matched in a paid-tier edition.
+
+const TEASER_WORD_TARGET = 25;
+const TEASER_WORDS_BEFORE = 10;
+
+export function teaserOfVerse(verseText: string, query: string): string {
+  const words = verseText.split(/\s+/);
+  if (words.length <= TEASER_WORD_TARGET) return verseText;
+
+  const trimmedQuery = (query || "").trim();
+  if (!trimmedQuery) {
+    return words.slice(0, TEASER_WORD_TARGET).join(" ") + "…";
+  }
+
+  const lowerText = verseText.toLowerCase();
+  const lowerQuery = trimmedQuery.toLowerCase();
+  const matchCharIdx = lowerText.indexOf(lowerQuery);
+  if (matchCharIdx === -1) {
+    return words.slice(0, TEASER_WORD_TARGET).join(" ") + "…";
+  }
+
+  // Find which word index the match falls inside.
+  let charCursor = 0;
+  let matchWordIdx = 0;
+  for (let i = 0; i < words.length; i++) {
+    const wordEnd = charCursor + words[i].length;
+    if (matchCharIdx <= wordEnd) {
+      matchWordIdx = i;
+      break;
+    }
+    charCursor = wordEnd + 1; // +1 for the whitespace
+  }
+
+  if (matchWordIdx < TEASER_WORD_TARGET) {
+    return words.slice(0, TEASER_WORD_TARGET).join(" ") + "…";
+  }
+
+  const start = Math.max(0, matchWordIdx - TEASER_WORDS_BEFORE);
+  const end = Math.min(words.length, start + TEASER_WORD_TARGET);
+  const leading = start > 0 ? "…" : "";
+  const trailing = end < words.length ? "…" : "";
+  return leading + words.slice(start, end).join(" ") + trailing;
 }

@@ -41,6 +41,7 @@ import {
   groupResultsByBook,
   highlightQueryMatches,
   isResultLocked,
+  teaserOfVerse,
   tierBadgeLabel,
 } from "../lib/search-helpers";
 
@@ -328,11 +329,24 @@ export default function SearchModal({
                             ? tierBadgeLabel(hit.tier_required)
                             : null;
                           const ariaLabel = locked
-                            ? `${group.bookTitle} ${hit.chapter_number}:${hit.verse_number} — upgrade to ${badge ?? "paid"} tier to read`
+                            ? `${group.bookTitle} ${hit.chapter_number}:${hit.verse_number} — unlock in ${badge ?? "paid"} tier to read in full`
                             : `${group.bookTitle} ${hit.chapter_number}:${hit.verse_number}`;
-                          const segments = locked
-                            ? null
-                            : highlightQueryMatches(hit.text, trimmedQuery);
+                          // S140 — locked hits now render a teaser of the
+                          // verse text with the matched word highlighted,
+                          // followed by a tier-lock chip. The free reader
+                          // who searches "Watchers" sees canon hits open
+                          // AND a teaser-with-Library-chip on every 1 Enoch
+                          // / Jubilees / Apocrypha hit, learning by reading
+                          // the result list that the framework reaches
+                          // further than the canon. Curiosity does the
+                          // selling. See DESIGN_LANGUAGE.md §9 reconciliation
+                          // note #4.
+                          const segments = highlightQueryMatches(
+                            locked
+                              ? teaserOfVerse(hit.text, trimmedQuery)
+                              : hit.text,
+                            trimmedQuery,
+                          );
                           return (
                             <li key={hit.verse_id}>
                               <button
@@ -348,36 +362,37 @@ export default function SearchModal({
                                   {group.bookTitle} {hit.chapter_number}:
                                   {hit.verse_number}
                                 </span>
-                                {locked ? (
-                                  <span className="inline-flex items-center gap-1 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)]/60 px-3 py-1 text-base italic text-[var(--reader-muted)]">
-                                    Read this book — {badge ?? "paid"} tier
-                                    <span
-                                      aria-hidden="true"
-                                      style={{ color: "var(--reader-accent)" }}
-                                    >
-                                      ›
+                                <span className="italic text-[var(--reader-muted)]">
+                                  {segments?.map((seg, sIdx) =>
+                                    seg.type === "match" ? (
+                                      <mark
+                                        key={sIdx}
+                                        style={{
+                                          backgroundColor:
+                                            "color-mix(in srgb, var(--reader-accent) 25%, transparent)",
+                                          color: "inherit",
+                                        }}
+                                      >
+                                        {seg.text}
+                                      </mark>
+                                    ) : (
+                                      <span key={sIdx}>{seg.text}</span>
+                                    ),
+                                  )}
+                                  {locked && (
+                                    <span className="ml-2 inline-flex items-center gap-1 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)]/60 px-2 py-0.5 text-xs not-italic text-[var(--reader-muted)] align-baseline">
+                                      <svg
+                                        aria-hidden="true"
+                                        viewBox="0 0 20 20"
+                                        className="h-3 w-3"
+                                        fill="currentColor"
+                                      >
+                                        <path d="M10 2a4 4 0 00-4 4v2H5a1 1 0 00-1 1v8a1 1 0 001 1h10a1 1 0 001-1V9a1 1 0 00-1-1h-1V6a4 4 0 00-4-4zm-2 6V6a2 2 0 114 0v2H8z" />
+                                      </svg>
+                                      Unlock in {badge ?? "paid"} tier
                                     </span>
-                                  </span>
-                                ) : (
-                                  <span className="italic text-[var(--reader-muted)]">
-                                    {segments?.map((seg, sIdx) =>
-                                      seg.type === "match" ? (
-                                        <mark
-                                          key={sIdx}
-                                          style={{
-                                            backgroundColor:
-                                              "color-mix(in srgb, var(--reader-accent) 25%, transparent)",
-                                            color: "inherit",
-                                          }}
-                                        >
-                                          {seg.text}
-                                        </mark>
-                                      ) : (
-                                        <span key={sIdx}>{seg.text}</span>
-                                      ),
-                                    )}
-                                  </span>
-                                )}
+                                  )}
+                                </span>
                               </button>
                             </li>
                           );

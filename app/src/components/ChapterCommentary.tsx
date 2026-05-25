@@ -16,7 +16,8 @@
  * a collapsible "Read deeper" expander. Locked rows render with an
  * eye-catching upgrade affordance in place of the body — header is
  * still visible (so the partner sees what's there) but body is null
- * over the wire and an "Unlock with [Tier]" CTA shows instead.
+ * over the wire and an "Unlock in [Tier] tier" CTA shows instead (S140
+ * tier-name overhaul — Study Notes / Library / Companion / Scribe).
  *
  * Hide-commentary toggle: a global "Hide commentary" toggle persists
  * per-user via localStorage so a partner who wants to read straight
@@ -154,7 +155,7 @@ function CommentaryBlock({
 
   // Locked state — eye-catching upgrade affordance (Yoshi's pattern A,
   // Session 112). Header visible with the tier badge, body is a styled
-  // CTA card with a clear "Unlock with [Tier]" call to action.
+  // CTA card with a clear "Unlock in [Tier] tier" call to action (S140).
   if (entry.locked) {
     return (
       <article className="rounded-lg border border-dashed border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
@@ -172,8 +173,7 @@ function CommentaryBlock({
             href="/pricing"
             className="inline-block rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
           >
-            Unlock with {prettyTier(entry.tier_required)} (
-            {priceForTier(entry.tier_required)})
+            Unlock in {prettyTier(entry.tier_required)} tier
           </a>
         </div>
       </article>
@@ -439,31 +439,23 @@ function ctaCopyForSurface(
 }
 
 function prettyTier(tier: ContentTier): string {
+  // Display names per S140 tier-name overhaul. Backend slugs unchanged;
+  // every reader-facing surface uses these strings + the
+  // "Unlock in [Name] tier" CTA pattern (no prices outside Pricing.tsx).
   switch (tier) {
     case "free":
       return "Free";
     case "study_notes":
-      return "Notes";
+      return "Study Notes";
     case "extras":
       return "Library";
     case "complete_study":
-      return "Complete Study";
+      return "Companion";
     case "everything":
-      return "Everything";
+      return "Scribe";
   }
 }
 
-function priceForTier(tier: ContentTier): string {
-  switch (tier) {
-    case "free":
-      return "free";
-    case "study_notes":
-      return "$1.99/mo";
-    case "extras":
-      return "$4.99/mo";
-    case "complete_study":
-      return "$9.99/mo";
-    case "everything":
-      return "$14.99/mo";
-  }
-}
+// priceForTier removed at S140 — every reader-facing CTA now uses
+// "Unlock in [Name] tier" without the price. The Pricing page is the
+// one surface that lists prices.

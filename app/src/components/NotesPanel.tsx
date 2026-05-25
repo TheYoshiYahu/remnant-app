@@ -24,7 +24,7 @@
  * (max-w-2xl on desktop) since prose reading happens here.
  *
  * V1 is append-only — saved entries are read-only in the panel.
- * Edit/delete per-entry is the W8 ($1.99 Notes tier) per-verse hub
+ * Edit/delete per-entry is the W8 (Study Notes tier) per-verse hub
  * affordance. Free partners revisit an old entry by re-anchoring
  * the same verse (a new entry block commits with the same header).
  */

@@ -64,7 +64,7 @@ export interface MenuItem {
   disabled?: boolean;
   /**
    * S122 — when set, item is tier-locked. Renders dimmed + tier-name chip
-   * badge ("Notes" or "Library"); tap invokes onSelect (parent has wired
+   * badge ("Study Notes" or "Library"); tap invokes onSelect (parent has wired
    * this to route to /pricing). The parent already filtered: a partner
    * at-or-above the required tier sees this item as comingSoon instead.
    */
@@ -110,9 +110,12 @@ interface VerseActionMenuProps {
   onClose: () => void;
 }
 
-/** Tier-name chip badge for tier-locked stubs. */
+/** Tier-name chip badge for tier-locked stubs. Display names per S140
+ *  tier-name overhaul (Study Notes / Library). The local `tier` prop
+ *  key stays short ("notes" / "library") since it's a local categorical;
+ *  the rendered label uses the official tier display name. */
 function TierBadge({ tier }: { tier: "notes" | "library" }) {
-  const label = tier === "notes" ? "Notes" : "Library";
+  const label = tier === "notes" ? "Study Notes" : "Library";
   return (
     <span
       className="rounded border border-[var(--reader-rule)] bg-[var(--reader-bg)] px-1.5 py-0.5 font-sans text-[11px] font-medium text-[var(--reader-muted)]"

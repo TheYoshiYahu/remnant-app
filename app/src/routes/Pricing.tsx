@@ -9,11 +9,16 @@ import {
 } from "../lib/api";
 
 /**
- * Session 38 — Pricing surface.
+ * Session 38 — Pricing surface. Tier-name overhaul S140 — display names
+ * renamed Study Notes / Library / Companion / Scribe (backend slugs
+ * `study_notes` / `extras` / `complete_study` / `everything` unchanged).
+ * Prices appear
+ * only on this Pricing page; every other reader-facing surface uses the
+ * tier name and the "Unlock in [Name] tier" CTA convention.
  *
- * Renders the four paid tiers (Study Notes / Extras / Complete Study /
- * Everything) with a monthly+annual toggle, the founder CTA prominently
- * on the everything-annual card, and a brief permanent-price-lock note
+ * Renders the four paid tiers (Study Notes / Library / Companion / Scribe)
+ * with a monthly+annual toggle, the founder CTA prominently on the
+ * scribe-annual card, and a brief permanent-price-lock note
  * (Section III's "The price you pay today is the price you pay forever"
  * commitment, framed as a kingdom-value statement, not an auditability
  * claim — see the Locked Decisions note in BIBLE_APP_ROADMAP.md).
@@ -45,21 +50,20 @@ const TIERS: TierCard[] = [
     monthlyPriceLabel: "$1.99 / month",
     annualPriceLabel: "$19.90 / year",
     annualNoteLabel: "two months free",
-    blurb: "Framework commentary on every chapter of the canon, Strong's tap-on-word lookup, and curated cross-reference threads that anchor every passage in its Tanakh source.",
+    blurb: "Framework commentary on every chapter of the canon and curated cross-reference threads that anchor every passage in its Tanakh source.",
     bullets: [
       "Yoshi's framework commentary on every chapter of the 66 books",
-      "Strong's lookup on every word — tap to open the lemma",
       "Curated cross-reference threads — every passage grounded in its Tanakh source",
       "Everything in the free reader",
     ],
   },
   {
     tier: "extras",
-    name: "Extras",
+    name: "Library",
     monthlyPriceLabel: "$4.99 / month",
     annualPriceLabel: "$49.90 / year",
     annualNoteLabel: "two months free",
-    blurb: "The full extras library — Apocrypha, Enoch, Jubilees, Jasher, Charles vol 1, Apostolic Fathers, Apocryphal NT, Ascension of Isaiah, and Josephus's Wars and Antiquities — all Restored Names.",
+    blurb: "The full restored library beyond the canon — Apocrypha, Enoch, Jubilees, Jasher, Charles vol 1, Apostolic Fathers, Apocryphal NT, Ascension of Isaiah, and Josephus's Wars and Antiquities — all Restored Names.",
     bullets: [
       "Apocrypha (KJV-1611, restored)",
       "Enoch, Jubilees, Jasher (already-published Restored Names editions)",
@@ -70,28 +74,28 @@ const TIERS: TierCard[] = [
   },
   {
     tier: "complete_study",
-    name: "Complete Study",
+    name: "Companion",
     monthlyPriceLabel: "$9.99 / month",
     annualPriceLabel: "$99.90 / year",
     annualNoteLabel: "two months free",
-    blurb: "Study Notes plus Extras, combined, with framework commentary extended to the extras and advanced search across canon and extras together.",
+    blurb: "Study Notes plus Library, combined, with framework commentary extended into the restored library and advanced search across canon and library together.",
     bullets: [
       "Everything in Study Notes",
-      "Everything in Extras",
-      "Framework commentary on the extras (not just the canon)",
-      "Advanced search across canon and extras together",
+      "Everything in Library",
+      "Framework commentary on the restored library (not just the canon)",
+      "Advanced search across canon and library together",
       "Deeper-dive Statement of Faith sections surfaced inline",
     ],
   },
   {
     tier: "everything",
-    name: "Everything",
+    name: "Scribe",
     monthlyPriceLabel: "$14.99 / month",
     annualPriceLabel: "$149 / year",
     annualNoteLabel: "two months free",
-    blurb: "Complete Study plus the live sermons feed, the courses platform when it launches, full Teaching Corpus, early access to new books and chapters as Yoshi publishes them, video integration with the assembly's YouTube channel, and partner-only Sabbath teachings.",
+    blurb: "Companion plus the live sermons feed, the courses platform when it launches, full Teaching Corpus, early access to new books and chapters as Yoshi publishes them, video integration with the assembly's YouTube channel, and partner-only Sabbath teachings. \"Every scribe which is instructed unto the kingdom of heaven is like unto a man that is an householder, which bringeth forth out of his treasure things new and old\" (Matthew 13:52).",
     bullets: [
-      "Everything in Complete Study",
+      "Everything in Companion",
       "Live sermons feed (when it launches)",
       "Courses platform (when it launches)",
       "Full Teaching Corpus access — forty concepts at depth",
