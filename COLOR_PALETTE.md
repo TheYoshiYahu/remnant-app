@@ -185,6 +185,7 @@ Cross-reference labels in the chapter-end card render with color tied to source 
 | Source class | Color | Hex | Register |
 |---|---|---|---|
 | Section header ("Cross-References in *Book Chapter*") | Techelet | `#1A6FE5` | §1 divine-name |
+| Chapter number in the chapter heading ("Matthew **2**") | Argaman | `#8E4FB3` | §1 covenant-body — chapter-scope navigation pointer; paired with spectral blue at verse scope below |
 | Source-verse group labels ("Verse 1", "Verse 3", etc.) | Spectral blue | `#0084FF` | §2 reader chrome accent (matches in-body verse numbers — consistent "verse-number pointer" register) |
 | Thread anchor label ("Anchor: Matthew X:Y") | Spectral blue | `#0084FF` | §2 — same verse-pointer register as source-verse group labels |
 | Thread inner sub-header ("Cross-references in this chapter") | Techelet | `#1A6FE5` | §1 divine-name — chrome sub-header at thread scope, mirroring §9 main header |

@@ -86,25 +86,60 @@ import paragraphStartsData from "./data/paragraph_starts.json";
 // feedback that the icon-only version was hard to find. Glyph stays as
 // the visual hook; the label makes the affordance discoverable.
 //
-// S127 — label + aria/title renamed to "Urim & Thummim" to match the
-// website's theme switcher (`Toggle light and dark mode (Urim and
-// Thummim)`). Cross-product naming unity per Yoshi's request — the
-// priestly oracle stones used for divine guidance become the
-// theological frame for the partner's surface-choice affordance.
+// S130 — theme toggle redesigned per Yoshi's spec. Two-cell segmented
+// control: shared "MODE" header above, sun + "Light" left cell, moon +
+// "Dark" right cell. The active mode renders with a techelet border
+// and tinted surface so the reader sees which mode is current at a
+// glance; the inactive cell is clickable to switch. Replaces the prior
+// single-button "Urim & Thummim" label (which was an invented coinage
+// and is not used anywhere on remnantofpromise.org — corrected here).
 function ThemeToggle() {
   const { theme, toggle } = useTheme();
   const isDark = theme === "dark";
+  const activeClasses =
+    "border-[#1A6FE5] bg-[color-mix(in_srgb,#1A6FE5_18%,transparent)] text-[var(--reader-text)]";
+  const inactiveClasses =
+    "border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-muted)] hover:text-[var(--reader-text)]";
   return (
-    <button
-      type="button"
-      onClick={toggle}
-      aria-label="Toggle light and dark mode (Urim and Thummim)"
-      title="Toggle light and dark mode (Urim and Thummim)"
-      className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
-    >
-      <span aria-hidden="true">{isDark ? "☼" : "☾"}</span>
-      <span>Urim &amp; Thummim</span>
-    </button>
+    <div className="flex flex-col items-center gap-1" aria-label="Mode">
+      <span className="font-sans text-[10px] font-semibold uppercase tracking-wide text-[#1A6FE5]">
+        Mode
+      </span>
+      <div role="group" aria-label="Light or Dark mode" className="flex gap-1">
+        <button
+          type="button"
+          onClick={() => {
+            if (isDark) toggle();
+          }}
+          aria-pressed={!isDark}
+          aria-label="Switch to light mode"
+          title="Switch to light mode"
+          className={
+            "flex flex-col items-center rounded border px-2.5 py-1 text-[11px] font-medium hover:opacity-90 " +
+            (!isDark ? activeClasses : inactiveClasses)
+          }
+        >
+          <span aria-hidden="true" className="text-base leading-none">☀</span>
+          <span className="mt-0.5">Light</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            if (!isDark) toggle();
+          }}
+          aria-pressed={isDark}
+          aria-label="Switch to dark mode"
+          title="Switch to dark mode"
+          className={
+            "flex flex-col items-center rounded border px-2.5 py-1 text-[11px] font-medium hover:opacity-90 " +
+            (isDark ? activeClasses : inactiveClasses)
+          }
+        >
+          <span aria-hidden="true" className="text-base leading-none">☾</span>
+          <span className="mt-0.5">Dark</span>
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -1358,9 +1393,16 @@ function Reader() {
               </button>
             </div>
           )}
+          {/*
+            S130 — chapter number in argaman #8E4FB3 per COLOR_PALETTE.md
+            §1 covenant-body register. Yoshi's call: chapter-scope
+            pointer gets argaman; verse-scope pointer gets spectral blue
+            (already locked in §2). Distinct registers for the two
+            navigation scopes.
+          */}
           <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)]">
             {chapterDetail.book.title}{" "}
-            <span className="font-normal text-[var(--reader-muted)]">
+            <span className="font-normal text-[#8E4FB3]">
               {chapterDetail.chapter.chapter_number}
             </span>
           </h2>
