@@ -96,8 +96,10 @@ The brand-mark olive branches carry techelet-family leaves with a measurable gre
 - **Midtone:** `#455A7A` (steel-blue with green hint, dominant leaf body)
 - **Highlight / icy:** `#8298B6` (pale silver-blue, leaf-specular highlight)
 - **Theological role:** the olive tree of Romans 11 — the covenant root the framework restores. Cool, weather-aged, not glowing.
-- **Functional role:** undeclared at S130 — color reserved in the palette for future use per Yoshi's instruction *"we just need a cool icy blue green to be utilized like whats in the logo."* Candidate uses: secondary chrome rule lines, the inactive state of toggles, peripheral metadata labels, "you are here" indicators in the table of contents.
-- **Surfaces:** none active as of S130; reserved.
+- **Functional role:** **chapter-scope navigation pointer** (locked S130 follow-up). Chapter numbers in chapter headings ("Matthew **2**") render in the icy-highlight tone `#8298B6` — the brightest of the three leaf-register samples, picked over the §1 argaman that was tried first because the thin font weight made argaman hard to read against the dark reader pane. The chapter-scope pointer pairs with the §2 spectral-blue verse-scope pointer to give the two navigation scopes distinct visual registers without competing with each other.
+- **Surfaces:**
+  - Chapter number in the chapter heading (h2 sub-span) — `#8298B6` at font-medium weight.
+  - Additional candidate uses (reserved): secondary chrome rule lines, the inactive state of toggles, peripheral metadata labels, "you are here" indicators in the table of contents.
 
 ---
 
@@ -185,7 +187,7 @@ Cross-reference labels in the chapter-end card render with color tied to source 
 | Source class | Color | Hex | Register |
 |---|---|---|---|
 | Section header ("Cross-References in *Book Chapter*") | Techelet | `#1A6FE5` | §1 divine-name |
-| Chapter number in the chapter heading ("Matthew **2**") | Argaman | `#8E4FB3` | §1 covenant-body — chapter-scope navigation pointer; paired with spectral blue at verse scope below |
+| Chapter number in the chapter heading ("Matthew **2**") | Olive-leaf icy highlight | `#8298B6` | §4 — chapter-scope navigation pointer at font-medium weight; argaman was tried first but didn't read on the thin font weight against the dark pane (see §4 for the reasoning); paired with spectral blue at verse scope below |
 | Source-verse group labels ("Verse 1", "Verse 3", etc.) | Spectral blue | `#0084FF` | §2 reader chrome accent (matches in-body verse numbers — consistent "verse-number pointer" register) |
 | Thread anchor label ("Anchor: Matthew X:Y") | Spectral blue | `#0084FF` | §2 — same verse-pointer register as source-verse group labels |
 | Thread inner sub-header ("Cross-references in this chapter") | Techelet | `#1A6FE5` | §1 divine-name — chrome sub-header at thread scope, mirroring §9 main header |

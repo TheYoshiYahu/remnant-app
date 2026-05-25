@@ -1394,15 +1394,21 @@ function Reader() {
             </div>
           )}
           {/*
-            S130 — chapter number in argaman #8E4FB3 per COLOR_PALETTE.md
-            §1 covenant-body register. Yoshi's call: chapter-scope
-            pointer gets argaman; verse-scope pointer gets spectral blue
-            (already locked in §2). Distinct registers for the two
-            navigation scopes.
+            S130 — chapter number recolored to olive-leaf icy highlight
+            #8298B6 (COLOR_PALETTE.md §4 register, brightest of the three
+            leaf-register samples). The argaman tried first didn't read
+            on the thin font weight against the dark pane; the icy
+            highlight has enough luminance contrast to stay readable
+            while preserving the "chapter-scope ≠ verse-scope" split
+            (chapter argaman family was the original intent; the §4
+            leaf register is theologically adjacent — the olive-tree
+            covenant root of Romans 11 — and visually distinct from the
+            §2 spectral blue used at verse scope). Weight nudged to
+            font-medium so the number doesn't get visually swallowed.
           */}
           <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)]">
             {chapterDetail.book.title}{" "}
-            <span className="font-normal text-[#8E4FB3]">
+            <span className="font-medium text-[#8298B6]">
               {chapterDetail.chapter.chapter_number}
             </span>
           </h2>
