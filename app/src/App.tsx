@@ -1394,21 +1394,22 @@ function Reader() {
             </div>
           )}
           {/*
-            S130 — chapter number recolored to olive-leaf icy highlight
-            #8298B6 (COLOR_PALETTE.md §4 register, brightest of the three
-            leaf-register samples). The argaman tried first didn't read
-            on the thin font weight against the dark pane; the icy
-            highlight has enough luminance contrast to stay readable
-            while preserving the "chapter-scope ≠ verse-scope" split
-            (chapter argaman family was the original intent; the §4
-            leaf register is theologically adjacent — the olive-tree
-            covenant root of Romans 11 — and visually distinct from the
-            §2 spectral blue used at verse scope). Weight nudged to
-            font-medium so the number doesn't get visually swallowed.
+            S130 — chapter number recolored to bright bracket-emerald
+            highlight #2EFFA1 per Yoshi's call: the "metallic green from
+            the expander buttons." The earlier argaman didn't survive
+            the thin font weight, and my first follow-up (icy silver-
+            blue from the olive-leaf register) was the wrong green —
+            cool blue with a green hint, not the actual metallic emerald
+            Yoshi was pointing at. The bracket gradient's bright stop
+            #2EFFA1 reads cleanly against the dark pane and matches the
+            same green register the expander pills and Tanakh ref pills
+            already use. Chapter-scope navigation pointer now uses §3
+            expansion-register green; verse-scope stays in §2 spectral
+            blue. Weight nudged to font-medium for legibility.
           */}
           <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)]">
             {chapterDetail.book.title}{" "}
-            <span className="font-medium text-[#8298B6]">
+            <span className="font-medium text-[#2EFFA1]">
               {chapterDetail.chapter.chapter_number}
             </span>
           </h2>
