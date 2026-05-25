@@ -582,6 +582,20 @@ function Reader() {
     setInitialScrollVerse(hit.verse_number);
     setSearchOpen(false);
   }
+
+
+  // S130 — cross-reference click target. Same shape as
+  // jumpToSearchResult (set book, set chapter, set scroll-anchor verse)
+  // but plumbed into ChapterEndCard so a click on "Genesis 5:1" in the
+  // cross-ref card navigates the reader straight to that verse without
+  // them having to use the book/chapter picker. Locked targets (when
+  // tier_required > caller tier) route to /pricing instead.
+  function jumpToVerseRef(bookSlug: string, chapterNumber: number, verseNumber: number) {
+    setSelectedBookSlug(bookSlug);
+    setSelectedChapter(chapterNumber);
+    setCurrentVerse(verseNumber);
+    setInitialScrollVerse(verseNumber);
+  }
   function upgradeFromLockedSearchRow() {
     if (typeof window !== "undefined") {
       window.location.href = "/pricing";
@@ -1597,7 +1611,7 @@ function Reader() {
               onClick={toggleHideCommentary}
               aria-pressed={hideCommentary}
               title="Show or hide all study aids (chapter intro, commentary, cross-references). Persists across chapters and reloads."
-              className="rounded-md border border-[var(--reader-accent)] bg-[var(--reader-accent)] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-bg)] shadow-sm hover:opacity-90"
+              className="rounded-md border border-[#1A6FE5] bg-[#1A6FE5] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-white shadow-sm hover:opacity-90"
             >
               {hideCommentary ? "Show study aids" : "Hide study aids"}
             </button>
@@ -1654,6 +1668,7 @@ function Reader() {
               bookSlug={chapterDetail.book.slug}
               chapterNumber={chapterDetail.chapter.chapter_number}
               userTier={me?.tier ?? "free"}
+              onNavigate={jumpToVerseRef}
             />
           )}
 

@@ -45,12 +45,24 @@ interface ChapterEndCardProps {
   chapterNumber: number;
   /** The caller's tier — used to grey out locked rows. */
   userTier?: ContentTier;
+  /**
+   * S130 — navigation callback fired when the reader clicks a
+   * cross-reference target. Receives the target book/chapter/verse.
+   * Locked refs (target tier > user tier) instead route to /pricing
+   * inside this component so the upgrade prompt fires uniformly.
+   */
+  onNavigate?: (
+    bookSlug: string,
+    chapterNumber: number,
+    verseNumber: number
+  ) => void;
 }
 
 export default function ChapterEndCard({
   bookSlug,
   chapterNumber,
   userTier = "free",
+  onNavigate,
 }: ChapterEndCardProps) {
   const [data, setData] = useState<ChapterEndCardResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -89,23 +101,39 @@ export default function ChapterEndCard({
       className="mt-10 border-t border-[var(--reader-rule)] pt-6"
       aria-labelledby="chapter-end-card-title"
     >
+      {/*
+        S130 — section header recolored to techelet (#1A6FE5) per
+        COLOR_PALETTE.md §9 cross-reference color scheme. Header carries
+        the divine-name register because it marks scriptural-citation
+        territory; per-ref labels below carry source-type registers
+        (OT emerald / NT gold / extras argaman).
+      */}
       <h3
         id="chapter-end-card-title"
-        className="mb-4 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-muted)]"
+        className="mb-4 font-sans text-xs font-semibold uppercase tracking-wide text-[#1A6FE5]"
       >
-        Tanakh Sources for {data.book.title} {data.chapter.number}
+        Cross-References in {data.book.title} {data.chapter.number}
       </h3>
 
       {data.baseline.length > 0 && (
         <div className="mb-6">
-          <BaselineList entries={data.baseline} userTier={userTier} />
+          <BaselineList
+            entries={data.baseline}
+            userTier={userTier}
+            onNavigate={onNavigate}
+          />
         </div>
       )}
 
       {data.threads.length > 0 && (
         <div className="space-y-6">
           {data.threads.map((t) => (
-            <ThreadCallout key={t.slug} thread={t} userTier={userTier} />
+            <ThreadCallout
+              key={t.slug}
+              thread={t}
+              userTier={userTier}
+              onNavigate={onNavigate}
+            />
           ))}
         </div>
       )}
@@ -113,14 +141,66 @@ export default function ChapterEndCard({
   );
 }
 
+// ---- S130: source-type classifier for color routing ---------------------
+//
+// Per COLOR_PALETTE.md §9, cross-reference labels render in a color tied
+// to the target book's source class. The reader scans the card and learns
+// the framework's source-architecture at a glance: green = Tanakh, gold =
+// NT, argaman = extra-canonical. Header is techelet (separate register).
+//
+// NT_BOOK_SLUGS + OT_BOOK_SLUGS are explicit allowlists; anything else
+// is treated as extras (1 Enoch, Jubilees, Jasher, Apocrypha individual
+// books, Adam & Eve Conflict, Apocalypse of Abraham, Sonnini Acts 29,
+// plus any future extras-tier corpus addition).
+
+const NT_BOOK_SLUGS = new Set<string>([
+  "matthew", "mark", "luke", "john", "acts",
+  "romans", "1-corinthians", "2-corinthians", "galatians", "ephesians",
+  "philippians", "colossians", "1-thessalonians", "2-thessalonians",
+  "1-timothy", "2-timothy", "titus", "philemon", "hebrews", "james",
+  "1-peter", "2-peter", "1-john", "2-john", "3-john", "jude", "revelation",
+]);
+
+const OT_BOOK_SLUGS = new Set<string>([
+  "genesis", "exodus", "leviticus", "numbers", "deuteronomy",
+  "joshua", "judges", "ruth", "1-samuel", "2-samuel",
+  "1-kings", "2-kings", "1-chronicles", "2-chronicles",
+  "ezra", "nehemiah", "esther", "job", "psalms", "proverbs",
+  "ecclesiastes", "song-of-solomon", "isaiah", "jeremiah",
+  "lamentations", "ezekiel", "daniel", "hosea", "joel", "amos",
+  "obadiah", "jonah", "micah", "nahum", "habakkuk", "zephaniah",
+  "haggai", "zechariah", "malachi",
+]);
+
+type SourceClass = "tanakh" | "nt" | "extras";
+
+function classifyBookSlug(slug: string): SourceClass {
+  if (OT_BOOK_SLUGS.has(slug)) return "tanakh";
+  if (NT_BOOK_SLUGS.has(slug)) return "nt";
+  return "extras";
+}
+
+function colorForSourceClass(cls: SourceClass): string {
+  // Hex values mirror COLOR_PALETTE.md §9. Keep in sync if either side
+  // moves. The midtones (#15A86A, #B4A078) are picked so the labels read
+  // cleanly at body-text scale on the dark reader pane.
+  switch (cls) {
+    case "tanakh": return "#15A86A";  // bracket-emerald midtone
+    case "nt":     return "#B4A078";  // brand-mark gold midtone
+    case "extras": return "#8E4FB3";  // argaman
+  }
+}
+
 // ---- Baseline ------------------------------------------------------------
 
 function BaselineList({
   entries,
   userTier,
+  onNavigate,
 }: {
   entries: ChapterEndCardResponse["baseline"];
   userTier: ContentTier;
+  onNavigate?: (b: string, c: number, v: number) => void;
 }) {
   return (
     <ul className="space-y-3">
@@ -134,30 +214,53 @@ function BaselineList({
           <ul className="mt-1 ml-3 space-y-1 text-[var(--reader-text)]">
             {entry.targets.map((tgt) => {
               const locked = !tierSatisfies(userTier, tgt.tier_required);
+              const cls = classifyBookSlug(tgt.book_slug);
+              const labelColor = colorForSourceClass(cls);
               return (
                 <li
                   key={`${tgt.verse_id}-${tgt.source}`}
-                  className={
-                    "flex gap-2 " +
-                    (locked ? "opacity-40" : "")
-                  }
-                  title={
-                    locked
-                      ? `Unlock with ${prettyTier(tgt.tier_required)}`
-                      : undefined
-                  }
+                  className={"flex gap-2 " + (locked ? "opacity-40" : "")}
                 >
                   <span className="font-sans text-xs text-[var(--reader-muted)]">
                     →
                   </span>
                   <span>
-                    <span className="font-sans text-xs font-semibold text-[var(--reader-muted)]">
+                    {/*
+                      S130 — clickable ref. Unlocked refs navigate via the
+                      onNavigate callback; locked refs route to /pricing
+                      so the upgrade prompt fires uniformly. The ref label
+                      color carries the source-type register per
+                      COLOR_PALETTE.md §9.
+                    */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (locked) {
+                          if (typeof window !== "undefined") {
+                            window.location.href = "/pricing";
+                          }
+                          return;
+                        }
+                        onNavigate?.(
+                          tgt.book_slug,
+                          tgt.chapter_number,
+                          tgt.verse_number
+                        );
+                      }}
+                      title={
+                        locked
+                          ? `Unlock with ${prettyTier(tgt.tier_required)}`
+                          : `Go to ${prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)}`
+                      }
+                      className="font-sans text-xs font-semibold underline-offset-2 hover:underline"
+                      style={{ color: labelColor }}
+                    >
                       {prettyRef(
                         tgt.book_slug,
                         tgt.chapter_number,
                         tgt.verse_number
                       )}
-                    </span>{" "}
+                    </button>{" "}
                     <span className="italic">{tgt.preview}</span>
                   </span>
                 </li>
@@ -175,9 +278,11 @@ function BaselineList({
 function ThreadCallout({
   thread,
   userTier,
+  onNavigate,
 }: {
   thread: ChapterEndCardResponse["threads"][number];
   userTier: ContentTier;
+  onNavigate?: (b: string, c: number, v: number) => void;
 }) {
   const [expanded, setExpanded] = useState<boolean>(false);
   const paragraphs = thread.summary_md.split(/\n{2,}/);
@@ -240,7 +345,11 @@ function ThreadCallout({
           </p>
           <ul className="space-y-1 text-[var(--reader-text)]">
             {thread.members_in_chapter.map((m) => (
-              <ThreadMemberRow key={`${m.sort_order}-${m.source_verse_number}`} member={m} />
+              <ThreadMemberRow
+                key={`${m.sort_order}-${m.source_verse_number}`}
+                member={m}
+                onNavigate={onNavigate}
+              />
             ))}
           </ul>
         </div>
@@ -249,7 +358,20 @@ function ThreadCallout({
   );
 }
 
-function ThreadMemberRow({ member }: { member: ThreadMember }) {
+function ThreadMemberRow({
+  member,
+  onNavigate,
+}: {
+  member: ThreadMember;
+  onNavigate?: (b: string, c: number, v: number) => void;
+}) {
+  // S130 — color the target-verse ref by its source class per
+  // COLOR_PALETTE.md §9, and make it clickable. Members don't carry a
+  // separate tier_required in the current API shape; thread-level
+  // gating already greys the parent article when locked, so clicking
+  // a member ref inside a visible (unlocked) thread navigates straight.
+  const cls = classifyBookSlug(member.target.book_slug);
+  const labelColor = colorForSourceClass(cls);
   return (
     <li className="flex flex-wrap gap-x-2">
       <span className="font-sans text-xs text-[var(--reader-muted)]">→</span>
@@ -257,13 +379,25 @@ function ThreadMemberRow({ member }: { member: ThreadMember }) {
         Verse {member.source_verse_number}
       </span>
       <span className="font-sans text-xs text-[var(--reader-muted)]">→</span>
-      <span className="font-sans text-xs font-semibold text-[var(--reader-muted)]">
+      <button
+        type="button"
+        onClick={() => {
+          onNavigate?.(
+            member.target.book_slug,
+            member.target.chapter_number,
+            member.target.verse_number
+          );
+        }}
+        title={`Go to ${prettyRef(member.target.book_slug, member.target.chapter_number, member.target.verse_number)}`}
+        className="font-sans text-xs font-semibold underline-offset-2 hover:underline"
+        style={{ color: labelColor }}
+      >
         {prettyRef(
           member.target.book_slug,
           member.target.chapter_number,
           member.target.verse_number
         )}
-      </span>
+      </button>
       <span className="basis-full italic ml-5 text-[var(--reader-text)]">
         {member.target.preview}
       </span>
