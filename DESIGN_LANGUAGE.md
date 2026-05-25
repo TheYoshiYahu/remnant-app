@@ -138,6 +138,7 @@ The S140 reconciliation aligns the feature bundles below against `Pricing.tsx` a
 2. **The restored extras-library editions** move from free up to $4.99 (the Library tier) per the live Pricing copy.
 3. **Strong's reference lookup stays free** (a Pricing.tsx draft mis-listed it at $1.99; corrected in the same pass).
 4. **Cross-edition search runs across the full restored library at free tier** — the *advanced search across canon and library* feature is NOT a Companion-tier gate. Every reader, regardless of tier, can search across canon + every restored edition the corpus carries. Hits from paid-tier editions surface in the result list with a tier-lock badge + locked-preview + upgrade affordance. Search becomes the upgrade funnel: a free reader who searches *"Watchers"* or *"Sheol"* or *"Lo-Ammi"* sees the canonical hits open AND a list of hits from 1 Enoch / Jubilees / the Apocrypha with the Library badge, and reads the locked-preview-result list as discovery. Curiosity does the selling without the gate ever doing it.
+5. **Chapter-end card layer split** — the two layers of the chapter-end card gate independently at different tiers. **Layer 1 (per-verse cross-references) → Library tier** ($4.99) since the cross-refs point into the restored library editions Library opens. **Layer 2 (framework thread callouts with title + summary_md + member_notes) → Companion tier** ($9.99) since the threads are Yoshi's framework reading of how canon and library answer each other — the *hidden detail expand* that synthesizes the cross-references. A Library reader sees the verse-to-verse pairings; a Companion reader gets the framework synthesis layered on top. The two free funnel threads (Kingdom Gospel + Grace That Can Be Lost) stay free at both layers.
 
 The free tier holds the canon (restored names) + Strong's lookup + cross-edition search (with locked-preview funnel) + the two framework-bearing free chapter-end threads + the funnel-sample commentary on key chapters + the basic reading-and-marking experience.
 
@@ -176,6 +177,7 @@ Everything in free, plus:
 
 ### Library — $4.99
 Everything in Study Notes, plus:
+- **Layer 1 of the chapter-end card unlocks — per-verse cross-references into the restored library.** The reader who's just unlocked 1 Enoch / Jubilees / the Apocrypha sees the verse-to-verse pairings linking canon to those editions. (Layer 2 of the card — the framework thread callouts that synthesize what those cross-refs mean — stays gated at Companion. See §9 reconciliation note #5.)
 - **The full restored library beyond the canon** (moved here from free in the S140 reconciliation per Pricing.tsx):
   - Apocrypha (KJV-1611, restored)
   - 1 Enoch, Jubilees, Jasher — already-published Restored Names editions
@@ -205,6 +207,7 @@ Everything in Study Notes, plus:
 
 ### Companion — $9.99
 Everything in Study Notes and Library, combined. Plus:
+- **Layer 2 of the chapter-end card unlocks — framework thread callouts.** The thread callout with title + anchor + multi-paragraph summary + per-member framework notes that synthesize how canon and the restored library answer each other. Library readers see the verse-to-verse pairings (Layer 1); Companion readers get Yoshi's reading of what those pairings mean (Layer 2) — the *hidden detail expand* that the threads are. The framework's cross-edition synthesis lives here.
 - **Framework commentary extended to the restored library** — Yoshi's chapter commentary doesn't stop at the canon. Every chapter of 1 Enoch, Jubilees, Jasher, the Apocrypha, the Pseudepigrapha, the Ascension of Isaiah, the Apocrypha of Abraham, and the other restored editions gets the same framework-bearing prose treatment. Where the Study Notes reader gets framework commentary on the 66 books, the Companion reader gets framework commentary on the whole restored library.
 - **Deeper-dive Statement of Faith sections surfaced inline** — the long-form Statement of Faith depth (the doctrine treatments behind the front-page §VII-style summaries) opens inline at relevant verses.
 - **Deeper Dive button on every chapter** — unlocks the long-form book-style commentary on every chapter (the §1-§N stand-alone-italics-every-scripture-quoted Logos-killer treatment, the kind of work the post-S88 john-1.md rewrite represents). Click the button on any chapter's commentary panel and the full book-style exposition opens. Where the Study Notes reader gets the framework on every chapter, the Companion reader gets the *book-on-every-chapter.* The depth that displaces Logos sits behind this button.

@@ -127,7 +127,15 @@
 --   10. `mysteries-revealed-to-the-meek-in-sirach-3-and-wisdom-of-solomon` (sort 269)
 --   11. `put-your-neck-under-the-yoke-find-rest-in-sirach-51-and-6-and-24` (sort 270)
 --
--- 35 new cross_references rows, all at tier_required='extras'. Every
+-- 35 new cross_references rows at tier_required='extras' (Library tier,
+-- $4.99) + 11 new cross_reference_threads at tier_required='complete_study'
+-- (Companion tier, $9.99). The tier split honors the two-layer
+-- architecture of the chapter-end card: Layer 1 (per-verse cross-refs)
+-- visible to Library readers who have access to the extras-library
+-- editions the refs point to; Layer 2 (framework thread callouts with
+-- summary_md + member_notes) gated at Companion, since the threads ARE
+-- the framework's reading of how canon and library answer each other —
+-- the "hidden detail expand" that is the Companion-tier upgrade. Every
 -- member-note passes the 12 Red Lines and the 12-point editorial
 -- checklist. Hebrew names with internal apostrophes (Yashar'el,
 -- Ya'aqov, Yechezk'el, Yo'el, Ya'ir, Sha'ul, etc.) are escaped per
@@ -290,7 +298,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'prophets-question-in-the-inaugurated-tension-in-4-ezra-4',
        'The prophet''s question and the angel''s answer — 2 Esdras (4 Ezra) 4 on the inaugurated-but-not-yet tension',
        'Matt 11:2-3''s Yochanan (John)-from-prison question *art thou he that should come, or do we look for another?* AND Matt 11:6''s blessing on *whosoever shall not be offended in me* — read against 2 Esdras (4 Ezra) 4:33-37''s wisdom-stream architecture of the prophet''s-question-from-distress under the inaugurated-but-not-yet tension. 4 Ezra 4:33''s *how, and when shall these things come to pass? wherefore are our years few and evil?* names the prophet''s timing-question to the angel Uriel; 4 Ezra 4:34''s *do not you hasten above the most Highest* names the angel''s commendation of the trust-the-timeline disposition; 4 Ezra 4:35''s *souls also of the righteous ask question of these things in their chambers, saying, How long?* names the souls-of-the-righteous-in-their-chambers asking-how-long architecture (the same pattern Revelation 6:9-11 names at the New Testament restatement with the souls under the altar). The framework reads Yochanan''s (John''s) prison-question as the legitimate-clarification-seek of a prophet operating with the prophetic-compression now facing the inaugurated-but-not-yet gap. The wisdom-stream had named the architecture; the King at Matt 11:6 names the blessing on the disposition that endures the gap.',
-       sv.verse_id, ev.verse_id, 'extras', 260
+       sv.verse_id, ev.verse_id, 'complete_study', 260
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 3
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 6
@@ -301,7 +309,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'messianic-age-restoration-in-1-enoch-and-jubilees-23',
        'The Messianic-age-restoration substance — 1 Enoch 5 and 10, Jubilees 23',
        'Matt 11:5''s Messianic-credential answer *the blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, and the dead are raised up, and the poor have the gospel preached to them* (citing Isaiah 35:5-6, 29:18-19, 26:19, 61:1) — read against the wisdom-stream''s articulation of the Messianic-age-restoration architecture. 1 Enoch 5:7-9 names the elect-blessing-substance: peace to the righteous, protection of the elect, compassion, prosperity, blessing, the light shining. 1 Enoch 10:17-22 names the latter-day-restoration: the righteous escape, beget thousands, complete their days in peace; the earth tilled in righteousness, planted with vines, cleansed from oppression and unrighteousness; all the children of men become righteous. Jubilees 23:27-29 names the long-days, the peace-and-joy, the no-Satan-no-evil-destroyer days of blessing-and-healing. The framework reads Matt 11:5''s credentialing-signs as the inaugurated-foretaste of the full Messianic-age-restoration substance the wisdom-stream had named — the first-coming substance is now-operative; the day-of-vengeance of Isaiah 61:2 is reserved for the second-coming per the deliberate-omission.',
-       sv.verse_id, ev.verse_id, 'extras', 261
+       sv.verse_id, ev.verse_id, 'complete_study', 261
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 5
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 5
@@ -312,7 +320,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'eliyahu-to-restore-the-tribes-in-sirach-48-and-1-maccabees-2',
        'Eliyahu ordained to restore the tribes of Jacob — Sirach 48:10 and 1 Maccabees 2:58',
        'Matt 11:14''s *if ye will receive it, this is Eliyahu (Elijah), which was for to come* identifying Yochanan (John) as the inaugural-Eliyahu-pattern fulfillment — read against the wisdom-stream''s strongest verbal-anchor for the Eliyahu-pattern with the twelve-tribe-gathering substance. Sirach (Ecclesiasticus) 48:10 names the Eliyahu-mission explicitly: *ordained for reproofs in their times, to pacify the wrath of the judgment of Yahuah (God) ... to turn the heart of the father to the son, and to restore the tribes of Jacob.* The clause *to restore the tribes of Jacob* locks the twelve-tribe-restoration architecture (Red Line #11) as integral to the Eliyahu-mission at the wisdom-stream register. 1 Maccabees 2:58 names the Eliyahu-zealous-for-the-Torah architecture: *Elias for being zealous and fervent for the law was taken up into heaven.* The framework reads Yochanan (John) as the inaugural-Eliyahu-pattern-fulfillment — messenger-before-the-King''s-first-coming, with the dreadful-day-of-Yahuah (the LORD) full-restoration-of-the-twelve-tribes reserved for the second-coming. The wisdom-stream had named the architecture with the twelve-tribe substance integrated; Matt 11:13-14 names the inaugural-fulfillment.',
-       sv.verse_id, ev.verse_id, 'extras', 262
+       sv.verse_id, ev.verse_id, 'complete_study', 262
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 14
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 14
@@ -323,7 +331,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'new-heart-cleansing-spirit-children-of-the-living-in-jubilees-1',
        'The new heart, the cleansing spirit, and the children of the living Elohim — Jubilees 1:23-25',
        'Matt 11:11''s *he that is least in the kingdom of heaven is greater than he* (the kingdom-citizens'' transformation-of-status exceeding the highest of the prophetic-tradition) — read against Jubilees 1:23-25''s wisdom-stream Tanakh-anchor parallel to Jeremiah 31:33 and Ezekiel 36:26-27. Three direct moves: Jubilees 1:23 names the heart-circumcision and the creation of the holy-spirit and the cleansing-that-does-not-turn-away (the new-heart Tanakh-promise); Jubilees 1:24 names the souls-cleaving-to-Yahuah (God) and the fulfilling-of-the-commandments and the Father-and-children-relation (the substance of the new-heart); Jubilees 1:25 names the *children of the living Elohim (God)* designation — the same phrase Hosea 1:10 names for the Lo-Ammi scattered-seed gathered-home and the same phrase Paul cites at Romans 9:25-26. The framework reads the verse-cluster as one architecture: the new-heart-Spirit-cleansing substance produces the scattered-seed gathered-home as children-of-the-living-Elohim (God). Matt 11:11 names the operative-fact of the architecture coming-to-pass at the kingdom''s inauguration — what the prophets served from outside the indwelling-Ruach (Spirit), the kingdom-citizens carry from inside it.',
-       sv.verse_id, ev.verse_id, 'extras', 263
+       sv.verse_id, ev.verse_id, 'complete_study', 263
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 11
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 11
@@ -334,7 +342,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'wise-laying-in-wait-for-the-righteous-in-wisdom-of-solomon-2',
        'The wise lying in wait for the righteous, condemning him with a shameful death — Wisdom of Solomon 2:12-20',
        'Matt 11:16-19''s children-in-the-marketplaces diagnostic — the system rejected Yochanan (John) for austerity AND rejected Yahusha (Jesus) for festivity, opposite-direction-complaints from one prior-decision-against-responding — read against Wisdom of Solomon 2:12-20''s wisdom-stream prophecy of the system''s-rejection-of-the-righteous-one. Three direct moves: Wisdom 2:12 names the lying-in-wait-because-the-righteous-upbraids-us-with-our-offending-the-law; Wisdom 2:15 names the aesthetic-rejection *his life is not like other men''s, his ways are of another fashion*; Wisdom 2:20 names the trajectory toward *condemn him with a shameful death.* The framework reads the verse-cluster as the wisdom-stream pre-figuration of the full architecture Matt 11:18-19 walks at its inaugural-step: the *gluttonous-man, winebibber, friend-of-publicans-and-sinners* slander is the moral-character-attack the wisdom-stream had named in advance. The same architecture operates in the present-age against the heart-Torah-walking kingdom-citizens — institutional Christianity''s *legalism* slander and modern Hebrew Roots'' *exclusivism* slander are different costumes on the same Wisdom 2 architecture.',
-       sv.verse_id, ev.verse_id, 'extras', 264
+       sv.verse_id, ev.verse_id, 'complete_study', 264
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 19
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 19
@@ -345,7 +353,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'wisdom-come-unto-me-fill-yourselves-in-sirach-24-and-baruch-3-4',
        'Wisdom''s come-unto-me invitation, the wisdom given to Yashar''el, and the law that endureth for ever — Sirach 24 and Baruch 3-4',
        'Matt 11:19''s *wisdom is justified of her children* closing — the kingdom-citizens-whose-ears-the-Father-has-opened recognize the heart-Torah-substance underneath both Yochanan''s (John''s) austerity and Yahusha''s (Jesus''s) festivity — read against the wisdom-stream''s wisdom-personification-tradition and the Torah-as-wisdom anchor in Sirach 24 and Baruch 3-4. Three moves: Sirach 24:19 names the wisdom-figure''s *come to me, all you that be desirous of me, and fill yourselves with my fruits* universal-invitation (the typological-anchor of the Matt 11:28''s King''s come-unto-me invitation later in the chapter); Baruch 3:36 names the wisdom *given to Jacob his servant, and to Yashar''el (Israel) his beloved*; Baruch 4:1 identifies the wisdom-given as *the book of the commandments of Yahuah (God), and the law that endureth for ever* — the wisdom-stream''s direct equation of wisdom with the Torah. The framework reads the cluster as a load-bearing wisdom-stream anchor against the institutional-Christian antinomian-reading: the wisdom-given to Yashar''el (Israel) IS the Torah; the Torah endures for ever; the children-of-wisdom at Matt 11:19 are the kingdom-citizens-who-keep-the-commandments.',
-       sv.verse_id, ev.verse_id, 'extras', 265
+       sv.verse_id, ev.verse_id, 'complete_study', 265
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 19
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 19
@@ -356,7 +364,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'mighty-men-mightily-tormented-in-wisdom-of-solomon-6',
        'A sharp judgment shall be to them that be in high places; mighty men shall be mightily tormented — Wisdom of Solomon 6:5-8',
        'Matt 11:20-24''s woes upon Korazin, Beit-Tsaida (Bethsaida), and Kfar-Nachum (Capernaum) with the *more tolerable for Tyre and Tsidon (Sidon) / for Sodom* graduated-accountability-architecture — read against Wisdom of Solomon 6:5-8''s wisdom-stream articulation of the principle. Three direct moves: Wisdom 6:5 names *a sharp judgment shall be to them that be in high places*; Wisdom 6:6 names *mercy will soon pardon the meanest: but mighty men shall be mightily tormented* — the wisdom-stream''s direct statement of the graduated-accountability-by-credentialing-density principle; Wisdom 6:8 names *a sore trial shall come upon the mighty.* The framework reads the verse-cluster against the King''s *more tolerable for Sodom* / *more tolerable for Tyre and Tsidon (Sidon)* operative-application: Kfar-Nachum (Capernaum) the *exalted-unto-heaven* (the King''s ministry-base, the Matt 9:1 *his own city*) is the *mighty* upon whom the sore-trial falls. The framework''s reading rules out both the inherited eternal-conscious-torment monolith AND the universalism-flatten — the day-of-judgment is real with real-graduated-degrees, and the credentialing-density determines the degree.',
-       sv.verse_id, ev.verse_id, 'extras', 266
+       sv.verse_id, ev.verse_id, 'complete_study', 266
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 21
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 23
@@ -367,7 +375,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'sodom-as-judgment-archetype-in-jubilees-16-and-wisdom-10',
        'Sodom as the enduring judgment-archetype — Jubilees 16:5-9 and Wisdom of Solomon 10:6-8',
        'Matt 11:23-24''s *more tolerable for the land of Sodom in the day of judgment, than for thee* — read against the wisdom-stream''s articulation of Sodom-as-the-enduring-judgment-archetype. Three moves: Jubilees 16:5 names the direct destruction-narrative — Yahuah (God) executed judgment on Sodom, Gomorrah, Zeboim, and all the region of the Jordan, burning them with fire-and-brimstone until-this-day; Jubilees 16:6 names the architectural-application — *Elohim (God) will execute judgment on the places where they have done according to the uncleanness of the Sodomites, like to the judgment of Sodom* (Sodom as template for future-judgments); Wisdom of Solomon 10:7 names the enduring-monument — *the waste land that smoketh is a testimony, and ... a standing pillar of salt is a monument of an unbelieving soul.* The framework reads the cluster against Matt 11:23-24: the King invokes the most-canonical-judgment-archetype to lock the graduated-accountability for Kfar-Nachum (Capernaum). Sodom is the floor; the cities-that-saw-the-credential-and-rejected face the sharper application. The framework''s reading of *hell* as *hadēs* / *Sheol* (the underworld of the dead, the Tanakh''s *Sheol* substance) rules out the inherited Christian eternal-conscious-torment overlay.',
-       sv.verse_id, ev.verse_id, 'extras', 267
+       sv.verse_id, ev.verse_id, 'complete_study', 267
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 23
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 24
@@ -378,7 +386,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'the-son-of-adam-elect-one-revealing-mysteries-in-1-enoch-46-51',
        'The Son of Adam named before the Head of Days, revealing the treasures of that which is hidden — 1 Enoch 46-51',
        'Matt 11:25-27''s Father-Son revelation-economy prayer — *I thank thee, O Father, Lord of heaven and earth, because thou hast hid these things from the wise and prudent, and hast revealed them unto babes ... no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son, and he to whomsoever the Son will reveal him* — read against 1 Enoch 46-51''s wisdom-stream architecture of the Son-of-Adam-named-before-the-Head-of-Days-revealing-mysteries. Four moves: 1 Enoch 46:1 names the Father-Son architecture at the apocalyptic-register — the Head-of-Days (the Father) and the Son-of-Adam-whose-countenance-had-the-appearance-of-a-man-and-whose-face-was-full-of-graciousness (the Son, Red Line #12 title-naming case where the kaph-comparative is NOT operative); 1 Enoch 46:3 names the *Son of Adam who hath righteousness ... revealeth all the treasures of that which is hidden* (direct revelation-economy substance); 1 Enoch 48:6 names the Son *chosen and hidden before Him, Before the creation of the world and for evermore* (Red Line #11''s names-written-before-the-foundation-of-the-world architecture extended to the Son himself); 1 Enoch 48:7 names the revelation-economy *the wisdom of Yahuah (God) of Spirits hath revealed him to the holy and righteous.* The wisdom-stream had named the architecture; the King at Matt 11:25-27 names it operative in his own voice as the Word-made-flesh.',
-       sv.verse_id, ev.verse_id, 'extras', 268
+       sv.verse_id, ev.verse_id, 'complete_study', 268
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 25
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 27
@@ -389,7 +397,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'mysteries-revealed-to-the-meek-in-sirach-3-and-wisdom-of-solomon',
        'Many are in high place, of renown — but mysteries are revealed to the meek — Sirach 3:18-20 and Wisdom of Solomon 7:7',
        'Matt 11:25''s *I thank thee, O Father, Lord of heaven and earth, because thou hast hid these things from the wise and prudent, and hast revealed them unto babes* — read against THE strongest wisdom-stream verbal-anchor for the inverse-revelation-economy pair. Sirach (Ecclesiasticus) 3:19 names the precise verbal-formulation: *many are in high place, and of renown: but mysteries are revealed to the meek* — the same inverse-pair (high-place / mysteries) and the same destination-shift (revealed to the meek, not to those in high place) the King names at Matt 11:25. Sirach 3:18 anchors the architectural-logic — *the greater you are, the more humble thyself, and you shall find favour before Yahuah (God)* — humility-before-Yahuah (God) is the precondition for the favour Yahuah (God) channels. Wisdom of Solomon 7:7 names the prayer-channel for the spirit-of-wisdom — *I prayed, and understanding was given me: I called upon Yahuah (God), and the spirit of wisdom came to me* — anchoring Matt 11:25-27''s prayer-as-the-channel-for-the-revelation-economy. The wisdom-stream and the King name one diagnostic across two registers: the *meek* of Sirach 3:19 and the *babes* (*nēpioi*) of Matt 11:25 are one body — the *poor in spirit* of Matt 5:3, the *anawim*-disposition the Father''s sovereign-revelation channels to.',
-       sv.verse_id, ev.verse_id, 'extras', 269
+       sv.verse_id, ev.verse_id, 'complete_study', 269
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 25
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 25
@@ -400,7 +408,7 @@ INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_st
 SELECT 'put-your-neck-under-the-yoke-find-rest-in-sirach-51-and-6-and-24',
        'Put your neck under the yoke; behold I have but little labour, and have gotten to me much rest — Sirach 51:23-27, Sirach 6:24-31, Sirach 24:19',
        'Matt 11:28-30''s *come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light* — read against THE strongest extras-tier verbal-anchor in the entire Hebrew library: Sirach (Ecclesiasticus) 51:23-27''s wisdom-figure-invitation. Five moves: Sirach 51:23 names *draw near to me, you unlearned, and dwell in the house of learning* (the come-unto-me invitation to those-without-credential); Sirach 51:26 names *put your neck under the yoke, and let your soul receive instruction* (the direct verbal-anchor for Matt 11:29''s *take my yoke upon you, and learn of me*); Sirach 51:27 names *behold with your eyes, how that I have but little labour, and have gotten to me much rest* (the direct verbal-anchor for Matt 11:30''s *for my yoke is easy, and my burden is light*); Sirach 6:28 names *at the last you shall find her rest, and that shall be turned to your joy* (the rest-yielded-by-the-yoke-of-wisdom architecture, the second Sirach yoke-passage at Sirach 6:24-31); Sirach 24:19 names *come to me, all you that be desirous of me, and fill yourselves with my fruits* (the third major wisdom-figure-come-unto-me invitation). The framework reads the cluster as locking the framework''s reading of Matt 11:28-30 against the institutional-Christian antinomian-misuse: the contrast is NOT yoke-vs-no-yoke (Torah-abolition); the contrast is the Pharisaic-oral-tradition-yoke vs the King''s-heart-Torah-yoke. The King''s yoke IS the Father''s-Torah-internalized (Jeremiah 31:33 / Ezekiel 36:26-27); the wisdom-stream wisdom-yoke and the King''s heart-Torah-yoke are the same yoke-substance; the rest-promised under both is the rest-of-walking-in-the-good-way Jeremiah 6:16 named. Three wisdom-figure-come-unto-me invitations in Sirach (chapters 6, 24, 51) point forward to one Word-made-flesh issuing the invitation in person at Matt 11:28-30.',
-       sv.verse_id, ev.verse_id, 'extras', 270
+       sv.verse_id, ev.verse_id, 'complete_study', 270
   FROM _s140_verse_lookup sv, _s140_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 11 AND sv.verse_number = 28
    AND ev.edition_slug = 'canon' AND ev.book_slug = 'matthew' AND ev.chapter_number = 11 AND ev.verse_number = 30
