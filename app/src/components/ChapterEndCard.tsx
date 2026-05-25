@@ -207,7 +207,14 @@ function BaselineList({
       {entries.map((entry) => (
         <li key={entry.source_verse.verse_number}>
           <div className="text-[var(--reader-text)]">
-            <span className="font-sans text-xs font-semibold text-[var(--reader-muted)]">
+            {/*
+              S130 — source-verse group label in spectral blue
+              (--reader-accent, #0084FF), matching the in-body verse
+              numbers per COLOR_PALETTE.md §2. Functional consistency:
+              spectral blue = "verse-number pointer" everywhere it
+              appears, body and chrome.
+            */}
+            <span className="font-sans text-xs font-semibold text-[var(--reader-accent)]">
               Verse {entry.source_verse.verse_number}
             </span>
           </div>
@@ -375,7 +382,7 @@ function ThreadMemberRow({
   return (
     <li className="flex flex-wrap gap-x-2">
       <span className="font-sans text-xs text-[var(--reader-muted)]">→</span>
-      <span className="font-sans text-xs font-semibold text-[var(--reader-muted)]">
+      <span className="font-sans text-xs font-semibold text-[var(--reader-accent)]">
         Verse {member.source_verse_number}
       </span>
       <span className="font-sans text-xs text-[var(--reader-muted)]">→</span>

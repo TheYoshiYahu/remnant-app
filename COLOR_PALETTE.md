@@ -185,6 +185,7 @@ Cross-reference labels in the chapter-end card render with color tied to source 
 | Source class | Color | Hex | Register |
 |---|---|---|---|
 | Section header ("Cross-References in *Book Chapter*") | Techelet | `#1A6FE5` | §1 divine-name |
+| Source-verse group labels ("Verse 1", "Verse 3", etc.) | Spectral blue | `#0084FF` | §2 reader chrome accent (matches in-body verse numbers — consistent "verse-number pointer" register) |
 | Old Testament / Tanakh refs (Genesis, Joshua, Isaiah, etc.) | Bracket-emerald midtone | `#15A86A` | §3 divine-speech / expansion |
 | New Testament refs (Matthew, John, Romans, etc.) | Brand-mark gold midtone | `#B4A078` | §1 priestly-witness |
 | Extra-canonical refs (1 Enoch, Jubilees, Jasher, Apocrypha, Adam & Eve Conflict, Sonnini's Acts of Paul, etc.) | Argaman | `#8E4FB3` | §1 covenant-body |
