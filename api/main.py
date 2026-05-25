@@ -477,11 +477,22 @@ async def get_chapter_cross_references(
     curated apparatus reaches them; the PWA hides the card entirely on
     that state.
 
-    Tier filter: rows the caller can't unlock are still returned with
+    Tier filter (S136): rows the caller can't unlock are returned with
     their full ``tier_required`` field so the PWA can render a lock
-    affordance. Auth is the same JWT pattern as the other reader
-    routes — anonymous callers resolve to 'free' tier (which is what
-    every S73/S74 row sits at anyway).
+    affordance — greyed-out pill, "Unlock with [Tier]" tooltip, click
+    routes to /pricing. This matches the contract at
+    api/CHAPTER_END_CARD_CONTRACT.md §"Tier-locked rows" and the
+    frontend implementation at app/src/components/ChapterEndCard.tsx
+    (locked = !tierSatisfies → opacity-40 + /pricing redirect). The
+    earlier S74 implementation applied tier_satisfies() at the row
+    level and stripped extras-tier rows from the response entirely,
+    which hid the pill from free-tier readers and broke the see-the-
+    work / upgrade-to-unlock promise. S131-S135 added the Matt 1-6
+    extras-tier corpus on the assumption the pills would surface;
+    S136 restores the behavior. Auth is the same JWT pattern as the
+    other reader routes — anonymous callers resolve to 'free' tier.
+    Book-level tier filter stays in place (gates access to the chapter
+    itself); only the per-row strip is removed.
 
     Edition resolution: canon-only at v1. The contract reserves
     ``?edition=<slug>`` for when apocrypha-anchored curated threads
@@ -524,6 +535,10 @@ async def get_chapter_cross_references(
             )
 
         # Baseline — every cross-ref row with source in this chapter.
+        # S136: no per-row tier filter. The row's tier_required is
+        # passed through so the PWA can render a locked pill (greyed,
+        # click → /pricing) per ChapterEndCard.tsx. The book-level
+        # tier check above gates access to the chapter itself.
         baseline_rows = await conn.fetch(
             "SELECT x.source AS xref_source, "
             "       x.tier_required::text AS xref_tier, "
@@ -540,10 +555,8 @@ async def get_chapter_cross_references(
             "  JOIN chapters tc ON tc.id = tv.chapter_id "
             "  JOIN books tb    ON tb.id = tc.book_id "
             " WHERE sv.chapter_id = $1 "
-            "   AND tier_satisfies($2::content_tier, x.tier_required) "
             " ORDER BY sv.verse_number, tb.canonical_order, tc.chapter_number, tv.verse_number",
             chapter_row["id"],
-            tier,
         )
 
         # Threads — denormalized join: one row per (thread, in-chapter
@@ -552,6 +565,13 @@ async def get_chapter_cross_references(
         # than building a json_agg roll-up in SQL — the result set is
         # small (handful of threads × handful of members each) and the
         # Python grouping reads cleaner.
+        # S136: no per-thread tier filter — the thread's tier_required
+        # is passed through so the PWA can render a locked-callout
+        # treatment (greyed article, "Unlock with [Tier]" tooltip) per
+        # ChapterEndCard.tsx ThreadCallout. Same reason as the baseline
+        # query above: locked threads must surface so the reader sees
+        # the framework architecture exists, with the upgrade path on
+        # click.
         thread_member_rows = await conn.fetch(
             "SELECT t.id AS thread_id, "
             "       t.slug AS thread_slug, "
@@ -583,10 +603,8 @@ async def get_chapter_cross_references(
             "  LEFT JOIN books    ab ON ab.id = ac.book_id "
             "  LEFT JOIN verses ev  ON ev.id = t.anchor_verse_id_end "
             " WHERE sv.chapter_id = $1 "
-            "   AND tier_satisfies($2::content_tier, t.tier_required) "
             " ORDER BY t.sort_order, t.title, m.sort_order",
             chapter_row["id"],
-            tier,
         )
 
     # --- Aggregate baseline rows by source verse ----------------------
