@@ -84,8 +84,30 @@ async def main() -> int:
     print(f"Target:   {redacted}")
     print()
 
-    needs_ssl = "sslmode=" not in url
-    conn = await asyncpg.connect(url, ssl="require") if needs_ssl else await asyncpg.connect(url)
+    # Render's external Postgres rejects asyncpg's default ssl='require'
+    # handshake mid-stream (S38 / S112 lesson — `ConnectionDoesNotExistError:
+    # connection was closed in the middle of operation`). Use the robust
+    # connect path the S112 commentary loader documented: parse the URL
+    # ourselves, build a no-verify SSLContext, pass components to
+    # asyncpg.connect() individually with a longer timeout. Bypasses both
+    # the SSL-handshake reject and the URL-parser's password-encoding choke.
+    import ssl as ssl_lib
+    from urllib.parse import urlparse, unquote
+
+    ssl_ctx = ssl_lib.create_default_context()
+    ssl_ctx.check_hostname = False
+    ssl_ctx.verify_mode = ssl_lib.CERT_NONE
+
+    parsed = urlparse(url)
+    conn = await asyncpg.connect(
+        host=parsed.hostname,
+        port=parsed.port or 5432,
+        user=unquote(parsed.username) if parsed.username else None,
+        password=unquote(parsed.password) if parsed.password else None,
+        database=parsed.path.lstrip("/") if parsed.path else None,
+        ssl=ssl_ctx,
+        timeout=30,
+    )
 
     try:
         await conn.execute(sql_clean)
