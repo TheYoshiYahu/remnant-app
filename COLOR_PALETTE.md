@@ -192,7 +192,7 @@ Cross-reference labels in the chapter-end card render with color tied to source 
 | Thread anchor label ("Anchor: Matthew X:Y") | Spectral blue | `#0084FF` | §2 — same verse-pointer register as source-verse group labels |
 | Thread inner sub-header ("Cross-references in this chapter") | Techelet | `#1A6FE5` | §1 divine-name — chrome sub-header at thread scope, mirroring §9 main header |
 | Thread summary toggle ("Show more" / "Show less") | Bracket-emerald midtone | `#15A86A` | §3 expansion register — same family as expander buttons |
-| Old Testament / Tanakh refs (Genesis, Joshua, Isaiah, etc.) | Bracket-emerald midtone | `#15A86A` | §3 divine-speech / expansion |
+| Old Testament / Tanakh refs (Genesis, Joshua, Isaiah, etc.) | Metallic emerald → techelet gradient | `#15A86A → #2EFFA1 → #1A6FE5` (left-to-right via `bg-clip-text`) | §3 expansion register sweeping into §1 divine-name register — gives the OT refs the same metallic feel as the expander buttons + a techelet finish so the cross-ref label carries both registers in one sweep |
 | New Testament refs (Matthew, John, Romans, etc.) | Brand-mark gold midtone | `#B4A078` | §1 priestly-witness |
 | Extra-canonical refs (1 Enoch, Jubilees, Jasher, Apocrypha, Adam & Eve Conflict, Sonnini's Acts of Paul, etc.) | Argaman | `#8E4FB3` | §1 covenant-body |
 

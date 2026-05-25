@@ -182,12 +182,32 @@ function classifyBookSlug(slug: string): SourceClass {
 
 function colorForSourceClass(cls: SourceClass): string {
   // Hex values mirror COLOR_PALETTE.md §9. Keep in sync if either side
-  // moves. The midtones (#15A86A, #B4A078) are picked so the labels read
-  // cleanly at body-text scale on the dark reader pane.
+  // moves. The midtones (#B4A078, #8E4FB3) are picked so the labels read
+  // cleanly at body-text scale on the dark reader pane. Tanakh is the
+  // exception — see classNameForSourceClass below for the gradient.
   switch (cls) {
-    case "tanakh": return "#15A86A";  // bracket-emerald midtone
+    case "tanakh": return "#15A86A";  // unused (Tanakh uses the gradient class)
     case "nt":     return "#B4A078";  // brand-mark gold midtone
     case "extras": return "#8E4FB3";  // argaman
+  }
+}
+
+// S130 follow-up — Tanakh refs render with a metallic gradient sweep
+// (emerald midtone → bright emerald → techelet hint) via background-clip
+// per Yoshi's call: the flat solid emerald read dull next to the
+// metallic expander buttons. The gradient gives the Tanakh refs the
+// same metallic feel and finishes on a techelet accent so the §3
+// expansion register and the §1 divine-name register both speak in the
+// same label. Applied via Tailwind classes (not the inline style hex)
+// because background-clip/text-transparent is class-driven. NT and
+// extras stay solid through the inline-style path.
+function classNameForSourceClass(cls: SourceClass): string {
+  switch (cls) {
+    case "tanakh":
+      return "bg-gradient-to-r from-[#15A86A] via-[#2EFFA1] to-[#1A6FE5] bg-clip-text text-transparent";
+    case "nt":
+    case "extras":
+      return "";
   }
 }
 
@@ -222,7 +242,9 @@ function BaselineList({
             {entry.targets.map((tgt) => {
               const locked = !tierSatisfies(userTier, tgt.tier_required);
               const cls = classifyBookSlug(tgt.book_slug);
+              const isTanakh = cls === "tanakh";
               const labelColor = colorForSourceClass(cls);
+              const gradientClasses = classNameForSourceClass(cls);
               return (
                 <li
                   key={`${tgt.verse_id}-${tgt.source}`}
@@ -235,9 +257,12 @@ function BaselineList({
                     {/*
                       S130 — clickable ref. Unlocked refs navigate via the
                       onNavigate callback; locked refs route to /pricing
-                      so the upgrade prompt fires uniformly. The ref label
-                      color carries the source-type register per
-                      COLOR_PALETTE.md §9.
+                      so the upgrade prompt fires uniformly. Tanakh refs
+                      render with a metallic gradient (emerald → bright
+                      emerald → techelet) via Tailwind classes; NT and
+                      extras render with their solid source-type color
+                      via inline style. The two paths converge in the
+                      same <button>.
                     */}
                     <button
                       type="button"
@@ -259,8 +284,11 @@ function BaselineList({
                           ? `Unlock with ${prettyTier(tgt.tier_required)}`
                           : `Go to ${prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)}`
                       }
-                      className="font-sans text-xs font-semibold underline-offset-2 hover:underline"
-                      style={{ color: labelColor }}
+                      className={
+                        "font-sans text-xs font-semibold underline-offset-2 hover:underline " +
+                        gradientClasses
+                      }
+                      style={isTanakh ? undefined : { color: labelColor }}
                     >
                       {prettyRef(
                         tgt.book_slug,
@@ -373,12 +401,15 @@ function ThreadMemberRow({
   onNavigate?: (b: string, c: number, v: number) => void;
 }) {
   // S130 — color the target-verse ref by its source class per
-  // COLOR_PALETTE.md §9, and make it clickable. Members don't carry a
-  // separate tier_required in the current API shape; thread-level
-  // gating already greys the parent article when locked, so clicking
-  // a member ref inside a visible (unlocked) thread navigates straight.
+  // COLOR_PALETTE.md §9, and make it clickable. Tanakh refs get the
+  // metallic gradient (emerald → bright emerald → techelet hint); NT
+  // and extras get their solid source-type color. Members don't carry
+  // a separate tier_required in the current API shape; thread-level
+  // gating already greys the parent article when locked.
   const cls = classifyBookSlug(member.target.book_slug);
+  const isTanakh = cls === "tanakh";
   const labelColor = colorForSourceClass(cls);
+  const gradientClasses = classNameForSourceClass(cls);
   return (
     <li className="flex flex-wrap gap-x-2">
       <span className="font-sans text-xs text-[var(--reader-muted)]">→</span>
@@ -396,8 +427,11 @@ function ThreadMemberRow({
           );
         }}
         title={`Go to ${prettyRef(member.target.book_slug, member.target.chapter_number, member.target.verse_number)}`}
-        className="font-sans text-xs font-semibold underline-offset-2 hover:underline"
-        style={{ color: labelColor }}
+        className={
+          "font-sans text-xs font-semibold underline-offset-2 hover:underline " +
+          gradientClasses
+        }
+        style={isTanakh ? undefined : { color: labelColor }}
       >
         {prettyRef(
           member.target.book_slug,
