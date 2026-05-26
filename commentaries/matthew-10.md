@@ -1,6 +1,6 @@
 # Commentary on Matthew 10
 
-Matthew 10 is the commissioning of the twelve, falling in the gospel-arc exactly where Matthew 9 left off. The King had just seen the multitudes *as sheep having no shepherd* (Matthew 9:36), named the harvest plenteous and the labourers few, and instructed the disciples to pray the Lord of the harvest to send forth labourers into his harvest. Chapter 10 opens in the next breath as the answer to that prayer. The labourers are not sent FROM elsewhere; they are the disciples already standing there. The chapter then unfolds the mission-scope lock (vv.5-6) — the most load-bearing scope-statement in the gospel for the gathering-of-the-scattered-seed thesis — followed by the kingdom-substance freely-given (vv.7-8), the mission-economy and host-worthiness with shake-the-dust-off (vv.9-15), the persecution-expectation and *endure to the end* perseverance-warning (vv.16-23), the disciple-as-master-extended and the Beelzebul-attribution carrying into the household (vv.24-25), the *fear him which is able to destroy both soul and body in gehenna* warning (vv.26-31), the *confess me before men* credentialing pattern (vv.32-33), the sword-not-peace family-division saying with the take-up-your-cross discipleship-cost (vv.34-39), and the apostolic-representation pattern *he that receiveth you receiveth me* (vv.40-42).
+Matthew 10 is the commissioning of the twelve, falling in the gospel-arc exactly where Matthew 9 left off. The King had just seen the multitudes *as sheep having no shepherd* (Matthew 9:36), named the harvest plenteous and the labourers few, and instructed the disciples to pray the Lord of the harvest to send forth labourers into his harvest. Chapter 10 opens in the next breath as the answer to that prayer. The labourers are not sent FROM elsewhere; they are the disciples already standing there. The kingdom-economy is the Shepherd commissioning his own.
 
 ---
 
@@ -20,18 +20,7 @@ The sealed firstfruits of the gathering are numbered the same way — twelve tho
 
 Twelve apostles, twelve tribes, twelve thrones, twelve foundations, twelve gates, twelve-thousand sealed from each of twelve tribes. The architecture is one. From the commissioning in Galilee to the new-Yerushalayim (Jerusalem) descending out of heaven, the kingdom is twelve-tribe-restoration in its structural shape. The Christian-replacement reading that takes the church as the new Israel of an undifferentiated post-tribal believing community collapses on the architecture itself — the architecture is twelve-tribe-restoration from inauguration to consummation, with the apostolic-twelve and the tribal-twelve named side by side at the city's wall.
 
-**The names listed in pairs.** Matthew lists the twelve in pairs — the same pairing-pattern Mark 6:7 records, *he began to send them forth by two and two.* Two pairs of brothers anchor the list (Kefa-Andreas and Ya'aqov-Yochanan, both from the fishing trade); the lesser-known pairs follow. The figures stand together:
-
-- Shim'on (Simon) Kefa (Peter) and Andreas (Andrew) — brothers from Beit-Tsaida (Bethsaida), fishermen.
-- Ya'aqov (James) and Yochanan (John) — sons of Zavdai (Zebedee), the inner-circle alongside Kefa.
-- Philippos (Philip) and Bar-Talmai (Bartholomew) — Philippos from Beit-Tsaida (Bethsaida), Bar-Talmai possibly the Natan'el (Nathanael) of John 1:45-51.
-- Toma (Thomas) and Mattityahu (Matthew) — Mattityahu the tax-collector just called at Matthew 9:9; the Pharisaic-system's categorical-sinner-classification figure is in the twelve.
-- Ya'aqov (James) son of Halphai (Alphaeus) and Lebbaios / Taddai (Thaddaeus) — possibly Yahudah (Judah) son of Ya'aqov (James) of Luke 6:16.
-- Shim'on (Simon) the Canaanite (the Greek *kananaios* rendering the Aramaic *qan'an* = *zealot* per Luke 6:15; the Zealot political-party member, not a Canaanite geographically) and Yahudah (Judah) Iscariot.
-
-The combination of Mattityahu the Roman-tribute-collaborator AND Shim'on (Simon) the anti-Roman-Zealot in the same twelve is deliberate. The contemporary political-faction categories collapse at the King's commissioning. The Shepherd's voice — not political affiliation — is what sorts the wheat from the tares. The kingdom-citizens-roster places the categorical-opposite political loyalties in the same twelve, with the Shepherd's call as the only relevant credential.
-
-**Yahudah (Judah) Iscariot's listing-with-betrayal-note.** The framework reads the listing-with-betrayal as the inaugural-disclosure of a deeper diagnostic — the post-harvest sifting reaches even into the inner-circle. The Shepherd knows the tare is among the twelve at the moment of commissioning. Yahudah (Judah) walks with the King for three years, sees the miracles, hears the parables, holds the bag, and remains a tare. The credential-without-substance pattern operates at every level, including the apostolic. Proximity, office, credential, and length of service do not bypass the diagnostic the King has been teaching from the Sermon onward — the post-harvest sifting separates wheat from tare, the verbal-confession from the lived-confession, the Lord-Lord call from the doing-of-the-will-of-the-Father, regardless of how close to the inner-circle the tare has been placed.
+**The names listed in pairs.** Matthew lists the twelve in pairs — the same pairing-pattern Mark 6:7 records, *he began to send them forth by two and two.* Two pairs of brothers anchor the list (Kefa-Andreas and Ya'aqov-Yochanan, both from the fishing trade); the lesser-known pairs follow. The short-form analysis carries the composition-of-the-twelve diagnostic at the framework-distinctive register — the Roman-tribute-collaborator Mattityahu and the anti-Roman-Zealot Shim'on (Simon) the Canaanite placed together in the same twelve, with Yahudah (Judah) Iscariot listed-with-betrayal-note from the inaugural moment as the post-harvest sifting reaching into the inner-circle.
 
 ## §2. The mission-scope crux — *Go rather to the lost sheep of the house of Yashar'el (Israel)*
 
@@ -205,9 +194,7 @@ And Matthew 12:31-32 will name the trajectory as the blasphemy-against-the-Ruach
 
 *Wherefore I say unto you, All manner of sin and blasphemy shall be forgiven unto men: but the blasphemy against the Ruach HaKodesh (Holy Spirit) shall not be forgiven unto men.* (Matthew 12:31)
 
-The pattern is the diagnostic-end-point of the system-confronted-with-the-Ruach's-credentialing: when the system cannot deny the visible-fact, it reaches for any framework — even self-contradictory ones — that lets it reject what it cannot acknowledge. The Pharisaic-system's Beelzebul-attribution is the diagnostic in its first-century costume.
-
-**The modern-systems extension.** The framework's diagnosis of institutional Christianity as the modern Judaizer movement reads the Beelzebul-pattern as still operative in the present age. The institutional-Christian system's rebranding of heart-Torah-walking as *legalism,* of restored-names as *Hebrew-Roots-deception,* of the gathering-of-the-scattered-seed as *replacement theology* or *antisemitism* — these are the same attribution-failure architecture the Pharisees deployed against the King, in different costume. Same flesh-credential gospel; same voiding of Torah; same predatory-leadership disposition reading the Ruach (Spirit)'s work as the work of the prince-of-the-devils. The pattern is consistent across centuries; the substance is consistent; the diagnostic is consistent.
+The pattern is the diagnostic-end-point of the system-confronted-with-the-Ruach's-credentialing: when the system cannot deny the visible-fact, it reaches for any framework — even self-contradictory ones — that lets it reject what it cannot acknowledge. The Pharisaic-system's Beelzebul-attribution is the diagnostic in its first-century costume. The short-form analysis carries the cross-centuries extension — the same attribution-failure-architecture deployed by institutional Christianity against the heart-Torah-walking kingdom-citizens in modern costume, with the four-costumes / one-antichrist-architecture diagnostic locked at the 1 John 2:3-4 master-filter.
 
 ## §7. *Fear him which is able to destroy both soul and body in gehenna* — the kingdom-citizens' fear-disposition
 
@@ -323,213 +310,3 @@ The same representation-pattern; the same kingdom-economy; the same recognition 
 
 The chapter closes the commissioning-discourse. Matthew 11:1 — *And it came to pass, when Yahusha (Jesus) had made an end of commanding his twelve disciples, he departed thence to teach and to preach in their cities* — closes Matthew 10 and opens Matthew 11. The gathering-mission has been formally sent. The labourers go.
 
-## §11. Cross-Reference Apparatus
-
-*This section seeds the chapter-end card per `api/CHAPTER_END_CARD_CONTRACT.md`. Layer 1 = per-verse cross-references (curated framework-bearing rows for the `cross_references` table). Layer 2 = framework threads surfacing in this chapter (existing thread members + new threads marked PROPOSED for Yoshi's design call). This section is staging data for the engineering migration pass; it does not surface in the reader UI once the data lives in the database.*
-
-### Layer 2 — Threads surfacing in Matthew 10
-
-**Thread: `lost-sheep-mission-scope`** *(PROPOSED at Matt 1; **FRAMEWORK-MAJOR ANCHOR locked at Matt 10:5-6**).* Adds members from Matthew 10. **Candidate for elevation to LANDED with Matt 10:5-6 as primary anchor on Yoshi's design call** — this is the most-load-bearing scope-statement in the gospel for the framework's gathering-of-the-scattered-seed thesis.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 10:5-6 | Matt 1:21 | The thread's original anchor — *he shall save his people from their sins;* the *his people* of Matt 1:21 locks at the lost-sheep-of-the-house-of-Yashar'el (Israel) of Matt 10:5-6. |
-| Matt 10:5-6 | Matt 15:24 | The King's own scope-statement to the Canaanite woman: *I am not sent but unto the lost sheep of the house of Yashar'el (Israel).* The Matt 10 commission scope is the King's mission scope. |
-| Matt 10:5-6 | Ezekiel 34:11-16 | *I will both search my sheep, and seek them out ... I will seek that which was lost, and bring again that which was driven away* — the Tanakh-anchor of the lost-sheep-seeking shepherd; the Matt 10 commission is the inaugural-fulfillment. |
-| Matt 10:5-6 | Jeremiah 50:6 | *My people hath been lost sheep* — the exile-leadership-failure named at the Tanakh-level. |
-| Matt 10:5-6 | Hosea 1:6, 1:10 | *Lo-Ammi (Not my people)* and the immediate-reversal *ye are the sons of the living Elohim (God)* — the framework's anchor for the lost-sheep-of-the-house-of-Yashar'el (Israel) prophetic-substance. |
-| Matt 10:5-6 | Jeremiah 31:31-34 | The new-covenant with *the house of Yashar'el (Israel), and ... the house of Yahudah (Judah)* — the two-house framework Yahusha (Jesus) is enacting. |
-| Matt 10:5-6 | Matt 28:19 | The post-resurrection commission to *all nations* — read in framework continuity as the gathering-of-the-scattered-seed extended to the territories of the dispersion, NOT as categorical-extension to the nations-of-Genesis-1 as a whole. |
-| Matt 10:6 | John 10:11-16 | *I am the good shepherd ... other sheep I have, which are not of this fold* — the framework's reading of the *other sheep* as the scattered-seed in the dispersion (the wild-olive-descendants of the broken-off), gathered to the one fold under the one Shepherd. |
-
-**PROPOSED new thread: `twelve-apostles-twelve-tribes-restoration-architecture`** *(for Yoshi's design call).* Anchor: Matthew 10:1-4 (the naming of the twelve). Summary: *The twelve-apostles / twelve-tribes / twelve-thrones / twelve-foundations / twelve-gates architecture runs from the Matt 10 commissioning through the Matt 19:28 throne-promise to the Revelation 21 new-Yerushalayim (Jerusalem) foundation. The architecture is one: twelve-tribe-restoration is the kingdom's structural shape from inauguration to consummation. The thread carries the Tanakh-twelve-tribe anchors (Genesis 49 the patriarchal-blessings; Numbers 1 the twelve-tribe census architecture; Ezekiel 47-48 the twelve-tribe land-allotment at the millennial-restoration; Revelation 7:4-8 the 144,000 twelve-tribe firstfruits) and the New Testament twelve-apostle / twelve-throne / twelve-foundation rows.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 10:1-4 | Matt 19:28 | *Ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar'el (Israel)* — the eschatological-promise that locks the twelve-apostle / twelve-tribe correspondence. |
-| 2 | Matt 10:1-4 | Luke 22:30 | The parallel throne-promise at the last supper. |
-| 3 | Matt 10:1-4 | Revelation 21:14 | *The wall of the city had twelve foundations, and in them the names of the twelve apostles of the Lamb* — the new-Yerushalayim's structural-architecture carrying the apostolic-naming. |
-| 4 | Matt 10:1-4 | Revelation 21:12 | *Twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar'el (Israel)* — the same architecture from the twelve-tribe-side. |
-| 5 | Matt 10:1-4 | Revelation 7:4-8 | The 144,000 firstfruits sealed from the twelve tribes (12,000 from each tribe by name) — the gathering-architecture's specific-witness. |
-| 6 | Matt 10:1-4 | Ezekiel 47-48 | The millennial-twelve-tribe land-allotment Yechezk'el details in the restoration-vision. |
-
-**PROPOSED new thread: `shake-the-dust-off-rejection-response`** *(for Yoshi's design call).* Anchor: Matthew 10:14 (the shake-the-dust-off instruction). Summary: *The shake-the-dust-off pattern codifies the kingdom-citizens' response to rejection-of-the-message. The pursuit ends where the rejection lands; we do not chase the unwilling into a worship they will not give. The Tanakh-anchor is the Yahudim (Jewish)-traveler-pattern of shaking off Gentile-territory-dust at the border — Yahusha (Jesus) inverts the categorization so that Yashar'el (Israel) cities that reject the kingdom-message are categorically-placed where Gentile-territory was. Acts 13:51 records the apostolic-application; Matt 8:34 modeled it implicitly at the Gergesene episode. The eschatological-frame at Matt 10:15 (*more tolerable for Sodom and Gomorrah in the day of judgment*) names the graduated-accountability.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 10:14 | Matt 7:6 | *Cast not your pearls before swine* — the parallel discrimination-principle at the broader-pearl-level; the same disposition of not-wasting-substance-on-unworthy-receivers. |
-| 2 | Matt 10:14 | Matt 8:34 | The Gergesene townspeople asking the King to leave; the implicit-modeling of the response Matt 10:14 will codify. |
-| 3 | Matt 10:14 | Acts 13:51 | *They shook off the dust of their feet against them, and came unto Iconium* — Paul and Bar-Naba (Barnabas) at Antioch-in-Pisidia applying the principle directly. |
-| 4 | Matt 10:14 | Acts 18:6 | Paul at Corinth: *I am clean: from henceforth I will go unto the Gentiles* — the same shake-the-dust-off pattern at the synagogue-rejection. |
-| 5 | Matt 10:15 | Genesis 19:24-25 | The Sodom-and-Gomorrah destruction the eschatological-comparison references. |
-
-**Thread: `grace-and-the-opportunity-that-can-be-lost`** *(PROPOSED at Matt 6).* Adds critical members from Matthew 10.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 10:22 | Matt 24:13 | *He that shall endure unto the end, the same shall be saved* — Yahusha's (Jesus's) repetition of the same perseverance-language in the Olivet-discourse; the saving-disposition is the enduring-disposition. |
-| Matt 10:22 | Hebrews 10:36-39 | *Ye have need of patience ... if any man draw back, my soul shall have no pleasure in him* — the apostolic-restatement of the endure-to-the-end framework. |
-| Matt 10:32-33 | Luke 12:8-9 | The parallel confession-and-denial saying — same framework substance. |
-| Matt 10:33 | 2 Timothy 2:12 | *If we deny him, he also will deny us* — the apostolic-restatement of the denial-pattern. |
-
-**Thread: `kingdoms-now-under-watcher-rebellion-administration`** *(PROPOSED at Matt 4).* Adds members from Matthew 10.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 10:28 | Revelation 20:14-15 | The *destroy both soul and body in gehenna* substance lands at the second-death of the lake of fire; the eschatological-judgment-architecture in framework reading. |
-| Matt 10:38-39 | Matt 4:8-10 | The King's refusal of the kingdoms-without-the-cross at the wilderness-temptation; the disciples' take-up-your-cross follows the same trajectory — the present-age cost of refusing the watcher-rebellion-administration's economy. |
-
-**Thread: `pharisaic-sadducean-system-as-judaizer-predecessor`** *(PROPOSED at Matt 3).* Adds members from Matthew 10.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 10:17 | Matt 23:34 | *I send unto you prophets ... some of them ye shall scourge in your synagogues* — the same persecution-pattern at the same hands the Matt 23 woes will detail. |
-| Matt 10:25 | Matt 9:34 | The Beelzebul-attribution against the King first surfaced at Matt 9:34; Matt 10:25 names it has-already-been-applied; Matt 12 will dismantle it. |
-
-**Thread: `scattered-seed-gathering`** *(LANDED at S74).* Adds members from Matthew 10.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 10:23 | Ezekiel 20:33-38 | The gathered-from-the-cities-of-Yashar'el-and-the-nations pattern under the rod; the present-age gathering continuing until the King comes. |
-| Matt 10:23 | Matt 28:19 | The mission-scope extending to all-nations-where-the-scattered-seed-are; the gathering continues across the present age. |
-
-**Thread: `heart-torah-not-abolition`** *(PROPOSED at Matt 5).* Adds members from Matthew 10.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 10:37-39 | Matt 5:17-19 | The kingdom-priority over family-loyalty is consistent with the heart-Torah's higher-priority structure; the Torah's fifth-commandment (parent-honor) stands; the kingdom-priority resolves the conflict-case where family would require denying-the-King. |
-
-**Thread: `lord-lord-and-torahlessness`** *(PROPOSED at Matt 7).* Adds critical member from Matthew 10.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 10:32-33 | Matt 7:21-23 | The confession-credentialing pattern of vv.32-33 ties back to the Sermon's *Lord-Lord* dismissal — verbal-confession without lived-substance fails at the post-harvest sifting; the lived-confession (with the Torah-walking heart-substance) is the credentialing. |
-
-### Layer 1 — Per-verse cross-references
-
-**Matt 10:2-4** — The naming of the twelve apostles.
-
-| Target | Member note |
-|---|---|
-| Mark 3:13-19 | The parallel naming in Mark. |
-| Luke 6:12-16 | The parallel naming in Luke, after the all-night prayer. |
-| Acts 1:13 | The post-resurrection eleven-named (before Mattityahu's [Matthias's] addition at Acts 1:26). |
-
-**Matt 10:5-6** — *Go not into the way of the Gentiles ... But go rather to the lost sheep of the house of Yashar'el (Israel).*
-
-| Target | Member note |
-|---|---|
-| Matt 15:24 | The King's parallel scope-statement to the Canaanite woman. |
-| Romans 1:16 | Paul's *to the Yahudi (Jew) first, and also to the Greek* — read in framework continuity as the scattered-seed-in-the-nations-territories gathering. |
-| Romans 15:8 | *Now I say that Yahusha (Jesus) Christ was a minister of the circumcision for the truth of Elohim (God), to confirm the promises made unto the fathers* — Paul's framework-statement of the King's mission-scope. |
-
-**Matt 10:8** — *Heal the sick, cleanse the lepers, raise the dead, cast out devils: freely ye have received, freely give.*
-
-| Target | Member note |
-|---|---|
-| Isaiah 35:5-6 | The Messianic-credential prophecy now extended to the apostolic-mission. |
-| Matt 11:5 | Yahusha (Jesus) citing the same Isaiah 35 credential to Yochanan's (John's) prison-question — the credential is consistent across the King's-ministry and the apostles'-mission. |
-| Acts 8:18-20 | Kefa's (Peter's) rebuke of Shim'on (Simon) the sorcerer for trying to buy the Ruach (Spirit)'s gift — the freely-give principle defended against the monetization-attempt. |
-
-**Matt 10:14** — *Shake off the dust of your feet.*
-
-| Target | Member note |
-|---|---|
-| Acts 13:51 | Direct apostolic-application by Paul and Bar-Naba (Barnabas). |
-| Mark 6:11 | The parallel shake-the-dust-off instruction. |
-| Luke 9:5 | The parallel in Luke. |
-
-**Matt 10:15** — *More tolerable for the land of Sodom and Gomorrah in the day of judgment.*
-
-| Target | Member note |
-|---|---|
-| Genesis 19:24-25 | The Sodom-and-Gomorrah destruction-narrative. |
-| Matt 11:23-24 | Yahusha's (Jesus's) parallel statement against Kfar-Nachum (Capernaum) at the same eschatological-graduated-accountability frame. |
-
-**Matt 10:16** — *Wise as serpents, harmless as doves.*
-
-| Target | Member note |
-|---|---|
-| Genesis 3:1 | The serpent's *arum* (subtil / shrewd) inverted from corrupted-application to kingdom-application. |
-| Genesis 8:11 | The dove of the new-creation-after-the-flood. |
-| Matt 3:16 | The Ruach HaKodesh (Holy Spirit) descending in dove-form at the immersion — the dove-substance the disciples carry. |
-
-**Matt 10:22** — *He that endureth to the end shall be saved.*
-
-| Target | Member note |
-|---|---|
-| Matt 24:13 | The same phrase repeated in the Olivet-discourse. |
-| Mark 13:13 | The Markan parallel. |
-| Hebrews 3:14 | *We are made partakers of Messiah, if we hold the beginning of our confidence stedfast unto the end.* |
-| Hebrews 10:36-39 | The patience-and-perseverance framework with the draw-back-warning. |
-
-**Matt 10:23** — *Ye shall not have gone over the cities of Yashar'el (Israel), till the Son of Adam be come.*
-
-| Target | Member note |
-|---|---|
-| Daniel 7:13-14 | The kaph-comparative *one like the Son of Adam* — incarnation-honoring; harmonized identification is Yahusha (Jesus) himself, the Formed cloud-rider who took on flesh. |
-| Matt 24:30 | The Son of Adam coming on the clouds — the future-coming-in-glory at the consummation. |
-| Matt 16:27-28 | *The Son of Adam shall come in the glory of his Father* — the future-coming-in-glory reference. |
-| Ezekiel 20:33-38 | The eschatological-gathering-with-sifting the present-age mission-to-Yashar'el (Israel) is moving toward. |
-
-**Matt 10:28** — *Fear him which is able to destroy both soul and body in gehenna.*
-
-| Target | Member note |
-|---|---|
-| Isaiah 66:24 | *Their worm shall not die, neither shall their fire be quenched* — the Tanakh's closing-image of the eschatological-judgment-aftermath. |
-| Jeremiah 7:31-32 | The Valley-of-Hinnom's-prophetic-naming as the place of judgment. |
-| 2 Kings 23:10 | Yoshiyahu's (Josiah's) defiling of Topheth in the Valley of Hinnom because of the child-sacrifices to Molech. |
-| Revelation 20:14-15 | The lake-of-fire as the second-death. |
-| Proverbs 9:10 | *The fear of Yahuah (the LORD) is the beginning of wisdom* — the framework's fear-disposition Tanakh-substance. |
-
-**Matt 10:32-33** — *Confess me before men ... deny me before men.*
-
-| Target | Member note |
-|---|---|
-| Luke 12:8-9 | The parallel confession-and-denial saying. |
-| 2 Timothy 2:12 | *If we deny him, he also will deny us.* |
-| Matt 7:21-23 | The standing diagnostic — confession-as-credential-without-substance is the *Lord-Lord* dismissal-pattern; the confession Yahusha (Jesus) recognizes is the lived-confession with Torah-walking-substance. |
-
-**Matt 10:34-36** — *I came not to send peace, but a sword.*
-
-| Target | Member note |
-|---|---|
-| Micah 7:6 | The direct Tanakh-citation behind vv.35-36. |
-| Luke 12:51-53 | The Lukan parallel. |
-| Genesis 3:15 | The enmity-between-the-two-seeds Tanakh-substance the family-division pattern enacts. |
-
-**Matt 10:37** — *He that loveth father or mother more than me is not worthy of me.*
-
-| Target | Member note |
-|---|---|
-| Exodus 20:12 | The Torah's fifth-commandment standing — *Honour thy father and thy mother;* the kingdom-priority resolves the conflict-case, it does not abrogate the commandment. |
-
-**Matt 10:38** — *He that taketh not his cross.*
-
-| Target | Member note |
-|---|---|
-| Matt 16:24 | The repetition of the take-up-your-cross saying after the Caesarea-Philippi confession. |
-| Mark 8:34 | The Markan parallel. |
-| Luke 9:23 | The Lukan parallel with the *daily* element. |
-| Luke 14:27 | The further repetition with the cost-of-discipleship parables. |
-
-**Matt 10:39** — *He that findeth his life shall lose it.*
-
-| Target | Member note |
-|---|---|
-| Matt 6:19-21 | The treasures-in-heaven framework — the kingdom-citizens' economic-orientation against the watcher-rebellion-administration's economic-orientation. |
-| Psalm 49 | The wisdom-tradition's reading that no man can redeem his brother's life and that wealth cannot bear a person through death. |
-
-**Matt 10:40** — *He that receiveth you receiveth me.*
-
-| Target | Member note |
-|---|---|
-| John 13:20 | *He that receiveth whomsoever I send receiveth me; and he that receiveth me receiveth him that sent me* — the parallel apostolic-representation pattern. |
-| Matt 25:40 | *Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me* — the same representation-pattern at the eschatological-judgment. |
-
-**Matt 10:42** — *A cup of cold water only in the name of a disciple.*
-
-| Target | Member note |
-|---|---|
-| Matt 6:1-2 | The Pharisaic-grandstanding-religiosity the cup-of-cold-water economy inverts; the kingdom-economy operates at smallest-substance-given-with-right-heart, not at trumpet-blowing-with-public-display. |
-| Matt 25:34-40 | The great-judgment-scene where the cup-of-cold-water becomes the *inasmuch as ye have done it* recognition. |

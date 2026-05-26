@@ -61,6 +61,7 @@ import {
   startSelecting as rangeStartSelecting,
 } from "./lib/range-selection";
 import { renderMarkdownBody } from "./lib/markdown";
+import { useParentheticalsToggle } from "./lib/useParentheticalsToggle";
 import { useTheme } from "./lib/theme";
 import {
   cancelPendingSave,
@@ -280,6 +281,23 @@ function Reader() {
       window.localStorage.setItem("rop_hide_commentary_v1", String(next));
     }
   };
+
+  // S144 — parentheticals-hide toggle. Default OFF (parentheticals
+  // visible) to preserve the retention-mechanism for first-time Christian
+  // readers per the voice skill's "Why the Parenthetical Is Non-
+  // Negotiable" section. The reader who has internalized the restored
+  // names opts INTO the strip, removing the now-redundant parentheticals
+  // from every reading surface — verses, chapter_intro, commentary
+  // entries, cross-reference notes, thread summaries, and thread member
+  // notes. State lives in localStorage at `rop_hide_parentheticals_v1`;
+  // hook reads + persists via lib/useParentheticalsToggle. The value
+  // is passed down as a prop to ChapterCommentary and ChapterEndCard so
+  // all surfaces stay in sync within a single render.
+  const {
+    hide: hideParentheticals,
+    toggle: toggleHideParentheticals,
+    applyToText: applyParensStrip,
+  } = useParentheticalsToggle();
 
   // S116 — reading-position persistence. `currentVerse` tracks the
   // topmost-visible verse via IntersectionObserver (initial 1, updated
@@ -1514,8 +1532,22 @@ function Reader() {
                           // plain segments and reconstructs the source
                           // spacing accurately.
                           if (seg.kind === "plain") {
+                            // S144 — apply the parentheticals-strip toggle
+                            // ONLY to plain segments. Tappable Strong's-
+                            // tagged segments carry the restored Hebrew
+                            // word (e.g., "Yahuah", "Elohim") with no
+                            // parenthetical; the parens live in the
+                            // adjacent plain segment (e.g., " (LORD)",
+                            // " (God)"). Stripping plain-only preserves
+                            // the tappable boundaries and Strong's
+                            // linkage while removing the English
+                            // parentheticals when the reader has opted
+                            // in. When the toggle is OFF, applyParensStrip
+                            // returns the input unchanged (no-op).
                             return (
-                              <span key={`p-${segIdx}`}>{seg.text} </span>
+                              <span key={`p-${segIdx}`}>
+                                {applyParensStrip(seg.text)}{" "}
+                              </span>
                             );
                           }
                           // tappable
@@ -1654,7 +1686,29 @@ function Reader() {
             study-aid surfaces in one motion. Techelet fill so the
             button reads clearly against the dark surface.
           */}
-          <div className="mt-8 flex items-center justify-end border-t border-[var(--reader-rule)] pt-4">
+          <div className="mt-8 flex flex-wrap items-center justify-end gap-2 border-t border-[var(--reader-rule)] pt-4">
+            {/*
+              S144 — parentheticals-hide toggle. Sits left of the study-
+              aid toggle in the chrome strip. Default OFF (parentheticals
+              visible) per the voice-skill retention-mechanism for first-
+              time Christian readers; the reader who has internalized the
+              restored names opts INTO the strip. Button copy: "Hide name
+              translations" / "Show name translations" — names what the
+              parentheticals are (translations of the Hebrew restored
+              names into the conventional English the reader may have
+              learned the verses under).
+            */}
+            <button
+              type="button"
+              onClick={toggleHideParentheticals}
+              aria-pressed={hideParentheticals}
+              title="Hide or show the English parentheticals after restored Sacred Names (e.g., Yahuah (LORD), Yashar'el (Israel), Mosheh (Moses)). Persists across chapters and reloads."
+              className="rounded-md border border-[var(--reader-rule)] bg-transparent px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-text)] shadow-sm hover:opacity-90"
+            >
+              {hideParentheticals
+                ? "Show name translations"
+                : "Hide name translations"}
+            </button>
             <button
               type="button"
               onClick={toggleHideCommentary}
@@ -1687,7 +1741,17 @@ function Reader() {
                 the seed-data layer and render as plain inline text.
               */}
               <div className="space-y-0">
-                {renderMarkdownBody(chapterDetail.chapter_intro)}
+                {/*
+                  S144 — apply the parentheticals-strip toggle to the
+                  chapter_intro (free-tier commentary) before passing to
+                  renderMarkdownBody. When the toggle is OFF the function
+                  is a no-op; when ON it removes the English-form
+                  parentheticals after restored Sacred Names per
+                  lib/stripParentheticals.ts.
+                */}
+                {renderMarkdownBody(
+                  applyParensStrip(chapterDetail.chapter_intro)
+                )}
               </div>
             </aside>
           )}
@@ -1708,6 +1772,7 @@ function Reader() {
               bookSlug={chapterDetail.book.slug}
               chapterNumber={chapterDetail.chapter.chapter_number}
               userTier={me?.tier ?? "free"}
+              hideParentheticals={hideParentheticals}
             />
           )}
 
@@ -1726,6 +1791,7 @@ function Reader() {
               chapterNumber={chapterDetail.chapter.chapter_number}
               userTier={me?.tier ?? "free"}
               onNavigate={jumpToVerseRef}
+              hideParentheticals={hideParentheticals}
             />
           )}
 

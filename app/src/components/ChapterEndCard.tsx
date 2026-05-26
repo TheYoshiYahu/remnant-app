@@ -46,6 +46,7 @@ import {
   type ThreadMember,
   getChapterCrossReferences,
 } from "../lib/api";
+import { applyParentheticalsToggle } from "../lib/useParentheticalsToggle";
 
 interface ChapterEndCardProps {
   bookSlug: string;
@@ -63,6 +64,14 @@ interface ChapterEndCardProps {
     chapterNumber: number,
     verseNumber: number
   ) => void;
+  /**
+   * S144 — parentheticals-hide toggle state, owned by App.tsx and
+   * passed down. When `true`, every text surface in this card (baseline
+   * target previews, thread summary_md paragraphs, thread member-row
+   * previews and notes) has the English-form parentheticals after
+   * restored Sacred Names stripped at render time. Default `false`.
+   */
+  hideParentheticals?: boolean;
 }
 
 export default function ChapterEndCard({
@@ -70,6 +79,7 @@ export default function ChapterEndCard({
   chapterNumber,
   userTier = "free",
   onNavigate,
+  hideParentheticals = false,
 }: ChapterEndCardProps) {
   const [data, setData] = useState<ChapterEndCardResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -128,6 +138,7 @@ export default function ChapterEndCard({
             entries={data.baseline}
             userTier={userTier}
             onNavigate={onNavigate}
+            hideParentheticals={hideParentheticals}
           />
         </div>
       )}
@@ -140,6 +151,7 @@ export default function ChapterEndCard({
               thread={t}
               userTier={userTier}
               onNavigate={onNavigate}
+              hideParentheticals={hideParentheticals}
             />
           ))}
         </div>
@@ -235,10 +247,12 @@ function BaselineList({
   entries,
   userTier,
   onNavigate,
+  hideParentheticals,
 }: {
   entries: ChapterEndCardResponse["baseline"];
   userTier: ContentTier;
   onNavigate?: (b: string, c: number, v: number) => void;
+  hideParentheticals: boolean;
 }) {
   return (
     <ul className="space-y-3">
@@ -307,7 +321,19 @@ function BaselineList({
                         tgt.verse_number
                       )}
                     </button>{" "}
-                    <span className="italic">{tgt.preview}</span>
+                    {/*
+                      S144 — apply parentheticals-strip to the target
+                      verse preview. Tanakh / NT / extras-library
+                      previews all carry restored Sacred Names with
+                      parentheticals; the strip toggle removes them
+                      uniformly when the reader has opted in.
+                    */}
+                    <span className="italic">
+                      {applyParentheticalsToggle(
+                        tgt.preview,
+                        hideParentheticals
+                      )}
+                    </span>
                   </span>
                 </li>
               );
@@ -325,13 +351,24 @@ function ThreadCallout({
   thread,
   userTier,
   onNavigate,
+  hideParentheticals,
 }: {
   thread: ChapterEndCardResponse["threads"][number];
   userTier: ContentTier;
   onNavigate?: (b: string, c: number, v: number) => void;
+  hideParentheticals: boolean;
 }) {
   const [expanded, setExpanded] = useState<boolean>(false);
-  const paragraphs = thread.summary_md.split(/\n{2,}/);
+  // S144 — apply the parentheticals-strip toggle to the summary_md
+  // BEFORE splitting into paragraphs. Stripping at the whole-body level
+  // is correct because every paragraph carries restored Sacred Names
+  // that should toggle together; splitting on `\n{2,}` after the strip
+  // preserves paragraph structure cleanly.
+  const summaryMd = applyParentheticalsToggle(
+    thread.summary_md,
+    hideParentheticals
+  );
+  const paragraphs = summaryMd.split(/\n{2,}/);
   const firstParagraph = paragraphs[0];
   const rest = paragraphs.slice(1);
   const locked = !tierSatisfies(userTier, thread.tier_required);
@@ -406,6 +443,7 @@ function ThreadCallout({
                 key={`${m.sort_order}-${m.source_verse_number}`}
                 member={m}
                 onNavigate={onNavigate}
+                hideParentheticals={hideParentheticals}
               />
             ))}
           </ul>
@@ -528,9 +566,11 @@ function teaserFromSummary(firstParagraph: string): string {
 function ThreadMemberRow({
   member,
   onNavigate,
+  hideParentheticals,
 }: {
   member: ThreadMember;
   onNavigate?: (b: string, c: number, v: number) => void;
+  hideParentheticals: boolean;
 }) {
   // S130 — color the target-verse ref by its source class per
   // COLOR_PALETTE.md §9. All three source classes render as metallic
@@ -565,12 +605,25 @@ function ThreadMemberRow({
           member.target.verse_number
         )}
       </button>
+      {/*
+        S144 — apply the parentheticals-strip toggle to BOTH the target
+        verse preview and the member_note. The preview carries restored
+        Sacred Names from the verse text; the member_note carries them
+        in framework-prose. Both should toggle uniformly with the rest
+        of the chapter-end card.
+      */}
       <span className="basis-full italic ml-5 text-[var(--reader-text)]">
-        {member.target.preview}
+        {applyParentheticalsToggle(
+          member.target.preview,
+          hideParentheticals
+        )}
       </span>
       {member.member_note && (
         <span className="basis-full ml-5 font-sans text-xs text-[var(--reader-muted)]">
-          {member.member_note}
+          {applyParentheticalsToggle(
+            member.member_note,
+            hideParentheticals
+          )}
         </span>
       )}
     </li>

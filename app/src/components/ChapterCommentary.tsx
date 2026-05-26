@@ -59,6 +59,7 @@ import {
   getChapterCommentary,
 } from "../lib/api";
 import { renderMarkdownBody } from "../lib/markdown";
+import { applyParentheticalsToggle } from "../lib/useParentheticalsToggle";
 
 interface ChapterCommentaryProps {
   bookSlug: string;
@@ -72,6 +73,15 @@ interface ChapterCommentaryProps {
    * the prop is already plumbed through from App.tsx.
    */
   userTier?: ContentTier;
+  /**
+   * S144 — parentheticals-hide toggle state, owned by App.tsx and
+   * passed down so a single click in the chrome flips the strip for
+   * every reader surface in one render. When `true`, the strip applies
+   * to every commentary entry body (Basic / Deeper Dive / Featured)
+   * before it reaches the markdown renderer; when `false` (default),
+   * bodies render with the parentheticals intact.
+   */
+  hideParentheticals?: boolean;
 }
 
 // S130 — the hide-commentary toggle moved up to App.tsx and now gates
@@ -83,6 +93,7 @@ interface ChapterCommentaryProps {
 export default function ChapterCommentary({
   bookSlug,
   chapterNumber,
+  hideParentheticals = false,
 }: ChapterCommentaryProps) {
   const [data, setData] = useState<ChapterCommentaryResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -135,7 +146,11 @@ export default function ChapterCommentary({
       </h3>
       <div className="space-y-4">
         {data.entries.map((entry) => (
-          <CommentaryBlock key={entry.id} entry={entry} />
+          <CommentaryBlock
+            key={entry.id}
+            entry={entry}
+            hideParentheticals={hideParentheticals}
+          />
         ))}
       </div>
     </section>
@@ -146,8 +161,10 @@ export default function ChapterCommentary({
 
 function CommentaryBlock({
   entry,
+  hideParentheticals,
 }: {
   entry: ChapterCommentaryEntry;
+  hideParentheticals: boolean;
 }) {
   const headerLabel = entry.title || labelForSurface(entry.surface_kind);
   const expanderLabel = expanderLabelForSurface(entry.surface_kind);
@@ -238,7 +255,17 @@ function CommentaryBlock({
           </span>
         </summary>
         <div className="prose-paragraphs mt-2 leading-relaxed text-[var(--reader-text)] space-y-0">
-          {renderCommentaryBody(renderableBody)}
+          {/*
+            S144 — apply the parentheticals-strip toggle to the body
+            before passing to renderCommentaryBody. The body still gets
+            split on H2 sub-headings (`## §N. Title`) by renderCommentary-
+            Body; stripping at this layer (whole body) is correct because
+            sub-heading text and section text both carry restored Sacred
+            Names that should toggle together.
+          */}
+          {renderCommentaryBody(
+            applyParentheticalsToggle(renderableBody, hideParentheticals)
+          )}
         </div>
       </details>
     </article>

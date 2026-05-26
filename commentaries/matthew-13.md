@@ -2,7 +2,7 @@
 
 **Framework apologetic for the Yoshi rendering. LANDED 2026-05-19 (session 84).**
 
-The thirteenth chapter of the Matthew sweep. **The parables-of-the-kingdom chapter — the seed-war-pattern at maximum-parable-density.** Seven parables structured in two settings (four from the boat to the multitudes — sower, wheat-and-tares, mustard seed, leaven; three in the house to the disciples — hidden treasure, pearl-of-great-price, dragnet) frame the kingdom's-arrival-and-progress-through-the-age. Four framework-major moments land: the Yeshayahu (Isaiah) 6:9-10 hardening-citation at vv.13-15 (the cause-and-effect-of-hearing per Red Line #11); the wheat-and-tares parable at vv.24-30 with the FRAMEWORK-MAJOR interpretation at vv.36-43 (the direct Adam-and-the-Tares architecture from the framework's framework-deep apparatus, the post-harvest-sifting per Red Line #11, the *children of the kingdom* and *children of the wicked one* seed-distinction across the field-of-the-world); the dragnet at vv.47-50 (the recapitulated post-harvest-sifting); the rejection at Natsareth (Nazareth) at vv.53-58 (the *prophet-not-without-honor-save-in-his-own-country* identification of the Pharisaic-pattern at the hometown-level). The chapter dismantles the inherited Christian collapse of the mustard-seed-and-leaven into kingdom-triumphalism-throughout-the-age and restores the framework reading: the field is the world, the tares are sown in among the wheat across the age, and the burning-of-the-tares precedes the gathered-wheat's-shining-as-the-sun in the kingdom of their Father. Reads against `_COMMENTARY_SUMMATION.md` as the chapter-level lens, against the voice skill as the spine. Cross-reference apparatus at §12.
+The thirteenth chapter of the Matthew sweep. **The parables-of-the-kingdom chapter — the seed-war-pattern at maximum-parable-density.** Seven parables structured in two settings (four from the boat to the multitudes — sower, wheat-and-tares, mustard seed, leaven; three in the house to the disciples — hidden treasure, pearl-of-great-price, dragnet) frame the kingdom's-arrival-and-progress-through-the-age. Four framework-major moments land: the Yeshayahu (Isaiah) 6:9-10 hardening-citation at vv.13-15 (the cause-and-effect-of-hearing per Red Line #11); the wheat-and-tares parable at vv.24-30 with the FRAMEWORK-MAJOR interpretation at vv.36-43 (the direct Adam-and-the-Tares architecture from the framework's framework-deep apparatus, the post-harvest-sifting per Red Line #11, the *children of the kingdom* and *children of the wicked one* seed-distinction across the field-of-the-world); the dragnet at vv.47-50 (the recapitulated post-harvest-sifting); the rejection at Natsareth (Nazareth) at vv.53-58 (the *prophet-not-without-honor-save-in-his-own-country* identification of the Pharisaic-pattern at the hometown-level). The chapter dismantles the inherited Christian collapse of the mustard-seed-and-leaven into kingdom-triumphalism-throughout-the-age and restores the framework reading: the field is the world, the tares are sown in among the wheat across the age, and the burning-of-the-tares precedes the gathered-wheat's-shining-as-the-sun in the kingdom of their Father.
 
 ---
 
@@ -83,11 +83,9 @@ The parable's-architecture: the man-which-sowed-good-seed-in-his-field; the enem
 
 The framework reads this WITHOUT collapsing into the Christian-pacifist-absolutization. The Tanakh's-judicial-architecture (the cities-of-refuge, the courts-of-elders, the death-penalty-for-capital-offenses, the warfare-against-the-Canaanites-in-the-conquest) operates in its-own-Tanakh-frame; the *let-both-grow-together* is the kingdom-citizens'-disposition toward the eschatological-final-judgment which is the Father's-prerogative, not toward the present-age-judicial-functions the Torah establishes.
 
-## §5. The mustard seed and the leaven
+## §5. The mustard seed
 
-*Another parable put he forth unto them, saying, The kingdom of heaven is like to a grain of mustard seed, which a man took, and sowed in his field: Which indeed is the least of all seeds: but when it is grown, it is the greatest among herbs, and becometh a tree, so that the birds of the air come and lodge in the branches thereof. Another parable spake he unto them; The kingdom of heaven is like unto leaven, which a woman took, and hid in three measures of meal, till the whole was leavened* (vv.31-33).
-
-**The framework reads these two short parables carefully in framework-register, against the inherited-Christian collapse into kingdom-triumphalism-throughout-the-age.**
+*Another parable put he forth unto them, saying, The kingdom of heaven is like to a grain of mustard seed, which a man took, and sowed in his field: Which indeed is the least of all seeds: but when it is grown, it is the greatest among herbs, and becometh a tree, so that the birds of the air come and lodge in the branches thereof* (vv.31-32).
 
 **The mustard seed** (vv.31-32). The inherited Christian-commentary-tradition has read the mustard-seed-parable as the kingdom's-growth-from-small-beginnings-to-global-dominance-throughout-the-age. The framework reads with framework-caution.
 
@@ -98,25 +96,6 @@ The framework reads this WITHOUT collapsing into the Christian-pacifist-absoluti
 - The framework holds the parable's-tension in framework-substance. The mustard-seed-kingdom grows. The growth itself is real. The bird-lodging-in-the-branches in the present-age can carry both substances — legitimate-shelter-for-the-nations-being-drawn-toward-the-kingdom AND the unwelcome-development of corruption-finding-shelter-in-the-kingdom-movement.
 - The framework rules out the inherited-Christian-collapse into pure-triumphalism. The kingdom's-growth in the present-age IS not a uncomplicated-progress-toward-global-dominance; the wheat-and-tares parable just-given establishes that BOTH wheat AND tares grow-together-until-the-harvest. The mustard-seed-parable read in framework continues the same architecture: the kingdom grows; the growth itself produces structures that birds-of-different-substance can lodge-in; the post-harvest-sifting will sort it.
 - The framework reads the parable as the kingdom-citizens' realistic-expectation in the present-age. The kingdom IS growing. The growth IS visible. The growth ALSO produces structures-that-counterfeit-can-shelter-in. Both substances operate-in-the-present-age; the harvest sorts.
-
-**The leaven** (v.33). The inherited Christian-commentary-tradition has often-read the leaven-parable as paralleling the mustard-seed: the kingdom's-positive-permeation of the world.
-
-The framework reads with significant-framework-caution. Scripture's-other-uses of LEAVEN are consistently-negative:
-
-- Shemot (Exodus) 12:15 — leaven-removed-from-the-house at the Pesach (Passover) preparation; the seven-days-of-unleavened-bread is the covenant-substance of separation-from-corruption.
-- Vayikra (Leviticus) 2:11 — no leaven in any meal-offering offered to Yahuah (the LORD).
-- Matt 16:6, 11-12 — Yahusha (Jesus) warns the disciples to beware *the leaven of the Pharisees and of the Sadducees,* and the gospel-itself identifies the leaven as their *doctrine.*
-- Luke 12:1 — the leaven of the Pharisees identified as their hypocrisy.
-- 1 Korinthians (Corinthians) 5:6-8 — *a little leaven leaveneth the whole lump* — Paul deploys leaven as the metaphor for sin-in-the-assembly to be purged.
-- Galatians 5:9 — Paul again — *a little leaven leaveneth the whole lump* — in the context of the Judaizer-influence corrupting the Galatian-assembly.
-
-The framework reads the leaven-parable in continuity with the consistent-Tanakh-and-apostolic-usage. The framework's reading: the leaven IS the corruption-substance hidden-in-the-meal that spreads-until-the-whole-lump is leavened. The kingdom-of-heaven-in-the-present-age is LIKE this in the sense that the unwelcome-development of corruption-within-the-kingdom-movement is the consistent-pattern across the age. The Pharisaic-leaven, the Judaizer-leaven, the antinomian-leaven, the institutional-Christian-Sunday-Law-leaven, the Hebrew-Roots-false-inclusion-leaven — all operate by the same hidden-and-spreading mechanism the parable names.
-
-The framework rules out the inherited-Christian-collapse into kingdom-permeation-triumphalism. The leaven-parable read with scripture's-consistent-leaven-usage is a warning-parable about the unwelcome-development across the age, NOT a triumphalist-progress narrative.
-
-The framework reads the *three measures of meal* in the same register. The three-measures (*sata tria* — about a bushel) is the substance Sarah prepared for the visit of Yahuah (the LORD) and the two-malakim (angels) at Bereshit (Genesis) 18:6 — the covenant-meal-substance. The leaven-hidden-in-the-covenant-meal-substance is the framework's-most-careful reading of the parable.
-
-The framework holds the tension. The kingdom IS growing across the age (mustard-seed). The kingdom-movement is ALSO subject to leavening (leaven-parable). Both parables continue the wheat-and-tares architecture. The harvest will sort.
 
 ## §6. The Psalm 78:2 citation — the parables-method's Tanakh-anchor
 
@@ -162,24 +141,7 @@ The framework reads vv.40-43 as the King's-direct-confirmation of the post-harve
 
 **The closing-call** (v.43b). *Who hath ears to hear, let him hear.* The chapter's-second deployment of the closing-call (the first at v.9, the parable-of-the-sower's-close). The framework reads the bracket-structure: the chapter opens-and-closes with the cause-and-effect-of-hearing diagnostic per Red Line #11. The chapter's-substance is hearing-and-not-hearing, wheat-and-tares, the post-harvest-sifting, the kingdom-of-the-Father; the closing-call positions the disciple-and-the-reader to hear-or-not-hear by the disposition-already-given.
 
-## §8. The hidden treasure and the pearl of great price — the Father seeks and finds
-
-*Again, the kingdom of heaven is like unto treasure hid in a field; the which when a man hath found, he hideth, and for joy thereof goeth and selleth all that he hath, and buyeth that field. Again, the kingdom of heaven is like unto a merchant man, seeking goodly pearls: Who, when he had found one pearl of great price, went and sold all that he had, and bought it* (vv.44-46).
-
-**The framework reads these two short parables carefully in framework-register, against the inherited-Christian-reading that collapses them into believer-finds-kingdom-and-pays-the-price.**
-
-**The inherited-Christian-reading.** The inherited-pulpit has often-read the parables as: the kingdom of heaven is the treasure / the pearl; the believer is the man / the merchant; the believer-finds-the-kingdom and sells-all-he-has to obtain-it. This reading lands in the inherited Christian-frame of the believer's-decision-and-cost-of-discipleship. The framework receives the inherited-reading as a partial-reading that does not survive the framework-test on its own.
-
-**The framework's-careful-reading.** The framework reads the parables in framework-register with attention to who-the-buyer-is in the parable's-economy. The framework's reading depends on whether the parable is read with the buyer-as-the-believer (inherited) or the buyer-as-the-Father / the-Son (framework-substantive).
-
-- **Buyer-as-the-Father-Son substance.** In framework-register, the Sower of vv.24-30 / vv.36-43 is the Son of Adam. The buyer who finds the treasure / the pearl and sells-all-he-has to obtain-it is more-naturally-the-same-Sower-substance. The treasure-in-the-field (the field of the world per v.38) is the scattered-seed-treasure; the Father / the Son finds-and-rejoices-and-pays-the-full-price-to-obtain. The pearl-of-great-price is the same substance from a different angle. The framework reads this in continuity with Isaiah 43:4 — *Since thou wast precious in my sight, thou hast been honourable, and I have loved thee: therefore will I give men for thee, and people for thy life* — the Father's-paying-of-the-price for the elect-treasure is direct Tanakh-substance.
-- The framework reads this in continuity with the cost-of-the-King's-mission. The King-sold-all-he-had (Philippians 2:6-8 — *being in the form of Elohim (God), thought it not robbery to be equal with Elohim (God): But made himself of no reputation, and took upon him the form of a servant ... humbled himself, and became obedient unto death*) — the King-paid-the-full-price for the kingdom-and-the-treasure.
-- **The framework holds the reading-tension.** The parables in scripture-substance can carry both-readings without collapsing-into-one. The framework's-preferred-reading is the Father-Son-buyer-finds-the-treasure substance because it preserves the cause-and-effect-of-Red-Line-11 (the Father finds the elect; the elect did-not-find-the-Father-by-their-own-initiative; the hearing-reveals-what-was-already-true). The inherited-believer-buyer reading collapses into the inverted-causation that Red Line #11 rules out.
-- The framework rules out any reading that makes the believer's-finding-and-paying the causal-mechanism of salvation. The framework reads the parables as the kingdom-of-heaven-IS-LIKE the substance the parable enacts; the substance preserves the framework's-cause-and-effect.
-
-**The framework's pastoral-application.** The framework reads the parables as the kingdom-citizens' encouragement-and-vocation-substance — the kingdom IS of supreme-worth; the kingdom-citizens DO operate from a disposition-of-supreme-prioritization. The kingdom-citizens' disposition is not the causal-mechanism of their belonging; the disposition is the response-substance flowing from the belonging-already-conferred.
-
-## §9. The dragnet — the recapitulated post-harvest-sifting
+## §8. The dragnet — the recapitulated post-harvest-sifting
 
 *Again, the kingdom of heaven is like unto a net, that was cast into the sea, and gathered of every kind: Which, when it was full, they drew to shore, and sat down, and gathered the good into vessels, but cast the bad away. So shall it be at the end of the world: the angels shall come forth, and sever the wicked from among the just, And shall cast them into the furnace of fire: there shall be wailing and gnashing of teeth* (vv.47-50).
 
@@ -194,7 +156,7 @@ The framework reads the differences in framework-substance:
 
 The framework reads this WITHOUT collapsing into the false-inclusion-gospel that the *every kind* erases the kingdom-citizens-identity-distinction. The net gathers broadly; the sorting confirms-the-distinction. The framework's Red Line #7 holds — both-branches-of-the-olive-tree are Yashar'el (Israel); no non-Israelite is grafted into the tree by faith-confession alone.
 
-## §10. The scribe-instructed-into-the-kingdom — treasures new and old
+## §9. The scribe-instructed-into-the-kingdom — treasures new and old
 
 *Yahusha (Jesus) saith unto them, Have ye understood all these things? They say unto him, Yea, Lord. Then said he unto them, Therefore every scribe which is instructed unto the kingdom of heaven is like unto a man that is an householder, which bringeth forth out of his treasure things new and old* (vv.51-52).
 
@@ -210,7 +172,7 @@ The framework reads this AGAINST the antinomian-Christianity-collapse that has d
 
 The framework reads this in continuity with Matt 5:17-19 (*think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil*) and the framework's `heart-torah-not-abolition` thread. The scribe-instructed-into-the-kingdom is the kingdom-citizen-who-holds-both. The framework rules out the institutional-Christian-pulpit's-pattern of bringing-forth-the-new-without-the-old; that pattern is the antinomian-Christianity-collapse the framework dismantles.
 
-## §11. The rejection at Natsareth (Nazareth) — *a prophet not without honour, save in his own country*
+## §10. The rejection at Natsareth (Nazareth) — *a prophet not without honour, save in his own country*
 
 *And it came to pass, that when Yahusha (Jesus) had finished these parables, he departed thence. And when he was come into his own country, he taught them in their synagogue, insomuch that they were astonished, and said, Whence hath this man this wisdom, and these mighty works? Is not this the carpenter's son? is not his mother called Mariam (Mary)? and his brethren, Ya'aqov (James), and Yoses, and Shim'on (Simon), and Yahudah (Jude)? And his sisters, are they not all with us? Whence then hath this man all these things? And they were offended in him. But Yahusha (Jesus) said unto them, A prophet is not without honour, save in his own country, and in his own house. And he did not many mighty works there because of their unbelief* (vv.53-58).
 
@@ -228,223 +190,3 @@ The framework reads this against the Reformed-monergistic-determinism that would
 
 **The framework reads the chapter's-close in framework-substance.** The chapter that opened with the boat-pulpit-teaching-to-the-multitudes closes with the hometown-synagogue-rejection. The seed-war-pattern that opened the chapter (hearing-and-not-hearing) closes the chapter at the same diagnostic-level. The kingdom-of-heaven is sown; the field is the world; the wheat-and-tares grow-together-until-the-harvest; the post-harvest-sifting sorts; the hometown's-rejection foreshadows the broader-rejection-at-Yerushalayim (Jerusalem) the gospel will land in subsequent chapters.
 
-## §12. Cross-Reference Apparatus
-
-### Layer 2 — Threads surfacing in Matthew 13
-
-**PROPOSED new thread: `wheat-and-tares-the-post-harvest-sifting-architecture`** *(for Yoshi's design call; FRAMEWORK-MAJOR).* Anchor: Matthew 13:24-30 + 13:36-43 (the wheat-and-tares parable and its interpretation). Summary: *The wheat-and-tares parable and its King-given interpretation lock the framework's Adam-and-the-Tares architecture at the gospel-level. The field is the world; the good seed are the children of the kingdom; the tares are the children of the wicked one; the enemy that sowed them is the devil; the harvest is the end of the age; the reapers are the angels. The seed-distinction operates at the paternal-source level (children-of-the-kingdom vs children-of-the-wicked-one), continuing the framework's full architecture of two-groups-from-the-beginning (Genesis 1 peoples-of-the-earth + Genesis 2 seed-of-Adam) with tares-sown-in-from-outside (the fallen-angels' incursion and the dragon's corruption of the line). The let-both-grow-together instruction (v.30) preserves the kingdom-citizens' present-age non-uprooting-of-the-counterfeit posture — the kingdom-citizens are not the reapers; the Father reserves the harvest-judgment. The post-harvest-sifting per Red Line #11 operates at the angels-gather-out-of-his-kingdom-all-things-that-offend-and-them-which-do-iniquity level — the same *anomia* (lawlessness) diagnostic as Matt 7:21-23's `lord-lord-and-torahlessness` thread. The framework rules out the inherited-Christian-collapse that reads the children-of-the-wicked-one as merely-behaviorally-disobedient-covenant-members; the King says CHILDREN-of-the-wicked-one with paternal-source identified.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 13:24-30 | Genesis 1:26-28 + Genesis 2:7 | The original two-groups: peoples-of-the-earth + seed-of-Adam — the architecture the parable extends. |
-| 2 | Matt 13:25 | Genesis 6:1-4 | The fallen-angels' incursion bringing the giants — the first tares-sown-in-by-the-enemy. |
-| 3 | Matt 13:25 | Genesis 3:1-15 | The serpent in the garden — the dragon's corruption of the line; Genesis 3:15's seed-war foretold. |
-| 4 | Matt 13:38 | John 8:44 | *Ye are of your father the devil* — direct identification of the children-of-the-wicked-one substance. |
-| 5 | Matt 13:38 | 1 John 3:8-10 | *In this the children of Elohim (God) are manifest, and the children of the devil* — the apostolic restatement. |
-| 6 | Matt 13:38 | 1 Samuel 2:12 | The sons of Belial within the covenant community (Eli's sons Hophni and Phinehas) — the within-the-line operation. |
-| 7 | Matt 13:30, 41 | Ezekiel 20:33-38 | The post-harvest sifting under the rod in the wilderness of the people — the framework's eschatological architecture. |
-| 8 | Matt 13:41 | Matt 7:21-23 | The *anomia* (lawlessness) diagnostic — the same substance the post-harvest-sifting tests. |
-| 9 | Matt 13:41 | Luke 3:17 | *Whose fan is in his hand, and he will throughly purge his floor, and gather the wheat into his garner* — Yochanan's (John's) anticipation of the post-harvest sifting. |
-| 10 | Matt 13:43 | Daniel 12:3 | *They that be wise shall shine as the brightness of the firmament* — the direct Tanakh-anchor for the righteous-shining-as-the-sun. |
-| 11 | Matt 13:43 | Matt 25:34 | *Inherit the kingdom prepared for you from the foundation of the world* — the kingdom-of-the-Father preparation substance. |
-| 12 | Matt 13:30 | Zechariah 13:8-9 | The two-thirds-cut-off / one-third-through-the-fire — the prophetic-disqualifier of lineage-claim-alone per `_COMMENTARY_SUMMATION.md` §V. |
-| 13 | Matt 13:39 | Matt 24:31 | The angels-with-the-trumpet gathering the elect from the four-winds — the reapers' work. |
-| 14 | Matt 13:39 | Joel 3:13 | *Put ye in the sickle, for the harvest is ripe* — the Tanakh-anchor for the harvest-judgment imagery. |
-| 15 | Matt 13:36-43 | Revelation 14:14-20 | The harvest of the earth and the winepress of the wrath — the framework's Revelation-reading carries the harvest-architecture. |
-
-**PROPOSED new thread: `parables-of-the-kingdom-and-the-cause-and-effect-of-hearing`** *(for Yoshi's design call; FRAMEWORK-MAJOR).* Anchor: Matthew 13:10-17 (the Yeshayahu (Isaiah) 6:9-10 citation explaining the parables-method). Summary: *The parables-method enacts the cause-and-effect-of-hearing diagnostic per Red Line #11. The mysteries-of-the-kingdom are given to those who have-ears-because-they-are-sheep (John 10:26-27); those without the disposition-to-hear receive the same parable-form and do-not-hear. The Yeshayahu (Isaiah) 6:9-10 citation is the load-bearing Tanakh-anchor — the people's-heart has already-waxed-gross, their-ears have already-dulled, their-eyes they-have-closed (past-tense, actor-initiated). The framework rules out the Reformed-monergistic-determinism (Father actively-prevents-hearing) AND the Arminian-self-determinative-libertarian-freedom (no prior-election). The disposition is the actor's; the Father's-knowing-from-the-foundation-of-the-world is the Father's; the hearing reveals.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 13:13-15 | Isaiah 6:9-10 | Direct Tanakh-citation; the load-bearing prophetic-anchor. |
-| 2 | Matt 13:11 | John 10:26-27 | *Ye believe not, because ye are not of my sheep ... my sheep hear my voice* — the same cause-and-effect-of-hearing diagnostic. |
-| 3 | Matt 13:11 | 1 Corinthians 2:14 | *The natural man receiveth not the things of the Spirit of Elohim (God): for they are foolishness unto him: neither can he know them* — the apostolic-restatement. |
-| 4 | Matt 13:14-15 | John 12:37-41 | Yochanan's (John's) gospel applies the same Yeshayahu (Isaiah) 6:9-10 citation to the broader rejection-pattern. |
-| 5 | Matt 13:14-15 | Acts 28:25-27 | Paul applies the same Yeshayahu (Isaiah) 6:9-10 citation in Rome — the same diagnostic across the apostolic-mission. |
-| 6 | Matt 13:14-15 | Romans 11:7-8 | Paul's *the election hath obtained it, and the rest were blinded* — the same architecture in different vocabulary. |
-| 7 | Matt 13:16-17 | 1 Peter 1:10-12 | The prophets inquired-into-the-salvation-now-revealed — the disciples' positioned-unique-moment. |
-| 8 | Matt 13:11 | Daniel 2:21-22 | Yahuah (the LORD) *revealeth the deep and secret things: he knoweth what is in the darkness, and the light dwelleth with him* — the Tanakh-anchor for the revealing-of-mysteries pattern. |
-
-**PROPOSED new thread: `dragnet-recapitulating-the-post-harvest-sifting`** *(for Yoshi's design call).* Anchor: Matthew 13:47-50 (the dragnet parable). Summary: *The dragnet-parable recapitulates the wheat-and-tares architecture from a different angle. The net is cast broadly, gathering of every kind; the sorting happens on the shore at the end-of-the-age. The angels sever the wicked from among the just. The framework reads this in continuity with the apostolic-mission-of-broad-proclamation (`lost-sheep-mission-scope`) — the net is cast broadly because the kingdom-citizens do not know by sight which of the gathered have the hearing-disposition. The sorting at the shore confirms the kingdom-citizens-identity-distinction without erasing it.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 13:47-50 | Matt 13:36-43 | The wheat-and-tares interpretation; the dragnet recapitulates the same architecture. |
-| 2 | Matt 13:47 | Matt 4:19 | *I will make you fishers of men* — the apostolic-net-casting commissioning. |
-| 3 | Matt 13:47 | Ezekiel 47:9-10 | *Their fish shall be according to their kinds, as the fish of the great sea, exceeding many* — the Tanakh-anchor for the eschatological-net-gathering in the millennial kingdom. |
-| 4 | Matt 13:49-50 | Matt 25:31-46 | The sheep-and-goats final-judgment — the same sorting-at-the-end-of-the-age. |
-| 5 | Matt 13:49 | Daniel 12:2 | *Many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* — the Tanakh-anchor for the two-fold resurrection at the sorting. |
-
-**PROPOSED new thread: `leaven-as-corruption-substance`** *(for Yoshi's design call).* Anchor: Matthew 13:33 (the leaven parable) read with scripture's consistent leaven-usage. Summary: *Scripture's-consistent leaven-usage is corruption-substance, not positive-permeation. The leaven-parable in Matt 13:33 reads with the Tanakh and apostolic-usage: Pesach (Passover) leaven-removed (Exodus 12:15); no leaven in any meal-offering (Leviticus 2:11); leaven of the Pharisees and Sadducees (Matt 16:6, 11-12) explicitly identified as their doctrine; leaven of the Pharisees as hypocrisy (Luke 12:1); a little leaven leaveneth the whole lump (1 Corinthians 5:6-8 + Galatians 5:9) — Paul deploying leaven as corruption in the assembly. The framework's reading of Matt 13:33: the kingdom-of-heaven-in-the-present-age is LIKE this in the sense that the unwelcome-development of corruption-within-the-kingdom-movement is the consistent-pattern across the age. The framework rules out the inherited-Christian-collapse into kingdom-permeation-triumphalism.*
-
-| Sort | Source | Target | Member note |
-|---|---|---|---|
-| 1 | Matt 13:33 | Exodus 12:15 | Leaven-removed-from-the-house at Pesach (Passover) — the covenant-substance of separation-from-corruption. |
-| 2 | Matt 13:33 | Leviticus 2:11 | No leaven in any meal-offering — the explicit Torah-prohibition. |
-| 3 | Matt 13:33 | Matt 16:6, 11-12 | Yahusha's (Jesus's) own warning to beware the leaven of the Pharisees and Sadducees — the gospel identifies the leaven as their doctrine. |
-| 4 | Matt 13:33 | Luke 12:1 | The leaven of the Pharisees identified as hypocrisy. |
-| 5 | Matt 13:33 | 1 Corinthians 5:6-8 | *A little leaven leaveneth the whole lump* — Paul's apostolic-restatement in the assembly-purging context. |
-| 6 | Matt 13:33 | Galatians 5:9 | *A little leaven leaveneth the whole lump* — Paul's apostolic-restatement against the Judaizer-influence. |
-| 7 | Matt 13:33 | Genesis 18:6 | The three-measures-of-meal Sarah prepared for the covenant-meal at Yahuah's (the LORD's) visit — the framework reads the leaven-hidden-in-the-covenant-meal substance. |
-
-**Thread: `lost-sheep-mission-scope`** *(PROPOSED at Matt 1; FRAMEWORK-MAJOR-anchored at Matt 10:5-6).* Adds critical members from Matthew 13.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 13:38 | Matt 10:5-6 | The good-seed-children-of-the-kingdom in the field-of-the-world are the lost-sheep-of-the-house-of-Yashar'el (Israel) — the same scope-substance the dragnet and the sower-mission gather. |
-| Matt 13:47-50 | Matt 28:19 | The dragnet's-net-cast-broadly is the apostolic-territorial-extension of the lost-sheep-mission across the dispersion-territories. |
-
-**Thread: `scattered-seed-gathering`** *(LANDED at S74).* Adds critical members from Matthew 13.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 13:38 | Ezekiel 37:21 | *I will take the children of Yashar'el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* — the good-seed-of-the-children-of-the-kingdom is the same gathered-remnant the Tanakh-prophets name. |
-| Matt 13:36-43 | Hosea 1:10 + 2:23 | *In the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* — the Lo-Ammi gathering at the substance the wheat-and-tares parable enacts. |
-| Matt 13:43 | Daniel 12:3 | The righteous-shining-as-the-sun in the kingdom-of-the-Father is the gathered-remnant's destination substance. |
-
-**Thread: `grace-and-the-opportunity-that-can-be-lost`** *(PROPOSED at Matt 6).* Adds critical members from Matthew 13.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 13:20-22 | Hebrews 6:4-6 | The stony-ground and the thorny-ground hearers — partial-receiving without internal-rooting; the apostolic-warning of the falling-away after enlightenment. |
-| Matt 13:41 | Matt 7:21-23 | *Them which do iniquity* (anomia) gathered out of the kingdom — the same *anomia*-diagnostic as the kingdom-entry-criterion. |
-
-**Thread: `lord-lord-and-torahlessness`** *(PROPOSED at Matt 7; FRAMEWORK-MAJOR).* Adds critical member from Matthew 13.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 13:41 | Matt 7:23 | *Them which do iniquity* (anomia) gathered out of the kingdom — direct vocabulary-connection to *I never knew you, ye that work iniquity*; the post-harvest-sifting and the kingdom-entry-criterion share the same diagnostic. |
-
-**Thread: `heart-torah-not-abolition`** *(PROPOSED at Matt 5).* Adds critical member from Matthew 13.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 13:52 | Matt 5:17-19 | *Things new and old* — the scribe-instructed-unto-the-kingdom brings forth both; the new IS new because it grows-from-and-fulfills-the-old; the framework rules out the antinomian-discarding-of-the-old. |
-
-**Thread: `pharisaic-sadducean-system-as-judaizer-predecessor`** *(PROPOSED at Matt 3).* Adds critical members from Matthew 13.
-
-| Source | Target | Member note |
-|---|---|---|
-| Matt 13:13-15 | Matt 23:13 | The Pharisaic-system *shut up the kingdom of heaven against men* — the same hardening-disposition the Yeshayahu (Isaiah) 6:9-10 citation diagnoses. |
-| Matt 13:54-57 | John 7:5 | The King's own brethren did not believe at first — the hometown-and-familiar-rejection pattern in the household. |
-
-### Layer 1 — Per-verse cross-references
-
-**Matt 13:9** — *Who hath ears to hear, let him hear.*
-
-| Target | Member note |
-|---|---|
-| Matt 13:43 | The chapter's-bracket closing-call at the wheat-and-tares interpretation. |
-| Revelation 2:7, 11, 17, 29; 3:6, 13, 22 | *He that hath an ear, let him hear what the Spirit saith unto the assemblies* — the apostolic-Revelation pattern. |
-| Deuteronomy 29:4 | *Yahuah (the LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day* — the Tanakh-anchor. |
-
-**Matt 13:11** — *Because it is given unto you to know the mysteries of the kingdom of heaven.*
-
-| Target | Member note |
-|---|---|
-| Daniel 2:21-22 | *Yahuah (the LORD) revealeth the deep and secret things.* |
-| 1 Corinthians 2:7-10 | *The hidden wisdom, which Elohim (God) ordained before the world unto our glory.* |
-| Ephesians 3:3-9 | *The mystery, which from the beginning of the world hath been hid in Elohim (God).* |
-
-**Matt 13:13-15** — The Yeshayahu (Isaiah) 6:9-10 citation.
-
-| Target | Member note |
-|---|---|
-| Isaiah 6:9-10 | Direct Tanakh-source. |
-| John 12:37-41 | Yochanan's (John's) application of the same citation. |
-| Acts 28:25-27 | Paul's application in Rome. |
-| Romans 11:7-8 | The same diagnostic in Paul's olive-tree exposition. |
-
-**Matt 13:24-30** — The wheat and tares parable.
-
-| Target | Member note |
-|---|---|
-| Matt 13:36-43 | The King's-own-interpretation. |
-| Genesis 1:26-28 + Genesis 2:7 | The two-original-groups architecture. |
-| Genesis 6:1-4 | The fallen-angels' incursion bringing the giants. |
-| Genesis 3:1-15 | The serpent's-corruption of the line; the seed-war foretold. |
-
-**Matt 13:31-32** — The mustard seed.
-
-| Target | Member note |
-|---|---|
-| Ezekiel 17:22-24 | The Messianic-tree imagery with the birds-of-the-air lodging. |
-| Daniel 4:12 | Nebuchadnezzar's kingdom-tree imagery. |
-| Ezekiel 31:6 | The cedar-of-Lebanon kingdom-tree with the birds-of-the-air nesting. |
-
-**Matt 13:33** — The leaven.
-
-| Target | Member note |
-|---|---|
-| Matt 16:6, 11-12 | Leaven of the Pharisees and Sadducees identified as their doctrine. |
-| 1 Corinthians 5:6-8 | *A little leaven leaveneth the whole lump.* |
-| Galatians 5:9 | The same apostolic-restatement against the Judaizer-influence. |
-
-**Matt 13:34-35** — The Psalm 78:2 citation.
-
-| Target | Member note |
-|---|---|
-| Psalm 78:2 | Direct Tanakh-source. |
-| Romans 16:25-26 | The mystery-kept-secret-since-the-world-began now made manifest. |
-
-**Matt 13:36-43** — The interpretation of the wheat and tares.
-
-| Target | Member note |
-|---|---|
-| John 8:44 | *Ye are of your father the devil* — the children-of-the-wicked-one substance. |
-| 1 John 3:8-10 | The children-of-Elohim (God) vs the children-of-the-devil manifest by their fruit. |
-| Daniel 12:3 | The righteous-shining-as-the-sun substance. |
-| Matt 25:34 | The kingdom-prepared-from-the-foundation-of-the-world. |
-| Revelation 13:8 + 17:8 | Names written in the Book of Life from the foundation of the world. |
-
-**Matt 13:44-46** — The hidden treasure and the pearl.
-
-| Target | Member note |
-|---|---|
-| Isaiah 43:4 | *Therefore will I give men for thee, and people for thy life* — the Father's-paying-the-price for the elect-treasure. |
-| Philippians 2:6-8 | *Made himself of no reputation, and took upon him the form of a servant* — the King's-paying-the-price. |
-| Deuteronomy 7:6 | *Yahuah (the LORD) thy Elohim (God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth* — the treasure-people Tanakh-substance. |
-
-**Matt 13:47-50** — The dragnet.
-
-| Target | Member note |
-|---|---|
-| Ezekiel 47:9-10 | The eschatological-net-gathering in the millennial kingdom. |
-| Matt 25:31-46 | The sheep-and-goats final-judgment. |
-| Daniel 12:2 | The two-fold resurrection at the sorting. |
-
-**Matt 13:52** — The scribe instructed unto the kingdom — things new and old.
-
-| Target | Member note |
-|---|---|
-| Matt 5:17-19 | The Torah-not-destroyed substance — both new and old kept. |
-| Romans 7:22 | *I delight in the law of Elohim (God) after the inward man* — the old kept-in-the-new-heart-disposition. |
-| Jeremiah 31:33 | The Torah written-on-the-heart in the new covenant — old-written-in-new substance. |
-
-**Matt 13:55-57** — The hometown-rejection.
-
-| Target | Member note |
-|---|---|
-| John 7:5 | His own brethren did not believe at first. |
-| Mark 6:1-6 | The Markan parallel. |
-| Luke 4:16-30 | The Lukan extended-account at the Natsareth (Nazareth) synagogue. |
-| Jeremiah 11:21-23 | Yirmeyahu's (Jeremiah's) rejection at his hometown of Anatot (Anathoth). |
-
----
-
-## Standing chapter-level position (for the summation appendix)
-
-**Primary place on the seed/scattering/gathering arc**: the kingdom-architecture proclaimed in parable-form across the parables-of-the-kingdom chapter. The cause-and-effect-of-hearing per Red Line #11 is locked at the Yeshayahu (Isaiah) 6:9-10 citation; the field-of-the-world as the wheat-and-tares-mixed-substance is locked at the parable-of-the-wheat-and-tares; the Adam-and-the-Tares architecture per the framework's framework-deep is locked at the King's-own-interpretation at vv.36-43; the post-harvest-sifting per Red Line #11 is enacted at the wheat-and-tares interpretation AND recapitulated at the dragnet-parable. The kingdom-citizens'-vocation is named at the scribe-instructed-unto-the-kingdom bringing forth things-new-and-old. The chapter closes with the hometown-rejection at Natsareth (Nazareth) — the prophet-not-without-honor-saving-his-own-country pattern that foreshadows the broader-rejection-at-Yerushalayim (Jerusalem).
-
-**Framework hooks:**
-1. **FRAMEWORK-MAJOR — the Yeshayahu (Isaiah) 6:9-10 hardening-citation at vv.13-15** — the cause-and-effect-of-hearing diagnostic per Red Line #11 locked at the load-bearing Tanakh-anchor; the people's-disposition is the people's; the Father's-knowing-from-the-foundation-of-the-world is the Father's; the hearing reveals; rules out both Reformed-monergistic-determinism AND Arminian-self-determinative-libertarian-freedom; new PROPOSED thread `parables-of-the-kingdom-and-the-cause-and-effect-of-hearing` anchored here.
-2. **FRAMEWORK-MAJOR — the wheat-and-tares parable at vv.24-30 with the King's interpretation at vv.36-43** — the direct Adam-and-the-Tares architecture from the framework's framework-deep apparatus; the field is the world (not narrowly the assembly); the good seed are the children-of-the-kingdom; the tares are the children-of-the-wicked-one (paternal-source identified, not merely behavioral); the enemy that sowed them is the devil; the harvest is the end of the age; the reapers are the angels; the post-harvest-sifting per Red Line #11 at *gather out of his kingdom all things that offend, and them which do iniquity (anomia)* — the same diagnostic as Matt 7:21-23's `lord-lord-and-torahlessness`; the *let-both-grow-together* preserves the kingdom-citizens' present-age non-uprooting posture; the framework rules out both the inherited-Christian-collapse into behavioral-only-tares AND the Black-Hebrew-Israelite-style racial-determinism per `_COMMENTARY_SUMMATION.md` §VI; new PROPOSED thread `wheat-and-tares-the-post-harvest-sifting-architecture` anchored here.
-3. **The interpretation of the sower at vv.18-23** — four soils as four kinds-of-hearers; the way-side (the wicked-one snatches the not-understood Word); the stony-ground (no root, no survival of tribulation/persecution — partial-receiving-without-internal-rooting per `grace-and-the-opportunity-that-can-be-lost`); the thorny-ground (the cares-of-this-world and the deceitfulness-of-riches choke the Word — Mammon-or-Elohim binary of Matt 6:24 operative); the good-ground (heard, understood, fruitful — *na'aseh v'nishma* hearing-and-doing internalized).
-4. **The mustard seed at vv.31-32 and the leaven at v.33** — the framework reads with framework-caution against the inherited-Christian collapse into kingdom-triumphalism. The mustard-tree-with-birds-lodging carries both substances (legitimate-shelter AND unwelcome-development) per Daniel 4:12 / Ezekiel 17:22-24 + Matt 13:4, 19. The leaven read with scripture's-consistent-leaven-usage (Pesach (Passover) prohibition, Pharisaic-leaven, Pauline-leaven-in-the-assembly) is corruption-substance — the unwelcome-development of corruption-within-the-kingdom-movement; new PROPOSED thread `leaven-as-corruption-substance` anchored here.
-5. **The Psalm 78:2 citation at vv.34-35** — the parables-method's Tanakh-anchor; the mysteries-kept-secret-from-the-foundation-of-the-world now revealed; continues from Matt 5-7's heart-Torah-revelation through Matt 11:25-27's Father-Son-revelation-economy.
-6. **The hidden treasure and the pearl at vv.44-46** — the framework reads with framework-careful-preference for the Father-Son-buyer-finds-the-treasure-substance (Isaiah 43:4 + Philippians 2:6-8) over the inherited-believer-buyer reading; the framework rules out any reading that makes the believer's-finding-and-paying the causal-mechanism of salvation.
-7. **The dragnet at vv.47-50** — the recapitulated post-harvest-sifting per Red Line #11 from the sea-and-net angle; the apostolic-net-casting commissioning (Matt 4:19) operative across the dispersion-territories; the sorting at the shore by the angels at the end-of-the-age; new PROPOSED thread `dragnet-recapitulating-the-post-harvest-sifting` anchored here.
-8. **The scribe-instructed-unto-the-kingdom at vv.51-52** — the kingdom-citizens'-vocation as bringing forth things-NEW-AND-OLD; the framework reads against the antinomian-Christianity-discarding-of-the-old; the new IS new precisely because it grows-from-and-fulfills-the-old; ties into `heart-torah-not-abolition`.
-9. **The hometown-rejection at vv.53-58** — the prophet-not-without-honor pattern at the familiarity-blocks-recognition level; the *he did not many mighty works there because of their unbelief* enacts the cause-and-effect-of-hearing diagnostic at the territorial-level; foreshadows the broader-rejection-at-Yerushalayim (Jerusalem).
-
-**Cross-reference apparatus seeded:** 4 new PROPOSED threads (`wheat-and-tares-the-post-harvest-sifting-architecture` — 15 members [FRAMEWORK-MAJOR]; `parables-of-the-kingdom-and-the-cause-and-effect-of-hearing` — 8 members [FRAMEWORK-MAJOR]; `dragnet-recapitulating-the-post-harvest-sifting` — 5 members; `leaven-as-corruption-substance` — 7 members); 2 members added to PROPOSED `lost-sheep-mission-scope` thread (FRAMEWORK-MAJOR-anchored at Matt 10:5-6); 3 members added to existing `scattered-seed-gathering` thread; 2 members added to PROPOSED `grace-and-the-opportunity-that-can-be-lost` thread; 1 critical member added to PROPOSED `lord-lord-and-torahlessness` thread (FRAMEWORK-MAJOR); 1 critical member added to PROPOSED `heart-torah-not-abolition` thread; 2 members added to PROPOSED `pharisaic-sadducean-system-as-judaizer-predecessor` thread. Layer 1 per-verse rows for v.9, v.11, v.13-15, v.24-30, v.31-32, v.33, v.34-35, v.36-43, v.44-46, v.47-50, v.52, v.55-57.
