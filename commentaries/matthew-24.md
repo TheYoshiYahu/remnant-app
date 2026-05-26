@@ -124,7 +124,7 @@ The framework reads vv.1-3 as the substantial-set-up-substance of the Olivet-dis
 
 - **The substantial-substance-of-the-sun-darkened + moon-not-give-her-light + stars-fall + powers-of-the-heavens-shaken substance** is-the-substantial-substance-of-the-Tanakh-prophetic-substance:
   - **Yeshayahu (Isaiah) 13:10** — *the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine.* The substantial-Tanakh-Day-of-Yahuah-against-Babel (Babylon) substance.
-  - **Yeshayahu (Isaiah) 24:23** — *the moon shall be confounded, and the sun ashamed, when Yahuah Tseva'ot (the LORD of hosts) shall reign in mount Tsion (Zion).*
+  - **Yeshayahu (Isaiah) 24:23** — *the moon shall be confounded, and the sun ashamed, when Yahuah Tseva'ot (LORD of hosts) shall reign in mount Tsion (Zion).*
   - **Yeshayahu (Isaiah) 34:4** — *all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll.*
   - **Yo'el (Joel) 2:10** — *the sun and the moon shall be dark, and the stars shall withdraw their shining.*
   - **Yo'el (Joel) 2:31** — *the sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (the LORD) come.*

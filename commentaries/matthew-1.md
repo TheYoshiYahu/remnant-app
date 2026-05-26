@@ -76,7 +76,7 @@ The angel's address at v.20 — *Yoseph (Joseph), thou son of David* — is the 
 
 The Reformation's hottest fight on Isaiah 7:14 has been over whether the Hebrew *almah* means *virgin* (as Matthew renders it through the Greek *parthenos*) or *young woman* (as the modern critical reading argues from secular Hebrew usage). The fight is real, the Septuagint settles it on the side of *virgin* — the Septuagint translators in the third century BCE, working centuries before any Christian polemic, rendered *almah* as *parthenos* — and Matthew settles it on the apostolic authority of *parthenos* in the New Testament canon. The framework joins Matthew and the Septuagint on the virgin reading.
 
-The deeper move at v.23 is the nature-of-God reading. The framework holds that Yahuah (God) the Father is the formless infinite — the source — and that Yahusha (Jesus) is the Formed, the expressed Word drawn from the Formless, the God of every Tanakh theophany. The Yahuah who walked with Adam in the cool of the day, who appeared to Avraham (Abraham) at Mamre, who wrestled with Ya'aqov (Jacob) at Peniel, who spoke from the burning bush, who stood on Sinai — was the Formed. The Father, the formless infinite, is not seen by mortal eyes.
+The deeper move at v.23 is the nature-of-God reading. The framework holds that Yahuah (God) the Father is the formless infinite — the source — and that Yahusha (Jesus) is the Formed, the expressed Word drawn from the Formless, the God of every Tanakh theophany. Yahuah who walked with Adam in the cool of the day, who appeared to Avraham (Abraham) at Mamre, who wrestled with Ya'aqov (Jacob) at Peniel, who spoke from the burning bush, who stood on Sinai — was the Formed. The Father, the formless infinite, is not seen by mortal eyes.
 
 *And he said, Thou canst not see my face: for there shall no man see me, and live.* (Exodus 33:20)
 
@@ -205,7 +205,7 @@ The Tanakh prepares the reader for the name. The prophets prepare the reader for
 | Target | Member note |
 |---|---|
 | 2 Kings 23:34 | Yo'achaz (Jehoahaz) deposed by Pharaoh — the kings between Josias (Yoshiyahu) and the deportation, the unstable monarchy collapsing toward the captivity. |
-| Jeremiah 22:24-30 | The Yahuah-pronouncement against Konyahu (Jeconiah) — *no man of his seed shall prosper, sitting upon the throne of David* — addressed in framework reading through Yoseph's (Joseph's) legal adoption of Yahusha (Jesus), bypassing the Jeconiah-blood-curse while preserving the legal-Davidic claim. |
+| Jeremiah 22:24-30 | Yahuah-pronouncement against Konyahu (Jeconiah) — *no man of his seed shall prosper, sitting upon the throne of David* — addressed in framework reading through Yoseph's (Joseph's) legal adoption of Yahusha (Jesus), bypassing the Jeconiah-blood-curse while preserving the legal-Davidic claim. |
 
 **Matt 1:18** — *Now the birth of Yahusha HaMashiach (Jesus Christ) was on this wise: When as his mother Miryam (Mary) was espoused to Yoseph (Joseph), before they came together, she was found with child of the Ruach HaKodesh (Holy Spirit).*
 

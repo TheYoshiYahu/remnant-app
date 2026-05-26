@@ -111,11 +111,11 @@ WITH input(src_edition, src_slug, src_ch, src_v,
 
   -- Thread 5: levi-yahudah-benjamin-messianic-prophecies (Matt 1:1 / 1:21 / 1:23)
   ('canon', 'matthew', 1, 1, 'pseudepigrapha', 'testaments-xii', 11, 2,
-   '*For the Yahuah (Lord) shall raise up from Levi as it were a High-priest, and from Yahudah (Judah) as it were a King, Elohim (God) and man.* Simeon Chapter 5 (Testaments XII ch 11) names the Levitical-priest + Yahudite-king Messiah explicitly — *Elohim (God) and man.* Matthew''s genealogy at Matt 1:1 names David (the kingship promise) and Avraham (Abraham) (the seed-promise); the priestly side comes through the same line. The Hebrew library knew the doubled identity before the gospel announced it.'),
+   '*For Yahuah (Lord) shall raise up from Levi as it were a High-priest, and from Yahudah (Judah) as it were a King, Elohim (God) and man.* Simeon Chapter 5 (Testaments XII ch 11) names the Levitical-priest + Yahudite-king Messiah explicitly — *Elohim (God) and man.* Matthew''s genealogy at Matt 1:1 names David (the kingship promise) and Avraham (Abraham) (the seed-promise); the priestly side comes through the same line. The Hebrew library knew the doubled identity before the gospel announced it.'),
   ('canon', 'matthew', 1, 23, 'pseudepigrapha', 'testaments-xii', 20, 3,
    '*In the second jubilee, he that is anointed shall be conceived in the sorrow of beloved ones.* Levi Chapter 9 (Testaments XII ch 20) names the conception of the anointed one in advance — the same conception narrative Matt 1:18-25 walks. The Hebrew library''s pseudepigraphal witness to the Messianic conception prepares the apostolic apposition *they shall call his name Immanuel — Elohim (God) with us* at Matt 1:23.'),
   ('canon', 'matthew', 1, 1, 'pseudepigrapha', 'testaments-xii', 96, 2,
-   '*And there shall arise in the latter days one beloved of the Yahuah (Lord), of the tribe of Yahudah (Judah) and Levi.* Benjamin Chapter 9 (Testaments XII ch 96) — the closing testament of the youngest tribe — names the Beloved who shall arise in the latter days from the doubled-tribal lineage. Matthew 1:1''s genealogical opening lands on the Beloved Benjamin named.'),
+   '*And there shall arise in the latter days one beloved of Yahuah (Lord), of the tribe of Yahudah (Judah) and Levi.* Benjamin Chapter 9 (Testaments XII ch 96) — the closing testament of the youngest tribe — names the Beloved who shall arise in the latter days from the doubled-tribal lineage. Matthew 1:1''s genealogical opening lands on the Beloved Benjamin named.'),
 
   -- Thread 6: magi-astronomical-tradition (Matt 2:1-2)
   ('canon', 'matthew', 2, 1, 'enoch', '1-enoch', 72, 1,
@@ -220,7 +220,7 @@ ON CONFLICT (slug) DO NOTHING;
 INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
 SELECT 'levi-yahudah-benjamin-messianic-prophecies',
        'Levi, Yahudah (Judah), Benjamin — Messianic prophecies in the patriarchal testaments',
-       'The Testaments XII Patriarchs (extras-tier, pseudepigrapha edition) carry pre-Christian Hebrew-library Messianic prophecies in the voices of the dying patriarchs themselves. Simeon Chapter 5 (Testaments XII ch 11): *the Yahuah (Lord) shall raise up from Levi as it were a High-priest, and from Yahudah (Judah) as it were a King, Elohim (God) and man.* Levi Chapter 9 (ch 20): *In the second jubilee, he that is anointed shall be conceived in the sorrow of beloved ones* — pre-conception prophecy. Benjamin Chapter 9 (ch 96): *there shall arise in the latter days one beloved of the Yahuah (Lord), of the tribe of Yahudah (Judah) and Levi.* Matthew 1:1''s genealogy lands the Hebrew library''s long-named expectation — David''s line plus Avraham''s line plus the doubled-tribal priestly-and-kingly Messianic figure.',
+       'The Testaments XII Patriarchs (extras-tier, pseudepigrapha edition) carry pre-Christian Hebrew-library Messianic prophecies in the voices of the dying patriarchs themselves. Simeon Chapter 5 (Testaments XII ch 11): *Yahuah (Lord) shall raise up from Levi as it were a High-priest, and from Yahudah (Judah) as it were a King, Elohim (God) and man.* Levi Chapter 9 (ch 20): *In the second jubilee, he that is anointed shall be conceived in the sorrow of beloved ones* — pre-conception prophecy. Benjamin Chapter 9 (ch 96): *there shall arise in the latter days one beloved of Yahuah (Lord), of the tribe of Yahudah (Judah) and Levi.* Matthew 1:1''s genealogy lands the Hebrew library''s long-named expectation — David''s line plus Avraham''s line plus the doubled-tribal priestly-and-kingly Messianic figure.',
        sv.verse_id, ev.verse_id, 'extras', 104
   FROM _s131_verse_lookup sv, _s131_verse_lookup ev
  WHERE sv.edition_slug = 'canon' AND sv.book_slug = 'matthew' AND sv.chapter_number = 1 AND sv.verse_number = 1
@@ -462,7 +462,7 @@ ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
 -- Thread 5: levi-yahudah-benjamin-messianic-prophecies
 INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
-SELECT t.id, x.id, 1, 'Simeon Chapter 5: *the Yahuah (Lord) shall raise up from Levi as it were a High-priest, and from Yahudah (Judah) as it were a King, Elohim (God) and man.* The doubled-tribal priestly-and-kingly Messiah explicitly named.'
+SELECT t.id, x.id, 1, 'Simeon Chapter 5: *Yahuah (Lord) shall raise up from Levi as it were a High-priest, and from Yahudah (Judah) as it were a King, Elohim (God) and man.* The doubled-tribal priestly-and-kingly Messiah explicitly named.'
   FROM cross_reference_threads t, cross_references x,
        _s131_verse_lookup sv, _s131_verse_lookup tv
  WHERE t.slug = 'levi-yahudah-benjamin-messianic-prophecies'
@@ -482,7 +482,7 @@ SELECT t.id, x.id, 2, 'Levi Chapter 9: *In the second jubilee, he that is anoint
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
 INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
-SELECT t.id, x.id, 3, 'Benjamin Chapter 9: *there shall arise in the latter days one beloved of the Yahuah (Lord), of the tribe of Yahudah (Judah) and Levi.* The Beloved of the doubled-tribal lineage named by the youngest tribe''s testament.'
+SELECT t.id, x.id, 3, 'Benjamin Chapter 9: *there shall arise in the latter days one beloved of Yahuah (Lord), of the tribe of Yahudah (Judah) and Levi.* The Beloved of the doubled-tribal lineage named by the youngest tribe''s testament.'
   FROM cross_reference_threads t, cross_references x,
        _s131_verse_lookup sv, _s131_verse_lookup tv
  WHERE t.slug = 'levi-yahudah-benjamin-messianic-prophecies'

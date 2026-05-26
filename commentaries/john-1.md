@@ -64,7 +64,7 @@ The Formed is the agent through whom the Formless speaks the heavens and the ear
 
 The wider canon names the same architecture in multiple voices.
 
-*By the word of the Yahuah (LORD) were the heavens made; and all the host of them by the breath of his mouth.* (Psalm 33:6)
+*By the word of Yahuah (LORD) were the heavens made; and all the host of them by the breath of his mouth.* (Psalm 33:6)
 
 *For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him: and he is before all things, and by him all things consist.* (Colossians 1:16-17)
 
@@ -110,9 +110,9 @@ John-the-evangelist breaks the prologue's eternity-substance to introduce John-t
 
 The Witness stands in the line of the prophets of the Tanakh — Elijah most prominently, per Malachi:
 
-*Behold, I will send my messenger, and he shall prepare the way before me: and the Yahuah (Lord), whom ye seek, shall suddenly come to his temple, even the messenger of the covenant, whom ye delight in: behold, he shall come, saith Yahuah Tseva'ot (the LORD of hosts).* (Malachi 3:1)
+*Behold, I will send my messenger, and he shall prepare the way before me: and Yahuah (Lord), whom ye seek, shall suddenly come to his temple, even the messenger of the covenant, whom ye delight in: behold, he shall come, saith Yahuah Tseva'ot (LORD of hosts).* (Malachi 3:1)
 
-*Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of the Yahuah (LORD): and he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* (Malachi 4:5-6)
+*Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD): and he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* (Malachi 4:5-6)
 
 Yahusha will name the Witness as the fulfillment of this prophecy:
 
@@ -174,7 +174,7 @@ The flesh is real. The incarnation is real. The Word who was Elohim took on real
 
 *And let them make me a sanctuary; that I may dwell among them.* (Exodus 25:8)
 
-*Then a cloud covered the tent of the congregation, and the glory of the Yahuah (LORD) filled the tabernacle. And Moses was not able to enter into the tent of the congregation, because the cloud abode thereon, and the glory of the Yahuah (LORD) filled the tabernacle.* (Exodus 40:34-35)
+*Then a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle. And Moses was not able to enter into the tent of the congregation, because the cloud abode thereon, and the glory of Yahuah (LORD) filled the tabernacle.* (Exodus 40:34-35)
 
 *Afterward he brought me to the gate, even the gate that looketh toward the east: and, behold, the glory of the Elohim (God) of Yashar'el (Israel) came from the way of the east: and his voice was like a noise of many waters: and the earth shined with his glory.* (Ezekiel 43:1-2)
 
@@ -184,7 +184,7 @@ The same architecture closes the canon at the new creation.
 
 The Word's tabernacling in flesh at v.14 is the same architecture the Tanakh walked out at Sinai, in the wilderness, in the temple, and the same architecture Revelation closes with at the new creation. The flesh of Yahusha is the mishkan of Yahuah dwelling among men. The Sukkot connection is also in view — the Feast of Tabernacles — when Yashar'el commemorates the wilderness tabernacling each year.
 
-*Speak unto the children of Yashar'el (Israel), saying, The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto the Yahuah (LORD).* (Leviticus 23:34)
+*Speak unto the children of Yashar'el (Israel), saying, The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto Yahuah (LORD).* (Leviticus 23:34)
 
 *That your generations may know that I made the children of Yashar'el (Israel) to dwell in booths, when I brought them out of the land of Egypt: I am Yahuah Elohaychem (the LORD your God).* (Leviticus 23:43)
 
@@ -204,7 +204,7 @@ The glory of v.14 — *as of the only begotten of the Father* — is the glory t
 
 **Full of grace and truth.** *Plērēs charitos kai alētheias.* This phrase carries the load. It echoes the Sinai self-disclosure of Exodus 34 — the moment when Yahuah passed before Moses on the mountain and proclaimed his own name.
 
-*And the Yahuah (LORD) descended in the cloud, and stood with him there, and proclaimed the name of the Yahuah (LORD). And the Yahuah (LORD) passed by before him, and proclaimed, The Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth, keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty.* (Exodus 34:5-7)
+*And Yahuah (LORD) descended in the cloud, and stood with him there, and proclaimed the name of Yahuah (LORD). And Yahuah (LORD) passed by before him, and proclaimed, Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth, keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty.* (Exodus 34:5-7)
 
 The Hebrew is *rav-chesed v'emet* — abundant in *chesed* (covenant-loyal love, often translated grace) and *emet* (truth, faithfulness). John's *plērēs charitos kai alētheias* — *full of grace and truth* — names the Word made flesh in the same pair Yahuah proclaimed of himself on Sinai. The same Yahuah who spoke Exodus 34 to Moses on the mountain is now standing in flesh, full of the same chen-v'emet that the voice on the mountain proclaimed.
 
@@ -212,7 +212,7 @@ The same chen-v'emet pair runs through the Psalms.
 
 *But thou, O Yahuah (Lord), art an Elohim (God) full of compassion, and gracious, longsuffering, and plenteous in mercy and truth.* (Psalm 86:15)
 
-*The Yahuah (LORD) is merciful and gracious, slow to anger, and plenteous in mercy.* (Psalm 103:8)
+*Yahuah (LORD) is merciful and gracious, slow to anger, and plenteous in mercy.* (Psalm 103:8)
 
 This is the Formless-Formed grid in flesh. The Voice of Sinai is the Word of v.14, and the chen-v'emet of the Voice is the chen-v'emet of the Word. The Word did not bring something new at v.14 that contradicted Sinai; the Word brought the Voice of Sinai *in flesh, in person, where his people could touch him.* This will become the framework's reading of v.17 — *the law was given by Moses, but grace and truth came by Yahusha HaMashiach* — which the Reformation has weaponized against the Torah and which the framework restores to its proper meaning.
 
@@ -246,11 +246,11 @@ This is the most weaponized verse in the chapter, and one of the most weaponized
 
 **Second, the chen-v'emet of v.17 is the chen-v'emet of v.14, which is the chen-v'emet of Exodus 34:6.** The verse just before v.17 said *the Word was made flesh ... full of grace and truth.* The verse before that said *grace upon grace.* The chen-v'emet of v.17 is not introduced as a new substance arriving with the Messiah; it is the substance already named at v.14 as the chen-v'emet of Sinai *in flesh.*
 
-*The Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth.* (Exodus 34:6)
+*Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth.* (Exodus 34:6)
 
 The Sinai self-disclosure is the chen-v'emet the Messiah brings. The Messiah did not introduce chen-v'emet for the first time at the cross; the Messiah brought the chen-v'emet *that has been Yahuah's name since Sinai* in flesh to where his people could touch him. The Torah and the chen-v'emet are not two substances; they are the same Voice, the same Yahuah, named in two registers — Torah as the instruction the chen-v'emet gives to its covenant people, chen-v'emet as the relational fidelity Torah is given within.
 
-**Third, the verse names the agent of each, not the opposition.** Moses was the agent through whom the Torah was *given* — *edothē,* passive aorist, *was given.* Moses did not author the Torah; he was the agent through whom Yahuah delivered it. Yahusha HaMashiach is the agent through whom chen-v'emet *came* — *egeneto,* aorist middle, *came to be.* The Messiah did not author chen-v'emet; he is the agent through whom the chen-v'emet of Sinai stepped into flesh. The verse names two agencies — Moses's role in the giving of Torah, Yahusha's role in the bringing of chen-v'emet in flesh — and the two agencies are coordinated, not opposed. The same Yahuah who spoke through Moses on Sinai is the Yahuah who walked in flesh as Yahusha; the Torah and the chen-v'emet flow from the same source.
+**Third, the verse names the agent of each, not the opposition.** Moses was the agent through whom the Torah was *given* — *edothē,* passive aorist, *was given.* Moses did not author the Torah; he was the agent through whom Yahuah delivered it. Yahusha HaMashiach is the agent through whom chen-v'emet *came* — *egeneto,* aorist middle, *came to be.* The Messiah did not author chen-v'emet; he is the agent through whom the chen-v'emet of Sinai stepped into flesh. The verse names two agencies — Moses's role in the giving of Torah, Yahusha's role in the bringing of chen-v'emet in flesh — and the two agencies are coordinated, not opposed. The same Yahuah who spoke through Moses on Sinai is Yahuah who walked in flesh as Yahusha; the Torah and the chen-v'emet flow from the same source.
 
 **What v.17 rules out, then, is the inverted reading that has dominated Christian preaching:** the reading that takes Moses's Torah as the bad thing the Messiah arrived to abolish, and the chen-v'emet of the Messiah as the better thing that replaces it. The Messiah himself rules out that reading at the opening of his public teaching.
 
@@ -290,7 +290,7 @@ The verse that closes the prologue is the Formless-Formed grid stated at clinica
 
 *And he said, Thou canst not see my face: for there shall no man see me, and live.* (Exodus 33:20)
 
-Yahuah the Father, the Formless source, is never visible to creature-sight. Every theophany in the Tanakh — the angel of Yahuah wrestling Jacob at the Yabbok, the Yahuah who stands at the door of Abraham's tent at the oaks of Mamre, the Yahuah of the burning bush, the Yahuah who walks in the garden in the cool of the day, the Yahuah whose glory fills the tabernacle, the Yahuah Isaiah sees high and lifted up, the Yahuah whose chariot Ezekiel sees by the river of Chebar — every one of these is the Formed. The Formless is never the visible One. The Formed is.
+Yahuah the Father, the Formless source, is never visible to creature-sight. Every theophany in the Tanakh — the angel of Yahuah wrestling Jacob at the Yabbok, Yahuah who stands at the door of Abraham's tent at the oaks of Mamre, Yahuah of the burning bush, Yahuah who walks in the garden in the cool of the day, Yahuah whose glory fills the tabernacle, Yahuah Isaiah sees high and lifted up, Yahuah whose chariot Ezekiel sees by the river of Chebar — every one of these is the Formed. The Formless is never the visible One. The Formed is.
 
 *The only begotten Son, which is in the bosom of the Father, he hath declared him.* The Formed *declares* — *exēgēsato,* the Greek root of *exegete,* the one who exposits, who reveals what is otherwise hidden. The Formed Son is the exegete of the Formless Father. The Son is *in the bosom of the Father* — *en tō kolpō tou Patros,* the position of intimate access. The same image returns in chapter 13.
 
@@ -302,7 +302,7 @@ This is the Formless-Formed grid at its clearest. The Tanakh has been saying the
 
 ## §10. The interrogation in the wilderness — the Witness's threefold denial and the voice of Isaiah 40 (vv.19-28)
 
-*And this is the record of John, when the Yahudim (Jews) sent priests and Levites from Jerusalem to ask him, Who art thou? And he confessed, and denied not; but confessed, I am not the Messiah (Christ). And they asked him, What then? Art thou Elias? And he saith, I am not. Art thou that prophet? And he answered, No. Then said they unto him, Who art thou? that we may give an answer to them that sent us. What sayest thou of thyself? He said, I am the voice of one crying in the wilderness, Make straight the way of the Yahuah (Lord), as said the prophet Esaias. And they which were sent were of the Pharisees. And they asked him, and said unto him, Why baptizest thou then, if thou be not that Messiah (Christ), nor Elias, neither that prophet? John answered them, saying, I baptize with water: but there standeth one among you, whom ye know not; he it is, who coming after me is preferred before me, whose shoe's latchet I am not worthy to unloose. These things were done in Bethabara beyond Jordan, where John was baptizing.* (John 1:19-28)
+*And this is the record of John, when the Yahudim (Jews) sent priests and Levites from Jerusalem to ask him, Who art thou? And he confessed, and denied not; but confessed, I am not the Messiah (Christ). And they asked him, What then? Art thou Elias? And he saith, I am not. Art thou that prophet? And he answered, No. Then said they unto him, Who art thou? that we may give an answer to them that sent us. What sayest thou of thyself? He said, I am the voice of one crying in the wilderness, Make straight the way of Yahuah (Lord), as said the prophet Esaias. And they which were sent were of the Pharisees. And they asked him, and said unto him, Why baptizest thou then, if thou be not that Messiah (Christ), nor Elias, neither that prophet? John answered them, saying, I baptize with water: but there standeth one among you, whom ye know not; he it is, who coming after me is preferred before me, whose shoe's latchet I am not worthy to unloose. These things were done in Bethabara beyond Jordan, where John was baptizing.* (John 1:19-28)
 
 The prologue closes at v.18 and the narrative opens at v.19 with the interrogation of John-the-Witness by *the Yahudim — priests and Levites from Jerusalem.* The framework reads the interrogation carefully against the system-not-people posture. The *Yahudim* of v.19 is the leadership-system in Jerusalem — the same Pharisaic-Sadducean leadership Matthew 23's seven woes will diagnose — not the Yahudi (Jewish) people as a body. The framework is pro-Yahudah without qualification; the framework dismantles the leadership-system that has overlaid the Torah with traditions making the commandment of none effect. The interrogation is the system's institutional response to the Witness's wilderness baptism. They send their delegation to find out who he claims to be.
 
@@ -310,7 +310,7 @@ The prologue closes at v.18 and the narrative opens at v.19 with the interrogati
 
 **The second denial.** *Art thou Elias?* The reference is Malachi.
 
-*Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of the Yahuah (LORD).* (Malachi 4:5)
+*Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD).* (Malachi 4:5)
 
 The Yahudim's leadership knew the Malachi prophecy and was asking whether this wilderness baptizer was Elijah-returned. The Witness says no. But Yahusha himself will name the Witness as *the Elijah who was to come.*
 
@@ -324,13 +324,13 @@ The two statements are not contradictory. The Witness denies the identification 
 
 The prophet-like-Moses was a recognized first-century Messianic expectation. The Witness denies that he is that prophet. The prophet-like-Moses is Yahusha. Peter names this directly in Acts.
 
-*For Moses truly said unto the fathers, A prophet shall the Yahuah (Lord) your Elohim (God) raise up unto you of your brethren, like unto me; him shall ye hear in all things whatsoever he shall say unto you.* (Acts 3:22)
+*For Moses truly said unto the fathers, A prophet shall Yahuah (Lord) your Elohim (God) raise up unto you of your brethren, like unto me; him shall ye hear in all things whatsoever he shall say unto you.* (Acts 3:22)
 
 The Witness is the preparer of the way, not the Prophet himself.
 
-**The self-identification.** *I am the voice of one crying in the wilderness, Make straight the way of the Yahuah (Lord).* The Witness names his own role from Isaiah 40, and the whole Isaiah 40 context is the comfort-of-the-gathering proclamation that opens the post-exile section of Isaiah.
+**The self-identification.** *I am the voice of one crying in the wilderness, Make straight the way of Yahuah (Lord).* The Witness names his own role from Isaiah 40, and the whole Isaiah 40 context is the comfort-of-the-gathering proclamation that opens the post-exile section of Isaiah.
 
-*Comfort ye, comfort ye my people, saith your Elohim (God). Speak ye comfortably to Jerusalem, and cry unto her, that her warfare is accomplished, that her iniquity is pardoned: for she hath received of the LORD'S hand double for all her sins. The voice of him that crieth in the wilderness, Prepare ye the way of the Yahuah (LORD), make straight in the desert a highway for our Elohim (God).* (Isaiah 40:1-3)
+*Comfort ye, comfort ye my people, saith your Elohim (God). Speak ye comfortably to Jerusalem, and cry unto her, that her warfare is accomplished, that her iniquity is pardoned: for she hath received of the LORD'S hand double for all her sins. The voice of him that crieth in the wilderness, Prepare ye the way of Yahuah (LORD), make straight in the desert a highway for our Elohim (God).* (Isaiah 40:1-3)
 
 The Witness situates himself in Isaiah 40's gathering substance. He is the voice of the wilderness-preparation that precedes the comforting of Jerusalem and the gathering of the scattered. Every subsequent move in John 1 — the Lamb of Elohim at v.29, the Spirit-descending at v.32, the first disciples called at vv.35-42, the Cephas-renaming at v.42, the Natan'el confession at v.49, the Bethel-Ladder identification at v.51 — is the gathering being inaugurated.
 
@@ -376,13 +376,13 @@ The framework reads the Lamb of Elohim of v.29 as the Pesach fulfillment locked 
 
 *And Abraham lifted up his eyes, and looked, and behold behind him a ram caught in a thicket by his horns: and Abraham went and took the ram, and offered him up for a burnt offering in the stead of his son.* (Genesis 22:13)
 
-*And Abraham called the name of that place Yahuah Yireh (Jehovah-jireh): as it is said to this day, In the mount of the Yahuah (LORD) it shall be seen.* (Genesis 22:14)
+*And Abraham called the name of that place Yahuah Yireh (Jehovah-jireh): as it is said to this day, In the mount of Yahuah (LORD) it shall be seen.* (Genesis 22:14)
 
 The Akedah is the Tanakh's foundational substitution pattern: the Father provides the lamb; the lamb dies in the place of the son. At the Akedah, the son was spared because the ram was provided. At the Cross, the Son is offered because the world is to be gathered. The Akedah substance and the Pesach substance both load into v.29's identification.
 
 **The Isaiah 53 lamb led to the slaughter.** The suffering servant of Isaiah 53 is named as a lamb.
 
-*He is despised and rejected of men; a man of sorrows, and acquainted with grief: and we hid as it were our faces from him; he was despised, and we esteemed him not. Surely he hath borne our griefs, and carried our sorrows: yet we did esteem him stricken, smitten of Elohim (God), and afflicted. But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed. All we like sheep have gone astray; we have turned every one to his own way; and the Yahuah (LORD) hath laid on him the iniquity of us all. He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.* (Isaiah 53:3-7)
+*He is despised and rejected of men; a man of sorrows, and acquainted with grief: and we hid as it were our faces from him; he was despised, and we esteemed him not. Surely he hath borne our griefs, and carried our sorrows: yet we did esteem him stricken, smitten of Elohim (God), and afflicted. But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed. All we like sheep have gone astray; we have turned every one to his own way; and Yahuah (LORD) hath laid on him the iniquity of us all. He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.* (Isaiah 53:3-7)
 
 *He poured out his soul unto death: and he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors.* (Isaiah 53:12)
 
@@ -394,7 +394,7 @@ The Lamb of Elohim of John 1:29 is the Isaiah 53 lamb who bears the sin and the 
 
 *Now this is that which thou shalt offer upon the altar; two lambs of the first year day by day continually. The one lamb thou shalt offer in the morning; and the other lamb thou shalt offer at even.* (Exodus 29:38-39)
 
-*This is a continual burnt offering throughout your generations at the door of the tabernacle of the congregation before the Yahuah (LORD): where I will meet you, to speak there unto thee.* (Exodus 29:42)
+*This is a continual burnt offering throughout your generations at the door of the tabernacle of the congregation before Yahuah (LORD): where I will meet you, to speak there unto thee.* (Exodus 29:42)
 
 *And there I will meet with the children of Yashar'el (Israel), and the tabernacle shall be sanctified by my glory.* (Exodus 29:43)
 
@@ -510,9 +510,9 @@ The framework reads this dual confession as the gathering substance breaking thr
 
 The chapter's closing identity-claim. Yahusha names the Son of Adam — *himself* — as the Ladder. The reference is the dream of Jacob at Beit-El (Bethel), when Jacob fled from Esau and lay down with the stone for his pillow.
 
-*And Jacob went out from Beer-sheba, and went toward Haran. And he lighted upon a certain place, and tarried there all night, because the sun was set; and he took of the stones of that place, and put them for his pillows, and lay down in that place to sleep. And he dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of Elohim (God) ascending and descending on it. And, behold, the Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed; and thy seed shall be as the dust of the earth, and thou shalt spread abroad to the west, and to the east, and to the north, and to the south: and in thee and in thy seed shall all the families of the earth be blessed.* (Genesis 28:10-14)
+*And Jacob went out from Beer-sheba, and went toward Haran. And he lighted upon a certain place, and tarried there all night, because the sun was set; and he took of the stones of that place, and put them for his pillows, and lay down in that place to sleep. And he dreamed, and behold a ladder set up on the earth, and the top of it reached to heaven: and behold the angels of Elohim (God) ascending and descending on it. And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed; and thy seed shall be as the dust of the earth, and thou shalt spread abroad to the west, and to the east, and to the north, and to the south: and in thee and in thy seed shall all the families of the earth be blessed.* (Genesis 28:10-14)
 
-*And Jacob awaked out of his sleep, and he said, Surely the Yahuah (LORD) is in this place; and I knew it not. And he was afraid, and said, How dreadful is this place! this is none other but the house of Elohim (God), and this is the gate of heaven.* (Genesis 28:16-17)
+*And Jacob awaked out of his sleep, and he said, Surely Yahuah (LORD) is in this place; and I knew it not. And he was afraid, and said, How dreadful is this place! this is none other but the house of Elohim (God), and this is the gate of heaven.* (Genesis 28:16-17)
 
 The Bethel-Ladder is the connection-point between heaven and earth, with the angels traveling up and down upon it and Yahuah standing at the top. The Hebrew name *Beit-El* means *house of Elohim,* and Jacob calls the place *the gate of heaven.*
 

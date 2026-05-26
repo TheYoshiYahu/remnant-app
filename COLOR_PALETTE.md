@@ -77,6 +77,7 @@ The three locked theological registers that thread through body text and chrome.
   - Divine-speech S-curve brackets (original §6 use)
   - "Read the basic walk →" expander button (S130)
   - "Read the deeper dive →" expander button (S130)
+  - "Hide / Show English helpers" parentheticals toggle in the chapter chrome strip (S144 close, 2026-05-26 — replaces the prior bare-border treatment; same metallic-emerald gradient as the expanders since the control gates whether the English helpers in parentheses are visible, which reads as the same "more is hidden, click to expand" affordance the register otherwise carries)
   - All future expand/collapse triggers across the PWA must use this gradient on the button face.
 
 ### Bracket-emerald midtone solid

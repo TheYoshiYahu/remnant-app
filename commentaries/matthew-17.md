@@ -58,7 +58,7 @@ The framework reads Mosheh and Eliyahu in framework-substance:
 
 The framework reads the Sukkot-resonance carefully:
 
-- **Sukkot (Tabernacles) is the Yahuah-tabernacles-with-his-people feast** of Vayikra (Leviticus) 23:33-43; Yahuah (the LORD) instructs the gathered to dwell-in-booths for seven days as a remembrance of the wilderness-sojourn and an anticipation of the Messianic-age-Yahuah-dwelling-with-his-people.
+- **Sukkot (Tabernacles) is Yahuah-tabernacles-with-his-people feast** of Vayikra (Leviticus) 23:33-43; Yahuah (the LORD) instructs the gathered to dwell-in-booths for seven days as a remembrance of the wilderness-sojourn and an anticipation of the Messianic-age-Yahuah-dwelling-with-his-people.
 - **Sukkot's eschatological-fulfillment** is named at Zechariah 14:16-19 — *every one that is left of all the nations which came against Yerushalayim (Jerusalem) shall even go up from year to year to worship the King, Yahuah of hosts (LORD of hosts), and to keep the feast of tabernacles.* The framework reads this verse in continuity with Red Line #7's nations-receive-priestly-instruction-from-the-gathered-remnant-in-the-millennial-reign architecture. Sukkot is the Messianic-age-feast par excellence.
 - **The Yochanan (John) 1:14 *the Word was made flesh, and dwelt among us* substance — *eskēnōsen en hēmin* — *tabernacled-among-us.*** The framework reads the *eskēnōsen* substance in framework-substance — the incarnation IS-the-Sukkot-substance at the first-fulfillment-level. The Formed-One has tabernacled-with-his-people in the flesh.
 
@@ -95,7 +95,7 @@ The framework reads the combined-citation as the Father's-correction of Kefa's-p
 - **Daniel 8:17** — Daniel falls on his face at Gavri'el's (Gabriel's) approach.
 - **Daniel 10:9** — Daniel falls into a deep sleep on his face at the vision.
 - **Yechezk'el (Ezekiel) 1:28** — Yechezk'el (Ezekiel) falls upon his face at the vision of the glory of Yahuah (the LORD).
-- **Yeshayahu (Isaiah) 6:5** — Yeshayahu's (Isaiah's) *woe is me!* response at the vision of Yahuah-Tseva'ot (the LORD of hosts).
+- **Yeshayahu (Isaiah) 6:5** — Yeshayahu's (Isaiah's) *woe is me!* response at the vision of Yahuah-Tseva'ot (LORD of hosts).
 - **Revelation 1:17** — Yochanan (John) falls at the feet of the *one like the Son of Adam* as dead.
 
 The disciples'-response is the appropriate-Tanakh-pattern at theophany-substance. The framework reads the disciples'-fear NOT as failure but as Tanakh-faithful-recognition of the holy-substance.
@@ -216,7 +216,7 @@ The Tanakh-and-canon cross-references for Matt 17 per `api/CHAPTER_END_CARD_CONT
 | Daniel 7:9-10 | The Ancient-of-Days vision — *garment white as snow.* Visual-substance parallel. |
 | Daniel 7:13 | *One like the Son of Adam coming with the clouds of heaven* (kaph-comparative preserved per Red Line #12). The Formed-cloud-rider substance. |
 | Daniel 10:5-6 | Daniel's-vision of the man-clothed-in-linen with *face as the appearance of lightning.* Visual-substance parallel. |
-| Yeshayahu (Isaiah) 6:1-5 | Yeshayahu's-vision of Yahuah-Tseva'ot (the LORD of hosts) sitting upon a throne — the Formed-Voice Yochanan (John) 12:41 names as the King-glory Yeshayahu (Isaiah) saw. |
+| Yeshayahu (Isaiah) 6:1-5 | Yeshayahu's-vision of Yahuah-Tseva'ot (LORD of hosts) sitting upon a throne — the Formed-Voice Yochanan (John) 12:41 names as the King-glory Yeshayahu (Isaiah) saw. |
 | Tehillim (Psalm) 50:2-3 | *Out of Tsion (Zion), the perfection of beauty, Elohim (God) hath shined.* |
 | Tehillim (Psalm) 104:1-2 | *Yahuah (the LORD) ... who coverest thyself with light as with a garment.* The light-garment substance the transfigured-King displays. |
 | Yochanan (John) 1:14 | *The Word was made flesh, and dwelt (tabernacled — eskēnōsen) among us, and we beheld his glory, the glory as of the only begotten of the Father.* Yochanan's-own apostolic-summation of the transfiguration-vision and the Word-made-flesh substance. |

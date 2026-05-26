@@ -12,7 +12,7 @@ The twenty-second chapter of the Matthew sweep. **The chapter of the parable-of-
 
 **The framework reads vv.1-14 as the parable-of-the-marriage-feast — restating + extending the Matt 21:33-46 wicked-husbandmen-parable substance at the wedding-banquet-substance-level + adding the wedding-garment-substance and the *many are called, but few are chosen* substance at the post-harvest-sifting-level.**
 
-**The wedding-feast-substance** (vv.1-2). The framework reads the substance carefully. **The wedding-feast-substance is the Tanakh-Messianic-banquet substance** per Yeshayahu (Isaiah) 25:6 (*Yahuah Tseva'ot (the LORD of hosts) make unto all people a feast of fat things*); Yeshayahu (Isaiah) 55:1-3 (*come ye, buy ... without money and without price*); Yeshayahu (Isaiah) 61:10-11 (*as a bridegroom decketh himself with ornaments, and as a bride adorneth herself with her jewels*); the apostolic-restatement at Revelation 19:6-9 (*the marriage of the Lamb is come*) + Revelation 21:2 (*as a bride adorned for her husband*). The substance ties into `bridegroom-messianic-identification` thread (PROPOSED at Matt 9) at the most-substantial-Tanakh-substance-level.
+**The wedding-feast-substance** (vv.1-2). The framework reads the substance carefully. **The wedding-feast-substance is the Tanakh-Messianic-banquet substance** per Yeshayahu (Isaiah) 25:6 (*Yahuah Tseva'ot (LORD of hosts) make unto all people a feast of fat things*); Yeshayahu (Isaiah) 55:1-3 (*come ye, buy ... without money and without price*); Yeshayahu (Isaiah) 61:10-11 (*as a bridegroom decketh himself with ornaments, and as a bride adorneth herself with her jewels*); the apostolic-restatement at Revelation 19:6-9 (*the marriage of the Lamb is come*) + Revelation 21:2 (*as a bride adorned for her husband*). The substance ties into `bridegroom-messianic-identification` thread (PROPOSED at Matt 9) at the most-substantial-Tanakh-substance-level.
 
 **The bidden-substance refusing** (vv.3-6). The framework reads the substance carefully:
 
@@ -198,7 +198,7 @@ The Tanakh-and-canon cross-references for Matt 22 per `api/CHAPTER_END_CARD_CONT
 | Member (target) | Member note |
 |---|---|
 | Matt 22:1-14 | **Primary anchor.** The marriage-feast parable. |
-| Yeshayahu (Isaiah) 25:6-9 | *Yahuah Tseva'ot (the LORD of hosts) make unto all people a feast.* The Tanakh-Messianic-banquet substance. |
+| Yeshayahu (Isaiah) 25:6-9 | *Yahuah Tseva'ot (LORD of hosts) make unto all people a feast.* The Tanakh-Messianic-banquet substance. |
 | Yeshayahu (Isaiah) 55:1-3 | *Come ye, buy ... without money.* The invitation-substance. |
 | Yeshayahu (Isaiah) 61:10 | *Garments of salvation ... robe of righteousness.* The wedding-garment Tanakh-substance. |
 | Yeshayahu (Isaiah) 64:6 | *All our righteousnesses are as filthy rags.* The natural-substance walked-against. |

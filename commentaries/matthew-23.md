@@ -234,7 +234,7 @@ The Tanakh-and-canon cross-references for Matt 23 per `api/CHAPTER_END_CARD_CONT
 | Tehillim (Psalm) 63:7 | *In the shadow of thy wings will I rejoice.* |
 | Tehillim (Psalm) 91:4 | *He shall cover thee with his feathers, and under his wings shalt thou trust.* |
 | Ruth 2:12 | *Under whose wings thou art come to trust.* |
-| Yeshayahu (Isaiah) 31:5 | *As birds flying, so will Yahuah Tseva'ot (the LORD of hosts) defend Yerushalayim (Jerusalem).* |
+| Yeshayahu (Isaiah) 31:5 | *As birds flying, so will Yahuah Tseva'ot (LORD of hosts) defend Yerushalayim (Jerusalem).* |
 | Yirmeyahu (Jeremiah) 12:7 | *I have forsaken mine house, I have left mine heritage.* The Tanakh-house-left-desolate substance. |
 | Yirmeyahu (Jeremiah) 22:5 | *This house shall become a desolation.* |
 | Yechezk'el (Ezekiel) 10:18-19 + 11:22-23 | The departure-of-the-Shekinah-substance from the First-Temple. |
@@ -446,7 +446,7 @@ The Tanakh-and-canon cross-references for Matt 23 per `api/CHAPTER_END_CARD_CONT
 | Devarim (Deuteronomy) 32:11-12 | The eagle-and-her-young substance. |
 | Tehillim (Psalm) 17:8 + 36:7 + 57:1 + 61:4 + 63:7 + 91:4 | The shadow-of-thy-wings substance throughout the Tehillim. |
 | Ruth 2:12 | *Under whose wings thou art come to trust.* |
-| Yeshayahu (Isaiah) 31:5 | *As birds flying, so will Yahuah Tseva'ot (the LORD of hosts) defend Yerushalayim (Jerusalem).* |
+| Yeshayahu (Isaiah) 31:5 | *As birds flying, so will Yahuah Tseva'ot (LORD of hosts) defend Yerushalayim (Jerusalem).* |
 
 **Matt 23:38** — *Behold, your house is left unto you desolate.*
 

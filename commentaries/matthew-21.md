@@ -133,7 +133,7 @@ The framework reads the parable per `lord-lord-and-torahlessness` thread (PROPOS
 
 **The vineyard-substance** (v.33). The framework reads the substance carefully per the Yeshayahu (Isaiah) 5:1-7 substance the King-substance walks-out at-the-parable-substance-level:
 
-- **The vineyard-substance is the Tanakh-Yashar'el (Israel)-substance** per Yeshayahu (Isaiah) 5:1-7's *for the vineyard of Yahuah Tseva'ot (the LORD of hosts) is the house of Yashar'el (Israel), and the men of Yahudah (Judah) his pleasant plant.* The substance is-substantial-at-the-Tanakh-load-bearing-substance-level.
+- **The vineyard-substance is the Tanakh-Yashar'el (Israel)-substance** per Yeshayahu (Isaiah) 5:1-7's *for the vineyard of Yahuah Tseva'ot (LORD of hosts) is the house of Yashar'el (Israel), and the men of Yahudah (Judah) his pleasant plant.* The substance is-substantial-at-the-Tanakh-load-bearing-substance-level.
 - **The hedge + winepress + tower substance** preserves the Yeshayahu 5:2 substance — *and he fenced it, and gathered out the stones thereof, and planted it with the choicest vine, and built a tower in the midst of it, and also made a winepress therein.* The substance is-the-Tanakh-substance-of-substantial-Yahuah's-substance-of-providing-everything-needed-for-the-substance-of-fruit.
 - **The husbandmen-substance** is the leadership-substance — the chief-priests-and-elders-substance the King-just-walked-against at the authority-challenge-substance per §4. **The husbandmen-substance is NOT the people-of-Yashar'el-substance categorically — the substance is-the-leadership-substance entrusted-with-the-stewardship-substance of-the-vineyard-substance.** The framework reads this carefully per `_COMMENTARY_SUMMATION.md` §VII's system-not-people posture.
 - **The householder going into a far country substance** is the substance-of-the-Father's-substance-of-substantial-trust-substance-extended-to-the-stewards-substance.
@@ -193,7 +193,7 @@ The Tanakh-and-canon cross-references for Matt 21 per `api/CHAPTER_END_CARD_CONT
 | Member (target) | Member note |
 |---|---|
 | Matt 21:33-46 | **Primary anchor — FRAMEWORK-MAJOR.** The wicked-husbandmen parable + the stone-rejected citation + the kingdom-given-to-a-nation-bringing-forth-fruit substance. |
-| Yeshayahu (Isaiah) 5:1-7 | The Tanakh-vineyard-of-Yahuah substance — *the vineyard of Yahuah Tseva'ot (the LORD of hosts) is the house of Yashar'el (Israel), and the men of Yahudah (Judah) his pleasant plant.* |
+| Yeshayahu (Isaiah) 5:1-7 | The Tanakh-vineyard-of-Yahuah substance — *the vineyard of Yahuah Tseva'ot (LORD of hosts) is the house of Yashar'el (Israel), and the men of Yahudah (Judah) his pleasant plant.* |
 | Tehillim (Psalm) 118:22-23 | **The stone-rejected citation.** *The stone which the builders refused is become the head stone of the corner. This is Yahuah's (the LORD's) doing; it is marvellous in our eyes.* |
 | Yeshayahu (Isaiah) 28:16 | *Behold, I lay in Tsion (Zion) for a foundation a stone, a tried stone, a precious corner stone, a sure foundation.* |
 | Yeshayahu (Isaiah) 8:14-15 | *A stone of stumbling, and for a rock of offence to both the houses of Yashar'el (Israel).* |
@@ -363,7 +363,7 @@ The Tanakh-and-canon cross-references for Matt 21 per `api/CHAPTER_END_CARD_CONT
 | Target | Member note |
 |---|---|
 | Mal'akhi (Malachi) 3:1-3 | *The Lord, whom ye seek, shall suddenly come to his temple ... he shall purify the sons of Levi.* |
-| Zecharyah (Zechariah) 14:21 | *In that day there shall be no more the Canaanite (trader) in the house of Yahuah Tseva'ot (the LORD of hosts).* |
+| Zecharyah (Zechariah) 14:21 | *In that day there shall be no more the Canaanite (trader) in the house of Yahuah Tseva'ot (LORD of hosts).* |
 
 **Matt 21:13** — *My house shall be called the house of prayer; but ye have made it a den of thieves.*
 

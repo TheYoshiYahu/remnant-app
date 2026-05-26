@@ -1,6 +1,6 @@
 # Free-tier commentary on Matthew 5
 
-Matthew 5 opens the Sermon on the Mount — the King ascending the mountain to teach with authority, the heart-Torah laid down at the throne-place. The Yahuah (Lord) who descended on Sinai in fire is the Formed who has now taken flesh and stands on the mountain; same Voice, same Torah, heart-Torah unveiled.
+Matthew 5 opens the Sermon on the Mount — the King ascending the mountain to teach with authority, the heart-Torah laid down at the throne-place. Yahuah (Lord) who descended on Sinai in fire is the Formed who has now taken flesh and stands on the mountain; same Voice, same Torah, heart-Torah unveiled.
 
 The Beatitudes are NOT a how-to ladder of dispositions to attain the kingdom — they are a roster of the citizens *already* in it.
 

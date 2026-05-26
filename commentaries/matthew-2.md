@@ -134,7 +134,7 @@ Matthew's *Natsareth* and the *Nazōraios* (Nazarene) word both etymologically c
 
 *Hear now, O Yahoshua (Joshua) the high priest, thou, and thy fellows that sit before thee: for they are men wondered at: for, behold, I will bring forth my servant the BRANCH.* (Zechariah 3:8)
 
-*And speak unto him, saying, Thus speaketh Yahuah Tseva'ot (the LORD of hosts), saying, Behold the man whose name is The BRANCH; and he shall grow up out of his place, and he shall build the temple of Yahuah (the LORD).* (Zechariah 6:12)
+*And speak unto him, saying, Thus speaketh Yahuah Tseva'ot (LORD of hosts), saying, Behold the man whose name is The BRANCH; and he shall grow up out of his place, and he shall build the temple of Yahuah (the LORD).* (Zechariah 6:12)
 
 The Messiah settling in *Branch-town* is itself the prophetic-name fulfillment of the Branch promise. The *which was spoken by the prophets* plural framing fits the multiple Branch-passages naturally.
 

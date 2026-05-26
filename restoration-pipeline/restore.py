@@ -43,7 +43,7 @@ Usage:
     from restore import Restorer
     r = Restorer()
     out = r.restore_text("And the LORD said unto Moses...")
-    # out = "And the Yahuah (God) said unto Moses..."   <- needs article fixup,
+    # out = "And Yahuah (God) said unto Moses..."   <- needs article fixup,
     # see ARTICLE_FIXUPS below
 
 CLI:
@@ -401,11 +401,16 @@ RULES: list[Rule] = [
         pattern=re.compile(rf"{LB}THE\s+LORD\s+OUR\s+RIGHTEOUSNESS{RB}"),
         replacement=r"Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)",
     ),
-    # "the LORD of hosts" / "the Lord of hosts" (with article)
+    # "the LORD of hosts" / "the Lord of hosts" (with article).
+    # The article is dropped: Yahuah is a name, not a title, so the English
+    # "the LORD of hosts" loses its article on restoration. Parenthetical
+    # therefore reads "(LORD of hosts)" / "(Lord of hosts)", matching the
+    # convention used by yahuah_tseva_ot below and the app's strip list.
+    # (Updated 2026-05-26 per Yoshi — was emitting buggy "(LORD of hosts)".)
     Rule(
         name="yahuah_tseva_ot_with_the",
-        pattern=re.compile(rf"{LB}([Tt]he)\s+(LORD|Lord)\s+of\s+hosts{RB}"),
-        replacement=r"Yahuah Tseva'ot (\1 \2 of hosts)",
+        pattern=re.compile(rf"{LB}[Tt]he\s+(LORD|Lord)\s+of\s+hosts{RB}"),
+        replacement=r"Yahuah Tseva'ot (\1 of hosts)",
     ),
     # "LORD of hosts" / "Lord of hosts" (no leading "the")
     Rule(
@@ -672,7 +677,7 @@ RULES: list[Rule] = [
 # Article fixups (post-pass)
 # ---------------------------------------------------------------------------
 # After substitution, certain article+name combinations need cleanup:
-#   "the Yahuah (God)" -> "Yahuah (God)" (typically — KJV's "the LORD" is
+#   "Yahuah (God)" -> "Yahuah (God)" (typically — KJV's "the LORD" is
 #       just "the divine name with article" in English; restored, the article
 #       drops because Hebrew tetragrammaton stands alone).
 # We handle this conservatively — only the most clear-cut cases — and let
@@ -686,23 +691,40 @@ ARTICLE_FIXUPS: list[Rule] = [
     # Apocrypha — a single \s+ across a newline was creating a 13-line
     # shift cascade that produced ~26,000 alignment-artifact diffs.
     #
-    # NOTE: Yoshi's published Apocrypha keeps "the Yahuah (God)" in genitive
-    # constructions ("the Yahuah (God) of their fathers"). Disabling these
-    # general article-drop fixups for now — they're too aggressive against
-    # the published-edition convention. Cleaner approach is sentence-level
-    # context awareness, which is a future iteration.
-    # Rule(
-    #     name="the_yahuah_god",
-    #     pattern=re.compile(rf"{LB}the[ \t]+Yahuah[ \t]+\(God\){RB}"),
-    #     replacement=r"Yahuah (God)",
-    #     note="KJV 'the LORD' restores to 'Yahuah (God)' without leading article.",
-    # ),
-    # Rule(
-    #     name="the_yahuah_lord",
-    #     pattern=re.compile(rf"{LB}the[ \t]+Yahuah[ \t]+\(Lord\){RB}"),
-    #     replacement=r"Yahuah (Lord)",
-    #     note="KJV 'the Lord' restores to 'Yahuah (Lord)' without leading article.",
-    # ),
+    # UPDATED 2026-05-26 (Yoshi): the "genitive position preserves 'the'"
+    # carve-out has been retired. Yahuah is a personal name; English drops
+    # the article before personal names in every position (subject, object,
+    # genitive). The previous compromise left ~8,900 buggy "the Yahuah (...)"
+    # forms across canon/apocrypha; those have been cleaned in the data and
+    # the pipeline now drops the article on the restoration pass so future
+    # regenerations stay correct. Match is anchored on the parenthetical
+    # gloss so non-restored "the" usages aren't touched.
+    Rule(
+        name="the_yahuah_LORD",
+        pattern=re.compile(rf"{LB}[Tt]he[ \t]+Yahuah[ \t]+\(LORD\){RB}"),
+        replacement=r"Yahuah (LORD)",
+        note="KJV 'the LORD' restores to 'Yahuah (LORD)' without leading article.",
+    ),
+    Rule(
+        name="the_yahuah_Lord",
+        pattern=re.compile(rf"{LB}[Tt]he[ \t]+Yahuah[ \t]+\(Lord\){RB}"),
+        replacement=r"Yahuah (Lord)",
+        note="KJV 'the Lord' restores to 'Yahuah (Lord)' without leading article.",
+    ),
+    Rule(
+        name="the_yahuah_God",
+        pattern=re.compile(rf"{LB}[Tt]he[ \t]+Yahuah[ \t]+\(God\){RB}"),
+        replacement=r"Yahuah (God)",
+        note="KJV 'the God' (rare) restores to 'Yahuah (God)' without leading article.",
+    ),
+    # Possessive form: "Yahuah's (Lord's)" / "Yahuah's (LORD's)" etc.
+    # Handles both ASCII and typographic apostrophes in the parenthetical.
+    Rule(
+        name="the_yahuahs_possessive",
+        pattern=re.compile(rf"{LB}[Tt]he[ \t]+Yahuah(['’])s[ \t]+\((LORD|Lord|God)(['’])s\){RB}"),
+        replacement=r"Yahuah\1s (\2\3s)",
+        note="KJV 'the LORD's' restores to 'Yahuah's' without leading article.",
+    ),
 ]
 
 
@@ -862,7 +884,7 @@ PRESERVED_PHRASES: list[re.Pattern] = [
     # published Jubilees (49:23 commentary names "what later Christianity
     # called the Lord's Supper" — the term is being quoted as the named
     # Christian rite, and restoring "Lord" inside it produces the awkward
-    # "the Yahuah (Lord)'s Supper" which is theologically wrong: Christianity
+    # "Yahuah (Lord)'s Supper" which is theologically wrong: Christianity
     # didn't call it the Yahuah's Supper, it called it the Lord's Supper).
     # Preserve the named Christian rites verbatim. Both ASCII and typographic
     # apostrophe accepted because Yoshi's published prose uses the typographic
@@ -943,7 +965,7 @@ class Restorer:
             out = _ALREADY_RESTORED_PAT.sub(_stash, out)
 
         # Unstash before article fixups — the fixups need to see the
-        # literal restored text (e.g., "the Yahuah (God)" -> "Yahuah (God)")
+        # literal restored text (e.g., "Yahuah (God)" -> "Yahuah (God)")
         # because they operate on the article-plus-restored-name pattern.
         def _unstash(m: re.Match) -> str:
             return stash[int(m.group(1))]
@@ -978,14 +1000,14 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     # (description, input, expected_output)
     # Session 54: source-echo per Q5 — parentheticals preserve source casing.
     (
-        "single LORD source-echo (article kept)",
+        "single LORD source-echo (article dropped 2026-05-26)",
         "And the LORD said unto Moses",
-        "And the Yahuah (LORD) said unto Moses",
+        "And Yahuah (LORD) said unto Moses",
     ),
     (
         "single Lord source-echo (mixed-case, divine)",
         "the Lord said unto Moses",
-        "the Yahuah (Lord) said unto Moses",
+        "Yahuah (Lord) said unto Moses",
     ),
     (
         "compound the LORD God source-echo",
@@ -1080,7 +1102,7 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     (
         "no false trigger on 'godly'",
         "a godly man feared the Lord",
-        "a godly man feared the Yahuah (Lord)",
+        "a godly man feared Yahuah (Lord)",
     ),
     (
         "no false trigger on 'jewelry'",
@@ -1088,9 +1110,9 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "she wore jewelry",
     ),
     (
-        "the LORD (article kept — Yoshi's published convention preserves 'the' in genitive position)",
+        "the LORD (article dropped 2026-05-26 — Yahuah is a personal name, no article)",
         "Behold, the LORD reigns",
-        "Behold, the Yahuah (LORD) reigns",
+        "Behold, Yahuah (LORD) reigns",
     ),
     (
         "newline does not break substitution boundary",
@@ -1151,7 +1173,7 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     (
         "divine: bare 'the Lord' still restores (no possessive prefix)",
         "they cried unto the Lord their Elohim",
-        "they cried unto the Yahuah (Lord) their Elohim",
+        "they cried unto Yahuah (Lord) their Elohim",
     ),
 
     # --- possessive idempotency (Jubilees session 7) ---
@@ -1242,12 +1264,12 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     (
         "apocalyptic: 'Lord of Spirits' (1 Enoch Parables divine title) restores",
         "And the Lord of Spirits shall abide over them",
-        "And the Yahuah (Lord) of Spirits shall abide over them",
+        "And Yahuah (Lord) of Spirits shall abide over them",
     ),
     (
         "apocalyptic: 'Lord of the sheep' (1 Enoch Animal Apocalypse) restores",
         "And the Lord of the sheep rejoiced over them",
-        "And the Yahuah (Lord) of the sheep rejoiced over them",
+        "And Yahuah (Lord) of the sheep rejoiced over them",
     ),
     (
         "apocalyptic: 'Lord of lords' (compound divine title) restores",
@@ -1256,8 +1278,8 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     ),
     (
         "idempotent: 'Yahuah (God) of Spirits' already-restored stays put",
-        "And the Yahuah (God) of Spirits shall abide over them",
-        "And the Yahuah (God) of Spirits shall abide over them",
+        "And Yahuah (God) of Spirits shall abide over them",
+        "And Yahuah (God) of Spirits shall abide over them",
     ),
 
     # --- POSSESSIVE FORMS (session 19, 2026-05-11) ---
@@ -1279,12 +1301,12 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     (
         "possessive: Lord's restores to Yahuah's (Lord's)",
         "they walked in the Lord's ways",
-        "they walked in the Yahuah's (Lord's) ways",
+        "they walked in Yahuah's (Lord's) ways",
     ),
     (
         "possessive: LORD's (all-caps) restores to Yahuah's (LORD's)",
         "the LORD's anointed",
-        "the Yahuah's (LORD's) anointed",
+        "Yahuah's (LORD's) anointed",
     ),
     (
         "possessive: Christ's restores to Messiah's (Christ's)",
@@ -1375,8 +1397,8 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     ),
     (
         "idempotent possessive: Yahuah's (Lord's) stays put",
-        "they walked in the Yahuah's (Lord's) ways",
-        "they walked in the Yahuah's (Lord's) ways",
+        "they walked in Yahuah's (Lord's) ways",
+        "they walked in Yahuah's (Lord's) ways",
     ),
     (
         "idempotent possessive: Yahudim's (Jews') stays put",
@@ -1410,12 +1432,12 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     (
         "LORD of hosts",
         "thus saith the LORD of hosts",
-        "thus saith Yahuah Tseva'ot (the LORD of hosts)",
+        "thus saith Yahuah Tseva'ot (LORD of hosts)",
     ),
     (
         "Lord of hosts (mixed case)",
         "thus saith the Lord of hosts",
-        "thus saith Yahuah Tseva'ot (the Lord of hosts)",
+        "thus saith Yahuah Tseva'ot (Lord of hosts)",
     ),
     (
         "LORD thy God (Elohayka)",
@@ -1514,8 +1536,8 @@ SELF_TESTS: list[tuple[str, str, str]] = [
     ),
     (
         "no double-wrap: already-restored Yahuah Tseva'ot stays put (idempotency)",
-        "thus saith Yahuah Tseva'ot (the LORD of hosts)",
-        "thus saith Yahuah Tseva'ot (the LORD of hosts)",
+        "thus saith Yahuah Tseva'ot (LORD of hosts)",
+        "thus saith Yahuah Tseva'ot (LORD of hosts)",
     ),
     (
         "no double-wrap: already-restored El Shaddai stays put",
@@ -1554,7 +1576,7 @@ APOCRYPHA_MODE_TESTS: list[tuple[str, str, str]] = [
     (
         "apocrypha mode: other names still restore (Israel, God, LORD) [source-echo]",
         "the children of Israel cried unto the LORD their God",
-        "the children of Yashar'el (Israel) cried unto the Yahuah (LORD) their Elohim (God)",
+        "the children of Yashar'el (Israel) cried unto Yahuah (LORD) their Elohim (God)",
     ),
 ]
 

@@ -1692,22 +1692,33 @@ function Reader() {
               aid toggle in the chrome strip. Default OFF (parentheticals
               visible) per the voice-skill retention-mechanism for first-
               time Christian readers; the reader who has internalized the
-              restored names opts INTO the strip. Button copy: "Hide name
-              translations" / "Show name translations" — names what the
-              parentheticals are (translations of the Hebrew restored
-              names into the conventional English the reader may have
-              learned the verses under).
+              restored names opts INTO the strip.
+
+              Copy renamed 2026-05-26 (Yoshi): "Hide / Show English
+              helpers" — friendlier than the prior "name translations"
+              copy, and names what the parentheticals actually are for
+              the reader (training wheels for the Hebrew restorations).
+
+              Styling 2026-05-26 (Yoshi): metallic-emerald gradient per
+              COLOR_PALETTE §3 (the expansion register) — same treatment
+              as the ChapterCommentary "Read the basic walk →" / "Read
+              the deeper dive →" pills. Semantically fits: "metallic
+              green = more is hidden here, click to expand" reads as
+              "metallic green = English helpers can be expanded/collapsed
+              from this control." Sized to match the techelet study-aid
+              toggle to its right (px-4 py-1.5 text-xs uppercase) so the
+              chrome strip stays visually aligned.
             */}
             <button
               type="button"
               onClick={toggleHideParentheticals}
               aria-pressed={hideParentheticals}
-              title="Hide or show the English parentheticals after restored Sacred Names (e.g., Yahuah (LORD), Yashar'el (Israel), Mosheh (Moses)). Persists across chapters and reloads."
-              className="rounded-md border border-[var(--reader-rule)] bg-transparent px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-text)] shadow-sm hover:opacity-90"
+              title="Hide or show the English helpers in parentheses after restored Sacred Names (e.g., Yahuah (LORD), Yashar'el (Israel), Mosheh (Moses)). Persists across chapters and reloads."
+              className="rounded-md border border-[#2EFFA1] bg-gradient-to-r from-[#04321E] via-[#15A86A] to-[#04321E] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#E6FFF2] shadow-sm hover:opacity-90"
             >
               {hideParentheticals
-                ? "Show name translations"
-                : "Hide name translations"}
+                ? "Show English helpers"
+                : "Hide English helpers"}
             </button>
             <button
               type="button"

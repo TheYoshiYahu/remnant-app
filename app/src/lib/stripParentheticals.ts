@@ -72,6 +72,12 @@ const STRIP_LIST: string[] = [
   "(the Lord my God)",
   "(LORD of hosts)",
   "(Lord of hosts)",
+  // Defensive: any straggler with the stale "the" article from the pre-2026-05-26
+  // restoration convention (now retired). Source text has been cleaned and the
+  // pipeline no longer emits these, but kept here so the toggle works on any
+  // un-regenerated data that still carries the old form.
+  "(the LORD of hosts)",
+  "(the Lord of hosts)",
   "(the LORD God)",
   "(the Lord God)",
   "(LORD God)",

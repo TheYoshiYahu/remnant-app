@@ -88,7 +88,7 @@ And the prophecy that ties the bridegroom-substance directly to the gathering-of
 
 *And it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God). Then shall the children of Yahudah (Judah) and the children of Yashar'el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel.* (Hosea 1:10-11)
 
-The bridegroom-substance Yahusha (Jesus) claims at Matthew 9:15 IS the betrothal-restoration of the divorced-scattered seed. The Yahuah-of-Yashar'el (Israel) whose bridegroom-substance the prophets named is the Formed-in-flesh standing in front of the disciples-of-Yochanan. The bridegroom-of-Yashar'el (Israel) is the King-at-table-with-the-sinners. The gathering-substance of the framework's whole arc surfaces in the King's single phrase.
+The bridegroom-substance Yahusha (Jesus) claims at Matthew 9:15 IS the betrothal-restoration of the divorced-scattered seed. Yahuah-of-Yashar'el (Israel) whose bridegroom-substance the prophets named is the Formed-in-flesh standing in front of the disciples-of-Yochanan. The bridegroom-of-Yashar'el (Israel) is the King-at-table-with-the-sinners. The gathering-substance of the framework's whole arc surfaces in the King's single phrase.
 
 **The *bridegroom shall be taken from them* phrase** (v.15b) is the first explicit-foreshadowing of the cross in Matthew's gospel narrative-arc. The framework reads this carefully. The disciples-of-Yochanan and the contemporary Yashar'el (Israel) community would not yet hear the cross-foreshadowing; they would hear it as some kind of absence. The framework reads the verse as Yahusha (Jesus) ALSO foreshadowing the PRESENT-AGE-BETWEEN-THE-COMINGS — the time when the bridegroom is bodily absent and the bride waits in fasting-and-watching for the consummation that the wedding-of-the-Lamb of Revelation 19 will name.
 
@@ -146,7 +146,7 @@ Isaiah carries the Davidic-Messianic stream forward:
 
 *And there shall come forth a rod out of the stem of Yishai (Jesse), and a Branch shall grow out of his roots: And the spirit of Yahuah (the LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (the LORD).* (Isaiah 11:1-2)
 
-*Of the increase of his government and peace there shall be no end, upon the throne of David, and upon his kingdom, to order it, and to establish it with judgment and with justice from henceforth even for ever. The zeal of Yahuah Tseva'ot (the LORD of hosts) will perform this.* (Isaiah 9:7)
+*Of the increase of his government and peace there shall be no end, upon the throne of David, and upon his kingdom, to order it, and to establish it with judgment and with justice from henceforth even for ever. The zeal of Yahuah Tseva'ot (LORD of hosts) will perform this.* (Isaiah 9:7)
 
 Jeremiah carries it:
 
@@ -232,7 +232,7 @@ And the prophet Zekharyah (Zechariah) carries the same thread:
 
 *For the idols have spoken vanity, and the diviners have seen a lie, and have told false dreams; they comfort in vain: therefore they went their way as a flock, they were troubled, because there was no shepherd.* (Zechariah 10:2)
 
-*Awake, O sword, against my shepherd, and against the man that is my fellow, saith Yahuah Tseva'ot (the LORD of hosts): smite the shepherd, and the sheep shall be scattered: and I will turn mine hand upon the little ones.* (Zechariah 13:7)
+*Awake, O sword, against my shepherd, and against the man that is my fellow, saith Yahuah Tseva'ot (LORD of hosts): smite the shepherd, and the sheep shall be scattered: and I will turn mine hand upon the little ones.* (Zechariah 13:7)
 
 Yahusha (Jesus) sees the multitudes through the Ezekiel-34 lens. The contemporary-leadership-failure is the same failure Ezekiel indicted. The King himself is the Ezekiel-34 shepherd; the multitudes have not yet been gathered to him; the Pharisaic-Sadducean-leadership has failed at the same diagnostic-point Ezekiel named.
 
