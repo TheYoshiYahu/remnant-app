@@ -1566,6 +1566,12 @@ async def append_note(
 # punctuation and numbers stripped. Lowercased for the synonym lookup.
 _SEARCH_TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z']*")
 
+# S151 v2.1 — per-query pg_trgm similarity threshold for the fuzzy
+# vocabulary lookup. The default of 0.6 is too strict for real typos
+# (synagauge → synagogue is ~0.45). 0.3 catches the meaningful misses
+# without flooding the result set with weakly-related lexemes.
+_FUZZY_SIMILARITY_THRESHOLD = 0.3
+
 
 async def _expand_synonyms(conn, tokens: list[str]) -> dict[str, list[str]]:
     """Look up synonym variants for each user token. Returns
@@ -1593,13 +1599,119 @@ async def _expand_synonyms(conn, tokens: list[str]) -> dict[str, list[str]]:
     return {k: sorted(v) for k, v in out.items()}
 
 
-def _build_tsquery(tokens: list[str], synonym_map: dict[str, list[str]]) -> str:
-    """Build a tsquery string with each user token OR-expanded to its
-    synonym group's variants (if any), AND-joined across tokens.
-    Apostrophes stripped in variants so they collapse to the same lexemes
-    the english parser produces from to_tsvector on the verse text.
-    Returns empty string when no tokens are search-usable.
+async def _expand_fuzzy(conn, tokens: list[str]) -> dict[str, list[str]]:
+    """S151 v2.1 — for tokens that match no synonym group, return the
+    nearest real lexemes from the materialized search_vocabulary table
+    via trigram similarity. Returns {user_token_lower: [nearest_lexeme, ...]}
+    with up to 3 lexemes per token, ranked by similarity DESC,
+    occurrences DESC (more common lexemes win ties).
+
+    The trgm GIN index supports the ``%`` operator at the session's
+    current ``pg_trgm.similarity_threshold``. The default 0.6 is too
+    strict for real typos (synagauge → synagogue is ~0.45); ``SET LOCAL
+    pg_trgm.similarity_threshold = 0.3`` widens the index seek to catch
+    the meaningful misses without flooding the result set with weakly-
+    related lexemes. The SET LOCAL only persists within the explicit
+    transaction wrapping the lookup.
+
+    Single roundtrip via LATERAL JOIN against unnest($1::text[]) — one
+    set of fuzzy expansions across all unexpanded user tokens.
+
+    Source: data-schema/migrations/session151_search_vocabulary.sql.
+    Design record: S150_CHECKPOINT.md → Wheel #2.
     """
+    if not tokens:
+        return {}
+    async with conn.transaction():
+        await conn.execute(
+            f"SET LOCAL pg_trgm.similarity_threshold = {_FUZZY_SIMILARITY_THRESHOLD}"
+        )
+        rows = await conn.fetch(
+            """
+            SELECT u.tok, sv.lexeme
+              FROM unnest($1::text[]) AS u(tok)
+              CROSS JOIN LATERAL (
+                SELECT lexeme
+                  FROM search_vocabulary
+                 WHERE lexeme % u.tok
+                 ORDER BY similarity(lexeme, u.tok) DESC,
+                          occurrences DESC
+                 LIMIT 3
+              ) sv
+            """,
+            tokens,
+        )
+    out: dict[str, list[str]] = {}
+    for r in rows:
+        out.setdefault(r["tok"], []).append(r["lexeme"])
+    return out
+
+
+async def _expand_concepts(conn, q: str) -> list[str]:
+    """S151 — concept layer. Return a list of ILIKE patterns ('%phrase%')
+    for any concept-group phrase linked to a phrase that case-insensitively
+    appears in the user query. Empty list when no concept group fires.
+
+    Concept groups are stored in search_expansion_groups (kind='concept')
+    + search_expansion_terms; populated by
+    data-schema/migrations/session151_concept_groups.sql.
+
+    Logic: pull every concept-group term, find which groups have any term
+    substring-matching the query (case-insensitive), collect all OTHER
+    terms in those groups (excluding the matched term itself so we don't
+    re-match what tsquery already covers). Single roundtrip against the
+    small (~12 rows at S151) concept table; the Python-side substring
+    check is cheap and avoids LIKE-pattern injection complexity in SQL.
+
+    Returns ILIKE patterns ready to drop into the search_verses query's
+    ``v.text ILIKE ANY($4::text[])`` clause.
+    """
+    q_lower = q.lower()
+    rows = await conn.fetch(
+        """
+        SELECT g.id AS group_id, et.term
+          FROM search_expansion_groups g
+          JOIN search_expansion_terms et ON et.group_id = g.id
+         WHERE g.kind = 'concept'
+        """
+    )
+    if not rows:
+        return []
+    groups: dict[int, list[str]] = {}
+    for r in rows:
+        groups.setdefault(r["group_id"], []).append(r["term"])
+    # For each group: if any term substring-matches q, surface all OTHER
+    # terms in that group (so the tsquery covers what the user typed; the
+    # concept layer covers the linked phrases the framework reads as
+    # one diagnostic).
+    linked: set[str] = set()
+    for terms in groups.values():
+        matched = [t for t in terms if t.lower() in q_lower]
+        if matched:
+            for t in terms:
+                if t not in matched:
+                    linked.add(t)
+    return [f"%{t}%" for t in linked]
+
+
+def _build_tsquery(
+    tokens: list[str],
+    synonym_map: dict[str, list[str]],
+    fuzzy_map: dict[str, list[str]] | None = None,
+) -> str:
+    """Build a tsquery string with each user token OR-expanded to its
+    synonym group's variants (if any) AND the nearest fuzzy lexemes
+    (if any), AND-joined across tokens. Apostrophes stripped in variants
+    so they collapse to the same lexemes the english parser produces
+    from to_tsvector on the verse text. Returns empty string when no
+    tokens are search-usable.
+
+    S151 — fuzzy_map adds nearest real lexemes from the
+    search_vocabulary table for tokens that match no synonym group.
+    Synonym and fuzzy are mutually exclusive per-token by construction
+    (fuzzy is only computed for tokens not in synonym_map).
+    """
+    fuzzy_map = fuzzy_map or {}
     parts: list[str] = []
     for tok in tokens:
         clean = tok.replace("'", "")
@@ -1612,6 +1724,17 @@ def _build_tsquery(tokens: list[str], synonym_map: dict[str, list[str]]) -> str:
                 parts.append("(" + " | ".join(sanitized) + ")")
             else:
                 parts.append(sanitized[0])
+            continue
+        fuzzy_alts = fuzzy_map.get(tok)
+        if fuzzy_alts:
+            # Include the original token alongside the fuzzy alternatives —
+            # if the user typed an exact lexeme that happens to be in the
+            # vocabulary, the tsquery should still match on the literal.
+            alts = sorted({clean, *(v.replace("'", "") for v in fuzzy_alts if v)})
+            if len(alts) > 1:
+                parts.append("(" + " | ".join(alts) + ")")
+            else:
+                parts.append(alts[0])
         else:
             parts.append(clean)
     return " & ".join(parts)
@@ -1623,7 +1746,8 @@ async def search_verses(
     limit: int = Query(default=25, ge=1, le=200),
 ) -> VerseSearchResponse:
     """
-    Verse search v2 — S150 search engine.
+    Verse search v2.1 — S150 search engine + S151 vocabulary fuzzy +
+    concept layer.
 
     Three layers of query widening before the match lands on
     ``verses.text_tsv`` (tsvector GENERATED ALWAYS from
@@ -1640,29 +1764,36 @@ async def search_verses(
          this; the deception is not their fault — applies to discovery:
          meet readers with the vocabulary they were taught; the text on
          the page brings them home in the restored Sacred Names form.
-      2. **Fuzzy fallback (pg_trgm word_similarity).** For typos and
-         user-typed variants no synonym group enumerates, ``$1 <% v.text``
-         (the word_similarity operator) lights up via the existing
-         ``idx_verses_text_trgm`` (gin_trgm_ops) index. Catches
-         "synagauge" → synagogue and similar phonetic misses.
-      3. **Concept layer (DEFERRED to S151+).** The
-         ``search_expansion_groups`` table reserves ``kind='concept'``
-         for curated phrase-linkings the framework reads as one
-         theological reality (synagogue of Satan ↔ sons of Belial,
-         etc.). This endpoint reads ``kind='synonym'`` rows only at
-         S150.
 
-    Result ordering: tsquery hits ranked by ``ts_rank`` first (priority
-    1); fuzzy hits ranked by ``word_similarity`` second (priority 2);
-    canonical book / chapter / verse as tiebreak. The ``similarity``
-    field in the response is preserved against the original query so
-    the PWA does not change.
+      2. **Vocabulary fuzzy (token-level, S151).** For tokens that match
+         no synonym group, ``_expand_fuzzy`` looks up the nearest real
+         lexemes in the materialized ``search_vocabulary`` table via
+         trigram similarity. ``SET LOCAL pg_trgm.similarity_threshold =
+         0.3`` widens the GIN-backed ``%`` operator's index seek to
+         catch real typos: ``synagauge → synagogue``,
+         ``yehowah → yahuah``, ``messias → messiah``. Up to 3 nearest
+         lexemes per token, ranked by similarity DESC + occurrences DESC.
 
-    Predecessor: S148/S148b switched the v1 search from a trigram-only
-    ``%`` operator to an ILIKE substring match for the 2,000x speedup;
-    S150 keeps the trigram path (as the fuzzy fallback) and layers the
-    tsvector + synonym path on top. ILIKE no longer needed — tsvector
-    is faster on word-in-verse queries and synonym-aware on names.
+      3. **Concept layer (S151).** ``_expand_concepts`` walks the
+         ``search_expansion_groups`` table for ``kind='concept'`` rows.
+         When any phrase in a concept group case-insensitively appears
+         in the user query, every OTHER phrase in that group surfaces
+         too via an ILIKE-ANY OR clause. Searching ``synagogue of Satan``
+         also surfaces the ``sons of Belial`` verses (framework reads
+         them as one diagnostic, S151 seed). Searching ``tares`` or
+         ``watchers`` surfaces the seed-war cluster.
+
+    Result ordering: canonical book / chapter / verse ASC across both
+    the tsquery hits and the concept-layer ILIKE hits. The Round-3
+    perf shape from S150 is preserved — single SELECT, no CTEs, no
+    GROUP BY, GIN-backed both sides of the OR (idx_verses_text_tsv for
+    tsquery; idx_verses_text_trgm for ILIKE). The ``similarity`` field
+    in the response is computed against the original query so the
+    response shape stays stable for the PWA.
+
+    Predecessor history: S148/S148b switched v1 from trigram-only ``%``
+    to ILIKE substring (2,000x speedup); S150 added the tsvector +
+    synonym path on top; S151 adds vocabulary fuzzy + concept layer.
 
     Session 125 (W6 Search V1 UI — DESIGN_LANGUAGE.md §23) keeps
     ``books.tier_required`` in the response so the PWA can render the
@@ -1674,21 +1805,19 @@ async def search_verses(
     async with pool.acquire() as conn:
         raw_tokens = [t.lower() for t in _SEARCH_TOKEN_RE.findall(q)]
         synonym_map = await _expand_synonyms(conn, raw_tokens) if raw_tokens else {}
-        tsquery_str = _build_tsquery(raw_tokens, synonym_map)
+        # S151 — fuzzy expansion for tokens not covered by any synonym group.
+        unexpanded = [t for t in raw_tokens if t not in synonym_map]
+        fuzzy_map = await _expand_fuzzy(conn, unexpanded) if unexpanded else {}
+        tsquery_str = _build_tsquery(raw_tokens, synonym_map, fuzzy_map)
+        # S151 — concept layer. Concept patterns surface verses that
+        # carry the linked phrases the framework reads as one diagnostic.
+        concept_patterns = await _expand_concepts(conn, q)
 
         if tsquery_str:
-            # Perf fixes (S150 mid-session):
-            #   Round 1 — original CTE was unbounded; ts_rank on thousands of
-            #   rows + GROUP BY MAX. Measured ~15s/query.
-            #   Round 2 — capped ts_hits at 500 + canonical ORDER BY; added
-            #   fuzzy CTE for typos. Still 2-10s because the pg_trgm <%
-            #   operator at default word_similarity_threshold=0.6 either does
-            #   a seq scan OR returns 0 hits (synagauge → synagogue similarity
-            #   is ~0.25, below threshold). Fuzzy was dead weight: slow AND
-            #   not catching real typos.
-            #   Round 3 (live): drop fuzzy entirely. Token-level fuzzy that
-            #   actually catches typos needs a vocabulary-materialized table
-            #   and trigram lookup against lexemes — v2.1 work.
+            # S151 — single SELECT, tsquery OR concept-pattern ILIKE-ANY.
+            # Concept clause short-circuits when concept_patterns is empty
+            # (cardinality check). Round-3 perf shape preserved: no CTEs,
+            # no GROUP BY, GIN-backed both sides of the OR.
             rows = await conn.fetch(
                 """
                 SELECT v.id AS verse_id,
@@ -1700,6 +1829,8 @@ async def search_verses(
                   JOIN chapters c ON c.id = v.chapter_id
                   JOIN books    b ON b.id = c.book_id
                  WHERE v.text_tsv @@ to_tsquery('english', $2)
+                    OR (cardinality($4::text[]) > 0
+                        AND v.text ILIKE ANY($4::text[]))
                  ORDER BY b.canonical_order ASC,
                           c.chapter_number ASC,
                           v.verse_number ASC
@@ -1708,11 +1839,13 @@ async def search_verses(
                 q,
                 tsquery_str,
                 limit,
+                concept_patterns,
             )
         else:
             # No tsquery-usable tokens (e.g., all punctuation or stopwords).
             # Fall back to the S148b ILIKE substring path — fast and
-            # predictable for edge-case queries.
+            # predictable for edge-case queries. Concept patterns get
+            # OR-ed in for free; same ILIKE machinery.
             rows = await conn.fetch(
                 """
                 SELECT v.id AS verse_id,
@@ -1724,6 +1857,8 @@ async def search_verses(
                   JOIN chapters c ON c.id = v.chapter_id
                   JOIN books    b ON b.id = c.book_id
                  WHERE v.text ILIKE '%' || $1 || '%'
+                    OR (cardinality($3::text[]) > 0
+                        AND v.text ILIKE ANY($3::text[]))
                  ORDER BY b.canonical_order ASC,
                           c.chapter_number ASC,
                           v.verse_number ASC
@@ -1731,6 +1866,7 @@ async def search_verses(
                 """,
                 q,
                 limit,
+                concept_patterns,
             )
 
     hits = [
