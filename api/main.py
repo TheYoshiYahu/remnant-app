@@ -1677,55 +1677,30 @@ async def search_verses(
         tsquery_str = _build_tsquery(raw_tokens, synonym_map)
 
         if tsquery_str:
-            # Perf fix S150-mid-session: original ts_hits CTE had no LIMIT and
-            # no rank ordering, which forced the planner to scan/rank every
-            # verse matching the OR-expanded tsquery (e.g., "jehovah" expands
-            # to 10 synonyms covering Yahuah/LORD/Yahweh/... — thousands of
-            # rows). The combined CTE's MAX(rank) GROUP BY then aggregated
-            # all of them before the outer LIMIT $3 could cut. Measured at
-            # ~15s for q=jehovah&limit=5. Fix: cap ts_hits at 500 candidate
-            # ids using only the canonical-order projection (no rank
-            # computation in-CTE); fuzzy_hits stays bounded at 25 and skips
-            # ids already in ts_hits; outer SELECT does the canonical-order
-            # sort and final LIMIT. Trades global rank ordering for
-            # canonical-order paging (which is what biblical search actually
-            # wants — readers expect Genesis → Revelation, not relevance).
+            # Perf fixes (S150 mid-session):
+            #   Round 1 — original CTE was unbounded; ts_rank on thousands of
+            #   rows + GROUP BY MAX. Measured ~15s/query.
+            #   Round 2 — capped ts_hits at 500 + canonical ORDER BY; added
+            #   fuzzy CTE for typos. Still 2-10s because the pg_trgm <%
+            #   operator at default word_similarity_threshold=0.6 either does
+            #   a seq scan OR returns 0 hits (synagauge → synagogue similarity
+            #   is ~0.25, below threshold). Fuzzy was dead weight: slow AND
+            #   not catching real typos.
+            #   Round 3 (live): drop fuzzy entirely. Token-level fuzzy that
+            #   actually catches typos needs a vocabulary-materialized table
+            #   and trigram lookup against lexemes — v2.1 work.
             rows = await conn.fetch(
                 """
-                WITH ts_hits AS (
-                    SELECT v.id, b.canonical_order AS bo,
-                           c.chapter_number AS cn, v.verse_number AS vn
-                      FROM verses v
-                      JOIN chapters c ON c.id = v.chapter_id
-                      JOIN books    b ON b.id = c.book_id
-                     WHERE v.text_tsv @@ to_tsquery('english', $2)
-                     ORDER BY b.canonical_order ASC, c.chapter_number ASC,
-                              v.verse_number ASC
-                     LIMIT 500
-                ),
-                fuzzy_hits AS (
-                    SELECT v.id
-                      FROM verses v
-                     WHERE $1 <% v.text
-                       AND NOT EXISTS (SELECT 1 FROM ts_hits WHERE ts_hits.id = v.id)
-                     ORDER BY word_similarity($1, v.text) DESC
-                     LIMIT 25
-                )
                 SELECT v.id AS verse_id,
                        b.slug AS book_slug, b.title AS book_title,
                        c.chapter_number, v.verse_number, v.text,
                        b.tier_required AS tier_required,
                        similarity(v.text, $1) AS sim
-                  FROM (
-                    SELECT id, 1 AS priority FROM ts_hits
-                    UNION ALL
-                    SELECT id, 2 AS priority FROM fuzzy_hits
-                  ) hits
-                  JOIN verses v ON v.id = hits.id
+                  FROM verses v
                   JOIN chapters c ON c.id = v.chapter_id
                   JOIN books    b ON b.id = c.book_id
-                 ORDER BY hits.priority ASC,
-                          b.canonical_order ASC,
+                 WHERE v.text_tsv @@ to_tsquery('english', $2)
+                 ORDER BY b.canonical_order ASC,
                           c.chapter_number ASC,
                           v.verse_number ASC
                  LIMIT $3
@@ -1736,21 +1711,20 @@ async def search_verses(
             )
         else:
             # No tsquery-usable tokens (e.g., all punctuation or stopwords).
-            # Fall back to the pg_trgm fuzzy path alone.
+            # Fall back to the S148b ILIKE substring path — fast and
+            # predictable for edge-case queries.
             rows = await conn.fetch(
                 """
                 SELECT v.id AS verse_id,
                        b.slug AS book_slug, b.title AS book_title,
                        c.chapter_number, v.verse_number, v.text,
                        b.tier_required AS tier_required,
-                       similarity(v.text, $1) AS sim,
-                       2 AS priority
+                       similarity(v.text, $1) AS sim
                   FROM verses v
                   JOIN chapters c ON c.id = v.chapter_id
                   JOIN books    b ON b.id = c.book_id
-                 WHERE $1 <% v.text
-                 ORDER BY word_similarity($1, v.text) DESC,
-                          b.canonical_order ASC,
+                 WHERE v.text ILIKE '%' || $1 || '%'
+                 ORDER BY b.canonical_order ASC,
                           c.chapter_number ASC,
                           v.verse_number ASC
                  LIMIT $2
