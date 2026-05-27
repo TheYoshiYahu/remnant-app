@@ -543,11 +543,38 @@ RULES: list[Rule] = [
         replacement=r"Yahuah (Lord)",
     ),
 
+    # "JESUS" (all-caps; KJV emphasis at name-giving) -> "Yahusha (JESUS)"
+    # Source-echo per Q5: the parenthetical preserves source casing. The KJV
+    # sets the name in all-caps at six scripture-body instances —
+    # Matt 1:21, 1:25, 27:37 ("THIS IS JESUS THE KING OF THE JEWS"),
+    # Luke 1:31, 2:21, and John 19:19 ("JESUS OF NAZARETH"). Without this
+    # rule, the earlier `jesus_alone` regex (case-sensitive `Jesus`) misses
+    # them entirely and the verse renders "thou shalt call his name JESUS:
+    # for he shall save his people from their sins" — which voids the
+    # etymological pedagogy of Matthew 1:21 (Yahusha = Yahuah saves).
+    # Mirrors the LORD_caps / Lord_mixed split for the all-caps YHWH render.
+    Rule(
+        name="JESUS_caps",
+        pattern=re.compile(rf"(?<!Yahusha \(){LB}JESUS{RB}(?!\))"),
+        replacement=r"Yahusha (JESUS)",
+    ),
+
     # "Jesus" (when not already in compound) -> "Yahusha (Jesus)"
     Rule(
         name="jesus_alone",
         pattern=re.compile(rf"(?<!Yahusha \(){LB}Jesus{RB}(?!\))"),
         replacement=r"Yahusha (Jesus)",
+    ),
+
+    # "CHRIST" (all-caps) -> "Messiah (CHRIST)"
+    # Source-echo. KJV uses all-caps CHRIST at the few "JESUS CHRIST" name-
+    # giving moments (the compound rule jesus_christ above already handles
+    # the "JESUS CHRIST" pair when both are all-caps; this rule covers any
+    # standalone all-caps CHRIST that slips past the compound match).
+    Rule(
+        name="CHRIST_caps",
+        pattern=re.compile(rf"(?<!Messiah \(){LB}CHRIST{RB}(?!\))"),
+        replacement=r"Messiah (CHRIST)",
     ),
 
     # "Christ" (when not already in compound) -> "Messiah (Christ)"

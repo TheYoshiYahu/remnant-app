@@ -124,15 +124,45 @@ function tokenize(text: string): string[] {
 }
 
 /**
+ * True for a token that is (a) a parenthetical and (b) at most has
+ * trailing sentence punctuation after the closing ")".
+ *
+ *   isParenToken("(God)")    → true
+ *   isParenToken("(LORD),")  → true   ← trailing comma; was the S148 bug
+ *   isParenToken("(LORD).")  → true
+ *   isParenToken("(God)?")   → true
+ *   isParenToken("Yahuah")   → false
+ *   isParenToken("(broken")  → false  (no closing ")")
+ *
+ * Bug locked at S148 (caught by Yoshi on Malachi 3 — `(Lord),` and
+ * `(LORD).` were rendering through the tappable-Strong's path because
+ * the strict `endsWith(")")` check rejected them, and the fallback
+ * sequential match's coreLower stripped the parens + punctuation to
+ * "lord" and paired the whole token with the next USFX surface. Result:
+ * the parens rendered inside `<span class="word-tappable">`, where the
+ * S144 parentheticals-strip toggle (which only applies to plain
+ * segments) could not reach them. The fix is to allow trailing
+ * punctuation here so the standalone-paren path recognizes these
+ * tokens and emits them plain — then the strip toggle works as
+ * designed.
+ */
+function isParenToken(token: string): boolean {
+  return /^\([^)]*\)[.,;:!?]*$/.test(token);
+}
+
+/**
  * Returns the set of lowercased core surfaces inside a parenthetical
  * token. "(God)" → {"god"}; "(the LORD God)" → {"the", "lord", "god"}.
+ * Trailing sentence punctuation after the closing ")" is ignored
+ * (S148): "(God)?" → {"god"}; "(LORD)," → {"lord"}.
  * Used by cluster detection to test "does this paren contain the next
  * USFX surface?"
  */
 function parenContents(token: string): string[] {
-  if (!token.startsWith("(") || !token.endsWith(")")) return [];
-  const inside = token.slice(1, -1);
-  return inside.split(/\s+/).map(coreLower).filter((s) => s.length > 0);
+  if (!isParenToken(token)) return [];
+  const m = token.match(/^\(([^)]*)\)/);
+  if (!m) return [];
+  return m[1].split(/\s+/).map(coreLower).filter((s) => s.length > 0);
 }
 
 /**
@@ -171,8 +201,11 @@ export function alignVerse(
 
     // Standalone parenthetical at cursor — emit plain. (Sacred-name
     // clusters are processed by walking back from the paren, not by
-    // hitting the paren at the cursor first.)
-    if (tok.startsWith("(") && tok.endsWith(")")) {
+    // hitting the paren at the cursor first.) S148: allow trailing
+    // sentence punctuation via isParenToken — `(Lord),` and `(LORD).`
+    // must also route to the plain-segment path so the strip toggle
+    // can reach them.
+    if (isParenToken(tok)) {
       segments.push({ kind: "plain", text: tok });
       i++;
       continue;
@@ -186,7 +219,7 @@ export function alignVerse(
     let pairings: VerseWordInput[] = [];
     for (let j = i; j < Math.min(i + 6, tokens.length); j++) {
       const cand = tokens[j];
-      if (cand.startsWith("(") && cand.endsWith(")")) {
+      if (isParenToken(cand)) {
         const contents = parenContents(cand);
         let tempW = w;
         const matched: VerseWordInput[] = [];
@@ -210,7 +243,7 @@ export function alignVerse(
           let cs = j - 1;
           while (cs > i - 1 && back > 0) {
             const t = tokens[cs];
-            if (t.startsWith("(") && t.endsWith(")")) {
+            if (isParenToken(t)) {
               break;
             }
             back--;
@@ -234,7 +267,7 @@ export function alignVerse(
       // Interlude
       while (i < clusterStart) {
         const iTok = tokens[i];
-        if (iTok.startsWith("(") && iTok.endsWith(")")) {
+        if (isParenToken(iTok)) {
           segments.push({ kind: "plain", text: iTok });
         } else if (
           w < words.length &&
