@@ -142,15 +142,30 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
     # (line 106) — enoch/jubilees/jasher already use it; no enum extension
     # needed for this edition. Slug, granularity, edition title, and 15-book
     # boundary all locked in _CHARLES_VOL2_BOUNDARIES.md Decisions §4–§5.
-    # sort_offset=500 places this edition after Josephus (400) in the
-    # canonical order; pipeline_version=phase4-v2 matches Josephus's stamp
-    # since this edition was restored under the same restore.py-3 pipeline.
+    # sort_offset=360 (was 500 from W-3 wire-up) — re-sequenced S152
+    # Wheel #2b so this pseudepigrapha edition sits inside the
+    # pseudepigrapha block (enoch sort_offset 300 — first book at 301,
+    # jubilees 310/311, jasher 320/321, ascension-isaiah 330/331,
+    # adam-eve-conflict 340/341+342, apocalypse-of-abraham 350/351)
+    # instead of after josephus (sort_offset 400, books at 401..430).
+    # With the new sort_offset and seed.py's start=1 enumeration
+    # (insert call at line 557), Charles vol 2's books now land at
+    # 361, 362, 363, ... — adjacent to apocalypse-of-abraham at 351.
+    # The pre-S152 placement produced the dropdown-vs-search ordering
+    # disagreement S151's regression walk caught — the PWA's /read
+    # picker (app/src/App.tsx:933 booksByCategory) grouped Charles
+    # vol 2's books with the pseudepigrapha block, but search SQL's
+    # flat ORDER BY canonical_order ASC put them after Josephus.
+    # Live-DB re-sequencing migration:
+    # session152_resequence_extras_canonical_order.sql. Clean-DB
+    # rebuilds via seed.py now produce the in-block layout directly.
+    # pipeline_version=phase4-v2 unchanged from the original wire-up.
     "pseudepigrapha": {
         "title": "The Pseudepigrapha (Charles 1913) — Restored Names Edition",
         "public_domain_base": "Charles 1913 vol 2",
         "witness_category": "pseudepigrapha",
         "tier_required": "extras",
-        "sort_offset": 500,
+        "sort_offset": 360,
         "pipeline_version": "phase4-v2",
     },
     # Apocrypha (Charles 1913 vol 1) — W-2 wire-up landed session 27,
@@ -166,18 +181,31 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
     # existing apocrypha edition's 2 Esdras already carries the Bensly
     # inline-restoration from vol 2's Box translation, session 23).
     # `apocrypha` witness_category already in schema.sql; no enum
-    # extension needed. sort_offset=550 places this edition immediately
-    # after pseudepigrapha (500) in canonical order. pipeline_version=
-    # phase4-v2 matches Pseudepigrapha and Josephus since this edition
-    # was restored under the same restore.py-3 pipeline. Slug,
-    # granularity, edition title, and 15-book boundary all locked in
-    # _CHARLES_VOL1_BOUNDARIES.md Decisions §1–§7 (session 25–27).
+    # extension needed. sort_offset=220 (was 550 from W-2 wire-up) —
+    # re-sequenced S152 Wheel #2b so this edition lands inside the
+    # apocrypha block, immediately after the KJV-1611 apocrypha
+    # (sort_offset 200, books at 201..214). With the new sort_offset
+    # and seed.py's start=1 enumeration (insert call at line 557),
+    # Charles vol 1's books now land at 221, 222, 223, ... — adjacent
+    # to the KJV-1611 apocrypha. Pre-S152, the 550 placement put
+    # Charles vol 1's books AFTER josephus (sort_offset 400, books
+    # at 401..430), so searches surfaced Sirach from this edition
+    # after Antiquities even though the PWA picker grouped both
+    # apocrypha editions together. The re-sequencing closes the
+    # dropdown-vs-search disagreement S151 caught on
+    # `righteous man fall seven times`. Live-DB re-sequencing
+    # migration: session152_resequence_extras_canonical_order.sql.
+    # Clean-DB rebuilds via seed.py now produce the in-block layout
+    # directly. pipeline_version=phase4-v2 unchanged from the
+    # original wire-up. Slug, granularity, edition title, and 15-book
+    # boundary all locked in _CHARLES_VOL1_BOUNDARIES.md Decisions
+    # §1–§7 (sessions 25–27); only the sort_offset moved in S152.
     "apocrypha-charles-vol1": {
         "title": "The Apocrypha (Charles 1913) — Restored Names Edition",
         "public_domain_base": "Charles 1913 vol 1",
         "witness_category": "apocrypha",
         "tier_required": "extras",
-        "sort_offset": 550,
+        "sort_offset": 220,
         "pipeline_version": "phase4-v2",
     },
     # 2026-05-12. NEW edition `mrjames-apocryphal-nt` — session 29 pilot

@@ -1603,8 +1603,9 @@ async def _expand_fuzzy(conn, tokens: list[str]) -> dict[str, list[str]]:
     """S151 v2.1 — for tokens that match no synonym group, return the
     nearest real lexemes from the materialized search_vocabulary table
     via trigram similarity. Returns {user_token_lower: [nearest_lexeme, ...]}
-    with up to 3 lexemes per token, ranked by similarity DESC,
-    occurrences DESC (more common lexemes win ties).
+    with up to 3 lexemes per token, ranked by an occurrence-weighted
+    similarity score (more common biblical lexemes outrank near-equal-
+    similarity rare ones).
 
     The trgm GIN index supports the ``%`` operator at the session's
     current ``pg_trgm.similarity_threshold``. The default 0.6 is too
@@ -1617,8 +1618,38 @@ async def _expand_fuzzy(conn, tokens: list[str]) -> dict[str, list[str]]:
     Single roundtrip via LATERAL JOIN against unnest($1::text[]) — one
     set of fuzzy expansions across all unexpanded user tokens.
 
+    S152 tiebreak tuning (Wheel #2a). The S151 ranking was
+    ``similarity DESC, occurrences DESC`` — similarity won first, with
+    occurrences only firing on exact-similarity ties. The smoke test at
+    S151 close exposed the failure mode: ``synagauge`` ranked ``syna``
+    (sim 0.3636, occ 1) above ``synagogu`` (sim 0.3571, occ 81) by
+    0.0065 on similarity, even though ``synagogu`` is clearly the
+    intended typo target. ``synagogu`` still made the LIMIT 3 expansion
+    so user-facing search behavior worked, but the WARN signaled the
+    ranking was sub-optimal.
+
+    The new primary key is
+    ``similarity(lexeme, tok) * SQRT(LEAST(occurrences, 1000))`` — a
+    diminishing-returns boost for high-occurrence lexemes. The
+    ``LEAST(..., 1000)`` cap prevents stopword-frequency words from
+    dominating the ranking once their occurrence count crosses the
+    typo-correction signal threshold (at occ=1000 the SQRT factor is
+    31.6, which is the most boost the ranking allows). Within
+    threshold (sim ≥ 0.3 is the pg_trgm cutoff), boost grows roughly
+    linearly with √occurrences:
+
+        syna     (0.3636, occ 1)  → 0.3636 × √1  = 0.3636
+        synagogu (0.3571, occ 81) → 0.3571 × √81 = 3.21
+
+    9x margin — synagogu now ranks first and the LIMIT 3 expansion
+    prefers the meaningful biblical word over the proper-noun fragment.
+    Secondary tiebreaks (occurrences DESC, similarity DESC) make the
+    ordering deterministic when the weighted score ties exactly.
+
     Source: data-schema/migrations/session151_search_vocabulary.sql.
     Design record: S150_CHECKPOINT.md → Wheel #2.
+    S152 tiebreak record: S151_CHECKPOINT.md → ``syna`` WARN block;
+    S152_SESSION_OPEN_PROMPT.md → Wheel #2a.
     """
     if not tokens:
         return {}
@@ -1634,8 +1665,10 @@ async def _expand_fuzzy(conn, tokens: list[str]) -> dict[str, list[str]]:
                 SELECT lexeme
                   FROM search_vocabulary
                  WHERE lexeme % u.tok
-                 ORDER BY similarity(lexeme, u.tok) DESC,
-                          occurrences DESC
+                 ORDER BY similarity(lexeme, u.tok)
+                            * SQRT(LEAST(occurrences, 1000)) DESC,
+                          occurrences DESC,
+                          similarity(lexeme, u.tok) DESC
                  LIMIT 3
               ) sv
             """,
