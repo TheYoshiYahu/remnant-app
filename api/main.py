@@ -89,6 +89,7 @@ Run: uvicorn main:app --reload
 
 from __future__ import annotations
 
+import re
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from typing import List, Optional
@@ -1561,74 +1562,189 @@ async def append_note(
 # ----- Search -------------------------------------------------------------
 
 
+# Tokenizer for search query expansion. Letters + apostrophes only —
+# punctuation and numbers stripped. Lowercased for the synonym lookup.
+_SEARCH_TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z']*")
+
+
+async def _expand_synonyms(conn, tokens: list[str]) -> dict[str, list[str]]:
+    """Look up synonym variants for each user token. Returns
+    {user_token_lower: [variant_lower, ...]}; missing tokens have no entry.
+    Single roundtrip via ANY($1) for all tokens. Synonym groups are stored
+    in search_expansion_groups (kind='synonym') + search_expansion_terms;
+    populated by data-schema/migrations/session150_search_engine_v2.sql.
+    """
+    if not tokens:
+        return {}
+    rows = await conn.fetch(
+        """
+        SELECT LOWER(et1.term) AS user_term, et2.term AS variant
+          FROM search_expansion_terms et1
+          JOIN search_expansion_groups g ON g.id = et1.group_id
+          JOIN search_expansion_terms et2 ON et2.group_id = g.id
+         WHERE g.kind = 'synonym'
+           AND LOWER(et1.term) = ANY($1::text[])
+        """,
+        tokens,
+    )
+    out: dict[str, set[str]] = {}
+    for r in rows:
+        out.setdefault(r["user_term"], set()).add(r["variant"].lower())
+    return {k: sorted(v) for k, v in out.items()}
+
+
+def _build_tsquery(tokens: list[str], synonym_map: dict[str, list[str]]) -> str:
+    """Build a tsquery string with each user token OR-expanded to its
+    synonym group's variants (if any), AND-joined across tokens.
+    Apostrophes stripped in variants so they collapse to the same lexemes
+    the english parser produces from to_tsvector on the verse text.
+    Returns empty string when no tokens are search-usable.
+    """
+    parts: list[str] = []
+    for tok in tokens:
+        clean = tok.replace("'", "")
+        if not clean:
+            continue
+        variants = synonym_map.get(tok)
+        if variants:
+            sanitized = sorted({v.replace("'", "") for v in variants if v})
+            if len(sanitized) > 1:
+                parts.append("(" + " | ".join(sanitized) + ")")
+            else:
+                parts.append(sanitized[0])
+        else:
+            parts.append(clean)
+    return " & ".join(parts)
+
+
 @app.get("/v1/verses/search", response_model=VerseSearchResponse)
 async def search_verses(
     q: str = Query(..., min_length=2, description="Phrase to search for."),
     limit: int = Query(default=25, ge=1, le=200),
 ) -> VerseSearchResponse:
     """
-    Verse-text search across every verse in the schema.
+    Verse search v2 — S150 search engine.
 
-    Uses ILIKE substring matching against verses.text. The trigram GIN
-    index (idx_verses_text_trgm with gin_trgm_ops) backs the ILIKE
-    pattern lookup, so the filter is index-driven and fast even on the
-    full 51,965-row corpus.
+    Three layers of query widening before the match lands on
+    ``verses.text_tsv`` (tsvector GENERATED ALWAYS from
+    ``to_tsvector('english', text)``, GIN-indexed at
+    ``idx_verses_text_tsv``):
 
-    Session 148 (search perf fix) — the original query used
-    ``WHERE v.text % $1 OR v.text ILIKE '%' || $1 || '%'`` with an
-    ``ORDER BY similarity(v.text, $1) DESC`` ranking. The S148
-    diagnostic (``_scratch/_session148_diag.out``) showed:
+      1. **Synonym expansion (token-level).** Each user token is looked
+         up in ``search_expansion_terms`` / ``search_expansion_groups``
+         (kind='synonym'). When a token belongs to a group, the
+         ``to_tsquery`` substitutes an OR-expansion of all variants in
+         that group. Searching "Jehovah" or "Yahweh" lands on Yahuah;
+         searching "tzaddik" lands on tsaddiq / righteous / just. The
+         framework's posture toward the deceived — they were handed
+         this; the deception is not their fault — applies to discovery:
+         meet readers with the vocabulary they were taught; the text on
+         the page brings them home in the restored Sacred Names form.
+      2. **Fuzzy fallback (pg_trgm word_similarity).** For typos and
+         user-typed variants no synonym group enumerates, ``$1 <% v.text``
+         (the word_similarity operator) lights up via the existing
+         ``idx_verses_text_trgm`` (gin_trgm_ops) index. Catches
+         "synagauge" → synagogue and similar phonetic misses.
+      3. **Concept layer (DEFERRED to S151+).** The
+         ``search_expansion_groups`` table reserves ``kind='concept'``
+         for curated phrase-linkings the framework reads as one
+         theological reality (synagogue of Satan ↔ sons of Belial,
+         etc.). This endpoint reads ``kind='synonym'`` rows only at
+         S150.
 
-      - The ``%`` trigram operator at threshold 0.3 returns ZERO hits
-        for word-in-verse queries like ``"Yahuah"`` — pg_trgm's
-        whole-string similarity is too strict when the query is a
-        short word and the row is a full verse. All hits came from
-        the ILIKE branch.
-      - The ``OR`` forced a Bitmap Heap Scan with a per-row recheck
-        on every candidate from both index scans. The recheck added
-        ~6.8 seconds of overhead with no benefit.
-      - ``ORDER BY similarity()`` required computing similarity on
-        every matching row (9,287 for ``"Yahuah"``) before the LIMIT
-        could cut to 25. Another ~3 seconds.
-      - Total live execution time: 9,849 ms.
+    Result ordering: tsquery hits ranked by ``ts_rank`` first (priority
+    1); fuzzy hits ranked by ``word_similarity`` second (priority 2);
+    canonical book / chapter / verse as tiebreak. The ``similarity``
+    field in the response is preserved against the original query so
+    the PWA does not change.
 
-    S148b verified the fix: drop the trigram WHERE branch, drop
-    similarity from ORDER BY (keep it in SELECT for the PWA), order
-    by canonical book / chapter / verse. Live execution: 4.9 ms
-    (2,000x speedup). Stress-tested across ``grace`` (165ms),
-    ``Israel`` (12ms), ``fall seven times`` (103ms), and
-    ``name's sake`` (414ms); all sub-second.
+    Predecessor: S148/S148b switched the v1 search from a trigram-only
+    ``%`` operator to an ILIKE substring match for the 2,000x speedup;
+    S150 keeps the trigram path (as the fuzzy fallback) and layers the
+    tsvector + synonym path on top. ILIKE no longer needed — tsvector
+    is faster on word-in-verse queries and synonym-aware on names.
 
-    Richer relevance ranking lands when the Strong's-aware concordance
-    and the Teaching-Corpus-aware concept search land in Phase 5/6.
-
-    Session 125 (W6 Search V1 UI — DESIGN_LANGUAGE.md §23) adds
-    ``books.tier_required`` to the response so the PWA can render the
+    Session 125 (W6 Search V1 UI — DESIGN_LANGUAGE.md §23) keeps
+    ``books.tier_required`` in the response so the PWA can render the
     gate-(c) tier-aware snippet card client-side without a second round
     trip. The endpoint stays public (no auth) — search itself does not
-    tier-gate; the tier-aware rendering happens in the PWA via the new
-    field plus the existing ``partnerAtOrAboveTier()`` helper, mirroring
-    how §20 menu stubs resolve. See §23 *API surface* for the inline
-    justification on client-side rendering vs server-side filtering.
+    tier-gate; tier-aware rendering happens in the PWA.
     """
     pool = get_pool()
     async with pool.acquire() as conn:
-        rows = await conn.fetch(
-            "SELECT v.id AS verse_id, "
-            "       b.slug AS book_slug, b.title AS book_title, "
-            "       c.chapter_number, v.verse_number, v.text, "
-            "       b.tier_required AS tier_required, "
-            "       similarity(v.text, $1) AS sim "
-            "  FROM verses v "
-            "  JOIN chapters c ON c.id = v.chapter_id "
-            "  JOIN books    b ON b.id = c.book_id "
-            " WHERE v.text ILIKE '%' || $1 || '%' "
-            " ORDER BY b.canonical_order ASC, "
-            "          c.chapter_number ASC, v.verse_number ASC "
-            " LIMIT $2",
-            q,
-            limit,
-        )
+        raw_tokens = [t.lower() for t in _SEARCH_TOKEN_RE.findall(q)]
+        synonym_map = await _expand_synonyms(conn, raw_tokens) if raw_tokens else {}
+        tsquery_str = _build_tsquery(raw_tokens, synonym_map)
+
+        if tsquery_str:
+            rows = await conn.fetch(
+                """
+                WITH ts_hits AS (
+                    SELECT v.id, ts_rank(v.text_tsv, q) AS rank, 1 AS priority
+                      FROM verses v, to_tsquery('english', $2) q
+                     WHERE v.text_tsv @@ q
+                ),
+                fuzzy_hits AS (
+                    SELECT v.id, word_similarity($1, v.text) AS rank, 2 AS priority
+                      FROM verses v
+                     WHERE $1 <% v.text
+                     ORDER BY word_similarity($1, v.text) DESC
+                     LIMIT 50
+                ),
+                combined AS (
+                    SELECT id, MIN(priority) AS priority, MAX(rank) AS rank
+                      FROM (
+                        SELECT id, priority, rank FROM ts_hits
+                        UNION ALL
+                        SELECT id, priority, rank FROM fuzzy_hits
+                      ) all_hits
+                     GROUP BY id
+                )
+                SELECT v.id AS verse_id,
+                       b.slug AS book_slug, b.title AS book_title,
+                       c.chapter_number, v.verse_number, v.text,
+                       b.tier_required AS tier_required,
+                       similarity(v.text, $1) AS sim,
+                       combined.priority AS priority
+                  FROM combined
+                  JOIN verses v ON v.id = combined.id
+                  JOIN chapters c ON c.id = v.chapter_id
+                  JOIN books    b ON b.id = c.book_id
+                 ORDER BY combined.priority ASC,
+                          combined.rank DESC,
+                          b.canonical_order ASC,
+                          c.chapter_number ASC,
+                          v.verse_number ASC
+                 LIMIT $3
+                """,
+                q,
+                tsquery_str,
+                limit,
+            )
+        else:
+            # No tsquery-usable tokens (e.g., all punctuation or stopwords).
+            # Fall back to the pg_trgm fuzzy path alone.
+            rows = await conn.fetch(
+                """
+                SELECT v.id AS verse_id,
+                       b.slug AS book_slug, b.title AS book_title,
+                       c.chapter_number, v.verse_number, v.text,
+                       b.tier_required AS tier_required,
+                       similarity(v.text, $1) AS sim,
+                       2 AS priority
+                  FROM verses v
+                  JOIN chapters c ON c.id = v.chapter_id
+                  JOIN books    b ON b.id = c.book_id
+                 WHERE $1 <% v.text
+                 ORDER BY word_similarity($1, v.text) DESC,
+                          b.canonical_order ASC,
+                          c.chapter_number ASC,
+                          v.verse_number ASC
+                 LIMIT $2
+                """,
+                q,
+                limit,
+            )
 
     hits = [
         VerseSearchHit(
