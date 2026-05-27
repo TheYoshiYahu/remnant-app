@@ -109,6 +109,15 @@ const STRIP_LIST: string[] = [
   "(God)",
   "(Jesus)",
   "(Christ)",
+  // S148 — all-caps source-echo variants. The pipeline's JESUS_caps and
+  // CHRIST_caps rules (restore.py) preserve KJV all-caps emphasis at
+  // Matt 1:21, 1:25, 27:37, Luke 1:31, 2:21, John 19:19 — so the
+  // restored text reads `Yahusha (JESUS)` and `Messiah (CHRIST)` with
+  // all-caps preserved per the Sacred Names Convention source-echo
+  // rule. The strip toggle must hide these the same way it hides the
+  // mixed-case forms.
+  "(JESUS)",
+  "(CHRIST)",
   // ---- Covenant people-names ------------------------------------------------
   "(Israel)",
   "(Judah)",
