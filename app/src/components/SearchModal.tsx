@@ -164,7 +164,17 @@ export default function SearchModal({
 
   const trimmedQuery = query.trim();
   const showResults = hits !== null && trimmedQuery.length >= MIN_QUERY_LENGTH;
-  const showIdleHint = !showResults && !loading && !error;
+  // Session 148 — when the partner has typed a partial query (1 char,
+  // below MIN_QUERY_LENGTH), the original implementation silently kept
+  // the idle hint visible, which read as "nothing is happening" (Yoshi
+  // S148 dialog). The short-query hint surfaces immediately so the
+  // partner sees the threshold and knows to keep typing.
+  const showShortQueryHint =
+    trimmedQuery.length > 0 &&
+    trimmedQuery.length < MIN_QUERY_LENGTH &&
+    !loading;
+  const showIdleHint =
+    !showResults && !showShortQueryHint && !loading && !error;
   const showZero = showResults && groups.length === 0 && !error;
 
   function toggleBookCollapse(slug: string) {
@@ -266,6 +276,12 @@ export default function SearchModal({
           {showIdleHint && (
             <p className="py-8 text-center italic text-[var(--reader-muted)]">
               Type to search the canon and extras.
+            </p>
+          )}
+
+          {showShortQueryHint && (
+            <p className="py-8 text-center italic text-[var(--reader-muted)]">
+              Type at least {MIN_QUERY_LENGTH} characters to search.
             </p>
           )}
 

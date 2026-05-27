@@ -1567,13 +1567,40 @@ async def search_verses(
     limit: int = Query(default=25, ge=1, le=200),
 ) -> VerseSearchResponse:
     """
-    Trigram search across every verse in the schema.
+    Verse-text search across every verse in the schema.
 
-    Uses pg_trgm's ``similarity()`` against the gin index on verses.text
-    (idx_verses_text_trgm in schema.sql). For a Phase-4 skeleton the
-    threshold and ranking are kept simple; richer ranking lands when the
-    Strong's-aware concordance and the Teaching-Corpus-aware concept
-    search land in Phase 5/6.
+    Uses ILIKE substring matching against verses.text. The trigram GIN
+    index (idx_verses_text_trgm with gin_trgm_ops) backs the ILIKE
+    pattern lookup, so the filter is index-driven and fast even on the
+    full 51,965-row corpus.
+
+    Session 148 (search perf fix) — the original query used
+    ``WHERE v.text % $1 OR v.text ILIKE '%' || $1 || '%'`` with an
+    ``ORDER BY similarity(v.text, $1) DESC`` ranking. The S148
+    diagnostic (``_scratch/_session148_diag.out``) showed:
+
+      - The ``%`` trigram operator at threshold 0.3 returns ZERO hits
+        for word-in-verse queries like ``"Yahuah"`` — pg_trgm's
+        whole-string similarity is too strict when the query is a
+        short word and the row is a full verse. All hits came from
+        the ILIKE branch.
+      - The ``OR`` forced a Bitmap Heap Scan with a per-row recheck
+        on every candidate from both index scans. The recheck added
+        ~6.8 seconds of overhead with no benefit.
+      - ``ORDER BY similarity()`` required computing similarity on
+        every matching row (9,287 for ``"Yahuah"``) before the LIMIT
+        could cut to 25. Another ~3 seconds.
+      - Total live execution time: 9,849 ms.
+
+    S148b verified the fix: drop the trigram WHERE branch, drop
+    similarity from ORDER BY (keep it in SELECT for the PWA), order
+    by canonical book / chapter / verse. Live execution: 4.9 ms
+    (2,000x speedup). Stress-tested across ``grace`` (165ms),
+    ``Israel`` (12ms), ``fall seven times`` (103ms), and
+    ``name's sake`` (414ms); all sub-second.
+
+    Richer relevance ranking lands when the Strong's-aware concordance
+    and the Teaching-Corpus-aware concept search land in Phase 5/6.
 
     Session 125 (W6 Search V1 UI — DESIGN_LANGUAGE.md §23) adds
     ``books.tier_required`` to the response so the PWA can render the
@@ -1595,8 +1622,8 @@ async def search_verses(
             "  FROM verses v "
             "  JOIN chapters c ON c.id = v.chapter_id "
             "  JOIN books    b ON b.id = c.book_id "
-            " WHERE v.text % $1 OR v.text ILIKE '%' || $1 || '%' "
-            " ORDER BY sim DESC NULLS LAST, b.canonical_order ASC, "
+            " WHERE v.text ILIKE '%' || $1 || '%' "
+            " ORDER BY b.canonical_order ASC, "
             "          c.chapter_number ASC, v.verse_number ASC "
             " LIMIT $2",
             q,
