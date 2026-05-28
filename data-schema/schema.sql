@@ -276,8 +276,16 @@ COMMENT ON TABLE verse_words IS
 
 CREATE TABLE cross_references (
     id              BIGSERIAL PRIMARY KEY,
-    source_verse_id BIGINT NOT NULL REFERENCES verses(id) ON DELETE CASCADE,
-    target_verse_id BIGINT NOT NULL REFERENCES verses(id) ON DELETE CASCADE,
+    -- Session 154: FKs flipped from ON DELETE CASCADE to ON DELETE RESTRICT.
+    -- A canon edition reload via seed.py (DELETE FROM books WHERE
+    -- edition_id = canon) would cascade through chapters → verses and wipe
+    -- every curated cross-reference attached to canon verses; that bit
+    -- production at S153. Failing-loud at the FK is the right behavior —
+    -- if framework-bearing data exists, a canon reload should abort
+    -- rather than silently take the apparatus down with it. Migration:
+    -- data-schema/migrations/session154_restrict_fks_against_canon_reload.sql.
+    source_verse_id BIGINT NOT NULL REFERENCES verses(id) ON DELETE RESTRICT,
+    target_verse_id BIGINT NOT NULL REFERENCES verses(id) ON DELETE RESTRICT,
     source          TEXT NOT NULL,                   -- 'manual' (curated framework-bearing pairs that ship today); 'teaching_corpus' reserved for future entries authored against the Teaching Corpus concept work.
     relevance_score INT,                             -- 0-100 if available; null if unranked
     note            TEXT,                            -- optional one-liner; the curated pairs carry a 'thread:<slug> | <note>' prefix that surfaces alongside the thread membership
@@ -327,7 +335,14 @@ COMMENT ON TABLE cross_reference_threads IS
 
 CREATE TABLE cross_reference_thread_members (
     thread_id           INT NOT NULL REFERENCES cross_reference_threads(id) ON DELETE CASCADE,
-    cross_reference_id  BIGINT NOT NULL REFERENCES cross_references(id) ON DELETE CASCADE,
+    -- Session 154: cross_reference_id FK flipped from ON DELETE CASCADE
+    -- to ON DELETE RESTRICT. Same rationale as cross_references — a
+    -- canon reload that cascade-deletes verses must not silently drop
+    -- the curated thread memberships; the apparatus is framework-bearing
+    -- and a reload should fail loud at the FK. thread_id stays CASCADE
+    -- because deleting a thread should delete its membership rows (the
+    -- join row IS the membership).
+    cross_reference_id  BIGINT NOT NULL REFERENCES cross_references(id) ON DELETE RESTRICT,
     sort_order          INT NOT NULL DEFAULT 0,
     member_note         TEXT,
     PRIMARY KEY (thread_id, cross_reference_id)
@@ -369,8 +384,16 @@ COMMENT ON TABLE concepts IS
 -- means "no entry at that scope").
 CREATE TABLE commentary_entries (
     id              BIGSERIAL PRIMARY KEY,
-    chapter_id      INT REFERENCES chapters(id) ON DELETE CASCADE,
-    verse_id        BIGINT REFERENCES verses(id) ON DELETE CASCADE,
+    -- Session 154: chapter_id and verse_id FKs flipped from ON DELETE
+    -- CASCADE to ON DELETE RESTRICT. A canon edition reload via
+    -- seed.py would cascade through chapters → verses and wipe every
+    -- Yoshi-authored commentary entry; that bit production at S153.
+    -- Failing-loud at the FK is the right behavior — if commentary
+    -- attaches to a canon verse, a canon reload should abort, not
+    -- silently delete the framework-bearing authoring. Migration:
+    -- data-schema/migrations/session154_restrict_fks_against_canon_reload.sql.
+    chapter_id      INT REFERENCES chapters(id) ON DELETE RESTRICT,
+    verse_id        BIGINT REFERENCES verses(id) ON DELETE RESTRICT,
     concept_id      INT REFERENCES concepts(id) ON DELETE SET NULL,
     title           TEXT,
     body            TEXT NOT NULL,
@@ -741,8 +764,8 @@ CREATE TABLE schema_version (
 );
 
 INSERT INTO schema_version (version, notes) VALUES (
-    '1.0.0-phase4-session74',
-    'Sessions 73–74 (2026-05-17) — end-of-chapter cross-reference apparatus, free tier. cross_references.tier_required default flipped from study_notes to free (the apparatus moves into the free tier; every paid tier inherits via the strict chain). UNIQUE (source_verse_id, target_verse_id, source) added for dedupe safety. New tables cross_reference_threads (curated framework-diagnostic grouping with Tanakh anchor and tier gate) and cross_reference_thread_members (many-to-many join). Seeded five v1 threads: post-harvest-sifting (Ezek 20:33-44, 12 pairs), grace-from-names-sake (Ezek 36:22-32, 7 pairs), new-heart (Ezek 36:26-27, 9 pairs), scattered-seed-gathering (Hosea 1:9-10, 8 pairs), false-inclusion-rebuttal (Rom 11:17-24, 11 pairs). Every cross-reference pair is a curated framework-bearing call (Red Lines #2, #10, #11 surfaced through the threads). Session 75 closed the TSK comprehensive-baseline direction on framework grounds (Red Line #2 / #10) — cross-references are interpretive artifacts, the curated threads ARE the apparatus, and the apparatus grows by curated threads on Yoshi''s design call rather than by mass corpus ingestion. Prior version: 1.0.0-phase4-session72.'
+    '1.0.0-phase4-session154',
+    'Session 154 (2026-05-27) — five FKs flipped from ON DELETE CASCADE to ON DELETE RESTRICT on clean-DB rebuilds: commentary_entries.{chapter_id, verse_id}, cross_references.{source_verse_id, target_verse_id}, cross_reference_thread_members.cross_reference_id. Closes the architectural cause of the S153 emergency where a canon edition reload via seed.py cascade-wiped every commentary and cross-reference attached to canon verses. After S154 the cascade is impossible at the schema level — a canon reload now fails loud at the FK if framework-bearing rows attach. Sibling change in api/seed.py same session: --reseed-canon flag added (default --seed-only skips canon entirely, matching the long-standing render.yaml intent); sanity guard aborts if the seed would touch framework-bearing rows without --reseed-canon. The seed of five v1 threads at Sessions 73-74 + every post-seed loader migration since (S110, S112, S110+S131..S146 + S111 + S140b + S147 + S147b) lands as before; the FK regime change only affects what happens on CASCADE delete attempts, not on normal INSERT/UPDATE. Prior version stamp via in-place migration was 1.0.0-phase4-session152.'
 );
 
 

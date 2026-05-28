@@ -20,22 +20,74 @@ plane: an edition with the same slug gets its books cascade-deleted and
 re-loaded fresh. Subscriptions, users, and study-notes are NEVER
 touched by this script — those are user data.
 
+Session 154 — canon is excluded by default.
+================================================
+The S153 emergency was caused by a `--seed-only` run reaching canon and
+cascade-wiping every commentary_entries + cross_references row attached
+to canon verses (via the old ON DELETE CASCADE FKs). That class of
+disaster is now structurally prevented by three layers:
+
+  1. **This script's default**: `--seed-only` (and the implicit no-flag
+     default) seeds ONLY the extras editions. Canon is skipped. To
+     reload canon, the operator must pass `--reseed-canon` AS AN
+     EXPLICIT FLAG.
+  2. **Sanity guard below**: even if `--reseed-canon` is passed, if the
+     reload would cascade-impact >0 commentary_entries or
+     cross_references rows, the script aborts with a clear error and
+     instructions to use an in-place UPDATE migration instead (see
+     Rule 10 in the standing-rules list — session149_modernize_canon.sql
+     is the template). The guard can be overridden with
+     `--allow-framework-loss` but the operator must consciously type
+     that flag.
+  3. **Schema-level FK RESTRICT** (Session 154 migration
+     session154_restrict_fks_against_canon_reload.sql): even if seed.py
+     defenses are bypassed, the DB-side FKs on
+     commentary_entries.{chapter_id, verse_id} +
+     cross_references.{source,target}_verse_id +
+     cross_reference_thread_members.cross_reference_id are
+     ON DELETE RESTRICT, so the cascade physically cannot proceed.
+
+For verse-text content changes (modernization, restoration, typo fixes),
+USE AN IN-PLACE UPDATE MIGRATION — never seed.py. Rule 10 (S149) lays
+out the pattern; session149_modernize_canon.sql is the template.
+
 Modes:
 
   --bootstrap     Apply schema.sql to a fresh DB before seeding. Drops
                   and recreates the public schema. NEVER run against
-                  prod.
-  --seed-only     Skip --bootstrap, just (re)seed the four editions.
+                  prod. Seeds canon + all extras (the fresh-DB case is
+                  the only context where canon must seed).
+  --seed-only     Skip --bootstrap. (Re)seed the EXTRAS editions only;
+                  canon is skipped. This is the safe default for any
+                  routine extras republish against an existing DB.
+  --reseed-canon  Include canon in the seed pass. Required to reload
+                  canon against a populated DB. Triggers the sanity
+                  guard — aborts if commentary/cross-reference rows
+                  exist on canon verses unless --allow-framework-loss
+                  is also passed.
+  --allow-framework-loss
+                  Suppress the sanity guard. Documents intent that the
+                  operator knows --reseed-canon will wipe (via the
+                  FK RESTRICT, in practice this will still fail) the
+                  framework-bearing apparatus. Use only on a true
+                  rebuild-from-zero against a populated DB, and only
+                  after consciously deciding that the post-seed
+                  loaders will be re-run from scratch.
   --dry-run       Parse the JSON and print the counts that *would* be
                   written; touches no DB.
 
 Run:
-  # First-time bring-up against a local Postgres:
+  # First-time bring-up against a local Postgres (drops + recreates
+  # schema, then seeds canon + all extras):
   createdb remnant_app
   python seed.py --bootstrap
 
-  # Reload the four extras editions after a JSON change:
+  # Routine extras republish against a populated DB (canon untouched):
   python seed.py --seed-only
+
+  # Canon reload against a populated DB (rare; usually you want a
+  # Rule-10 in-place UPDATE migration instead):
+  python seed.py --reseed-canon
 """
 
 from __future__ import annotations
@@ -132,12 +184,32 @@ EDITION_PROFILES: dict[str, dict[str, Any]] = {
         "pipeline_version": "phase4-v2",
     },
     # Pseudepigrapha (Charles 1913 vol 2) — W-3 wire-up landed session 23,
-    # 2026-05-11. 15 labeled books (Aristeas, Adam-Eve, Martyrdom Isaiah,
-    # Testaments XII Patriarchs, Sibylline Oracles, Assumption of Moses,
-    # 2 Enoch, 2 Baruch, 3 Baruch, 4 Ezra, Psalms of Solomon, 4 Maccabees,
-    # Pirké Aboth, Ahikar, Zadokite Fragments). Jubilees and 1 Enoch
-    # explicitly HELD per _CHARLES_VOL2_BOUNDARIES.md Decisions §1–§2
-    # (the existing `enoch` and `jubilees` single-book editions stay as-is).
+    # 2026-05-11. Original W-3 plan: 15 labeled books. S32 scope-lock pared
+    # the list to **6 books** (current actual scope, verified S154 Wheel #6
+    # audit — _scratch/_s154_pseudepigrapha_audit.md):
+    #
+    #   1. adam-eve         (The Books of Adam and Eve)
+    #   2. testaments-xii   (The Testaments of the XII Patriarchs)
+    #   3. 2-enoch          (2 Enoch, The Book of the Secrets of Enoch)
+    #   4. 2-baruch         (2 Baruch, The Syriac Apocalypse)
+    #   5. 3-baruch         (3 Baruch, The Greek Apocalypse)
+    #   6. 4-maccabees      (4 Maccabees)
+    #
+    # Removed from the original W-3 set by Yoshi decisions S32 / S32-second
+    # (authoritative book list: parse_pseudepigrapha_edition.py:BOOKS_IN_ORDER):
+    #   * aristeas, sibylline, assumption-moses, psalms-solomon, pirke-aboth
+    #     — Bucket C HOLD entries (Yoshi's SOURCE_TEXT_INVENTORY.md decision).
+    #   * ahikar, zadokite-fragments — off-manifest (not in Yoshi's source
+    #     inventory).
+    #   * 4-ezra — duplicate of the apocrypha edition's 2 Esdras (Bensly
+    #     fragment in vol 1's Box translation, S23).
+    #   * martyrdom-isaiah — migrated to its own edition `ascension-isaiah`
+    #     (Charles 1900 composite includes Martyrdom as ch 1-5, locked S32
+    #     second pass).
+    #
+    # Jubilees and 1 Enoch ALSO explicitly HELD per _CHARLES_VOL2_BOUNDARIES.md
+    # Decisions §1–§2 (the existing `enoch` and `jubilees` single-book editions
+    # stay as-is).
     # `pseudepigrapha` witness_category already in the schema.sql enum
     # (line 106) — enoch/jubilees/jasher already use it; no enum extension
     # needed for this edition. Slug, granularity, edition title, and 15-book
@@ -619,6 +691,89 @@ def dry_run(parsed_dir: Path) -> int:
 # ---------- Entrypoint ----------------------------------------------------
 
 
+async def framework_row_counts(conn: asyncpg.Connection) -> dict[str, int]:
+    """Count framework-bearing rows that would be lost if canon cascade-deletes.
+
+    Used by the Session 154 sanity guard. Returns row counts for the three
+    surfaces the S153 emergency wiped: commentary_entries attached to canon
+    chapters or verses, cross_references whose source or target lives in
+    canon, and cross_reference_thread_members joined through those xrefs.
+    Returns zero counts cleanly if any of the tables don't exist yet (the
+    --bootstrap path runs before tables exist, so the guard tolerates
+    fresh-DB state).
+    """
+    counts = {
+        "commentary_entries_canon": 0,
+        "cross_references_canon": 0,
+        "thread_members_canon": 0,
+    }
+    has_tables = await conn.fetchval(
+        "SELECT count(*) FROM information_schema.tables "
+        " WHERE table_schema = 'public' "
+        "   AND table_name IN ('commentary_entries','cross_references','cross_reference_thread_members')"
+    )
+    if (has_tables or 0) < 3:
+        return counts
+    canon_id = await conn.fetchval("SELECT id FROM editions WHERE slug = 'canon'")
+    if canon_id is None:
+        return counts
+    counts["commentary_entries_canon"] = await conn.fetchval(
+        """
+        SELECT count(*) FROM commentary_entries ce
+         WHERE EXISTS (
+                 SELECT 1 FROM chapters c JOIN books b ON b.id = c.book_id
+                  WHERE b.edition_id = $1 AND c.id = ce.chapter_id
+               )
+            OR EXISTS (
+                 SELECT 1 FROM verses v JOIN chapters c ON c.id = v.chapter_id
+                                       JOIN books b ON b.id = c.book_id
+                  WHERE b.edition_id = $1 AND v.id = ce.verse_id
+               )
+        """,
+        canon_id,
+    )
+    counts["cross_references_canon"] = await conn.fetchval(
+        """
+        SELECT count(*) FROM cross_references x
+         WHERE EXISTS (
+                 SELECT 1 FROM verses v JOIN chapters c ON c.id = v.chapter_id
+                                       JOIN books b ON b.id = c.book_id
+                  WHERE b.edition_id = $1
+                    AND (v.id = x.source_verse_id OR v.id = x.target_verse_id)
+               )
+        """,
+        canon_id,
+    )
+    counts["thread_members_canon"] = await conn.fetchval(
+        """
+        SELECT count(*) FROM cross_reference_thread_members m
+          JOIN cross_references x ON x.id = m.cross_reference_id
+         WHERE EXISTS (
+                 SELECT 1 FROM verses v JOIN chapters c ON c.id = v.chapter_id
+                                       JOIN books b ON b.id = c.book_id
+                  WHERE b.edition_id = $1
+                    AND (v.id = x.source_verse_id OR v.id = x.target_verse_id)
+               )
+        """,
+        canon_id,
+    )
+    return counts
+
+
+def editions_to_seed(reseed_canon: bool) -> list[str]:
+    """Return the ordered list of edition slugs to seed this run.
+
+    Session 154 — `--seed-only` (and the bareword default) excludes canon
+    by default. The operator passes `--reseed-canon` explicitly to bring
+    canon back into the seed pass. `--bootstrap` ALWAYS seeds canon
+    because a fresh DB needs it.
+    """
+    return [
+        slug for slug in JSON_FILE_FOR_EDITION
+        if slug != "canon" or reseed_canon
+    ]
+
+
 async def amain(args: argparse.Namespace) -> int:
     parsed_dir: Path = args.parsed_dir
     if args.dry_run:
@@ -628,9 +783,80 @@ async def amain(args: argparse.Namespace) -> int:
     try:
         if args.bootstrap:
             await bootstrap_schema(conn, args.schema_sql_path)
+            # --bootstrap implies fresh DB; canon must seed.
+            reseed_canon = True
+        else:
+            reseed_canon = args.reseed_canon
+
         if args.seed_only or args.bootstrap:
-            for edition_slug in JSON_FILE_FOR_EDITION:
+            # Sanity guard (Session 154). Triggers when canon is in the
+            # seed pass and an existing DB has framework-bearing rows
+            # attached to canon verses. The schema-level FK RESTRICT
+            # would already block the cascade-delete inside seed_edition,
+            # but failing here with a readable message is better than
+            # failing on a foreign-key violation deep inside the
+            # transaction.
+            if reseed_canon and not args.bootstrap:
+                counts = await framework_row_counts(conn)
+                framework_total = (
+                    counts["commentary_entries_canon"]
+                    + counts["cross_references_canon"]
+                    + counts["thread_members_canon"]
+                )
+                if framework_total > 0 and not args.allow_framework_loss:
+                    print(
+                        "\n[seed] ABORT — --reseed-canon would impact "
+                        "framework-bearing rows on canon:",
+                        file=sys.stderr,
+                    )
+                    print(
+                        f"         commentary_entries (canon-attached): "
+                        f"{counts['commentary_entries_canon']}",
+                        file=sys.stderr,
+                    )
+                    print(
+                        f"         cross_references (canon source or target): "
+                        f"{counts['cross_references_canon']}",
+                        file=sys.stderr,
+                    )
+                    print(
+                        f"         cross_reference_thread_members (joined): "
+                        f"{counts['thread_members_canon']}",
+                        file=sys.stderr,
+                    )
+                    print(
+                        "\n         Session 154 schema FKs are ON DELETE RESTRICT — the "
+                        "cascade-delete inside seed_edition() WILL fail with a foreign-key "
+                        "violation regardless. This guard reports it earlier with prose.\n"
+                        "\n         For verse-text content changes, USE AN IN-PLACE UPDATE "
+                        "MIGRATION (Rule 10, S149). Template:\n"
+                        "           data-schema/migrations/session149_modernize_canon.sql\n"
+                        "\n         If you genuinely need to reload canon from scratch (rare; "
+                        "expect to re-run every post-seed loader afterward — S110, S112, "
+                        "S110+S131..S146 + S111 + S140b + S147 + S147b), pass "
+                        "--allow-framework-loss AFTER first dropping the FKs by hand:\n"
+                        "           ALTER TABLE commentary_entries DROP CONSTRAINT "
+                        "commentary_entries_chapter_id_fkey, "
+                        "DROP CONSTRAINT commentary_entries_verse_id_fkey;\n"
+                        "           ALTER TABLE cross_references DROP CONSTRAINT "
+                        "cross_references_source_verse_id_fkey, "
+                        "DROP CONSTRAINT cross_references_target_verse_id_fkey;\n"
+                        "           ALTER TABLE cross_reference_thread_members DROP CONSTRAINT "
+                        "cross_reference_thread_members_cross_reference_id_fkey;\n"
+                        "         (and re-create them per data-schema/schema.sql afterward).",
+                        file=sys.stderr,
+                    )
+                    return 9
+
+            for edition_slug in editions_to_seed(reseed_canon):
                 await seed_edition(conn, parsed_dir, edition_slug)
+
+            if not reseed_canon and not args.bootstrap:
+                print(
+                    "[seed] canon NOT touched this run "
+                    "(--seed-only default skips canon since Session 154). "
+                    "Pass --reseed-canon explicitly to include it."
+                )
         # Always print the schema_version stamp so operators can see they
         # connected to the right DB.
         version = await conn.fetchval(
@@ -652,7 +878,33 @@ def main() -> int:
     parser.add_argument(
         "--seed-only",
         action="store_true",
-        help="Skip --bootstrap; just (re)seed the four extras editions.",
+        help=(
+            "Skip --bootstrap; (re)seed the EXTRAS editions only. Session 154: "
+            "canon is excluded by default; pass --reseed-canon explicitly to "
+            "include it. Subscriptions, users, and study-notes are never touched."
+        ),
+    )
+    parser.add_argument(
+        "--reseed-canon",
+        action="store_true",
+        help=(
+            "Include canon in the seed pass. Required against a populated DB "
+            "to reload canon (rare — prefer a Rule-10 in-place UPDATE migration "
+            "for verse-text edits). Triggers the sanity guard; pass "
+            "--allow-framework-loss to override (and expect the schema-level "
+            "FK RESTRICT to block the cascade regardless)."
+        ),
+    )
+    parser.add_argument(
+        "--allow-framework-loss",
+        action="store_true",
+        help=(
+            "Suppress the Session 154 sanity guard that aborts when "
+            "--reseed-canon would cascade through framework-bearing rows. "
+            "Only use after consciously deciding to re-run every post-seed "
+            "loader from scratch — and first dropping the FK RESTRICT "
+            "constraints by hand. See seed.py docstring."
+        ),
     )
     parser.add_argument(
         "--dry-run",

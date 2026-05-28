@@ -30,9 +30,18 @@
 # Restored Names JSONs (4 editions / 17 books / 436 chapters / 12,019 verses).
 #
 # Reseed flow (when extras republish): same command with `--seed-only` instead of
-# `--bootstrap`. Cascade-deletes the four extras editions and reloads. User data
-# (study notes, subscriptions, founder pricing counter, reading positions) is
-# untouched.
+# `--bootstrap`. Session 154 made the behavior match this longstanding comment:
+# `--seed-only` cascade-deletes ONLY the extras editions and reloads them. Canon
+# is skipped by default. To reload canon (rare — prefer an in-place UPDATE
+# migration for verse-text edits per Rule 10 / S149), pass `--reseed-canon`
+# explicitly. Even then, a Session 154 sanity guard aborts if the canon reload
+# would touch >0 commentary_entries or cross_references rows; and the schema-
+# level FK RESTRICT (S154 migration session154_restrict_fks_against_canon_reload.sql)
+# would block the cascade regardless. The previous behavior — `--seed-only`
+# silently cascade-deleted canon along with extras — bit production at S153
+# (all Matthew commentary + cross-references wiped). User data (study notes,
+# subscriptions, founder pricing counter, reading positions) is untouched by any
+# of the seed flags.
 
 databases:
   - name: remnant-app-db
