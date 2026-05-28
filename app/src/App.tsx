@@ -48,6 +48,15 @@ import {
 import BookmarkSheet from "./components/BookmarkSheet";
 import NotesPanel, { type PendingAnchor } from "./components/NotesPanel";
 import SearchModal from "./components/SearchModal";
+import AudioPlayer from "./components/AudioPlayer";
+import { getTTSEngine, type TTSVoice } from "./lib/tts";
+import {
+  prepareVerseForSpeech,
+  loadTTSPrefs,
+  saveTTSPrefs,
+  pickBestVoice,
+  type TTSPrefs,
+} from "./lib/tts-helpers";
 import { alignVerse, type Segment } from "./lib/verse-align";
 import {
   IDLE_STATE as RANGE_IDLE,
@@ -409,6 +418,36 @@ function Reader() {
   // [Search][Notes][Theme][Subscription CTA].
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
 
+  // S157 — Native-OS TTS audio narration state per DESIGN_LANGUAGE.md §25.
+  // audioPlayerOpen drives the bottom-pinned AudioPlayer render. playing-
+  // VerseId is the visual cursor (one-step-behind the engine's actual
+  // queue position; updated from the engine's onstart event when each
+  // verse begins). ttsPrefs persists to localStorage under `tts-prefs`
+  // (voice name + rate; playback state itself is per-session per §25
+  // Persistence). voices is populated from the engine at mount + via the
+  // onVoicesChanged subscription (Chrome fires voiceschanged async at
+  // init). autoAdvanceAfterLoad signals the post-chapter-load effect
+  // to kick off TTS from verse 1 of the newly-loaded chapter (the §25
+  // continuous-play-through-witness-category contract; reuses §19
+  // navigateNext for the cross-chapter transition).
+  const [audioPlayerOpen, setAudioPlayerOpen] = useState<boolean>(false);
+  const [playingVerseId, setPlayingVerseId] = useState<number | null>(null);
+  const [ttsPrefs, setTtsPrefs] = useState<TTSPrefs>(() => loadTTSPrefs());
+  const [voices, setVoices] = useState<TTSVoice[]>(() =>
+    getTTSEngine().getVoices(),
+  );
+  const [autoAdvanceAfterLoad, setAutoAdvanceAfterLoad] =
+    useState<boolean>(false);
+  // Engine subscription unsubscribers — captured in the per-playback
+  // effect so we can clean up cleanly when playback ends or the player
+  // closes. Held in refs because they're set + cleared imperatively
+  // from event handlers, not from rendered state.
+  const ttsUnsubsRef = useRef<Array<() => void>>([]);
+  // Tracks whether the partner has manually scrolled during playback —
+  // per §25 "manual-scroll-override" suspends auto-scroll for the rest
+  // of the playback session if true. Cleared on player close/reopen.
+  const manualScrollOverrideRef = useRef<boolean>(false);
+
   // S121 W3 — per-chapter Strong's-tagged-words map. Keys are
   // verse_id; values are the position-ordered VerseWord list for
   // that verse. Fetched alongside the chapter detail via the
@@ -655,6 +694,290 @@ function Reader() {
     }
     setSearchOpen(false);
   }
+
+  // S157 — Native-OS TTS handlers per DESIGN_LANGUAGE.md §25.
+  //
+  // Design:
+  //   - Each verse is its own SpeechSynthesisUtterance — speak() in
+  //     sequence; the engine auto-queues, the onstart/onend events
+  //     drive the visual cursor.
+  //   - prev/next/voice/rate changes stop + re-queue from the new
+  //     starting verse with the new params.
+  //   - At end of chapter, fire navigateNext() (the same §19 chapter-
+  //     nav handler) and let the post-load effect kick off TTS from
+  //     verse 1 of the new chapter. Bounce at category edge (next
+  //     returns null) stops playback cleanly.
+  //   - prepareVerseForSpeech strips parentheticals + applies the §25
+  //     substitution table so the engine speaks the restored names
+  //     phonetically.
+  function queueChapterFromVerse(startVerseId: number) {
+    if (!chapterDetail) return;
+    const verses = chapterDetail.verses;
+    const startIdx = verses.findIndex((v) => v.id === startVerseId);
+    if (startIdx === -1) return;
+    const engine = getTTSEngine();
+    if (!engine.isAvailable()) return;
+
+    // Clean up any prior subscriptions before re-subscribing.
+    for (const unsub of ttsUnsubsRef.current) {
+      try {
+        unsub();
+      } catch {
+        // swallow
+      }
+    }
+    ttsUnsubsRef.current = [];
+
+    // Stop any in-progress utterance + clear the engine queue before
+    // enqueuing the new chapter run.
+    engine.stop();
+
+    // Resolve the voice — partner's pick if set + still in the list,
+    // else fall back to the engine's best-available.
+    const allVoices = engine.getVoices();
+    const englishVoices = allVoices.filter((v) => /^en(-|$)/i.test(v.lang));
+    const picked =
+      (ttsPrefs.voiceName
+        ? englishVoices.find((v) => v.name === ttsPrefs.voiceName)
+        : null) ?? pickBestVoice(englishVoices);
+    const voiceName = picked?.name ?? null;
+
+    // Queue every verse from startIdx to end of chapter. The web
+    // SpeechSynthesis API auto-queues utterances; onstart fires when
+    // each utterance begins, onend when each finishes. We pass each
+    // verse's id as the consumer-side cursor.
+    for (let i = startIdx; i < verses.length; i++) {
+      const v = verses[i];
+      const speakable = prepareVerseForSpeech(v.text);
+      engine.speak(speakable, {
+        voiceName,
+        rate: ttsPrefs.rate,
+        verseId: v.id,
+      });
+    }
+
+    // The web engine doesn't surface per-utterance onstart at the
+    // engine-interface level (we'd need to attach to each utterance
+    // individually) — for V1 the visual cursor is driven from onEnd
+    // by advancing to the NEXT verse in the chapter list. When the
+    // last verse's onEnd fires, fire navigateNext to advance chapters.
+    const unsubEnd = engine.onEnd((e) => {
+      if (!chapterDetail || e.verseId === undefined) return;
+      const idx = chapterDetail.verses.findIndex((v) => v.id === e.verseId);
+      if (idx === -1) return;
+      if (idx + 1 < chapterDetail.verses.length) {
+        // Advance visual cursor to the next queued verse.
+        setPlayingVerseId(chapterDetail.verses[idx + 1].id);
+      } else {
+        // Last verse of chapter just finished — auto-advance through
+        // the witness category per §25 + §19. navigateNext returns
+        // early at the category edge so playback stops cleanly there.
+        setAutoAdvanceAfterLoad(true);
+        void navigateNext();
+      }
+    });
+
+    const unsubErr = engine.onError((err) => {
+      // S157 V1 — error handling is observational only. The engine
+      // already filters out "canceled"/"interrupted" non-errors per
+      // the web implementation; remaining errors are logged for
+      // diagnostic visibility but don't stop playback.
+      // eslint-disable-next-line no-console
+      console.warn("[TTS] error", err);
+    });
+
+    ttsUnsubsRef.current = [unsubEnd, unsubErr];
+
+    setPlayingVerseId(verses[startIdx].id);
+    setAudioPlayerOpen(true);
+    manualScrollOverrideRef.current = false;
+  }
+
+  function startPlaybackFromCurrentVerse() {
+    if (!chapterDetail) return;
+    // Map currentVerse (verse_number) to verse_id via the loaded chapter.
+    const v = chapterDetail.verses.find(
+      (vv) => vv.verse_number === currentVerse,
+    );
+    if (!v) return;
+    queueChapterFromVerse(v.id);
+  }
+
+  function startPlaybackFromVerseId(verseId: number) {
+    queueChapterFromVerse(verseId);
+  }
+
+  function handlePlayPause() {
+    const engine = getTTSEngine();
+    if (!engine.isAvailable()) return;
+    if (engine.isSpeaking()) {
+      // Web engine's `speaking` flag stays true through pause; resume
+      // is the right call when audio is currently held vs. when the
+      // user hit play with nothing queued. We pause when the engine
+      // is actively producing audio, resume otherwise — checking the
+      // paused state would require a separate flag the web API
+      // doesn't directly expose, so we toggle by best-effort:
+      // attempt pause; if pause was already in effect the resume path
+      // is harmless (the engine's internal state guards both calls).
+      engine.pause();
+    } else {
+      engine.resume();
+    }
+  }
+
+  function handleSkipPrevVerse() {
+    if (!chapterDetail || playingVerseId === null) return;
+    const idx = chapterDetail.verses.findIndex((v) => v.id === playingVerseId);
+    if (idx <= 0) return;
+    queueChapterFromVerse(chapterDetail.verses[idx - 1].id);
+  }
+
+  function handleSkipNextVerse() {
+    if (!chapterDetail || playingVerseId === null) return;
+    const idx = chapterDetail.verses.findIndex((v) => v.id === playingVerseId);
+    if (idx === -1 || idx + 1 >= chapterDetail.verses.length) {
+      // At chapter edge — fire chapter-nav auto-advance per the §25
+      // continuous-play contract.
+      setAutoAdvanceAfterLoad(true);
+      void navigateNext();
+      return;
+    }
+    queueChapterFromVerse(chapterDetail.verses[idx + 1].id);
+  }
+
+  function handlePrefsChange(newPrefs: TTSPrefs) {
+    setTtsPrefs(newPrefs);
+    saveTTSPrefs(newPrefs);
+    // Re-queue from the currently-playing verse with the new params so
+    // the partner hears the change immediately. If nothing's playing,
+    // the prefs just stay queued for the next play.
+    if (playingVerseId !== null) {
+      // Defer the re-queue to a microtask so state update + saveTTSPrefs
+      // run before queueChapterFromVerse reads ttsPrefs — without this,
+      // the re-queue would read the stale prefs from the closure.
+      const target = playingVerseId;
+      setTimeout(() => {
+        // queueChapterFromVerse reads ttsPrefs from React state; by the
+        // time setTimeout fires, the setState has propagated.
+        // (queueChapterFromVerse uses the new ttsPrefs.)
+        void target; // silence unused-var lint
+        // We rely on the queueChapterFromVerse re-read happening on the
+        // next render's closure; explicit closure-over-newPrefs path:
+        const engine = getTTSEngine();
+        engine.stop();
+        if (!chapterDetail) return;
+        const startIdx = chapterDetail.verses.findIndex(
+          (v) => v.id === target,
+        );
+        if (startIdx === -1) return;
+        const allVoices = engine.getVoices();
+        const englishVoices = allVoices.filter((v) =>
+          /^en(-|$)/i.test(v.lang),
+        );
+        const picked =
+          (newPrefs.voiceName
+            ? englishVoices.find((v) => v.name === newPrefs.voiceName)
+            : null) ?? pickBestVoice(englishVoices);
+        const voiceName = picked?.name ?? null;
+        for (let i = startIdx; i < chapterDetail.verses.length; i++) {
+          const v = chapterDetail.verses[i];
+          engine.speak(prepareVerseForSpeech(v.text), {
+            voiceName,
+            rate: newPrefs.rate,
+            verseId: v.id,
+          });
+        }
+      }, 0);
+    }
+  }
+
+  function handlePreviewVoice(voiceName: string) {
+    const engine = getTTSEngine();
+    if (!engine.isAvailable()) return;
+    // Preview is a one-shot utterance that doesn't disturb the main
+    // queue — stop any in-progress utterance, speak the preview phrase
+    // with the candidate voice + current rate, then the main playback
+    // is gone. Partner restarts via Play/Pause or skip.
+    engine.stop();
+    setPlayingVerseId(null);
+    engine.speak(
+      "In the beginning Elohim created the heavens and the earth",
+      { voiceName, rate: ttsPrefs.rate },
+    );
+  }
+
+  function handleAudioPlayerClose() {
+    const engine = getTTSEngine();
+    engine.stop();
+    for (const unsub of ttsUnsubsRef.current) {
+      try {
+        unsub();
+      } catch {
+        // swallow
+      }
+    }
+    ttsUnsubsRef.current = [];
+    setAudioPlayerOpen(false);
+    setPlayingVerseId(null);
+    setAutoAdvanceAfterLoad(false);
+    manualScrollOverrideRef.current = false;
+  }
+
+  // S157 — voice list arrives asynchronously on Chrome; subscribe to
+  // the voiceschanged event and update local state so the picker reads
+  // the populated list. No-op on platforms that populate synchronously.
+  useEffect(() => {
+    const engine = getTTSEngine();
+    if (!engine.isAvailable()) return;
+    setVoices(engine.getVoices());
+    const unsub = engine.onVoicesChanged(() => {
+      setVoices(engine.getVoices());
+    });
+    return unsub;
+  }, []);
+
+  // S157 — auto-scroll the currently-spoken verse into view per §25.
+  // Honors prefers-reduced-motion (instant scroll vs smooth) and the
+  // manual-scroll-override flag (suspended for the rest of the session
+  // once the partner manually scrolls during playback).
+  useEffect(() => {
+    if (playingVerseId === null) return;
+    if (manualScrollOverrideRef.current) return;
+    const el = document.querySelector(
+      `[data-verse-id="${playingVerseId}"]`,
+    ) as HTMLElement | null;
+    if (!el) return;
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+      block: "center",
+    });
+  }, [playingVerseId]);
+
+  // S157 — detect manual scroll during playback so we can suspend
+  // auto-scroll for the rest of the session per §25. We use a coarse
+  // heuristic: any scroll event that fires while the player is open
+  // AND not within the brief window after the auto-scroll-triggering
+  // playingVerseId change is treated as manual. A 500ms window after
+  // each playingVerseId update absorbs the smooth-scroll's own scroll
+  // events.
+  useEffect(() => {
+    if (!audioPlayerOpen) return;
+    let lastAutoScrollAt = Date.now();
+    const onPlayingVerseChange = () => {
+      lastAutoScrollAt = Date.now();
+    };
+    onPlayingVerseChange(); // initial reset on player open
+    const onScroll = () => {
+      if (Date.now() - lastAutoScrollAt > 500) {
+        manualScrollOverrideRef.current = true;
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [audioPlayerOpen, playingVerseId]);
 
   // Books load once on mount.
   useEffect(() => {
@@ -912,6 +1235,46 @@ function Reader() {
     }, 50);
     return () => clearTimeout(handle);
   }, [chapterDetail, initialScrollVerse]);
+
+  // S157 — auto-advance-after-chapter-load. When TTS playback hit
+  // end-of-chapter, queueChapterFromVerse fired navigateNext() and set
+  // autoAdvanceAfterLoad=true. The post-chapter-load effect below kicks
+  // off TTS from verse 1 of the newly-loaded chapter so playback
+  // continues seamlessly across the chapter boundary per §25 + §19.
+  // Bounce at the witness-category edge (where navigateNext early-
+  // returns null without loading) leaves chapterDetail unchanged — the
+  // flag stays set but the effect doesn't re-fire because chapterDetail
+  // didn't change. handleAudioPlayerClose clears the flag explicitly.
+  useEffect(() => {
+    if (!autoAdvanceAfterLoad) return;
+    if (!chapterDetail) return;
+    if (chapterDetail.verses.length === 0) return;
+    // Clear the flag BEFORE kicking off the queue so a subsequent
+    // chapter-load (e.g., partner manually navigates while in auto-
+    // advance) doesn't trigger another auto-advance unintentionally.
+    setAutoAdvanceAfterLoad(false);
+    queueChapterFromVerse(chapterDetail.verses[0].id);
+    // queueChapterFromVerse intentionally omitted from deps — it's a
+    // stable closure that reads current state via refs / current values.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoAdvanceAfterLoad, chapterDetail]);
+
+  // S157 — stop audio on MANUAL chapter navigation. Partner clicks the
+  // §19 chapter-nav arrows / picker / search-result / Strong's concord-
+  // ance navigation / cross-ref tap while audio is playing → audio
+  // should stop. The auto-advance path (which also changes selected-
+  // Chapter) is distinguished by the autoAdvanceAfterLoad flag being
+  // true at the moment selectedChapter changes. Mount fires this once
+  // with audioPlayerOpen=false (default) — the guard returns early.
+  useEffect(() => {
+    if (!audioPlayerOpen) return;
+    if (autoAdvanceAfterLoad) return; // auto-advance handles its own re-queue
+    handleAudioPlayerClose();
+    // selectedBookSlug + selectedChapter are the deps; other refs
+    // intentionally omitted (we only stop on chapter change, not on
+    // every audioPlayerOpen toggle).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedBookSlug, selectedChapter]);
 
   // S116 — debounced save on position change. Gated on `hydrated` so
   // the Genesis/1/1 default never overwrites a real saved row before
@@ -1202,11 +1565,28 @@ function Reader() {
             </p>
           </div>
           <div className="flex items-start gap-2">
+            {/* S157 — chrome Listen button per DESIGN_LANGUAGE.md §25.
+                Opens the bottom-pinned AudioPlayer starting from the
+                verse currently centered in the viewport (S116
+                IntersectionObserver pattern — same source-of-truth as
+                reading-position). Free at all tiers per §9 + S141
+                launch-scope revision. Same bordered-chrome button
+                family as the other chrome cluster buttons per §1. */}
+            <button
+              type="button"
+              onClick={startPlaybackFromCurrentVerse}
+              aria-label="Listen to chapter"
+              title="Listen to chapter"
+              className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+            >
+              <span aria-hidden="true">▶</span>
+              <span>Listen</span>
+            </button>
             {/* S125 W6 — chrome Search button. Opens the SearchModal
                 pop-up per DESIGN_LANGUAGE.md §23. Cmd-K/Ctrl-K is the
                 keyboard equivalent (window-level listener above). Per
                 §23 the chrome cluster becomes
-                [Search][Notes][Theme][Subscription CTA] — same
+                [Listen][Search][Notes][Theme][Subscription CTA] — same
                 bordered-chrome button family per §1. Search is chrome-
                 scope, not verse-scope, so it sits in the chrome cluster
                 rather than the §20 VerseActionMenu. */}
@@ -1634,11 +2014,18 @@ function Reader() {
                         : inCapturedRange
                           ? " range-captured"
                           : "";
+                    // S157 — TTS currently-spoken verse visual treatment
+                    // per DESIGN_LANGUAGE.md §25 (matches §21 range-
+                    // anchor register: left-border 2px in spectral-blue
+                    // + 8% alpha tint).
+                    const ttsClass =
+                      playingVerseId === v.id ? " tts-spoken" : "";
                     return (
                       <span
                         key={v.id}
                         data-verse-number={v.verse_number}
-                        className={`verse-interactive${rangeClass}`}
+                        data-verse-id={v.id}
+                        className={`verse-interactive${rangeClass}${ttsClass}`}
                         onPointerDown={() => handlePointerDown(v.id)}
                         onPointerUp={handlePointerCancel}
                         onPointerCancel={handlePointerCancel}
@@ -1905,6 +2292,7 @@ function Reader() {
               onStartRange: (vid) => startRangeFromVerse(vid),
               onBookmark: (vid) => openBookmarkSheet(vid),
               onAddNote: (vid) => openNotesPanelWithAnchor(vid),
+              onPlayFromHere: (vid) => startPlaybackFromVerseId(vid),
             }
           )}
           onClose={() => setMenuState(null)}
@@ -2155,6 +2543,50 @@ function Reader() {
         />
       )}
 
+      {/*
+        S157 — AudioPlayer per DESIGN_LANGUAGE.md §25. Bottom-pinned
+        slide-up bar; not a modal (z-30 sits above content, below the
+        modal stack at z-40+). Opens via chrome ▶ button or the §20
+        "Play from here" menu item. Reuses §19 navigateNext for
+        chapter-boundary auto-advance per the §25 continuous-play
+        contract. Free at all tiers per §9 + S141 launch-scope revision.
+      */}
+      {audioPlayerOpen && chapterDetail && (
+        <AudioPlayer
+          playing={playingVerseId !== null}
+          currentVerseRef={
+            playingVerseId !== null
+              ? (() => {
+                  const v = chapterDetail.verses.find(
+                    (vv) => vv.id === playingVerseId,
+                  );
+                  return v
+                    ? `${chapterDetail.book.title} ${chapterDetail.chapter.chapter_number}:${v.verse_number}`
+                    : null;
+                })()
+              : null
+          }
+          voices={voices}
+          prefs={ttsPrefs}
+          onPlayPause={handlePlayPause}
+          onPrev={
+            chapterDetail.verses.length > 0 &&
+            playingVerseId !== null &&
+            chapterDetail.verses.findIndex((v) => v.id === playingVerseId) > 0
+              ? handleSkipPrevVerse
+              : null
+          }
+          onNext={
+            chapterDetail.verses.length > 0 && playingVerseId !== null
+              ? handleSkipNextVerse
+              : null
+          }
+          onPrefsChange={handlePrefsChange}
+          onPreviewVoice={handlePreviewVoice}
+          onClose={handleAudioPlayerClose}
+        />
+      )}
+
       <footer className="mt-12 border-t border-[var(--reader-rule)] pt-4 font-sans text-xs text-[var(--reader-muted)]">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <a
@@ -2335,6 +2767,9 @@ function buildMenuSections(
      *  the targeted verse pinned as the pending anchor; Save commits a
      *  new entry row with verse_id set. */
     onAddNote: (verseId: number) => void;
+    /** S157 — "Play from here" in the new Listen section. Starts TTS
+     *  playback from the targeted verse; AudioPlayer opens automatically. */
+    onPlayFromHere: (verseId: number) => void;
   }
 ): MenuSection[] {
   // ── Word study (word scope only) ─────────────────────────────────
@@ -2487,7 +2922,24 @@ function buildMenuSections(
     onSelect: () => handlers.onStartRange(state.verseId),
   });
 
+  // ── Listen (verse scope, added S157 — Phase 9.4 launch-blocker) ──────
+  // New section housing the §25 native-OS TTS audio narration entry
+  // point. "Play from here" starts the AudioPlayer at the long-pressed
+  // verse, queues the rest of the chapter, auto-advances at chapter
+  // boundary per §25. Free at all tiers per §9 + S141 launch-scope
+  // revision — audio narration is the accessibility surface. Future
+  // Scribe-tier "Listen in Yoshi's voice" item (S141 Tier B item 12)
+  // lands in the same section when the ElevenLabs PVC wheel ships.
+  const listen: MenuItem[] = [];
+  listen.push({
+    key: "play-from-here",
+    label: "Play from here",
+    icon: "▶",
+    onSelect: () => handlers.onPlayFromHere(state.verseId),
+  });
+
   return [
+    { title: "Listen", items: listen },
     { title: "Word study", items: wordStudy },
     { title: "Marking", items: marking },
     { title: "Notes", items: notes },

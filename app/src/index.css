@@ -184,6 +184,20 @@ body {
   border-radius: 2px;
 }
 
+/* S157 — TTS currently-spoken-verse visual treatment per
+   DESIGN_LANGUAGE.md §25. Same accent register as the §21 range-anchor:
+   2px left-border in spectral-blue + 8% alpha tint. Partners see the
+   same accent treatment they recognize from range selection,
+   repurposed as the audio-position marker. Auto-clears when the player
+   stops or advances to the next verse via the React state change. */
+.verse-interactive.tts-spoken {
+  border-left: 2px solid var(--reader-accent);
+  padding-left: 4px;
+  margin-left: -6px;
+  background-color: color-mix(in srgb, var(--reader-accent) 8%, transparent);
+  border-radius: 2px;
+}
+
 /* S121 W3 — individual Strong's-tagged word inside a verse. Tappable
    for the Strong's-lookup quick-tap path; also a long-press anchor
    for the contextual VerseActionMenu (which routes to Strong's,

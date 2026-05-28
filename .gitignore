@@ -59,3 +59,4 @@ source-texts/parsed/*.pre-*
 # source-texts/strongs-hebrew/
 # source-texts/kjv/
 outputs/
+.~lock.*#

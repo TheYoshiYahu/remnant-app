@@ -1127,3 +1127,145 @@ The canvas render itself (`renderShareCard`) is integration-tested manually at S
 - **Animated / video share targets.** No animated PNG, no MP4, no boomerang-style export. The share card is a still PNG only. Animated formats raise format-compatibility scope across share targets that PNG sidesteps cleanly, and the framework's prose-and-canon body doesn't benefit from animation the way a product screenshot or a UI demo would.
 - **Per-tier watermark variants.** All tiers share the same brand-mark. No "Free partners get a bigger watermark" / "Library partners get a smaller watermark" / "Pro partners get a custom watermark" variants. The brand-mark is the brand; tier differentiation lives in the §9 feature matrix, not in the watermark's visual treatment.
 - **Cross-app deep-link tracking from shared cards.** No QR codes, no URL overlays, no UTM-parameterized deep links rendered onto the card. A partner who taps a shared card lands on the app via natural channels (App Store search / Play Store search / typing the URL); attribution from share-to-install is post-launch instrumentation territory once V2 telemetry lands. The share card stays clean — text + watermark, nothing else.
+
+---
+
+## 25. Native-OS Text-to-Speech Audio Narration (locked S157, Phase 9.4 launch-blocker — Free tier accessibility)
+
+Closes the §III Launch Scope Lock deliverable 9.4 and the §9 Free-tier audio narration line. Web-side path ships on the live PWA against the browser `SpeechSynthesis` API; the Capacitor `@capacitor-community/text-to-speech` plugin wires in at Phase 10 through the same `lib/tts.ts` abstraction with no architectural surgery. Free at all tiers per the S141 launch-scope revision — TTS is the accessibility surface that pairs with the visual reader, and accessibility is never paywalled. The Phase 3 ElevenLabs Yoshi-voice Professional Voice Cloning narration (Scribe tier exclusive per the §9 tier matrix) is the upgrade path that lights up in the same player surface post-launch; §25's player UI is designed to host that voice as a future Scribe-tier entry alongside the device voices the V1 surface ships with.
+
+### Three load-bearing gates locked S157
+
+1. **Sacred-name pronunciation = substitution table.** The TTS engine reads aloud the text we pass it. Restored sacred names + parentheticals are the visual surface's retention mechanism (the voice skill's "every mention, every time" rule); audio listeners have a different access pattern. The locked path strips parentheticals before speaking and applies a curated substitution table that converts the most common restored names into phonetic English spellings the browser TTS engine pronounces reasonably. Framework-true and smooth. The substitution table is documented under *Sacred-name substitution table* below.
+2. **Continuous-play at chapter boundary = auto-advance through the witness-category, bounce at category edge.** Mirrors the §19 chapter-navigation contract one-for-one. TTS auto-advances Genesis 1 → Genesis 2 → … → Revelation 22, then stops at the canon edge; same boundary rule for apocrypha → apocrypha and pseudepigrapha → pseudepigrapha. Crossing categories is a deliberate picker action, not an auto-advance. Long-form listening (audio Bible use case) flows without per-chapter tap friction.
+3. **Voice picker = curated top 3–5 with preview button.** `speechSynthesis.getVoices()` returns 1 to 200+ voices depending on platform; surfacing the raw list overwhelms the partner on Android Chrome. The locked path filters to English, ranks by a quality heuristic (prefer voices flagged `default`, then voices whose names match platform premium-voice patterns — Apple's "Samantha" / "Daniel" / "Karen" / "Moira", Google's "en-US-Wavenet-*" / "en-GB-Wavenet-*", Microsoft's "en-US-AriaNeural" / "en-US-JennyNeural"), surfaces the top 3–5 in the visible picker with a per-row preview button (taps a sample phrase — *"In the beginning Elohim created the heavens and the earth"* — through the candidate voice), and hides the full long list behind a "More voices…" expander.
+
+### Defaultable surface
+
+Items below ship with the noted V1 defaults; Yoshi redlines on the §25 review. None of them is load-bearing in the way the three gates above are.
+
+- **Player UI placement.** Bottom-pinned slide-up bar matching the §22 NotesPanel bordered-chrome modal family. Collapsed height ~60px (single-row controls), expanded height ~140px (controls + voice + speed picker). Always visible while playing; closes via ✕ button and via the chrome ▶ button toggle. Z-index sits above the verse content but below the §22 NotesPanel + §23 SearchModal + §20 VerseActionMenu (those modals trump audio chrome when invoked).
+- **Visual treatment of currently-spoken verse.** Left-border 2px in §5 spectral-blue `#0084FF` + 8% alpha background tint in the same color via `color-mix(in srgb, var(--reader-accent) 8%, transparent)`. Matches the §21 range-anchor treatment one-for-one — the partner sees the same accent register they recognize from range selection, repurposed as the audio-position marker. Auto-clears when the player stops or moves to the next verse.
+- **Entry surfaces.** Two paths:
+  - **Chrome ▶ button** added to the left of the [Search][Notes][Theme][Subscription CTA] cluster — opens the player at the verse currently centered in the viewport per the S116 IntersectionObserver pattern (reuse the existing `currentVerse` state — same source-of-truth as reading-position).
+  - **VerseActionMenu "Play from here" menu item** in a new **Listen** section above the existing Marking / Notes / Cross-references / Share sections. The Listen section is the V1 single-item home for audio actions; the future Scribe-tier "Listen in Yoshi's voice" item promotes into the same section when ElevenLabs PVC ships.
+- **Speed control.** 4-step discrete picker — 0.75× / 1.0× / 1.25× / 1.5×. Slider was considered + declined: discrete values are easier to tap on mobile, and the 4-step range covers the standard listening-speed window. 1.0× default. Persists to localStorage under `tts-prefs.rate`.
+- **Skip controls.** Prev-verse / next-verse only at V1. Chapter-jumping happens through the §19 chapter navigation chrome — partner closes the player, navigates, restarts playback. Mid-chapter skip-forward / skip-back-multiple-verses was considered + declined for V1 scope: standard audio listening flows linearly through a chapter, and the partner who wants to re-listen taps the verse to seek directly.
+- **Persistence.** Voice + speed prefs persist to localStorage under `tts-prefs`. Currently-playing state does NOT persist — browser SpeechSynthesis state is per-tab and per-load, page refresh always stops audio. The partner returns to the visual reader at their saved S116 reading-position (verse-level) on refresh; restarting playback is one tap on the chrome ▶ button.
+- **Auto-scroll behavior.** When the spoken verse advances past the viewport, `scrollIntoView({ behavior: 'smooth', block: 'center' })` brings it into view. `prefers-reduced-motion: reduce` honored — instant scroll instead of smooth when set. **Manual-scroll-override:** if the partner manually scrolls during playback (detected via scroll-event timing — a scroll that didn't originate from the auto-scroll), suspend auto-scroll for the remainder of the current playback session; the visual cursor (the left-border accent on the currently-spoken verse) still updates, but the viewport no longer follows. Closing + reopening the player resets the override.
+
+### Sacred-name substitution table
+
+The V1 table covers ~95% of name occurrences across canon + extras. Each entry maps a Hebrew/Greek restored name to a phonetic English spelling tuned for the browser's default voice rendering. The match is case-sensitive on the restored name, word-boundary anchored, applied AFTER parenthetical stripping (so `Yahuah (LORD)` first becomes `Yahuah`, then the substitution maps to `yah-OO-ah`).
+
+**Compound names fire before singles** — longer phrases match first, so `Yahuah Elohim` substitutes as one unit rather than `Yahuah` eating the `Yahuah` and leaving a bare `Elohim` for the singles pass. Implementation: sort the substitution map by key length descending before the regex pass.
+
+| Restored name | Phonetic spelling | Notes |
+|---|---|---|
+| Yahuah | yah-OO-ah | Per voice skill: Ee-Ah-Oo-Ah (Josephus, *Wars* 5.5.7). Four vowel sounds. |
+| Yahusha | yah-OO-shah | The Messiah; spelled Yahusha not Yahushua per the voice skill. |
+| Yah | yah | Short form; one syllable. |
+| Elohim | el-oh-HEEM | Title for the Most High. |
+| El | el | Singular Hebrew root; one syllable. |
+| Adonai | ah-doh-NAI | Sovereign master title. |
+| Ruach HaKodesh | ROO-akh hah-KOH-desh | The Spirit. Two-word compound. |
+| HaMashiach | hah-mah-SHEE-akh | The anointed one. |
+| Mashiach | mah-SHEE-akh | Anointed one (standalone). |
+| Messiah | meh-SIE-ah | Already a near-phonetic English form; no substitution strictly required, included for completeness. |
+| Yahuah Elohim | yah-OO-ah el-oh-HEEM | Compound; fires before singles. |
+| Yahuah Tseva'ot | yah-OO-ah tseh-vah-OAT | LORD of hosts. |
+| Yahuah Tsidkenu | yah-OO-ah tsid-KEH-noo | THE LORD OUR RIGHTEOUSNESS. |
+| Yahuah Shalom | yah-OO-ah shah-LOHM | Jehovah-shalom. |
+| Yahuah Nissi | yah-OO-ah NEE-see | Jehovah-nissi. |
+| Yahuah Yireh | yah-OO-ah yir-EH | Jehovah-jireh. |
+| Yahuah Rapha | yah-OO-ah RAH-fah | The LORD that healeth thee. |
+| Yahuah Ra'ah | yah-OO-ah RAH-ah | The LORD is my shepherd. |
+| Yahuah Shammah | yah-OO-ah SHAH-mah | The LORD is there. |
+| El Shaddai | el shah-DIE | God Almighty. |
+| El Elyon | el el-YOHN | Most High. |
+| El Olam | el oh-LAHM | The everlasting God. |
+| El Roi | el roh-EE | The God who sees me. |
+| El Gibbor | el gih-BOR | The mighty God. |
+| Avi-ad | ah-vee-AHD | The everlasting Father. |
+| Sar Shalom | sar shah-LOHM | The Prince of Peace. |
+| Melek Tsadiq | MEH-lek tsah-DEEK | Melchizedek (per voice skill compound-name lock). |
+| Ehyeh asher Ehyeh | eh-YEH ah-SHER eh-YEH | I AM THAT I AM (Exodus 3:14). |
+| Yashar'el | yih-shrah-EL | The covenant people. |
+| Yahudah | yih-HOO-dah | The southern house / the tribe / the personal name. |
+| Yahudim | yih-hoo-DEEM | The plural. |
+| Yahudi | yih-hoo-DEE | Singular and adjectival. |
+| Avraham | AHV-rah-hahm | The patriarch. |
+| Yitschaq | YITS-khahk | The second patriarch. |
+| Ya'aqov | yah-ah-KOHV | The third patriarch / the apostle. |
+| Mosheh | MOH-sheh | The prophet. |
+| Yerushalayim | yeh-roo-shah-LAH-yim | Jerusalem. |
+| Yochanan | yoh-khah-NAHN | John (personal name only — book name stays English per voice skill book-name rule). |
+| Kefa | KEH-fah | Peter (personal name). |
+| Sha'ul | shah-OOL | Saul / pre-conversion Paul (personal name). |
+| Timotheos | tee-moh-THEH-os | Timothy (personal name). |
+
+The table is the V1 floor — additional substitutions can be added post-launch by listening to real voice outputs and tuning the spellings for the dominant device voices (iOS Siri voices, Android default voices, Chrome default voices). The mechanism is data-only; new entries don't require code changes, just a map extension.
+
+**Stress-syllable convention.** Hyphens separate syllables; UPPERCASE marks the stressed syllable. Some browser voices honor casing as a stress cue; others ignore casing but still pronounce the hyphen-separated spelling close to intent. Mixed-case is the V1 default; if real voice output shows the casing introduces artifacts on certain voices, the spellings flatten to all-lowercase in v1.1 with the syllable-stress moving to a non-textual cue.
+
+**What the table deliberately does NOT cover.** Common English biblical names already rendered in English (Abraham, Isaac, Jacob, Moses, Jerusalem, John, James, etc.) per the voice skill's translator's-call rule — those pronunciations come from the TTS engine's English dictionary which already handles them correctly. The table covers the names where the restored Hebrew form would mangle without a phonetic hint.
+
+### Platform abstraction — `lib/tts.ts`
+
+The platform-specific TTS implementation hides behind a single interface so the V1 web ship and the Phase 10 Capacitor wrap consume the same player code. The wrapper exposes:
+
+```ts
+interface TTSEngine {
+  isAvailable(): boolean;
+  getVoices(): Promise<TTSVoice[]>;
+  speak(text: string, opts: TTSOptions): Promise<void>;
+  pause(): void;
+  resume(): void;
+  stop(): void;
+  isSpeaking(): boolean;
+  onEnd(handler: () => void): () => void;  // returns unsubscribe
+  onError(handler: (err: TTSError) => void): () => void;
+}
+```
+
+**Web implementation** (`webTTS`) backs every method with the browser `SpeechSynthesis` / `SpeechSynthesisUtterance` API. The `onEnd` handler binds to `utterance.onend`; the `speak()` method enqueues a single utterance per verse so per-verse advancement, scroll-sync, and visual treatment can drive off the per-utterance `onend` event. Chaining utterances per chapter (one `SpeechSynthesisUtterance` per verse, queued sequentially via `speechSynthesis.speak()`) is the V1 web path; the API queues automatically so no client-side queue management is needed.
+
+**Capacitor implementation** (`nativeTTS`) is a TODO at S157 — the `@capacitor-community/text-to-speech` plugin import is commented out in `lib/tts.ts` with a `// @ts-expect-error — Capacitor plugin wires at Phase 10` annotation. The Phase 10 wheel uncomments the import, fills in the method bodies (the plugin's API is play / pause / stop / getSupportedLanguages / getSupportedVoices), and tests on a real Capacitor build. The change is local to `lib/tts.ts` and the platform-detection branch — no consumer-side changes needed.
+
+**Platform detection.** `(window as any).Capacitor?.isNativePlatform?.()` returns `true` inside a Capacitor wrap and `false in undefined` in the web build. The wrapper's `getEngine()` returns `nativeTTS` when the check is true, `webTTS` otherwise. V1 ships with only `webTTS` reachable.
+
+### Tier-gating
+
+**Free at all tiers per §9 + S141 launch-scope revision.** No tier gate on the chrome ▶ button. No tier gate on the "Play from here" menu item. No tier gate on the voice picker or speed control. Audio narration is the accessibility surface, and accessibility is the Free-tier promise the framework keeps without exception. The Scribe-tier upgrade (ElevenLabs PVC Yoshi-voice) ships post-launch as the second voice option in the same picker — partners on Free hear the device voice, Scribe partners hear Yoshi.
+
+### Schema — no migration needed
+
+No new tables. The substitution table is a TypeScript constant baked into the PWA bundle. The voice/speed prefs persist to localStorage under `tts-prefs` — no server-side persistence at V1 (the prefs are device-local, like the §1 theme toggle's `reader-theme` and the S124 hide-commentary toggle). Cross-device pref sync is a future-wheel possibility if partner feedback shows demand; V1 keeps the surface lean.
+
+### Helper API + sanity-test surface (the forward standard from S121 W2 / W3 / S122 / S123 / S125 / S126)
+
+Pure helpers in `app/src/lib/tts-helpers.ts` — no React imports, no global state, no async. Each function is independently sanity-testable via `node --test` against inlined test cases per the prior-wheel pattern.
+
+- `stripParentheticals(text)` — removes `(LORD)`, `(God)`, `(Spirit)`, `(Israel)`, `(Judah)`, `(Jew)`, `(Jewish)`, `(Jews)`, `(Melchizedek)`, `(the LORD God)`, `(LORD of hosts)`, `(I AM THAT I AM)`, and the rest of the source-echo parentheticals the pipeline injects. Regex pass that targets parentheses immediately after a restored name or at end-of-sentence; preserves legitimate parenthetical prose (rare in scripture but possible). Sanity-test sweeps: every single-name parenthetical / every compound-name parenthetical / parentheticals adjacent to punctuation / no-parenthetical inputs unchanged / nested parentheses handled correctly.
+- `applySubstitutionTable(text, table)` — applies the substitution table with compound-first ordering. Returns the substituted string. Sanity-test sweeps: each table entry maps correctly / compound fires before single / case-sensitive matching / word-boundary anchoring / unicode safety / no-match passthrough / chained substitutions (multiple names in one verse) preserve word spacing.
+- `rankVoices(voices)` — sorts the `SpeechSynthesisVoice[]` per the heuristic above (default-flagged first, premium name patterns second, alphabetical fallback). Returns ordered list. Sanity-test sweeps: default voice surfaces first / Apple premium patterns rank correctly / Google Wavenet patterns rank correctly / Microsoft Neural patterns rank correctly / unknown voices fall through alphabetically.
+- `prepareVerseForSpeech(verseText, table)` — composition helper: stripParentheticals → applySubstitutionTable → return. Single function the player calls per verse. Sanity-test the composition on a realistic verse cluster (Genesis 1:1, John 3:16, Isaiah 9:6) covering single-name / compound-name / multi-name combinations.
+
+Verification target: ≥25 sanity-test cases passing in `_s157_tts_sanity.mjs` at session close. tsc -b clean across the project. No node sanity tests on the React player component — that surface is stateful UI tested by live walk on the real PWA per the S124 pattern.
+
+### Accessibility
+
+- **WCAG 2.1 AA.** The player controls (play / pause / speed buttons / skip-prev / skip-next / voice picker / close) are all 44pt iOS / 48dp Android hit targets per §13. `role="region"` + `aria-label="Audio narration player"` on the bar container. Each control carries an explicit `aria-label` (Play, Pause, Skip back, Skip forward, Speed, Voice, Close). `aria-pressed` flips on the play/pause button. The currently-spoken verse carries `aria-live="polite"` so screen readers announce the position; the audio narration itself does NOT compete with the screen reader (partners using TTS via a screen reader use the screen reader's own TTS, not this player — the visual reader is already accessible to screen readers without this surface).
+- **Reduced-motion + auto-scroll.** `prefers-reduced-motion: reduce` honored on the auto-scroll (instant scroll instead of smooth) and on the player bar slide-in/out (instant show/hide instead of slide animation).
+- **Keyboard.** Spacebar toggles play/pause when the player has focus and no other input is focused. Left/Right arrow keys map to skip-prev / skip-next verse when the player has focus (and chapter navigation when the reader has focus per §19 — the focus-aware skip from §19's exclusive-modifier check applies here too). Escape closes the player.
+
+### What §25 deliberately does NOT prescribe
+
+- **Background audio / lock-screen controls.** V1 ships foreground-only. Web SpeechSynthesis does not natively support `MediaSession API` integration (no playback-position metadata available), and adding lock-screen controls inside a Capacitor wrap is Phase 10+ work. Partners who want long-form audio listening during another task use their device's hardware media controls (which the Capacitor build will expose post-Phase-10 via the plugin).
+- **Sleep timer / playback timer.** No "stop after N minutes" control. The auto-advance-through-witness-category continuous-play is enough V1 surface; a timer is a v1.1 addition once partner feedback identifies the demand.
+- **Audio bookmarks / resume-where-I-left-off.** Currently-playing state is per-session per the *Persistence* rule above. Refresh resets playback. Cross-session resume is a future-wheel candidate that would pair with S116 reading-position to track verse-level audio position; out of V1 scope.
+- **Per-verse speed adjustment / per-passage voice change.** Speed and voice apply globally. No mid-chapter speed bumps for narrative-heavy vs poetry-heavy passages. The 4-step speed picker is the V1 surface; partners adjust manually if they want different speeds in different passages.
+- **Audio-quality download / offline TTS cache.** Web SpeechSynthesis runs the device's built-in voices at the device's audio quality. No high-fidelity TTS download surface, no per-verse audio caching, no offline-TTS-pack. The S141 Tier B item 12 ElevenLabs PVC Yoshi-voice is the post-launch upgrade that ships with cached high-fidelity audio; the V1 native-OS path runs at the device's native TTS quality.
+- **Pronunciation editor / user-customizable substitution table.** Partners cannot edit the substitution table. The V1 table is the locked V1 floor; refinements ship in subsequent app versions as the work tunes against real voice outputs. A partner-side pronunciation editor is V2 scope at the earliest, and may never ship if the locked table tunes to sufficient quality.
+- **Voice cloning / synthesized restored-name audio.** The ElevenLabs PVC Yoshi-voice (S141 Tier B item 12, Scribe-tier exclusive) is the path for partner-perceptible audio fidelity above device TTS. No third-party voice-cloning surface beyond Yoshi's own voice ever ships in this app.
+- **Background-music / ambient-audio under narration.** The player narrates verses, nothing else. No instrumental beds, no ambient soundscapes, no audio effects layered under the narration. The text is the proclamation; ornamentation under it dilutes the proclamation.

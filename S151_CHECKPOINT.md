@@ -13,7 +13,33 @@
 
 **Modernization stragglers: DEFERRED to a future curation session.** Audit revealed 41 distinct archaic forms across ~530 canon verse matches. Yoshi's call — these need word-by-word curation (which to flatten, which to keep for KJV cadence) and that's not autonomous-Claude territory. Full inventory captured below in *Modernization-straggler audit inventory*.
 
-**Apply + deploy: WAITING ON YOSHI** (or on a future session's apply harness run from the allowlisted IP).
+**Apply + deploy: DONE end-of-session.** Both migrations applied to prod after the Render IP-allowlist refresh (Rule 11 fired — Yoshi's IP had rotated since S150). API deployed at commit `df1715c`. Verified via the apply harness's two smoke tests and the diagnostic's L1 probes.
+
+### Final landed state — observed end-of-session
+
+- `schema_version` = `1.0.0-phase4-session151` ✅
+- `search_vocabulary` populated; 2 concept groups + 12 concept terms seeded ✅
+- **L1 perf on prod (live diagnostic)**: `righteous & fall & seven` = 191ms, `(yahuah | yahweh | jehovah | lord | yah)` = 227ms with 9,938 matches, `name & sake` = 58ms. All within budget; no regression from S150 close.
+- **Smoke test 2 (concept layer)** surfaced 5 real Belial verses for the synagogue-of-Satan query: Deut 13:13, Judges 19:22, Judges 20:13, 1 Sam 1:16, 1 Sam 2:12. ✅
+
+### ⚠️ One WARN to follow up on in S152 — `syna` edged out `synagogu` in the fuzzy tiebreak
+
+Smoke test 1 result for `synagauge` at threshold 0.3:
+
+| lexeme | similarity | occurrences |
+|---|---|---|
+| `syna` | 0.3636 | 1 |
+| `synagogu` | 0.3571 | 81 |
+
+`syna` (one canon occurrence — likely a proper-noun fragment) won the top slot by 0.0065 on similarity. The current ORDER BY is `similarity DESC, occurrences DESC` — similarity wins first. **User-facing behavior still works** because the fuzzy LIMIT is 3 and `synagogu` makes the expansion regardless, so `synagauge` searches still surface synagogue verses. But the WARN exposes a tiebreak edge case where a high-occurrence lexeme loses to a near-identical-similarity rare one. Worth tuning in S152: weight `occurrences` more (e.g., `ORDER BY similarity * SQRT(LEAST(occurrences, 1000)) DESC` — diminishing-returns boost for very common lexemes, no overwhelming effect on near-equal-similarity comparisons).
+
+### Diagnostic SQL bug caught + fixed mid-session
+
+The `_session151_search_engine_diagnostic.py` L1 tsquery probe used the broken `FROM verses v, to_tsquery(...) q JOIN chapters c ON ...` form copy-pasted from `_session150_search_engine_diagnostic.py`. The JOIN binds to `q` (the last comma-list item), so `v` is not in scope inside the JOIN's ON clause. Threw `UndefinedTableError: invalid reference to FROM-clause entry for table "v"`. Patched mid-session to the all-JOIN syntax + inline `to_tsquery` in the predicates — same shape the S150b apply harness's smoke test uses. The S150 diagnostic carries the same bug but its perf probes ran via direct Chrome MCP fetch in S150, so the bug never surfaced. Worth a sweep through `_scratch/` to retire the broken form if/when the S150 diagnostic gets touched again.
+
+### Two `.~lock.*xlsx#` files landed in the commit (LibreOffice lock files)
+
+The `df1715c` commit included two LibreOffice spreadsheet-lock files staged inadvertently. `.gitignore` now carries `.~lock.*#` to prevent future stagings. The two already-tracked files persist until a follow-up `git rm --cached` + commit removes them. Not blocking — harmless empty lock files. S152 cleanup if convenient.
 
 ## Live state of prod
 
