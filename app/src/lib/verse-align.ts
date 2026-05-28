@@ -306,7 +306,74 @@ export function alignVerse(
       continue;
     }
 
-    // No cluster — sequential plain match.
+    // No cluster — sequential match. Two extensions to the original
+    // single-token-vs-single-surface match landed at S161 alongside
+    // the verse_words.surface re-modernization pass:
+    //
+    //   (a) MULTI-WORD SURFACE MATCH. USFX sometimes wraps a multi-
+    //   word display phrase under a single Strong's tag — e.g.,
+    //   <w s="G2309">wilt thou</w> in Matthew 20:21, which S149
+    //   modernized in the verse text to "will you" (and the S161
+    //   re-modernization pass updated the surface to match). When
+    //   words[w].surface contains a space we try to match it
+    //   against the concatenated next N displayed tokens before
+    //   falling back to single-word. The whole multi-token range
+    //   emits as ONE tappable span (one superscript, one tap target).
+    //
+    //   (b) CURSOR-ADVANCE ON MISMATCH (single-step orphan skip).
+    //   The original algorithm sticks the USFX cursor `w` whenever
+    //   a displayed token fails to match the current surface, then
+    //   silently drops every subsequent surface (the S161 cascade).
+    //   After Part 1 the common cause (modernization mismatch) is
+    //   gone, but parenthetical-protected words and rare punctuation/
+    //   spacing drift can still produce orphan surfaces. When this
+    //   happens we peek words[w+1] — if the current displayed token
+    //   matches that NEXT surface, we skip the orphan and emit the
+    //   match instead of cascading. Bounded to a single step to
+    //   avoid false alignment to coincidentally-matching distant
+    //   surfaces.
+
+    // (a) Multi-word surface match — try before single-word.
+    if (
+      w < words.length &&
+      words[w].strong_number &&
+      (words[w].surface || "").includes(" ")
+    ) {
+      const surfaceParts = (words[w].surface || "")
+        .toLowerCase()
+        .split(/\s+/)
+        .filter((s) => s.length > 0);
+      if (
+        surfaceParts.length > 1 &&
+        i + surfaceParts.length <= tokens.length
+      ) {
+        let allMatch = true;
+        for (let k = 0; k < surfaceParts.length; k++) {
+          const t = tokens[i + k];
+          if (isParenToken(t) || coreLower(t) !== surfaceParts[k]) {
+            allMatch = false;
+            break;
+          }
+        }
+        if (allMatch) {
+          const combined = tokens
+            .slice(i, i + surfaceParts.length)
+            .join(" ");
+          segments.push({
+            kind: "tappable",
+            text: combined,
+            strong: words[w].strong_number as string,
+            surface: words[w].surface,
+            key: `${keyPrefix}:${words[w].position}`,
+          });
+          w++;
+          i += surfaceParts.length;
+          continue;
+        }
+      }
+    }
+
+    // Single-word match.
     if (
       w < words.length &&
       words[w].strong_number &&
@@ -320,9 +387,31 @@ export function alignVerse(
         key: `${keyPrefix}:${words[w].position}`,
       });
       w++;
-    } else {
-      segments.push({ kind: "plain", text: tok });
+      i++;
+      continue;
     }
+
+    // (b) Cursor-advance on mismatch — single-step orphan skip.
+    if (
+      w + 1 < words.length &&
+      words[w + 1].strong_number &&
+      coreLower(tok) === (words[w + 1].surface || "").toLowerCase()
+    ) {
+      w++; // skip orphan
+      segments.push({
+        kind: "tappable",
+        text: tok,
+        strong: words[w].strong_number as string,
+        surface: words[w].surface,
+        key: `${keyPrefix}:${words[w].position}`,
+      });
+      w++;
+      i++;
+      continue;
+    }
+
+    // Fallback — emit plain.
+    segments.push({ kind: "plain", text: tok });
     i++;
   }
 
