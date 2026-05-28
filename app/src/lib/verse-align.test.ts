@@ -124,6 +124,43 @@ const cases: Case[] = [
     ],
     expectStrongs: ["G2064"],
   },
+
+  // ---- Case 6: long translator parenthetical walked, not swallowed ----
+  // S161 Part 2.1 — the LONG_PAREN_CAP=5 fix in tokenize. Before this,
+  // a verse-wrapping paren like "(For all the Athenians and strangers
+  // ...)" was re-grouped into one opaque token; alignment emitted it
+  // as a single plain segment and lost every Strong's inside. Now
+  // long parens get walked normally — the bracket tokens render as
+  // plain but everything inside aligns.
+  {
+    label: "long translator parenthetical — inside tokens align",
+    text: "(For all the Athenians spent their time in nothing else.)",
+    words: [
+      { position: 1, surface: "For",        strong_number: "G1161" },
+      { position: 2, surface: "all",        strong_number: "G3956" },
+      { position: 3, surface: "Athenians",  strong_number: "G0117" },
+      { position: 4, surface: "spent",      strong_number: "G2119" },
+      { position: 5, surface: "time",       strong_number: "G2540" },
+      { position: 6, surface: "nothing",    strong_number: "G3762" },
+    ],
+    expectStrongs: ["G1161", "G3956", "G0117", "G2119", "G2540", "G3762"],
+  },
+
+  // ---- Case 7: short paren still re-groups for sacred-name cluster ----
+  // Regression — "(the LORD God)" is 3 words inside parens, well
+  // under the LONG_PAREN_CAP=5. Cluster detection must still see it
+  // as a single token and align Yahuah Elohim against LORD + God.
+  {
+    label: "short paren re-grouping preserved for cluster",
+    text: "And Yahuah Elohim (the LORD God) said.",
+    words: [
+      { position: 1, surface: "And",  strong_number: "H0559" },
+      { position: 2, surface: "LORD", strong_number: "H3068" },
+      { position: 3, surface: "God",  strong_number: "H0430" },
+      { position: 4, surface: "said", strong_number: "H0559" },
+    ],
+    expectStrongs: ["H0559", "H3068", "H0430", "H0559"],
+  },
 ];
 
 function extractTappables(segs: Segment[]): Array<{ text: string; strong: string }> {

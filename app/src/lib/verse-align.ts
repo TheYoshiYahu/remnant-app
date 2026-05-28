@@ -95,26 +95,41 @@ function tokenize(text: string): string[] {
   // breaks across tokens, so we re-group below.
   const raw = text.split(/\s+/).filter((t) => t.length > 0);
 
-  // Re-group multi-word parentheticals into single tokens so cluster
-  // detection sees them as units. A parenthetical opens at a "(" and
-  // closes at the first ")"; everything between is one token.
+  // Re-group SHORT multi-token parentheticals (≤ LONG_PAREN_CAP words)
+  // into single tokens so the sacred-name cluster detection sees them
+  // as units — "(the LORD God)" needs to be one token for parenContents
+  // to fire. LONG translator-style parentheticals like
+  // "(For all the Athenians and strangers which were there...)" used
+  // to be re-grouped too, which made them opaque to the alignment walk
+  // and dropped every Strong's inside. S161 Part 2.1 caps re-grouping
+  // so long parens stay as individual tokens and align normally; only
+  // the bracket tokens "(" and ")" themselves become plain segments.
+  const LONG_PAREN_CAP = 5;
   const out: string[] = [];
   let i = 0;
   while (i < raw.length) {
     const t = raw[i];
     if (t.startsWith("(") && !t.includes(")")) {
-      // Multi-token parenthetical. Consume until the closing ")".
-      let combined = t;
-      i++;
-      while (i < raw.length && !raw[i].includes(")")) {
-        combined += " " + raw[i];
+      // Scan forward to the closing ")" token to measure the paren's
+      // total length in tokens.
+      let endIdx = i + 1;
+      while (endIdx < raw.length && !raw[endIdx].includes(")")) {
+        endIdx++;
+      }
+      const tokensInParen = endIdx - i + 1;
+      if (endIdx < raw.length && tokensInParen <= LONG_PAREN_CAP) {
+        // Short paren — re-group into one token so cluster detection
+        // sees the parenthetical as a unit.
+        out.push(raw.slice(i, endIdx + 1).join(" "));
+        i = endIdx + 1;
+      } else {
+        // Long paren OR unclosed — emit each token individually.
+        // The alignment walk handles them as normal tokens; only the
+        // opening "(For" / closing "...arm;)" brackets render as
+        // plain segments (no Strong's), but everything inside aligns.
+        out.push(t);
         i++;
       }
-      if (i < raw.length) {
-        combined += " " + raw[i];
-        i++;
-      }
-      out.push(combined);
     } else {
       out.push(t);
       i++;
