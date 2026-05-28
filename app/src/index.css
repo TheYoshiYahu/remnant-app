@@ -280,16 +280,22 @@ body {
    target zone).
    ----------------------------------------------------------------------- */
 .strongs-superscript {
+  display: inline-block;
   color: #15A86A;
-  font-size: 0.7em;
+  font-size: 0.72em;
   font-weight: 600;
-  margin-left: 1px;
+  margin-left: 2px;
   margin-right: 1px;
   cursor: pointer;
   font-variant-numeric: tabular-nums;
-  vertical-align: super;
-  line-height: 0;
   text-decoration: none;
+  /* Native <sup> already raises baseline + reduces font-size; we just
+     tune color + weight + a tiny gap. No vertical-align / line-height
+     overrides — the prior values (vertical-align: super redundant with
+     the native sup behavior, line-height: 0 collapsing glyph render)
+     made the sup elements present in the DOM but invisible on screen.
+     Caught at S160 close after Yoshi flagged "button doesn't do
+     anything" — state was flipping, sups were rendering, but invisible. */
 }
 .strongs-superscript:hover {
   text-decoration: underline;
