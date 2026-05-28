@@ -264,3 +264,34 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .nav-bounce { animation: none; }
 }
+
+/* ----- Strong's superscripts (S160 — §27 always-visible toggle) --------
+   Inline <sup> rendered after each tappable word in the verse text when
+   the chapter chrome strip's "Show Strong's" toggle is on. Bracket-
+   emerald midtone per COLOR_PALETTE.md §3 (the expansion register, in
+   its small-text solid form) — distinct from the §2 spectral-blue
+   verse-number superscript register so the partner reads two superscript
+   layers on the same line without confusion: spectral-blue for verse
+   anchors, bracket-emerald for Strong's-pointers.
+
+   Sizing: 0.7em matches the verse-number superscript scale; tap target
+   stays touch-accessible via the sup's pointer-events alone (the parent
+   word-tappable still carries its own click handler for the larger
+   target zone).
+   ----------------------------------------------------------------------- */
+.strongs-superscript {
+  color: #15A86A;
+  font-size: 0.7em;
+  font-weight: 600;
+  margin-left: 1px;
+  margin-right: 1px;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+  vertical-align: super;
+  line-height: 0;
+  text-decoration: none;
+}
+.strongs-superscript:hover {
+  text-decoration: underline;
+  text-decoration-color: #15A86A;
+}

@@ -71,6 +71,7 @@ import {
 } from "./lib/range-selection";
 import { renderMarkdownBody } from "./lib/markdown";
 import { useParentheticalsToggle } from "./lib/useParentheticalsToggle";
+import { useStrongsSuperscriptsToggle } from "./lib/useStrongsSuperscriptsToggle";
 import { useTheme } from "./lib/theme";
 import {
   cancelPendingSave,
@@ -307,6 +308,20 @@ function Reader() {
     toggle: toggleHideParentheticals,
     applyToText: applyParensStrip,
   } = useParentheticalsToggle();
+
+  // S160 — always-visible Strong's superscripts toggle (DESIGN_LANGUAGE
+  // §27). BLB-pattern. Default OFF — clean reading surface is the
+  // default; awakening partners opt INTO the always-visible H- / G-
+  // numbers when they want the pointer register. Free tier (no paywall);
+  // the Strong's data is already free at §20. State persists at
+  // localStorage `rop_strongs_superscripts_v1`. Toggle in the chapter
+  // chrome strip (next to the §144 English-helpers toggle) and tapping
+  // any rendered superscript fires the same handleWordQuickTap that the
+  // word itself does, opening the §20 StrongsLookup modal.
+  const {
+    show: showStrongsSuperscripts,
+    toggle: toggleShowStrongsSuperscripts,
+  } = useStrongsSuperscriptsToggle();
 
   // S116 — reading-position persistence. `currentVerse` tracks the
   // topmost-visible verse via IntersectionObserver (initial 1, updated
@@ -1963,6 +1978,33 @@ function Reader() {
                               >
                                 {seg.text}
                               </span>
+                              {/*
+                                S160 — §27 always-visible Strong's superscript.
+                                Renders only when the chrome-strip toggle is
+                                ON. The sup's own onClick fires the same
+                                handleWordQuickTap that the word-tappable does,
+                                so tapping the H#### / G#### opens the same
+                                StrongsLookup modal a word-tap opens.
+                                Bracket-emerald midtone color per COLOR_PALETTE
+                                §3 (the expansion register, in its small-text
+                                solid form) — distinct from the spectral-blue
+                                §2 verse-number superscript register so the
+                                partner reads two superscript layers on the
+                                line without confusion.
+                              */}
+                              {showStrongsSuperscripts && seg.strong && (
+                                <sup
+                                  className="strongs-superscript"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleWordQuickTap(word, v.id);
+                                  }}
+                                  aria-label={`Strong's ${seg.strong} — open lexicon entry`}
+                                  title={`Strong's ${seg.strong} — tap to open the lexicon entry`}
+                                >
+                                  {seg.strong}
+                                </sup>
+                              )}
                               {" "}
                             </span>
                           );
@@ -2106,6 +2148,26 @@ function Reader() {
               {hideParentheticals
                 ? "Show English helpers"
                 : "Hide English helpers"}
+            </button>
+            {/*
+              S160 — Strong's superscripts toggle (§27). Metallic argaman
+              gradient per COLOR_PALETTE §9 — distinct from the §144 English-
+              helpers metallic-emerald gradient to its left so the partner
+              reads two different functional registers. Same size + chrome-
+              strip placement as the parentheticals toggle. Default OFF;
+              tapping flips state and persists via lib/useStrongsSuperscriptsToggle
+              (localStorage `rop_strongs_superscripts_v1`).
+            */}
+            <button
+              type="button"
+              onClick={toggleShowStrongsSuperscripts}
+              aria-pressed={showStrongsSuperscripts}
+              title="Show or hide Strong's H- and G-numbers as small superscripts after every word in the verse text. Tap any superscript to open the Strong's lookup, same as tapping the word itself. Persists across chapters and reloads."
+              className="rounded-md border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#F5E6FA] shadow-sm hover:opacity-90"
+            >
+              {showStrongsSuperscripts
+                ? "Hide Strong's"
+                : "Show Strong's"}
             </button>
             <button
               type="button"
