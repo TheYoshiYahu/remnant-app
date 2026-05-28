@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phase 9.3 BDB Sample Render &mdash; S160</title>
+  <style>
+:root {
+  /* Reader theme — dark default (COLOR_PALETTE §5) */
+  --reader-bg: #000000;
+  --reader-text: #FFFFFF;
+  --reader-muted: #A3A3A3;
+  --reader-rule: #2A2A2A;
+  --reader-surface: #0A0A0A;
+  --reader-surface-elev: #141414;
+  --reader-accent: #0084FF;
+
+  /* §1 Sacred-Color Register */
+  --techelet: #1A6FE5;
+  --argaman: #8E4FB3;
+  --argaman-deep: #3D1B5C;
+  --argaman-light: #D4B0E0;
+  --argaman-near-white: #F5E6FA;
+
+  /* §3 Expansion register */
+  --emerald-deep: #04321E;
+  --emerald-mid: #15A86A;
+  --emerald-bright: #2EFFA1;
+  --emerald-light: #80FFC9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--reader-bg);
+  color: var(--reader-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 16px 16px;
+  border-bottom: 1px solid var(--reader-rule);
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.page-header .page-meta {
+  color: var(--reader-muted);
+  font-size: 13px;
+}
+
+.sheets-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* --- LexiconSheet chrome (§26 Gate #3 spec) --- */
+
+.lexicon-sheet {
+  background: var(--reader-surface);
+  border: 1px solid var(--reader-rule);
+  border-radius: 8px;
+  margin: 0 0 32px;
+  overflow: hidden;
+}
+
+.lexicon-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--reader-rule);
+  background: var(--reader-surface);
+}
+
+.lexicon-breadcrumb {
+  font-size: 12px;
+  color: var(--reader-accent);
+  letter-spacing: 0.02em;
+}
+
+.lexicon-close {
+  background: transparent;
+  border: 0;
+  color: var(--reader-muted);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.lexicon-sheet-body {
+  padding: 16px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* --- Standing disclaimer (§26 Gate #1) --- */
+
+.lexicon-disclaimer {
+  color: var(--reader-muted);
+  font-size: 12px;
+  font-style: italic;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.lexicon-disclaimer strong {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* --- Framework callout card (§26 + §22 NotesPanel inner-card pattern) --- */
+
+.framework-callout {
+  position: relative;
+  border: 1px solid var(--reader-rule);
+  background: var(--reader-surface-elev);
+  border-radius: 6px;
+  padding: 14px 14px 12px;
+  margin: 0 0 20px;
+}
+
+.framework-callout-badge {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: var(--reader-bg);
+  color: var(--reader-accent);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border: 1px solid var(--reader-accent);
+  border-radius: 4px;
+}
+
+.framework-callout-title {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.framework-callout-term {
+  color: var(--argaman-light);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.framework-callout-sep {
+  color: var(--reader-muted);
+  margin: 0 6px;
+}
+
+.framework-callout-error {
+  color: var(--reader-text);
+  font-weight: 400;
+}
+
+.framework-callout-body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--reader-text);
+}
+
+.framework-callout-body p {
+  margin: 0 0 12px;
+}
+
+.framework-callout-body p:last-child {
+  margin-bottom: 0;
+}
+
+.framework-scripture {
+  margin: 12px 16px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--techelet);
+  font-style: italic;
+  color: var(--reader-text);
+}
+
+.framework-callout-preview-stub {
+  font-size: 13px;
+  color: var(--reader-muted);
+  padding: 8px 0;
+}
+
+.framework-callout-footer {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: var(--reader-muted);
+  letter-spacing: 0.04em;
+}
+
+.framework-callout-full {
+  border-color: var(--argaman);
+}
+
+/* --- Lexicon body (BDB) --- */
+
+.lexicon-body {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.bdb-hebrew {
+  font-family: "SBL Hebrew", "Ezra SIL", "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.bdb-def {
+  color: var(--reader-text);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.bdb-pos {
+  color: var(--reader-muted);
+  font-style: italic;
+  font-size: 13px;
+}
+
+.bdb-pron {
+  color: var(--reader-muted);
+  font-style: italic;
+  font-size: 13px;
+}
+
+.bdb-stem {
+  color: var(--emerald-mid);
+  font-weight: 600;
+  font-size: 13px;
+  margin-right: 4px;
+}
+
+.bdb-aspect {
+  color: var(--reader-muted);
+  font-size: 13px;
+}
+
+.bdb-foreign {
+  font-style: italic;
+  color: var(--reader-muted);
+}
+
+.bdb-citation {
+  color: var(--reader-accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--reader-accent);
+  cursor: pointer;
+}
+
+.bdb-citation:hover {
+  border-bottom-style: solid;
+}
+
+.bdb-cross-lemma {
+  color: var(--argaman-light);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--argaman);
+  cursor: pointer;
+}
+
+.bdb-senses {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.bdb-sense {
+  margin: 0 0 8px;
+  padding: 0 0 0 20px;
+  position: relative;
+}
+
+.bdb-sense-num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--reader-accent);
+  font-weight: 600;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.bdb-sense-block {
+  margin: 12px 0;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--reader-rule);
+}
+
+/* --- Sub -> root divider --- */
+
+.lexicon-sub-root-divider {
+  border: 0;
+  border-top: 1px solid var(--reader-rule);
+  margin: 20px 0;
+}
+
+.bdb-root-header {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--reader-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.bdb-root-analysis {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+/* --- Page summary footer --- */
+
+.page-footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+  color: var(--reader-muted);
+  font-size: 12px;
+  border-top: 1px solid var(--reader-rule);
+}
+
+/* --- Sample-render interactivity (S160 close — not production code) --- */
+
+.lexicon-sheet-collapsed .lexicon-sheet-body {
+  display: none;
+}
+
+.lexicon-sheet-collapsed .lexicon-sheet-header {
+  border-bottom: 0;
+}
+
+.lexicon-sheet-collapsed {
+  opacity: 0.55;
+}
+
+.lexicon-sheet-header {
+  cursor: pointer;
+}
+
+.sample-tooltip {
+  position: absolute;
+  background: var(--reader-surface-elev);
+  color: var(--reader-text);
+  border: 1px solid var(--reader-accent);
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  max-width: 320px;
+  animation: tooltip-fade 2400ms ease-out forwards;
+}
+
+@keyframes tooltip-fade {
+  0%   { opacity: 0; transform: translateY(-4px); }
+  10%  { opacity: 1; transform: translateY(0); }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+.sample-banner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  background: var(--reader-surface-elev);
+  border-bottom: 1px solid var(--reader-rule);
+  color: var(--reader-muted);
+  font-size: 11px;
+  font-style: italic;
+  text-align: center;
+}
+
+.sample-banner strong {
+  color: var(--reader-accent);
+  font-style: normal;
+}
+</style>
+</head>
+<body>
+
+<div class="sample-banner">
+  <strong>Sample render</strong> &middot; tap any sheet header to collapse / re-expand;
+  tap verse citations or cross-lemma links to see what production would navigate to
+</div>
+
+<header class="page-header">
+  <h1>Phase 9.3 &mdash; BDB Sample Render (S160)</h1>
+  <p class="page-meta">
+    25-entry visual proof for the DESIGN_LANGUAGE.md &sect;26 LexiconSheet styling.
+    Source: OpenScriptures HebrewLexicon (SHA 21c9add1...).
+    Coverage: 25 entries resolved &middot; 18 sub&rarr;root pairs &middot; 0 missing.
+    1 framework callout fully drafted (torah); 9 preview cards above their lexicon
+    bodies; 15 non-callout entries showing the disclaimer + lexicon body baseline.
+  </p>
+</header>
+
+<main class="sheets-container">
+
+<section class="lexicon-sheet" data-strong="H8451">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H8451 (torah) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+<aside class="framework-callout framework-callout-full">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">torah</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">The lexicons gloss law / burden / system of statutes</span>
+  </h3>
+  <div class="framework-callout-body">
+<p>The inherited reading hangs three weights on <em>torah</em>: law (a binding statute),
+burden (something heavy to carry), and system (an externalized code one operates under). All
+three weights are in the lexicons; all three are unhooked from what the word actually carries
+in Hebrew. The root <em>yarah</em> (H3384) means <em>to point out, to teach, to direct the
+way</em>. <em>Torah</em> is the instruction the Father pointed out &mdash; the way of life
+Yahuah laid down for the people he set apart. Not the curse, not the bondage, not the rulebook
+strapped to the back of those who would later be told they were saved out from under it.</p>
+
+<p>The prophets named it as the inheritance:</p>
+
+<blockquote class="framework-scripture"><em>I will put my law in their inward parts, and write
+it in their hearts; and will be their Elohim (God), and they shall be my people.</em>
+(Jeremiah 31:33)</blockquote>
+
+<blockquote class="framework-scripture"><em>And I will put my spirit within you, and cause you
+to walk in my statutes, and ye shall keep my judgments, and do them.</em> (Ezekiel
+36:27)</blockquote>
+
+<p>The Father did not give covenant instruction to take it back. The Ruach HaKodesh (Holy
+Spirit) who lives in the believer is the Spirit who spoke at Sinai. The curse of the
+Deuteronomy 28 exile-judgment came on covenant-breaking &mdash; not on the <em>torah</em>
+itself. <em>Torah</em> is what the curse defended; the curse was never <em>torah</em>. Where
+the lexicons collapse the two, the framework restores them as separate substances. The
+principle the framework holds: never present <em>torah</em> as the curse. The curse is the
+exile judgment of Deuteronomy 28. <em>Torah</em> is the covenant instruction of the living
+Elohim. <em>Torah</em> is the inheritance.</p>
+
+<p>When <em>nomos</em> shows up in the Greek of Paul and the lexicons gloss it as <em>law /
+Mosaic law / legal system</em>, the same flattening happens at the Greek-side seam.
+<em>Nomos</em> is the LXX's Greek translation of <em>torah</em> &mdash; same word, same
+instruction, same inheritance. The Reformation's <em>grace-against-law</em> reading is the
+antichrist reading of the same word the prophets gave as the inheritance. The covenant the
+Father is writing on the new heart is the covenant the lexicons here call <em>law</em>.</p>
+</div>
+  <footer class="framework-callout-footer">Red Lines: #4, #5</footer>
+</aside>
+
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">תּוֹרָה</span> <span class="bdb-pos">n.f</span>. <em class="bdb-def">direction</em>, <em class="bdb-def">instruction</em>, <em class="bdb-def">law</em>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">instruction</em></li>
+				<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">law</em> (prop. <em class="bdb-def">direction</em>)</li>
+				<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">custom</em>, <em class="bdb-def">manner</em></li>
+				
+			
+			</ol>
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">יָרָה</span> <span class="bdb-pos">vb</span>. <em class="bdb-def">throw</em>, <em class="bdb-def">shoot</em>
+				<div class="bdb-sense-block"><span class="bdb-stem">Qal</span>
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">throw</em>, <em class="bdb-def">cast</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">cast</em> (= <em class="bdb-def">lay</em>, <em class="bdb-def">set</em>), corner-stone; pillar</li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">shoot arrows</em></li>
+					<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <em class="bdb-def">throw water</em>, <em class="bdb-def">rain</em></li>
+				</ol></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Niph</span>. <em class="bdb-def">shot through</em> (with arrows)</div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hiph</span>.
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">throw</em>, <em class="bdb-def">cast</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">shoot</em> (arrows)</li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">throw water</em>, <em class="bdb-def">rain</em></li>
+					<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <em class="bdb-def">point out</em>, <em class="bdb-def">shew</em></li>
+					<li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> <em class="bdb-def">direct</em>, <em class="bdb-def">teach</em>, <em class="bdb-def">instruct</em></li>
+				</ol></div>
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H2617">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H2617 (chesed) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+<aside class="framework-callout framework-callout-preview">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">chesed</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss mercy / kindness / loyalty in standalone register</span>
+  </h3>
+  <div class="framework-callout-preview-stub">
+    <em>Framework callout body to be drafted under voice-skill load
+    at the S161 parallel-subagent wheel.</em>
+  </div>
+  <footer class="framework-callout-footer">Red Lines: #5, #10</footer>
+</aside>
+
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">חֶ֫סֶד</span> <span class="bdb-pos">n.m</span>. <em class="bdb-def">shame</em>, <em class="bdb-def">reproach</em>
+				
+			
+		
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body">[<span class="bdb-hebrew">חָסַד</span>] <span class="bdb-pos">vb</span>. <em class="bdb-def">be reproached</em>, <em class="bdb-def">ashamed</em>—only <span class="bdb-stem">Pi</span>. <span class="bdb-aspect">Impf</span>. <a class="bdb-citation" data-verse="Prov.25.10">Pr 25:10</a>
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H1285">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H1285 (brit) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+<aside class="framework-callout framework-callout-preview">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">brit</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss covenant / pact / agreement as general bilateral instrument</span>
+  </h3>
+  <div class="framework-callout-preview-stub">
+    <em>Framework callout body to be drafted under voice-skill load
+    at the S161 parallel-subagent wheel.</em>
+  </div>
+  <footer class="framework-callout-footer">Red Lines: #7, #11</footer>
+</aside>
+
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">בְּרִית</span> 285 <span class="bdb-pos">n.f</span>. <em class="bdb-def">covenant</em>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="I"><span class="bdb-sense-num">I.</span> <em>between men</em>.
+					<li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">treaty</em>, <em class="bdb-def">alliance</em>, <em class="bdb-def">league</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">constitution</em>, <em class="bdb-def">ordinance</em>, between monarch and subjects</li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">agreement</em>, <em class="bdb-def">pledge</em></li>
+					<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <em class="bdb-def">alliance</em> of friendship between David and Jonathan</li>
+					<li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> <em class="bdb-def">alliance</em> of marriage</li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="II"><span class="bdb-sense-num">II.</span> <em>between God and man</em>.
+					<li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">alliance</em> of friendship</li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">covenant</em>, as a divine constitution or ordinance with signs or pledges</li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="III"><span class="bdb-sense-num">III.</span> Phrases.
+					<li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">covenant making</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">covenant keeping</em></li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">covenant violation</em></li>
+				</ol></li>
+				
+			
+			
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">ברה</span> (cf. As. <span class="bdb-foreign" data-lang="akk">barû</span>, <em class="bdb-def">bind</em>, whence <span class="bdb-foreign" data-lang="akk">birîtu</span>, <em class="bdb-def">fetter</em> Zim BP 59.82, &amp; <em class="bdb-def">treaty, covenant</em> Dl K 7).
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H1471">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H1471 (goy) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+<aside class="framework-callout framework-callout-preview">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">goy / goyim</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss nation / Gentile / heathen</span>
+  </h3>
+  <div class="framework-callout-preview-stub">
+    <em>Framework callout body to be drafted under voice-skill load
+    at the S161 parallel-subagent wheel.</em>
+  </div>
+  <footer class="framework-callout-footer">Red Lines: #1, #7</footer>
+</aside>
+
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">גּוֹי</span> 661 <span class="bdb-pos">n.m</span>. <em class="bdb-def">nation</em>, <em class="bdb-def">people</em>
+				
+			
+		
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">גוה</span> (<em class="bdb-def">project, be convex</em>?).
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H5971">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H5971 (am) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+<aside class="framework-callout framework-callout-preview">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">am</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss people generically</span>
+  </h3>
+  <div class="framework-callout-preview-stub">
+    <em>Framework callout body to be drafted under voice-skill load
+    at the S161 parallel-subagent wheel.</em>
+  </div>
+  <footer class="framework-callout-footer">Red Lines: #1, #7</footer>
+</aside>
+
+
+    <div class="lexicon-body bdb-body">
+      [<span class="bdb-hebrew">עַם</span>] <span class="bdb-pos">n.[m.]</span> <em class="bdb-def">kinsman</em> (on father's side)
+				
+			
+			
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">עִם</span> <span class="bdb-pos">prep</span>. <em class="bdb-def">with</em>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> of fellowship and companionship
+					<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> of <em class="bdb-def">aid</em></li>
+					<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> Of actions done jointly <em class="bdb-def">with</em> another</li>
+					<li class="bdb-sense" data-sense="c"><span class="bdb-sense-num">c.</span> If the common action be of the nature of a contest or combat, <em class="bdb-def">with</em> in the sense of <em class="bdb-def">against</em></li>
+					<li class="bdb-sense" data-sense="d"><span class="bdb-sense-num">d.</span> Of dealing <em class="bdb-def">with</em> a person, or of the relation in which one stands <em class="bdb-def">with</em>, or <em class="bdb-def">towards</em>, another</li>
+					<li class="bdb-sense" data-sense="e"><span class="bdb-sense-num">e.</span> Of a common lot <em class="bdb-def">together with</em> the wicked</li>
+					<li class="bdb-sense" data-sense="f"><span class="bdb-sense-num">f.</span> Of equality or resemblance generally <em class="bdb-def">aid</em></li>
+					<li class="bdb-sense" data-sense="g"><span class="bdb-sense-num">g.</span> Of <em>time</em>, <em class="bdb-def">as long as</em></li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> Of a locality, <em class="bdb-def">close to</em>, <em class="bdb-def">beside</em></li>
+				<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> Of persons, <span class="bdb-hebrew">עִם</span> is spec.
+					<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> <em class="bdb-def">in the house</em> or <em class="bdb-def">family</em> or <em class="bdb-def">service of</em></li>
+					<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> <em class="bdb-def">In possession of</em></li>
+					<li class="bdb-sense" data-sense="c"><span class="bdb-sense-num">c.</span> <em class="bdb-def">In the custody</em> or <em class="bdb-def">care of</em></li>
+					<li class="bdb-sense" data-sense="d"><span class="bdb-sense-num">d.</span> <em class="bdb-def">Beside</em> = <em class="bdb-def">except</em></li>
+					<li class="bdb-sense" data-sense="e"><span class="bdb-sense-num">e.</span> <em class="bdb-def">With</em> = <em class="bdb-def">friendly with</em></li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> Idiom. of a <em>thought</em> or <em>purpose</em> present <em class="bdb-def">with</em> one</li>
+				<li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> Metaph. <em class="bdb-def">together with</em> = <em class="bdb-def">in spite of</em>, <em class="bdb-def">notwithstanding</em></li>
+				
+			
+			</ol></div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H1616">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H1616 (ger) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+<aside class="framework-callout framework-callout-preview">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">ger</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss stranger / sojourner / proselyte</span>
+  </h3>
+  <div class="framework-callout-preview-stub">
+    <em>Framework callout body to be drafted under voice-skill load
+    at the S161 parallel-subagent wheel.</em>
+  </div>
+  <footer class="framework-callout-footer">Red Lines: #1, #7</footer>
+</aside>
+
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">גֵּר</span> 92 <span class="bdb-pos">n.m</span>. <em class="bdb-def">sojourner</em>
+				
+			
+			
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">גּוּר</span> <span class="bdb-pos">vb</span>. <em class="bdb-def">sojourn</em>
+				<div class="bdb-sense-block"><span class="bdb-stem">Qal</span>
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">sojourn</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">abide</em></li>
+				</ol></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hithpol</span>. <em class="bdb-def">seek hospitality with</em></div>
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H0120">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H0120 (adam) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">אָדָם</span> 560 <span class="bdb-pos">n.m</span>. <a class="bdb-citation" data-verse="Gen.1.27">Gn 1:27</a> <em class="bdb-def">man</em>, <em class="bdb-def">mankind</em>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">a man</em> = human being</li>
+				<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> coll. <em class="bdb-def">man</em>, <em class="bdb-def">mankind</em></li>
+				<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <span class="bdb-pos">n.pr.m</span>. <em class="bdb-def">Adam</em>, first man (without art.)</li>
+				<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <span class="bdb-pos">n.pr.loc</span>. city in Jordan valley (as <em class="bdb-def">built</em>?)</li>
+				
+			
+			</ol>
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">אדם</span> (cf. As. [<span class="bdb-foreign" data-lang="akk">adâmu</span>] <em class="bdb-def">make, produce</em> (?) Dlw W. &amp; Pr 104).
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H7676">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H7676 (shabat) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+<aside class="framework-callout framework-callout-preview">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">shabat</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss sabbath / cessation / Jewish rest day</span>
+  </h3>
+  <div class="framework-callout-preview-stub">
+    <em>Framework callout body to be drafted under voice-skill load
+    at the S161 parallel-subagent wheel.</em>
+  </div>
+  <footer class="framework-callout-footer">Red Lines: #2, #9</footer>
+</aside>
+
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">שַׁבָּת</span> 111 <span class="bdb-pos">n.f</span>. and <span class="bdb-pos">m</span>. <em class="bdb-def">Sabbath</em>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">sabbath</em></li>
+				<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">day of atonement</em></li>
+				<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">sabbath year</em></li>
+				<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> = <em class="bdb-def">week</em> (?)</li>
+				<li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> = <em class="bdb-def">produce</em> in sabbath year (growing of itself)</li>
+				
+			
+			</ol>
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">שָׁבַת</span> 71 <span class="bdb-pos">vb</span>. <em class="bdb-def">cease</em>, <em class="bdb-def">desist</em>, <em class="bdb-def">rest</em>
+				<div class="bdb-sense-block"><span class="bdb-stem">Qal</span> 27
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">cease</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">desist</em> from labour, <em class="bdb-def">rest</em></li>
+				</ol></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Niph</span>. <em class="bdb-def">cease</em></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hiph</span>.
+40					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">cause to cease</em>, <em class="bdb-def">put an end to</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> = <em class="bdb-def">exterminate</em>, <em class="bdb-def">destroy</em></li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">cause to desist</em> from</li>
+					<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <em class="bdb-def">remove</em></li>
+					<li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> <em class="bdb-def">cause to fail</em>, let be lacking</li>
+				</ol></div>
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H6918">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H6918 (qadosh) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+<aside class="framework-callout framework-callout-preview">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">qadosh</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss holy / sacred / set apart in generic register</span>
+  </h3>
+  <div class="framework-callout-preview-stub">
+    <em>Framework callout body to be drafted under voice-skill load
+    at the S161 parallel-subagent wheel.</em>
+  </div>
+  <footer class="framework-callout-footer">Red Lines: #7</footer>
+</aside>
+
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">קָדוֹשׁ</span> <span class="bdb-pos">adj</span>. <em class="bdb-def">sacred</em>, <em class="bdb-def">holy</em>
+				
+			
+			
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">קדשׁ</span>
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H3548">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H3548 (kohen) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+<aside class="framework-callout framework-callout-preview">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">kohen</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss priest / Aaronic priest / officiant</span>
+  </h3>
+  <div class="framework-callout-preview-stub">
+    <em>Framework callout body to be drafted under voice-skill load
+    at the S161 parallel-subagent wheel.</em>
+  </div>
+  <footer class="framework-callout-footer">Red Lines: #7, #11</footer>
+</aside>
+
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">כֹּהֵן</span> 750 <span class="bdb-pos">n.m</span>. <em class="bdb-def">priest</em>
+				
+			
+			
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">כהן</span> (√ of foll; mng. dub., v. Dr 28 6, 18; Ar. vb. <span class="bdb-foreign" data-lang="ara">Arabic</span> is <em class="bdb-def">divine</em>, and <span class="bdb-foreign" data-lang="ara">Arabic</span> (Qor 52:29) is <em class="bdb-def">a seer</em>, the organ (mostly) of a jinn, rarely of a god: the <span class="bdb-foreign" data-lang="ara">Arabic</span> and the <span class="bdb-hebrew">כֹּהֵן</span> must have been orig. identical (both alike being guardians of an oracle, at a sanctuary); but their functions diverged: the <span class="bdb-foreign" data-lang="ara">Arabic</span> gradually lost his connexion with the sanctuary, and sank to be a mere diviner; the <span class="bdb-hebrew">כהן</span> acquired fuller sacrif. functions: v. RS Enc. Brit. ed. 9, xix, 727; We Skizzen iii. 130f., 167; Now Arch ili. 89f.; Ph <span class="bdb-hebrew">כהן</span> is <em class="bdb-def">priest</em> <span class="bdb-hebrew">כהנת</span> <em class="bdb-def">priestess</em>).
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H0430">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H0430 (elohim) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">אֱלֹהִים</span> 2570 <span class="bdb-pos">n.m.pl</span>.
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em>pl</em>. in number.
+					<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> <em class="bdb-def">rulers</em>, <em class="bdb-def">judges</em>, either as divine representatives at sacred places or as reflecting divine majesty and power</li>
+					<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> <em class="bdb-def">divine ones</em>, superhuman beings including God and angels</li>
+					<li class="bdb-sense" data-sense="c"><span class="bdb-sense-num">c.</span> <em class="bdb-def">angels</em></li>
+					<li class="bdb-sense" data-sense="d"><span class="bdb-sense-num">d.</span> <em class="bdb-def">gods</em></li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em>pl. intensive</em>
+					<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> <em class="bdb-def">god</em> or <em class="bdb-def">goddess</em></li>
+					<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> <em class="bdb-def">godlike one</em></li>
+					<li class="bdb-sense" data-sense="c"><span class="bdb-sense-num">c.</span> works of God, or things belongng to him</li>
+					<li class="bdb-sense" data-sense="d"><span class="bdb-sense-num">d.</span> <em class="bdb-def">God</em></li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <span class="bdb-hebrew">הָאֱלֹהִים</span> <em class="bdb-def">the (true) God</em></li>
+				<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <span class="bdb-hebrew">אֱלֹהִים</span> = <em class="bdb-def">God</em></li>
+				
+			
+			</ol>
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">אלה</span> (assumed as √ of <span class="bdb-hebrew">אֵל</span>, (<span class="bdb-hebrew">אֱלוֹהַּ</span>) <span class="bdb-hebrew">אֱלֹהִים</span> <em class="bdb-def">god, God</em>, but question intricate, &amp; conclusions dub. It is uncertain whether <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלֹהִים</span> are from the same √. Following are the chief theories: 1. a. Thes makes <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלֹהִים</span> distinct, and both really primitive, but associates <span class="bdb-hebrew">אֵל</span> in treatment with <span class="bdb-hebrew">אֵל</span> <em class="bdb-def">strong</em>, Pt. of √<span class="bdb-hebrew">אול</span>; <em class="bdb-def">strong</em>, acc. to Thes, being derived from mng. <em class="bdb-def">be in front of</em>; (different order in Lex. Man., RobGes); b.  <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלֹהִים</span> distinct; former fr. <span class="bdb-hebrew">אול</span> <em class="bdb-def">strong</em>; latter pl. of <span class="bdb-hebrew">אֱלוֹהַּ</span> from √[<span class="bdb-hebrew">אלהּ</span>] = <span class="bdb-foreign" data-lang="ara">Arabic</span> 
+	  <em class="bdb-def">go to and fro</em> in perplexity or fear, hence <span class="bdb-hebrew">אֱלהַּ</span> <em class="bdb-def">fear &amp; object of fear</em>, reverence, <em class="bdb-def">revered one</em>; <span class="bdb-foreign" data-lang="ara">Arabic</span> = <span class="bdb-hebrew">פחד אל</span> <em class="bdb-def">trepide confugere ad</em> <a class="bdb-citation" data-verse="Hos.3.5">Ho 3:5</a>; <span class="bdb-hebrew">אלהים</span> = <span class="bdb-hebrew">פחד</span> <a class="bdb-citation" data-verse="Gen.31.42">Gn 31:42</a> = <span class="bdb-hebrew">מוֹרָא</span> <a class="bdb-citation" data-verse="Isa.8.13">Is 8:13</a> DeGn 1887, 48 (cf. <span class="bdb-foreign" data-lang="grc">σέβασμα</span>, postBHeb. <span class="bdb-hebrew">יִרְאָה</span> NHWB; Aram. <span class="bdb-hebrew">דַּחֲלָא</span> CWB); so De following Fl in De Gn ed. 4. 51, cf. MV. 2. <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלֹהִים</span> possibly connected; <span class="bdb-hebrew">אֵל</span> = <em class="bdb-def">leader, lord</em>, fr. √<span class="bdb-hebrew">אול</span> <em class="bdb-def">be in front</em>; so Nö M8 Ak 1880, 760f; SB Ak 1882, 1175f. 3. a. <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלֹהִים</span> connected, &amp; both fr. a √<span class="bdb-hebrew">אלה</span> (= <span class="bdb-hebrew">אלהּ</span>) to which is assigned mng. <em class="bdb-def">strong</em>; so Ew §146d. 178b (v. also Jahrbücher d. bibl. Wiss., x. 11, Bibl. Theol. ii. 330). b. <span class="bdb-hebrew">אֵל</span> fr. √<span class="bdb-hebrew">אלה</span> <em class="bdb-def">strong</em> (not <span class="bdb-hebrew">אלהּ</span>), &amp; <span class="bdb-hebrew">אֱלֹהִים</span> expanded from <span class="bdb-hebrew">אֵל</span>, cf. pl. <span class="bdb-hebrew">אֲמָהוֹת</span>; fr.  <span class="bdb-hebrew">אמה</span> etc.; so Di on <a class="bdb-citation" data-verse="Gen.1.1">Gn 1:1</a>; he supports mng. <em class="bdb-def">strong</em> by ref. to phrase <span class="bdb-hebrew">יֵשׁ לְאֵל יָדִי</span> <a class="bdb-citation" data-verse="Gen.31.29">Gn 31:29</a> al.; c. similarly, <span class="bdb-hebrew">אֵל</span>, being very early &amp; common Shemitic word, formed pl. <span class="bdb-hebrew">אלהים</span>, fr. which sing. <span class="bdb-hebrew">אֱלוֹהַּ</span> was afterwards inferred, Nes Theol. Stud. a. Württ. 1882. 243 (criticized by Nö SBA 1.c.). 4. <span class="bdb-hebrew">אֵל</span> (<span class="bdb-hebrew">אֱלוֹהַּ</span>, <span class="bdb-hebrew">אֱלֹהִים</span> disregarded) fr. √<span class="bdb-hebrew">אלה</span> <em class="bdb-def">stretch out to, reach after</em> (cf. prep. <span class="bdb-hebrew">אֶל</span>, <span class="bdb-hebrew">אֱלִי</span>, also <span class="bdb-hebrew">אָלָה</span> <em class="bdb-def">swear</em>), God as <em class="bdb-def">the one whom men strive to reach</em>, 'das Ziel aller Menschensehnsucht und alles Menschenstrebens,' Lag Or. ii. 3; GN 1882. 173—M 96.—Cf. Spurrell Heb. Text of Gn. App. ii, where all these views are stated somewhat more fully, &amp; briefly criticized; on the use of <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלהַּ</span> in Shemitic languages vid., exhaustively, Nö MB Ak. SB Ak. i.c.).
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H0410">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H0410 (el) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">אֵל</span> <span class="bdb-pos">n.m</span>. <em class="bdb-def">god</em>, but with various subordinate applications to express the idea of might
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> applied to <em class="bdb-def">men of might and rank</em></li>
+				<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">angels</em></li>
+				<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">gods of the nations</em></li>
+				<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <em class="bdb-def">Ēl</em></li>
+				<li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> as characterizing mighty things in nature</li>
+				<li class="bdb-sense" data-sense="6"><span class="bdb-sense-num">6.</span> <em class="bdb-def">God</em>, the one only and true God of Israel</li>
+				<li class="bdb-sense" data-sense="7"><span class="bdb-sense-num">7.</span> <span class="bdb-hebrew">אֵל</span> <em class="bdb-def">strength</em>, <em class="bdb-def">power</em></li>
+				
+			
+			</ol>
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">אלה</span> (assumed as √ of <span class="bdb-hebrew">אֵל</span>, (<span class="bdb-hebrew">אֱלוֹהַּ</span>) <span class="bdb-hebrew">אֱלֹהִים</span> <em class="bdb-def">god, God</em>, but question intricate, &amp; conclusions dub. It is uncertain whether <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלֹהִים</span> are from the same √. Following are the chief theories: 1. a. Thes makes <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלֹהִים</span> distinct, and both really primitive, but associates <span class="bdb-hebrew">אֵל</span> in treatment with <span class="bdb-hebrew">אֵל</span> <em class="bdb-def">strong</em>, Pt. of √<span class="bdb-hebrew">אול</span>; <em class="bdb-def">strong</em>, acc. to Thes, being derived from mng. <em class="bdb-def">be in front of</em>; (different order in Lex. Man., RobGes); b.  <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלֹהִים</span> distinct; former fr. <span class="bdb-hebrew">אול</span> <em class="bdb-def">strong</em>; latter pl. of <span class="bdb-hebrew">אֱלוֹהַּ</span> from √[<span class="bdb-hebrew">אלהּ</span>] = <span class="bdb-foreign" data-lang="ara">Arabic</span> 
+	  <em class="bdb-def">go to and fro</em> in perplexity or fear, hence <span class="bdb-hebrew">אֱלהַּ</span> <em class="bdb-def">fear &amp; object of fear</em>, reverence, <em class="bdb-def">revered one</em>; <span class="bdb-foreign" data-lang="ara">Arabic</span> = <span class="bdb-hebrew">פחד אל</span> <em class="bdb-def">trepide confugere ad</em> <a class="bdb-citation" data-verse="Hos.3.5">Ho 3:5</a>; <span class="bdb-hebrew">אלהים</span> = <span class="bdb-hebrew">פחד</span> <a class="bdb-citation" data-verse="Gen.31.42">Gn 31:42</a> = <span class="bdb-hebrew">מוֹרָא</span> <a class="bdb-citation" data-verse="Isa.8.13">Is 8:13</a> DeGn 1887, 48 (cf. <span class="bdb-foreign" data-lang="grc">σέβασμα</span>, postBHeb. <span class="bdb-hebrew">יִרְאָה</span> NHWB; Aram. <span class="bdb-hebrew">דַּחֲלָא</span> CWB); so De following Fl in De Gn ed. 4. 51, cf. MV. 2. <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלֹהִים</span> possibly connected; <span class="bdb-hebrew">אֵל</span> = <em class="bdb-def">leader, lord</em>, fr. √<span class="bdb-hebrew">אול</span> <em class="bdb-def">be in front</em>; so Nö M8 Ak 1880, 760f; SB Ak 1882, 1175f. 3. a. <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלֹהִים</span> connected, &amp; both fr. a √<span class="bdb-hebrew">אלה</span> (= <span class="bdb-hebrew">אלהּ</span>) to which is assigned mng. <em class="bdb-def">strong</em>; so Ew §146d. 178b (v. also Jahrbücher d. bibl. Wiss., x. 11, Bibl. Theol. ii. 330). b. <span class="bdb-hebrew">אֵל</span> fr. √<span class="bdb-hebrew">אלה</span> <em class="bdb-def">strong</em> (not <span class="bdb-hebrew">אלהּ</span>), &amp; <span class="bdb-hebrew">אֱלֹהִים</span> expanded from <span class="bdb-hebrew">אֵל</span>, cf. pl. <span class="bdb-hebrew">אֲמָהוֹת</span>; fr.  <span class="bdb-hebrew">אמה</span> etc.; so Di on <a class="bdb-citation" data-verse="Gen.1.1">Gn 1:1</a>; he supports mng. <em class="bdb-def">strong</em> by ref. to phrase <span class="bdb-hebrew">יֵשׁ לְאֵל יָדִי</span> <a class="bdb-citation" data-verse="Gen.31.29">Gn 31:29</a> al.; c. similarly, <span class="bdb-hebrew">אֵל</span>, being very early &amp; common Shemitic word, formed pl. <span class="bdb-hebrew">אלהים</span>, fr. which sing. <span class="bdb-hebrew">אֱלוֹהַּ</span> was afterwards inferred, Nes Theol. Stud. a. Württ. 1882. 243 (criticized by Nö SBA 1.c.). 4. <span class="bdb-hebrew">אֵל</span> (<span class="bdb-hebrew">אֱלוֹהַּ</span>, <span class="bdb-hebrew">אֱלֹהִים</span> disregarded) fr. √<span class="bdb-hebrew">אלה</span> <em class="bdb-def">stretch out to, reach after</em> (cf. prep. <span class="bdb-hebrew">אֶל</span>, <span class="bdb-hebrew">אֱלִי</span>, also <span class="bdb-hebrew">אָלָה</span> <em class="bdb-def">swear</em>), God as <em class="bdb-def">the one whom men strive to reach</em>, 'das Ziel aller Menschensehnsucht und alles Menschenstrebens,' Lag Or. ii. 3; GN 1882. 173—M 96.—Cf. Spurrell Heb. Text of Gn. App. ii, where all these views are stated somewhat more fully, &amp; briefly criticized; on the use of <span class="bdb-hebrew">אֵל</span> &amp; <span class="bdb-hebrew">אֱלהַּ</span> in Shemitic languages vid., exhaustively, Nö MB Ak. SB Ak. i.c.).
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H3068">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H3068 (yahuah) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">יהוה</span> c. 6823  i.e. <span class="bdb-hebrew">יַהְוֶה</span> <span class="bdb-pos">n.pr.dei</span> <em class="bdb-def">Yahweh</em>, the proper name of the God of Israel—(1. MT <span class="bdb-hebrew">יְהֹוָה</span> 6518 (Qr <span class="bdb-hebrew">אֲדֹנָי</span>), or <span class="bdb-hebrew">יֱהֹוִה</span> 305 (Qr <span class="bdb-hebrew">אֱלֹהִים</span>) 2. Many recent scholars explain <span class="bdb-hebrew">יַהְוֶה</span> as Hiph. of <span class="bdb-hebrew">הוה</span> (= <span class="bdb-hebrew">היה</span>) <em class="bdb-def">the one bringing into being</em>, <em class="bdb-def">life-giver</em>)
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="I"><span class="bdb-sense-num">I.</span> <span class="bdb-hebrew">יהוה</span> is not used by E in Gn, but is given <a class="bdb-citation" data-verse="Exod.3.12-Exod.3.15">Ex 3:12-15</a> as the name of the God who revealed Himself to Moses at Horeb</li>
+				<li class="bdb-sense" data-sense="II"><span class="bdb-sense-num">II.</span> 
+					<li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <span class="bdb-hebrew">יהוה</span> is used with <span class="bdb-hebrew">אלהים</span> and suffixes, especially in D</li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> the phrase † <span class="bdb-hebrew">אֲנִי יהוה</span> is noteworthy</li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <span class="bdb-hebrew">יהוה</span> is also used with several predicates, to form sacred names of holy places of Yahweh</li>
+				</ol></li>
+				
+			
+			
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H1696">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H1696 (dabar) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      
+      [<span class="bdb-hebrew">דָבַר</span>] 1142 <span class="bdb-pos">vb</span>. <em class="bdb-def">speak</em> (original mng. dub.)
+				<div class="bdb-sense-block"><span class="bdb-stem">Qal</span> <em class="bdb-def">speak</em></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Niph</span>. reciprocal sense, <em class="bdb-def">speak with one another</em>, <em class="bdb-def">talk</em></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Pi</span>. <em class="bdb-def">speak</em></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Pu</span>. <em class="bdb-def">in the day when she may be spoken for</em></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hithp</span>. <em class="bdb-def">speaking this word</em></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hiph</span>. either <em class="bdb-def">leads</em> subject, or <em class="bdb-def">puts to flight</em>, fig. for <em class="bdb-def">subdues</em></div>
+				
+			
+			
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H1004">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H1004 (bayit) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">בֵּית</span> fem. of <span class="bdb-hebrew">בַּיִן</span>, <a class="bdb-cross-lemma" data-bdb="b.bo.ac"><span class="bdb-hebrew">בֵּין</span></a> <span class="bdb-pos">prep</span>. <em class="bdb-def">between</em>
+				
+			
+			
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">בִּין</span> <span class="bdb-pos">vb</span>. <em class="bdb-def">discern</em>
+				<div class="bdb-sense-block"><span class="bdb-stem">Qal</span>
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">perceive</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">understand</em>, <em class="bdb-def">know</em> (with mind)</li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">observe</em>, <em class="bdb-def">mark</em>, <em class="bdb-def">give heed to</em>, <em class="bdb-def">distinguish</em>, <em class="bdb-def">consider</em> (with attention)</li>
+					<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <em class="bdb-def">have discernment</em>, <em class="bdb-def">insight</em>, <em class="bdb-def">understanding</em></li>
+				</ol></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Niph</span>. <em class="bdb-def">be intelligent</em>, <em class="bdb-def">discreet</em>, <em class="bdb-def">discerning</em>, <em class="bdb-def">distinguish</em>, <em class="bdb-def">have understanding</em></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Po</span>. <em class="bdb-def">he attentively considereth him</em></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hiph</span>.
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">understand</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">give heed to</em>, <em class="bdb-def">attend to</em>, <em class="bdb-def">observe</em>, <em class="bdb-def">discern</em></li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">give understanding</em>, <em class="bdb-def">make understand</em>, <em class="bdb-def">teach</em></li>
+				</ol></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hithp</span>.
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">shew oneself attentive</em>, <em class="bdb-def">consider diligently</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">get understanding</em>, <em class="bdb-def">understand</em></li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">shew oneself to have understanding</em></li>
+				</ol></div>
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H4428">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H4428 (melek) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">מֶ֫לֶךְ</span> 2513 <span class="bdb-pos">n.m</span>. <em class="bdb-def">king</em>
+				
+			
+			
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">מלך</span> (√ of foll.; mng. dub.; Thes comp. Ar. <span class="bdb-foreign" data-lang="ara">Arabic</span> <em class="bdb-def">possess, own exclusively</em>, cf. Eth. <span class="bdb-foreign" data-lang="gez">Ethiopic</span> so Bae Rel. 144 (cf. <span class="bdb-hebrew">בַּעַל</span>), and Nö ZMG xi. 1886, 727; Lyon Bib. Sacr., Apr. 1884 Dl Prol. 30 al. comp. As. <span class="bdb-foreign" data-lang="akk">malâku</span>, <em class="bdb-def">counsel, advise</em> Dl HWB 412, BH and NH <span class="bdb-hebrew">מָלַךְ</span>, Aram. <span class="bdb-foreign" data-lang="syr">Syriac</span>, <span class="bdb-hebrew">מְלַךְ</span>, whence king as orig. <em class="bdb-def">counsellor</em>, he whose opinion is decisive).
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H6213">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H6213 (asah) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      
+      <span class="bdb-hebrew">עָשָׂה</span> 2622 <span class="bdb-pos">vb</span>. <em class="bdb-def">do</em>, <em class="bdb-def">make</em>
+				<div class="bdb-sense-block"><span class="bdb-stem">Qal</span> 2524
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="I"><span class="bdb-sense-num">I.</span> 
+						<li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">do</em> (1560   t.)</li>
+						<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">deal</em> with</li>
+						<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> oft. in phr. <em class="bdb-def">do</em> kindness with</li>
+						<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> abs. <em class="bdb-def">act</em>, <em class="bdb-def">act with effect</em></li>
+					</ol></li>
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="II"><span class="bdb-sense-num">II.</span> 
+						<li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">make</em> (670   t.)</li>
+						<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">produce</em>, <em class="bdb-def">yield</em></li>
+						<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">prepare</em>, esp. of dressing and cooking food</li>
+						<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <em class="bdb-def">make</em> offering</li>
+						<li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> <em class="bdb-def">attend to</em>, <em class="bdb-def">put in order</em></li>
+						<li class="bdb-sense" data-sense="6"><span class="bdb-sense-num">6.</span> <em class="bdb-def">observe</em>, <em class="bdb-def">celebrate</em>, religious festival</li>
+						<li class="bdb-sense" data-sense="7"><span class="bdb-sense-num">7.</span> <em class="bdb-def">acquire</em> property of various kinds</li>
+						<li class="bdb-sense" data-sense="8"><span class="bdb-sense-num">8.</span> <em class="bdb-def">appoint</em> priests</li>
+						<li class="bdb-sense" data-sense="9"><span class="bdb-sense-num">9.</span> <em class="bdb-def">bring about</em> of <span class="bdb-hebrew">י׳</span>’s effecting a deliverance</li>
+						<li class="bdb-sense" data-sense="10"><span class="bdb-sense-num">10.</span> <em class="bdb-def">use</em></li>
+						<li class="bdb-sense" data-sense="11"><span class="bdb-sense-num">11.</span> <em class="bdb-def">spend</em>, <em class="bdb-def">pass</em>, days of life</li>
+					</ol></li>
+				</div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Niph</span>.
+				97<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">be done</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> 
+						<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> <em class="bdb-def">be made</em>, of concr. things</li>
+						<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> <em class="bdb-def">be produced</em> from vine</li>
+						<li class="bdb-sense" data-sense="c"><span class="bdb-sense-num">c.</span> <em class="bdb-def">be prepared</em>, of food</li>
+						<li class="bdb-sense" data-sense="d"><span class="bdb-sense-num">d.</span> <em class="bdb-def">be offered</em></li>
+						<li class="bdb-sense" data-sense="e"><span class="bdb-sense-num">e.</span> <em class="bdb-def">be observed</em>, passover</li>
+						<li class="bdb-sense" data-sense="f"><span class="bdb-sense-num">f.</span> <em class="bdb-def">be used</em></li>
+					</ol></li>
+				</div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Pu</span>. <em class="bdb-def">I was made</em></div>
+				
+			
+			
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H0559">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H0559 (amar) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      
+      <span class="bdb-hebrew">אָמַר</span> 5287 <span class="bdb-pos">vb</span>. <em class="bdb-def">utter</em>, <em class="bdb-def">say</em>
+				<div class="bdb-sense-block"><span class="bdb-stem">Qal</span>
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">Say</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">Say in the heart</em> (= think)</li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">Promise</em></li>
+					<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <em class="bdb-def">Command</em> (esp. late)</li>
+				</ol></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Niph</span>. <em class="bdb-def">be said</em>, <em class="bdb-def">told</em></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hiph</span>. <em class="bdb-def">avow</em>, <em class="bdb-def">avouch</em> (lit. <em class="bdb-def">cause to declare</em>)</div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hithp</span>. <em class="bdb-def">act proudly</em>, <em class="bdb-def">boast</em></div>
+				
+			
+			
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H1320">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H1320 (basar) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">בָּשָׂר</span> 266 <span class="bdb-pos">n.m</span>. <em class="bdb-def">flesh</em>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">of the body</em></li>
+				<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">flesh</em> for <em class="bdb-def">the body itself</em></li>
+				<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">male organ of generation</em> (euphemism)</li>
+				<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <em class="bdb-def">flesh</em> for <em class="bdb-def">kindred</em>, <em class="bdb-def">blood-relations</em></li>
+				<li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> <em class="bdb-def">man over against God as frail</em> or <em class="bdb-def">erring</em></li>
+				
+			
+			</ol>
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body">[<span class="bdb-hebrew">בָּשַׂר</span>] <span class="bdb-pos">vb</span>. <em class="bdb-def">bear tidings</em>
+				<div class="bdb-sense-block"><span class="bdb-stem">Pi</span>.
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">gladden with good tidings</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">bear tidings</em></li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">herald as glad tidings</em></li>
+				</ol></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hithp</span>. <em class="bdb-def">receive good tidings</em></div>
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H1980">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H1980 (halak) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      
+      <span class="bdb-hebrew">הָלַךְ</span> 1546 <span class="bdb-pos">vb</span>. <em class="bdb-def">go</em>, <em class="bdb-def">come</em>, <em class="bdb-def">walk</em>
+				<div class="bdb-sense-block"><span class="bdb-stem">Qal</span> <span class="bdb-aspect">Impf</span>. usually (629 t.) as if from <a class="bdb-cross-lemma" data-bdb="e.bn.aa"><span class="bdb-hebrew">ילך</span></a>
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="I"><span class="bdb-sense-num">I.</span> lit.
+						<li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> of persons</li>
+						<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> Also of animals, in similar meanings and combinations</li>
+						<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> in like manner of inanimate things</li>
+						<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> The inf. abs. is often used
+							<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> as in other vbs., quite independently</li>
+							<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> to intensify meaning of finite form</li>
+							<li class="bdb-sense" data-sense="c"><span class="bdb-sense-num">c.</span> most noteworthy is the joining of the Inf. abs.
+								<li class="bdb-sense" data-sense="(1)"><span class="bdb-sense-num">(1).</span> with a following Inf. abs. denoting a simutaneous action or process, and so emphasizing duration or continuance</li>
+								<li class="bdb-sense" data-sense="(2)"><span class="bdb-sense-num">(2).</span> with a foll. vb. fin. c. <span class="bdb-hebrew">ו</span> consec. (rare)</li>
+								<li class="bdb-sense" data-sense="(3)"><span class="bdb-sense-num">(3).</span> in cases where vb. fin. is foll. by Inf. abs.   adj. denoting progress, advance</li>
+								<li class="bdb-sense" data-sense="(4)"><span class="bdb-sense-num">(4).</span> twice, where vb. fin. is not <span class="bdb-hebrew">הלך</span>, but another vb. denoting motion</li>
+								<li class="bdb-sense" data-sense="(5)"><span class="bdb-sense-num">(5).</span> quite by itself</li>
+								<li class="bdb-sense" data-sense="(6)"><span class="bdb-sense-num">(6).</span> 13 t. the Inf. abs. = Imv. &amp; is followed by Pf. consec.</li>
+							</ol></li>
+							<ol class="bdb-senses"><li class="bdb-sense" data-sense="d"><span class="bdb-sense-num">d.</span> akin to the use of Inf. abs. are some instances of Pt.</li>
+						</ol></li>
+						<ol class="bdb-senses"><li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> In combination with other verbal forms</li>
+					</ol></li>
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="II"><span class="bdb-sense-num">II.</span> Fig.; the most common uses follow; in most the origin in a literal meaning is evident:
+						<li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">pass away</em>, <em class="bdb-def">die</em></li>
+						<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">live</em> (‘<em class="bdb-def">walk</em>’), in general</li>
+						<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> of moral and religious life</li>
+						<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> other fig. uses</li>
+					</ol></li>
+				</div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Pi</span>. (chiefly poet. and late)
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">walk</em> in or with a throng</li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> also of <em class="bdb-def">walking about</em> = living</li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">depart</em>, <em class="bdb-def">go entirely away</em></li>
+					<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> fig. of mode of life, action, etc.</li>
+				</ol></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hithp</span>. <em class="bdb-def">walk</em>, <em class="bdb-def">walk about</em>, <em class="bdb-def">move to and fro</em></div>
+				<div class="bdb-sense-block"><span class="bdb-stem">Hiph</span>.
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">lead</em>, <em class="bdb-def">bring</em></li>
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">lead away</em></li>
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">carry</em>, <em class="bdb-def">bring</em></li>
+					<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> fig. of influence on character</li>
+					<li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> 
+						<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> <em class="bdb-def">cause to walk</em>, <em class="bdb-def">go</em></li>
+						<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> <em class="bdb-def">cause to flow</em>, <em class="bdb-def">run</em></li>
+						<li class="bdb-sense" data-sense="c"><span class="bdb-sense-num">c.</span> <em class="bdb-def">cause to depart</em>, <em class="bdb-def">retire</em>, <em class="bdb-def">go back</em></li>
+					</ol></li>
+				</div>
+				
+			
+			
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H8085">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H8085 (shama) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      
+      <span class="bdb-hebrew">שָׁמַע</span> 1152 <span class="bdb-pos">vb</span>. <em class="bdb-def">hear</em>
+				<div class="bdb-sense-block"><span class="bdb-stem">Qal</span> 1052
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> subj. pers. hum.</li> <li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <span class="bdb-hebrew">י׳</span> (God) subj.</li></ol></div> 
+				<div class="bdb-sense-block"><span class="bdb-stem">Niph</span>. 42 <ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">be heard</em>, of voice, sound</li> 
+					<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">be heard of</em></li> 
+					<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">be regarded</em>, <em class="bdb-def">obeyed</em></li> 
+					<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> = (favourable) <em class="bdb-def">hearing was granted to their voice</em>.</li>
+				</ol></div> 
+				<div class="bdb-sense-block"><span class="bdb-stem">Pi</span>. <em class="bdb-def">he caused</em> the people <em class="bdb-def">to hear</em></div> 
+				<div class="bdb-sense-block"><span class="bdb-stem">Hiph</span>. 63
+					<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> of man</li> <li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <span class="bdb-hebrew">י׳</span> subj.</li></ol></div>
+				
+			
+			
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H7965">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H7965 (shalom) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">שָׁלוֹם</span> 237 <span class="bdb-pos">n.m</span>. <em class="bdb-def">completeness</em>, <em class="bdb-def">soundness</em>, <em class="bdb-def">welfare</em>, <em class="bdb-def">peace</em>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> <em class="bdb-def">completeness</em> in no.</li> 
+				<li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> <em class="bdb-def">safety</em>, <em class="bdb-def">soundness</em>, in body</li> 
+				<li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> <em class="bdb-def">welfare</em>, <em class="bdb-def">health</em>, <em class="bdb-def">prosperity</em></li> 
+				<li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> <em class="bdb-def">peace</em>, <em class="bdb-def">quiet</em>, <em class="bdb-def">tranquility</em>, <em class="bdb-def">contentment</em></li> 
+				<li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> <em class="bdb-def">peace</em>, <em class="bdb-def">friendship</em></li> 
+				<li class="bdb-sense" data-sense="6"><span class="bdb-sense-num">6.</span> <em class="bdb-def">peace</em> from war</li> 
+				<li class="bdb-sense" data-sense="7"><span class="bdb-sense-num">7.</span> as adj. <em class="bdb-def">those at peace with him</em></li>
+				
+			
+			</ol>
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H0113">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H0113 (adon) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">אָדוֹן</span> <span class="bdb-pos">n.m</span>. <em class="bdb-def">lord</em> (<span class="bdb-hebrew">אֲדֹנִי</span>, <span class="bdb-hebrew">אֲדֹנַי</span>, <span class="bdb-hebrew">אֲדֹנָי</span> are variations of Mass. pointing to distinguish divine reference fr. human. Pl., with few exc. an intens. pl. of rank; word takes sf. as pl. in all other pers.; so doubtless here. Orig. reading prob. in all cases <span class="bdb-hebrew">אֲדֹנַי</span>; <span class="bdb-hebrew">אֲדֹנִי</span> now found in J 51 t.)
+				
+			
+			
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">אדן</span> (mng. disputed; (1) cf. As. [<span class="bdb-foreign" data-lang="akk">adannu</span>] <em class="bdb-def">firm, strong</em>; adv. <span class="bdb-foreign" data-lang="akk">adanniš</span>, <em class="bdb-def">strongly, exceedingly</em> DlW &gt; (2) Fü. (a) <em class="bdb-def">make firm, fasten</em> (cf. <span class="bdb-foreign" data-lang="ara">Arabic</span>) whence <span class="bdb-hebrew">אֶדֶן</span>; (b) <em class="bdb-def">determine, command, rule</em>, whence <span class="bdb-hebrew">אָדוֹן</span>; (3) Thes Add., MV al. (a) intr. <em class="bdb-def">be under, low, inferior</em> (cf. <span class="bdb-hebrew">דּוּן</span>, <span class="bdb-foreign" data-lang="ara">Arabic</span>), whence <span class="bdb-hebrew">אֶדֶן</span>; (b) tr. <em class="bdb-def">put under command, rule over</em> (cf. <span class="bdb-hebrew">דִּין</span>) whence <span class="bdb-hebrew">אָדוֹן</span>; v. also (4) Lag M.i. 102, <span class="bdb-hebrew">אָדוֹן</span> fro. <span class="bdb-foreign" data-lang="ara">Arabic</span>).
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H7223">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H7223 (rishon) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">רִאשׁוֹן</span> 182 <span class="bdb-pos">adj</span>. <em class="bdb-def">former</em>, <em class="bdb-def">first</em>, <em class="bdb-def">chief</em>
+				
+			
+			
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">רֹאשׁ</span> 599 <span class="bdb-pos">n.m</span>.
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> 
+					<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> (c. 230 t.) <em class="bdb-def">head</em>, of human being</li>
+					<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> <em class="bdb-def">head</em>, of animals</li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> 
+					<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> <em class="bdb-def">top</em> (88 t.)</li>
+					<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> <em class="bdb-def">height</em>, of stars</li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="3"><span class="bdb-sense-num">3.</span> 
+					<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> <em class="bdb-def">head</em> = <em class="bdb-def">chief</em> (man)</li>
+					<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> = <em class="bdb-def">chief</em> (city)</li>
+					<li class="bdb-sense" data-sense="c"><span class="bdb-sense-num">c.</span> <em class="bdb-def">chief</em> nation</li>
+					<li class="bdb-sense" data-sense="d"><span class="bdb-sense-num">d.</span> = <em class="bdb-def">chief</em> (place, position)</li>
+					<li class="bdb-sense" data-sense="e"><span class="bdb-sense-num">e.</span> = <em class="bdb-def">chief priest</em></li>
+					<li class="bdb-sense" data-sense="f"><span class="bdb-sense-num">f.</span> = <em class="bdb-def">head</em> of a family</li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="4"><span class="bdb-sense-num">4.</span> 
+					<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> <em class="bdb-def">head</em> = <em class="bdb-def">front</em>, leader's place</li>
+					<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> of time, <em class="bdb-def">beginning</em>, of night watch</li>
+					<li class="bdb-sense" data-sense="c"><span class="bdb-sense-num">c.</span> of things, river-<em class="bdb-def">heads</em></li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="5"><span class="bdb-sense-num">5.</span> <em class="bdb-def">chief</em>, <em class="bdb-def">choicest</em>, <em class="bdb-def">best</em>, of spices</li>
+				<li class="bdb-sense" data-sense="6"><span class="bdb-sense-num">6.</span> <em class="bdb-def">head</em> = <em class="bdb-def">division</em> of army, <em class="bdb-def">company</em>, <em class="bdb-def">band</em></li>
+				<li class="bdb-sense" data-sense="7"><span class="bdb-sense-num">7.</span> = <em class="bdb-def">sum</em>, esp. in phr. <em class="bdb-def">take sum of</em>, <em class="bdb-def">enumerate</em></li>
+				<li class="bdb-sense" data-sense="8"><span class="bdb-sense-num">8.</span> other phr.</li>
+				
+			
+			</ol></div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="H6086">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s H6086 (ets) &rsaquo; BDB</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>BDB (Brown-Driver-Briggs, 1906)</strong> &mdash; a 19th-century Christian-era Hebrew scholarship work, preserved as data so you can see how the inherited tradition handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+
+    
+
+    <div class="lexicon-body bdb-body">
+      <span class="bdb-hebrew">עֵץ</span> 329 <span class="bdb-pos">n.m</span>. <em class="bdb-def">tree</em>, <em class="bdb-def">trees</em>, <em class="bdb-def">wood</em>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="1"><span class="bdb-sense-num">1.</span> (c. 150 t.)
+					<li class="bdb-sense" data-sense="a"><span class="bdb-sense-num">a.</span> a standing <em class="bdb-def">tree</em></li>
+					<li class="bdb-sense" data-sense="b"><span class="bdb-sense-num">b.</span> coll. <em class="bdb-def">trees</em></li>
+				</ol></li>
+				<ol class="bdb-senses"><li class="bdb-sense" data-sense="2"><span class="bdb-sense-num">2.</span> (c. 175 t.; c. 120 t. pl., to denote <em class="bdb-def">pieces</em> [or articles] <em class="bdb-def">of wood</em>)</li>
+				
+			
+			</ol>
+      
+<hr class="lexicon-sub-root-divider" />
+<div class="bdb-root-analysis">
+  <h4 class="bdb-root-header">Root analysis</h4>
+  <div class="bdb-root-body"><span class="bdb-hebrew">עצה</span>
+				
+			
+			</div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="page-footer">
+  S160 sample-render &mdash; the production loader (Phase 9.3 full-corpus run)
+  cribs the parse + render functions from
+  <code>restoration-pipeline/_session160_bdb_sample_render.py</code>.
+  Render artifact persists at <code>outputs/Phase_9.3_BDB_Sample_Render_S160.html</code>
+  per the &sect;.gitignore S160 exception (locked after S159's render was lost to
+  session-scratchpad collision).
+</footer>
+
+<script>
+// S160 sample-render interactivity (not production code). Wires up the
+// §26 LexiconSheet chrome so Yoshi can poke the surface during review.
+// The production React PWA implements §26 from scratch with real state.
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Build an index of which Strong's numbers are present in this render,
+  // for cross-lemma navigation simulation.
+  const presentStrongs = new Set(
+    Array.from(document.querySelectorAll('.lexicon-sheet[data-strong]'))
+      .map(s => s.dataset.strong)
+  );
+
+  // × close (and breadcrumb-tap) collapses / expands the sheet body
+  document.querySelectorAll('.lexicon-sheet-header').forEach(header => {
+    header.addEventListener('click', (e) => {
+      // ignore clicks on links inside the header (none expected, but defensive)
+      if (e.target.tagName === 'A') return;
+      const sheet = header.closest('.lexicon-sheet');
+      sheet.classList.toggle('lexicon-sheet-collapsed');
+      if (sheet.classList.contains('lexicon-sheet-collapsed')) {
+        sheet.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+
+  // Verse citations — tooltip noting where production would navigate
+  document.querySelectorAll('.bdb-citation, .lsj-citation').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const verse = link.dataset.verse || link.dataset.ref || link.textContent.trim();
+      showTooltip(link, `Production surface navigates to ${verse}`);
+    });
+  });
+
+  // Cross-lemma links — scroll to entry if it's in the sample, else tooltip
+  document.querySelectorAll('.bdb-cross-lemma').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const bdbId = link.dataset.bdb || link.textContent.trim();
+      showTooltip(link, `Production surface navigates to BDB entry ${bdbId} (this sample only carries 25 entries; production loader covers ~8,600)`);
+    });
+  });
+
+  function showTooltip(anchorEl, text) {
+    document.querySelectorAll('.sample-tooltip').forEach(t => t.remove());
+    const tip = document.createElement('div');
+    tip.className = 'sample-tooltip';
+    tip.textContent = text;
+    document.body.appendChild(tip);
+    const rect = anchorEl.getBoundingClientRect();
+    tip.style.top = (rect.bottom + window.scrollY + 6) + 'px';
+    tip.style.left = Math.min(
+      rect.left + window.scrollX,
+      window.innerWidth - tip.offsetWidth - 16
+    ) + 'px';
+    setTimeout(() => tip.remove(), 2500);
+  }
+});
+</script>
+</body>
+</html>

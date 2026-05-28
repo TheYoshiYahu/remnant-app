@@ -58,5 +58,9 @@ source-texts/parsed/*.pre-*
 # source-texts/strongs-greek/
 # source-texts/strongs-hebrew/
 # source-texts/kjv/
-outputs/
+# Outputs scratchpad — local-only by default; spec-gating render artifacts (Phase_*.html)
+# commit so they survive session boundaries (locked S160 after S159's BDB sample-render
+# was lost to the session-scratchpad / project-outputs naming collision).
+outputs/*
+!outputs/Phase_*.html
 .~lock.*#

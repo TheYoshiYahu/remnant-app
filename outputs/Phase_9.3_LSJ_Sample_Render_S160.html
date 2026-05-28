@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phase 9.3 LSJ Sample Render &mdash; S160</title>
+  <style>
+:root {
+  --reader-bg: #000000;
+  --reader-text: #FFFFFF;
+  --reader-muted: #A3A3A3;
+  --reader-rule: #2A2A2A;
+  --reader-surface: #0A0A0A;
+  --reader-surface-elev: #141414;
+  --reader-accent: #0084FF;
+  --techelet: #1A6FE5;
+  --argaman: #8E4FB3;
+  --argaman-deep: #3D1B5C;
+  --argaman-light: #D4B0E0;
+  --argaman-near-white: #F5E6FA;
+  --emerald-deep: #04321E;
+  --emerald-mid: #15A86A;
+  --emerald-bright: #2EFFA1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--reader-bg);
+  color: var(--reader-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 16px 16px;
+  border-bottom: 1px solid var(--reader-rule);
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.page-header .page-meta {
+  color: var(--reader-muted);
+  font-size: 13px;
+}
+
+.sheets-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.lexicon-sheet {
+  background: var(--reader-surface);
+  border: 1px solid var(--reader-rule);
+  border-radius: 8px;
+  margin: 0 0 32px;
+  overflow: hidden;
+}
+
+.lexicon-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--reader-rule);
+}
+
+.lexicon-breadcrumb {
+  font-size: 12px;
+  color: var(--reader-accent);
+  letter-spacing: 0.02em;
+}
+
+.lexicon-close {
+  background: transparent;
+  border: 0;
+  color: var(--reader-muted);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.lexicon-sheet-body {
+  padding: 16px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.lexicon-disclaimer {
+  color: var(--reader-muted);
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.lexicon-disclaimer strong {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.framework-callout {
+  position: relative;
+  border: 1px solid var(--argaman);
+  background: var(--reader-surface-elev);
+  border-radius: 6px;
+  padding: 14px 14px 12px;
+  margin: 0 0 20px;
+}
+
+.framework-callout-badge {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: var(--reader-bg);
+  color: var(--reader-accent);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border: 1px solid var(--reader-accent);
+  border-radius: 4px;
+}
+
+.framework-callout-title {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.framework-callout-term {
+  color: var(--argaman-light);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.framework-callout-sep {
+  color: var(--reader-muted);
+  margin: 0 6px;
+}
+
+.framework-callout-error {
+  color: var(--reader-text);
+  font-weight: 400;
+}
+
+.framework-callout-body {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.framework-callout-body p {
+  margin: 0 0 12px;
+}
+
+.framework-callout-body p:last-child {
+  margin-bottom: 0;
+}
+
+.framework-scripture {
+  margin: 12px 16px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--techelet);
+  font-style: italic;
+}
+
+.framework-callout-footer {
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: var(--reader-muted);
+  letter-spacing: 0.04em;
+}
+
+/* --- LSJ body styles --- */
+
+.lexicon-body { font-size: 14px; line-height: 1.65; }
+
+.lsj-lemma-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+  margin: 4px 0 14px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--reader-rule);
+}
+
+.lsj-lemma {
+  font-family: "SBL Greek", "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.lsj-translit { color: var(--reader-muted); font-style: italic; }
+.lsj-morph    { color: var(--reader-muted); font-size: 12px; }
+.lsj-gloss    { color: var(--reader-text); font-weight: 500; }
+
+.lsj-prose {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.lsj-prose b { font-weight: 600; color: var(--reader-text); }
+.lsj-prose i { font-style: italic; }
+.lsj-prose br { display: block; margin-top: 4px; content: ""; }
+
+.lsj-citation {
+  color: var(--reader-accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--reader-accent);
+  cursor: pointer;
+}
+
+.lsj-classical-cite {
+  color: var(--emerald-mid);
+  border-bottom: 1px dotted var(--emerald-mid);
+  cursor: help;
+}
+
+.page-footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+  color: var(--reader-muted);
+  font-size: 12px;
+  border-top: 1px solid var(--reader-rule);
+}
+
+/* --- Sample-render interactivity (S160 close — not production code) --- */
+
+.lexicon-sheet-collapsed .lexicon-sheet-body { display: none; }
+.lexicon-sheet-collapsed .lexicon-sheet-header { border-bottom: 0; }
+.lexicon-sheet-collapsed { opacity: 0.55; }
+.lexicon-sheet-header { cursor: pointer; }
+
+.sample-tooltip {
+  position: absolute;
+  background: var(--reader-surface-elev);
+  color: var(--reader-text);
+  border: 1px solid var(--reader-accent);
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  max-width: 320px;
+  animation: tooltip-fade 2400ms ease-out forwards;
+}
+
+@keyframes tooltip-fade {
+  0%   { opacity: 0; transform: translateY(-4px); }
+  10%  { opacity: 1; transform: translateY(0); }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-4px); }
+}
+
+.sample-banner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  background: var(--reader-surface-elev);
+  border-bottom: 1px solid var(--reader-rule);
+  color: var(--reader-muted);
+  font-size: 11px;
+  font-style: italic;
+  text-align: center;
+}
+
+.sample-banner strong { color: var(--reader-accent); font-style: normal; }
+</style>
+</head>
+<body>
+
+<div class="sample-banner">
+  <strong>Sample render</strong> &middot; tap any sheet header to collapse / re-expand;
+  hover classical citations for source date; tap biblical citations to see what production
+  would navigate to
+</div>
+
+<header class="page-header">
+  <h1>Phase 9.3 &mdash; LSJ Sample Render (S160)</h1>
+  <p class="page-meta">
+    5-entry Greek-side visual proof for the DESIGN_LANGUAGE.md &sect;26
+    LexiconSheet styling. Source: STEPBible-Data TFLSJ (Tyndale-edited LSJ
+    1940 with Abbott-Smith NT fallback 1922; SHA 0753f250...). Each entry's
+    framework callout is fully drafted from the S160 parallel-subagent wheel
+    and embedded above the LSJ body. Coverage: 5 resolved, 0
+    missing.
+  </p>
+</header>
+
+<main class="sheets-container">
+
+<section class="lexicon-sheet" data-strong="G5485">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s G5485 (charis) &rsaquo; LSJ</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>LSJ (Liddell-Scott-Jones, 1940 — Tyndale-edited from the 9th edition)</strong>, with Abbott-Smith&apos;s <em>Manual Greek Lexicon of the New Testament</em> (1922) filling in NT-only vocabulary where LSJ has no entry. Preserved as data so you can see how the inherited 19th-20th-century classical-philological and NT-Greek scholarship handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+    
+<aside class="framework-callout framework-callout-full">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">charis</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss grace / unmerited favor in standalone register</span>
+  </h3>
+  <div class="framework-callout-body"><p>The lexicons gloss <em>charis</em> as <em>grace, unmerited favor,</em> and the Reformation took the gloss and built a stand-alone gospel-summary on it: <em>saved by grace through faith.</em> True words — and a sentence cut in half. The pulpit then preached the half it kept as the whole, and the half it left out — <em>brought home to him and to his ways</em> — became the very thing the half-sentence was used to argue against. <em>Charis</em> against <em>nomos.</em> Grace against Torah. The gift turned into a wedge between the saved and the covenant the prophets said the saved would walk in. The grandmother who heard <em>saved by grace through faith</em> loved the Father; the system that handed her a truncated gospel is what the framework dismantles.</p>
+<p>Scripture never sets grace against the Way. Scripture sets grace as the means of return to it. The prophet Ezekiel names the anchor — the gathering is not for the people&#x27;s record, it is for the sake of Yahuah&#x27;s own name:</p>
+<blockquote class="framework-scripture"><em>Therefore say unto the house of Yashar&#x27;el (Israel), Thus saith the Adonai Yahuah; I do not this for your sakes, O house of Yashar&#x27;el (Israel), but for mine holy name&#x27;s sake, which ye have profaned among the heathen, whither ye went.</em> (Ezekiel 36:22)</blockquote>
+<p>And the apostle&#x27;s own summary of what <em>charis</em> does in the believer&#x27;s life puts the second half of the sentence back on the page:</p>
+<blockquote class="framework-scripture"><em>For the grace of Elohim (God) that bringeth salvation hath appeared to all men, teaching us that, denying ungodliness and worldly lusts, we should live soberly, righteously, and godly in this present world.</em> (Titus 2:11–12)</blockquote>
+<p><em>Charis</em> teaches the Way. <em>Charis</em> is the bridge that returns the scattered to the Father and to the covenant life the prophets named — the Spirit poured out, the new heart given, the statutes walked in from the inside. The fix is not to delete the grace-language. The fix is to complete the sentence the Reformation cut in half: by grace, brought home — to him, and to his ways. The consequences of walking off the Way are still real because the Way is still real, and the same Father who opened the door home wrote the Way that home runs on. <em>Charis</em> is the homecoming. The cross is the door. The Way is what the homecoming returns the willing to. Restore <em>charis</em> from a stand-alone formula to the bridge the prophets named, and the gospel stops being the cancellation of the covenant and becomes what it always was — the means by which the Father is gathering his family back into the life he made them for.</p></div>
+  <footer class="framework-callout-footer">Red Lines: #10</footer>
+</aside>
+
+    <div class="lexicon-body lsj-body">
+      
+<div class="lsj-lemma-block">
+  <span class="lsj-lemma">χάρις</span>
+  <span class="lsj-translit">charis</span>
+  <span class="lsj-morph">G:N-F</span>
+  <span class="lsj-gloss">&mdash; grace</span>
+</div>
+
+      <div class="lsj-prose"><b> χάρις</b> [ᾰ], ἡ, <br /> <i>genitive</i> χάρῐτος: <i>accusative</i> χάριν [ῑ in arsi, [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 5.874]">Refs 8th c.BC+</span>], etc.; also χάριτα [<span class="lsj-classical-cite" title="5th c.BC: Herodotus Historicus 6.41, 9.107, 5th c.BC: Euripides Tragicus “Electra” 61, “Hel.” 1378, 5th-6th c.BC: Xenophon Historicus “Historia Graeca (Hellenica)” 3.5.16, 3rd c.BC: Phylarchus Historicus 24 1st c.AD: Josephus Historicus, “PGen.” 47.17 (4th c.AD), etc. (un-Attic, _accusative_ to Moer.p.414P.): χάριταν “Corpus Glossariorum Latinorum”: _plural_ χάριτες">Refs 5th c.BC+</span>]; <i>dative</i> χάρισι, χαρίτεσσι, [<span class="lsj-classical-cite" title="8th c.BC: Odyssea Homerus Epicus “Odyssey” 6.237, 8th c.BC: Ilias Homerus Epicus “Illiad” 17.51, 5th c.BC: Pindarus Lyricus “O.” 7.93">Refs 8th c.BC+</span>]: (χαίρω):—<b>grace</b>: <br /><Level2><b>__I</b></Level2> in objective sense, <b>outward grace</b> or <b>fauour, beauty,</b> properly of persons or their portraits, θεσπεσίην δ᾽ ἄρα τῷ γε χάριν κατεχεύατ᾽ Ἀθήνη [<span class="lsj-classical-cite" title="8th c.BC: Odyssea Homerus Epicus “Odyssey” 2.12, etc.; χάριν ἀμφιχέαι κεφαλῇ 8th-7th c.BC: Hesiodus Epicus “Opera et Dies” 65; εὐμόρφων δὲ κολοσσῶν ἔχθεται χ. ἀνδρί 4th-5th c.BC: Aeschylus Tragicus “Agamemnon” 417 (Lyric poetry)">Refs 8th c.BC+</span>]: <i>plural</i>, <b>graces,</b> κάλλεϊ καὶ χάρισι στίλβων [<span class="lsj-classical-cite" title="8th c.BC: Odyssea Homerus Epicus “Odyssey” 6.237; ὄσσοις χάριτας Ἀφροδίτης ἔχων 5th c.BC: Euripides Tragicus “Bacchae” 236; μετὰ χαρίτων">Refs 8th c.BC+</span>]<b>gracefully,</b> [<span class="lsj-classical-cite" title="5th c.BC: Thucydides Historicus 2.41: less frequently of things, χ. δ᾽ ἀπελάμπετο πολλή,">Refs 5th c.BC+</span>] of ear-rings, [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 14.183">Refs 8th c.BC+</span>]; of works, ἔργοισι χάριν καὶ κῦδος ὀπάζει [<span class="lsj-classical-cite" title="8th c.BC: Odyssea Homerus Epicus “Odyssey” 15.320">Refs 8th c.BC+</span>]; of words, οὔ οἱ χ. ἀμφιπεριστέφεται ἐπέεσσιν [<span class="lsj-classical-cite" title="8.175">Refs</span>]; πλείστη δὲ χ. κατὰ μέτρον ἰούσης [γλώσσης] [<span class="lsj-classical-cite" title="8th-7th c.BC: Hesiodus Epicus “Opera et Dies” 720; ταὶ Διωνύσου σὺν βοηλάτα χάριτες διθυράμβῳ 5th c.BC: Pindarus Lyricus “O.” 13.19; ἡ τῶν λόγων χ. 4th c.BC: Demosthenes Orator 4.38, compare 1st c.BC: Dionysius Halicarnassensis “de Compositione Verborum” 23; μῦθοι πληθόμενοι χαρίτων “Anthologia Graeca” 9.186 (1st c.BC: Antipater Thessalonicensis Epigrammaticus).">Refs 8th c.BC+</span>]<br /><Level3><b>__I.2</b></Level3> <b>glory,</b> Φερενίκου χ. [<span class="lsj-classical-cite" title="5th c.BC: Pindarus Lyricus “O.” 1.18, compare 8.57, 80.">Refs 5th c.BC+</span>]<br /><Level2><b>__II</b></Level2> in subjective sense, <b>grace</b> or <b>favour felt,</b> whether on the part of the doer or the receiver (both senses appear in such phrases as ὅτ᾽.. ἡ χάρις χάριν φέροι [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 779; χάρις χάριν γάρ ἐστιν ἡ τίκτουσ᾽ ἀεί [prev. author] “Aj.” 522, compare 5th c.BC: Euripides Tragicus “Helena” 1234, 4th c.BC: Aristoteles Philosophus “Rhetorica” 1385a16):">Refs 5th c.BC+</span>]<br /><Level3><b>__II.1</b></Level3> on the part of the doer, <b>grace, kindness, goodwill,</b> τινος <b>for</b> or <b>towards</b> one, [<span class="lsj-classical-cite" title="8th-7th c.BC: Hesiodus Epicus “Opera et Dies” 190; τῶν Μεσσηνίων χάριτι πεισθείς 5th c.BC: Thucydides Historicus 3.95">Refs 8th c.BC+</span>]; οὐ χάριτι τῇ ἐμῇ not for any <b>kind feeling towards</b> me, [<span class="lsj-classical-cite" title="5th c.BC: Antipho Orator 5.41: _absolutely_, εἰ δέ τις μείζων χ. 4th-5th c.BC: Aeschylus Tragicus “Supplices” 960; τῆς παλαιᾶς χ. ἐκβεβλημένη 5th c.BC: Sophocles Tragicus “Ajax” 808">Refs 5th c.BC+</span>]; ἦ μεγάλα χ. δώρῳ σύν ὀλίγῳ [<a class="lsj-citation" title="3rd c.BC: Theocritus Poeta Bucolicus 28.24; χ. εὑρεῖν ἐναντίον τοῦ θεοῦ LXX.Gen.6.8, +others; χάριν ἔχειν πρὸς τὸν δῆμον 1st-2nd c.AD: Plutarchus Biographus et Philosophus “Demosthenes” 7">LXX+3rd c.BC+</a>]; <b>partiality, favour,</b> μήτε ἔλεον μήτε συγγνώμην μήτε χ. μηδεμίαν περὶ πλείονος ποιήσασθαι τῶν νόμων [<span class="lsj-classical-cite" title="5th c.BC: Lysias Orator 14.40; οὐ συμφωνοῦσιν ὀργαὶ καὶ χάριτες μακαριότητι 4th-3rd c.BC: Epicurus Philosophus “Ep.” i p.28 U., compare 5th-6th c.BC: Plato Philosophus “Leges” 740c.">Refs 5th c.BC+</span>]<br /><Level3><b>__II.2</b></Level3> more frequently on the part of the receiver, <b>sense of favour</b> received, <b>thankfulness, gratitude,</b> χάριν καὶ κῦδος ἄροιο [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 4.95; ἀρέομαι πὰρ Σαλαμῖνος Ἀθαναίων χ. 5th c.BC: Pindarus Lyricus “P.” 1.76">Refs 8th c.BC+</span>]; τινος <b>for</b> a thing, οὐδέ τίς ἐστι χάρις μετόπισθ᾽ εὐεργέων [<span class="lsj-classical-cite" title="8th c.BC: Odyssea Homerus Epicus “Odyssey” 4.695, compare 22.319; ἀντὶ πόνων χ. 5th c.BC: Thucydides Historicus 4.86: less frequently with">Refs 8th c.BC+</span>]<i>infinitive</i>, οὐκ ἄρα τις χάρις ἦεν μάρνασθαι one has, it seems, no <b>thanks for</b> fighting, [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 9.316, 17.147; οἵ οἱ ἀπεμνήσαντο χ. εὐεργεσιάων 8th-7th c.BC: Hesiodus Epicus “Theogonia” 503, compare 5th c.BC: Thucydides Historicus 1.137; χάριν φέρειν τινί 5th c.BC: Pindarus Lyricus “O.” 10(11).17; χ. τροφεῦσιν ἀμείβων 4th-5th c.BC: Aeschylus Tragicus “Agamemnon” 728 (Lyric poetry); φιλότητος ἀμειβόμεναι χ. 5th c.BC: Sophocles Tragicus “Electra” 134 (Lyric poetry)">Refs 8th c.BC+</span>]; χάριν εἰδέναι τινί to acknowledge <b>a sense of favour, feel grateful,</b> once in [<span class="lsj-classical-cite" title="8th c.BC: Homerus Epicus, ἐγὼ δέ κέ τοι ἰδέω χ. ἤματα πάντα 8th c.BC: Ilias Homerus Epicus “Illiad” 14.235; frequently in Prose, 5th c.BC: Herodotus Historicus 3.21, 5th c.BC: Lysias Orator 2.23, 5th-6th c.BC: Isocrates Orator 4.175, etc.">Refs 8th c.BC+</span>]; τούτων <b>for</b> a thing, [<span class="lsj-classical-cite" title="5th-6th c.BC: Xenophon Historicus “Institutio Cyri (Cyropaedia)” 1.6.11, etc.; τοῖς διαπεπραγμένοις 1st-2nd c.AD: Plutarchus Biographus et Philosophus “Alexander” 62; μοι χ. οἶδεν ἐπὶ τούτοις 2nd c.AD: Lucianus Sophista “Bis Acc.” 17; χ. προσειδέναι 5th-6th c.BC: Plato Philosophus “Apologia” 20a; ἀποδιδόναι [prev. author] “R.” 338a; τινὰ ἀποστερῆσαι χάριτος [prev. author] “Hp.Mi.” 372c; later χ. γνῶναι 2nd-3rd c.AD: Philostratus Sophista “Vita Apollonii” 2.17; πολλὴν γνοῦσα χ. 2nd c.AD(?): Xenophon Ephesius Scriptor Eroticus 3.5; χ. ἐπίσταμαι πᾶσι 2nd c.AD(?): Charito Scriptor Eroticus 3.4, compare 8.5, 2nd c.AD(?): Pollianus Epigrammaticus 5.142, 4th c.AD: Julianus Imperator “Orationes” 8.246c; also τῶν παροιχομένων ἔχειν σφι μεγάλην χ. 5th c.BC: Herodotus Historicus 7.120, compare 1.71, 5th c.BC: Euripides Tragicus “Heraclidae” 767 (Lyric poetry), “IT” 847 (Lyric poetry), 5th c.BC: Lysias Orator 16.1, 4th c.BC: Hyperides Orator “adv. Athenogenem” 5">Refs 5th c.BC+</span>]: with <i>participle</i>, χ. ἔχειν σωθέντες [<span class="lsj-classical-cite" title="5th-6th c.BC: Xenophon Historicus “Anabasis” 2.5.14">Refs 5th c.BC+</span>]; also χάριτας ἔχων πατρός owing him a debt of <b>gratitude,</b> [<span class="lsj-classical-cite" title="5th c.BC: Euripides Tragicus “Orestes” 244: but ἀσπασμάτων χάριν τίν᾽ ἕξει">Refs 5th c.BC+</span>]; what <b>thanks</b> will she have <b>for</b>.. ? [<span class="lsj-classical-cite" title="[prev. author] “Hec.” 830; χ. ἂν ἐν τούτῳ μείζω ἔτι ἔσχεν 5th c.BC: Thucydides Historicus 8.87">Refs 5th c.BC+</span>]; χ. ὀφείλειν to owe <b>gratitude,</b> be beholden, τοῖς θεοῖς [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Antigone” 331, compare 5th-6th c.BC: Xenophon Historicus “Institutio Cyri (Cyropaedia)” 3.2.30; προσοφείλειν 4th c.BC: Demosthenes Orator 3.31; χ. οὐδεμία ἐφαίνετο πρὸς Ἀθηναίων 5th c.BC: Herodotus Historicus 5.90">Refs 5th c.BC+</span>]; χάριν ἀθάνατον καταθέσθαι to lay up a store of undying <b>gratitude,</b> [<span class="lsj-classical-cite" title="[prev. author] 7.178, compare 6.41; τῇ πόλει χ. καταθέσθαι 5th c.BC: Antipho Orator 5.61, compare 5th c.BC: Thucydides Historicus 1.33">Refs 5th c.BC+</span>]; χάριν λαβεῖν τινος receive <b>thanks from</b> one, [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Oedipus Tyrannus” 1004, etc.; ἀπολαβεῖν παρά τινων 5th c.BC: Lysias Orator 20.31">Refs 5th c.BC+</span>]; τινος <b>for</b> a thing, [<span class="lsj-classical-cite" title="5th-6th c.BC: Xenophon Historicus “Memorabilia” 2.2.5, 4th c.BC: Aeschines Orator 2.4; διπλῆν ἐξ ἐμοῦ κτήσει χάριν 5th c.BC: Sophocles Tragicus “Philoctetes” 1370; κἀπ᾽ ἐμοῦ κτήσει χ. [prev. author] “Tr.” 471; κομίσασθαι χ. 5th c.BC: Thucydides Historicus 3.58; χάριτος τυχεῖν 4th c.BC: Lycurgus Orator 135; ἀπέχειν χάριτας 3rd c.BC: Callimachus Epicus “Epigrammata” 51.4, etc.">Refs 5th c.BC+</span>]; τοῖς θεοῖς χάρις (i.e. ἐστί) ὅτι.., <b>thank</b> the gods that.., [<span class="lsj-classical-cite" title="5th-6th c.BC: Xenophon Historicus “Anabasis” 3.3.14, “Cyr.” 7.5.72; χ. τινί τινος 2nd c.AD: Lucianus Sophista “Tim.” 36; τινὶ ὑπέρ τινος 1st-2nd c.AD: Plutarchus Biographus et Philosophus 2.1122a.">Refs 5th c.BC+</span>]<br /><Level3><b>__II.3</b></Level3> <b>favour, influence,</b> opposed to force, χάριτι τὸ πλέον ἢ φόβῳ [<span class="lsj-classical-cite" title="5th c.BC: Thucydides Historicus 1.9">Refs 5th c.BC+</span>]; χ. καὶ δεήσει, opposed to ἀπειλῇ, [<span class="lsj-classical-cite" title="1st-2nd c.AD: Plutarchus Biographus et Philosophus “Sulla” 38.">Refs 1st c.AD+</span>]<br /><Level3><b>__II.4</b></Level3> <b>love-charm, philtre,</b> [<span class="lsj-classical-cite" title="2nd c.AD: Lucianus Sophista “Alex.” 5, “Merc.Cond.” 40.">Refs 2nd c.AD+</span>]<br /><Level2><b>__III</b></Level2> in concrete sense, <b>a favour</b> done or returned, <b>boon,</b> χάριν φέρειν τινί confer <b>a favour</b> on one, do a thing <b>to oblige</b> him, [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 5.211, 874, 9.613, 8th c.BC: Odyssea Homerus Epicus “Odyssey” 5.307, 5th c.BC: Euripides Tragicus “Iphigenia Taurica” 14, “Or.” 239, 5th-6th c.BC: Andocides Orator 2.24">Refs 8th c.BC+</span>] (so in <i>middle</i>, of the recipient,[<span class="lsj-classical-cite" title="[prev. work] 9); ἄλλοις χ. φέροντες 5th c.BC: Thucydides Historicus 3.54">Refs 5th c.BC+</span>]; χάριν θέσθαι or τίθεσθαί τινι, [<span class="lsj-classical-cite" title="5th c.BC: Herodotus Historicus 9.60, 107, 4th-5th c.BC: Aeschylus Tragicus “Prometheus Vinctus” 782, 5th c.BC: Euripides Tragicus “Hecuba” 1211, etc.; προσθέσθαι 5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 767; χ. ὑπουργῆσαί τινι 4th-5th c.BC: Aeschylus Tragicus “Prometheus Vinctus” 635; παρασχεῖν 5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 1183; πράσσειν 5th c.BC: Euripides Tragicus “Ion” 36, 896 (Lyric poetry); δράσας 5th c.BC: Thucydides Historicus 2.40">Refs 5th c.BC+</span>]; ἀνύσαι probably in [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Trachiniae” 995 (_anapaest meter_); νέμειν [prev. author] “Aj.” 1371; χ. δοῦναί τινι 4th-5th c.BC: Aeschylus Tragicus “Prometheus Vinctus” 821, 5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 1489 (but χ. δοῦναι, ={χαρίζεσθαι} (1.2)">Refs 5th c.BC+</span>], <b>indulge, humour,</b> ὀργῇ[<span class="lsj-classical-cite" title="[prev. work] 855; γαστρί 5th c.BC: Cratinus Comicus 317); χ. χαρίζεσθαι, see at {χαρίζομαι} I.1: χ. ἀνθυπουργεῖν">Refs 5th c.BC+</span>] return <b>a favour,</b> [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Fragmenta” 339; τίνειν 4th-5th c.BC: Aeschylus Tragicus “Prometheus Vinctus” 985, “Ag.” 821; χάριτας πατρῴας ἐκτίνων 5th c.BC: Euripides Tragicus “Orestes” 453, compare 5th-6th c.BC: Plato Philosophus “Menexenus” 242c, etc.; χ. ἀποδιδόναι τινί 5th c.BC: Lysias Orator 12.60, 28.17; ἀντί τινος 5th-6th c.BC: Xenophon Historicus “Agesilaus” 2.29; ὑπέρ τινος 5th-6th c.BC: Isocrates Orator 4.56; τῶν ἔργων τὰς χάριτας ἀποδ. τινί 5th c.BC: Lysias Orator 31.24; χάριτας ἀντιδιδόναι 5th c.BC: Thucydides Historicus 3.63">Refs 5th c.BC+</span>]; opposed to χάριν ἀπαιτεῖν to ask the repayment of <b>a boon,</b> [<span class="lsj-classical-cite" title="5th c.BC: Euripides Tragicus “Hecuba” 276, compare 5th c.BC: Lysias Orator 18.23, 4th c.BC: Demosthenes Orator 20.156; χάριτας ἀπ. 4th c.BC: Lycurgus Orator 139; χάριν ἐξαιτεῖσθαι 5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 586">Refs 5th c.BC+</span>]; χ. ἀποστερεῖν withhold <b>a return</b> for what one has received, [<span class="lsj-classical-cite" title="5th-6th c.BC: Plato Philosophus “Gorgias” 520c">Refs 5th c.BC+</span>]; τὰς αὑτοῦ εἰς τοὺς φίλους χ. the <b>favours</b> one has done them, [<span class="lsj-classical-cite" title="[prev. author] “Lg.” 729d">Refs</span>]; χ. ἄχαρις α thankless <b>favour,</b> one which receives, or deserves, no thanks, [<span class="lsj-classical-cite" title="4th-5th c.BC: Aeschylus Tragicus “Prometheus Vinctus” 545 (Lyric poetry); χ. ἀχάριτος [prev. author] “Ch.” 42 (Lyric poetry), 5th c.BC: Euripides Tragicus “Phoenissae” 1757 (Lyric poetry).">Refs 5th c.BC+</span>]<br /><Level4><b>__III.b</b></Level4> <b>grant</b> made in legal form, [<span class="lsj-classical-cite" title="“POxy.” 273.14 (1st c.AD), “PGrenf.” 2.70.5 (3rd c.AD), etc.">Refs 1st c.AD+</span>]; αἱ τῶν Σεβαστῶν χ. imperial <b>grants</b>, [<span class="lsj-classical-cite" title="“OGI” 669.44 (Egypt, 1st c.AD).">Refs 1st c.AD+</span>]<br /><Level3><b>__III.2</b></Level3> especially in erotic sense, of <b>favours granted</b> (see. χαρίζομαι 1.3), ἀλόχου χάριν ἰδεῖν [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 11.243, compare 4th-5th c.BC: Aeschylus Tragicus “Agamemnon” 1206: more frequently in _plural_, 5th-6th c.BC: Xenophon Historicus “Hiero” 1.34, 7.6, etc.">Refs 8th c.BC+</span>]; βίᾳ δ᾽ ἔπραξας χάριτας ἢ πείσας κόρη; [<span class="lsj-classical-cite" title="“Tragica Adespota” 402; in full, χάριτες ἀφροδισίων ἐρώτων 5th c.BC: Pindarus Lyricus “Fragmenta.” 128, compare 5th-6th c.BC: Plato Philosophus “Phaedrus” 254a, +others">Refs 5th c.BC+</span>]<br /><Level2><b>__IV</b></Level2> <b>gratification, delight,</b> τινος <b>in</b> or <b>from</b> a thing, συμποσίου [<span class="lsj-classical-cite" title="5th c.BC: Pindarus Lyricus “O.” 7.5; νίκας [prev. author] “O.” 10(11).78; ὕπνου χ. 5th c.BC: Euripides Tragicus “Orestes” 159 (Lyric poetry); even χ. γόων [prev. author] “Supp.” 79 (Lyric poetry)">Refs 5th c.BC+</span>]; also concrete, of things, <b>a delight,</b> [<span class="lsj-classical-cite" title="5th c.BC: Pindarus Lyricus “I.” 2.19 (_plural_); τὰν βοτρυώδη Διονύσου χ. οἴνας 5th c.BC: Euripides Tragicus “Bacchae” 535 (Lyric poetry), compare 5th-6th c.BC: Aristophanes Comicus “Nubes” 311 (Lyric poetry), 4th c.AD: Julianus Imperator “Orationes” 3.125b; ἔνοπτρα, παρθένων χάριτας 5th c.BC: Euripides Tragicus “Troades” 1108 (Lyric poetry): _absolutely_, Ἔρως.. εἰσάγων γλυκεῖαν χ. [prev. author] “Hipp.” 527 (Lyric poetry)">Refs 5th c.BC+</span>]; opposed to λύπη, [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Electra” 821, 5th c.BC: Euripides Tragicus “Helena” 655 (Lyric poetry)">Refs 5th c.BC+</span>]; opposed to πόνος, [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 232 (Lyric poetry); θανεῖν πολλὴ χάρις 4th-5th c.BC: Aeschylus Tragicus “Agamemnon” 550, compare 1304; βίου χ. μεθεῖσα 5th c.BC: Euripides Tragicus “Medea” 227; οὐδεμίαν ἔχω τῷ βίῳ χάριν 5th-6th c.BC: Aristophanes Comicus “Lysistrata” 865; τοῖς δὲ σιτίοις χ. οὐδεμίαν οἶδ᾽ ἐσθίων [prev. work] 869">Refs 5th c.BC+</span>]; less frequently in Prose, χ. καὶ ἡδονή [<span class="lsj-classical-cite" title="5th-6th c.BC: Plato Philosophus “Gorgias” 462c, compare 4th c.BC: Demosthenes Orator 20.26; τοσαύτην ἔχει χ. 5th-6th c.BC: Isocrates Orator 9.10.">Refs 5th c.BC+</span>]<br /><Level2><b>__V</b></Level2> δαιμόνων χάρις <b>homage due</b> to them, their <b>worship, majesty,</b> [<span class="lsj-classical-cite" title="4th-5th c.BC: Aeschylus Tragicus “Agamemnon” 182 (Lyric poetry); ἀθίκτων χ. [prev. work] 371 (Lyric poetry)">Refs 4th c.BC+</span>]; ὅρκων [<span class="lsj-classical-cite" title="5th c.BC: Euripides Tragicus “Medea” 439 (Lyric poetry).">Refs 5th c.BC+</span>]<br /><Level3><b>__V.2</b></Level3> <b>thank-offering,</b> εὐκταία χ. τινός, opposed to a common gift, [<span class="lsj-classical-cite" title="4th-5th c.BC: Aeschylus Tragicus “Agamemnon” 1387, compare 5th-6th c.BC: Xenophon Historicus “Hiero” 8.4; ἔπεμψε χαίτην κουρίμην χ. πατρός 4th-5th c.BC: Aeschylus Tragicus “Choephori” 180, compare 517; τιμὴ καὶ γέρα καὶ χ. 5th-6th c.BC: Plato Philosophus “Euthyphro” 15a, compare “La.” 187a.">Refs 5th c.BC+</span>]<br /><Level2><b>__VI</b></Level2> Special usages: <br /><Level3><b>__VI.1</b></Level3> <i>accusative</i> <i>singular</i> as <i>adverb</i>, χ. τινός <b>in</b> any one's <b>favour, for</b> his <b>pleasure, for</b> his <b>sake,</b> χ. Ἕκτορος [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 15.744">Refs 8th c.BC+</span>]; ψεύδεσθαι γλώσσης χ. <b>for</b> one's tongue's <b>pleasure,</b> i.e. <b>for</b> talking's <b>sake,</b> [<span class="lsj-classical-cite" title="8th-7th c.BC: Hesiodus Epicus “Opera et Dies” 709, compare 4th-5th c.BC: Aeschylus Tragicus “Choephori” 266">Refs 8th c.BC+</span>]; rarely with <i>Article</i>, τὴν Ἀθηναίων χάριν ἐστρατεύοντο [<span class="lsj-classical-cite" title="5th c.BC: Herodotus Historicus 5.99.">Refs 5th c.BC+</span>]<br /><Level4><b>__VI.1.b</b></Level4> as <i>preposition</i>, sometimes before its case (once in [<span class="lsj-classical-cite" title="5th c.BC: Pindarus Lyricus, “P.” 2.70; χάριν πλησμονῆς 5th-6th c.BC: Plato Philosophus “Phaedrus” 241c; χ. φιλίας 4th-3rd c.BC: Epicurus Philosophus “Gnomologium Vaticanum - Kleine Schriften” 28">Refs 5th c.BC+</span>]; χ. τίνο; [<a class="lsj-citation" title="LXX.2Ch.7.21, compare “POxy.” 743.29 (1st c.BC), etc.)">LXX+1st c.BC+</a>], but mostly after, <b>for the sake of, on behalf of, on account of,</b> κακά νιν ἕλοιτο μοῖρα δυσπότμου χάριν χλιδᾶς [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Oedipus Tyrannus” 888 (Lyric poetry)">Refs 5th c.BC+</span>]; τοῦ χάρι; <b>for</b> what <b>reason?</b> [<span class="lsj-classical-cite" title="5th-6th c.BC: Aristophanes Comicus “Plutus” 53; συγχωρῶ τοῦ λόγου χ. 5th-6th c.BC: Plato Philosophus “Respublica” 475a">Refs 5th c.BC+</span>]; so ἐμὴν χάριν, χάριν σήν, <b>for</b> my, thy <b>pleasure</b> or <b>sake,</b> [<span class="lsj-classical-cite" title="4th-5th c.BC: Aeschylus Tragicus “Persae” 1046 (Lyric poetry), 5th c.BC: Euripides Tragicus “Hercules Furens” 1238, etc.; κείνου τε καὶ σὴν ἐξ ἴσου κοινὴν χ. 5th c.BC: Sophocles Tragicus “Trachiniae” 485">Refs 5th c.BC+</span>]: less frequently with the <i>Article</i>, τὴν σὴν δ᾽ ἥκω χ. [<span class="lsj-classical-cite" title="[prev. author] “Ph.” 1413 (_anapaest meter_); σοῦ τε τήν τ᾽ ἐμὴν χ. 5th c.BC: Euripides Tragicus “Phoenissae” 762:—pleonastic, τίνος χάριν ἕνεκ; 5th-6th c.BC: Plato Philosophus “Leges” 701d">Refs 5th c.BC+</span>]; also χάριν τινός <b>as far as regards.., as to</b>.., ἔπους σμικροῦ χ. [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 443">Refs 5th c.BC+</span>]; δακρύων χάριν <b>if</b> tears <b>would serve,</b> [<span class="lsj-classical-cite" title="[prev. author] “fragment” 557.6; χ. θανάτου πόλιν ἀτείχιστον οἰκοῦμεν 4th-3rd c.BC: Epicurus Philosophus “Gnomologium Vaticanum - Kleine Schriften” 31">Refs 4th c.BC+</span>]; also, <b>about,</b> ἔπεμφεν ἐπὶ τὴν πενθεράν σου χ. τοῦ κτήματος <b>about</b> the farm, [<span class="lsj-classical-cite" title="“PFay.” 126.5 (2nd-3rd c.AD).">Refs 2nd c.AD+</span>]—Orig. an <i>accusative</i> in apposition with the sentence, as in [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 15.744, etc.">Refs 8th c.BC+</span>], <b>being a favour, since it is (was) a favour,</b> as is evident in κακῆς γυναικὸς χάριν ἄχαριν ἀπώλετο [<span class="lsj-classical-cite" title="5th c.BC: Euripides Tragicus “Iphigenia Taurica” 566; τινὸς νίκας ἀκάρπωτον χ. 5th c.BC: Sophocles Tragicus “Ajax” 176 (Lyric poetry).">Refs 5th c.BC+</span>]<br /><Level3><b>__VI.2</b></Level3> with Preps.: <br /><Level4><b>__VI.2.a</b></Level4> εἰς χάριν <b>to do a pleasure,</b> οὐδὲν ἐς χ. πράσσων [<span class="lsj-classical-cite" title="[prev. author] “OT” 1353 (Lyric poetry); ἐς χ. τίθεσθαί τι 1st-2nd c.AD: Plutarchus Biographus et Philosophus “Marius” 46; μηδὲ κρίσιν εἰς χ. ἕλκε 1st c.AD(?): Pseudo-Phocylidea 9 (but ἐς τὴν τῶν ξυμμάχων χ.">Refs 1st c.AD+</span>] in such a way as to earn <b>thanks</b>.. [<span class="lsj-classical-cite" title="5th c.BC: Thucydides Historicus 3.37); also κατὰ χάριν 5th-6th c.BC: Plato Philosophus “Leges” 740c; χάριτος ἕνεκα [prev. work] 771d.">Refs 5th c.BC+</span>]<br /><Level4><b>__VI.2.b</b></Level4> πράσσειν τί τινι πρὸς χάριν [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 1776 (_anapaest meter_); δρᾶσαι 5th c.BC: Euripides Tragicus “Helena” 1281; τοῖσι πολλοῖς πρὸς χάριν λέγειν τι [prev. author] “Hec.” 257, compare 5th-6th c.BC: Xenophon Historicus “Memorabilia” 4.4.4, “HG” 6.3.7, 5th-6th c.BC: Isocrates Orator 2.18, 4th c.BC: Demosthenes Orator 8.1 (but πρὸς χ. βορᾶς">Refs 5th c.BC+</span>] <b>for the sake</b> of it, [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Antigone” 30)">Refs 5th c.BC+</span>]; πρὸς χ., opposed to κλαίων, [<span class="lsj-classical-cite" title="[prev. author] “OT” 1152:—but πρὸς χ. εὐσεβίας, just like{χάριν}, 5th c.BC: Pindarus Lyricus “O.” 8.8; τίνος νόμου ταῦτα πρὸς χ. λέγ; 5th c.BC: Sophocles Tragicus “Antigone” 908; πρὸς ἰσχύος χ. 5th c.BC: Euripides Tragicus “Medea” 538">Refs 5th c.BC+</span>]; πρὸς χ. alone, <b>as a favour, freely,</b> πρὸς χ. τε κοὐ βίᾳ [<span class="lsj-classical-cite" title="5th c.BC: Sophocles Tragicus “Fragmenta” 28">Refs 5th c.BC+</span>]; but κορέσαι στόμα πρὸς χ. <b>to</b> their <b>heart's content,</b> [<span class="lsj-classical-cite" title="[prev. author] “Ph.” 1156 (Lyric poetry).">Refs</span>]<br /><Level4><b>__VI.2.c</b></Level4> ἐν χάριτι κρίνειν τινά to decide <b>from partiality</b> to one, [<span class="lsj-classical-cite" title="3rd c.BC: Theocritus Poeta Bucolicus 5.69">Refs 3rd c.BC+</span>]; but also, <b>for</b> one's <b>gratification, pleasure,</b> ἐν χάριτι διδόναι or ποιεῖν τινί τι, [<span class="lsj-classical-cite" title="5th-6th c.BC: Xenophon Historicus “Oeconomicus” 8.10, 5th-6th c.BC: Plato Philosophus “Phaedo” 115b: παραλαμβάνειν ἐν χάρισιν">Refs 5th c.BC+</span>]<b>gratefully,</b> [<span class="lsj-classical-cite" title="[prev. author] “Lg.” 796b.">Refs</span>]<br /><Level4><b>__VI.2.d</b></Level4> διὰ χαρίτων εἶναι or γίγνεσθαί [τινι] to be <b>pleasing</b> to one, [<span class="lsj-classical-cite" title="5th-6th c.BC: Xenophon Historicus “Hiero” 9.1, 2.">Refs 5th c.BC+</span>]<br /><Level4><b>__VI.2.e</b></Level4> ἐθελοντὶ καὶ μετὰ χάριτος <b>of pure good will,</b> [<span class="lsj-classical-cite" title="2nd c.BC: Polybius Historicus 2.22.5, etc.; ἐθελούσιοι καὶ χάριτος ἕνεκα ἐξιόντες 5th-6th c.BC: Xenophon Historicus “Institutio Cyri (Cyropaedia)” 4.2.11.">Refs 5th c.BC+</span>]<br /><Level2><b>__VII</b></Level2> <i>metaphorically</i> of <b>the cypress,</b> [<span class="lsj-classical-cite" title="Gp. 11.4.1">Refs</span>]; of some kind of <b>myrtle,</b> [<span class="lsj-classical-cite" title="Scholia 8th c.BC: Ilias Homerus Epicus “Illiad” 17.51">Refs 8th c.BC+</span>]; of <b>salt,</b> ὅτι τὸ ἀναγκαῖον ἡδὺ ποιοῦσιν (i.e. ἅλες) [<span class="lsj-classical-cite" title="1st-2nd c.AD: Plutarchus Biographus et Philosophus 2.685a.">Refs 1st c.AD+</span>]<br /><Level1><b>__B</b></Level1> <b>Χάρις</b>, ἡ, as a mythological <i>proper name</i> declined like{χάρις}, save that the <i>accusative</i> is generally Χάριτα (except [<span class="lsj-classical-cite" title="“Anthologia Graeca” 5.148 (1st c.BC: Meleager Epigrammaticus), 2nd c.AD: Lucianus Sophista “DDeor.” 15.1, 2nd c.AD: Pausanias Periegeta 9.35.4): poetry _dative_ _plural_ Χαρίτεσσι 8th c.BC: Ilias Homerus Epicus “Illiad” 17.51, 5th c.BC: Pindarus Lyricus “N.” 9.54; Χάρισσιν [prev. work] 5.54">Refs 8th c.BC+</span>]:—<b>Charis,</b> wife of Hephaestus, [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 18.382">Refs 8th c.BC+</span>]; mostly in <i>plural</i> Χάριτες, αἱ, <b>the Graces,</b> [<span class="lsj-classical-cite" title="14.267, 275, 8th c.BC: Odyssea Homerus Epicus “Odyssey” 6.18, 5th c.BC: Pindarus Lyricus “O.” 2.50, etc.">Refs 8th c.BC+</span>]; three in number, [<span class="lsj-classical-cite" title="8th-7th c.BC: Hesiodus Epicus “Theogonia” 907, etc. (τέσσαρες αἱ 5th-6th c.BC: Xenophon Historicus">Refs 8th c.BC+</span>], as a compliment, [<span class="lsj-classical-cite" title="3rd c.BC: Callimachus Epicus “Epigrammata” 52.1)">Refs 3rd c.BC+</span>]; attendants of Aphrodite, [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 5.338, 8th-7th c.BC: Hesiodus Epicus “Opera et Dies” 73, “hymnus ad Venerem” 61, 2nd c.AD: Pausanias Periegeta 6.24.7">Refs 8th c.BC+</span>]; coupled with Μοῦσαι, [<span class="lsj-classical-cite" title="8th-7th c.BC: Hesiodus Epicus “Theogonia” 64">Refs 8th c.BC+</span>]; κόμαι Χαρίτεσσιν ὁμοῖαι, i.e. like that of the <b>Graces,</b> [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 17.51">Refs 8th c.BC+</span>]; worshipped at Orchomenus in Boeotia, Ἐτεόκλειοι Χάριτες θεαί [<span class="lsj-classical-cite" title="3rd c.BC: Theocritus Poeta Bucolicus 16.104, cf. Scholia (at [prev. work]), 1st c.BC-1st c.AD: Strabo Geographus 9.2.40, 2nd c.AD: Pausanias Periegeta 9.35.3, 9.38.1">Refs 3rd c.BC+</span>]: but at Lacedaemon and Athens only two were originally worshipped, [<span class="lsj-classical-cite" title="[prev. author] 3.18.6, 9.35.2; Χαρίτων ἱερὸν ἐμποδὼν ποιοῦνται 4th c.BC: Aristoteles Philosophus “Ethica Nicomachea” 1133a3; θύειν ταῖς 5th-6th c.BC: Xenophon Historicus 1st-2nd c.AD: Plutarchus Biographus et Philosophus 2.141f; in adjurations, πρὸς τῶν Χαρίτων 5th-6th c.BC: Plato Philosophus “Theaetetus” 152c; νὴ τὰς 5th-6th c.BC: Xenophon Historicus 2nd c.AD: Lucianus Sophista “Hist.Conscr.” 26; ὦ φίλαι 5th-6th c.BC: Xenophon Historicus 1st-2nd c.AD: Plutarchus Biographus et Philosophus 2.710d.— Rarely in _sing._, 5th-6th c.BC: Xenophon Historicus ζωθάλμιος 5th c.BC: Pindarus Lyricus “O.” 7.11; Χάριτος ἡδίστης θεῶν 4th c.BC: Antiphanes Comicus 228.4.">Refs 5th c.BC+</span>]</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="G3551">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s G3551 (nomos) &rsaquo; LSJ</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>LSJ (Liddell-Scott-Jones, 1940 — Tyndale-edited from the 9th edition)</strong>, with Abbott-Smith&apos;s <em>Manual Greek Lexicon of the New Testament</em> (1922) filling in NT-only vocabulary where LSJ has no entry. Preserved as data so you can see how the inherited 19th-20th-century classical-philological and NT-Greek scholarship handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+    
+<aside class="framework-callout framework-callout-full">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">nomos</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss law / Mosaic law / legal system</span>
+  </h3>
+  <div class="framework-callout-body"><p>The lexicons gloss <em>nomos</em> as <em>law / Mosaic law / legal system,</em> and the inherited pulpit takes those three weights and builds the whole <em>grace-against-law</em> gospel on top of them. Once <em>nomos</em> reads as <em>legal system,</em> every Pauline mention of it reads as the bondage the believer was delivered from; every contrast Paul draws between flesh-credential and promise gets re-aimed at the covenant instruction itself; and the gospel becomes the cancellation of the very Word the prophets said would be written on the new heart. The Reformation&#x27;s <em>grace-not-law</em> sentence is the antichrist sentence at the very root of institutional Christianity&#x27;s pulpit, and it is built on a lexicon entry that never asked what word the LXX translators were rendering when they reached for <em>nomos</em>.</p>
+<p>The word <em>nomos</em> is the Greek that the seventy translators of the LXX used when they rendered <em>torah.</em> Same word, same instruction, same inheritance. When Paul writes <em>nomos,</em> he is writing the Greek of the Tanakh his audience read; he is naming what the prophets named — the covenant instruction Yahuah pointed out to his people as the way of life. He is not naming a different substance the Messiah came to abolish. He is naming the substance the prophets said would move from the stone tablet to the inward part:</p>
+<blockquote class="framework-scripture"><em>But this shall be the covenant that I will make with the house of Yashar&#x27;el (Israel); After those days, saith Yahuah, I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.</em> (Jeremiah 31:33)</blockquote>
+<blockquote class="framework-scripture"><em>And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.</em> (Ezekiel 36:27)</blockquote>
+<p>The new covenant is not the cancellation of <em>nomos.</em> The new covenant is <em>nomos</em> written on the heart by the Ruach HaKodesh (Holy Spirit) — the same Spirit who spoke at Sinai, causing the walking in statutes from the inside instead of the outside. The Reformation grammar that pits grace against law calls Yahuah a liar by erasing what Jeremiah and Ezekiel said the gathering would bring; the framework restores <em>nomos</em> to the inheritance the prophets named and lets Paul stand as the Torah-observant Yashar&#x27;eli (Israelite) of the tribe of Benjamin he always was. Where the lexicons collapse <em>nomos</em> into the system the believer escaped, the framework restores it as the <em>torah</em> of the living Elohim, the covenant the Father is writing on the new heart in this very age.</p></div>
+  <footer class="framework-callout-footer">Red Lines: #4, #5</footer>
+</aside>
+
+    <div class="lexicon-body lsj-body">
+      
+<div class="lsj-lemma-block">
+  <span class="lsj-lemma">νόμος</span>
+  <span class="lsj-translit">nomos</span>
+  <span class="lsj-morph">G:N-M</span>
+  <span class="lsj-gloss">&mdash; law</span>
+</div>
+
+      <div class="lsj-prose"><b> νόμος</b>, ὁ, <br /> (νέμω) <b>that which is in habitual practice, use</b> or <b>possession,</b> not in [<span class="lsj-classical-cite" title="8th c.BC: Homerus Epicus (compare 1st c.AD: Josephus Historicus “contra Apionem” 2.15), though read by 4th-3rd c.BC: Zenodotus Grammaticus in 8th c.BC: Odyssea Homerus Epicus “Odyssey” 1.3.">Refs 8th c.BC+</span>]<br /><Level2><b>__I</b></Level2> <b>usage, custom,</b> [Μοῦσαι] μέλπονται πάντων τε νόμους καὶ ἤθεα κεδνά [<span class="lsj-classical-cite" title="8th-7th c.BC: Hesiodus Epicus “Theogonia” 66; ν. ἀρχαῖος ἄριστος [prev. author] “fragment” 221">Refs 8th c.BC+</span>]; ἔνθα ν. (i.e. ἐστί) with <i>infinitive</i>, where it is <b>the custom</b>.., [<span class="lsj-classical-cite" title="7th-6th c.BC: Alcaeus Lyricus “Supp.” 25.5">Refs 7th c.BC+</span>]; ν. πάντων βασιλεύς <b>custom</b> is lord of all, [<span class="lsj-classical-cite" title="5th c.BC: Pindarus Lyricus “Fragmenta.” 169.1; ν. δεσπότης 5th c.BC: Herodotus Historicus 7.104, 5th-6th c.BC: Plato Philosophus “Leges” 715d; ν. τύραννος τῶν ἀνθρώπων [prev. author] “Prt.” 337d; ἴησις ὀθονίοισι κατὰ τὸν ν. τὸν ἀρθριτικόν 5th c.BC: Hippocrates Medicus “περὶ ἄρθρων ἐμβολῆς” 18; ὡς νόμος [prev. author] “Mochl.” 37">Refs 5th c.BC+</span>]: hence, <b>law, ordinance,</b> τόνδε.. ν. διέταξε Κρονίων.. θηρσὶ.. ἐσθέμεν ἀλλήλους [<span class="lsj-classical-cite" title="8th-7th c.BC: Hesiodus Epicus “Opera et Dies” 276; τρέφονται πάντες οἱ ἀνθρώπειοι ν. ὑπὸ τοῦ θείου 1st c.AD(?): Heraclitus 114; ἄφθογγον εἶναι τὸν παλαμναῖον ν. [ἐστί] 4th-5th c.BC: Aeschylus Tragicus “Eumenides” 448; ν. κάλλιστον ἐξευρόντα, πειθαρχεῖν πατρί 5th c.BC: Sophocles Tragicus “Trachiniae” 1177">Refs 8th c.BC+</span>]; ν. κοινός, ={ὀρθὸς λόγος}, [<span class="lsj-classical-cite" title="4th-3rd c.BC: Zeno Citieus Stoicus 1.43: _plural_, ἔργων.. ὧν νόμοι πρόκεινται ὑψίποδες 5th c.BC: Sophocles Tragicus “Oedipus Tyrannus” 865 (Lyric poetry); νεοχμοῖς ν. Ζεὺς κρατύνει 4th-5th c.BC: Aeschylus Tragicus “Prometheus Vinctus” 150 (Lyric poetry).">Refs 5th c.BC+</span>]<br /><Level4><b>__I.b</b></Level4> in <b>VT,</b> of the <b>law</b> of God, ἐν τῷ νόμῳ Κυρίου τὸ θέλημα αὐτοῦ [<a class="lsj-citation" title="LXX.Psa.1.2, +others, cf. LXX.Isa.2.3">LXX</a>]; νόμον ὃν ἐνετείλατο ὑμῖν Μωϋσῆς[<a class="lsj-citation" title="LXX.Deu.33.4">LXX</a>]; so in <b>NT,</b> ὁ ν. Μωϋσέως [<a class="lsj-citation" title="NT.Luke.2.22, etc.; but also ὁ ν. τοῦ Χριστοῦ NT.Gal.6.2">NT</a>]; ὁ ν. τοῦ Πνεύματος τῆς ζωῆς, opposed to ὁ ν. τῆς ἁμαρτίας καὶ τοῦ θανάτου, [<a class="lsj-citation" title="NT.Rom.8.2; ν. τέλειος ὁ τῆς ἐλευθερίας NT.Jam.1.25.">NT</a>]<br /><Level4><b>__I.c</b></Level4> with Preps., κατὰ νόμον according to <b>custom</b> or <b>law,</b> [<span class="lsj-classical-cite" title="8th-7th c.BC: Hesiodus Epicus “Theogonia” 417, 5th c.BC: Herodotus Historicus 1.61, etc.; κὰν νόμον 5th c.BC: Pindarus Lyricus “O.” 8.78">Refs 8th c.BC+</span>]; οἱ κατὰ ν. ὄντες θεοί the <b>established</b> deities, [<span class="lsj-classical-cite" title="5th-6th c.BC: Plato Philosophus “Leges” 904a; κατὰ νόμους 4th-5th c.BC: Aeschylus Tragicus “Supplices” 241">Refs 5th c.BC+</span>]; παρὰ νόμον contrary to.., [<span class="lsj-classical-cite" title="[prev. author] “Eu.” 171 (Lyric poetry); παρὰ τοὺς τῆς φύσεως ν. 5th-6th c.BC: Plato Philosophus “Timaeus” 83e; ἐν Πανελλάνων νόμῳ 5th c.BC: Pindarus Lyricus “I.” 2.38">Refs 5th c.BC+</span>]; ἐν Ἀδραστείῳ νόμῳ by <b>the law</b> of Adrastus, i.e. at the Nemean games, [<span class="lsj-classical-cite" title="[prev. author] “N.” 10.28: especially in _dative_ νόμῳ">Refs</span>] <b>by custom, conventionally,</b> opposed to φύσει, [<span class="lsj-classical-cite" title="5th c.BC: Herodotus Historicus 4.39, 5th-6th c.BC: Philolaus Philosophus 9, 4th c.BC: Aristoteles Philosophus “Ethica Nicomachea” 1094b16, etc.">Refs 5th c.BC+</span>]; ν. γλυκύ, ν. πικρόν, [<span class="lsj-classical-cite" title="3rd c.AD: Democritus Epigrammaticus 9; εἰ μή τις λέγοι ν. ὁρᾶν καὶ τὰς λεγομένας ποιότητας μὴ ἐν τοῖς ὑποκειμένοις εἶναι 3rd c.AD: Plotinus Philosophus 4.4.29">Refs 3rd c.AD+</span>]; ὅσον νόμου χάριν just for <b>form's</b> sake, [<span class="lsj-classical-cite" title="4th-3rd c.BC: Diphilus Comicus 43.14, 4th c.BC: Aristoteles Philosophus “Metaphysica” 1076a27.">Refs 4th c.BC+</span>]<br /><Level4><b>__I.d</b></Level4> <b>statute, ordinance made by authority,</b> [Σόλων] νόμους ἔθηκεν ἄλλους, τοῖς δὲ Δράκοντος θεσμοῖς ἐπαύσαντο χρώμενοι πλὴν τῶν φονικῶν [<span class="lsj-classical-cite" title="[prev. author] “Ath.” 7.1 (but τὸν Δράκοντος ν. τὸν περὶ τοῦ φόνου “IG” 12.115.5), etc.">Refs</span>]; νόμον τιθέναι, τίθεσθαι, see at {τίθημ; βασιλικὸς ν}. [<a class="lsj-citation" title="“OGI” 483.1 (Pergam., 2nd c.AD), NT.Jam.2.8">NT+2nd c.AD+</a>]: frequently of <b>general laws,</b> opposed to ψηφίσματα (special decrees), [<span class="lsj-classical-cite" title="5th-6th c.BC: Plato Philosophus “Theaetetus” 173d, etc.; ὅταν τὰ ψηφίσματα κύρια ᾖ ἀλλὰ μὴ ὁ ν. 4th c.BC: Aristoteles Philosophus “Politica” 1292a7">Refs 5th c.BC+</span>]: generally, <b>law,</b> ἄνευ ὀρέξεως νοῦς ὁ ν. ἐστίν [<span class="lsj-classical-cite" title="[prev. work] 1287a32">Refs</span>]; ἄγραφος ν. Legal cited in [<span class="lsj-classical-cite" title="5th-6th c.BC: Andocides Orator 1.85, etc.">Refs 5th c.BC+</span>]; opposed to γεγραμμένος, [<span class="lsj-classical-cite" title="4th c.BC: Aristoteles Philosophus “Rhetorica” 1373b6; ν. ἴδιος, opposed to κοινός, [prev. work] 4">Refs 4th c.BC+</span>]; ὁ ν. frequently as subject, οἱ ν. διδόασι τιμωρίας [<span class="lsj-classical-cite" title="4th c.BC: Demosthenes Orator 18.12; ὧν ὁ ν. ἀγορεύει “Inscription Magn.” 92b16 (2nd c.BC)">Refs 4th c.BC+</span>]; μὴ ὁ ν. κρίνει τὸν ἄνθρωπον ἐὰν μὴ ἀκούσῃ πρῶτο; [<a class="lsj-citation" title="NT.John.7.51.">NT</a>]<br /><Level4><b>__I.e</b></Level4> with <i>genitive</i> <i>of things</i>, οὗτός τοι πεδίων πέλεται ν. [<span class="lsj-classical-cite" title="8th-7th c.BC: Hesiodus Epicus “Opera et Dies” 388; Ὑλλίδος στάθμας ἐν νόμοις 5th c.BC: Pindarus Lyricus “P.” 1.62; τὸν φαρμάκων δίδαξε μαλακόχειρα ν. [prev. author] “N.” 3.55; ν. ἐμβολῆς καὶ διορθώσιος 5th c.BC: Hippocrates Medicus “Mochl.” 38">Refs 8th c.BC+</span>]; ὁ ν. τοῦ κριοῦ, τοῦ ἀνδρός, τῶν ἐρανιστῶν, [<a class="lsj-citation" title="LXX.Lev.6.31 (7.1), NT.Rom.7.2, “SIG” 1198.14 (Arcesine, 3rd c.BC)">LXX+NT+3rd c.BC+</a>]; ἐς χειρῶν νόμον ἀπικέσθαι to come <b>to blows, into action,</b> [<span class="lsj-classical-cite" title="5th c.BC: Herodotus Historicus 9.48">Refs 5th c.BC+</span>]; ἐν χειρῶν νόμῳ ἀπόλλυσθαι, περιπεσεῖν, die <b>in action,</b> [<span class="lsj-classical-cite" title="[prev. author] 8.89, 2nd c.BC: Polybius Historicus 1.57.8; μεταλλάξαι τὸν βίον ἐν χ. ν. [prev. author] 3.63.5, compare 3.116.9; Ἀσδρούβας.. ἐν χ. ν. κατέστρεψε τὸν βίον [prev. author] 11.2.1; τοὺς μὲν ἐν χ. ν. διέφθειρε [prev. author] 1.82.2">Refs 2nd c.BC+</span>]; τοὺς ἐν χ. ν. τὰς πολιτείας καταλύοντας by 'direct <b>action',</b> [<span class="lsj-classical-cite" title="4th c.BC: Aeschines Orator 1.5; but κτεῖναι ἐν ταῖς πολεμικαῖς ἐξόδοις ἐν χειρὸς νόμῳ">Refs 4th c.BC+</span>]<b>under martial law,</b> [<span class="lsj-classical-cite" title="4th c.BC: Aristoteles Philosophus “Politica” 1285a10; τῷ τοῦ πολέμου νόμῳ κτησάμενος 4th c.BC: Aeschines Orator 2.33.">Refs 4th c.BC+</span>]<br /><Level3><b>__I.2</b></Level3> Νόμος personified, οἱ θεοὶ σθένουσι χὡ κείνων κρατῶν N. [<span class="lsj-classical-cite" title="5th c.BC: Euripides Tragicus “Hecuba” 800, compare 5th-6th c.AD: Orphica “Fragmenta” 105, 160.">Refs 5th c.BC+</span>]<br /><Level2><b>__II</b></Level2> <b>melody, strain,</b> οἶδα δ᾽ ὀρνίχων νόμως πάντων [<span class="lsj-classical-cite" title="7th c.BC: Alcman Lyricus 67; ν. ἵππιος 5th c.BC: Pindarus Lyricus “O.” 1.101; Ἀπόλλων ἁγεῖτο παντοίων ν. [prev. author] “N.” 5.25; ν. πολεμικοί 5th c.BC: Thucydides Historicus 5.69; ἐπηλάλαξαν Ἀραὶ τὸν ὀξὺν ν. 4th-5th c.BC: Aeschylus Tragicus “Septem contra Thebas” 952 (Lyric poetry); κρεκτοὶ ν. 5th c.BC: Sophocles Tragicus “Fragmenta” 463, compare “Anthologia Graeca” 9.584: _metaphorically_, τοὺς Ἅιδου ν. 5th c.BC: Sophocles Tragicus “Fragmenta” 861.">Refs 7th c.BC+</span>]<br /><Level3><b>__II.2</b></Level3> especially a type of early <b>melody</b> created by Terpander for the lyre as an accompaniment to Epic texts, ν. ὄρθιος [<span class="lsj-classical-cite" title="5th c.BC: Herodotus Historicus 1.24; ν. Βοιώτιος 5th c.BC: Sophocles Tragicus “Fragmenta” 966; ν. κιθαρῳδικοί 5th-6th c.BC: Aristophanes Comicus “Ranae” 1282, compare 5th-6th c.BC: Plato Philosophus “Leges” 700d, 4th c.BC: Aristoteles Philosophus “Poetica” 1447b26, “Pr.” 918b13, etc.">Refs 5th c.BC+</span>]; also for the flute, ν. αὐλῳδικός [<span class="lsj-classical-cite" title="1st-2nd c.AD: Plutarchus Biographus et Philosophus 2.1132d">Refs 1st c.AD+</span>]; without sung text, ν. αὐλητικός [<span class="lsj-classical-cite" title="[prev. work]1133d, compare 138b, 2nd c.AD(?): Pollianus Epigrammaticus 4.79">Refs 2nd c.AD+</span>]; later, <b>composition including both words and melody,</b> e.g. [<span class="lsj-classical-cite" title="Timaeus Grammaticus “Pers.”">Refs</span>]<br /><Level2><b>__III</b></Level2> ={νοῦμμος} (which see), [<span class="lsj-classical-cite" title="5th c.BC: Epicharmus Comicus 136, 5th c.BC: Sophron Comicus 162, “Inscription Délos” 407.21 (2nd c.BC)">Refs 5th c.BC+</span>]; ν. σηστέρτιοι, = Latin <i>nummi sestertii,</i> [<span class="lsj-classical-cite" title="Inscription Prien. 41.13 (2nd c.BC).">Refs 2nd c.BC+</span>]<br /><Level2><b>__IV</b></Level2> Architecture texts, <b>course</b> of masonry, [<span class="lsj-classical-cite" title="“IG” 12(2).11.17 (Mytil.).">Refs</span>]</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="G3807">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s G3807 (paidagogos) &rsaquo; LSJ</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>LSJ (Liddell-Scott-Jones, 1940 — Tyndale-edited from the 9th edition)</strong>, with Abbott-Smith&apos;s <em>Manual Greek Lexicon of the New Testament</em> (1922) filling in NT-only vocabulary where LSJ has no entry. Preserved as data so you can see how the inherited 19th-20th-century classical-philological and NT-Greek scholarship handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+    
+<aside class="framework-callout framework-callout-full">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">paidagogos</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss tutor / schoolmaster / pedagogue and treat the paidagogos as the Torah the believer graduated out of</span>
+  </h3>
+  <div class="framework-callout-body"><p>The lexicons gloss <em>paidagogos</em> as <em>tutor / schoolmaster / pedagogue,</em> and the inherited pulpit reads Galatians 3:24–25 as the verse that retires the Torah from the believer&#x27;s life. <em>Wherefore the law was our schoolmaster to bring us unto the Messiah... but after that faith is come, we are no longer under a schoolmaster.</em> In the inherited hand, the <em>schoolmaster</em> is the Torah, and <em>no longer under a schoolmaster</em> means the Torah has been outgrown — the believer has graduated from the covenant instruction into the freedom of faith. That reading is the engine of the <em>Torah-as-bondage</em> gospel, and it lives inside a lexicon gloss that quietly equates <em>paidagogos</em> with the covenant instruction Yahuah gave from Sinai.</p>
+<p>The <em>paidagogos</em> in the Greco-Roman household was not the teacher you graduated from. He was the slave who walked the child to and from the actual teacher — a custodial escort, often harsh, who supervised the child during the season of immaturity until the child came into full sonship. Paul reaches for that figure to name the system the Galatians were being told they needed in order to belong: the agitators&#x27; flesh-credential schoolmaster, the circumcision party&#x27;s <em>be-this-and-you-are-saved</em> gospel that was walking the believers in Galatia toward a salvation by ritual that was no salvation at all. Hear the verses with the schoolmaster restored to the agitators&#x27; system rather than to the Torah Yahuah gave:</p>
+<blockquote class="framework-scripture"><em>Wherefore the law was our schoolmaster to bring us unto the Messiah, that we might be justified by faith. But after that faith is come, we are no longer under a schoolmaster. For ye are all the children of Elohim (God) by faith in the Messiah Yahusha (Jesus).</em> (Galatians 3:24–25)</blockquote>
+<p>Exiting the <em>paidagogos</em> is exiting the period of external supervision and entering full sonship — and the inheritance the son walks into includes the Torah. The new heart of Ezekiel does not erase the covenant instruction; it receives it from the inside:</p>
+<blockquote class="framework-scripture"><em>A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.</em> (Ezekiel 36:26–27)</blockquote>
+<p>The son who comes of age is not the son who walks away from his Father&#x27;s house. He is the son who finally lives in it. The Torah is what the new heart receives; the <em>paidagogos</em> is the agitators&#x27; substitute the Galatians were being told they needed in order to belong. Restore the word to the system Paul actually argued against, and the verse the pulpit weaponized against the Sabbath, the feasts, and the dietary commandments turns into the very verse that walks the son home to the Father&#x27;s instruction, written now on the heart by the Ruach HaKodesh (Holy Spirit) who spoke it at Sinai.</p></div>
+  <footer class="framework-callout-footer">Red Lines: #4, #5</footer>
+</aside>
+
+    <div class="lexicon-body lsj-body">
+      
+<div class="lsj-lemma-block">
+  <span class="lsj-lemma">παιδαγωγός</span>
+  <span class="lsj-translit">paidagōgos</span>
+  <span class="lsj-morph">G:N-M</span>
+  <span class="lsj-gloss">&mdash; guardian</span>
+</div>
+
+      <div class="lsj-prose"><b> παιδᾰγωγ-ός</b>, ὁ, <br /> ={παιδὸς ἀγωγός}, <b>slave who went with a boy from home to school and back again</b>, [<span class="lsj-classical-cite" title="5th c.BC: Herodotus Historicus 8.75, 5th c.BC: Euripides Tragicus “Ion” 725, “El.” 287, 5th c.BC: Antipho Orator 3.3.7, 5th c.BC: Lysias Orator 32.28, 5th-6th c.BC: Plato Philosophus “Lysis” 208c: coupled with τίτθη, τροφός, [prev. author] “R.” 373c; with ἡγεμών, [prev. work] 467d">Refs 5th c.BC+</span>]; with διδάσκαλος, [<span class="lsj-classical-cite" title="5th-6th c.BC: Xenophon Historicus “Respublica Lacedaemoniorum” 3.1">Refs 5th c.BC+</span>]; of Phoenix, as the π. of Achilles, [<span class="lsj-classical-cite" title="5th-6th c.BC: Plato Philosophus “Respublica” 390e, etc.">Refs 5th c.BC+</span>]; Fabius is called the π. of Hannibal, <b>because he always followed him about</b>, [<span class="lsj-classical-cite" title="1st-2nd c.AD: Plutarchus Biographus et Philosophus “Fabius Maximus” 5: _metaphorically_, ὁ νόμος π. εἰς Χριστόν">Refs 1st c.AD+</span>] <b>has guided us</b> until attainment of faith in Christ, [<a class="lsj-citation" title="NT.Gal.3.24">NT</a>]: generally, <b>leader</b>, δημοκρατίας, τυραννίδος, [<span class="lsj-classical-cite" title="1st-2nd c.AD: Plutarchus Biographus et Philosophus “Aratus” 48, “Galb.” 17.">Refs 1st c.AD+</span>]</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="G1484">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s G1484 (ethne) &rsaquo; LSJ</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>LSJ (Liddell-Scott-Jones, 1940 — Tyndale-edited from the 9th edition)</strong>, with Abbott-Smith&apos;s <em>Manual Greek Lexicon of the New Testament</em> (1922) filling in NT-only vocabulary where LSJ has no entry. Preserved as data so you can see how the inherited 19th-20th-century classical-philological and NT-Greek scholarship handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+    
+<aside class="framework-callout framework-callout-full">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">ethne</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss Gentiles / nations / heathen and collapse the term to the Jew-vs-Gentile binary</span>
+  </h3>
+  <div class="framework-callout-body"><p>The lexicons gloss <em>ethne</em> as <em>Gentiles, nations, heathen,</em> and the inherited pulpit flattens the word into one side of a two-category world: Yahudim (Jews) on one side, everybody else on the other. Once that binary is in the reader&#x27;s hand, every Pauline <em>ethne</em> automatically reads as <em>non-Yashar&#x27;el (non-Israelite) outsiders being brought into the covenant by faith.</em> The whole prophetic gathering of the twelve tribes disappears behind a word the lexicons rendered without ever asking who the apostle was actually writing to.</p>
+<p>The word itself names a category in the world — <em>the nations</em> — and Paul&#x27;s mission ran into that category looking for a specific people inside it. Hosea had named them long before: scattered through the Assyrian exile, lost to their language, lost to their Torah, lost to the covenant identity they had been born to, indistinguishable on the surface from the peoples among whom they had been dispersed. <em>Lo-Ammi</em> — <em>not my people.</em> Yet the same prophet who spoke their unmaking spoke their gathering in the next breath:</p>
+<blockquote class="framework-scripture"><em>Yet the number of the children of Yashar&#x27;el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).</em> (Hosea 1:10)</blockquote>
+<p>Paul quoted that verse at his audience. Not at theoretical Gentiles being told about Yashar&#x27;el (Israel) from the outside — at the people in front of him, telling them who they really were:</p>
+<blockquote class="framework-scripture"><em>As he saith also in Osee, I will call them my people, which were not my people; and her beloved, which was not beloved. And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God).</em> (Romans 9:25–26)</blockquote>
+<p>The Lo-Ammi reversal is not the inclusion of unrelated peoples. It is the gathering of scattered seed. The apostle who quoted Hosea 1:10 at his <em>ethne</em> audience was telling the lost sheep of the house of Yashar&#x27;el (Israel) — living as Gentiles, walking as Gentiles, having forgotten they were ever anything else — that the <em>not my people</em> condition was being undone in them, because they had been seed all along. Restore the word from the binary and the lexicons&#x27; <em>Gentiles</em> gives back what it has been hiding: the prophetic gathering Paul was sent to.</p></div>
+  <footer class="framework-callout-footer">Red Lines: #1</footer>
+</aside>
+
+    <div class="lexicon-body lsj-body">
+      
+<div class="lsj-lemma-block">
+  <span class="lsj-lemma">ἔθνος</span>
+  <span class="lsj-translit">ethnos</span>
+  <span class="lsj-morph">G:N-N</span>
+  <span class="lsj-gloss">&mdash; Gentiles</span>
+</div>
+
+      <div class="lsj-prose"><b> ἔθνος</b>, εος, τό: <br /> (ϝέθνος,[<span class="lsj-classical-cite" title="compare 8th c.BC: Ilias Homerus Epicus “Illiad” 2.87, 7.115, +others)">Refs 8th c.BC+</span>]: - <b>number of people living together, company, body of men</b>, ἑτάρων ἔ., ἔ. ἑταίρων, <b>band</b> of comrades, [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 3.32, 7.115, etc.">Refs 8th c.BC+</span>]; ἔθνος λαῶν <b>host</b> of men, [<span class="lsj-classical-cite" title="13.495">Refs</span>]; of particular tribes, Αυκίων μέγα ἔ. [<span class="lsj-classical-cite" title="12.330; Ἀχαιῶν ἔ. 17.552: _plural_, ἔθνεα πεζῶν 11.724, compare 2.91; ἔ. νεκρῶν 8th c.BC: Odyssea Homerus Epicus “Odyssey” 10.526">Refs 8th c.BC+</span>]; of animals, ἔ. μελισσάων, ὀρνίθων, μυιάων, <b>swarms, flocks</b>, etc., [<span class="lsj-classical-cite" title="8th c.BC: Ilias Homerus Epicus “Illiad” 2.87, 459, 469; ἔθνη θηρῶν 5th c.BC: Sophocles Tragicus “Philoctetes” 1147 (Lyric poetry), “Ant.” 344">Refs 8th c.BC+</span>]; ἔ. ἀνέρων, γυναικῶν, [<span class="lsj-classical-cite" title="5th c.BC: Pindarus Lyricus “O.” 1.66, “P.” 4.252">Refs 5th c.BC+</span>]; ἔ. βρότεον, θνατόν, [<span class="lsj-classical-cite" title="[prev. author] “N.” 3.74, 11.42">Refs</span>]; ἔ. τόδε, of the Erinyes, [<span class="lsj-classical-cite" title="4th-5th c.BC: Aeschylus Tragicus “Eumenides” 366 (Lyric poetry).">Refs 4th c.BC+</span>]<br /><Level3><b>__2</b></Level3> after [<span class="lsj-classical-cite" title="8th c.BC: Homerus Epicus">Refs 8th c.BC+</span>], <b>nation, people</b>, τὸ Μηδικὸν ἔ. (γένος being a subdivision of ἔθνος) [<span class="lsj-classical-cite" title="5th c.BC: Herodotus Historicus 1.101">Refs 5th c.BC+</span>]; ἔ. ἠπειρογενές, μαχαιροφόρον, [<span class="lsj-classical-cite" title="4th-5th c.BC: Aeschylus Tragicus “Persae” 43, 56 (_anapaest meter_), etc.; τῶν μηδισάντων ἐθνέων τῶν Ἑλληνικῶν 5th c.BC: Herodotus Historicus 9.106.">Refs 5th c.BC+</span>]<br /><Level4><b>__2.b</b></Level4> later, τὰ ἔ. <b>foreign, barbarous nations</b>, opposed to Ἕλληνες, [<span class="lsj-classical-cite" title="4th c.BC: Aristoteles Philosophus “Politica” 1324b10">Refs 4th c.BC+</span>]; ἔ. νομάδων, of Bedawîn, [<span class="lsj-classical-cite" title="“LW” 2203 (from Syria)">Refs</span>]; at Athens, athletic <b>clubs of non-Athenians,</b> [<span class="lsj-classical-cite" title="Inscriptiones Graecae 2.444, +others; in LXX">Refs</span>], <i>non-Jews,</i>[<a class="lsj-citation" title="LXX.Psa.2.1, +others,cf. NT.Act.7.45; “Gentiles”, τῶν ἐθνῶν τε καὶ Ἰουδαίων [prev. work] 14.5, etc.; used of “Gentile Christians, Ep. Rom.” 15.27.">LXX+NT</a>]<br /><Level4><b>__2.c</b></Level4> at Rome, = <b>provinciae</b>, [<span class="lsj-classical-cite" title="2nd c.AD: Appianus Historicus “Bella Civilia” 2.13, 2nd c.AD: Herodianus Grammaticus 1.2.1, “PStrassb.” 22.19 (3rd c.AD), 2nd-3rd c.AD: Dio Cassius Historicus 36.41, etc.">Refs 2nd c.AD+</span>]: so in <i>singular</i>, <b>province</b>, ὁ τυραννήσας τοῦ ἔθνους [<span class="lsj-classical-cite" title="1st-2nd c.AD: Dio Chrysostomus Sophista 43.11">Refs 1st c.AD+</span>]; ὁ ἡγούμενος τοῦ ἔθνους the governor of the <b>province,</b> [<span class="lsj-classical-cite" title="POxy. 1020.5 (3rd c.AD).">Refs 3rd c.AD+</span>]<br /><Level3><b>__3</b></Level3> <b>class</b> of men, <b>caste, tribe</b>, τὸ Θετταλῶν.. πενεστικὸν ἔ. [<span class="lsj-classical-cite" title="5th-6th c.BC: Plato Philosophus “Leges” 776d; ἔθνος κηρυκικόν [prev. author] “Plt.” 290b">Refs 5th c.BC+</span>]; οἶσθά τι ἔ. ἠλιθιώτερον ῥαψῳδῶ; [<span class="lsj-classical-cite" title="5th-6th c.BC: Xenophon Historicus “Symposium” 3.6">Refs 5th c.BC+</span>]; δημιουργικὸν ἔ. [<span class="lsj-classical-cite" title="5th-6th c.BC: Plato Philosophus “Gorgias” 455b, compare 4th c.BC: Aristoteles Philosophus “Ἀθηναίων Πολιτεία” 3; ἔ. βραχμάνων 1st c.BC: Diodorus Siculus Historicus 17.102">Refs 5th c.BC+</span>]; τὰ ἱερὰ ἔ. the <b>orders</b> of priests, [<span class="lsj-classical-cite" title="“OGI” 90.17 (2nd c.BC)">Refs 2nd c.BC+</span>]; <b>trade-associations</b> or <b>guilds</b>, ἔθνη καὶ ἐργαστήρια [<span class="lsj-classical-cite" title="“PPetr.” 3p.67 (3rd c.BC), +others">Refs 3rd c.BC+</span>]; <b>class</b> in respect to rank or station, οὐ πρὸς τοῦτο βλέποντες.. ὅπως.. ἕν τι ἔ. ἔσται διαφερόντως εὔδαιμον [<span class="lsj-classical-cite" title="5th-6th c.BC: Plato Philosophus “Respublica” 420b, compare 421c, 4th c.BC: Demosthenes Orator 21.131.">Refs 5th c.BC+</span>]<br /><Level3><b>__4</b></Level3> <b>sex</b>, θῆλυ, ἄρρεν ἔ., [<span class="lsj-classical-cite" title="5th-6th c.BC: Xenophon Historicus “Oeconomicus” 7.26.">Refs 5th c.BC+</span>]<br /><Level3><b>__5</b></Level3> <b>part, member</b>, [<span class="lsj-classical-cite" title="5th c.BC: Hippocrates Medicus “περὶ τόπων τῶν κατὰ ἄνθρωπον” 1.">Refs 5th c.BC+</span>]<br /><Level2><b>__II</b></Level2> of a single person, <b>a relation</b>, [<span class="lsj-classical-cite" title="5th c.BC: Pindarus Lyricus “N.” 5.43.">Refs 5th c.BC+</span>]</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="lexicon-sheet" data-strong="G0065">
+  <header class="lexicon-sheet-header">
+    <div class="lexicon-breadcrumb">Strong&apos;s G0065 (agrielaios) &rsaquo; LSJ</div>
+    <button class="lexicon-close" aria-label="Close lexicon entry">&times;</button>
+  </header>
+  <div class="lexicon-sheet-body">
+    <p class="lexicon-disclaimer">The lexicon below is <strong>LSJ (Liddell-Scott-Jones, 1940 — Tyndale-edited from the 9th edition)</strong>, with Abbott-Smith&apos;s <em>Manual Greek Lexicon of the New Testament</em> (1922) filling in NT-only vocabulary where LSJ has no entry. Preserved as data so you can see how the inherited 19th-20th-century classical-philological and NT-Greek scholarship handled the word. The framework&apos;s reading lives in the verse commentary and in the framework callouts below; where the lexicon and the framework diverge, the framework is the standard.</p>
+    
+<aside class="framework-callout framework-callout-full">
+  <div class="framework-callout-badge">Framework reading</div>
+  <h3 class="framework-callout-title">
+    <span class="framework-callout-term">agrielaios</span>
+    <span class="framework-callout-sep">&middot;</span>
+    <span class="framework-callout-error">Lexicons gloss wild olive tree / branch grafted in by faith</span>
+  </h3>
+  <div class="framework-callout-body"><p>The lexicons gloss <em>agrielaios</em> as <em>wild olive tree,</em> and the inherited pulpit hangs the whole inclusion gospel on the gloss. Romans 11:17–24 gets collapsed into a single picture: the natural Yahudi (Jewish) branches were broken off in unbelief, and non-Yashar&#x27;el (non-Israelite) Gentiles were spliced into the covenant tree by faith-confession in their place. The wild olive, in that reading, is the believing nations grafted into a Yahudi (Jewish) root by the act of believing. The whole architecture of <em>the church as the new Israel</em> rests on the lexicons&#x27; silent assumption that <em>agrielaios</em> names an outsider.</p>
+<p>The word does not name an outsider. The wild olive is olive. It is the same species — the same tree — grown wild because it was uncultivated, separated from the root, left to the elements of the field. Paul&#x27;s olive metaphor stays inside its own botany. Both branches on the tree are Yashar&#x27;el (Israel). The natural branches are the covenant lineage of the patriarchs — the line of Adam carried through Avraham (Abraham), Yitschaq (Isaac), and Ya&#x27;aqov (Jacob) into the twelve tribes — and they were broken off when both houses fell into unbelief and were scattered. The wild olive branches are the living descendants of those broken-off — the seed of Yashar&#x27;el grown wild among the nations through the Assyrian exile of 722 BCE, the very <em>Lo-Ammi</em> people Hosea named:</p>
+<blockquote class="framework-scripture"><em>Yet the number of the children of Yashar&#x27;el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).</em> (Hosea 1:10)</blockquote>
+<p>No non-olive branch is grafted into the tree by mere faith-confession. The wild olive comes home through the journey the prophets named: <em>gathered out of the nations</em> (Ezekiel 37:21), <em>brought under the rod</em> (Ezekiel 20:37) where the rod sifts and <em>purges out the rebels</em> (Ezekiel 20:38), <em>brought into the bond of the new covenant</em> (Jeremiah 31:31), and then — at the end of the journey, not at its doorway — grafted into the natural root of the fathers:</p>
+<blockquote class="framework-scripture"><em>For if thou wert cut out of the olive tree which is wild by nature, and wert graffed contrary to nature into a good olive tree: how much more shall these, which be the natural branches, be graffed into their own olive tree?</em> (Romans 11:24)</blockquote>
+<p>The verse says <em>their own olive tree.</em> The wild olive descendants are coming home to the root their own forefathers were broken off from. They are not strangers being adopted into a tree that was never theirs; they are seed being grafted back into the lineage that was always theirs. The lexicons&#x27; <em>grafted in by faith</em> hides what <em>grafted into their own olive tree</em> names. Restore the word to the gathering it actually names, and the false inclusion gospel collapses with it.</p></div>
+  <footer class="framework-callout-footer">Red Lines: #11</footer>
+</aside>
+
+    <div class="lexicon-body lsj-body">
+      
+<div class="lsj-lemma-block">
+  <span class="lsj-lemma">ἀγριέλαιος</span>
+  <span class="lsj-translit">agrielaios</span>
+  <span class="lsj-morph">G:N-F</span>
+  <span class="lsj-gloss">&mdash; wild olive tree</span>
+</div>
+
+      <div class="lsj-prose"><b> ἀγρι-έλαιος</b>, ον, <br /> = {ἀγριελάινος}, σκυτάλη[<span class="lsj-classical-cite" title="“Anthologia Graeca” 9.237 (from Erycius).">Refs</span>]<br /><Level2><b>__II</b></Level2> as <i>substantive</i>, ={ἀγριελαία}, [<a class="lsj-citation" title="3rd c.BC: Theocritus Poeta Bucolicus 7.18, 4th-3rd c.BC: Theophrastus Philosophus “Historia Plantarum” 2.2.5, NT.Rom.11.17, etc.">NT+4th c.BC+</a>]</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="page-footer">
+  S160 LSJ sample-render &mdash; production loader cribs the TFLSJ parse + body
+  transformation from <code>restoration-pipeline/_session160_lsj_sample_render.py</code>.
+</footer>
+
+<script>
+// S160 LSJ sample-render interactivity (not production code).
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.lexicon-sheet-header').forEach(header => {
+    header.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') return;
+      const sheet = header.closest('.lexicon-sheet');
+      sheet.classList.toggle('lexicon-sheet-collapsed');
+      if (sheet.classList.contains('lexicon-sheet-collapsed')) {
+        sheet.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+
+  // Biblical-citation anchors (NT./LXX./OT.-prefixed in title) get nav tooltip
+  document.querySelectorAll('.lsj-citation').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const ref = link.dataset.ref || link.getAttribute('title') || link.textContent.trim();
+      showTooltip(link, `Production surface navigates to ${ref}`);
+    });
+  });
+
+  // Classical-citation spans already have a browser-default hover tooltip via
+  // their title attribute — let the browser handle that without extra JS.
+
+  function showTooltip(anchorEl, text) {
+    document.querySelectorAll('.sample-tooltip').forEach(t => t.remove());
+    const tip = document.createElement('div');
+    tip.className = 'sample-tooltip';
+    tip.textContent = text;
+    document.body.appendChild(tip);
+    const rect = anchorEl.getBoundingClientRect();
+    tip.style.top = (rect.bottom + window.scrollY + 6) + 'px';
+    tip.style.left = Math.min(
+      rect.left + window.scrollX,
+      window.innerWidth - tip.offsetWidth - 16
+    ) + 'px';
+    setTimeout(() => tip.remove(), 2500);
+  }
+});
+</script>
+</body>
+</html>

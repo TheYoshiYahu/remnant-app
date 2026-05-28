@@ -31,6 +31,7 @@ The three locked theological registers that thread through body text and chrome.
   - Body-text sacred-name outline for *Yashar'el (Israel)*, *Yahudah (Judah)*, *Yahudim (Jews)*, *Yahudi* (Jew/Jewish)
   - Brand-mark JUDAH + EPHRAIM tribe labels (v4)
   - Extra-canonical cross-reference labels (S130) — 1 Enoch, Jubilees, Jasher, Apocrypha, Adam & Eve Conflict, etc.
+  - Always-visible Strong's superscripts toggle (S160 / DESIGN_LANGUAGE §27) — metallic-argaman pill in the chapter chrome strip + Settings → Reader preferences, using the §9 metallic-argaman gradient treatment (`linear-gradient #3D1B5C → #8E4FB3 → #3D1B5C` + border `#D4B0E0` + text `#F5E6FA`). Surfaces the covenant-body language (Hebrew + Greek) under the English translation; the metallic-argaman register pointing at the Strong's toggle is UX-functional, matching the precedent §9 set for extras-tier cross-reference pills.
 
 ### Gold — priestly-witness / divine-presence register
 
@@ -86,6 +87,7 @@ The three locked theological registers that thread through body text and chrome.
 - **Theological role:** same as the gradient — the divine-speech / expansion register, in small-text or body-label form where a gradient text would be too busy.
 - **Surfaces:**
   - Old Testament / Tanakh cross-reference book-chapter-verse labels (S130) — e.g., the *Genesis 5:1* label color when rendering a Tanakh cross-reference target
+  - Always-visible Strong's superscripts (S160 / DESIGN_LANGUAGE §27) — inline `<sup>` H- and G-numbers after each word in verse text, rendered at ~70% body-text size when the §27 toggle is on. Distinct register from the §2 spectral-blue verse-numbers (chapter-anchor superscripts) — partners read two superscript registers on the same line: spectral-blue for verse anchors, bracket-emerald midtone for Strong's-pointers.
 
 ---
 
