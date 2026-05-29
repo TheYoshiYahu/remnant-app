@@ -74,6 +74,11 @@ import {
 import { renderMarkdownBody } from "./lib/markdown";
 import { useParentheticalsToggle } from "./lib/useParentheticalsToggle";
 import { useStrongsSuperscriptsToggle } from "./lib/useStrongsSuperscriptsToggle";
+import {
+  isAtCompanionTier,
+  useInterlinearToggle,
+} from "./lib/useInterlinearToggle";
+import { InterlinearWordColumn } from "./components/InterlinearLayer";
 import { useTheme } from "./lib/theme";
 import {
   cancelPendingSave,
@@ -325,6 +330,21 @@ function Reader() {
     toggle: toggleShowStrongsSuperscripts,
   } = useStrongsSuperscriptsToggle();
 
+  // S168 — §28 Hebrew & Greek interlinear toggle. Default OFF (clean
+  // reading surface; partner opts INTO the original-language column-
+  // stack above each English word). Tier-gated at Companion+ via
+  // isAtCompanionTier — below-tier partners see the chrome-strip pill
+  // rendered with the Companion-badge chip and tapping routes to
+  // /pricing; Companion+ partners see the toggle live and tapping flips
+  // the InterlinearLayer mount per verse. Persists via
+  // localStorage `rop_interlinear_v1`. Parallels §27's argaman pill —
+  // the two pills read as a pair (§27 = Strong's numbers free; §28 =
+  // original-language layer Companion). The `partnerAtCompanion`
+  // value is computed downstream where `me` is in scope (just below
+  // the `me` useState declaration).
+  const { show: showInterlinear, toggle: toggleShowInterlinear } =
+    useInterlinearToggle();
+
   // S116 — reading-position persistence. `currentVerse` tracks the
   // topmost-visible verse via IntersectionObserver (initial 1, updated
   // as the partner scrolls). `hydrated` gates the save effect so the
@@ -350,6 +370,10 @@ function Reader() {
   // 401 (no JWT cookie) is non-fatal — we just don't show the partner
   // chrome at all in that case.
   const [me, setMe] = useState<SubscriptionMe | null>(null);
+  // S168 — §28 Companion-gate flag, depends on `me`. Computed once per
+  // render; cheap literal-string compare. Drives the Interlinear pill's
+  // live-vs-locked render + the InterlinearWordColumn mount branch.
+  const partnerAtCompanion = isAtCompanionTier(me?.tier ?? null);
 
   // S113 → S117: per-chapter highlights map.
   // `highlightsByVerse` keys are verse_id and values are ARRAYS of
@@ -1988,6 +2012,49 @@ function Reader() {
                             strong: seg.strong,
                             surface: seg.surface,
                           };
+                          // S168 — §28 interlinear column-stack swap.
+                          // When the partner has the §28 toggle ON AND
+                          // is at Companion+, render this tappable
+                          // segment as a column-stack (lemma + translit
+                          // + morph + gloss above the surface word).
+                          // The verse-align key encodes the position
+                          // as `${verseId}:${position}` — parse it to
+                          // find the matching VerseWord in the S168-
+                          // extended payload.
+                          if (showInterlinear && partnerAtCompanion) {
+                            const posStr = seg.key.split(":").pop();
+                            const pos = posStr ? Number.parseInt(posStr, 10) : NaN;
+                            const matched = Number.isFinite(pos)
+                              ? verseWords.find((vw) => vw.position === pos)
+                              : undefined;
+                            if (
+                              matched &&
+                              (matched.lemma ||
+                                matched.transliteration ||
+                                matched.morphology)
+                            ) {
+                              return (
+                                <InterlinearWordColumn
+                                  key={seg.key}
+                                  verseWord={matched}
+                                  verseId={v.id}
+                                  showStrongsSuperscripts={showStrongsSuperscripts}
+                                  surfaceOverride={seg.text}
+                                  handlers={{
+                                    onWordTap: handleWordQuickTap,
+                                    onWordPointerDown: handlePointerDown,
+                                    onWordPointerCancel: handlePointerCancel,
+                                    onWordContextMenu: handleContextMenu,
+                                  }}
+                                />
+                              );
+                            }
+                            // Fall through to inline-tappable render
+                            // when the verseWord didn't match or the
+                            // S168 payload fields are empty for this
+                            // word (defensive — the surface still
+                            // renders cleanly without the column).
+                          }
                           return (
                             <span key={seg.key}>
                               <span
@@ -2206,6 +2273,57 @@ function Reader() {
               {showStrongsSuperscripts
                 ? "Hide Strong's"
                 : "Show Strong's"}
+            </button>
+            {/*
+              S168 — §28 Interlinear toggle. Same metallic-argaman
+              gradient register as the §27 Strong's-superscripts pill
+              to its left so the two read as a pair (§27 = numbers on
+              the verse text, §28 = original-language layer above the
+              verse text). Distinguished from §27 by the Companion-
+              badge chip rendered for below-tier partners (§27 is Free,
+              §28 is Companion+).
+
+              For Companion+ (`partnerAtCompanion`), the button toggles
+              the InterlinearLayer mount per verse and persists via
+              `useInterlinearToggle`. For below-Companion partners, the
+              button still renders in the chrome strip (the gate is
+              visible, not hidden, per the §20 stub-catalog "tier-
+              locked-stub" convention) but tapping routes to /pricing
+              and a small "Companion" chip distinguishes the locked
+              state.
+            */}
+            <button
+              type="button"
+              onClick={() => {
+                if (partnerAtCompanion) {
+                  toggleShowInterlinear();
+                } else {
+                  if (typeof window !== "undefined") {
+                    window.location.href = "/pricing";
+                  }
+                }
+              }}
+              aria-pressed={partnerAtCompanion ? showInterlinear : false}
+              title={
+                partnerAtCompanion
+                  ? "Show or hide the Hebrew/Greek interlinear layer above each English word — lemma, transliteration, morphology, gloss. Long-press the morphology cell to expand the abbreviation. Persists across chapters and reloads."
+                  : "Hebrew/Greek interlinear layer — upgrade to the Companion tier to enable. Tap to view pricing."
+              }
+              className="relative rounded-md border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#F5E6FA] shadow-sm hover:opacity-90"
+            >
+              {partnerAtCompanion
+                ? showInterlinear
+                  ? "Hide Interlinear"
+                  : "Show Interlinear"
+                : "Interlinear"}
+              {!partnerAtCompanion && (
+                <span
+                  className="ml-2 inline-flex items-center rounded-sm border border-[#F5E6FA]/40 bg-[#1A0E2C] px-1.5 py-0.5 text-[0.55rem] font-semibold uppercase tracking-wider text-[#F5E6FA]"
+                  aria-label="Companion tier required"
+                >
+                  Companion
+                </span>
+              )}
             </button>
             <button
               type="button"
@@ -2973,14 +3091,13 @@ function buildMenuSections(
     wordStudy.push(
       makeTierStub("vines", "Vine's expository", "library", partnerTier)
     );
-    wordStudy.push(
-      makeTierStub(
-        "interlinear",
-        isGreek ? "Greek interlinear" : "Hebrew interlinear",
-        "library",
-        partnerTier
-      )
-    );
+    // S168 — §20 *Hebrew/Greek interlinear* stub REMOVED per the §28
+    // deprecation lock (DESIGN_LANGUAGE.md §28 "§20 menu-stub
+    // deprecation locked A"). The chrome-strip Interlinear toggle now
+    // covers the whole-verse layered view; a per-word stub here would
+    // duplicate without adding partner value (the partner who wants
+    // to drill into one word already has Strong's → LexiconSheet via
+    // §20 / §26). Same pattern S159 / S164 set for Vine's deprecation.
     if (isHebrew) {
       wordStudy.push(
         makeTierStub("nikkudot", "Nikkudot siblings", "library", partnerTier)

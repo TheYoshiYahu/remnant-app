@@ -2001,11 +2001,29 @@ async def search_verses(
 # and the existing source-texts/kjv/eng-kjv_usfx.xml respectively.
 
 
+def _is_at_companion_tier(user: Optional[User]) -> bool:
+    """S168 — §28 Companion-gate predicate.
+
+    Companion = ``complete_study`` (Bible+Companion bundle) or
+    ``everything`` (full everything-annual). Below-Companion = anonymous,
+    free, study_notes, or extras. Mirrors the PWA-side
+    ``isAtCompanionTier`` helper in
+    ``app/src/lib/useInterlinearToggle.ts`` so both sides resolve the
+    gate against the same two literals.
+    """
+    if user is None:
+        return False
+    return user.partner_tier in ("complete_study", "everything")
+
+
 @app.get(
     "/v1/verses/{verse_id}/words",
     response_model=VerseWordsResponse,
 )
-async def get_verse_words(verse_id: int) -> VerseWordsResponse:
+async def get_verse_words(
+    verse_id: int,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> VerseWordsResponse:
     """
     Position-ordered list of Strong's-tagged English tokens for one
     verse. The PWA uses this to overlay tap handlers on the rendered
@@ -2013,11 +2031,18 @@ async def get_verse_words(verse_id: int) -> VerseWordsResponse:
     against this list to find the strong_number, attach a click
     handler that fires GET /v1/strongs/{strong_number}.
 
-    No auth, no tier gate (free-tier feature). 404 when the verse_id
-    doesn't exist; empty `words` list when the verse exists but has
-    no tagged tokens yet (e.g., extras books outside the canon load).
+    Base tri-tuple (position, surface, strong_number) is free-tier per
+    §9. S168 extends each row with the four §28 interlinear fields
+    (morphology, lemma, transliteration, short_definition, language)
+    populated only for Companion+ callers; below-Companion callers
+    receive ``None`` for those fields. Mirrors the chapter-words
+    tier-gate so a partner who hits either endpoint sees the same
+    payload shape. 404 when the verse_id doesn't exist; empty
+    `words` list when the verse exists but has no tagged tokens yet
+    (e.g., extras books outside the canon load).
     """
     pool = get_pool()
+    is_companion = _is_at_companion_tier(current_user)
     async with pool.acquire() as conn:
         verse_exists = await conn.fetchval(
             "SELECT EXISTS (SELECT 1 FROM verses WHERE id = $1)",
@@ -2026,10 +2051,15 @@ async def get_verse_words(verse_id: int) -> VerseWordsResponse:
         if not verse_exists:
             raise HTTPException(status_code=404, detail="verse not found")
         rows = await conn.fetch(
-            "SELECT position, surface, strong_number "
-            "  FROM verse_words "
-            " WHERE verse_id = $1 "
-            " ORDER BY position ASC",
+            "SELECT vw.position, vw.surface, vw.strong_number, vw.morphology, "
+            "       se.lemma             AS lemma, "
+            "       se.transliteration   AS transliteration, "
+            "       se.short_definition  AS short_definition, "
+            "       se.language::text    AS language "
+            "  FROM verse_words vw "
+            "  LEFT JOIN strong_entries se ON se.strong_number = vw.strong_number "
+            " WHERE vw.verse_id = $1 "
+            " ORDER BY vw.position ASC",
             verse_id,
         )
     return VerseWordsResponse(
@@ -2039,6 +2069,11 @@ async def get_verse_words(verse_id: int) -> VerseWordsResponse:
                 position=r["position"],
                 surface=r["surface"],
                 strong_number=r["strong_number"],
+                morphology=r["morphology"] if is_companion else None,
+                lemma=r["lemma"] if is_companion else None,
+                transliteration=r["transliteration"] if is_companion else None,
+                short_definition=r["short_definition"] if is_companion else None,
+                language=r["language"] if is_companion else None,
             )
             for r in rows
         ],
@@ -2052,9 +2087,10 @@ async def get_verse_words(verse_id: int) -> VerseWordsResponse:
 async def get_chapter_words(
     book_slug: str,
     chapter_number: int,
+    current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> ChapterWordsResponse:
     """Batched Strong's-tagged-token alignment for an entire chapter
-    in one round trip (S121, Wheel 3).
+    in one round trip (S121, Wheel 3; S168 §28 interlinear extension).
 
     The PWA fires this alongside the existing
     /v1/books/{slug}/chapters/{n} endpoint after a chapter loads, so
@@ -2062,12 +2098,26 @@ async def get_chapter_words(
     requests (which serializes badly on long chapters like Psalm 119
     against the browser's ~6-per-host concurrent-connection cap).
 
-    No auth, no tier gate (free-tier feature per §9). Returns the
-    chapter id + a per-verse list (each verse's words array may be
-    empty for extras books outside the canon load). 404 when the
-    book/chapter doesn't exist.
+    The base response (position, surface, strong_number) is free-tier
+    per §9 — every partner gets tap-on-word and the existing §20
+    Strong's modal path. S168 extends each ``VerseWord`` with four
+    optional interlinear fields (morphology, lemma, transliteration,
+    short_definition, language) which are populated for Companion+
+    callers and ``None`` for below-Companion / anonymous callers. The
+    server-side gate makes the data-shipping decision: the §28
+    InterlinearLayer is Companion-gated at the surface AND at the
+    payload, so the data simply doesn't travel to clients that aren't
+    entitled. The §20 tap-modal surface is unaffected (it fires its
+    own free /v1/strongs/{strong_number} request and renders short
+    + full definition for every tier).
+
+    JWT pulled via ``get_current_user_optional`` (same cookie / Authorization
+    decode path as the /v1/books routes); anonymous callers (no JWT,
+    invalid JWT, expired JWT) resolve to ``None`` and receive the
+    below-Companion payload. 404 when the book/chapter doesn't exist.
     """
     pool = get_pool()
+    is_companion = _is_at_companion_tier(current_user)
     async with pool.acquire() as conn:
         chapter_row = await conn.fetchrow(
             "SELECT c.id, c.chapter_number "
@@ -2094,17 +2144,39 @@ async def get_chapter_words(
         )
         # One query for all words across all verses in this chapter.
         # JOIN against verses to enforce the chapter scoping.
+        #
+        # S168 — LEFT JOIN to strong_entries on the verse_word's
+        # strong_number. LEFT (not INNER) because:
+        #   - un-tagged tokens (rare; verse_words.strong_number IS NULL)
+        #     must still surface so the PWA can render the surface word
+        #     without an interlinear column above it,
+        #   - extras-book or apocrypha-book Strong's numbers that aren't
+        #     in the lexicon load yet must still pass through with a
+        #     plain surface column.
+        # Sub-select selects only the fields we ship; the lexicon's
+        # full ``definition`` body stays in the /v1/strongs/{n} modal
+        # path, not in this chapter-mass payload (size discipline).
         word_rows = await conn.fetch(
-            "SELECT vw.verse_id, vw.position, vw.surface, vw.strong_number "
+            "SELECT vw.verse_id, vw.position, vw.surface, "
+            "       vw.strong_number, vw.morphology, "
+            "       se.lemma             AS lemma, "
+            "       se.transliteration   AS transliteration, "
+            "       se.short_definition  AS short_definition, "
+            "       se.language::text    AS language "
             "  FROM verse_words vw "
             "  JOIN verses v ON v.id = vw.verse_id "
+            "  LEFT JOIN strong_entries se ON se.strong_number = vw.strong_number "
             " WHERE v.chapter_id = $1 "
             " ORDER BY vw.verse_id, vw.position",
             chapter_row["id"],
         )
 
     # Bucket the words by verse_id so we can attach them to the
-    # verse rows in one pass.
+    # verse rows in one pass. Tier-gate per row: Companion+ callers
+    # receive the populated interlinear fields, below-Companion callers
+    # receive ``None`` for the four §28 fields + language. The base
+    # tri-tuple (position, surface, strong_number) ships for every
+    # caller per the §9 free-tier promise.
     words_by_verse: dict[int, list[VerseWord]] = {}
     for r in word_rows:
         words_by_verse.setdefault(r["verse_id"], []).append(
@@ -2112,6 +2184,11 @@ async def get_chapter_words(
                 position=r["position"],
                 surface=r["surface"],
                 strong_number=r["strong_number"],
+                morphology=r["morphology"] if is_companion else None,
+                lemma=r["lemma"] if is_companion else None,
+                transliteration=r["transliteration"] if is_companion else None,
+                short_definition=r["short_definition"] if is_companion else None,
+                language=r["language"] if is_companion else None,
             )
         )
 

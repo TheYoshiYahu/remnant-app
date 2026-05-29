@@ -584,6 +584,23 @@ class VerseWord(BaseModel):
     loader entirely, so this field is in practice almost always set).
     When set, the PWA tap fires GET /v1/strongs/{strong_number} for
     the lexicon entry.
+
+    S168 — §28 Hebrew & Greek interlinear extension. Four optional
+    fields layer original-language depth above the English surface
+    word: ``morphology`` (raw STEPBible morph tag — Robinson for Greek,
+    Westminster for Hebrew; the PWA decodes via
+    ``app/src/lib/interlinear-helpers.ts``), ``lemma`` (original-script
+    headword from ``strong_entries.lemma``), ``transliteration``
+    (romanized form from ``strong_entries.transliteration``),
+    ``short_definition`` (single-phrase gloss from
+    ``strong_entries.short_definition``), and ``language``
+    (``strong_entries.language`` — Hebrew/Aramaic/Greek; drives
+    font-stack selection at render time). All four are tier-gated at
+    the chapter-words endpoint: Companion+ partners receive populated
+    values, below-Companion partners receive ``None`` for all four
+    (the §28 surface is Companion-gated; below-Companion partners
+    keep the existing §20 tap-modal depth via the separate, free,
+    /v1/strongs/{strong_number} endpoint).
     """
 
     model_config = ConfigDict(from_attributes=True)
@@ -591,6 +608,33 @@ class VerseWord(BaseModel):
     position: int = Field(..., description="1-based source order within the verse.")
     surface: str = Field(..., description="English surface form ('God', 'made').")
     strong_number: Optional[str] = None
+    morphology: Optional[str] = Field(
+        None,
+        description=(
+            "Raw STEPBible morph code (e.g., 'V-AAI-3S', 'HR/Ncfsa'). "
+            "Companion-tier only; null for below-tier callers."
+        ),
+    )
+    lemma: Optional[str] = Field(
+        None,
+        description="Original-script lemma from strong_entries. Companion-tier only.",
+    )
+    transliteration: Optional[str] = Field(
+        None,
+        description="Romanized form from strong_entries. Companion-tier only.",
+    )
+    short_definition: Optional[str] = Field(
+        None,
+        description="Single-phrase gloss from strong_entries. Companion-tier only.",
+    )
+    language: Optional[StrongLanguage] = Field(
+        None,
+        description=(
+            "Original-language family from strong_entries.language "
+            "(hebrew/aramaic/greek). Drives PWA font-stack selection. "
+            "Companion-tier only."
+        ),
+    )
 
 
 class VerseWordsResponse(BaseModel):

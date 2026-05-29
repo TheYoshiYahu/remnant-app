@@ -768,6 +768,23 @@ export interface VerseWord {
   position: number;
   surface: string;
   strong_number: string | null;
+  /**
+   * S168 — §28 interlinear extension fields. Populated for Companion+
+   * callers (server-side tier-gate at the chapter-words endpoint);
+   * null for anonymous + below-Companion callers. The PWA renders the
+   * §28 InterlinearLayer column-stack from these fields.
+   *
+   * `morphology` is the raw STEPBible morph code (e.g., 'V-AAI-3S',
+   * 'HR/Ncfsa'); the PWA decodes via lib/interlinear-helpers.ts's
+   * formatMorphology. `lemma`/`transliteration`/`short_definition`
+   * come from the joined strong_entries row. `language` drives font-
+   * stack selection (SBL Hebrew / SBL BibLit / body fallback).
+   */
+  morphology?: string | null;
+  lemma?: string | null;
+  transliteration?: string | null;
+  short_definition?: string | null;
+  language?: "hebrew" | "greek" | "aramaic" | null;
 }
 
 export interface ChapterVerseWords {
