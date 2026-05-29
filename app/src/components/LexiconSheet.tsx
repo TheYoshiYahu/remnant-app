@@ -102,7 +102,7 @@ export default function LexiconSheet({
       aria-label={`Lexicon entry for ${strongNumber}`}
     >
       <div
-        className="w-full max-w-4xl max-h-[85vh] overflow-hidden rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl"
+        className="w-full max-w-6xl max-h-[85vh] overflow-hidden rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <LexiconSheetBody

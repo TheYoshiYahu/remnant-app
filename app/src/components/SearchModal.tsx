@@ -19,7 +19,7 @@
  * Same modal register as HighlightPicker / BookmarkSheet / NotesPanel /
  * RangeActionPicker / VerseActionMenu / StrongsLookup — bg-black/40
  * backdrop, items-end on mobile (slide-up from bottom), centered on
- * desktop (sm:items-center). max-w-4xl matches NotesPanel since the
+ * desktop (sm:items-center). max-w-6xl matches NotesPanel since the
  * results region needs room. max-h-85vh + overflow-y-auto handles the
  * common-word search that returns 100+ hits.
  *
@@ -211,7 +211,7 @@ export default function SearchModal({
       aria-label="Search the canon and extras"
     >
       <div
-        className="flex max-h-[85vh] w-full max-w-4xl flex-col overflow-hidden rounded-t-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl sm:rounded-lg"
+        className="flex max-h-[85vh] w-full max-w-6xl flex-col overflow-hidden rounded-t-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl sm:rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header — title + ✕ close */}

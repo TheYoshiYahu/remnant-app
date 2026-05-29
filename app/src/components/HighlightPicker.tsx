@@ -310,7 +310,7 @@ export default function HighlightPicker({
         onClick={onClose}
       >
         <div
-          className="max-h-[85vh] w-full max-w-4xl overflow-y-auto rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 shadow-xl"
+          className="max-h-[85vh] w-full max-w-6xl overflow-y-auto rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 shadow-xl"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="mb-3 flex items-baseline justify-between">
@@ -376,7 +376,7 @@ export default function HighlightPicker({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-4xl rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 shadow-xl"
+        className="w-full max-w-6xl rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header row — title + (paid only) "Add color labels" gear. The

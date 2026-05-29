@@ -167,7 +167,7 @@ export default function StrongsLookup({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-4xl rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5 shadow-xl"
+        className="w-full max-w-6xl rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5 shadow-xl"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-label="Strong's lexicon entry"
