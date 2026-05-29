@@ -232,12 +232,15 @@ export function alignVerse(
     let clusterStart = -1;
     let parenIdx = -1;
     let pairings: VerseWordInput[] = [];
+    let pairingParenWords: string[] = []; // S161 Part 2.2 — track each pairing's
+                                          // paren-content word for Hebrew-aware reorder.
     for (let j = i; j < Math.min(i + 6, tokens.length); j++) {
       const cand = tokens[j];
       if (isParenToken(cand)) {
         const contents = parenContents(cand);
         let tempW = w;
         const matched: VerseWordInput[] = [];
+        const matchedParenWords: string[] = [];
         for (const pw of contents) {
           if (
             tempW < words.length &&
@@ -245,6 +248,7 @@ export function alignVerse(
             pw === (words[tempW].surface || "").toLowerCase()
           ) {
             matched.push(words[tempW]);
+            matchedParenWords.push(pw);
             tempW++;
           }
           // pw that doesn't match is a connective ("the", "of") — skip
@@ -269,9 +273,70 @@ export function alignVerse(
             clusterStart = cs;
             parenIdx = j;
             pairings = matched;
+            pairingParenWords = matchedParenWords;
           }
         }
         break; // first paren in range — stop either way
+      }
+    }
+
+    // S161 Part 2.2 — Hebrew-aware cluster reordering.
+    // The cluster pairs surfaces to Hebrew tokens POSITIONALLY by default
+    // (pairings[0] → tokens[clusterStart+0], etc.). This works when Hebrew
+    // and English word order align (Yahuah Elohim ↔ the LORD God, Yahuah
+    // Tseva'ot ↔ LORD of hosts — same positional order).
+    //
+    // BUT Hebrew adj-after-noun reverses against English adj-before-noun
+    // for Ruach HaKodesh ↔ Holy Spirit: positional pairing would attach
+    // Ruach (Spirit) to G0040 (Holy) and HaKodesh (the Holy) to G4151
+    // (Spirit) — semantically inverted. The HEBREW_PAIRING_HINTS map
+    // overrides positional pairing where the framework knows the correct
+    // Hebrew-to-paren-content mapping. Only fires for known Hebrew
+    // tokens; falls through to positional for everything else.
+    if (clusterStart >= 0 && pairings.length > 1) {
+      const HEBREW_PAIRING_HINTS: Record<string, string> = {
+        Ruach: "spirit",
+        HaKodesh: "holy",
+      };
+      let anyHinted = false;
+      const candidateReorder: Array<VerseWordInput | null> = pairings.map(
+        () => null
+      );
+      const usedPairingIdx = new Set<number>();
+      for (let h = 0; h < pairings.length; h++) {
+        const hTok = tokens[clusterStart + h];
+        const hKey = hTok.replace(/['’]s$/i, "");
+        const hint = HEBREW_PAIRING_HINTS[hKey];
+        if (!hint) continue;
+        anyHinted = true;
+        for (let p = 0; p < pairings.length; p++) {
+          if (usedPairingIdx.has(p)) continue;
+          if (pairingParenWords[p] === hint) {
+            candidateReorder[h] = pairings[p];
+            usedPairingIdx.add(p);
+            break;
+          }
+        }
+      }
+      if (anyHinted) {
+        // Fill any unhinted slots with the remaining pairings in original
+        // order to preserve attribution for non-Hebrew Hebrew-side tokens
+        // (defensive — current hint map covers the only known case).
+        let p = 0;
+        for (let h = 0; h < candidateReorder.length; h++) {
+          if (candidateReorder[h] === null) {
+            while (p < pairings.length && usedPairingIdx.has(p)) p++;
+            if (p < pairings.length) {
+              candidateReorder[h] = pairings[p];
+              usedPairingIdx.add(p);
+              p++;
+            }
+          }
+        }
+        // If every slot is filled, commit the reorder.
+        if (candidateReorder.every((x) => x !== null)) {
+          pairings = candidateReorder as VerseWordInput[];
+        }
       }
     }
 

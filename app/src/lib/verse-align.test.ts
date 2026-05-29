@@ -161,6 +161,31 @@ const cases: Case[] = [
     ],
     expectStrongs: ["H0559", "H3068", "H0430", "H0559"],
   },
+
+  // ---- Case 8: Hebrew-aware reorder — Ruach HaKodesh (Holy Spirit) ----
+  // S161 Part 2.2. Hebrew word order is noun-then-definite-adj
+  // (Ruach=Spirit + HaKodesh=the Holy); English paren is
+  // adj-then-noun (Holy Spirit). Without the HEBREW_PAIRING_HINTS
+  // reorder, positional pairing would attach Ruach to G0040 (Holy)
+  // and HaKodesh to G4151 (Spirit) — semantically inverted. The
+  // reorder restores correct attribution: Ruach gets G4151,
+  // HaKodesh gets G0040.
+  //
+  // Surface 'Spirit' (not 'Ghost') depends on Part 1.7's data fix
+  // running first. Without that data fix the cluster sees only
+  // 1 match ('Holy') and doesn't trigger the multi-pairing reorder
+  // branch at all.
+  {
+    label: "Hebrew-aware reorder — Ruach HaKodesh (Holy Spirit)",
+    text: "the Ruach HaKodesh (Holy Spirit) of Yahuah.",
+    words: [
+      { position: 1, surface: "Holy",   strong_number: "G0040" },
+      { position: 2, surface: "Spirit", strong_number: "G4151" },
+    ],
+    expectStrongs: ["G4151", "G0040"], // Ruach→G4151 first, HaKodesh→G0040 second
+    expectFirstTappableText: "Ruach",
+    expectSecondTappableText: "HaKodesh",
+  },
 ];
 
 function extractTappables(segs: Segment[]): Array<{ text: string; strong: string }> {

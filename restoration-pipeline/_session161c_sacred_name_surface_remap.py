@@ -87,6 +87,18 @@ REMAP_RULES: list[tuple[str, str, str, bool]] = [
     # because 'of hosts' IS still in the display (inside the paren)
     # but we still want to update.
     ("H6635", "of hosts", "hosts", True),
+
+    # S161 Part 1.7 — Ruach HaKodesh (Holy Spirit) cluster.
+    # Display has 'Ruach HaKodesh (Holy Spirit)' per Sacred Names
+    # Convention; USFX has 'Ghost' (G4151) and 'the Holy' (G0040) /
+    # 'Holy' (G0040). Updating surfaces so:
+    #   - 'Ghost' (G4151) → 'Spirit' — matches paren content 'spirit'
+    #   - 'the Holy' (G0040) → 'Holy' — matches paren content 'holy'
+    # Combined with Part 2.2's Hebrew-aware reorder, both Hebrew
+    # tokens get correctly-attributed superscripts: Ruach → G4151
+    # (Spirit), HaKodesh → G0040 (Holy).
+    ("G4151", "Ghost",    "Spirit", True),
+    ("G0040", "the Holy", "Holy",   True),
 ]
 
 
