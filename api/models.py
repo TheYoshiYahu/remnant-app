@@ -756,6 +756,44 @@ class CreateOrReplaceBookmarkRequest(BaseModel):
     color_tint: Optional[BookmarkColorTint] = None
 
 
+class BookmarkIndexEntry(BaseModel):
+    """GET /v1/bookmarks/index row — bookmark joined with verse + book
+    metadata for the global Bookmarks Index surface per DESIGN_LANGUAGE.md
+    §29 (locked S166). Includes everything the BookmarksIndex sheet needs
+    to render a navigable row without a second fetch: verse reference
+    (book + chapter + verse), verse text preview, the bookmark's own
+    metadata (short_description, tags, color_tint), and the timestamps.
+
+    Sorted newest-first by created_at per §29 Gate #3.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    verse_id: int
+    book_slug: str
+    book_title: str
+    chapter_number: int
+    verse_number: int
+    verse_text: str
+    short_description: Optional[str] = None
+    tags: Optional[List[str]] = None
+    color_tint: Optional[BookmarkColorTint] = None
+    created_at: datetime
+    updated_at: datetime
+
+
+class BookmarksIndexResponse(BaseModel):
+    """GET /v1/bookmarks/index — flat array of all the partner's bookmarks
+    across the canon, joined with verse + book metadata, sorted
+    chronologically newest-first.
+
+    Auth-required, Free-tier (no paywall) per §29 Gate #1.
+    """
+
+    bookmarks: List[BookmarkIndexEntry]
+
+
 # ----- Notes V1 (Session 124 — Wheel 5) ----------------------------------
 #
 # Per DESIGN_LANGUAGE.md §22 (locked S124): single global notepad for the

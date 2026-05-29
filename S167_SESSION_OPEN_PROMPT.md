@@ -16,6 +16,7 @@ production.
 | **DESIGN_LANGUAGE.md §28** — Hebrew & Greek interlinear surface spec | `DESIGN_LANGUAGE.md` §28 (~100 lines) | LANDED — four gates locked: Companion tier, above-verse English-aligned column, abbreviated-English morph register with hold-expansion, metallic-argaman chrome parity with §27 |
 | **§28 §20 menu-stub deprecation locked** | DESIGN_LANGUAGE.md §28 sub-block, App.tsx `buildMenuSections` interlinear stub | LOCKED at S166 — chrome-strip toggle is the canonical interlinear surface; the per-word menu stub gets removed at §28 implementation per the §26 Vine's-deprecation pattern |
 | **DESIGN_LANGUAGE.md §29** — Bookmarks Index chrome-header button + global list surface | `DESIGN_LANGUAGE.md` §29 (~115 lines) | LANDED — four gates locked: Free tier, bottom-slide-up panel max-w-6xl, chronological newest-first, navigate-on-tap (edit lives in §22 per-verse path) |
+| **§29 IMPLEMENTATION shipped at S166** — full end-to-end (API + helpers + sanity + React + chrome button) | `api/main.py` (`GET /v1/bookmarks/index`) + `api/models.py` (`BookmarkIndexEntry`, `BookmarksIndexResponse`) + `app/src/lib/api.ts` (`listBookmarksIndex` client) + `app/src/lib/bookmarks-helpers.ts` (5 helpers) + `_s166_bookmarks_index_sanity.mjs` (34 cases, target ≥25) + `app/src/components/BookmarksIndex.tsx` (modal slide-up + list + navigate-on-tap) + `app/src/App.tsx` (state hook + chrome button left of Notes + render branch) | LANDED — tsc clean, sanity 34/34 passing. Pending: Yoshi-terminal commit + push + live walk on bible.remnantofpromise.org |
 | Modal family bump max-w-4xl → max-w-6xl (1152px desktop) | 9 components: LexiconSheet, StrongsLookup, VerseActionMenu, HighlightPicker, BookmarkSheet, RangeActionPicker, AudioPlayer, NotesPanel, SearchModal | LANDED — commit `17ba59e` on `main`, deployed via Render Static Site auto-build |
 | Word-tap regression diagnosis | Service-worker stale-cache identified; hard-refresh restored §20 + §27 + §26 tap layer | RESOLVED — partner-side workflow note for future deploys: hard-refresh required to invalidate cached chapter assets |
 | Close-discipline failure named | Sandbox session closing with staged-but-unpushed work is a discipline gap | LOCKED — push verification folded into every future close prompt |
@@ -41,18 +42,13 @@ Full §28 spec at `DESIGN_LANGUAGE.md` §28 lines 1512–1610.
 
 Chrome cluster grows from `[Notes] [Theme] [CTA]` to `[Bookmarks] [Notes] [Theme] [CTA]`. Bookmarks button glyph = `⚑` matching the §22 inline glyph. Full §29 spec at `DESIGN_LANGUAGE.md` §29.
 
-## S167 scope — two implementation tracks open
+## S167 scope — §28 interlinear implementation (Track A shipped at S166)
 
-§28 *Implementation deferred to future session* names six steps for the interlinear; §29 *Implementation deferred to future session* names four steps for the bookmarks-index. **Lower-effort sequencing recommendation: open with §29 first** (no source-fetch needed, no migration, schema impact = none, single new endpoint, single new component) — lands in roughly half a session. Then move to §28 source-fetch + sample-parse + loader for the rest of S167. Splitting two implementation surfaces across S167 + S168 risks neither finishing; landing §29 first means at least one ships cleanly even if §28 source-fetch eats more session than budgeted.
+§29 Bookmarks Index — formerly Track A on the S167 open — shipped end-to-end at S166 close. The seven §29 deliverables (Pydantic models, FastAPI endpoint, TypeScript API client, helper module, sanity tests, React component, chrome-header button + render wiring) are landed on Yoshi's disk, tsc-clean, sanity 34/34. **§29 remaining at S167 open is the Yoshi-terminal commit + push + live walk** — no implementation work left for the bookmarks index. See *Standing residuals* below for the push checklist.
 
-### Track A — §29 Bookmarks Index implementation (recommended S167 lead)
+S167 therefore opens with §28 interlinear implementation as the sole new implementation track.
 
-1. **API endpoint.** `GET /v1/bookmarks/index` — FastAPI route handler + asyncpg query joining `bookmarks → verses → books` + Pydantic response model. Sort by `created_at DESC`. Auth-required per §22 contract.
-2. **Helper module + sanity tests.** `app/src/lib/bookmarks-helpers.ts` — `formatBookmarkRow`, `formatSavedDateDisplay`, `groupBookmarksByBook` (reserved for v1.1+ toggle), `truncateVersePreview`, `compareBookmarksByDate`. `_sNN_bookmarks_index_sanity.mjs` — ≥25 sanity-test cases.
-3. **PWA component + chrome-header button + open-state hook.** `app/src/components/BookmarksIndex.tsx` (modal slide-up, list render, navigate-on-tap) + the `Bookmarks` chrome-header button in `App.tsx` to the left of the Notes button + `useBookmarksIndex` hook for open-state + cache.
-4. **Live walk verification.** bible.remnantofpromise.org — partner with existing bookmarks opens the Index sheet, sees chronological list with verse refs + previews + tags + color glyphs, taps a row, navigates to that verse with the inline-glyph visible.
-
-### Track B — §28 Interlinear implementation (S167 if context allows, otherwise S168)
+### Track B — §28 Interlinear implementation (S167 entry point)
 
 The §28 *Implementation deferred to future session* block names the six steps;
 S167 (or S168) is the future session. Sequence:
@@ -88,7 +84,7 @@ S167 (or S168) is the future session. Sequence:
 
 7. **Live walk verification.** bible.remnantofpromise.org. Companion-tier-test-partner sees the toggle live, taps it on, sees the interlinear layer render above John 1:1 (Greek) and Genesis 1:1 (Hebrew). Hard-refresh post-deploy per the S166 service-worker finding.
 
-Realistic estimate (combined Track A + Track B): S167 lands §29 Bookmarks Index end-to-end (Track A complete: API + helpers + sanity + React + live walk) plus §28 Track B steps 1–3 (source-fetch + sample-parse + loader). Track B steps 4–7 (helpers, React, API extension, live walk) fall to S168. If Track A surprises us with depth (verse-text-join query optimization, optimistic-UI subtleties), §28 source-fetch may slip to S168 entirely; that's acceptable — §29 has higher partner-perceptible value-per-effort and shipping it cleanly is the right priority over splitting §28 across two sessions.
+Realistic estimate: with §29 already shipped at S166, S167 has the full session to land §28 source-fetch + sample-parse + loader (steps 1–3) + helpers + sanity tests (step 4). PWA component + API extension + live walk (steps 5–7) fall to S168.
 
 ## Standing residuals — carried from S166
 
@@ -117,14 +113,20 @@ Realistic estimate (combined Track A + Track B): S167 lands §29 Bookmarks Index
   git push
   ```
 
-- **§28 spec push.** The DESIGN_LANGUAGE.md edit is on disk but not yet committed. Stage with the hygiene commit or separately, your call. If separately:
+- **§29 implementation push** (lands at S166 close; needs Yoshi-terminal commit + push to deploy):
 
   ```bash
   cd ~/Desktop/App
-  git add DESIGN_LANGUAGE.md
-  git commit -m "DESIGN_LANGUAGE.md §28 — Hebrew & Greek interlinear surface spec (locked S166, Phase 9.2, Companion tier)"
+  git add api/main.py api/models.py \
+          app/src/App.tsx app/src/lib/api.ts \
+          app/src/lib/bookmarks-helpers.ts \
+          app/src/components/BookmarksIndex.tsx \
+          _s166_bookmarks_index_sanity.mjs
+  git commit -m "S166 — §29 Bookmarks Index implementation: GET /v1/bookmarks/index + helpers + sanity (34/34) + BookmarksIndex.tsx + chrome button"
   git push
   ```
+
+  Render Static Site auto-deploys the PWA; the API service rebuilds on the same push and picks up the new endpoint. Hard-refresh post-deploy per the S166 service-worker rule. Live walk: open ⚑ Bookmarks chrome button → see chronological list of every bookmark → tap a row → navigate to the verse → inline-glyph visible.
 
 - **9 long-tail singleton verses from S161 Group B** (malachi 4:4, matthew 5:33, mark 10:15, philippians 2:2, john 21:7, romans 1:13, ephesians 2:5, hebrews 11:37, revelation 1:10). Unchanged from S163/S164/S165.
 

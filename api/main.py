@@ -111,6 +111,8 @@ from models import (
     BookChaptersResponse,
     BookDetail,
     Bookmark,
+    BookmarkIndexEntry,
+    BookmarksIndexResponse,
     BookSummary,
     ChapterBookmarksResponse,
     ChapterCommentaryEntry,
@@ -1430,6 +1432,72 @@ async def delete_bookmark(
             user_uuid,
         )
     return Response(status_code=204)
+
+
+# ----- Bookmarks Index (Session 166 — DESIGN_LANGUAGE.md §29) -------------
+#
+# Per DESIGN_LANGUAGE.md §29 (locked S166): partner's global bookmarks list
+# surface. The existing per-chapter GET /v1/bookmarks is the inline-glyph
+# hot path; this new endpoint serves the BookmarksIndex sheet that opens
+# from the chrome-header `Bookmarks` button and shows every bookmark
+# across the canon, joined with verse + book metadata, sorted newest-first.
+#
+# Auth-required, Free-tier (no tier gate per §29 Gate #1; matches §22).
+#
+# Schema impact: none. The bookmarks table covers all needed columns;
+# this endpoint adds the verses + chapters + books join + canon edition
+# filter on the read side only.
+
+
+@app.get("/v1/bookmarks/index", response_model=BookmarksIndexResponse)
+async def list_bookmarks_index(
+    current_user: User = Depends(get_current_user_required),
+) -> BookmarksIndexResponse:
+    """Return every bookmark the requesting partner has across the canon,
+    joined with book + chapter + verse metadata, sorted by created_at
+    DESC (newest-first per §29 Gate #3).
+
+    No query params. The PWA fetches the full set on Index-sheet open;
+    pagination, filtering, and grouping are v1.1+ candidates per §29's
+    deliberate non-prescription block.
+
+    Edition scope = canon only (mirrors GET /v1/bookmarks?…). The bookmarks
+    table has no edition column itself but verses.chapter_id → chapters →
+    books → editions chain carries it. Extras-tier books that share the
+    bookmarks table architecturally don't have bookmarks at V1 (the §22
+    inline-glyph + create surface scopes to canon only).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+
+        rows = await conn.fetch(
+            "SELECT bm.id::text AS id, "
+            "       bm.verse_id, "
+            "       b.slug         AS book_slug, "
+            "       b.title        AS book_title, "
+            "       c.chapter_number, "
+            "       v.verse_number, "
+            "       v.text         AS verse_text, "
+            "       bm.short_description, "
+            "       bm.tags, "
+            "       bm.color_tint, "
+            "       bm.created_at, "
+            "       bm.updated_at "
+            "  FROM bookmarks bm "
+            "  JOIN verses    v  ON bm.verse_id    = v.id "
+            "  JOIN chapters  c  ON v.chapter_id   = c.id "
+            "  JOIN books     b  ON c.book_id      = b.id "
+            "  JOIN editions  e  ON b.edition_id   = e.id "
+            " WHERE bm.user_id = $1::uuid "
+            "   AND e.slug = 'canon' "
+            " ORDER BY bm.created_at DESC, bm.id DESC",
+            user_uuid,
+        )
+
+    return BookmarksIndexResponse(
+        bookmarks=[BookmarkIndexEntry(**dict(r)) for r in rows]
+    )
 
 
 # ----- Notes V1 (Session 124 — Wheel 5) -----------------------------------

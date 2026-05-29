@@ -48,6 +48,7 @@ import {
 } from "./lib/share-card-render";
 import BookmarkSheet from "./components/BookmarkSheet";
 import NotesPanel, { type PendingAnchor } from "./components/NotesPanel";
+import BookmarksIndex from "./components/BookmarksIndex";
 import SearchModal from "./components/SearchModal";
 import AudioPlayer from "./components/AudioPlayer";
 import { getTTSEngine, type TTSVoice } from "./lib/tts";
@@ -434,6 +435,14 @@ function Reader() {
   const [notesOpen, setNotesOpen] = useState<boolean>(false);
   const [pendingNoteAnchor, setPendingNoteAnchor] =
     useState<PendingAnchor | null>(null);
+
+  // S166 — §29 Bookmarks Index state. Single boolean drives the
+  // BookmarksIndex render branch. The component owns its own fetch +
+  // cache (each open is a fresh fetch per §29 *Persistence*); App just
+  // toggles visibility and supplies the navigate callback. Per §29 Gate
+  // #1 = Free tier; the chrome button below renders for every signed-in
+  // partner without a tier-locked chip.
+  const [bookmarksIndexOpen, setBookmarksIndexOpen] = useState<boolean>(false);
 
   // S125 W6 — Search V1 UI state per DESIGN_LANGUAGE.md §23. Single
   // boolean drives the SearchModal render branch; the modal owns its
@@ -1626,12 +1635,31 @@ function Reader() {
               <span aria-hidden="true">⌕</span>
               <span>Search</span>
             </button>
+            {/* S166 — §29 chrome Bookmarks button. Opens the
+                BookmarksIndex sheet (global list of every bookmark
+                across the canon, newest-first). Per §29, the chrome
+                cluster becomes [Bookmarks][Notes][Theme][Subscription
+                CTA] — Bookmarks left of Notes by partner-content-
+                surface clustering. Same bordered-chrome button family
+                per §1. ⚑ glyph matches the §22 inline-bookmark glyph
+                for visual continuity. Free-tier; no tier-locked chip. */}
+            <button
+              type="button"
+              onClick={() => setBookmarksIndexOpen(true)}
+              aria-label="Open bookmarks"
+              title="Open bookmarks"
+              className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+            >
+              <span aria-hidden="true">⚑</span>
+              <span>Bookmarks</span>
+            </button>
             {/* S124 W5 — chrome Notes button. Opens the NotesPanel
                 without an anchor (free-form path) so partners can
                 read existing notes or add free-form entries without
                 anchoring to a specific verse. Per §22, the chrome
                 cluster becomes [Notes][Theme][Subscription CTA] —
-                same bordered-chrome button family per §1. */}
+                same bordered-chrome button family per §1. S166: now
+                sits right of the new §29 Bookmarks button. */}
             <button
               type="button"
               onClick={openNotesPanel}
@@ -2623,6 +2651,20 @@ function Reader() {
           pendingAnchor={pendingNoteAnchor}
           onSaved={handleNoteSaved}
           onClose={closeNotesPanel}
+        />
+      )}
+
+      {/*
+        S166 — §29 BookmarksIndex. Opens via the chrome Bookmarks button.
+        Component owns its own fetch + cache; App provides the navigate
+        callback (jumpToVerseRef) and the close callback. Tapping a row
+        closes the sheet AND jumps to the verse — chapter loads if not
+        currently active, scrolls to the verse, inline-glyph renders.
+      */}
+      {bookmarksIndexOpen && (
+        <BookmarksIndex
+          onNavigate={jumpToVerseRef}
+          onClose={() => setBookmarksIndexOpen(false)}
         />
       )}
 

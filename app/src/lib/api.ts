@@ -893,6 +893,39 @@ export function deleteBookmark(bookmarkId: string): Promise<void> {
   return del(`/bookmarks/${encodeURIComponent(bookmarkId)}`);
 }
 
+// ----- Bookmarks Index (Session 166 — DESIGN_LANGUAGE.md §29) -------------
+//
+// Per DESIGN_LANGUAGE.md §29 (locked S166): partner's global bookmarks list.
+// One read endpoint, auth-required, Free-tier (no paywall). Returns every
+// bookmark across the canon joined with book + chapter + verse metadata,
+// sorted by created_at DESC. The BookmarksIndex sheet renders the response
+// in a flat scrollable list with navigate-on-tap rows.
+
+export interface BookmarkIndexEntry {
+  id: string;
+  verse_id: number;
+  book_slug: string;
+  book_title: string;
+  chapter_number: number;
+  verse_number: number;
+  verse_text: string;
+  short_description: string | null;
+  tags: string[] | null;
+  color_tint: BookmarkColorTint | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface BookmarksIndexResponse {
+  bookmarks: BookmarkIndexEntry[];
+}
+
+/** List every bookmark the requesting partner has across the canon,
+ *  joined with book + chapter + verse metadata, sorted newest-first. */
+export function listBookmarksIndex(): Promise<BookmarksIndexResponse> {
+  return get<BookmarksIndexResponse>("/bookmarks/index");
+}
+
 // ----- Notes V1 (Session 124 — Wheel 5) -----------------------------------
 //
 // Per DESIGN_LANGUAGE.md §22 (locked S124): single global notepad for the
