@@ -71,14 +71,22 @@ import asyncpg
 #   - G1410 'he can'   → already 'he cannot' in DB
 # Only the Tseva'ot 'of hosts' case remains unfixed — and the original
 # rule had a typo (G6635 → H6635; Hebrew, not Greek). Fixing that here.
-REMAP_RULES: list[tuple[str, str, str]] = [
+# (strong, source, target, force_update). force_update=True bypasses
+# the "kept if source still in display" verify gate — needed for the
+# paren-cluster cases where the source string IS still present in the
+# verse text (inside the parenthetical we want the alignment to parse
+# word-by-word), but we still need the surface to be the bare cluster
+# word so the alignment can fire.
+REMAP_RULES: list[tuple[str, str, str, bool]] = [
     # Yahuah Tseva'ot (LORD of hosts) — Hebrew Strong's H6635. The
     # cluster's parenContents-vs-surface match needs surface 'hosts'
     # to match paren content 'hosts'; the leading 'of ' in the USFX
     # multi-word surface breaks the comparison. After update both
     # Hebrew tokens (Yahuah → LORD H3068, Tseva'ot → hosts H6635)
-    # align correctly with their semantic Strong's numbers.
-    ("H6635", "of hosts", "hosts"),
+    # align correctly with their semantic Strong's numbers. force=True
+    # because 'of hosts' IS still in the display (inside the paren)
+    # but we still want to update.
+    ("H6635", "of hosts", "hosts", True),
 ]
 
 
@@ -140,7 +148,7 @@ async def main() -> int:
 
         all_updates: list[tuple[int, str]] = []
 
-        for strong, src_surface, tgt_surface in REMAP_RULES:
+        for strong, src_surface, tgt_surface, force_update in REMAP_RULES:
             rows = await conn.fetch(
                 """
                 SELECT vw.id     AS vw_id,
@@ -165,7 +173,7 @@ async def main() -> int:
             kept = 0
             for r in rows:
                 verse_text = r["verse_text"] or ""
-                if whole_word_present(src_surface, verse_text):
+                if not force_update and whole_word_present(src_surface, verse_text):
                     # The original surface is still in the display
                     # (the Sacred Names override didn't fire here) —
                     # leave it alone.
