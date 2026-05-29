@@ -1,176 +1,68 @@
-S167 — Phase 9.2 (Hebrew-Greek interlinear) implementation opens + §29 Bookmarks Index implementation queued
+S167 — Phase 9.2 (Hebrew-Greek interlinear) implementation
 
-# S166 close summary — §28 interlinear spec + §29 bookmarks-index spec LANDED, modal max-w-6xl LIVE, §28 menu-stub deprecation locked
+# S166 close — what shipped
 
-Phase 9.2 spec-then-build wheel opens for implementation at S167. S166 lands
-two specs (§28 interlinear, §29 bookmarks-index) plus locks the §28-related
-§20 menu-stub deprecation. S167 opens the implementation against both. Pre-9.2
-cleanup also landed at S166: the §27/§26 modal family got one more
-partner-perceptible width bump after Yoshi's read of the §26 LexiconSheet on
-production.
+- **DESIGN_LANGUAGE.md §28** — Hebrew & Greek interlinear surface spec. Four gates locked: Companion tier, above-verse English-aligned column, abbreviated-English morph register with hold-expansion, metallic-argaman chrome parity with §27. **§20 menu-stub deprecation locked A** — the per-word `Hebrew/Greek interlinear` stub gets removed when §28 ships (chrome-strip toggle covers the case, same pattern as §26 Vine's deprecation).
+- **DESIGN_LANGUAGE.md §29** — Bookmarks Index spec. Free tier, bottom slide-up panel max-w-6xl, chronological newest-first, navigate-on-tap.
+- **§29 implementation shipped end-to-end** — `GET /v1/bookmarks/index` endpoint + Pydantic models + TypeScript client + 5 helpers + 34/34 sanity tests + `BookmarksIndex.tsx` + chrome `⚑ Bookmarks` button left of Notes. tsc clean. Live on `e99475c` post-deploy.
+- Modal family max-w-6xl pushed earlier (`17ba59e`). Word-tap regression diagnosed (PWA service-worker stale-cache; hard-refresh restores).
 
-## S166 deliverables — what shipped at session close
+# S167 builds — §28 interlinear implementation
 
-| Deliverable | Location | Status |
-|---|---|---|
-| **DESIGN_LANGUAGE.md §28** — Hebrew & Greek interlinear surface spec | `DESIGN_LANGUAGE.md` §28 (~100 lines) | LANDED — four gates locked: Companion tier, above-verse English-aligned column, abbreviated-English morph register with hold-expansion, metallic-argaman chrome parity with §27 |
-| **§28 §20 menu-stub deprecation locked** | DESIGN_LANGUAGE.md §28 sub-block, App.tsx `buildMenuSections` interlinear stub | LOCKED at S166 — chrome-strip toggle is the canonical interlinear surface; the per-word menu stub gets removed at §28 implementation per the §26 Vine's-deprecation pattern |
-| **DESIGN_LANGUAGE.md §29** — Bookmarks Index chrome-header button + global list surface | `DESIGN_LANGUAGE.md` §29 (~115 lines) | LANDED — four gates locked: Free tier, bottom-slide-up panel max-w-6xl, chronological newest-first, navigate-on-tap (edit lives in §22 per-verse path) |
-| **§29 IMPLEMENTATION shipped at S166** — full end-to-end (API + helpers + sanity + React + chrome button) | `api/main.py` (`GET /v1/bookmarks/index`) + `api/models.py` (`BookmarkIndexEntry`, `BookmarksIndexResponse`) + `app/src/lib/api.ts` (`listBookmarksIndex` client) + `app/src/lib/bookmarks-helpers.ts` (5 helpers) + `_s166_bookmarks_index_sanity.mjs` (34 cases, target ≥25) + `app/src/components/BookmarksIndex.tsx` (modal slide-up + list + navigate-on-tap) + `app/src/App.tsx` (state hook + chrome button left of Notes + render branch) | LANDED — tsc clean, sanity 34/34 passing. Pending: Yoshi-terminal commit + push + live walk on bible.remnantofpromise.org |
-| Modal family bump max-w-4xl → max-w-6xl (1152px desktop) | 9 components: LexiconSheet, StrongsLookup, VerseActionMenu, HighlightPicker, BookmarkSheet, RangeActionPicker, AudioPlayer, NotesPanel, SearchModal | LANDED — commit `17ba59e` on `main`, deployed via Render Static Site auto-build |
-| Word-tap regression diagnosis | Service-worker stale-cache identified; hard-refresh restored §20 + §27 + §26 tap layer | RESOLVED — partner-side workflow note for future deploys: hard-refresh required to invalidate cached chapter assets |
-| Close-discipline failure named | Sandbox session closing with staged-but-unpushed work is a discipline gap | LOCKED — push verification folded into every future close prompt |
+Six steps from §28 *Implementation deferred to future session*:
 
-## §28 interlinear — the four load-bearing gates locked at S166
-
-1. **Tier gate = Companion+.** Aligns with §20 *Locked stub catalog* which has carried `Hebrew/Greek interlinear` at Library/Companion since S122. Morph + lemma + transliteration + gloss data is also server-side tier-gated in the chapter-words endpoint payload.
-
-2. **Display = above-verse stacked column, English-aligned word order.** Top-to-bottom row order in each column: lemma → transliteration → morphology (abbreviated) → gloss → English surface word. Hebrew lemmas render RTL within their cell (SBL Hebrew font) but column-to-column order follows English flow. The come-and-see posture rules out the RTL-mirror-reading credentialing register.
-
-3. **Morphology register = abbreviated English (`aor. act. ind. 3s` / `qal pf. 3ms`), full-expansion on tap-and-hold.** Robinson/STEPBible coded register (`V-AAI-3S`) is Pharisee-scholar credential display; the framework-consistent register is plain English abbreviation visible without a key, with the depth one gesture away.
-
-4. **Toggle architecture = chapter chrome strip + Settings, parity with §27.** Same metallic-argaman pill family. Companion-badge chip distinguishes from §27 (Free). Default OFF, localStorage persistence under `reader-prefs.interlinear`.
-
-Full §28 spec at `DESIGN_LANGUAGE.md` §28 lines 1512–1610.
-
-## §29 Bookmarks Index — the four load-bearing gates locked at S166
-
-1. **Tier gate = Free.** Matches §22 bookmark surface — bookmarks are Free-tier per §9; the Index over already-Free data stays Free.
-2. **Surface = bottom slide-up panel, bordered-chrome modal family.** Same modal register as NotesPanel, `max-w-6xl` width per S166 modal family bump, `max-h-[70vh]` mobile cap, body scrolls, no pinned input footer.
-3. **List order = chronological newest-first.** Group-by-book + filter chrome defer to v1.1+ if partner-feedback flags demand.
-4. **Per-row affordance = navigate-on-tap; edit/delete via the existing §22 per-verse path.** Single-purpose Index: read + navigate. Inflating with per-row edit chrome rejected.
-
-Chrome cluster grows from `[Notes] [Theme] [CTA]` to `[Bookmarks] [Notes] [Theme] [CTA]`. Bookmarks button glyph = `⚑` matching the §22 inline glyph. Full §29 spec at `DESIGN_LANGUAGE.md` §29.
-
-## S167 scope — §28 interlinear implementation (Track A shipped at S166)
-
-§29 Bookmarks Index — formerly Track A on the S167 open — shipped end-to-end at S166 close. The seven §29 deliverables (Pydantic models, FastAPI endpoint, TypeScript API client, helper module, sanity tests, React component, chrome-header button + render wiring) are landed on Yoshi's disk, tsc-clean, sanity 34/34. **§29 remaining at S167 open is the Yoshi-terminal commit + push + live walk** — no implementation work left for the bookmarks index. See *Standing residuals* below for the push checklist.
-
-S167 therefore opens with §28 interlinear implementation as the sole new implementation track.
-
-### Track B — §28 Interlinear implementation (S167 entry point)
-
-The §28 *Implementation deferred to future session* block names the six steps;
-S167 (or S168) is the future session. Sequence:
-
-1. **Source fetch (Yoshi-terminal).** STEPBible TAGNT (Greek NT morph-tagged) + TAHOT (Hebrew/Aramaic OT morph-tagged) are not in the existing `source-texts/stepbible-data/` sparse-checkout (which only carries Lexicons/). Sandbox can't extend the clone — 45s timeout vs ~500MB repo, raw.githubusercontent.com blocked by allowlist. From your terminal:
+1. **Source fetch (Yoshi-terminal).** STEPBible TAGNT + TAHOT — sandbox can't clone, repo too big for 45s timeout.
 
    ```bash
-   cd ~/Desktop/App/source-texts/
-   # Re-clone in /tmp to avoid the .git/config.lock filesystem-permission issue
-   # S159 hit on host-mounted source-texts/ — same workaround applies.
    rm -rf /tmp/stepbible-extend
    git clone --depth 1 --filter=blob:none --sparse https://github.com/STEPBible/STEPBible-Data.git /tmp/stepbible-extend
    cd /tmp/stepbible-extend
    git sparse-checkout set "Translators Amalgamated OT+NT"
    git rev-parse HEAD  # → record in SOURCE_TEXT_INVENTORY.md §VIII
-   # Copy the new directory into the existing host-mounted clone
    cp -R "Translators Amalgamated OT+NT" ~/Desktop/App/source-texts/stepbible-data/
-   ls ~/Desktop/App/source-texts/stepbible-data/
-   # → Lexicons/ + Translators Amalgamated OT+NT/
    ```
 
-   If the actual directory name in the repo turns out to differ from `Translators Amalgamated OT+NT` (possible — the repo evolves), the sparse-checkout will land empty. Fallback: `git sparse-checkout list` and `git ls-tree --name-only HEAD` to find the right directory name, then re-set sparse-checkout. The repo's README and Wiki document the current bundle names; STEPBible has been consistent with the `Translators ...` naming pattern since 2018, so the path above is the most likely match.
+   If `Translators Amalgamated OT+NT` is the wrong dir name, `git ls-tree --name-only HEAD` to find the right one.
 
-2. **Sample-parse to confirm join keys.** Read a few rows from the TAGNT and TAHOT files; confirm per-verse (verse_id-mappable via book.chapter.verse) + per-word (position-mappable) morph tags. Confirm Strong's-number alignment with the existing `strong_entries` table. The S159 pattern was inline sample-render scripts (`_session160_bdb_sample_render.py`); same pattern for TAGNT/TAHOT verification.
+2. **Sample-parse** — read a few rows from TAGNT/TAHOT, confirm per-verse + per-word join keys against `verse_words`.
+3. **Loader** — `restoration-pipeline/_session167_load_verse_words_morph.py` populates `verse_words.morphology` from TAGNT/TAHOT. No ALTER (column exists). Emits SQL for prod apply.
+4. **Helpers + sanity** — `app/src/lib/interlinear-helpers.ts` (5 functions per §28) + `_s167_interlinear_sanity.mjs` (≥30 cases).
+5. **PWA component** — `InterlinearLayer.tsx` + chapter chrome-strip toggle + Settings entry + SBL Hebrew / SBL BibLit font preload. Also: remove the §20 interlinear menu stub per the §28 deprecation lock.
+6. **API extension** — `GET /v1/books/:slug/chapters/:n/words` tier-gated payload: morph + lemma + transliteration + gloss populated for Companion+, null otherwise.
+7. **Live walk** — bible.remnantofpromise.org, Companion-tier test partner.
 
-3. **Loader script.** `restoration-pipeline/_session167_load_verse_words_morph.py` (or whatever session number lands the implementation). Populates `verse_words.morphology` from the per-word morph tags. ALTER TABLE not required — column already exists. Coverage target: 100% of canonical OT + NT. Emits a SQL file for the prod apply.
+Realistic estimate: S167 lands steps 1–4 (source-fetch + sample-parse + loader + helpers/sanity). Steps 5–7 (React + API + walk) → S168.
 
-4. **Helper module + sanity tests.** `app/src/lib/interlinear-helpers.ts` — five pure functions per the §28 spec (`formatMorphology`, `selectInterlinearFontStack`, `wrapHebrewBidi`, `buildInterlinearColumn`, `groupVerseColumns`). `_s167_interlinear_sanity.mjs` — ≥30 sanity-test cases per the forward standard.
+# Standing residuals
 
-5. **PWA component + toggle hook + chrome-strip button + Settings entry.** `app/src/components/InterlinearLayer.tsx` + `app/src/lib/useInterlinearToggle.ts` + chapter chrome-strip button in `App.tsx` next to the §27 *Strong's* button + Settings → Reader preferences entry. Argaman pill chrome with Companion-badge chip for below-Companion partners. SBL Hebrew + SBL BibLit font preload behind Companion-tier JWT.
+- **9 long-tail S161 Group B singletons** (malachi 4:4, matthew 5:33, mark 10:15, philippians 2:2, john 21:7, romans 1:13, ephesians 2:5, hebrews 11:37, revelation 1:10) — restoration-pipeline work, not in §28 scope.
+- **Yahuah → Adonai vocatives addressing Yahusha** — restoration-pipeline pass.
+- **v1.1+ candidates**: apocrypha book-slug map, Gesenius source investigation, Thayer's 1889 if a clean dump surfaces, system-wide Library→Companion lockedTier Literal rename.
 
-6. **API extension.** `GET /v1/books/:slug/chapters/:n/words` extended to render tier-gated payload: morphology + lemma + transliteration + gloss populated when JWT tier is Companion+, null otherwise. Pattern parity with §26's tier-gated lexicon endpoint.
+# Open Yoshi-questions
 
-7. **Live walk verification.** bible.remnantofpromise.org. Companion-tier-test-partner sees the toggle live, taps it on, sees the interlinear layer render above John 1:1 (Greek) and Genesis 1:1 (Hebrew). Hard-refresh post-deploy per the S166 service-worker finding.
+1. **§28 spec redlines** before implementation locks code:
+   - Hebrew word order = English-flow (locked). Native RTL is the other defensible call — cheaper to revisit at spec stage than post-implementation.
+   - Morphology register = abbreviated + hold-expansion (locked). Could go fully-written-by-default if desktop column space allows.
+   - Tier = Companion (locked). Free-tier-for-visibility is defensible too.
 
-Realistic estimate: with §29 already shipped at S166, S167 has the full session to land §28 source-fetch + sample-parse + loader (steps 1–3) + helpers + sanity tests (step 4). PWA component + API extension + live walk (steps 5–7) fall to S168.
+2. **§29 first-walk check** — once Render rebuilds, hard-refresh the live site and tap the ⚑ Bookmarks chrome button. Confirm: list renders chronological, tap-row navigates to the verse, inline-glyph visible post-nav, empty-state copy on a fresh partner. Redlines flow into S167 fast-follow.
 
-## Standing residuals — carried from S166
+3. **S167 scope ceiling** — full Track B push (steps 1–7) or land 1–4 and let 5–7 fall to S168? Per publish-then-edit, splitting is fine; per no-conservative-early-wraps, push at least to the helpers.
 
-- **7 untracked files in the repo.** From S162/S165 sessions, not yet committed:
-  - `S162_SESSION_OPEN_PROMPT.md`
-  - `S166_SESSION_OPEN_PROMPT.md`
-  - `data-schema/migrations/session162_lexicon_callouts_v1.sql`
-  - `data-schema/migrations/session162_lexicon_tables.sql`
-  - `restoration-pipeline/_session161b_modernize_context_dependent.py`
-  - `restoration-pipeline/_session162_assemble_lexicon_callouts_v1.py`
-  - `restoration-pipeline/_session162_luke_1_41_ghost_fix.py`
+# Standing efficiency rules (carried)
 
-  Per *Render artifacts persist* (outputs/ + data-schema/migrations/ commit via the .gitignore exception, restoration-pipeline scripts as session artifacts), these should be in the repo. Hygiene commit pending. Recommend at S167 open before any new file lands: separate hygiene commit so the §28 implementation files commit cleanly without scope-mixing.
-
-  ```bash
-  cd ~/Desktop/App
-  git add S162_SESSION_OPEN_PROMPT.md \
-          S166_SESSION_OPEN_PROMPT.md \
-          S167_SESSION_OPEN_PROMPT.md \
-          data-schema/migrations/session162_lexicon_callouts_v1.sql \
-          data-schema/migrations/session162_lexicon_tables.sql \
-          restoration-pipeline/_session161b_modernize_context_dependent.py \
-          restoration-pipeline/_session162_assemble_lexicon_callouts_v1.py \
-          restoration-pipeline/_session162_luke_1_41_ghost_fix.py
-  git commit -m "S166 hygiene — track prior-session artifacts (S162 lexicon migrations + pipeline scripts + session open prompts)"
-  git push
-  ```
-
-- **§29 implementation push** (lands at S166 close; needs Yoshi-terminal commit + push to deploy):
-
-  ```bash
-  cd ~/Desktop/App
-  git add api/main.py api/models.py \
-          app/src/App.tsx app/src/lib/api.ts \
-          app/src/lib/bookmarks-helpers.ts \
-          app/src/components/BookmarksIndex.tsx \
-          _s166_bookmarks_index_sanity.mjs
-  git commit -m "S166 — §29 Bookmarks Index implementation: GET /v1/bookmarks/index + helpers + sanity (34/34) + BookmarksIndex.tsx + chrome button"
-  git push
-  ```
-
-  Render Static Site auto-deploys the PWA; the API service rebuilds on the same push and picks up the new endpoint. Hard-refresh post-deploy per the S166 service-worker rule. Live walk: open ⚑ Bookmarks chrome button → see chronological list of every bookmark → tap a row → navigate to the verse → inline-glyph visible.
-
-- **9 long-tail singleton verses from S161 Group B** (malachi 4:4, matthew 5:33, mark 10:15, philippians 2:2, john 21:7, romans 1:13, ephesians 2:5, hebrews 11:37, revelation 1:10). Unchanged from S163/S164/S165.
-
-- **Yahuah → Adonai for vocatives addressing Yahusha.** Restoration-pipeline pass; not lexicon work and not interlinear work.
-
-- **v1.1+ wheel candidates** carried from S165: apocrypha book-slug map extension, Gesenius source investigation, Thayer's 1889 alternate Greek lexicon if a clean Strong's-aligned dump surfaces, system-wide Library → Companion tier-label rename in MenuItem.lockedTier Literal.
-
-## Open Yoshi-questions at S167 open
-
-1. **§28 spec redlines.** S166 closed without redline pass — Yoshi said *lets go* on the draft. Are there partner-perceptible decisions in the four locked gates or the *Defaultable surface* / *What §28 deliberately does NOT prescribe* sections that want a second look before implementation locks them in code? Specific places where my judgment was the lock and you may want to revisit (carried from S166 close):
-   - **Hebrew word-order = English-flow.** Locked against traditional RTL-Hebrew-interlinear. If you want partners to read Hebrew in its native right-to-left direction (closer to what a Yashar'eli's reading discipline would carry), that's the other defensible call — and would be cheaper to land at spec-stage than post-implementation.
-   - **Morphology register = abbreviated, full on hold.** Could go further toward fully-written-by-default if column space allows on desktop.
-   - **Tier gate = Companion.** Held per stub-catalog precedent. The §27-style Free-tier-for-visibility argument exists; the data lift (morph + per-word join + font preload) is heavier than §27's pure-frontend layer, which is why I held Companion.
-
-2. **Hygiene-commit ordering.** Fold the 7 untracked files + the §28 spec into one commit, or run them as two separate commits (hygiene first, spec second)? S166 recommendation was two, but one's faster and the spec is its own clean unit so either reads sensibly in `git log`.
-
-3. **S167 scope ceiling.** Recommended sequence (revised at S166 close after §29 lands): open §29 first (lower-effort, no source-fetch), then push §28 source-fetch + sample-parse + loader. Per the publish-then-edit rule we don't need to ship the whole interlinear at S167; per the no-conservative-early-wraps rule we should land §29 cleanly AND push §28 to the loader at minimum.
-
-4. **§29 row affordance redlines.** Locked at S166: navigate-on-tap only, edit/delete via the §22 per-verse path. The other defensible call would surface a small kebab menu per row with quick edit/delete/color-change. If partner-feedback at first live walk suggests the navigate-then-edit double-hop is friction, kebab-menu lands as a fast follow. Lock for V1 is the simple version.
-
-5. **Bookmarks chrome-button position.** Locked left of Notes — `[Bookmarks] [Notes] [Theme] [CTA]`. Alphabetical + partner-content-surface clustering. The other call would put Bookmarks right of Notes; both defensible, locked left for read-order naturalness.
-
-## Standing efficiency rules (carried — no change)
-
-- Voice-gate batch pattern for any authored-content batch
-- Parallel-subagent pattern for fresh-context drafting with framework-deep references mounted
+- Voice-gate batch pattern for authored content
 - Local files first before web-fetch
-- Self-sufficient application of skill + source — implementation choices that don't materially affect partner-perceived surface land without per-line approval
-- Sandbox-git limitation — code lands in the sandbox; commits + applies Render dashboard changes run from Yoshi's terminal (S166 hit this when source-fetch timed out)
-- Spec-then-build — architecture refinements land in the spec docs before the corresponding code (§28 landed at S166; implementation opens at S167)
-- Verbal-answers-transcribe — settled decisions get written into the next session's open prompt before close (this file IS the transcription)
-- Render artifacts persist — outputs/ and data-schema/migrations/ files commit via the .gitignore exception
-- Render Postgres IP allowlist — add IP when network changes
-- Publish-then-edit — ship V1 when the foundation is right, find errors in subsequent passes, fix and republish
-- **NEW S166** — Service-worker stale-cache verification at every PWA deploy. Hard-refresh (Cmd-Opt-R on desktop, or Private Window) is the diagnostic when a deploy "doesn't appear to land." Fold into every post-deploy walk.
-- **NEW S166** — Push verification at every session close. Sandbox closing with staged-but-unpushed work is a discipline failure. Every close prompt names: what's pushed, what's committed-not-yet-pushed, what's edited-not-yet-committed.
+- Self-sufficient application of skill + source
+- Sandbox-git limitation — commits + Render dashboard changes run from Yoshi's terminal
+- Spec-then-build
+- Verbal-answers-transcribe to the file before close
+- Render artifacts persist
+- Publish-then-edit
+- **S166 — Service-worker hard-refresh verification at every PWA deploy**
+- **S166 — Push verification at every session close (named: pushed / committed-not-pushed / edited-not-committed)**
 
-## S166 status
+# S166 status
 
-§28 spec LANDED in DESIGN_LANGUAGE.md (lines 1512–1610). Modal max-w-6xl bump
-LIVE on production (commit `17ba59e`). Word-tap regression diagnosed and
-restored. S167 opens against this state with the source-fetch handoff at the
-top of its scope.
-
-Realistic estimate for S167: source-fetch (Yoshi-terminal) → sample-parse →
-loader skeleton lands; helpers + sanity tests likely also fit. React component
-+ API extension + live walk fall to S168 unless context budget surprises us.
+§28 spec + §29 spec + §29 implementation all LIVE on `e99475c`. S167 opens against this state with §28 interlinear implementation as the sole new track.
