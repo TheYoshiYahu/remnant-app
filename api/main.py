@@ -131,6 +131,9 @@ from models import (
     HighlightColor,
     HighlightLabel,
     HighlightLabelsResponse,
+    LexiconCallout,
+    LexiconEntry,
+    LexiconResponse,
     MarkStyle,
     NoteEntry,
     NotesResponse,
@@ -2198,6 +2201,204 @@ async def get_strong_occurrences(
             )
             for r in rows
         ],
+    )
+
+
+# ----- Phase 9.3 lexicon (S163) -------------------------------------------
+#
+# §26-spec'd combined endpoint: per S163 Q3 decision (locked at session open),
+# a single GET /v1/lexicon/{strong_number} returns { entries, callout,
+# available_sources }. The two-endpoint pattern named in the S158 skeleton
+# (separate body + callout routes) is superseded by this combined shape;
+# single round-trip from the PWA per word-tap, cleaner client code in
+# LexiconSheet.
+#
+# Tier gate: Companion+ (content_tier 'complete_study' or higher). Server-
+# side check per S163 Q4 decision — direct API calls can't bypass the
+# gate. PWA still gates render for UX.
+#
+# Kill-switch: settings.lexicon_enabled. False → 404. Flipped to True
+# from Render dashboard after the staging-walk verification.
+#
+# Cache-Control: public, max-age=86400 (1 day). Lexicons are public-domain
+# reference data; framework callouts are author-reviewed and change
+# rarely. Aggressive caching reduces DB load.
+
+LEXICON_DISCLAIMERS: dict[str, str] = {
+    "bdb": (
+        "The lexicon below is BDB (Brown-Driver-Briggs, 1906) — a 19th-"
+        "century Christian-era Hebrew scholarship work, preserved as data "
+        "so you can see how the inherited tradition handled the word. The "
+        "framework's reading lives in the verse commentary and in the "
+        "framework callouts below; where the lexicon and the framework "
+        "diverge, the framework is the standard."
+    ),
+    "lsj": (
+        "The lexicon below is LSJ (Liddell-Scott-Jones, 1940 — Tyndale-"
+        "edited from the 9th edition), with Abbott-Smith's Manual Greek "
+        "Lexicon of the New Testament (1922) filling in NT-only "
+        "vocabulary where LSJ has no entry. Preserved as data so you can "
+        "see how the inherited 19th–20th-century classical-philological "
+        "and NT-Greek scholarship handled the word. The framework's "
+        "reading lives in the verse commentary and in the framework "
+        "callouts below; where the lexicon and the framework diverge, "
+        "the framework is the standard."
+    ),
+    "gesenius": (
+        "The lexicon below is Gesenius (Tregelles 1846 English), a 19th-"
+        "century Christian-era Hebrew scholarship work, preserved as "
+        "data so you can see how the inherited tradition handled the "
+        "word. The framework's reading lives in the verse commentary "
+        "and in the framework callouts below; where the lexicon and "
+        "the framework diverge, the framework is the standard."
+    ),
+}
+
+
+# Companion tier per §26 = content_tier 'complete_study' or higher. The
+# tier_satisfies() lattice in the schema does the rank check; we just
+# pass 'complete_study' as the required tier and let SQL resolve.
+LEXICON_REQUIRED_TIER = "complete_study"
+
+
+def _normalize_strong_number(raw: str) -> str:
+    """Same normalization the §20 Strong's endpoint uses. Returns the
+    canonical 4-digit zero-padded form (H#### or G####)."""
+    raw = raw.strip()
+    if not raw or raw[0].lower() not in ("h", "g"):
+        raise HTTPException(
+            status_code=400,
+            detail="strong_number must start with 'H' (Hebrew) or 'G' (Greek)",
+        )
+    prefix = raw[0].upper()
+    digits = "".join(c for c in raw[1:] if c.isdigit())
+    if not digits:
+        raise HTTPException(
+            status_code=400,
+            detail="strong_number must contain numeric digits after the prefix",
+        )
+    return f"{prefix}{int(digits):04d}"
+
+
+@app.get(
+    "/v1/lexicon/{strong_number}",
+    response_model=LexiconResponse,
+)
+async def get_lexicon_entry(
+    strong_number: str,
+    response: Response,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> LexiconResponse:
+    """Combined lexicon endpoint per §26 + S163 Q3 decision.
+
+    Returns every `lexicon_entries` row for the strong_number (BDB for
+    Hebrew/Aramaic, LSJ for Greek; Gesenius reserved for v1.1+) plus
+    the framework callout (if one exists) and the available_sources
+    list (for the §26 default-source-flip behavior).
+
+    Behavior matrix:
+      - settings.lexicon_enabled = False → 404 (kill-switch; route hides
+        existence rather than 503-revealing that the feature exists but
+        is disabled).
+      - non-Companion tier → 403 with { tier_required: 'complete_study',
+        feature: 'lexicon' }. PWA renders the tier-locked card per the
+        existing §20 stub pattern.
+      - no entries AND no callout for the strong_number → 404.
+      - some entries / some callout → 200 with the combined payload.
+
+    Cache-Control: 1 day. The data is curated public-domain (BDB 1906,
+    LSJ 1940, Abbott-Smith 1922) and framework callouts are author-
+    reviewed; aggressive caching is safe.
+    """
+    # 1. Kill-switch
+    if not settings.lexicon_enabled:
+        raise HTTPException(status_code=404, detail="lexicon endpoint not enabled")
+
+    # 2. Strong's-number normalization
+    canonical = _normalize_strong_number(strong_number)
+
+    # 3. Tier gate (server-side per S163 Q4)
+    tier = user_tier(current_user)
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        tier_ok = await conn.fetchval(
+            "SELECT tier_satisfies($1::content_tier, $2::content_tier)",
+            tier,
+            LEXICON_REQUIRED_TIER,
+        )
+        if not tier_ok:
+            raise HTTPException(
+                status_code=403,
+                detail={
+                    "tier_required": LEXICON_REQUIRED_TIER,
+                    "feature": "lexicon",
+                },
+            )
+
+        # 4. Fetch entries
+        entry_rows = await conn.fetch(
+            "SELECT source, strong_number, lemma, transliteration, "
+            "       pronunciation, part_of_speech, short_definition, "
+            "       body_html, derivation, citations_count "
+            "  FROM lexicon_entries "
+            " WHERE strong_number = $1 "
+            " ORDER BY CASE source "
+            "            WHEN 'bdb'      THEN 0 "
+            "            WHEN 'lsj'      THEN 1 "
+            "            WHEN 'gesenius' THEN 2 "
+            "          END",
+            canonical,
+        )
+
+        # 5. Fetch callout (single row by FK; null when absent)
+        callout_row = await conn.fetchrow(
+            "SELECT strong_number, term_display, gloss_error_summary, "
+            "       body_md, red_lines_cited, last_reviewed_at "
+            "  FROM lexicon_callouts "
+            " WHERE strong_number = $1",
+            canonical,
+        )
+
+    # 6. Both empty → 404 (hide existence per the standing reader-route pattern)
+    if not entry_rows and callout_row is None:
+        raise HTTPException(status_code=404, detail="lexicon entry not found")
+
+    # 7. Compose response
+    entries = [
+        LexiconEntry(
+            source=row["source"],
+            strong_number=row["strong_number"],
+            lemma=row["lemma"],
+            transliteration=row["transliteration"],
+            pronunciation=row["pronunciation"],
+            part_of_speech=row["part_of_speech"],
+            short_definition=row["short_definition"],
+            body_html=row["body_html"],
+            derivation=row["derivation"],
+            citations_count=row["citations_count"],
+            disclaimer=LEXICON_DISCLAIMERS.get(row["source"], LEXICON_DISCLAIMERS["bdb"]),
+        )
+        for row in entry_rows
+    ]
+
+    callout = None
+    if callout_row is not None:
+        callout = LexiconCallout(
+            strong_number=callout_row["strong_number"],
+            term_display=callout_row["term_display"],
+            gloss_error_summary=callout_row["gloss_error_summary"],
+            body_md=callout_row["body_md"],
+            red_lines_cited=list(callout_row["red_lines_cited"] or []),
+            last_reviewed_at=callout_row["last_reviewed_at"],
+        )
+
+    response.headers["Cache-Control"] = "public, max-age=86400"
+
+    return LexiconResponse(
+        strong_number=canonical,
+        entries=entries,
+        callout=callout,
+        available_sources=[row["source"] for row in entry_rows],
     )
 
 

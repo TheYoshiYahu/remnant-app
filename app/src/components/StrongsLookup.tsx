@@ -34,6 +34,7 @@ import {
   getStrongEntry,
   getStrongOccurrences,
 } from "../lib/api";
+import LexiconSheet from "./LexiconSheet";
 
 const OCCURRENCES_PAGE_SIZE = 25;
 
@@ -73,6 +74,12 @@ export default function StrongsLookup({
   const [occurrences, setOccurrences] = useState<StrongOccurrence[]>([]);
   const [totalCount, setTotalCount] = useState<number>(0);
   const [loadingMore, setLoadingMore] = useState<boolean>(false);
+
+  // S163 — §26 LexiconSheet stack. Opens via the "Read full lexicon entry"
+  // link below the Strong's body. The LexiconSheet renders at z-60 so it
+  // stacks above this modal (z-50); closing the LexiconSheet returns the
+  // partner here without losing scroll position.
+  const [lexiconOpen, setLexiconOpen] = useState<boolean>(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -249,6 +256,29 @@ export default function StrongsLookup({
                 {entry.derivation}
               </p>
             )}
+
+            {/* S163 §26 — Read full lexicon entry. Sits below the Strong's
+                body, above the concordance, per §26 "Entry points — two paths"
+                spec. The LexiconSheet's API call handles the tier gate
+                server-side: below-Companion partners see the tier-locked
+                card inside the LexiconSheet; Companion+ partners see the
+                body + framework callout. Hebrew gets (BDB); Greek gets
+                (LSJ); Aramaic also gets (BDB) since BDB carries the
+                Aramaic block. */}
+            {entry.language && (
+              <button
+                type="button"
+                onClick={() => setLexiconOpen(true)}
+                className="block w-full rounded border border-[var(--reader-rule)] bg-[var(--reader-surface-elev)] px-3 py-2 text-left font-sans text-sm font-medium text-[var(--reader-accent)] hover:opacity-90"
+              >
+                → Read full lexicon entry{" "}
+                <span className="text-[var(--reader-muted)]">
+                  (
+                  {entry.language === "greek" ? "LSJ" : "BDB"}
+                  )
+                </span>
+              </button>
+            )}
           </div>
         )}
 
@@ -319,6 +349,21 @@ export default function StrongsLookup({
           </div>
         )}
       </div>
+
+      {/* S163 — §26 LexiconSheet stacked above this modal (z-60 > z-50).
+          Mount only when open so the fetch fires on partner intent
+          rather than on every StrongsLookup mount. */}
+      {lexiconOpen && entry && (
+        <LexiconSheet
+          strongNumber={entry.strong_number}
+          language={
+            entry.language === "hebrew" || entry.language === "aramaic"
+              ? entry.language
+              : "greek"
+          }
+          onClose={() => setLexiconOpen(false)}
+        />
+      )}
     </div>
   );
 }

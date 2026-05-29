@@ -86,6 +86,22 @@ class Settings(BaseSettings):
         ),
     )
 
+    # ---- Session 163: Phase 9.3 lexicon kill-switch --------------------
+    # When False, /v1/lexicon/{strong_number} returns 404 as if the route
+    # doesn't exist. Flipped to True from the Render dashboard after the
+    # schema migration, lexicon_entries bulk load, and callout migration
+    # have all applied cleanly and Yoshi has completed the staging-walk
+    # verification per the S163 trajectory. Per Path 3 staging path
+    # decision: production-with-API-env-var-gate.
+    lexicon_enabled: bool = Field(
+        default=False,
+        description=(
+            "Master kill-switch for the §26 LexiconSheet API. False = "
+            "/v1/lexicon/{strong_number} returns 404. True = enforces "
+            "the Companion-tier gate and serves the combined response."
+        ),
+    )
+
     model_config = SettingsConfigDict(
         env_file=str(_API_DIR / ".env"),
         env_file_encoding="utf-8",

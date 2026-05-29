@@ -33,6 +33,7 @@ import HighlightPicker, {
 } from "./components/HighlightPicker";
 import { HIGHLIGHT_HEX } from "./lib/api";
 import StrongsLookup from "./components/StrongsLookup";
+import LexiconSheet from "./components/LexiconSheet";
 import VerseActionMenu, {
   type MenuItem,
   type MenuSection,
@@ -379,6 +380,15 @@ function Reader() {
   >(null);
   const [strongsState, setStrongsState] = useState<
     { strong: string; surface: string } | null
+  >(null);
+
+  // S164 — §26 menu-direct lexicon path. Mounting LexiconSheet at the App
+  // level (separate from the StrongsLookup-internal mount) so the §20
+  // VerseActionMenu BDB / LSJ items can open it without going through
+  // Strong's first. Both mounts use the same LexiconSheet component +
+  // server-side tier gate.
+  const [lexiconState, setLexiconState] = useState<
+    { strong: string; language: "hebrew" | "greek" | "aramaic" } | null
   >(null);
 
   // S123 W4 — range-selection state + post-capture action picker target.
@@ -2350,6 +2360,17 @@ function Reader() {
             me?.tier ?? null,
             {
               onStrongs: (w) => setStrongsState(w),
+              onLexicon: (w) => {
+                // S164 — §26 menu-direct path. Language inferred from the
+                // Strong's-number prefix; BDB serves Hebrew + Aramaic, LSJ
+                // serves Greek. (Aramaic is folded into the Hebrew branch
+                // here because BDB's Aramaic block is sourced under the
+                // 'bdb' enum just like the Hebrew block.)
+                setLexiconState({
+                  strong: w.strong,
+                  language: w.strong.startsWith("G") ? "greek" : "hebrew",
+                });
+              },
               onHighlight: (vid) => setPickerVerseId(vid),
               onStartRange: (vid) => startRangeFromVerse(vid),
               onBookmark: (vid) => openBookmarkSheet(vid),
@@ -2384,6 +2405,22 @@ function Reader() {
             }
           }}
           onClose={() => setStrongsState(null)}
+        />
+      )}
+
+      {/*
+        S164 — §26 menu-direct LexiconSheet mount. Opens when the
+        VerseActionMenu BDB / LSJ Word-study items fire (Companion+
+        only; below-Companion partners see the tier-locked badge and
+        tap routes to /pricing). LexiconSheet is z-60 so it stacks
+        above any open StrongsLookup; closing returns the partner to
+        whatever was beneath.
+      */}
+      {lexiconState !== null && (
+        <LexiconSheet
+          strongNumber={lexiconState.strong}
+          language={lexiconState.language}
+          onClose={() => setLexiconState(null)}
         />
       )}
 
@@ -2817,6 +2854,11 @@ function buildMenuSections(
   partnerTier: PartnerTier | null,
   handlers: {
     onStrongs: (w: { strong: string; surface: string }) => void;
+    /** S164 — §26 menu-direct lexicon path. Wired by BDB / LSJ items
+     *  in the Word-study section. Below-Companion partners never reach
+     *  this handler — the items render as tier-locked stubs that route
+     *  to /pricing instead. */
+    onLexicon: (w: { strong: string; surface: string }) => void;
     onHighlight: (verseId: number) => void;
     /** S123 W4 — "Start range here" in the new Range section. Anchors the
      *  long-pressed verse as the range start and enters selecting mode. */
@@ -2847,11 +2889,44 @@ function buildMenuSections(
       hint: state.word.strong,
       onSelect: () => handlers.onStrongs(state.word!),
     });
+    // S164 — §26 BDB / LSJ menu items. Locked label per §26 S47 relock:
+    // "Library" → "Companion" (the lockedTier Literal stays "library" for
+    // now since the broader system-wide rename is out of scope here;
+    // partner-perceived badge text remains "Library" until that rename
+    // sweeps; the API gate is the source of truth either way).
+    //
+    // Tier check: Companion = complete_study or higher (matches the
+    // server-side gate at GET /v1/lexicon/{strong}). Extras-tier and
+    // below see the tier-locked stub routing to /pricing; Companion+
+    // see a live menu item that opens LexiconSheet directly via the
+    // onLexicon handler.
+    const isAtCompanion =
+      partnerTier === "complete_study" || partnerTier === "everything";
     if (isHebrew) {
-      wordStudy.push(makeTierStub("bdb", "BDB", "library", partnerTier));
+      if (isAtCompanion) {
+        wordStudy.push({
+          key: "bdb",
+          label: "BDB",
+          hint: state.word.strong,
+          onSelect: () => handlers.onLexicon(state.word!),
+        });
+      } else {
+        wordStudy.push(makeTierStub("bdb", "BDB", "library", partnerTier));
+      }
     }
     if (isGreek) {
-      wordStudy.push(makeTierStub("thayers", "Thayer's", "library", partnerTier));
+      // §26 S159 rename: Thayer's → LSJ (the actual V1 Greek source per
+      // the LSJ-swap decision logged in §26).
+      if (isAtCompanion) {
+        wordStudy.push({
+          key: "lsj",
+          label: "LSJ",
+          hint: state.word.strong,
+          onSelect: () => handlers.onLexicon(state.word!),
+        });
+      } else {
+        wordStudy.push(makeTierStub("lsj", "LSJ", "library", partnerTier));
+      }
     }
     wordStudy.push(
       makeTierStub("vines", "Vine's expository", "library", partnerTier)

@@ -835,3 +835,72 @@ class CreateNoteRequest(BaseModel):
 
     verse_id: Optional[int] = None
     body: str = Field(..., min_length=1)
+
+
+# ----- Phase 9.3 — lexicon (S163) ---------------------------------------
+
+
+class LexiconEntry(BaseModel):
+    """One row from `lexicon_entries`. The PWA's LexiconSheet renders
+    body_html with React's dangerouslySetInnerHTML — content is curated
+    public-domain (BDB 1906, LSJ 1940, Abbott-Smith 1922) so the XSS
+    surface is zero.
+
+    `disclaimer` is pre-baked per source so the PWA doesn't need a
+    fallback constant in lexicon-helpers (though it still ships one
+    for offline-cache resilience).
+    """
+
+    source: str = Field(..., description="One of 'bdb' / 'lsj' / 'gesenius'.")
+    strong_number: str
+    lemma: str
+    transliteration: Optional[str] = None
+    pronunciation: Optional[str] = None
+    part_of_speech: Optional[str] = None
+    short_definition: Optional[str] = None
+    body_html: str
+    derivation: Optional[str] = None
+    citations_count: int
+    disclaimer: str = Field(
+        ...,
+        description=(
+            "Standing disclaimer per §26 Gate #1, source-substituted. "
+            "Renders muted-italic at the top of the LexiconSheet body."
+        ),
+    )
+
+
+class LexiconCallout(BaseModel):
+    """The framework-callout band rendered above the lexicon body when
+    a Strong's number is on the V1 list of 34 curated terms."""
+
+    strong_number: str
+    term_display: str
+    gloss_error_summary: str
+    body_md: str
+    red_lines_cited: List[str]
+    last_reviewed_at: Optional[datetime] = None
+
+
+class LexiconResponse(BaseModel):
+    """GET /v1/lexicon/{strong_number} response shape.
+
+    Per S163 Q3 decision (locked at session open): single combined
+    endpoint returning all lexicon entries for the strong_number
+    (BDB for Hebrew/Aramaic, LSJ for Greek) plus the framework
+    callout if one is on the V1 curated list.
+
+    `available_sources` enables the §26 default-source-flip behavior:
+    if the partner requests a Hebrew word and BDB has no entry but
+    Gesenius does (v1.1+), the PWA can flip the breadcrumb to
+    Gesenius as the default. At V1 this list always contains 0 or 1
+    sources (one row per word).
+
+    `callout` is null when this strong_number isn't on the V1 list.
+    The PWA renders the LexiconSheet without the callout band.
+    """
+
+    strong_number: str
+    entries: List[LexiconEntry]
+    callout: Optional[LexiconCallout] = None
+    available_sources: List[str]

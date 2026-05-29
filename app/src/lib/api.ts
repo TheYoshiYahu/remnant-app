@@ -982,3 +982,98 @@ export function searchVerses(
   const qs = new URLSearchParams({ q, limit: String(limit) });
   return get<VerseSearchResponse>(`/verses/search?${qs.toString()}`, { signal });
 }
+
+// ----- Phase 9.3 — Lexicon (Session 163) -------------------------------
+//
+// Combined endpoint per S163 Q3 decision (single round-trip per word-tap).
+// The 403/404 surface is distinct: 403 = below Companion tier (render the
+// tier-locked card with the §20 pattern); 404 = no entry (LexiconSheet's
+// coverage-fallback empty state per §26); 200 = render the body + callout.
+
+export type LexiconSource = "bdb" | "lsj" | "gesenius";
+
+export interface LexiconEntry {
+  source: LexiconSource;
+  strong_number: string;
+  lemma: string;
+  transliteration: string | null;
+  pronunciation: string | null;
+  part_of_speech: string | null;
+  short_definition: string | null;
+  body_html: string;
+  derivation: string | null;
+  citations_count: number;
+  disclaimer: string;
+}
+
+export interface LexiconCallout {
+  strong_number: string;
+  term_display: string;
+  gloss_error_summary: string;
+  body_md: string;
+  red_lines_cited: string[];
+  last_reviewed_at: string | null;
+}
+
+export interface LexiconResponse {
+  strong_number: string;
+  entries: LexiconEntry[];
+  callout: LexiconCallout | null;
+  available_sources: LexiconSource[];
+}
+
+export type LexiconFetchResult =
+  | { status: "ok"; data: LexiconResponse }
+  | { status: "tier-locked"; tierRequired: string }
+  | { status: "not-found" }
+  | { status: "error"; message: string };
+
+/**
+ * Fetch the combined lexicon payload for a Strong's number.
+ *
+ * Returns a tagged-union result so the LexiconSheet can render the
+ * tier-locked card (403), the empty-state (404), or the body+callout
+ * (200) without throwing on any of those status codes — only network
+ * failures + unexpected statuses surface as `status: "error"`.
+ */
+export async function fetchLexiconEntry(
+  strongNumber: string,
+): Promise<LexiconFetchResult> {
+  const path = `/lexicon/${encodeURIComponent(strongNumber)}`;
+  const headers: Record<string, string> = { Accept: "application/json" };
+  const token = readJwtCookie();
+  if (token) headers.Authorization = `Bearer ${token}`;
+  try {
+    const res = await fetch(`${API_BASE}${path}`, {
+      headers,
+      credentials: "include",
+    });
+    if (res.status === 403) {
+      let tierRequired = "complete_study";
+      try {
+        const payload = (await res.json()) as {
+          detail?: { tier_required?: string };
+        };
+        if (payload?.detail?.tier_required) {
+          tierRequired = payload.detail.tier_required;
+        }
+      } catch {
+        // body wasn't JSON; keep default
+      }
+      return { status: "tier-locked", tierRequired };
+    }
+    if (res.status === 404) {
+      return { status: "not-found" };
+    }
+    if (!res.ok) {
+      return { status: "error", message: `${res.status} ${res.statusText}` };
+    }
+    const data = (await res.json()) as LexiconResponse;
+    return { status: "ok", data };
+  } catch (e) {
+    return {
+      status: "error",
+      message: e instanceof Error ? e.message : String(e),
+    };
+  }
+}
