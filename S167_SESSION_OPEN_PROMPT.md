@@ -1,17 +1,21 @@
-S167 — Phase 9.2 (Hebrew-Greek interlinear) implementation opens
+S167 — Phase 9.2 (Hebrew-Greek interlinear) implementation opens + §29 Bookmarks Index implementation queued
 
-# S166 close summary — §28 interlinear spec LANDED + modal max-w-6xl LIVE
+# S166 close summary — §28 interlinear spec + §29 bookmarks-index spec LANDED, modal max-w-6xl LIVE, §28 menu-stub deprecation locked
 
-Phase 9.2 spec-then-build wheel opens here. S166 lands the spec; S167 opens the
-implementation. Pre-9.2 cleanup also landed at S166: the §27/§26 modal family
-got one more partner-perceptible width bump after Yoshi's read of the §26
-LexiconSheet on production.
+Phase 9.2 spec-then-build wheel opens for implementation at S167. S166 lands
+two specs (§28 interlinear, §29 bookmarks-index) plus locks the §28-related
+§20 menu-stub deprecation. S167 opens the implementation against both. Pre-9.2
+cleanup also landed at S166: the §27/§26 modal family got one more
+partner-perceptible width bump after Yoshi's read of the §26 LexiconSheet on
+production.
 
 ## S166 deliverables — what shipped at session close
 
 | Deliverable | Location | Status |
 |---|---|---|
-| **DESIGN_LANGUAGE.md §28** — Hebrew & Greek interlinear surface spec | `DESIGN_LANGUAGE.md` lines 1512–1610 (~100 lines) | LANDED — four gates locked: Companion tier, above-verse English-aligned column, abbreviated-English morph register with hold-expansion, metallic-argaman chrome parity with §27 |
+| **DESIGN_LANGUAGE.md §28** — Hebrew & Greek interlinear surface spec | `DESIGN_LANGUAGE.md` §28 (~100 lines) | LANDED — four gates locked: Companion tier, above-verse English-aligned column, abbreviated-English morph register with hold-expansion, metallic-argaman chrome parity with §27 |
+| **§28 §20 menu-stub deprecation locked** | DESIGN_LANGUAGE.md §28 sub-block, App.tsx `buildMenuSections` interlinear stub | LOCKED at S166 — chrome-strip toggle is the canonical interlinear surface; the per-word menu stub gets removed at §28 implementation per the §26 Vine's-deprecation pattern |
+| **DESIGN_LANGUAGE.md §29** — Bookmarks Index chrome-header button + global list surface | `DESIGN_LANGUAGE.md` §29 (~115 lines) | LANDED — four gates locked: Free tier, bottom-slide-up panel max-w-6xl, chronological newest-first, navigate-on-tap (edit lives in §22 per-verse path) |
 | Modal family bump max-w-4xl → max-w-6xl (1152px desktop) | 9 components: LexiconSheet, StrongsLookup, VerseActionMenu, HighlightPicker, BookmarkSheet, RangeActionPicker, AudioPlayer, NotesPanel, SearchModal | LANDED — commit `17ba59e` on `main`, deployed via Render Static Site auto-build |
 | Word-tap regression diagnosis | Service-worker stale-cache identified; hard-refresh restored §20 + §27 + §26 tap layer | RESOLVED — partner-side workflow note for future deploys: hard-refresh required to invalidate cached chapter assets |
 | Close-discipline failure named | Sandbox session closing with staged-but-unpushed work is a discipline gap | LOCKED — push verification folded into every future close prompt |
@@ -28,10 +32,30 @@ LexiconSheet on production.
 
 Full §28 spec at `DESIGN_LANGUAGE.md` §28 lines 1512–1610.
 
-## S167 scope — implementation opens
+## §29 Bookmarks Index — the four load-bearing gates locked at S166
+
+1. **Tier gate = Free.** Matches §22 bookmark surface — bookmarks are Free-tier per §9; the Index over already-Free data stays Free.
+2. **Surface = bottom slide-up panel, bordered-chrome modal family.** Same modal register as NotesPanel, `max-w-6xl` width per S166 modal family bump, `max-h-[70vh]` mobile cap, body scrolls, no pinned input footer.
+3. **List order = chronological newest-first.** Group-by-book + filter chrome defer to v1.1+ if partner-feedback flags demand.
+4. **Per-row affordance = navigate-on-tap; edit/delete via the existing §22 per-verse path.** Single-purpose Index: read + navigate. Inflating with per-row edit chrome rejected.
+
+Chrome cluster grows from `[Notes] [Theme] [CTA]` to `[Bookmarks] [Notes] [Theme] [CTA]`. Bookmarks button glyph = `⚑` matching the §22 inline glyph. Full §29 spec at `DESIGN_LANGUAGE.md` §29.
+
+## S167 scope — two implementation tracks open
+
+§28 *Implementation deferred to future session* names six steps for the interlinear; §29 *Implementation deferred to future session* names four steps for the bookmarks-index. **Lower-effort sequencing recommendation: open with §29 first** (no source-fetch needed, no migration, schema impact = none, single new endpoint, single new component) — lands in roughly half a session. Then move to §28 source-fetch + sample-parse + loader for the rest of S167. Splitting two implementation surfaces across S167 + S168 risks neither finishing; landing §29 first means at least one ships cleanly even if §28 source-fetch eats more session than budgeted.
+
+### Track A — §29 Bookmarks Index implementation (recommended S167 lead)
+
+1. **API endpoint.** `GET /v1/bookmarks/index` — FastAPI route handler + asyncpg query joining `bookmarks → verses → books` + Pydantic response model. Sort by `created_at DESC`. Auth-required per §22 contract.
+2. **Helper module + sanity tests.** `app/src/lib/bookmarks-helpers.ts` — `formatBookmarkRow`, `formatSavedDateDisplay`, `groupBookmarksByBook` (reserved for v1.1+ toggle), `truncateVersePreview`, `compareBookmarksByDate`. `_sNN_bookmarks_index_sanity.mjs` — ≥25 sanity-test cases.
+3. **PWA component + chrome-header button + open-state hook.** `app/src/components/BookmarksIndex.tsx` (modal slide-up, list render, navigate-on-tap) + the `Bookmarks` chrome-header button in `App.tsx` to the left of the Notes button + `useBookmarksIndex` hook for open-state + cache.
+4. **Live walk verification.** bible.remnantofpromise.org — partner with existing bookmarks opens the Index sheet, sees chronological list with verse refs + previews + tags + color glyphs, taps a row, navigates to that verse with the inline-glyph visible.
+
+### Track B — §28 Interlinear implementation (S167 if context allows, otherwise S168)
 
 The §28 *Implementation deferred to future session* block names the six steps;
-S167 is the future session. Sequence:
+S167 (or S168) is the future session. Sequence:
 
 1. **Source fetch (Yoshi-terminal).** STEPBible TAGNT (Greek NT morph-tagged) + TAHOT (Hebrew/Aramaic OT morph-tagged) are not in the existing `source-texts/stepbible-data/` sparse-checkout (which only carries Lexicons/). Sandbox can't extend the clone — 45s timeout vs ~500MB repo, raw.githubusercontent.com blocked by allowlist. From your terminal:
 
@@ -64,7 +88,7 @@ S167 is the future session. Sequence:
 
 7. **Live walk verification.** bible.remnantofpromise.org. Companion-tier-test-partner sees the toggle live, taps it on, sees the interlinear layer render above John 1:1 (Greek) and Genesis 1:1 (Hebrew). Hard-refresh post-deploy per the S166 service-worker finding.
 
-Realistic estimate: S167 covers source-fetch + sample-parse + loader (steps 1–3). Helper module + sanity tests likely also S167 if context budget allows. PWA component + API extension + live walk likely S168.
+Realistic estimate (combined Track A + Track B): S167 lands §29 Bookmarks Index end-to-end (Track A complete: API + helpers + sanity + React + live walk) plus §28 Track B steps 1–3 (source-fetch + sample-parse + loader). Track B steps 4–7 (helpers, React, API extension, live walk) fall to S168. If Track A surprises us with depth (verse-text-join query optimization, optimistic-UI subtleties), §28 source-fetch may slip to S168 entirely; that's acceptable — §29 has higher partner-perceptible value-per-effort and shipping it cleanly is the right priority over splitting §28 across two sessions.
 
 ## Standing residuals — carried from S166
 
@@ -117,7 +141,11 @@ Realistic estimate: S167 covers source-fetch + sample-parse + loader (steps 1–
 
 2. **Hygiene-commit ordering.** Fold the 7 untracked files + the §28 spec into one commit, or run them as two separate commits (hygiene first, spec second)? S166 recommendation was two, but one's faster and the spec is its own clean unit so either reads sensibly in `git log`.
 
-3. **S167 scope ceiling.** How far into the §28 implementation should S167 push? Realistic options: (a) source-fetch + sample-parse only (clean session, hand to S168 for loader); (b) source-fetch + sample-parse + loader (medium, S168 picks up helpers + React); (c) source-fetch + sample-parse + loader + helpers + sanity tests (full, S168 picks up React + API only). Per the publish-then-edit rule we don't need to ship the whole interlinear at S167; per the no-conservative-early-wraps rule we should push at least to the loader.
+3. **S167 scope ceiling.** Recommended sequence (revised at S166 close after §29 lands): open §29 first (lower-effort, no source-fetch), then push §28 source-fetch + sample-parse + loader. Per the publish-then-edit rule we don't need to ship the whole interlinear at S167; per the no-conservative-early-wraps rule we should land §29 cleanly AND push §28 to the loader at minimum.
+
+4. **§29 row affordance redlines.** Locked at S166: navigate-on-tap only, edit/delete via the §22 per-verse path. The other defensible call would surface a small kebab menu per row with quick edit/delete/color-change. If partner-feedback at first live walk suggests the navigate-then-edit double-hop is friction, kebab-menu lands as a fast follow. Lock for V1 is the simple version.
+
+5. **Bookmarks chrome-button position.** Locked left of Notes — `[Bookmarks] [Notes] [Theme] [CTA]`. Alphabetical + partner-content-surface clustering. The other call would put Bookmarks right of Notes; both defensible, locked left for read-order naturalness.
 
 ## Standing efficiency rules (carried — no change)
 

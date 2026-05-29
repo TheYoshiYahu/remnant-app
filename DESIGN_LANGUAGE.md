@@ -1590,6 +1590,12 @@ Items below ship with the noted V1 defaults; Yoshi redlines on the §28 review.
 
 Per the spec-then-build standard, §28's React + loader implementation is NOT S166 work. S166 lands the spec; a future session opens (1) the TAGNT + TAHOT source fetch from STEPBible (sparse-checkout extension to the existing `source-texts/stepbible-data/` clone), (2) the `_sessionNN_load_verse_words_morph.py` loader populating `verse_words.morphology`, (3) the `lib/interlinear-helpers.ts` helper module + ≥30 sanity tests, (4) the PWA `InterlinearLayer` component + `useInterlinearToggle` hook + chapter chrome strip button + Settings page toggle, (5) the chapter-words endpoint extension to render the tier-gated payload, (6) live walk verification on bible.remnantofpromise.org behind the Companion-tier gate. The implementation session references this section + the §20 / §27 / §26 prior patterns and ships via the helper-API + sanity-test convention from §22 / §23 / §24 / §25 / §26 / §27.
 
+### §20 menu-stub deprecation — `Hebrew/Greek interlinear` removed (locked S166)
+
+The §20 *Locked stub catalog* (S122) carries `Hebrew/Greek interlinear` as a per-word menu stub in the Word study section — `buildMenuSections` in App.tsx renders it via `makeTierStub("interlinear", isGreek ? "Greek interlinear" : "Hebrew interlinear", "library", partnerTier)` between Vine's and (for Hebrew) Nikkudot siblings. With §28 landing the **chrome-strip toggle** as the primary interlinear surface, the per-word menu stub becomes vestigial — the chrome toggle covers the whole-verse layered view, and a per-word focus affordance would duplicate without adding partner value (the partner who wants to drill into one word already has Strong's → LexiconSheet via §20 / §26).
+
+**Locked S166: the §20 interlinear menu stub is removed when §28 ships.** Same pattern §26 set for Vine's (which was deprecated because Vine's is copyrighted; the interlinear stub is deprecated because the chrome toggle is the better affordance). The §28 implementation session updates the §20 *Locked stub catalog* table inline + removes the `interlinear` `makeTierStub` call from `buildMenuSections`. Nikkudot siblings (W11) and the rest of the Word study section stay untouched.
+
 ### What §28 deliberately does NOT prescribe
 
 - **Reverse interlinear (English-over-original).** The partner-facing surface is original-over-English; reverse interlinear is a translator's tool, not a study tool, and adds a second-toggle complexity for marginal partner value. The come-and-see posture is the partner seeing the original behind the English they already read, not the partner reading the English back from the original. Permanently out of scope.
@@ -1608,3 +1614,115 @@ Per the spec-then-build standard, §28's React + loader implementation is NOT S1
 - **Interlinear search (find a verse by its Hebrew/Greek lemma).** Search by Strong's number is the existing affordance — the §23 SearchModal handles English-language search; partners who want to search by lemma click through to the §26 LexiconSheet from a tapped word and use the citations there. Cross-corpus Hebrew/Greek lemma search is a v1.1+ candidate if partner-feedback flags demand; not V1 scope.
 - **Side-by-side parallel rendering.** No *English column + interlinear column rendered side-by-side as parallel text* layout. The above-verse stacked column IS the V1 interlinear render; side-by-side parallel is a different layout register that conflicts with the chapter-as-flowing-prose reading surface. Out of scope.
 - **Tier-gated morphology depth (Companion vs Notes-tier-stripped-morph).** No partial-tier surface where Notes-tier sees lemma+transliteration+gloss and Companion adds morphology. The §28 surface is a single Companion gate; introducing tier-stratified depth inside the same surface adds product-surface complexity for marginal conversion benefit and dilutes the Companion-tier value proposition. Notes-tier partners who want original-language depth see the chrome-strip toggle as Companion-locked and route to `/pricing` — clean upgrade path.
+
+---
+
+## 29. Bookmarks Index — Chrome-Header Button + Global List Surface (locked S166 — Free tier)
+
+Companion surface to the §22 *Bookmarks + Notes V1* per-verse BookmarkSheet. §22 covers the **create / edit** path — partner long-presses a verse → menu → Bookmark → modal opens with verse-preview + short_description + tags + color tint. The visible inline glyph (small ⚑ next to the verse number) carries discovery on the reading surface. **§29 adds the partner's *global* list view** — every bookmark across the canon, accessed from a new chrome-header button. The chrome cluster grows from `[Notes button] [ThemeToggle] [Subscription CTA]` to `[Bookmarks button] [Notes button] [ThemeToggle] [Subscription CTA]` — two adjacent partner-content surfaces (Bookmarks, Notes) opening to two parallel slide-up panels (BookmarksIndex, NotesPanel) that share the bordered-chrome modal family. Captured at S166 mid-session after Yoshi flagged the gap: bookmarks are reachable by scrolling to find their inline glyph; the partner has no surface for *show me everything I've saved*.
+
+The framework reading on why this is Free-tier and not Notes-tier: bookmarks are Free-tier per §22's §9-aligned lock (color, tags, short_description all ship Free). The Index surface is a view of data the partner already owns at Free-tier; tier-locking the index over already-Free data would invert the §9 intent. Notes-tier ($1.99) extends the *Notes* surface (per-verse named notes hub W8); Bookmarks stays single-tier and adds the index as the natural completion of the V1 bookmark surface. The Index ships at Free; partners who never upgrade have full bookmark create-read-update-delete + global list view.
+
+### Four load-bearing gates locked S166
+
+1. **Tier gate = Free (no paywall).** Every partner — Free / Notes / Extras / Companion — sees the chrome-header Bookmarks button and can open the BookmarksIndex sheet. No tier-locked chip, no `/pricing` redirect. The endpoint is auth-required (the partner must be signed in to have bookmarks at all per §22) but tier-open. Matches the §22 bookmark surface tier-stance.
+
+2. **Surface = bottom slide-up panel, bordered-chrome modal family.** Same modal register as NotesPanel — fixed-position overlay with `bg-black/40` backdrop, bottom-sheet on mobile (`items-end`), centered on desktop (`sm:items-center`), `max-w-6xl` width per the S166 modal family bump (the same width every other modal in the family carries post-S166). `max-h-[70vh]` on mobile matching NotesPanel since the list will run long for active partners. Body region scrolls; no pinned input footer (the Index is read + navigate; create/edit lives in §22's per-verse path). Closing returns the partner to wherever they were in the chapter.
+
+3. **List order = chronological newest-first.** Bookmarks render in reverse chronological order by `created_at` (most recently saved at the top). The partner's mental model when reaching for the Index is *I saved something — where is it* — and recency dominates that retrieval. Group-by-book (Genesis → Revelation in canonical order) is the other defensible call and may suit study-trail-tracking better; held as a v1.1+ toggle if partner-feedback flags the gap. V1 ships chronological-only for simplicity (single sort key, no group headers, no toggle UI).
+
+4. **Per-row affordance = navigate-on-tap; edit/delete via the existing per-verse path.** Tapping any row closes the BookmarksIndex sheet and navigates to that bookmark's verse (book + chapter + verse via the existing `useNavigate` router pattern). Edit and remove affordances do NOT live in the Index row — they live in the §22 per-verse BookmarkSheet that the partner reaches via the standard long-press → menu → Bookmark path on the destination verse. Single-purpose Index: read + navigate. The existing inline-glyph + long-press-to-edit pattern stays the authoritative edit surface; the Index is the cross-canon discovery surface that points at it. Two reasons for the split: (1) the Index would inflate substantially with per-row edit chrome (delete confirm, inline color picker, tag editor); (2) the partner who wants to edit a bookmark almost always wants to re-read the verse context — navigating to the verse first IS the right path.
+
+### Standing chrome treatment
+
+The Bookmarks button uses the **same chrome-button family** as the Notes button — text-only label with a small leading glyph, bordered-chrome register per §1. Label: `Bookmarks`. Glyph: `⚑` (same flag glyph the §22 inline bookmark renders, carrying visual continuity across surfaces). Position: **immediately left of the Notes button** in the chrome cluster — `[Bookmarks] [Notes] [ThemeToggle] [Subscription CTA]`. Alphabetical and partner-content-surface clustering (the two partner-content surfaces sit adjacent before the chrome-affordance ThemeToggle and the commerce-affordance CTA).
+
+Empty-state for partners with zero bookmarks: the chrome button stays visible (discovery — the button teaches that bookmarks exist). Tapping it opens the BookmarksIndex sheet showing the empty-state copy: *"Tap any verse → Bookmark to save it here."* Same pattern as §22's NotesPanel empty-state.
+
+### Defaultable surface
+
+Items below ship with the noted V1 defaults; Yoshi redlines on the §29 review.
+
+- **Row composition, top to bottom in each row.**
+  - **Reference line** in §5 spectral-blue accent register: `{Book title} {chapter}:{verse}` (e.g., *Hosea 1:10*). Body register weight 600.
+  - **Verse preview** in muted italic register, `line-clamp-2` so long verses don't blow up row height. Preserves the partner's recognition of the verse without forcing them to open it.
+  - **Short_description** in body register when present (the partner's *why are you saving this verse* answer from §22). Hidden when null. Multi-line with `line-clamp-3` if long.
+  - **Tags chips** when present (the partner's tags from §22). Rendered as small chips in muted register, no individual chip-tap behavior in V1 (tag-filter surface is a v1.1+ candidate).
+  - **Footer line** with two elements: color tint glyph (the §6 swatch color from `color_tint`, rendered as a small filled circle on the left) + saved-date in muted small text on the right (`Saved {ISO date} • {N tags}` format when tags are present; `Saved {date}` otherwise).
+- **Row separator.** 1px `var(--reader-rule)` hairline between rows, suppressed above the first row and below the last. Matches the §22 NotesPanel entry-separator pattern.
+- **Tap target.** Entire row is the tap target — meets the §13 44pt iOS / 48dp Android floor by virtue of the row's vertical padding. No per-element tap behavior within the row in V1.
+- **Visual hierarchy on partners with many bookmarks.** No pagination or lazy-load at V1 — every bookmark renders in the scroll. For the realistic partner with 50–200 bookmarks accumulated over months of use, this is a single-DOM-tree of ~50–200 rows with no perf concern. Partners with 1000+ bookmarks are the edge case; v1.1+ adds pagination if partner-feedback flags slow open. The chrome-button label could surface a count badge (e.g., `Bookmarks (47)`) in a later wheel; V1 keeps the label clean.
+- **Persistence.** No state persists from the Index sheet itself (no filter state, no scroll position). Each open is a fresh fetch + render; partners arrive at the top of the list (newest-first) every time. The §22 inline-glyph state on the reading surface is the authoritative persistence layer — the Index is a view, not a state-holder.
+- **Loading state.** Sheet opens with a small skeleton-shimmer on the rows while the `GET /v1/bookmarks/index` call resolves. For partners with bookmarks already cached in the §22 `bookmarksByVerse` Map, the cached entries render immediately and the index call refreshes them on background-resolve. Loading state never gates the empty-state — partners with zero bookmarks see the empty-state copy as soon as the call resolves (no skeleton-then-empty FOUC).
+- **Interaction with §22 inline-glyph.** Two surfaces, one data source. When the partner edits a bookmark via the inline-glyph → long-press → BookmarkSheet path, the BookmarksIndex (if open in a separate tab / mobile background) refreshes its cache on next open. No real-time sync at V1 — partners on a single device flip between Index and reading surface with the natural close-and-reopen pattern handling the cache invalidation.
+- **Interaction with §22 bookmark-create path.** Creating a new bookmark via the per-verse path optimistically adds the row to the BookmarksIndex's local cache so the partner who opens the Index immediately after creating sees the new row at top. Standard optimistic-UI pattern matching the §22 highlights / bookmarks transport contract.
+- **Interaction with the §29 navigation.** Tapping a row closes the Index sheet AND triggers the verse-navigate. The verse-navigate uses the existing chapter-load mechanism (loads the chapter if not currently active, scrolls to the verse) and surfaces the partner at the bookmarked verse with the inline-glyph visible. If the partner is already in the bookmark's chapter, the verse-navigate is a scroll-only operation (no chapter reload).
+
+### Schema impact
+
+**None.** The `bookmarks` table already exists per §22 with every column the Index needs (`id`, `user_id`, `verse_id`, `short_description`, `tags`, `color_tint`, `created_at`, `updated_at`). The Index renders by joining `bookmarks` to `verses` + `books` (existing FK chain) and projecting the reference + preview + metadata fields. No migration, no new table, no column add.
+
+### API surface
+
+One new endpoint, auth-required, Free-tier (no tier gate).
+
+- `GET /v1/bookmarks/index` — returns all the requesting partner's bookmarks with joined verse + book metadata. Sorted by `created_at DESC`. Response array of:
+  ```ts
+  {
+    id: number,
+    verse_id: number,
+    book_slug: string,
+    book_title: string,
+    chapter_number: number,
+    verse_number: number,
+    verse_text: string,
+    short_description: string | null,
+    tags: string[] | null,
+    color_tint: string | null,
+    created_at: string,
+    updated_at: string
+  }
+  ```
+  Distinct from the existing `GET /v1/bookmarks?book_slug=&chapter_number=` (which returns per-chapter rows with no joined verse metadata for inline-glyph rendering). The two endpoints can coexist; the per-chapter endpoint stays the inline-glyph hot path. The Index endpoint is a heavier read (one row per bookmark with joined verse text) but is called only when the partner opens the Index sheet.
+
+### Helper API + sanity-test surface (the forward standard from §22 / §23 / §24 / §25 / §26 / §27 / §28)
+
+Pure helpers in `app/src/lib/bookmarks-helpers.ts` — no React imports, no global state, no async. Each function independently sanity-testable via `node --test` against inlined test cases.
+
+- `formatBookmarkRow(bookmark)` — given an index-row object, returns the render-ready structure `{ refLine, preview, shortDescription, tags, colorHex, savedDateDisplay, tagsCountDisplay }`. Sanity-test sweeps: all-fields-populated row formats correctly / null short_description suppresses the line / empty tags array suppresses the chips block / null color_tint resolves to default register / unicode-safe in tags / ISO date formatted to display string.
+- `formatSavedDateDisplay(isoDate, locale='en-US')` — given the ISO timestamp from `created_at`, returns the partner-display string (e.g., `Saved May 29, 2026`). Sanity-test sweeps: standard ISO timestamp / yesterday-relative formats / millisecond timezone-edge / null defensive / future-dated defensive (shouldn't happen but render cleanly).
+- `groupBookmarksByBook(bookmarks)` — given the flat array, returns a `Map<book_slug, BookmarkRow[]>` grouping in canonical-order. Sanity-test sweeps: single-book group / multi-book preserves canonical order / empty input returns empty Map / book-slug normalization (lowercase / hyphen) / inputs already sorted vs unsorted handled. Reserved for the v1.1+ group-by-book toggle; ships at V1 alongside chronological as a no-op unused helper for future-wheel use.
+- `truncateVersePreview(text, maxChars=180)` — given verse text, returns the truncated preview with ellipsis. CSS `line-clamp-2` handles the visual truncation; the helper is a defensive secondary for screen-reader contexts where line-clamp doesn't apply. Sanity-test sweeps: short text passes through / long text truncates at word boundary / unicode-safe / empty string returns empty / null defensive.
+- `compareBookmarksByDate(a, b)` — comparator for `created_at` descending. Sanity-test sweeps: newer-first / equal timestamps preserve order / null defensive (treat as oldest) / mixed-timezone safe (ISO timestamps are timezone-tagged).
+
+Verification target: ≥25 sanity-test cases passing in `_sNN_bookmarks_index_sanity.mjs` at implementation-session close. tsc -b clean. No node sanity tests on the React BookmarksIndex component — stateful UI tested by live walk per the §22 / §23 / §24 / §25 / §26 / §27 pattern.
+
+### Accessibility
+
+- **WCAG 2.1 AA per §13.** BookmarksIndex panel carries `role="dialog"`, `aria-label="Your bookmarks"`, `Escape`-to-close, ✕ button with `aria-label="Close bookmarks index"`. Each row is `<button type="button">` with `aria-label="Bookmark on {book_title} {chapter}:{verse}: {short_description or 'no description'}"` for screen-reader context.
+- **Empty-state announcement.** When the panel opens with zero bookmarks, the screen reader announces the empty-state copy via `role="status"` on the empty-state container so the partner using assistive tech hears *"Tap any verse → Bookmark to save it here"* without needing to navigate the panel.
+- **Tab order.** ✕ → row 1 → row 2 → ... → row N. Within a row, the row itself is the single focusable element (no nested focusable children since edit/delete don't live in the row).
+- **Reduced motion.** Slide-up animation respects `prefers-reduced-motion: reduce` (instant show/hide). Tap-to-navigate transitions the partner cleanly without animated chapter-fade for reduced-motion partners.
+- **Hit targets.** Each row meets the §13 44pt iOS / 48dp Android floor via the row's vertical padding (`py-3` minimum on mobile). Chrome-header Bookmarks button matches the existing Notes button hit target.
+- **High-contrast mode.** Row separator hairlines + color-tint swatches meet WCAG 2.1 AA contrast against `var(--reader-bg)` in both light and dark themes per the §1 theme tokens.
+
+### Implementation deferred to future session
+
+Per the spec-then-build standard, §29's React + API implementation is NOT S166 work. S166 lands the spec; a future session opens (1) the `GET /v1/bookmarks/index` API endpoint extension (FastAPI route handler + asyncpg query + Pydantic response model), (2) the `lib/bookmarks-helpers.ts` helper module + ≥25 sanity tests, (3) the PWA `BookmarksIndex` component + the chrome-header `Bookmarks` button + the open-state hook, (4) live walk verification on bible.remnantofpromise.org. The implementation session references this section + the §22 NotesPanel pattern + the §22 BookmarkSheet pattern and ships via the helper-API + sanity-test convention from §22 / §23 / §24 / §25 / §26 / §27 / §28.
+
+### What §29 deliberately does NOT prescribe
+
+- **Edit / delete inside the Index row.** Single-purpose Index per Gate #4 — read + navigate. Edit / remove live in the §22 per-verse BookmarkSheet that the partner reaches by tapping the row → navigating to the verse → long-press → menu → Bookmark. Adding per-row edit chrome would inflate the Index substantially and force two edit surfaces to stay in sync. Out of scope.
+- **Filter chrome (by color, by tag, by book, by date range).** V1 ships chronological-only with no filter UI. Tag-filter, color-filter, and book-filter are v1.1+ candidates if partner-feedback flags demand. The empty-state copy assumes the partner has bookmarks; partners with 200+ bookmarks who want to find one specific bookmark have search via the verse text — the §23 SearchModal handles English-language search, and the partner can recall a phrase from the verse to find their bookmark there. Adding bookmark-content search inside the Index is a separate v1.1+ surface.
+- **Sort UI (newest / oldest / by book / by color).** Chronological newest-first is V1 default + only. Sort toggle is a v1.1+ candidate alongside the filter chrome. Adding a sort dropdown at V1 inflates surface for marginal partner value when 95% of *find this bookmark* intents are recency-dominated.
+- **Group-by-book rendering.** Chronological flat list is V1. Group-by-book (canonical-order book headers with bookmarks under each) is a v1.1+ toggle if partner-feedback flags study-trail-tracking demand. `groupBookmarksByBook` helper ships at V1 ready for the toggle but is not wired into the V1 render.
+- **Inline preview-on-hover (desktop).** No hover-preview expanding a row's verse text or framework-callout content. Tap to navigate is the single interaction. Hover-preview belongs in the §17 cross-reference card territory, not the bookmarks Index.
+- **Bookmark export (CSV / JSON / OPML).** Out of V1. Partners who want a portable list of their bookmarks are the rare advanced case; export surfaces are a v1.1+ candidate if partner-feedback flags demand. Adding export at V1 adds surface for partner-perceptibly-marginal value.
+- **Bookmark sharing (link a single bookmark or share the whole list).** Out of V1. Bookmarks are partner-private metadata; sharing them across partners is a different product surface (collaborative study) and Permanent-Scope-Lock-of-V1 keeps that out. The §24 share-with-watermark surface handles verse-sharing as proclamation; bookmark-list-sharing would be a different register.
+- **Multi-partner bookmarks / shared bookmark sets.** Same scope-exclusion as bookmark sharing. V1 is single-partner bookmarks; multi-partner is out of every relevant scope.
+- **AI-summarization of the partner's bookmark trail.** Standing rule from §17 / §22 / §26 / §27 / §28 — no LLM-generated content in the partner-facing surface. Partners who want a summary of *what have I been studying* read their own bookmarks. Not V1, not later.
+- **Bookmark categories / folders / hierarchy.** Tags are the only categorization at V1 (already shipped per §22). Folders / hierarchy is a v1.1+ candidate if partner-feedback flags it; tags carry the multi-categorization use case for most partners.
+- **Bookmark-count badge on the chrome-header button.** No `(47)` count badge on the `Bookmarks` button label. Notes button has no count badge either (consistency). A future wheel could surface count badges on both partner-content chrome buttons if partner-feedback flags the discovery gap; V1 keeps the chrome clean.
+- **Search inside the Index.** No search input at the top of the BookmarksIndex sheet. The §23 SearchModal is the canonical search surface; bookmark-internal search would duplicate. Partners search for a phrase via §23, the result list shows the verse, the verse carries the inline-glyph if bookmarked, partner taps long-press → BookmarkSheet to surface the bookmark detail.
+- **Bookmark-as-shareable-link inside the URL bar.** No `/bookmarks/index` URL surface — the Index is modal-only. A direct-link surface would require auth-shaped URLs (the partner's bookmarks are private). Out of V1; v1.1+ candidate if a *share-my-study-trail* surface is greenlit.
+- **Per-bookmark notes anchor (linking a bookmark to a NotesPanel entry).** Notes anchor to verses (§22), and a verse can carry both a bookmark and a note (per §22 architecture). Linking bookmark.id to note.id directly is a v1.1+ refinement; V1 leaves the join at verse_id and lets the partner see both surfaces on the same verse.
