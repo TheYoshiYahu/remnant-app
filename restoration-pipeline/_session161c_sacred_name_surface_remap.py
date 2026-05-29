@@ -60,15 +60,25 @@ import asyncpg
 # Each row in verse_words matching (strong_number, original surface)
 # is a candidate; the row updates only if `target` appears as a
 # whole-word match in the parent verse text AND the original does not.
+#
+# Revised after the S161 row-dump diagnostic surfaced that production
+# already has the Sacred Names transformations applied for most of the
+# patterns this script originally targeted:
+#   - G0444 'of man'   → already 'of Adam' in DB
+#   - G2316 'of God'   → already 'God'    in DB (single word — cluster
+#                         handles '(God)' paren directly)
+#   - G1410 'can'      → already 'cannot' in DB for John 3:3 / 3:5
+#   - G1410 'he can'   → already 'he cannot' in DB
+# Only the Tseva'ot 'of hosts' case remains unfixed — and the original
+# rule had a typo (G6635 → H6635; Hebrew, not Greek). Fixing that here.
 REMAP_RULES: list[tuple[str, str, str]] = [
-    # Son of Adam — Red Line #12
-    ("G0444", "of man",       "of Adam"),
-    # 'of X' multi-word USFX vs short '(God)' / '(LORD of hosts)' paren
-    ("G2316", "of God",       "God"),
-    ("G6635", "of hosts",     "hosts"),
-    # John 3:3 / 3:5 — modern "cannot" compound
-    ("G1410", "can",          "cannot"),
-    ("G1410", "he can",       "he cannot"),
+    # Yahuah Tseva'ot (LORD of hosts) — Hebrew Strong's H6635. The
+    # cluster's parenContents-vs-surface match needs surface 'hosts'
+    # to match paren content 'hosts'; the leading 'of ' in the USFX
+    # multi-word surface breaks the comparison. After update both
+    # Hebrew tokens (Yahuah → LORD H3068, Tseva'ot → hosts H6635)
+    # align correctly with their semantic Strong's numbers.
+    ("H6635", "of hosts", "hosts"),
 ]
 
 
