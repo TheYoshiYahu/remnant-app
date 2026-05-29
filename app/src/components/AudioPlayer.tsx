@@ -255,7 +255,7 @@ function VoicePickerModal({
       aria-label="Choose narration voice"
     >
       <div
-        className="flex max-h-[80vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl sm:rounded-lg"
+        className="flex max-h-[80vh] w-full max-w-4xl flex-col overflow-hidden rounded-t-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl sm:rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-baseline justify-between border-b border-[var(--reader-rule)] px-4 py-3">

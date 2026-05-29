@@ -19,7 +19,7 @@
  *
  * Same modal register as HighlightPicker / RangeActionPicker / Strongs-
  * Lookup — bg-black/40 backdrop, bottom-sheet on mobile (items-end),
- * centered on desktop (sm:items-center), max-w-2xl width. Tap-outside /
+ * centered on desktop (sm:items-center), max-w-4xl width. Tap-outside /
  * ✕ / Escape close without commit (V1 forgives mis-tap; partner re-
  * opens to retry — see §22 "What this section deliberately does NOT
  * prescribe" → auto-save deferred).
@@ -213,7 +213,7 @@ export default function BookmarkSheet({
       aria-label={isEditing ? "Edit bookmark" : "Create bookmark"}
     >
       <div
-        className="max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 shadow-xl"
+        className="max-h-[85vh] w-full max-w-4xl overflow-y-auto rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-4 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header — verse ref + ✕ close. */}

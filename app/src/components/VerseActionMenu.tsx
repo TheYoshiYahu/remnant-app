@@ -163,7 +163,7 @@ export default function VerseActionMenu({
       onClick={onClose}
     >
       <div
-        className="flex max-h-[85vh] w-full max-w-2xl flex-col rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl"
+        className="flex max-h-[85vh] w-full max-w-4xl flex-col rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl"
         onClick={(e) => e.stopPropagation()}
         role="menu"
         aria-label="Verse actions"

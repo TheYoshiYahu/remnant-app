@@ -21,7 +21,7 @@
  * Picker — bg-black/40 backdrop, items-end on mobile (slide-up from
  * bottom), centered on desktop (sm:items-center). Taller than the
  * picker modals (max-h-[70vh]) since the notepad needs room. Wider
- * (max-w-2xl on desktop) since prose reading happens here.
+ * (max-w-4xl on desktop) since prose reading happens here.
  *
  * V1 is append-only — saved entries are read-only in the panel.
  * Edit/delete per-entry is the W8 (Study Notes tier) per-verse hub
@@ -159,7 +159,7 @@ export default function NotesPanel({
       aria-label="Notes"
     >
       <div
-        className="flex h-[70vh] w-full max-w-2xl flex-col overflow-hidden rounded-t-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl sm:max-h-[80vh] sm:rounded-lg"
+        className="flex h-[70vh] w-full max-w-4xl flex-col overflow-hidden rounded-t-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl sm:max-h-[80vh] sm:rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header — "Notes" title + ✕ close. */}
