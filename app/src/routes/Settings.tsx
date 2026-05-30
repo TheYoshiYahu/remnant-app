@@ -22,9 +22,22 @@ import { useSacredNameMask } from "../lib/useSacredNameMask";
  * underlying state is lifted into a shared hook.
  *
  * Anonymous-safe: every preference is localStorage-backed. Signed-in
- * partners get server-side persistence in a follow-up wheel (per
- * S172_SACRED_NAME_MASK_SPEC.md "Persistence" section). No tier
- * gate; Settings is free for every partner.
+ * partners get server-side persistence via the S173 display-prefs
+ * sync (users.display_prefs JSONB + GET/PUT /v1/me/display-prefs +
+ * the pullAndReconcile-on-mount + pushSnapshot-on-set flow in
+ * lib/display-prefs-sync.ts). Cross-device sync covers the
+ * sacred-name mask, the parentheticals-hide toggle, and any future
+ * recognized key as it lands. No tier gate; Settings is free for
+ * every partner.
+ *
+ * S174 — "Synced across devices when signed in" affordance added to
+ * the Sacred-name card. Small utility footnote below the segmented
+ * control; reads as anonymous invitation ("this would sync if I
+ * signed in") AND as signed-in confirmation ("this is syncing").
+ * Sacred name only per S174 brief scope — the parentheticals card
+ * and theme card sync too, but the Sacred name card carries the
+ * affordance as the lead preference where the partner first meets
+ * the sync behavior.
  */
 export default function Settings() {
   const { mask: sacredNameMask, set: setSacredNameMask } = useSacredNameMask();
@@ -66,6 +79,14 @@ export default function Settings() {
             ]}
             ariaLabel="Sacred-name display"
           />
+          {/* S174 — cross-device sync affordance. Small footnote
+              under the control. Reads honestly for both states:
+              anonymous partner reads it as the value sign-in adds;
+              signed-in partner reads it as confirmation of what's
+              already happening via the S173 display-prefs sync. */}
+          <p className="mt-2 font-sans text-xs italic text-[var(--reader-muted)]">
+            Synced across devices when signed in.
+          </p>
         </SettingsCard>
 
         {/* 2. English helper parentheticals — existing S144 toggle,
