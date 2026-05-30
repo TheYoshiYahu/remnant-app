@@ -489,8 +489,18 @@ const HEBREW_STATE: Record<string, { short: string; expanded: string }> = {
 
 // Subset of single-segment Hebrew POS-only codes where the entire
 // morphology is the POS marker itself (no further fields).
+//
+// S169 — `c` (lowercase) added per Yoshi live-walk redline 4. STEPBible
+// distinguishes plain conjunction `HC` (uppercase — the freestanding ו
+// "and") from vav-consecutive `Hc` (lowercase — the ו that flips an
+// imperfect to past-tense narrative or a perfect to future / sequential).
+// 21,218 source rows carry `Hc/` prefix; without this entry the decoder
+// dropped through to raw-emit `Hc + qal vc.impf. 3ms`. The short form
+// `consec.` reads tight in the column-stack; the expanded form names
+// the construction in full.
 const HEBREW_BARE_POS_CODES: Record<string, { short: string; expanded: string }> = {
   C: { short: "conj.", expanded: "conjunction" },
+  c: { short: "consec.", expanded: "vav-consecutive" },
   R: { short: "prep.", expanded: "preposition" },
   Rd: { short: "prep. def.", expanded: "preposition + definite" },
   Td: { short: "def.art.", expanded: "definite article" },

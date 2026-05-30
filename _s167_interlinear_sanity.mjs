@@ -278,6 +278,7 @@ const HEBREW_STATE = {
 };
 const HEBREW_BARE_POS_CODES = {
   C: { short: "conj.", expanded: "conjunction" },
+  c: { short: "consec.", expanded: "vav-consecutive" },
   R: { short: "prep.", expanded: "preposition" },
   Rd: { short: "prep. def.", expanded: "preposition + definite" },
   Td: { short: "def.art.", expanded: "definite article" },
@@ -576,6 +577,18 @@ eq(formatMorphology("HC/To", "hebrew", "short"), "conj. + obj.", "H12");
 // (29) Compound — definite article + common-masc-pl-abs (HTd/Ncmpa)
 eq(formatMorphology("HTd/Ncmpa", "hebrew", "short"),
   "def.art. + n. com. m. pl. abs.", "H13");
+// (29a) S169 — vav-consecutive + qal vc.impf. 3ms (Hc/Vqw3ms) — 21,218
+// rows in source carry this prefix; before the S169 decoder entry the
+// raw `Hc` leaked through as `Hc + qal vc.impf. 3ms`.
+eq(formatMorphology("Hc/Vqw3ms", "hebrew", "short"),
+  "consec. + qal vc.impf. 3ms", "H13a");
+// (29b) S169 — same compound, expanded register.
+eq(formatMorphology("Hc/Vqw3ms", "hebrew", "expanded"),
+  "vav-consecutive + qal vav-consecutive imperfect, 3rd masculine singular",
+  "H13b");
+// (29c) S169 — Hc + hiph. (Genesis 1:12 יָצָא pattern).
+eq(formatMorphology("Hc/Vhw3fs", "hebrew", "short"),
+  "consec. + hiph. vc.impf. 3fs", "H13c");
 // (30) Bare POS — object marker (HTo — אֵת)
 eq(formatMorphology("HTo", "hebrew", "expanded"), "object marker", "H14");
 // (31) Bare POS — conjunction (HC — וְ)
