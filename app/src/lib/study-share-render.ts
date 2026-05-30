@@ -75,20 +75,24 @@ export const STUDY_CARD_HEIGHT = 1920;
 const BODY_PCT = 1 - FOOTER_PCT;
 
 /** Body region inner padding so the captured modal sits inside the
- *  body with a small margin on each side (avoids the captured modal
- *  bleeding edge-to-edge of the card). */
-const BODY_INNER_PAD_PX = 40;
+ *  body with a small margin on each side. S170 walk-4: dropped from
+ *  40 → 16 to maximize content area at messaging-app thumbnail size. */
+const BODY_INNER_PAD_PX = 16;
 
-/** Forced capture width for the cloned modal — locked at S170 walk-1
- *  fix per Yoshi's X-share preview redline. Capturing at the source
- *  modal's natural desktop width (~1152px on max-w-6xl) produced a
- *  wide-aspect canvas that `object-fit: contain` then scaled down to
- *  fit the card's portrait body, leaving large dead-space bands above
- *  and below. Forcing the clone to a narrow render width (720px ≈
- *  iPad-portrait reading column) makes the captured canvas naturally
- *  tall-aspect so the contain-fit nearly fills the body region with
- *  only small left/right margins. */
-const CAPTURE_WIDTH_PX = 720;
+/** Forced capture width for the cloned modal. S170 walk-4 (Yoshi's
+ *  "text too small to read without clicking" redline): tightened from
+ *  720 → 540. Narrower capture = each glyph occupies a larger fraction
+ *  of the canvas → text reads bigger at messaging-app preview
+ *  compression. */
+const CAPTURE_WIDTH_PX = 540;
+
+/** Sandbox root font-size override. S170 walk-4: bumped from default
+ *  16px → 24px. Tailwind v4 sizes (`text-xs`, `text-sm`, etc.) are
+ *  rem-based, so a 1.5× root cascade makes every text utility 1.5×
+ *  bigger in the cloned subtree without per-element overrides. The
+ *  live modal is unchanged; only the cloned subtree inside the
+ *  off-screen sandbox uses the larger size. */
+const SANDBOX_ROOT_FONT_PX = 24;
 
 /** Base URL for the deep-link replacement in the export. The §30 spec
  *  locks the URL pattern as bible.remnantofpromise.org/strongs/{N}. */
@@ -209,17 +213,21 @@ function prepareModalClone(
 ): PreparedClone {
   const clone = modalElement.cloneNode(true) as HTMLElement;
 
-  // Force a narrow render width so the captured canvas comes out
-  // tall-aspect instead of wide (S170 walk-1 fix). Tailwind's
+  // Force a narrow render width AND a bumped root font-size so the
+  // captured canvas comes out tall-aspect with readable-at-thumbnail
+  // text. (S170 walk-1: width force, walk-4: font-size bump per
+  // Yoshi's "text too small without clicking" redline.) Tailwind's
   // `w-full max-w-6xl` on the modal resolves to min(100%, 1152px) =
-  // 720px under this sandbox; the modal's interior content re-wraps
-  // to a portrait reading column so the capture fills the card's
-  // body region with minimal margins.
+  // CAPTURE_WIDTH_PX under this sandbox; the modal's interior content
+  // re-wraps to a portrait reading column. The rem-based text
+  // utilities cascade through the SANDBOX_ROOT_FONT_PX override so
+  // every text size scales up 1.5×.
   const sandbox = document.createElement("div");
   sandbox.style.position = "fixed";
   sandbox.style.left = "-99999px";
   sandbox.style.top = "0";
   sandbox.style.width = `${CAPTURE_WIDTH_PX}px`;
+  sandbox.style.fontSize = `${SANDBOX_ROOT_FONT_PX}px`;
   sandbox.style.pointerEvents = "none";
   sandbox.style.zIndex = "-1";
   sandbox.appendChild(clone);
@@ -308,47 +316,62 @@ export async function renderStudyShareCard(
     throw new Error("study-share-render: 2D canvas context unavailable");
   }
 
-  // Body region — fill with the modal's surface color first so the
-  // contain-fit margin lands on a consistent ground.
+  // S170 walk-3 fix: paint the ENTIRE canvas with the theme-appropriate
+  // background FIRST. The previous code only filled the body region,
+  // leaving the footer band transparent. When iMessage/X/Slack
+  // composite the PNG against their own surface (white on most light-
+  // theme messaging UIs), the transparent footer picked up the host
+  // background. A light-theme share-card with white-text wordmark on a
+  // transparent footer rendered as white-on-white in Yoshi's X tweet
+  // preview — wordmark invisible. Filling the whole canvas with a
+  // solid theme bg guarantees the share-card is self-contained and
+  // displays identically across every messaging surface.
+  const theme: WatermarkTheme = detectThemeForExport();
+  const themeBg = theme === "light" ? "#fafaf7" : "#0a0a0a";
+  ctx.fillStyle = themeBg;
+  ctx.fillRect(0, 0, W, H);
+
+  // Body region — overlay the modal's actual surface color on top of
+  // the theme bg. This handles the case where the modal surface
+  // diverges from the parchment/dark bg (e.g., elevated card with a
+  // slightly different tone); the captured modal lands on a matching
+  // ground. The reader bg shows through above/below the modal where
+  // there's no overlay.
   const bodyH = Math.round(H * BODY_PCT);
   const bodyRegion = { x: 0, y: 0, w: W, h: bodyH };
 
-  // Pull the modal's computed surface background — falls back to the
-  // §1 default-theme reader surface (near-black) if computation fails
-  // (e.g., transparent / unset background).
   const surfaceColor = readModalSurfaceColor(modalElement);
   ctx.fillStyle = surfaceColor;
   ctx.fillRect(bodyRegion.x, bodyRegion.y, bodyRegion.w, bodyRegion.h);
 
-  // Object-fit: contain — scale the captured modal to fit the body
-  // region (minus inner padding) preserving aspect.
+  // S170 walk-3 fix: scale-to-fit-HEIGHT (preserving aspect), accept
+  // small left/right margin. The previous contain-fit prioritized
+  // width-fit when the capture was wider than the body region; in
+  // practice the captured modal is portrait-ish after the 720px width
+  // force, so fit-by-height fills the vertical space nearly fully and
+  // only loses small horizontal margins. Trades unused dead-space
+  // above/below for cleaner vertical fill.
   const availW = bodyRegion.w - BODY_INNER_PAD_PX * 2;
   const availH = bodyRegion.h - BODY_INNER_PAD_PX * 2;
   const captureAspect = modalCanvas.width / modalCanvas.height;
-  const availAspect = availW / availH;
-  let drawW: number;
-  let drawH: number;
-  if (captureAspect > availAspect) {
+  let drawH = availH;
+  let drawW = availH * captureAspect;
+  if (drawW > availW) {
+    // Capture aspect is wider than the body region; fall back to
+    // width-fit so the capture doesn't overflow horizontally.
     drawW = availW;
     drawH = availW / captureAspect;
-  } else {
-    drawH = availH;
-    drawW = availH * captureAspect;
   }
   const drawX = bodyRegion.x + (bodyRegion.w - drawW) / 2;
   const drawY = bodyRegion.y + (bodyRegion.h - drawH) / 2;
   ctx.drawImage(modalCanvas, drawX, drawY, drawW, drawH);
 
-  // Footer 20% — shared watermark per §170. S170 walk-2 fix: theme
-  // must match the body region (which is filled with the modal's
-  // surface color). The reader theme toggle sets
+  // Footer 20% — shared watermark per §170. S170 walk-1 fix: theme
+  // must match the body region. The reader theme toggle sets
   // `document.documentElement.dataset.theme = 'light' | 'dark'`; we
-  // mirror that here so a light-theme partner gets a light-theme
-  // watermark (dark wordmark on parchment) and dark-theme partner
-  // gets dark wordmark (white on near-black). Hardcoding dark made
-  // the wordmark text invisible (white-on-white) on light-theme
-  // shares — caught in the S170 X-tweet preview live walk.
-  const theme: WatermarkTheme = detectThemeForExport();
+  // mirror that here so a light-theme partner gets dark wordmark on
+  // parchment and dark-theme partner gets white wordmark on
+  // near-black.
   const brandMark = await preloadFooterBrandMark();
   await paintWatermarkFooter(ctx, W, H, { brandMark, theme });
 
