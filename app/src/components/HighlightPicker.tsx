@@ -402,11 +402,56 @@ export default function HighlightPicker({
           )}
         </div>
 
+        {/* S172.14 — prominent "Remove highlight from this verse" button
+            at the top of the picker when the verse has marks. One tap
+            deletes ALL marks on the verse; the picker stays open so the
+            partner can add a replacement immediately if they wanted to
+            change the color/style. The smaller × chips below remain for
+            selective per-mark removal when the verse has multiple. Fix
+            for the S172.12 discoverability problem — the menu-level
+            "Remove highlight" item shipped but partners look here first. */}
+        {!multiTarget && current.length > 0 && (
+          <button
+            type="button"
+            onClick={async () => {
+              setError(null);
+              setSaving(true);
+              try {
+                // Delete every mark on the verse in parallel.
+                await Promise.all(
+                  current.map((m) => deleteHighlight(m.id)),
+                );
+                // Drop each id from the parent state via the existing
+                // onDeleted callback (called once per id so the parent
+                // state-update path stays identical to the chip × flow).
+                for (const m of current) {
+                  onDeleted(m.id);
+                }
+                onClose();
+              } catch (e) {
+                setError(String(e));
+              } finally {
+                setSaving(false);
+              }
+            }}
+            disabled={saving}
+            className="mb-3 w-full rounded border border-[#FFBFC5] bg-gradient-to-r from-[#3A0F12] via-[#B82B36] to-[#3A0F12] px-3 py-2 text-sm font-semibold text-[#FFE6E8] shadow-sm hover:opacity-90 disabled:opacity-50"
+            aria-label={
+              current.length === 1
+                ? "Remove highlight from this verse"
+                : `Remove all ${current.length} highlights from this verse`
+            }
+          >
+            ✕ Remove {current.length === 1 ? "highlight" : `all ${current.length} highlights`} from this verse
+          </button>
+        )}
+
         {/* S117 chips row — existing marks on this verse, each with × to
             remove. Empty when no marks; tight row that takes minimal
             vertical space when populated. S123: hidden entirely in
             multi-target mode (apply is a fresh stroke against N verses,
-            not a per-verse edit). */}
+            not a per-verse edit). S172.14: chips kept for selective
+            per-mark removal when the verse has multiple. */}
         {!multiTarget && current.length > 0 && (
           <div className="mb-3 flex flex-wrap gap-1.5">
             {current.map((mark) => (
