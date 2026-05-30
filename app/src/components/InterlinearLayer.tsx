@@ -97,6 +97,13 @@ export interface InterlinearLayerProps {
    *  precedes the first column at the baseline. Stays at the baseline
    *  alongside the surface words. */
   leadingBaseline?: ReactNode;
+  /**
+   * S172 — sacred-name display mask transform. Applied to the English
+   * surface word at the bottom of each column-stack so the interlinear
+   * surface honors the partner's Yahuah/YHWH preference. Default
+   * identity for backwards-compat with any non-mask-aware caller.
+   */
+  surfaceTransform?: (text: string) => string;
 }
 
 // CSS-variable container styles. Centralized so the column theming is
@@ -182,6 +189,14 @@ export function InterlinearColumnView(props: {
   verseId: number;
   showStrongsSuperscripts: boolean;
   handlers: InterlinearWordHandlers;
+  /**
+   * S172 — sacred-name display mask transform. Applied to the
+   * English surface row at render time so the column-stack bottom
+   * cell honors the partner's Yahuah/YHWH preference. Default
+   * identity for backwards-compat with any caller that doesn't
+   * pass the prop.
+   */
+  surfaceTransform?: (text: string) => string;
 }): React.ReactElement {
   const {
     column,
@@ -191,6 +206,7 @@ export function InterlinearColumnView(props: {
     verseId,
     showStrongsSuperscripts,
     handlers,
+    surfaceTransform = (s) => s,
   } = props;
   const [morphRegister, setMorphRegister] =
     useState<MorphologyRegister>("short");
@@ -304,7 +320,7 @@ export function InterlinearColumnView(props: {
           handlers.onWordTap(word, verseId);
         }}
       >
-        {column.surface}
+        {surfaceTransform(column.surface)}
         {showStrongsSuperscripts && strongNumber && (
           <sup
             style={strongsSupStyle}
@@ -340,6 +356,7 @@ export function InterlinearLayer(
     showStrongsSuperscripts,
     handlers,
     leadingBaseline,
+    surfaceTransform,
   } = props;
 
   // De-dup by position, last wins (mirrors groupVerseColumns'
@@ -394,6 +411,7 @@ export function InterlinearLayer(
             verseId={verseId}
             showStrongsSuperscripts={showStrongsSuperscripts}
             handlers={handlers}
+            surfaceTransform={surfaceTransform}
           />
         );
       })}

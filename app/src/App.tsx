@@ -2121,7 +2121,15 @@ function Reader() {
                                   verseWord={matched}
                                   verseId={v.id}
                                   showStrongsSuperscripts={showStrongsSuperscripts}
-                                  surfaceOverride={seg.text}
+                                  // S172 — apply sacred-name mask to the
+                                  // column-stack's bottom English surface row
+                                  // before render. Parens-strip intentionally
+                                  // NOT applied here (the segment is a single
+                                  // word, no English parens). Caught at S172
+                                  // live-walk: Genesis 2:4 was rendering
+                                  // "Yahuah" in interlinear mode despite the
+                                  // mask being set to "yhwh".
+                                  surfaceOverride={applySacredMask(seg.text)}
                                   handlers={{
                                     onWordTap: handleWordQuickTap,
                                     onWordPointerDown: handlePointerDown,
