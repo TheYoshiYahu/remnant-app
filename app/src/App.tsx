@@ -464,7 +464,16 @@ function Reader() {
   // Session 38: me-fetch for the chrome's Manage/Upgrade decision.
   // 401 (no JWT cookie) is non-fatal — we just don't show the partner
   // chrome at all in that case.
+  //
+  // S174 — meChecked tracks whether the /v1/subscriptions/me fetch has
+  // resolved at least once (success OR failure). The chrome's anonymous
+  // "Sign in" branch (Track 2) renders only when the fetch is known to
+  // have completed with no session — i.e. me === null AND meChecked ===
+  // true. During the initial fetch window (~100-300ms cold) meChecked
+  // stays false, the anonymous branch renders nothing, and a signed-in
+  // partner never sees a "Sign in" flicker before their real CTA paints.
   const [me, setMe] = useState<SubscriptionMe | null>(null);
+  const [meChecked, setMeChecked] = useState<boolean>(false);
   // S168 — §28 Companion-gate flag, depends on `me`. Computed once per
   // render; cheap literal-string compare. Drives the Interlinear pill's
   // live-vs-locked render + the InterlinearWordColumn mount branch.
@@ -1183,8 +1192,14 @@ function Reader() {
   // link.
   useEffect(() => {
     getSubscriptionMe()
-      .then(setMe)
-      .catch(() => setMe(null));
+      .then((m) => {
+        setMe(m);
+        setMeChecked(true);
+      })
+      .catch(() => {
+        setMe(null);
+        setMeChecked(true);
+      });
   }, []);
 
   // S116 — hydrate saved reading position on mount. Resolution order
@@ -1744,20 +1759,28 @@ function Reader() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-8">
       <header className="mb-6 border-b border-[var(--reader-accent)] pb-4">
-        {/* S173 — mobile chrome layout fix. Below the sm: breakpoint
-            (640px) the header stacks vertically: title on top, chrome
-            cluster below. The chrome cluster uses flex-wrap on mobile
-            so the seven metallic buttons (Listen / Search / Bookmarks
-            / Notes / MODE Light-Dark / Settings / Manage-partnership)
-            pack onto 2-3 rows at their intrinsic widths instead of
-            overflowing horizontally. Above sm: the cluster returns to
-            single-row nowrap and the header to side-by-side.
+        {/* S173 + S174 — chrome layout, always stacked.
+            S173 staged the mobile fix as a flip: stack vertically
+            below sm: (640px), return to side-by-side row above.
+            S173-close partner-walks surfaced the narrow-desktop edge:
+            at 700-900px Safari windows (just above the sm: flip) the
+            row layout returns, the chrome cluster's intrinsic width
+            (~700-750px across the seven metallic buttons) eats the
+            available horizontal space, and the title h1 squeezes into
+            a narrow column or overlaps the Listen button.
+            S174 fix: drop the side-by-side flip entirely. The header
+            stays stacked at all widths — title on top, chrome row
+            below. Tablet and laptop have plenty of vertical room;
+            the trade for a clean wide-screen row read isn't worth
+            the narrow-desktop overlap. The chrome row keeps flex-wrap
+            at all widths so on a wide viewport the cluster fits on a
+            single row at intrinsic width (Listen / Search / Bookmarks
+            / Notes / Theme / Settings / Manage-account-or-Sign-in),
+            and on narrow viewports the buttons pack onto 2-3 rows
+            without scroll.
             shrink-0 via the arbitrary [&>*] selector keeps each
-            button at its natural width on either layout. Preserves
-            the seven-metallic chrome work landed at S172.8 — partner
-            sees the full cluster on every viewport without a
-            horizontal swipe or hamburger collapse. */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            button at its natural width on either layout. */}
+        <div className="flex flex-col gap-4">
           <div className="min-w-0">
             {/* S172.13 — brand title rendered as the §5 spectral-blue
                 verse-number accent (--reader-accent, #0084FF). Pulls
@@ -1772,7 +1795,7 @@ function Reader() {
               Restored Names Edition
             </p>
           </div>
-          <div className="flex flex-wrap items-start gap-2 sm:flex-nowrap [&>*]:shrink-0">
+          <div className="flex flex-wrap items-start gap-2 [&>*]:shrink-0">
             {/* S157 — chrome Listen button per DESIGN_LANGUAGE.md §25.
                 Opens the bottom-pinned AudioPlayer starting from the
                 verse currently centered in the viewport (S116
@@ -1859,14 +1882,29 @@ function Reader() {
               <span aria-hidden="true">⚙</span>
               <span>Settings</span>
             </a>
-            {/* S172 — partnership / membership trio in the metallic
-                emerald register. Foundational ongoing relationship per
-                §3 — the same green that marks Tanakh-foundation books in
-                the cross-reference pills, here applied to the partnership
-                that grounds the partner's access. */}
+            {/* S172 + S174 — account / partnership chrome in the
+                metallic emerald register. Foundational ongoing
+                relationship per §3 — the same green that marks Tanakh-
+                foundation books in the cross-reference pills, here
+                applied to the account that grounds the partner's
+                access.
+                S174 changes:
+                  - "Manage partnership" → "Manage account" per Yoshi
+                    voice-call. The page at /manage continues to surface
+                    partnership state for the partners who have one.
+                  - Anonymous branch added: when the me-fetch has
+                    completed and returned no session (meChecked &&
+                    !me), surface a "Sign in" chrome entry in the same
+                    emerald register. Before S174 the only sign-in path
+                    for a logged-out partner went through a paid-tier
+                    CTA gate; now the chrome carries it directly.
+                Plain "Sign in" copy stands as the auth-doorway label —
+                the framework voice doesn't impose on neutral utility
+                verbs, and the emerald color thread already names this
+                slot as the relationship gateway. */}
             {me && (me.status === "active" || me.status === "trialing") ? (
               <a href="/manage" className="chrome-metal chrome-metal-emerald">
-                Manage partnership
+                Manage account
               </a>
             ) : me && me.status === "none" ? (
               <a href="/pricing" className="chrome-metal chrome-metal-emerald">
@@ -1880,6 +1918,10 @@ function Reader() {
                 me.status === "incomplete_expired") ? (
               <a href="/pricing" className="chrome-metal chrome-metal-emerald">
                 Resubscribe
+              </a>
+            ) : meChecked ? (
+              <a href="/sign-in" className="chrome-metal chrome-metal-emerald">
+                Sign in
               </a>
             ) : null}
           </div>
