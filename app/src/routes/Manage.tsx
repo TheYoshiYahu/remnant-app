@@ -7,7 +7,13 @@ import {
 } from "../lib/api";
 
 /**
- * Session 39 — Manage partnership surface.
+ * Session 39 — Manage account surface (renamed at S174 per Yoshi
+ * voice-call; prior name "Manage partnership"). Same route /manage,
+ * same partnership-state surface for partners with a subscription,
+ * same anonymous-redirect and no-subscription branches; the chrome
+ * entry and page title carry the broader "account" framing so the
+ * door reads consistently for partners and non-partner signed-in
+ * users alike.
  *
  * Renders the current subscription state (tier, cadence, founder/promo
  * status, locked price, period-end date, cancel-at-period-end flag) and
@@ -129,7 +135,7 @@ export default function Manage() {
   // ---- Render: anonymous (no JWT cookie) ---------------------------------
   if (view.kind === "anonymous") {
     return (
-      <PageShell title="Manage partnership">
+      <PageShell title="Manage account">
         <p className="text-base text-[var(--reader-muted)]">
           Sign in at{" "}
           <a
@@ -147,7 +153,7 @@ export default function Manage() {
   // ---- Render: loading ---------------------------------------------------
   if (view.kind === "loading") {
     return (
-      <PageShell title="Manage partnership">
+      <PageShell title="Manage account">
         <p className="text-sm text-[var(--reader-muted)]">Loading…</p>
       </PageShell>
     );
@@ -156,7 +162,7 @@ export default function Manage() {
   // ---- Render: load error ------------------------------------------------
   if (view.kind === "load_error") {
     return (
-      <PageShell title="Manage partnership">
+      <PageShell title="Manage account">
         <div className="rounded border border-red-300 bg-red-50 p-3 text-sm text-red-800">
           Could not load your partnership: {view.message}
         </div>
@@ -167,7 +173,7 @@ export default function Manage() {
   // ---- Render: signed in but no subscription -----------------------------
   if (view.kind === "no_subscription") {
     return (
-      <PageShell title="Manage partnership">
+      <PageShell title="Manage account">
         <p className="mb-4 text-base text-[var(--reader-muted)]">
           You don't have an active partnership on this account.
         </p>
@@ -190,7 +196,7 @@ export default function Manage() {
     const priceLabel = formatDollars(justCancelled.locked_price_cents);
 
     return (
-      <PageShell title="Manage partnership">
+      <PageShell title="Manage account">
         <div className="mb-6 rounded border border-emerald-300 bg-emerald-50 px-4 py-3 text-base text-emerald-900">
           <div className="font-medium">Cancellation set.</div>
           {periodEndLabel ? (
@@ -236,7 +242,7 @@ export default function Manage() {
   const isTerminal = sub.status === "canceled" || sub.status === "unpaid";
 
   return (
-    <PageShell title="Manage partnership">
+    <PageShell title="Manage account">
       {/* Subscription summary */}
       <div className="mb-6 rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
         <div className="flex items-baseline justify-between">
