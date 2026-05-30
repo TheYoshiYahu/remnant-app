@@ -129,6 +129,7 @@ from models import (
     CreateNoteRequest,
     CreateOrReplaceBookmarkRequest,
     CrossRefTarget,
+    DisplayPrefs,
     HealthResponse,
     Highlight,
     HighlightColor,
@@ -1278,6 +1279,108 @@ async def upsert_reading_position(
         verse_number=body.verse_number,
         updated_at=upserted["updated_at"],
     )
+
+
+# ----- Display preferences cross-device sync (Session 173) ----------------
+#
+# Per S172_SACRED_NAME_MASK_SPEC the partner's reader-display preferences
+# (sacred_name_mask, hide_parentheticals, theme, font_size,
+# interlinear_default, tts_voice) sync server-side so a partner who
+# changes their pref on phone A sees it carry to phone B at sign-in.
+#
+# Storage: users.display_prefs JSONB (S173 migration). Sparse — only keys
+# the partner has explicitly set are present.
+#
+# Reconciliation rule (client-side): on sign-in the client GETs the
+# stored prefs and the server wins on any divergence with localStorage
+# (the spec's "Synced on sign-in: server preference wins over
+# localStorage if the two diverge"). On every subsequent local change,
+# the client PUTs the full intended state so the JSONB on the row
+# always reflects the partner's current intent. Free-tier endpoint —
+# display prefs are §9 free-tier per DESIGN_LANGUAGE.md (same posture
+# as reading position).
+#
+# Endpoints:
+#   GET /v1/me/display-prefs   → DisplayPrefs (all-None when row absent)
+#   PUT /v1/me/display-prefs   → DisplayPrefs (echo of stored state)
+
+
+@app.get("/v1/me/display-prefs", response_model=DisplayPrefs)
+async def get_display_prefs(
+    current_user: User = Depends(get_current_user_required),
+) -> DisplayPrefs:
+    """Return the partner's stored display preferences.
+
+    Returns an all-None DisplayPrefs object when no preferences have
+    ever been written (NULL column, or row absent — though
+    upsert_user guarantees the row exists by the time this returns).
+    The client treats all-None as "nothing to reconcile, localStorage
+    is authoritative." Once any preference is PUT the corresponding
+    key starts coming back populated and the client honors server-wins
+    on divergence.
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        row = await conn.fetchrow(
+            "SELECT display_prefs FROM users WHERE id = $1::uuid",
+            user_uuid,
+        )
+    if row is None or row["display_prefs"] is None:
+        return DisplayPrefs()
+    # asyncpg returns JSONB as a Python dict (after the json codec is
+    # registered in db.py; if not, as a JSON string). Handle both
+    # shapes defensively — Pydantic v2 model_validate accepts a dict
+    # but not a raw JSON string.
+    raw = row["display_prefs"]
+    if isinstance(raw, str):
+        import json as _json
+        raw = _json.loads(raw)
+    return DisplayPrefs.model_validate(raw)
+
+
+@app.put("/v1/me/display-prefs", response_model=DisplayPrefs)
+async def upsert_display_prefs(
+    body: DisplayPrefs,
+    current_user: User = Depends(get_current_user_required),
+) -> DisplayPrefs:
+    """Replace the partner's stored display preferences with the body.
+
+    Whole-object replacement, not partial merge. Rationale: the client
+    always knows its current full intended state (every preference
+    lives in localStorage); sending the whole state on every change
+    keeps the server canonical and avoids stale-merge bugs across
+    multi-device usage.
+
+    `exclude_none=True` on the dump means client-side defaults that
+    were never explicitly set don't get written — the JSONB stays
+    sparse. To unset a preference back to client default, the client
+    omits the key in the PUT body.
+    """
+    import json as _json
+
+    payload = body.model_dump(exclude_none=True)
+
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        # `to_jsonb($2::text)` parses the JSON string into a JSONB
+        # value server-side, sidestepping any asyncpg codec
+        # surprises. The body is small (≤6 keys) so the text round-
+        # trip is fine.
+        updated = await conn.fetchrow(
+            "UPDATE users SET display_prefs = $2::jsonb "
+            " WHERE id = $1::uuid "
+            "RETURNING display_prefs",
+            user_uuid,
+            _json.dumps(payload),
+        )
+    raw = updated["display_prefs"] if updated else None
+    if raw is None:
+        return DisplayPrefs()
+    if isinstance(raw, str):
+        raw = _json.loads(raw)
+    return DisplayPrefs.model_validate(raw)
 
 
 # ----- Bookmarks (Session 124 — Wheel 5) ----------------------------------

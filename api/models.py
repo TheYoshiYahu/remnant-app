@@ -522,6 +522,48 @@ class UpsertReadingPositionRequest(BaseModel):
     verse_number: int = Field(..., ge=1)
 
 
+# ----- Display preferences cross-device sync (Session 173) ---------------
+#
+# Mirror of the localStorage-backed reader preferences introduced in S172
+# (sacred name mask, parens hide, theme, font size, interlinear default,
+# TTS voice). Lives in users.display_prefs (JSONB). Sparse — only keys
+# the partner has explicitly set are serialized. Server is canonical on
+# sign-in per S172_SACRED_NAME_MASK_SPEC; client reconciles localStorage
+# against the GET response (server wins on divergence).
+
+
+SacredNameMask = Literal["yahuah", "yhwh"]
+ReaderTheme = Literal["light", "dark"]
+ReaderFontSize = Literal["small", "medium", "large"]
+
+
+class DisplayPrefs(BaseModel):
+    """The partner's reader-display preferences for cross-device sync.
+
+    All fields Optional — the JSONB column is sparse, only keys the
+    partner has explicitly set get serialized to the server. On GET the
+    fields that aren't present in the stored JSON come back as None and
+    the client falls through to its localStorage value, then to the
+    in-code default. On PUT the request body uses the same shape:
+    missing keys are not written (so a partial-state PUT doesn't wipe
+    other prefs already on the row).
+
+    The TTS voice is a free-text string because the curated voice list
+    is partner-system-dependent (browser voice ids on web, native voice
+    ids on the Capacitor shells). Validation lives client-side at the
+    voice-picker surface.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    sacred_name_mask: Optional[SacredNameMask] = None
+    hide_parentheticals: Optional[bool] = None
+    theme: Optional[ReaderTheme] = None
+    font_size: Optional[ReaderFontSize] = None
+    interlinear_default: Optional[bool] = None
+    tts_voice: Optional[str] = None
+
+
 # ----- Strong's tap-on-word (Session 120 — Wheel 1) -----------------------
 #
 # Free-tier feature per DESIGN_LANGUAGE.md §9. Every partner gets the
