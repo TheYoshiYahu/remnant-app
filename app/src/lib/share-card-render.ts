@@ -55,6 +55,7 @@ import {
   paintWatermarkFooter,
   preloadFooterBrandMark,
 } from "./watermark-footer-render";
+import { tryNativeShare } from "./capacitor-share";
 
 // ─────────────────────────────────────────────────────────────────────
 // Types
@@ -592,6 +593,31 @@ export async function executeShare(
     };
   }
 
+  // S173 — Path 0: Capacitor-native share. Fires only when the bundle
+  // is running inside the iOS/Android shell; web/PWA returns
+  // {handled:false} and falls through to path 1. On native, writes the
+  // PNG to the platform CACHE dir and invokes @capacitor/share with a
+  // real file URI (the iOS Action Extension / Android intent picker
+  // need a file URI, not a Blob).
+  const nativeText = buildTextOnlyFallback(input.verses, rangeHeader);
+  const nativeUrl = `https://bible.remnantofpromise.org`;
+  try {
+    const native = await tryNativeShare({
+      canvas,
+      filename,
+      text: nativeText,
+      url: nativeUrl,
+    });
+    if (native.handled) {
+      if (native.aborted) return { ok: false, aborted: true };
+      if (native.ok) return { ok: true, transport: "share" };
+      // native handled but failed (filesystem write error etc.) — fall
+      // through to the web chain so we still ship something useful.
+    }
+  } catch {
+    // Dynamic import or unexpected throw — fall through.
+  }
+
   // Path 1: navigator.share with files.
   if (typeof navigator !== "undefined" && typeof navigator.share === "function") {
     try {
@@ -657,6 +683,25 @@ export async function executeCopy(
       ok: false,
       error: `render failed: ${(err as Error)?.message ?? String(err)}`,
     };
+  }
+
+  // S173 — Path 0: Capacitor-native share. On native, writes the PNG
+  // to the platform CACHE dir and invokes @capacitor/share. No-op on
+  // web — falls straight through to path 1.
+  try {
+    const native = await tryNativeShare({
+      canvas,
+      filename,
+      text: textFallback,
+      url: `https://bible.remnantofpromise.org`,
+    });
+    if (native.handled) {
+      if (native.aborted) return { ok: false, aborted: true };
+      if (native.ok) return { ok: true, transport: "share" };
+      // native handled but failed — fall through.
+    }
+  } catch {
+    // Dynamic import or unexpected throw — fall through.
   }
 
   // Path 1: navigator.share with files.

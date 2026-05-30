@@ -61,6 +61,7 @@ import {
   paintWatermarkFooter,
   preloadFooterBrandMark,
 } from "./watermark-footer-render";
+import { tryNativeShare } from "./capacitor-share";
 
 // ─────────────────────────────────────────────────────────────────────
 // Constants — locked per DESIGN_LANGUAGE.md §30
@@ -549,6 +550,41 @@ export async function executeStudyShare(
       ok: false,
       error: `render failed: ${(err as Error)?.message ?? String(err)}`,
     };
+  }
+
+  // S173 — Path 0: Capacitor-native share. On native, writes the PNG
+  // to the platform CACHE dir and invokes @capacitor/share with a real
+  // file URI. No-op on web — falls through to path 1.
+  //
+  // The share-sheet's URL slot carries the watermark-line URL for this
+  // study export — anchor permalink for xref shares, brand URL for
+  // strongs shares — mirroring the watermark line on the rendered PNG
+  // so the share has a clickable doorway back to the verse / lexicon
+  // entry.
+  let nativeUrl = "https://bible.remnantofpromise.org";
+  if (meta.kind === "xref") {
+    nativeUrl = `https://${buildAnchorPermalink(
+      meta.bookSlug,
+      meta.chapterNumber,
+      meta.verseNumber
+    )}`;
+  } else if (meta.kind === "strongs") {
+    nativeUrl = `https://bible.remnantofpromise.org/strongs/${meta.strongNumber}`;
+  }
+  try {
+    const native = await tryNativeShare({
+      canvas,
+      filename,
+      text: filename,
+      url: nativeUrl,
+    });
+    if (native.handled) {
+      if (native.aborted) return { ok: false, aborted: true };
+      if (native.ok) return { ok: true, transport: "share" };
+      // native handled but failed — fall through to the web chain.
+    }
+  } catch {
+    // Dynamic import or unexpected throw — fall through.
   }
 
   // Path 1 — navigator.share with files.
