@@ -77,6 +77,7 @@ import {
 import { renderMarkdownBody } from "./lib/markdown";
 import { useParentheticalsToggle } from "./lib/useParentheticalsToggle";
 import { useSacredNameMask } from "./lib/useSacredNameMask";
+import { bookPillClassName } from "./lib/book-source-class";
 import { useStrongsSuperscriptsToggle } from "./lib/useStrongsSuperscriptsToggle";
 import {
   isAtCompanionTier,
@@ -121,8 +122,14 @@ import paragraphStartsData from "./data/paragraph_starts.json";
 function ThemeToggle() {
   const { theme, toggle } = useTheme();
   const isDark = theme === "dark";
+  // S172 — Theme/Mode toggle's selected cell carries the metallic silver
+  // register (chrome utility, cool neutral). The label "MODE" itself
+  // stays in the §5 techelet accent color so the two-state widget reads
+  // as the same divine-accent header it always has, with the selected
+  // cell adopting the silver-utility register matching the rest of the
+  // chrome utility cluster (Settings = bronze sits to its right).
   const activeClasses =
-    "border-[#1A6FE5] bg-[color-mix(in_srgb,#1A6FE5_18%,transparent)] text-[var(--reader-text)]";
+    "border-[#E5E7EB] text-[#F3F4F6] [background-image:linear-gradient(to_right,#2E3338_0%,#9CA3AF_50%,#2E3338_100%)]";
   const inactiveClasses =
     "border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-muted)] hover:text-[var(--reader-text)]";
   return (
@@ -1683,7 +1690,13 @@ function Reader() {
       <header className="mb-6 border-b border-[var(--reader-accent)] pb-4">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-text)]">
+            {/* S172 — brand title in solid bright techelet. The §3
+                divine register is the brand's load-bearing color across
+                the brand-mark + watermark + chrome accents. Bright shade
+                (#7FB8FF, light end of the techelet ramp) is chosen for
+                readability against the dark surface — a metallic-gradient
+                text treatment faded into invisibility at the deep stops. */}
+            <h1 className="text-2xl font-semibold tracking-tight text-[#7FB8FF]">
               The Remnant of Promise Official Study Bible
             </h1>
             <p className="mt-1 text-sm text-[var(--reader-muted)]">
@@ -1703,7 +1716,7 @@ function Reader() {
               onClick={startPlaybackFromCurrentVerse}
               aria-label="Listen to chapter"
               title="Listen to chapter"
-              className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+              className="chrome-metal chrome-metal-gold"
             >
               <span aria-hidden="true">▶</span>
               <span>Listen</span>
@@ -1722,7 +1735,7 @@ function Reader() {
               aria-label="Open search"
               aria-keyshortcuts="Meta+K Control+K"
               title="Open search (Cmd-K / Ctrl-K)"
-              className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+              className="chrome-metal chrome-metal-techelet"
             >
               <span aria-hidden="true">⌕</span>
               <span>Search</span>
@@ -1740,7 +1753,7 @@ function Reader() {
               onClick={() => setBookmarksIndexOpen(true)}
               aria-label="Open bookmarks"
               title="Open bookmarks"
-              className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+              className="chrome-metal chrome-metal-argaman"
             >
               <span aria-hidden="true">⚑</span>
               <span>Bookmarks</span>
@@ -1757,7 +1770,7 @@ function Reader() {
               onClick={openNotesPanel}
               aria-label="Open notes"
               title="Open notes"
-              className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+              className="chrome-metal chrome-metal-scarlet"
             >
               <span aria-hidden="true">✎</span>
               <span>Notes</span>
@@ -1772,23 +1785,22 @@ function Reader() {
               href="/settings"
               aria-label="Open settings"
               title="Open settings"
-              className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+              className="chrome-metal chrome-metal-bronze"
             >
               <span aria-hidden="true">⚙</span>
               <span>Settings</span>
             </a>
+            {/* S172 — partnership / membership trio in the metallic
+                emerald register. Foundational ongoing relationship per
+                §3 — the same green that marks Tanakh-foundation books in
+                the cross-reference pills, here applied to the partnership
+                that grounds the partner's access. */}
             {me && (me.status === "active" || me.status === "trialing") ? (
-              <a
-                href="/manage"
-                className="self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
-              >
+              <a href="/manage" className="chrome-metal chrome-metal-emerald">
                 Manage partnership
               </a>
             ) : me && me.status === "none" ? (
-              <a
-                href="/pricing"
-                className="self-start whitespace-nowrap rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
-              >
+              <a href="/pricing" className="chrome-metal chrome-metal-emerald">
                 Become a partner
               </a>
             ) : me &&
@@ -1797,10 +1809,7 @@ function Reader() {
                 me.status === "unpaid" ||
                 me.status === "incomplete" ||
                 me.status === "incomplete_expired") ? (
-              <a
-                href="/pricing"
-                className="self-start whitespace-nowrap rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-3 py-1.5 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
-              >
+              <a href="/pricing" className="chrome-metal chrome-metal-emerald">
                 Resubscribe
               </a>
             ) : null}
@@ -1964,8 +1973,16 @@ function Reader() {
             expansion-register green; verse-scope stays in §2 spectral
             blue. Weight nudged to font-medium for legibility.
           */}
-          <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)]">
-            {chapterDetail.book.title}{" "}
+          {/* S172 — book heading rendered as a source-class metallic pill
+              per COLOR_PALETTE.md §9 + S130's pill register. Tanakh →
+              emerald, NT → gold, Extras → argaman. Source class becomes
+              visible at a glance anywhere in the chapter. Chapter number
+              stays in the existing §5 spectral-emerald accent so the
+              two registers (pill + accent) remain visually distinct. */}
+          <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)] flex items-center gap-2 flex-wrap">
+            <span className={bookPillClassName(chapterDetail.book.slug)}>
+              {chapterDetail.book.title}
+            </span>
             <span className="font-medium text-[#2EFFA1]">
               {chapterDetail.chapter.chapter_number}
             </span>

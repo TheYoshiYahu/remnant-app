@@ -337,3 +337,109 @@ body {
   text-decoration: underline;
   text-decoration-color: #15A86A;
 }
+
+/* ─── S172 chrome metallic register sweep ─────────────────────────────
+ *
+ * Seven metallic registers for the top-right chrome cluster + the book-
+ * heading source-class pills. Each register carries a left-to-right
+ * gradient (deep → mid → deep), a bright highlight border, and a pale
+ * near-white text in the register's color family — same architectural
+ * treatment as the S130 cross-reference target pills, applied uniformly
+ * across the chrome and the book heading.
+ *
+ *   gold     — priestly action / share register      (Listen)
+ *   techelet — divine illumination                   (Search)
+ *   argaman  — covenant body                         (Bookmarks)
+ *   scarlet  — atonement / blood / covenant signing  (Notes) NEW
+ *   silver   — cool chrome utility                   (Theme) NEW
+ *   bronze   — warm chrome utility                   (Settings) NEW
+ *   emerald  — foundational ongoing relationship     (Manage partnership)
+ *
+ * Scarlet completes the tabernacle-veil palette per Exodus 26:31
+ * (techelet + argaman + scarlet + gold). Silver + bronze are the two
+ * chrome-utility metallics — visually distinct so Theme vs Settings
+ * read clearly different at a glance.
+ */
+.chrome-metal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  white-space: nowrap;
+  align-self: flex-start;
+  padding: 0.375rem 0.625rem;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: opacity 0.15s ease;
+}
+.chrome-metal:hover {
+  opacity: 0.9;
+}
+.chrome-metal-gold {
+  background-image: linear-gradient(to right, #645028 0%, #B4A078 50%, #645028 100%);
+  border-color: #FCECAF;
+  color: #FFF8E1;
+}
+.chrome-metal-techelet {
+  background-image: linear-gradient(to right, #0A2D84 0%, #1A6FE5 50%, #0A2D84 100%);
+  border-color: #93C0FF;
+  color: #E6F1FF;
+}
+.chrome-metal-argaman {
+  background-image: linear-gradient(to right, #3D1B5C 0%, #8E4FB3 50%, #3D1B5C 100%);
+  border-color: #D4B0E0;
+  color: #F5E6FA;
+}
+.chrome-metal-scarlet {
+  background-image: linear-gradient(to right, #3A0F12 0%, #B82B36 50%, #3A0F12 100%);
+  border-color: #FFBFC5;
+  color: #FFE6E8;
+}
+.chrome-metal-silver {
+  background-image: linear-gradient(to right, #2E3338 0%, #9CA3AF 50%, #2E3338 100%);
+  border-color: #E5E7EB;
+  color: #F3F4F6;
+}
+.chrome-metal-bronze {
+  background-image: linear-gradient(to right, #3D2418 0%, #B87333 50%, #3D2418 100%);
+  border-color: #E8B98C;
+  color: #FFE9D1;
+}
+.chrome-metal-emerald {
+  background-image: linear-gradient(to right, #04321E 0%, #15A86A 50%, #04321E 100%);
+  border-color: #2EFFA1;
+  color: #E6FFF2;
+}
+
+/* Book-heading source-class pill. Same register family as the chrome
+ * cluster but sized up for heading display. */
+.book-pill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: inherit;
+  font-weight: 600;
+  border-width: 1px;
+  border-style: solid;
+  line-height: 1.1;
+  vertical-align: middle;
+}
+.book-pill-emerald {
+  background-image: linear-gradient(to right, #04321E 0%, #15A86A 50%, #04321E 100%);
+  border-color: #2EFFA1;
+  color: #E6FFF2;
+}
+.book-pill-gold {
+  background-image: linear-gradient(to right, #645028 0%, #B4A078 50%, #645028 100%);
+  border-color: #FCECAF;
+  color: #FFF8E1;
+}
+.book-pill-argaman {
+  background-image: linear-gradient(to right, #3D1B5C 0%, #8E4FB3 50%, #3D1B5C 100%);
+  border-color: #D4B0E0;
+  color: #F5E6FA;
+}
