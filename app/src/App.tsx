@@ -29,6 +29,8 @@ import Landing from "./routes/Landing";
 import Settings from "./routes/Settings";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
 import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
+import { hasSeenSigninAsk } from "./lib/signinAsk";
+import { hasJwtCookie } from "./lib/display-prefs-sync";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ChapterCommentary from "./components/ChapterCommentary";
 import HighlightPicker, {
@@ -238,15 +240,42 @@ export default function App() {
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
-  // S172 — first-launch welcome modal for the sacred-name display
-  // mask. Fires once per device on the first session where no
-  // rop_sacred_name_mask_v1 key exists in localStorage. After the
-  // partner picks, the key is written and the modal stays dismissed
-  // for every future session on this device. Mounts on ANY route
-  // (Landing / Reader / Pricing / etc.) since the preference frames
-  // every text-render surface across the app.
-  const [welcomeOpen, setWelcomeOpen] = useState<boolean>(
-    () => !hasStoredSacredNamePreference()
+  // S172 + S174 — first-launch welcome modal.
+  //
+  // **S172 (original):** sacred-name display mask question (Yahuah /
+  // YHWH). Fired once per device on the first session where no
+  // rop_sacred_name_mask_v1 key existed in localStorage. After the
+  // partner picked, the key was written and the modal stayed
+  // dismissed forever on this device.
+  //
+  // **S174 (extension):** the modal is now a two-step flow. Step 1
+  // is the original mask question; step 2 is a sign-in / create-
+  // account ask that explains what signing in carries (notes,
+  // bookmarks, highlights, reading position synced across devices).
+  // The mount condition expanded accordingly:
+  //
+  //   - **Signed-in partner (JWT cookie present)** — modal never
+  //     mounts. They're already signed in; the ask is moot.
+  //   - **On the /sign-in route** — modal never mounts. The partner
+  //     is intentionally in the auth flow; talking over them with a
+  //     "sign in or create an account" ask would be silly.
+  //   - **Otherwise mount when either flag is unset:**
+  //     `!hasStoredSacredNamePreference()` (S172 case — fresh device)
+  //     OR `!hasSeenSigninAsk()` (S174 case — existing S172 tester
+  //     who already set the mask but hasn't seen the sign-in ask
+  //     yet). The initial step is `"mask"` if the mask flag is
+  //     unset, `"signin"` if only the sign-in-ask flag is unset.
+  const [welcomeOpen, setWelcomeOpen] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false; // SSR — never
+    if (hasJwtCookie()) return false;                // signed-in — skip
+    if (window.location.pathname.startsWith("/sign-in")) return false;
+    return !hasStoredSacredNamePreference() || !hasSeenSigninAsk();
+  });
+  // initialStep captured once at mount; the modal manages step state
+  // internally after that. Computed via useState initializer (same
+  // single-call semantics) so we don't re-evaluate on every render.
+  const [welcomeInitialStep] = useState<"mask" | "signin">(() =>
+    hasStoredSacredNamePreference() ? "signin" : "mask"
   );
 
   // S127 W7 — preload + img.decode() the share-card brand-mark at app
@@ -312,7 +341,10 @@ export default function App() {
   // route surface; until the partner picks, every render layer
   // underneath is interactable but the modal is the foreground.
   const welcomeModal = welcomeOpen ? (
-    <SacredNameWelcomeModal onClose={() => setWelcomeOpen(false)} />
+    <SacredNameWelcomeModal
+      onClose={() => setWelcomeOpen(false)}
+      initialStep={welcomeInitialStep}
+    />
   ) : null;
 
   if (pathname === "/manage" || pathname.startsWith("/manage")) {

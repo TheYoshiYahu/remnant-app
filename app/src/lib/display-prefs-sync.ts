@@ -76,8 +76,12 @@ export const DISPLAY_PREFS_CHANGED_EVENT = "rop:display-prefs-changed";
  * Best-effort check that the partner has a JWT cookie present. We don't
  * decode the token — the API enforces auth — but if no cookie exists
  * there's no point firing a request that's going to 401.
+ *
+ * S174 — exported so the SacredNameWelcomeModal mount-condition check
+ * in App.tsx can suppress the sign-in ask for partners who already
+ * have a JWT cookie (signed-in partners obviously don't need the ask).
  */
-function hasJwtCookie(): boolean {
+export function hasJwtCookie(): boolean {
   if (typeof document === "undefined") return false;
   const prefix = `${SSO_COOKIE_NAME}=`;
   const parts = document.cookie ? document.cookie.split("; ") : [];
