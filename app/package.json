@@ -7,14 +7,26 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cap:sync": "npm run build && npx cap sync",
+    "cap:ios": "npm run build && npx cap sync ios && npx cap open ios",
+    "cap:android": "npm run build && npx cap sync android && npx cap open android",
+    "cap:assets": "npx @capacitor/assets generate --iconBackgroundColor '#0a0e1a' --iconBackgroundColorDark '#0a0e1a' --splashBackgroundColor '#0a0e1a' --splashBackgroundColorDark '#0a0e1a'"
   },
   "dependencies": {
+    "@capacitor/android": "^8.3.1",
+    "@capacitor/app": "^8.0.0",
+    "@capacitor/core": "^8.3.1",
+    "@capacitor/filesystem": "^8.0.0",
+    "@capacitor/ios": "^8.3.1",
+    "@capacitor/share": "^8.0.0",
     "html2canvas": "^1.4.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },
   "devDependencies": {
+    "@capacitor/assets": "^4.0.0",
+    "@capacitor/cli": "^8.3.1",
     "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.1.16",
     "@types/node": "^24.12.2",
