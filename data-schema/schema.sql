@@ -461,11 +461,15 @@ CREATE TABLE users (
     email               TEXT UNIQUE,                 -- mirrored from WordPress; cached for non-auth lookups
     display_name        TEXT,
     created_at          TIMESTAMPTZ NOT NULL DEFAULT now(),
-    last_seen_at        TIMESTAMPTZ
+    last_seen_at        TIMESTAMPTZ,
+    display_prefs       JSONB                        -- Session 173: cross-device sync for the partner's reader-display preferences (sacred_name_mask, hide_parentheticals, theme, font_size, interlinear_default, tts_voice). Nullable — NULL means "partner has never synced; client-side localStorage is authoritative." Once any preference is PUT, the column holds a JSON object with only the keys the partner has explicitly set. Server is canonical on sign-in (reconciliation: server wins over localStorage when the two diverge). Adding more preferences over time is a JSON-shape change, not a migration.
 );
 
 COMMENT ON COLUMN users.wordpress_user_id IS
     'Join key with WordPress. WordPress is the identity provider; this row is created lazily on the user''s first JWT-authenticated request to the PWA API.';
+
+COMMENT ON COLUMN users.display_prefs IS
+    'Session 173: JSONB bag of the partner''s reader-display preferences for cross-device sync. Sparse — only keys the partner has explicitly set are present. Recognized keys at S173: sacred_name_mask ("yahuah" | "yhwh"), hide_parentheticals (bool), theme ("light" | "dark"), font_size ("small" | "medium" | "large"), interlinear_default (bool), tts_voice (string voice id). On sign-in the client fetches /v1/me/display-prefs; server wins on divergence per S172_SACRED_NAME_MASK_SPEC. NULL = partner has never synced (localStorage authoritative). Adding new prefs is JSON-shape evolution, no migration.';
 
 
 -- =====================================================================
@@ -764,8 +768,8 @@ CREATE TABLE schema_version (
 );
 
 INSERT INTO schema_version (version, notes) VALUES (
-    '1.0.0-phase4-session154',
-    'Session 154 (2026-05-27) — five FKs flipped from ON DELETE CASCADE to ON DELETE RESTRICT on clean-DB rebuilds: commentary_entries.{chapter_id, verse_id}, cross_references.{source_verse_id, target_verse_id}, cross_reference_thread_members.cross_reference_id. Closes the architectural cause of the S153 emergency where a canon edition reload via seed.py cascade-wiped every commentary and cross-reference attached to canon verses. After S154 the cascade is impossible at the schema level — a canon reload now fails loud at the FK if framework-bearing rows attach. Sibling change in api/seed.py same session: --reseed-canon flag added (default --seed-only skips canon entirely, matching the long-standing render.yaml intent); sanity guard aborts if the seed would touch framework-bearing rows without --reseed-canon. The seed of five v1 threads at Sessions 73-74 + every post-seed loader migration since (S110, S112, S110+S131..S146 + S111 + S140b + S147 + S147b) lands as before; the FK regime change only affects what happens on CASCADE delete attempts, not on normal INSERT/UPDATE. Prior version stamp via in-place migration was 1.0.0-phase4-session152.'
+    '1.0.0-phase4-session173',
+    'Session 173 (2026-05-30) — users.display_prefs JSONB column added for cross-device sync of the partner reader-display preferences set introduced in S172 (sacred_name_mask, hide_parentheticals, theme, font_size, interlinear_default, tts_voice). Nullable; sparse JSON shape (only keys the partner has explicitly set are present). Server canonical on sign-in per S172_SACRED_NAME_MASK_SPEC reconciliation rule (server wins over localStorage). Wired by new GET/PUT /v1/me/display-prefs endpoints in api/main.py. Prior version stamp was 1.0.0-phase4-session154.'
 );
 
 
