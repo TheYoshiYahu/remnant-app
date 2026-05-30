@@ -1726,3 +1726,100 @@ Per the spec-then-build standard, §29's React + API implementation is NOT S166 
 - **Search inside the Index.** No search input at the top of the BookmarksIndex sheet. The §23 SearchModal is the canonical search surface; bookmark-internal search would duplicate. Partners search for a phrase via §23, the result list shows the verse, the verse carries the inline-glyph if bookmarked, partner taps long-press → BookmarkSheet to surface the bookmark detail.
 - **Bookmark-as-shareable-link inside the URL bar.** No `/bookmarks/index` URL surface — the Index is modal-only. A direct-link surface would require auth-shaped URLs (the partner's bookmarks are private). Out of V1; v1.1+ candidate if a *share-my-study-trail* surface is greenlit.
 - **Per-bookmark notes anchor (linking a bookmark to a NotesPanel entry).** Notes anchor to verses (§22), and a verse can carry both a bookmark and a note (per §22 architecture). Linking bookmark.id to note.id directly is a v1.1+ refinement; V1 leaves the join at verse_id and lets the partner see both surfaces on the same verse.
+
+---
+
+## 30. Shareable Study-Modal Exports — Word-Study Surfaces as First-Class Shares (locked S169, S170 open as the implementation wheel — Free tier)
+
+### The opportunity Yoshi named at S169
+
+Every major Bible study app — Blue Letter Bible, YouVersion, Logos, OliveTree — shares *verses* as first-class output and treats word-study surfaces (Strong's lookups, lexicon entries, interlinear data) as **screenshot-and-pray** territory. The partner who wants to share what they just learned about a Hebrew or Greek word takes a screenshot of the modal in their browser — capturing browser chrome, the iOS status bar, the URL bar, whatever else is on screen — and pastes that into iMessage / WhatsApp / Telegram. The result reads as a screenshot, not a share. The receiving partner doesn't see the source app branded; the source app gets no growth from the share. Blue Letter Bible specifically — which Yoshi names as his current screenshot-source for word-study sharing — gets zero discovery from millions of partner screenshots a year because its modal carries no branding the receiving viewer can see.
+
+The Remnant of Promise Official Study Bible closes the gap. **Every word-study surface gets a first-class Share button that exports the modal contents as a clean PNG image — branded, watermarked at a size that survives messaging-app compression and small-screen rendering, with a footer URL that doubles as a deep-link discovery vector for every forward.** Each shared image is a billboard for the framework, a doorway back to the app for the receiving partner who didn't know the app existed.
+
+### Which surfaces get it (V1 scope)
+
+V1 surfaces — each gets a Share button in the modal header, right of the close ✕:
+
+- **StrongsLookup modal** — single-word Strong's number lookup (§9). Fires on quick-tap of any tappable verse-text word. Carries lemma + transliteration + pronunciation + gloss + Strong's definition + derivation + "Other verses using this word" rail.
+- **LexiconSheet — BDB (Hebrew)** — full BDB entry for a Hebrew Strong's number (§26 Companion tier). Fires from the §20 Word-study menu BDB item.
+- **LexiconSheet — LSJ (Greek)** — full LSJ entry for a Greek Strong's number (§26 Companion tier). Fires from the §20 Word-study menu LSJ item.
+
+V1.1+ deferred:
+
+- **§28 InterlinearLayer column-stack as standalone card** — share a single column-stack as its own export. Stretch goal; defer until partner feedback flags demand.
+- **§17 Chapter-end cross-reference card export** — share a single cross-reference (anchor verse + cross-ref target + body text) as an export. Same defer logic.
+
+### Render pipeline
+
+**V1 — html2canvas walk-the-DOM.** The modal DOM element is the source of truth. ``html2canvas`` (or equivalent) walks the modal's rendered DOM at 2× device-pixel-ratio, paints to a Canvas, exports a PNG blob. Bundle cost ~50KB gzipped, ships immediately, output looks like the modal — same layout, same fonts, same colors the partner is looking at. Imperfect on edge cases (custom @font-face rendering, gradient backgrounds, certain CSS filters) but covers V1 surfaces cleanly. The shared image renders the **full modal content as a vertical scroll-unfurled stack** — if the modal was scrollable, the export shows everything, not just the visible-above-the-fold portion. Reasoning: the partner is sharing the *content* they read, not the *viewport* they read it in. Forced-unfurl is the right default; a partner who wanted to share only the top of a long entry can crop in their messaging app.
+
+**V1.1 — custom Canvas pipeline.** Once partner-feedback confirms the html2canvas output is "good enough," V1.1 swaps to a custom Canvas paint-from-data pipeline mirroring the §24 share-card-render.ts pattern. Takes the StrongsLookup / LexiconSheet data directly (no DOM walk), paints each cell deterministically using fontFace-loaded SBL Hebrew / SBL BibLit / Lora at exact specified sizes with perfect kerning + diacritic stacking. Smaller bundle (no html2canvas dependency), perfect output, fully test-friendly. Defer until V1 ships and html2canvas behavior is partner-validated.
+
+### Image dimensions + format
+
+- **Aspect ratio:** ``9:16`` portrait for modal exports (modal content is naturally vertical-stacked; portrait reads as a "card" not a "screenshot" on iOS share previews). Target render at ``1080 × 1920`` for 2× retina on phone-sized share preview.
+- **Format:** PNG, opaque (matches §24's lossless-PNG lock — the original-script glyphs in SBL Hebrew / SBL BibLit need lossless to preserve niqqud / diacritic detail through messaging-app compression chains).
+- **Filename:** ``{strong_number}-{lemma_translit}-rop-study.png`` — e.g., ``H7225-reshiyth-rop-study.png``, ``G3056-logos-rop-study.png``. Same naming discipline as §24's share filenames; consistent across the app.
+
+### Watermark footer band — S169 watermark size upgrade (Yoshi's wife's redline at S169 close)
+
+The §24 verse-share watermark at the locked 18% footer band was flagged by Yoshi's wife as **too small** in the share-thread render — when an iPhone messaging app compresses the share and renders it as a thumbnail or preview, the brand mark + reference text below the verse body crushes below legibility. The §30 watermark spec corrects this. **Apply the same correction to §24 as a back-edit at S170 open** so verse-share and word-study-share carry consistent branding scale.
+
+**Watermark band specs (locked S169):**
+
+- **Footer band height:** ``20%`` of total image height (up from §24's locked 18%). On a 1080×1920 portrait, that's ``384px`` of dedicated footer real estate.
+- **Footer composition (left-to-right):**
+  - **Brand mark icon** — simplified v4 olive-branch + menorah brand-mark crop (NEW asset: ``brand-mark-blue-on-black-v4-share-footer-icon-200x200.png``). Renders at ``120 × 120 px`` at the left of the footer, vertically centered, with ``5%`` left inset. Replaces §24's full-mark 240×360 watermark on the right; the new spec moves the mark to the left and widens the supporting wordmark so the brand-text dominates the footer.
+  - **Wordmark stack** — vertically-stacked text right of the brand mark, occupying the center of the footer:
+    - Line 1: ``Remnant of Promise`` at ``36pt`` Lora 600-weight, color ``#FFFFFF`` on dark / ``#1A1A1A`` on light, full-width-centered.
+    - Line 2: ``Official Study Bible`` at ``24pt`` Lora 400-italic, color ``var(--reader-muted)``, full-width-centered.
+    - Line 3: ``bible.remnantofpromise.org`` at ``22pt`` Lora 500, color ``#1A6FE5`` (§1 techelet), full-width-centered. This is the call-to-action — every share is a clickable URL doorway back to the app.
+- **Hairline divider** at the footer band's top edge, ``1px`` solid ``rgba(255,255,255,0.12)`` on dark / ``rgba(0,0,0,0.12)`` on light, 6% horizontal inset on each side. Matches §24's divider treatment but at slightly higher contrast (the larger footer band needs the boundary to read at thumbnail size).
+
+**Why these dimensions:** at 1080×1920 portrait, a 384px footer reads as ``20%`` of the visible image even when the messaging app compresses the share to a 540px-wide preview thumbnail. The brand-mark icon survives down to 60×60px in the worst-case preview; the wordmark text remains legible at the iPhone Files-app thumbnail rendering. The §24 18% footer with the 240×360 mark on the right was below this legibility floor — caught by Yoshi's wife the first time the share rendered in iMessage on her phone.
+
+### Transport chain
+
+Same as §24:
+
+1. ``navigator.share({ files: [file] })`` — native iOS / Android share sheet. Partner picks WhatsApp / iMessage / Slack / Mail / Files / etc. Image lands in the chosen surface with full metadata.
+2. ``navigator.clipboard.write(ClipboardItem)`` — image copied to system clipboard for partner-driven paste. Fires on desktop browsers where share-sheet isn't available.
+3. ``<a download>`` blob URL — fallback for browsers without clipboard-image support. Saves the PNG to the partner's downloads folder; partner manually attaches.
+
+``AbortError`` from the share sheet (partner dismissed) is treated as a normal flow exit — no fallback fires, no error toast.
+
+### "Read full lexicon entry" → deep-link URL replacement
+
+The StrongsLookup modal carries a "→ Read full lexicon entry (LSJ)" / "→ Read full lexicon entry (BDB)" affordance below the gloss. In the live modal, this is a clickable button that opens the LexiconSheet. **In the exported image, the same affordance becomes a non-clickable text line carrying the deep-link URL** — replaces the button visual with the URL the partner can paste into a browser. Example:
+
+> Full LSJ entry at bible.remnantofpromise.org/strongs/G3056
+
+> Full BDB entry at bible.remnantofpromise.org/strongs/H7225
+
+URL format: ``bible.remnantofpromise.org/strongs/{strong_number}``. Each Strong's number gets a standalone-page route in V1.1 — light-weight server-rendered HTML carrying the same data the modal carries + full Open Graph metadata so when the URL gets pasted into messaging apps, the link preview shows the share-card automatically (second discovery layer beyond the watermark itself).
+
+### Deep-link routes (V1.1 web-side add)
+
+To make the URL footer actually clickable, V1.1 adds:
+
+- ``GET /strongs/{strong_number}`` — standalone page rendering the StrongsLookup content + Open Graph metadata (``og:image`` points at the auto-generated share card; ``og:title`` = ``{lemma} ({transliteration})`` style; ``og:description`` = gloss).
+- ``GET /strongs/{strong_number}/bdb`` — Hebrew Strong's, opens to the BDB lexicon entry (gates Companion tier per §26).
+- ``GET /strongs/{strong_number}/lsj`` — Greek Strong's, opens to the LSJ lexicon entry (gates Companion tier per §26).
+
+Open Graph metadata makes WhatsApp / iMessage / Slack / Telegram render link previews automatically — partner's friend sees the share-card thumbnail + lemma title + gloss description without ever opening the link. Second growth layer beyond the watermark.
+
+### Surfaces NOT getting Share in V1
+
+- **§20 VerseActionMenu Word-study submenu items (Vine's, Nikkudot siblings, Treasury, Nave's, Related passages)** — Coming-soon stubs. Share lands when the surface lands.
+- **§28 InterlinearLayer column-stack** — stretch goal per V1.1 above. The full chapter rendering with §28 ON is too dense for a single-card share; an individual-column-as-card surface needs spec work that doesn't fit S170.
+- **§29 Bookmark entries** — already documented as scope-out at §29 Permanent-scope-locks (*bookmark sharing... is a different product surface; collaborative study and Permanent-Scope-Lock-of-V1 keeps that out*).
+- **Reader chapter prose itself** — sharing a whole chapter as image is the §24 multi-verse range surface, which is the right registry for that use case.
+
+### Permanent-scope-locks (S169 close)
+
+- **No "share-card editor" customization.** The export uses the spec'd layout + the spec'd watermark + the spec'd typography. Partners don't customize the share-card before exporting. Adds zero surface complexity; preserves the framework's voice as the consistent brand-bearer across every share. Partners who want fully-custom share cards use a different tool.
+- **No partner-attribution byline on the share.** The share carries the framework's voice and the Remnant of Promise brand — NOT the partner's name. Reasoning: the partner is proclaiming the truth, not branding themselves; the receiving viewer reads the proclamation, not the proclaimer. Aligns with the voice-skill posture (*the proclaimer steps aside*).
+- **No share-tracking analytics on individual exports.** The app counts aggregate share-button taps for product-health monitoring but does NOT track which Strong's numbers get shared most, which partners share most, or what the receiving partners do with the share. Bookmarks-style partner-private analytics; matches §29's privacy posture.
+- **No video-share / animation surface.** PNG only at V1. The serif-restored verse text and the SBL Hebrew / SBL BibLit lemma rendering carry the framework's register; animating them would dilute the register and add bundle weight for partner-perceptibly-marginal value.
+- **No AI-generated alternative gloss / commentary on the share.** Same standing rule as §17 / §22 / §26 / §27 / §28 / §29 — no LLM-generated content in the partner-facing surface. The share carries what's in the database, exactly as the modal shows it, no synthesized alternatives.
