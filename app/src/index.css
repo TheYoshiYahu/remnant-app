@@ -443,3 +443,51 @@ body {
   border-color: #D4B0E0;
   color: #F5E6FA;
 }
+
+/* ─── S172.9 chapter-number "tabernacle veil" treatment ───────────────
+ *
+ * The chapter number renders as a miniature tabernacle veil that ties
+ * five sacred-color registers into one visual confession, repeated in
+ * every chapter heading across canon + library:
+ *
+ *   • Techelet interior  — divine presence behind the veil (Holy of Holies)
+ *   • Woven border       — emerald → argaman → gold sweep, the three
+ *                          approach-colors of the veil per Exodus 26:31
+ *   • Scarlet number     — the blood that rent the veil at Matthew 27:51
+ *                          + the high priest's atonement blood sprinkled
+ *                          on the mercy seat through the veil
+ *
+ * Implementation: standard "double-background" CSS — inner gradient
+ * clipped to padding-box, outer gradient filling border-box. Works in
+ * every modern browser including iOS Safari + Capacitor wrap.
+ * Border is dominant (6px), interior is a small inner shrine glimpsed
+ * through the veil — matches the theology that the veil is what the
+ * partner sees first.
+ */
+.chap-veil-box {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.05rem 0.45rem;
+  border: 6px solid transparent;
+  border-radius: 5px;
+  background:
+    linear-gradient(to right, #0A2D84 0%, #1A6FE5 50%, #0A2D84 100%) padding-box,
+    linear-gradient(
+      135deg,
+      #2EFFA1 0%,
+      #15A86A 20%,
+      #8E4FB3 50%,
+      #D4B0E0 65%,
+      #B4A078 85%,
+      #FCECAF 100%
+    ) border-box;
+  color: #FF4D5A;
+  font-weight: 800;
+  font-size: 1.15em;
+  line-height: 1;
+  text-shadow:
+    -1px 0 0 #3A0F12,
+    1px 0 0 #3A0F12,
+    0 -1px 0 #3A0F12,
+    0 1px 0 #3A0F12;
+}

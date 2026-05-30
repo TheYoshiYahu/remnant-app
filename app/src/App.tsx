@@ -1975,15 +1975,18 @@ function Reader() {
           */}
           {/* S172 — book heading rendered as a source-class metallic pill
               per COLOR_PALETTE.md §9 + S130's pill register. Tanakh →
-              emerald, NT → gold, Extras → argaman. Source class becomes
-              visible at a glance anywhere in the chapter. Chapter number
-              stays in the existing §5 spectral-emerald accent so the
-              two registers (pill + accent) remain visually distinct. */}
+              emerald, NT → gold, Extras → argaman. S172.9 — chapter
+              number rendered as a miniature tabernacle veil
+              (chap-veil-box in index.css): techelet interior + woven
+              emerald→argaman→gold border + scarlet number. The five
+              sacred-color registers compressed into one element,
+              repeated as a visual confession in every chapter heading
+              across canon + library. */}
           <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)] flex items-center gap-2 flex-wrap">
             <span className={bookPillClassName(chapterDetail.book.slug)}>
               {chapterDetail.book.title}
             </span>
-            <span className="font-medium text-[#2EFFA1]">
+            <span className="chap-veil-box">
               {chapterDetail.chapter.chapter_number}
             </span>
           </h2>
