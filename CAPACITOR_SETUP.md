@@ -1,5 +1,52 @@
 S173 — Capacitor wrap setup (iOS + Android shells)
 
+# S174 distribution-architecture update — read this first
+
+The original S173 plan routed iOS through TestFlight + App Store and
+Android through Play Console. At S174-open the distribution pivot
+landed: **iOS path V1 is the PWA via Safari "Add to Home Screen"**
+(no Apple Developer account, no TestFlight); **Android V1 is direct
+.apk download from bible.remnantofpromise.org/download/** (no Play
+Console required). Both store-paths are deferred to V1.1+ when the
+Apple Developer enrollment and Play Console organization are stood
+up. The Capacitor wrap code (capacitor.config.ts, native share,
+deep-link router, .well-known association-file shapes) is V1.1-ready
+— nothing in this document is wasted work; the gating is just on
+when the developer-account / keystore prerequisites land.
+
+What this means concretely for the S173 runbook:
+
+  - **§ 3 Universal Links + App Links** — defer the actual
+    apple-app-site-association file (needs Team ID — gated on
+    Apple Developer enrollment) and the assetlinks.json file (needs
+    SHA-256 — gated on keystore generation, § 5.1). The hosting/
+    render.yaml route for /.well-known/* landed at S174 so when
+    those files DO land, they serve as JSON instead of being
+    swallowed by the SPA fallback rewrite. The route is a no-op
+    self-rewrite that holds the path. The file shapes below stay as
+    the spec for when the values exist.
+  - **§ 4 iOS — Apple Developer + TestFlight** — deferred entirely.
+    The V1 iOS path is the PWA via Safari (Add to Home Screen). The
+    existing PWA bundle is iOS-installable today via Safari's share
+    sheet → Add to Home Screen, and it carries all the same offline
+    capability + first-launch modal + sacred-name mask + cross-
+    device sync (when signed in). Re-open this section when the
+    Apple Developer enrollment lands and TestFlight distribution is
+    wanted.
+  - **§ 5 Android — Play Console + signing keystore** — Play
+    Console is deferred to V1.1+. V1 Android distribution is via
+    direct .apk download from the website (path: bible.
+    remnantofpromise.org/download/remnant-bible-{version}.apk). The
+    keystore generation (§ 5.1) is still the unblock for the
+    assetlinks.json SHA-256 — but it doesn't have to happen this
+    week; it's the prerequisite for App Links autoVerify, which
+    only matters if you want /strongs/{N} URLs from iMessage/etc.
+    to open the installed APK directly. Direct .apk install works
+    fine without it.
+
+The rest of this document remains the operator runbook for when
+those gates land. Read it as the V1.1+ playbook.
+
 # What landed this session (sandbox-side, code-only)
 
   - `app/capacitor.config.ts` — appId `com.remnantofpromise.bible`,

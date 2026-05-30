@@ -188,6 +188,24 @@ services:
       - type: redirect
         source: /strongs/*
         destination: https://api.bible.remnantofpromise.org/strongs/:splat
+      # S174 — .well-known/* self-rewrite so Universal Links + App
+      # Links association files are served as static content instead
+      # of being swallowed by the SPA-fallback rewrite below. Render
+      # static-site routes evaluate top-down; the bare /* rewrite
+      # rewrites every unmatched URL to /index.html, which would
+      # return the SPA HTML for /.well-known/apple-app-site-association
+      # and /.well-known/assetlinks.json — both of which Universal
+      # Links and App Links crawlers reject as invalid JSON. This
+      # self-rewrite is a no-op that holds the path against the SPA
+      # fallback so the static file at app/public/.well-known/<name>
+      # serves directly when it lands. The actual association files
+      # are deferred (S174 — Apple Developer account not yet active;
+      # Android keystore not yet generated; the route is staged ahead
+      # of the files so it's wired when the values land). Same
+      # ordering rule as the /strongs/* redirect above.
+      - type: rewrite
+        source: /.well-known/*
+        destination: /.well-known/:splat
       - type: rewrite
         source: /*
         destination: /index.html
