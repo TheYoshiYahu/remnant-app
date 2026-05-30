@@ -122,16 +122,19 @@ import paragraphStartsData from "./data/paragraph_starts.json";
 function ThemeToggle() {
   const { theme, toggle } = useTheme();
   const isDark = theme === "dark";
-  // S172 — Theme/Mode toggle's selected cell carries the metallic silver
-  // register (chrome utility, cool neutral). The label "MODE" itself
-  // stays in the §5 techelet accent color so the two-state widget reads
-  // as the same divine-accent header it always has, with the selected
-  // cell adopting the silver-utility register matching the rest of the
-  // chrome utility cluster (Settings = bronze sits to its right).
-  const activeClasses =
-    "border-[#E5E7EB] text-[#F3F4F6] [background-image:linear-gradient(to_right,#2E3338_0%,#9CA3AF_50%,#2E3338_100%)]";
-  const inactiveClasses =
-    "border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-muted)] hover:text-[var(--reader-text)]";
+  // S172.10 — each cell carries the COLOR OF THE MODE IT REPRESENTS,
+  // not the same silver-on-selected treatment for both. Light cell
+  // always renders in a light/silver register (parchment + bright
+  // chrome); Dark cell always renders in an onyx register (deep
+  // charcoal). Selected state stays fully saturated; unselected dims
+  // to ~55% opacity so the partner always sees what they'd switch TO
+  // at a glance. Resolves the prior bug where both cells used the
+  // same silver gradient and the "active" state was the only
+  // distinguishing signal.
+  const lightCellBase =
+    "border-[#E5E7EB] text-[#1A1A1A] [background-image:linear-gradient(to_right,#FAFAF7_0%,#FFFFFF_50%,#FAFAF7_100%)]";
+  const darkCellBase =
+    "border-[#7C7D82] text-[#F3F4F6] [background-image:linear-gradient(to_right,#0F0F11_0%,#3F4146_50%,#0F0F11_100%)]";
   return (
     <div className="flex flex-col items-center gap-1" aria-label="Mode">
       <span className="font-sans text-[10px] font-semibold uppercase tracking-wide text-[#1A6FE5]">
@@ -147,8 +150,9 @@ function ThemeToggle() {
           aria-label="Switch to light mode"
           title="Switch to light mode"
           className={
-            "flex flex-col items-center rounded border px-2.5 py-1 text-[11px] font-medium hover:opacity-90 " +
-            (!isDark ? activeClasses : inactiveClasses)
+            "flex flex-col items-center rounded border px-2.5 py-1 text-[11px] font-medium transition-opacity " +
+            lightCellBase +
+            (!isDark ? " opacity-100" : " opacity-55 hover:opacity-80")
           }
         >
           <span aria-hidden="true" className="text-base leading-none">☀</span>
@@ -163,8 +167,9 @@ function ThemeToggle() {
           aria-label="Switch to dark mode"
           title="Switch to dark mode"
           className={
-            "flex flex-col items-center rounded border px-2.5 py-1 text-[11px] font-medium hover:opacity-90 " +
-            (isDark ? activeClasses : inactiveClasses)
+            "flex flex-col items-center rounded border px-2.5 py-1 text-[11px] font-medium transition-opacity " +
+            darkCellBase +
+            (isDark ? " opacity-100" : " opacity-55 hover:opacity-80")
           }
         >
           <span aria-hidden="true" className="text-base leading-none">☾</span>
