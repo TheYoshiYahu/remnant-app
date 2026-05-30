@@ -12,6 +12,7 @@ import {
   type SubscriptionMe,
   type VerseSearchHit,
   type VerseWord,
+  deleteHighlight,
   getChapter,
   getChapterWords,
   getSubscriptionMe,
@@ -1695,13 +1696,13 @@ function Reader() {
       <header className="mb-6 border-b border-[var(--reader-accent)] pb-4">
         <div className="flex items-start justify-between gap-4">
           <div>
-            {/* S172.11 — brand title rendered as a metallic techelet
-                pill matching the existing "Hide study aids" button
-                (same gradient, border, text color). The brand title
-                becomes a chrome surface in the divine-name register —
-                load-bearing brand color across brand-mark + watermark
-                + chrome accents now extended to the masthead itself. */}
-            <h1 className="inline-block rounded-md border border-[#A8C8F0] bg-gradient-to-r from-[#0A2D84] via-[#1A6FE5] to-[#0A2D84] px-3 py-1.5 text-2xl font-semibold tracking-tight text-[#E6F0FA] shadow-sm">
+            {/* S172.13 — brand title rendered as the §5 spectral-blue
+                verse-number accent (--reader-accent, #0084FF). Pulls
+                the brand into the same color family as the verse-number
+                pointers that the partner sees throughout the body —
+                consistent "this is the framework's color" register
+                rather than a separate chrome surface. */}
+            <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-accent)]">
               The Remnant of Promise Official Study Bible
             </h1>
             <p className="mt-1 text-sm text-[var(--reader-muted)]">
@@ -2676,6 +2677,28 @@ function Reader() {
               onBookmark: (vid) => openBookmarkSheet(vid),
               onAddNote: (vid) => openNotesPanelWithAnchor(vid),
               onPlayFromHere: (vid) => startPlaybackFromVerseId(vid),
+              // S172.12 — Remove highlight wiring. hasHighlights is
+              // computed from highlightsByVerse for the menu's targeted
+              // verse; onRemoveHighlights walks every mark on the verse
+              // and deletes them in parallel, then drops them from
+              // local state.
+              hasHighlights:
+                (highlightsByVerse[menuState.verseId] ?? []).length > 0,
+              onRemoveHighlights: async (vid) => {
+                const marks = highlightsByVerse[vid] ?? [];
+                if (marks.length === 0) return;
+                setMenuState(null);
+                try {
+                  await Promise.all(marks.map((m) => deleteHighlight(m.id)));
+                } catch {
+                  // Non-fatal — the next chapter load will reconcile.
+                }
+                setHighlightsByVerse((prev) => {
+                  const next = { ...prev };
+                  delete next[vid];
+                  return next;
+                });
+              },
             },
             // S172 — text-transform passed in so the §24 share/copy
             // path inside buildMenuSections can apply the partner's
@@ -3197,6 +3220,13 @@ function buildMenuSections(
     /** S157 — "Play from here" in the new Listen section. Starts TTS
      *  playback from the targeted verse; AudioPlayer opens automatically. */
     onPlayFromHere: (verseId: number) => void;
+    /** S172.12 — whether the targeted verse currently has any
+     *  highlight marks. Drives the conditional "Remove highlight" item. */
+    hasHighlights?: boolean;
+    /** S172.12 — "Remove highlight" handler. Deletes ALL marks on the
+     *  verse in one call. Selective removal of a single mark stays in
+     *  the HighlightPicker chip-× path. */
+    onRemoveHighlights?: (verseId: number) => void;
   },
   /** S172 — sacred-name mask transform. Applied to verse text before
    *  the §24 share/copy pipeline paints. Pure function; no React. */
@@ -3279,6 +3309,22 @@ function buildMenuSections(
     icon: "✎",
     onSelect: () => handlers.onHighlight(state.verseId),
   });
+  // S172.12 — discoverable one-tap unhighlight. Only shown when the
+  // verse actually has marks. Deletes ALL marks on the verse in one
+  // call; selective removal of a single mark (when the verse has
+  // multiple) remains available via the × chips in the HighlightPicker.
+  // Caught at S172.11 close — Yoshi: "we don't have a way to
+  // unhighlight a verse, I just tried" — the chip-× path inside the
+  // re-opened picker was the only delete affordance and wasn't
+  // discoverable enough.
+  if (handlers.hasHighlights && handlers.onRemoveHighlights) {
+    marking.push({
+      key: "remove-highlight",
+      label: "Remove highlight",
+      icon: "✕",
+      onSelect: () => handlers.onRemoveHighlights!(state.verseId),
+    });
+  }
   // S124 W5 — Bookmark promoted from Coming-soon to Live (Free).
   marking.push({
     key: "bookmark",
