@@ -1,5 +1,41 @@
 @import "tailwindcss";
 
+/* ----- S169 — SBL bundled fonts for the §28 interlinear lemma cell ------
+   SBL Hebrew (Hebrew + Aramaic) and SBL BibLit (Greek + Hebrew + Latin
+   with full transliteration diacritics) bundled into the PWA so Windows
+   partners without Cardo installed don't fall back to Times New Roman
+   for Greek glyphs. Both fonts are licensed by SBL for free non-commercial
+   distribution per the SBL Font User Agreement
+   (https://www.sbl-site.org/resources/fonts/) — grey-area-but-permitted
+   for ministry/study-tool bundling.
+
+   ``font-display: swap`` keeps the system-fallback chain
+   (Ezra SIL / Cardo / Times New Roman) painting until the woff2 fetches,
+   so the partner never sees a blank lemma cell on first-paint. The
+   ``preloadInterlinearFonts()`` helper in
+   ``components/InterlinearLayer.tsx`` issues a ``<link rel="preload">``
+   on first toggle-on so the swap-in is invisible after the first column
+   renders. The family names match ``HEBREW_FONT_STACK`` and
+   ``GREEK_FONT_STACK`` in ``lib/interlinear-helpers.ts``. */
+@font-face {
+  font-family: 'SBL Hebrew';
+  src: url('/fonts/SBL_Hbrw.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0590-05FF, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'SBL BibLit';
+  src: url('/fonts/SBL_BLit.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  /* No unicode-range restriction — SBL BibLit combines Greek + Hebrew
+     + Latin with diacritics, used as the Greek primary AND as a
+     transliteration fallback. */
+}
+
 /* Reading-typography baseline. Serif body (Lora — S116 swap from
    Cormorant Garamond after fresh-eyes comparison; Cormorant's display-
    leaning strokes read thin at body sizes even at 500 weight, Lora is

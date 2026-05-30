@@ -404,39 +404,40 @@ export function InterlinearLayer(
 /**
  * Conditionally preload the SBL Hebrew + SBL BibLit web fonts on
  * Companion+ partners so the lemma cells paint without a font-swap
- * flash. Called once at App boot from a useEffect when isCompanion +
- * showInterlinear flip to ON.
+ * flash. Called from a useEffect in App.tsx the first time
+ * showInterlinear + partnerAtCompanion both flip to ON. Idempotent —
+ * the duplicate-link guard short-circuits the second call.
  *
- * S168 V1 ships with the system fallback stacks defined in
- * interlinear-helpers.ts (SBL Hebrew → Ezra SIL → Times New Roman /
- * SBL BibLit → Cardo → Times New Roman). When custom font files are
- * added to `app/public/fonts/`, swap the URLs below and the partner's
- * browser will fetch them on first §28 toggle-on. Until then this
- * function is a no-op preload — the system-font fallback chain
- * already covers Hebrew + Greek glyph coverage on macOS / iOS / most
- * Linux desktops and Windows installs with Cardo present.
+ * S169: woff2 files now bundled into `app/public/fonts/` (368KB
+ * SBL_BLit + 94KB SBL_Hbrw, total ~462KB lazy-fetched on first
+ * §28 toggle). `@font-face` declarations live in `index.css` with
+ * ``font-display: swap`` so the system-fallback chain
+ * (Ezra SIL / Cardo / Times New Roman) paints first while the woff2
+ * fetches, then the bundled glyphs swap in. The preload below brings
+ * the fetch forward to the moment the partner opts in, before the
+ * first column renders — net effect is the bundled font is ready by
+ * the time the column-stack hits the screen.
  */
 export function preloadInterlinearFonts(): void {
   if (typeof document === "undefined") return;
-  // No web-font files shipped in V1 — system-font fallback chain is
-  // the source of truth. Helper retained as the wiring seam for the
-  // future font-asset add (drop the woff2 files in `public/fonts/`
-  // and uncomment the preload lines below).
-  //
-  // const fonts = [
-  //   { href: "/fonts/SBL_Hbrw.woff2", type: "font/woff2" },
-  //   { href: "/fonts/SBL_BLit.woff2", type: "font/woff2" },
-  // ];
-  // for (const f of fonts) {
-  //   if (document.querySelector(`link[rel="preload"][href="${f.href}"]`)) continue;
-  //   const link = document.createElement("link");
-  //   link.rel = "preload";
-  //   link.as = "font";
-  //   link.href = f.href;
-  //   link.type = f.type;
-  //   link.crossOrigin = "anonymous";
-  //   document.head.appendChild(link);
-  // }
+  const fonts = [
+    { href: "/fonts/SBL_Hbrw.woff2", type: "font/woff2" },
+    { href: "/fonts/SBL_BLit.woff2", type: "font/woff2" },
+  ];
+  for (const f of fonts) {
+    if (
+      document.querySelector(`link[rel="preload"][href="${f.href}"]`)
+    ) {
+      continue;
+    }
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "font";
+    link.href = f.href;
+    link.type = f.type;
+    link.crossOrigin = "anonymous";
+    document.head.appendChild(link);
+  }
 }
 
 /**

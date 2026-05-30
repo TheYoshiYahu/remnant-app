@@ -104,11 +104,34 @@ STEP_TO_SLUG: dict[str, str] = {
 
 # Per-word data row regex. Captures: book code, chapter, verse, source-
 # position (#NN), editions tag (=NKO / =L / etc.).
+#
+# S169 fix: STEPBible writes references in TWO modes. Most rows are
+# *aligned* — KJV and BHS verse numbers agree, and the row reads
+# ``Book.CH.V#POS=ED\t...``. A subset (17,632 rows in the canon dump)
+# are *divergent* — KJV and BHS disagree on the verse number, and
+# STEPBible writes the KJV-aligned number as primary with the
+# BHS-aligned number in parens, e.g. ``Psa.3.0(3.1)#01=L\t...``
+# (KJV ch.3 v.0 = superscription, BHS ch.3 v.1) or
+# ``Jol.2.28(3.1)#01=L\t...`` (KJV Joel 2:28 = BHS Joel 3:1) or
+# ``Mal.4.1(3.19)#01=L\t...`` (KJV Mal 4:1 = BHS Mal 3:19). The S167
+# loader's regex required ``#`` to come directly after the verse
+# number, so it silently dropped every divergent-mode row — accounting
+# for Psalms 42.6% null, Joel 2:28+ entirely missing, Mal 4 entirely
+# missing, and most of the canon's 10.5% morph shortfall.
+#
+# The optional ``(?:\(\d+\.\d+\))?`` swallows the parenthetical BHS-
+# reference when present; the primary reference STAYS KJV-aligned, so
+# the join against ``verse_words`` (already KJV-numbered) works without
+# any translation table.
+#
 # Example matches:
-#   "Mat.1.1#06=NKO\t..."  (TAGNT)
-#   "Gen.1.1#01=L\t..."    (TAHOT)
+#   "Mat.1.1#06=NKO\t..."          (TAGNT, aligned)
+#   "Gen.1.1#01=L\t..."            (TAHOT, aligned)
+#   "Psa.3.0(3.1)#01=L\t..."       (TAHOT, divergent — KJV v.0 = superscription)
+#   "Jol.2.28(3.1)#01=L\t..."      (TAHOT, divergent — Joel KJV/BHS chapter shift)
+#   "Mal.4.1(3.19)#01=L\t..."      (TAHOT, divergent — Malachi KJV/BHS chapter shift)
 DATA_ROW_RE = re.compile(
-    r"^([A-Za-z0-9]+)\.(\d+)\.(\d+)#(\d+)=([A-Za-z]+)\t"
+    r"^([A-Za-z0-9]+)\.(\d+)\.(\d+)(?:\(\d+\.\d+\))?#(\d+)=([A-Za-z]+)\t"
 )
 
 # Hebrew compound-strong primary extraction: braced {H####X?} marks the
@@ -273,6 +296,15 @@ def _escape_copy_field(s: str) -> str:
 SQL_HEADER = """\
 -- S167 (§28 Phase 9.2) — verse_words.morphology population from STEPBible
 -- TAHOT (Hebrew OT) + TAGNT (Greek NT).
+--
+-- S169 patch: divergent-mode regex bug fix. The original S167 regex
+-- required ``#`` to come directly after the verse number, silently
+-- dropping 17,632+ rows where STEPBible writes the BHS reference in
+-- parens (e.g. ``Psa.3.0(3.1)#01=L``). This SQL is from the patched
+-- loader and recovers the 10.5% morph shortfall (Psalms 42.6% → near-
+-- zero; Joel 2:28+ / Malachi 4 fully populated; etc.). Safe to re-run
+-- over an existing populated DB — idempotent UPDATE, NULLs become
+-- populated, populated rows rewrite to the same value.
 --
 -- Apply with: psql "$DATABASE_URL" -f _s167_morph_updates.sql
 --

@@ -78,7 +78,10 @@ import {
   isAtCompanionTier,
   useInterlinearToggle,
 } from "./lib/useInterlinearToggle";
-import { InterlinearWordColumn } from "./components/InterlinearLayer";
+import {
+  InterlinearWordColumn,
+  preloadInterlinearFonts,
+} from "./components/InterlinearLayer";
 import { useTheme } from "./lib/theme";
 import {
   cancelPendingSave,
@@ -374,6 +377,21 @@ function Reader() {
   // render; cheap literal-string compare. Drives the Interlinear pill's
   // live-vs-locked render + the InterlinearWordColumn mount branch.
   const partnerAtCompanion = isAtCompanionTier(me?.tier ?? null);
+
+  // S169 — preload the SBL Hebrew + SBL BibLit woff2 files the moment a
+  // Companion+ partner flips the §28 toggle ON for the first time. The
+  // @font-face declarations in index.css carry `font-display: swap`, so
+  // the system-fallback chain (Ezra SIL / Cardo / Times New Roman)
+  // paints first while the woff2 fetches, then the bundled glyphs swap
+  // in. The preload-link brings the fetch forward to toggle-on so the
+  // swap-in lands before the first column renders. `preloadInterlinearFonts`
+  // is idempotent (duplicate-link guard), so this useEffect rerunning on
+  // partner-tier changes is a no-op after the first run.
+  useEffect(() => {
+    if (showInterlinear && partnerAtCompanion) {
+      preloadInterlinearFonts();
+    }
+  }, [showInterlinear, partnerAtCompanion]);
 
   // S113 → S117: per-chapter highlights map.
   // `highlightsByVerse` keys are verse_id and values are ARRAYS of
