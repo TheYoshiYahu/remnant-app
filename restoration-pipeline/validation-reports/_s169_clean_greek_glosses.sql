@@ -10,6 +10,10 @@
 -- Idempotent + single-transaction. Re-applying produces no further
 -- changes.
 
+-- Disable psql's pager so the PREVIEW SELECT doesn't block on `(END)`
+-- and the UPDATE + POST-APPLY STATS flow through in one pass.
+\pset pager off
+
 BEGIN;
 
 -- Preview: 10 rows before/after the cleanup, sampled from the rows
