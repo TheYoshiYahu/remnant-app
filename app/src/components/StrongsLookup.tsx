@@ -197,7 +197,14 @@ export default function StrongsLookup({
     >
       <div
         ref={modalContentRef}
-        className="w-full max-w-6xl rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5 shadow-xl"
+        // S175.1 — max-h + overflow-y-auto so the modal scrolls
+        // internally on narrow Android viewports. Without this the
+        // modal grows taller than the screen and the close button
+        // at the top of the content goes off-screen above the
+        // viewport (because items-end pins the modal to the bottom
+        // of the flex parent), leaving the partner with no way to
+        // dismiss except tapping the dim backdrop outside the modal.
+        className="w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5 shadow-xl"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-label="Strong's lexicon entry"

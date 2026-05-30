@@ -43,6 +43,26 @@ const GOLD = "#caa84a";
 const ANDROID_APK_LIVE = true;
 
 export default function Landing() {
+  // S175.1 — in the native Capacitor shell, skip Landing entirely and
+  // bounce the partner straight into the reader. Two reasons: (1) the
+  // partner already committed to the journey when they tapped Install
+  // on the .apk, so the framing surface is redundant; (2) without
+  // this, the Android back button on /read pops history back to /
+  // (Landing), which feels like a leak — the reader is the home
+  // surface in the native app. window.location.replace() does NOT
+  // push a history entry, so the back button from /read has nothing
+  // to pop and Android treats that as "exit the app" (the native
+  // expected behavior for a back-press from the root surface).
+  if (
+    typeof window !== "undefined" &&
+    (window as unknown as {
+      Capacitor?: { isNativePlatform?: () => boolean };
+    }).Capacitor?.isNativePlatform?.() === true
+  ) {
+    window.location.replace("/read");
+    return null;
+  }
+
   return (
     <div
       className="min-h-screen bg-[var(--reader-bg)] text-[var(--reader-text)]"
