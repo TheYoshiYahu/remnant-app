@@ -73,14 +73,17 @@ export async function tryNativeShare(
   let Capacitor;
   let Filesystem;
   let Directory;
-  let Encoding;
   let Share;
   try {
     ({ Capacitor } = await import("@capacitor/core"));
     if (!Capacitor.isNativePlatform()) {
       return { handled: false };
     }
-    ({ Filesystem, Directory, Encoding } = await import("@capacitor/filesystem"));
+    // Filesystem.writeFile treats the data arg as raw base64 when no
+    // `encoding` field is passed — that's what we want for the PNG
+    // bytes, so we deliberately don't destructure / pass Encoding.UTF8
+    // (which would corrupt the PNG payload).
+    ({ Filesystem, Directory } = await import("@capacitor/filesystem"));
     ({ Share } = await import("@capacitor/share"));
   } catch {
     // Capacitor packages not present (PWA build without native shells,
