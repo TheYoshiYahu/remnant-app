@@ -101,6 +101,7 @@ import {
   targetLabel,
 } from "./lib/chapter-nav";
 import paragraphStartsData from "./data/paragraph_starts.json";
+import { pullAndReconcile } from "./lib/display-prefs-sync";
 
 // S115 Wheel 3 — chrome theme toggle. Small button placed to the
 // left of the subscription CTA. Sun glyph when dark (click to go light);
@@ -255,6 +256,19 @@ export default function App() {
   // a text-only watermark slot.
   useEffect(() => {
     void preloadBrandMark();
+  }, []);
+
+  // S173 — cross-device display-preferences sync. On mount, fetch the
+  // server-canonical display_prefs (sacred_name_mask, hide_parentheticals
+  // at S173 scope) and reconcile into localStorage. Per
+  // S172_SACRED_NAME_MASK_SPEC "server preference wins over
+  // localStorage if the two diverge." No-ops for anonymous callers (no
+  // JWT cookie → no canonical state). After the helper writes any
+  // server-canonical value, it dispatches `rop:display-prefs-changed`;
+  // the useSacredNameMask + useParentheticalsToggle hooks listen and
+  // re-read so the React tree updates without a reload.
+  useEffect(() => {
+    void pullAndReconcile();
   }, []);
 
   // Dev-only: ?dev_jwt=<token> in the URL sets the rop_jwt cookie at

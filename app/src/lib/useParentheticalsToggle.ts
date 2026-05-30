@@ -32,6 +32,10 @@ import {
   applyParentheticalsToggle,
   stripParentheticals,
 } from "./stripParentheticals";
+import {
+  DISPLAY_PREFS_CHANGED_EVENT,
+  pushSnapshot,
+} from "./display-prefs-sync";
 
 const STORAGE_KEY = "rop_hide_parentheticals_v1";
 
@@ -84,13 +88,34 @@ export function useParentheticalsToggle(): ParentheticalsToggle {
   // Reconcile after mount in case server-rendered initial state and
   // client state diverge (SSR safety; the app is currently CSR-only so
   // this is a guardrail not a load-bearing reconciler).
+  //
+  // S173 — also re-read on cross-tab `storage` events and on the in-tab
+  // `rop:display-prefs-changed` CustomEvent the sync layer dispatches
+  // after pullAndReconcile writes a server-canonical value into
+  // localStorage. Without these listeners, the React tree would keep
+  // showing the pre-reconcile value until the next manual toggle.
   useEffect(() => {
     setHideState(readStoredPreference());
+    if (typeof window === "undefined") return;
+    const reread = (): void => setHideState(readStoredPreference());
+    const onStorage = (e: StorageEvent): void => {
+      if (e.key === null || e.key === STORAGE_KEY) reread();
+    };
+    window.addEventListener("storage", onStorage);
+    window.addEventListener(DISPLAY_PREFS_CHANGED_EVENT, reread);
+    return () => {
+      window.removeEventListener("storage", onStorage);
+      window.removeEventListener(DISPLAY_PREFS_CHANGED_EVENT, reread);
+    };
   }, []);
 
   const set = (next: boolean): void => {
     persistPreference(next);
     setHideState(next);
+    // S173 — fan the new value out to the server when signed in. Fire-
+    // and-forget; the sync helper no-ops for anonymous callers and
+    // swallows network errors so the local change always survives.
+    void pushSnapshot();
   };
 
   const toggle = (): void => {

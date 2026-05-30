@@ -735,6 +735,54 @@ export function putReadingPosition(
   );
 }
 
+// ----- Display preferences cross-device sync (Session 173) ---------------
+//
+// Mirrors api/models.py DisplayPrefs. The wire shape is sparse — every
+// field optional + null when absent on the row. The client treats null
+// as "server has no preference for this key" and falls back to
+// localStorage (then to the in-code default). On PUT the client sends
+// the full intended state; the server replaces the JSONB column with
+// the body (whole-object semantics, not partial merge — keeps the
+// server canonical without merge-stale-state bugs across multi-device
+// usage).
+
+export type SacredNameMaskValue = "yahuah" | "yhwh";
+export type ReaderThemeValue = "light" | "dark";
+export type ReaderFontSizeValue = "small" | "medium" | "large";
+
+export interface DisplayPrefs {
+  sacred_name_mask: SacredNameMaskValue | null;
+  hide_parentheticals: boolean | null;
+  theme: ReaderThemeValue | null;
+  font_size: ReaderFontSizeValue | null;
+  interlinear_default: boolean | null;
+  tts_voice: string | null;
+}
+
+/**
+ * Fetch the authenticated partner's stored display preferences.
+ *
+ * The server returns an all-null DisplayPrefs when the row has never
+ * been written; the helper module (lib/display-prefs-sync.ts) treats
+ * that as "nothing to reconcile, localStorage is authoritative." 401
+ * for anonymous callers — sync layer no-ops in that case (no signed-in
+ * server canonical state to reconcile against).
+ */
+export function getDisplayPrefs(): Promise<DisplayPrefs> {
+  return get<DisplayPrefs>("/me/display-prefs");
+}
+
+/**
+ * Push the partner's current local display preferences to the server.
+ *
+ * Whole-object replacement on the row's JSONB column. Send only the
+ * keys the partner has explicitly set (null/absent keys are omitted
+ * server-side so the JSONB stays sparse).
+ */
+export function putDisplayPrefs(body: DisplayPrefs): Promise<DisplayPrefs> {
+  return put<DisplayPrefs, DisplayPrefs>("/me/display-prefs", body);
+}
+
 // ----- Strong's tap-on-word (Session 121, Wheel 3) -----------------------
 //
 // Two client surfaces:
