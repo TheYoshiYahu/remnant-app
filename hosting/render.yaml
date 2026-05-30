@@ -86,7 +86,15 @@ services:
         # allows credentials. The API's own origin
         # (api.bible.remnantofpromise.org) is not in this list — it's where
         # the requests originate from, not where they go.
-        value: https://bible.remnantofpromise.org,https://remnantofpromise.org,http://localhost:5173
+        # S175 — `https://localhost` added for the Capacitor Android
+        # webview origin. The native app loads from `https://localhost`
+        # (Capacitor's bundled-asset scheme); without this origin in
+        # CORS_ORIGINS, every fetch() from inside the native app to
+        # api.bible.remnantofpromise.org is rejected as a CORS
+        # violation and the reader fails with "Error loading books"
+        # for anonymous users. Adding the origin is purely additive —
+        # zero impact on existing browser / PWA partners.
+        value: https://bible.remnantofpromise.org,https://remnantofpromise.org,http://localhost:5173,https://localhost
       - key: JWT_SECRET
         # Shared secret with WordPress's JWT_AUTH_SECRET_KEY in wp-config.php.
         # Set manually in the Render dashboard (Web Service → Environment).

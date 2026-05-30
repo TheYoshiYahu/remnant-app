@@ -76,10 +76,67 @@ function buildWpUrl(base: string, returnTo: string): string {
   return url.toString();
 }
 
+/**
+ * S175 — Detect the native Capacitor shell. Sign-in is web-only for
+ * V1 native because the WP cookie auth flow can't bridge from
+ * remnantofpromise.org to the localhost-origin Capacitor webview
+ * (cookies and JWT don't cross that boundary). The native app
+ * renders a "sign in via web" message instead of the WP login
+ * buttons; partners who want account features use the PWA at
+ * bible.remnantofpromise.org in their phone's browser. Proper
+ * native auth (JWT-via-App-Link callback or custom URL scheme)
+ * is V1.1+ engineering.
+ */
+function isNativePlatform(): boolean {
+  if (typeof window === "undefined") return false;
+  const cap = (window as unknown as {
+    Capacitor?: { isNativePlatform?: () => boolean };
+  }).Capacitor;
+  return cap?.isNativePlatform?.() === true;
+}
+
 export default function SignIn() {
+  const native = isNativePlatform();
   const returnTo = parseReturnTo();
   const loginHref = buildWpUrl(WP_LOGIN_URL, returnTo);
   const registerHref = buildWpUrl(WP_REGISTER_URL, returnTo);
+
+  if (native) {
+    return (
+      <div className="mx-auto max-w-2xl px-6 py-8">
+        <header className="mb-8 border-b border-[var(--reader-rule)] pb-4">
+          <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-text)]">
+            Sign in on the web
+          </h1>
+          <p className="mt-2 text-base text-[var(--reader-muted)]">
+            Account sign-in lives on the web for now. The native Android
+            app supports reading anonymously — every chapter, every
+            extra book, every reader preference works without an account.
+            Notes, bookmarks, highlights, and cross-device sync are
+            account-gated and live in the web version.
+          </p>
+          <nav className="mt-3 text-sm">
+            <a href="/" className="text-[var(--reader-muted)] hover:underline">
+              ← back to the reader
+            </a>
+          </nav>
+        </header>
+
+        <div className="rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
+          <h2 className="text-lg font-semibold text-[var(--reader-text)]">
+            Sign in via the web
+          </h2>
+          <p className="mt-2 text-base text-[var(--reader-muted)]">
+            Open <strong>bible.remnantofpromise.org</strong> in your phone's
+            browser (Chrome, Samsung Internet, Firefox). Sign in there;
+            your account, notes, bookmarks, and highlights live with you
+            across devices in the web reader. Future Android updates will
+            bring account sign-in into the app itself.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-8">

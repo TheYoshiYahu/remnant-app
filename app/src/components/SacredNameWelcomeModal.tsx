@@ -75,19 +75,44 @@ export default function SacredNameWelcomeModal({
   const { set: setMask } = useSacredNameMask();
   const [step, setStep] = useState<ModalStep>(initialStep);
 
+  // S175 — detect Capacitor native shell. In the native Android app
+  // the WP sign-in flow can't complete (cookies don't cross the
+  // localhost-origin webview boundary), so the sign-in step is
+  // suppressed entirely. Native partners read anonymously; account-
+  // gated features (notes, bookmarks, highlights, sync) live on the
+  // PWA at bible.remnantofpromise.org. Proper native auth is V1.1+.
+  const isNative =
+    typeof window !== "undefined" &&
+    (window as unknown as {
+      Capacitor?: { isNativePlatform?: () => boolean };
+    }).Capacitor?.isNativePlatform?.() === true;
+
   // Pre-mount safety: if the mask preference somehow got set between
   // the caller's initial check and our mount (race against another
   // tab on the mask question specifically), advance step 1 → step 2
   // instead of dismissing — the partner still needs to see the
-  // sign-in ask. Belt-and-suspenders.
+  // sign-in ask. Belt-and-suspenders. EXCEPT in native: skip the
+  // sign-in step entirely and just dismiss.
   useEffect(() => {
     if (step === "mask" && hasStoredSacredNamePreference()) {
-      setStep("signin");
+      if (isNative) {
+        markSigninAskSeen();
+        onClose();
+      } else {
+        setStep("signin");
+      }
     }
-  }, [step]);
+  }, [step, isNative, onClose]);
 
   function pickMask(mask: SacredNameMask): void {
     setMask(mask);
+    // In native: mark the sign-in ask as seen (so we never re-loop
+    // the modal looking for it) and close immediately. Skip step 2.
+    if (isNative) {
+      markSigninAskSeen();
+      onClose();
+      return;
+    }
     setStep("signin");
   }
 
