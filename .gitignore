@@ -2,6 +2,13 @@
 _scratch/
 _inbox/
 
+# S175 — sandbox-probe leftovers from the cowork-mount permission test.
+# The mount allowed create + overwrite but blocked delete, so these two
+# 0-byte / marker files were left behind and can only be removed from
+# the Mac side. Safe to `rm app/_writetest app/_dirtest` whenever.
+app/_writetest
+app/_dirtest
+
 # Python
 __pycache__/
 *.pyc

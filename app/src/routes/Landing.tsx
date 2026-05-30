@@ -30,6 +30,18 @@ const TECHELET = "#1A6FE5";
 const ARGAMAN = "#8E4FB3";
 const GOLD = "#caa84a";
 
+/**
+ * S175 — Android direct-distribution feature flag. Flip to `true`
+ * AFTER the signed .apk is placed at
+ * `app/public/download/remnant-bible-v1.0.0.apk` and deployed live.
+ * Until then the Landing-page Android affordance below stays hidden
+ * (anti-false-promise — don't claim the .apk is downloadable until
+ * it is). The marketing-site index.html carries the matching flag
+ * as an HTML comment block — uncomment when this flips. See
+ * S175_GRADLE_BUILD_RUNBOOK.md "Flipping the CTAs live" section.
+ */
+const ANDROID_APK_LIVE = true;
+
 export default function Landing() {
   return (
     <div
@@ -86,7 +98,7 @@ export default function Landing() {
             border carrying the priestly-witness register. */}
         <a
           href="/read"
-          className="mb-12 inline-block rounded border-2 px-8 py-3 text-lg font-medium text-[var(--reader-bg)] transition hover:opacity-90"
+          className="mb-6 inline-block rounded border-2 px-8 py-3 text-lg font-medium text-[var(--reader-bg)] transition hover:opacity-90"
           style={{
             backgroundColor: TECHELET,
             borderColor: GOLD,
@@ -95,6 +107,15 @@ export default function Landing() {
         >
           Enter the study Bible →
         </a>
+
+        {/* S175 — Android-app affordance. Renders only on Android web
+            browsers (visible right under the primary CTA so it's caught
+            before the partner enters the reader) and hidden inside the
+            native Capacitor shell. Gated by ANDROID_APK_LIVE so it
+            only appears once the .apk is actually live at /download/. */}
+        <AndroidLandingAffordance />
+
+        <div className="mb-12" />
 
         {/* Brief frame — three short lines, no bullets, no marketing
             slabs. The site (remnantofpromise.org) already carries the
@@ -164,6 +185,57 @@ export default function Landing() {
           .
         </footer>
       </main>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// S175 — Android direct-distribution affordance for the Landing page.
+// Lives upstream of every read action (above the welcome-modal flow,
+// above settings, above the reader itself) so an Android visitor
+// finds the native-app path before committing to the PWA. UA-gated
+// to Android browsers; hidden inside the native Capacitor shell;
+// gated behind ANDROID_APK_LIVE so it does not claim the .apk is
+// downloadable until it actually is.
+// ─────────────────────────────────────────────────────────────────────
+
+function AndroidLandingAffordance() {
+  if (!ANDROID_APK_LIVE) return null;
+
+  const isAndroidBrowser =
+    typeof navigator !== "undefined" &&
+    /Android/i.test(navigator.userAgent) &&
+    !(
+      typeof window !== "undefined" &&
+      (window as unknown as { Capacitor?: { isNativePlatform?: () => boolean } })
+        .Capacitor?.isNativePlatform?.()
+    );
+
+  if (!isAndroidBrowser) return null;
+
+  return (
+    <div
+      className="mb-6 w-full max-w-xl rounded-md border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-5 py-4 text-left"
+    >
+      <p className="mb-2 font-sans text-xs font-semibold uppercase tracking-wide" style={{ color: GOLD }}>
+        On Android
+      </p>
+      <p className="mb-3 text-sm text-[var(--reader-text)]">
+        The native Android app is available — faster cold start, native
+        share sheets, and verse links open directly in the app instead
+        of the browser.
+      </p>
+      <a
+        href="/download/remnant-bible-v1.0.0.apk"
+        className="inline-flex items-center rounded border px-4 py-1.5 font-sans text-sm font-semibold text-[var(--reader-bg)] hover:opacity-90"
+        style={{ backgroundColor: ARGAMAN, borderColor: GOLD }}
+      >
+        Download the Android app
+      </a>
+      <p className="mt-2 font-sans text-xs italic text-[var(--reader-muted)]">
+        Android will warn the file may be harmful — that's the standard
+        outside-the-Play-Store caveat. Tap Install anyway.
+      </p>
     </div>
   );
 }

@@ -206,6 +206,18 @@ services:
       - type: rewrite
         source: /.well-known/*
         destination: /.well-known/:splat
+      # S175 — /download/* self-rewrite for the direct-distribution
+      # Android .apk. Same anti-SPA-fallback pattern as the
+      # .well-known/* rewrite above. Without this, a partner tapping
+      # the Download button on the Landing-page Android affordance
+      # would receive the SPA index.html instead of the .apk binary
+      # (the SPA fallback eats unmatched paths; a static .apk file at
+      # app/public/download/remnant-bible-v1.0.0.apk needs a path-
+      # holding self-rewrite to serve directly). Staged ahead of the
+      # .apk landing — the rewrite is a no-op when the file exists.
+      - type: rewrite
+        source: /download/*
+        destination: /download/:splat
       - type: rewrite
         source: /*
         destination: /index.html

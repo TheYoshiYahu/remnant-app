@@ -141,6 +141,7 @@ export default function Settings() {
   );
 }
 
+
 // ─────────────────────────────────────────────────────────────────────
 // Local UI primitives — kept inside this file since they're scoped to
 // Settings (Manage / Pricing have their own card patterns).
