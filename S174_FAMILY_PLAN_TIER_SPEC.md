@@ -117,16 +117,22 @@ Reads as: *the whole household reading the canon + extras library
 together for the price of one Companion.* Lower entry point, lower
 ceiling.
 
-**Option C — Family-Scribe at $29.99/mo (5 Scribe seats).**
-Effective price: $6.00/seat at the Scribe tier. Individual Scribe is
-$14.99 × 5 = $74.95; family-plan saves 60%. Annual: $299.90/yr.
-The flagship family offering — every voice-narrated chapter, every
-piece of content, across all five seats.
+**~~Option C — Family-Scribe at $29.99/mo.~~ DROPPED at S174-close
+when Scribe tier was deleted entirely.** Scribe individual deletion
+removed the base price the Family-Scribe option calculated against;
+Family-Scribe doesn't exist as a Stripe-configurable product without
+the underlying Scribe individual SKU. Partners who would have picked
+Family-Scribe for the all-narration-included family value now route
+through Family-Companion (which carries the full Companion-tier
+framework synthesis across all five seats) plus donation channel
+support via `/give` for the "support beyond what's built today"
+intent. See BIBLE_APP_ROADMAP §III S174-close pricing rewrite + Q40
+final closure for the full Scribe-deletion record.
 
-The 60% multi-seat discount across all three options matches the
-common Apple Family Sharing / Spotify Family / Google One Family
-benchmark and reads as a recognizable "family value" framing without
-having to explain the math.
+The 60% multi-seat discount across the remaining two options
+matches the common Apple Family Sharing / Spotify Family / Google
+One Family benchmark and reads as a recognizable "family value"
+framing without having to explain the math.
 
 **Recommended default: Option A (Family-Companion $19.99).** Lands at
 the same price point as Logos Premium individual ($19.99), at the
@@ -134,20 +140,24 @@ Companion tier (which is the framework-synthesis tier — the heart of
 the apps' defining offer), with five household seats. Strong "go to
 the family plan" pull from the Companion individual tier ($9.99 × 5
 households = $49.95 if every member individually subscribed →
-$19.99 family-plan = $30/mo saved). Yoshi's call.
+$19.99 family-plan = $30/mo saved). Yoshi's call. **S174-close
+update:** with Scribe deleted, Companion becomes the highest
+individual tier; Family-Companion becomes the highest family tier
+correspondingly. The framework-synthesis layer (commentary, threads,
+interlinear, lexicons) IS the family-plan headline.
 
-Yoshi may also want to ship **all three family bands** (B/A/C) for
-parity with the individual ladder — Family-Library / Family-Companion
-/ Family-Scribe — so a partner picks family-tier the same way they'd
-pick individual-tier. Slightly more Stripe-config work but it
+Yoshi may also want to ship **both remaining family bands** (A + B)
+for parity with the individual ladder — Family-Library /
+Family-Companion — so a partner picks family-tier the same way
+they'd pick individual-tier. Slightly more Stripe-config work but
 generalizes cleanly from the V1 single-band spec; surface as Open
 Question 1 below.
 
 ## Naming
 
-**Recommended: "Family"** (Family-Library / Family-Companion /
-Family-Scribe if all three bands ship; "Family Plan" if a single
-band).
+**Recommended: "Family"** (Family-Library / Family-Companion if both
+remaining bands ship after the S174-close Scribe deletion; "Family
+Plan" if a single band ships V1).
 
 Conventional, immediately legible, doesn't require partner education.
 Matches the broader subscription-family-tier vocabulary the partner
@@ -237,7 +247,9 @@ CREATE TABLE family_plans (
     stripe_customer_id      TEXT,
     -- The tier the family-plan grants to every seat. References the
     -- existing content_tier enum so Family-Library / Family-Companion /
-    -- Family-Scribe all flow through the same column.
+    -- Family-Library / Family-Companion (Family-Scribe option
+    -- dropped at S174-close with Scribe deletion) flow through
+    -- the same column.
     granted_tier            content_tier NOT NULL,
     cadence                 billing_cadence NOT NULL,
     status                  subscription_status NOT NULL,
@@ -612,7 +624,7 @@ S174: spec doc (this file).
      `family_plan_seats`; API-side reads the new claims and
      surfaces them through `getSubscriptionMe()`'s response shape.
   - **S175c — Stripe family-plan price IDs.** Add the Family-
-     Companion price ID (and Family-Library / Family-Scribe per
+     Companion price ID (and Family-Library per
      Q1's resolution) to Stripe; wire the checkout flow on
      /pricing.
   - **S175d — Invite + accept flow.** API endpoints

@@ -1,4 +1,4 @@
-S174 — Capacitor V1 finish-line: chrome cluster repair + login entry + phone walks + .well-known wiring + family-plan wheel-open + welcome-modal sign-in ask
+S174 — Capacitor V1 finish-line: chrome cluster repair + login entry + phone walks + .well-known wiring + family-plan wheel-open + welcome-modal sign-in ask + tier revamp (Scribe delete + Companion-as-founder + Q40/Q48 closure)
 
 # Session shape (six planned tracks + two emergent)
 
@@ -380,6 +380,90 @@ Behavior matrix:
 
 Framework signal in the closing italic: text isn't gated, only
 persistence is. Skip is a real clean option, never a guilt-trip.
+
+# Track 9 — Tier revamp (close-emergent; Scribe deletion + current-pricing reframe)
+
+## What landed
+
+Yoshi's post-T8 close question — "do we have room this session to
+revamp tiers wording and pricing?" — opened T9 as the final emergent
+wheel. Three substantial concerns surfaced and resolved:
+
+  1. **Scribe ($14.99) deletion.** Yoshi's call: "the founder tier
+     promises sermons and stuff that i dont know when ill ever do
+     them... i dont want to give false hope and am thinking about
+     deleteing it entirely." The framework's anti-false-promise
+     posture rules out selling a tier whose substance doesn't
+     exist yet. Scribe deleted entirely from §III pricing block.
+     Partners who want to support beyond their tier route through
+     `/give` at remnantofpromise.org (0% platform fee to the
+     501(c)(3)).
+  2. **Companion ($9.99) opens to beta sale.** §III prior lock
+     ("$9.99 and $14.99 are named future tiers, not sold at beta")
+     revised — Companion becomes the highest active beta tier.
+     Active ship set: Free / $1.99 Study Notes / $4.99 Library /
+     $9.99 Companion.
+  3. **Founder concept reframed at session-close.** Initial path
+     during T9 routed toward "founder = relationship designation
+     tied to Companion-during-beta" with substantive feedback
+     channel + /pricing modal commitment. Yoshi reframed at final
+     close: drop the founder-tier scaffolding entirely. The simpler
+     frame: "these are all founder prices and may probably increase
+     in the future but those who get them now will retain prices
+     for life." No founder badge; no founder feedback channel
+     (no new email address; no WP form); no /manage Founder
+     section. The permanent price-lock per §III is the substantive
+     guarantee; "founder" remains usable as descriptive shorthand
+     ("you got the founder price") but never as tier or surface.
+
+## Roadmap touch points landed
+
+`BIBLE_APP_ROADMAP.md`:
+
+  - **§III pricing block** — ship-set rewritten to four active
+    tiers; Scribe blurb marked DELETED; Companion blurb extended
+    with the current-pricing reframe and the WIP-disclosure
+    pointer. "Founder relationship" bullet in the layered moves
+    section reframed as "Current-pricing window."
+  - **§III competitive-frame line** — updated for Companion as
+    the new top tier vs Logos Premium $9.99.
+  - **§IX Q40** — FULLY CLOSED. Both remaining open items
+    resolved together: full-canon framework commentary home is
+    Companion; founder pricing concept retires (permanent
+    price-lock is the substantive guarantee; "founder" is
+    descriptive only).
+  - **§IX Q48** — closed DEFERRED. No founder feedback channel
+    V1. Reopen if/when a dedicated paid-tier-partner feedback
+    surface becomes worth standing up.
+
+`S174_FAMILY_PLAN_TIER_SPEC.md` — Family-Scribe option dropped
+(can't exist without underlying Scribe SKU); spec becomes
+Family-Library + Family-Companion (2 bands instead of 3).
+
+`S174_TIER_REVAMP_SPEC.md` — NEW. Captures the voice-gated copy
+work S175 executes against. Six surfaces drafted; revision note at
+the top of the spec flags Yoshi's session-close reframe and marks
+the founder-specific surfaces (Surfaces 4 + 5, founder badge in
+Surface 2, founder paragraph in Surface 3) as superseded. **S175
+effective scope:** Surface 1 (Library disclosure) + Surface 2
+revised (Companion card without founder badge) + Surface 3 revised
+(WIP confirmation modal without founder-relationship paragraph) +
+Surface 6 (Scribe card removal). Founder feedback channel + /manage
+Founder section don't ship.
+
+## What's queued for S175 execution
+
+Voice-gate every line on fresh attention. The S175 wheel ships:
+
+  - Pricing.tsx: remove Scribe card; revise Companion card to
+    add current-pricing-may-increase + permanent-price-lock
+    framing; add Library disclosure footnote
+  - New FounderConfirmationModal.tsx (or similar; better name TBD
+    since "Founder" framing is dropped — maybe
+    `CompanionConfirmationModal.tsx`) — WIP disclosure before
+    Stripe checkout fires
+  - Voice-gate spec doc redrafts on Surface 2 + Surface 3 before
+    coding starts
 
 # Operating lessons logged at S174 close
 
