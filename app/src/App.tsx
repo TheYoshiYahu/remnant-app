@@ -1695,13 +1695,13 @@ function Reader() {
       <header className="mb-6 border-b border-[var(--reader-accent)] pb-4">
         <div className="flex items-start justify-between gap-4">
           <div>
-            {/* S172 — brand title in solid bright techelet. The §3
-                divine register is the brand's load-bearing color across
-                the brand-mark + watermark + chrome accents. Bright shade
-                (#7FB8FF, light end of the techelet ramp) is chosen for
-                readability against the dark surface — a metallic-gradient
-                text treatment faded into invisibility at the deep stops. */}
-            <h1 className="text-2xl font-semibold tracking-tight text-[#7FB8FF]">
+            {/* S172.11 — brand title rendered as a metallic techelet
+                pill matching the existing "Hide study aids" button
+                (same gradient, border, text color). The brand title
+                becomes a chrome surface in the divine-name register —
+                load-bearing brand color across brand-mark + watermark
+                + chrome accents now extended to the masthead itself. */}
+            <h1 className="inline-block rounded-md border border-[#A8C8F0] bg-gradient-to-r from-[#0A2D84] via-[#1A6FE5] to-[#0A2D84] px-3 py-1.5 text-2xl font-semibold tracking-tight text-[#E6F0FA] shadow-sm">
               The Remnant of Promise Official Study Bible
             </h1>
             <p className="mt-1 text-sm text-[var(--reader-muted)]">
