@@ -36,13 +36,28 @@ What this means concretely for the S173 runbook:
   - **§ 5 Android — Play Console + signing keystore** — Play
     Console is deferred to V1.1+. V1 Android distribution is via
     direct .apk download from the website (path: bible.
-    remnantofpromise.org/download/remnant-bible-{version}.apk). The
-    keystore generation (§ 5.1) is still the unblock for the
-    assetlinks.json SHA-256 — but it doesn't have to happen this
-    week; it's the prerequisite for App Links autoVerify, which
-    only matters if you want /strongs/{N} URLs from iMessage/etc.
-    to open the installed APK directly. Direct .apk install works
-    fine without it.
+    remnantofpromise.org/download/remnant-bible-{version}.apk).
+    **S174 update — keystore generated mid-session.** Yoshi ran
+    `keytool -genkey` against
+    `~/Desktop/App/_signing/remnant-bible.keystore` (alias
+    `remnant-bible`, RSA 2048, 10000-day validity); password
+    saved to Apple Passwords. SHA-256 retrieved via `keytool
+    -list -v` and wired into
+    `app/public/.well-known/assetlinks.json` (committed below).
+    The keystore unblocks App Links autoVerify — when the
+    Capacitor Android shell is built + installed with this
+    signing key, Android crawls the assetlinks.json file on
+    `bible.remnantofpromise.org` and registers the app as the
+    default handler for matching URLs. Tapping
+    `bible.remnantofpromise.org/strongs/G3056` from iMessage
+    then opens the installed app directly instead of the chooser
+    dialog. The keystore file lives at
+    `~/Desktop/App/_signing/remnant-bible.keystore` — `.gitignore`
+    excludes `_signing/` so the keystore file (containing the
+    private key) never enters git. The SHA-256 fingerprint
+    (D2:E0:F7:17:...:7E:E9) is public-by-design — it's the
+    binding contract between the app's signing identity and the
+    website's `assetlinks.json` claim.
 
 The rest of this document remains the operator runbook for when
 those gates land. Read it as the V1.1+ playbook.

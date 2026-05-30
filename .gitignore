@@ -26,6 +26,16 @@ ENV/
 *.pem
 *.key
 
+# Android signing keystore — S174. The keystore file contains the
+# private key that signs Android .apk / .aab releases. Losing it OR
+# leaking it would compromise the ability to ship signed updates.
+# The SHA-256 fingerprint of the public cert IS public (it lives in
+# app/public/.well-known/assetlinks.json) — only the keystore file
+# itself stays out of git.
+_signing/
+*.keystore
+*.jks
+
 # OS / editor noise
 .DS_Store
 Thumbs.db
