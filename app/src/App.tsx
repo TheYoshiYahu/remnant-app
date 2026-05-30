@@ -1744,20 +1744,19 @@ function Reader() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-8">
       <header className="mb-6 border-b border-[var(--reader-accent)] pb-4">
-        {/* S173 — mobile chrome overflow fix. Below the sm: breakpoint
+        {/* S173 — mobile chrome layout fix. Below the sm: breakpoint
             (640px) the header stacks vertically: title on top, chrome
-            cluster as a full-bleed horizontal-scroll strip below.
-            Above sm: the original side-by-side layout returns. Each
-            chrome button gets shrink-0 via the arbitrary [&>*]
-            selector so the buttons retain their intrinsic widths
-            inside the scroll container (otherwise flex would squish
-            them to fit). The negative-margin / restored-padding
-            pattern (-mx-6 px-6) extends the scroll strip to the
-            viewport edges on mobile so the row reads as a swipeable
-            chrome rail (matches iOS/Android system app-bar pattern).
-            Preserves the seven-metallic chrome work landed at S172.8
-            — partner sees the full cluster on every viewport, no
-            hamburger collapse. */}
+            cluster below. The chrome cluster uses flex-wrap on mobile
+            so the seven metallic buttons (Listen / Search / Bookmarks
+            / Notes / MODE Light-Dark / Settings / Manage-partnership)
+            pack onto 2-3 rows at their intrinsic widths instead of
+            overflowing horizontally. Above sm: the cluster returns to
+            single-row nowrap and the header to side-by-side.
+            shrink-0 via the arbitrary [&>*] selector keeps each
+            button at its natural width on either layout. Preserves
+            the seven-metallic chrome work landed at S172.8 — partner
+            sees the full cluster on every viewport without a
+            horizontal swipe or hamburger collapse. */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="min-w-0">
             {/* S172.13 — brand title rendered as the §5 spectral-blue
@@ -1773,7 +1772,7 @@ function Reader() {
               Restored Names Edition
             </p>
           </div>
-          <div className="-mx-6 flex items-start gap-2 overflow-x-auto px-6 pb-1 sm:mx-0 sm:overflow-visible sm:px-0 sm:pb-0 [&>*]:shrink-0">
+          <div className="flex flex-wrap items-start gap-2 sm:flex-nowrap [&>*]:shrink-0">
             {/* S157 — chrome Listen button per DESIGN_LANGUAGE.md §25.
                 Opens the bottom-pinned AudioPlayer starting from the
                 verse currently centered in the viewport (S116
