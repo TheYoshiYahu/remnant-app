@@ -96,6 +96,7 @@ from typing import List, Optional
 
 from fastapi import Depends, FastAPI, HTTPException, Query, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 
 from auth import (
     User,
@@ -2253,6 +2254,203 @@ async def get_strong_entry(strong_number: str) -> StrongEntry:
         short_definition=row["short_definition"],
         definition=row["definition"],
         derivation=row["derivation"],
+    )
+
+
+# ─────────────────────────────────────────────────────────────────────
+# S171 Track 3 — server-rendered Strong's deep-link page (§30 V1.1).
+#
+# Locked at DESIGN_LANGUAGE.md §30 *Deep-link routes (V1.1 web-side
+# add)*. The watermark footer on every §30 share-card carries the URL
+# `bible.remnantofpromise.org/strongs/{N}` — a paste-and-go discovery
+# vector. This route is the partner-facing destination when that URL
+# is opened or pasted into a messaging app: a minimal server-rendered
+# HTML page carrying the Strong's entry content + full Open Graph
+# metadata so link-preview crawlers (iMessage / WhatsApp / Slack /
+# Telegram / Discord) render the page automatically without executing
+# JavaScript.
+#
+# HOSTING NOTE (carried as S171 Yoshi-question): the spec'd public
+# URL `bible.remnantofpromise.org/strongs/{N}` resolves to the PWA
+# Static Site, not the API. This route is the SOURCE OF TRUTH and
+# lives on `api.bible.remnantofpromise.org/strongs/{N}`. The bare-
+# domain → api-subdomain bridging is a hosting wheel — three options
+# (302 redirect, Render Static Site rewrite-to-cross-origin, or a
+# new tiny web service that proxies `/strongs/*`). Decided at S171
+# close per Yoshi-question 3.
+#
+# OG image: points at the §30 V1 share-card auto-generated for this
+# Strong's number. Until a server-side share-card generator ships
+# (V1.2+), the og:image references the v4 brand-mark asset on the
+# PWA's static path so messaging-app previews carry the brand
+# regardless. Once a server-side card endpoint exists, swap the
+# og:image to `/strongs/{N}/og-image.png` which renders the canonical
+# 1080×1920 card for that entry.
+# ─────────────────────────────────────────────────────────────────────
+
+
+def _strongs_html_page(entry: StrongEntry) -> str:
+    """Build the deep-link HTML page for a Strong's entry. Pure helper
+    — node-testable equivalent (Python-side; sanity covers the OG
+    field assembly + the canonical URL). All content escaped via
+    str.replace for the small attack surface (no template engine
+    dependency; this page is content-only and renders no user input
+    beyond the path param which is already validated upstream).
+    """
+    n = entry.strong_number
+    lemma = (entry.lemma or "").replace("<", "&lt;").replace(">", "&gt;")
+    translit = (entry.transliteration or "").replace("<", "&lt;").replace(">", "&gt;")
+    gloss = (entry.short_definition or "").replace("<", "&lt;").replace(">", "&gt;")
+    definition = (entry.definition or "").replace("<", "&lt;").replace(">", "&gt;")
+    derivation = (entry.derivation or "").replace("<", "&lt;").replace(">", "&gt;")
+    language_label = {"hebrew": "Hebrew", "greek": "Greek", "aramaic": "Aramaic"}.get(
+        entry.language or "", "Strong's"
+    )
+    # Canonical public URL — the watermark-footer CTA target. Matches
+    # DESIGN_LANGUAGE.md §30 *URL format*.
+    canonical = f"https://bible.remnantofpromise.org/strongs/{n}"
+    # OG title — "{lemma} ({transliteration}) — Strong's {N}".
+    og_title_parts = []
+    if lemma:
+        og_title_parts.append(lemma)
+    if translit:
+        og_title_parts.append(f"({translit})")
+    og_title_parts.append(f"— Strong's {n}")
+    og_title = " ".join(og_title_parts)
+    og_description = gloss or definition[:200] if definition else f"Strong's {n}"
+    # Brand-mark fallback OG image — content-hashed bundle path on the
+    # PWA. Once a per-entry server-side share-card generator ships,
+    # swap this to `/strongs/{n}/og-image.png`.
+    og_image = "https://bible.remnantofpromise.org/brand-mark-share.png"
+    return (
+        "<!doctype html>\n"
+        '<html lang="en">\n'
+        "<head>\n"
+        '<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        f"<title>{og_title} | Remnant of Promise</title>\n"
+        f'<link rel="canonical" href="{canonical}">\n'
+        # Open Graph
+        '<meta property="og:type" content="article">\n'
+        '<meta property="og:site_name" content="Remnant of Promise Official Study Bible">\n'
+        f'<meta property="og:url" content="{canonical}">\n'
+        f'<meta property="og:title" content="{og_title}">\n'
+        f'<meta property="og:description" content="{og_description}">\n'
+        f'<meta property="og:image" content="{og_image}">\n'
+        '<meta property="og:image:width" content="1080">\n'
+        '<meta property="og:image:height" content="1920">\n'
+        # Twitter Card — same content, separate meta lookups.
+        '<meta name="twitter:card" content="summary_large_image">\n'
+        f'<meta name="twitter:title" content="{og_title}">\n'
+        f'<meta name="twitter:description" content="{og_description}">\n'
+        f'<meta name="twitter:image" content="{og_image}">\n'
+        "<style>\n"
+        "body{font-family:'Lora','Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;background:#0a0a0a;color:#e6e6e6;max-width:720px;margin:0 auto;padding:2rem 1.5rem;line-height:1.55;}\n"
+        "header{border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:1rem;margin-bottom:1.5rem;}\n"
+        ".badge{display:inline-block;border:1px solid rgba(255,255,255,0.2);padding:0.2rem 0.6rem;border-radius:4px;font-size:0.85rem;color:#1A6FE5;font-weight:600;}\n"
+        ".lang{margin-left:0.6rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:rgba(255,255,255,0.6);}\n"
+        ".lemma{font-size:2rem;font-weight:600;margin:1rem 0 0;}\n"
+        ".translit{font-style:italic;color:rgba(255,255,255,0.6);margin-left:0.75rem;}\n"
+        ".gloss{margin-top:0.75rem;}\n"
+        ".gloss-label{font-weight:600;}\n"
+        ".derivation{font-size:0.9rem;color:rgba(255,255,255,0.65);margin-top:1rem;}\n"
+        ".cta{display:block;text-align:center;margin-top:2rem;padding:0.75rem;border:1px solid #1A6FE5;border-radius:4px;color:#1A6FE5;text-decoration:none;font-weight:500;}\n"
+        "footer{margin-top:2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);font-size:0.8rem;color:rgba(255,255,255,0.5);text-align:center;}\n"
+        "</style>\n"
+        "</head>\n"
+        "<body>\n"
+        "<header>\n"
+        f'<span class="badge">{n}</span><span class="lang">{language_label}</span>\n'
+        f'<h1 class="lemma">{lemma}<span class="translit">{translit}</span></h1>\n'
+        "</header>\n"
+        "<main>\n"
+        + (f'<p class="gloss"><span class="gloss-label">Gloss:</span> {gloss}</p>\n' if gloss else "")
+        + (f"<p>{definition}</p>\n" if definition else "")
+        + (f'<p class="derivation"><span class="gloss-label">Derivation:</span> {derivation}</p>\n' if derivation else "")
+        + f'<a class="cta" href="https://bible.remnantofpromise.org/?strong={n}">Open in The Remnant of Promise Official Study Bible →</a>\n'
+        "</main>\n"
+        '<footer>Remnant of Promise · Official Study Bible · <a style="color:#1A6FE5;text-decoration:none;" href="https://bible.remnantofpromise.org">bible.remnantofpromise.org</a></footer>\n'
+        "</body>\n"
+        "</html>\n"
+    )
+
+
+def _normalize_strong_number(raw: str) -> str:
+    """Mirror /v1/strongs/{n} normalization. Raises HTTPException on
+    invalid input — same error shape, callable from both the JSON and
+    HTML routes."""
+    raw = raw.strip()
+    if not raw or raw[0].lower() not in ("h", "g"):
+        raise HTTPException(
+            status_code=400,
+            detail="strong_number must start with 'H' (Hebrew) or 'G' (Greek)",
+        )
+    prefix = raw[0].upper()
+    digits = "".join(c for c in raw[1:] if c.isdigit())
+    if not digits:
+        raise HTTPException(
+            status_code=400,
+            detail="strong_number must contain numeric digits after the prefix",
+        )
+    return f"{prefix}{int(digits):04d}"
+
+
+@app.get("/strongs/{strong_number}", response_class=HTMLResponse)
+async def get_strong_entry_html(strong_number: str) -> HTMLResponse:
+    """S171 §30 V1.1 — server-rendered deep-link page for a Strong's
+    entry. Built so messaging-app link-preview crawlers (iMessage /
+    WhatsApp / Slack / Telegram / Discord) render the OG metadata
+    without executing JavaScript when a partner pastes the URL from
+    a share-card watermark footer.
+
+    Renders a minimal content-only HTML page; the heavier in-app
+    experience (concordance rail, lexicon-sheet, etc.) opens via
+    the "Open in The Remnant of Promise Official Study Bible →"
+    CTA which jumps the partner into the PWA.
+
+    Tier: public (matches §9's free-tier Strong's lookup contract).
+    404 on unknown number, 400 on malformed.
+    """
+    canonical = _normalize_strong_number(strong_number)
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT strong_number, language, lemma, transliteration, "
+            "       pronunciation, short_definition, definition, derivation "
+            "  FROM strong_entries "
+            " WHERE strong_number = $1",
+            canonical,
+        )
+    if row is None:
+        # 404 with a minimal HTML page so the link-preview crawler
+        # still gets a clean response (no raw JSON or stack trace
+        # surfacing in a partner's messaging app preview).
+        return HTMLResponse(
+            content=(
+                "<!doctype html><html><head><title>Strong's entry not found</title>"
+                '<meta property="og:title" content="Strong\'s entry not found">'
+                '<meta property="og:description" content="The requested Strong\'s number does not exist in the lexicon.">'
+                "</head><body><h1>Strong's entry not found</h1>"
+                f"<p>No lexicon entry for <code>{canonical}</code>.</p></body></html>"
+            ),
+            status_code=404,
+        )
+    entry = StrongEntry(
+        strong_number=row["strong_number"],
+        language=row["language"],
+        lemma=row["lemma"],
+        transliteration=row["transliteration"],
+        pronunciation=row["pronunciation"],
+        short_definition=row["short_definition"],
+        definition=row["definition"],
+        derivation=row["derivation"],
+    )
+    return HTMLResponse(
+        content=_strongs_html_page(entry),
+        # Cache for an hour at the edge — Strong's entries are
+        # effectively immutable; one-hour TTL is cheap insurance
+        # against a hot-cached crawler hammering the DB.
+        headers={"Cache-Control": "public, max-age=3600"},
     )
 
 

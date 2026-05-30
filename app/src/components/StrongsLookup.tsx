@@ -92,6 +92,7 @@ export default function StrongsLookup({
     setSharing(true);
     try {
       await executeStudyShare(modalContentRef.current, {
+        kind: "strongs",
         strongNumber: entry.strong_number,
         transliteration: entry.transliteration ?? "",
         source: "strongs",

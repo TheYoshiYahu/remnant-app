@@ -39,7 +39,7 @@
  * render as plain inline text.
  */
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   type ChapterEndCardResponse,
   type ContentTier,
@@ -47,6 +47,7 @@ import {
   getChapterCrossReferences,
 } from "../lib/api";
 import { applyParentheticalsToggle } from "../lib/useParentheticalsToggle";
+import { executeStudyShare } from "../lib/study-share-render";
 
 interface ChapterEndCardProps {
   bookSlug: string;
@@ -136,6 +137,8 @@ export default function ChapterEndCard({
         <div className="mb-6">
           <BaselineList
             entries={data.baseline}
+            bookSlug={bookSlug}
+            chapterNumber={chapterNumber}
             userTier={userTier}
             onNavigate={onNavigate}
             hideParentheticals={hideParentheticals}
@@ -157,6 +160,42 @@ export default function ChapterEndCard({
         </div>
       )}
     </section>
+  );
+}
+
+// ---- S171 §17 — XrefShareButton (shared chrome) -------------------------
+//
+// Right-aligned Share pill matching the §30 V1 metallic-gold register
+// (border #FCECAF + gold gradient + cream text per StrongsLookup S170
+// walk-5). Carries `data-export-suppress` so the button itself never
+// appears in the exported PNG (the cloned subtree drops every node with
+// that attribute before html2canvas captures it). `disabled` is true while
+// a share is in flight to prevent double-fire.
+//
+// The button is the SAME render across baseline blocks and thread
+// callouts so partners learn one Share affordance across both layers.
+
+function XrefShareButton({
+  sharing,
+  onClick,
+  label,
+}: {
+  sharing: boolean;
+  onClick: () => void;
+  label: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={sharing}
+      aria-label={label}
+      title={label}
+      className="rounded-md border border-[#FCECAF] bg-gradient-to-r from-[#645028] via-[#B4A078] to-[#645028] px-2.5 py-0.5 font-sans text-[10px] font-semibold uppercase tracking-wide text-[#FFF8E1] shadow-sm hover:opacity-90 disabled:opacity-40"
+      data-export-suppress
+    >
+      {sharing ? "…" : "Share"}
+    </button>
   );
 }
 
@@ -245,11 +284,15 @@ function classNameForSourceClass(cls: SourceClass): string {
 
 function BaselineList({
   entries,
+  bookSlug,
+  chapterNumber,
   userTier,
   onNavigate,
   hideParentheticals,
 }: {
   entries: ChapterEndCardResponse["baseline"];
+  bookSlug: string;
+  chapterNumber: number;
   userTier: ContentTier;
   onNavigate?: (b: string, c: number, v: number) => void;
   hideParentheticals: boolean;
@@ -257,19 +300,81 @@ function BaselineList({
   return (
     <ul className="space-y-3">
       {entries.map((entry) => (
-        <li key={entry.source_verse.verse_number}>
-          <div className="text-[var(--reader-text)]">
-            {/*
-              S130 — source-verse group label in spectral blue
-              (--reader-accent, #0084FF), matching the in-body verse
-              numbers per COLOR_PALETTE.md §2. Functional consistency:
-              spectral blue = "verse-number pointer" everywhere it
-              appears, body and chrome.
-            */}
-            <span className="font-sans text-xs font-semibold text-[var(--reader-accent)]">
-              Verse {entry.source_verse.verse_number}
-            </span>
-          </div>
+        <BaselineEntryBlock
+          key={entry.source_verse.verse_number}
+          entry={entry}
+          bookSlug={bookSlug}
+          chapterNumber={chapterNumber}
+          userTier={userTier}
+          onNavigate={onNavigate}
+          hideParentheticals={hideParentheticals}
+        />
+      ))}
+    </ul>
+  );
+}
+
+// S171 §17 — Per-source-verse block, lifted out of BaselineList so it
+// can own its own ref + share state. The block is the natural shareable
+// unit for Layer 1: the anchor verse heading + every curated target
+// for that verse, rendered as one cohesive card. The Share button sits
+// right of the "Verse N" heading.
+
+function BaselineEntryBlock({
+  entry,
+  bookSlug,
+  chapterNumber,
+  userTier,
+  onNavigate,
+  hideParentheticals,
+}: {
+  entry: ChapterEndCardResponse["baseline"][number];
+  bookSlug: string;
+  chapterNumber: number;
+  userTier: ContentTier;
+  onNavigate?: (b: string, c: number, v: number) => void;
+  hideParentheticals: boolean;
+}) {
+  const blockRef = useRef<HTMLLIElement | null>(null);
+  const [sharing, setSharing] = useState(false);
+  const sourceVerseNumber = entry.source_verse.verse_number;
+
+  async function handleShare() {
+    if (!blockRef.current || sharing) return;
+    setSharing(true);
+    try {
+      await executeStudyShare(blockRef.current, {
+        kind: "xref",
+        xrefKind: "baseline",
+        bookSlug,
+        chapterNumber,
+        verseNumber: sourceVerseNumber,
+        subject: `verse-${sourceVerseNumber}`,
+      });
+    } finally {
+      setSharing(false);
+    }
+  }
+
+  return (
+    <li ref={blockRef}>
+      <div className="flex items-center justify-between gap-2 text-[var(--reader-text)]">
+        {/*
+          S130 — source-verse group label in spectral blue
+          (--reader-accent, #0084FF), matching the in-body verse
+          numbers per COLOR_PALETTE.md §2. Functional consistency:
+          spectral blue = "verse-number pointer" everywhere it
+          appears, body and chrome.
+        */}
+        <span className="font-sans text-xs font-semibold text-[var(--reader-accent)]">
+          Verse {sourceVerseNumber}
+        </span>
+        <XrefShareButton
+          sharing={sharing}
+          onClick={handleShare}
+          label={`Share cross-references for verse ${sourceVerseNumber}`}
+        />
+      </div>
           <ul className="mt-1 ml-3 space-y-1 text-[var(--reader-text)]">
             {entry.targets.map((tgt) => {
               const locked = !tierSatisfies(userTier, tgt.tier_required);
@@ -339,9 +444,7 @@ function BaselineList({
               );
             })}
           </ul>
-        </li>
-      ))}
-    </ul>
+    </li>
   );
 }
 
@@ -359,6 +462,31 @@ function ThreadCallout({
   hideParentheticals: boolean;
 }) {
   const [expanded, setExpanded] = useState<boolean>(false);
+  // S171 §17 — Share state + ref for the thread callout. Captures the
+  // entire <article> (title + anchor + summary_md + member rows) as a
+  // single shareable card. Anchor permalink for the watermark URL line
+  // resolves from thread.anchor; if the thread has no explicit anchor
+  // (rare — most curated threads carry one), we skip the share button
+  // to keep the URL contract intact (every xref share carries an
+  // anchor-verse permalink CTA — no "doorway-less" shares).
+  const articleRef = useRef<HTMLElement | null>(null);
+  const [sharing, setSharing] = useState(false);
+  async function handleShare() {
+    if (!articleRef.current || sharing || !thread.anchor) return;
+    setSharing(true);
+    try {
+      await executeStudyShare(articleRef.current, {
+        kind: "xref",
+        xrefKind: "thread",
+        bookSlug: thread.anchor.book_slug,
+        chapterNumber: thread.anchor.chapter_number,
+        verseNumber: thread.anchor.verse_start,
+        subject: thread.slug,
+      });
+    } finally {
+      setSharing(false);
+    }
+  }
   // S144 — apply the parentheticals-strip toggle to the summary_md
   // BEFORE splitting into paragraphs. Stripping at the whole-body level
   // is correct because every paragraph carries restored Sacred Names
@@ -391,22 +519,31 @@ function ThreadCallout({
   }
 
   return (
-    <article className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
-      <header className="mb-2">
-        <h4 className="text-lg font-semibold text-[var(--reader-text)]">
-          {thread.title}
-        </h4>
+    <article ref={articleRef} className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
+      <header className="mb-2 flex items-start justify-between gap-2">
+        <div className="min-w-0">
+          <h4 className="text-lg font-semibold text-[var(--reader-text)]">
+            {thread.title}
+          </h4>
+          {thread.anchor && (
+            <p className="mt-0.5 font-sans text-xs text-[var(--reader-accent)]">
+              Anchor:{" "}
+              {prettyRef(
+                thread.anchor.book_slug,
+                thread.anchor.chapter_number,
+                thread.anchor.verse_start
+              )}
+              {thread.anchor.verse_end !== thread.anchor.verse_start &&
+                `–${thread.anchor.verse_end}`}
+            </p>
+          )}
+        </div>
         {thread.anchor && (
-          <p className="mt-0.5 font-sans text-xs text-[var(--reader-accent)]">
-            Anchor:{" "}
-            {prettyRef(
-              thread.anchor.book_slug,
-              thread.anchor.chapter_number,
-              thread.anchor.verse_start
-            )}
-            {thread.anchor.verse_end !== thread.anchor.verse_start &&
-              `–${thread.anchor.verse_end}`}
-          </p>
+          <XrefShareButton
+            sharing={sharing}
+            onClick={handleShare}
+            label={`Share thread: ${thread.title}`}
+          />
         )}
       </header>
 
@@ -476,23 +613,58 @@ function LockedThreadCallout({
       window.location.href = "/pricing";
     }
   };
+  // S171 Yoshi-decision (post-handoff): locked threads get a Share
+  // button too — the paywall itself is a viral surface. The exported
+  // PNG carries the title + anchor + teaser + fade + "Unlock in [Name]
+  // tier" CTA — same content the locked partner sees in the reader.
+  // A friend receiving the share sees the framework's reading + the
+  // upgrade path in one image; the paywall doubles as a discovery
+  // vector. Anchor permalink in the watermark URL line points back
+  // at the thread's anchor verse exactly the way unlocked shares do.
+  const articleRef = useRef<HTMLElement | null>(null);
+  const [sharing, setSharing] = useState(false);
+  async function handleShare() {
+    if (!articleRef.current || sharing || !thread.anchor) return;
+    setSharing(true);
+    try {
+      await executeStudyShare(articleRef.current, {
+        kind: "xref",
+        xrefKind: "thread",
+        bookSlug: thread.anchor.book_slug,
+        chapterNumber: thread.anchor.chapter_number,
+        verseNumber: thread.anchor.verse_start,
+        subject: thread.slug,
+      });
+    } finally {
+      setSharing(false);
+    }
+  }
   return (
-    <article className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
-      <header className="mb-2">
-        <h4 className="text-lg font-semibold text-[var(--reader-text)]">
-          {thread.title}
-        </h4>
+    <article ref={articleRef} className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
+      <header className="mb-2 flex items-start justify-between gap-2">
+        <div className="min-w-0">
+          <h4 className="text-lg font-semibold text-[var(--reader-text)]">
+            {thread.title}
+          </h4>
+          {thread.anchor && (
+            <p className="mt-0.5 font-sans text-xs text-[var(--reader-accent)]">
+              Anchor:{" "}
+              {prettyRef(
+                thread.anchor.book_slug,
+                thread.anchor.chapter_number,
+                thread.anchor.verse_start
+              )}
+              {thread.anchor.verse_end !== thread.anchor.verse_start &&
+                `–${thread.anchor.verse_end}`}
+            </p>
+          )}
+        </div>
         {thread.anchor && (
-          <p className="mt-0.5 font-sans text-xs text-[var(--reader-accent)]">
-            Anchor:{" "}
-            {prettyRef(
-              thread.anchor.book_slug,
-              thread.anchor.chapter_number,
-              thread.anchor.verse_start
-            )}
-            {thread.anchor.verse_end !== thread.anchor.verse_start &&
-              `–${thread.anchor.verse_end}`}
-          </p>
+          <XrefShareButton
+            sharing={sharing}
+            onClick={handleShare}
+            label={`Share locked-thread teaser: ${thread.title}`}
+          />
         )}
       </header>
 

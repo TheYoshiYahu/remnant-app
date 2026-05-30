@@ -81,6 +81,7 @@ export default function LexiconSheet({
     setSharing(true);
     try {
       await executeStudyShare(modalContentRef.current, {
+        kind: "strongs",
         strongNumber,
         transliteration: activeEntry.transliteration ?? "",
         source:

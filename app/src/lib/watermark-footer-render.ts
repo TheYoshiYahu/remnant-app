@@ -282,7 +282,24 @@ export interface PaintWatermarkOpts {
    *  "light" renders dark wordmark on light bg. Hairline divider
    *  flips opacity accordingly. */
   theme?: WatermarkTheme;
+  /**
+   * S171 §17 — optional CTA URL override for wordmark line 3.
+   * Default is the base domain `bible.remnantofpromise.org`. Word-study
+   * shares (§30 V1) and verse-shares (§24) keep the default; xref shares
+   * (§17 V1.1) pass an anchor-verse permalink like
+   * `bible.remnantofpromise.org/genesis/1.1` so each shared cross-reference
+   * carries a doorway URL back to the exact verse it cites. The override
+   * substitutes the entire line 3 text — caller is responsible for keeping
+   * it short enough that the centered 22pt Lora rendering does not bleed
+   * past the divider's 6% inset.
+   */
+  urlOverride?: string;
 }
+
+/** Default wordmark line 3 — the brand domain. Exported so callers
+ *  (xref share, etc.) can build URL overrides that share the same
+ *  base. */
+export const WORDMARK_URL_DEFAULT = "bible.remnantofpromise.org";
 
 /**
  * Paint the 20% watermark footer onto an existing canvas context.
@@ -361,11 +378,13 @@ export async function paintWatermarkFooter(
   ctx.font = `italic 400 ${WORDMARK_LINE_2_SIZE}px Lora, "Lora-Local", Georgia, "Times New Roman", serif`;
   ctx.fillText("Official Study Bible", geom.wordmark.centerX, geom.wordmark.line2Y);
 
-  // Line 3 — URL CTA, techelet.
+  // Line 3 — URL CTA, techelet. S171 §17: if the caller passed an
+  // urlOverride (xref share's anchor-verse permalink), paint that
+  // instead of the default brand domain.
   ctx.fillStyle = TECHELET;
   ctx.font = `500 ${WORDMARK_LINE_3_SIZE}px Lora, "Lora-Local", Georgia, "Times New Roman", serif`;
   ctx.fillText(
-    "bible.remnantofpromise.org",
+    opts.urlOverride ?? WORDMARK_URL_DEFAULT,
     geom.wordmark.centerX,
     geom.wordmark.line3Y
   );

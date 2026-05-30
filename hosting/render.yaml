@@ -172,6 +172,22 @@ services:
       - key: VITE_API_BASE
         value: https://api.bible.remnantofpromise.org/v1
     routes:
+      # S171 Track 3 — §30 V1.1 deep-link redirect for Strong's pages.
+      # Spec'd public URL is `bible.remnantofpromise.org/strongs/{N}`
+      # (the watermark CTA), but the server-rendered HTML + Open Graph
+      # metadata lives on the FastAPI service at
+      # `api.bible.remnantofpromise.org/strongs/{N}`. Render Static
+      # Sites can't rewrite cross-origin, so we 302-redirect from
+      # the bare domain → the API host. Link-preview crawlers
+      # (iMessage / WhatsApp / Slack / Telegram / Discord) all follow
+      # 302 redirects when resolving og:* meta, so the partner-visible
+      # behavior is "URL pasted → link preview renders the OG card."
+      # MUST come BEFORE the SPA-fallback rewrite below — order
+      # matters; Render evaluates routes top-down and the first match
+      # wins.
+      - type: redirect
+        source: /strongs/*
+        destination: https://api.bible.remnantofpromise.org/strongs/:splat
       - type: rewrite
         source: /*
         destination: /index.html

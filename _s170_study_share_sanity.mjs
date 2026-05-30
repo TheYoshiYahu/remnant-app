@@ -125,9 +125,21 @@ function slugifyTransliteration(translit) {
   return stripped || "entry";
 }
 
-function buildStudyShareFilename(strongNumber, transliteration) {
-  const slug = slugifyTransliteration(transliteration);
-  return `${strongNumber}-${slug}-rop-study.png`;
+// S171 refactor: `buildStudyShareFilename(meta)` takes a discriminated-
+// union meta object now. Inline equivalent for both shapes — strongs
+// (S170) + xref (S171). S170 cases still pass {kind:"strongs",
+// strongNumber, transliteration} so the existing assertions below
+// stay valid.
+function buildStudyShareFilename(meta) {
+  if (meta.kind === "strongs") {
+    const slug = slugifyTransliteration(meta.transliteration);
+    return `${meta.strongNumber}-${slug}-rop-study.png`;
+  }
+  const subjectSlug = slugifyTransliteration(meta.subject);
+  if (meta.xrefKind === "thread") {
+    return `thread-${subjectSlug}-rop-study.png`;
+  }
+  return `xref-${meta.bookSlug}-${meta.chapterNumber}.${meta.verseNumber}-rop-study.png`;
 }
 
 function buildLexiconDeeplinkText(strongNumber, source) {
@@ -242,13 +254,17 @@ ok('slugify "Iēsoũs" → "iesous"',
 // ── buildStudyShareFilename ────────────────────────────────────────
 
 ok("filename H7225 + rê'shîth",
-   buildStudyShareFilename("H7225", "rê'shîth") === "H7225-reshith-rop-study.png");
+   buildStudyShareFilename({kind:"strongs", strongNumber:"H7225", transliteration:"rê'shîth"})
+     === "H7225-reshith-rop-study.png");
 ok("filename G3056 + logos",
-   buildStudyShareFilename("G3056", "logos") === "G3056-logos-rop-study.png");
+   buildStudyShareFilename({kind:"strongs", strongNumber:"G3056", transliteration:"logos"})
+     === "G3056-logos-rop-study.png");
 ok("filename H0001 + empty → entry",
-   buildStudyShareFilename("H0001", "") === "H0001-entry-rop-study.png");
+   buildStudyShareFilename({kind:"strongs", strongNumber:"H0001", transliteration:""})
+     === "H0001-entry-rop-study.png");
 ok("filename G2424 + Iēsoũs",
-   buildStudyShareFilename("G2424", "Iēsoũs") === "G2424-iesous-rop-study.png");
+   buildStudyShareFilename({kind:"strongs", strongNumber:"G2424", transliteration:"Iēsoũs"})
+     === "G2424-iesous-rop-study.png");
 
 // ── buildLexiconDeeplinkText ───────────────────────────────────────
 

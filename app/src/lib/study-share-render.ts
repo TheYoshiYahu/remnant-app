@@ -98,11 +98,24 @@ const SANDBOX_ROOT_FONT_PX = 24;
  *  locks the URL pattern as bible.remnantofpromise.org/strongs/{N}. */
 const STRONGS_URL_BASE = "bible.remnantofpromise.org/strongs";
 
+/** S171 §17 — base host for the xref-share anchor-verse permalink. The
+ *  full pattern is `{HOST}/{book-slug}/{chapter}.{verse}` (e.g.,
+ *  `bible.remnantofpromise.org/genesis/1.1`). The route is V1.1 work
+ *  alongside `/strongs/{N}`; in V1 the URL is text-only on the share
+ *  card and serves as paste-and-go discovery. */
+const ANCHOR_URL_HOST = "bible.remnantofpromise.org";
+
 // ─────────────────────────────────────────────────────────────────────
-// Types
+// Types — discriminated union (S171 refactor)
 // ─────────────────────────────────────────────────────────────────────
 
-export interface StudyShareMeta {
+/**
+ * §30 V1 word-study share (StrongsLookup / LexiconSheet BDB / LSJ).
+ * Carries a Strong's number + transliteration for the filename slug
+ * and the "Full {SOURCE} entry at ..." deeplink replacement line.
+ */
+export interface StrongsShareMeta {
+  kind: "strongs";
   /** Strong's number (e.g., "H7225", "G3056"). */
   strongNumber: string;
   /** Transliteration (lowercase, hyphenated if multi-word). Used for
@@ -112,6 +125,36 @@ export interface StudyShareMeta {
    *  source label. */
   source?: "strongs" | "bdb" | "lsj";
 }
+
+/**
+ * S171 §17 V1.1 cross-reference share (ChapterEndCard rows). Two
+ * shapes inside one variant:
+ *
+ *   - `xrefKind: "baseline"` — a per-source-verse block from Layer 1
+ *     of the chapter-end card. Captures the anchor verse heading +
+ *     all curated target refs for that verse.
+ *   - `xrefKind: "thread"`   — a per-thread callout from Layer 2.
+ *     Captures the thread title + anchor + summary_md prose + member
+ *     rows in this chapter.
+ *
+ * The anchor permalink (built from bookSlug/chapterNumber/verseNumber)
+ * substitutes the watermark's CTA URL line so every shared xref carries
+ * a discovery doorway pointing back at the verse it cites. `subject`
+ * is the human-readable label baked into the filename slug — e.g., the
+ * source-verse label ("verse-1") for baseline, the thread slug
+ * ("kingdom-gospel") for thread.
+ */
+export interface XrefShareMeta {
+  kind: "xref";
+  xrefKind: "baseline" | "thread";
+  bookSlug: string;
+  chapterNumber: number;
+  verseNumber: number;
+  /** Filename slug subject (e.g., "verse-1" or "kingdom-gospel"). */
+  subject: string;
+}
+
+export type StudyShareMeta = StrongsShareMeta | XrefShareMeta;
 
 export type StudyTransportResult =
   | { ok: true; transport: "share" | "clipboard-image" | "download" }
@@ -123,28 +166,54 @@ export type StudyTransportResult =
 // ─────────────────────────────────────────────────────────────────────
 
 /**
- * Canonical filename for a study-share export per §30:
+ * Canonical filename for a study-share export. Branches on meta.kind:
  *
- *   {strong_number}-{lemma_translit}-rop-study.png
+ *   - strongs: `{strong_number}-{lemma_translit}-rop-study.png`
+ *              e.g., `H7225-reshith-rop-study.png` (§30).
+ *   - xref baseline:
+ *              `xref-{book-slug}-{chap}.{verse}-rop-study.png`
+ *              e.g., `xref-genesis-1.1-rop-study.png` (§17 V1.1).
+ *   - xref thread:
+ *              `thread-{thread-slug}-rop-study.png`
+ *              e.g., `thread-kingdom-gospel-rop-study.png` (§17 V1.1).
  *
- * The transliteration is lower-cased and any whitespace replaced
- * with hyphens; non-alphanumeric (other than hyphen) is dropped. If
- * the transliteration is empty or whitespace-only, the slug falls
- * back to `"entry"` so the file always has a meaningful name.
- *
- *   buildStudyShareFilename("H7225", "rê'shîth")
- *     → "H7225-reshith-rop-study.png"   (after diacritic strip + downcase)
- *
- * Diacritics are stripped via Unicode NFD + combining-mark removal
- * (cross-platform — no ICU dep). Apostrophes / hyphens / accents
- * collapse cleanly to ASCII.
+ * Transliterations / subjects are slug-normalized via the same
+ * NFD-strip-downcase pipeline so the filename is filesystem-safe on
+ * every platform.
  */
-export function buildStudyShareFilename(
-  strongNumber: string,
-  transliteration: string
+export function buildStudyShareFilename(meta: StudyShareMeta): string {
+  if (meta.kind === "strongs") {
+    const slug = slugifyTransliteration(meta.transliteration);
+    return `${meta.strongNumber}-${slug}-rop-study.png`;
+  }
+  // xref
+  const subjectSlug = slugifyTransliteration(meta.subject);
+  if (meta.xrefKind === "thread") {
+    return `thread-${subjectSlug}-rop-study.png`;
+  }
+  // baseline — anchor verse permalink in the filename.
+  return `xref-${meta.bookSlug}-${meta.chapterNumber}.${meta.verseNumber}-rop-study.png`;
+}
+
+/**
+ * S171 §17 — build the anchor-verse permalink that substitutes the
+ * watermark's CTA URL for xref shares. Pattern:
+ *
+ *   bible.remnantofpromise.org/{book-slug}/{chapter}.{verse}
+ *
+ * Reads like "Genesis 1:1" when scanned by eye, fits the watermark's
+ * 22pt Lora line at 1080px width with the 6% inset (longest book slug
+ * `1-thessalonians` + 3-digit chapter/verse runs ~32 chars — well
+ * inside the safe span). The route itself is V1.1 work alongside
+ * `/strongs/{N}`; in V1 the URL is text-only on the share card and
+ * serves as paste-and-go discovery.
+ */
+export function buildAnchorPermalink(
+  bookSlug: string,
+  chapterNumber: number,
+  verseNumber: number
 ): string {
-  const slug = slugifyTransliteration(transliteration);
-  return `${strongNumber}-${slug}-rop-study.png`;
+  return `${ANCHOR_URL_HOST}/${bookSlug}/${chapterNumber}.${verseNumber}`;
 }
 
 export function slugifyTransliteration(translit: string): string {
@@ -176,7 +245,7 @@ export function slugifyTransliteration(translit: string): string {
  */
 export function buildLexiconDeeplinkText(
   strongNumber: string,
-  source: StudyShareMeta["source"] | undefined
+  source: StrongsShareMeta["source"] | undefined
 ): string {
   const label =
     source === "bdb"
@@ -233,33 +302,38 @@ function prepareModalClone(
   sandbox.appendChild(clone);
   document.body.appendChild(sandbox);
 
-  // Transformation 1 — replace the "Read full lexicon entry" button
-  // with a non-clickable URL text line per §30.
-  const deeplinks = clone.querySelectorAll<HTMLElement>(
-    "[data-export-replace='lexicon-deeplink']"
-  );
-  deeplinks.forEach((el) => {
-    const replacement = document.createElement("div");
-    replacement.textContent = buildLexiconDeeplinkText(
-      meta.strongNumber,
-      meta.source
+  // Transformation 1 — strongs only — replace the "Read full lexicon
+  // entry" button with a non-clickable URL text line per §30. Xref
+  // shares have no such button (their permalink lives in the watermark
+  // line 3 override instead).
+  if (meta.kind === "strongs") {
+    const deeplinks = clone.querySelectorAll<HTMLElement>(
+      "[data-export-replace='lexicon-deeplink']"
     );
-    // Preserve the visual register — match the original button's
-    // muted accent register.
-    replacement.style.fontFamily =
-      "ui-sans-serif, system-ui, -apple-system, sans-serif";
-    replacement.style.fontSize = "0.95rem";
-    replacement.style.fontWeight = "500";
-    replacement.style.color = "var(--reader-accent, #1A6FE5)";
-    replacement.style.padding = "0.5rem 0.75rem";
-    replacement.style.borderRadius = "4px";
-    replacement.style.border = "1px solid var(--reader-rule, rgba(255,255,255,0.12))";
-    replacement.style.textAlign = "center";
-    el.replaceWith(replacement);
-  });
+    deeplinks.forEach((el) => {
+      const replacement = document.createElement("div");
+      replacement.textContent = buildLexiconDeeplinkText(
+        meta.strongNumber,
+        meta.source
+      );
+      // Preserve the visual register — match the original button's
+      // muted accent register.
+      replacement.style.fontFamily =
+        "ui-sans-serif, system-ui, -apple-system, sans-serif";
+      replacement.style.fontSize = "0.95rem";
+      replacement.style.fontWeight = "500";
+      replacement.style.color = "var(--reader-accent, #1A6FE5)";
+      replacement.style.padding = "0.5rem 0.75rem";
+      replacement.style.borderRadius = "4px";
+      replacement.style.border = "1px solid var(--reader-rule, rgba(255,255,255,0.12))";
+      replacement.style.textAlign = "center";
+      el.replaceWith(replacement);
+    });
+  }
 
-  // Transformation 2 — suppress the Show-more expander in the export
-  // so the rail captures cleanly at whatever page is currently loaded.
+  // Transformation 2 — suppress nodes marked `data-export-suppress`
+  // (Share button itself, close ✕, Show-more expanders, etc.) so the
+  // export image carries content only, no chrome.
   const suppressed = clone.querySelectorAll<HTMLElement>(
     "[data-export-suppress]"
   );
@@ -372,8 +446,17 @@ export async function renderStudyShareCard(
   // mirror that here so a light-theme partner gets dark wordmark on
   // parchment and dark-theme partner gets white wordmark on
   // near-black.
+  //
+  // S171 §17: xref shares swap the watermark URL CTA from the bare
+  // brand domain to the anchor-verse permalink so the share carries a
+  // doorway URL pointing back at the specific verse it cites. Word-
+  // study shares (§30) keep the default brand-domain URL.
   const brandMark = await preloadFooterBrandMark();
-  await paintWatermarkFooter(ctx, W, H, { brandMark, theme });
+  const urlOverride =
+    meta.kind === "xref"
+      ? buildAnchorPermalink(meta.bookSlug, meta.chapterNumber, meta.verseNumber)
+      : undefined;
+  await paintWatermarkFooter(ctx, W, H, { brandMark, theme, urlOverride });
 
   return canvas;
 }
@@ -456,10 +539,7 @@ export async function executeStudyShare(
   modalElement: HTMLElement,
   meta: StudyShareMeta
 ): Promise<StudyTransportResult> {
-  const filename = buildStudyShareFilename(
-    meta.strongNumber,
-    meta.transliteration
-  );
+  const filename = buildStudyShareFilename(meta);
 
   let canvas: HTMLCanvasElement;
   try {
