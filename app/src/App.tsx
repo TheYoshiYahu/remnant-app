@@ -25,6 +25,9 @@ import Pricing from "./routes/Pricing";
 import Manage from "./routes/Manage";
 import SignIn from "./routes/SignIn";
 import Landing from "./routes/Landing";
+import Settings from "./routes/Settings";
+import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
+import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ChapterCommentary from "./components/ChapterCommentary";
 import HighlightPicker, {
@@ -73,6 +76,7 @@ import {
 } from "./lib/range-selection";
 import { renderMarkdownBody } from "./lib/markdown";
 import { useParentheticalsToggle } from "./lib/useParentheticalsToggle";
+import { useSacredNameMask } from "./lib/useSacredNameMask";
 import { useStrongsSuperscriptsToggle } from "./lib/useStrongsSuperscriptsToggle";
 import {
   isAtCompanionTier,
@@ -219,6 +223,17 @@ export default function App() {
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
+  // S172 — first-launch welcome modal for the sacred-name display
+  // mask. Fires once per device on the first session where no
+  // rop_sacred_name_mask_v1 key exists in localStorage. After the
+  // partner picks, the key is written and the modal stays dismissed
+  // for every future session on this device. Mounts on ANY route
+  // (Landing / Reader / Pricing / etc.) since the preference frames
+  // every text-render surface across the app.
+  const [welcomeOpen, setWelcomeOpen] = useState<boolean>(
+    () => !hasStoredSacredNamePreference()
+  );
+
   // S127 W7 — preload + img.decode() the share-card brand-mark at app
   // init per DESIGN_LANGUAGE.md §24, so the first Copy/Share tap
   // renders without an asset-fetch round-trip in the canvas pipeline.
@@ -250,14 +265,28 @@ export default function App() {
     window.location.reload();
   }, []);
 
+  // S172 — wrap route output so the first-launch welcome modal can
+  // mount alongside any route. The modal's z-100 stacks above every
+  // route surface; until the partner picks, every render layer
+  // underneath is interactable but the modal is the foreground.
+  const welcomeModal = welcomeOpen ? (
+    <SacredNameWelcomeModal onClose={() => setWelcomeOpen(false)} />
+  ) : null;
+
   if (pathname === "/manage" || pathname.startsWith("/manage")) {
-    return <Manage />;
+    return <>{welcomeModal}<Manage /></>;
   }
   if (pathname === "/sign-in" || pathname.startsWith("/sign-in")) {
-    return <SignIn />;
+    return <>{welcomeModal}<SignIn /></>;
   }
   if (pathname === "/pricing" || pathname.startsWith("/pricing")) {
-    return <Pricing />;
+    return <>{welcomeModal}<Pricing /></>;
+  }
+  // S172 — Settings → Reader preferences page. Top-level route alongside
+  // /pricing /manage /sign-in. Reached via the ⚙ Settings button in the
+  // top-right chrome cluster.
+  if (pathname === "/settings" || pathname.startsWith("/settings")) {
+    return <>{welcomeModal}<Settings /></>;
   }
   // S129 — Reader moves from `/` to `/read` so the bare bible
   // subdomain serves the new Landing surface instead of dropping
@@ -267,9 +296,9 @@ export default function App() {
   // position rehydrates from the API/localStorage on mount, so the
   // path swap doesn't break bookmarked positions.
   if (pathname === "/read" || pathname.startsWith("/read")) {
-    return <Reader />;
+    return <>{welcomeModal}<Reader /></>;
   }
-  return <Landing />;
+  return <>{welcomeModal}<Landing /></>;
 }
 
 function Reader() {
@@ -318,6 +347,27 @@ function Reader() {
     toggle: toggleHideParentheticals,
     applyToText: applyParensStrip,
   } = useParentheticalsToggle();
+
+  // S172 — sacred-name display mask (Yahuah / YHWH). Independent of
+  // the parens toggle above; the two compose freely per the four-
+  // combination architecture in S172_SACRED_NAME_MASK_SPEC.md. The
+  // mask runs FIRST in the text pipeline, parens-strip runs SECOND
+  // — order doesn't affect outcome on the current STRIP_LIST (which
+  // contains no "Yahuah" entries) but composition discipline keeps
+  // the chain stable as the STRIP_LIST evolves.
+  // S172 — `set: setSacredNameMask` is unused at this scope; the
+  // Settings page reads/writes via its own useSacredNameMask hook
+  // instance (the storage key is shared so the two stay in sync).
+  // First-launch modal does the same. Intentionally omitting `set`
+  // from this destructure to keep the unused-locals lint clean.
+  const {
+    mask: sacredNameMask,
+    applyToText: applySacredMask,
+  } = useSacredNameMask();
+  // Combined text pipeline used by every render site: mask first,
+  // then parens-strip. One line per call site instead of two.
+  const applyTextPrefs = (text: string): string =>
+    applyParensStrip(applySacredMask(text));
 
   // S160 — always-visible Strong's superscripts toggle (DESIGN_LANGUAGE
   // §27). BLB-pattern. Default OFF — clean reading surface is the
@@ -1713,6 +1763,20 @@ function Reader() {
               <span>Notes</span>
             </button>
             <ThemeToggle />
+            {/* S172 — Settings entry in the top-right chrome cluster.
+                Slots between the Theme toggle (display chrome) and the
+                Account CTA (subscription state). Same bordered-chrome
+                button family per §1 as the other cluster buttons.
+                ⚙ gear glyph + 'Settings' label. Opens /settings. */}
+            <a
+              href="/settings"
+              aria-label="Open settings"
+              title="Open settings"
+              className="flex items-center gap-1.5 self-start whitespace-nowrap rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2.5 py-1.5 text-sm font-medium text-[var(--reader-text)] hover:opacity-90"
+            >
+              <span aria-hidden="true">⚙</span>
+              <span>Settings</span>
+            </a>
             {me && (me.status === "active" || me.status === "trialing") ? (
               <a
                 href="/manage"
@@ -2021,7 +2085,7 @@ function Reader() {
                             // returns the input unchanged (no-op).
                             return (
                               <span key={`p-${segIdx}`}>
-                                {applyParensStrip(seg.text)}{" "}
+                                {applyTextPrefs(seg.text)}{" "}
                               </span>
                             );
                           }
@@ -2421,7 +2485,7 @@ function Reader() {
                   lib/stripParentheticals.ts.
                 */}
                 {renderMarkdownBody(
-                  applyParensStrip(chapterDetail.chapter_intro)
+                  applyTextPrefs(chapterDetail.chapter_intro)
                 )}
               </div>
             </aside>
@@ -2444,6 +2508,7 @@ function Reader() {
               chapterNumber={chapterDetail.chapter.chapter_number}
               userTier={me?.tier ?? "free"}
               hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
             />
           )}
 
@@ -2463,6 +2528,7 @@ function Reader() {
               userTier={me?.tier ?? "free"}
               onNavigate={jumpToVerseRef}
               hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
             />
           )}
 
@@ -2577,7 +2643,11 @@ function Reader() {
               onBookmark: (vid) => openBookmarkSheet(vid),
               onAddNote: (vid) => openNotesPanelWithAnchor(vid),
               onPlayFromHere: (vid) => startPlaybackFromVerseId(vid),
-            }
+            },
+            // S172 — text-transform passed in so the §24 share/copy
+            // path inside buildMenuSections can apply the partner's
+            // sacred-name mask before paint. Pure function, no React.
+            applySacredMask
           )}
           onClose={() => setMenuState(null)}
         />
@@ -2663,7 +2733,7 @@ function Reader() {
                 chapterDetail.verses
               );
               if (ids.length === 0) return;
-              const verses = buildVerseRenderList(ids, chapterDetail.verses);
+              const verses = buildVerseRenderList(ids, chapterDetail.verses, applySacredMask);
               if (verses.length === 0) return;
               const meta = buildSameChapterRangeMeta(
                 chapterDetail.book.title,
@@ -2683,7 +2753,7 @@ function Reader() {
                 chapterDetail.verses
               );
               if (ids.length === 0) return;
-              const verses = buildVerseRenderList(ids, chapterDetail.verses);
+              const verses = buildVerseRenderList(ids, chapterDetail.verses, applySacredMask);
               if (verses.length === 0) return;
               const meta = buildSameChapterRangeMeta(
                 chapterDetail.book.title,
@@ -3010,14 +3080,19 @@ function makeTierStub(
  */
 function buildVerseRenderList(
   verseIds: number[],
-  chapterVerses: { id: number; verse_number: number; text: string }[]
+  chapterVerses: { id: number; verse_number: number; text: string }[],
+  // S172 — sacred-name mask. Applied to each verse text before it
+  // reaches the share/copy pipeline so the exported PNG / clipboard
+  // text honors the partner's preference. Default is identity for
+  // backwards-compat with any non-share consumer.
+  textTransform: (text: string) => string = (t) => t
 ): VerseRender[] {
   const byId = new Map(chapterVerses.map((v) => [v.id, v]));
   const out: VerseRender[] = [];
   for (const id of verseIds) {
     const v = byId.get(id);
     if (!v) return [];
-    out.push({ verseNumber: v.verse_number, text: v.text });
+    out.push({ verseNumber: v.verse_number, text: textTransform(v.text) });
   }
   return out;
 }
@@ -3089,7 +3164,10 @@ function buildMenuSections(
     /** S157 — "Play from here" in the new Listen section. Starts TTS
      *  playback from the targeted verse; AudioPlayer opens automatically. */
     onPlayFromHere: (verseId: number) => void;
-  }
+  },
+  /** S172 — sacred-name mask transform. Applied to verse text before
+   *  the §24 share/copy pipeline paints. Pure function; no React. */
+  applySacredMask: (text: string) => string = (t) => t
 ): MenuSection[] {
   // ── Word study (word scope only) ─────────────────────────────────
   const wordStudy: MenuItem[] = [];
@@ -3225,8 +3303,15 @@ function buildMenuSections(
       chapter: chapterNumber,
       verse: verse.verse_number,
     };
+    // S172 — apply sacred-name mask to the verse text BEFORE the
+    // share-card pipeline paints it on canvas. Same partner-pref
+    // honored across in-app display + every share export. Parens
+    // strip intentionally NOT applied here — the share-card spec
+    // (§24) carries the source-echo "(LORD)" so receiving partners
+    // see the framework's restored-name treatment unless they're
+    // the YHWH-mode partner whose mask we honor.
     const singleVerseVerses: VerseRender[] = [
-      { verseNumber: verse.verse_number, text: verse.text },
+      { verseNumber: verse.verse_number, text: applySacredMask(verse.text) },
     ];
     share.push({
       key: "copy",

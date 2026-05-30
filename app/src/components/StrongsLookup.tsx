@@ -35,6 +35,7 @@ import {
   getStrongOccurrences,
 } from "../lib/api";
 import { executeStudyShare } from "../lib/study-share-render";
+import { useSacredNameMask } from "../lib/useSacredNameMask";
 import LexiconSheet from "./LexiconSheet";
 
 const OCCURRENCES_PAGE_SIZE = 25;
@@ -86,6 +87,13 @@ export default function StrongsLookup({
   // container so the §30 helper can clone it for html2canvas capture.
   const modalContentRef = useRef<HTMLDivElement | null>(null);
   const [sharing, setSharing] = useState<boolean>(false);
+
+  // S172 — sacred-name mask. Concordance row verse-text previews
+  // honor the partner's preference. The lemma + transliteration in
+  // the modal header are Hebrew / Greek source-language fields, NOT
+  // affected by the mask (mask only swaps the English-restored
+  // "Yahuah" string).
+  const { applyToText: applySacredMask } = useSacredNameMask();
 
   async function handleShare() {
     if (!modalContentRef.current || !entry || sharing) return;
@@ -343,7 +351,7 @@ export default function StrongsLookup({
                       {ref}
                     </span>
                     <span className="ml-2 text-[var(--reader-text)]">
-                      {occ.verse_text}
+                      {applySacredMask(occ.verse_text)}
                     </span>
                   </>
                 );

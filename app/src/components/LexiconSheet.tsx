@@ -48,6 +48,7 @@ import {
 } from "../lib/lexicon-helpers";
 import { renderItalicSpans } from "../lib/markdown";
 import { executeStudyShare } from "../lib/study-share-render";
+import { useSacredNameMask } from "../lib/useSacredNameMask";
 
 interface LexiconSheetProps {
   strongNumber: string;
@@ -350,6 +351,11 @@ function OkBody({
 }
 
 function FrameworkCalloutCard({ callout }: { callout: LexiconCallout }) {
+  // S172 — sacred-name mask. Framework callouts reference the
+  // restored names directly in body_md (authored prose), so the mask
+  // runs on the callout body BEFORE renderCalloutBody parses
+  // paragraphs / blockquotes / italic spans.
+  const { applyToText: applySacredMask } = useSacredNameMask();
   return (
     <aside className="relative rounded-md border border-[var(--argaman,#8E4FB3)] bg-[var(--reader-surface-elev)] px-3.5 py-3">
       <div className="absolute -top-2 right-3 rounded border border-[var(--reader-accent)] bg-[var(--reader-bg)] px-2 text-[10px] font-semibold uppercase tracking-widest text-[var(--reader-accent)]">
@@ -369,7 +375,7 @@ function FrameworkCalloutCard({ callout }: { callout: LexiconCallout }) {
         )}
       </h3>
       <div className="text-sm leading-relaxed text-[var(--reader-text)]">
-        {renderCalloutBody(callout.body_md)}
+        {renderCalloutBody(applySacredMask(callout.body_md))}
       </div>
       {callout.red_lines_cited.length > 0 && (
         <footer className="mt-2.5 text-[11px] tracking-wider text-[var(--reader-muted)]">

@@ -47,7 +47,23 @@ import {
   getChapterCrossReferences,
 } from "../lib/api";
 import { applyParentheticalsToggle } from "../lib/useParentheticalsToggle";
+import {
+  applySacredNameMask,
+  type SacredNameMask,
+} from "../lib/applySacredNameMask";
 import { executeStudyShare } from "../lib/study-share-render";
+
+// S172 — sacred-name mask + parens-toggle composition. Every render
+// site that previously called applyParentheticalsToggle(text, hide)
+// now calls applyTextPrefs(text, hide, mask) to layer the mask on
+// before the parens strip. Pure helper; no React, no DOM.
+function applyTextPrefs(
+  text: string,
+  hide: boolean,
+  mask: SacredNameMask
+): string {
+  return applyParentheticalsToggle(applySacredNameMask(text, mask), hide);
+}
 
 interface ChapterEndCardProps {
   bookSlug: string;
@@ -73,6 +89,13 @@ interface ChapterEndCardProps {
    * restored Sacred Names stripped at render time. Default `false`.
    */
   hideParentheticals?: boolean;
+  /**
+   * S172 — sacred-name display mask. Independent of hideParentheticals
+   * above; composes freely. When `"yhwh"`, every text surface in the
+   * card has Yahuah substituted with YHWH before render. Default
+   * `"yahuah"`.
+   */
+  sacredNameMask?: SacredNameMask;
 }
 
 export default function ChapterEndCard({
@@ -81,6 +104,7 @@ export default function ChapterEndCard({
   userTier = "free",
   onNavigate,
   hideParentheticals = false,
+  sacredNameMask = "yahuah",
 }: ChapterEndCardProps) {
   const [data, setData] = useState<ChapterEndCardResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -142,6 +166,7 @@ export default function ChapterEndCard({
             userTier={userTier}
             onNavigate={onNavigate}
             hideParentheticals={hideParentheticals}
+            sacredNameMask={sacredNameMask}
           />
         </div>
       )}
@@ -155,6 +180,7 @@ export default function ChapterEndCard({
               userTier={userTier}
               onNavigate={onNavigate}
               hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
             />
           ))}
         </div>
@@ -289,6 +315,7 @@ function BaselineList({
   userTier,
   onNavigate,
   hideParentheticals,
+  sacredNameMask,
 }: {
   entries: ChapterEndCardResponse["baseline"];
   bookSlug: string;
@@ -296,6 +323,7 @@ function BaselineList({
   userTier: ContentTier;
   onNavigate?: (b: string, c: number, v: number) => void;
   hideParentheticals: boolean;
+  sacredNameMask: SacredNameMask;
 }) {
   return (
     <ul className="space-y-3">
@@ -308,6 +336,7 @@ function BaselineList({
           userTier={userTier}
           onNavigate={onNavigate}
           hideParentheticals={hideParentheticals}
+          sacredNameMask={sacredNameMask}
         />
       ))}
     </ul>
@@ -327,6 +356,7 @@ function BaselineEntryBlock({
   userTier,
   onNavigate,
   hideParentheticals,
+  sacredNameMask,
 }: {
   entry: ChapterEndCardResponse["baseline"][number];
   bookSlug: string;
@@ -334,6 +364,7 @@ function BaselineEntryBlock({
   userTier: ContentTier;
   onNavigate?: (b: string, c: number, v: number) => void;
   hideParentheticals: boolean;
+  sacredNameMask: SacredNameMask;
 }) {
   const blockRef = useRef<HTMLLIElement | null>(null);
   const [sharing, setSharing] = useState(false);
@@ -434,9 +465,10 @@ function BaselineEntryBlock({
                       uniformly when the reader has opted in.
                     */}
                     <span className="italic">
-                      {applyParentheticalsToggle(
+                      {applyTextPrefs(
                         tgt.preview,
-                        hideParentheticals
+                        hideParentheticals,
+                        sacredNameMask
                       )}
                     </span>
                   </span>
@@ -455,11 +487,13 @@ function ThreadCallout({
   userTier,
   onNavigate,
   hideParentheticals,
+  sacredNameMask,
 }: {
   thread: ChapterEndCardResponse["threads"][number];
   userTier: ContentTier;
   onNavigate?: (b: string, c: number, v: number) => void;
   hideParentheticals: boolean;
+  sacredNameMask: SacredNameMask;
 }) {
   const [expanded, setExpanded] = useState<boolean>(false);
   // S171 §17 — Share state + ref for the thread callout. Captures the
@@ -492,9 +526,10 @@ function ThreadCallout({
   // is correct because every paragraph carries restored Sacred Names
   // that should toggle together; splitting on `\n{2,}` after the strip
   // preserves paragraph structure cleanly.
-  const summaryMd = applyParentheticalsToggle(
+  const summaryMd = applyTextPrefs(
     thread.summary_md,
-    hideParentheticals
+    hideParentheticals,
+    sacredNameMask
   );
   const paragraphs = summaryMd.split(/\n{2,}/);
   const firstParagraph = paragraphs[0];
@@ -581,6 +616,7 @@ function ThreadCallout({
                 member={m}
                 onNavigate={onNavigate}
                 hideParentheticals={hideParentheticals}
+                sacredNameMask={sacredNameMask}
               />
             ))}
           </ul>
@@ -739,10 +775,12 @@ function ThreadMemberRow({
   member,
   onNavigate,
   hideParentheticals,
+  sacredNameMask,
 }: {
   member: ThreadMember;
   onNavigate?: (b: string, c: number, v: number) => void;
   hideParentheticals: boolean;
+  sacredNameMask: SacredNameMask;
 }) {
   // S130 — color the target-verse ref by its source class per
   // COLOR_PALETTE.md §9. All three source classes render as metallic
@@ -785,16 +823,18 @@ function ThreadMemberRow({
         of the chapter-end card.
       */}
       <span className="basis-full italic ml-5 text-[var(--reader-text)]">
-        {applyParentheticalsToggle(
+        {applyTextPrefs(
           member.target.preview,
-          hideParentheticals
+          hideParentheticals,
+          sacredNameMask
         )}
       </span>
       {member.member_note && (
         <span className="basis-full ml-5 font-sans text-xs text-[var(--reader-muted)]">
-          {applyParentheticalsToggle(
+          {applyTextPrefs(
             member.member_note,
-            hideParentheticals
+            hideParentheticals,
+            sacredNameMask
           )}
         </span>
       )}

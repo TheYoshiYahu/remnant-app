@@ -60,6 +60,10 @@ import {
 } from "../lib/api";
 import { renderMarkdownBody } from "../lib/markdown";
 import { applyParentheticalsToggle } from "../lib/useParentheticalsToggle";
+import {
+  applySacredNameMask,
+  type SacredNameMask,
+} from "../lib/applySacredNameMask";
 
 interface ChapterCommentaryProps {
   bookSlug: string;
@@ -82,6 +86,15 @@ interface ChapterCommentaryProps {
    * bodies render with the parentheticals intact.
    */
   hideParentheticals?: boolean;
+  /**
+   * S172 — sacred-name display mask. Independent of hideParentheticals
+   * above. When `"yhwh"`, every commentary entry body has its
+   * "Yahuah" substituted with "YHWH" before reaching the markdown
+   * renderer; when `"yahuah"` (default), bodies render with the
+   * restored name. Composes with hideParentheticals — the four valid
+   * combinations are documented in S172_SACRED_NAME_MASK_SPEC.md.
+   */
+  sacredNameMask?: SacredNameMask;
 }
 
 // S130 — the hide-commentary toggle moved up to App.tsx and now gates
@@ -94,6 +107,7 @@ export default function ChapterCommentary({
   bookSlug,
   chapterNumber,
   hideParentheticals = false,
+  sacredNameMask = "yahuah",
 }: ChapterCommentaryProps) {
   const [data, setData] = useState<ChapterCommentaryResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -150,6 +164,7 @@ export default function ChapterCommentary({
             key={entry.id}
             entry={entry}
             hideParentheticals={hideParentheticals}
+            sacredNameMask={sacredNameMask}
           />
         ))}
       </div>
@@ -162,9 +177,11 @@ export default function ChapterCommentary({
 function CommentaryBlock({
   entry,
   hideParentheticals,
+  sacredNameMask,
 }: {
   entry: ChapterCommentaryEntry;
   hideParentheticals: boolean;
+  sacredNameMask: SacredNameMask;
 }) {
   const headerLabel = entry.title || labelForSurface(entry.surface_kind);
   const expanderLabel = expanderLabelForSurface(entry.surface_kind);
@@ -264,7 +281,10 @@ function CommentaryBlock({
             Names that should toggle together.
           */}
           {renderCommentaryBody(
-            applyParentheticalsToggle(renderableBody, hideParentheticals)
+            applyParentheticalsToggle(
+              applySacredNameMask(renderableBody, sacredNameMask),
+              hideParentheticals
+            )
           )}
         </div>
       </details>

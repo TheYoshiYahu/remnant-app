@@ -44,6 +44,7 @@ import {
   teaserOfVerse,
   tierBadgeLabel,
 } from "../lib/search-helpers";
+import { useSacredNameMask } from "../lib/useSacredNameMask";
 
 const MIN_QUERY_LENGTH = 2;
 const DEBOUNCE_MS = 250;
@@ -74,6 +75,13 @@ export default function SearchModal({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [collapsedBooks, setCollapsedBooks] = useState<Set<string>>(new Set());
+  // S172 — sacred-name mask. Search results render verse text, so the
+  // partner's mask preference flows through here too. Parens-strip
+  // intentionally NOT applied to search hits (the highlightQueryMatches
+  // path expects raw verse text and the search index queries against
+  // the database form, so stripping parens would risk misaligning the
+  // highlight spans). Mask alone — applied before highlightQueryMatches.
+  const { applyToText: applySacredMask } = useSacredNameMask();
 
   const inputRef = useRef<HTMLInputElement | null>(null);
   const debounceRef = useRef<number | null>(null);
@@ -357,10 +365,11 @@ export default function SearchModal({
                           // further than the canon. Curiosity does the
                           // selling. See DESIGN_LANGUAGE.md §9 reconciliation
                           // note #4.
+                          const maskedText = applySacredMask(hit.text);
                           const segments = highlightQueryMatches(
                             locked
-                              ? teaserOfVerse(hit.text, trimmedQuery)
-                              : hit.text,
+                              ? teaserOfVerse(maskedText, trimmedQuery)
+                              : maskedText,
                             trimmedQuery,
                           );
                           return (
