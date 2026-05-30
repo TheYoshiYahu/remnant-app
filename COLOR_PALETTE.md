@@ -93,17 +93,17 @@ The three locked theological registers that thread through body text and chrome.
 
 ## §3a. Metallic Techelet Register (new at S169 — Study Aids pill)
 
-Yoshi's call at the S169 live walk: the §27 Study Aids pill (Strong's-superscripts toggle under the hood) moves from the metallic-argaman register to a NEW metallic-techelet register that mirrors the formal gradient structure of §3 bracket-emerald but on the techelet hue family. The single-name techelet `#1A6FE5` already lived as the §1 sacred-name outline; this section extends it into a formal metallic gradient so it can drive the Study Aids pill face and any future divine-name-anchored expansion affordance.
+Yoshi's call at the S169 live walk: the Study Aids pill (the `hideCommentary` toggle that gates chapter intro + commentary + cross-references) was already painted in flat techelet `#1A6FE5`; promote it to a formal metallic-techelet register that mirrors the gradient structure of §3 bracket-emerald but on the techelet hue family. The single-name techelet `#1A6FE5` already lived as the §1 sacred-name outline; this section extends it into a formal metallic gradient so it can drive the Study Aids pill face and any future divine-name-anchored expansion affordance.
 
 ### Metallic-techelet gradient
 
 - **Gradient:** `#0A2D84 → #1A6FE5 → #5A9CF5 → #A8C8F0 → #5A9CF5 → #1A6FE5 → #0A2D84`
 - **Outer glow:** `rgba(26,111,229,0.6)` near + `rgba(26,111,229,0.25)` far
 - **Theological role:** the divine-name register elevated to a metallic affordance. Mirrors the relationship between §1 techelet outline (single-name, single-glyph treatment) and this metallic surface (multi-element chrome treatment).
-- **Functional role:** the **Study Aids** affordance — the pill that gates whether the partner sees Strong's-pointers on every word. Strong's-tagging maps each English word back to the sacred-name and covenant-language lexemes; rendering the toggle in the divine-name register reads as *the affordance that surfaces the lexical witness underneath every word.*
+- **Functional role:** the **Study Aids** affordance — the pill that gates the chapter-intro + commentary + cross-reference apparatus. The commentary surfaces the framework's reading of the divine name and the theological architecture the names anchor; rendering the toggle in the divine-name register reads as *the affordance that surfaces the divine-name-anchored teaching underneath the verse text.*
 - **Surfaces:**
-  - **Show / Hide Study Aids** toggle in the chapter chrome strip (S169 close — replaces the S160 metallic-argaman treatment of the same pill).
-  - Reserved for future divine-name-anchored expansion affordances (e.g., a future "show Hebrew/Greek vocabulary panel" pill, were one to land).
+  - **Show / Hide Study Aids** toggle in the chapter chrome strip (S169 close — promotes the prior flat-techelet `#1A6FE5` solid fill on the same pill to the formal metallic gradient).
+  - Reserved for future divine-name-anchored chrome affordances.
 
 ### Metallic-techelet simplified-pill form
 
@@ -120,27 +120,28 @@ Use the simplified form on chrome surfaces; reserve the full 7-stop gradient for
 
 ## §3b. Metallic Gold Register (new at S169 — Interlinear pill)
 
-Yoshi's call at the S169 live walk: the §28 Interlinear pill moves from the metallic-argaman register to a NEW metallic-gold register that formally extends the §1 Gold sampled palette (`#645028` shadow → `#A1885E` true midtone → `#B4A078` bright midtone → `#FCECAF` highlight specular) into a metallic gradient mirroring the §3 bracket-emerald structure. The §1 Gold register already lived as the priestly-witness / divine-presence stops; this section composes those stops into a formal metallic gradient for chrome use.
+Yoshi's call at the S169 live walk: the §28 Interlinear pill moves from the metallic-argaman register to the metallic-gold register that was ALREADY in use on the §17 NT cross-reference mini-pill in `components/ChapterEndCard.tsx` (since the §17 chapter-end-card lock). This section formalizes that register — same stops the cross-refs mini-pill has carried since its original lock — so future chrome surfaces in the priestly-witness register pull from one canonical source instead of re-deriving from the §1 Gold sampled palette per surface. The §1 Gold register already lived as the priestly-witness / divine-presence stops; this section names the cross-refs-mini-pill stops as the chrome-canonical metallic-gold form.
 
 ### Metallic-gold gradient
 
-- **Gradient:** `#3D2F18 → #645028 → #A1885E → #FCECAF → #A1885E → #645028 → #3D2F18`
+- **Gradient:** `#645028 → #B4A078 → #FCECAF → #FFF8E1 → #FCECAF → #B4A078 → #645028`
 - **Outer glow:** `rgba(252,236,175,0.5)` near + `rgba(252,236,175,0.2)` far
 - **Theological role:** the priestly-witness / divine-presence register elevated to a metallic affordance. The menorah-bronze of Zechariah 4 and the lampstands of Revelation 1 — the divine-presence motif at the joining of the branches — applied to the chrome surface that surfaces the original-language witness underneath the English.
 - **Functional role:** the **Interlinear** affordance — the Companion+/Free pill that mounts the Hebrew/Greek original-language column-stack above each English word. The original-language witness IS the priestly-text witness the translators worked from; rendering the toggle in the priestly-witness register reads as *the affordance that surfaces the priestly text underneath the English.*
 - **Surfaces:**
   - **Show / Hide Interlinear** toggle in the chapter chrome strip (S169 close — replaces the S168 metallic-argaman treatment of the same pill).
-  - Companion-badge chip on the below-tier-locked pill: chip bg `#3D2F18` + text `#FFF6D5` (matches the new pill register; replaces the prior argaman-shadow chip `#1A0E2C` + argaman-pale text `#F5E6FA`).
+  - **NT cross-reference mini-pill** in `components/ChapterEndCard.tsx` (canonical implementation — predates the formal register entry; S169 promotes the same stops to chrome-strip).
+  - Companion-badge chip on the below-tier-locked Interlinear pill: chip bg `#645028` + text `#FFF8E1` (matches the deep stop; replaces the prior argaman-shadow chip `#1A0E2C` + argaman-pale text `#F5E6FA`).
   - Reserved for future priestly-witness affordances.
 
 ### Metallic-gold simplified-pill form
 
-The 7-stop gradient renders as a Tailwind `bg-gradient-to-r from-X via-Y to-X` 3-stop simplification on the actual pill face:
+The 7-stop gradient renders as a Tailwind `bg-gradient-to-r from-X via-Y to-X` 3-stop simplification on the actual pill face — the same stops the cross-references mini-pill has used since its original lock:
 
-- **`from` / `to` (deep):** `#3D2F18`
-- **`via` (mid):** `#A1885E`
+- **`from` / `to` (deep):** `#645028`
+- **`via` (bright mid):** `#B4A078`
 - **Border (highlight):** `#FCECAF`
-- **Text (pale-tinted highlight):** `#FFF6D5`
+- **Text (pale-tinted highlight):** `#FFF8E1`
 
 Use the simplified form on chrome surfaces; reserve the full 7-stop gradient for priestly-witness-anchored ornamental surfaces if a future register call adds them.
 
@@ -148,16 +149,16 @@ Use the simplified form on chrome surfaces; reserve the full 7-stop gradient for
 
 ## §3c. Metallic-Register Summary — the Four Chrome Metallics (S169 lock)
 
-The chapter chrome strip now reads as a four-metallic theological palette, each pill in a distinct register:
+The chapter chrome strip now reads as a four-metallic theological palette, each pill in a distinct register. The four pills sit in the order shown below (left → right):
 
 | Register | Hex stops (gradient deep → mid → highlight) | Chrome surface | Register meaning |
 |---|---|---|---|
-| **Metallic emerald** (§3) | `#04321E → #15A86A → #2EFFA1` | §144 English Helpers toggle | Divine-speech / expansion |
-| **Metallic techelet** (§3a) | `#0A2D84 → #1A6FE5 → #A8C8F0` | §27 Study Aids toggle | Divine-name lexical witness |
-| **Metallic gold** (§3b) | `#3D2F18 → #A1885E → #FCECAF` | §28 Interlinear toggle | Priestly-witness / original-language |
-| **Metallic argaman** (§1) | `#3D1B5C → #8E4FB3 → #D4B0E0` | RESERVED — body-text outlines only | Covenant-body |
+| **Metallic emerald** (§3) | `#04321E → #15A86A → #2EFFA1` | §144 English Helpers toggle (parenthetical strip) | Divine-speech / expansion |
+| **Metallic argaman** (§1) | `#3D1B5C → #8E4FB3 → #D4B0E0` | §27 Strong's superscripts toggle | Covenant-body lexical anchor |
+| **Metallic gold** (§3b) | `#645028 → #B4A078 → #FCECAF` | §28 Interlinear toggle | Priestly-witness / original-language |
+| **Metallic techelet** (§3a) | `#0A2D84 → #1A6FE5 → #A8C8F0` | Study Aids toggle (chapter intro + commentary + cross-refs) | Divine-name-anchored teaching |
 
-Metallic argaman stays off the chrome strip; its only active surface remains the body-text 4-direction outline on covenant-body sacred names (Yashar'el, Yahudah, Yahudim, Yahudi) per the original §1 lock. Future chrome surfaces that read as covenant-body affordances may pull the metallic-argaman pill simplified form (`from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] border-[#D4B0E0] text-[#F5E6FA]`) — but the current chrome strip leaves the register dedicated to body-text outlining.
+All four pills use the simplified `from-X via-Y to-X` 3-stop form on the actual chrome face; the 7-stop gradient forms (§3 / §3a / §3b) and the equivalent argaman 7-stop in §17 NT/extras-cross-ref pills) live in the registers above for ornamental surfaces. The metallic-argaman pill simplified form is `from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] border-[#D4B0E0] text-[#F5E6FA]`.
 
 ---
 
