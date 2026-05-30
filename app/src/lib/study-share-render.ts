@@ -57,6 +57,7 @@
 import html2canvas from "html2canvas";
 import {
   FOOTER_PCT,
+  type WatermarkTheme,
   paintWatermarkFooter,
   preloadFooterBrandMark,
 } from "./watermark-footer-render";
@@ -77,6 +78,17 @@ const BODY_PCT = 1 - FOOTER_PCT;
  *  body with a small margin on each side (avoids the captured modal
  *  bleeding edge-to-edge of the card). */
 const BODY_INNER_PAD_PX = 40;
+
+/** Forced capture width for the cloned modal — locked at S170 walk-1
+ *  fix per Yoshi's X-share preview redline. Capturing at the source
+ *  modal's natural desktop width (~1152px on max-w-6xl) produced a
+ *  wide-aspect canvas that `object-fit: contain` then scaled down to
+ *  fit the card's portrait body, leaving large dead-space bands above
+ *  and below. Forcing the clone to a narrow render width (720px ≈
+ *  iPad-portrait reading column) makes the captured canvas naturally
+ *  tall-aspect so the contain-fit nearly fills the body region with
+ *  only small left/right margins. */
+const CAPTURE_WIDTH_PX = 720;
 
 /** Base URL for the deep-link replacement in the export. The §30 spec
  *  locks the URL pattern as bible.remnantofpromise.org/strongs/{N}. */
@@ -197,14 +209,17 @@ function prepareModalClone(
 ): PreparedClone {
   const clone = modalElement.cloneNode(true) as HTMLElement;
 
-  // Lock width to the source modal's rendered width so the clone
-  // lays out identically (relative-width-children resolve correctly).
-  const srcRect = modalElement.getBoundingClientRect();
+  // Force a narrow render width so the captured canvas comes out
+  // tall-aspect instead of wide (S170 walk-1 fix). Tailwind's
+  // `w-full max-w-6xl` on the modal resolves to min(100%, 1152px) =
+  // 720px under this sandbox; the modal's interior content re-wraps
+  // to a portrait reading column so the capture fills the card's
+  // body region with minimal margins.
   const sandbox = document.createElement("div");
   sandbox.style.position = "fixed";
   sandbox.style.left = "-99999px";
   sandbox.style.top = "0";
-  sandbox.style.width = `${Math.max(1, Math.round(srcRect.width))}px`;
+  sandbox.style.width = `${CAPTURE_WIDTH_PX}px`;
   sandbox.style.pointerEvents = "none";
   sandbox.style.zIndex = "-1";
   sandbox.appendChild(clone);
@@ -324,11 +339,32 @@ export async function renderStudyShareCard(
   const drawY = bodyRegion.y + (bodyRegion.h - drawH) / 2;
   ctx.drawImage(modalCanvas, drawX, drawY, drawW, drawH);
 
-  // Footer 20% — shared watermark per §170.
+  // Footer 20% — shared watermark per §170. S170 walk-2 fix: theme
+  // must match the body region (which is filled with the modal's
+  // surface color). The reader theme toggle sets
+  // `document.documentElement.dataset.theme = 'light' | 'dark'`; we
+  // mirror that here so a light-theme partner gets a light-theme
+  // watermark (dark wordmark on parchment) and dark-theme partner
+  // gets dark wordmark (white on near-black). Hardcoding dark made
+  // the wordmark text invisible (white-on-white) on light-theme
+  // shares — caught in the S170 X-tweet preview live walk.
+  const theme: WatermarkTheme = detectThemeForExport();
   const brandMark = await preloadFooterBrandMark();
-  await paintWatermarkFooter(ctx, W, H, { brandMark, theme: "dark" });
+  await paintWatermarkFooter(ctx, W, H, { brandMark, theme });
 
   return canvas;
+}
+
+/**
+ * Detect the export theme. Reads
+ * `document.documentElement.dataset.theme`, which the §144 reader
+ * theme toggle sets to "light" or "dark". Defaults to "dark" when
+ * absent so SSR / pre-toggle contexts get the original §1 register.
+ */
+function detectThemeForExport(): WatermarkTheme {
+  if (typeof document === "undefined") return "dark";
+  const t = document.documentElement.dataset.theme;
+  return t === "light" ? "light" : "dark";
 }
 
 /**

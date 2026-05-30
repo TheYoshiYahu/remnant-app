@@ -223,7 +223,7 @@ export default function StrongsLookup({
               onClick={handleShare}
               disabled={!entry || sharing}
               aria-label="Share this Strong's entry"
-              className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 font-sans text-sm font-medium text-[var(--reader-accent)] hover:opacity-90 disabled:opacity-40"
+              className="rounded-md border border-[#FCECAF] bg-gradient-to-r from-[#645028] via-[#B4A078] to-[#645028] px-3 py-1 font-sans text-sm font-semibold uppercase tracking-wide text-[#FFF8E1] shadow-sm hover:opacity-90 disabled:opacity-40"
               data-export-suppress
             >
               {sharing ? "…" : "Share"}

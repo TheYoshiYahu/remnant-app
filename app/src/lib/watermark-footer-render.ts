@@ -49,12 +49,18 @@
  * verified by live walk per the post-S121 W2/W3 forward standard.
  */
 
-// We import the existing 832×1248 v4 full mark as the icon source.
-// §170 decision (Yoshi): auto-crop is the permanent solution; no
-// separate 200×200 curated asset will be produced. The full-mark
-// import keeps render quality high (7× upsample headroom from the
-// 832-tall source down to the 120-tall rendered icon).
-import brandMarkFullUrl from "../../../brand-assets/brand-mark-blue-on-black-v4-argaman-tribes-832x1248.png";
+// §170 live-walk redline 3 (Yoshi, S170 Chrome MCP walk): the initial
+// auto-crop from the 832×1248 full mark captured fragments of the
+// "Remnant of Promise" header text at the icon's top edge. Switching
+// the import to the existing 240×360 curated watermark crop instead —
+// that asset is already content-cropped by whoever produced the brand
+// assets (top header text and bottom "Official Study Bible" subtitle
+// trimmed off; only the central olive-branch + menorah + JUDAH/EPHRAIM
+// composition remains). The footer painter takes a centered 240×240
+// square sub-crop from the 240×360 portrait, rendered at 120×120 in
+// the band. Side benefit: bundle weight drops from ~990KB (full mark)
+// back to ~80KB (240×360 crop).
+import brandMarkFullUrl from "../../../brand-assets/brand-mark-blue-on-black-v4-argaman-tribes-share-card-watermark-240x360.png";
 
 // ─────────────────────────────────────────────────────────────────────
 // Constants — locked per DESIGN_LANGUAGE.md §30 watermark band specs
@@ -85,10 +91,11 @@ const WORDMARK_LINE_GAP = 6;
  *  repeats it as the call-to-action color. */
 const TECHELET = "#1A6FE5";
 
-/** Source-image native dimensions for the v4 full mark — used to
- *  compute the centered-square auto-crop. */
-const SRC_W = 832;
-const SRC_H = 1248;
+/** Source-image native dimensions for the v4 240×360 curated watermark
+ *  crop. Used to compute the centered-square sub-crop the painter
+ *  draws as the footer icon. */
+const SRC_W = 240;
+const SRC_H = 360;
 
 // ─────────────────────────────────────────────────────────────────────
 // Theme typing

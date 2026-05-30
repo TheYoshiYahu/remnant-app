@@ -68,8 +68,10 @@ const WORDMARK_LINE_1_SIZE = 36;
 const WORDMARK_LINE_2_SIZE = 24;
 const WORDMARK_LINE_3_SIZE = 22;
 const WORDMARK_LINE_GAP = 6;
-const SRC_W = 832;
-const SRC_H = 1248;
+// S170 walk-1 fix: switched icon source from 832×1248 full mark to
+// 240×360 curated watermark crop (skips header text, smaller bundle).
+const SRC_W = 240;
+const SRC_H = 360;
 
 const STRONGS_URL_BASE = "bible.remnantofpromise.org/strongs";
 
@@ -165,9 +167,9 @@ ok("§30 1080×1920 icon x = 54 (5% of 1080)", approx(g30.iconRect.x, 54));
 ok("§30 1080×1920 icon size = 120", g30.iconRect.w === 120 && g30.iconRect.h === 120);
 ok("§30 1080×1920 icon vert-centered in band",
    approx(g30.iconRect.y + 60, g30.bandTop + g30.bandHeight / 2));
-ok("§30 1080×1920 icon src crop = (0, 208, 832, 832)",
-   g30.iconSrcRect.sx === 0 && g30.iconSrcRect.sy === 208 &&
-   g30.iconSrcRect.sw === 832 && g30.iconSrcRect.sh === 832);
+ok("§30 1080×1920 icon src crop = (0, 60, 240, 240) [240×360 curated watermark sub-crop]",
+   g30.iconSrcRect.sx === 0 && g30.iconSrcRect.sy === 60 &&
+   g30.iconSrcRect.sw === 240 && g30.iconSrcRect.sh === 240);
 ok("§30 1080×1920 wordmark center = 540", approx(g30.wordmark.centerX, 540));
 
 const g24 = computeFooterGeometry(1080, 1350);
