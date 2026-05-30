@@ -61,7 +61,9 @@
 // ─────────────────────────────────────────────────────────────────────
 
 const FOOTER_PCT = 0.20;
-const ICON_SIZE = 120;
+// S170 walk-2: native 2:3 portrait, full brand-mark visible.
+const ICON_W = 140;
+const ICON_H = 210;
 const ICON_LEFT_INSET_PCT = 0.05;
 const DIVIDER_INSET_PCT = 0.06;
 const WORDMARK_LINE_1_SIZE = 36;
@@ -84,11 +86,11 @@ function computeFooterGeometry(W, H) {
   const divider = { x1: dividerInset, x2: W - dividerInset, y: bandTop };
 
   const iconX = W * ICON_LEFT_INSET_PCT;
-  const iconY = bandMidY - ICON_SIZE / 2;
-  const iconRect = { x: iconX, y: iconY, w: ICON_SIZE, h: ICON_SIZE };
+  const iconY = bandMidY - ICON_H / 2;
+  const iconRect = { x: iconX, y: iconY, w: ICON_W, h: ICON_H };
 
-  const sCropTop = (SRC_H - SRC_W) / 2;
-  const iconSrcRect = { sx: 0, sy: sCropTop, sw: SRC_W, sh: SRC_W };
+  // S170 walk-2: full 240×360 source, no sub-crop.
+  const iconSrcRect = { sx: 0, sy: 0, sw: SRC_W, sh: SRC_H };
 
   const stackHeight =
     WORDMARK_LINE_1_SIZE +
@@ -164,22 +166,27 @@ ok("§30 1080×1920 divider y = bandTop", approx(g30.divider.y, g30.bandTop));
 ok("§30 1080×1920 divider x1 = 64.8 (6% of 1080)", approx(g30.divider.x1, 64.8));
 ok("§30 1080×1920 divider x2 = 1015.2", approx(g30.divider.x2, 1015.2));
 ok("§30 1080×1920 icon x = 54 (5% of 1080)", approx(g30.iconRect.x, 54));
-ok("§30 1080×1920 icon size = 120", g30.iconRect.w === 120 && g30.iconRect.h === 120);
+ok("§30 1080×1920 icon w=140 h=210 (2:3 native)",
+   g30.iconRect.w === 140 && g30.iconRect.h === 210);
 ok("§30 1080×1920 icon vert-centered in band",
-   approx(g30.iconRect.y + 60, g30.bandTop + g30.bandHeight / 2));
-ok("§30 1080×1920 icon src crop = (0, 60, 240, 240) [240×360 curated watermark sub-crop]",
-   g30.iconSrcRect.sx === 0 && g30.iconSrcRect.sy === 60 &&
-   g30.iconSrcRect.sw === 240 && g30.iconSrcRect.sh === 240);
+   approx(g30.iconRect.y + ICON_H / 2, g30.bandTop + g30.bandHeight / 2));
+ok("§30 1080×1920 icon src = full 240×360 (no sub-crop)",
+   g30.iconSrcRect.sx === 0 && g30.iconSrcRect.sy === 0 &&
+   g30.iconSrcRect.sw === 240 && g30.iconSrcRect.sh === 360);
+ok("§30 1080×1920 icon dest preserves 2:3 source aspect",
+   approx(g30.iconRect.w / g30.iconRect.h, g30.iconSrcRect.sw / g30.iconSrcRect.sh));
 ok("§30 1080×1920 wordmark center = 540", approx(g30.wordmark.centerX, 540));
 
 const g24 = computeFooterGeometry(1080, 1350);
 ok("§24 1080×1350 band height = 270", approx(g24.bandHeight, 270));
 ok("§24 1080×1350 band top = 1080", approx(g24.bandTop, 1080));
 ok("§24 1080×1350 icon x = 54 (5% of 1080)", approx(g24.iconRect.x, 54));
-ok("§24 1080×1350 icon size = 120 (absolute, same as §30)",
-   g24.iconRect.w === 120 && g24.iconRect.h === 120);
+ok("§24 1080×1350 icon w=140 h=210 (same as §30, absolute px)",
+   g24.iconRect.w === 140 && g24.iconRect.h === 210);
 ok("§24 1080×1350 icon vert-centered in band",
-   approx(g24.iconRect.y + 60, g24.bandTop + g24.bandHeight / 2));
+   approx(g24.iconRect.y + ICON_H / 2, g24.bandTop + g24.bandHeight / 2));
+ok("§24 1080×1350 icon fits inside footer band (210 < 270)",
+   g24.iconRect.h < g24.bandHeight);
 ok("§24 1080×1350 wordmark center = 540", approx(g24.wordmark.centerX, 540));
 
 const g2x = computeFooterGeometry(2160, 3840);
@@ -191,10 +198,10 @@ ok("2160×3840 wordmark center = 1080", approx(g2x.wordmark.centerX, 1080));
 const gMini = computeFooterGeometry(100, 100);
 ok("100×100 band height = 20", approx(gMini.bandHeight, 20));
 ok("100×100 band top = 80", approx(gMini.bandTop, 80));
-// At tiny H, the 120px icon spills above the band — that's an expected
-// caller-responsibility case; we document it in the test rather than
-// guarding it in the helper.
-ok("100×100 icon w = 120 (absolute, unscaled)", gMini.iconRect.w === 120);
+// At tiny H, the 140×210 icon spills above the band — that's an
+// expected caller-responsibility case; we document it in the test
+// rather than guarding it in the helper.
+ok("100×100 icon w = 140 (absolute, unscaled)", gMini.iconRect.w === 140);
 
 // Footer pct invariant — for any H, bandHeight should equal H × 0.20.
 for (const H of [800, 1080, 1350, 1500, 1920, 2400, 3840]) {

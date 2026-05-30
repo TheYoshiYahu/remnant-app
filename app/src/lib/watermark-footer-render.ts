@@ -69,8 +69,16 @@ import brandMarkFullUrl from "../../../brand-assets/brand-mark-blue-on-black-v4-
 /** Footer band height as a fraction of total card height. */
 export const FOOTER_PCT = 0.20;
 
-/** Brand-mark icon rendered dimensions. */
-const ICON_SIZE = 120;
+/** Brand-mark icon rendered dimensions — S170 walk-2 fix (Yoshi
+ *  redline from phone-zoom on first-push share): switched from a
+ *  120×120 square crop to the brand mark's NATIVE 2:3 portrait aspect
+ *  so the full composition (Remnant of Promise wordmark + olive-branch
+ *  + JUDAH/EPHRAIM tribal labels + Official Study Bible subtitle) is
+ *  visible at every zoom level. 140×210 sized per Yoshi's
+ *  brand-dominant call. Fits both card sizes (55% of §30's 384px
+ *  footer, 78% of §24's 270px footer). */
+const ICON_W = 140;
+const ICON_H = 210;
 /** Left inset for the icon, as a fraction of card width. */
 const ICON_LEFT_INSET_PCT = 0.05;
 
@@ -179,25 +187,25 @@ export function computeFooterGeometry(W: number, H: number): FooterGeometry {
     y: bandTop,
   };
 
-  // Icon — 120×120, 5% left inset, vertically centered.
+  // Icon — 140×210 (native 2:3), 5% left inset, vertically centered.
   const iconX = W * ICON_LEFT_INSET_PCT;
-  const iconY = bandMidY - ICON_SIZE / 2;
+  const iconY = bandMidY - ICON_H / 2;
   const iconRect = {
     x: iconX,
     y: iconY,
-    w: ICON_SIZE,
-    h: ICON_SIZE,
+    w: ICON_W,
+    h: ICON_H,
   };
 
-  // Centered square crop from the 832×1248 full mark. The mark is
-  // taller than wide; we keep the full width and crop top/bottom
-  // equally to land on an 832×832 source square.
-  const sCropTop = (SRC_H - SRC_W) / 2; // 208
+  // S170 walk-2: source rect is the FULL 240×360 curated watermark
+  // (no sub-crop). drawImage stretches it into the 140×210
+  // destination preserving the 2:3 aspect — full logo visible at any
+  // zoom level.
   const iconSrcRect = {
     sx: 0,
-    sy: sCropTop,
+    sy: 0,
     sw: SRC_W,
-    sh: SRC_W,
+    sh: SRC_H,
   };
 
   // Wordmark stack — three lines vertically centered in the band.
