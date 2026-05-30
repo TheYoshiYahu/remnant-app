@@ -27,13 +27,14 @@
  * modal shape across the app.
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   type StrongEntry,
   type StrongOccurrence,
   getStrongEntry,
   getStrongOccurrences,
 } from "../lib/api";
+import { executeStudyShare } from "../lib/study-share-render";
 import LexiconSheet from "./LexiconSheet";
 
 const OCCURRENCES_PAGE_SIZE = 25;
@@ -80,6 +81,25 @@ export default function StrongsLookup({
   // stacks above this modal (z-50); closing the LexiconSheet returns the
   // partner here without losing scroll position.
   const [lexiconOpen, setLexiconOpen] = useState<boolean>(false);
+
+  // S170 §30 — Share button state. Ref points at the modal-content
+  // container so the §30 helper can clone it for html2canvas capture.
+  const modalContentRef = useRef<HTMLDivElement | null>(null);
+  const [sharing, setSharing] = useState<boolean>(false);
+
+  async function handleShare() {
+    if (!modalContentRef.current || !entry || sharing) return;
+    setSharing(true);
+    try {
+      await executeStudyShare(modalContentRef.current, {
+        strongNumber: entry.strong_number,
+        transliteration: entry.transliteration ?? "",
+        source: "strongs",
+      });
+    } finally {
+      setSharing(false);
+    }
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -167,6 +187,7 @@ export default function StrongsLookup({
       onClick={onClose}
     >
       <div
+        ref={modalContentRef}
         className="w-full max-w-6xl rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5 shadow-xl"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
@@ -192,14 +213,31 @@ export default function StrongsLookup({
               )}
             </div>
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 font-sans text-sm font-medium text-[var(--reader-muted)] hover:text-[var(--reader-text)]"
-          >
-            ✕
-          </button>
+          <div className="flex items-center gap-2">
+            {/* S170 §30 — Share button. Right of close ✕ per spec;
+                placed adjacent to the close affordance with the same
+                chrome register. Disabled until the entry has loaded
+                so html2canvas doesn't capture a loading-spinner state. */}
+            <button
+              type="button"
+              onClick={handleShare}
+              disabled={!entry || sharing}
+              aria-label="Share this Strong's entry"
+              className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 font-sans text-sm font-medium text-[var(--reader-accent)] hover:opacity-90 disabled:opacity-40"
+              data-export-suppress
+            >
+              {sharing ? "…" : "Share"}
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close"
+              className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 font-sans text-sm font-medium text-[var(--reader-muted)] hover:text-[var(--reader-text)]"
+              data-export-suppress
+            >
+              ✕
+            </button>
+          </div>
         </div>
 
         {loading && (
@@ -270,6 +308,7 @@ export default function StrongsLookup({
                 type="button"
                 onClick={() => setLexiconOpen(true)}
                 className="block w-full rounded border border-[var(--reader-rule)] bg-[var(--reader-surface-elev)] px-3 py-2 text-left font-sans text-sm font-medium text-[var(--reader-accent)] hover:opacity-90"
+                data-export-replace="lexicon-deeplink"
               >
                 → Read full lexicon entry{" "}
                 <span className="text-[var(--reader-muted)]">
@@ -337,6 +376,7 @@ export default function StrongsLookup({
                 onClick={loadMoreOccurrences}
                 disabled={loadingMore}
                 className="mt-3 w-full rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-2 font-sans text-sm font-medium text-[var(--reader-text)] hover:opacity-90 disabled:opacity-40"
+                data-export-suppress
               >
                 {loadingMore
                   ? "Loading…"

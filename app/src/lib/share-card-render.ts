@@ -50,7 +50,11 @@
  * normal flow exit, not a fallback trigger.
  */
 
-import brandMarkUrl from "../../../brand-assets/brand-mark-blue-on-black-v4-argaman-tribes-share-card-watermark-240x360.png";
+import {
+  FOOTER_PCT as WATERMARK_FOOTER_PCT,
+  paintWatermarkFooter,
+  preloadFooterBrandMark,
+} from "./watermark-footer-render";
 
 // ─────────────────────────────────────────────────────────────────────
 // Types
@@ -156,23 +160,17 @@ export const CARD_HEIGHT = 1350;
 
 /** Header band: 9% of card height per §24. */
 const HEADER_PCT = 0.09;
-/** Footer band: 18% of card height per §24. */
-const FOOTER_PCT = 0.18;
+/** Footer band: 20% of card height per §30 watermark spec (bumped
+ *  from §24's original 18% — S170 back-edit per Yoshi's wife's redline
+ *  that the watermark crushed below legibility in iMessage thumbnails).
+ *  Sourced from the shared `watermark-footer-render` constant so §24
+ *  and §30 cannot drift. */
+const FOOTER_PCT = WATERMARK_FOOTER_PCT;
 
-/** Watermark source asset native dimensions (locked v4 PNG asset).
- *  The canvas renders it aspect-preserved (240:360 = 2:3) into the
- *  footer band's available vertical slot; native pixels are NOT the
- *  rendered pixels. */
-const WATERMARK_SRC_W = 240;
-const WATERMARK_SRC_H = 360;
-const WATERMARK_ASPECT = WATERMARK_SRC_W / WATERMARK_SRC_H; // 2/3
-
-/** 4% outer padding from each card edge for the watermark + chrome
- *  text — header/footer left/right margins match for visual alignment. */
+/** 4% outer padding from each card edge for the header chrome and
+ *  body zone. The footer watermark owns its own inset math via the
+ *  shared `paintWatermarkFooter` helper. */
 const SIDE_PAD_PCT = 0.04;
-
-/** Hairline divider at footer-band top: 8% horizontal inset on each side. */
-const DIVIDER_INSET_PCT = 0.08;
 
 /** Auto-fit body-font search range. Max calibrated against single short
  *  verses (e.g., Psalm 23:1); min is the §24 readable-floor (14px at
@@ -365,45 +363,14 @@ export function buildTextOnlyFallback(
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// Brand-mark lazy loader — singleton, decoded-before-first-render.
+// Brand-mark lazy loader — delegated to the shared watermark helper.
+// S170 back-edit: the local singleton was deleted when §24 migrated to
+// `paintWatermarkFooter` (shared helper). The named export is preserved
+// as a thin alias so existing call sites (e.g., App.tsx's app-init
+// preload effect) continue to work without modification.
 // ─────────────────────────────────────────────────────────────────────
 
-let _brandMarkPromise: Promise<HTMLImageElement | null> | null = null;
-
-/**
- * Load + decode the v4 brand-mark asset. Singleton — subsequent calls
- * return the same Image once the first call resolves. Returns null on
- * failure (network error, decode failure, SSR context with no Image
- * constructor); the canvas render falls back to a text-only watermark
- * slot per §24's "If the Image fails to load … the render falls back
- * to text-only — failure is non-fatal".
- *
- * Callers can preload at app-init by awaiting this at module init,
- * or rely on the lazy load triggered by the first renderShareCard
- * call.
- */
-export function preloadBrandMark(): Promise<HTMLImageElement | null> {
-  if (typeof window === "undefined" || typeof Image === "undefined") {
-    return Promise.resolve(null);
-  }
-  if (_brandMarkPromise) return _brandMarkPromise;
-  _brandMarkPromise = (async () => {
-    try {
-      const img = new Image();
-      img.crossOrigin = "anonymous";
-      img.src = brandMarkUrl;
-      await img.decode();
-      return img;
-    } catch {
-      // Reset so a later retry can re-attempt the load (e.g., the
-      // first call failed because of a transient CDN hiccup; a
-      // subsequent render-then-share attempt should try again).
-      _brandMarkPromise = null;
-      return null;
-    }
-  })();
-  return _brandMarkPromise;
-}
+export const preloadBrandMark = preloadFooterBrandMark;
 
 // ─────────────────────────────────────────────────────────────────────
 // renderShareCard — the canvas entry point.
@@ -434,7 +401,9 @@ export async function renderShareCard(
   const W = opts.width ?? CARD_WIDTH;
   const H = opts.height ?? CARD_HEIGHT;
   const brandMark =
-    opts.brandMark !== undefined ? opts.brandMark : await preloadBrandMark();
+    opts.brandMark !== undefined
+      ? opts.brandMark
+      : await preloadFooterBrandMark();
 
   const canvas = document.createElement("canvas");
   canvas.width = W;
@@ -449,54 +418,32 @@ export async function renderShareCard(
   ctx.fillRect(0, 0, W, H);
 
   // ── 2. Zone geometry ──────────────────────────────────────────────
+  // S170 back-edit per §30 watermark spec — footer band is now 20%
+  // (was 18%). Body zone shrinks from 73% to 71%. Header stays 9%.
+  // The brand chrome that previously lived in the header band
+  // (`REMNANT OF PROMISE` / `OFFICIAL STUDY BIBLE`) has migrated into
+  // the new footer wordmark stack; the header now carries the verse
+  // reference instead, giving the reference proper header prominence
+  // and dropping the brand-text duplication.
   const sidePadX = W * SIDE_PAD_PCT;
-  const sidePadY = H * SIDE_PAD_PCT;
   const headerTop = 0;
   const headerBottom = H * HEADER_PCT;
-  // §24 locked zone proportions: 9% / 73% / 18%. Footer band top sits
-  // at the spec percentage; the watermark scales aspect-preserved into
-  // the band's available vertical slot (band height minus 4% bottom
-  // pad). Body bottom = footer top, so the reserved-band rule holds
-  // geometrically — body text never overlaps the watermark.
   const footerTop = H * (1 - FOOTER_PCT);
-  const footerHeight = H - footerTop;
   const bodyTop = headerBottom;
   const bodyBottom = footerTop;
   const bodyHeight = bodyBottom - bodyTop;
   const zoneWidth = W - sidePadX * 2;
-  // Watermark — anchored bottom-right with 4% outer padding (matches
-  // header band's horizontal padding for visual alignment). Height
-  // fills the footer band minus the 4% bottom pad so its top edge
-  // lands on the band's top edge; width follows from the 2:3 aspect.
-  const wmH = footerHeight - sidePadY;
-  const wmW = wmH * WATERMARK_ASPECT;
-  const wmX = W - sidePadX - wmW;
-  const wmY = H - sidePadY - wmH;
 
-  // ── 3. Header band ────────────────────────────────────────────────
-  // Left: brand tag. Right: scope label. Both in chrome-register
-  // uppercase sans-serif on the muted reader-text color.
+  // ── 3. Header band — verse reference, centered ────────────────────
   const headerMidY = headerTop + (headerBottom - headerTop) / 2;
-  const headerFontSize = Math.max(14, Math.round(H * 0.016));
+  const headerFontSize = Math.max(18, Math.round(H * 0.022));
   ctx.fillStyle = CHROME_MUTED;
   ctx.font = `600 ${headerFontSize}px ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif`;
   ctx.textBaseline = "middle";
-  ctx.textAlign = "left";
-  ctx.fillText("REMNANT OF PROMISE", sidePadX, headerMidY);
-  ctx.textAlign = "right";
-  ctx.fillText("OFFICIAL STUDY BIBLE", W - sidePadX, headerMidY);
+  ctx.textAlign = "center";
+  ctx.fillText(rangeHeader, W / 2, headerMidY);
 
-  // ── 4. Hairline divider at footer-band top ────────────────────────
-  // 1px solid rgba(255,255,255,0.08), 8% horizontal inset each side.
-  const dividerInset = W * DIVIDER_INSET_PCT;
-  ctx.strokeStyle = "rgba(255,255,255,0.08)";
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  ctx.moveTo(dividerInset, footerTop);
-  ctx.lineTo(W - dividerInset, footerTop);
-  ctx.stroke();
-
-  // ── 5. Body zone — verse text, auto-fit ───────────────────────────
+  // ── 4. Body zone — verse text, auto-fit ───────────────────────────
   const fontSize = computeBodyFontSize(verses, bodyHeight, zoneWidth);
   const lineHeightPx = fontSize * BODY_LINE_HEIGHT;
   // Small breathing room from the header-bottom edge into the body
@@ -516,36 +463,12 @@ export async function renderShareCard(
     if (i < verses.length - 1) yCursor += lineHeightPx;
   }
 
-  // ── 6. Footer reference line (left half of footer band) ───────────
-  ctx.fillStyle = CHROME_MUTED;
-  const refFontSize = Math.max(14, Math.round(H * 0.016));
-  ctx.font = `400 ${refFontSize}px ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif`;
-  ctx.textBaseline = "bottom";
-  ctx.textAlign = "left";
-  ctx.fillText(
-    `${rangeHeader} · ROP Official Study Bible`,
-    sidePadX,
-    H - sidePadY
-  );
-
-  // ── 7. Watermark (or text-only fallback if asset failed to load) ──
-  if (brandMark) {
-    ctx.drawImage(brandMark, wmX, wmY, wmW, wmH);
-  } else {
-    // §24 fallback — render the product name in the watermark slot in
-    // chrome register. Failure is non-fatal; partners always get a
-    // shareable card.
-    ctx.textBaseline = "middle";
-    ctx.textAlign = "right";
-    ctx.fillStyle = CHROME_MUTED;
-    const fbFontSize = Math.max(14, Math.round(H * 0.014));
-    ctx.font = `600 ${fbFontSize}px ui-sans-serif, system-ui, sans-serif`;
-    ctx.fillText(
-      "The Remnant of Promise · Official Study Bible",
-      W - sidePadX,
-      footerTop + (H - footerTop) / 2
-    );
-  }
+  // ── 5. Watermark footer — shared painter per §170 ────────────────
+  // The 20% footer band (divider + brand-mark icon + wordmark stack)
+  // is painted by the single canonical helper. §24 and §30 share this
+  // call so the watermark composition cannot drift across the two
+  // share surfaces.
+  await paintWatermarkFooter(ctx, W, H, { brandMark, theme: "dark" });
 
   return canvas;
 }

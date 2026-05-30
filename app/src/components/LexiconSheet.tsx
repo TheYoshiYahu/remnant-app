@@ -32,7 +32,7 @@
  * by live walk on the real PWA.
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   type LexiconCallout,
   type LexiconEntry,
@@ -47,6 +47,7 @@ import {
   selectDefaultSource,
 } from "../lib/lexicon-helpers";
 import { renderItalicSpans } from "../lib/markdown";
+import { executeStudyShare } from "../lib/study-share-render";
 
 interface LexiconSheetProps {
   strongNumber: string;
@@ -65,6 +66,34 @@ export default function LexiconSheet({
     { status: "loading" },
   );
   const [activeSource, setActiveSource] = useState<LexiconSource | null>(null);
+
+  // S170 §30 — Share button state. Ref points at the modal-content
+  // container so the §30 helper can clone it for html2canvas capture.
+  const modalContentRef = useRef<HTMLDivElement | null>(null);
+  const [sharing, setSharing] = useState<boolean>(false);
+
+  async function handleShare() {
+    if (!modalContentRef.current || state.status !== "ok" || sharing) return;
+    if (!activeSource) return;
+    const activeEntry =
+      state.data.entries.find((e) => e.source === activeSource) ?? null;
+    if (!activeEntry) return;
+    setSharing(true);
+    try {
+      await executeStudyShare(modalContentRef.current, {
+        strongNumber,
+        transliteration: activeEntry.transliteration ?? "",
+        source:
+          activeSource === "lsj"
+            ? "lsj"
+            : activeSource === "bdb"
+            ? "bdb"
+            : "strongs",
+      });
+    } finally {
+      setSharing(false);
+    }
+  }
 
   // Escape-to-close + initial fetch
   useEffect(() => {
@@ -102,6 +131,7 @@ export default function LexiconSheet({
       aria-label={`Lexicon entry for ${strongNumber}`}
     >
       <div
+        ref={modalContentRef}
         className="w-full max-w-6xl max-h-[85vh] overflow-hidden rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
@@ -110,6 +140,8 @@ export default function LexiconSheet({
           activeSource={activeSource}
           strongNumber={strongNumber}
           onClose={onClose}
+          onShare={handleShare}
+          sharing={sharing}
         />
       </div>
     </div>
@@ -125,6 +157,8 @@ interface LexiconSheetBodyProps {
   activeSource: LexiconSource | null;
   strongNumber: string;
   onClose: () => void;
+  onShare: () => void;
+  sharing: boolean;
 }
 
 function LexiconSheetBody({
@@ -132,6 +166,8 @@ function LexiconSheetBody({
   activeSource,
   strongNumber,
   onClose,
+  onShare,
+  sharing,
 }: LexiconSheetBodyProps) {
   // Compute the breadcrumb segments from whatever entry data we have.
   const activeEntry: LexiconEntry | null =
@@ -157,14 +193,30 @@ function LexiconSheetBody({
         <div className="text-xs uppercase tracking-wide text-[var(--reader-accent)]">
           {breadcrumb}
         </div>
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close lexicon entry"
-          className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-sm font-medium text-[var(--reader-muted)] hover:text-[var(--reader-text)]"
-        >
-          ✕
-        </button>
+        <div className="flex items-center gap-2">
+          {/* S170 §30 — Share button. Disabled until an entry resolves
+              and an active source is selected so html2canvas captures
+              the rendered body, not a loading state. */}
+          <button
+            type="button"
+            onClick={onShare}
+            disabled={state.status !== "ok" || sharing}
+            aria-label="Share this lexicon entry"
+            className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-sm font-medium text-[var(--reader-accent)] hover:opacity-90 disabled:opacity-40"
+            data-export-suppress
+          >
+            {sharing ? "…" : "Share"}
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close lexicon entry"
+            className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-sm font-medium text-[var(--reader-muted)] hover:text-[var(--reader-text)]"
+            data-export-suppress
+          >
+            ✕
+          </button>
+        </div>
       </div>
 
       {/* Scrolling body */}
