@@ -102,6 +102,7 @@ import {
 } from "./lib/chapter-nav";
 import paragraphStartsData from "./data/paragraph_starts.json";
 import { pullAndReconcile } from "./lib/display-prefs-sync";
+import { installDeepLinkRouter } from "./lib/deep-link";
 
 // S115 Wheel 3 — chrome theme toggle. Small button placed to the
 // left of the subscription CTA. Sun glyph when dark (click to go light);
@@ -269,6 +270,20 @@ export default function App() {
   // re-read so the React tree updates without a reload.
   useEffect(() => {
     void pullAndReconcile();
+  }, []);
+
+  // S173 — Capacitor deep-link router. Subscribes to @capacitor/app's
+  // appUrlOpen so a bible.remnantofpromise.org/strongs/{N} link tapped
+  // in iMessage (iOS Universal Link / Android App Link) lands inside
+  // the app on the StrongsLookup modal for that entry. No-op on web
+  // (Capacitor.isNativePlatform() === false) — the web bundle handles
+  // the URL via the Render 302 redirect to the api subdomain instead.
+  useEffect(() => {
+    let teardown: () => void = () => {};
+    void installDeepLinkRouter().then((td) => {
+      teardown = td;
+    });
+    return () => teardown();
   }, []);
 
   // Dev-only: ?dev_jwt=<token> in the URL sets the rop_jwt cookie at
@@ -501,6 +516,27 @@ function Reader() {
   const [strongsState, setStrongsState] = useState<
     { strong: string; surface: string } | null
   >(null);
+
+  // S173 — Capacitor deep-link entry. App.tsx subscribes to
+  // appUrlOpen; the in-app dispatch lands here as a
+  // `rop:open-strongs` CustomEvent carrying the canonical strong
+  // number. We open StrongsLookup with an empty `surface` because the
+  // deep link doesn't carry the surface form (the share URL is
+  // /strongs/{N} only — the surface word lives only in the share-card
+  // image itself). StrongsLookup tolerates an empty surface by falling
+  // back to the lexicon entry's lemma display.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onOpen = (e: Event): void => {
+      const detail = (e as CustomEvent<{ strongNumber: string }>).detail;
+      if (detail?.strongNumber) {
+        setStrongsState({ strong: detail.strongNumber, surface: "" });
+      }
+    };
+    window.addEventListener("rop:open-strongs", onOpen as EventListener);
+    return () =>
+      window.removeEventListener("rop:open-strongs", onOpen as EventListener);
+  }, []);
 
   // S164 — §26 menu-direct lexicon path. Mounting LexiconSheet at the App
   // level (separate from the StrongsLookup-internal mount) so the §20
