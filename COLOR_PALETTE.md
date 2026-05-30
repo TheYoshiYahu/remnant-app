@@ -91,6 +91,76 @@ The three locked theological registers that thread through body text and chrome.
 
 ---
 
+## §3a. Metallic Techelet Register (new at S169 — Study Aids pill)
+
+Yoshi's call at the S169 live walk: the §27 Study Aids pill (Strong's-superscripts toggle under the hood) moves from the metallic-argaman register to a NEW metallic-techelet register that mirrors the formal gradient structure of §3 bracket-emerald but on the techelet hue family. The single-name techelet `#1A6FE5` already lived as the §1 sacred-name outline; this section extends it into a formal metallic gradient so it can drive the Study Aids pill face and any future divine-name-anchored expansion affordance.
+
+### Metallic-techelet gradient
+
+- **Gradient:** `#0A2D84 → #1A6FE5 → #5A9CF5 → #A8C8F0 → #5A9CF5 → #1A6FE5 → #0A2D84`
+- **Outer glow:** `rgba(26,111,229,0.6)` near + `rgba(26,111,229,0.25)` far
+- **Theological role:** the divine-name register elevated to a metallic affordance. Mirrors the relationship between §1 techelet outline (single-name, single-glyph treatment) and this metallic surface (multi-element chrome treatment).
+- **Functional role:** the **Study Aids** affordance — the pill that gates whether the partner sees Strong's-pointers on every word. Strong's-tagging maps each English word back to the sacred-name and covenant-language lexemes; rendering the toggle in the divine-name register reads as *the affordance that surfaces the lexical witness underneath every word.*
+- **Surfaces:**
+  - **Show / Hide Study Aids** toggle in the chapter chrome strip (S169 close — replaces the S160 metallic-argaman treatment of the same pill).
+  - Reserved for future divine-name-anchored expansion affordances (e.g., a future "show Hebrew/Greek vocabulary panel" pill, were one to land).
+
+### Metallic-techelet simplified-pill form
+
+The 7-stop gradient renders as a Tailwind `bg-gradient-to-r from-X via-Y to-X` 3-stop simplification on the actual pill face:
+
+- **`from` / `to` (deep):** `#0A2D84`
+- **`via` (mid):** `#1A6FE5`
+- **Border (highlight):** `#A8C8F0`
+- **Text (pale-tinted highlight):** `#E6F0FA`
+
+Use the simplified form on chrome surfaces; reserve the full 7-stop gradient for divine-name-anchored S-curve brackets or other ornamental surfaces if a future register call adds them.
+
+---
+
+## §3b. Metallic Gold Register (new at S169 — Interlinear pill)
+
+Yoshi's call at the S169 live walk: the §28 Interlinear pill moves from the metallic-argaman register to a NEW metallic-gold register that formally extends the §1 Gold sampled palette (`#645028` shadow → `#A1885E` true midtone → `#B4A078` bright midtone → `#FCECAF` highlight specular) into a metallic gradient mirroring the §3 bracket-emerald structure. The §1 Gold register already lived as the priestly-witness / divine-presence stops; this section composes those stops into a formal metallic gradient for chrome use.
+
+### Metallic-gold gradient
+
+- **Gradient:** `#3D2F18 → #645028 → #A1885E → #FCECAF → #A1885E → #645028 → #3D2F18`
+- **Outer glow:** `rgba(252,236,175,0.5)` near + `rgba(252,236,175,0.2)` far
+- **Theological role:** the priestly-witness / divine-presence register elevated to a metallic affordance. The menorah-bronze of Zechariah 4 and the lampstands of Revelation 1 — the divine-presence motif at the joining of the branches — applied to the chrome surface that surfaces the original-language witness underneath the English.
+- **Functional role:** the **Interlinear** affordance — the Companion+/Free pill that mounts the Hebrew/Greek original-language column-stack above each English word. The original-language witness IS the priestly-text witness the translators worked from; rendering the toggle in the priestly-witness register reads as *the affordance that surfaces the priestly text underneath the English.*
+- **Surfaces:**
+  - **Show / Hide Interlinear** toggle in the chapter chrome strip (S169 close — replaces the S168 metallic-argaman treatment of the same pill).
+  - Companion-badge chip on the below-tier-locked pill: chip bg `#3D2F18` + text `#FFF6D5` (matches the new pill register; replaces the prior argaman-shadow chip `#1A0E2C` + argaman-pale text `#F5E6FA`).
+  - Reserved for future priestly-witness affordances.
+
+### Metallic-gold simplified-pill form
+
+The 7-stop gradient renders as a Tailwind `bg-gradient-to-r from-X via-Y to-X` 3-stop simplification on the actual pill face:
+
+- **`from` / `to` (deep):** `#3D2F18`
+- **`via` (mid):** `#A1885E`
+- **Border (highlight):** `#FCECAF`
+- **Text (pale-tinted highlight):** `#FFF6D5`
+
+Use the simplified form on chrome surfaces; reserve the full 7-stop gradient for priestly-witness-anchored ornamental surfaces if a future register call adds them.
+
+---
+
+## §3c. Metallic-Register Summary — the Four Chrome Metallics (S169 lock)
+
+The chapter chrome strip now reads as a four-metallic theological palette, each pill in a distinct register:
+
+| Register | Hex stops (gradient deep → mid → highlight) | Chrome surface | Register meaning |
+|---|---|---|---|
+| **Metallic emerald** (§3) | `#04321E → #15A86A → #2EFFA1` | §144 English Helpers toggle | Divine-speech / expansion |
+| **Metallic techelet** (§3a) | `#0A2D84 → #1A6FE5 → #A8C8F0` | §27 Study Aids toggle | Divine-name lexical witness |
+| **Metallic gold** (§3b) | `#3D2F18 → #A1885E → #FCECAF` | §28 Interlinear toggle | Priestly-witness / original-language |
+| **Metallic argaman** (§1) | `#3D1B5C → #8E4FB3 → #D4B0E0` | RESERVED — body-text outlines only | Covenant-body |
+
+Metallic argaman stays off the chrome strip; its only active surface remains the body-text 4-direction outline on covenant-body sacred names (Yashar'el, Yahudah, Yahudim, Yahudi) per the original §1 lock. Future chrome surfaces that read as covenant-body affordances may pull the metallic-argaman pill simplified form (`from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] border-[#D4B0E0] text-[#F5E6FA]`) — but the current chrome strip leaves the register dedicated to body-text outlining.
+
+---
+
 ## §4. Olive-Leaf / Icy Silver-Blue Register (new at S130)
 
 The brand-mark olive branches carry techelet-family leaves with a measurable green hint — read by Yoshi as "silver blue with a hint of green." Sampled directly from `brand-assets/brand-mark-blue-on-black-v4-argaman-tribes-832x1248.png` (5,495 matching pixels, B-dominant with consistently elevated G channel).

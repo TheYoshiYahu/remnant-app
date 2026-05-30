@@ -2273,33 +2273,45 @@ function Reader() {
                 : "Hide English helpers"}
             </button>
             {/*
-              S160 — Strong's superscripts toggle (§27). Metallic argaman
-              gradient per COLOR_PALETTE §9 — distinct from the §144 English-
-              helpers metallic-emerald gradient to its left so the partner
-              reads two different functional registers. Same size + chrome-
-              strip placement as the parentheticals toggle. Default OFF;
-              tapping flips state and persists via lib/useStrongsSuperscriptsToggle
-              (localStorage `rop_strongs_superscripts_v1`).
+              S160 / S169 — Study Aids toggle (§27 — Strong's superscripts
+              under the hood). S169 repaint per Yoshi live-walk redline 1:
+              moved from metallic argaman to metallic **techelet** per
+              COLOR_PALETTE §1 (divine-name register, hex `#1A6FE5`) +
+              renamed from "Strong's" to "Study Aids". The four-metallic
+              chrome palette now reads: emerald (§144 English helpers /
+              expansion register) → techelet (§27 Study Aids / divine-
+              name register) → gold (§28 Interlinear / priestly-witness
+              register). Argaman stays reserved for body-text sacred-name
+              outlines (Yashar'el, Yahudah, Yahudim, Yahudi) — off the
+              chrome strip entirely. Underlying state + persistence
+              unchanged (lib/useStrongsSuperscriptsToggle, localStorage
+              `rop_strongs_superscripts_v1`); rename is label-only.
             */}
             <button
               type="button"
               onClick={toggleShowStrongsSuperscripts}
               aria-pressed={showStrongsSuperscripts}
-              title="Show or hide Strong's H- and G-numbers as small superscripts after every word in the verse text. Tap any superscript to open the Strong's lookup, same as tapping the word itself. Persists across chapters and reloads."
-              className="rounded-md border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#F5E6FA] shadow-sm hover:opacity-90"
+              title="Show or hide the study aids — Strong's H- and G-numbers as small superscripts after every word in the verse text. Tap any superscript to open the lexicon entry, same as tapping the word itself. Persists across chapters and reloads."
+              className="rounded-md border border-[#A8C8F0] bg-gradient-to-r from-[#0A2D84] via-[#1A6FE5] to-[#0A2D84] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#E6F0FA] shadow-sm hover:opacity-90"
             >
               {showStrongsSuperscripts
-                ? "Hide Strong's"
-                : "Show Strong's"}
+                ? "Hide Study Aids"
+                : "Show Study Aids"}
             </button>
             {/*
-              S168 — §28 Interlinear toggle. Same metallic-argaman
-              gradient register as the §27 Strong's-superscripts pill
-              to its left so the two read as a pair (§27 = numbers on
-              the verse text, §28 = original-language layer above the
-              verse text). Distinguished from §27 by the Companion-
-              badge chip rendered for below-tier partners (§27 is Free,
-              §28 is Companion+).
+              S168 / S169 — §28 Interlinear toggle. S169 repaint per Yoshi
+              live-walk redline 1: moved from metallic argaman to metallic
+              **gold** per COLOR_PALETTE §1 (priestly-witness / divine-
+              presence register — sampled palette
+              `#645028` shadow → `#A1885E` true midtone → `#B4A078` bright
+              midtone → `#FCECAF` highlight specular). The original-
+              language layer is the priestly-witness register because the
+              interlinear shows the source-language scripture the
+              translators worked from — the priestly-text witness under-
+              neath the English. Pairs visually with §27 Study Aids
+              (techelet, divine-name register) to its left: the two
+              Companion+/Free pair now reads as two distinct theological
+              registers rather than two argaman pills.
 
               For Companion+ (`partnerAtCompanion`), the button toggles
               the InterlinearLayer mount per verse and persists via
@@ -2308,7 +2320,8 @@ function Reader() {
               visible, not hidden, per the §20 stub-catalog "tier-
               locked-stub" convention) but tapping routes to /pricing
               and a small "Companion" chip distinguishes the locked
-              state.
+              state — chip recolored to gold-shadow `#3D2F18` to match
+              the new pill register.
             */}
             <button
               type="button"
@@ -2327,7 +2340,7 @@ function Reader() {
                   ? "Show or hide the Hebrew/Greek interlinear layer above each English word — lemma, transliteration, morphology, gloss. Long-press the morphology cell to expand the abbreviation. Persists across chapters and reloads."
                   : "Hebrew/Greek interlinear layer — upgrade to the Companion tier to enable. Tap to view pricing."
               }
-              className="relative rounded-md border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#F5E6FA] shadow-sm hover:opacity-90"
+              className="relative rounded-md border border-[#FCECAF] bg-gradient-to-r from-[#3D2F18] via-[#A1885E] to-[#3D2F18] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#FFF6D5] shadow-sm hover:opacity-90"
             >
               {partnerAtCompanion
                 ? showInterlinear
@@ -2336,7 +2349,7 @@ function Reader() {
                 : "Interlinear"}
               {!partnerAtCompanion && (
                 <span
-                  className="ml-2 inline-flex items-center rounded-sm border border-[#F5E6FA]/40 bg-[#1A0E2C] px-1.5 py-0.5 text-[0.55rem] font-semibold uppercase tracking-wider text-[#F5E6FA]"
+                  className="ml-2 inline-flex items-center rounded-sm border border-[#FFF6D5]/40 bg-[#3D2F18] px-1.5 py-0.5 text-[0.55rem] font-semibold uppercase tracking-wider text-[#FFF6D5]"
                   aria-label="Companion tier required"
                 >
                   Companion
