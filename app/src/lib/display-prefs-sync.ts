@@ -44,6 +44,7 @@ import {
   type DisplayPrefs,
   type SacredNameMaskValue,
 } from "./api";
+import { getCachedNativeToken } from "./native-auth";
 
 // ----- localStorage key registry -----------------------------------------
 
@@ -73,15 +74,32 @@ export const DISPLAY_PREFS_CHANGED_EVENT = "rop:display-prefs-changed";
 // ----- Auth check --------------------------------------------------------
 
 /**
- * Best-effort check that the partner has a JWT cookie present. We don't
- * decode the token — the API enforces auth — but if no cookie exists
- * there's no point firing a request that's going to 401.
+ * Best-effort check that the partner is signed in. We don't decode
+ * the token — the API enforces auth — but if neither the PWA cookie
+ * nor a native-stored JWT is present, there's no point firing a
+ * request that's going to 401.
+ *
+ * Two storage paths checked (S176):
+ *   1. Native-shell Preferences cache — populated at app init when a
+ *      Capacitor partner has signed in via the system-browser flow.
+ *      The Capacitor webview's https://localhost origin can't see the
+ *      .remnantofpromise.org cookie, so the in-memory native-token
+ *      cache is the only signed-in signal on native.
+ *   2. document.cookie path (S174 / Session 36) — the rop_jwt cookie
+ *      set by the rop-sso-bridge WP plugin on PWA login.
+ *
+ * The function name stays `hasJwtCookie` for callsite stability —
+ * semantic is now "the partner is signed in via either path."
  *
  * S174 — exported so the SacredNameWelcomeModal mount-condition check
  * in App.tsx can suppress the sign-in ask for partners who already
- * have a JWT cookie (signed-in partners obviously don't need the ask).
+ * have a session (signed-in partners obviously don't need the ask).
  */
 export function hasJwtCookie(): boolean {
+  // S176 — native-token branch first. Sync (in-memory cache), cheap on
+  // both web (returns null, falls through) and native (the only signal
+  // there). Cookie path stays as the PWA fallback.
+  if (getCachedNativeToken()) return true;
   if (typeof document === "undefined") return false;
   const prefix = `${SSO_COOKIE_NAME}=`;
   const parts = document.cookie ? document.cookie.split("; ") : [];

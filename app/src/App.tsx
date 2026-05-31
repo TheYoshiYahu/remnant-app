@@ -27,10 +27,12 @@ import Manage from "./routes/Manage";
 import SignIn from "./routes/SignIn";
 import Landing from "./routes/Landing";
 import Settings from "./routes/Settings";
+import AuthCallback from "./routes/AuthCallback";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
 import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
 import { hasSeenSigninAsk } from "./lib/signinAsk";
 import { hasJwtCookie } from "./lib/display-prefs-sync";
+import { loadStoredNativeToken } from "./lib/native-auth";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ChapterCommentary from "./components/ChapterCommentary";
 import HighlightPicker, {
@@ -269,6 +271,11 @@ export default function App() {
     if (typeof window === "undefined") return false; // SSR — never
     if (hasJwtCookie()) return false;                // signed-in — skip
     if (window.location.pathname.startsWith("/sign-in")) return false;
+    // S176 — suppress the welcome modal on /auth-callback too. The
+    // partner is mid-sign-in flow; the modal mounting on top would be
+    // disorienting (and likely flash for a beat before the route
+    // redirects to /read on success).
+    if (window.location.pathname.startsWith("/auth-callback")) return false;
     return !hasStoredSacredNamePreference() || !hasSeenSigninAsk();
   });
   // initialStep captured once at mount; the modal manages step state
@@ -297,8 +304,18 @@ export default function App() {
   // server-canonical value, it dispatches `rop:display-prefs-changed`;
   // the useSacredNameMask + useParentheticalsToggle hooks listen and
   // re-read so the React tree updates without a reload.
+  //
+  // S176 — must load the native-shell JWT into the in-memory cache
+  // BEFORE pullAndReconcile fires, because pullAndReconcile gates on
+  // hasJwtCookie() which now also checks the native cache. Without
+  // this ordering, a signed-in native partner's display prefs would
+  // never sync server→local until next app launch. On web,
+  // loadStoredNativeToken() is a no-op (returns null without touching
+  // Preferences), so the PWA path is unaffected.
   useEffect(() => {
-    void pullAndReconcile();
+    void loadStoredNativeToken().then(() => {
+      void pullAndReconcile();
+    });
   }, []);
 
   // S173 — Capacitor deep-link router. Subscribes to @capacitor/app's
@@ -352,6 +369,15 @@ export default function App() {
   }
   if (pathname === "/sign-in" || pathname.startsWith("/sign-in")) {
     return <>{welcomeModal}<SignIn /></>;
+  }
+  // S176 — auth-callback landing route. Renders the "signing you in…"
+  // surface while the JWT (delivered via ?token= query param from the
+  // rop-sso-bridge WP plugin's redirect) is persisted via
+  // storeNativeToken. On success the route navigates the partner to
+  // /read with the new auth state active. The welcomeModal is
+  // suppressed here (see the welcomeOpen initializer above).
+  if (pathname === "/auth-callback" || pathname.startsWith("/auth-callback")) {
+    return <AuthCallback />;
   }
   if (pathname === "/pricing" || pathname.startsWith("/pricing")) {
     return <>{welcomeModal}<Pricing /></>;

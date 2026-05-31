@@ -35,6 +35,27 @@
                       android:pathPrefix="/strongs/" />
             </intent-filter>
 
+            <!-- S176 — App Link for the sign-in callback. The WordPress
+                 rop-sso-bridge plugin's /wp-json/rop/v1/native-auth-callback
+                 endpoint 302-redirects to this URL with ?token=<JWT> after
+                 the partner authenticates in the system browser. The
+                 intent-filter's autoVerify shares the existing
+                 .well-known/assetlinks.json binding (same host, same appId,
+                 same cert SHA) so no separate verification step is needed —
+                 the OS uses the same trust assertion as the /strongs/ filter.
+                 The path is an exact match (not a pathPrefix) because the
+                 callback only ever takes the bare /auth-callback path with
+                 query params; pathPrefix /auth-callback/ would miss the
+                 query-only form. -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https"
+                      android:host="bible.remnantofpromise.org"
+                      android:path="/auth-callback" />
+            </intent-filter>
+
         </activity>
 
         <provider

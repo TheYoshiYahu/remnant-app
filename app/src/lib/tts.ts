@@ -27,6 +27,26 @@
  * getEngine() reads this once at module init and locks the engine for
  * the session — no per-call branching cost.
  *
+ * S176 — Play button fix.
+ *
+ *   Pre-S176, getTTSEngine() picked createNativeTTS() inside the
+ *   Capacitor shell. createNativeTTS() was a Phase 10 stub that
+ *   returned isAvailable=false and a no-op speak(). The result: every
+ *   Play tap in the V1 native shell silently bailed at the first
+ *   isAvailable() check in App.tsx — no audio, no error, no
+ *   diagnostic. This is the "Play button reportedly doesn't work in
+ *   the native shell" that S175 flagged as deferred.
+ *
+ *   Fix: use createWebTTS() on both surfaces. Android Capacitor uses
+ *   Chromium WebView under the hood, which exposes window.speechSynthesis
+ *   on modern Android (API 33+ / Android 13+). The web engine's
+ *   isAvailable() guard handles older Androids gracefully — Play UI
+ *   hides itself when window.speechSynthesis is absent. The
+ *   @capacitor-community/text-to-speech plugin would offer native
+ *   voice integration (better quality on some devices), but that
+ *   enhancement is V1.1+ — V1 just needs Play to work, and the WebView
+ *   path delivers that.
+ *
  * Architecture per DESIGN_LANGUAGE.md §25:
  *   - Engine surface is play-pause-stop-getVoices + onEnd / onError
  *     subscriptions. No internal state visible to consumers beyond
@@ -289,10 +309,19 @@ function createWebTTS(): TTSEngine {
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// Native (Capacitor) implementation — TODO for Phase 10
+// Native (Capacitor) — V1.1+ enhancement, not used in S176
 // ─────────────────────────────────────────────────────────────────────
 //
-// When Phase 10's Capacitor wrap installs:
+// S176 simplified: the Capacitor WebView (Chromium) exposes
+// window.speechSynthesis on modern Android, so getTTSEngine() picks
+// createWebTTS() on both web and native. The block below stays as a
+// design note for the V1.1+ upgrade path — if we want native voice
+// integration (better quality on some devices, more locale coverage),
+// install @capacitor-community/text-to-speech, fill in
+// createNativeTTS(), and flip the engine selector back to a platform-
+// branch. For S176, the web engine carries both surfaces.
+//
+// When V1.1+ revisits this:
 //   1. `npm i @capacitor-community/text-to-speech`
 //   2. Uncomment the import below.
 //   3. Replace the createNativeTTS() stub with the plugin-backed
@@ -306,17 +335,13 @@ function createWebTTS(): TTSEngine {
 //        - onEnd → the plugin's `addListener("end", ...)` if exposed,
 //          else fall back to a setTimeout based on duration estimation.
 //   4. Test on a real Capacitor build (Android emulator + real iPhone).
-//   5. Remove this TODO block once verified.
-//
-// At S157 the web build does NOT depend on the package; the import
-// stays commented so Vite's tree-shaker doesn't fail to resolve it.
+//   5. Flip the selector in getTTSEngine() back to a platform branch.
 
 // import { TextToSpeech } from "@capacitor-community/text-to-speech";
 
 function createNativeTTS(): TTSEngine {
-  // S157 stub — never reached because isCapacitorNative() returns false
-  // on the web build. Phase 10 replaces the body with the plugin
-  // implementation.
+  // Reserved for V1.1+ native-plugin implementation. Unused at S176 —
+  // the selector below picks createWebTTS() on both web and native.
   return {
     isAvailable: () => false,
     getVoices: () => [],
@@ -332,20 +357,12 @@ function createNativeTTS(): TTSEngine {
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// Platform detection + module-level singleton
+// Module-level singleton
 // ─────────────────────────────────────────────────────────────────────
-
-function isCapacitorNative(): boolean {
-  if (typeof window === "undefined") return false;
-  // Capacitor injects `window.Capacitor.isNativePlatform()` inside the
-  // wrap. The optional-chaining + truthy check is defensive against
-  // partial Capacitor injection during development.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const cap = (window as any).Capacitor;
-  return typeof cap?.isNativePlatform === "function"
-    ? cap.isNativePlatform()
-    : false;
-}
+//
+// S176 — the Capacitor isNativePlatform() check that used to live here
+// is gone. Both web and native use createWebTTS() — see the section
+// header comment above and the file-level S176 note for the rationale.
 
 let _engine: TTSEngine | null = null;
 
@@ -353,6 +370,13 @@ let _engine: TTSEngine | null = null;
  * Get the platform-appropriate TTS engine. Singleton — first call
  * binds the engine for the rest of the session. SSR-safe (returns a
  * no-op engine when window is undefined).
+ *
+ * S176 — uses createWebTTS() on both web and native. The Chromium
+ * WebView inside Capacitor exposes window.speechSynthesis on Android
+ * 13+; on older Android the web engine's isAvailable() returns false
+ * and the Play UI hides itself gracefully (no crash, no silent
+ * failure mid-tap). createNativeTTS() stays reserved for the V1.1+
+ * native-plugin upgrade path.
  */
 export function getTTSEngine(): TTSEngine {
   if (_engine) return _engine;
@@ -373,6 +397,11 @@ export function getTTSEngine(): TTSEngine {
     };
     return _engine;
   }
-  _engine = isCapacitorNative() ? createNativeTTS() : createWebTTS();
+  // S176 — single engine across surfaces. See the file-header note
+  // for why createNativeTTS() is no longer selected.
+  // createNativeTTS is preserved (even though unused) so the V1.1+
+  // upgrade path stays one selector flip away.
+  void createNativeTTS;
+  _engine = createWebTTS();
   return _engine;
 }

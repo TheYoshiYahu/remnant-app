@@ -18,7 +18,22 @@
  * Authorization: Bearer on every API call. The API still allows
  * credentials via CORS, and includes the PWA origin in CORS_ORIGINS.
  * Anonymous callers — no cookie, no header — see the 66-book free canon.
+ *
+ * S176 — native auth path. The Capacitor native shell loads from
+ * https://localhost, which can't see the .remnantofpromise.org cookie.
+ * The native shell stores its JWT in Capacitor Preferences via
+ * lib/native-auth.ts after the system-browser sign-in flow lands the
+ * token through the /auth-callback deep link. readAccessToken() below
+ * checks the in-memory native-token cache FIRST, then falls back to
+ * the document.cookie path used by the PWA. Both code paths end at the
+ * same Authorization: Bearer attach — the API treats them identically
+ * (api/auth.py reads either the cookie or the header). credentials:
+ * "include" stays in every call because the cookie path on the PWA
+ * still relies on it (the native shell's fetch ignores the credentials
+ * flag — no cookie to send anyway).
  */
+
+import { getCachedNativeToken } from "./native-auth";
 
 const API_BASE: string =
   import.meta.env.VITE_API_BASE ?? "https://api.bible.remnantofpromise.org/v1";
@@ -45,6 +60,21 @@ function readJwtCookie(): string | null {
     }
   }
   return null;
+}
+
+/**
+ * Resolve the access token from whichever source has one — the
+ * native-shell Preferences cache OR the PWA cookie. Native cache wins
+ * when both are present (which won't happen in practice — native
+ * shells don't see the cookie, PWA shells don't run the
+ * Preferences-loader effect — but the precedence keeps the contract
+ * explicit). Returns null when neither path has a token; callers send
+ * the request anonymously and the API returns the 66-book free canon.
+ */
+function readAccessToken(): string | null {
+  const native = getCachedNativeToken();
+  if (native) return native;
+  return readJwtCookie();
 }
 
 // ----- Response shapes (mirror api/models.py) ----------------------------
@@ -409,7 +439,7 @@ async function get<T>(
   options?: { signal?: AbortSignal },
 ): Promise<T> {
   const headers: Record<string, string> = { Accept: "application/json" };
-  const token = readJwtCookie();
+  const token = readAccessToken();
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
@@ -437,7 +467,7 @@ async function post<TReq, TRes>(path: string, body: TReq): Promise<TRes> {
     Accept: "application/json",
     "Content-Type": "application/json",
   };
-  const token = readJwtCookie();
+  const token = readAccessToken();
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
@@ -466,7 +496,7 @@ async function put<TReq, TRes>(path: string, body: TReq): Promise<TRes> {
     Accept: "application/json",
     "Content-Type": "application/json",
   };
-  const token = readJwtCookie();
+  const token = readAccessToken();
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
@@ -491,7 +521,7 @@ async function put<TReq, TRes>(path: string, body: TReq): Promise<TRes> {
 
 async function del(path: string): Promise<void> {
   const headers: Record<string, string> = { Accept: "application/json" };
-  const token = readJwtCookie();
+  const token = readAccessToken();
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }
@@ -1139,7 +1169,7 @@ export async function fetchLexiconEntry(
 ): Promise<LexiconFetchResult> {
   const path = `/lexicon/${encodeURIComponent(strongNumber)}`;
   const headers: Record<string, string> = { Accept: "application/json" };
-  const token = readJwtCookie();
+  const token = readAccessToken();
   if (token) headers.Authorization = `Bearer ${token}`;
   try {
     const res = await fetch(`${API_BASE}${path}`, {
