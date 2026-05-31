@@ -14,7 +14,7 @@
  *              JWT_AUTH_SECRET_KEY from wp-config.php, reads
  *              rop_partner_tier from user-meta (written by the
  *              Session 37 Stripe webhook → WP-sync push).
- * Version:     1.1.1
+ * Version:     1.1.2
  * Author:      Yoshi
  * License:     GPL-2.0-or-later
  * Text Domain: rop-sso-bridge
@@ -371,6 +371,48 @@ function rop_sso_register_native_callback_route() {
     );
 }
 add_action('rest_api_init', 'rop_sso_register_native_callback_route');
+
+/**
+ * S177 (v1.1.2) — Override the post-login redirect when the partner
+ * was mid-native-auth flow.
+ *
+ * On not-logged-in REST requests, the handler redirects to
+ * wp_login_url($self_url), which embeds redirect_to=<self_url> in the
+ * wp-login.php query string. WordPress core's wp_login_redirect filter
+ * normally honors redirect_to and sends the user there after a
+ * successful login. BUT — LoginWP (Peter's Login Redirect) and similar
+ * post-login redirect plugins override wp_login_redirect with their
+ * own role-based / fixed destination (typically /wp-admin/), which
+ * silently breaks the native-auth-callback chain: the partner logs in,
+ * lands at /wp-admin/, the Custom Tab never reaches our endpoint, the
+ * JWT never gets minted, and the Android App Link to /auth-callback
+ * never fires.
+ *
+ * This filter fires at priority 999 — AFTER any LoginWP / similar
+ * override — and forces the requested redirect_to back into effect IF
+ * the requested URL was our native-auth-callback endpoint. Other login
+ * destinations are untouched, so site-wide login redirect behavior is
+ * unchanged for non-native partners.
+ */
+function rop_sso_honor_native_redirect_to($redirect_to, $requested_redirect_to, $user) {
+    if (empty($requested_redirect_to)) {
+        return $redirect_to;
+    }
+    $self_url = rest_url(
+        ROP_SSO_NATIVE_CALLBACK_NAMESPACE . ROP_SSO_NATIVE_CALLBACK_ROUTE
+    );
+    // Compare without query strings — wp_login_url may have added or
+    // stripped trailing slashes via wp_safe_redirect normalization.
+    $strip_query = function($url) {
+        $q = strpos($url, '?');
+        return $q === false ? $url : substr($url, 0, $q);
+    };
+    if ($strip_query($requested_redirect_to) === $strip_query($self_url)) {
+        return $self_url;
+    }
+    return $redirect_to;
+}
+add_filter('login_redirect', 'rop_sso_honor_native_redirect_to', 999, 3);
 
 /**
  * Build the callback destination URL with a status query param.

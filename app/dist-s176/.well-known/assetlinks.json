@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.remnantofpromise.bible",
+      "sha256_cert_fingerprints": [
+        "D2:E0:F7:17:73:09:6B:74:AB:62:86:C3:B9:75:28:D2:1E:D2:9A:7D:BD:48:7B:8C:19:26:2D:D8:3E:C9:7E:E9"
+      ]
+    }
+  }
+]

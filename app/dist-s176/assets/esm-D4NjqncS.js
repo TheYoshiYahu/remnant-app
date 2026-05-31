@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/web-DYKrU4Tc.js","assets/dist-lQTMgJS4.js"])))=>i.map(i=>d[i]);
+import{t as e}from"./preload-helper-CREtouNF.js";import{registerPlugin as t}from"./dist-lQTMgJS4.js";var n=t(`Preferences`,{web:()=>e(()=>import(`./web-DYKrU4Tc.js`).then(e=>new e.PreferencesWeb),__vite__mapDeps([0,1]))});export{n as Preferences};

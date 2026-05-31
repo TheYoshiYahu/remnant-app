@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/web-CqRkGP6f.js","assets/dist-lQTMgJS4.js"])))=>i.map(i=>d[i]);
+import{t as e}from"./preload-helper-CREtouNF.js";import{registerPlugin as t}from"./dist-lQTMgJS4.js";var n=t(`Browser`,{web:()=>e(()=>import(`./web-CqRkGP6f.js`).then(e=>new e.BrowserWeb),__vite__mapDeps([0,1]))});export{n as Browser};

@@ -82,7 +82,14 @@ const config: CapacitorConfig = {
 
   android: {
     allowMixedContent: false, // production HTTPS-only
-    captureInput: true,
+    // S178 — captureInput must stay FALSE. When true, the Android
+    // WebView captures keyboard input in a way that interferes with
+    // soft-keyboard IME composition on text/password fields —
+    // specifically blocking backspace/delete after a character is
+    // entered. Reported live in S178 phone-test of the in-app sign-in
+    // form. The Capacitor docs themselves call out this flag as a
+    // common cause of "users cannot type / delete in text inputs."
+    captureInput: false,
     webContentsDebuggingEnabled: false,
   },
 };
