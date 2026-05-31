@@ -192,13 +192,164 @@ export async function clearNativeToken(): Promise<void> {
 }
 
 /**
+ * S177 — In-app credential sign-in.
+ *
+ * The S176 Custom Tab + App Link round-trip turned out to be the wrong
+ * pattern for first-party auth: the Custom Tab's cookie jar is
+ * separate from any prior WP session, the WP-side wp-login redirect
+ * chain gets hijacked by LoginWP (Peter's Login Redirect) overriding
+ * redirect_to= and sending the partner to /wp-admin/, and Android's
+ * App Link autoVerify handoff isn't reliable across Custom Tab 302
+ * chains. Net result: partners got stuck on "Finishing sign-in…" with
+ * no token reaching the native app.
+ *
+ * V1 architecture: replace the round-trip with a direct POST to the
+ * jwt-auth plugin's stock /wp-json/jwt-auth/v1/token endpoint. The
+ * partner types email/username + password into an in-app form, the
+ * app exchanges credentials for a JWT directly, and storeNativeToken
+ * persists it. No browser hop, no redirect chain, no deep-link
+ * handoff — the standard mobile-app first-party auth pattern.
+ *
+ * The JWT shape jwt-auth issues is the same shape api/auth.py expects
+ * (HS256 signed with JWT_AUTH_SECRET_KEY, data.user.id at minimum). On
+ * the api side, DB-wins-over-JWT tier resolution (S114) means the
+ * partner_tier claim is informational — the subscriptions table is the
+ * source of truth for tier-gated content. So even though jwt-auth's
+ * stock response doesn't carry partner_tier, the API still resolves
+ * the tier correctly from DB on every request.
+ *
+ * CORS: the jwt-auth plugin only emits Access-Control-Allow-Origin
+ * headers when JWT_AUTH_CORS_ENABLE is defined as true in wp-config.php.
+ * Without it, the Capacitor native shell's https://localhost origin
+ * will fail the cross-origin preflight. If sign-in returns
+ * network_error, add `define('JWT_AUTH_CORS_ENABLE', true);` to
+ * wp-config.php and redeploy / clear cache.
+ */
+const WP_JWT_AUTH_TOKEN_ENDPOINT =
+  "https://remnantofpromise.org/wp-json/jwt-auth/v1/token";
+
+/**
+ * Thrown by loginWithCredentials when sign-in fails. `code` is the
+ * upstream jwt-auth error code (or a synthetic one) for programmatic
+ * branching; `message` is the partner-friendly string the SignIn form
+ * surfaces directly.
+ */
+export class LoginCredentialsError extends Error {
+  public readonly code: string;
+  constructor(code: string, message: string) {
+    super(message);
+    this.name = "LoginCredentialsError";
+    this.code = code;
+  }
+}
+
+/**
+ * Exchange a partner's credentials for a JWT and persist it. Throws
+ * LoginCredentialsError on any failure; the form surface displays
+ * error.message directly to the partner.
+ *
+ * On success, the JWT is stored via storeNativeToken (which seeds the
+ * in-memory cache so the very next api.ts fetch carries the new Bearer
+ * header without waiting for a Preferences re-read) and the same token
+ * is returned for callers that want to make a post-sign-in decision.
+ */
+export async function loginWithCredentials(
+  usernameOrEmail: string,
+  password: string,
+): Promise<string> {
+  if (!usernameOrEmail || usernameOrEmail.length === 0) {
+    throw new LoginCredentialsError(
+      "empty_username",
+      "Please enter your email or username.",
+    );
+  }
+  if (!password || password.length === 0) {
+    throw new LoginCredentialsError(
+      "empty_password",
+      "Please enter your password.",
+    );
+  }
+
+  let response: Response;
+  try {
+    response = await fetch(WP_JWT_AUTH_TOKEN_ENDPOINT, {
+      method: "POST",
+      mode: "cors",
+      credentials: "omit",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: usernameOrEmail,
+        password,
+      }),
+    });
+  } catch {
+    throw new LoginCredentialsError(
+      "network_error",
+      "We couldn't reach remnantofpromise.org. Check your connection and try again.",
+    );
+  }
+
+  let body: unknown;
+  try {
+    body = await response.json();
+  } catch {
+    throw new LoginCredentialsError(
+      "bad_response",
+      "Sign-in didn't return a recognizable response. Try again — if this keeps happening, sign in at remnantofpromise.org in your phone's browser first to confirm the account works there.",
+    );
+  }
+
+  const bodyObj = (body && typeof body === "object" ? body : {}) as {
+    token?: unknown;
+    code?: unknown;
+    message?: unknown;
+  };
+
+  if (response.ok && typeof bodyObj.token === "string" && bodyObj.token.length > 0) {
+    await storeNativeToken(bodyObj.token);
+    return bodyObj.token;
+  }
+
+  // jwt-auth failure shapes — examples:
+  //   { code: "[jwt_auth] invalid_username", message: "Unknown user." }
+  //   { code: "[jwt_auth] incorrect_password", message: "..." }
+  //   { code: "[jwt_auth] empty_username" / "[jwt_auth] empty_password" }
+  const rawCode =
+    typeof bodyObj.code === "string" ? bodyObj.code : "unknown_error";
+  const friendly = pickFriendlyError(rawCode, bodyObj.message);
+  throw new LoginCredentialsError(rawCode, friendly);
+}
+
+function pickFriendlyError(rawCode: string, rawMessage: unknown): string {
+  if (
+    rawCode.includes("incorrect_password") ||
+    rawCode.includes("invalid_username") ||
+    rawCode.includes("invalid_email")
+  ) {
+    return "Email or password doesn't match. Try again, or use Forgot password.";
+  }
+  if (rawCode.includes("empty_")) {
+    return "Please enter both email and password.";
+  }
+  if (typeof rawMessage === "string" && rawMessage.length > 0) {
+    // jwt-auth occasionally returns HTML-flavored messages; strip tags
+    // so the form-surface error stays plain text.
+    const stripped = rawMessage.replace(/<[^>]+>/g, "").trim();
+    if (stripped.length > 0) return stripped;
+  }
+  return "Sign-in didn't complete. Try again in a moment.";
+}
+
+/**
  * Parse a bible.remnantofpromise.org/auth-callback URL into either a
  * token (success path) or an error code (failure path). Returns null
  * when the URL doesn't match the auth-callback route — the deep-link
  * router uses this as the discriminator before routing to
  * storeNativeToken().
  *
- * Exported for the S176 sanity test.
+ * Exported for the S176 sanity test. Retained for the unusual case
+ * of a partner pasting an auth-callback URL into a browser; the S177
+ * in-app flow bypasses this code path entirely.
  */
 export type AuthCallbackResult =
   | { kind: "token"; token: string }

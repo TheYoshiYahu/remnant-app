@@ -1,69 +1,37 @@
 /**
- * Session 126 — SignIn intermediate landing page.
+ * Session 126 — SignIn intermediate landing page (web).
+ * S176 — Native shell got Custom Tab + App Link round-trip.
+ * S177 — Native shell switched to in-app credential form. The Custom
+ * Tab approach failed in production for the reasons documented in
+ * lib/native-auth.ts's S177 header comment (LoginWP overriding
+ * redirect_to, Custom Tab cookie-jar separation, unreliable App Link
+ * autoVerify handoff across 302 chains). The V1 native sign-in is a
+ * straight form: email/username + password → POST jwt-auth → store
+ * JWT → navigate to /read. No browser hop, no redirect chain, no
+ * deep-link handoff.
  *
- * The anonymous-checkout funnel was bouncing partners straight from
- * /pricing to WordPress's /goshen/ login page, which has no visible
- * "Create Account" affordance. First-time visitors hit a dead end —
- * sign in or bail.
- *
- * This is a small PWA-side intermediate landing page that surfaces
- * BOTH paths up front: Log In for partners who already have a
- * WordPress account, Create Account for partners who don't.
- *
- * Honors a ?return_to= query param so the partner bounces back to
- * wherever they came from (typically /pricing, after they completed
- * auth). The query value is encoded into the WordPress redirect_to=
- * convention on both buttons.
- *
- * NOT the full S118 /account combined surface. That stays queued for
- * a later wheel — when WP email deliverability is fixed (current ~1hr
- * verification delay would kill the create-account UX), the full
- * combined Log-In / Create-Account form lives at /account in
- * WordPress. This page can either retire then OR stay as a
- * friendlier intro that links to the combined surface. That's a
- * future-wheel call.
+ * The web branch (non-native) is unchanged from S126 — still surfaces
+ * the Log In / Create Account cards that link to the WordPress
+ * /goshen/ flow (web cookies don't have the cross-origin problem the
+ * native shell did).
  *
  * Voice: marketing-surface register per the S118 lock — conventional
  * English (no restored sacred names on the surface itself), inherits
  * the PWA's Lora body register and bordered-chrome button family
  * per §1.
- *
- * No tests this wheel — pure UI route + redirect; no non-trivial
- * pure logic surfaces. The route registers in App.tsx alongside
- * /pricing and /manage.
  */
 
 import { useState } from "react";
+import {
+  loginWithCredentials,
+  LoginCredentialsError,
+} from "../lib/native-auth";
 
 const WP_LOGIN_URL = "https://remnantofpromise.org/goshen/";
 const WP_REGISTER_URL = "https://remnantofpromise.org/goshen/?action=register";
+const WP_FORGOT_PASSWORD_URL =
+  "https://remnantofpromise.org/goshen/?action=lostpassword";
 const DEFAULT_RETURN_TO = "/pricing";
-
-/**
- * S176 — The WordPress endpoint added in rop-sso-bridge v1.1.0. Hit
- * via @capacitor/browser's Browser.open() from the native shell's
- * SignIn route. The endpoint either (a) bounces through wp-login.php
- * if the partner isn't authenticated, then mints + redirects back to
- * /auth-callback?token=<JWT>; or (b) mints the JWT immediately for
- * an already-logged-in partner and redirects in one hop. The Android
- * AndroidManifest intent-filter for /auth-callback (autoVerify)
- * catches the redirect URL and launches the native app with it.
- */
-const WP_NATIVE_AUTH_CALLBACK_URL =
-  "https://remnantofpromise.org/wp-json/rop/v1/native-auth-callback";
-
-/**
- * The WP register flow doesn't yet have a redirect-to-native equivalent.
- * For S176, native Create-Account taps open the WP register form in the
- * system browser; after the partner completes registration WP returns
- * them to the redirect_to= URL — same /wp-json/rop/v1/native-auth-callback
- * endpoint — and the flow continues as if they'd signed in.
- */
-function buildNativeRegisterUrl(): string {
-  const url = new URL(WP_REGISTER_URL);
-  url.searchParams.set("redirect_to", WP_NATIVE_AUTH_CALLBACK_URL);
-  return url.toString();
-}
 
 function parseReturnTo(): string {
   if (typeof window === "undefined") return DEFAULT_RETURN_TO;
@@ -121,25 +89,15 @@ function isNativePlatform(): boolean {
 }
 
 /**
- * S176 — Open the WP native-auth-callback URL in the system browser
- * via @capacitor/browser. The Browser.open promise resolves as soon
- * as the system browser launches (not when the partner finishes
- * signing in) — the rest of the flow happens out-of-band: WP mints
- * the JWT, redirects to bible.remnantofpromise.org/auth-callback, and
- * Android's App Link autoVerify intent-filter intercepts the URL and
- * hands it to the native app via @capacitor/app's appUrlOpen event.
- * The deep-link router (lib/deep-link.ts) parses the URL, stores the
- * token via storeNativeToken, and dispatches the rop:auth-callback
- * event. The /auth-callback route renders the "signing you in..."
- * surface during the brief window the URL loads in the system
- * browser before the App Link handoff fires.
+ * S177 — Open the WP register / forgot-password form in the system
+ * browser. Used only for the rare "I need to create an account" or
+ * "I forgot my password" paths; the in-app form handles the common
+ * Log In case directly without leaving the app.
  *
- * If @capacitor/browser is unavailable for any reason (plugin not
- * installed, runtime error), fall back to window.location.assign so
- * the partner still has a working sign-in path — albeit one that
- * navigates the in-app webview instead of using the system browser.
+ * Falls back to window.location.assign (in-app webview) if
+ * @capacitor/browser is unavailable.
  */
-async function openWpNativeAuth(url: string): Promise<void> {
+async function openSystemBrowser(url: string): Promise<void> {
   try {
     const { Browser } = await import("@capacitor/browser");
     await Browser.open({ url });
@@ -151,127 +109,155 @@ async function openWpNativeAuth(url: string): Promise<void> {
 }
 
 /**
- * S176 — Native-shell SignIn UI. Replaces the S175 "anonymous-only
- * native app" message with real Log-In / Create-Account buttons that
- * open the WordPress flow in the system browser via
- * @capacitor/browser. After the partner authenticates, WP's
- * /wp-json/rop/v1/native-auth-callback redirects to
- * bible.remnantofpromise.org/auth-callback?token=<JWT>, the Android
- * App Link intent-filter intercepts the URL and hands the token to
- * the native app, the deep-link router stores it via Capacitor
- * Preferences, and the app surfaces the partner's signed-in state.
+ * S177 — Native-shell SignIn UI. In-app email/username + password
+ * form that exchanges credentials for a JWT via the jwt-auth plugin's
+ * /wp-json/jwt-auth/v1/token endpoint. Replaces the S176 Custom Tab
+ * round-trip (see lib/native-auth.ts header comment for the
+ * architectural decision and the production failure modes that drove
+ * the switch).
  *
- * `awaitingCallback` is an interim UX flag: between Browser.open
- * resolving and the App Link firing (typically a few seconds — partner
- * logs in, WP processes the redirect, OS hands off), the SignIn page
- * shows a "Finishing sign-in…" surface so the partner doesn't see a
- * stale "Log in" page sitting underneath the Custom Tab. If the App
- * Link never fires (partner cancels, redirect fails), the surface
- * stays on this branch and the partner can tap Cancel to return to
- * the reader anonymously.
+ * Flow:
+ *   1. Partner types email/username + password.
+ *   2. onSubmit calls loginWithCredentials() — POSTs to jwt-auth,
+ *      stores the returned JWT via storeNativeToken (which seeds the
+ *      in-memory cache for the very next API call).
+ *   3. On success: window.location.assign('/read') — full nav so the
+ *      Reader's mount effects fire with the new Bearer header active.
+ *   4. On failure: surface the partner-friendly error message in-form,
+ *      leave the form populated so the partner can correct + retry.
+ *
+ * Create Account + Forgot Password remain browser-hop paths (open the
+ * WP form in the system browser). After creating an account or
+ * resetting a password, the partner returns to this form to sign in.
  */
 function NativeSignInBranch() {
-  const [awaitingCallback, setAwaitingCallback] = useState(false);
+  const [usernameOrEmail, setUsernameOrEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function onLogIn() {
-    setAwaitingCallback(true);
-    void openWpNativeAuth(WP_NATIVE_AUTH_CALLBACK_URL);
-  }
-  function onCreateAccount() {
-    setAwaitingCallback(true);
-    void openWpNativeAuth(buildNativeRegisterUrl());
-  }
-  function onCancel() {
-    setAwaitingCallback(false);
-  }
-
-  if (awaitingCallback) {
-    return (
-      <div className="mx-auto max-w-2xl px-6 py-12">
-        <h1 className="text-xl font-semibold text-[var(--reader-text)]">
-          Finishing sign-in…
-        </h1>
-        <p className="mt-3 text-base text-[var(--reader-muted)]">
-          Complete the sign-in in your browser. We'll bring you back
-          here automatically when you're done.
-        </p>
-        <div className="mt-6 flex gap-3">
-          <button
-            type="button"
-            onClick={onCancel}
-            className="inline-flex items-center justify-center rounded border border-[var(--reader-rule)] px-4 py-2 text-sm font-medium text-[var(--reader-text)] hover:bg-[var(--reader-surface)]"
-          >
-            Cancel
-          </button>
-          <a
-            href="/read"
-            className="inline-flex items-center justify-center rounded border border-[var(--reader-rule)] px-4 py-2 text-sm font-medium text-[var(--reader-text)] hover:bg-[var(--reader-surface)]"
-          >
-            Continue without signing in
-          </a>
-        </div>
-      </div>
-    );
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (submitting) return;
+    setError(null);
+    setSubmitting(true);
+    try {
+      await loginWithCredentials(usernameOrEmail, password);
+      // Full navigation (not history.push) so the Reader's mount
+      // effects fire with the new Bearer header in place — same
+      // pattern AuthCallback uses on the web round-trip path.
+      if (typeof window !== "undefined") {
+        window.location.assign("/read");
+      }
+    } catch (err) {
+      const message =
+        err instanceof LoginCredentialsError
+          ? err.message
+          : "Sign-in didn't complete. Try again.";
+      setError(message);
+      setSubmitting(false);
+    }
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-6 py-8">
-      <header className="mb-8 border-b border-[var(--reader-rule)] pb-4">
+    <div className="mx-auto max-w-md px-6 py-8">
+      <header className="mb-6">
         <h1 className="text-2xl font-semibold tracking-tight text-[var(--reader-text)]">
-          Sign in to your account
+          Sign in
         </h1>
         <p className="mt-2 text-base text-[var(--reader-muted)]">
-          Log in with your existing account, or create one. Sign-in
-          opens in your phone's browser; you'll come back here once
-          it's done.
+          Use your remnantofpromise.org account to load notes,
+          bookmarks, and partner-tier content.
         </p>
-        <nav className="mt-3 text-sm">
-          <a href="/read" className="text-[var(--reader-muted)] hover:underline">
-            ← continue without signing in
-          </a>
-        </nav>
       </header>
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-        <div className="flex flex-col rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
-          <h2 className="text-lg font-semibold text-[var(--reader-text)]">
-            Log in
-          </h2>
-          <p className="mt-2 flex-1 text-base text-[var(--reader-muted)]">
-            Already have an account? Sign in to load your notes,
-            bookmarks, and reading position.
-          </p>
-          <button
-            type="button"
-            onClick={onLogIn}
-            className="mt-4 inline-flex items-center justify-center rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+      <form onSubmit={onSubmit} className="flex flex-col gap-4">
+        <div>
+          <label
+            htmlFor="ropEmailField"
+            className="block text-sm font-medium text-[var(--reader-text)]"
           >
-            Log in
-          </button>
+            Email or username
+          </label>
+          <input
+            id="ropEmailField"
+            type="text"
+            inputMode="email"
+            autoComplete="username"
+            autoCapitalize="none"
+            autoCorrect="off"
+            spellCheck={false}
+            value={usernameOrEmail}
+            onChange={(e) => setUsernameOrEmail(e.target.value)}
+            disabled={submitting}
+            required
+            className="mt-1 block w-full rounded border border-[var(--reader-rule)] bg-[var(--reader-bg)] px-3 py-2 text-base text-[var(--reader-text)] focus:border-[var(--reader-text)] focus:outline-none disabled:opacity-60"
+          />
         </div>
 
-        <div className="flex flex-col rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5">
-          <h2 className="text-lg font-semibold text-[var(--reader-text)]">
-            Create an account
-          </h2>
-          <p className="mt-2 flex-1 text-base text-[var(--reader-muted)]">
-            New here? Create a free account; you can stay on free or
-            pick a partner tier later.
-          </p>
-          <button
-            type="button"
-            onClick={onCreateAccount}
-            className="mt-4 inline-flex items-center justify-center rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+        <div>
+          <label
+            htmlFor="ropPasswordField"
+            className="block text-sm font-medium text-[var(--reader-text)]"
           >
-            Create account
-          </button>
+            Password
+          </label>
+          <input
+            id="ropPasswordField"
+            type="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            disabled={submitting}
+            required
+            className="mt-1 block w-full rounded border border-[var(--reader-rule)] bg-[var(--reader-bg)] px-3 py-2 text-base text-[var(--reader-text)] focus:border-[var(--reader-text)] focus:outline-none disabled:opacity-60"
+          />
         </div>
+
+        {error && (
+          <div
+            role="alert"
+            className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-2 text-sm text-[var(--reader-text)]"
+          >
+            {error}
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={
+            submitting ||
+            usernameOrEmail.length === 0 ||
+            password.length === 0
+          }
+          className="mt-2 inline-flex items-center justify-center rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 text-base font-medium text-[var(--reader-bg)] hover:opacity-90 disabled:opacity-50"
+        >
+          {submitting ? "Signing in…" : "Log in"}
+        </button>
+      </form>
+
+      <div className="mt-6 flex flex-col gap-3 text-sm">
+        <button
+          type="button"
+          onClick={() => void openSystemBrowser(WP_FORGOT_PASSWORD_URL)}
+          className="text-left text-[var(--reader-muted)] hover:underline"
+        >
+          Forgot password?
+        </button>
+        <button
+          type="button"
+          onClick={() => void openSystemBrowser(WP_REGISTER_URL)}
+          className="text-left text-[var(--reader-muted)] hover:underline"
+        >
+          Don't have an account? Create one →
+        </button>
+        <a
+          href="/read"
+          className="text-left text-[var(--reader-muted)] hover:underline"
+        >
+          ← Continue without signing in
+        </a>
       </div>
-
-      <p className="mt-6 text-center text-sm text-[var(--reader-muted)]">
-        Your account works across remnantofpromise.org, the web reader,
-        and this native app.
-      </p>
     </div>
   );
 }
