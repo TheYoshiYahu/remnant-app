@@ -314,6 +314,7 @@ export default function App() {
   // Preferences), so the PWA path is unaffected.
   useEffect(() => {
     void loadStoredNativeToken().then(() => {
+      setNativeAuthLoaded(true);
       void pullAndReconcile();
     });
   }, []);
@@ -532,6 +533,18 @@ function Reader() {
   // partner never sees a "Sign in" flicker before their real CTA paints.
   const [me, setMe] = useState<SubscriptionMe | null>(null);
   const [meChecked, setMeChecked] = useState<boolean>(false);
+  // S178 — gate the me-fetch (and any other auth-dependent on-mount
+  // call) on the native JWT being loaded from Capacitor Preferences
+  // into the in-memory cache. Without this, the me-fetch fires on the
+  // same tick as loadStoredNativeToken on the post-sign-in
+  // window.location.assign("/read") reload, the Bearer header is
+  // missing because the async Preferences read hasn't resolved yet,
+  // me comes back null, and the chrome shows "Sign in" even though
+  // the sign-in actually succeeded. On web, loadStoredNativeToken()
+  // is a no-op that resolves immediately (returns null without
+  // touching anything), so this flag flips on first tick and the PWA
+  // path is unaffected.
+  const [nativeAuthLoaded, setNativeAuthLoaded] = useState<boolean>(false);
   // S168 — §28 Companion-gate flag, depends on `me`. Computed once per
   // render; cheap literal-string compare. Drives the Interlinear pill's
   // live-vs-locked render + the InterlinearWordColumn mount branch.
@@ -1248,7 +1261,13 @@ function Reader() {
   // /v1/subscriptions/me once on mount. Failure is silent — anonymous
   // reader still works as before; the chrome just hides the partner
   // link.
+  //
+  // S178 — gated on nativeAuthLoaded so the fetch doesn't fire before
+  // the in-memory JWT cache is hydrated from Capacitor Preferences.
+  // See the nativeAuthLoaded state declaration above for the full
+  // race-condition writeup.
   useEffect(() => {
+    if (!nativeAuthLoaded) return;
     getSubscriptionMe()
       .then((m) => {
         setMe(m);
@@ -1258,7 +1277,7 @@ function Reader() {
         setMe(null);
         setMeChecked(true);
       });
-  }, []);
+  }, [nativeAuthLoaded]);
 
   // S116 — hydrate saved reading position on mount. Resolution order
   // (handled inside loadInitialPosition): API row → localStorage row
