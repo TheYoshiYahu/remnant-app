@@ -28,7 +28,11 @@ import {
 } from "../lib/native-auth";
 
 const WP_LOGIN_URL = "https://remnantofpromise.org/goshen/";
-const WP_REGISTER_URL = "https://remnantofpromise.org/goshen/?action=register";
+// S188 — append source=bible so the RoP Community Gate (wp-content/mu-plugins/
+// rop-community-gate.php) stamps the new user as community-hidden by default.
+// The user can opt in later via /wp-json/rop/v1/community/opt-in.
+const WP_REGISTER_URL =
+  "https://remnantofpromise.org/goshen/?action=register&source=bible";
 const WP_FORGOT_PASSWORD_URL =
   "https://remnantofpromise.org/goshen/?action=lostpassword";
 const DEFAULT_RETURN_TO = "/pricing";
