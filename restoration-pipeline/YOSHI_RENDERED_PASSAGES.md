@@ -238,6 +238,337 @@ Render every occurrence of *Melchizedek* as **Melek Tsadiq (Melchizedek)** on ev
 
 ---
 
+---
+
+## S182 NT Lord-to-Yahusha Vocative Preserves (2026-05-31)
+
+The S181 §7 audit caught the NT *Lord*-to-Yahuah over-extension: the
+restoration pipeline's `Lord_mixed` rule was blindly converting standalone
+mixed-case `Lord` → `Yahuah (Lord)` across the NT, calling Yahusha
+"Yahuah" wherever the disciples address him by title, where he names
+himself, and in every title compound. 13 of 16 sampled verses
+mis-rendered. The S182 pipeline patch handles the title-compound cases
+(`Lord Jesus`, `Lord Jesus Christ`, `Lord and Christ`, `Master and Lord`,
+`Lord of lords`) by transformation rules and preserved-phrase stashes in
+`restore.py`. The remaining cases — vocatives where a disciple addresses
+Yahusha directly as "Lord," and the reverse construction `Jesus Christ is
+Lord` at Philippians 2:11 — cannot be pattern-matched safely because the
+same surface form addresses both Yahusha and Yahuah-the-Father elsewhere
+in the canon. Those land here as per-verse overrides.
+
+The shared rationale: the NT *kyrios* addressed to Yahusha as title is
+**not** the divine-name signal the OT *adonai/YHWH* construction is. The
+voice skill's Sacred Names Convention §"NT *Lord* referring to Yahusha"
+governs the call: preserve as *Lord* when Yahusha is the named addressee,
+when Yahusha is identified by the title, or when the compound title binds
+to Yahusha. The Spirit-revealed identification at 1 Corinthians 12:3 and
+the Joel 2:32 quotation at Romans 10:13 are framework-defensible
+*Yahuah* renderings (NOT in the override set; pipeline default preserved).
+
+### John 6 — LANDED 2026-05-31 (S182)
+
+6:68 — Then Simon Peter answered him, Lord, to whom shall we go? thou hast the words of eternal life.
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *The Greek kyrios here is Peter's vocative address to Yahusha (Jesus) — not the divine name. The Sacred Names Convention preserves the title-form as the disciples spoke it; the framework's load-bearing identification of Yahusha as the Formed Yahuah is not at stake in vocative-Lord addresses to him.*
+
+**Status:** LANDED.
+
+### John 9 — LANDED 2026-05-31 (S182)
+
+9:38 — And he said, Lord, I believe. And he worshipped him.
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *The man born blind addresses Yahusha (Jesus) as kyrios and worships him. The title is preserved in English; the worship is the framework witness — Yahusha receives worship as the Formed Yahuah, but the vocative itself uses the title, not the name.*
+
+**Status:** LANDED.
+
+### John 11 — LANDED 2026-05-31 (S182)
+
+11:27 — She saith unto him, Yea, Lord: I believe that thou art the Messiah (Christ), the Son of Elohim (God), which should come into the world.
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *Martha's confession to Yahusha (Jesus). The "Yea, Lord" is the vocative-affirmative addressed directly to him; the Messiah / Son of Elohim identification that follows is what the confession names. The Lord title is preserved in English.*
+
+**Status:** LANDED.
+
+### John 14 — LANDED 2026-05-31 (S182)
+
+14:5 — Thomas saith unto him, Lord, we know not whither thou goest; and how can we know the way?
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *Thomas's vocative address to Yahusha (Jesus) in the upper room discourse. The title is preserved as Thomas spoke it.*
+
+**Status:** LANDED.
+
+### Matthew 8 — LANDED 2026-05-31 (S182)
+
+8:25 — And his disciples came to him, and awoke him, saying, Lord, save us: we perish.
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *The disciples address Yahusha (Jesus) in the storm. Synoptic parallel to the broader vocative pattern caught by the S181 §7 audit.*
+
+**Status:** LANDED.
+
+### Matthew 14 — LANDED 2026-05-31 (S182)
+
+14:28 — And Peter answered him and said, Lord, if it be thou, bid me come unto thee on the water.
+
+14:30 — But when he saw the wind boisterous, he was afraid; and beginning to sink, he cried, saying, Lord, save me.
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *Peter's vocatives on the water — addressing Yahusha (Jesus) directly. The title is preserved in both.*
+
+**Status:** LANDED.
+
+### Matthew 17 — LANDED 2026-05-31 (S182)
+
+17:4 — Then answered Peter, and said unto Yahusha (Jesus), Lord, it is good for us to be here: if thou wilt, let us make here three tabernacles; one for thee, and one for Moses, and one for Elias.
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *Peter at the transfiguration, addressing Yahusha (Jesus) directly. The title is preserved.*
+
+**Status:** LANDED.
+
+### Luke 9 — LANDED 2026-05-31 (S182)
+
+9:54 — And when his disciples James and John saw this, they said, Lord, wilt thou that we command fire to come down from heaven, and consume them, even as Elias did?
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *James and John's vocative to Yahusha (Jesus). The title is preserved.*
+
+**Status:** LANDED.
+
+### Luke 10 — LANDED 2026-05-31 (S182)
+
+10:40 — But Martha was cumbered about much serving, and came to him, and said, Lord, dost thou not care that my sister hath left me to serve alone? bid her therefore that she help me.
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *Martha's vocative to Yahusha (Jesus). The title is preserved.*
+
+**Status:** LANDED.
+
+### Luke 11 — LANDED 2026-05-31 (S182)
+
+11:1 — And it came to pass, that, as he was praying in a certain place, when he ceased, one of his disciples said unto him, Lord, teach us to pray, as John also taught his disciples.
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *The disciple's vocative-request to Yahusha (Jesus) introducing the Lord's Prayer. The vocative title is preserved.*
+
+**Status:** LANDED.
+
+### Luke 17 — LANDED 2026-05-31 (S182)
+
+17:5 — And the apostles said unto the Lord, Increase our faith.
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *The narrative references Yahusha (Jesus) by the kyrios title; the apostles address him directly. The title is preserved.*
+
+**Status:** LANDED.
+
+### Luke 22 — LANDED 2026-05-31 (S182)
+
+22:49 — When they which were about him saw what would follow, they said unto him, Lord, shall we smite with the sword?
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *The disciples' vocative to Yahusha (Jesus) at the arrest in Gethsemane. The title is preserved.*
+
+**Status:** LANDED.
+
+### Philippians 2 — LANDED 2026-05-31 (S182)
+
+2:11 — And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father.
+
+**Footnote (LANDED — chapter-level, S182 NT Lord-to-Yahusha):**
+
+> *The reverse construction — "Jesus Christ is Lord" — names the kyrios title as Yahusha's by exaltation. The pipeline's title-compound rules do not catch this construction (no "Lord Jesus" or "Lord Christ" surface form); the per-verse override preserves the title here. The framework reading: Yahusha holds the Lord title as the Formed Yahuah, but the confession the Father vindicates is the Son's title, not a renaming of the Father.*
+
+**Status:** LANDED.
+
+### Mark 7 — LANDED 2026-05-31 (S185 — Q14 vocative-preserve)
+
+7:28 — And she answered and said unto him, Yes, Lord: yet the dogs under the table eat of the children's crumbs.
+
+**Footnote (LANDED — chapter-level, S185 Q14 NT Lord-to-Yahusha vocative):**
+
+> *The Syrophoenician woman's vocative address to Yahusha (Jesus). The kyrios is the title preserved as she spoke it — the individual-mercy case-substance of Red Line #7 (foreign-origin mercy without absorption into the seed-of-promise) is doing its work in the prose; the title preserved is not the divine-name claim.*
+
+**Status:** LANDED.
+
+### Mark 9 — LANDED 2026-05-31 (S185 — Q14 vocative-preserve)
+
+9:24 — And straightway the father of the child cried out, and said with tears, Lord, I believe; help thou mine unbelief.
+
+**Footnote (LANDED — chapter-level, S185 Q14 NT Lord-to-Yahusha vocative):**
+
+> *The father of the demon-possessed boy addressing Yahusha (Jesus) directly. The vocative title is preserved as he spoke it.*
+
+**Status:** LANDED.
+
+### Mark 10 — LANDED 2026-05-31 (S185 — Q14 vocative-preserve)
+
+10:51 — And Yahusha (Jesus) answered and said unto him, What wilt thou that I should do unto thee? The blind man said unto him, Lord, that I might receive my sight.
+
+**Footnote (LANDED — chapter-level, S185 Q14 NT Lord-to-Yahusha vocative):**
+
+> *Blind Bartimaeus's vocative to Yahusha (Jesus) at Yericho (Jericho). The title is preserved as he spoke it. (Synoptic parallel at Luke 18:41 carries the same vocative and the same treatment.)*
+
+**Status:** LANDED.
+
+### Mark 11 — LANDED 2026-05-31 (S185 — Q14 vocative-preserve)
+
+11:3 — And if any man say unto you, Why do ye this? say ye that the Lord hath need of him; and straightway he will send him hither.
+
+**Footnote (LANDED — chapter-level, S185 Q14 NT Lord-to-Yahusha title-by-his-own-instruction):**
+
+> *Yahusha (Jesus) instructing the disciples to say "the Lord hath need of him" of the colt for the triumphal entry. The kyrios is the title applied to Yahusha by his own instruction — preserved as the title, not converted to the divine name. (Synoptic parallel at Luke 19:31, 34 carries the same.)*
+
+**Status:** LANDED.
+
+### Mark 16 — LANDED 2026-05-31 (S185 — Mark longer-ending NT Lord-to-ascended-Yahusha)
+
+16:19 — So then after the Lord had spoken unto them, he was received up into heaven, and sat on the right hand of Elohim (God).
+
+16:20 — And they went forth, and preached every where, the Lord working with them, and confirming the word with signs following. Amen.
+
+**Footnote (LANDED — chapter-level, S185 NT Lord-to-Yahusha titular-by-narration):**
+
+> *The Markan longer ending names the ascended Yahusha (Jesus) by the kyrios title in both the ascension-clause and the post-ascension working-with-them clause. The title is preserved in both as the narrator's reference to him — the framework holds the longer ending as authentic per the S183 Mark longer-ending precedent. The right-hand-of-Elohim language at v.19 carries the Tehillim (Psalm) 110:1 architecture: Yahuah said unto my Lord, sit thou on my right hand — the Formless-Father seating the Formed-Son. The Lord-working-with-them at v.20 is the same Formed-Son's continued action through the apostolic mission. Both preserve the kyrios as the title; neither is the divine-name claim.*
+
+**Status:** LANDED.
+
+### Mark OT-quotation KEEP markers — LANDED 2026-05-31 (S185 — Q15)
+
+Per the framework's NT-Lord governing rule (S182 §7): *NT Lord in OT-quotation context where underlying Hebrew is YHWH → render as Yahuah (Lord).* The following Mark verses are OT-quotations or OT-quotation-density passages where the Greek *kyrios* echoes the LXX rendering of the underlying Hebrew YHWH. The pipeline default (small-caps/mixed-case Lord_mixed → Yahuah substitution) lands the correct rendering automatically; the per-verse explicit-KEEP entries below LOCK these as Yahuah-substitution cases so future audits do not re-evaluate them. No override-text change to the pipeline output is needed; these entries are the registry's confirmation that the pipeline's default rendering is correct and intentional at each verse.
+
+- **Mark 1:3** — OT-quotation of Isaiah 40:3 (Hebrew YHWH). *The voice of one crying in the wilderness, Prepare ye the way of Yahuah (the Lord), make his paths straight.* KEEP as Yahuah substitution.
+
+- **Mark 7:6-7** — OT-quotation of Isaiah 29:13 (Hebrew adonai in some witnesses; framework-defensible YHWH echo). *This people honoureth me with their lips, but their heart is far from me.* The opening citation-formula at v.6 names the prophet directly — *Well hath Esaias prophesied of you hypocrites, as it is written* — establishing OT-quotation register. KEEP as Yahuah substitution where Lord appears.
+
+- **Mark 11:9-10** — OT-quotation of Tehillim (Psalm) 118:25-26 (Hebrew YHWH). *Hosanna; Blessed is he that cometh in the name of Yahuah (the Lord): Blessed be the kingdom of our father David, that cometh in the name of Yahuah (the Lord).* KEEP as Yahuah substitution on both *Lord* occurrences. (Note: *Hosanna* itself is the Hebrew *hoshia-na* — *save now* from Tehillim 118:25 — already a Hebrew preservation in the English text.)
+
+- **Mark 12:11** — OT-quotation of Tehillim (Psalm) 118:23 (Hebrew YHWH). *This was Yahuah's (the Lord's) doing, and it is marvellous in our eyes.* KEEP as Yahuah substitution.
+
+- **Mark 12:29-30** — OT-quotation of the Shema, Devarim (Deuteronomy) 6:4-5 (Hebrew YHWH twice in v.29, YHWH once in v.30). *Hear, O Yashar'el (Israel); Yahuah Eloheinu (the Lord our God) is one Yahuah (Lord): And thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength.* KEEP all three Lord occurrences as Yahuah substitution. (The first construction *Yahuah Eloheinu* fires the existing compound-rule; the standalone *one Lord* and the second-construction *Lord thy God* both run through the pipeline default and resolve correctly.)
+
+- **Mark 12:36** — OT-quotation of Tehillim (Psalm) 110:1 (Hebrew YHWH-said-unto-my-adoni). *Yahuah (the Lord) said to my Lord, Sit thou on my right hand, till I make thine enemies thy footstool.* KEEP the FIRST *Lord* as Yahuah substitution; the SECOND *Lord* preserves as titular (the framework's load-bearing Tehillim 110:1 reading: Yahuah-the-Formless-Father speaking to the Formed-Son named David's-Lord). (The S183 Mark migration anchored this verse in the thread `tehillim-110-1-davids-lord-formed-at-the-right-hand`; this entry is the YOSHI_RENDERED_PASSAGES.md confirmation of the title-distinction in the verse-quote itself.)
+
+- **Mark 14:62** — Echo / paraphrase-quotation of Daniel 7:13 (Aramaic *kbar enash*) AND Tehillim (Psalm) 110:1 (Hebrew YHWH). *I am: and ye shall see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven.* No surface-form *Lord* appears in the verse itself (the *I am* is *egō eimi* — the Ehyeh-self-identification register); the KEEP marker lands on the *right hand of power* / *coming in the clouds* clauses as the Tehillim 110:1 + Daniel 7:13 fused-citation establishing the framework's self-identification reading. (The kaph at Daniel 7:13 is preserved per Red Line #12 in the cross-reference attaches; the verse-text itself reads as titular Son-of-Adam since no kaph-comparative surfaces in the Markan rendering.)
+
+**Status:** LANDED. The Q15 KEEP markers are documentation-only; the pipeline default already handles each correctly. The registry now carries the explicit confirmation so subsequent passes do not re-evaluate these verses for override.
+
+### Luke — LANDED 2026-06-01 (S186 — Q14 vocative-preserve Luke batch)
+
+The S185 Luke cross-reference sweep flagged a dense set of Luke vocative-Lord cases. Each is a vocative addressed to Yahusha (Jesus) by a disciple, a petitioner, or the narrator naming him — the kyrios title preserved as the speaker spoke it, per the framework's NT-Lord governing rule (S182 §7). The exception is Luke 10:21, where the address is to the Father; Yoshi resolution S185-#2 (2026-05-31 — *1-6 yes and push it*) is to preserve *Lord* there as well — the vocative reading wins over the OT-register-echo for the *Lord of heaven and earth* construction.
+
+5:8 — When Shimon (Simon) Kefa (Peter) saw it, he fell down at Yahusha's (Jesus's) knees, saying, Depart from me; for I am a sinful man, O Lord.
+
+5:12 — And it came to pass, when he was in a certain city, behold a man full of leprosy: who seeing Yahusha (Jesus) fell on his face, and besought him, saying, Lord, if thou wilt, thou canst make me clean.
+
+6:46 — And why call ye me, Lord, Lord, and do not the things which I say?
+
+7:6 — Then Yahusha (Jesus) went with them. And when he was now not far from the house, the centurion sent friends to him, saying unto him, Lord, trouble not thyself: for I am not worthy that thou shouldest enter under my roof.
+
+9:54 — And when his disciples Ya'aqov (James) and Yochanan (John) saw this, they said, Lord, wilt thou that we command fire to come down from heaven, and consume them, even as Eliyahu (Elijah) did?
+
+9:57 — And it came to pass, that, as they went in the way, a certain man said unto him, Lord, I will follow thee whithersoever thou goest.
+
+9:59 — And he said unto another, Follow me. But he said, Lord, suffer me first to go and bury my father.
+
+9:61 — And another also said, Lord, I will follow thee; but let me first go bid them farewell, which are at home at my house.
+
+10:1 — After these things the Lord appointed other seventy also, and sent them two and two before his face into every city and place, whither he himself would come.
+
+10:17 — And the seventy returned again with joy, saying, Lord, even the devils are subject unto us through thy name.
+
+10:21 — In that hour Yahusha (Jesus) rejoiced in spirit, and said, I thank thee, O Father, Lord of heaven and earth, that thou hast hid these things from the wise and prudent, and hast revealed them unto babes: even so, Father; for so it seemed good in thy sight.
+
+10:40 — But Martha was cumbered about much serving, and came to him, and said, Lord, dost thou not care that my sister hath left me to serve alone? bid her therefore that she help me.
+
+11:1 — And it came to pass, that, as he was praying in a certain place, when he ceased, one of his disciples said unto him, Lord, teach us to pray, as Yochanan (John) also taught his disciples.
+
+12:41 — Then Kefa (Peter) said unto him, Lord, speakest thou this parable unto us, or even to all?
+
+13:8 — And he answering said unto him, Lord, let it alone this year also, till I shall dig about it, and dung it.
+
+13:23 — Then said one unto him, Lord, are there few that be saved? And he said unto them,
+
+13:25 — When once the master of the house is risen up, and hath shut to the door, and ye begin to stand without, and to knock at the door, saying, Lord, Lord, open unto us; and he shall answer and say unto you, I know you not whence ye are.
+
+17:5 — And the apostles said unto the Lord, Increase our faith.
+
+17:37 — And they answered and said unto him, Where, Lord? And he said unto them, Wheresoever the body is, thither will the eagles be gathered together.
+
+18:6 — And the Lord said, Hear what the unjust judge saith.
+
+18:41 — Saying, What wilt thou that I shall do unto thee? And he said, Lord, that I may receive my sight.
+
+19:8 — And Zakkay (Zacchaeus) stood, and said unto the Lord; Behold, Lord, the half of my goods I give to the poor; and if I have taken any thing from any man by false accusation, I restore him fourfold.
+
+19:25 — (And they said unto him, Lord, he hath ten pounds.)
+
+19:31 — And if any man ask you, Why do ye loose him? thus shall ye say unto him, Because the Lord hath need of him.
+
+19:34 — And they said, The Lord hath need of him.
+
+22:33 — And he said unto him, Lord, I am ready to go with thee, both into prison, and to death.
+
+22:38 — And they said, Lord, behold, here are two swords. And he said unto them, It is enough.
+
+22:49 — When they which were about him saw what would follow, they said unto him, Lord, shall we smite with the sword?
+
+23:42 — And he said unto Yahusha (Jesus), Lord, remember me when thou comest into thy kingdom.
+
+24:34 — Saying, the Lord is risen indeed, and hath appeared to Shimon (Simon).
+
+**Footnote (LANDED — chapter-level, S186 Q14 NT Lord-to-Yahusha vocative — Luke batch):**
+
+> *Each of the above is a vocative address to Yahusha (Jesus) — by disciple, petitioner, leper, centurion, blind man, prodigal-resolved Zakkay (Zacchaeus), or apostle — or a narrator-naming of him by the kyrios title (10:1, 17:5, 18:6, 19:8, 19:31, 19:34, 24:34). The title is preserved as the speakers spoke it and as the narrator named him; the kyrios is the title Yahusha holds by exaltation (Philippians 2:9-11; Acts 2:36), not the divine name. Luke 10:21 is the one address to the Father in this batch: the construction *Father, Lord of heaven and earth* is a Father-vocative; the OT-register-echo of the *Lord of heaven and earth* clause would otherwise route to Yahuah substitution under the OT-quotation rule, but Yoshi resolution S185-#2 preserves *Lord* — the vocative reading (the Son is addressing his Father by both relational name and title in one breath) wins over the OT-register-echo. Luke 24:34 is the load-bearing post-resurrection narrative-naming — *the Lord is risen indeed* — by the gathered disciples on the road from Emmaus. The resurrection IS the moment of Yahusha's vindication into the kyrios title (Philippians 2:9-11; Acts 2:36 — *Yahuah (God) hath made that same Yahusha (Jesus), whom ye have crucified, both Lord and Messiah (Christ)*). The disciples' confession at the moment of vindication-into-the-title preserves the title as the title; reading it as a Yahuah-substitution by LXX-echo collapses the title-distinction the apostolic texts hold and conflates this verse with the 1 Corinthians 12:3 carve-out (the one Spirit-revealed *Yahusha (Jesus) is Yahuah (Lord)* equation), which is named in the framework as the singular such case. The Formed-Yahuah Christological identification holds; the title preservation honors it by letting the title do what the title does — name the exalted Son by the title the Father vindicated him into.*
+
+**Status:** LANDED.
+
+### Luke OT-quotation KEEP markers — LANDED 2026-06-01 (S187 — Q15 Luke)
+
+Per the framework's NT-Lord governing rule (S182 §7): *NT Lord in OT-quotation context where underlying Hebrew is YHWH → render as Yahuah (Lord).* The following Luke verses are OT-quotations or OT-quotation-density passages where the Greek *kyrios* echoes the LXX rendering of the underlying Hebrew YHWH. Same registry-confirmation pattern as Mark Q15: no override-text change to the pipeline output is required; these entries LOCK each verse as a Yahuah-substitution case so future audits do not re-evaluate the rendering.
+
+- **Luke 3:4** — OT-quotation of Yeshayahu (Isaiah) 40:3 (Hebrew YHWH). *The voice of one crying in the wilderness, Prepare ye the way of Yahuah (the Lord), make his paths straight.* Synoptic parallel to Mark 1:3 / Matthew 3:3. KEEP as Yahuah substitution.
+
+- **Luke 4:18-19** — OT-quotation of Yeshayahu (Isaiah) 61:1-2 read by Yahusha (Jesus) from the Nazareth scroll. *The Spirit of Yahuah (the Lord) is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised, To preach the acceptable year of Yahuah (the Lord).* KEEP both *Lord* occurrences as Yahuah substitution — the Hebrew of Yeshayahu 61:1 is *the Spirit of Adonai YHWH* (the construct construction the framework reads as Adonai Yahuah where the canon parse preserves the `<nd>` typography; here the underlying YHWH carries the rendering); 61:2's *the acceptable year of YHWH* is unambiguous YHWH. The Nazareth-scroll citation is the King's own programmatic statement; the title preserved as Yahuah honors the prophet's own naming.
+
+- **Luke 7:27** — OT-quotation of Mal'aki (Malachi) 3:1 (Hebrew YHWH). *Behold, I send my messenger before thy face, which shall prepare thy way before thee.* No surface-form *Lord* in the Lukan rendering of the quotation itself, but the KEEP marker lands on the citation-formula introducing the quotation. The Mal'aki Hebrew names the messenger as preparing the way before Yahuah's coming to his temple; Luke applies the verse to Yochanan (John) preparing Yahusha's way — the framework reads this as the Mal'aki YHWH-substance landing on the Formed-Son's first-coming. Registry confirmation.
+
+- **Luke 10:27** — OT-quotation of Devarim (Deuteronomy) 6:5 + Vayikra (Leviticus) 19:18 (Hebrew YHWH in 6:5). *Thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart, and with all thy soul, and with all thy strength, and with all thy mind; and thy neighbour as thyself.* KEEP — the *the Lord thy God* construction fires the existing compound-rule (`Yahuah Elohayka`) automatically; this entry confirms the rendering and marks the Shema-greatest-commandment as framework-anchored at this verse.
+
+- **Luke 13:35** — OT-quotation of Tehillim (Psalm) 118:26 (Hebrew YHWH). *Blessed is he that cometh in the name of Yahuah (the Lord).* The first occurrence of the Tehillim 118:26 citation in Luke (paired with the lament-over-Yerushalayim NEW 26 thread anchor). KEEP as Yahuah substitution. The framework reading: the disciples and the multitude at the triumphal entry, and Yerushalayim itself in the eschatological-restoration register, name the Formed-Son's coming in the name of the Father — the title-distinction the Tehillim 110:1 framework holds (Yahuah-the-Formless speaking to David's-Lord-the-Formed) carries through the citation.
+
+- **Luke 19:38** — OT-quotation of Tehillim (Psalm) 118:26 (Hebrew YHWH). *Blessed be the King that cometh in the name of Yahuah (the Lord): peace in heaven, and glory in the highest.* Yoshi resolution S185-#4 (2026-05-31 — *1-6 yes and push it*) explicit: render as *Yahuah (the Lord)* per the S182 NT-Lord-in-OT-quotation rule. The Lukan triumphal-entry citation is the disciples' direct voicing of the Tehillim 118:26 Hebrew YHWH; the rendering honors the OT-quotation register. KEEP as Yahuah substitution.
+
+- **Luke 20:37** — OT-quotation of Shemot (Exodus) 3:6 (Hebrew YHWH-context, *Elohim of Avraham*). *Now that the dead are raised, even Mosheh (Moses) shewed at the bush, when he calleth Yahuah (the Lord) the God of Avraham (Abraham), and the God of Yitschaq (Isaac), and the God of Ya'aqov (Jacob).* The Mosheh-at-the-bush self-identification is the YHWH naming-himself episode (Shemot 3:13-15 — *Yahuah Elohei of your fathers*); the Lukan rendering names *Lord* in the citation-frame. KEEP as Yahuah substitution.
+
+- **Luke 20:42-43** — OT-quotation of Tehillim (Psalm) 110:1 (Hebrew YHWH-said-unto-my-adoni). *And David himself saith in the book of Psalms, Yahuah (the Lord) said unto my Lord, Sit thou on my right hand, Till I make thine enemies thy footstool.* KEEP the FIRST *Lord* as Yahuah substitution; the SECOND *Lord* preserves as titular (the framework's load-bearing Tehillim 110:1 reading: Yahuah-the-Formless-Father speaking to the Formed-Son named David's-Lord). Synoptic parallel to Mark 12:36 / Matthew 22:43-44 — same title-distinction in the verse-quote itself.
+
+- **Luke 22:69** — Echo / paraphrase-quotation of Tehillim (Psalm) 110:1 (Hebrew YHWH) at the Sanhedrin trial. *Hereafter shall the Son of Adam sit on the right hand of the power of Elohim (God).* No surface-form *Lord* appears in the verse-text itself; the KEEP marker lands on the *right hand of the power* clause as the Tehillim 110:1 self-identification at the King's own mouth (the S185 verifier-anchored framework thread `sanhedrin-trial-tehillim-110-and-daniel-7-self-identification-at-the-kings-own-mouth`). Registry confirmation: the framework reads the verse as Yahusha invoking the Tehillim 110:1 architecture against the high priest; the verse-text reads as titular Son-of-Adam per Red Line #12.
+
+**Status:** LANDED. The Q15 Luke KEEP markers are documentation-only; the pipeline default already handles the rendering at each verse. The registry now carries the explicit confirmation so subsequent passes do not re-evaluate these verses for override.
+
+### Further synoptic vocatives — open work
+
+The synoptic vocative density is broader than the entries above: Matthew 16:22, 18:21, 26:22; and others. The S182 patch lands the representative tight set named in §7 plus the named John verses and Philippians 2:11; the S185 patch adds the Mark Q14 vocative-preserves (7:28, 9:24, 10:51, 11:3), the Mark longer-ending NT-Lord overrides (16:19, 16:20), and the Mark Q15 OT-quotation KEEP confirmations (1:3, 7:6-7, 11:9-10, 12:11, 12:29-30, 12:36, 14:62). The S186 patch adds the full Luke vocative-preserve batch (29 verses, Luke 5-24). The broader Matthew sweep is queued for a follow-on session that walks the full vocative-Lord map verse by verse with Yoshi's per-case approval (some cases — e.g., the prayer-to-the-Father vocatives — keep Yahuah; some — vocatives to Yahusha — preserve Lord; the case-by-case work is non-mechanical).
+
+---
+
 ## Pipeline Integration
 
 The deterministic restoration pipeline (Phase 3) loads this registry at runtime and, when processing a verse that matches a registered reference, substitutes the Yoshi rendering for the modernize-and-restore output, attaches the footnote as inline metadata on the verse, and marks the verse's `source_type` field as `"yoshi-rendering"` instead of `"restored-names-kjv"`.
