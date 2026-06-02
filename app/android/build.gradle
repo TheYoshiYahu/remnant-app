@@ -24,6 +24,25 @@ allprojects {
     }
 }
 
+// S188 — Force every Java/Kotlin compile task across all subprojects (including
+// the Capacitor library modules pulled from node_modules) to use the Foojay-
+// resolved JDK 21 toolchain. Without this binding, AGP picks up whatever JDK
+// launched Gradle (typically older), then trips on
+// `error: invalid source release: 21` when compiling capacitor-android, which
+// declares sourceCompatibility VERSION_21.
+subprojects {
+    tasks.withType(JavaCompile).configureEach {
+        javaCompiler = javaToolchains.compilerFor {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+    }
+    plugins.withId("org.jetbrains.kotlin.android") {
+        kotlin {
+            jvmToolchain(21)
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

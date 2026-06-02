@@ -1,3 +1,10 @@
+// S188 — Foojay toolchain resolver lets Gradle auto-download the required
+// JDK (currently 21) the first time you build. Without it the build fails
+// on machines that don't already have JDK 21 installed.
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
+}
+
 include ':app'
 include ':capacitor-cordova-android-plugins'
 project(':capacitor-cordova-android-plugins').projectDir = new File('./capacitor-cordova-android-plugins/')
