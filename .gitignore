@@ -43,6 +43,14 @@ _signing/
 *.keystore
 *.jks
 
+# S191 — APKs now ship via GitHub Releases, not git. Repo stays under
+# GitHub's 100 MB file limit; bandwidth/storage quotas don't apply to
+# Releases assets. Landing.tsx download link points at
+# /releases/latest/download/remnant-bible.apk which auto-resolves to
+# the most recently published release.
+*.apk
+*.aab
+
 # OS / editor noise
 .DS_Store
 Thumbs.db

@@ -181,12 +181,11 @@ function NativeSignInBranch() {
             htmlFor="ropEmailField"
             className="block text-sm font-medium text-[var(--reader-text)]"
           >
-            Email or username
+            Username (or email)
           </label>
           <input
             id="ropEmailField"
             type="text"
-            inputMode="email"
             autoComplete="username"
             autoCapitalize="none"
             autoCorrect="off"

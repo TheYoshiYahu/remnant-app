@@ -246,7 +246,7 @@ function AndroidLandingAffordance() {
         of the browser.
       </p>
       <a
-        href="/download/remnant-bible-v1.0.0.apk"
+        href="https://github.com/TheYoshiYahu/remnant-app/releases/latest/download/remnant-bible.apk"
         className="inline-flex items-center rounded border px-4 py-1.5 font-sans text-sm font-semibold text-[var(--reader-bg)] hover:opacity-90"
         style={{ backgroundColor: ARGAMAN, borderColor: GOLD }}
       >

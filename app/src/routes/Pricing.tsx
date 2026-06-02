@@ -7,6 +7,7 @@ import {
   createCheckoutSession,
   getSubscriptionMe,
 } from "../lib/api";
+import { loadStoredNativeToken } from "../lib/native-auth";
 
 /**
  * Session 38 — Pricing surface. Tier-name overhaul S140 — display names
@@ -118,15 +119,37 @@ export default function Pricing() {
   const [me, setMe] = useState<SubscriptionMe | null>(null);
   const [meError, setMeError] = useState<string | null>(null);
 
+  // S191 — mirror App.tsx's S178 fix. The Capacitor shell stores its
+  // JWT in Capacitor Preferences; the in-memory cache that api.ts reads
+  // synchronously is reset to null on every full page navigation
+  // (window.location.assign), and the chrome's "Become a partner" link
+  // IS a full nav. Without awaiting loadStoredNativeToken() first, this
+  // me-fetch races the async Preferences read, fires without a Bearer
+  // header, comes back 401, sets meError, flips isSignedIn=false, and
+  // the tier-click handler below bounces the partner back to /sign-in
+  // even though they signed in moments earlier. On web,
+  // loadStoredNativeToken() is a no-op (returns null without touching
+  // Preferences), so the PWA cookie path is unaffected.
   useEffect(() => {
-    getSubscriptionMe()
-      .then(setMe)
-      .catch((e) => {
-        // 401 means no JWT cookie present. Treat as anonymous + record
-        // so the page can route the partner to WordPress sign-in
-        // before checkout.
-        setMeError(String(e));
-      });
+    let cancelled = false;
+    void loadStoredNativeToken().then(() => {
+      if (cancelled) return;
+      getSubscriptionMe()
+        .then((m) => {
+          if (cancelled) return;
+          setMe(m);
+        })
+        .catch((e) => {
+          if (cancelled) return;
+          // 401 means neither the native cache nor the cookie has a
+          // token. Treat as anonymous + record so the tier-click
+          // handler routes to /sign-in before checkout.
+          setMeError(String(e));
+        });
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const isSignedIn = me !== null && meError === null;
