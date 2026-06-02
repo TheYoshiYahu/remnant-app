@@ -276,6 +276,15 @@ export default function App() {
     // disorienting (and likely flash for a beat before the route
     // redirects to /read on success).
     if (window.location.pathname.startsWith("/auth-callback")) return false;
+    // S188 — suppress on the Landing page (`/`). The sacred-name
+    // question is a reader-time decision (it controls the mask applied
+    // to verse text); ambushing a partner with it on the marketing
+    // landing surface, BEFORE they've chosen to enter the reader, is
+    // disorienting and theologically front-loaded. The Landing CTA is
+    // a plain `<a href="/read">` (full-page navigation), so by the
+    // time the partner is on `/read`, App remounts and this initializer
+    // re-runs with pathname=/read — the modal surfaces there.
+    if (window.location.pathname === "/") return false;
     return !hasStoredSacredNamePreference() || !hasSeenSigninAsk();
   });
   // initialStep captured once at mount; the modal manages step state
