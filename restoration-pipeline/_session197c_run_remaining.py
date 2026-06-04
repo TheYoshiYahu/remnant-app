@@ -90,13 +90,21 @@ async def main():
     await run_split(conn, "session162_lexicon_callouts_v1.sql")
 
     # ---- Cross-reference threads (idempotent; atomic per file) ----
+    # These files were authored for psql and begin/end with `\echo` psql
+    # meta-commands, which the SQL engine rejects ("syntax error at or near \").
+    # Strip any backslash meta-command line, then run the rest whole-file so the
+    # CREATE TEMP VIEW stays in scope for the INSERTs that reference it.
     for f in [
         "session183_mark_xref_members_and_threads.sql",
         "session184_right_hand_face_east_xref_threads.sql",
         "session194_john_2_7_9_16_xref_threads.sql",
     ]:
         try:
-            await conn.execute(open(BASE + f).read())
+            raw = open(BASE + f).read()
+            sql = "\n".join(
+                ln for ln in raw.splitlines() if not ln.lstrip().startswith("\\")
+            )
+            await conn.execute(sql)
             print(f"=== {f}: OK")
         except Exception as e:
             print(f"!! {f} FAILED: {type(e).__name__}: {str(e)[:200]}")
@@ -122,4 +130,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(main())
+    asyncio.run(main())
