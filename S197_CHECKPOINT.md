@@ -107,6 +107,23 @@ New models: `VincentEntry`/`VincentVerseResponse`, `NavesTopicSummary`/
 - **Out of scope (unchanged):** notes/bookmarks (Session C), chronological
   (Session D), the xref sweep.
 
+## DEPLOYED TO PRODUCTION (2026-06-04)
+- **Code:** S192–S197 committed + pushed to `origin/main` from the Mac (the
+  sandbox couldn't: stale `.git/index.lock` undeletable on the mount + no push
+  creds). Render auto-deployed API + PWA. Live health confirms
+  `schema_version: 1.0.0-phase-sessionB-session196`, `db_reachable: true`.
+- **DB migrations:** applied via the Render **Web Shell** — but the API image
+  ships **no `psql` client**, so they were run through Python + `asyncpg`
+  (the app's own driver) instead. The 18 MB TSK file killed the connection when
+  run as one operation; the fix was a chunked runner that strips BEGIN/COMMIT +
+  DO-verify blocks and executes each statement separately (validated locally
+  against pgserver first). Final prod counts: vincents 4501, naves 5319, tsk
+  343869, maps 1335, nikkudot 19909; vincents annotation lemma-keys remaining
+  = 0. **For future sessions: the prod migration path is Python/asyncpg in the
+  Web Shell, NOT psql.**
+- **Flag:** `LEXICON_ENABLED=true` is live; tool endpoints respond Companion-
+  gated (403 anon), not disabled (404).
+
 ## Decisions settled (transcribed from conversation)
 - **`lexicon_enabled` → ON (approved S197).** `LEXICON_ENABLED: "true"` added to
   `hosting/render.yaml` as a committed feature flag (not a secret; same plain-

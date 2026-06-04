@@ -99,6 +99,14 @@ COPY source-texts/kjv/ /source-texts/kjv/
 # Shell after deploy per the S117 / S120 pattern.
 COPY restoration-pipeline/_session124_*.py /restoration-pipeline/
 
+# Session 197 — study-tooling migration runners. _session197c is the
+# self-probing, idempotent runner that loads the lexicon (BDB/LSJ) + the
+# S183/184/194 cross-reference threads via a string/dollar-quote-aware chunker
+# (the 32 MB session163 load drops the connection if run whole). Shipped in the
+# image so it runs from the Render Web Shell with one short command:
+#   python3 /restoration-pipeline/_session197c_run_remaining.py
+COPY restoration-pipeline/_session197c_*.py /restoration-pipeline/
+
 # Liveness / DB-reachability check. Render (and any other host) can hit this
 # directly to determine whether to route traffic; matches the route registered
 # in main.py.
