@@ -3775,23 +3775,32 @@ function buildMenuSections(
       makeTierStub("treasury", "Treasury (TSK)", "library", partnerTier)
     );
   }
-  // S197 Maps surface PULLED (2026-06-04). Two failures: (1) the V1 render was a
-  // bare point-cloud on a blank canvas, not a legible map; (2) far worse, the
-  // dispersion/gathering overlay confined the scattering to the Assyrian/Babylonian
-  // ANE exiles (Samaria→Nineveh, Jerusalem→Babylon) and the gathering to a return
-  // to the old land — erasing the WORLDWIDE dispersion the prophets name (Deut
-  // 28:64 "from the one end of the earth even unto the other"; Isaiah 11:11-12 the
-  // four corners + islands of the sea; Jeremiah 31:8-10 the coasts/ends of the
-  // earth; Amos 9:9 sifted among ALL nations) and the gathering of the scattered
-  // seed from every nation. That false confinement writes the living remnant
-  // (Texas included) out of the promise — the exact lie the framework exists to
-  // dismantle. Held as "coming soon" until rebuilt on a real public-domain WORLD
-  // map (Natural Earth, PD) showing the global scatter-to-all-nations and the
-  // gather-from-the-ends-of-the-earth. Tables (maps_places) stay loaded; only the
-  // surface is withdrawn.
-  referenceTools.push(
-    makeTierStub("maps", "Maps (dispersion & gathering)", "library", partnerTier)
-  );
+  // S199 Maps surface REBUILT and back live for Companion+. The S197 version was
+  // pulled (2026-06-04) for two failures: (1) a bare point-cloud on a blank canvas,
+  // not a legible map; (2) far worse, the overlay confined the scattering to the
+  // Assyrian/Babylonian ANE exiles and the gathering to a return to the old land —
+  // erasing the WORLDWIDE dispersion the prophets name (Deut 28:64; Amos 9:9 sifted
+  // among ALL nations; Isaiah 11:11-12 the four corners + islands of the sea;
+  // Jeremiah 31:8-10 the coasts/ends of the earth) and the gathering of the
+  // scattered seed from every nation — the living remnant (Texas included) written
+  // out of the promise, the exact lie the framework exists to dismantle. The S199
+  // rebuild draws on a real public-domain WORLD map (Natural Earth, PD; our own
+  // SVG) with the scattering fanning out to every continent and the gathering home
+  // from the four corners + far isles, visibly reaching the Americas — and the
+  // maps/dispersion-overlay framework band rewritten to the worldwide reading
+  // (session199_maps_overlay_rewrite.sql, prophets quoted in full). Maps is
+  // verse-independent (standalone), so no `verse` gate — Companion tier + handler.
+  if (isCompanionTier && handlers.onMaps) {
+    referenceTools.push({
+      key: "maps",
+      label: "Maps (dispersion & gathering)",
+      onSelect: () => handlers.onMaps!(),
+    });
+  } else {
+    referenceTools.push(
+      makeTierStub("maps", "Maps (dispersion & gathering)", "library", partnerTier)
+    );
+  }
 
   // ── Share (verse scope) ──────────────────────────────────────────
   // S127 W7 — Copy verse promoted from text-only clipboard to canvas-

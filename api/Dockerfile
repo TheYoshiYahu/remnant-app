@@ -107,6 +107,13 @@ COPY restoration-pipeline/_session124_*.py /restoration-pipeline/
 #   python3 /restoration-pipeline/_session197c_run_remaining.py
 COPY restoration-pipeline/_session197c_*.py /restoration-pipeline/
 
+# Session 199 — Maps overlay rewrite applier. Applies the worldwide
+# scattering/gathering rewrite of the maps/dispersion-overlay framework band
+# (session199_maps_overlay_rewrite.sql ships via the data-schema/ COPY above).
+# Idempotent (INSERT ... ON CONFLICT DO UPDATE). Run from the Render Web Shell:
+#   python3 /restoration-pipeline/_session199_apply_overlay.py
+COPY restoration-pipeline/_session199_*.py /restoration-pipeline/
+
 # Liveness / DB-reachability check. Render (and any other host) can hit this
 # directly to determine whether to route traffic; matches the route registered
 # in main.py.
