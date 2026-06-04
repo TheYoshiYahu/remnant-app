@@ -124,6 +124,35 @@ New models: `VincentEntry`/`VincentVerseResponse`, `NavesTopicSummary`/
 - **Flag:** `LEXICON_ENABLED=true` is live; tool endpoints respond Companion-
   gated (403 anon), not disabled (404).
 
+## FULL CATCH-UP COMPLETE (2026-06-04) — lexicon + xref threads also live
+Beyond the S197 tooling tables, the remaining uncommitted prior-session work was
+also caught up to prod this day:
+- **Lexicon (BDB/LSJ):** S162 tables (already present — skip-create), S163 entries
+  (32 MB, chunked), S162 callouts. Prod now: `lexicon_entries = 14196`,
+  `lexicon_callouts = 34`.
+- **Cross-reference threads:** S183 / S184 / S194 applied. Threads 255 → 267,
+  members 1691 → 1788.
+- Run via an **in-image runner** `restoration-pipeline/_session197c_run_remaining.py`
+  (one short typed command in the Web Shell) — because **pasting into the Render
+  Web Shell silently fails in Safari**. The runner self-probes (skip table-create
+  if present), chunks the 32 MB lexicon file with a string/dollar-quote-aware
+  splitter, and strips `\echo` psql meta-commands from the xref files before
+  executing (those files were authored for psql; `\echo` → `syntax error at or
+  near "\"` under raw asyncpg).
+
+### Operational lessons locked (so we don't refight them)
+1. **Prod migrations = Python+asyncpg in the Web Shell, not psql** (no psql in the
+   image). Big files must be chunked (whole-file `execute` drops the connection).
+2. **Shipping a script in the image takes FOUR artifacts in lockstep:** the file,
+   the Dockerfile `COPY`, AND a `.dockerignore` negate line
+   (`!restoration-pipeline/<file>.py`) — `restoration-pipeline/*` is excluded by
+   default. Missing the `.dockerignore` line = "No such file or directory" at
+   runtime even after deploy.
+3. **psql `\echo`/meta-commands** in older migration files must be stripped before
+   running through a non-psql client.
+4. **Render Web Shell paste fails in Safari** — route around it with an in-image
+   runner invoked by a short typed command.
+
 ## Decisions settled (transcribed from conversation)
 - **`lexicon_enabled` → ON (approved S197).** `LEXICON_ENABLED: "true"` added to
   `hosting/render.yaml` as a committed feature flag (not a secret; same plain-
