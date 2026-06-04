@@ -322,6 +322,56 @@ RULES: list[Rule] = [
         replacement=r"Ruach HaKodesh (Holy Spirit)",
     ),
 
+    # --- NT TITLE COMPOUNDS FOR YAHUSHA (S182, 2026-05-31) ---
+    # Surfaced at the close of S181 by the NT Lord-to-Yahuah audit (§7 of
+    # the S181 checkpoint). These rules fire BEFORE jesus_christ /
+    # christ_jesus / jesus_alone so they consume the full "Lord Jesus" /
+    # "Lord Jesus Christ" phrase as a unit and produce a restored form whose
+    # Hebrew head (added to _HEBREW_HEADS below) protects the leading
+    # "Lord" from the later Lord_mixed rule.
+    #
+    # Framework note: the apostolic title-compound "Lord Jesus" (kyrios
+    # Iēsous) names Yahusha as the Lord/Master. The restored form keeps
+    # "Lord" in English as the title-equivalent — there is no single
+    # tetragrammaton-distinct Hebrew title that carries kyrios-of-Yahusha
+    # without bleeding into the Father (Yahuah). The mixed Hebrew/English
+    # head "Lord Yahusha" / "Lord Yahusha HaMashiach" preserves the title
+    # weight on the page while keeping Yahuah-the-Father grammatically
+    # distinct.
+
+    # "Lord Jesus Christ" -> "Lord Yahusha HaMashiach (Lord Jesus Christ)"
+    # Must fire before lord_jesus_compound (longer wins) and before
+    # jesus_christ (which would otherwise consume the inner "Jesus Christ"
+    # and leave the leading "Lord" exposed to Lord_mixed).
+    Rule(
+        name="lord_jesus_christ_compound",
+        pattern=re.compile(rf"{LB}Lord\s+Jesus\s+Christ{RB}"),
+        replacement=r"Lord Yahusha HaMashiach (Lord Jesus Christ)",
+    ),
+    # "Lord Jesus" -> "Lord Yahusha (Lord Jesus)"
+    # Must fire after lord_jesus_christ_compound and before jesus_alone.
+    Rule(
+        name="lord_jesus_compound",
+        pattern=re.compile(rf"{LB}Lord\s+Jesus{RB}"),
+        replacement=r"Lord Yahusha (Lord Jesus)",
+    ),
+    # "Lord and Christ" — Acts 2:36 title-pair:
+    #   "God hath made that same Jesus, whom ye have crucified,
+    #    both Lord and Christ"
+    # Yahusha is named by BOTH titles after his exaltation. Without this
+    # rule, Lord_mixed converts the leading "Lord" to "Yahuah (Lord)" and
+    # christ_alone converts "Christ" to "Messiah (Christ)" — producing the
+    # mis-rendered "Yahuah (Lord) and Messiah (Christ)" that calls Yahusha
+    # Yahuah while leaving the Messiah title intact. The fix renders the
+    # whole pair as a single Hebrew-head unit so the leading "Lord" is
+    # stash-protected; the head is "Lord and Messiah" so the inner
+    # "Christ" restoration is preserved as the parenthetical source-echo.
+    Rule(
+        name="lord_and_christ_acts_2_36",
+        pattern=re.compile(rf"{LB}Lord\s+and\s+Christ{RB}"),
+        replacement=r"Lord and Messiah (Lord and Christ)",
+    ),
+
     # --- JESUS CHRIST / CHRIST JESUS ---
     Rule(
         name="jesus_christ",
@@ -776,6 +826,12 @@ ARTICLE_FIXUPS: list[Rule] = [
 # by the god_cap rule because El Shaddai was not in this list).
 _HEBREW_HEADS = [
     # Multi-word heads first (longest match wins in the regex below).
+    # NT title-compound heads (S182, 2026-05-31) — must precede the bare
+    # "Yahusha HaMashiach" / "Yahusha" entries so the stash matches the
+    # longest form first and protects the leading "Lord" from Lord_mixed.
+    "Lord Yahusha HaMashiach",
+    "Lord Yahusha",
+    "Lord and Messiah",
     "Yahusha HaMashiach",
     "HaMashiach Yahusha",
     "Ehyeh asher Ehyeh",
@@ -925,6 +981,47 @@ PRESERVED_PHRASES: list[re.Pattern] = [
     # LIE, not to restore "Jew" as a covenant-people name in this slot).
     # The phrase is a framework-quotation; preserve verbatim.
     re.compile(r"\bJew\s+and\s+Gentile\s+binary\b"),
+
+    # ----- NT YAHUSHA-SELF-NAMING & TITLE PRESERVES (S182, 2026-05-31) -----
+    # Surfaced at the close of S181 by the 16-verse NT *Lord*-to-Yahuah audit
+    # (S181 checkpoint §7). The Lord_mixed rule was blindly converting
+    # standalone mixed-case "Lord" → "Yahuah (Lord)" across the NT, calling
+    # Yahusha "Yahuah" wherever the disciples address him as Lord, wherever
+    # Yahusha names himself with the Lord title, and in every title compound
+    # where "Lord" binds to "Jesus" / "Christ" / "of lords". 13 of 16
+    # sampled NT verses mis-rendered. The widened S182 audit (run via
+    # outputs/s182/widen_nt_lord_audit.py) confirmed 607 occurrences across
+    # 565 NT verses — concentrated in Acts (105), Luke (83), Matthew (52),
+    # 1 Corinthians (52), John (40), and Romans (37).
+    #
+    # The preserves below catch the framework-load-bearing cases the
+    # pipeline cannot infer by pattern alone (the title-binding cases
+    # — Lord Jesus / Lord Jesus Christ / Lord and Christ — are handled by
+    # transformation rules in the RULES block; the per-verse vocative-to-
+    # Yahusha cases — John 6:68, 9:38, 11:27, 14:5, Philippians 2:11, and
+    # the synoptic parallels — are handled by YOSHI_RENDERED_PASSAGES.md
+    # per-verse overrides; these here are pure verbatim stashes).
+
+    # "Master and Lord" — Yahusha's self-naming at John 13:13:
+    #   "Ye call me Master and Lord: and ye say well; for so I am."
+    # The phrase is Yahusha calling himself by both titles. Preserve verbatim;
+    # both "Master" and "Lord" stay in English. The text after this stash
+    # reads "Master and Lord" intact and no rule re-touches it.
+    re.compile(r"\bMaster\s+and\s+Lord\b"),
+
+    # "Lord of lords" — mixed-case title compound (1 Timothy 6:15;
+    # Revelation 17:14). The framework reading is that "Lord of lords" is
+    # Yahusha's title-pair with "King of kings"; flattening either half to
+    # "Yahuah (Lord) of lords" breaks the title compound. Preserve verbatim.
+    # Both "Lord" tokens stay in English; the parallel "King of kings" is
+    # unaffected by the pipeline (untouched by any rule).
+    re.compile(r"\bLord\s+of\s+lords\b"),
+
+    # "LORD OF LORDS" — all-caps title at Revelation 19:16:
+    #   "KING OF KINGS, AND LORD OF LORDS"
+    # Without this preserve, LORD_caps converts the leading LORD to
+    # "Yahuah (LORD)" and the title-pair breaks. Preserve verbatim.
+    re.compile(r"\bLORD\s+OF\s+LORDS\b"),
 ]
 
 
@@ -1188,9 +1285,82 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "Pharaoh his Lord knew nothing of it, nor did your Lord, nor their Lord.",
     ),
     (
-        "divine: 'our Lord Jesus Christ' still restores (negative lookahead exception)",
+        # S182 (2026-05-31): the previous expectation here codified the
+        # NT *Lord*-to-Yahuah over-extension the S181 §7 audit caught.
+        # Pre-S182, "our Lord Jesus Christ" → "our Yahuah (Lord) Yahusha
+        # HaMashiach (Jesus Christ)" — calling Yahusha "Yahuah." Post-S182,
+        # the lord_jesus_christ_compound rule fires first and produces the
+        # title-preserving form "our Lord Yahusha HaMashiach (Lord Jesus
+        # Christ)." The "our" stays in English (no Hebrew pronoun
+        # restoration); the framework title-compound is preserved on the
+        # page.
+        "title preserve: 'our Lord Jesus Christ' renders as Lord Yahusha HaMashiach (S182)",
         "the gospel of our Lord Jesus Christ",
-        "the gospel of our Yahuah (Lord) Yahusha HaMashiach (Jesus Christ)",
+        "the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ)",
+    ),
+    # === S182 NT TITLE-COMPOUND PRESERVE TESTS ===
+    # The S181 §7 audit caught the over-extension. These tests anchor the
+    # post-S182 expected behavior. Each verse references the audited
+    # passage so future regressions are easy to track back to source.
+    (
+        "S182: 'Lord Jesus' bare (Rom 10:9, Rev 22:20, Rom 14:14)",
+        "confess with thy mouth the Lord Jesus",
+        "confess with thy mouth the Lord Yahusha (Lord Jesus)",
+    ),
+    (
+        "S182: 'Lord Jesus Christ' bare (1 Cor 8:6, 1 Cor 16:22)",
+        "one Lord Jesus Christ, by whom are all things",
+        "one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things",
+    ),
+    (
+        "S182: 'Lord and Christ' Acts 2:36",
+        "both Lord and Christ",
+        "both Lord and Messiah (Lord and Christ)",
+    ),
+    (
+        "S182: 'Master and Lord' John 13:13 — Yahusha self-naming preserved",
+        "Ye call me Master and Lord: and ye say well",
+        "Ye call me Master and Lord: and ye say well",
+    ),
+    (
+        "S182: 'Lord of lords' mixed-case (1 Tim 6:15, Rev 17:14) preserved",
+        "King of kings, and Lord of lords",
+        "King of kings, and Lord of lords",
+    ),
+    (
+        "S182: 'LORD OF LORDS' all-caps (Rev 19:16) preserved",
+        "KING OF KINGS, AND LORD OF LORDS",
+        "KING OF KINGS, AND LORD OF LORDS",
+    ),
+    (
+        "S182: idempotency — 'Lord Yahusha (Lord Jesus)' stays put on re-run",
+        "the gospel of our Lord Yahusha (Lord Jesus)",
+        "the gospel of our Lord Yahusha (Lord Jesus)",
+    ),
+    (
+        "S182: idempotency — 'Lord Yahusha HaMashiach (Lord Jesus Christ)' stays put",
+        "one Lord Yahusha HaMashiach (Lord Jesus Christ)",
+        "one Lord Yahusha HaMashiach (Lord Jesus Christ)",
+    ),
+    (
+        "S182: idempotency — 'Lord and Messiah (Lord and Christ)' stays put",
+        "both Lord and Messiah (Lord and Christ)",
+        "both Lord and Messiah (Lord and Christ)",
+    ),
+    (
+        "S182: 1 Cor 12:3 untouched — 'Jesus is the Lord' still Yahuah-restores (Spirit-revealed equation)",
+        "no man can say that Jesus is the Lord, but by the Holy Ghost",
+        "no man can say that Yahusha (Jesus) is Yahuah (Lord), but by the Ruach HaKodesh (Holy Spirit)",
+    ),
+    (
+        "S182: Rom 10:13 untouched — Joel 2:32 quotation still Yahuah-restores (underlying Hebrew is YHWH)",
+        "whosoever shall call upon the name of the Lord shall be saved",
+        "whosoever shall call upon the name of Yahuah (Lord) shall be saved",
+    ),
+    (
+        "S182: Phil 2:11 reverse construction — 'Jesus Christ is Lord' (not caught by title rules; bare 'is Lord' still over-extends — handled by per-verse override in YOSHI_RENDERED_PASSAGES.md)",
+        "Jesus Christ is Lord",
+        "Yahusha HaMashiach (Jesus Christ) is Yahuah (Lord)",
     ),
     (
         "divine: 'my Lord God' restores via compound rule (Lord God beats secular preservation)",
@@ -1299,9 +1469,13 @@ SELF_TESTS: list[tuple[str, str, str]] = [
         "And Yahuah (Lord) of the sheep rejoiced over them",
     ),
     (
-        "apocalyptic: 'Lord of lords' (compound divine title) restores",
+        # S182 (2026-05-31): the pre-S182 expectation here flattened the
+        # "Lord of lords" title-pair to "Yahuah (Lord) of lords." That
+        # mis-reading was caught by the S181 §7 NT-Lord audit and the
+        # preserved-phrase entry now keeps the title intact.
+        "S182: 'Lord of lords' compound divine title preserved (Rev 17:14 pattern)",
         "Lord of lords, Elohim (God) of elohiym, King of kings",
-        "Yahuah (Lord) of lords, Elohim (God) of elohiym, King of kings",
+        "Lord of lords, Elohim (God) of elohiym, King of kings",
     ),
     (
         "idempotent: 'Yahuah (God) of Spirits' already-restored stays put",

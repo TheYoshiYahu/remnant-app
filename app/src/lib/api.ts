@@ -1205,3 +1205,280 @@ export async function fetchLexiconEntry(
     };
   }
 }
+
+// ----- Session 196 — Tool annotations (framework annotation-layer overlay) ----
+//
+// The generalized overlay (APP_BUILDOUT_ROADMAP "annotation layer", locked S194):
+// every public-domain tool (Vincent's, Nave's, Maps, TSK, Nikkudot, interlinear
+// gloss cells) ships as an untouched base, and this fetches the framework
+// correction rendered beside it at point of use. BDB/LSJ word-callouts come from
+// fetchLexiconEntry (they live in lexicon_callouts); this is every other tool.
+//
+// A missing overlay on a known tool is a normal 200 with annotation=null — the
+// caller simply renders the PD base with no band — so only kill-switch (404),
+// tier-lock (403), and network failures are exceptional.
+
+export type AnnotationTool =
+  | "bdb"
+  | "lsj"
+  | "strongs"
+  | "vincents"
+  | "interlinear"
+  | "nikkudot"
+  | "naves"
+  | "maps"
+  | "tsk";
+
+export interface ToolAnnotation {
+  tool: AnnotationTool;
+  entry_key: string;
+  term_display: string | null;
+  conflict_summary: string;
+  annotation_md: string;
+  tier_required: string;
+  red_lines_cited: string[];
+  is_punch_list_only: boolean;
+  last_reviewed_at: string | null;
+}
+
+export interface ToolAnnotationsResponse {
+  tool: AnnotationTool;
+  entry_key: string;
+  annotation: ToolAnnotation | null;
+  tool_live_count: number;
+}
+
+export type ToolAnnotationFetchResult =
+  | { status: "ok"; data: ToolAnnotationsResponse }
+  | { status: "tier-locked"; tierRequired: string }
+  | { status: "not-found" }
+  | { status: "error"; message: string };
+
+/**
+ * Fetch the framework annotation-layer overlay for a public-domain tool entry.
+ *
+ * Returns a tagged-union result mirroring fetchLexiconEntry so the overlay band
+ * can render the tier-locked card (403), the disabled/unknown-tool empty (404),
+ * or the correction band (200, annotation possibly null) without throwing.
+ */
+export async function fetchToolAnnotation(
+  tool: AnnotationTool,
+  entryKey: string,
+): Promise<ToolAnnotationFetchResult> {
+  // entry_key is a {path} param server-side; encode each path segment so ':'
+  // and '.' in verse+lemma / verse-pair keys survive without being mangled.
+  const safeKey = entryKey
+    .split("/")
+    .map((seg) => encodeURIComponent(seg))
+    .join("/");
+  const path = `/tool-annotations/${encodeURIComponent(tool)}/${safeKey}`;
+  const headers: Record<string, string> = { Accept: "application/json" };
+  const token = readAccessToken();
+  if (token) headers.Authorization = `Bearer ${token}`;
+  try {
+    const res = await fetch(`${API_BASE}${path}`, {
+      headers,
+      credentials: "include",
+    });
+    if (res.status === 403) {
+      let tierRequired = "complete_study";
+      try {
+        const payload = (await res.json()) as {
+          detail?: { tier_required?: string };
+        };
+        if (payload?.detail?.tier_required) {
+          tierRequired = payload.detail.tier_required;
+        }
+      } catch {
+        // body wasn't JSON; keep default
+      }
+      return { status: "tier-locked", tierRequired };
+    }
+    if (res.status === 404) {
+      return { status: "not-found" };
+    }
+    if (!res.ok) {
+      return { status: "error", message: `${res.status} ${res.statusText}` };
+    }
+    const data = (await res.json()) as ToolAnnotationsResponse;
+    return { status: "ok", data };
+  } catch (e) {
+    return {
+      status: "error",
+      message: e instanceof Error ? e.message : String(e),
+    };
+  }
+}
+
+// ----- Session 197 — public-domain tool surfaces ------------------------------
+//
+// Five PD reference tools come off "coming soon" this session, each shipping as
+// an untouched annotated-foil base with the framework correction rendered beside
+// it via fetchToolAnnotation (S196). All five are Companion-gated and share the
+// lexicon_enabled kill-switch server-side. Every fetcher returns the same
+// tagged-union shape as fetchLexiconEntry so the sheets render tier-locked (403),
+// empty (404), or data (200) without throwing.
+
+export type ToolFetchResult<T> =
+  | { status: "ok"; data: T }
+  | { status: "tier-locked"; tierRequired: string }
+  | { status: "not-found" }
+  | { status: "error"; message: string };
+
+/** Shared GET → tagged-union resolver for the S197 tool surfaces. */
+async function fetchTagged<T>(path: string): Promise<ToolFetchResult<T>> {
+  const headers: Record<string, string> = { Accept: "application/json" };
+  const token = readAccessToken();
+  if (token) headers.Authorization = `Bearer ${token}`;
+  try {
+    const res = await fetch(`${API_BASE}${path}`, {
+      headers,
+      credentials: "include",
+    });
+    if (res.status === 403) {
+      let tierRequired = "complete_study";
+      try {
+        const payload = (await res.json()) as {
+          detail?: { tier_required?: string };
+        };
+        if (payload?.detail?.tier_required) tierRequired = payload.detail.tier_required;
+      } catch {
+        // keep default
+      }
+      return { status: "tier-locked", tierRequired };
+    }
+    if (res.status === 404) return { status: "not-found" };
+    if (!res.ok) return { status: "error", message: `${res.status} ${res.statusText}` };
+    const data = (await res.json()) as T;
+    return { status: "ok", data };
+  } catch (e) {
+    return { status: "error", message: e instanceof Error ? e.message : String(e) };
+  }
+}
+
+// ── Vincent's Word Studies ───────────────────────────────────────────────────
+export interface VincentEntry {
+  entry_key: string;
+  book_slug: string;
+  chapter: number;
+  verse: number;
+  verse_key: string;
+  headword: string | null;
+  body: string;
+  source_vol: string | null;
+}
+
+export interface VincentVerseResponse {
+  book_slug: string;
+  chapter: number;
+  verse: number;
+  verse_key: string;
+  entries: VincentEntry[];
+}
+
+export function fetchVincentsVerse(
+  bookSlug: string,
+  chapter: number,
+  verse: number,
+): Promise<ToolFetchResult<VincentVerseResponse>> {
+  return fetchTagged<VincentVerseResponse>(
+    `/vincents/${encodeURIComponent(bookSlug)}/${chapter}/${verse}`,
+  );
+}
+
+// ── Nave's Topical ───────────────────────────────────────────────────────────
+export interface NavesTopicSummary {
+  topic_slug: string;
+  section: string | null;
+  subject: string;
+}
+
+export interface NavesSearchResponse {
+  query: string;
+  topics: NavesTopicSummary[];
+}
+
+export interface NavesTopic {
+  topic_slug: string;
+  section: string | null;
+  subject: string;
+  entry: string;
+}
+
+export function searchNaves(
+  q: string,
+): Promise<ToolFetchResult<NavesSearchResponse>> {
+  return fetchTagged<NavesSearchResponse>(`/naves?q=${encodeURIComponent(q)}`);
+}
+
+export function fetchNavesTopic(
+  slug: string,
+): Promise<ToolFetchResult<NavesTopic>> {
+  return fetchTagged<NavesTopic>(`/naves/${encodeURIComponent(slug)}`);
+}
+
+// ── Treasury of Scripture Knowledge (TSK) ────────────────────────────────────
+export interface TskPair {
+  to_ref: string;
+  votes: number;
+}
+
+export interface TskVerseResponse {
+  book_slug: string;
+  chapter: number;
+  verse: number;
+  from_ref: string;
+  pairs: TskPair[];
+}
+
+export function fetchTskVerse(
+  bookSlug: string,
+  chapter: number,
+  verse: number,
+): Promise<ToolFetchResult<TskVerseResponse>> {
+  return fetchTagged<TskVerseResponse>(
+    `/tsk/${encodeURIComponent(bookSlug)}/${chapter}/${verse}`,
+  );
+}
+
+// ── Maps (own-tile render) ───────────────────────────────────────────────────
+export interface MapPlace {
+  place_id: string;
+  name: string | null;
+  lon: number;
+  lat: number;
+  kind: string | null;
+  osis_refs: string[];
+}
+
+export interface MapPlacesResponse {
+  places: MapPlace[];
+  count: number;
+}
+
+export function fetchMapsPlaces(
+  kind?: string,
+): Promise<ToolFetchResult<MapPlacesResponse>> {
+  const qs = kind ? `?kind=${encodeURIComponent(kind)}` : "";
+  return fetchTagged<MapPlacesResponse>(`/maps/places${qs}`);
+}
+
+// ── Nikkudot (pointed Hebrew sibling view) ───────────────────────────────────
+export interface NikkudotVerseResponse {
+  book_slug: string;
+  chapter: number;
+  verse: number;
+  verse_key: string;
+  pointed_text: string;
+  has_tetragrammaton: boolean;
+}
+
+export function fetchNikkudotVerse(
+  bookSlug: string,
+  chapter: number,
+  verse: number,
+): Promise<ToolFetchResult<NikkudotVerseResponse>> {
+  return fetchTagged<NikkudotVerseResponse>(
+    `/nikkudot/${encodeURIComponent(bookSlug)}/${chapter}/${verse}`,
+  );
+}

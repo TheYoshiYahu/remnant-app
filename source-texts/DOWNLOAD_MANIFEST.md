@@ -455,3 +455,48 @@ Two clarifier calls Yoshi delegated to Claude (per Self-Sufficient Application d
 - **Row-by-row reconciliation** of `DOWNLOAD_MANIFEST.md` against `seed.py` and `parsed/`.
 - **Roadmap drift.** `BIBLE_APP_ROADMAP.md` Section X stops at Session 48; Sessions 49–54 logged here. Yoshi's call whether to back-fill.
 - **Brit HaTorah and Alphabet of David** remain source-unresolved (Q5, Q6).
+
+### Session 195 (2026-06-03) — Public-domain study-tools inventory (gather + verify; no app wiring)
+
+**Wheel: the public-domain tooling inventory** per `App/APP_BUILDOUT_ROADMAP.md` + `NEXT_SESSION_PUBLIC_DOMAIN_TOOLING_PROMPT.md`. Cross-reference sweep stays paused. Voice skill loaded at open (⚠ WARNING TO CLAUDE, Red Lines #5/#10/#11/#12, three-category framework) and used to derive each tool's framework-conflict points. Job was to confirm we *have* every shippable PD tool, source what's missing, license-check each, and extend the manifests as the integration session's build list. The full build-list table (asset / source URL / license / on-disk path / conflict points / integration notes) landed in `SOURCE_TEXT_INVENTORY.md` §III "Public-domain study-tools inventory (S195)". Summary of findings:
+
+**Audit of the App.tsx §20 / DESIGN_LANGUAGE.md §20 stub catalog:**
+
+- **HAVE ✅ on disk:** BDB (`openscriptures-hebrewlexicon/BrownDriverBriggs.xml`), Strong's Hebrew + Greek (`strongs-hebrew/`, `strongs-greek/`), STEPBible tagged data (`stepbible-data/...`, CC-BY).
+- **HAVE ✅ — roadmap correction:** **LSJ was listed as missing but is already on disk** via STEPBible's TFLSJ (`stepbible-data/Lexicons/TFLSJ ... CC BY.txt`, 23.8 MB + 8.4 MB extra; LSJ 9th ed. 1940 PD + Abbott-Smith 1922 PD fallback, Tyndale formatting CC-BY). No download needed.
+- **NOT A DOWNLOAD — checks answered:** **Interlinear** = build from STEPBible TAHOT/TAGNT + Strong's (assets in hand; §28 interlinear already restores Yahuah in the divine-name cells). **Nikkudot** = data-availability check answered **YES** — STEPBible TAHOT carries full nikkud + cantillation (verified `בְּרֵאשִׁ֖ית`). Source is the pointed TAHOT already on disk.
+- **MISSING ❌ — public-domain, clear, needs sourcing:** **Maps** (openbible.info, CC-BY coords + ODbL geometry — highest-value gap), **Nave's Topical** (1897, PD), **TSK** (PD).
+- **MISSING ❌ — LICENSE-BLOCKED, do NOT ship:** **Vine's Expository Dictionary (1940).** US copyright was **restored under GATT/URAA** (Vine d. 1949 → UK copyright live on the 1996 URAA date); held by **W.E. Copyright Ltd.**, exclusively licensed to **Thomas Nelson / HarperCollins**; restored term ≈ end of 2035. Not clean PD. **Recommendation:** drop Vine's from the shippable set, hold its §20 stub, and (if an expository surface is still wanted) evaluate a genuinely-PD substitute — Vincent's *Word Studies in the NT* (1887). Flagged for Yoshi's call. *(Resolves the roadmap's "Vine's — 1940; public-domain status needs verification before use.")*
+
+**TSK re-scope (done this session, catalog-only — not tool wiring):** Per the "annotated foil, never the default surface" policy, the **Treasury (TSK)** stub was moved **out of the §20 Cross-references group into a new standalone Reference tools section** in both `app/src/App.tsx` (`buildMenuSections`) and `DESIGN_LANGUAGE.md` §20. The chapter-end card stays curated-threads-only. TSK is flagged **late-integration** and **must pass a pre-launch framework distortion-class sweep** (grace/law, Jew/Gentile, church-as-Israel, Torah-as-curse pairings) before it comes off stub. Nave's topical left in Cross-references for now (a topical index is genuinely cross-reference in kind); its own re-scope call deferred. TypeScript `tsc --noEmit` clean on the edit.
+
+**✅ DOWNLOADS ACQUIRED THIS SESSION (S195, 2026-06-03).** All three missing PD assets are now on disk. Sandbox raw-socket egress is off, but `git` reaches GitHub through its proxy, so the data was pulled via blobless partial-clone + per-file `git cat-file` (45s-timeout workaround). Provenance + SHAs logged in `SOURCE_TEXT_INVENTORY.md` §VIII.
+
+- **Maps** → `source-texts/maps-openbible/` — openbible.info `Bible-Geocoding-Data` @ `7eb18a5e`. 5 JSONL (1,341 ancient places / 1,595 modern locations w/ `lonlat`) + `all.kml` + CC-BY license. ODbL geometry tree + thumbnails deferred to v1.
+- **Nave's** → `source-texts/naves-topical/NavesTopicalDictionary.csv` — BradyStephenson/bible-data @ `2b81fe41`. 29,007 rows. CC-BY 4.0 (Nave's text PD 1897).
+- **TSK** → `source-texts/tsk-cross-references/cross_references.txt` — scrollmapper = openbible.info CC-BY 2024-11-04 @ `a228a19a`. 344,799 verse-pairs (no Torrey marginal phrases). Standalone Reference tool; **distortion sweep still required before launch.**
+
+**Original grant list (now satisfied), kept for the record:**
+
+| Tool | Domain | Exact asset | License / note |
+|---|---|---|---|
+| **Maps** (highest value) | `github.com/openbibleinfo/Bible-Geocoding-Data` | confirmed file list (S195, live page): `ancient.jsonl` (places as the Bible mentions them, verse-indexed), `modern.jsonl` (modern locations + `lonlat`), `geometry.jsonl` (rivers/regions) + per-feature GeoJSON/KML in `data/geometry/`, `image.jsonl`, `source.jsonl`, `all.kml` (preview). Optional: `https://a.openbible.info/geo/thumbnails.zip` (180 MB images — skip for v1). | **CC-BY 4.0** (identifications + coordinates — confirmed on repo); place **geometry** derives from OpenStreetMap = **ODbL 1.0**; images vary (mostly CC; some `copyright`-flagged in `image.jsonl` — filter those out). Attribution to openbible.info + OpenStreetMap required. Render our own tiles from `lonlat`; do not ship a copyrighted atlas. |
+| **TSK** | `stepbible.org` (version `TSK`) or `crosswire.org` SWORD module, or `justverses.com` TSK ZIP, or `archive.org/details/treasuryofscript0000rato` | base public-domain TSK cross-reference data (avoid the "Enhanced/Expanded" TSKE — adds editor content under its own terms) | Public domain |
+| **Nave's Topical** | `archive.org/details/navestopicalbibl00nave` or `naves-topical-bible.com` (cleaned dev data) or `ccel.org/ccel/nave` | full topical index text/data | Public domain |
+| **Vine's** | — | — | **Do not source — license-blocked.** |
+
+**On-disk-first check performed:** searched `source-texts/` for LSJ/Liddell, Vine, Nave, TSK/Torrey/treasury, maps/atlas/openbible/geo — LSJ found (STEPBible TFLSJ); Vine's, Nave's, TSK, and maps confirmed absent.
+
+**Annotation-layer note:** for each shippable inherited tool the conflict points above ARE the annotation punch list — each tool ships as an untouched PD/CC-BY base with corrections in a keyed overlay (`tool_annotations(tool, entry_key, annotation_md, tier_required)` per the roadmap), keyed by Strong's number (BDB/LSJ/interlinear), by topic (Nave's), by verse-pair (TSK), or by place (maps).
+
+**Out of scope this session (untouched):** wiring/rendering the tools, the notes/bookmarks apparatus, the chronological option, the xref sweep.
+
+**Git state at close.** `HEAD` unchanged from the S54 stack (sandbox has no GitHub credentials; Yoshi commits/pushes from the Mac). S195 adds: `M source-texts/DOWNLOAD_MANIFEST.md`, `M source-texts/SOURCE_TEXT_INVENTORY.md`, `M app/src/App.tsx` (TSK stub re-scope), `M DESIGN_LANGUAGE.md` (§20 catalog re-scope). Suggested commit: `Session 195: public-domain study-tools inventory — LSJ confirmed on-disk, Vine's license-blocked (URAA), Maps/TSK/Nave's download grant list, TSK stub re-scoped to standalone Reference tools`.
+
+**Still open after Session 195:**
+- ~~Three downloads to grant~~ **DONE — Maps / TSK / Nave's all on disk** (paths + SHAs above). Integration session can build straight from the §III build list + §VIII provenance rows.
+- **Vine's → Vincent's (DECIDED + ACQUIRED, Yoshi S195).** Vine's dropped (URAA-restored, not PD). Replaced by **Vincent's *Word Studies in the New Testament*** (Marvin R. Vincent, 1900; d. 1922 — clean PD). The §20 "Vine's expository" stub re-points to Vincent's (key `vincents`, label "Vincent's Word Studies"). **COMPLETE 4-volume set now on disk** at `source-texts/vincents-word-studies/` (vol1–vol4 `_djvu.txt`, ~5.6 MB; SHAs in that folder's `PROVENANCE.md`). Pulled via the browser since the sandbox can't reach archive.org and the clean `…marv` set is borrow-restricted; the open Google-digitized `…vincgoog` set was used. Raw OCR — clean + structure at integration (or swap for the CrossWire SWORD "Vincent" module / StudyLight if a verse-keyed copy is preferred).
+- **TSK distortion sweep** — the framework distortion-class pass (grace/law, Jew/Gentile, church-as-Israel, Torah-as-curse) on the 344,799-pair set is a pre-launch gate before TSK comes off stub.
+- **Maps render approach** — own-tile rendering from openbible CC-BY coords + the dispersion/gathering annotation overlay; pairs with the chronological arc. If precise region/river polygons are wanted, pull the deferred ODbL `data/geometry/` tree then (attribution: OpenStreetMap).
+- **Attribution surface** — app needs a credits surface naming openbible.info (CC-BY, Maps + TSK), OpenStreetMap (ODbL, if geometry used), BradyStephenson (CC-BY, Nave's), STEPBible (CC-BY, lexicons/morph). Integration-session task.
+- All prior S54 open items still stand.

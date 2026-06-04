@@ -429,11 +429,16 @@ Menu items group into named sections so the menu stays scannable as the tool cat
 
 | Section | Scope | Wheel 3 (now) | Future wheels |
 |---|---|---|---|
-| **Word study** | word | Strong's lookup | BDB / Thayer's / Vine's / interlinear / nikkudot consonantal-form siblings (Wheels 9-11; $4.99-gated) |
+| **Word study** | word | Strong's lookup | BDB / LSJ / Vincent's Word Studies / interlinear / nikkudot consonantal-form siblings (Wheels 9-11; $4.99-gated) — *S195: Vincent's (PD) replaced copyrighted Vine's* |
 | **Marking** | verse | Highlight verse | Bookmark (Wheel 5) |
 | **Notes** | verse | — | Add note + Open notes for this verse (Wheel 5) |
-| **Cross-references** | verse | — | Treasury (TSK) + Nave's topical + Related passages recommendations (Wheels 9, 12; $4.99-gated) |
+| **Cross-references** | verse | — | Nave's topical + Related passages recommendations (Wheels 9, 12; $4.99-gated) |
+| **Reference tools** | verse | — | Treasury (TSK) — standalone opt-in annotated foil; late-integration; pre-launch distortion sweep required (S195 re-scope) |
 | **Share** | verse | Copy verse | Share with watermark |
+
+**S195 — Treasury (TSK) re-scoped off the Cross-references surface.** Per the APP_BUILDOUT_ROADMAP "annotated foil, never the default surface" policy (locked S194), TSK moved out of the Cross-references group into a standalone **Reference tools** section — the same opt-in, click-to-open, visibly-subordinate treatment as BDB / LSJ / Vine's. The chapter-end card (`ChapterEndCard`) stays curated-threads-only; TSK never returns to a cross-reference *surface*. TSK ships late and must pass a framework distortion-class sweep (grace/law, Jew/Gentile, church-as-Israel, Torah-as-curse pairings) before it comes off stub. Nave's topical stays in Cross-references for now (a topical index is genuinely cross-reference in kind); its own re-scope call is deferred. The new **Reference tools** section follows the same append-without-touching-the-component precedent as the S157 Listen and S123 Range sections — the S121 "five sections" lock describes the original render order, not a cap.
+
+**S195 — Word study: Vine's → Vincent's.** The "Vine's expository" stub is dropped and re-pointed to **Vincent's *Word Studies in the New Testament*** (Marvin R. Vincent, 1886–1900; d. 1922 — clean public domain). This makes good on the earlier §26 "Vine's deprecation" note (Vine's is copyrighted — its 1940 US copyright was restored under GATT/URAA, held by W.E. Copyright Ltd. / Thomas Nelson, to ~2035). Vincent's is a genuinely-PD Greek word-study commentary; same annotated-foil treatment as BDB / LSJ. Stub key `vincents`, label "Vincent's Word Studies". Left unconditional for now; integration may gate it on `isGreek` alongside LSJ since Vincent's is NT-scoped.
 
 Empty sections drop out of the render (no header at all when a section has zero items in the current partner's view). Future wheels append `MenuItem` objects to the appropriate section in App.tsx's `buildMenuSections` helper without touching the `VerseActionMenu` component. **The S121 default behavior — empty sections drop — has been narrowed at S122: sections drop only if they have zero items across all states (live, tier-locked, coming-soon). Once any stub is added, the section header renders and the stubs sit dimmed inside it.** See *Disabled-state stubs and tier-locked surfaces* below for the locked S122 stub catalog + visual register.
 
@@ -470,7 +475,7 @@ S121 shipped the menu architecture with three live items (Strong's, Highlight, C
 | **Word study** *(word scope)* | Strong's lookup | Live | — | Free |
 |  | BDB | Tier-locked (Hebrew only) | W9 | Library |
 |  | LSJ | Tier-locked (Greek only) | W9 | Library |
-|  | Vine's expository | Tier-locked | W9 | Library |
+|  | Vincent's Word Studies *(S195: replaced copyrighted Vine's)* | Tier-locked | W9 | Library |
 |  | Hebrew/Greek interlinear | Tier-locked | W10 | Library |
 |  | Nikkudot siblings | Tier-locked (Hebrew only) | W11 | Library |
 | **Marking** *(verse scope)* | Highlight verse | Live | — | Free |

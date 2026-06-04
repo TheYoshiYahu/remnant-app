@@ -1028,3 +1028,177 @@ class LexiconResponse(BaseModel):
     entries: List[LexiconEntry]
     callout: Optional[LexiconCallout] = None
     available_sources: List[str]
+
+
+# ----- Tool annotations (Session 196 — the framework annotation-layer overlay) -----
+# The generalized overlay (APP_BUILDOUT_ROADMAP "annotation layer", locked S194).
+# One keyed row per public-domain tool entry that needs a framework correction.
+# BDB/LSJ word-callouts stay in lexicon_callouts; this covers Vincent's, Nave's,
+# Maps, TSK, Nikkudot, and the interlinear gloss-cell notes. Only is_punch_list_only
+# = FALSE rows render as live corrections; punch-list rows are the authoring queue.
+
+
+class ToolAnnotation(BaseModel):
+    """One framework annotation-layer correction beside a public-domain tool entry.
+
+    Rendered at point of use: the reader taps the trusted tool, sees what it says,
+    and sees the restored reading correct it. `is_punch_list_only` TRUE rows are
+    conflict points logged for the authoring wheel but not yet given a full
+    author-reviewed annotation — the surface renders only FALSE rows as live.
+    """
+
+    tool: str
+    entry_key: str
+    term_display: Optional[str] = None
+    conflict_summary: str
+    annotation_md: str
+    tier_required: str
+    red_lines_cited: List[str]
+    is_punch_list_only: bool
+    last_reviewed_at: Optional[datetime] = None
+
+
+class ToolAnnotationsResponse(BaseModel):
+    """GET /v1/tool-annotations/{tool}/{entry_key} response shape.
+
+    Returns the single live annotation for a (tool, entry_key) when one exists,
+    plus the count of any sibling annotations on the same tool (for surfaces that
+    want to badge "N framework notes on this tool"). `annotation` is null when no
+    live (non-punch-list) correction is on file for the key.
+    """
+
+    tool: str
+    entry_key: str
+    annotation: Optional[ToolAnnotation] = None
+    tool_live_count: int = 0
+
+
+# ----- Session 197 — public-domain tool surfaces -------------------------------
+# Five PD reference tools come off "coming soon" this session, each shipping as
+# an untouched annotated-foil base with the framework correction riding in
+# tool_annotations (S196). All five are Companion-gated and share the
+# settings.lexicon_enabled kill-switch (the §26 study-tooling surface flips
+# together). Verse-keyed lookups use the '<book>.<ch>.<v>' convention so the
+# ToolAnnotationBand attaches per verse.
+
+
+class VincentEntry(BaseModel):
+    """One verse-keyed Vincent's *Word Studies in the New Testament* exposition.
+
+    PD base (Marvin R. Vincent, 1886–1900, d.1922). `headword` is the head-
+    phrase Vincent exposited; `body` is the verse-keyed English exposition (the
+    Greek is lossy OCR and intentionally not surfaced). The framework correction
+    rides separately via GET /v1/tool-annotations/vincents/<book>.<ch>.<v>.
+    """
+
+    entry_key: str
+    book_slug: str
+    chapter: int
+    verse: int
+    verse_key: str
+    headword: Optional[str] = None
+    body: str
+    source_vol: Optional[str] = None
+
+
+class VincentVerseResponse(BaseModel):
+    """GET /v1/vincents/{book_slug}/{chapter}/{verse} response.
+
+    All Vincent's head-phrase expositions for one verse, in source order.
+    Empty list when Vincent's has no entry for the verse (NT-scoped corpus;
+    OT verses always return []). The PWA pairs this with the verse-level
+    framework band fetched from /v1/tool-annotations/vincents/{verse_key}.
+    """
+
+    book_slug: str
+    chapter: int
+    verse: int
+    verse_key: str
+    entries: List[VincentEntry]
+
+
+class NavesTopicSummary(BaseModel):
+    """One Nave's topical heading in a search/browse result (entry body omitted)."""
+
+    topic_slug: str
+    section: Optional[str] = None
+    subject: str
+
+
+class NavesSearchResponse(BaseModel):
+    """GET /v1/naves?q=... response — matching topical headings, subject order."""
+
+    query: str
+    topics: List[NavesTopicSummary]
+
+
+class NavesTopic(BaseModel):
+    """GET /v1/naves/{topic_slug} response — one heading with its full entry body."""
+
+    topic_slug: str
+    section: Optional[str] = None
+    subject: str
+    entry: str
+
+
+class TskPair(BaseModel):
+    """One TSK cross-reference chain link from a source verse."""
+
+    to_ref: str
+    votes: int
+
+
+class TskVerseResponse(BaseModel):
+    """GET /v1/tsk/{book_slug}/{chapter}/{verse} response.
+
+    The inherited TSK chains anchored on the source verse, vote-ranked. A
+    subordinate, opt-in foil: the four distortion-class notes ride via
+    GET /v1/tool-annotations/tsk/sweep:<class> (gate passed S196).
+    """
+
+    book_slug: str
+    chapter: int
+    verse: int
+    from_ref: str
+    pairs: List[TskPair]
+
+
+class MapPlace(BaseModel):
+    """One ancient place plotted on the own-tile map (coordinates only)."""
+
+    place_id: str
+    name: Optional[str] = None
+    lon: float
+    lat: float
+    kind: Optional[str] = None
+    osis_refs: List[str] = []
+
+
+class MapPlacesResponse(BaseModel):
+    """GET /v1/maps/places response — ancient places for own-tile rendering.
+
+    Coordinates only; the PWA renders on its own SVG/canvas (no copyrighted
+    atlas plate). The dispersion/gathering overlay rides via
+    GET /v1/tool-annotations/maps/dispersion-overlay.
+    """
+
+    places: List[MapPlace]
+    count: int
+
+
+class NikkudotVerseResponse(BaseModel):
+    """GET /v1/nikkudot/{book_slug}/{chapter}/{verse} response.
+
+    The pointed Hebrew (STEPBible TAHOT) for one OT verse — the interlinear
+    sibling view. `has_tetragrammaton` flags verses containing יהוה (H3068) so
+    the surface attaches the Name-pointing note via
+    GET /v1/tool-annotations/nikkudot/tetragrammaton. Null `pointed_text`
+    (404) for verses outside the OT load.
+    """
+
+    book_slug: str
+    chapter: int
+    verse: int
+    verse_key: str
+    pointed_text: str
+    has_tetragrammaton: bool

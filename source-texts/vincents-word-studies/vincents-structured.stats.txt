@@ -1,0 +1,49 @@
+Vincent's structured entries: 4501
+distinct verse keys: 4501  (collisions: 0)
+books covered: 21
+
+per-book entry counts:
+  matthew            407
+  mark               353
+  luke               727
+  john               642
+  acts               637
+  romans             277
+  1-corinthians      248
+  2-corinthians      171
+  galatians          101
+  ephesians          119
+  philippians        41
+  colossians         52
+  1-thessalonians    81
+  1-timothy          70
+  2-timothy          87
+  hebrews            226
+  james              57
+  1-peter            85
+  2-peter            21
+  1-john             35
+  revelation         64
+
+entries with unmapped book: 0
+
+--- coverage notes (S196) ---
+Structured by restoration-pipeline/_session196_structure_vincents.py from the 4-vol
+archive.org OCR. 4,501 verse-keyed entries, 0 key collisions, 21 books — including
+every framework-load-bearing book (Matthew, Romans, 1 Corinthians [12:3], Galatians,
+Ephesians, Hebrews, 1 John, Revelation). Verse numbers ascend-validated per chapter;
+Romans correctly bounded to 16 chapters (an earlier pass bled Corinthians into Romans
+to "ch.48" — fixed by base-name + ordinal header matching).
+
+entry_key convention: '<book-slug>.<chapter>.<verse>:<headword-slug>' (de-collided
+with '~N' suffix when a verse carries multiple head-phrases).
+
+KNOWN LONG-TAIL GAPS (single-chapter / tiny books whose OCR running-headers didn't
+resolve cleanly; defer to a header-pattern refinement pass): 2-thessalonians, titus,
+philemon, 2-john, 3-john, jude. Galatians (101) is light vs its 6 chapters — Vincent
+comments selectively, but a spot re-check is warranted. These gaps do not block the
+word-study wiring for the major books; ship-v1, refine in a follow pass.
+
+Greek is lossy OCR (e.g. Romans 10:4 'τέλος νόμου' → 'riXo^ voixou'); the load-bearing
+field is the verse-keyed English exposition that becomes the annotated foil. The
+framework correction rides the tool_annotations overlay (session196), not the OCR.

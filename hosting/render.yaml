@@ -102,6 +102,19 @@ services:
         # the secret never appears in git. See _scratch/_session36_wp_install.md
         # for the generation + paste flow (Session 36 wheel).
         sync: false
+      # ---- Session 197: study-tooling master switch ----------------------
+      # Turns on the §26/§20 study tools (lexicon + Vincent's, Nikkudot,
+      # Nave's, TSK, Maps). Not a secret — a plain feature flag committed to
+      # the blueprint so the "on" state is reviewable and reproducible. The
+      # code default in api/config.py stays False (the safe kill-switch); this
+      # explicit "true" is the intentional production enable, approved S197.
+      # PREREQUISITE: the S163 lexicon migrations + the S196 tool_annotations
+      # migration/seed + the five S197 base-load migrations + the S197 vincents
+      # annotation rekey must all be applied to the production DB before this
+      # flips on, or the endpoints will error / 404. Apply order in
+      # S197_CHECKPOINT.md.
+      - key: LEXICON_ENABLED
+        value: "true"
       # ---- Session 37: Stripe + WP-side partner_tier sync ----------------
       # All five values are sync: false — set in the Render dashboard, never
       # in git. See _scratch/_session37_stripe_setup.md (steps 4 + 6) for

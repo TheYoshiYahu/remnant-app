@@ -27,6 +27,7 @@ import Manage from "./routes/Manage";
 import SignIn from "./routes/SignIn";
 import Landing from "./routes/Landing";
 import Settings from "./routes/Settings";
+import Attributions from "./routes/Attributions";
 import AuthCallback from "./routes/AuthCallback";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
 import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
@@ -42,6 +43,11 @@ import HighlightPicker, {
 import { HIGHLIGHT_HEX } from "./lib/api";
 import StrongsLookup from "./components/StrongsLookup";
 import LexiconSheet from "./components/LexiconSheet";
+import VincentsSheet from "./components/VincentsSheet";
+import NikkudotSheet from "./components/NikkudotSheet";
+import TskSheet from "./components/TskSheet";
+import NavesSheet from "./components/NavesSheet";
+import MapsSheet from "./components/MapsSheet";
 import VerseActionMenu, {
   type MenuItem,
   type MenuSection,
@@ -397,6 +403,13 @@ export default function App() {
   if (pathname === "/settings" || pathname.startsWith("/settings")) {
     return <>{welcomeModal}<Settings /></>;
   }
+  // S196 — Attributions / data-credits surface. Top-level route alongside
+  // /settings /pricing /manage /sign-in. Credits the public-domain + open-
+  // licensed data sources (openbible.info, OpenStreetMap, BradyStephenson,
+  // STEPBible) per their CC-BY / ODbL attribution requirements.
+  if (pathname === "/attributions" || pathname.startsWith("/attributions")) {
+    return <>{welcomeModal}<Attributions /></>;
+  }
   // S129 — Reader moves from `/` to `/read` so the bare bible
   // subdomain serves the new Landing surface instead of dropping
   // partners straight into the verse pane. Existing deep-links into
@@ -622,6 +635,24 @@ function Reader() {
   const [lexiconState, setLexiconState] = useState<
     { strong: string; language: "hebrew" | "greek" | "aramaic" } | null
   >(null);
+
+  // S197 — public-domain tool surfaces. Each opens from the VerseActionMenu
+  // (Vincent's / Nikkudot word-study items; Nave's / Treasury / Maps reference
+  // items) and mounts at the App level above StrongsLookup (z-60). All share the
+  // Companion-tier gate + lexicon_enabled kill-switch server-side.
+  const [vincentsState, setVincentsState] = useState<
+    { bookSlug: string; chapter: number; verse: number; verseLabel: string } | null
+  >(null);
+  const [nikkudotState, setNikkudotState] = useState<
+    { bookSlug: string; chapter: number; verse: number; verseLabel: string } | null
+  >(null);
+  const [tskState, setTskState] = useState<
+    { bookSlug: string; chapter: number; verse: number; verseLabel: string } | null
+  >(null);
+  const [navesState, setNavesState] = useState<{ initialQuery?: string } | null>(
+    null,
+  );
+  const [mapsOpen, setMapsOpen] = useState<boolean>(false);
 
   // S123 W4 — range-selection state + post-capture action picker target.
   // rangeState holds the shared mechanic per DESIGN_LANGUAGE.md §21:
@@ -2892,6 +2923,28 @@ function Reader() {
                   return next;
                 });
               },
+              // S197 — public-domain tool surfaces. Each closes the menu and
+              // mounts the corresponding sheet (Companion-gated server-side).
+              onVincents: (ref) => {
+                setMenuState(null);
+                setVincentsState(ref);
+              },
+              onNikkudot: (ref) => {
+                setMenuState(null);
+                setNikkudotState(ref);
+              },
+              onTreasury: (ref) => {
+                setMenuState(null);
+                setTskState(ref);
+              },
+              onNaves: (initialQuery) => {
+                setMenuState(null);
+                setNavesState({ initialQuery });
+              },
+              onMaps: () => {
+                setMenuState(null);
+                setMapsOpen(true);
+              },
             },
             // S172 — text-transform passed in so the §24 share/copy
             // path inside buildMenuSections can apply the partner's
@@ -2943,6 +2996,44 @@ function Reader() {
           onClose={() => setLexiconState(null)}
         />
       )}
+
+      {/* S197 — public-domain tool surfaces. All z-60, Companion-gated
+          server-side, each rendering its untouched PD base + the framework
+          correction band (ToolAnnotationBand). */}
+      {vincentsState !== null && (
+        <VincentsSheet
+          bookSlug={vincentsState.bookSlug}
+          chapter={vincentsState.chapter}
+          verse={vincentsState.verse}
+          verseLabel={vincentsState.verseLabel}
+          onClose={() => setVincentsState(null)}
+        />
+      )}
+      {nikkudotState !== null && (
+        <NikkudotSheet
+          bookSlug={nikkudotState.bookSlug}
+          chapter={nikkudotState.chapter}
+          verse={nikkudotState.verse}
+          verseLabel={nikkudotState.verseLabel}
+          onClose={() => setNikkudotState(null)}
+        />
+      )}
+      {tskState !== null && (
+        <TskSheet
+          bookSlug={tskState.bookSlug}
+          chapter={tskState.chapter}
+          verse={tskState.verse}
+          verseLabel={tskState.verseLabel}
+          onClose={() => setTskState(null)}
+        />
+      )}
+      {navesState !== null && (
+        <NavesSheet
+          initialQuery={navesState.initialQuery}
+          onClose={() => setNavesState(null)}
+        />
+      )}
+      {mapsOpen && <MapsSheet onClose={() => setMapsOpen(false)} />}
 
       {/*
         S123 W4 — RangeActionPicker opens automatically when the
@@ -3249,13 +3340,16 @@ function Reader() {
  *
  * Five locked categories per DESIGN_LANGUAGE.md §20:
  *
- *   - Word study (word scope) — Strong's (live); BDB / Thayer's /
- *     Vine's / interlinear / nikkudot stubs (Wheels 9-11; Library)
+ *   - Word study (word scope) — Strong's (live); BDB / LSJ /
+ *     Vincent's Word Studies / interlinear / nikkudot stubs
+ *     (Wheels 9-11; Library). [S195: Vincent's replaced copyrighted Vine's]
  *   - Marking (verse scope) — Highlight (live); Bookmark stub (W5)
  *   - Notes (verse scope) — Add note stub (W5, Free); Open notes
  *     for this verse stub (W5, Notes)
- *   - Cross-references (verse scope) — Treasury / Nave's / Related
- *     passages stubs (Wheels 9, 12; Library)
+ *   - Cross-references (verse scope) — Nave's / Related passages stubs
+ *     (Wheels 9, 12; Library)
+ *   - Reference tools (verse scope) — Treasury (TSK) stub, standalone
+ *     opt-in annotated foil (S195 re-scope off the cross-ref surface)
  *   - Share (verse scope) — Copy verse (live); Share-with-watermark
  *     + Multi-verse range stubs (W6, Free)
  *
@@ -3420,11 +3514,42 @@ function buildMenuSections(
      *  verse in one call. Selective removal of a single mark stays in
      *  the HighlightPicker chip-× path. */
     onRemoveHighlights?: (verseId: number) => void;
+    /** S197 — Vincent's Word Studies verse panel (§26). */
+    onVincents?: (ref: {
+      bookSlug: string;
+      chapter: number;
+      verse: number;
+      verseLabel: string;
+    }) => void;
+    /** S197 — Nikkudot pointed-Hebrew sibling view (§20, Hebrew only). */
+    onNikkudot?: (ref: {
+      bookSlug: string;
+      chapter: number;
+      verse: number;
+      verseLabel: string;
+    }) => void;
+    /** S197 — Treasury (TSK) standalone reference tool. */
+    onTreasury?: (ref: {
+      bookSlug: string;
+      chapter: number;
+      verse: number;
+      verseLabel: string;
+    }) => void;
+    /** S197 — Nave's topical foil. Optional initial query. */
+    onNaves?: (initialQuery?: string) => void;
+    /** S197 — Maps own-tile dispersion/gathering surface (standalone). */
+    onMaps?: () => void;
   },
   /** S172 — sacred-name mask transform. Applied to verse text before
    *  the §24 share/copy pipeline paints. Pure function; no React. */
   applySacredMask: (text: string) => string = (t) => t
 ): MenuSection[] {
+  // S197 — function-level Companion gate (the word-scope `isAtCompanion` below
+  // is computed inside the `if (state.word)` block; the verse-scope reference
+  // tools need the same check in their own scope).
+  const isCompanionTier =
+    partnerTier === "complete_study" || partnerTier === "everything";
+
   // ── Word study (word scope only) ─────────────────────────────────
   const wordStudy: MenuItem[] = [];
   if (state.word) {
@@ -3477,9 +3602,34 @@ function buildMenuSections(
         wordStudy.push(makeTierStub("lsj", "LSJ", "library", partnerTier));
       }
     }
-    wordStudy.push(
-      makeTierStub("vines", "Vine's expository", "library", partnerTier)
-    );
+    // S195 — Vine's dropped (URAA-restored, copyrighted to ~2035; the
+    // earlier §26 "Vine's deprecation" note had it right) and replaced by
+    // the genuinely-PD Vincent's *Word Studies in the New Testament*
+    // (Marvin R. Vincent, 1886–1900, d. 1922). Same annotated-foil
+    // treatment as BDB / LSJ. Left unconditional for now (Vincent's is
+    // NT-scoped; integration may gate it on isGreek alongside LSJ).
+    // S197 — Vincent's comes off "coming soon": Companion+ partners get a live
+    // verse panel (data loads AND surface renders); below-Companion partners
+    // still see the tier-locked stub routing to /pricing. Verse-scoped, so it
+    // only goes live when the verse object resolved.
+    if (isAtCompanion && verse && handlers.onVincents) {
+      const v = verse;
+      wordStudy.push({
+        key: "vincents",
+        label: "Vincent's Word Studies",
+        onSelect: () =>
+          handlers.onVincents!({
+            bookSlug,
+            chapter: chapterNumber,
+            verse: v.verse_number,
+            verseLabel: `${bookTitle} ${chapterNumber}:${v.verse_number}`,
+          }),
+      });
+    } else {
+      wordStudy.push(
+        makeTierStub("vincents", "Vincent's Word Studies", "library", partnerTier)
+      );
+    }
     // S168 — §20 *Hebrew/Greek interlinear* stub REMOVED per the §28
     // deprecation lock (DESIGN_LANGUAGE.md §28 "§20 menu-stub
     // deprecation locked A"). The chrome-strip Interlinear toggle now
@@ -3488,9 +3638,26 @@ function buildMenuSections(
     // to drill into one word already has Strong's → LexiconSheet via
     // §20 / §26). Same pattern S159 / S164 set for Vine's deprecation.
     if (isHebrew) {
-      wordStudy.push(
-        makeTierStub("nikkudot", "Nikkudot siblings", "library", partnerTier)
-      );
+      // S197 — Nikkudot comes off "coming soon" for Companion+ on a resolved
+      // verse: the pointed-Hebrew sibling view + the Name-pointing note.
+      if (isAtCompanion && verse && handlers.onNikkudot) {
+        const v = verse;
+        wordStudy.push({
+          key: "nikkudot",
+          label: "Nikkudot siblings",
+          onSelect: () =>
+            handlers.onNikkudot!({
+              bookSlug,
+              chapter: chapterNumber,
+              verse: v.verse_number,
+              verseLabel: `${bookTitle} ${chapterNumber}:${v.verse_number}`,
+            }),
+        });
+      } else {
+        wordStudy.push(
+          makeTierStub("nikkudot", "Nikkudot siblings", "library", partnerTier)
+        );
+      }
     }
   }
 
@@ -3551,12 +3718,76 @@ function buildMenuSections(
   });
 
   // ── Cross-references (verse scope) ───────────────────────────────
+  // S195 re-scope (APP_BUILDOUT_ROADMAP "annotated foil, never the default
+  // surface" policy): Treasury (TSK) moved OUT of this Cross-references group
+  // into the standalone Reference tools section below. The chapter-end card
+  // (ChapterEndCard) stays curated-threads-only; TSK never returns to a
+  // cross-reference *surface*. It ships as a late, opt-in, click-to-open
+  // standalone reference (same annotated-foil treatment as BDB / LSJ /
+  // Vine's), flagged for a pre-launch framework distortion-class sweep.
+  // Nave's topical stays here for now (a topical index is genuinely
+  // cross-reference in kind); its own re-scope call is deferred.
   const crossRefs: MenuItem[] = [];
-  crossRefs.push(makeTierStub("treasury", "Treasury (TSK)", "library", partnerTier));
-  crossRefs.push(makeTierStub("naves", "Nave's topical", "library", partnerTier));
+  // S197 — Nave's comes off "coming soon" for Companion+: a search/browse foil
+  // with the framework correction on the four load-bearing headings. Seeded with
+  // a salient word from the tapped surface (if any) so it opens on content.
+  if (isCompanionTier && handlers.onNaves) {
+    const seedQuery = state.word?.surface;
+    crossRefs.push({
+      key: "naves",
+      label: "Nave's topical",
+      onSelect: () => handlers.onNaves!(seedQuery),
+    });
+  } else {
+    crossRefs.push(makeTierStub("naves", "Nave's topical", "library", partnerTier));
+  }
   crossRefs.push(
     makeTierStub("related-passages", "Related passages", "library", partnerTier)
   );
+
+  // ── Reference tools (verse scope — standalone opt-in annotated foils) ──
+  // S195 — standalone, late-integration, opt-in reference set kept visibly
+  // subordinate to the curated threads. TSK lands here, off the cross-ref
+  // surface, per the unifying "annotated foil, never the default surface"
+  // policy (DESIGN_LANGUAGE.md §20). Requires a pre-launch distortion sweep
+  // (grace/law, Jew/Gentile, church-as-Israel, Torah-as-curse pairings)
+  // before it comes off stub.
+  const referenceTools: MenuItem[] = [];
+  // S197 — Treasury (TSK) comes off "coming soon" for Companion+ on a resolved
+  // verse: the standalone, opt-in chain foil with the four distortion-class
+  // notes (gate passed S196). Subordinate by design — the curated threads are
+  // the page.
+  if (isCompanionTier && verse && handlers.onTreasury) {
+    const v = verse;
+    referenceTools.push({
+      key: "treasury",
+      label: "Treasury (TSK)",
+      onSelect: () =>
+        handlers.onTreasury!({
+          bookSlug,
+          chapter: chapterNumber,
+          verse: v.verse_number,
+          verseLabel: `${bookTitle} ${chapterNumber}:${v.verse_number}`,
+        }),
+    });
+  } else {
+    referenceTools.push(
+      makeTierStub("treasury", "Treasury (TSK)", "library", partnerTier)
+    );
+  }
+  // S197 — Maps: new own-tile dispersion/gathering surface (no prior stub).
+  // Standalone (not verse-scoped); Companion+ live, else tier-locked stub.
+  if (isCompanionTier && handlers.onMaps) {
+    referenceTools.push({
+      key: "maps",
+      label: "Maps (dispersion & gathering)",
+      onSelect: () => handlers.onMaps!(),
+    });
+  } else {
+    referenceTools.push(
+      makeTierStub("maps", "Maps (dispersion & gathering)", "library", partnerTier)
+    );
+  }
 
   // ── Share (verse scope) ──────────────────────────────────────────
   // S127 W7 — Copy verse promoted from text-only clipboard to canvas-
@@ -3652,6 +3883,7 @@ function buildMenuSections(
     { title: "Marking", items: marking },
     { title: "Notes", items: notes },
     { title: "Cross-references", items: crossRefs },
+    { title: "Reference tools", items: referenceTools },
     { title: "Share", items: share },
     { title: "Range", items: range },
   ];

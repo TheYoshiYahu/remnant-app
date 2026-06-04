@@ -215,6 +215,33 @@ Inside the API response, this means each row's tier resolves separately: the bas
 
 ---
 
+## Authoring requirement — full restored library, edition-aware schema (locked S194)
+
+Every cross-reference migration authored for this apparatus **must** target the full restored
+library, not canon alone. The render side already supports it: the target join above carries no
+edition filter, so a member whose target lives in `enoch`, `jubilees`, `jasher`, `apocrypha`, or
+`pseudepigrapha` resolves cleanly. The authoring side must match.
+
+**Mechanics (the Matthew-extras pattern, `session135_matt_6_extras_cross_references.sql`):**
+
+- The transaction-scoped lookup view is **edition-aware** — it selects `e.slug AS edition_slug` and
+  filters `WHERE e.slug IN ('canon', 'enoch', 'jubilees', 'jasher', …)` across every scripture-level
+  extras edition, not `WHERE e.slug = 'canon'`.
+- The `input(...)` tuples carry **`src_edition` and `tgt_edition` columns**, and the joins resolve
+  on them: `JOIN lookup sv ON sv.edition_slug = i.src_edition AND sv.book_slug = i.src_slug …`,
+  `JOIN lookup tv ON tv.edition_slug = i.tgt_edition …`.
+- Cross-references are bidirectional within scripture-level texts. Historical-witness texts
+  (Josephus, Apostolic Fathers, M.R. James) stay one-way and deferred from V1 — not added as members.
+
+**Retired:** the canon-only lookup schema (`e.slug = 'canon'`, no edition columns) used by the
+S181/183/185 John/Mark/Luke migrations. It cannot reach the extras and is a regression against the
+Come-and-See *all-of-the-library ↔ all-of-the-library* discipline. `_xref_audit.py` hard-fails any
+migration that is canon-only. The six books authored canon-only (John, Mark, Luke, Galatians,
+Romans, Revelation) are tracked for an extras-parity back-fill in
+`App/XREF_LIBRARY_COVERAGE_ROADMAP.md`.
+
+---
+
 ## Data-model summary
 
 ```
@@ -251,4 +278,6 @@ cross_reference_thread_members   (new at S73)
 5. **Apocrypha-aware rendering** — when the reader is in an extras edition, cross-references that point into the apocrypha should resolve cleanly. Schema already supports this through `editions.slug`; endpoint `?edition=` parameter wires when apocrypha-anchored curated threads land.
 6. **Migration-into-API-startup wiring** — currently the migration is applied manually via psql paste-block; future schema changes should apply on push. Standing item per the S72 deferral log.
 
-**ROLLED BACK at Session 75.** *TSK comprehensive baseline ingestion as v1.1.* The direction was opened in the original S73 contract draft as "Layer 1 = TSK public-domain corpus." Yoshi rolled it back mid-S75 on Red Line #2 / #10 grounds — cross-references are interpretive artifacts, not neutral data; Torrey's TSK is the codified cross-reference grammar of the inherited Reformation reading (the grammar that can't see grace as the means of return to the commandments because the Tanakh sources for it — Ezekiel 36:22, Deuteronomy 9:5–6, Psalm 25:11, Psalm 79:9 — sit outside the Reformation's reading). The volume-ratio inversion of ~340k TSK pairs underneath ~50 curated framework pairs makes the inherited grammar the page and the framework the footnote — Red Line #2 forbids that. Direction is closed; do not propose TSK or any Christian-corpus import as future work on this surface.
+**ROLLED BACK at Session 75.** *TSK comprehensive baseline ingestion as v1.1.* The direction was opened in the original S73 contract draft as "Layer 1 = TSK public-domain corpus." Yoshi rolled it back mid-S75 on Red Line #2 / #10 grounds — cross-references are interpretive artifacts, not neutral data; Torrey's TSK is the codified cross-reference grammar of the inherited Reformation reading (the grammar that can't see grace as the means of return to the commandments because the Tanakh sources for it — Ezekiel 36:22, Deuteronomy 9:5–6, Psalm 25:11, Psalm 79:9 — sit outside the Reformation's reading). The volume-ratio inversion of ~340k TSK pairs underneath ~50 curated framework pairs makes the inherited grammar the page and the framework the footnote — Red Line #2 forbids that. Direction is closed; do not propose TSK or any Christian-corpus import as future work **on this surface (the chapter-end card)**.
+
+**Clarified S194 — surface-scoped, not a blanket ban.** The S75 closure is scoped to *this* surface: TSK as the comprehensive baseline at the end of every chapter, underneath the curated threads, where its volume inverts the framework. It is **not** a ban on TSK existing anywhere in the app. Per the unifying policy locked in `App/APP_BUILDOUT_ROADMAP.md` — *inherited reference tools are allowed as opt-in, clearly-secondary, annotated foils; never as the default or load-bearing reading surface* — TSK may ship as a **standalone, opt-in, click-to-open reference tool** (the same annotated-foil treatment as BDB, LSJ, Vine's, Nave's), sequenced late, kept visibly subordinate to the curated threads, and run through a framework distortion-class sweep before launch. The chapter-end card stays curated-threads-only.

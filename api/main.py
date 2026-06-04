@@ -138,6 +138,18 @@ from models import (
     LexiconCallout,
     LexiconEntry,
     LexiconResponse,
+    ToolAnnotation,
+    ToolAnnotationsResponse,
+    VincentEntry,
+    VincentVerseResponse,
+    NavesTopicSummary,
+    NavesSearchResponse,
+    NavesTopic,
+    TskPair,
+    TskVerseResponse,
+    MapPlace,
+    MapPlacesResponse,
+    NikkudotVerseResponse,
     MarkStyle,
     NoteEntry,
     NotesResponse,
@@ -2845,6 +2857,401 @@ async def get_lexicon_entry(
         entries=entries,
         callout=callout,
         available_sources=[row["source"] for row in entry_rows],
+    )
+
+
+# ----- Tool annotations (Session 196 — framework annotation-layer overlay) ----
+#
+# GET /v1/tool-annotations/{tool}/{entry_key} returns the single LIVE framework
+# correction for a public-domain tool entry, plus a sibling-count badge. This is
+# the generalized overlay (APP_BUILDOUT_ROADMAP "annotation layer", locked S194):
+# every PD tool ships as an untouched base and the correction is rendered beside
+# it at point of use. BDB/LSJ word-callouts are served by /v1/lexicon (they live
+# in lexicon_callouts); this endpoint serves Vincent's, Nave's, Maps, TSK,
+# Nikkudot, and the interlinear gloss-cell notes.
+#
+# Tier gate: Companion+ (content_tier 'complete_study' or higher), same as the
+# lexicon surface — the annotation layer is a Companion-tier study feature. Kill-
+# switch shares settings.lexicon_enabled (the whole §26 study-tooling surface
+# flips together). Cache-Control: 1 day (author-reviewed, changes rarely).
+
+TOOL_ANNOTATION_REQUIRED_TIER = "complete_study"
+VALID_ANNOTATION_TOOLS = {
+    "bdb", "lsj", "strongs", "vincents", "interlinear",
+    "nikkudot", "naves", "maps", "tsk",
+}
+
+
+@app.get(
+    "/v1/tool-annotations/{tool}/{entry_key:path}",
+    response_model=ToolAnnotationsResponse,
+)
+async def get_tool_annotation(
+    tool: str,
+    entry_key: str,
+    response: Response,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> ToolAnnotationsResponse:
+    """Combined annotation-layer endpoint per the S194 annotation-layer lock.
+
+    Behavior matrix mirrors /v1/lexicon:
+      - settings.lexicon_enabled = False → 404 (shared kill-switch).
+      - unknown tool → 404.
+      - non-Companion tier → 403 with { tier_required, feature: 'tool_annotation' }.
+      - no LIVE annotation for (tool, entry_key) → 200 with annotation=null
+        (the surface simply renders the untouched PD base with no overlay band).
+        404 is reserved for kill-switch / unknown-tool; a missing overlay is a
+        normal 200/null so the client doesn't error-branch on the common case.
+
+    entry_key is a {path} param so verse+lemma keys and verse-pair keys that
+    contain characters like ':' and '.' pass through intact.
+    """
+    if not settings.lexicon_enabled:
+        raise HTTPException(status_code=404, detail="tool-annotations endpoint not enabled")
+
+    tool_norm = tool.strip().lower()
+    if tool_norm not in VALID_ANNOTATION_TOOLS:
+        raise HTTPException(status_code=404, detail="unknown tool")
+
+    tier = user_tier(current_user)
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        tier_ok = await conn.fetchval(
+            "SELECT tier_satisfies($1::content_tier, $2::content_tier)",
+            tier,
+            TOOL_ANNOTATION_REQUIRED_TIER,
+        )
+        if not tier_ok:
+            raise HTTPException(
+                status_code=403,
+                detail={
+                    "tier_required": TOOL_ANNOTATION_REQUIRED_TIER,
+                    "feature": "tool_annotation",
+                },
+            )
+
+        row = await conn.fetchrow(
+            "SELECT tool, entry_key, term_display, conflict_summary, "
+            "       annotation_md, tier_required::text AS tier_required, "
+            "       red_lines_cited, is_punch_list_only, last_reviewed_at "
+            "  FROM tool_annotations "
+            " WHERE tool = $1 AND entry_key = $2 "
+            "   AND is_punch_list_only = FALSE",
+            tool_norm,
+            entry_key,
+        )
+
+        live_count = await conn.fetchval(
+            "SELECT COUNT(*) FROM tool_annotations "
+            " WHERE tool = $1 AND is_punch_list_only = FALSE",
+            tool_norm,
+        )
+
+    annotation = None
+    if row is not None:
+        annotation = ToolAnnotation(
+            tool=row["tool"],
+            entry_key=row["entry_key"],
+            term_display=row["term_display"],
+            conflict_summary=row["conflict_summary"],
+            annotation_md=row["annotation_md"],
+            tier_required=row["tier_required"],
+            red_lines_cited=list(row["red_lines_cited"] or []),
+            is_punch_list_only=row["is_punch_list_only"],
+            last_reviewed_at=row["last_reviewed_at"],
+        )
+
+    response.headers["Cache-Control"] = "public, max-age=86400"
+    return ToolAnnotationsResponse(
+        tool=tool_norm,
+        entry_key=entry_key,
+        annotation=annotation,
+        tool_live_count=int(live_count or 0),
+    )
+
+
+# ----- Session 197 — public-domain tool surfaces --------------------------
+#
+# Five PD reference tools come off "coming soon" this session. Each ships as an
+# untouched annotated-foil base table (loaded by the session197_*_load.sql
+# migrations); the framework correction rides in tool_annotations (S196). All
+# five are Companion-gated (complete_study+) and share the lexicon_enabled
+# kill-switch — the whole §26 study-tooling surface flips together. The gate +
+# kill-switch pattern mirrors /v1/lexicon exactly.
+
+TOOLING_REQUIRED_TIER = "complete_study"
+
+
+async def _require_tooling_tier(conn, current_user: Optional[User]) -> None:
+    """Shared Companion-tier gate for the S197 tool surfaces. Raises 403 with the
+    {tier_required, feature} shape the PWA tier-locked cards already parse."""
+    tier = user_tier(current_user)
+    tier_ok = await conn.fetchval(
+        "SELECT tier_satisfies($1::content_tier, $2::content_tier)",
+        tier,
+        TOOLING_REQUIRED_TIER,
+    )
+    if not tier_ok:
+        raise HTTPException(
+            status_code=403,
+            detail={"tier_required": TOOLING_REQUIRED_TIER, "feature": "study_tooling"},
+        )
+
+
+@app.get(
+    "/v1/vincents/{book_slug}/{chapter}/{verse}",
+    response_model=VincentVerseResponse,
+)
+async def get_vincents_verse(
+    book_slug: str,
+    chapter: int,
+    verse: int,
+    response: Response,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> VincentVerseResponse:
+    """Vincent's Word Studies expositions for one verse (§26 word-study panel).
+
+    Companion-gated, kill-switch shared with /v1/lexicon. Returns every head-
+    phrase exposition Vincent's carries for the verse, in source order; empty
+    list for verses Vincent's doesn't cover (OT, or NT verses without an entry).
+    The PWA pairs this with the verse-level framework band fetched from
+    /v1/tool-annotations/vincents/<book>.<ch>.<v>.
+    """
+    if not settings.lexicon_enabled:
+        raise HTTPException(status_code=404, detail="study-tooling endpoint not enabled")
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        await _require_tooling_tier(conn, current_user)
+        rows = await conn.fetch(
+            "SELECT entry_key, book_slug, chapter, verse, verse_key, headword, "
+            "       body, source_vol "
+            "  FROM vincents_entries "
+            " WHERE book_slug = $1 AND chapter = $2 AND verse = $3 "
+            " ORDER BY id ASC",
+            book_slug,
+            chapter,
+            verse,
+        )
+    response.headers["Cache-Control"] = "public, max-age=86400"
+    return VincentVerseResponse(
+        book_slug=book_slug,
+        chapter=chapter,
+        verse=verse,
+        verse_key=f"{book_slug}.{chapter}.{verse}",
+        entries=[
+            VincentEntry(
+                entry_key=r["entry_key"],
+                book_slug=r["book_slug"],
+                chapter=r["chapter"],
+                verse=r["verse"],
+                verse_key=r["verse_key"],
+                headword=r["headword"],
+                body=r["body"],
+                source_vol=r["source_vol"],
+            )
+            for r in rows
+        ],
+    )
+
+
+@app.get("/v1/naves", response_model=NavesSearchResponse)
+async def search_naves(
+    response: Response,
+    q: str = Query(..., min_length=2, description="Topic-heading search term."),
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> NavesSearchResponse:
+    """Search Nave's topical headings (§20 subordinate topical foil).
+
+    Companion-gated, kill-switch shared. Case-insensitive substring match on the
+    published subject heading, subject order, capped at 50. The taxonomy itself
+    is the inherited reading; the framework corrections on the gentiles/church/
+    law/israel headings ride via /v1/tool-annotations/naves/{slug}.
+    """
+    if not settings.lexicon_enabled:
+        raise HTTPException(status_code=404, detail="study-tooling endpoint not enabled")
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        await _require_tooling_tier(conn, current_user)
+        rows = await conn.fetch(
+            "SELECT topic_slug, section, subject "
+            "  FROM naves_topical "
+            " WHERE subject ILIKE '%' || $1 || '%' "
+            " ORDER BY lower(subject) ASC "
+            " LIMIT 50",
+            q,
+        )
+    response.headers["Cache-Control"] = "public, max-age=86400"
+    return NavesSearchResponse(
+        query=q,
+        topics=[
+            NavesTopicSummary(
+                topic_slug=r["topic_slug"], section=r["section"], subject=r["subject"]
+            )
+            for r in rows
+        ],
+    )
+
+
+@app.get("/v1/naves/{topic_slug}", response_model=NavesTopic)
+async def get_naves_topic(
+    topic_slug: str,
+    response: Response,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> NavesTopic:
+    """One Nave's topical heading with its full entry body. 404 when not found."""
+    if not settings.lexicon_enabled:
+        raise HTTPException(status_code=404, detail="study-tooling endpoint not enabled")
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        await _require_tooling_tier(conn, current_user)
+        row = await conn.fetchrow(
+            "SELECT topic_slug, section, subject, entry "
+            "  FROM naves_topical WHERE topic_slug = $1",
+            topic_slug,
+        )
+    if row is None:
+        raise HTTPException(status_code=404, detail="naves topic not found")
+    response.headers["Cache-Control"] = "public, max-age=86400"
+    return NavesTopic(
+        topic_slug=row["topic_slug"],
+        section=row["section"],
+        subject=row["subject"],
+        entry=row["entry"],
+    )
+
+
+@app.get(
+    "/v1/tsk/{book_slug}/{chapter}/{verse}",
+    response_model=TskVerseResponse,
+)
+async def get_tsk_verse(
+    book_slug: str,
+    chapter: int,
+    verse: int,
+    response: Response,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> TskVerseResponse:
+    """TSK cross-reference chains anchored on a source verse (standalone foil).
+
+    Companion-gated, kill-switch shared. Vote-ranked, capped at 200. Subordinate,
+    opt-in by design (the curated threads are the page; this is the inherited
+    grammar shown as a labeled foil). The four distortion-class notes ride via
+    /v1/tool-annotations/tsk/sweep:<class> — gate passed S196.
+    """
+    if not settings.lexicon_enabled:
+        raise HTTPException(status_code=404, detail="study-tooling endpoint not enabled")
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        await _require_tooling_tier(conn, current_user)
+        rows = await conn.fetch(
+            "SELECT from_ref, to_ref, votes "
+            "  FROM tsk_pairs "
+            " WHERE from_book_slug = $1 AND from_chapter = $2 AND from_verse = $3 "
+            " ORDER BY votes DESC, to_ref ASC "
+            " LIMIT 200",
+            book_slug,
+            chapter,
+            verse,
+        )
+    from_ref = rows[0]["from_ref"] if rows else f"{book_slug}.{chapter}.{verse}"
+    response.headers["Cache-Control"] = "public, max-age=86400"
+    return TskVerseResponse(
+        book_slug=book_slug,
+        chapter=chapter,
+        verse=verse,
+        from_ref=from_ref,
+        pairs=[TskPair(to_ref=r["to_ref"], votes=r["votes"]) for r in rows],
+    )
+
+
+@app.get("/v1/maps/places", response_model=MapPlacesResponse)
+async def get_maps_places(
+    response: Response,
+    kind: Optional[str] = Query(
+        default=None, description="Filter by place class (settlement / natural / region / …)."
+    ),
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> MapPlacesResponse:
+    """Ancient places for the own-tile map render (§ Maps, new surface).
+
+    Companion-gated, kill-switch shared. Coordinates only — the PWA renders on
+    its own SVG/canvas (no copyrighted atlas plate; the attribution screen
+    credits openbible.info + OpenStreetMap). The dispersion/gathering overlay
+    rides via /v1/tool-annotations/maps/dispersion-overlay.
+    """
+    if not settings.lexicon_enabled:
+        raise HTTPException(status_code=404, detail="study-tooling endpoint not enabled")
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        await _require_tooling_tier(conn, current_user)
+        if kind is not None:
+            rows = await conn.fetch(
+                "SELECT place_id, name, lon, lat, kind, osis_refs "
+                "  FROM maps_places WHERE kind = $1 ORDER BY name ASC",
+                kind,
+            )
+        else:
+            rows = await conn.fetch(
+                "SELECT place_id, name, lon, lat, kind, osis_refs "
+                "  FROM maps_places ORDER BY name ASC"
+            )
+    response.headers["Cache-Control"] = "public, max-age=86400"
+    places = [
+        MapPlace(
+            place_id=r["place_id"],
+            name=r["name"],
+            lon=r["lon"],
+            lat=r["lat"],
+            kind=r["kind"],
+            osis_refs=list(r["osis_refs"] or []),
+        )
+        for r in rows
+    ]
+    return MapPlacesResponse(places=places, count=len(places))
+
+
+@app.get(
+    "/v1/nikkudot/{book_slug}/{chapter}/{verse}",
+    response_model=NikkudotVerseResponse,
+)
+async def get_nikkudot_verse(
+    book_slug: str,
+    chapter: int,
+    verse: int,
+    response: Response,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> NikkudotVerseResponse:
+    """Pointed Hebrew (TAHOT) for one OT verse — the interlinear Nikkudot sibling.
+
+    Companion-gated, kill-switch shared. 404 for verses outside the OT load. The
+    pointing is trustworthy except the deliberate masking of the Name; that one
+    conflict rides via /v1/tool-annotations/nikkudot/tetragrammaton, which the
+    surface attaches whenever has_tetragrammaton is true.
+    """
+    if not settings.lexicon_enabled:
+        raise HTTPException(status_code=404, detail="study-tooling endpoint not enabled")
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        await _require_tooling_tier(conn, current_user)
+        row = await conn.fetchrow(
+            "SELECT verse_key, book_slug, chapter, verse, pointed_text, "
+            "       has_tetragrammaton "
+            "  FROM nikkudot_verses "
+            " WHERE book_slug = $1 AND chapter = $2 AND verse = $3",
+            book_slug,
+            chapter,
+            verse,
+        )
+    if row is None:
+        raise HTTPException(status_code=404, detail="nikkudot verse not found")
+    response.headers["Cache-Control"] = "public, max-age=86400"
+    return NikkudotVerseResponse(
+        book_slug=row["book_slug"],
+        chapter=row["chapter"],
+        verse=row["verse"],
+        verse_key=row["verse_key"],
+        pointed_text=row["pointed_text"],
+        has_tetragrammaton=row["has_tetragrammaton"],
     )
 
 
