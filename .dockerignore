@@ -68,6 +68,7 @@ restoration-pipeline/*
 !restoration-pipeline/_session120_load_strong_entries.py
 !restoration-pipeline/_session120_load_verse_words.py
 !restoration-pipeline/_session124_apply_bookmarks_and_notes_v1.py
+!restoration-pipeline/_session197c_run_remaining.py
 source-texts/existing-restored-editions/
 source-texts/extras/
 commentary/
