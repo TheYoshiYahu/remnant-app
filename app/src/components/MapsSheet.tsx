@@ -34,12 +34,7 @@ import ToolSheet, {
   ToolLoading,
   ToolTierLockedCard,
 } from "./ToolSheet";
-import {
-  WORLD_PATH,
-  WORLD_VIEW_W,
-  WORLD_VIEW_H,
-  projectEquirect,
-} from "./worldGeometry";
+import { WORLD_PATH, WORLD_VIEW_W, projectEquirect } from "./worldGeometry";
 
 interface Props {
   onClose: () => void;
