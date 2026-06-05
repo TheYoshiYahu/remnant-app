@@ -36,6 +36,7 @@ import { hasJwtCookie } from "./lib/display-prefs-sync";
 import { loadStoredNativeToken } from "./lib/native-auth";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ChapterCommentary from "./components/ChapterCommentary";
+import ReaderDivider from "./components/ReaderDivider";
 import HighlightPicker, {
   markClassFor,
   markCssVarsFor,
@@ -2274,6 +2275,16 @@ function Reader() {
               sacred-color registers compressed into one element,
               repeated as a visual confession in every chapter heading
               across canon + library. */}
+          {/*
+            S201 — aleph-bet ornament as the major section break. Rendered
+            at the top of a book (chapter 1), above the book heading, so the
+            22 paleo-Hebrew letters open each new book as the reader moves
+            through the canon. Hidden in light mode until the parchment
+            divider variants ship (see .reader-divider in index.css).
+          */}
+          {chapterDetail.chapter.chapter_number === 1 && (
+            <ReaderDivider variant="alephbet" />
+          )}
           <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)] flex items-center gap-2 flex-wrap">
             <span className={bookPillClassName(chapterDetail.book.slug)}>
               {chapterDetail.book.title}
@@ -2774,6 +2785,19 @@ function Reader() {
               {hideCommentary ? "Show study aids" : "Hide study aids"}
             </button>
           </div>
+
+          {/*
+            S201 — botanical ornament at the chapter→apparatus seam.
+            Replaces the gold-diamond placeholder (which only ever lived in
+            the S201 mock). Full column width per Yoshi's sign-off. Shown
+            exactly when the apparatus is shown (study aids on + this chapter
+            carries a chapter_intro), so the ornament always heads real
+            apparatus content and never dangles. Hidden in light mode until
+            the parchment variants ship (see .reader-divider in index.css).
+          */}
+          {!hideCommentary && chapterDetail.chapter_intro && (
+            <ReaderDivider variant="botanical" />
+          )}
 
           {!hideCommentary && chapterDetail.chapter_intro && (
             <aside className="mt-4 text-[var(--reader-muted)]">

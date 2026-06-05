@@ -144,15 +144,17 @@ export default function ChapterEndCard({
       aria-labelledby="chapter-end-card-title"
     >
       {/*
-        S130 — section header recolored to techelet (#1A6FE5) per
-        COLOR_PALETTE.md §9 cross-reference color scheme. Header carries
-        the divine-name register because it marks scriptural-citation
-        territory; per-ref labels below carry source-type registers
-        (OT emerald / NT gold / extras argaman).
+        S201 — section header recolored from techelet (#1A6FE5) to spectral
+        blue (var(--reader-accent), #0084FF). The prior techelet was drift
+        vs the S127 §3 lock: techelet is reserved for divine names ONLY and
+        must not carry chrome. Spectral blue is the apparatus / chrome accent
+        register, so the apparatus header now matches the verse-number and
+        chapter-divider register. Per-ref pills below keep their source-type
+        registers (Tanakh emerald / NT gold / extras argaman).
       */}
       <h3
         id="chapter-end-card-title"
-        className="mb-4 font-sans text-xs font-semibold uppercase tracking-wide text-[#1A6FE5]"
+        className="mb-4 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-accent)]"
       >
         Cross-References in {data.book.title} {data.chapter.number}
       </h3>
@@ -306,6 +308,57 @@ function classNameForSourceClass(cls: SourceClass): string {
   }
 }
 
+// S201 — the progressive-disclosure "more for this verse" expander register.
+// Metallic blue, distinct from the three source-class registers above so it
+// reads as a control (reveal the rest), not a fourth source class. Border
+// #9FD0FF, gradient #0E2C50 → #2E7BD6 → #0E2C50, text #EAF4FF (Yoshi, S201).
+const MORE_PILL_CLASSES =
+  "inline-flex items-center rounded px-2.5 py-0.5 border shadow-sm hover:opacity-90 " +
+  "font-sans text-xs font-semibold border-[#9FD0FF] " +
+  "bg-gradient-to-r from-[#0E2C50] via-[#2E7BD6] to-[#0E2C50] text-[#EAF4FF]";
+
+// S201 — top-border "jewel" register color for a thread card, keyed to the
+// source class of its anchor. Tanakh emerald / NT gold / extras argaman, the
+// mid stops of the three registers so the 4px top border reads as a calm
+// jewel accent rather than a neon line.
+function threadTopBorderColor(slug: string | undefined): string {
+  switch (slug ? classifyBookSlug(slug) : "extras") {
+    case "tanakh":
+      return "#15A86A";
+    case "nt":
+      return "#B4A078";
+    case "extras":
+      return "#8E4FB3";
+  }
+}
+
+// S201 — balanced default-3 cross-reference selection (Yoshi, framework-
+// bearing). When a verse has more than three targets, the three shown before
+// the "more for this verse" expander must include at least one Tanakh, one
+// extra-canonical, and one New Testament target WHEN the verse has one in
+// that class — so every reader sees the cross-canon witness at a glance
+// (Law/Prophets + restored library + apostolic writings testifying together).
+// Remaining visible slots fill from the present classes by original sort
+// order. Three or fewer targets: show them all, no expander.
+function selectBalancedTargets<T extends { book_slug: string }>(
+  targets: T[]
+): { visible: T[]; hidden: T[] } {
+  if (targets.length <= 3) return { visible: targets, hidden: [] };
+  const chosen = new Set<number>();
+  // One per class, in framework order: Tanakh, extra-canonical, NT.
+  for (const cls of ["tanakh", "extras", "nt"] as const) {
+    const idx = targets.findIndex(
+      (t, i) => !chosen.has(i) && classifyBookSlug(t.book_slug) === cls
+    );
+    if (idx !== -1) chosen.add(idx);
+  }
+  // Fill the remaining visible slots (up to 3) by original sort order.
+  for (let i = 0; i < targets.length && chosen.size < 3; i++) chosen.add(i);
+  const visible = targets.filter((_, i) => chosen.has(i));
+  const hidden = targets.filter((_, i) => !chosen.has(i));
+  return { visible, hidden };
+}
+
 // ---- Baseline ------------------------------------------------------------
 
 function BaselineList({
@@ -368,7 +421,10 @@ function BaselineEntryBlock({
 }) {
   const blockRef = useRef<HTMLLIElement | null>(null);
   const [sharing, setSharing] = useState(false);
+  // S201 — progressive disclosure for verses with more than three targets.
+  const [expanded, setExpanded] = useState(false);
   const sourceVerseNumber = entry.source_verse.verse_number;
+  const { visible, hidden } = selectBalancedTargets(entry.targets);
 
   async function handleShare() {
     if (!blockRef.current || sharing) return;
@@ -406,76 +462,114 @@ function BaselineEntryBlock({
           label={`Share cross-references for verse ${sourceVerseNumber}`}
         />
       </div>
-          <ul className="mt-1 ml-3 space-y-1 text-[var(--reader-text)]">
-            {entry.targets.map((tgt) => {
-              const locked = !tierSatisfies(userTier, tgt.tier_required);
-              const cls = classifyBookSlug(tgt.book_slug);
-              const pillClasses = classNameForSourceClass(cls);
-              return (
-                <li
+          {/*
+            S201 — balanced default-3 + "more for this verse" expander, and
+            the come-and-see treatment: each target is a source-class pill
+            (sans chrome) over a left-ruled serif blockquote of the quoted
+            verse (spectral-blue rule, NOT techelet — S127 §3 lock). Locked
+            targets stay FULL OPACITY (S201 hard rule — no greyed-out text);
+            the lock is signaled by a tier chip + the /pricing route on tap,
+            never by fading the text.
+          */}
+          <ul className="mt-2 ml-1 space-y-3 text-[var(--reader-text)]">
+            {visible.map((tgt) => (
+              <TargetRow
+                key={`${tgt.verse_id}-${tgt.source}`}
+                tgt={tgt}
+                userTier={userTier}
+                onNavigate={onNavigate}
+                hideParentheticals={hideParentheticals}
+                sacredNameMask={sacredNameMask}
+              />
+            ))}
+            {expanded &&
+              hidden.map((tgt) => (
+                <TargetRow
                   key={`${tgt.verse_id}-${tgt.source}`}
-                  className={"flex gap-2 " + (locked ? "opacity-40" : "")}
-                >
-                  <span className="font-sans text-xs text-[var(--reader-muted)]">
-                    →
-                  </span>
-                  <span>
-                    {/*
-                      S130 — clickable ref as a metallic mini-pill. All
-                      three source classes (Tanakh / NT / Extras) render
-                      with their register's gradient + border + light
-                      text per COLOR_PALETTE.md §9. Unlocked refs navigate
-                      via onNavigate; locked refs route to /pricing.
-                    */}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        if (locked) {
-                          if (typeof window !== "undefined") {
-                            window.location.href = "/pricing";
-                          }
-                          return;
-                        }
-                        onNavigate?.(
-                          tgt.book_slug,
-                          tgt.chapter_number,
-                          tgt.verse_number
-                        );
-                      }}
-                      title={
-                        locked
-                          ? `Unlock in ${prettyTier(tgt.tier_required)} tier`
-                          : `Go to ${prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)}`
-                      }
-                      className={
-                        "font-sans text-xs font-semibold " + pillClasses
-                      }
-                    >
-                      {prettyRef(
-                        tgt.book_slug,
-                        tgt.chapter_number,
-                        tgt.verse_number
-                      )}
-                    </button>{" "}
-                    {/*
-                      S144 — apply parentheticals-strip to the target
-                      verse preview. Tanakh / NT / extras-library
-                      previews all carry restored Sacred Names with
-                      parentheticals; the strip toggle removes them
-                      uniformly when the reader has opted in.
-                    */}
-                    <span className="italic">
-                      {applyTextPrefs(
-                        tgt.preview,
-                        hideParentheticals,
-                        sacredNameMask
-                      )}
-                    </span>
-                  </span>
-                </li>
-              );
-            })}
+                  tgt={tgt}
+                  userTier={userTier}
+                  onNavigate={onNavigate}
+                  hideParentheticals={hideParentheticals}
+                  sacredNameMask={sacredNameMask}
+                />
+              ))}
           </ul>
+          {hidden.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setExpanded((v) => !v)}
+              className={"mt-3 " + MORE_PILL_CLASSES}
+              aria-expanded={expanded}
+            >
+              {expanded
+                ? "Show fewer"
+                : `${hidden.length} more for this verse`}
+            </button>
+          )}
+    </li>
+  );
+}
+
+// S201 — one cross-reference target: source-class pill (sans chrome) above a
+// left-ruled serif blockquote of the quoted verse. The pill + chip are
+// chrome; the verse preview is substance (serif, inherited Lora). Locked
+// targets render at full opacity with a tier chip — never greyed.
+function TargetRow({
+  tgt,
+  userTier,
+  onNavigate,
+  hideParentheticals,
+  sacredNameMask,
+}: {
+  tgt: ChapterEndCardResponse["baseline"][number]["targets"][number];
+  userTier: ContentTier;
+  onNavigate?: (b: string, c: number, v: number) => void;
+  hideParentheticals: boolean;
+  sacredNameMask: SacredNameMask;
+}) {
+  const locked = !tierSatisfies(userTier, tgt.tier_required);
+  const cls = classifyBookSlug(tgt.book_slug);
+  const pillClasses = classNameForSourceClass(cls);
+  return (
+    <li>
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          onClick={() => {
+            if (locked) {
+              if (typeof window !== "undefined") {
+                window.location.href = "/pricing";
+              }
+              return;
+            }
+            onNavigate?.(tgt.book_slug, tgt.chapter_number, tgt.verse_number);
+          }}
+          title={
+            locked
+              ? `Unlock in ${prettyTier(tgt.tier_required)} tier`
+              : `Go to ${prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)}`
+          }
+          className={"font-sans text-xs font-semibold " + pillClasses}
+        >
+          {prettyRef(tgt.book_slug, tgt.chapter_number, tgt.verse_number)}
+        </button>
+        {locked && (
+          <span className="inline-flex items-center gap-1 rounded border border-[var(--reader-rule)] px-1.5 py-0.5 font-sans text-[10px] font-semibold uppercase tracking-wide text-[var(--reader-muted)]">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              className="h-3 w-3"
+              fill="currentColor"
+            >
+              <path d="M10 2a4 4 0 00-4 4v2H5a1 1 0 00-1 1v8a1 1 0 001 1h10a1 1 0 001-1V9a1 1 0 00-1-1h-1V6a4 4 0 00-4-4zm-2 6V6a2 2 0 114 0v2H8z" />
+            </svg>
+            {prettyTier(tgt.tier_required)}
+          </span>
+        )}
+      </div>
+      <blockquote className="mt-1.5 border-l-2 border-[var(--reader-accent)] pl-3 italic leading-relaxed text-[var(--reader-text)]">
+        {applyTextPrefs(tgt.preview, hideParentheticals, sacredNameMask)}
+      </blockquote>
     </li>
   );
 }
@@ -545,19 +639,23 @@ function ThreadCallout({
   // the gate. Replaces the prior render policy (greyed-out-but-readable)
   // locked in CHAPTER_END_CARD_CONTRACT.md line 198.
   if (locked) {
-    return (
-      <LockedThreadCallout
-        thread={thread}
-        teaser={teaserFromSummary(firstParagraph)}
-      />
-    );
+    return <LockedThreadCallout thread={thread} firstParagraph={firstParagraph} />;
   }
 
+  // S201 — thread card = the jewel of the page: a register-colored top
+  // border (keyed to the anchor's source class), a subtly lifted surface,
+  // larger radius, and a quiet hover lift. Serif title (inherited Lora) for
+  // substance; the anchor line + labels stay sans chrome.
+  const topBorder = threadTopBorderColor(thread.anchor?.book_slug);
   return (
-    <article ref={articleRef} className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
+    <article
+      ref={articleRef}
+      className="rounded-xl border border-[var(--reader-rule)] border-t-4 bg-[var(--reader-surface)] px-5 py-5 shadow-lg transition-shadow hover:shadow-xl"
+      style={{ borderTopColor: topBorder }}
+    >
       <header className="mb-2 flex items-start justify-between gap-2">
         <div className="min-w-0">
-          <h4 className="text-lg font-semibold text-[var(--reader-text)]">
+          <h4 className="text-xl font-semibold leading-snug text-[var(--reader-text)]">
             {thread.title}
           </h4>
           {thread.anchor && (
@@ -606,10 +704,10 @@ function ThreadCallout({
 
       {thread.members_in_chapter.length > 0 && (
         <div className="mt-4 border-t border-[var(--reader-rule)] pt-3">
-          <p className="mb-2 font-sans text-xs font-semibold uppercase tracking-wide text-[#1A6FE5]">
+          <p className="mb-2 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-accent)]">
             Cross-references in this chapter
           </p>
-          <ul className="space-y-1 text-[var(--reader-text)]">
+          <ul className="space-y-3 text-[var(--reader-text)]">
             {thread.members_in_chapter.map((m) => (
               <ThreadMemberRow
                 key={`${m.sort_order}-${m.source_verse_number}`}
@@ -626,37 +724,32 @@ function ThreadCallout({
   );
 }
 
-// ---- S140: Option C locked-thread render ---------------------------------
+// ---- S201: locked-thread render (no fade, no greyed text) -----------------
 //
-// Title + anchor + ~70-word teaser of the summary + linear-gradient fade
-// to surface + locked-count line + single tier-name CTA. Members hidden
-// entirely. The locked thread reads as a deliberate tease — the free
-// reader is pulled into the start of a framework-bearing reading, hits
-// the fade exactly where the substance gets interesting, and the gate
-// names the tier they cross to continue.
+// Replaces the S140 Option-C teaser+fade. Per Yoshi's S201 hard rule, locked
+// content stays FULLY READABLE — the lock is signaled by the register-colored
+// jewel border + a tier chip + the Unlock pill, never by lowering opacity or
+// fading the text into the surface. The free reader gets the full first
+// paragraph of the framework reading at full opacity; the rest of the summary
+// and the member verse-pairings stay behind the unlock. The card keeps its
+// Share affordance (the paywall doubles as a discovery surface) and the
+// register top border matches the unlocked jewel for visual unity.
 
 function LockedThreadCallout({
   thread,
-  teaser,
+  firstParagraph,
 }: {
   thread: ChapterEndCardResponse["threads"][number];
-  teaser: string;
+  firstParagraph: string;
 }) {
   const tierName = prettyTier(thread.tier_required);
   const memberCount = thread.members_in_chapter.length;
+  const topBorder = threadTopBorderColor(thread.anchor?.book_slug);
   const goToPricing = () => {
     if (typeof window !== "undefined") {
       window.location.href = "/pricing";
     }
   };
-  // S171 Yoshi-decision (post-handoff): locked threads get a Share
-  // button too — the paywall itself is a viral surface. The exported
-  // PNG carries the title + anchor + teaser + fade + "Unlock in [Name]
-  // tier" CTA — same content the locked partner sees in the reader.
-  // A friend receiving the share sees the framework's reading + the
-  // upgrade path in one image; the paywall doubles as a discovery
-  // vector. Anchor permalink in the watermark URL line points back
-  // at the thread's anchor verse exactly the way unlocked shares do.
   const articleRef = useRef<HTMLElement | null>(null);
   const [sharing, setSharing] = useState(false);
   async function handleShare() {
@@ -676,11 +769,19 @@ function LockedThreadCallout({
     }
   }
   return (
-    <article ref={articleRef} className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-4">
+    <article
+      ref={articleRef}
+      className="rounded-xl border border-[var(--reader-rule)] border-t-4 bg-[var(--reader-surface)] px-5 py-5 shadow-lg"
+      style={{ borderTopColor: topBorder }}
+    >
       <header className="mb-2 flex items-start justify-between gap-2">
         <div className="min-w-0">
-          <h4 className="text-lg font-semibold text-[var(--reader-text)]">
-            {thread.title}
+          <h4 className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xl font-semibold leading-snug text-[var(--reader-text)]">
+            <span>{thread.title}</span>
+            {/* Tier chip — argaman covenant-body register signals the lock. */}
+            <span className="inline-flex items-center rounded border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-2 py-0.5 font-sans text-[10px] font-bold uppercase tracking-wide text-[#F5E6FA]">
+              {tierName}
+            </span>
           </h4>
           {thread.anchor && (
             <p className="mt-0.5 font-sans text-xs text-[var(--reader-accent)]">
@@ -699,23 +800,14 @@ function LockedThreadCallout({
           <XrefShareButton
             sharing={sharing}
             onClick={handleShare}
-            label={`Share locked-thread teaser: ${thread.title}`}
+            label={`Share locked thread: ${thread.title}`}
           />
         )}
       </header>
 
-      <div className="relative">
-        <div className="prose-paragraphs leading-relaxed text-[var(--reader-text)]">
-          {renderMarkdownParagraph(teaser)}
-        </div>
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 -bottom-1 h-14"
-          style={{
-            background:
-              "linear-gradient(to bottom, transparent, var(--reader-surface))",
-          }}
-        />
+      {/* Full first paragraph, full opacity — no fade, no truncation. */}
+      <div className="prose-paragraphs leading-relaxed text-[var(--reader-text)]">
+        {renderMarkdownParagraph(firstParagraph)}
       </div>
 
       <div className="mt-3 flex items-center gap-2 font-sans text-xs text-[var(--reader-muted)]">
@@ -737,38 +829,12 @@ function LockedThreadCallout({
       <button
         type="button"
         onClick={goToPricing}
-        className="mt-3 w-full rounded border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-2 font-sans text-sm font-medium text-[var(--reader-bg)] hover:opacity-90"
+        className="mt-3 w-full rounded-lg border border-[#D4B0E0] bg-gradient-to-r from-[#3D1B5C] via-[#8E4FB3] to-[#3D1B5C] px-4 py-2 font-sans text-sm font-semibold text-[#F5E6FA] hover:opacity-90"
       >
         Unlock in {tierName} tier
       </button>
     </article>
   );
-}
-
-/**
- * Teaser truncation for locked-thread render. Pulls ~70 words from the
- * first paragraph of summary_md, ends on a word boundary, appends a
- * trailing ellipsis. The fade-to-surface gradient sits over the bottom
- * of the rendered teaser, so the visible cut-line is soft regardless of
- * where the word boundary lands. Preserves the `*italic*` markup so
- * scripture quotations in the teaser still render italicized.
- */
-function teaserFromSummary(firstParagraph: string): string {
-  const TEASER_WORD_TARGET = 70;
-  const words = firstParagraph.split(/\s+/);
-  if (words.length <= TEASER_WORD_TARGET) return firstParagraph;
-  const head = words.slice(0, TEASER_WORD_TARGET).join(" ");
-  // Don't cut inside a `*...*` italic span — extend to the next closing
-  // asterisk if we're sitting inside one.
-  const openCount = (head.match(/\*/g) || []).length;
-  if (openCount % 2 === 1) {
-    const remaining = words.slice(TEASER_WORD_TARGET).join(" ");
-    const closeIdx = remaining.indexOf("*");
-    if (closeIdx !== -1) {
-      return head + " " + remaining.slice(0, closeIdx + 1) + "…";
-    }
-  }
-  return head + "…";
 }
 
 function ThreadMemberRow({
@@ -786,8 +852,8 @@ function ThreadMemberRow({
   // COLOR_PALETTE.md §9. All three source classes render as metallic
   // mini-pills in their register (Tanakh emerald, NT gold, Extras
   // argaman). Members don't carry a separate tier_required in the
-  // current API shape; thread-level gating already greys the parent
-  // article when locked.
+  // current API shape; thread-level gating renders the locked variant
+  // (LockedThreadCallout) instead — no greying anywhere (S201 hard rule).
   const cls = classifyBookSlug(member.target.book_slug);
   const pillClasses = classNameForSourceClass(cls);
   return (
@@ -822,7 +888,7 @@ function ThreadMemberRow({
         in framework-prose. Both should toggle uniformly with the rest
         of the chapter-end card.
       */}
-      <span className="basis-full italic ml-5 text-[var(--reader-text)]">
+      <span className="basis-full ml-5 mt-1 border-l-2 border-[var(--reader-accent)] pl-3 italic leading-relaxed text-[var(--reader-text)]">
         {applyTextPrefs(
           member.target.preview,
           hideParentheticals,

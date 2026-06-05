@@ -60,7 +60,7 @@ export function ToolAnnotationBand({ tool, entryKey, label }: Props) {
 
   return (
     <aside className="relative rounded-md border border-[var(--argaman,#8E4FB3)] bg-[var(--reader-surface-elev)] px-3.5 py-3">
-      <div className="absolute -top-2 right-3 rounded border border-[var(--reader-accent)] bg-[var(--reader-bg)] px-2 text-[10px] font-semibold uppercase tracking-widest text-[var(--reader-accent)]">
+      <div className="absolute -top-2 right-3 rounded border border-[var(--reader-accent)] bg-[var(--reader-bg)] px-2 font-sans text-[10px] font-semibold uppercase tracking-widest text-[var(--reader-accent)]">
         {label ?? "Framework reading"}
       </div>
       <h3 className="mb-2 text-sm font-medium leading-snug">
@@ -82,7 +82,7 @@ export function ToolAnnotationBand({ tool, entryKey, label }: Props) {
         {renderMarkdownBody(applySacredMask(annotation.annotation_md))}
       </div>
       {annotation.red_lines_cited.length > 0 && (
-        <footer className="mt-2.5 text-[11px] tracking-wider text-[var(--reader-muted)]">
+        <footer className="mt-2.5 font-sans text-[11px] tracking-wider text-[var(--reader-muted)]">
           Red Lines: {annotation.red_lines_cited.map((n) => `#${n}`).join(", ")}
         </footer>
       )}

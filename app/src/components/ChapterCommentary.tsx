@@ -148,13 +148,14 @@ export default function ChapterCommentary({
       aria-labelledby="chapter-commentary-title"
     >
       {/*
-        S130 — section header recolored to techelet #1A6FE5 per
-        COLOR_PALETTE.md §9 chrome-header rule (same register as the
-        "Cross-References in X" header in ChapterEndCard).
+        S201 — section header recolored from techelet #1A6FE5 to spectral
+        blue (var(--reader-accent)). Techelet is divine-names-only (S127 §3
+        lock); chrome headers carry the spectral-blue apparatus register,
+        matching the "Cross-References in X" header in ChapterEndCard.
       */}
       <h3
         id="chapter-commentary-title"
-        className="mb-4 font-sans text-xs font-semibold uppercase tracking-wide text-[#1A6FE5]"
+        className="mb-4 font-sans text-xs font-semibold uppercase tracking-wide text-[var(--reader-accent)]"
       >
         More on {data.book.title} {data.chapter.number}
       </h3>
@@ -392,7 +393,7 @@ function renderCommentaryBody(body: string): ReactNode {
   return sections.map((section, idx) => (
     <div key={idx} className={idx > 0 ? "mt-6" : ""}>
       {section.heading && (
-        <h5 className="mb-2 font-sans text-sm font-semibold uppercase tracking-wide text-[#1A6FE5]">
+        <h5 className="mb-2 font-sans text-sm font-semibold uppercase tracking-wide text-[var(--reader-accent)]">
           {section.heading}
         </h5>
       )}
