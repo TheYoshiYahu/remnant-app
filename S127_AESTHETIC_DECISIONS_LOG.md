@@ -78,3 +78,62 @@ Yoshi went with **"And Two Sticks Shall Become One"** (Ezekiel 37) for the new w
 
 - **App hide-apparatus master toggle.** Yoshi noted at S127 that the existing "Hide commentary" toggle only hides ChapterCommentary, not ChapterEndCard (Tanakh sources / cross-references). Wants a master "scripture only" toggle that hides both, on all tiers, with an obvious on/off affordance. Out of scope for the website reskin; deserves its own small wheel.
 - **Argaman underlines in the scripture page reader.** The scripture-page aesthetic moves locked above (argaman on book/chapter headings + end-of-scripture rule) are reader-side CSS work, distinct from the website reskin. Can land parallel or after S128.
+
+---
+
+## S201 — Chapter-end apparatus aesthetic pass (decisions settled; not yet built)
+
+Reviewed the chapter-end commentary + cross-references + end cards with Yoshi.
+Settled calls (a visual before/after mock was shown and approved in direction):
+
+1. **Chapter→apparatus separator ornament** — APPROVED: the **gold diamond
+   between two hairlines** (the mock version — "yes, that is beautiful").
+   The menorah/brand-mark glyph in gold remains an easy future swap if a
+   stronger brand tie is wanted; diamond is the V1 pick.
+2. **Serif for substance, sans for chrome** — thread titles, chapter-intro
+   headings, and quoted scripture render in a serif display face; labels,
+   pills, anchor lines, buttons stay sans. (Make the page read like a book,
+   not a dashboard.)
+3. **Quoted scripture as styled blockquotes** — indented block, colored
+   left-rule, more line-height, so quoted verses stand apart from
+   commentary prose. Reinforces come-and-see (quote-don't-cite).
+   ⚠ LOCK-CHECK: the rule color must NOT be techelet (#1A6FE5) — techelet
+   is reserved for divine names only (S127 §3 lock). Use SPECTRAL BLUE
+   (#0084FF) or argaman for the blockquote rule + apparatus separators.
+   (The mock used techelet as a placeholder; correct on build. NOTE: the
+   current ChapterEndCard.tsx header is also coded techelet #1A6FE5 —
+   that's drift vs the S127 spectral-blue-for-apparatus lock; fix in the
+   same pass.)
+4. **Cross-reference density — Yoshi's version (REPLACES Claude's dots
+   idea):** keep the full metallic source-class pills. Show at least 3
+   targets per verse as-is; when a verse has MORE than 3, append a
+   **metallic-blue pill labeled "more for this verse"** that expands the
+   rest. New register: metallic blue (border #9FD0FF, gradient
+   #0E2C50→#2E7BD6→#0E2C50, text #EAF4FF) — the progressive-disclosure
+   expander color.
+
+   **4b. Balanced default-3 selection (Yoshi, S201 — framework-bearing).**
+   The three pills shown before "more for this verse" must include at
+   least ONE Tanakh (emerald), ONE extra-canonical (argaman), and ONE New
+   Testament (gold) target — WHEN the verse has at least one target in
+   that source class. Not just the first 3 by sort order. Rationale: every
+   reader sees the cross-canon witness at a glance — Law/Prophets +
+   restored library + apostolic writings testifying together (the
+   full-library, bidirectional cross-reference architecture from the voice
+   skill). Fallback when a class is absent: fill remaining visible slots
+   from the present classes by existing sort order. If >3 and all classes
+   represented, the balanced 3 show and the rest go behind the expander.
+5. **Thread cards = the jewel of the page** — register-colored top border
+   (source-class), subtly lifted surface, larger radius, quiet hover lift.
+6. **Spacing/rhythm pass** — consistent vertical rhythm + a left-edge or
+   top-border anchor per block (pills / scripture / thread). Shown in mock.
+
+**NEW HARD RULE (Yoshi, S201) — no greyed-out white text anywhere.**
+Tier-locked / secondary content must stay FULLY READABLE. Separate it by
+box, border, font change, or color shift — never by lowering opacity on
+the text. This RETIRES the S140 Option-C 40%-opacity locked-baseline-row
+treatment AND the fade-to-surface gradient over locked-thread teasers.
+Replacement (shown in mock): a bordered card in the tier's register color,
+full-opacity text, a tier chip + Unlock pill doing the "locked" signaling.
+Easier to read, never harder. Applies across ChapterEndCard,
+ChapterCommentary, ToolAnnotationBand, and every tier-locked surface.
