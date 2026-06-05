@@ -62,10 +62,15 @@ BEFORE wiring (earned after the S199 maps miss). `tsc -b --force` clean.
   `origin/main` (verified).
 
 ## Commit from the Mac (NOT the sandbox)
+NOTE: package.json lives in the `app/` subfolder — run the build there.
+```
+cd ~/Desktop/App/app && npm run build   # vite bundle check (Mac, correct dir)
+```
+
+Git runs from the repo root:
 ```
 cd ~/Desktop/App
 # rm -f .git/index.lock   # only if a stale lock blocks it
-npm run build             # confirm vite bundle is green on the Mac
 git add app/src/components/ReaderDivider.tsx \
         app/src/App.tsx app/src/index.css \
         app/src/components/ChapterEndCard.tsx \
