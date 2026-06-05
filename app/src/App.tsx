@@ -1276,13 +1276,35 @@ function Reader() {
   }, [audioPlayerOpen, playingVerseId]);
 
   // Books load once on mount.
+  //
+  // S200 — await loadStoredNativeToken() BEFORE listBooks() fires, the same
+  // race fix the /me fetch got at S178. On the native shell the JWT lives in
+  // Capacitor Preferences and hydrates asynchronously; firing listBooks before
+  // the in-memory token cache is populated sends an anonymous request, so the
+  // tier filter on /v1/books returns only the 66-book free canon — even though
+  // the reader is signed in and extras chapters load fine once the token is
+  // hydrated (the symptom: picker shows 66, cross-references still open the full
+  // extras chapter). Awaiting the token attaches the Bearer header so the full
+  // 153-book corpus returns. On web loadStoredNativeToken() resolves immediately
+  // with null (no-op), so the cookie/credentials path is unaffected.
   useEffect(() => {
-    listBooks()
-      .then((bs) => {
-        setBooks(bs);
-        setBooksError(null);
-      })
-      .catch((e) => setBooksError(String(e)));
+    let cancelled = false;
+    void loadStoredNativeToken().then(() => {
+      if (cancelled) return;
+      listBooks()
+        .then((bs) => {
+          if (cancelled) return;
+          setBooks(bs);
+          setBooksError(null);
+        })
+        .catch((e) => {
+          if (cancelled) return;
+          setBooksError(String(e));
+        });
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // /v1/subscriptions/me once on mount. Failure is silent — anonymous
