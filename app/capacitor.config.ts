@@ -45,16 +45,42 @@ import type { CapacitorConfig } from "@capacitor/cli";
 const config: CapacitorConfig = {
   appId: "com.remnantofpromise.bible",
   appName: "Remnant of Promise",
+
+  // webDir stays as the build output for `cap sync` (and as the
+  // offline fallback bundle when the offline-download feature lands).
+  // It is NOT what the shell serves at runtime while `server.url` is
+  // set below — the live URL wins.
   webDir: "dist",
 
-  // Server block — leave commented for release builds. To run the
-  // native shell against your local Vite dev server during a phone-
-  // walk session, uncomment + set `url` to your LAN IP:
+  // S201 — load the LIVE web app, not the baked-in bundle.
   //
-  // server: {
-  //   url: "http://192.168.1.10:5173",
-  //   cleartext: true,
-  // },
+  // This is the by-URL posture set in the early sessions: the native
+  // shell is a thin wrapper that loads the live PWA, so every Render
+  // web deploy reaches the installed app with no app rebuild. (The
+  // "download everything for offline" capability is a SEPARATE, future
+  // feature — it does not require the bundled-webDir posture and is not
+  // wired here.)
+  //
+  // Why the phone was broken: the shell shipped with NO server block, so
+  // it served the frozen `dist/` baked into the IPA/APK at build time.
+  // Render web deploys (the S178 / S199 / S200 / S201 fixes) never
+  // reached the installed app — it ran stale code, which is why the book
+  // picker showed only the 66-book canon and TSK was gone on the phone
+  // while the live web at bible.remnantofpromise.org worked fine.
+  //
+  // Origin note (DEVICE-TEST THIS after the first rebuild): with
+  // server.url set, the webview's origin becomes
+  // https://bible.remnantofpromise.org instead of https://localhost.
+  // The native sign-in path is unaffected — the in-app credential form
+  // (lib/native-auth.ts loginWithCredentials) stores the JWT in
+  // Capacitor Preferences and api.ts attaches it as a Bearer header
+  // regardless of origin, and Capacitor.isNativePlatform() still returns
+  // true so that path stays active. The change is that the
+  // .remnantofpromise.org SSO cookie may now also be visible to the
+  // webview. Verify sign-in on a real device after the first rebuild.
+  server: {
+    url: "https://bible.remnantofpromise.org",
+  },
 
   plugins: {
     // SplashScreen — short hold while the WebView paints the first

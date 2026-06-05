@@ -1351,25 +1351,45 @@ function Reader() {
   // `hydrated` flag flips true once this completes regardless of
   // outcome — that gates the save effect so the initial paint at
   // Genesis/1/1 never overwrites the saved row before hydrate.
+  //
+  // S201 — await loadStoredNativeToken() before loadInitialPosition()
+  // fires, the same native-token race fixed for /me (S178) and
+  // listBooks (S200). getReadingPosition() is auth-gated (401 →
+  // anonymous → fall through to localStorage). On the native shell the
+  // JWT hydrates asynchronously from Capacitor Preferences; firing the
+  // position read before the in-memory cache is seeded sends an
+  // anonymous request, so a signed-in partner's server-saved position
+  // is missed on every cold launch and the reader silently falls back
+  // to the localStorage row (or Genesis 1:1). This effect is mount-once
+  // — it never re-fires — so unlike the chapter-keyed fetches it cannot
+  // self-heal on navigation; the await is the only fix. Awaiting here
+  // also means the hydrated book/chapter the position resolves to is
+  // set AFTER the token is live, so the downstream getChapter /
+  // highlights / bookmarks / words fetches for that chapter carry the
+  // Bearer header too. On web loadStoredNativeToken() resolves
+  // immediately with null (no-op); the cookie path is unaffected.
   useEffect(() => {
     let cancelled = false;
-    loadInitialPosition()
-      .then((pos) => {
-        if (cancelled) return;
-        if (pos !== null) {
-          setSelectedBookSlug(pos.bookSlug);
-          setSelectedChapter(pos.chapter);
-          setCurrentVerse(pos.verseNumber);
-          if (pos.verseNumber > 1) {
-            setInitialScrollVerse(pos.verseNumber);
+    void loadStoredNativeToken().then(() => {
+      if (cancelled) return;
+      loadInitialPosition()
+        .then((pos) => {
+          if (cancelled) return;
+          if (pos !== null) {
+            setSelectedBookSlug(pos.bookSlug);
+            setSelectedChapter(pos.chapter);
+            setCurrentVerse(pos.verseNumber);
+            if (pos.verseNumber > 1) {
+              setInitialScrollVerse(pos.verseNumber);
+            }
           }
-        }
-        setHydrated(true);
-      })
-      .catch(() => {
-        if (cancelled) return;
-        setHydrated(true);
-      });
+          setHydrated(true);
+        })
+        .catch(() => {
+          if (cancelled) return;
+          setHydrated(true);
+        });
+    });
     return () => {
       cancelled = true;
       cancelPendingSave();
@@ -1456,12 +1476,32 @@ function Reader() {
   // chapter-local resolution). Refreshes on Save via the onSaved
   // callback appending the new entry. 401 (anonymous) leaves the array
   // empty; the panel renders the empty-state copy.
+  //
+  // S201 — await loadStoredNativeToken() before listNotes() fires, the
+  // same native-token race fixed for /me (S178) and listBooks (S200).
+  // /v1/notes is auth-gated (401 → empty for anonymous). This effect has
+  // an empty dependency array and never re-fires, so on the native shell
+  // a signed-in partner's notes raced the async Preferences read, came
+  // back 401-empty, and stayed empty for the entire session (it only
+  // repopulates when the partner adds a new note via the onSaved
+  // callback). Awaiting the token hydration attaches the Bearer header so
+  // the partner's existing notes load on launch. On web it's a no-op.
   useEffect(() => {
-    listNotes()
-      .then((r) => setNotes(r.notes))
-      .catch(() => {
-        // Anonymous or transient failure — empty state stands.
-      });
+    let cancelled = false;
+    void loadStoredNativeToken().then(() => {
+      if (cancelled) return;
+      listNotes()
+        .then((r) => {
+          if (cancelled) return;
+          setNotes(r.notes);
+        })
+        .catch(() => {
+          // Anonymous or transient failure — empty state stands.
+        });
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // S121 W3 — chapter Strong's-words reload alongside the chapter.
