@@ -79,21 +79,24 @@ removed). Below Companion it falls back to the tier-locked stub.
   **Deferred (next V1.1):** tie-to-reader — tap a passage → highlight the
   places/movement that passage names (uses `maps_places` + the verse text).
 
-## Production apply — REQUIRED before the rebuild is correct in prod
-The frontend (world map + arcs) ships via git push and is correct on its own, but
-the **framework band copy comes from the DB**. Until S199 is applied to prod, the
-band shows the OLD (wrong, ANE-confined) copy. Per the proven S197 path (no psql
-in the image; Render Web Shell paste fails in Safari → short typed command to an
-in-image runner):
-
-1. Commit + push from the Mac (sandbox can't write `.git`). Render auto-deploys
-   API + PWA. The new SQL ships via `COPY data-schema/`; the applier ships via the
-   added Dockerfile COPY + `.dockerignore` negate.
-2. After deploy, in the Render **Web Shell** on the API service, one typed line:
-
-       python3 /restoration-pipeline/_session199_apply_overlay.py
-
-   Idempotent (`ON CONFLICT DO UPDATE`); self-verifies the worldwide language.
+## DEPLOYED TO PRODUCTION (2026-06-04)
+- **Code:** committed `cf3f924` ("S199: rebuild Maps…") + a fixup commit removing
+  an unused `WORLD_VIEW_H` import. The first PWA build FAILED — Render builds with
+  `tsc -b` (enforces `noUnusedLocals`), which is stricter than the `tsc --noEmit`
+  used in-session; it flagged `MapsSheet.tsx(40,3): TS6133 'WORLD_VIEW_H' declared
+  but never read`. Lesson: **verify the frontend with `tsc -b` / `npm run build`,
+  not `tsc --noEmit`.** The fixup pushed; build went green. Pushed to origin/main
+  from the Mac (sandbox can't write `.git`; my sandbox git checks kept recreating
+  an undeletable `.git/index.lock` that blocked the Mac — don't run index-touching
+  git from the sandbox).
+- **DB:** the band rewrite applied via the Render **Web Shell** on the API service:
+  `python3 /restoration-pipeline/_session199_apply_overlay.py` → output confirmed
+  `worldwide? : True`, `red_lines [1,3,7]`, DONE. The live `maps/dispersion-overlay`
+  band now carries the worldwide scattering/gathering reading. Idempotent
+  (`ON CONFLICT DO UPDATE`); re-runnable.
+- **Result:** Maps is live and doctrinally correct in prod — real PD world map +
+  worldwide scatter/gather arcs reaching the Americas + the rewritten framework
+  band with the prophets quoted.
 
 ## Files this session
 New: `S199_SESSION_OPEN_PROMPT.md` (untracked), `S199_CHECKPOINT.md`,
