@@ -109,12 +109,32 @@ const TIERS: TierCard[] = [
 const FOUNDER_ANNUAL_LABEL = "$75 / year — forever locked";
 const FOUNDER_MONTHLY_LABEL = "$7.49 / month — forever locked";
 
+/**
+ * S206 — consumption-only store posture. Inside the native shells
+ * (Capacitor; Play Store / App Store builds) the checkout surface is
+ * hidden entirely: no prices, no cadence toggle, no Subscribe or
+ * founder buttons, no promo-code hint. The page keeps the tier names
+ * and what each tier carries, plus a calm note that tiers are managed
+ * from the partner's account on the web. The web/PWA keeps full
+ * Stripe checkout untouched. Same runtime-bridge detection pattern as
+ * SignIn.tsx — no Capacitor import, so the web bundle stays slim and
+ * the by-URL shell (capacitor.config.ts server.url) picks this up on
+ * the next web deploy with no app rebuild.
+ */
+function isNativePlatform(): boolean {
+  const cap = (window as unknown as {
+    Capacitor?: { isNativePlatform?: () => boolean };
+  }).Capacitor;
+  return cap?.isNativePlatform?.() === true;
+}
+
 export default function Pricing() {
   // S113 hotfix: default to monthly. The $1.99 first paid tier reads
   // more accessibly at the monthly price; partners who want the annual
   // discount can toggle. Annual was the prior default (S38) — flipped
   // after Yoshi's S113-verification feedback.
   const [cadence, setCadence] = useState<BillingCadence>("monthly");
+  const native = isNativePlatform();
   const [busy, setBusy] = useState<string | null>(null); // which card is checking out
   const [me, setMe] = useState<SubscriptionMe | null>(null);
   const [meError, setMeError] = useState<string | null>(null);
@@ -239,7 +259,17 @@ export default function Pricing() {
         </nav>
       </header>
 
+      {/* S206 — native-shell note: tiers are managed on the web. */}
+      {native && (
+        <div className="mb-8 rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-4 py-3 text-base text-[var(--reader-text)]">
+          Partner tiers are managed from your account on the web at
+          remnantofpromise.org. Once a tier is active, signing in here opens
+          everything it carries.
+        </div>
+      )}
+
       {/* Cadence toggle */}
+      {!native && (
       <div className="mb-8 flex items-center justify-center gap-3 font-sans text-sm">
         <button
           type="button"
@@ -264,6 +294,7 @@ export default function Pricing() {
           Annual <span className="text-xs opacity-75">— two months free</span>
         </button>
       </div>
+      )}
 
       {/* Already-active banner. When cancel_at_period_end=true the
           partner is still active until period_end but needs a
@@ -311,16 +342,18 @@ export default function Pricing() {
               <h2 className="text-lg font-semibold text-[var(--reader-text)]">
                 {t.name}
               </h2>
-              <div className="mt-1">
-                <div className="text-xl font-medium text-[var(--reader-text)]">
-                  {priceLabel}
-                </div>
-                {noteLabel && (
-                  <div className="text-xs text-[var(--reader-muted)]">
-                    {noteLabel}
+              {!native && (
+                <div className="mt-1">
+                  <div className="text-xl font-medium text-[var(--reader-text)]">
+                    {priceLabel}
                   </div>
-                )}
-              </div>
+                  {noteLabel && (
+                    <div className="text-xs text-[var(--reader-muted)]">
+                      {noteLabel}
+                    </div>
+                  )}
+                </div>
+              )}
               <p className="mt-3 text-base text-[var(--reader-muted)]">
                 {t.blurb}
               </p>
@@ -335,6 +368,7 @@ export default function Pricing() {
                 ))}
               </ul>
 
+              {!native && (
               <button
                 type="button"
                 disabled={busy !== null || buttonDisabled}
@@ -353,8 +387,9 @@ export default function Pricing() {
                   ? "Reactivate"
                   : "Subscribe"}
               </button>
+              )}
 
-              {isEverything && !buttonDisabled && (
+              {!native && isEverything && !buttonDisabled && (
                 <div className="mt-3 rounded border border-amber-300 bg-amber-50 p-3 text-xs text-amber-900">
                   <div className="font-medium">First 100 founder partners</div>
                   <div className="mt-1">{founderLabel}</div>
@@ -381,14 +416,17 @@ export default function Pricing() {
 
       {/* Footer: promo-code hint + permanent-price-lock reminder */}
       <footer className="mt-10 border-t border-[var(--reader-rule)] pt-4 text-base text-[var(--reader-muted)]">
-        <p>
-          Have a partner code? Enter it on the Stripe checkout page that opens
-          after you click Subscribe — there's a field for it on the right side
-          of the page.
-        </p>
+        {!native && (
+          <p>
+            Have a partner code? Enter it on the Stripe checkout page that opens
+            after you click Subscribe — there's a field for it on the right side
+            of the page.
+          </p>
+        )}
         <p className="mt-2">
-          Subscriptions route through Stripe. The 501(c)(3) is the legal home of
-          the work.
+          {native
+            ? "The 501(c)(3) is the legal home of the work."
+            : "Subscriptions route through Stripe. The 501(c)(3) is the legal home of the work."}
         </p>
       </footer>
     </div>

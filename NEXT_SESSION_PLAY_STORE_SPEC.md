@@ -1,5 +1,44 @@
 # Next session — PLAY STORE SUBMISSION (Yoshi's call, S205 close — JUMPS THE QUEUE)
 
+## S206 STATUS — sandbox work DONE; Mac/Console steps in S206_PLAY_SUBMISSION_RUNBOOK.md
+
+Decisions settled S206 (transcribed per the skill rule):
+- **Billing CONFIRMED by Yoshi at open: consumption-only store build.**
+- **Native Pricing surface (landed, app/src/routes/Pricing.tsx):** in
+  the shell the page hides prices, the cadence toggle, Subscribe +
+  founder buttons, and the promo-code hint; it keeps tier names +
+  what each tier carries + the active-partner banner (the in-shell
+  tier read), and shows the note "Partner tiers are managed from your
+  account on the web at remnantofpromise.org." Web/PWA untouched.
+  NOTE: hiding the PRICES (not just the buttons) was Claude's
+  conservative read of consumption-only — Kindle posture. Yoshi can
+  reverse to show prices-without-buttons with a one-line change.
+  Detection is the runtime window.Capacitor bridge check (SignIn.tsx
+  pattern, no import); reaches the installed shell via the next web
+  deploy because of the server.url posture — no app rebuild needed
+  for future pricing-surface changes.
+- **versionCode 10 → 11, versionName 1.1.0** (Play install must
+  update over the direct-APK build already on the phone).
+- **targetSdk 36 verified current**: Play requires 35 now, 36 from
+  2026-08-31 — already compliant, no gradle change.
+- **Privacy policy page created**:
+  Website/static-site/privacy.html → publish, then
+  https://remnantofpromise.org/privacy.html is the Play URL AND the
+  account-deletion resource (deletion by email, 30 days, subscription
+  cancelled with it). Data-safety answers + content-rating answers +
+  full listing copy (voice-gated) live in the runbook.
+- **Play App Signing: accept at first upload.** Afterward copy the
+  app-signing-key SHA-256 from Console → App integrity and ADD it as
+  a second fingerprint in app/public/.well-known/assetlinks.json
+  (keep the upload-key D2:E0:F7:... entry) or /strongs deep links
+  stop auto-verifying on Play-installed builds. QUEUED — needs the
+  first upload to exist.
+- **Demo reviewer account**: Yoshi creates a promo-code Scribe
+  account on a throwaway email for Play's App-access form.
+- Keystore verified present (_signing/remnant-bible.keystore);
+  backup is Step 1 of the runbook, before anything else.
+- tsc -b exit 0 after the Pricing gate.
+
 ## The mandate (Yoshi, verbatim — transcribed)
 "I've wasted too much time, everything else can update automatically
 or via the store if it's a shell update or whatever, let's get it
