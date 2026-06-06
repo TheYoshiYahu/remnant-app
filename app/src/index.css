@@ -366,11 +366,23 @@ body {
  *   silver   — cool chrome utility                   (Theme) NEW
  *   bronze   — warm chrome utility                   (Settings) NEW
  *   emerald  — foundational ongoing relationship     (Manage account / Sign in)
+ *   spectral — the apparatus register                (My Study) S203
  *
  * Scarlet completes the tabernacle-veil palette per Exodus 26:31
  * (techelet + argaman + scarlet + gold). Silver + bronze are the two
  * chrome-utility metallics — visually distinct so Theme vs Settings
  * read clearly different at a glance.
+ *
+ * Spectral (S203) is the eighth register: the #0084FF apparatus color
+ * in the same metallic treatment as the Study Notes tier chip + the
+ * S201 "more for this verse" pill (border #9FD0FF, gradient #0E2C50 →
+ * #2E7BD6 → #0E2C50). The partner's own study apparatus carries the
+ * apparatus color — and the chrome button visually ties to the Study
+ * Notes tier chips inside the surface it opens. Distinct from techelet
+ * (divine illumination, deeper royal #0A2D84→#1A6FE5) per the S127
+ * lock: techelet is divine-names-only, spectral blue is apparatus/
+ * chrome. The two never sit adjacent in the cluster (argaman Bookmarks
+ * stands between Search and My Study).
  */
 .chrome-metal {
   display: inline-flex;
@@ -425,6 +437,11 @@ body {
   background-image: linear-gradient(to right, #04321E 0%, #15A86A 50%, #04321E 100%);
   border-color: #2EFFA1;
   color: #E6FFF2;
+}
+.chrome-metal-spectral {
+  background-image: linear-gradient(to right, #0E2C50 0%, #2E7BD6 50%, #0E2C50 100%);
+  border-color: #9FD0FF;
+  color: #EAF4FF;
 }
 
 /* Book-heading source-class pill. Same register family as the chrome

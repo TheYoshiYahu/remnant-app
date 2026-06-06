@@ -2045,15 +2045,17 @@ function Reader() {
                 unified personal-apparatus home (notes + bookmarks +
                 highlights: search, collections, color sections,
                 export). Sits left of Notes with the partner-content
-                cluster. Gold register — the partner's own study is
-                the crown of the apparatus. Free tier opens it too
-                (capped home + Study Notes lever inside). */}
+                cluster. Spectral register (S203 — gold was already
+                Listen's, Yoshi's catch): the #0084FF apparatus color
+                in the metallic treatment, matching the Study Notes
+                tier chips inside the surface this button opens. Free
+                tier opens it too (capped home + lever inside). */}
             <button
               type="button"
               onClick={() => setMyStudyOpen(true)}
               aria-label="Open My Study"
               title="Open My Study"
-              className="chrome-metal chrome-metal-gold"
+              className="chrome-metal chrome-metal-spectral"
             >
               <span aria-hidden="true">❖</span>
               <span>My Study</span>
