@@ -201,7 +201,13 @@ gathering 217, kingdom 126, good_news 105, grace 67, teaching 65.
 The concordance-first method is now the standard for every future
 wave: scan → disposition every hit → card → checker.
 
-## Next session
+## Next session — LOCKED (Yoshi, S205 close)
+**Mark: the extracanonical cross-reference pass.** One book at a
+time, Mark first; Luke and John follow. Full spec with the open
+questions, the starting threads, and the method:
+NEXT_SESSION_MARK_EXTRAS_XREF_SPEC.md. Read it FIRST at session open.
+
+## Backlog behind it
 Kingdom wave 4: extras-side marks (1 Enoch, Jubilees, Jasher quoted as
 sources where the nothing-new test finds them), plus the sweep
 continues — minion-noted candidates cut for count discipline: Luke
