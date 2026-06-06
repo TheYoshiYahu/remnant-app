@@ -235,6 +235,16 @@ def main() -> int:
         if not database_url:
             print("error: DATABASE_URL is not set (required unless --canon-only)", file=sys.stderr)
             return 2
+        from urllib.parse import urlparse as _urlparse
+        if not _urlparse(database_url).hostname:
+            print(
+                "error: DATABASE_URL has no host — it looks like the "
+                "'<...>' placeholder was not replaced with your real URL.\n"
+                "       Use your Render EXTERNAL Postgres connection string, e.g.\n"
+                "       postgresql://user:pass@dpg-xxxx-a.oregon-postgres.render.com/dbname",
+                file=sys.stderr,
+            )
+            return 2
         db_status = asyncio.run(update_postgres(bodies, database_url, dry_run=True))
         print(f"Postgres plan: updated={sum(1 for s in db_status.values() if s == 'updated')}, "
               f"unchanged={sum(1 for s in db_status.values() if s == 'unchanged')}, "
