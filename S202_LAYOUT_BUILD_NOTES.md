@@ -1,5 +1,17 @@
 # S202 — Reader layout built (dividers + chapter-end aesthetic pass)
 
+## LATE-S202 DECISION — Hebrew letter dividers ABANDONED (Yoshi)
+After extensive iteration (Grok-generated paleo-Hebrew was inaccurate and
+pulled; font renderings — Noto Phoenician/Samaritan/Aramaic — were not the
+forms Yoshi wanted; pictographic strips were cut from Yoshi's own chart and
+came out clean), Yoshi made the call: "im abandoning the hebrew idea."
+DO NOT resurrect the aleph-bet / Hebrew-letter divider in future sessions
+unless Yoshi raises it himself. The botanical (color-matched, both themes)
+is THE divider — live at the end-of-scripture seam of every chapter.
+Leftover inert artifacts (optional future cleanup, nothing user-visible):
+the unused "alephbet" variant in ReaderDivider.tsx, divider-alephbet*.png
+in app/public/dividers/, and the cut strips in the session outputs.
+
 The S201 "perfect the layout" job, built. Proof was shown and signed off
 BEFORE wiring (earned after the S199 maps miss). `tsc -b --force` clean.
 
