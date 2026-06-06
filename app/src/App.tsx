@@ -2275,15 +2275,15 @@ function Reader() {
               repeated as a visual confession in every chapter heading
               across canon + library. */}
           {/*
-            S201 — aleph-bet ornament as the major section break. Rendered
-            at the top of a book (chapter 1), above the book heading, so the
-            22 paleo-Hebrew letters open each new book as the reader moves
-            through the canon. Hidden in light mode until the parchment
-            divider variants ship (see .reader-divider in index.css).
+            S202 — aleph-bet section-break divider PULLED. On review the
+            Grok-generated asset is NOT authentic paleo-Hebrew (invented /
+            rune-like glyphs, an up-arrow, wrong forms and order). Wrong
+            Hebrew on a study-Bible page is worse than no ornament, so the
+            section break is removed until a letterform-accurate strip is
+            built (rendered from a real Phoenician/paleo-Hebrew font, not an
+            AI image gen). The botanical chapter→apparatus divider is
+            unaffected.
           */}
-          {chapterDetail.chapter.chapter_number === 1 && (
-            <ReaderDivider variant="alephbet" />
-          )}
           <h2 className="mb-1 text-xl font-semibold text-[var(--reader-text)] flex items-center gap-2 flex-wrap">
             <span className={bookPillClassName(chapterDetail.book.slug)}>
               {chapterDetail.book.title}
