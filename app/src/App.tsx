@@ -39,6 +39,7 @@ import { loadStoredNativeToken } from "./lib/native-auth";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ReaderDivider from "./components/ReaderDivider";
 import WitnessCard from "./components/WitnessCard";
+import WitnessEndCard from "./components/WitnessEndCard";
 import HighlightPicker, {
   markClassFor,
   markCssVarsFor,
@@ -203,6 +204,16 @@ function ThemeToggle() {
 // with proper pericope-style paragraph breaks rather than verse-per-line or
 // one giant run-on paragraph.
 const paragraphStarts = paragraphStartsData as Record<string, Record<string, number[]>>;
+
+// S204b — the four partner-choosable Witness verse treatments.
+type WitnessStyle = "text" | "quotes" | "highlight" | "capsule";
+
+const WITNESS_STYLE_LABELS: Record<WitnessStyle, string> = {
+  text: "Red text",
+  quotes: "Red quotes",
+  highlight: "Highlight",
+  capsule: "Capsule",
+};
 
 /**
  * Session 13 minimum-useful checkpoint:
@@ -458,15 +469,17 @@ function Reader() {
   };
 
   // S204 — The Witness (working title: Red Pill). The inverted
-  // red-letter overlay: member verses carry the witness-red capsule
-  // mark; tap unfolds the come-and-see card inline. Free for every
-  // partner — the proclamation surface; no tier gate, ever. Default
-  // OFF so the reading surface stays untouched until the partner opts
-  // in; choice persists in localStorage like the other reader toggles.
-  const [witnessOn, setWitnessOn] = useState<boolean>(false);
+  // red-letter overlay: member verses carry the partner's chosen red
+  // treatment; tap unfolds the come-and-see card inline. Free for
+  // every partner — the proclamation surface; no tier gate, ever.
+  // S204b (Yoshi): defaults ON for first-time visitors — the
+  // proclamation meets them before they know to look for it; the
+  // toggle-off choice persists like the other reader toggles.
+  const [witnessOn, setWitnessOn] = useState<boolean>(true);
   useEffect(() => {
     if (typeof window === "undefined") return;
-    setWitnessOn(window.localStorage.getItem("rop_witness_v1") === "true");
+    const stored = window.localStorage.getItem("rop_witness_v1");
+    setWitnessOn(stored === null ? true : stored === "true");
   }, []);
   const toggleWitness = () => {
     const next = !witnessOn;
@@ -474,6 +487,28 @@ function Reader() {
     setExpandedWitnessVerseId(null);
     if (typeof window !== "undefined") {
       window.localStorage.setItem("rop_witness_v1", String(next));
+    }
+  };
+  // S204b — the partner-chosen verse treatment ("red pill options and
+  // then they choose" — Yoshi). Default "text": the inverted
+  // red-letter made literal. Persists per device.
+  const [witnessStyle, setWitnessStyle] = useState<WitnessStyle>("text");
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const stored = window.localStorage.getItem("rop_witness_style_v1");
+    if (
+      stored === "text" ||
+      stored === "quotes" ||
+      stored === "highlight" ||
+      stored === "capsule"
+    ) {
+      setWitnessStyle(stored);
+    }
+  }, []);
+  const pickWitnessStyle = (s: WitnessStyle) => {
+    setWitnessStyle(s);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("rop_witness_style_v1", s);
     }
   };
   const [witnessByVerse, setWitnessByVerse] = useState<
@@ -2455,20 +2490,26 @@ function Reader() {
                       bookmark?.color_tint
                         ? HIGHLIGHT_HEX[bookmark.color_tint]
                         : undefined;
-                    // S204 — The Witness mark. A small witness-red
-                    // capsule (literally the pill) after the verse
-                    // number on member verses while the toggle is ON.
-                    // Tap unfolds the come-and-see card right under
-                    // this verse's paragraph; tap again folds it.
+                    // S204/S204b — The Witness treatment on member
+                    // verses while the toggle is ON, in the partner's
+                    // chosen style (red text / red quotes / highlight
+                    // wash / capsule). Tapping the verse (or the
+                    // capsule / quote marks) unfolds the come-and-see
+                    // card under this paragraph; tap again folds it.
                     const witnessEntry = witnessOn
                       ? witnessByVerse[v.id]
                       : undefined;
+                    const toggleWitnessCard = () => {
+                      setExpandedWitnessVerseId(
+                        expandedWitnessVerseId === v.id ? null : v.id
+                      );
+                    };
                     let content: React.ReactNode = (
                       <>
                         <sup className="verse-number mr-1">
                           {v.verse_number}
                         </sup>
-                        {witnessEntry && (
+                        {witnessEntry && witnessStyle === "capsule" && (
                           <button
                             type="button"
                             className="pill-mark-witness"
@@ -2479,13 +2520,22 @@ function Reader() {
                             title={witnessEntry.card_title}
                             onClick={(e) => {
                               e.stopPropagation();
-                              setExpandedWitnessVerseId(
-                                expandedWitnessVerseId === v.id
-                                  ? null
-                                  : v.id
-                              );
+                              toggleWitnessCard();
                             }}
                           />
+                        )}
+                        {witnessEntry && witnessStyle === "quotes" && (
+                          <span
+                            className="witness-quote"
+                            aria-hidden="true"
+                            title={witnessEntry.card_title}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleWitnessCard();
+                            }}
+                          >
+                            {"“"}
+                          </span>
                         )}
                         {bookmark && (
                           <span
@@ -2650,8 +2700,49 @@ function Reader() {
                             </span>
                           );
                         })}
+                        {witnessEntry && witnessStyle === "quotes" && (
+                          <span
+                            className="witness-quote"
+                            aria-hidden="true"
+                            title={witnessEntry.card_title}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleWitnessCard();
+                            }}
+                          >
+                            {"” "}
+                          </span>
+                        )}
                       </>
                     );
+                    // S204b — red-text / highlight-wash treatments wrap
+                    // the whole verse content (same wrapping point the
+                    // partner highlight marks use, so the verse number
+                    // and glyphs behave identically across both
+                    // systems). Both open the card on tap via the
+                    // outer verse span's click handler.
+                    if (witnessEntry && witnessStyle === "text") {
+                      content = (
+                        <span
+                          className="witness-verse-text"
+                          title={witnessEntry.card_title}
+                        >
+                          {content}
+                        </span>
+                      );
+                    } else if (
+                      witnessEntry &&
+                      witnessStyle === "highlight"
+                    ) {
+                      content = (
+                        <span
+                          className="witness-verse-fill"
+                          title={witnessEntry.card_title}
+                        >
+                          {content}
+                        </span>
+                      );
+                    }
                     let underlineIdx = 0;
                     for (const mark of marks) {
                       const inlineStyle: React.CSSProperties = {
@@ -2732,6 +2823,14 @@ function Reader() {
                           // fallback when verse_words haven't arrived).
                           if (rangeState.status === "selecting") {
                             commitEndVerse(v.id);
+                            return;
+                          }
+                          // S204b — a plain tap on a Witness member
+                          // verse unfolds/folds its come-and-see card
+                          // (word taps stopPropagation first, so
+                          // Strong's lookups still win on words).
+                          if (witnessEntry) {
+                            toggleWitnessCard();
                           }
                         }}
                       >
@@ -2943,12 +3042,37 @@ function Reader() {
               type="button"
               onClick={toggleWitness}
               aria-pressed={witnessOn}
-              title="The Witness — marks every verse where the Messiah claims what the Tanakh gives to Yahuah alone. Tap a mark to see both verses side by side."
+              title="The Witness — marks every verse where the Messiah claims what the Tanakh gives to Yahuah alone. Tap a marked verse to see both sides quoted in full."
               className="chrome-metal chrome-metal-witness !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
             >
               ◉ {witnessOn ? "The Witness: on" : "The Witness"}
             </button>
           </div>
+
+          {/*
+            S204b — the Witness style row ("red pill options and then
+            they choose" — Yoshi). Visible while the Witness is ON.
+            Default "text" (the inverted red-letter: red used to mean
+            "he speaks," now it means he claims the Name). Persists at
+            rop_witness_style_v1.
+          */}
+          {witnessOn && (
+            <div className="mt-2 flex flex-wrap items-center justify-end gap-1.5 font-sans">
+              {(
+                ["text", "quotes", "highlight", "capsule"] as const
+              ).map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  className="witness-style-chip"
+                  aria-pressed={witnessStyle === s}
+                  onClick={() => pickWitnessStyle(s)}
+                >
+                  {WITNESS_STYLE_LABELS[s]}
+                </button>
+              ))}
+            </div>
+          )}
 
           {!hideCommentary && chapterDetail.chapter_intro && (
             <aside className="mt-4 text-[var(--reader-text)]">
@@ -3014,6 +3138,24 @@ function Reader() {
               chapterNumber={chapterDetail.chapter.chapter_number}
               userTier={me?.tier ?? "free"}
               onNavigate={jumpToVerseRef}
+              hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
+            />
+          )}
+
+          {/*
+            S204b — the Witness chapter-end card: every pairing in this
+            chapter listed cross-reference style (marked verse ↔ Tanakh
+            anchors), each opening the full come-and-see card inline.
+            Rides the Witness toggle (its own surface, not gated by
+            hideCommentary — the proclamation stands even when the
+            study aids are folded away).
+          */}
+          {witnessOn && (
+            <WitnessEndCard
+              entries={Object.values(witnessByVerse).sort(
+                (a, b) => a.verse_number - b.verse_number
+              )}
               hideParentheticals={hideParentheticals}
               sacredNameMask={sacredNameMask}
             />

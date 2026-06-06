@@ -465,6 +465,58 @@ body {
   --pill-witness-mid: #C8102E;
   --pill-witness-border: #FF8E96;
   --pill-witness-text: #FFE6E8;
+  /* The red used for verse-text / quote-mark treatments. Brighter than
+   * the register mid on the black reader for AA legibility; the
+   * parchment theme drops to the true register red below. */
+  --pill-witness-textmark: #E5485A;
+}
+[data-theme="light"] {
+  --pill-witness-textmark: #C8102E;
+}
+
+/* S204b — the partner-chosen Witness verse treatments (Yoshi: "red
+ * pill options and then they choose"). Four styles, persisted per
+ * partner, default "text" (the inverted red-letter made literal):
+ *   text      — whole verse in witness red
+ *   quotes    — witness-red quotation marks frame the verse
+ *   highlight — translucent witness wash behind the verse (deeper
+ *               than the partner crimson fill but same family feel)
+ *   capsule   — the small red pill glyph (the original S204 mark)
+ * All four open the same come-and-see card on tap. */
+.witness-verse-text {
+  color: var(--pill-witness-textmark);
+  cursor: pointer;
+}
+.witness-quote {
+  color: var(--pill-witness-textmark);
+  font-size: 1.3em;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+}
+.witness-verse-fill {
+  background-color: color-mix(in srgb, var(--pill-witness-mid) 33%, transparent);
+  cursor: pointer;
+}
+[data-theme="light"] .witness-verse-fill {
+  background-color: color-mix(in srgb, var(--pill-witness-mid) 22%, transparent);
+}
+.witness-style-chip {
+  border: 1px solid var(--reader-rule);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--reader-muted);
+  background: transparent;
+  cursor: pointer;
+}
+.witness-style-chip[aria-pressed="true"] {
+  border-color: var(--pill-witness-border);
+  color: var(--pill-witness-textmark);
+  background: color-mix(in srgb, var(--pill-witness-mid) 12%, transparent);
 }
 .chrome-metal-witness {
   background-image: linear-gradient(to right, var(--pill-witness-deep) 0%, var(--pill-witness-mid) 50%, var(--pill-witness-deep) 100%);

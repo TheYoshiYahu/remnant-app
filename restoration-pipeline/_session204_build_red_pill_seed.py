@@ -116,7 +116,7 @@ CARDS = [
     ),
     dict(
         mark=("john", 10, 30),
-        mirrors=[],
+        mirrors=[("deuteronomy", 6, 4)],
         claim_class="direct",
         class_label="His own mouth",
         card_title="I and my Father are one",
@@ -143,7 +143,7 @@ CARDS = [
     ),
     dict(
         mark=("john", 20, 28),
-        mirrors=[],
+        mirrors=[("isaiah", 42, 8)],
         claim_class="direct",
         class_label="Spoken of him",
         card_title="My Lord and my Elohim (God)",
@@ -167,7 +167,7 @@ CARDS = [
     ),
     dict(
         mark=("mark", 2, 10),
-        mirrors=[],
+        mirrors=[("isaiah", 43, 25)],
         claim_class="direct",
         class_label="His own mouth",
         card_title="Who can forgive sins but Elohim (God) only?",
@@ -219,7 +219,7 @@ CARDS = [
     ),
     dict(
         mark=("revelation", 1, 8),
-        mirrors=[],
+        mirrors=[("isaiah", 41, 4)],
         claim_class="direct",
         class_label="His own mouth",
         card_title="Alpha and Omega — which is, and which was, and which is to come",
@@ -238,7 +238,7 @@ CARDS = [
     ),
     dict(
         mark=("revelation", 1, 17),
-        mirrors=[],
+        mirrors=[("isaiah", 44, 6)],
         claim_class="direct",
         class_label="His own mouth",
         card_title="The first and the last — who was dead, and is alive",
@@ -260,7 +260,7 @@ CARDS = [
     ),
     dict(
         mark=("1-corinthians", 12, 3),
-        mirrors=[],
+        mirrors=[("joel", 2, 32)],
         claim_class="direct",
         class_label="Spoken of him",
         card_title="No man can say it but by the Ruach HaKodesh (Holy Spirit)",
@@ -282,7 +282,7 @@ CARDS = [
     ),
     dict(
         mark=("philippians", 2, 10),
-        mirrors=[],
+        mirrors=[("isaiah", 45, 23)],
         claim_class="direct",
         class_label="Spoken of him",
         card_title="Every knee shall bow, every tongue shall swear",
@@ -305,7 +305,7 @@ CARDS = [
     ),
     dict(
         mark=("john", 9, 38),
-        mirrors=[],
+        mirrors=[("exodus", 34, 14)],
         claim_class="direct",
         class_label="Worship received",
         card_title="And he worshipped him",
@@ -329,7 +329,7 @@ CARDS = [
     ),
     dict(
         mark=("mark", 2, 28),
-        mirrors=[],
+        mirrors=[("exodus", 20, 10), ("isaiah", 58, 13)],
         claim_class="direct",
         class_label="His own mouth",
         card_title="Lord also of the sabbath",
@@ -347,10 +347,83 @@ CARDS = [
             ),
         ],
     ),
+    dict(
+        mark=("john", 1, 1),
+        mirrors=[("genesis", 1, 1), ("psalms", 33, 6)],
+        claim_class="direct",
+        class_label="Spoken of him",
+        card_title="The Word was Elohim (God)",
+        anchor_refs=["Genesis 1:1", "Psalm 33:6"],
+        body=[
+            Q("john", 1, 1, 2),
+            Q("genesis", 1, 1),
+            Q("psalms", 33, 6),
+            P(
+                "John opens his witness with Genesis' own opening words — *in "
+                "the beginning* — and stations the Word there: with Elohim "
+                "(God), and Elohim (God). The psalmist had already said how "
+                "the heavens of Genesis came to be: *by the word of Yahuah "
+                "(LORD).* The Word is not a creature standing near the "
+                "Creator; the Word is what the creating sounded like. The "
+                "Father is the Formless; the Word is the Formed, drawn from "
+                "him before anything was — with him, and Elohim (God). This "
+                "is the verse the rest of John's record unfolds."
+            ),
+        ],
+    ),
+    dict(
+        mark=("john", 1, 3),
+        mirrors=[("isaiah", 44, 24)],
+        claim_class="act",
+        class_label="The act transferred",
+        card_title="All things were made by him — alone, by myself",
+        anchor_refs=["Isaiah 44:24"],
+        body=[
+            Q("john", 1, 3),
+            Q("isaiah", 44, 24),
+            P(
+                "Isaiah's words are built to exclude every helper: Yahuah "
+                "(LORD) makes all things, stretches the heavens ALONE, "
+                "spreads the earth BY MYSELF. John says all things were made "
+                "by the Word — not some things, not the later things: *without "
+                "him was not any thing made that was made.* Hold both "
+                "sentences at once. Either the Word stands inside Isaiah's "
+                "*alone,* or one of the two verses is false. The canon's own "
+                "answer is the Formed — the Word by whom the Formless made "
+                "everything, the *by myself* with a voice."
+            ),
+        ],
+    ),
+    dict(
+        mark=("john", 1, 14),
+        mirrors=[("zechariah", 2, 10), ("zechariah", 2, 11)],
+        claim_class="structural",
+        class_label="Only possible if",
+        card_title="The Word made flesh — I will dwell in the midst of thee",
+        anchor_refs=["Zechariah 2:10-11"],
+        body=[
+            Q("john", 1, 14),
+            Q("zechariah", 2, 10, 11),
+            P(
+                "Zechariah's promise has two movements that the inherited "
+                "reading rarely slows down for. First: Yahuah (LORD) himself "
+                "says *I come, and I will dwell in the midst of thee* — the "
+                "dwelling is his own act, in his own first person. Second: "
+                "the one dwelling then says *thou shalt know that Yahuah "
+                "Tseva'ot (LORD of hosts) hath sent me* — Yahuah (LORD), "
+                "sent by Yahuah Tseva'ot (LORD of hosts). Two in one "
+                "promise: the Formless who sends, the Formed who comes and "
+                "dwells. John writes the fulfillment in one line: the Word "
+                "was made flesh, and dwelt — tabernacled — among us, and we "
+                "beheld his glory. The dwelling Yahuah (LORD) promised in "
+                "his own voice happened on foot, in Galilee."
+            ),
+        ],
+    ),
     # ============== CLASS 2 — TITLE TRANSFER ==============
     dict(
         mark=("john", 10, 11),
-        mirrors=[("ezekiel", 34, 11), ("psalms", 23, 1)],
+        mirrors=[("ezekiel", 34, 11), ("ezekiel", 34, 15), ("psalms", 23, 1)],
         claim_class="title",
         class_label="The title transferred",
         card_title="I am the good shepherd",
@@ -378,7 +451,7 @@ CARDS = [
     ),
     dict(
         mark=("mark", 2, 19),
-        mirrors=[],
+        mirrors=[("isaiah", 54, 5)],
         claim_class="title",
         class_label="The title transferred",
         card_title="The bridegroom",
@@ -401,7 +474,7 @@ CARDS = [
     ),
     dict(
         mark=("john", 8, 12),
-        mirrors=[],
+        mirrors=[("psalms", 27, 1), ("isaiah", 60, 19)],
         claim_class="title",
         class_label="The title transferred",
         card_title="I am the light of the world",
@@ -423,7 +496,7 @@ CARDS = [
     ),
     dict(
         mark=("john", 12, 13),
-        mirrors=[],
+        mirrors=[("zephaniah", 3, 15)],
         claim_class="title",
         class_label="The title transferred",
         card_title="The King of Yashar'el (Israel)",
@@ -447,7 +520,7 @@ CARDS = [
     ),
     dict(
         mark=("revelation", 22, 12),
-        mirrors=[],
+        mirrors=[("isaiah", 40, 10)],
         claim_class="title",
         class_label="The title transferred",
         card_title="My reward is with me",
@@ -469,7 +542,7 @@ CARDS = [
     # ============== CLASS 3 — ACT TRANSFER ==============
     dict(
         mark=("luke", 21, 27),
-        mirrors=[("zechariah", 14, 4)],
+        mirrors=[("zechariah", 14, 3), ("zechariah", 14, 4)],
         claim_class="act",
         class_label="The act transferred",
         card_title="His feet on the mount of Olives",
@@ -493,7 +566,7 @@ CARDS = [
     ),
     dict(
         mark=("mark", 6, 48),
-        mirrors=[],
+        mirrors=[("job", 9, 8)],
         claim_class="act",
         class_label="The act transferred",
         card_title="Walking upon the sea",
@@ -515,7 +588,7 @@ CARDS = [
     ),
     dict(
         mark=("luke", 22, 20),
-        mirrors=[("jeremiah", 31, 31)],
+        mirrors=[("jeremiah", 31, 31), ("jeremiah", 31, 33)],
         claim_class="act",
         class_label="The act transferred",
         card_title="The new covenant — cut in his own blood",
@@ -538,7 +611,7 @@ CARDS = [
     ),
     dict(
         mark=("john", 10, 16),
-        mirrors=[],
+        mirrors=[("ezekiel", 34, 12), ("ezekiel", 37, 21)],
         claim_class="act",
         class_label="The act transferred",
         card_title="Other sheep — one fold, one shepherd",
@@ -562,7 +635,7 @@ CARDS = [
     ),
     dict(
         mark=("matthew", 15, 24),
-        mirrors=[],
+        mirrors=[("jeremiah", 50, 6)],
         claim_class="act",
         class_label="The act transferred",
         card_title="Sent to the lost sheep of the house of Yashar'el (Israel)",
@@ -585,7 +658,7 @@ CARDS = [
     ),
     dict(
         mark=("matthew", 25, 31),
-        mirrors=[],
+        mirrors=[("ezekiel", 34, 17)],
         claim_class="act",
         class_label="The act transferred",
         card_title="The shepherd who judges between sheep and goats",
@@ -609,7 +682,7 @@ CARDS = [
     # ============== CLASS 4 — STRUCTURAL ==============
     dict(
         mark=("romans", 7, 4),
-        mirrors=[],
+        mirrors=[("jeremiah", 3, 8), ("deuteronomy", 24, 4), ("hosea", 2, 19), ("hosea", 2, 20)],
         claim_class="structural",
         class_label="Only possible if",
         card_title="The first husband died",
@@ -671,7 +744,7 @@ CARDS = [
     ),
     dict(
         mark=("john", 12, 41),
-        mirrors=[],
+        mirrors=[("isaiah", 6, 1), ("isaiah", 6, 5)],
         claim_class="structural",
         class_label="Only possible if",
         card_title="Isaiah saw HIS glory",
@@ -694,7 +767,7 @@ CARDS = [
     ),
     dict(
         mark=("1-corinthians", 10, 4),
-        mirrors=[],
+        mirrors=[("deuteronomy", 32, 4), ("exodus", 17, 7)],
         claim_class="structural",
         class_label="Only possible if",
         card_title="That Rock was Messiah (Christ)",
@@ -722,7 +795,7 @@ CARDS = [
     ),
     dict(
         mark=("jude", 1, 5),
-        mirrors=[],
+        mirrors=[("exodus", 20, 2)],
         claim_class="structural",
         class_label="Only possible if",
         card_title="The one who saved the people out of Egypt",
@@ -744,7 +817,7 @@ CARDS = [
     ),
     dict(
         mark=("john", 1, 18),
-        mirrors=[],
+        mirrors=[("exodus", 33, 20), ("exodus", 24, 10)],
         claim_class="structural",
         class_label="Only possible if",
         card_title="No man hath seen Elohim (God) — so who was seen?",
