@@ -4374,6 +4374,584 @@ CARDS += [
     ),
 ]
 
+# ===== EXHAUSTIVE WAVE 3: THE SEED =====
+CARDS += [
+
+
+    # ── 1. The seed war — Genesis 3:15 to Revelation 12:17 ──────────────────
+    dict(
+        mark=("genesis", 3, 15),
+        mirrors=[("revelation", 12, 17)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="The seed war — from the garden to the remnant of her seed",
+        anchor_refs=["Genesis 3:15", "Revelation 12:17"],
+        body=[
+            Q("genesis", 3, 15),
+            Q("revelation", 12, 17),
+            P("The first promise in the canon is a war between two seeds — the serpent's and the woman's — and the canon's last book finds the same war still running. The dragon is wroth with the woman and makes war with the remnant of her seed, and the remnant is identified by two marks: they keep the commandments of Elohim (God), and they hold the testimony of Yahusha HaMashiach (Jesus Christ)."),
+            P("The seed is a line, hunted from the garden gate to the end of the age. The head-bruising promised at the beginning and the remnant standing at the end are one story: the seed survives the war."),
+        ],
+    ),
+
+    # ── 2. Genesis 12:7 — the first 'thy seed' spoken to Abram ──────────────
+    dict(
+        mark=("genesis", 12, 7),
+        mirrors=[("genesis", 24, 7), ("joshua", 24, 3), ("nehemiah", 9, 8)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Unto thy seed will I give this land — the first seed-promise to Abram",
+        anchor_refs=["Genesis 12:7", "Genesis 24:7", "Nehemiah 9:8"],
+        body=[
+            Q("genesis", 12, 7),
+            Q("genesis", 24, 7),
+            Q("joshua", 24, 3),
+            Q("nehemiah", 9, 8),
+            P("The first time the words thy seed are spoken to Abram, they come with a deed of land attached. Abraham stakes his son's marriage on that word; Joshua recites it to the tribes as performed history; the Levites of Nehemiah's day confess it back to Yahuah (God) as a word already kept. The land was given to a seed — a bloodline with a name and a grant — not to a category anyone can enter by claiming it."),
+        ],
+    ),
+
+    # ── 3. Genesis 13:15-16 — the land for ever, the seed as dust ────────────
+    dict(
+        mark=("genesis", 13, 15),
+        mirrors=[("genesis", 13, 16)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="To thy seed for ever — the land deeded and the dust uncounted",
+        anchor_refs=["Genesis 13:15-16"],
+        body=[
+            Q("genesis", 13, 15, 16),
+            P("Two words carry this promise past every theology that retires it: for ever. The grant to the seed has no expiration clause, and the seed itself is measured against the dust — a count no census can take. A seed scattered beyond human numbering is built into the promise from the start, and a seed beyond numbering is a seed Yahuah (God) never lost count of."),
+        ],
+    ),
+
+    # ── 4. Genesis 15 — stars, the four hundred years, the river-to-river deed
+    dict(
+        mark=("genesis", 15, 5),
+        mirrors=[("genesis", 15, 13), ("genesis", 15, 18)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="So shall thy seed be — the stars, the four hundred years, and the covenant cut",
+        anchor_refs=["Genesis 15:5-18", "Acts 7:5-6", "Genesis 46:6-7"],
+        body=[
+            Q("genesis", 15, 5),
+            Q("genesis", 15, 13),
+            Q("genesis", 15, 18),
+            Q("acts", 7, 5, 6),
+            Q("genesis", 46, 6, 7),
+            P("The covenant of the pieces names the seed's whole itinerary before Abram has a single child: stars for number, a strange land and four hundred years of affliction, then the grant from the river of Egypt to Euphrates. Jacob goes down to Egypt with all his seed on schedule, and Stephen stands on this exact chapter when he retells the story to the council. The promise was spoken to seed not yet born — and it kept its appointments."),
+        ],
+    ),
+
+    # ── 5. Genesis 17:7-10 — the everlasting covenant with the generations ──
+    dict(
+        mark=("genesis", 17, 7),
+        mirrors=[("genesis", 17, 8), ("genesis", 17, 9)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="An everlasting covenant — to be Elohim (God) to thee and to thy seed after thee",
+        anchor_refs=["Genesis 17:7-10"],
+        body=[
+            Q("genesis", 17, 7, 10),
+            P("The covenant is named everlasting and it is attached to generations — thy seed after thee in their generations — a bloodline running forward through time. The heart of it is not the land clause but the belonging clause: to be a Elohim (God) unto thee, and to thy seed after thee. The token of circumcision follows the covenant in verse ten; it does not create the covenant. The flesh-mark marks what the promise already made."),
+        ],
+    ),
+
+    # ── 6. Genesis 21:12 — in Isaac shall thy seed be called ────────────────
+    dict(
+        mark=("genesis", 21, 12),
+        mirrors=[("genesis", 17, 19), ("genesis", 21, 13), ("hebrews", 11, 11)],
+        strand="teaching",
+        strand_label="The teaching",
+        card_title="In Isaac shall thy seed be called — the promise selects within the blood",
+        anchor_refs=["Genesis 21:12-13", "Genesis 17:19", "Hebrews 11:11"],
+        body=[
+            Q("genesis", 17, 19),
+            Q("genesis", 21, 12, 13),
+            Q("genesis", 16, 10),
+            Q("hebrews", 11, 11),
+            P("Ishmael is Abraham's seed — the text says so plainly, and his own multiplication promise is real. Yet the covenant-call runs through Isaac, the son Sarah conceived by strength received through faith in him who promised. The promise never opens the line outward to those who are not Abraham's blood; it selects within the blood, son by son. Both pieces are required of the seed of promise: the bloodline, and the promise spoken over it."),
+        ],
+    ),
+
+    # ── 7. Genesis 22:17 — the oath at Moriah ────────────────────────────────
+    dict(
+        mark=("genesis", 22, 17),
+        mirrors=[("genesis", 24, 60), ("genesis", 32, 12)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Stars, sand, and the gate of his enemies — the oath sworn at Moriah",
+        anchor_refs=["Genesis 22:17-18", "Genesis 32:12", "Isaiah 48:19"],
+        body=[
+            Q("genesis", 22, 17),
+            Q("genesis", 22, 18),
+            Q("genesis", 24, 60),
+            Q("genesis", 32, 12),
+            Q("isaiah", 48, 19),
+            P("After Moriah the promise becomes an oath. Rebekah's family blesses her with its very words before she has met Isaac; Jacob, alone at the river with Esau coming, pleads the sand of the sea back to the one who said it. Generations later Isaiah laments with the same sand on his tongue — thy seed also had been as the sand — naming what a generation's rebellion forfeited. The generation lost its enjoying of the oath; the oath itself was never lost. And the nations are blessed in the seed — the blessing flows through the seed to the nations; it does not turn the nations into the seed."),
+        ],
+    ),
+
+    # ── 8. Genesis 26 — the oath lands on Isaac ──────────────────────────────
+    dict(
+        mark=("genesis", 26, 3),
+        mirrors=[("genesis", 26, 4), ("genesis", 26, 24)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="I will perform the oath — the seed-promise passes whole to Isaac",
+        anchor_refs=["Genesis 26:3-4", "Genesis 26:24"],
+        body=[
+            Q("genesis", 26, 3, 4),
+            Q("genesis", 26, 24),
+            P("The promise does not have to be re-earned in each generation; it is performed into the next one. To Isaac the oath sworn to Abraham arrives intact — the countries, the stars-count, the blessing of the nations in the seed — and when fear finds him at Beer-sheba the word comes again at night: for my servant Abraham's sake. The seed inherits a sworn oath, not a probation."),
+        ],
+    ),
+
+    # ── 9. Genesis 28:4 — the blessing of Abraham, spread abroad ────────────
+    dict(
+        mark=("genesis", 28, 4),
+        mirrors=[],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The blessing of Abraham to Jacob — a seed spread to the four winds",
+        anchor_refs=["Genesis 28:4", "Genesis 28:13-14"],
+        body=[
+            Q("genesis", 28, 4),
+            Q("genesis", 28, 13, 14),
+            P("Isaac names the inheritance the blessing of Abraham and sends it to Jacob and to his seed; at Bethel Yahuah (God) confirms it with the four compass points — thou shalt spread abroad to the west, and to the east, and to the north, and to the south. The spreading of the seed through the earth sits inside the promise itself. The scattering was never plan B, and a seed spread to the four winds is a seed the four winds must one day give back."),
+        ],
+    ),
+
+    # ── 10. Genesis 35:12 / 48 — the deathbed transfer and Ephraim's nations ─
+    dict(
+        mark=("genesis", 35, 12),
+        mirrors=[("genesis", 48, 4), ("genesis", 48, 11)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The land to thy seed after thee — and Ephraim's seed a multitude of nations",
+        anchor_refs=["Genesis 35:12", "Genesis 48:4", "Genesis 48:19"],
+        body=[
+            Q("genesis", 35, 12),
+            Q("genesis", 48, 4),
+            Q("genesis", 48, 11),
+            Q("genesis", 48, 19),
+            P("What Jacob heard at Bethel he carries whole to his deathbed — the land, the seed after him, the possession he now names everlasting — and then, hands crossed against Joseph's protest, he sends Ephraim's seed out into a multitude of nations. That sentence is the map of the scattered house: seed planted among the nations is still seed. A multitude of nations carrying Ephraim's blood is not a multitude that replaced Yashar'el (Israel) — it is Yashar'el (Israel), waiting to be called by name."),
+        ],
+    ),
+
+    # ── 11. Exodus 32:13 — Moses pleads the seed-oath at the calf ───────────
+    dict(
+        mark=("exodus", 32, 13),
+        mirrors=[("exodus", 33, 1), ("deuteronomy", 34, 4)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="Remember Abraham, Isaac, and Yashar'el (Israel) — Moses pleads the seed-oath",
+        anchor_refs=["Exodus 32:13", "Exodus 33:1", "Deuteronomy 34:4"],
+        body=[
+            Q("exodus", 32, 13),
+            Q("exodus", 33, 1),
+            Q("deuteronomy", 34, 4),
+            P("At the golden calf, with the covenant freshly shattered in the camp, Moses does not plead the people's merit — there is none to plead. He pleads the oath: thou swarest by thine own self to multiply their seed and give them the land for ever. And the journey resumes on the strength of that oath alone. From Sinai to Pisgah the seed travels on a promise it had just finished breaking faith with — grace as the means of return, written into the wilderness itself."),
+        ],
+    ),
+
+    # ── 12. Deuteronomy 4:37 — he chose their seed after them ───────────────
+    dict(
+        mark=("deuteronomy", 4, 37),
+        mirrors=[("deuteronomy", 10, 15), ("deuteronomy", 1, 8), ("psalms", 105, 6), ("1-chronicles", 16, 13)],
+        strand="teaching",
+        strand_label="The teaching",
+        card_title="Because he loved thy fathers, he chose their seed — election runs through blood",
+        anchor_refs=["Deuteronomy 4:37", "Deuteronomy 10:15", "Psalm 105:6-11"],
+        body=[
+            Q("deuteronomy", 4, 37),
+            Q("deuteronomy", 10, 15),
+            Q("psalms", 105, 6),
+            Q("psalms", 105, 8, 11),
+            Q("numbers", 14, 24),
+            P("The order of the sentence is the whole doctrine: he loved the fathers, therefore he chose their seed after them. The choosing runs through blood, from the fathers forward — a covenant remembered to a thousand generations — not through enrollment. And within the chosen seed, Caleb shows what the choosing looks like when it is walked: another spirit, a whole following, and an inheritance secured to his seed while an unbelieving generation fell in the wilderness. The promise selects within the line; it does not recruit outside it."),
+        ],
+    ),
+
+    # ── 13. Deuteronomy 30:19 — life set before the seed; the song in its mouth
+    dict(
+        mark=("deuteronomy", 30, 19),
+        mirrors=[("deuteronomy", 28, 46), ("deuteronomy", 31, 21)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="That thou and thy seed may live — the choice, the curse-sign, and the song the seed cannot forget",
+        anchor_refs=["Deuteronomy 30:19", "Deuteronomy 31:21", "Isaiah 59:21"],
+        body=[
+            Q("deuteronomy", 30, 19),
+            Q("deuteronomy", 30, 6),
+            Q("deuteronomy", 28, 46),
+            Q("deuteronomy", 31, 21),
+            Q("isaiah", 59, 21),
+            P("Moses sets life and death before the seed and tells it which to choose. When the seed chooses wrongly, the curses of the covenant sit upon it for a sign — visible on the seed for ever, so the exile itself testifies to the covenant that judged it. But two promises ride through the judgment: the song that shall not be forgotten out of the mouths of their seed, and the circumcised heart Yahuah Elohayka (the LORD thy God) himself will give the seed so it can love him and live. Isaiah hears the same covenant from the other side of the exile — my words shall not depart out of the mouth of thy seed, nor thy seed's seed, from henceforth and for ever. The seed can lose the land for a season. It cannot lose the Word planted in its mouth."),
+        ],
+    ),
+
+    # ── 14. Numbers 24:7 — his seed in many waters ──────────────────────────
+    dict(
+        mark=("numbers", 24, 7),
+        mirrors=[],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="His seed shall be in many waters — Balaam sees the scattering from the heights",
+        anchor_refs=["Numbers 24:7", "Revelation 17:15"],
+        body=[
+            Q("numbers", 24, 7),
+            Q("revelation", 17, 15),
+            P("Hired to curse, Balaam can only bless — and the blessing he speaks over Jacob's tents reaches centuries past the camp below him: his seed shall be in many waters. The canon elsewhere reads its own picture of many waters — peoples, and multitudes, and nations, and tongues. A seed poured out into many peoples, and over it a king higher than Agag and a kingdom exalted. The seed in the waters is not dissolved by them; it is waiting in them."),
+        ],
+    ),
+
+    # ── 15. Numbers 25:13 / 18:19 — the priestly seed covenanted ────────────
+    dict(
+        mark=("numbers", 25, 13),
+        mirrors=[("numbers", 18, 19)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="A covenant of salt and an everlasting priesthood — the promises to the priestly seed",
+        anchor_refs=["Numbers 25:12-13", "Numbers 18:19", "Malachi 2:4-5"],
+        body=[
+            Q("numbers", 18, 19),
+            Q("numbers", 25, 12, 13),
+            Q("malachi", 2, 4, 5),
+            P("The priesthood, too, is covenanted to a seed: Aaron's portion sealed with salt to him and his seed with him, and Phinehas given an everlasting priesthood to him and his seed after him. When Malachi confronts a corrupt serving generation, the appeal is back to that same covenant with Levi — life and peace given to a man who feared. The failure of a generation does not dissolve a covenant made with a seed; it summons the seed back to the covenant."),
+        ],
+    ),
+
+    # ── 16. Leviticus 26:42-45 — the covenant remembered in the enemies' land
+    dict(
+        mark=("leviticus", 26, 42),
+        mirrors=[("leviticus", 26, 44), ("leviticus", 26, 45)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="Then will I remember my covenant — the seed kept in the land of their enemies",
+        anchor_refs=["Leviticus 26:40-45"],
+        body=[
+            Q("leviticus", 26, 40, 42),
+            Q("leviticus", 26, 44, 45),
+            P("Torah writes the whole exile arc in advance: the walking contrary, the enemies' land, the humbled heart — and then the remembering, name by name in reverse, Jacob, Isaac, Abraham, and the land itself. Even at the farthest point of the judgment the verdict over the seed stands: I will not cast them away, neither will I abhor them, to destroy them utterly. The covenant of the ancestors is remembered for their sakes. The way home is written into the same chapter as the scattering — grace as the means of return, in Torah's own hand."),
+        ],
+    ),
+
+    # ── 17. Ezekiel 20:5 — the hand lifted up to the seed of the house of Jacob
+    dict(
+        mark=("ezekiel", 20, 5),
+        mirrors=[("ezekiel", 20, 42)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The hand lifted up to the seed of the house of Jacob",
+        anchor_refs=["Ezekiel 20:5", "Ezekiel 20:41-42"],
+        body=[
+            Q("ezekiel", 20, 5),
+            Q("ezekiel", 20, 35),
+            Q("ezekiel", 20, 37),
+            Q("ezekiel", 20, 41, 42),
+            P("Ezekiel's covenant lawsuit opens with an oath sworn to a seed: the hand lifted up to the seed of the house of Jacob in Egypt, before Sinai, before the rebellions. And the chapter closes with the same lifted hand bringing the seed home — out of the countries, through the wilderness of the people, under the rod, into the bond of the covenant, into the land sworn to the fathers. The gathering runs between two raisings of one hand. The seed sworn-to in Egypt is the seed pleaded-with face to face at the end."),
+        ],
+    ),
+
+    # ── 18. 2 Samuel 7:12 — the covenant with David's seed ──────────────────
+    dict(
+        mark=("2-samuel", 7, 12),
+        mirrors=[("1-chronicles", 17, 11), ("2-samuel", 22, 51), ("psalms", 18, 50)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="I will set up thy seed after thee — the covenant with the house of David",
+        anchor_refs=["2 Samuel 7:12", "2 Samuel 22:51", "Luke 1:32-33"],
+        body=[
+            Q("2-samuel", 7, 12),
+            Q("2-samuel", 22, 51),
+            Q("luke", 1, 32, 33),
+            P("The kingdom is promised to seed that proceeds out of David's own body — the words are that physical. David's last song holds it as mercy to his anointed, to David, and to his seed for evermore, and the announcement at Nazareth lands it without changing a term: the throne of his father David, the house of Jacob, a kingdom of which there shall be no end. The covenant that began in David's bowels ends on David's throne."),
+        ],
+    ),
+
+    # ── 19. Psalm 89 — the seed-oath sworn by holiness ──────────────────────
+    dict(
+        mark=("psalms", 89, 4),
+        mirrors=[("psalms", 89, 29), ("psalms", 89, 36)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Once have I sworn by my holiness — David's seed established for ever",
+        anchor_refs=["Psalm 89:3-4", "Psalm 89:29", "Psalm 89:35-36"],
+        body=[
+            Q("psalms", 89, 3, 4),
+            Q("psalms", 89, 29),
+            Q("psalms", 89, 35, 36),
+            P("Three times in one psalm the seed-word is sworn — established for ever, enduring as the days of heaven, enduring as the sun. And between the second and third comes the stake itself: once have I sworn by my holiness that I will not lie unto David. The endurance of David's seed is the collateral of Yahuah (God)'s own truthfulness. A theology in which that seed-line failed has called the oath a lie."),
+        ],
+    ),
+
+    # ── 20. Jeremiah 33:22 — David's seed multiplied as the host of heaven ──
+    dict(
+        mark=("jeremiah", 33, 22),
+        mirrors=[],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="As the host of heaven cannot be numbered — the seed of David multiplied",
+        anchor_refs=["Jeremiah 33:22", "Jeremiah 33:25-26", "Jeremiah 22:30"],
+        body=[
+            Q("jeremiah", 22, 30),
+            Q("1-kings", 11, 39),
+            Q("jeremiah", 33, 22),
+            Q("jeremiah", 33, 25, 26),
+            P("The same prophet who writes Coniah down as childless for the throne swears, in the same book, that David's seed will be multiplied past counting and that casting off the seed of Jacob would require unmaking day and night first. The affliction of David's seed was real — and time-stamped: but not for ever. The judgment narrowed the line; it never ended it. The captivity returns, and mercy returns with it."),
+        ],
+    ),
+
+    # ── 21. Romans 1:3 — the seed of David according to the flesh ───────────
+    dict(
+        mark=("romans", 1, 3),
+        mirrors=[("john", 7, 42), ("2-timothy", 2, 8), ("acts", 13, 23)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Of this man's seed — the Saviour raised from David's blood",
+        anchor_refs=["Romans 1:3", "Acts 13:23", "2 Timothy 2:8"],
+        body=[
+            Q("romans", 1, 3),
+            Q("john", 7, 42),
+            Q("acts", 13, 23),
+            Q("2-timothy", 2, 8),
+            P("The apostles never announce a Messiah (Christ) abstracted from lineage. The credential they preach is seed: made of the seed of David according to the flesh; of this man's seed hath Elohim (God) according to his promise raised unto Yashar'el (Israel) a Saviour, Yahusha (Jesus). Even the crowd in John knows the scripture's requirement — Messiah (Christ) comes of the seed of David, out of Bethlehem. Paul compresses his whole proclamation into one line to Timothy and puts the bloodline inside it: remember the seed. That is his gospel."),
+        ],
+    ),
+
+    # ── 22. Isaiah 53:10 — he shall see his seed ────────────────────────────
+    dict(
+        mark=("isaiah", 53, 10),
+        mirrors=[("psalms", 22, 23), ("psalms", 22, 30)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="He shall see his seed — the travail of the servant and the seed that serves",
+        anchor_refs=["Isaiah 53:10-11", "Psalm 22:23", "Psalm 22:30"],
+        body=[
+            Q("isaiah", 53, 10, 11),
+            Q("psalms", 22, 23),
+            Q("psalms", 22, 30),
+            P("When the servant's soul is made an offering for sin, the stated yield is seed: he shall see his seed, he shall prolong his days. Psalm 22 walks the same suffering and arrives at the same place — the seed of Jacob and the seed of Yashar'el (Israel) summoned to glorify him, and a seed accounted to Yahuah (Lord) for a generation. The atonement has named beneficiaries. The travail of his soul purchases the gathering of the seed."),
+        ],
+    ),
+
+    # ── 23. Psalm 102:28 — the servants' seed established ───────────────────
+    dict(
+        mark=("psalms", 102, 28),
+        mirrors=[("psalms", 69, 36), ("psalms", 25, 13)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Their seed shall be established before thee — the inheritance of the servants' seed",
+        anchor_refs=["Psalm 102:28", "Psalm 69:35-36", "Psalm 25:13"],
+        body=[
+            Q("psalms", 102, 28),
+            Q("psalms", 69, 35, 36),
+            Q("psalms", 25, 13),
+            P("Inheritance language in the Psalms is seed language. Zion is built, the cities of Yahudah (Judah) are raised, and the named heirs are the seed of his servants — continuing, established before him, dwelling in possession. The earth the meek inherit is inherited by a bloodline of servants whose seed Yahuah (God) keeps before his own face."),
+        ],
+    ),
+
+    # ── 24. Jeremiah 31:36-37 — the seed indexed to the ordinances of heaven ─
+    dict(
+        mark=("jeremiah", 31, 36),
+        mirrors=[("jeremiah", 31, 37)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="If heaven above can be measured — the seed of Yashar'el (Israel) shall not cease",
+        anchor_refs=["Jeremiah 31:35-37"],
+        body=[
+            Q("jeremiah", 31, 35, 37),
+            P("These verses stand directly after the new covenant promise, and they are its guarantee clause. The permanence of the seed of Yashar'el (Israel) is indexed to the sun, the moon, the stars, and the unmeasured deep — and the casting-off is made conditional on a surveyor's impossibility: measure heaven first. Note whom the oath covers — all the seed of Yashar'el (Israel) for all that they have done. The seed is kept not because it behaved, but because he swore. Any teaching in which that seed ceased and something else stands in its place has, on the text's own terms, measured heaven."),
+        ],
+    ),
+
+    # ── 25. Jeremiah 46:27 — the seed scattered, the seed saved from far ────
+    dict(
+        mark=("jeremiah", 46, 27),
+        mirrors=[("psalms", 106, 27), ("2-kings", 17, 20)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Thy seed from the land of their captivity — the scattering named and answered",
+        anchor_refs=["Psalm 106:27", "2 Kings 17:20", "Jeremiah 46:27"],
+        body=[
+            Q("psalms", 106, 27),
+            Q("2-kings", 17, 20),
+            Q("jeremiah", 30, 10),
+            Q("jeremiah", 46, 27),
+            Q("isaiah", 43, 5),
+            P("The scattering is written in seed-grammar: their seed overthrown among the nations, all the seed of Yashar'el (Israel) rejected and delivered to spoilers. And the regathering answers in the same grammar — Jeremiah carries the promise twice, near word for word: I will save thee from afar, and thy seed from the land of their captivity; and Isaiah from both horizons: I will bring thy seed from the east, and gather thee from the west. What was scattered is what is gathered. The promise does not replace the overthrown seed with a different people — it goes and gets the seed."),
+        ],
+    ),
+
+    # ── 26. Isaiah 41:8 — the seed of Abraham my friend, not cast away ──────
+    dict(
+        mark=("isaiah", 41, 8),
+        mirrors=[("2-chronicles", 20, 7), ("isaiah", 45, 19), ("isaiah", 45, 25)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="The seed of Abraham my friend — taken from the ends of the earth, justified",
+        anchor_refs=["Isaiah 41:8-9", "2 Chronicles 20:7", "Isaiah 45:25"],
+        body=[
+            Q("2-chronicles", 20, 7),
+            Q("isaiah", 41, 8, 9),
+            Q("isaiah", 45, 19),
+            Q("isaiah", 45, 25),
+            P("Jehoshaphat prays it under siege; Isaiah carries it to the ends of the earth: the seed of Abraham my friend, taken from the farthest places, chosen and not cast away. The seed was never told to seek him in vain — and the justification verse the pulpit reads as an open altar call arrives with an addressed envelope: in Yahuah (LORD) shall all the seed of Yashar'el (Israel) be justified, and shall glory. Justification is free, and it is promised by name to a seed scattered to the ends of the earth."),
+        ],
+    ),
+
+    # ── 27. Isaiah 54:3 — the desolate wife's seed inherits the Gentiles ────
+    dict(
+        mark=("isaiah", 54, 3),
+        mirrors=[],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Thy seed shall inherit the Gentiles — the children of the desolate wife",
+        anchor_refs=["Isaiah 54:1-3"],
+        body=[
+            Q("isaiah", 54, 1),
+            Q("isaiah", 54, 3),
+            P("The barren one told to sing is the cast-off wife — the scattered house, desolate of covenant, name, and land. Her promise is seed: breaking forth on the right hand and on the left, her seed inheriting the Gentiles among whom it grew up, the desolate cities inhabited again. The children of the desolate outnumber the children of the married wife — the house that was scattered outnumbers the house that stayed. The desolate woman's children were hers all along; the song begins when she finds out."),
+        ],
+    ),
+
+    # ── 28. Isaiah 61:9 / 65 / 66:22 — the seed blessed, brought forth, kept ─
+    dict(
+        mark=("isaiah", 61, 9),
+        mirrors=[("isaiah", 65, 9), ("isaiah", 65, 23), ("isaiah", 66, 22)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The seed which Yahuah (LORD) hath blessed — known among the Gentiles, kept into the new heavens",
+        anchor_refs=["Isaiah 61:9", "Isaiah 65:9", "Isaiah 66:22"],
+        body=[
+            Q("isaiah", 61, 9),
+            Q("isaiah", 44, 3),
+            Q("isaiah", 65, 9),
+            Q("isaiah", 65, 23),
+            Q("isaiah", 66, 22),
+            P("Isaiah's closing chapters trace the seed through three stations. First, recognition in the scattering: the Spirit poured upon thy seed until all that see them acknowledge them — the seed becoming visible among the Gentiles while still among them. Then extraction: a seed brought forth out of Jacob, an inheritor of the mountains. Then permanence past the present age entirely: as the new heavens and the new earth remain, so shall your seed and your name remain. The seed crosses into the new creation still being the seed, still carrying the name. The promise has no terminus at which it converts into something else."),
+        ],
+    ),
+
+    # ── 29. Ezra 2:59 — the registry fails, the seed remains ────────────────
+    dict(
+        mark=("ezra", 2, 59),
+        mirrors=[("nehemiah", 7, 61)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="They could not shew their father's house — the registry fails, the seed remains",
+        anchor_refs=["Ezra 2:59", "Nehemiah 7:61", "2 Timothy 2:19"],
+        body=[
+            Q("ezra", 2, 59),
+            Q("nehemiah", 7, 61),
+            Q("nehemiah", 9, 2),
+            Q("2-timothy", 2, 19),
+            P("Already at the first return there were families who could not produce the paper — could not shew their father's house, nor their seed, whether they were of Yashar'el (Israel). One captivity of seventy years was enough to break the registry. The longer scattering broke it for the whole northern house. But the lost document never unmade the lineage it failed to record: the foundation standeth sure, having this seal, Yahuah (Lord) knoweth them that are his. The seed that cannot shew its father's house is still shown to the Father — and the gathering runs on his record, not on ours."),
+        ],
+    ),
+
+    # ── 30. Luke 1:55 / Acts 3:25 — the advent lands on the seed ────────────
+    dict(
+        mark=("luke", 1, 55),
+        mirrors=[("acts", 3, 25)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="To Abraham and to his seed for ever — whom the advent was spoken to",
+        anchor_refs=["Luke 1:54-55", "Luke 1:72-73", "Acts 3:25-26"],
+        body=[
+            Q("luke", 1, 54, 55),
+            Q("luke", 1, 72, 73),
+            Q("acts", 3, 25),
+            Q("acts", 3, 26),
+            P("Mary and Zacharias both hear the advent as covenant-memory: mercy in remembrance, the holy covenant remembered, the oath to Abraham performed — as he spake to our fathers, to Abraham, and to his seed for ever. Peter at Solomon's porch says it to the men of Yashar'el (Israel) without a softening clause: ye are the children of the prophets, and of the covenant — unto you first. All kindreds of the earth are blessed in the seed; the blessing flows through the seed outward. The kindreds never become the seed, and the seed is never unnamed from its own promise."),
+        ],
+    ),
+
+    # ── 31. Romans 4 — heir of the world; the promise sure to all the seed ──
+    dict(
+        mark=("romans", 4, 13),
+        mirrors=[("romans", 4, 16), ("romans", 4, 18)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="Heir of the world — the promise sure to all the seed",
+        anchor_refs=["Romans 4:13-18", "Genesis 35:11", "Genesis 17:5"],
+        body=[
+            Q("romans", 4, 13),
+            Q("romans", 4, 16),
+            Q("romans", 4, 18),
+            Q("genesis", 17, 5),
+            Q("genesis", 35, 11),
+            Q("genesis", 15, 5, 6),
+            P("The promise came through the righteousness of faith — Abraham was counted righteous with the stars over his head, years before the token in his flesh — and so it stands sure to all the seed. All the seed is two-housed: the seed which is of the law, Yahudah (Judah), who kept the covenant and its documents; and the seed which shares the faith of Abraham, the scattered of Yashar'el (Israel), grown up far from the documents and holding nothing but what Abraham held that night — a promise and the one who made it. Both are his blood. Father of many nations was answered in his own loins — a nation and a company of nations — not by dissolving the seed into whoever believes. The grace is that the promise stands sure to the seed that lost everything else."),
+        ],
+    ),
+
+    # ── 32. Romans 9:7-8, 29 — children of promise counted for the seed ─────
+    dict(
+        mark=("romans", 9, 7),
+        mirrors=[("hebrews", 11, 18), ("romans", 9, 29)],
+        strand="teaching",
+        strand_label="The teaching",
+        card_title="The children of the promise are counted for the seed — selection within the line, never around it",
+        anchor_refs=["Romans 9:7-8", "Romans 9:29", "Hebrews 11:18"],
+        body=[
+            Q("romans", 9, 7, 8),
+            Q("hebrews", 11, 18),
+            Q("romans", 9, 29),
+            Q("isaiah", 1, 9),
+            P("Paul's distinction runs inside Abraham's blood, not around it. Ishmael was seed of Abraham; Esau was seed of Isaac; yet the call ran through Isaac and through Jacob — in Isaac shall thy seed be called. Children of the flesh against children of the promise is not blood against faith; it is the promise selecting within the bloodline, exactly as it did in Genesis. Read it the other way — faith manufacturing seed out of any people — and the very verse Paul quotes dissolves, for there is then no line within which Isaac was chosen."),
+            P("And when Paul reaches for Isaiah, the word for what survives is seed: except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma. The promise never opens the line to those outside it. The promise is what keeps the line alive."),
+        ],
+    ),
+
+    # ── 33. Romans 11:1 — Paul's own seed-credential ────────────────────────
+    dict(
+        mark=("romans", 11, 1),
+        mirrors=[("2-corinthians", 11, 22)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="I also am of the seed of Abraham — Paul's exhibit against the casting-away",
+        anchor_refs=["Romans 11:1", "2 Corinthians 11:22", "Philippians 3:5"],
+        body=[
+            Q("romans", 11, 1),
+            Q("2-corinthians", 11, 22),
+            Q("philippians", 3, 5),
+            P("When Paul must prove that Elohim (God) has not cast away his people, his exhibit is his own bloodline: an Israelite, of the seed of Abraham, of the tribe of Benjamin. Pressed by rivals, he answers in lineage three times over — Hebrew, Israelite, seed of Abraham — and to the Philippians he files the full pedigree, tribe and all. The man the pulpit uses to spiritualize the seed never once spiritualized his own. His apostleship to the scattered stood on the fact that he was what they were: seed."),
+        ],
+    ),
+
+    # ── 34. Hebrews 2:16 — he took on him the seed of Abraham ───────────────
+    dict(
+        mark=("hebrews", 2, 16),
+        mirrors=[],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="He took on him the seed of Abraham — the kinsman from inside the kin",
+        anchor_refs=["Hebrews 2:16-17"],
+        body=[
+            Q("hebrews", 2, 16, 17),
+            P("The deliverer did not take hold of angels. He took on him the seed of Abraham — entering the bloodline the promises run through, made in all things like unto his brethren. Redemption in scripture is kinsman-work, and the kinsman must come from inside the kin. The Messiah (Christ) redeems the seed of Abraham as seed of Abraham — the rescue is mounted from within the family it rescues."),
+        ],
+    ),
+
+    # ── 35. Galatians 3:16, 29 — the seed singular, and the seed he reveals ──
+    dict(
+        mark=("galatians", 3, 16),
+        mirrors=[],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="And to thy seed, which is Messiah (Christ) — the singular seed and the seed he reveals",
+        anchor_refs=["Galatians 3:16", "Galatians 3:29"],
+        body=[
+            Q("galatians", 3, 16),
+            Q("galatians", 3, 29),
+            P("Paul presses the grammar of Genesis: the promises were spoken to Abraham and to his seed, singular — and the singular seed in whom the promise stands is the Messiah (Christ) himself. Every seed-promise in the canon funnels to one man before it widens to anyone."),
+            P("Then verse twenty-nine runs in the direction the whole letter runs. The Galatians were the scattered seed of Yashar'el (Israel), grown up among the nations without name or covenant memory, being told by the circumcision party that a flesh-credential could buy them standing. Paul's answer: if ye be Messiah's (Christ's), then are ye Abraham's seed — being his reveals whose blood they were, and heirs according to the promise names the inheritance that was theirs before they knew their own name. The sheep hear because they are sheep. Read the verse as a manufacturing line — believe and thereby become seed — and it inverts: hearing creates nothing; it uncovers what the Father wrote down before the foundation of the world."),
+        ],
+    ),
+]
+
 # ---------------------------------------------------------------------------
 # Emit SQL
 # ---------------------------------------------------------------------------

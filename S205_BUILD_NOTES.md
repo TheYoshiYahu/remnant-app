@@ -179,8 +179,30 @@ What landed:
 Deploy: the seed is idempotent — re-applying refreshes the 237
 already-live rows and adds the rest. No new migration needed.
 
+## S205c — THE SEED WAVE (same session)
+Yoshi: "did you mark every verse that says thy seed?" Answer was no —
+so the method changed to concordance-first: scanned the whole canon
+for thy seed / your seed / his seed / their seed / my seed / the seed
+of Abraham-Isaac-Jacob-David-Yashar'el → 143 verses, only 11 marked.
+One seed-wave minion (voice skill in full, Red Line #7 + the
+marriage-absorption section called out) dispositioned ALL 143: 33
+marked + 2 beyond-concordance (Ezekiel 20:5, Leviticus 26:42), 44
+mirrored, 21 quoted on cards, 45 excluded with stated reasons
+(agricultural seed, court oaths, judgments on individuals' seed,
+Purim notes, wisdom-genre generics, 1 John 3:9 deliberately left —
+different register, faith-creates-seed misread risk). 35 new cards.
+Checker: 33 PASS / 2 FLAG, zero blockers, both fixed (one
+word-for-word overclaim softened, one Genesis 15:5-6 quote added).
+Galatians 3:29 and Romans 9:7-8 written exactly on the
+hearing-reveals rail and double-checked.
+
+**Final S205 total: 244 cards / 580 marked verses.** Strands:
+gathering 217, kingdom 126, good_news 105, grace 67, teaching 65.
+The concordance-first method is now the standard for every future
+wave: scan → disposition every hit → card → checker.
+
 ## Next session
-Kingdom wave 3: extras-side marks (1 Enoch, Jubilees, Jasher quoted as
+Kingdom wave 4: extras-side marks (1 Enoch, Jubilees, Jasher quoted as
 sources where the nothing-new test finds them), plus the sweep
 continues — minion-noted candidates cut for count discipline: Luke
 2:25 ↔ Isaiah 40:1-2, Acts 1:8 ↔ Isaiah 43:10, Matthew 5:4 ↔ Isaiah
