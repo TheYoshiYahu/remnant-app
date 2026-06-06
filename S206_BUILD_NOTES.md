@@ -85,6 +85,42 @@
   walk checklist.
 - `NEXT_SESSION_PLAY_STORE_SPEC.md` — S206 STATUS section appended.
 
+## Founder pricing rework (Yoshi's calls, S206 mid-session — transcribed)
+Trigger: Yoshi's tier-honesty question before the console ("do we have
+something available in all tiers?"), then "i think we have too many
+tiers," then the corrected ladder. Decisions, verbatim-shaped:
+- **All tiers become founder pricing while the app is built and
+  updated daily.** Struck-through "later" prices are deliberate
+  placeholders for the post-founder raise ("we will raise prices of
+  all the tiers... show some arbitrary number").
+- **Ladder: Study Notes $1.99 (later $2.99) · Library $4.99 (later
+  $7.77) · Companion $7.49 (later $12.99).** Annual = 10x monthly,
+  two-months-free pattern (Companion founder annual $74.90).
+- **SCRIBE IS HIDDEN until the future** ("its scribe that needs
+  deleted until the future, that 7.49 is companion"). Catalog rows +
+  existing everything subscribers untouched; the card just doesn't
+  render. Verified: no content rows gate at 'everything', so no
+  unpurchasable "Unlock in Scribe" walls exist.
+- **Founder cap LIFTED** (cap → 1,000,000; closed_at cleared) —
+  founder pricing stays open while the app is being built.
+- **Companion bills founder rows** (is_founder=true): NEW —
+  `data-schema/migrations/session206_founder_pricing.sql` carries the
+  cap lift + two complete_study founder rows with REPLACE_ME Stripe
+  price IDs. YOSHI: create $7.49/mo + $74.90/yr prices on the
+  Companion product in Stripe, hand the price_... IDs over, then
+  apply the migration BEFORE the web push (else the Companion button
+  404s).
+- **Overclaim fixes (honesty check)**: Study Notes "commentary on
+  every chapter of the 66 books" → "growing chapter by chapter...
+  updated as it's written" (coverage is partial, built book by book);
+  Scribe's "Full Teaching Corpus access" claim left the page with the
+  Scribe card (no in-app corpus surface exists yet).
+- Pricing.tsx: 3-card grid (md:grid-cols-3), strikethrough later
+  price + "founder pricing — locked forever" line, founder banner
+  sentence in the header price-lock paragraph, old First-100 amber
+  founder box removed, highlight moved to Companion. tsc -b exit 0.
+- Native shell unaffected (prices/buttons already hidden in-shell).
+
 ## Verification
 - `tsc -b` exit 0 after the Pricing gate.
 - targetSdk 36 checked against current Play policy (35 required now,

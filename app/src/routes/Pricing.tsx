@@ -39,21 +39,47 @@ type TierCard = {
   name: string;
   monthlyPriceLabel: string;
   annualPriceLabel: string;
+  /** S206 — the post-founder price, shown struck-through next to the
+   *  founder price. Arbitrary-by-design (Yoshi: "we will raise prices
+   *  of all the tiers"); display-only, nothing bills at these. */
+  laterMonthlyLabel: string;
+  laterAnnualLabel: string;
+  /** TRUE when this tier bills through its founder catalog row
+   *  (is_founder=true on the checkout request). Study Notes and
+   *  Library bill their standard rows — their standard price IS the
+   *  founder price; only Companion carries dedicated founder rows. */
+  founderBilling: boolean;
   annualNoteLabel: string;
   blurb: string;
   bullets: string[];
+  highlight?: boolean;
 };
 
+/**
+ * S206 — founder pricing across the whole ladder while the app is
+ * built and updated daily (Yoshi's call). Three tiers; SCRIBE
+ * (everything) is hidden until the future — its catalog rows and
+ * existing subscribers are untouched, the card just doesn't render.
+ * The "later" prices are deliberate placeholders for the post-founder
+ * raise; nothing bills at them. Companion bills through its NEW
+ * founder catalog rows (session206_founder_pricing.sql + two Stripe
+ * prices) — founderBilling=true sends is_founder on the checkout
+ * request. The Study Notes "every chapter" and Scribe Teaching-Corpus
+ * overclaims were corrected in the same pass (S206 honesty check).
+ */
 const TIERS: TierCard[] = [
   {
     tier: "study_notes",
     name: "Study Notes",
     monthlyPriceLabel: "$1.99 / month",
     annualPriceLabel: "$19.90 / year",
+    laterMonthlyLabel: "$2.99",
+    laterAnnualLabel: "$29.90",
+    founderBilling: false,
     annualNoteLabel: "two months free",
-    blurb: "Framework commentary on every chapter of the canon and curated cross-reference threads that anchor every passage in its Tanakh source.",
+    blurb: "Framework commentary growing chapter by chapter across the canon, and curated cross-reference threads that anchor every passage in its Tanakh source.",
     bullets: [
-      "Yoshi's framework commentary on every chapter of the 66 books",
+      "Yoshi's framework commentary — growing chapter by chapter across the 66 books, updated as it's written",
       "Curated cross-reference threads — every passage grounded in its Tanakh source",
       "Everything in the free reader",
     ],
@@ -63,6 +89,9 @@ const TIERS: TierCard[] = [
     name: "Library",
     monthlyPriceLabel: "$4.99 / month",
     annualPriceLabel: "$49.90 / year",
+    laterMonthlyLabel: "$7.77",
+    laterAnnualLabel: "$77.70",
+    founderBilling: false,
     annualNoteLabel: "two months free",
     blurb: "The full restored library beyond the canon — Apocrypha, Enoch, Jubilees, Jasher, Charles vol 1, Apostolic Fathers, Apocryphal NT, Ascension of Isaiah, and Josephus's Wars and Antiquities — all Restored Names.",
     bullets: [
@@ -76,8 +105,11 @@ const TIERS: TierCard[] = [
   {
     tier: "complete_study",
     name: "Companion",
-    monthlyPriceLabel: "$9.99 / month",
-    annualPriceLabel: "$99.90 / year",
+    monthlyPriceLabel: "$7.49 / month",
+    annualPriceLabel: "$75 / year",
+    laterMonthlyLabel: "$12.99",
+    laterAnnualLabel: "$129.90",
+    founderBilling: true,
     annualNoteLabel: "two months free",
     blurb: "Study Notes plus Library, combined, with framework commentary extended into the restored library and the framework thread callouts that synthesize how canon and library answer each other.",
     bullets: [
@@ -87,27 +119,9 @@ const TIERS: TierCard[] = [
       "Framework thread callouts — the hidden detail expand on every chapter-end card, synthesizing the cross-references across canon and restored library",
       "Deeper-dive Statement of Faith sections surfaced inline",
     ],
-  },
-  {
-    tier: "everything",
-    name: "Scribe",
-    monthlyPriceLabel: "$14.99 / month",
-    annualPriceLabel: "$149 / year",
-    annualNoteLabel: "two months free",
-    blurb: "Companion plus the live sermons feed, the courses platform when it launches, full Teaching Corpus, early access to new books and chapters as Yoshi publishes them, video integration with the assembly's YouTube channel, and partner-only Sabbath teachings. \"Every scribe which is instructed unto the kingdom of heaven is like unto a man that is an householder, which bringeth forth out of his treasure things new and old\" (Matthew 13:52).",
-    bullets: [
-      "Everything in Companion",
-      "Live sermons feed (when it launches)",
-      "Courses platform (when it launches)",
-      "Full Teaching Corpus access — forty concepts at depth",
-      "Early access to new books and chapters",
-      "Partner-only Sabbath teachings + bonus content",
-    ],
+    highlight: true,
   },
 ];
-
-const FOUNDER_ANNUAL_LABEL = "$75 / year — forever locked";
-const FOUNDER_MONTHLY_LABEL = "$7.49 / month — forever locked";
 
 /**
  * S206 — consumption-only store posture. Inside the native shells
@@ -246,8 +260,10 @@ export default function Pricing() {
           Teaching Corpus — and the work the assembly carries forward.
         </p>
         <p className="mt-2 text-base text-[var(--reader-muted)]">
+          Every tier is at founder pricing while the app is built and updated
+          daily. Prices will rise as the work grows —{" "}
           <span className="font-medium text-[var(--reader-text)]">
-            The price you pay today is the price you pay forever.
+            but the price you pay today is the price you pay forever.
           </span>{" "}
           Once a tier is locked in, it doesn't go up on you. Cancel anytime; no
           surprise increases at renewal.
@@ -318,23 +334,21 @@ export default function Pricing() {
       )}
 
       {/* Tier cards */}
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
         {TIERS.map((t) => {
-          const isEverything = t.tier === "everything";
           const priceLabel =
             cadence === "monthly" ? t.monthlyPriceLabel : t.annualPriceLabel;
+          const laterLabel =
+            cadence === "monthly" ? t.laterMonthlyLabel : t.laterAnnualLabel;
           const noteLabel =
             cadence === "annual" ? t.annualNoteLabel : undefined;
-          const founderLabel =
-            cadence === "annual" ? FOUNDER_ANNUAL_LABEL : FOUNDER_MONTHLY_LABEL;
-          const checkoutKey = `${t.tier}-${cadence}-false`;
-          const founderKey = `${t.tier}-${cadence}-true`;
+          const checkoutKey = `${t.tier}-${cadence}-${t.founderBilling}`;
 
           return (
             <div
               key={t.tier}
               className={`flex flex-col rounded-lg border ${
-                isEverything
+                t.highlight
                   ? "border-[var(--reader-text)] bg-[var(--reader-surface)]"
                   : "border-[var(--reader-rule)] bg-[var(--reader-surface)]"
               } p-5`}
@@ -345,13 +359,15 @@ export default function Pricing() {
               {!native && (
                 <div className="mt-1">
                   <div className="text-xl font-medium text-[var(--reader-text)]">
+                    <s className="mr-2 text-base font-normal text-[var(--reader-muted)]">
+                      {laterLabel}
+                    </s>
                     {priceLabel}
                   </div>
-                  {noteLabel && (
-                    <div className="text-xs text-[var(--reader-muted)]">
-                      {noteLabel}
-                    </div>
-                  )}
+                  <div className="text-xs text-[var(--reader-muted)]">
+                    founder pricing — locked forever
+                    {noteLabel ? ` · ${noteLabel}` : ""}
+                  </div>
                 </div>
               )}
               <p className="mt-3 text-base text-[var(--reader-muted)]">
@@ -372,7 +388,7 @@ export default function Pricing() {
               <button
                 type="button"
                 disabled={busy !== null || buttonDisabled}
-                onClick={() => handleCheckout(t.tier, false)}
+                onClick={() => handleCheckout(t.tier, t.founderBilling)}
                 className={`mt-5 rounded border px-4 py-2 text-sm font-medium ${
                   buttonDisabled
                     ? "cursor-not-allowed border-[var(--reader-rule)] bg-[var(--reader-surface)] text-[var(--reader-muted)]"
@@ -387,27 +403,6 @@ export default function Pricing() {
                   ? "Reactivate"
                   : "Subscribe"}
               </button>
-              )}
-
-              {!native && isEverything && !buttonDisabled && (
-                <div className="mt-3 rounded border border-amber-300 bg-amber-50 p-3 text-xs text-amber-900">
-                  <div className="font-medium">First 100 founder partners</div>
-                  <div className="mt-1">{founderLabel}</div>
-                  <div className="mt-1 text-amber-800">
-                    Half off, locked at this price for as long as you remain
-                    subscribed. Shared cap across monthly and annual.
-                  </div>
-                  <button
-                    type="button"
-                    disabled={busy !== null}
-                    onClick={() => handleCheckout("everything", true)}
-                    className="mt-2 w-full rounded border border-amber-700 bg-amber-700 px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 disabled:opacity-60"
-                  >
-                    {busy === founderKey
-                      ? "Starting checkout…"
-                      : "Claim founder pricing"}
-                  </button>
-                </div>
               )}
             </div>
           );
