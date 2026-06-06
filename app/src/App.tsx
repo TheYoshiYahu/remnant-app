@@ -35,7 +35,6 @@ import { hasSeenSigninAsk } from "./lib/signinAsk";
 import { hasJwtCookie } from "./lib/display-prefs-sync";
 import { loadStoredNativeToken } from "./lib/native-auth";
 import ChapterEndCard from "./components/ChapterEndCard";
-import ChapterCommentary from "./components/ChapterCommentary";
 import ReaderDivider from "./components/ReaderDivider";
 import HighlightPicker, {
   markClassFor,
@@ -2800,16 +2799,18 @@ function Reader() {
           )}
 
           {!hideCommentary && chapterDetail.chapter_intro && (
-            <aside className="mt-4 text-[var(--reader-muted)]">
+            <aside className="mt-4 text-[var(--reader-text)]">
               {/*
-                S130 — section header in techelet #1A6FE5 per
-                COLOR_PALETTE.md §9 chrome-header rule. Matches the
-                "More on X" and "Cross-References in X" headers below.
-                Body text below the header stays muted via the
-                aside's parent text color (the free overview reads
-                intentionally quieter than the paid commentary blocks).
+                S202 — the Commentary body now renders at FULL white
+                (var(--reader-text)), not muted. Per Yoshi's no-greyed-out-
+                whites rule: content stays fully readable, and the botanical
+                divider above (the chapter→apparatus seam) does the work of
+                differentiating commentary from scripture — not a lowered
+                text color. Header recolored techelet #1A6FE5 → spectral
+                blue (var(--reader-accent)); techelet is divine-names-only
+                (S127 §3 lock), chrome headers carry the apparatus accent.
               */}
-              <h3 className="mb-2 font-sans font-semibold uppercase tracking-wide text-xs text-[#1A6FE5]">
+              <h3 className="mb-2 font-sans font-semibold uppercase tracking-wide text-xs text-[var(--reader-accent)]">
                 Commentary
               </h3>
               {/*
@@ -2836,25 +2837,15 @@ function Reader() {
           )}
 
           {/*
-            Session 112 — tiered commentary stack. Renders the Basic and
-            Deeper Dive layers (matt-N-short.md + matt-N.md) gated at the
-            extras ($4.99 Library) tier. Locked rows show an eye-catching
-            upgrade affordance so free / Notes-tier partners see what the
-            tier ladder unlocks. The component hides itself silently when
-            the chapter has no commentary_entries rows yet (most non-
-            Matthew chapters as of S112). S130: the local hide-commentary
-            toggle inside this component is gone — gating moved up to the
-            App-level scripture-only toggle above.
+            S202 — the tiered Basic / Deeper-Dive commentary stack
+            (ChapterCommentary) is no longer rendered. Per Yoshi: "take away
+            all the deeper dives and just have the commentary." The reader now
+            shows only the single free Commentary (chapter_intro) above, with
+            the botanical seam differentiating it from scripture. The
+            ChapterCommentary component + its matt-N-short.md / matt-N.md
+            sources are left in the tree (data untouched) so the stack can be
+            restored if the tiered-commentary surface is wanted again.
           */}
-          {!hideCommentary && (
-            <ChapterCommentary
-              bookSlug={chapterDetail.book.slug}
-              chapterNumber={chapterDetail.chapter.chapter_number}
-              userTier={me?.tier ?? "free"}
-              hideParentheticals={hideParentheticals}
-              sacredNameMask={sacredNameMask}
-            />
-          )}
 
           {/*
             Session 74 — chapter-end cross-reference card. Renders the
