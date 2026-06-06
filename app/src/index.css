@@ -643,6 +643,123 @@ body {
   margin-bottom: 0;
 }
 
+/* ─── S205 — The Kingdom (working title: Blue Pill) ────────────────────
+ *
+ * The companion overlay to the Witness: the nothing-new test. NOT a
+ * new color — the TWO-TONE register: the existing metallic emerald +
+ * metallic gold joined in one pill, the two sticks of Ezekiel 37:15-22
+ * (the stick of Yahudah (Judah) and the stick of Joseph in the hand of
+ * Ephraim made ONE in his hand). Emerald and gold are already the
+ * source-class registers (tanakh → emerald, nt → gold), so the joined
+ * pill reads as the two witnesses united — Yoshi: "uniting the old and
+ * new testament." Hard seam at center; border = blend #2EFFA1→#FCECAF
+ * (Yoshi pick, S205 proof). No dot glyphs anywhere on Kingdom surfaces
+ * (Yoshi, S205 proof).
+ *
+ * In-verse mark (proof v3 signed off): a double quotation mark built
+ * from TWO SINGLE quote glyphs — emerald single on the outside, gold
+ * single on the inside, at both ends of the member verse. The nt
+ * carried inside the tanakh; the end declared from the beginning.
+ */
+:root {
+  --pill-kingdom-emerald-deep: #04321E;
+  --pill-kingdom-emerald-mid: #15A86A;
+  --pill-kingdom-emerald-border: #2EFFA1;
+  --pill-kingdom-gold-deep: #645028;
+  --pill-kingdom-gold-mid: #B4A078;
+  --pill-kingdom-gold-border: #FCECAF;
+  --pill-kingdom-text: #F4FBEA;
+  /* Quote-mark tones ride the source-class cite vocabulary: pale
+   * registers on the black reader, deep registers on parchment. */
+  --pill-kingdom-quote-tanakh: #2EFFA1;
+  --pill-kingdom-quote-nt: #FCECAF;
+}
+[data-theme="light"] {
+  --pill-kingdom-quote-tanakh: #0F6E56;
+  --pill-kingdom-quote-nt: #645028;
+}
+
+/* The joined pill — two sticks, one in his hand. Hard seam at 50%;
+ * each half is the exact shipped chrome-metal gradient compressed into
+ * its stick. Blend border via the two-layer padding-box/border-box
+ * trick (border-image ignores border-radius; this doesn't). */
+.chrome-metal-kingdom {
+  border-color: transparent;
+  background-image:
+    linear-gradient(
+      to right,
+      var(--pill-kingdom-emerald-deep) 0%,
+      var(--pill-kingdom-emerald-mid) 25%,
+      var(--pill-kingdom-emerald-deep) 50%,
+      var(--pill-kingdom-gold-deep) 50%,
+      var(--pill-kingdom-gold-mid) 75%,
+      var(--pill-kingdom-gold-deep) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--pill-kingdom-emerald-border) 0%,
+      var(--pill-kingdom-gold-border) 100%
+    );
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  color: var(--pill-kingdom-text);
+}
+
+/* The in-verse mark — kingdom quote glyphs. Same 1.3em/600 scale as
+ * the Witness quotes treatment; letter-spacing pulls the two single
+ * glyphs together so the pair reads as one double quotation mark. */
+.kingdom-quote {
+  font-size: 1.3em;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  cursor: pointer;
+}
+.kingdom-quote-tanakh {
+  color: var(--pill-kingdom-quote-tanakh);
+}
+.kingdom-quote-nt {
+  color: var(--pill-kingdom-quote-nt);
+}
+
+/* The Kingdom card — same .pill-card chassis as the Witness (solid
+ * reader surface inside per the S204c lock; register lives in border +
+ * eyebrow only). Border: the emerald→gold blend, 3px left edge. */
+.pill-card-kingdom {
+  border: 1px solid transparent;
+  border-left-width: 3px;
+  background-image:
+    linear-gradient(var(--reader-surface), var(--reader-surface)),
+    linear-gradient(
+      to right,
+      var(--pill-kingdom-emerald-border) 0%,
+      var(--pill-kingdom-gold-border) 100%
+    );
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+}
+/* Eyebrow text runs the blend as gradient text. Applied to the text
+ * span only — never the eyebrow container — so the strand tag and the
+ * ✕ keep their own colors. */
+.kingdom-eyebrow-text {
+  background-image: linear-gradient(
+    to right,
+    var(--pill-kingdom-quote-tanakh) 0%,
+    var(--pill-kingdom-quote-nt) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.pill-card-kingdom .pill-card-class-tag {
+  border-color: var(--pill-kingdom-quote-tanakh);
+  color: var(--pill-kingdom-quote-tanakh);
+}
+.pill-card-kingdom .pill-card-close {
+  color: var(--reader-muted);
+}
+
 /* Book-heading source-class pill. Same register family as the chrome
  * cluster but sized up for heading display. */
 .book-pill {

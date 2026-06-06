@@ -250,6 +250,39 @@ export interface ChapterWitnessResponse {
   entries: WitnessEntry[];
 }
 
+// ----- The Kingdom (working title: Blue Pill) — Session 205 ---------------
+//
+// Mirrors api/models.py KingdomEntry / ChapterKingdomResponse. The
+// nothing-new overlay: every new-testament mention of what the
+// Messiah did, what the good news is, what the kingdom is, what grace
+// is — paired with the scripture it was taught from, both quoted in
+// full. Free tier — the proclamation surface. Register: the two
+// sticks of Ezekiel 37:15-22 — metallic emerald + metallic gold
+// joined in one pill.
+
+export type KingdomStrand =
+  | "gathering"
+  | "good_news"
+  | "kingdom"
+  | "grace"
+  | "teaching";
+
+export interface KingdomEntry {
+  verse_id: number;
+  verse_number: number;
+  strand: KingdomStrand;
+  strand_label: string;
+  card_title: string;
+  card_md: string;
+  anchor_refs: string[];
+}
+
+export interface ChapterKingdomResponse {
+  book: ChapterEndCardBookRef;
+  chapter: ChapterEndCardChapterRef;
+  entries: KingdomEntry[];
+}
+
 // ----- Tiered commentary surface (Session 112) ---------------------------
 //
 // Mirrors api/models.py ChapterCommentaryResponse. Returns every
@@ -712,6 +745,21 @@ export function getChapterWitness(
 ): Promise<ChapterWitnessResponse> {
   return get<ChapterWitnessResponse>(
     `/books/${encodeURIComponent(slug)}/chapters/${chapterNumber}/witness`
+  );
+}
+
+/**
+ * The Kingdom marks for one chapter (Session 205 — working title:
+ * Blue Pill). Empty `entries` when the chapter carries no marks; the
+ * reader renders nothing on that state. Free tier — no per-row tier
+ * strip, ever.
+ */
+export function getChapterKingdom(
+  slug: string,
+  chapterNumber: number
+): Promise<ChapterKingdomResponse> {
+  return get<ChapterKingdomResponse>(
+    `/books/${encodeURIComponent(slug)}/chapters/${chapterNumber}/kingdom`
   );
 }
 

@@ -197,7 +197,69 @@ Design notes locked now so S204's build carries it for free:
   partner styles) — the Kingdom needs only its --pill-kingdom-*
   variables, its curated set, and its own end-card explainer.
 
-## Backlog unchanged behind this
-Blue Pill — the Kingdom (next) · Maps rebuild
-(NEXT_SESSION_MAPS_REBUILD_SPEC.md) · Timeline · Mark commentary
-consolidation · cross-reference sweep (paused).
+## THE KINGDOM — open questions ANSWERED (Yoshi, S205 open — transcribed)
+1. **The engine: the NOTHING-NEW test** (Yoshi, verbatim intent):
+   "we need to link every new testament mention of what Jesus did,
+   what the good news, what the kingdom is, grace, to all its old
+   testament and extracanonical scriptures... 'he will save his
+   people from their sins' — where's that recorded? Nothing new in
+   the new testament. We find every single teaching and concept in
+   the source that it was taught from, and every beginning the end
+   was declared from, every prophecy." Wider than the gathering lean:
+   every NT teaching/act/concept — the good news, the kingdom, grace,
+   the gathering — traced to the source it was taught from (Isaiah
+   46:10, declaring the end from the beginning). The gathering of the
+   two houses (Ezekiel 37, Jeremiah 31, Hosea 1-2, John 10:16,
+   Romans 7) is the spine inside the larger fabric, not the whole test.
+2. **Reader-facing name: "The Kingdom."** Toggle ◉ The Kingdom;
+   show/hide pill "Show the Kingdom". Blue Pill stays the working
+   title between us.
+3. **In-verse mark: YES after all (supersedes the S204 no-mark call —
+   Yoshi's own reversal, S205 open): two-tone quotation marks on the
+   member verse — one emerald, one gold** ("one blue one gold followed
+   by one blue one gold" — colors confirmed as the settled emerald +
+   gold two-stick registers, not literal blue). Quotes treatment =
+   the Kingdom's native style; chapter-end Kingdom card rides the
+   same rails as WitnessEndCard.
+4. **Tier: FREE — the proclamation surface.** No gate, no tier chip,
+   ever. Same standing as the Witness.
+5. **V1 scope: FULL SWEEP NOW** — whole-canon minion sweep this
+   session, every card checker-gated. Extracanonical sources may be
+   QUOTED as anchors on a card where they are the source the test
+   finds (the engine names them), but marked member verses are
+   canon-only in V1; extras-side marks are wave 2.
+6. **Pill: hard seam at center; border = blend #2EFFA1→#FCECAF.**
+
+### Proof sign-off (Yoshi, S205 — v3 signed off; transcribed)
+- **No dot glyphs anywhere on Kingdom surfaces** (Yoshi: "why do you
+  have white dots on there again? get rid of them") — toggle label is
+  plain "The Kingdom", eyebrows plain text. Applies to the Kingdom;
+  the Witness's shipped ◉ is untouched this session.
+- **The in-verse mark: a double quotation mark built from TWO SINGLE
+  quote glyphs — emerald single on the outside, gold single on the
+  inside, at BOTH ends of the verse** (Yoshi: "its suppose to look
+  like a double quote, one green one gold... both insides gold
+  encompassed by the green"). Letter-spacing tightened so the pair
+  reads as one glyph. The nt carried inside the tanakh.
+- Card chassis identical to the Witness (solid reader surface,
+  register in border + eyebrow only); border emerald→gold blend with
+  3px left edge; citations in source-class colors; eyebrow runs the
+  blend as gradient text; strand tag on the card (THE GATHERING ·
+  THE GOOD NEWS · THE KINGDOM · GRACE · TEACHING).
+- Chapter-end Kingdom card mock approved (rides the Kingdom toggle).
+
+## THE KINGDOM — BUILT (S205; see S205_BUILD_NOTES.md)
+Shipped on the pill-generic rails: kingdom_verses schema, /kingdom
+endpoint, two-stick chrome pill (hard seam, blend border, no dots),
+two-tone quote in-verse mark (emerald outside, gold inside, proof v3
+signed off), KingdomCard + KingdomEndCard, 89 cards / 233 marked
+verses full-canon sweep, every card checker-gated (75 PASS / 14 minor
+flags fixed, zero blockers). Deploy from the Mac per the build notes.
+
+## Backlog behind this
+Kingdom wave 2 (extras-side marks + cut candidates list in
+S205_BUILD_NOTES.md) · Witness wave 2
+(RED_PILL_SWEEP_WAVE2_CANDIDATES.md, 149 candidates) · Witness extras
+(1 Enoch 46-71) · Maps rebuild (NEXT_SESSION_MAPS_REBUILD_SPEC.md) ·
+Timeline · Mark commentary consolidation · cross-reference sweep
+(paused).

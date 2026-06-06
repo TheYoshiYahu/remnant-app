@@ -167,6 +167,8 @@ from models import (
     StudyNoteEntry,
     WitnessEntry,
     ChapterWitnessResponse,
+    KingdomEntry,
+    ChapterKingdomResponse,
     UpdateHighlightLabelsRequest,
     UpdateNoteRequest,
     UpsertReadingPositionRequest,
@@ -802,6 +804,103 @@ async def get_chapter_witness(
                 verse_number=r["verse_number"],
                 claim_class=r["claim_class"],
                 class_label=r["class_label"],
+                card_title=r["card_title"],
+                card_md=r["card_md"],
+                anchor_refs=list(r["anchor_refs"] or []),
+            )
+            for r in rows
+        ],
+    )
+
+
+# ----- The Kingdom (working title: Blue Pill) — Session 205 ---------------
+
+
+@app.get(
+    "/v1/books/{book_slug}/chapters/{chapter_number}/kingdom",
+    response_model=ChapterKingdomResponse,
+)
+async def get_chapter_kingdom(
+    book_slug: str,
+    chapter_number: int,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> ChapterKingdomResponse:
+    """The Kingdom marks for one chapter — the nothing-new overlay.
+
+    Every row is a curated kingdom_verses entry that passed the
+    nothing-new test (a new-testament teaching, act, or promise paired
+    with the scripture it was taught from — nothing in the new
+    testament is new; every beginning declared the end) and the
+    checker gates (Red Line #11 — the gathering is the scattered house
+    coming home, no false-inclusion leak; Red Line #10 — grace as the
+    means of return; Red Line #12; quote-don't-cite; sacred names).
+    Full-canon sweep V1: Tanakh anchor verses carry the mark too. Free
+    tier — the proclamation surface; no per-row tier strip, ever
+    (Yoshi, S205). Book-level tier filter mirrors the other reader
+    routes.
+
+    Returns 404 when book + chapter don't resolve in the canon edition
+    under the caller's tier; empty `entries` when the chapter carries
+    no marks (the PWA renders nothing).
+    """
+    pool = get_pool()
+    tier = user_tier(current_user)
+
+    async with pool.acquire() as conn:
+        book_row = await conn.fetchrow(
+            "SELECT b.id AS book_id, b.slug, b.title, e.slug AS edition_slug "
+            "  FROM books b "
+            "  JOIN editions e ON e.id = b.edition_id "
+            " WHERE b.slug = $1 "
+            "   AND e.slug = 'canon' "
+            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            book_slug,
+            tier,
+        )
+        if book_row is None:
+            raise HTTPException(
+                status_code=404, detail=f"Book '{book_slug}' not found in canon."
+            )
+
+        chapter_row = await conn.fetchrow(
+            "SELECT id, chapter_number, chapter_title "
+            "  FROM chapters "
+            " WHERE book_id = $1 AND chapter_number = $2",
+            book_row["book_id"],
+            chapter_number,
+        )
+        if chapter_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Chapter {chapter_number} not found in '{book_slug}'.",
+            )
+
+        rows = await conn.fetch(
+            "SELECT k.verse_id, v.verse_number, k.strand, "
+            "       k.strand_label, k.card_title, k.card_md, k.anchor_refs "
+            "  FROM kingdom_verses k "
+            "  JOIN verses v ON v.id = k.verse_id "
+            " WHERE v.chapter_id = $1 "
+            " ORDER BY v.verse_number",
+            chapter_row["id"],
+        )
+
+    return ChapterKingdomResponse(
+        book=ChapterEndCardBookRef(
+            slug=book_row["slug"],
+            title=book_row["title"],
+            edition_slug=book_row["edition_slug"],
+        ),
+        chapter=ChapterEndCardChapterRef(
+            number=chapter_row["chapter_number"],
+            title=chapter_row["chapter_title"],
+        ),
+        entries=[
+            KingdomEntry(
+                verse_id=r["verse_id"],
+                verse_number=r["verse_number"],
+                strand=r["strand"],
+                strand_label=r["strand_label"],
                 card_title=r["card_title"],
                 card_md=r["card_md"],
                 anchor_refs=list(r["anchor_refs"] or []),

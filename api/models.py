@@ -1343,3 +1343,40 @@ class ChapterWitnessResponse(BaseModel):
     book: ChapterEndCardBookRef
     chapter: ChapterEndCardChapterRef
     entries: List[WitnessEntry]
+
+
+class KingdomEntry(BaseModel):
+    """One kingdom_verses row for a verse in the requested chapter.
+
+    The Kingdom (working title: Blue Pill) is the nothing-new overlay:
+    every new-testament mention of what the Messiah did, what the good
+    news is, what the kingdom is, what grace is — paired with the
+    scripture it was taught from. Nothing in the new testament is new;
+    every beginning declared the end. Five concept strands. `card_md`
+    is the full come-and-see tap-card: both sides quoted in full,
+    stand-alone italics, sacred names intact. Free tier — the
+    proclamation surface.
+    """
+
+    verse_id: int
+    verse_number: int
+    strand: str  # 'gathering' | 'good_news' | 'kingdom' | 'grace' | 'teaching'
+    strand_label: str
+    card_title: str
+    card_md: str
+    anchor_refs: List[str]
+
+
+class ChapterKingdomResponse(BaseModel):
+    """GET /v1/books/{book_slug}/chapters/{chapter_number}/kingdom.
+
+    Every Kingdom-marked verse in the chapter, ordered by verse_number.
+    Empty list when the chapter carries no marks (the PWA renders
+    nothing). Rides the pill-generic rails the Witness shipped (S204);
+    register: the two sticks of Ezekiel 37:15-22 — metallic emerald +
+    metallic gold joined in one pill.
+    """
+
+    book: ChapterEndCardBookRef
+    chapter: ChapterEndCardChapterRef
+    entries: List[KingdomEntry]

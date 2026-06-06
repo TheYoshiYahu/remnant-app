@@ -13,9 +13,11 @@ import {
   type VerseSearchHit,
   type VerseWord,
   type WitnessEntry,
+  type KingdomEntry,
   deleteHighlight,
   getChapter,
   getChapterWitness,
+  getChapterKingdom,
   getChapterWords,
   getSubscriptionMe,
   listBooks,
@@ -40,6 +42,8 @@ import ChapterEndCard from "./components/ChapterEndCard";
 import ReaderDivider from "./components/ReaderDivider";
 import WitnessCard from "./components/WitnessCard";
 import WitnessEndCard from "./components/WitnessEndCard";
+import KingdomCard from "./components/KingdomCard";
+import KingdomEndCard from "./components/KingdomEndCard";
 import HighlightPicker, {
   markClassFor,
   markCssVarsFor,
@@ -515,6 +519,34 @@ function Reader() {
     Record<number, WitnessEntry>
   >({});
   const [expandedWitnessVerseId, setExpandedWitnessVerseId] = useState<
+    number | null
+  >(null);
+
+  // S205 — The Kingdom (working title: Blue Pill). The nothing-new
+  // overlay: member verses carry the two-tone quote mark (a double
+  // quotation mark built from two single glyphs — emerald outside,
+  // gold inside, both ends of the verse; proof v3 signed off); tap
+  // unfolds the come-and-see card inline. Free for every partner —
+  // the proclamation surface; no tier gate, ever. Defaults ON for
+  // first-time visitors like the Witness; toggle-off persists.
+  const [kingdomOn, setKingdomOn] = useState<boolean>(true);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const stored = window.localStorage.getItem("rop_kingdom_v1");
+    setKingdomOn(stored === null ? true : stored === "true");
+  }, []);
+  const toggleKingdom = () => {
+    const next = !kingdomOn;
+    setKingdomOn(next);
+    setExpandedKingdomVerseId(null);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("rop_kingdom_v1", String(next));
+    }
+  };
+  const [kingdomByVerse, setKingdomByVerse] = useState<
+    Record<number, KingdomEntry>
+  >({});
+  const [expandedKingdomVerseId, setExpandedKingdomVerseId] = useState<
     number | null
   >(null);
 
@@ -1547,6 +1579,27 @@ function Reader() {
       });
   }, [selectedBookSlug, selectedChapter, witnessOn]);
 
+  // S205 — Kingdom marks reload alongside the chapter, same pattern as
+  // the Witness: only while the toggle is ON, best-effort, public
+  // endpoint — anonymous callers get the full proclamation surface.
+  useEffect(() => {
+    if (!selectedBookSlug || !selectedChapter) return;
+    setKingdomByVerse({});
+    setExpandedKingdomVerseId(null);
+    if (!kingdomOn) return;
+    getChapterKingdom(selectedBookSlug, selectedChapter)
+      .then((r) => {
+        const map: Record<number, KingdomEntry> = {};
+        for (const entry of r.entries) {
+          map[entry.verse_id] = entry;
+        }
+        setKingdomByVerse(map);
+      })
+      .catch(() => {
+        // Transient failure — leave the map empty.
+      });
+  }, [selectedBookSlug, selectedChapter, kingdomOn]);
+
   // S124 W5 — bookmarks reload alongside the chapter. Same best-effort
   // pattern as highlights — 401 (anonymous) leaves the map empty;
   // partner sees no bookmark glyphs but the reader still works. Sheet
@@ -2453,6 +2506,13 @@ function Reader() {
                   verses.some((vv) => vv.id === expandedWitnessVerseId)
                     ? witnessByVerse[expandedWitnessVerseId]
                     : undefined;
+                // S205 — same unfold contract for the Kingdom card.
+                const expandedKingdomEntry =
+                  kingdomOn &&
+                  expandedKingdomVerseId !== null &&
+                  verses.some((vv) => vv.id === expandedKingdomVerseId)
+                    ? kingdomByVerse[expandedKingdomVerseId]
+                    : undefined;
                 return (
                 <Fragment key={`p-${gIdx}-${verses[0].id}`}>
                 <p className="mb-3 indent-0">
@@ -2504,6 +2564,20 @@ function Reader() {
                         expandedWitnessVerseId === v.id ? null : v.id
                       );
                     };
+                    // S205 — The Kingdom mark on member verses while
+                    // the toggle is ON: the two-tone quote pair
+                    // (emerald outside, gold inside) at both ends of
+                    // the verse. Tapping the glyphs (or the verse,
+                    // when it carries no Witness card) unfolds the
+                    // Kingdom come-and-see card under this paragraph.
+                    const kingdomEntry = kingdomOn
+                      ? kingdomByVerse[v.id]
+                      : undefined;
+                    const toggleKingdomCard = () => {
+                      setExpandedKingdomVerseId(
+                        expandedKingdomVerseId === v.id ? null : v.id
+                      );
+                    };
                     let content: React.ReactNode = (
                       <>
                         <sup className="verse-number mr-1">
@@ -2535,6 +2609,27 @@ function Reader() {
                             }}
                           >
                             {"“"}
+                          </span>
+                        )}
+                        {kingdomEntry && (
+                          <span
+                            role="button"
+                            aria-label={`The Kingdom: ${kingdomEntry.card_title}. Tap to unfold.`}
+                            aria-expanded={
+                              expandedKingdomVerseId === v.id
+                            }
+                            title={kingdomEntry.card_title}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleKingdomCard();
+                            }}
+                          >
+                            <span className="kingdom-quote kingdom-quote-tanakh">
+                              {"‘"}
+                            </span>
+                            <span className="kingdom-quote kingdom-quote-nt">
+                              {"‘"}
+                            </span>
                           </span>
                         )}
                         {bookmark && (
@@ -2713,6 +2808,27 @@ function Reader() {
                             {"” "}
                           </span>
                         )}
+                        {kingdomEntry && (
+                          <span
+                            role="button"
+                            aria-label={`The Kingdom: ${kingdomEntry.card_title}. Tap to unfold.`}
+                            aria-expanded={
+                              expandedKingdomVerseId === v.id
+                            }
+                            title={kingdomEntry.card_title}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleKingdomCard();
+                            }}
+                          >
+                            <span className="kingdom-quote kingdom-quote-nt">
+                              {"’"}
+                            </span>
+                            <span className="kingdom-quote kingdom-quote-tanakh">
+                              {"’ "}
+                            </span>
+                          </span>
+                        )}
                       </>
                     );
                     // S204b — red-text / highlight-wash treatments wrap
@@ -2829,8 +2945,15 @@ function Reader() {
                           // verse unfolds/folds its come-and-see card
                           // (word taps stopPropagation first, so
                           // Strong's lookups still win on words).
+                          // S205 — when a verse carries only a Kingdom
+                          // mark, a plain tap unfolds the Kingdom card;
+                          // when it carries both, the Witness keeps the
+                          // plain tap and the Kingdom opens from its
+                          // quote glyphs (which stopPropagation).
                           if (witnessEntry) {
                             toggleWitnessCard();
+                          } else if (kingdomEntry) {
+                            toggleKingdomCard();
                           }
                         }}
                       >
@@ -2846,6 +2969,14 @@ function Reader() {
                     hideParentheticals={hideParentheticals}
                     sacredNameMask={sacredNameMask}
                     onClose={() => setExpandedWitnessVerseId(null)}
+                  />
+                )}
+                {expandedKingdomEntry && (
+                  <KingdomCard
+                    entry={expandedKingdomEntry}
+                    hideParentheticals={hideParentheticals}
+                    sacredNameMask={sacredNameMask}
+                    onClose={() => setExpandedKingdomVerseId(null)}
                   />
                 )}
                 </Fragment>
@@ -3050,6 +3181,26 @@ function Reader() {
             >
               {witnessOn ? "Hide the Witness" : "Show the Witness"}
             </button>
+            {/*
+              S205 — The Kingdom toggle (working title: Blue Pill).
+              The TWO-TONE register: metallic emerald + metallic gold
+              joined in one pill — the two sticks of Ezekiel 37:15-22
+              made one in his hand ("uniting the old and new
+              testament" — Yoshi). Hard seam, blend border. ON marks
+              every member verse with the two-tone quote pair; tap to
+              unfold the come-and-see card. FREE for every partner —
+              the proclamation surface; no tier chip, ever. No dot
+              glyph (Yoshi, S205 proof).
+            */}
+            <button
+              type="button"
+              onClick={toggleKingdom}
+              aria-pressed={kingdomOn}
+              title="The Kingdom — nothing in the new testament is new. Marks every teaching, act, and promise beside the scripture it was taught from. Tap a marked verse to see both sides quoted in full."
+              className="chrome-metal chrome-metal-kingdom !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
+            >
+              {kingdomOn ? "Hide the Kingdom" : "Show the Kingdom"}
+            </button>
           </div>
 
           {/*
@@ -3157,6 +3308,23 @@ function Reader() {
           {witnessOn && (
             <WitnessEndCard
               entries={Object.values(witnessByVerse).sort(
+                (a, b) => a.verse_number - b.verse_number
+              )}
+              hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
+            />
+          )}
+
+          {/*
+            S205 — the Kingdom chapter-end card: every pairing in this
+            chapter listed cross-reference style (marked verse ↔ its
+            source scriptures), each opening the full come-and-see card
+            inline. Rides the Kingdom toggle, NOT hideCommentary — the
+            proclamation stands when study aids fold.
+          */}
+          {kingdomOn && (
+            <KingdomEndCard
+              entries={Object.values(kingdomByVerse).sort(
                 (a, b) => a.verse_number - b.verse_number
               )}
               hideParentheticals={hideParentheticals}
