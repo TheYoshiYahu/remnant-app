@@ -256,8 +256,8 @@ export default function Pricing() {
         </h1>
         <p className="mt-2 text-base text-[var(--reader-muted)]">
           The 66-book canon stays open to anyone. The tiers below open the rest —
-          the extras library, the framework commentary, Strong's lookup, and the
-          Teaching Corpus — and the work the assembly carries forward.
+          the extras library, the framework commentary, and Strong's lookup — and
+          the work the assembly carries forward.
         </p>
         <p className="mt-2 text-base text-[var(--reader-muted)]">
           Every tier is at founder pricing while the app is built and updated
