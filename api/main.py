@@ -162,7 +162,11 @@ from models import (
     ThreadAnchor,
     ThreadMember,
     ThreadMemberTarget,
+    StudyHighlightEntry,
+    StudyIndexResponse,
+    StudyNoteEntry,
     UpdateHighlightLabelsRequest,
+    UpdateNoteRequest,
     UpsertReadingPositionRequest,
     Verse,
     VerseSearchHit,
@@ -1630,11 +1634,15 @@ async def list_bookmarks_index(
 #   GET  /v1/notes      — list all partner's entries, created_at ASC
 #   POST /v1/notes      — append a new entry (verse_id optional)
 #
-# V1 ships GET/POST only. Edit/delete per-entry is a W8 ($1.99 Notes
-# tier) affordance — the single global notepad is append-only at Free.
-# Per the §22 design: "Free partners who want to revisit an old entry
-# tap the verse again → Add note → a new entry block commits with the
-# same verse reference; the partner writes the addendum there."
+# V1 shipped GET/POST only. S203 (Session C) adds PATCH/DELETE for
+# the Study Notes tier and the free-tier note cap — the Free notepad
+# stays append-only per §22; Free partners who want to revisit an old
+# entry tap the verse again → Add note → addendum entry.
+
+# S203 — the free-tier conversion lever (Yoshi's Session C call:
+# "tight caps"). Free partners hold up to this many non-archived
+# notes; Study Notes ($1.99+) is uncapped.
+_FREE_NOTE_CAP = 10
 
 
 @app.get("/v1/notes", response_model=NotesResponse)
@@ -1693,17 +1701,47 @@ async def append_note(
       (b) Chrome-Notes-button free-form — body has verse_id=None; the
           entry renders without a header.
 
-    No tier gate (§9 Free-tier). title is left NULL for V1 (W8 will
-    set title for named per-verse notes). chapter_id stays NULL for
-    V1 — verse-anchor is sufficient ground for the Free notepad's
+    Tier shape (S203, Yoshi's Session C call): note creation is free
+    up to the 10-note cap; the cap is the conversion lever ("7 of 10
+    free notes used" on the My Study surface). Study Notes ($1.99+)
+    is uncapped. `tags` (collections) is a Study Notes field — free
+    callers sending tags get 403 so the upgrade trigger fires at the
+    point of intent. title is left NULL (W8 named notes). chapter_id
+    stays NULL — verse-anchor is sufficient ground for the notepad's
     chronological journal model.
 
     If verse_id is provided but doesn't resolve to a real verse, 404
     (catches client drift before silently writing an orphaned row).
     """
+    tier = user_tier(current_user)
+    if tier == "free" and body.tags:
+        raise HTTPException(
+            status_code=403,
+            detail=(
+                "Collections are a Study Notes ($1.99/mo) feature. "
+                "Upgrade to organize your notes into collections."
+            ),
+        )
+
     pool = get_pool()
     async with pool.acquire() as conn:
         user_uuid = await upsert_user(conn, current_user)
+
+        if tier == "free":
+            count_row = await conn.fetchrow(
+                "SELECT COUNT(*) AS n FROM study_notes "
+                " WHERE user_id = $1::uuid AND is_archived = FALSE",
+                user_uuid,
+            )
+            if count_row["n"] >= _FREE_NOTE_CAP:
+                raise HTTPException(
+                    status_code=403,
+                    detail=(
+                        f"The free notepad holds {_FREE_NOTE_CAP} notes. "
+                        "Upgrade to Study Notes ($1.99/mo) for unlimited "
+                        "notes, collections, search, and export."
+                    ),
+                )
 
         if body.verse_id is not None:
             verse_row = await conn.fetchrow(
@@ -1722,8 +1760,8 @@ async def append_note(
         # path; free-form inserts (verse_id NULL) get verse_ref NULL.
         row = await conn.fetchrow(
             "WITH inserted AS ( "
-            "    INSERT INTO study_notes (user_id, verse_id, body) "
-            "    VALUES ($1::uuid, $2, $3) "
+            "    INSERT INTO study_notes (user_id, verse_id, body, tags) "
+            "    VALUES ($1::uuid, $2, $3, $4) "
             "    RETURNING id, verse_id, chapter_id, title, body, "
             "              created_at, updated_at "
             ") "
@@ -1741,9 +1779,211 @@ async def append_note(
             user_uuid,
             body.verse_id,
             body.body,
+            body.tags,
         )
 
     return NoteEntry(**dict(row))
+
+
+@app.patch("/v1/notes/{note_id}", response_model=NoteEntry)
+async def update_note(
+    note_id: str,
+    body: UpdateNoteRequest,
+    current_user: User = Depends(get_current_user_required),
+) -> NoteEntry:
+    """Edit a note's body and/or tags (collections) — Study Notes
+    tier ($1.99+). The Free notepad stays append-only per §22; free
+    callers get 403 with the upgrade trigger.
+
+    Omitted fields are left untouched; `tags` replaces the whole
+    array when present (empty list clears all collections). 404 when
+    the note doesn't exist or belongs to another partner (same
+    response either way — no existence oracle).
+    """
+    tier = user_tier(current_user)
+    if tier == "free":
+        raise HTTPException(
+            status_code=403,
+            detail=(
+                "Editing notes is a Study Notes ($1.99/mo) feature. "
+                "The free notepad is append-only — add a new entry, "
+                "or upgrade to edit and organize."
+            ),
+        )
+    if body.body is None and body.tags is None:
+        raise HTTPException(
+            status_code=422,
+            detail="Provide body and/or tags to update.",
+        )
+
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        row = await conn.fetchrow(
+            "WITH updated AS ( "
+            "    UPDATE study_notes "
+            "       SET body = COALESCE($3, body), "
+            "           tags = CASE WHEN $4::boolean THEN $5 ELSE tags END, "
+            "           updated_at = now() "
+            "     WHERE id = $1::uuid AND user_id = $2::uuid "
+            "       AND is_archived = FALSE "
+            "    RETURNING id, verse_id, chapter_id, title, body, "
+            "              created_at, updated_at "
+            ") "
+            "SELECT n.id::text AS id, n.verse_id, n.chapter_id, n.title, "
+            "       n.body, n.created_at, n.updated_at, "
+            "       CASE WHEN n.verse_id IS NULL THEN NULL "
+            "            ELSE b.title || ' ' || c.chapter_number::text || "
+            "                 ':' || v.verse_number::text "
+            "       END AS verse_ref "
+            "  FROM updated n "
+            "  LEFT JOIN verses   v ON n.verse_id = v.id "
+            "  LEFT JOIN chapters c ON v.chapter_id = c.id "
+            "  LEFT JOIN books    b ON c.book_id = b.id "
+            "  LEFT JOIN editions e ON b.edition_id = e.id AND e.slug = 'canon'",
+            note_id,
+            user_uuid,
+            body.body,
+            body.tags is not None,
+            body.tags,
+        )
+    if row is None:
+        raise HTTPException(status_code=404, detail="Note not found.")
+    return NoteEntry(**dict(row))
+
+
+@app.delete("/v1/notes/{note_id}", status_code=204)
+async def delete_note(
+    note_id: str,
+    current_user: User = Depends(get_current_user_required),
+) -> None:
+    """Delete a note — Study Notes tier ($1.99+). Soft-delete via
+    is_archived so a mis-tap is recoverable server-side (no partner
+    data is ever hard-dropped by a single tap). Free callers get 403
+    (the §22 append-only notepad).
+    """
+    tier = user_tier(current_user)
+    if tier == "free":
+        raise HTTPException(
+            status_code=403,
+            detail=(
+                "Deleting notes is a Study Notes ($1.99/mo) feature. "
+                "Upgrade to edit and organize your notepad."
+            ),
+        )
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+        result = await conn.execute(
+            "UPDATE study_notes SET is_archived = TRUE, updated_at = now() "
+            " WHERE id = $1::uuid AND user_id = $2::uuid "
+            "   AND is_archived = FALSE",
+            note_id,
+            user_uuid,
+        )
+    if result == "UPDATE 0":
+        raise HTTPException(status_code=404, detail="Note not found.")
+
+
+# ----- My Study (Session 203 — Session C) ----------------------------------
+#
+# The unified personal-apparatus home per the S203 signed-off proof:
+# one payload carrying everything the partner has marked — notes,
+# bookmarks, highlights — joined with verse + book metadata, plus the
+# color-label dictionary and the free-tier note-cap meter.
+#
+# Search + the color filter + grouping all run CLIENT-side over this
+# payload: a partner's apparatus is hundreds of rows at most, already
+# in hand, and instant-as-you-type beats a network round trip. Export
+# (Markdown + PDF, Study Notes tier) renders client-side from the
+# same payload. No new search endpoint; no N+1.
+#
+# Auth-required, every tier — the free partner sees the same home
+# with their capped content; Search/Collections/Export chrome carries
+# the Study Notes chip client-side (full opacity + tier chip per the
+# no-greyed-text lock).
+
+
+@app.get("/v1/study/index", response_model=StudyIndexResponse)
+async def study_index(
+    current_user: User = Depends(get_current_user_required),
+) -> StudyIndexResponse:
+    """Return the partner's whole study apparatus in one payload.
+
+    Three arrays (notes / bookmarks / highlights), each joined with
+    verse + book metadata so every card renders without follow-up
+    fetches; the color-label dictionary for the Highlights tab's
+    color sections; and note_count + note_cap for the lever card.
+    Edition scope = canon (mirrors the per-surface endpoints).
+    """
+    tier = user_tier(current_user)
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        user_uuid = await upsert_user(conn, current_user)
+
+        note_rows = await conn.fetch(
+            "SELECT n.id::text AS id, n.verse_id, n.title, n.body, n.tags, "
+            "       n.created_at, n.updated_at, "
+            "       CASE WHEN n.verse_id IS NULL THEN NULL "
+            "            ELSE b.title || ' ' || c.chapter_number::text || "
+            "                 ':' || v.verse_number::text "
+            "       END AS verse_ref, "
+            "       v.text          AS verse_text, "
+            "       b.slug          AS book_slug, "
+            "       c.chapter_number, "
+            "       v.verse_number "
+            "  FROM study_notes n "
+            "  LEFT JOIN verses   v ON n.verse_id = v.id "
+            "  LEFT JOIN chapters c ON v.chapter_id = c.id "
+            "  LEFT JOIN books    b ON c.book_id = b.id "
+            "  LEFT JOIN editions e ON b.edition_id = e.id AND e.slug = 'canon' "
+            " WHERE n.user_id = $1::uuid AND n.is_archived = FALSE "
+            " ORDER BY n.created_at DESC, n.id DESC",
+            user_uuid,
+        )
+
+        bookmark_rows = await conn.fetch(
+            "SELECT bm.id::text AS id, bm.verse_id, "
+            "       b.slug AS book_slug, b.title AS book_title, "
+            "       c.chapter_number, v.verse_number, "
+            "       v.text AS verse_text, "
+            "       bm.short_description, bm.tags, bm.color_tint, "
+            "       bm.created_at, bm.updated_at "
+            "  FROM bookmarks bm "
+            "  JOIN verses    v ON bm.verse_id  = v.id "
+            "  JOIN chapters  c ON v.chapter_id = c.id "
+            "  JOIN books     b ON c.book_id    = b.id "
+            "  JOIN editions  e ON b.edition_id = e.id "
+            " WHERE bm.user_id = $1::uuid AND e.slug = 'canon' "
+            " ORDER BY bm.created_at DESC, bm.id DESC",
+            user_uuid,
+        )
+
+        highlight_rows = await conn.fetch(
+            "SELECT h.id::text AS id, h.verse_id, h.color, h.style, "
+            "       b.slug AS book_slug, b.title AS book_title, "
+            "       c.chapter_number, v.verse_number, "
+            "       v.text AS verse_text, h.created_at "
+            "  FROM verse_highlights h "
+            "  JOIN verses    v ON h.verse_id   = v.id "
+            "  JOIN chapters  c ON v.chapter_id = c.id "
+            "  JOIN books     b ON c.book_id    = b.id "
+            "  JOIN editions  e ON b.edition_id = e.id "
+            " WHERE h.user_id = $1::uuid AND e.slug = 'canon' "
+            " ORDER BY h.created_at DESC, h.id DESC",
+            user_uuid,
+        )
+
+        labels = (await _build_labels_response(conn, user_uuid)).labels
+
+    return StudyIndexResponse(
+        notes=[StudyNoteEntry(**dict(r)) for r in note_rows],
+        bookmarks=[BookmarkIndexEntry(**dict(r)) for r in bookmark_rows],
+        highlights=[StudyHighlightEntry(**dict(r)) for r in highlight_rows],
+        labels=labels,
+        note_count=len(note_rows),
+        note_cap=_FREE_NOTE_CAP if tier == "free" else None,
+    )
 
 
 # ----- Search -------------------------------------------------------------

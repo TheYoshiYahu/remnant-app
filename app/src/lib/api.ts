@@ -519,6 +519,34 @@ async function put<TReq, TRes>(path: string, body: TReq): Promise<TRes> {
   return (await res.json()) as TRes;
 }
 
+async function patch<TReq, TRes>(path: string, body: TReq): Promise<TRes> {
+  const headers: Record<string, string> = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  };
+  const token = readAccessToken();
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+  const res = await fetch(`${API_BASE}${path}`, {
+    method: "PATCH",
+    headers,
+    credentials: "include",
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    let detail = res.statusText;
+    try {
+      const json = (await res.json()) as { detail?: string };
+      if (json.detail) detail = json.detail;
+    } catch {
+      // not JSON
+    }
+    throw new Error(`API ${path} → ${res.status} ${detail}`);
+  }
+  return (await res.json()) as TRes;
+}
+
 async function del(path: string): Promise<void> {
   const headers: Record<string, string> = { Accept: "application/json" };
   const token = readAccessToken();
@@ -1051,6 +1079,9 @@ export interface NotesResponse {
 export interface CreateNoteRequest {
   verse_id?: number | null;
   body: string;
+  /** S203 — collections (Study Notes tier; free callers sending tags
+   *  receive 403 with the upgrade trigger). */
+  tags?: string[] | null;
 }
 
 /** List the partner's notes, ordered chronologically (oldest first). */
@@ -1061,6 +1092,78 @@ export function listNotes(): Promise<NotesResponse> {
 /** Append a new entry to the partner's notepad. */
 export function appendNote(body: CreateNoteRequest): Promise<NoteEntry> {
   return post<CreateNoteRequest, NoteEntry>("/notes", body);
+}
+
+// ----- My Study (Session 203 — Session C) ----------------------------------
+//
+// The unified personal-apparatus home per the S203 signed-off proof:
+// one payload carrying everything the partner has marked — notes,
+// bookmarks, highlights — joined with verse + book metadata, plus the
+// color-label dictionary and the free-tier note-cap meter. Search,
+// the color filter, grouping, and export all run client-side over
+// this payload (a partner's apparatus is hundreds of rows at most).
+
+export interface StudyNoteEntry {
+  id: string;
+  verse_id: number | null;
+  title: string | null;
+  body: string;
+  /** Collections — flat tags presented folder-style. */
+  tags: string[] | null;
+  verse_ref: string | null;
+  verse_text: string | null;
+  book_slug: string | null;
+  chapter_number: number | null;
+  verse_number: number | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface StudyHighlightEntry {
+  id: string;
+  verse_id: number;
+  color: HighlightColor;
+  style: MarkStyle;
+  book_slug: string;
+  book_title: string;
+  chapter_number: number;
+  verse_number: number;
+  verse_text: string;
+  created_at: string;
+}
+
+export interface StudyIndexResponse {
+  notes: StudyNoteEntry[];
+  bookmarks: BookmarkIndexEntry[];
+  highlights: StudyHighlightEntry[];
+  labels: HighlightLabel[];
+  note_count: number;
+  /** Free-tier note ceiling (10), or null for paid tiers. */
+  note_cap: number | null;
+}
+
+export interface UpdateNoteRequest {
+  body?: string;
+  /** Replaces the whole array when present; empty list clears. */
+  tags?: string[] | null;
+}
+
+/** The partner's whole study apparatus in one payload. */
+export function getStudyIndex(): Promise<StudyIndexResponse> {
+  return get<StudyIndexResponse>("/study/index");
+}
+
+/** Edit a note's body and/or tags — Study Notes tier ($1.99+). */
+export function updateNote(
+  noteId: string,
+  body: UpdateNoteRequest,
+): Promise<NoteEntry> {
+  return patch<UpdateNoteRequest, NoteEntry>(`/notes/${noteId}`, body);
+}
+
+/** Delete (archive) a note — Study Notes tier ($1.99+). */
+export function deleteNote(noteId: string): Promise<void> {
+  return del(`/notes/${noteId}`);
 }
 
 // ----- Search V1 (Session 125 — Wheel 6) ----------------------------------

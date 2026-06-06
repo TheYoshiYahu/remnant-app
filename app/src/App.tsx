@@ -63,6 +63,7 @@ import {
 import BookmarkSheet from "./components/BookmarkSheet";
 import NotesPanel, { type PendingAnchor } from "./components/NotesPanel";
 import BookmarksIndex from "./components/BookmarksIndex";
+import MyStudy from "./components/MyStudy";
 import SearchModal from "./components/SearchModal";
 import AudioPlayer from "./components/AudioPlayer";
 import { getTTSEngine, type TTSVoice } from "./lib/tts";
@@ -705,6 +706,15 @@ function Reader() {
   // #1 = Free tier; the chrome button below renders for every signed-in
   // partner without a tier-locked chip.
   const [bookmarksIndexOpen, setBookmarksIndexOpen] = useState<boolean>(false);
+
+  // S203 — Session C "My Study" home. Single boolean drives the
+  // full-screen MyStudy overlay (the unified personal-apparatus
+  // surface: notes + bookmarks + highlights, searchable, collected,
+  // exportable). The component owns its own fetch of GET
+  // /v1/study/index per open; App supplies books (canonical ordering),
+  // the navigate callback, and visibility. Every tier opens it — the
+  // free partner sees the capped home with the Study Notes lever.
+  const [myStudyOpen, setMyStudyOpen] = useState<boolean>(false);
 
   // S125 W6 — Search V1 UI state per DESIGN_LANGUAGE.md §23. Single
   // boolean drives the SearchModal render branch; the modal owns its
@@ -2031,6 +2041,23 @@ function Reader() {
               <span aria-hidden="true">⚑</span>
               <span>Bookmarks</span>
             </button>
+            {/* S203 — Session C chrome "My Study" button. Opens the
+                unified personal-apparatus home (notes + bookmarks +
+                highlights: search, collections, color sections,
+                export). Sits left of Notes with the partner-content
+                cluster. Gold register — the partner's own study is
+                the crown of the apparatus. Free tier opens it too
+                (capped home + Study Notes lever inside). */}
+            <button
+              type="button"
+              onClick={() => setMyStudyOpen(true)}
+              aria-label="Open My Study"
+              title="Open My Study"
+              className="chrome-metal chrome-metal-gold"
+            >
+              <span aria-hidden="true">❖</span>
+              <span>My Study</span>
+            </button>
             {/* S124 W5 — chrome Notes button. Opens the NotesPanel
                 without an anchor (free-form path) so partners can
                 read existing notes or add free-form entries without
@@ -3323,6 +3350,23 @@ function Reader() {
         <BookmarksIndex
           onNavigate={jumpToVerseRef}
           onClose={() => setBookmarksIndexOpen(false)}
+        />
+      )}
+
+      {/*
+        S203 — Session C "My Study" home. Full-screen overlay holding
+        the partner's whole apparatus (notes + bookmarks + highlights):
+        client-side search incl. the highlight-color filter, collections
+        (flat tags, folder-feel), Highlights tab color sections with
+        fill/underline/outline sub-groups, Markdown + PDF export.
+        Component owns its fetch; tier signal rides note_cap in the
+        index payload (null = paid).
+      */}
+      {myStudyOpen && (
+        <MyStudy
+          books={books}
+          onNavigate={jumpToVerseRef}
+          onClose={() => setMyStudyOpen(false)}
         />
       )}
 

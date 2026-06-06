@@ -954,11 +954,15 @@ class CreateNoteRequest(BaseModel):
     leaves title NULL for V1 (W8 will set title for named per-verse
     notes).
 
-    No tier gate (§9 Free-tier feature).
+    Tier shape (S203): creating notes is free up to the 10-note cap
+    (enforced in the handler); `tags` (collections) is a Study Notes
+    ($1.99+) field — free callers sending tags get 403 so the upgrade
+    trigger fires at the point of intent.
     """
 
     verse_id: Optional[int] = None
     body: str = Field(..., min_length=1)
+    tags: Optional[List[str]] = None
 
 
 # ----- Phase 9.3 — lexicon (S163) ---------------------------------------
@@ -1202,3 +1206,102 @@ class NikkudotVerseResponse(BaseModel):
     verse_key: str
     pointed_text: str
     has_tetragrammaton: bool
+
+
+# ----- My Study (Session 203 — Session C) ---------------------------------
+#
+# The unified personal-apparatus home per the S203 signed-off proof:
+# one surface holding ALL of a partner's notes, bookmarks, and
+# highlights — grouped, searchable (client-side over this payload),
+# collected, exportable. One endpoint feeds it:
+#
+#   GET /v1/study/index — everything the partner has marked, joined
+#       with verse + book metadata, plus the color-label dictionary
+#       and the free-tier note-cap meter.
+#
+# Search and the color filter run client-side: a partner's apparatus
+# is hundreds of rows at most, the payload is already in hand, and
+# instant-as-you-type beats a network round trip. Export (Markdown +
+# PDF, Study Notes tier) renders client-side from this same payload.
+#
+# Collections = flat tags presented folder-style. study_notes.tags
+# landed in session203_my_study_collections.sql (bookmarks.tags is
+# S124-era). Highlights carry no tags — color + style + the partner's
+# color labels are their organizational vocabulary.
+
+
+class StudyNoteEntry(BaseModel):
+    """One study_notes row joined with verse metadata for My Study.
+
+    Extends the NotesPanel shape with `tags` (collections) and the
+    full `verse_text` so the card can quote the anchored verse in
+    come-and-see style without a second fetch. verse_* fields are
+    null for free-form (unanchored) entries.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    verse_id: Optional[int] = None
+    title: Optional[str] = None
+    body: str
+    tags: Optional[List[str]] = None
+    verse_ref: Optional[str] = None
+    verse_text: Optional[str] = None
+    book_slug: Optional[str] = None
+    chapter_number: Optional[int] = None
+    verse_number: Optional[int] = None
+    created_at: datetime
+    updated_at: datetime
+
+
+class StudyHighlightEntry(BaseModel):
+    """One verse_highlights row joined with verse + book metadata.
+
+    The Highlights tab groups these into color sections (with the
+    partner's label from user_highlight_labels) and fill/underline/
+    outline sub-groups — the marking vocabulary as the table of
+    contents.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    verse_id: int
+    color: HighlightColor
+    style: MarkStyle
+    book_slug: str
+    book_title: str
+    chapter_number: int
+    verse_number: int
+    verse_text: str
+    created_at: datetime
+
+
+class StudyIndexResponse(BaseModel):
+    """GET /v1/study/index — the partner's whole apparatus in one
+    payload, plus the dictionary + cap meter the surface needs.
+
+    `note_cap` is the free-tier ceiling (10) or null for paid tiers;
+    `note_count` is the partner's current non-archived note count —
+    the lever card renders "N of 10 free notes used" from the pair.
+    """
+
+    notes: List[StudyNoteEntry]
+    bookmarks: List[BookmarkIndexEntry]
+    highlights: List[StudyHighlightEntry]
+    labels: List[HighlightLabel]
+    note_count: int
+    note_cap: Optional[int] = None
+
+
+class UpdateNoteRequest(BaseModel):
+    """PATCH /v1/notes/{note_id} body — Study Notes tier ($1.99+).
+
+    Both fields optional; omitted fields are left untouched. `tags`
+    replaces the whole array when present (empty list clears). Free
+    tier receives 403 — the Free notepad stays append-only per §22.
+    """
+
+    body: Optional[str] = Field(None, min_length=1)
+    tags: Optional[List[str]] = None
