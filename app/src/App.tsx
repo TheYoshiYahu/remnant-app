@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import {
   type BookChaptersResponse,
   type Bookmark,
@@ -12,8 +12,10 @@ import {
   type SubscriptionMe,
   type VerseSearchHit,
   type VerseWord,
+  type WitnessEntry,
   deleteHighlight,
   getChapter,
+  getChapterWitness,
   getChapterWords,
   getSubscriptionMe,
   listBooks,
@@ -36,6 +38,7 @@ import { hasJwtCookie } from "./lib/display-prefs-sync";
 import { loadStoredNativeToken } from "./lib/native-auth";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ReaderDivider from "./components/ReaderDivider";
+import WitnessCard from "./components/WitnessCard";
 import HighlightPicker, {
   markClassFor,
   markCssVarsFor,
@@ -453,6 +456,32 @@ function Reader() {
       window.localStorage.setItem("rop_hide_commentary_v1", String(next));
     }
   };
+
+  // S204 — The Witness (working title: Red Pill). The inverted
+  // red-letter overlay: member verses carry the witness-red capsule
+  // mark; tap unfolds the come-and-see card inline. Free for every
+  // partner — the proclamation surface; no tier gate, ever. Default
+  // OFF so the reading surface stays untouched until the partner opts
+  // in; choice persists in localStorage like the other reader toggles.
+  const [witnessOn, setWitnessOn] = useState<boolean>(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setWitnessOn(window.localStorage.getItem("rop_witness_v1") === "true");
+  }, []);
+  const toggleWitness = () => {
+    const next = !witnessOn;
+    setWitnessOn(next);
+    setExpandedWitnessVerseId(null);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("rop_witness_v1", String(next));
+    }
+  };
+  const [witnessByVerse, setWitnessByVerse] = useState<
+    Record<number, WitnessEntry>
+  >({});
+  const [expandedWitnessVerseId, setExpandedWitnessVerseId] = useState<
+    number | null
+  >(null);
 
   // S144 — parentheticals-hide toggle. Default OFF (parentheticals
   // visible) to preserve the retention-mechanism for first-time Christian
@@ -1459,6 +1488,30 @@ function Reader() {
       });
   }, [selectedBookSlug, selectedChapter]);
 
+  // S204 — Witness marks reload alongside the chapter, but only while
+  // the toggle is ON (the surface costs nothing when off). Best-effort:
+  // a transient failure leaves the map empty and the reader is simply
+  // unmarked. Re-fires when the partner flips the toggle on so the
+  // current chapter marks appear without a chapter change. Public
+  // endpoint — anonymous callers get the full proclamation surface.
+  useEffect(() => {
+    if (!selectedBookSlug || !selectedChapter) return;
+    setWitnessByVerse({});
+    setExpandedWitnessVerseId(null);
+    if (!witnessOn) return;
+    getChapterWitness(selectedBookSlug, selectedChapter)
+      .then((r) => {
+        const map: Record<number, WitnessEntry> = {};
+        for (const entry of r.entries) {
+          map[entry.verse_id] = entry;
+        }
+        setWitnessByVerse(map);
+      })
+      .catch(() => {
+        // Transient failure — leave the map empty.
+      });
+  }, [selectedBookSlug, selectedChapter, witnessOn]);
+
   // S124 W5 — bookmarks reload alongside the chapter. Same best-effort
   // pattern as highlights — 401 (anonymous) leaves the map empty;
   // partner sees no bookmark glyphs but the reader still works. Sheet
@@ -2351,8 +2404,23 @@ function Reader() {
                   groups[groups.length - 1].push(v);
                 }
               }
-              return groups.map((verses, gIdx) => (
-                <p key={`p-${gIdx}-${verses[0].id}`} className="mb-3 indent-0">
+              return groups.map((verses, gIdx) => {
+                // S204 — The Witness come-and-see card unfolds directly
+                // under the paragraph that contains the tapped member
+                // verse: both sides quoted in full, stand-alone italics,
+                // the claim and its Tanakh anchor side by side. One card
+                // open at a time; tapping the capsule again (or ✕) folds
+                // it. The card respects the partner's parentheticals +
+                // sacred-name display prefs like every reading surface.
+                const expandedWitnessEntry =
+                  witnessOn &&
+                  expandedWitnessVerseId !== null &&
+                  verses.some((vv) => vv.id === expandedWitnessVerseId)
+                    ? witnessByVerse[expandedWitnessVerseId]
+                    : undefined;
+                return (
+                <Fragment key={`p-${gIdx}-${verses[0].id}`}>
+                <p className="mb-3 indent-0">
                   {verses.map((v) => {
                     // S113 → S117 multi-mark — layer 0..3 marks on the
                     // verse via nested spans. Each mark wraps the inner
@@ -2387,11 +2455,38 @@ function Reader() {
                       bookmark?.color_tint
                         ? HIGHLIGHT_HEX[bookmark.color_tint]
                         : undefined;
+                    // S204 — The Witness mark. A small witness-red
+                    // capsule (literally the pill) after the verse
+                    // number on member verses while the toggle is ON.
+                    // Tap unfolds the come-and-see card right under
+                    // this verse's paragraph; tap again folds it.
+                    const witnessEntry = witnessOn
+                      ? witnessByVerse[v.id]
+                      : undefined;
                     let content: React.ReactNode = (
                       <>
                         <sup className="verse-number mr-1">
                           {v.verse_number}
                         </sup>
+                        {witnessEntry && (
+                          <button
+                            type="button"
+                            className="pill-mark-witness"
+                            aria-label={`The Witness: ${witnessEntry.card_title}. Tap to unfold.`}
+                            aria-expanded={
+                              expandedWitnessVerseId === v.id
+                            }
+                            title={witnessEntry.card_title}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setExpandedWitnessVerseId(
+                                expandedWitnessVerseId === v.id
+                                  ? null
+                                  : v.id
+                              );
+                            }}
+                          />
+                        )}
                         {bookmark && (
                           <span
                             className="verse-bookmark-glyph"
@@ -2645,7 +2740,18 @@ function Reader() {
                     );
                   })}
                 </p>
-              ));
+                {expandedWitnessEntry && (
+                  <WitnessCard
+                    entry={expandedWitnessEntry}
+                    register="witness"
+                    hideParentheticals={hideParentheticals}
+                    sacredNameMask={sacredNameMask}
+                    onClose={() => setExpandedWitnessVerseId(null)}
+                  />
+                )}
+                </Fragment>
+                );
+              });
             })()}
           </div>
 
@@ -2822,6 +2928,25 @@ function Reader() {
               className="rounded-md border border-[#A8C8F0] bg-gradient-to-r from-[#0A2D84] via-[#1A6FE5] to-[#0A2D84] px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wide text-[#E6F0FA] shadow-sm hover:opacity-90"
             >
               {hideCommentary ? "Show study aids" : "Hide study aids"}
+            </button>
+            {/*
+              S204 — The Witness toggle (working title: Red Pill), the
+              ninth metallic register (dedicated witness red — proof
+              Option B, Yoshi sign-off). The inverted red-letter
+              overlay: ON marks every member verse with the capsule;
+              tap a capsule to unfold the come-and-see card. FREE for
+              every partner — the proclamation surface; this pill never
+              carries a tier chip. ◉ anchors the toggle, the mark, and
+              the card eyebrow as one family.
+            */}
+            <button
+              type="button"
+              onClick={toggleWitness}
+              aria-pressed={witnessOn}
+              title="The Witness — marks every verse where the Messiah claims what the Tanakh gives to Yahuah alone. Tap a mark to see both verses side by side."
+              className="chrome-metal chrome-metal-witness !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
+            >
+              ◉ {witnessOn ? "The Witness: on" : "The Witness"}
             </button>
           </div>
 

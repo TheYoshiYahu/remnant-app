@@ -63,17 +63,33 @@ def strip_psql_directives(sql: str) -> str:
 
 
 async def main() -> int:
-    if len(sys.argv) < 2:
-        print("Usage: python3 api/apply_migration.py <path-to-migration.sql>", file=sys.stderr)
+    # S204 — optional --dry-run flag: executes the whole migration and
+    # rolls it back instead of committing, so verify-blocks and row
+    # counts run against prod data without landing anything. Works for
+    # our migration files because they carry exactly one trailing
+    # COMMIT; the swap below replaces that final COMMIT with ROLLBACK.
+    args = [a for a in sys.argv[1:] if a != "--dry-run"]
+    dry_run = "--dry-run" in sys.argv[1:]
+
+    if len(args) < 1:
+        print("Usage: python3 api/apply_migration.py <path-to-migration.sql> [--dry-run]", file=sys.stderr)
         return 1
 
-    sql_path = Path(sys.argv[1])
+    sql_path = Path(args[0])
     if not sql_path.exists():
         print(f"Migration file not found: {sql_path}", file=sys.stderr)
         return 4
 
     sql_text = sql_path.read_text()
     sql_clean = strip_psql_directives(sql_text)
+
+    if dry_run:
+        idx = sql_clean.rfind("COMMIT;")
+        if idx == -1:
+            print("--dry-run: no COMMIT; found in migration — refusing.", file=sys.stderr)
+            return 5
+        sql_clean = sql_clean[:idx] + "ROLLBACK;" + sql_clean[idx + len("COMMIT;"):]
+        print("=== DRY RUN — final COMMIT swapped for ROLLBACK; nothing will land ===")
 
     url = load_database_url()
     if url.startswith("postgres://"):

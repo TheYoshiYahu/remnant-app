@@ -135,25 +135,22 @@ seed.
 - The proclaimer steps aside: the cards put verses side by side and
   let the reader watch the canon read itself.
 
-## Open questions for Yoshi at session open
-1. One mark or two for the two claim classes?
-2. The mark itself: red is the obvious register (it's the RED pill) —
-   crimson from the 13-palette? A new register? (Scarlet chrome =
-   Notes; techelet locked divine-names-only; the highlight palette's
-   crimson is partner-marking vocabulary — probably want a dedicated
-   Red Pill treatment so it never collides with partner marks.)
-3. Tier: free as the missionary/proclamation surface (the awakening
-   door), or part of a paid tier? (Lean: free — this is the
-   proclamation, and it converts something bigger than subscriptions.)
-4. Scope V1: gospels + John + Revelation + the named Tanakh anchors
-   first (a compelling, complete-feeling slice), or full-canon sweep
-   from the start?
-5. Extras: do 1 Enoch 46-71 (the named Son of Adam / Elect One beside
-   the Head of Days) and the other extras-witness passages join V1 or
-   wave 2?
-6. Name on the surface: "Red Pill" reader-facing, or an in-text name
-   (e.g., "The Witness") with red-pill as the working title? (Matrix
-   echo is the hook, but confirm Yoshi wants it reader-facing.)
+## Open questions — ANSWERED (Yoshi, S204 open — transcribed)
+1. **One mark** for all four classes — the class lives on the card,
+   not the mark.
+2. **Mark color: same as Notes (scarlet register), unless a better
+   dedicated treatment is proposed** — Yoshi's words: "same color as
+   notes, unless you think you can come up with a better one." The
+   proof render shows the scarlet treatment AND a proposed dedicated
+   blood-red treatment side by side; Yoshi picks at proof sign-off.
+3. **Free — the proclamation surface.** The awakening door; it
+   converts something bigger than subscriptions.
+4. **V1 scope: FULL-CANON sweep from the start** (not the
+   gospels-first slice).
+5. **Extras (1 Enoch 46-71 etc.): wave 2.** Canon-only V1.
+6. **Reader-facing name: "The Witness."** Red Pill stays the working
+   title between us (sessions, file names, internal docs); the
+   toggle and cards say "The Witness" to the partner.
 
 ## Session shape (earned discipline — proof first)
 1. Open sweep: on-device My Study check + spectral pill, alephbet
@@ -165,6 +162,24 @@ seed.
    set (~20-30 strongest members) loaded idempotently.
 5. Minion sweep + checker for the V1 scope; loader from the Mac.
 
+## NEXT AFTER THIS — THE BLUE PILL: THE KINGDOM (Yoshi, S204 — transcribed)
+Yoshi, S204: "we need a special blue pill for what we will do next —
+the kingdom." The companion overlay: where the Red Pill / Witness
+marks every verse where the Formed claims the Tanakh's "I," the Blue
+Pill marks the kingdom — the gathering of the twelve tribes, the
+proclamation, the regathering promises and their NT landings (the
+same fabric Ezekiel 34 already showed inside the Good Shepherd card).
+Design notes locked now so S204's build carries it for free:
+- S204 builds the surface PILL-GENERIC: mark component, tap-card
+  surface, and overlay pattern take a register/pill parameter, so the
+  Kingdom rides the same rails with a color swap + its own curated set.
+- Blue register: NOT techelet (divine-names-only, S127 lock), NOT
+  spectral (apparatus chrome). The Kingdom gets its own dedicated
+  blue — design at its session, same A/B proof discipline.
+- Scope, classes/taxonomy, tier, and name for the Kingdom surface:
+  open questions for its own session spec.
+
 ## Backlog unchanged behind this
-Maps rebuild (NEXT_SESSION_MAPS_REBUILD_SPEC.md) · Timeline ·
-Mark commentary consolidation · cross-reference sweep (paused).
+Blue Pill — the Kingdom (next) · Maps rebuild
+(NEXT_SESSION_MAPS_REBUILD_SPEC.md) · Timeline · Mark commentary
+consolidation · cross-reference sweep (paused).

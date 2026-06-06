@@ -223,6 +223,33 @@ export interface ChapterEndCardResponse {
   threads: ChapterEndThread[];
 }
 
+// ----- The Witness (working title: Red Pill) — Session 204 -----------------
+//
+// Mirrors api/models.py WitnessEntry / ChapterWitnessResponse. The
+// inverted red-letter overlay: one entry per marked verse in the
+// chapter, each carrying the full come-and-see tap-card (both sides
+// quoted in full, stand-alone italics, sacred names intact). Free
+// tier — the proclamation surface. Pill-generic by design: the
+// Kingdom (blue pill) rides the same shape next.
+
+export type WitnessClaimClass = "direct" | "title" | "act" | "structural";
+
+export interface WitnessEntry {
+  verse_id: number;
+  verse_number: number;
+  claim_class: WitnessClaimClass;
+  class_label: string;
+  card_title: string;
+  card_md: string;
+  anchor_refs: string[];
+}
+
+export interface ChapterWitnessResponse {
+  book: ChapterEndCardBookRef;
+  chapter: ChapterEndCardChapterRef;
+  entries: WitnessEntry[];
+}
+
 // ----- Tiered commentary surface (Session 112) ---------------------------
 //
 // Mirrors api/models.py ChapterCommentaryResponse. Returns every
@@ -670,6 +697,21 @@ export function getChapterCrossReferences(
 ): Promise<ChapterEndCardResponse> {
   return get<ChapterEndCardResponse>(
     `/books/${encodeURIComponent(slug)}/chapters/${chapterNumber}/cross-references`
+  );
+}
+
+/**
+ * The Witness marks for one chapter (Session 204 — working title:
+ * Red Pill). Empty `entries` when the chapter carries no marks; the
+ * reader renders nothing on that state. Free tier — no per-row tier
+ * strip, ever.
+ */
+export function getChapterWitness(
+  slug: string,
+  chapterNumber: number
+): Promise<ChapterWitnessResponse> {
+  return get<ChapterWitnessResponse>(
+    `/books/${encodeURIComponent(slug)}/chapters/${chapterNumber}/witness`
   );
 }
 

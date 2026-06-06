@@ -444,6 +444,123 @@ body {
   color: #EAF4FF;
 }
 
+/* ─── S204 — The Witness (working title: Red Pill) ────────────────────
+ *
+ * The NINTH metallic register: dedicated "witness red" (proof Option B,
+ * Yoshi sign-off S204). Deliberately deeper than the Notes scarlet
+ * (#B82B36 on #3A0F12) so the Witness never reads as partner-marking
+ * vocabulary or the Notes register: blood-red #C8102E on near-black
+ * #4A0508, highlight border #FF8E96.
+ *
+ *   witness — the inverted red-letter overlay (The Witness)  S204
+ *
+ * The whole family below is PILL-GENERIC: the Kingdom (blue pill,
+ * Yoshi S204 — next) lands by defining --pill-kingdom-* variables and
+ * a .pill-card-kingdom / .pill-mark-kingdom pair; no structural CSS
+ * change. The Kingdom blue will be its own dedicated register — NOT
+ * techelet (divine-names-only, S127 lock), NOT spectral (apparatus).
+ */
+:root {
+  --pill-witness-deep: #4A0508;
+  --pill-witness-mid: #C8102E;
+  --pill-witness-border: #FF8E96;
+  --pill-witness-text: #FFE6E8;
+}
+.chrome-metal-witness {
+  background-image: linear-gradient(to right, var(--pill-witness-deep) 0%, var(--pill-witness-mid) 50%, var(--pill-witness-deep) 100%);
+  border-color: var(--pill-witness-border);
+  color: var(--pill-witness-text);
+}
+
+/* The mark — a small capsule (literally the pill) beside the verse
+ * number on member verses. Tap target: it unfolds the come-and-see
+ * card. Inline-safe (renders inside the verse <p>). */
+.pill-mark-witness {
+  display: inline-block;
+  width: 0.95em;
+  height: 0.45em;
+  border-radius: 999px;
+  margin-right: 0.45em;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.05em;
+  padding: 0;
+  background: linear-gradient(135deg, var(--pill-witness-mid) 0%, var(--pill-witness-deep) 100%);
+  border: 1px solid var(--pill-witness-border);
+  box-shadow: inset 0.12em 0.08em 0.12em rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+}
+.pill-mark-witness:hover {
+  opacity: 0.85;
+}
+
+/* The tap-card. Serif body per the reading surface; eyebrow + chrome
+ * in sans. Background mixes the register color into the surface so it
+ * sits correctly on both the black reader and the parchment theme. */
+.pill-card {
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+.pill-card-witness {
+  border: 1px solid var(--pill-witness-border);
+  border-left: 3px solid var(--pill-witness-mid);
+  background: color-mix(in srgb, var(--pill-witness-mid) 7%, var(--reader-surface));
+}
+.pill-card-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.3rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.pill-card-witness .pill-card-eyebrow {
+  color: var(--pill-witness-border);
+}
+[data-theme="light"] .pill-card-witness .pill-card-eyebrow {
+  color: var(--pill-witness-mid);
+}
+.pill-card-class-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+}
+.pill-card-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 0.8rem;
+  padding: 0.1rem 0.3rem;
+  letter-spacing: 0;
+}
+.pill-card-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--reader-text);
+  margin: 0 0 0.9rem;
+}
+.pill-card-body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--reader-text);
+}
+.pill-card-body p {
+  margin-bottom: 0.75rem;
+}
+.pill-card-body p:last-child {
+  margin-bottom: 0;
+}
+
 /* Book-heading source-class pill. Same register family as the chrome
  * cluster but sized up for heading display. */
 .book-pill {

@@ -1305,3 +1305,41 @@ class UpdateNoteRequest(BaseModel):
 
     body: Optional[str] = Field(None, min_length=1)
     tags: Optional[List[str]] = None
+
+
+# ----- The Witness (working title: Red Pill) — Session 204 -----------------
+
+
+class WitnessEntry(BaseModel):
+    """One red_pill_verses row for a verse in the requested chapter.
+
+    The Witness is the inverted red-letter overlay: red-letter editions
+    mark where the Messiah speaks; the Witness marks where he — or
+    anyone speaking of him — claims to be Yahuah, plus every verse only
+    possible if he is the one who spoke to Moses and the prophets
+    (the transfer test, four claim classes). `card_md` is the full
+    come-and-see tap-card: both sides quoted in full, stand-alone
+    italics, sacred names intact. Free tier — the proclamation surface.
+    """
+
+    verse_id: int
+    verse_number: int
+    claim_class: str  # 'direct' | 'title' | 'act' | 'structural'
+    class_label: str  # reader-facing tag, e.g. 'His own mouth'
+    card_title: str
+    card_md: str
+    anchor_refs: List[str]
+
+
+class ChapterWitnessResponse(BaseModel):
+    """GET /v1/books/{book_slug}/chapters/{chapter_number}/witness.
+
+    Every marked verse in the chapter, ordered by verse_number. Empty
+    list when the chapter carries no marks (the PWA renders nothing).
+    The surface is pill-generic by design — the Kingdom (blue pill)
+    rides the same shape next.
+    """
+
+    book: ChapterEndCardBookRef
+    chapter: ChapterEndCardChapterRef
+    entries: List[WitnessEntry]

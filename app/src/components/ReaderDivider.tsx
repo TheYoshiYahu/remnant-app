@@ -17,30 +17,24 @@
  *
  * Purely decorative — `aria-hidden` + empty alt.
  *
- * (The "alephbet" variant is retained for the type but is NOT currently
- * wired into the reader — the Grok paleo-Hebrew asset was inaccurate and
- * was pulled at S202, pending a letterform-accurate rebuild.)
+ * (The "alephbet" variant was removed at S204 — the Grok paleo-Hebrew asset
+ * was inaccurate and pulled at S202; a letterform-accurate rebuild would
+ * re-add the variant.)
  */
 
 interface ReaderDividerProps {
-  variant: "botanical" | "alephbet";
+  variant: "botanical";
   /** Optional section label rendered beneath the ornament (major breaks). */
   label?: string;
 }
 
 const SRC: Record<ReaderDividerProps["variant"], string> = {
   botanical: "/dividers/divider-botanical-transparent.png",
-  alephbet: "/dividers/divider-alephbet-transparent.png",
 };
 
 export default function ReaderDivider({ variant, label }: ReaderDividerProps) {
-  const wrapClass =
-    variant === "botanical"
-      ? "reader-divider my-8 text-center"
-      : "reader-divider mt-2 mb-6 text-center";
-
   return (
-    <div className={wrapClass} role="presentation">
+    <div className="reader-divider my-8 text-center" role="presentation">
       <img
         src={SRC[variant]}
         alt=""

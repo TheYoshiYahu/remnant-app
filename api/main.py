@@ -165,6 +165,8 @@ from models import (
     StudyHighlightEntry,
     StudyIndexResponse,
     StudyNoteEntry,
+    WitnessEntry,
+    ChapterWitnessResponse,
     UpdateHighlightLabelsRequest,
     UpdateNoteRequest,
     UpsertReadingPositionRequest,
@@ -711,6 +713,101 @@ async def get_chapter_cross_references(
         ),
         baseline=baseline,
         threads=threads,
+    )
+
+
+# ----- The Witness (working title: Red Pill) — Session 204 ----------------
+
+
+@app.get(
+    "/v1/books/{book_slug}/chapters/{chapter_number}/witness",
+    response_model=ChapterWitnessResponse,
+)
+async def get_chapter_witness(
+    book_slug: str,
+    chapter_number: int,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> ChapterWitnessResponse:
+    """The Witness marks for one chapter — the inverted red-letter overlay.
+
+    Every row is a curated red_pill_verses entry that passed the
+    transfer test (the NT gives Yahusha (Jesus) a title, act, or
+    argument the Tanakh gives to Yahuah alone, or that Yahuah said he
+    himself would do) and the checker gates (Red Line #12, checklist
+    10, quote-don't-cite, sacred names). Full-canon V1: Tanakh anchor
+    verses carry the mark too. Free tier — the proclamation surface;
+    no per-row tier strip, ever (Yoshi, S204). Book-level tier filter
+    mirrors the other reader routes (gates access to the chapter
+    itself, e.g. extras-tier books).
+
+    Returns 404 when book + chapter don't resolve in the canon edition
+    under the caller's tier; empty `entries` when the chapter carries
+    no marks (the PWA renders nothing).
+    """
+    pool = get_pool()
+    tier = user_tier(current_user)
+
+    async with pool.acquire() as conn:
+        book_row = await conn.fetchrow(
+            "SELECT b.id AS book_id, b.slug, b.title, e.slug AS edition_slug "
+            "  FROM books b "
+            "  JOIN editions e ON e.id = b.edition_id "
+            " WHERE b.slug = $1 "
+            "   AND e.slug = 'canon' "
+            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            book_slug,
+            tier,
+        )
+        if book_row is None:
+            raise HTTPException(
+                status_code=404, detail=f"Book '{book_slug}' not found in canon."
+            )
+
+        chapter_row = await conn.fetchrow(
+            "SELECT id, chapter_number, chapter_title "
+            "  FROM chapters "
+            " WHERE book_id = $1 AND chapter_number = $2",
+            book_row["book_id"],
+            chapter_number,
+        )
+        if chapter_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"Chapter {chapter_number} not found in '{book_slug}'.",
+            )
+
+        rows = await conn.fetch(
+            "SELECT r.verse_id, v.verse_number, r.claim_class, "
+            "       r.class_label, r.card_title, r.card_md, r.anchor_refs "
+            "  FROM red_pill_verses r "
+            "  JOIN verses v ON v.id = r.verse_id "
+            " WHERE v.chapter_id = $1 "
+            " ORDER BY v.verse_number",
+            chapter_row["id"],
+        )
+
+    return ChapterWitnessResponse(
+        book=ChapterEndCardBookRef(
+            slug=book_row["slug"],
+            title=book_row["title"],
+            edition_slug=book_row["edition_slug"],
+        ),
+        chapter=ChapterEndCardChapterRef(
+            number=chapter_row["chapter_number"],
+            title=chapter_row["chapter_title"],
+        ),
+        entries=[
+            WitnessEntry(
+                verse_id=r["verse_id"],
+                verse_number=r["verse_number"],
+                claim_class=r["claim_class"],
+                class_label=r["class_label"],
+                card_title=r["card_title"],
+                card_md=r["card_md"],
+                anchor_refs=list(r["anchor_refs"] or []),
+            )
+            for r in rows
+        ],
     )
 
 
