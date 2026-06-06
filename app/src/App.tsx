@@ -3035,8 +3035,11 @@ function Reader() {
               overlay: ON marks every member verse with the capsule;
               tap a capsule to unfold the come-and-see card. FREE for
               every partner — the proclamation surface; this pill never
-              carries a tier chip. ◉ anchors the toggle, the mark, and
-              the card eyebrow as one family.
+              carries a tier chip. The label follows the Study Aids
+              show/hide convention; the red capsule glyph anchors the
+              card eyebrows + end-card rows as the Witness family mark
+              (S204c — the ◉ glyph was dropped from the pill, Yoshi:
+              "why does it even have the white circle?").
             */}
             <button
               type="button"
@@ -3045,7 +3048,7 @@ function Reader() {
               title="The Witness — marks every verse where the Messiah claims what the Tanakh gives to Yahuah alone. Tap a marked verse to see both sides quoted in full."
               className="chrome-metal chrome-metal-witness !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
             >
-              ◉ {witnessOn ? "The Witness: on" : "The Witness"}
+              {witnessOn ? "Hide the Witness" : "Show the Witness"}
             </button>
           </div>
 

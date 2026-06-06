@@ -173,11 +173,29 @@ Design notes locked now so S204's build carries it for free:
 - S204 builds the surface PILL-GENERIC: mark component, tap-card
   surface, and overlay pattern take a register/pill parameter, so the
   Kingdom rides the same rails with a color swap + its own curated set.
-- Blue register: NOT techelet (divine-names-only, S127 lock), NOT
-  spectral (apparatus chrome). The Kingdom gets its own dedicated
-  blue — design at its session, same A/B proof discipline.
+- Register (Yoshi, S204 close — supersedes the earlier blue lean):
+  NOT blue at all. **The Kingdom register is TWO-TONE: the EXISTING
+  metallic emerald + metallic gold registers joined in one pill — the
+  two sticks of Ezekiel 37:15-22** (the stick of Yahudah (Judah) and
+  the stick of Yoseph in the hand of Ephrayim made ONE in his hand).
+  Build from the exact chrome-metal gradients already shipped:
+  emerald #04321E→#15A86A→#04321E (border #2EFFA1) for the left
+  stick, gold #645028→#B4A078→#645028 (border #FCECAF) for the right
+  stick, hard seam at center; border = blend #2EFFA1→#FCECAF (or
+  Yoshi picks single-color border at proof). Emerald and gold are
+  already the source-class registers (tanakh → emerald, nt → gold),
+  so the joined pill reads as the two witnesses united — Yoshi:
+  "uniting the old and new testament."
+- **The Kingdom mark does NOT go into the scripture text** (Yoshi,
+  S204 — no in-verse capsule/glyph like the Witness's). The joined
+  register lives in the chrome toggle + the card surfaces; the
+  reader-surface treatment (if any) is an open question for the
+  Kingdom session.
 - Scope, classes/taxonomy, tier, and name for the Kingdom surface:
-  open questions for its own session spec.
+  open questions for its own session spec. Note the Witness surface
+  is already pill-generic (register prop + --pill-*-vars + the four
+  partner styles) — the Kingdom needs only its --pill-kingdom-*
+  variables, its curated set, and its own end-card explainer.
 
 ## Backlog unchanged behind this
 Blue Pill — the Kingdom (next) · Maps rebuild

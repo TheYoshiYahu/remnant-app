@@ -46,7 +46,7 @@ export default function WitnessEndCard({
   return (
     <section className="pill-card pill-card-witness mt-8" aria-label="The Witness in this chapter">
       <div className="pill-card-eyebrow font-sans">
-        <span aria-hidden="true">◉</span>
+        <span className="pill-mark-witness !mr-0" aria-hidden="true" />
         <span>The Witness in this chapter</span>
       </div>
       <div className="pill-card-body">

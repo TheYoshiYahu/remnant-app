@@ -103,7 +103,7 @@ export default function WitnessCard({
   return (
     <div className={`pill-card pill-card-${register} my-4`} role="note">
       <div className="pill-card-eyebrow font-sans">
-        <span aria-hidden="true">◉</span>
+        <span className="pill-mark-witness !mr-0" aria-hidden="true" />
         <span>The Witness</span>
         <span className="pill-card-class-tag">{entry.class_label}</span>
         <button
