@@ -131,6 +131,44 @@ CARDS = [
 ]
 
 
+# ===== EXHAUSTIVE WAVE — Yoshi's own finds (S205b) =====
+CARDS += [
+    dict(
+        mark=("matthew", 4, 19),
+        mirrors=[("jeremiah", 16, 14), ("jeremiah", 16, 15), ("jeremiah", 16, 16)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="I will make you fishers of men — the fishers Jeremiah said would be sent",
+        anchor_refs=["Jeremiah 16:14-16", "Matthew 4:18-19"],
+        body=[
+            Q("matthew", 4, 18, 19),
+            P(
+                "Why fishers? The trade is not a coincidence the calling "
+                "plays on — it is a commission the prophets had already "
+                "written. Jeremiah names the fishers, and names what they "
+                "are sent to do:"
+            ),
+            Q("jeremiah", 16, 14),
+            Q("jeremiah", 16, 15),
+            Q("jeremiah", 16, 16),
+            P(
+                "The fishers are sent inside a second-exodus oath: the day "
+                "is coming when the children of Yashar'el (Israel) will no "
+                "longer swear by the Elohim (God) who brought them out of "
+                "Egypt, but by the one who brought them from the land of "
+                "the north and from all the lands where he had driven them. "
+                "The fishing IS the gathering of the driven-out. So the "
+                "first thing he does at the start of his ministry is walk "
+                "the shore and commission the fishers Jeremiah watched for "
+                "— *follow me, and I will make you fishers of men.* The "
+                "inherited reading hears a charming metaphor for "
+                "evangelism at large; the prophet had already said whom "
+                "the nets are for."
+            ),
+        ],
+    ),
+]
+
 # ===== SWEEP: MATTHEW + MARK =====
 CARDS += [
 
@@ -1755,6 +1793,2587 @@ CARDS += [
 ]
 
 
+# ===== EXHAUSTIVE WAVE 2: REDEMPTION =====
+CARDS += [
+
+
+    # ------------------------------------------------------------------
+    # 1. The Benedictus opens with the addressee
+    dict(
+        mark=("luke", 1, 68),
+        mirrors=[("psalms", 111, 9)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Redemption Has an Addressee",
+        anchor_refs=["Psalm 111:9", "Luke 1:68"],
+        body=[
+            Q("luke", 1, 68),
+            Q("psalms", 111, 9),
+            P("Zachariah's song is the first redemption sentence of the new testament, and it arrives with its addressee already named: Yahuah (God) has visited and redeemed his people — the Elohim (God) of Yashar'el (Israel) acting for Yashar'el (Israel). The psalm he is singing from says the same thing in the same breath: redemption is sent unto his people, and the covenant is commanded for ever — one verse, one act. The inherited reading widens the addressee until it disappears; the song never does."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 2. Anna of Asher — a daughter of the scattered north
+    dict(
+        mark=("luke", 2, 38),
+        mirrors=[("isaiah", 52, 9)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="A Daughter of Asher, Looking for Redemption",
+        anchor_refs=["Isaiah 52:9", "Luke 2:38"],
+        body=[
+            Q("luke", 2, 36),
+            Q("luke", 2, 38),
+            Q("isaiah", 52, 9),
+            P("Luke names Anna's tribe on purpose: Asher, a tribe of the scattered northern house. A daughter of the house that was carried away stands in the temple and speaks of the child to all them that looked for redemption in Jerusalem — the redemption Isaiah promised when he told the waste places of Jerusalem to sing, for Yahuah (God) hath redeemed Jerusalem. The ones waiting knew exactly what they were waiting for, and Luke records it without correction."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 3. Emmaus — the disciples' redemption was Israel's
+    dict(
+        mark=("luke", 24, 21),
+        mirrors=[("isaiah", 63, 4)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="He Never Corrects the What",
+        anchor_refs=["Isaiah 63:4", "Luke 24:21"],
+        body=[
+            Q("luke", 24, 21),
+            Q("isaiah", 63, 4),
+            Q("luke", 24, 26),
+            P("On the road to Emmaus the disciples name what they had hoped for: that he should have redeemed Yashar'el (Israel). Yahusha (Jesus) calls them slow of heart — but about the suffering and the timing, never the object. He never corrects the what; the redemption of Yashar'el (Israel) is exactly what the prophets carried — the day of vengeance and the year of the redeemed held in one heart. The inherited reading quietly trades the disciples' hope for a different one; the risen King simply opened the scriptures that held it."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 4. Redemption draws nigh = the return road
+    dict(
+        mark=("luke", 21, 28),
+        mirrors=[("isaiah", 51, 11)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Redemption Is the Return Road",
+        anchor_refs=["Isaiah 51:11", "Luke 21:28"],
+        body=[
+            Q("luke", 21, 28),
+            Q("isaiah", 51, 11),
+            P("When Yahusha (Jesus) tells his hearers to lift up their heads because redemption draws near, the word is already loaded with Isaiah's freight: the redeemed of Yahuah (God) return. Redemption in the prophets is not an abstraction credited to an account; it is a road walked home — to Zion, with singing, sorrow and mourning fleeing away. What draws nigh at the end of the age is the gathering of the scattered house."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 5. The strong man bound = Jacob ransomed from the stronger
+    dict(
+        mark=("matthew", 12, 29),
+        mirrors=[("jeremiah", 31, 11)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Stronger Than He",
+        anchor_refs=["Jeremiah 31:11", "Matthew 12:29"],
+        body=[
+            Q("matthew", 12, 29),
+            Q("jeremiah", 31, 11),
+            Q("jeremiah", 31, 10),
+            P("Jeremiah says Jacob was ransomed from the hand of him that was stronger than he — a captor too strong for the captive to escape. Yahusha (Jesus) describes his own work in the same picture: bind the strong man first, then spoil his house. The goods carried out of that house are the captive people, and the verse before Jeremiah's ransom line says who and where: he that scattered Yashar'el (Israel) will gather him, as a shepherd doth his flock. The binding of the strong man is the ransom of Jacob in motion."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 6. Paul preaches the exodus redemption as the type
+    dict(
+        mark=("acts", 13, 17),
+        mirrors=[("exodus", 6, 6), ("exodus", 15, 13)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="With a Stretched Out Arm",
+        anchor_refs=["Exodus 6:6", "Exodus 15:13", "Acts 13:17"],
+        body=[
+            Q("acts", 13, 17),
+            Q("exodus", 6, 6),
+            Q("exodus", 6, 7),
+            Q("exodus", 15, 13),
+            P("When Paul stands up in the synagogue at Antioch to preach the good news, he begins where redemption begins: the Elohim (God) of this people of Yashar'el (Israel), and the high arm that brought them out. The exodus is the type of all redemption — I will redeem you with a stretched out arm; I will take you to me for a people — and the redeemed are then led, guided in strength, to the holy habitation. Brought out, taken as a people, led home: that is the shape every later redemption sentence carries."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 7. Redeemed OUT of every nation because scattered INTO every nation
+    dict(
+        mark=("revelation", 5, 9),
+        mirrors=[("psalms", 107, 2)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Redeemed Out of Every Nation",
+        anchor_refs=["Psalm 107:2", "Revelation 5:9"],
+        body=[
+            Q("revelation", 5, 9),
+            Q("psalms", 107, 2),
+            Q("psalms", 107, 3),
+            Q("deuteronomy", 28, 64),
+            Q("revelation", 5, 10),
+            P("The inherited reading hears the song of the Lamb as a body assembled from all humanity. The psalm it echoes has an older address: the redeemed of Yahuah (God), redeemed from the hand of the enemy, gathered out of the lands from all four directions. Why must the redeemed come out of every kindred, tongue, people, and nation? Because that is precisely where the covenant people was scattered — from the one end of the earth even unto the other. The redemption out of all nations answers the scattering into all nations, and the redeemed are made kings and priests to reign on the earth — the calling Yashar'el (Israel) carried from Sinai."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 8. The redeemed are a named, numbered, tribal company
+    dict(
+        mark=("revelation", 14, 3),
+        mirrors=[("isaiah", 62, 12)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The Redeemed of Yahuah (God), Numbered by Tribe",
+        anchor_refs=["Isaiah 62:12", "Revelation 14:3"],
+        body=[
+            Q("revelation", 14, 3),
+            Q("revelation", 7, 4),
+            Q("isaiah", 62, 12),
+            P("The company that learns the new song is not anonymous: they are redeemed from the earth, and Revelation has already counted them — sealed out of all the tribes of the children of Yashar'el (Israel). Isaiah said the redeemed would be called by name: The holy people, The redeemed of Yahuah (God). Redemption in scripture produces a named, tribal, covenant company — Sought out, A city not forsaken."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 9. Galatians 3:13 — the curse-sentence, never the Torah
+    dict(
+        mark=("galatians", 3, 13),
+        mirrors=[("deuteronomy", 21, 23), ("deuteronomy", 28, 15)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="The Curse of the Law Is Not the Law",
+        anchor_refs=["Deuteronomy 21:23", "Deuteronomy 28:15", "Galatians 3:13"],
+        body=[
+            Q("galatians", 3, 13),
+            Q("deuteronomy", 21, 23),
+            Q("deuteronomy", 28, 15),
+            P("The curse of the law is the curse the law pronounces, not the law itself. Deuteronomy 28 lists what falls on covenant-breaking — the curses that end in scattering among the nations — and Deuteronomy 21 names the curse resting on a man hanged on a tree. Messiah (Christ) took the hanged man's curse to open a door home through the exile-curse for the scattered seed who had walked into it."),
+            P("Read it the other way — as redemption from the Torah — and the sentence collapses: the same Torah that pronounces the curse pronounces the blessing, and a redemption from the Father's instruction would be a redemption from the inheritance itself. He redeemed his people from the sentence, to return them to the way."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 10. Galatians 4:5 — redeemed unto the firstborn's sonship
+    dict(
+        mark=("galatians", 4, 5),
+        mirrors=[("exodus", 4, 22)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="The Adoption Is the Firstborn Coming Home",
+        anchor_refs=["Exodus 4:22", "Galatians 4:4-5"],
+        body=[
+            Q("galatians", 4, 4),
+            Q("galatians", 4, 5),
+            Q("exodus", 4, 22),
+            Q("hosea", 1, 10),
+            P("To redeem them that were under the law is to redeem them that were under the law's exile-sentence — the scattered house living out the curse of Deuteronomy 28 among the nations. And the goal of the redemption is named: the adoption of sons. Sonship is not a new standing invented for strangers; it is the oldest title Yashar'el (Israel) carries — my son, even my firstborn. Hosea promised that in the very place they were called Not-my-people, they would be called sons of the living Elohim (God). The adoption is the firstborn coming home to a standing he lost."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 11. Forgiveness and return are one motion
+    dict(
+        mark=("ephesians", 1, 7),
+        mirrors=[("isaiah", 44, 22)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="Blotted Out as a Thick Cloud",
+        anchor_refs=["Isaiah 44:22", "Ephesians 1:7"],
+        body=[
+            Q("ephesians", 1, 7),
+            Q("isaiah", 44, 22),
+            P("Redemption through his blood is defined in the same breath as the forgiveness of sins — and Isaiah had already joined those two and added the third piece the inherited reading drops: return unto me. The blotting out of transgressions is what clears the road home; redemption and return are one motion. The voice in Isaiah 44 is speaking to Jacob — to the people whose transgressions drove the scattering — and the forgiveness is the means of their gathering."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 12. The purchased possession = the segullah awaiting its claiming day
+    dict(
+        mark=("ephesians", 1, 14),
+        mirrors=[("malachi", 3, 17)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="The Purchased Possession",
+        anchor_refs=["Malachi 3:17", "Ephesians 1:14"],
+        body=[
+            Q("ephesians", 1, 14),
+            Q("malachi", 3, 17),
+            P("The Spirit is the earnest — the pledge in hand — until the redemption of the purchased possession. The phrase is not abstract; the purchased people were named at Sinai:"),
+            Q("exodus", 19, 5),
+            P("Malachi names the day the purchase is claimed: they shall be mine, in that day when I make up my jewels — spared as a man spareth his own son that serveth him. The sealed are held in earnest until the owning day."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 13. Hebrews 9:15 — the covenant parties of the redemption
+    dict(
+        mark=("hebrews", 9, 15),
+        mirrors=[("jeremiah", 31, 32)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="The Transgressions Under the First Covenant",
+        anchor_refs=["Jeremiah 31:32", "Hebrews 9:15"],
+        body=[
+            Q("hebrews", 9, 15),
+            Q("hebrews", 9, 12),
+            Q("jeremiah", 31, 31),
+            Q("jeremiah", 31, 32),
+            P("Hebrews defines the new covenant's redemption with a precision the inherited reading reads past: it is for the transgressions that were under the first covenant. Who transgressed under the first covenant? The parties who stood in it — the houses who broke it, though he was an husband unto them. Jeremiah names the same parties for the new covenant: the house of Yashar'el (Israel) and the house of Yahudah (Judah). The eternal redemption is addressed to the covenant-breakers of Sinai, that they which are called might receive the promise of eternal inheritance."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 14. The ransom for many = Isaiah's "my people"
+    dict(
+        mark=("matthew", 20, 28),
+        mirrors=[("isaiah", 53, 8)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="A Ransom for Many — Isaiah's Many",
+        anchor_refs=["Isaiah 53:8", "Matthew 20:28"],
+        body=[
+            Q("matthew", 20, 28),
+            Q("isaiah", 53, 8),
+            Q("isaiah", 53, 6),
+            P("When the Son of Adam gives his life a ransom for many, the many is Isaiah's many: for the transgression of my people was he stricken. The prophet speaks from inside the flock — all we like sheep have gone astray — and the stricken one carries the iniquity of the us who strayed. The ransom saying is Isaiah 53 spoken in the first person, and its beneficiaries are the straying sheep of the covenant people the prophet was numbered among."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 15. The congregation purchased of old
+    dict(
+        mark=("acts", 20, 28),
+        mirrors=[("psalms", 74, 2)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Purchased of Old",
+        anchor_refs=["Psalm 74:2", "Acts 20:28"],
+        body=[
+            Q("acts", 20, 28),
+            Q("psalms", 74, 2),
+            P("The English word church hides what Paul said at Miletus: the assembly, the congregation of Elohim (God) — the same congregation the psalms had been praying over by that name for centuries. Remember thy congregation, which thou hast purchased of old, Asaph prays — purchased, redeemed, the rod of thine inheritance. The congregation purchased with his own blood is not a new body founded at Pentecost; it is the congregation purchased of old, bought back at the price the Redeemer himself set."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 16. OT-primary: both houses named in the redemption
+    dict(
+        mark=("psalms", 77, 15),
+        mirrors=[("zechariah", 10, 6)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The Sons of Jacob and Joseph",
+        anchor_refs=["Psalm 77:15", "Zechariah 10:6", "John 10:16"],
+        body=[
+            Q("psalms", 77, 15),
+            Q("zechariah", 10, 6),
+            Q("john", 10, 16),
+            P("Asaph names redemption's addressee with both houses spelled out: thy people, the sons of Jacob and Joseph — the whole family, the south and the scattered north together. Zechariah carries the same double address forward: the house of Yahudah (Judah) strengthened, the house of Joseph saved, as though I had not cast them off. And the Shepherd's other sheep, not of this fold, are that same house of Joseph — one flock under one shepherd is two houses redeemed together."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 17. The whistle goes out to sheep already redeemed
+    dict(
+        mark=("john", 10, 27),
+        mirrors=[("zechariah", 10, 8)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="He Whistles for the Redeemed",
+        anchor_refs=["Zechariah 10:8", "John 10:27"],
+        body=[
+            Q("john", 10, 27),
+            Q("zechariah", 10, 8),
+            P("Zechariah's order is the whole diagnostic: I will hiss for them, and gather them — for I have redeemed them. The redemption stands before the gathering; the shepherd's whistle goes out to sheep who are already his. That is why his sheep hear his voice: the hearing does not make them sheep, it reveals them. The call gathers what the redemption already claimed."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 18. The strong Redeemer pleads the cause of both houses
+    dict(
+        mark=("luke", 18, 7),
+        mirrors=[("jeremiah", 50, 33), ("jeremiah", 50, 34)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Their Redeemer Is Strong",
+        anchor_refs=["Jeremiah 50:33-34", "Luke 18:7"],
+        body=[
+            Q("jeremiah", 50, 33),
+            Q("jeremiah", 50, 34),
+            Q("luke", 18, 7),
+            Q("luke", 18, 8),
+            P("Jeremiah shows redemption as a courtroom: the children of Yashar'el (Israel) and the children of Yahudah (Judah) oppressed together, held fast by captors who refuse to let them go — and a Redeemer who is strong, who shall throughly plead their cause. Yahusha's (Jesus) parable of the widow argues the same case: shall not Elohim (God) avenge his own elect, which cry day and night unto him? The elect crying for vindication are the two oppressed houses, and the answer is Jeremiah's: their kinsman has taken the case, and he does not lose."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 19. From the hand of the enemy — sea, Babylon, Benedictus
+    dict(
+        mark=("luke", 1, 71),
+        mirrors=[("micah", 4, 10), ("psalms", 106, 10)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="From the Hand of the Enemy",
+        anchor_refs=["Psalm 106:10", "Micah 4:10", "Luke 1:71"],
+        body=[
+            Q("luke", 1, 71),
+            Q("psalms", 106, 10),
+            Q("micah", 4, 10),
+            P("Zachariah's song keeps quoting the redemption fabric: saved from our enemies, and from the hand of all that hate us. The psalmist used the same words for the sea: redeemed them from the hand of the enemy. Micah promised the same redemption for the exile: there shalt thou be delivered; there Yahuah (God) shall redeem thee from the hand of thine enemies — spoken into Babylon by name. Redemption from the enemy's hand is one story told at the sea, in Babylon, and in the Benedictus — the same people, the same Redeemer."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 20. The redemption of the body — Job's hope
+    dict(
+        mark=("romans", 8, 23),
+        mirrors=[("job", 19, 25), ("job", 19, 26)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="The Redemption of Our Body",
+        anchor_refs=["Job 19:25-26", "Romans 8:23"],
+        body=[
+            Q("romans", 8, 23),
+            Q("job", 19, 25),
+            Q("job", 19, 26),
+            Q("psalms", 49, 15),
+            Q("hosea", 13, 14),
+            P("Redemption does not stop at the heart; it reaches the dust. Job knew it long before Sinai: my redeemer liveth — and in my flesh shall I see Elohim (God). The psalmist said the soul would be redeemed from the power of the grave; Hosea heard Yahuah (God) promise to ransom his people from the grave itself. The groaning Paul names — waiting for the adoption, the redemption of our body — is the oldest hope in the book: the kinsman who buys back even what the grave holds."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 21. Husband and Redeemer in one breath
+    dict(
+        mark=("ephesians", 5, 25),
+        mirrors=[("isaiah", 54, 5), ("isaiah", 54, 8)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Husband and Redeemer in One Breath",
+        anchor_refs=["Isaiah 54:5", "Isaiah 54:8", "Ephesians 5:25"],
+        body=[
+            Q("ephesians", 5, 25),
+            Q("isaiah", 54, 5),
+            Q("isaiah", 54, 6),
+            Q("isaiah", 54, 8),
+            P("Isaiah holds the two offices in one verse: thy Maker is thine husband, and thy Redeemer the Holy One of Yashar'el (Israel). The one redeeming is the husband; the one being redeemed is the wife — the wife of youth, refused for a moment, called again with everlasting kindness. So when Paul says Messiah (Christ) loved the assembly and gave himself for it, the giving is a husband's redemption price for the covenant wife of the prophets — not the courting of a new bride, but the buying back of the forsaken one."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 22. The shepherd's shoulders = carried all the days of old
+    dict(
+        mark=("luke", 15, 5),
+        mirrors=[("isaiah", 63, 9)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Carried All the Days of Old",
+        anchor_refs=["Isaiah 63:9", "Luke 15:5"],
+        body=[
+            Q("luke", 15, 5),
+            Q("luke", 15, 6),
+            Q("isaiah", 63, 9),
+            Q("jeremiah", 50, 6),
+            P("The shepherd who lays the found sheep on his shoulders is doing what Isaiah says the Redeemer has always done: in his love and in his pity he redeemed them; and he bare them, and carried them all the days of old. And the lost sheep has a name in the prophets: my people hath been lost sheep, turned away by their own shepherds. The parable is not a new tenderness; it is the days of old resumed — the carrying arms of the ancient Redeemer under the scattered flock."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 23. The prayer of the redeemed children — kingdom strand
+    dict(
+        mark=("matthew", 6, 9),
+        mirrors=[("isaiah", 63, 16)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Our Father, Our Redeemer",
+        anchor_refs=["Isaiah 63:16", "Matthew 6:9-10"],
+        body=[
+            Q("matthew", 6, 9),
+            Q("matthew", 6, 10),
+            Q("isaiah", 63, 16),
+            P("The prayer's opening words are Isaiah's redemption confession: thou, O Yahuah (God), art our father, our redeemer; thy name is from everlasting. Isaiah's our is the scattered children whom even Abraham would not recognize — unrecognizable after the exile, yet still his. When Yahusha (Jesus) teaches his disciples to pray Our Father, and then Thy kingdom come, the prayer is the redeemed family asking the Father-Redeemer for the kingdom that gathers them home."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 24. Called by name because already owned
+    dict(
+        mark=("john", 10, 3),
+        mirrors=[("isaiah", 43, 1)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Called by Name Because Already His",
+        anchor_refs=["Isaiah 43:1", "John 10:3"],
+        body=[
+            Q("john", 10, 3),
+            Q("isaiah", 43, 1),
+            P("Isaiah gives redemption's grammar: I have redeemed thee, I have called thee by thy name; thou art mine. The ownership stands first; the by-name call is its evidence. The shepherd at the sheepfold keeps the same order — he calleth his own sheep by name, and leadeth them out. His own, then named, then led out: the redemption precedes the calling, and the calling leads the redeemed out toward home."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 25. Heaven's joy is redemption-of-Jacob joy
+    dict(
+        mark=("luke", 15, 7),
+        mirrors=[("isaiah", 44, 23)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Why the Heavens Sing",
+        anchor_refs=["Isaiah 44:23", "Luke 15:7"],
+        body=[
+            Q("luke", 15, 7),
+            Q("isaiah", 44, 23),
+            P("Joy in heaven over one sinner that repenteth is not a new note. Isaiah heard the heavens commanded to sing for one reason: for Yahuah (God) hath redeemed Jacob. Heaven's song in scripture is redemption-of-Jacob song, and every returning one of the scattered seed is one more measure of it. The repenting one is not earning heaven's joy — he is the reason it was written."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 26. The Redeemer's other office: teaching the way — teaching strand
+    dict(
+        mark=("matthew", 11, 29),
+        mirrors=[("isaiah", 48, 17)],
+        strand="teaching",
+        strand_label="The teaching",
+        card_title="The Redeemer Is the Teacher",
+        anchor_refs=["Isaiah 48:17", "Matthew 11:29"],
+        body=[
+            Q("matthew", 11, 29),
+            Q("isaiah", 48, 17),
+            Q("jeremiah", 6, 16),
+            P("Isaiah names the Redeemer's other office: thy Redeemer, the Holy One of Yashar'el (Israel), which teacheth thee to profit, which leadeth thee by the way that thou shouldest go. Redemption and instruction are one office — the one who buys back also leads back into the way. So the invitation learn of me, and ye shall find rest unto your souls is the Redeemer-Teacher speaking, and the rest he promises is the rest Jeremiah attached to the old paths. The redeemed are not led out of the way; they are led back onto it."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 27. Redemption's motive: the sworn oath to the fathers
+    dict(
+        mark=("luke", 1, 72),
+        mirrors=[("deuteronomy", 7, 8)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Redeemed Because of the Oath",
+        anchor_refs=["Deuteronomy 7:8", "Luke 1:72"],
+        body=[
+            Q("luke", 1, 72),
+            Q("deuteronomy", 7, 8),
+            P("Why does Yahuah (God) redeem? Deuteronomy answers before the question is asked: because he loved you, and because he would keep the oath which he had sworn unto your fathers. Redemption flows from covenant memory — a sworn oath to named fathers, not a general benevolence toward humanity. Zachariah sings the same cause for the new redemption: to perform the mercy promised to our fathers, and to remember his holy covenant. The Redeemer acts because he swore."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 28. A people for his name — redeemed long ago, found in the nations
+    dict(
+        mark=("acts", 15, 14),
+        mirrors=[("2-samuel", 7, 23)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="A People for His Name",
+        anchor_refs=["2 Samuel 7:23", "Acts 15:14"],
+        body=[
+            Q("acts", 15, 14),
+            Q("2-samuel", 7, 23),
+            Q("acts", 15, 16),
+            P("David prayed it as a question with one answer: what one nation is like thy people, even like Yashar'el (Israel), whom Elohim (God) went to redeem for a people to himself, and to make him a name? When James sums up the council at Jerusalem, he uses the same words — Elohim (God) is taking out of the nations a people for his name — and he proves it from the prophets with the fallen tabernacle of David rebuilt. The people being taken out of the nations is the people redeemed for his name long ago, found where the scattering left them."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 29. Scripture's first "redeemed" sits inside Ephraim's blessing
+    dict(
+        mark=("romans", 11, 25),
+        mirrors=[("genesis", 48, 16), ("genesis", 48, 19)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The First Redeeming and the Fulness of the Nations",
+        anchor_refs=["Genesis 48:16", "Genesis 48:19", "Romans 11:25"],
+        body=[
+            Q("genesis", 48, 16),
+            Q("genesis", 48, 19),
+            Q("romans", 11, 25),
+            Q("romans", 11, 26),
+            P("The first time scripture says redeemed, Jacob is speaking, and his hands are on Joseph's sons: bless the lads — let my name be named on them, and let them grow into a multitude in the midst of the earth. The blessing's destination is named a moment later: Ephraim's seed shall become a multitude of nations. Paul's mystery turns on that very phrase — blindness in part, until the fulness of the nations be come in: until Ephraim's promised multitude, grown wild among the peoples, comes home. And so all Yashar'el (Israel) shall be saved: the first redeeming word in the book and the final gathering are one blessing."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # 30. The Way of holiness has walkers: the redeemed — teaching strand
+    dict(
+        mark=("acts", 24, 14),
+        mirrors=[("isaiah", 35, 8), ("isaiah", 35, 9)],
+        strand="teaching",
+        strand_label="The teaching",
+        card_title="The Way of Holiness Has Walkers",
+        anchor_refs=["Isaiah 35:8-9", "Acts 24:14"],
+        body=[
+            Q("acts", 24, 14),
+            Q("isaiah", 35, 8),
+            Q("isaiah", 35, 9),
+            Q("isaiah", 35, 10),
+            P("Before believers were called anything else, they were called the Way — and Paul confesses the name without surrendering it: after the way which they call heresy, so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets. Isaiah built that road: an highway called The way of holiness, and its walkers are named — the redeemed shall walk there, the ransomed of Yahuah (God) returning to Zion with songs. The Way was never a new religion; it is the return road of the redeemed, paved through the prophets, walked home in everything written."),
+        ],
+    ),
+]
+
+# ===== EXHAUSTIVE WAVE 2: THE TWO HOUSES MADE ONE =====
+CARDS += [
+
+    # ================= THE REGISTER: EZEKIEL'S TWO STICKS =================
+    dict(
+        mark=("ezekiel", 37, 19),
+        mirrors=[("ezekiel", 37, 20)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="One stick in mine hand — whose hand does the joining?",
+        anchor_refs=["Ezekiel 37:16-20", "Hosea 1:11"],
+        body=[
+            Q("ezekiel", 37, 16, 17),
+            Q("ezekiel", 37, 19, 20),
+            Q("hosea", 1, 11),
+            P(
+                "Two sticks, two names: Yahudah (Judah) with his companions, "
+                "and Joseph — the stick of Ephraim — with all the house of "
+                "Yashar'el (Israel) his companions. The joining happens *in "
+                "mine hand* — not in a council's, not in a movement's. Hosea "
+                "saw the same day: the children of Yahudah (Judah) and the "
+                "children of Yashar'el (Israel) gathered together under one "
+                "head. Two named bloodline houses, one stick. Every *one* "
+                "spoken over the people afterward has this promise as its "
+                "source."
+            ),
+        ],
+    ),
+    dict(
+        mark=("ezekiel", 37, 24),
+        mirrors=[("ezekiel", 37, 25), ("ezekiel", 37, 26)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="One king, one shepherd — and the one nation walks in his statutes",
+        anchor_refs=["Ezekiel 37:24-26", "John 10:16"],
+        body=[
+            Q("ezekiel", 37, 24),
+            Q("ezekiel", 37, 25, 26),
+            Q("john", 10, 16),
+            P(
+                "The reunited houses get one king — David — and one "
+                "shepherd, and the very same verse says the one nation "
+                "*shall walk in my judgments, and observe my statutes.* The "
+                "two-made-one does not retire the Torah; it restores the "
+                "walkers. When Yahusha (Jesus) says *one fold, and one "
+                "shepherd,* the other sheep he must bring are the other "
+                "stick — the scattered house — and the fold is this covenant "
+                "of peace, the sanctuary set in the midst of them for "
+                "evermore."
+            ),
+        ],
+    ),
+    # ================= THE FEUD ENDED =================
+    dict(
+        mark=("isaiah", 11, 13),
+        mirrors=[("isaiah", 9, 21)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The envy of Ephraim shall depart — the oldest feud in the family",
+        anchor_refs=["Isaiah 9:21", "Isaiah 11:12-13"],
+        body=[
+            Q("isaiah", 9, 21),
+            Q("isaiah", 11, 12),
+            Q("isaiah", 11, 13),
+            P(
+                "Isaiah names the feud before he names its funeral: Ephraim "
+                "against Manasseh, and together against Yahudah (Judah). "
+                "Then the ensign goes up, the outcasts of Yashar'el (Israel) "
+                "and the dispersed of Yahudah (Judah) come from the four "
+                "corners — and the next verse buries the quarrel itself. "
+                "Ephraim shall not envy; Yahudah (Judah) shall not vex. The "
+                "gathering is not two processions arriving to resume an "
+                "argument. It is one family coming home cured of the thing "
+                "that split it."
+            ),
+        ],
+    ),
+    dict(
+        mark=("zechariah", 11, 14),
+        mirrors=[("zechariah", 11, 7)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The staff called Bands — a brotherhood real enough to break",
+        anchor_refs=["Zechariah 11:7", "Zechariah 11:14", "Ezekiel 37:17"],
+        body=[
+            Q("zechariah", 11, 7),
+            Q("zechariah", 11, 14),
+            Q("ezekiel", 37, 17),
+            P(
+                "The shepherd carries two staves, and when he is rejected he "
+                "cuts the one called Bands — *that I might break the "
+                "brotherhood between Yahudah (Judah) and Yashar'el "
+                "(Israel).* Scripture does not break what does not exist. "
+                "The brotherhood of the two houses is real enough to be "
+                "named, real enough to be severed — and Ezekiel holds the "
+                "counterpart: two sticks joined one to another, one in his "
+                "hand. A staff broken in one prophet and rejoined in "
+                "another is not a metaphor about institutions. It is the "
+                "two houses."
+            ),
+        ],
+    ),
+    # ================= JEREMIAH'S SWEEP =================
+    dict(
+        mark=("jeremiah", 3, 18),
+        mirrors=[("jeremiah", 3, 14)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Together out of the land of the north — one return, not two",
+        anchor_refs=["Jeremiah 3:14", "Jeremiah 3:18"],
+        body=[
+            Q("jeremiah", 3, 14),
+            Q("jeremiah", 3, 18),
+            P(
+                "The chapter that records the divorce of the northern house "
+                "is the chapter that calls her back — *turn, O backsliding "
+                "children... for I am married unto you.* And the return is "
+                "not staggered: the house of Yahudah (Judah) shall walk "
+                "*with* the house of Yashar'el (Israel), and they shall come "
+                "*together* out of the land of the north. One road, two "
+                "houses, one inheritance given to the fathers. Any reading "
+                "with only one house on that road has lost half the "
+                "travellers."
+            ),
+        ],
+    ),
+    dict(
+        mark=("jeremiah", 23, 5),
+        mirrors=[("jeremiah", 23, 6)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="In his days Yahudah (Judah) saved, Yashar'el (Israel) dwelling safely — one Branch, two houses",
+        anchor_refs=["Jeremiah 23:5-6", "Luke 1:32-33"],
+        body=[
+            Q("jeremiah", 23, 5, 6),
+            Q("luke", 1, 32, 33),
+            P(
+                "The Branch raised unto David reigns over a kingdom with two "
+                "named beneficiaries: *Yahudah (Judah) shall be saved, and "
+                "Yashar'el (Israel) shall dwell safely.* Both houses, one "
+                "King. When the angel promises Miriam's son the throne of "
+                "his father David and a reign over the house of Jacob for "
+                "ever, that is this prophecy — Jacob undivided, both houses "
+                "under the King whose name is Yahuah Tsidkenu (THE LORD OUR "
+                "RIGHTEOUSNESS)."
+            ),
+        ],
+    ),
+    dict(
+        mark=("jeremiah", 30, 3),
+        mirrors=[("jeremiah", 30, 4)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The book of consolation is addressed to both houses by name",
+        anchor_refs=["Jeremiah 30:3-4"],
+        body=[
+            Q("jeremiah", 30, 3),
+            Q("jeremiah", 30, 4),
+            P(
+                "Before the consolation chapters say a single word of "
+                "comfort, the address line is written: *concerning "
+                "Yashar'el (Israel) and concerning Yahudah (Judah).* The "
+                "captivity brought again is the captivity of *both* — one "
+                "return to one land given to the fathers. Read Jeremiah 30 "
+                "and 31 with one house in view and you are reading someone "
+                "else's mail with half the envelope torn off."
+            ),
+        ],
+    ),
+    dict(
+        mark=("jeremiah", 31, 1),
+        mirrors=[("jeremiah", 31, 2)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The Elohim (God) of ALL the families of Yashar'el (Israel) — not of one house only",
+        anchor_refs=["Jeremiah 31:1-2", "Jeremiah 31:9"],
+        body=[
+            Q("jeremiah", 31, 1),
+            Q("jeremiah", 31, 2),
+            Q("jeremiah", 31, 9),
+            P(
+                "*All the families* — the word is deliberate. Not the family "
+                "that kept its name through exile, but every family, "
+                "including the ones that lost theirs. The people left of "
+                "the sword find grace in the wilderness, and the Father "
+                "names the firstborn of the homecoming: *Ephraim is my "
+                "firstborn.* The head of the scattered northern house is "
+                "named first in the family register of the return."
+            ),
+        ],
+    ),
+    dict(
+        mark=("jeremiah", 31, 6),
+        mirrors=[("jeremiah", 31, 5)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Watchmen upon mount Ephraim cry: Arise, let us go up to Zion",
+        anchor_refs=["Jeremiah 31:5-6"],
+        body=[
+            Q("jeremiah", 31, 5),
+            Q("jeremiah", 31, 6),
+            P(
+                "Mount Ephraim is the hill country of the northern house — "
+                "the very territory Assyria emptied. The promise plants "
+                "vines on the mountains of Samaria again, and then sets "
+                "watchmen on Ephraim's own heights crying *Arise ye, and "
+                "let us go up to Zion.* The call back to Zion does not come "
+                "from Zion. It rises from the north's own watchtowers — the "
+                "scattered house waking first and calling the pilgrimage "
+                "home to Yahuah Eloheinu (the LORD our God)."
+            ),
+        ],
+    ),
+    dict(
+        mark=("jeremiah", 31, 27),
+        mirrors=[("jeremiah", 31, 28)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Sown together — the new covenant keeps both addressees",
+        anchor_refs=["Jeremiah 31:27-28", "Hebrews 8:8"],
+        body=[
+            Q("jeremiah", 31, 27),
+            Q("jeremiah", 31, 28),
+            Q("hebrews", 8, 8),
+            P(
+                "Four verses before the new covenant is announced, its two "
+                "addressees are sown side by side: the house of Yashar'el "
+                "(Israel) and the house of Yahudah (Judah). And when the "
+                "letter to the Hebrews quotes the covenant, it keeps the "
+                "address line intact — both houses, named. A covenant made "
+                "with two named bloodline houses cannot be re-addressed to "
+                "an institution without calling the one who named them a "
+                "liar. The same watching that plucked up now builds and "
+                "plants — both."
+            ),
+        ],
+    ),
+    dict(
+        mark=("jeremiah", 33, 14),
+        mirrors=[("jeremiah", 33, 15), ("jeremiah", 33, 16)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="That good thing — promised to the house of Yashar'el (Israel) AND the house of Yahudah (Judah)",
+        anchor_refs=["Jeremiah 33:14-16"],
+        body=[
+            Q("jeremiah", 33, 14),
+            Q("jeremiah", 33, 15, 16),
+            P(
+                "*That good thing which I have promised* has two named "
+                "recipients — the house of Yashar'el (Israel) and the house "
+                "of Yahudah (Judah) — and one delivery mechanism: the "
+                "Branch of righteousness growing up unto David. The good "
+                "thing is not a sentiment; it is the Branch-King executing "
+                "judgment and righteousness in the land, with both houses "
+                "standing in the will. Strike either name from the promise "
+                "and the promise is no longer the one Yahuah (God) made."
+            ),
+        ],
+    ),
+    dict(
+        mark=("jeremiah", 33, 24),
+        mirrors=[("jeremiah", 33, 25), ("jeremiah", 33, 26)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The two families which Yahuah (God) hath chosen — and those who despise them",
+        anchor_refs=["Jeremiah 33:24-26"],
+        body=[
+            Q("jeremiah", 33, 24),
+            Q("jeremiah", 33, 25, 26),
+            P(
+                "Here the structure itself is named: *the two families "
+                "which Yahuah (God) hath chosen.* Two — and already in "
+                "Jeremiah's day there were voices saying he had cast them "
+                "off, despising the people as though no nation remained. "
+                "The Father's answer stakes the two families on the "
+                "ordinances of day and night: break those, and only then "
+                "is the seed of Jacob cast away. Every system that erases "
+                "the second family — that knows only one house and "
+                "everybody else — is the old despising with new vocabulary. "
+                "The people inside it inherited it. The promise outlasts it."
+            ),
+        ],
+    ),
+    dict(
+        mark=("jeremiah", 50, 4),
+        mirrors=[("jeremiah", 50, 5), ("jeremiah", 50, 20)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="They and the children of Yahudah (Judah) together, going and weeping",
+        anchor_refs=["Jeremiah 50:4-5", "Jeremiah 50:20"],
+        body=[
+            Q("jeremiah", 50, 4),
+            Q("jeremiah", 50, 5),
+            Q("jeremiah", 50, 20),
+            P(
+                "In the oracle of Babylon's fall, the two houses appear on "
+                "one road: the children of Yashar'el (Israel), *they and "
+                "the children of Yahudah (Judah) together,* weeping, asking "
+                "the way to Zion, asking to be joined to Yahuah (God) in a "
+                "perpetual covenant. And the pardon at the end is likewise "
+                "double: the iniquity of Yashar'el (Israel) sought and not "
+                "found, the sins of Yahudah (Judah) and they shall not be "
+                "found. Two houses searched, two houses cleared, one "
+                "covenant that shall not be forgotten."
+            ),
+        ],
+    ),
+    # ================= ZECHARIAH'S SWEEP =================
+    dict(
+        mark=("zechariah", 8, 13),
+        mirrors=[("zechariah", 8, 7), ("zechariah", 8, 8)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="O house of Yahudah (Judah), and house of Yashar'el (Israel) — from curse to blessing, both",
+        anchor_refs=["Zechariah 8:7-8", "Zechariah 8:13"],
+        body=[
+            Q("zechariah", 8, 7),
+            Q("zechariah", 8, 8),
+            Q("zechariah", 8, 13),
+            P(
+                "The salvation comes from the east country *and from the "
+                "west country* — both directions of the scattering — and "
+                "the address has both names on it: *O house of Yahudah "
+                "(Judah), and house of Yashar'el (Israel).* As ye were a "
+                "curse among the heathen — the Deuteronomy 28 exile "
+                "judgment that fell on both houses — so will I save you, "
+                "and ye shall be a blessing. The reversal is exactly as "
+                "wide as the curse was. Two houses went out under it; two "
+                "houses come home through it."
+            ),
+        ],
+    ),
+    dict(
+        mark=("zechariah", 9, 13),
+        mirrors=[("zechariah", 9, 12)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Yahudah (Judah) the bow, Ephraim the arrow — one weapon in his hand",
+        anchor_refs=["Zechariah 9:12-13"],
+        body=[
+            Q("zechariah", 9, 12),
+            Q("zechariah", 9, 13),
+            P(
+                "The prisoners of hope are called to the stronghold, and "
+                "then the weapon is assembled: *when I have bent Yahudah "
+                "(Judah) for me, filled the bow with Ephraim.* A bow "
+                "without an arrow threatens no one; an arrow without a bow "
+                "lies on the ground. The two houses are made one weapon, "
+                "and the hand that draws it is his. The kingdom does not "
+                "fight with half the family — it cannot. The bow and the "
+                "arrow were designed for each other before either knew it."
+            ),
+        ],
+    ),
+    dict(
+        mark=("zechariah", 10, 6),
+        mirrors=[("zechariah", 10, 7)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="As though I had not cast them off — the house of Joseph saved",
+        anchor_refs=["Zechariah 10:6-7"],
+        body=[
+            Q("zechariah", 10, 6),
+            Q("zechariah", 10, 7),
+            P(
+                "Both houses, both verbs: *I will strengthen the house of "
+                "Yahudah (Judah), and I will save the house of Joseph.* And "
+                "then the sentence that undoes seven centuries: *they shall "
+                "be as though I had not cast them off.* The casting-off was "
+                "real — the divorce, the scattering, the lost name. The "
+                "mercy is just as real, and it lands on the house that had "
+                "the furthest to come back. Ephraim like a mighty man, the "
+                "children seeing it and glad — the generation that watches "
+                "the return their fathers only sang about."
+            ),
+        ],
+    ),
+    # ================= THE TWELVE PROPHETS' WITNESSES =================
+    dict(
+        mark=("hosea", 3, 5),
+        mirrors=[("hosea", 3, 4)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Many days without a king — afterward, David their king",
+        anchor_refs=["Hosea 3:4-5"],
+        body=[
+            Q("hosea", 3, 4),
+            Q("hosea", 3, 5),
+            P(
+                "Hosea's prophecy is a clock: the children of Yashar'el "
+                "(Israel) abide *many days* without king, prince, or "
+                "sacrifice — the long blank centuries of the northern "
+                "house's scattering. Then *afterward*: they return, and "
+                "they seek Yahuah (God) their Elohim (God), *and David "
+                "their king.* The scattered house does not come home to a "
+                "vacant throne. It comes home to the one king of the one "
+                "stick — the David of Ezekiel's promise — in the latter "
+                "days. The return and the kingdom are one event."
+            ),
+        ],
+    ),
+    dict(
+        mark=("amos", 9, 14),
+        mirrors=[("amos", 9, 15)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Planted, and no more pulled up — the tabernacle of David rebuilt",
+        anchor_refs=["Amos 9:11", "Amos 9:14-15", "Acts 15:16"],
+        body=[
+            Q("amos", 9, 11),
+            Q("amos", 9, 14, 15),
+            Q("acts", 15, 16),
+            P(
+                "The tabernacle of David that fell is the kingdom David "
+                "ruled — the one roof both houses lived under before the "
+                "split. Amos promises it raised, its breaches closed, and "
+                "the captivity of the people planted in their own land "
+                "never to be pulled up again. When the apostles weigh what "
+                "Yahuah (God) is doing in their own day, this is the verse "
+                "they reach for. The work in front of them is not a new "
+                "structure — it is the old house of two houses, being "
+                "rebuilt as in the days of old."
+            ),
+        ],
+    ),
+    dict(
+        mark=("obadiah", 1, 18),
+        mirrors=[("obadiah", 1, 17), ("obadiah", 1, 21)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="The house of Jacob a fire, the house of Joseph a flame — one blaze",
+        anchor_refs=["Obadiah 1:17-18", "Obadiah 1:21"],
+        body=[
+            Q("obadiah", 1, 17),
+            Q("obadiah", 1, 18),
+            Q("obadiah", 1, 21),
+            P(
+                "In the day of deliverance on mount Zion, two houses act as "
+                "one fire: *the house of Jacob shall be a fire, and the "
+                "house of Joseph a flame.* Obadiah, the shortest book in "
+                "the Tanakh, still has room for both houses by name — fire "
+                "and flame, one blaze, in the day when *the kingdom shall "
+                "be Yahuah's (the LORD's).* The house of Joseph is not a "
+                "memory by the time the kingdom comes. It is half the fire."
+            ),
+        ],
+    ),
+    dict(
+        mark=("matthew", 2, 6),
+        mirrors=[("micah", 5, 2), ("micah", 5, 3)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="The scribes stopped quoting one verse too soon",
+        anchor_refs=["Micah 5:2-3", "Matthew 2:6"],
+        body=[
+            Q("matthew", 2, 6),
+            Q("micah", 5, 2),
+            Q("micah", 5, 3),
+            P(
+                "Herod's scribes quote Micah's Bethlehem verse and stop. "
+                "The prophecy does not stop. The very next line tells what "
+                "the ruler born in Bethlehem is for: *then the remnant of "
+                "his brethren shall return unto the children of Yashar'el "
+                "(Israel).* The Governor who shall rule the people is the "
+                "one under whom the scattered remnant comes back to the "
+                "family. The birth announcement and the reunion "
+                "announcement are one prophecy — the scribes read the "
+                "first half to a king who wanted the child dead, and the "
+                "second half kept walking."
+            ),
+        ],
+    ),
+    # ================= THE TORAH'S FOUNDATIONS =================
+    dict(
+        mark=("genesis", 49, 10),
+        mirrors=[("genesis", 49, 8)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="The sceptre with Yahudah (Judah) — and unto him the gathering of the people",
+        anchor_refs=["Genesis 49:8-10"],
+        body=[
+            Q("genesis", 49, 8),
+            Q("genesis", 49, 10),
+            P(
+                "Jacob's blessing splits the inheritance the way the "
+                "history will: the sceptre stays with Yahudah (Judah) — *thy "
+                "father's children shall bow down before thee* — until "
+                "Shiloh come, *and unto him shall the gathering of the "
+                "people be.* The king comes through one house; the "
+                "gathering he draws is all the houses. The brothers bowing "
+                "to Yahudah (Judah) in the blessing are the same brothers "
+                "the prophets later put on the road home. Sceptre and "
+                "gathering are one sentence — the kingdom and the reunion "
+                "were never two subjects."
+            ),
+        ],
+    ),
+    dict(
+        mark=("1-chronicles", 5, 2),
+        mirrors=[("1-chronicles", 5, 1)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="The ruler from Yahudah (Judah), the birthright with Joseph — neither holds it all",
+        anchor_refs=["1 Chronicles 5:1-2"],
+        body=[
+            Q("1-chronicles", 5, 1),
+            Q("1-chronicles", 5, 2),
+            P(
+                "The chronicler states the architecture in one parenthesis: "
+                "*Yahudah (Judah) prevailed above his brethren, and of him "
+                "came the chief ruler; but the birthright was Joseph's.* "
+                "The crown in one house, the firstborn's double portion in "
+                "the other. Neither house carries the whole inheritance "
+                "alone — by design. A kingdom with the ruler but not the "
+                "birthright is half a kingdom; so is the reverse. The "
+                "inheritance is whole only when the sceptre of Yahudah "
+                "(Judah) and the birthright of Joseph stand under one head "
+                "— which is exactly what the prophets promise."
+            ),
+        ],
+    ),
+    # ================= THE HISTORY'S WITNESSES =================
+    dict(
+        mark=("2-samuel", 5, 1),
+        mirrors=[("2-samuel", 2, 4), ("2-samuel", 5, 3)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="David crowned twice — first by Yahudah (Judah), then by all the tribes",
+        anchor_refs=["2 Samuel 2:4", "2 Samuel 5:1-3"],
+        body=[
+            Q("2-samuel", 2, 4),
+            Q("2-samuel", 5, 1),
+            Q("2-samuel", 5, 3),
+            P(
+                "David's kingship arrives in two stages. First the men of "
+                "Yahudah (Judah) anoint him over their own house alone — "
+                "and for years the rest of the tribes hold back. Then all "
+                "the tribes of Yashar'el (Israel) come to Hebron: *behold, "
+                "we are thy bone and thy flesh* — and anoint him king over "
+                "everything. The first David's two coronations are the "
+                "pattern written into the kingdom itself: received first "
+                "within Yahudah (Judah), and still awaiting the day the "
+                "rest of the family arrives saying *bone and flesh.* The "
+                "prophets put that second Hebron in the latter days:"
+            ),
+            Q("hosea", 3, 5),
+            P(
+                "Afterward — the children of Yashar'el (Israel) return, and "
+                "David their king, in the latter days. The second crowning "
+                "stands written."
+            ),
+        ],
+    ),
+    dict(
+        mark=("1-kings", 11, 39),
+        mirrors=[("1-kings", 12, 24)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="This thing is from me — and not for ever",
+        anchor_refs=["1 Kings 11:39", "1 Kings 12:24"],
+        body=[
+            Q("1-kings", 11, 39),
+            Q("1-kings", 12, 24),
+            P(
+                "The split of the kingdom was not an accident Yahuah (God) "
+                "salvaged. He decreed it — *this thing is from me* — and he "
+                "bounded it in the same breath: *I will for this afflict "
+                "the seed of David, but not for ever.* Two houses exist by "
+                "his word, and by his word the division has an expiry. "
+                "Every two-sticks promise, every together-out-of-the-north, "
+                "every one-king oracle is the *not for ever* coming due. A "
+                "division he authored, he can end — and said he would."
+            ),
+        ],
+    ),
+    dict(
+        mark=("2-chronicles", 30, 1),
+        mirrors=[("2-chronicles", 30, 6), ("2-chronicles", 30, 11)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Letters to Ephraim and Manasseh — the call home is older than the gospels",
+        anchor_refs=["2 Chronicles 30:1", "2 Chronicles 30:6-11"],
+        body=[
+            Q("2-chronicles", 30, 1),
+            Q("2-chronicles", 30, 6),
+            Q("2-chronicles", 30, 10),
+            Q("2-chronicles", 30, 11),
+            P(
+                "After Assyria emptied the north, Hezekiah did not write "
+                "the northern house off. He wrote it letters — to Ephraim "
+                "and Manasseh by name — *come to the house of Yahuah (the "
+                "LORD) at Jerusalem, keep the passover... and he will "
+                "return to the remnant of you.* The posts went city to "
+                "city through Ephraim's country; most laughed them to "
+                "scorn; some humbled themselves and came. A proclamation "
+                "carried into the scattered house, mocked by many, heard "
+                "by a remnant who rise and come home — the Tanakh ran the "
+                "whole pattern as history before the prophets finished "
+                "writing it as promise."
+            ),
+        ],
+    ),
+    # ================= THE NEW TESTAMENT LANDINGS =================
+    dict(
+        mark=("luke", 2, 34),
+        mirrors=[("isaiah", 8, 14)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The fall and rising again of many in Yashar'el (Israel) — a stone for both houses",
+        anchor_refs=["Isaiah 8:14", "Luke 2:34"],
+        body=[
+            Q("luke", 2, 34),
+            Q("isaiah", 8, 14),
+            P(
+                "Simeon holds the child and names him a fall and a rising "
+                "again *of many in Yashar'el (Israel)* — and Isaiah had "
+                "already counted the houses at that stone: a sanctuary, "
+                "but a stone of stumbling *to both the houses of Yashar'el "
+                "(Israel).* Both. The verse remembers what the inherited "
+                "reading forgets — that there were two houses to stumble. "
+                "And a stone that both houses strike is a stone both "
+                "houses rise from: the fall and the rising are counted in "
+                "the same families."
+            ),
+        ],
+    ),
+    dict(
+        mark=("john", 17, 21),
+        mirrors=[("john", 17, 11)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="That they may be one — the prayer prays the two sticks",
+        anchor_refs=["John 17:11", "John 17:21-23", "Ezekiel 37:19"],
+        body=[
+            Q("john", 17, 11),
+            Q("john", 17, 21),
+            Q("john", 17, 22, 23),
+            Q("ezekiel", 37, 19),
+            Q("john", 11, 52),
+            P(
+                "The night before the tree, the high-priestly prayer asks "
+                "one thing over the people again and again: *that they may "
+                "be one.* The inherited reading flattens it to a wish for "
+                "institutional harmony. But John has already told us what "
+                "the death gathers: *the children of Elohim (God) that "
+                "were scattered abroad,* gathered together *in one.* The "
+                "prayer is Ezekiel's promise praying — the stick of Joseph "
+                "put with the stick of Yahudah (Judah), *one in mine "
+                "hand.* He is not asking for committees to agree. He is "
+                "asking the Father for the two houses, made one."
+            ),
+        ],
+    ),
+    dict(
+        mark=("ephesians", 2, 14),
+        mirrors=[("micah", 5, 5)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="He is our peace, who hath made both one — which both?",
+        anchor_refs=["Micah 5:5", "Isaiah 57:19", "Ephesians 2:14-17", "Ezekiel 37:22"],
+        body=[
+            Q("ephesians", 2, 14, 16),
+            Q("ephesians", 2, 17),
+            Q("isaiah", 57, 19),
+            Q("micah", 5, 5),
+            Q("ezekiel", 37, 22),
+            P(
+                "*Both* — the letter assumes its readers know which two. "
+                "Its vocabulary is the prophets': *far off and nigh* is "
+                "Isaiah's double peace — the house scattered far and the "
+                "house kept near. *He is our peace* is Micah's *this man "
+                "shall be the peace,* spoken against Assyria, the very "
+                "empire that carried the northern house away. And the "
+                "two-made-one lands where Ezekiel put it: *no more two "
+                "nations.* The enmity slain in his flesh is the old "
+                "vexing between the houses and the wall of man-made "
+                "decrees that kept the far-off at a distance — not the "
+                "Father's Torah, for the same one-stick promise says the "
+                "reunited nation walks in his statutes. Two bloodline "
+                "houses, one new man, one body, one peace."
+            ),
+        ],
+    ),
+    dict(
+        mark=("matthew", 19, 28),
+        mirrors=[("genesis", 49, 28), ("ezekiel", 47, 13)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Twelve thrones require twelve tribes",
+        anchor_refs=["Genesis 49:28", "Ezekiel 47:13", "Matthew 19:28", "James 1:1"],
+        body=[
+            Q("matthew", 19, 28),
+            Q("genesis", 49, 28),
+            Q("ezekiel", 47, 13),
+            Q("james", 1, 1),
+            P(
+                "In the regeneration, twelve thrones judge *the twelve "
+                "tribes of Yashar'el (Israel)* — the same twelve Jacob "
+                "blessed, the same twelve Ezekiel's restored land is "
+                "surveyed for, with Joseph given two portions so the "
+                "arithmetic of the two houses still shows in the map. And "
+                "James addresses his letter to those very tribes, "
+                "*scattered abroad* — present tense, alive, findable by "
+                "mail. The kingdom's government is not sized for an "
+                "institution. It is sized for a family of twelve tribes in "
+                "two houses, gathered and judged and planted, every throne "
+                "matched to a tribe that still exists."
+            ),
+        ],
+    ),
+]
+
+# ===== EXHAUSTIVE WAVE 2: THE SECOND EXODUS =====
+CARDS += [
+
+
+    # ------------------------------------------------------------------
+    # FLAGSHIP — Ezekiel 20: the wilderness of the people and the fan
+    # ------------------------------------------------------------------
+    dict(
+        mark=("matthew", 3, 12),
+        mirrors=[("ezekiel", 20, 35), ("ezekiel", 20, 37)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The fan in his hand is the wilderness of the people",
+        anchor_refs=["Ezekiel 20:33-38", "Matthew 3:12"],
+        body=[
+            Q("ezekiel", 20, 34, 36),
+            Q("ezekiel", 20, 37, 38),
+            Q("matthew", 3, 12),
+            P("Ezekiel states the second exodus as a second exodus: the mighty hand and stretched out arm that broke Egypt will bring the scattered house of Yashar'el (Israel) out of the countries — and then into a second wilderness, the wilderness of the people, to be pleaded with face to face, *like as* the fathers were pleaded with in the wilderness of the land of Egypt. The gathering is not the end of the sorting. The rod passes over the gathered flock, and the rebels are purged out from among the returning people themselves — they came out of the countries, and they do not enter the land. When John stands at the Jordan and says the fan is in his hand and the floor will be throughly purged, he is announcing Ezekiel's threshing floor: wheat and chaff standing inside the same gathered people, divided at the rod. And the rod's destination is the bond of the covenant — the covenant is what the gathered are brought into, never the thing they are saved out of."),
+        ],
+    ),
+
+    dict(
+        mark=("matthew", 25, 32),
+        mirrors=[("ezekiel", 20, 38), ("ezekiel", 34, 17)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Cattle and cattle: the King divides his own flock",
+        anchor_refs=["Ezekiel 34:17", "Ezekiel 20:38", "Matthew 25:31-33"],
+        body=[
+            Q("matthew", 25, 31, 33),
+            Q("ezekiel", 34, 17),
+            Q("ezekiel", 34, 6),
+            Q("ezekiel", 20, 38),
+            P("The dividing scene of Matthew 25 is drawn whole from Ezekiel. The flock addressed in Ezekiel 34 — *as for you, O my flock* — is the scattered house of Yashar'el (Israel), whose sheep wandered upon all the face of the earth; the nations are where the flock was lost, and the gathering out of all nations is how the flock comes before the throne. The judgment between sheep and goats is the judgment between cattle and cattle of that one flock — the rod-passing of Ezekiel 20, where the purged-out rebels are purged from among the gathered, not from somewhere outside. The Son of Adam dividing at his right hand and his left is the Shepherd-King executing the sentence the prophets wrote for his own returning house."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # The shub-shevut (turn-the-captivity) formula
+    # ------------------------------------------------------------------
+    dict(
+        mark=("psalms", 14, 7),
+        mirrors=[("psalms", 53, 6)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Twice written: oh that the salvation were come out of Zion",
+        anchor_refs=["Psalm 14:7", "Psalm 53:6"],
+        body=[
+            Q("psalms", 14, 7),
+            Q("psalms", 53, 6),
+            Q("romans", 11, 26),
+            P("The canon carries this cry twice, nearly verbatim — only the divine name shifts between Psalm 14 and Psalm 53 — a double witness in the mouth of David: salvation out of Zion, defined as Yahuah (God) bringing back the captivity of his people. That is what salvation means in the psalter's own grammar — Jacob rejoicing because the captives are turned home. Paul closes Romans 11 by quoting the same Zion-oracle: the Deliverer comes out of Zion, and all Yashar'el (Israel) is saved. The salvation the apostles preached is the one the psalm sighed for twice."),
+        ],
+    ),
+
+    dict(
+        mark=("psalms", 126, 4),
+        mirrors=[("joel", 3, 1)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Turn again our captivity as the streams in the south",
+        anchor_refs=["Psalm 126:1-6", "Joel 3:1"],
+        body=[
+            Q("psalms", 126, 1, 4),
+            Q("psalms", 126, 5, 6),
+            Q("joel", 3, 1),
+            P("The psalm remembers a turning of captivity so good it felt like dreaming — and then, with that memory still in its mouth, prays for the turning still outstanding: *turn again our captivity, O Yahuah (God), as the streams in the south.* The return from Babylon was a taste, not the settlement. Joel sets the full turning in *those days, and in that time* — the day of Yahuah (God) — and the psalm's closing lines give the gathering its harvest shape: the sower going forth weeping, coming again with rejoicing, bringing his sheaves with him. The sheaves carried home are the captives carried home."),
+        ],
+    ),
+
+    dict(
+        mark=("jeremiah", 29, 14),
+        mirrors=[("deuteronomy", 30, 5)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The captivity clause, mailed to the captives",
+        anchor_refs=["Deuteronomy 30:3-5", "Jeremiah 29:13-14"],
+        body=[
+            Q("deuteronomy", 30, 3),
+            Q("deuteronomy", 30, 5),
+            Q("jeremiah", 29, 13, 14),
+            P("Moses wrote the clause before the scattering ever happened: when the curse has run its course among all the nations, Yahuah (God) will turn the captivity and gather the scattered from every place he drove them, back into the land the fathers possessed. Jeremiah's letter to the exiles is that clause invoked by name — *I will turn away your captivity, and I will gather you from all the nations.* The promise is not a new mercy improvised after the disaster; it is the covenant's own return provision, written into the Torah from the beginning, addressed to the seed who would one day read it from inside the lands of their captivity."),
+        ],
+    ),
+
+    dict(
+        mark=("jeremiah", 30, 10),
+        mirrors=[("amos", 9, 9)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Sifted among all nations, and not one grain falls",
+        anchor_refs=["Amos 9:8-9", "Jeremiah 30:10-11"],
+        body=[
+            Q("jeremiah", 30, 10),
+            Q("jeremiah", 30, 11),
+            Q("amos", 9, 9),
+            P("Two oaths interlock here. Jeremiah: though Yahuah (God) make a full end of all the nations where Jacob was scattered, he will not make a full end of Jacob — the seed is saved *from afar, from the land of their captivity.* Amos: the house of Yashar'el (Israel) is sifted among all nations as corn is sifted in a sieve — a violent, thorough shaking — yet not the least grain falls upon the earth. The scattering itself is the sieve in his hand. The nations that held the captives pass away; the grain they held does not. Correction in measure, and then the return."),
+        ],
+    ),
+
+    dict(
+        mark=("luke", 14, 21),
+        mirrors=[("zephaniah", 3, 19), ("micah", 4, 6)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The halt and the driven-out are brought to the supper",
+        anchor_refs=["Zephaniah 3:19-20", "Micah 4:6", "Luke 14:21-23"],
+        body=[
+            Q("zephaniah", 3, 19),
+            Q("zephaniah", 3, 20),
+            Q("micah", 4, 6),
+            Q("luke", 14, 21, 23),
+            P("The master's guest list in the parable is quoted off the prophets' gathering lists. Zephaniah: *I will save her that halteth, and gather her that was driven out... when I turn back your captivity before your eyes.* Micah, the second witness, in the same words. So when the first-bidden — the comfortable, the landed, the already-seated — excuse themselves, the servant is sent to the streets, the lanes, the highways and the hedges, for the poor, the maimed, the halt, and the blind: the prophets' own roll-call of the afflicted — the halt by name, and the driven-out of the house with her. *Compel them to come in, that my house may be filled* is the turning of the captivity told as a supper."),
+        ],
+    ),
+
+    dict(
+        mark=("john", 6, 39),
+        mirrors=[("ezekiel", 39, 28)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Left none of them any more there; I should lose nothing",
+        anchor_refs=["Ezekiel 39:25-28", "John 6:39"],
+        body=[
+            Q("ezekiel", 39, 25),
+            Q("ezekiel", 39, 28),
+            Q("john", 6, 39),
+            P("The bringing-again of the captivity of Jacob ends with an accounting: gathered unto their own land, *and have left none of them any more there.* None. The ledger of the scattering closes with no remainder among the heathen. Yahusha (Jesus) states the Father's will in the same arithmetic — of all which the Father has given him, he loses nothing, but raises it up at the last day. The Shepherd's count and the prophet's count are one count: every grain through the sieve, every sheep out of every land, none left, nothing lost."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # North country / from all lands — the Egypt-eclipsing oath
+    # ------------------------------------------------------------------
+    dict(
+        mark=("jeremiah", 23, 7),
+        mirrors=[("isaiah", 43, 19)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The oath that retires Egypt",
+        anchor_refs=["Jeremiah 23:3, 7-8", "Isaiah 43:18-19"],
+        body=[
+            Q("jeremiah", 23, 3),
+            Q("jeremiah", 23, 7),
+            Q("jeremiah", 23, 8),
+            Q("isaiah", 43, 18, 19),
+            P("Yashar'el (Israel) swore by the exodus — *Yahuah (God) liveth, which brought up the children of Yashar'el (Israel) out of the land of Egypt* — and Yahuah (God) himself announces the day that oath is retired and replaced. The new oath swears by a greater bringing-out: the seed of the house led home out of the north country and from all countries. Isaiah carries the same decree: remember not the former things — the Egypt things — for a new thing springs forth, a way in the wilderness, rivers in the desert. The second exodus is not a metaphor borrowed from the first; it is the event the first one existed to prefigure, and it is the one the people will swear by forever."),
+        ],
+    ),
+
+    dict(
+        mark=("hosea", 11, 11),
+        mirrors=[("isaiah", 60, 8)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Doves to their windows: the flight home from Egypt and Assyria",
+        anchor_refs=["Hosea 11:10-11", "Isaiah 60:8"],
+        body=[
+            Q("hosea", 11, 10),
+            Q("hosea", 11, 11),
+            Q("isaiah", 60, 8),
+            P("The lion roars and the children come trembling home — *as a bird out of Egypt, and as a dove out of the land of Assyria.* Egypt and Assyria, the two captivities, the first exodus and the second, named in one breath as the two points the flight home departs from. Isaiah watches the same sky and asks the question the gathering forces out of every onlooker: *who are these that fly as a cloud, and as the doves to their windows?* They are the scattered children of the house, and the windows are their own — *I will place them in their houses, saith Yahuah (God).*"),
+        ],
+    ),
+
+    dict(
+        mark=("matthew", 2, 15),
+        mirrors=[("hosea", 11, 1)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Out of Egypt: the exodus walks in his feet",
+        anchor_refs=["Hosea 11:1", "Matthew 2:14-15"],
+        body=[
+            Q("matthew", 2, 14, 15),
+            Q("hosea", 11, 1),
+            P("Hosea 11:1 is not, on its face, a prediction — it is the memory of the first exodus: Yashar'el (Israel) the child, loved, called out of Egypt. Matthew says that line was *fulfilled* when the young child was carried down into Egypt and called out again. That is the canon teaching us how it reads itself: the nation's road is the Messiah's (Christ's) road; the head walks the path the body walked and the path the body will walk again. He goes down into the place of bondage and is called out of it in his own flesh — the pattern of the second exodus carried first in the King's own feet, before he leads the house of Yashar'el (Israel) along it."),
+        ],
+    ),
+
+    dict(
+        mark=("mark", 13, 27),
+        mirrors=[("isaiah", 43, 6)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Give up, north: the four winds obey the gathering",
+        anchor_refs=["Isaiah 43:6-7", "Mark 13:27"],
+        body=[
+            Q("isaiah", 43, 6, 7),
+            Q("mark", 13, 27),
+            P("Isaiah hears the command issued to the compass itself: north, *give up*; south, *keep not back* — bring my sons from far and my daughters from the ends of the earth, every one called by my name, created for my glory. When Yahusha (Jesus) describes the Son of Adam sending his angels to gather his elect from the four winds, from the uttermost part of the earth, he is describing that command being executed. The elect of Mark 13 are the sons and daughters of Isaiah 43 — the seed called by his name, surrendered up by the north country and every land that held them. The angels are the escort of the second exodus."),
+        ],
+    ),
+
+    dict(
+        mark=("2-corinthians", 6, 2),
+        mirrors=[("isaiah", 49, 8), ("isaiah", 49, 12)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Now is the day: Paul dates the return oracle",
+        anchor_refs=["Isaiah 49:8-12", "2 Corinthians 6:2"],
+        body=[
+            Q("isaiah", 49, 8),
+            Q("isaiah", 49, 9),
+            Q("isaiah", 49, 12),
+            Q("2-corinthians", 6, 2),
+            P("The oracle Paul quotes is the covenant-of-the-people oracle — the one where the preserved servant says to the prisoners *go forth,* where highways are raised, where *these shall come from far, and, lo, these from the north and from the west.* It is a return-from-captivity text from its first line to its last. Paul lifts its opening sentence and stamps the date on it: *behold, now is the accepted time; behold, now is the day of salvation.* The day he announces is not a new religious era; it is the acceptable time of Isaiah 49 — the prisoners' release and the long walk home from the north and the west, declared open."),
+        ],
+    ),
+
+    dict(
+        mark=("isaiah", 60, 4),
+        mirrors=[("isaiah", 49, 22)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Thy sons from far, carried home in arms",
+        anchor_refs=["Isaiah 49:22", "Isaiah 60:4, 9"],
+        body=[
+            Q("isaiah", 60, 4),
+            Q("isaiah", 60, 9),
+            Q("isaiah", 49, 22),
+            P("Watch who is carried and who carries. The sons and daughters coming from far are the scattered seed of Yashar'el (Israel); the nations and the ships are the transport. The standard is lifted to the peoples and they bring thy sons in their arms; the isles wait, and the ships of Tarshish go *first,* freighted with the sons from far. The nations are honored in this picture as the carriers of the returning house — the distinction between the seed coming home and the peoples who ferry them stands unblurred through the whole return."),
+        ],
+    ),
+
+    dict(
+        mark=("micah", 7, 15),
+        mirrors=[("exodus", 34, 10)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="According to the days of Egypt: marvels promised twice",
+        anchor_refs=["Exodus 34:10", "Micah 7:12-15"],
+        body=[
+            Q("micah", 7, 12),
+            Q("micah", 7, 14),
+            Q("micah", 7, 15),
+            Q("exodus", 34, 10),
+            P("At Sinai the covenant came with a promise of marvels such as had not been done in all the earth. Micah hears the same voice promise a second installment, and measure it against the first by name: *according to the days of thy coming out of the land of Egypt will I shew unto him marvellous things.* The setting is the regathering — he shall come even to thee from Assyria and from the fortified cities, the flock of the heritage fed with the rod as in the days of old. The second exodus is promised in the vocabulary of the first, marvel for marvel, and the flock that dwelt solitarily in the wood is walked home through it."),
+        ],
+    ),
+
+    dict(
+        mark=("zechariah", 8, 7),
+        mirrors=[("psalms", 107, 2)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="From the east country and from the west country",
+        anchor_refs=["Psalm 107:2-3", "Zechariah 8:7-8"],
+        body=[
+            Q("zechariah", 8, 7),
+            Q("zechariah", 8, 8),
+            Q("psalms", 107, 2),
+            Q("psalms", 107, 3),
+            Q("luke", 13, 29),
+            P("Zechariah's oath names the compass; the psalm names the redeemed walking in from its four points; and Yahusha (Jesus) seats the same procession at the table of the kingdom — they shall come from the east and the west and the north and the south, and sit down. The destination of the east-and-west salvage is covenant in full: *they shall be my people, and I will be their Elohim (God), in truth and in righteousness.* Let the redeemed of Yahuah (God) say so — the saying-so is the testimony of the gathered, told from every direction they were brought home from."),
+        ],
+    ),
+
+    dict(
+        mark=("isaiah", 51, 11),
+        mirrors=[("exodus", 15, 13)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The sea-road and the singing return",
+        anchor_refs=["Exodus 15:13", "Isaiah 51:10-11"],
+        body=[
+            Q("isaiah", 51, 10),
+            Q("isaiah", 51, 11),
+            Q("exodus", 15, 13),
+            P("Isaiah wakes the arm of Yahuah (God) by reminding it of its own resume: art thou not the arm that dried the sea, that made the depths a road for the ransomed to pass over? And then the *therefore* — because that arm did that, *the redeemed of Yahuah (God) shall return, and come with singing unto Zion.* The sea-crossing is fused directly to the future return; the first exodus is cited as the legal precedent for the second. The song of Moses at the shore — *thou in thy mercy hast led forth the people which thou hast redeemed* — becomes the song of the returning, with everlasting joy upon their heads and sorrow fleeing away."),
+        ],
+    ),
+
+    dict(
+        mark=("matthew", 3, 3),
+        mirrors=[("isaiah", 40, 3), ("isaiah", 40, 9)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="The voice in the wilderness builds the return highway",
+        anchor_refs=["Isaiah 40:1-9", "Matthew 3:3"],
+        body=[
+            Q("isaiah", 40, 1, 2),
+            Q("isaiah", 40, 3),
+            Q("isaiah", 40, 9),
+            Q("matthew", 3, 3),
+            P("The oracle the gospels open with is the return-from-exile oracle. Isaiah 40 begins with comfort spoken to a punished people — her warfare accomplished, her iniquity pardoned — and the voice in the wilderness is a road crew: prepare the way, raise a highway in the desert, because the captives are coming home and the glory of Yahuah (God) is coming with them. *O Zion, that bringest good tidings* — the good tidings are that announcement. When Matthew identifies John as that voice, he is telling the reader what the whole story is: the warfare is ending, the highway is being graded, and the second bringing-out has its herald standing in the wilderness where the road begins."),
+        ],
+    ),
+
+    dict(
+        mark=("matthew", 9, 36),
+        mirrors=[("ezekiel", 34, 5), ("numbers", 27, 17)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Scattered as sheep having no shepherd — and the harvest is the gathering",
+        anchor_refs=["Numbers 27:17", "Ezekiel 34:5", "Matthew 9:36-38"],
+        body=[
+            Q("matthew", 9, 36),
+            Q("numbers", 27, 17),
+            Q("ezekiel", 34, 5),
+            Q("matthew", 9, 37, 38),
+            P("*Scattered abroad, as sheep having no shepherd* is not a loose figure of speech — it is a diagnosis with a paper trail. Moses prayed for a man to lead the congregation out and bring them in, *that the congregation of Yahuah (God) be not as sheep which have no shepherd.* Ezekiel indicts the failed shepherds with the result: *they were scattered, because there is no shepherd.* When Yahusha (Jesus) looks at the multitudes and sees that exact condition, the next words out of his mouth are harvest words — the harvest is plenteous, pray for labourers. The harvest he means is the in-bringing of that scattered flock. Compassion on the shepherdless and the call for reapers are one sentence."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # John 4 — Samaria, the well, the white fields
+    # ------------------------------------------------------------------
+    dict(
+        mark=("john", 4, 35),
+        mirrors=[("amos", 9, 13)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="White fields in Samaria: the sowing comes up",
+        anchor_refs=["Amos 9:13-14", "Hosea 2:23", "John 4:35"],
+        body=[
+            Q("john", 4, 35),
+            Q("john", 4, 36),
+            Q("amos", 9, 13),
+            Q("amos", 9, 14),
+            Q("hosea", 2, 23),
+            P("He says it standing in Samaria — the old heartland of the northern house — at Jacob's own well. The prophets had spoken over that very ground: *I will sow her unto me in the earth,* Yahuah (God) said of the scattered house, and Amos saw a day when the plowman overtakes the reaper, sowing and harvest pressed so close they touch, in the same breath as *I will bring again the captivity of my people of Yashar'el (Israel).* Lift up your eyes, he tells the disciples — the fields are white *already.* The seed sown into that earth in the scattering is standing ripe in front of them, and the reaping he calls them into is the gathering the prophets promised, with sower and reaper rejoicing together."),
+        ],
+    ),
+
+    dict(
+        mark=("john", 4, 22),
+        mirrors=[("hosea", 4, 6)],
+        strand="teaching",
+        strand_label="The teaching",
+        card_title="Ye worship ye know not what: the lost knowledge of the north country",
+        anchor_refs=["Hosea 4:6", "2 Kings 17:6", "John 4:4-23"],
+        body=[
+            Q("john", 4, 4),
+            Q("john", 4, 5),
+            Q("2-kings", 17, 6),
+            Q("john", 4, 22),
+            Q("hosea", 4, 6),
+            Q("john", 4, 23),
+            P("He *must needs* go through Samaria — through the territory that was the northern kingdom's home ground before Assyria emptied it — and he sits down on the well Jacob dug, on the parcel Jacob gave to Joseph. The geography is the sermon. To the woman he names the condition that hangs over that ground: *ye worship ye know not what.* That is Hosea's verdict on the northern house in its own words — destroyed for lack of knowledge, the Torah of Elohim (God) forgotten. Worship without knowledge is what the scattering left behind on that soil. And into that condition he speaks the turning: the hour cometh, *and now is,* when true worshippers worship the Father in spirit and in truth — the knowledge coming back to the place that lost it."),
+        ],
+    ),
+
+    # ------------------------------------------------------------------
+    # Kingdom and grace strands
+    # ------------------------------------------------------------------
+    dict(
+        mark=("matthew", 12, 29),
+        mirrors=[("jeremiah", 31, 11)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Bind the strong man: Jacob ransomed from the stronger",
+        anchor_refs=["Jeremiah 31:11-12", "Matthew 12:28-29"],
+        body=[
+            Q("matthew", 12, 28, 29),
+            Q("jeremiah", 31, 11),
+            Q("jeremiah", 31, 12),
+            P("Jeremiah names the captor precisely: Jacob was held by *him that was stronger than he,* and Yahuah (God) ransomed him out of that hand. Yahusha (Jesus) announces the kingdom's arrival in the same picture — no one spoils the strong man's house without first binding the strong man. The casting out of devils by the Spirit of Elohim (God) is the binding; the spoiling of the house is the ransom raid; and the goods carried out of the strong man's house are the captive seed of Jacob. The kingdom come is the captivity broken — and the freed walk straight into Jeremiah's next verse, singing in the height of Zion, flowing together to the goodness of Yahuah (God)."),
+        ],
+    ),
+
+    dict(
+        mark=("luke", 15, 18),
+        mirrors=[("jeremiah", 50, 4), ("jeremiah", 50, 5)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="I will arise and go: the way to Zion asked with weeping",
+        anchor_refs=["Jeremiah 50:4-5", "Luke 15:17-20"],
+        body=[
+            Q("luke", 15, 17, 19),
+            Q("jeremiah", 50, 4),
+            Q("jeremiah", 50, 5),
+            Q("luke", 15, 20),
+            P("The younger son's road is mapped in Jeremiah before the parable tells it: the children of Yashar'el (Israel) coming *going and weeping,* asking the way to Zion with their faces set toward it. The far country, the wasted inheritance, the famine, the unclean herd — that is the scattering told as one household's story. And mark where the weeping road leads in the prophet's telling: *Come, and let us join ourselves to Yahuah (God) in a perpetual covenant that shall not be forgotten.* The father running to meet the returning son is the grace; the perpetual covenant is the address the road home arrives at. Grace carries the returning into the bond — it never carries them away from it."),
+        ],
+    ),
+
+    dict(
+        mark=("hosea", 2, 14),
+        mirrors=[("jeremiah", 2, 2)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="Allured into the wilderness: courted as in the day of Egypt",
+        anchor_refs=["Jeremiah 2:2", "Hosea 2:14-16"],
+        body=[
+            Q("hosea", 2, 14),
+            Q("hosea", 2, 15),
+            Q("jeremiah", 2, 2),
+            Q("hosea", 2, 16),
+            P("The second wilderness is a courtship. Yahuah (God) remembers the first one that way — the kindness of her youth, the love of her espousals, when she went after him in a land not sown — and Hosea promises he will do it again: allure her, bring her into the wilderness, speak comfortably to her, and she shall sing there *as in the day when she came up out of the land of Egypt.* The exodus named as the pattern, the wilderness as the meeting place, the valley of trouble turned into a door of hope. Grace is the alluring — and the destination of the alluring is the marriage itself: *thou shalt call me Ishi.* He draws her out in order to bind her to himself, never to release her from his ways."),
+        ],
+    ),
+
+    dict(
+        mark=("romans", 10, 8),
+        mirrors=[("deuteronomy", 30, 2)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="The word nigh thee lives in the captivity-return chapter",
+        anchor_refs=["Deuteronomy 30:2-3, 14", "Romans 10:8"],
+        body=[
+            Q("deuteronomy", 30, 2),
+            Q("deuteronomy", 30, 3),
+            Q("deuteronomy", 30, 14),
+            Q("romans", 10, 8),
+            P("When Paul says *the word is nigh thee, even in thy mouth, and in thy heart,* he is quoting Deuteronomy 30 — and Deuteronomy 30 is the captivity chapter. Its subject from the first verse is the scattered among all nations returning to Yahuah (God) with all the heart, and Yahuah (God) turning the captivity and gathering them. The word that is nigh sits inside that return, two verses from the turning of the captivity, given *that thou mayest do it.* Paul did not lift a slogan out of the Torah and repurpose it for a new religion; he preached the return clause to the scattered seed it was written for. The word of faith is the homecoming word."),
+        ],
+    ),
+
+    dict(
+        mark=("isaiah", 11, 16),
+        mirrors=[("isaiah", 35, 8)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="A highway like as the day he came up out of Egypt",
+        anchor_refs=["Isaiah 11:11-16", "Isaiah 35:8"],
+        body=[
+            Q("isaiah", 11, 11),
+            Q("isaiah", 11, 16),
+            Q("isaiah", 35, 8),
+            Q("isaiah", 35, 10),
+            P("The canon says *the second time* in those words: his hand set again, the second time, to recover the remnant of his people. And the road built for that recovery is measured against the first one by name — a highway from Assyria for the remnant, *like as it was to Yashar'el (Israel) in the day that he came up out of the land of Egypt.* Isaiah 35 paves the same road and names it: the way of holiness, where even the wayfaring fool does not err, and the ransomed of Yahuah (God) come home on it to Zion with songs. One highway, surveyed twice in Isaiah, running from the lands of the scattering to the everlasting joy."),
+        ],
+    ),
+
+    dict(
+        mark=("john", 10, 4),
+        mirrors=[("micah", 2, 13), ("zechariah", 10, 8)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The Breaker goes out before them",
+        anchor_refs=["Micah 2:12-13", "Zechariah 10:8-10", "John 10:3-4"],
+        body=[
+            Q("micah", 2, 12),
+            Q("micah", 2, 13),
+            Q("zechariah", 10, 8),
+            Q("zechariah", 10, 10),
+            Q("john", 10, 3),
+            Q("john", 10, 4),
+            P("Micah's gathering ends with a break-out: the flock assembled in the fold, and then the Breaker coming up *before them* — the gate broken, the flock passing out through it, their King passing before them, Yahuah (God) at the head. Zechariah hears the shepherd's signal that starts the movement — *I will hiss for them, and gather them; for I have redeemed them* — and names the route: out of Egypt, out of Assyria, the two captivities again. John 10 is that oracle walking: the sheep hear his voice, he calls his own by name, he *leadeth them out,* and he goes before them. The Good Shepherd's motion is exodus motion — out through the broken gate, the King at the head of the flock."),
+        ],
+    ),
+
+    dict(
+        mark=("luke", 1, 33),
+        mirrors=[("micah", 4, 7)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="He shall reign over the house of Jacob — the gathered remnant",
+        anchor_refs=["Micah 4:7", "Luke 1:32-33"],
+        body=[
+            Q("luke", 1, 32, 33),
+            Q("micah", 4, 7),
+            P("The angel does not say he shall reign over an institution, a movement, or the world in the abstract. He shall reign *over the house of Jacob* for ever — and Micah has already told us who that house is at the hour the reign begins: her that halted made a remnant, her that was cast far off made a strong nation, and Yahuah (God) reigning over *them* in mount Zion from henceforth, even for ever. The throne of David announced to Miryam is the throne of Micah 4 — set over the gathered, the once-driven-out brought home and constituted a kingdom. The kingdom's subjects are the regathered house; the everlasting reign and the finished gathering are one promise."),
+        ],
+    ),
+
+    dict(
+        mark=("matthew", 18, 12),
+        mirrors=[("isaiah", 27, 12)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Gathered one by one: the ninety and nine and the one",
+        anchor_refs=["Isaiah 27:12-13", "Matthew 18:12-14"],
+        body=[
+            Q("isaiah", 27, 12),
+            Q("isaiah", 27, 13),
+            Q("matthew", 18, 12),
+            Q("matthew", 18, 13, 14),
+            P("The great trumpet gathers nations' worth of outcasts — and Isaiah says the harvest is threshed out *one by one, O ye children of Yashar'el (Israel).* Not in bulk, not by census: each grain beaten off the branch by hand. The parable of the hundred sheep is that one-by-one gathering told from inside the Shepherd's heart — the ninety and nine left on the mountains while he seeks the single strayed one, and more joy over the one found than over all who never wandered. *It is not the will of your Father which is in heaven, that one of these little ones should perish* — the same arithmetic as Isaiah's threshing: the gathering is total because it is singular, one by one until none is left out."),
+        ],
+    ),
+
+    dict(
+        mark=("romans", 10, 15),
+        mirrors=[("nahum", 1, 15), ("isaiah", 52, 8)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Beautiful feet announce the bringing-again of Zion",
+        anchor_refs=["Isaiah 52:7-8", "Nahum 1:15", "Romans 10:15"],
+        body=[
+            Q("isaiah", 52, 7),
+            Q("isaiah", 52, 8),
+            Q("nahum", 1, 15),
+            Q("romans", 10, 15),
+            P("What news makes the feet beautiful? Read the next line of the oracle Paul quotes: the watchmen sing together *when Yahuah (God) shall bring again Zion.* The good tidings of Isaiah 52 are return tidings — thy Elohim (God) reigneth, the captivity turning, the watchmen seeing it eye to eye. Nahum is the second witness on the same mountains, with the same feet, telling Yahudah (Judah) to keep her solemn feasts because the wicked is cut off. When Paul asks how they shall preach except they be sent, this is the dispatch he cites: the preachers of the gospel of peace are the runners of the bringing-again, carrying word ahead of the returning King and the returning house."),
+        ],
+    ),
+]
+
+# ===== EXHAUSTIVE WAVE 2: NT GAP WALK =====
+CARDS += [
+
+    # ================= MATTHEW =================
+    dict(
+        mark=("matthew", 4, 14),
+        mirrors=[("isaiah", 9, 1), ("isaiah", 9, 2)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The ministry opens in Zebulun and Naphtali — the first lands the scattering emptied",
+        anchor_refs=["Isaiah 9:1-2", "2 Kings 15:29", "Matthew 4:13-16"],
+        body=[
+            Q("matthew", 4, 13, 16),
+            Q("isaiah", 9, 1, 2),
+            Q("2-kings", 15, 29),
+            P(
+                "Zebulun and Naphtali are not scenery. They are tribal "
+                "allotments of the northern house — and the record shows they "
+                "were the first lands Assyria emptied, carried captive before "
+                "the rest. Isaiah looked at that darkness and promised that "
+                "the very people who sat in it would see a great light. So "
+                "when the ministry of Yahusha (Jesus) opens, it opens *there* "
+                "— not in Jerusalem, but in *Galilee of the nations,* the "
+                "homeland of the first-scattered. The light rises first where "
+                "the darkness fell first. The geography is the announcement: "
+                "the work that begins in the scattered house's own territory "
+                "is the work of bringing the scattered house home."
+            ),
+        ],
+    ),
+    dict(
+        mark=("matthew", 9, 36),
+        mirrors=[("ezekiel", 34, 5), ("numbers", 27, 17)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Scattered abroad, as sheep having no shepherd — the diagnosis is Ezekiel's, word for word",
+        anchor_refs=["Ezekiel 34:5", "Numbers 27:17", "Matthew 9:36-38"],
+        body=[
+            Q("matthew", 9, 36, 38),
+            Q("ezekiel", 34, 5),
+            Q("numbers", 27, 17),
+            P(
+                "What moves him to compassion is not vague need — it is a "
+                "condition the prophets had already named in these exact "
+                "words. *Scattered, because there is no shepherd* is "
+                "Ezekiel's indictment of the shepherds who fed themselves "
+                "while the flock was strewn across the earth. And the cure "
+                "had been asked for since Moses, who prayed for a man over "
+                "the congregation *that the congregation of Yahuah (LORD) be "
+                "not as sheep which have no shepherd* — a prayer first "
+                "answered in a man named Yahusha (Joshua). Now the harvest "
+                "idiom takes over: the scattered flock is a standing crop, "
+                "and the prayer he commands is for labourers to be sent into "
+                "it. The sending is the gathering begun."
+            ),
+        ],
+    ),
+    dict(
+        mark=("matthew", 12, 18),
+        mirrors=[
+            ("isaiah", 42, 1),
+            ("isaiah", 42, 2),
+            ("isaiah", 42, 3),
+            ("isaiah", 42, 4),
+        ],
+        strand="teaching",
+        strand_label="The teaching",
+        card_title="The isles shall wait for his Torah — the servant's mission field is the map of the scattering",
+        anchor_refs=["Isaiah 42:1-4", "Jeremiah 31:10", "Matthew 12:18-21"],
+        body=[
+            Q("matthew", 12, 18, 21),
+            Q("isaiah", 42, 1, 4),
+            Q("jeremiah", 31, 10),
+            P(
+                "Matthew quotes the servant song almost whole, and the song "
+                "ends on an address: *the isles shall wait for his law.* The "
+                "isles afar off are not decoration — they are where Jeremiah "
+                "commands the gathering to be announced: *He that scattered "
+                "Yashar'el (Israel) will gather him.* The servant's judgment "
+                "and his Torah travel out to the nations and the isles "
+                "because that is where the flock was strewn. And the manner "
+                "matches the mission: a bruised reed he will not break, a "
+                "smoking flax he will not quench — the broken and "
+                "barely-burning are handled as what they are, the wounded of "
+                "the scattering, gathered gently, not finished off."
+            ),
+        ],
+    ),
+    dict(
+        mark=("matthew", 13, 44),
+        mirrors=[("psalms", 135, 4)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Treasure hid in a field — the segullah hidden in the world, and the man who buys the whole field",
+        anchor_refs=["Exodus 19:5", "Psalm 135:4", "Matthew 13:44"],
+        body=[
+            Q("matthew", 13, 44),
+            Q("exodus", 19, 5),
+            Q("psalms", 135, 4),
+            Q("matthew", 13, 38),
+            P(
+                "*Peculiar treasure* is covenant vocabulary — the segullah, "
+                "the treasured possession Yahuah (God) named at Sinai and the "
+                "psalm names again: *Yashar'el (Israel) for his peculiar "
+                "treasure.* The parable puts that treasure where the prophets "
+                "left it: hidden in a field — and the chapter itself defines "
+                "the field as the world. The treasure of the kingdom is not "
+                "on display in an institution; it lies buried in the world, "
+                "unrecognized, indistinguishable from the soil around it. "
+                "And the man who finds it does not dig out a coin and leave "
+                "— for joy he sells all that he has and buys the whole "
+                "field. The purchase price covers the world, because that is "
+                "where the treasure is scattered."
+            ),
+        ],
+    ),
+    dict(
+        mark=("matthew", 13, 47),
+        mirrors=[("ezekiel", 47, 9), ("ezekiel", 47, 10)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The kingdom is like a net cast into the sea — the fishers' work, fabric and all",
+        anchor_refs=["Jeremiah 16:16", "Ezekiel 47:9-10", "Matthew 13:47-48"],
+        body=[
+            Q("matthew", 13, 47, 48),
+            Q("jeremiah", 16, 16),
+            Q("ezekiel", 47, 9, 10),
+            P(
+                "The net is not a fresh metaphor — it is the working tool of "
+                "the fishers Yahuah (LORD) said he would send for the "
+                "scattered, to fish them out of every hiding place. The "
+                "kingdom-net is cast into the sea and *gathered of every "
+                "kind,* and Ezekiel's river-vision had already shown where "
+                "that language ends: fishers standing with nets spread, "
+                "their catch *according to their kinds, as the fish of the "
+                "great sea, exceeding many.* The net gathers; then comes the "
+                "sorting on the shore — the good into vessels, the bad cast "
+                "away. The gathering is broad because the catch is hidden in "
+                "the sea; the sorting belongs to the end, and to hands that "
+                "are not ours."
+            ),
+        ],
+    ),
+    dict(
+        mark=("matthew", 18, 12),
+        mirrors=[("ezekiel", 34, 12)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="He goes into the mountains after the one gone astray — Ezekiel said the sheep were on the mountains",
+        anchor_refs=["Ezekiel 34:6", "Ezekiel 34:12", "Matthew 18:12-14"],
+        body=[
+            Q("matthew", 18, 12, 14),
+            Q("ezekiel", 34, 6),
+            Q("ezekiel", 34, 12),
+            P(
+                "Notice where the shepherd goes: *into the mountains.* That "
+                "is not a storyteller's flourish — it is Ezekiel's map. *My "
+                "sheep wandered through all the mountains, and upon every "
+                "high hill* — and the promise answered it point for point: "
+                "*as a shepherd seeketh out his flock... so will I seek out "
+                "my sheep, and will deliver them out of all places where "
+                "they have been scattered in the cloudy and dark day.* The "
+                "parable is that promise told small — one stray standing for "
+                "the strewn flock, the Father's will spoken plainly at the "
+                "end: not one of these little ones should perish. The "
+                "seeking-out Ezekiel put in Yahuah (God)'s own mouth is the "
+                "work walking in Galilee."
+            ),
+        ],
+    ),
+    dict(
+        mark=("matthew", 19, 28),
+        mirrors=[("isaiah", 1, 26)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Twelve thrones for twelve tribes — the judges restored as at the first",
+        anchor_refs=["Psalm 122:4-5", "Isaiah 1:26", "Matthew 19:28"],
+        body=[
+            Q("matthew", 19, 28),
+            Q("psalms", 122, 4, 5),
+            Q("isaiah", 1, 26),
+            P(
+                "*In the regeneration* — and the shape of the regenerated "
+                "kingdom is tribal. Twelve thrones, judging the twelve "
+                "tribes of Yashar'el (Israel): not a remembered number, a "
+                "working one. The psalm had set thrones of judgment where "
+                "the tribes go up; Isaiah promised the restoration in so "
+                "many words — *I will restore thy judges as at the first.* "
+                "Restore, not replace. A kingdom whose seats of judgment are "
+                "counted out by tribe is a kingdom that requires the tribes "
+                "— all twelve, gathered and standing before the thrones. The "
+                "Son of Adam on the throne of his glory presides over the "
+                "very assembly the prophets said would be brought home."
+            ),
+        ],
+    ),
+    dict(
+        mark=("matthew", 23, 37),
+        mirrors=[
+            ("psalms", 118, 26),
+            ("deuteronomy", 32, 11),
+            ("deuteronomy", 32, 12),
+        ],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="As a hen gathereth her chickens under her wings — the gathering refused has an until",
+        anchor_refs=["Deuteronomy 32:11-12", "Psalm 118:26", "Matthew 23:37-39"],
+        body=[
+            Q("matthew", 23, 37, 39),
+            Q("deuteronomy", 32, 11, 12),
+            Q("psalms", 118, 26),
+            P(
+                "*How often would I have gathered* — the word is the "
+                "prophets' word, and the wings are the wings of Moses' song: "
+                "Yahuah (LORD) carrying Yashar'el (Israel) as an eagle bears "
+                "her young. The grief over Jerusalem is the grief of the one "
+                "who has been spreading those wings all along and watching "
+                "the children scatter from under them. But read the sentence "
+                "to its end. The refusal does not cancel the gathering; it "
+                "sets a condition with an expiry: *till ye shall say, "
+                "Blessed is he that cometh in the name of Yahuah (Lord)* — "
+                "the pilgrim blessing of the psalm, waiting in the mouth of "
+                "the city. The house is left desolate *until.* The until is "
+                "the promise."
+            ),
+        ],
+    ),
+    # ================= MARK =================
+    dict(
+        mark=("mark", 13, 27),
+        mirrors=[("zechariah", 2, 6)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Gathered from the four winds — because the four winds is where he spread them",
+        anchor_refs=["Zechariah 2:6", "Deuteronomy 30:4", "Mark 13:27"],
+        body=[
+            Q("mark", 13, 27),
+            Q("zechariah", 2, 6),
+            Q("deuteronomy", 30, 4),
+            P(
+                "*From the four winds* answers a sentence already on record: "
+                "*I have spread you abroad as the four winds of the heaven, "
+                "saith Yahuah (LORD).* The elect being gathered are the ones "
+                "who were spread — the same wind-language, scattering and "
+                "gathering, one verb answering the other. And the reach of "
+                "the gathering, *from the uttermost part of the earth to the "
+                "uttermost part of heaven,* is the reach Moses wrote into "
+                "the covenant itself: driven out unto the outmost parts of "
+                "heaven, *from thence* will he gather thee, from thence will "
+                "he fetch thee. The angels sent at the end are executing the "
+                "oldest clause in the book."
+            ),
+        ],
+    ),
+    # ================= LUKE =================
+    dict(
+        mark=("luke", 2, 25),
+        mirrors=[("isaiah", 40, 1), ("isaiah", 40, 2)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="Waiting for the consolation of Yashar'el (Israel) — the comfort Isaiah was commanded to speak",
+        anchor_refs=["Isaiah 40:1-2", "Luke 2:25"],
+        body=[
+            Q("luke", 2, 25),
+            Q("isaiah", 40, 1, 2),
+            P(
+                "Simeon's hope has a name, and the name is a quotation. *The "
+                "consolation of Yashar'el (Israel)* is the comfort Isaiah "
+                "was commanded to cry — *Comfort ye, comfort ye my people* — "
+                "the announcement to a punished, exiled, double-paid people "
+                "that the warfare is accomplished. That is what a just and "
+                "devout man in Jerusalem was waiting for: not a private "
+                "blessing, not a new religion, but the consolation promised "
+                "to a specific people at the end of a specific sentence of "
+                "judgment. The Ruach HaKodesh (Holy Spirit) rested on a man "
+                "whose whole expectation was the prophets' expectation — and "
+                "led him to the child in whom the comfort had arrived."
+            ),
+        ],
+    ),
+    dict(
+        mark=("luke", 4, 26),
+        mirrors=[("1-kings", 17, 9), ("2-kings", 5, 14)],
+        strand="teaching",
+        strand_label="The teaching",
+        card_title="Elijah sent to Sidon, Elisha to a Syrian — the commission that runs outside the land",
+        anchor_refs=["1 Kings 17:9", "2 Kings 5:14", "Luke 4:25-27"],
+        body=[
+            Q("luke", 4, 25, 27),
+            Q("1-kings", 17, 9),
+            Q("2-kings", 5, 14),
+            P(
+                "Rejected in his own town, Yahusha (Jesus) reaches for a "
+                "precedent — and the precedent is geographic. In the days "
+                "when Yashar'el (Israel) was deep in covenant-breaking, the "
+                "prophet's commission ran *outside the land*: Elijah "
+                "sustained at Zarephath of Sidon, Elisha's cleansing "
+                "received by Naaman the Syrian. Each was an individual "
+                "mercy, given where it was given — Naaman went home to "
+                "Syria clean, not absorbed into the covenant people. The "
+                "pattern Yahusha (Jesus) is naming is the sending: when the "
+                "house will not hear, the word goes out beyond its borders "
+                "and is received there. The crowd raged, because the "
+                "precedent put the mercy past the boundary they were "
+                "standing inside."
+            ),
+        ],
+    ),
+    dict(
+        mark=("luke", 19, 9),
+        mirrors=[("ezekiel", 34, 11)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Forsomuch as he also is a son of Abraham — the seeking finds what was already true",
+        anchor_refs=["Ezekiel 34:11", "Ezekiel 34:16", "Luke 19:9-10"],
+        body=[
+            Q("luke", 19, 9, 10),
+            Q("ezekiel", 34, 11),
+            Q("ezekiel", 34, 16),
+            P(
+                "Watch the order of the sentence. Salvation comes to the "
+                "house of Zacchaeus *forsomuch as he also is a son of "
+                "Abraham* — because he is, not so that he might become. The "
+                "religious system of his day had written the publican out; "
+                "the seeking Shepherd reads the register and finds him still "
+                "on it. That is Ezekiel's promise working: *Behold, I, even "
+                "I, will both search my sheep, and seek them out... I will "
+                "seek that which was lost, and bring again that which was "
+                "driven away.* The lost thing sought is a sheep of the "
+                "flock before the seeking begins — the finding does not "
+                "make him one; it reveals him as one. The Son of Adam came "
+                "to seek and to save what was lost, and what was lost was "
+                "*his.*"
+            ),
+        ],
+    ),
+    dict(
+        mark=("luke", 22, 31),
+        mirrors=[("amos", 9, 9)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Sift you as wheat — Amos's sieve, in which not the least grain falls",
+        anchor_refs=["Amos 9:9", "Luke 22:31-32"],
+        body=[
+            Q("luke", 22, 31, 32),
+            Q("amos", 9, 9),
+            P(
+                "*Sift you as wheat* is not a loose figure — the sieve is "
+                "already in the prophets, and it is the scattering itself: "
+                "*I will sift the house of Yashar'el (Israel) among all "
+                "nations, like as corn is sifted in a sieve, yet shall not "
+                "the least grain fall upon the earth.* The adversary asks "
+                "for the sifting hoping the grain will be lost in the "
+                "shaking. The promise of the sieve is that it will not be: "
+                "the shaking among all nations is violent, but not one "
+                "kernel of the true grain hits the ground. And the "
+                "intercession — *I have prayed for thee, that thy faith "
+                "fail not* — is the promise applied to one man's night, "
+                "with the homecoming already assumed: *when thou art "
+                "converted,* when you have turned back, strengthen your "
+                "brothers."
+            ),
+        ],
+    ),
+    # ================= JOHN =================
+    dict(
+        mark=("john", 1, 51),
+        mirrors=[("genesis", 28, 12), ("genesis", 28, 13), ("genesis", 28, 15)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Angels ascending and descending — Jacob's ladder carries Jacob's oath: I will bring thee again",
+        anchor_refs=["Genesis 28:12-15", "John 1:47-51"],
+        body=[
+            Q("john", 1, 47, 51),
+            Q("genesis", 28, 12, 15),
+            P(
+                "To *an Yashar'elite (Israelite) indeed,* Yahusha (Jesus) "
+                "gives an Yashar'elite (Israelite) promise: Jacob's ladder, "
+                "with the Son of Adam standing where the ladder stood. But "
+                "the ladder was never a bare vision — it came wrapped in an "
+                "oath. The seed would spread abroad to the west, the east, "
+                "the north, and the south; *and* — the clause the inherited "
+                "reading forgets — *I will bring thee again into this land; "
+                "for I will not leave thee, until I have done that which I "
+                "have spoken to thee of.* Scattering and homecoming, sworn "
+                "in one breath at Bethel. When Nathanael is told he will "
+                "see heaven opened over the Son of Adam, he is being told "
+                "the Bethel covenant — spreading abroad and bringing again "
+                "— has reached its working day."
+            ),
+        ],
+    ),
+    dict(
+        mark=("john", 4, 35),
+        mirrors=[("amos", 9, 13), ("amos", 9, 14)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Fields white to harvest — said in Samaria, on the ground Jacob gave to Joseph",
+        anchor_refs=["Amos 9:13-14", "John 4:4-5", "John 4:35"],
+        body=[
+            Q("john", 4, 4, 5),
+            Q("john", 4, 35),
+            Q("amos", 9, 13, 14),
+            P(
+                "The evangelist sets the scene with surveyor's precision: "
+                "Samaria — the old capital territory of the northern house "
+                "— at a city *near to the parcel of ground that Jacob gave "
+                "to his son Joseph.* On Joseph's own ground, Yahusha "
+                "(Jesus) says the fields are white *already*: the harvest "
+                "is not four months off, it is standing ripe now. Amos had "
+                "promised the northern house a harvest so heavy the "
+                "plowman overtakes the reaper — and the next verse says "
+                "what the harvest is: *I will bring again the captivity of "
+                "my people of Yashar'el (Israel).* The harvest idiom is the "
+                "gathering idiom. Where does it ripen first in the record? "
+                "In Joseph's field."
+            ),
+        ],
+    ),
+    dict(
+        mark=("john", 7, 35),
+        mirrors=[("zephaniah", 3, 10)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Will he go unto the dispersed? — the crowd asks the question that is the answer",
+        anchor_refs=["Zephaniah 3:10", "Isaiah 11:12", "John 7:35"],
+        body=[
+            Q("john", 7, 35),
+            Q("zephaniah", 3, 10),
+            Q("isaiah", 11, 12),
+            P(
+                "When Yahusha (Jesus) says he is going where they cannot "
+                "come, the rulers reach — half in mockery — for the only "
+                "destination they can think of: *will he go unto the "
+                "dispersed among the Gentiles?* The evangelist lets the "
+                "question stand, because the question is the answer. The "
+                "dispersed are a known address in the prophets: *the "
+                "daughter of my dispersed* bringing offering from beyond "
+                "the rivers of Ethiopia; the outcasts of Yashar'el "
+                "(Israel) and the dispersed of Yahudah (Judah) assembled "
+                "from the four corners of the earth under one ensign. The "
+                "crowd names the mission field it cannot imagine him "
+                "wanting — and names it exactly."
+            ),
+        ],
+    ),
+    dict(
+        mark=("john", 21, 11),
+        mirrors=[("john", 6, 39)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="A multitude of great fishes, and the net not broken — the fishers' last lesson",
+        anchor_refs=["Matthew 4:19", "John 6:39", "John 21:6-11"],
+        body=[
+            Q("matthew", 4, 19),
+            Q("john", 21, 6),
+            Q("john", 21, 11),
+            Q("john", 6, 39),
+            P(
+                "The first call made them fishers of men; the risen "
+                "Messiah (Christ)'s last sign is given to them as fishers. "
+                "All night, nothing — then the word, the cast, and a "
+                "multitude of great fishes so heavy they cannot draw it. "
+                "And the detail the eyewitness insists on: *for all there "
+                "were so many, yet was not the net broken.* That is the "
+                "character of this gathering. The Father's will, already "
+                "stated, is *that of all which he hath given me I should "
+                "lose nothing* — a net full past reckoning that does not "
+                "tear, a catch hauled to shore whole. The fishers sent for "
+                "the scattered are sent with that net: the gathering that "
+                "holds everything given into it."
+            ),
+        ],
+    ),
+    # ================= ACTS =================
+    dict(
+        mark=("acts", 5, 31),
+        mirrors=[("hosea", 14, 1), ("hosea", 14, 2)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="To give repentance to Yashar'el (Israel) — the return Hosea pleaded for, handed over as a gift",
+        anchor_refs=["Hosea 14:1-2", "Acts 5:31"],
+        body=[
+            Q("acts", 5, 31),
+            Q("hosea", 14, 1, 2),
+            P(
+                "Hosea stood at the end of his scroll pleading with the "
+                "fallen house: *O Yashar'el (Israel), return unto Yahuah "
+                "Elohayka (the LORD thy God)... Take with you words, and "
+                "turn.* The plea assumes what the exile proved — that the "
+                "fallen do not simply produce the turning out of "
+                "themselves. Now hear the apostles: Elohim (God) exalted "
+                "him *a Prince and a Saviour, for to give repentance to "
+                "Yashar'el (Israel), and forgiveness of sins.* To *give* "
+                "repentance. The return is not the price of admission the "
+                "scattered must scrape together; it is the first gift the "
+                "exalted Prince hands down. Grace is not the opposite of "
+                "the turning — grace is what carries the turning to a "
+                "people who could not turn themselves."
+            ),
+        ],
+    ),
+    dict(
+        mark=("acts", 13, 47),
+        mirrors=[("isaiah", 49, 12)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="A light of the nations — Paul claims the verse that begins with raising the tribes of Jacob",
+        anchor_refs=["Isaiah 49:6", "Isaiah 49:12", "Acts 13:47"],
+        body=[
+            Q("acts", 13, 47),
+            Q("isaiah", 49, 6),
+            Q("isaiah", 49, 12),
+            P(
+                "Paul names his commission with a quotation, and the "
+                "quotation has a first half he expects his hearers to "
+                "know. The servant's verse does not begin at *light of the "
+                "Gentiles* — it begins, *to raise up the tribes of Jacob, "
+                "and to restore the preserved of Yashar'el (Israel).* The "
+                "light that goes out to the nations and the raising of the "
+                "tribes are one assignment, not two; the light travels to "
+                "the ends of the earth because the ends of the earth is "
+                "where the preserved are kept. Isaiah even sketches the "
+                "return route: *these shall come from far... from the "
+                "north and from the west... from the land of Sinim.* The "
+                "mission Paul is defending is the prophetic gathering, "
+                "carried to its field."
+            ),
+        ],
+    ),
+    # ================= EPISTLES =================
+    dict(
+        mark=("romans", 8, 19),
+        mirrors=[("deuteronomy", 14, 1)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="The manifestation of the sons of Elohim (God) — sons unveiled, not sons manufactured",
+        anchor_refs=["Deuteronomy 14:1", "Hosea 1:10", "Romans 8:19-23"],
+        body=[
+            Q("romans", 8, 19),
+            Q("romans", 8, 23),
+            Q("deuteronomy", 14, 1),
+            Q("hosea", 1, 10),
+            P(
+                "*Manifestation* is an unveiling word — the showing of "
+                "something that exists and is hidden. Creation is not "
+                "waiting for sons to be invented; it is waiting for sons "
+                "already in the world to be *revealed,* because for long "
+                "ages the sons have been indistinguishable from the "
+                "nations they were scattered into. Moses named them at the "
+                "start: *Ye are the children of Yahuah Elohaychem (the "
+                "LORD your God).* Hosea promised the hidden years would "
+                "end on a sentence: in the place where it was said *ye are "
+                "not my people,* there they would be called *the sons of "
+                "the living Elohim (God).* The adoption Paul waits for is "
+                "the placing of those sons back into their own "
+                "inheritance — the unveiling the whole creation groans "
+                "toward."
+            ),
+        ],
+    ),
+    dict(
+        mark=("romans", 9, 27),
+        mirrors=[("isaiah", 10, 22)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="A remnant shall be saved — Paul reads Isaiah's 'shall return' and says 'saved'",
+        anchor_refs=["Isaiah 10:22", "Romans 9:27"],
+        body=[
+            Q("romans", 9, 27),
+            Q("isaiah", 10, 22),
+            P(
+                "Set the two sentences side by side and watch one word. "
+                "Isaiah: though thy people Yashar'el (Israel) be as the "
+                "sand of the sea, *a remnant of them shall return.* Paul, "
+                "quoting him: *a remnant shall be saved.* Paul is not "
+                "miscopying — he is translating, and the translation is "
+                "the whole doctrine. In the prophets' grammar, to be saved "
+                "*is* to return: salvation for a scattered people is the "
+                "homecoming, and the remnant is the company that makes the "
+                "journey. The sand-of-the-sea multitude is the scattered "
+                "house grown numberless in its dispersion; out of that "
+                "multitude, the returning remnant is the saved. Paul "
+                "crying Isaiah over Yashar'el (Israel) is the gathering "
+                "preached in one verse."
+            ),
+        ],
+    ),
+    dict(
+        mark=("1-corinthians", 10, 1),
+        mirrors=[("exodus", 13, 21)],
+        strand="teaching",
+        strand_label="The teaching",
+        card_title="All our fathers were under the cloud — Paul hands the Corinthians their family history",
+        anchor_refs=["Exodus 13:21", "1 Corinthians 10:1-4"],
+        body=[
+            Q("1-corinthians", 10, 1),
+            Q("1-corinthians", 10, 4),
+            Q("exodus", 13, 21),
+            P(
+                "Read the possessive. Writing to an assembly in Greece — "
+                "people the inherited reading calls Gentile converts with "
+                "no stake in Sinai — Paul says *our fathers,* and says "
+                "*all*: all under the cloud, all through the sea, all fed "
+                "and watered from the Rock, and *that Rock was Messiah "
+                "(Christ).* He does not say *the* fathers, or *Israel's* "
+                "fathers, as a stranger would. He hands the Corinthians "
+                "the Exodus as their own family history, without a "
+                "footnote, because that is who he understood his hearers "
+                "to be: seed of the scattered house, living among the "
+                "nations, being taught the story of their own fathers — "
+                "and warned by it, as sons are warned by a father's "
+                "record."
+            ),
+        ],
+    ),
+    dict(
+        mark=("galatians", 3, 13),
+        mirrors=[("deuteronomy", 21, 23), ("deuteronomy", 30, 1)],
+        strand="grace",
+        strand_label="The grace",
+        card_title="Redeemed from the curse of the law — the curse is the exile sentence, not the Torah",
+        anchor_refs=[
+            "Deuteronomy 21:23",
+            "Deuteronomy 28:64",
+            "Deuteronomy 30:1",
+            "Galatians 3:13-14",
+        ],
+        body=[
+            Q("galatians", 3, 13, 14),
+            Q("deuteronomy", 21, 23),
+            Q("deuteronomy", 28, 64),
+            Q("deuteronomy", 30, 1),
+            P(
+                "What is *the curse of the law*? Not the Torah — the Torah "
+                "pronounces the curse and is not the curse. The curse is "
+                "the sentence written into the covenant for breaking it: "
+                "*Yahuah (LORD) shall scatter thee among all people, from "
+                "the one end of the earth even unto the other.* That is "
+                "the judgment the scattered house was living under. "
+                "Messiah (Christ) was made a curse — hanged on the tree, "
+                "bearing the accursed death the Torah itself names — to "
+                "open the way home through that sentence, *that the "
+                "blessing of Abraham might come on the Gentiles,* on the "
+                "seed dwelling out among the nations where the curse had "
+                "driven them. And the covenant had always said where the "
+                "curse-road turns: when you call it to mind *among all the "
+                "nations, whither Yahuah Elohayka (the LORD thy God) hath "
+                "driven thee* — and return. Redeemed from the exile, back "
+                "to the covenant. Never from the covenant itself."
+            ),
+        ],
+    ),
+    dict(
+        mark=("galatians", 4, 27),
+        mirrors=[("isaiah", 54, 1)],
+        strand="good_news",
+        strand_label="The good news",
+        card_title="The desolate hath many more children — Isaiah's song to the cast-off wife",
+        anchor_refs=["Isaiah 54:1", "Isaiah 54:6-7", "Galatians 4:27"],
+        body=[
+            Q("galatians", 4, 27),
+            Q("isaiah", 54, 1),
+            Q("isaiah", 54, 6, 7),
+            P(
+                "Paul seals his argument with a song, and the song has an "
+                "addressee. Isaiah 54 is sung to the forsaken wife — the "
+                "woman called *as a woman forsaken and grieved in spirit... "
+                "when thou wast refused* — the house put away, whom Yahuah "
+                "(LORD) promises to gather with great mercies after the "
+                "small moment of abandonment. Her barrenness was the "
+                "scattering: cut off, desolate, bearing no children inside "
+                "the covenant. And the promise is arithmetic: *more are "
+                "the children of the desolate than the children of the "
+                "married wife.* The cast-off house, multiplied in her "
+                "exile beyond counting, comes home with more children than "
+                "the house that stayed. Paul cites her song to the "
+                "Galatians because they are her children — the desolate "
+                "woman's many, being born back."
+            ),
+        ],
+    ),
+    dict(
+        mark=("ephesians", 1, 10),
+        mirrors=[("ezekiel", 37, 19)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Gather together in one all things in Messiah (Christ) — the one in his hand",
+        anchor_refs=["Ezekiel 37:19", "John 11:52", "Ephesians 1:10"],
+        body=[
+            Q("ephesians", 1, 10),
+            Q("ezekiel", 37, 19),
+            Q("john", 11, 52),
+            P(
+                "*Gather together in one* — the phrase has a pedigree. "
+                "Ezekiel's two sticks, Joseph's and Yahudah (Judah)'s, are "
+                "joined so that *they shall be one in mine hand*: the two "
+                "scattered houses made one nation again, held in a single "
+                "grip. John had already used the same gathering-in-one "
+                "language for the death of Yahusha (Jesus): *that also he "
+                "should gather together in one the children of Elohim "
+                "(God) that were scattered abroad.* So when Paul names the "
+                "purpose of the fulness of times — to gather together in "
+                "one all things in Messiah (Christ) — he is naming the "
+                "stick-joining as the axis of the whole administration of "
+                "the age. The dispensation of the fulness of times is the "
+                "gathering, and the one it gathers into is *him.*"
+            ),
+        ],
+    ),
+    dict(
+        mark=("ephesians", 2, 12),
+        mirrors=[("ezekiel", 11, 16)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Far off among the heathen — the exile's word, and the little sanctuary in the countries",
+        anchor_refs=["Ezekiel 11:16", "Isaiah 57:19", "Ephesians 2:12-13"],
+        body=[
+            Q("ephesians", 2, 12),
+            Q("ephesians", 2, 13),
+            Q("ezekiel", 11, 16),
+            Q("isaiah", 57, 19),
+            P(
+                "*Far off* is not a spatial pleasantry — it is the "
+                "prophets' technical word for the scattered. *Although I "
+                "have cast them far off among the heathen, and although I "
+                "have scattered them among the countries* — Ezekiel's "
+                "far-off are the exiled of Yashar'el (Israel), to whom "
+                "Yahuah (God) promises to be a little sanctuary in the "
+                "very countries of their scattering. Isaiah's peace is "
+                "spoken to the same two parties Paul addresses: *to him "
+                "that is far off, and to him that is near.* Aliens from "
+                "the commonwealth of Yashar'el (Israel), strangers from "
+                "the covenants of promise — estranged from what was "
+                "theirs, not foreign to it. The far-off are the cast-off; "
+                "being *made nigh by the blood of Messiah (Christ)* is the "
+                "homecoming of the cast-off, by the door the covenant "
+                "opened."
+            ),
+        ],
+    ),
+    dict(
+        mark=("colossians", 1, 13),
+        mirrors=[("daniel", 7, 18)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Translated into the kingdom of his dear Son — Daniel's transfer of the kingdom",
+        anchor_refs=["Daniel 7:18", "Daniel 7:27", "Colossians 1:13"],
+        body=[
+            Q("colossians", 1, 13),
+            Q("daniel", 7, 18),
+            Q("daniel", 7, 27),
+            P(
+                "*Translated* is a transfer word — subjects moved from one "
+                "dominion into another. Daniel saw the transfer from the "
+                "throne side: the kingdom taken from the beasts and given, "
+                "*the saints of the El Elyon (most High) shall take the "
+                "kingdom, and possess the kingdom for ever,* the greatness "
+                "of the kingdom under the whole heaven given to the people "
+                "of the saints. Paul writes from inside the same transfer, "
+                "in the present tense of those already delivered from the "
+                "power of darkness and moved into the dominion of the dear "
+                "Son. The kingdom is not an idea the believer subscribes "
+                "to — it is the dominion Daniel watched change hands, and "
+                "the deliverance is the changing of whose subjects the "
+                "delivered are."
+            ),
+        ],
+    ),
+    dict(
+        mark=("hebrews", 11, 13),
+        mirrors=[("genesis", 47, 9), ("psalms", 39, 12)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Strangers and pilgrims seeking a country — the fathers' confession, and the fathers' wait",
+        anchor_refs=["Genesis 47:9", "Psalm 39:12", "Hebrews 11:13-16", "Hebrews 11:39-40"],
+        body=[
+            Q("hebrews", 11, 13, 16),
+            Q("genesis", 47, 9),
+            Q("psalms", 39, 12),
+            Q("hebrews", 11, 39, 40),
+            P(
+                "*Strangers and pilgrims* is not the writer's coinage — it "
+                "is the fathers' own confession, on record. Jacob before "
+                "Pharaoh: *the days of the years of my pilgrimage.* David "
+                "before Yahuah (LORD): *I am a stranger with thee, and a "
+                "sojourner, as all my fathers were.* The whole family line "
+                "has always known itself to be en route — embracing the "
+                "promises afar off, seeking the country Elohim (God) "
+                "prepared, refusing to count any present address as home. "
+                "And the closing word binds the generations into one "
+                "arrival: the fathers received not the promise, *that they "
+                "without us should not be made perfect.* The sleeping "
+                "fathers and the scattered children are perfected "
+                "*together* — one promise, one country, one homecoming "
+                "that no generation enters alone."
+            ),
+        ],
+    ),
+    dict(
+        mark=("1-peter", 2, 25),
+        mirrors=[("isaiah", 53, 6)],
+        strand="gathering",
+        strand_label="The gathering",
+        card_title="Ye were as sheep going astray, but are now returned — the dispersion's own verb",
+        anchor_refs=["Isaiah 53:6", "1 Peter 1:1", "1 Peter 2:25"],
+        body=[
+            Q("1-peter", 2, 25),
+            Q("isaiah", 53, 6),
+            Q("1-peter", 1, 1),
+            P(
+                "The letter is addressed to *the strangers scattered* — "
+                "the dispersion of Pontus, Galatia, Cappadocia, Asia, and "
+                "Bithynia. To them Peter writes the straying-sheep "
+                "confession of Isaiah 53 — *all we like sheep have gone "
+                "astray* — and then closes it with the prophets' own "
+                "homecoming verb: *but are now RETURNED unto the "
+                "Shepherd and Bishop of your souls.* Not recruited. Not "
+                "adopted in from outside. Returned — the word that only "
+                "fits something coming back to where it belonged. The "
+                "scattered strangers who hear the Shepherd's voice and "
+                "turn are sheep of his flock coming home; the laid-on-him "
+                "iniquity of Isaiah 53 is what opened the road they are "
+                "returning on."
+            ),
+        ],
+    ),
+    # ================= REVELATION =================
+    dict(
+        mark=("revelation", 20, 6),
+        mirrors=[("isaiah", 61, 6)],
+        strand="kingdom",
+        strand_label="The kingdom",
+        card_title="Priests of Elohim (God), reigning with him — the kingdom of priests, kept on schedule",
+        anchor_refs=["Exodus 19:6", "Isaiah 61:6", "Revelation 20:6"],
+        body=[
+            Q("revelation", 20, 6),
+            Q("exodus", 19, 6),
+            Q("isaiah", 61, 6),
+            P(
+                "The office named at the first resurrection is the office "
+                "named at Sinai: *ye shall be unto me a kingdom of "
+                "priests.* Isaiah carried it forward to the restored — *ye "
+                "shall be named the Priests of Yahuah (LORD): men shall "
+                "call you the Ministers of our Elohim (God)* — a gathered "
+                "people serving as priesthood, with the nations around "
+                "them. Revelation shows the appointment kept: *priests of "
+                "Elohim (God) and of Messiah (Christ),* reigning with him. "
+                "The priestly calling given to Yashar'el (Israel) at the "
+                "mountain was never revoked and never reassigned; it waits "
+                "through the whole scattering for the company that comes "
+                "through gathered, sifted, and raised — and then it is "
+                "worn, in the reign, as it was spoken."
+            ),
+        ],
+    ),
+]
+
 # ---------------------------------------------------------------------------
 # Emit SQL
 # ---------------------------------------------------------------------------
@@ -1779,6 +4398,7 @@ VALID_STRANDS = {"gathering", "good_news", "kingdom", "grace", "teaching"}
 rows = []
 seen = {}
 skipped_mirrors = []
+skipped_cards = []
 for card in CARDS:
     if card["strand"] not in VALID_STRANDS:
         raise SystemExit(f"invalid strand: {card['strand']} on {card['mark']}")
@@ -1786,7 +4406,10 @@ for card in CARDS:
     anchors = "{" + ",".join('"' + a + '"' for a in card["anchor_refs"]) + "}"
     mark = card["mark"]
     if mark in seen:
-        raise SystemExit(f"duplicate MARK verse: {mark} (also {seen[mark]})")
+        # Cross-wave collision: the first card keeps the verse; the
+        # later card is skipped whole and reported for re-homing.
+        skipped_cards.append((mark, card["card_title"]))
+        continue
     targets = [mark]
     for m in card["mirrors"]:
         if m in seen:
@@ -1818,6 +4441,8 @@ for card in CARDS:
             "    updated_at = NOW();"
         )
 
+for m, title in skipped_cards:
+    print(f"DROPPED CARD (mark collision) {m}: {title}")
 for m, title in skipped_mirrors:
     print(f"NOTE: mirror {m} already carried by an earlier card; skipped for: {title}")
 
@@ -1826,7 +4451,7 @@ header = f"""-- ================================================================
 -- =====================================================================
 -- GENERATED by restoration-pipeline/_session205_build_kingdom_seed.py.
 -- Do not hand-edit; edit the generator and re-run. Every quote is the
--- exact restored verse text from canon.json. {len(CARDS)} cards /
+-- exact restored verse text from canon.json. {len(CARDS) - len(skipped_cards)} cards /
 -- {len(rows)} marked verses (Tanakh anchors carry the mark too —
 -- full-sweep V1 per Yoshi's S205 call).
 -- Idempotent: ON CONFLICT (verse_id) DO UPDATE refreshes cards.

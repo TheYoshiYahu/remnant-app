@@ -143,8 +143,44 @@ rm -f .git/index.lock
 10. Light theme: quote marks drop to deep emerald/gold; card border
     legible on parchment.
 
+## S205b — THE EXHAUSTIVE WAVE (same session, after Yoshi's on-device walk)
+Yoshi's call, transcribed: "what about Matthew 4:19 cross referencing
+Jeremiah 16? what about all the old testament verses of him redeeming
+them, two sticks becoming one — we need to get really exhaustive with
+this." The 89-card set stayed live (publish-then-edit); the exhaustive
+wave landed on top of it.
+
+What landed:
+- **Yoshi's own find authored first**: Matthew 4:19 ↔ Jeremiah
+  16:14-16 — the fishers of men are the fishers Jeremiah said would
+  be sent for the scattered, inside the second-exodus oath.
+- **Four theme minions** (voice skill read in full by each):
+  REDEMPTION (every goel/ransom verse with its NT landing — Psalm
+  77:15 both houses redeemed, Zechariah 10:8 redeemed-then-gathered,
+  Luke 24:21 redemption-of-Yashar'el never corrected), THE TWO HOUSES
+  MADE ONE (Jeremiah 33:24 the two families, Zechariah 11:14 the
+  brotherhood broken as inverse witness, Ezekiel 37:19,24-26, 1
+  Chronicles 5:1-2, David crowned twice, Genesis 48:19 melo-ha'goyim
+  ↔ Romans 11:25), THE SECOND EXODUS (Ezekiel 20:33-38 the rod and
+  the wilderness ↔ the winnowing fan — Yoshi's named gap; the
+  shub-shevut formula; north-country returns; John 4 Samaria), NT GAP
+  WALK (Galilee-of-the-nations opening, Luke 22:31 sift-as-wheat ↔
+  Amos 9:9, Romans 9:27 return→saved word-swap, Matthew 13:44
+  treasure-in-the-field ↔ segullah).
+- **Checker gate**: 90 PASS / 23 FLAG on the new cards, zero
+  blockers; all fixed in the generator (17 title parentheticals, 4
+  overclaims softened, 2 quote-supports added, 1 duplicate Genesis 48
+  card removed). 11 cross-wave mark collisions auto-dropped at emit
+  (two minions finding the same verse — kept first).
+- **Final: 209 cards / 487 marked verses.** Strands: gathering 196,
+  good_news 94, kingdom 93, teaching 53, grace 51. tsc -b exit 0
+  (no app changes needed — the surface was already live).
+
+Deploy: the seed is idempotent — re-applying refreshes the 237
+already-live rows and adds the rest. No new migration needed.
+
 ## Next session
-Kingdom wave 2: extras-side marks (1 Enoch, Jubilees, Jasher quoted as
+Kingdom wave 3: extras-side marks (1 Enoch, Jubilees, Jasher quoted as
 sources where the nothing-new test finds them), plus the sweep
 continues — minion-noted candidates cut for count discipline: Luke
 2:25 ↔ Isaiah 40:1-2, Acts 1:8 ↔ Isaiah 43:10, Matthew 5:4 ↔ Isaiah
