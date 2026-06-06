@@ -14,7 +14,7 @@
  */
 
 import { useState } from "react";
-import WitnessCard from "./WitnessCard";
+import WitnessCard, { citeClassForDisplayRef } from "./WitnessCard";
 import type { WitnessEntry } from "../lib/api";
 import { applyParentheticalsToggle } from "../lib/useParentheticalsToggle";
 import {
@@ -88,7 +88,17 @@ export default function WitnessEndCard({
                 </span>
                 {entry.anchor_refs.length > 0 && (
                   <span className="font-sans text-xs text-[var(--reader-muted)]">
-                    ↔ {entry.anchor_refs.join(" · ")}
+                    {"↔ "}
+                    {entry.anchor_refs.map((ref, i) => (
+                      <span key={ref}>
+                        {i > 0 && " · "}
+                        <span
+                          className={citeClassForDisplayRef(ref) ?? undefined}
+                        >
+                          {ref}
+                        </span>
+                      </span>
+                    ))}
                   </span>
                 )}
                 <span

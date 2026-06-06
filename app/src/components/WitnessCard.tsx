@@ -18,13 +18,21 @@
  * key here, define the CSS variables in index.css, and the surface
  * carries it with no structural change.
  *
- * Rendering: card_md flows through the shared markdown helper, then
- * the sacred-name mask + parentheticals toggle so the card respects
- * the partner's display preferences exactly like the chapter-end
- * apparatus does.
+ * S204b (Yoshi): the card surface is the solid reader surface (black
+ * on the dark theme) and every scripture citation renders in its
+ * source-class register color — tanakh → emerald, nt → gold, extras →
+ * argaman — the same vocabulary as the S130 cross-reference target
+ * pills and the S172 book-heading pills.
+ *
+ * Rendering: card_md paragraphs flow through the shared italic-span
+ * helper plus a trailing-citation colorizer, after the sacred-name
+ * mask + parentheticals toggle so the card respects the partner's
+ * display preferences exactly like the chapter-end apparatus does.
  */
 
-import { renderMarkdownBody } from "../lib/markdown";
+import type { ReactNode } from "react";
+import { renderItalicSpans } from "../lib/markdown";
+import { classifyBookSlug } from "../lib/book-source-class";
 import type { WitnessEntry } from "../lib/api";
 import { applyParentheticalsToggle } from "../lib/useParentheticalsToggle";
 import {
@@ -33,6 +41,40 @@ import {
 } from "../lib/applySacredNameMask";
 
 export type PillRegister = "witness"; // "kingdom" joins at the Blue Pill session
+
+/**
+ * Map a display citation ref ("Mark 2:5-7", "Psalm 23:1", "Jude 5",
+ * "1 Corinthians 12:3") to its source-class citation color CSS class.
+ * Returns null when the text does not parse as a scripture ref.
+ */
+export function citeClassForDisplayRef(ref: string): string | null {
+  const m = /^((?:[1-3]\s+)?[A-Za-z'’ ]+?)\s+\d/.exec(ref.trim());
+  if (!m) return null;
+  let slug = m[1].trim().toLowerCase().replace(/\s+/g, "-");
+  if (slug === "psalm") slug = "psalms";
+  return `witness-cite-${classifyBookSlug(slug)}`;
+}
+
+/**
+ * Render one card_md paragraph: italic spans throughout, and when the
+ * paragraph ends with a "(Ref)" scripture citation, the citation
+ * (parentheses included) renders in its source-class register color.
+ */
+function renderCardParagraph(block: string): ReactNode {
+  const m = /^([\s\S]*?)\(([^()]+)\)\s*$/.exec(block);
+  if (m) {
+    const citeClass = citeClassForDisplayRef(m[2]);
+    if (citeClass) {
+      return (
+        <>
+          {renderItalicSpans(m[1])}
+          <span className={citeClass}>({m[2]})</span>
+        </>
+      );
+    }
+  }
+  return <>{renderItalicSpans(block)}</>;
+}
 
 interface WitnessCardProps {
   entry: WitnessEntry;
@@ -74,7 +116,16 @@ export default function WitnessCard({
         </button>
       </div>
       <h4 className="pill-card-title">{title}</h4>
-      <div className="pill-card-body space-y-0">{renderMarkdownBody(body)}</div>
+      <div className="pill-card-body">
+        {body
+          .trim()
+          .split(/\n{2,}/)
+          .map((block, i) => (
+            <p key={i} className={i > 0 ? "mt-3" : ""}>
+              {renderCardParagraph(block)}
+            </p>
+          ))}
+      </div>
     </div>
   );
 }

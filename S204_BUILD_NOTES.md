@@ -25,6 +25,14 @@ Yoshi's redesign calls, all built and checker-gated:
   **33 cards / 81 marked verses**. Checker-gated (2 flags caught and
   fixed: the Psalm 33 Davidic attribution is LXX-only → "the
   psalmist"; one missing (Christ) parenthetical in the end-card copy).
+- **S204c polish (Yoshi, on-device):** card interior is now the solid
+  reader surface (the red wash made the serif harder to read — red
+  stays in the border + eyebrow); every scripture citation in the
+  card body and the end-card anchor rows renders in its source-class
+  register color — tanakh → emerald, nt → gold, extras → argaman —
+  the same vocabulary as the S130 xref target pills (Mark gold,
+  Isaiah green). citeClassForDisplayRef() in WitnessCard.tsx is the
+  shared resolver.
 - Cross-reference apparatus note for Yoshi: John's thin xref coverage
   is pre-existing curated scope (threads on John 2/7/9/16 only; full
   per-verse baseline is Matthew-only so far) — the paused

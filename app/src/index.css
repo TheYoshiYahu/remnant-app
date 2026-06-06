@@ -556,7 +556,37 @@ body {
 .pill-card-witness {
   border: 1px solid var(--pill-witness-border);
   border-left: 3px solid var(--pill-witness-mid);
-  background: color-mix(in srgb, var(--pill-witness-mid) 7%, var(--reader-surface));
+  /* S204b (Yoshi): solid reader surface inside the card — the red
+   * wash made the serif body harder to read on black. The red lives
+   * in the border + eyebrow; the text sits on the reader's own
+   * surface. */
+  background: var(--reader-surface);
+}
+
+/* S204b — scripture citations inside Witness cards carry their
+ * source-class register color (same vocabulary as the S130
+ * cross-reference target pills + S172 book-heading pills):
+ *   tanakh → emerald · nt → gold · extras → argaman
+ * Pale register tones on the black reader; deep register tones on
+ * parchment. */
+:root {
+  --cite-tanakh: #2EFFA1;
+  --cite-nt: #FCECAF;
+  --cite-extras: #D4B0E0;
+}
+[data-theme="light"] {
+  --cite-tanakh: #0F6E56;
+  --cite-nt: #645028;
+  --cite-extras: #3D1B5C;
+}
+.witness-cite-tanakh {
+  color: var(--cite-tanakh);
+}
+.witness-cite-nt {
+  color: var(--cite-nt);
+}
+.witness-cite-extras {
+  color: var(--cite-extras);
 }
 .pill-card-eyebrow {
   display: flex;
