@@ -1,25 +1,25 @@
 /**
- * ReaderDivider — S201 page-break ornaments for the reading surface.
+ * ReaderDivider — S201/S202 page-break ornament for the reading surface.
  *
- * Two production divider assets (Grok Imagine originals, cropped + cleaned
- * at S201, committed in `app/public/dividers/`) wired into the reader:
+ * "botanical" — gold vine, white blossoms, olive, grapes, pomegranates,
+ * center menorah (Grok-generated, color-matched + cleaned at S202). Rendered
+ * at full column width as the permanent end-of-scripture seam: it sits after
+ * the chapter verses and before the study-tools toggle strip, so it stays
+ * visible even when study aids / helpers / notes are hidden (Yoshi, S202).
  *
- *   - "botanical" — gold vine, white blossoms, olive, grapes, pomegranates,
- *     center menorah. Marks the chapter → apparatus seam (replaces the
- *     gold-diamond placeholder that was only ever a mock). Rendered at full
- *     column width per Yoshi's S201 sign-off ("C — full column width").
+ * The asset is a rounded plaque: the ornament on a pure-#000 field with
+ * rounded-corner transparency. On the black reader the field matches the
+ * background, so the plaque vanishes and the ornament floats; on the
+ * parchment light theme the same #000 field reads as an intentional rounded
+ * dark band — and the (near-black) grapes stay perfect in both, since they
+ * always sit on their black field rather than being keyed onto parchment.
+ * One asset, correct in both themes. No theme swap needed.
  *
- *   - "alephbet" — the 22 paleo-Hebrew letters (ʾaleph → taw) in a metallic
- *     spectrum. Marks a major section break (book-start in the reader).
+ * Purely decorative — `aria-hidden` + empty alt.
  *
- * Both assets are built on a near-black field, so the `-transparent.png`
- * variants are used here and they sit cleanly on the pure-black dark reader.
- * Light-theme (parchment) variants are a later wheel; until they exist the
- * dividers are hidden in light mode via the `.reader-divider` rule in
- * index.css so the near-black artwork never lands on a parchment field.
- *
- * Purely decorative — `aria-hidden` + empty alt, with an optional visible
- * section label beneath the aleph-bet break for major divisions.
+ * (The "alephbet" variant is retained for the type but is NOT currently
+ * wired into the reader — the Grok paleo-Hebrew asset was inaccurate and
+ * was pulled at S202, pending a letterform-accurate rebuild.)
  */
 
 interface ReaderDividerProps {
@@ -34,9 +34,6 @@ const SRC: Record<ReaderDividerProps["variant"], string> = {
 };
 
 export default function ReaderDivider({ variant, label }: ReaderDividerProps) {
-  // Botanical sits at the chapter→apparatus seam; aleph-bet opens a major
-  // section. Vertical rhythm tuned so each ornament gets its own breathing
-  // room without doubling the surrounding block spacing.
   const wrapClass =
     variant === "botanical"
       ? "reader-divider my-8 text-center"

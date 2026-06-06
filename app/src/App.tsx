@@ -2621,6 +2621,17 @@ function Reader() {
           </div>
 
           {/*
+            S202 — botanical "end of scripture" divider. Moved here (Yoshi)
+            to sit directly after the chapter verses and BEFORE the study-
+            tools toggle strip, so it marks the close of scripture and stays
+            visible even when study aids / helpers / notes are hidden. Not
+            gated by hideCommentary — it's a permanent scripture-end seam.
+            Hidden in light mode until the parchment variant ships
+            (.reader-divider in index.css).
+          */}
+          <ReaderDivider variant="botanical" />
+
+          {/*
             S130 — single global study-aid toggle. One colored button,
             two states: hide everything but the verses, or show the
             full study Bible (chapter_intro + commentary stack +
@@ -2784,19 +2795,6 @@ function Reader() {
               {hideCommentary ? "Show study aids" : "Hide study aids"}
             </button>
           </div>
-
-          {/*
-            S201 — botanical ornament at the chapter→apparatus seam.
-            Replaces the gold-diamond placeholder (which only ever lived in
-            the S201 mock). Full column width per Yoshi's sign-off. Shown
-            exactly when the apparatus is shown (study aids on + this chapter
-            carries a chapter_intro), so the ornament always heads real
-            apparatus content and never dangles. Hidden in light mode until
-            the parchment variants ship (see .reader-divider in index.css).
-          */}
-          {!hideCommentary && chapterDetail.chapter_intro && (
-            <ReaderDivider variant="botanical" />
-          )}
 
           {!hideCommentary && chapterDetail.chapter_intro && (
             <aside className="mt-4 text-[var(--reader-text)]">

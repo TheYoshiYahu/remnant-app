@@ -163,19 +163,16 @@ body {
    to three classes total rather than 13 × 3 = 39 selectors.
    ----------------------------------------------------------------------- */
 
-/* ----- S201 reader dividers (botanical seam + aleph-bet section break) ---
-   Both ornament PNGs are built on a near-black field, so they sit cleanly
-   on the pure-black dark reader. On the parchment light theme the white
-   blossoms vanish and the near-black artwork reads wrong, so the dividers
-   are hidden in light mode until the parchment-background variants are
-   generated (S201 checkpoint — light-theme variants are a later wheel).
-   The botanical is rendered at full column width per Yoshi's S201 sign-off. */
+/* ----- S201/S202 reader divider (botanical end-of-scripture seam) --------
+   The botanical ornament is a single asset: the artwork on a pure-#000 field
+   with rounded-corner transparency. On the black reader the field matches
+   the background and the plaque vanishes (the ornament floats); on the
+   parchment light theme the same #000 field reads as an intentional rounded
+   dark band. One asset, correct in both themes — no theme swap. Rendered at
+   full column width. */
 .reader-divider img {
-  /* Decorative ornaments — keep them from ever forcing horizontal scroll. */
+  /* Decorative ornament — keep it from ever forcing horizontal scroll. */
   max-width: 100%;
-}
-[data-theme="light"] .reader-divider {
-  display: none;
 }
 
 .mark-fill {
