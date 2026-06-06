@@ -201,11 +201,14 @@ gathering 217, kingdom 126, good_news 105, grace 67, teaching 65.
 The concordance-first method is now the standard for every future
 wave: scan → disposition every hit → card → checker.
 
-## Next session — LOCKED (Yoshi, S205 close)
-**Mark: the extracanonical cross-reference pass.** One book at a
-time, Mark first; Luke and John follow. Full spec with the open
-questions, the starting threads, and the method:
-NEXT_SESSION_MARK_EXTRAS_XREF_SPEC.md. Read it FIRST at session open.
+## Next session — RE-LOCKED (Yoshi, S205 close, supersedes the Mark call)
+**PLAY STORE SUBMISSION.** Yoshi: "I've wasted too much time...
+let's get it going... Play Store first." Full spec including the
+researched billing verdict (consumption-only store builds lean;
+external-links program as the alternative):
+NEXT_SESSION_PLAY_STORE_SPEC.md. Read it FIRST at session open.
+The Mark extras pass (NEXT_SESSION_MARK_EXTRAS_XREF_SPEC.md) moves
+to the slot behind the store work.
 
 ## Backlog behind it
 Kingdom wave 4: extras-side marks (1 Enoch, Jubilees, Jasher quoted as
