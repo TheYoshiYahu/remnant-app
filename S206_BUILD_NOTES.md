@@ -139,6 +139,34 @@ tiers," then the corrected ladder. Decisions, verbatim-shaped:
    session or by hand).
 7. On-device walk (runbook Step 10); report results.
 
+## Play Console state (S206 close of console-driving, via Claude in Chrome)
+DONE: app created (Remnant of Promise Study Bible /
+com.remnantofpromise.bible / App / Free / 3 declarations accepted
+with Yoshi's approval); open-testing track targeted to ALL 177
+countries; release draft holds AAB versionCode 11 (1.1.0) + release
+notes; privacy policy URL set (remnantofpromise.org/privacy-policy/);
+Ads No; Government No; Financial none; Health none; content rating
+COMPLETE (Everyone / PEGI 3 / USK 0); data safety FULLY ANSWERED
+(4 types: email, user IDs, purchase history, other UGC — all
+collected/not shared/optional; encrypted in transit; account-deletion
++ data-deletion URLs set) saved as DRAFT — final submit gated on
+Target audience; app category Books & Reference + contact details
+(info@ + website); main store listing copy (30/30 name, 77/80 short,
+full description) + 512 icon + 1024x500 feature graphic, saved as
+DRAFT. AAB upload note: gradle hangs were (a) macOS quarantine on
+AAPT2 → xattr -dr fix, and (b) iCloud-sync " 2" conflict-copies in
+build dirs + node_modules plugin builds → rm -rf + rebuild. iCloud
+remains a standing build hazard — consider excluding build dirs from
+sync or building with Desktop sync paused.
+
+BLOCKED ON YOSHI (the last three):
+1. Demo reviewer account (register at /goshen, comp with promo code)
+   → email+password into Sign in details → unlocks Target audience
+   (answer 13+) → unlocks Data safety final submit.
+2. Phone screenshots (min 2) → into main store listing.
+3. Publishing overview → send everything for review → review clears
+   → ANNOUNCE the open beta.
+
 ## Open items
 - assetlinks.json second fingerprint (gated on first AAB upload).
 - Screenshots for the listing (can land after internal testing).
