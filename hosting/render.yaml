@@ -243,6 +243,14 @@ services:
         source: /*
         destination: /index.html
     headers:
+      # S209 — the apple-app-site-association file has NO extension, so
+      # the static server can't infer its MIME type. Apple's CDN
+      # requires the association file to come back as JSON; this header
+      # pins it. (assetlinks.json doesn't need this — the .json
+      # extension already maps correctly.)
+      - path: /.well-known/apple-app-site-association
+        name: Content-Type
+        value: application/json
       # Defensive baseline. Vite's bundler hashes assets so far-future
       # caching is safe on /assets/*; everything else gets short TTL so
       # voice-gated copy updates ship fast.

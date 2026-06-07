@@ -3172,6 +3172,28 @@ function Reader() {
               {hideCommentary ? "Show study aids" : "Hide study aids"}
             </button>
             {/*
+              S205 — The Kingdom toggle (working title: Blue Pill).
+              The TWO-TONE register: metallic emerald + metallic gold
+              joined in one pill — the two sticks of Ezekiel 37:15-22
+              made one in his hand ("uniting the old and new
+              testament" — Yoshi). Hard seam, blend border. ON marks
+              every member verse with the two-tone quote pair; tap to
+              unfold the come-and-see card. FREE for every partner —
+              the proclamation surface; no tier chip, ever. No dot
+              glyph (Yoshi, S205 proof). S209: moved ABOVE the Witness
+              (Yoshi) — the Witness style row renders beneath the
+              Witness pill, so the Witness sits last in the stack.
+            */}
+            <button
+              type="button"
+              onClick={toggleKingdom}
+              aria-pressed={kingdomOn}
+              title="The Kingdom — nothing in the new testament is new. Marks every teaching, act, and promise beside the scripture it was taught from. Tap a marked verse to see both sides quoted in full."
+              className="chrome-metal chrome-metal-kingdom !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
+            >
+              {kingdomOn ? "Hide the Kingdom" : "Show the Kingdom"}
+            </button>
+            {/*
               S204 — The Witness toggle (working title: Red Pill), the
               ninth metallic register (dedicated witness red — proof
               Option B, Yoshi sign-off). The inverted red-letter
@@ -3192,26 +3214,6 @@ function Reader() {
               className="chrome-metal chrome-metal-witness !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
             >
               {witnessOn ? "Hide the Witness" : "Show the Witness"}
-            </button>
-            {/*
-              S205 — The Kingdom toggle (working title: Blue Pill).
-              The TWO-TONE register: metallic emerald + metallic gold
-              joined in one pill — the two sticks of Ezekiel 37:15-22
-              made one in his hand ("uniting the old and new
-              testament" — Yoshi). Hard seam, blend border. ON marks
-              every member verse with the two-tone quote pair; tap to
-              unfold the come-and-see card. FREE for every partner —
-              the proclamation surface; no tier chip, ever. No dot
-              glyph (Yoshi, S205 proof).
-            */}
-            <button
-              type="button"
-              onClick={toggleKingdom}
-              aria-pressed={kingdomOn}
-              title="The Kingdom — nothing in the new testament is new. Marks every teaching, act, and promise beside the scripture it was taught from. Tap a marked verse to see both sides quoted in full."
-              className="chrome-metal chrome-metal-kingdom !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
-            >
-              {kingdomOn ? "Hide the Kingdom" : "Show the Kingdom"}
             </button>
           </div>
 
