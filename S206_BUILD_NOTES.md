@@ -167,6 +167,42 @@ BLOCKED ON YOSHI (the last three):
 3. Publishing overview → send everything for review → review clears
    → ANNOUNCE the open beta.
 
+## The clipping bug (S206 late-session — diagnosis transcribed)
+Yoshi caught app surfaces clipped off the right edge on his phone
+(Strong's card, verse action sheet, highlight picker, My Study —
+scripture column unaffected). Diagnosis sequence, locked:
+- Site reflows clean at narrow widths (354px iframe probe: zero
+  overflow, reader AND /strongs route). Chrome-on-phone perfect.
+- Viewport diagnostic badge (TEMP, app/index.html, native-shell-only,
+  REMOVE NEXT SESSION) read iw344 sw345 dpr2.63 vvw344 vvs1.00
+  doc344 — layout fits exactly; no viewport mismatch.
+- Mechanism: Android applies system font-scale as WebView textZoom;
+  text grows inside unchanged boxes and unbreakable runs (Greek
+  pronunciation lines, button rows) push past the right edge. Panels
+  suffer, scripture column doesn't. Yoshi's insight confirmed: it
+  likely ALWAYS clipped on his font-scale setting; S205 walks
+  exercised the reader, not the panels.
+- FIX (built, NOT yet verified on-device): MainActivity.java pins
+  WebSettings.setTextZoom(100) — reader's own font controls remain
+  the sizing mechanism, matching iOS. versionCode 12 / 1.1.1 built
+  (bundle + apk, BUILD SUCCESSFUL 22:0x).
+- Delivery to phone FAILED three ways: phone still on 1.0.9 (his
+  uninstall/reinstall pulled the stale public APK); AirDrop n/a
+  (Android); git push of the apk REJECTED by GitHub (119.94 MB >
+  100 MB hard cap) — commit was soft-reset and re-made code-only;
+  gh CLI not installed on the Mac.
+- NEXT: publish GitHub Release v1.1.1 via WEB UI with the apk
+  renamed remnant-bible.apk (the site's Android button points at
+  releases/latest/download/remnant-bible.apk). Install from there,
+  verify 1.1.1 + panels fixed, THEN swap bundle 11 → 12 in the
+  open-testing draft.
+- VERIFY at S207 open: git log — confirm the code-only commit
+  ("S206: WebView text zoom pin, versionCode 12...") exists and
+  pushed cleanly with NO apk in it; if not, redo reset/commit/push.
+- Stale public APK: app/public/download/remnant-bible-v1.0.0.apk
+  (v10) is what re-installs serve — replace the public channel with
+  the GitHub release and consider removing the in-repo apk copies.
+
 ## Open items
 - assetlinks.json second fingerprint (gated on first AAB upload).
 - Screenshots for the listing (can land after internal testing).
