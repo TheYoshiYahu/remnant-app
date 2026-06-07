@@ -47,5 +47,30 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- S206 TEMP viewport diagnostic - native shell only - REMOVE after
+         the WebView clipping bug is diagnosed. Shows layout vs visual
+         viewport numbers so the mismatch mechanism can be identified. -->
+    <script>
+      window.addEventListener("load", function () {
+        try {
+          var cap = window.Capacitor;
+          if (!cap || !cap.isNativePlatform || !cap.isNativePlatform()) return;
+          var vv = window.visualViewport;
+          var el = document.createElement("div");
+          el.style.cssText =
+            "position:fixed;bottom:4px;left:4px;z-index:2147483647;" +
+            "background:#900;color:#fff;font:10px monospace;padding:3px 5px;" +
+            "border-radius:4px;pointer-events:none;max-width:95vw";
+          el.textContent =
+            "iw" + window.innerWidth +
+            " sw" + screen.width +
+            " dpr" + (window.devicePixelRatio || 0).toFixed(2) +
+            " vvw" + (vv ? Math.round(vv.width) : -1) +
+            " vvs" + (vv ? vv.scale.toFixed(2) : -1) +
+            " doc" + document.documentElement.scrollWidth;
+          document.body.appendChild(el);
+        } catch (e) {}
+      });
+    </script>
   </body>
 </html>
