@@ -2306,7 +2306,19 @@ function Reader() {
         >
           <span aria-hidden="true">←</span>
         </button>
-        <label className="flex items-center gap-2 text-sm text-[var(--reader-muted)]">
+        {/* S207 — min-w-0/max-w-full on the label AND the select: a
+            <select>'s intrinsic min-width is its longest option, and the
+            full 157-book library carries titles like "The Prayer of
+            Azariah and the Song of the Three Children" (451px). Without
+            the clamp the picker forces the whole page wider than narrow
+            viewports and every surface clips off the right edge — the
+            S206 "clipping bug", which only reproduced for signed-in
+            partners at paid tiers because the free 66-book canon has no
+            long titles. Clamped, the closed select ellipsizes its label;
+            the opened dropdown is OS-rendered at full width, so nothing
+            is lost. Verified live via 390px iframe probe (516px → 384px
+            doc width) before commit. */}
+        <label className="flex min-w-0 max-w-full items-center gap-2 text-sm text-[var(--reader-muted)]">
           <span>Book</span>
           <select
             value={selectedBookSlug}
@@ -2318,7 +2330,7 @@ function Reader() {
               // last-visible verse against the new book/chapter pair.
               setCurrentVerse(1);
             }}
-            className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-[var(--reader-text)]"
+            className="min-w-0 max-w-full rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-[var(--reader-text)]"
           >
             {Object.entries(booksByCategory).map(([cat, list]) => (
               <optgroup key={cat} label={prettyCategory(cat)}>
