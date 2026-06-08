@@ -3242,50 +3242,13 @@ function Reader() {
             </div>
           )}
 
-          {!hideCommentary && chapterDetail.chapter_intro && (
-            <aside className="mt-4 text-[var(--reader-text)]">
-              {/*
-                S202 — the Commentary body now renders at FULL white
-                (var(--reader-text)), not muted. Per Yoshi's no-greyed-out-
-                whites rule: content stays fully readable, and the botanical
-                divider above (the chapter→apparatus seam) does the work of
-                differentiating commentary from scripture — not a lowered
-                text color. Header recolored techelet #1A6FE5 → spectral
-                blue (var(--reader-accent)); techelet is divine-names-only
-                (S127 §3 lock), chrome headers carry the apparatus accent.
-              */}
-              <h3 className="mb-2 font-sans font-semibold uppercase tracking-wide text-xs text-[var(--reader-accent)]">
-                Commentary
-              </h3>
-              {/*
-                Session 110 Round-1 italic-fix: render chapter_intro through
-                the shared markdown helper so `*italic*` spans render as
-                <em> and `\n\n` paragraph breaks produce real <p> elements.
-                Sacred names are already restored with parentheticals at
-                the seed-data layer and render as plain inline text.
-              */}
-              <div className="space-y-0">
-                {/*
-                  S144 — apply the parentheticals-strip toggle to the
-                  chapter_intro (free-tier commentary) before passing to
-                  renderMarkdownBody. When the toggle is OFF the function
-                  is a no-op; when ON it removes the English-form
-                  parentheticals after restored Sacred Names per
-                  lib/stripParentheticals.ts.
-                */}
-                {renderMarkdownBody(
-                  applyTextPrefs(chapterDetail.chapter_intro)
-                )}
-              </div>
-            </aside>
-          )}
-
           {/*
             S202 — the tiered Basic / Deeper-Dive commentary stack
             (ChapterCommentary) is no longer rendered. Per Yoshi: "take away
             all the deeper dives and just have the commentary." The reader now
-            shows only the single free Commentary (chapter_intro) above, with
-            the botanical seam differentiating it from scripture. The
+            shows only the single free Commentary (chapter_intro) — and as of
+            S210 it renders LAST in the chapter-end stack, after the
+            cross-reference, Witness, and Kingdom cards (Yoshi's ordering). The
             ChapterCommentary component + its matt-N-short.md / matt-N.md
             sources are left in the tree (data untouched) so the stack can be
             restored if the tiered-commentary surface is wanted again.
@@ -3344,6 +3307,44 @@ function Reader() {
               hideParentheticals={hideParentheticals}
               sacredNameMask={sacredNameMask}
             />
+          )}
+
+          {!hideCommentary && chapterDetail.chapter_intro && (
+            <aside className="mt-4 text-[var(--reader-text)]">
+              {/*
+                S202 — the Commentary body now renders at FULL white
+                (var(--reader-text)), not muted. Per Yoshi's no-greyed-out-
+                whites rule: content stays fully readable, and the botanical
+                divider above (the chapter→apparatus seam) does the work of
+                differentiating commentary from scripture — not a lowered
+                text color. Header recolored techelet #1A6FE5 → spectral
+                blue (var(--reader-accent)); techelet is divine-names-only
+                (S127 §3 lock), chrome headers carry the apparatus accent.
+              */}
+              <h3 className="mb-2 font-sans font-semibold uppercase tracking-wide text-xs text-[var(--reader-accent)]">
+                Commentary
+              </h3>
+              {/*
+                Session 110 Round-1 italic-fix: render chapter_intro through
+                the shared markdown helper so `*italic*` spans render as
+                <em> and `\n\n` paragraph breaks produce real <p> elements.
+                Sacred names are already restored with parentheticals at
+                the seed-data layer and render as plain inline text.
+              */}
+              <div className="space-y-0">
+                {/*
+                  S144 — apply the parentheticals-strip toggle to the
+                  chapter_intro (free-tier commentary) before passing to
+                  renderMarkdownBody. When the toggle is OFF the function
+                  is a no-op; when ON it removes the English-form
+                  parentheticals after restored Sacred Names per
+                  lib/stripParentheticals.ts.
+                */}
+                {renderMarkdownBody(
+                  applyTextPrefs(chapterDetail.chapter_intro)
+                )}
+              </div>
+            </aside>
           )}
 
           {/*

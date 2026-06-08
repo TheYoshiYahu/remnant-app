@@ -7,7 +7,7 @@
   "books": [
     {
       "book_id": "1-esdras",
-      "book_title": "1 Esdras",
+      "book_title": "3 Ezra (also called 1 Esdras)",
       "chapters": [
         {
           "number": 0,
@@ -2770,7 +2770,7 @@
     },
     {
       "book_id": "2-esdras",
-      "book_title": "2 Esdras",
+      "book_title": "4 Ezra (also called 2 Esdras)",
       "chapters": [
         {
           "number": 0,
