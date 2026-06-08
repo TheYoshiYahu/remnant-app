@@ -3009,16 +3009,81 @@ function Reader() {
           <ReaderDivider variant="botanical" />
 
           {/*
-            S130 — single global study-aid toggle. One colored button,
-            two states: hide everything but the verses, or show the
-            full study Bible (chapter_intro + commentary stack +
-            chapter-end cross-reference card). Per Yoshi: "you either
-            want the extras or just the scripture, thats it thats
-            simple." The toggle replaces the muted-text version that
-            previously lived inside ChapterCommentary and only gated
-            the Basic/Deeper-Dive blocks. Now it gates all three
-            study-aid surfaces in one motion. Techelet fill so the
-            button reads clearly against the dark surface.
+            S202 — the tiered Basic / Deeper-Dive commentary stack
+            (ChapterCommentary) is no longer rendered. Per Yoshi: "take away
+            all the deeper dives and just have the commentary." The reader now
+            shows only the single free Commentary (chapter_intro) — and as of
+            S210 it renders LAST in the chapter-end stack, after the
+            cross-reference, Witness, and Kingdom cards (Yoshi's ordering). The
+            ChapterCommentary component + its matt-N-short.md / matt-N.md
+            sources are left in the tree (data untouched) so the stack can be
+            restored if the tiered-commentary surface is wanted again.
+          */}
+
+          {/*
+            Session 74 — chapter-end cross-reference card. Renders the
+            per-verse curated cross-references plus the framework-
+            diagnostic threads per api/CHAPTER_END_CARD_CONTRACT.md.
+            Every row is curated and framework-bearing; the TSK
+            comprehensive-baseline direction rolled back at S75. The
+            card hides itself silently when both lists come back empty.
+            S130: also gated by the App-level scripture-only toggle.
+          */}
+          {!hideCommentary && (
+            <ChapterEndCard
+              bookSlug={chapterDetail.book.slug}
+              chapterNumber={chapterDetail.chapter.chapter_number}
+              userTier={me?.tier ?? "free"}
+              onNavigate={jumpToVerseRef}
+              hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
+            />
+          )}
+
+          {/*
+            S204b — the Witness chapter-end card: every pairing in this
+            chapter listed cross-reference style (marked verse ↔ Tanakh
+            anchors), each opening the full come-and-see card inline.
+            Rides the Witness toggle (its own surface, not gated by
+            hideCommentary — the proclamation stands even when the
+            study aids are folded away).
+          */}
+          {witnessOn && (
+            <WitnessEndCard
+              entries={Object.values(witnessByVerse).sort(
+                (a, b) => a.verse_number - b.verse_number
+              )}
+              hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
+            />
+          )}
+
+          {/*
+            S205 — the Kingdom chapter-end card: every pairing in this
+            chapter listed cross-reference style (marked verse ↔ its
+            source scriptures), each opening the full come-and-see card
+            inline. Rides the Kingdom toggle, NOT hideCommentary — the
+            proclamation stands when study aids fold.
+          */}
+          {kingdomOn && (
+            <KingdomEndCard
+              entries={Object.values(kingdomByVerse).sort(
+                (a, b) => a.verse_number - b.verse_number
+              )}
+              hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
+            />
+          )}
+
+          {/*
+            S130 — single global study-aid toggle (the verse-pills strip).
+            S211 (Yoshi): moved BELOW the cross-reference / Witness / Kingdom
+            cards so the order reads xref → Witness → Kingdom → pills →
+            commentary — "the scriptures do most of the talking without saying
+            anything." The strip carries the six toggles (English helpers,
+            Strong's, Interlinear, Study Aids, Kingdom, Witness); Study Aids
+            (hideCommentary) gates the chapter_intro + commentary +
+            cross-reference card in one motion.
           */}
           <div className="mt-8 flex flex-wrap items-center justify-end gap-2 border-t border-[var(--reader-rule)] pt-4">
             {/*
@@ -3240,73 +3305,6 @@ function Reader() {
                 </button>
               ))}
             </div>
-          )}
-
-          {/*
-            S202 — the tiered Basic / Deeper-Dive commentary stack
-            (ChapterCommentary) is no longer rendered. Per Yoshi: "take away
-            all the deeper dives and just have the commentary." The reader now
-            shows only the single free Commentary (chapter_intro) — and as of
-            S210 it renders LAST in the chapter-end stack, after the
-            cross-reference, Witness, and Kingdom cards (Yoshi's ordering). The
-            ChapterCommentary component + its matt-N-short.md / matt-N.md
-            sources are left in the tree (data untouched) so the stack can be
-            restored if the tiered-commentary surface is wanted again.
-          */}
-
-          {/*
-            Session 74 — chapter-end cross-reference card. Renders the
-            per-verse curated cross-references plus the framework-
-            diagnostic threads per api/CHAPTER_END_CARD_CONTRACT.md.
-            Every row is curated and framework-bearing; the TSK
-            comprehensive-baseline direction rolled back at S75. The
-            card hides itself silently when both lists come back empty.
-            S130: also gated by the App-level scripture-only toggle.
-          */}
-          {!hideCommentary && (
-            <ChapterEndCard
-              bookSlug={chapterDetail.book.slug}
-              chapterNumber={chapterDetail.chapter.chapter_number}
-              userTier={me?.tier ?? "free"}
-              onNavigate={jumpToVerseRef}
-              hideParentheticals={hideParentheticals}
-              sacredNameMask={sacredNameMask}
-            />
-          )}
-
-          {/*
-            S204b — the Witness chapter-end card: every pairing in this
-            chapter listed cross-reference style (marked verse ↔ Tanakh
-            anchors), each opening the full come-and-see card inline.
-            Rides the Witness toggle (its own surface, not gated by
-            hideCommentary — the proclamation stands even when the
-            study aids are folded away).
-          */}
-          {witnessOn && (
-            <WitnessEndCard
-              entries={Object.values(witnessByVerse).sort(
-                (a, b) => a.verse_number - b.verse_number
-              )}
-              hideParentheticals={hideParentheticals}
-              sacredNameMask={sacredNameMask}
-            />
-          )}
-
-          {/*
-            S205 — the Kingdom chapter-end card: every pairing in this
-            chapter listed cross-reference style (marked verse ↔ its
-            source scriptures), each opening the full come-and-see card
-            inline. Rides the Kingdom toggle, NOT hideCommentary — the
-            proclamation stands when study aids fold.
-          */}
-          {kingdomOn && (
-            <KingdomEndCard
-              entries={Object.values(kingdomByVerse).sort(
-                (a, b) => a.verse_number - b.verse_number
-              )}
-              hideParentheticals={hideParentheticals}
-              sacredNameMask={sacredNameMask}
-            />
           )}
 
           {!hideCommentary && chapterDetail.chapter_intro && (
