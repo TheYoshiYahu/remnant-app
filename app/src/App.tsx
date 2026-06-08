@@ -44,6 +44,7 @@ import WitnessCard from "./components/WitnessCard";
 import WitnessEndCard from "./components/WitnessEndCard";
 import KingdomCard from "./components/KingdomCard";
 import KingdomEndCard from "./components/KingdomEndCard";
+import ArrangedReading from "./components/ArrangedReading";
 import HighlightPicker, {
   markClassFor,
   markCssVarsFor,
@@ -448,6 +449,8 @@ function Reader() {
 
   const [selectedBookSlug, setSelectedBookSlug] = useState<string>("genesis");
   const [selectedChapter, setSelectedChapter] = useState<number>(1);
+  // S211 — Arranged Reading overlay (chronological apparatus) open state.
+  const [arrangedOpen, setArrangedOpen] = useState<boolean>(false);
 
   // S130 — single global toggle: scripture-only ↔ full study Bible.
   // Hides chapter_intro, the Basic/Deeper-Dive commentary stack, AND
@@ -2386,7 +2389,31 @@ function Reader() {
         >
           <span aria-hidden="true">→</span>
         </button>
+        {/* S211 — Arranged Reading toggle: opens the chronological
+            event-order sequence overlay. Separate from the canonical
+            picker; does not change book order. */}
+        <button
+          type="button"
+          onClick={() => setArrangedOpen((v) => !v)}
+          aria-pressed={arrangedOpen}
+          title="Arranged reading — read the whole library in chronological, event order. A separate sequence; it does not change the book order."
+          className="rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-3 py-1.5 text-sm font-medium text-[var(--reader-accent)] hover:opacity-90"
+        >
+          {arrangedOpen ? "Hide arranged" : "Arranged reading"}
+        </button>
       </div>
+
+      {arrangedOpen && (
+        <ArrangedReading
+          currentSlug={selectedBookSlug}
+          currentChapter={selectedChapter}
+          onNavigate={(slug, ch) => {
+            setSelectedBookSlug(slug);
+            setSelectedChapter(ch);
+            setCurrentVerse(1);
+          }}
+        />
+      )}
 
       {chapterError && (
         <div className="mb-4 rounded border border-red-300 bg-red-50 p-3 text-sm text-red-800">
