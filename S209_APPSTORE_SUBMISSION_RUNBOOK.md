@@ -17,14 +17,16 @@ Use info@remnantofpromise.org (keeps the imprint architecture clean —
 Remnant of Promise owns the store accounts). Enable two-factor
 authentication — enrollment requires it. appleid.apple.com.
 
-### A2. D-U-N-S number (start this FIRST — it's the long pole)
-Organization enrollment requires a D-U-N-S number registered to the
-nonprofit's exact legal name + current address.
-- Check whether Remnant of Promise already has one (many 501(c)(3)s
-  do): https://developer.apple.com/enroll/duns-lookup/
-- If not, request via that same tool — free, ~5 business days, and
-  Apple may make you wait up to 7 more days before using it.
-- Name/address must match your IRS records exactly.
+### A2. D-U-N-S number — FOUND (S209): 145570661
+The nonprofit already has a D-U-N-S, registered with Dun & Bradstreet
+and verified through the Play Console org setup (visible at Play
+Console → Developer account → Account details → Organization details):
+- **D-U-N-S: 145570661**
+- Organization name: **Remnant of Promise**
+- Address: **393 County Road 3987, Winnsboro, TX 75494-5862, US**
+Use the name + address EXACTLY as above in Apple enrollment — that is
+what D&B has on file. No D-U-N-S wait applies; enrollment can proceed
+immediately.
 
 ### A3. Enroll as ORGANIZATION — DECISION MADE (S208): pay the 99 USD now
 Yoshi confirmed: state-incorporated nonprofit + EIN, but NO IRS
@@ -119,6 +121,81 @@ partner page shows tiers, no prices/Subscribe.
    Play. No reader entitlement needed if nothing is sold in-app.
 
 ## S209 session log (running)
+- DECISION (Yoshi, S209): enrolling with his PERSONAL Apple ID as the
+  Account Holder, not a new info@remnantofpromise.org Apple Account
+  (org-email account creation kept failing at the identity step; "I'm
+  taking my chances"). Enrollment type is still ORGANIZATION — that's
+  the unbendable line; seller name comes from the D-U-N-S/legal
+  entity, and Apple support can transfer the Account Holder role on
+  org memberships later if it ever needs to move to the org email.
+- Mac web enrollment ID-verification (driver's license camera) failed
+  ~10 attempts; no upload option exists. Path switched to the Apple
+  Developer app on iPhone (native camera ID capture; same Apple ID;
+  complete the entire enrollment on the same device).
+- D-U-N-S found: 145570661 (see A2) — pulled from Play Console org
+  details, so the D-U-N-S long-pole is gone.
+- ENROLLMENT STATE AT S209 CLOSE — BLOCKED on the personal Apple ID:
+  - iPhone app enrollment got through ID verification (DL scan
+    passed) and the full org form, then a form glitch ("Complete the
+    following fields: legalContact,lgEmail" with every visible field
+    green-checked) → retype attempt → email re-verification tripped a
+    LOCKOUT on the personal Apple ID. Support message sent (response
+    quoted as a few days).
+  - Mac web enrollment ID capture eventually PASSED (trick: flashlight
+    on the license to balance glare) but the account-level block still
+    stops the flow past verification.
+  - Enrollment form answers (all entered, for fast re-entry):
+    org enrollment, D-U-N-S 145570661, Remnant of Promise,
+    393 County Road 3987 Winnsboro TX 75494-5862, website
+    remnantofpromise.org, org phone +1 430 260 9988, Tax ID/EIN
+    421878892, work email info@remnantofpromise.org (verified),
+    Signing Authority = yes (Account Holder), verification contact =
+    Edith Pack, Secretary, christywpack2019@gmail.com,
+    +1 864 494 2319. Fee waiver OFF. Cost shown $98.99/yr.
+  - ESCALATION (late S209): option (c) was attempted same-night — a
+    fresh Apple Account WAS created on info@remnantofpromise.org
+    (confirmed beforehand it was not attached to the personal Apple
+    ID) and it got LOCKED immediately too. Apple's fraud system
+    evidently linked the accounts (same device + same 2FA phone
+    number + multiple verification runs in one evening). BOTH
+    accounts locked at S209 close. DO NOT retry the same night ever
+    again — each attempt deepens the auto-lock.
+  - NEXT-SESSION UNLOCK PATH (in order): (a) iforgot.apple.com for
+    each account — with the verified phone the unlock can clear fast
+    after the cooldown; (b) Apple Developer Support phone, Mon-Fri,
+    1-800-633-2152 — one call can clear the locks AND walk the org
+    enrollment; reference the support case already filed from the
+    iPhone app. (c) Only after an account is unlocked: enroll on the
+    iPhone app (camera passed DL first try; flashlight trick for
+    glare), complete entire enrollment on that one device.
+  - Verification-contact guidance (locked): a real second person at
+    the org (TX nonprofits have ≥3 directors on the articles); wife
+    serving in the ministry qualifies; never list an email that
+    resolves back to the enrolling person.
+- Track B remaining at close: Xcode simulator build (⌘B on an iPhone
+  Simulator destination) not yet confirmed. Shell scaffolded, icons +
+  splash generated (87 android / 10 ios / 7 pwa assets), project
+  opens in Xcode, iOS 26.5 SDK installed.
+- S209 push landed (ed2b609..475ff35): assetlinks 2nd fingerprint,
+  AASA + render.yaml MIME rule, Kingdom-above-Witness, Apple
+  screenshots, this runbook. Render auto-deploy fired.
+- Play: notification "App update published" — OPEN TESTING live to
+  anyone via opt-in link.
+- PRODUCTION SUBMITTED (late S209, Yoshi's explicit call — skipped
+  the S206 §10 walk-first plan): production release created from
+  bundle 12 (1.1.1) via Add-from-library, release notes "First
+  public release. The complete 66-book canon with the sacred names
+  restored — free, no ads, no tracking.", countries = all 177,
+  SENT FOR REVIEW (3 changes: production release + full rollout +
+  countries). Managed publishing OFF → publishes automatically on
+  approval → app becomes publicly searchable on Play. Only release
+  warning was the benign missing-deobfuscation-file one.
+- NOTE for next session: the OPEN TESTING track showed "This track
+  is paused / Inactive" at S209 close — investigate after the
+  production verdict (likely irrelevant once production is live).
+- S206 §10 on-device walk: still worth doing immediately after
+  production publishes (or now from the open-testing install) —
+  pricing surface in shell, deep link, native share, cold launch.
 - PLAY REVIEW: **APPROVED + PUBLISHED** (Console notification Jun 7:
   "App update published"). All 11 S208 changes live; open testing
   release 12 (1.1.1) published; Publishing overview queue empty.

@@ -66,3 +66,43 @@ means a back-fill can re-run safely over the already-merged canon rows.
 - **2026-06-03 (S194):** Regression identified and rule hard-wired. Guard added and verified —
   PASSes all 28 Matthew migrations, FAILs the 8 canon-only migrations above. Back-fill not yet
   started.
+- **2026-06-08 (S212):** Gospels extras parity (step 1) LANDED for **Mark, Luke, John** — authored as
+  *new* FULL-LIBRARY migrations alongside the canon-only baselines (not rewrites of them):
+  `session212_mark_extras_cross_references.sql`, `session212_luke_extras_cross_references.sql`,
+  `session212_john_extras_cross_references.sql`. 59 threads / 205 cross-ref rows / 202 members; all
+  PASS the guard (S212 glob added to `_xref_audit.py`). The original canon-only S181/S183/S185/S194
+  Gospel baselines still appear in the CANON-ONLY table above — they are not deleted; the extras
+  parity now lives in the companion S212 files. Verified clean (`scratch_xref/verify_fidelity.py`
+  202/202; `verify_offset.py` clean). Still PENDING apply from Yoshi's Mac Terminal.
+- **2026-06-08 (S212) — DECIDED, NEXT SESSION:** **Re-parse `pseudepigrapha-charles-vol2`
+  (Testaments XII / 2 Baruch).** The source parse is OCR-degraded (verse boundaries split
+  mid-sentence; scanning artifacts interleaved into verse text). S212 used Testaments XII only in
+  John 13-17 with every row hand-verified against the parse (one fabricated quote corrected); the
+  minions routed around 2 Baruch entirely. Yoshi's call: fix the parse next session, then
+  re-verify the S212 John 13-17 Testaments XII rows and open the deferred 2 Baruch xref adds.
+  Quantify degradation extent as step 1. (Full detail in `SESSION212_CLOSE.md`.)
+- **2026-06-08 (S212) — DECIDED, NEXT SESSION (sequence AFTER the re-parse):** **John canon
+  (Tanakh + NT) cross-reference pass.** Yoshi observed in the reader that John now surfaces only
+  the extra-canonical (library) cross-references from S212 — the canonical Tanakh + New Testament
+  pairings are NOT rendering. The canon John threads exist as migrations (S181 `session181_john_
+  xref_threads.sql`, S194 `session194_john_2_7_9_16_xref_threads.sql`) but aren't showing — so
+  step 1 is to diagnose (applied to DB? tier-gated? slug/anchor mismatch with the chapter-end-card
+  query?), then ensure full canon coverage across all 21 John chapters: Tanakh sources AND
+  NT-to-NT pairings, same Come-and-See + Red Lines standard.
+- **2026-06-08 (S214) — DIAGNOSED + RE-VERIFIED (heavy builds scoped behind a verification gate):**
+  - *charles-vol2 re-parse:* degradation quantified (it's the OCR source, not the parser — Charles's
+    footnote apparatus is interleaved into verses because extraction used coordinate-blind pypdf;
+    Testaments XII ~24% verses missing/fused, 2 Baruch ~40%). Faithful fix proven: layout-aware
+    pdfplumber re-extraction from `~/Downloads/charles-1913-vol2.pdf` drops the footnote block by
+    font-size + page position, same Charles translation/versification. **S212 John 13–17 Testaments
+    XII rows re-verified against the clean text — all 7 quotes verbatim-present, no fabrications, the
+    S212 Gad 62:2 fix held;** one verse-boundary nuance flagged (Judah 35:4 vs 35:5 for *written down
+    before the Lord*). Production JSON NOT yet swapped — held behind a CCEL cross-check gate. See
+    `S214_CHARLES_VOL2_DEGRADATION_REPORT.md`, `S214_S212_JOHN_TESTAMENTS_XII_REVERIFY.md`.
+  - *John canon render:* root cause = **(a) canon migrations not in the live DB**, NOT tier/slug. The
+    card query keys only on `chapter_id` (no edition/tier filter, S136), so applied rows render at any
+    tier — that's why S212 extras show and the identical S181/S194 canon rows don't. S181+S194 cover
+    all 21 chapters (~265 rows) and are correct; **apply them from the Mac** to fix the symptom.
+    Authoring gap: targets are 238 Tanakh vs 27 NT — NT-to-NT pairings still need a new FULL-LIBRARY
+    `john_nt_to_nt` migration (minions per chapter-range). See `S214_JOHN_CANON_XREF_DIAGNOSIS.md`,
+    `S214_SESSION_CLOSE.md`.

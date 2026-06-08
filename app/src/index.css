@@ -722,6 +722,47 @@ body {
   color: var(--pill-kingdom-quote-nt);
 }
 
+/* S214 — the Kingdom "underline" treatment: the two-tone emerald→gold
+ * register drawn as a gradient underline beneath the member verse, the
+ * alternative to the bracketing two-tone quote glyphs. The two sticks of
+ * Ezekiel 37 made one, carried under the verse instead of around it. */
+.kingdom-verse-underline {
+  background-image: linear-gradient(
+    to right,
+    var(--pill-kingdom-quote-tanakh) 0%,
+    var(--pill-kingdom-quote-nt) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: left 100%;
+  background-size: 100% 2px;
+  padding-bottom: 1px;
+  cursor: pointer;
+}
+
+/* S214 — the Kingdom style chips (quotes / underline), mirroring the
+ * witness-style-chip chassis with the two-tone Kingdom register. */
+.kingdom-style-chip {
+  border: 1px solid var(--reader-rule);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--reader-muted);
+  background: transparent;
+  cursor: pointer;
+}
+.kingdom-style-chip[aria-pressed="true"] {
+  border-color: var(--pill-kingdom-quote-tanakh);
+  color: var(--pill-kingdom-quote-tanakh);
+  background: color-mix(
+    in srgb,
+    var(--pill-kingdom-quote-tanakh) 12%,
+    transparent
+  );
+}
+
 /* The Kingdom card — same .pill-card chassis as the Witness (solid
  * reader surface inside per the S204c lock; register lives in border +
  * eyebrow only). Border: the emerald→gold blend, 3px left edge. */

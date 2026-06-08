@@ -220,6 +220,17 @@ const WITNESS_STYLE_LABELS: Record<WitnessStyle, string> = {
   capsule: "Capsule",
 };
 
+// S214 — the partner-choosable Kingdom verse treatments. "quotes" is the
+// original S205 two-tone quote pair (emerald outside, gold inside);
+// "underline" draws the same two-tone register as a gradient underline
+// beneath the member verse instead of the bracketing glyphs.
+type KingdomStyle = "quotes" | "underline";
+
+const KINGDOM_STYLE_LABELS: Record<KingdomStyle, string> = {
+  quotes: "Two-tone quotes",
+  underline: "Two-tone underline",
+};
+
 /**
  * Session 13 minimum-useful checkpoint:
  *   reader-on-localhost-5173 against the live API at bible.remnantofpromise.org,
@@ -544,6 +555,23 @@ function Reader() {
     setExpandedKingdomVerseId(null);
     if (typeof window !== "undefined") {
       window.localStorage.setItem("rop_kingdom_v1", String(next));
+    }
+  };
+  // S214 — the partner-chosen Kingdom verse treatment ("quotes or
+  // underline" — Yoshi). Default "quotes": the original S205 two-tone
+  // quote pair. Persists per device at rop_kingdom_style_v1.
+  const [kingdomStyle, setKingdomStyle] = useState<KingdomStyle>("quotes");
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const stored = window.localStorage.getItem("rop_kingdom_style_v1");
+    if (stored === "quotes" || stored === "underline") {
+      setKingdomStyle(stored);
+    }
+  }, []);
+  const pickKingdomStyle = (s: KingdomStyle) => {
+    setKingdomStyle(s);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("rop_kingdom_style_v1", s);
     }
   };
   const [kingdomByVerse, setKingdomByVerse] = useState<
@@ -2650,7 +2678,7 @@ function Reader() {
                             {"“"}
                           </span>
                         )}
-                        {kingdomEntry && (
+                        {kingdomEntry && kingdomStyle === "quotes" && (
                           <span
                             role="button"
                             aria-label={`The Kingdom: ${kingdomEntry.card_title}. Tap to unfold.`}
@@ -2847,7 +2875,7 @@ function Reader() {
                             {"” "}
                           </span>
                         )}
-                        {kingdomEntry && (
+                        {kingdomEntry && kingdomStyle === "quotes" && (
                           <span
                             role="button"
                             aria-label={`The Kingdom: ${kingdomEntry.card_title}. Tap to unfold.`}
@@ -2893,6 +2921,22 @@ function Reader() {
                         <span
                           className="witness-verse-fill"
                           title={witnessEntry.card_title}
+                        >
+                          {content}
+                        </span>
+                      );
+                    }
+                    // S214 — Kingdom "underline" treatment: the two-tone
+                    // emerald→gold register drawn as a gradient underline
+                    // beneath the member verse (the alternative to the
+                    // bracketing two-tone quote glyphs). Opens the Kingdom
+                    // card on a plain verse tap, same as the witness
+                    // text/highlight treatments.
+                    if (kingdomEntry && kingdomStyle === "underline") {
+                      content = (
+                        <span
+                          className="kingdom-verse-underline"
+                          title={kingdomEntry.card_title}
                         >
                           {content}
                         </span>
@@ -3039,75 +3083,21 @@ function Reader() {
             S202 — the tiered Basic / Deeper-Dive commentary stack
             (ChapterCommentary) is no longer rendered. Per Yoshi: "take away
             all the deeper dives and just have the commentary." The reader now
-            shows only the single free Commentary (chapter_intro) — and as of
-            S210 it renders LAST in the chapter-end stack, after the
-            cross-reference, Witness, and Kingdom cards (Yoshi's ordering). The
-            ChapterCommentary component + its matt-N-short.md / matt-N.md
-            sources are left in the tree (data untouched) so the stack can be
-            restored if the tiered-commentary surface is wanted again.
+            shows only the single free Commentary (chapter_intro).
+            S214 ordering (Yoshi): below the floral break the chapter-end stack
+            reads pills → Kingdom end card → Witness end card → Commentary →
+            cross-reference end card. The ChapterCommentary component + its
+            matt-N-short.md / matt-N.md sources are left in the tree (data
+            untouched) so the tiered stack can be restored if wanted again.
           */}
-
-          {/*
-            Session 74 — chapter-end cross-reference card. Renders the
-            per-verse curated cross-references plus the framework-
-            diagnostic threads per api/CHAPTER_END_CARD_CONTRACT.md.
-            Every row is curated and framework-bearing; the TSK
-            comprehensive-baseline direction rolled back at S75. The
-            card hides itself silently when both lists come back empty.
-            S130: also gated by the App-level scripture-only toggle.
-          */}
-          {!hideCommentary && (
-            <ChapterEndCard
-              bookSlug={chapterDetail.book.slug}
-              chapterNumber={chapterDetail.chapter.chapter_number}
-              userTier={me?.tier ?? "free"}
-              onNavigate={jumpToVerseRef}
-              hideParentheticals={hideParentheticals}
-              sacredNameMask={sacredNameMask}
-            />
-          )}
-
-          {/*
-            S204b — the Witness chapter-end card: every pairing in this
-            chapter listed cross-reference style (marked verse ↔ Tanakh
-            anchors), each opening the full come-and-see card inline.
-            Rides the Witness toggle (its own surface, not gated by
-            hideCommentary — the proclamation stands even when the
-            study aids are folded away).
-          */}
-          {witnessOn && (
-            <WitnessEndCard
-              entries={Object.values(witnessByVerse).sort(
-                (a, b) => a.verse_number - b.verse_number
-              )}
-              hideParentheticals={hideParentheticals}
-              sacredNameMask={sacredNameMask}
-            />
-          )}
-
-          {/*
-            S205 — the Kingdom chapter-end card: every pairing in this
-            chapter listed cross-reference style (marked verse ↔ its
-            source scriptures), each opening the full come-and-see card
-            inline. Rides the Kingdom toggle, NOT hideCommentary — the
-            proclamation stands when study aids fold.
-          */}
-          {kingdomOn && (
-            <KingdomEndCard
-              entries={Object.values(kingdomByVerse).sort(
-                (a, b) => a.verse_number - b.verse_number
-              )}
-              hideParentheticals={hideParentheticals}
-              sacredNameMask={sacredNameMask}
-            />
-          )}
 
           {/*
             S130 — single global study-aid toggle (the verse-pills strip).
-            S211 (Yoshi): moved BELOW the cross-reference / Witness / Kingdom
-            cards so the order reads xref → Witness → Kingdom → pills →
-            commentary — "the scriptures do most of the talking without saying
-            anything." The strip carries the six toggles (English helpers,
+            S214 (Yoshi): moved to the TOP of the chapter-end stack, directly
+            below the floral break, so the toggles sit above the cards they
+            control. Order: pills → Kingdom card → Witness card → commentary →
+            cross-reference card. The strip carries the six toggles (English
+            helpers,
             Strong's, Interlinear, Study Aids, Kingdom, Witness); Study Aids
             (hideCommentary) gates the chapter_intro + commentary +
             cross-reference card in one motion.
@@ -3280,10 +3270,17 @@ function Reader() {
               type="button"
               onClick={toggleKingdom}
               aria-pressed={kingdomOn}
-              title="The Kingdom — nothing in the new testament is new. Marks every teaching, act, and promise beside the scripture it was taught from. Tap a marked verse to see both sides quoted in full."
+              title="The Prophesied Kingdom Gospel — nothing in the new testament is new. Marks every teaching, act, and promise beside the scripture it was taught from. Tap a marked verse to see both sides quoted in full."
               className="chrome-metal chrome-metal-kingdom !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
             >
-              {kingdomOn ? "Hide the Kingdom" : "Show the Kingdom"}
+              <span className="flex flex-col items-center leading-tight">
+                <span>
+                  {kingdomOn ? "Hide" : "Show"} the Prophesied Kingdom Gospel
+                </span>
+                <span className="mt-0.5 text-[0.6rem] font-normal normal-case tracking-normal opacity-85">
+                  (nothing new in the new testament)
+                </span>
+              </span>
             </button>
             {/*
               S204 — The Witness toggle (working title: Red Pill), the
@@ -3302,12 +3299,36 @@ function Reader() {
               type="button"
               onClick={toggleWitness}
               aria-pressed={witnessOn}
-              title="The Witness — marks every verse where the Messiah claims what the Tanakh gives to Yahuah alone. Tap a marked verse to see both sides quoted in full."
+              title="The Red-Pill Witness — marks every verse where the Messiah claims what the Tanakh gives to Yahuah alone. Tap a marked verse to see both sides quoted in full."
               className="chrome-metal chrome-metal-witness !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
             >
-              {witnessOn ? "Hide the Witness" : "Show the Witness"}
+              {witnessOn
+                ? "Hide the Red-Pill Witness"
+                : "Show the Red-Pill Witness"}
             </button>
           </div>
+
+          {/*
+            S214 — the Kingdom style row (Yoshi: "settings also of quotes
+            or underline"). Visible while the Kingdom is ON. Default
+            "quotes" (the original S205 two-tone quote pair). Persists at
+            rop_kingdom_style_v1.
+          */}
+          {kingdomOn && (
+            <div className="mt-2 flex flex-wrap items-center justify-end gap-1.5 font-sans">
+              {(["quotes", "underline"] as const).map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  className="kingdom-style-chip"
+                  aria-pressed={kingdomStyle === s}
+                  onClick={() => pickKingdomStyle(s)}
+                >
+                  {KINGDOM_STYLE_LABELS[s]}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/*
             S204b — the Witness style row ("red pill options and then
@@ -3332,6 +3353,43 @@ function Reader() {
                 </button>
               ))}
             </div>
+          )}
+
+          {/*
+            S205 — the Kingdom chapter-end card: every pairing in this
+            chapter listed cross-reference style (marked verse ↔ its
+            source scriptures), each opening the full come-and-see card
+            inline. Rides the Kingdom toggle, NOT hideCommentary — the
+            proclamation stands when study aids fold.
+            S214 (Yoshi): sits directly under the pills, above the Witness
+            card, the commentary, and the cross-reference card.
+          */}
+          {kingdomOn && (
+            <KingdomEndCard
+              entries={Object.values(kingdomByVerse).sort(
+                (a, b) => a.verse_number - b.verse_number
+              )}
+              hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
+            />
+          )}
+
+          {/*
+            S204b — the Witness chapter-end card: every pairing in this
+            chapter listed cross-reference style (marked verse ↔ Tanakh
+            anchors), each opening the full come-and-see card inline.
+            Rides the Witness toggle (its own surface, not gated by
+            hideCommentary — the proclamation stands even when the
+            study aids are folded away).
+          */}
+          {witnessOn && (
+            <WitnessEndCard
+              entries={Object.values(witnessByVerse).sort(
+                (a, b) => a.verse_number - b.verse_number
+              )}
+              hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
+            />
           )}
 
           {!hideCommentary && chapterDetail.chapter_intro && (
@@ -3370,6 +3428,28 @@ function Reader() {
                 )}
               </div>
             </aside>
+          )}
+
+          {/*
+            Session 74 — chapter-end cross-reference card. Renders the
+            per-verse curated cross-references plus the framework-
+            diagnostic threads per api/CHAPTER_END_CARD_CONTRACT.md.
+            Every row is curated and framework-bearing; the TSK
+            comprehensive-baseline direction rolled back at S75. The
+            card hides itself silently when both lists come back empty.
+            S130: also gated by the App-level scripture-only toggle.
+            S214 (Yoshi): renders LAST in the chapter-end stack — the
+            "other end card" after the commentary, above the nav arrows.
+          */}
+          {!hideCommentary && (
+            <ChapterEndCard
+              bookSlug={chapterDetail.book.slug}
+              chapterNumber={chapterDetail.chapter.chapter_number}
+              userTier={me?.tier ?? "free"}
+              onNavigate={jumpToVerseRef}
+              hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
+            />
           )}
 
           {/*
