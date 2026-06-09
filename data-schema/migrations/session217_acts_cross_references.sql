@@ -2597,6 +2597,1765 @@ SELECT t.id, x.id, 2, E'Luke 9:5 — *shake off the very dust from your feet for
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_acts_14.sql (S217 Acts 14) -----
+-- =====================================================================
+-- S217 minion — ACTS 14 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Range:  ACTS 14 (single anchor chapter).  Tag: a14 (temp view _s217_a14_lookup).
+-- Sort band: 5600-5612 (5600, 5603, 5606, 5609, 5612; step 3, <= 5624).
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- WATCHPOINTS (Red Lines #7/#11, Christology, son-of-Adam, no sola-fide truncation):
+--  * Lystra healing (8-10): *he leaped and walked* is the sign Isaiah named of Elohim (God)
+--    coming to save — *then shall the lame man leap as an hart* (Isaiah 35:6). The same sign
+--    that opened the gospel at the Beautiful Gate (Acts 3) here opens it in Lycaonia: the
+--    Saviour-who-comes-with-recompence at work through his sent ones, not the power of men
+--    (the crowd's Zeus/Hermes error is the very thing Paul rends his clothes to deny).
+--  * Turn from vanities to the living Elohim (15-17): the creation-testimony is the Tanakh's
+--    own polemic against the idols — *the gods that have not made the heavens and the earth …
+--    shall perish* (Jeremiah 10:11); *which made heaven, and earth* (Psalm 146:6). Wisdom 13
+--    names the Lystrans' exact error: taking the lights of heaven for gods, not knowing the
+--    workmaster. Read as the one living Elohim's witness to all, NOT a graft-the-nations move;
+--    *suffered all nations to walk in their own ways* (v.16) is the times-past condition, the
+--    witness left in rain and fruitful seasons preparing the turning.
+--  * Through much tribulation enter the kingdom (22): tribulation is the road INTO the kingdom,
+--    not abolished by grace (no sola-fide truncation, Red Line #10) — *in the world ye shall
+--    have tribulation* (John 16:33); *all that will live godly … shall suffer persecution*
+--    (2 Timothy 3:12, naming Antioch/Iconium/Lystra by name). The kingdom entered is the
+--    everlasting kingdom given to the saints (Daniel 7:18,27).
+--  * The door of faith (27): *how he had opened the door of faith unto the Gentiles* read as
+--    the gathering of the scattered seed, the tabernacle of David raised again (Amos 9:11), the
+--    captives gathered out of all nations (Tobit 13:5) — NOT false-inclusion of non-seed by
+--    confession; hearing reveals what was already true (Red Lines #7/#11).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 14:
+--   v.1-4   Iconium, the city divided   Tanakh: none warranted  Extras: none warranted  NT: Luke 12:51 weighed (the division the word brings — thematic, carried in narrative, not added)
+--   v.3     word of his grace, signs    Tanakh: none warranted  Extras: none warranted  NT: none added (signs-and-wonders confirmation carried by the Lystra-healing thread)
+--   v.5-7   fled to Lystra, preached    Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.8-10  the cripple healed, leaped  Tanakh: Isaiah 35:6  Extras: none warranted  NT: Acts 3:6, Acts 3:8 (Acts<->Acts, the Beautiful-Gate lame man)
+--   v.11-14 Zeus/Hermes, clothes rent   Tanakh: none added (idol-rebuke carried in v.15 vanities thread)  Extras: none warranted  NT: none warranted (narrative)
+--   v.15    turn from vanities          Tanakh: Jeremiah 10:11, Psalms 146:6  Extras: Wisdom of Solomon 13:1  NT: none warranted
+--   v.16-17 witness in rain/seasons     Tanakh: Psalms 19:1  Extras: none warranted  NT: none warranted
+--   v.18    scarce restrained           Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.19-21 stoned, rose, returned      Tanakh: none added (the suffering carried in v.22 tribulation thread)  Extras: none warranted  NT: 2 Timothy 3:11 (Paul names Lystra's stoning) — placed in v.22 thread where it belongs
+--   v.22    much tribulation -> kingdom Tanakh: Daniel 7:18, Daniel 7:27  Extras: none warranted  NT: John 16:33, 2 Timothy 3:11, 2 Timothy 3:12
+--   v.23-26 elders ordained, returned   Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative; commended to the grace of Elohim, carried thematically)
+--   v.27    door of faith / gathering   Tanakh: Amos 9:11  Extras: Tobit 13:5  NT: none warranted
+--   v.28    abode long time             Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--
+-- THREADS (slug -> target libraries):
+--   5600 acts-14-then-shall-the-lame-man-leap-as-an-hart-the-cripple-at-lystra-healed (Tanakh + NT/Acts<->Acts)
+--   5603 acts-14-turn-from-these-vanities-unto-the-living-god-which-made-heaven-and-earth (Tanakh + extras)
+--   5606 acts-14-he-left-not-himself-without-witness-the-heavens-declare-his-glory (Tanakh)
+--   5609 acts-14-through-much-tribulation-enter-into-the-kingdom-of-god (Tanakh + NT)
+--   5612 acts-14-the-door-of-faith-and-the-tabernacle-of-david-the-gathering (Tanakh + extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-14-then-shall-the-lame-man-leap-as-an-hart-the-cripple-at-lystra-healed
+  ('canon', 'acts', 14, 10, 'canon', 'isaiah', 35, 6, 'free', E'*Then shall the lame man leap as an hart, and the tongue of the dumb sing: for in the wilderness shall waters break out, and streams in the desert.* (Isaiah 35:6). At Lystra Paul sees a man *impotent in his feet, being a cripple from his mother''s womb, who never had walked* (Acts 14:8), and says *with a loud voice, Stand upright on thy feet. And he leaped and walked* (Acts 14:10). This is the very sign Isaiah named of the coming of Elohim (God) to save — *behold, your Elohim (God) will come with vengeance … he will come and save you* (Isaiah 35:4), and then *the lame man leap as an hart.* The leaping feet are the announcement that the Saviour has come.'),
+  ('canon', 'acts', 14, 10, 'canon', 'acts', 3, 6, 'free', E'*Then Peter said, Silver and gold have I none; but such as I have give I thee: In the name of Yahusha HaMashiach (Jesus Christ) of Nazareth rise up and walk.* (Acts 3:6). What opened the gospel at the Beautiful Gate opens it again in Lycaonia: there a man *lame from his mother''s womb* (Acts 3:2) is bidden to *rise up and walk;* here a man *a cripple from his mother''s womb* (Acts 14:8) is told *Stand upright on thy feet. And he leaped and walked* (Acts 14:10). The same word, the same lifting, the same Name working — and Peter''s disclaimer is Paul''s also: not *by our own power or holiness* (Acts 3:12) but the Name of the risen One.'),
+  ('canon', 'acts', 14, 10, 'canon', 'acts', 3, 8, 'free', E'*And he leaping up stood, and walked, and entered with them into the temple, walking, and leaping, and praising Elohim (God).* (Acts 3:8). The lame man at the temple gate *leaping up stood, and walked;* the cripple at Lystra, hearing *Stand upright on thy feet,* likewise *leaped and walked* (Acts 14:10). Twice the leaping feet of Isaiah''s prophecy break out — once in Yerushalayim, once among the Lystrans — the same sign that *the lame man leap as an hart* (Isaiah 35:6), witnessing that Elohim (God) has come to save.'),
+  -- thread: acts-14-turn-from-these-vanities-unto-the-living-god-which-made-heaven-and-earth
+  ('canon', 'acts', 14, 15, 'canon', 'jeremiah', 10, 11, 'free', E'*Thus shall ye say unto them, The gods that have not made the heavens and the earth, even they shall perish from the earth, and from under these heavens.* (Jeremiah 10:11). When the crowd would sacrifice to them as Zeus and Hermes, Paul and Barnabas rend their clothes and cry, *turn from these vanities unto the living Elohim (God), which made heaven, and earth, and the sea, and all things that are therein* (Acts 14:15). It is Jeremiah''s own test set against the idols: the gods that did not make the heavens and earth are vanities that perish; the living Elohim (God) is known because he is the Maker. The made-thing is not the god; the Maker alone is.'),
+  ('canon', 'acts', 14, 15, 'canon', 'psalms', 146, 6, 'free', E'*Which made heaven, and earth, the sea, and all that therein is: which keepeth truth for ever:* (Psalms 146:6). Paul preaches *the living Elohim (God), which made heaven, and earth, and the sea, and all things that are therein* (Acts 14:15) — word for word the psalm''s confession of the one in whom there is help: *Happy is he that hath the Elohim (God) of Jacob for his help* (Psalms 146:5). The psalm sets the Maker of heaven and earth against *the son of Adam, in whom there is no help* (Psalms 146:3) — exactly what Paul tells the crowd: *We also are men of like passions with you* (Acts 14:15), not gods. Look past the men to the One who made the sea and all that is therein.'),
+  ('canon', 'acts', 14, 15, 'apocrypha', 'the-wisdom-of-solomon', 13, 1, 'extras', E'*Surely vain are all men by nature, who are ignorant of Yahuah (God), and could not out of the good things that are seen know him that is: neither by considering the works did they acknowledge the workmaster;* (Wisdom of Solomon 13:1). The Lystrans'' error is named precisely here: they *deemed either fire, or wind … or the lights of heaven, to be the gods which govern the world* (Wisdom of Solomon 13:2), not knowing the workmaster. Paul calls them off it — *turn from these vanities unto the living Elohim (God), which made heaven, and earth, and the sea* (Acts 14:15) — back from the made things to the One who made them, *the first author of beauty* who *has created them* (Wisdom of Solomon 13:3).'),
+  -- thread: acts-14-he-left-not-himself-without-witness-the-heavens-declare-his-glory
+  ('canon', 'acts', 14, 17, 'canon', 'psalms', 19, 1, 'free', E'*The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* (Psalms 19:1). Paul tells the Lystrans that the living Elohim (God) *left not himself without witness, in that he did good, and gave us rain from heaven, and fruitful seasons, filling our hearts with food and gladness* (Acts 14:17). The witness Paul names is the psalm''s witness: the heavens that *declare the glory of Elohim (God),* the day-and-night speech that goes out to all — *there is no speech nor language, where their voice is not heard* (Psalms 19:3). The rain and the fruitful seasons are that same testimony in the soil, the Maker''s witness left for every nation to read.'),
+  -- thread: acts-14-through-much-tribulation-enter-into-the-kingdom-of-god
+  ('canon', 'acts', 14, 22, 'canon', 'john', 16, 33, 'free', E'*These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world.* (John 16:33). Paul and Barnabas return *confirming the souls of the disciples, and exhorting them to continue in the faith, and that we must through much tribulation enter into the kingdom of Elohim (God)* (Acts 14:22). It is the Master''s own word made the road map: *in the world ye shall have tribulation* is not the abolition of the kingdom but the way into it — the tribulation borne and the kingdom entered together, *be of good cheer; I have overcome the world.*'),
+  ('canon', 'acts', 14, 22, 'canon', '2-timothy', 3, 11, 'free', E'*Persecutions, afflictions, which came unto me at Antioch, at Iconium, at Lystra; what persecutions I endured: but out of them all Yahuah (Lord) delivered me.* (2 Timothy 3:11). Paul names the very cities of this chapter — Antioch, Iconium, Lystra, where *having stoned Paul, drew him out of the city, supposing he had been dead* (Acts 14:19) — as the persecutions out of which Yahuah (Lord) delivered him. The man who rose up from the stoning and went on to preach is the man teaching the disciples *that we must through much tribulation enter into the kingdom of Elohim (God)* (Acts 14:22); he had walked the road he names.'),
+  ('canon', 'acts', 14, 22, 'canon', '2-timothy', 3, 12, 'free', E'*Yea, and all that will live godly in HaMashiach Yahusha (Christ Jesus) shall suffer persecution.* (2 Timothy 3:12). The exhortation at Lystra is no special hardship but the common road: *we must through much tribulation enter into the kingdom of Elohim (God)* (Acts 14:22), for *all that will live godly … shall suffer persecution.* The tribulation is not a sign the kingdom has failed; it is the path the godly walk into it — the stoning at Lystra and the rising the next day are the pattern, not the exception.'),
+  ('canon', 'acts', 14, 22, 'canon', 'daniel', 7, 18, 'free', E'*But the saints of the most High shall take the kingdom, and possess the kingdom for ever, even for ever and ever.* (Daniel 7:18). The kingdom the disciples are told they must *through much tribulation enter into* (Acts 14:22) is the kingdom Daniel saw given after the beasts and the war of the horn: *the saints of the most High shall take the kingdom, and possess the kingdom for ever.* The tribulation precedes the possessing — *the same horn made war with the saints, and prevailed against them* (Daniel 7:21) — yet the everlasting kingdom is theirs in the end.'),
+  ('canon', 'acts', 14, 22, 'canon', 'daniel', 7, 27, 'free', E'*And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the most High, whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* (Daniel 7:27). The *kingdom of Elohim (God)* the disciples enter through much tribulation (Acts 14:22) is this everlasting kingdom *given to the people of the saints of the most High.* The much tribulation is the road through the night of the beasts; the destination is the kingdom that *shall not be destroyed,* where *all dominions shall serve and obey him.*'),
+  -- thread: acts-14-the-door-of-faith-and-the-tabernacle-of-david-the-gathering
+  ('canon', 'acts', 14, 27, 'canon', 'amos', 9, 11, 'free', E'*In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof; and I will raise up his ruins, and I will build it as in the days of old:* (Amos 9:11). When Paul and Barnabas rehearse *how he had opened the door of faith unto the Gentiles* (Acts 14:27), the door is the one Amos named: the raising again of the fallen tabernacle of David, the gathering of the scattered house. The opened door is not a new people spliced in but the breaches of David''s house closed up — the dispersed seed living among the nations brought back through the door of faith into the building Elohim (God) is raising as in the days of old.'),
+  ('canon', 'acts', 14, 27, 'apocrypha', 'tobit', 13, 5, 'extras', E'*And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.* (Tobit 13:5). The *door of faith* opened *unto the Gentiles* (Acts 14:27) is the door of this gathering: the Elohim (God) who *has scattered us among them* (Tobit 13:3) is the same who *will gather us out of all nations.* The ones coming in through the door are the scattered being gathered home — the captives among the nations made nigh, *if you turn to him with your whole heart … then will he turn to you* (Tobit 13:6), the hearing revealing the seed that was always his.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-14-then-shall-the-lame-man-leap-as-an-hart-the-cripple-at-lystra-healed',
+       E'Then shall the lame man leap as an hart — the cripple at Lystra healed',
+       E'At Lystra Paul sees *a certain man … impotent in his feet, being a cripple from his mother''s womb, who never had walked* (Acts 14:8), and *perceiving that he had faith to be healed* (Acts 14:9), says *with a loud voice, Stand upright on thy feet. And he leaped and walked* (Acts 14:10). The leaping feet are the sign Isaiah named of the coming of the Saviour: *behold, your Elohim (God) will come with vengeance … he will come and save you* (Isaiah 35:4), and *then shall the lame man leap as an hart, and the tongue of the dumb sing* (Isaiah 35:6). The same sign had opened the gospel at the temple gate, where a man *lame from his mother''s womb* was told *In the name of Yahusha HaMashiach (Jesus Christ) of Nazareth rise up and walk* (Acts 3:6), and *he leaping up stood, and walked … praising Elohim (God)* (Acts 3:8). Twice the lame leap as Isaiah foretold — once in Yerushalayim, once in Lycaonia — and twice the disclaimer is the same: not *by our own power or holiness* (Acts 3:12). The crowd at Lystra would make the men into gods; the sign was never about the men, but about the One who came to save, working through his sent ones.',
+       sv.verse_id, ev.verse_id, 'free', 5600
+  FROM _s217_a14_lookup sv, _s217_a14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=14 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-14-turn-from-these-vanities-unto-the-living-god-which-made-heaven-and-earth',
+       E'Turn from these vanities unto the living Elohim (God), which made heaven and earth',
+       E'When the priest of Jupiter brings oxen and garlands to sacrifice to them, Barnabas and Paul *rent their clothes, and ran in among the people, crying out* (Acts 14:14), *Sirs, why do ye these things? We also are men of like passions with you, and preach unto you that ye should turn from these vanities unto the living Elohim (God), which made heaven, and earth, and the sea, and all things that are therein* (Acts 14:15). This is the Tanakh''s own polemic against the idols, set in Paul''s mouth. Jeremiah gave the test plainly: *the gods that have not made the heavens and the earth, even they shall perish from the earth* (Jeremiah 10:11) — the made-thing is not the god; the Maker alone is the living Elohim (God). The psalm gives the same confession Paul preaches almost word for word — the help is not in *the son of Adam, in whom there is no help* (Psalms 146:3) but in the One *which made heaven, and earth, the sea, and all that therein is* (Psalms 146:6). And Wisdom names the Lystrans'' very error: those *who … could not out of the good things that are seen know him that is: neither by considering the works did they acknowledge the workmaster* (Wisdom of Solomon 13:1), taking *the lights of heaven, to be the gods which govern the world* (Wisdom of Solomon 13:2). Paul calls them back from the made things to the Maker — not to worship men or stars, but the living Elohim (God) who made them all.',
+       sv.verse_id, ev.verse_id, 'extras', 5603
+  FROM _s217_a14_lookup sv, _s217_a14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=14 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-14-he-left-not-himself-without-witness-the-heavens-declare-his-glory',
+       E'He left not himself without witness — the heavens declare his glory',
+       E'Paul tells the Lystrans that the living Elohim (God) *in times past suffered all nations to walk in their own ways* (Acts 14:16) — yet *he left not himself without witness, in that he did good, and gave us rain from heaven, and fruitful seasons, filling our hearts with food and gladness* (Acts 14:17). The witness was never silent. It is the witness the psalm sings: *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork* (Psalms 19:1), the day-and-night speech that reaches every nation — *there is no speech nor language, where their voice is not heard* (Psalms 19:3). The rain on the field and the fruitful seasons are that same testimony written into the soil and the sky, the Maker''s good gift left for all to read, so that none of the nations he suffered to walk their own ways was ever without his witness pointing them home to the One who made and feeds them.',
+       sv.verse_id, ev.verse_id, 'free', 5606
+  FROM _s217_a14_lookup sv, _s217_a14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=14 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-14-through-much-tribulation-enter-into-the-kingdom-of-god',
+       E'Through much tribulation enter into the kingdom of Elohim (God)',
+       E'Paul is stoned at Lystra and drawn out *supposing he had been dead* (Acts 14:19), yet *as the disciples stood round about him, he rose up, and came into the city* (Acts 14:20). Then he and Barnabas return through the same hostile cities, *confirming the souls of the disciples, and exhorting them to continue in the faith, and that we must through much tribulation enter into the kingdom of Elohim (God)* (Acts 14:22). The man who says it had just walked it. He names these very cities later: *Persecutions, afflictions, which came unto me at Antioch, at Iconium, at Lystra … but out of them all Yahuah (Lord) delivered me* (2 Timothy 3:11), and gives the rule plainly — *all that will live godly in HaMashiach Yahusha (Christ Jesus) shall suffer persecution* (2 Timothy 3:12). It is the Master''s own word: *in the world ye shall have tribulation: but be of good cheer; I have overcome the world* (John 16:33). The tribulation is not the failure of the kingdom but the road into it. And the kingdom entered is the everlasting one Daniel saw given after the night of the beasts and the war of the horn: *the saints of the most High shall take the kingdom, and possess the kingdom for ever* (Daniel 7:18), the kingdom *given to the people of the saints of the most High, whose kingdom is an everlasting kingdom* (Daniel 7:27). Much tribulation now; the everlasting kingdom at the end of the road.',
+       sv.verse_id, ev.verse_id, 'free', 5609
+  FROM _s217_a14_lookup sv, _s217_a14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=14 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-14-the-door-of-faith-and-the-tabernacle-of-david-the-gathering',
+       E'The door of faith and the tabernacle of David — the gathering',
+       E'Come back to Antioch, Paul and Barnabas *gathered the church together* and *rehearsed all that Elohim (God) had done with them, and how he had opened the door of faith unto the Gentiles* (Acts 14:27). The door is the one the prophets named — not a new people spliced into Yashar''el (Israel) by confession, but the raising again of the fallen house: *In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof … and I will build it as in the days of old* (Amos 9:11). The breaches of David''s house are the scattered seed dispersed among the nations; the opened door is their way home. Tobit, praying out of captivity, named the same gathering: the Elohim (God) who *has scattered us among them* (Tobit 13:3) is the One who *will gather us out of all nations, among whom he has scattered us* (Tobit 13:5) — *if you turn to him with your whole heart … then will he turn to you* (Tobit 13:6). The door of faith is the door of the gathering: the dispersed of Yashar''el (Israel), living as the nations, hearing and turning and coming home — the hearing revealing the seed that was his from the days of old.',
+       sv.verse_id, ev.verse_id, 'extras', 5612
+  FROM _s217_a14_lookup sv, _s217_a14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=14 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-14-then-shall-the-lame-man-leap-as-an-hart-the-cripple-at-lystra-healed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 35:6 — *then shall the lame man leap as an hart* the sign of the Saviour''s coming, fulfilled as the cripple *leaped and walked* (Acts 14:10).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-then-shall-the-lame-man-leap-as-an-hart-the-cripple-at-lystra-healed'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 3:6 — *In the name of Yahusha HaMashiach (Jesus Christ) of Nazareth rise up and walk* the Beautiful-Gate word that the Lystra healing re-walks (Acts 14:10).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-then-shall-the-lame-man-leap-as-an-hart-the-cripple-at-lystra-healed'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 3:8 — *he leaping up stood, and walked … praising Elohim (God)* the lame man''s leap at the temple gate, echoed in the cripple at Lystra (Acts 14:10).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-then-shall-the-lame-man-leap-as-an-hart-the-cripple-at-lystra-healed'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=3 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-14-turn-from-these-vanities-unto-the-living-god-which-made-heaven-and-earth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 10:11 — *the gods that have not made the heavens and the earth … shall perish* the test against the idols Paul sets before the crowd (Acts 14:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-turn-from-these-vanities-unto-the-living-god-which-made-heaven-and-earth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 146:6 — *which made heaven, and earth, the sea, and all that therein is* the psalm''s confession Paul preaches near word for word (Acts 14:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-turn-from-these-vanities-unto-the-living-god-which-made-heaven-and-earth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=146 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Wisdom of Solomon 13:1 — *neither by considering the works did they acknowledge the workmaster* the Lystrans'' exact error, naming the stars and lights as gods (Acts 14:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-turn-from-these-vanities-unto-the-living-god-which-made-heaven-and-earth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=13 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-14-he-left-not-himself-without-witness-the-heavens-declare-his-glory
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalms 19:1 — *The heavens declare the glory of Elohim (God)* the creation-witness Paul names in the rain and fruitful seasons (Acts 14:17).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-he-left-not-himself-without-witness-the-heavens-declare-his-glory'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-14-through-much-tribulation-enter-into-the-kingdom-of-god
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'John 16:33 — *in the world ye shall have tribulation: but be of good cheer; I have overcome the world* the Master''s word made the road into the kingdom (Acts 14:22).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-through-much-tribulation-enter-into-the-kingdom-of-god'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=16 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Timothy 3:11 — *Persecutions … at Antioch, at Iconium, at Lystra … but out of them all Yahuah (Lord) delivered me* Paul names this chapter''s own cities (Acts 14:19,22).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-through-much-tribulation-enter-into-the-kingdom-of-god'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=3 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Timothy 3:12 — *all that will live godly in HaMashiach Yahusha (Christ Jesus) shall suffer persecution* the common road, not the exception (Acts 14:22).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-through-much-tribulation-enter-into-the-kingdom-of-god'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=3 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Daniel 7:18 — *the saints of the most High shall take the kingdom, and possess the kingdom for ever* the kingdom entered through much tribulation (Acts 14:22).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-through-much-tribulation-enter-into-the-kingdom-of-god'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Daniel 7:27 — *the kingdom … given to the people of the saints of the most High, whose kingdom is an everlasting kingdom* the destination at the road''s end (Acts 14:22).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-through-much-tribulation-enter-into-the-kingdom-of-god'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-14-the-door-of-faith-and-the-tabernacle-of-david-the-gathering
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Amos 9:11 — *I will raise up the tabernacle of David that is fallen, and close up the breaches thereof* the door of faith as the raising of David''s fallen house (Acts 14:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-the-door-of-faith-and-the-tabernacle-of-david-the-gathering'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=9 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Tobit 13:5 — *will gather us out of all nations, among whom he has scattered us* the door of faith as the gathering of the scattered home (Acts 14:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a14_lookup sv, _s217_a14_lookup tv
+ WHERE t.slug='acts-14-the-door-of-faith-and-the-tabernacle-of-david-the-gathering'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=14 AND sv.verse_number=27
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_15.sql (S217 Acts 15) -----
+-- =====================================================================
+-- S217 minion — ACTS 15 FULL-LIBRARY cross-references (the Jerusalem Council)
+-- =====================================================================
+-- Anchor chapter: ACTS 15.  Tag: a15 (temp view _s217_a15_lookup).  Sort band: 5625-5646.
+-- Source is ALWAYS the canon Acts 15 verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- VOICE GOVERNANCE (HIGH-RISK CHAPTER — audited hard at the voice gate):
+--  * The "Gentiles" the council receives are the SCATTERED SEED / the lost sheep of the
+--    house of Yashar'el (Israel) being GATHERED — the Lo-Ammi of Hosea 1 made Ammi, the
+--    dispersed already named. NEVER the false-inclusion of the nations into Yashar'el by
+--    faith-confession (Red Lines #7/#11).
+--  * James's verdict (Acts 15:16-17) quotes Amos 9:11-12 — *I will build again the tabernacle
+--    of David, which is fallen down* — read as the TWELVE-TRIBE RESTORATION, the rebuilding of
+--    the fallen booth of David over BOTH houses (Hosea 1:11 — Yahudah and Yashar'el gathered,
+--    one head), NOT a new-people graft. The "residue of men" / "all the Gentiles upon whom my
+--    name is called" = the dispersed seed already named, sifted among all nations yet not one
+--    grain lost (Amos 9:9), the scattered He gathers (Jeremiah 31:10).
+--  * Acts 15:11 *we shall be saved, even as they* — grace is the means of RETURN to him and
+--    his ways (the yoke of v.10 is the burden of the added fence / the failure to keep, the
+--    bullock unaccustomed to the yoke who cries *turn thou me* — Jeremiah 31:18), NEVER a
+--    standalone freedom-from-Torah / sola-fide formula (Red Line #10). The sentence is
+--    completed: grace returns the scattered to the Torah written on the heart (Jeremiah 31:33).
+--  * The four prohibitions (15:20,29) tie to the Torah's ger-among-Yashar'el statutes
+--    (Leviticus 17-18 — blood, things strangled/torn, idol-pollution, fornication), the
+--    covenant terms for the gathered, NOT a minimal new-covenant ethic replacing Torah. Moses
+--    is still read in the synagogues every sabbath (15:21) — the rest of the Torah is taught,
+--    not cancelled (Leviticus 18:5 — *which if a man do, he shall live in them*). Jubilees 6
+--    witnesses the blood-prohibition as the everlasting Noahic-Sinai covenant term, not a new
+--    rule (extras layer).
+--  * The Judaizer error is NAMED at the council: *Except ye be circumcised … ye cannot be
+--    saved* (15:1), *Ye must be circumcised, and keep the law* (15:24) — the flesh-credential
+--    gospel Paul withstood at Antioch (Galatians 2:3-4,14). The yoke cast off is the added
+--    fence, not the Torah.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three libraries weighed for every block):
+--  ACTS 15:
+--   v.1,5,24  circumcised-or-not-saved / ye must keep the law
+--             Tanakh: none warranted (the error is NT-named; the Torah is its abuse, not its source)
+--             Extras: none warranted
+--             NT:     Galatians 2:3, Galatians 2:4, Galatians 2:14  (Paul's own account of the same fight)
+--   v.7-9     Peter: no difference, purifying their hearts by faith
+--             Tanakh: Ezekiel 36:25, Ezekiel 36:26  (sprinkle clean water / new heart — the cleansing of the scattered)
+--             Extras: none warranted
+--             NT:     Acts 10:34  (no respecter of persons — Peter's earlier seeing)
+--   v.10-11   the yoke our fathers could not bear / grace, saved even as they
+--             Tanakh: Jeremiah 31:18 (Ephraim, the bullock unaccustomed to the yoke, *turn thou me*); Jeremiah 31:33 (Torah written on the heart — the destination of the return)
+--             Extras: none warranted
+--             NT:     none added (the no-sola-fide completion carried in the prose + Jeremiah targets)
+--   v.14      to take out of them a people for his name
+--             Tanakh: Hosea 1:10 (Lo-Ammi made *sons of the living Elohim*); Hosea 2:23 (*Thou art my people*)
+--             Extras: none warranted
+--             NT:     none added (Romans 9:25-26 weighed — Paul's quotation of the same Hosea; carried thematically, the Hosea targets are load-bearing)
+--   v.16-17   the tabernacle of David rebuilt / residue of men / all the Gentiles called by my name
+--             Tanakh: Amos 9:11, Amos 9:12 (the verbatim quotation — the twelve-tribe restoration); Hosea 1:11 (two houses gathered, one head); Amos 9:9 (sifted among all nations, not one grain lost); Jeremiah 31:10 (He that scattered will gather)
+--             Extras: none warranted
+--             NT:     none added (the restoration is Tanakh-anchored)
+--   v.18-19   known unto Elohim from the beginning / turned to Elohim
+--             Tanakh: none added (carried in the Amos/Hosea threads — the works known from the beginning = the gathering foretold)
+--             Extras: none warranted
+--             NT:     none warranted
+--   v.20,29   the four prohibitions (idols, fornication, things strangled, blood)
+--             Tanakh: Leviticus 17:7 (no more offer to devils); Leviticus 17:10, Leviticus 17:12 (blood — the stranger among you); Leviticus 17:15 (that which died of itself / torn — things strangled); Leviticus 18:26 (abominations / fornication — the stranger that sojourneth)
+--             Extras: Jubilees 6:10, Jubilees 6:13 (the everlasting blood-covenant — Noahic to Sinai, not a new rule)
+--             NT:     Acts 21:25 weighed (the same decree restated) — carried thematically, the Torah/Jubilees witnesses are load-bearing
+--   v.21      Moses read in the synagogues every sabbath day
+--             Tanakh: Leviticus 18:5 (*which if a man do, he shall live in them* — the Torah still taught, still life)
+--             Extras: none warranted
+--             NT:     none warranted
+--   v.22-41   the letter sent / Paul and Barnabas part
+--             Tanakh: none warranted (narrative)
+--             Extras: none warranted
+--             NT:     none warranted (narrative)
+--
+-- THREADS (slug -> target libraries):
+--   5625 acts-15-except-ye-be-circumcised-ye-cannot-be-saved-the-judaizer-error-named  (NT)
+--   5628 acts-15-put-no-difference-purifying-their-hearts-the-new-heart-of-the-scattered (Tanakh + NT)
+--   5631 acts-15-the-yoke-and-the-grace-the-means-of-return-not-freedom-from-torah       (Tanakh)
+--   5634 acts-15-to-take-out-a-people-for-his-name-the-lo-ammi-made-ammi                 (Tanakh)
+--   5637 acts-15-the-tabernacle-of-david-fallen-rebuilt-the-twelve-tribe-restoration     (Tanakh)
+--   5640 acts-15-the-residue-of-men-the-scattered-sifted-among-the-nations-gathered      (Tanakh)
+--   5643 acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger  (Tanakh + Extras)
+--   5646 acts-15-moses-read-every-sabbath-the-torah-still-taught-not-cancelled           (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-15-except-ye-be-circumcised-ye-cannot-be-saved-the-judaizer-error-named
+  ('canon', 'acts', 15, 1, 'canon', 'galatians', 2, 4, 'free', E'*And that because of false brethren unawares brought in, who came in privily to spy out our liberty which we have in HaMashiach Yahusha (Christ Jesus), that they might bring us into bondage:* (Galatians 2:4). The men who *came down from Judæa* and taught *Except ye be circumcised after the manner of Moses, ye cannot be saved* (Acts 15:1) are the same false brethren Paul names — the circumcision party adding a flesh-credential as the price of salvation. The bondage is not the Torah; it is the fence built around it and made the gate of life.'),
+  ('canon', 'acts', 15, 5, 'canon', 'galatians', 2, 3, 'free', E'*But neither Titus, who was with me, being a Greek, was compelled to be circumcised:* (Galatians 2:3). When *there rose up certain of the sect of the Pharisees which believed, saying, That it was needful to circumcise them, and to command them to keep the law of Moses* (Acts 15:5), the demand is exactly the one Paul refused for Titus. The gathered are not made covenant by the knife; the knife was never the door of return.'),
+  ('canon', 'acts', 15, 24, 'canon', 'galatians', 2, 14, 'free', E'*But when I saw that they walked not uprightly according to the truth of the gospel, I said unto Peter before them all, If thou, being a Yahudi (Jew), livest after the manner of Gentiles, and not as do the Yahudim (Jews), why compellest thou the Gentiles to live as do the Yahudim (Jews)?* (Galatians 2:14). The council''s letter disowns the agitators: *certain which went out from us have troubled you with words, subverting your souls, saying, Ye must be circumcised, and keep the law: to whom we gave no such commandment* (Acts 15:24). The thing Paul withstood Peter to the face over is the thing the apostles now repudiate in writing — the compelling, the flesh-credential gospel, never given as commandment.'),
+  -- thread: acts-15-put-no-difference-purifying-their-hearts-the-new-heart-of-the-scattered
+  ('canon', 'acts', 15, 9, 'canon', 'ezekiel', 36, 25, 'free', E'*Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you.* (Ezekiel 36:25). Peter says Elohim (God) *put no difference between us and them, purifying their hearts by faith* (Acts 15:9). The purifying is the very cleansing Yahuah (LORD) promised the scattered house — the sprinkling of clean water on those gathered *from among the heathen* (Ezekiel 36:24). The hearts cleansed are the hearts of the dispersed seed being brought home, not strangers made covenant by confession.'),
+  ('canon', 'acts', 15, 9, 'canon', 'ezekiel', 36, 26, 'free', E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.* (Ezekiel 36:26). The heart *purif[ied] … by faith* (Acts 15:9) is the new heart Yahuah (LORD) swore to give the house of Yashar''el (Israel) — and the new spirit that comes with it does not lead away from the Torah but *cause[s] you to walk in my statutes* (Ezekiel 36:27). The faith and the new heart are the means of the return, not its replacement.'),
+  ('canon', 'acts', 15, 8, 'canon', 'acts', 10, 34, 'free', E'*Then Peter opened his mouth, and said, Of a truth I perceive that Elohim (God) is no respecter of persons:* (Acts 10:34). Peter testifies that Elohim (God), *which knoweth the hearts, bare them witness, giving them the Ruach HaKodesh (Holy Spirit), even as he did unto us* (Acts 15:8). He had already seen it in the house of Cornelius: the Spirit fell on the gathered of the dispersion as it fell at the first, for the Father reads hearts and knows his own scattered sheep wherever they were sown.'),
+  -- thread: acts-15-the-yoke-and-the-grace-the-means-of-return-not-freedom-from-torah
+  ('canon', 'acts', 15, 10, 'canon', 'jeremiah', 31, 18, 'free', E'*I have surely heard Ephraim bemoaning himself thus; Thou hast chastised me, and I was chastised, as a bullock unaccustomed to the yoke: turn thou me, and I shall be turned; for thou art Yahuah Elohai (the LORD my God).* (Jeremiah 31:18). Peter asks *why tempt ye Elohim (God), to put a yoke upon the neck of the disciples, which neither our fathers nor we were able to bear?* (Acts 15:10). The yoke none could bear is the burden of the added fence and the failure to keep — not the Torah itself; for Ephraim, the scattered northern house, is the very son who cries *turn thou me, and I shall be turned.* The cry of the bullock unaccustomed to the yoke is the cry of the gathering, and the answer is grace that turns him home.'),
+  ('canon', 'acts', 15, 11, 'canon', 'jeremiah', 31, 33, 'free', E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33). *We believe that through the grace of the Lord Yahusha HaMashiach (Lord Jesus Christ) we shall be saved, even as they* (Acts 15:11) — and the grace is the means by which the Torah is written on the inward parts, not a release from it. Saved even as they: the scattered and the near alike returned to the covenant law set in the heart. The sentence the council speaks is completed in the prophet — grace is the homecoming to his ways.'),
+  -- thread: acts-15-to-take-out-a-people-for-his-name-the-lo-ammi-made-ammi
+  ('canon', 'acts', 15, 14, 'canon', 'hosea', 1, 10, 'free', E'*Yet the number of the children of Yashar''el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10). James says Elohim (God) *did visit the Gentiles, to take out of them a people for his name* (Acts 15:14). The people taken out are the Lo-Ammi — those to whom it was said *ye are not my people* — now in the very place of their scattering called *the sons of the living Elohim (God).* Not a new people named, but the named-and-forgotten seed made to hear what was always true.'),
+  ('canon', 'acts', 15, 14, 'canon', 'hosea', 2, 23, 'free', E'*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God).* (Hosea 2:23). To *take out of them a people for his name* (Acts 15:14) is to do what Yahuah (LORD) sowed and swore — *I will say to them which were not my people, Thou art my people.* The dispersed seed sown into the earth among the nations is reaped back as Ammi, the people of his name, the mercy given to her that had not obtained mercy.'),
+  -- thread: acts-15-the-tabernacle-of-david-fallen-rebuilt-the-twelve-tribe-restoration
+  ('canon', 'acts', 15, 16, 'canon', 'amos', 9, 11, 'free', E'*In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof; and I will raise up his ruins, and I will build it as in the days of old:* (Amos 9:11). James reads the prophets: *After this I will return, and will build again the tabernacle of David, which is fallen down; and I will build again the ruins thereof, and I will set it up* (Acts 15:16). The fallen booth of David is the broken kingdom of the twelve tribes, torn in two at Jeroboam; its rebuilding is the restoration of both houses under David''s greater Son — built again *as in the days of old,* before the breach. This is the twelve-tribe gathering, not a new house raised in Yashar''el''s place.'),
+  ('canon', 'acts', 15, 17, 'canon', 'amos', 9, 12, 'free', E'*That they may possess the remnant of Edom, and of all the heathen, which are called by my name, saith Yahuah (LORD) that doeth this.* (Amos 9:12). James continues: *That the residue of men might seek after Yahuah (Lord), and all the Gentiles, upon whom my name is called, saith Yahuah (Lord), who doeth all these things* (Acts 15:17). The ones *upon whom my name is called* are not the nations made covenant by belief; they are the dispersed already named — sown among the heathen, scattered into the lands of Edom and beyond, yet bearing his name still, now possessed back into the rebuilt house of David.'),
+  ('canon', 'acts', 15, 16, 'canon', 'hosea', 1, 11, 'free', E'*Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel.* (Hosea 1:11). The rebuilt *tabernacle of David, which is fallen down* (Acts 15:16) is the two houses made one again — *the children of Yahudah (Judah) and the children of Yashar''el (Israel)* gathered together under one head. The booth of David fell when the kingdom split; it is raised when the split is healed and Yahudah and Yosef appoint themselves one head, David''s Son, and come up together.'),
+  -- thread: acts-15-the-residue-of-men-the-scattered-sifted-among-the-nations-gathered
+  ('canon', 'acts', 15, 17, 'canon', 'amos', 9, 9, 'free', E'*For, lo, I will command, and I will sift the house of Yashar''el (Israel) among all nations, like as corn is sifted in a sieve, yet shall not the least grain fall upon the earth.* (Amos 9:9). The same prophet whose tabernacle-of-David verse James quotes also names how the *residue of men* (Acts 15:17) came to be scattered *among all the Gentiles:* Yahuah (LORD) sifted the house of Yashar''el (Israel) among all nations like corn in a sieve — yet not the least grain lost. The scattering was a sifting, not an abandoning; every grain of the seed is kept, and James sees them now sought after and possessed back.'),
+  ('canon', 'acts', 15, 17, 'canon', 'jeremiah', 31, 10, 'free', E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock.* (Jeremiah 31:10). That *all the Gentiles, upon whom my name is called* should *seek after Yahuah (Lord)* (Acts 15:17) is the gathering Jeremiah declared to the nations and the isles afar off: *He that scattered Yashar''el (Israel) will gather him.* The One who scattered the seed among the nations is the Shepherd who gathers it; the council is watching the scattered flock answer the Shepherd''s voice.'),
+  -- thread: acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger
+  ('canon', 'acts', 15, 20, 'canon', 'leviticus', 17, 7, 'free', E'*And they shall no more offer their sacrifices unto devils, after whom they have gone a whoring. This shall be a statute for ever unto them throughout their generations.* (Leviticus 17:7). The first of the four — *that they abstain from pollutions of idols* (Acts 15:20) — is no new ethic but the *statute for ever* given in the Torah: turn from the sacrifices offered to devils. The gathered are bound to the same covenant terms the Torah set for all who dwell in the house, the foundation on which the rest of the instruction is built.'),
+  ('canon', 'acts', 15, 29, 'canon', 'leviticus', 17, 10, 'free', E'*And whatsoever man there be of the house of Yashar''el (Israel), or of the strangers that sojourn among you, that eateth any manner of blood; I will even set my face against that soul that eateth blood, and will cut him off from among his people.* (Leviticus 17:10). *That ye abstain from … blood* (Acts 15:29) is the Torah''s own statute, spoken expressly over *the house of Yashar''el (Israel)* and *the strangers that sojourn among you* alike. The council lays no new burden; it names the ancient covenant term that binds the native-born and the sojourner together in one house.'),
+  ('canon', 'acts', 15, 29, 'canon', 'leviticus', 17, 12, 'free', E'*Therefore I said unto the children of Yashar''el (Israel), No soul of you shall eat blood, neither shall any stranger that sojourneth among you eat blood.* (Leviticus 17:12). The decree *that ye abstain from … blood* (Acts 15:29) repeats word for the Torah''s word: *No soul of you shall eat blood, neither shall any stranger that sojourneth among you eat blood.* One law for the home-born and the stranger — the same one-house statute the apostles set over the gathered.'),
+  ('canon', 'acts', 15, 29, 'canon', 'leviticus', 17, 15, 'free', E'*And every soul that eateth that which died of itself, or that which was torn with beasts, whether it be one of your own country, or a stranger, he shall both wash his clothes, and bathe himself in water, and be unclean until the even: then shall he be clean.* (Leviticus 17:15). *Things strangled* (Acts 15:29) — flesh whose blood was never poured out — falls under the Torah''s statute of that which *died of itself, or … was torn with beasts,* binding *one of your own country, or a stranger* alike. The prohibition is the Torah''s, given for the home-born and the sojourner in the one congregation.'),
+  ('canon', 'acts', 15, 20, 'canon', 'leviticus', 18, 26, 'free', E'*Ye shall therefore keep my statutes and my judgments, and shall not commit any of these abominations; neither any of your own nation, nor any stranger that sojourneth among you:* (Leviticus 18:26). *Fornication* (Acts 15:20) heads the list of *these abominations* the Torah forbids to *any of your own nation, nor any stranger that sojourneth among you.* The four prohibitions are drawn straight from the statutes the Torah lays equally on the native-born and the ger — the covenant terms of the one house into which the scattered are gathered.'),
+  ('canon', 'acts', 15, 29, 'jubilees', 'jubilees', 6, 10, 'extras', E'*And Noah and his sons swore that they would not eat any blood that was in any flesh, and he made a covenant before Yahuah Elohim (the LORD God) for ever throughout all the generations of the earth in this month.* (Jubilees 6:10). When the council writes *that ye abstain from … blood* (Acts 15:29), it stands on a covenant older than Sinai itself — the oath Noah and his sons swore *for ever throughout all the generations of the earth.* The blood-statute is no apostolic invention; it is the everlasting term of the covenant, carried from Noah to Sinai to the gathered.'),
+  ('canon', 'acts', 15, 29, 'jubilees', 'jubilees', 6, 13, 'extras', E'*And do you command the children of Yashar''el (Israel) to eat no blood, so that their names and their seed may be before Yahuah our Elohim (the LORD our God) continually.* (Jubilees 6:13). The abstaining from blood (Acts 15:29) keeps the *names and … seed* of Yashar''el (Israel) *before Yahuah our Elohim (the LORD our God) continually* — the very purpose the everlasting statute names. The decree over the gathered is the keeping of the seed before the Father, the covenant term that holds the scattered in their lineage and their name.'),
+  -- thread: acts-15-moses-read-every-sabbath-the-torah-still-taught-not-cancelled
+  ('canon', 'acts', 15, 21, 'canon', 'leviticus', 18, 5, 'free', E'*Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD).* (Leviticus 18:5). The four prohibitions are not the whole of the walk — *For Moses of old time hath in every city them that preach him, being read in the synagogues every sabbath day* (Acts 15:21). The rest of the Torah is not cancelled but taught, Sabbath by Sabbath, the statutes and judgments *which if a man do, he shall live in them.* The gathered begin with the covenant''s threshold terms and learn the whole instruction where it has always been read.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-15-except-ye-be-circumcised-ye-cannot-be-saved-the-judaizer-error-named',
+       E'Except ye be circumcised, ye cannot be saved — the Judaizer error named',
+       E'The council opens with the lie laid bare: *certain men which came down from Judæa taught the brethren, and said, Except ye be circumcised after the manner of Moses, ye cannot be saved* (Acts 15:1), and *there rose up certain of the sect of the Pharisees which believed, saying, That it was needful to circumcise them, and to command them to keep the law of Moses* (Acts 15:5). This is the flesh-credential gospel — be cut, perform the works of the circumcision party, and then you are counted in. It is the same fight Paul had already fought: *neither Titus, who was with me, being a Greek, was compelled to be circumcised* (Galatians 2:3), against *false brethren unawares brought in, who came in privily to spy out our liberty which we have in HaMashiach Yahusha (Christ Jesus), that they might bring us into bondage* (Galatians 2:4), and Paul withstood Peter to the face: *why compellest thou the Gentiles to live as do the Yahudim (Jews)?* (Galatians 2:14). The council ends by disowning the agitators in writing: *certain which went out from us have troubled you with words, subverting your souls, saying, Ye must be circumcised, and keep the law: to whom we gave no such commandment* (Acts 15:24). The bondage was never the Torah; it was the fence built around it and set up as the gate of salvation. The knife was never the door of return.',
+       sv.verse_id, ev.verse_id, 'free', 5625
+  FROM _s217_a15_lookup sv, _s217_a15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=15 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-15-put-no-difference-purifying-their-hearts-the-new-heart-of-the-scattered',
+       E'Put no difference, purifying their hearts — the new heart of the scattered',
+       E'Peter rises and tells how Elohim (God), *which knoweth the hearts, bare them witness, giving them the Ruach HaKodesh (Holy Spirit), even as he did unto us; and put no difference between us and them, purifying their hearts by faith* (Acts 15:8-9). He had already perceived it in the house of Cornelius: *Of a truth I perceive that Elohim (God) is no respecter of persons* (Acts 10:34). The Father reads hearts, and he knows his own scattered sheep wherever they were sown. And the purifying Peter names is the very cleansing Yahuah (LORD) swore to the dispersed house: *Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you* (Ezekiel 36:25), *A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh* (Ezekiel 36:26). The new heart is not given against the Torah — the new spirit comes precisely to *cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The hearts purified by faith are the hearts of the scattered seed gathered home, cleansed and given the heart of flesh that keeps the covenant, not strangers made covenant by a confession.',
+       sv.verse_id, ev.verse_id, 'free', 5628
+  FROM _s217_a15_lookup sv, _s217_a15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=15 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-15-the-yoke-and-the-grace-the-means-of-return-not-freedom-from-torah',
+       E'The yoke and the grace — the means of return, not freedom from Torah',
+       E'Peter asks, *Now therefore why tempt ye Elohim (God), to put a yoke upon the neck of the disciples, which neither our fathers nor we were able to bear?* (Acts 15:10), and concludes, *But we believe that through the grace of the Lord Yahusha HaMashiach (Lord Jesus Christ) we shall be saved, even as they* (Acts 15:11). The yoke none could bear is not the Torah of Yahuah (LORD) — it is the burden of the added fence and the unbearable weight of the failure to keep, the exile-broken condition of a people who could not turn themselves. Hear it in Ephraim, the scattered northern house: *Thou hast chastised me, and I was chastised, as a bullock unaccustomed to the yoke: turn thou me, and I shall be turned; for thou art Yahuah Elohai (the LORD my God)* (Jeremiah 31:18). The cry of the bullock unaccustomed to the yoke is the cry of the gathering — *turn thou me* — and grace is the answer that turns him. Saved *even as they:* the scattered and the near alike returned by grace to the covenant. And the destination of that return is not lawlessness but the Torah set in the heart: *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). Grace is the means of the homecoming to his ways — never a release from them.',
+       sv.verse_id, ev.verse_id, 'free', 5631
+  FROM _s217_a15_lookup sv, _s217_a15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=15 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-15-to-take-out-a-people-for-his-name-the-lo-ammi-made-ammi',
+       E'To take out a people for his name — the Lo-Ammi made Ammi',
+       E'James begins his verdict: *Simeon hath declared how Elohim (God) at the first did visit the Gentiles, to take out of them a people for his name* (Acts 15:14). The people taken out are not a people newly made; they are a people long named and long forgotten — the Lo-Ammi of Hosea. To Hosea''s third child Yahuah (LORD) said *Call his name Lo-ammi: for ye are not my people* (Hosea 1:9), and then, in the same breath, the promise: *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10). It is sworn again: *I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23). To *take out … a people for his name* is to reap back the seed that was sown among the nations — Ammi, the people of his name, the mercy given to her that had not obtained mercy. Not a new people installed in Yashar''el''s place, but the named-and-scattered seed made at last to hear what was always true of them.',
+       sv.verse_id, ev.verse_id, 'free', 5634
+  FROM _s217_a15_lookup sv, _s217_a15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=15 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-15-the-tabernacle-of-david-fallen-rebuilt-the-twelve-tribe-restoration',
+       E'The tabernacle of David, fallen, rebuilt — the twelve-tribe restoration',
+       E'James grounds the whole verdict in the prophets: *And to this agree the words of the prophets; as it is written, After this I will return, and will build again the tabernacle of David, which is fallen down; and I will build again the ruins thereof, and I will set it up* (Acts 15:16). He is quoting Amos: *In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof; and I will raise up his ruins, and I will build it as in the days of old* (Amos 9:11). The fallen booth of David is the kingdom of the twelve tribes, torn in two when the north broke from the south; its rebuilding *as in the days of old* is the healing of that breach — both houses raised again under David''s greater Son. Hosea names the same day: *Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land* (Hosea 1:11). And James reads on: *That the residue of men might seek after Yahuah (Lord), and all the Gentiles, upon whom my name is called* (Acts 15:17) — Amos''s *remnant of Edom, and of all the heathen, which are called by my name* (Amos 9:12). The ones upon whom his name is called are not the nations made covenant by belief; they are the dispersed already named — sown among the heathen, scattered into far lands, yet bearing his name still — now possessed back into the rebuilt house of David. This is the twelve-tribe gathering, the restoration the prophets swore, never a new house raised in Yashar''el''s place.',
+       sv.verse_id, ev.verse_id, 'free', 5637
+  FROM _s217_a15_lookup sv, _s217_a15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=15 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-15-the-residue-of-men-the-scattered-sifted-among-the-nations-gathered',
+       E'The residue of men — the scattered sifted among the nations, gathered',
+       E'When James says *That the residue of men might seek after Yahuah (Lord), and all the Gentiles, upon whom my name is called, saith Yahuah (Lord), who doeth all these things* (Acts 15:17), he names a residue that exists because of a scattering already prophesied. The same Amos whose tabernacle-of-David verse James quotes had said how the seed came to be among all nations: *For, lo, I will command, and I will sift the house of Yashar''el (Israel) among all nations, like as corn is sifted in a sieve, yet shall not the least grain fall upon the earth* (Amos 9:9). The dispersion was a sifting, not an abandoning — every grain of the seed kept, not one lost. And the gathering was sworn to the nations and the isles afar off where that seed was sown: *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). The One who sifted the house among the nations is the Shepherd who gathers it; the *residue of men … upon whom my name is called* are the scattered grain answering the Shepherd''s voice, sought after and possessed back into the house being rebuilt.',
+       sv.verse_id, ev.verse_id, 'free', 5640
+  FROM _s217_a15_lookup sv, _s217_a15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=15 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger',
+       E'Abstain from blood and things strangled — the covenant terms for the ger',
+       E'The council''s four prohibitions are no minimal new-covenant ethic replacing the Torah — they are the Torah''s own statutes for all who dwell in the one house, native-born and sojourner alike. *That they abstain from pollutions of idols* (Acts 15:20) is the statute for ever: *they shall no more offer their sacrifices unto devils, after whom they have gone a whoring. This shall be a statute for ever unto them throughout their generations* (Leviticus 17:7). *Fornication* heads the abominations the Torah forbids to *any of your own nation, nor any stranger that sojourneth among you* (Leviticus 18:26). *Blood* is the Torah''s express statute over *the house of Yashar''el (Israel), or … the strangers that sojourn among you* alike: *No soul of you shall eat blood, neither shall any stranger that sojourneth among you eat blood* (Leviticus 17:12; cf. 17:10). And *things strangled* — flesh whose blood was never poured out — falls under the statute of *that which died of itself, or … was torn with beasts, whether it be one of your own country, or a stranger* (Leviticus 17:15). The blood-term is older even than Sinai: *Noah and his sons swore that they would not eat any blood that was in any flesh, and he made a covenant before Yahuah Elohim (the LORD God) for ever throughout all the generations of the earth* (Jubilees 6:10), *that their names and their seed may be before Yahuah our Elohim (the LORD our God) continually* (Jubilees 6:13). The apostles lay no new burden; they name the ancient covenant terms — Noahic to Sinai to the gathered — that bind the home-born and the sojourner together in one congregation, the threshold of the one house into which the scattered are received.',
+       sv.verse_id, ev.verse_id, 'extras', 5643
+  FROM _s217_a15_lookup sv, _s217_a15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=15 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-15-moses-read-every-sabbath-the-torah-still-taught-not-cancelled',
+       E'Moses read every sabbath — the Torah still taught, not cancelled',
+       E'The council does not end the four prohibitions with a closed list, as if the rest of the Torah were now void. James adds the reason the letter need name only the threshold terms: *For Moses of old time hath in every city them that preach him, being read in the synagogues every sabbath day* (Acts 15:21). The whole instruction is not cancelled but taught — Sabbath after Sabbath, in every city, where it has always been read. And what is read there is life, not bondage: *Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD)* (Leviticus 18:5). The gathered begin at the covenant''s threshold — turn from idols, from blood, from things strangled, from fornication — and then learn the rest of the Father''s instruction in its appointed place, on the day he hallowed. The decree opens the door; the synagogue Sabbath keeps teaching the way home.',
+       sv.verse_id, ev.verse_id, 'free', 5646
+  FROM _s217_a15_lookup sv, _s217_a15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=15 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-15-except-ye-be-circumcised-ye-cannot-be-saved-the-judaizer-error-named
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Galatians 2:4 — *false brethren … came in privily to spy out our liberty … that they might bring us into bondage* the same circumcision party Paul names, demanding the flesh-credential at the council (Acts 15:1).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-except-ye-be-circumcised-ye-cannot-be-saved-the-judaizer-error-named'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Galatians 2:3 — *neither Titus … being a Greek, was compelled to be circumcised* the demand Paul refused, now raised by the Pharisee party at the council (Acts 15:5).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-except-ye-be-circumcised-ye-cannot-be-saved-the-judaizer-error-named'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=2 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Galatians 2:14 — *why compellest thou the Gentiles to live as do the Yahudim (Jews)?* the compelling the council repudiates in writing: *to whom we gave no such commandment* (Acts 15:24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-except-ye-be-circumcised-ye-cannot-be-saved-the-judaizer-error-named'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=2 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-15-put-no-difference-purifying-their-hearts-the-new-heart-of-the-scattered
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 10:34 — *Of a truth I perceive that Elohim (God) is no respecter of persons* Peter''s earlier seeing; the Father reads hearts and knows his scattered (Acts 15:8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-put-no-difference-purifying-their-hearts-the-new-heart-of-the-scattered'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=10 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 36:25 — *Then will I sprinkle clean water upon you, and ye shall be clean* the cleansing of the scattered gathered from among the heathen, the purifying Peter names (Acts 15:9).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-put-no-difference-purifying-their-hearts-the-new-heart-of-the-scattered'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 36:26 — *A new heart also will I give you … and I will give you an heart of flesh* the heart purified by faith is the new heart of the gathered, which keeps the statutes (Ezekiel 36:27; Acts 15:9).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-put-no-difference-purifying-their-hearts-the-new-heart-of-the-scattered'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-15-the-yoke-and-the-grace-the-means-of-return-not-freedom-from-torah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 31:18 — *as a bullock unaccustomed to the yoke: turn thou me, and I shall be turned* Ephraim, the scattered north; the yoke none could bear and the cry grace answers (Acts 15:10).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-the-yoke-and-the-grace-the-means-of-return-not-freedom-from-torah'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 31:33 — *I will put my law in their inward parts, and write it in their hearts* the destination of the return; grace saves *even as they* unto the Torah on the heart (Acts 15:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-the-yoke-and-the-grace-the-means-of-return-not-freedom-from-torah'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-15-to-take-out-a-people-for-his-name-the-lo-ammi-made-ammi
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 1:10 — *in the place where it was said … Ye are not my people, there … Ye are the sons of the living Elohim (God)* the Lo-Ammi made the people for his name (Acts 15:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-to-take-out-a-people-for-his-name-the-lo-ammi-made-ammi'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hosea 2:23 — *I will say to them which were not my people, Thou art my people* the dispersed seed sown among the nations reaped back as Ammi (Acts 15:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-to-take-out-a-people-for-his-name-the-lo-ammi-made-ammi'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-15-the-tabernacle-of-david-fallen-rebuilt-the-twelve-tribe-restoration
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Amos 9:11 — *In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof* the verse James quotes; the booth of David torn in two, rebuilt as in the days of old (Acts 15:16).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-the-tabernacle-of-david-fallen-rebuilt-the-twelve-tribe-restoration'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=9 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hosea 1:11 — *the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head* the rebuilt booth is the two houses made one (Acts 15:16).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-the-tabernacle-of-david-fallen-rebuilt-the-twelve-tribe-restoration'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Amos 9:12 — *the remnant of Edom, and of all the heathen, which are called by my name* the residue upon whom his name is called: the dispersed already named, possessed back (Acts 15:17).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-the-tabernacle-of-david-fallen-rebuilt-the-twelve-tribe-restoration'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=9 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-15-the-residue-of-men-the-scattered-sifted-among-the-nations-gathered
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Amos 9:9 — *I will sift the house of Yashar''el (Israel) among all nations … yet shall not the least grain fall* the scattering of the residue was a sifting, not an abandoning (Acts 15:17).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-the-residue-of-men-the-scattered-sifted-among-the-nations-gathered'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=9 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 31:10 — *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* the residue seeking him is the scattered grain answering the Shepherd (Acts 15:17).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-the-residue-of-men-the-scattered-sifted-among-the-nations-gathered'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 17:7 — *they shall no more offer their sacrifices unto devils … a statute for ever* the pollutions of idols: the Torah''s own everlasting statute (Acts 15:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 18:26 — *neither any of your own nation, nor any stranger that sojourneth among you* fornication heads the abominations forbidden to home-born and ger alike (Acts 15:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 17:10 — *that eateth any manner of blood; I will even set my face against that soul* the blood-statute over Yashar''el and the sojourner alike (Acts 15:29).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Leviticus 17:12 — *No soul of you shall eat blood, neither shall any stranger that sojourneth among you eat blood* one law for the home-born and the stranger (Acts 15:29).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Leviticus 17:15 — *that which died of itself, or … was torn with beasts, whether it be one of your own country, or a stranger* the statute behind *things strangled* (Acts 15:29).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Jubilees 6:10 — *Noah and his sons swore that they would not eat any blood … a covenant before Yahuah Elohim (the LORD God) for ever* the blood-term older than Sinai (Acts 15:29).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=29
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Jubilees 6:13 — *command the children of Yashar''el (Israel) to eat no blood, so that their names and their seed may be before Yahuah our Elohim (the LORD our God) continually* the blood-statute keeps the seed before the Father (Acts 15:29).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-abstain-from-blood-and-things-strangled-the-covenant-terms-for-the-ger'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=29
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-15-moses-read-every-sabbath-the-torah-still-taught-not-cancelled
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 18:5 — *keep my statutes, and my judgments: which if a man do, he shall live in them* what is read in the synagogues every sabbath is life, not bondage (Acts 15:21).'
+  FROM cross_reference_threads t, cross_references x, _s217_a15_lookup sv, _s217_a15_lookup tv
+ WHERE t.slug='acts-15-moses-read-every-sabbath-the-torah-still-taught-not-cancelled'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=15 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_16.sql (S217 Acts 16) -----
+-- =====================================================================
+-- S217 minion — ACTS 16 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ACTS 16.  Tag: a16 (temp view _s217_a16_lookup).  Sort band: 5650-5665 (step 3).
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- WATCHPOINTS (Red Lines #6/#7/#11, Christology, dropped-Paul, son-of-Adam):
+--  * Timothy circumcised (16:1-3): NOT hypocrisy but covenant fidelity. Paul, the Torah-
+--    observant Israelite of Benjamin, circumcises Timothy and walks orderly, keeping the law
+--    (Acts 21:24) — the dropped-Paul correction. The Paul who abolished Torah does not exist;
+--    he keeps Torah for the sake of the gathering among the Yahudim (Jews).
+--  * The Spirit forbidding Asia / the Macedonian call (16:6-10): the Ruach HaKodesh (Holy
+--    Spirit) governs the path of the gathering as the cloud led Yashar'el (Israel). The word
+--    is steered to the dispersed — Yahuah directeth the steps; his ways are higher.
+--  * Lydia, heart opened (16:14): the FATHER opens the heart. This is the circumcised heart of
+--    Deuteronomy 30:6 and the new heart / indwelling Spirit of Ezekiel 36:26-27 — the Spirit
+--    inseparable from the statutes (Red Line #6), the hearing revealing what the Father works,
+--    never a self-generated belief that creates covenant.
+--  * The spirit of divination silenced (16:16-18): the soothsaying spirit is the watcher-taught
+--    enchantment (1 Enoch 8:2; forbidden, Deuteronomy 18:10), silenced as Yahusha (Jesus)
+--    silenced the devils who confessed him (Luke 4:41) — a true confession from an unclean
+--    mouth is still commanded to hold its peace.
+--  * Midnight singing / earthquake / bands loosed (16:25-26): songs in the night (Job 35:10;
+--    Psalm 119:62), and Yahuah breaking the bands and the gates of brass (Psalm 107:14,16).
+--  * Believe and thy house (16:31-34): the HOUSEHOLD covenant — the Passover house under the
+--    blood (Exodus 12:23), Joshua's house (Joshua 24:15), Noah's house in the ark (Genesis 7:1),
+--    the promise to you and your children and all afar off (Acts 2:39). The seed of the
+--    household gathered in the head of the house; NOT a faith-confession that grafts non-seed,
+--    but the covenant running through the house as it always did.
+--
+-- PER-VERSE LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  v.1-3   Timothy circumcised        Tanakh: none added (Paul-keeps-Torah carried by NT Acts 21 target)  Extras: none warranted  NT: Acts 21:24
+--  v.4-5   the decrees delivered       Tanakh: none warranted  Extras: none warranted  NT: none added (Acts 15 council carried in the 13-15 range, not re-added)
+--  v.6-10  Spirit forbids Asia / Macedonian call  Tanakh: Exodus 13:21 (cloud leads the way), Proverbs 16:9 (Yahuah directeth his steps)  Extras: none warranted  NT: none added (Isaiah 55:8-9 weighed — higher ways — carried thematically, not added)
+--  v.11-13 Philippi / by the riverside sabbath  Tanakh: Isaiah 56:6-7 weighed (sabbath-keeper joined, house of prayer) — carried in the eunuch's Isaiah-56 thread already built; not re-added here  Extras: none warranted  NT: none warranted (narrative)
+--  v.14-15 Lydia, heart opened          Tanakh: Deuteronomy 30:6 (circumcise thine heart), Ezekiel 36:26, Ezekiel 36:27 (new heart / Spirit causes to walk in statutes)  Extras: none warranted  NT: none added
+--  v.16-18 spirit of divination silenced  Tanakh: Deuteronomy 18:10 (divination forbidden)  Extras: 1 Enoch 8:2 (watcher-taught enchantments)  NT: Luke 4:41 (devils suffered not to speak)
+--  v.19-24 dragged, beaten, imprisoned  Tanakh: none added  Extras: none warranted  NT: none warranted (narrative; the praise answer threaded at v.25)
+--  v.25-26 midnight singing / earthquake / bands loosed  Tanakh: Job 35:10 (songs in the night), Psalm 119:62 (at midnight I rise to give thanks), Psalm 107:14, Psalm 107:16 (brake their bands, broken the gates of brass)  Extras: none warranted  NT: none warranted
+--  v.27-34 the keeper saved / believe and thy house  Tanakh: Exodus 12:23 (Passover house), Joshua 24:15 (me and my house), Genesis 7:1 (Noah's house into the ark)  Extras: none warranted  NT: Acts 2:39 (the promise to you, your children, all afar off)
+--  v.35-40 Roman citizenship / released  Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--
+-- THREADS (slug -> target libraries):
+--   5650 acts-16-circumcised-him-paul-keeping-torah-for-the-gathering            (NT)
+--   5653 acts-16-forbidden-of-the-spirit-the-shepherd-leads-the-path             (Tanakh)
+--   5656 acts-16-whose-heart-yahuah-opened-the-circumcised-heart-and-the-new-spirit (Tanakh)
+--   5659 acts-16-the-spirit-of-divination-silenced                              (Tanakh + Extras + NT)
+--   5662 acts-16-songs-in-the-night-the-bands-loosed-the-gates-of-brass-broken  (Tanakh)
+--   5665 acts-16-believe-and-thy-house-the-household-covenant                    (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-16-circumcised-him-paul-keeping-torah-for-the-gathering
+  ('canon', 'acts', 16, 3, 'canon', 'acts', 21, 24, 'free', E'*Them take, and purify thyself with them, and be at charges with them, that they may shave their heads: and all may know that those things, whereof they were informed concerning thee, are nothing; but that thou thyself also walkest orderly, and keepest the law.* (Acts 21:24). *Him would Paul have to go forth with him; and took and circumcised him because of the Yahudim (Jews) which were in those quarters* (Acts 16:3). This is no hypocrisy and no contradiction: Paul is the Torah-observant Yahudi (Jew) who *walkest orderly, and keepest the law,* and circumcises Timothy for the sake of the gathering among the Yahudim (Jews). The Paul who abolished the Torah does not exist; the same hand that wrote the letters keeps the covenant.'),
+  -- thread: acts-16-forbidden-of-the-spirit-the-shepherd-leads-the-path
+  ('canon', 'acts', 16, 6, 'canon', 'exodus', 13, 21, 'free', E'*And Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night:* (Exodus 13:21). As Yahuah (LORD) went before Yashar''el (Israel) in the cloud to lead the way, so the Spirit now leads the way of the gathering: *they had gone throughout Phrygia and the region of Galatia, and were forbidden of the Ruach HaKodesh (Holy Spirit) to preach the word in Asia* (Acts 16:6), and *the Spirit suffered them not* to go into Bithynia (Acts 16:7). The same hand that led the camp leads the word — every closed door a turning of the pillar.'),
+  ('canon', 'acts', 16, 9, 'canon', 'proverbs', 16, 9, 'free', E'*A man''s heart deviseth his way: but Yahuah (LORD) directeth his steps.* (Proverbs 16:9). Paul devised to go into Asia and Bithynia, but the Spirit turned him; then *a vision appeared to Paul in the night; There stood a man of Macedonia, and prayed him, saying, Come over into Macedonia, and help us* (Acts 16:9). The man''s heart devised the way, but Yahuah (LORD) directed the steps — the Macedonian call is the Father steering the word to the dispersed, the path chosen not by the apostle but by the One who gathers.'),
+  -- thread: acts-16-whose-heart-yahuah-opened-the-circumcised-heart-and-the-new-spirit
+  ('canon', 'acts', 16, 14, 'canon', 'deuteronomy', 30, 6, 'free', E'*And Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live.* (Deuteronomy 30:6). Lydia *worshipped Elohim (God),* and *whose heart Yahuah (Lord) opened, that she attended unto the things which were spoken of Paul* (Acts 16:14). It is the very work Moses promised: Yahuah (LORD) himself circumcising the heart. The opening is his, not hers — the hearing reveals the heart he opened, the love he put there, never a belief she generated to make herself his.'),
+  ('canon', 'acts', 16, 14, 'canon', 'ezekiel', 36, 26, 'free', E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.* (Ezekiel 36:26). When *Yahuah (Lord) opened* Lydia''s heart (Acts 16:14), this is the promise being kept: the stony heart taken away, the heart of flesh given. The attending to the word is the new heart of flesh responding — the Father doing in her what he swore to do for the gathered.'),
+  ('canon', 'acts', 16, 14, 'canon', 'ezekiel', 36, 27, 'free', E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:27). The heart Yahuah (Lord) opens he opens for this end: *I will put my spirit within you, and cause you to walk in my statutes.* The Spirit and the statutes are one motion, never opposed — the heart opened to *the things which were spoken* (Acts 16:14) is the heart made able to walk in his ways. Lydia opens her house straightway; the opened heart bears the obedience the Spirit causes.'),
+  -- thread: acts-16-the-spirit-of-divination-silenced
+  ('canon', 'acts', 16, 16, 'canon', 'deuteronomy', 18, 10, 'free', E'*There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch,* (Deuteronomy 18:10). *A certain damsel possessed with a spirit of divination met us, which brought her masters much gain by soothsaying* (Acts 16:16). The very thing Moses forbade in the covenant — divination, the soothsayer''s gain — stands now in the marketplace and is cast out: the abomination the Torah named is the thing Paul commands to come out.'),
+  ('canon', 'acts', 16, 16, 'enoch', '1-enoch', 8, 2, 'extras', E'*And there arose much godlessness, and they committed fornication, and they were led astray, and became corrupt in all their ways. Semjâzâ taught enchantments, and root-cuttings, Armârôs the resolving of enchantments, Barâqîjâl taught astrology, Kôkabêl the constellations, Ezêqêêl the knowledge of the clouds, Araqiêl the signs of the earth, Shamsiêl the signs of the sun, and Sariêl the course of the moon. And as men perished, they cried, and their cry went up to heaven.* (1 Enoch 8:2). The *spirit of divination* (Acts 16:16) is no neutral gift: enchantment and soothsaying are the watcher-taught corruptions, the arts the fallen ones handed to men. Paul commands the spirit out in the name of Yahusha HaMashiach (Jesus Christ) (Acts 16:18) — the One above the watchers undoing what they taught.'),
+  ('canon', 'acts', 16, 17, 'canon', 'luke', 4, 41, 'free', E'*And devils also came out of many, crying out, and saying, Thou art Messiah (Christ) the Son of Elohim (God). And he rebuking them suffered them not to speak: for they knew that he was Messiah (Christ).* (Luke 4:41). The spirit cried after Paul, *These men are the servants of the El Elyon (most high God), which shew unto us the way of salvation* (Acts 16:17) — a true word from an unclean mouth. As Yahusha (Jesus) *suffered them not to speak,* so Paul, grieved, commands it silent (Acts 16:18): the confession of devils is not the witness the Father wants, and the unclean spirit is given no platform even when it speaks truth.'),
+  -- thread: acts-16-songs-in-the-night-the-bands-loosed-the-gates-of-brass-broken
+  ('canon', 'acts', 16, 25, 'canon', 'job', 35, 10, 'free', E'*But none saith, Where is Elohim (God) my maker, who giveth songs in the night;* (Job 35:10). *And at midnight Paul and Silas prayed, and sang praises unto Elohim (God): and the prisoners heard them* (Acts 16:25). In the inner prison, feet fast in the stocks, they sing — for it is Elohim (God) their maker *who giveth songs in the night.* The song in the darkest place is not their strength but his gift, and the prisoners hear it.'),
+  ('canon', 'acts', 16, 25, 'canon', 'psalms', 119, 62, 'free', E'*At midnight I will rise to give thanks unto thee because of thy righteous judgments.* (Psalm 119:62). The psalmist''s vow is fulfilled in the prison: *at midnight Paul and Silas prayed, and sang praises unto Elohim (God)* (Acts 16:25). At the hour of deepest dark they rise to give thanks — the praise of the bound rising before the deliverance comes, thanksgiving rooted in his righteous judgments, not in their circumstance.'),
+  ('canon', 'acts', 16, 26, 'canon', 'psalms', 107, 14, 'free', E'*He brought them out of darkness and the shadow of death, and brake their bands in sunder.* (Psalm 107:14). *Suddenly there was a great earthquake, so that the foundations of the prison were shaken: and immediately all the doors were opened, and every one''s bands were loosed* (Acts 16:26). The psalm names the deliverer of the prisoner: Yahuah (LORD) who *brake their bands in sunder.* The loosing of every band in the Philippian jail is his hand doing the very thing the psalm sang — the bound brought out of darkness.'),
+  ('canon', 'acts', 16, 26, 'canon', 'psalms', 107, 16, 'free', E'*For he hath broken the gates of brass, and cut the bars of iron in sunder.* (Psalm 107:16). The doors of the prison fly open and the bands fall (Acts 16:26) because it is Yahuah (LORD) who *hath broken the gates of brass, and cut the bars of iron in sunder.* No bar of iron holds against him; the earthquake that opens the inner prison is the same power the psalm declared, the gates of the captor broken by the One who frees.'),
+  -- thread: acts-16-believe-and-thy-house-the-household-covenant
+  ('canon', 'acts', 16, 31, 'canon', 'exodus', 12, 23, 'free', E'*For Yahuah (LORD) will pass through to smite the Egyptians; and when he seeth the blood upon the lintel, and on the two side posts, Yahuah (LORD) will pass over the door, and will not suffer the destroyer to come in unto your houses to smite you.* (Exodus 12:23). *Believe on the Lord Yahusha HaMashiach (Lord Jesus Christ), and thou shalt be saved, and thy house* (Acts 16:31). The covenant has always run through the house: in Egypt the blood on the door covered all within, the destroyer passing over the whole household. So the keeper believes, *and was baptized, he and all his, straightway* (Acts 16:33) — the head of the house and the seed of the house under one covering.'),
+  ('canon', 'acts', 16, 31, 'canon', 'joshua', 24, 15, 'free', E'*And if it seem evil unto you to serve Yahuah (LORD), choose you this day whom ye will serve … but as for me and my house, we will serve Yahuah (LORD).* (Joshua 24:15). *Believe on the Lord Yahusha HaMashiach (Lord Jesus Christ), and thou shalt be saved, and thy house* (Acts 16:31). The keeper''s turning is Joshua''s vow renewed — *me and my house* — for *he set meat before them, and rejoiced, believing in Elohim (God) with all his house* (Acts 16:34). The head of the house turns and the house turns with him; the covenant gathers the household in its head.'),
+  ('canon', 'acts', 16, 31, 'canon', 'genesis', 7, 1, 'free', E'*And Yahuah (LORD) said unto Noah, Come thou and all thy house into the ark; for thee have I seen righteous before me in this generation.* (Genesis 7:1). The word *thy house* (Acts 16:31) is the old pattern: Noah and *all thy house* brought into the ark, the household carried through the judgment in the one found righteous. So the keeper and *all his* are washed and saved the same hour (Acts 16:33) — the house gathered into safety in the head of the house, as the household was gathered into the ark.'),
+  ('canon', 'acts', 16, 31, 'canon', 'acts', 2, 39, 'free', E'*For the promise is unto you, and to your children, and to all that are afar off, even as many as Yahuah Eloheinu (the Lord our God) shall call.* (Acts 2:39). *Believe on the Lord Yahusha HaMashiach (Lord Jesus Christ), and thou shalt be saved, and thy house* (Acts 16:31). Peter named it at the first: the promise reaches *you, and your children, and all that are afar off* — the dispersed of the house made nigh. The keeper''s household is that promise landing on a house far off, the children included with the father, *as many as Yahuah Eloheinu (the Lord our God) shall call.*')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-16-circumcised-him-paul-keeping-torah-for-the-gathering',
+       E'Circumcised him — Paul keeping Torah for the gathering',
+       E'At Lystra Paul finds Timothy, *the son of a certain woman, which was a Yahudi (Jewess), and believed; but his father was a Greek* (Acts 16:1), and *him would Paul have to go forth with him; and took and circumcised him because of the Yahudim (Jews) which were in those quarters* (Acts 16:3). The inherited reading hears a contradiction here — the Paul who supposedly abolished circumcision now circumcising his companion. There is no contradiction, because that Paul does not exist. This is the Torah-observant Yahudi (Jew) of the tribe of Benjamin who never left the covenant, keeping it for the sake of the gathering. Years later the elders at Jerusalem name him plainly: *that thou thyself also walkest orderly, and keepest the law* (Acts 21:24). The same hand that wrote the letters circumcises Timothy and keeps the Torah; the persecutor-made-vessel carries the name to the scattered without ever forsaking Moses. The circumcision is covenant fidelity, not compromise — Paul walking orderly so the Yahudim (Jews) might receive the word.',
+       sv.verse_id, ev.verse_id, 'free', 5650
+  FROM _s217_a16_lookup sv, _s217_a16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=16 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-16-forbidden-of-the-spirit-the-shepherd-leads-the-path',
+       E'Forbidden of the Spirit — the Shepherd leads the path',
+       E'The apostles move through Phrygia and Galatia *and were forbidden of the Ruach HaKodesh (Holy Spirit) to preach the word in Asia* (Acts 16:6); they assay to enter Bithynia, *but the Spirit suffered them not* (Acts 16:7). Then in the night a man of Macedonia stands and pleads, *Come over into Macedonia, and help us* (Acts 16:9). This is not the apostles charting their own mission — it is the Spirit steering the path of the gathering, as Yahuah (LORD) once steered the camp: *Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light* (Exodus 13:21). Every closed door is a turning of the pillar. *A man''s heart deviseth his way: but Yahuah (LORD) directeth his steps* (Proverbs 16:9) — Paul devised Asia and Bithynia, but the One who gathers directed the steps toward Macedonia, toward the dispersed waiting for the word. The path is not the apostle''s; it is the Shepherd''s, leading the word to the lost sheep he means to reach.',
+       sv.verse_id, ev.verse_id, 'free', 5653
+  FROM _s217_a16_lookup sv, _s217_a16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=16 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-16-whose-heart-yahuah-opened-the-circumcised-heart-and-the-new-spirit',
+       E'Whose heart Yahuah (Lord) opened — the circumcised heart and the new spirit',
+       E'By the riverside on the sabbath, where prayer was wont to be made, a woman named Lydia *which worshipped Elohim (God), heard us: whose heart Yahuah (Lord) opened, that she attended unto the things which were spoken of Paul* (Acts 16:14). The opening is the Father''s work, not hers. It is the promise Moses spoke at the edge of the land: *Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart* (Deuteronomy 30:6). It is the new covenant Ezekiel saw: *a new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh* (Ezekiel 36:26). And it does not stop at sentiment — *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The Spirit and the statutes are one motion, never opposed. Lydia''s opened heart attends to the word and at once opens her house; the hearing reveals the heart the Father opened, the love he put there, the obedience the Spirit causes — not a belief she manufactured to make herself his, but the Father doing in her what he swore to do.',
+       sv.verse_id, ev.verse_id, 'free', 5656
+  FROM _s217_a16_lookup sv, _s217_a16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=16 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-16-the-spirit-of-divination-silenced',
+       E'The spirit of divination silenced',
+       E'A damsel *possessed with a spirit of divination* meets them, *which brought her masters much gain by soothsaying* (Acts 16:16), and follows them crying, *These men are the servants of the El Elyon (most high God), which shew unto us the way of salvation* (Acts 16:17). The words are true, yet Paul, grieved, commands the spirit out in the name of Yahusha HaMashiach (Jesus Christ) (Acts 16:18). Two things stand together here. First, divination is no neutral art: the Torah forbade it within the covenant — *there shall not be found among you … one that useth divination, or an observer of times, or an enchanter* (Deuteronomy 18:10) — and the older witness names its source, the fallen watchers who *taught enchantments, and root-cuttings … astrology … the constellations* (1 Enoch 8:2), corruptions handed to men. Second, a true confession from an unclean mouth is still silenced. As Yahusha (Jesus) cast out devils who cried *Thou art Messiah (Christ) the Son of Elohim (God)* and *rebuking them suffered them not to speak* (Luke 4:41), so Paul gives the divining spirit no platform. The witness the Father wants does not come from the mouth of the watcher-taught spirit; the way of salvation is not proclaimed by the thing that must be cast out.',
+       sv.verse_id, ev.verse_id, 'extras', 5659
+  FROM _s217_a16_lookup sv, _s217_a16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=16 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-16-songs-in-the-night-the-bands-loosed-the-gates-of-brass-broken',
+       E'Songs in the night — the bands loosed, the gates of brass broken',
+       E'Beaten, thrust into the inner prison, their feet fast in the stocks, *at midnight Paul and Silas prayed, and sang praises unto Elohim (God): and the prisoners heard them* (Acts 16:25). The song in the darkest place is not their strength but a gift — for it is Elohim (God) their maker *who giveth songs in the night* (Job 35:10), and the psalmist''s vow is theirs: *at midnight I will rise to give thanks unto thee because of thy righteous judgments* (Psalm 119:62). Thanksgiving rises before the deliverance comes. Then *suddenly there was a great earthquake, so that the foundations of the prison were shaken: and immediately all the doors were opened, and every one''s bands were loosed* (Acts 16:26). This is the deliverer the psalms sang long before: Yahuah (LORD) who *brought them out of darkness and the shadow of death, and brake their bands in sunder* (Psalm 107:14), who *hath broken the gates of brass, and cut the bars of iron in sunder* (Psalm 107:16). No bar of iron holds against him. The praise of the bound and the breaking of their bands are one story — the One who gives the song in the night is the One who opens the door.',
+       sv.verse_id, ev.verse_id, 'free', 5662
+  FROM _s217_a16_lookup sv, _s217_a16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=16 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-16-believe-and-thy-house-the-household-covenant',
+       E'Believe and thy house — the household covenant',
+       E'The keeper of the prison, trembling, falls before Paul and Silas and asks, *Sirs, what must I do to be saved?* (Acts 16:30). The answer is *Believe on the Lord Yahusha HaMashiach (Lord Jesus Christ), and thou shalt be saved, and thy house* (Acts 16:31) — and *he was baptized, he and all his, straightway,* and *rejoiced, believing in Elohim (God) with all his house* (Acts 16:33-34). *And thy house* is no afterthought; it is the oldest pattern of the covenant. In Egypt the blood on the door covered everyone within: *when he seeth the blood upon the lintel … Yahuah (LORD) will pass over the door, and will not suffer the destroyer to come in unto your houses to smite you* (Exodus 12:23). Noah and *all thy house* were brought into the ark, carried through the judgment in the one found righteous (Genesis 7:1). Joshua set his vow for the whole household: *as for me and my house, we will serve Yahuah (LORD)* (Joshua 24:15). And Peter had named the reach of the promise at the first: *the promise is unto you, and to your children, and to all that are afar off, even as many as Yahuah Eloheinu (the Lord our God) shall call* (Acts 2:39). The keeper''s household is that promise landing on a house far off — the head of the house turning and the seed of the house gathered with him, the covenant running through the household as it always has.',
+       sv.verse_id, ev.verse_id, 'free', 5665
+  FROM _s217_a16_lookup sv, _s217_a16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=16 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-16-circumcised-him-paul-keeping-torah-for-the-gathering
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 21:24 — *that thou thyself also walkest orderly, and keepest the law* the elders name Paul Torah-keeping; the same hand circumcises Timothy (Acts 16:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-circumcised-him-paul-keeping-torah-for-the-gathering'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=21 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-16-forbidden-of-the-spirit-the-shepherd-leads-the-path
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 13:21 — *Yahuah (LORD) went before them … in a pillar of a cloud, to lead them the way* the Spirit forbidding Asia is the pillar turning the path of the gathering (Acts 16:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-forbidden-of-the-spirit-the-shepherd-leads-the-path'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 16:9 — *A man''s heart deviseth his way: but Yahuah (LORD) directeth his steps* the Macedonian call is the Father steering the steps Paul did not choose (Acts 16:9).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-forbidden-of-the-spirit-the-shepherd-leads-the-path'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-16-whose-heart-yahuah-opened-the-circumcised-heart-and-the-new-spirit
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:6 — *Yahuah Elohayka (the LORD thy God) will circumcise thine heart* the heart-opening is the Father''s circumcising work, not Lydia''s own (Acts 16:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-whose-heart-yahuah-opened-the-circumcised-heart-and-the-new-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 36:26 — *a new heart … and a new spirit will I put within you … an heart of flesh* the stony heart taken away; Lydia''s opened heart is the promise kept (Acts 16:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-whose-heart-yahuah-opened-the-circumcised-heart-and-the-new-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 36:27 — *I will put my spirit within you, and cause you to walk in my statutes* the Spirit and the statutes one motion; the opened heart bears obedience (Acts 16:14-15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-whose-heart-yahuah-opened-the-circumcised-heart-and-the-new-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-16-the-spirit-of-divination-silenced
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 18:10 — *one that useth divination, or an observer of times, or an enchanter* the very abomination the Torah forbade now cast out of the soothsaying damsel (Acts 16:16).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-the-spirit-of-divination-silenced'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 8:2 — *Semjâzâ taught enchantments, and root-cuttings … Barâqîjâl taught astrology* the watcher-source of the divining art Paul commands out (Acts 16:16,18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-the-spirit-of-divination-silenced'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=8 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 4:41 — *he rebuking them suffered them not to speak* a true confession from an unclean mouth is silenced, as Paul silences the divining spirit (Acts 16:17-18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-the-spirit-of-divination-silenced'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=4 AND tv.verse_number=41
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-16-songs-in-the-night-the-bands-loosed-the-gates-of-brass-broken
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 35:10 — *Elohim (God) my maker, who giveth songs in the night* the midnight praise of Paul and Silas is his gift, not their strength (Acts 16:25).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-songs-in-the-night-the-bands-loosed-the-gates-of-brass-broken'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=35 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 119:62 — *At midnight I will rise to give thanks unto thee* the psalmist''s vow fulfilled in the prison, thanks before deliverance (Acts 16:25).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-songs-in-the-night-the-bands-loosed-the-gates-of-brass-broken'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=62
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 107:14 — *He brought them out of darkness … and brake their bands in sunder* the deliverer of the prisoner; every band loosed in the quake (Acts 16:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-songs-in-the-night-the-bands-loosed-the-gates-of-brass-broken'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=107 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 107:16 — *he hath broken the gates of brass, and cut the bars of iron in sunder* no bar holds against him; the prison doors fly open (Acts 16:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-songs-in-the-night-the-bands-loosed-the-gates-of-brass-broken'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=107 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-16-believe-and-thy-house-the-household-covenant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:23 — *Yahuah (LORD) will pass over the door, and will not suffer the destroyer to come in unto your houses* the Passover blood covers the whole house, as the keeper''s house is saved (Acts 16:31,33).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-believe-and-thy-house-the-household-covenant'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 24:15 — *as for me and my house, we will serve Yahuah (LORD)* the head of the house turns and the house turns with him (Acts 16:31,34).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-believe-and-thy-house-the-household-covenant'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 7:1 — *Come thou and all thy house into the ark* the household carried through judgment in the one found righteous (Acts 16:31,33).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-believe-and-thy-house-the-household-covenant'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 2:39 — *the promise is unto you, and to your children, and to all that are afar off* the keeper''s house is the promise landing on a house far off (Acts 16:31).'
+  FROM cross_reference_threads t, cross_references x, _s217_a16_lookup sv, _s217_a16_lookup tv
+ WHERE t.slug='acts-16-believe-and-thy-house-the-household-covenant'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=16 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_17.sql (S217 Acts 17) -----
+-- =====================================================================
+-- S217 minion — ACTS 17 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Anchor chapter: ACTS 17.  Tag: a17 (temp view _s217_a17_lookup).  Sort band: 5675-5699 (step 3).
+-- Source is ALWAYS the canon Acts 17 verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- WATCHPOINTS (Red Lines #7/#11/#12, Christology, son-of-Adam):
+--  * Thessalonica (17:2-3): Paul reasons OUT OF THE SCRIPTURES three sabbaths — Messiah
+--    must SUFFER and RISE. The Tanakh is the test, not a new revelation: Isaiah 53 (the
+--    smitten servant), Psalm 16:10 (the Holy One who sees no corruption), and the Master's
+--    own *thus it behoved Messiah (Christ) to suffer, and to rise* (Luke 24:46). The
+--    suffering-then-glory is read FROM Moses and the prophets, never against them.
+--  * "Turned the world upside down" / "another king, one Yahusha (Jesus)" (17:6-7): the
+--    kingdom that shall never be destroyed (Daniel 2:44) on the throne of David (Isaiah 9:7)
+--    — the everlasting dominion of the Formed, not a sedition against Torah.
+--  * The Bereans (17:11): *searched the scriptures daily, whether those things were so* — the
+--    noble standard is the Tanakh as the test (Isaiah 8:20 *to the law and to the testimony*;
+--    John 5:39 the scriptures testify of him). The 1234-filter posture in narrative form.
+--  * THE AREOPAGUS (17:22-31) — read as the CREATOR's claim on the nations within his ordering
+--    of the earth, NOT a natural-theology inclusion gospel. The Maker of heaven and earth who
+--    *dwelleth not in temples made with hands* (1 Kings 8:27; Isaiah 66:1-2), who *giveth to
+--    all life, and breath* (Isaiah 42:5; Genesis 2:7), who *made of one blood all nations …
+--    and the bounds of their habitation* (Deuteronomy 32:8 — the nations apportioned around
+--    the children of Yashar'el), summoning *that they should seek Yahuah (Lord)* (Isaiah 45:18-22;
+--    Wisdom 13:6). The idols are nothing (Isaiah 45:20; Wisdom 13:10). NOT the nations grafted
+--    into the seed by confession — the Maker summoning the formed within his ordering.
+--  * The appointed Man / day of judgment (17:31): *he will judge the world in righteousness*
+--    (Psalm 96:13) by the Man he ordained — the one *like the Son of Adam* given everlasting
+--    dominion and committed all judgment (Daniel 7:13-14; John 5:27, *because he is the Son of
+--    Adam*). The kaph at Daniel 7:13 is preserved in the pull and is incarnation-honoring:
+--    Yahusha himself, the Formed cloud-rider who took on flesh. The assurance is the
+--    resurrection — the firstfruits raised (Psalm 16:10; 1 Corinthians 15:20-23).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 17:
+--   v.1-2   Thessalonica synagogue       Tanakh: none added (narrative; the scriptures-reasoned carried at v.3)  Extras: none warranted  NT: none warranted
+--   v.2-3   Messiah must suffer and rise Tanakh: Isaiah 53:5, Isaiah 53:8, Psalm 16:10  Extras: none warranted  NT: Luke 24:26, Luke 24:46
+--   v.4     some believed / devout Greeks Tanakh: none added (the gathering carried elsewhere)  Extras: none warranted  NT: none warranted
+--   v.5-9   envy / uproar / Jason        Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.6-7   world upside down / another king Tanakh: Daniel 2:44, Isaiah 9:6, Isaiah 9:7  Extras: none warranted  NT: none added (kingdom carried by Daniel/Isaiah)
+--   v.10    sent to Berea                Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.11    Bereans searched daily       Tanakh: Isaiah 8:20  Extras: none warranted  NT: John 5:39
+--   v.12-15 many believed / to Athens    Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.16-21 stirred at idolatry / Areopagus Tanakh: none added (idolatry carried at v.29 thread)  Extras: none warranted  NT: none warranted (narrative setup)
+--   v.23-25 UNKNOWN GOD / made the world / no temple Tanakh: 1 Kings 8:27, Isaiah 66:1, Isaiah 66:2, Isaiah 42:5  Extras: Wisdom of Solomon 13:5  NT: none added
+--   v.26    of one blood / bounds of habitation Tanakh: Deuteronomy 32:8  Extras: none warranted (Jubilees 8 weighed — apparatus-heavy place-names, not quoted)  NT: none warranted
+--   v.27-29 seek Yahuah / not gold or silver Tanakh: Isaiah 45:18, Isaiah 45:20, Isaiah 45:22  Extras: Wisdom of Solomon 13:6, Wisdom of Solomon 13:10  NT: none added
+--   v.30-31 appointed Man / judge in righteousness Tanakh: Psalm 96:13, Daniel 7:13, Daniel 7:14  Extras: none warranted  NT: John 5:27
+--   v.31-32 raised from the dead / assurance Tanakh: Psalm 16:10  Extras: none warranted  NT: 1 Corinthians 15:20, 1 Corinthians 15:23
+--   v.33-34 Dionysius / Damaris believe   Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--
+-- THREADS (slug -> target libraries):
+--   5675 acts-17-reasoning-from-the-scriptures-messiah-must-suffer-and-rise        (Tanakh + NT)
+--   5678 acts-17-these-that-have-turned-the-world-upside-down-another-king          (Tanakh)
+--   5681 acts-17-the-bereans-searched-the-scriptures-daily-whether-those-things-were-so (Tanakh + NT)
+--   5684 acts-17-the-unknown-god-the-maker-needs-no-temple-made-with-hands          (Tanakh + Extras)
+--   5687 acts-17-of-one-blood-all-nations-and-the-bounds-of-their-habitation        (Tanakh)
+--   5690 acts-17-that-they-should-seek-yahuah-the-maker-summoning-the-nations        (Tanakh + Extras)
+--   5693 acts-17-the-appointed-man-the-day-of-judgment-in-righteousness             (Tanakh + NT)
+--   5696 acts-17-raised-from-the-dead-the-firstfruits-and-the-assurance-given        (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-17-reasoning-from-the-scriptures-messiah-must-suffer-and-rise
+  ('canon', 'acts', 17, 3, 'canon', 'isaiah', 53, 5, 'free', E'*But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed.* (Isaiah 53:5). For three sabbath days Paul *reasoned with them out of the scriptures, opening and alleging, that Messiah (Christ) must needs have suffered* (Acts 17:2-3). This is the scripture he opened: the servant wounded for transgressions, bruised for iniquities. The suffering of the Messiah is not a stumbling-block read against the prophets but the very thing the prophet wrote — read out of the scriptures, not against them.'),
+  ('canon', 'acts', 17, 3, 'canon', 'isaiah', 53, 8, 'free', E'*He was taken from prison and from judgment: and who shall declare his generation? for he was cut off out of the land of the living: for the transgression of my people was he stricken.* (Isaiah 53:8). Paul alleges *that Messiah (Christ) must needs have suffered, and risen again from the dead* (Acts 17:3). The servant *cut off out of the land of the living* for the transgression of the people is the suffering the prophet foretold; the rising again answers the cutting-off, the One stricken not held by death.'),
+  ('canon', 'acts', 17, 3, 'canon', 'psalms', 16, 10, 'free', E'*For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption.* (Psalm 16:10). Paul reasons that Messiah (Christ) *must needs have suffered, and risen again from the dead* (Acts 17:3). The rising is written in the Psalm David sang: the Holy One whose soul is not left in the grave, whose flesh sees no corruption. The resurrection Paul preaches is the scripture opened, not a new doctrine — *whom I preach unto you, is Messiah (Christ)* (Acts 17:3).'),
+  ('canon', 'acts', 17, 3, 'canon', 'luke', 24, 26, 'free', E'*Ought not Messiah (Christ) to have suffered these things, and to enter into his glory?* (Luke 24:26). What Paul reasons three sabbaths in Thessalonica is what the risen Master taught on the Emmaus road: the suffering came first, then the glory. *That Messiah (Christ) must needs have suffered, and risen again from the dead* (Acts 17:3) is the same opening of the same scriptures — suffering then glory, the pattern the prophets wrote.'),
+  ('canon', 'acts', 17, 3, 'canon', 'luke', 24, 46, 'free', E'*And said unto them, Thus it is written, and thus it behoved Messiah (Christ) to suffer, and to rise from the dead the third day:* (Luke 24:46). The Master said *thus it is written* — and Paul, *as his manner was,* goes into the synagogue and out of those same writings shows *that Messiah (Christ) must needs have suffered, and risen again from the dead* (Acts 17:2-3). The apostle preaches what the Master opened: the written word, that the Messiah suffer and rise.'),
+  -- thread: acts-17-these-that-have-turned-the-world-upside-down-another-king
+  ('canon', 'acts', 17, 7, 'canon', 'daniel', 2, 44, 'free', E'*And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever.* (Daniel 2:44). The accusation rings out: *these all do contrary to the decrees of Cæsar, saying that there is another king, one Yahusha (Jesus)* (Acts 17:7). The other king is no rival to Rome''s order but the King of the kingdom Daniel saw — the kingdom of the Elohim (God) of heaven that shall never be destroyed, set up in the days of the kings of the earth and standing for ever.'),
+  ('canon', 'acts', 17, 7, 'canon', 'isaiah', 9, 7, 'free', E'*Of the increase of his government and peace there shall be no end, upon the throne of David, and upon his kingdom, to order it, and to establish it with judgment and with justice from henceforth even for ever. The zeal of Yahuah Tseva''ot (LORD of hosts) will perform this.* (Isaiah 9:7). The city is troubled that there is *another king, one Yahusha (Jesus)* (Acts 17:7). The prophet named the throne of that king long before Caesar: the government upon his shoulder, the throne of David, the kingdom established with judgment and justice for ever. The King the rulers fear is the King the zeal of Yahuah Tseva''ot (LORD of hosts) was always going to seat.'),
+  -- thread: acts-17-the-bereans-searched-the-scriptures-daily-whether-those-things-were-so
+  ('canon', 'acts', 17, 11, 'canon', 'isaiah', 8, 20, 'free', E'*To the law and to the testimony: if they speak not according to this word, it is because there is no light in them.* (Isaiah 8:20). The Bereans *received the word with all readiness of mind, and searched the scriptures daily, whether those things were so* (Acts 17:11). This is the test Isaiah set: bring every word to the law and to the testimony. The noble Berean does not believe Paul because Paul is eloquent; he weighs the preaching against the written word — and what speaks according to that word has the light in it.'),
+  ('canon', 'acts', 17, 11, 'canon', 'john', 5, 39, 'free', E'*Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me.* (John 5:39). The Master commanded the very searching the Bereans practised — *searched the scriptures daily, whether those things were so* (Acts 17:11). And the searching finds what the Master said it would find: the scriptures testify of him. The Bereans search the writings to test the preaching, and the writings bear witness to the One preached.'),
+  -- thread: acts-17-the-unknown-god-the-maker-needs-no-temple-made-with-hands
+  ('canon', 'acts', 17, 24, 'canon', '1-kings', 8, 27, 'free', E'*But will Elohim (God) indeed dwell on the earth? behold, the heaven and heaven of heavens cannot contain thee; how much less this house that I have builded?* (1 Kings 8:27). On Mars'' hill Paul declares the unknown God: *Elohim (God) that made the world and all things therein … dwelleth not in temples made with hands* (Acts 17:24). It is the word Solomon spoke at the dedication of the temple itself — the heaven of heavens cannot contain him, how much less a house of hands. The Maker is not housed by what he made.'),
+  ('canon', 'acts', 17, 24, 'canon', 'isaiah', 66, 1, 'free', E'*Thus saith Yahuah (LORD), The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me? and where is the place of my rest?* (Isaiah 66:1). Paul preaches the One who *dwelleth not in temples made with hands* (Acts 17:24). Isaiah set the question to the temple-builders centuries before: the heaven is his throne, the earth his footstool — what house could men build for the One who fills both? The unknown God of the altar is the Maker the prophet declared.'),
+  ('canon', 'acts', 17, 24, 'canon', 'isaiah', 66, 2, 'free', E'*For all those things hath mine hand made, and all those things have been, saith Yahuah (LORD): but to this man will I look, even to him that is poor and of a contrite spirit, and trembleth at my word.* (Isaiah 66:2). *Elohim (God) that made the world and all things therein* (Acts 17:24) needs no house of hands, for *all those things hath mine hand made.* The God who needs nothing looks not to the temple men build but to the contrite heart that trembles at his word — the seeking he calls for on the Areopagus.'),
+  ('canon', 'acts', 17, 25, 'canon', 'isaiah', 42, 5, 'free', E'*Thus saith Elohim (God) Yahuah (LORD), he that created the heavens, and stretched them out; he that spread forth the earth, and that which cometh out of it; he that giveth breath unto the people upon it, and spirit to them that walk therein:* (Isaiah 42:5). Paul says the Maker is not *worshipped with men''s hands, as though he needed any thing, seeing he giveth to all life, and breath, and all things* (Acts 17:25). Isaiah named him just so: the One who created the heavens and *giveth breath unto the people upon it.* He is not served as one in need; he is the giver of the breath of every man who would serve him.'),
+  ('canon', 'acts', 17, 25, 'apocrypha', 'the-wisdom-of-solomon', 13, 5, 'extras', E'*For by the greatness and beauty of the creatures proportionably the maker of them is seen.* (Wisdom of Solomon 13:5). Paul stands among men who worship they know not what, and declares *Elohim (God) that made the world and all things therein* (Acts 17:24), who *giveth to all life, and breath* (Acts 17:25). The wisdom of the fathers had said the same: the maker is seen by the greatness and beauty of the creatures — the works point past themselves to the One who made them, the unknown God whom the Athenians ignorantly worship.'),
+  -- thread: acts-17-of-one-blood-all-nations-and-the-bounds-of-their-habitation
+  ('canon', 'acts', 17, 26, 'canon', 'deuteronomy', 32, 8, 'free', E'*When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* (Deuteronomy 32:8). Paul says the Maker *hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26). Moses had already sung it: the El Elyon (most High) who separated the sons of Adam and *set the bounds of the people* — the nations apportioned and ordered around the children of Yashar''el (Israel). The bounds of the Areopagus are the bounds of the Song of Moses: the Maker''s ordering of the earth he made.'),
+  -- thread: acts-17-that-they-should-seek-yahuah-the-maker-summoning-the-nations
+  ('canon', 'acts', 17, 27, 'canon', 'isaiah', 45, 18, 'free', E'*For thus saith Yahuah (LORD) that created the heavens; Elohim (God) himself that formed the earth and made it; he hath established it, he created it not in vain, he formed it to be inhabited: I am Yahuah (LORD); and there is none else.* (Isaiah 45:18). The Maker set the bounds of habitation *that they should seek Yahuah (Lord), if haply they might feel after him, and find him* (Acts 17:27). Isaiah declares the same Maker and the same end: the One who *formed the earth … to be inhabited,* beside whom there is none else. He made the earth to be dwelt in so that those who dwell in it would seek the One who is.'),
+  ('canon', 'acts', 17, 27, 'apocrypha', 'the-wisdom-of-solomon', 13, 6, 'extras', E'*But yet for this they are the less to be blamed: for they perhaps err, seeking Yahuah (God), and desirous to find him.* (Wisdom of Solomon 13:6). Paul names the appointed end of the bounded habitation: *that they should seek Yahuah (Lord), if haply they might feel after him, and find him, though he be not far from every one of us* (Acts 17:27). The wisdom of the fathers had named the same groping after the Maker — men *seeking Yahuah (God), and desirous to find him,* feeling after the One who set them in their place. The seeking is the Maker''s summons, the finding never far off.'),
+  ('canon', 'acts', 17, 29, 'canon', 'isaiah', 45, 20, 'free', E'*Assemble yourselves and come; draw near together, ye that are escaped of the nations: they have no knowledge that set up the wood of their graven image, and pray unto a god that cannot save.* (Isaiah 45:20). Paul says *we ought not to think that the Godhead is like unto gold, or silver, or stone, graven by art and man''s device* (Acts 17:29). Isaiah had already exposed the graven image: the wood set up, the prayer to a god that cannot save, the no-knowledge of those who carry it. The city wholly given to idolatry (Acts 17:16) is the city Isaiah called to draw near to the One who can save.'),
+  ('canon', 'acts', 17, 29, 'apocrypha', 'the-wisdom-of-solomon', 13, 10, 'extras', E'*But miserable are they, and in dead things is their hope, who call them gods, which are the works of men''s hands, gold and silver, to shew art in, and resemblances of beasts, or a stone good for nothing, the work of an ancient hand.* (Wisdom of Solomon 13:10). Paul says *we ought not to think that the Godhead is like unto gold, or silver, or stone, graven by art and man''s device* (Acts 17:29). The wisdom of the fathers named the misery already: hope set in dead things, gods of gold and silver and stone, the works of men''s hands. The offspring of the living Maker are not to fashion him after the dead works of their own art.'),
+  -- thread: acts-17-the-appointed-man-the-day-of-judgment-in-righteousness
+  ('canon', 'acts', 17, 31, 'canon', 'psalms', 96, 13, 'free', E'*Before Yahuah (LORD): for he cometh, for he cometh to judge the earth: he shall judge the world with righteousness, and the people with his truth.* (Psalm 96:13). Paul declares that the Maker *hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained* (Acts 17:31). The Psalm sang the coming judgment: he cometh to *judge the world with righteousness.* The appointed day of the Areopagus is the day the Psalmist saw — the Maker who summons the nations is the Judge who comes to try them in righteousness.'),
+  ('canon', 'acts', 17, 31, 'canon', 'daniel', 7, 13, 'free', E'*I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* (Daniel 7:13). The world will be judged *by that man whom he hath ordained* (Acts 17:31). Daniel saw the ordaining: one *like the Son of Adam* brought near before the Ancient of days — the Formed who took on flesh, resembling mortal-man, coming with the clouds to receive what is given. The appointed Man is the One the night vision brought before the throne.'),
+  ('canon', 'acts', 17, 31, 'canon', 'daniel', 7, 14, 'free', E'*And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed.* (Daniel 7:14). Paul preaches *that man whom he hath ordained* to judge the world (Acts 17:31). To the One like the Son of Adam was given dominion over *all people, nations, and languages* — the nations Paul says were made of one blood and set in their bounds (Acts 17:26) are the nations given to serve the ordained Man. The Judge of the appointed day holds the everlasting dominion that shall not pass away.'),
+  ('canon', 'acts', 17, 31, 'canon', 'john', 5, 27, 'free', E'*And hath given him authority to execute judgment also, because he is the Son of Adam.* (John 5:27). The Maker will judge the world *by that man whom he hath ordained* (Acts 17:31). The Master named the ground of his authority to judge: *because he is the Son of Adam* — the seed of Adam come in flesh, to whom the Father committed all judgment. The appointed Man of the Areopagus is the Son of Adam to whom the executing of judgment is given.'),
+  -- thread: acts-17-raised-from-the-dead-the-firstfruits-and-the-assurance-given
+  ('canon', 'acts', 17, 31, 'canon', 'psalms', 16, 10, 'free', E'*For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption.* (Psalm 16:10). The Maker *hath given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). The raising was written in the Psalm: the Holy One whose soul is not left in the grave, whose flesh sees no corruption. The assurance of the appointed day is the resurrection the Psalmist foresaw — the Judge already raised, the pledge already given.'),
+  ('canon', 'acts', 17, 32, 'canon', '1-corinthians', 15, 20, 'free', E'*But now is Messiah (Christ) risen from the dead, and become the firstfruits of them that slept.* (1 Corinthians 15:20). When the Athenians *heard of the resurrection of the dead, some mocked* (Acts 17:32) — yet the resurrection is the firstfruits of a harvest. Messiah (Christ) is *risen from the dead, and become the firstfruits of them that slept;* the One raised is not the only one to rise but the first sheaf of the gathering, the assurance that the dead the appointed Man will judge are the dead who shall be raised.'),
+  ('canon', 'acts', 17, 32, 'canon', '1-corinthians', 15, 23, 'free', E'*But every man in his own order: Messiah (Christ) the firstfruits; afterward they that are Messiah''s (Christ''s) at his coming.* (1 Corinthians 15:23). The resurrection the philosophers mocked (Acts 17:32) has an order: *Messiah (Christ) the firstfruits; afterward they that are Messiah''s (Christ''s) at his coming.* The raising that is the assurance of the appointed day (Acts 17:31) is the first of the order — the firstfruits gone before, the harvest of his own to follow at his coming.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-17-reasoning-from-the-scriptures-messiah-must-suffer-and-rise',
+       E'Reasoning out of the scriptures — Messiah (Christ) must suffer and rise',
+       E'In the synagogue at Thessalonica Paul, *as his manner was, went in unto them, and three sabbath days reasoned with them out of the scriptures, opening and alleging, that Messiah (Christ) must needs have suffered, and risen again from the dead* (Acts 17:2-3). The suffering and the rising are not preached against the prophets but out of them. The wounding is Isaiah''s: *he was wounded for our transgressions, he was bruised for our iniquities … and with his stripes we are healed* (Isaiah 53:5), the servant *cut off out of the land of the living: for the transgression of my people was he stricken* (Isaiah 53:8). The rising is David''s: *thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption* (Psalm 16:10). And it is the very pattern the risen Master opened on the Emmaus road — *Ought not Messiah (Christ) to have suffered these things, and to enter into his glory?* (Luke 24:26), *thus it is written, and thus it behoved Messiah (Christ) to suffer, and to rise from the dead the third day* (Luke 24:46). Suffering then glory, written in Moses and the prophets and the psalms, reasoned three sabbaths from the scriptures the Yahudim (Jews) already held.',
+       sv.verse_id, ev.verse_id, 'free', 5675
+  FROM _s217_a17_lookup sv, _s217_a17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=17 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-17-these-that-have-turned-the-world-upside-down-another-king',
+       E'These that have turned the world upside down — another king, one Yahusha (Jesus)',
+       E'The mob drags Jason before the rulers, crying *These that have turned the world upside down are come hither also* (Acts 17:6), and the charge is sedition: *these all do contrary to the decrees of Cæsar, saying that there is another king, one Yahusha (Jesus)* (Acts 17:7). The accusation is truer than the accusers know — but the other king is no rival pretender to Caesar''s throne. He is the King of the kingdom Daniel saw rise in the days of the kings of the earth: *in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed … and it shall break in pieces and consume all these kingdoms, and it shall stand for ever* (Daniel 2:44). The prophet had named that king''s throne long before Caesar reigned: *the government shall be upon his shoulder … upon the throne of David, and upon his kingdom, to order it, and to establish it with judgment and with justice from henceforth even for ever. The zeal of Yahuah Tseva''ot (LORD of hosts) will perform this* (Isaiah 9:7). The world is indeed turned upside down — the kingdoms of men give way to the everlasting dominion of the King the zeal of Yahuah was always going to seat.',
+       sv.verse_id, ev.verse_id, 'free', 5678
+  FROM _s217_a17_lookup sv, _s217_a17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=17 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-17-the-bereans-searched-the-scriptures-daily-whether-those-things-were-so',
+       E'The Bereans searched the scriptures daily, whether those things were so',
+       E'The brethren send Paul and Silas by night to Berea, and there the synagogue does the noble thing: *these were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so* (Acts 17:11). They do not believe Paul because he is persuasive; they weigh his preaching against the written word. It is the test Isaiah set for every word that claims to be from above: *to the law and to the testimony: if they speak not according to this word, it is because there is no light in them* (Isaiah 8:20). And the searching finds exactly what the Master promised it would find — *Search the scriptures; for in them ye think ye have eternal life: and they are they which testify of me* (John 5:39). The Bereans search the writings to test the preaching, and the writings bear witness to the One preached. *Therefore many of them believed* (Acts 17:12) — not against the scriptures, but because the scriptures, searched daily, said the things were so.',
+       sv.verse_id, ev.verse_id, 'free', 5681
+  FROM _s217_a17_lookup sv, _s217_a17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=17 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-17-the-unknown-god-the-maker-needs-no-temple-made-with-hands',
+       E'The unknown God — the Maker needs no temple made with hands',
+       E'On Mars'' hill Paul finds an altar inscribed TO THE UNKNOWN GOD, and declares *Whom therefore ye ignorantly worship, him declare I unto you* (Acts 17:23): *Elohim (God) that made the world and all things therein, seeing that he is Yahuah (Lord) of heaven and earth, dwelleth not in temples made with hands; neither is worshipped with men''s hands, as though he needed any thing, seeing he giveth to all life, and breath, and all things* (Acts 17:24-25). This is no new god of the philosophers but the Maker the prophets and the fathers already declared. Solomon said it at the dedication of the temple itself: *behold, the heaven and heaven of heavens cannot contain thee; how much less this house that I have builded?* (1 Kings 8:27). Isaiah set the question to the temple-builders: *The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me?* (Isaiah 66:1) — *for all those things hath mine hand made* (Isaiah 66:2). He needs nothing from men''s hands, for he is the giver: *Thus saith Elohim (God) Yahuah (LORD), he that created the heavens … he that giveth breath unto the people upon it* (Isaiah 42:5). And the wisdom of the fathers had taught the same seeing: *by the greatness and beauty of the creatures proportionably the maker of them is seen* (Wisdom of Solomon 13:5). The unknown God is the Maker of heaven and earth, housed by nothing he made, the giver of the very breath of every man who would worship him.',
+       sv.verse_id, ev.verse_id, 'extras', 5684
+  FROM _s217_a17_lookup sv, _s217_a17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=17 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-17-of-one-blood-all-nations-and-the-bounds-of-their-habitation',
+       E'Of one blood all nations — and the bounds of their habitation',
+       E'Paul presses the Maker''s claim further: *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26). This is the Song of Moses set in the mouth of the apostle. Moses sang of the same apportioning of the same nations by the same Maker: *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8). The bounds of the Areopagus are the bounds of the Song: the El Elyon (most High) who separated the sons of Adam and set every people in its place — the nations ordered around the children of Yashar''el (Israel), the times and the borders determined by the One who made of one blood all nations of men. The Maker''s claim on the nations is his ordering of the earth he made, not a flattening of the seed he set at the centre of it.',
+       sv.verse_id, ev.verse_id, 'free', 5687
+  FROM _s217_a17_lookup sv, _s217_a17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=17 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-17-that-they-should-seek-yahuah-the-maker-summoning-the-nations',
+       E'That they should seek Yahuah (Lord) — the Maker summoning the nations',
+       E'The Maker set the times and the bounds *that they should seek Yahuah (Lord), if haply they might feel after him, and find him, though he be not far from every one of us* (Acts 17:27). The end of the ordering is the seeking. Isaiah declared the same Maker for the same purpose: *he formed the earth … he created it not in vain, he formed it to be inhabited: I am Yahuah (LORD); and there is none else* (Isaiah 45:18) — and to the ends of the earth he calls, *Look unto me, and be ye saved, all the ends of the earth: for I am Elohim (God), and there is none else* (Isaiah 45:22). The wisdom of the fathers named the groping itself: men *seeking Yahuah (God), and desirous to find him* (Wisdom of Solomon 13:6), feeling after the One who set them in their place. But the seeking is no warrant for the idol — *we ought not to think that the Godhead is like unto gold, or silver, or stone, graven by art and man''s device* (Acts 17:29). Isaiah exposed the graven image: *they have no knowledge that set up the wood of their graven image, and pray unto a god that cannot save* (Isaiah 45:20); and the fathers'' wisdom: *in dead things is their hope, who call them gods, which are the works of men''s hands, gold and silver* (Wisdom of Solomon 13:10). The Maker summons the nations he formed to seek him — not to fashion him after the dead works of their own hands, but to find the living One who is not far off.',
+       sv.verse_id, ev.verse_id, 'extras', 5690
+  FROM _s217_a17_lookup sv, _s217_a17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=17 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-17-the-appointed-man-the-day-of-judgment-in-righteousness',
+       E'The appointed Man — the day of judgment in righteousness',
+       E'Paul brings the Areopagus to its edge: *the times of this ignorance Elohim (God) winked at; but now commandeth all men every where to repent: Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained* (Acts 17:30-31). The appointed day is the day the Psalmist sang: *he cometh to judge the earth: he shall judge the world with righteousness, and the people with his truth* (Psalm 96:13). And the ordained Man is the One Daniel saw in the night vision: *behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days* (Daniel 7:13) — the Formed who took on flesh, resembling mortal-man, brought near before the throne — *and there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion* (Daniel 7:14). The nations made of one blood and set in their bounds (Acts 17:26) are the nations given to serve the ordained Man. And the Master named the ground of his right to judge them: *hath given him authority to execute judgment also, because he is the Son of Adam* (John 5:27). The Judge of the appointed day is the Son of Adam, the seed of Adam come in flesh, to whom the Father committed all judgment — the Maker who summons the nations is the One who will try them by the Man he ordained.',
+       sv.verse_id, ev.verse_id, 'free', 5693
+  FROM _s217_a17_lookup sv, _s217_a17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=17 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-17-raised-from-the-dead-the-firstfruits-and-the-assurance-given',
+       E'Raised from the dead — the firstfruits and the assurance given',
+       E'The assurance of the appointed day is not a sign yet to come but one already given: *whereof he hath given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). The raising was written in the Psalm David sang: *thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption* (Psalm 16:10). When the Athenians *heard of the resurrection of the dead, some mocked* (Acts 17:32) — yet the resurrection they mocked is the firstfruits of a harvest, not a single isolated wonder. *But now is Messiah (Christ) risen from the dead, and become the firstfruits of them that slept* (1 Corinthians 15:20); and the harvest has its order — *Messiah (Christ) the firstfruits; afterward they that are Messiah''s (Christ''s) at his coming* (1 Corinthians 15:23). The One raised is the first sheaf gone before; the dead whom the appointed Man will judge are the dead who shall be raised. The resurrection is the pledge the Maker has already laid down that the day is fixed and the Judge is seated — the firstfruits the assurance of the gathering to come.',
+       sv.verse_id, ev.verse_id, 'free', 5696
+  FROM _s217_a17_lookup sv, _s217_a17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=17 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-17-reasoning-from-the-scriptures-messiah-must-suffer-and-rise
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 53:5 — *he was wounded for our transgressions … with his stripes we are healed* the suffering Paul reasons out of the scriptures (Acts 17:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-reasoning-from-the-scriptures-messiah-must-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 53:8 — *he was cut off out of the land of the living: for the transgression of my people was he stricken* the servant whose cutting-off the rising answers (Acts 17:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-reasoning-from-the-scriptures-messiah-must-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 16:10 — *neither wilt thou suffer thine Holy One to see corruption* the rising written in the Psalm, the resurrection Paul preaches (Acts 17:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-reasoning-from-the-scriptures-messiah-must-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Luke 24:26 — *Ought not Messiah (Christ) to have suffered these things, and to enter into his glory?* the suffering-then-glory the Master opened (Acts 17:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-reasoning-from-the-scriptures-messiah-must-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Luke 24:46 — *thus it behoved Messiah (Christ) to suffer, and to rise from the dead the third day* the written word Paul shows in the synagogue (Acts 17:2-3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-reasoning-from-the-scriptures-messiah-must-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=46
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-17-these-that-have-turned-the-world-upside-down-another-king
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 2:44 — *the Elohim (God) of heaven set up a kingdom, which shall never be destroyed … it shall stand for ever* the kingdom of the other King (Acts 17:7).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-these-that-have-turned-the-world-upside-down-another-king'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=44
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 9:7 — *upon the throne of David, and upon his kingdom … for ever* the throne of the King the rulers fear (Acts 17:7).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-these-that-have-turned-the-world-upside-down-another-king'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=9 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-17-the-bereans-searched-the-scriptures-daily-whether-those-things-were-so
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 8:20 — *to the law and to the testimony: if they speak not according to this word … there is no light in them* the test the Bereans applied (Acts 17:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-bereans-searched-the-scriptures-daily-whether-those-things-were-so'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 5:39 — *Search the scriptures … they are they which testify of me* the searching the Bereans practised, the witness they found (Acts 17:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-bereans-searched-the-scriptures-daily-whether-those-things-were-so'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-17-the-unknown-god-the-maker-needs-no-temple-made-with-hands
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Kings 8:27 — *the heaven and heaven of heavens cannot contain thee; how much less this house* Solomon''s word at the temple itself, that the Maker is not housed by hands (Acts 17:24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-unknown-god-the-maker-needs-no-temple-made-with-hands'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 66:1 — *The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me?* the Maker who dwells not in temples made with hands (Acts 17:24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-unknown-god-the-maker-needs-no-temple-made-with-hands'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 66:2 — *all those things hath mine hand made … but to this man will I look … that trembleth at my word* the Maker who looks to the contrite heart, not the house (Acts 17:24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-unknown-god-the-maker-needs-no-temple-made-with-hands'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 42:5 — *he that giveth breath unto the people upon it, and spirit to them that walk therein* the Maker who needs nothing and gives all life and breath (Acts 17:25).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-unknown-god-the-maker-needs-no-temple-made-with-hands'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Wisdom of Solomon 13:5 — *by the greatness and beauty of the creatures proportionably the maker of them is seen* the works pointing past themselves to the unknown God (Acts 17:25).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-unknown-god-the-maker-needs-no-temple-made-with-hands'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=25
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=13 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-17-of-one-blood-all-nations-and-the-bounds-of-their-habitation
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:8 — *when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* the Song of Moses behind the bounds of habitation (Acts 17:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-of-one-blood-all-nations-and-the-bounds-of-their-habitation'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-17-that-they-should-seek-yahuah-the-maker-summoning-the-nations
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 45:18 — *he formed the earth … he formed it to be inhabited: I am Yahuah (LORD); and there is none else* the Maker who formed the earth to be dwelt in, that men might seek him (Acts 17:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-that-they-should-seek-yahuah-the-maker-summoning-the-nations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Wisdom of Solomon 13:6 — *they perhaps err, seeking Yahuah (God), and desirous to find him* the groping after the Maker, the seeking that is his summons (Acts 17:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-that-they-should-seek-yahuah-the-maker-summoning-the-nations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=27
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=13 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 45:20 — *they have no knowledge that set up the wood of their graven image, and pray unto a god that cannot save* the idol Paul says the offspring of Elohim (God) must not fashion (Acts 17:29).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-that-they-should-seek-yahuah-the-maker-summoning-the-nations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 13:10 — *in dead things is their hope, who call them gods, which are the works of men''s hands, gold and silver* the dead works the living Maker is not to be likened to (Acts 17:29).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-that-they-should-seek-yahuah-the-maker-summoning-the-nations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=29
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=13 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-17-the-appointed-man-the-day-of-judgment-in-righteousness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 96:13 — *he cometh to judge the earth: he shall judge the world with righteousness* the appointed day of judgment the Psalmist sang (Acts 17:31).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-appointed-man-the-day-of-judgment-in-righteousness'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=96 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:13 — *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days* the ordained Man brought before the throne; the kaph honours the Formed who took on flesh (Acts 17:31).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-appointed-man-the-day-of-judgment-in-righteousness'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 7:14 — *there was given him dominion … all people, nations, and languages, should serve him* the nations of one blood given to serve the ordained Man (Acts 17:31).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-appointed-man-the-day-of-judgment-in-righteousness'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'John 5:27 — *hath given him authority to execute judgment also, because he is the Son of Adam* the ground of the ordained Man''s right to judge (Acts 17:31).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-the-appointed-man-the-day-of-judgment-in-righteousness'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-17-raised-from-the-dead-the-firstfruits-and-the-assurance-given
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 16:10 — *neither wilt thou suffer thine Holy One to see corruption* the raising written in the Psalm, the assurance given (Acts 17:31).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-raised-from-the-dead-the-firstfruits-and-the-assurance-given'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Corinthians 15:20 — *now is Messiah (Christ) risen from the dead, and become the firstfruits of them that slept* the resurrection the Athenians mocked is the firstfruits of a harvest (Acts 17:32).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-raised-from-the-dead-the-firstfruits-and-the-assurance-given'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Corinthians 15:23 — *Messiah (Christ) the firstfruits; afterward they that are Messiah''s (Christ''s) at his coming* the order of the harvest the first sheaf assures (Acts 17:32).'
+  FROM cross_reference_threads t, cross_references x, _s217_a17_lookup sv, _s217_a17_lookup tv
+ WHERE t.slug='acts-17-raised-from-the-dead-the-firstfruits-and-the-assurance-given'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=17 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_18.sql (S217 Acts 18) -----
+-- =====================================================================
+-- S217 minion — ACTS 18 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Range:  ACTS 18.  Tag: a18 (temp view _s217_a18_lookup).  Sort band: 5700-5712.
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- WATCHPOINTS (Red Lines #4/#7/#11, Christology, son-of-Adam, dropped-Paul):
+--  * "Your blood be upon your own heads; I am clean" (18:6): this is Ezekiel's watchman
+--    (Ezekiel 33:7-9; 3:18-19) — the watchman who blows the trumpet and warns is clean of
+--    the blood; the blood is required at the hand of the watchman who fails to warn. Paul
+--    has warned; the blood is now on their own heads, not his. NEVER read as a verdict
+--    casting off a people — it is the watchman cleared, the warning delivered, the call
+--    still standing (cf. Ezekiel 33:11, no pleasure in the death of the wicked).
+--  * "I have much people in this city" (18:9-10): the remnant Yahuah (Lord) keeps and
+--    gathers — the much-people already his in Corinth, his sheep who will hear (the hearing
+--    revealing what was already true, never names added after the foundation). The night
+--    vision *Be not afraid … for I am with thee* is the same comfort given Jeremiah and the
+--    servant of Isaiah (Jeremiah 1:8; Isaiah 41:10; 43:5 — the gathering of the seed from
+--    east and west). Read as the remnant kept, NOT false-inclusion of non-seed by confession.
+--  * The vow / shorn head at Cenchrea (18:18): a Nazarite-style vow (Numbers 6) — Paul
+--    Torah-observant, separating himself unto Yahuah (LORD). This is the dropped-Paul
+--    correction: the Paul who abolished the Torah does not exist; here he takes a vow, and
+--    in Acts 21:24 pays the charges for four men's vows precisely so all may know *that thou
+--    thyself also walkest orderly, and keepest the law.* Never let the vow read as residue
+--    of a system Paul left behind.
+--  * Apollos / "the way more perfectly" / "the baptism of John" (18:24-26): Apollos mighty
+--    in the scriptures, knowing only John's baptism, is shown the way more perfectly — the
+--    same gap Paul fills for the Ephesian disciples in Acts 19:1-6 (John's baptism of
+--    repentance completed in the name of the Lord Yahusha (Lord Jesus) and the Ruach
+--    HaKodesh (Holy Spirit)). The come-and-see: the way is unfolded more perfectly, not a
+--    new religion installed.
+--  * "Watered … helped them much which had believed through grace" (18:27-28): the
+--    planted/watered of 1 Corinthians 3:6 (Paul planted, Apollos watered, Elohim (God) gave
+--    the increase) and the rain-and-the-word of Isaiah 55:10-11 (the word that goeth forth
+--    shall not return void). "Through grace" is the means by which the increase is given —
+--    NOT a standalone freedom-from-Torah formula (Red Line #10); grace waters the seed home.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 18:
+--   v.1-3   Aquila/Priscilla, tentmakers   Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative; Paul the laborer with his hands carried elsewhere)
+--   v.4-5   reasoned/testified Yahusha is Messiah  Tanakh: none added (the scriptures-prove carried in v.28 thread)  Extras: none warranted  NT: none warranted (narrative)
+--   v.6     blood on your own heads; I am clean  Tanakh: Ezekiel 33:7, Ezekiel 33:8, Ezekiel 3:18  Extras: none warranted  NT: none warranted
+--   v.7-8   Justus/Crispus believe, baptized  Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.9-10  night vision: be not afraid, I am with thee, much people  Tanakh: Jeremiah 1:8, Isaiah 41:10, Isaiah 43:5  Extras: none warranted  NT: none warranted
+--   v.11    continued teaching the word  Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.12-17 Gallio refuses to judge        Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative; "question of words and names, and of your law")
+--   v.18    shorn head in Cenchrea, a vow  Tanakh: Numbers 6:5, Numbers 6:18  Extras: none warranted  NT: Acts 21:24
+--   v.19-23 Ephesus/Antioch/Galatia, keep the feast  Tanakh: none added (feast-keeping carried thematically by the vow/Torah thread)  Extras: none warranted  NT: none warranted (narrative; "I must by all means keep this feast")
+--   v.24-26 Apollos, the way more perfectly, John's baptism  Tanakh: none warranted  Extras: none warranted  NT: Acts 19:4, Acts 19:5, Acts 19:6
+--   v.27-28 watered / believed through grace / scriptures prove  Tanakh: Isaiah 55:10, Isaiah 55:11  Extras: none warranted  NT: 1 Corinthians 3:6, 1 Corinthians 3:9
+--
+-- THREADS (slug -> target libraries):
+--   5700 acts-18-your-blood-be-upon-your-own-heads-the-watchman-of-yasharel-cleared  (Tanakh)
+--   5703 acts-18-i-am-with-thee-i-have-much-people-in-this-city-the-remnant-kept      (Tanakh)
+--   5706 acts-18-having-shorn-his-head-in-cenchrea-paul-the-nazarite-keeping-the-law  (Tanakh + NT)
+--   5709 acts-18-the-way-more-perfectly-apollos-and-the-baptism-of-john               (NT)
+--   5712 acts-18-i-planted-apollos-watered-the-rain-and-the-word-that-prospers        (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-18-your-blood-be-upon-your-own-heads-the-watchman-of-yasharel-cleared
+  ('canon', 'acts', 18, 6, 'canon', 'ezekiel', 33, 7, 'free', E'*So thou, O son of Adam, I have set thee a watchman unto the house of Yashar''el (Israel); therefore thou shalt hear the word at my mouth, and warn them from me.* (Ezekiel 33:7). When they opposed and blasphemed, *he shook his raiment, and said unto them, Your blood be upon your own heads; I am clean* (Acts 18:6). This is the watchman of Ezekiel: the one set to hear the word at Yahuah''s (LORD''s) mouth and warn the house. Paul has warned; he stands in the watchman''s office, and his raiment shaken is the trumpet blown.'),
+  ('canon', 'acts', 18, 6, 'canon', 'ezekiel', 33, 8, 'free', E'*When I say unto the wicked, O wicked man, thou shalt surely die; if thou dost not speak to warn the wicked from his way, that wicked man shall die in his iniquity; but his blood will I require at thine hand.* (Ezekiel 33:8). The watchman who fails to warn carries the blood at his own hand; the watchman who warns is cleared. *Your blood be upon your own heads; I am clean* (Acts 18:6) is exactly this acquittal — the warning delivered, the blood now upon those who would not hear, the watchman''s hand washed of it.'),
+  ('canon', 'acts', 18, 6, 'canon', 'ezekiel', 3, 18, 'free', E'*When I say unto the wicked, Thou shalt surely die; and thou givest him not warning, nor speakest to warn the wicked from his wicked way, to save his life; the same wicked man shall die in his iniquity; but his blood will I require at thine hand.* (Ezekiel 3:18). From the first the watchman''s charge was the same: warn, and *thou hast delivered thy soul* (Ezekiel 3:19). Paul, having testified that Yahusha (Jesus) was Messiah (Christ) and met only blasphemy, declares himself clean — the soul delivered, the warning given, the blood upon their own heads, not his.'),
+  -- thread: acts-18-i-am-with-thee-i-have-much-people-in-this-city-the-remnant-kept
+  ('canon', 'acts', 18, 9, 'canon', 'jeremiah', 1, 8, 'free', E'*Be not afraid of their faces: for I am with thee to deliver thee, saith Yahuah (LORD).* (Jeremiah 1:8). In the night vision *spake Yahuah (Lord) to Paul … Be not afraid, but speak, and hold not thy peace* (Acts 18:9). It is the very word Yahuah (LORD) gave Jeremiah at his sending — *be not afraid … for I am with thee.* The One who steadied the prophet against the faces of the people steadies Paul in Corinth: speak, hold not thy peace, for I am with thee.'),
+  ('canon', 'acts', 18, 10, 'canon', 'isaiah', 41, 10, 'free', E'*Fear thou not; for I am with thee: be not dismayed; for I am thy Elohim (God): I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.* (Isaiah 41:10). *For I am with thee, and no man shall set on thee to hurt thee* (Acts 18:10). The promise spoken to the servant — *fear thou not; for I am with thee* — is spoken again over Paul: the same presence that upholds with the right hand of righteousness guards him that none shall hurt him in that city.'),
+  ('canon', 'acts', 18, 10, 'canon', 'isaiah', 43, 5, 'free', E'*Fear not: for I am with thee: I will bring thy seed from the east, and gather thee from the west;* (Isaiah 43:5). *For I have much people in this city* (Acts 18:10). The much-people Yahuah (Lord) names as already his in Corinth are the seed he gathers from east and west — his sheep who will hear because they are his, the scattered remnant kept and called home. *Fear not: for I am with thee* is the word over the gathering: the people are already his before the word reaches them; the hearing reveals what was already true.'),
+  -- thread: acts-18-having-shorn-his-head-in-cenchrea-paul-the-nazarite-keeping-the-law
+  ('canon', 'acts', 18, 18, 'canon', 'numbers', 6, 5, 'free', E'*All the days of the vow of his separation there shall no razor come upon his head: until the days be fulfilled, in the which he separateth himself unto Yahuah (LORD), he shall be holy, and shall let the locks of the hair of his head grow.* (Numbers 6:5). Paul *took his leave of the brethren … having shorn his head in Cenchrea: for he had a vow* (Acts 18:18). The vow is the Nazarite''s: the hair let grow through the days of separation unto Yahuah (LORD), then shorn when the days are fulfilled. This is no relic of an abandoned system — it is Paul separating himself unto Yahuah (LORD) by the very law of the Nazarite.'),
+  ('canon', 'acts', 18, 18, 'canon', 'numbers', 6, 18, 'free', E'*And the Nazarite shall shave the head of his separation at the door of the tabernacle of the congregation, and shall take the hair of the head of his separation, and put it in the fire which is under the sacrifice of the peace offerings.* (Numbers 6:18). The shorn head at Cenchrea — *having shorn his head … for he had a vow* (Acts 18:18) — is the close of the Nazarite''s separation, the hair brought to the fire of the peace offering. Paul keeps the law of the vow he took, walking orderly in the Torah he never left.'),
+  ('canon', 'acts', 18, 18, 'canon', 'acts', 21, 24, 'free', E'*Them take, and purify thyself with them, and be at charges with them, that they may shave their heads: and all may know that those things, whereof they were informed concerning thee, are nothing; but that thou thyself also walkest orderly, and keepest the law.* (Acts 21:24). The vow at Cenchrea is no isolated act: in Yerushalayim (Jerusalem) Paul pays the charges for four men under a vow that all may see *thou thyself also walkest orderly, and keepest the law.* The shorn head of Acts 18:18 and the four men''s vows of Acts 21:24 testify to one man — Torah-observant, keeping the vow, keeping the law.'),
+  -- thread: acts-18-the-way-more-perfectly-apollos-and-the-baptism-of-john
+  ('canon', 'acts', 18, 25, 'canon', 'acts', 19, 4, 'free', E'*Then said Paul, John verily baptized with the baptism of repentance, saying unto the people, that they should believe on him which should come after him, that is, on HaMashiach Yahusha (Christ Jesus).* (Acts 19:4). Apollos *taught diligently the things of Yahuah (Lord), knowing only the baptism of John* (Acts 18:25). The gap is the very one Paul names to the disciples at Ephesus: John''s baptism was the baptism of repentance pointing forward to the One coming after — *that is, on HaMashiach Yahusha (Christ Jesus).* The baptism of John is true and points home; it is completed, not discarded, by the One it pointed to.'),
+  ('canon', 'acts', 18, 26, 'canon', 'acts', 19, 5, 'free', E'*When they heard this, they were baptized in the name of the Lord Yahusha (Lord Jesus).* (Acts 19:5). When Aquila and Priscilla heard Apollos, *they took him unto them, and expounded unto him the way of Elohim (God) more perfectly* (Acts 18:26). The same completing happens at Ephesus: those who knew only John''s baptism are now *baptized in the name of the Lord Yahusha (Lord Jesus).* The way of Elohim (God) is unfolded more perfectly — the repentance of John carried through to the Lord Yahusha (Lord Jesus) it always pointed toward.'),
+  ('canon', 'acts', 18, 26, 'canon', 'acts', 19, 6, 'free', E'*And when Paul had laid his hands upon them, the Ruach HaKodesh (Holy Spirit) came on them; and they spake with tongues, and prophesied.* (Acts 19:6). Apollos, fervent in the spirit yet knowing only John''s baptism, is shown *the way of Elohim (God) more perfectly* (Acts 18:26); and at Ephesus the disciples who knew only John''s baptism receive the Ruach HaKodesh (Holy Spirit) when Paul lays hands upon them. The more-perfect way is the way completed in the Spirit — the repentance of John brought home to the outpouring promised.'),
+  -- thread: acts-18-i-planted-apollos-watered-the-rain-and-the-word-that-prospers
+  ('canon', 'acts', 18, 27, 'canon', '1-corinthians', 3, 6, 'free', E'*I have planted, Apollos watered; but Elohim (God) gave the increase.* (1 Corinthians 3:6). Apollos passes into Achaia and *helped them much which had believed through grace* (Acts 18:27). Paul names the labor exactly: he himself planted at Corinth, and Apollos — coming after — watered; but the increase is Elohim''s (God''s). The helping much is the watering of a seed already planted, and the grace through which they believed is the means by which Elohim (God) gives the increase.'),
+  ('canon', 'acts', 18, 27, 'canon', 'isaiah', 55, 10, 'free', E'*For as the rain cometh down, and the snow from heaven, and returneth not thither, but watereth the earth, and maketh it bring forth and bud, that it may give seed to the sower, and bread to the eater:* (Isaiah 55:10). Apollos *watered* those who had believed (Acts 18:27) as the rain waters the earth — coming down to make the ground bring forth and bud. The watering is not the increase; it is the rain over the seed, that Elohim (God) may give the bringing-forth.'),
+  ('canon', 'acts', 18, 28, 'canon', 'isaiah', 55, 11, 'free', E'*So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it.* (Isaiah 55:11). Apollos *mightily convinced the Yahudim (Jews), and that publickly, shewing by the scriptures that Yahusha (Jesus) was Messiah (Christ)* (Acts 18:28). The word goeth forth out of the mouth and does not return void: shown by the scriptures, it accomplishes what Yahuah (LORD) pleases and prospers in the thing whereto he sent it — the scriptures themselves witnessing the Messiah (Christ) they foretold.'),
+  ('canon', 'acts', 18, 27, 'canon', '1-corinthians', 3, 9, 'free', E'*For we are labourers together with Elohim (God): ye are Elohim''s (God''s) husbandry, ye are Elohim''s (God''s) building.* (1 Corinthians 3:9). The brethren wrote exhorting the disciples to receive Apollos, who *helped them much which had believed through grace* (Acts 18:27). Planter and waterer are one work — *labourers together with Elohim (God)* — and the believers are Elohim''s (God''s) husbandry, the field he tends. The grace through which they believed is Elohim (God) giving the increase upon the labor of his servants.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-18-your-blood-be-upon-your-own-heads-the-watchman-of-yasharel-cleared',
+       E'Your blood be upon your own heads — the watchman of Yashar''el (Israel) cleared',
+       E'Paul testifies in the synagogue at Corinth *that Yahusha (Jesus) was Messiah (Christ)* (Acts 18:5); and *when they opposed themselves, and blasphemed, he shook his raiment, and said unto them, Your blood be upon your own heads; I am clean* (Acts 18:6). This is the watchman of Ezekiel, word for word in office. Yahuah (LORD) had set the prophet *a watchman unto the house of Yashar''el (Israel); therefore thou shalt hear the word at my mouth, and warn them from me* (Ezekiel 33:7), and the charge was exact: *if thou dost not speak to warn the wicked from his way, that wicked man shall die in his iniquity; but his blood will I require at thine hand* (Ezekiel 33:8). From the first the same word stood — *thou givest him not warning … his blood will I require at thine hand* (Ezekiel 3:18) — and the watchman who warns *hath delivered his soul.* Paul has blown the trumpet; the warning is delivered; the watchman''s hand is washed of the blood. This is not a verdict casting off a people but the watchman cleared — and the call still stands, for Yahuah (LORD) saith *I have no pleasure in the death of the wicked; but that the wicked turn from his way and live* (Ezekiel 33:11).',
+       sv.verse_id, ev.verse_id, 'free', 5700
+  FROM _s217_a18_lookup sv, _s217_a18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=18 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-18-i-am-with-thee-i-have-much-people-in-this-city-the-remnant-kept',
+       E'I am with thee, I have much people in this city — the remnant kept',
+       E'In the night Yahuah (Lord) speaks to Paul by a vision: *Be not afraid, but speak, and hold not thy peace: For I am with thee, and no man shall set on thee to hurt thee: for I have much people in this city* (Acts 18:9-10). The comfort is the prophets'' own. To Jeremiah at his sending: *Be not afraid of their faces: for I am with thee to deliver thee, saith Yahuah (LORD)* (Jeremiah 1:8). To the servant: *Fear thou not; for I am with thee: be not dismayed; for I am thy Elohim (God): I will strengthen thee* (Isaiah 41:10). The same presence that steadied the prophets against the faces of the people now guards Paul, that none shall hurt him. And the ground of the comfort is the much-people already his: *Fear not: for I am with thee: I will bring thy seed from the east, and gather thee from the west* (Isaiah 43:5). The much-people in Corinth are the seed Yahuah (Lord) gathers from east and west — his sheep who will hear because they are already his. They are not made his people by responding; they respond because they are his people. The hearing reveals what was already true; the remnant is kept and called home.',
+       sv.verse_id, ev.verse_id, 'free', 5703
+  FROM _s217_a18_lookup sv, _s217_a18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=18 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-18-having-shorn-his-head-in-cenchrea-paul-the-nazarite-keeping-the-law',
+       E'Having shorn his head in Cenchrea — Paul the Nazarite, keeping the law',
+       E'Paul *took his leave of the brethren, and sailed thence into Syria, and with him Priscilla and Aquila; having shorn his head in Cenchrea: for he had a vow* (Acts 18:18). The vow is the Nazarite''s, by the law of Numbers 6. Through the days of separation *there shall no razor come upon his head … he shall be holy, and shall let the locks of the hair of his head grow* (Numbers 6:5); and when the days are fulfilled, *the Nazarite shall shave the head of his separation … and put it in the fire which is under the sacrifice of the peace offerings* (Numbers 6:18). The shorn head at Cenchrea is the close of a separation unto Yahuah (LORD) — Paul keeping the very law of the vow he took. This is no residue of a system he had left behind: in Yerushalayim (Jerusalem) he pays the charges for four men under a vow precisely *that all may know … that thou thyself also walkest orderly, and keepest the law* (Acts 21:24). The Paul who abolished the Torah does not exist. Here is the Paul who is — separating himself unto Yahuah (LORD), keeping the vow, keeping the law.',
+       sv.verse_id, ev.verse_id, 'free', 5706
+  FROM _s217_a18_lookup sv, _s217_a18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=18 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-18-the-way-more-perfectly-apollos-and-the-baptism-of-john',
+       E'The way more perfectly — Apollos and the baptism of John',
+       E'Apollos comes to Ephesus *an eloquent man, and mighty in the scriptures … instructed in the way of Yahuah (Lord); and being fervent in the spirit, he spake and taught diligently the things of Yahuah (Lord), knowing only the baptism of John* (Acts 18:24-25). When Aquila and Priscilla hear him, *they took him unto them, and expounded unto him the way of Elohim (God) more perfectly* (Acts 18:26). The gap is named exactly when Paul meets the Ephesian disciples who also knew only John''s baptism: *John verily baptized with the baptism of repentance, saying unto the people, that they should believe on him which should come after him, that is, on HaMashiach Yahusha (Christ Jesus)* (Acts 19:4). The baptism of John is true and points forward; it is not discarded but carried home to the One it pointed to. *When they heard this, they were baptized in the name of the Lord Yahusha (Lord Jesus)* (Acts 19:5), and *when Paul had laid his hands upon them, the Ruach HaKodesh (Holy Spirit) came on them* (Acts 19:6). The more-perfect way is the way completed in the Lord Yahusha (Lord Jesus) and in the Spirit — the repentance of John brought through to the outpouring it always promised.',
+       sv.verse_id, ev.verse_id, 'free', 5709
+  FROM _s217_a18_lookup sv, _s217_a18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=18 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-18-i-planted-apollos-watered-the-rain-and-the-word-that-prospers',
+       E'I planted, Apollos watered — the rain and the word that prospers',
+       E'Apollos passes into Achaia and *helped them much which had believed through grace* (Acts 18:27), and *mightily convinced the Yahudim (Jews), and that publickly, shewing by the scriptures that Yahusha (Jesus) was Messiah (Christ)* (Acts 18:28). Paul names the labor exactly: *I have planted, Apollos watered; but Elohim (God) gave the increase* (1 Corinthians 3:6). Paul planted the seed at Corinth; Apollos, coming after, watered; and the increase is Elohim''s (God''s). It is the rain of Isaiah: *as the rain cometh down, and the snow from heaven, and returneth not thither, but watereth the earth, and maketh it bring forth and bud* (Isaiah 55:10) — the watering is not the increase but the rain over the seed, that the ground may bring forth. And the scriptures by which Apollos convinces are themselves the word that does not return void: *so shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it* (Isaiah 55:11). Planter and waterer are one work — *labourers together with Elohim (God): ye are Elohim''s (God''s) husbandry* (1 Corinthians 3:9). The grace through which they believed is the means by which Elohim (God) gives the increase — grace watering the seed home, not a freedom standing apart from his ways.',
+       sv.verse_id, ev.verse_id, 'free', 5712
+  FROM _s217_a18_lookup sv, _s217_a18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=18 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-18-your-blood-be-upon-your-own-heads-the-watchman-of-yasharel-cleared
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 33:7 — *I have set thee a watchman unto the house of Yashar''el (Israel) … warn them from me* the watchman''s office Paul stands in, the trumpet blown (Acts 18:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-your-blood-be-upon-your-own-heads-the-watchman-of-yasharel-cleared'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=33 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 33:8 — *his blood will I require at thine hand* the watchman who warns is cleared; *I am clean* (Acts 18:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-your-blood-be-upon-your-own-heads-the-watchman-of-yasharel-cleared'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=33 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 3:18 — *thou givest him not warning … his blood will I require at thine hand* the watchman''s charge from the first; warn, and the soul is delivered (Acts 18:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-your-blood-be-upon-your-own-heads-the-watchman-of-yasharel-cleared'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=3 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-18-i-am-with-thee-i-have-much-people-in-this-city-the-remnant-kept
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 1:8 — *Be not afraid of their faces: for I am with thee to deliver thee* the prophet''s sending-word now over Paul (Acts 18:9).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-i-am-with-thee-i-have-much-people-in-this-city-the-remnant-kept'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 41:10 — *Fear thou not; for I am with thee … I will uphold thee with the right hand of my righteousness* the servant''s comfort; none shall set on Paul to hurt him (Acts 18:10).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-i-am-with-thee-i-have-much-people-in-this-city-the-remnant-kept'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 43:5 — *I will bring thy seed from the east, and gather thee from the west* the much-people already his, the seed gathered; they hear because they are his (Acts 18:10).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-i-am-with-thee-i-have-much-people-in-this-city-the-remnant-kept'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-18-having-shorn-his-head-in-cenchrea-paul-the-nazarite-keeping-the-law
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 6:5 — *there shall no razor come upon his head … he shall let the locks of the hair of his head grow* the Nazarite''s separation unto Yahuah (LORD), the vow Paul took (Acts 18:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-having-shorn-his-head-in-cenchrea-paul-the-nazarite-keeping-the-law'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 6:18 — *the Nazarite shall shave the head of his separation* the shorn head at Cenchrea, the close of the vow (Acts 18:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-having-shorn-his-head-in-cenchrea-paul-the-nazarite-keeping-the-law'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 21:24 — *that thou thyself also walkest orderly, and keepest the law* the same Paul pays the charges for four men''s vows in Yerushalayim (Jerusalem); the vow at Cenchrea is no isolated act (Acts 18:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-having-shorn-his-head-in-cenchrea-paul-the-nazarite-keeping-the-law'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=21 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-18-the-way-more-perfectly-apollos-and-the-baptism-of-john
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 19:4 — *John verily baptized with the baptism of repentance … that they should believe on him which should come after him* the gap Apollos had, knowing only John''s baptism (Acts 18:25).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-the-way-more-perfectly-apollos-and-the-baptism-of-john'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=19 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 19:5 — *they were baptized in the name of the Lord Yahusha (Lord Jesus)* the way of Elohim (God) expounded more perfectly, John''s baptism carried home (Acts 18:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-the-way-more-perfectly-apollos-and-the-baptism-of-john'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=19 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 19:6 — *the Ruach HaKodesh (Holy Spirit) came on them* the more-perfect way completed in the Spirit (Acts 18:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-the-way-more-perfectly-apollos-and-the-baptism-of-john'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=19 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-18-i-planted-apollos-watered-the-rain-and-the-word-that-prospers
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Corinthians 3:6 — *I have planted, Apollos watered; but Elohim (God) gave the increase* Paul names the labor; Apollos helps much those who believed (Acts 18:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-i-planted-apollos-watered-the-rain-and-the-word-that-prospers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 55:10 — *as the rain cometh down … and watereth the earth* the watering of the seed, the rain over the ground (Acts 18:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-i-planted-apollos-watered-the-rain-and-the-word-that-prospers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Corinthians 3:9 — *labourers together with Elohim (God): ye are Elohim''s (God''s) husbandry* planter and waterer one work; grace gives the increase (Acts 18:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-i-planted-apollos-watered-the-rain-and-the-word-that-prospers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=3 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 55:11 — *my word … shall not return unto me void, but it shall accomplish that which I please* the scriptures by which Apollos convinces, the word that prospers (Acts 18:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a18_lookup sv, _s217_a18_lookup tv
+ WHERE t.slug='acts-18-i-planted-apollos-watered-the-rain-and-the-word-that-prospers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=18 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'Session 217 — Acts 1-7 cross-references complete.'
