@@ -231,7 +231,8 @@ def classify_migration(sql):
 COVERAGE_GLOBS = ['session1*matt*extras_cross_references.sql',
     'session18*_*xref*threads.sql','session183_mark_xref_members_and_threads.sql',
     'session185_luke_xref_members_and_threads.sql','session194_*xref*threads.sql',
-    'session212_*_extras_cross_references.sql']
+    'session212_*_extras_cross_references.sql',
+    'session2*_acts_cross_references.sql']
 cov_files = []
 for gpat in COVERAGE_GLOBS:
     cov_files += glob.glob(os.path.join(MIG, gpat))
