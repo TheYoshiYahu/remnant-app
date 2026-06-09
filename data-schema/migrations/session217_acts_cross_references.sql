@@ -1635,6 +1635,968 @@ SELECT t.id, x.id, 3, E'Luke 23:34 — *Father, forgive them; for they know not 
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_acts_08_09.sql (S217 Acts 8-9) -----
+-- =====================================================================
+-- S217 minion — ACTS 8-9 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Range:  ACTS 8-9.  Tag: a0809 (temp view _s217_a0809_lookup).  Sort band: 5300-5360.
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- WATCHPOINTS (Red Lines #7/#11, Christology, son-of-Adam):
+--  * Philip in Samaria (8:5-25): the Samaritans are the remnant of the half-house of the
+--    north — the lost sheep of the house of Yashar'el (Israel), the scattered seed being
+--    gathered as the dispersion preaches the word. NEVER a graft of non-seed by confession;
+--    the harvest the Master named at the well (John 4) is the same field now reaped.
+--  * The eunuch (8:26-39): the suffering-servant Lamb of Isaiah 53:7-8 (load-bearing, quoted
+--    verbatim) read by one who came to Yerushalayim to worship — the estranged brought into
+--    the house, given a name better than sons (Isaiah 56:3-5,8), the OUTCASTS OF YASHAR'EL
+--    gathered. Read as the scattered/estranged seed gathered home, NOT false-inclusion of
+--    non-seed by confession.
+--  * Saul's call (9:3-6): the Formed appearing — the light from heaven and the voice
+--    *I am Yahusha (Jesus) whom thou persecutest.* The God of the OT interactions, the Formed
+--    drawn from the Formless, who came in flesh, now glorified, appears and calls. The chosen
+--    vessel formed from the womb (Jeremiah 1:5) and called by grace (Galatians 1:15-16) — and
+--    grace as the means of his being SENT, not a freedom-from-Torah formula (Red Line #10).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 8:
+--   v.1-4   scattered abroad preach Tanakh: Genesis 50:20 (the meant-for-evil/turned-to-good of dispersion); Ezekiel 11:16 weighed (sanctuary in scattering — carried thematically, not added)  Extras: none warranted  NT: none warranted (narrative)
+--   v.5-13  Philip in Samaria        Tanakh: none added (the northern-house gathering carried in John 4 NT target)  Extras: none warranted  NT: John 4:22, John 4:35, John 4:39
+--   v.9-11  Simon the sorcerer       Tanakh: none added  Extras: none warranted  NT: none warranted (narrative; rebuke threaded at v.20-23)
+--   v.14-17 Peter/John, the Spirit   Tanakh: none warranted  Extras: none warranted  NT: none added (the Shavuot outpouring carried in Acts 2 threads, not re-added)
+--   v.18-24 buy the gift / gall      Tanakh: Deuteronomy 29:18 (root that beareth gall and wormwood)  Extras: none warranted  NT: none added
+--   v.26-33 eunuch reads Isaiah 53   Tanakh: Isaiah 53:7, Isaiah 53:8  Extras: none warranted  NT: none added (Lamb-of-Elohim carried in John 1 threads)
+--   v.27,38-39 the eunuch himself    Tanakh: Isaiah 56:3, Isaiah 56:5, Isaiah 56:8  Extras: none warranted  NT: none warranted
+--   v.40    Philip at Azotus/Caesarea Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--  ACTS 9:
+--   v.3-6   the light and the voice  Tanakh: none added (the Formed appearing carried by NT Acts-retellings)  Extras: none warranted  NT: Acts 22:8, Acts 26:14
+--   v.10-16 chosen vessel           Tanakh: Jeremiah 1:5  Extras: none warranted  NT: Galatians 1:15, Galatians 1:16
+--   v.17-19 scales fall / baptized   Tanakh: none warranted  Extras: none warranted  NT: Acts 26:18 weighed (open-eyes/turn-from-darkness — carried thematically in chosen-vessel thread, not added)
+--   v.20-31 preaches/confounds       Tanakh: none warranted  Extras: none warranted  NT: none added (Galatians 1:23 weighed; narrative re-tell, not load-bearing)
+--   v.32-43 Aeneas / Tabitha raised  Tanakh: 1 Kings 17:21 weighed (Elijah raises the widow's son); 2 Kings 4:34-35 weighed (Elisha) — narrative-parallel, framework weight thin, not added  Extras: none warranted  NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   5300 acts-8-scattered-abroad-they-went-everywhere-preaching-the-word     (Tanakh)
+--   5310 acts-8-philip-in-samaria-the-lost-sheep-of-the-northern-house-reaped (NT)
+--   5320 acts-8-thy-money-perish-with-thee-the-gift-of-god-and-the-root-of-gall (Tanakh)
+--   5330 acts-8-led-as-a-lamb-to-the-slaughter-the-eunuch-reading-isaiah     (Tanakh)
+--   5340 acts-8-a-name-better-than-sons-the-estranged-gathered-into-the-house (Tanakh)
+--   5350 acts-9-the-light-and-the-voice-i-am-yahusha-whom-thou-persecutest   (NT, Acts<->Acts)
+--   5360 acts-9-a-chosen-vessel-formed-from-the-womb-and-called-by-grace     (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a0809_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-8-scattered-abroad-they-went-everywhere-preaching-the-word
+  ('canon', 'acts', 8, 4, 'canon', 'genesis', 50, 20, 'free', E'*But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* (Genesis 50:20). The persecution scatters the assembly — *they were all scattered abroad throughout the regions of Judæa and Samaria* (Acts 8:1) — yet *they that were scattered abroad went every where preaching the word* (Acts 8:4). What was meant to break the assembly Elohim (God) means unto good, as he did with Joseph: the scattering itself becomes the sowing, the dispersed seed carrying the word into the regions where the lost sheep are.'),
+  -- thread: acts-8-philip-in-samaria-the-lost-sheep-of-the-northern-house-reaped
+  ('canon', 'acts', 8, 5, 'canon', 'john', 4, 39, 'free', E'*And many of the Samaritans of that city believed on him for the saying of the woman, which testified, He told me all that ever I did.* (John 4:39). *Then Philip went down to the city of Samaria, and preached Messiah (Christ) unto them* (Acts 8:5), and *the people with one accord gave heed* (Acts 8:6). The Master had already begun the harvest in Samaria — the half-house of the north, the lost sheep of the house of Yashar''el (Israel) — and Philip now reaps the field the Master sowed. These are not strangers added; they are the scattered of Yashar''el receiving back the word.'),
+  ('canon', 'acts', 8, 6, 'canon', 'john', 4, 35, 'free', E'*Say not ye, There are yet four months, and then cometh harvest? behold, I say unto you, Lift up your eyes, and look on the fields; for they are white already to harvest.* (John 4:35). At the well in Samaria the Master told the disciples the fields were *white already to harvest;* now in the same Samaria *the people with one accord gave heed unto those things which Philip spake* (Acts 8:6). The field the Master named white is the field now reaped — the gathering of the northern house begun.'),
+  ('canon', 'acts', 8, 14, 'canon', 'john', 4, 22, 'free', E'*Ye worship ye know not what: we know what we worship: for salvation is of the Yahudim (Jews).* (John 4:22). *Now when the apostles which were at Jerusalem heard that Samaria had received the word of Elohim (God), they sent unto them Peter and John* (Acts 8:14). The Master told the Samaritan woman *salvation is of the Yahudim (Jews)* — the deliverance comes through the house of Yahudah; and now the two houses are knit, the apostles from Yerushalayim laying hands on the believing remnant of the north. Yahudah and Yosef joined, the two sticks made one.'),
+  -- thread: acts-8-thy-money-perish-with-thee-the-gift-of-god-and-the-root-of-gall
+  ('canon', 'acts', 8, 23, 'canon', 'deuteronomy', 29, 18, 'free', E'*Lest there should be among you man, or woman, or family, or tribe, whose heart turneth away this day from Yahuah Eloheinu (the LORD our God), to go and serve the gods of these nations; lest there should be among you a root that beareth gall and wormwood;* (Deuteronomy 29:18). Peter sees in Simon the very thing Moses warned of within the covenant assembly: *I perceive that thou art in the gall of bitterness, and in the bond of iniquity* (Acts 8:23). The sorcerer who thought *the gift of Elohim (God) may be purchased with money* (Acts 8:20) is the root of gall springing up among the gathered — a heart not right, called to repent, not a people condemned.'),
+  -- thread: acts-8-led-as-a-lamb-to-the-slaughter-the-eunuch-reading-isaiah
+  ('canon', 'acts', 8, 32, 'canon', 'isaiah', 53, 7, 'free', E'*He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth.* (Isaiah 53:7). The very place the eunuch read was this: *He was led as a sheep to the slaughter; and like a lamb dumb before his shearer, so opened he not his mouth* (Acts 8:32). The suffering servant of Isaiah is the Lamb led silent to the slaughter — and *Philip … began at the same scripture, and preached unto him Yahusha (Jesus)* (Acts 8:35), naming the Lamb the prophet saw.'),
+  ('canon', 'acts', 8, 33, 'canon', 'isaiah', 53, 8, 'free', E'*He was taken from prison and from judgment: and who shall declare his generation? for he was cut off out of the land of the living: for the transgression of my people was he stricken.* (Isaiah 53:8). *In his humiliation his judgment was taken away: and who shall declare his generation? for his life is taken from the earth* (Acts 8:33). The eunuch asks *of whom speaketh the prophet this?* (Acts 8:34), and the answer is the One *cut off out of the land of the living* for the transgression of his people — the servant who poured out his soul, of whom Philip preaches Yahusha (Jesus).'),
+  -- thread: acts-8-a-name-better-than-sons-the-estranged-gathered-into-the-house
+  ('canon', 'acts', 8, 27, 'canon', 'isaiah', 56, 3, 'free', E'*Neither let the son of the stranger, that hath joined himself to Yahuah (LORD), speak, saying, Yahuah (LORD) hath utterly separated me from his people: neither let the eunuch say, Behold, I am a dry tree.* (Isaiah 56:3). *A man of Ethiopia, an eunuch … had come to Jerusalem for to worship* (Acts 8:27) — one who feared he was cut off, a dry tree, separated from the people. Isaiah forbade that fear: the eunuch joined to Yahuah (LORD) is not separated. The estranged who comes to worship is being brought back, not kept out.'),
+  ('canon', 'acts', 8, 38, 'canon', 'isaiah', 56, 5, 'free', E'*Even unto them will I give in mine house and within my walls a place and a name better than of sons and of daughters: I will give them an everlasting name, that shall not be cut off.* (Isaiah 56:5). The eunuch comes to the water — *they went down both into the water … and he baptized him* (Acts 8:38) — and *went on his way rejoicing* (Acts 8:39). The one who feared he was a dry tree, cut off, receives the very thing Isaiah promised the eunuchs who take hold of the covenant: a place and a name in the house, an everlasting name that shall not be cut off.'),
+  ('canon', 'acts', 8, 39, 'canon', 'isaiah', 56, 8, 'free', E'*Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar''el (Israel) saith, Yet will I gather others to him, beside those that are gathered unto him.* (Isaiah 56:8). The eunuch *went on his way rejoicing* (Acts 8:39) — gathered. This is the work Isaiah named: Adonai Yahuah (The Lord GOD) who *gathereth the outcasts of Yashar''el (Israel),* still gathering others beside those already gathered. The estranged of the scattered seed brought home, the joy of the outcast made nigh.'),
+  -- thread: acts-9-the-light-and-the-voice-i-am-yahusha-whom-thou-persecutest
+  ('canon', 'acts', 9, 5, 'canon', 'acts', 26, 14, 'free', E'*And when we were all fallen to the earth, I heard a voice speaking unto me, and saying in the Hebrew tongue, Saul, Saul, why persecutest thou me? it is hard for thee to kick against the pricks.* (Acts 26:14). *And he fell to the earth, and heard a voice saying unto him, Saul, Saul, why persecutest thou me?* (Acts 9:4). Saul retells it before Agrippa in the Hebrew tongue — the Formed himself, the One drawn from the Formless who appeared and spoke through all the history of the fathers, now glorified, speaks Saul''s name from the light.'),
+  ('canon', 'acts', 9, 5, 'canon', 'acts', 22, 8, 'free', E'*And I answered, Who art thou, Yahuah (Lord)? And he said unto me, I am Yahusha (Jesus) of Nazareth, whom thou persecutest.* (Acts 22:8). *And he said, Who art thou, Yahuah (Lord)? And Yahuah (Lord) said, I am Yahusha (Jesus) whom thou persecutest* (Acts 9:5). The One in the light answers to the name Saul cried — *Who art thou, Yahuah (Lord)?* — with *I am Yahusha (Jesus).* The Formed who is Yahuah, who came in the flesh as Yahusha of Nazareth, is the One persecuted in his disciples and the One who now calls.'),
+  -- thread: acts-9-a-chosen-vessel-formed-from-the-womb-and-called-by-grace
+  ('canon', 'acts', 9, 15, 'canon', 'jeremiah', 1, 5, 'free', E'*Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee, and I ordained thee a prophet unto the nations.* (Jeremiah 1:5). *He is a chosen vessel unto me, to bear my name before the Gentiles, and kings, and the children of Yashar''el (Israel)* (Acts 9:15). As Yahuah (LORD) formed and ordained Jeremiah before the womb and sent him to the nations, so the chosen vessel is set apart before he knew it — the calling precedes the man, the ordaining runs ahead of the response.'),
+  ('canon', 'acts', 9, 15, 'canon', 'galatians', 1, 15, 'free', E'*But when it pleased Elohim (God), who separated me from my mother''s womb, and called me by his grace,* (Galatians 1:15). Saul, made the chosen vessel *to bear my name* (Acts 9:15), tells it himself: he was *separated from my mother''s womb, and called by his grace.* The grace is not a release from the commandments but the means by which the persecutor is set apart and sent — the calling reaching back before the womb, revealing what was already true.'),
+  ('canon', 'acts', 9, 15, 'canon', 'galatians', 1, 16, 'free', E'*To reveal his Son in me, that I might preach him among the heathen; immediately I conferred not with flesh and blood:* (Galatians 1:16). The chosen vessel is set apart *to bear my name before the Gentiles* (Acts 9:15) — and Saul names the purpose: Elohim (God) was pleased *to reveal his Son in me, that I might preach him.* The vessel is chosen to carry the name to the scattered among the nations; grace is the sending, the revealing of the Son its whole content.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a0809_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a0809_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-8-scattered-abroad-they-went-everywhere-preaching-the-word',
+       E'Scattered abroad — they went every where preaching the word',
+       E'The death of Stephen breaks open a great persecution, and *they were all scattered abroad throughout the regions of Judæa and Samaria, except the apostles* (Acts 8:1). The enemy means to break the assembly; instead the scattering becomes the sowing: *therefore they that were scattered abroad went every where preaching the word* (Acts 8:4). It is the pattern Joseph named to the brothers who sold him — *ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). What is meant to scatter the seed sows it, and the word goes into the very regions — Samaria, the half-house of the north — where the lost sheep are. The dispersion is not the defeat of the gathering; it is its means.',
+       sv.verse_id, ev.verse_id, 'free', 5300
+  FROM _s217_a0809_lookup sv, _s217_a0809_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=8 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-8-philip-in-samaria-the-lost-sheep-of-the-northern-house-reaped',
+       E'Philip in Samaria — the lost sheep of the northern house reaped',
+       E'*Then Philip went down to the city of Samaria, and preached Messiah (Christ) unto them* (Acts 8:5), and *the people with one accord gave heed unto those things which Philip spake* (Acts 8:6). Samaria is the remnant of the half-house of the north — the lost sheep of the house of Yashar''el (Israel), the scattered seed of the ten tribes who were divorced and dispersed. The Master had already begun this harvest at the well: *behold, I say unto you, Lift up your eyes, and look on the fields; for they are white already to harvest* (John 4:35), and *many of the Samaritans of that city believed on him for the saying of the woman* (John 4:39). What the Master sowed in Samaria, Philip now reaps. And the two houses are knit: the Master had told the woman *salvation is of the Yahudim (Jews)* (John 4:22), and now *when the apostles which were at Jerusalem heard that Samaria had received the word of Elohim (God), they sent unto them Peter and John* (Acts 8:14). Yahudah and Yosef joined — the deliverance through the house of Yahudah received by the remnant of the north. These are not strangers added; they are the scattered of Yashar''el receiving back the word that was always theirs.',
+       sv.verse_id, ev.verse_id, 'free', 5310
+  FROM _s217_a0809_lookup sv, _s217_a0809_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=8 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-8-thy-money-perish-with-thee-the-gift-of-god-and-the-root-of-gall',
+       E'Thy money perish with thee — the gift of Elohim (God) and the root of gall',
+       E'Simon the sorcerer believes and is baptized, yet when he sees the Spirit given through the laying on of hands he offers money: *Give me also this power, that on whomsoever I lay hands, he may receive the Ruach HaKodesh (Holy Spirit)* (Acts 8:19). Peter''s answer is sharp: *Thy money perish with thee, because thou hast thought that the gift of Elohim (God) may be purchased with money* (Acts 8:20), *for I perceive that thou art in the gall of bitterness, and in the bond of iniquity* (Acts 8:23). This is the very thing Moses warned could spring up within the covenant assembly itself — *lest there should be among you a root that beareth gall and wormwood* (Deuteronomy 29:18), a heart that turns away to serve other gods. Simon is that root of gall among the gathered, a heart not right in the sight of Elohim (God). And yet the word to him is not a verdict but a call: *Repent therefore of this thy wickedness, and pray Elohim (God), if perhaps the thought of thine heart may be forgiven thee* (Acts 8:22).',
+       sv.verse_id, ev.verse_id, 'free', 5320
+  FROM _s217_a0809_lookup sv, _s217_a0809_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=8 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-8-led-as-a-lamb-to-the-slaughter-the-eunuch-reading-isaiah',
+       E'Led as a lamb to the slaughter — the eunuch reading Isaiah',
+       E'The angel of Yahuah (Lord) sends Philip to the desert road, and there he finds the Ethiopian eunuch *sitting in his chariot* reading the prophet (Acts 8:28). The place of the scripture he read was the suffering servant: *He was led as a sheep to the slaughter; and like a lamb dumb before his shearer, so opened he not his mouth* (Acts 8:32), and *in his humiliation his judgment was taken away: and who shall declare his generation? for his life is taken from the earth* (Acts 8:33). It is Isaiah, word for word: *he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth* (Isaiah 53:7), *he was taken from prison and from judgment … for he was cut off out of the land of the living: for the transgression of my people was he stricken* (Isaiah 53:8). The eunuch asks *of whom speaketh the prophet this? of himself, or of some other man?* (Acts 8:34), and *Philip opened his mouth, and began at the same scripture, and preached unto him Yahusha (Jesus)* (Acts 8:35). The silent Lamb the prophet saw, cut off for the transgression of his people, is Yahusha (Jesus) — the servant who opened not his mouth.',
+       sv.verse_id, ev.verse_id, 'free', 5330
+  FROM _s217_a0809_lookup sv, _s217_a0809_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=8 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-8-a-name-better-than-sons-the-estranged-gathered-into-the-house',
+       E'A name better than sons — the estranged gathered into the house',
+       E'The eunuch *had come to Jerusalem for to worship* (Acts 8:27) — one who, under the old reckoning, might fear he was cut off, a dry tree, separated from the people. But Isaiah had forbidden that fear long before: *Neither let the son of the stranger, that hath joined himself to Yahuah (LORD), speak, saying, Yahuah (LORD) hath utterly separated me from his people: neither let the eunuch say, Behold, I am a dry tree* (Isaiah 56:3). To the eunuch who takes hold of the covenant the promise is *a place and a name better than of sons and of daughters … an everlasting name, that shall not be cut off* (Isaiah 56:5). And so when *they went down both into the water … and he baptized him* (Acts 8:38), and the eunuch *went on his way rejoicing* (Acts 8:39), he receives the very thing Isaiah promised — for it is Adonai Yahuah (The Lord GOD) *which gathereth the outcasts of Yashar''el (Israel)* who saith *Yet will I gather others to him, beside those that are gathered unto him* (Isaiah 56:8). The estranged who came to worship is gathered, not kept out: the scattered and the cut-off brought home and given a name that shall not be cut off.',
+       sv.verse_id, ev.verse_id, 'free', 5340
+  FROM _s217_a0809_lookup sv, _s217_a0809_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=8 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-9-the-light-and-the-voice-i-am-yahusha-whom-thou-persecutest',
+       E'The light and the voice — I am Yahusha (Jesus) whom thou persecutest',
+       E'Saul, breathing out threatenings, journeys toward Damascus, and *suddenly there shined round about him a light from heaven: and he fell to the earth, and heard a voice saying unto him, Saul, Saul, why persecutest thou me?* (Acts 9:3-4). He cries *Who art thou, Yahuah (Lord)? And Yahuah (Lord) said, I am Yahusha (Jesus) whom thou persecutest* (Acts 9:5). This is the Formed himself — the One drawn from the Formless who appeared and spoke through all the history of the fathers, now risen and glorified — appearing in light and naming himself. Saul retells it twice more: before the people, *I am Yahusha (Jesus) of Nazareth, whom thou persecutest* (Acts 22:8); and before Agrippa, the voice *in the Hebrew tongue, Saul, Saul, why persecutest thou me? it is hard for thee to kick against the pricks* (Acts 26:14). The One in the light answers to the name Saul cried — *Who art thou, Yahuah (Lord)?* — with *I am Yahusha (Jesus).* He who is Yahuah and came in the flesh as Yahusha of Nazareth is the One persecuted in his disciples and the One who now calls.',
+       sv.verse_id, ev.verse_id, 'free', 5350
+  FROM _s217_a0809_lookup sv, _s217_a0809_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=9 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=9 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-9-a-chosen-vessel-formed-from-the-womb-and-called-by-grace',
+       E'A chosen vessel — formed from the womb and called by grace',
+       E'When Ananias fears the persecutor, Yahuah (Lord) answers, *Go thy way: for he is a chosen vessel unto me, to bear my name before the Gentiles, and kings, and the children of Yashar''el (Israel)* (Acts 9:15). The choosing reaches back before the man knew it — as Yahuah (LORD) said to Jeremiah, *Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee, and I ordained thee a prophet unto the nations* (Jeremiah 1:5). Saul tells it the same way: it pleased Elohim (God) *who separated me from my mother''s womb, and called me by his grace* (Galatians 1:15), *to reveal his Son in me, that I might preach him among the heathen* (Galatians 1:16). The grace is not a release from the commandments but the means by which the persecutor is set apart and sent — the calling running ahead of the womb, the chosen vessel made to carry the name to the scattered among the nations and to the children of Yashar''el (Israel). The choosing precedes the man; the grace is the sending.',
+       sv.verse_id, ev.verse_id, 'free', 5360
+  FROM _s217_a0809_lookup sv, _s217_a0809_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=9 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=9 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-8-scattered-abroad-they-went-everywhere-preaching-the-word
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 50:20 — *ye thought evil against me; but Elohim (God) meant it unto good … to save much people alive* the scattering meant to break the assembly becomes the sowing of the word (Acts 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-8-scattered-abroad-they-went-everywhere-preaching-the-word'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-8-philip-in-samaria-the-lost-sheep-of-the-northern-house-reaped
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'John 4:39 — *many of the Samaritans of that city believed on him for the saying of the woman* the Master''s harvest in Samaria, now reaped by Philip (Acts 8:5-6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-8-philip-in-samaria-the-lost-sheep-of-the-northern-house-reaped'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 4:35 — *Lift up your eyes, and look on the fields; for they are white already to harvest* the field the Master named white is the field Philip now reaps (Acts 8:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-8-philip-in-samaria-the-lost-sheep-of-the-northern-house-reaped'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 4:22 — *salvation is of the Yahudim (Jews)* the deliverance through the house of Yahudah received by the remnant of the north; the two sticks joined (Acts 8:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-8-philip-in-samaria-the-lost-sheep-of-the-northern-house-reaped'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-8-thy-money-perish-with-thee-the-gift-of-god-and-the-root-of-gall
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 29:18 — *lest there should be among you a root that beareth gall and wormwood* Moses'' warning of the heart that turns within the assembly; Peter sees it in Simon (Acts 8:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-8-thy-money-perish-with-thee-the-gift-of-god-and-the-root-of-gall'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-8-led-as-a-lamb-to-the-slaughter-the-eunuch-reading-isaiah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 53:7 — *he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb* the exact place the eunuch read, the silent suffering servant (Acts 8:32).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-8-led-as-a-lamb-to-the-slaughter-the-eunuch-reading-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 53:8 — *he was cut off out of the land of the living: for the transgression of my people was he stricken* the One of whom the prophet speaks, whom Philip names Yahusha (Jesus) (Acts 8:33-35).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-8-led-as-a-lamb-to-the-slaughter-the-eunuch-reading-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-8-a-name-better-than-sons-the-estranged-gathered-into-the-house
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 56:3 — *neither let the eunuch say, Behold, I am a dry tree* the fear Isaiah forbids; the eunuch who came to worship is not separated (Acts 8:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-8-a-name-better-than-sons-the-estranged-gathered-into-the-house'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 56:5 — *a place and a name better than of sons and of daughters … an everlasting name, that shall not be cut off* the promise the baptized eunuch receives (Acts 8:38).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-8-a-name-better-than-sons-the-estranged-gathered-into-the-house'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=38
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 56:8 — *Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar''el (Israel)* the eunuch goes rejoicing, an outcast gathered home (Acts 8:39).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-8-a-name-better-than-sons-the-estranged-gathered-into-the-house'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=8 AND sv.verse_number=39
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-9-the-light-and-the-voice-i-am-yahusha-whom-thou-persecutest
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 26:14 — *Saul, Saul, why persecutest thou me? it is hard for thee to kick against the pricks* the voice in the Hebrew tongue, the Formed speaking from the light (Acts 9:4).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-9-the-light-and-the-voice-i-am-yahusha-whom-thou-persecutest'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=9 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 22:8 — *I am Yahusha (Jesus) of Nazareth, whom thou persecutest* the One in the light names himself; he who is Yahuah came in the flesh as Yahusha (Acts 9:5).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-9-the-light-and-the-voice-i-am-yahusha-whom-thou-persecutest'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=9 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=22 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-9-a-chosen-vessel-formed-from-the-womb-and-called-by-grace
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 1:5 — *Before I formed thee in the belly I knew thee … I ordained thee a prophet unto the nations* the choosing reaching back before the womb, as with the chosen vessel (Acts 9:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-9-a-chosen-vessel-formed-from-the-womb-and-called-by-grace'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Galatians 1:15 — *who separated me from my mother''s womb, and called me by his grace* Saul''s own telling; grace is the means of his being set apart and sent (Acts 9:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-9-a-chosen-vessel-formed-from-the-womb-and-called-by-grace'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=1 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Galatians 1:16 — *To reveal his Son in me, that I might preach him among the heathen* the vessel chosen to carry the name to the scattered among the nations (Acts 9:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a0809_lookup sv, _s217_a0809_lookup tv
+ WHERE t.slug='acts-9-a-chosen-vessel-formed-from-the-womb-and-called-by-grace'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=1 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_10_12.sql (S217 Acts 10-12) -----
+-- =====================================================================
+-- S217 minion — ACTS 10-12 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Range:  ACTS 10-12.  Tag: a1012 (temp view _s217_a1012_lookup).  Sort band: 5400-5470.
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- HIGH-VOICE-RISK WATCHPOINT (Red Lines #7 / #11 — the heart of this range):
+-- The "Gentiles" of Acts 10-11 (Cornelius, his household, the Spirit falling, "to the Gentiles
+-- also granted repentance unto life") are NOT the false-inclusion of the nations into Yashar'el
+-- (Israel) by faith-confession. They are the scattered seed / the lost sheep of the dispersion
+-- being gathered — the Lo-Ammi of Hosea 1 made nigh, the "afar off" made near. Cornelius is a
+-- God-fearer already devout, alms-giving, praying — sought BECAUSE he was already of the sheep,
+-- not made a son by responding. Election precedes hearing; the hearing reveals what was true
+-- before the foundation of the world; no name is added after the foundation. "Elohim is no
+-- respecter of persons" (10:34) = he does not pick by the visible Yahudah (Judah)/dispersion
+-- divide, because the seed is scattered through all nations and not known by sight — NOT that
+-- the nations-as-such are grafted in by belief. The sheet vision's immediate point is "call not
+-- thou common ... any man" (10:28) — the dispersed seed among the nations are not unclean to
+-- approach; it is NOT the abolition of the dietary Torah (the Spirit does not lead away from
+-- Torah, Red Line #6). Framed accordingly in every Acts-10/11 thread below.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 10:
+--   v.1-8   Cornelius the devout God-fearer   Tanakh: Psalms 34:15  Extras: (Tobit 13 weighed; carries the gathering, placed at Acts 11)  NT: John 10:27
+--   v.9-16  the sheet / call not common       Tanakh: Hosea 2:23  Extras: none warranted (sheet is the seed-among-nations not unclean; no clean extras witness)  NT: (1 Peter 2:10 weighed; placed at Acts 11 Lo-Ammi thread)
+--   v.17-33 Peter goes / kinsmen gathered      Tanakh: none added (narrative; framework carried in sheet + no-respecter threads)  Extras: none warranted  NT: none warranted
+--   v.34-35 no respecter of persons            Tanakh: Deuteronomy 10:17, 2 Chronicles 19:7  Extras: Ecclesiasticus 35:12  NT: none added (Romans 2:11 weighed; OT witnesses carry it)
+--   v.36    preaching peace, Lord of all       Tanakh: Isaiah 57:19  Extras: none warranted  NT: Ephesians 2:17
+--   v.37-42 the witness / Judge of quick&dead  Tanakh: none added (carried in Acts 2/3/10 enthronement; not re-added)  Extras: none warranted  NT: none added
+--   v.43-44 prophets witness / Spirit fell     Tanakh: (carried in peace-afar-off thread)  Extras: none warranted  NT: (Spirit-fell tied to gathering at Acts 11)
+--   v.45-48 Spirit poured on the Gentiles      Tanakh: (Hosea, carried at Acts 11:18)  Extras: none warranted  NT: (carried at Acts 11:18 gathering thread)
+--  ACTS 11:
+--   v.1-14  Peter rehearses the vision         Tanakh: none added (re-tells Acts 10; framework carried there)  Extras: none warranted  NT: none added
+--   v.15-18 to the Gentiles also granted rep.  Tanakh: Hosea 1:10, Hosea 2:23  Extras: Tobit 13:5  NT: 1 Peter 2:10
+--   v.19-21 scattered preach / Antioch         Tanakh: Hosea 2:23 (the sow clause)  Extras: (Baruch 2:34 weighed; gathering-to-land, placed nowhere — sow clause cleaner)  NT: none warranted
+--   v.22-26 Barnabas / grace / disciples named Tanakh: none warranted  Extras: none warranted  NT: none added (grace here is the favor seen on the work, narrative; no sola-fide target)
+--   v.27-30 Agabus / the dearth / relief        Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--  ACTS 12:
+--   v.1-2   James killed with the sword        Tanakh: none added (martyr-cup carried in gospels, not re-threaded here)  Extras: none warranted  NT: none warranted
+--   v.3-6   Peter imprisoned / unleavened bread Tanakh: none added  Extras: none warranted  NT: none warranted (narrative)
+--   v.7-11  the angel delivers Peter            Tanakh: Psalms 34:7, Daniel 6:22  Extras: none warranted  NT: none added
+--   v.12-19 Rhoda / Peter at the door           Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.20-23 Herod takes the glory / smitten     Tanakh: Daniel 4:30, Daniel 4:32, Daniel 4:37  Extras: none warranted  NT: none added
+--   v.24-25 the word grew / return from Jerus.  Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--
+-- THREADS (slug -> target libraries):
+--   5400 acts-10-cornelius-the-devout-god-fearer-the-sheep-that-hear            (Tanakh + NT)
+--   5410 acts-10-elohim-is-no-respecter-of-persons                             (Tanakh + Extras)
+--   5420 acts-10-call-not-any-man-common-the-scattered-not-unclean-to-approach (Tanakh)
+--   5430 acts-10-preaching-peace-to-them-afar-off-and-them-that-are-nigh       (Tanakh + NT)
+--   5440 acts-11-to-the-gentiles-also-granted-repentance-the-lo-ammi-made-nigh (Tanakh + Extras + NT)
+--   5450 acts-11-the-scattered-sown-among-the-nations-the-word-to-antioch      (Tanakh)
+--   5460 acts-12-the-angel-of-yahuah-delivereth-them-that-fear-him             (Tanakh)
+--   5470 acts-12-he-gave-not-elohim-the-glory-the-pride-that-is-abased         (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a1012_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-10-cornelius-the-devout-god-fearer-the-sheep-that-hear
+  ('canon', 'acts', 10, 4, 'canon', 'psalms', 34, 15, 'free', E'*The eyes of Yahuah (LORD) are upon the righteous, and his ears are open unto their cry.* (Psalm 34:15). Cornelius is *a devout man, and one that feared Elohim (God) with all his house, which gave much alms to the people, and prayed to Elohim (God) alway* (Acts 10:2) — and the angel tells him *thy prayers and thine alms are come up for a memorial before Elohim (God)* (Acts 10:4). The ears of Yahuah were already open to this man''s cry before ever Peter was sent; the hearing that is coming reveals what was already true of him, it does not make it true.'),
+  ('canon', 'acts', 10, 35, 'canon', 'john', 10, 27, 'free', E'*My sheep hear my voice, and I know them, and they follow me:* (John 10:27). *In every nation he that feareth him, and worketh righteousness, is accepted with him* (Acts 10:35). Cornelius hears because he is a sheep; he is not made a sheep by hearing. The word goes out to the nations because the sheep are scattered through them and not known by sight — and those who are his hear his voice when it comes.'),
+  -- thread: acts-10-elohim-is-no-respecter-of-persons
+  ('canon', 'acts', 10, 34, 'canon', 'deuteronomy', 10, 17, 'free', E'*For Yahuah Elohaychem (the LORD your God) is Elohim (God) of gods, and Lord of lords, a great Elohim (God), a mighty, and a terrible, which regardeth not persons, nor taketh reward:* (Deuteronomy 10:17). *Of a truth I perceive that Elohim (God) is no respecter of persons* (Acts 10:34) is Moses'' own word: he *regardeth not persons.* Peter sees that Yahuah does not pick by the visible divide of Yahudah (Judah) and dispersion — the seed is scattered through all nations, and he knows his own where men cannot.'),
+  ('canon', 'acts', 10, 34, 'canon', '2-chronicles', 19, 7, 'free', E'*Wherefore now let the fear of Yahuah (LORD) be upon you; take heed and do it: for there is no iniquity with Yahuah Eloheinu (the LORD our God), nor respect of persons, nor taking of gifts.* (2 Chronicles 19:7). Jehoshaphat charged the judges that *there is no respect of persons* with Yahuah — and Peter perceives the same of the gathering: *Elohim (God) is no respecter of persons* (Acts 10:34). The One who judges without partiality gathers his scattered seed without partiality, out of every nation they were sown into.'),
+  ('canon', 'acts', 10, 34, 'apocrypha', 'ecclesiasticus', 35, 12, 'extras', E'*Do not think to corrupt with gifts; for such he will not receive: and trust not to unrighteous sacrifices; for Yahuah (God) is judge, and with him is no respect of persons.* (Ecclesiasticus 35:12). The Hebrew library says it as Moses and the Chronicler said it — *with him is no respect of persons.* Peter''s *Elohim (God) is no respecter of persons* (Acts 10:34) stands on the whole witness of the library: the Judge of all does not regard the face, and gathers his own from every nation.'),
+  -- thread: acts-10-call-not-any-man-common-the-scattered-not-unclean-to-approach
+  ('canon', 'acts', 10, 28, 'canon', 'hosea', 2, 23, 'free', E'*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God).* (Hosea 2:23). The sheet shows Peter that *Elohim (God) hath shewed me that I should not call any man common or unclean* (Acts 10:28). The lesson is of men, not of meats — the scattered seed living among the nations, the *not my people* whom Yahuah sowed into the earth to call *my people,* are not common to approach. What Elohim hath cleansed by his own promise to gather them, Peter is not to call common.'),
+  -- thread: acts-10-preaching-peace-to-them-afar-off-and-them-that-are-nigh
+  ('canon', 'acts', 10, 36, 'canon', 'isaiah', 57, 19, 'free', E'*I create the fruit of the lips; Peace, peace to him that is far off, and to him that is near, saith Yahuah (LORD); and I will heal him.* (Isaiah 57:19). *The word which Elohim (God) sent unto the children of Yashar''el (Israel), preaching peace by Yahusha HaMashiach (Jesus Christ)* (Acts 10:36) is the peace Isaiah promised *to him that is far off, and to him that is near.* The far-off are the dispersed of the house scattered among the nations; the peace preached in Cornelius'' house is the healing-word reaching the afar-off seed.'),
+  ('canon', 'acts', 10, 36, 'canon', 'ephesians', 2, 17, 'free', E'*And came and preached peace to you which were afar off, and to them that were nigh.* (Ephesians 2:17). Peter, *preaching peace by Yahusha HaMashiach (Jesus Christ)* in the centurion''s house (Acts 10:36), does the very thing — the peace *preached ... to you which were afar off, and to them that were nigh.* The afar-off made nigh are the scattered seed brought home, not a stranger-people made into the seed; the same gathering Isaiah named, now reaching the dispersion.'),
+  -- thread: acts-11-to-the-gentiles-also-granted-repentance-the-lo-ammi-made-nigh
+  ('canon', 'acts', 11, 18, 'canon', 'hosea', 1, 10, 'free', E'*Yet the number of the children of Yashar''el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10). *Then hath Elohim (God) also to the Gentiles granted repentance unto life* (Acts 11:18). This is Hosea''s promise breaking open: in the very place where the scattered house was told *ye are not my people,* there they are called *the sons of the living Elohim (God).* The repentance granted is the Lo-Ammi made nigh — the dispersed seed of Yashar''el among the nations gathered, not a new people grafted in.'),
+  ('canon', 'acts', 11, 18, 'canon', 'hosea', 2, 23, 'free', E'*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God).* (Hosea 2:23). When the brethren glorify Elohim saying *also to the Gentiles granted repentance unto life* (Acts 11:18), it is the mercy on *her that had not obtained mercy* — the scattered house Yahuah *sowed ... in the earth.* The ones told *not my people* are now *my people*; the gathering of the sown seed, not the inclusion of a stranger-people by confession.'),
+  ('canon', 'acts', 11, 18, 'apocrypha', 'tobit', 13, 5, 'extras', E'*And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.* (Tobit 13:5). Tobit, in the captivity, names the hope the brethren see fulfilled: Yahuah *will gather us out of all nations, among whom he has scattered us.* *To the Gentiles also granted repentance unto life* (Acts 11:18) is that gathering begun — the scattered of the house found among the nations, not the nations made the seed.'),
+  ('canon', 'acts', 11, 18, 'canon', '1-peter', 2, 10, 'free', E'*Which in time past were not a people, but are now the people of Elohim (God): which had not obtained mercy, but now have obtained mercy.* (1 Peter 2:10). Peter himself — the very apostle of the house of Cornelius — writes Hosea''s word to those gathered: *in time past were not a people, but are now the people of Elohim (God).* What he glorified Elohim for in Acts 11:18, *to the Gentiles also granted repentance unto life,* he names by Hosea: the *not my people* made the people, the scattered house brought home.'),
+  -- thread: acts-11-the-scattered-sown-among-the-nations-the-word-to-antioch
+  ('canon', 'acts', 11, 19, 'canon', 'hosea', 2, 23, 'free', E'*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God).* (Hosea 2:23). *They which were scattered abroad upon the persecution ... travelled as far as Phenice, and Cyprus, and Antioch, preaching the word* (Acts 11:19). The scattering is the sowing: Yahuah said *I will sow her unto me in the earth,* and the persecution that scatters the witnesses is the very hand that sows the seed and the word together among the nations where the lost sheep are.'),
+  -- thread: acts-12-the-angel-of-yahuah-delivereth-them-that-fear-him
+  ('canon', 'acts', 12, 7, 'canon', 'psalms', 34, 7, 'free', E'*The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them.* (Psalm 34:7). *Behold, the angel of Yahuah (Lord) came upon him, and a light shined in the prison ... and his chains fell off from his hands* (Acts 12:7). The deliverance is the psalm made sight: *the angel of Yahuah encampeth round about them that fear him, and delivereth them.* The church prays without ceasing, and the angel comes.'),
+  ('canon', 'acts', 12, 11, 'canon', 'daniel', 6, 22, 'free', E'*My Elohim (God) hath sent his angel, and hath shut the lions’ mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt.* (Daniel 6:22). Peter, come to himself, says *Now I know of a surety, that Yahuah (Lord) hath sent his angel, and hath delivered me out of the hand of Herod* (Acts 12:11) — Daniel''s own confession: *My Elohim (God) hath sent his angel.* The God who shut the lions'' mouths for the servant in the den opens the prison for the servant in chains; the deliverance of the faithful is one work across the ages.'),
+  -- thread: acts-12-he-gave-not-elohim-the-glory-the-pride-that-is-abased
+  ('canon', 'acts', 12, 22, 'canon', 'daniel', 4, 30, 'free', E'*The king spake, and said, Is not this great Babylon, that I have built for the house of the kingdom by the might of my power, and for the honour of my majesty?* (Daniel 4:30). When the people shout *It is the voice of a god, and not of a man* (Acts 12:22) and Herod takes it, he stands where Nebuchadnezzar stood — *the honour of my majesty.* The man who receives the glory due to Elohim alone is the man on the very edge of the sentence.'),
+  ('canon', 'acts', 12, 23, 'canon', 'daniel', 4, 32, 'free', E'*And they shall drive thee from men, and thy dwelling shall be with the beasts of the field: they shall make thee to eat grass as oxen, and seven times shall pass over thee, until thou know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will.* (Daniel 4:32). *Immediately the angel of Yahuah (Lord) smote him, because he gave not Elohim (God) the glory: and he was eaten of worms* (Acts 12:23). The lesson Nebuchadnezzar was driven among the beasts to learn — *that the El Elyon (most High) ruleth in the kingdom of men* — Herod is struck down for refusing. The same angel that delivered Peter smites the king who steals the glory of Elohim.'),
+  ('canon', 'acts', 12, 23, 'canon', 'daniel', 4, 37, 'free', E'*Now I Nebuchadnezzar praise and extol and honour the King of heaven, all whose works are truth, and his ways judgment: and those that walk in pride he is able to abase.* (Daniel 4:37). Nebuchadnezzar, restored, confesses the rule Herod would not — *those that walk in pride he is able to abase.* Herod *gave not Elohim (God) the glory* (Acts 12:23) and was abased to the worms; the proud king who learned and the proud king who would not learn stand as the two ends of one truth.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a1012_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a1012_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-10-cornelius-the-devout-god-fearer-the-sheep-that-hear',
+       E'Cornelius the devout God-fearer — the sheep that hear his voice',
+       E'Before Peter is ever sent, Cornelius is already *a devout man, and one that feared Elohim (God) with all his house, which gave much alms to the people, and prayed to Elohim (God) alway* (Acts 10:2), and the angel tells him *Thy prayers and thine alms are come up for a memorial before Elohim (God)* (Acts 10:4). The ears of Yahuah were open to him already: *The eyes of Yahuah (LORD) are upon the righteous, and his ears are open unto their cry* (Psalm 34:15). And Peter perceives the rule of it — *in every nation he that feareth him, and worketh righteousness, is accepted with him* (Acts 10:35). This is not a man made a son by responding to a message. He is sought because he is already of the sheep: *My sheep hear my voice, and I know them, and they follow me* (John 10:27). The hearing that comes through Peter reveals what election made true of him before the foundation of the world; it does not create it. The word goes out to the nations because the scattered seed are sown through them and cannot be picked out by sight — and those who are his hear his voice when it comes.',
+       sv.verse_id, ev.verse_id, 'free', 5400
+  FROM _s217_a1012_lookup sv, _s217_a1012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=10 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-10-elohim-is-no-respecter-of-persons',
+       E'Elohim (God) is no respecter of persons',
+       E'Peter opens his mouth in the centurion''s house and says *Of a truth I perceive that Elohim (God) is no respecter of persons: but in every nation he that feareth him, and worketh righteousness, is accepted with him* (Acts 10:34-35). It is no new doctrine — it is the standing word of the Torah, the histories, and the library. Moses said it of Yahuah: *which regardeth not persons, nor taketh reward* (Deuteronomy 10:17). Jehoshaphat charged the judges by it: *there is no iniquity with Yahuah Eloheinu (the LORD our God), nor respect of persons, nor taking of gifts* (2 Chronicles 19:7). The Hebrew library repeats it: *Yahuah (God) is judge, and with him is no respect of persons* (Ecclesiasticus 35:12). What Peter sees is that Yahuah does not gather his own by the visible divide of Yahudah (Judah) and dispersion — he does not regard the face. The seed of the house is scattered through all nations, and the Shepherd knows his own where men cannot tell them apart. The Judge who never regarded the face gathers his scattered seed the same way: not by sight, but by the voice they hear.',
+       sv.verse_id, ev.verse_id, 'extras', 5410
+  FROM _s217_a1012_lookup sv, _s217_a1012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=10 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-10-call-not-any-man-common-the-scattered-not-unclean-to-approach',
+       E'Call not any man common — the scattered seed not unclean to approach',
+       E'Peter on the housetop sees the sheet let down with all manner of beasts, and the voice says *Rise, Peter; kill, and eat ... What Elohim (God) hath cleansed, that call not thou common* (Acts 10:13,15). He does not eat — and the vision is not finally about meat. Peter himself gives the interpretation when he reaches the house: *Elohim (God) hath shewed me that I should not call any man common or unclean* (Acts 10:28). The lesson is of men. The scattered seed of the house living among the nations — the *not my people* of whom Yahuah said *I will sow her unto me in the earth ... and I will say to them which were not my people, Thou art my people* (Hosea 2:23) — are not common to approach. The Spirit does not lead Peter away from the Torah of clean and unclean; he leads him to the dispersed of his own people, whom Elohim has cleansed by his own promise to gather. What Elohim hath cleansed by that promise, Peter is not to call common — and so he goes, *without gainsaying* (Acts 10:29), into the house of the afar-off seed.',
+       sv.verse_id, ev.verse_id, 'free', 5420
+  FROM _s217_a1012_lookup sv, _s217_a1012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=10 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-10-preaching-peace-to-them-afar-off-and-them-that-are-nigh',
+       E'Preaching peace — to them afar off and to them that are nigh',
+       E'In the house of Cornelius, Peter names what the word is: *The word which Elohim (God) sent unto the children of Yashar''el (Israel), preaching peace by Yahusha HaMashiach (Jesus Christ): (he is Yahuah (Lord) of all:)* (Acts 10:36). This is the peace Isaiah promised: *I create the fruit of the lips; Peace, peace to him that is far off, and to him that is near, saith Yahuah (LORD); and I will heal him* (Isaiah 57:19). The far-off are the dispersed of the house, scattered among the nations; the peace reaching the centurion''s house is the healing-word reaching the afar-off seed. It is the same gathering the apostles preach elsewhere: *And came and preached peace to you which were afar off, and to them that were nigh* (Ephesians 2:17). The afar-off made nigh are the scattered brought home, not a stranger-people made into the seed. And as Peter speaks, the proof of it falls: *While Peter yet spake these words, the Ruach HaKodesh (Holy Spirit) fell on all them which heard the word* (Acts 10:44) — the peace received, the gathering owned by the Spirit himself.',
+       sv.verse_id, ev.verse_id, 'free', 5430
+  FROM _s217_a1012_lookup sv, _s217_a1012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=36
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=10 AND ev.verse_number=44
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-11-to-the-gentiles-also-granted-repentance-the-lo-ammi-made-nigh',
+       E'To the Gentiles also granted repentance — the Lo-Ammi made nigh',
+       E'When Peter has rehearsed the whole matter, the brethren in Jerusalem hold their peace and glorify Elohim, saying *Then hath Elohim (God) also to the Gentiles granted repentance unto life* (Acts 11:18). This is Hosea''s promise breaking open. Yahuah had named the scattered northern house *Lo-ammi* — *for ye are not my people* (Hosea 1:9) — and in the same breath swore the turning: *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10), *and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people* (Hosea 2:23). The hope was kept in the captivity too: *he ... will gather us out of all nations, among whom he has scattered us* (Tobit 13:5). And Peter himself, the apostle of this very house, later writes it to the gathered: *Which in time past were not a people, but are now the people of Elohim (God): which had not obtained mercy, but now have obtained mercy* (1 Peter 2:10). The repentance granted is the Lo-Ammi made nigh — the dispersed seed of the house, scattered through the nations and unknown by sight, called home and revealed as sons. It is not a stranger-people grafted in by confession; it is the gathering Hosea sang.',
+       sv.verse_id, ev.verse_id, 'extras', 5440
+  FROM _s217_a1012_lookup sv, _s217_a1012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=11 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=11 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-11-the-scattered-sown-among-the-nations-the-word-to-antioch',
+       E'The scattered sown among the nations — the word to Antioch',
+       E'*Now they which were scattered abroad upon the persecution that arose about Stephen travelled as far as Phenice, and Cyprus, and Antioch, preaching the word* (Acts 11:19), and *a great number believed, and turned unto Yahuah (Lord)* (Acts 11:21). The scattering is the sowing. Yahuah said of the divorced house, *I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people* (Hosea 2:23). The hand that scatters the witnesses under persecution is the hand that sows the seed and the word together into the very nations where the lost sheep already are. The dispersion was never an accident of the enemy''s rage; it is the means of the gathering. The word reaches Antioch because the scattered carry it, and the great number that turns is the sown seed of the house hearing the voice of its Shepherd in the place where it was sown.',
+       sv.verse_id, ev.verse_id, 'free', 5450
+  FROM _s217_a1012_lookup sv, _s217_a1012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=11 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=11 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-12-the-angel-of-yahuah-delivereth-them-that-fear-him',
+       E'The angel of Yahuah delivereth them that fear him',
+       E'Herod has killed James with the sword and taken Peter, bound with two chains between two soldiers, the keepers before the door — but *prayer was made without ceasing of the church unto Elohim (God) for him* (Acts 12:5). And in the night *the angel of Yahuah (Lord) came upon him, and a light shined in the prison ... and his chains fell off from his hands* (Acts 12:7). It is the psalm made sight: *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalm 34:7). When Peter comes to himself he confesses it in the very words of Daniel: *Now I know of a surety, that Yahuah (Lord) hath sent his angel, and hath delivered me out of the hand of Herod* (Acts 12:11) — for Daniel, brought up unhurt from the lions, had said *My Elohim (God) hath sent his angel, and hath shut the lions'' mouths, that they have not hurt me* (Daniel 6:22). The God who shut the lions'' mouths for the servant in the den opens the iron gate for the servant in chains. The deliverance of the faithful is one work across the ages, and it answers the prayer of the gathered.',
+       sv.verse_id, ev.verse_id, 'free', 5460
+  FROM _s217_a1012_lookup sv, _s217_a1012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=12 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=12 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-12-he-gave-not-elohim-the-glory-the-pride-that-is-abased',
+       E'He gave not Elohim the glory — the pride that is abased',
+       E'Herod, arrayed in royal apparel upon his throne, makes his oration, and the people shout *It is the voice of a god, and not of a man* (Acts 12:22) — and he takes it. *And immediately the angel of Yahuah (Lord) smote him, because he gave not Elohim (God) the glory: and he was eaten of worms, and gave up the ghost* (Acts 12:23). He stands where Nebuchadnezzar stood: *Is not this great Babylon, that I have built ... for the honour of my majesty?* (Daniel 4:30). And the sentence Nebuchadnezzar was driven among the beasts to learn is the very lesson Herod refuses: *they shall make thee to eat grass as oxen ... until thou know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will* (Daniel 4:32). Restored, Nebuchadnezzar confessed it — *those that walk in pride he is able to abase* (Daniel 4:37). Herod walked in pride and was abased to the worms. The same angel that delivered Peter from the prison smote the king who stole the glory of Elohim; the One who rules in the kingdom of men gives it to whomsoever he will, and takes it from the proud.',
+       sv.verse_id, ev.verse_id, 'free', 5470
+  FROM _s217_a1012_lookup sv, _s217_a1012_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=12 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=12 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-10-cornelius-the-devout-god-fearer-the-sheep-that-hear
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 34:15 — *The eyes of Yahuah (LORD) are upon the righteous, and his ears are open unto their cry* the ears of Yahuah were open to Cornelius before Peter was sent (Acts 10:4).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-10-cornelius-the-devout-god-fearer-the-sheep-that-hear'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 10:27 — *My sheep hear my voice, and I know them, and they follow me* Cornelius hears because he is a sheep; he is not made one by hearing (Acts 10:35).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-10-cornelius-the-devout-god-fearer-the-sheep-that-hear'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-10-elohim-is-no-respecter-of-persons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 10:17 — *which regardeth not persons, nor taketh reward* Moses'' own word for Yahuah; Peter perceives it of the gathering (Acts 10:34).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-10-elohim-is-no-respecter-of-persons'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Chronicles 19:7 — *there is no iniquity with Yahuah Eloheinu (the LORD our God), nor respect of persons* Jehoshaphat''s charge to the judges; the Judge gathers without partiality (Acts 10:34).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-10-elohim-is-no-respecter-of-persons'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=19 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ecclesiasticus 35:12 — *Yahuah (God) is judge, and with him is no respect of persons* the Hebrew library repeats the Torah''s witness Peter stands on (Acts 10:34).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-10-elohim-is-no-respecter-of-persons'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=34
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-10-call-not-any-man-common-the-scattered-not-unclean-to-approach
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 2:23 — *I will sow her unto me in the earth ... and I will say to them which were not my people, Thou art my people* the sheet is of men: the scattered seed among the nations are not common to approach (Acts 10:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-10-call-not-any-man-common-the-scattered-not-unclean-to-approach'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-10-preaching-peace-to-them-afar-off-and-them-that-are-nigh
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 57:19 — *Peace, peace to him that is far off, and to him that is near, saith Yahuah (LORD); and I will heal him* the peace preached in Cornelius'' house reaching the afar-off seed (Acts 10:36).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-10-preaching-peace-to-them-afar-off-and-them-that-are-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=57 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ephesians 2:17 — *preached peace to you which were afar off, and to them that were nigh* the afar-off made nigh are the scattered brought home, not a stranger-people made the seed (Acts 10:36).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-10-preaching-peace-to-them-afar-off-and-them-that-are-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=10 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-11-to-the-gentiles-also-granted-repentance-the-lo-ammi-made-nigh
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 1:10 — *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* the Lo-Ammi made nigh — the dispersed house called sons (Acts 11:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-11-to-the-gentiles-also-granted-repentance-the-lo-ammi-made-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=11 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hosea 2:23 — *I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people* the mercy on the scattered house Yahuah sowed in the earth (Acts 11:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-11-to-the-gentiles-also-granted-repentance-the-lo-ammi-made-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=11 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Tobit 13:5 — *will gather us out of all nations, among whom he has scattered us* the captivity''s hope: the scattered of the house gathered, begun in the repentance granted (Acts 11:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-11-to-the-gentiles-also-granted-repentance-the-lo-ammi-made-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=11 AND sv.verse_number=18
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Peter 2:10 — *which in time past were not a people, but are now the people of Elohim (God): which had not obtained mercy, but now have obtained mercy* Peter himself names Acts 11:18 by Hosea — the not-my-people made the people (Acts 11:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-11-to-the-gentiles-also-granted-repentance-the-lo-ammi-made-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=11 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-11-the-scattered-sown-among-the-nations-the-word-to-antioch
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 2:23 — *I will sow her unto me in the earth* the persecution-scattering is the sowing of the seed and the word among the nations (Acts 11:19).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-11-the-scattered-sown-among-the-nations-the-word-to-antioch'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=11 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-12-the-angel-of-yahuah-delivereth-them-that-fear-him
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 34:7 — *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* the prison-deliverance is the psalm made sight (Acts 12:7).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-12-the-angel-of-yahuah-delivereth-them-that-fear-him'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 6:22 — *My Elohim (God) hath sent his angel, and hath shut the lions’ mouths* Peter''s confession is Daniel''s; the God of the den opens the prison (Acts 12:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-12-the-angel-of-yahuah-delivereth-them-that-fear-him'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=12 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=6 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-12-he-gave-not-elohim-the-glory-the-pride-that-is-abased
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 4:30 — *Is not this great Babylon, that I have built ... for the honour of my majesty?* Herod takes the shout of the people where Nebuchadnezzar took the honour (Acts 12:22).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-12-he-gave-not-elohim-the-glory-the-pride-that-is-abased'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=12 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 4:32 — *until thou know that the El Elyon (most High) ruleth in the kingdom of men, and giveth it to whomsoever he will* the lesson Herod refused and was smitten for (Acts 12:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-12-he-gave-not-elohim-the-glory-the-pride-that-is-abased'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=12 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 4:37 — *those that walk in pride he is able to abase* Nebuchadnezzar restored confessed it; Herod walked in pride and was abased to the worms (Acts 12:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a1012_lookup sv, _s217_a1012_lookup tv
+ WHERE t.slug='acts-12-he-gave-not-elohim-the-glory-the-pride-that-is-abased'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=12 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_13.sql (S217 Acts 13) -----
+-- =====================================================================
+-- S217 minion — ACTS 13 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Range:  ACTS 13 (Antioch of Pisidia; Paul's synagogue sermon reciting the covenant history
+--         and proclaiming the risen Messiah; the turn to the nations at the end).
+-- Tag: a13 (temp view _s217_a13_lookup).  Sort band: 5500-5599.
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- WATCHPOINT (Red Lines #7/#11, the light-to-the-nations risk): Paul's *we turn to the Gentiles*
+-- (Acts 13:46) and *I have set thee to be a light of the Gentiles* (Acts 13:47, quoting Isaiah
+-- 49:6) are read as the proclamation going out to where the scattered seed live among the
+-- nations — the dispersed of Yashar'el (Israel) reached, the lost sheep gathered. NOT the
+-- false-inclusion of the nations-as-such into the covenant by faith-confession. Isaiah 49:6 in
+-- its own context pairs the light-to-the-nations with *to raise up the tribes of Jacob, and to
+-- restore the preserved of Yashar'el (Israel)* — the restoration framing governs the thread, and
+-- Simeon's Luke 2:32 holds the same pairing (*a light to lighten the Gentiles, and the glory of
+-- thy people Yashar'el*). Framed accordingly in thread acts-13-light-to-the-nations.
+--
+-- WATCHPOINT (Red Line #10 + Christology): Acts 13:33's *Thou art my Son, this day have I
+-- begotten thee* (Psalm 2:7) is the begetting = the resurrection / right-hand enthronement of
+-- the Formed — NO Trinitarian co-equal-persons grammar, NO modalist collapse. Yahusha (Jesus)
+-- is the Formed drawn from the Formless, who is God and has a Father. Acts 13:38-39's
+-- justification language is left as narration (no standalone sola-fide formula authored into a
+-- note). Framed accordingly in thread acts-13-the-begetting.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 13:
+--   v.1-12  Antioch sending / Cyprus / Elymas  Tanakh: none warranted (narrative)  Extras: none warranted  NT: none warranted
+--   v.16-22 recital: fathers, exodus, judges, Saul, David  Tanakh: 1 Samuel 13:14, Psalm 89:20 (2 Samuel 7:12 weighed -> carried in begetting/Saviour beat)  Extras: 1 Maccabees 2 weighed; faith-recital of patriarchs, not the national history Paul recites -> none added  NT: none warranted
+--   v.23-25 the Saviour of David's seed / John's witness  Tanakh: none added  Extras: none warranted  NT: Luke 3:16, John 1:27
+--   v.26-31 condemned, slain, taken from the tree, raised  Tanakh: none added (Acts 2 carried Psalm 16)  Extras: none warranted  NT: none warranted (carried in resurrection threads)
+--   v.32-33 the begetting / Psalm 2:7  Tanakh: Psalm 2:7  Extras: none warranted  NT: Hebrews 1:5, Hebrews 5:5
+--   v.34-37 the sure mercies of David / the Holy One not to see corruption  Tanakh: Isaiah 55:3, Psalm 16:10  Extras: none warranted  NT: Acts 2:27 (Acts<->Acts re-walk)
+--   v.38-39 forgiveness / justified  Tanakh: none warranted  Extras: none warranted  NT: none warranted (left as narration; no sola-fide formula authored)
+--   v.40-41 beware the despisers / Habakkuk  Tanakh: Habakkuk 1:5  Extras: none warranted  NT: none warranted
+--   v.42-45 the next sabbath / envy  Tanakh: none warranted  Extras: none warranted  NT: none warranted
+--   v.46-47 we turn to the nations / a light of the nations  Tanakh: Isaiah 49:6  Extras: none warranted  NT: Luke 2:32
+--   v.48-50 ordained to life believed / persecution  Tanakh: none warranted  Extras: none warranted  NT: none warranted
+--   v.51-52 shook off the dust  Tanakh: none warranted  Extras: none warranted  NT: Matthew 10:14, Luke 9:5
+--
+-- THREADS (slug -> target libraries):
+--   5500 acts-13-the-god-of-yasharel-chose-the-fathers-and-raised-up-david       (Tanakh)
+--   5510 acts-13-johns-witness-i-am-not-he-there-cometh-one-after-me             (NT)
+--   5520 acts-13-the-begetting-thou-art-my-son-the-raising-up-of-the-formed      (Tanakh + NT)
+--   5530 acts-13-the-sure-mercies-of-david-the-holy-one-not-to-see-corruption    (Tanakh + NT)
+--   5540 acts-13-beware-ye-despisers-i-work-a-work-in-your-days                  (Tanakh)
+--   5550 acts-13-a-light-to-the-nations-and-the-restoration-of-the-tribes        (Tanakh + NT)
+--   5560 acts-13-they-shook-off-the-dust-of-their-feet                          (NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-13-the-god-of-yasharel-chose-the-fathers-and-raised-up-david
+  ('canon', 'acts', 13, 22, 'canon', '1-samuel', 13, 14, 'free', E'*But now thy kingdom shall not continue: Yahuah (LORD) hath sought him a man after his own heart, and Yahuah (LORD) hath commanded him to be captain over his people, because thou hast not kept that which Yahuah (LORD) commanded thee.* (1 Samuel 13:14). When Paul says *he raised up unto them David to be their king; to whom also he gave testimony, and said, I have found David the son of Jesse, a man after mine own heart, which shall fulfil all my will* (Acts 13:22), he is reaching back to the word Samuel spoke when Saul''s kingdom was torn away — *Yahuah (LORD) hath sought him a man after his own heart.* The throne passes from the king the people desired to the king Yahuah (LORD) chose.'),
+  ('canon', 'acts', 13, 22, 'canon', 'psalms', 89, 20, 'free', E'*I have found David my servant; with my holy oil have I anointed him:* (Psalm 89:20). Paul''s *I have found David the son of Jesse, a man after mine own heart* (Acts 13:22) is the very language of the covenant-song — *I have found David my servant.* The David whom Yahuah (LORD) found and anointed is the head of the line through whom the sworn mercy runs to the Saviour Paul is about to name.'),
+  -- thread: acts-13-johns-witness-i-am-not-he-there-cometh-one-after-me
+  ('canon', 'acts', 13, 25, 'canon', 'luke', 3, 16, 'free', E'*John answered, saying unto them all, I indeed baptize you with water; but one mightier than I cometh, the latchet of whose shoes I am not worthy to unloose: he shall baptize you with the Ruach HaKodesh (Holy Spirit) and with fire:* (Luke 3:16). Paul rehearses John''s own confession — *as John fulfilled his course, he said, Whom think ye that I am? I am not he. But, behold, there cometh one after me, whose shoes of his feet I am not worthy to loose* (Acts 13:25). The forerunner steps aside for the One he prepared the way for, the same testimony Luke records from John''s mouth.'),
+  ('canon', 'acts', 13, 25, 'canon', 'john', 1, 27, 'free', E'*He it is, who coming after me is preferred before me, whose shoe''s latchet I am not worthy to unloose.* (John 1:27). The phrase Paul puts in John''s mouth — *whose shoes of his feet I am not worthy to loose* (Acts 13:25) — is John''s own word at the Jordan: *whose shoe''s latchet I am not worthy to unloose.* The witness who came before disowns the title and points past himself to the One who comes after.'),
+  -- thread: acts-13-the-begetting-thou-art-my-son-the-raising-up-of-the-formed
+  ('canon', 'acts', 13, 33, 'canon', 'psalms', 2, 7, 'free', E'*I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee.* (Psalm 2:7). Paul reads the resurrection out of the second psalm — *Elohim (God) hath fulfilled the same unto us their children, in that he hath raised up Yahusha (Jesus) again; as it is also written in the second psalm, Thou art my Son, this day have I begotten thee* (Acts 13:33). The *this day* is the day of the raising-up — the enthronement of the Formed, declared Son in power by the rising from the dead. He who is the Son begotten of the Father is set on the throne; the begetting names the day he was raised, not a beginning of his being.'),
+  ('canon', 'acts', 13, 33, 'canon', 'hebrews', 1, 5, 'free', E'*For unto which of the angels said he at any time, Thou art my Son, this day have I begotten thee? And again, I will be to him a Father, and he shall be to me a Son?* (Hebrews 1:5). The same decree Paul preaches at Antioch is the word Hebrews sets above the angels — *Thou art my Son, this day have I begotten thee.* It is spoken to the Son alone, the heir of all things, raised and seated *on the right hand of the Majesty on high;* he is Son to a Father, and the throne is his.'),
+  ('canon', 'acts', 13, 33, 'canon', 'hebrews', 5, 5, 'free', E'*So also Messiah (Christ) glorified not himself to be made an high priest; but he that said unto him, Thou art my Son, to day have I begotten thee.* (Hebrews 5:5). The begetting Paul ties to the resurrection (Acts 13:33) Hebrews ties to the glorifying of the Messiah (Christ) as high priest — *he that said unto him, Thou art my Son, to day have I begotten thee.* The Son does not seize the honour; the Father confers it, raising and enthroning the One he calls Son.'),
+  -- thread: acts-13-the-sure-mercies-of-david-the-holy-one-not-to-see-corruption
+  ('canon', 'acts', 13, 34, 'canon', 'isaiah', 55, 3, 'free', E'*Incline your ear, and come unto me: hear, and your soul shall live; and I will make an everlasting covenant with you, even the sure mercies of David.* (Isaiah 55:3). Paul grounds the resurrection-*no more to return to corruption* in the prophet''s pledge — *I will give you the sure mercies of David* (Acts 13:34). The mercies sworn to David are *sure* — they cannot fail — and they are made sure precisely because the One of David''s seed is raised never to see corruption again; the everlasting covenant stands on a living head.'),
+  ('canon', 'acts', 13, 35, 'canon', 'psalms', 16, 10, 'free', E'*For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption.* (Psalm 16:10). Paul says *he saith also in another psalm, Thou shalt not suffer thine Holy One to see corruption* (Acts 13:35), then makes the argument plain: *David … fell on sleep … and saw corruption: But he, whom Elohim (God) raised again, saw no corruption* (Acts 13:36-37). The psalm could not be of David, who lies in his tomb; it is of the Holy One whom Elohim (God) raised, whose flesh saw no decay.'),
+  ('canon', 'acts', 13, 35, 'canon', 'acts', 2, 27, 'free', E'*Because thou wilt not leave my soul in hell, neither wilt thou suffer thine Holy One to see corruption.* (Acts 2:27). At Pentecost Peter had already opened the same psalm to the same end — *thou wilt not … suffer thine Holy One to see corruption* — and reasoned that David *is both dead and buried* while the Holy One was raised. Paul at Antioch re-walks the very argument: *Thou shalt not suffer thine Holy One to see corruption* (Acts 13:35), David saw corruption, but the One Elohim (God) raised saw none. Two witnesses, one psalm, one risen Holy One.'),
+  -- thread: acts-13-beware-ye-despisers-i-work-a-work-in-your-days
+  ('canon', 'acts', 13, 41, 'canon', 'habakkuk', 1, 5, 'free', E'*Behold ye among the heathen, and regard, and wonder marvellously: for I will work a work in your days, which ye will not believe, though it be told you.* (Habakkuk 1:5). Paul closes the sermon with the prophet''s warning — *Behold, ye despisers, and wonder, and perish: for I work a work in your days, a work which ye shall in no wise believe, though a man declare it unto you* (Acts 13:41). The work Yahuah (LORD) declared through Habakkuk that the hearers would not believe is set before this generation again: the raising-up of the Saviour, declared and disbelieved, the same hardness the prophet foretold.'),
+  -- thread: acts-13-a-light-to-the-nations-and-the-restoration-of-the-tribes
+  ('canon', 'acts', 13, 47, 'canon', 'isaiah', 49, 6, 'free', E'*And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth.* (Isaiah 49:6). Paul takes his commission from this verse — *I have set thee to be a light of the Gentiles, that thou shouldest be for salvation unto the ends of the earth* (Acts 13:47). The prophet binds the two together in one breath: the light that goes to the nations is the same servant''s work that raises up *the tribes of Jacob* and restores *the preserved of Yashar''el (Israel).* The light goes out among the nations because that is where the scattered of the house are dispersed — the salvation reaching to the ends of the earth is the gathering of the lost sheep, not a new people put in their place.'),
+  ('canon', 'acts', 13, 47, 'canon', 'luke', 2, 32, 'free', E'*A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel).* (Luke 2:32). When Paul calls himself *a light of the Gentiles* (Acts 13:47), he speaks the word Simeon spoke over the child in the temple — and Simeon holds both halves together: the light that lightens the nations is *the glory of thy people Yashar''el (Israel).* The light among the nations and the glory of the people are one salvation; the proclamation reaches the dispersed of the house wherever they are scattered.'),
+  -- thread: acts-13-they-shook-off-the-dust-of-their-feet
+  ('canon', 'acts', 13, 51, 'canon', 'matthew', 10, 14, 'free', E'*And whosoever shall not receive you, nor hear your words, when ye depart out of that house or city, shake off the dust of your feet.* (Matthew 10:14). When Paul and Barnabas *shook off the dust of their feet against them, and came unto Iconium* (Acts 13:51), they do exactly what the Master charged the sent ones to do where the word is refused — *shake off the dust of your feet.* The pursuit ends where the rejection lands; the messengers move on to where the word will be heard.'),
+  ('canon', 'acts', 13, 51, 'canon', 'luke', 9, 5, 'free', E'*And whosoever will not receive you, when ye go out of that city, shake off the very dust from your feet for a testimony against them.* (Luke 9:5). The act of Acts 13:51 — *they shook off the dust of their feet against them* — is the Master''s own instruction to the twelve: *shake off the very dust from your feet for a testimony against them.* It is not vengeance but witness; the dust left behind testifies that the word was brought and refused.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-13-the-god-of-yasharel-chose-the-fathers-and-raised-up-david',
+       E'The Elohim (God) of Yashar''el (Israel) chose the fathers and raised up David',
+       E'Standing in the synagogue at Antioch, Paul recites the covenant history of one people: *The Elohim (God) of this people of Yashar''el (Israel) chose our fathers, and exalted the people when they dwelt as strangers in the land of Egypt … and with an high arm brought he them out of it* (Acts 13:17), through the wilderness, the conquest, the judges, *until Samuel the prophet* (Acts 13:20). When they desired a king, Elohim (God) gave them Saul of the tribe of Benjamin; *and when he had removed him, he raised up unto them David to be their king; to whom also he gave testimony, and said, I have found David the son of Jesse, a man after mine own heart, which shall fulfil all my will* (Acts 13:22). The testimony is Samuel''s own word when Saul''s kingdom was torn away: *Yahuah (LORD) hath sought him a man after his own heart, and Yahuah (LORD) hath commanded him to be captain over his people* (1 Samuel 13:14), and the covenant-song confirms it: *I have found David my servant; with my holy oil have I anointed him* (Psalm 89:20). The throne passes to the king Yahuah (LORD) found and anointed — the head of the line through whom the sworn mercy will run to the Saviour Paul is about to name.',
+       sv.verse_id, ev.verse_id, 'free', 5500
+  FROM _s217_a13_lookup sv, _s217_a13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=13 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-13-johns-witness-i-am-not-he-there-cometh-one-after-me',
+       E'John''s witness — I am not he; there cometh one after me',
+       E'Before he reaches the cross and the empty tomb, Paul names the forerunner: *When John had first preached before his coming the baptism of repentance to all the people of Yashar''el (Israel)* (Acts 13:24). And he gives John''s own confession: *as John fulfilled his course, he said, Whom think ye that I am? I am not he. But, behold, there cometh one after me, whose shoes of his feet I am not worthy to loose* (Acts 13:25). It is the word John spoke at the Jordan — *one mightier than I cometh, the latchet of whose shoes I am not worthy to unloose: he shall baptize you with the Ruach HaKodesh (Holy Spirit) and with fire* (Luke 3:16), *He it is, who coming after me is preferred before me, whose shoe''s latchet I am not worthy to unloose* (John 1:27). The witness who came first disowns the title the people pressed on him and points past himself to the One who comes after. The preparer of the way steps aside for the Saviour of David''s seed.',
+       sv.verse_id, ev.verse_id, 'free', 5510
+  FROM _s217_a13_lookup sv, _s217_a13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=13 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-13-the-begetting-thou-art-my-son-the-raising-up-of-the-formed',
+       E'The begetting — Thou art my Son; the raising-up of the Formed',
+       E'Paul brings the recital to its center: *we declare unto you glad tidings, how that the promise which was made unto the fathers, Elohim (God) hath fulfilled the same unto us their children, in that he hath raised up Yahusha (Jesus) again; as it is also written in the second psalm, Thou art my Son, this day have I begotten thee* (Acts 13:32-33). The decree he quotes is *I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee* (Psalm 2:7). The *this day* is the day of the raising-up — the resurrection that declares the Son in power, the enthronement of the Formed at the right hand. He who is Son to a Father is set upon the throne; the begetting names the day he was raised and seated, not a beginning of his being. Hebrews sets the same decree above the angels — *unto which of the angels said he at any time, Thou art my Son, this day have I begotten thee?* (Hebrews 1:5) — and ties it to his glorifying as high priest — *Messiah (Christ) glorified not himself … but he that said unto him, Thou art my Son, to day have I begotten thee* (Hebrews 5:5). The Son does not seize the honour; the Father confers it, raising and enthroning the One he calls Son.',
+       sv.verse_id, ev.verse_id, 'free', 5520
+  FROM _s217_a13_lookup sv, _s217_a13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=13 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-13-the-sure-mercies-of-david-the-holy-one-not-to-see-corruption',
+       E'The sure mercies of David — the Holy One not to see corruption',
+       E'The resurrection is *no more to return to corruption,* and Paul anchors it in two psalms and the prophet. *I will give you the sure mercies of David* (Acts 13:34) is Isaiah''s everlasting-covenant pledge — *Incline your ear, and come unto me: hear, and your soul shall live; and I will make an everlasting covenant with you, even the sure mercies of David* (Isaiah 55:3). The mercies are *sure* — they cannot fail — because the One of David''s seed is raised never to decay again; the everlasting covenant stands on a living head. Then Paul opens the sixteenth psalm: *Thou shalt not suffer thine Holy One to see corruption* (Acts 13:35), which is *thou wilt not … suffer thine Holy One to see corruption* (Psalm 16:10), and he reasons it cannot be of David: *David, after he had served his own generation … fell on sleep … and saw corruption: But he, whom Elohim (God) raised again, saw no corruption* (Acts 13:36-37). At Pentecost Peter had already opened the same psalm to the same end — *thou wilt not leave my soul in hell, neither wilt thou suffer thine Holy One to see corruption* (Acts 2:27) — David is dead and buried, but the Holy One was raised. Two witnesses, one psalm, one risen Holy One whose flesh saw no decay.',
+       sv.verse_id, ev.verse_id, 'free', 5530
+  FROM _s217_a13_lookup sv, _s217_a13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=13 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-13-beware-ye-despisers-i-work-a-work-in-your-days',
+       E'Beware, ye despisers — I work a work in your days',
+       E'Paul closes the synagogue sermon not with comfort but with the prophet''s warning: *Beware therefore, lest that come upon you, which is spoken of in the prophets; Behold, ye despisers, and wonder, and perish: for I work a work in your days, a work which ye shall in no wise believe, though a man declare it unto you* (Acts 13:40-41). It is Habakkuk''s word — *Behold ye among the heathen, and regard, and wonder marvellously: for I will work a work in your days, which ye will not believe, though it be told you* (Habakkuk 1:5). The work Yahuah (LORD) declared through the prophet, that the hearers would marvel at and refuse, is set before this generation again: the raising-up of the Saviour, declared and disbelieved. The warning is mercy held out before the door closes — wonder at the work, but do not perish despising it.',
+       sv.verse_id, ev.verse_id, 'free', 5540
+  FROM _s217_a13_lookup sv, _s217_a13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=40
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=13 AND ev.verse_number=41
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-13-a-light-to-the-nations-and-the-restoration-of-the-tribes',
+       E'A light to the nations — and the restoration of the tribes',
+       E'When the leaders contradict and blaspheme, Paul and Barnabas wax bold: *It was necessary that the word of Elohim (God) should first have been spoken to you: but seeing ye put it from you … lo, we turn to the Gentiles. For so hath Yahuah (Lord) commanded us, saying, I have set thee to be a light of the Gentiles, that thou shouldest be for salvation unto the ends of the earth* (Acts 13:46-47). The verse they take their commission from is Isaiah''s, and the prophet binds two works into one breath: *It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6). The light goes out to the nations because that is where the scattered of the house are dispersed; the salvation reaching to the ends of the earth is the raising-up of the tribes of Jacob and the restoring of the preserved of Yashar''el (Israel) — the lost sheep gathered from where they were sown, not a new people set in their place. Simeon held the same two halves together over the child in the temple: *A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* (Luke 2:32). The light among the nations and the glory of the people are one salvation; the proclamation reaches the dispersed of the house wherever they are scattered, and *as many as were ordained to eternal life believed* (Acts 13:48) — the hearing revealing those who were already his.',
+       sv.verse_id, ev.verse_id, 'free', 5550
+  FROM _s217_a13_lookup sv, _s217_a13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=46
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=13 AND ev.verse_number=48
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-13-they-shook-off-the-dust-of-their-feet',
+       E'They shook off the dust of their feet',
+       E'When persecution is stirred up and they are expelled from the coasts, the messengers do what the Master charged: *they shook off the dust of their feet against them, and came unto Iconium. And the disciples were filled with joy, and with the Ruach HaKodesh (Holy Spirit)* (Acts 13:51-52). Yahusha (Jesus) had given the instruction to the sent ones: *whosoever shall not receive you, nor hear your words, when ye depart out of that house or city, shake off the dust of your feet* (Matthew 10:14), *shake off the very dust from your feet for a testimony against them* (Luke 9:5). It is not vengeance but witness — the dust left behind testifies that the word was brought and refused. The pursuit ends where the rejection lands; the messengers move on, *filled with joy,* to where the word will be heard. The sheep hear the Shepherd''s voice; where it is put away, the dust is shaken off and the proclamation goes forward.',
+       sv.verse_id, ev.verse_id, 'free', 5560
+  FROM _s217_a13_lookup sv, _s217_a13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=51
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=13 AND ev.verse_number=52
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-13-the-god-of-yasharel-chose-the-fathers-and-raised-up-david
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Samuel 13:14 — *Yahuah (LORD) hath sought him a man after his own heart* Samuel''s word when Saul''s kingdom was torn away, which Paul quotes of David (Acts 13:22).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-the-god-of-yasharel-chose-the-fathers-and-raised-up-david'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=13 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 89:20 — *I have found David my servant; with my holy oil have I anointed him* the covenant-song''s found-and-anointed David, the head of the line of the sworn mercy (Acts 13:22).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-the-god-of-yasharel-chose-the-fathers-and-raised-up-david'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-13-johns-witness-i-am-not-he-there-cometh-one-after-me
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 3:16 — *one mightier than I cometh, the latchet of whose shoes I am not worthy to unloose* John''s confession at the Jordan, which Paul rehearses (Acts 13:25).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-johns-witness-i-am-not-he-there-cometh-one-after-me'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 1:27 — *whose shoe''s latchet I am not worthy to unloose* John''s own word, the very phrase Paul puts in his mouth (Acts 13:25).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-johns-witness-i-am-not-he-there-cometh-one-after-me'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-13-the-begetting-thou-art-my-son-the-raising-up-of-the-formed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 2:7 — *Thou art my Son; this day have I begotten thee* the decree Paul reads of the resurrection; the *this day* is the day of the raising-up and enthronement (Acts 13:33).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-the-begetting-thou-art-my-son-the-raising-up-of-the-formed'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 1:5 — *Thou art my Son, this day have I begotten thee* the same decree spoken to the Son alone, set above the angels (Acts 13:33).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-the-begetting-thou-art-my-son-the-raising-up-of-the-formed'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 5:5 — *he that said unto him, Thou art my Son, to day have I begotten thee* the begetting tied to the Father glorifying the Son as high priest (Acts 13:33).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-the-begetting-thou-art-my-son-the-raising-up-of-the-formed'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-13-the-sure-mercies-of-david-the-holy-one-not-to-see-corruption
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 55:3 — *I will make an everlasting covenant with you, even the sure mercies of David* the pledge Paul ties to the resurrection-no-more-to-corruption (Acts 13:34).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-the-sure-mercies-of-david-the-holy-one-not-to-see-corruption'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 16:10 — *neither wilt thou suffer thine Holy One to see corruption* the psalm Paul shows cannot be of David, who saw corruption, but of the One raised (Acts 13:35-37).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-the-sure-mercies-of-david-the-holy-one-not-to-see-corruption'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 2:27 — *neither wilt thou suffer thine Holy One to see corruption* Peter at Pentecost opened the same psalm to the same end; Paul re-walks the argument (Acts 13:35).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-the-sure-mercies-of-david-the-holy-one-not-to-see-corruption'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-13-beware-ye-despisers-i-work-a-work-in-your-days
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Habakkuk 1:5 — *I will work a work in your days, which ye will not believe, though it be told you* the prophet''s warning Paul sets before this generation (Acts 13:41).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-beware-ye-despisers-i-work-a-work-in-your-days'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-13-a-light-to-the-nations-and-the-restoration-of-the-tribes
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 49:6 — *to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles* the prophet binds the light-to-the-nations to the restoration of the tribes in one breath (Acts 13:47).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-a-light-to-the-nations-and-the-restoration-of-the-tribes'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 2:32 — *A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* Simeon holds the light-to-the-nations and the glory of the people together as one salvation (Acts 13:47).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-a-light-to-the-nations-and-the-restoration-of-the-tribes'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-13-they-shook-off-the-dust-of-their-feet
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 10:14 — *when ye depart out of that house or city, shake off the dust of your feet* the Master''s charge to the sent ones, done at Antioch (Acts 13:51).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-they-shook-off-the-dust-of-their-feet'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=51
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=10 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 9:5 — *shake off the very dust from your feet for a testimony against them* the same charge to the twelve; not vengeance but witness (Acts 13:51).'
+  FROM cross_reference_threads t, cross_references x, _s217_a13_lookup sv, _s217_a13_lookup tv
+ WHERE t.slug='acts-13-they-shook-off-the-dust-of-their-feet'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=13 AND sv.verse_number=51
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=9 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'Session 217 — Acts 1-7 cross-references complete.'

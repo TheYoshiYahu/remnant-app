@@ -53,7 +53,7 @@ in the sandbox).
 | Mark | 16 | ✅ | ✅ | ⬜ | NT-to-NT parity pending |
 | Luke | 24 | ✅ | ✅ | ⬜ | NT-to-NT parity pending |
 | John | 21 | ✅ | ✅ | ✅ | **complete** (the model) |
-| **Acts** | 28 | 🟦 1–7 | 🟦 1–7 | 🟦 1–7 | **in progress** — 1–7 done, 8–28 to build |
+| **Acts** | 28 | 🟦 1–13 | 🟦 1–13 | 🟦 1–13 | **in progress** — 1–13 done, 14–28 to build |
 | Romans | 16 | ✅ (canon-only) | ⬜ | ⬜ | full-library build (complements existing canon) |
 | Galatians | 6 | ✅ (canon-only) | ⬜ | ⬜ | full-library build — HIGH voice-risk |
 | Revelation | 22 | ✅ (canon-only) | ⬜ | ⬜ | full-library build — kaph carve-outs |
@@ -81,22 +81,24 @@ NT total: **260 chapters.**
 
 ---
 
-## PHASE 1 — Finish Acts (band 5000–5999) · 9 minions remaining
+## PHASE 1 — Finish Acts (band 5000–5999) · 6 minions remaining
 
 Done: **1–2** (5000–5099, 9 threads), **3–5** (5100–5199, 11 threads — fragment
 `scratch_xref_acts/minion_acts_03_05.sql`), **6–7** (5200–5270, 8 threads — fragment
 `scratch_xref_acts/minion_acts_06_07.sql`; Stephen's speech, Checklist-9 watchpoint held —
 the stiffnecked/persecute-the-prophets charge framed as covenant-internal conduct rebuke,
-not ethnic). All passed five gates. Remaining:
+not ethnic), **8–9** (5300–5360, 7 threads — fragment `scratch_xref_acts/minion_acts_08_09.sql`;
+Samaria/the Ethiopian/Saul's call), **10–12** (5400–5470 — fragment
+`scratch_xref_acts/minion_acts_10_12.sql`; Cornelius held as scattered-seed gathering, FOR
+YOSHI'S BLESSING), **13** (5500–5570 — fragment `scratch_xref_acts/minion_acts_13.sql`;
+Antioch sermon). All passed five gates (incl. prod-DB resolution check: 0 dropped rows).
+Remaining:
 
 Sort sub-bands widened to 100 each (a dense range can need 11+ threads — 3–5 used
 5100–5180; the old 50-wide spacing was too tight). Each range gets its own 100-band:
 
 | Minion | Chapters | Sort | Density / voice notes |
 |--------|----------|-----:|-----------------------|
-| acts-08-09 | 8–9 | 5300 | Samaria, the Ethiopian (Isaiah 53), Saul's call |
-| acts-10-12 | 10–12 | 5400 | **HIGH voice-risk** — Cornelius/"Gentiles" = scattered seed, NOT false-inclusion (RL #7/#11) |
-| acts-13 | 13 | 5500 | **dense, solo** — Antioch sermon (Psalm 2, Isaiah 55, Habakkuk) |
 | acts-14-15 | 14–15 | 5600 | **HIGH voice-risk** — council + Amos 9 = twelve-tribe restoration, not new-people graft |
 | acts-16-18 | 16–18 | 5700 | Philippi, Athens (Areopagus — the nations, not covenant inclusion) |
 | acts-19-20 | 19–20 | 5800 | Ephesus, the Miletus farewell |
