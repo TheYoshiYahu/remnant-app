@@ -106,3 +106,21 @@ means a back-fill can re-run safely over the already-merged canon rows.
     Authoring gap: targets are 238 Tanakh vs 27 NT — NT-to-NT pairings still need a new FULL-LIBRARY
     `john_nt_to_nt` migration (minions per chapter-range). See `S214_JOHN_CANON_XREF_DIAGNOSIS.md`,
     `S214_SESSION_CLOSE.md`.
+- **2026-06-08 (S216) — John NT-to-NT layer AUTHORED (FULL-LIBRARY from the start):**
+  `data-schema/migrations/session216_john_nt_to_nt_xref_threads.sql`. **42 threads / 140
+  cross_reference rows / 140 thread_member rows**, all `tier_required='free'`, sort band
+  4000–4318 (no overlap with the S181/S194/S212 John bands). Source is always a canon John
+  verse; targets are other NT books across all 21 chapters. **Pairing rule (Yoshi, S216):** pair
+  by genuine textual fit wherever it falls — no per-family quota (synoptic / 1 John / Revelation
+  / Pauline all drawn on only where the text actually warrants). Authored by six per-chapter-
+  range minions (J1 / J2–4 / J5–8 / J9–12 / J13–17 / J18–21), each loading the voice skill and
+  quoting from the local canon parse. **Gates all green:** `_xref_audit.py` classifier =
+  FULL-LIBRARY PASS; `verify_fidelity.py` = 139 faithful + 1 confirmed-verbatim false positive
+  (1 John 1:2, a wholly-parenthetical KJV verse the normalizer strips before shingling);
+  real-PostgreSQL-grammar parse (pglast) = OK, 164 statements; S216 voice-gate review clean
+  (zero son-of-man, no Jew/Gentile binary, no sola-fide grammar; Romans 11 olive / Romans 13
+  love-as-Torah / John 8:44 seed-war / John 10:16 other-sheep / Thomas's Formed-one confession
+  all read per the Red Lines). Provenance in `scratch_xref_ntnt/`. **PENDING apply from Yoshi's
+  Mac Terminal** (apply AFTER the S181 + S194 canon baselines, which the reader still needs per
+  the S214 diagnosis). This closes the NT-to-NT authoring gap; it does not itself close the
+  S181/S194 apply gap (that is the Mac step).
