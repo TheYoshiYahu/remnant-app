@@ -247,3 +247,94 @@ partner page shows tiers, no prices/Subscribe.
   declarations incl. advertising-ID = No). Typical review ≤ 7 days.
 - Queued post-approval: assetlinks second fingerprint (Play App
   Signing SHA-256), on-device walk.
+
+## S215 — Track C progress (Claude, App Store Connect web work DONE)
+
+Apple Developer enrollment APPROVED. Account: YoshiYahu BenYah /
+Remnant Of Promise. **Team ID: 2M3595N5R7** (from Developer portal).
+Apple App ID (App Store Connect): **6778134531**.
+
+COMPLETED IN APP STORE CONNECT (all saved):
+- App ID registered at developer portal: com.remnantofpromise.bible
+  (explicit) + Associated Domains capability enabled.
+- App record created: name "Remnant of Promise Study Bible", iOS,
+  en-US, SKU ROPBIBLE-IOS-001, bundle com.remnantofpromise.bible.
+- Version 1.0 listing: subtitle "The sacred names restored",
+  promotional text, full voice-gated description (Play LISTING COPY),
+  keywords, support URL remnantofpromise.org, marketing URL
+  bible.remnantofpromise.org, copyright "2026 Remnant of Promise".
+- Screenshots: 8 x 6.5" (1242x2688) from appstore-screenshots/final/65
+  uploaded (Apple confirmed they cover all iPhone sizes).
+- Category: Reference (primary) / Books (secondary).
+- Content Rights: does NOT use third-party content (all public-domain
+  or RoP-owned).
+- Age rating questionnaire: all None/No -> **4+**.
+- App Privacy: privacy policy URL set; data types Email, User ID,
+  Other User Content, Purchase History -> each App Functionality +
+  linked to identity + NOT used for tracking. PUBLISHED.
+- Pricing: **Free** ($0.00) all 175 regions.
+- Availability: **All 175 countries** (Yoshi to add DSA trader status
+  in Business section so EU stays live).
+- Release: **Automatically release after approval** (mirrors Play).
+- App Review contact: YoshiYahu BenYah / +14302609988 /
+  info@remnantofpromise.org; reviewer Notes filled (consumption-only,
+  free canon needs no login, partner layers via demo account).
+
+BUILD-PREP FILE EDITS (Claude, this session — need git push + Render):
+- app/public/.well-known/apple-app-site-association: TEAMID ->
+  2M3595N5R7 (deep links verify once Render redeploys the web).
+- app/ios/App/App/Info.plist: added ITSAppUsesNonExemptEncryption=false
+  (skips export-compliance prompt on upload).
+- iOS project verified: MARKETING_VERSION 1.0, CURRENT_PROJECT_VERSION
+  1, bundle com.remnantofpromise.bible. No .entitlements file yet
+  (Associated Domains must be added in Xcode for deep links — optional,
+  not a submit blocker).
+
+REMAINING (operator: Yoshi):
+1. Xcode build + upload (Mac):
+   cd ~/Desktop/App/app
+   npm run cap:ios            # builds web, syncs iOS, opens Xcode
+   In Xcode: target App -> Signing & Capabilities -> Team = Remnant Of
+   Promise (2M3595N5R7), Automatically manage signing ON.
+   (Optional deep links: + Capability -> Associated Domains ->
+   applinks:bible.remnantofpromise.org)
+   Destination = "Any iOS Device (arm64)". Product -> Archive ->
+   Distribute App -> App Store Connect -> Upload.
+2. Demo login: type the comped Texas/Scribe account username+password
+   into the version page App Review -> Sign-In Information (same
+   account given to Google Play; the iOS app hits the same backend).
+3. Git push the two file edits above so Render redeploys the AASA.
+4. Then: attach the processed build to version 1.0 + click "Add for
+   Review"/Submit (Claude stops BEFORE the final Submit click).
+
+## S215 — SUBMITTED ✅ (status: 1.0 Waiting for Review)
+
+Completed end-to-end this session (computer-use enabled mid-session):
+- Apple ID added to Xcode (YoshiYahu BenYah / morethanmilkministries
+  @gmail.com); team Remnant Of Promise selected.
+- SIGNING WALL (brand-new team, 0 devices) — automatic signing couldn't
+  generate a profile. Fixed device-free: created Apple Distribution
+  cert in Xcode → generated App Store provisioning profile "RoP Bible
+  App Store" in the portal → switched App target to MANUAL signing
+  (Release = RoP Bible App Store + Apple Distribution). Archive then
+  succeeded.
+- Archived + uploaded build 1.0 (1) to App Store Connect (Distribute
+  App → App Store Connect). Processed, attached to version 1.0.
+- Reviewer Sign-In entered (Yoshi): texas / Loan2019 (same as Google;
+  pulled from Play Console App access).
+- iPad 13" screenshots required (universal build) — generated 8 at
+  2048x2732 via build_appstore_collages.py (added "ipad13" size) and
+  uploaded to the iPad 13" slot.
+- SUBMITTED FOR REVIEW (Yoshi's explicit yes). Status: Waiting for
+  Review. Auto-releases on approval to all 175 regions.
+
+OPEN FOLLOW-UPS (non-blocking):
+- Commit/push the uncommitted edits: app target now MANUAL signing
+  (project.pbxproj), Info.plist ITSAppUsesNonExemptEncryption=false,
+  AASA team id 2M3595N5R7, appstore-screenshots/build_appstore_collages.py
+  (ipad13 size) + new final/ipad13/*.png. Render redeploy publishes the
+  AASA so iOS Universal Links verify.
+- Optional: add Associated Domains entitlement in Xcode for deep links
+  on the NEXT build (not needed for this submission).
+- iPad screenshot order in App Store Connect is slightly scrambled
+  (cosmetic) — reorder if desired before/after approval.

@@ -154,7 +154,7 @@ def build(name, title, spec, W, H, outdir):
     print(f"  {name}.png  {out.size[0]}x{out.size[1]}")
 
 if __name__ == "__main__":
-    for tag, (W, H) in {"69": (1290, 2796), "65": (1242, 2688)}.items():
+    for tag, (W, H) in {"69": (1290, 2796), "65": (1242, 2688), "ipad13": (2048, 2732)}.items():
         outdir = os.path.join(HERE, "final", tag)
         os.makedirs(outdir, exist_ok=True)
         print(f"== {tag}  {W}x{H} ==")
