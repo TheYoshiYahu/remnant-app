@@ -56,7 +56,7 @@ in the sandbox).
 | **Acts** | 28 | ✅ | ✅ | ✅ | **complete** — 1–28 full library, 130 threads/428 members live |
 | **Romans** | 16 | ✅ | ✅ | ✅ | **complete** — 1–16 full library, 91 threads/285 members live (S219, band 6000–6381). 9–11 ON BLESSING LIST. |
 | **Galatians** | 6 | ✅ | ✅ | ✅ | **complete (S223)** — 1–6 full library, **31 threads/119 members LIVE** in prod (band 7200–7337, applied 2026-06-10, exact reconciliation). WHOLE BOOK ON BLESSING LIST. |
-| **Revelation** | 22 | ✅ | ✅ | ✅ | **complete (S224)** — 1–22 full library, **149 threads/633 members LIVE** in prod (band 9000–9546, migration session224, applied 2026-06-10, exact reconciliation). KAPH 1:13/14:14 + 144k two-house + keep-commandments 12:17/14:12/22:14 + New Jerusalem ON BLESSING LIST. |
+| **Revelation** | 22 | ✅ | ✅ | ✅ | **complete (S224)** — 1–22 full library, **149 threads/637 members LIVE** in prod (band 9000–9546, migration session224 + session225 two-house frame fix, applied 2026-06-10). KAPH 1:13/14:14 + 144k two-house + keep-commandments 12:17/14:12/22:14 + New Jerusalem ON BLESSING LIST. **S225 (Yoshi's frame):** the TWO WITNESSES (Rev 11) = House of Judah + House of Israel (Ezekiel 37 two sticks / Zech 4 two olive trees), NOT two returned prophets; white-throne judgment AFTER the millennium (11:18→Rev 20). Whole eschatology block on blessing list. |
 | 1 Corinthians | 16 | ⬜ | ⬜ | ⬜ | greenfield |
 | 2 Corinthians | 13 | ⬜ | ⬜ | ⬜ | greenfield |
 | Ephesians | 6 | ⬜ | ⬜ | ⬜ | greenfield — ch2 voice-risk |
