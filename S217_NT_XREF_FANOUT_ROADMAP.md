@@ -55,7 +55,7 @@ in the sandbox).
 | John | 21 | ✅ | ✅ | ✅ | **complete** (the model) |
 | **Acts** | 28 | ✅ | ✅ | ✅ | **complete** — 1–28 full library, 130 threads/428 members live |
 | **Romans** | 16 | ✅ | ✅ | ✅ | **complete** — 1–16 full library, 91 threads/285 members live (S219, band 6000–6381). 9–11 ON BLESSING LIST. |
-| **Galatians** | 6 | ✅ | ✅ | ✅ | **source COMPLETE (S223)** — 1–6 full library, 31 threads/119 members, band 7200–7337. WHOLE BOOK ON BLESSING LIST. **PROD APPLY PENDING** (Render DB unreachable from host at build time — SSL handshake/IP block). |
+| **Galatians** | 6 | ✅ | ✅ | ✅ | **complete (S223)** — 1–6 full library, **31 threads/119 members LIVE** in prod (band 7200–7337, applied 2026-06-10, exact reconciliation). WHOLE BOOK ON BLESSING LIST. |
 | Revelation | 22 | ✅ (canon-only) | ⬜ | ⬜ | full-library build — kaph carve-outs |
 | 1 Corinthians | 16 | ⬜ | ⬜ | ⬜ | greenfield |
 | 2 Corinthians | 13 | ⬜ | ⬜ | ⬜ | greenfield |
