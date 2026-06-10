@@ -229,11 +229,14 @@ weekdays** (e.g. Passover 1/14, Wave Sheaf the day after the weekly Sabbath in
 UB week → 1/26 Sunday, Weeks 3/15 Sunday). Behind `qumranFestivals` the engine
 also emits the Qumran **extra** festivals from the Temple Scroll / 4QMMT:
 
-- **New Wine** — 5/3
-- **New Oil** — 6/22
-- **Wood Offering** — 6/23–6/31 (six days)
+- **New Wine** — 5/3 (Sunday)
+- **New Oil** — 6/22 (Sunday)
+- **Wood Offering** — 6/23 for six days (6/23–6/28; the reconstruction varies)
 
-(50-day intervals from Weeks; all on fixed weekdays in the 364-day grid.)
+New Wine, New Oil and the firstfruits feasts sit at 50-day intervals (Weeks →
+New Wine → New Oil), all on fixed weekdays in the 364-day grid. The Enoch
+Wave-Sheaf / Firstfruits is fixed at **1/26** — the morrow after the weekly
+Sabbath that *follows* Unleavened Bread — not the Sunday within it.
 
 ---
 
