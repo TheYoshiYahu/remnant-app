@@ -3603,6 +3603,1406 @@ SELECT t.id, x.id, 2, E'Job 41:11 — *Who hath prevented me, that I should repa
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_romans_12.sql (S219 Romans 12) -----
+-- =====================================================================
+-- S219 minion — ROMANS 12 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 12.  Tag: r12 (temp view _s219_r12_lookup).  Sort band: 6275, step 3 (<6300).
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Red Lines #4/#5/#6/#8): Romans 12 is not a new severed morality bolted onto
+-- a finished doctrine of grace — it is the Torah''s own ethic of love and the Master''s own Sermon
+-- teaching lived out by the assembly. The *living sacrifice* and *be not conformed to this world*
+-- (12:1-2) are the Torah-life of holiness and separation Yashar''el was always called to: *ye shall
+-- be holy; for I am holy* (Leviticus 11:44), *an holy people unto Yahuah Elohayka (the LORD thy
+-- God)* (Deuteronomy 14:2). *Abhor that which is evil; cleave to that which is good* (12:9) is the
+-- prophet''s *hate the evil, and love the good* (Amos 5:15). *Recompense to no man evil for evil*
+-- (12:17) and *avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)*
+-- (12:19) is Moses'' own word — *To me belongeth vengeance, and recompence* (Deuteronomy 32:35) —
+-- and the heart-law *thou shalt not avenge... but thou shalt love thy neighbour as thyself*
+-- (Leviticus 19:18); the NT-Lord rule is preserved as the pull gives it (Yahuah (Lord) at 12:11,
+-- 12:19). *Feed thine enemy... heap coals of fire on his head* (12:20) is Proverbs 25:21-22 word
+-- for word; *overcome evil with good* (12:21) is the Master''s *love your enemies* (Matthew 5:44).
+-- These are the commandments lived, not a Torah-free ethic.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-2   living sacrifice / be not conformed   Tanakh: Leviticus 11:44, Deuteronomy 14:2 (holy people, separation)  Extras: none warranted (apparatus noise in cleanest witnesses)  NT: none added (the holiness call carried by the Torah targets)
+--   v.3-8   sober mind / one body / gifts          Tanakh: Proverbs 3:7 (be not wise in thine own eyes)  Extras: Sirach 3:18 (humble thyself, find favour)  NT: none warranted (body imagery carried at 1 Cor elsewhere; curated out)
+--   v.9-10  love without dissimulation / abhor evil Tanakh: Amos 5:15, Psalm 34:14 (hate evil, love good; depart from evil)  Extras: none warranted  NT: none added (Sermon carried at v.17-21)
+--   v.11-12 fervent in spirit / patient            Tanakh: none warranted  Extras: none warranted  NT: none warranted (epistolary exhortation)
+--   v.13-15 distribute / rejoice and weep           Tanakh: none added (Torah of the poor carried at Lev 19 elsewhere)  Extras: Sirach 7:32, Sirach 7:34 (stretch thy hand to the poor; mourn with them that mourn)  NT: none warranted
+--   v.16    mind not high things / not wise in own  Tanakh: Proverbs 3:7 (folded into v.3-8 thread)  Extras: Sirach 3:18 (folded into v.3-8 thread)  NT: none warranted
+--   v.17-19 recompense no evil / avenge not          Tanakh: Deuteronomy 32:35, Leviticus 19:18, Psalm 34:14  Extras: none warranted (Testament of Gad witness — live verse carries Charles apparatus noise [fear 7and] / stray sigla — not clean enough to quote)  NT: Matthew 5:39 (resist not evil, turn the cheek)
+--   v.20-21 feed thine enemy / overcome with good    Tanakh: Proverbs 25:21, Proverbs 25:22 (coals of fire)  Extras: none warranted (Benjamin witness carries apparatus noise)  NT: Matthew 5:44 (love your enemies, do good to them that hate you)
+--
+-- THREADS (slug -> target libraries):
+--   6275 romans-12-a-living-sacrifice-be-not-conformed-the-torah-life-of-holiness   (Tanakh)
+--   6278 romans-12-think-soberly-the-greater-thou-art-the-more-humble-thyself        (Tanakh + Extras)
+--   6281 romans-12-abhor-the-evil-cleave-to-the-good-hate-evil-love-good             (Tanakh)
+--   6284 romans-12-weep-with-them-that-weep-stretch-thy-hand-to-the-poor             (Extras)
+--   6287 romans-12-avenge-not-yourselves-vengeance-is-mine-saith-yahuah              (Tanakh + NT)
+--   6290 romans-12-feed-thine-enemy-overcome-evil-with-good-coals-of-fire            (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-12-a-living-sacrifice-be-not-conformed-the-torah-life-of-holiness
+  ('canon', 'romans', 12, 1, 'canon', 'leviticus', 11, 44, 'free', E'*For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy: neither shall ye defile yourselves with any manner of creeping thing that creepeth upon the earth.* (Leviticus 11:44). Paul beseeches the assembly *that ye present your bodies a living sacrifice, holy, acceptable unto Elohim (God), which is your reasonable service* (Romans 12:1). The living sacrifice is the body set apart — the very holiness Yahuah commanded at Sinai, *sanctify yourselves, and ye shall be holy; for I am holy.* The presented body is not a new demand but the old call to be set apart unto Elohim, now offered in flesh and spirit.'),
+  ('canon', 'romans', 12, 2, 'canon', 'deuteronomy', 14, 2, 'free', E'*For thou art an holy people unto Yahuah Elohayka (the LORD thy God), and Yahuah (LORD) hath chosen thee to be a peculiar people unto himself, above all the nations that are upon the earth.* (Deuteronomy 14:2). *And be not conformed to this world: but be ye transformed by the renewing of your mind* (Romans 12:2). To refuse the mould of this world is to live as the *peculiar people* Yahuah chose *above all the nations* — the people of separation Moses named. The renewed mind is the holy people''s mind: not conformed to the nations, but proving *that good, and acceptable, and perfect, will of Elohim (God).*'),
+  -- thread: romans-12-think-soberly-the-greater-thou-art-the-more-humble-thyself
+  ('canon', 'romans', 12, 3, 'apocrypha', 'ecclesiasticus', 3, 18, 'extras', E'*The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* (Sirach 3:18). Paul charges *every man that is among you, not to think of himself more highly than he ought to think; but to think soberly* (Romans 12:3). The wisdom-teacher had already set the measure: the greater a man is, the lower he bends, and so *find favour before Yahuah.* Sober self-reckoning is not self-contempt but the humility that walks before Elohim and is lifted by him.'),
+  ('canon', 'romans', 12, 16, 'apocrypha', 'ecclesiasticus', 3, 18, 'extras', E'*The greater you are, the more humble thyself, and you shall find favour before Yahuah (God).* (Sirach 3:18). *Mind not high things, but condescend to men of low estate. Be not wise in your own conceits* (Romans 12:16). To bend toward the low estate is the wisdom-teacher''s own counsel — the greater bending lower, finding favour before Yahuah. The high-minded conceit Paul forbids is the very thing humility uproots.'),
+  ('canon', 'romans', 12, 16, 'canon', 'proverbs', 3, 7, 'free', E'*Be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil.* (Proverbs 3:7). *Be not wise in your own conceits* (Romans 12:16) is the proverb almost word for word: *be not wise in thine own eyes.* And the proverb names what such humility is for — *fear Yahuah, and depart from evil* — binding the lowered mind to the fear of Yahuah and the turning from evil that Paul presses through the whole chapter.'),
+  -- thread: romans-12-abhor-the-evil-cleave-to-the-good-hate-evil-love-good
+  ('canon', 'romans', 12, 9, 'canon', 'amos', 5, 15, 'free', E'*Hate the evil, and love the good, and establish judgment in the gate: it may be that Yahuah Elohim (the LORD God) of hosts will be gracious unto the remnant of Joseph.* (Amos 5:15). *Let love be without dissimulation. Abhor that which is evil; cleave to that which is good* (Romans 12:9). Paul''s charge is the prophet''s charge: *hate the evil, and love the good.* And Amos names whose ethic this is — the remnant of Joseph, the scattered northern house, upon whom Yahuah may yet be gracious. To abhor evil and cleave to good is the gathered remnant''s own life.'),
+  ('canon', 'romans', 12, 9, 'canon', 'psalms', 34, 14, 'free', E'*Depart from evil, and do good; seek peace, and pursue it.* (Psalm 34:14). *Abhor that which is evil; cleave to that which is good* (Romans 12:9). The psalmist set the same two motions side by side — *depart from evil, and do good* — and added the third that Paul also presses: *seek peace, and pursue it,* the very *live peaceably with all men* (Romans 12:18) that crowns the chapter. To turn from evil and hold fast the good is the old path of the righteous.'),
+  -- thread: romans-12-weep-with-them-that-weep-stretch-thy-hand-to-the-poor
+  ('canon', 'romans', 12, 15, 'apocrypha', 'ecclesiasticus', 7, 34, 'extras', E'*Fail not to be with them that weep, and mourn with them that mourn.* (Sirach 7:34). *Rejoice with them that do rejoice, and weep with them that weep* (Romans 12:15). The wisdom-teacher had already laid the same yoke of shared sorrow upon the faithful — *fail not to be with them that weep, and mourn with them that mourn.* Paul adds the shared joy; the heart that bears its brother''s grief is the heart the wisdom-writer formed.'),
+  ('canon', 'romans', 12, 13, 'apocrypha', 'ecclesiasticus', 7, 32, 'extras', E'*And stretch yours hand to the poor, that your blessing may be perfected.* (Sirach 7:32). *Distributing to the necessity of saints; given to hospitality* (Romans 12:13). To distribute to those in need is the wisdom-teacher''s *stretch yours hand to the poor* — and he names the fruit: *that your blessing may be perfected.* The open hand to the needy is not optional generosity but the perfecting of the blessing, the giving Paul says to do *with simplicity* (Romans 12:8).'),
+  -- thread: romans-12-avenge-not-yourselves-vengeance-is-mine-saith-yahuah
+  ('canon', 'romans', 12, 19, 'canon', 'deuteronomy', 32, 35, 'free', E'*To me belongeth vengeance, and recompence; their foot shall slide in due time: for the day of their calamity is at hand, and the things that shall come upon them make haste.* (Deuteronomy 32:35). *Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). Paul quotes Moses'' own song: *to me belongeth vengeance, and recompence.* The hand that repays is Yahuah''s, not the wronged man''s. To avenge oneself is to seize what belongs to Yahuah alone; to give place unto wrath is to trust the Judge who said the recompence is his.'),
+  ('canon', 'romans', 12, 19, 'canon', 'leviticus', 19, 18, 'free', E'*Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* (Leviticus 19:18). *Avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). The command not to avenge is no new word — it stands in the heart of the holiness code, *thou shalt not avenge, nor bear any grudge,* sealed with *I am Yahuah.* And the same verse gives the positive Paul lives out across the chapter: *thou shalt love thy neighbour as thyself.* Refusing vengeance is loving the neighbour; both are the Torah''s own command.'),
+  ('canon', 'romans', 12, 17, 'canon', 'psalms', 34, 14, 'free', E'*Depart from evil, and do good; seek peace, and pursue it.* (Psalm 34:14). *Recompense to no man evil for evil. Provide things honest in the sight of all men* (Romans 12:17). To render no evil for evil is to depart from evil and do good, then to *seek peace, and pursue it* — the very next words Paul reaches, *if it be possible, as much as lieth in you, live peaceably with all men* (Romans 12:18). The psalmist''s threefold path is Paul''s pattern: turn from evil, do good, pursue peace.'),
+  ('canon', 'romans', 12, 17, 'canon', 'matthew', 5, 39, 'free', E'*But I say unto you, That ye resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also.* (Matthew 5:39). *Recompense to no man evil for evil* (Romans 12:17). Paul is teaching the Master''s own Sermon: not to resist evil with evil, but to turn the other cheek. The refusal to repay evil for evil is not Paul''s invention but Yahusha''s word from the mountain, lived out in the body of the assembly.'),
+  -- thread: romans-12-feed-thine-enemy-overcome-evil-with-good-coals-of-fire
+  ('canon', 'romans', 12, 20, 'canon', 'proverbs', 25, 21, 'free', E'*If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink:* (Proverbs 25:21). *Therefore if thine enemy hunger, feed him; if he thirst, give him drink* (Romans 12:20). Paul quotes the proverb almost syllable for syllable. The enemy''s hunger is met with bread, his thirst with drink — the wisdom of Solomon become the practice of the assembly. Love of enemy is not a new commandment but the proverb''s old counsel pressed home.'),
+  ('canon', 'romans', 12, 20, 'canon', 'proverbs', 25, 22, 'free', E'*For thou shalt heap coals of fire upon his head, and Yahuah (LORD) shall reward thee.* (Proverbs 25:22). *...for in so doing thou shalt heap coals of fire on his head* (Romans 12:20). The proverb supplies Paul''s very image and its promise: the kindness shown the enemy heaps coals of fire on his head, and *Yahuah shall reward thee.* The burning is the shame that melts the enemy''s hardness — good rendered for evil — and the reward is Yahuah''s, the same Judge who keeps the vengeance to himself.'),
+  ('canon', 'romans', 12, 21, 'canon', 'matthew', 5, 44, 'free', E'*But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;* (Matthew 5:44). *Be not overcome of evil, but overcome evil with good* (Romans 12:21). To overcome evil with good is the Master''s own command lived out: *love your enemies... do good to them that hate you.* And it echoes back through the whole chapter — *bless them which persecute you: bless, and curse not* (Romans 12:14) is Yahusha''s *bless them that curse you.* Paul gives the assembly the Sermon as its daily walk.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-12-a-living-sacrifice-be-not-conformed-the-torah-life-of-holiness',
+       E'A living sacrifice, be not conformed — the Torah-life of holiness',
+       E'Paul opens the assembly''s walk not with a new ethic but with the old call to holiness: *I beseech you therefore, brethren, by the mercies of Elohim (God), that ye present your bodies a living sacrifice, holy, acceptable unto Elohim (God), which is your reasonable service. And be not conformed to this world: but be ye transformed by the renewing of your mind* (Romans 12:1-2). The living sacrifice is the body set apart, and the setting-apart is what Yahuah commanded at Sinai: *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44). To refuse the mould of this world is to live as the people Moses named: *thou art an holy people unto Yahuah Elohayka (the LORD thy God), and Yahuah (LORD) hath chosen thee to be a peculiar people unto himself, above all the nations that are upon the earth* (Deuteronomy 14:2). The renewed mind is the holy people''s mind — not conformed to the nations, but proving *that good, and acceptable, and perfect, will of Elohim (God).* The presented body and the unconformed mind are the Torah-life of separation, now offered in flesh and spirit.',
+       sv.verse_id, ev.verse_id, 'free', 6275
+  FROM _s219_r12_lookup sv, _s219_r12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=12 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-12-think-soberly-the-greater-thou-art-the-more-humble-thyself',
+       E'Think soberly — the greater thou art, the more humble thyself',
+       E'*For I say, through the grace given unto me, to every man that is among you, not to think of himself more highly than he ought to think; but to think soberly, according as Elohim (God) hath dealt to every man the measure of faith* (Romans 12:3) — and again, *Mind not high things, but condescend to men of low estate. Be not wise in your own conceits* (Romans 12:16). This sober, low-bending mind is the wisdom the elders taught long before. The wisdom-teacher set the measure: *the greater you are, the more humble thyself, and you shall find favour before Yahuah (God)* (Sirach 3:18) — humility is not self-contempt but the lowering that is lifted before Yahuah. And the proverb gives Paul his very words: *be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* (Proverbs 3:7). To refuse one''s own conceit, to bend toward the low estate, to fear Yahuah and turn from evil — this is the one walk Paul presses and the wisdom of the fathers commends.',
+       sv.verse_id, ev.verse_id, 'extras', 6278
+  FROM _s219_r12_lookup sv, _s219_r12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=12 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-12-abhor-the-evil-cleave-to-the-good-hate-evil-love-good',
+       E'Abhor the evil, cleave to the good — hate evil, love good',
+       E'*Let love be without dissimulation. Abhor that which is evil; cleave to that which is good* (Romans 12:9). Paul''s charge is the prophet''s charge, spoken to the scattered northern house: *hate the evil, and love the good, and establish judgment in the gate: it may be that Yahuah Elohim (the LORD God) of hosts will be gracious unto the remnant of Joseph* (Amos 5:15). To abhor evil and cleave to good is the gathered remnant''s own life — the very ethic upon which Yahuah may yet be gracious to the remnant of Joseph. And the psalmist set the same two motions side by side, with the peace Paul also presses: *depart from evil, and do good; seek peace, and pursue it* (Psalm 34:14) — the *live peaceably with all men* (Romans 12:18) that crowns the chapter. Love without dissimulation, the hatred of evil, the holding-fast of good, the pursuit of peace: not a severed morality but the old path of the righteous.',
+       sv.verse_id, ev.verse_id, 'free', 6281
+  FROM _s219_r12_lookup sv, _s219_r12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=12 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-12-weep-with-them-that-weep-stretch-thy-hand-to-the-poor',
+       E'Weep with them that weep — stretch thy hand to the poor',
+       E'*Distributing to the necessity of saints; given to hospitality... Rejoice with them that do rejoice, and weep with them that weep* (Romans 12:13, 15). The open hand and the shared sorrow Paul commands are the wisdom-teacher''s own yoke upon the faithful. *And stretch yours hand to the poor, that your blessing may be perfected* (Sirach 7:32) — the giving to the needy is not optional generosity but the perfecting of the blessing, the very giving Paul says to do *with simplicity* (Romans 12:8). And the heart that bears its brother''s grief was formed long before Rome heard the letter: *fail not to be with them that weep, and mourn with them that mourn* (Sirach 7:34). Paul adds the shared joy to the shared mourning; the open hand to the poor and the wet eye beside the grieving are the one love the fathers taught and the assembly lives.',
+       sv.verse_id, ev.verse_id, 'extras', 6284
+  FROM _s219_r12_lookup sv, _s219_r12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=12 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-12-avenge-not-yourselves-vengeance-is-mine-saith-yahuah',
+       E'Avenge not yourselves — vengeance is mine, saith Yahuah (Lord)',
+       E'*Recompense to no man evil for evil. Provide things honest in the sight of all men* (Romans 12:17); *Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). Paul is not loosing a new principle but quoting Moses'' own song: *to me belongeth vengeance, and recompence; their foot shall slide in due time* (Deuteronomy 32:35). The hand that repays is Yahuah''s, not the wronged man''s. The command not to avenge stands already in the heart of the holiness code — *thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18) — where refusing vengeance and loving the neighbour are one command. The psalmist gave the pattern: *depart from evil, and do good; seek peace, and pursue it* (Psalm 34:14), the *live peaceably with all men* (Romans 12:18) Paul reaches next. It is the Master''s Sermon lived out — *resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also* (Matthew 5:39). To give place unto wrath is to leave the avenging where it belongs: with Yahuah, the Judge who keeps the recompence to himself.',
+       sv.verse_id, ev.verse_id, 'free', 6287
+  FROM _s219_r12_lookup sv, _s219_r12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=12 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-12-feed-thine-enemy-overcome-evil-with-good-coals-of-fire',
+       E'Feed thine enemy, overcome evil with good — coals of fire',
+       E'*Therefore if thine enemy hunger, feed him; if he thirst, give him drink: for in so doing thou shalt heap coals of fire on his head. Be not overcome of evil, but overcome evil with good* (Romans 12:20-21). Paul quotes the proverb almost syllable for syllable: *if thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink: for thou shalt heap coals of fire upon his head, and Yahuah (LORD) shall reward thee* (Proverbs 25:21-22). The enemy''s hunger is met with bread, his thirst with drink; the coals are the shame that melts the enemy''s hardness — good rendered for evil — and the reward is Yahuah''s, the same Judge who keeps the vengeance to himself. And to overcome evil with good is the Master''s own command lived out: *love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you* (Matthew 5:44) — which echoes back through the whole chapter, for *bless them which persecute you: bless, and curse not* (Romans 12:14) is Yahusha''s *bless them that curse you.* Paul gives the assembly the Sermon and the proverb as its daily walk: love of enemy is not a new commandment but the old wisdom and the King''s own word pressed home.',
+       sv.verse_id, ev.verse_id, 'free', 6290
+  FROM _s219_r12_lookup sv, _s219_r12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=12 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-12-a-living-sacrifice-be-not-conformed-the-torah-life-of-holiness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 11:44 — *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* the living sacrifice is the body set apart, the holiness Yahuah commanded at Sinai (Romans 12:1).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-a-living-sacrifice-be-not-conformed-the-torah-life-of-holiness'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=44
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 14:2 — *thou art an holy people unto Yahuah Elohayka (the LORD thy God) ... a peculiar people unto himself* the unconformed mind is the holy people''s mind, separate from the nations (Romans 12:2).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-a-living-sacrifice-be-not-conformed-the-torah-life-of-holiness'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-12-think-soberly-the-greater-thou-art-the-more-humble-thyself
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Sirach 3:18 — *the greater you are, the more humble thyself, and you shall find favour before Yahuah (God)* the sober mind that thinks not too highly is the wisdom-teacher''s humility (Romans 12:3).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-think-soberly-the-greater-thou-art-the-more-humble-thyself'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=3 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Sirach 3:18 — *the greater you are, the more humble thyself* to condescend to the low estate is the wisdom-teacher''s bending lower (Romans 12:16).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-think-soberly-the-greater-thou-art-the-more-humble-thyself'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=16
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=3 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 3:7 — *be not wise in thine own eyes: fear Yahuah (LORD), and depart from evil* Paul''s *be not wise in your own conceits* almost word for word, bound to the fear of Yahuah (Romans 12:16).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-think-soberly-the-greater-thou-art-the-more-humble-thyself'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-12-abhor-the-evil-cleave-to-the-good-hate-evil-love-good
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Amos 5:15 — *hate the evil, and love the good ... gracious unto the remnant of Joseph* Paul''s charge is the prophet''s, spoken to the scattered northern house (Romans 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-abhor-the-evil-cleave-to-the-good-hate-evil-love-good'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 34:14 — *depart from evil, and do good; seek peace, and pursue it* the two motions Paul joins, with the peace that crowns the chapter (Romans 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-abhor-the-evil-cleave-to-the-good-hate-evil-love-good'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-12-weep-with-them-that-weep-stretch-thy-hand-to-the-poor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Sirach 7:32 — *stretch yours hand to the poor, that your blessing may be perfected* the distributing to the saints is the perfecting of the blessing (Romans 12:13).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-weep-with-them-that-weep-stretch-thy-hand-to-the-poor'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=13
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=7 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Sirach 7:34 — *fail not to be with them that weep, and mourn with them that mourn* the shared sorrow Paul commands, formed long before by the wisdom-teacher (Romans 12:15).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-weep-with-them-that-weep-stretch-thy-hand-to-the-poor'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=7 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-12-avenge-not-yourselves-vengeance-is-mine-saith-yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 5:39 — *resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also* recompensing no evil for evil is the Master''s Sermon lived out (Romans 12:17).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-avenge-not-yourselves-vengeance-is-mine-saith-yahuah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 34:14 — *depart from evil, and do good; seek peace, and pursue it* rendering no evil for evil, then the pursuit of peace Paul reaches next (Romans 12:17).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-avenge-not-yourselves-vengeance-is-mine-saith-yahuah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 32:35 — *to me belongeth vengeance, and recompence* Paul quotes Moses'' song: the hand that repays is Yahuah''s, not the wronged man''s (Romans 12:19).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-avenge-not-yourselves-vengeance-is-mine-saith-yahuah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Leviticus 19:18 — *thou shalt not avenge, nor bear any grudge ... but thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* the command not to avenge stands in the holiness code, one with loving the neighbour (Romans 12:19).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-avenge-not-yourselves-vengeance-is-mine-saith-yahuah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-12-feed-thine-enemy-overcome-evil-with-good-coals-of-fire
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 25:21 — *if thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink* Paul quotes the proverb almost syllable for syllable (Romans 12:20).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-feed-thine-enemy-overcome-evil-with-good-coals-of-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=25 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 25:22 — *thou shalt heap coals of fire upon his head, and Yahuah (LORD) shall reward thee* Paul''s very image and its promise: the reward is Yahuah''s, the same Judge who keeps the vengeance (Romans 12:20).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-feed-thine-enemy-overcome-evil-with-good-coals-of-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=25 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 5:44 — *love your enemies, bless them that curse you, do good to them that hate you* overcoming evil with good is the Master''s own command, echoed at *bless them which persecute you* (Romans 12:21).'
+  FROM cross_reference_threads t, cross_references x, _s219_r12_lookup sv, _s219_r12_lookup tv
+ WHERE t.slug='romans-12-feed-thine-enemy-overcome-evil-with-good-coals-of-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=12 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=44
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_romans_13.sql (S219 Romans 13) -----
+-- =====================================================================
+-- S219 minion — ROMANS 13 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 13.  Tag: r13 (temp view _s219_r13_lookup).  Sort band: 6300-6324, step 3.
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Red Lines #4/#5/#6/#10): the load-bearing turn of this chapter is
+-- *he that loveth another hath fulfilled the law* (13:8) and *love is the fulfilling of the
+-- law* (13:10). FULFILLED means kept, filled full, brought to its summary and doing — NEVER
+-- abolished or replaced. Paul proves it himself: he immediately CITES the actual commandments
+-- — *Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal, Thou shalt
+-- not bear false witness, Thou shalt not covet* (13:9 = Exodus 20:13-17 / Deuteronomy 5:17-21)
+-- — and names the summary as *Thou shalt love thy neighbour as thyself* (Leviticus 19:18).
+-- Love is not the cancellation of those commandments; love is their keeping. The man who
+-- loves his neighbour does not kill, steal, lie, or covet against him — *love worketh no ill
+-- to his neighbour.* The commandments are still standing; love is the doing of them. The
+-- higher-powers passage (13:1-7) is read with Proverbs 8:15 and Daniel 2:21 (Yahuah sets up
+-- and removes rulers) and Wisdom of Solomon 6:3 (power given of the Most High, who tries
+-- their works) — authority is ordained and is itself judged. 13:11-14 (awake, the armour of
+-- light, walk honestly) echoes Isaiah 26:9 and Isaiah 60:1 (arise, shine; the light is come).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-7   higher powers / the sword     Tanakh: Proverbs 8:15, Daniel 2:21 (Yahuah sets up and removes rulers)  Extras: Wisdom of Solomon 6:3 (power given of the Most High, who tries their works)  NT: Matthew 22:21 (render unto Caesar)
+--   v.8     he that loveth hath fulfilled  Tanakh: Leviticus 19:18 (love thy neighbour)  Extras: none warranted  NT: Galatians 5:14 (all the law fulfilled in one word), Matthew 22:39-40
+--   v.9     the commandments cited         Tanakh: Exodus 20:13-17, Deuteronomy 5:17-21 (the Decalogue Paul quotes)  Extras: none warranted  NT: Matthew 22:37-40 (on these hang all the law and the prophets)
+--   v.10    love is the fulfilling          Tanakh: Leviticus 19:18 (carried at v.8)  Extras: none warranted  NT: Galatians 5:14 (carried at v.8)
+--   v.11-12 awake / put on the armour       Tanakh: Isaiah 26:9 (desired thee in the night, seek early), Isaiah 60:1 (arise, shine)  Extras: none warranted  NT: 1 Thessalonians 5:5-6
+--   v.13-14 walk honestly as in the day     Tanakh: none added (carried at v.11-12)  Extras: none warranted  NT: 1 Thessalonians 5:8 (put on the breastplate, children of the day)
+--
+-- THREADS (slug -> target libraries):
+--   6300 romans-13-the-higher-powers-ordained-of-elohim-and-judged-by-him               (Tanakh + Extras + NT)
+--   6303 romans-13-he-that-loveth-another-hath-fulfilled-the-law                          (Tanakh + NT)
+--   6306 romans-13-the-commandments-briefly-comprehended-thou-shalt-love-thy-neighbour    (Tanakh + NT)
+--   6309 romans-13-the-night-far-spent-awake-and-put-on-the-armour-of-light               (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-13-the-higher-powers-ordained-of-elohim-and-judged-by-him
+  ('canon', 'romans', 13, 1, 'canon', 'proverbs', 8, 15, 'free', E'*By me kings reign, and princes decree justice.* (Proverbs 8:15). *Let every soul be subject unto the higher powers. For there is no power but of Elohim (God): the powers that be are ordained of Elohim (God)* (Romans 13:1). Paul does not invent a new doctrine of the state — he stands on wisdom''s own word: it is *by me* that *kings reign,* the power held by every ruler is power lent from above. The throne is ordained, never autonomous; the one who sits on it sits because Elohim set him there.'),
+  ('canon', 'romans', 13, 1, 'canon', 'daniel', 2, 21, 'free', E'*And he changeth the times and the seasons: he removeth kings, and setteth up kings: he giveth wisdom unto the wise, and knowledge to them that know understanding:* (Daniel 2:21). *The powers that be are ordained of Elohim (God)* (Romans 13:1). Daniel blessed the Elohim of heaven who *removeth kings, and setteth up kings* — the same truth Paul presses on the assembly at Rome. No power stands but the one set up by the Most High, and the One who sets it up can also remove it; the ordaining and the un-ordaining are both his.'),
+  ('canon', 'romans', 13, 4, 'apocrypha', 'the-wisdom-of-solomon', 6, 3, 'extras', E'*For power is given you of Yahuah (God), and sovereignty from the Highest, who shall try your works, and search out your counsels.* (Wisdom of Solomon 6:3). The ruler *is the minister of Elohim (God) to thee for good … he beareth not the sword in vain: for he is the minister of Elohim (God), a revenger to execute wrath upon him that doeth evil* (Romans 13:4). The wisdom-writer holds both halves Paul holds: power is *given you of Yahuah,* yet the One who gives it *shall try your works.* The sword is a delegated ministry — the ruler answers to the One who armed him, and a sharp judgment waits for the minister who does not judge aright.'),
+  ('canon', 'romans', 13, 7, 'canon', 'matthew', 22, 21, 'free', E'*They say unto him, Cæsar''s. Then saith he unto them, Render therefore unto Cæsar the things which are Cæsar''s; and unto Elohim (God) the things that are Elohim''s (God''s).* (Matthew 22:21). *Render therefore to all their dues: tribute to whom tribute is due; custom to whom custom; fear to whom fear; honour to whom honour* (Romans 13:7). Paul echoes the Master''s own word with the same verb — *render.* The tribute owed to Caesar is rendered; but the rendering to Caesar never crowds out the rendering to Elohim, for the throne itself is on loan from him. Give the ruler his due, and give Elohim what is his.'),
+  -- thread: romans-13-he-that-loveth-another-hath-fulfilled-the-law
+  ('canon', 'romans', 13, 8, 'canon', 'leviticus', 19, 18, 'free', E'*Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* (Leviticus 19:18). *Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law* (Romans 13:8). The commandment Paul calls the fulfilling of the law is not his own coinage — it is Moses'' word, *thou shalt love thy neighbour as thyself,* spoken from Sinai with *I am Yahuah* sealing it. To fulfil the law is to fill it full, to do it: the one who loves his neighbour keeps the very commandment the law gave. Love is the law''s own summary, never its cancellation.'),
+  ('canon', 'romans', 13, 8, 'canon', 'galatians', 5, 14, 'free', E'*For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself.* (Galatians 5:14). *He that loveth another hath fulfilled the law* (Romans 13:8). Paul says the same thing twice, in two letters: the whole law is *fulfilled* — kept, brought to its fullness — *in one word,* the very word of Leviticus 19:18. Fulfilled does not mean abolished; it means done. The law is not emptied by love but filled by it, summed up and carried out in the one who loves his neighbour as himself.'),
+  -- thread: romans-13-the-commandments-briefly-comprehended-thou-shalt-love-thy-neighbour
+  ('canon', 'romans', 13, 9, 'canon', 'exodus', 20, 13, 'free', E'*Thou shalt not kill.* (Exodus 20:13). When Paul writes *for this, Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal, Thou shalt not bear false witness, Thou shalt not covet* (Romans 13:9), he is quoting the very words Elohim spake from the mountain. *Thou shalt not kill* stands in the Ten as Elohim gave them. Paul does not loosen the commandment by naming it — he establishes it, sets it down word for word as the content of the love that does no ill to a neighbour.'),
+  ('canon', 'romans', 13, 9, 'canon', 'exodus', 20, 14, 'free', E'*Thou shalt not commit adultery.* (Exodus 20:14). Paul''s list — *Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal* (Romans 13:9) — is the Decalogue itself, the commandments written *in two tables of stone.* He cites *Thou shalt not commit adultery* exactly as it was spoken at Sinai. The apostle who is said to have abolished the law here recites it from memory as the standing, binding word that love keeps.'),
+  ('canon', 'romans', 13, 9, 'canon', 'exodus', 20, 15, 'free', E'*Thou shalt not steal.* (Exodus 20:15). *Thou shalt not steal* (Romans 13:9) is lifted straight from the Ten. Paul names commandment after commandment from the Sinai tablets and then gathers them: *if there be any other commandment, it is briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself.* The commandments are comprehended in love — summed up, held together — not set aside. The thief does ill to his neighbour; love does none.'),
+  ('canon', 'romans', 13, 9, 'canon', 'exodus', 20, 17, 'free', E'*Thou shalt not covet thy neighbour''s house, thou shalt not covet thy neighbour''s wife, nor his manservant, nor his maidservant, nor his ox, nor his ass, nor any thing that is thy neighbour''s.* (Exodus 20:17). Paul closes his citation with *Thou shalt not covet* (Romans 13:9) — the tenth word, reaching to the heart''s desire against a neighbour. He names it as the standing commandment it is, and then declares it *briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself.* Covetousness is ill toward a neighbour; love works no ill, and so love keeps even this.'),
+  ('canon', 'romans', 13, 9, 'canon', 'deuteronomy', 5, 21, 'free', E'*Neither shalt thou desire thy neighbour''s wife, neither shalt thou covet thy neighbour''s house, his field, or his manservant, or his maidservant, his ox, or his ass, or any thing that is thy neighbour''s.* (Deuteronomy 5:21). The commandments Paul quotes — *Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal, Thou shalt not bear false witness, Thou shalt not covet* (Romans 13:9) — stand in Moses'' second giving of the Ten just as in the first, the words Yahuah *spake unto all your assembly in the mount … and he added no more.* These are the commandments love comprehends; Paul rehearses the Decalogue as the abiding instruction the loving heart fulfils.'),
+  ('canon', 'romans', 13, 9, 'canon', 'matthew', 22, 39, 'free', E'*And the second is like unto it, Thou shalt love thy neighbour as thyself.* (Matthew 22:39). Paul says the commandments are *briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself* (Romans 13:9); the Master had already named that same word the second great commandment, *like unto* the first. And he sealed it: *on these two commandments hang all the law and the prophets* (Matthew 22:40). To hang the law on love is not to take the law down — it is to show what holds it up. Paul teaches exactly what his Master taught.'),
+  -- thread: romans-13-the-night-far-spent-awake-and-put-on-the-armour-of-light
+  ('canon', 'romans', 13, 11, 'canon', 'isaiah', 26, 9, 'free', E'*With my soul have I desired thee in the night; yea, with my spirit within me will I seek thee early: for when thy judgments are in the earth, the inhabitants of the world will learn righteousness.* (Isaiah 26:9). *Knowing the time, that now it is high time to awake out of sleep: for now is our salvation nearer than when we believed* (Romans 13:11). Isaiah''s soul *desired thee in the night* and rose to *seek thee early* — the very posture Paul calls for, to awake while it is yet night because the morning of salvation draws near. The watcher in the dark is the one who learns righteousness when the day breaks.'),
+  ('canon', 'romans', 13, 12, 'canon', 'isaiah', 60, 1, 'free', E'*Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee.* (Isaiah 60:1). *The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armour of light* (Romans 13:12). Isaiah''s call to the gathered is the same summons Paul presses: the darkness covers the earth, but the light *is come,* the glory *is risen* — so arise, shine, put on the armour of light. The night gives way to the day of Yahuah, and those who are his are clothed in his light.'),
+  ('canon', 'romans', 13, 12, 'canon', '1-thessalonians', 5, 5, 'free', E'*Ye are all the children of light, and the children of the day: we are not of the night, nor of darkness.* (1 Thessalonians 5:5). *The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armour of light* (Romans 13:12). Paul writes the same charge to two assemblies: those who belong to the coming day are *children of light,* not of the night. The casting off of the works of darkness and the putting on of light is the walk of the day-people while the dawn is still breaking.'),
+  ('canon', 'romans', 13, 13, 'canon', '1-thessalonians', 5, 8, 'free', E'*But let us, who are of the day, be sober, putting on the breastplate of faith and love; and for an helmet, the hope of salvation.* (1 Thessalonians 5:8). *Let us walk honestly, as in the day; not in rioting and drunkenness, not in chambering and wantonness, not in strife and envying* (Romans 13:13). The walk *as in the day* is the sober walk of the one who has put on the armour — the breastplate of faith and love, the helmet of hope. The drunkenness and wantonness and strife are the works of the night; the day-walker casts them off and puts the armour of light on instead.'),
+  ('canon', 'romans', 13, 11, 'canon', '1-thessalonians', 5, 6, 'free', E'*Therefore let us not sleep, as do others; but let us watch and be sober.* (1 Thessalonians 5:6). *Knowing the time, that now it is high time to awake out of sleep: for now is our salvation nearer than when we believed* (Romans 13:11). The same word in both letters: *let us not sleep … let us watch.* To awake out of sleep is to take up the watch, sober and ready, because the day of salvation is nearer now than at the first believing. The sleeper is overtaken; the watcher is found ready.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-13-the-higher-powers-ordained-of-elohim-and-judged-by-him',
+       E'The higher powers — ordained of Elohim (God) and judged by him',
+       E'*Let every soul be subject unto the higher powers. For there is no power but of Elohim (God): the powers that be are ordained of Elohim (God)* (Romans 13:1). Paul does not announce a new theory of the state; he stands on what the Tanakh already declared. Wisdom cried it from the gates: *by me kings reign, and princes decree justice* (Proverbs 8:15) — the power any ruler holds is power lent from above. Daniel blessed the One who *changeth the times and the seasons: he removeth kings, and setteth up kings* (Daniel 2:21) — the throne is set up by the Most High, and the same hand can take it down. But ordination is not a blank cheque: the ruler *is the minister of Elohim (God) to thee for good … he beareth not the sword in vain: for he is the minister of Elohim (God), a revenger to execute wrath upon him that doeth evil* (Romans 13:4), and the wisdom-writer holds the other half — *power is given you of Yahuah (God), and sovereignty from the Highest, who shall try your works, and search out your counsels* (Wisdom of Solomon 6:3). The sword is a delegated ministry, and the one who bears it answers to the One who armed him. So the believer renders what is owed: *render therefore to all their dues: tribute to whom tribute is due … fear to whom fear; honour to whom honour* (Romans 13:7) — the Master''s own word, *render therefore unto Cæsar the things which are Cæsar''s; and unto Elohim (God) the things that are Elohim''s (God''s)* (Matthew 22:21). Give the ruler his due; give Elohim what is his — for the throne itself is on loan from him.',
+       sv.verse_id, ev.verse_id, 'extras', 6300
+  FROM _s219_r13_lookup sv, _s219_r13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=13 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-13-he-that-loveth-another-hath-fulfilled-the-law',
+       E'He that loveth another hath fulfilled the law',
+       E'*Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law* (Romans 13:8), and *love worketh no ill to his neighbour: therefore love is the fulfilling of the law* (Romans 13:10). The word is *fulfilled* — filled full, kept, done — never abolished. Paul is not setting love against the law; he is naming love as the law''s own doing, and he proves it by quoting the law itself. The commandment he calls the fulfilling is Moses'' word: *thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18), spoken from Sinai and sealed with the divine name. And Paul says the very same thing in another letter: *for all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself* (Galatians 5:14). The whole law fulfilled *in one word* does not mean the law emptied; it means the law filled — summed up and carried out. The man who loves his neighbour does him no ill: he does not kill him, steal from him, lie against him, or covet what is his. Love is not the cancellation of the commandments. Love is the keeping of them.',
+       sv.verse_id, ev.verse_id, 'free', 6303
+  FROM _s219_r13_lookup sv, _s219_r13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=13 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-13-the-commandments-briefly-comprehended-thou-shalt-love-thy-neighbour',
+       E'The commandments briefly comprehended — Thou shalt love thy neighbour',
+       E'Here is the proof that *fulfilled* never meant *abolished*: when Paul reaches for what love does, he recites the Ten Commandments word for word. *For this, Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal, Thou shalt not bear false witness, Thou shalt not covet; and if there be any other commandment, it is briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself* (Romans 13:9). Every clause is lifted straight from the tablets — *Thou shalt not kill* (Exodus 20:13), *Thou shalt not commit adultery* (Exodus 20:14), *Thou shalt not steal* (Exodus 20:15), *Thou shalt not covet thy neighbour''s house … nor any thing that is thy neighbour''s* (Exodus 20:17) — the same words Moses gave a second time, *neither shalt thou desire thy neighbour''s wife, neither shalt thou covet thy neighbour''s house … or any thing that is thy neighbour''s* (Deuteronomy 5:21). The apostle the systems say abolished the law here rehearses it from memory as the standing, binding word. To *briefly comprehend* the commandments in love is to gather them up, to hold them together — not to throw them out. And this is exactly what the Master taught: *the second is like unto it, Thou shalt love thy neighbour as thyself* (Matthew 22:39), *on these two commandments hang all the law and the prophets* (Matthew 22:40). To hang the law on love is to show what holds it up, not to take it down. Love does no ill to a neighbour, and so love keeps every commandment that guards him.',
+       sv.verse_id, ev.verse_id, 'free', 6306
+  FROM _s219_r13_lookup sv, _s219_r13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=13 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-13-the-night-far-spent-awake-and-put-on-the-armour-of-light',
+       E'The night far spent — awake, and put on the armour of light',
+       E'*And that, knowing the time, that now it is high time to awake out of sleep: for now is our salvation nearer than when we believed. The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armour of light* (Romans 13:11-12). The prophet had already taken this posture in the dark: *with my soul have I desired thee in the night; yea, with my spirit within me will I seek thee early: for when thy judgments are in the earth, the inhabitants of the world will learn righteousness* (Isaiah 26:9) — the watcher who seeks early while it is yet night, because the morning is coming. And Isaiah named the dawn: *arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee* (Isaiah 60:1) — the very arming-in-light Paul calls for. Paul presses the same charge on the Thessalonians: *ye are all the children of light, and the children of the day: we are not of the night, nor of darkness* (1 Thessalonians 5:5); *therefore let us not sleep, as do others; but let us watch and be sober* (1 Thessalonians 5:6); *let us, who are of the day, be sober, putting on the breastplate of faith and love; and for an helmet, the hope of salvation* (1 Thessalonians 5:8). So the day-walker casts off the works of the night — *not in rioting and drunkenness, not in chambering and wantonness, not in strife and envying* (Romans 13:13) — and is clothed instead in the light: awake, sober, watching, because the day of Yahuah is at hand.',
+       sv.verse_id, ev.verse_id, 'free', 6309
+  FROM _s219_r13_lookup sv, _s219_r13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=13 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-13-the-higher-powers-ordained-of-elohim-and-judged-by-him
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 8:15 — *by me kings reign, and princes decree justice* wisdom''s word: the power a ruler holds is lent from above, the throne ordained not autonomous (Romans 13:1).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-higher-powers-ordained-of-elohim-and-judged-by-him'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=8 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 2:21 — *he removeth kings, and setteth up kings* the Most High sets up the throne and can take it down; the ordaining and un-ordaining are both his (Romans 13:1).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-higher-powers-ordained-of-elohim-and-judged-by-him'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Wisdom of Solomon 6:3 — *power is given you of Yahuah (God) … who shall try your works* the sword is delegated; the ruler answers to the One who armed him (Romans 13:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-higher-powers-ordained-of-elohim-and-judged-by-him'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=4
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=6 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 22:21 — *render therefore unto Cæsar the things which are Cæsar''s; and unto Elohim (God) the things that are Elohim''s (God''s)* the Master''s own *render*; the ruler''s due never crowds out Elohim''s (Romans 13:7).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-higher-powers-ordained-of-elohim-and-judged-by-him'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=22 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-13-he-that-loveth-another-hath-fulfilled-the-law
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 19:18 — *thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* the commandment Paul calls the fulfilling of the law is Moses'' own word, sealed with the divine name (Romans 13:8).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-he-that-loveth-another-hath-fulfilled-the-law'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Galatians 5:14 — *all the law is fulfilled in one word … Thou shalt love thy neighbour as thyself* Paul says it twice: the law filled full in love, not emptied (Romans 13:8).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-he-that-loveth-another-hath-fulfilled-the-law'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=5 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-13-the-commandments-briefly-comprehended-thou-shalt-love-thy-neighbour
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 20:13 — *Thou shalt not kill* the sixth word from Sinai, cited by Paul word for word as the content of love (Romans 13:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-commandments-briefly-comprehended-thou-shalt-love-thy-neighbour'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 20:14 — *Thou shalt not commit adultery* the Decalogue itself; Paul recites it as the standing, binding word that love keeps (Romans 13:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-commandments-briefly-comprehended-thou-shalt-love-thy-neighbour'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 20:15 — *Thou shalt not steal* lifted straight from the Ten; the commandments are comprehended in love, not set aside (Romans 13:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-commandments-briefly-comprehended-thou-shalt-love-thy-neighbour'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 20:17 — *Thou shalt not covet thy neighbour''s house … nor any thing that is thy neighbour''s* the tenth word, reaching to the heart; love works no ill and so keeps it (Romans 13:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-commandments-briefly-comprehended-thou-shalt-love-thy-neighbour'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Deuteronomy 5:21 — *neither shalt thou desire thy neighbour''s wife … or any thing that is thy neighbour''s* the same Decalogue in Moses'' second giving; Paul rehearses the abiding instruction (Romans 13:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-commandments-briefly-comprehended-thou-shalt-love-thy-neighbour'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Matthew 22:39 — *the second is like unto it, Thou shalt love thy neighbour as thyself* the Master''s own teaching: *on these two commandments hang all the law and the prophets* — what holds the law up, not what takes it down (Romans 13:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-commandments-briefly-comprehended-thou-shalt-love-thy-neighbour'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=22 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-13-the-night-far-spent-awake-and-put-on-the-armour-of-light
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 26:9 — *with my soul have I desired thee in the night … will I seek thee early* the watcher''s posture: seeking early while it is yet night because the morning comes (Romans 13:11).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-night-far-spent-awake-and-put-on-the-armour-of-light'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 60:1 — *arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee* the dawn Paul names: the night gives way, put on the armour of light (Romans 13:12).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-night-far-spent-awake-and-put-on-the-armour-of-light'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Thessalonians 5:5 — *ye are all the children of light, and the children of the day: we are not of the night* the day-people clothed in light cast off the works of darkness (Romans 13:12).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-night-far-spent-awake-and-put-on-the-armour-of-light'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Thessalonians 5:6 — *let us not sleep, as do others; but let us watch and be sober* the same charge: awake out of sleep, take up the watch, ready (Romans 13:11).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-night-far-spent-awake-and-put-on-the-armour-of-light'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=5 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Thessalonians 5:8 — *putting on the breastplate of faith and love; and for an helmet, the hope of salvation* the armour of light is the sober day-walk against the works of the night (Romans 13:13).'
+  FROM cross_reference_threads t, cross_references x, _s219_r13_lookup sv, _s219_r13_lookup tv
+ WHERE t.slug='romans-13-the-night-far-spent-awake-and-put-on-the-armour-of-light'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=13 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_romans_14.sql (S219 Romans 14) -----
+-- =====================================================================
+-- S219 minion — ROMANS 14 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 14.  Tag: r14 (temp view _s219_r14_lookup).  Sort band: 6325, step 3, <6350.
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (VOICE-RISK WATCHPOINT — Red Lines #4/#5/#6): Romans 14 is about DISPUTABLE
+-- MATTERS within the gathered assembly — fast-days, food offered to idols, the weak conscience
+-- eating only herbs — NOT the annulment of the commandments. The chapter is read here strictly
+-- against the antichrist reading:
+--   14:1-3  *another, who is weak, eateth herbs* — the WEAK conscience abstaining from
+--           marketplace meat of uncertain slaughter / offered to idols (the same case Daniel
+--           refused at Babylon, the same the captives of Tobit and Judith refused at the
+--           heathen table), NOT a debate over the Torah''s clean/unclean distinction. NOT
+--           "the clean-food law is abolished."
+--   14:5    *One man esteemeth one day above another* — disputed fast-days / days of personal
+--           devotion, NOT the Sabbath or the moedim. NO thread frames the Sabbath/feasts as
+--           annulled.
+--   14:14   *there is nothing unclean of itself* — food common/profane by association
+--           (idol-meat, conscience); the koinos (common) sense, not the Torah''s tahor/tamei.
+--           About not wounding the weak brother''s conscience, NOT a declaration that swine
+--           is now food.
+--   14:10-12 the judgment seat / *every knee shall bow* (Isaiah 45:23) — all give account to
+--           Elohim, so judge not the brother. James 4:11 binds judging the brother to judging
+--           THE LAW — the chapter forbids the judging, it does not loose the law.
+-- The governing principle: *let every man be fully persuaded in his own mind* (14:5); *the
+-- kingdom of Elohim (God) is not meat and drink; but righteousness, and peace, and joy in the
+-- Ruach HaKodesh (Holy Spirit)* (14:17); *whatsoever is not of faith is sin* (14:23). Charity
+-- toward the weak brother is the point.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-3   weak in faith eateth herbs        Tanakh: none warranted (the case is conscience, not a Torah dispute)  Extras: Tobit 1:10-11, Judith 12:1-2 (captives refusing the heathen table)  NT: 1 Corinthians 8:7, 8:8 (the weak conscience / meat commendeth us not)
+--   v.4     another man''s servant             Tanakh: none warranted  Extras: none warranted  NT: James 4:11, Matthew 7:1 (judge not — and judging the brother is judging the law)
+--   v.5-9   esteemeth the day / unto the Lord  Tanakh: none warranted (NOT the Sabbath/feasts)  Extras: none warranted  NT: none warranted (epistolary; the Lord-of-dead-and-living carried at 14:9)
+--   v.10-12 the judgment seat / every knee     Tanakh: Isaiah 45:23 (every knee shall bow)  Extras: none warranted  NT: 2 Corinthians 5:10 (judgment seat), Philippians 2:10, 2:11 (every knee, every tongue)
+--   v.13-16 stumblingblock / nothing common    Tanakh: none warranted  Extras: none warranted  NT: 1 Corinthians 8:11, 8:12 (the weak brother for whom Messiah died), 1 Corinthians 10:28 (eat not for conscience sake)
+--   v.17-21 kingdom not meat and drink         Tanakh: none warranted  Extras: none warranted  NT: 1 Corinthians 8:8 (meat commendeth us not), 1 Corinthians 8:13 (eat no flesh lest I offend)
+--   v.22-23 not of faith is sin                Tanakh: none warranted  Extras: none warranted  NT: none added (fully-persuaded conscience carried at 14:5)
+--
+-- THREADS (slug -> target libraries):
+--   6325 romans-14-receive-him-that-is-weak-in-the-faith-the-weak-conscience          (Extras + NT)
+--   6328 romans-14-to-his-own-master-he-standeth-or-falleth-judge-not-the-brother     (NT)
+--   6331 romans-14-every-knee-shall-bow-the-judgment-seat-of-messiah                  (Tanakh + NT)
+--   6334 romans-14-there-is-nothing-common-of-itself-the-weak-brother-and-idol-food   (NT)
+--   6337 romans-14-the-kingdom-of-god-is-not-meat-and-drink                           (NT)
+--   6340 romans-14-whatsoever-is-not-of-faith-is-sin-fully-persuaded                  (free, Romans-internal anchor only)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-14-receive-him-that-is-weak-in-the-faith-the-weak-conscience
+  ('canon', 'romans', 14, 2, 'apocrypha', 'tobit', 1, 10, 'extras', E'*And when we were carried away captives to Nineve, all my brethren, and those that were of my kindred, did eat of the bread of the Gentiles.* (Tobit 1:10). *For one believeth that he may eat all things: another, who is weak, eateth herbs* (Romans 14:2). The weak brother who *eateth herbs* is doing in Rome what Tobit did in the captivity — refusing the meat of the heathen table, whose slaughter and offering could not be trusted. The abstaining is a conscience guarding itself from defilement by association, not a verdict that the Torah''s own clean food had changed.'),
+  ('canon', 'romans', 14, 2, 'apocrypha', 'tobit', 1, 11, 'extras', E'*But I kept myself from eating;* (Tobit 1:11). The one who *eateth herbs* (Romans 14:2) keeps the same fence Tobit kept: *I kept myself from eating.* In a land of idol-tables and untrusted slaughter, the weak conscience withdraws to what it knows is safe — vegetables, the pulse Daniel asked for. Paul does not scold the abstainer; he tells the strong to *receive* him (Romans 14:1). The herbs are the mark of a careful conscience, not of a man who thinks the commandments have been loosed.'),
+  ('canon', 'romans', 14, 2, 'apocrypha', 'judith', 12, 2, 'extras', E'*And Judith said, I will not eat thereof, lest there be an offence: but provision shall be made for me of the things that I have brought.* (Judith 12:2). The weak who *eateth herbs* (Romans 14:2) refuses the table of another exactly as Judith refused Holofernes'' meat — *lest there be an offence* — and ate only of her own provision. The case in Romans 14 is this same case: food set before a believer in a world full of idol-offerings, and a conscience that will not risk defilement. It is not a dispute about whether Yahuah''s (God''s) clean food is still clean.'),
+  ('canon', 'romans', 14, 1, 'canon', '1-corinthians', 8, 7, 'free', E'*Howbeit there is not in every man that knowledge: for some with conscience of the idol unto this hour eat it as a thing offered unto an idol; and their conscience being weak is defiled.* (1 Corinthians 8:7). *Him that is weak in the faith receive ye, but not to doubtful disputations* (Romans 14:1). Paul names the same weak one in both letters: the brother whose *conscience being weak is defiled* by the idol-meat. The weakness is not ignorance of liberty to transgress the Torah — it is a tender conscience near the idol''s table. He is to be received, not despised.'),
+  ('canon', 'romans', 14, 3, 'canon', '1-corinthians', 8, 8, 'free', E'*But meat commendeth us not to Elohim (God): for neither, if we eat, are we the better; neither, if we eat not, are we the worse.* (1 Corinthians 8:8). *Let not him that eateth despise him that eateth not; and let not him which eateth not judge him that eateth: for Elohim (God) hath received him* (Romans 14:3). The eater and the abstainer are forbidden to despise or judge one another because *meat commendeth us not to Elohim (God)* — the question between them is not righteousness but charity. Elohim has received them both; so must they receive each other.'),
+  -- thread: romans-14-to-his-own-master-he-standeth-or-falleth-judge-not-the-brother
+  ('canon', 'romans', 14, 4, 'canon', 'james', 4, 11, 'free', E'*Speak not evil one of another, brethren. He that speaketh evil of his brother, and judgeth his brother, speaketh evil of the law, and judgeth the law: but if thou judge the law, thou art not a doer of the law, but a judge.* (James 4:11). *Who art thou that judgest another man''s servant? to his own master he standeth or falleth* (Romans 14:4). The brother is not ours to judge — he stands or falls to his own Master. And the danger James names guards the watchpoint of the whole chapter: the one who sets himself up to judge his brother ends by judging *the law* itself, putting himself over it instead of under it as a doer. The chapter forbids the judging; it does not loose the commandment.'),
+  ('canon', 'romans', 14, 4, 'canon', 'matthew', 7, 1, 'free', E'*Judge not, that ye be not judged.* (Matthew 7:1). *Who art thou that judgest another man''s servant?* (Romans 14:4). The Master''s own word stands behind Paul''s rebuke: *judge not.* The servant answers to his own Lord, who *is able to make him stand* (Romans 14:4); to seize the seat of judgment over a brother in a disputable matter is to take a seat that is not ours.'),
+  -- thread: romans-14-every-knee-shall-bow-the-judgment-seat-of-messiah
+  ('canon', 'romans', 14, 11, 'canon', 'isaiah', 45, 23, 'free', E'*I have sworn by myself, the word is gone out of my mouth in righteousness, and shall not return, That unto me every knee shall bow, every tongue shall swear.* (Isaiah 45:23). *For it is written, As I live, saith Yahuah (Lord), every knee shall bow to me, and every tongue shall confess to Elohim (God)* (Romans 14:11). Paul quotes the prophet word for word. The One who swore *by myself* — *a just Elohim (God) and a Saviour; there is none beside me* (Isaiah 45:21) — is the One before whom *every knee shall bow.* If all must bow and give account to him, no brother is fit to sit in judgment over another; the seat belongs to Elohim alone.'),
+  ('canon', 'romans', 14, 10, 'canon', '2-corinthians', 5, 10, 'free', E'*For we must all appear before the judgment seat of Messiah (Christ); that every one may receive the things done in his body, according to that he hath done, whether it be good or bad.* (2 Corinthians 5:10). *But why dost thou judge thy brother? or why dost thou set at nought thy brother? for we shall all stand before the judgment seat of Messiah (Christ)* (Romans 14:10). The same judgment seat is named in both letters. Because *we must all appear* there and each give account, the brother who judges his brother usurps the place of the only Judge — the Formed who *both died, and rose, and revived, that he might be Yahuah (Lord) both of the dead and living* (Romans 14:9).'),
+  ('canon', 'romans', 14, 11, 'canon', 'philippians', 2, 10, 'free', E'*That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth;* (Philippians 2:10). *Every knee shall bow to me, and every tongue shall confess to Elohim (God)* (Romans 14:11). The bowing of every knee that Isaiah swore belongs to Yahusha (Jesus) — the Formed who *humbled himself, and became obedient unto death* and was therefore highly exalted (Philippians 2:8-9). The knee that bows to Yahuah in the prophet bows at the name of Yahusha in the apostle, for he is the Formed Yahuah come in flesh; and before him every account is given.'),
+  ('canon', 'romans', 14, 11, 'canon', 'philippians', 2, 11, 'free', E'*And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father.* (Philippians 2:11). *Every tongue shall confess to Elohim (God)* (Romans 14:11). The confessing tongue of Isaiah''s oath is the confessing tongue of Philippians: *every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father.* The Son receives the homage the prophet swore to Yahuah, and it redounds to the glory of the Father — the Formed and the Formless, never against each other.'),
+  -- thread: romans-14-there-is-nothing-common-of-itself-the-weak-brother-and-idol-food
+  ('canon', 'romans', 14, 15, 'canon', '1-corinthians', 8, 11, 'free', E'*And through thy knowledge shall the weak brother perish, for whom Messiah (Christ) died?* (1 Corinthians 8:11). *But if thy brother be grieved with thy meat, now walkest thou not charitably. Destroy not him with thy meat, for whom Messiah (Christ) died* (Romans 14:15). The same warning, almost the same words: do not *destroy* with meat the brother *for whom Messiah (Christ) died.* The thing in dispute is meat near the idol''s table; the thing not in dispute is the brother''s soul. Charity will not trade a brother''s conscience for a plate of food.'),
+  ('canon', 'romans', 14, 13, 'canon', '1-corinthians', 8, 12, 'free', E'*But when ye sin so against the brethren, and wound their weak conscience, ye sin against Messiah (Christ).* (1 Corinthians 8:12). *Judge this rather, that no man put a stumblingblock or an occasion to fall in his brother''s way* (Romans 14:13). To lay a stumblingblock before the weak brother is to *wound their weak conscience* — and Paul says plainly that to wound it is to *sin against Messiah (Christ).* The stumblingblock Romans forbids is not a Torah-keeping scruple to be mocked; it is a conscience the strong are bound to protect.'),
+  ('canon', 'romans', 14, 14, 'canon', '1-corinthians', 10, 28, 'free', E'*But if any man say unto you, This is offered in sacrifice unto idols, eat not for his sake that shewed it, and for conscience sake: for the earth is Yahuah''s (Lord''s), and the fulness thereof:* (1 Corinthians 10:28). *I know, and am persuaded by the Lord Yahusha (Lord Jesus), that there is nothing unclean of itself: but to him that esteemeth any thing to be unclean, to him it is unclean* (Romans 14:14). The other letter shows exactly what the common-by-association case is: meat that is nothing in itself becomes off-limits the moment it is named *offered in sacrifice unto idols* — *eat not … for conscience sake.* The food is made common not by the Torah''s tahor/tamei line but by the idol-attachment and the brother''s conscience. That is the *unclean of itself* Paul means.'),
+  -- thread: romans-14-the-kingdom-of-god-is-not-meat-and-drink
+  ('canon', 'romans', 14, 17, 'canon', '1-corinthians', 8, 8, 'free', E'*But meat commendeth us not to Elohim (God): for neither, if we eat, are we the better; neither, if we eat not, are we the worse.* (1 Corinthians 8:8). *For the kingdom of Elohim (God) is not meat and drink; but righteousness, and peace, and joy in the Ruach HaKodesh (Holy Spirit)* (Romans 14:17). Because *meat commendeth us not to Elohim (God),* the kingdom is not weighed in what is eaten or refused. It is weighed in *righteousness, and peace, and joy in the Ruach HaKodesh (Holy Spirit)* — and so the strong are to spend their liberty on peace and edifying, never on wounding a brother over a plate.'),
+  ('canon', 'romans', 14, 21, 'canon', '1-corinthians', 8, 13, 'free', E'*Wherefore, if meat make my brother to offend, I will eat no flesh while the world standeth, lest I make my brother to offend.* (1 Corinthians 8:13). *It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak* (Romans 14:21). Paul lives out the very rule he gives Rome: he will *eat no flesh while the world standeth* sooner than make a brother stumble. The freedom is real, but love lays it down — the strong yields the disputable thing for the sake of the weak.'),
+  -- thread: romans-14-whatsoever-is-not-of-faith-is-sin-fully-persuaded
+  ('canon', 'romans', 14, 23, 'canon', '1-corinthians', 8, 7, 'free', E'*Howbeit there is not in every man that knowledge: for some with conscience of the idol unto this hour eat it as a thing offered unto an idol; and their conscience being weak is defiled.* (1 Corinthians 8:7). *And he that doubteth is damned if he eat, because he eateth not of faith: for whatsoever is not of faith is sin* (Romans 14:23). The doubting eater of Romans is the weak-conscienced eater of Corinth whose *conscience being weak is defiled.* To act against one''s own persuaded conscience — to eat while doubting — is itself the sin, *for whatsoever is not of faith is sin.* This is why each must be *fully persuaded in his own mind* (Romans 14:5), and why the strong must never push the weak past his conscience.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-14-receive-him-that-is-weak-in-the-faith-the-weak-conscience',
+       E'Receive him that is weak in the faith — the weak conscience eating herbs',
+       E'*Him that is weak in the faith receive ye, but not to doubtful disputations. For one believeth that he may eat all things: another, who is weak, eateth herbs* (Romans 14:1-2). The weak brother who eats only herbs is not a man who thinks the commandments are loosed; he is a careful conscience in a world full of idol-tables and untrusted slaughter, withdrawing to what he knows is safe. The captives did the same: *when we were carried away captives to Nineve, all my brethren … did eat of the bread of the Gentiles. But I kept myself from eating* (Tobit 1:10-11); and Judith, set before the heathen''s meat, answered, *I will not eat thereof, lest there be an offence: but provision shall be made for me of the things that I have brought* (Judith 12:2). The same weak one is named in Corinth: *some with conscience of the idol unto this hour eat it as a thing offered unto an idol; and their conscience being weak is defiled* (1 Corinthians 8:7). And the reason the eater and the abstainer must not despise or judge each other is that the question between them is charity, not righteousness: *meat commendeth us not to Elohim (God): for neither, if we eat, are we the better; neither, if we eat not, are we the worse* (1 Corinthians 8:8). *Elohim (God) hath received him* (Romans 14:3) — so must they receive one another.',
+       sv.verse_id, ev.verse_id, 'extras', 6325
+  FROM _s219_r14_lookup sv, _s219_r14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=14 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-14-to-his-own-master-he-standeth-or-falleth-judge-not-the-brother',
+       E'To his own master he standeth or falleth — judge not the brother',
+       E'*Who art thou that judgest another man''s servant? to his own master he standeth or falleth. Yea, he shall be holden up: for Elohim (God) is able to make him stand* (Romans 14:4). The brother in a disputable matter is not ours to judge; he answers to his own Master, who is able to hold him up. The Master himself set the rule: *Judge not, that ye be not judged* (Matthew 7:1). And there is a deeper danger that guards the whole watchpoint of this chapter: *he that speaketh evil of his brother, and judgeth his brother, speaketh evil of the law, and judgeth the law: but if thou judge the law, thou art not a doer of the law, but a judge* (James 4:11). The one who sets himself over his brother in these matters ends by setting himself over the law — taking a seat above it instead of standing under it as a doer. The chapter forbids the judging of the brother; it never looses the commandment. Both are kept by refusing the seat of judgment.',
+       sv.verse_id, ev.verse_id, 'free', 6328
+  FROM _s219_r14_lookup sv, _s219_r14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=14 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-14-every-knee-shall-bow-the-judgment-seat-of-messiah',
+       E'Every knee shall bow — the judgment seat of Messiah (Christ)',
+       E'*But why dost thou judge thy brother? or why dost thou set at nought thy brother? for we shall all stand before the judgment seat of Messiah (Christ)* (Romans 14:10). The ground for laying down judgment of the brother is that all alike must give account before the only Judge. Paul presses it with the prophet''s oath quoted word for word: *As I live, saith Yahuah (Lord), every knee shall bow to me, and every tongue shall confess to Elohim (God)* (Romans 14:11), which Isaiah swore — *I have sworn by myself … That unto me every knee shall bow, every tongue shall swear* (Isaiah 45:23), the oath of the One who is *a just Elohim (God) and a Saviour; there is none beside me* (Isaiah 45:21). That bowing belongs to Yahusha (Jesus), the Formed Yahuah come in flesh: *at the name of Yahusha (Jesus) every knee should bow … and that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* (Philippians 2:10-11). And the seat is named again: *we must all appear before the judgment seat of Messiah (Christ); that every one may receive the things done in his body* (2 Corinthians 5:10). *So then every one of us shall give account of himself to Elohim (God)* (Romans 14:12) — which is exactly why no brother may take the judgment seat over another.',
+       sv.verse_id, ev.verse_id, 'free', 6331
+  FROM _s219_r14_lookup sv, _s219_r14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=14 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-14-there-is-nothing-common-of-itself-the-weak-brother-and-idol-food',
+       E'There is nothing common of itself — the weak brother and idol-food',
+       E'*Let us not therefore judge one another any more: but judge this rather, that no man put a stumblingblock or an occasion to fall in his brother''s way* (Romans 14:13). *I know, and am persuaded by the Lord Yahusha (Lord Jesus), that there is nothing unclean of itself: but to him that esteemeth any thing to be unclean, to him it is unclean* (Romans 14:14). The other letter shows precisely what this common-by-association case is. Meat that is nothing in itself becomes off-limits the moment it is named at the table: *if any man say unto you, This is offered in sacrifice unto idols, eat not for his sake that shewed it, and for conscience sake* (1 Corinthians 10:28). The food is made common not by the Torah''s clean/unclean line but by the idol-attachment and the brother''s wounded conscience. And to wound that conscience is no light thing: *when ye sin so against the brethren, and wound their weak conscience, ye sin against Messiah (Christ)* (1 Corinthians 8:12). So the warning is the same in both letters: *Destroy not him with thy meat, for whom Messiah (Christ) died* (Romans 14:15) — *through thy knowledge shall the weak brother perish, for whom Messiah (Christ) died?* (1 Corinthians 8:11). Charity will not trade a brother''s soul for a plate of food.',
+       sv.verse_id, ev.verse_id, 'free', 6334
+  FROM _s219_r14_lookup sv, _s219_r14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=14 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-14-the-kingdom-of-god-is-not-meat-and-drink',
+       E'The kingdom of Elohim (God) is not meat and drink',
+       E'*For the kingdom of Elohim (God) is not meat and drink; but righteousness, and peace, and joy in the Ruach HaKodesh (Holy Spirit)* (Romans 14:17). The whole weight of the dispute is lifted off the plate and set on the walk. Because *meat commendeth us not to Elohim (God): for neither, if we eat, are we the better; neither, if we eat not, are we the worse* (1 Corinthians 8:8), the kingdom is never weighed in what is eaten or refused — it is weighed in righteousness, peace, and joy in the Ruach HaKodesh (Holy Spirit). So the charge follows: *let us therefore follow after the things which make for peace, and things wherewith one may edify another. For meat destroy not the work of Elohim (God)* (Romans 14:19-20). And Paul models it: *it is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth* (Romans 14:21) — *if meat make my brother to offend, I will eat no flesh while the world standeth, lest I make my brother to offend* (1 Corinthians 8:13). The liberty is real; love lays it down for the weak.',
+       sv.verse_id, ev.verse_id, 'free', 6337
+  FROM _s219_r14_lookup sv, _s219_r14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=14 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-14-whatsoever-is-not-of-faith-is-sin-fully-persuaded',
+       E'Whatsoever is not of faith is sin — fully persuaded in his own mind',
+       E'*Hast thou faith? have it to thyself before Elohim (God). Happy is he that condemneth not himself in that thing which he alloweth. And he that doubteth is damned if he eat, because he eateth not of faith: for whatsoever is not of faith is sin* (Romans 14:22-23). The governing principle of the chapter — *let every man be fully persuaded in his own mind* (Romans 14:5) — comes to its point here. The doubting eater is the weak-conscienced eater of Corinth: *some with conscience of the idol unto this hour eat it as a thing offered unto an idol; and their conscience being weak is defiled* (1 Corinthians 8:7). To act against one''s own persuaded conscience — to eat while doubting — is itself the sin, for whatsoever is not of faith is sin. This is why the strong must never drag the weak past his conscience, and why the matter must be settled before Elohim (God) in each man''s own persuasion, not by the judgment of his brother.',
+       sv.verse_id, ev.verse_id, 'free', 6340
+  FROM _s219_r14_lookup sv, _s219_r14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=14 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-14-receive-him-that-is-weak-in-the-faith-the-weak-conscience
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Tobit 1:10 — *all my brethren … did eat of the bread of the Gentiles* the captive''s case behind the weak who eateth herbs: the heathen table refused (Romans 14:2).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-receive-him-that-is-weak-in-the-faith-the-weak-conscience'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=2
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Tobit 1:11 — *But I kept myself from eating* the same fence the herb-eater keeps in a land of untrusted slaughter, a careful conscience not a loosed commandment (Romans 14:2).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-receive-him-that-is-weak-in-the-faith-the-weak-conscience'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=2
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Judith 12:2 — *I will not eat thereof, lest there be an offence* the weak refuses another''s table exactly as Judith refused Holofernes'' meat (Romans 14:2).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-receive-him-that-is-weak-in-the-faith-the-weak-conscience'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=2
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='judith' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Corinthians 8:7 — *their conscience being weak is defiled* the same weak one to be received, a tender conscience near the idol''s table (Romans 14:1).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-receive-him-that-is-weak-in-the-faith-the-weak-conscience'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Corinthians 8:8 — *meat commendeth us not to Elohim (God)* the eater and abstainer forbidden to despise or judge; the question is charity, not righteousness (Romans 14:3).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-receive-him-that-is-weak-in-the-faith-the-weak-conscience'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-14-to-his-own-master-he-standeth-or-falleth-judge-not-the-brother
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'James 4:11 — *he that … judgeth his brother … judgeth the law … not a doer of the law, but a judge* judging the brother ends by judging the law; the chapter forbids the judging, not the commandment (Romans 14:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-to-his-own-master-he-standeth-or-falleth-judge-not-the-brother'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 7:1 — *Judge not, that ye be not judged* the Master''s own word behind Paul''s rebuke: the servant answers to his own Lord (Romans 14:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-to-his-own-master-he-standeth-or-falleth-judge-not-the-brother'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-14-every-knee-shall-bow-the-judgment-seat-of-messiah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Corinthians 5:10 — *we must all appear before the judgment seat of Messiah (Christ)* the same seat: each gives account, so none may judge the brother (Romans 14:10).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-every-knee-shall-bow-the-judgment-seat-of-messiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=5 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 45:23 — *unto me every knee shall bow, every tongue shall swear* the prophet''s oath Paul quotes word for word; the Saviour before whom all bow (Romans 14:11).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-every-knee-shall-bow-the-judgment-seat-of-messiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Philippians 2:10 — *at the name of Yahusha (Jesus) every knee should bow* the bowing Isaiah swore to Yahuah belongs to Yahusha, the Formed Yahuah come in flesh (Romans 14:11).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-every-knee-shall-bow-the-judgment-seat-of-messiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Philippians 2:11 — *every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* the confessing tongue of Isaiah''s oath, redounding to the Father''s glory (Romans 14:11).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-every-knee-shall-bow-the-judgment-seat-of-messiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-14-there-is-nothing-common-of-itself-the-weak-brother-and-idol-food
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Corinthians 8:12 — *wound their weak conscience, ye sin against Messiah (Christ)* the stumblingblock is a conscience the strong are bound to protect (Romans 14:13).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-there-is-nothing-common-of-itself-the-weak-brother-and-idol-food'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Corinthians 10:28 — *This is offered in sacrifice unto idols, eat not … for conscience sake* food made common by idol-attachment, not by the Torah''s clean/unclean line (Romans 14:14).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-there-is-nothing-common-of-itself-the-weak-brother-and-idol-food'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Corinthians 8:11 — *through thy knowledge shall the weak brother perish, for whom Messiah (Christ) died?* the same warning: charity will not trade a brother''s soul for food (Romans 14:15).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-there-is-nothing-common-of-itself-the-weak-brother-and-idol-food'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-14-the-kingdom-of-god-is-not-meat-and-drink
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Corinthians 8:8 — *meat commendeth us not to Elohim (God)* the kingdom is not weighed in what is eaten; it is righteousness, peace, and joy in the Ruach HaKodesh (Holy Spirit) (Romans 14:17).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-the-kingdom-of-god-is-not-meat-and-drink'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Corinthians 8:13 — *I will eat no flesh while the world standeth, lest I make my brother to offend* Paul lives the rule he gives Rome: love lays down the liberty for the weak (Romans 14:21).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-the-kingdom-of-god-is-not-meat-and-drink'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-14-whatsoever-is-not-of-faith-is-sin-fully-persuaded
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Corinthians 8:7 — *their conscience being weak is defiled* the doubting eater whose conscience is defiled; to act against it is the sin (Romans 14:23).'
+  FROM cross_reference_threads t, cross_references x, _s219_r14_lookup sv, _s219_r14_lookup tv
+ WHERE t.slug='romans-14-whatsoever-is-not-of-faith-is-sin-fully-persuaded'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=14 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_romans_15.sql (S219 Romans 15) -----
+-- =====================================================================
+-- S219 minion — ROMANS 15 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 15.  Tag: r15 (temp view _s219_r15_lookup).  Sort band: 6350, step 3 (under 6375).
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Red Lines #7/#11): the watchpoint of this chapter is the four-quote chain of
+-- 15:9-12 — the nations rejoicing *with his people* (Deuteronomy 32:43), gathered ALONGSIDE
+-- Yashar'el under the Davidic root (Isaiah 11:10), never a new people displacing Israel. 15:8 is
+-- the hinge: *Messiah (Christ) was a minister of the circumcision for the truth of Elohim (God),
+-- to confirm the promises made unto the fathers* — the whole mission CONFIRMS, does not cancel,
+-- the covenant to the patriarchs. The "Gentiles" Paul gathers are the scattered seed and the
+-- nations brought to the rebuilt Zion (Tobit 13-14), the ingathering that GLORIFIES Elohim WITH
+-- his people. 15:4 — the Tanakh is the church's scripture, still teaching. 15:3=Psalm 69:9 (the
+-- reproaches); 15:21=Isaiah 52:15 (the suffering servant's sprinkling of nations); 15:16 the
+-- priestly offering up of the gathered.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-2   the strong bear the weak / please the neighbour  Tanakh: none warranted  Extras: none warranted  NT: none warranted (carried into 15:3 thread)
+--   v.3     the reproaches fell on me                         Tanakh: Psalm 69:9  Extras: none warranted  NT: John 15:25 (they hated me without a cause)
+--   v.4     written aforetime for our learning                Tanakh: Psalm 19:7-8 (the law converting the soul)  Extras: none warranted  NT: none added (the scriptures-still-teaching carried in prose)
+--   v.5-7   one mind, one mouth, receive one another          Tanakh: none added (carried at 15:9-12 glorify-together)  Extras: none warranted  NT: none warranted (epistolary exhortation)
+--   v.8     minister of the circumcision, confirm the promises Tanakh: none added (the promises themselves are the fathers' covenant)  Extras: none warranted  NT: Matthew 15:24 (lost sheep of the house of Yashar'el), Romans 9:24 (called, not of the Yahudim only)
+--   v.9-12  the fourfold chain — nations rejoice WITH his people  Tanakh: Psalm 18:49, Deuteronomy 32:43, Psalm 117:1, Isaiah 11:10  Extras: Tobit 13:11, Tobit 13:13  NT: none added (the chain is the witness)
+--   v.12    a root of Jesse who shall reign                    Tanakh: Isaiah 11:1, Isaiah 11:10  Extras: none warranted  NT: Revelation 5:5, Revelation 22:16 (the Root of David)
+--   v.13    the Elohim of hope                                 Tanakh: none warranted  Extras: none warranted  NT: none warranted (benediction)
+--   v.14-15 persuaded of you / written boldly                  Tanakh: none warranted  Extras: none warranted  NT: none warranted (epistolary)
+--   v.16    the offering up of the Gentiles, the priestly ingathering  Tanakh: none added (the ingathering carried by Tobit)  Extras: Tobit 14:5, Tobit 14:6  NT: none added
+--   v.17-20 Paul's mission to Illyricum                        Tanakh: none added (Isaiah 52:15 at 15:21)  Extras: none warranted  NT: none warranted
+--   v.21    they that have not heard shall understand          Tanakh: Isaiah 52:15  Extras: none warranted  NT: none warranted
+--   v.22-33 travel plans, the collection for Jerusalem         Tanakh: none warranted  Extras: none warranted  NT: none warranted (epistolary close; 15:27 carried in the priestly-ingathering thread)
+--
+-- THREADS (slug -> target libraries):
+--   6350 romans-15-the-reproaches-that-reproached-thee-fell-on-me-psalm-69            (Tanakh + NT)
+--   6353 romans-15-whatsoever-was-written-aforetime-was-written-for-our-learning      (Tanakh)
+--   6356 romans-15-a-minister-of-the-circumcision-to-confirm-the-promises-to-the-fathers (NT)
+--   6359 romans-15-rejoice-ye-nations-with-his-people-the-fourfold-chain              (Tanakh + Extras)
+--   6362 romans-15-a-root-of-jesse-who-shall-rise-to-reign-the-davidic-root           (Tanakh + NT)
+--   6365 romans-15-they-that-have-not-heard-shall-understand-isaiah-52                (Tanakh)
+--   6368 romans-15-the-offering-up-of-the-gentiles-the-priestly-ingathering           (Tanakh + Extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-15-the-reproaches-that-reproached-thee-fell-on-me-psalm-69
+  ('canon', 'romans', 15, 3, 'canon', 'psalms', 69, 9, 'free', E'*For the zeal of thine house hath eaten me up; and the reproaches of them that reproached thee are fallen upon me.* (Psalm 69:9). *For even Messiah (Christ) pleased not himself; but, as it is written, The reproaches of them that reproached thee fell on me* (Romans 15:3). Paul grounds the call to bear the weak not in a new ethic but in the psalm: the Anointed took upon himself the reproaches aimed at the Father. The strong bear the infirmities of the weak because Messiah, consumed with zeal for the Father''s house, bore the reviling that was the Father''s — he *pleased not himself.* The pattern of self-giving is written aforetime in David''s own cry.'),
+  ('canon', 'romans', 15, 3, 'canon', 'john', 15, 25, 'free', E'*But this cometh to pass, that the word might be fulfilled that is written in their law, They hated me without a cause.* (John 15:25). The reproaches Paul cites — *the reproaches of them that reproached thee fell on me* (Romans 15:3) — are the same reproaches the Master named as fulfilled in him: the hatred *without a cause,* written in their law, falling on the one who pleased not himself. What the psalmist foresaw, the Son lived; the reviling owed to the Father landed on the Formed who came in flesh, and he bore it for the sake of the weak he came to gather.'),
+  -- thread: romans-15-whatsoever-was-written-aforetime-was-written-for-our-learning
+  ('canon', 'romans', 15, 4, 'canon', 'psalms', 19, 7, 'free', E'*The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple.* (Psalm 19:7). *For whatsoever things were written aforetime were written for our learning, that we through patience and comfort of the scriptures might have hope* (Romans 15:4). The scriptures Paul means are the Tanakh — and the psalmist already named their work: the law of Yahuah is perfect, *converting the soul,* the testimony *making wise the simple.* What was written aforetime is not superseded teaching but the living instruction that converts and gives hope still; the church''s scripture is the very law and prophets that formed Yashar''el (Israel).'),
+  ('canon', 'romans', 15, 4, 'canon', 'psalms', 19, 8, 'free', E'*The statutes of Yahuah (LORD) are right, rejoicing the heart: the commandment of Yahuah (LORD) is pure, enlightening the eyes.* (Psalm 19:8). Paul says the things *written aforetime were written for our learning* (Romans 15:4) — and the psalm shows what that learning is: the statutes of Yahuah *rejoicing the heart,* the commandment *enlightening the eyes.* The comfort of the scriptures by which we have hope is not a hope set against the commandments but a hope born of them; the same word that rejoices the heart sustains the patience Paul commends.'),
+  -- thread: romans-15-a-minister-of-the-circumcision-to-confirm-the-promises-to-the-fathers
+  ('canon', 'romans', 15, 8, 'canon', 'matthew', 15, 24, 'free', E'*But he answered and said, I am not sent but unto the lost sheep of the house of Yashar''el (Israel).* (Matthew 15:24). *Now I say that Yahusha HaMashiach (Jesus Christ) was a minister of the circumcision for the truth of Elohim (God), to confirm the promises made unto the fathers* (Romans 15:8). Paul names what the Master named: his mission was to the circumcision, the lost sheep of the house of Yashar''el — to confirm, not cancel, the covenant promised to Avraham (Abraham), Yitschaq (Isaac), and Ya''aqov (Jacob). The Anointed came as a minister of the circumcision precisely to make good the word spoken to the fathers, gathering the scattered seed home.'),
+  ('canon', 'romans', 15, 8, 'canon', 'romans', 9, 24, 'free', E'*Even us, whom he hath called, not of the Yahudim (Jews) only, but also of the Gentiles?* (Romans 9:24). The ministry to *confirm the promises made unto the fathers* (Romans 15:8) reaches *not of the Yahudim (Jews) only, but also of the Gentiles* — the two houses, the remnant of Yahudah (Judah) and the scattered seed living among the nations. The calling of the Gentiles is not the admission of a new people over the fathers'' promises but the confirming of those very promises, as the next words declare: *I will call them my people, which were not my people* (Romans 9:25) — the Lo-Ammi made Ammi, the divorced house gathered.'),
+  -- thread: romans-15-rejoice-ye-nations-with-his-people-the-fourfold-chain
+  ('canon', 'romans', 15, 9, 'canon', 'psalms', 18, 49, 'free', E'*Therefore will I give thanks unto thee, O Yahuah (LORD), among the heathen, and sing praises unto thy name.* (Psalm 18:49). *And that the Gentiles might glorify Elohim (God) for his mercy; as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9). Paul opens his chain with David''s song: the king gives thanks *among the heathen* and sings to the name. The confession is sung out among the nations not because the nations replace Yashar''el (Israel) but because the praise of Yahuah goes forth from his anointed into all the earth — the mercy that gathers reaching the scattered where they dwell.'),
+  ('canon', 'romans', 15, 10, 'canon', 'deuteronomy', 32, 43, 'free', E'*Rejoice, O ye nations, with his people: for he will avenge the blood of his servants, and will render vengeance to his adversaries, and will be merciful unto his land, and to his people.* (Deuteronomy 32:43). *And again he saith, Rejoice, ye Gentiles, with his people* (Romans 15:10). The hinge of the whole chain: the nations rejoice *with his people* — alongside Yashar''el (Israel), the two together, never the one displacing the other. Moses'' song closes with the nations gathered beside the covenant people while Yahuah is merciful *unto his land, and to his people.* The Gentiles glorifying Elohim is the ingathering that joins them to his people, not a new people standing in Israel''s place.'),
+  ('canon', 'romans', 15, 11, 'canon', 'psalms', 117, 1, 'free', E'*O praise Yahuah (LORD), all ye nations: praise him, all ye people.* (Psalm 117:1). *And again, Praise Yahuah (Lord), all ye Gentiles; and laud him, all ye people* (Romans 15:11). The shortest psalm calls the nations and the people together to one praise — *all ye nations* and *all ye people* in a single summons. The reason follows in the psalm itself: *his merciful kindness is great toward us, and the truth of Yahuah (LORD) endureth for ever* (Psalm 117:2). The nations are called to praise the Elohim of Yashar''el (Israel) for the mercy and truth kept toward his covenant people — joined to that praise, not substituted for its object.'),
+  ('canon', 'romans', 15, 12, 'canon', 'isaiah', 11, 10, 'free', E'*And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious.* (Isaiah 11:10). *And again, Esaias saith, There shall be a root of Jesse, and he that shall rise to reign over the Gentiles; in him shall the Gentiles trust* (Romans 15:12). Paul seals the chain with the Davidic root: the ensign raised for the people, to whom the nations seek. The same chapter promises Yahuah *shall set his hand again the second time to recover the remnant of his people* and *gather together the dispersed of Yashar''el (Israel)* (Isaiah 11:11-12) — so the root of Jesse over whom the nations trust is the King under whom the dispersed are gathered and the nations come, both together to his glorious rest.'),
+  ('canon', 'romans', 15, 9, 'apocrypha', 'tobit', 13, 11, 'extras', E'*Many nations shall come from far to the name of Yahuah (God) with gifts in their hands, even gifts to the King of heaven; all generations shall praise you with great joy.* (Tobit 13:11). The Gentiles glorifying Elohim *for his mercy* (Romans 15:9) is the very scene Tobit foresaw over the rebuilt Zion: *many nations* coming *from far to the name of Yahuah,* all generations praising. The nations come to the name — to the Elohim of Yashar''el (Israel) at his restored city — bringing gifts to the King of heaven; the praise of the nations is gathered TO Zion, not set up apart from her.'),
+  ('canon', 'romans', 15, 10, 'apocrypha', 'tobit', 13, 13, 'extras', E'*Rejoice and be glad for the children of the just: for they shall be gathered together, and shall bless Yahuah (God) of the just.* (Tobit 13:13). *Rejoice, ye Gentiles, with his people* (Romans 15:10) sounds the same note Tobit struck: rejoice *for the children of the just, for they shall be gathered together.* The rejoicing of the nations is bound to the gathering of the scattered children — the dispersed seed assembled to bless Yahuah. The joy of the nations and the ingathering of his people are one event, the homecoming the prophets and the library alike foresaw.'),
+  -- thread: romans-15-a-root-of-jesse-who-shall-rise-to-reign-the-davidic-root
+  ('canon', 'romans', 15, 12, 'canon', 'isaiah', 11, 1, 'free', E'*And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:* (Isaiah 11:1). *There shall be a root of Jesse, and he that shall rise to reign over the Gentiles; in him shall the Gentiles trust* (Romans 15:12). The root Paul names springs from the stem of Jesse — the Branch of David, the Formed come in flesh as the seed of David, upon whom *the Spirit of Yahuah (LORD) shall rest* (Isaiah 11:2). The King who rises to reign is no new dynasty grafted over the covenant but the very rod from Jesse''s stem, the Davidic heir the prophet saw, in whom the gathered place their trust.'),
+  ('canon', 'romans', 15, 12, 'canon', 'revelation', 5, 5, 'free', E'*And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.* (Revelation 5:5). The *root of Jesse* who rises *to reign over the Gentiles* (Romans 15:12) is the same one John sees enthroned: *the Lion of the tribe of Juda, the Root of David,* who alone prevailed. The Davidic root over whom the nations trust is the slain Lamb who has overcome — the reign Paul announces is the reign of the Root of David at the throne, the King under whom the gathered are sealed.'),
+  ('canon', 'romans', 15, 12, 'canon', 'revelation', 22, 16, 'free', E'*I Yahusha (Jesus) have sent mine angel to testify unto you these things in the churches. I am the root and the offspring of David, and the bright and morning star.* (Revelation 22:16). Paul''s *root of Jesse* (Romans 15:12) names himself at the close of the canon: *I am the root and the offspring of David.* He is both the root from which David sprang — the Formed who is before David — and the offspring who came in flesh as David''s seed. The King in whom the Gentiles trust is Yahusha (Jesus) himself, the morning star over the gathering, root and offspring at once.'),
+  -- thread: romans-15-they-that-have-not-heard-shall-understand-isaiah-52
+  ('canon', 'romans', 15, 21, 'canon', 'isaiah', 52, 15, 'free', E'*So shall he sprinkle many nations; the kings shall shut their mouths at him: for that which had not been told them shall they see; and that which they had not heard shall they consider.* (Isaiah 52:15). *But as it is written, To whom he was not spoken of, they shall see: and they that have not heard shall understand* (Romans 15:21). Paul''s reach to where Messiah (Christ) was not yet named is the suffering servant''s own work: he *shall sprinkle many nations,* and those to whom it was not told *shall see.* The marred servant of Isaiah 52-53, exalted after his suffering, draws the unhearing nations to understand — the gospel going to the scattered and the nations alike is the servant''s sprinkling come to pass.'),
+  -- thread: romans-15-the-offering-up-of-the-gentiles-the-priestly-ingathering
+  ('canon', 'romans', 15, 16, 'apocrypha', 'tobit', 14, 5, 'extras', E'*And that again Yahuah (God) will have mercy on them, and bring them again into the land, where they shall build a temple, but not like to the first, until the time of that age be fulfilled; and afterward they shall return from all places of their captivity, and build up Jerusalem gloriously, and the house of Yahuah (God) shall be built in it for ever with a glorious building, as the prophets have spoken thereof.* (Tobit 14:5). Paul is *the minister of Yahusha HaMashiach (Jesus Christ) to the Gentiles … that the offering up of the Gentiles might be acceptable, being sanctified by the Ruach HaKodesh (Holy Spirit)* (Romans 15:16). Tobit names the frame: Yahuah brings his own *again into the land,* the captives *return from all places of their captivity,* and Jerusalem is built gloriously. Paul''s priestly offering up of the gathered is that ingathering — the scattered returning from the nations, presented holy, the prophets'' word made good.'),
+  ('canon', 'romans', 15, 27, 'apocrypha', 'tobit', 14, 6, 'extras', E'*And all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols.* (Tobit 14:6). The Gentiles who *have been made partakers of their spiritual things* and owe a debt *to minister unto them in carnal things* (Romans 15:27) are the nations Tobit saw turning: *all nations shall turn, and fear Yahuah truly, and shall bury their idols.* The collection Paul carries to the poor saints at Jerusalem is the turning made tangible — those gathered from the nations rendering their substance back to the covenant people from whom the spiritual riches came, the idols buried and the debt of love paid.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-15-the-reproaches-that-reproached-thee-fell-on-me-psalm-69',
+       E'The reproaches of them that reproached thee fell on me — Psalm 69',
+       E'Paul roots the strong bearing the weak not in a new ethic but in the psalm of the suffering righteous one: *We then that are strong ought to bear the infirmities of the weak, and not to please ourselves* (Romans 15:1), *for even Messiah (Christ) pleased not himself; but, as it is written, The reproaches of them that reproached thee fell on me* (Romans 15:3). The line is David''s cry: *for the zeal of thine house hath eaten me up; and the reproaches of them that reproached thee are fallen upon me* (Psalm 69:9). The Anointed, consumed with zeal for the Father''s house, took upon himself the reviling aimed at the Father — he pleased not himself, but bore what was owed to another. And the Master named that same psalm fulfilled in his own rejection: *that the word might be fulfilled that is written in their law, They hated me without a cause* (John 15:25). What David foresaw, the Formed who came in flesh lived; the reproach owed to the Father landed on the Son, and he bore it for the weak he came to gather.',
+       sv.verse_id, ev.verse_id, 'free', 6350
+  FROM _s219_r15_lookup sv, _s219_r15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=15 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-15-whatsoever-was-written-aforetime-was-written-for-our-learning',
+       E'Whatsoever was written aforetime was written for our learning',
+       E'*For whatsoever things were written aforetime were written for our learning, that we through patience and comfort of the scriptures might have hope* (Romans 15:4). The scriptures Paul means are the Tanakh — the law and the prophets — and he declares them not superseded teaching but the living instruction by which the assembly has patience and hope still. The psalmist already named their work: *the law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple* (Psalm 19:7), *the statutes of Yahuah (LORD) are right, rejoicing the heart: the commandment of Yahuah (LORD) is pure, enlightening the eyes* (Psalm 19:8). The comfort of the scriptures that breeds hope is not a hope set against the commandments but a hope born of them — the same word that converts the soul and rejoices the heart sustains the endurance Paul commends. What was written aforetime is the church''s own scripture, still teaching, still converting, still the ground of hope.',
+       sv.verse_id, ev.verse_id, 'free', 6353
+  FROM _s219_r15_lookup sv, _s219_r15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=15 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-15-a-minister-of-the-circumcision-to-confirm-the-promises-to-the-fathers',
+       E'A minister of the circumcision to confirm the promises made unto the fathers',
+       E'The hinge of the chapter, and a governing word for the whole mission: *Now I say that Yahusha HaMashiach (Jesus Christ) was a minister of the circumcision for the truth of Elohim (God), to confirm the promises made unto the fathers* (Romans 15:8). The Anointed came not to cancel the covenant but to CONFIRM it — to make good the word spoken to Avraham (Abraham), Yitschaq (Isaac), and Ya''aqov (Jacob). The Master named his own commission the same way: *I am not sent but unto the lost sheep of the house of Yashar''el (Israel)* (Matthew 15:24) — a minister of the circumcision, gathering the scattered seed. And the reach of that confirming covenant runs to the two houses: *us, whom he hath called, not of the Yahudim (Jews) only, but also of the Gentiles* (Romans 9:24) — the remnant of Yahudah (Judah) and the dispersed living among the nations, the Lo-Ammi made Ammi, *I will call them my people, which were not my people* (Romans 9:25). The calling of the Gentiles is not a new people raised over the fathers'' promises; it is the very confirming of those promises, the divorced house gathered home.',
+       sv.verse_id, ev.verse_id, 'free', 6356
+  FROM _s219_r15_lookup sv, _s219_r15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=15 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-15-rejoice-ye-nations-with-his-people-the-fourfold-chain',
+       E'Rejoice, ye nations, with his people — the fourfold chain',
+       E'Paul binds four Tanakh witnesses into one cord to show the end of his ministry: *that the Gentiles might glorify Elohim (God) for his mercy* (Romans 15:9). And the chain names HOW — not the nations displacing Yashar''el (Israel), but the nations gathered ALONGSIDE his people. First David''s song: *For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9), echoing *I will give thanks unto thee, O Yahuah (LORD), among the heathen, and sing praises unto thy name* (Psalm 18:49) — the praise of Yahuah going forth from his anointed into all the earth. Then the hinge, Moses'' song: *Rejoice, ye Gentiles, with his people* (Romans 15:10) — *Rejoice, O ye nations, with his people: for he will avenge the blood of his servants … and will be merciful unto his land, and to his people* (Deuteronomy 32:43). The nations rejoice WITH his people, the two together, while Yahuah keeps mercy unto his land and his people. Then the shortest psalm: *Praise Yahuah (Lord), all ye Gentiles; and laud him, all ye people* (Romans 15:11) — *O praise Yahuah (LORD), all ye nations: praise him, all ye people* (Psalm 117:1) — nations and people summoned to one praise for the mercy and truth kept toward the covenant. And the seal, Isaiah: *There shall be a root of Jesse … in him shall the Gentiles trust* (Romans 15:12) — the Davidic King under whom *the dispersed of Yashar''el (Israel)* are gathered the second time (Isaiah 11:11-12) and the nations come. The restored library sings the same: *many nations shall come from far to the name of Yahuah (God) … all generations shall praise you with great joy* (Tobit 13:11), and the reason is the homecoming — *rejoice and be glad for the children of the just: for they shall be gathered together, and shall bless Yahuah (God) of the just* (Tobit 13:13). The joy of the nations and the ingathering of his people are one event: the nations glorifying Elohim WITH his people, never in her place.',
+       sv.verse_id, ev.verse_id, 'extras', 6359
+  FROM _s219_r15_lookup sv, _s219_r15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=15 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-15-a-root-of-jesse-who-shall-rise-to-reign-the-davidic-root',
+       E'A root of Jesse who shall rise to reign — the Davidic root',
+       E'*And again, Esaias saith, There shall be a root of Jesse, and he that shall rise to reign over the Gentiles; in him shall the Gentiles trust* (Romans 15:12). The King in whom the gathered place their trust is the Davidic root the prophet saw: *there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1), upon whom *the Spirit of Yahuah (LORD) shall rest* (Isaiah 11:2) — no new dynasty grafted over the covenant, but the very rod from Jesse''s stem, the Formed come in flesh as David''s seed. John sees that root enthroned: *behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book* (Revelation 5:5) — the slain Lamb who alone overcame. And at the close of the canon the King names himself: *I am the root and the offspring of David, and the bright and morning star* (Revelation 22:16) — both the root from which David sprang, the One who is before David, and the offspring who came in flesh as David''s seed. The reign over the nations Paul announces is the reign of Yahusha (Jesus), the Root of David, the morning star over the gathering — root and offspring at once.',
+       sv.verse_id, ev.verse_id, 'free', 6362
+  FROM _s219_r15_lookup sv, _s219_r15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=15 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-15-they-that-have-not-heard-shall-understand-isaiah-52',
+       E'They that have not heard shall understand — Isaiah 52',
+       E'Paul describes his drive to preach where Messiah (Christ) was not yet named — *not where Messiah (Christ) was named, lest I should build upon another man''s foundation* (Romans 15:20) — and grounds it in the suffering servant: *as it is written, To whom he was not spoken of, they shall see: and they that have not heard shall understand* (Romans 15:21). The line is Isaiah''s own: *so shall he sprinkle many nations; the kings shall shut their mouths at him: for that which had not been told them shall they see; and that which they had not heard shall they consider* (Isaiah 52:15). This is the servant whose *visage was so marred more than any man* (Isaiah 52:14), exalted after his suffering, who draws the unhearing nations to see and understand. The gospel reaching the scattered and the nations where it was never told is the servant''s sprinkling come to pass — the marred and exalted One of Isaiah 52-53 gathering those who had not heard.',
+       sv.verse_id, ev.verse_id, 'free', 6365
+  FROM _s219_r15_lookup sv, _s219_r15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=15 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-15-the-offering-up-of-the-gentiles-the-priestly-ingathering',
+       E'The offering up of the Gentiles — the priestly ingathering',
+       E'Paul casts his apostleship in priestly terms: *that I should be the minister of Yahusha HaMashiach (Jesus Christ) to the Gentiles, ministering the gospel of Elohim (God), that the offering up of the Gentiles might be acceptable, being sanctified by the Ruach HaKodesh (Holy Spirit)* (Romans 15:16). The gathered are an offering presented holy — and the restored library names the frame as the ingathering the prophets foretold: *Yahuah (God) will have mercy on them, and bring them again into the land … afterward they shall return from all places of their captivity, and build up Jerusalem gloriously* (Tobit 14:5). The scattered returning from the nations, Jerusalem rebuilt, the house of Yahuah established — that is the harvest Paul offers up. And the nations turn with them: *all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols* (Tobit 14:6). So the collection Paul carries makes the turning tangible: *if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things* (Romans 15:27) — those gathered from the nations rendering their substance back to the poor saints at Jerusalem, the covenant people from whom the spiritual riches came. The idols buried, the debt of love paid, the offering acceptable.',
+       sv.verse_id, ev.verse_id, 'extras', 6368
+  FROM _s219_r15_lookup sv, _s219_r15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=15 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-15-the-reproaches-that-reproached-thee-fell-on-me-psalm-69
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 69:9 — *the reproaches of them that reproached thee are fallen upon me* the Anointed, consumed with zeal for the Father''s house, bore the reviling owed to the Father; he pleased not himself (Romans 15:3).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-the-reproaches-that-reproached-thee-fell-on-me-psalm-69'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 15:25 — *they hated me without a cause* the same Psalm 69 fulfilled in the Master''s rejection; the reproach owed to the Father landed on the Son (Romans 15:3).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-the-reproaches-that-reproached-thee-fell-on-me-psalm-69'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-15-whatsoever-was-written-aforetime-was-written-for-our-learning
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 19:7 — *the law of Yahuah (LORD) is perfect, converting the soul* what was written aforetime is the living instruction that converts and gives hope still (Romans 15:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-whatsoever-was-written-aforetime-was-written-for-our-learning'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 19:8 — *the statutes of Yahuah (LORD) are right, rejoicing the heart* the comfort that breeds hope is born of the commandments, not set against them (Romans 15:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-whatsoever-was-written-aforetime-was-written-for-our-learning'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-15-a-minister-of-the-circumcision-to-confirm-the-promises-to-the-fathers
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 15:24 — *I am not sent but unto the lost sheep of the house of Yashar''el (Israel)* the Master''s own commission: a minister of the circumcision, gathering the scattered seed (Romans 15:8).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-a-minister-of-the-circumcision-to-confirm-the-promises-to-the-fathers'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=15 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 9:24 — *called, not of the Yahudim (Jews) only, but also of the Gentiles* the two houses, the remnant of Yahudah and the dispersed; the confirming reaches both, not a new people over the promises (Romans 15:8).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-a-minister-of-the-circumcision-to-confirm-the-promises-to-the-fathers'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-15-rejoice-ye-nations-with-his-people-the-fourfold-chain
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 18:49 — *I will give thanks unto thee, O Yahuah (LORD), among the heathen, and sing praises unto thy name* the king''s praise going forth among the nations, the mercy that gathers reaching the scattered (Romans 15:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-rejoice-ye-nations-with-his-people-the-fourfold-chain'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=49
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:43 — *Rejoice, O ye nations, with his people* the hinge: the nations gathered ALONGSIDE Yashar''el (Israel), the two together, never the one displacing the other (Romans 15:10).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-rejoice-ye-nations-with-his-people-the-fourfold-chain'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 117:1 — *O praise Yahuah (LORD), all ye nations: praise him, all ye people* nations and people summoned to one praise for the mercy and truth kept toward the covenant (Romans 15:11).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-rejoice-ye-nations-with-his-people-the-fourfold-chain'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=117 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 11:10 — *a root of Jesse … to it shall the Gentiles seek* the Davidic King under whom the dispersed of Yashar''el (Israel) are gathered the second time and the nations come (Romans 15:12).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-rejoice-ye-nations-with-his-people-the-fourfold-chain'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Tobit 13:11 — *many nations shall come from far to the name of Yahuah (God) … all generations shall praise you with great joy* the nations gathered TO Zion at the restored city, not set up apart from her (Romans 15:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-rejoice-ye-nations-with-his-people-the-fourfold-chain'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=9
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Tobit 13:13 — *rejoice and be glad for the children of the just: for they shall be gathered together* the joy of the nations bound to the ingathering of the scattered children; one event (Romans 15:10).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-rejoice-ye-nations-with-his-people-the-fourfold-chain'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=10
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-15-a-root-of-jesse-who-shall-rise-to-reign-the-davidic-root
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 11:1 — *there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* the rod from Jesse''s stem, the Formed come in flesh as David''s seed, no new dynasty over the covenant (Romans 15:12).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-a-root-of-jesse-who-shall-rise-to-reign-the-davidic-root'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 5:5 — *the Lion of the tribe of Juda, the Root of David, hath prevailed* the Davidic root enthroned, the slain Lamb who alone overcame, the reign Paul announces (Romans 15:12).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-a-root-of-jesse-who-shall-rise-to-reign-the-davidic-root'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:16 — *I am the root and the offspring of David, and the bright and morning star* the King names himself: root from which David sprang and offspring come in flesh, Yahusha (Jesus) himself (Romans 15:12).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-a-root-of-jesse-who-shall-rise-to-reign-the-davidic-root'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-15-they-that-have-not-heard-shall-understand-isaiah-52
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 52:15 — *so shall he sprinkle many nations … that which they had not heard shall they consider* the suffering servant drawing the unhearing nations to see; the gospel to the scattered is the servant''s sprinkling (Romans 15:21).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-they-that-have-not-heard-shall-understand-isaiah-52'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-15-the-offering-up-of-the-gentiles-the-priestly-ingathering
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Tobit 14:5 — *bring them again into the land … afterward they shall return from all places of their captivity, and build up Jerusalem gloriously* the ingathering Paul offers up: the scattered returning, Jerusalem rebuilt (Romans 15:16).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-the-offering-up-of-the-gentiles-the-priestly-ingathering'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=16
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=14 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Tobit 14:6 — *all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols* the turning made tangible in the collection: those gathered from the nations rendering back to the saints at Jerusalem (Romans 15:27).'
+  FROM cross_reference_threads t, cross_references x, _s219_r15_lookup sv, _s219_r15_lookup tv
+ WHERE t.slug='romans-15-the-offering-up-of-the-gentiles-the-priestly-ingathering'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=15 AND sv.verse_number=27
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=14 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_romans_16.sql (S219 Romans 16) -----
+-- =====================================================================
+-- S219 minion — ROMANS 16 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 16.  Tag: r16 (temp view _s219_r16_lookup).  Sort band: 6375, step 3 (<6400).
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Red Lines #2/#4/#5/#6/#10): Romans 16 is mostly personal greetings — the
+-- closing of a letter Paul, a Torah-keeping Yashar'elite, wrote to the mixed assembly at Rome.
+-- The greeting lists carry no load-bearing scriptural root and warrant no threads ("none
+-- warranted" is the correct, curated answer). Three load-bearing connections close the book:
+-- the warning against the false teachers with *good words and fair speeches* (16:17-18) — the
+-- same smooth-tongued false shepherds the prophets indicted; the *Elohim (God) of peace shall
+-- bruise Satan under your feet* (16:20) — the protoevangelium of Genesis 3:15 fulfilled in the
+-- gathered; and the mystery *kept secret since the world began* now *made manifest, and by the
+-- scriptures of the prophets ... made known to all nations for the obedience of faith* (16:25-26)
+-- — the gospel was always rooted in the prophets, now unveiled, and the obedience of faith
+-- (faith THAT obeys, never faith instead of obedience).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-2    commend Phebe / receive in the Lord    Tanakh: none warranted  Extras: none warranted  NT: none warranted (greeting)
+--   v.3-16   the greeting roll / holy kiss           Tanakh: none warranted  Extras: none warranted  NT: none warranted (greetings — no scriptural root)
+--   v.17-18  mark them which cause divisions /        Tanakh: Jeremiah 23:1, Jeremiah 23:16, Jeremiah 23:17; Ezekiel 13:10; Psalm 12:2  Extras: none warranted  NT: none added (prophets carry it)
+--            good words and fair speeches
+--   v.19     your obedience come abroad / wise to good Tanakh: none added (carried at 16:25-26 obedience of faith)  Extras: none warranted  NT: none warranted
+--   v.20     bruise Satan under your feet shortly      Tanakh: Genesis 3:15  Extras: none warranted  NT: none warranted (protoevangelium carried by Genesis)
+--   v.21-24  Timotheus / Tertius / Gaius greetings     Tanakh: none warranted  Extras: none warranted  NT: none warranted (greetings)
+--   v.25-26  the mystery made known by the scriptures  Tanakh: Isaiah 52:15  Extras: none warranted  NT: Ephesians 3:5, Colossians 1:26, 1 Peter 1:10
+--            of the prophets / for the obedience of faith
+--   v.27     to Elohim only wise, glory               Tanakh: none warranted  Extras: none warranted  NT: none warranted (doxology close — carried at 25-26)
+--
+-- THREADS (slug -> target libraries):
+--   6375 romans-16-mark-them-which-cause-divisions-the-smooth-words-of-the-false-shepherds  (Tanakh)
+--   6378 romans-16-the-elohim-of-peace-shall-bruise-satan-under-your-feet-genesis           (Tanakh)
+--   6381 romans-16-the-mystery-made-known-by-the-scriptures-of-the-prophets                 (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-16-mark-them-which-cause-divisions-the-smooth-words-of-the-false-shepherds
+  ('canon', 'romans', 16, 17, 'canon', 'jeremiah', 23, 1, 'free', E'*Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD).* (Jeremiah 23:1). Paul tells the assembly to *mark them which cause divisions and offences contrary to the doctrine which ye have learned; and avoid them* (Romans 16:17). The prophet had named the same men: the pastors who *destroy and scatter the sheep* of Yahuah''s (LORD''s) pasture. Those who divide the flock are not new — they are the shepherds against whom Yahuah pronounced woe, and the assembly is told to mark them and turn away.'),
+  ('canon', 'romans', 16, 18, 'canon', 'jeremiah', 23, 16, 'free', E'*Thus saith Yahuah Tseva''ot (LORD of hosts), Hearken not unto the words of the prophets that prophesy unto you: they make you vain: they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD).* (Jeremiah 23:16). They that cause divisions *serve not our Lord Yahusha HaMashiach (Lord Jesus Christ), but their own belly; and by good words and fair speeches deceive the hearts of the simple* (Romans 16:18). Jeremiah had already named the deception: men who speak *a vision of their own heart, and not out of the mouth of Yahuah,* who make the people vain with words. The fair speeches that deceive the simple are the same self-sourced word the prophet told the people not to hear.'),
+  ('canon', 'romans', 16, 18, 'canon', 'jeremiah', 23, 17, 'free', E'*They say still unto them that despise me, Yahuah (LORD) hath said, Ye shall have peace; and they say unto every one that walketh after the imagination of his own heart, No evil shall come upon you.* (Jeremiah 23:17). The false teachers deceive *by good words and fair speeches* (Romans 16:18) — the smooth comfort the prophet exposed: *Ye shall have peace ... No evil shall come upon you,* spoken to those who walk after their own heart. The good words are not good news; they are the flattering promise that strengthens the hands of evildoers and leaves the simple in their sin.'),
+  ('canon', 'romans', 16, 18, 'canon', 'ezekiel', 13, 10, 'free', E'*Because, even because they have seduced my people, saying, Peace; and there was no peace; and one built up a wall, and, lo, others daubed it with untempered morter:* (Ezekiel 13:10). The men Paul marks *by good words and fair speeches deceive the hearts of the simple* (Romans 16:18). Ezekiel had seen the same craft: prophets who *seduced my people, saying, Peace; and there was no peace,* daubing a falling wall with untempered morter. The fair speech is the daubing — a cover of comfort over a wall that cannot stand, and the assembly is told to mark the daubers and avoid them.'),
+  ('canon', 'romans', 16, 18, 'canon', 'psalms', 12, 2, 'free', E'*They speak vanity every one with his neighbour: with flattering lips and with a double heart do they speak.* (Psalm 12:2). They that cause divisions deceive *by good words and fair speeches* (Romans 16:18). The psalmist named the instrument: *flattering lips and ... a double heart* — the fair speech that hides a divided purpose. Yahuah''s (LORD''s) verdict stands over them: *Yahuah (LORD) shall cut off all flattering lips, and the tongue that speaketh proud things* (Psalm 12:3). The smooth tongue that serves its own belly is the very thing Yahuah cuts off.'),
+  -- thread: romans-16-the-elohim-of-peace-shall-bruise-satan-under-your-feet-genesis
+  ('canon', 'romans', 16, 20, 'canon', 'genesis', 3, 15, 'free', E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15). *And the Elohim (God) of peace shall bruise Satan under your feet shortly* (Romans 16:20). This is the first promise of the garden come home to the gathered. The sentence Yahuah Elohim (the LORD God) spoke to the serpent — that the seed of the woman *shall bruise thy head* — is the word Paul lays under the feet of the assembly. The protoevangelium spoken at the fall is fulfilled in the Formed who came as the seed of the woman and crushed the serpent, and the saints share in the crushing as the enmity runs to its end.')
+  ,
+  -- thread: romans-16-the-mystery-made-known-by-the-scriptures-of-the-prophets
+  ('canon', 'romans', 16, 26, 'canon', 'isaiah', 52, 15, 'free', E'*So shall he sprinkle many nations; the kings shall shut their mouths at him: for that which had not been told them shall they see; and that which they had not heard shall they consider.* (Isaiah 52:15). The mystery is now *made manifest, and by the scriptures of the prophets, according to the commandment of El Olam (the everlasting God), made known to all nations for the obedience of faith* (Romans 16:26). The prophet had already foreseen the unveiling: the servant who would sprinkle many nations, so that *that which had not been told them shall they see.* What was kept secret was never apart from the prophets — it was carried in their own scriptures, now opened to all nations.'),
+  ('canon', 'romans', 16, 25, 'canon', 'ephesians', 3, 5, 'free', E'*Which in other ages was not made known unto the sons of Adam, as it is now revealed unto his holy apostles and prophets by the Spirit;* (Ephesians 3:5). Paul writes of *the revelation of the mystery, which was kept secret since the world began* (Romans 16:25). He says the same thing to the assembly at Ephesus: the mystery not made known in other ages, *now revealed ... by the Spirit.* The secret was not a new religion but the unsealing of what the prophets carried — the gathering of the scattered seed into one body, hidden in the purpose of Elohim (God) and now brought to light.'),
+  ('canon', 'romans', 16, 26, 'canon', 'colossians', 1, 26, 'free', E'*Even the mystery which hath been hid from ages and from generations, but now is made manifest to his saints:* (Colossians 1:26). The mystery *kept secret since the world began, but now is made manifest, and by the scriptures of the prophets ... made known to all nations* (Romans 16:25-26). The very words recur: *hid from ages ... now made manifest.* What was hidden is *Messiah (Christ) in you, the hope of glory* (Colossians 1:27) — the indwelling promised through the prophets, now unveiled to the gathered out of every nation.'),
+  ('canon', 'romans', 16, 26, 'canon', '1-peter', 1, 10, 'free', E'*Of which salvation the prophets have enquired and searched diligently, who prophesied of the grace that should come unto you:* (1 Peter 1:10). The mystery is made known *by the scriptures of the prophets* (Romans 16:26) — the gospel was always rooted in them. Peter says the prophets themselves *enquired and searched diligently,* prophesying of the grace now come, *searching ... when it testified beforehand the sufferings of Messiah (Christ), and the glory that should follow* (1 Peter 1:11). The good news did not arrive apart from the prophets; it was the thing they carried and searched, now opened to those it was reserved for.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-16-mark-them-which-cause-divisions-the-smooth-words-of-the-false-shepherds',
+       E'Mark them which cause divisions — the smooth words of the false shepherds',
+       E'Before the final blessing Paul turns the assembly to a warning: *mark them which cause divisions and offences contrary to the doctrine which ye have learned; and avoid them. For they that are such serve not our Lord Yahusha HaMashiach (Lord Jesus Christ), but their own belly; and by good words and fair speeches deceive the hearts of the simple* (Romans 16:17-18). These men are not a new danger. The prophets named them and named their craft. Jeremiah pronounced the woe: *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD)* (Jeremiah 23:1) — and exposed their word as self-sourced: *they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD)* (Jeremiah 23:16), the smooth comfort that flatters the unrepentant — *Ye shall have peace ... No evil shall come upon you* (Jeremiah 23:17). Ezekiel saw the same seduction: *they have seduced my people, saying, Peace; and there was no peace; and one built up a wall, and, lo, others daubed it with untempered morter* (Ezekiel 13:10) — the fair speech is the daubing over a wall that cannot stand. And the psalmist named the instrument and its end: *with flattering lips and with a double heart do they speak* (Psalm 12:2), but *Yahuah (LORD) shall cut off all flattering lips, and the tongue that speaketh proud things* (Psalm 12:3). The good words that serve the belly and divide the flock are the ancient lie in a new mouth; the assembly is told to mark them and turn away.',
+       sv.verse_id, ev.verse_id, 'free', 6375
+  FROM _s219_r16_lookup sv, _s219_r16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=16 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-16-the-elohim-of-peace-shall-bruise-satan-under-your-feet-genesis',
+       E'The Elohim (God) of peace shall bruise Satan under your feet — Genesis',
+       E'Paul''s blessing carries the oldest promise in scripture: *And the Elohim (God) of peace shall bruise Satan under your feet shortly* (Romans 16:20). The word reaches back to the garden, to the first promise Yahuah Elohim (the LORD God) spoke after the fall — the sentence pronounced over the serpent: *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). The enmity set in the garden runs the whole length of scripture to its end. The seed of the woman is the Formed drawn from the Formless, who came in flesh and crushed the serpent''s head; and the saints, gathered into him, share in the bruising as the promise is brought home. The protoevangelium spoken in Eden is not a far-off hope but the very ground of the assembly''s peace: the Elohim of peace will crush the enemy under their feet shortly.',
+       sv.verse_id, ev.verse_id, 'free', 6378
+  FROM _s219_r16_lookup sv, _s219_r16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=16 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-16-the-mystery-made-known-by-the-scriptures-of-the-prophets',
+       E'The mystery made known by the scriptures of the prophets',
+       E'Romans closes with a doxology that guards the whole book against the lie that the gospel is a new religion: *Now to him that is of power to stablish you according to my gospel ... according to the revelation of the mystery, which was kept secret since the world began, but now is made manifest, and by the scriptures of the prophets, according to the commandment of El Olam (the everlasting God), made known to all nations for the obedience of faith* (Romans 16:25-26). The mystery was secret, but never apart from the prophets — it was carried in *the scriptures of the prophets,* now unsealed. Isaiah had foreseen the unveiling to the nations: *that which had not been told them shall they see; and that which they had not heard shall they consider* (Isaiah 52:15). Paul says the same to the assembly at Ephesus — the mystery *not made known unto the sons of Adam, as it is now revealed unto his holy apostles and prophets by the Spirit* (Ephesians 3:5) — and to Colosse — *the mystery which hath been hid from ages and from generations, but now is made manifest to his saints* (Colossians 1:26). And Peter testifies the prophets themselves carried and searched it: *of which salvation the prophets have enquired and searched diligently, who prophesied of the grace that should come unto you* (1 Peter 1:10). The end of the unveiling is *the obedience of faith* — not faith instead of obedience, but the faithful brought to obey; the gospel was always the prophets'' own word, now made known to all nations that they might walk in it.',
+       sv.verse_id, ev.verse_id, 'free', 6381
+  FROM _s219_r16_lookup sv, _s219_r16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=16 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-16-mark-them-which-cause-divisions-the-smooth-words-of-the-false-shepherds
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 23:1 — *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD)* the shepherds who divide the flock, against whom Yahuah pronounced woe (Romans 16:17).'
+  FROM cross_reference_threads t, cross_references x, _s219_r16_lookup sv, _s219_r16_lookup tv
+ WHERE t.slug='romans-16-mark-them-which-cause-divisions-the-smooth-words-of-the-false-shepherds'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 23:16 — *they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD)* the self-sourced word; the fair speech is the prophet''s own heart, not Yahuah''s (Romans 16:18).'
+  FROM cross_reference_threads t, cross_references x, _s219_r16_lookup sv, _s219_r16_lookup tv
+ WHERE t.slug='romans-16-mark-them-which-cause-divisions-the-smooth-words-of-the-false-shepherds'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 23:17 — *Yahuah (LORD) hath said, Ye shall have peace ... No evil shall come upon you* the flattering comfort spoken to the unrepentant, the good words that deceive (Romans 16:18).'
+  FROM cross_reference_threads t, cross_references x, _s219_r16_lookup sv, _s219_r16_lookup tv
+ WHERE t.slug='romans-16-mark-them-which-cause-divisions-the-smooth-words-of-the-false-shepherds'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 13:10 — *they have seduced my people, saying, Peace; and there was no peace ... daubed it with untempered morter* the fair speech is the daubing over a wall that cannot stand (Romans 16:18).'
+  FROM cross_reference_threads t, cross_references x, _s219_r16_lookup sv, _s219_r16_lookup tv
+ WHERE t.slug='romans-16-mark-them-which-cause-divisions-the-smooth-words-of-the-false-shepherds'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=13 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Psalm 12:2 — *with flattering lips and with a double heart do they speak* the instrument of the deceivers; Yahuah cuts off all flattering lips (Psalm 12:3) (Romans 16:18).'
+  FROM cross_reference_threads t, cross_references x, _s219_r16_lookup sv, _s219_r16_lookup tv
+ WHERE t.slug='romans-16-mark-them-which-cause-divisions-the-smooth-words-of-the-false-shepherds'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-16-the-elohim-of-peace-shall-bruise-satan-under-your-feet-genesis
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:15 — *between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* the first promise of the garden, the serpent crushed by the seed of the woman, fulfilled in the gathered (Romans 16:20).'
+  FROM cross_reference_threads t, cross_references x, _s219_r16_lookup sv, _s219_r16_lookup tv
+ WHERE t.slug='romans-16-the-elohim-of-peace-shall-bruise-satan-under-your-feet-genesis'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-16-the-mystery-made-known-by-the-scriptures-of-the-prophets
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 52:15 — *that which had not been told them shall they see; and that which they had not heard shall they consider* the prophet foreseeing the mystery unveiled to the nations (Romans 16:26).'
+  FROM cross_reference_threads t, cross_references x, _s219_r16_lookup sv, _s219_r16_lookup tv
+ WHERE t.slug='romans-16-the-mystery-made-known-by-the-scriptures-of-the-prophets'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ephesians 3:5 — *not made known unto the sons of Adam, as it is now revealed unto his holy apostles and prophets by the Spirit* the same mystery, secret in other ages, now revealed by the Spirit (Romans 16:25).'
+  FROM cross_reference_threads t, cross_references x, _s219_r16_lookup sv, _s219_r16_lookup tv
+ WHERE t.slug='romans-16-the-mystery-made-known-by-the-scriptures-of-the-prophets'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=3 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Colossians 1:26 — *the mystery which hath been hid from ages and from generations, but now is made manifest to his saints* the very words recur: hid from ages, now made manifest (Romans 16:25-26).'
+  FROM cross_reference_threads t, cross_references x, _s219_r16_lookup sv, _s219_r16_lookup tv
+ WHERE t.slug='romans-16-the-mystery-made-known-by-the-scriptures-of-the-prophets'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Peter 1:10 — *the prophets have enquired and searched diligently, who prophesied of the grace that should come unto you* the prophets themselves carried and searched the mystery now made known (Romans 16:26).'
+  FROM cross_reference_threads t, cross_references x, _s219_r16_lookup sv, _s219_r16_lookup tv
+ WHERE t.slug='romans-16-the-mystery-made-known-by-the-scriptures-of-the-prophets'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=16 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session219 — Romans cross-references complete.'
