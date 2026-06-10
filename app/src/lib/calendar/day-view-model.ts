@@ -429,3 +429,65 @@ export function fmtSunsetBoundary(d: Date): string {
     minute: "2-digit",
   });
 }
+
+// ---------------------------------------------------------------------------
+// The Omer count — Leviticus 23:15-16, "count fifty days".
+//
+// The count runs from the wave-sheaf / Firstfruits day (day 1) to Shavuot /
+// Weeks (day 50). Both anchors come from the engine's moedim for the ACTIVE
+// reckoning, so the count shifts correctly when the reckoning changes (the
+// lunar Sunday-within-Unleavened-Bread, Enoch's fixed 1/26, etc.). Outside the
+// season this returns null and nothing is shown.
+// ---------------------------------------------------------------------------
+
+export interface OmerStatus {
+  /** Day of the count, 1..50 (50 = Shavuot itself). */
+  day: number;
+  /** Completed weeks of the count. */
+  weeks: number;
+  /** Days into the current week (0..6). */
+  daysInWeek: number;
+  /** "4 weeks and 5 days" — the traditional breakdown. */
+  breakdown: string;
+  /** True on day 50 — Shavuot, the Feast of Weeks crowns the count. */
+  isShavuot: boolean;
+}
+
+function omerBreakdown(weeks: number, daysInWeek: number): string {
+  const parts: string[] = [];
+  if (weeks > 0) parts.push(`${weeks} ${weeks === 1 ? "week" : "weeks"}`);
+  if (daysInWeek > 0) parts.push(`${daysInWeek} ${daysInWeek === 1 ? "day" : "days"}`);
+  if (parts.length === 0) return "the first day";
+  return parts.join(" and ");
+}
+
+/**
+ * The current Omer day for `now` under reckoning `s`, or null outside the count
+ * season. We anchor a query ~55 days before `now` so this cycle's Firstfruits
+ * and Weeks both resolve as upcoming moedim (Firstfruits → Weeks is ~49 days),
+ * then count sunset-aligned days from the wave-sheaf instant (day 1).
+ */
+export function computeOmer(s: ReckoningState, now: Date): OmerStatus | null {
+  const anchor = new Date(now.getTime() - 55 * DAY_MS);
+  const moedim = compute(s, anchor).moedim;
+  const firstfruits = moedim.find((m) => m.kind === "firstfruits");
+  const weeks = moedim.find((m) => m.kind === "weeks");
+  if (!firstfruits || !weeks) return null;
+
+  const start = firstfruits.startInstant.getTime();
+  const shavuot = weeks.startInstant.getTime();
+  const t = now.getTime();
+  // Show from the wave-sheaf evening through the end of the Shavuot day.
+  if (t < start || t >= shavuot + DAY_MS) return null;
+
+  const day = Math.floor((t - start) / DAY_MS) + 1; // day 1 on the wave-sheaf day
+  const weeksN = Math.floor(day / 7);
+  const daysInWeek = day % 7;
+  return {
+    day,
+    weeks: weeksN,
+    daysInWeek,
+    breakdown: omerBreakdown(weeksN, daysInWeek),
+    isShavuot: t >= shavuot,
+  };
+}

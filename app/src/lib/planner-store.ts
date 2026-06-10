@@ -18,19 +18,28 @@
 // Domain
 // ---------------------------------------------------------------------------
 
-export type PlannerItemKind = "event" | "task" | "note";
+export type PlannerItemKind = "event" | "task" | "note" | "journal";
 
 export interface PlannerItem {
   id: string;
   kind: PlannerItemKind;
   /** The civil day this item belongs to (YYYY-MM-DD). */
   dayId: string;
-  /** Free text — the event title, task label, or note body. */
+  /** Free text — the event title, task label, the note, or the journal body. */
   text: string;
   /** Optional time-of-day for events, e.g. "18:30". */
   time?: string;
   /** Tasks only: completion state. */
   done?: boolean;
+  /**
+   * Biblical-date anchor (Hebrew month+day, and the biblical year it was
+   * written in). Set for JOURNAL entries so they can be surfaced on the same
+   * biblical day in later years — the user's own "on this day". The month/day
+   * recur every year; the year distinguishes which cycle an entry came from.
+   */
+  bYear?: number;
+  bMonth?: number;
+  bDay?: number;
   /** Millis since epoch when created — for stable ordering. */
   createdAt: number;
 }
@@ -39,6 +48,7 @@ export interface DayPlanner {
   events: PlannerItem[];
   tasks: PlannerItem[];
   notes: PlannerItem[];
+  journal: PlannerItem[];
 }
 
 /** The seam a real sync backend implements. Intentionally tiny. */
@@ -53,6 +63,12 @@ export interface PlannerStore {
   remove(id: string): void;
   /** Civil-day ids that hold at least one item — for grid badges. */
   daysWithItems(): Set<string>;
+  /**
+   * All JOURNAL entries anchored to a biblical month+day, across every year —
+   * the user's reflections on this appointed day through time. Newest biblical
+   * year first.
+   */
+  journalOnBiblicalDate(bMonth: number, bDay: number): PlannerItem[];
   /** Subscribe to changes; returns an unsubscribe fn. */
   subscribe(listener: () => void): () => void;
 }
@@ -87,6 +103,7 @@ export class LocalStoragePlannerStore implements PlannerStore {
   private version = 0;
   private dayCache = new Map<string, { version: number; value: DayPlanner }>();
   private daysCache: { version: number; value: Set<string> } | null = null;
+  private journalCache = new Map<string, { version: number; value: PlannerItem[] }>();
 
   constructor() {
     this.state = this.read();
@@ -128,11 +145,12 @@ export class LocalStoragePlannerStore implements PlannerStore {
   }
 
   private computeDay(dayId: string): DayPlanner {
-    const out: DayPlanner = { events: [], tasks: [], notes: [] };
+    const out: DayPlanner = { events: [], tasks: [], notes: [], journal: [] };
     for (const item of Object.values(this.state.items)) {
       if (item.dayId !== dayId) continue;
       if (item.kind === "event") out.events.push(item);
       else if (item.kind === "task") out.tasks.push(item);
+      else if (item.kind === "journal") out.journal.push(item);
       else out.notes.push(item);
     }
     const order = (a: PlannerItem, b: PlannerItem) =>
@@ -140,6 +158,7 @@ export class LocalStoragePlannerStore implements PlannerStore {
     out.events.sort(order);
     out.tasks.sort((a, b) => a.createdAt - b.createdAt);
     out.notes.sort((a, b) => a.createdAt - b.createdAt);
+    out.journal.sort((a, b) => a.createdAt - b.createdAt);
     return out;
   }
 
@@ -173,6 +192,19 @@ export class LocalStoragePlannerStore implements PlannerStore {
     for (const item of Object.values(this.state.items)) days.add(item.dayId);
     this.daysCache = { version: this.version, value: days };
     return days;
+  }
+
+  journalOnBiblicalDate(bMonth: number, bDay: number): PlannerItem[] {
+    const key = `${bMonth}/${bDay}`;
+    const cached = this.journalCache.get(key);
+    if (cached && cached.version === this.version) return cached.value;
+    const value = Object.values(this.state.items)
+      .filter(
+        (it) => it.kind === "journal" && it.bMonth === bMonth && it.bDay === bDay,
+      )
+      .sort((a, b) => (b.bYear ?? 0) - (a.bYear ?? 0) || b.createdAt - a.createdAt);
+    this.journalCache.set(key, { version: this.version, value });
+    return value;
   }
 
   subscribe(listener: () => void): () => void {

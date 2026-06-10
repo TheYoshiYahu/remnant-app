@@ -50,3 +50,49 @@ export function useDaysWithItems(): Set<string> {
     () => plannerStore.daysWithItems(),
   );
 }
+
+/** A biblical-date anchor for a journal entry (Hebrew year/month/day). */
+export interface BiblicalAnchor {
+  year: number;
+  month: number;
+  day: number;
+}
+
+/**
+ * The journal for one biblical day. Splits entries into THIS year's (this civil
+ * day, editable) and PRIOR years' (the same biblical month+day in earlier years
+ * — the user's own "on this day", read-only history). Adds anchor the entry to
+ * the biblical date so it recurs every year.
+ */
+export function useJournal(
+  dayId: string,
+  anchor: BiblicalAnchor,
+): { thisYear: PlannerItem[]; priorYears: PlannerItem[]; add: (text: string) => void; remove: (id: string) => void } {
+  const all = useSyncExternalStore(
+    (cb) => plannerStore.subscribe(cb),
+    () => plannerStore.journalOnBiblicalDate(anchor.month, anchor.day),
+    () => plannerStore.journalOnBiblicalDate(anchor.month, anchor.day),
+  );
+
+  const thisYear = all.filter((e) => e.dayId === dayId);
+  const priorYears = all.filter((e) => e.dayId !== dayId);
+
+  const add = useCallback(
+    (text: string) => {
+      const trimmed = text.trim();
+      if (!trimmed) return;
+      plannerStore.add({
+        kind: "journal",
+        dayId,
+        text: trimmed,
+        bYear: anchor.year,
+        bMonth: anchor.month,
+        bDay: anchor.day,
+      });
+    },
+    [dayId, anchor.year, anchor.month, anchor.day],
+  );
+  const remove = useCallback((id: string) => plannerStore.remove(id), []);
+
+  return { thisYear, priorYears, add, remove };
+}

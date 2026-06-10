@@ -1618,3 +1618,199 @@ body {
   .cal-dayview-backdrop { padding: 0; }
   .cal-dayview { max-width: 100%; border-radius: 0; min-height: 100%; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   The Appointed Times — v2.1: the Omer counter (hero) + the day-view Journal
+   (distinct from notes; anchored to the biblical date so prior years return).
+   Emerald = the rising harvest blessing of the count; gold numerals; techelet
+   structure. No grey.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Omer counter (hero/Today) ──────────────────────────────────────── */
+.cal-omer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.1rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, #2EFFA1 38%, transparent);
+  border-left: 3px solid #2EFFA1;
+  /* emerald deep (#04321E) → deep techelet field — both from the v1 palette. */
+  background: linear-gradient(110deg, color-mix(in srgb, #04321E 70%, transparent) 0%, color-mix(in srgb, #0A2D84 34%, transparent) 100%);
+  box-shadow: inset 0 0 22px color-mix(in srgb, #2EFFA1 12%, transparent);
+}
+.cal-omer-shavuot {
+  border-color: color-mix(in srgb, #FCECAF 50%, transparent);
+  border-left-color: #FCECAF;
+  background: linear-gradient(110deg, color-mix(in srgb, #645028 40%, transparent) 0%, color-mix(in srgb, #04321E 50%, transparent) 100%);
+  box-shadow: 0 0 26px color-mix(in srgb, #FCECAF 22%, transparent);
+}
+.cal-omer-mark {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.2rem;
+}
+.cal-omer-n {
+  font-family: Lora, Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 0.9;
+  color: #FCECAF;
+  text-shadow: 0 0 18px rgba(252, 236, 175, 0.45);
+}
+.cal-omer-of {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2EFFA1;
+  margin-top: 0.15rem;
+}
+.cal-omer-body { flex: 1; min-width: 0; }
+.cal-omer-title {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #CFFFE8; /* exact: .chrome-metal-emerald text */
+  text-shadow: 0 0 12px rgba(46, 255, 161, 0.35);
+}
+.cal-omer-sub { font-size: 0.78rem; color: var(--cal-ink-soft); margin-top: 0.1rem; }
+.cal-omer-break { color: #2EFFA1; font-weight: 700; }
+.cal-omer-track {
+  margin-top: 0.5rem;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--cal-surface-2);
+  border: 1px solid var(--cal-edge);
+  overflow: hidden;
+}
+.cal-omer-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #04321E 0%, #2EFFA1 70%, #FCECAF 100%);
+  box-shadow: 0 0 10px rgba(46, 255, 161, 0.55);
+}
+.cal-omer-ref {
+  flex: none;
+  align-self: flex-start;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  color: var(--cal-ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 480px) {
+  .cal-omer-ref { display: none; }
+  .cal-omer-n { font-size: 2rem; }
+}
+
+/* ── Day-view tabs (Planner | Journal) ──────────────────────────────── */
+.cal-dv-tabs {
+  display: inline-flex;
+  gap: 0.3rem;
+  padding: 0.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--cal-edge);
+  background: var(--cal-surface-2);
+  margin-bottom: 0.8rem;
+}
+.cal-dv-tab {
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.32rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--cal-ink-soft);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.cal-dv-tab-on {
+  color: #001026;
+  background: linear-gradient(100deg, #FCECAF 0%, #93C0FF 100%);
+  box-shadow: 0 0 14px rgba(147, 192, 255, 0.4);
+}
+.cal-dv-tabpanel { animation: cal-fade 0.18s ease; }
+@keyframes cal-fade { from { opacity: 0; } to { opacity: 1; } }
+.cal-dv-tabhint {
+  margin: 0 0 0.8rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--cal-ink-soft);
+}
+.cal-dv-tabhint strong { color: #FCECAF; }
+
+/* ── Journal ────────────────────────────────────────────────────────── */
+.cal-jrnl-compose {
+  border: 1px solid var(--cal-edge-bright);
+  border-radius: 12px;
+  background: color-mix(in srgb, #0A2D84 14%, transparent);
+  padding: 0.6rem 0.7rem;
+}
+.cal-jrnl-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  resize: vertical;
+  color: var(--cal-ink);
+  font-family: Lora, Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  min-height: 3.4rem;
+}
+.cal-jrnl-input:focus { outline: none; }
+.cal-jrnl-input::placeholder { color: color-mix(in srgb, #93C0FF 62%, transparent); font-style: italic; }
+.cal-jrnl-compose-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid var(--cal-edge);
+}
+.cal-jrnl-hint { font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cal-ink-soft); }
+.cal-jrnl-save {
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, #2EFFA1 45%, transparent);
+  background: color-mix(in srgb, #04321E 55%, transparent);
+  color: #2EFFA1;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease;
+}
+.cal-jrnl-save:hover:not(:disabled) { background: color-mix(in srgb, #2EFFA1 22%, #000); }
+.cal-jrnl-save:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.cal-jrnl-group { margin-top: 1rem; }
+.cal-jrnl-pastlabel { color: #FCECAF; }
+.cal-jrnl-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.cal-jrnl-entry {
+  position: relative;
+  border-left: 2px solid color-mix(in srgb, #93C0FF 55%, transparent);
+  border-radius: 0 8px 8px 0;
+  padding: 0.45rem 0.7rem;
+  background: color-mix(in srgb, #0A2D84 20%, transparent);
+}
+.cal-jrnl-past {
+  border-left-color: color-mix(in srgb, #FCECAF 55%, transparent);
+  background: linear-gradient(90deg, color-mix(in srgb, #645028 16%, transparent) 0%, transparent 100%);
+}
+.cal-jrnl-when { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.2rem; }
+.cal-jrnl-byear { font-size: 0.72rem; font-weight: 800; color: #FCECAF; letter-spacing: 0.03em; }
+.cal-jrnl-greg { font-size: 0.68rem; color: var(--cal-ink-soft); }
+.cal-jrnl-text {
+  margin: 0;
+  font-family: Lora, Georgia, serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--cal-ink);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.cal-jrnl-del { position: absolute; top: 0.35rem; right: 0.4rem; }

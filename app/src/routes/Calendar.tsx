@@ -28,12 +28,14 @@ import {
 import {
   buildDayDetail,
   buildLayerGrid,
+  computeOmer,
   fmtSunsetBoundary,
   fmtSunsetClock,
   type BaseLayer,
   type DayDetail,
   type LayerCell,
   type LayerGrid,
+  type OmerStatus,
 } from "../lib/calendar/day-view-model.ts";
 import {
   eventsOnBiblicalDate,
@@ -42,7 +44,7 @@ import {
   type BiblicalHistoryEvent,
 } from "../lib/calendar/biblical-history.ts";
 import { civilDayId, type PlannerItem, type PlannerItemKind } from "../lib/planner-store.ts";
-import { useDaysWithItems, usePlannerDay } from "../lib/usePlanner.ts";
+import { useDaysWithItems, useJournal, usePlannerDay } from "../lib/usePlanner.ts";
 
 /**
  * The EPIC calendar — the configurable biblical-calendar engine made visible.
@@ -66,13 +68,15 @@ import { useDaysWithItems, usePlannerDay } from "../lib/usePlanner.ts";
  */
 /**
  * Read shareable deep-link state from the URL query — lets a calendar day be
- * linked to directly (?base=…&reck=…&focus=YYYY-MM-DD&open=today|auto).
+ * linked to directly (?base=…&reck=…&focus=YYYY-MM-DD&open=today|auto&at=…).
+ * `at` time-travels the whole view to a given date (the clock freezes there).
  */
 function readQuery(): {
   base: BaseLayer;
   reck: ReckoningState;
   open: string | null;
   focus: Date | null;
+  at: Date | null;
 } {
   const q =
     typeof window !== "undefined"
@@ -84,13 +88,17 @@ function readQuery(): {
   if (r === "conjunction" || r === "crescent" || r === "rabbinic" || r === "enoch") {
     reck.month = r;
   }
-  let focus: Date | null = null;
-  const f = q.get("focus");
-  if (f && /^\d{4}-\d{2}-\d{2}$/.test(f)) {
-    const [y, m, d] = f.split("-").map(Number);
-    focus = new Date(Date.UTC(y, m - 1, d, 12));
-  }
-  return { base, reck, open: q.get("open"), focus };
+  const parseDate = (v: string | null): Date | null => {
+    if (v && /^\d{4}-\d{2}-\d{2}$/.test(v)) {
+      const [y, m, d] = v.split("-").map(Number);
+      return new Date(Date.UTC(y, m - 1, d, 12));
+    }
+    return null;
+  };
+  const at = parseDate(q.get("at"));
+  // `at` also seeds the focused month unless an explicit focus is given.
+  const focus = parseDate(q.get("focus")) ?? at;
+  return { base, reck, open: q.get("open"), focus, at };
 }
 
 type InitialQuery = ReturnType<typeof readQuery>;
@@ -121,7 +129,7 @@ export default function Calendar() {
   const initial = useMemo(() => readQuery(), []);
   const [reck, setReck] = useState<ReckoningState>(initial.reck);
   const [focus, setFocus] = useState<Date>(() => initial.focus ?? new Date());
-  const [now, setNow] = useState<Date>(() => new Date());
+  const [now, setNow] = useState<Date>(() => initial.at ?? new Date());
   const [base, setBase] = useState<BaseLayer>(initial.base);
   // Deep-link auto-open (?open=today|auto) resolves once, in the initializer —
   // build the grid for the initial focus and pick the day to open. Avoids a
@@ -135,11 +143,13 @@ export default function Calendar() {
       new URLSearchParams(window.location.search).get("compare") === "1",
   );
 
-  // Live tick — drives the countdown and keeps "today" honest.
+  // Live tick — drives the countdown and keeps "today" honest. Frozen when the
+  // view is time-travelled to a fixed instant via ?at=.
   useEffect(() => {
+    if (initial.at) return;
     const id = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [initial.at]);
 
   // Re-derive "today" only once a minute — the per-second tick drives the
   // live countdown, but the date and the month grid needn't rebuild every
@@ -156,6 +166,7 @@ export default function Calendar() {
   const todayCell = grid.cells.find((c) => c.isToday);
   const todayIsSabbath = !!todayCell?.morningSabbath;
   const nextMoed = todayResult.moedim[0];
+  const omer = useMemo(() => computeOmer(reck, today), [reck, today]);
 
   return (
     <div className="cal-root min-h-screen bg-[var(--reader-bg)] text-[var(--reader-text)]">
@@ -168,6 +179,7 @@ export default function Calendar() {
           isSabbath={todayIsSabbath}
           now={now}
           nextMoed={nextMoed}
+          omer={omer}
         />
         <CrescentWatch reck={reck} result={todayResult} now={now} setReck={setReck} />
         <LayerGridView
@@ -465,9 +477,10 @@ interface HeroProps {
   isSabbath: boolean;
   now: Date;
   nextMoed: Moed | undefined;
+  omer: OmerStatus | null;
 }
 
-function HeroToday({ reck, result, isSabbath, now, nextMoed }: HeroProps) {
+function HeroToday({ reck, result, isSabbath, now, nextMoed, omer }: HeroProps) {
   const bd = result.biblicalDate;
   const art = moonArt(now, 50);
   const sab = isSabbath
@@ -542,7 +555,43 @@ function HeroToday({ reck, result, isSabbath, now, nextMoed }: HeroProps) {
           )}
         </div>
       </div>
+
+      {omer && <OmerBanner omer={omer} />}
     </section>
+  );
+}
+
+/**
+ * The Omer count — shown only during the count season (Firstfruits → Shavuot).
+ * Emerald (the rising harvest blessing) with a gold day-numeral; no grey.
+ */
+function OmerBanner({ omer }: { omer: OmerStatus }) {
+  return (
+    <div className={"cal-omer" + (omer.isShavuot ? " cal-omer-shavuot" : "")}>
+      <div className="cal-omer-mark">
+        <span className="cal-omer-n">{omer.day}</span>
+        <span className="cal-omer-of">of&nbsp;50</span>
+      </div>
+      <div className="cal-omer-body">
+        <div className="cal-omer-title">
+          {omer.isShavuot ? "Shavuot — the fiftieth day" : `Day ${omer.day} of the Omer`}
+        </div>
+        <div className="cal-omer-sub">
+          {omer.isShavuot ? (
+            <>The count is fulfilled — the Feast of Weeks.</>
+          ) : (
+            <>
+              <span className="cal-omer-break">{omer.breakdown}</span> of the count ·
+              counting toward Shavuot
+            </>
+          )}
+        </div>
+        <div className="cal-omer-track" aria-hidden="true">
+          <div className="cal-omer-fill" style={{ width: `${(omer.day / 50) * 100}%` }} />
+        </div>
+      </div>
+      <div className="cal-omer-ref">Lev 23:15-16</div>
+    </div>
   );
 }
 
@@ -993,10 +1042,44 @@ function DayView({
         <DayViewSunset detail={detail} />
         <DayViewStatus detail={detail} />
         <OnThisDay events={detail.history} />
-        <Planner dayId={dayId} />
+        <DayViewTabs dayId={dayId} detail={detail} />
         <PlaceholderSlots />
       </div>
     </div>
+  );
+}
+
+/** Planner | Journal — two distinct surfaces for the day. */
+function DayViewTabs({ dayId, detail }: { dayId: string; detail: DayDetail }) {
+  const [tab, setTab] = useState<"planner" | "journal">("planner");
+  return (
+    <section className="cal-dv-section">
+      <div className="cal-dv-tabs" role="tablist">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === "planner"}
+          className={"cal-dv-tab" + (tab === "planner" ? " cal-dv-tab-on" : "")}
+          onClick={() => setTab("planner")}
+        >
+          Planner
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={tab === "journal"}
+          className={"cal-dv-tab" + (tab === "journal" ? " cal-dv-tab-on" : "")}
+          onClick={() => setTab("journal")}
+        >
+          Journal
+        </button>
+      </div>
+      {tab === "planner" ? (
+        <Planner dayId={dayId} />
+      ) : (
+        <Journal dayId={dayId} detail={detail} />
+      )}
+    </section>
   );
 }
 
@@ -1115,12 +1198,10 @@ function OnThisDay({ events }: { events: BiblicalHistoryEvent[] }) {
 function Planner({ dayId }: { dayId: string }) {
   const { day, add, toggle, remove } = usePlannerDay(dayId);
   return (
-    <section className="cal-dv-section">
-      <div className="cal-dv-section-head">
-        <h3 className="cal-dv-section-title">Planner</h3>
-        <span className="cal-dv-saved">saved on this device</span>
-      </div>
-
+    <div className="cal-dv-tabpanel">
+      <p className="cal-dv-tabhint">
+        Your day&rsquo;s plan and quick study notes. <span className="cal-dv-saved">saved on this device</span>
+      </p>
       <PlannerGroup
         kind="event"
         label="Events"
@@ -1141,13 +1222,117 @@ function Planner({ dayId }: { dayId: string }) {
       <PlannerGroup
         kind="note"
         label="Notes"
+        placeholder="Add a quick study note…"
         items={day.notes}
         onAdd={add}
         onToggle={toggle}
         onRemove={remove}
       />
-    </section>
+    </div>
   );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Journal — dated reflective entries anchored to the BIBLICAL date, so past
+// years' reflections on the same appointed day surface together.
+// ───────────────────────────────────────────────────────────────────────
+
+function Journal({ dayId, detail }: { dayId: string; detail: DayDetail }) {
+  const anchor = {
+    year: detail.biblical.year,
+    month: detail.biblical.month,
+    day: detail.biblical.day,
+  };
+  const { thisYear, priorYears, add, remove } = useJournal(dayId, anchor);
+  const [text, setText] = useState("");
+  const submit = () => {
+    add(text);
+    setText("");
+  };
+
+  return (
+    <div className="cal-dv-tabpanel">
+      <p className="cal-dv-tabhint">
+        Reflections anchored to <strong>{detail.monthName.split(" ")[0]} {detail.biblical.day}</strong> —
+        they return on this appointed day every year. <span className="cal-dv-saved">saved on this device</span>
+      </p>
+
+      <div className="cal-jrnl-compose">
+        <textarea
+          className="cal-jrnl-input"
+          value={text}
+          placeholder="Write your reflection for this day…"
+          rows={3}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) submit();
+          }}
+        />
+        <div className="cal-jrnl-compose-foot">
+          <span className="cal-jrnl-hint">⌘↵ to save</span>
+          <button type="button" className="cal-jrnl-save" onClick={submit} disabled={!text.trim()}>
+            Save entry
+          </button>
+        </div>
+      </div>
+
+      {thisYear.length > 0 && (
+        <div className="cal-jrnl-group">
+          <div className="cal-pl-label">This year · {detail.biblical.year}</div>
+          <ul className="cal-jrnl-list">
+            {thisYear.map((e) => (
+              <li key={e.id} className="cal-jrnl-entry">
+                <p className="cal-jrnl-text">{e.text}</p>
+                <button
+                  type="button"
+                  className="cal-pl-del cal-jrnl-del"
+                  onClick={() => remove(e.id)}
+                  aria-label="Remove entry"
+                >
+                  ✕
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <div className="cal-jrnl-group">
+        <div className="cal-pl-label cal-jrnl-pastlabel">
+          ✦ On this day in years past
+        </div>
+        {priorYears.length === 0 ? (
+          <p className="cal-dv-empty">
+            No entries from prior years yet. What you write today will return here on this
+            same biblical date next year.
+          </p>
+        ) : (
+          <ul className="cal-jrnl-list">
+            {priorYears.map((e) => (
+              <li key={e.id} className="cal-jrnl-entry cal-jrnl-past">
+                <div className="cal-jrnl-when">
+                  <span className="cal-jrnl-byear">Year {e.bYear}</span>
+                  <span className="cal-jrnl-greg">{fmtPastEntryDate(e.dayId)}</span>
+                </div>
+                <p className="cal-jrnl-text">{e.text}</p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/** "Sep 12, 2025" from a stored civil-day id (YYYY-MM-DD), for a past entry. */
+function fmtPastEntryDate(dayIdStr: string): string {
+  const [y, m, d] = dayIdStr.split("-").map(Number);
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "UTC",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(new Date(Date.UTC(y, m - 1, d, 12)));
 }
 
 function PlannerGroup({
@@ -1158,6 +1343,7 @@ function PlannerGroup({
   onToggle,
   onRemove,
   withTime = false,
+  placeholder,
 }: {
   kind: PlannerItemKind;
   label: string;
@@ -1166,6 +1352,7 @@ function PlannerGroup({
   onToggle: (item: PlannerItem) => void;
   onRemove: (id: string) => void;
   withTime?: boolean;
+  placeholder?: string;
 }) {
   const [text, setText] = useState("");
   const [time, setTime] = useState("");
@@ -1217,7 +1404,7 @@ function PlannerGroup({
           className="cal-pl-input"
           type="text"
           value={text}
-          placeholder={`Add ${kind}…`}
+          placeholder={placeholder ?? `Add ${kind}…`}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter") submit();
