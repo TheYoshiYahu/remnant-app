@@ -5906,6 +5906,1553 @@ SELECT t.id, x.id, 9, E'Acts 27:24 — *Fear not, Paul; thou must be brought bef
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_acts_24.sql (S217 Acts 24) -----
+-- =====================================================================
+-- S217 minion — ACTS 24 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Anchor chapter: ACTS 24.  Tag: a24 (temp view _s217_a24_lookup).  Sort band: 5850-5874 (step 3).
+-- Source is ALWAYS the canon Acts 24 verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- FRAMING (Red Lines #4/#5/#6, the Dropped-Paul correction, the resurrection hope):
+--  * Acts 24:14 is the keystone: Paul EXPLICITLY confesses *that after the way which they call
+--    heresy, so worship I the Elohim (God) of my fathers, believing all things which are written
+--    in the law and in the prophets* (Acts 24:14). The whole chapter frames Paul as the
+--    Torah-and-Prophets-faithful witness; the "heresy"/"sect of the Nazarenes" charge is the
+--    false naming of the true Way. The Paul who abolished the Torah does not exist — here he
+--    declares he believes ALL that is written in the law and the prophets and has offended
+--    nothing *neither against the law of the Yahudim (Jews), neither against the temple* (24:20,
+--    cf. 24:12-13,18). Never let the inherited antinomian Paul surface.
+--  * The resurrection hope (24:15,21) is the Tanakh hope, not a new doctrine: *there shall be a
+--    resurrection of the dead, both of the just and unjust* (24:15) = Daniel 12:2's *many of them
+--    that sleep in the dust of the earth shall awake.* It is *the hope of the promise made of
+--    Elohim (God) unto our fathers* to which *our twelve tribes* hope to come (Acts 26:6-7) — the
+--    twelve-tribe gathering hope, never a graft of a new people. The 2 Maccabees 7 martyrs who
+--    die *for his laws* expecting to be *raised up again* bind Torah-faithfulness to the
+--    resurrection hope exactly as Paul does here.
+--  * Felix trembling at *righteousness, temperance, and judgment to come* (24:25): the judgment
+--    is real and operative (Ecclesiastes 12:14; the resurrection of the unjust, Daniel 12:2) —
+--    grace does not stand the believer outside the judgment. No sola-fide truncation.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 24:
+--   v.1-9   Tertullus accuses (pestilent fellow / sect of the Nazarenes / profane the temple)
+--           Tanakh: none warranted (the false-naming-of-the-Way is carried in the 24:14 Way thread via Acts 9:2 / 22:4)
+--           Extras: none warranted   NT: none added here (narrative accusation; the Way thread anchors at 24:14)
+--   v.10-13 Paul: twelve days, found me neither in temple disputing nor stirring, cannot prove it
+--           Tanakh: none warranted   Extras: none warranted   NT: none added (the offended-nothing point carried at 24:14/24:20 Way thread)
+--   v.14    KEYSTONE — the way they call heresy / worship the Elohim (God) of my fathers
+--           Tanakh: Isaiah 26:7, Isaiah 26:8 (the way of the just, waiting in the way of thy judgments)
+--           Extras: none warranted
+--           NT: Acts 9:2, Acts 22:4 (this Way persecuted/named); Luke 24:27, Luke 24:44, Acts 26:22, Acts 28:23 (believing-all-written thread)
+--   v.15    a resurrection of the dead, both of the just and unjust
+--           Tanakh: Daniel 12:2, Job 19:25, Job 19:26, Isaiah 26:19
+--           Extras: 2 Maccabees 7:9, 2 Maccabees 7:14, 2 Maccabees 7:23 (the King of the world shall raise us up — for his laws)
+--           NT: Acts 26:6, Acts 26:7, Acts 26:8 (the hope of the promise, the twelve tribes)
+--   v.16    a conscience void of offence toward Elohim (God) and toward men
+--           Tanakh: none added (carried thematically in the Torah-faithful/the-Way framing)   Extras: none warranted   NT: none warranted
+--   v.17-19 came to bring alms to my nation and offerings; found purified in the temple
+--           Tanakh: none warranted   Extras: none warranted   NT: Acts 21:24, Acts 21:26 weighed (Paul keeps the law / purifies in the temple / offering) — carried in the believing-all-written thread member at 24:14 prose, not separately added (band economy)
+--   v.20-21 let them say what evil; except this one voice — the resurrection
+--           Tanakh: (resurrection carried at 24:15)   Extras: (carried at 24:15)   NT: (carried at 24:15)
+--   v.22-24 Felix defers; hears Paul concerning the faith in Messiah (Christ)
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted (narrative)
+--   v.25    righteousness, temperance, and judgment to come — Felix trembled
+--           Tanakh: Ecclesiastes 12:14, Daniel 12:2
+--           Extras: none warranted   NT: none warranted
+--   v.26-27 Felix hopes for a bribe; leaves Paul bound
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted (narrative)
+--
+-- THREADS (slug -> target libraries):
+--   5850 acts-24-the-way-which-they-call-heresy-the-true-worship-of-the-god-of-the-fathers  (NT, Acts<->Acts + Tanakh)
+--   5853 acts-24-believing-all-things-written-the-law-and-the-prophets-faithful-witness     (NT)
+--   5856 acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope                  (Tanakh + extras + NT)  [tier_required extras]
+--   5859 acts-24-righteousness-temperance-and-judgment-to-come-felix-trembled               (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-24-the-way-which-they-call-heresy-the-true-worship-of-the-god-of-the-fathers
+  ('canon', 'acts', 24, 14, 'canon', 'acts', 9, 2, 'free', E'*And desired of him letters to Damascus to the synagogues, that if he found any of this way, whether they were men or women, he might bring them bound unto Jerusalem.* (Acts 9:2). Tertullus brands Paul *a ringleader of the sect of the Nazarenes* (Acts 24:5), but Paul answers by naming it rightly: *after the way which they call heresy, so worship I the Elohim (God) of my fathers* (Acts 24:14). It is *this way* Saul himself once hunted men and women to bind — the very Way he now confesses is the true worship of the Elohim (God) of the fathers. The accusers'' word for it is *heresy;* the thing itself is the faith of Abraham, Isaac, and Jacob.'),
+  ('canon', 'acts', 24, 14, 'canon', 'acts', 22, 4, 'free', E'*And I persecuted this way unto the death, binding and delivering into prisons both men and women.* (Acts 22:4). Paul testifies that he once *persecuted this way unto the death* — and now stands accused of belonging to it, *the way which they call heresy* (Acts 24:14). The name *heresy* is the false naming of the true Way; the man who once jailed those who walked it now worships *the Elohim (God) of my fathers* in it, the same covenant faith he was raised in, not a departure from it.'),
+  ('canon', 'acts', 24, 14, 'canon', 'isaiah', 26, 7, 'free', E'*The way of the just is uprightness: thou, most upright, dost weigh the path of the just.* (Isaiah 26:7). What Tertullus calls *heresy* Paul calls *the way which they call heresy, so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets* (Acts 24:14). Isaiah names this Way long before: *the way of the just,* the path the Most Upright himself weighs. The Way is not a new sect breaking from the fathers'' faith; it is the upright path the prophets already mapped.'),
+  ('canon', 'acts', 24, 14, 'canon', 'isaiah', 26, 8, 'free', E'*Yea, in the way of thy judgments, O Yahuah (LORD), have we waited for thee; the desire of our soul is to thy name, and to the remembrance of thee.* (Isaiah 26:8). Paul confesses he worships *the Elohim (God) of my fathers* in *the way which they call heresy* (Acts 24:14) — the very posture Isaiah voices for the faithful, waiting on Yahuah (LORD) *in the way of thy judgments.* The Way Paul walks is the waiting-on-Yahuah of the prophets, with the resurrection hope (Acts 24:15) its forward look, not an abandonment of the law and the prophets he names in the same breath.'),
+  -- thread: acts-24-believing-all-things-written-the-law-and-the-prophets-faithful-witness
+  ('canon', 'acts', 24, 14, 'canon', 'luke', 24, 27, 'free', E'*And beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself.* (Luke 24:27). Paul stakes his whole defense on *believing all things which are written in the law and in the prophets* (Acts 24:14) — the very scriptures the risen Messiah (Christ) opened on the Emmaus road, *beginning at Moses and all the prophets.* Paul believes nothing the Master did not first unfold from Moses and the prophets; the faith they call heresy is the law and the prophets read whole.'),
+  ('canon', 'acts', 24, 14, 'canon', 'luke', 24, 44, 'free', E'*And he said unto them, These are the words which I spake unto you, while I was yet with you, that all things must be fulfilled, which were written in the law of Moses, and in the prophets, and in the psalms, concerning me.* (Luke 24:44). When Paul says he is *believing all things which are written in the law and in the prophets* (Acts 24:14), he believes exactly what the Master named must be fulfilled — *all things … written in the law of Moses, and in the prophets, and in the psalms.* The accusation of *heresy* falls against a man whose only confession is the whole of Moses and the prophets, fulfilled.'),
+  ('canon', 'acts', 24, 14, 'canon', 'acts', 26, 22, 'free', E'*Having therefore obtained help of Elohim (God), I continue unto this day, witnessing both to small and great, saying none other things than those which the prophets and Moses did say should come:* (Acts 26:22). Before Felix Paul confesses he believes *all things which are written in the law and in the prophets* (Acts 24:14); before Agrippa he says he witnesses *none other things than those which the prophets and Moses did say should come.* The same testimony twice over: Paul adds nothing to Moses and the prophets, and takes nothing from them — the Torah-and-Prophets-faithful witness, not a teacher against them.'),
+  ('canon', 'acts', 24, 14, 'canon', 'acts', 28, 23, 'free', E'*And when they had appointed him a day, there came many to him into his lodging; to whom he expounded and testified the kingdom of Elohim (God), persuading them concerning Yahusha (Jesus), both out of the law of Moses, and out of the prophets, from morning till evening.* (Acts 28:23). Paul''s confession before Felix — *believing all things which are written in the law and in the prophets* (Acts 24:14) — is the same well he draws from to the end: in Rome he persuades concerning Yahusha (Jesus) *both out of the law of Moses, and out of the prophets, from morning till evening.* The Way they call heresy is Moses and the prophets opened, never set aside.'),
+  -- thread: acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope
+  ('canon', 'acts', 24, 15, 'canon', 'daniel', 12, 2, 'free', E'*And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2). Paul''s hope is no new doctrine: *that there shall be a resurrection of the dead, both of the just and unjust* (Acts 24:15). Daniel saw it first — those who sleep in the dust awakened, *some to everlasting life, and some to shame and everlasting contempt.* The just and the unjust both raised: the resurrection Paul holds is the hope the prophets already spoke, the Tanakh''s own.'),
+  ('canon', 'acts', 24, 15, 'canon', 'job', 19, 25, 'free', E'*For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth:* (Job 19:25). Long before Paul stood before Felix declaring *hope toward Elohim (God) … that there shall be a resurrection of the dead* (Acts 24:15), Job confessed it from the ash-heap: *my redeemer liveth, and … he shall stand at the latter day upon the earth.* The resurrection hope runs back to the oldest words of the fathers; Paul holds what Job held.'),
+  ('canon', 'acts', 24, 15, 'canon', 'job', 19, 26, 'free', E'*And though after my skin worms destroy this body, yet in my flesh shall I see Elohim (God):* (Job 19:26). Paul''s *resurrection of the dead, both of the just and unjust* (Acts 24:15) is the very thing Job awaited in his flesh: *though after my skin worms destroy this body, yet in my flesh shall I see Elohim (God).* Bodily resurrection — the dead raised to see Elohim (God) — is the ancient hope of the covenant, not a thing Paul invented to defend himself.'),
+  ('canon', 'acts', 24, 15, 'canon', 'isaiah', 26, 19, 'free', E'*Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* (Isaiah 26:19). When Paul names *a resurrection of the dead* (Acts 24:15) he names what Isaiah sang: *thy dead men shall live … awake and sing, ye that dwell in dust … the earth shall cast out the dead.* The prophets summoned the dust to wake; Paul''s hope is their song, the rising of the dead the Tanakh already promised.'),
+  ('canon', 'acts', 24, 15, 'apocrypha', '2-maccabees', 7, 9, 'extras', E'*And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* (2 Maccabees 7:9). Paul holds *that there shall be a resurrection of the dead, both of the just and unjust* (Acts 24:15) — the same hope that braced the brothers who died under Antiochus: *the King of the world shall raise us up, who have died for his laws, to everlasting life.* The resurrection hope and faithfulness to the law stand together in their mouths as in Paul''s: those who keep his laws look to be raised.'),
+  ('canon', 'acts', 24, 15, 'apocrypha', '2-maccabees', 7, 14, 'extras', E'*So when he was ready to die he said thus, It is good, being put to death by men, to look for hope from Yahuah (God) to be raised up again by him: as for you, you shall have no resurrection to life.* (2 Maccabees 7:14). Paul''s *resurrection of the dead, both of the just and unjust* (Acts 24:15) is voiced exactly here: *to look for hope from Yahuah (God) to be raised up again by him* for the faithful, while to the persecutor *you shall have no resurrection to life.* The just raised to life and the unjust to judgment — the two-fold resurrection Paul confesses was already the hope of those who died for the laws of the fathers.'),
+  ('canon', 'acts', 24, 15, 'apocrypha', '2-maccabees', 7, 23, 'extras', E'*But doubtless the Creator of the world, who formed the generation of man, and found out the beginning of all things, will also of his own mercy give you breath and life again, as you now regard not your own selves for his laws'' sake.* (2 Maccabees 7:23). The mother''s charge to her sons frames Paul''s hope of *a resurrection of the dead* (Acts 24:15): the Creator *will also of his own mercy give you breath and life again,* to those who *regard not your own selves for his laws'' sake.* The resurrection is the Creator''s mercy upon the law-faithful — the very hope toward Elohim (God) Paul says his accusers *themselves also allow* (Acts 24:15).'),
+  ('canon', 'acts', 24, 15, 'canon', 'acts', 26, 6, 'free', E'*And now I stand and am judged for the hope of the promise made of Elohim (God) unto our fathers:* (Acts 26:6). Paul''s *hope toward Elohim (God) … that there shall be a resurrection of the dead* (Acts 24:15) he names before Agrippa as *the hope of the promise made of Elohim (God) unto our fathers.* It is the fathers'' own promise he is on trial for — the resurrection hope is covenant hope, the inheritance of Abraham, Isaac, and Jacob, not a charge he need apologize for.'),
+  ('canon', 'acts', 24, 15, 'canon', 'acts', 26, 7, 'free', E'*Unto which promise our twelve tribes, instantly serving Elohim (God) day and night, hope to come. For which hope''s sake, king Agrippa, I am accused of the Yahudim (Jews).* (Acts 26:7). The resurrection hope Paul confesses before Felix (Acts 24:15) belongs to *our twelve tribes,* who *instantly serving Elohim (God) day and night, hope to come* unto the promise. The hope is the twelve-tribe hope — all Yashar''el (Israel), serving and waiting to come into the promise of the fathers — and Paul is *accused of the Yahudim (Jews)* for holding it.'),
+  ('canon', 'acts', 24, 15, 'canon', 'acts', 26, 8, 'free', E'*Why should it be thought a thing incredible with you, that Elohim (God) should raise the dead?* (Acts 26:8). The same question stands under Paul''s defense before Felix, where his one confessed offence is *the hope … that there shall be a resurrection of the dead, both of the just and unjust* (Acts 24:15). Before Agrippa he presses it plainly: *Why should it be thought a thing incredible with you, that Elohim (God) should raise the dead?* The God of the fathers who formed man can raise him — the resurrection is no incredible thing but the covenant''s own hope.'),
+  -- thread: acts-24-righteousness-temperance-and-judgment-to-come-felix-trembled
+  ('canon', 'acts', 24, 25, 'canon', 'ecclesiastes', 12, 14, 'free', E'*For Elohim (God) shall bring every work into judgment, with every secret thing, whether it be good, or whether it be evil.* (Ecclesiastes 12:14). As Paul *reasoned of righteousness, temperance, and judgment to come, Felix trembled* (Acts 24:25). The trembling is right, for *Elohim (God) shall bring every work into judgment, with every secret thing.* The judgment to come is no abstraction the believer stands outside of; it weighs every work, good and evil — the same reckoning the whole duty of man is ordered toward: *Fear Elohim (God), and keep his commandments* (Ecclesiastes 12:13).'),
+  ('canon', 'acts', 24, 25, 'canon', 'daniel', 12, 2, 'free', E'*And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2). When Paul reasons *of righteousness, temperance, and judgment to come,* and *Felix trembled* (Acts 24:25), the judgment he presses is the one Daniel saw: the dust awakened, *some to everlasting life, and some to shame and everlasting contempt.* The resurrection of the unjust that Paul confessed (Acts 24:15) is the ground of the judgment to come that makes a governor tremble — the same two-fold waking, to life or to contempt.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-24-the-way-which-they-call-heresy-the-true-worship-of-the-god-of-the-fathers',
+       E'The way which they call heresy — the true worship of the Elohim (God) of the fathers',
+       E'Tertullus stands before Felix and brands Paul *a pestilent fellow, and a mover of sedition among all the Yahudim (Jews) throughout the world, and a ringleader of the sect of the Nazarenes* (Acts 24:5). Paul answers not by denying the Way but by naming it rightly: *But this I confess unto thee, that after the way which they call heresy, so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets* (Acts 24:14). The accusers'' word is *heresy;* the thing itself is the worship of the Elohim (God) of the fathers — the faith of Abraham, Isaac, and Jacob, not a sect breaking from it. It is *this way* (Acts 9:2) that Saul himself once hunted, *I persecuted this way unto the death, binding and delivering into prisons both men and women* (Acts 22:4) — and the man who jailed those who walked it now confesses it is the true Way. The prophets mapped it long before: *The way of the just is uprightness: thou, most upright, dost weigh the path of the just* (Isaiah 26:7), and the faithful walk it waiting on Yahuah (LORD) — *in the way of thy judgments, O Yahuah (LORD), have we waited for thee; the desire of our soul is to thy name* (Isaiah 26:8). The Way they call heresy is the upright path the prophets already named; Paul has not left the law and the prophets but kept them whole, *neither against the law of the Yahudim (Jews), neither against the temple, nor yet against Cæsar* having offended (Acts 24:20, cf. 24:12-13).',
+       sv.verse_id, ev.verse_id, 'free', 5850
+  FROM _s217_a24_lookup sv, _s217_a24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=24 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-24-believing-all-things-written-the-law-and-the-prophets-faithful-witness',
+       E'Believing all things written in the law and the prophets — the faithful witness',
+       E'The keystone of Paul''s whole defense is one clause: *so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets* (Acts 24:14). This is the man the systems would later remake into a teacher against the Torah — yet here, under oath before a governor, his confession is that he believes *all things which are written in the law and in the prophets.* Nothing subtracted, nothing set aside. It is the very scripture the risen Messiah (Christ) opened on the Emmaus road: *beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself* (Luke 24:27), and again *all things must be fulfilled, which were written in the law of Moses, and in the prophets, and in the psalms, concerning me* (Luke 24:44). Paul believes exactly what the Master named must be fulfilled. He says the same before Agrippa — *witnessing both to small and great, saying none other things than those which the prophets and Moses did say should come* (Acts 26:22) — and to the end in Rome he is found *persuading them concerning Yahusha (Jesus), both out of the law of Moses, and out of the prophets, from morning till evening* (Acts 28:23). The charge of *heresy* falls against a man whose only confession is the whole of Moses and the prophets, read whole and fulfilled. This is the Torah-and-Prophets-faithful witness, not a departure from the covenant he was raised in.',
+       sv.verse_id, ev.verse_id, 'free', 5853
+  FROM _s217_a24_lookup sv, _s217_a24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=24 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope',
+       E'A resurrection of the just and the unjust — the Tanakh hope',
+       E'In the same breath as his confession of the law and the prophets, Paul names his hope: *And have hope toward Elohim (God), which they themselves also allow, that there shall be a resurrection of the dead, both of the just and unjust* (Acts 24:15) — the one charge he will own, *Touching the resurrection of the dead I am called in question by you this day* (Acts 24:21). This is no new doctrine but the oldest hope of the fathers. Daniel saw it: *many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2) — the just and the unjust both raised. Job confessed it from the ash-heap: *I know that my redeemer liveth, and that he shall stand at the latter day upon the earth* (Job 19:25), *and though after my skin worms destroy this body, yet in my flesh shall I see Elohim (God)* (Job 19:26). Isaiah sang it: *Thy dead men shall live … Awake and sing, ye that dwell in dust … and the earth shall cast out the dead* (Isaiah 26:19). And in the days of Antiochus the brothers who *died for his laws* held the same hope to the last gasp — *the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9), *to look for hope from Yahuah (God) to be raised up again by him* while the persecutor has *no resurrection to life* (2 Maccabees 7:14); their mother charging them that the Creator *will also of his own mercy give you breath and life again* for his laws'' sake (2 Maccabees 7:23). The resurrection hope and faithfulness to the law stand together in their mouths as in Paul''s. And before Agrippa Paul names whose hope it is: *the hope of the promise made of Elohim (God) unto our fathers* (Acts 26:6), *unto which promise our twelve tribes, instantly serving Elohim (God) day and night, hope to come* (Acts 26:7) — *Why should it be thought a thing incredible with you, that Elohim (God) should raise the dead?* (Acts 26:8). The resurrection is the twelve-tribe hope, the inheritance of all Yashar''el (Israel), not a charge to apologize for.',
+       sv.verse_id, ev.verse_id, 'extras', 5856
+  FROM _s217_a24_lookup sv, _s217_a24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=24 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-24-righteousness-temperance-and-judgment-to-come-felix-trembled',
+       E'Righteousness, temperance, and judgment to come — Felix trembled',
+       E'When Felix sends for Paul and hears him *concerning the faith in Messiah (Christ)* (Acts 24:24), Paul does not flatter him: *And as he reasoned of righteousness, temperance, and judgment to come, Felix trembled, and answered, Go thy way for this time; when I have a convenient season, I will call for thee* (Acts 24:25). The trembling is right, for the judgment to come is real and weighs every life. The conclusion of the whole matter the wise man named ends here: *Fear Elohim (God), and keep his commandments: for this is the whole duty of man. For Elohim (God) shall bring every work into judgment, with every secret thing, whether it be good, or whether it be evil* (Ecclesiastes 12:13-14). And the judgment is no abstraction — it is the two-fold waking Daniel saw, *many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2). The resurrection of the unjust that Paul had already confessed (Acts 24:15) is the very ground of the judgment to come that makes a governor tremble. There is no standing outside it; righteousness and temperance are weighed, every secret thing is brought into judgment, and a man does well to tremble and turn — though Felix, hoping rather for a bribe (Acts 24:26), put off the convenient season and left Paul bound.',
+       sv.verse_id, ev.verse_id, 'free', 5859
+  FROM _s217_a24_lookup sv, _s217_a24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=24 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-24-the-way-which-they-call-heresy-the-true-worship-of-the-god-of-the-fathers
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 9:2 — *if he found any of this way … he might bring them bound unto Jerusalem* the Way Saul once hunted is the Way he now confesses (Acts 24:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-the-way-which-they-call-heresy-the-true-worship-of-the-god-of-the-fathers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=9 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 22:4 — *I persecuted this way unto the death* the name *heresy* is the false naming of the true Way Paul once jailed men for (Acts 24:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-the-way-which-they-call-heresy-the-true-worship-of-the-god-of-the-fathers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=22 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 26:7 — *The way of the just is uprightness* the prophets mapped this Way long before the accusers called it heresy (Acts 24:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-the-way-which-they-call-heresy-the-true-worship-of-the-god-of-the-fathers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 26:8 — *in the way of thy judgments, O Yahuah (LORD), have we waited for thee* the Way Paul walks is the prophets'' waiting on Yahuah (Acts 24:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-the-way-which-they-call-heresy-the-true-worship-of-the-god-of-the-fathers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-24-believing-all-things-written-the-law-and-the-prophets-faithful-witness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 24:27 — *beginning at Moses and all the prophets, he expounded … the things concerning himself* the scriptures Paul believes are the ones the risen Master opened (Acts 24:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-believing-all-things-written-the-law-and-the-prophets-faithful-witness'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 24:44 — *all things … written in the law of Moses, and in the prophets, and in the psalms, concerning me* Paul believes exactly what the Master named must be fulfilled (Acts 24:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-believing-all-things-written-the-law-and-the-prophets-faithful-witness'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=44
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 26:22 — *saying none other things than those which the prophets and Moses did say should come* the same Torah-and-Prophets witness before Agrippa (Acts 24:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-believing-all-things-written-the-law-and-the-prophets-faithful-witness'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 28:23 — *persuading them concerning Yahusha (Jesus), both out of the law of Moses, and out of the prophets* the same well drawn from to the end in Rome (Acts 24:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-believing-all-things-written-the-law-and-the-prophets-faithful-witness'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=28 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 12:2 — *many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame* the just and unjust both raised, the prophet''s own hope (Acts 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 19:25 — *I know that my redeemer liveth, and … he shall stand at the latter day upon the earth* the resurrection hope from the oldest words of the fathers (Acts 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=19 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Job 19:26 — *yet in my flesh shall I see Elohim (God)* bodily resurrection, the dead raised to see Elohim (God) (Acts 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=19 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 26:19 — *Thy dead men shall live … Awake and sing, ye that dwell in dust* the prophets summoned the dust to wake; Paul''s hope is their song (Acts 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Maccabees 7:9 — *the King of the world shall raise us up, who have died for his laws, to everlasting life* resurrection hope and faithfulness to the law together, as in Paul (Acts 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-maccabees' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'2 Maccabees 7:14 — *to look for hope from Yahuah (God) to be raised up again by him: as for you, you shall have no resurrection to life* the just raised, the unjust not — Paul''s two-fold hope (Acts 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-maccabees' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'2 Maccabees 7:23 — *the Creator … will also of his own mercy give you breath and life again … for his laws'' sake* the resurrection as the Creator''s mercy upon the law-faithful (Acts 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-maccabees' AND tv.chapter_number=7 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'Acts 26:6 — *the hope of the promise made of Elohim (God) unto our fathers* the resurrection is the fathers'' own promise (Acts 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 9, E'Acts 26:7 — *unto which promise our twelve tribes, instantly serving Elohim (God) day and night, hope to come* the resurrection is the twelve-tribe hope of all Yashar''el (Israel) (Acts 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 10, E'Acts 26:8 — *Why should it be thought a thing incredible with you, that Elohim (God) should raise the dead?* the God of the fathers who formed man can raise him (Acts 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-a-resurrection-of-the-just-and-the-unjust-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-24-righteousness-temperance-and-judgment-to-come-felix-trembled
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ecclesiastes 12:14 — *Elohim (God) shall bring every work into judgment, with every secret thing* the judgment to come weighs every work; Felix does well to tremble (Acts 24:25).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-righteousness-temperance-and-judgment-to-come-felix-trembled'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=12 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:2 — *some to everlasting life, and some to shame and everlasting contempt* the resurrection of the unjust is the ground of the judgment that makes a governor tremble (Acts 24:25, cf. 24:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a24_lookup sv, _s217_a24_lookup tv
+ WHERE t.slug='acts-24-righteousness-temperance-and-judgment-to-come-felix-trembled'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=24 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_25.sql (S217 Acts 25) -----
+-- =====================================================================
+-- S217 minion — ACTS 25 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Anchor chapter: ACTS 25.  Tag: a25 (temp view _s217_a25_lookup).  Sort band: 5875-5881.
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+-- (Acts 25 lands all-canon targets — every row 'free', every thread 'free'.)
+--
+-- Acts 25 is mostly legal-procedural narration: Festus arrives; the Yahudim (Jews) renew the
+-- plot (the lying-in-wait of ch. 23 continued); Paul answers that he has offended nothing
+-- against the law, the temple, or Caesar; Paul appeals unto Caesar (the providential turn that
+-- carries him to Rome as Yahuah (Lord) said he must); Festus lays the cause before Agrippa and
+-- reduces the whole charge to "one Yahusha, dead, whom Paul affirmed alive" — the resurrection
+-- on trial. The load-bearing weight is thin; "none warranted" is the right answer for the
+-- procedural verses. THREE threads curated; the rest recorded as weighed and not added.
+--
+-- WATCHPOINTS (the dropped-Paul diagnostic, Christology, resurrection):
+--  * 25:8 "Neither against the law of the Yahudim (Jews) ... have I offended any thing at all"
+--    is the DROPPED-PAUL thread: Paul the Torah-observant Benjamite never abandoned the law —
+--    the same man who worshipped the Elohim (God) of the fathers, believing all written in the
+--    law and the prophets (24:14), who committed nothing against the customs of the fathers
+--    (28:17). The contradiction the inherited reading hangs on Paul is the interpreter's, not
+--    Paul's. NEVER let Paul read as anti-Torah.
+--  * 25:11-12 "I appeal unto Cæsar ... unto Cæsar shalt thou go" is the providence the Formed
+--    himself foretold: Yahuah (Lord) stood by Paul and said *so must thou bear witness also at
+--    Rome* (23:11); the storm-angel repeats *thou must be brought before Cæsar* (27:24). The
+--    appeal is not Paul escaping but the Lord's word being carried to the nations' capital —
+--    the witness brought to Rome as he said it must.
+--  * 25:19 the whole charge is "one Yahusha (Jesus), which was dead, whom Paul affirmed to be
+--    alive" — the resurrection is the entire question. This is the hope of Yashar'el (Israel)
+--    (26:6-8), the awaking of them that sleep in the dust (Daniel 12:2), the Messiah the first
+--    to rise (26:23). The Sadducee-and-Roman cannot grasp the risen One; the framework reads
+--    the resurrection as the Tanakh hope of the fathers vindicated in the Formed who took on
+--    flesh, died, and rose — never a Greek immortal-soul abstraction.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 25:
+--   v.1-5   Festus to Jerusalem; the renewed plot/lying-in-wait
+--           Tanakh: none warranted (the conspiracy carried in the ch.23 Acts<->Acts witness)  Extras: none warranted  NT: none added (Acts 23:12-15 weighed — the same plot; carried thematically in the appeal thread, not a separate add)
+--   v.6-7   judgment seat; grievous complaints they could not prove
+--           Tanakh: Psalm 35:11 weighed (false witnesses rose up; charged what I knew not) — narrative-parallel, framework weight thin, not added  Extras: none warranted  NT: none warranted
+--   v.8     "Neither against the law ... have I offended any thing at all"
+--           Tanakh: none added (the law-faithfulness carried by the NT Paul-witness targets)  Extras: none warranted  NT: Acts 24:14, Acts 28:17  [DROPPED-PAUL thread]
+--   v.9-10  "Wilt thou go up to Jerusalem"; "I stand at Cæsar's judgment seat"
+--           Tanakh: none warranted  Extras: none warranted  NT: none added (carried in the appeal thread)
+--   v.11-12 "I appeal unto Cæsar ... unto Cæsar shalt thou go"
+--           Tanakh: none warranted  Extras: none warranted  NT: Acts 23:11, Acts 27:24  [APPEAL/SENDING-TO-ROME thread]
+--   v.13-18 Agrippa and Bernice; Festus rehearses the cause to the king
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted (procedural rehearsal)
+--   v.19    "one Yahusha (Jesus), which was dead, whom Paul affirmed to be alive"
+--           Tanakh: Daniel 12:2 (they that sleep in the dust shall awake)  Extras: none warranted (2 Maccabees 7 resurrection-hope weighed — carried, not added; the Tanakh + NT witnesses are load-bearing here)  NT: Acts 24:15, Acts 26:8, Acts 26:23  [RESURRECTION-ON-TRIAL thread]
+--   v.20-22 Festus doubts; Paul appealed to Augustus; Agrippa "I would also hear the man myself"
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted (procedural)
+--   v.23-27 the hearing convened; "no certain thing to write unto my lord"; unreasonable to send a prisoner without crimes
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted (procedural; the no-cause-of-death verdict echoed in 26:31 / 28:18, carried in the appeal thread's prose)
+--
+-- THREADS (slug -> target libraries):
+--   5875 acts-25-i-have-offended-nothing-against-the-law-the-torah-faithful-paul   (NT, Acts<->Acts)
+--   5878 acts-25-i-appeal-unto-caesar-so-must-thou-bear-witness-at-rome            (NT, Acts<->Acts)
+--   5881 acts-25-one-yahusha-dead-whom-paul-affirmed-alive-the-resurrection-on-trial (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-25-i-have-offended-nothing-against-the-law-the-torah-faithful-paul
+  ('canon', 'acts', 25, 8, 'canon', 'acts', 24, 14, 'free', E'*But this I confess unto thee, that after the way which they call heresy, so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets:* (Acts 24:14). Before Festus Paul answers *Neither against the law of the Yahudim (Jews), neither against the temple, nor yet against Cæsar, have I offended any thing at all* (Acts 25:8). The man they accuse is the man who worships the Elohim (God) of the fathers *believing all things which are written in the law and in the prophets* — he has not abandoned the law; he keeps it. The charge that he offended against the law collapses on the witness of his own confession: the way they call heresy is the law and the prophets believed whole.'),
+  ('canon', 'acts', 25, 8, 'canon', 'acts', 28, 17, 'free', E'*And it came to pass, that after three days Paul called the chief of the Yahudim (Jews) together: and when they were come together, he said unto them, Men and brethren, though I have committed nothing against the people, or customs of our fathers, yet was I delivered prisoner from Jerusalem into the hands of the Romans.* (Acts 28:17). What Paul pleads before Festus — *neither against the law of the Yahudim (Jews) ... have I offended any thing at all* (Acts 25:8) — he says again at Rome: *I have committed nothing against the people, or customs of our fathers.* The same testimony stands from Cæsarea to Rome: the apostle is the Torah-faithful son of his fathers, not a breaker of the law. The contradiction the accusers hang on him is theirs, not his.'),
+  -- thread: acts-25-i-appeal-unto-caesar-so-must-thou-bear-witness-at-rome
+  ('canon', 'acts', 25, 11, 'canon', 'acts', 23, 11, 'free', E'*And the night following Yahuah (Lord) stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome.* (Acts 23:11). When Paul cries *I appeal unto Cæsar* (Acts 25:11), it is not a man scrambling to save himself but the Lord''s own word being carried out. Yahuah (Lord) had stood by him in the night and said he *must* bear witness at Rome; the appeal is the road the Formed himself laid — the testimony pressed on to the capital of the nations exactly as he said it must go.'),
+  ('canon', 'acts', 25, 11, 'canon', 'acts', 27, 24, 'free', E'*Saying, Fear not, Paul; thou must be brought before Cæsar: and, lo, Elohim (God) hath given thee all them that sail with thee.* (Acts 27:24). The appeal — *I appeal unto Cæsar* (Acts 25:11) — is sealed by the angel in the storm: *thou must be brought before Cæsar.* Even when the ship is breaking and all hope of being saved is taken away, the word holds: Paul *must* stand before Cæsar, because the witness must reach Rome. The appeal is not a wager on Roman justice but the means by which the Lord''s sending is accomplished.'),
+  ('canon', 'acts', 25, 12, 'canon', 'acts', 23, 11, 'free', E'*And the night following Yahuah (Lord) stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome.* (Acts 23:11). Festus answers *Hast thou appealed unto Cæsar? unto Cæsar shalt thou go* (Acts 25:12) — and with that the governor unknowingly speaks the Lord''s own purpose. The night Yahuah (Lord) stood by Paul he said *so must thou bear witness also at Rome;* now the Roman verdict sends him there. The plot to kill him in Jerusalem is overruled, and the road to Rome opens through the very appeal the enemy meant to thwart.'),
+  -- thread: acts-25-one-yahusha-dead-whom-paul-affirmed-alive-the-resurrection-on-trial
+  ('canon', 'acts', 25, 19, 'canon', 'acts', 24, 15, 'free', E'*And have hope toward Elohim (God), which they themselves also allow, that there shall be a resurrection of the dead, both of the just and unjust.* (Acts 24:15). Festus, baffled, reduces the whole case to *certain questions against him of their own superstition, and of one Yahusha (Jesus), which was dead, whom Paul affirmed to be alive* (Acts 25:19). The Roman hears a quarrel over a dead man; Paul had already named the real matter — *hope toward Elohim (God) ... that there shall be a resurrection of the dead.* The resurrection is the whole trial: not a disputed corpse but the living hope that the dead are raised, fixed now on the One Paul affirms is alive.'),
+  ('canon', 'acts', 25, 19, 'canon', 'acts', 26, 8, 'free', E'*Why should it be thought a thing incredible with you, that Elohim (God) should raise the dead?* (Acts 26:8). To Festus the charge is *one Yahusha (Jesus), which was dead, whom Paul affirmed to be alive* (Acts 25:19) — a thing the Roman cannot weigh. Paul puts the very question to the hearing: *Why should it be thought a thing incredible with you, that Elohim (God) should raise the dead?* What sounds to Festus like superstition over a dead man is the power of the living Elohim (God) who raises — the resurrection that is the hope of the fathers, not an incredible tale.'),
+  ('canon', 'acts', 25, 19, 'canon', 'acts', 26, 23, 'free', E'*That Messiah (Christ) should suffer, and that he should be the first that should rise from the dead, and should shew light unto the people, and to the Gentiles.* (Acts 26:23). Festus names the dispute as being over *one Yahusha (Jesus), which was dead, whom Paul affirmed to be alive* (Acts 25:19); Paul names what it truly is — *that Messiah (Christ) should suffer, and that he should be the first that should rise from the dead.* The prophets and Moses said it should come; the One affirmed alive is the firstfruits of the resurrection, the suffering and risen Messiah (Christ) the whole charge circles without grasping.'),
+  ('canon', 'acts', 25, 19, 'canon', 'daniel', 12, 2, 'free', E'*And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2). The charge Festus cannot fathom — *one Yahusha (Jesus), which was dead, whom Paul affirmed to be alive* (Acts 25:19) — is the hope the prophet sealed long before: *many of them that sleep in the dust of the earth shall awake.* The resurrection on trial is no novelty and no Greek immortal-soul tale; it is the awaking of the dust the Tanakh promised, now broken open in the One who died and was affirmed alive — the firstfruits of all who sleep.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-25-i-have-offended-nothing-against-the-law-the-torah-faithful-paul',
+       E'I have offended nothing against the law — the Torah-faithful Paul',
+       E'Standing before Festus, Paul answers the renewed accusation plainly: *Neither against the law of the Yahudim (Jews), neither against the temple, nor yet against Cæsar, have I offended any thing at all* (Acts 25:8). The man on trial as a law-breaker is in fact the law''s faithful son. He had already confessed it to Felix: *after the way which they call heresy, so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets* (Acts 24:14). And he will say it once more at Rome: *though I have committed nothing against the people, or customs of our fathers, yet was I delivered prisoner from Jerusalem into the hands of the Romans* (Acts 28:17). From Cæsarea to Rome the testimony never shifts — Paul kept the law, worshipped the Elohim (God) of the fathers, held the law and the prophets whole. The contradiction his accusers press on him, and that later readers would hang on him, is theirs and not his: the apostle they call a destroyer of the law is the man who offended nothing against it at all.',
+       sv.verse_id, ev.verse_id, 'free', 5875
+  FROM _s217_a25_lookup sv, _s217_a25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=25 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-25-i-appeal-unto-caesar-so-must-thou-bear-witness-at-rome',
+       E'I appeal unto Cæsar — so must thou bear witness at Rome',
+       E'When Festus, *willing to do the Yahudim (Jews) a pleasure* (Acts 25:9), asks whether Paul will go up to Jerusalem to be judged — back into the city where more than forty men had bound themselves under a curse to kill him — Paul refuses the trap and speaks the words that turn the whole account: *I appeal unto Cæsar* (Acts 25:11). Festus answers, *Hast thou appealed unto Cæsar? unto Cæsar shalt thou go* (Acts 25:12). It reads like a prisoner''s legal gambit, but it is the Lord''s own word being carried out. The night the plot was first laid, *Yahuah (Lord) stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome* (Acts 23:11). And when the ship that bears him is breaking apart and all hope is taken away, the angel says it yet again: *Fear not, Paul; thou must be brought before Cæsar* (Acts 27:24). The appeal is not Paul escaping death but the testimony being pressed on to the capital of the nations exactly as he was told it must go. The conspiracy to kill him in Jerusalem is overruled, and through the very appeal the enemy could not block, the witness reaches Rome.',
+       sv.verse_id, ev.verse_id, 'free', 5878
+  FROM _s217_a25_lookup sv, _s217_a25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=25 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-25-one-yahusha-dead-whom-paul-affirmed-alive-the-resurrection-on-trial',
+       E'One Yahusha (Jesus), dead, whom Paul affirmed alive — the resurrection on trial',
+       E'When Festus lays the cause before Agrippa, he cannot make sense of it: the accusers brought no crime he expected, *but had certain questions against him of their own superstition, and of one Yahusha (Jesus), which was dead, whom Paul affirmed to be alive* (Acts 25:19). To the Roman it is a quarrel over a dead man. But that one sentence is the whole trial. Paul had named the real matter to Felix: *have hope toward Elohim (God), which they themselves also allow, that there shall be a resurrection of the dead, both of the just and unjust* (Acts 24:15). And he presses the question on the hearing itself: *Why should it be thought a thing incredible with you, that Elohim (God) should raise the dead?* (Acts 26:8). This hope is no novelty and no Greek tale of an immortal soul — the prophet sealed it long before: *many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2). What stands now is that the hope has broken open in One: *that Messiah (Christ) should suffer, and that he should be the first that should rise from the dead, and should shew light unto the people, and to the Gentiles* (Acts 26:23). The dead man Festus shrugs at is the firstfruits of the awaking of the dust — the hope of the fathers vindicated in the One Paul affirms is alive.',
+       sv.verse_id, ev.verse_id, 'free', 5881
+  FROM _s217_a25_lookup sv, _s217_a25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=25 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-25-i-have-offended-nothing-against-the-law-the-torah-faithful-paul
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 24:14 — *so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets* the man accused of offending the law keeps the law and the prophets whole (Acts 25:8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a25_lookup sv, _s217_a25_lookup tv
+ WHERE t.slug='acts-25-i-have-offended-nothing-against-the-law-the-torah-faithful-paul'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=24 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 28:17 — *I have committed nothing against the people, or customs of our fathers* the same testimony repeated at Rome; the Torah-faithful son from Cæsarea to the capital (Acts 25:8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a25_lookup sv, _s217_a25_lookup tv
+ WHERE t.slug='acts-25-i-have-offended-nothing-against-the-law-the-torah-faithful-paul'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=28 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-25-i-appeal-unto-caesar-so-must-thou-bear-witness-at-rome
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 23:11 — *so must thou bear witness also at Rome* Yahuah (Lord) had already named the road; the appeal is the Lord''s word carried out (Acts 25:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a25_lookup sv, _s217_a25_lookup tv
+ WHERE t.slug='acts-25-i-appeal-unto-caesar-so-must-thou-bear-witness-at-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=23 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 27:24 — *thou must be brought before Cæsar* the storm-angel seals the appeal; even shipwreck cannot break the sending to Rome (Acts 25:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a25_lookup sv, _s217_a25_lookup tv
+ WHERE t.slug='acts-25-i-appeal-unto-caesar-so-must-thou-bear-witness-at-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=27 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 23:11 — *so must thou bear witness also at Rome* Festus'' *unto Cæsar shalt thou go* unknowingly speaks the Lord''s own purpose (Acts 25:12).'
+  FROM cross_reference_threads t, cross_references x, _s217_a25_lookup sv, _s217_a25_lookup tv
+ WHERE t.slug='acts-25-i-appeal-unto-caesar-so-must-thou-bear-witness-at-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=23 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-25-one-yahusha-dead-whom-paul-affirmed-alive-the-resurrection-on-trial
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 24:15 — *that there shall be a resurrection of the dead, both of the just and unjust* the hope Festus mistakes for a quarrel over a dead man (Acts 25:19).'
+  FROM cross_reference_threads t, cross_references x, _s217_a25_lookup sv, _s217_a25_lookup tv
+ WHERE t.slug='acts-25-one-yahusha-dead-whom-paul-affirmed-alive-the-resurrection-on-trial'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=24 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 26:8 — *Why should it be thought a thing incredible with you, that Elohim (God) should raise the dead?* the very question behind the charge Festus cannot weigh (Acts 25:19).'
+  FROM cross_reference_threads t, cross_references x, _s217_a25_lookup sv, _s217_a25_lookup tv
+ WHERE t.slug='acts-25-one-yahusha-dead-whom-paul-affirmed-alive-the-resurrection-on-trial'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 26:23 — *that he should be the first that should rise from the dead* the One affirmed alive is the firstfruits of the resurrection the prophets foretold (Acts 25:19).'
+  FROM cross_reference_threads t, cross_references x, _s217_a25_lookup sv, _s217_a25_lookup tv
+ WHERE t.slug='acts-25-one-yahusha-dead-whom-paul-affirmed-alive-the-resurrection-on-trial'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Daniel 12:2 — *many of them that sleep in the dust of the earth shall awake* the resurrection on trial is the Tanakh hope of the awaking dust, not a Greek immortal-soul tale (Acts 25:19).'
+  FROM cross_reference_threads t, cross_references x, _s217_a25_lookup sv, _s217_a25_lookup tv
+ WHERE t.slug='acts-25-one-yahusha-dead-whom-paul-affirmed-alive-the-resurrection-on-trial'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=25 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_26.sql (S217 Acts 26) -----
+-- =====================================================================
+-- S217 minion — ACTS 26 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ACTS 26 (Paul before Agrippa — the fullest telling of the call,
+--   the twelve-tribe hope, the servant-commission, Messiah suffering-then-rising).
+-- Tag: a26 (temp view _s217_a26_lookup).  Sort band: 5900-5924 (step 3 per thread).
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + NT (no extras warranted here).
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'. (All rows 'free'.)
+--
+-- WATCHPOINTS (Red Lines #7/#11/#10, Christology, son-of-Adam):
+--  * The twelve-tribe hope (26:6-7) is the LITERAL restoration of the twelve tribes — the
+--    promise made of Elohim (God) unto the fathers, *our twelve tribes, instantly serving
+--    Elohim (God) day and night, hope to come.* Read load-bearing: Genesis 49 (the twelve
+--    tribes named), Ezekiel 37 (the two sticks made one, gathered out of the heathen). NOT a
+--    new-people graft; the prophetic gathering of the paternal blood remnant of all twelve.
+--  * The commission's "Gentiles" / "inheritance among the sanctified" (26:17-18,20,23) = the
+--    servant's light to the people AND the nations within the restoration — Isaiah 42:6-7
+--    (covenant of the people, light, open blind eyes, prison house), Isaiah 49:6 (raise up the
+--    tribes, restore the preserved, a light to the nations). The gathering of the dispersed/
+--    estranged, the lost sheep made nigh — NEVER false-inclusion of non-seed by confession.
+--  * "Sanctified by faith" (26:18) — faith as the MEANS of return and inheritance, never a
+--    sola-fide truncation cutting the gospel sentence in half (Red Line #10). "Repent and turn
+--    to Elohim (God), and do works meet for repentance" (26:20) — repentance bearing fruit.
+--  * Messiah suffering-then-rising (26:22-23) = Moses-and-the-prophets, the Tanakh's own
+--    testimony: Isaiah 53 (the servant cut off, dividing the spoil), Psalm 16:10 (the Holy
+--    One not left to corruption), confirmed at Luke 24:26-27,46-47. NOT a Christian overlay
+--    on the prophets — *none other things than those which the prophets and Moses did say.*
+--  * The light and the voice (26:13-15): the Formed himself — the One drawn from the Formless
+--    who appeared and spoke through the history of the fathers, now glorified — *I am Yahusha
+--    (Jesus) whom thou persecutest.* He who is Yahuah, who came in flesh as Yahusha. The
+--    fullest of the three tellings; resolved Acts<->Acts to chapters 9 and 22.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 26:
+--   v.1-5   manner of life, a Pharisee   Tanakh: none warranted (Torah-faithful self-witness, narrative)  Extras: none warranted  NT: Acts 22:3 / Philippians 3:5 weighed — narrative self-attestation, carried thematically, not added
+--   v.6-7   THE HOPE OF THE PROMISE / twelve tribes  Tanakh: Genesis 49:28 (the twelve tribes), Ezekiel 37:21, Ezekiel 37:22, Ezekiel 37:25  Extras: none warranted (Jubilees tribe-lists weighed, framework weight thin vs. Genesis 49)  NT: none added (the promise-to-the-fathers carried in the resurrection thread at v.8)
+--   v.8     raise the dead               Tanakh: Ezekiel 37:12, Daniel 12:2  Extras: none warranted  NT: Acts 13:32, Acts 13:33 (the promise made unto the fathers — raised up)
+--   v.9-11  persecuted the saints        Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative; carried in the light-and-voice thread)
+--   v.12-15 THE LIGHT AND THE VOICE      Tanakh: none added (the Formed appearing carried by the NT retellings)  Extras: none warranted  NT: Acts 9:4, Acts 9:5, Acts 22:7, Acts 22:8 (Acts<->Acts, fullest telling)
+--   v.16-18 THE COMMISSION               Tanakh: Isaiah 42:6, Isaiah 42:7, Isaiah 35:5, Isaiah 61:1, Isaiah 49:6  Extras: none warranted  NT: none added (the servant-light carried in Tanakh thread)
+--   v.19-20 not disobedient / works meet Tanakh: none added (repent-and-turn carried; works-meet-for-repentance threaded in commission summary)  Extras: none warranted  NT: none warranted
+--   v.21-23 NONE OTHER THAN MOSES AND THE PROPHETS / Messiah suffer and rise  Tanakh: Isaiah 53:8, Isaiah 53:12, Psalm 16:10  Extras: none warranted  NT: Luke 24:26, Luke 24:27, Luke 24:46, Luke 24:47
+--   v.24-29 Festus / Agrippa / almost    Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative; *believest thou the prophets?* carried by the Moses-and-prophets thread)
+--   v.30-32 nothing worthy of death      Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--
+-- THREADS (slug -> target libraries):
+--   5900 acts-26-the-hope-of-the-promise-our-twelve-tribes-instantly-serving        (Tanakh)
+--   5903 acts-26-that-elohim-should-raise-the-dead-the-resurrection-hope-of-the-fathers (Tanakh + NT, Acts<->Acts)
+--   5906 acts-26-the-light-and-the-voice-the-fullest-telling-of-the-damascus-road   (NT, Acts<->Acts)
+--   5909 acts-26-to-open-their-eyes-the-servant-a-light-to-the-people-and-the-nations (Tanakh)
+--   5912 acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-26-the-hope-of-the-promise-our-twelve-tribes-instantly-serving
+  ('canon', 'acts', 26, 7, 'canon', 'genesis', 49, 28, 'free', E'*All these are the twelve tribes of Yashar''el (Israel): and this is it that their father spake unto them, and blessed them; every one according to his blessing he blessed them.* (Genesis 49:28). Paul stands judged *for the hope of the promise made of Elohim (God) unto our fathers: unto which promise our twelve tribes, instantly serving Elohim (God) day and night, hope to come* (Acts 26:6-7). The twelve tribes are not a figure of speech — they are the named sons Jacob gathered and blessed in the last days. The hope Paul is on trial for is the hope of those twelve, the paternal blood remnant of the whole house, coming to the promise spoken to Abraham, Isaac, and Jacob.'),
+  ('canon', 'acts', 26, 7, 'canon', 'ezekiel', 37, 21, 'free', E'*And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* (Ezekiel 37:21). The hope to which *our twelve tribes … hope to come* (Acts 26:7) is the gathering Ezekiel named: the children of Yashar''el (Israel) taken from among the heathen where they were scattered and brought home. The hope of the promise is the ingathering of the dispersed — not a new people, but the very tribes that were scattered being made one again.'),
+  ('canon', 'acts', 26, 7, 'canon', 'ezekiel', 37, 22, 'free', E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all:* (Ezekiel 37:22). The twelve tribes who *hope to come* to the promise (Acts 26:7) are the two houses made one — Yahudah and Yosef, the stick of Ephraim joined to the stick of Yahudah, no more two nations. The hope Paul is accused over is the reunion of the divided kingdom under one king, the twelve restored whole.'),
+  ('canon', 'acts', 26, 7, 'canon', 'ezekiel', 37, 25, 'free', E'*And they shall dwell in the land that I have given unto Jacob my servant, wherein your fathers have dwelt; and they shall dwell therein, even they, and their children, and their children''s children for ever: and my servant David shall be their prince for ever.* (Ezekiel 37:25). The *promise made of Elohim (God) unto our fathers* (Acts 26:6) reaches its end here: the gathered twelve dwelling in the land of the fathers for ever, under David''s prince for ever, in an everlasting covenant of peace. This is the hope Paul serves — the consummated restoration, not a partial or counterfeit return.'),
+  -- thread: acts-26-that-elohim-should-raise-the-dead-the-resurrection-hope-of-the-fathers
+  ('canon', 'acts', 26, 8, 'canon', 'ezekiel', 37, 12, 'free', E'*Therefore prophesy and say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, O my people, I will open your graves, and cause you to come up out of your graves, and bring you into the land of Yashar''el (Israel).* (Ezekiel 37:12). *Why should it be thought a thing incredible with you, that Elohim (God) should raise the dead?* (Acts 26:8). The opening of the graves is the covenant''s own promise: the same Adonai Yahuah (the Lord GOD) who gathers the scattered tribes raises the dry bones and brings them up. The raising of the dead and the gathering of the twelve are one hope, not two.'),
+  ('canon', 'acts', 26, 8, 'canon', 'daniel', 12, 2, 'free', E'*And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2). The resurrection Paul defends — *that Elohim (God) should raise the dead* (Acts 26:8) — is no new doctrine; Daniel saw those who sleep in the dust awaking, some to everlasting life. The hope of the fathers includes the resurrection of the fathers themselves to stand in their lot at the end of the days.'),
+  ('canon', 'acts', 26, 8, 'canon', 'acts', 13, 32, 'free', E'*And we declare unto you glad tidings, how that the promise which was made unto the fathers,* (Acts 13:32). Paul names the same hope in the synagogue at Antioch that he names before Agrippa — *the hope of the promise made of Elohim (God) unto our fathers* (Acts 26:6). The glad tidings are that the promise to the fathers is being fulfilled, and the seal of that fulfilment is the raising of the dead.'),
+  ('canon', 'acts', 26, 8, 'canon', 'acts', 13, 33, 'free', E'*Elohim (God) hath fulfilled the same unto us their children, in that he hath raised up Yahusha (Jesus) again; as it is also written in the second psalm, Thou art my Son, this day have I begotten thee.* (Acts 13:33). The promise to the fathers is fulfilled *in that he hath raised up Yahusha (Jesus) again* — and so to ask *why should it be thought a thing incredible … that Elohim (God) should raise the dead?* (Acts 26:8) is to point at the firstfruits already raised. The resurrection of the Messiah is the pledge of the resurrection-hope the twelve tribes serve toward.'),
+  -- thread: acts-26-the-light-and-the-voice-the-fullest-telling-of-the-damascus-road
+  ('canon', 'acts', 26, 14, 'canon', 'acts', 9, 4, 'free', E'*And he fell to the earth, and heard a voice saying unto him, Saul, Saul, why persecutest thou me?* (Acts 9:4). Before Agrippa Paul tells it fullest: *when we were all fallen to the earth, I heard a voice speaking unto me, and saying in the Hebrew tongue, Saul, Saul, why persecutest thou me? it is hard for thee to kick against the pricks* (Acts 26:14). The voice from the light above the brightness of the sun is the Formed himself — the One who appeared and spoke through all the history of the fathers, now risen and glorified — calling the persecutor by name.'),
+  ('canon', 'acts', 26, 15, 'canon', 'acts', 9, 5, 'free', E'*And he said, Who art thou, Yahuah (Lord)? And Yahuah (Lord) said, I am Yahusha (Jesus) whom thou persecutest: it is hard for thee to kick against the pricks.* (Acts 9:5). The same exchange stands at the centre of all three tellings: *And I said, Who art thou, Yahuah (Lord)? And he said, I am Yahusha (Jesus) whom thou persecutest* (Acts 26:15). The One in the light answers to the name Saul cried — he who is Yahuah, the Formed drawn from the Formless, who came in the flesh as Yahusha, persecuted in his disciples and now calling his chosen vessel.'),
+  ('canon', 'acts', 26, 14, 'canon', 'acts', 22, 7, 'free', E'*And I fell unto the ground, and heard a voice saying unto me, Saul, Saul, why persecutest thou me?* (Acts 22:7). On the temple stairs Paul told it to the people in the Hebrew tongue; before Agrippa he tells it again — *I heard a voice speaking unto me, and saying in the Hebrew tongue, Saul, Saul, why persecutest thou me?* (Acts 26:14). Three tellings, one voice: the persecuted Messiah counts every blow against his disciples as a blow against himself.'),
+  ('canon', 'acts', 26, 15, 'canon', 'acts', 22, 8, 'free', E'*And I answered, Who art thou, Yahuah (Lord)? And he said unto me, I am Yahusha (Jesus) of Nazareth, whom thou persecutest.* (Acts 22:8). The naming is the same in every telling: *I am Yahusha (Jesus) whom thou persecutest* (Acts 26:15). The One who is Yahuah, who walked the history of Yashar''el (Israel) as the Formed and came in the flesh as Yahusha of Nazareth, names himself to the man who thought he served Elohim (God) by hunting the saints.'),
+  -- thread: acts-26-to-open-their-eyes-the-servant-a-light-to-the-people-and-the-nations
+  ('canon', 'acts', 26, 18, 'canon', 'isaiah', 42, 6, 'free', E'*I Yahuah (LORD) have called thee in righteousness, and will hold thine hand, and will keep thee, and give thee for a covenant of the people, for a light of the Gentiles;* (Isaiah 42:6). The commission Paul receives — *to open their eyes, and to turn them from darkness to light* (Acts 26:18) — is the servant''s own commission: given for a covenant of the people, for a light of the nations. The minister carries forward the work of the servant Yahuah (LORD) called, the light that goes to the people and to the nations alike.'),
+  ('canon', 'acts', 26, 18, 'canon', 'isaiah', 42, 7, 'free', E'*To open the blind eyes, to bring out the prisoners from the prison, and them that sit in darkness out of the prison house.* (Isaiah 42:7). Word for word the servant''s task is Paul''s sending: *to open their eyes, and to turn them from darkness to light, and from the power of Satan unto Elohim (God)* (Acts 26:18). The blind eyes opened, the prisoners brought out of the prison house, those that sit in darkness led to light — the scattered and bound brought home and given sight.'),
+  ('canon', 'acts', 26, 18, 'canon', 'isaiah', 35, 5, 'free', E'*Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.* (Isaiah 35:5). The opening of eyes that the commission names — *to open their eyes* (Acts 26:18) — is the sign of the ransomed of Yahuah (LORD) returning to Zion with songs. The blind eyes opened belong to the highway of holiness, the way home for the redeemed.'),
+  ('canon', 'acts', 26, 18, 'canon', 'isaiah', 61, 1, 'free', E'*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound;* (Isaiah 61:1). The anointed servant is sent to proclaim liberty to the captives and *the opening of the prison to them that are bound* — and Paul is sent into that same work, *to turn them from darkness to light, and from the power of Satan unto Elohim (God), that they may receive forgiveness of sins, and inheritance among them which are sanctified by faith that is in me* (Acts 26:18). The captives loosed and the bound set free are the dispersed receiving back their inheritance; faith is the means of the return, not a release from the covenant.'),
+  ('canon', 'acts', 26, 23, 'canon', 'isaiah', 49, 6, 'free', E'*And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth.* (Isaiah 49:6). Paul witnesses that Messiah (Christ) *should shew light unto the people, and to the Gentiles* (Acts 26:23) — exactly the servant''s double commission: to raise up the tribes of Jacob and restore the preserved of Yashar''el (Israel), AND to be a light to the nations. The light to the nations does not replace the raising of the tribes; it stands beside it, the salvation reaching to the end of the earth where the scattered seed was carried.'),
+  -- thread: acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise
+  ('canon', 'acts', 26, 23, 'canon', 'isaiah', 53, 8, 'free', E'*He was taken from prison and from judgment: and who shall declare his generation? for he was cut off out of the land of the living: for the transgression of my people was he stricken.* (Isaiah 53:8). Paul says *none other things than those which the prophets and Moses did say should come: That Messiah (Christ) should suffer* (Acts 26:22-23). That Messiah should suffer is Isaiah''s own word: the servant cut off out of the land of the living for the transgression of his people. The suffering is not a Christian overlay on the prophets — it is what the prophet plainly said.'),
+  ('canon', 'acts', 26, 23, 'canon', 'isaiah', 53, 12, 'free', E'*Therefore will I divide him a portion with the great, and he shall divide the spoil with the strong; because he hath poured out his soul unto death: and he was numbered with the transgressors; and he bare the sin of many, and made intercession for the transgressors.* (Isaiah 53:12). The Messiah who *should suffer, and … be the first that should rise from the dead* (Acts 26:23) is the servant who poured out his soul unto death and is then given a portion with the great — the suffering and the vindication that follows, both spoken by the prophet Moses and the prophets confirm.'),
+  ('canon', 'acts', 26, 23, 'canon', 'psalms', 16, 10, 'free', E'*For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption.* (Psalm 16:10). That Messiah (Christ) *should be the first that should rise from the dead* (Acts 26:23) was sealed in David''s psalm: the Holy One not left to corruption. The rising Paul witnesses to is the very thing the prophets said should come — the Holy One brought up out of death, the firstfruits of them that slept.'),
+  ('canon', 'acts', 26, 22, 'canon', 'luke', 24, 27, 'free', E'*And beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself.* (Luke 24:27). Paul says he witnesses *none other things than those which the prophets and Moses did say should come* (Acts 26:22) — the very lesson the risen Messiah taught on the Emmaus road, beginning at Moses and all the prophets, expounding the things concerning himself. Paul preaches nothing the Master had not already shown was written.'),
+  ('canon', 'acts', 26, 23, 'canon', 'luke', 24, 26, 'free', E'*Ought not Messiah (Christ) to have suffered these things, and to enter into his glory?* (Luke 24:26). The risen Master''s own question frames Paul''s witness — *That Messiah (Christ) should suffer, and that he should be the first that should rise from the dead* (Acts 26:23). The suffering before the glory, the death before the rising, is the pattern Moses and the prophets laid down and the Messiah himself opened to his own.'),
+  ('canon', 'acts', 26, 23, 'canon', 'luke', 24, 46, 'free', E'*And said unto them, Thus it is written, and thus it behoved Messiah (Christ) to suffer, and to rise from the dead the third day:* (Luke 24:46). Paul''s testimony before Agrippa is the testimony the Master gave the eleven: *thus it is written … Messiah (Christ) to suffer, and to rise from the dead.* What is written in the law of Moses, the prophets, and the psalms is what Paul says *the prophets and Moses did say should come* (Acts 26:22) — the suffering and rising Messiah.'),
+  ('canon', 'acts', 26, 23, 'canon', 'luke', 24, 47, 'free', E'*And that repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem.* (Luke 24:47). The Messiah risen sends repentance and remission of sins to be preached *among all nations, beginning at Jerusalem* — and Paul shows *first unto them of Damascus, and at Jerusalem … and then to the Gentiles, that they should repent and turn to Elohim (God), and do works meet for repentance* (Acts 26:20). The repentance preached to the nations bears the fruit meet for repentance; the remission and the turning are one motion, not a faith that leaves the turning undone.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-26-the-hope-of-the-promise-our-twelve-tribes-instantly-serving',
+       E'The hope of the promise — our twelve tribes, instantly serving',
+       E'Paul names the thing he is on trial for plainly: *And now I stand and am judged for the hope of the promise made of Elohim (God) unto our fathers: unto which promise our twelve tribes, instantly serving Elohim (God) day and night, hope to come. For which hope''s sake, king Agrippa, I am accused of the Yahudim (Jews)* (Acts 26:6-7). The hope is not a doctrine of the afterlife in the abstract; it is the hope of *our twelve tribes* — the named sons Jacob gathered in his last words: *All these are the twelve tribes of Yashar''el (Israel): and this is it that their father spake unto them, and blessed them; every one according to his blessing he blessed them* (Genesis 49:28). Those twelve were scattered, the northern house divorced and dispersed among the heathen — and the promise to the fathers is their gathering home: *Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). The two houses become one: *I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). And the end of the promise is the gathered twelve dwelling in the land of the fathers for ever: *they shall dwell therein, even they, and their children, and their children''s children for ever: and my servant David shall be their prince for ever* (Ezekiel 37:25). This is the hope the twelve tribes serve toward day and night — not a new people grafted in by confession, but the paternal blood remnant of all twelve, scattered and now being gathered, coming to the promise spoken to Abraham, Isaac, and Jacob.',
+       sv.verse_id, ev.verse_id, 'free', 5900
+  FROM _s217_a26_lookup sv, _s217_a26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=26 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-26-that-elohim-should-raise-the-dead-the-resurrection-hope-of-the-fathers',
+       E'That Elohim (God) should raise the dead — the resurrection hope of the fathers',
+       E'In the middle of naming the twelve-tribe hope Paul asks the court a question: *Why should it be thought a thing incredible with you, that Elohim (God) should raise the dead?* (Acts 26:8). The resurrection is not separable from the gathering — it is the same promise. The hand that gathers the scattered tribes is the hand that opens the graves: *Behold, O my people, I will open your graves, and cause you to come up out of your graves, and bring you into the land of Yashar''el (Israel)* (Ezekiel 37:12). The dry bones live, and the same covenant promises that the fathers themselves will rise: *many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2). Paul preached this same promise in the synagogue at Antioch: *we declare unto you glad tidings, how that the promise which was made unto the fathers, Elohim (God) hath fulfilled the same unto us their children, in that he hath raised up Yahusha (Jesus) again* (Acts 13:32-33). The firstfruits is already raised; the resurrection of the Messiah is the pledge that the hope of the fathers — the gathering and the rising together — is sure. To ask whether Elohim (God) can raise the dead is to point at the One already raised, and through him at the whole house that sleeps in the dust awaiting the end of the days.',
+       sv.verse_id, ev.verse_id, 'free', 5903
+  FROM _s217_a26_lookup sv, _s217_a26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=26 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-26-the-light-and-the-voice-the-fullest-telling-of-the-damascus-road',
+       E'The light and the voice — the fullest telling of the Damascus road',
+       E'Three times Luke records the Damascus road, and this is the fullest: *At midday, O king, I saw in the way a light from heaven, above the brightness of the sun, shining round about me and them which journeyed with me. And when we were all fallen to the earth, I heard a voice speaking unto me, and saying in the Hebrew tongue, Saul, Saul, why persecutest thou me? it is hard for thee to kick against the pricks* (Acts 26:13-14). The bare account stands in the ninth chapter: *he fell to the earth, and heard a voice saying unto him, Saul, Saul, why persecutest thou me?* (Acts 9:4); and on the temple stairs to the people: *I fell unto the ground, and heard a voice saying unto me, Saul, Saul, why persecutest thou me?* (Acts 22:7). The naming is the same in every telling. *Who art thou, Yahuah (Lord)? And he said, I am Yahusha (Jesus) whom thou persecutest* (Acts 26:15); *I am Yahusha (Jesus) whom thou persecutest* (Acts 9:5); *I am Yahusha (Jesus) of Nazareth, whom thou persecutest* (Acts 22:8). The voice from the light above the brightness of the sun is the Formed himself — the One drawn from the Formless who appeared and spoke through all the history of the fathers, now risen and glorified — and he counts every blow Saul struck against the saints as a blow struck against himself. He who is Yahuah, who came in the flesh as Yahusha of Nazareth, names himself to the persecutor and makes him a minister and a witness.',
+       sv.verse_id, ev.verse_id, 'free', 5906
+  FROM _s217_a26_lookup sv, _s217_a26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=26 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-26-to-open-their-eyes-the-servant-a-light-to-the-people-and-the-nations',
+       E'To open their eyes — the servant a light to the people and the nations',
+       E'The commission Paul receives in the light is the servant''s own commission, word for word: *to make thee a minister and a witness … to open their eyes, and to turn them from darkness to light, and from the power of Satan unto Elohim (God), that they may receive forgiveness of sins, and inheritance among them which are sanctified by faith that is in me* (Acts 26:16-18). Isaiah heard the same words spoken to the servant: *I Yahuah (LORD) have called thee in righteousness … and give thee for a covenant of the people, for a light of the Gentiles; to open the blind eyes, to bring out the prisoners from the prison, and them that sit in darkness out of the prison house* (Isaiah 42:6-7). The opening of eyes is the sign of the homecoming — *then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped* (Isaiah 35:5), the highway of holiness for the ransomed returning. It is the anointed work of the servant sent *to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1) — the captives loosed are the dispersed receiving back their inheritance, and faith is the means of the return, not a release from the covenant. And the servant''s commission was always double: *It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6). The light to the nations does not replace the raising of the tribes — it stands beside it, the salvation reaching to the very ends of the earth where the scattered seed was carried. So Paul shows *first unto them of Damascus, and at Jerusalem … and then to the Gentiles, that they should repent and turn to Elohim (God), and do works meet for repentance* (Acts 26:20): the turning bears fruit, the inheritance is received by those whom faith returns to the covenant.',
+       sv.verse_id, ev.verse_id, 'free', 5909
+  FROM _s217_a26_lookup sv, _s217_a26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=26 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise',
+       E'None other than Moses and the prophets — Messiah should suffer and rise',
+       E'Paul stakes his whole defence on a single claim: he has added nothing to the scriptures. *Having therefore obtained help of Elohim (God), I continue unto this day, witnessing both to small and great, saying none other things than those which the prophets and Moses did say should come: That Messiah (Christ) should suffer, and that he should be the first that should rise from the dead, and should shew light unto the people, and to the Gentiles* (Acts 26:22-23). That Messiah should suffer is Isaiah''s own word: *he was cut off out of the land of the living: for the transgression of my people was he stricken* (Isaiah 53:8), the servant who *hath poured out his soul unto death … and bare the sin of many, and made intercession for the transgressors* (Isaiah 53:12) and is then given a portion with the great. That he should rise was sealed in David''s psalm: *thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption* (Psalm 16:10). This is exactly the lesson the risen Master taught on the Emmaus road — *beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself* (Luke 24:27), asking *ought not Messiah (Christ) to have suffered these things, and to enter into his glory?* (Luke 24:26), and declaring *thus it is written … Messiah (Christ) to suffer, and to rise from the dead the third day* (Luke 24:46). And the sending follows the same pattern: *that repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem* (Luke 24:47) — which Paul carries out, preaching *that they should repent and turn to Elohim (God), and do works meet for repentance* (Acts 26:20). When Agrippa is asked *believest thou the prophets?* the whole case rests there: Paul preaches nothing the prophets and Moses did not already say should come.',
+       sv.verse_id, ev.verse_id, 'free', 5912
+  FROM _s217_a26_lookup sv, _s217_a26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=26 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-26-the-hope-of-the-promise-our-twelve-tribes-instantly-serving
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:28 — *All these are the twelve tribes of Yashar''el (Israel) … every one according to his blessing he blessed them* the named twelve Jacob gathered; the hope of the promise is the hope of those twelve (Acts 26:7).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-the-hope-of-the-promise-our-twelve-tribes-instantly-serving'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 37:21 — *I will take the children of Yashar''el (Israel) from among the heathen … and gather them … and bring them into their own land* the ingathering of the dispersed twelve, the hope they serve toward (Acts 26:7).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-the-hope-of-the-promise-our-twelve-tribes-instantly-serving'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 37:22 — *I will make them one nation … they shall be no more two nations* the two houses, Yahudah and Yosef, made one under one king (Acts 26:7).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-the-hope-of-the-promise-our-twelve-tribes-instantly-serving'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 37:25 — *they shall dwell therein … for ever: and my servant David shall be their prince for ever* the end of the promise to the fathers, the gathered twelve in the land for ever (Acts 26:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-the-hope-of-the-promise-our-twelve-tribes-instantly-serving'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-26-that-elohim-should-raise-the-dead-the-resurrection-hope-of-the-fathers
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 37:12 — *I will open your graves, and cause you to come up out of your graves* the same hand that gathers the tribes opens the graves; raising and gathering one hope (Acts 26:8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-that-elohim-should-raise-the-dead-the-resurrection-hope-of-the-fathers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:2 — *many of them that sleep in the dust of the earth shall awake* the resurrection is no new doctrine; the fathers themselves rise at the end of the days (Acts 26:8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-that-elohim-should-raise-the-dead-the-resurrection-hope-of-the-fathers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 13:32 — *the promise which was made unto the fathers* Paul names the same hope at Antioch he names before Agrippa (Acts 26:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-that-elohim-should-raise-the-dead-the-resurrection-hope-of-the-fathers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 13:33 — *he hath raised up Yahusha (Jesus) again* the promise to the fathers fulfilled; the firstfruits already raised is the pledge of the resurrection-hope (Acts 26:8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-that-elohim-should-raise-the-dead-the-resurrection-hope-of-the-fathers'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-26-the-light-and-the-voice-the-fullest-telling-of-the-damascus-road
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 9:4 — *Saul, Saul, why persecutest thou me?* the bare account of the voice from the light (Acts 26:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-the-light-and-the-voice-the-fullest-telling-of-the-damascus-road'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=9 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 9:5 — *I am Yahusha (Jesus) whom thou persecutest* the One in the light names himself; he who is Yahuah came in the flesh as Yahusha (Acts 26:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-the-light-and-the-voice-the-fullest-telling-of-the-damascus-road'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=9 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 22:7 — *I fell unto the ground, and heard a voice* the telling on the temple stairs to the people (Acts 26:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-the-light-and-the-voice-the-fullest-telling-of-the-damascus-road'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=22 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 22:8 — *I am Yahusha (Jesus) of Nazareth, whom thou persecutest* the same naming; the Formed who walked Yashar''el''s history names himself (Acts 26:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-the-light-and-the-voice-the-fullest-telling-of-the-damascus-road'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=22 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-26-to-open-their-eyes-the-servant-a-light-to-the-people-and-the-nations
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 42:6 — *give thee for a covenant of the people, for a light of the Gentiles* the servant''s commission Paul now carries forward (Acts 26:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-to-open-their-eyes-the-servant-a-light-to-the-people-and-the-nations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 42:7 — *to open the blind eyes, to bring out the prisoners from the prison* word for word the task: open eyes, lead from darkness (Acts 26:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-to-open-their-eyes-the-servant-a-light-to-the-people-and-the-nations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 35:5 — *the eyes of the blind shall be opened* the opening of eyes is the sign of the ransomed returning to Zion (Acts 26:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-to-open-their-eyes-the-servant-a-light-to-the-people-and-the-nations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 61:1 — *to proclaim liberty to the captives, and the opening of the prison to them that are bound* the captives loosed are the dispersed receiving back their inheritance; faith the means of return (Acts 26:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-to-open-their-eyes-the-servant-a-light-to-the-people-and-the-nations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 49:6 — *raise up the tribes of Jacob … I will also give thee for a light to the Gentiles* the double commission: tribes raised AND light to the nations; the light beside the gathering, not in place of it (Acts 26:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-to-open-their-eyes-the-servant-a-light-to-the-people-and-the-nations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 53:8 — *he was cut off out of the land of the living: for the transgression of my people was he stricken* that Messiah should suffer is Isaiah''s own word (Acts 26:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 53:12 — *he hath poured out his soul unto death … and bare the sin of many* the suffering and the portion that follows, both spoken by the prophet (Acts 26:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 16:10 — *neither wilt thou suffer thine Holy One to see corruption* that he should be the first to rise was sealed in David''s psalm (Acts 26:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Luke 24:27 — *beginning at Moses and all the prophets, he expounded … the things concerning himself* the very lesson the risen Master taught; Paul adds nothing (Acts 26:22).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Luke 24:26 — *ought not Messiah (Christ) to have suffered these things, and to enter into his glory?* the suffering before the glory, the Master''s own framing (Acts 26:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Luke 24:46 — *thus it is written … Messiah (Christ) to suffer, and to rise from the dead the third day* written in Moses, the prophets, and the psalms (Acts 26:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=46
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Luke 24:47 — *repentance and remission of sins should be preached in his name among all nations* the repentance preached bears the works meet for repentance Paul names (Acts 26:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a26_lookup sv, _s217_a26_lookup tv
+ WHERE t.slug='acts-26-none-other-than-moses-and-the-prophets-messiah-should-suffer-and-rise'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=26 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=47
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_27.sql (S217 Acts 27) -----
+-- =====================================================================
+-- S217 minion — ACTS 27 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Anchor chapter: ACTS 27.  Tag: a27 (temp view _s217_a27_lookup).  Sort band: 5925-5949 (step 3).
+-- Source is ALWAYS the canon Acts 27 verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- WATCHPOINTS (Red Lines, Christology, son-of-Adam):
+--  * The voyage to Rome is largely sailing-narrative; the load-bearing weight is (a) the
+--    angel-of-Elohim keeping-and-delivering promise made good (27:23-24, cf. Acts 23:11 — the
+--    Master's own sending to Rome confirmed), (b) the ship saved for the righteous one's sake
+--    (all them that sail given to Paul — the Genesis 18 Abraham/Sodom pattern, the many spared
+--    for the one), (c) the tempest in which all hope is taken away and the Lord alone stills the
+--    storm and brings to the desired haven (Psalm 107; Jonah 1), (d) the not-a-hair-perish
+--    preservation promise (1 Samuel 14:45; 2 Samuel 14:11; Luke 21:18), and (e) the
+--    giving-thanks/breaking-bread witness's table (Luke 22:19; Luke 24:30).
+--  * The angel of Elohim (God) standing by, *whose I am, and whom I serve* (27:23): the keeping
+--    of the servant on the journey to his appointed witness — the messenger sent to keep the way,
+--    as the good angel kept Tobias (Tobit 5). NOT a generic guardian-angel devotion; the angel
+--    bears the word of Elohim that the journey ends at its appointed place.
+--  * The deliverance of all 276 souls FOR Paul's sake (27:24,44 — *escaped all safe to land*):
+--    the righteous one's presence preserving the many, as Yahuah (LORD) would spare Sodom for the
+--    sake of the righteous found in it (Genesis 18). Read as the preserving weight of the witness,
+--    NOT a merit-transfer scheme.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 27:
+--   v.1-8   sail to Italy / Sidon / under Crete  Tanakh: none warranted (itinerary)  Extras: none warranted  NT: none warranted
+--   v.9-13  Paul admonishes / not heeded         Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative; warning honored at the deliverance threads)
+--   v.14-20 Euroclydon / all hope taken away     Tanakh: Psalm 107:25, Psalm 107:27; Jonah 1:4, Jonah 1:5  Extras: none warranted  NT: none warranted
+--   v.21-26 Paul stood forth / the angel stood by Tanakh: none added here (the keeping carried via the Acts 23 NT anchor + Genesis 18)  Extras: Tobit 5:16, Tobit 5:21  NT: Acts 23:11
+--   v.23-24 the ship given for Paul''s sake       Tanakh: Genesis 18:26, Genesis 18:32  Extras: (carried in the angel thread)  NT: none added
+--   v.27-32 fourteenth night / soundings / boat  Tanakh: none warranted (narrative)  Extras: none warranted  NT: none warranted
+--   v.33-34 take meat / not a hair shall fall     Tanakh: 1 Samuel 14:45, 2 Samuel 14:11  Extras: none warranted  NT: Luke 21:18
+--   v.35    took bread / gave thanks / brake it   Tanakh: none warranted  Extras: none warranted  NT: Luke 22:19, Luke 24:30
+--   v.36-38 all of good cheer / 276 souls / wheat Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.39-44 aground / broken / escaped all safe   Tanakh: Genesis 18:26 (carried)  Extras: none warranted  NT: none added (the all-safe deliverance carried in the ship-saved thread + Psalm 107:30 desired haven)
+--
+-- THREADS (slug -> target libraries):
+--   5925 acts-27-the-angel-of-god-stood-by-me-fear-not-thou-must-be-brought-to-caesar   (NT, Acts<->Acts + Extras: Tobit)
+--   5928 acts-27-given-thee-all-them-that-sail-with-thee-the-ship-saved-for-the-righteous (Tanakh: Genesis 18)
+--   5931 acts-27-all-hope-taken-away-the-stormy-wind-he-raiseth-and-the-storm-he-stilleth (Tanakh: Psalm 107 + Jonah 1)
+--   5934 acts-27-there-shall-not-an-hair-fall-from-the-head-of-any-of-you               (Tanakh: 1-2 Samuel + NT: Luke)
+--   5937 acts-27-he-took-bread-and-gave-thanks-in-presence-of-them-all-and-brake-it      (NT: Luke)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-27-the-angel-of-god-stood-by-me-fear-not-thou-must-be-brought-to-caesar
+  ('canon', 'acts', 27, 23, 'canon', 'acts', 23, 11, 'free', E'*And the night following Yahuah (Lord) stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome.* (Acts 23:11). The promise made in the castle at Yerushalayim is the promise kept on the foundering ship: *there stood by me this night the angel of Elohim (God), whose I am, and whom I serve, Saying, Fear not, Paul; thou must be brought before Cæsar* (Acts 27:23-24). The Master who stood by Paul in the night and sent him to bear witness at Rome now sends his messenger to keep him through the tempest — the sending confirmed, the journey to its appointed witness guarded; the storm cannot break what the word of Elohim (God) has appointed.'),
+  ('canon', 'acts', 27, 23, 'apocrypha', 'tobit', 5, 16, 'extras', E'*Go you with this man, and Yahuah (God), which dwells in heaven, prosper your journey, and the angel of Yahuah (God) keep you company.* (Tobit 5:16). As the angel of Yahuah (God) was sent to keep Tobias company on the road and bring him home safe, so the angel of Elohim (God) stands by Paul on the sea: *Fear not, Paul; thou must be brought before Cæsar: and, lo, Elohim (God) hath given thee all them that sail with thee* (Acts 27:24). The same keeping — the messenger of Elohim (God) sent to guard the servant the whole length of the journey to its appointed end.'),
+  ('canon', 'acts', 27, 24, 'apocrypha', 'tobit', 5, 21, 'extras', E'*For the good angel will keep him company, and his journey shall be prosperous, and he shall return safe.* (Tobit 5:21). The word over Tobias — the good angel keeping the journey, the safe return — is the very shape of the word over Paul and all who sailed with him: *Fear not, Paul … and, lo, Elohim (God) hath given thee all them that sail with thee* (Acts 27:24), and so *they escaped all safe to land* (Acts 27:44). The angel keeps the journey; the appointed one and those given him come safe through.'),
+  -- thread: acts-27-given-thee-all-them-that-sail-with-thee-the-ship-saved-for-the-righteous
+  ('canon', 'acts', 27, 24, 'canon', 'genesis', 18, 26, 'free', E'*And Yahuah (LORD) said, If I find in Sodom fifty righteous within the city, then I will spare all the place for their sakes.* (Genesis 18:26). The pattern Abraham pressed before Yahuah (LORD) — the whole place spared for the sake of the righteous found in it — is worked again on the sea: *lo, Elohim (God) hath given thee all them that sail with thee* (Acts 27:24). The two hundred threescore and sixteen souls are spared for the one whom Elohim (God) is bringing before Cæsar; the presence of the appointed witness preserves the many.'),
+  ('canon', 'acts', 27, 24, 'canon', 'genesis', 18, 32, 'free', E'*And he said, Oh let not Yahuah (Lord) be angry, and I will speak yet but this once: Peradventure ten shall be found there. And he said, I will not destroy it for ten''s sake.* (Genesis 18:32). Yahuah (Lord) would withhold the destruction of a whole city for the sake of a few righteous within it. On the ship the principle is laid bare and made good: *there shall be no loss of any man''s life among you, but of the ship* (Acts 27:22), for *Elohim (God) hath given thee all them that sail with thee* (Acts 27:24). The many are kept alive for the sake of the one.'),
+  ('canon', 'acts', 27, 44, 'canon', 'genesis', 18, 26, 'free', E'*And Yahuah (LORD) said, If I find in Sodom fifty righteous within the city, then I will spare all the place for their sakes.* (Genesis 18:26). The sparing of the place for the righteous'' sake reaches its plain end on the shore: the ship breaks, *but the centurion, willing to save Paul, kept them from their purpose* (Acts 27:43), *and so it came to pass, that they escaped all safe to land* (Acts 27:44). None of the two hundred threescore and sixteen is lost — all preserved for the sake of the one Elohim (God) is bringing before Cæsar.'),
+  -- thread: acts-27-all-hope-taken-away-the-stormy-wind-he-raiseth-and-the-storm-he-stilleth
+  ('canon', 'acts', 27, 20, 'canon', 'psalms', 107, 25, 'free', E'*For he commandeth, and raiseth the stormy wind, which lifteth up the waves thereof.* (Psalm 107:25). The Euroclydon is no mere weather: *he commandeth, and raiseth the stormy wind.* And under it *neither sun nor stars in many days appeared, and no small tempest lay on us, all hope that we should be saved was then taken away* (Acts 27:20). The same Yahuah (LORD) who raises the stormy wind over them that go down to the sea in ships is the One whose angel now stands by to bring them through it.'),
+  ('canon', 'acts', 27, 20, 'canon', 'psalms', 107, 27, 'free', E'*They reel to and fro, and stagger like a drunken man, and are at their wits'' end.* (Psalm 107:27). The Psalm names the very place the ship reaches — wits'' end, *all hope that we should be saved was then taken away* (Acts 27:20). But the Psalm does not end there: *Then they cry unto Yahuah (LORD) in their trouble, and he bringeth them out of their distresses* (Psalm 107:28), and *he bringeth them unto their desired haven* (Psalm 107:30). At the wits''-end of the tempest the deliverance of Yahuah (LORD) is exactly where the word of his angel meets the ship.'),
+  ('canon', 'acts', 27, 18, 'canon', 'jonah', 1, 4, 'free', E'*But Yahuah (LORD) sent out a great wind into the sea, and there was a mighty tempest in the sea, so that the ship was like to be broken.* (Jonah 1:4). As at Joppa, so in Adria: the mighty tempest that threatens to break the ship — *we being exceedingly tossed with a tempest, the next day they lightened the ship* (Acts 27:18). The sea and the wind are in the hand of Yahuah (LORD); the tempest that breaks the ship cannot take the life he has appointed to be kept.'),
+  ('canon', 'acts', 27, 18, 'canon', 'jonah', 1, 5, 'free', E'*Then the mariners were afraid, and cried every man unto his god, and cast forth the wares that were in the ship into the sea, to lighten it of them.* (Jonah 1:5). The mariners of Jonah lighten the ship of its wares in their fear; so on the way to Rome *the next day they lightened the ship* (Acts 27:18), and the third day cast out the tackling, and at the last *cast out the wheat into the sea* (Acts 27:38). The men throw the cargo overboard to live — but the deliverance, when it comes, is not by their lightening but by the keeping word of Elohim (God).'),
+  -- thread: acts-27-there-shall-not-an-hair-fall-from-the-head-of-any-of-you
+  ('canon', 'acts', 27, 34, 'canon', '1-samuel', 14, 45, 'free', E'*And the people said unto Saul, Shall Jonathan die, who hath wrought this great salvation in Yashar''el (Israel)? Elohim (God) forbid: as Yahuah (LORD) liveth, there shall not one hair of his head fall to the ground; for he hath wrought with Elohim (God) this day. So the people rescued Jonathan, that he died not.* (1 Samuel 14:45). The oath that delivered Jonathan — *there shall not one hair of his head fall to the ground* — is the very pledge Paul gives the whole ship: *there shall not an hair fall from the head of any of you* (Acts 27:34). The hair-of-the-head is the token of the whole life kept; not one is lost.'),
+  ('canon', 'acts', 27, 34, 'canon', '2-samuel', 14, 11, 'free', E'*Then said she, I pray thee, let the king remember Yahuah Elohayka (the LORD thy God), that thou wouldest not suffer the revengers of blood to destroy any more, lest they destroy my son. And he said, As Yahuah (LORD) liveth, there shall not one hair of thy son fall to the earth.* (2 Samuel 14:11). The king''s pledge of preservation — *there shall not one hair of thy son fall to the earth* — is the same word of keeping Paul speaks over the two hundred threescore and sixteen: *there shall not an hair fall from the head of any of you* (Acts 27:34). The not-a-hair-lost is the surety of a life wholly preserved.'),
+  ('canon', 'acts', 27, 34, 'canon', 'luke', 21, 18, 'free', E'*But there shall not an hair of your head perish.* (Luke 21:18). The Master''s promise to his own in the midst of hatred and peril — *there shall not an hair of your head perish* — is the very assurance Paul carries onto the breaking ship: *there shall not an hair fall from the head of any of you* (Acts 27:34). The keeping that holds through betrayal and tribulation holds also through the tempest; the preservation of the appointed is to the last hair.'),
+  -- thread: acts-27-he-took-bread-and-gave-thanks-in-presence-of-them-all-and-brake-it
+  ('canon', 'acts', 27, 35, 'canon', 'luke', 22, 19, 'free', E'*And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me.* (Luke 22:19). The Master took bread, gave thanks, and brake it at the table; and now on the foundering ship Paul does the same in the sight of all: *he took bread, and gave thanks to Elohim (God) in presence of them all: and when he had broken it, he began to eat* (Acts 27:35). The witness''s table is set in the storm — the blessing and the breaking before two hundred threescore and sixteen souls, the giving of thanks that names who keeps them.'),
+  ('canon', 'acts', 27, 35, 'canon', 'luke', 24, 30, 'free', E'*And it came to pass, as he sat at meat with them, he took bread, and blessed it, and brake, and gave to them.* (Luke 24:30). At Emmaus the Master was known in the taking, blessing, and breaking of bread; so on the ship the same fourfold act marks the witness: *he took bread, and gave thanks to Elohim (God) in presence of them all: and when he had broken it, he began to eat* (Acts 27:35). The breaking of bread with thanksgiving is the sign of the One who keeps the table even on the deep.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-27-the-angel-of-god-stood-by-me-fear-not-thou-must-be-brought-to-caesar',
+       E'The angel of Elohim (God) stood by me — Fear not, thou must be brought before Cæsar',
+       E'When all hope of being saved is taken away, Paul stands forth in the midst of the ship: *there stood by me this night the angel of Elohim (God), whose I am, and whom I serve, Saying, Fear not, Paul; thou must be brought before Cæsar: and, lo, Elohim (God) hath given thee all them that sail with thee* (Acts 27:23-24). This is the keeping of an earlier word made good. In the castle at Yerushalayim the Master himself had stood by him: *the night following Yahuah (Lord) stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome* (Acts 23:11). The sending to Rome cannot fail; so the messenger of Elohim (God) is sent to keep the servant through the tempest the whole length of the journey to its appointed witness. It is the same keeping the older library names — the angel of Yahuah (God) sent to walk the road with the traveller and bring him home: *Yahuah (God), which dwells in heaven, prosper your journey, and the angel of Yahuah (God) keep you company* (Tobit 5:16), *for the good angel will keep him company, and his journey shall be prosperous, and he shall return safe* (Tobit 5:21). The angel keeps the journey; the appointed one, and all given to him, come safe through. *I believe Elohim (God), that it shall be even as it was told me* (Acts 27:25).',
+       sv.verse_id, ev.verse_id, 'extras', 5925
+  FROM _s217_a27_lookup sv, _s217_a27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=27 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-27-given-thee-all-them-that-sail-with-thee-the-ship-saved-for-the-righteous',
+       E'Given thee all them that sail with thee — the ship saved for the righteous one''s sake',
+       E'The word of the angel does not save Paul only: *lo, Elohim (God) hath given thee all them that sail with thee* (Acts 27:24), *there shall be no loss of any man''s life among you, but of the ship* (Acts 27:22). The whole company — two hundred threescore and sixteen souls — is preserved for the sake of the one whom Elohim (God) is bringing before Cæsar. This is the pattern Abraham pressed before Yahuah (LORD) at the oaks of Mamre: *If I find in Sodom fifty righteous within the city, then I will spare all the place for their sakes* (Genesis 18:26), down to *I will not destroy it for ten''s sake* (Genesis 18:32). The presence of the righteous preserves the place; the presence of the appointed witness preserves the ship. And so it is made good on the shore — the ship breaks, but *the centurion, willing to save Paul, kept them from their purpose* (Acts 27:43), *and so it came to pass, that they escaped all safe to land* (Acts 27:44). Not one of the many is lost; all are kept for the sake of the one.',
+       sv.verse_id, ev.verse_id, 'free', 5928
+  FROM _s217_a27_lookup sv, _s217_a27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=27 AND ev.verse_number=44
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-27-all-hope-taken-away-the-stormy-wind-he-raiseth-and-the-storm-he-stilleth',
+       E'All hope taken away — the stormy wind he raiseth, and the storm he stilleth',
+       E'For many days no sun nor stars appear, and the tempest beats on the ship until *all hope that we should be saved was then taken away* (Acts 27:20). The Psalm of them that go down to the sea in ships names every part of it. The storm itself is no chance: *he commandeth, and raiseth the stormy wind, which lifteth up the waves thereof* (Psalm 107:25). The wits''-end is named exactly: *they reel to and fro, and stagger like a drunken man, and are at their wits'' end* (Psalm 107:27). And so is the deliverance: *Then they cry unto Yahuah (LORD) in their trouble, and he bringeth them out of their distresses* (Psalm 107:28); *he maketh the storm a calm, so that the waves thereof are still* (Psalm 107:29); *so he bringeth them unto their desired haven* (Psalm 107:30). The sea obeys him who made it — as at Joppa, *Yahuah (LORD) sent out a great wind into the sea, and there was a mighty tempest in the sea, so that the ship was like to be broken* (Jonah 1:4), and the mariners *cast forth the wares that were in the ship into the sea, to lighten it* (Jonah 1:5), as these on the way to Rome *lightened the ship* (Acts 27:18) and at the last *cast out the wheat into the sea* (Acts 27:38). The men throw the cargo overboard to live; but the deliverance, when it comes, is by the keeping word of Elohim (God) — the same Yahuah (LORD) who raises the stormy wind is the One whose angel stands by to bring the ship through it.',
+       sv.verse_id, ev.verse_id, 'free', 5931
+  FROM _s217_a27_lookup sv, _s217_a27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=27 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-27-there-shall-not-an-hair-fall-from-the-head-of-any-of-you',
+       E'There shall not an hair fall from the head of any of you',
+       E'As the day comes on, Paul presses them all to take meat, and seals it with a pledge of total preservation: *for this is for your health: for there shall not an hair fall from the head of any of you* (Acts 27:34). It is the oath-language of deliverance the older Scriptures already carry. When the people would not let Jonathan die for breaking an unwitting vow, they swore: *as Yahuah (LORD) liveth, there shall not one hair of his head fall to the ground; for he hath wrought with Elohim (God) this day. So the people rescued Jonathan, that he died not* (1 Samuel 14:45). When the woman of Tekoah pleaded for her son''s life, the king swore: *As Yahuah (LORD) liveth, there shall not one hair of thy son fall to the earth* (2 Samuel 14:11). And the Master gave the same surety to his own in the midst of hatred and peril: *But there shall not an hair of your head perish* (Luke 21:18). The hair of the head is the token of the whole life kept — not one of the two hundred threescore and sixteen lost. The keeping that holds through betrayal and tribulation holds also through the tempest, to the very last hair.',
+       sv.verse_id, ev.verse_id, 'free', 5934
+  FROM _s217_a27_lookup sv, _s217_a27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=33
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=27 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-27-he-took-bread-and-gave-thanks-in-presence-of-them-all-and-brake-it',
+       E'He took bread, and gave thanks in presence of them all, and brake it',
+       E'On the foundering ship, before two hundred threescore and sixteen souls, Paul does what the Master did at the table: *he took bread, and gave thanks to Elohim (God) in presence of them all: and when he had broken it, he began to eat* (Acts 27:35). The fourfold act is the Master''s own. At the last supper *he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me* (Luke 22:19). At Emmaus he was known in the doing of it: *as he sat at meat with them, he took bread, and blessed it, and brake, and gave to them* (Luke 24:30). The witness''s table is set in the storm — the taking, the thanksgiving, the breaking, in the sight of all — and the giving of thanks names openly who it is that keeps them. *Then were they all of good cheer, and they also took some meat* (Acts 27:36). The blessing and the breaking of bread is the sign of the One who keeps the table even on the deep.',
+       sv.verse_id, ev.verse_id, 'free', 5937
+  FROM _s217_a27_lookup sv, _s217_a27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=35
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=27 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-27-the-angel-of-god-stood-by-me-fear-not-thou-must-be-brought-to-caesar
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 23:11 — *Yahuah (Lord) stood by him … so must thou bear witness also at Rome* the sending the angel now keeps good through the tempest (Acts 27:23-24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-the-angel-of-god-stood-by-me-fear-not-thou-must-be-brought-to-caesar'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=23 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Tobit 5:16 — *the angel of Yahuah (God) keep you company* the messenger sent to guard the journey, as the angel of Elohim (God) keeps Paul on the sea (Acts 27:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-the-angel-of-god-stood-by-me-fear-not-thou-must-be-brought-to-caesar'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=23
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=5 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Tobit 5:21 — *the good angel will keep him company … and he shall return safe* the keeping that brings the appointed one and those given him safe through (Acts 27:24,44).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-the-angel-of-god-stood-by-me-fear-not-thou-must-be-brought-to-caesar'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=24
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=5 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-27-given-thee-all-them-that-sail-with-thee-the-ship-saved-for-the-righteous
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 18:26 — *I will spare all the place for their sakes* the whole place spared for the righteous; the ship spared for the one Elohim (God) brings before Cæsar (Acts 27:24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-given-thee-all-them-that-sail-with-thee-the-ship-saved-for-the-righteous'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 18:32 — *I will not destroy it for ten''s sake* the many withheld from destruction for the sake of a few righteous, as no life is lost but the ship (Acts 27:22,24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-given-thee-all-them-that-sail-with-thee-the-ship-saved-for-the-righteous'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 18:26 — *spare all the place for their sakes* made good on the shore: *they escaped all safe to land* — none of the 276 lost for the one''s sake (Acts 27:44).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-given-thee-all-them-that-sail-with-thee-the-ship-saved-for-the-righteous'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=44
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-27-all-hope-taken-away-the-stormy-wind-he-raiseth-and-the-storm-he-stilleth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 107:25 — *he commandeth, and raiseth the stormy wind* the Euroclydon is in his hand, the tempest under which all hope was taken away (Acts 27:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-all-hope-taken-away-the-stormy-wind-he-raiseth-and-the-storm-he-stilleth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=107 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 107:27 — *they … are at their wits'' end* the wits''-end of the tempest where his deliverance meets the ship and brings to the desired haven (Acts 27:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-all-hope-taken-away-the-stormy-wind-he-raiseth-and-the-storm-he-stilleth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=107 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jonah 1:4 — *Yahuah (LORD) sent out a great wind into the sea … the ship was like to be broken* the sea in his hand, the tempest that threatens the ship (Acts 27:18).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-all-hope-taken-away-the-stormy-wind-he-raiseth-and-the-storm-he-stilleth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='jonah' AND tv.chapter_number=1 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jonah 1:5 — *cast forth the wares that were in the ship into the sea, to lighten it* the mariners lighten the ship, as these *lightened the ship* and cast out the wheat (Acts 27:18,38).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-all-hope-taken-away-the-stormy-wind-he-raiseth-and-the-storm-he-stilleth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='jonah' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-27-there-shall-not-an-hair-fall-from-the-head-of-any-of-you
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Samuel 14:45 — *there shall not one hair of his head fall to the ground* the oath that rescued Jonathan; the token of the whole life kept (Acts 27:34).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-there-shall-not-an-hair-fall-from-the-head-of-any-of-you'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=14 AND tv.verse_number=45
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Samuel 14:11 — *there shall not one hair of thy son fall to the earth* the king''s pledge of preservation, the same not-a-hair-lost surety (Acts 27:34).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-there-shall-not-an-hair-fall-from-the-head-of-any-of-you'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=14 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 21:18 — *there shall not an hair of your head perish* the Master''s keeping through tribulation, holding also through the tempest (Acts 27:34).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-there-shall-not-an-hair-fall-from-the-head-of-any-of-you'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=21 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-27-he-took-bread-and-gave-thanks-in-presence-of-them-all-and-brake-it
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 22:19 — *he took bread, and gave thanks, and brake it, and gave unto them* the Master''s table; Paul does the same in the sight of all on the ship (Acts 27:35).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-he-took-bread-and-gave-thanks-in-presence-of-them-all-and-brake-it'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 24:30 — *he took bread, and blessed it, and brake, and gave to them* the Emmaus breaking by which the Master was known, the same fourfold act on the deep (Acts 27:35).'
+  FROM cross_reference_threads t, cross_references x, _s217_a27_lookup sv, _s217_a27_lookup tv
+ WHERE t.slug='acts-27-he-took-bread-and-gave-thanks-in-presence-of-them-all-and-brake-it'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=27 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_28.sql (S217 Acts 28) -----
+-- =====================================================================
+-- S217 minion — ACTS 28 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ACTS 28 (the closing chapter of Acts). Tag: a28 (temp view _s217_a28_lookup).
+-- Sort band: 5950-5965 (base 5950, step 3).
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- WATCHPOINTS (HIGHEST IN THE BOOK — Red Lines #7/#11, Christology, son-of-Adam):
+--  * The Isaiah-6 / Romans-11 closing prophecy (28:25-28): the judicial blindness is IN PART
+--    and FOR A SEASON — *blindness in part is happened to Yashar'el (Israel), until the fulness
+--    of the Gentiles be come in* (Romans 11:25) — NEVER permanent rejection, NEVER replacement.
+--    *And so all Yashar'el (Israel) shall be saved* (Romans 11:26) is the closing word over any
+--    Romans-11 / Isaiah-6 weave. The hardening is the husbandry that scatters the seed so the
+--    dispersed might be gathered — the remnant according to the election of grace remains.
+--  * "The salvation of Elohim (God) is sent unto the Gentiles" (28:28): read as the scattered
+--    seed / the dispersed of Yashar'el among the nations who WILL hear — the servant's light to
+--    the nations within the restoration (Isaiah 49:6), the provoking-to-jealousy that gathers
+--    (Romans 11:11), the ends of the earth seeing the salvation of the house of Yashar'el
+--    (Psalms 98:2-3). NOT a graft of non-seed by confession; NOT the replacement of Yashar'el
+--    by a new people. Paired with the deafness-in-part so the verse is never a supersessionist
+--    proof-text.
+--  * "The hope of Yashar'el (Israel)" (28:20) = the twelve-tribe restoration hope — *He that
+--    scattered Yashar'el (Israel) will gather him* (Jeremiah 31:10), the two sticks made one
+--    nation (Ezekiel 37:21-22). Not a generic afterlife hope; the prophetic ingathering.
+--  * Yahusha proved *both out of the law of Moses, and out of the prophets* (28:23) = the
+--    Tanakh's own Messiah, the whole witness the risen One opened on the Emmaus road
+--    (Luke 24:27,44). Not a new religion; the law and the prophets read aright.
+--  * The viper (28:3-6): the serpent fastens and is shaken into the fire, no harm — the enmity
+--    of Genesis 3:15, the treading on serpents of Luke 10:19 / Psalms 91:13, the sign of
+--    Mark 16:18. Christology held: the One who gave the power to tread is the Formed who came
+--    in the flesh; the servant who bore our griefs (Isaiah 53:4) is the healer at Publius's bed.
+--  * Grace / sola-fide: Acts 28 does not carry a *saved by grace* formula; no Red Line #10
+--    surface here. The kingdom of Elohim (God) preached open-ended (28:31) is the gathering
+--    proclaimed, no man forbidding.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 28:
+--   v.1-2   Melita / barbarous kindness  Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative landing)
+--   v.3-6   the viper shaken into fire   Tanakh: Genesis 3:15, Psalms 91:13  Extras: none warranted  NT: Luke 10:19, Mark 16:18
+--   v.7-9   Publius's father healed      Tanakh: Isaiah 53:4 (the servant bore our griefs — the healer)  Extras: none warranted  NT: none added (laying-on-of-hands carried in the Acts/gospel healing threads, not re-added)
+--   v.10-16 Syracuse->Rome / brethren    Tanakh: none warranted  Extras: none warranted  NT: none warranted (travel narrative; took courage)
+--   v.17-19 called the chief Yahudim     Tanakh: none warranted  Extras: none warranted  NT: none warranted (apologia narrative)
+--   v.20    the hope of Yashar'el        Tanakh: Jeremiah 14:8, Jeremiah 31:10, Ezekiel 37:21, Ezekiel 37:22  Extras: none warranted  NT: none added
+--   v.21-22 this sect spoken against     Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.23    out of Moses and the prophets Tanakh: none added (the whole-Tanakh witness carried via Luke 24 NT targets)  Extras: none warranted  NT: Luke 24:27, Luke 24:44
+--   v.24    some believed, some not      Tanakh: none warranted  Extras: none warranted  NT: none warranted (carried into the blindness-in-part thread, v.25-27)
+--   v.25-27 Isaiah 6 closing prophecy    Tanakh: Isaiah 6:9, Isaiah 6:10  Extras: none warranted  NT: Romans 11:7, Romans 11:8, Romans 11:25
+--   v.28    salvation sent to the nations Tanakh: Isaiah 49:6, Psalms 98:3  Extras: none warranted  NT: Romans 11:11
+--   v.29    departed / great reasoning   Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.30-31 two years, kingdom preached  Tanakh: none warranted  Extras: none warranted  NT: none warranted (open-ended close; kingdom-of-Elohim carried throughout Acts)
+--
+-- THREADS (slug -> target libraries):
+--   5950 acts-28-the-viper-on-his-hand-the-serpent-shaken-into-the-fire        (Tanakh + NT)
+--   5953 acts-28-the-hope-of-yasharel-bound-with-this-chain                    (Tanakh)
+--   5956 acts-28-yahusha-proved-both-out-of-moses-and-out-of-the-prophets      (NT, Acts<->Luke)
+--   5959 acts-28-hearing-ye-shall-hear-the-blindness-in-part-for-a-season      (Tanakh + NT)
+--   5962 acts-28-the-salvation-of-god-sent-the-dispersed-gathered-not-replaced (Tanakh + NT)
+--   5965 acts-28-he-bore-our-griefs-the-laying-on-of-hands-and-the-healer      (Tanakh)
+--
+-- ON THE "FOR YOSHI'S BLESSING" LIST: Acts 28 closes the book on the Isaiah-6 / Romans-11
+-- blindness-in-part-for-a-season reading and the salvation-to-the-nations-as-gathering
+-- (not replacement) framing — the highest-risk verses in Acts handled per Red Lines #7/#11.
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a28_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-28-the-viper-on-his-hand-the-serpent-shaken-into-the-fire
+  ('canon', 'acts', 28, 3, 'canon', 'genesis', 3, 15, 'free', E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15). When *there came a viper out of the heat, and fastened on his hand* (Acts 28:3), the oldest enmity reaches for the heel and finds no purchase. The serpent struck the heel in the garden, but the seed of the woman bruises the head — and the servant who walks in the One who crushed the serpent shakes the viper off and feels no harm.'),
+  ('canon', 'acts', 28, 5, 'canon', 'psalms', 91, 13, 'free', E'*Thou shalt tread upon the lion and adder: the young lion and the dragon shalt thou trample under feet.* (Psalms 91:13). *And he shook off the beast into the fire, and felt no harm* (Acts 28:5). The promise of the psalm is enacted on the shore of Melita: the adder is trodden, the venomous beast shaken into the flame, and the one who dwells in the secret place is not hurt. The serpent''s bite cannot fasten where the Most High is the refuge.'),
+  ('canon', 'acts', 28, 5, 'canon', 'luke', 10, 19, 'free', E'*Behold, I give unto you power to tread on serpents and scorpions, and over all the power of the enemy: and nothing shall by any means hurt you.* (Luke 10:19). The word the Master spoke is shown true on the island: *he shook off the beast into the fire, and felt no harm* (Acts 28:5). The power to tread on serpents was given by the One who beheld Satan fall as lightning, and the viper that fastened on the hand by no means hurts the servant who carries that word.'),
+  ('canon', 'acts', 28, 5, 'canon', 'mark', 16, 18, 'free', E'*They shall take up serpents; and if they drink any deadly thing, it shall not hurt them; they shall lay hands on the sick, and they shall recover.* (Mark 16:18). The sign the Master named follows: the serpent is taken up and shaken into the fire and does not hurt him (Acts 28:5), and in the next breath Paul *laid his hands on him, and healed him* (Acts 28:8). The serpent harmless and the sick recovered — both signs of the one word, worked on Melita.'),
+  -- thread: acts-28-the-hope-of-yasharel-bound-with-this-chain
+  ('canon', 'acts', 28, 20, 'canon', 'jeremiah', 14, 8, 'free', E'*O the hope of Yashar''el (Israel), the saviour thereof in time of trouble, why shouldest thou be as a stranger in the land, and as a wayfaring man that turneth aside to tarry for a night?* (Jeremiah 14:8). Paul names the very thing the prophet named: *for the hope of Yashar''el (Israel) I am bound with this chain* (Acts 28:20). The hope of Yashar''el is not a private hope of one man''s afterlife — it is the Saviour of the whole house in the time of trouble, the One the prophet pleaded would not remain a stranger. For that hope Paul wears the chain.'),
+  ('canon', 'acts', 28, 20, 'canon', 'jeremiah', 31, 10, 'free', E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock.* (Jeremiah 31:10). The *hope of Yashar''el (Israel)* for which Paul is bound (Acts 28:20) is this declared word: the One who scattered the house will gather it again and keep it as a shepherd keeps the flock. The hope is the ingathering of the scattered seed, proclaimed even in the isles afar off — the very isles where the prisoner''s ship had wintered.'),
+  ('canon', 'acts', 28, 20, 'canon', 'ezekiel', 37, 21, 'free', E'*And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* (Ezekiel 37:21). The *hope of Yashar''el (Israel)* (Acts 28:20) is the promise of the dry-bones valley and the two sticks: the children of Yashar''el taken from among the nations where they were scattered and gathered on every side. The hope Paul is chained for is the twelve-tribe ingathering the prophet was shown.'),
+  ('canon', 'acts', 28, 20, 'canon', 'ezekiel', 37, 22, 'free', E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all:* (Ezekiel 37:22). The *hope of Yashar''el (Israel)* (Acts 28:20) reaches its end here: the two houses — Yahudah and Yosef, the two sticks — made one nation under one king, divided no more. This is the restoration the prisoner''s chain bears witness to: not Yahudah alone, but all twelve tribes made one.'),
+  -- thread: acts-28-yahusha-proved-both-out-of-moses-and-out-of-the-prophets
+  ('canon', 'acts', 28, 23, 'canon', 'luke', 24, 27, 'free', E'*And beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself.* (Luke 24:27). From morning till evening Paul *expounded and testified the kingdom of Elohim (God), persuading them concerning Yahusha (Jesus), both out of the law of Moses, and out of the prophets* (Acts 28:23). It is the same opening the risen One worked on the Emmaus road — beginning at Moses and all the prophets, the whole Tanakh testifying of him. Paul does in Rome what his Master did on the road: he proves Yahusha from the law and the prophets that were always speaking of him.'),
+  ('canon', 'acts', 28, 23, 'canon', 'luke', 24, 44, 'free', E'*And he said unto them, These are the words which I spake unto you, while I was yet with you, that all things must be fulfilled, which were written in the law of Moses, and in the prophets, and in the psalms, concerning me.* (Luke 24:44). Paul persuades them concerning Yahusha *both out of the law of Moses, and out of the prophets, from morning till evening* (Acts 28:23) — the very witness the Master named: the law of Moses, the prophets, and the psalms, all fulfilled concerning him. The Messiah is not proved from a new book but from the whole Tanakh read aright.'),
+  -- thread: acts-28-hearing-ye-shall-hear-the-blindness-in-part-for-a-season
+  ('canon', 'acts', 28, 26, 'canon', 'isaiah', 6, 9, 'free', E'*And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not.* (Isaiah 6:9). Paul speaks the one word the Ruach HaKodesh (Holy Spirit) gave Esaias: *Saying, Go unto this people, and say, Hearing ye shall hear, and shall not understand; and seeing ye shall see, and not perceive* (Acts 28:26). The same commission the prophet received in the year king Uzziah died is spoken now in Rome — the hearing that does not understand, a hardness that is judicial, but never the end of the prophet''s own people; the same vision ends with a *tenth* that returns, the holy seed in the stump.'),
+  ('canon', 'acts', 28, 27, 'canon', 'isaiah', 6, 10, 'free', E'*Make the heart of this people fat, and make their ears heavy, and shut their eyes; lest they see with their eyes, and hear with their ears, and understand with their heart, and convert, and be healed.* (Isaiah 6:10). Paul quotes it almost word for word: *For the heart of this people is waxed gross, and their ears are dull of hearing, and their eyes have they closed; lest they should … be converted, and I should heal them* (Acts 28:27). It is the prophet''s own grief carried into Rome — a heart waxed gross, eyes closed. Yet the closing is *lest … I should heal them*: the healing is held back, not cancelled; the husbandry hardens for a season, that in the appointed time the people might yet be converted and healed.'),
+  ('canon', 'acts', 28, 25, 'canon', 'romans', 11, 7, 'free', E'*What then? Yashar''el (Israel) hath not obtained that which he seeketh for; but the election hath obtained it, and the rest were blinded* (Romans 11:7). When *some believed the things which were spoken, and some believed not* (Acts 28:24), it is the very pattern Paul named: the election obtains, the rest are blinded. The blinding is real, but it is *the rest* against a remnant that has obtained — the election according to grace stands within the hardened people, never a casting-off of the whole.'),
+  ('canon', 'acts', 28, 27, 'canon', 'romans', 11, 8, 'free', E'*(According as it is written, Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear;) unto this day.* (Romans 11:8). The *eyes have they closed* and *ears are dull of hearing* (Acts 28:27) are the same spirit of slumber Paul names — *eyes that they should not see, and ears that they should not hear.* It is a slumber, not a death; a heaviness laid on for a time, the deafness-in-part that the prophet and the apostle both read as the husbandry of mercy, not the end of the people.'),
+  ('canon', 'acts', 28, 27, 'canon', 'romans', 11, 25, 'free', E'*For I would not, brethren, that ye should be ignorant of this mystery, lest ye should be wise in your own conceits; that blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in.* (Romans 11:25). This is the mystery that reads the closing prophecy aright: the gross heart and closed eyes of Acts 28:27 are *blindness in part* — in part, not in whole — and *until the fulness*, not for ever. The hardening has a measure and a season, and at the end of it the word stands: *And so all Yashar''el (Israel) shall be saved* (Romans 11:26). The blindness is the door held for the gathering, never the casting-away of the people.'),
+  -- thread: acts-28-the-salvation-of-god-sent-the-dispersed-gathered-not-replaced
+  ('canon', 'acts', 28, 28, 'canon', 'isaiah', 49, 6, 'free', E'*And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth.* (Isaiah 49:6). *Be it known therefore unto you, that the salvation of Elohim (God) is sent unto the Gentiles* (Acts 28:28) — and Isaiah tells whose salvation and to what end: the same servant raises up the tribes of Jacob and restores the preserved of Yashar''el, AND is given for a light to the nations. The salvation sent abroad is the servant''s light reaching the scattered to the end of the earth — the restoration carried outward, not a new people set in Yashar''el''s place.'),
+  ('canon', 'acts', 28, 28, 'canon', 'psalms', 98, 3, 'free', E'*He hath remembered his mercy and his truth toward the house of Yashar''el (Israel): all the ends of the earth have seen the salvation of our Elohim (God).* (Psalms 98:3). When *the salvation of Elohim (God) is sent unto the Gentiles* (Acts 28:28), the psalm has already said what that salvation is: the mercy and truth remembered *toward the house of Yashar''el (Israel),* seen now by all the ends of the earth. The salvation that reaches the nations is the salvation of the house of Yashar''el made visible to the ends of the earth — the dispersed seeing what was always theirs.'),
+  ('canon', 'acts', 28, 28, 'canon', 'romans', 11, 11, 'free', E'*I say then, Have they stumbled that they should fall? Elohim (God) forbid: but rather through their fall salvation is come unto the Gentiles, for to provoke them to jealousy.* (Romans 11:11). *The salvation of Elohim (God) is sent unto the Gentiles, and that they will hear it* (Acts 28:28) — and Paul has already named the purpose: the salvation come to the nations is *to provoke them to jealousy,* to stir the scattered house to come home. The sending abroad is not the replacing of Yashar''el; it is the mechanism by which the diminished are provoked toward their own fulness.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Separate INSERT for the healing thread's single member (kept in its own block for clarity)
+WITH input2(src_edition, src_slug, src_ch, src_v,
+            tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-28-he-bore-our-griefs-the-laying-on-of-hands-and-the-healer
+  ('canon', 'acts', 28, 8, 'canon', 'isaiah', 53, 4, 'free', E'*Surely he hath borne our griefs, and carried our sorrows: yet we did esteem him stricken, smitten of Elohim (God), and afflicted.* (Isaiah 53:4). When *the father of Publius lay sick of a fever and of a bloody flux: to whom Paul entered in, and prayed, and laid his hands on him, and healed him* (Acts 28:8), the healing flows from the One the prophet saw — the servant who *hath borne our griefs, and carried our sorrows.* The hands laid on the sick of Melita carry the virtue of the One who bore the griefs in his own body; the healer at the bedside heals in the name of the stricken servant.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input2 i
+  JOIN _s217_a28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-28-the-viper-on-his-hand-the-serpent-shaken-into-the-fire',
+       E'The viper on his hand — the serpent shaken into the fire',
+       E'Safe ashore on Melita, Paul gathers sticks for the fire, and *there came a viper out of the heat, and fastened on his hand* (Acts 28:3). The islanders wait for him to swell and fall dead; instead *he shook off the beast into the fire, and felt no harm* (Acts 28:5). The scene is the oldest enmity playing out in miniature. In the garden the word went out: *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15) — the serpent strikes the heel, the seed crushes the head. The psalm promised the one who dwells in the secret place: *Thou shalt tread upon the lion and adder: the young lion and the dragon shalt thou trample under feet* (Psalms 91:13). And the Master had given the word to his own: *Behold, I give unto you power to tread on serpents and scorpions, and over all the power of the enemy: and nothing shall by any means hurt you* (Luke 10:19), naming the sign that *they shall take up serpents … and it shall not hurt them; they shall lay hands on the sick, and they shall recover* (Mark 16:18). Both halves of the sign land on Melita: the serpent harmless, and in the next breath Publius''s father healed (Acts 28:8). The viper that fastened on the hand by no means hurts the servant who walks in the One who crushed the serpent''s head.',
+       sv.verse_id, ev.verse_id, 'free', 5950
+  FROM _s217_a28_lookup sv, _s217_a28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=28 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-28-the-hope-of-yasharel-bound-with-this-chain',
+       E'The hope of Yashar''el (Israel) — bound with this chain',
+       E'Paul calls the chief of the Yahudim (Jews) together and tells them why he wears the chain: *because that for the hope of Yashar''el (Israel) I am bound with this chain* (Acts 28:20). The hope he names is not a private hope of one man''s resurrection — it is the hope the prophets carried for the whole house. Jeremiah pleaded with it as a name of the Saviour: *O the hope of Yashar''el (Israel), the saviour thereof in time of trouble, why shouldest thou be as a stranger in the land …?* (Jeremiah 14:8). And the substance of that hope is the ingathering of the scattered: *Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10) — declared, the prophet said, in the very isles afar off where the prisoner''s ship had wintered. Ezekiel was shown its end: *Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21), and *I will make them one nation in the land … and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The hope of Yashar''el is the twelve-tribe ingathering — Yahudah and Yosef, the two sticks made one nation under one king. For that gathering, not for himself, Paul is bound.',
+       sv.verse_id, ev.verse_id, 'free', 5953
+  FROM _s217_a28_lookup sv, _s217_a28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=28 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-28-yahusha-proved-both-out-of-moses-and-out-of-the-prophets',
+       E'Yahusha (Jesus) proved — both out of Moses and out of the prophets',
+       E'They appoint Paul a day, and from morning till evening he *expounded and testified the kingdom of Elohim (God), persuading them concerning Yahusha (Jesus), both out of the law of Moses, and out of the prophets* (Acts 28:23). The Messiah is not proved from a new book or a new religion — he is proved from the Tanakh that was always speaking of him. It is exactly what the risen One did on the Emmaus road: *beginning at Moses and all the prophets, he expounded unto them in all the scriptures the things concerning himself* (Luke 24:27). And it is the witness the Master named to the eleven: *all things must be fulfilled, which were written in the law of Moses, and in the prophets, and in the psalms, concerning me* (Luke 24:44). The law of Moses and the prophets are not left behind when Yahusha (Jesus) is preached; they are the very ground on which he is proved. Paul in Rome does what his Master did on the road — opens the whole Tanakh and shows the Messiah it was testifying of all along.',
+       sv.verse_id, ev.verse_id, 'free', 5956
+  FROM _s217_a28_lookup sv, _s217_a28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=28 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-28-hearing-ye-shall-hear-the-blindness-in-part-for-a-season',
+       E'Hearing ye shall hear — the blindness in part, for a season',
+       E'Some believed and some believed not (Acts 28:24), and Paul speaks one closing word — the word the Ruach HaKodesh (Holy Spirit) gave Esaias: *Go unto this people, and say, Hearing ye shall hear, and shall not understand; and seeing ye shall see, and not perceive: For the heart of this people is waxed gross, and their ears are dull of hearing, and their eyes have they closed; lest they should … be converted, and I should heal them* (Acts 28:26-27). It is Isaiah''s own commission, almost word for word: *Hear ye indeed, but understand not; and see ye indeed, but perceive not* (Isaiah 6:9); *Make the heart of this people fat … shut their eyes; lest … they convert, and be healed* (Isaiah 6:10). The hardness is real and it is judicial — but it is never the end of the prophet''s people. Isaiah''s own vision closes with a *tenth* that returns, the holy seed in the stump; and the apostle reads the same hardening as a thing with a measure and a season. *Yashar''el (Israel) hath not obtained that which he seeketh for; but the election hath obtained it, and the rest were blinded* (Romans 11:7) — the rest, against a remnant that has obtained. *Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear* (Romans 11:8) — a slumber, not a death. And the mystery that reads it aright: *blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* (Romans 11:25) — in part, not in whole; until the fulness, not for ever — *And so all Yashar''el (Israel) shall be saved* (Romans 11:26). The closed eyes of Acts 28:27 are the door held open for the gathering, never the casting-away of the people.',
+       sv.verse_id, ev.verse_id, 'free', 5959
+  FROM _s217_a28_lookup sv, _s217_a28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=28 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-28-the-salvation-of-god-sent-the-dispersed-gathered-not-replaced',
+       E'The salvation of Elohim (God) sent — the dispersed gathered, not replaced',
+       E'*Be it known therefore unto you, that the salvation of Elohim (God) is sent unto the Gentiles, and that they will hear it* (Acts 28:28). Read alone, the verse has been pressed into a supersessionist proof-text — as though the salvation passed from Yashar''el (Israel) to a new people. But the prophets it draws from say otherwise. Isaiah names the same servant who carries it: *It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6) — the one servant both restores the tribes of Jacob AND is the light to the nations; the salvation sent abroad is the restoration carried outward, never a replacement of the house. The psalm says whose salvation reaches the ends of the earth: *He hath remembered his mercy and his truth toward the house of Yashar''el (Israel): all the ends of the earth have seen the salvation of our Elohim (God)* (Psalms 98:3) — the salvation of the house of Yashar''el, made visible to the ends of the earth, the dispersed seeing what was always theirs. And Paul has already named the purpose of the sending: *through their fall salvation is come unto the Gentiles, for to provoke them to jealousy* (Romans 11:11) — the salvation come to the nations is the very thing that stirs the scattered house toward its own fulness. The salvation sent is the gathering reaching the dispersed seed among the nations, the deafness-in-part of the closing prophecy paired with it so the verse can never be made to cast Yashar''el away.',
+       sv.verse_id, ev.verse_id, 'free', 5962
+  FROM _s217_a28_lookup sv, _s217_a28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=28 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-28-he-bore-our-griefs-the-laying-on-of-hands-and-the-healer',
+       E'He bore our griefs — the laying on of hands and the healer',
+       E'In the same quarters lay the father of Publius, *sick of a fever and of a bloody flux: to whom Paul entered in, and prayed, and laid his hands on him, and healed him* (Acts 28:8), and after him *others also, which had diseases in the island, came, and were healed* (Acts 28:9). The hands laid on the sick carry a virtue that is not Paul''s own. The prophet saw its source long before: *Surely he hath borne our griefs, and carried our sorrows: yet we did esteem him stricken, smitten of Elohim (God), and afflicted* (Isaiah 53:4). The healer at the bedside heals in the name of the servant who bore the griefs in his own body — the One who carried the sorrows is the One whose power flows through the hands laid on the fevered and the sick of Melita. The closing chapter of Acts ends as the Master''s ministry began: the griefs borne, the sick made whole.',
+       sv.verse_id, ev.verse_id, 'free', 5965
+  FROM _s217_a28_lookup sv, _s217_a28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=28 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-28-the-viper-on-his-hand-the-serpent-shaken-into-the-fire
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:15 — *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* the oldest enmity; the serpent strikes the heel and finds no purchase (Acts 28:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-viper-on-his-hand-the-serpent-shaken-into-the-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 91:13 — *Thou shalt tread upon the lion and adder … the dragon shalt thou trample under feet* the adder trodden, the venomous beast shaken into the flame, no harm (Acts 28:5).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-viper-on-his-hand-the-serpent-shaken-into-the-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 10:19 — *I give unto you power to tread on serpents and scorpions … and nothing shall by any means hurt you* the Master''s word shown true on the island (Acts 28:5).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-viper-on-his-hand-the-serpent-shaken-into-the-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=10 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Mark 16:18 — *they shall take up serpents … it shall not hurt them; they shall lay hands on the sick, and they shall recover* both halves of the sign land on Melita — serpent harmless, then Publius''s father healed (Acts 28:5,8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-viper-on-his-hand-the-serpent-shaken-into-the-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=16 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-28-the-hope-of-yasharel-bound-with-this-chain
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 14:8 — *O the hope of Yashar''el (Israel), the saviour thereof in time of trouble* the hope Paul names is the Saviour of the whole house, not a private hope (Acts 28:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-hope-of-yasharel-bound-with-this-chain'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=14 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 31:10 — *He that scattered Yashar''el (Israel) will gather him … as a shepherd doth his flock* the hope is the ingathering, declared in the isles afar off (Acts 28:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-hope-of-yasharel-bound-with-this-chain'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 37:21 — *I will take the children of Yashar''el (Israel) from among the heathen … and will gather them on every side* the dry-bones ingathering, the hope''s substance (Acts 28:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-hope-of-yasharel-bound-with-this-chain'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 37:22 — *I will make them one nation … and they shall be no more two nations* the two sticks made one under one king — the twelve-tribe hope (Acts 28:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-hope-of-yasharel-bound-with-this-chain'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-28-yahusha-proved-both-out-of-moses-and-out-of-the-prophets
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 24:27 — *beginning at Moses and all the prophets, he expounded … the things concerning himself* the Emmaus opening; Paul does the same in Rome (Acts 28:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-yahusha-proved-both-out-of-moses-and-out-of-the-prophets'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 24:44 — *all things must be fulfilled, which were written in the law of Moses, and in the prophets, and in the psalms, concerning me* the whole-Tanakh witness Paul preaches (Acts 28:23).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-yahusha-proved-both-out-of-moses-and-out-of-the-prophets'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=44
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-28-hearing-ye-shall-hear-the-blindness-in-part-for-a-season
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 6:9 — *Hear ye indeed, but understand not; and see ye indeed, but perceive not* the prophet''s commission Paul speaks in Rome (Acts 28:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-hearing-ye-shall-hear-the-blindness-in-part-for-a-season'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 6:10 — *shut their eyes; lest … they convert, and be healed* the heart waxed gross; the healing held back, not cancelled (Acts 28:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-hearing-ye-shall-hear-the-blindness-in-part-for-a-season'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 11:7 — *the election hath obtained it, and the rest were blinded* the rest blinded against a remnant that has obtained — when some believed not (Acts 28:24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-hearing-ye-shall-hear-the-blindness-in-part-for-a-season'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Romans 11:8 — *the spirit of slumber, eyes that they should not see, and ears that they should not hear* a slumber, not a death — the deafness-in-part (Acts 28:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-hearing-ye-shall-hear-the-blindness-in-part-for-a-season'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Romans 11:25 — *blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* the mystery: in part, not in whole; until the fulness, not for ever — *And so all Yashar''el shall be saved* (Acts 28:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-hearing-ye-shall-hear-the-blindness-in-part-for-a-season'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-28-the-salvation-of-god-sent-the-dispersed-gathered-not-replaced
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 49:6 — *to raise up the tribes of Jacob, and to restore the preserved of Yashar''el … a light to the Gentiles* one servant restores the tribes AND lights the nations; the salvation sent abroad is the restoration carried outward (Acts 28:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-salvation-of-god-sent-the-dispersed-gathered-not-replaced'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 98:3 — *his mercy and his truth toward the house of Yashar''el (Israel): all the ends of the earth have seen the salvation of our Elohim (God)* the salvation of the house made visible to the ends of the earth (Acts 28:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-salvation-of-god-sent-the-dispersed-gathered-not-replaced'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=98 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 11:11 — *through their fall salvation is come unto the Gentiles, for to provoke them to jealousy* the sending abroad provokes the scattered house toward its own fulness — not replacement (Acts 28:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-the-salvation-of-god-sent-the-dispersed-gathered-not-replaced'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-28-he-bore-our-griefs-the-laying-on-of-hands-and-the-healer
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 53:4 — *Surely he hath borne our griefs, and carried our sorrows* the healer at the bedside heals in the name of the servant who bore the griefs (Acts 28:8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a28_lookup sv, _s217_a28_lookup tv
+ WHERE t.slug='acts-28-he-bore-our-griefs-the-laying-on-of-hands-and-the-healer'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=28 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'Session 217 — Acts 1-7 cross-references complete.'
