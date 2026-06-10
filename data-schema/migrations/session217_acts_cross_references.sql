@@ -4356,6 +4356,1556 @@ SELECT t.id, x.id, 4, E'Isaiah 55:11 — *my word … shall not return unto me v
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_acts_19.sql (S217 Acts 19) -----
+-- =====================================================================
+-- S217 minion — ACTS 19 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Range:  ACTS 19.  Tag: a19 (temp view _s217_a19_lookup).  Sort band: 5725-5740.
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- WATCHPOINTS (Red Lines, Christology, son-of-Adam, sola-fide):
+--  * The twelve disciples / John's baptism (19:1-7): John's baptism is COMPLETED, not
+--    repudiated — John baptized unto repentance and pointed forward to the One coming after
+--    him (Acts 13:24; Matthew 3:11; John 1:26-27), and the Spirit poured at the laying on of
+--    hands (Acts 1:5) is the baptism John always pointed to. The Spirit and the word/way are
+--    inseparable (Red Line #6) — the Spirit is the seal of the One John preached, not a thing
+--    apart. Twelve men, the number of the tribes: the down-payment of the gathering at Ephesus.
+--  * The name not a formula for the unsent (19:13-17, the sons of Sceva): *Yahusha (Jesus) I
+--    know, and Paul I know; but who are ye?* The name is not a power-tool wielded by the
+--    unsent. Matthew 7:22-23's *I never knew you* is spoken to those who used the name without
+--    being known by him — the post-harvest sifting of the unfruitful (Red Line #11), NOT a
+--    verdict on tares. Luke 10:17's seventy were SENT; the devils were subject through the name
+--    to the sent. Read as the name's authority belonging to the sent and the known, never as a
+--    formula or technique.
+--  * The idol polemic (19:26-27, *they be no gods, which are made with hands*): the Tanakh's
+--    own polemic against the work of men's hands (Isaiah 44, Jeremiah 10, Psalm 115, Habakkuk
+--    2) and Wisdom of Solomon's *that which is made with hands is cursed.* The living Elohim
+--    (God) who made the heavens against the dumb idol that cannot speak — the Formed-one's own
+--    word through the prophets, now preached by Paul against Diana.
+--  * The books burned (19:18-19): turning from the abominations of divination (Deuteronomy
+--    18:10-12) — the price counted, the curious arts renounced. Repentance unto the way, the
+--    homecoming that turns from what Yahuah (LORD) calls abomination. Not a how-to of practice
+--    but the dismantling of the divination the nations hearkened to.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 19:
+--   v.1-7   the twelve disciples / John's baptism completed
+--           Tanakh: none warranted (the forward-pointing of John carried in the NT targets)
+--           Extras: none warranted
+--           NT: Acts 13:24, Matthew 3:11, John 1:26, John 1:27, Acts 1:5
+--   v.8-10  synagogue / school of Tyrannus / all Asia heard the word
+--           Tanakh: Isaiah 55:11 (the word that goeth forth shall not return void; carried in the v.20 grew-and-prevailed thread)
+--           Extras: none warranted   NT: none warranted (narrative)
+--   v.11-12 special miracles / handkerchiefs   Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.13-17 the seven sons of Sceva / the name  Tanakh: none warranted (the name-over-spirits carried in NT)  Extras: none warranted
+--           NT: Matthew 7:22, Matthew 7:23, Luke 10:17, Mark 9:39, Acts 16:17
+--   v.18-19 confessed deeds / burned the books   Tanakh: Deuteronomy 18:10, Deuteronomy 18:12  Extras: none warranted  NT: none warranted
+--   v.20    so mightily grew the word and prevailed  Tanakh: Isaiah 55:11  Extras: none warranted  NT: none warranted
+--   v.21-22 Paul purposed ... I must also see Rome   Tanakh: none warranted  Extras: none warranted  NT: Acts 23:11 (Acts<->Acts: the Lord confirms the witness at Rome)
+--   v.23-34 the riot of Demetrius / Diana / no gods made with hands
+--           Tanakh: Isaiah 44:9, Jeremiah 10:5, Jeremiah 10:11, Psalm 115:4, Habakkuk 2:18
+--           Extras: Wisdom of Solomon 14:8 (that which is made with hands is cursed)   NT: none warranted
+--   v.35-41 the townclerk appeases the assembly   Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--
+-- THREADS (slug -> target libraries):
+--   5725 acts-19-johns-baptism-completed-the-one-who-comes-after-and-the-spirit  (NT)
+--   5728 acts-19-the-name-is-not-a-formula-for-the-unsent-the-sons-of-sceva       (NT)
+--   5731 acts-19-they-burned-their-books-turning-from-the-abominations           (Tanakh)
+--   5734 acts-19-so-mightily-grew-the-word-of-god-and-prevailed                  (Tanakh)
+--   5737 acts-19-i-must-also-see-rome-the-witness-the-lord-confirms              (NT, Acts<->Acts)
+--   5740 acts-19-they-be-no-gods-which-are-made-with-hands-the-idol-polemic      (Tanakh + Extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-19-johns-baptism-completed-the-one-who-comes-after-and-the-spirit
+  ('canon', 'acts', 19, 3, 'canon', 'acts', 13, 24, 'free', E'*When John had first preached before his coming the baptism of repentance to all the people of Yashar''el (Israel).* (Acts 13:24). The twelve at Ephesus had received *John''s baptism* (Acts 19:3) — and John''s baptism was never an end in itself. It was *the baptism of repentance* preached *before his coming,* turning the people toward the One who was to come. The Ephesian disciples are not being told John was wrong; they are being shown what John''s baptism always pointed to and is now fulfilled in.'),
+  ('canon', 'acts', 19, 4, 'canon', 'matthew', 3, 11, 'free', E'*I indeed baptize you with water unto repentance: but he that cometh after me is mightier than I, whose shoes I am not worthy to bear: he shall baptize you with the Ruach HaKodesh (Holy Spirit), and with fire:* (Matthew 3:11). Paul tells the Ephesians the very thing John himself said: *John verily baptized with the baptism of repentance, saying unto the people, that they should believe on him which should come after him, that is, on HaMashiach Yahusha (Christ Jesus)* (Acts 19:4). John baptized with water and pointed forward; the One coming after baptizes with the Ruach HaKodesh (Holy Spirit). The water-baptism was the pointing; the Spirit is the One pointed to.'),
+  ('canon', 'acts', 19, 4, 'canon', 'john', 1, 26, 'free', E'*John answered them, saying, I baptize with water: but there standeth one among you, whom ye know not;* (John 1:26). John''s own testimony was that his water-baptism stood in the shadow of Another *whom ye know not* — the One *which should come after him* (Acts 19:4). The Ephesian twelve had John''s water and not yet the One John named; Paul brings them the One who was always standing just beyond the water.'),
+  ('canon', 'acts', 19, 4, 'canon', 'john', 1, 27, 'free', E'*He it is, who coming after me is preferred before me, whose shoe''s latchet I am not worthy to unloose.* (John 1:27). John pointed past himself to the One *coming after* — the same word Paul puts in John''s mouth at Ephesus: *they should believe on him which should come after him, that is, on HaMashiach Yahusha (Christ Jesus)* (Acts 19:4). The forerunner''s whole office was the finger pointing forward; the believing the twelve are brought to is belief in the One the finger named.'),
+  ('canon', 'acts', 19, 6, 'canon', 'acts', 1, 5, 'free', E'*For John truly baptized with water; but ye shall be baptized with the Ruach HaKodesh (Holy Spirit) not many days hence.* (Acts 1:5). The Master''s own word divides the water of John from the Spirit to come — and at Ephesus the division is closed: *when Paul had laid his hands upon them, the Ruach HaKodesh (Holy Spirit) came on them; and they spake with tongues, and prophesied* (Acts 19:6). The baptism John always pointed to falls on the twelve. The Spirit is not a thing apart from the way they believed; he is the seal of the One John preached.'),
+  -- thread: acts-19-the-name-is-not-a-formula-for-the-unsent-the-sons-of-sceva
+  ('canon', 'acts', 19, 13, 'canon', 'matthew', 7, 22, 'free', E'*Many will say to me in that day, Yahuah (Lord), Yahuah (Lord), have we not prophesied in thy name? and in thy name have cast out devils? and in thy name done many wonderful works?* (Matthew 7:22). The vagabond exorcists *took upon them to call over them which had evil spirits the name of the Lord Yahusha (Lord Jesus), saying, We adjure you by Yahusha (Jesus) whom Paul preacheth* (Acts 19:13). The name is not a tool in the hand of the unsent. Those who use the name without being known by him are the ones to whom the word *I never knew you* is spoken — the name borrowed, the man unknown.'),
+  ('canon', 'acts', 19, 15, 'canon', 'matthew', 7, 23, 'free', E'*And then will I profess unto them, I never knew you: depart from me, ye that work iniquity.* (Matthew 7:23). The evil spirit makes the same distinction the Master makes: *Yahusha (Jesus) I know, and Paul I know; but who are ye?* (Acts 19:15). Even the demon knows the difference between the sent and the borrower. The name carries no power for the man the One it names *never knew* — the sons of Sceva flee naked and wounded, exposed as the unknown who handled what was not theirs.'),
+  ('canon', 'acts', 19, 13, 'canon', 'luke', 10, 17, 'free', E'*And the seventy returned again with joy, saying, Yahuah (Lord), even the devils are subject unto us through thy name.* (Luke 10:17). The seventy were SENT, and to the sent the devils were subject through the name. The sons of Sceva were not sent — they *took upon them* (Acts 19:13) a name they had no commission to wield. The same name that bows the spirits for those the Master sends does nothing for those who snatch it up as a formula.'),
+  ('canon', 'acts', 19, 15, 'canon', 'mark', 9, 39, 'free', E'*But Yahusha (Jesus) said, Forbid him not: for there is no man which shall do a miracle in my name, that can lightly speak evil of me.* (Mark 9:39). A true work in the name binds a man to the One named. But the sons of Sceva do no work at all — the spirit answers *Yahusha (Jesus) I know, and Paul I know; but who are ye?* (Acts 19:15) and overcomes them. The name does not honour the borrower; it exposes him. The contrast is sharp: the one casting out in his name truly cannot speak evil of him, while the one merely invoking the name is left naked.'),
+  ('canon', 'acts', 19, 13, 'canon', 'acts', 16, 17, 'free', E'*The same followed Paul and us, and cried, saying, These men are the servants of the El Elyon (most high God), which shew unto us the way of salvation.* (Acts 16:17). Even the spirit of divination at Philippi confessed who the sent men were — *the servants of the El Elyon (most high God).* So too at Ephesus the evil spirit knows Paul and knows Yahusha (Jesus), but not the seven who borrow the name (Acts 19:13,15). The spirits recognize the sent; what they will not yield to is the unsent mouthing the name as an incantation.'),
+  -- thread: acts-19-they-burned-their-books-turning-from-the-abominations
+  ('canon', 'acts', 19, 19, 'canon', 'deuteronomy', 18, 10, 'free', E'*There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch,* (Deuteronomy 18:10). *Many of them also which used curious arts brought their books together, and burned them before all men* (Acts 19:19). The curious arts are the very divination Moses forbade — the enchantments, the observing of times, the wizardry the nations practiced. The burning of the books is the turning Moses called for: the abomination renounced, cast into the fire, the price of it counted and let go.'),
+  ('canon', 'acts', 19, 19, 'canon', 'deuteronomy', 18, 12, 'free', E'*For all that do these things are an abomination unto Yahuah (LORD): and because of these abominations Yahuah Elohayka (the LORD thy God) doth drive them out from before thee.* (Deuteronomy 18:12). The divination that made the nations an abomination — and drove them from the land — is what the Ephesian believers now burn from their own hands: they *counted the price of them, and found it fifty thousand pieces of silver* (Acts 19:19). The homecoming turns from what Yahuah (LORD) calls abomination; the books go into the fire and the word of Elohim (God) grows.'),
+  -- thread: acts-19-so-mightily-grew-the-word-of-god-and-prevailed
+  ('canon', 'acts', 19, 20, 'canon', 'isaiah', 55, 11, 'free', E'*So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it.* (Isaiah 55:11). *So mightily grew the word of Elohim (God) and prevailed* (Acts 19:20), so that *all they which dwelt in Asia heard the word of the Lord Yahusha (Lord Jesus), both Yahudim (Jews) and Greeks* (Acts 19:10). The word that goeth forth from his mouth does not return void; it accomplishes and prospers in the thing whereto he sent it. Two years in the school of Tyrannus and all Asia hearing — the word prospering, exactly as the prophet said it would.'),
+  -- thread: acts-19-i-must-also-see-rome-the-witness-the-lord-confirms
+  ('canon', 'acts', 19, 21, 'canon', 'acts', 23, 11, 'free', E'*And the night following Yahuah (Lord) stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome.* (Acts 23:11). At Ephesus Paul *purposed in the spirit … to go to Jerusalem, saying, After I have been there, I must also see Rome* (Acts 19:21). What he purposed in the spirit, the Lord himself stands by him in the night to confirm: the witness at Jerusalem and then at Rome. The purpose was not Paul''s ambition; it was the Lord''s sending, spoken back to him as comfort when the road grew dark.'),
+  -- thread: acts-19-they-be-no-gods-which-are-made-with-hands-the-idol-polemic
+  ('canon', 'acts', 19, 26, 'canon', 'isaiah', 44, 9, 'free', E'*They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed.* (Isaiah 44:9). Demetrius rages that Paul *hath persuaded and turned away much people, saying that they be no gods, which are made with hands* (Acts 19:26). But Paul preaches nothing new: Isaiah long since named the makers of graven images vanity, the idol no god at all. The silversmith''s shrines for Diana are the very delectable things that shall not profit — the work of hands that see not, nor know.'),
+  ('canon', 'acts', 19, 26, 'canon', 'jeremiah', 10, 5, 'free', E'*They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also is it in them to do good.* (Jeremiah 10:5). The idols *which are made with hands* (Acts 19:26) cannot speak, cannot walk, cannot do evil or good — they must be carried. Jeremiah''s polemic stands behind Paul''s preaching at Ephesus: the great goddess Diana, for all her magnificence, is a thing that must be borne, no god to be feared.'),
+  ('canon', 'acts', 19, 27, 'canon', 'jeremiah', 10, 11, 'free', E'*Thus shall ye say unto them, The gods that have not made the heavens and the earth, even they shall perish from the earth, and from under these heavens.* (Jeremiah 10:11). The craftsmen fear *that the temple of the great goddess Diana should be despised, and her magnificence should be destroyed* (Acts 19:27). Jeremiah pronounced the sentence already: the gods that did not make the heavens and the earth shall perish. Diana''s magnificence is the magnificence of a god that made nothing — and what made nothing shall be unmade.'),
+  ('canon', 'acts', 19, 26, 'canon', 'psalms', 115, 4, 'free', E'*Their idols are silver and gold, the work of men''s hands.* (Psalm 115:4). Demetrius is a *silversmith, which made silver shrines for Diana* (Acts 19:24) — and the psalm names exactly that: idols of silver and gold, the work of men''s hands. Paul''s charge that *they be no gods, which are made with hands* (Acts 19:26) is the psalm''s own verdict on the silversmith''s trade. The hands that fashion the god prove it is no god.'),
+  ('canon', 'acts', 19, 26, 'canon', 'habakkuk', 2, 18, 'free', E'*What profiteth the graven image that the maker thereof hath graven it; the molten image, and a teacher of lies, that the maker of his work trusteth therein, to make dumb idols?* (Habakkuk 2:18). The molten image is *a teacher of lies* — and the lie the craftsmen of Ephesus defend is that Diana, made with hands, is a god (Acts 19:26). Habakkuk asks what such an image profits its maker; Paul has turned away much people from trusting the dumb idol. The maker trusts the work of his own hands, and the work cannot speak.'),
+  ('canon', 'acts', 19, 26, 'apocrypha', 'the-wisdom-of-solomon', 14, 8, 'extras', E'*But that which is made with hands is cursed, as well it, as he that made it: he, because he made it; and it, because, being corruptible, it was called god.* (Wisdom of Solomon 14:8). Paul''s phrase is exact — *they be no gods, which are made with hands* (Acts 19:26) — and the wisdom of the fathers had already said it: that which is made with hands is cursed, both the idol and its maker. The corruptible thing called god, and the man who called it so, fall under one verdict. The idol of Diana and the silversmith who shaped her share it.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-19-johns-baptism-completed-the-one-who-comes-after-and-the-spirit',
+       E'John''s baptism completed — the One who comes after, and the Spirit',
+       E'At Ephesus Paul finds *certain disciples* who had received *John''s baptism* (Acts 19:3) and had *not so much as heard whether there be any Ruach HaKodesh (Holy Spirit)* (Acts 19:2). John''s baptism is not repudiated; it is completed. *John verily baptized with the baptism of repentance, saying unto the people, that they should believe on him which should come after him, that is, on HaMashiach Yahusha (Christ Jesus)* (Acts 19:4). This was John''s own testimony from the first: *I baptize with water: but there standeth one among you, whom ye know not* (John 1:26), *He it is, who coming after me is preferred before me, whose shoe''s latchet I am not worthy to unloose* (John 1:27), and *he that cometh after me is mightier than I … he shall baptize you with the Ruach HaKodesh (Holy Spirit), and with fire* (Matthew 3:11). The forerunner''s whole office was the finger pointing forward; he had *first preached before his coming the baptism of repentance to all the people of Yashar''el (Israel)* (Acts 13:24). And the Master had divided the water from the Spirit by his own word: *John truly baptized with water; but ye shall be baptized with the Ruach HaKodesh (Holy Spirit) not many days hence* (Acts 1:5). So at Ephesus the division is closed — *when Paul had laid his hands upon them, the Ruach HaKodesh (Holy Spirit) came on them; and they spake with tongues, and prophesied* (Acts 19:6). The Spirit is not a thing apart from the way they believed; he is the seal of the One John always pointed to. *And all the men were about twelve* (Acts 19:7) — the number of the tribes, the down-payment of the gathering at Ephesus.',
+       sv.verse_id, ev.verse_id, 'free', 5725
+  FROM _s217_a19_lookup sv, _s217_a19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=19 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-19-the-name-is-not-a-formula-for-the-unsent-the-sons-of-sceva',
+       E'The name is not a formula for the unsent — the sons of Sceva',
+       E'*Then certain of the vagabond Yahudim (Jews), exorcists, took upon them to call over them which had evil spirits the name of the Lord Yahusha (Lord Jesus), saying, We adjure you by Yahusha (Jesus) whom Paul preacheth* (Acts 19:13). The seven sons of Sceva treat the name as a technique — a power-word to be wielded by anyone who hears it work. But the name carries no power for the unsent. *And the evil spirit answered and said, Yahusha (Jesus) I know, and Paul I know; but who are ye?* (Acts 19:15) — and the man in whom the spirit was leaped on them and overcame them, so they fled naked and wounded. Even the demon makes the distinction the Master makes. To those who used the name without being known by him, the word is *Many will say to me in that day, Yahuah (Lord), Yahuah (Lord), have we not prophesied in thy name? and in thy name have cast out devils?* (Matthew 7:22) — *and then will I profess unto them, I never knew you: depart from me, ye that work iniquity* (Matthew 7:23). The name does not honour the borrower; it exposes him. To the SENT it is otherwise: *the seventy returned again with joy, saying, Yahuah (Lord), even the devils are subject unto us through thy name* (Luke 10:17), for *there is no man which shall do a miracle in my name, that can lightly speak evil of me* (Mark 9:39). The spirits recognize the sent — even the divination spirit at Philippi confessed *these men are the servants of the El Elyon (most high God)* (Acts 16:17). What they will not yield to is the unsent mouthing the name as an incantation. The name belongs to the known and the sent, never to the one who snatches it up as a formula.',
+       sv.verse_id, ev.verse_id, 'free', 5728
+  FROM _s217_a19_lookup sv, _s217_a19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=19 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-19-they-burned-their-books-turning-from-the-abominations',
+       E'They burned their books — turning from the abominations',
+       E'*And many that believed came, and confessed, and shewed their deeds. Many of them also which used curious arts brought their books together, and burned them before all men: and they counted the price of them, and found it fifty thousand pieces of silver* (Acts 19:18-19). The curious arts are the divination Moses forbade in the land: *There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10). These are the very things that made the nations an abomination — *for all that do these things are an abomination unto Yahuah (LORD): and because of these abominations Yahuah Elohayka (the LORD thy God) doth drive them out from before thee* (Deuteronomy 18:12). The burning of the books is the turning Moses called for: the abomination renounced, the price of it counted and let go, cast into the fire before all men. This is the homecoming — not a new rulebook handed to the Ephesians but the dismantling of the divination the nations hearkened to, and the word of Elohim (God) growing where the books once stood.',
+       sv.verse_id, ev.verse_id, 'free', 5731
+  FROM _s217_a19_lookup sv, _s217_a19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=19 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-19-so-mightily-grew-the-word-of-god-and-prevailed',
+       E'So mightily grew the word of Elohim (God) and prevailed',
+       E'Two years in the school of Tyrannus, *so that all they which dwelt in Asia heard the word of the Lord Yahusha (Lord Jesus), both Yahudim (Jews) and Greeks* (Acts 19:10); and after the books were burned, *so mightily grew the word of Elohim (God) and prevailed* (Acts 19:20). This is the prophet''s own promise at work: *So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it* (Isaiah 55:11). The word that goeth forth from his mouth does not return void — it accomplishes and prospers in the thing whereto he sent it. All Asia hearing, the word growing and prevailing where divination once held the city: the proclamation of the kingdom prospering exactly as Isaiah said it would, gathering the hearers the Father sends it to.',
+       sv.verse_id, ev.verse_id, 'free', 5734
+  FROM _s217_a19_lookup sv, _s217_a19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=19 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-19-i-must-also-see-rome-the-witness-the-lord-confirms',
+       E'I must also see Rome — the witness the Lord confirms',
+       E'*After these things were ended, Paul purposed in the spirit, when he had passed through Macedonia and Achaia, to go to Jerusalem, saying, After I have been there, I must also see Rome* (Acts 19:21). What Paul purposed in the spirit at Ephesus the Lord himself stands by him to confirm when the road has grown dark in Jerusalem: *And the night following Yahuah (Lord) stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome* (Acts 23:11). The purpose was not Paul''s ambition spun out of his own plans; it was the Lord''s sending, spoken first as a stirring in the spirit and then spoken back to him as comfort in the night. Jerusalem first, then Rome — the witness the Lord intended, confirmed by the One who stood by him.',
+       sv.verse_id, ev.verse_id, 'free', 5737
+  FROM _s217_a19_lookup sv, _s217_a19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=19 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-19-they-be-no-gods-which-are-made-with-hands-the-idol-polemic',
+       E'They be no gods, which are made with hands — the idol polemic',
+       E'Demetrius the silversmith, *which made silver shrines for Diana* (Acts 19:24), gathers the craftsmen and rages: *not alone at Ephesus, but almost throughout all Asia, this Paul hath persuaded and turned away much people, saying that they be no gods, which are made with hands* (Acts 19:26) — and the fear is *that the temple of the great goddess Diana should be despised, and her magnificence should be destroyed* (Acts 19:27). But Paul preaches nothing new under the sun; the Tanakh''s own polemic against the work of men''s hands stands behind every word. *They that make a graven image are all of them vanity … they see not, nor know* (Isaiah 44:9). *Their idols are silver and gold, the work of men''s hands* (Psalm 115:4) — the silversmith''s very trade named. *They are upright as the palm tree, but speak not: they must needs be borne, because they cannot go … for they cannot do evil, neither also is it in them to do good* (Jeremiah 10:5). The molten image is *a teacher of lies … to make dumb idols* (Habakkuk 2:18). And the sentence is already pronounced: *The gods that have not made the heavens and the earth, even they shall perish from the earth, and from under these heavens* (Jeremiah 10:11). The wisdom of the fathers said it plainly too: *that which is made with hands is cursed, as well it, as he that made it: he, because he made it; and it, because, being corruptible, it was called god* (Wisdom of Solomon 14:8). Diana''s magnificence is the magnificence of a god that made nothing — and what made nothing, what is made with hands, shall be unmade. The living Elohim (God) who stretched out the heavens against the dumb idol that cannot speak: this is what Paul preached, and all Asia heard.',
+       sv.verse_id, ev.verse_id, 'extras', 5740
+  FROM _s217_a19_lookup sv, _s217_a19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=19 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-19-johns-baptism-completed-the-one-who-comes-after-and-the-spirit
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 13:24 — *When John had first preached before his coming the baptism of repentance* John''s baptism preached before the One coming, never an end in itself (Acts 19:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-johns-baptism-completed-the-one-who-comes-after-and-the-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 3:11 — *he that cometh after me is mightier than I … he shall baptize you with the Ruach HaKodesh (Holy Spirit)* John''s own word: water points to the One who baptizes with the Spirit (Acts 19:4).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-johns-baptism-completed-the-one-who-comes-after-and-the-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=3 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 1:26 — *I baptize with water: but there standeth one among you, whom ye know not* the One standing just beyond the water, whom the twelve had not yet known (Acts 19:4).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-johns-baptism-completed-the-one-who-comes-after-and-the-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'John 1:27 — *who coming after me is preferred before me* the *coming after* John pointed to, the One the twelve are brought to believe (Acts 19:4).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-johns-baptism-completed-the-one-who-comes-after-and-the-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Acts 1:5 — *John truly baptized with water; but ye shall be baptized with the Ruach HaKodesh (Holy Spirit)* the division closed when the Spirit falls on the twelve (Acts 19:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-johns-baptism-completed-the-one-who-comes-after-and-the-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-19-the-name-is-not-a-formula-for-the-unsent-the-sons-of-sceva
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 7:22 — *have we not … in thy name have cast out devils?* the name borrowed by those not known by him, as the exorcists took it up (Acts 19:13).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-the-name-is-not-a-formula-for-the-unsent-the-sons-of-sceva'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 7:23 — *I never knew you: depart from me* the same distinction the demon makes: *who are ye?* — the unknown exposed (Acts 19:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-the-name-is-not-a-formula-for-the-unsent-the-sons-of-sceva'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 10:17 — *the devils are subject unto us through thy name* but to the SENT seventy; the sons of Sceva were not sent (Acts 19:13).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-the-name-is-not-a-formula-for-the-unsent-the-sons-of-sceva'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=10 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Mark 9:39 — *no man which shall do a miracle in my name, that can lightly speak evil of me* a true work binds a man to him; the borrower does no work and is overcome (Acts 19:15).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-the-name-is-not-a-formula-for-the-unsent-the-sons-of-sceva'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=9 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Acts 16:17 — *These men are the servants of the El Elyon (most high God)* even the divination spirit confesses the sent; the spirits know Paul, not the borrowers (Acts 19:13).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-the-name-is-not-a-formula-for-the-unsent-the-sons-of-sceva'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=16 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-19-they-burned-their-books-turning-from-the-abominations
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 18:10 — *or that useth divination, or an observer of times, or an enchanter, or a witch* the curious arts Moses forbade, now brought together and burned (Acts 19:19).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-they-burned-their-books-turning-from-the-abominations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 18:12 — *all that do these things are an abomination unto Yahuah (LORD)* the abomination renounced, the price counted and let go (Acts 19:19).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-they-burned-their-books-turning-from-the-abominations'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-19-so-mightily-grew-the-word-of-god-and-prevailed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 55:11 — *it shall not return unto me void … it shall prosper in the thing whereto I sent it* all Asia hearing, the word growing and prevailing as the prophet promised (Acts 19:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-so-mightily-grew-the-word-of-god-and-prevailed'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-19-i-must-also-see-rome-the-witness-the-lord-confirms
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 23:11 — *so must thou bear witness also at Rome* the Lord stands by Paul in the night and confirms what he purposed in the spirit (Acts 19:21).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-i-must-also-see-rome-the-witness-the-lord-confirms'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=23 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-19-they-be-no-gods-which-are-made-with-hands-the-idol-polemic
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 44:9 — *They that make a graven image are all of them vanity … they see not, nor know* the makers of idols named vanity, behind Paul''s *no gods, made with hands* (Acts 19:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-they-be-no-gods-which-are-made-with-hands-the-idol-polemic'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 115:4 — *Their idols are silver and gold, the work of men''s hands* the silversmith''s very trade, named no god by the psalm (Acts 19:24,26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-they-be-no-gods-which-are-made-with-hands-the-idol-polemic'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 10:5 — *they … speak not … cannot do evil, neither also is it in them to do good* the idol that must be borne, no god to be feared (Acts 19:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-they-be-no-gods-which-are-made-with-hands-the-idol-polemic'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Habakkuk 2:18 — *the molten image, and a teacher of lies … to make dumb idols* the lie the craftsmen defend, that Diana made with hands is a god (Acts 19:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-they-be-no-gods-which-are-made-with-hands-the-idol-polemic'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jeremiah 10:11 — *The gods that have not made the heavens and the earth … shall perish* Diana''s magnificence is a god that made nothing, and shall be unmade (Acts 19:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-they-be-no-gods-which-are-made-with-hands-the-idol-polemic'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Wisdom of Solomon 14:8 — *that which is made with hands is cursed, as well it, as he that made it* the idol and its maker under one verdict — Diana and the silversmith (Acts 19:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a19_lookup sv, _s217_a19_lookup tv
+ WHERE t.slug='acts-19-they-be-no-gods-which-are-made-with-hands-the-idol-polemic'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=19 AND sv.verse_number=26
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=14 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_20.sql (S217 Acts 20) -----
+-- =====================================================================
+-- S217 minion — ACTS 20 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Anchor chapter: ACTS 20.  Tag: a20 (temp view _s217_a20_lookup).  Sort band: 5750-5765.
+-- Source is ALWAYS the canon Acts 20 verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- WATCHPOINTS (Red Lines #6/#7/#10/#11, Christology, son-of-Adam, shepherd architecture):
+--  * Eutychus raised (20:9-12): Paul falls on the dead young man and embraces him — *his life
+--    is in him* — the same posture as Elijah stretching on the widow's son (1 Kings 17:21) and
+--    Elisha on the Shunammite's son (2 Kings 4:34-35). The Formed-one's power to raise running
+--    through his servants; a sign within the breaking-of-bread on the first day, not a new cultus.
+--  * Watchman cleared (20:26-27): *I am pure from the blood of all men, for I have not shunned
+--    to declare all the counsel of Elohim (God)* — the watchman of Ezekiel 33 who blew the
+--    trumpet and so delivered his own soul; the blood-guilt requirement of Ezekiel 33:6,8 lifted
+--    because the warning was given. Acts 18:6 is the same clearing in Paul's own mouth.
+--  * Feed the flock (20:28): *feed the church of Elohim (God) which he hath purchased with his
+--    own blood* — the true shepherd over the scattered flock (Ezekiel 34, Isaiah 40:11), the
+--    charge the risen Master gave Peter (John 21:15-16) and Peter passed to the elders (1 Peter
+--    5:2). The flock is the gathered seed; the overseers feed, they do not devour. The blood that
+--    purchased is the Formed-one's own — Yahusha is Yahuah who came in the flesh.
+--  * Grievous wolves (20:29-30): the false shepherds of Ezekiel 34:5 and Jeremiah 23:1 who
+--    scattered the flock, and the ravening wolves in sheep's clothing the Master warned of
+--    (Matthew 7:15). System-level — the shepherds who feed themselves — never an ethnic charge.
+--  * Coveted no man's silver (20:33-34): *these hands have ministered unto my necessities* — the
+--    shepherd not for filthy lucre; the Levite whose portion is Yahuah himself (Numbers 18:20),
+--    the gospel preached without charge (1 Corinthians 9:18). NOT a freedom-from-Torah grace;
+--    *the word of his grace* (20:32) builds up and gives the inheritance among the sanctified —
+--    grace as the means of return and of the inheritance, never sola-fide truncation (Red Line #10).
+--  * More blessed to give (20:35): the liberal soul made fat (Proverbs 11:25), the open hand of
+--    Deuteronomy 15:10 — the Torah's own generosity, which the Lord Yahusha (Lord Jesus) names.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 20:
+--   v.1-6   Macedonia/Greece/Troas travel  Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative/itinerary)
+--   v.7     break bread, first day          Tanakh: none added (the sign at v.9-12 carries the block)  Extras: none warranted  NT: Acts 2:42 weighed (breaking of bread/doctrine) — narrative-echo, framework weight thin, not added
+--   v.9-12  Eutychus falls, raised          Tanakh: 1 Kings 17:21, 2 Kings 4:34, 2 Kings 4:35  Extras: none warranted  NT: none warranted (the prophetic raisings carry it)
+--   v.13-16 Assos/Miletus/haste to Pentecost Tanakh: none warranted  Extras: none warranted  NT: none warranted (itinerary; Shavuot carried in Acts 2 threads)
+--   v.17-21 kept back nothing profitable    Tanakh: none warranted  Extras: none warranted  NT: none added (Acts 18:6/26:22 weighed; the clearing carried in the watchman thread)
+--   v.22-25 bound in the spirit / no more   Tanakh: none warranted  Extras: none warranted  NT: none warranted (the gospel of the grace of Elohim carried at v.32)
+--   v.26-27 pure from the blood of all men  Tanakh: Ezekiel 33:6, Ezekiel 33:8  Extras: none warranted  NT: Acts 18:6 (Acts<->Acts)
+--   v.28    feed the flock, purchased blood Tanakh: Ezekiel 34:4, Isaiah 40:11  Extras: none warranted  NT: John 21:15, John 21:16, 1 Peter 5:2
+--   v.29-31 grievous wolves enter in        Tanakh: Ezekiel 34:5, Jeremiah 23:1  Extras: none warranted  NT: Matthew 7:15
+--   v.32    word of his grace / inheritance Tanakh: none added (Levite-inheritance carried in the silver thread)  Extras: none warranted  NT: none added (grace-as-means carried in prose, not a standalone target)
+--   v.33-34 coveted no man's silver         Tanakh: Numbers 18:20  Extras: none warranted  NT: 1 Corinthians 9:18
+--   v.35    more blessed to give            Tanakh: Proverbs 11:25, Deuteronomy 15:10  Extras: none warranted  NT: none added (the Master's saying is the Acts source itself)
+--   v.36-38 kneeled, wept, accompanied      Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative farewell)
+--
+-- THREADS (slug -> target libraries):
+--   5750 acts-20-his-life-is-in-him-the-young-man-raised-as-elijah-and-elisha-raised (Tanakh)
+--   5753 acts-20-i-am-pure-from-the-blood-of-all-men-the-watchman-cleared           (Tanakh + NT, Acts<->Acts)
+--   5756 acts-20-feed-the-flock-of-god-the-true-shepherd-over-the-scattered          (Tanakh + NT)
+--   5759 acts-20-grievous-wolves-shall-enter-in-the-false-shepherds-that-scatter     (Tanakh + NT)
+--   5762 acts-20-i-have-coveted-no-mans-silver-the-shepherd-not-for-filthy-lucre     (Tanakh + NT)
+--   5765 acts-20-it-is-more-blessed-to-give-than-to-receive-the-liberal-soul         (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-20-his-life-is-in-him-the-young-man-raised-as-elijah-and-elisha-raised
+  ('canon', 'acts', 20, 10, 'canon', '1-kings', 17, 21, 'free', E'*And he stretched himself upon the child three times, and cried unto Yahuah (LORD), and said, O Yahuah (LORD) my Elohim (God), I pray thee, let this child''s soul come into him again.* (1 Kings 17:21). When the young man Eutychus falls from the third loft and is taken up dead, *Paul went down, and fell on him, and embracing him said, Trouble not yourselves; for his life is in him* (Acts 20:10). It is Elijah''s very posture over the widow''s son — the prophet stretching himself upon the dead child and crying for the soul to return. The power that raised through Elijah raises through Paul, and the young man is brought alive.'),
+  ('canon', 'acts', 20, 10, 'canon', '2-kings', 4, 34, 'free', E'*And he went up, and lay upon the child, and put his mouth upon his mouth, and his eyes upon his eyes, and his hands upon his hands: and he stretched himself upon the child; and the flesh of the child waxed warm.* (2 Kings 4:34). Paul *fell on him, and embracing him* (Acts 20:10) — the same close embrace Elisha laid upon the Shunammite''s dead son, body upon body, until the warmth of life returned. The prophets of old and the apostle now move in the one power of the Formed, who is the resurrection and the life.'),
+  ('canon', 'acts', 20, 12, 'canon', '2-kings', 4, 35, 'free', E'*Then he returned, and walked in the house to and fro; and went up, and stretched himself upon him: and the child sneezed seven times, and the child opened his eyes.* (2 Kings 4:35). *And they brought the young man alive, and were not a little comforted* (Acts 20:12). As the Shunammite''s son opened his eyes and was given back to his mother, so the young man fallen from the loft is brought alive to the gathered assembly — the sign of life sealing the first-day breaking of bread.'),
+  -- thread: acts-20-i-am-pure-from-the-blood-of-all-men-the-watchman-cleared
+  ('canon', 'acts', 20, 26, 'canon', 'ezekiel', 33, 6, 'free', E'*But if the watchman see the sword come, and blow not the trumpet, and the people be not warned; if the sword come, and take any person from among them, he is taken away in his iniquity; but his blood will I require at the watchman''s hand.* (Ezekiel 33:6). Paul declares to the elders, *I take you to record this day, that I am pure from the blood of all men* (Acts 20:26). This is the watchman''s clearing: the trumpet was blown, the warning given, and so the blood is not required at his hand. The watchman who speaks delivers his own soul.'),
+  ('canon', 'acts', 20, 27, 'canon', 'ezekiel', 33, 8, 'free', E'*When I say unto the wicked, O wicked man, thou shalt surely die; if thou dost not speak to warn the wicked from his way, that wicked man shall die in his iniquity; but his blood will I require at thine hand.* (Ezekiel 33:8). Paul gives the ground of his being pure from all blood: *For I have not shunned to declare unto you all the counsel of Elohim (God)* (Acts 20:27). The watchman of Ezekiel is charged to speak and warn; the one who does not shun to declare the whole counsel has met the charge and is clean of the blood Ezekiel''s watchman would otherwise bear.'),
+  ('canon', 'acts', 20, 26, 'canon', 'acts', 18, 6, 'free', E'*And when they opposed themselves, and blasphemed, he shook his raiment, and said unto them, Your blood be upon your own heads; I am clean: from henceforth I will go unto the Gentiles.* (Acts 18:6). The same watchman''s clearing sounds twice in Paul''s mouth: at Corinth, *I am clean;* and now to the Ephesian elders, *I am pure from the blood of all men* (Acts 20:26). The trumpet was blown to the house of Yahudah (Judah) and to the scattered among the nations alike; where the warning is given and refused, the blood returns upon the hearers'' own heads, and the watchman is delivered.'),
+  -- thread: acts-20-feed-the-flock-of-god-the-true-shepherd-over-the-scattered
+  ('canon', 'acts', 20, 28, 'canon', 'ezekiel', 34, 4, 'free', E'*The diseased have ye not strengthened, neither have ye healed that which was sick, neither have ye bound up that which was broken, neither have ye brought again that which was driven away, neither have ye sought that which was lost; but with force and with cruelty have ye ruled them.* (Ezekiel 34:4). Paul charges the elders, *Take heed therefore unto yourselves, and to all the flock, over the which the Ruach HaKodesh (Holy Spirit) hath made you overseers, to feed the church of Elohim (God)* (Acts 20:28). Ezekiel arraigned the shepherds who would not strengthen, heal, or seek the lost; the overseers Paul appoints are charged to be the opposite — to feed the flock, to seek what was driven away, the scattered seed of the house of Yashar''el (Israel).'),
+  ('canon', 'acts', 20, 28, 'canon', 'isaiah', 40, 11, 'free', E'*He shall feed his flock like a shepherd: he shall gather the lambs with his arm, and carry them in his bosom, and shall gently lead those that are with young.* (Isaiah 40:11). The overseers are made to *feed the church of Elohim (God), which he hath purchased with his own blood* (Acts 20:28). The pattern of all true feeding is the Shepherd of Isaiah who gathers the lambs in his arm and carries them in his bosom — the Formed-one who feeds his flock gently, whose own blood purchased them, the One the elders are to under-shepherd.'),
+  ('canon', 'acts', 20, 28, 'canon', 'john', 21, 15, 'free', E'*So when they had dined, Yahusha (Jesus) saith to Simon Peter, Simon, son of Jonas, lovest thou me more than these? He saith unto him, Yea, Yahuah (Lord); thou knowest that I love thee. He saith unto him, Feed my lambs.* (John 21:15). The charge to *feed the church of Elohim (God)* (Acts 20:28) is the charge the risen Master first laid on Peter by the sea — *Feed my lambs.* The flock is the Master''s own, purchased with his own blood; the shepherds feed what is his, not what is theirs.'),
+  ('canon', 'acts', 20, 28, 'canon', 'john', 21, 16, 'free', E'*He saith to him again the second time, Simon, son of Jonas, lovest thou me? He saith unto him, Yea, Yahuah (Lord); thou knowest that I love thee. He saith unto him, Feed my sheep.* (John 21:16). *Feed my sheep* the Master said to Peter; *feed the church of Elohim (God)* Paul now says to the elders (Acts 20:28). The one command passes from the Master to Peter to the overseers of every flock — to feed, never to devour, the sheep that are his by the price of his own blood.'),
+  ('canon', 'acts', 20, 28, 'canon', '1-peter', 5, 2, 'free', E'*Feed the flock of Elohim (God) which is among you, taking the oversight thereof, not by constraint, but willingly; not for filthy lucre, but of a ready mind;* (1 Peter 5:2). Peter, who received *Feed my sheep* from the Master, writes the same charge to the elders that Paul gives at Miletus: *feed the church of Elohim (God)* (Acts 20:28). The oversight is willing, not for filthy lucre — the true shepherd over the gathered flock, set against the hireling who feeds himself.'),
+  -- thread: acts-20-grievous-wolves-shall-enter-in-the-false-shepherds-that-scatter
+  ('canon', 'acts', 20, 29, 'canon', 'ezekiel', 34, 5, 'free', E'*And they were scattered, because there is no shepherd: and they became meat to all the beasts of the field, when they were scattered.* (Ezekiel 34:5). Paul warns, *after my departing shall grievous wolves enter in among you, not sparing the flock* (Acts 20:29). It is the very danger Ezekiel named — the flock without a true shepherd becomes meat to the beasts of the field, scattered. The grievous wolves are the false shepherds and the beasts in one; the warning is the watchman''s, that the gathered not be torn and scattered again.'),
+  ('canon', 'acts', 20, 30, 'canon', 'jeremiah', 23, 1, 'free', E'*Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD).* (Jeremiah 23:1). *Also of your own selves shall men arise, speaking perverse things, to draw away disciples after them* (Acts 20:30). Jeremiah pronounced woe on the pastors who scatter the sheep of Yahuah''s (LORD''s) pasture; Paul foresees the same rising from within — shepherds who draw the flock after themselves rather than after the Master, the destroyers Jeremiah cried woe upon.'),
+  ('canon', 'acts', 20, 29, 'canon', 'matthew', 7, 15, 'free', E'*Beware of false prophets, which come to you in sheep''s clothing, but inwardly they are ravening wolves.* (Matthew 7:15). *Grievous wolves enter in among you, not sparing the flock* (Acts 20:29) — the Master had warned of exactly these, the wolves in sheep''s clothing whose inward nature is to ravage. Paul tells the elders to watch, for the wolves come disguised among the sheep, and the shepherd''s charge is to know them and guard the flock.'),
+  -- thread: acts-20-i-have-coveted-no-mans-silver-the-shepherd-not-for-filthy-lucre
+  ('canon', 'acts', 20, 33, 'canon', 'numbers', 18, 20, 'free', E'*And Yahuah (LORD) spake unto Aaron, Thou shalt have no inheritance in their land, neither shalt thou have any part among them: I am thy part and thine inheritance among the children of Yashar''el (Israel).* (Numbers 18:20). *I have coveted no man''s silver, or gold, or apparel* (Acts 20:33), Paul says, for *these hands have ministered unto my necessities* (Acts 20:34). It is the Levite''s portion: the one who serves the house takes no inheritance of silver and gold among the people, because Yahuah (LORD) himself is his part. The true shepherd''s reward is not lucre but the One he serves.'),
+  ('canon', 'acts', 20, 34, 'canon', '1-corinthians', 9, 18, 'free', E'*What is my reward then? Verily that, when I preach the gospel, I may make the gospel of Messiah (Christ) without charge, that I abuse not my power in the gospel.* (1 Corinthians 9:18). *These hands have ministered unto my necessities, and to them that were with me* (Acts 20:34). Paul names elsewhere what his laboring hands declare here: the gospel preached without charge, no silver coveted, no power abused — the shepherd who will not make merchandise of the flock, set against the wolves who do not spare it.'),
+  -- thread: acts-20-it-is-more-blessed-to-give-than-to-receive-the-liberal-soul
+  ('canon', 'acts', 20, 35, 'canon', 'proverbs', 11, 25, 'free', E'*The liberal soul shall be made fat: and he that watereth shall be watered also himself.* (Proverbs 11:25). Paul closes with the Master''s own saying: *I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Yahusha (Lord Jesus), how he said, It is more blessed to give than to receive* (Acts 20:35). The proverb already taught it — the open, liberal soul is itself made fat, and the one who waters is watered. The Lord Yahusha (Lord Jesus) names the Torah''s own wisdom: the blessing falls on the giving hand.'),
+  ('canon', 'acts', 20, 35, 'canon', 'deuteronomy', 15, 10, 'free', E'*Thou shalt surely give him, and thine heart shall not be grieved when thou givest unto him: because that for this thing Yahuah Elohayka (the LORD thy God) shall bless thee in all thy works, and in all that thou puttest thine hand unto.* (Deuteronomy 15:10). *It is more blessed to give than to receive* (Acts 20:35). The Master''s word is no new thing but the Torah''s own: Moses commanded the open hand to the poor brother and bound the blessing of Yahuah Elohayka (the LORD thy God) to the giving. To give is to be blessed in all the works of the hand — the very thing the Lord Yahusha (Lord Jesus) declares.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-20-his-life-is-in-him-the-young-man-raised-as-elijah-and-elisha-raised',
+       E'His life is in him — the young man raised as Elijah and Elisha raised',
+       E'On the first day of the week the disciples gather at Troas to break bread, and Paul preaches until midnight. A young man named Eutychus, *being fallen into a deep sleep … fell down from the third loft, and was taken up dead* (Acts 20:9). Then *Paul went down, and fell on him, and embracing him said, Trouble not yourselves; for his life is in him* (Acts 20:10). The posture is the prophets'' own. Elijah, over the widow''s dead son, *stretched himself upon the child three times, and cried unto Yahuah (LORD) … let this child''s soul come into him again* (1 Kings 17:21). Elisha, over the Shunammite''s dead son, *went up, and lay upon the child, and put his mouth upon his mouth … and the flesh of the child waxed warm* (2 Kings 4:34), until *the child sneezed seven times, and the child opened his eyes* (2 Kings 4:35). The same power that raised through Elijah and Elisha raises through the apostle: *they brought the young man alive, and were not a little comforted* (Acts 20:12). The sign of life seals the breaking of bread — the Formed-one, who is the resurrection, moving through his servants as he moved through the prophets of old.',
+       sv.verse_id, ev.verse_id, 'free', 5750
+  FROM _s217_a20_lookup sv, _s217_a20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=20 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-20-i-am-pure-from-the-blood-of-all-men-the-watchman-cleared',
+       E'I am pure from the blood of all men — the watchman cleared',
+       E'Paul takes the Ephesian elders to record: *I am pure from the blood of all men. For I have not shunned to declare unto you all the counsel of Elohim (God)* (Acts 20:26-27). This is the watchman''s clearing, spoken in the very terms Yahuah (LORD) gave Ezekiel. The watchman is set over the house of Yashar''el (Israel) to blow the trumpet; *if the watchman see the sword come, and blow not the trumpet … his blood will I require at the watchman''s hand* (Ezekiel 33:6), and *if thou dost not speak to warn the wicked from his way, that wicked man shall die in his iniquity; but his blood will I require at thine hand* (Ezekiel 33:8). The one who warns delivers his own soul; the one who stays silent bears the blood. Paul has blown the trumpet — declared the whole counsel, shunned nothing — and so he is clean. He had said it once before, at Corinth: *Your blood be upon your own heads; I am clean* (Acts 18:6). The warning was given to the house of Yahudah (Judah) and to the scattered among the nations alike; where it is refused, the blood returns upon the hearers'' own heads, and the watchman is delivered.',
+       sv.verse_id, ev.verse_id, 'free', 5753
+  FROM _s217_a20_lookup sv, _s217_a20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=20 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-20-feed-the-flock-of-god-the-true-shepherd-over-the-scattered',
+       E'Feed the flock of Elohim (God) — the true shepherd over the scattered',
+       E'*Take heed therefore unto yourselves, and to all the flock, over the which the Ruach HaKodesh (Holy Spirit) hath made you overseers, to feed the church of Elohim (God), which he hath purchased with his own blood* (Acts 20:28). The charge stands against the long arraignment of the false shepherds. Ezekiel indicted those who *have ye not strengthened … neither have ye brought again that which was driven away, neither have ye sought that which was lost* (Ezekiel 34:4); the overseers Paul appoints are to be their opposite, to seek the driven-away and feed the lost — the scattered seed of the house of Yashar''el (Israel). The pattern of all true feeding is the Shepherd himself: *He shall feed his flock like a shepherd: he shall gather the lambs with his arm, and carry them in his bosom* (Isaiah 40:11). And the charge is the one the risen Master first laid on Peter by the sea — *Feed my lambs* (John 21:15), *Feed my sheep* (John 21:16) — which Peter then passed to the elders: *Feed the flock of Elohim (God) which is among you … not for filthy lucre, but of a ready mind* (1 Peter 5:2). The flock is the Master''s own, *purchased with his own blood* — the Formed-one who is Yahuah come in the flesh — and the shepherds feed what is his, never devour it.',
+       sv.verse_id, ev.verse_id, 'free', 5756
+  FROM _s217_a20_lookup sv, _s217_a20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=20 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-20-grievous-wolves-shall-enter-in-the-false-shepherds-that-scatter',
+       E'Grievous wolves shall enter in — the false shepherds that scatter',
+       E'*For I know this, that after my departing shall grievous wolves enter in among you, not sparing the flock. Also of your own selves shall men arise, speaking perverse things, to draw away disciples after them* (Acts 20:29-30). Paul names the danger the prophets named. Ezekiel saw the flock left without a true shepherd: *they were scattered, because there is no shepherd: and they became meat to all the beasts of the field, when they were scattered* (Ezekiel 34:5). Jeremiah cried woe upon them: *Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD)* (Jeremiah 23:1). And the Master had warned of the very disguise the wolves wear: *Beware of false prophets, which come to you in sheep''s clothing, but inwardly they are ravening wolves* (Matthew 7:15). The threat is not the flock''s ethnicity but the shepherds'' heart — those who feed themselves, who draw the sheep after themselves rather than after the Master, who scatter what was gathered. The watchman''s charge is to know them and guard the flock, that the gathered seed not be torn and scattered again.',
+       sv.verse_id, ev.verse_id, 'free', 5759
+  FROM _s217_a20_lookup sv, _s217_a20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=20 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-20-i-have-coveted-no-mans-silver-the-shepherd-not-for-filthy-lucre',
+       E'I have coveted no man''s silver — the shepherd not for filthy lucre',
+       E'*I have coveted no man''s silver, or gold, or apparel. Yea, ye yourselves know, that these hands have ministered unto my necessities, and to them that were with me* (Acts 20:33-34). The shepherd who feeds the flock takes nothing of it for lucre — and the ground of it is the Levite''s portion. Yahuah (LORD) said to Aaron, *Thou shalt have no inheritance in their land, neither shalt thou have any part among them: I am thy part and thine inheritance among the children of Yashar''el (Israel)* (Numbers 18:20). The one who serves the house has no silver-and-gold inheritance among the people, because Yahuah (LORD) himself is his part. So Paul, who could have claimed support, labored with his own hands: *when I preach the gospel, I may make the gospel of Messiah (Christ) without charge, that I abuse not my power in the gospel* (1 Corinthians 9:18). This is the seam where the grace Paul commends is rightly read — *I commend you to Elohim (God), and to the word of his grace, which is able to build you up, and to give you an inheritance among all them which are sanctified* (Acts 20:32). The grace is the means of the building-up and of the inheritance among the sanctified — never a release from the commandments, and never a cloak for the wolves who do not spare the flock. The true shepherd''s reward is not lucre but the One he serves.',
+       sv.verse_id, ev.verse_id, 'free', 5762
+  FROM _s217_a20_lookup sv, _s217_a20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=20 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-20-it-is-more-blessed-to-give-than-to-receive-the-liberal-soul',
+       E'It is more blessed to give than to receive — the liberal soul',
+       E'Paul closes the charge with the Master''s own word: *I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Yahusha (Lord Jesus), how he said, It is more blessed to give than to receive* (Acts 20:35). The saying is no new thing — it is the Torah''s own wisdom and the proverb''s. *The liberal soul shall be made fat: and he that watereth shall be watered also himself* (Proverbs 11:25): the open hand is itself the hand that is filled. And Moses bound the blessing to the giving long before: *Thou shalt surely give him, and thine heart shall not be grieved when thou givest unto him: because that for this thing Yahuah Elohayka (the LORD thy God) shall bless thee in all thy works, and in all that thou puttest thine hand unto* (Deuteronomy 15:10). The Lord Yahusha (Lord Jesus) speaks the heart of the commandment: the blessing falls on the giving hand, not the grasping one. The shepherd who coveted no man''s silver lives the very word he leaves them — to labor, to support the weak, and to find that it is more blessed to give.',
+       sv.verse_id, ev.verse_id, 'free', 5765
+  FROM _s217_a20_lookup sv, _s217_a20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=35
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=20 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-20-his-life-is-in-him-the-young-man-raised-as-elijah-and-elisha-raised
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Kings 17:21 — *he stretched himself upon the child three times … let this child''s soul come into him again* Elijah''s posture over the widow''s son, the same as Paul falling on Eutychus (Acts 20:10).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-his-life-is-in-him-the-young-man-raised-as-elijah-and-elisha-raised'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=17 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Kings 4:34 — *he … lay upon the child … and the flesh of the child waxed warm* Elisha''s close embrace over the Shunammite''s son, mirrored in Paul embracing Eutychus (Acts 20:10).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-his-life-is-in-him-the-young-man-raised-as-elijah-and-elisha-raised'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=4 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Kings 4:35 — *the child sneezed seven times, and the child opened his eyes* the Shunammite''s son given back alive, as the young man is brought alive (Acts 20:12).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-his-life-is-in-him-the-young-man-raised-as-elijah-and-elisha-raised'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=4 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-20-i-am-pure-from-the-blood-of-all-men-the-watchman-cleared
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 33:6 — *if the watchman … blow not the trumpet … his blood will I require at the watchman''s hand* the blood-guilt Paul is cleared of by warning (Acts 20:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-i-am-pure-from-the-blood-of-all-men-the-watchman-cleared'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=33 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 33:8 — *if thou dost not speak to warn the wicked … his blood will I require at thine hand* the watchman delivered by declaring the whole counsel (Acts 20:27).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-i-am-pure-from-the-blood-of-all-men-the-watchman-cleared'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=33 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 18:6 — *Your blood be upon your own heads; I am clean* the same watchman''s clearing in Paul''s mouth at Corinth (Acts 20:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-i-am-pure-from-the-blood-of-all-men-the-watchman-cleared'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=18 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-20-feed-the-flock-of-god-the-true-shepherd-over-the-scattered
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 34:4 — *neither have ye brought again that which was driven away, neither have ye sought that which was lost* the false shepherds the overseers must be the opposite of (Acts 20:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-feed-the-flock-of-god-the-true-shepherd-over-the-scattered'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 40:11 — *He shall feed his flock like a shepherd: he shall gather the lambs with his arm* the Shepherd whose feeding the overseers under-shepherd (Acts 20:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-feed-the-flock-of-god-the-true-shepherd-over-the-scattered'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 21:15 — *Feed my lambs* the charge the risen Master first laid on Peter, now given to the elders (Acts 20:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-feed-the-flock-of-god-the-true-shepherd-over-the-scattered'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=21 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'John 21:16 — *Feed my sheep* the Master''s command passing to the overseers of the flock (Acts 20:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-feed-the-flock-of-god-the-true-shepherd-over-the-scattered'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=21 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Peter 5:2 — *Feed the flock of Elohim (God) … not for filthy lucre, but of a ready mind* Peter passing the Master''s charge to the elders, as Paul does (Acts 20:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-feed-the-flock-of-god-the-true-shepherd-over-the-scattered'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=5 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-20-grievous-wolves-shall-enter-in-the-false-shepherds-that-scatter
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 34:5 — *they were scattered, because there is no shepherd: and they became meat to all the beasts of the field* the flock torn when the wolves enter (Acts 20:29).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-grievous-wolves-shall-enter-in-the-false-shepherds-that-scatter'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 23:1 — *Woe be unto the pastors that destroy and scatter the sheep of my pasture* the men arising from within who draw disciples after them (Acts 20:30).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-grievous-wolves-shall-enter-in-the-false-shepherds-that-scatter'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 7:15 — *false prophets, which come to you in sheep''s clothing, but inwardly they are ravening wolves* the disguise of the grievous wolves Paul warns of (Acts 20:29).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-grievous-wolves-shall-enter-in-the-false-shepherds-that-scatter'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-20-i-have-coveted-no-mans-silver-the-shepherd-not-for-filthy-lucre
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 18:20 — *I am thy part and thine inheritance among the children of Yashar''el (Israel)* the Levite''s portion; the shepherd who covets no silver because Yahuah is his part (Acts 20:33).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-i-have-coveted-no-mans-silver-the-shepherd-not-for-filthy-lucre'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Corinthians 9:18 — *I may make the gospel of Messiah (Christ) without charge* the laboring hands that abuse no power, ministering to his own necessities (Acts 20:34).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-i-have-coveted-no-mans-silver-the-shepherd-not-for-filthy-lucre'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=9 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-20-it-is-more-blessed-to-give-than-to-receive-the-liberal-soul
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 11:25 — *The liberal soul shall be made fat: and he that watereth shall be watered also himself* the proverb behind the Master''s saying that giving is blessed (Acts 20:35).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-it-is-more-blessed-to-give-than-to-receive-the-liberal-soul'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=11 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 15:10 — *Thou shalt surely give him … Yahuah Elohayka (the LORD thy God) shall bless thee in all thy works* the Torah''s open hand the Master''s word expresses (Acts 20:35).'
+  FROM cross_reference_threads t, cross_references x, _s217_a20_lookup sv, _s217_a20_lookup tv
+ WHERE t.slug='acts-20-it-is-more-blessed-to-give-than-to-receive-the-liberal-soul'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=20 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=15 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_21.sql (S217 Acts 21) -----
+-- =====================================================================
+-- S217 minion — ACTS 21 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Range:  ACTS 21 (single chapter).  Tag: a21 (temp view _s217_a21_lookup).  Sort band: 5775-5799 (step 3).
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- ***DROPPED-PAUL / KEEPS-THE-LAW CORRECTION — THE LOAD-BEARING WORK OF THIS CHAPTER***
+--  Acts 21 is the chapter that REFUTES the antinomian Paul. The false rumor (21:21) — that Paul
+--  teaches the Yahudim (Jews) among the nations *to forsake Moses, saying that they ought not to
+--  circumcise their children, neither to walk after the customs* — is named by the elders as a
+--  thing *whereof they were informed concerning thee, are nothing* (21:24). James's remedy is not
+--  a defense of antinomianism but its opposite: Paul JOINS FOUR MEN UNDER A NAZARITE VOW
+--  (Numbers 6), pays their charges, purifies himself in the temple, *that all may know … that thou
+--  thyself also walkest orderly, and keepest the law* (21:24). Paul's own temple act denies the
+--  rumor. The riot's charge (21:28) — *against the people, and the law, and this place* — is the
+--  SAME false charge laid against Stephen by false witnesses (Acts 6:13). Throughout: the Paul who
+--  abolished Torah does not exist; he is a Torah-observant Yahudi (Jew) keeping a Nazarite vow in
+--  the temple, and the rumor is named as false by the text itself. Voice-care: moderate — frame
+--  the vow/purification as Paul KEEPING the law, the false report as false, never let the inherited
+--  antinomian reading surface.
+--
+-- WATCHPOINTS (Red Lines #2/#4/#5/#6, Christology, son-of-Adam, NT-Lord):
+--  * Christology of 21:13-14: *the will of Yahuah (Lord) be done* — the same surrender the Master
+--    spoke in Gethsemane (*not my will, but thine, be done*). The Formed who prayed in the garden;
+--    Paul ready to die *for the name of the Lord Yahusha (Lord Jesus)* — *Lord* here is Yahusha
+--    titular, preserved as the pull gives it.
+--  * Agabus's girdle-sign (21:11): the enacted-sign prophets — Jeremiah's linen girdle (Jeremiah
+--    13), Ezekiel's bands (Ezekiel 4:8) — the prophetic word performed in the body, the Ruach
+--    HaKodesh (Holy Spirit) speaking through the sign.
+--  * 21:20 *zealous of the law* — read as covenant fidelity (Numbers 6, 1 Maccabees 2:27), the
+--    thousands of believing Yahudim who keep Torah; NEVER a flesh-credential works-righteousness.
+--
+-- PER-VERSE LIBRARY-COVERAGE CHECKLIST (all three weighed for every meaningful block):
+--  ACTS 21:
+--   v.1-3   the voyage to Tyre          Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative itinerary)
+--   v.4     said through the Spirit not to go up  Tanakh: none warranted (carried in the bound-in-the-spirit NT thread)  Extras: none warranted  NT: none added (Acts 20:22-23 carried under v.11 girdle thread by theme)
+--   v.5-9   prayer on the shore / Philip's daughters prophesy  Tanakh: none warranted  Extras: none warranted  NT: none warranted (Joel-2 daughters-prophesy carried in Acts 2 threads, not re-added)
+--   v.10-11 Agabus binds his own hands/feet with Paul's girdle  Tanakh: Jeremiah 13:1, Ezekiel 4:8 (enacted-sign prophets)  Extras: none warranted  NT: Acts 20:23 weighed (bonds abide — carried thematically, not added as separate row)
+--   v.12-14 the will of the Lord be done  Tanakh: none warranted  Extras: none warranted  NT: Luke 22:42, Matthew 26:39 (Gethsemane surrender)
+--   v.15-19 up to Jerusalem; declares what God wrought among the Gentiles  Tanakh: none warranted  Extras: none warranted  NT: none warranted (the gathering carried in Acts 15 threads, not re-added)
+--   v.20    thousands of believing Yahudim, zealous of the law  Tanakh: none added (Numbers 6 carried under v.24)  Extras: 1 Maccabees 2:27 (zealous of the law)  NT: none warranted
+--   v.21    the FALSE RUMOR — forsake Moses / not circumcise  Tanakh: none warranted  Extras: none warranted  NT: none added (named false at v.24, carried in keeps-the-law thread)
+--   v.23-24 the Nazarite-vow remedy — keepeth the law  Tanakh: Numbers 6:2, Numbers 6:18  Extras: none warranted  NT: Acts 24:14, Acts 24:18, Acts 25:8, Acts 28:17 (Paul's own Torah-observant defense)
+--   v.25    the believing Gentiles' four-point letter  Tanakh: none added  Extras: none warranted  NT: none warranted (Acts 15 council verdict carried in Acts 15 threads, not re-added)
+--   v.26    Paul purifies, enters the temple, the offering  Tanakh: none added (Numbers 6 carried at v.24)  Extras: none warranted  NT: Acts 24:18 (found purified in the temple — carried at v.24 thread)
+--   v.27-29 the riot — stirred up, laid hands  Tanakh: none warranted  Extras: none warranted  NT: none added (the false charge carried at v.28)
+--   v.28    the false charge — against the people, the law, this place  Tanakh: none warranted  Extras: none warranted  NT: Acts 6:13 (the same false charge against Stephen)
+--   v.30-40 seized, bound, the chief captain, Hebrew tongue  Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--
+-- THREADS (slug -> target libraries):
+--   5775 acts-21-bound-with-pauls-girdle-the-enacted-sign-of-the-prophets        (Tanakh)
+--   5778 acts-21-the-will-of-the-lord-be-done-the-gethsemane-surrender           (NT)
+--   5781 acts-21-zealous-of-the-law-the-thousands-who-believe-and-keep-the-covenant (Extras)
+--   5784 acts-21-walkest-orderly-and-keepest-the-law-the-nazarite-vow-and-pauls-own-defense (Tanakh + NT, Acts<->Acts)
+--   5787 acts-21-against-the-people-and-the-law-and-this-place-the-same-false-charge-as-stephen (NT, Acts<->Acts)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-21-bound-with-pauls-girdle-the-enacted-sign-of-the-prophets
+  ('canon', 'acts', 21, 11, 'canon', 'jeremiah', 13, 1, 'free', E'*Thus saith Yahuah (LORD) unto me, Go and get thee a linen girdle, and put it upon thy loins, and put it not in water.* (Jeremiah 13:1). When Agabus comes down from Judæa, *he took Paul''s girdle, and bound his own hands and feet, and said, Thus saith the Ruach HaKodesh (Holy Spirit), So shall the Yahudim (Jews) at Jerusalem bind the man that owneth this girdle, and shall deliver him into the hands of the Gentiles* (Acts 21:11). It is the old prophetic manner — the word performed in the body before it is spoken in words. As Yahuah (LORD) sent Jeremiah to take a girdle and enact the marring of Yahudah''s pride, so the Spirit moves Agabus to take Paul''s girdle and bind himself with it, the sign speaking what the words then declare: the man that owneth this girdle will be bound.'),
+  ('canon', 'acts', 21, 11, 'canon', 'ezekiel', 4, 8, 'free', E'*And, behold, I will lay bands upon thee, and thou shalt not turn thee from one side to another, till thou hast ended the days of thy siege.* (Ezekiel 4:8). Ezekiel is bound with bands and made to bear the iniquity of the house in his own body — the prophecy enacted, not merely spoken. So Agabus *bound his own hands and feet* with Paul''s girdle (Acts 21:11), the bonds upon the prophet''s own body declaring the bonds to come upon Paul. The Ruach HaKodesh (Holy Spirit) speaks through the sign performed in the flesh, the same manner of prophecy Ezekiel was given.'),
+  -- thread: acts-21-the-will-of-the-lord-be-done-the-gethsemane-surrender
+  ('canon', 'acts', 21, 14, 'canon', 'luke', 22, 42, 'free', E'*Saying, Father, if thou be willing, remove this cup from me: nevertheless not my will, but thine, be done.* (Luke 22:42). When Paul will not be turned from going up to die, the company ceases, *saying, The will of Yahuah (Lord) be done* (Acts 21:14). It is the very surrender the Master prayed in the garden before his own binding and death — *not my will, but thine, be done.* The disciples who would have held Paul back lay down their will as the Master laid down his; the cup is not removed, and the will of Yahuah (Lord) is done.'),
+  ('canon', 'acts', 21, 13, 'canon', 'matthew', 26, 39, 'free', E'*And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt.* (Matthew 26:39). Paul answers the weeping company, *I am ready not to be bound only, but also to die at Jerusalem for the name of the Lord Yahusha (Lord Jesus)* (Acts 21:13). He goes up as the Master went up — set toward Jerusalem, ready for the binding and the death, the cup not passing but drunk. *Not as I will, but as thou wilt* is the heart Paul carries into the city that will bind him.'),
+  -- thread: acts-21-zealous-of-the-law-the-thousands-who-believe-and-keep-the-covenant
+  ('canon', 'acts', 21, 20, 'apocrypha', '1-maccabees', 2, 27, 'extras', E'*And Mattathias cried throughout the city with a loud voice, saying, Whoever is zealous of the law, and maintaineth the covenant, let him follow me.* (1 Maccabees 2:27). When Paul comes to James, the elders glorify Yahuah (Lord) and say, *Thou seest, brother, how many thousands of Yahudim (Jews) there are which believe; and they are all zealous of the law* (Acts 21:20). The believing thousands carry the same zeal Mattathias called for — zealous of the law and maintaining the covenant. To believe in Yahusha (Jesus) and to be zealous of the law are not set against each other here; the thousands who believe are the thousands who keep, the covenant fidelity of the faithful remnant unbroken.'),
+  -- thread: acts-21-walkest-orderly-and-keepest-the-law-the-nazarite-vow-and-pauls-own-defense
+  ('canon', 'acts', 21, 24, 'canon', 'numbers', 6, 2, 'free', E'*Speak unto the children of Yashar''el (Israel), and say unto them, When either man or woman shall separate themselves to vow a vow of a Nazarite, to separate themselves unto Yahuah (LORD):* (Numbers 6:2). The elders'' remedy for the rumor against Paul is the Nazarite vow of Moses: *We have four men which have a vow on them; Them take, and purify thyself with them, and be at charges with them, that they may shave their heads* (Acts 21:23-24). The vow Yahuah (LORD) gave through Moses, that a man might separate himself unto Yahuah — this is the very Torah the rumor said Paul taught men to forsake, and Paul keeps it openly to prove the rumor false.'),
+  ('canon', 'acts', 21, 24, 'canon', 'numbers', 6, 18, 'free', E'*And the Nazarite shall shave the head of his separation at the door of the tabernacle of the congregation, and shall take the hair of the head of his separation, and put it in the fire which is under the sacrifice of the peace offerings.* (Numbers 6:18). The four men are to *shave their heads* (Acts 21:24), and Paul enters the temple *to signify the accomplishment of the days of purification, until that an offering should be offered for every one of them* (Acts 21:26) — exactly the close of the Nazarite vow Moses prescribed: the shaving of the head and the offering at the door of the tabernacle. Paul is not abolishing this Torah; he is paying its charges and keeping it to the letter.'),
+  ('canon', 'acts', 21, 24, 'canon', 'acts', 24, 14, 'free', E'*But this I confess unto thee, that after the way which they call heresy, so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets:* (Acts 24:14). The elders charge Paul to act *that all may know … that thou thyself also walkest orderly, and keepest the law* (Acts 21:24). And before Felix, Paul confesses exactly that: he worships the Elohim (God) of his fathers, *believing all things which are written in the law and in the prophets.* The temple act of Acts 21 and the confession of Acts 24 are one testimony — the Paul who keeps the law, believing all that is written, the rumor of the forsaken Moses named as false by Paul''s own mouth.'),
+  ('canon', 'acts', 21, 24, 'canon', 'acts', 24, 18, 'free', E'*Whereupon certain Yahudim (Jews) from Asia found me purified in the temple, neither with multitude, nor with tumult.* (Acts 24:18). The charge was *purify thyself with them … that thou thyself also walkest orderly, and keepest the law* (Acts 21:24); Paul does it — *purifying himself with them entered into the temple* (Acts 21:26). And later he names it as his defense: the Yahudim (Jews) from Asia *found me purified in the temple.* The purification was not a pretense but the truth of the man: he was found doing the very thing the rumor said he taught against — keeping the Torah of purification in the temple of his fathers.'),
+  ('canon', 'acts', 21, 24, 'canon', 'acts', 25, 8, 'free', E'*While he answered for himself, Neither against the law of the Yahudim (Jews), neither against the temple, nor yet against Cæsar, have I offended any thing at all.* (Acts 25:8). The elders sought to show *that thou thyself also … keepest the law* (Acts 21:24); Paul stands by it to the end. Before Festus he answers that he has offended nothing *against the law of the Yahudim (Jews), neither against the temple* — the two things the rumor and the riot accused him of forsaking. The man the mob charged as the teacher against the law and the place declares under trial that he has offended neither.'),
+  ('canon', 'acts', 21, 24, 'canon', 'acts', 28, 17, 'free', E'*And it came to pass, that after three days Paul called the chief of the Yahudim (Jews) together: and when they were come together, he said unto them, Men and brethren, though I have committed nothing against the people, or customs of our fathers, yet was I delivered prisoner from Jerusalem into the hands of the Romans.* (Acts 28:17). The rumor said Paul taught men *neither to walk after the customs* (Acts 21:21); the elders moved to prove he *keepest the law* (Acts 21:24). At Rome, in chains, Paul''s final word on the matter is the same: he *committed nothing against the people, or customs of our fathers.* From the temple purification to the Roman imprisonment, one testimony holds — the customs of the fathers kept, the rumor false from first to last.'),
+  -- thread: acts-21-against-the-people-and-the-law-and-this-place-the-same-false-charge-as-stephen
+  ('canon', 'acts', 21, 28, 'canon', 'acts', 6, 13, 'free', E'*And set up false witnesses, which said, This man ceaseth not to speak blasphemous words against this holy place, and the law:* (Acts 6:13). The mob seizes Paul *crying out, Men of Yashar''el (Israel), help: This is the man, that teacheth all men every where against the people, and the law, and this place* (Acts 21:28). It is word for word the charge laid against Stephen by *false witnesses* — *against this holy place, and the law.* The text names the witnesses against Stephen false; the same false charge is now thrown at Paul, who at that very hour was in the temple keeping the law. The accusation is the lie''s old costume: name the Torah-keeper an enemy of the Torah.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-21-bound-with-pauls-girdle-the-enacted-sign-of-the-prophets',
+       E'Bound with Paul''s girdle — the enacted sign of the prophets',
+       E'As Paul tarries at Cæsarea, *there came down from Judæa a certain prophet, named Agabus* (Acts 21:10), and *when he was come unto us, he took Paul''s girdle, and bound his own hands and feet, and said, Thus saith the Ruach HaKodesh (Holy Spirit), So shall the Yahudim (Jews) at Jerusalem bind the man that owneth this girdle, and shall deliver him into the hands of the Gentiles* (Acts 21:11). This is the old prophetic manner — the word of Yahuah (LORD) performed in the body before it is spoken aloud. Yahuah (LORD) sent Jeremiah out the same way: *Go and get thee a linen girdle, and put it upon thy loins, and put it not in water* (Jeremiah 13:1), a girdle taken and enacted to declare the marring of Yahudah''s pride. And Ezekiel was bound to bear the sign in his own flesh — *behold, I will lay bands upon thee, and thou shalt not turn thee from one side to another, till thou hast ended the days of thy siege* (Ezekiel 4:8). Agabus stands in that line: the bonds upon the prophet''s own hands and feet declare the bonds to come upon Paul. The sign is the prophecy; the Spirit speaks it in the body first.',
+       sv.verse_id, ev.verse_id, 'free', 5775
+  FROM _s217_a21_lookup sv, _s217_a21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=21 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-21-the-will-of-the-lord-be-done-the-gethsemane-surrender',
+       E'The will of Yahuah (Lord) be done — the Gethsemane surrender',
+       E'When the company hears that Paul will be bound, *both we, and they of that place, besought him not to go up to Jerusalem* (Acts 21:12). But Paul answers, *What mean ye to weep and to break mine heart? for I am ready not to be bound only, but also to die at Jerusalem for the name of the Lord Yahusha (Lord Jesus)* (Acts 21:13). And when he will not be persuaded, the company ceases, *saying, The will of Yahuah (Lord) be done* (Acts 21:14). It is the very prayer the Master prayed in the garden, set toward his own binding and death: *O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt* (Matthew 26:39), and again, *Father, if thou be willing, remove this cup from me: nevertheless not my will, but thine, be done* (Luke 22:42). The Master drank the cup that was not removed; Paul goes up to the city that will bind him, ready to die for the name. The disciples who would have held him back lay down their own will as the Master laid down his — the cup not taken away, the will of Yahuah (Lord) done.',
+       sv.verse_id, ev.verse_id, 'free', 5778
+  FROM _s217_a21_lookup sv, _s217_a21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=21 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-21-zealous-of-the-law-the-thousands-who-believe-and-keep-the-covenant',
+       E'Zealous of the law — the thousands who believe and keep the covenant',
+       E'When Paul has declared *what things Elohim (God) had wrought among the Gentiles by his ministry* (Acts 21:19), the elders glorify Yahuah (Lord) and say, *Thou seest, brother, how many thousands of Yahudim (Jews) there are which believe; and they are all zealous of the law* (Acts 21:20). The believing thousands are not believers who have left the Torah behind; they are zealous of it. This is the zeal Mattathias called for in the day the covenant was under assault: *Whoever is zealous of the law, and maintaineth the covenant, let him follow me* (1 Maccabees 2:27). To believe in Yahusha (Jesus) and to be zealous of the law stand together, not against each other — the thousands who believe are the thousands who keep, and the covenant fidelity of the faithful remnant is unbroken by their faith. It is precisely because the believing thousands are zealous of the law that the rumor against Paul — that he teaches men to forsake Moses — must be answered, and answered by a Torah-keeping act.',
+       sv.verse_id, ev.verse_id, 'extras', 5781
+  FROM _s217_a21_lookup sv, _s217_a21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=21 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-21-walkest-orderly-and-keepest-the-law-the-nazarite-vow-and-pauls-own-defense',
+       E'Walkest orderly, and keepest the law — the Nazarite vow and Paul''s own defense',
+       E'This is the chapter that breaks the lie of the law-abolishing Paul. A rumor has run ahead of him: *they are informed of thee, that thou teachest all the Yahudim (Jews) which are among the Gentiles to forsake Moses, saying that they ought not to circumcise their children, neither to walk after the customs* (Acts 21:21). The elders'' remedy is not to defend a Paul against the Torah, but to show the Torah-keeping Paul plainly: *We have four men which have a vow on them; Them take, and purify thyself with them, and be at charges with them, that they may shave their heads: and all may know that those things, whereof they were informed concerning thee, are nothing; but that thou thyself also walkest orderly, and keepest the law* (Acts 21:23-24). The vow is the Nazarite vow of Moses — *when either man or woman shall separate themselves to vow a vow of a Nazarite, to separate themselves unto Yahuah (LORD)* (Numbers 6:2) — and its close is exactly what the four men do: *the Nazarite shall shave the head of his separation at the door of the tabernacle of the congregation … and put it in the fire which is under the sacrifice of the peace offerings* (Numbers 6:18). So *Paul took the men, and the next day purifying himself with them entered into the temple, to signify the accomplishment of the days of purification, until that an offering should be offered for every one of them* (Acts 21:26). He pays the charges; he keeps the vow to the letter. And this is no isolated act — it is the testimony of his whole defense. Before Felix: *after the way which they call heresy, so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets* (Acts 24:14), and *certain Yahudim (Jews) from Asia found me purified in the temple* (Acts 24:18). Before Festus: *Neither against the law of the Yahudim (Jews), neither against the temple, nor yet against Cæsar, have I offended any thing at all* (Acts 25:8). And at Rome, in chains: *I have committed nothing against the people, or customs of our fathers* (Acts 28:17). The rumor said he forsook Moses; the man kept a Nazarite vow in the temple and went to his death declaring he had offended nothing against the law, the temple, or the customs of the fathers. The Paul who abolished the Torah does not exist. The text itself names the report *nothing,* and Paul''s own act and his own mouth name it false.',
+       sv.verse_id, ev.verse_id, 'free', 5784
+  FROM _s217_a21_lookup sv, _s217_a21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=21 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-21-against-the-people-and-the-law-and-this-place-the-same-false-charge-as-stephen',
+       E'Against the people, and the law, and this place — the same false charge as Stephen',
+       E'The Yahudim (Jews) of Asia see Paul in the temple — the temple where he is at that very hour keeping the law — and *stirred up all the people, and laid hands on him, Crying out, Men of Yashar''el (Israel), help: This is the man, that teacheth all men every where against the people, and the law, and this place: and further brought Greeks also into the temple, and hath polluted this holy place* (Acts 21:27-28). It is the same charge, almost word for word, that was laid against Stephen — and the text already named the witnesses who brought it: *they set up false witnesses, which said, This man ceaseth not to speak blasphemous words against this holy place, and the law* (Acts 6:13). Against the holy place, against the law: the accusation does not change because the accusation was never true. Stephen''s accusers were false witnesses; Paul''s accusers supposed a thing they had not seen — *for they had seen before with him in the city Trophimus an Ephesian, whom they supposed that Paul had brought into the temple* (Acts 21:29). The lie wears its old costume: take the man who keeps the Torah and call him the enemy of the Torah, take the man purifying himself in the temple and call him the one who polluted it. The same false charge, the same hour of the law-keeper accused of forsaking the law.',
+       sv.verse_id, ev.verse_id, 'free', 5787
+  FROM _s217_a21_lookup sv, _s217_a21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=21 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-21-bound-with-pauls-girdle-the-enacted-sign-of-the-prophets
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 13:1 — *Go and get thee a linen girdle, and put it upon thy loins* the enacted girdle-sign of the prophet; Agabus takes Paul''s girdle in the same manner (Acts 21:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-bound-with-pauls-girdle-the-enacted-sign-of-the-prophets'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=13 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 4:8 — *I will lay bands upon thee … till thou hast ended the days of thy siege* the prophet bound to bear the sign in his own body, as Agabus binds his own hands and feet (Acts 21:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-bound-with-pauls-girdle-the-enacted-sign-of-the-prophets'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=4 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-21-the-will-of-the-lord-be-done-the-gethsemane-surrender
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 26:39 — *let this cup pass from me: nevertheless not as I will, but as thou wilt* the Master set toward his binding and death, as Paul is ready to die at Jerusalem (Acts 21:13).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-the-will-of-the-lord-be-done-the-gethsemane-surrender'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 22:42 — *not my will, but thine, be done* the garden surrender the company echoes — *The will of Yahuah (Lord) be done* (Acts 21:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-the-will-of-the-lord-be-done-the-gethsemane-surrender'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-21-zealous-of-the-law-the-thousands-who-believe-and-keep-the-covenant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Maccabees 2:27 — *Whoever is zealous of the law, and maintaineth the covenant, let him follow me* the same zeal the believing thousands carry — *they are all zealous of the law* (Acts 21:20).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-zealous-of-the-law-the-thousands-who-believe-and-keep-the-covenant'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=20
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=2 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-21-walkest-orderly-and-keepest-the-law-the-nazarite-vow-and-pauls-own-defense
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 6:2 — *to vow a vow of a Nazarite, to separate themselves unto Yahuah (LORD)* the Torah vow the four men carry, that Paul keeps to prove the rumor false (Acts 21:23-24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-walkest-orderly-and-keepest-the-law-the-nazarite-vow-and-pauls-own-defense'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 6:18 — *the Nazarite shall shave the head of his separation at the door of the tabernacle* the close of the vow Paul accomplishes in the temple with the offering (Acts 21:26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-walkest-orderly-and-keepest-the-law-the-nazarite-vow-and-pauls-own-defense'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 24:14 — *so worship I the Elohim (God) of my fathers, believing all things which are written in the law and in the prophets* Paul''s own confession that he keeps the law (Acts 21:24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-walkest-orderly-and-keepest-the-law-the-nazarite-vow-and-pauls-own-defense'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=24 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 24:18 — *certain Yahudim (Jews) from Asia found me purified in the temple* the purification of Acts 21 named as Paul''s own defense (Acts 21:24,26).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-walkest-orderly-and-keepest-the-law-the-nazarite-vow-and-pauls-own-defense'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=24 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Acts 25:8 — *Neither against the law of the Yahudim (Jews), neither against the temple … have I offended* the law-keeper''s defense before Festus (Acts 21:24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-walkest-orderly-and-keepest-the-law-the-nazarite-vow-and-pauls-own-defense'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Acts 28:17 — *I have committed nothing against the people, or customs of our fathers* Paul''s last word, in chains at Rome, the rumor false to the end (Acts 21:21,24).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-walkest-orderly-and-keepest-the-law-the-nazarite-vow-and-pauls-own-defense'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=28 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-21-against-the-people-and-the-law-and-this-place-the-same-false-charge-as-stephen
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 6:13 — *false witnesses, which said, This man ceaseth not to speak … against this holy place, and the law* the same false charge laid against Stephen, now thrown at Paul (Acts 21:28).'
+  FROM cross_reference_threads t, cross_references x, _s217_a21_lookup sv, _s217_a21_lookup tv
+ WHERE t.slug='acts-21-against-the-people-and-the-law-and-this-place-the-same-false-charge-as-stephen'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=21 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=6 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_22.sql (S217 Acts 22) -----
+-- =====================================================================
+-- S217 minion — ACTS 22 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Anchor chapter: ACTS 22.  Tag: a22 (temp view _s217_a22_lookup).  Sort band: 5800-5824 (step 3).
+-- Source is ALWAYS the canon Acts 22 verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- Acts 22 is Paul RETELLING his Damascus-road call in the Hebrew tongue. Acts<->Acts points to
+-- Acts 9 (the narrative) and Acts 26 (the Agrippa retelling) where the same event is told. The
+-- Acts-9-ANCHORED threads (acts-9-the-light-and-the-voice..., acts-9-a-chosen-vessel...) already
+-- exist in minion_acts_08_09.sql; this fragment anchors on the Acts-22 source verses and builds
+-- the Acts-22 retelling weave (no duplication of the Acts-9-anchored threads).
+--
+-- WATCHPOINTS (Red Lines #2/#7/#10/#11, Christology, son-of-Adam):
+--  * v.3 — Paul the Torah-trained Pharisee at the feet of Gamaliel, "taught according to the
+--    perfect manner of the law of the fathers, zealous toward Elohim (God)": the DROPPED-PAUL
+--    correction. Paul never abandoned the Torah; the antinomian Paul is the horn's construction.
+--    Phil 3:5 (a Pharisee, of the tribe of Benjamin) + Acts 26:5,7 (the twelve tribes' hope).
+--  * v.6-8 — the light and the voice retold; the Formed himself (drawn from the Formless, the God
+--    of the OT interactions, who came in flesh as Yahusha of Nazareth) appears and names himself.
+--    Acts<->Acts to 9:3-6 and 26:13-15. NT-Lord governing rule preserved as the pull gives it.
+--  * v.14 — "see that Just One": the Righteous One / righteous Servant / righteous Branch (Isaiah
+--    53:11, Jeremiah 23:5, 1 John 2:1). The Formed seen — the Just One whose voice Saul hears.
+--  * v.16 — "wash away thy sins, calling on the name of Yahuah (Lord)": Joel 2:32 / Acts 2:21 /
+--    Romans 10:13 — calling on the name where the underlying Hebrew is YHWH. NOT a sola-fide
+--    formula (Red Line #10); the calling is the turning home, baptism the door, the name the
+--    name Joel named for deliverance in the remnant whom Yahuah shall call.
+--  * v.21 — "send thee far hence unto the Gentiles": the DISPERSED / scattered house of Yashar'el
+--    made nigh — the preserved of Yashar'el restored, the afar-off made my-people (Hosea/Lo-Ammi)
+--    — NOT a graft of non-seed by faith-confession (Red Lines #7/#11). Isaiah 49:6 is load-bearing:
+--    raise the tribes of Jacob AND restore the preserved of Yashar'el AND a light to the Gentiles;
+--    Isaiah 57:19 / Ephesians 2:13,17 the far-off made nigh; Acts 2:39 the promise to them afar off.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 22:
+--   v.1-2   defence in the Hebrew tongue   Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative frame)
+--   v.3     Gamaliel / perfect manner of the law / zealous   Tanakh: none added (Paul's Torah-credential carried in NT targets)  Extras: none warranted  NT: Philippians 3:5, Acts 26:5, Acts 26:7
+--   v.4-5   persecuted this way unto death  Tanakh: none warranted  Extras: none warranted  NT: none added (carried in the light-and-voice retelling thread)
+--   v.6-8   the light and the voice retold  Tanakh: none added (the Formed appearing carried in NT Acts-retellings)  Extras: none warranted  NT: Acts 9:4, Acts 9:5, Acts 26:14, Acts 26:15
+--   v.9-11  the men saw the light / led blind   Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative; carried in light-and-voice thread)
+--   v.12-13 Ananias devout according to the law  Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.14    the God of our fathers / see that Just One   Tanakh: Isaiah 53:11, Jeremiah 23:5  Extras: none warranted  NT: 1 John 2:1
+--   v.15    his witness unto all men         Tanakh: none warranted  Extras: none warranted  NT: none added (carried in the chosen-vessel Acts-9 thread)
+--   v.16    be baptized, wash away thy sins, calling on the name  Tanakh: Joel 2:32  Extras: none warranted  NT: Acts 2:21, Romans 10:13
+--   v.17-20 the trance in the temple         Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.21    far hence unto the Gentiles      Tanakh: Isaiah 49:6, Isaiah 57:19  Extras: none warranted  NT: Ephesians 2:13, Ephesians 2:17, Acts 2:39
+--   v.22-23 the crowd's rage at the word     Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative; the rage is the false-inclusion-binary defending itself, carried in the v.21 thread prose)
+--   v.24-30 scourging / Roman citizenship    Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--
+-- THREADS (slug -> target libraries):
+--   5800 acts-22-brought-up-at-the-feet-of-gamaliel-the-torah-trained-pharisee   (NT)
+--   5803 acts-22-the-light-and-the-voice-retold-i-am-yahusha-of-nazareth         (NT, Acts<->Acts)
+--   5806 acts-22-that-just-one-the-righteous-servant-and-branch-seen             (Tanakh + NT)
+--   5809 acts-22-wash-away-thy-sins-calling-on-the-name-of-yahuah                (Tanakh + NT)
+--   5812 acts-22-far-hence-unto-the-gentiles-the-dispersed-house-made-nigh       (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-22-brought-up-at-the-feet-of-gamaliel-the-torah-trained-pharisee
+  ('canon', 'acts', 22, 3, 'canon', 'philippians', 3, 5, 'free', E'*Circumcised the eighth day, of the stock of Yashar''el (Israel), of the tribe of Benjamin, an Hebrew of the Hebrews; as touching the law, a Pharisee;* (Philippians 3:5). Paul tells the crowd the same thing he tells the Philippians: *I am verily a man which am a Yahudi (Jew) … brought up in this city at the feet of Gamaliel, and taught according to the perfect manner of the law of the fathers, and was zealous toward Elohim (God)* (Acts 22:3). This is no man who abandoned the Torah — he is a Pharisee of the tribe of Benjamin, an Hebrew of the Hebrews, trained in the perfect manner of the law. The Paul who threw away the Torah is the horn''s construction; the Paul of the page is the Torah-faithful Yashar''eli (Israelite) the prophets'' hope sent.'),
+  ('canon', 'acts', 22, 3, 'canon', 'acts', 26, 5, 'free', E'*Which knew me from the beginning, if they would testify, that after the most straitest sect of our religion I lived a Pharisee.* (Acts 26:5). Before Agrippa, Paul says it the same way he says it to the crowd at Jerusalem — *taught according to the perfect manner of the law of the fathers* (Acts 22:3). He lived *a Pharisee,* after the most straitest sect, observing the law of the fathers; the zeal that drove the persecution was zeal *toward Elohim (God).* The man was always inside the covenant, never outside the Torah.'),
+  ('canon', 'acts', 22, 3, 'canon', 'acts', 26, 7, 'free', E'*Unto which promise our twelve tribes, instantly serving Elohim (God) day and night, hope to come. For which hope''s sake, king Agrippa, I am accused of the Yahudim (Jews).* (Acts 26:7). The Torah-trained Pharisee of Acts 22:3 names the hope he stands for: the promise made to the fathers toward which *our twelve tribes* serve day and night. This is the whole of it — not a man who left Yashar''el (Israel) for some new thing, but a man on trial for the twelve-tribe hope, the gathering of all the houses the prophets promised.'),
+  -- thread: acts-22-the-light-and-the-voice-retold-i-am-yahusha-of-nazareth
+  ('canon', 'acts', 22, 7, 'canon', 'acts', 9, 4, 'free', E'*And he fell to the earth, and heard a voice saying unto him, Saul, Saul, why persecutest thou me?* (Acts 9:4). Paul now retells it in his own mouth: *I fell unto the ground, and heard a voice saying unto me, Saul, Saul, why persecutest thou me?* (Acts 22:7). The same voice, the same words, the same falling — the One who appeared and spoke through all the history of the fathers, now glorified, speaks Saul''s name from the light, counting the persecution of his disciples as persecution of himself.'),
+  ('canon', 'acts', 22, 8, 'canon', 'acts', 9, 5, 'free', E'*And he said, Who art thou, Yahuah (Lord)? And Yahuah (Lord) said, I am Yahusha (Jesus) whom thou persecutest: it is hard for thee to kick against the pricks.* (Acts 9:5). Saul cries the same question in the retelling — *Who art thou, Yahuah (Lord)?* — and hears the same answer: *I am Yahusha (Jesus) of Nazareth, whom thou persecutest* (Acts 22:8). The One in the light who answers to the name Yahuah is Yahusha of Nazareth: the Formed who is Yahuah, drawn from the Formless, who came in the flesh and now appears risen and glorified.'),
+  ('canon', 'acts', 22, 7, 'canon', 'acts', 26, 14, 'free', E'*And when we were all fallen to the earth, I heard a voice speaking unto me, and saying in the Hebrew tongue, Saul, Saul, why persecutest thou me? it is hard for thee to kick against the pricks.* (Acts 26:14). Before Agrippa, Paul adds the detail he gives the Jerusalem crowd by speaking it: the voice came *in the Hebrew tongue.* The same falling to the ground, the same *Saul, Saul, why persecutest thou me?* (Acts 22:7) — told a third time, the Formed speaking the persecutor''s name in the tongue of the fathers.'),
+  ('canon', 'acts', 22, 8, 'canon', 'acts', 26, 15, 'free', E'*And I said, Who art thou, Yahuah (Lord)? And he said, I am Yahusha (Jesus) whom thou persecutest.* (Acts 26:15). The question and the answer are identical across all three tellings — *Who art thou, Yahuah (Lord)? … I am Yahusha (Jesus) of Nazareth, whom thou persecutest* (Acts 22:8). The Name that answers from the light is the Formed himself: he who is Yahuah and came in the flesh as Yahusha of Nazareth, persecuted in his disciples and now calling the one who hunted them.'),
+  -- thread: acts-22-that-just-one-the-righteous-servant-and-branch-seen
+  ('canon', 'acts', 22, 14, 'canon', 'isaiah', 53, 11, 'free', E'*He shall see of the travail of his soul, and shall be satisfied: by his knowledge shall my righteous servant justify many; for he shall bear their iniquities.* (Isaiah 53:11). Ananias tells Saul that *the Elohim (God) of our fathers hath chosen thee, that thou shouldest know his will, and see that Just One, and shouldest hear the voice of his mouth* (Acts 22:14). The Just One Saul saw in the light is the righteous Servant Isaiah saw — the One who bears the iniquities of many and by his knowledge justifies them. To see the Just One is to see the Servant of the prophet, satisfied in the travail of his soul.'),
+  ('canon', 'acts', 22, 14, 'canon', 'jeremiah', 23, 5, 'free', E'*Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth.* (Jeremiah 23:5). The *Just One* Saul was chosen to see (Acts 22:14) is the righteous Branch Jeremiah named — raised unto David, the King who reigns in justice. The One in the glory of the light is the righteous King the prophet promised, the Branch of David come and seen.'),
+  ('canon', 'acts', 22, 14, 'canon', '1-john', 2, 1, 'free', E'*My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Yahusha HaMashiach (Jesus Christ) the righteous:* (1 John 2:1). The *Just One* Ananias names (Acts 22:14) is *Yahusha HaMashiach (Jesus Christ) the righteous* — the same Righteous One, the advocate with the Father. The Just One Saul saw and whose voice he heard is the righteous One who stands for his own before the Father.'),
+  -- thread: acts-22-wash-away-thy-sins-calling-on-the-name-of-yahuah
+  ('canon', 'acts', 22, 16, 'canon', 'joel', 2, 32, 'free', E'*And it shall come to pass, that whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call.* (Joel 2:32). Ananias says, *arise, and be baptized, and wash away thy sins, calling on the name of Yahuah (Lord)* (Acts 22:16). The name Saul is told to call upon is the name Joel named for deliverance — and the deliverance is *in the remnant whom Yahuah (LORD) shall call.* The calling is not a formula that earns; it is the turning home of one already called in the remnant, the washing the door he walks through.'),
+  ('canon', 'acts', 22, 16, 'canon', 'acts', 2, 21, 'free', E'*And it shall come to pass, that whosoever shall call on the name of Yahuah (Lord) shall be saved.* (Acts 2:21). At Pentecost Peter quoted Joel''s promise — *whosoever shall call on the name of Yahuah (Lord) shall be saved* — and now Ananias bids Saul do exactly that: *wash away thy sins, calling on the name of Yahuah (Lord)* (Acts 22:16). The same name, the same calling, the same deliverance — the persecutor brought to call on the Name he had set out to stamp out.'),
+  ('canon', 'acts', 22, 16, 'canon', 'romans', 10, 13, 'free', E'*For whosoever shall call upon the name of Yahuah (Lord) shall be saved.* (Romans 10:13). Saul, told to *wash away thy sins, calling on the name of Yahuah (Lord)* (Acts 22:16), would later write the same Joel-promise into his letter to the Romans — *whosoever shall call upon the name of Yahuah (Lord) shall be saved.* The one who called on the Name at the water preaches the calling on the Name; the Name is Yahuah''s, the deliverance the remnant''s.'),
+  -- thread: acts-22-far-hence-unto-the-gentiles-the-dispersed-house-made-nigh
+  ('canon', 'acts', 22, 21, 'canon', 'isaiah', 49, 6, 'free', E'*And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth.* (Isaiah 49:6). When Yahusha (Jesus) tells Saul *Depart: for I will send thee far hence unto the Gentiles* (Acts 22:21), the sending is the work Isaiah named: the same Servant raises up the tribes of Jacob AND restores the preserved of Yashar''el (Israel) AND is a light to the Gentiles. The dispersion among the nations is where the preserved of Yashar''el are scattered — and the light goes far hence to gather them, not to splice in a new people.'),
+  ('canon', 'acts', 22, 21, 'canon', 'isaiah', 57, 19, 'free', E'*I create the fruit of the lips; Peace, peace to him that is far off, and to him that is near, saith Yahuah (LORD); and I will heal him.* (Isaiah 57:19). The sending *far hence unto the Gentiles* (Acts 22:21) carries the peace Isaiah created for *him that is far off, and to him that is near.* The far-off is not a stranger to the covenant but the scattered of the house made distant by the exile; the same Yahuah (LORD) who heals the near heals the far, and the word goes to gather both.'),
+  ('canon', 'acts', 22, 21, 'canon', 'ephesians', 2, 13, 'free', E'*But now in HaMashiach Yahusha (Christ Jesus) ye who sometimes were far off are made nigh by the blood of Messiah (Christ).* (Ephesians 2:13). The ones to whom Saul is *sent far hence* (Acts 22:21) are *ye who sometimes were far off* — the dispersed of Yashar''el (Israel), aliens from the commonwealth by the scattering, now *made nigh.* The far-off made nigh is the homecoming of the house that was estranged, the lost sheep brought back to the fold they were always of.'),
+  ('canon', 'acts', 22, 21, 'canon', 'ephesians', 2, 17, 'free', E'*And came and preached peace to you which were afar off, and to them that were nigh.* (Ephesians 2:17). The sending *far hence unto the Gentiles* (Acts 22:21) is the preaching of peace *to you which were afar off, and to them that were nigh* — Yosef and Yahudah, the scattered house and the near house, both gathered. The afar-off are the dispersed seed, not the unrelated nations; the peace preached far hence reconciles the two houses into one.'),
+  ('canon', 'acts', 22, 21, 'canon', 'acts', 2, 39, 'free', E'*For the promise is unto you, and to your children, and to all that are afar off, even as many as Yahuah Eloheinu (the Lord our God) shall call.* (Acts 2:39). The sending *far hence* (Acts 22:21) reaches *all that are afar off, even as many as Yahuah Eloheinu (the Lord our God) shall call.* The afar-off are within the promise, not added to it — the dispersed children whom Yahuah Eloheinu (the Lord our God) shall call, the hearing revealing what was already true: they are of the called remnant, made nigh.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-22-brought-up-at-the-feet-of-gamaliel-the-torah-trained-pharisee',
+       E'Brought up at the feet of Gamaliel — the Torah-trained Pharisee',
+       E'Paul opens his defence in the Hebrew tongue with his own credential: *I am verily a man which am a Yahudi (Jew), born in Tarsus, a city in Cilicia, yet brought up in this city at the feet of Gamaliel, and taught according to the perfect manner of the law of the fathers, and was zealous toward Elohim (God), as ye all are this day* (Acts 22:3). This is the man the horn''s pulpit later turns into the abolisher of the Torah — and the page will not bear it. He tells the Philippians the same: *circumcised the eighth day, of the stock of Yashar''el (Israel), of the tribe of Benjamin, an Hebrew of the Hebrews; as touching the law, a Pharisee* (Philippians 3:5). He tells Agrippa the same: *after the most straitest sect of our religion I lived a Pharisee* (Acts 26:5). And he names the hope the whole defence stands on — *unto which promise our twelve tribes, instantly serving Elohim (God) day and night, hope to come* (Acts 26:7). The man was never outside the Torah and never outside Yashar''el (Israel). He is a Pharisee of Benjamin, Torah-trained in the perfect manner of the law, on trial for the twelve-tribe hope the prophets promised. The Paul who threw away the covenant is a construction; the Paul of the page is the Torah-faithful Yashar''eli the gathering sent.',
+       sv.verse_id, ev.verse_id, 'free', 5800
+  FROM _s217_a22_lookup sv, _s217_a22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=22 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-22-the-light-and-the-voice-retold-i-am-yahusha-of-nazareth',
+       E'The light and the voice retold — I am Yahusha (Jesus) of Nazareth',
+       E'Paul retells the Damascus road in his own mouth: *as I made my journey, and was come nigh unto Damascus about noon, suddenly there shone from heaven a great light round about me. And I fell unto the ground, and heard a voice saying unto me, Saul, Saul, why persecutest thou me?* (Acts 22:6-7). He cries the question and hears the Name — *Who art thou, Yahuah (Lord)? And he said unto me, I am Yahusha (Jesus) of Nazareth, whom thou persecutest* (Acts 22:8). It is the same event Luke narrates — *he fell to the earth, and heard a voice saying unto him, Saul, Saul, why persecutest thou me? … I am Yahusha (Jesus) whom thou persecutest* (Acts 9:4-5) — and the same event Paul tells Agrippa, adding that the voice came *in the Hebrew tongue, Saul, Saul, why persecutest thou me?* (Acts 26:14), and again the answer, *I am Yahusha (Jesus) whom thou persecutest* (Acts 26:15). Three tellings, one voice. The One in the light who answers to the name Yahuah is Yahusha of Nazareth — the Formed himself, drawn from the Formless, the God of the fathers'' interactions, who came in the flesh and now appears risen and glorified, counting the persecution of his disciples as persecution of himself.',
+       sv.verse_id, ev.verse_id, 'free', 5803
+  FROM _s217_a22_lookup sv, _s217_a22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=22 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-22-that-just-one-the-righteous-servant-and-branch-seen',
+       E'That Just One — the righteous Servant and Branch seen',
+       E'Ananias, *a devout man according to the law, having a good report of all the Yahudim (Jews)* (Acts 22:12), tells Saul what he has been chosen for: *The Elohim (God) of our fathers hath chosen thee, that thou shouldest know his will, and see that Just One, and shouldest hear the voice of his mouth* (Acts 22:14). The Just One Saul saw in the light is the Righteous One the prophets named. He is Isaiah''s righteous Servant — *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* (Isaiah 53:11). He is Jeremiah''s righteous Branch — *I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth* (Jeremiah 23:5). He is the advocate John names — *we have an advocate with the Father, Yahusha HaMashiach (Jesus Christ) the righteous* (1 John 2:1). To see the Just One and hear the voice of his mouth is to see and hear the righteous Servant, the Branch of David, the Righteous One who bears iniquities and stands for his own before the Father.',
+       sv.verse_id, ev.verse_id, 'free', 5806
+  FROM _s217_a22_lookup sv, _s217_a22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=22 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-22-wash-away-thy-sins-calling-on-the-name-of-yahuah',
+       E'Wash away thy sins — calling on the name of Yahuah (Lord)',
+       E'Ananias''s charge is plain: *And now why tarriest thou? arise, and be baptized, and wash away thy sins, calling on the name of Yahuah (Lord)* (Acts 22:16). The name Saul is told to call upon is the name the prophet named for deliverance: *whosoever shall call on the name of Yahuah (LORD) shall be delivered … and in the remnant whom Yahuah (LORD) shall call* (Joel 2:32). At Pentecost Peter had already quoted it — *whosoever shall call on the name of Yahuah (Lord) shall be saved* (Acts 2:21) — and Saul himself would later write it to the Romans: *whosoever shall call upon the name of Yahuah (Lord) shall be saved* (Romans 10:13). The calling is no formula that purchases what was not; the deliverance is *in the remnant whom Yahuah (LORD) shall call.* The washing is the door the called one walks through, the calling on the Name the turning home of one already named in the remnant. The persecutor who set out to stamp out the Name is brought to call upon it.',
+       sv.verse_id, ev.verse_id, 'free', 5809
+  FROM _s217_a22_lookup sv, _s217_a22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=22 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-22-far-hence-unto-the-gentiles-the-dispersed-house-made-nigh',
+       E'Far hence unto the Gentiles — the dispersed house made nigh',
+       E'In the trance in the temple the Master tells Saul, *Depart: for I will send thee far hence unto the Gentiles* (Acts 22:21) — and at the word the crowd erupts, *Away with such a fellow from the earth: for it is not fit that he should live* (Acts 22:22). The rage is the two-category lie defending itself, hearing in *far hence unto the Gentiles* a betrayal it never was. For the sending is the very work Isaiah named for the Servant: *It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6). The same Servant raises the tribes of Jacob, restores the preserved of Yashar''el (Israel), and is a light to the Gentiles — because the dispersion among the nations is exactly where the preserved of Yashar''el are scattered. The far-off are not strangers to the covenant: *Peace, peace to him that is far off, and to him that is near, saith Yahuah (LORD); and I will heal him* (Isaiah 57:19). They are *ye who sometimes were far off* now *made nigh* (Ephesians 2:13), the ones to whom he *came and preached peace … which were afar off, and to them that were nigh* (Ephesians 2:17) — Yosef and Yahudah, the scattered house and the near house, the two made one. The promise reaches *all that are afar off, even as many as Yahuah Eloheinu (the Lord our God) shall call* (Acts 2:39). The sending far hence is not a graft of a new people; it is the gathering of the dispersed seed, the lost sheep made nigh, the hearing revealing what was already true.',
+       sv.verse_id, ev.verse_id, 'free', 5812
+  FROM _s217_a22_lookup sv, _s217_a22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=22 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-22-brought-up-at-the-feet-of-gamaliel-the-torah-trained-pharisee
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Philippians 3:5 — *of the tribe of Benjamin, an Hebrew of the Hebrews; as touching the law, a Pharisee* Paul''s own credential, the Torah-trained Yashar''eli (Israelite), no abolisher of the law (Acts 22:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-brought-up-at-the-feet-of-gamaliel-the-torah-trained-pharisee'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=3 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 26:5 — *after the most straitest sect of our religion I lived a Pharisee* the same credential before Agrippa; the man always inside the Torah (Acts 22:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-brought-up-at-the-feet-of-gamaliel-the-torah-trained-pharisee'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 26:7 — *unto which promise our twelve tribes … hope to come* the hope the Torah-trained Pharisee stands trial for: the twelve-tribe gathering (Acts 22:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-brought-up-at-the-feet-of-gamaliel-the-torah-trained-pharisee'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-22-the-light-and-the-voice-retold-i-am-yahusha-of-nazareth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 9:4 — *Saul, Saul, why persecutest thou me?* the same voice Luke narrates, now retold by Paul himself (Acts 22:7).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-the-light-and-the-voice-retold-i-am-yahusha-of-nazareth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=9 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 9:5 — *I am Yahusha (Jesus) whom thou persecutest* the Name that answers to Yahuah from the light, the Formed in the flesh (Acts 22:8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-the-light-and-the-voice-retold-i-am-yahusha-of-nazareth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=9 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 26:14 — *saying in the Hebrew tongue, Saul, Saul, why persecutest thou me?* the third telling, the voice in the tongue of the fathers (Acts 22:7).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-the-light-and-the-voice-retold-i-am-yahusha-of-nazareth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 26:15 — *I am Yahusha (Jesus) whom thou persecutest* the identical answer across all three tellings; he who is Yahuah came in the flesh as Yahusha (Acts 22:8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-the-light-and-the-voice-retold-i-am-yahusha-of-nazareth'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=26 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-22-that-just-one-the-righteous-servant-and-branch-seen
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 53:11 — *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* the Just One Saul saw is Isaiah''s righteous Servant (Acts 22:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-that-just-one-the-righteous-servant-and-branch-seen'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 23:5 — *I will raise unto David a righteous Branch, and a King shall reign and prosper* the Just One is the righteous Branch of David (Acts 22:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-that-just-one-the-righteous-servant-and-branch-seen'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 John 2:1 — *an advocate with the Father, Yahusha HaMashiach (Jesus Christ) the righteous* the Just One named is the Righteous One, advocate with the Father (Acts 22:14).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-that-just-one-the-righteous-servant-and-branch-seen'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=2 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-22-wash-away-thy-sins-calling-on-the-name-of-yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joel 2:32 — *whosoever shall call on the name of Yahuah (LORD) shall be delivered … in the remnant whom Yahuah (LORD) shall call* the Name Saul is told to call on, the deliverance in the called remnant (Acts 22:16).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-wash-away-thy-sins-calling-on-the-name-of-yahuah'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 2:21 — *whosoever shall call on the name of Yahuah (Lord) shall be saved* Peter''s Pentecost quotation of Joel; the same calling Saul is now bid to do (Acts 22:16).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-wash-away-thy-sins-calling-on-the-name-of-yahuah'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 10:13 — *whosoever shall call upon the name of Yahuah (Lord) shall be saved* Saul who called on the Name later preaches the calling on the Name (Acts 22:16).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-wash-away-thy-sins-calling-on-the-name-of-yahuah'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-22-far-hence-unto-the-gentiles-the-dispersed-house-made-nigh
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 49:6 — *to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles* the Servant''s one work; the dispersed seed gathered, not a new people grafted (Acts 22:21).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-far-hence-unto-the-gentiles-the-dispersed-house-made-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 57:19 — *Peace, peace to him that is far off, and to him that is near* the far-off is the scattered house made distant by exile, not the unrelated nations (Acts 22:21).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-far-hence-unto-the-gentiles-the-dispersed-house-made-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=57 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ephesians 2:13 — *ye who sometimes were far off are made nigh by the blood of Messiah (Christ)* the dispersed of Yashar''el (Israel) made nigh, the lost sheep brought home (Acts 22:21).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-far-hence-unto-the-gentiles-the-dispersed-house-made-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ephesians 2:17 — *preached peace to you which were afar off, and to them that were nigh* Yosef and Yahudah, the two houses reconciled into one (Acts 22:21).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-far-hence-unto-the-gentiles-the-dispersed-house-made-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Acts 2:39 — *the promise is unto you, and to your children, and to all that are afar off, even as many as Yahuah Eloheinu (the Lord our God) shall call* the afar-off within the promise, called and made nigh (Acts 22:21).'
+  FROM cross_reference_threads t, cross_references x, _s217_a22_lookup sv, _s217_a22_lookup tv
+ WHERE t.slug='acts-22-far-hence-unto-the-gentiles-the-dispersed-house-made-nigh'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=22 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_acts_23.sql (S217 Acts 23) -----
+-- =====================================================================
+-- S217 minion — ACTS 23 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Anchor chapter: ACTS 23.  Tag: a23 (temp view _s217_a23_lookup).  Sort band: 5825-5849.
+-- Source is ALWAYS the canon Acts verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+-- (All targets in this fragment are canon — every thread is tier_required='free'.)
+--
+-- WATCHPOINTS (Red Lines #4/#5, the dropped-Paul note, Christology, son-of-Adam):
+--  * Whited wall (v.3): Paul invokes the Torah against the high priest — *commandest me to be
+--    smitten contrary to the law?* The wall daubed with untempered mortar is Ezekiel's image of
+--    the false-peace builders who seduce the people; the law Paul appeals to is Leviticus 19:15,
+--    righteous judgment. This is Torah honored, never Torah set against grace (Red Line #4).
+--  * Speak not evil of the ruler (v.5): Paul corrects himself by Torah — *it is written* — the
+--    bodily refutation of the dropped-Paul accusation that he taught against Mosheh (Moses). The
+--    Torah-observant Yashar'elite submits to the written word even mid-rebuke (Red Line #5).
+--  * The resurrection hope (v.6): *of the hope and resurrection of the dead I am called in
+--    question* is the Tanakh hope — Daniel's awaking from the dust, Job's living redeemer, Isaiah's
+--    dead men shall live. NOT a novel doctrine; the prophets' own promise of the gathering and the
+--    first resurrection. The Pharisee/Sadducee split is over whether the prophets are believed.
+--  * The Master stands by (v.11): *Yahuah (Lord) stood by him* — the Formed himself, who is
+--    Yahuah and came in the flesh as Yahusha (Jesus), keeps the I-am-with-thee promise he made to
+--    Yehoshua (Joshua) and Jeremiah, and sends Paul on to bear witness at Rome. The keeper and the
+--    sender are one; the same voice stood by at Corinth (Acts 18) and stands by again here.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every block):
+--  ACTS 23:
+--   v.1     good conscience before Elohim   Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative; the testimony carried in the resurrection-hope thread)
+--   v.2-3   whited wall / smitten contrary to law  Tanakh: Ezekiel 13:10, Ezekiel 13:14, Ezekiel 13:15 (untempered mortar / the false-peace wall); Leviticus 19:15 (judge in righteousness — the law Paul invokes)  Extras: none warranted  NT: Matthew 23:27 weighed (whited sepulchres — verbal echo, different image/target; not added, the wall is Ezekiel's)
+--   v.4-5   speak not evil of the ruler      Tanakh: Exodus 22:28  Extras: none warranted  NT: none warranted
+--   v.6     hope and resurrection of the dead  Tanakh: Daniel 12:2, Job 19:25, Job 19:26, Isaiah 26:19  Extras: none warranted (2 Maccabees 7 weighed — the resurrection confession of the martyrs; the Tanakh witnesses carry it cleaner, not added)  NT: none added (the hope carried in the Tanakh prophets)
+--   v.7-8   Pharisees / Sadducees / resurrection, angel, spirit  Tanakh: none added (carried in the resurrection-hope thread)  Extras: none warranted  NT: none warranted (narrative)
+--   v.9     if a spirit or an angel hath spoken  Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.10    chief captain rescues Paul       Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.11    Yahuah stood by him — witness at Rome  Tanakh: Joshua 1:5, Joshua 1:9, Jeremiah 1:8, Jeremiah 1:19, Isaiah 41:10  Extras: none warranted  NT: Acts 18:9, Acts 18:10, Acts 27:23, Acts 27:24
+--   v.12-15 the forty under a curse           Tanakh: none warranted (Psalm-37-wait-on-the-wicked weighed; thin, not added)  Extras: none warranted  NT: none warranted (narrative; the plot foiled is the keeping promise of v.11 made visible)
+--   v.16-22 Paul's nephew warns               Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative)
+--   v.23-35 night march to Caesarea / letter / Felix  Tanakh: none warranted  Extras: none warranted  NT: none warranted (narrative; the safe arrival is the keeping promise of v.11 carried out)
+--
+-- THREADS (slug -> target libraries):
+--   5825 acts-23-thou-whited-wall-the-untempered-morter-and-righteous-judgment  (Tanakh)
+--   5828 acts-23-thou-shalt-not-speak-evil-of-the-ruler-paul-corrected-by-torah (Tanakh)
+--   5831 acts-23-the-hope-and-resurrection-of-the-dead-the-tanakh-hope          (Tanakh)
+--   5834 acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome         (Tanakh + NT, Acts<->Acts)
+-- =====================================================================
+
+CREATE TEMP VIEW _s217_a23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: acts-23-thou-whited-wall-the-untempered-morter-and-righteous-judgment
+  ('canon', 'acts', 23, 3, 'canon', 'ezekiel', 13, 10, 'free', E'*Because, even because they have seduced my people, saying, Peace; and there was no peace; and one built up a wall, and, lo, others daubed it with untempered morter:* (Ezekiel 13:10). When the high priest commands him struck, Paul answers, *Elohim (God) shall smite thee, thou whited wall* (Acts 23:3). The image is Ezekiel''s: a wall built and daubed over with untempered mortar to hide its weakness — the false-peace builders who seduce the people with a covering that cannot stand. The whitewashed wall looks sound and is not; the one who sits to judge by the law and breaks the law to do it is that wall.'),
+  ('canon', 'acts', 23, 3, 'canon', 'ezekiel', 13, 14, 'free', E'*So will I break down the wall that ye have daubed with untempered morter, and bring it down to the ground, so that the foundation thereof shall be discovered, and it shall fall, and ye shall be consumed in the midst thereof: and ye shall know that I am Yahuah (LORD).* (Ezekiel 13:14). *Elohim (God) shall smite thee, thou whited wall* (Acts 23:3) — Paul speaks the very sentence Ezekiel spoke over the daubed wall: it shall be smitten, broken down, its hidden foundation laid bare. The smiting Paul names is not his own vengeance but the verdict the prophet already pronounced on the wall that wears a fair covering over rot.'),
+  ('canon', 'acts', 23, 3, 'canon', 'ezekiel', 13, 15, 'free', E'*Thus will I accomplish my wrath upon the wall, and upon them that have daubed it with untempered morter, and will say unto you, The wall is no more, neither they that daubed it;* (Ezekiel 13:15). The whited wall and they that daubed it both come to nothing under the wrath Ezekiel names. Paul, struck on the mouth contrary to the law, names the high priest the whited wall (Acts 23:3) — the daubed covering that cannot save the daubers; the fair front falls with those who built it.'),
+  ('canon', 'acts', 23, 3, 'canon', 'leviticus', 19, 15, 'free', E'*Ye shall do no unrighteousness in judgment: thou shalt not respect the person of the poor, nor honour the person of the mighty: but in righteousness shalt thou judge thy neighbour.* (Leviticus 19:15). Paul''s charge is precise: *sittest thou to judge me after the law, and commandest me to be smitten contrary to the law?* (Acts 23:3). The very Torah the high priest sits to administer forbids him this: judgment is to be done in righteousness, not by striking the accused before the cause is heard. Paul appeals not against the law but to it — the law honored against the one who breaks it from the judgment seat.'),
+  -- thread: acts-23-thou-shalt-not-speak-evil-of-the-ruler-paul-corrected-by-torah
+  ('canon', 'acts', 23, 5, 'canon', 'exodus', 22, 28, 'free', E'*Thou shalt not revile the gods, nor curse the ruler of thy people.* (Exodus 22:28). When told he had reviled Elohim''s (God''s) high priest, Paul yields at once: *I wist not, brethren, that he was the high priest: for it is written, Thou shalt not speak evil of the ruler of thy people* (Acts 23:5). He does not defend his words; he submits to the written Torah the moment it is brought to bear. The man accused of teaching against Mosheh (Moses) corrects himself by Mosheh''s own book — the Torah-keeping Yashar''elite bound by the word even in the heat of rebuke.'),
+  -- thread: acts-23-the-hope-and-resurrection-of-the-dead-the-tanakh-hope
+  ('canon', 'acts', 23, 6, 'canon', 'daniel', 12, 2, 'free', E'*And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2). Paul cries in the council, *of the hope and resurrection of the dead I am called in question* (Acts 23:6). The hope is no novelty: Daniel saw the sleepers in the dust awake, some to everlasting life. The resurrection Paul is tried for is the prophets'' own promise — the awaking of those who sleep, which the Sadducees deny and the Pharisees confess (Acts 23:8).'),
+  ('canon', 'acts', 23, 6, 'canon', 'job', 19, 25, 'free', E'*For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth:* (Job 19:25). The hope Paul is called in question for (Acts 23:6) is the hope Job confessed out of his ash heap: a living Redeemer who shall stand at the latter day upon the earth. The resurrection of the dead is bound up in a Redeemer who lives — the Formed one who would stand upon the earth, in whom the dust-sleepers'' awaking is sure.'),
+  ('canon', 'acts', 23, 6, 'canon', 'job', 19, 26, 'free', E'*And though after my skin worms destroy this body, yet in my flesh shall I see Elohim (God):* (Job 19:26). *Of the hope and resurrection of the dead I am called in question* (Acts 23:6). Job names the substance of that hope: though the body be destroyed, *in my flesh shall I see Elohim (God)* — the resurrection of the very flesh, not a flight from it. The hope Paul stands trial for is this hope: the dead raised bodily to see Elohim (God) with their own eyes.'),
+  ('canon', 'acts', 23, 6, 'canon', 'isaiah', 26, 19, 'free', E'*Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* (Isaiah 26:19). The resurrection Paul is tried for (Acts 23:6) is the song Isaiah set in the mouth of the dust-dwellers: *Thy dead men shall live … Awake and sing, ye that dwell in dust.* This is the prophets'' hope of the gathering — the earth casting out its dead, the sleepers raised; the very thing the Sadducees say cannot be (Acts 23:8).'),
+  -- thread: acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome
+  ('canon', 'acts', 23, 11, 'canon', 'joshua', 1, 5, 'free', E'*There shall not any man be able to stand before thee all the days of thy life: as I was with Mosheh (Moses), so I will be with thee: I will not fail thee, nor forsake thee.* (Joshua 1:5). *And the night following Yahuah (Lord) stood by him, and said, Be of good cheer, Paul* (Acts 23:11). The One who stood by Paul in the night is the One who stood by Yehoshua (Joshua): *I will not fail thee, nor forsake thee.* The Formed who went with Mosheh (Moses) and Yehoshua keeps the same word now — he stands by, he does not forsake.'),
+  ('canon', 'acts', 23, 11, 'canon', 'joshua', 1, 9, 'free', E'*Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest.* (Joshua 1:9). *Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome* (Acts 23:11). The charge to Yehoshua (Joshua) — *be strong … be not afraid … for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest* — is the charge now to Paul: be of good cheer, for the One with thee will carry thee whithersoever thou goest, even unto Rome.'),
+  ('canon', 'acts', 23, 11, 'canon', 'jeremiah', 1, 8, 'free', E'*Be not afraid of their faces: for I am with thee to deliver thee, saith Yahuah (LORD).* (Jeremiah 1:8). To the council that would tear Paul in pieces, the word of the night is *Be of good cheer* (Acts 23:11) — the same word Yahuah (LORD) spoke to Jeremiah when the faces around him were set against him: *I am with thee to deliver thee.* The Master who sent the prophet stands by his witness and delivers him to finish the testimony appointed.'),
+  ('canon', 'acts', 23, 11, 'canon', 'jeremiah', 1, 19, 'free', E'*And they shall fight against thee; but they shall not prevail against thee; for I am with thee, saith Yahuah (LORD), to deliver thee.* (Jeremiah 1:19). The forty bind themselves under a curse to kill Paul (Acts 23:12-13), yet the word already stood: *Be of good cheer … so must thou bear witness also at Rome* (Acts 23:11). As Yahuah (LORD) told Jeremiah, *they shall fight against thee; but they shall not prevail against thee; for I am with thee … to deliver thee* — the plot cannot break what the Master has appointed; the witness must reach Rome.'),
+  ('canon', 'acts', 23, 11, 'canon', 'isaiah', 41, 10, 'free', E'*Fear thou not; for I am with thee: be not dismayed; for I am thy Elohim (God): I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.* (Isaiah 41:10). *Be of good cheer, Paul* (Acts 23:11) is the same comfort Isaiah carries: *Fear thou not; for I am with thee … I will uphold thee with the right hand of my righteousness.* The Master who stands by in the night is the upholding right hand; the witness is held up, not by his own strength, but by the One who is with him.'),
+  ('canon', 'acts', 23, 11, 'canon', 'acts', 18, 9, 'free', E'*Then spake Yahuah (Lord) to Paul in the night by a vision, Be not afraid, but speak, and hold not thy peace:* (Acts 18:9). This is not the first night the Master has stood by. At Corinth, *Yahuah (Lord)* spoke to Paul *in the night by a vision, Be not afraid, but speak;* now again *the night following Yahuah (Lord) stood by him, and said, Be of good cheer, Paul* (Acts 23:11). The same voice, the same keeping — the Master who told him to speak at Corinth tells him here he will yet speak at Rome.'),
+  ('canon', 'acts', 23, 11, 'canon', 'acts', 18, 10, 'free', E'*For I am with thee, and no man shall set on thee to hurt thee: for I have much people in this city.* (Acts 18:10). At Corinth the Master''s word was *I am with thee, and no man shall set on thee to hurt thee* (Acts 18:10); now the forty lie in wait to kill Paul, yet the night word stands — *as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome* (Acts 23:11). The One who shielded him at Corinth shields him still: no man shall set on him to stop the testimony appointed for Rome.'),
+  ('canon', 'acts', 23, 11, 'canon', 'acts', 27, 23, 'free', E'*For there stood by me this night the angel of Elohim (God), whose I am, and whom I serve,* (Acts 27:23). The promise of the night in Jerusalem — *so must thou bear witness also at Rome* (Acts 23:11) — holds through the storm at sea: *there stood by me this night the angel of Elohim (God), whose I am, and whom I serve.* The Master who stood by him in the castle stands by him again on the foundering ship; the witness will not be lost to the deep, for he must yet stand at Rome.'),
+  ('canon', 'acts', 23, 11, 'canon', 'acts', 27, 24, 'free', E'*Saying, Fear not, Paul; thou must be brought before Cæsar: and, lo, Elohim (God) hath given thee all them that sail with thee.* (Acts 27:24). The word at Jerusalem, *bear witness also at Rome* (Acts 23:11), is sealed in the storm: *Fear not, Paul; thou must be brought before Cæsar.* What the Master appointed in the night by the council he carries to its end through shipwreck — Paul *must* be brought before Cæsar, and the keeping reaches even to the lives of all who sail with him.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s217_a23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s217_a23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-23-thou-whited-wall-the-untempered-morter-and-righteous-judgment',
+       E'Thou whited wall — the untempered morter and righteous judgment',
+       E'Brought before the council, Paul says *I have lived in all good conscience before Elohim (God) until this day* (Acts 23:1), and the high priest Ananias commands him struck on the mouth. Paul answers, *Elohim (God) shall smite thee, thou whited wall: for sittest thou to judge me after the law, and commandest me to be smitten contrary to the law?* (Acts 23:3). The whited wall is Ezekiel''s image of the false-peace builders: *they have seduced my people, saying, Peace; and there was no peace; and one built up a wall, and, lo, others daubed it with untempered morter* (Ezekiel 13:10) — a wall whitewashed over to hide that it cannot stand. The verdict on that wall is the verdict Paul speaks: *So will I break down the wall that ye have daubed with untempered morter … and ye shall know that I am Yahuah (LORD)* (Ezekiel 13:14), *Thus will I accomplish my wrath upon the wall, and upon them that have daubed it with untempered morter* (Ezekiel 13:15). And the law Paul appeals to is no abolished thing — it is the standing Torah of righteous judgment: *Ye shall do no unrighteousness in judgment … but in righteousness shalt thou judge thy neighbour* (Leviticus 19:15). The high priest sits to judge by the law and breaks the law to do it; Paul does not despise the Torah but holds it up against the one who breaks it from the judgment seat.',
+       sv.verse_id, ev.verse_id, 'free', 5825
+  FROM _s217_a23_lookup sv, _s217_a23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=23 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-23-thou-shalt-not-speak-evil-of-the-ruler-paul-corrected-by-torah',
+       E'Thou shalt not speak evil of the ruler — Paul corrected by Torah',
+       E'When the bystanders rebuke him — *Revilest thou Elohim''s (God''s) high priest?* (Acts 23:4) — Paul does not stand on his words. He yields at once: *I wist not, brethren, that he was the high priest: for it is written, Thou shalt not speak evil of the ruler of thy people* (Acts 23:5). The word he submits to is Mosheh''s (Moses'') own: *Thou shalt not revile the gods, nor curse the ruler of thy people* (Exodus 22:28). This is the bodily refutation of the slander that Paul taught the people to forsake the Torah. The man accused of teaching against Mosheh (Moses) corrects himself, mid-rebuke, by Mosheh''s book — *for it is written.* The Torah-keeping Yashar''elite is bound by the written word the instant it is brought to bear, and bows to it before the council that hates him. Paul does not weaponize the law selectively; he is governed by it, even against his own outburst.',
+       sv.verse_id, ev.verse_id, 'free', 5828
+  FROM _s217_a23_lookup sv, _s217_a23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=23 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-23-the-hope-and-resurrection-of-the-dead-the-tanakh-hope',
+       E'The hope and resurrection of the dead — the Tanakh hope',
+       E'Perceiving the council split, Paul cries, *Men and brethren, I am a Pharisee, the son of a Pharisee: of the hope and resurrection of the dead I am called in question* (Acts 23:6) — *for the Sadducees say that there is no resurrection, neither angel, nor spirit: but the Pharisees confess both* (Acts 23:8). The hope Paul is tried for is not a new doctrine but the prophets'' own promise. Daniel saw it: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2). Job confessed it out of his suffering: *For I know that my redeemer liveth, and that he shall stand at the latter day upon the earth* (Job 19:25), *And though after my skin worms destroy this body, yet in my flesh shall I see Elohim (God)* (Job 19:26) — the very flesh raised to see Elohim (God), not a flight from the body. Isaiah set the song in the mouth of the dust-dwellers: *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust … and the earth shall cast out the dead* (Isaiah 26:19). This is the hope of the gathering — the sleepers raised, the living Redeemer standing upon the earth, the first resurrection of the worthy of the seed. The Sadducees deny what the prophets promised; Paul stands trial for believing them.',
+       sv.verse_id, ev.verse_id, 'free', 5831
+  FROM _s217_a23_lookup sv, _s217_a23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=23 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome',
+       E'Yahuah (Lord) stood by him — the Master keeps and sends to Rome',
+       E'After the council is torn with dissension and Paul is taken by force into the castle, the night comes: *And the night following Yahuah (Lord) stood by him, and said, Be of good cheer, Paul: for as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome* (Acts 23:11). The One who stood by him is the Formed himself — he who is Yahuah and came in the flesh as Yahusha (Jesus) — keeping the promise he has made to his witnesses from the beginning. To Yehoshua (Joshua) he said *as I was with Mosheh (Moses), so I will be with thee: I will not fail thee, nor forsake thee* (Joshua 1:5), *be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest* (Joshua 1:9). To Jeremiah, with the faces set against him, *Be not afraid of their faces: for I am with thee to deliver thee, saith Yahuah (LORD)* (Jeremiah 1:8), *they shall fight against thee; but they shall not prevail against thee; for I am with thee … to deliver thee* (Jeremiah 1:19). And through Isaiah, *Fear thou not; for I am with thee … I will uphold thee with the right hand of my righteousness* (Isaiah 41:10). The same voice had already stood by Paul at Corinth — *Be not afraid, but speak, and hold not thy peace: For I am with thee, and no man shall set on thee to hurt thee* (Acts 18:9-10) — and would stand by him again in the storm at sea: *Fear not, Paul; thou must be brought before Cæsar* (Acts 27:24). So when more than forty bind themselves under a curse to kill him (Acts 23:12-13), the plot is already broken: the Master who keeps is also the Master who sends, and the witness appointed for Rome cannot be stopped short of it.',
+       sv.verse_id, ev.verse_id, 'free', 5834
+  FROM _s217_a23_lookup sv, _s217_a23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='acts' AND ev.chapter_number=23 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: acts-23-thou-whited-wall-the-untempered-morter-and-righteous-judgment
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 13:10 — *one built up a wall, and, lo, others daubed it with untempered morter* the false-peace wall whitewashed over its weakness; the whited wall Paul names (Acts 23:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-thou-whited-wall-the-untempered-morter-and-righteous-judgment'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=13 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 13:14 — *So will I break down the wall that ye have daubed with untempered morter … and ye shall know that I am Yahuah (LORD)* the verdict Paul speaks over the whited wall (Acts 23:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-thou-whited-wall-the-untempered-morter-and-righteous-judgment'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=13 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 13:15 — *Thus will I accomplish my wrath upon the wall, and upon them that have daubed it* the fair front falls with those who built it (Acts 23:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-thou-whited-wall-the-untempered-morter-and-righteous-judgment'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=13 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Leviticus 19:15 — *in righteousness shalt thou judge thy neighbour* the standing Torah of righteous judgment Paul appeals to against the high priest (Acts 23:3).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-thou-whited-wall-the-untempered-morter-and-righteous-judgment'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-23-thou-shalt-not-speak-evil-of-the-ruler-paul-corrected-by-torah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 22:28 — *Thou shalt not revile the gods, nor curse the ruler of thy people* the written word Paul submits to mid-rebuke; the Torah-keeper governed by the book (Acts 23:5).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-thou-shalt-not-speak-evil-of-the-ruler-paul-corrected-by-torah'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=22 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-23-the-hope-and-resurrection-of-the-dead-the-tanakh-hope
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 12:2 — *many of them that sleep in the dust of the earth shall awake, some to everlasting life* the prophets'' own resurrection hope Paul is tried for (Acts 23:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-the-hope-and-resurrection-of-the-dead-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 19:25 — *I know that my redeemer liveth, and that he shall stand at the latter day upon the earth* the living Redeemer in whom the dust-sleepers'' awaking is sure (Acts 23:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-the-hope-and-resurrection-of-the-dead-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=19 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Job 19:26 — *in my flesh shall I see Elohim (God)* the very flesh raised to see Elohim (God), not a flight from the body (Acts 23:6).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-the-hope-and-resurrection-of-the-dead-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=19 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 26:19 — *Thy dead men shall live … Awake and sing, ye that dwell in dust … the earth shall cast out the dead* the gathering hope the Sadducees deny (Acts 23:6,8).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-the-hope-and-resurrection-of-the-dead-the-tanakh-hope'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 1:5 — *as I was with Mosheh (Moses), so I will be with thee: I will not fail thee, nor forsake thee* the Formed who went with Yehoshua (Joshua) stands by Paul (Acts 23:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 1:9 — *be not afraid … for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest* the charge to Yehoshua (Joshua) now carried to Paul, even unto Rome (Acts 23:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 1:8 — *Be not afraid of their faces: for I am with thee to deliver thee, saith Yahuah (LORD)* the word to the prophet now the word to Paul before the council (Acts 23:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 1:19 — *they shall fight against thee; but they shall not prevail against thee; for I am with thee … to deliver thee* the forty''s plot cannot break what the Master appointed (Acts 23:11-13).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 41:10 — *Fear thou not; for I am with thee … I will uphold thee with the right hand of my righteousness* the upholding hand that holds the witness up (Acts 23:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Acts 18:9 — *Be not afraid, but speak, and hold not thy peace* the same voice stood by at Corinth; told to speak there, told he will speak at Rome (Acts 23:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=18 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Acts 18:10 — *I am with thee, and no man shall set on thee to hurt thee* the One who shielded him at Corinth shields him from the forty (Acts 23:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=18 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'Acts 27:23 — *there stood by me this night the angel of Elohim (God), whose I am, and whom I serve* the Master stands by again in the storm at sea (Acts 23:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=27 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 9, E'Acts 27:24 — *Fear not, Paul; thou must be brought before Cæsar* the Jerusalem promise sealed in the storm; the witness must reach Rome (Acts 23:11).'
+  FROM cross_reference_threads t, cross_references x, _s217_a23_lookup sv, _s217_a23_lookup tv
+ WHERE t.slug='acts-23-yahuah-stood-by-him-the-master-keeps-and-sends-to-rome'
+   AND sv.edition_slug='canon' AND sv.book_slug='acts' AND sv.chapter_number=23 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=27 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'Session 217 — Acts 1-7 cross-references complete.'
