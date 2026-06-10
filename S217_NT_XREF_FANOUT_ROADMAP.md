@@ -53,7 +53,7 @@ in the sandbox).
 | Mark | 16 | ✅ | ✅ | ⬜ | NT-to-NT parity pending |
 | Luke | 24 | ✅ | ✅ | ⬜ | NT-to-NT parity pending |
 | John | 21 | ✅ | ✅ | ✅ | **complete** (the model) |
-| **Acts** | 28 | 🟦 1–13 | 🟦 1–13 | 🟦 1–13 | **in progress** — 1–13 done, 14–28 to build |
+| **Acts** | 28 | ✅ | ✅ | ✅ | **complete** — 1–28 full library, 130 threads/428 members live |
 | Romans | 16 | ✅ (canon-only) | ⬜ | ⬜ | full-library build (complements existing canon) |
 | Galatians | 6 | ✅ (canon-only) | ⬜ | ⬜ | full-library build — HIGH voice-risk |
 | Revelation | 22 | ✅ (canon-only) | ⬜ | ⬜ | full-library build — kaph carve-outs |
@@ -81,30 +81,25 @@ NT total: **260 chapters.**
 
 ---
 
-## PHASE 1 — Finish Acts (band 5000–5999) · 6 minions remaining
+## PHASE 1 — Finish Acts (band 5000–5999) · ✅ COMPLETE
 
-Done: **1–2** (5000–5099, 9 threads), **3–5** (5100–5199, 11 threads — fragment
-`scratch_xref_acts/minion_acts_03_05.sql`), **6–7** (5200–5270, 8 threads — fragment
-`scratch_xref_acts/minion_acts_06_07.sql`; Stephen's speech, Checklist-9 watchpoint held —
-the stiffnecked/persecute-the-prophets charge framed as covenant-internal conduct rebuke,
-not ethnic), **8–9** (5300–5360, 7 threads — fragment `scratch_xref_acts/minion_acts_08_09.sql`;
-Samaria/the Ethiopian/Saul's call), **10–12** (5400–5470 — fragment
-`scratch_xref_acts/minion_acts_10_12.sql`; Cornelius held as scattered-seed gathering, FOR
-YOSHI'S BLESSING), **13** (5500–5570 — fragment `scratch_xref_acts/minion_acts_13.sql`;
-Antioch sermon). All passed five gates (incl. prod-DB resolution check: 0 dropped rows).
-Remaining:
+**Acts is fully covered, chapters 1–28** — 130 cross-reference threads / 428 members live in
+prod (band 5000–5965). Built per-chapter (1–13 in ranges, 14–28 one chapter per minion, in
+sequential packs of 5). Every range passed five gates plus a prod-DB resolution check
+(`scratch_xref_acts/resolve_check.py` — 0 silently-dropped rows). Fragments
+`scratch_xref_acts/minion_acts_*.sql`; assembled migration
+`data-schema/migrations/session217_acts_cross_references.sql` (applied to prod 2026-06-09).
 
-Sort sub-bands widened to 100 each (a dense range can need 11+ threads — 3–5 used
-5100–5180; the old 50-wide spacing was too tight). Each range gets its own 100-band:
+**FOR YOSHI'S BLESSING** (landed, flagged for review — high-voice-risk passages):
+- **Acts 10–12** — Cornelius / "the Gentiles" held as the scattered seed gathered (RL #7/#11).
+- **Acts 15** — Jerusalem council: Amos 9 tabernacle-of-David = twelve-tribe restoration; the
+  four prohibitions = Lev 17–18 ger terms; no sola-fide truncation of 15:11.
+- **Acts 28** — Isaiah 6:9-10 blindness read as Romans 11 *in part, for a season* (not
+  permanent rejection); 28:28 salvation-to-the-Gentiles = the dispersed gathered, not Israel
+  replaced.
 
-| Minion | Chapters | Sort | Density / voice notes |
-|--------|----------|-----:|-----------------------|
-| acts-14-15 | 14–15 | 5600 | **HIGH voice-risk** — council + Amos 9 = twelve-tribe restoration, not new-people graft |
-| acts-16-18 | 16–18 | 5700 | Philippi, Athens (Areopagus — the nations, not covenant inclusion) |
-| acts-19-20 | 19–20 | 5800 | Ephesus, the Miletus farewell |
-| acts-21-23 | 21–23 | 5900 | Paul Torah-observant in the temple (Acts 21 — the dropped-Paul correction) |
-| acts-24-26 | 24–26 | 5950 | the defenses before Felix/Festus/Agrippa |
-| acts-27-28 | 27–28 | 5975 | the voyage, Rome, Isaiah 6 closing |
+Per-chapter minion model (load yoshi-voice fresh, five gates + resolve_check, packs of ~5
+applied sequentially) is **proven for the rest of the NT** — reuse it book by book.
 
 ---
 
