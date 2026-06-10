@@ -56,7 +56,7 @@ in the sandbox).
 | **Acts** | 28 | ✅ | ✅ | ✅ | **complete** — 1–28 full library, 130 threads/428 members live |
 | **Romans** | 16 | ✅ | ✅ | ✅ | **complete** — 1–16 full library, 91 threads/285 members live (S219, band 6000–6381). 9–11 ON BLESSING LIST. |
 | **Galatians** | 6 | ✅ | ✅ | ✅ | **complete (S223)** — 1–6 full library, **31 threads/119 members LIVE** in prod (band 7200–7337, applied 2026-06-10, exact reconciliation). WHOLE BOOK ON BLESSING LIST. |
-| Revelation | 22 | ✅ (canon-only) | ⬜ | ⬜ | full-library build — kaph carve-outs |
+| **Revelation** | 22 | ✅ | ✅ | ✅ | **complete (S224)** — 1–22 full library, **149 threads/633 members LIVE** in prod (band 9000–9546, migration session224, applied 2026-06-10, exact reconciliation). KAPH 1:13/14:14 + 144k two-house + keep-commandments 12:17/14:12/22:14 + New Jerusalem ON BLESSING LIST. |
 | 1 Corinthians | 16 | ⬜ | ⬜ | ⬜ | greenfield |
 | 2 Corinthians | 13 | ⬜ | ⬜ | ⬜ | greenfield |
 | Ephesians | 6 | ⬜ | ⬜ | ⬜ | greenfield — ch2 voice-risk |
@@ -130,7 +130,7 @@ Acts 5000s).
 | 1 John (5) | 8300 | 1–3 · 4–5 (the 1234 filter, 1 John 2:3–4) | 2 |
 | 2 John (1) + 3 John (1) | 8400 | both short letters in one minion | 1 |
 | Jude (1) | 8450 | **solo** — quotes 1 Enoch 1:9 + Assumption of Moses (extras-critical) | 1 |
-| Revelation (22) | 9000 | 1–3 (letters) · 4–5 (throne) · 6–8 · 9–11 · **12–14 (kaph at 14:14)** · 15–18 · 19–22 | 7 |
+| ~~Revelation (22)~~ | 9000 | ✅ COMPLETE (S224) — 7 packs: 1–3 · 4–5 · 6–8 · 9–11 · **12–14 (kaph 14:14, keep-commandments)** · 15–18 · 19–22. 149 threads/633 members live (band 9000–9546). KAPH + 144k + commandments + New Jerusalem ON BLESSING LIST. | ✅ |
 
 Phase-2 subtotal: **~52 minions.**
 
