@@ -46,10 +46,22 @@ def parse_tuples(frag):
     sql=open(frag,encoding='utf-8',errors='replace').read()
     rows=[]
     for hm in re.finditer(r"WITH\s+input\([^)]*\)\s+AS\s*\(VALUES(.*?)\)\s*INSERT",sql,re.DOTALL|re.IGNORECASE):
-        region=hm.group(1);depth=0;start=None
-        for idx,ch in enumerate(region):
-            if ch=='(' and depth==0: depth=1;start=idx+1
-            elif ch=='(': depth+=1
+        region=hm.group(1);depth=0;start=None;idx=0;N=len(region);instr=False
+        # string-aware paren scan: parentheses INSIDE quoted note literals (incl.
+        # unbalanced ones) must not move tuple-boundary depth, else tuples merge
+        # and targets go silently unchecked.
+        while idx<N:
+            ch=region[idx]
+            if instr:
+                if ch=="'":
+                    if idx+1<N and region[idx+1]=="'": idx+=2; continue
+                    instr=False
+                idx+=1; continue
+            if ch=="'":
+                instr=True; idx+=1; continue
+            if ch=='(':
+                if depth==0: start=idx+1
+                depth+=1
             elif ch==')':
                 depth-=1
                 if depth==0 and start is not None:
@@ -59,6 +71,7 @@ def parse_tuples(frag):
                     if len(strs)>=5 and len(ints)>=4:
                         rows.append((strs[0],strs[1],ints[0],ints[1],strs[2],strs[3],ints[2],ints[3]))
                     start=None
+            idx+=1
     return rows
 
 async def main():
@@ -89,7 +102,7 @@ async def main():
       JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
       JOIN editions e ON b.edition_id=e.id
       WHERE e.slug='canon' AND b.slug='hebrews'""")
-    print(f"LIVE Romans threads: {n}  members: {m}")
+    print(f"LIVE Hebrews threads: {n}  members: {m}")
     await conn.close()
     # check fragments
     total_bad=0
