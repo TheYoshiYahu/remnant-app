@@ -1151,6 +1151,1036 @@ SELECT t.id, x.id, 3, E'Genesis 22:18 — *in thy seed shall all the nations of 
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_galatians_04.sql (S223 Galatians 4) -----
+-- =====================================================================
+-- S223 minion — GALATIANS 4 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: GALATIANS 4 (31 verses).  Tag: g04 (temp view _s223_g04_lookup).
+-- Sort band: floor 7275, step 3 (7275, 7278, 7281, 7284 — under 7300).
+-- Source is ALWAYS the canon Galatians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (HIGHEST VOICE-RISK BOOK — "The Galatians Lie"; Red Lines #4/#5/#6/#7/#10):
+-- The Galatians are scattered seed of Yashar'el (Israel) coming HOME, not pagans grafted in by a
+-- bare faith-confession. Galatians 4 is read accordingly, verse by verse:
+--   4:4  *in the fulness of the time Elohim (God) sent forth his Son... made under the law* —
+--        Christology (the Formed Son HAS a Father who sent him; he came in flesh, *made of a
+--        woman*) AND the Messiah HIMSELF kept Torah (*made under the law*). The fulness of the
+--        time is the APPOINTED time — Shiloh come, the sign of Immanuel given.
+--   4:5  *to redeem them that were under the law, that we might receive the adoption of sons* =
+--        the RE-adoption of the exiled, scattered seed into their OWN inheritance — never the
+--        adoption of outsiders who never had a covenant. The adoption ALREADY belonged to
+--        Yashar'el (Israel) (Romans 9:4 — *to whom pertaineth the adoption... and the giving of
+--        the law*). Israel was always *my son, even my firstborn* (Exodus 4:22).
+--   4:6  *Abba, Father* — the Spirit of the Son, the Spirit of adoption (Romans 8:15).
+--   4:8-10 the *weak and beggarly elements* and *days, and months, and times, and years* — HIGH
+--        CARE: this is the turning BACK to the pagan-elements BONDAGE they came out of (4:8 *ye
+--        did service unto them which by nature are no gods*) — the opposite direction from coming
+--        home. It is NEVER a dismissal of Yahuah's (the LORD's) appointed feasts, which are HIS
+--        (*the feasts of Yahuah (LORD)... even these are my feasts*, Leviticus 23:2) and which the
+--        nations keep in the millennial reign (*to keep the feast of tabernacles*, Zechariah
+--        14:16). The danger named is reversion to the no-gods, not obedience to the Most High.
+--   4:21-31 HAGAR and SARAH: Hagar = flesh-based earning / the present Jerusalem in bondage (the
+--        agitators' flesh-credential system); Sarah = promise-based sonship / the Jerusalem above.
+--        *Cast out the bondwoman and her son* (4:30 / Genesis 21:10) = expel the spirit of
+--        flesh-earning, NOT Torah. The allegory does NOT condemn Torah; it is rooted IN the Torah
+--        narrative it cites (Genesis 16/17/21) and in Isaiah's word to the barren (54:1) — the
+--        desolate bearing more children = the scattered restored, the gathering.
+-- The default trained reading — grace-against-law, Torah-abolished, days-and-feasts-cancelled,
+-- the-Gentiles-grafted-in-as-pagans — is the antichrist reading this apparatus exists to dismantle
+-- and surfaces in not one sentence below.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every meaningful verse-block):
+--   v.1-3   the heir a child under tutors; in bondage under the elements of the world
+--           Tanakh: none warranted (figure carried in prose; the bondage is unpacked at 4:8-10)
+--           Extras: none warranted   NT: none warranted (Galatians 3:24-25 same hand)
+--   v.4     in the fulness of the time Elohim sent forth his Son, made of a woman, made under the law
+--           Tanakh: Genesis 49:10 (Shiloh come, the gathering — the appointed time), Isaiah 7:14
+--                   (a virgin shall conceive... Immanuel — made of a woman)   Extras: none warranted
+--           NT: none added (the Christology re-walked across the library; same hand)
+--   v.5-6   to redeem them under the law, the adoption of sons; the Spirit of his Son, Abba Father
+--           Tanakh: Exodus 4:22 (Israel my son, my firstborn), Hosea 11:1 (called my son out of
+--                   Egypt), Jeremiah 31:9 (a father to Israel, Ephraim my firstborn)
+--           Extras: none warranted   NT: Romans 9:4 (to whom pertaineth the adoption... and the
+--                   giving of the law), Romans 8:15 (the Spirit of adoption, whereby we cry Abba)
+--   v.7     no more a servant, but a son and an heir   Tanakh/Extras/NT: carried at v.5-6 (same hand)
+--   v.8-10  ye did service unto them which by nature are no gods; turning back to the weak and
+--           beggarly elements; ye observe days, and months, and times, and years
+--           Tanakh: Jeremiah 16:19 (our fathers have inherited lies... no profit), Jeremiah 16:20
+--                   (shall a man make gods... and they are no gods?), Deuteronomy 32:17 (gods whom
+--                   they knew not), Leviticus 23:2 (the feasts of Yahuah... even these are MY feasts
+--                   — the counterweight: HIS appointed times are not the bondage), Zechariah 14:16
+--                   (to keep the feast of tabernacles — the feasts kept in the reign)
+--           Extras: none warranted   NT: none warranted (Galatians 4:8-9 self-glossing)
+--   v.11-20 Paul's appeal; Christ formed in you (4:19)
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted (pastoral; no
+--                   load-bearing single-verse root — the formation theme carried in prose)
+--   v.21-31 Hagar and Sarah; the two covenants; cast out the bondwoman; Rejoice thou barren
+--           Tanakh: Genesis 16:15 (Hagar bare Ishmael — born after the flesh), Genesis 17:19
+--                   (Sarah shall bear thee a son indeed... by promise), Genesis 21:1-2 (Yahuah
+--                   visited Sarah at the set time), Genesis 21:9-10 (cast out this bondwoman),
+--                   Genesis 21:12 (in Isaac shall thy seed be called), Isaiah 54:1 (Rejoice thou
+--                   barren... more are the children of the desolate)
+--           Extras: Jubilees 16:12 (Isaac born at the set time, on the festival of the first-fruits
+--                   — the promise comes at the APPOINTED time), Jubilees 17:4 (Cast out this
+--                   bondwoman and her son), Jasher 21:15 (Cast out this bondwoman and her son)
+--           NT: Isaiah 54:1 quoted at 4:27 carried in the Tanakh weave; no further NT warranted
+--
+-- THREADS (slug -> target libraries):
+--   7275 galatians-4-in-the-fulness-of-the-time-god-sent-forth-his-son-made-under-the-law          (Tanakh)
+--   7278 galatians-4-the-adoption-of-sons-israel-my-firstborn-re-gathered                          (Tanakh + NT)
+--   7281 galatians-4-the-weak-and-beggarly-elements-turning-back-to-the-no-gods                    (Tanakh)
+--   7284 galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing                   (Tanakh + Extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s223_g04_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: galatians-4-in-the-fulness-of-the-time-god-sent-forth-his-son-made-under-the-law
+  ('canon', 'galatians', 4, 4, 'canon', 'genesis', 49, 10, 'free', E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* (Genesis 49:10). *But when the fulness of the time was come, Elohim (God) sent forth his Son* (Galatians 4:4). The *fulness of the time* is the appointed hour the dying Yaaqob (Jacob) foresaw: the sceptre held in Yahudah (Judah) *until Shiloh come* — and at his coming, *unto him shall the gathering of the people be.* The Son sent in the fulness of time is the one to whom the scattered are gathered; his arrival and the homecoming of the people are the same event.'),
+  ('canon', 'galatians', 4, 4, 'canon', 'isaiah', 7, 14, 'free', E'*Therefore Yahuah (Lord) himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel.* (Isaiah 7:14). *Elohim (God) sent forth his Son, made of a woman, made under the law* (Galatians 4:4). The Son *made of a woman* is the sign Yahuah (Lord) himself gave: *a virgin shall conceive, and bear a son.* The Formed one, drawn from the Formless, comes in true flesh through a woman of Yashar''el (Israel) — *Immanuel,* Elohim (God) with us, who has a Father that sent him and who is *made under the law,* keeping the very Torah he gave at Sinai.'),
+  -- thread: galatians-4-the-adoption-of-sons-israel-my-firstborn-re-gathered
+  ('canon', 'galatians', 4, 5, 'canon', 'exodus', 4, 22, 'free', E'*And thou shalt say unto Pharaoh, Thus saith Yahuah (LORD), Yashar''el (Israel) is my son, even my firstborn:* (Exodus 4:22). *To redeem them that were under the law, that we might receive the adoption of sons* (Galatians 4:5). The adoption is no new thing offered to strangers: Yashar''el (Israel) was named *my son, even my firstborn* before ever they left Egypt. The redemption *of them that were under the law* brings the scattered firstborn back into the sonship that was always theirs — a RE-adoption of the exiled seed into their own inheritance, not the taking-in of outsiders who never had a father.'),
+  ('canon', 'galatians', 4, 5, 'canon', 'hosea', 11, 1, 'free', E'*When Yashar''el (Israel) was a child, then I loved him, and called my son out of Egypt.* (Hosea 11:1). *That we might receive the adoption of sons* (Galatians 4:5). The sonship Yahuah (LORD) speaks of is Yashar''el''s (Israel''s) from of old — *when Yashar''el (Israel) was a child, then I loved him, and called my son out of Egypt.* The adoption received in Messiah (Christ) is the gathering home of that same son, long scattered among the nations, never the manufacture of a son where there was none.'),
+  ('canon', 'galatians', 4, 5, 'canon', 'jeremiah', 31, 9, 'free', E'*They shall come with weeping, and with supplications will I lead them: I will cause them to walk by the rivers of waters in a straight way, wherein they shall not stumble: for I am a father to Yashar''el (Israel), and Ephraim is my firstborn.* (Jeremiah 31:9). *That we might receive the adoption of sons* (Galatians 4:5). The promise of return names the Father and the firstborn: *I am a father to Yashar''el (Israel), and Ephraim is my firstborn.* Ephraim — the scattered northern house lost among the nations — is the firstborn led home with weeping and supplication. The adoption of sons is exactly this homecoming of the firstborn, gathered by the rivers of water in a straight way.'),
+  ('canon', 'galatians', 4, 5, 'canon', 'romans', 9, 4, 'free', E'*Who are Israelites; to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of Elohim (God), and the promises;* (Romans 9:4). *That we might receive the adoption of sons* (Galatians 4:5). The same hand that wrote Galatians names plainly whose the adoption is: it *pertaineth* to the Israelites — and stands in one breath with *the giving of the law,* the covenants, and the promises. The adoption and the Torah belong to the same people and are never set against each other; to be re-adopted is to be brought home to the giving of the law, not away from it.'),
+  ('canon', 'galatians', 4, 6, 'canon', 'romans', 8, 15, 'free', E'*For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.* (Romans 8:15). *And because ye are sons, Elohim (God) hath sent forth the Spirit of his Son into your hearts, crying, Abba, Father.* (Galatians 4:6). The Spirit of the Son and the Spirit of adoption are one and the same, and they raise one cry: *Abba, Father.* This is the opposite of the *spirit of bondage again to fear* — the very bondage to the no-gods that 4:8-10 warns them not to return to. The sons cry to a Father; the servants of the elements cried to that which by nature is no god.'),
+  -- thread: galatians-4-the-weak-and-beggarly-elements-turning-back-to-the-no-gods
+  ('canon', 'galatians', 4, 8, 'canon', 'jeremiah', 16, 19, 'free', E'*O Yahuah (LORD), my strength, and my fortress, and my refuge in the day of affliction, the Gentiles shall come unto thee from the ends of the earth, and shall say, Surely our fathers have inherited lies, vanity, and things wherein there is no profit.* (Jeremiah 16:19). *Howbeit then, when ye knew not Elohim (God), ye did service unto them which by nature are no gods.* (Galatians 4:8). The prophet foresaw this very confession from the scattered coming home from the ends of the earth: *our fathers have inherited lies, vanity, and things wherein there is no profit.* That inherited vanity is the service rendered *unto them which by nature are no gods* — the bondage of exile among idols, which Paul will not let them turn back to.'),
+  ('canon', 'galatians', 4, 8, 'canon', 'jeremiah', 16, 20, 'free', E'*Shall a man make gods unto himself, and they are no gods?* (Jeremiah 16:20). *Ye did service unto them which by nature are no gods.* (Galatians 4:8). Paul''s words echo the prophet''s exact charge: the man-made idols *are no gods.* The service the Galatians once gave was to these — *the weak and beggarly elements* (Galatians 4:9) of the nations — and to turn *again* to them is to make oneself a servant of nothing once more.'),
+  ('canon', 'galatians', 4, 9, 'canon', 'deuteronomy', 32, 17, 'free', E'*They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not.* (Deuteronomy 32:17). *How turn ye again to the weak and beggarly elements, whereunto ye desire again to be in bondage?* (Galatians 4:9). The song of Mosheh (Moses) named the bondage the Galatians are drifting back toward: sacrifice *to gods whom they knew not.* To *turn again* to the weak and beggarly elements is to return to those new gods and devils — a backward step into exile-bondage, the opposite direction from the homecoming Paul preached.'),
+  ('canon', 'galatians', 4, 10, 'canon', 'leviticus', 23, 2, 'free', E'*Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* (Leviticus 23:2). *Ye observe days, and months, and times, and years.* (Galatians 4:10). The appointed times are Yahuah''s (the LORD''s) own — *the feasts of Yahuah (LORD)... even these are my feasts* — given to the children of Yashar''el (Israel) as holy convocations. The *days, and months, and times, and years* Paul rebukes are not these; they are the calendar of the elements they came out of, or the agitators'' keeping-as-flesh-credential. The Father''s feasts remain his, and to keep them is to keep his word, not to be in bondage to the no-gods.'),
+  ('canon', 'galatians', 4, 10, 'canon', 'zechariah', 14, 16, 'free', E'*And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, Yahuah Tseva''ot (LORD of hosts), and to keep the feast of tabernacles.* (Zechariah 14:16). *Ye observe days, and months, and times, and years.* (Galatians 4:10). The end of the matter settles which observance is bondage and which is life: in the reign of the King, *every one that is left of all the nations* goes up *from year to year... to keep the feast of tabernacles.* The appointed feast of Yahuah (LORD) is kept by the very nations, world without end. What Paul warns against is therefore not the Father''s feasts but the return to the elements of the no-gods.'),
+  -- thread: galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing
+  ('canon', 'galatians', 4, 22, 'canon', 'genesis', 16, 15, 'free', E'*And Hagar bare Abram a son: and Abram called his son''s name, which Hagar bare, Ishmael.* (Genesis 16:15). *For it is written, that Abraham had two sons, the one by a bondmaid, the other by a freewoman.* (Galatians 4:22). Paul sends them straight to the written record: the son of the bondmaid is Ishmael, *whom Hagar bare* to Abram. *He who was of the bondwoman was born after the flesh* (Galatians 4:23) — the son begotten by Abraham''s and Sarai''s own contriving, the flesh-effort to secure the promise rather than wait for it.'),
+  ('canon', 'galatians', 4, 23, 'canon', 'genesis', 17, 19, 'free', E'*And Elohim (God) said, Sarah thy wife shall bear thee a son indeed; and thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant, and with his seed after him.* (Genesis 17:19). *But he of the freewoman was by promise.* (Galatians 4:23). The son of the freewoman is the son of the sworn word: *Sarah thy wife shall bear thee a son indeed.* Isaac is *by promise,* and with him Elohim (God) establishes *an everlasting covenant.* The two sons are the two ways — the flesh-effort of Hagar against the promise-given Isaac — and the covenant is established with the child of promise.'),
+  ('canon', 'galatians', 4, 23, 'canon', 'genesis', 21, 2, 'free', E'*For Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him.* (Genesis 21:2). *But he of the freewoman was by promise.* (Galatians 4:23). The promise kept its own clock: Sarah bore the son *at the set time of which Elohim (God) had spoken.* The child of promise comes at the appointed time, not by the flesh''s hastening — the same pattern as the Son sent *in the fulness of the time* (Galatians 4:4). Promise and appointed time belong together.'),
+  ('canon', 'galatians', 4, 27, 'canon', 'isaiah', 54, 1, 'free', E'*Sing, O barren, thou that didst not bear; break forth into singing, and cry aloud, thou that didst not travail with child: for more are the children of the desolate than the children of the married wife, saith Yahuah (LORD).* (Isaiah 54:1). *For it is written, Rejoice, thou barren that bearest not; break forth and cry, thou that travailest not: for the desolate hath many more children than she which hath an husband.* (Galatians 4:27). Paul quotes the prophet word for word. The barren who *bearest not* is bidden to *rejoice,* for *the desolate hath many more children* — the very promise of restoration: the scattered, who seemed cut off and childless in exile, brought home in a multitude that outnumbers them that never wandered.'),
+  ('canon', 'galatians', 4, 30, 'canon', 'genesis', 21, 10, 'free', E'*Wherefore she said unto Abraham, Cast out this bondwoman and her son: for the son of this bondwoman shall not be heir with my son, even with Isaac.* (Genesis 21:10). *Nevertheless what saith the scripture? Cast out the bondwoman and her son: for the son of the bondwoman shall not be heir with the son of the freewoman.* (Galatians 4:30). Paul cites Sarah''s words exactly. The casting-out is the expelling of the flesh-earning that contends against the promise — the spirit of the bondwoman, the flesh-credential system of the agitators — never the casting-out of the Torah, which is the inheritance the freewoman''s son comes into. The son of the flesh *shall not be heir* alongside the son of promise.'),
+  ('canon', 'galatians', 4, 30, 'canon', 'genesis', 21, 12, 'free', E'*And Elohim (God) said unto Abraham, Let it not be grievous in thy sight because of the lad, and because of thy bondwoman; in all that Sarah hath said unto thee, hearken unto her voice; for in Isaac shall thy seed be called.* (Genesis 21:12). *For the son of the bondwoman shall not be heir with the son of the freewoman.* (Galatians 4:30). Elohim (God) himself ratified the casting-out: *in Isaac shall thy seed be called.* The line of inheritance runs through the child of promise, not the child of flesh-effort. The expelling is divine, and it marks which sonship inherits — the promise-born, into whose inheritance the whole word of Yahuah (LORD) belongs.'),
+  ('canon', 'galatians', 4, 23, 'jubilees', 'jubilees', 16, 12, 'extras', E'*And in the middle of the sixth month Yahuah (God) visited Sarah and did to her as He had spoken, and she conceived. And she bare a son in the third month, and in the middle of the month, at the time of which Yahuah (God) had spoken to Abraham, on the festival of the first-fruits of the harvest, Isaac was born.* (Jubilees 16:12). *But he of the freewoman was by promise.* (Galatians 4:23). The Hebrew library marks the promise-child born to the appointed calendar of Yahuah (God): Isaac came *at the time of which Yahuah (God) had spoken... on the festival of the first-fruits of the harvest.* The son of promise is born on a feast of the Most High — the very appointed times the no-gods'' calendar (Galatians 4:10) counterfeits. Promise keeps the Father''s set time.'),
+  ('canon', 'galatians', 4, 30, 'jubilees', 'jubilees', 17, 4, 'extras', E'*And Sarah saw Ishmael playing and dancing and Abraham rejoicing with great joy, and she became jealous of Ishmael and said to Abraham, "Cast out this bondwoman and her son; for the son of this bondwoman will not be heir with my son, Isaac."* (Jubilees 17:4). *Cast out the bondwoman and her son: for the son of the bondwoman shall not be heir with the son of the freewoman.* (Galatians 4:30). The Hebrew record carries Sarah''s words almost as Paul cites them: *Cast out this bondwoman and her son; for the son of this bondwoman will not be heir with my son, Isaac.* The casting-out of the flesh-born is no late allegory but the remembered act of the patriarch''s house — the promise-son alone is heir.'),
+  ('canon', 'galatians', 4, 30, 'jasher', 'jasher', 21, 15, 'extras', E'*And Sarah saw the act which Ishmael desired to do to her son Isaac, and it grieved her exceedingly on account of her son, and she sent for Abraham, and said to him, Cast out this bondwoman and her son, for her son shall not be heir with my son, for thus did he seek to do to him this day.* (Jasher 21:15). *But as then he that was born after the flesh persecuted him that was born after the Spirit, even so it is now.* (Galatians 4:29). Jasher remembers the persecution Paul names: Ishmael *desired to do* harm to Isaac, *for thus did he seek to do to him this day.* The flesh-born persecutes the promise-born — and Sarah''s answer is the casting-out, *Cast out this bondwoman and her son, for her son shall not be heir with my son.* The flesh-credential system still persecutes the children of promise, and the answer is unchanged.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s223_g04_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s223_g04_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-4-in-the-fulness-of-the-time-god-sent-forth-his-son-made-under-the-law',
+       E'In the fulness of the time Elohim (God) sent forth his Son, made under the law',
+       E'The fulness of the time is the appointed time. *But when the fulness of the time was come, Elohim (God) sent forth his Son, made of a woman, made under the law* (Galatians 4:4). Dying Yaaqob (Jacob) had set the clock: *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10) — the Son sent in the fulness of time is Shiloh come, and his arrival IS the gathering of the scattered people. The manner of his coming was the sign Yahuah (Lord) himself gave: *Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel* (Isaiah 7:14). *Made of a woman,* the Formed one drawn from the Formless takes true flesh through a daughter of Yashar''el (Israel); *Immanuel,* Elohim (God) with us, the one who is Yahuah (LORD) and yet has a Father that *sent him forth.* And he is *made under the law* — the Messiah (Christ) himself born into the Torah and keeping it, the lawgiver from between Yahudah''s (Judah''s) feet submitting to the very instruction he gave at Sinai. The Son does not come to abolish the law he was made under; he comes in its fulness, at its appointed time, to redeem and to gather.',
+       sv.verse_id, ev.verse_id, 'free', 7275
+  FROM _s223_g04_lookup sv, _s223_g04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=4 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-4-the-adoption-of-sons-israel-my-firstborn-re-gathered',
+       E'The adoption of sons — Yashar''el (Israel) my firstborn, re-gathered',
+       E'The adoption is not the taking-in of strangers; it is the bringing-home of a son who was always a son. *To redeem them that were under the law, that we might receive the adoption of sons. And because ye are sons, Elohim (God) hath sent forth the Spirit of his Son into your hearts, crying, Abba, Father* (Galatians 4:5-6). Yashar''el (Israel) bore this name from the beginning: *Thus saith Yahuah (LORD), Yashar''el (Israel) is my son, even my firstborn* (Exodus 4:22); *When Yashar''el (Israel) was a child, then I loved him, and called my son out of Egypt* (Hosea 11:1). And the promise of return names the same Father and the same firstborn — the scattered northern house: *I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9), led home *with weeping, and with supplications.* The same hand that wrote Galatians says plainly whose the adoption is, and what it stands beside: *to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of Elohim (God), and the promises* (Romans 9:4) — the adoption and the giving of the law in one breath, never set against each other. To be re-adopted is to be brought home to the covenants and the Torah, not away from them. And the seal of the sonship is the Spirit''s own cry: *ye have received the Spirit of adoption, whereby we cry, Abba, Father* (Romans 8:15) — the opposite of *the spirit of bondage again to fear,* the very bondage to the no-gods the next verses warn against. The servant becomes the son he always was; the firstborn comes home.',
+       sv.verse_id, ev.verse_id, 'free', 7278
+  FROM _s223_g04_lookup sv, _s223_g04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=4 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-4-the-weak-and-beggarly-elements-turning-back-to-the-no-gods',
+       E'The weak and beggarly elements — turning back to the no-gods, not the feasts of Yahuah (LORD)',
+       E'Read the rebuke in its own direction: it is about turning BACK, not about the Father''s appointed times. *Howbeit then, when ye knew not Elohim (God), ye did service unto them which by nature are no gods. But now, after that ye have known Elohim (God)... how turn ye again to the weak and beggarly elements, whereunto ye desire again to be in bondage? Ye observe days, and months, and times, and years* (Galatians 4:8-10). The danger named is reversion — *turn ye again,* *bondage again* — to *them which by nature are no gods.* The prophets gave that bondage its name. *Surely our fathers have inherited lies, vanity, and things wherein there is no profit* (Jeremiah 16:19) is the very confession of the scattered coming home from the ends of the earth; *Shall a man make gods unto himself, and they are no gods?* (Jeremiah 16:20); and the song of Mosheh (Moses): *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up* (Deuteronomy 32:17). The *weak and beggarly elements* are these — the calendar and service of the no-gods of the nations the Galatians once served, and which the agitators would dress up as flesh-credential. They are NOT the feasts of Yahuah (LORD). Those belong to him: *Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts* (Leviticus 23:2). And the end of the matter proves they are no bondage but life, for the nations keep them in the reign of the King: *every one that is left of all the nations... shall even go up from year to year to worship the King, Yahuah Tseva''ot (LORD of hosts), and to keep the feast of tabernacles* (Zechariah 14:16). The Father''s appointed times draw the world home; the elements of the no-gods drag the freed back into bondage. Paul forbids the second; he never forbids the first.',
+       sv.verse_id, ev.verse_id, 'free', 7281
+  FROM _s223_g04_lookup sv, _s223_g04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=4 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing',
+       E'Hagar and Sarah — cast out the bondwoman, and the barren rejoicing (Genesis 16/17/21, Isaiah 54)',
+       E'The allegory is built on the Torah and Isaiah, and it expels flesh-earning, not the Torah. *For it is written, that Abraham had two sons, the one by a bondmaid, the other by a freewoman. But he who was of the bondwoman was born after the flesh; but he of the freewoman was by promise* (Galatians 4:22-23). Paul sends them to the written record: *Hagar bare Abram a son... Ishmael* (Genesis 16:15) — the flesh-effort to secure the promise; and *Sarah thy wife shall bear thee a son indeed... and I will establish my covenant with him for an everlasting covenant* (Genesis 17:19) — the child of the sworn word. The promise kept the Father''s clock: *Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him* (Genesis 21:2); the Hebrew library marks it an appointed feast — *at the time of which Yahuah (God) had spoken... on the festival of the first-fruits of the harvest, Isaac was born* (Jubilees 16:12) — the same pattern as the Son sent *in the fulness of the time.* Hagar Paul reads as *Jerusalem which now is... in bondage with her children* (Galatians 4:25): the flesh-credential system of the agitators, earning standing by the works of the flesh. Sarah is *Jerusalem which is above... free, which is the mother of us all* (Galatians 4:26), and she is the barren woman of Isaiah''s song: *Rejoice, thou barren that bearest not... for the desolate hath many more children than she which hath an husband* (Galatians 4:27, quoting Isaiah 54:1) — the scattered seed, who seemed cut off and childless in exile, brought home in a multitude. As Ishmael persecuted Isaac (*he that was born after the flesh persecuted him that was born after the Spirit,* Galatians 4:29 — remembered too in the Hebrew record, *Cast out this bondwoman and her son, for her son shall not be heir with my son,* Jasher 21:15), so the flesh-system persecutes the children of promise now. And the answer is Sarah''s, ratified by Elohim (God) himself: *Cast out this bondwoman and her son: for the son of the bondwoman shall not be heir with the son of the freewoman* (Galatians 4:30, citing Genesis 21:10) — for *in Isaac shall thy seed be called* (Genesis 21:12), and the Hebrew library carries the same command, *Cast out this bondwoman and her son; for the son of this bondwoman will not be heir with my son, Isaac* (Jubilees 17:4). What is cast out is the spirit of flesh-earning, the bondwoman''s seed — never the Torah, which is the inheritance the freewoman''s son comes into. *So then, brethren, we are not children of the bondwoman, but of the free* (Galatians 4:31).',
+       sv.verse_id, ev.verse_id, 'extras', 7284
+  FROM _s223_g04_lookup sv, _s223_g04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=4 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: galatians-4-in-the-fulness-of-the-time-god-sent-forth-his-son-made-under-the-law
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:10 — *the sceptre shall not depart from Yahudah (Judah)... until Shiloh come; and unto him shall the gathering of the people be* the fulness of time is Shiloh come, and his coming is the gathering (Galatians 4:4).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-in-the-fulness-of-the-time-god-sent-forth-his-son-made-under-the-law'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 7:14 — *a virgin shall conceive, and bear a son, and shall call his name Immanuel* the sign Yahuah (Lord) gave; the Son *made of a woman,* Elohim (God) with us, who has a Father and is made under the law (Galatians 4:4).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-in-the-fulness-of-the-time-god-sent-forth-his-son-made-under-the-law'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-4-the-adoption-of-sons-israel-my-firstborn-re-gathered
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 4:22 — *Yashar''el (Israel) is my son, even my firstborn* the adoption is the homecoming of the firstborn who was always a son, not the taking-in of strangers (Galatians 4:5).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-the-adoption-of-sons-israel-my-firstborn-re-gathered'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=4 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hosea 11:1 — *When Yashar''el (Israel) was a child, then I loved him, and called my son out of Egypt* the sonship is Yashar''el''s (Israel''s) from of old; the adoption gathers that same son home (Galatians 4:5).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-the-adoption-of-sons-israel-my-firstborn-re-gathered'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=11 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 31:9 — *I am a father to Yashar''el (Israel), and Ephraim is my firstborn* the scattered northern house, the firstborn, led home with weeping — the adoption is this return (Galatians 4:5).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-the-adoption-of-sons-israel-my-firstborn-re-gathered'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Romans 9:4 — *to whom pertaineth the adoption... and the giving of the law* the same hand names whose the adoption is, and sets it beside the Torah, never against it (Galatians 4:5).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-the-adoption-of-sons-israel-my-firstborn-re-gathered'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Romans 8:15 — *ye have received the Spirit of adoption, whereby we cry, Abba, Father* the Spirit of the Son, the opposite of the spirit of bondage to the no-gods (Galatians 4:6).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-the-adoption-of-sons-israel-my-firstborn-re-gathered'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-4-the-weak-and-beggarly-elements-turning-back-to-the-no-gods
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 16:19 — *our fathers have inherited lies, vanity, and things wherein there is no profit* the confession of the scattered coming home; the inherited vanity is the service to the no-gods (Galatians 4:8).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-the-weak-and-beggarly-elements-turning-back-to-the-no-gods'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=16 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 16:20 — *Shall a man make gods unto himself, and they are no gods?* Paul''s exact charge: the elements served are no gods, and turning again to them is servitude to nothing (Galatians 4:8).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-the-weak-and-beggarly-elements-turning-back-to-the-no-gods'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=16 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 32:17 — *to gods whom they knew not, to new gods that came newly up* the song of Mosheh (Moses) names the bondage; to turn again to the elements is to return to those gods (Galatians 4:9).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-the-weak-and-beggarly-elements-turning-back-to-the-no-gods'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Leviticus 23:2 — *the feasts of Yahuah (LORD)... even these are my feasts* the counterweight: the appointed times are HIS, not the bondage; the days-and-months rebuked are the elements of the no-gods (Galatians 4:10).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-the-weak-and-beggarly-elements-turning-back-to-the-no-gods'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Zechariah 14:16 — *every one... of all the nations... shall even go up from year to year... to keep the feast of tabernacles* the appointed feast is kept by the nations in the reign — no bondage, but life (Galatians 4:10).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-the-weak-and-beggarly-elements-turning-back-to-the-no-gods'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 16:15 — *Hagar bare Abram a son... Ishmael* the son of the bondmaid, born after the flesh — the flesh-effort to secure the promise (Galatians 4:22-23).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=16 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 17:19 — *Sarah thy wife shall bear thee a son indeed... an everlasting covenant* the son of the freewoman by promise; the covenant established with the child of promise (Galatians 4:23).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 21:2 — *Sarah... bare Abraham a son... at the set time of which Elohim (God) had spoken* the promise keeps the appointed clock, as the Son came in the fulness of the time (Galatians 4:23).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 16:12 — *at the time of which Yahuah (God) had spoken... on the festival of the first-fruits of the harvest, Isaac was born* the promise-child born on an appointed feast of the Most High (Galatians 4:23).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=23
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=16 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 54:1 — *Rejoice... thou that didst not bear... more are the children of the desolate* the free Jerusalem above is the barren rejoicing; the desolate''s many children are the scattered restored (Galatians 4:26-27).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Jasher 21:15 — *Cast out this bondwoman and her son, for her son shall not be heir with my son* the Hebrew record of the persecution and the casting-out Paul names (Galatians 4:29-30).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=30
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=21 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Genesis 21:10 — *Cast out this bondwoman and her son: for the son of this bondwoman shall not be heir... with Isaac* Paul cites Sarah''s words exactly; the flesh-earning is expelled, never the Torah (Galatians 4:30).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'Genesis 21:12 — *in Isaac shall thy seed be called* Elohim (God) himself ratifies the casting-out; the inheritance runs through the child of promise (Galatians 4:30).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 9, E'Jubilees 17:4 — *Cast out this bondwoman and her son; for the son of this bondwoman will not be heir with my son, Isaac* the Hebrew library carries the command almost as Paul cites it (Galatians 4:30).'
+  FROM cross_reference_threads t, cross_references x, _s223_g04_lookup sv, _s223_g04_lookup tv
+ WHERE t.slug='galatians-4-hagar-and-sarah-cast-out-the-bondwoman-the-barren-rejoicing'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=4 AND sv.verse_number=30
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=17 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_galatians_05.sql (S223 Galatians 5) -----
+-- =====================================================================
+-- S223 minion — GALATIANS 5 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: GALATIANS 5 (26 verses).  Tag: g05 (temp view _s223_g05_lookup).
+-- Sort band: floor 7300, step 3 (7300, 7303, 7306, 7309, 7312 used; under 7325).
+-- Source is ALWAYS the canon Galatians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (THE SINGLE HIGHEST VOICE-RISK BOOK — "The Galatians Lie" terrain;
+-- Red Lines #4/#5/#6/#7/#10 all live):
+-- The Galatians are the SCATTERED LOST SHEEP of Yashar'el (Israel) — covenant seed living among the
+-- nations, memory dimmed by exile — whom Paul is bringing HOME, NOT pagans who never had Torah. The
+-- agitators preached the Pharisee proselyte gospel (*Except ye be circumcised after the manner of
+-- Moses, ye cannot be saved*, Acts 15:1): become-a-Jew-through-flesh-ritual-and-be-saved. The whole
+-- chapter answers THAT lie — not Torah, not circumcision-as-such (Paul circumcised Timothy, Acts
+-- 16:3), but flesh-credential-as-the-doorway. Grace and Torah stand together: the same Ruach
+-- (Spirit) who leads is the Spirit who spoke at Sinai and writes Torah on the heart (Ezekiel 36:27,
+-- Jeremiah 31:33). The HIDDEN TORAH-AFFIRMING verses, handled exactly to the frame:
+--   * 5:1 *Stand fast therefore in the liberty wherewith Messiah hath made us free* — liberty =
+--     freedom from the curse of exile and the flesh-credential bondage, NOT freedom from Torah; the
+--     *yoke of bondage* is the agitators' earn-your-standing system, not the covenant.
+--   * 5:3 *a debtor to do the whole law* = HIDDEN TORAH-AFFIRMING. The issue is taking circumcision
+--     AS the flesh-credential ENTRY into the agitators' performance-system — which would bind a man
+--     to earn standing by that whole system — NOT Torah-as-life. The live circumcision politics are
+--     the 1 Maccabees apostasy (men who *made themselves uncircumcised* to please the nations, then
+--     the forced re-circumcision) — the flesh-mark wielded as a covenant-standing credential.
+--   * 5:4 *whosoever of you are justified by the law; ye are fallen from grace* = those seeking the
+--     flesh-credential justification have fallen from the grace that brings them home — NOT a
+--     warning against Torah-keeping. Justification is by faith/promise; covenant life is Torah.
+--   * 5:6 *faith which worketh by love* — faith expressed in love IS the Torah-life (the love-command).
+--   * 5:9 *a little leaven leaveneth the whole lump* — the agitators' doctrine as leaven; pair the
+--     unleavened-bread command (Exodus 12:15) and 1 Corinthians 5:6-8 (*keep the feast... with the
+--     unleavened bread of sincerity and truth*) — the festival kept, not abolished.
+--   * 5:13-14 *by love serve one another. For all the law is fulfilled in one word... Thou shalt
+--     love thy neighbour as thyself* (Leviticus 19:18) = HIDDEN TORAH-AFFIRMING — Paul CITES the
+--     Torah command; fulfil (pleroo) = fill full, uphold, NOT abolish. Pair Deuteronomy 6:5,
+--     Matthew 22:37-40, Romans 13:8-10.
+--   * 5:18 *if ye be led of the Spirit, ye are not under the law* = not under the law's
+--     CONDEMNATION / curse-sentence; the Spirit who leads is the Spirit who wrote Torah on the heart
+--     (Ezekiel 36:27, Jeremiah 31:33) — NEVER freedom from Torah. The very next breath lists the
+--     works of the flesh (5:19-21 = Torah's OWN prohibitions) and the fruit of the Spirit.
+--   * 5:23 *against such there is no law* = HIDDEN TORAH-AFFIRMING — the fruit of the Spirit IS the
+--     Torah-life; no law of Yahuah (LORD) stands against love, joy, peace, longsuffering.
+-- The default trained reading — grace-against-law, Torah-abolished, freedom-from-the-commandments —
+-- is the antichrist reading this apparatus exists to dismantle; it surfaces nowhere below.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every meaningful verse-block):
+--   v.1     Stand fast in the liberty; the yoke of bondage
+--           Tanakh: Ezekiel 36:27 (the Spirit causing the walk in the statutes — the liberty that
+--                   returns home)  Extras: 1 Maccabees 1:11-15 (the apostate covenant with the
+--                   heathen — the bondage from which liberty frees) NT: none added (carried in prose)
+--   v.2-4   circumcision-as-credential; a debtor to do the whole law; fallen from grace
+--           Tanakh: Exodus 12:48 (the circumcised stranger keeping passover — circumcision as
+--                   covenant entry, NOT credential)  Extras: 1 Maccabees 1:15 (made themselves
+--                   uncircumcised, forsook the covenant), 1:48 (leave children uncircumcised /
+--                   forget the law), 2:46 (forced re-circumcision) — the flesh-mark as politics
+--           NT: none warranted separately (Galatians 5:6 carried at v.6-9 thread)
+--   v.5-6   wait for the hope of righteousness by faith; faith which worketh by love
+--           Tanakh: (love-command carried at v.13-14)  Extras: none warranted
+--           NT: none warranted separately (the working-by-love is the love-command thread)
+--   v.7-12  ye did run well; a little leaven leaveneth the whole lump; he that troubleth you
+--           Tanakh: Exodus 12:15 (put away leaven / cut off — the unleavened command)
+--           Extras: none warranted  NT: 1 Corinthians 5:6 (the same proverb), 5:7 (purge the old
+--                   leaven, Messiah our passover), 5:8 (keep the feast with unleavened sincerity)
+--   v.13-14 by love serve one another; all the law fulfilled in one word — love thy neighbour
+--           Tanakh: Leviticus 19:18 (*love thy neighbour as thyself*), Deuteronomy 6:5 (love Yahuah
+--                   with all the heart)  Extras: none warranted  NT: Matthew 22:37-40 (the two
+--                   commandments on which hang all the law and the prophets), Romans 13:8 (he that
+--                   loveth hath fulfilled the law), Romans 13:9 (comprehended in this saying),
+--                   Romans 13:10 (love is the fulfilling of the law)
+--   v.15-17 bite and devour; walk in the Spirit; flesh against Spirit
+--           Tanakh: (the Spirit-walk carried at v.18-23)  Extras: none warranted  NT: none warranted
+--   v.18-23 led of the Spirit, not under the law; the works of the flesh; the fruit of the Spirit;
+--           against such there is no law
+--           Tanakh: Ezekiel 36:27 (the Spirit causing the walk in the statutes), Jeremiah 31:33
+--                   (Torah written on the heart) — the Spirit who leads is the Spirit who wrote
+--                   Torah; Leviticus 19:18 (the love that is the fruit, against which no law stands)
+--           Extras: none warranted  NT: none warranted (Romans 13 carried at v.13-14)
+--   v.24-26 crucified the flesh; live in the Spirit, walk in the Spirit
+--           Tanakh: none warranted (gathered into the Spirit-walk thread)  Extras/NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   7300 galatians-5-stand-fast-in-the-liberty-and-be-not-entangled-with-the-yoke-of-bondage-ezekiel-36 (Tanakh + Extras)
+--   7303 galatians-5-a-debtor-to-do-the-whole-law-circumcision-as-the-flesh-credential-doorway          (Tanakh + Extras)
+--   7306 galatians-5-a-little-leaven-leaveneth-the-whole-lump-purge-out-the-old-leaven-1-corinthians-5   (Tanakh + NT)
+--   7309 galatians-5-all-the-law-is-fulfilled-in-one-word-thou-shalt-love-thy-neighbour-leviticus-19     (Tanakh + NT)
+--   7312 galatians-5-led-of-the-spirit-the-fruit-against-which-there-is-no-law-ezekiel-36-jeremiah-31    (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s223_g05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: galatians-5-stand-fast-in-the-liberty-and-be-not-entangled-with-the-yoke-of-bondage-ezekiel-36
+  ('canon', 'galatians', 5, 1, 'canon', 'ezekiel', 36, 27, 'free', E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:27). The liberty into which Messiah (Christ) sets the scattered seed free is the very freedom Yahuah (LORD) promised through the prophet — not freedom from his statutes, but the Ruach HaKodesh (Holy Spirit) placed within so they can at last *walk in my statutes* and *keep my judgments, and do them.* *Stand fast therefore in the liberty wherewith Messiah (Christ) hath made us free, and be not entangled again with the yoke of bondage* (Galatians 5:1): the liberty is the homecoming, the Spirit-enabled life of obedience, not its undoing.'),
+  ('canon', 'galatians', 5, 1, 'apocrypha', '1-maccabees', 1, 15, 'extras', E'*And made themselves uncircumcised, and forsook the holy covenant, and joined themselves to the heathen, and were sold to do mischief.* (1 Maccabees 1:15). The Hebrew record names the *yoke of bondage* exactly: apostate men of Yashar''el (Israel) who undid the covenant mark to please the nations, *forsook the holy covenant,* and *were sold to do mischief* — the flesh wielded as a credential of standing, sold into servitude to the spirit of the age. *Be not entangled again with the yoke of bondage* (Galatians 5:1): Paul will not have the returning sheep handle the covenant the way the apostates handled it — as flesh-politics rather than the way home.'),
+  -- thread: galatians-5-a-debtor-to-do-the-whole-law-circumcision-as-the-flesh-credential-doorway
+  ('canon', 'galatians', 5, 3, 'apocrypha', '1-maccabees', 1, 48, 'extras', E'*That they should also leave their children uncircumcised, and make their souls abominable with all manner of uncleanness and profanation:* (1 Maccabees 1:48). The decree of Antiochus joined two things at once — *leave their children uncircumcised* and, in the next breath, *to the end they might forget the law, and change all the ordinances* (1 Maccabees 1:49). Circumcision in that war was never a bare surgery; it was the doorway-mark of the whole covenant life. *For I testify again to every man that is circumcised, that he is a debtor to do the whole law* (Galatians 5:3): taking the mark as the agitators preach it — as the flesh-credential by which a man earns covenant standing — would bind him to that entire performance-system, the very trap Paul is sparing the returning seed.'),
+  ('canon', 'galatians', 5, 3, 'apocrypha', '1-maccabees', 2, 46, 'extras', E'*And what children soever they found within the coast of Yashar''el (Israel) uncircumcised, those they circumcised valiantly.* (1 Maccabees 2:46). The zealots of Mattathias went through the land forcing the covenant mark by the sword — circumcision turned into a weapon of party-loyalty and standing. This is the live politics behind the agitators. *That he is a debtor to do the whole law* (Galatians 5:3): when the flesh-mark is made the doorway-credential a man takes ON to be counted in, he is bound to the whole earn-your-place system — and that, not Torah-as-life, is what Paul resists.'),
+  ('canon', 'galatians', 5, 4, 'apocrypha', '1-maccabees', 1, 11, 'extras', E'*In those days went there out of Yashar''el (Israel) wicked men, who persuaded many, saying, Let us go and make a covenant with the heathen that are round about us: for since we departed from them we have had much sorrow.* (1 Maccabees 1:11). Here is the pattern of falling from grace: men who sought their standing by a flesh-arrangement of their own devising — *let us go and make a covenant with the heathen* — and so departed from the grace that had kept them. *Messiah (Christ) is become of no effect unto you, whosoever of you are justified by the law; ye are fallen from grace* (Galatians 5:4): those who seek to be *justified by the law* as the agitators mean it — the flesh-credential justification — let go the grace that was bringing them home, just as the apostates did.'),
+  ('canon', 'galatians', 5, 6, 'canon', 'exodus', 12, 48, 'free', E'*And when a stranger shall sojourn with thee, and will keep the passover to Yahuah (LORD), let all his males be circumcised, and then let him come near and keep it; and he shall be as one that is born in the land: for no uncircumcised person shall eat thereof.* (Exodus 12:48). Circumcision in Torah was the door of covenant belonging — the sojourner circumcised *shall be as one that is born in the land.* It was never the credential by which a man earns righteousness, only the sign of the home he has entered. *In Yahusha HaMashiach (Jesus Christ) neither circumcision availeth any thing, nor uncircumcision; but faith which worketh by love* (Galatians 5:6): the mark cannot purchase standing on either side of it — what avails is the faith that lives itself out in the love-command.'),
+  -- thread: galatians-5-a-little-leaven-leaveneth-the-whole-lump-purge-out-the-old-leaven-1-corinthians-5
+  ('canon', 'galatians', 5, 9, 'canon', 'exodus', 12, 15, 'free', E'*Seven days shall ye eat unleavened bread; even the first day ye shall put away leaven out of your houses: for whosoever eateth leavened bread from the first day until the seventh day, that soul shall be cut off from Yashar''el (Israel).* (Exodus 12:15). The proverb draws its force straight from the feast Yahuah (LORD) commanded: leaven, once in the lump, works through the whole, so it must be *put away* utterly. *A little leaven leaveneth the whole lump* (Galatians 5:9): the agitators'' doctrine is the leaven — a small false teaching that, left in, sours the entire gathering, exactly as the smallest crumb of leaven would the unleavened house.'),
+  ('canon', 'galatians', 5, 9, 'canon', '1-corinthians', 5, 6, 'free', E'*Your glorying is not good. Know ye not that a little leaven leaveneth the whole lump?* (1 Corinthians 5:6). Paul uses the same proverb to the same end in both letters — a single corrupting thing spreads through the whole body. *A little leaven leaveneth the whole lump* (Galatians 5:9): the figure is one and the same, and in Corinth he completes it with the feast itself.'),
+  ('canon', 'galatians', 5, 9, 'canon', '1-corinthians', 5, 7, 'free', E'*Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us:* (1 Corinthians 5:7). The answer to leaven is to *purge it out* — and the ground of the purging is that *Messiah (Christ) our passover is sacrificed for us.* *A little leaven leaveneth the whole lump* (Galatians 5:9): the same hand that names the leaven in Galatia tells the Corinthians how to be rid of it, and roots the whole figure in the passover lamb.'),
+  ('canon', 'galatians', 5, 9, 'canon', '1-corinthians', 5, 8, 'free', E'*Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.* (1 Corinthians 5:8). The feast is not abolished but kept — *let us keep the feast* — only purged of the leaven of malice and false doctrine. *A little leaven leaveneth the whole lump* (Galatians 5:9): the leaven Paul warns against in Galatia is the same leaven of *malice and wickedness* he bids the Corinthians sweep out, that the appointed feast may be kept *with the unleavened bread of sincerity and truth.*'),
+  -- thread: galatians-5-all-the-law-is-fulfilled-in-one-word-thou-shalt-love-thy-neighbour-leviticus-19
+  ('canon', 'galatians', 5, 14, 'canon', 'leviticus', 19, 18, 'free', E'*Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* (Leviticus 19:18). Paul does not set the love-command against the Torah — he quotes the Torah, word for word. *For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself* (Galatians 5:14): the *one word* in which all the law is fulfilled is itself a verse of the law, sealed *I am Yahuah (LORD).* To fulfil the law is to fill it full in love, not to do away with it.'),
+  ('canon', 'galatians', 5, 13, 'canon', 'deuteronomy', 6, 5, 'free', E'*And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* (Deuteronomy 6:5). The love that serves is no novelty; it is the first and great command of the Shema. *By love serve one another* (Galatians 5:13): the liberty into which the seed is called is not licence — *only use not liberty for an occasion to the flesh* — but the freedom to do the very thing Torah commands, to love Yahuah (LORD) wholly and one''s neighbour as oneself.'),
+  ('canon', 'galatians', 5, 14, 'canon', 'matthew', 22, 39, 'free', E'*And the second is like unto it, Thou shalt love thy neighbour as thyself.* (Matthew 22:39). Yahusha (Jesus) had already named this very verse the second great commandment, joined to the first — *On these two commandments hang all the law and the prophets* (Matthew 22:40). *For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself* (Galatians 5:14): Paul stands exactly where his Master stood. The whole law hangs on love, and love does not loose the law but holds it up.'),
+  ('canon', 'galatians', 5, 14, 'canon', 'romans', 13, 8, 'free', E'*Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.* (Romans 13:8). The same apostle teaches the same thing elsewhere: love is not the abolishing of the law but the fulfilling of it — *he that loveth another hath fulfilled the law.* *For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself* (Galatians 5:14): Galatians and Romans speak with one voice, and neither lets *fulfilled* mean *finished and discarded.*'),
+  ('canon', 'galatians', 5, 14, 'canon', 'romans', 13, 9, 'free', E'*For this, Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal, Thou shalt not bear false witness, Thou shalt not covet; and if there be any other commandment, it is briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself.* (Romans 13:9). Paul lists the commandments of the second table and gathers them up — not cancelled, but *briefly comprehended* — in the same verse he cites in Galatia. *For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself* (Galatians 5:14): the commandments are upheld and summed in love, every one of them still standing within the *one word.*'),
+  ('canon', 'galatians', 5, 14, 'canon', 'romans', 13, 10, 'free', E'*Love worketh no ill to his neighbour: therefore love is the fulfilling of the law.* (Romans 13:10). The conclusion is plain in both letters: *love is the fulfilling of the law.* *For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself* (Galatians 5:14): love does the law''s own work, *worketh no ill,* and so fills full what the law requires — the fulfilling of the law, never the ending of it.'),
+  -- thread: galatians-5-led-of-the-spirit-the-fruit-against-which-there-is-no-law-ezekiel-36-jeremiah-31
+  ('canon', 'galatians', 5, 18, 'canon', 'ezekiel', 36, 27, 'free', E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:27). The Ruach (Spirit) who leads is the very Spirit Yahuah (LORD) promised to put within his people — and the express purpose of that Spirit is to *cause you to walk in my statutes... and do them.* *But if ye be led of the Spirit, ye are not under the law* (Galatians 5:18): to be led of this Spirit is not to be loosed from Torah but to be carried into it; *not under the law* means no longer under its condemnation and curse, walking instead in the Spirit who wrote the statutes on the heart.'),
+  ('canon', 'galatians', 5, 18, 'canon', 'jeremiah', 31, 33, 'free', E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33). The new covenant is not a covenant without Torah but Torah moved inward — *I will put my law in their inward parts, and write it in their hearts.* *But if ye be led of the Spirit, ye are not under the law* (Galatians 5:18): the Spirit''s leading is the writing of the law on the heart, so that the one led of the Spirit keeps it from within, not the one set free from it.'),
+  ('canon', 'galatians', 5, 23, 'canon', 'leviticus', 19, 18, 'free', E'*Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* (Leviticus 19:18). The fruit of the Spirit — *love, joy, peace, longsuffering* — is the very life the law commands; the law of Yahuah (LORD) nowhere forbids love of neighbour, but commands it. *Against such there is no law* (Galatians 5:23): no commandment of the Torah stands against the fruit of the Spirit, because the fruit of the Spirit IS the Torah-life borne out — the love the law itself enjoins.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s223_g05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s223_g05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-5-stand-fast-in-the-liberty-and-be-not-entangled-with-the-yoke-of-bondage-ezekiel-36',
+       E'Stand fast in the liberty — and be not entangled with the yoke of bondage (Ezekiel 36)',
+       E'The chapter opens on a word that the inherited reading turns into freedom-from-the-commandments, and the turning misses what the liberty is and what the bondage is. *Stand fast therefore in the liberty wherewith Messiah (Christ) hath made us free, and be not entangled again with the yoke of bondage* (Galatians 5:1). The liberty is the homecoming of the scattered seed — freedom from the curse of exile and from the flesh-credential trap of the agitators — and it is the very freedom Yahuah (LORD) promised through the prophet: *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The Spirit-given liberty is the power to walk in the statutes at last, not a release from them. And the *yoke of bondage* is no description of the Torah; it is the way the apostates handled the covenant — as flesh-politics. The Hebrew record names it: *In those days went there out of Yashar''el (Israel) wicked men, who persuaded many, saying, Let us go and make a covenant with the heathen that are round about us* (1 Maccabees 1:11), who *made themselves uncircumcised, and forsook the holy covenant, and joined themselves to the heathen, and were sold to do mischief* (1 Maccabees 1:15). That is bondage — the flesh wielded as a credential of standing, the covenant traded for the favour of the nations. Paul will not have the returning sheep entangled in it again. The liberty stands them upright to walk; the yoke they are to refuse is the earn-your-place system, never the way home.',
+       sv.verse_id, ev.verse_id, 'extras', 7300
+  FROM _s223_g05_lookup sv, _s223_g05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=5 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-5-a-debtor-to-do-the-whole-law-circumcision-as-the-flesh-credential-doorway',
+       E'A debtor to do the whole law — circumcision as the flesh-credential doorway',
+       E'These are the verses the inherited reading hears as Paul against the covenant mark and against the law, and the hearing misses what is actually in dispute. *Behold, I Paul say unto you, that if ye be circumcised, Messiah (Christ) shall profit you nothing* (Galatians 5:2). *For I testify again to every man that is circumcised, that he is a debtor to do the whole law* (Galatians 5:3). *Messiah (Christ) is become of no effect unto you, whosoever of you are justified by the law; ye are fallen from grace* (Galatians 5:4). The man Paul has in view is the one taking circumcision the way the agitators preach it — as the flesh-credential ENTRY into their performance-system, the doorway by which a man earns covenant standing (*Except ye be circumcised after the manner of Moses, ye cannot be saved*, Acts 15:1). To take the mark on those terms is to make oneself *a debtor to do the whole law* as a system of earning — bound to purchase standing by performance, with Messiah (Christ) profiting nothing, because standing was never bought, only received. This is not Paul against Torah; he circumcised Timothy (Acts 16:3). It is Paul against the mark-as-credential. The live politics are plain in the Hebrew record: the apostates who *made themselves uncircumcised, and forsook the holy covenant* (1 Maccabees 1:15); the decree that they *leave their children uncircumcised* to the end that *they might forget the law* (1 Maccabees 1:48-49); and the counter-zeal that *what children soever they found... uncircumcised, those they circumcised valiantly* (1 Maccabees 2:46) — the flesh-mark made a weapon of party-standing. And *fallen from grace* (5:4) follows the same shape as those who *make a covenant with the heathen* of their own devising (1 Maccabees 1:11): to seek justification by the flesh-credential is to let go the grace that was bringing the seed home. Torah-as-life is not in the dock here — only Torah turned into a doorway-credential for earning a place.',
+       sv.verse_id, ev.verse_id, 'extras', 7303
+  FROM _s223_g05_lookup sv, _s223_g05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=5 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-5-a-little-leaven-leaveneth-the-whole-lump-purge-out-the-old-leaven-1-corinthians-5',
+       E'A little leaven leaveneth the whole lump — purge out the old leaven (1 Corinthians 5)',
+       E'The proverb is one Paul uses in two letters, and both times he draws it straight from the feast Yahuah (LORD) commanded. *A little leaven leaveneth the whole lump* (Galatians 5:9): the agitators'' doctrine is the leaven — a small false teaching that, left in, works through the whole gathering. The figure is the unleavened-bread command itself: *Seven days shall ye eat unleavened bread; even the first day ye shall put away leaven out of your houses: for whosoever eateth leavened bread... that soul shall be cut off from Yashar''el (Israel)* (Exodus 12:15) — leaven once in the lump spreads through it all, so it must be put away utterly. To the Corinthians Paul speaks the very same proverb and completes it: *Know ye not that a little leaven leaveneth the whole lump?* (1 Corinthians 5:6); *Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7); *Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). Mark what he does not say — he does not say the feast is abolished. He says *let us keep the feast,* only purged of the leaven of false doctrine and malice. The same leaven Paul warns against in Galatia is the leaven the Corinthians are to sweep out, that the appointed feast may be kept with sincerity and truth, the passover lamb its ground.',
+       sv.verse_id, ev.verse_id, 'free', 7306
+  FROM _s223_g05_lookup sv, _s223_g05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=5 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-5-all-the-law-is-fulfilled-in-one-word-thou-shalt-love-thy-neighbour-leviticus-19',
+       E'All the law is fulfilled in one word — Thou shalt love thy neighbour as thyself (Leviticus 19)',
+       E'Here is one of the hidden Torah-affirming verses of the whole letter, and it is hidden in plain sight: Paul upholds the law by quoting it. *For, brethren, ye have been called unto liberty; only use not liberty for an occasion to the flesh, but by love serve one another* (Galatians 5:13). *For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself* (Galatians 5:14). The *one word* in which all the law is fulfilled is itself a verse of the law: *thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18). And the love that serves is no novelty either — it is the first command of the Shema, *thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:5). To *fulfil* the law (pleroo) is to fill it full, to bring it to its fullness in love — never to abolish it. Paul stands exactly where his Master stood: Yahusha (Jesus) named this very verse the second great commandment, *Thou shalt love thy neighbour as thyself* (Matthew 22:39), and *On these two commandments hang all the law and the prophets* (Matthew 22:40). And the same apostle teaches the same thing in Romans: *he that loveth another hath fulfilled the law* (Romans 13:8); the commandments *Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal...* are *briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself* (Romans 13:9); *love is the fulfilling of the law* (Romans 13:10). Not one of these lets *fulfilled* mean *finished and discarded.* Love does the law''s own work, works no ill to the neighbour, and so fills full everything the law requires. The liberty into which the seed is called is freedom to do the very thing Torah commands.',
+       sv.verse_id, ev.verse_id, 'free', 7309
+  FROM _s223_g05_lookup sv, _s223_g05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=5 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-5-led-of-the-spirit-the-fruit-against-which-there-is-no-law-ezekiel-36-jeremiah-31',
+       E'Led of the Spirit, not under the law — the fruit against which there is no law (Ezekiel 36, Jeremiah 31)',
+       E'This is among the most wrested verses in the letter, and the wresting turns the Spirit against the Torah the Spirit himself gave. *But if ye be led of the Spirit, ye are not under the law* (Galatians 5:18). The Ruach (Spirit) who leads is no stranger to the commandments — he is the very Spirit Yahuah (LORD) promised to put within his people, *and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). His express work is to carry the heart INTO the statutes, not away from them. He is the Spirit of the new covenant, in which Torah is not removed but moved inward: *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33). So *not under the law* cannot mean loosed from Torah; it means no longer under the law''s condemnation and curse-sentence, walking instead in the Spirit who wrote the law on the heart. And the very next breath proves it, for what Paul lists as *the works of the flesh* — *Adultery, fornication, uncleanness... Idolatry, witchcraft, hatred... murders, drunkenness* (Galatians 5:19-21) — are Torah''s own prohibitions, the things the commandments forbid. Then comes the fruit of the Spirit: *love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law* (Galatians 5:22-23). That closing line is itself a hidden Torah-affirming word — *against such there is no law.* No commandment of Yahuah (LORD) stands against love or joy or peace, because the fruit of the Spirit IS the Torah-life borne out; the love that crowns the fruit is the very thing the law commands, *thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18). The Spirit who leads, the heart on which the law is written, the fruit against which no law stands — all one. To walk in the Spirit is to live the law from within.',
+       sv.verse_id, ev.verse_id, 'free', 7312
+  FROM _s223_g05_lookup sv, _s223_g05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=5 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: galatians-5-stand-fast-in-the-liberty-and-be-not-entangled-with-the-yoke-of-bondage-ezekiel-36
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 36:27 — *I will put my spirit within you, and cause you to walk in my statutes* the liberty Messiah gives is the Spirit-enabled walk in the statutes, the homecoming, not freedom from them (Galatians 5:1).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-stand-fast-in-the-liberty-and-be-not-entangled-with-the-yoke-of-bondage-ezekiel-36'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Maccabees 1:15 — *made themselves uncircumcised, and forsook the holy covenant... and were sold to do mischief* the *yoke of bondage* named: the covenant traded for the favour of the nations, the flesh as credential (Galatians 5:1).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-stand-fast-in-the-liberty-and-be-not-entangled-with-the-yoke-of-bondage-ezekiel-36'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=1 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-5-a-debtor-to-do-the-whole-law-circumcision-as-the-flesh-credential-doorway
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Maccabees 1:48 — *leave their children uncircumcised... to the end they might forget the law* circumcision and the whole covenant life were one; the mark as doorway to all the ordinances (Galatians 5:3).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-a-debtor-to-do-the-whole-law-circumcision-as-the-flesh-credential-doorway'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=1 AND tv.verse_number=48
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Maccabees 2:46 — *what children soever they found... uncircumcised, those they circumcised valiantly* the flesh-mark made a weapon of party-standing — the live politics behind *a debtor to do the whole law* (Galatians 5:3).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-a-debtor-to-do-the-whole-law-circumcision-as-the-flesh-credential-doorway'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=2 AND tv.verse_number=46
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Maccabees 1:11 — *Let us go and make a covenant with the heathen* the shape of falling from grace: seeking standing by a flesh-arrangement, letting go the grace that kept them (Galatians 5:4).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-a-debtor-to-do-the-whole-law-circumcision-as-the-flesh-credential-doorway'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 12:48 — *let all his males be circumcised... and he shall be as one that is born in the land* circumcision as the door of covenant belonging, never the credential that purchases standing (Galatians 5:6).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-a-debtor-to-do-the-whole-law-circumcision-as-the-flesh-credential-doorway'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=48
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-5-a-little-leaven-leaveneth-the-whole-lump-purge-out-the-old-leaven-1-corinthians-5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:15 — *ye shall put away leaven out of your houses... cut off from Yashar''el (Israel)* the unleavened command the proverb draws from: leaven once in the lump works through it all (Galatians 5:9).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-a-little-leaven-leaveneth-the-whole-lump-purge-out-the-old-leaven-1-corinthians-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Corinthians 5:6 — *Know ye not that a little leaven leaveneth the whole lump?* the same proverb in Paul''s hand, a single corrupting thing spreading through the whole body (Galatians 5:9).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-a-little-leaven-leaveneth-the-whole-lump-purge-out-the-old-leaven-1-corinthians-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Corinthians 5:7 — *Purge out therefore the old leaven... Messiah (Christ) our passover is sacrificed for us* the answer to leaven, rooted in the passover lamb (Galatians 5:9).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-a-little-leaven-leaveneth-the-whole-lump-purge-out-the-old-leaven-1-corinthians-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Corinthians 5:8 — *let us keep the feast... with the unleavened bread of sincerity and truth* the feast kept, not abolished, only purged of the leaven of false doctrine (Galatians 5:9).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-a-little-leaven-leaveneth-the-whole-lump-purge-out-the-old-leaven-1-corinthians-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-5-all-the-law-is-fulfilled-in-one-word-thou-shalt-love-thy-neighbour-leviticus-19
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 19:18 — *thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* the *one word* in which all the law is fulfilled is itself a verse of the law (Galatians 5:14).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-all-the-law-is-fulfilled-in-one-word-thou-shalt-love-thy-neighbour-leviticus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 6:5 — *thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart* the love that serves is the first command of the Shema, not a novelty (Galatians 5:13).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-all-the-law-is-fulfilled-in-one-word-thou-shalt-love-thy-neighbour-leviticus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 22:39 — *Thou shalt love thy neighbour as thyself* Yahusha named this same verse the second great commandment, on which *hang all the law and the prophets* (Galatians 5:14).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-all-the-law-is-fulfilled-in-one-word-thou-shalt-love-thy-neighbour-leviticus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=22 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Romans 13:8 — *he that loveth another hath fulfilled the law* the same apostle elsewhere: love fulfils the law, does not abolish it (Galatians 5:14).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-all-the-law-is-fulfilled-in-one-word-thou-shalt-love-thy-neighbour-leviticus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=13 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Romans 13:9 — the commandments *briefly comprehended in this saying... Thou shalt love thy neighbour as thyself* the second-table commands upheld and summed in love, not cancelled (Galatians 5:14).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-all-the-law-is-fulfilled-in-one-word-thou-shalt-love-thy-neighbour-leviticus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=13 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Romans 13:10 — *love is the fulfilling of the law* the conclusion in both letters: love does the law''s own work, fills full what it requires (Galatians 5:14).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-all-the-law-is-fulfilled-in-one-word-thou-shalt-love-thy-neighbour-leviticus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=13 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-5-led-of-the-spirit-the-fruit-against-which-there-is-no-law-ezekiel-36-jeremiah-31
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 36:27 — *I will put my spirit within you, and cause you to walk in my statutes* the Spirit who leads is the Spirit whose express work is to carry the heart into the statutes (Galatians 5:18).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-led-of-the-spirit-the-fruit-against-which-there-is-no-law-ezekiel-36-jeremiah-31'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 31:33 — *I will put my law in their inward parts, and write it in their hearts* the new covenant is Torah moved inward, not Torah removed; so *not under the law* cannot mean loosed from it (Galatians 5:18).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-led-of-the-spirit-the-fruit-against-which-there-is-no-law-ezekiel-36-jeremiah-31'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 19:18 — *thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* the love that crowns the fruit is the very thing the law commands; *against such there is no law* (Galatians 5:23).'
+  FROM cross_reference_threads t, cross_references x, _s223_g05_lookup sv, _s223_g05_lookup tv
+ WHERE t.slug='galatians-5-led-of-the-spirit-the-fruit-against-which-there-is-no-law-ezekiel-36-jeremiah-31'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=5 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_galatians_06.sql (S223 Galatians 6) -----
+-- =====================================================================
+-- S223 minion — GALATIANS 6 FULL-LIBRARY cross-references (closing chapter)
+-- =====================================================================
+-- Chapter: GALATIANS 6 (18 verses).  Tag: g06 (temp view _s223_g06_lookup).
+-- Sort band: floor 7325, step 3 (7325, 7328, 7331, 7334, 7337 used; under 7350).
+-- Source is ALWAYS the canon Galatians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (HIGHEST VOICE-RISK BOOK — "The Galatians Lie"; Red Lines #4/#5/#6/#7/#10):
+-- Galatians is written to the scattered seed of Yashar'el (Israel) living among the nations with
+-- covenant memory dimmed by exile — NOT pagans who never had Torah. Paul answers the agitators'
+-- proselyte gospel (*Except ye be circumcised after the manner of Moses, ye cannot be saved*,
+-- Acts 15:1): flesh-credential-as-doorway, NOT Torah-as-such. The closing chapter UPHOLDS Torah
+-- at every contested turn. *Bear ye one another's burdens, and so fulfil the law of Messiah*
+-- (6:2) — *the law of Messiah* is the Torah lived out in love, the Leviticus 19:18 command Paul
+-- already cited at 5:14; fulfil ≠ abolish (HIDDEN TORAH-AFFIRMING). *Be not deceived; Elohim
+-- (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (6:7) — the
+-- sowing-and-reaping consequence-system is STILL OPERATIVE; grace opened the door home but did not
+-- cancel consequence (complete-the-sentence frame). *Neither circumcision availeth any thing, nor
+-- uncircumcision, but a new creature* (6:15) is the same teaching as 1 Corinthians 7:19 (*but the
+-- keeping of the commandments of Elohim (God)*) — the flesh-mark is nothing, the new heart that
+-- keeps the commandments is everything (Ezekiel 36:26). *The Yashar'el (Israel) of Elohim (God)*
+-- (6:16) is the covenant people, the gathered seed of Yashar'el coming home — NOT a new or
+-- replacement people superseding Yashar'el (the Psalms close every blessing with *peace upon
+-- Yashar'el (Israel)*). The mark Paul bears in his body (6:17) is the true mark over against the
+-- agitators' circumcision-mark. Christology: Yahusha is the Formed drawn from the Formless, who is
+-- Yahuah (Lord) and has a Father. The default trained reading — grace-against-law, Torah-abolished,
+-- the-Israel-of-God-is-the-church-replacing-Israel — is the antichrist reading this apparatus exists
+-- to dismantle and must surface nowhere.
+--
+-- PER-VERSE LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1     restore in the spirit of meekness; considering thyself lest thou also be tempted
+--           Tanakh: none warranted (the restoration-of-the-erring root is carried by the NT pair)
+--           Extras: none warranted   NT: Matthew 18:15 (go and tell him his fault... gain thy
+--                   brother), James 5:19-20 (convert him from the error of his way, save a soul)
+--   v.2-3   bear one another's burdens, and so fulfil the law of Messiah (HIDDEN TORAH-AFFIRMING)
+--           Tanakh: Leviticus 19:18 (love thy neighbour as thyself) — the very command Paul names
+--           Extras: none warranted (the Torah root + NT echoes carry it cleanly)
+--           NT: John 13:34 (a new commandment, love one another), Romans 15:1 (bear the infirmities
+--                   of the weak)
+--   v.4-5   prove his own work; every man shall bear his own burden — carried in prose at v.7-8
+--           (the personal-accountability axis of the sowing-and-reaping thread)
+--   v.6     communicate to him that teacheth — none warranted (no load-bearing weave)
+--   v.7-8   God is not mocked; whatsoever a man soweth, that shall he also reap (consequence-system)
+--           Tanakh: Job 4:8 (they that plow iniquity... reap the same), Proverbs 22:8 (he that
+--                   soweth iniquity shall reap vanity), Hosea 8:7 (sown the wind, reap the
+--                   whirlwind), Hosea 10:12 (sow in righteousness, reap in mercy), Deuteronomy 30:19
+--                   (I have set before you life and death... therefore choose life)
+--           Extras: none warranted   NT: none warranted (Paul is himself the NT voice here)
+--   v.9-10  in due season we shall reap, if we faint not — carried in prose at v.7-8 thread
+--   v.11-14 large letter; constrain you to be circumcised; God forbid that I should glory save in
+--           the cross — the agitators' flesh-show; carried in prose at v.15 thread (anti-flesh-credential)
+--   v.15    neither circumcision nor uncircumcision, but a new creature
+--           Tanakh: Ezekiel 36:26 (a new heart... a new spirit) — the new-creature root
+--           Extras: none warranted   NT: 1 Corinthians 7:19 (circumcision is nothing... but the
+--                   keeping of the commandments of Elohim (God)), 2 Corinthians 5:17 (in Messiah...
+--                   a new creature)
+--   v.16    the Yashar'el (Israel) of Elohim (God) — the gathered covenant seed, NOT a replacement
+--           Tanakh: Psalm 125:5 (peace shall be upon Yashar'el (Israel)), Psalm 128:6 (peace upon
+--                   Yashar'el (Israel)) — the benediction Paul echoes
+--           Extras: none warranted   NT: none warranted (Galatians 6:16 is itself the NT witness)
+--   v.17-18 the marks of the Lord Yahusha; the grace... be with your spirit — none warranted
+--           (the true-mark contrast is carried in prose at v.15; no load-bearing external weave)
+--
+-- THREADS (slug -> target libraries):
+--   7325 galatians-6-restore-in-the-spirit-of-meekness-matthew-18-james-5                    (NT)
+--   7328 galatians-6-bear-one-anothers-burdens-and-fulfil-the-law-of-messiah-leviticus-19-john-13  (Tanakh + NT)
+--   7331 galatians-6-whatsoever-a-man-soweth-that-shall-he-reap-job-4-proverbs-22-hosea-8     (Tanakh)
+--   7334 galatians-6-neither-circumcision-nor-uncircumcision-but-a-new-creature-1-corinthians-7-ezekiel-36 (Tanakh + NT)
+--   7337 galatians-6-the-israel-of-god-the-gathered-seed-not-a-replacement-people-psalm-125-128 (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s223_g06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: galatians-6-restore-in-the-spirit-of-meekness-matthew-18-james-5
+  ('canon', 'galatians', 6, 1, 'canon', 'matthew', 18, 15, 'free', E'*Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother.* (Matthew 18:15). *Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness* (Galatians 6:1). Paul writes nothing new but the way of his Master: the fallen brother is not cast off but sought and gained, the fault answered face to face and *in the spirit of meekness.* The aim of the rebuke is restoration, *that thou mayest gain thy brother.*'),
+  ('canon', 'galatians', 6, 1, 'canon', 'james', 5, 19, 'free', E'*Brethren, if any of you do err from the truth, and one convert him* (James 5:19). *Restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted* (Galatians 6:1). The brother who has strayed from the truth is not abandoned but turned back; the one who *restores* him does the work of love. The same household charge runs through both letters: to go after the one who has erred and bring him home.'),
+  ('canon', 'galatians', 6, 1, 'canon', 'james', 5, 20, 'free', E'*Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins.* (James 5:20). *Ye which are spiritual, restore such an one in the spirit of meekness* (Galatians 6:1). To restore the one overtaken in a fault is no small thing — it *saves a soul from death.* This is why it must be done gently, *considering thyself, lest thou also be tempted,* for the restorer stands in the same need of mercy as the restored.'),
+  -- thread: galatians-6-bear-one-anothers-burdens-and-fulfil-the-law-of-messiah-leviticus-19-john-13
+  ('canon', 'galatians', 6, 2, 'canon', 'leviticus', 19, 18, 'free', E'*Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD).* (Leviticus 19:18). *Bear ye one another''s burdens, and so fulfil the law of Messiah (Christ)* (Galatians 6:2). *The law of Messiah* is no new law set against the old: it is the Torah command *love thy neighbour as thyself* — the very word Paul named at *all the law is fulfilled in one word... Thou shalt love thy neighbour as thyself* (Galatians 5:14). To bear one another''s burdens IS to keep this commandment; to fulfil it is to do it, never to abolish it.'),
+  ('canon', 'galatians', 6, 2, 'canon', 'john', 13, 34, 'free', E'*A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another.* (John 13:34). *Bear ye one another''s burdens, and so fulfil the law of Messiah (Christ)* (Galatians 6:2). The *law of Messiah* is the Master''s own commandment, *that ye love one another* — new not because it overturns Leviticus 19:18 but because it is now measured by his own love, *as I have loved you.* The Torah command is lifted up and lived out, not laid aside.'),
+  ('canon', 'galatians', 6, 2, 'canon', 'romans', 15, 1, 'free', E'*We then that are strong ought to bear the infirmities of the weak, and not to please ourselves.* (Romans 15:1). *Bear ye one another''s burdens, and so fulfil the law of Messiah (Christ)* (Galatians 6:2). Paul teaches the same in both letters: the strong carry the weak. The burden-bearing love that fulfils *the law of Messiah* is not a feeling but a doing — to take up the infirmity of another and *not to please ourselves.*'),
+  -- thread: galatians-6-whatsoever-a-man-soweth-that-shall-he-reap-job-4-proverbs-22-hosea-8
+  ('canon', 'galatians', 6, 7, 'canon', 'job', 4, 8, 'free', E'*Even as I have seen, they that plow iniquity, and sow wickedness, reap the same.* (Job 4:8). *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap.* (Galatians 6:7). The law of the harvest stood before Paul ever wrote it: *they that plow iniquity... reap the same.* Grace opened the door home, but it did not unmake this — the sowing-and-reaping is real because the Way is real, and *Elohim (God) is not mocked.*'),
+  ('canon', 'galatians', 6, 7, 'canon', 'proverbs', 22, 8, 'free', E'*He that soweth iniquity shall reap vanity: and the rod of his anger shall fail.* (Proverbs 22:8). *Whatsoever a man soweth, that shall he also reap* (Galatians 6:7). The proverb names the same harvest: *he that soweth iniquity shall reap vanity.* What a man plants in the field of his life he gathers back; the consequence is woven into the order Yahuah (LORD) made, and no man mocks it.'),
+  ('canon', 'galatians', 6, 7, 'canon', 'hosea', 8, 7, 'free', E'*For they have sown the wind, and they shall reap the whirlwind: it hath no stalk: the bud shall yield no meal* (Hosea 8:7). *For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting.* (Galatians 6:8). Hosea spoke this judgment over scattered Yashar''el (Israel) — they *sown the wind* and *reap the whirlwind.* Paul presses the same law on the same people now coming home: to sow to the flesh is to *reap corruption,* and grace did not cancel the reaping but opened the way to sow instead *to the Spirit* and reap *life everlasting.*'),
+  ('canon', 'galatians', 6, 8, 'canon', 'hosea', 10, 12, 'free', E'*Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek Yahuah (LORD), till he come and rain righteousness upon you.* (Hosea 10:12). *He that soweth to the Spirit shall of the Spirit reap life everlasting.* (Galatians 6:8). The prophet''s call is the door the consequence-system leaves open: *sow to yourselves in righteousness, reap in mercy.* The same hand that warns of the whirlwind calls Yashar''el (Israel) to break up the fallow ground and seek Yahuah (LORD) — to sow to the Spirit and reap the life he rains down.'),
+  ('canon', 'galatians', 6, 8, 'canon', 'deuteronomy', 30, 19, 'free', E'*I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). *He that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting.* (Galatians 6:8). Moses set the same two harvests before the same people: *life and death, blessing and cursing... therefore choose life.* The sowing-and-reaping of Galatians is the covenant''s ancient either/or — the consequence is real, and the call is the same: choose life, that thou and thy seed may live.'),
+  -- thread: galatians-6-neither-circumcision-nor-uncircumcision-but-a-new-creature-1-corinthians-7-ezekiel-36
+  ('canon', 'galatians', 6, 15, 'canon', '1-corinthians', 7, 19, 'free', E'*Circumcision is nothing, and uncircumcision is nothing, but the keeping of the commandments of Elohim (God).* (1 Corinthians 7:19). *For in HaMashiach Yahusha (Christ Jesus) neither circumcision availeth any thing, nor uncircumcision, but a new creature.* (Galatians 6:15). Paul says the same thing twice, and the Corinthian half supplies the words the Galatian half assumes: the flesh-mark *availeth nothing* — what counts is *the keeping of the commandments of Elohim (God).* The new creature is precisely the one whose new heart keeps the commandments; the agitators'' circumcision-credential is nothing, the Torah is not.'),
+  ('canon', 'galatians', 6, 15, 'canon', 'ezekiel', 36, 26, 'free', E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.* (Ezekiel 36:26). *Neither circumcision availeth any thing, nor uncircumcision, but a new creature.* (Galatians 6:15). The *new creature* is the new heart Yahuah (LORD) promised the scattered house — the stony heart taken away, the heart of flesh given. And the next breath of the promise tells what the new heart is for: *I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27). The new creature is the Torah-keeping heart, not a heart set free from Torah.'),
+  ('canon', 'galatians', 6, 15, 'canon', '2-corinthians', 5, 17, 'free', E'*Therefore if any man be in Messiah (Christ), he is a new creature: old things are passed away; behold, all things are become new.* (2 Corinthians 5:17). *For in HaMashiach Yahusha (Christ Jesus)... a new creature.* (Galatians 6:15). The same phrase stands in both letters: *a new creature.* Standing before Yahuah (LORD) does not turn on the flesh-mark of circumcision or its absence but on being *in Messiah (Christ)* — remade, the old passed away, all things become new.'),
+  -- thread: galatians-6-the-israel-of-god-the-gathered-seed-not-a-replacement-people-psalm-125-128
+  ('canon', 'galatians', 6, 16, 'canon', 'psalms', 125, 5, 'free', E'*As for such as turn aside unto their crooked ways, Yahuah (LORD) shall lead them forth with the workers of iniquity: but peace shall be upon Yashar''el (Israel).* (Psalm 125:5). *And as many as walk according to this rule, peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim (God).* (Galatians 6:16). Paul closes with the psalmist''s own benediction: *peace shall be upon Yashar''el (Israel).* He does not invent a new people to bless in Israel''s place — he pronounces the ancient covenant peace over the gathered seed of Yashar''el (Israel), the scattered now walking according to the rule and brought home.'),
+  ('canon', 'galatians', 6, 16, 'canon', 'psalms', 128, 6, 'free', E'*Yea, thou shalt see thy children''s children, and peace upon Yashar''el (Israel).* (Psalm 128:6). *Peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim (God).* (Galatians 6:16). The Psalms of Ascent end as Paul ends: *peace upon Yashar''el (Israel).* *The Yashar''el (Israel) of Elohim (God)* is not a replacement for that Israel but its fullness — the covenant people of Yahuah (LORD), the gathered children walking in his way, upon whom the old benediction of peace now rests.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s223_g06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s223_g06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-6-restore-in-the-spirit-of-meekness-matthew-18-james-5',
+       E'Restore such an one in the spirit of meekness — Matthew 18, James 5',
+       E'The closing chapter opens with the work of the household: not the casting off of the fallen but the seeking of them. *Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted* (Galatians 6:1). This is the Master''s own way. *Moreover if thy brother shall trespass against thee, go and tell him his fault between thee and him alone: if he shall hear thee, thou hast gained thy brother* (Matthew 18:15) — the fault answered face to face, the aim the gaining of the brother, not his exposure. And James names the weight of it: *Brethren, if any of you do err from the truth, and one convert him; let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins* (James 5:19-20). To restore the one overtaken is to *save a soul from death* — which is why it must be done *in the spirit of meekness,* the restorer remembering his own frailty, *considering thyself, lest thou also be tempted.* The strong do not stand over the weak but stoop to lift them.',
+       sv.verse_id, ev.verse_id, 'free', 7325
+  FROM _s223_g06_lookup sv, _s223_g06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=6 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-6-bear-one-anothers-burdens-and-fulfil-the-law-of-messiah-leviticus-19-john-13',
+       E'Bear one another''s burdens, and so fulfil the law of Messiah — Leviticus 19, John 13',
+       E'Here the inherited reading hears *the law of Messiah* as a new law set against the old, and the hearing is exactly wrong. *Bear ye one another''s burdens, and so fulfil the law of Messiah (Christ)* (Galatians 6:2). What is *the law of Messiah?* Paul has already told us, two breaths earlier: *all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself* (Galatians 5:14). It is the Torah command itself — *Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18). To bear one another''s burdens IS to keep this commandment; to *fulfil* it is to do it, never to do away with it. The Master gave the same word and measured it by his own love: *A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another* (John 13:34) — new not because it overturns Leviticus but because the standard is now his own laying-down of himself. And Paul teaches the doing of it plainly in his other letter: *We then that are strong ought to bear the infirmities of the weak, and not to please ourselves* (Romans 15:1). The burden-bearing love that fulfils *the law of Messiah* is the Torah lived out — the commandment carried, not cancelled.',
+       sv.verse_id, ev.verse_id, 'free', 7328
+  FROM _s223_g06_lookup sv, _s223_g06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=6 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-6-whatsoever-a-man-soweth-that-shall-he-reap-job-4-proverbs-22-hosea-8',
+       E'Whatsoever a man soweth, that shall he also reap — Job 4, Proverbs 22, Hosea',
+       E'Grace opened the door home; it did not unmake the law of the harvest. *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap. For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting* (Galatians 6:7-8). The sowing-and-reaping is no new threat but the oldest order of the Way, and the whole Tanakh stands behind Paul''s word. *Even as I have seen, they that plow iniquity, and sow wickedness, reap the same* (Job 4:8). *He that soweth iniquity shall reap vanity: and the rod of his anger shall fail* (Proverbs 22:8). Over scattered Yashar''el (Israel) the prophet thundered it: *For they have sown the wind, and they shall reap the whirlwind* (Hosea 8:7). The consequence is real because the Way is real — *Elohim (God) is not mocked.* Yet the same law that warns leaves the door open, for the harvest turns on what is sown: *Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek Yahuah (LORD), till he come and rain righteousness upon you* (Hosea 10:12). And Moses set the two harvests before the people from the first: *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). To sow to the flesh is to reap corruption; to sow to the Spirit is to reap life everlasting — the cross opened the way to sow to the Spirit, but it did not cancel the reaping. *And let us not be weary in well doing: for in due season we shall reap, if we faint not* (Galatians 6:9).',
+       sv.verse_id, ev.verse_id, 'free', 7331
+  FROM _s223_g06_lookup sv, _s223_g06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=6 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-6-neither-circumcision-nor-uncircumcision-but-a-new-creature-1-corinthians-7-ezekiel-36',
+       E'Neither circumcision nor uncircumcision, but a new creature — 1 Corinthians 7, Ezekiel 36',
+       E'The agitators *desire to make a fair shew in the flesh* and *constrain you to be circumcised* (Galatians 6:12), glorying in the flesh-mark as the doorway to covenant standing. Paul answers the whole flesh-credential system: *For in HaMashiach Yahusha (Christ Jesus) neither circumcision availeth any thing, nor uncircumcision, but a new creature* (Galatians 6:15). His own letter to Corinth supplies the words this verse assumes, and it is decisive against the Torah-abolished reading: *Circumcision is nothing, and uncircumcision is nothing, but the keeping of the commandments of Elohim (God)* (1 Corinthians 7:19). The flesh-mark counts for nothing — what counts is *the keeping of the commandments of Elohim (God).* The new creature is not the one freed from the commandments but the one given a heart that keeps them, exactly as Yahuah (LORD) promised the scattered house: *A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh* (Ezekiel 36:26) — and the very next word names its purpose, *I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27). The new heart is the Torah-keeping heart. So standing before Yahuah (LORD) turns not on the flesh but on being remade in Messiah: *Therefore if any man be in Messiah (Christ), he is a new creature: old things are passed away; behold, all things are become new* (2 Corinthians 5:17). Not circumcision, not uncircumcision — a new creature whose new heart walks in his statutes.',
+       sv.verse_id, ev.verse_id, 'free', 7334
+  FROM _s223_g06_lookup sv, _s223_g06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=6 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'galatians-6-the-israel-of-god-the-gathered-seed-not-a-replacement-people-psalm-125-128',
+       E'The Yashar''el (Israel) of Elohim (God) — the gathered seed, not a replacement people (Psalm 125, 128)',
+       E'This is the verse the replacement reading seizes, and the seizing reverses Paul''s own words. *And as many as walk according to this rule, peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim (God)* (Galatians 6:16). The inherited reading hears *the Israel of God* as a new people — the church — pronounced in the place of Yashar''el (Israel), the old Israel set aside. But Paul is closing his letter to the scattered seed of Yashar''el (Israel) come home, and he closes it with the Psalms'' own benediction. *As for such as turn aside unto their crooked ways, Yahuah (LORD) shall lead them forth with the workers of iniquity: but peace shall be upon Yashar''el (Israel)* (Psalm 125:5). *Yea, thou shalt see thy children''s children, and peace upon Yashar''el (Israel)* (Psalm 128:6). The benediction of the gathered covenant people ends, always, *peace upon Yashar''el (Israel)* — and that is the very blessing Paul pronounces. *The Yashar''el (Israel) of Elohim (God)* is not a people who replace Israel but Israel in its fullness: the covenant people of Yahuah (LORD), the scattered now *walking according to this rule,* the gathered seed upon whom the ancient peace at last rests. He does not bless a new Israel over the grave of the old; he blesses the old Israel restored. And he seals it with his own body: *From henceforth let no man trouble me: for I bear in my body the marks of the Lord Yahusha (Lord Jesus)* (Galatians 6:17) — the true mark of belonging, over against the agitators'' mark in the flesh.',
+       sv.verse_id, ev.verse_id, 'free', 7337
+  FROM _s223_g06_lookup sv, _s223_g06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='galatians' AND ev.chapter_number=6 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: galatians-6-restore-in-the-spirit-of-meekness-matthew-18-james-5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 18:15 — *go and tell him his fault between thee and him alone... thou hast gained thy brother* the Master''s own way of restoration, the fault answered to gain the brother (Galatians 6:1).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-restore-in-the-spirit-of-meekness-matthew-18-james-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=18 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 5:19 — *if any of you do err from the truth, and one convert him* the strayed brother sought and turned back, not abandoned (Galatians 6:1).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-restore-in-the-spirit-of-meekness-matthew-18-james-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 5:20 — *he which converteth the sinner from the error of his way shall save a soul from death* the weight of restoration, why it is done in meekness (Galatians 6:1).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-restore-in-the-spirit-of-meekness-matthew-18-james-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-6-bear-one-anothers-burdens-and-fulfil-the-law-of-messiah-leviticus-19-john-13
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 19:18 — *thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* the Torah command that IS *the law of Messiah*; fulfil means do, not abolish (Galatians 6:2).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-bear-one-anothers-burdens-and-fulfil-the-law-of-messiah-leviticus-19-john-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'John 13:34 — *A new commandment I give unto you, That ye love one another; as I have loved you* the Master''s command, the Torah love measured by his own love (Galatians 6:2).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-bear-one-anothers-burdens-and-fulfil-the-law-of-messiah-leviticus-19-john-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=13 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 15:1 — *we then that are strong ought to bear the infirmities of the weak* Paul teaches the same burden-bearing love elsewhere, the law of Messiah in deed (Galatians 6:2).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-bear-one-anothers-burdens-and-fulfil-the-law-of-messiah-leviticus-19-john-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-6-whatsoever-a-man-soweth-that-shall-he-reap-job-4-proverbs-22-hosea-8
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 4:8 — *they that plow iniquity, and sow wickedness, reap the same* the law of the harvest stood before Paul wrote it; grace did not unmake it (Galatians 6:7).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-whatsoever-a-man-soweth-that-shall-he-reap-job-4-proverbs-22-hosea-8'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=4 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 22:8 — *he that soweth iniquity shall reap vanity* the same harvest, woven into the order Yahuah (LORD) made (Galatians 6:7).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-whatsoever-a-man-soweth-that-shall-he-reap-job-4-proverbs-22-hosea-8'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=22 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hosea 8:7 — *they have sown the wind, and they shall reap the whirlwind* the judgment over scattered Yashar''el (Israel), the consequence Paul presses on them now (Galatians 6:8).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-whatsoever-a-man-soweth-that-shall-he-reap-job-4-proverbs-22-hosea-8'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=8 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hosea 10:12 — *sow to yourselves in righteousness, reap in mercy... for it is time to seek Yahuah (LORD)* the door the consequence-system leaves open: sow to the Spirit (Galatians 6:8).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-whatsoever-a-man-soweth-that-shall-he-reap-job-4-proverbs-22-hosea-8'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Deuteronomy 30:19 — *I have set before you life and death, blessing and cursing: therefore choose life* the two harvests set before the same people from the first (Galatians 6:8).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-whatsoever-a-man-soweth-that-shall-he-reap-job-4-proverbs-22-hosea-8'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-6-neither-circumcision-nor-uncircumcision-but-a-new-creature-1-corinthians-7-ezekiel-36
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Corinthians 7:19 — *circumcision is nothing... but the keeping of the commandments of Elohim (God)* the words Galatians 6:15 assumes: the new creature keeps the commandments (Galatians 6:15).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-neither-circumcision-nor-uncircumcision-but-a-new-creature-1-corinthians-7-ezekiel-36'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 36:26 — *A new heart also will I give you, and a new spirit will I put within you* the new creature is the new heart promised the scattered house, to walk in his statutes (Galatians 6:15).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-neither-circumcision-nor-uncircumcision-but-a-new-creature-1-corinthians-7-ezekiel-36'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Corinthians 5:17 — *if any man be in Messiah (Christ), he is a new creature: old things are passed away* the same phrase; standing turns on being in Messiah, not the flesh-mark (Galatians 6:15).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-neither-circumcision-nor-uncircumcision-but-a-new-creature-1-corinthians-7-ezekiel-36'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=5 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: galatians-6-the-israel-of-god-the-gathered-seed-not-a-replacement-people-psalm-125-128
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 125:5 — *but peace shall be upon Yashar''el (Israel)* the psalmist''s benediction Paul echoes; he blesses Israel restored, not a people in its place (Galatians 6:16).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-the-israel-of-god-the-gathered-seed-not-a-replacement-people-psalm-125-128'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=125 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 128:6 — *and peace upon Yashar''el (Israel)* the Psalms close as Paul closes; *the Israel of God* is Israel in its fullness, the gathered seed (Galatians 6:16).'
+  FROM cross_reference_threads t, cross_references x, _s223_g06_lookup sv, _s223_g06_lookup tv
+ WHERE t.slug='galatians-6-the-israel-of-god-the-gathered-seed-not-a-replacement-people-psalm-125-128'
+   AND sv.edition_slug='canon' AND sv.book_slug='galatians' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=128 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session223 — Galatians cross-references complete.'
