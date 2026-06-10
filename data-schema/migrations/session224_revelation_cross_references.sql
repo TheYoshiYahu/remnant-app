@@ -1975,6 +1975,1285 @@ SELECT t.id, x.id, 3, E'Daniel 7:14 — *there was given him dominion, and glory
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_revelation_06.sql (S224 Revelation 6) -----
+-- =====================================================================
+-- S224 minion — REVELATION 6 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 6 (17 verses) — THE SIX SEALS opened by the Lamb.
+-- Tag: rv06 (temp view _s224_rv06_lookup).
+-- Sort band: floor 9125, step 3 (9125, 9128, 9131, 9134, 9137 used; under 9150).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Revelation never says "it is written" — it is woven of allusion. Chapter 6 re-speaks
+-- Zechariah's horsemen, the Leviticus-26 / Ezekiel-14 covenant judgments, the prophets' "how long,"
+-- and the prophets' day-of-Yahuah cosmic-darkness. The seals are the consummation of the covenant
+-- story — the same Yahuah (LORD), the same covenant sanctions the prophets named, the same cry of the
+-- slain for vindication, the same dreadful day of his wrath — NOT a dispensational escape-clock. The
+-- One on the throne (the Father) and the Lamb (the Formed Son) are distinguished throughout (6:16,
+-- *the face of him that sitteth on the throne, and... the wrath of the Lamb*); preserved as the pull
+-- gives. The slain *for the word of Elohim (God), and for the testimony which they held* (6:9) are the
+-- saints whose blood the covenant-God avenges, the same cry as Psalm 79 and Zechariah 1.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every meaningful verse-block):
+--   v.1-8   the four horsemen — white/red/black/pale; sword, famine, death, beasts
+--           Tanakh: Zechariah 1:8-11 (the red/speckled/white horses sent to walk to and fro),
+--                   Zechariah 6:1-6 (the four chariots, the four spirits of the heavens going forth),
+--                   Ezekiel 14:21 (the four sore judgments: sword, famine, noisome beast, pestilence),
+--                   Leviticus 26:25-26 (the sword avenging the covenant, the broken staff of bread)
+--           Extras: none warranted (the horsemen weave is wholly the prophets' chariot-vision)
+--           NT:     none warranted (carried into the day-of-Yahuah cosmic thread at v.12)
+--   v.9-11  the souls under the altar slain for the word, crying How long, and given rest
+--           Tanakh: Psalm 79:5 + 79:10 (How long... the revenging of the blood of thy servants),
+--                   Zechariah 1:12 (O Yahuah of hosts, how long wilt thou not have mercy)
+--           Extras: 1 Enoch 47:1-4 (the blood of the righteous, the prayer ascending, the books of
+--                   the living, the number of the righteous offered), 2 Esdras 4:35-36 (the souls of
+--                   the righteous: How long... until the number of seeds is filled)
+--           NT:     none warranted
+--   v.12-14 the sun black as sackcloth, the moon as blood, the stars falling, heaven as a scroll
+--           Tanakh: Joel 2:31 (sun to darkness, moon to blood before the day of Yahuah), Isaiah 13:10
+--                   (the stars... shall not give their light, the sun darkened), Isaiah 34:4 (the host
+--                   of heaven dissolved, the heavens rolled as a scroll, the fig falling), Ezekiel 32:7
+--                   (I will cover the heaven, the stars dark, the sun covered)
+--           Extras: none warranted   NT: Matthew 24:29 (the sun darkened, the moon, the stars fall)
+--   v.15-16 the kings and bondmen hide; Fall on us, hide us from the face... and the wrath of the Lamb
+--           Tanakh: Hosea 10:8 (say to the mountains, Cover us; and to the hills, Fall on us),
+--                   Isaiah 2:19 (into the holes of the rocks for fear of Yahuah and the glory of his majesty)
+--           Extras: none warranted   NT: none warranted
+--   v.17    the great day of his wrath is come; and who shall be able to stand?
+--           Tanakh: Joel 2:11 (the day of Yahuah is great and very terrible; who can abide it),
+--                   Zephaniah 1:14-15 (the great day of Yahuah... a day of wrath), Malachi 3:2 (who may
+--                   abide the day of his coming? who shall stand when he appeareth?)
+--           Extras: none warranted   NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   9125 revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments  (Tanakh)
+--   9128 revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79           (Tanakh + Extras)
+--   9131 revelation-6-the-sun-black-the-moon-as-blood-the-heaven-as-a-scroll-joel-2-isaiah-34         (Tanakh + NT)
+--   9134 revelation-6-hide-us-from-the-face-and-the-wrath-of-the-lamb-hosea-10-isaiah-2               (Tanakh)
+--   9137 revelation-6-the-great-day-of-his-wrath-who-shall-be-able-to-stand-joel-2-zephaniah-1        (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments
+  ('canon', 'revelation', 6, 2, 'canon', 'zechariah', 1, 8, 'free', E'*I saw by night, and behold a man riding upon a red horse, and he stood among the myrtle trees that were in the bottom; and behind him were there red horses, speckled, and white.* (Zechariah 1:8). The seer of the Apocalypse has Zechariah''s night-vision in his ear: when the Lamb opens the seals and *behold a white horse* goes forth (Revelation 6:2), the coloured horses are the prophet''s own — red, speckled, and white, the riders Yahuah (LORD) appoints to walk through the earth. The horsemen of the seals are no new symbol minted out of nowhere; they re-speak the chariot-vision the covenant-God gave Zechariah of the powers he sends out over the nations.'),
+  ('canon', 'revelation', 6, 4, 'canon', 'zechariah', 1, 10, 'free', E'*And the man that stood among the myrtle trees answered and said, These are they whom Yahuah (LORD) hath sent to walk to and fro through the earth.* (Zechariah 1:10). The horses of Zechariah are *they whom Yahuah (LORD) hath sent* — they go forth only at his sending. So when the red horse goes out and *power was given to him that sat thereon to take peace from the earth* (Revelation 6:4), the passive *was given* names the same hand: the rider takes peace because the One on the throne loosed him to do it. The seals are opened by the Lamb; the riders ride by grant; nothing goes forth in the earth but that Yahuah (LORD) has sent it.'),
+  ('canon', 'revelation', 6, 5, 'canon', 'zechariah', 6, 1, 'free', E'*And I turned, and lifted up mine eyes, and looked, and, behold, there came four chariots out from between two mountains; and the mountains were mountains of brass.* (Zechariah 6:1). Zechariah''s second horse-vision sets out four chariots, and Revelation''s four seals loose four horses — white, red, black, and pale. When the third seal opens and *lo a black horse* appears (Revelation 6:5), it answers the black horses of the second chariot. The fourfold pattern is the prophet''s: four chariots, four spirits, four winds of judgment going out over the whole earth from before its Master.'),
+  ('canon', 'revelation', 6, 5, 'canon', 'zechariah', 6, 5, 'free', E'*And the angel answered and said unto me, These are the four spirits of the heavens, which go forth from standing before Yahuah (Lord) of all the earth.* (Zechariah 6:5). The four chariots are *the four spirits of the heavens, which go forth from standing before Yahuah (Lord) of all the earth* — they stand before him and depart at his word. The four horses of the seals go forth on the same authority: *Yahuah (Lord) of all the earth* sends them out, the powers of judgment loosed from before his throne. The black horse with *a pair of balances in his hand* (Revelation 6:5), weighing out bread by measure, rides as one of these heaven-sent spirits, not as a power that has slipped his Master''s hand.'),
+  ('canon', 'revelation', 6, 8, 'canon', 'ezekiel', 14, 21, 'free', E'*For thus saith Adonai Yahuah (the Lord GOD); How much more when I send my four sore judgments upon Jerusalem, the sword, and the famine, and the noisome beast, and the pestilence, to cut off from it man and beast?* (Ezekiel 14:21). The pale horse gathers the four into one: *power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth* (Revelation 6:8). These are Ezekiel''s *four sore judgments* — *the sword, and the famine, and the noisome beast, and the pestilence* — the covenant-sanctions Yahuah (LORD) said he would *send.* Death and Hell ride on the warrant of the same God who told Ezekiel these are mine to send; the seal does not invent the judgments, it looses the ones the prophets had already named.'),
+  ('canon', 'revelation', 6, 4, 'canon', 'leviticus', 26, 25, 'free', E'*And I will bring a sword upon you, that shall avenge the quarrel of my covenant: and when ye are gathered together within your cities, I will send the pestilence among you; and ye shall be delivered into the hand of the enemy.* (Leviticus 26:25). The great sword given to the red rider (Revelation 6:4) and the famine of the black rider are the covenant''s own sanctions. *I will bring a sword upon you, that shall avenge the quarrel of my covenant* — the sword is not random violence but the covenant-God''s answer to covenant-breaking, and the pestilence rides with it, the very *death* that follows the pale horse. The seals loose the judgments Leviticus 26 had warned would come.'),
+  ('canon', 'revelation', 6, 6, 'canon', 'leviticus', 26, 26, 'free', E'*And when I have broken the staff of your bread, ten women shall bake your bread in one oven, and they shall deliver you your bread again by weight: and ye shall eat, and not be satisfied.* (Leviticus 26:26). The black horse''s voice cries *A measure of wheat for a penny, and three measures of barley for a penny* (Revelation 6:6) — bread doled out by weight at a famine-price, a day''s wage for a day''s grain. This is the broken *staff of bread* of the covenant curse: *they shall deliver you your bread again by weight: and ye shall eat, and not be satisfied.* The scarcity the third seal opens is the famine-sanction Leviticus named, measured bread that cannot fill.'),
+  -- thread: revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79
+  ('canon', 'revelation', 6, 10, 'canon', 'psalms', 79, 5, 'free', E'*How long, Yahuah (LORD)? wilt thou be angry for ever? shall thy jealousy burn like fire?* (Psalm 79:5). The souls under the altar cry the psalmist''s own cry: *How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:10). The slain of Psalm 79, whose blood was *shed like water round about Jerusalem,* asked *how long?* — and the martyrs under the altar take up the same words. The cry is not for private revenge but for the holy and true God to vindicate his covenant and his slain, the prayer the prophets and psalmists had always prayed.'),
+  ('canon', 'revelation', 6, 10, 'canon', 'psalms', 79, 10, 'free', E'*Wherefore should the heathen say, Where is their Elohim (God)? let him be known among the heathen in our sight by the revenging of the blood of thy servants which is shed.* (Psalm 79:10). The psalm asks Yahuah (LORD) for *the revenging of the blood of thy servants which is shed* — the exact plea of the souls who cry *dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:10). The blood of the servants crying for vindication is one continuous cry from the psalm to the seal: the covenant-God will not leave the blood of his slain unanswered, nor let the nations say *Where is their Elohim (God)?* for ever.'),
+  ('canon', 'revelation', 6, 10, 'canon', 'zechariah', 1, 12, 'free', E'*Then the angel of Yahuah (LORD) answered and said, O Yahuah Tseva''ot (LORD of hosts), how long wilt thou not have mercy on Jerusalem and on the cities of Yahudah (Judah), against which thou hast had indignation these threescore and ten years?* (Zechariah 1:12). In the same horse-vision Revelation 6 re-speaks, the angel of Yahuah (LORD) cries *how long wilt thou not have mercy* — and the souls under the altar cry *How long, O Yahuah (Lord), holy and true* (Revelation 6:10). The *how long?* of the heavenly intercessor and the *how long?* of the martyrs are the same plea: that the God who has long held back would now arise and vindicate his people and his covenant.'),
+  ('canon', 'revelation', 6, 9, 'enoch', '1-enoch', 47, 1, 'extras', E'*And in those days shall have ascended the prayer of the righteous, And the blood of the righteous from the earth before Yahuah (God) of Spirits.* (1 Enoch 47:1). Enoch saw the same altar-scene: the blood of the righteous ascending from the earth before the throne. Under the altar John sees *the souls of them that were slain for the word of Elohim (God), and for the testimony which they held* (Revelation 6:9). The slain do not lie silent — their blood and their prayer go up together before Yahuah (God) of Spirits, the cry of the martyrs reaching the throne, exactly as the Hebrew library had pictured it.'),
+  ('canon', 'revelation', 6, 10, 'enoch', '1-enoch', 47, 4, 'extras', E'*And the hearts of the holy were filled with joy; Because the number of the righteous had been offered, And the prayer of the righteous had been heard, And the blood of the righteous been required before Yahuah (God) of Spirits.* (1 Enoch 47:4). Enoch hears the answer the souls under the altar are waiting for: the blood of the righteous *required* — that is, avenged and accounted for — once *the number of the righteous had been offered.* The martyrs cry *dost thou not judge and avenge our blood* (Revelation 6:10), and are told to *rest yet for a little season, until... their brethren, that should be killed as they were, should be fulfilled* (Revelation 6:11). The rest and the full number are the same answer Enoch already records: the blood is required once the number is complete.'),
+  ('canon', 'revelation', 6, 11, 'apocrypha', '2-esdras', 4, 35, 'extras', E'*Did not the souls also of the righteous ask question of these things in their chambers, saying, How long shall I hope on this fashion? when comes the fruit of the floor of our reward?* (2 Esdras 4:35). Ezra is shown the very scene of the fifth seal: *the souls of the righteous* in their chambers asking *How long?* — the same cry as the souls under the altar (Revelation 6:10), and the answer is the same as theirs. They are told to *rest yet for a little season, until... their brethren... should be fulfilled* (Revelation 6:11); Ezra is told the reward waits *even when the number of seeds is filled.* The waiting-souls and the appointed number are one teaching across the library.'),
+  ('canon', 'revelation', 6, 11, 'apocrypha', '2-esdras', 4, 36, 'extras', E'*And to these things Uriel the archangel gave them answer, and said, Even when the number of seeds is filled in you: for he has weighed the world in the balance.* (2 Esdras 4:36). The answer given to the souls in Esdras is the answer given under the altar: the vindication comes *when the number of seeds is filled.* The martyrs must *rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled* (Revelation 6:11). The filling of the appointed number — the full harvest of the righteous and the martyred — is the hinge on which the judgment turns in both witnesses; the season of rest is measured, not endless.'),
+  -- thread: revelation-6-the-sun-black-the-moon-as-blood-the-heaven-as-a-scroll-joel-2-isaiah-34
+  ('canon', 'revelation', 6, 12, 'canon', 'joel', 2, 31, 'free', E'*The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD) come.* (Joel 2:31). The sixth seal is Joel''s day spoken almost word for word: *the sun became black as sackcloth of hair, and the moon became as blood* (Revelation 6:12). Joel had said *the sun... into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD).* The seal does not announce a strange new portent; it brings to pass the day-of-Yahuah signs the prophet named, the heavens themselves darkened and bloodied before the dread day breaks.'),
+  ('canon', 'revelation', 6, 13, 'canon', 'isaiah', 13, 10, 'free', E'*For the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine.* (Isaiah 13:10). Isaiah''s day-of-Yahuah oracle darkens the same lights: *the stars of heaven... shall not give their light: the sun shall be darkened.* So at the sixth seal *the stars of heaven fell unto the earth* (Revelation 6:13). The cosmic darkening that runs through Isaiah''s and Joel''s day-of-Yahuah is gathered into the opening of the seal — the same heavens, the same shaking, the same dread day announced by the prophets.'),
+  ('canon', 'revelation', 6, 14, 'canon', 'isaiah', 34, 4, 'free', E'*And all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down, as the leaf falleth off from the vine, and as a falling fig from the fig tree.* (Isaiah 34:4). Two of Isaiah''s images stand together in one verse of the seal: *the heaven departed as a scroll when it is rolled together* and the stars fell *even as a fig tree casteth her untimely figs* (Revelation 6:13-14). Isaiah had said *the heavens shall be rolled together as a scroll,* their host falling *as a falling fig from the fig tree.* The seer is reading Isaiah''s day-of-Yahuah straight onto the page: the sky rolled up, the stars dropping like late figs in the wind.'),
+  ('canon', 'revelation', 6, 12, 'canon', 'ezekiel', 32, 7, 'free', E'*And when I shall put thee out, I will cover the heaven, and make the stars thereof dark; I will cover the sun with a cloud, and the moon shall not give her light.* (Ezekiel 32:7). Ezekiel''s lament over the fall of a great power darkens the very same heavens: *I will cover the heaven, and make the stars thereof dark; I will cover the sun.* At the sixth seal *the sun became black as sackcloth of hair, and the moon became as blood* (Revelation 6:12). The covenant-God who darkened the heavens over the proud in Ezekiel''s day darkens them again at the seal — the day-of-Yahuah register the prophets share, the lights of heaven veiled when he arises to judge.'),
+  ('canon', 'revelation', 6, 12, 'canon', 'matthew', 24, 29, 'free', E'*Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken:* (Matthew 24:29). The Master himself gathered Joel and Isaiah into one saying: *the sun be darkened... the moon... the stars shall fall from heaven.* The sixth seal speaks his words back — *the sun became black as sackcloth... and the moon became as blood; and the stars of heaven fell unto the earth* (Revelation 6:12-13). The same cosmic signs the prophets foretold and Yahusha (Jesus) re-spoke now open before John; the seal, the olivet-word, and the prophets witness to one dreadful day.'),
+  -- thread: revelation-6-hide-us-from-the-face-and-the-wrath-of-the-lamb-hosea-10-isaiah-2
+  ('canon', 'revelation', 6, 16, 'canon', 'hosea', 10, 8, 'free', E'*The high places also of Aven, the sin of Yashar''el (Israel), shall be destroyed: the thorn and the thistle shall come up on their altars; and they shall say to the mountains, Cover us; and to the hills, Fall on us.* (Hosea 10:8). The cry of the terrified at the sixth seal is Hosea''s word: they *said to the mountains and rocks, Fall on us, and hide us from the face of him that sitteth on the throne* (Revelation 6:16). Hosea''s guilty *shall say to the mountains, Cover us; and to the hills, Fall on us* — the men who would sooner be crushed by a mountain than face the throne. The prophet had given the very words the kings and bondmen now scream when the day of wrath breaks.'),
+  ('canon', 'revelation', 6, 15, 'canon', 'isaiah', 2, 19, 'free', E'*And they shall go into the holes of the rocks, and into the caves of the earth, for fear of Yahuah (LORD), and for the glory of his majesty, when he ariseth to shake terribly the earth.* (Isaiah 2:19). Isaiah saw the proud flee to the rocks: *into the holes of the rocks, and into the caves of the earth, for fear of Yahuah (LORD).* So at the seal *the kings of the earth, and the great men... hid themselves in the dens and in the rocks of the mountains* (Revelation 6:15). The great earthquake of the seal is Isaiah''s *when he ariseth to shake terribly the earth* — and the mighty who would not bow now hide in the rocks before the face of the One on the throne and the wrath of the Lamb.'),
+  -- thread: revelation-6-the-great-day-of-his-wrath-who-shall-be-able-to-stand-joel-2-zephaniah-1
+  ('canon', 'revelation', 6, 17, 'canon', 'joel', 2, 11, 'free', E'*And Yahuah (LORD) shall utter his voice before his army: for his camp is very great: for he is strong that executeth his word: for the day of Yahuah (LORD) is great and very terrible; and who can abide it?* (Joel 2:11). The seal closes with Joel''s own question: *For the great day of his wrath is come; and who shall be able to stand?* (Revelation 6:17). Joel had asked of *the day of Yahuah (LORD)* — *great and very terrible* — *and who can abide it?* The unanswered question hangs over both: the day of wrath has come, and no power of man, from the kings to the bondmen, can stand against the face of the One who sits on the throne.'),
+  ('canon', 'revelation', 6, 17, 'canon', 'zephaniah', 1, 14, 'free', E'*The great day of Yahuah (LORD) is near, it is near, and hasteth greatly, even the voice of the day of Yahuah (LORD): the mighty man shall cry there bitterly.* (Zephaniah 1:14). The seal''s *great day of his wrath* (Revelation 6:17) is Zephaniah''s *great day of Yahuah (LORD)* — near, hastening, when *the mighty man shall cry there bitterly.* And it is precisely the mighty who cry at the seal: the *great men, and the rich men, and the chief captains, and the mighty men* hiding in the rocks (Revelation 6:15). The prophet named the day and named who would wail in it; the seal brings it to pass.'),
+  ('canon', 'revelation', 6, 17, 'canon', 'zephaniah', 1, 15, 'free', E'*That day is a day of wrath, a day of trouble and distress, a day of wasteness and desolation, a day of darkness and gloominess, a day of clouds and thick darkness,* (Zephaniah 1:15). Zephaniah calls it outright *a day of wrath* — the very name the seal gives: *the great day of his wrath is come* (Revelation 6:17). The darkness and thick clouds the prophet heaps up are the darkened sun and bloodied moon of the sixth seal; the seal is the day Zephaniah saw, the wrath-day of Yahuah (LORD) breaking on a world that cannot stand before it.'),
+  ('canon', 'revelation', 6, 17, 'canon', 'malachi', 3, 2, 'free', E'*But who may abide the day of his coming? and who shall stand when he appeareth? for he is like a refiner''s fire, and like fullers'' soap:* (Malachi 3:2). Malachi asks the seal''s closing question word for word: *who shall stand when he appeareth?* — and the seal answers, *who shall be able to stand?* (Revelation 6:17). The day of his coming, the refiner''s fire, is the day of wrath; none can abide it of themselves. The question the prophet left ringing is the question the seal leaves ringing, and only those refined and held by him will stand when he appears.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments',
+       E'The four horsemen of the seals — Zechariah''s chariots and the covenant judgments (Zechariah 1 and 6, Ezekiel 14, Leviticus 26)',
+       E'When the Lamb opens the first four seals, four horses go forth — *behold a white horse* (Revelation 6:2), *another horse that was red* (6:4), *a black horse* with *a pair of balances* (6:5), and *a pale horse: and his name that sat on him was Death, and Hell followed with him* (6:8). The seer is not minting a new symbol; he has Zechariah''s night-visions in his ear. Zechariah saw *a man riding upon a red horse... and behind him were there red horses, speckled, and white* (Zechariah 1:8), and was told *These are they whom Yahuah (LORD) hath sent to walk to and fro through the earth* (Zechariah 1:10) — the horses go forth only at the sending of the covenant-God. And he saw *four chariots* (Zechariah 6:1), named *the four spirits of the heavens, which go forth from standing before Yahuah (Lord) of all the earth* (Zechariah 6:5). The fourfold horse-pattern, the colours, the going-forth from before the throne — all of it is the prophet''s. So the passive *power was given* over each rider (6:4, 6:8) names the same hand: nothing rides in the earth but that *Yahuah (Lord) of all the earth* has loosed it. And the judgments themselves are the covenant''s own. The pale horse kills *with sword, and with hunger, and with death, and with the beasts of the earth* (6:8) — Ezekiel''s *four sore judgments... the sword, and the famine, and the noisome beast, and the pestilence* (Ezekiel 14:21), the very things Yahuah (LORD) said *I send.* The great sword given the red rider is the covenant-sword: *I will bring a sword upon you, that shall avenge the quarrel of my covenant* (Leviticus 26:25). The black rider''s cry *A measure of wheat for a penny* (6:6) is the broken staff of bread — *they shall deliver you your bread again by weight: and ye shall eat, and not be satisfied* (Leviticus 26:26). The seals do not invent the judgments; they loose the covenant-sanctions the Torah and the prophets had long since named, sent out from before the throne of the Master of all the earth.',
+       sv.verse_id, ev.verse_id, 'free', 9125
+  FROM _s224_rv06_lookup sv, _s224_rv06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=6 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79',
+       E'The souls under the altar crying How long, and the rest given (Psalm 79, Zechariah 1, 1 Enoch 47, 2 Esdras 4)',
+       E'The fifth seal opens on an altar-scene the Hebrew library had already seen. *I saw under the altar the souls of them that were slain for the word of Elohim (God), and for the testimony which they held: And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:9-10). The cry is the psalmist''s: *How long, Yahuah (LORD)? wilt thou be angry for ever?* (Psalm 79:5), and the plea for *the revenging of the blood of thy servants which is shed* (Psalm 79:10) — not a cry for private vengeance but for the holy and true God to vindicate his covenant and his slain. It is the angel''s cry in the very horse-vision this chapter re-speaks: *O Yahuah Tseva''ot (LORD of hosts), how long wilt thou not have mercy?* (Zechariah 1:12). And the restored library pictures the same altar: *the blood of the righteous from the earth before Yahuah (God) of Spirits* (1 Enoch 47:1), the prayer of the slain ascending — and the answer, that the blood of the righteous is *required* once *the number of the righteous had been offered* (1 Enoch 47:4). So too Ezra: *the souls... of the righteous ask question... saying, How long shall I hope on this fashion?* (2 Esdras 4:35), and are told the reward comes *even when the number of seeds is filled* (2 Esdras 4:36). This is exactly the answer given under the altar: *white robes were given unto every one of them; and it was said unto them, that they should rest yet for a little season, until their fellowservants also and their brethren, that should be killed as they were, should be fulfilled* (Revelation 6:11). The martyrs are not silenced and not forgotten; they are robed, given rest, and told the day waits only on the filling of the appointed number. The blood will be required; the season is measured, not endless.',
+       sv.verse_id, ev.verse_id, 'extras', 9128
+  FROM _s224_rv06_lookup sv, _s224_rv06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=6 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-6-the-sun-black-the-moon-as-blood-the-heaven-as-a-scroll-joel-2-isaiah-34',
+       E'The sun black, the moon as blood, the heaven rolled as a scroll — the day of Yahuah (LORD) (Joel 2, Isaiah 13 and 34, Ezekiel 32, Matthew 24)',
+       E'The sixth seal is the prophets'' day-of-Yahuah spoken almost word for word. *The sun became black as sackcloth of hair, and the moon became as blood; And the stars of heaven fell unto the earth, even as a fig tree casteth her untimely figs, when she is shaken of a mighty wind; And the heaven departed as a scroll when it is rolled together* (Revelation 6:12-14). Joel had said it: *The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD) come* (Joel 2:31). Isaiah had said it: *the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened* (Isaiah 13:10), and *the heavens shall be rolled together as a scroll: and all their host shall fall down... as a falling fig from the fig tree* (Isaiah 34:4) — the seer reads Isaiah''s scroll and Isaiah''s falling fig straight onto the page. Ezekiel had said it over the fall of a proud power: *I will cover the heaven, and make the stars thereof dark; I will cover the sun* (Ezekiel 32:7). And the Master himself gathered them all into one saying: *the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken* (Matthew 24:29). The seal does not announce a strange new portent — it brings to pass the cosmic signs Joel, Isaiah, and Ezekiel named and Yahusha (Jesus) re-spoke: the heavens veiled and shaken when Yahuah (LORD) arises to judge, the dreadful day of his coming breaking over the whole earth.',
+       sv.verse_id, ev.verse_id, 'free', 9131
+  FROM _s224_rv06_lookup sv, _s224_rv06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=6 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-6-hide-us-from-the-face-and-the-wrath-of-the-lamb-hosea-10-isaiah-2',
+       E'Fall on us, hide us from the face of him on the throne and the wrath of the Lamb (Hosea 10, Isaiah 2)',
+       E'When the sixth seal breaks, the great of the earth flee to the rocks, and the words on their lips are the prophets''. *The kings of the earth, and the great men, and the rich men, and the chief captains, and the mighty men, and every bondman, and every free man, hid themselves in the dens and in the rocks of the mountains; And said to the mountains and rocks, Fall on us, and hide us from the face of him that sitteth on the throne, and from the wrath of the Lamb* (Revelation 6:15-16). Hosea had given them the cry: the guilty *shall say to the mountains, Cover us; and to the hills, Fall on us* (Hosea 10:8) — men who would sooner be buried under a mountain than face the throne. Isaiah had given them the hiding-place: *they shall go into the holes of the rocks, and into the caves of the earth, for fear of Yahuah (LORD), and for the glory of his majesty, when he ariseth to shake terribly the earth* (Isaiah 2:19) — and the great earthquake of the seal is precisely that shaking. Mark what they flee: *the face of him that sitteth on the throne, and... the wrath of the Lamb.* The One on the throne and the Lamb are named together and distinguished — the Father who sits, and the Formed Son whose wrath is now revealed, the slain Lamb who is also the Lion. The proud who would not bow to him now beg the rocks to fall on them rather than meet his face. The prophets put the words in their mouths long before the seal was opened.',
+       sv.verse_id, ev.verse_id, 'free', 9134
+  FROM _s224_rv06_lookup sv, _s224_rv06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=6 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-6-the-great-day-of-his-wrath-who-shall-be-able-to-stand-joel-2-zephaniah-1',
+       E'The great day of his wrath is come, and who shall be able to stand? (Joel 2, Zephaniah 1, Malachi 3)',
+       E'The seal closes on a question the prophets had left ringing for centuries: *For the great day of his wrath is come; and who shall be able to stand?* (Revelation 6:17). Joel had asked it of the day of Yahuah (LORD): *the day of Yahuah (LORD) is great and very terrible; and who can abide it?* (Joel 2:11). Zephaniah had named the day by the very name the seal gives it — *The great day of Yahuah (LORD) is near, it is near, and hasteth greatly... the mighty man shall cry there bitterly* (Zephaniah 1:14), *That day is a day of wrath, a day of trouble and distress... a day of darkness and gloominess, a day of clouds and thick darkness* (Zephaniah 1:15). And it is precisely the mighty who cry at the seal, the *great men, and the rich men, and the chief captains, and the mighty men* hiding in the rocks (Revelation 6:15); the darkness Zephaniah heaped up is the darkened sun and bloodied moon of the sixth seal. Malachi had asked the closing question almost word for word: *who may abide the day of his coming? and who shall stand when he appeareth? for he is like a refiner''s fire* (Malachi 3:2). The seal answers his question with the same question — *who shall be able to stand?* No power of man can abide the day of wrath of itself; the refiner''s fire is upon the whole earth, and only those refined and held by him will be left standing when he appears.',
+       sv.verse_id, ev.verse_id, 'free', 9137
+  FROM _s224_rv06_lookup sv, _s224_rv06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=6 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Zechariah 1:8 — *a man riding upon a red horse... and behind him were there red horses, speckled, and white* the night-vision the seer re-speaks; the coloured horses of the seals are the prophet''s own (Revelation 6:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Zechariah 1:10 — *These are they whom Yahuah (LORD) hath sent to walk to and fro through the earth* the horses go forth only at his sending; the rider takes peace because the throne loosed him (Revelation 6:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Zechariah 6:1 — *there came four chariots out from between two mountains* the fourfold horse-pattern of the seals is the prophet''s four chariots (Revelation 6:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=6 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Zechariah 6:5 — *the four spirits of the heavens, which go forth from standing before Yahuah (Lord) of all the earth* the horses ride from before the throne, sent by the Master of all the earth (Revelation 6:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=6 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Ezekiel 14:21 — *my four sore judgments... the sword, and the famine, and the noisome beast, and the pestilence* the pale horse gathers the four covenant-judgments Yahuah (LORD) said he would send (Revelation 6:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=14 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Leviticus 26:25 — *I will bring a sword upon you, that shall avenge the quarrel of my covenant* the red rider''s great sword is the covenant-sword answering covenant-breaking (Revelation 6:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Leviticus 26:26 — *they shall deliver you your bread again by weight: and ye shall eat, and not be satisfied* the black rider''s measured famine-bread is the broken staff of bread of the covenant curse (Revelation 6:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-four-horsemen-of-the-seals-zechariahs-chariots-and-the-covenant-judgments'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 79:5 — *How long, Yahuah (LORD)? wilt thou be angry for ever?* the psalmist''s cry, the very words of the souls under the altar (Revelation 6:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=79 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 79:10 — *the revenging of the blood of thy servants which is shed* the exact plea of the martyrs, that the covenant-God avenge his slain (Revelation 6:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=79 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Zechariah 1:12 — *O Yahuah Tseva''ot (LORD of hosts), how long wilt thou not have mercy* the angel''s how-long in the same horse-vision; one continuous cry with the martyrs'' (Revelation 6:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=1 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 47:1 — *the blood of the righteous from the earth before Yahuah (God) of Spirits* the same altar-scene, the blood and prayer of the slain ascending to the throne (Revelation 6:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=9
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=47 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 47:4 — *the blood of the righteous been required... Because the number of the righteous had been offered* the answer the martyrs await: the blood is avenged once the number is complete (Revelation 6:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=10
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=47 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'2 Esdras 4:35 — *the souls also of the righteous... saying, How long shall I hope on this fashion?* the same waiting-souls asking how long, given the same answer of a measured season (Revelation 6:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=11
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=4 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'2 Esdras 4:36 — *Even when the number of seeds is filled in you* the vindication waits on the filling of the appointed number, exactly as the martyrs are told to rest until their brethren be fulfilled (Revelation 6:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-souls-under-the-altar-crying-how-long-and-the-rest-given-psalm-79'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=11
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=4 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-6-the-sun-black-the-moon-as-blood-the-heaven-as-a-scroll-joel-2-isaiah-34
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joel 2:31 — *The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD)* the sixth seal speaks Joel''s day almost word for word (Revelation 6:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-sun-black-the-moon-as-blood-the-heaven-as-a-scroll-joel-2-isaiah-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 13:10 — *the stars of heaven... shall not give their light: the sun shall be darkened* Isaiah''s day-of-Yahuah darkening, gathered into the seal as the stars fall (Revelation 6:13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-sun-black-the-moon-as-blood-the-heaven-as-a-scroll-joel-2-isaiah-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=13 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 34:4 — *the heavens shall be rolled together as a scroll... as a falling fig from the fig tree* the seer reads Isaiah''s scroll and falling fig straight onto the page (Revelation 6:13-14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-sun-black-the-moon-as-blood-the-heaven-as-a-scroll-joel-2-isaiah-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 32:7 — *I will cover the heaven, and make the stars thereof dark; I will cover the sun* the covenant-God darkens the heavens over the proud, the same day-of-Yahuah register (Revelation 6:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-sun-black-the-moon-as-blood-the-heaven-as-a-scroll-joel-2-isaiah-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=32 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Matthew 24:29 — *the sun be darkened... the stars shall fall from heaven, and the powers of the heavens shall be shaken* the Master gathered Joel and Isaiah into one saying the seal speaks back (Revelation 6:12-13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-sun-black-the-moon-as-blood-the-heaven-as-a-scroll-joel-2-isaiah-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-6-hide-us-from-the-face-and-the-wrath-of-the-lamb-hosea-10-isaiah-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 10:8 — *they shall say to the mountains, Cover us; and to the hills, Fall on us* the prophet''s cry on the lips of the terrified at the seal (Revelation 6:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-hide-us-from-the-face-and-the-wrath-of-the-lamb-hosea-10-isaiah-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=10 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 2:19 — *into the holes of the rocks... for fear of Yahuah (LORD)... when he ariseth to shake terribly the earth* the great earthquake of the seal is Isaiah''s shaking; the proud flee to the rocks (Revelation 6:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-hide-us-from-the-face-and-the-wrath-of-the-lamb-hosea-10-isaiah-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-6-the-great-day-of-his-wrath-who-shall-be-able-to-stand-joel-2-zephaniah-1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joel 2:11 — *the day of Yahuah (LORD) is great and very terrible; and who can abide it?* the unanswered question Joel left ringing, now closing the seal (Revelation 6:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-great-day-of-his-wrath-who-shall-be-able-to-stand-joel-2-zephaniah-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Zephaniah 1:14 — *The great day of Yahuah (LORD) is near... the mighty man shall cry there bitterly* the prophet names the day and names who would wail; the mighty cry at the seal (Revelation 6:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-great-day-of-his-wrath-who-shall-be-able-to-stand-joel-2-zephaniah-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Zephaniah 1:15 — *That day is a day of wrath... a day of darkness and gloominess, a day of clouds and thick darkness* the seal''s day of wrath is Zephaniah''s, the darkness of the sixth seal (Revelation 6:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-great-day-of-his-wrath-who-shall-be-able-to-stand-joel-2-zephaniah-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 3:2 — *who may abide the day of his coming? and who shall stand when he appeareth?* the prophet''s question the seal answers with the same question (Revelation 6:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv06_lookup sv, _s224_rv06_lookup tv
+ WHERE t.slug='revelation-6-the-great-day-of-his-wrath-who-shall-be-able-to-stand-joel-2-zephaniah-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=6 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_07.sql (S224 Revelation 7) -----
+-- =====================================================================
+-- S224 minion — REVELATION 7 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 7 (17 verses) — the 144,000 sealed of all the tribes, and the great
+--          multitude no man could number. HIGH-VOICE-RISK BLESSING CHAPTER: the two-house
+--          regathering.
+-- Tag: rv07 (temp view _s224_rv07_lookup).
+-- Sort band: floor 9150, step 3 (9150, 9153, 9156, 9159, 9162, 9165, 9168 used; under 9175).
+-- Source is ALWAYS the canon Revelation 7 verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (the two-house / regathering of all Yashar'el (Israel)):
+-- Revelation 7 is not a symbolic number erasing the tribes, and not a separate gentile church
+-- replacing Yashar'el (Israel). It is the consummation of the prophetic gathering: the seal of the
+-- living Elohim (God) set in the foreheads of the righteous (7:3 / Ezekiel 9:4, the mark on those
+-- who sigh for the abominations; Exodus 12:13, the protecting token of the blood) — then *an
+-- hundred and forty and four thousand of all the tribes of the children of Yashar'el (Israel)*
+-- named tribe by tribe (7:4-8), Joseph and Manasses standing for the northern house, Dan omitted.
+-- This is the two sticks become one in Yahuah's (LORD's) hand — Yahudah (Judah) and Ephraim/Joseph
+-- reunited (Ezekiel 37:15-28). Then *a great multitude, which no man could number, of all nations*
+-- with white robes and palms (7:9) — the scattered seed of Yashar'el (Israel) gathered home from
+-- among the nations (Hosea 1:10, *the number of the children of Yashar'el (Israel) shall be as the
+-- sand of the sea... ye are the sons of the living Elohim (God)*; Genesis 13:16, 15:5, the
+-- innumerable seed promised), the Sukkot palms of Leviticus 23:40. *He that sitteth on the throne*
+-- and *the Lamb* are distinguished — the Father and the Formed Son — and worship goes to the One
+-- (7:10-11). The Lamb feeds and leads them to living fountains (7:17 / Ezekiel 34:23, Isaiah 49:10,
+-- Psalm 23:1-2); Elohim (God) wipes away all tears (7:17 / Isaiah 25:8) and tabernacles among them
+-- (7:15 / Ezekiel 37:26-27). NO dispensational rapture-escape, NO replacement church, NO spiritualized
+-- number that erases the paternal-blood tribes.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-3   the four winds held, the seal of the living Elohim in the foreheads
+--           Tanakh: Ezekiel 9:4 (set a mark upon the foreheads of the men that sigh), Ezekiel 9:6
+--                   (come not near any upon whom is the mark), Exodus 12:13 (the blood a token)
+--           Extras: 2 Esdras 2:38 (behold the number of those that be sealed)
+--           NT: none warranted (the seal carried into the tribes thread; cf. Rev 14:1 is a later chapter)
+--   v.4-8   an hundred and forty and four thousand of all the tribes of Yashar'el
+--           Tanakh: Ezekiel 37:16-17 (the two sticks made one), 37:19 (one in mine hand), 37:21
+--                   (gather from among the heathen), 37:22 (one nation, no more two), 37:27
+--                   (my tabernacle with them)
+--           Extras: 2 Esdras 2:38 (the number sealed) carried at v.1-3; the regathering witnessed
+--                   by Tobit 13:5 (gather us out of all nations) carried at v.9
+--           NT: none warranted (Revelation 14:1 the same 144,000 is a later chapter, not yet built)
+--   v.9     a great multitude no man could number, white robes and palms, of all nations
+--           Tanakh: Hosea 1:10 (the number as the sand of the sea, ye are the sons of the living
+--                   Elohim), Genesis 13:16 (thy seed as the dust), Genesis 15:5 (tell the stars),
+--                   Leviticus 23:40 (boughs of palm trees, rejoice before Yahuah)
+--           Extras: 2 Esdras 2:42 (a great people whom I could not number), 2:45 (crowned, receive
+--                   palms), Tobit 13:5 (gather us out of all nations), Baruch 5:5 (children gathered
+--                   from the west to the east)
+--           NT: none warranted
+--   v.10-12 salvation to our Elohim which sitteth on the throne, and unto the Lamb; worship
+--           Tanakh: none warranted (the throne-and-Lamb distinction is internal/Christological;
+--                   carried in prose against Rev 4-5)
+--           Extras: 2 Esdras 2:47 (It is the Son of Yahuah, whom they have confessed) — the Son
+--                   distinguished, crowning the gathered
+--           NT: Revelation 5:13 (blessing... unto him that sitteth upon the throne, and unto the
+--               Lamb — the Father and the Formed Son distinguished, the same worship)
+--   v.13-15 they came out of great tribulation, washed their robes; before the throne, serve in
+--           his temple; he that sitteth on the throne shall dwell among them
+--           Tanakh: Ezekiel 37:26 (set my sanctuary in the midst of them), 37:27 (my tabernacle
+--                   with them, I will be their Elohim)
+--           Extras: none warranted   NT: carried in the throne thread
+--   v.16-17 the Lamb shall feed them and lead them to living fountains; Elohim shall wipe all tears
+--           Tanakh: Ezekiel 34:23 (one shepherd, my servant David, he shall feed them), Isaiah
+--                   49:10 (they shall not hunger nor thirst... by the springs of water shall he
+--                   guide them), Psalm 23:1-2 (Yahuah Ra'ah... still waters), Isaiah 25:8 (wipe
+--                   away tears from off all faces)
+--           Extras: none warranted   NT: none warranted (the shepherd-root is the Tanakh weight)
+--
+-- THREADS (slug -> target libraries):
+--   9150 revelation-7-the-four-winds-held-and-the-seal-of-the-living-elohim-in-the-foreheads-ezekiel-9      (Tanakh + Extras)
+--   9153 revelation-7-the-twelve-tribes-sealed-the-two-house-regathering-ezekiel-37                          (Tanakh + Extras)  [CENTERPIECE]
+--   9156 revelation-7-a-great-multitude-no-man-could-number-the-gathered-seed-hosea-1                        (Tanakh + Extras)  [CENTERPIECE]
+--   9159 revelation-7-white-robes-and-palms-the-sukkot-ingathering-leviticus-23                              (Tanakh + Extras)
+--   9162 revelation-7-salvation-to-our-elohim-and-the-lamb-the-throne-and-the-slain-lamb-revelation-5        (Extras + NT)
+--   9165 revelation-7-the-lamb-shall-feed-them-and-lead-them-to-living-fountains-ezekiel-34                  (Tanakh)
+--   9168 revelation-7-elohim-shall-wipe-away-all-tears-and-tabernacle-among-them-isaiah-25                   (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-7-the-four-winds-held-and-the-seal-of-the-living-elohim-in-the-foreheads-ezekiel-9
+  ('canon', 'revelation', 7, 3, 'canon', 'ezekiel', 9, 4, 'free', E'*And Yahuah (LORD) said unto him, Go through the midst of the city, through the midst of Jerusalem, and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof.* (Ezekiel 9:4). This is the very picture the seer re-speaks: *Hurt not the earth, neither the sea, nor the trees, till we have sealed the servants of our Elohim (God) in their foreheads* (Revelation 7:3). The mark on the forehead is the old protecting sign — set on the righteous who grieve over the abominations, before the judgment is loosed on the land. The seal of the living Elohim (God) does the same work: it marks out his servants for keeping, so that the four winds are held back until every one of his is sealed.'),
+  ('canon', 'revelation', 7, 3, 'canon', 'ezekiel', 9, 6, 'free', E'*Slay utterly old and young, both maids, and little children, and women: but come not near any man upon whom is the mark; and begin at my sanctuary. Then they began at the ancient men which were before the house.* (Ezekiel 9:6). The mark divides the kept from the struck: *come not near any man upon whom is the mark.* So the sealing of Revelation 7 stays the destroying winds — *Hurt not the earth... till we have sealed the servants of our Elohim (God) in their foreheads* (Revelation 7:3). The seal is no decoration; it is the line the judgment will not cross. They that bear it are passed over, exactly as Ezekiel''s marked were spared while the city fell.'),
+  ('canon', 'revelation', 7, 2, 'canon', 'exodus', 12, 13, 'free', E'*And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt.* (Exodus 12:13). The seal of Revelation 7 stands in the line of the passover token — *another angel ascending from the east, having the seal of the living Elohim (God)* (Revelation 7:2). As the blood on the lintel was a sign that the destroyer should pass over the house, so the seal on the forehead is the sign that the four winds should not touch the servant of Elohim (God). The mark of the Lamb''s blood keeps his people in the night of judgment.'),
+  ('canon', 'revelation', 7, 3, 'apocrypha', '2-esdras', 2, 38, 'extras', E'*Arise up and stand, behold the number of those that be sealed in the feast of Yahuah (God);* (2 Esdras 2:38). The Hebrew library carries the same sealed company the seer counts: *till we have sealed the servants of our Elohim (God) in their foreheads* (Revelation 7:3), *and I heard the number of them which were sealed* (Revelation 7:4). Esdras is bidden to *behold the number of those that be sealed* — a fixed, counted, kept people, gathered to the feast of Yahuah (God). The sealing and the numbering are one act of keeping in both witnesses: Elohim (God) sets his own apart and counts every one.'),
+  -- thread: revelation-7-the-twelve-tribes-sealed-the-two-house-regathering-ezekiel-37  [CENTERPIECE]
+  ('canon', 'revelation', 7, 4, 'canon', 'ezekiel', 37, 16, 'free', E'*Moreover, thou son of Adam, take thee one stick, and write upon it, For Yahudah (Judah), and for the children of Yashar''el (Israel) his companions: then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions:* (Ezekiel 37:16). Here is the key to the sealed company: *there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4). Ezekiel was given two sticks — one for Yahudah (Judah), one for Joseph the stick of Ephraim, the northern house — the two houses of a divided people. And the list of tribes John hears names Joseph and Manasses standing for the north: this is not a symbolic number erasing the tribes but the two sticks named and gathered, Yahudah (Judah) and Ephraim together.'),
+  ('canon', 'revelation', 7, 4, 'canon', 'ezekiel', 37, 17, 'free', E'*And join them one to another into one stick; and they shall become one in thine hand.* (Ezekiel 37:17). The two sticks become one: this is what the sealing of the twelve tribes is — *sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4), the tribes named one by one (Revelation 7:5-8). The number is no spiritualized cipher; it is the whole house made one, Yahudah (Judah) and Joseph joined in the hand of Yahuah (LORD), the two-house people gathered into a single sealed company.'),
+  ('canon', 'revelation', 7, 4, 'canon', 'ezekiel', 37, 19, 'free', E'*Say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand.* (Ezekiel 37:19). *One in mine hand* — the very thing the sealed 144,000 of all the tribes of Yashar''el (Israel) embodies (Revelation 7:4). Joseph in the hand of Ephraim, joined with Yahudah (Judah), the tribes of Yashar''el (Israel) his fellows: the northern house and the southern made one stick. The seal on the foreheads of all twelve tribes is the seal upon a reunited people, no longer two sticks but one.'),
+  ('canon', 'revelation', 7, 4, 'canon', 'ezekiel', 37, 21, 'free', E'*And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* (Ezekiel 37:21). The sealed of all the tribes are the gathered of all the tribes — *I will take the children of Yashar''el (Israel) from among the heathen... and gather them on every side.* So *there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4): the scattered houses taken from among the nations whither they were driven and gathered home. The numbering of the tribes in Revelation 7 is the roll of the regathered, every house accounted for.'),
+  ('canon', 'revelation', 7, 4, 'canon', 'ezekiel', 37, 22, 'free', E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all:* (Ezekiel 37:22). *No more two nations* — this is the end the sealing of the twelve tribes serves (Revelation 7:4). The two-house breach is healed; Yahudah (Judah) and the northern house become one nation under one king. The 144,000 of all the tribes is not the church standing in Yashar''el (Israel)''s place but Yashar''el (Israel) itself made whole, the divided kingdoms gathered into one sealed people.'),
+  ('canon', 'revelation', 7, 4, 'apocrypha', '2-esdras', 2, 38, 'extras', E'*Arise up and stand, behold the number of those that be sealed in the feast of Yahuah (God);* (2 Esdras 2:38). *And I heard the number of them which were sealed* (Revelation 7:4). The restored library knows this sealed and numbered company: a counted people, sealed and gathered to the feast of Yahuah (God). The 144,000 of all the tribes of Yashar''el (Israel) is the number Esdras is bidden to behold — the regathered houses, every tribe sealed and reckoned, brought in to keep the feast.'),
+  -- thread: revelation-7-a-great-multitude-no-man-could-number-the-gathered-seed-hosea-1  [CENTERPIECE]
+  ('canon', 'revelation', 7, 9, 'canon', 'hosea', 1, 10, 'free', E'*Yet the number of the children of Yashar''el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10). This is the multitude the seer beholds: *a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues* (Revelation 7:9). They are not a separate people replacing Yashar''el (Israel); they are the scattered seed of Yashar''el (Israel) come home — the Lo-ammi, the *not my people* of the northern exile, now *as the sand of the sea, which cannot be measured nor numbered.* The innumerable multitude of all nations is the dispersed of Ephraim sown among the nations and gathered back, now called *the sons of the living Elohim (God).*'),
+  ('canon', 'revelation', 7, 9, 'canon', 'genesis', 13, 16, 'free', E'*And I will make thy seed as the dust of the earth: so that if a man can number the dust of the earth, then shall thy seed also be numbered.* (Genesis 13:16). The promise to Abraham was a seed beyond counting: *if a man can number the dust of the earth, then shall thy seed also be numbered.* So the multitude of Revelation 7 is *which no man could number* (Revelation 7:9) — the very innumerability the promise spoke. The great multitude of all nations is not a new people but the promised seed of Abraham brought to its full number, the dust of the earth gathered home.'),
+  ('canon', 'revelation', 7, 9, 'canon', 'genesis', 15, 5, 'free', E'*And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.* (Genesis 15:5). *Tell the stars, if thou be able to number them... so shall thy seed be* — and now the seer sees them, *a great multitude, which no man could number* (Revelation 7:9). What Abraham was bidden to count and could not, the seer beholds gathered before the throne. The uncountable multitude is the uncountable seed; the promise of the stars is kept in the homecoming of the scattered children of Yashar''el (Israel) from among the nations.'),
+  ('canon', 'revelation', 7, 9, 'apocrypha', '2-esdras', 2, 42, 'extras', E'*I Esdras saw upon the mount Sion a great people, whom I could not number, and they all praised Yahuah (God) with songs.* (2 Esdras 2:42). The restored library shows the same vision the seer is given: *a great multitude, which no man could number... stood before the throne, and before the Lamb* (Revelation 7:9). Esdras *saw upon the mount Sion a great people, whom I could not number,* praising Yahuah (God) with songs. The uncountable company before the throne in Revelation and the uncountable people on mount Sion in Esdras are one gathered host — the seed of Yashar''el (Israel) come home, raising one song of praise.'),
+  ('canon', 'revelation', 7, 9, 'apocrypha', 'tobit', 13, 5, 'extras', E'*And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.* (Tobit 13:5). The multitude *of all nations, and kindreds, and people, and tongues* (Revelation 7:9) is exactly the company Tobit prays for: those whom Yahuah (God) *will gather us out of all nations, among whom he has scattered us.* The great multitude is the scattered of Yashar''el (Israel) regathered, mercy following the scourge of exile — not the nations replacing the seed, but the seed gathered home out of every nation where it was driven.'),
+  ('canon', 'revelation', 7, 9, 'apocrypha', 'baruch-with-the-letter-of-jeremiah', 5, 5, 'extras', E'*Arise, O Jerusalem, and stand on high, and look about toward the east, and behold your children gathered from the west to the east by the word of the Holy One, rejoicing in the remembrance of Yahuah (God).* (Baruch 5:5). The great multitude before the throne (Revelation 7:9) is Jerusalem''s children come back from the dispersion — *behold your children gathered from the west to the east by the word of the Holy One.* Baruch sees the scattered sons returning from every quarter, rejoicing; the seer sees them arrived, white-robed and palm-bearing before the throne. The same homecoming: the children gathered from among the nations, the seed of Yashar''el (Israel) brought back rejoicing.'),
+  -- thread: revelation-7-white-robes-and-palms-the-sukkot-ingathering-leviticus-23
+  ('canon', 'revelation', 7, 9, 'canon', 'leviticus', 23, 40, 'free', E'*And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before Yahuah Elohaychem (the LORD your God) seven days.* (Leviticus 23:40). The palms in the multitude''s hands are the palms of the feast of ingathering: *clothed with white robes, and palms in their hands* (Revelation 7:9). At Sukkot Yashar''el (Israel) took *branches of palm trees* and rejoiced before Yahuah Elohaychem (the LORD your God) — the feast that remembers the wilderness journey and the gathering-in of the harvest. The gathered multitude keeps the great Sukkot, palms in hand, rejoicing before the throne as the harvest of the nations is brought home.'),
+  ('canon', 'revelation', 7, 14, 'apocrypha', '2-esdras', 2, 45, 'extras', E'*So he answered and said to me, These be they that have put off the mortal clothing, and put on the immortal, and have confessed the name of Yahuah (God): now are they crowned, and receive palms.* (2 Esdras 2:45). The white-robed palm-bearers of Revelation 7 are named in the restored library: *now are they crowned, and receive palms.* The elder asks *what are these which are arrayed in white robes?* (Revelation 7:13) and answers *these are they which came out of great tribulation, and have washed their robes* (Revelation 7:14). Esdras tells the same: they that *put off the mortal clothing, and put on the immortal,* who *confessed the name of Yahuah (God)* — the same company, robed and palm-bearing, who came through tribulation into glory.'),
+  -- thread: revelation-7-salvation-to-our-elohim-and-the-lamb-the-throne-and-the-slain-lamb-revelation-5
+  ('canon', 'revelation', 7, 10, 'canon', 'revelation', 5, 13, 'free', E'*And every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever.* (Revelation 5:13). The multitude''s cry echoes the elder vision: *Salvation to our Elohim (God) which sitteth upon the throne, and unto the Lamb* (Revelation 7:10). Mark how the two are named together yet distinguished — *him that sitteth upon the throne, and... the Lamb.* The One on the throne is the Father; the Lamb is the Formed Son, slain and standing. The worship rises to both as to one Elohim (God), the Father and the Lamb, never collapsed and never divided.'),
+  ('canon', 'revelation', 7, 10, 'apocrypha', '2-esdras', 2, 47, 'extras', E'*So he answered and said to me, It is the Son of Yahuah (God), whom they have confessed in the world. Then began I greatly to commend them that stood so stiffly for the name of Yahuah (God).* (2 Esdras 2:47). When the multitude cries *Salvation to our Elohim (God) which sitteth upon the throne, and unto the Lamb* (Revelation 7:10), the Lamb is the Son confessed in the world — *It is the Son of Yahuah (God), whom they have confessed.* Esdras sees the same crowning Son in the midst of the numberless people on Sion; the seer sees the Lamb in the midst of the throne. The Father is named, and the Son distinguished beside him — the Formed One whom the gathered confessed and now stand before.'),
+  -- thread: revelation-7-the-lamb-shall-feed-them-and-lead-them-to-living-fountains-ezekiel-34
+  ('canon', 'revelation', 7, 17, 'canon', 'ezekiel', 34, 23, 'free', E'*And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd.* (Ezekiel 34:23). The Lamb is also the Shepherd: *the Lamb which is in the midst of the throne shall feed them* (Revelation 7:17). Ezekiel promised *one shepherd... my servant David* who *shall feed them* over the regathered flock — and here he feeds them, the slain Lamb who is the Shepherd-King of the gathered tribes. The one who was led as a lamb now leads as the shepherd, feeding the homecoming multitude as the prophet foretold.'),
+  ('canon', 'revelation', 7, 17, 'canon', 'isaiah', 49, 10, 'free', E'*They shall not hunger nor thirst; neither shall the heat nor sun smite them: for he that hath mercy on them shall lead them, even by the springs of water shall he guide them.* (Isaiah 49:10). The seer all but quotes the prophet: *They shall hunger no more, neither thirst any more; neither shall the sun light on them, nor any heat* (Revelation 7:16), *and shall lead them unto living fountains of waters* (Revelation 7:17). Isaiah spoke it of the gathered prisoners brought forth from darkness — *he that hath mercy on them shall lead them... by the springs of water.* The Lamb leads the regathered seed to the living fountains exactly as Isaiah promised mercy would lead the returning exiles home.'),
+  ('canon', 'revelation', 7, 17, 'canon', 'psalms', 23, 2, 'free', E'*He maketh me to lie down in green pastures: he leadeth me beside the still waters.* (Psalm 23:2). The shepherd-care of the psalm is fulfilled at the throne: *the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters* (Revelation 7:17). David sang *he leadeth me beside the still waters*; the gathered multitude is led to the *living fountains of waters* by the Lamb who is their shepherd. The shepherd of the twenty-third psalm and the Lamb in the midst of the throne are one — feeding, leading, and giving rest to his flock.'),
+  -- thread: revelation-7-elohim-shall-wipe-away-all-tears-and-tabernacle-among-them-isaiah-25
+  ('canon', 'revelation', 7, 17, 'canon', 'isaiah', 25, 8, 'free', E'*He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.* (Isaiah 25:8). The seer''s last word is the prophet''s promise: *and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17). Isaiah foretold the day when *Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces* and *the rebuke of his people* is taken away. For the gathered seed who came out of great tribulation, the mourning of exile is ended; Elohim (God) himself wipes away every tear, and the reproach of the scattered is removed.'),
+  ('canon', 'revelation', 7, 15, 'canon', 'ezekiel', 37, 27, 'free', E'*My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people.* (Ezekiel 37:27). The dwelling of Elohim (God) with the gathered is the same promise sealed to the reunited tribes: *he that sitteth on the throne shall dwell among them* (Revelation 7:15). Ezekiel''s word over the two sticks made one was *my tabernacle also shall be with them... they shall be my people* — and here, before the throne, the One who sits there dwells among the regathered. The tabernacling of Elohim (God) with his people is the end of the two-house gathering: he with them, they his, for ever.'),
+  ('canon', 'revelation', 7, 15, 'canon', 'ezekiel', 37, 26, 'free', E'*Moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore.* (Ezekiel 37:26). They *serve him day and night in his temple: and he that sitteth on the throne shall dwell among them* (Revelation 7:15). Ezekiel promised the everlasting covenant of peace and *my sanctuary in the midst of them for evermore* — and the gathered multitude serves in that very sanctuary, the One on the throne dwelling among them. The temple-service of Revelation 7 is the sanctuary set in the midst of the regathered houses, the covenant of peace come to its rest.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-7-the-four-winds-held-and-the-seal-of-the-living-elohim-in-the-foreheads-ezekiel-9',
+       E'The four winds held and the seal of the living Elohim (God) in the foreheads (Ezekiel 9)',
+       E'Before the judgment falls, the servants of Elohim (God) are marked for keeping. *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth* (Revelation 7:1), and another angel cries, *Hurt not the earth, neither the sea, nor the trees, till we have sealed the servants of our Elohim (God) in their foreheads* (Revelation 7:3). This is the old protecting sign of Ezekiel''s vision: *Yahuah (LORD) said unto him, Go through the midst of the city... and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof* (Ezekiel 9:4). The mark divides the kept from the struck — *come not near any man upon whom is the mark* (Ezekiel 9:6) — so the four winds are held back until every servant is sealed. It stands in the line of the passover token, too: *the blood shall be to you for a token upon the houses... and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you* (Exodus 12:13). As the blood on the lintel turned the destroyer aside, the seal on the forehead turns the winds aside. And the restored library knows this sealed and counted company: *Arise up and stand, behold the number of those that be sealed in the feast of Yahuah (God)* (2 Esdras 2:38). The sealing and the numbering are one act of keeping: Elohim (God) sets his own apart, counts every one, and holds the judgment until they are safe.',
+       sv.verse_id, ev.verse_id, 'extras', 9150
+  FROM _s224_rv07_lookup sv, _s224_rv07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=7 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-7-the-twelve-tribes-sealed-the-two-house-regathering-ezekiel-37',
+       E'The twelve tribes sealed — the two-house regathering, the two sticks made one (Ezekiel 37)',
+       E'The sealed company is named tribe by tribe, and the naming is the whole point: *And I heard the number of them which were sealed: and there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4) — *Of the tribe of Juda were sealed twelve thousand* (Revelation 7:5), and so through *Joseph* and *Benjamin* (Revelation 7:8), the list naming Joseph and Manasses for the northern house. This is not a symbolic number that spiritualizes away the tribes and leaves a church standing in Yashar''el (Israel)''s place. It is the two-house gathering the prophet enacted with two sticks: *take thee one stick, and write upon it, For Yahudah (Judah), and for the children of Yashar''el (Israel) his companions: then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16), *and join them one to another into one stick; and they shall become one in thine hand* (Ezekiel 37:17). Yahuah (LORD) says it plainly: *I will take the stick of Joseph, which is in the hand of Ephraim... even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The sealed of all the tribes are the gathered of all the tribes: *I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21), *and I will make them one nation... and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The 144,000 of all the tribes is Yahudah (Judah) and Ephraim/Joseph reunited — the two sticks become one in the hand of Yahuah (LORD), the divided houses sealed into one people. The restored library beholds the same numbered, sealed company gathered to the feast: *behold the number of those that be sealed in the feast of Yahuah (God)* (2 Esdras 2:38). Yashar''el (Israel) is not replaced; Yashar''el (Israel) is made whole.',
+       sv.verse_id, ev.verse_id, 'extras', 9153
+  FROM _s224_rv07_lookup sv, _s224_rv07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=7 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-7-a-great-multitude-no-man-could-number-the-gathered-seed-hosea-1',
+       E'A great multitude no man could number — the scattered seed gathered home (Hosea 1)',
+       E'After the tribes are sealed, the seer beholds the harvest of the gathering: *After this I beheld, and, lo, a great multitude, which no man could number, of all nations, and kindreds, and people, and tongues, stood before the throne, and before the Lamb, clothed with white robes, and palms in their hands* (Revelation 7:9). The inherited reading hears a separate gentile church here, distinct from the Yashar''eli (Israelite) 144,000. But the prophet already named this multitude, and named it Yashar''el (Israel): *Yet the number of the children of Yashar''el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10). The *not my people* — the Lo-ammi of the northern exile — become *the sons of the living Elohim (God)*, and their number becomes *as the sand of the sea, which cannot be measured nor numbered.* That is precisely the multitude *which no man could number.* It is the promise to Abraham come full: *I will make thy seed as the dust of the earth: so that if a man can number the dust of the earth, then shall thy seed also be numbered* (Genesis 13:16); *tell the stars, if thou be able to number them... so shall thy seed be* (Genesis 15:5). What Abraham could not count, the seer sees gathered before the throne. The restored library beholds the same uncountable host: *I Esdras saw upon the mount Sion a great people, whom I could not number, and they all praised Yahuah (God) with songs* (2 Esdras 2:42); and Tobit prays for exactly this homecoming — *he... will gather us out of all nations, among whom he has scattered us* (Tobit 13:5) — and Baruch sees it arriving: *behold your children gathered from the west to the east by the word of the Holy One, rejoicing in the remembrance of Yahuah (God)* (Baruch 5:5). The great multitude of all nations is not the nations replacing the seed; it is the seed of Yashar''el (Israel) — the dispersed of Ephraim sown among the nations — gathered home from every nation where it was scattered, the sons of the living Elohim (God) come at last before the throne.',
+       sv.verse_id, ev.verse_id, 'extras', 9156
+  FROM _s224_rv07_lookup sv, _s224_rv07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=7 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-7-white-robes-and-palms-the-sukkot-ingathering-leviticus-23',
+       E'White robes and palms — the great Sukkot ingathering (Leviticus 23)',
+       E'The gathered multitude stands *clothed with white robes, and palms in their hands* (Revelation 7:9), and the palms are the palms of the feast of ingathering. At Sukkot Yashar''el (Israel) was commanded: *ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before Yahuah Elohaychem (the LORD your God) seven days* (Leviticus 23:40) — the feast that remembers the wilderness journey and celebrates the gathering-in of the harvest. The regathered seed keeps the great Sukkot, palms in hand, rejoicing before the throne as the harvest of the nations is brought home. And the white robes are explained at the throne: *What are these which are arrayed in white robes? and whence came they?* (Revelation 7:13) — *These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14). The restored library names the same robed and palm-bearing company: *These be they that have put off the mortal clothing, and put on the immortal, and have confessed the name of Yahuah (God): now are they crowned, and receive palms* (2 Esdras 2:45). The white robes washed in the blood of the Lamb, the palms of the harvest feast — the homecoming of the seed kept as the everlasting Sukkot, rejoicing before Elohim (God).',
+       sv.verse_id, ev.verse_id, 'extras', 9159
+  FROM _s224_rv07_lookup sv, _s224_rv07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=7 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-7-salvation-to-our-elohim-and-the-lamb-the-throne-and-the-slain-lamb-revelation-5',
+       E'Salvation to our Elohim (God) and to the Lamb — the throne and the slain Lamb distinguished (Revelation 5)',
+       E'The multitude lifts one cry: *Salvation to our Elohim (God) which sitteth upon the throne, and unto the Lamb* (Revelation 7:10), and all the angels *fell before the throne on their faces, and worshipped Elohim (God)* (Revelation 7:11). Mark how the two are named together yet held distinct — *him that sitteth upon the throne, and... the Lamb.* The One on the throne is the Father, the Formless source; the Lamb is the Formed Son, slain and standing in the midst of the throne. This is the same vision the elders sang: *Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever* (Revelation 5:13). The worship rises to both as to one Elohim (God) — the Father and the Lamb — never collapsed into one undivided person, never split into two gods. And the Lamb is the Son the gathered confessed: the restored library answers who he is — *It is the Son of Yahuah (God), whom they have confessed in the world* (2 Esdras 2:47), the Son who crowns the numberless people on Sion. The Father is named on the throne; the Son is distinguished beside him, the Formed One whom the regathered seed confessed in the world and now stand before, giving salvation to the One.',
+       sv.verse_id, ev.verse_id, 'extras', 9162
+  FROM _s224_rv07_lookup sv, _s224_rv07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=7 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-7-the-lamb-shall-feed-them-and-lead-them-to-living-fountains-ezekiel-34',
+       E'The Lamb shall feed them and lead them to living fountains (Ezekiel 34, Isaiah 49, Psalm 23)',
+       E'The slain Lamb is also the Shepherd of the gathered flock: *the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters* (Revelation 7:17). Ezekiel promised the regathered houses one shepherd: *I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23). The one who was led as a lamb now leads as the shepherd-king. And the seer all but quotes Isaiah''s word over the returning exiles: *They shall hunger no more, neither thirst any more; neither shall the sun light on them, nor any heat* (Revelation 7:16) — *They shall not hunger nor thirst; neither shall the heat nor sun smite them: for he that hath mercy on them shall lead them, even by the springs of water shall he guide them* (Isaiah 49:10). The mercy that leads the gathered prisoners to the springs is the Lamb leading the regathered seed to the *living fountains of waters.* It is the shepherd-care of David''s psalm come to its rest: *He maketh me to lie down in green pastures: he leadeth me beside the still waters* (Psalm 23:2). The shepherd of the twenty-third psalm, the one shepherd of Ezekiel, and the Lamb in the midst of the throne are one — feeding, leading, and giving the living water to his homecoming flock.',
+       sv.verse_id, ev.verse_id, 'free', 9165
+  FROM _s224_rv07_lookup sv, _s224_rv07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=7 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-7-elohim-shall-wipe-away-all-tears-and-tabernacle-among-them-isaiah-25',
+       E'Elohim (God) shall wipe away all tears and tabernacle among them (Isaiah 25, Ezekiel 37)',
+       E'The vision ends in the dwelling of Elohim (God) with his gathered people and the end of all their mourning. *Therefore are they before the throne of Elohim (God), and serve him day and night in his temple: and he that sitteth on the throne shall dwell among them* (Revelation 7:15). This is the very promise sealed to the reunited tribes over the two sticks made one: *I will make a covenant of peace with them; it shall be an everlasting covenant with them... and will set my sanctuary in the midst of them for evermore* (Ezekiel 37:26); *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27). The temple-service of Revelation 7 is the sanctuary set in the midst of the regathered houses — the One on the throne dwelling among them, he with them and they his. And the last word is the prophet''s promise of comfort: *and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17) — *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it* (Isaiah 25:8). For the seed who came out of great tribulation, the mourning of exile is over; the reproach of the scattered is taken away, and Elohim (God) himself wipes away every tear. The two-house gathering comes to its rest in the tabernacling of Elohim (God) with his people, for ever.',
+       sv.verse_id, ev.verse_id, 'free', 9168
+  FROM _s224_rv07_lookup sv, _s224_rv07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=7 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-7-the-four-winds-held-and-the-seal-of-the-living-elohim-in-the-foreheads-ezekiel-9
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 9:4 — *set a mark upon the foreheads of the men that sigh and that cry for all the abominations* the protecting mark on the righteous, re-spoken as the seal in the foreheads of the servants of Elohim (God) (Revelation 7:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-four-winds-held-and-the-seal-of-the-living-elohim-in-the-foreheads-ezekiel-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=9 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 9:6 — *come not near any man upon whom is the mark* the mark divides the kept from the struck, as the seal stays the four winds from the sealed (Revelation 7:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-four-winds-held-and-the-seal-of-the-living-elohim-in-the-foreheads-ezekiel-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=9 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 12:13 — *the blood shall be to you for a token... and the plague shall not be upon you to destroy you* the passover token that turns the destroyer aside, the line the seal of the living Elohim (God) stands in (Revelation 7:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-four-winds-held-and-the-seal-of-the-living-elohim-in-the-foreheads-ezekiel-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Esdras 2:38 — *behold the number of those that be sealed in the feast of Yahuah (God)* the restored library''s sealed and counted company, the sealing and numbering one act of keeping (Revelation 7:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-four-winds-held-and-the-seal-of-the-living-elohim-in-the-foreheads-ezekiel-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=2 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-7-the-twelve-tribes-sealed-the-two-house-regathering-ezekiel-37
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 37:16 — *one stick... For Yahudah (Judah)... another stick... For Joseph, the stick of Ephraim* the two houses written on two sticks, the key to the tribes named one by one (Revelation 7:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-twelve-tribes-sealed-the-two-house-regathering-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 37:17 — *they shall become one in thine hand* the two sticks joined, as the 144,000 of all the tribes is the whole house made one (Revelation 7:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-twelve-tribes-sealed-the-two-house-regathering-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 37:19 — *the stick of Joseph, which is in the hand of Ephraim... even with the stick of Yahudah (Judah)... one in mine hand* the northern and southern houses made one stick, the seal upon a reunited people (Revelation 7:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-twelve-tribes-sealed-the-two-house-regathering-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 37:21 — *I will take the children of Yashar''el (Israel) from among the heathen... and gather them on every side* the sealed of all the tribes are the gathered of all the tribes (Revelation 7:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-twelve-tribes-sealed-the-two-house-regathering-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Ezekiel 37:22 — *no more two nations, neither shall they be divided into two kingdoms any more* the two-house breach healed; the 144,000 is Yashar''el (Israel) made whole, not replaced (Revelation 7:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-twelve-tribes-sealed-the-two-house-regathering-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'2 Esdras 2:38 — *behold the number of those that be sealed in the feast of Yahuah (God)* the restored library''s sealed and numbered company, the regathered tribes brought in to the feast (Revelation 7:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-twelve-tribes-sealed-the-two-house-regathering-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=2 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-7-a-great-multitude-no-man-could-number-the-gathered-seed-hosea-1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 1:10 — *the number of the children of Yashar''el (Israel) shall be as the sand of the sea... ye are the sons of the living Elohim (God)* the Lo-ammi of the exile become the innumerable multitude before the throne (Revelation 7:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-a-great-multitude-no-man-could-number-the-gathered-seed-hosea-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 13:16 — *I will make thy seed as the dust of the earth... then shall thy seed also be numbered* the promised seed beyond counting, the innumerability the multitude embodies (Revelation 7:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-a-great-multitude-no-man-could-number-the-gathered-seed-hosea-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:5 — *tell the stars, if thou be able to number them... so shall thy seed be* what Abraham could not count, the seer beholds gathered before the throne (Revelation 7:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-a-great-multitude-no-man-could-number-the-gathered-seed-hosea-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Esdras 2:42 — *I Esdras saw upon the mount Sion a great people, whom I could not number* the same uncountable host, gathered and praising Yahuah (God) with songs (Revelation 7:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-a-great-multitude-no-man-could-number-the-gathered-seed-hosea-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=2 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Tobit 13:5 — *he... will gather us out of all nations, among whom he has scattered us* the multitude of all nations is the scattered seed regathered, mercy after the scourge of exile (Revelation 7:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-a-great-multitude-no-man-could-number-the-gathered-seed-hosea-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Baruch 5:5 — *behold your children gathered from the west to the east by the word of the Holy One* Jerusalem''s children returning from the dispersion, the multitude arrived before the throne (Revelation 7:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-a-great-multitude-no-man-could-number-the-gathered-seed-hosea-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-7-white-robes-and-palms-the-sukkot-ingathering-leviticus-23
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 23:40 — *boughs of goodly trees, branches of palm trees... and ye shall rejoice before Yahuah Elohaychem (the LORD your God)* the Sukkot palms in the hands of the gathered multitude (Revelation 7:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-white-robes-and-palms-the-sukkot-ingathering-leviticus-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=40
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Esdras 2:45 — *now are they crowned, and receive palms* the white-robed palm-bearers named: they that confessed the name and came through tribulation (Revelation 7:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-white-robes-and-palms-the-sukkot-ingathering-leviticus-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=14
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=2 AND tv.verse_number=45
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-7-salvation-to-our-elohim-and-the-lamb-the-throne-and-the-slain-lamb-revelation-5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Revelation 5:13 — *Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb* the Father and the Formed Son named together yet distinguished, the same worship (Revelation 7:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-salvation-to-our-elohim-and-the-lamb-the-throne-and-the-slain-lamb-revelation-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Esdras 2:47 — *It is the Son of Yahuah (God), whom they have confessed in the world* the Lamb is the Son distinguished beside the Father, whom the gathered confessed (Revelation 7:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-salvation-to-our-elohim-and-the-lamb-the-throne-and-the-slain-lamb-revelation-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=10
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=2 AND tv.verse_number=47
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-7-the-lamb-shall-feed-them-and-lead-them-to-living-fountains-ezekiel-34
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 34:23 — *I will set up one shepherd over them... even my servant David; he shall feed them* the one shepherd over the regathered flock, the Lamb who feeds them (Revelation 7:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-lamb-shall-feed-them-and-lead-them-to-living-fountains-ezekiel-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 49:10 — *They shall not hunger nor thirst... by the springs of water shall he guide them* the mercy that leads the returning exiles to the springs, the Lamb leading the seed to living fountains (Revelation 7:16-17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-lamb-shall-feed-them-and-lead-them-to-living-fountains-ezekiel-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 23:2 — *He maketh me to lie down in green pastures: he leadeth me beside the still waters* the shepherd-care of David''s psalm, fulfilled as the Lamb leads to living fountains (Revelation 7:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-the-lamb-shall-feed-them-and-lead-them-to-living-fountains-ezekiel-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=23 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-7-elohim-shall-wipe-away-all-tears-and-tabernacle-among-them-isaiah-25
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 37:27 — *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* the dwelling sealed to the reunited tribes, the One on the throne dwelling among them (Revelation 7:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-elohim-shall-wipe-away-all-tears-and-tabernacle-among-them-isaiah-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 37:26 — *will set my sanctuary in the midst of them for evermore* the everlasting covenant of peace, the sanctuary the gathered serve in (Revelation 7:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-elohim-shall-wipe-away-all-tears-and-tabernacle-among-them-isaiah-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 25:8 — *Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away* the prophet''s promise of comfort, the mourning of exile ended (Revelation 7:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv07_lookup sv, _s224_rv07_lookup tv
+ WHERE t.slug='revelation-7-elohim-shall-wipe-away-all-tears-and-tabernacle-among-them-isaiah-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=7 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_08.sql (S224 Revelation 8) -----
+-- =====================================================================
+-- S224 minion — REVELATION 8 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 8 (13 verses) — the seventh seal opened, silence in heaven, the seven
+--   trumpets given, the prayers of the saints with incense, the censer cast to the earth, and
+--   the first four trumpet-plagues re-speaking the Exodus on a cosmic scale.
+-- Tag: rv08 (temp view _s224_rv08_lookup).
+-- Sort band: floor 9175, step 3 (9175, 9178, 9181, 9184, 9187, 9190, 9193 used; under 9200).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: The trumpets of Revelation 8 are not a secret-rapture escape-clock; they are
+-- the day of Yahuah (LORD) breaking upon the earth in the very words of the Exodus — hail and
+-- fire, the waters to blood, the bitter waters, the sun and moon darkened — the same Yahuah who
+-- judged Egypt now judging the whole earth, with the prayers of his saints rising as the incense
+-- that sets it all in motion. The censer of wrath is filled FROM the altar where the saints'
+-- prayers were just offered: the judgment answers the cry of the righteous (the *how long* of the
+-- fifth seal, 6:10). The seven trumpets are the priestly silver trumpets of Numbers 10 sounded on
+-- a cosmic scale — the assembly gathered, the alarm of war, the memorial before Elohim (God). No
+-- Trinitarian grammar surfaces; the One on the throne and the Lamb are distinguished, and the
+-- angels minister, they are not worshipped.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1     silence in heaven about the space of half an hour
+--           Tanakh: Habakkuk 2:20 (let all the earth keep silence before him), Zephaniah 1:7
+--                   (hold thy peace at the presence of Adonai Yahuah), Zechariah 2:13 (be silent,
+--                   O all flesh, before Yahuah)
+--           Extras: none warranted   NT: none warranted (carried in the trumpet thread)
+--   v.2,6   the seven angels and the seven trumpets prepared to sound
+--           Tanakh: Numbers 10:9 (blow an alarm... ye shall be remembered before Yahuah),
+--                   Numbers 10:10 (a memorial before your Elohim), Joel 2:1 (blow the trumpet in
+--                   Zion... the day of Yahuah cometh)
+--           Extras: none warranted   NT: none warranted
+--   v.3-4   the prayers of all saints with much incense ascending before Elohim
+--           Tanakh: Psalm 141:2 (let my prayer be set forth before thee as incense), Exodus 30:1
+--                   (an altar to burn incense upon), Exodus 30:7 (Aaron shall burn sweet incense)
+--           Extras: Tobit 12:15 (Raphael... which present the prayers of the saints), Tobit 12:12
+--                   (I did bring the remembrance of your prayers before the Holy One), 1 Enoch
+--                   47:1 (ascended the prayer of the righteous... before Yahuah of Spirits),
+--                   1 Enoch 99:3 (raise your prayers as a memorial... before the angels)
+--           NT: Revelation 5:8 (golden vials full of odours, which are the prayers of saints)
+--   v.5     the censer filled with fire of the altar, cast into the earth
+--           Tanakh: Ezekiel 10:2 (fill thine hand with coals of fire from between the cherubims,
+--                   and scatter them over the city)
+--           Extras: none warranted   NT: none warranted
+--   v.7-9   hail and fire mingled with blood; the burning mountain; the third of the sea to blood
+--           Tanakh: Exodus 9:23 (Yahuah sent thunder and hail, and the fire ran along), Exodus
+--                   9:24 (hail, and fire mingled with the hail), Exodus 7:20 (the waters... turned
+--                   to blood), Exodus 7:21 (the fish... died), Jeremiah 51:25 (O destroying
+--                   mountain... I will make thee a burnt mountain)
+--           Extras: none warranted   NT: none warranted
+--   v.10-11 the star Wormwood; the third of the waters made bitter
+--           Tanakh: Jeremiah 9:15 (I will feed them... with wormwood, and give them water of
+--                   gall), Jeremiah 23:15 (I will feed them with wormwood), Exodus 15:23 (the
+--                   waters of Marah... they were bitter)
+--           Extras: none warranted   NT: none warranted
+--   v.12-13 the sun/moon/stars a third darkened; the eagle's threefold Woe
+--           Tanakh: Exodus 10:21 (darkness over the land of Egypt), Exodus 10:22 (thick darkness
+--                   three days), Joel 2:10 (the sun and the moon shall be dark, and the stars
+--                   shall withdraw their shining), Isaiah 13:10 (the stars... shall not give their
+--                   light: the sun shall be darkened)
+--           Extras: none warranted   NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   9175 revelation-8-silence-in-heaven-before-yahuah-habakkuk-2                                  (Tanakh)
+--   9178 revelation-8-the-seven-trumpets-of-the-seven-angels-numbers-10                           (Tanakh)
+--   9181 revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30                  (Tanakh + Extras + NT)
+--   9184 revelation-8-the-censer-cast-to-the-earth-with-fire-ezekiel-10                            (Tanakh)
+--   9187 revelation-8-hail-and-fire-mingled-with-blood-the-seventh-plague-exodus-9                (Tanakh)
+--   9190 revelation-8-the-star-wormwood-and-the-bitter-waters-jeremiah-9-exodus-15                (Tanakh)
+--   9193 revelation-8-the-sun-moon-and-stars-a-third-darkened-exodus-10-joel-2                     (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-8-silence-in-heaven-before-yahuah-habakkuk-2
+  ('canon', 'revelation', 8, 1, 'canon', 'habakkuk', 2, 20, 'free', E'*But Yahuah (LORD) is in his holy temple: let all the earth keep silence before him.* (Habakkuk 2:20). When the seventh seal is opened *there was silence in heaven about the space of half an hour* (Revelation 8:1) — and the seer is hearing the prophet. The silence is not emptiness but the hush of the whole creation before the One enthroned in his holy temple; heaven itself falls still as the earth is bidden to, for the day of his judgment is about to break. The prayers of the saints are about to be answered, and before the answer comes, all flesh holds its breath.'),
+  ('canon', 'revelation', 8, 1, 'canon', 'zephaniah', 1, 7, 'free', E'*Hold thy peace at the presence of Adonai Yahuah (the Lord GOD): for the day of Yahuah (LORD) is at hand: for Yahuah (LORD) hath prepared a sacrifice, he hath bid his guests.* (Zephaniah 1:7). The *silence in heaven* (Revelation 8:1) is the silence Zephaniah commands when the day of Yahuah (LORD) draws near — *hold thy peace at the presence of Adonai Yahuah (the Lord GOD).* The half-hour of stillness is the pause before the trumpets, the held breath of a creation that knows the day of slaughter has been prepared and the guests bidden; the same dread day the prophets named is breaking, and heaven goes quiet before it.'),
+  ('canon', 'revelation', 8, 1, 'canon', 'zechariah', 2, 13, 'free', E'*Be silent, O all flesh, before Yahuah (LORD): for he is raised up out of his holy habitation.* (Zechariah 2:13). Zechariah calls *all flesh* to silence because Yahuah (LORD) is *raised up out of his holy habitation* to act — and that is exactly the moment of *silence in heaven* (Revelation 8:1). The seventh seal opens, and before a single trumpet sounds, the silence falls: Yahuah (LORD) is rising up out of his holy place to judge, and the only fitting answer of every creature, in heaven and on earth, is to be still.'),
+  -- thread: revelation-8-the-seven-trumpets-of-the-seven-angels-numbers-10
+  ('canon', 'revelation', 8, 2, 'canon', 'numbers', 10, 9, 'free', E'*And if ye go to war in your land against the enemy that oppresseth you, then ye shall blow an alarm with the trumpets; and ye shall be remembered before Yahuah Elohaychem (the LORD your God), and ye shall be saved from your enemies.* (Numbers 10:9). The *seven trumpets* given to the seven angels (Revelation 8:2) are the silver trumpets of the wilderness sounded on a cosmic scale. In the camp the alarm-blast was the cry that brought Yashar''el (Israel) to mind before Yahuah Elohaychem (the LORD your God) in the day of battle — *ye shall be remembered* — and so the trumpet-blasts of heaven are the remembrance of the saints'' prayers turned into the alarm of war against the oppressor of the earth.'),
+  ('canon', 'revelation', 8, 6, 'canon', 'numbers', 10, 10, 'free', E'*Also in the day of your gladness, and in your solemn days, and in the beginnings of your months, ye shall blow with the trumpets over your burnt offerings, and over the sacrifices of your peace offerings; that they may be to you for a memorial before your Elohim (God): I am Yahuah Elohaychem (the LORD your God).* (Numbers 10:10). When *the seven angels which had the seven trumpets prepared themselves to sound* (Revelation 8:6), the instrument is the priestly trumpet of Numbers — blown to make *a memorial before your Elohim (God).* The trumpets that once sounded over the offerings of Yashar''el (Israel) now sound the memorial of the saints'' incense-prayers just offered at the golden altar, and the answer to that memorial is the judgment that follows.'),
+  ('canon', 'revelation', 8, 6, 'canon', 'joel', 2, 1, 'free', E'*Blow ye the trumpet in Zion, and sound an alarm in my holy mountain: let all the inhabitants of the land tremble: for the day of Yahuah (LORD) cometh, for it is nigh at hand;* (Joel 2:1). Joel''s trumpet announces *the day of Yahuah (LORD)* — and that is the day the seven angels are *prepared... to sound* (Revelation 8:6). The blast in Zion that made the inhabitants tremble is the same blast taken up by the seven trumpets of heaven; the day Joel saw *nigh at hand* now breaks upon the earth, and the trembling of the land answers the alarm.'),
+  -- thread: revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30
+  ('canon', 'revelation', 8, 3, 'canon', 'exodus', 30, 1, 'free', E'*And thou shalt make an altar to burn incense upon: of shittim wood shalt thou make it.* (Exodus 30:1). The *golden altar which was before the throne* (Revelation 8:3) is the heavenly pattern of the altar of incense Yahuah (LORD) commanded Moses to make. The angel with the golden censer stands at the very altar the tabernacle copied — the place where the sweet smoke rose before the veil — and there he offers *much incense... with the prayers of all saints,* the earthly furniture of worship shown to be the shadow of a real altar in the presence of Elohim (God).'),
+  ('canon', 'revelation', 8, 3, 'canon', 'exodus', 30, 7, 'free', E'*And Aaron shall burn thereon sweet incense every morning: when he dresseth the lamps, he shall burn incense upon it.* (Exodus 30:7). The priest''s daily office — Aaron burning *sweet incense* on the golden altar — is what the angel performs in heaven: *there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar* (Revelation 8:3). The morning and evening incense that ascended in the holy place was always the figure of prayer rising before Yahuah (LORD); here the figure becomes the thing itself, the prayers of the saints carried up in the smoke.'),
+  ('canon', 'revelation', 8, 4, 'canon', 'psalms', 141, 2, 'free', E'*Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice.* (Psalm 141:2). David prayed that his prayer might rise *as incense,* and Revelation shows the prayer and the incense made one: *the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim (God) out of the angel''s hand* (Revelation 8:4). What the psalmist asked for is granted in heaven — the prayers of all the saints go up as the evening sacrifice, set forth before the throne and received.'),
+  ('canon', 'revelation', 8, 4, 'apocrypha', 'tobit', 12, 15, 'extras', E'*I am Raphael, one of the seven holy angels, which present the prayers of the saints, and which go in and out before the glory of the Holy One.* (Tobit 12:15). The angel at the golden altar who carries the saints'' prayers up before Elohim (God) (Revelation 8:3-4) does the very work Raphael named — *one of the seven holy angels, which present the prayers of the saints.* The seven angels of Revelation 8:2 and the seven holy ones who *go in and out before the glory of the Holy One* are the same heavenly order; the incense rising with the prayers is the presenting of those prayers before the throne.'),
+  ('canon', 'revelation', 8, 3, 'apocrypha', 'tobit', 12, 12, 'extras', E'*Now therefore, when you did pray, and Sara your daughter in law, I did bring the remembrance of your prayers before the Holy One: and when you did bury the dead, I was with you likewise.* (Tobit 12:12). Raphael tells how the prayers of the righteous are handled in heaven — *I did bring the remembrance of your prayers before the Holy One* — and that is the angel''s office in Revelation: he offers *the prayers of all saints upon the golden altar which was before the throne* (Revelation 8:3). The prayers are not lost in the air; a holy one bears their remembrance up before the presence of Elohim (God), and the answer comes down in the trumpets.'),
+  ('canon', 'revelation', 8, 4, 'enoch', '1-enoch', 47, 1, 'extras', E'*And in those days shall have ascended the prayer of the righteous, And the blood of the righteous from the earth before Yahuah (God) of Spirits.* (1 Enoch 47:1). The restored library saw the same ascending prayer that Revelation shows rising in the incense-smoke: *the prayers of the saints, ascended up before Elohim (God) out of the angel''s hand* (Revelation 8:4). In Enoch the prayer of the righteous and the blood of the righteous go up together before Yahuah (God) of Spirits, and the throne answers in judgment — the very pattern of Revelation 8, where the prayers rise and then the censer of fire is cast to the earth.'),
+  ('canon', 'revelation', 8, 4, 'enoch', '1-enoch', 99, 3, 'extras', E'*In those days make ready, ye righteous, to raise your prayers as a memorial, And place them as a testimony before the angels, That they may place the sin of the sinners for a memorial before the Most High.* (1 Enoch 99:3). Enoch bids the righteous *raise your prayers as a memorial... before the angels* — and in Revelation an angel does exactly that, offering the incense *with the prayers of all saints* so that they *ascended up before Elohim (God)* (Revelation 8:4). The prayers are a memorial laid before the Most High, and the same fire-bearing angel who carries them up then casts the fire of the altar to the earth (8:5): the memorial of the righteous becomes the judgment on the sinners.'),
+  ('canon', 'revelation', 8, 3, 'canon', 'revelation', 5, 8, 'free', E'*And when he had taken the book, the four beasts and four and twenty elders fell down before the Lamb, having every one of them harps, and golden vials full of odours, which are the prayers of saints.* (Revelation 5:8). What the elders held in golden vials at the throne — *odours, which are the prayers of saints* — is now offered at the altar: *much incense, that he should offer it with the prayers of all saints* (Revelation 8:3). The book sealed in chapter 5 and the prayers gathered in golden vials there are taken up here; the incense of the saints'' prayers, stored before the throne, is at last poured out as the seals give way to the trumpets and the day of Yahuah (LORD) begins.'),
+  -- thread: revelation-8-the-censer-cast-to-the-earth-with-fire-ezekiel-10
+  ('canon', 'revelation', 8, 5, 'canon', 'ezekiel', 10, 2, 'free', E'*And he spake unto the man clothed with linen, and said, Go in between the wheels, even under the cherub, and fill thine hand with coals of fire from between the cherubims, and scatter them over the city. And he went in in my sight.* (Ezekiel 10:2). The angel who *took the censer, and filled it with fire of the altar, and cast it into the earth* (Revelation 8:5) is enacting the vision Ezekiel saw: the man in linen bidden to *fill thine hand with coals of fire from between the cherubims, and scatter them over the city.* The same fire that burned at the altar of prayer is taken as the fire of judgment and flung to the earth, and *there were voices, and thunderings, and lightnings, and an earthquake* — the throne-fire answering the prayers it had just received.'),
+  -- thread: revelation-8-hail-and-fire-mingled-with-blood-the-seventh-plague-exodus-9
+  ('canon', 'revelation', 8, 7, 'canon', 'exodus', 9, 24, 'free', E'*So there was hail, and fire mingled with the hail, very grievous, such as there was none like it in all the land of Egypt since it became a nation.* (Exodus 9:24). The first trumpet brings *hail and fire mingled with blood* (Revelation 8:7), and it is the seventh plague of Egypt sounded over the whole earth — *hail, and fire mingled with the hail.* The judgment that fell on Pharaoh''s land *such as there was none like it* now falls on the third part of the earth; the same Yahuah (LORD) who smote Egypt smites the oppressor of his saints, the Exodus enlarged to the day of his wrath.'),
+  ('canon', 'revelation', 8, 7, 'canon', 'exodus', 9, 23, 'free', E'*And Moses stretched forth his rod toward heaven: and Yahuah (LORD) sent thunder and hail, and the fire ran along upon the ground; and Yahuah (LORD) rained hail upon the land of Egypt.* (Exodus 9:23). When the first angel sounded, *there followed hail and fire... and they were cast upon the earth: and the third part of trees was burnt up, and all green grass was burnt up* (Revelation 8:7). Moses stretched his rod and *the fire ran along upon the ground,* burning Egypt''s field; the trumpet does the same to the third part of the earth. The hand that rained hail upon Pharaoh is the hand at work in the trumpet, the plague-pattern unmistakable.'),
+  ('canon', 'revelation', 8, 8, 'canon', 'jeremiah', 51, 25, 'free', E'*Behold, I am against thee, O destroying mountain, saith Yahuah (LORD), which destroyest all the earth: and I will stretch out mine hand upon thee, and roll thee down from the rocks, and will make thee a burnt mountain.* (Jeremiah 51:25). The second trumpet casts *as it were a great mountain burning with fire... into the sea* (Revelation 8:8), and Jeremiah had already named the *burnt mountain* — Babylon, the *destroying mountain* Yahuah (LORD) would make a charred ruin and roll down. The mountain that *destroyest all the earth* is itself burned and hurled down; the proud world-power that oppressed Zion becomes the burning mountain cast into the sea, and the third part of the sea becomes blood.'),
+  ('canon', 'revelation', 8, 8, 'canon', 'exodus', 7, 20, 'free', E'*And Moses and Aaron did so, as Yahuah (LORD) commanded; and he lifted up the rod, and smote the waters that were in the river, in the sight of Pharaoh, and in the sight of his servants; and all the waters that were in the river were turned to blood.* (Exodus 7:20). *The third part of the sea became blood* (Revelation 8:8) re-speaks the first plague of Egypt, when the waters of the Nile *were turned to blood.* The judgment Moses called down upon Pharaoh''s river is poured out over the sea of the whole earth; the same Yahuah (LORD) who turned Egypt''s waters to blood turns the third part of the sea, and the Exodus plague becomes the trumpet-plague.'),
+  ('canon', 'revelation', 8, 9, 'canon', 'exodus', 7, 21, 'free', E'*And the fish that was in the river died; and the river stank, and the Egyptians could not drink of the water of the river; and there was blood throughout all the land of Egypt.* (Exodus 7:21). At the second trumpet *the third part of the creatures which were in the sea, and had life, died* (Revelation 8:9) — and the blood-plague of Egypt killed the river''s life the same way: *the fish that was in the river died.* The dying of the sea-creatures and the wreck of the ships answer the dying of Egypt''s fish; the waters that turned to blood under Moses turn to blood and death under the trumpet, the plague spread from one river to the third part of the sea.'),
+  -- thread: revelation-8-the-star-wormwood-and-the-bitter-waters-jeremiah-9-exodus-15
+  ('canon', 'revelation', 8, 11, 'canon', 'jeremiah', 9, 15, 'free', E'*Therefore thus saith Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of Yashar''el (Israel); Behold, I will feed them, even this people, with wormwood, and give them water of gall to drink.* (Jeremiah 9:15). The third trumpet names the fallen star *Wormwood,* and *the third part of the waters became wormwood; and many men died of the waters, because they were made bitter* (Revelation 8:11). Jeremiah had named the judgment of *wormwood* and *water of gall* given to a people who walked after their own heart; the bitter draught the prophet pronounced is poured into the rivers and fountains of the earth, the waters of life turned to a cup of death.'),
+  ('canon', 'revelation', 8, 11, 'canon', 'jeremiah', 23, 15, 'free', E'*Therefore thus saith Yahuah Tseva''ot (LORD of hosts) concerning the prophets; Behold, I will feed them with wormwood, and make them drink the water of gall: for from the prophets of Jerusalem is profaneness gone forth into all the land.* (Jeremiah 23:15). Twice Jeremiah pronounced the sentence of *wormwood* and *the water of gall,* here upon the false prophets whose profaneness filled the land — and the third trumpet makes the very name a star: *the name of the star is called Wormwood* (Revelation 8:11). The bitter judgment the prophet spoke against corruption becomes a cosmic plague; the waters made bitter answer the bitterness of those who turned the people from Yahuah (LORD).'),
+  ('canon', 'revelation', 8, 11, 'canon', 'exodus', 15, 23, 'free', E'*And when they came to Marah, they could not drink of the waters of Marah, for they were bitter: therefore the name of it was called Marah.* (Exodus 15:23). At Marah the waters were *bitter* and could not be drunk, and the place was named for its bitterness; the third trumpet turns the third part of the waters bitter so that *many men died of the waters, because they were made bitter* (Revelation 8:11). The bitter waters of the wilderness, which Yahuah (LORD) made sweet for his redeemed, become in the day of judgment the bitter waters of death for the inhabiters of the earth — the same sign, the mercy withheld.'),
+  -- thread: revelation-8-the-sun-moon-and-stars-a-third-darkened-exodus-10-joel-2
+  ('canon', 'revelation', 8, 12, 'canon', 'exodus', 10, 22, 'free', E'*And Moses stretched forth his hand toward heaven; and there was a thick darkness in all the land of Egypt three days:* (Exodus 10:22). The fourth trumpet smites *the third part of the sun... the moon... the stars... so as the third part of them was darkened* (Revelation 8:12), and the ninth plague of Egypt is its root: *thick darkness in all the land of Egypt three days.* The darkness Moses brought over Pharaoh''s land by stretching his hand toward heaven now falls over the lights of heaven themselves; the plague that blinded Egypt is enlarged until the day shines not for a third part of it.'),
+  ('canon', 'revelation', 8, 12, 'canon', 'exodus', 10, 21, 'free', E'*And Yahuah (LORD) said unto Moses, Stretch out thine hand toward heaven, that there may be darkness over the land of Egypt, even darkness which may be felt.* (Exodus 10:21). Yahuah (LORD) commanded a *darkness which may be felt* over Egypt, and the fourth trumpet brings a like darkening of *the day* and *the night* (Revelation 8:12). The same word that darkened Pharaoh''s land darkens the sun and moon and stars at the trumpet; the Exodus judgment that fell on the oppressor of Yashar''el (Israel) falls now on the whole earth that oppresses the saints.'),
+  ('canon', 'revelation', 8, 12, 'canon', 'joel', 2, 10, 'free', E'*The earth shall quake before them; the heavens shall tremble: the sun and the moon shall be dark, and the stars shall withdraw their shining:* (Joel 2:10). Joel saw the day of Yahuah (LORD) darken the heavens — *the sun and the moon shall be dark, and the stars shall withdraw their shining* — and that is the fourth trumpet: *the third part of the sun was smitten, and the third part of the moon, and the third part of the stars* (Revelation 8:12). The darkening Joel announced as the sign of the great and terrible day is the trumpet''s work; the lights of heaven fail as the day of Yahuah (LORD) the prophet foretold breaks upon the earth.'),
+  ('canon', 'revelation', 8, 12, 'canon', 'isaiah', 13, 10, 'free', E'*For the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine.* (Isaiah 13:10). Isaiah''s oracle of the day of Yahuah (LORD) darkened sun, moon, and stars together — and the fourth trumpet darkens all three: *the third part of the sun... the moon... the stars; so as the third part of them was darkened* (Revelation 8:12). The very lights Isaiah said would not give their light in the day of wrath are smitten at the trumpet, and the eagle''s threefold *Woe, woe, woe* (8:13) follows, the day of Yahuah (LORD) the prophets saw now poured upon the inhabiters of the earth.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-8-silence-in-heaven-before-yahuah-habakkuk-2',
+       E'Silence in heaven about the space of half an hour — let all the earth keep silence before him (Habakkuk 2)',
+       E'When the Lamb opens the last seal, the first thing the seer reports is not a sound but its absence: *And when he had opened the seventh seal, there was silence in heaven about the space of half an hour* (Revelation 8:1). This is the hush the prophets command when the day of Yahuah (LORD) draws near. *But Yahuah (LORD) is in his holy temple: let all the earth keep silence before him* (Habakkuk 2:20) — the silence is the whole creation stilled before the One enthroned in his holy temple. *Hold thy peace at the presence of Adonai Yahuah (the Lord GOD): for the day of Yahuah (LORD) is at hand: for Yahuah (LORD) hath prepared a sacrifice, he hath bid his guests* (Zephaniah 1:7) — the half-hour is the held breath before the day of slaughter the prophet saw prepared. *Be silent, O all flesh, before Yahuah (LORD): for he is raised up out of his holy habitation* (Zechariah 2:13) — heaven goes quiet because Yahuah (LORD) is rising up out of his holy place to act. The prayers of the saints are about to be answered and the trumpets about to sound; before the answer comes, every creature in heaven and on earth falls still. The silence is not emptiness. It is reverence before the day of Yahuah (LORD), the pause before the judgment that the saints have been crying for.',
+       sv.verse_id, ev.verse_id, 'free', 9175
+  FROM _s224_rv08_lookup sv, _s224_rv08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=8 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-8-the-seven-trumpets-of-the-seven-angels-numbers-10',
+       E'The seven trumpets of the seven angels — the silver trumpets of Numbers blown on a cosmic scale (Numbers 10)',
+       E'*And I saw the seven angels which stood before Elohim (God); and to them were given seven trumpets* (Revelation 8:2), and *the seven angels which had the seven trumpets prepared themselves to sound* (Revelation 8:6). These are the silver trumpets of the wilderness raised to a cosmic pitch. Yahuah (LORD) had told Moses their use: *if ye go to war in your land against the enemy that oppresseth you, then ye shall blow an alarm with the trumpets; and ye shall be remembered before Yahuah Elohaychem (the LORD your God), and ye shall be saved from your enemies* (Numbers 10:9). The alarm-blast was the cry that brought Yashar''el (Israel) to remembrance before Yahuah Elohaychem (the LORD your God) in the day of battle — and so the trumpets of heaven sound the remembrance of the saints'' prayers turned into the alarm of war against the oppressor of the earth. And the trumpet was blown over the offerings to make *a memorial before your Elohim (God): I am Yahuah Elohaychem (the LORD your God)* (Numbers 10:10) — the very memorial of the incense-prayers just offered at the golden altar. Joel names the day the trumpet announces: *Blow ye the trumpet in Zion, and sound an alarm in my holy mountain: let all the inhabitants of the land tremble: for the day of Yahuah (LORD) cometh, for it is nigh at hand* (Joel 2:1). The blast that made the inhabitants of the land tremble is taken up by the seven angels; the day of Yahuah (LORD) Joel saw nigh at hand now breaks upon the earth.',
+       sv.verse_id, ev.verse_id, 'free', 9178
+  FROM _s224_rv08_lookup sv, _s224_rv08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=8 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30',
+       E'The prayers of all saints with much incense ascending before Elohim (God) (Exodus 30, Tobit 12, 1 Enoch 47)',
+       E'Between the silence and the trumpets stands the altar, and at it an angel offers the prayers of the saints. *And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne. And the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim (God) out of the angel''s hand* (Revelation 8:3-4). This *golden altar which was before the throne* is the heavenly pattern of the altar Moses was commanded to build: *thou shalt make an altar to burn incense upon* (Exodus 30:1), where *Aaron shall burn thereon sweet incense every morning* (Exodus 30:7). The daily incense of the holy place was always the figure of prayer rising before Yahuah (LORD) — *Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice* (Psalm 141:2) — and here the figure becomes the thing itself: the prayers of all the saints carried up in the smoke. The restored library names the very office of the angel who bears them. *I am Raphael, one of the seven holy angels, which present the prayers of the saints, and which go in and out before the glory of the Holy One* (Tobit 12:15); *when you did pray... I did bring the remembrance of your prayers before the Holy One* (Tobit 12:12) — the seven holy ones and the seven angels of Revelation are one order, and they bear the prayers up before the throne. So too Enoch saw the prayer of the righteous ascend: *And in those days shall have ascended the prayer of the righteous, And the blood of the righteous from the earth before Yahuah (God) of Spirits* (1 Enoch 47:1), and bade them *raise your prayers as a memorial... before the angels* (1 Enoch 99:3) — the very pattern of Revelation 8, where the prayers rise and the throne answers in fire. And what the elders held in golden vials in the throne-room — *golden vials full of odours, which are the prayers of saints* (Revelation 5:8) — is here poured out at the altar. The prayers are not lost in the air; they are stored before the throne, borne up by a holy one, and at last answered, for the same angel who carries them up then casts the fire of the altar to the earth.',
+       sv.verse_id, ev.verse_id, 'extras', 9181
+  FROM _s224_rv08_lookup sv, _s224_rv08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=8 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-8-the-censer-cast-to-the-earth-with-fire-ezekiel-10',
+       E'The censer filled with fire of the altar, cast into the earth — the coals scattered over the city (Ezekiel 10)',
+       E'The same censer that carried the saints'' prayers up now becomes the vessel of judgment. *And the angel took the censer, and filled it with fire of the altar, and cast it into the earth: and there were voices, and thunderings, and lightnings, and an earthquake* (Revelation 8:5). The seer is watching the vision Ezekiel saw enacted. *And he spake unto the man clothed with linen, and said, Go in between the wheels, even under the cherub, and fill thine hand with coals of fire from between the cherubims, and scatter them over the city. And he went in in my sight* (Ezekiel 10:2). The man in linen was bidden to take fire from between the cherubim and scatter it over the doomed city; the angel of Revelation takes the fire of the altar — the very altar where the prayers were just received — and flings it to the earth. The fire of intercession and the fire of judgment are one fire: the prayers rose, and the answer comes down as thunderings and lightnings and earthquake. The throne-fire answers the cry of the saints, *How long?* (Revelation 6:10), and the day of Yahuah (LORD) begins.',
+       sv.verse_id, ev.verse_id, 'free', 9184
+  FROM _s224_rv08_lookup sv, _s224_rv08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=8 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-8-hail-and-fire-mingled-with-blood-the-seventh-plague-exodus-9',
+       E'Hail and fire mingled with blood, the burning mountain, the sea to blood — the Exodus plagues enlarged (Exodus 9, Exodus 7, Jeremiah 51)',
+       E'The first two trumpets re-speak the plagues of Egypt over the whole earth. *The first angel sounded, and there followed hail and fire mingled with blood, and they were cast upon the earth: and the third part of trees was burnt up, and all green grass was burnt up* (Revelation 8:7) — and this is the seventh plague: *So there was hail, and fire mingled with the hail, very grievous, such as there was none like it in all the land of Egypt since it became a nation* (Exodus 9:24), when *Yahuah (LORD) sent thunder and hail, and the fire ran along upon the ground* (Exodus 9:23). The judgment that fell on Pharaoh''s land falls now on the third part of the earth. Then *the second angel sounded, and as it were a great mountain burning with fire was cast into the sea: and the third part of the sea became blood* (Revelation 8:8) — and Jeremiah had named the burning mountain: *Behold, I am against thee, O destroying mountain, saith Yahuah (LORD), which destroyest all the earth... and will make thee a burnt mountain* (Jeremiah 51:25). The proud world-power that oppressed Zion is itself burned and hurled down. And the sea turning to blood re-speaks the first plague: *all the waters that were in the river were turned to blood* (Exodus 7:20), so that *the fish that was in the river died* (Exodus 7:21) — just as now *the third part of the creatures which were in the sea, and had life, died* (Revelation 8:9). The same Yahuah (LORD) who smote Egypt to deliver Yashar''el (Israel) smites the oppressor of his saints; the Exodus is enlarged to the day of his wrath.',
+       sv.verse_id, ev.verse_id, 'free', 9187
+  FROM _s224_rv08_lookup sv, _s224_rv08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=8 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-8-the-star-wormwood-and-the-bitter-waters-jeremiah-9-exodus-15',
+       E'The star Wormwood and the waters made bitter — the wormwood of Jeremiah and the bitter waters of Marah (Jeremiah 9, Exodus 15)',
+       E'The third trumpet poisons the waters of the earth with a judgment the prophets had named. *And the third angel sounded, and there fell a great star from heaven, burning as it were a lamp, and it fell upon the third part of the rivers, and upon the fountains of waters; And the name of the star is called Wormwood: and the third part of the waters became wormwood; and many men died of the waters, because they were made bitter* (Revelation 8:10-11). The very name is Jeremiah''s sentence: *Behold, I will feed them, even this people, with wormwood, and give them water of gall to drink* (Jeremiah 9:15), spoken against a people who walked after their own heart; and again, *Behold, I will feed them with wormwood, and make them drink the water of gall: for from the prophets of Jerusalem is profaneness gone forth into all the land* (Jeremiah 23:15), against the false prophets who corrupted the people. The bitter draught the prophet pronounced is now a star, and it falls into the rivers and fountains until the waters of life become a cup of death. And behind it stands Marah: *when they came to Marah, they could not drink of the waters of Marah, for they were bitter: therefore the name of it was called Marah* (Exodus 15:23). The bitter waters that Yahuah (LORD) once made sweet for his redeemed become, in the day of judgment, the bitter waters of death for the inhabiters of the earth — the same sign, the mercy withheld.',
+       sv.verse_id, ev.verse_id, 'free', 9190
+  FROM _s224_rv08_lookup sv, _s224_rv08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=8 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-8-the-sun-moon-and-stars-a-third-darkened-exodus-10-joel-2',
+       E'The sun, moon, and stars a third darkened, and the threefold Woe — the darkness of Egypt and the day of Yahuah (Exodus 10, Joel 2, Isaiah 13)',
+       E'The fourth trumpet strikes the lights of heaven, and the eagle cries the threefold woe. *And the fourth angel sounded, and the third part of the sun was smitten, and the third part of the moon, and the third part of the stars; so as the third part of them was darkened, and the day shone not for a third part of it, and the night likewise* (Revelation 8:12). Its root is the ninth plague of Egypt: *And Yahuah (LORD) said unto Moses, Stretch out thine hand toward heaven, that there may be darkness over the land of Egypt, even darkness which may be felt* (Exodus 10:21), and *there was a thick darkness in all the land of Egypt three days* (Exodus 10:22). The darkness Moses brought over Pharaoh''s land now falls on the sun and moon and stars themselves. And the prophets had foreseen this darkening as the sign of the day of Yahuah (LORD): *The earth shall quake before them; the heavens shall tremble: the sun and the moon shall be dark, and the stars shall withdraw their shining* (Joel 2:10); *For the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine* (Isaiah 13:10). The very lights Joel and Isaiah said would fail in the day of wrath are smitten at the trumpet. Then *I beheld, and heard an angel flying through the midst of heaven, saying with a loud voice, Woe, woe, woe, to the inhabiters of the earth by reason of the other voices of the trumpet of the three angels, which are yet to sound* (Revelation 8:13) — three trumpets are spent, and the threefold woe warns that the worst of the day of Yahuah (LORD) is still to come upon the earth.',
+       sv.verse_id, ev.verse_id, 'free', 9193
+  FROM _s224_rv08_lookup sv, _s224_rv08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=8 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-8-silence-in-heaven-before-yahuah-habakkuk-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Habakkuk 2:20 — *Yahuah (LORD) is in his holy temple: let all the earth keep silence before him* the silence in heaven is the hush of all creation before the One in his holy temple (Revelation 8:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-silence-in-heaven-before-yahuah-habakkuk-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Zephaniah 1:7 — *Hold thy peace at the presence of Adonai Yahuah (the Lord GOD): for the day of Yahuah (LORD) is at hand* the half-hour silence is the held breath before the day of slaughter the prophet saw prepared (Revelation 8:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-silence-in-heaven-before-yahuah-habakkuk-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Zechariah 2:13 — *Be silent, O all flesh, before Yahuah (LORD): for he is raised up out of his holy habitation* heaven goes quiet because Yahuah is rising up out of his holy place to judge (Revelation 8:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-silence-in-heaven-before-yahuah-habakkuk-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=2 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-8-the-seven-trumpets-of-the-seven-angels-numbers-10
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 10:9 — *ye shall blow an alarm with the trumpets; and ye shall be remembered before Yahuah Elohaychem (the LORD your God)* the silver war-alarm of the camp; the trumpets of heaven are the remembrance of the saints turned into the alarm of war (Revelation 8:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-seven-trumpets-of-the-seven-angels-numbers-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=10 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 10:10 — *ye shall blow with the trumpets... that they may be to you for a memorial before your Elohim (God)* the priestly trumpet blown over the offerings, now the memorial of the saints'' incense-prayers (Revelation 8:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-seven-trumpets-of-the-seven-angels-numbers-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=10 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joel 2:1 — *Blow ye the trumpet in Zion... for the day of Yahuah (LORD) cometh, for it is nigh at hand* the blast that made the land tremble; the day Joel saw nigh now breaks at the trumpets (Revelation 8:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-seven-trumpets-of-the-seven-angels-numbers-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 30:1 — *thou shalt make an altar to burn incense upon* the golden altar before the throne is the heavenly pattern the tabernacle copied (Revelation 8:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 30:7 — *Aaron shall burn thereon sweet incense every morning* the priest''s daily office of incense, the figure of prayer rising, now performed by the angel (Revelation 8:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 141:2 — *Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice* David''s petition granted in heaven, the prayers of the saints rising as the evening sacrifice (Revelation 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=141 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Tobit 12:15 — *I am Raphael, one of the seven holy angels, which present the prayers of the saints* the restored library names the angel''s office: the seven holy ones who bear the prayers before the throne (Revelation 8:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=12 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Tobit 12:12 — *I did bring the remembrance of your prayers before the Holy One* the prayers borne up, not lost in the air; the angel offers them on the golden altar (Revelation 8:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=12 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'1 Enoch 47:1 — *shall have ascended the prayer of the righteous... before Yahuah (God) of Spirits* Enoch saw the same ascending prayer; the throne answers it in judgment (Revelation 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=47 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'1 Enoch 99:3 — *raise your prayers as a memorial... before the angels* the prayers laid as a memorial before the Most High, the very pattern of the incense-offering (Revelation 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=99 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'Revelation 5:8 — *golden vials full of odours, which are the prayers of saints* the prayers stored before the throne in chapter 5 are now poured out at the altar (Revelation 8:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-prayers-of-all-saints-with-incense-ascending-exodus-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-8-the-censer-cast-to-the-earth-with-fire-ezekiel-10
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 10:2 — *fill thine hand with coals of fire from between the cherubims, and scatter them over the city* the angel enacts the vision; the fire of the altar of prayer becomes the fire of judgment cast to the earth (Revelation 8:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-censer-cast-to-the-earth-with-fire-ezekiel-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=10 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-8-hail-and-fire-mingled-with-blood-the-seventh-plague-exodus-9
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 9:24 — *there was hail, and fire mingled with the hail, very grievous* the seventh plague of Egypt; the first trumpet sounds it over the third part of the earth (Revelation 8:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-hail-and-fire-mingled-with-blood-the-seventh-plague-exodus-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=9 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 9:23 — *Yahuah (LORD) sent thunder and hail, and the fire ran along upon the ground* Moses stretched his rod and the fire ran over Egypt; the trumpet burns the third part of the earth the same way (Revelation 8:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-hail-and-fire-mingled-with-blood-the-seventh-plague-exodus-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=9 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 51:25 — *O destroying mountain... I will make thee a burnt mountain* the burning mountain cast into the sea is the proud world-power burned and hurled down (Revelation 8:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-hail-and-fire-mingled-with-blood-the-seventh-plague-exodus-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 7:20 — *all the waters that were in the river were turned to blood* the first plague; the third part of the sea becomes blood at the second trumpet (Revelation 8:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-hail-and-fire-mingled-with-blood-the-seventh-plague-exodus-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=7 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Exodus 7:21 — *the fish that was in the river died; and the river stank* the blood-plague killed the river''s life; the trumpet kills the third part of the sea-creatures (Revelation 8:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-hail-and-fire-mingled-with-blood-the-seventh-plague-exodus-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=7 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-8-the-star-wormwood-and-the-bitter-waters-jeremiah-9-exodus-15
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 9:15 — *I will feed them... with wormwood, and give them water of gall to drink* the prophet''s sentence of wormwood becomes a star; the third part of the waters made bitter (Revelation 8:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-star-wormwood-and-the-bitter-waters-jeremiah-9-exodus-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=9 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 23:15 — *I will feed them with wormwood, and make them drink the water of gall* the same sentence against corruption; the star''s very name is Wormwood (Revelation 8:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-star-wormwood-and-the-bitter-waters-jeremiah-9-exodus-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 15:23 — *the waters of Marah... they were bitter* the bitter waters Yahuah once made sweet for his redeemed become the bitter waters of death (Revelation 8:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-star-wormwood-and-the-bitter-waters-jeremiah-9-exodus-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-8-the-sun-moon-and-stars-a-third-darkened-exodus-10-joel-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 10:22 — *there was a thick darkness in all the land of Egypt three days* the ninth plague; the fourth trumpet darkens the sun, moon, and stars themselves (Revelation 8:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-sun-moon-and-stars-a-third-darkened-exodus-10-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=10 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 10:21 — *darkness over the land of Egypt, even darkness which may be felt* the same word that darkened Pharaoh''s land darkens the day and night at the trumpet (Revelation 8:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-sun-moon-and-stars-a-third-darkened-exodus-10-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=10 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joel 2:10 — *the sun and the moon shall be dark, and the stars shall withdraw their shining* the darkening Joel announced as the sign of the day of Yahuah, now the trumpet''s work (Revelation 8:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-sun-moon-and-stars-a-third-darkened-exodus-10-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 13:10 — *the stars of heaven... shall not give their light: the sun shall be darkened* the lights Isaiah said would fail in the day of wrath are smitten; the threefold Woe follows (Revelation 8:12-13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv08_lookup sv, _s224_rv08_lookup tv
+ WHERE t.slug='revelation-8-the-sun-moon-and-stars-a-third-darkened-exodus-10-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=8 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=13 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session224 — Revelation cross-references complete.'
