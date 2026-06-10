@@ -6261,6 +6261,1845 @@ SELECT t.id, x.id, 7, E'1 Enoch 100:3 — *the horse shall walk up to the breast
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_revelation_15.sql (S224 Revelation 15) -----
+-- =====================================================================
+-- S224 minion — REVELATION 15 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 15 (8 verses) — the sea of glass mingled with fire, the song of Moses the
+--   servant of Elohim and the song of the Lamb, the seven angels with the seven last plagues, the
+--   temple of the tabernacle of the testimony in heaven opened and filled with smoke.
+-- Tag: rv15 (temp view _s224_rv15_lookup).
+-- Sort band: floor 9350, step 3 (9350, 9353, 9356, 9359, 9362, 9365 used; under 9375).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical, woven.
+-- Tiers per-row: canon target (Tanakh) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Revelation 15 is the new exodus sung in the OLD exodus's own words. They that
+-- have gotten the victory stand on a sea of glass mingled with fire — the Red Sea crossing of
+-- Exodus 14-15 re-spoken on a cosmic scale — and *they sing the song of Moses the servant of Elohim
+-- (God), and the song of the Lamb* (15:3). The very victory-song that Moses and the children of
+-- Yashar'el (Israel) sang at the sea (Exodus 15:1-18) is the song the redeemed sing again at the
+-- last exodus: *Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty* echoes
+-- *glorious in holiness, fearful in praises, doing wonders* (Exodus 15:11); *just and true are thy
+-- ways* echoes *He is the Rock, his work is perfect... just and right is he* (Deuteronomy 32:4); the
+-- nations coming to worship echoes Psalm 86:9, Jeremiah 10:7, Malachi 1:11, Psalm 22:27. The Torah's
+-- own tabernacle is the heavenly pattern: *the temple of the tabernacle of the testimony in heaven
+-- was opened* (15:5) is the very *tabernacle of testimony* of Exodus 38:21, and the smoke that fills
+-- it so *no man was able to enter* (15:8) is the glory-cloud that filled Moses' tabernacle (Exodus
+-- 40:34-35), Solomon's house (1 Kings 8:10-11), and Isaiah's temple (Isaiah 6:4). The seven plagues
+-- are the covenant-sanctions of Leviticus 26 ("seven times more") and the Exodus plagues poured out.
+-- This chapter forbids the Torah-abolished reading: the song of Moses is sung WITH the song of the
+-- Lamb (not against it), and the heavenly sanctuary IS the Torah's tabernacle, the pattern shewed in
+-- the mount, not superseded. Christology: the One *who liveth for ever and ever* (15:7) is the Father
+-- on the throne; the Lamb whose song is sung is the Formed Son — distinguished, not collapsed; and
+-- *thou only art holy* / *all nations shall come and worship before thee* (15:4) is worship of the
+-- One. The names are preserved exactly as the pull returns them (note 15:3-4 render *Yahuah Elohim
+-- (Lord God) Almighty* and *O Yahuah (Lord)* — the YHWH passage governing rule honored by the pull).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1    another sign: seven angels having the seven last plagues, the wrath of Elohim filled up
+--          Tanakh: Leviticus 26:21 (seven times more plagues for covenant-breaking) — carried in the
+--                  seven-plagues thread with v.7
+--          Extras: none warranted   NT: none warranted (Revelation-internal; bowls poured in ch 16)
+--   v.2-3  sea of glass mingled with fire; the victors with harps; the song of Moses and the Lamb
+--          Tanakh: Exodus 15:1 (Moses and Yashar'el sang this song), Exodus 15:2 (he is become my
+--                  salvation), Exodus 15:11 (glorious in holiness, fearful in praises, doing wonders),
+--                  Exodus 15:18 (Yahuah shall reign for ever and ever); Deuteronomy 32:4 carried in
+--                  the just-and-true thread
+--          Extras: Wisdom 10:20 (the righteous, brought through the Red sea, praised thy holy name,
+--                  O Yahuah, that fought for them — the redeemed singing after the sea)
+--          NT: none warranted (the OT song is the load; no clean NT witness adds)
+--   v.3    just and true are thy ways, thou King of saints — the Rock whose work is perfect
+--          Tanakh: Deuteronomy 32:4 (the Rock, his work is perfect... just and right is he),
+--                  Psalm 145:17 (Yahuah is righteous in all his ways, holy in all his works)
+--          Extras: none warranted   NT: none warranted
+--   v.4    who shall not fear thee; all nations shall come and worship before thee
+--          Tanakh: Jeremiah 10:7 (Who would not fear thee, O King of nations?), Psalm 86:9-10 (all
+--                  nations whom thou hast made shall come and worship before thee), Malachi 1:11 (from
+--                  the rising of the sun my name shall be great among the heathen), Psalm 22:27 (all
+--                  the kindreds of the nations shall worship before thee)
+--          Extras: none warranted   NT: none warranted
+--   v.5-6  the temple of the tabernacle of the testimony opened; the seven angels in pure white linen
+--          Tanakh: Exodus 38:21 (the tabernacle of testimony), Exodus 40:34 (the glory filled the
+--                  tabernacle — carried in the smoke thread), Daniel 10:5 (a man clothed in linen,
+--                  loins girded with fine gold)
+--          Extras: none warranted   NT: none warranted
+--   v.7    one of the four beasts gave the seven golden vials of the wrath of Elohim who liveth for ever
+--          Tanakh: Leviticus 26:21 (the seven-fold plagues) — carried in the seven-plagues thread;
+--                  Exodus 15:6-7 (thy right hand glorious in power, thy wrath consumed them)
+--          Extras: none warranted   NT: none warranted
+--   v.8    the temple filled with smoke from the glory of Elohim; none able to enter
+--          Tanakh: Exodus 40:34-35 (the cloud covered the tent, Moses not able to enter), 1 Kings
+--                  8:10-11 (the cloud filled the house, the priests could not stand to minister),
+--                  Isaiah 6:4 (the house was filled with smoke)
+--          Extras: none warranted   NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   9350 revelation-15-the-song-of-moses-and-the-lamb-the-new-exodus-sung-in-the-old-exodus-words-exodus-15  (Tanakh + Extras)
+--   9353 revelation-15-just-and-true-are-thy-ways-the-rock-whose-work-is-perfect-deuteronomy-32              (Tanakh)
+--   9356 revelation-15-all-nations-shall-come-and-worship-before-thee-psalm-86-jeremiah-10                   (Tanakh)
+--   9359 revelation-15-the-temple-of-the-tabernacle-of-the-testimony-opened-the-heavenly-pattern-exodus-38   (Tanakh)
+--   9362 revelation-15-the-temple-filled-with-smoke-from-the-glory-none-able-to-enter-exodus-40-isaiah-6     (Tanakh)
+--   9365 revelation-15-the-seven-last-plagues-the-covenant-sanctions-poured-out-leviticus-26                 (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-15-the-song-of-moses-and-the-lamb-the-new-exodus-sung-in-the-old-exodus-words-exodus-15
+  ('canon', 'revelation', 15, 3, 'canon', 'exodus', 15, 1, 'free', E'*Then sang Moses and the children of Yashar''el (Israel) this song unto Yahuah (LORD), and spake, saying, I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea.* (Exodus 15:1). This is the very song the seer names: *they sing the song of Moses the servant of Elohim (God), and the song of the Lamb* (Revelation 15:3). The redeemed who *had gotten the victory over the beast* and *stand on the sea of glass* (15:2) are singing the song the children of Yashar''el (Israel) sang at the Red Sea — the same triumph, the enemy thrown into the sea, sung again at the last exodus. The song of Moses is not retired and replaced; it is taken up and sung with the song of the Lamb, one victory in two voices.'),
+  ('canon', 'revelation', 15, 2, 'canon', 'exodus', 15, 2, 'free', E'*Yahuah (LORD) is my strength and song, and he is become my salvation: he is my Elohim (God), and I will prepare him an habitation; my father''s Elohim (God), and I will exalt him.* (Exodus 15:2). The victors *stand on the sea of glass, having the harps of Elohim (God)* (Revelation 15:2), and what they take up is this — the song that names Yahuah (LORD) *my strength and song* and *my salvation.* The harps of the redeemed play the same note Moses struck at the sea: the deliverance is the deliverer''s own work, *he is become my salvation,* and the song belongs to him who fought for them.'),
+  ('canon', 'revelation', 15, 3, 'canon', 'exodus', 15, 11, 'free', E'*Who is like unto thee, O Yahuah (LORD), among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?* (Exodus 15:11). Hear the song of the Lamb re-speak the song of the sea: *Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints* (Revelation 15:3). *Glorious in holiness, fearful in praises, doing wonders* is the very confession the heavenly choir lifts — *great and marvellous are thy works.* The new exodus does not find new words; it sings the old exodus''s words, because it is the same Yahuah (LORD) doing the same wonders, brought to their consummation.'),
+  ('canon', 'revelation', 15, 3, 'canon', 'exodus', 15, 18, 'free', E'*Yahuah (LORD) shall reign for ever and ever.* (Exodus 15:18). The song of the sea ends in the everlasting reign, and so does the song of the redeemed: *just and true are thy ways, thou King of saints* (Revelation 15:3). The Moses-song closed on the kingship of Yahuah (LORD) over all the earth; the Lamb-song crowns him *King of saints.* The exodus that began with a sea crossed ends with a King reigning — and the saints who stand on the sea of glass sing the kingship Moses sang.'),
+  ('canon', 'revelation', 15, 2, 'apocrypha', 'the-wisdom-of-solomon', 10, 20, 'extras', E'*Therefore the righteous spoiled the ungodly, and praised your holy name, O Yahuah (God), and magnified with one accord yours hand, that fought for them.* (Wisdom of Solomon 10:20). The Hebrew library remembers the same scene: the righteous *brought through the Red sea* (Wisdom 10:18), their enemies drowned, and then *with one accord* they praise the holy name of the One *that fought for them.* This is exactly the posture of those who *had gotten the victory... having the harps of Elohim (God)* (Revelation 15:2), who *glorify thy name* (15:4). The redeemed praising with one accord after the sea is the song of Moses; the seer sees it sung again, the same hand that fought at the Red Sea fighting still.'),
+  -- thread: revelation-15-just-and-true-are-thy-ways-the-rock-whose-work-is-perfect-deuteronomy-32
+  ('canon', 'revelation', 15, 3, 'canon', 'deuteronomy', 32, 4, 'free', E'*He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he.* (Deuteronomy 32:4). The song of the Lamb confesses what the second song of Moses confessed: *just and true are thy ways, thou King of saints* (Revelation 15:3). *His work is perfect... just and right is he* in the song Moses taught Yashar''el (Israel) becomes *just and true are thy ways* in the mouth of the victors. The same Rock, the same perfect work, the same justice and truth — the song of Moses is twofold (the sea-song of Exodus 15 and the witness-song of Deuteronomy 32), and the redeemed sing both into the song of the Lamb.'),
+  ('canon', 'revelation', 15, 3, 'canon', 'psalms', 145, 17, 'free', E'*Yahuah (LORD) is righteous in all his ways, and holy in all his works.* (Psalm 145:17). David''s praise and the Lamb''s song speak with one voice: *just and true are thy ways, thou King of saints* (Revelation 15:3). *Righteous in all his ways, and holy in all his works* is the very thing the heavenly choir affirms of *thy works* and *thy ways* — that there is no iniquity in them, that the judgments poured out in the seven plagues are *just and true.* The saints do not flinch at the wrath of Elohim (God); they sing that his ways are righteous, every one.'),
+  -- thread: revelation-15-all-nations-shall-come-and-worship-before-thee-psalm-86-jeremiah-10
+  ('canon', 'revelation', 15, 4, 'canon', 'jeremiah', 10, 7, 'free', E'*Who would not fear thee, O King of nations? for to thee doth it appertain: forasmuch as among all the wise men of the nations, and in all their kingdoms, there is none like unto thee.* (Jeremiah 10:7). The song asks the prophet''s own question: *Who shall not fear thee, O Yahuah (Lord), and glorify thy name? for thou only art holy* (Revelation 15:4). Jeremiah named him *King of nations* and asked *who would not fear thee* — and the redeemed sing the answer: none, *for all nations shall come and worship before thee.* The fear of the King of nations, sung over the idols that *cannot do evil, neither... good* (Jeremiah 10:5), is the worship of the One who alone is holy.'),
+  ('canon', 'revelation', 15, 4, 'canon', 'psalms', 86, 9, 'free', E'*All nations whom thou hast made shall come and worship before thee, O Yahuah (Lord); and shall glorify thy name.* (Psalm 86:9). Here is the very promise the song declares fulfilled: *for all nations shall come and worship before thee; for thy judgments are made manifest* (Revelation 15:4). *All nations whom thou hast made shall come and worship before thee... and shall glorify thy name* — David sang it as hope; the heavenly choir sings it as the manifest judgment that has brought it to pass. The nations come not to a rival, but to the One who *only art holy,* before whom every made thing must bow.'),
+  ('canon', 'revelation', 15, 4, 'canon', 'malachi', 1, 11, 'free', E'*For from the rising of the sun even unto the going down of the same my name shall be great among the Gentiles; and in every place incense shall be offered unto my name, and a pure offering: for my name shall be great among the heathen, saith Yahuah Tseva''ot (LORD of hosts).* (Malachi 1:11). The song''s *all nations shall come and worship before thee* (Revelation 15:4) is the great-name promise of Malachi come to its harvest: *my name shall be great among the heathen.* What the prophet foretold of the name carried from the rising of the sun to its going down, the redeemed see manifest — the nations gathered to glorify the name that *only art holy.*'),
+  ('canon', 'revelation', 15, 4, 'canon', 'psalms', 22, 27, 'free', E'*All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee.* (Psalm 22:27). The psalm of the pierced one ends in the nations turning home, and the song of the Lamb sings its fulfillment: *all nations shall come and worship before thee* (Revelation 15:4). *All the kindreds of the nations shall worship before thee* — the same worship, the same gathering of the ends of the world, sung in the same words. The suffering that opened the psalm gives way to the worship that closes it, and the redeemed at the sea of glass sing that worship made manifest.'),
+  -- thread: revelation-15-the-temple-of-the-tabernacle-of-the-testimony-opened-the-heavenly-pattern-exodus-38
+  ('canon', 'revelation', 15, 5, 'canon', 'exodus', 38, 21, 'free', E'*This is the sum of the tabernacle, even of the tabernacle of testimony, as it was counted, according to the commandment of Moses, for the service of the Levites, by the hand of Ithamar, son to Aaron the priest.* (Exodus 38:21). The seer names it by its Torah name: *the temple of the tabernacle of the testimony in heaven was opened* (Revelation 15:5). *The tabernacle of testimony* that Moses reared by commandment is the very thing John sees standing in heaven — not a new structure that abolishes the old, but the heavenly pattern of which Moses'' tent was the copy, *the testimony* (the tables of the covenant) at its heart. The Torah''s sanctuary is not superseded; it is shown to be the shadow of the true.'),
+  ('canon', 'revelation', 15, 6, 'canon', 'daniel', 10, 5, 'free', E'*Then I lifted up mine eyes, and looked, and behold a certain man clothed in linen, whose loins were girded with fine gold of Uphaz:* (Daniel 10:5). The seven angels come out of the temple *clothed in pure and white linen, and having their breasts girded with golden girdles* (Revelation 15:6) — the very vesture Daniel saw, the man *clothed in linen, whose loins were girded with fine gold.* The pure linen and the gold girdle are the priestly garb of heaven, the dress of those who minister before the glory; the seven who bear the plagues are robed as the holy ones who stand in the presence, sent out from the opened sanctuary.'),
+  -- thread: revelation-15-the-temple-filled-with-smoke-from-the-glory-none-able-to-enter-exodus-40-isaiah-6
+  ('canon', 'revelation', 15, 8, 'canon', 'exodus', 40, 34, 'free', E'*Then a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle.* (Exodus 40:34). The heavenly sanctuary is filled as Moses'' was: *And the temple was filled with smoke from the glory of Elohim (God), and from his power; and no man was able to enter* (Revelation 15:8). When Moses reared the tabernacle of testimony, *the glory of Yahuah (LORD) filled the tabernacle* — and the next verse tells why none can enter: *Moses was not able to enter into the tent of the congregation, because the cloud abode thereon* (Exodus 40:35). The same glory that shut Moses out of the tent fills the heavenly temple so *no man was able to enter,* until the seven plagues are fulfilled.'),
+  ('canon', 'revelation', 15, 8, 'canon', '1-kings', 8, 11, 'free', E'*So that the priests could not stand to minister because of the cloud: for the glory of Yahuah (LORD) had filled the house of Yahuah (LORD).* (1 Kings 8:11). When Solomon''s house was dedicated, the glory-cloud drove the priests out — *the priests could not stand to minister because of the cloud.* It is the same in heaven: *no man was able to enter into the temple, till the seven plagues of the seven angels were fulfilled* (Revelation 15:8). The glory that filled the tabernacle and filled the temple fills the heavenly sanctuary; the pattern holds across the whole library — where the glory of Elohim (God) descends in its fullness, no flesh can stand to minister.'),
+  ('canon', 'revelation', 15, 8, 'canon', 'isaiah', 6, 4, 'free', E'*And the posts of the door moved at the voice of him that cried, and the house was filled with smoke.* (Isaiah 6:4). Isaiah saw the throne *high and lifted up,* the seraphim crying *Holy, holy, holy,* and *the house was filled with smoke.* The seer sees the same: *the temple was filled with smoke from the glory of Elohim (God), and from his power* (Revelation 15:8). The smoke that filled Isaiah''s temple at the thrice-holy cry is the smoke that fills the heavenly temple when the glory and the power of Elohim (God) come down — the visible weight of the holiness that the redeemed have just sung, *thou only art holy* (15:4).'),
+  -- thread: revelation-15-the-seven-last-plagues-the-covenant-sanctions-poured-out-leviticus-26
+  ('canon', 'revelation', 15, 1, 'canon', 'leviticus', 26, 21, 'free', E'*And if ye walk contrary unto me, and will not hearken unto me; I will bring seven times more plagues upon you according to your sins.* (Leviticus 26:21). The seven last plagues are no novelty; they are the covenant''s own sanction brought to its fullness: *seven angels having the seven last plagues; for in them is filled up the wrath of Elohim (God)* (Revelation 15:1). Moses set out the sevenfold plague for those who *walk contrary* — *seven times more plagues upon you according to your sins.* The seven angels carry that very judgment, sevenfold and final, *filled up* at the last. The wrath poured out is the covenant''s word made manifest, not an arbitrary fury.'),
+  ('canon', 'revelation', 15, 7, 'canon', 'exodus', 15, 7, 'free', E'*And in the greatness of thine excellency thou hast overthrown them that rose up against thee: thou sentest forth thy wrath, which consumed them as stubble.* (Exodus 15:7). The song of the sea already named the wrath that the seven vials now carry: *one of the four beasts gave unto the seven angels seven golden vials full of the wrath of Elohim (God), who liveth for ever and ever* (Revelation 15:7). At the Red Sea Yahuah (LORD) *sentest forth thy wrath, which consumed them as stubble* — and the golden vials are full of that same wrath, *thy right hand, O Yahuah (LORD)... glorious in power* (Exodus 15:6), poured out by him *who liveth for ever and ever.* The exodus-wrath that drowned Pharaoh is the wrath the seven angels bear.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-15-the-song-of-moses-and-the-lamb-the-new-exodus-sung-in-the-old-exodus-words-exodus-15',
+       E'The song of Moses the servant of Elohim (God) and the song of the Lamb — the new exodus sung in the old exodus''s words (Exodus 15)',
+       E'They that have gotten the victory stand on a sea of glass mingled with fire, and the seer tells us what they sing: *they sing the song of Moses the servant of Elohim (God), and the song of the Lamb, saying, Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints* (Revelation 15:3). Mark what this is. The sea of glass is the Red Sea re-spoken; the victors *having the harps of Elohim (God)* (15:2) are Yashar''el (Israel) at the shore again — and the song they take up is the song Moses sang there: *Then sang Moses and the children of Yashar''el (Israel) this song unto Yahuah (LORD)... I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea* (Exodus 15:1). The redeemed name him as Moses named him: *Yahuah (LORD) is my strength and song, and he is become my salvation* (Exodus 15:2). They confess what Moses confessed of his wonders: *Who is like unto thee, O Yahuah (LORD), among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?* (Exodus 15:11) — which is the choir''s *great and marvellous are thy works.* And the song ends where Moses'' song ended, in the everlasting reign: *Yahuah (LORD) shall reign for ever and ever* (Exodus 15:18), crowned now as *King of saints.* The Hebrew library remembers the same scene and the same posture: the righteous *brought... through the Red sea* (Wisdom of Solomon 10:18), their enemies drowned, *praised your holy name, O Yahuah (God), and magnified with one accord yours hand, that fought for them* (Wisdom 10:20). This is the heart of the chapter and the answer to every reading that pits the new against the old: the song of Moses is not retired and replaced — it is sung WITH the song of the Lamb, one victory in two voices, the same Yahuah (LORD) doing the same wonders at the last exodus that he did at the first. The new exodus finds no new words; it sings the old exodus''s words, because it is the consummation of the one covenant story.',
+       sv.verse_id, ev.verse_id, 'extras', 9350
+  FROM _s224_rv15_lookup sv, _s224_rv15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=15 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-15-just-and-true-are-thy-ways-the-rock-whose-work-is-perfect-deuteronomy-32',
+       E'Just and true are thy ways, thou King of saints — the Rock whose work is perfect (Deuteronomy 32)',
+       E'The song of the Lamb does not only re-speak the sea-song of Exodus 15; it re-speaks the witness-song Moses taught Yashar''el (Israel) at the end of his life. *Just and true are thy ways, thou King of saints* (Revelation 15:3) is the very confession of Deuteronomy 32: *He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he* (Deuteronomy 32:4). The song of Moses is twofold — the sea-song and the witness-song — and the redeemed sing both into the song of the Lamb: *his work is perfect* becomes *great and marvellous are thy works,* and *just and right is he* becomes *just and true are thy ways.* David''s praise stands with them: *Yahuah (LORD) is righteous in all his ways, and holy in all his works* (Psalm 145:17). This matters where the seven plagues are about to be poured out: the saints do not flinch at the wrath of Elohim (God). They sing that his ways are righteous, every one — that the judgments *made manifest* (15:4) carry no iniquity, because he is the Rock of truth without iniquity, just and right in all his works.',
+       sv.verse_id, ev.verse_id, 'free', 9353
+  FROM _s224_rv15_lookup sv, _s224_rv15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=15 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-15-all-nations-shall-come-and-worship-before-thee-psalm-86-jeremiah-10',
+       E'Who shall not fear thee — all nations shall come and worship before thee (Psalm 86, Jeremiah 10)',
+       E'The song breaks into a question the prophets already asked: *Who shall not fear thee, O Yahuah (Lord), and glorify thy name? for thou only art holy: for all nations shall come and worship before thee; for thy judgments are made manifest* (Revelation 15:4). Jeremiah asked it of the King of nations, over against the idols that *cannot do evil, neither... good*: *Who would not fear thee, O King of nations? for to thee doth it appertain... there is none like unto thee* (Jeremiah 10:7). And the promise the song declares fulfilled is David''s: *All nations whom thou hast made shall come and worship before thee, O Yahuah (Lord); and shall glorify thy name* (Psalm 86:9) — every made thing bowing before the One who alone is holy. Malachi foretold the name carried to the ends of the earth: *from the rising of the sun even unto the going down of the same my name shall be great among the Gentiles... my name shall be great among the heathen, saith Yahuah Tseva''ot (LORD of hosts)* (Malachi 1:11). And the psalm of the pierced one ends there too: *All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee* (Psalm 22:27). The song of the redeemed sees it manifest — *thy judgments are made manifest,* and the nations come, not to a rival on the throne, but to the One who *only art holy.* This is worship of the One: the Father on the throne and the Lamb whose song is sung, and the nations bowing before the name that no idol could bear.',
+       sv.verse_id, ev.verse_id, 'free', 9356
+  FROM _s224_rv15_lookup sv, _s224_rv15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=15 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-15-the-temple-of-the-tabernacle-of-the-testimony-opened-the-heavenly-pattern-exodus-38',
+       E'The temple of the tabernacle of the testimony opened — the Torah''s sanctuary as the heavenly pattern (Exodus 38)',
+       E'After the song, the seer looks and the sanctuary opens: *the temple of the tabernacle of the testimony in heaven was opened* (Revelation 15:5). He names it by its Torah name. *The tabernacle of testimony* is the sanctuary Moses reared by commandment: *This is the sum of the tabernacle, even of the tabernacle of testimony, as it was counted, according to the commandment of Moses* (Exodus 38:21) — the tent with the testimony, the tables of the covenant, at its heart. What John sees standing in heaven is not a new structure that abolishes the old; it is the heavenly pattern of which Moses'' tent was the copy, the thing made *according to the pattern shewed in the mount.* The Torah''s sanctuary is not superseded — it is shown to be the shadow of the true. And the seven angels come out of it *clothed in pure and white linen, and having their breasts girded with golden girdles* (Revelation 15:6), the very vesture Daniel saw on the heavenly man: *a certain man clothed in linen, whose loins were girded with fine gold of Uphaz* (Daniel 10:5). The pure linen and the gold girdle are the priestly garb of heaven, the dress of those who minister before the glory; the seven who bear the plagues are robed as holy ones sent out from the opened sanctuary, the heavenly tabernacle that the earthly one always pointed to.',
+       sv.verse_id, ev.verse_id, 'free', 9359
+  FROM _s224_rv15_lookup sv, _s224_rv15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=15 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-15-the-temple-filled-with-smoke-from-the-glory-none-able-to-enter-exodus-40-isaiah-6',
+       E'The temple filled with smoke from the glory of Elohim (God) — none able to enter (Exodus 40, Isaiah 6)',
+       E'When the sanctuary opens, the glory comes down and fills it: *And the temple was filled with smoke from the glory of Elohim (God), and from his power; and no man was able to enter into the temple, till the seven plagues of the seven angels were fulfilled* (Revelation 15:8). This is the oldest sign in the library, repeated wherever the glory descends in its fullness. When Moses reared the tabernacle of testimony, *a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34) — and the very next verse tells why none could enter: *Moses was not able to enter into the tent of the congregation, because the cloud abode thereon* (Exodus 40:35). When Solomon dedicated the house, the same glory drove the priests out: *the priests could not stand to minister because of the cloud: for the glory of Yahuah (LORD) had filled the house of Yahuah (LORD)* (1 Kings 8:11). And when Isaiah saw the throne high and lifted up, the seraphim crying *Holy, holy, holy,* *the house was filled with smoke* (Isaiah 6:4). The heavenly temple is filled with that same smoke from the glory and the power of Elohim (God) — the visible weight of the holiness the redeemed have just sung, *thou only art holy* (15:4). Where the fullness of his glory comes down, no flesh can stand to minister; the sanctuary is sealed until the seven plagues are fulfilled.',
+       sv.verse_id, ev.verse_id, 'free', 9362
+  FROM _s224_rv15_lookup sv, _s224_rv15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=15 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-15-the-seven-last-plagues-the-covenant-sanctions-poured-out-leviticus-26',
+       E'The seven last plagues — the covenant''s own sanctions poured out (Leviticus 26)',
+       E'The chapter opens and closes on the seven last plagues: *seven angels having the seven last plagues; for in them is filled up the wrath of Elohim (God)* (Revelation 15:1), and *seven golden vials full of the wrath of Elohim (God), who liveth for ever and ever* (15:7). These are no arbitrary fury and no novelty; they are the covenant''s own sanction brought to its fullness. Moses set out the sevenfold plague for those who break covenant: *if ye walk contrary unto me, and will not hearken unto me; I will bring seven times more plagues upon you according to your sins* (Leviticus 26:21). The seven angels carry that very judgment — sevenfold and final, *filled up* at the last. And the wrath in the golden vials is the exodus-wrath the song of the sea already named: *thou sentest forth thy wrath, which consumed them as stubble* (Exodus 15:7), the wrath of *thy right hand, O Yahuah (LORD)... glorious in power* (Exodus 15:6), poured out now by him *who liveth for ever and ever.* The wrath that drowned Pharaoh at the first exodus is the wrath the seven angels bear at the last — the covenant''s word made manifest, just and true, as the saints have sung.',
+       sv.verse_id, ev.verse_id, 'free', 9365
+  FROM _s224_rv15_lookup sv, _s224_rv15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=15 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-15-the-song-of-moses-and-the-lamb-the-new-exodus-sung-in-the-old-exodus-words-exodus-15
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 15:1 — *Then sang Moses and the children of Yashar''el (Israel) this song unto Yahuah (LORD)... the horse and his rider hath he thrown into the sea* the very song the victors take up at the sea of glass, the song of Moses sung with the song of the Lamb (Revelation 15:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-song-of-moses-and-the-lamb-the-new-exodus-sung-in-the-old-exodus-words-exodus-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 15:2 — *Yahuah (LORD) is my strength and song, and he is become my salvation* the harps of the redeemed play Moses'' note: the deliverance is the deliverer''s own work (Revelation 15:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-song-of-moses-and-the-lamb-the-new-exodus-sung-in-the-old-exodus-words-exodus-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 15:11 — *Who is like unto thee, O Yahuah (LORD)... glorious in holiness, fearful in praises, doing wonders?* the sea-song''s confession of his wonders is the choir''s *great and marvellous are thy works* (Revelation 15:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-song-of-moses-and-the-lamb-the-new-exodus-sung-in-the-old-exodus-words-exodus-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 15:18 — *Yahuah (LORD) shall reign for ever and ever* the sea-song ends in the everlasting reign; the Lamb-song crowns him *King of saints* (Revelation 15:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-song-of-moses-and-the-lamb-the-new-exodus-sung-in-the-old-exodus-words-exodus-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Wisdom of Solomon 10:20 — *the righteous... praised your holy name, O Yahuah (God)... yours hand, that fought for them* the Hebrew library remembers the redeemed praising with one accord after the Red sea, the posture of the victors with the harps (Revelation 15:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-song-of-moses-and-the-lamb-the-new-exodus-sung-in-the-old-exodus-words-exodus-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=2
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=10 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-15-just-and-true-are-thy-ways-the-rock-whose-work-is-perfect-deuteronomy-32
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:4 — *He is the Rock, his work is perfect... just and right is he* the witness-song of Moses confesses what the Lamb-song confesses, *just and true are thy ways* (Revelation 15:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-just-and-true-are-thy-ways-the-rock-whose-work-is-perfect-deuteronomy-32'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 145:17 — *Yahuah (LORD) is righteous in all his ways, and holy in all his works* David''s praise stands with the saints: the judgments made manifest carry no iniquity (Revelation 15:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-just-and-true-are-thy-ways-the-rock-whose-work-is-perfect-deuteronomy-32'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=145 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-15-all-nations-shall-come-and-worship-before-thee-psalm-86-jeremiah-10
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 10:7 — *Who would not fear thee, O King of nations?... there is none like unto thee* the prophet''s question is the song''s question, *Who shall not fear thee, O Yahuah (Lord)* (Revelation 15:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-all-nations-shall-come-and-worship-before-thee-psalm-86-jeremiah-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 86:9 — *All nations whom thou hast made shall come and worship before thee, O Yahuah (Lord); and shall glorify thy name* David''s hope is the song''s manifest fulfillment (Revelation 15:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-all-nations-shall-come-and-worship-before-thee-psalm-86-jeremiah-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=86 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 1:11 — *from the rising of the sun... my name shall be great among the Gentiles... great among the heathen* the great-name promise come to its harvest in the nations'' worship (Revelation 15:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-all-nations-shall-come-and-worship-before-thee-psalm-86-jeremiah-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 22:27 — *All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee* the psalm of the pierced one ends in the nations turning home, the worship the song sees manifest (Revelation 15:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-all-nations-shall-come-and-worship-before-thee-psalm-86-jeremiah-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-15-the-temple-of-the-tabernacle-of-the-testimony-opened-the-heavenly-pattern-exodus-38
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 38:21 — *the tabernacle of testimony, as it was counted, according to the commandment of Moses* the seer names the heavenly temple by its Torah name; the earthly tabernacle was the copy of the heavenly pattern (Revelation 15:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-temple-of-the-tabernacle-of-the-testimony-opened-the-heavenly-pattern-exodus-38'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=38 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 10:5 — *a certain man clothed in linen, whose loins were girded with fine gold of Uphaz* the priestly vesture of heaven, the dress of the seven angels in pure white linen and golden girdles (Revelation 15:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-temple-of-the-tabernacle-of-the-testimony-opened-the-heavenly-pattern-exodus-38'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=10 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-15-the-temple-filled-with-smoke-from-the-glory-none-able-to-enter-exodus-40-isaiah-6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 40:34 — *a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle* the glory that filled Moses'' tent (and shut him out, v.35) fills the heavenly temple (Revelation 15:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-temple-filled-with-smoke-from-the-glory-none-able-to-enter-exodus-40-isaiah-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=40 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Kings 8:11 — *the priests could not stand to minister because of the cloud: for the glory of Yahuah (LORD) had filled the house* the glory-cloud drove the priests out of Solomon''s house, as none can enter the heavenly temple (Revelation 15:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-temple-filled-with-smoke-from-the-glory-none-able-to-enter-exodus-40-isaiah-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 6:4 — *the house was filled with smoke* at the seraphim''s thrice-holy cry; the same smoke fills the heavenly temple, the visible weight of *thou only art holy* (Revelation 15:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-temple-filled-with-smoke-from-the-glory-none-able-to-enter-exodus-40-isaiah-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-15-the-seven-last-plagues-the-covenant-sanctions-poured-out-leviticus-26
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 26:21 — *if ye walk contrary unto me... I will bring seven times more plagues upon you according to your sins* the seven last plagues are the covenant''s own sevenfold sanction, filled up at the last (Revelation 15:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-seven-last-plagues-the-covenant-sanctions-poured-out-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 15:7 — *thou sentest forth thy wrath, which consumed them as stubble* the exodus-wrath that drowned Pharaoh is the wrath the seven golden vials bear (Revelation 15:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv15_lookup sv, _s224_rv15_lookup tv
+ WHERE t.slug='revelation-15-the-seven-last-plagues-the-covenant-sanctions-poured-out-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=15 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_16.sql (S224 Revelation 16) -----
+-- =====================================================================
+-- S224 minion — REVELATION 16 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 16 (21 verses) — the seven vials/bowls of the wrath of Elohim poured out.
+-- Tag: rv16 (temp view _s224_rv16_lookup).
+-- Sort band: floor 9375, step 3 (9375, 9378, 9381, 9384, 9387, 9390, 9393 used; under 9400).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME:
+-- The seven bowls are the EXODUS PLAGUES re-spoken — poured now not on Egypt but on the kingdom of
+-- the beast, on the men who bear the mark and worship the image. The same Yahuah (LORD) who plagued
+-- Pharaoh's land to bring his people out is the One who pours these vials; the new exodus judges the
+-- new Egypt by the old signs. The plagues are also a measured, fitting recompence — *wherewithal a
+-- man sinneth, by the same also shall he be punished* (Wisdom 11:16): they that shed the blood of
+-- saints are given blood to drink. This is the consummation of the covenant story, the wrath that
+-- clears the ground for the new Jerusalem of ch 21-22, not an arbitrary cosmic spasm. No
+-- replacement-people reading: the saints whose blood is avenged (16:6) are the same Torah-keeping
+-- remnant of 12:17 / 14:12; the *blessed* watcher who keeps his garments (16:15) is one of them.
+-- Christology preserved as the pull gives: the great voice from the temple and the throne (16:17),
+-- *Yahuah Elohim (Lord God) Almighty, true and righteous are thy judgments* (16:7); the One who
+-- comes *as a thief* (16:15) is Yahusha. No Trinitarian co-equal grammar surfaces.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed per verse-block):
+--   v.1-2   the noisome and grievous sore on them with the mark of the beast
+--           Tanakh: Exodus 9:9-11 (the boil breaking forth with blains), Deuteronomy 28:35 (the sore
+--                   botch that cannot be healed — carried via 28:27 cluster; 9:9 chosen as the cleaner root)
+--           Extras: none warranted   NT: none warranted (the mark carried internally to Revelation)
+--   v.3-7   sea and rivers and fountains to blood; blood to drink; true and righteous are thy judgments
+--           Tanakh: Exodus 7:17,20-21 (the river turned to blood, the fish die), Psalm 79:3,10 (their
+--                   blood shed like water; the revenging of the blood of thy servants), Isaiah 49:26
+--                   (they shall be drunken with their own blood)
+--           Extras: Wisdom 11:15-16 (wherewithal a man sinneth, by the same shall he be punished — the
+--                   fitting recompence)   NT: none warranted
+--   v.8-9   the sun scorching men with fire who blasphemed and repented not
+--           Tanakh: Deuteronomy 32:24 (devoured with burning heat), Malachi 4:1 (the day that shall
+--                   burn as an oven on the proud and the wicked)
+--           Extras: none warranted   NT: none warranted
+--   v.10-11 darkness on the seat of the beast; men gnaw their tongues and blaspheme, repent not
+--           Tanakh: Exodus 10:21-23 (the thick darkness that may be felt), Isaiah 8:21-22 (they fret
+--                   and curse their king and their Elohim, driven to darkness)
+--           Extras: none warranted   NT: none warranted
+--   v.12    the Euphrates dried up, the way of the kings of the east prepared
+--           Tanakh: Isaiah 11:15-16 (the river smitten in seven streams, men go over dryshod, a
+--                   highway for the remnant as in the day out of Egypt), Jeremiah 50:38 (a drought
+--                   upon her waters, dried up), Jeremiah 51:36 (I will dry up her sea, make her springs dry)
+--           Extras: none warranted   NT: none warranted
+--   v.13-14 three unclean spirits like frogs out of dragon/beast/false-prophet gathering the kings
+--           Tanakh: Exodus 8:2-6 (the frogs out of the river), 1 Kings 22:22-23 (the lying spirit in
+--                   the mouth of the prophets), Joel 3:2 (I will gather all nations), Joel 3:11-14
+--                   (assemble, the day of Yahuah in the valley of decision)
+--           Extras: 2 Esdras 13:33-35 (the innumerable multitude gathered to fight against the Man on
+--                   mount Sion)   NT: none warranted
+--   v.15    Behold, I come as a thief; blessed is he that watcheth and keepeth his garments
+--           Tanakh: Isaiah 52:1 (put on thy beautiful garments, O Jerusalem the holy city),
+--                   Zechariah 3:3-4 (the filthy garments taken away, clothed with change of raiment)
+--           Extras: none warranted   NT: none warranted (the thief-saying carried internally)
+--   v.16    Armageddon — the place called in the Hebrew tongue
+--           Tanakh: Zechariah 12:11 (the great mourning in the valley of Megiddon), Judges 5:19 (the
+--                   kings fought by the waters of Megiddo), 2 Kings 23:29 (Josiah slain at Megiddo)
+--           Extras: none warranted   NT: none warranted
+--   v.17-21 It is done; the great voice, the great earthquake, great Babylon, the great hail
+--           Tanakh: Isaiah 66:6 (a voice from the temple that rendereth recompence), Ezekiel 38:19-22
+--                   (a great shaking, the mountains thrown down, great hailstones), Daniel 12:1 (a
+--                   time of trouble such as never was), Exodus 9:24 (the hail and fire mingled)
+--           Extras: Wisdom 16:16 (strange rains, hails, and showers; through fire consumed)
+--           NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   9375 revelation-16-the-noisome-sore-on-them-that-bear-the-mark-the-boils-of-egypt-exodus-9            (Tanakh)
+--   9378 revelation-16-the-sea-and-rivers-to-blood-and-blood-to-drink-they-shed-the-blood-of-saints-exodus-7  (Tanakh + Extras)
+--   9381 revelation-16-the-sun-scorching-and-the-darkness-on-the-throne-of-the-beast-exodus-10-malachi-4  (Tanakh)
+--   9384 revelation-16-the-euphrates-dried-for-the-kings-of-the-east-the-way-prepared-isaiah-11           (Tanakh)
+--   9387 revelation-16-three-unclean-spirits-like-frogs-the-kings-gathered-to-the-battle-exodus-8-joel-3  (Tanakh + Extras)
+--   9390 revelation-16-i-come-as-a-thief-blessed-is-he-that-keepeth-his-garments-and-armageddon-zechariah-3-12  (Tanakh)
+--   9393 revelation-16-it-is-done-the-great-earthquake-and-the-great-hail-ezekiel-38-isaiah-66            (Tanakh + Extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-16-the-noisome-sore-on-them-that-bear-the-mark-the-boils-of-egypt-exodus-9
+  ('canon', 'revelation', 16, 2, 'canon', 'exodus', 9, 9, 'free', E'*And it shall become small dust in all the land of Egypt, and shall be a boil breaking forth with blains upon man, and upon beast, throughout all the land of Egypt.* (Exodus 9:9). The first vial re-speaks the sixth plague of Egypt: *there fell a noisome and grievous sore upon the men which had the mark of the beast, and upon them which worshipped his image* (Revelation 16:2). The same Yahuah (LORD) who smote Pharaoh''s land with the boil now smites the kingdom of the beast — and he smites by the very mark: the sore falls on the flesh that took the counterfeit seal. The new exodus judges the new Egypt by the old sign.'),
+  ('canon', 'revelation', 16, 2, 'canon', 'exodus', 9, 11, 'free', E'*And the magicians could not stand before Moses because of the boils; for the boil was upon the magicians, and upon all the Egyptians.* (Exodus 9:11). In Egypt the boil fell on all the Egyptians, and not even the magicians could stand. So the *noisome and grievous sore* of the first vial falls *upon the men which had the mark of the beast, and upon them which worshipped his image* (Revelation 16:2) — upon the whole company of the image''s servants, the new Egypt, with none able to stand before the judgment of Yahuah (LORD).'),
+  ('canon', 'revelation', 16, 2, 'canon', 'deuteronomy', 28, 35, 'free', E'*Yahuah (LORD) shall smite thee in the knees, and in the legs, with a sore botch that cannot be healed, from the sole of thy foot unto the top of thy head.* (Deuteronomy 28:35). The covenant named this very sanction — *a sore botch that cannot be healed* — among the curses for forsaking Yahuah (LORD). Now it falls on the beast''s worshippers: a *noisome and grievous sore* upon them *which had the mark of the beast* (Revelation 16:2). They who took the mark of the counterfeit lord inherit the unhealable botch the covenant set against rebellion.'),
+  -- thread: revelation-16-the-sea-and-rivers-to-blood-and-blood-to-drink-they-shed-the-blood-of-saints-exodus-7
+  ('canon', 'revelation', 16, 3, 'canon', 'exodus', 7, 20, 'free', E'*And Moses and Aaron did so, as Yahuah (LORD) commanded; and he lifted up the rod, and smote the waters that were in the river, in the sight of Pharaoh, and in the sight of his servants; and all the waters that were in the river were turned to blood.* (Exodus 7:20). The second and third vials re-speak the first plague of Egypt: *the second angel poured out his vial upon the sea; and it became as the blood of a dead man* (Revelation 16:3), and the third *upon the rivers and fountains of waters; and they became blood* (Revelation 16:4). What was the river of Egypt is now the sea and the springs of the whole earth; the rod that turned Nile to blood is the bowl that turns the waters of the beast''s world to blood.'),
+  ('canon', 'revelation', 16, 3, 'canon', 'exodus', 7, 21, 'free', E'*And the fish that was in the river died; and the river stank, and the Egyptians could not drink of the water of the river; and there was blood throughout all the land of Egypt.* (Exodus 7:21). In Egypt the fish died and the blood ran through all the land. So when the second angel poured his vial upon the sea, *it became as the blood of a dead man: and every living soul died in the sea* (Revelation 16:3). The death that filled the Nile fills the sea; the plague of blood is poured out full upon the new Egypt.'),
+  ('canon', 'revelation', 16, 6, 'canon', 'psalms', 79, 3, 'free', E'*Their blood have they shed like water round about Jerusalem; and there was none to bury them.* (Psalm 79:3). The angel of the waters declares the justice of the blood-judgment: *For they have shed the blood of saints and prophets, and thou hast given them blood to drink; for they are worthy* (Revelation 16:6). The psalm cried over the slain saints whose blood was shed like water; the vial answers that cry — they who poured out the blood of the holy ones are made to drink blood in return, measure for measure.'),
+  ('canon', 'revelation', 16, 6, 'canon', 'psalms', 79, 10, 'free', E'*Wherefore should the heathen say, Where is their Elohim (God)? let him be known among the heathen in our sight by the revenging of the blood of thy servants which is shed.* (Psalm 79:10). The psalm pleads for the *revenging of the blood of thy servants*; the third vial is that revenging poured out. *They have shed the blood of saints and prophets, and thou hast given them blood to drink* (Revelation 16:6), and the altar answers, *true and righteous are thy judgments* (Revelation 16:7). The long-deferred plea of the martyrs is heard, and Yahuah (LORD) is made known by avenging their blood.'),
+  ('canon', 'revelation', 16, 6, 'canon', 'isaiah', 49, 26, 'free', E'*And I will feed them that oppress thee with their own flesh; and they shall be drunken with their own blood, as with sweet wine: and all flesh shall know that I Yahuah (LORD) am thy Saviour and thy Redeemer, the mighty One of Jacob.* (Isaiah 49:26). Yahuah (LORD) promised the oppressors of his people that they should be *drunken with their own blood*. The vial fulfils it: *thou hast given them blood to drink; for they are worthy* (Revelation 16:6). The same word that comforted Zion with the redemption of her children pronounces the doom of her oppressors — they who drank the saints'' blood now drink their own.'),
+  ('canon', 'revelation', 16, 5, 'apocrypha', 'the-wisdom-of-solomon', 11, 16, 'extras', E'*That they might know, that wherewithal a man sinneth, by the same also shall he be punished.* (Wisdom 11:16). The Hebrew library names the law of the bowls: the punishment is shaped to the sin. *Thou art righteous, O Yahuah (Lord), which art, and wast, and shalt be, because thou hast judged thus* (Revelation 16:5) — for they shed blood, and *thou hast given them blood to drink* (Revelation 16:6). The plagues of Egypt fell on the idolaters by *the foolish devices of their wickedness* (Wisdom 11:15); so here the blood-shedders are judged by blood. The recompence is not arbitrary but fitting, and therefore righteous.'),
+  -- thread: revelation-16-the-sun-scorching-and-the-darkness-on-the-throne-of-the-beast-exodus-10-malachi-4
+  ('canon', 'revelation', 16, 8, 'canon', 'deuteronomy', 32, 24, 'free', E'*They shall be burnt with hunger, and devoured with burning heat, and with bitter destruction: I will also send the teeth of beasts upon them, with the poison of serpents of the dust.* (Deuteronomy 32:24). The song of Moses warned of the wicked *devoured with burning heat*. The fourth vial pours it out: *power was given unto him to scorch men with fire. And men were scorched with great heat* (Revelation 16:8-9). The covenant''s own song of witness foretold the burning heat that now falls on the men who blaspheme the name and *repented not to give him glory* (Revelation 16:9).'),
+  ('canon', 'revelation', 16, 8, 'canon', 'malachi', 4, 1, 'free', E'*For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva''ot (LORD of hosts), that it shall leave them neither root nor branch.* (Malachi 4:1). The prophet saw the day of Yahuah (LORD) burning the proud as stubble. The fourth angel pours that day out: the sun given *to scorch men with fire* (Revelation 16:8), and they *blasphemed the name of Elohim (God)* and *repented not* (Revelation 16:9). The burning day Malachi promised falls now on the kingdom of the beast — the same fire that to them who fear the name brings the Sun of righteousness with healing.'),
+  ('canon', 'revelation', 16, 10, 'canon', 'exodus', 10, 21, 'free', E'*And Yahuah (LORD) said unto Moses, Stretch out thine hand toward heaven, that there may be darkness over the land of Egypt, even darkness which may be felt.* (Exodus 10:21). The fifth vial re-speaks the ninth plague: *the fifth angel poured out his vial upon the seat of the beast; and his kingdom was full of darkness* (Revelation 16:10). The thick darkness over Egypt''s land, the darkness that *may be felt*, now falls on the very throne of the beast — his seat of power swallowed in the same plague that broke Pharaoh''s pride.'),
+  ('canon', 'revelation', 16, 10, 'canon', 'exodus', 10, 23, 'free', E'*They saw not one another, neither rose any from his place for three days: but all the children of Yashar''el (Israel) had light in their dwellings.* (Exodus 10:23). In Egypt the darkness held the people fast, none rising from his place, while *the children of Yashar''el (Israel) had light in their dwellings.* So the darkness on *the seat of the beast* leaves *his kingdom full of darkness; and they gnawed their tongues for pain* (Revelation 16:10) — the beast''s subjects in the plague of Egypt, while the light belongs to the gathered people of Yahuah (LORD).'),
+  ('canon', 'revelation', 16, 10, 'canon', 'isaiah', 8, 22, 'free', E'*And they shall look unto the earth; and behold trouble and darkness, dimness of anguish; and they shall be driven to darkness.* (Isaiah 8:22). Isaiah saw those who forsake the testimony *fret themselves, and curse their king and their Elohim (God)* (Isaiah 8:21), then driven to darkness. The fifth vial brings it: in the beast''s darkened kingdom *they gnawed their tongues for pain, and blasphemed the Elohim (God) of heaven because of their pains and their sores, and repented not of their deeds* (Revelation 16:10-11). The cursing in the dark, the anguish that will not repent — Isaiah''s portrait of the people who would not turn.'),
+  -- thread: revelation-16-the-euphrates-dried-for-the-kings-of-the-east-the-way-prepared-isaiah-11
+  ('canon', 'revelation', 16, 12, 'canon', 'isaiah', 11, 15, 'free', E'*And Yahuah (LORD) shall utterly destroy the tongue of the Egyptian sea; and with his mighty wind shall he shake his hand over the river, and shall smite it in the seven streams, and make men go over dryshod.* (Isaiah 11:15). The sixth vial dries the great river: *the water thereof was dried up, that the way of the kings of the east might be prepared* (Revelation 16:12). Isaiah saw Yahuah (LORD) smite the river in seven streams so men *go over dryshod*, as he once dried the Red Sea — a way prepared through the waters. The drying of the Euphrates re-speaks that drying: the road is opened, the second exodus echoed in the very judgment.'),
+  ('canon', 'revelation', 16, 12, 'canon', 'isaiah', 11, 16, 'free', E'*And there shall be an highway for the remnant of his people, which shall be left, from Assyria; like as it was to Yashar''el (Israel) in the day that he came up out of the land of Egypt.* (Isaiah 11:16). The river dried makes *an highway for the remnant of his people... like as it was... in the day that he came up out of the land of Egypt.* So the Euphrates *dried up, that the way of the kings of the east might be prepared* (Revelation 16:12): the way that for the gathered remnant is a homeward highway is, for the kings of the east, the road to the battle of that great day — the same dried river, judgment and gathering together.'),
+  ('canon', 'revelation', 16, 12, 'canon', 'jeremiah', 50, 38, 'free', E'*A drought is upon her waters; and they shall be dried up: for it is the land of graven images, and they are mad upon their idols.* (Jeremiah 50:38). Jeremiah foretold a *drought upon her waters* over Babylon, the land of graven images dried up in judgment. The sixth angel pours that drought out: he *poured out his vial upon the great river Euphrates; and the water thereof was dried up* (Revelation 16:12). The river of Babylon, her defence and her boast, is dried at the word of Yahuah (LORD) against the kingdom of idols.'),
+  ('canon', 'revelation', 16, 12, 'canon', 'jeremiah', 51, 36, 'free', E'*Therefore thus saith Yahuah (LORD); Behold, I will plead thy cause, and take vengeance for thee; and I will dry up her sea, and make her springs dry.* (Jeremiah 51:36). Yahuah (LORD) swore over Babylon, *I will dry up her sea, and make her springs dry.* The vial enacts it on the great river: *the water thereof was dried up, that the way of the kings of the east might be prepared* (Revelation 16:12). The drying of Babylon''s waters that Jeremiah promised is the drying of the Euphrates here — Babylon''s judgment begun, the way opened for her overthrow.'),
+  -- thread: revelation-16-three-unclean-spirits-like-frogs-the-kings-gathered-to-the-battle-exodus-8-joel-3
+  ('canon', 'revelation', 16, 13, 'canon', 'exodus', 8, 6, 'free', E'*And Aaron stretched out his hand over the waters of Egypt; and the frogs came up, and covered the land of Egypt.* (Exodus 8:6). The unclean spirits take the shape of the second plague: *I saw three unclean spirits like frogs come out of the mouth of the dragon, and out of the mouth of the beast, and out of the mouth of the false prophet* (Revelation 16:13). The frogs that swarmed up out of the Nile to cover Egypt are re-spoken as the lying spirits that swarm out of the unholy three — the plague of Egypt now a plague of deceiving spirits poured from the mouths of the beast''s trinity.'),
+  ('canon', 'revelation', 16, 13, 'canon', 'exodus', 8, 2, 'free', E'*And if thou refuse to let them go, behold, I will smite all thy borders with frogs:* (Exodus 8:2). Yahuah (LORD) threatened Pharaoh with frogs over all his borders for refusing to let the people go. The seer sees *three unclean spirits like frogs* (Revelation 16:13) come from the mouths of dragon, beast, and false prophet. The amphibious plague of the river becomes the figure of the unclean spirits that go forth deceiving — the mark of Egypt stamped on the powers that hold the world against Yahuah (LORD).'),
+  ('canon', 'revelation', 16, 13, 'canon', '1-kings', 22, 22, 'free', E'*And Yahuah (LORD) said unto him, Wherewith? And he said, I will go forth, and I will be a lying spirit in the mouth of all his prophets. And he said, Thou shalt persuade him, and prevail also: go forth, and do so.* (1 Kings 22:22). The lying spirit that went forth *in the mouth of all his prophets* to draw Ahab to his death at Ramoth-gilead is the pattern of these unclean spirits *out of the mouth of the false prophet* (Revelation 16:13), *the spirits of devils, working miracles, which go forth unto the kings of the earth... to gather them to the battle* (Revelation 16:14). A deceiving spirit in the mouth of false prophets gathers kings to the field of their doom — the old story of Ahab written across the whole world.'),
+  ('canon', 'revelation', 16, 14, 'canon', 'joel', 3, 2, 'free', E'*I will also gather all nations, and will bring them down into the valley of Jehoshaphat, and will plead with them there for my people and for my heritage Yashar''el (Israel), whom they have scattered among the nations, and parted my land.* (Joel 3:2). The unclean spirits *go forth unto the kings of the earth and of the whole world, to gather them to the battle of that great day of El Shaddai (God Almighty)* (Revelation 16:14). Joel saw Yahuah (LORD) *gather all nations* down into the valley to plead for his scattered people. The gathering of the kings to Armageddon is that gathering of the nations to judgment — the nations drawn to the place where Yahuah (LORD) contends for Yashar''el (Israel).'),
+  ('canon', 'revelation', 16, 14, 'canon', 'joel', 3, 14, 'free', E'*Multitudes, multitudes in the valley of decision: for the day of Yahuah (LORD) is near in the valley of decision.* (Joel 3:14). Joel cried of *multitudes, multitudes in the valley of decision*, the day of Yahuah (LORD) drawing near. The frog-spirits gather the kings *to the battle of that great day of El Shaddai (God Almighty)* (Revelation 16:14). *Assemble yourselves, and come, all ye heathen, and gather yourselves together* (Joel 3:11): the heathen summoned to the valley are the kings summoned to Armageddon, the great day of decision come.'),
+  ('canon', 'revelation', 16, 14, 'apocrypha', '2-esdras', 13, 34, 'extras', E'*And an innumerable multitude shall be gathered together, as you sawest them, willing to come, and to overcome him by fighting.* (2 Esdras 13:34). The seer of the eagle-vision saw *an innumerable multitude... gathered together... to overcome him by fighting* — the nations massed against the Man who stands on mount Sion. So the unclean spirits *go forth unto the kings of the earth... to gather them to the battle of that great day* (Revelation 16:14). The same scene the Hebrew library beheld: the kings and multitudes drawn together against the Anointed, only to be undone by the breath of his mouth.'),
+  -- thread: revelation-16-i-come-as-a-thief-blessed-is-he-that-keepeth-his-garments-and-armageddon-zechariah-3-12
+  ('canon', 'revelation', 16, 15, 'canon', 'zechariah', 3, 4, 'free', E'*And he answered and spake unto those that stood before him, saying, Take away the filthy garments from him. And unto him he said, Behold, I have caused thine iniquity to pass from thee, and I will clothe thee with change of raiment.* (Zechariah 3:4). Joshua the high priest stood *clothed with filthy garments*, and the angel had them taken away and clothed him with *change of raiment* — iniquity removed, the saint re-robed. So the word breaks in mid-judgment: *Blessed is he that watcheth, and keepeth his garments, lest he walk naked, and they see his shame* (Revelation 16:15). To keep the garments is to keep the cleansed robe Yahuah (LORD) gives — to walk watchful and clothed, not stripped and shamed, when he comes *as a thief.*'),
+  ('canon', 'revelation', 16, 15, 'canon', 'isaiah', 52, 1, 'free', E'*Awake, awake; put on thy strength, O Zion; put on thy beautiful garments, O Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean.* (Isaiah 52:1). Zion is called to *awake* and *put on thy beautiful garments.* The thief-warning calls the saints to the same watchfulness: *Blessed is he that watcheth, and keepeth his garments, lest he walk naked* (Revelation 16:15). The garments of the holy city are the garments the watcher keeps; to be found clothed and waking at the coming of Yahusha (Jesus) is to be of the awakened, beautiful-robed Jerusalem.'),
+  ('canon', 'revelation', 16, 16, 'canon', 'zechariah', 12, 11, 'free', E'*In that day shall there be a great mourning in Jerusalem, as the mourning of Hadadrimmon in the valley of Megiddon.* (Zechariah 12:11). Zechariah names the very ground: *the valley of Megiddon*, har-Megiddon — Armageddon. *And he gathered them together into a place called in the Hebrew tongue Armageddon* (Revelation 16:16). The mountain of Megiddo, the place of Israel''s great mournings and battles, is the place where the kings of the earth are gathered to the great day; the Hebrew name carries the whole memory of that field of decision.'),
+  ('canon', 'revelation', 16, 16, 'canon', 'judges', 5, 19, 'free', E'*The kings came and fought, then fought the kings of Canaan in Taanach by the waters of Megiddo; they took no gain of money.* (Judges 5:19). The song of Deborah remembers when *the kings came and fought... by the waters of Megiddo* and Yahuah (LORD) broke them, the very stars fighting against Sisera. So *he gathered them together into a place called in the Hebrew tongue Armageddon* (Revelation 16:16) — the kings of the earth drawn to Megiddo, where kings have always come to fight and have always been broken by the hand of Yahuah (LORD).'),
+  ('canon', 'revelation', 16, 16, 'canon', '2-kings', 23, 29, 'free', E'*In his days Pharaoh-nechoh king of Egypt went up against the king of Assyria to the river Euphrates: and king Josiah went against him; and he slew him at Megiddo, when he had seen him.* (2 Kings 23:29). Megiddo is the field where good Josiah fell, slain by Pharaoh''s hand — a place soaked in the memory of kings cut down. To this place the spirits gather the kings of the earth: *a place called in the Hebrew tongue Armageddon* (Revelation 16:16). The mountain of Megiddo, named for slaughter and lament, becomes the muster-ground for the last battle of that great day.'),
+  -- thread: revelation-16-it-is-done-the-great-earthquake-and-the-great-hail-ezekiel-38-isaiah-66
+  ('canon', 'revelation', 16, 17, 'canon', 'isaiah', 66, 6, 'free', E'*A voice of noise from the city, a voice from the temple, a voice of Yahuah (LORD) that rendereth recompence to his enemies.* (Isaiah 66:6). Isaiah heard *a voice from the temple, a voice of Yahuah (LORD) that rendereth recompence to his enemies.* The seventh vial answers it: *there came a great voice out of the temple of heaven, from the throne, saying, It is done* (Revelation 16:17). The voice of recompence from the temple is the great voice that declares the wrath finished — Yahuah (LORD) rendering to his enemies, the bowls poured out to the last.'),
+  ('canon', 'revelation', 16, 18, 'canon', 'ezekiel', 38, 19, 'free', E'*For in my jealousy and in the fire of my wrath have I spoken, Surely in that day there shall be a great shaking in the land of Yashar''el (Israel);* (Ezekiel 38:19). Ezekiel foretold *a great shaking* in the fire of Yahuah''s (LORD''s) wrath when Gog comes against the land. The seventh vial brings it: *there was a great earthquake, such as was not since men were upon the earth, so mighty an earthquake, and so great* (Revelation 16:18). The great shaking of the day of wrath, that throws down the mountains, is the earthquake that splits the great city and topples the cities of the nations.'),
+  ('canon', 'revelation', 16, 21, 'canon', 'ezekiel', 38, 22, 'free', E'*And I will plead against him with pestilence and with blood; and I will rain upon him, and upon his bands, and upon the many people that are with him, an overflowing rain, and great hailstones, fire, and brimstone.* (Ezekiel 38:22). Yahuah (LORD) promised to rain *great hailstones, fire, and brimstone* upon Gog and his bands. The seventh vial pours it out: *there fell upon men a great hail out of heaven, every stone about the weight of a talent: and men blasphemed Elohim (God) because of the plague of the hail* (Revelation 16:21). The great hailstones of the day of Gog fall on the kingdom of the beast — and still the men blaspheme and will not repent.'),
+  ('canon', 'revelation', 16, 21, 'canon', 'exodus', 9, 24, 'free', E'*So there was hail, and fire mingled with the hail, very grievous, such as there was none like it in all the land of Egypt since it became a nation.* (Exodus 9:24). The seventh plague of Egypt was *hail, and fire mingled with the hail, very grievous, such as there was none like it.* The last vial re-speaks it: *there fell upon men a great hail out of heaven, every stone about the weight of a talent... for the plague thereof was exceeding great* (Revelation 16:21). The unequalled hail of Egypt falls now on the world of the beast, the plagues of the exodus brought to their consummation.'),
+  ('canon', 'revelation', 16, 18, 'canon', 'daniel', 12, 1, 'free', E'*And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* (Daniel 12:1). Daniel foresaw *a time of trouble, such as never was since there was a nation.* The seventh vial brings the unequalled shaking: *a great earthquake, such as was not since men were upon the earth* (Revelation 16:18). The trouble such as never was is the wrath poured to the dregs — and in it *thy people shall be delivered, every one that shall be found written in the book*, the watchful keepers of the garments.'),
+  ('canon', 'revelation', 16, 21, 'apocrypha', 'the-wisdom-of-solomon', 16, 16, 'extras', E'*For the ungodly, that denied to know you, were scourged by the strength of your arm: with strange rains, hails, and showers, were they persecuted, that they could not avoid, and through fire were they consumed.* (Wisdom 16:16). The Hebrew library remembers how *the ungodly, that denied to know* Yahuah (God) were persecuted *with strange rains, hails, and showers... and through fire were they consumed* — the hail and fire of Egypt poured on the deniers. So the last vial brings *a great hail out of heaven* upon the men who *blasphemed Elohim (God)* (Revelation 16:21). The same hail that scourged the ungodly of Egypt falls on the ungodly of the beast''s kingdom, who likewise deny to know him and will not repent.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-16-the-noisome-sore-on-them-that-bear-the-mark-the-boils-of-egypt-exodus-9',
+       E'The noisome and grievous sore on them that bear the mark — the boils of Egypt (Exodus 9)',
+       E'The first vial opens the seven bowls by reaching straight back to Egypt: *there fell a noisome and grievous sore upon the men which had the mark of the beast, and upon them which worshipped his image* (Revelation 16:2). This is the sixth plague re-spoken — *a boil breaking forth with blains upon man, and upon beast, throughout all the land of Egypt* (Exodus 9:9), the boil so grievous that *the magicians could not stand before Moses because of the boils; for the boil was upon the magicians, and upon all the Egyptians* (Exodus 9:11). The same Yahuah (LORD) who plagued Pharaoh''s land now plagues the kingdom of the beast, and he strikes by the very mark: the sore falls on the flesh that took the counterfeit seal, none able to stand. And the covenant had named this sanction long before — *Yahuah (LORD) shall smite thee... with a sore botch that cannot be healed, from the sole of thy foot unto the top of thy head* (Deuteronomy 28:35), the unhealable botch set against those who forsake him. They who took the mark of the false lord inherit the curse of Egypt and the curse of the covenant together. The new exodus judges the new Egypt by the old sign.',
+       sv.verse_id, ev.verse_id, 'free', 9375
+  FROM _s224_rv16_lookup sv, _s224_rv16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=16 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-16-the-sea-and-rivers-to-blood-and-blood-to-drink-they-shed-the-blood-of-saints-exodus-7',
+       E'The sea and rivers to blood, and blood to drink — they shed the blood of saints (Exodus 7)',
+       E'The second and third vials re-speak the first plague of Egypt, poured now not on the Nile but on the waters of the whole earth. *The second angel poured out his vial upon the sea; and it became as the blood of a dead man: and every living soul died in the sea* (Revelation 16:3); the third *upon the rivers and fountains of waters; and they became blood* (Revelation 16:4). So Moses *smote the waters that were in the river... and all the waters that were in the river were turned to blood* (Exodus 7:20), and *the fish that was in the river died... and there was blood throughout all the land of Egypt* (Exodus 7:21). But here the bowl carries a justice the plague only hinted at. The angel of the waters declares it: *Thou art righteous, O Yahuah (Lord)... because thou hast judged thus. For they have shed the blood of saints and prophets, and thou hast given them blood to drink; for they are worthy* (Revelation 16:5-6). The psalm had cried over the slain — *Their blood have they shed like water round about Jerusalem; and there was none to bury them* (Psalm 79:3) — and pleaded for *the revenging of the blood of thy servants which is shed* (Psalm 79:10); the vial is that revenging poured out. Yahuah (LORD) had sworn to the oppressors of his people, *they shall be drunken with their own blood, as with sweet wine* (Isaiah 49:26), and now it is done. The Hebrew library names the law of it: *wherewithal a man sinneth, by the same also shall he be punished* (Wisdom 11:16). They shed blood; they are given blood to drink. The recompence is shaped to the crime, and therefore the altar answers, *true and righteous are thy judgments* (Revelation 16:7).',
+       sv.verse_id, ev.verse_id, 'extras', 9378
+  FROM _s224_rv16_lookup sv, _s224_rv16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=16 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-16-the-sun-scorching-and-the-darkness-on-the-throne-of-the-beast-exodus-10-malachi-4',
+       E'The sun scorching and the darkness on the throne of the beast (Exodus 10, Malachi 4)',
+       E'The fourth and fifth vials pour out fire and then darkness on the kingdom of the beast. *The fourth angel poured out his vial upon the sun; and power was given unto him to scorch men with fire. And men were scorched with great heat, and blasphemed the name of Elohim (God)... and they repented not to give him glory* (Revelation 16:8-9). The song of Moses had warned of the wicked *devoured with burning heat* (Deuteronomy 32:24), and Malachi saw the day *that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble* (Malachi 4:1). That burning day falls now on the men who blaspheme and will not turn — the same fire that to them who fear the name brings the Sun of righteousness with healing in his wings is, to the beast''s servants, the scorching of wrath. Then the fifth vial brings the ninth plague of Egypt: *the fifth angel poured out his vial upon the seat of the beast; and his kingdom was full of darkness; and they gnawed their tongues for pain* (Revelation 16:10). Moses stretched out his hand and there was *darkness over the land of Egypt, even darkness which may be felt* (Exodus 10:21), so that *they saw not one another, neither rose any from his place for three days: but all the children of Yashar''el (Israel) had light in their dwellings* (Exodus 10:23). The thick darkness falls now on the very throne of the beast, and his subjects sit in the plague of Egypt while the light belongs to the people of Yahuah (LORD). Isaiah had drawn the portrait of these very men: those who forsake the testimony *curse their king and their Elohim (God)* and *look unto the earth; and behold trouble and darkness, dimness of anguish; and they shall be driven to darkness* (Isaiah 8:21-22) — the cursing in the dark, the anguish that *repented not of their deeds* (Revelation 16:11).',
+       sv.verse_id, ev.verse_id, 'free', 9381
+  FROM _s224_rv16_lookup sv, _s224_rv16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=16 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-16-the-euphrates-dried-for-the-kings-of-the-east-the-way-prepared-isaiah-11',
+       E'The Euphrates dried for the kings of the east, the way prepared (Isaiah 11)',
+       E'The sixth vial dries the great river: *the sixth angel poured out his vial upon the great river Euphrates; and the water thereof was dried up, that the way of the kings of the east might be prepared* (Revelation 16:12). The drying re-speaks the second exodus Isaiah foresaw — when *Yahuah (LORD) shall utterly destroy the tongue of the Egyptian sea; and with his mighty wind shall he shake his hand over the river, and shall smite it in the seven streams, and make men go over dryshod* (Isaiah 11:15), making *an highway for the remnant of his people... like as it was to Yashar''el (Israel) in the day that he came up out of the land of Egypt* (Isaiah 11:16). The same dried river that for the gathered remnant is a homeward highway is, for the kings of the east, the road to the battle of that great day — judgment and gathering bound in one act. And it is Babylon''s own doom: Jeremiah foretold *a drought... upon her waters; and they shall be dried up: for it is the land of graven images* (Jeremiah 50:38), and Yahuah (LORD) swore, *I will dry up her sea, and make her springs dry* (Jeremiah 51:36). The river that was Babylon''s defence and her boast is dried at the word of Yahuah (LORD), and the way is opened for the overthrow of the kingdom of idols.',
+       sv.verse_id, ev.verse_id, 'free', 9384
+  FROM _s224_rv16_lookup sv, _s224_rv16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=16 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-16-three-unclean-spirits-like-frogs-the-kings-gathered-to-the-battle-exodus-8-joel-3',
+       E'Three unclean spirits like frogs — the kings gathered to the battle (Exodus 8, Joel 3)',
+       E'Out of the mouths of the unholy three come the spirits that gather the world to war: *I saw three unclean spirits like frogs come out of the mouth of the dragon, and out of the mouth of the beast, and out of the mouth of the false prophet* (Revelation 16:13). The shape is the second plague of Egypt — Yahuah (LORD) threatened, *I will smite all thy borders with frogs* (Exodus 8:2), and *Aaron stretched out his hand over the waters of Egypt; and the frogs came up, and covered the land* (Exodus 8:6). The amphibious plague of the river becomes the figure of the lying spirits that swarm out to deceive. And they speak as Ahab''s prophets spoke: *I will go forth, and I will be a lying spirit in the mouth of all his prophets... go forth, and do so* (1 Kings 22:22) — a deceiving spirit in the mouth of false prophets gathering kings to the field of their doom. For *they are the spirits of devils, working miracles, which go forth unto the kings of the earth and of the whole world, to gather them to the battle of that great day of El Shaddai (God Almighty)* (Revelation 16:14). This is the gathering Joel saw: *I will also gather all nations, and will bring them down into the valley of Jehoshaphat, and will plead with them there for my people* (Joel 3:2); *Multitudes, multitudes in the valley of decision: for the day of Yahuah (LORD) is near in the valley of decision* (Joel 3:14). And the Hebrew library beheld the same scene — *an innumerable multitude shall be gathered together... to overcome him by fighting* (2 Esdras 13:34), the nations massed against the Man on mount Sion, only to be undone by the breath of his mouth. The kings are drawn together by deceiving spirits to the very place of their judgment.',
+       sv.verse_id, ev.verse_id, 'extras', 9387
+  FROM _s224_rv16_lookup sv, _s224_rv16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=16 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-16-i-come-as-a-thief-blessed-is-he-that-keepeth-his-garments-and-armageddon-zechariah-3-12',
+       E'I come as a thief; blessed is he that keepeth his garments; and Armageddon (Zechariah 3, Zechariah 12)',
+       E'Into the gathering of the kings the voice of Yahusha (Jesus) breaks in mid-judgment: *Behold, I come as a thief. Blessed is he that watcheth, and keepeth his garments, lest he walk naked, and they see his shame* (Revelation 16:15). To keep the garments is to keep the cleansed robe Yahuah (LORD) gives — as Joshua the high priest stood *clothed with filthy garments*, and the angel commanded, *Take away the filthy garments from him... I have caused thine iniquity to pass from thee, and I will clothe thee with change of raiment* (Zechariah 3:4). It is the call to Zion, *Awake, awake; put on thy strength, O Zion; put on thy beautiful garments, O Jerusalem, the holy city* (Isaiah 52:1): to be found watchful and clothed, not stripped and shamed, when the Master comes unlooked-for as a thief. Then the kings are mustered: *he gathered them together into a place called in the Hebrew tongue Armageddon* (Revelation 16:16) — har-Megiddo, the mountain of Megiddo. Zechariah named the ground: *a great mourning in Jerusalem, as the mourning of Hadadrimmon in the valley of Megiddon* (Zechariah 12:11). It is the field where *the kings came and fought... by the waters of Megiddo* and the stars in their courses broke them (Judges 5:19), and where good Josiah fell, *he slew him at Megiddo* (2 Kings 23:29). The place soaked in the memory of kings cut down becomes the muster-ground for the last battle of that great day — and over it stands the warning to watch and keep the garments.',
+       sv.verse_id, ev.verse_id, 'free', 9390
+  FROM _s224_rv16_lookup sv, _s224_rv16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=16 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-16-it-is-done-the-great-earthquake-and-the-great-hail-ezekiel-38-isaiah-66',
+       E'It is done — the great earthquake and the great hail (Ezekiel 38, Isaiah 66)',
+       E'The seventh vial finishes the wrath. *The seventh angel poured out his vial into the air; and there came a great voice out of the temple of heaven, from the throne, saying, It is done* (Revelation 16:17). Isaiah had heard that voice: *a voice from the temple, a voice of Yahuah (LORD) that rendereth recompence to his enemies* (Isaiah 66:6) — the voice of recompence declaring the bowls poured to the last. Then the shaking and the hail. *There was a great earthquake, such as was not since men were upon the earth, so mighty an earthquake, and so great* (Revelation 16:18); Ezekiel foretold it of the day of Gog — *in my jealousy and in the fire of my wrath have I spoken, Surely in that day there shall be a great shaking in the land of Yashar''el (Israel)* (Ezekiel 38:19) — and Daniel of the end — *a time of trouble, such as never was since there was a nation* (Daniel 12:1), in which *thy people shall be delivered, every one that shall be found written in the book*, the watchful keepers of the garments. And the great city is divided, *great Babylon came in remembrance before Elohim (God), to give unto her the cup of the wine of the fierceness of his wrath* (Revelation 16:19). Last falls the seventh plague of Egypt poured out full: *there fell upon men a great hail out of heaven, every stone about the weight of a talent: and men blasphemed Elohim (God) because of the plague of the hail; for the plague thereof was exceeding great* (Revelation 16:21). Egypt had known *hail, and fire mingled with the hail, very grievous, such as there was none like it* (Exodus 9:24); Yahuah (LORD) had sworn to rain on Gog *great hailstones, fire, and brimstone* (Ezekiel 38:22); and the Hebrew library remembered how *the ungodly, that denied to know* him were persecuted *with strange rains, hails, and showers... and through fire were they consumed* (Wisdom 16:16). The unequalled hail falls on the world of the beast — and still the men blaspheme and will not repent. The wrath is done; the ground is cleared for the new Jerusalem to come down.',
+       sv.verse_id, ev.verse_id, 'extras', 9393
+  FROM _s224_rv16_lookup sv, _s224_rv16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=16 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-16-the-noisome-sore-on-them-that-bear-the-mark-the-boils-of-egypt-exodus-9
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 9:9 — *a boil breaking forth with blains upon man, and upon beast, throughout all the land of Egypt* the sixth plague re-spoken; the noisome sore falls on them that bear the mark of the beast (Revelation 16:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-noisome-sore-on-them-that-bear-the-mark-the-boils-of-egypt-exodus-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=9 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 9:11 — *the magicians could not stand before Moses because of the boils* the boil fell on all the Egyptians, none able to stand; so the sore falls on the whole company of the image''s servants (Revelation 16:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-noisome-sore-on-them-that-bear-the-mark-the-boils-of-egypt-exodus-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=9 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 28:35 — *a sore botch that cannot be healed, from the sole of thy foot unto the top of thy head* the covenant''s own curse for forsaking Yahuah (LORD); they that took the mark inherit the unhealable botch (Revelation 16:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-noisome-sore-on-them-that-bear-the-mark-the-boils-of-egypt-exodus-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-16-the-sea-and-rivers-to-blood-and-blood-to-drink-they-shed-the-blood-of-saints-exodus-7
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 7:20 — *all the waters that were in the river were turned to blood* the first plague; the sea becomes as the blood of a dead man, the rivers and fountains blood (Revelation 16:3-4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sea-and-rivers-to-blood-and-blood-to-drink-they-shed-the-blood-of-saints-exodus-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=7 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 7:21 — *the fish that was in the river died... and there was blood throughout all the land of Egypt* the death that filled the Nile fills the sea: every living soul died in the sea (Revelation 16:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sea-and-rivers-to-blood-and-blood-to-drink-they-shed-the-blood-of-saints-exodus-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=7 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 79:3 — *Their blood have they shed like water round about Jerusalem; and there was none to bury them* the cry over the slain saints; the vial answers, blood to drink for them that shed it (Revelation 16:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sea-and-rivers-to-blood-and-blood-to-drink-they-shed-the-blood-of-saints-exodus-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=79 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 79:10 — *the revenging of the blood of thy servants which is shed* the plea of the martyrs; the third vial is that revenging poured out (Revelation 16:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sea-and-rivers-to-blood-and-blood-to-drink-they-shed-the-blood-of-saints-exodus-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=79 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 49:26 — *they shall be drunken with their own blood, as with sweet wine* Yahuah''s (LORD''s) word to the oppressors of his people, fulfilled in the cup of blood given to drink (Revelation 16:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sea-and-rivers-to-blood-and-blood-to-drink-they-shed-the-blood-of-saints-exodus-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Wisdom 11:16 — *wherewithal a man sinneth, by the same also shall he be punished* the law of the bowls named in the Hebrew library; the blood-shedders judged by blood, the recompence fitting and so righteous (Revelation 16:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sea-and-rivers-to-blood-and-blood-to-drink-they-shed-the-blood-of-saints-exodus-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=5
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=11 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-16-the-sun-scorching-and-the-darkness-on-the-throne-of-the-beast-exodus-10-malachi-4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:24 — *devoured with burning heat* the song of Moses foretold the wicked burnt; the fourth vial scorches men with fire (Revelation 16:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sun-scorching-and-the-darkness-on-the-throne-of-the-beast-exodus-10-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Malachi 4:1 — *the day cometh, that shall burn as an oven; and all the proud... shall be stubble* the burning day of Yahuah (LORD) on the wicked; the sun given to scorch men who repent not (Revelation 16:8-9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sun-scorching-and-the-darkness-on-the-throne-of-the-beast-exodus-10-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 10:21 — *darkness over the land of Egypt, even darkness which may be felt* the ninth plague; the fifth vial fills the beast''s kingdom with darkness (Revelation 16:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sun-scorching-and-the-darkness-on-the-throne-of-the-beast-exodus-10-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=10 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 10:23 — *all the children of Yashar''el (Israel) had light in their dwellings* the darkness held Egypt fast while the people had light; the beast''s subjects sit in the plague of Egypt (Revelation 16:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sun-scorching-and-the-darkness-on-the-throne-of-the-beast-exodus-10-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=10 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 8:22 — *trouble and darkness, dimness of anguish; and they shall be driven to darkness* those who forsake the testimony curse their king and are driven to darkness; the beast''s men gnaw their tongues and blaspheme, repenting not (Revelation 16:10-11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-sun-scorching-and-the-darkness-on-the-throne-of-the-beast-exodus-10-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-16-the-euphrates-dried-for-the-kings-of-the-east-the-way-prepared-isaiah-11
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 11:15 — *shall smite it in the seven streams, and make men go over dryshod* Yahuah (LORD) dries the river as he dried the Red Sea; the Euphrates dried, the way prepared (Revelation 16:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-euphrates-dried-for-the-kings-of-the-east-the-way-prepared-isaiah-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 11:16 — *an highway for the remnant of his people... like as it was... in the day that he came up out of the land of Egypt* the dried river a homeward highway for the remnant, the road to the battle for the kings (Revelation 16:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-euphrates-dried-for-the-kings-of-the-east-the-way-prepared-isaiah-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 50:38 — *A drought is upon her waters; and they shall be dried up: for it is the land of graven images* Babylon''s waters dried in judgment; the sixth vial dries the great river Euphrates (Revelation 16:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-euphrates-dried-for-the-kings-of-the-east-the-way-prepared-isaiah-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=50 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 51:36 — *I will dry up her sea, and make her springs dry* Yahuah''s (LORD''s) sworn judgment on Babylon enacted on the great river, the way opened for her overthrow (Revelation 16:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-the-euphrates-dried-for-the-kings-of-the-east-the-way-prepared-isaiah-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-16-three-unclean-spirits-like-frogs-the-kings-gathered-to-the-battle-exodus-8-joel-3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 8:6 — *the frogs came up, and covered the land of Egypt* the second plague; the unclean spirits like frogs swarm out of the mouths of dragon, beast, and false prophet (Revelation 16:13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-three-unclean-spirits-like-frogs-the-kings-gathered-to-the-battle-exodus-8-joel-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=8 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 8:2 — *I will smite all thy borders with frogs* the threatened plague for refusing to let the people go; the figure of the deceiving spirits poured out (Revelation 16:13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-three-unclean-spirits-like-frogs-the-kings-gathered-to-the-battle-exodus-8-joel-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=8 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Kings 22:22 — *I will be a lying spirit in the mouth of all his prophets* the lying spirit that gathered Ahab to his death at Ramoth-gilead; the unclean spirits from the false prophet gather the kings to the battle (Revelation 16:13-14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-three-unclean-spirits-like-frogs-the-kings-gathered-to-the-battle-exodus-8-joel-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=22 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joel 3:2 — *I will also gather all nations, and will bring them down into the valley of Jehoshaphat... for my people* the gathering of the nations to judgment; the kings gathered to the battle of that great day (Revelation 16:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-three-unclean-spirits-like-frogs-the-kings-gathered-to-the-battle-exodus-8-joel-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Joel 3:14 — *Multitudes, multitudes in the valley of decision: for the day of Yahuah (LORD) is near* the day of decision in the valley; the kings drawn to the great day of El Shaddai (God Almighty) (Revelation 16:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-three-unclean-spirits-like-frogs-the-kings-gathered-to-the-battle-exodus-8-joel-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'2 Esdras 13:34 — *an innumerable multitude shall be gathered together... to overcome him by fighting* the Hebrew library beheld the nations massed against the Man on mount Sion; the kings gathered to the battle of that great day (Revelation 16:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-three-unclean-spirits-like-frogs-the-kings-gathered-to-the-battle-exodus-8-joel-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=13 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-16-i-come-as-a-thief-blessed-is-he-that-keepeth-his-garments-and-armageddon-zechariah-3-12
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Zechariah 3:4 — *Take away the filthy garments from him... I will clothe thee with change of raiment* the high priest re-robed, iniquity removed; to keep the garments is to keep the cleansed robe (Revelation 16:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-i-come-as-a-thief-blessed-is-he-that-keepeth-his-garments-and-armageddon-zechariah-3-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=3 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 52:1 — *put on thy beautiful garments, O Jerusalem, the holy city* Zion called to awake and put on her garments; the watcher kept clothed at the coming as a thief (Revelation 16:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-i-come-as-a-thief-blessed-is-he-that-keepeth-his-garments-and-armageddon-zechariah-3-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Zechariah 12:11 — *a great mourning in Jerusalem, as the mourning of Hadadrimmon in the valley of Megiddon* the very ground named, har-Megiddon; the kings gathered to Armageddon (Revelation 16:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-i-come-as-a-thief-blessed-is-he-that-keepeth-his-garments-and-armageddon-zechariah-3-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=12 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Judges 5:19 — *then fought the kings of Canaan in Taanach by the waters of Megiddo* the kings broken at Megiddo, the stars fighting against Sisera; the kings of the earth drawn to that field (Revelation 16:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-i-come-as-a-thief-blessed-is-he-that-keepeth-his-garments-and-armageddon-zechariah-3-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=5 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Kings 23:29 — *king Josiah went against him; and he slew him at Megiddo* the field where good Josiah fell; the place of slain kings becomes the muster-ground for the last battle (Revelation 16:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-i-come-as-a-thief-blessed-is-he-that-keepeth-his-garments-and-armageddon-zechariah-3-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-16-it-is-done-the-great-earthquake-and-the-great-hail-ezekiel-38-isaiah-66
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 66:6 — *a voice from the temple, a voice of Yahuah (LORD) that rendereth recompence to his enemies* the voice of recompence; the great voice from the temple and the throne saying It is done (Revelation 16:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-it-is-done-the-great-earthquake-and-the-great-hail-ezekiel-38-isaiah-66'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 38:19 — *in that day there shall be a great shaking in the land of Yashar''el (Israel)* the great shaking of the day of Gog; a great earthquake such as was not since men were upon the earth (Revelation 16:18).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-it-is-done-the-great-earthquake-and-the-great-hail-ezekiel-38-isaiah-66'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=38 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 12:1 — *a time of trouble, such as never was since there was a nation* the unequalled trouble in which the people written in the book are delivered; the watchful keepers of the garments (Revelation 16:18).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-it-is-done-the-great-earthquake-and-the-great-hail-ezekiel-38-isaiah-66'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 38:22 — *I will rain upon him... great hailstones, fire, and brimstone* the great hailstones sworn on Gog; the great hail every stone the weight of a talent falls on the beast''s kingdom (Revelation 16:21).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-it-is-done-the-great-earthquake-and-the-great-hail-ezekiel-38-isaiah-66'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=38 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Exodus 9:24 — *hail, and fire mingled with the hail, very grievous, such as there was none like it* the seventh plague of Egypt; the unequalled hail falls now on the world of the beast (Revelation 16:21).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-it-is-done-the-great-earthquake-and-the-great-hail-ezekiel-38-isaiah-66'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=9 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Wisdom 16:16 — *the ungodly, that denied to know you... with strange rains, hails, and showers, were they persecuted... and through fire were they consumed* the Hebrew library''s memory of the Egypt hail on the deniers; the same hail on the men who blaspheme and repent not (Revelation 16:21).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv16_lookup sv, _s224_rv16_lookup tv
+ WHERE t.slug='revelation-16-it-is-done-the-great-earthquake-and-the-great-hail-ezekiel-38-isaiah-66'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=16 AND sv.verse_number=21
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=16 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_17.sql (S224 Revelation 17) -----
+-- =====================================================================
+-- S224 minion — REVELATION 17 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 17 (18 verses) — the great harlot on the scarlet beast, MYSTERY BABYLON.
+-- Tag: rv17 (temp view _s224_rv17_lookup).
+-- Sort band: floor 9400, step 3 (9400, 9403, 9406, 9409, 9412, 9415, 9418 used; under 9425).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: the great whore is read as the prophets read the unfaithful city/system — the
+-- harlot-city that committed spiritual fornication and shed the blood of the faithful (Ezekiel 16/23
+-- the unfaithful Yerushalayim/Samaria, Isaiah 47 the daughter of Babylon, Jeremiah 51 Babylon the
+-- golden cup, Nahum 3 Nineveh the well-favoured harlot, Isaiah 23 Tyre the harlot). She is the
+-- COUNTERFEIT of the faithful bride — the great city that reigns over the kings of the earth, set
+-- against the new Jerusalem that comes down as a bride adorned (ch 21). No modern sectarian
+-- identification is imported; the Tanakh harlot-city texts carry the reading. Christology preserved
+-- exactly as the pull gives: *the Lamb shall overcome them: for he is Lord of lords, and King of
+-- kings* (17:14) — Yahusha the Formed who bears the divine title Yahuah Elohaychem holds in
+-- Deuteronomy 10:17 (*Lord of lords*) and Daniel 2:47 (*a Yahuah (Lord) of kings*). The title-pair
+-- *Lord of lords, and King of kings* is preserved in English per the NT-Lord governing rule.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-2   the great whore upon many waters, the kings drunk with the wine of her fornication
+--           Tanakh: Jeremiah 51:7 (Babylon a golden cup making the earth drunken), Jeremiah 51:13
+--                   (thou that dwellest upon many waters), Isaiah 23:17 (Tyre the harlot committing
+--                   fornication with all kingdoms), Nahum 3:4 (the wellfavoured harlot that selleth nations)
+--           Extras: none warranted here (carried into the Mystery-Babylon thread at v.5-6)
+--           NT: none warranted (Revelation-internal echo carried at v.5 via 14:8)
+--   v.3     the woman on the scarlet beast, seven heads and ten horns
+--           Tanakh: Daniel 7:7 (the fourth beast with ten horns), Daniel 7:3 (four beasts from the sea)
+--           Extras: none warranted   NT: none warranted
+--   v.4     arrayed in purple and scarlet, a golden cup full of abominations
+--           Tanakh: Jeremiah 51:7 (the golden cup), Ezekiel 28:13 (the precious stones and gold of the covering)
+--           Extras: none warranted   NT: none warranted
+--   v.5-6   MYSTERY BABYLON THE GREAT, the mother of harlots; drunken with the blood of the saints
+--           Tanakh: Isaiah 47:5 (the lady of kingdoms, daughter of Babylon), Ezekiel 16:38 (the
+--                   unfaithful city judged as women that break wedlock and shed blood)
+--           Extras: 2 Esdras 15:47 (Asia made like Babylon, decked her daughters in whoredom),
+--                   2 Esdras 15:53 (slaying my chosen when you were drunken)
+--           NT: Revelation 14:8 (Babylon is fallen, made all nations drink the wine of her fornication),
+--               Revelation 18:24 (in her was found the blood of prophets and saints)
+--   v.7-11  the beast that was and is not, the seven heads and seven kings
+--           Tanakh: Daniel 7:11 (the beast slain and given to the burning flame) — carried in prose
+--           Extras: none warranted   NT: Revelation 13:8 (names not written in the book of life from
+--                   the foundation of the world) — the book-of-life root for 17:8
+--   v.12-14 the ten horns are ten kings; they make war with the Lamb, and the Lamb overcomes them
+--           Tanakh: Daniel 7:24 (the ten horns are ten kings), Deuteronomy 10:17 (Yahuah is Lord of
+--                   lords), Daniel 2:47 (a Yahuah of kings), Psalm 136:3 (the Lord of lords)
+--           Extras: none warranted   NT: Revelation 19:16 (KING OF KINGS, AND LORD OF LORDS — the
+--                   same title on the rider's vesture), 1 Timothy 6:15 (the King of kings, and Lord of lords)
+--   v.15    the waters are peoples, and multitudes, and nations, and tongues
+--           Tanakh: Isaiah 8:7 (the waters of the river, the king of Assyria and all his glory —
+--                   nations as floodwaters), Jeremiah 47:2 (waters rise up out of the north, an overflowing flood)
+--           Extras: none warranted   NT: none warranted
+--   v.16-18 the ten horns hate the whore, make her desolate and burn her with fire; she is the great city
+--           Tanakh: Ezekiel 16:37 (I will gather all thy lovers... against thee), Ezekiel 16:41 (they
+--                   shall burn thine houses with fire), Ezekiel 23:29 (they shall deal hatefully...
+--                   leave thee naked and bare), Jeremiah 50:41 (a people from the north against Babylon)
+--           Extras: 2 Esdras 15:55 (the reward of your whoredom in your bosom, recompence),
+--                   2 Esdras 15:61 (they shall be to you as fire and consume you)
+--           NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   9400 revelation-17-the-great-whore-upon-many-waters-babylon-the-golden-cup-jeremiah-51          (Tanakh)
+--   9403 revelation-17-the-woman-on-the-scarlet-beast-seven-heads-and-ten-horns-daniel-7            (Tanakh)
+--   9406 revelation-17-arrayed-in-purple-and-scarlet-the-golden-cup-of-abominations-jeremiah-51-ezekiel-28  (Tanakh)
+--   9409 revelation-17-mystery-babylon-the-mother-of-harlots-the-unfaithful-city-isaiah-47-ezekiel-16  (Tanakh + Extras + NT)
+--   9412 revelation-17-the-lamb-shall-overcome-them-lord-of-lords-and-king-of-kings-deuteronomy-10-daniel-2  (Tanakh + NT)
+--   9415 revelation-17-the-waters-are-peoples-and-nations-and-tongues-isaiah-8-jeremiah-47           (Tanakh)
+--   9418 revelation-17-the-ten-horns-shall-hate-the-whore-and-burn-her-with-fire-ezekiel-16-and-23   (Tanakh + Extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-17-the-great-whore-upon-many-waters-babylon-the-golden-cup-jeremiah-51
+  ('canon', 'revelation', 17, 1, 'canon', 'jeremiah', 51, 13, 'free', E'*O thou that dwellest upon many waters, abundant in treasures, thine end is come, and the measure of thy covetousness.* (Jeremiah 51:13). The seer is shown *the judgment of the great whore that sitteth upon many waters* (Revelation 17:1), and Jeremiah''s word over Babylon is in his ear: she too *dwellest upon many waters,* and to her too the verdict comes — *thine end is come.* The harlot-city of the Apocalypse is the old Babylon re-spoken; the same waters that fed her wealth and reach become the sign of the judgment that has now overtaken her.'),
+  ('canon', 'revelation', 17, 2, 'canon', 'jeremiah', 51, 7, 'free', E'*Babylon hath been a golden cup in the LORD’S hand, that made all the earth drunken: the nations have drunken of her wine; therefore the nations are mad.* (Jeremiah 51:7). This is the root of the charge against the whore: *the inhabitants of the earth have been made drunk with the wine of her fornication* (Revelation 17:2). Babylon was the cup that *made all the earth drunken* until *the nations are mad;* the woman of Revelation pours the same intoxication, and *the kings of the earth have committed fornication* with her — the spiritual harlotry of a city that draws the peoples into her madness.'),
+  ('canon', 'revelation', 17, 2, 'canon', 'isaiah', 23, 17, 'free', E'*And it shall come to pass after the end of seventy years, that Yahuah (LORD) will visit Tyre, and she shall turn to her hire, and shall commit fornication with all the kingdoms of the world upon the face of the earth.* (Isaiah 23:17). Tyre the merchant-city is named a harlot who *shall commit fornication with all the kingdoms of the world* — exactly the indictment laid on the woman with whom *the kings of the earth have committed fornication* (Revelation 17:2). The prophets read the trading, seducing world-city as a harlot selling herself to every kingdom; the Apocalypse gathers Tyre and Babylon into the one great whore who reigns over the kings.'),
+  ('canon', 'revelation', 17, 1, 'canon', 'nahum', 3, 4, 'free', E'*Because of the multitude of the whoredoms of the wellfavoured harlot, the mistress of witchcrafts, that selleth nations through her whoredoms, and families through her witchcrafts.* (Nahum 3:4). Nineveh, like Babylon and Tyre, is read as a *wellfavoured harlot* who *selleth nations through her whoredoms* — the world-power that seduces and traffics in the peoples. The *great whore that sitteth upon many waters* (Revelation 17:1) is the same figure brought to her final judgment: the seducing city that sold the nations into her witchcrafts now stands to be judged for them.'),
+  -- thread: revelation-17-the-woman-on-the-scarlet-beast-seven-heads-and-ten-horns-daniel-7
+  ('canon', 'revelation', 17, 3, 'canon', 'daniel', 7, 7, 'free', E'*After this I saw in the night visions, and behold a fourth beast, dreadful and terrible, and strong exceedingly; and it had great iron teeth: it devoured and brake in pieces, and stamped the residue with the feet of it: and it was diverse from all the beasts that were before it; and it had ten horns.* (Daniel 7:7). The beast the woman sits upon — *full of names of blasphemy, having seven heads and ten horns* (Revelation 17:3) — is Daniel''s fourth beast re-spoken: the dreadful devouring power that *had ten horns.* The seer has Daniel''s night-vision in his eye; the scarlet beast that carries the harlot is the same blaspheming, world-trampling kingdom Daniel saw rise.'),
+  ('canon', 'revelation', 17, 3, 'canon', 'daniel', 7, 3, 'free', E'*And four great beasts came up from the sea, diverse one from another.* (Daniel 7:3). Daniel''s beasts *came up from the sea;* the beast that carries the woman *shall ascend out of the bottomless pit* (Revelation 17:8), and the waters where the whore sits are *peoples, and multitudes, and nations* (17:15) — the same churning deep out of which the beast-kingdoms rise. The woman *sit upon a scarlet coloured beast* (Revelation 17:3); the vision draws on Daniel''s sea-born beasts to show the harlot riding the brute power of the nations.'),
+  -- thread: revelation-17-arrayed-in-purple-and-scarlet-the-golden-cup-of-abominations-jeremiah-51-ezekiel-28
+  ('canon', 'revelation', 17, 4, 'canon', 'jeremiah', 51, 7, 'free', E'*Babylon hath been a golden cup in the LORD’S hand, that made all the earth drunken: the nations have drunken of her wine; therefore the nations are mad.* (Jeremiah 51:7). The woman is *decked with gold and precious stones and pearls, having a golden cup in her hand full of abominations and filthiness of her fornication* (Revelation 17:4). The golden cup is Babylon''s own — the very vessel of Jeremiah''s oracle, the cup that *made all the earth drunken.* What glittered as gold pours out *abominations;* the splendour of the harlot-city is the lure, and the draught within it is her fornication.'),
+  ('canon', 'revelation', 17, 4, 'canon', 'ezekiel', 28, 13, 'free', E'*Thou hast been in Eden the garden of Elohim (God); every precious stone was thy covering, the sardius, topaz, and the diamond, the beryl, the onyx, and the jasper, the sapphire, the emerald, and the carbuncle, and gold: the workmanship of thy tabrets and of thy pipes was prepared in thee in the day that thou wast created.* (Ezekiel 28:13). The prince of Tyre is clothed in *every precious stone* and *gold* — the same dazzling adornment heaped on the harlot *decked with gold and precious stones and pearls* (Revelation 17:4). Ezekiel''s figure is the proud, fallen splendour that counterfeits Eden''s glory; the woman wears that borrowed brilliance over a cup full of abominations, beauty turned to the service of fornication.'),
+  -- thread: revelation-17-mystery-babylon-the-mother-of-harlots-the-unfaithful-city-isaiah-47-ezekiel-16
+  ('canon', 'revelation', 17, 5, 'canon', 'isaiah', 47, 5, 'free', E'*Sit thou silent, and get thee into darkness, O daughter of the Chaldeans: for thou shalt no more be called, The lady of kingdoms.* (Isaiah 47:5). Upon the woman''s forehead is written *MYSTERY, BABYLON THE GREAT, THE MOTHER OF HARLOTS AND ABOMINATIONS OF THE EARTH* (Revelation 17:5). Isaiah had already drawn her — the *daughter of the Chaldeans,* the *lady of kingdoms* who said in her heart *I am, and none else beside me* (Isaiah 47:8), now sent silent into darkness. The great city that reigns over the kings is the daughter of Babylon brought to her reckoning; her self-exalting boast is the very pride the Apocalypse names and judges.'),
+  ('canon', 'revelation', 17, 6, 'canon', 'ezekiel', 16, 38, 'free', E'*And I will judge thee, as women that break wedlock and shed blood are judged; and I will give thee blood in fury and jealousy.* (Ezekiel 16:38). The seer beholds *the woman drunken with the blood of the saints, and with the blood of the martyrs of Yahusha (Jesus)* (Revelation 17:6). Ezekiel had arraigned the unfaithful city as one of *women that break wedlock and shed blood* — adultery and bloodshed together, the two crimes of the harlot-city. The whore of the Apocalypse is judged on the same double charge: she has played the harlot with the kings and she has shed the blood of the faithful, and the blood she is drunk on is the witness against her.'),
+  ('canon', 'revelation', 17, 5, 'apocrypha', '2-esdras', 15, 47, 'extras', E'*Woe be to you, you wretch, because you have made thyself like to her; and have decked your daughters in whoredom, that they might please and glory in your lovers, which have always desired to commit whoredom with you.* (2 Esdras 15:47). The Hebrew library speaks the same harlot-city idiom: a people *made thyself like to her* — like Babylon — *decked your daughters in whoredom* to glory in *your lovers.* This is the *MOTHER OF HARLOTS* of Revelation 17:5, the city whose daughters and lovers are the nations she draws into her fornication. The whore on the beast is the archetype this woe already named: whoredom with the lovers, the decking that allures, the judgment that follows.'),
+  ('canon', 'revelation', 17, 6, 'apocrypha', '2-esdras', 15, 53, 'extras', E'*If you had not always slain my chosen, exalting the stroke of yours hands, and saying over their dead, when you were drunken,* (2 Esdras 15:53). The judgment falls because the harlot-city *slain my chosen* and gloated *over their dead, when you were drunken* — and the seer sees the very thing: *the woman drunken with the blood of the saints, and with the blood of the martyrs of Yahusha (Jesus)* (Revelation 17:6). The drunkenness is not wine alone but blood; the slaying of the chosen and the drunken triumph over their dead is the harlot''s signature crime, and Yahuah (God) marks it for recompence.'),
+  ('canon', 'revelation', 17, 5, 'canon', 'revelation', 14, 8, 'free', E'*And there followed another angel, saying, Babylon is fallen, is fallen, that great city, because she made all nations drink of the wine of the wrath of her fornication.* (Revelation 14:8). The fall announced earlier is now unveiled in full: the angel had cried *Babylon is fallen, is fallen, that great city, because she made all nations drink of the wine of her fornication,* and here the woman herself is shown — *MYSTERY, BABYLON THE GREAT, THE MOTHER OF HARLOTS* (Revelation 17:5), *that great city, which reigneth over the kings of the earth* (17:18). The proclamation of ch 14 and the vision of ch 17 are one Babylon: the seducing city judged for the wine she made the nations drink.'),
+  ('canon', 'revelation', 17, 6, 'canon', 'revelation', 18, 24, 'free', E'*And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth.* (Revelation 18:24). The blood the woman is drunken with in ch 17 is named again in the dirge of ch 18: *in her was found the blood of prophets, and of saints, and of all that were slain upon the earth.* The harlot *drunken with the blood of the saints, and with the blood of the martyrs of Yahusha (Jesus)* (Revelation 17:6) is the city in whose streets the blood of the faithful was found — one charge across the two chapters, the persecuting city held to account for every righteous one she slew.'),
+  -- thread: revelation-17-the-lamb-shall-overcome-them-lord-of-lords-and-king-of-kings-deuteronomy-10-daniel-2
+  ('canon', 'revelation', 17, 12, 'canon', 'daniel', 7, 24, 'free', E'*And the ten horns out of this kingdom are ten kings that shall arise: and another shall rise after them; and he shall be diverse from the first, and he shall subdue three kings.* (Daniel 7:24). The angel interprets: *the ten horns which thou sawest are ten kings, which have received no kingdom as yet; but receive power as kings one hour with the beast* (Revelation 17:12). Daniel had already told what the ten horns are — *ten kings that shall arise* out of the fourth kingdom. The Apocalypse takes Daniel''s own interpretation as its key: the horns are kings, given a brief hour of power, who lend their strength to the beast.'),
+  ('canon', 'revelation', 17, 14, 'canon', 'deuteronomy', 10, 17, 'free', E'*For Yahuah Elohaychem (the LORD your God) is Elohim (God) of gods, and Lord of lords, a great Elohim (God), a mighty, and a terrible, which regardeth not persons, nor taketh reward:* (Deuteronomy 10:17). When the kings make war, *the Lamb shall overcome them: for he is Lord of lords, and King of kings* (Revelation 17:14). The title is Yahuah''s own from the Torah — *Yahuah Elohaychem (the LORD your God)... Lord of lords* — and it is borne here by the Lamb. The slain Lamb who overcomes the kings carries the divine name and rank: the Formed who is *Lord of lords* wears the very title the LORD bears in Moses'' charge to Yashar''el (Israel).'),
+  ('canon', 'revelation', 17, 14, 'canon', 'daniel', 2, 47, 'free', E'*The king answered unto Daniel, and said, Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets, seeing thou couldest reveal this secret.* (Daniel 2:47). Even the king of Babylon confessed that the Elohim (God) of Daniel is *a Yahuah (Lord) of kings* — sovereign over every earthly throne. So the Lamb is *Lord of lords, and King of kings* (Revelation 17:14): the ten kings give their power to the beast for one hour, but above them stands the *Lord of kings* whom Nebuchadnezzar named, and the Lamb who overcomes them is that Lord.'),
+  ('canon', 'revelation', 17, 14, 'canon', 'psalms', 136, 3, 'free', E'*O give thanks to the Lord of lords: for his mercy endureth for ever.* (Psalm 136:3). The psalm of the great Hallel gives thanks *to the Lord of lords,* whose mercy endures for ever; and the Apocalypse sets that title on the Lamb who overcomes the kings — *for he is Lord of lords, and King of kings* (Revelation 17:14). The One the psalmist praised above all powers is the One who now stands against the gathered kings and prevails, *and they that are with him are called, and chosen, and faithful.*'),
+  ('canon', 'revelation', 17, 14, 'canon', 'revelation', 19, 16, 'free', E'*And he hath on his vesture and on his thigh a name written, KING OF KINGS, AND LORD OF LORDS.* (Revelation 19:16). The title the Lamb bears in ch 17 is written on the rider''s vesture in ch 19: *KING OF KINGS, AND LORD OF LORDS.* *He is Lord of lords, and King of kings* (Revelation 17:14) and he comes forth to make war in righteousness — the same Formed One, the Lamb who overcomes the kings here and the Faithful and True who treads the winepress there, wearing one name across both visions.'),
+  ('canon', 'revelation', 17, 14, 'canon', '1-timothy', 6, 15, 'free', E'*Which in his times he shall shew, who is the blessed and only Potentate, the King of kings, and Lord of lords;* (1 Timothy 6:15). Paul names him *the blessed and only Potentate, the King of kings, and Lord of lords* — the very title the Lamb bears as *he is Lord of lords, and King of kings* (Revelation 17:14). The kings of the earth give their power to the beast for one hour, but there is one *only Potentate* above them all; the Lamb who overcomes them is that sole Sovereign, shown in his time.'),
+  -- thread: revelation-17-the-waters-are-peoples-and-nations-and-tongues-isaiah-8-jeremiah-47
+  ('canon', 'revelation', 17, 15, 'canon', 'isaiah', 8, 7, 'free', E'*Now therefore, behold, Yahuah (Lord) bringeth up upon them the waters of the river, strong and many, even the king of Assyria, and all his glory: and he shall come up over all his channels, and go over all his banks:* (Isaiah 8:7). The angel reads the vision: *The waters which thou sawest, where the whore sitteth, are peoples, and multitudes, and nations, and tongues* (Revelation 17:15). Isaiah had already made the nations into floodwaters — the *waters of the river, strong and many, even the king of Assyria,* rising over every bank. The seer''s many waters are the peoples in just this prophetic idiom: the massed nations the harlot rides, the same overflowing flood Isaiah saw.'),
+  ('canon', 'revelation', 17, 15, 'canon', 'jeremiah', 47, 2, 'free', E'*Thus saith Yahuah (LORD); Behold, waters rise up out of the north, and shall be an overflowing flood, and shall overflow the land, and all that is therein; the city, and them that dwell therein: then the men shall cry, and all the inhabitants of the land shall howl.* (Jeremiah 47:2). Jeremiah too speaks of nations as *waters* — an *overflowing flood* that overruns city and land. *The waters which thou sawest... are peoples, and multitudes, and nations, and tongues* (Revelation 17:15). The harlot sits upon these waters, ruling the swarming peoples; but the prophets have shown that such waters can themselves become the flood of judgment, and the city that rode them is overflowed in turn.'),
+  -- thread: revelation-17-the-ten-horns-shall-hate-the-whore-and-burn-her-with-fire-ezekiel-16-and-23
+  ('canon', 'revelation', 17, 16, 'canon', 'ezekiel', 16, 37, 'free', E'*Behold, therefore I will gather all thy lovers, with whom thou hast taken pleasure, and all them that thou hast loved, with all them that thou hast hated; I will even gather them round about against thee, and will discover thy nakedness unto them, that they may see all thy nakedness.* (Ezekiel 16:37). This is the very turn the Apocalypse shows: *the ten horns which thou sawest upon the beast, these shall hate the whore, and shall make her desolate and naked* (Revelation 17:16). Ezekiel had spoken it over the unfaithful city — her own lovers gathered *against thee* to *discover thy nakedness.* The harlot''s paramours become her executioners; the kings who fornicated with her turn and strip her bare, exactly as the prophet foretold of the harlot-city.'),
+  ('canon', 'revelation', 17, 16, 'canon', 'ezekiel', 16, 41, 'free', E'*And they shall burn thine houses with fire, and execute judgments upon thee in the sight of many women: and I will cause thee to cease from playing the harlot, and thou also shalt give no hire any more.* (Ezekiel 16:41). The horns *shall eat her flesh, and burn her with fire* (Revelation 17:16) — and Ezekiel had already sentenced the harlot-city: *they shall burn thine houses with fire... and I will cause thee to cease from playing the harlot.* The fire that ends her is the prophet''s own judgment on the unfaithful city; the burning is how her harlotry is finally made to cease.'),
+  ('canon', 'revelation', 17, 16, 'canon', 'ezekiel', 23, 29, 'free', E'*And they shall deal with thee hatefully, and shall take away all thy labour, and shall leave thee naked and bare: and the nakedness of thy whoredoms shall be discovered, both thy lewdness and thy whoredoms.* (Ezekiel 23:29). Ezekiel''s second harlot-city is handed to those *whom thou hatest* (23:28), who *deal with thee hatefully* and *leave thee naked and bare.* The ten horns *shall hate the whore, and shall make her desolate and naked* (Revelation 17:16) — the same dealing, the same nakedness uncovered. The lovers-turned-haters of Ezekiel 23 are the pattern for the kings who strip and burn the great whore.'),
+  ('canon', 'revelation', 17, 16, 'canon', 'jeremiah', 50, 41, 'free', E'*Behold, a people shall come from the north, and a great nation, and many kings shall be raised up from the coasts of the earth.* (Jeremiah 50:41). Against Babylon Jeremiah summons *a people... from the north, and a great nation, and many kings... from the coasts of the earth* — the gathered powers that bring her down. So *the ten horns... shall hate the whore, and shall make her desolate* (Revelation 17:16): for *Elohim (God) hath put in their hearts to fulfil his will* (17:17). The many kings raised against Babylon are the instrument of judgment, their hatred bent by the hand of Elohim (God) to accomplish his word against the harlot-city.'),
+  ('canon', 'revelation', 17, 16, 'apocrypha', '2-esdras', 15, 55, 'extras', E'*The reward of your whoredom shall be in your bosom, therefore shall you receive recompence.* (2 Esdras 15:55). The Hebrew library names the law of the harlot''s end: *the reward of your whoredom shall be in your bosom... you receive recompence.* The ten horns that *hate the whore, and shall make her desolate and naked, and shall eat her flesh, and burn her with fire* (Revelation 17:16) are that recompence falling — the wages of her whoredom paid back into her own bosom, the judgment her fornication earned coming home upon her.'),
+  ('canon', 'revelation', 17, 16, 'apocrypha', '2-esdras', 15, 61, 'extras', E'*And you shall be cast down by them as stubble, and they shall be to you as fire;* (2 Esdras 15:61). The instruments of judgment *shall be to you as fire,* casting the harlot-city *down... as stubble* — and the horns *shall eat her flesh, and burn her with fire* (Revelation 17:16). The same image carries: the powers Yahuah (God) raises become fire to the whore, and what seemed a mighty city is consumed as stubble in the flame of the recompence she had stored up.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-17-the-great-whore-upon-many-waters-babylon-the-golden-cup-jeremiah-51',
+       E'The great whore upon many waters — Babylon the golden cup making the earth drunken (Jeremiah 51)',
+       E'The seer is brought to see *the judgment of the great whore that sitteth upon many waters* (Revelation 17:1), *with whom the kings of the earth have committed fornication, and the inhabitants of the earth have been made drunk with the wine of her fornication* (17:2). Every line of the charge is the old prophets'' word over the harlot-city re-spoken. Jeremiah had cried over Babylon, *O thou that dwellest upon many waters, abundant in treasures, thine end is come* (Jeremiah 51:13) — the same waters, the same end. And he named the cup: *Babylon hath been a golden cup in the LORD’S hand, that made all the earth drunken: the nations have drunken of her wine; therefore the nations are mad* (Jeremiah 51:7) — the very draught the whore pours, *the wine of her fornication.* The prophets read the seducing world-city as a harlot who sells herself to every kingdom: *Yahuah (LORD) will visit Tyre, and she shall turn to her hire, and shall commit fornication with all the kingdoms of the world upon the face of the earth* (Isaiah 23:17); and Nineveh, *the wellfavoured harlot, the mistress of witchcrafts, that selleth nations through her whoredoms, and families through her witchcrafts* (Nahum 3:4). This is not a new figure but the consummation of an old one — Babylon and Tyre and Nineveh gathered into the one great whore who reigns over the kings of the earth and makes the nations mad with her wine. She is the counterfeit of the faithful bride: the city that draws the peoples into spiritual fornication, set against the new Jerusalem that comes down adorned for her husband.',
+       sv.verse_id, ev.verse_id, 'free', 9400
+  FROM _s224_rv17_lookup sv, _s224_rv17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=17 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-17-the-woman-on-the-scarlet-beast-seven-heads-and-ten-horns-daniel-7',
+       E'The woman on the scarlet beast, seven heads and ten horns — Daniel''s fourth beast (Daniel 7)',
+       E'*I saw a woman sit upon a scarlet coloured beast, full of names of blasphemy, having seven heads and ten horns* (Revelation 17:3). The beast is Daniel''s, drawn straight from the night-vision. Daniel saw *four great beasts came up from the sea, diverse one from another* (Daniel 7:3), and then *a fourth beast, dreadful and terrible, and strong exceedingly; and it had great iron teeth: it devoured and brake in pieces... and it had ten horns* (Daniel 7:7). The harlot rides this same brute power — the blaspheming, world-trampling kingdom with its ten horns. And the kinship runs deeper: as Daniel''s beasts rose *from the sea,* the beast of the Apocalypse *shall ascend out of the bottomless pit* (Revelation 17:8), and the waters where the whore sits are *peoples, and multitudes, and nations, and tongues* (17:15) — the same churning deep of the nations out of which the beast-kingdoms rise. The woman does not stand on her own strength; she sits upon the beast, the seducing city carried by the devouring power of the world, until the very horns she rode turn against her.',
+       sv.verse_id, ev.verse_id, 'free', 9403
+  FROM _s224_rv17_lookup sv, _s224_rv17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=17 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-17-arrayed-in-purple-and-scarlet-the-golden-cup-of-abominations-jeremiah-51-ezekiel-28',
+       E'Arrayed in purple and scarlet — the golden cup full of abominations (Jeremiah 51, Ezekiel 28)',
+       E'*And the woman was arrayed in purple and scarlet colour, and decked with gold and precious stones and pearls, having a golden cup in her hand full of abominations and filthiness of her fornication* (Revelation 17:4). The splendour is the lure; the draught within is the ruin. The golden cup is Babylon''s own — *Babylon hath been a golden cup in the LORD’S hand, that made all the earth drunken: the nations have drunken of her wine; therefore the nations are mad* (Jeremiah 51:7). What glitters as gold in the harlot''s hand is the vessel Jeremiah named, and it pours not wine only but *abominations.* And the heaped adornment — *gold and precious stones and pearls* — echoes the dazzling covering of Ezekiel''s fallen prince: *every precious stone was thy covering, the sardius, topaz, and the diamond, the beryl, the onyx, and the jasper, the sapphire, the emerald, and the carbuncle, and gold* (Ezekiel 28:13). That is the proud splendour that counterfeits Eden''s glory and falls; the woman wears the same borrowed brilliance, beauty turned to the service of fornication, the outward dazzle masking the cup full of filthiness within.',
+       sv.verse_id, ev.verse_id, 'free', 9406
+  FROM _s224_rv17_lookup sv, _s224_rv17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=17 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-17-mystery-babylon-the-mother-of-harlots-the-unfaithful-city-isaiah-47-ezekiel-16',
+       E'MYSTERY BABYLON, the mother of harlots, drunken with the blood of the saints — the unfaithful city (Isaiah 47, Ezekiel 16)',
+       E'*And upon her forehead was a name written, MYSTERY, BABYLON THE GREAT, THE MOTHER OF HARLOTS AND ABOMINATIONS OF THE EARTH* (Revelation 17:5); *And I saw the woman drunken with the blood of the saints, and with the blood of the martyrs of Yahusha (Jesus)* (17:6). The prophets had drawn her long before. Isaiah named the *daughter of the Chaldeans,* the self-exalting world-city: *Sit thou silent, and get thee into darkness, O daughter of the Chaldeans: for thou shalt no more be called, The lady of kingdoms* (Isaiah 47:5) — she who boasted *I am, and none else beside me.* And Ezekiel arraigned the unfaithful city on the harlot''s double charge — adultery and bloodshed together: *I will judge thee, as women that break wedlock and shed blood are judged; and I will give thee blood in fury and jealousy* (Ezekiel 16:38). The whore of the Apocalypse is judged on exactly that double count: she has played the harlot with the kings, and she has shed the blood of the faithful, and the blood she is drunk on is the witness against her. The restored library speaks the same idiom — a people who *made thyself like to her; and have decked your daughters in whoredom, that they might please and glory in your lovers* (2 Esdras 15:47), and whose doom is fixed because *you had... always slain my chosen, exalting the stroke of yours hands, and saying over their dead, when you were drunken* (2 Esdras 15:53): the slaying of the chosen and the drunken triumph over their dead is the harlot''s very signature. And the Apocalypse itself has announced her twice over — *Babylon is fallen, is fallen, that great city, because she made all nations drink of the wine of the wrath of her fornication* (Revelation 14:8) — and in her dirge declares the verdict, *in her was found the blood of prophets, and of saints, and of all that were slain upon the earth* (Revelation 18:24). One Babylon across the whole vision: the persecuting harlot-city, mother of every abomination, held to account for every righteous one she slew. She is the dark counterfeit of the bride — the great city set against the holy city, the harlot drunk with blood against the new Jerusalem clothed in the righteousness of the saints.',
+       sv.verse_id, ev.verse_id, 'extras', 9409
+  FROM _s224_rv17_lookup sv, _s224_rv17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=17 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-17-the-lamb-shall-overcome-them-lord-of-lords-and-king-of-kings-deuteronomy-10-daniel-2',
+       E'The ten horns make war with the Lamb, and the Lamb shall overcome them — Lord of lords and King of kings (Deuteronomy 10, Daniel 2)',
+       E'*The ten horns which thou sawest are ten kings, which have received no kingdom as yet; but receive power as kings one hour with the beast* (Revelation 17:12); *These have one mind, and shall give their power and strength unto the beast. These shall make war with the Lamb, and the Lamb shall overcome them: for he is Lord of lords, and King of kings: and they that are with him are called, and chosen, and faithful* (17:13-14). The angel''s reading of the horns is Daniel''s own: *the ten horns out of this kingdom are ten kings that shall arise* (Daniel 7:24) — kings given a brief hour, lending their strength to the beast. But against them stands the Lamb, and the title he bears is the divine name from the Torah itself: *For Yahuah Elohaychem (the LORD your God) is Elohim (God) of gods, and Lord of lords, a great Elohim (God), a mighty, and a terrible* (Deuteronomy 10:17). The slain Lamb who overcomes the kings is *Lord of lords* — the Formed who wears the very title the LORD bears in Moses'' charge to Yashar''el (Israel). Even Babylon''s king confessed it: *your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings* (Daniel 2:47); and the great Hallel sang it, *O give thanks to the Lord of lords: for his mercy endureth for ever* (Psalm 136:3). The same name is written on the rider''s vesture — *KING OF KINGS, AND LORD OF LORDS* (Revelation 19:16) — and Paul names him *the blessed and only Potentate, the King of kings, and Lord of lords* (1 Timothy 6:15). The ten kings hold power one hour; the Lamb holds it for ever. They make war and are overcome, for he is the one only Sovereign above every throne, and they that are with him are *called, and chosen, and faithful.*',
+       sv.verse_id, ev.verse_id, 'free', 9412
+  FROM _s224_rv17_lookup sv, _s224_rv17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=17 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-17-the-waters-are-peoples-and-nations-and-tongues-isaiah-8-jeremiah-47',
+       E'The waters are peoples, and multitudes, and nations, and tongues (Isaiah 8, Jeremiah 47)',
+       E'*And he saith unto me, The waters which thou sawest, where the whore sitteth, are peoples, and multitudes, and nations, and tongues* (Revelation 17:15). The angel''s own interpretation rests on a settled prophetic idiom: the massed nations are floodwaters. Isaiah had said it of Assyria — *behold, Yahuah (Lord) bringeth up upon them the waters of the river, strong and many, even the king of Assyria, and all his glory: and he shall come up over all his channels, and go over all his banks* (Isaiah 8:7) — the nation as an overflowing flood rising over every bank. And Jeremiah said it of the invaders from the north: *Behold, waters rise up out of the north, and shall be an overflowing flood, and shall overflow the land, and all that is therein; the city, and them that dwell therein* (Jeremiah 47:2). The many waters the whore sits upon are the peoples in just this sense — the swarming nations she rides and rules. Yet the prophets'' own image carries the warning: such waters become the flood of judgment, and the city that rode the peoples is in the end overflowed by them, the very horns and nations turning to make her desolate.',
+       sv.verse_id, ev.verse_id, 'free', 9415
+  FROM _s224_rv17_lookup sv, _s224_rv17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=17 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-17-the-ten-horns-shall-hate-the-whore-and-burn-her-with-fire-ezekiel-16-and-23',
+       E'The ten horns shall hate the whore and burn her with fire — the lovers turned against the harlot (Ezekiel 16 and 23)',
+       E'*And the ten horns which thou sawest upon the beast, these shall hate the whore, and shall make her desolate and naked, and shall eat her flesh, and burn her with fire* (Revelation 17:16); *For Elohim (God) hath put in their hearts to fulfil his will* (17:17). The harlot''s own paramours become her executioners — and this exact turn is the prophets'' sentence on the unfaithful city. Ezekiel spoke it twice. *Behold, therefore I will gather all thy lovers, with whom thou hast taken pleasure... I will even gather them round about against thee, and will discover thy nakedness unto them* (Ezekiel 16:37) — the lovers gathered against her to strip her bare; *and they shall burn thine houses with fire, and execute judgments upon thee... and I will cause thee to cease from playing the harlot* (Ezekiel 16:41) — the fire that ends her harlotry. And of the second harlot-city: *they shall deal with thee hatefully, and shall take away all thy labour, and shall leave thee naked and bare* (Ezekiel 23:29), delivered into the hand of *them whom thou hatest.* The kings who fornicated with the whore turn and hate her, strip her, and burn her — exactly as the prophet foretold of the harlot-city, the lovers become haters. Against Babylon, Jeremiah summoned the instrument: *a people shall come from the north, and a great nation, and many kings shall be raised up from the coasts of the earth* (Jeremiah 50:41). And the restored library names the law of her end: *The reward of your whoredom shall be in your bosom, therefore shall you receive recompence* (2 Esdras 15:55); *And you shall be cast down by them as stubble, and they shall be to you as fire* (2 Esdras 15:61). The wages of her whoredom are paid back into her own bosom; the powers Yahuah (God) raises become fire to her, and *the woman which thou sawest is that great city, which reigneth over the kings of the earth* (Revelation 17:18) is consumed as stubble — the counterfeit city fallen, that the holy city may come down in her place.',
+       sv.verse_id, ev.verse_id, 'extras', 9418
+  FROM _s224_rv17_lookup sv, _s224_rv17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=17 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-17-the-great-whore-upon-many-waters-babylon-the-golden-cup-jeremiah-51
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 51:13 — *O thou that dwellest upon many waters... thine end is come* Babylon dwells on the many waters and meets her end; the great whore *sitteth upon many waters* and is judged (Revelation 17:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-great-whore-upon-many-waters-babylon-the-golden-cup-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 51:7 — *Babylon hath been a golden cup... that made all the earth drunken... the nations are mad* the cup of Babylon that intoxicates the nations; the inhabitants made drunk *with the wine of her fornication* (Revelation 17:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-great-whore-upon-many-waters-babylon-the-golden-cup-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 23:17 — *she shall... commit fornication with all the kingdoms of the world* Tyre the harlot-city fornicating with every kingdom; the whore with whom *the kings of the earth have committed fornication* (Revelation 17:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-great-whore-upon-many-waters-babylon-the-golden-cup-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=23 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Nahum 3:4 — *the wellfavoured harlot, the mistress of witchcrafts, that selleth nations through her whoredoms* Nineveh the seducing harlot trafficking the nations; the same figure as the *great whore* judged (Revelation 17:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-great-whore-upon-many-waters-babylon-the-golden-cup-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='nahum' AND tv.chapter_number=3 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-17-the-woman-on-the-scarlet-beast-seven-heads-and-ten-horns-daniel-7
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:7 — *a fourth beast, dreadful and terrible... and it had ten horns* Daniel''s devouring fourth beast with ten horns; the scarlet beast *having seven heads and ten horns* that carries the woman (Revelation 17:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-woman-on-the-scarlet-beast-seven-heads-and-ten-horns-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:3 — *four great beasts came up from the sea* the beast-kingdoms rise from the sea; the beast *shall ascend out of the bottomless pit* and the waters are the nations (Revelation 17:3,8,15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-woman-on-the-scarlet-beast-seven-heads-and-ten-horns-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-17-arrayed-in-purple-and-scarlet-the-golden-cup-of-abominations-jeremiah-51-ezekiel-28
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 51:7 — *Babylon hath been a golden cup in the LORD’S hand, that made all the earth drunken* the golden cup of Babylon; the woman holds *a golden cup in her hand full of abominations* (Revelation 17:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-arrayed-in-purple-and-scarlet-the-golden-cup-of-abominations-jeremiah-51-ezekiel-28'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 28:13 — *every precious stone was thy covering... and gold* the dazzling covering of the fallen prince of Tyre; the harlot *decked with gold and precious stones and pearls* (Revelation 17:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-arrayed-in-purple-and-scarlet-the-golden-cup-of-abominations-jeremiah-51-ezekiel-28'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=28 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-17-mystery-babylon-the-mother-of-harlots-the-unfaithful-city-isaiah-47-ezekiel-16
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 47:5 — *O daughter of the Chaldeans: for thou shalt no more be called, The lady of kingdoms* the self-exalting daughter of Babylon sent into darkness; *MYSTERY, BABYLON THE GREAT* on the woman''s forehead (Revelation 17:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-mystery-babylon-the-mother-of-harlots-the-unfaithful-city-isaiah-47-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=47 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 16:38 — *I will judge thee, as women that break wedlock and shed blood are judged* the unfaithful city judged for adultery and bloodshed together; the woman *drunken with the blood of the saints* (Revelation 17:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-mystery-babylon-the-mother-of-harlots-the-unfaithful-city-isaiah-47-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=16 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Esdras 15:47 — *made thyself like to her; and have decked your daughters in whoredom... your lovers* the harlot-city idiom in the restored library; the *MOTHER OF HARLOTS* who draws the nations into fornication (Revelation 17:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-mystery-babylon-the-mother-of-harlots-the-unfaithful-city-isaiah-47-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=5
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=15 AND tv.verse_number=47
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Esdras 15:53 — *you had... always slain my chosen... saying over their dead, when you were drunken* the slaying of the chosen and drunken triumph over their dead; the woman drunk with the blood of the martyrs (Revelation 17:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-mystery-babylon-the-mother-of-harlots-the-unfaithful-city-isaiah-47-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=6
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=15 AND tv.verse_number=53
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 14:8 — *Babylon is fallen, is fallen, that great city, because she made all nations drink of the wine... of her fornication* the earlier proclamation unveiled in the woman *MYSTERY, BABYLON THE GREAT* (Revelation 17:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-mystery-babylon-the-mother-of-harlots-the-unfaithful-city-isaiah-47-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Revelation 18:24 — *in her was found the blood of prophets, and of saints, and of all that were slain upon the earth* the verdict of the dirge; the woman *drunken with the blood of the saints* held to account (Revelation 17:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-mystery-babylon-the-mother-of-harlots-the-unfaithful-city-isaiah-47-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-17-the-lamb-shall-overcome-them-lord-of-lords-and-king-of-kings-deuteronomy-10-daniel-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:24 — *the ten horns out of this kingdom are ten kings that shall arise* Daniel''s own interpretation of the horns; *the ten horns... are ten kings... receive power as kings one hour* (Revelation 17:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-lamb-shall-overcome-them-lord-of-lords-and-king-of-kings-deuteronomy-10-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 10:17 — *Yahuah Elohaychem (the LORD your God) is Elohim (God) of gods, and Lord of lords* the divine title from the Torah; the Lamb *is Lord of lords, and King of kings* (Revelation 17:14), the Formed bearing the LORD''s own name.'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-lamb-shall-overcome-them-lord-of-lords-and-king-of-kings-deuteronomy-10-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 2:47 — *your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings* Babylon''s king confesses the Lord of kings above every throne; the Lamb *Lord of lords, and King of kings* overcomes them (Revelation 17:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-lamb-shall-overcome-them-lord-of-lords-and-king-of-kings-deuteronomy-10-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=47
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 136:3 — *O give thanks to the Lord of lords: for his mercy endureth for ever* the great Hallel''s title above all powers; the Lamb who overcomes the kings is that *Lord of lords* (Revelation 17:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-lamb-shall-overcome-them-lord-of-lords-and-king-of-kings-deuteronomy-10-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=136 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 19:16 — *KING OF KINGS, AND LORD OF LORDS* the same title on the rider''s vesture; the Lamb who *is Lord of lords, and King of kings* comes forth to make war in righteousness (Revelation 17:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-lamb-shall-overcome-them-lord-of-lords-and-king-of-kings-deuteronomy-10-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'1 Timothy 6:15 — *the blessed and only Potentate, the King of kings, and Lord of lords* Paul names the one only Sovereign above every throne; the Lamb who overcomes the ten kings is he (Revelation 17:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-lamb-shall-overcome-them-lord-of-lords-and-king-of-kings-deuteronomy-10-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=6 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-17-the-waters-are-peoples-and-nations-and-tongues-isaiah-8-jeremiah-47
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 8:7 — *the waters of the river, strong and many, even the king of Assyria... go over all his banks* the nation as an overflowing flood; *the waters... are peoples, and multitudes, and nations, and tongues* (Revelation 17:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-waters-are-peoples-and-nations-and-tongues-isaiah-8-jeremiah-47'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 47:2 — *waters rise up out of the north, and shall be an overflowing flood, and shall overflow the land* invading nations as floodwaters; the many waters the whore rides are the peoples (Revelation 17:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-waters-are-peoples-and-nations-and-tongues-isaiah-8-jeremiah-47'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=47 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-17-the-ten-horns-shall-hate-the-whore-and-burn-her-with-fire-ezekiel-16-and-23
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 16:37 — *I will gather all thy lovers... against thee, and will discover thy nakedness* the lovers gathered to strip the harlot-city; the horns *shall make her desolate and naked* (Revelation 17:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-ten-horns-shall-hate-the-whore-and-burn-her-with-fire-ezekiel-16-and-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=16 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 16:41 — *they shall burn thine houses with fire... and I will cause thee to cease from playing the harlot* the fire that ends the harlotry; the horns *shall... burn her with fire* (Revelation 17:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-ten-horns-shall-hate-the-whore-and-burn-her-with-fire-ezekiel-16-and-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=16 AND tv.verse_number=41
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 23:29 — *they shall deal with thee hatefully... and shall leave thee naked and bare* the lovers-turned-haters of the second harlot-city; the horns *shall hate the whore, and shall make her desolate and naked* (Revelation 17:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-ten-horns-shall-hate-the-whore-and-burn-her-with-fire-ezekiel-16-and-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=23 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 50:41 — *a people shall come from the north, and a great nation, and many kings shall be raised up* the powers raised against Babylon; the ten horns made the instrument of judgment on the whore (Revelation 17:16-17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-ten-horns-shall-hate-the-whore-and-burn-her-with-fire-ezekiel-16-and-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=50 AND tv.verse_number=41
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Esdras 15:55 — *The reward of your whoredom shall be in your bosom, therefore shall you receive recompence* the law of the harlot''s end; her wages paid back as the horns make her desolate (Revelation 17:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-ten-horns-shall-hate-the-whore-and-burn-her-with-fire-ezekiel-16-and-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=16
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=15 AND tv.verse_number=55
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'2 Esdras 15:61 — *you shall be cast down by them as stubble, and they shall be to you as fire* the powers become fire to the harlot-city; the horns *shall... burn her with fire* (Revelation 17:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv17_lookup sv, _s224_rv17_lookup tv
+ WHERE t.slug='revelation-17-the-ten-horns-shall-hate-the-whore-and-burn-her-with-fire-ezekiel-16-and-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=17 AND sv.verse_number=16
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=15 AND tv.verse_number=61
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_18.sql (S224 Revelation 18) -----
+-- =====================================================================
+-- S224 minion — REVELATION 18 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 18 (24 verses) — the fall of Babylon the great, the lament of the kings
+-- and the merchants and the shipmasters, the call to come out of her, the millstone cast into
+-- the sea, the blood of prophets and saints found in her.
+-- Tag: rv18 (temp view _s224_rv18_lookup).
+-- Sort band: floor 9425, step 3 (9425, 9428, 9431, 9434, 9437, 9440, 9443 used; under 9450).
+-- Source is ALWAYS the canon Revelation 18 verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Revelation 18 is woven entirely out of the prophets' Babylon-dirges — Isaiah
+-- 13/21/47, Jeremiah 50-51, the Tyre-lament of Ezekiel 26-27. The seer re-speaks them on the
+-- doomed world-system. The voice note: *Come out of her, my people* (18:4) is the prophets' own
+-- summons (Jeremiah 51:6,45; Isaiah 48:20, 52:11; Numbers 16:26) to the GATHERED — the covenant
+-- people, the lost sheep among the nations — to separate from the system before its plagues fall.
+-- It is the regathering theme: the same call by which Yahuah (LORD) brought the seed out of the
+-- literal Babylon, now spoken to the scattered seed. NOT a church-vs-Israel separation. The kings
+-- and merchants weeping (18:9-19) re-speak the lament over Tyre (Ezekiel 27); the millstone
+-- (18:21) re-speaks Seraiah's stone cast into Euphrates (Jeremiah 51:63-64); *Elohim hath avenged
+-- you* (18:20) re-speaks Jeremiah 51:48 and Deuteronomy 32:43; *the blood of prophets, and of
+-- saints* (18:24) re-speaks Jeremiah 51:49 and Matthew 23:35. Christology: the One who judges her
+-- is *Yahuah Elohim (the Lord God) who judgeth her* (18:8) — the Father's avenging on the system,
+-- the prophets' Yahuah of recompences.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-3   Babylon the great is fallen, is fallen; the habitation of devils; the nations drunk
+--           Tanakh: Isaiah 21:9 (Babylon is fallen, is fallen), Isaiah 13:19-21 (the desolation,
+--                   the wild beasts), Jeremiah 50:39 (the dwellingplace for wild beasts), Jeremiah
+--                   51:8 (Babylon suddenly fallen), Jeremiah 51:7 (the golden cup, the nations drunken)
+--           Extras: none warranted (carried into the lament/millstone threads)   NT: none warranted
+--   v.4-5   Come out of her, my people; her sins reached unto heaven
+--           Tanakh: Jeremiah 51:45 (My people, go ye out of the midst of her), Jeremiah 51:6 (Flee
+--                   out of the midst of Babylon), Isaiah 48:20 (Go ye forth of Babylon), Isaiah
+--                   52:11 (Depart, go ye out, touch no unclean thing), Numbers 16:26 (Depart from
+--                   the tents of these wicked men), Jeremiah 51:9 (her judgment reacheth unto heaven)
+--           Extras: none warranted   NT: none warranted
+--   v.6-8   Reward her double; the cup she filled; I sit a queen and am no widow
+--           Tanakh: Jeremiah 50:29 (recompense her according to her work), Jeremiah 50:15 (as she
+--                   hath done, do unto her), Psalm 137:8 (rewardeth thee as thou hast served us),
+--                   Isaiah 47:8-9 (I shall not sit as a widow, the loss in one day), Zephaniah 2:15
+--                   (the rejoicing city, I am, and there is none beside me)
+--           Extras: none warranted   NT: none warranted
+--   v.9-19  The kings, merchants, shipmasters weep and wail over her; the merchandise undone
+--           Tanakh: Ezekiel 27:30-31 (cast dust on their heads, wail), Ezekiel 27:32 (What city is
+--                   like Tyrus), Ezekiel 27:33 (thou didst enrich the kings of the earth), Isaiah
+--                   47:15 (thy merchants shall wander, none shall save thee)
+--           Extras: 2 Esdras 16:41-42 (he that selleth as he that fleeth, the merchant as he that
+--                   has no profit — the merchandise made nothing in the day of trouble)
+--           NT: none warranted
+--   v.20    Rejoice over her, thou heaven; Elohim hath avenged you on her
+--           Tanakh: Jeremiah 51:48 (the heaven and earth shall sing for Babylon), Deuteronomy 32:43
+--                   (Rejoice, ye nations; he will avenge the blood of his servants)
+--           Extras: none warranted   NT: none warranted
+--   v.21-23 The millstone cast into the sea; thrown down, found no more
+--           Tanakh: Jeremiah 51:63-64 (bind a stone to it, cast it into Euphrates, Thus shall
+--                   Babylon sink), Jeremiah 51:42 (the sea is come up upon Babylon), Isaiah 47:2
+--                   (Take the millstones, and grind meal)
+--           Extras: Baruch 4:35 (fire shall come upon her, she shall be inhabited of devils)
+--           NT: none warranted
+--   v.24    In her was found the blood of prophets, and of saints
+--           Tanakh: Jeremiah 51:49 (at Babylon shall fall the slain of all the earth)
+--           Extras: none warranted   NT: Matthew 23:35 (upon you may come all the righteous blood
+--                   shed upon the earth — the same reckoning of shed blood)
+--
+-- THREADS (slug -> target libraries):
+--   9425 revelation-18-babylon-the-great-is-fallen-is-fallen-isaiah-21-jeremiah-51              (Tanakh)
+--   9428 revelation-18-come-out-of-her-my-people-the-gathered-called-to-separate-jeremiah-51    (Tanakh)
+--   9431 revelation-18-reward-her-double-the-cup-she-filled-jeremiah-50-psalm-137               (Tanakh)
+--   9434 revelation-18-the-kings-and-merchants-lament-over-her-ezekiel-27-tyre                  (Tanakh + Extras)
+--   9437 revelation-18-rejoice-over-her-thou-heaven-elohim-hath-avenged-you-jeremiah-51         (Tanakh)
+--   9440 revelation-18-the-millstone-cast-into-the-sea-babylon-thrown-down-jeremiah-51          (Tanakh + Extras)
+--   9443 revelation-18-the-blood-of-prophets-and-saints-found-in-her-jeremiah-51-matthew-23     (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-18-babylon-the-great-is-fallen-is-fallen-isaiah-21-jeremiah-51
+  ('canon', 'revelation', 18, 2, 'canon', 'isaiah', 21, 9, 'free', E'*And, behold, here cometh a chariot of men, with a couple of horsemen. And he answered and said, Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground.* (Isaiah 21:9). The angel''s cry is the watchman''s cry made cosmic: *Babylon the great is fallen, is fallen, and is become the habitation of devils* (Revelation 18:2). The doubled *is fallen, is fallen* comes straight from the watchtower of Isaiah, where the seer set a watchman to declare what he saw, and the word came back that the proud city and her graven gods were thrown down. The seer of the Apocalypse stands in that same watchtower and sees the doomed world-system fall.'),
+  ('canon', 'revelation', 18, 2, 'canon', 'isaiah', 13, 21, 'free', E'*But wild beasts of the desert shall lie there; and their houses shall be full of doleful creatures; and owls shall dwell there, and satyrs shall dance there.* (Isaiah 13:21). When the city falls she becomes a haunt of unclean things — *the habitation of devils, and the hold of every foul spirit, and a cage of every unclean and hateful bird* (Revelation 18:2). Isaiah had already seen the glory of kingdoms become a desolate den where only wild beasts and doleful creatures dwell; the seer re-speaks that ruin, the proud city emptied of men and filled with foul spirits.'),
+  ('canon', 'revelation', 18, 2, 'canon', 'jeremiah', 50, 39, 'free', E'*Therefore the wild beasts of the desert with the wild beasts of the islands shall dwell there, and the owls shall dwell therein: and it shall be no more inhabited for ever; neither shall it be dwelt in from generation to generation.* (Jeremiah 50:39). Jeremiah saw the same desolation Isaiah saw: Babylon become a dwelling for wild beasts and owls, never inhabited again. *Babylon the great is fallen, is fallen, and is become the habitation of devils* (Revelation 18:2) — the city of man''s pride handed over forever to the unclean, no longer a city but a cage.'),
+  ('canon', 'revelation', 18, 2, 'canon', 'jeremiah', 51, 8, 'free', E'*Babylon is suddenly fallen and destroyed: howl for her; take balm for her pain, if so be she may be healed.* (Jeremiah 51:8). The suddenness of the fall is Jeremiah''s: Babylon *suddenly fallen and destroyed* — and the seer takes up the doubled word, *Babylon the great is fallen, is fallen* (Revelation 18:2). What the prophet spoke against the river-city by the Euphrates the Apocalypse speaks against the whole proud system she stands for: one announcement, one sudden ruin.'),
+  ('canon', 'revelation', 18, 3, 'canon', 'jeremiah', 51, 7, 'free', E'*Babylon hath been a golden cup in the LORD''S hand, that made all the earth drunken: the nations have drunken of her wine; therefore the nations are mad.* (Jeremiah 51:7). The wine that maddens the nations is Jeremiah''s figure: Babylon a golden cup that made all the earth drunk. *For all nations have drunk of the wine of the wrath of her fornication* (Revelation 18:3) — the same intoxication, the kings of the earth committing fornication with her and the merchants waxing rich on her delicacies, the whole world drunk on the cup she pours.'),
+  -- thread: revelation-18-come-out-of-her-my-people-the-gathered-called-to-separate-jeremiah-51
+  ('canon', 'revelation', 18, 4, 'canon', 'jeremiah', 51, 45, 'free', E'*My people, go ye out of the midst of her, and deliver ye every man his soul from the fierce anger of Yahuah (LORD).* (Jeremiah 51:45). This is the very word the voice from heaven re-speaks: *Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4). It is the prophet''s summons to the covenant people — *my people* — to come out of the doomed city and deliver their souls before the fierce anger falls. The gathered seed, scattered among the nations, are called to separate from the system before its judgment.'),
+  ('canon', 'revelation', 18, 4, 'canon', 'jeremiah', 51, 6, 'free', E'*Flee out of the midst of Babylon, and deliver every man his soul: be not cut off in her iniquity; for this is the time of the LORD''S vengeance; he will render unto her a recompence.* (Jeremiah 51:6). Jeremiah twice cries the same summons — flee, deliver every man his soul, be not cut off in her iniquity. *Come out of her, my people, that ye be not partakers of her sins* (Revelation 18:4) carries both halves: come out, and so be not cut off when the recompence is rendered. To stay is to share her sins and her plagues; to come out is to be delivered.'),
+  ('canon', 'revelation', 18, 4, 'canon', 'isaiah', 48, 20, 'free', E'*Go ye forth of Babylon, flee ye from the Chaldeans, with a voice of singing declare ye, tell this, utter it even to the end of the earth; say ye, Yahuah (LORD) hath redeemed his servant Jacob.* (Isaiah 48:20). The call to come out of Babylon is also a call to redemption: go forth, and declare to the end of the earth that Yahuah (LORD) hath redeemed his servant Jacob. *Come out of her, my people* (Revelation 18:4) is the same gathering word — the scattered seed brought out of the doomed city, redeemed and singing, the same summons by which Yahuah (LORD) led his people out of the literal Babylon.'),
+  ('canon', 'revelation', 18, 4, 'canon', 'isaiah', 52, 11, 'free', E'*Depart ye, depart ye, go ye out from thence, touch no unclean thing; go ye out of the midst of her; be ye clean, that bear the vessels of Yahuah (LORD).* (Isaiah 52:11). The doubled *depart ye, depart ye* and the charge *touch no unclean thing* stand behind the heavenly voice: *Come out of her, my people, that ye be not partakers of her sins* (Revelation 18:4). Those who bear the vessels of Yahuah (LORD) are to go out clean from the midst of her — not partaking of her uncleanness, separated unto holiness as they leave the doomed city behind.'),
+  ('canon', 'revelation', 18, 4, 'canon', 'numbers', 16, 26, 'free', E'*And he spake unto the congregation, saying, Depart, I pray you, from the tents of these wicked men, and touch nothing of theirs, lest ye be consumed in all their sins.* (Numbers 16:26). The principle is as old as the wilderness: when judgment is about to fall on the wicked, the people are told to depart from their tents and touch nothing of theirs, lest they be consumed in their sins. *Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4) — the same separation, that those who are Yahuah''s (LORD''s) be not swept away with the rebels when the ground opens.'),
+  ('canon', 'revelation', 18, 5, 'canon', 'jeremiah', 51, 9, 'free', E'*We would have healed Babylon, but she is not healed: forsake her, and let us go every one into his own country: for her judgment reacheth unto heaven, and is lifted up even to the skies.* (Jeremiah 51:9). The measure of her guilt is Jeremiah''s figure: her judgment reaching unto heaven, lifted up to the skies. *For her sins have reached unto heaven, and Elohim (God) hath remembered her iniquities* (Revelation 18:5) — and so the call follows to forsake her and go out, every man delivered, before the heaped-up sins bring down the heaped-up judgment.'),
+  -- thread: revelation-18-reward-her-double-the-cup-she-filled-jeremiah-50-psalm-137
+  ('canon', 'revelation', 18, 6, 'canon', 'jeremiah', 50, 29, 'free', E'*Call together the archers against Babylon: all ye that bend the bow, camp against it round about; let none thereof escape: recompense her according to her work; according to all that she hath done, do unto her: for she hath been proud against Yahuah (LORD), against the Holy One of Yashar''el (Israel).* (Jeremiah 50:29). The law of recompense is Jeremiah''s: do unto her according to all she hath done, for her pride against the Holy One. *Reward her even as she rewarded you, and double unto her double according to her works* (Revelation 18:6) — the same measure-for-measure justice, her own works returned upon her head.'),
+  ('canon', 'revelation', 18, 6, 'canon', 'jeremiah', 50, 15, 'free', E'*Shout against her round about: she hath given her hand: her foundations are fallen, her walls are thrown down: for it is the vengeance of Yahuah (LORD): take vengeance upon her; as she hath done, do unto her.* (Jeremiah 50:15). *As she hath done, do unto her* — the vengeance of Yahuah (LORD) rendered in her own coin. *In the cup which she hath filled fill to her double* (Revelation 18:6): the cup she poured for the nations is filled back to her, the recompense of the prophet''s word doubled upon the proud city.'),
+  ('canon', 'revelation', 18, 6, 'canon', 'psalms', 137, 8, 'free', E'*O daughter of Babylon, who art to be destroyed; happy shall he be, that rewardeth thee as thou hast served us.* (Psalm 137:8). The captives by the rivers of Babylon sang of the day the daughter of Babylon would be rewarded as she had served them. *Reward her even as she rewarded you* (Revelation 18:6) — the longing of the exiles answered, the city that wasted Yahuah''s (LORD''s) people repaid in full for what she did to them.'),
+  ('canon', 'revelation', 18, 7, 'canon', 'isaiah', 47, 8, 'free', E'*Therefore hear now this, thou that art given to pleasures, that dwellest carelessly, that sayest in thine heart, I am, and none else beside me; I shall not sit as a widow, neither shall I know the loss of children:* (Isaiah 47:8). The proud boast is the daughter of Babylon''s own, from Isaiah: *I shall not sit as a widow.* *For she saith in her heart, I sit a queen, and am no widow, and shall see no sorrow* (Revelation 18:7) — the same self-secure pride, the city that thinks herself untouchable, certain she will never know widowhood or loss.'),
+  ('canon', 'revelation', 18, 8, 'canon', 'isaiah', 47, 9, 'free', E'*But these two things shall come to thee in a moment in one day, the loss of children, and widowhood: they shall come upon thee in their perfection for the multitude of thy sorceries, and for the great abundance of thine enchantments.* (Isaiah 47:9). The boast *I shall not sit as a widow* is answered by Isaiah: the loss of children and widowhood come *in one day.* *Therefore shall her plagues come in one day, death, and mourning, and famine; and she shall be utterly burned with fire* (Revelation 18:8) — the very suddenness Isaiah named, the proud security undone in a single day for the multitude of her sorceries.'),
+  ('canon', 'revelation', 18, 7, 'canon', 'zephaniah', 2, 15, 'free', E'*This is the rejoicing city that dwelt carelessly, that said in her heart, I am, and there is none beside me: how is she become a desolation, a place for beasts to lie down in! every one that passeth by her shall hiss, and wag his hand.* (Zephaniah 2:15). The careless boast *I am, and there is none beside me* is the proud city''s creed in Zephaniah too — the word that belongs to Yahuah (LORD) alone seized by the city that glorifies herself. *For she saith in her heart, I sit a queen* (Revelation 18:7); *how much she hath glorified herself, and lived deliciously, so much torment and sorrow give her* — the rejoicing city made a desolation, hissed at by all who pass.'),
+  -- thread: revelation-18-the-kings-and-merchants-lament-over-her-ezekiel-27-tyre
+  ('canon', 'revelation', 18, 19, 'canon', 'ezekiel', 27, 30, 'free', E'*And shall cause their voice to be heard against thee, and shall cry bitterly, and shall cast up dust upon their heads, they shall wallow themselves in the ashes:* (Ezekiel 27:30). The mariners'' mourning over the fall of the merchant-city is Ezekiel''s lament over Tyre: they cast dust on their heads and wail. *And they cast dust on their heads, and cried, weeping and wailing* (Revelation 18:19) — the shipmasters and sailors of the Apocalypse mourn exactly as the pilots of Tyre mourned, the same dust, the same bitter cry over a glory sunk in the sea.'),
+  ('canon', 'revelation', 18, 18, 'canon', 'ezekiel', 27, 32, 'free', E'*And in their wailing they shall take up a lamentation for thee, and lament over thee, saying, What city is like Tyrus, like the destroyed in the midst of the sea?* (Ezekiel 27:32). The cry *What city is like Tyrus* is taken up word for word by the seer: *And cried when they saw the smoke of her burning, saying, What city is like unto this great city!* (Revelation 18:18). The lament over Tyre, the merchant of the peoples, becomes the lament over Babylon the great — the same astonished question over a city no one thought could fall.'),
+  ('canon', 'revelation', 18, 19, 'canon', 'ezekiel', 27, 33, 'free', E'*When thy wares went forth out of the seas, thou filledst many people; thou didst enrich the kings of the earth with the multitude of thy riches and of thy merchandise.* (Ezekiel 27:33). Tyre enriched the kings of the earth with her merchandise — and so did Babylon: *wherein were made rich all that had ships in the sea by reason of her costliness* (Revelation 18:19). The merchants who grew rich by her now stand afar off and weep, for the source of their wealth is made desolate in one hour; the trade that fattened the kings is undone.'),
+  ('canon', 'revelation', 18, 15, 'canon', 'isaiah', 47, 15, 'free', E'*Thus shall they be unto thee with whom thou hast laboured, even thy merchants, from thy youth: they shall wander every one to his quarter; none shall save thee.* (Isaiah 47:15). Isaiah foretold that Babylon''s merchants, with whom she had trafficked from her youth, would scatter and none would save her. *The merchants of these things, which were made rich by her, shall stand afar off for the fear of her torment, weeping and wailing* (Revelation 18:15) — the merchants who profited by her keeping their distance in her ruin, none able to deliver her.'),
+  ('canon', 'revelation', 18, 11, 'apocrypha', '2-esdras', 16, 41, 'extras', E'*He that selleth, let him be as he that fleeth away: and he that buyeth, as one that will lose:* (2 Esdras 16:41). The Hebrew library knew the day when all buying and selling is overturned, when the merchant''s trade is worth nothing in the hour of judgment. *And the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11) — the seller as one who flees, the buyer as one who will lose, the whole commerce of the doomed system rendered void when the plagues draw nigh.'),
+  ('canon', 'revelation', 18, 11, 'apocrypha', '2-esdras', 16, 42, 'extras', E'*He that occupieth merchandise, as he that has no profit by it: and he that buildeth, as he that shall not dwell in it:* (2 Esdras 16:42). The merchant who handles merchandise is to count it as bringing no profit, for the day of trouble swallows all gain. *For no man buyeth their merchandise any more* (Revelation 18:11) — the very condition the seer beholds, the traders of gold and silk and souls of men weeping because their wares are made nothing, no profit left in the city that made them rich.'),
+  -- thread: revelation-18-rejoice-over-her-thou-heaven-elohim-hath-avenged-you-jeremiah-51
+  ('canon', 'revelation', 18, 20, 'canon', 'jeremiah', 51, 48, 'free', E'*Then the heaven and the earth, and all that is therein, shall sing for Babylon: for the spoilers shall come unto her from the north, saith Yahuah (LORD).* (Jeremiah 51:48). When Babylon falls, Jeremiah saw the heaven and the earth break into song over her. *Rejoice over her, thou heaven, and ye holy apostles and prophets; for Elohim (God) hath avenged you on her* (Revelation 18:20) — the heavens called to rejoice exactly as the prophet foretold, the fall of the oppressor turned into the praise of the delivered.'),
+  ('canon', 'revelation', 18, 20, 'canon', 'deuteronomy', 32, 43, 'free', E'*Rejoice, O ye nations, with his people: for he will avenge the blood of his servants, and will render vengeance to his adversaries, and will be merciful unto his land, and to his people.* (Deuteronomy 32:43). The Song of Moses ends with the call to rejoice because Yahuah (LORD) will avenge the blood of his servants. *Rejoice over her, thou heaven... for Elohim (God) hath avenged you on her* (Revelation 18:20) — the ancient promise come to pass: the blood of the servants avenged, vengeance rendered to the adversaries, the doomed city''s fall the vindication of the long-waiting saints.'),
+  -- thread: revelation-18-the-millstone-cast-into-the-sea-babylon-thrown-down-jeremiah-51
+  ('canon', 'revelation', 18, 21, 'canon', 'jeremiah', 51, 63, 'free', E'*And it shall be, when thou hast made an end of reading this book, that thou shalt bind a stone to it, and cast it into the midst of Euphrates:* (Jeremiah 51:63). Jeremiah commanded Seraiah to bind a stone to the book of Babylon''s doom and cast it into the Euphrates — an enacted sign of her sinking. *And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down* (Revelation 18:21). The seer''s angel does in the great what Seraiah did at the river: the stone cast into the water, the city that will not rise again.'),
+  ('canon', 'revelation', 18, 21, 'canon', 'jeremiah', 51, 64, 'free', E'*And thou shalt say, Thus shall Babylon sink, and shall not rise from the evil that I will bring upon her: and they shall be weary. Thus far are the words of Jeremiah.* (Jeremiah 51:64). The word over Seraiah''s stone is the word over the angel''s millstone: *Thus shall Babylon sink, and shall not rise.* *Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all* (Revelation 18:21) — the same finality, the city sunk like a stone in the deep, never to come up again.'),
+  ('canon', 'revelation', 18, 21, 'canon', 'jeremiah', 51, 42, 'free', E'*The sea is come up upon Babylon: she is covered with the multitude of the waves thereof.* (Jeremiah 51:42). Jeremiah saw the sea come up over Babylon, the proud city covered with waves. *A mighty angel took up a stone like a great millstone, and cast it into the sea... and shall be found no more at all* (Revelation 18:21) — the waters closing over her as the prophet foretold, the city swallowed in the deep and lost from sight.'),
+  ('canon', 'revelation', 18, 22, 'canon', 'isaiah', 47, 2, 'free', E'*Take the millstones, and grind meal: uncover thy locks, make bare the leg, uncover the thigh, pass over the rivers.* (Isaiah 47:2). Isaiah set the daughter of Babylon to the millstones, brought down from her throne to the grinding of the captive. The seer takes the same millstone and silences it forever: *and the sound of a millstone shall be heard no more at all in thee* (Revelation 18:22). The mill that ground for the proud city falls silent; the music, the craftsman, the bridegroom''s voice, all heard no more.'),
+  ('canon', 'revelation', 18, 23, 'apocrypha', 'baruch-with-the-letter-of-jeremiah', 4, 35, 'extras', E'*For fire shall come upon her from the Everlasting, long to endure; and she shall be inhabited of devils for a great time.* (Baruch 4:35). The Hebrew library names the doom of the city that afflicted Yahuah''s (LORD''s) people: fire from the Everlasting, and her habitation given over to devils. *And the light of a candle shall shine no more at all in thee... for by thy sorceries were all nations deceived* (Revelation 18:23) — the lamp put out, the city of sorceries burned and left desolate, the haunt of foul spirits Baruch foresaw.'),
+  -- thread: revelation-18-the-blood-of-prophets-and-saints-found-in-her-jeremiah-51-matthew-23
+  ('canon', 'revelation', 18, 24, 'canon', 'jeremiah', 51, 49, 'free', E'*As Babylon hath caused the slain of Yashar''el (Israel) to fall, so at Babylon shall fall the slain of all the earth.* (Jeremiah 51:49). Jeremiah names Babylon as guilty both of the slain of Yashar''el (Israel) and of the slain of all the earth. *And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth* (Revelation 18:24) — the same double reckoning, the system that shed the blood of Yahuah''s (LORD''s) servants and of all the earth''s slain, called to account for every life she took.'),
+  ('canon', 'revelation', 18, 24, 'canon', 'matthew', 23, 35, 'free', E'*That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel unto the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar.* (Matthew 23:35). Yahusha (Jesus) named the gathering of all righteous blood upon the system that killed the prophets. *And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth* (Revelation 18:24) — the same reckoning, all the shed blood of the righteous found in the doomed city and avenged, from Abel onward, the long account of the prophets'' blood closed at last.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-18-babylon-the-great-is-fallen-is-fallen-isaiah-21-jeremiah-51',
+       E'Babylon the great is fallen, is fallen — the habitation of devils (Isaiah 21, Jeremiah 50-51)',
+       E'The chapter opens with another angel come down from heaven, the earth lightened with his glory, crying *Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit, and a cage of every unclean and hateful bird* (Revelation 18:2). Every phrase is the prophets'' own. The doubled cry is the watchman''s on the tower of Isaiah: *And he answered and said, Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground* (Isaiah 21:9). The desolation — a haunt of unclean creatures — is Isaiah''s and Jeremiah''s: *But wild beasts of the desert shall lie there; and their houses shall be full of doleful creatures; and owls shall dwell there, and satyrs shall dance there* (Isaiah 13:21); *Therefore the wild beasts of the desert with the wild beasts of the islands shall dwell there, and the owls shall dwell therein: and it shall be no more inhabited for ever* (Jeremiah 50:39). The suddenness is Jeremiah''s: *Babylon is suddenly fallen and destroyed: howl for her* (Jeremiah 51:8). And the maddening cup is his too: *For all nations have drunk of the wine of the wrath of her fornication* (Revelation 18:3), echoing *Babylon hath been a golden cup in the LORD''S hand, that made all the earth drunken: the nations have drunken of her wine; therefore the nations are mad* (Jeremiah 51:7). The seer stands in the prophets'' watchtower and sees the doomed world-system fall as the river-city by the Euphrates fell — the proud glory of kingdoms emptied of men and given over to foul spirits, never to be inhabited again.',
+       sv.verse_id, ev.verse_id, 'free', 9425
+  FROM _s224_rv18_lookup sv, _s224_rv18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=18 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-18-come-out-of-her-my-people-the-gathered-called-to-separate-jeremiah-51',
+       E'Come out of her, my people — the gathered seed called to separate (Jeremiah 51, Isaiah 52, Numbers 16)',
+       E'*And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4). This is the prophets'' own summons to the covenant people — *my people* — to separate from the doomed system before the judgment falls, and it is the regathering call: the same word by which Yahuah (LORD) brought the seed out of the literal Babylon, now spoken to the scattered seed living among the nations. Jeremiah cries it twice: *Flee out of the midst of Babylon, and deliver every man his soul: be not cut off in her iniquity* (Jeremiah 51:6), and *My people, go ye out of the midst of her, and deliver ye every man his soul from the fierce anger of Yahuah (LORD)* (Jeremiah 51:45). Isaiah binds the coming-out to redemption and to cleanness: *Go ye forth of Babylon, flee ye from the Chaldeans, with a voice of singing declare ye... Yahuah (LORD) hath redeemed his servant Jacob* (Isaiah 48:20); *Depart ye, depart ye, go ye out from thence, touch no unclean thing; go ye out of the midst of her; be ye clean, that bear the vessels of Yahuah (LORD)* (Isaiah 52:11). The pattern is as old as the wilderness, when judgment was about to swallow the rebels: *Depart, I pray you, from the tents of these wicked men, and touch nothing of theirs, lest ye be consumed in all their sins* (Numbers 16:26). And the reason the call is so urgent is the heaped-up guilt: *For her sins have reached unto heaven, and Elohim (God) hath remembered her iniquities* (Revelation 18:5), as Jeremiah said — *her judgment reacheth unto heaven, and is lifted up even to the skies* (Jeremiah 51:9). To stay is to share her sins and her plagues; to come out is to be delivered, redeemed, and made clean — the lost sheep brought home out of the system before its ruin.',
+       sv.verse_id, ev.verse_id, 'free', 9428
+  FROM _s224_rv18_lookup sv, _s224_rv18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=18 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-18-reward-her-double-the-cup-she-filled-jeremiah-50-psalm-137',
+       E'Reward her double, the cup she filled — I sit a queen and am no widow (Jeremiah 50, Psalm 137, Isaiah 47)',
+       E'*Reward her even as she rewarded you, and double unto her double according to her works: in the cup which she hath filled fill to her double* (Revelation 18:6). The law of recompense is the prophets'': measure for measure, her own works returned upon her head. Jeremiah twice pronounces it: *recompense her according to her work; according to all that she hath done, do unto her: for she hath been proud against Yahuah (LORD), against the Holy One of Yashar''el (Israel)* (Jeremiah 50:29), and *as she hath done, do unto her* (Jeremiah 50:15). The captives by the rivers sang for the day: *O daughter of Babylon, who art to be destroyed; happy shall he be, that rewardeth thee as thou hast served us* (Psalm 137:8). And the proud security that invites the doom is the daughter of Babylon''s own boast in Isaiah: *for she saith in her heart, I sit a queen, and am no widow, and shall see no sorrow* (Revelation 18:7), echoing *thou that... sayest in thine heart, I am, and none else beside me; I shall not sit as a widow, neither shall I know the loss of children* (Isaiah 47:8) — the same word *I am, and there is none beside me* that the rejoicing city speaks in Zephaniah, *how is she become a desolation* (Zephaniah 2:15). The boast is answered in the suddenness Isaiah named: *these two things shall come to thee in a moment in one day, the loss of children, and widowhood* (Isaiah 47:9), which the seer re-speaks — *Therefore shall her plagues come in one day, death, and mourning, and famine; and she shall be utterly burned with fire: for strong is Yahuah Elohim (the Lord God) who judgeth her* (Revelation 18:8). The city that thought herself untouchable is undone in a single day, repaid in full in her own cup.',
+       sv.verse_id, ev.verse_id, 'free', 9431
+  FROM _s224_rv18_lookup sv, _s224_rv18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=18 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-18-the-kings-and-merchants-lament-over-her-ezekiel-27-tyre',
+       E'The kings and merchants and shipmasters lament over her — the dirge over Tyre (Ezekiel 27)',
+       E'The long lament of the kings, the merchants, and the shipmasters weeping over the burning city (Revelation 18:9-19) is the seer re-speaking Ezekiel''s dirge over Tyre, the merchant of the peoples. The mariners'' mourning is taken straight from the prophet: *And they cast dust on their heads, and cried, weeping and wailing* (Revelation 18:19), echoing *they shall cast up dust upon their heads, they shall wallow themselves in the ashes* (Ezekiel 27:30). The astonished cry is word for word: *And cried when they saw the smoke of her burning, saying, What city is like unto this great city!* (Revelation 18:18), from *they shall... lament over thee, saying, What city is like Tyrus, like the destroyed in the midst of the sea?* (Ezekiel 27:32). And the wealth she poured into the kings'' laps is Ezekiel''s too: *wherein were made rich all that had ships in the sea by reason of her costliness* (Revelation 18:19), from *thou didst enrich the kings of the earth with the multitude of thy riches and of thy merchandise* (Ezekiel 27:33). Isaiah had already foretold the merchants'' scattering: *thy merchants, from thy youth: they shall wander every one to his quarter; none shall save thee* (Isaiah 47:15) — and so *the merchants of these things, which were made rich by her, shall stand afar off for the fear of her torment, weeping and wailing* (Revelation 18:15). The Hebrew library knew this overturning of all commerce in the day of trouble: *He that selleth, let him be as he that fleeth away: and he that buyeth, as one that will lose* (2 Esdras 16:41); *He that occupieth merchandise, as he that has no profit by it* (2 Esdras 16:42) — the very void the seer beholds, *for no man buyeth their merchandise any more* (Revelation 18:11). The trade that fattened the kings, the gold and silk and the souls of men, is made nothing in one hour, and those who grew rich by her keep their distance and weep.',
+       sv.verse_id, ev.verse_id, 'extras', 9434
+  FROM _s224_rv18_lookup sv, _s224_rv18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=18 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-18-rejoice-over-her-thou-heaven-elohim-hath-avenged-you-jeremiah-51',
+       E'Rejoice over her, thou heaven — Elohim (God) hath avenged you on her (Jeremiah 51, Deuteronomy 32)',
+       E'Against the weeping of the kings and merchants, heaven is called to rejoice: *Rejoice over her, thou heaven, and ye holy apostles and prophets; for Elohim (God) hath avenged you on her* (Revelation 18:20). The summons is Jeremiah''s: when Babylon falls, *Then the heaven and the earth, and all that is therein, shall sing for Babylon: for the spoilers shall come unto her from the north, saith Yahuah (LORD)* (Jeremiah 51:48). And the ground of the rejoicing — the avenging of the servants'' blood — is the close of the Song of Moses: *Rejoice, O ye nations, with his people: for he will avenge the blood of his servants, and will render vengeance to his adversaries, and will be merciful unto his land, and to his people* (Deuteronomy 32:43). The fall of the oppressor is the vindication of the long-waiting saints, the apostles and prophets whose blood the system shed — the ancient promise of Moses come to pass, the heavens singing because Yahuah (LORD) has at last avenged his own.',
+       sv.verse_id, ev.verse_id, 'free', 9437
+  FROM _s224_rv18_lookup sv, _s224_rv18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=18 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-18-the-millstone-cast-into-the-sea-babylon-thrown-down-jeremiah-51',
+       E'The millstone cast into the sea — thus shall Babylon be thrown down (Jeremiah 51, Isaiah 47)',
+       E'*And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all* (Revelation 18:21). The enacted sign is Jeremiah''s: he commanded Seraiah, when he came to Babylon and finished reading the book of her doom, to *bind a stone to it, and cast it into the midst of Euphrates* (Jeremiah 51:63), and to say *Thus shall Babylon sink, and shall not rise from the evil that I will bring upon her* (Jeremiah 51:64). The angel of the Apocalypse does in the great what Seraiah did at the river: the stone cast into the water, the city sunk and never to rise. Jeremiah had seen the waters close over her — *The sea is come up upon Babylon: she is covered with the multitude of the waves thereof* (Jeremiah 51:42). And the silencing of the city follows: the mill that ground for proud Babylon — to which Isaiah had brought her down, *Take the millstones, and grind meal* (Isaiah 47:2) — falls forever quiet, *and the sound of a millstone shall be heard no more at all in thee* (Revelation 18:22), the music and the craftsman and the bridegroom''s voice all heard no more, *and the light of a candle shall shine no more at all in thee... for by thy sorceries were all nations deceived* (Revelation 18:23). The Hebrew library named the same end for the city that afflicted Yahuah''s (LORD''s) people: *For fire shall come upon her from the Everlasting, long to endure; and she shall be inhabited of devils for a great time* (Baruch 4:35) — the lamp put out, the city of sorceries burned and given over to the foul spirits.',
+       sv.verse_id, ev.verse_id, 'extras', 9440
+  FROM _s224_rv18_lookup sv, _s224_rv18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=18 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-18-the-blood-of-prophets-and-saints-found-in-her-jeremiah-51-matthew-23',
+       E'In her was found the blood of prophets and of saints (Jeremiah 51, Matthew 23)',
+       E'The last word over Babylon names the reason for her doom: *And in her was found the blood of prophets, and of saints, and of all that were slain upon the earth* (Revelation 18:24). Jeremiah had charged her with the same double guilt — the slain of the covenant people and the slain of all the earth: *As Babylon hath caused the slain of Yashar''el (Israel) to fall, so at Babylon shall fall the slain of all the earth* (Jeremiah 51:49). And Yahusha (Jesus) had named the gathering of all righteous blood upon the system that kills the prophets: *That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel unto the blood of Zacharias son of Barachias, whom ye slew between the temple and the altar* (Matthew 23:35). The doomed city is the long account of shed blood closed at last — from Abel onward, the prophets and the saints and all the slain of the earth avenged in her fall. The Babylon-system that drank the blood of Yahuah''s (LORD''s) servants is brought to reckoning, and the cry of the souls under the altar is answered.',
+       sv.verse_id, ev.verse_id, 'free', 9443
+  FROM _s224_rv18_lookup sv, _s224_rv18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=18 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-18-babylon-the-great-is-fallen-is-fallen-isaiah-21-jeremiah-51
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 21:9 — *Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground* the watchman''s doubled cry the angel re-speaks over the world-system (Revelation 18:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-babylon-the-great-is-fallen-is-fallen-isaiah-21-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=21 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 13:21 — *wild beasts of the desert shall lie there... and owls shall dwell there, and satyrs shall dance there* the fallen city become a haunt of unclean creatures (Revelation 18:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-babylon-the-great-is-fallen-is-fallen-isaiah-21-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=13 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 50:39 — *the wild beasts of the desert... shall dwell there... it shall be no more inhabited for ever* the proud city handed forever to the unclean (Revelation 18:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-babylon-the-great-is-fallen-is-fallen-isaiah-21-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=50 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 51:8 — *Babylon is suddenly fallen and destroyed: howl for her* the suddenness behind the doubled *is fallen, is fallen* (Revelation 18:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-babylon-the-great-is-fallen-is-fallen-isaiah-21-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jeremiah 51:7 — *Babylon hath been a golden cup in the LORD''S hand, that made all the earth drunken* the maddening cup behind *all nations have drunk of the wine of the wrath of her fornication* (Revelation 18:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-babylon-the-great-is-fallen-is-fallen-isaiah-21-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-18-come-out-of-her-my-people-the-gathered-called-to-separate-jeremiah-51
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 51:45 — *My people, go ye out of the midst of her, and deliver ye every man his soul from the fierce anger of Yahuah (LORD)* the prophet''s summons to the covenant people the heavenly voice re-speaks (Revelation 18:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-come-out-of-her-my-people-the-gathered-called-to-separate-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=45
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 51:6 — *Flee out of the midst of Babylon, and deliver every man his soul: be not cut off in her iniquity* come out and so be not cut off when the recompence falls (Revelation 18:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-come-out-of-her-my-people-the-gathered-called-to-separate-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 48:20 — *Go ye forth of Babylon, flee ye from the Chaldeans... Yahuah (LORD) hath redeemed his servant Jacob* the coming-out bound to redemption, the scattered seed gathered (Revelation 18:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-come-out-of-her-my-people-the-gathered-called-to-separate-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=48 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 52:11 — *Depart ye, depart ye, go ye out from thence, touch no unclean thing... be ye clean, that bear the vessels of Yahuah (LORD)* the coming-out unto cleanness, not partaking of her sins (Revelation 18:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-come-out-of-her-my-people-the-gathered-called-to-separate-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Numbers 16:26 — *Depart, I pray you, from the tents of these wicked men... lest ye be consumed in all their sins* the wilderness pattern of separation before the judgment swallows the rebels (Revelation 18:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-come-out-of-her-my-people-the-gathered-called-to-separate-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Jeremiah 51:9 — *her judgment reacheth unto heaven, and is lifted up even to the skies* the heaped-up guilt behind *her sins have reached unto heaven* (Revelation 18:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-come-out-of-her-my-people-the-gathered-called-to-separate-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-18-reward-her-double-the-cup-she-filled-jeremiah-50-psalm-137
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 50:29 — *recompense her according to her work; according to all that she hath done, do unto her: for she hath been proud against Yahuah (LORD)* the law of recompense behind *double unto her double according to her works* (Revelation 18:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-reward-her-double-the-cup-she-filled-jeremiah-50-psalm-137'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=50 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 50:15 — *take vengeance upon her; as she hath done, do unto her* the cup filled back to her in her own measure (Revelation 18:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-reward-her-double-the-cup-she-filled-jeremiah-50-psalm-137'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=50 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 137:8 — *O daughter of Babylon... happy shall he be, that rewardeth thee as thou hast served us* the exiles'' longing answered, the city repaid for what she did to Yahuah''s people (Revelation 18:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-reward-her-double-the-cup-she-filled-jeremiah-50-psalm-137'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=137 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 47:8 — *thou that... sayest in thine heart, I am, and none else beside me; I shall not sit as a widow* the daughter of Babylon''s boast behind *I sit a queen, and am no widow* (Revelation 18:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-reward-her-double-the-cup-she-filled-jeremiah-50-psalm-137'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=47 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Zephaniah 2:15 — *the rejoicing city... that said in her heart, I am, and there is none beside me: how is she become a desolation* the same proud creed, the city made a desolation (Revelation 18:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-reward-her-double-the-cup-she-filled-jeremiah-50-psalm-137'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Isaiah 47:9 — *these two things shall come to thee in a moment in one day, the loss of children, and widowhood* the boast answered in the suddenness behind *her plagues come in one day* (Revelation 18:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-reward-her-double-the-cup-she-filled-jeremiah-50-psalm-137'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=47 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-18-the-kings-and-merchants-lament-over-her-ezekiel-27-tyre
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 27:30 — *shall cast up dust upon their heads, they shall wallow themselves in the ashes* the mariners'' mourning over Tyre behind *they cast dust on their heads* (Revelation 18:19).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-kings-and-merchants-lament-over-her-ezekiel-27-tyre'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=27 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 27:32 — *What city is like Tyrus, like the destroyed in the midst of the sea?* the lament-cry taken up word for word in *What city is like unto this great city!* (Revelation 18:18).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-kings-and-merchants-lament-over-her-ezekiel-27-tyre'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=27 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 27:33 — *thou didst enrich the kings of the earth with the multitude of thy riches and of thy merchandise* the wealth poured into the kings behind *made rich all that had ships in the sea* (Revelation 18:19).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-kings-and-merchants-lament-over-her-ezekiel-27-tyre'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=27 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 47:15 — *thy merchants, from thy youth: they shall wander every one to his quarter; none shall save thee* the merchants scattered, standing afar off in her ruin (Revelation 18:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-kings-and-merchants-lament-over-her-ezekiel-27-tyre'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=47 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Esdras 16:41 — *He that selleth, let him be as he that fleeth away: and he that buyeth, as one that will lose* the Hebrew library''s overturning of all commerce behind *no man buyeth their merchandise any more* (Revelation 18:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-kings-and-merchants-lament-over-her-ezekiel-27-tyre'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=11
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=16 AND tv.verse_number=41
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'2 Esdras 16:42 — *He that occupieth merchandise, as he that has no profit by it: and he that buildeth, as he that shall not dwell in it* the merchant''s trade made nothing in the day of trouble (Revelation 18:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-kings-and-merchants-lament-over-her-ezekiel-27-tyre'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=11
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=16 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-18-rejoice-over-her-thou-heaven-elohim-hath-avenged-you-jeremiah-51
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 51:48 — *Then the heaven and the earth, and all that is therein, shall sing for Babylon* the heavens called to rejoice at her fall (Revelation 18:20).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-rejoice-over-her-thou-heaven-elohim-hath-avenged-you-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=48
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:43 — *Rejoice, O ye nations, with his people: for he will avenge the blood of his servants* the close of the Song of Moses, the avenging of the servants behind *Elohim hath avenged you on her* (Revelation 18:20).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-rejoice-over-her-thou-heaven-elohim-hath-avenged-you-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-18-the-millstone-cast-into-the-sea-babylon-thrown-down-jeremiah-51
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 51:63 — *thou shalt bind a stone to it, and cast it into the midst of Euphrates* Seraiah''s enacted sign behind the angel''s millstone cast into the sea (Revelation 18:21).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-millstone-cast-into-the-sea-babylon-thrown-down-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=63
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 51:64 — *Thus shall Babylon sink, and shall not rise from the evil that I will bring upon her* the word over Seraiah''s stone, the city sunk and never to rise (Revelation 18:21).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-millstone-cast-into-the-sea-babylon-thrown-down-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=64
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 51:42 — *The sea is come up upon Babylon: she is covered with the multitude of the waves thereof* the waters closing over her as the stone sinks (Revelation 18:21).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-millstone-cast-into-the-sea-babylon-thrown-down-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 47:2 — *Take the millstones, and grind meal* the mill to which Babylon was brought down, now silenced — *the sound of a millstone shall be heard no more at all in thee* (Revelation 18:22).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-millstone-cast-into-the-sea-babylon-thrown-down-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=47 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Baruch 4:35 — *For fire shall come upon her from the Everlasting... and she shall be inhabited of devils for a great time* the Hebrew library''s doom of the city behind *the light of a candle shall shine no more at all in thee* (Revelation 18:23).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-millstone-cast-into-the-sea-babylon-thrown-down-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=23
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=4 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-18-the-blood-of-prophets-and-saints-found-in-her-jeremiah-51-matthew-23
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 51:49 — *As Babylon hath caused the slain of Yashar''el (Israel) to fall, so at Babylon shall fall the slain of all the earth* the double guilt — the covenant people and all the earth — behind *the blood of prophets, and of saints* (Revelation 18:24).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-blood-of-prophets-and-saints-found-in-her-jeremiah-51-matthew-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=49
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 23:35 — *That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel* the gathering of all shed blood upon the system that kills the prophets (Revelation 18:24).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv18_lookup sv, _s224_rv18_lookup tv
+ WHERE t.slug='revelation-18-the-blood-of-prophets-and-saints-found-in-her-jeremiah-51-matthew-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=18 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session224 — Revelation cross-references complete.'
