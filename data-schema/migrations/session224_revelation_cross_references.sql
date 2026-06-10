@@ -1197,6 +1197,784 @@ SELECT t.id, x.id, 2, E'Daniel 7:14 — *there was given him dominion, and glory
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_revelation_04.sql (S224 Revelation 4) -----
+-- =====================================================================
+-- S224 minion — REVELATION 4 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 4 (11 verses) — THE THRONE IN HEAVEN. The throne-chariot vision of
+--   Ezekiel 1 / 10 re-spoken, the seraphim *Holy holy holy* of Isaiah 6, the sea of glass of
+--   Exodus 24, the Maker worshipped of Genesis 1 / Nehemiah 9.
+-- Tag: rv04 (temp view _s224_rv04_lookup).
+-- Sort band: floor 9075, step 3 (9075, 9078, 9081, 9084, 9087, 9090 used; under 9100).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (CHRISTOLOGY WATCHPOINT):
+-- The One on the throne in chapter 4 is *him that liveth for ever and ever* (4:9-10) — the FATHER,
+-- the formless Most High shown in vision-form on the throne-chariot of Ezekiel. The Lamb does NOT
+-- appear until chapter 5, where he is distinguished from the throne-sitter (5:6-7, *he came and took
+-- the book out of the right hand of him that sat upon the throne*). The two are NOT collapsed here:
+-- the throne-sitter is the Father; the Formed Son comes forward in ch 5. The four living creatures
+-- and the *Holy, holy, holy* are the cherubim/seraphim of Ezekiel 1 and Isaiah 6, the same throne
+-- the prophets saw — Revelation never says *it is written*; it is woven entirely out of the Tanakh
+-- and the Hebrew library. Read every figure inside the consummation-of-the-covenant frame: the same
+-- Yahuah (LORD), the same throne, the same worship the prophets beheld, now opened to the seer.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1   the open door, *Come up hither* — the seer caught up to the throne
+--         Tanakh: none warranted (carried into the throne thread at v.2)
+--         Extras: 1 Enoch 14:3 (Enoch carried off in a whirlwind into the ends of heaven) — woven in prose of thread 9075
+--         NT: none warranted
+--   v.2-3 a throne set in heaven, and one sat on it; like jasper and sardine, a rainbow round about
+--         Tanakh: Ezekiel 1:26 (the likeness of a throne, the appearance of a man above upon it),
+--                 Ezekiel 1:28 (the bow in the cloud, the glory of Yahuah), Ezekiel 10:1 (the sapphire throne)
+--         Extras: 1 Enoch 14:15 (the throne of Yahuah, of stibium, the top of sapphire),
+--                 Apocalypse of Abraham 18:9 (the chariot with fiery wheels, the throne covered with fire)
+--         NT: none warranted (the throne-sitter is the Father; the Lamb is ch 5)
+--   v.4   four and twenty elders, white raiment, crowns of gold
+--         Tanakh: none warranted (the enthroned council; carried in prose)
+--         Extras: 1 Enoch 40:1 (thousands of thousands standing before Yahuah of Spirits) — thread 9087
+--         NT: none warranted
+--   v.5   seven lamps of fire before the throne, lightnings and thunderings
+--         Tanakh: Exodus 19:16 (thunders and lightnings on Sinai) — woven into the throne thread prose
+--         Extras: none warranted   NT: none warranted (curated; the menorah/seven-Spirits carried lightly)
+--   v.6a  a sea of glass like crystal before the throne
+--         Tanakh: Exodus 24:10 (the paved work of sapphire, the body of heaven in clearness),
+--                 Ezekiel 1:22 (the firmament as the colour of the terrible crystal over their heads)
+--         Extras: none warranted   NT: none warranted
+--   v.6-8 four beasts full of eyes; like a lion, calf, man, eagle; six wings; resting not
+--         Tanakh: Ezekiel 1:5-6 (four living creatures, four faces), Ezekiel 1:10 (face of man, lion,
+--                 ox, eagle), Ezekiel 1:18 (the rings full of eyes), Ezekiel 10:12 (full of eyes round about),
+--                 Ezekiel 10:14 (cherub, man, lion, eagle)
+--         Extras: Apocalypse of Abraham 18:3 (four fiery living creatures under the throne),
+--                 18:4 (lion, man, ox, eagle, six wings)
+--         NT: none warranted
+--   v.8   Holy, holy, holy, Yahuah Elohim Almighty, which was, and is, and is to come
+--         Tanakh: Isaiah 6:2 (the seraphim, six wings), Isaiah 6:3 (Holy, holy, holy, Yahuah Tseva'ot)
+--         Extras: 1 Enoch 39:12 (the four presences uttering praises before Yahuah of glory),
+--                 1 Enoch 39:13 (the first voice blesses Yahuah of Spirits for ever and ever)
+--         NT: none warranted
+--   v.9-10 the elders fall down, worship him that liveth for ever and ever, cast their crowns
+--         Tanakh: Nehemiah 9:6 (the host of heaven worshippeth thee) — carried in thread 9087 / 9090
+--         Extras: 1 Enoch 40:1 (the myriads standing before the throne)
+--         NT: none warranted
+--   v.11  Thou hast created all things, and for thy pleasure they are and were created
+--         Tanakh: Genesis 1:1 (in the beginning Elohim created), Nehemiah 9:6 (thou hast made heaven
+--                 and earth and the host of heaven, and thou preservest them all)
+--         Extras: none warranted   NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   9075 revelation-4-the-throne-set-in-heaven-and-one-sat-on-the-throne-ezekiel-1     (Tanakh + Extras)
+--   9078 revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1  (Tanakh + Extras)
+--   9081 revelation-4-holy-holy-holy-the-lord-god-almighty-isaiah-6                    (Tanakh + Extras)
+--   9084 revelation-4-the-sea-of-glass-before-the-throne-exodus-24                     (Tanakh)
+--   9087 revelation-4-the-elders-cast-their-crowns-and-the-myriads-before-the-throne   (Tanakh + Extras)
+--   9090 revelation-4-thou-hast-created-all-things-the-maker-worshipped-genesis-1-nehemiah-9  (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv04_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-4-the-throne-set-in-heaven-and-one-sat-on-the-throne-ezekiel-1
+  ('canon', 'revelation', 4, 2, 'canon', 'ezekiel', 1, 26, 'free', E'*And above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone: and upon the likeness of the throne was the likeness as the appearance of a man above upon it.* (Ezekiel 1:26). This is the throne John is caught up to behold: *and, behold, a throne was set in heaven, and one sat on the throne* (Revelation 4:2). Ezekiel saw it first by the river of Chebar — *the likeness of a throne... and upon the likeness of the throne... the appearance of a man above upon it* — and the seer of the Apocalypse is brought into the same throne-room. The One on the throne here is *him that liveth for ever and ever* (Revelation 4:9), the Father shown in vision-form; the Formed Son comes forward only in the chapter that follows.'),
+  ('canon', 'revelation', 4, 3, 'canon', 'ezekiel', 1, 28, 'free', E'*As the appearance of the bow that is in the cloud in the day of rain, so was the appearance of the brightness round about. This was the appearance of the likeness of the glory of Yahuah (LORD). And when I saw it, I fell upon my face, and I heard a voice of one that spake.* (Ezekiel 1:28). The rainbow round the throne is no new sight — Ezekiel saw *the appearance of the bow that is in the cloud* encircling *the likeness of the glory of Yahuah (LORD)*. So John writes, *and there was a rainbow round about the throne, in sight like unto an emerald* (Revelation 4:3). The same encircling bow, the same glory; the seer beholds what the prophet beheld, the throne of the living Elohim (God) crowned with the bow of the covenant.'),
+  ('canon', 'revelation', 4, 3, 'canon', 'ezekiel', 10, 1, 'free', E'*Then I looked, and, behold, in the firmament that was above the head of the cherubims there appeared over them as it were a sapphire stone, as the appearance of the likeness of a throne.* (Ezekiel 10:1). Ezekiel saw the throne again over the cherubim — *as it were a sapphire stone, as the appearance of the likeness of a throne.* It is the throne of Revelation 4, *and he that sat was to look upon like a jasper and a sardine stone* (Revelation 4:3): the same throne above the living creatures, gleaming like precious stone, that the prophet saw mounted over the cherubim above the firmament.'),
+  ('canon', 'revelation', 4, 3, 'enoch', '1-enoch', 14, 15, 'extras', E'*But the middle one reached to heaven, like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire.* (1 Enoch 14:15). Enoch, carried up in a chariot of fire into the ends of heaven, saw *the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire* — the same sapphire-gleaming throne Ezekiel saw and John now beholds. *And he that sat was to look upon like a jasper and a sardine stone* (Revelation 4:3): the Hebrew library beheld the throne of precious stone reaching to heaven, the throne of the Most High, before ever the Apocalypse opened its door in heaven.'),
+  ('canon', 'revelation', 4, 2, 'apocalypse-of-abraham', 'apocalypse-of-abraham', 18, 9, 'extras', E'*And as I stood alone and looked, I saw behind the living creatures a chariot with fiery wheels, each wheel full of eyes round about; and over the wheels was a throne, which I saw, and this was covered with fire, and fire encircled it round about, and lo, an indescribable fire environed a fiery host.* (Apocalypse of Abraham 18:9). Abraham too was carried up and saw the throne-chariot — *a chariot with fiery wheels, each wheel full of eyes round about; and over the wheels was a throne... covered with fire.* It is the throne John sees set in heaven, *and one sat on the throne* (Revelation 4:2), with the lightnings proceeding out of it (Revelation 4:5). The same fiery throne-chariot of Ezekiel runs through the restored library: the seers of Yashar''el (Israel) beheld one throne, the throne of the living Elohim (God).'),
+  -- thread: revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1
+  ('canon', 'revelation', 4, 6, 'canon', 'ezekiel', 1, 5, 'free', E'*Also out of the midst thereof came the likeness of four living creatures. And this was their appearance; they had the likeness of a man.* (Ezekiel 1:5). John''s *four beasts full of eyes before and behind* (Revelation 4:6) are Ezekiel''s *four living creatures* — the cherubim that bear the throne. The seer of the Apocalypse beholds the same four that Ezekiel saw come *out of the midst* of the fire by the river of Chebar; the throne-room of Revelation 4 is the throne-chariot of Ezekiel 1, the same living creatures round about the same throne.'),
+  ('canon', 'revelation', 4, 7, 'canon', 'ezekiel', 1, 10, 'free', E'*As for the likeness of their faces, they four had the face of a man, and the face of a lion, on the right side: and they four had the face of an ox on the left side; they four also had the face of an eagle.* (Ezekiel 1:10). Here are the four faces John names one by one: *the first beast was like a lion, and the second beast like a calf, and the third beast had a face as a man, and the fourth beast was like a flying eagle* (Revelation 4:7). The lion, the man, the ox (the calf), the eagle — the very four faces of Ezekiel''s living creatures, the cherubim of the throne. The Apocalypse distributes among the four what Ezekiel gathered into each; the same fourfold face beholds the throne in both.'),
+  ('canon', 'revelation', 4, 8, 'canon', 'ezekiel', 1, 18, 'free', E'*As for their rings, they were so high that they were dreadful; and their rings were full of eyes round about them four.* (Ezekiel 1:18). The eyes that fill John''s living creatures — *they were full of eyes within* (Revelation 4:8), *full of eyes before and behind* (Revelation 4:6) — are the eyes Ezekiel saw, *full of eyes round about them four.* Nothing of the throne-bearers escapes their seeing; the cherubim are all eyes, watching every way, the unsleeping watchers of the throne in both the prophet''s vision and the seer''s.'),
+  ('canon', 'revelation', 4, 7, 'canon', 'ezekiel', 10, 14, 'free', E'*And every one had four faces: the first face was the face of a cherub, and the second face was the face of a man, and the third the face of a lion, and the fourth the face of an eagle.* (Ezekiel 10:14). When Ezekiel saw the living creatures a second time he named them outright — *I knew that they were the cherubims* (Ezekiel 10:20) — and gave the same four faces: cherub, man, lion, eagle. John''s four beasts, *like a lion... like a calf... a face as a man... like a flying eagle* (Revelation 4:7), are these cherubim; the four-faced throne-bearers of the prophet are the four living creatures of the Apocalypse.'),
+  ('canon', 'revelation', 4, 6, 'apocalypse-of-abraham', 'apocalypse-of-abraham', 18, 3, 'extras', E'*And as the fire raised itself up, ascending into the height, I saw under the fire a throne of fire, and, round about it, all-seeing ones, reciting the song; and under the throne four fiery living creatures singing, and their appearance was one, each one of them with four faces.* (Apocalypse of Abraham 18:3). The restored library sets the same four beneath the same throne: *under the throne four fiery living creatures singing... each one of them with four faces,* surrounded by *all-seeing ones.* So John sees *in the midst of the throne, and round about the throne... four beasts full of eyes before and behind* (Revelation 4:6). The all-seeing throne-bearers of Abraham''s vision are John''s eye-filled living creatures, the cherubim of the one throne.'),
+  ('canon', 'revelation', 4, 8, 'apocalypse-of-abraham', 'apocalypse-of-abraham', 18, 4, 'extras', E'*And such was the appearance of their countenances, of a lion, of a man, of an ox, of an eagle: four heads were upon their bodies, so that the four creatures had sixteen faces; and each had six wings from their shoulders, and their sides, and their loins.* (Apocalypse of Abraham 18:4). The Hebrew library names the four faces and the six wings together — *of a lion, of a man, of an ox, of an eagle... and each had six wings.* John beholds exactly this: the four faces *like a lion... like a calf... a face as a man... like a flying eagle* (Revelation 4:7), and *the four beasts had each of them six wings about him; and they were full of eyes within* (Revelation 4:8). The same lion-man-ox-eagle, the same six wings; one throne-vision held across the restored library.'),
+  -- thread: revelation-4-holy-holy-holy-the-lord-god-almighty-isaiah-6
+  ('canon', 'revelation', 4, 8, 'canon', 'isaiah', 6, 3, 'free', E'*And one cried unto another, and said, Holy, holy, holy, is Yahuah Tseva''ot (LORD of hosts): the whole earth is full of his glory.* (Isaiah 6:3). This is the cry the four beasts take up day and night: *Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come* (Revelation 4:8). Isaiah heard the seraphim cry it about the throne *high and lifted up;* John hears the living creatures cry it about the same throne. The thrice-holy of the prophet is the thrice-holy of the seer — one unceasing worship of the One who fills the whole earth with his glory.'),
+  ('canon', 'revelation', 4, 8, 'canon', 'isaiah', 6, 2, 'free', E'*Above it stood the seraphims: each one had six wings; with twain he covered his face, and with twain he covered his feet, and with twain he did fly.* (Isaiah 6:2). The six wings of John''s living creatures are the six wings of Isaiah''s seraphim — *each one had six wings* about the throne. *And the four beasts had each of them six wings about him* (Revelation 4:8). The burning ones who stood above the throne and cried *Holy, holy, holy* are of one order with the four beasts who *rest not day and night* crying the same; the seer sees the seraphim-cherubim worship Isaiah saw.'),
+  ('canon', 'revelation', 4, 8, 'enoch', '1-enoch', 39, 12, 'extras', E'*And I heard the voices of those four presences as they uttered praises before Yahuah (God) of glory.* (1 Enoch 39:12). Enoch too saw four about the throne of glory and heard their unceasing praise — *the four presences which surround the throne of glory, and they praise Yahuah (God) of Spirits* (1 Enoch 39:11), *as they uttered praises before Yahuah (God) of glory.* So the *four beasts... rest not day and night, saying, Holy, holy, holy* (Revelation 4:8). The restored library beheld the same fourfold worship before the same throne, the ceaseless praise of the Most High.'),
+  ('canon', 'revelation', 4, 8, 'enoch', '1-enoch', 39, 13, 'extras', E'*And the first voice blesses Yahuah (God) of Spirits for ever and ever.* (1 Enoch 39:13). The praise Enoch heard rises *for ever and ever* — the very note John''s creatures sound, who *give glory and honour and thanks to him that sat on the throne, who liveth for ever and ever* (Revelation 4:9). The blessing of Yahuah (God) of Spirits *for ever and ever* in the Hebrew library and the worship of *him that liveth for ever and ever* in the Apocalypse are one everlasting song before one everlasting throne.'),
+  -- thread: revelation-4-the-sea-of-glass-before-the-throne-exodus-24
+  ('canon', 'revelation', 4, 6, 'canon', 'exodus', 24, 10, 'free', E'*And they saw the Elohim (God) of Yashar''el (Israel): and there was under his feet as it were a paved work of a sapphire stone, and as it were the body of heaven in his clearness.* (Exodus 24:10). When Moses and the seventy elders went up, they saw beneath the feet of the Elohim (God) of Yashar''el (Israel) *a paved work of a sapphire stone... as it were the body of heaven in his clearness* — a floor like clear sky before the throne. John sees the same crystalline expanse: *and before the throne there was a sea of glass like unto crystal* (Revelation 4:6). The pavement under the feet of Elohim (God) at Sinai is the sea of glass before the throne in heaven; the elders of Yashar''el (Israel) beheld what the seer beholds.'),
+  ('canon', 'revelation', 4, 6, 'canon', 'ezekiel', 1, 22, 'free', E'*And the likeness of the firmament upon the heads of the living creature was as the colour of the terrible crystal, stretched forth over their heads above.* (Ezekiel 1:22). Above the cherubim Ezekiel saw a firmament *as the colour of the terrible crystal* — a shining crystal expanse beneath the throne. John names the same: *a sea of glass like unto crystal* (Revelation 4:6) before the throne, with *the four beasts* in the midst. The crystal firmament over the living creatures in Ezekiel and the crystal sea before the throne in Revelation are the same clear expanse, the floor of the heavenly throne-room.'),
+  -- thread: revelation-4-the-elders-cast-their-crowns-and-the-myriads-before-the-throne
+  ('canon', 'revelation', 4, 10, 'enoch', '1-enoch', 40, 1, 'extras', E'*And after that I saw thousands of thousands and myriads of myriads, and an infinite number of people, standing before Yahuah (God) of Spirits.* (1 Enoch 40:1). Around the throne Enoch saw a countless host — *thousands of thousands and myriads of myriads... standing before Yahuah (God) of Spirits.* John sees the four and twenty elders among that worshipping host: *the four and twenty elders fall down before him that sat on the throne, and worship him that liveth for ever and ever, and cast their crowns before the throne* (Revelation 4:10). The enthroned council that casts down its crowns belongs to the same numberless worship the Hebrew library beheld before the throne of glory.'),
+  ('canon', 'revelation', 4, 9, 'canon', 'nehemiah', 9, 6, 'free', E'*Thou, even thou, art Yahuah (LORD) alone; thou hast made heaven, the heaven of heavens, with all their host, the earth, and all things that are therein, the seas, and all that is therein, and thou preservest them all; and the host of heaven worshippeth thee.* (Nehemiah 9:6). The Levites confessed that *the host of heaven worshippeth thee* — and this is the worship John sees: *when those beasts give glory and honour and thanks to him that sat on the throne, who liveth for ever and ever* (Revelation 4:9). The host that worships the Maker in Nehemiah''s prayer is the host that gives glory before the throne in the Apocalypse; the living creatures and the elders are that worshipping host of heaven.'),
+  -- thread: revelation-4-thou-hast-created-all-things-the-maker-worshipped-genesis-1-nehemiah-9
+  ('canon', 'revelation', 4, 11, 'canon', 'genesis', 1, 1, 'free', E'*In the beginning Elohim (God) created the heaven and the earth.* (Genesis 1:1). The ground of all the worship in this chapter is the first verse of the Word: *In the beginning Elohim (God) created the heaven and the earth.* So the elders cast their crowns and cry, *Thou art worthy, O Yahuah (Lord), to receive glory and honour and power: for thou hast created all things, and for thy pleasure they are and were created* (Revelation 4:11). He is worthy because he is the Maker; the throne is the throne of the Creator, and the heaven and earth that he made render him his glory.'),
+  ('canon', 'revelation', 4, 11, 'canon', 'nehemiah', 9, 6, 'free', E'*Thou, even thou, art Yahuah (LORD) alone; thou hast made heaven, the heaven of heavens, with all their host, the earth, and all things that are therein, the seas, and all that is therein, and thou preservest them all; and the host of heaven worshippeth thee.* (Nehemiah 9:6). Nehemiah''s Levites name the Maker of *heaven... the earth, and all things that are therein* — and not the Maker only but the Preserver, *thou preservest them all.* The elders sound the same note: *thou hast created all things, and for thy pleasure they are and were created* (Revelation 4:11). All things were created by him and stand by his pleasure; the One worshipped on the throne is the One who made and upholds the whole host of heaven and earth.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv04_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv04_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-4-the-throne-set-in-heaven-and-one-sat-on-the-throne-ezekiel-1',
+       E'A throne set in heaven, and one sat on the throne — the throne-chariot of Ezekiel (Ezekiel 1, 10)',
+       E'A door opens in heaven and the first voice, *as it were of a trumpet,* says *Come up hither* (Revelation 4:1); and at once the seer is *in the spirit,* and *behold, a throne was set in heaven, and one sat on the throne* (Revelation 4:2). This is no new throne. Ezekiel saw it first by the river of Chebar: *above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone: and upon the likeness of the throne was the likeness as the appearance of a man above upon it* (Ezekiel 1:26), and over the cherubim again *as it were a sapphire stone, as the appearance of the likeness of a throne* (Ezekiel 10:1). John writes that *he that sat was to look upon like a jasper and a sardine stone* (Revelation 4:3), gleaming like precious stone as Ezekiel''s throne gleamed like sapphire. And round it the same encircling bow the prophet saw: *as the appearance of the bow that is in the cloud in the day of rain... this was the appearance of the likeness of the glory of Yahuah (LORD)* (Ezekiel 1:28) — *and there was a rainbow round about the throne, in sight like unto an emerald* (Revelation 4:3). The Hebrew library beheld the same throne reaching to heaven: *the middle one reached to heaven, like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire* (1 Enoch 14:15), and Abraham saw the throne-chariot entire — *a chariot with fiery wheels, each wheel full of eyes round about; and over the wheels was a throne... covered with fire* (Apocalypse of Abraham 18:9), the fire that proceeds out of John''s throne as *lightnings and thunderings and voices* (Revelation 4:5). One throne runs through the prophets and the seers of Yashar''el (Israel): the throne of the living Elohim (God). And mark who sits on it here — *him that liveth for ever and ever* (Revelation 4:9), the Father, the formless Most High shown in vision-form. The Lamb does not appear until the chapter that follows, where he comes forward and *took the book out of the right hand of him that sat upon the throne* (Revelation 5:7); the throne-sitter and the Lamb are not collapsed. In chapter 4 it is the Father on the throne, worshipped as Maker, and the seer beholds what Ezekiel and Enoch and Abraham beheld before him.',
+       sv.verse_id, ev.verse_id, 'extras', 9075
+  FROM _s224_rv04_lookup sv, _s224_rv04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=4 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1',
+       E'The four living creatures full of eyes — lion, calf, man, eagle: the cherubim of Ezekiel (Ezekiel 1, 10)',
+       E'In the midst of the throne and round about it John sees *four beasts full of eyes before and behind* (Revelation 4:6) — the living creatures of Ezekiel, the cherubim that bear the throne. Ezekiel saw them come *out of the midst* of the fire: *the likeness of four living creatures... they had the likeness of a man* (Ezekiel 1:5), and he named their four faces — *the face of a man, and the face of a lion, on the right side: and... the face of an ox on the left side... also... the face of an eagle* (Ezekiel 1:10). John distributes among the four what Ezekiel gathered into each: *the first beast was like a lion, and the second beast like a calf, and the third beast had a face as a man, and the fourth beast was like a flying eagle* (Revelation 4:7) — the same lion, ox (the calf), man, and eagle. When Ezekiel saw them a second time he knew them by name: *the first face was the face of a cherub, and the second... of a man, and the third... of a lion, and the fourth... of an eagle* (Ezekiel 10:14), *and I knew that they were the cherubims* (Ezekiel 10:20). And the eyes that fill John''s creatures are Ezekiel''s: *their rings were full of eyes round about them four* (Ezekiel 1:18) — *they were full of eyes within* (Revelation 4:8). The restored library beheld the same four beneath the same throne: *under the throne four fiery living creatures singing... each one of them with four faces* (Apocalypse of Abraham 18:3), and named the faces and the wings together — *of a lion, of a man, of an ox, of an eagle... and each had six wings* (Apocalypse of Abraham 18:4) — exactly John''s *four beasts had each of them six wings about him; and they were full of eyes within* (Revelation 4:8). The throne-room of Revelation 4 is the throne-chariot of Ezekiel 1: the same cherubim, the same fourfold face, the same eyes that see every way, the unsleeping bearers of the one throne.',
+       sv.verse_id, ev.verse_id, 'extras', 9078
+  FROM _s224_rv04_lookup sv, _s224_rv04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=4 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-4-holy-holy-holy-the-lord-god-almighty-isaiah-6',
+       E'Holy, holy, holy, Yahuah Elohim (Lord God) Almighty — the thrice-holy of Isaiah 6 (Isaiah 6)',
+       E'The four living creatures *rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come* (Revelation 4:8). This is the cry Isaiah heard about the throne *high and lifted up:* *one cried unto another, and said, Holy, holy, holy, is Yahuah Tseva''ot (LORD of hosts): the whole earth is full of his glory* (Isaiah 6:3). The thrice-holy of the seraphim is the thrice-holy of the four beasts — one unceasing worship of the One who fills the earth with his glory. And the wings are the same: *above it stood the seraphims: each one had six wings* (Isaiah 6:2), as *the four beasts had each of them six wings about him* (Revelation 4:8). The burning ones who stood above the throne and the eye-filled creatures who circle it are of one order, the worship-bearers of the Most High. The Hebrew library heard it too: Enoch saw four about the throne of glory and heard *the voices of those four presences as they uttered praises before Yahuah (God) of glory* (1 Enoch 39:12), praise that rises *for ever and ever* — *the first voice blesses Yahuah (God) of Spirits for ever and ever* (1 Enoch 39:13), the very note of those who *give glory and honour and thanks to him that sat on the throne, who liveth for ever and ever* (Revelation 4:9). One throne, one fourfold worship, one everlasting *Holy, holy, holy* sounded by the prophets and the seers of Yashar''el (Israel) and now by the living creatures John beholds.',
+       sv.verse_id, ev.verse_id, 'extras', 9081
+  FROM _s224_rv04_lookup sv, _s224_rv04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=4 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-4-the-sea-of-glass-before-the-throne-exodus-24',
+       E'A sea of glass like crystal before the throne — the pavement of sapphire (Exodus 24, Ezekiel 1)',
+       E'*And before the throne there was a sea of glass like unto crystal* (Revelation 4:6) — a clear, shining expanse spread out before the One who sits enthroned. The elders of Yashar''el (Israel) saw its likeness at Sinai: when Moses, Aaron, Nadab, Abihu, and the seventy went up, *they saw the Elohim (God) of Yashar''el (Israel): and there was under his feet as it were a paved work of a sapphire stone, and as it were the body of heaven in his clearness* (Exodus 24:10) — a pavement like clear sky beneath the feet of Elohim (God). And Ezekiel saw the same crystal expanse beneath the throne: *the likeness of the firmament upon the heads of the living creature was as the colour of the terrible crystal, stretched forth over their heads above* (Ezekiel 1:22). The paved work of sapphire under the feet of Elohim (God), the crystal firmament over the cherubim, and the sea of glass before the throne are one shining floor of the heavenly throne-room. What the seventy elders beheld with Moses, and what Ezekiel beheld by Chebar, John now beholds: the clear expanse before the throne of the living Elohim (God), and the four and twenty elders standing where the elders of old once stood and saw and worshipped.',
+       sv.verse_id, ev.verse_id, 'free', 9084
+  FROM _s224_rv04_lookup sv, _s224_rv04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=4 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-4-the-elders-cast-their-crowns-and-the-myriads-before-the-throne',
+       E'The elders cast their crowns, and the myriads before the throne (1 Enoch 40, Nehemiah 9)',
+       E'Round about the throne sit *four and twenty elders... clothed in white raiment; and they had on their heads crowns of gold* (Revelation 4:4); and when the living creatures give glory, *the four and twenty elders fall down before him that sat on the throne, and worship him that liveth for ever and ever, and cast their crowns before the throne* (Revelation 4:10). They lay down their own crowns before the One who alone is worthy. The Hebrew library beheld the same numberless worship: Enoch saw *thousands of thousands and myriads of myriads, and an infinite number of people, standing before Yahuah (God) of Spirits* (1 Enoch 40:1) — the great host before the throne of glory, of which the enthroned elders are a part. And Nehemiah''s Levites confessed the ground of it all: *thou, even thou, art Yahuah (LORD) alone; thou hast made heaven, the heaven of heavens, with all their host... and the host of heaven worshippeth thee* (Nehemiah 9:6). The host that worships the Maker in the Levites'' prayer is the host that gives *glory and honour and thanks to him that sat on the throne* (Revelation 4:9) in the seer''s vision. The elders cast down their crowns because the throne is the throne of the Creator: every crown of gold returns to the One who made the heads that wear them.',
+       sv.verse_id, ev.verse_id, 'extras', 9087
+  FROM _s224_rv04_lookup sv, _s224_rv04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=4 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-4-thou-hast-created-all-things-the-maker-worshipped-genesis-1-nehemiah-9',
+       E'Thou hast created all things — the Maker worshipped (Genesis 1, Nehemiah 9)',
+       E'The chapter ends in the song of the elders: *Thou art worthy, O Yahuah (Lord), to receive glory and honour and power: for thou hast created all things, and for thy pleasure they are and were created* (Revelation 4:11). The ground of all this worship is creation itself — the first verse of the Word: *In the beginning Elohim (God) created the heaven and the earth* (Genesis 1:1). He is worthy because he is the Maker; the throne is the throne of the Creator. Nehemiah''s Levites sounded the same confession, naming him Maker and Preserver alike: *thou, even thou, art Yahuah (LORD) alone; thou hast made heaven, the heaven of heavens, with all their host, the earth, and all things that are therein, the seas, and all that is therein, and thou preservest them all; and the host of heaven worshippeth thee* (Nehemiah 9:6). All things were created by him and *for thy pleasure they are and were created* — made by his will and standing by his will. This is the One on the throne in chapter 4: not a co-equal council, but the living Elohim (God) who made and upholds the whole host of heaven and earth, *him that liveth for ever and ever* (Revelation 4:9), worthy of all glory because every created thing came from his hand and is kept by his pleasure.',
+       sv.verse_id, ev.verse_id, 'free', 9090
+  FROM _s224_rv04_lookup sv, _s224_rv04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=4 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-4-the-throne-set-in-heaven-and-one-sat-on-the-throne-ezekiel-1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 1:26 — *upon the likeness of the throne was the likeness as the appearance of a man above upon it* the throne by Chebar that John is caught up to behold, *a throne was set in heaven, and one sat on the throne* (Revelation 4:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-throne-set-in-heaven-and-one-sat-on-the-throne-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 1:28 — *as the appearance of the bow that is in the cloud... the likeness of the glory of Yahuah (LORD)* the encircling rainbow the prophet saw, *a rainbow round about the throne, in sight like unto an emerald* (Revelation 4:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-throne-set-in-heaven-and-one-sat-on-the-throne-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 10:1 — *as it were a sapphire stone, as the appearance of the likeness of a throne* the throne over the cherubim, gleaming like the jasper and sardine of *he that sat* (Revelation 4:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-throne-set-in-heaven-and-one-sat-on-the-throne-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=10 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 14:15 — *like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire* the sapphire throne reaching to heaven Enoch saw, the same precious-stone throne of *he that sat* (Revelation 4:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-throne-set-in-heaven-and-one-sat-on-the-throne-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=14 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Apocalypse of Abraham 18:9 — *a chariot with fiery wheels, each wheel full of eyes round about; and over the wheels was a throne... covered with fire* the throne-chariot Abraham saw, the fire that proceeds from John''s throne as lightnings (Revelation 4:2, 5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-throne-set-in-heaven-and-one-sat-on-the-throne-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=2
+   AND tv.edition_slug='apocalypse-of-abraham' AND tv.book_slug='apocalypse-of-abraham' AND tv.chapter_number=18 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 1:5 — *the likeness of four living creatures... they had the likeness of a man* the cherubim of the throne-chariot, John''s *four beasts full of eyes before and behind* (Revelation 4:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 1:10 — *the face of a man, and the face of a lion... the face of an ox... the face of an eagle* the four faces John names one by one, lion, calf, man, eagle (Revelation 4:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 10:14 — *the face of a cherub... of a man... of a lion... of an eagle* the second sighting where Ezekiel knows them as cherubim, the same four faces of John''s beasts (Revelation 4:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=10 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 1:18 — *their rings were full of eyes round about them four* the eyes that fill John''s living creatures, *they were full of eyes within* (Revelation 4:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Apocalypse of Abraham 18:3 — *under the throne four fiery living creatures singing... each one of them with four faces* the restored library''s four beneath the throne, surrounded by all-seeing ones (Revelation 4:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=6
+   AND tv.edition_slug='apocalypse-of-abraham' AND tv.book_slug='apocalypse-of-abraham' AND tv.chapter_number=18 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Apocalypse of Abraham 18:4 — *of a lion, of a man, of an ox, of an eagle... and each had six wings* the four faces and six wings together, exactly John''s six-winged eye-filled beasts (Revelation 4:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-four-living-creatures-full-of-eyes-lion-calf-man-eagle-ezekiel-1'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=8
+   AND tv.edition_slug='apocalypse-of-abraham' AND tv.book_slug='apocalypse-of-abraham' AND tv.chapter_number=18 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-4-holy-holy-holy-the-lord-god-almighty-isaiah-6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 6:3 — *Holy, holy, holy, is Yahuah Tseva''ot (LORD of hosts): the whole earth is full of his glory* the seraphim''s cry about the throne, the thrice-holy the four beasts take up day and night (Revelation 4:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-holy-holy-holy-the-lord-god-almighty-isaiah-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 6:2 — *the seraphims: each one had six wings* the six wings of the burning ones above the throne, the same six wings of John''s four beasts (Revelation 4:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-holy-holy-holy-the-lord-god-almighty-isaiah-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 39:12 — *the voices of those four presences as they uttered praises before Yahuah (God) of glory* the four about the throne of glory whose ceaseless praise Enoch heard (Revelation 4:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-holy-holy-holy-the-lord-god-almighty-isaiah-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=8
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=39 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 39:13 — *the first voice blesses Yahuah (God) of Spirits for ever and ever* praise *for ever and ever,* the note of those who worship *him that liveth for ever and ever* (Revelation 4:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-holy-holy-holy-the-lord-god-almighty-isaiah-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=8
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=39 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-4-the-sea-of-glass-before-the-throne-exodus-24
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 24:10 — *under his feet as it were a paved work of a sapphire stone, and as it were the body of heaven in his clearness* the pavement the seventy elders saw beneath Elohim (God) at Sinai, the sea of glass before the throne (Revelation 4:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-sea-of-glass-before-the-throne-exodus-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=24 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 1:22 — *the firmament... was as the colour of the terrible crystal, stretched forth over their heads above* the crystal expanse beneath the throne over the cherubim, John''s sea of glass like crystal (Revelation 4:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-sea-of-glass-before-the-throne-exodus-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-4-the-elders-cast-their-crowns-and-the-myriads-before-the-throne
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 40:1 — *thousands of thousands and myriads of myriads... standing before Yahuah (God) of Spirits* the numberless host before the throne of glory, of which the enthroned elders are a part (Revelation 4:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-elders-cast-their-crowns-and-the-myriads-before-the-throne'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=10
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=40 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Nehemiah 9:6 — *the host of heaven worshippeth thee* the host that worships the Maker in the Levites'' confession, giving glory before the throne (Revelation 4:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-the-elders-cast-their-crowns-and-the-myriads-before-the-throne'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-4-thou-hast-created-all-things-the-maker-worshipped-genesis-1-nehemiah-9
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:1 — *In the beginning Elohim (God) created the heaven and the earth* the first verse of the Word, the ground of the elders'' song, *thou hast created all things* (Revelation 4:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-thou-hast-created-all-things-the-maker-worshipped-genesis-1-nehemiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Nehemiah 9:6 — *thou hast made heaven... the earth, and all things that are therein... and thou preservest them all* the Maker and Preserver of all, worthy because *thou hast created all things* (Revelation 4:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv04_lookup sv, _s224_rv04_lookup tv
+ WHERE t.slug='revelation-4-thou-hast-created-all-things-the-maker-worshipped-genesis-1-nehemiah-9'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=4 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_05.sql (S224 Revelation 5) -----
+-- =====================================================================
+-- S224 minion — REVELATION 5 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 5 (14 verses) — the sealed scroll and the Lamb.
+-- Tag: rv05 (temp view _s224_rv05_lookup).
+-- Sort band: floor 9100, step 3 (9100, 9103, 9106, 9109, 9112, 9115 used; under 9125).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Revelation 5 is the throne-room hinge of the whole book — the One who *sat on
+-- the throne* (the Father, 5:1,7,13) holds a scroll *written within and on the backside, sealed with
+-- seven seals* (5:1), and no creature can open it until *the Lion of the tribe of Juda, the Root of
+-- David* (5:5) is shown to be *a Lamb as it had been slain* (5:6). The CHRISTOLOGY is the slain-yet-
+-- reigning Formed: Yahusha (Jesus) is the Lion who is the Lamb, the Root of David from whom David
+-- sprang, the One who took on flesh and was slain and yet lives to reign. He is DISTINGUISHED FROM
+-- *him that sat upon the throne* (the Father) — he *came and took the book out of the right hand* of
+-- the One on the throne (5:7) — and yet he receives the SAME worship as the Father (5:13): *Blessing,
+-- and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for
+-- ever and ever.* The Formed who is Yahuah and has a Father — not a co-equal second person, not the
+-- Father himself. His blood *redeemed us to Elohim (God)... out of every kindred, and tongue, and
+-- people, and nation* (5:9) and *made us unto our Elohim (God) kings and priests* (5:10) — the Exodus
+-- 19:6 covenant vocation restored, the gathered seed made a kingdom of priests, NOT a replacement
+-- people. No Trinitarian co-equal-persons grammar; no modalist collapse; the Lamb and the One on the
+-- throne are two, and the worship belongs to the One.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-4   the scroll written within and on the backside, sealed with seven seals; none worthy
+--           Tanakh: Ezekiel 2:9-10 (the roll written within and without, lamentations and woe),
+--                   Isaiah 29:11 (the vision become as a book that is sealed), Daniel 12:4 (seal the
+--                   book even to the time of the end)
+--           Extras: none warranted   NT: none warranted (the worthy One enters at v.5)
+--   v.5     the Lion of the tribe of Juda, the Root of David, hath prevailed
+--           Tanakh: Genesis 49:9 (Yahudah is a lion's whelp), 49:10 (the sceptre shall not depart
+--                   until Shiloh come), Isaiah 11:1 (a rod out of the stem of Jesse, a Branch),
+--                   Isaiah 11:10 (a root of Jesse, an ensign of the people)
+--           Extras: none warranted   NT: none warranted (carried; the Lamb-witness is John 1)
+--   v.6     a Lamb as it had been slain, seven horns, seven eyes, the seven Spirits
+--           Tanakh: Isaiah 53:7 (brought as a lamb to the slaughter, openeth not his mouth),
+--                   Exodus 12:6 (the whole assembly shall kill it — the Passover lamb),
+--                   Zechariah 4:10 (the seven; the eyes of Yahuah run to and fro through the earth),
+--                   Zechariah 3:9 (upon one stone seven eyes)
+--           Extras: none warranted   NT: John 1:29 (Behold the Lamb of Elohim which taketh away sin)
+--   v.7-8   the Lamb takes the book from the right hand of him on the throne; harps and odours
+--           Tanakh: none warranted (the prayers/odours carried lightly; weight is on the taking)
+--           Extras: none warranted   NT: carried into the worthy/worship threads
+--   v.9-10  the new song: thou wast slain, hast redeemed us, made us kings and priests
+--           Tanakh: Exodus 19:6 (a kingdom of priests, an holy nation), Psalm 33:3 (sing a new
+--                   song), Psalm 40:3 (a new song in my mouth, praise unto our Elohim)
+--           Extras: none warranted   NT: Revelation 1:6 (made us kings and priests unto Elohim and
+--                   his Father), Revelation 1:5 (washed us from our sins in his own blood)
+--   v.11-12 ten thousand times ten thousand — the myriads worshipping the Lamb
+--           Tanakh: Daniel 7:10 (thousand thousands ministered, ten thousand times ten thousand
+--                   stood before him)
+--           Extras: 1 Enoch 40:1 (thousands of thousands and myriads of myriads before Yahuah of
+--                   Spirits), 1 Enoch 14:21 (the ten-thousand reckonings of the throne-vision)
+--           NT: none warranted
+--   v.13-14 every creature: blessing to him on the throne AND to the Lamb — the worship of the Formed
+--           Tanakh: Daniel 7:14 (dominion, glory, a kingdom, that all should serve him — everlasting)
+--           Extras: none warranted   NT: Philippians 2:10 (every knee should bow), Philippians 2:11
+--                   (every tongue confess Yahusha HaMashiach is Lord, to the glory of the Father)
+--
+-- THREADS (slug -> target libraries):
+--   9100 revelation-5-the-scroll-written-within-and-sealed-with-seven-seals-ezekiel-2          (Tanakh)
+--   9103 revelation-5-the-lion-of-juda-the-root-of-david-who-prevailed-genesis-49              (Tanakh)
+--   9106 revelation-5-a-lamb-as-it-had-been-slain-with-seven-horns-and-seven-eyes-isaiah-53    (Tanakh + NT)
+--   9109 revelation-5-thou-hast-redeemed-us-and-made-us-kings-and-priests-the-new-song-exodus-19 (Tanakh + NT)
+--   9112 revelation-5-ten-thousand-times-ten-thousand-the-myriads-before-the-throne-daniel-7   (Tanakh + Extras)
+--   9115 revelation-5-worthy-is-the-lamb-worshipped-with-him-that-sat-on-the-throne-philippians-2 (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-5-the-scroll-written-within-and-sealed-with-seven-seals-ezekiel-2
+  ('canon', 'revelation', 5, 1, 'canon', 'ezekiel', 2, 9, 'free', E'*And when I looked, behold, an hand was sent unto me; and, lo, a roll of a book was therein* (Ezekiel 2:9). John sees the very thing Ezekiel saw, held out from the throne: *And I saw in the right hand of him that sat on the throne a book written within and on the backside, sealed with seven seals* (Revelation 5:1). The seer has Ezekiel''s roll in his ear — the scroll handed forth from heaven, the prophetic decree that no man writes and no man may open of himself. What Ezekiel received to eat and to speak, John sees sealed, awaiting the only One found worthy to break it.'),
+  ('canon', 'revelation', 5, 1, 'canon', 'ezekiel', 2, 10, 'free', E'*And he spread it before me; and it was written within and without: and there was written therein lamentations, and mourning, and woe* (Ezekiel 2:10). This is the exact shape of John''s scroll: *a book written within and on the backside* (Revelation 5:1) — written on both faces, front and back, the same overflowing decree Ezekiel saw, *written within and without.* The roll crammed full on both sides is the full and finished counsel of Yahuah (LORD), and what it holds is judgment and the working-out of all things; it is no light word, but the sealed sentence the slain Lamb alone can loose.'),
+  ('canon', 'revelation', 5, 1, 'canon', 'isaiah', 29, 11, 'free', E'*And the vision of all is become unto you as the words of a book that is sealed, which men deliver to one that is learned, saying, Read this, I pray thee: and he saith, I cannot; for it is sealed* (Isaiah 29:11). Isaiah names the very helplessness John weeps over: a *book that is sealed* that no man can read. *And no man in heaven, nor in earth, neither under the earth, was able to open the book* (Revelation 5:3). The learned cannot, the unlearned cannot; the sealed word stays shut to every creature — until the One the prophets pointed to is found worthy, and the sealing that shut out all flesh is undone by the Lamb.'),
+  ('canon', 'revelation', 5, 4, 'canon', 'daniel', 12, 4, 'free', E'*But thou, O Daniel, shut up the words, and seal the book, even to the time of the end: many shall run to and fro, and knowledge shall be increased* (Daniel 12:4). Daniel was told to *seal the book, even to the time of the end* — and so it stayed sealed, and John *wept much, because no man was found worthy to open and to read the book* (Revelation 5:4). The grief is the grief of a sealed prophecy with no one to break it. But the sealing was *to the time of the end,* and the time has come: the Lamb who *hath prevailed to open the book, and to loose the seven seals thereof* (Revelation 5:5) is the One for whom Daniel''s scroll waited.'),
+  -- thread: revelation-5-the-lion-of-juda-the-root-of-david-who-prevailed-genesis-49
+  ('canon', 'revelation', 5, 5, 'canon', 'genesis', 49, 9, 'free', E'*Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9). When the elder says *behold, the Lion of the tribe of Juda... hath prevailed* (Revelation 5:5), he is naming Jacob''s dying blessing over his son — the lion of the tribe of Yahudah (Judah), the royal beast who couches and none dares rouse. The Lion who prevails to open the scroll is the promised one of Yahudah''s line, the Messiah sprung from the kingly tribe, come up *from the prey* having conquered.'),
+  ('canon', 'revelation', 5, 5, 'canon', 'genesis', 49, 10, 'free', E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The same blessing carries the sceptre and the gathering: the rule stays in Yahudah (Judah) *until Shiloh come,* and *unto him shall the gathering of the people be.* This is the One who *hath prevailed* (Revelation 5:5) — Shiloh come at last, the rightful King of Yahudah''s line to whom the gathering of the people belongs, the One whose blood *redeemed us to Elohim (God)... out of every kindred, and tongue, and people, and nation* (Revelation 5:9). The Lion who opens the scroll is the King who gathers the seed home.'),
+  ('canon', 'revelation', 5, 5, 'canon', 'isaiah', 11, 1, 'free', E'*And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1). The elder names him twice — *the Lion of the tribe of Juda, the Root of David* (Revelation 5:5) — and the second title is Isaiah''s: the shoot from Jesse''s stem, David''s father, the Branch from the royal root. He is the rod out of the stem of Jesse, the One in whom *the spirit of Yahuah (LORD)* rests (Isaiah 11:2), the very seven-fold Spirit John sees as *seven eyes... the seven Spirits of Elohim (God)* (Revelation 5:6).'),
+  ('canon', 'revelation', 5, 5, 'canon', 'isaiah', 11, 10, 'free', E'*And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious* (Isaiah 11:10). *The Root of David* (Revelation 5:5) is the *root of Jesse* of Isaiah — and mark the title: not merely a branch from the root, but the Root itself, the One from whom David sprang and in whom David''s house stands. He is set up *for an ensign of the people,* the banner the gathered seek, the One whose prevailing opens the scroll and whose redeemed are drawn *out of every kindred, and tongue, and people, and nation* (Revelation 5:9).'),
+  -- thread: revelation-5-a-lamb-as-it-had-been-slain-with-seven-horns-and-seven-eyes-isaiah-53
+  ('canon', 'revelation', 5, 6, 'canon', 'isaiah', 53, 7, 'free', E'*He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth* (Isaiah 53:7). John looks for the Lion and sees *a Lamb as it had been slain* (Revelation 5:6) — and this is the lamb Isaiah foretold, *brought as a lamb to the slaughter.* The Lion of Yahudah (Judah) prevails not by devouring but by being slain; the conquering King is the silent sacrificial lamb, the suffering servant of Isaiah who *bare the sin of many* (Isaiah 53:12). The slain-yet-standing Lamb is the Lion''s victory.'),
+  ('canon', 'revelation', 5, 6, 'canon', 'exodus', 12, 6, 'free', E'*And ye shall keep it up until the fourteenth day of the same month: and the whole assembly of the congregation of Yashar''el (Israel) shall kill it in the evening* (Exodus 12:6). The *Lamb as it had been slain* (Revelation 5:6) carries the Passover lamb in its body — the lamb *without blemish, a male of the first year* (Exodus 12:5) that the whole congregation killed, whose blood on the door turned aside the destroyer. The slain Lamb in the midst of the throne is the true Passover, by whose blood the gathered are redeemed: *thou wast slain, and hast redeemed us to Elohim (God) by thy blood* (Revelation 5:9).'),
+  ('canon', 'revelation', 5, 6, 'canon', 'zechariah', 4, 10, 'free', E'*For who hath despised the day of small things? for they shall rejoice, and shall see the plummet in the hand of Zerubbabel with those seven; they are the eyes of Yahuah (LORD), which run to and fro through the whole earth* (Zechariah 4:10). The Lamb''s *seven eyes, which are the seven Spirits of Elohim (God) sent forth into all the earth* (Revelation 5:6) are Zechariah''s *eyes of Yahuah (LORD), which run to and fro through the whole earth.* The all-seeing eyes of Yahuah (LORD) himself are the Lamb''s eyes — the Formed bearing what is the Father''s own, the seven-fold Spirit going out into all the earth.'),
+  ('canon', 'revelation', 5, 6, 'canon', 'zechariah', 3, 9, 'free', E'*For behold the stone that I have laid before Joshua; upon one stone shall be seven eyes: behold, I will engrave the graving thereof, saith Yahuah Tseva''ot (LORD of hosts), and I will remove the iniquity of that land in one day* (Zechariah 3:9). The *seven eyes* on Zechariah''s engraved stone — beside the promise *I will remove the iniquity of that land in one day* — meet the *seven eyes* of the Lamb (Revelation 5:6) who *wast slain, and hast redeemed us to Elohim (God) by thy blood* (Revelation 5:9). The stone with seven eyes and the iniquity removed in one day foreshadow the slain Lamb who bears the seven Spirits and takes away sin in the one day of his offering.'),
+  ('canon', 'revelation', 5, 6, 'canon', 'john', 1, 29, 'free', E'*The next day John seeth Yahusha (Jesus) coming unto him, and saith, Behold the Lamb of Elohim (God), which taketh away the sin of the world* (John 1:29). What the Witness pointed to at the Jordan, the seer beholds in heaven: *Behold the Lamb of Elohim (God)* and *a Lamb as it had been slain* (Revelation 5:6) name one and the same — Yahusha (Jesus), the Lamb of Elohim (God) who takes away sin. The Lamb hailed at his coming is the Lamb enthroned in the midst of the throne, slain and yet standing, the One *who taketh away the sin of the world.*'),
+  -- thread: revelation-5-thou-hast-redeemed-us-and-made-us-kings-and-priests-the-new-song-exodus-19
+  ('canon', 'revelation', 5, 10, 'canon', 'exodus', 19, 6, 'free', E'*And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel)* (Exodus 19:6). The new song says *and hast made us unto our Elohim (God) kings and priests: and we shall reign on the earth* (Revelation 5:10) — and this is the Sinai covenant vocation restored: *a kingdom of priests, and an holy nation,* the word Yahuah (LORD) spoke to the children of Yashar''el (Israel) at the mount. The Lamb''s blood does not make a new people in Israel''s place; it brings the covenant people into the priestly kingship they were always called to, *and we shall reign on the earth.*'),
+  ('canon', 'revelation', 5, 9, 'canon', 'psalms', 33, 3, 'free', E'*Sing unto him a new song; play skilfully with a loud noise* (Psalm 33:3). The four beasts and the elders *sung a new song* (Revelation 5:9) — the very thing the psalm calls for, *sing unto him a new song.* A new song is sung for a new and mighty work of Yahuah (LORD); here the new work is the slain Lamb who *wast slain, and hast redeemed us to Elohim (God) by thy blood* (Revelation 5:9), and the harps of heaven take up the psalm''s summons before the throne.'),
+  ('canon', 'revelation', 5, 9, 'canon', 'psalms', 40, 3, 'free', E'*And he hath put a new song in my mouth, even praise unto our Elohim (God): many shall see it, and fear, and shall trust in Yahuah (LORD)* (Psalm 40:3). The *new song* of heaven (Revelation 5:9) is the song the psalmist was given — *a new song in my mouth, even praise unto our Elohim (God).* It is the song of the redeemed, sung by those drawn up out of the pit; and the heavenly choir sings it of the One who *wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9), praise unto our Elohim (God) for the redemption the Lamb has wrought.'),
+  ('canon', 'revelation', 5, 10, 'canon', 'revelation', 1, 6, 'free', E'*And hath made us kings and priests unto Elohim (God) and his Father; to him be glory and dominion for ever and ever. Amen* (Revelation 1:6). What the book opened with, the new song now sings: *and hast made us unto our Elohim (God) kings and priests* (Revelation 5:10). And mark how the opening verse distinguishes the Formed from the Father even as it names the gift — the Lamb made us kings and priests *unto Elohim (God) and his Father.* He is the One who has a Father; his blood makes the redeemed a royal priesthood unto the Elohim (God) who is also his Father.'),
+  ('canon', 'revelation', 5, 9, 'canon', 'revelation', 1, 5, 'free', E'*And from Yahusha HaMashiach (Jesus Christ), who is the faithful witness, and the first begotten of the dead, and the prince of the kings of the earth. Unto him that loved us, and washed us from our sins in his own blood* (Revelation 1:5). The new song''s *thou wast slain, and hast redeemed us to Elohim (God) by thy blood* (Revelation 5:9) is the same redemption the book named at the first: *washed us from our sins in his own blood.* The blood of the slain Lamb is the price of the redemption — his own blood poured out, by which the gathered are washed and bought back to Elohim (God).'),
+  -- thread: revelation-5-ten-thousand-times-ten-thousand-the-myriads-before-the-throne-daniel-7
+  ('canon', 'revelation', 5, 11, 'canon', 'daniel', 7, 10, 'free', E'*A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened* (Daniel 7:10). John''s count of the worshippers is Daniel''s exact number: *the number of them was ten thousand times ten thousand, and thousands of thousands* (Revelation 5:11). The myriads who stood before the Ancient of days in Daniel''s throne-vision are the myriads round about the throne in John''s — and where Daniel saw *the books were opened,* John sees the sealed book opened by the Lamb. The same heavenly court, the same uncountable host, gathered now to cry *Worthy is the Lamb that was slain* (Revelation 5:12).'),
+  ('canon', 'revelation', 5, 11, 'enoch', '1-enoch', 40, 1, 'extras', E'*And after that I saw thousands of thousands and myriads of myriads, and an infinite number of people, standing before Yahuah (God) of Spirits* (1 Enoch 40:1). The Hebrew library saw the same innumerable host before the throne that John saw: *thousands of thousands and myriads of myriads... standing before Yahuah (God) of Spirits.* John''s *ten thousand times ten thousand, and thousands of thousands* (Revelation 5:11) breathes the same air — the countless angelic court round the throne, lifting praise. Enoch heard their voices bless *Yahuah (God) of Spirits* and bless *the Elect One* beside him (1 Enoch 40:5); John hears them cry *Worthy is the Lamb that was slain* (Revelation 5:12) — the One on the throne and the Elect One, the Father and the slain Lamb, praised together by the myriads.'),
+  ('canon', 'revelation', 5, 11, 'enoch', '1-enoch', 14, 21, 'extras', E'*And He was wroth with them, and bound them till the time when their guilt should be consummated (even) for ten thousand years.* (1 Enoch 14:21). In the same throne-vision where Enoch saw the mountain *like the throne of Yahuah (God)* (1 Enoch 14:15) and the columns of heavenly fire, the measure *ten thousand* sounds — the very scale John reaches for at the throne: *ten thousand times ten thousand* (Revelation 5:11). The myriad-numbered host of heaven and the ten-thousand reckonings of the throne-vision are the world Revelation 5 stands in: the innumerable court gathered before the One who sits, now lifting its voice to the Lamb.'),
+  -- thread: revelation-5-worthy-is-the-lamb-worshipped-with-him-that-sat-on-the-throne-philippians-2
+  ('canon', 'revelation', 5, 13, 'canon', 'philippians', 2, 10, 'free', E'*That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10). The whole creation''s worship of the Lamb is Paul''s *every knee should bow... of things in heaven, and things in earth, and things under the earth* — the same threefold sweep: *And every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever* (Revelation 5:13). To the slain Lamb, exalted and given the name above every name, all that is bows.'),
+  ('canon', 'revelation', 5, 13, 'canon', 'philippians', 2, 11, 'free', E'*And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* (Philippians 2:11). Here is the Christology held exactly: every tongue confesses the Lamb *to the glory of Elohim (God) the Father.* In John''s vision the worship goes *unto him that sitteth upon the throne, and unto the Lamb* (Revelation 5:13) — the Father and the Formed Son, two and distinguished, the Lamb who *came and took the book out of the right hand of him that sat upon the throne* (Revelation 5:7) — and yet the Lamb receives the same blessing and honour and glory and power, for the glory of the exalted Son is the glory of the Father. Worship of the Lamb is not worship of a rival but the Father glorified in him.'),
+  ('canon', 'revelation', 5, 12, 'canon', 'daniel', 7, 14, 'free', E'*And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed* (Daniel 7:14). The sevenfold acclamation *Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing* (Revelation 5:12) is the giving Daniel saw: to the one like the Son of Adam was *given... dominion, and glory, and a kingdom,* that all should serve him, *an everlasting dominion.* The Lamb who receives power and glory and an everlasting reign is the Son of Adam of Daniel''s vision, come to the throne to take what is everlastingly his.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-5-the-scroll-written-within-and-sealed-with-seven-seals-ezekiel-2',
+       E'The scroll written within and on the backside, sealed with seven seals (Ezekiel 2, Isaiah 29, Daniel 12)',
+       E'John''s vision opens with a book no creature can open: *And I saw in the right hand of him that sat on the throne a book written within and on the backside, sealed with seven seals* (Revelation 5:1). Every line of it is drawn from the prophets. The roll itself is Ezekiel''s — *and, lo, a roll of a book was therein* (Ezekiel 2:9), and Ezekiel saw it just as John does: *it was written within and without: and there was written therein lamentations, and mourning, and woe* (Ezekiel 2:10) — a scroll crammed full on both faces, the overflowing decree of Yahuah (LORD). The sealing is Isaiah''s: *the vision of all is become unto you as the words of a book that is sealed, which men deliver to one that is learned, saying, Read this, I pray thee: and he saith, I cannot; for it is sealed* (Isaiah 29:11) — the helplessness John weeps over, *and no man in heaven, nor in earth, neither under the earth, was able to open the book* (Revelation 5:3). The learned cannot, the unlearned cannot; no creature can break it. And the term of the sealing is Daniel''s: *shut up the words, and seal the book, even to the time of the end* (Daniel 12:4). So the book stayed shut, and John *wept much, because no man was found worthy* (Revelation 5:4). But the seal was set *to the time of the end* — and the time has come. *Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof* (Revelation 5:5). The prophetic scroll the prophets themselves were told to seal is the scroll the slain Lamb alone is worthy to open.',
+       sv.verse_id, ev.verse_id, 'free', 9100
+  FROM _s224_rv05_lookup sv, _s224_rv05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=5 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-5-the-lion-of-juda-the-root-of-david-who-prevailed-genesis-49',
+       E'The Lion of the tribe of Juda, the Root of David, hath prevailed (Genesis 49, Isaiah 11)',
+       E'The elder answers John''s weeping with two titles, and both are the prophets'' own: *behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof* (Revelation 5:5). *The Lion of the tribe of Juda* is Jacob''s dying blessing over his fourth son — *Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9) — and that same blessing names the King who would come of the tribe and the gathering that would be his: *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The Lion who prevails is Shiloh come, the rightful King of Yahudah''s (Judah''s) line. *The Root of David* is Isaiah''s — *there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1), and *in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek* (Isaiah 11:10). Mark the title: not merely a branch from the root but *the Root of David* itself — the One from whom David sprang and in whom David''s house stands, the ensign the gathered seek. The Lion who conquers and the Root who is set up for a banner are one: the Messiah of Yahudah''s (Judah''s) line, who *hath prevailed,* and whose blood would draw the redeemed *out of every kindred, and tongue, and people, and nation* (Revelation 5:9), the gathering of the people come home to their King.',
+       sv.verse_id, ev.verse_id, 'free', 9103
+  FROM _s224_rv05_lookup sv, _s224_rv05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=5 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-5-a-lamb-as-it-had-been-slain-with-seven-horns-and-seven-eyes-isaiah-53',
+       E'A Lamb as it had been slain, with seven horns and seven eyes (Isaiah 53, Exodus 12, Zechariah 3 and 4, John 1)',
+       E'John turns to see the Lion and beholds a Lamb — and the whole gospel is in the turning. *And I beheld, and, lo, in the midst of the throne and of the four beasts, and in the midst of the elders, stood a Lamb as it had been slain, having seven horns and seven eyes, which are the seven Spirits of Elohim (God) sent forth into all the earth* (Revelation 5:6). The Lion of Yahudah (Judah) prevails not by devouring but by being slain. This is Isaiah''s lamb: *he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth* (Isaiah 53:7) — the suffering servant who *bare the sin of many* (Isaiah 53:12). It is the Passover lamb: *the whole assembly of the congregation of Yashar''el (Israel) shall kill it in the evening* (Exodus 12:6), the lamb without blemish whose blood turned aside the destroyer — so the slain Lamb *wast slain, and hast redeemed us to Elohim (God) by thy blood* (Revelation 5:9). The Witness at the Jordan had already pointed to him: *Behold the Lamb of Elohim (God), which taketh away the sin of the world* (John 1:29) — the Lamb hailed at his coming is the Lamb enthroned, slain and yet standing. And the *seven eyes* are the eyes of Yahuah (LORD) himself: *they are the eyes of Yahuah (LORD), which run to and fro through the whole earth* (Zechariah 4:10), the *seven eyes* engraved upon the one stone beside the promise *I will remove the iniquity of that land in one day* (Zechariah 3:9). The Formed bears what is the Father''s own — the seven-fold Spirit, the all-seeing eyes, sent forth into all the earth. The slain Lamb who carries the eyes of Yahuah (LORD) and takes away the world''s sin is the slain-yet-reigning One: the Lion who is the Lamb.',
+       sv.verse_id, ev.verse_id, 'free', 9106
+  FROM _s224_rv05_lookup sv, _s224_rv05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=5 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-5-thou-hast-redeemed-us-and-made-us-kings-and-priests-the-new-song-exodus-19',
+       E'Thou hast redeemed us and made us kings and priests — the new song (Exodus 19, Psalms 33 and 40, Revelation 1)',
+       E'When the Lamb takes the book, heaven breaks into a new song, and its words are the covenant''s own. *And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation; And hast made us unto our Elohim (God) kings and priests: and we shall reign on the earth* (Revelation 5:9-10). The *new song* is the song the psalms summon — *sing unto him a new song; play skilfully with a loud noise* (Psalm 33:3) — the song of the redeemed drawn up out of the pit: *he hath put a new song in my mouth, even praise unto our Elohim (God)* (Psalm 40:3). A new song is sung for a new and mighty work, and the work here is the blood of the slain Lamb. And the crown of the song — *made us unto our Elohim (God) kings and priests* — is the Sinai vocation restored: *ye shall be unto me a kingdom of priests, and an holy nation* (Exodus 19:6), the word Yahuah (LORD) spoke to the children of Yashar''el (Israel) at the mount. The Lamb''s blood does not make a new people in Israel''s place; it brings the covenant people into the priestly kingship they were always called to. The book named it at the first — *washed us from our sins in his own blood* (Revelation 1:5), and *hath made us kings and priests unto Elohim (God) and his Father* (Revelation 1:6) — and the new song sings it before the throne. Mark even here the Christology: the redeemed are made kings and priests *unto our Elohim (God),* unto *Elohim (God) and his Father* — the Lamb is the One who has a Father, and his blood makes the gathered a royal priesthood unto the Elohim (God) who is also his Father.',
+       sv.verse_id, ev.verse_id, 'free', 9109
+  FROM _s224_rv05_lookup sv, _s224_rv05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=5 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-5-ten-thousand-times-ten-thousand-the-myriads-before-the-throne-daniel-7',
+       E'Ten thousand times ten thousand — the myriads before the throne (Daniel 7, 1 Enoch)',
+       E'Around the throne John hears a host beyond counting take up the praise of the Lamb: *And I beheld, and I heard the voice of many angels round about the throne and the beasts and the elders: and the number of them was ten thousand times ten thousand, and thousands of thousands* (Revelation 5:11). The count is Daniel''s, word for word: *thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened* (Daniel 7:10). The myriads who stood before the Ancient of days in Daniel''s throne-vision are the myriads round about the throne in John''s — and where Daniel saw *the books were opened,* John has just seen the sealed book opened by the Lamb. The same uncountable court appears in the Hebrew library''s throne-visions: *I saw thousands of thousands and myriads of myriads, and an infinite number of people, standing before Yahuah (God) of Spirits* (1 Enoch 40:1) — and Enoch heard their voices bless *Yahuah (God) of Spirits* and bless *the Elect One* beside him, the very pattern of Revelation 5, where the One on the throne and the Lamb are praised together. The throne-vision world of *ten thousand* reckonings runs through these texts (1 Enoch 14:21). And the host''s cry is the sevenfold acclamation: *Saying with a loud voice, Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing* (Revelation 5:12). The innumerable court that stood before the Father now lifts its voice to the slain Lamb.',
+       sv.verse_id, ev.verse_id, 'extras', 9112
+  FROM _s224_rv05_lookup sv, _s224_rv05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=5 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-5-worthy-is-the-lamb-worshipped-with-him-that-sat-on-the-throne-philippians-2',
+       E'Worthy is the Lamb, worshipped with him that sat on the throne (Philippians 2, Daniel 7)',
+       E'The chapter closes with the worship of the whole creation, and it lands on two seated together: *And every creature which is in heaven, and on the earth, and under the earth, and such as are in the sea, and all that are in them, heard I saying, Blessing, and honour, and glory, and power, be unto him that sitteth upon the throne, and unto the Lamb for ever and ever* (Revelation 5:13). The threefold sweep of *every creature... in heaven, and on the earth, and under the earth* is Paul''s: *that at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10). And Paul gives the Christology its exact frame: every tongue confesses the Lamb *to the glory of Elohim (God) the Father* (Philippians 2:11). Here is the whole mystery held without collapse. The Lamb *came and took the book out of the right hand of him that sat upon the throne* (Revelation 5:7) — he is not the One on the throne but receives the book from his hand; the Father and the Formed Son are two, distinguished. And yet the worship goes *unto him that sitteth upon the throne, and unto the Lamb* alike — the same blessing and honour and glory and power, for ever and ever. This is no rival worship and no second god; it is the Father glorified in the exalted Son, the slain Lamb who receives what Daniel saw given to the Son of Adam: *there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion* (Daniel 7:14). *Worthy is the Lamb that was slain to receive power, and riches, and wisdom, and strength, and honour, and glory, and blessing* (Revelation 5:12) — the slain-yet-reigning Formed, who is Yahuah (LORD) and has a Father, worshipped with him that sat on the throne while *the four and twenty elders fell down and worshipped him that liveth for ever and ever* (Revelation 5:14).',
+       sv.verse_id, ev.verse_id, 'free', 9115
+  FROM _s224_rv05_lookup sv, _s224_rv05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=5 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-5-the-scroll-written-within-and-sealed-with-seven-seals-ezekiel-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 2:9 — *a roll of a book was therein* the scroll handed forth from heaven, the prophetic roll John sees in the right hand of him on the throne (Revelation 5:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-the-scroll-written-within-and-sealed-with-seven-seals-ezekiel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 2:10 — *it was written within and without* the exact shape of John''s scroll *written within and on the backside*, the overflowing decree of judgment (Revelation 5:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-the-scroll-written-within-and-sealed-with-seven-seals-ezekiel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 29:11 — *the words of a book that is sealed... I cannot; for it is sealed* the sealed book no man can read, the helplessness John weeps over (Revelation 5:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-the-scroll-written-within-and-sealed-with-seven-seals-ezekiel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Daniel 12:4 — *seal the book, even to the time of the end* the term of the sealing; the book stayed shut till the time came, and the Lamb is the One who prevails to open it (Revelation 5:4-5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-the-scroll-written-within-and-sealed-with-seven-seals-ezekiel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-5-the-lion-of-juda-the-root-of-david-who-prevailed-genesis-49
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:9 — *Yahudah (Judah) is a lion''s whelp* Jacob''s blessing names the lion of the tribe of Yahudah (Judah), the royal beast the elder hails as having prevailed (Revelation 5:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-the-lion-of-juda-the-root-of-david-who-prevailed-genesis-49'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:10 — *until Shiloh come; and unto him shall the gathering of the people be* the sceptre kept in Yahudah (Judah) for Shiloh, the King who gathers the people, the One who prevailed (Revelation 5:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-the-lion-of-juda-the-root-of-david-who-prevailed-genesis-49'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 11:1 — *a rod out of the stem of Jesse, and a Branch shall grow out of his roots* the Branch from David''s royal root, the Root of David the elder names (Revelation 5:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-the-lion-of-juda-the-root-of-david-who-prevailed-genesis-49'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 11:10 — *a root of Jesse, which shall stand for an ensign of the people* the Root of David set up as a banner the gathered seek, his blood drawing them from every nation (Revelation 5:5,9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-the-lion-of-juda-the-root-of-david-who-prevailed-genesis-49'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-5-a-lamb-as-it-had-been-slain-with-seven-horns-and-seven-eyes-isaiah-53
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 53:7 — *he is brought as a lamb to the slaughter... so he openeth not his mouth* the suffering servant''s lamb, the Lion who prevails by being slain (Revelation 5:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-a-lamb-as-it-had-been-slain-with-seven-horns-and-seven-eyes-isaiah-53'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 12:6 — *the whole assembly of the congregation of Yashar''el (Israel) shall kill it in the evening* the Passover lamb whose blood turned aside the destroyer, the true Passover by whose blood the gathered are redeemed (Revelation 5:6,9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-a-lamb-as-it-had-been-slain-with-seven-horns-and-seven-eyes-isaiah-53'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Zechariah 4:10 — *the eyes of Yahuah (LORD), which run to and fro through the whole earth* the seven eyes of the Lamb are the eyes of Yahuah (LORD) himself, the Formed bearing the Father''s own (Revelation 5:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-a-lamb-as-it-had-been-slain-with-seven-horns-and-seven-eyes-isaiah-53'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=4 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Zechariah 3:9 — *upon one stone shall be seven eyes... I will remove the iniquity of that land in one day* the seven eyes on the engraved stone and the iniquity removed in one day foreshadow the slain Lamb bearing the seven Spirits (Revelation 5:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-a-lamb-as-it-had-been-slain-with-seven-horns-and-seven-eyes-isaiah-53'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=3 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'John 1:29 — *Behold the Lamb of Elohim (God), which taketh away the sin of the world* the Lamb hailed at the Jordan is the Lamb enthroned, slain and yet standing (Revelation 5:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-a-lamb-as-it-had-been-slain-with-seven-horns-and-seven-eyes-isaiah-53'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-5-thou-hast-redeemed-us-and-made-us-kings-and-priests-the-new-song-exodus-19
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 19:6 — *ye shall be unto me a kingdom of priests, and an holy nation* the Sinai covenant vocation restored; the Lamb''s blood brings the covenant people into the priestly kingship they were always called to (Revelation 5:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-thou-hast-redeemed-us-and-made-us-kings-and-priests-the-new-song-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 33:3 — *Sing unto him a new song; play skilfully with a loud noise* the psalm''s summons taken up by the harps of heaven for the new work of the slain Lamb (Revelation 5:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-thou-hast-redeemed-us-and-made-us-kings-and-priests-the-new-song-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 40:3 — *he hath put a new song in my mouth, even praise unto our Elohim (God)* the song of the redeemed drawn up out of the pit, sung of the One who redeemed us by his blood (Revelation 5:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-thou-hast-redeemed-us-and-made-us-kings-and-priests-the-new-song-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 1:6 — *hath made us kings and priests unto Elohim (God) and his Father* the book''s opening word now sung; the Lamb is the One who has a Father, his blood making the gathered a royal priesthood (Revelation 5:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-thou-hast-redeemed-us-and-made-us-kings-and-priests-the-new-song-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 1:5 — *washed us from our sins in his own blood* the redemption named at the book''s first; the blood of the slain Lamb is the price by which the gathered are bought back to Elohim (God) (Revelation 5:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-thou-hast-redeemed-us-and-made-us-kings-and-priests-the-new-song-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-5-ten-thousand-times-ten-thousand-the-myriads-before-the-throne-daniel-7
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:10 — *ten thousand times ten thousand stood before him: the judgment was set, and the books were opened* John''s count word for word; the myriads before the Ancient of days, where Daniel saw the books opened and John sees the sealed book opened by the Lamb (Revelation 5:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-ten-thousand-times-ten-thousand-the-myriads-before-the-throne-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 40:1 — *thousands of thousands and myriads of myriads... standing before Yahuah (God) of Spirits* the Hebrew library''s innumerable court before the throne, whose voices bless both Yahuah (God) of Spirits and the Elect One beside him (Revelation 5:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-ten-thousand-times-ten-thousand-the-myriads-before-the-throne-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=11
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=40 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 14:21 — *bound them till the time when their guilt should be consummated (even) for ten thousand years* the ten-thousand reckonings of Enoch''s throne-vision, the world Revelation 5''s myriad-numbered host stands in (Revelation 5:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-ten-thousand-times-ten-thousand-the-myriads-before-the-throne-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=11
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=14 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-5-worthy-is-the-lamb-worshipped-with-him-that-sat-on-the-throne-philippians-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Philippians 2:10 — *every knee should bow, of things in heaven, and things in earth, and things under the earth* the threefold sweep of every creature''s worship of the Lamb, the name above every name (Revelation 5:13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-worthy-is-the-lamb-worshipped-with-him-that-sat-on-the-throne-philippians-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Philippians 2:11 — *every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* the Christology held without collapse: the Lamb worshipped to the glory of the Father, two and distinguished, not a rival worship (Revelation 5:13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-worthy-is-the-lamb-worshipped-with-him-that-sat-on-the-throne-philippians-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 7:14 — *there was given him dominion, and glory, and a kingdom... an everlasting dominion* the sevenfold acclamation of the Lamb is the giving Daniel saw to the one like the Son of Adam, come to the throne to take what is everlastingly his (Revelation 5:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv05_lookup sv, _s224_rv05_lookup tv
+ WHERE t.slug='revelation-5-worthy-is-the-lamb-worshipped-with-him-that-sat-on-the-throne-philippians-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=5 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session224 — Revelation cross-references complete.'
