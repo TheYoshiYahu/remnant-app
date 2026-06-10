@@ -2401,6 +2401,837 @@ SELECT t.id, cr.id, m.sort_order, m.member_note
   JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_hebrews_11.sql (S222 Hebrews 11) -----
+-- =====================================================================
+-- S222 minion — HEBREWS 11 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: HEBREWS 11.  Tag: h11 (temp view _s222_h11_lookup).  Sort band: 7971, step 1 (<=7979).
+-- Source is ALWAYS the canon Hebrews verse; targets span Tanakh + extra-canonical.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Hebrews 11 is the faith/faithfulness (emunah) cloud — faith demonstrated by
+-- obedient action, never mere mental assent. *Now faith is the substance of things hoped for, the
+-- evidence of things not seen* (11:1): each witness is named for what faith MOVED him to DO — Abel
+-- offered, Enoch walked and pleased Elohim, Noah prepared an ark, Abraham obeyed and went out and
+-- offered Isaac, Moses refused Pharaoh's house and esteemed the reproach of Messiah, the prophets
+-- subdued kingdoms and stopped lions' mouths, the martyrs were tortured and would not accept
+-- deliverance that they might obtain a better resurrection. The extras layer is essential here: the
+-- Enoch translation tradition (1 Enoch, Jubilees 4, Sirach 44:16) and the Maccabean martyrs
+-- (2 Maccabees 7) carry witnesses the canon names only in summary. *These all died in faith, not
+-- having received the promises... Elohim having provided some better thing for us* (11:13, 39-40) —
+-- the faithful of every age wait together for the one resurrection.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1,3   faith the substance / the worlds framed by the word of Elohim
+--           Tanakh: Genesis 1:1, Genesis 1:3 (the worlds framed by his word)  Extras: none warranted  NT: none added (carried in prose)
+--   v.4     Abel's more excellent sacrifice
+--           Tanakh: Genesis 4:4, Genesis 4:10 (the blood crieth)  Extras: Jubilees 4:2-3 (the offering accepted; the blood cried from the ground)  NT: none warranted
+--   v.5-6   Enoch translated that he should not see death; pleased Elohim
+--           Tanakh: Genesis 5:24 (walked with Elohim; was not, Elohim took him)  Extras: 1 Enoch 71:1,5 (spirit translated, ascended into the heavens), Jubilees 4:23 (taken from amongst the children of men, conducted into the Garden), Ecclesiasticus 44:16 (Enoch pleased Yahuah and was translated)  NT: none warranted
+--   v.7     Noah warned of things not seen, prepared an ark
+--           Tanakh: Genesis 6:13-14 (the end of all flesh; make thee an ark), Genesis 6:22 (so did Noah)  Extras: Ecclesiasticus 44:17 (Noah found perfect; left as a remnant)  NT: none warranted
+--   v.8-19  Abraham called out, looked for a city, Sarah received strength, offered Isaac
+--           Tanakh: Genesis 12:1 (get thee out), Genesis 15:5 (seed as the stars), Genesis 18:14 (is anything too hard), Genesis 21:2 (Sarah conceived), Genesis 22:2 (offer up Isaac), Genesis 22:17 (in blessing I will bless)  Extras: Ecclesiasticus 44:20-21 (proved and found faithful; the oath, the seed as the stars)  NT: none warranted
+--   v.20-22 Isaac, Jacob, Joseph blessing; the bones of Joseph
+--           Tanakh: Genesis 27:27-29 (Isaac blessed Jacob), Genesis 48:15-16 (Jacob blessed Joseph's sons), Genesis 50:24-25 (Joseph: carry up my bones)  Extras: none warranted  NT: none warranted
+--   v.23-31 Moses refused Pharaoh's house, the passover/Red Sea, Jericho, Rahab
+--           Tanakh: Exodus 2:2 (hid three months), Exodus 2:11 (looked on his brethren), Joshua 6:20 (the wall fell down flat), Joshua 2:11 (Rahab's confession), Joshua 6:25 (Rahab saved)  Extras: none warranted  NT: none warranted
+--   v.32-35a prophets subdued kingdoms, stopped lions' mouths, quenched fire; women's dead raised
+--           Tanakh: Daniel 6:22 (the lions' mouths shut), Daniel 3:27 (the fire had no power), 1 Kings 17:22 (the child's soul came again), 2 Kings 4:35 (the child sneezed and opened his eyes)  Extras: none warranted  NT: none warranted
+--   v.35b-40 others tortured, not accepting deliverance, for a better resurrection
+--           Tanakh: none warranted (the canon names the martyrs only in summary)  Extras: 2 Maccabees 7:9, 7:11, 7:14, 7:23, 7:29 (the mother and seven sons; raised up to everlasting life; receive them again)  NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   7971 hebrews-11-faith-the-substance-of-things-hoped-for-the-worlds-framed-genesis-1       (Tanakh)
+--   7972 hebrews-11-abel-a-more-excellent-sacrifice-genesis-4                                  (Tanakh + extras: Jubilees)
+--   7973 hebrews-11-enoch-translated-that-he-should-not-see-death-genesis-5                    (Tanakh + extras: 1 Enoch, Jubilees, Sirach)
+--   7974 hebrews-11-noah-warned-of-things-not-seen-prepared-an-ark-genesis-6                   (Tanakh + extras: Sirach)
+--   7975 hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22                  (Tanakh + extras: Sirach)
+--   7976 hebrews-11-the-patriarchs-blessing-and-the-bones-of-joseph-genesis-27-48-50          (Tanakh)
+--   7977 hebrews-11-moses-the-reproach-of-messiah-the-passover-jericho-and-rahab-exodus-2-joshua-2-6  (Tanakh)
+--   7978 hebrews-11-stopped-the-mouths-of-lions-and-quenched-the-violence-of-fire-daniel-3-6   (Tanakh)
+--   7979 hebrews-11-tortured-for-a-better-resurrection-the-mother-and-seven-sons-2-maccabees   (extras: 2 Maccabees)
+-- =====================================================================
+
+CREATE TEMP VIEW _s222_h11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: hebrews-11-faith-the-substance-of-things-hoped-for-the-worlds-framed-genesis-1
+  ('canon', 'hebrews', 11, 3, 'canon', 'genesis', 1, 1, 'free', E'*In the beginning Elohim (God) created the heaven and the earth.* (Genesis 1:1). *Through faith we understand that the worlds were framed by the word of Elohim (God), so that things which are seen were not made of things which do appear* (Hebrews 11:3). The very first line of the Torah is the first act of faith the writer names: the worlds had no maker but the word of Elohim, and no material but his speaking. *Faith is the substance of things hoped for, the evidence of things not seen* (Hebrews 11:1) — and the unseen word that framed the seen creation is the ground of all that follows.'),
+  ('canon', 'hebrews', 11, 3, 'canon', 'genesis', 1, 3, 'free', E'*And Elohim (God) said, Let there be light: and there was light.* (Genesis 1:3). *Through faith we understand that the worlds were framed by the word of Elohim (God), so that things which are seen were not made of things which do appear* (Hebrews 11:3). The pattern of the whole chapter is set here: Elohim speaks, and what was not seen becomes seen. *Let there be light: and there was light* is the word framing the world out of no prior thing — exactly the unseen-becoming-evidence that faith lays hold of.'),
+  -- thread: hebrews-11-abel-a-more-excellent-sacrifice-genesis-4
+  ('canon', 'hebrews', 11, 4, 'canon', 'genesis', 4, 4, 'free', E'*And Abel, he also brought of the firstlings of his flock and of the fat thereof. And Yahuah (LORD) had respect unto Abel and to his offering:* (Genesis 4:4). *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts* (Hebrews 11:4). The first man of faith brought the firstlings and the fat — the best, given in trust — and Yahuah had respect unto it. The respect Yahuah showed the offering is the very witness Hebrews names: Elohim *testifying of his gifts* that Abel was righteous.'),
+  ('canon', 'hebrews', 11, 4, 'canon', 'genesis', 4, 10, 'free', E'*And he said, What hast thou done? the voice of thy brother''s blood crieth unto me from the ground.* (Genesis 4:10). *By faith Abel offered... and by it he being dead yet speaketh* (Hebrews 11:4). Abel is dead, and yet he speaks — the writer hears the same voice Yahuah heard: *the voice of thy brother''s blood crieth unto me from the ground.* The righteous man slain is not silenced; his blood still cries, and his faith still witnesses to every generation that comes after.'),
+  ('canon', 'hebrews', 11, 4, 'jubilees', 'jubilees', 4, 2, 'extras', E'*And in the first (year) of the third jubilee, Cain slew Abel because Elohim (God) accepted the sacrifice of Abel, and did not accept the offering of Cain.* (Jubilees 4:2). *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain* (Hebrews 11:4). Jubilees names plainly what Genesis shows and Hebrews weighs: Elohim *accepted the sacrifice of Abel, and did not accept the offering of Cain.* The acceptance is the witness; the rejected brother''s murder follows the accepted brother''s faith.'),
+  ('canon', 'hebrews', 11, 4, 'jubilees', 'jubilees', 4, 3, 'extras', E'*And he slew him in the field: and his blood cried from the ground to heaven, complaining because he had slain him.* (Jubilees 4:3). *By faith Abel offered... and by it he being dead yet speaketh* (Hebrews 11:4). Jubilees hears the same crying blood the writer of Hebrews hears: *his blood cried from the ground to heaven.* The dead man speaks still — the blood of the first faithful witness lifting its voice to heaven, the pattern of every righteous one slain for his offering after him.'),
+  -- thread: hebrews-11-enoch-translated-that-he-should-not-see-death-genesis-5
+  ('canon', 'hebrews', 11, 5, 'canon', 'genesis', 5, 24, 'free', E'*And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* (Genesis 5:24). *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God)* (Hebrews 11:5). The Torah''s spare line — *he was not; for Elohim took him* — is the translation Hebrews names. Enoch alone in the genealogy of death does not die; the man who *walked with Elohim* is taken by Elohim, the testimony of a life that pleased him.'),
+  ('canon', 'hebrews', 11, 5, 'enoch', '1-enoch', 71, 1, 'extras', E'*And it came to pass after this that my spirit was carried off and it ascended into the heavens: And I saw the holy sons of Elohim (God).* (1 Enoch 71:1). *By faith Enoch was translated that he should not see death... because Elohim (God) had translated him* (Hebrews 11:5). The Torah says only that Elohim took him; the Enoch tradition shows the taking from the inside — *my spirit was carried off and it ascended into the heavens.* The man who pleased Elohim is brought up among *the holy sons of Elohim,* translated rather than buried.'),
+  ('canon', 'hebrews', 11, 5, 'enoch', '1-enoch', 71, 5, 'extras', E'*And he translated my spirit into the heaven of heavens, And I saw there a structure built of crystals, And between those crystals tongues of living fire.* (1 Enoch 71:5). *By faith Enoch was translated that he should not see death* (Hebrews 11:5). The word Hebrews uses for Enoch — *translated* — is the word the vision uses: *he translated my spirit into the heaven of heavens.* The witness who would not see death is carried into the very dwelling-place of Elohim, among the first fathers and the righteous who dwell there from the beginning of the world.'),
+  ('canon', 'hebrews', 11, 5, 'jubilees', 'jubilees', 4, 23, 'extras', E'*And he was taken from amongst the children of men, and we conducted him into the Garden of Eden in majesty and honour, and behold there he writes down the condemnation and judgment of the world, and all the wickedness of the children of men.* (Jubilees 4:23). *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him* (Hebrews 11:5). Jubilees fills out the *was not found* of the Torah: Enoch *was taken from amongst the children of men,* conducted *in majesty and honour* into the Garden. The man who pleased Elohim is removed from the company of the dying and set in the place of the living.'),
+  ('canon', 'hebrews', 11, 5, 'apocrypha', 'ecclesiasticus', 44, 16, 'extras', E'*Enoch pleased Yahuah (God), and was translated, being an example of repentance to all generations.* (Ecclesiasticus 44:16). *By faith Enoch was translated that he should not see death... for before his translation he had this testimony, that he pleased Elohim (God)* (Hebrews 11:5). Ben Sira and the writer of Hebrews use the same two words of the same man: he *pleased* Elohim, and he *was translated.* The testimony that he pleased Elohim is the cause; the translation is its seal.'),
+  ('canon', 'hebrews', 11, 6, 'canon', 'genesis', 5, 24, 'free', E'*And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* (Genesis 5:24). *But without faith it is impossible to please him: for he that cometh to Elohim (God) must believe that he is, and that he is a rewarder of them that diligently seek him* (Hebrews 11:6). Enoch is the proof of the principle the writer draws out: a man who *walked with Elohim* is a man who believed *that he is* and sought him diligently — and the reward of that seeking was to be taken to him rather than left to death.'),
+  -- thread: hebrews-11-noah-warned-of-things-not-seen-prepared-an-ark-genesis-6
+  ('canon', 'hebrews', 11, 7, 'canon', 'genesis', 6, 13, 'free', E'*And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* (Genesis 6:13). *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house* (Hebrews 11:7). The warning of *things not seen as yet* is this word: a flood not yet come, an end of all flesh announced before a drop had fallen. Noah believed the unseen word and built — faith laying hold of the evidence of what could not yet be seen.'),
+  ('canon', 'hebrews', 11, 7, 'canon', 'genesis', 6, 14, 'free', E'*Make thee an ark of gopher wood; rooms shalt thou make in the ark, and shalt pitch it within and without with pitch.* (Genesis 6:14). *By faith Noah... moved with fear, prepared an ark to the saving of his house* (Hebrews 11:7). The command to *make thee an ark* is the obedient action faith produced. Noah did not see the water; he heard the word and took up the gopher wood. The ark itself is faith made visible — the substance of a thing hoped for, framed plank by plank against an unseen judgment.'),
+  ('canon', 'hebrews', 11, 7, 'canon', 'genesis', 6, 22, 'free', E'*Thus did Noah; according to all that Elohim (God) commanded him, so did he.* (Genesis 6:22). *By faith Noah... prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* (Hebrews 11:7). *According to all that Elohim commanded him, so did he* is the whole of Noah''s faith in one line — not assent but obedience, the doing of all that was commanded. The righteousness which is by faith is the righteousness of the man who *did* the word he could not yet see fulfilled.'),
+  ('canon', 'hebrews', 11, 7, 'apocrypha', 'ecclesiasticus', 44, 17, 'extras', E'*Noah was found perfect and righteous; in the time of wrath he was taken in exchange for the world; therefore was he left as a remnant to the earth, when the flood came.* (Ecclesiasticus 44:17). *By faith Noah... became heir of the righteousness which is by faith* (Hebrews 11:7). Ben Sira names the same righteousness Hebrews names — Noah *found perfect and righteous* — and adds the office it carried: *left as a remnant to the earth.* The faithful builder is the seed through whom the world goes on, the heir of righteousness preserved through the wrath.'),
+  -- thread: hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22
+  ('canon', 'hebrews', 11, 8, 'canon', 'genesis', 12, 1, 'free', E'*Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee:* (Genesis 12:1). *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* (Hebrews 11:8). The call is exactly *get thee out... unto a land that I will shew thee* — a destination withheld, an inheritance promised but unseen. Abraham *obeyed; and he went out, not knowing whither he went* — faith walking on the bare word of Yahuah.'),
+  ('canon', 'hebrews', 11, 11, 'canon', 'genesis', 18, 14, 'free', E'*Is any thing too hard for Yahuah (LORD)? At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son.* (Genesis 18:14). *Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised* (Hebrews 11:11). The promise that drew Sarah''s faith is this word at the tent door: *is anything too hard for Yahuah?* She *judged him faithful who had promised,* and the One who cannot fail in his word gave the strength to conceive past age.'),
+  ('canon', 'hebrews', 11, 11, 'canon', 'genesis', 21, 2, 'free', E'*For Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him.* (Genesis 21:2). *Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised* (Hebrews 11:11). The faith is vindicated in the birth: *Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim had spoken.* The set time kept proves the One who promised faithful — the substance of a thing hoped for made flesh in Isaac.'),
+  ('canon', 'hebrews', 11, 12, 'canon', 'genesis', 15, 5, 'free', E'*And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.* (Genesis 15:5). *Therefore sprang there even of one, and him as good as dead, so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable* (Hebrews 11:12). The seed *as the stars of the sky* is the very promise of the night Yahuah brought Abraham forth: *tell the stars... so shall thy seed be.* From one man *as good as dead* came the innumerable seed, because he believed the star-promise of the unseen.'),
+  ('canon', 'hebrews', 11, 17, 'canon', 'genesis', 22, 2, 'free', E'*And he said, Take now thy son, thine only son Isaac, whom thou lovest, and get thee into the land of Moriah; and offer him there for a burnt offering upon one of the mountains which I will tell thee of.* (Genesis 22:2). *By faith Abraham, when he was tried, offered up Isaac: and he that had received the promises offered up his only begotten son* (Hebrews 11:17). The trial Hebrews names is this command — *take now thy son, thine only son Isaac... and offer him.* The man who held the promise of seed through Isaac was asked to lay Isaac on the altar, and by faith he obeyed.'),
+  ('canon', 'hebrews', 11, 18, 'canon', 'genesis', 22, 17, 'free', E'*That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies;* (Genesis 22:17). *Of whom it was said, That in Isaac shall thy seed be called: Accounting that Elohim (God) was able to raise him up, even from the dead* (Hebrews 11:18-19). The oath sworn on the mount Abraham climbed with his son — *in blessing I will bless thee, and in multiplying I will multiply thy seed* — is why he could lift the knife: the seed was promised through Isaac, so Elohim must be *able to raise him up, even from the dead.* Faith reasoned to resurrection from the unbreakable promise.'),
+  ('canon', 'hebrews', 11, 17, 'apocrypha', 'ecclesiasticus', 44, 20, 'extras', E'*Who kept the law of the Most High, and was in covenant with him: he established the covenant in his flesh; and when he was proved, he was found faithful.* (Ecclesiasticus 44:20). *By faith Abraham, when he was tried, offered up Isaac* (Hebrews 11:17). Ben Sira and Hebrews name the same testing of the same man: *when he was proved, he was found faithful.* The faith that is faithfulness — kept law, covenant in the flesh, the proving on Moriah — is the obedient trust Hebrews crowns. Abraham was *tried* and *found faithful.*'),
+  ('canon', 'hebrews', 11, 12, 'apocrypha', 'ecclesiasticus', 44, 21, 'extras', E'*Therefore he assured him by an oath, that he would bless the nations in his seed, and that he would multiply him as the dust of the earth, and exalt his seed as the stars, and cause them to inherit from sea to sea, and from the river to the utmost part of the land.* (Ecclesiasticus 44:21). *Therefore sprang there even of one, and him as good as dead, so many as the stars of the sky in multitude* (Hebrews 11:12). The oath Ben Sira recalls — *exalt his seed as the stars* — is the ground of the innumerable multitude Hebrews counts. From the one man came the seed as the stars because Yahuah *assured him by an oath,* and the faithful one believed the oath.'),
+  -- thread: hebrews-11-the-patriarchs-blessing-and-the-bones-of-joseph-genesis-27-48-50
+  ('canon', 'hebrews', 11, 20, 'canon', 'genesis', 27, 27, 'free', E'*And he came near, and kissed him: and he smelled the smell of his raiment, and blessed him, and said, See, the smell of my son is as the smell of a field which Yahuah (LORD) hath blessed:* (Genesis 27:27). *By faith Isaac blessed Jacob and Esau concerning things to come* (Hebrews 11:20). The blessing Isaac pronounced over Jacob — dew of heaven, fatness of the earth, dominion — was faith reaching into *things to come,* speaking over an unseen future as though already given. The aged, dim-eyed patriarch blessed by faith, and the word held.'),
+  ('canon', 'hebrews', 11, 21, 'canon', 'genesis', 48, 15, 'free', E'*And he blessed Joseph, and said, Elohim (God), before whom my fathers Abraham and Isaac did walk, the Elohim (God) which fed me all my life long unto this day,* (Genesis 48:15). *By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff* (Hebrews 11:21). The dying Jacob blessed Ephraim and Manasseh by faith, naming *the Elohim before whom my fathers Abraham and Isaac did walk* — binding the generation to come into the covenant of the fathers, and worshipping as he leaned upon his staff.'),
+  ('canon', 'hebrews', 11, 21, 'canon', 'genesis', 48, 16, 'free', E'*The Angel which redeemed me from all evil, bless the lads; and let my name be named on them, and the name of my fathers Abraham and Isaac; and let them grow into a multitude in the midst of the earth.* (Genesis 48:16). *By faith Jacob, when he was a dying, blessed both the sons of Joseph* (Hebrews 11:21). The blessing crosses his hands over Joseph''s sons and calls on *the Angel which redeemed me from all evil* — the dying man''s faith setting the covenant name on the lads, that they *grow into a multitude in the midst of the earth.* Faith blessed the unseen multitude into being.'),
+  ('canon', 'hebrews', 11, 22, 'canon', 'genesis', 50, 24, 'free', E'*And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* (Genesis 50:24). *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). The departing Joseph foretold is this dying word: *Elohim will surely visit you, and bring you out of this land unto the land which he sware.* Faith saw the exodus generations before it came, certain of the oath to the fathers.'),
+  ('canon', 'hebrews', 11, 22, 'canon', 'genesis', 50, 25, 'free', E'*And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* (Genesis 50:25). *By faith Joseph, when he died... gave commandment concerning his bones* (Hebrews 11:22). The commandment concerning his bones is this oath: *ye shall carry up my bones from hence.* So sure was Joseph of the visitation and the land that he bound the people to carry his bones home — faith staking even his burial on a promise not yet seen.'),
+  -- thread: hebrews-11-moses-the-reproach-of-messiah-the-passover-jericho-and-rahab-exodus-2-joshua-2-6
+  ('canon', 'hebrews', 11, 23, 'canon', 'exodus', 2, 2, 'free', E'*And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months.* (Exodus 2:2). *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment* (Hebrews 11:23). The hiding Hebrews names is this — *she hid him three months* — set against Pharaoh''s edict to drown the sons. The parents'' faith was the first act of the deliverer''s story: they feared Elohim and not *the king''s commandment.*'),
+  ('canon', 'hebrews', 11, 24, 'canon', 'exodus', 2, 11, 'free', E'*And it came to pass in those days, when Moses was grown, that he went out unto his brethren, and looked on their burdens: and he spied an Egyptian smiting an Hebrew, one of his brethren.* (Exodus 2:11). *By faith Moses, when he was come to years, refused to be called the son of Pharaoh''s daughter; Choosing rather to suffer affliction with the people of Elohim (God)* (Hebrews 11:24-25). Moses *come to years* went out to *his brethren* and owned their burdens as his own — the refusal of Pharaoh''s house enacted. He esteemed *the reproach of Messiah greater riches than the treasures in Egypt* (Hebrews 11:26), choosing the afflicted people of Elohim over the court that raised him.'),
+  ('canon', 'hebrews', 11, 29, 'canon', 'exodus', 14, 22, 'free', E'*And the children of Yashar''el (Israel) went into the midst of the sea upon the dry ground: and the waters were a wall unto them on their right hand, and on their left.* (Exodus 14:22). *By faith they passed through the Red sea as by dry land: which the Egyptians assaying to do were drowned* (Hebrews 11:29). The passage Hebrews names is this crossing — *into the midst of the sea upon the dry ground,* the waters a wall on either hand. The same path that saved the believing drowned the pursuers; faith walked the dry land between the standing waters.'),
+  ('canon', 'hebrews', 11, 30, 'canon', 'joshua', 6, 20, 'free', E'*So the people shouted when the priests blew with the trumpets... that the wall fell down flat, so that the people went up into the city, every man straight before him, and they took the city.* (Joshua 6:20). *By faith the walls of Jericho fell down, after they were compassed about seven days* (Hebrews 11:30). The falling wall Hebrews names is this — *the wall fell down flat* at the trumpet and the shout, after the seven days'' compassing. No ram, no siege; only the obedience of faith circling the city until Yahuah threw down the stones.'),
+  ('canon', 'hebrews', 11, 31, 'canon', 'joshua', 2, 11, 'free', E'*And as soon as we had heard these things, our hearts did melt, neither did there remain any more courage in any man, because of you: for Yahuah Elohaychem (the LORD your God), he is Elohim (God) in heaven above, and in earth beneath.* (Joshua 2:11). *By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace* (Hebrews 11:31). Rahab''s faith is this confession in the doomed city: *Yahuah your Elohim, he is Elohim in heaven above, and in earth beneath.* While the city *believed not,* she believed, and received the spies with peace — and was saved out of Jericho''s fall.'),
+  ('canon', 'hebrews', 11, 31, 'canon', 'joshua', 6, 25, 'free', E'*And Joshua saved Rahab the harlot alive, and her father''s household, and all that she had; and she dwelleth in Yashar''el (Israel) even unto this day; because she hid the messengers, which Joshua sent to spy out Jericho.* (Joshua 6:25). *By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace* (Hebrews 11:31). The saving Hebrews names is this — *Joshua saved Rahab the harlot alive... and she dwelleth in Yashar''el even unto this day.* The foreign woman who believed is absorbed into the covenant people and her faith made her dwelling there; the rest of the city perished.'),
+  -- thread: hebrews-11-stopped-the-mouths-of-lions-and-quenched-the-violence-of-fire-daniel-3-6
+  ('canon', 'hebrews', 11, 33, 'canon', 'daniel', 6, 22, 'free', E'*My Elohim (God) hath sent his angel, and hath shut the lions'' mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt.* (Daniel 6:22). *Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions* (Hebrews 11:33). The stopping of the lions'' mouths Hebrews names is this night in the den: *my Elohim hath sent his angel, and hath shut the lions'' mouths.* Daniel would not cease his prayer at the king''s decree, and his faith kept him whole among the lions.'),
+  ('canon', 'hebrews', 11, 34, 'canon', 'daniel', 3, 27, 'free', E'*And the princes, governors, and captains, and the king''s counsellors, being gathered together, saw these men, upon whose bodies the fire had no power, nor was an hair of their head singed, neither were their coats changed, nor the smell of fire had passed on them.* (Daniel 3:27). *Quenched the violence of fire, escaped the edge of the sword, out of weakness were made strong* (Hebrews 11:34). The quenched violence of fire Hebrews names is this furnace: men *upon whose bodies the fire had no power.* They would not bow to the image, and a fourth *like the Son of Elohim* walked with them in the flames — faith that quenched the fire by refusing to deny their Elohim.'),
+  ('canon', 'hebrews', 11, 35, 'canon', '1-kings', 17, 22, 'free', E'*And Yahuah (LORD) heard the voice of Elijah; and the soul of the child came into him again, and he revived.* (1 Kings 17:22). *Women received their dead raised to life again* (Hebrews 11:35). The first of the dead raised and restored to a woman is this child of the widow of Zarephath: *the soul of the child came into him again, and he revived.* The prophet stretched himself upon the child and Yahuah heard — the dead son given back alive to his mother.'),
+  ('canon', 'hebrews', 11, 35, 'canon', '2-kings', 4, 35, 'free', E'*Then he returned, and walked in the house to and fro; and went up, and stretched himself upon him: and the child sneezed seven times, and the child opened his eyes.* (2 Kings 4:35). *Women received their dead raised to life again* (Hebrews 11:35). The Shunammite''s son is the second woman''s dead raised: *the child sneezed seven times, and the child opened his eyes.* Elisha shut the door and prayed and lay upon the dead boy, and the child was given back living — the raised dead Hebrews sets at the head of the witnesses'' afflictions.'),
+  -- thread: hebrews-11-tortured-for-a-better-resurrection-the-mother-and-seven-sons-2-maccabees
+  ('canon', 'hebrews', 11, 35, 'apocrypha', '2-maccabees', 7, 9, 'extras', E'*And when he was at the last gasp, he said, You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life.* (2 Maccabees 7:9). *and others were tortured, not accepting deliverance; that they might obtain a better resurrection* (Hebrews 11:35). Here is the witness the canon names only in summary, made flesh: the second of seven brothers, dying under torture rather than transgress, declaring *the King of the world shall raise us up, who have died for his laws, to everlasting life.* This is the *better resurrection* — chosen over the deliverance that would have cost them the law.'),
+  ('canon', 'hebrews', 11, 35, 'apocrypha', '2-maccabees', 7, 11, 'extras', E'*And said courageously, These I had from heaven; and for his laws I despise them; and from him I hope to receive them again.* (2 Maccabees 7:11). *and others were tortured, not accepting deliverance; that they might obtain a better resurrection* (Hebrews 11:35). The third brother stretches out his tongue and his hands to be cut off, certain of the resurrection: *from him I hope to receive them again.* The torn body is surrendered in the hope of being raised whole — the very faith Hebrews crowns in the witnesses *not accepting deliverance.*'),
+  ('canon', 'hebrews', 11, 35, 'apocrypha', '2-maccabees', 7, 14, 'extras', E'*So when he was ready to die he said thus, It is good, being put to death by men, to look for hope from Yahuah (God) to be raised up again by him: as for you, you shall have no resurrection to life.* (2 Maccabees 7:14). *and others were tortured, not accepting deliverance; that they might obtain a better resurrection* (Hebrews 11:35). The fourth brother names the two resurrections the framework holds — the faithful *raised up again,* the persecutor with *no resurrection to life.* He would rather be *put to death by men* and *look for hope from Yahuah* than escape; this is the better resurrection chosen over a bought deliverance.'),
+  ('canon', 'hebrews', 11, 35, 'apocrypha', '2-maccabees', 7, 23, 'extras', E'*But doubtless the Creator of the world, who formed the generation of man, and found out the beginning of all things, will also of his own mercy give you breath and life again, as you now regard not your own selves for his laws'' sake.* (2 Maccabees 7:23). *and others were tortured, not accepting deliverance; that they might obtain a better resurrection* (Hebrews 11:35). The mother urges her sons to die by the same faith: the *Creator of the world... will also of his own mercy give you breath and life again.* She reasons from creation to resurrection — the One who first gave breath can give it again — and spends her seven sons on that hope rather than the law.'),
+  ('canon', 'hebrews', 11, 35, 'apocrypha', '2-maccabees', 7, 29, 'extras', E'*Fear not this tormentor, but, being worthy of your brothers, take your death that I may receive you again in mercy with your brothers.* (2 Maccabees 7:29). *and others were tortured, not accepting deliverance; that they might obtain a better resurrection* (Hebrews 11:35). The mother''s last word to her youngest is the better resurrection in a sentence: *take your death that I may receive you again in mercy with your brothers.* Death accepted, deliverance refused, the reunion looked for past the grave — the faith of those of whom *the world was not worthy* (Hebrews 11:38).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s222_h11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s222_h11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT th.slug, th.title, th.summary_md, sv.verse_id, ev.verse_id, th.tier_required::content_tier, th.sort_order
+  FROM (VALUES
+  ('hebrews-11-faith-the-substance-of-things-hoped-for-the-worlds-framed-genesis-1',
+   E'Faith the Substance of Things Hoped For — the Worlds Framed by His Word (Genesis 1)',
+   E'The chapter opens with the definition that governs every witness that follows: *Now faith is the substance of things hoped for, the evidence of things not seen* (Hebrews 11:1). The first thing faith lays hold of is the creation itself — *Through faith we understand that the worlds were framed by the word of Elohim (God), so that things which are seen were not made of things which do appear* (Hebrews 11:3). The Torah''s opening line is the first unseen-becoming-seen: *In the beginning Elohim (God) created the heaven and the earth* (Genesis 1:1), and *And Elohim (God) said, Let there be light: and there was light* (Genesis 1:3). The worlds had no maker but the word and no material but the speaking — the visible framed out of what does not appear. This is the ground of the whole cloud of witnesses: the unseen word of Elohim is the most substantial thing there is.',
+   'free', 7971, 'hebrews', 11, 1, 3),
+  ('hebrews-11-abel-a-more-excellent-sacrifice-genesis-4',
+   E'Abel — a More Excellent Sacrifice, and Dead Yet Speaketh (Genesis 4)',
+   E'The first named witness is the first man slain for his faith. *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh* (Hebrews 11:4). The Torah shows the offering and the respect: *And Abel, he also brought of the firstlings of his flock and of the fat thereof. And Yahuah (LORD) had respect unto Abel and to his offering* (Genesis 4:4). Jubilees names it plainly — *Cain slew Abel because Elohim (God) accepted the sacrifice of Abel, and did not accept the offering of Cain* (Jubilees 4:2). And the dead man still speaks: *the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10), which Jubilees hears as *his blood cried from the ground to heaven* (Jubilees 4:3). The righteous one slain for his offering is not silenced; his faith witnesses to every generation after him.',
+   'extras', 7972, 'hebrews', 11, 4, 4),
+  ('hebrews-11-enoch-translated-that-he-should-not-see-death-genesis-5',
+   E'Enoch Translated That He Should Not See Death (Genesis 5; 1 Enoch; Jubilees; Sirach 44)',
+   E'In a genealogy where every man ends *and he died,* one man does not. *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God)* (Hebrews 11:5). The Torah''s spare line is the seed: *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24). The restored library shows the taking from inside the vision — *my spirit was carried off and it ascended into the heavens: And I saw the holy sons of Elohim (God)* (1 Enoch 71:1), *he translated my spirit into the heaven of heavens* (1 Enoch 71:5) — and Jubilees names the removal: *he was taken from amongst the children of men, and we conducted him into the Garden of Eden in majesty and honour* (Jubilees 4:23). Ben Sira binds the two words Hebrews uses: *Enoch pleased Yahuah (God), and was translated, being an example of repentance to all generations* (Ecclesiasticus 44:16). And the writer draws the principle out: *without faith it is impossible to please him: for he that cometh to Elohim (God) must believe that he is, and that he is a rewarder of them that diligently seek him* (Hebrews 11:6). Enoch sought, and the reward of his seeking was to be taken to the One he sought, rather than left to death.',
+   'extras', 7973, 'hebrews', 11, 5, 6),
+  ('hebrews-11-noah-warned-of-things-not-seen-prepared-an-ark-genesis-6',
+   E'Noah — Warned of Things Not Seen, Prepared an Ark (Genesis 6; Sirach 44)',
+   E'Faith acts on a word about a thing that has not yet appeared. *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* (Hebrews 11:7). The warning was the announced flood — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth* (Genesis 6:13) — and the obedient action was the building: *Make thee an ark of gopher wood; rooms shalt thou make in the ark, and shalt pitch it within and without with pitch* (Genesis 6:14). The whole of Noah''s faith is one line of doing: *Thus did Noah; according to all that Elohim (God) commanded him, so did he* (Genesis 6:22). Ben Sira names the same righteousness and the office it carried: *Noah was found perfect and righteous; in the time of wrath he was taken in exchange for the world; therefore was he left as a remnant to the earth, when the flood came* (Ecclesiasticus 44:17). The ark is faith made visible — the substance of a thing hoped for, framed plank by plank against an unseen judgment.',
+   'extras', 7974, 'hebrews', 11, 7, 7),
+  ('hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22',
+   E'Abraham Obeyed and Looked for a City — Sarah Received Strength — Isaac Offered (Genesis 12, 15, 18, 21, 22; Sirach 44)',
+   E'The longest witness in the cloud is the friend of Elohim, whose whole life was faith walked out. *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* (Hebrews 11:8) — the call was *Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee* (Genesis 12:1), a destination withheld and an inheritance unseen. He *looked for a city which hath foundations, whose builder and maker is Elohim (God)* (Hebrews 11:10). Sarah too: *Through faith also Sara herself received strength to conceive seed... because she judged him faithful who had promised* (Hebrews 11:11), believing the word at the tent door — *Is any thing too hard for Yahuah (LORD)?* (Genesis 18:14) — vindicated when *Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken* (Genesis 21:2). From the one man *as good as dead* sprang seed *as the stars of the sky in multitude* (Hebrews 11:12), the very star-promise of the night Yahuah brought him forth — *tell the stars... So shall thy seed be* (Genesis 15:5). And the trial: *By faith Abraham, when he was tried, offered up Isaac* (Hebrews 11:17), commanded *Take now thy son, thine only son Isaac, whom thou lovest... and offer him* (Genesis 22:2). Because the seed was promised through Isaac — and the oath stood, *in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven* (Genesis 22:17) — he reckoned *that Elohim (God) was able to raise him up, even from the dead* (Hebrews 11:19). Ben Sira names the proving: *when he was proved, he was found faithful* (Ecclesiasticus 44:20); and the oath: *exalt his seed as the stars* (Ecclesiasticus 44:21). Faith that is faithfulness reasoned its way to resurrection from an unbreakable promise.',
+   'extras', 7975, 'hebrews', 11, 8, 19),
+  ('hebrews-11-the-patriarchs-blessing-and-the-bones-of-joseph-genesis-27-48-50',
+   E'The Patriarchs'' Blessing and the Bones of Joseph (Genesis 27, 48, 50)',
+   E'Faith speaks over an unseen future and stakes even a burial on a promise. *By faith Isaac blessed Jacob and Esau concerning things to come* (Hebrews 11:20) — the dim-eyed patriarch reaching forward, *See, the smell of my son is as the smell of a field which Yahuah (LORD) hath blessed* (Genesis 27:27). *By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff* (Hebrews 11:21), naming over them *the Elohim (God), before whom my fathers Abraham and Isaac did walk* (Genesis 48:15) and *the Angel which redeemed me from all evil, bless the lads; and let my name be named on them* (Genesis 48:16) — the covenant set on the generation to come. *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22): so sure of the visitation — *Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24) — that he bound the people by oath, *ye shall carry up my bones from hence* (Genesis 50:25). Each blessed and commanded as though the unseen were already given.',
+   'free', 7976, 'hebrews', 11, 20, 22),
+  ('hebrews-11-moses-the-reproach-of-messiah-the-passover-jericho-and-rahab-exodus-2-joshua-2-6',
+   E'Moses Esteemed the Reproach of Messiah — the Passover, the Red Sea, Jericho, and Rahab (Exodus 2, 14; Joshua 2, 6)',
+   E'Faith chooses the afflicted people of Elohim over the treasures of the world, and walks through walls of water and walls of stone. Moses was first kept by his parents'' faith — *when she saw him that he was a goodly child, she hid him three months* (Exodus 2:2) — *and they were not afraid of the king''s commandment* (Hebrews 11:23). Grown, *By faith Moses... refused to be called the son of Pharaoh''s daughter; Choosing rather to suffer affliction with the people of Elohim (God)* (Hebrews 11:24-25): *he went out unto his brethren, and looked on their burdens* (Exodus 2:11), *Esteeming the reproach of Messiah (Christ) greater riches than the treasures in Egypt* (Hebrews 11:26). *By faith they passed through the Red sea as by dry land: which the Egyptians assaying to do were drowned* (Hebrews 11:29) — *the children of Yashar''el (Israel) went into the midst of the sea upon the dry ground: and the waters were a wall unto them on their right hand, and on their left* (Exodus 14:22). *By faith the walls of Jericho fell down, after they were compassed about seven days* (Hebrews 11:30) — *the wall fell down flat, so that the people went up into the city* (Joshua 6:20). And the foreign woman who believed when her city would not: *By faith the harlot Rahab perished not with them that believed not, when she had received the spies with peace* (Hebrews 11:31), confessing *Yahuah Elohaychem (the LORD your God), he is Elohim (God) in heaven above, and in earth beneath* (Joshua 2:11), so that *Joshua saved Rahab the harlot alive... and she dwelleth in Yashar''el (Israel) even unto this day* (Joshua 6:25) — taken into the covenant people by her faith while the city perished.',
+   'free', 7977, 'hebrews', 11, 23, 31),
+  ('hebrews-11-stopped-the-mouths-of-lions-and-quenched-the-violence-of-fire-daniel-3-6',
+   E'Stopped the Mouths of Lions and Quenched the Violence of Fire (Daniel 3, 6; 1 Kings 17; 2 Kings 4)',
+   E'The summary of the prophets and the faithful is filled out by the deliverances the writer gestures at. *Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions* (Hebrews 11:33) — Daniel in the den: *My Elohim (God) hath sent his angel, and hath shut the lions'' mouths, that they have not hurt me* (Daniel 6:22), because he would not cease his prayer at the king''s decree. *Quenched the violence of fire, escaped the edge of the sword, out of weakness were made strong* (Hebrews 11:34) — the three in the furnace, *upon whose bodies the fire had no power, nor was an hair of their head singed* (Daniel 3:27), who would not bow to the image and walked unharmed with a fourth *like the Son of Elohim (God).* And the dead raised: *Women received their dead raised to life again* (Hebrews 11:35) — the widow of Zarephath''s son, *the soul of the child came into him again, and he revived* (1 Kings 17:22), and the Shunammite''s son, *the child sneezed seven times, and the child opened his eyes* (2 Kings 4:35). Faith subdued the lion, quenched the fire, and received back the dead.',
+   'free', 7978, 'hebrews', 11, 32, 35),
+  ('hebrews-11-tortured-for-a-better-resurrection-the-mother-and-seven-sons-2-maccabees',
+   E'Tortured, Not Accepting Deliverance, That They Might Obtain a Better Resurrection — the Mother and Seven Sons (2 Maccabees 7)',
+   E'The cloud darkens into the witnesses who were not delivered, and the restored library names them where the canon only summarizes: *and others were tortured, not accepting deliverance; that they might obtain a better resurrection* (Hebrews 11:35). These are the mother and her seven sons, who would die rather than transgress the law. The second declares, *the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9); the third stretches out his hands to be cut off — *from him I hope to receive them again* (2 Maccabees 7:11); the fourth names the two resurrections the framework holds, *to look for hope from Yahuah (God) to be raised up again by him: as for you, you shall have no resurrection to life* (2 Maccabees 7:14). The mother reasons from creation to resurrection: *the Creator of the world, who formed the generation of man... will also of his own mercy give you breath and life again* (2 Maccabees 7:23), and sends her youngest to die — *take your death that I may receive you again in mercy with your brothers* (2 Maccabees 7:29). They refused the deliverance that would have cost them the law, and looked for the better resurrection past the grave. These are they *of whom the world was not worthy* (Hebrews 11:38), who *received not the promise* in their lifetime because *Elohim (God) having provided some better thing for us, that they without us should not be made perfect* (Hebrews 11:40) — the faithful of every age waiting together for the one resurrection.',
+   'extras', 7979, 'hebrews', 11, 35, 40)
+  ) AS th(slug, title, summary_md, tier_required, sort_order, anchor_book, anchor_chapter, anchor_verse_start, anchor_verse_end)
+  JOIN _s222_h11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=th.anchor_book AND sv.chapter_number=th.anchor_chapter AND sv.verse_number=th.anchor_verse_start
+  JOIN _s222_h11_lookup ev ON ev.edition_slug='canon' AND ev.book_slug=th.anchor_book AND ev.chapter_number=th.anchor_chapter AND ev.verse_number=th.anchor_verse_end
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    -- hebrews-11-faith-the-substance-of-things-hoped-for-the-worlds-framed-genesis-1
+    ('hebrews-11-faith-the-substance-of-things-hoped-for-the-worlds-framed-genesis-1', 'canon','hebrews',11,3, 'canon','genesis',1,1, 1, E'*In the beginning Elohim (God) created the heaven and the earth* (Genesis 1:1) — the worlds *framed by the word of Elohim* (Hebrews 11:3), the first unseen made seen.'),
+    ('hebrews-11-faith-the-substance-of-things-hoped-for-the-worlds-framed-genesis-1', 'canon','hebrews',11,3, 'canon','genesis',1,3, 2, E'*Let there be light: and there was light* (Genesis 1:3) — Elohim speaks and the unseen becomes evidence, the pattern faith lays hold of (Hebrews 11:1,3).'),
+    -- hebrews-11-abel-a-more-excellent-sacrifice-genesis-4
+    ('hebrews-11-abel-a-more-excellent-sacrifice-genesis-4', 'canon','hebrews',11,4, 'canon','genesis',4,4, 1, E'*Yahuah (LORD) had respect unto Abel and to his offering* (Genesis 4:4) — the respect is the *witness that he was righteous* (Hebrews 11:4).'),
+    ('hebrews-11-abel-a-more-excellent-sacrifice-genesis-4', 'canon','hebrews',11,4, 'canon','genesis',4,10, 2, E'*The voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10) — the dead man who *yet speaketh* (Hebrews 11:4).'),
+    ('hebrews-11-abel-a-more-excellent-sacrifice-genesis-4', 'canon','hebrews',11,4, 'jubilees','jubilees',4,2, 3, E'*Elohim (God) accepted the sacrifice of Abel, and did not accept the offering of Cain* (Jubilees 4:2) — the *more excellent sacrifice* named plainly (Hebrews 11:4).'),
+    ('hebrews-11-abel-a-more-excellent-sacrifice-genesis-4', 'canon','hebrews',11,4, 'jubilees','jubilees',4,3, 4, E'*His blood cried from the ground to heaven* (Jubilees 4:3) — the slain witness still crying, *being dead yet speaketh* (Hebrews 11:4).'),
+    -- hebrews-11-enoch-translated-that-he-should-not-see-death-genesis-5
+    ('hebrews-11-enoch-translated-that-he-should-not-see-death-genesis-5', 'canon','hebrews',11,5, 'canon','genesis',5,24, 1, E'*And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24) — *translated that he should not see death* (Hebrews 11:5).'),
+    ('hebrews-11-enoch-translated-that-he-should-not-see-death-genesis-5', 'canon','hebrews',11,5, 'enoch','1-enoch',71,1, 2, E'*My spirit was carried off and it ascended into the heavens* (1 Enoch 71:1) — the taking shown from within, among *the holy sons of Elohim* (Hebrews 11:5).'),
+    ('hebrews-11-enoch-translated-that-he-should-not-see-death-genesis-5', 'canon','hebrews',11,5, 'enoch','1-enoch',71,5, 3, E'*He translated my spirit into the heaven of heavens* (1 Enoch 71:5) — the very word Hebrews uses, *translated* (Hebrews 11:5).'),
+    ('hebrews-11-enoch-translated-that-he-should-not-see-death-genesis-5', 'canon','hebrews',11,5, 'jubilees','jubilees',4,23, 4, E'*He was taken from amongst the children of men... in majesty and honour* (Jubilees 4:23) — the *was not found* of the Torah filled out (Hebrews 11:5).'),
+    ('hebrews-11-enoch-translated-that-he-should-not-see-death-genesis-5', 'canon','hebrews',11,5, 'apocrypha','ecclesiasticus',44,16, 5, E'*Enoch pleased Yahuah (God), and was translated* (Ecclesiasticus 44:16) — the same two words, *pleased* and *translated* (Hebrews 11:5).'),
+    ('hebrews-11-enoch-translated-that-he-should-not-see-death-genesis-5', 'canon','hebrews',11,6, 'canon','genesis',5,24, 6, E'*Enoch walked with Elohim (God)* (Genesis 5:24) — the proof that *without faith it is impossible to please him* (Hebrews 11:6).'),
+    -- hebrews-11-noah-warned-of-things-not-seen-prepared-an-ark-genesis-6
+    ('hebrews-11-noah-warned-of-things-not-seen-prepared-an-ark-genesis-6', 'canon','hebrews',11,7, 'canon','genesis',6,13, 1, E'*The end of all flesh is come before me* (Genesis 6:13) — the warning of *things not seen as yet* (Hebrews 11:7).'),
+    ('hebrews-11-noah-warned-of-things-not-seen-prepared-an-ark-genesis-6', 'canon','hebrews',11,7, 'canon','genesis',6,14, 2, E'*Make thee an ark of gopher wood* (Genesis 6:14) — the obedient action, the ark *prepared to the saving of his house* (Hebrews 11:7).'),
+    ('hebrews-11-noah-warned-of-things-not-seen-prepared-an-ark-genesis-6', 'canon','hebrews',11,7, 'canon','genesis',6,22, 3, E'*According to all that Elohim (God) commanded him, so did he* (Genesis 6:22) — the *righteousness which is by faith* (Hebrews 11:7).'),
+    ('hebrews-11-noah-warned-of-things-not-seen-prepared-an-ark-genesis-6', 'canon','hebrews',11,7, 'apocrypha','ecclesiasticus',44,17, 4, E'*Noah was found perfect and righteous... left as a remnant to the earth* (Ecclesiasticus 44:17) — the heir of righteousness preserved through the wrath (Hebrews 11:7).'),
+    -- hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22
+    ('hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22', 'canon','hebrews',11,8, 'canon','genesis',12,1, 1, E'*Get thee out of thy country... unto a land that I will shew thee* (Genesis 12:1) — Abraham *obeyed; and he went out, not knowing whither he went* (Hebrews 11:8).'),
+    ('hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22', 'canon','hebrews',11,11, 'canon','genesis',18,14, 2, E'*Is any thing too hard for Yahuah (LORD)?* (Genesis 18:14) — the promise Sarah *judged him faithful who had promised* (Hebrews 11:11).'),
+    ('hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22', 'canon','hebrews',11,11, 'canon','genesis',21,2, 3, E'*Sarah conceived, and bare Abraham a son in his old age, at the set time* (Genesis 21:2) — the faith vindicated, strength *to conceive seed* (Hebrews 11:11).'),
+    ('hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22', 'canon','hebrews',11,12, 'canon','genesis',15,5, 4, E'*Tell the stars, if thou be able to number them... So shall thy seed be* (Genesis 15:5) — the seed *as the stars of the sky in multitude* (Hebrews 11:12).'),
+    ('hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22', 'canon','hebrews',11,17, 'canon','genesis',22,2, 5, E'*Take now thy son, thine only son Isaac... and offer him* (Genesis 22:2) — the trial in which Abraham *offered up Isaac* (Hebrews 11:17).'),
+    ('hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22', 'canon','hebrews',11,18, 'canon','genesis',22,17, 6, E'*In blessing I will bless thee, and in multiplying I will multiply thy seed* (Genesis 22:17) — the oath behind *that in Isaac shall thy seed be called* (Hebrews 11:18).'),
+    ('hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22', 'canon','hebrews',11,17, 'apocrypha','ecclesiasticus',44,20, 7, E'*When he was proved, he was found faithful* (Ecclesiasticus 44:20) — Abraham *when he was tried* (Hebrews 11:17), faith that is faithfulness.'),
+    ('hebrews-11-abraham-looked-for-a-city-and-offered-isaac-genesis-12-22', 'canon','hebrews',11,12, 'apocrypha','ecclesiasticus',44,21, 8, E'*Exalt his seed as the stars* (Ecclesiasticus 44:21) — the oath behind the seed *so many as the stars of the sky* (Hebrews 11:12).'),
+    -- hebrews-11-the-patriarchs-blessing-and-the-bones-of-joseph-genesis-27-48-50
+    ('hebrews-11-the-patriarchs-blessing-and-the-bones-of-joseph-genesis-27-48-50', 'canon','hebrews',11,20, 'canon','genesis',27,27, 1, E'*The smell of my son is as the smell of a field which Yahuah (LORD) hath blessed* (Genesis 27:27) — Isaac *blessed Jacob and Esau concerning things to come* (Hebrews 11:20).'),
+    ('hebrews-11-the-patriarchs-blessing-and-the-bones-of-joseph-genesis-27-48-50', 'canon','hebrews',11,21, 'canon','genesis',48,15, 2, E'*Elohim (God), before whom my fathers Abraham and Isaac did walk* (Genesis 48:15) — the dying Jacob *blessed both the sons of Joseph* (Hebrews 11:21).'),
+    ('hebrews-11-the-patriarchs-blessing-and-the-bones-of-joseph-genesis-27-48-50', 'canon','hebrews',11,21, 'canon','genesis',48,16, 3, E'*Let my name be named on them, and the name of my fathers Abraham and Isaac* (Genesis 48:16) — the covenant set on the lads by faith (Hebrews 11:21).'),
+    ('hebrews-11-the-patriarchs-blessing-and-the-bones-of-joseph-genesis-27-48-50', 'canon','hebrews',11,22, 'canon','genesis',50,24, 4, E'*Elohim (God) will surely visit you, and bring you out of this land* (Genesis 50:24) — Joseph''s *mention of the departing of the children of Yashar''el* (Hebrews 11:22).'),
+    ('hebrews-11-the-patriarchs-blessing-and-the-bones-of-joseph-genesis-27-48-50', 'canon','hebrews',11,22, 'canon','genesis',50,25, 5, E'*Ye shall carry up my bones from hence* (Genesis 50:25) — the *commandment concerning his bones* (Hebrews 11:22), faith staking his burial on the oath.'),
+    -- hebrews-11-moses-the-reproach-of-messiah-the-passover-jericho-and-rahab-exodus-2-joshua-2-6
+    ('hebrews-11-moses-the-reproach-of-messiah-the-passover-jericho-and-rahab-exodus-2-joshua-2-6', 'canon','hebrews',11,23, 'canon','exodus',2,2, 1, E'*She hid him three months* (Exodus 2:2) — Moses *hid three months of his parents... not afraid of the king''s commandment* (Hebrews 11:23).'),
+    ('hebrews-11-moses-the-reproach-of-messiah-the-passover-jericho-and-rahab-exodus-2-joshua-2-6', 'canon','hebrews',11,24, 'canon','exodus',2,11, 2, E'*He went out unto his brethren, and looked on their burdens* (Exodus 2:11) — Moses *refused to be called the son of Pharaoh''s daughter* (Hebrews 11:24).'),
+    ('hebrews-11-moses-the-reproach-of-messiah-the-passover-jericho-and-rahab-exodus-2-joshua-2-6', 'canon','hebrews',11,29, 'canon','exodus',14,22, 3, E'*The waters were a wall unto them on their right hand, and on their left* (Exodus 14:22) — they *passed through the Red sea as by dry land* (Hebrews 11:29).'),
+    ('hebrews-11-moses-the-reproach-of-messiah-the-passover-jericho-and-rahab-exodus-2-joshua-2-6', 'canon','hebrews',11,30, 'canon','joshua',6,20, 4, E'*The wall fell down flat* (Joshua 6:20) — *the walls of Jericho fell down, after they were compassed about seven days* (Hebrews 11:30).'),
+    ('hebrews-11-moses-the-reproach-of-messiah-the-passover-jericho-and-rahab-exodus-2-joshua-2-6', 'canon','hebrews',11,31, 'canon','joshua',2,11, 5, E'*Yahuah Elohaychem (the LORD your God), he is Elohim (God) in heaven above, and in earth beneath* (Joshua 2:11) — Rahab''s faith while the city *believed not* (Hebrews 11:31).'),
+    ('hebrews-11-moses-the-reproach-of-messiah-the-passover-jericho-and-rahab-exodus-2-joshua-2-6', 'canon','hebrews',11,31, 'canon','joshua',6,25, 6, E'*Joshua saved Rahab the harlot alive... she dwelleth in Yashar''el (Israel) even unto this day* (Joshua 6:25) — she *perished not with them that believed not* (Hebrews 11:31).'),
+    -- hebrews-11-stopped-the-mouths-of-lions-and-quenched-the-violence-of-fire-daniel-3-6
+    ('hebrews-11-stopped-the-mouths-of-lions-and-quenched-the-violence-of-fire-daniel-3-6', 'canon','hebrews',11,33, 'canon','daniel',6,22, 1, E'*My Elohim (God) hath sent his angel, and hath shut the lions'' mouths* (Daniel 6:22) — through faith they *stopped the mouths of lions* (Hebrews 11:33).'),
+    ('hebrews-11-stopped-the-mouths-of-lions-and-quenched-the-violence-of-fire-daniel-3-6', 'canon','hebrews',11,34, 'canon','daniel',3,27, 2, E'*The fire had no power, nor was an hair of their head singed* (Daniel 3:27) — they *quenched the violence of fire* (Hebrews 11:34).'),
+    ('hebrews-11-stopped-the-mouths-of-lions-and-quenched-the-violence-of-fire-daniel-3-6', 'canon','hebrews',11,35, 'canon','1-kings',17,22, 3, E'*The soul of the child came into him again, and he revived* (1 Kings 17:22) — *women received their dead raised to life again* (Hebrews 11:35).'),
+    ('hebrews-11-stopped-the-mouths-of-lions-and-quenched-the-violence-of-fire-daniel-3-6', 'canon','hebrews',11,35, 'canon','2-kings',4,35, 4, E'*The child sneezed seven times, and the child opened his eyes* (2 Kings 4:35) — the Shunammite''s dead son raised (Hebrews 11:35).'),
+    -- hebrews-11-tortured-for-a-better-resurrection-the-mother-and-seven-sons-2-maccabees
+    ('hebrews-11-tortured-for-a-better-resurrection-the-mother-and-seven-sons-2-maccabees', 'canon','hebrews',11,35, 'apocrypha','2-maccabees',7,9, 1, E'*The King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9) — the *better resurrection* chosen over deliverance (Hebrews 11:35).'),
+    ('hebrews-11-tortured-for-a-better-resurrection-the-mother-and-seven-sons-2-maccabees', 'canon','hebrews',11,35, 'apocrypha','2-maccabees',7,11, 2, E'*From him I hope to receive them again* (2 Maccabees 7:11) — the torn body surrendered in the hope of being raised whole (Hebrews 11:35).'),
+    ('hebrews-11-tortured-for-a-better-resurrection-the-mother-and-seven-sons-2-maccabees', 'canon','hebrews',11,35, 'apocrypha','2-maccabees',7,14, 3, E'*Raised up again by him: as for you, you shall have no resurrection to life* (2 Maccabees 7:14) — the two resurrections named, the *better* one looked for (Hebrews 11:35).'),
+    ('hebrews-11-tortured-for-a-better-resurrection-the-mother-and-seven-sons-2-maccabees', 'canon','hebrews',11,35, 'apocrypha','2-maccabees',7,23, 4, E'*The Creator of the world... will also of his own mercy give you breath and life again* (2 Maccabees 7:23) — the mother reasons from creation to resurrection (Hebrews 11:35).'),
+    ('hebrews-11-tortured-for-a-better-resurrection-the-mother-and-seven-sons-2-maccabees', 'canon','hebrews',11,35, 'apocrypha','2-maccabees',7,29, 5, E'*Take your death that I may receive you again in mercy with your brothers* (2 Maccabees 7:29) — the reunion past the grave, *not accepting deliverance* (Hebrews 11:35).')
+  ) AS m(thread_slug, src_edition, src_slug, src_ch, src_v, tgt_edition, tgt_slug, tgt_ch, tgt_v, sort_order, member_note)
+  JOIN cross_reference_threads t ON t.slug = m.thread_slug
+  JOIN _s222_h11_lookup sv ON sv.edition_slug=m.src_edition AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s222_h11_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_hebrews_12.sql (S222 Hebrews 12) -----
+-- =====================================================================
+-- S222 minion — HEBREWS 12 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: HEBREWS 12.  Tag: h12 (temp view _s222_h12_lookup).  Sort band: 7980, step 1 (<=7986).
+-- Source is ALWAYS the canon Hebrews verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Hebrews 12 sets the run of the race surrounded by the cloud of witnesses
+-- (ch.11) against the terror of approach under the old mediation and the access opened in
+-- Messiah. The Sinai/Zion contrast is NOT Sinai or the Torah denigrated as evil — Sinai's
+-- holiness is real, and the chapter QUOTES Deuteronomy approvingly at the close (*our Elohim is
+-- a consuming fire*, 12:29 / Deuteronomy 4:24). The fire that burned on the mount is the same
+-- fire that guards the holiness of the unshakable kingdom; what changed is the mediation by
+-- which one approaches it. The chastening is the Father dealing with sons (Proverbs 3:11-12,
+-- quoted in full at 12:5-6); the warnings (Esau, the root of bitterness, refuse not him that
+-- speaketh) all press toward enduring obedience, not licence.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-3   cloud of witnesses / looking unto Yahusha author and finisher / set down at the right hand
+--           Tanakh: Psalm 110:1 (sit at my right hand)  Extras: none warranted (the witness-cloud is Hebrews 11 internal; extras carried there)  NT: none added (the witnesses are ch.11, same hand)
+--   v.4-11  the chastening of sons — whom Yahuah loveth he chasteneth
+--           Tanakh: Proverbs 3:11 + 3:12 (quoted in full at 12:5-6)  Extras: none warranted  NT: none warranted
+--   v.12-13 lift up the hands which hang down / make straight paths for your feet
+--           Tanakh: Isaiah 35:3 (strengthen the weak hands, confirm the feeble knees), Proverbs 4:26 (ponder the path of thy feet)  Extras: none warranted  NT: none warranted
+--   v.14-15 follow peace and holiness / lest any root of bitterness springing up
+--           Tanakh: Deuteronomy 29:18 (a root that beareth gall and wormwood)  Extras: none warranted  NT: none warranted
+--   v.16-17 Esau who for one morsel of meat sold his birthright / found no place of repentance
+--           Tanakh: Genesis 25:33 + 25:34 (sold and despised his birthright), Genesis 27:34 + 27:38 (the bitter cry, no blessing left)  Extras: none warranted  NT: none warranted
+--   v.18-24 the mount that burned vs Mount Sion / the blood of sprinkling better than Abel
+--           Tanakh: Exodus 19:12 + 19:13 + 19:18 (the bounded burning mount), Deuteronomy 9:19 (I exceedingly fear), Genesis 4:10 (the blood crying from the ground)  Extras: none warranted  NT: none warranted
+--   v.25-29 Yet once more I shake heaven / the unshakable kingdom / a consuming fire
+--           Tanakh: Haggai 2:6 (yet once, I will shake the heavens), Deuteronomy 4:24 (the LORD thy God is a consuming fire)  Extras: none warranted  NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   7980 hebrews-12-looking-unto-yahusha-set-down-at-the-right-hand-psalm-110          (Tanakh)
+--   7981 hebrews-12-whom-yahuah-loveth-he-chasteneth-the-sons-corrected-proverbs-3     (Tanakh)
+--   7982 hebrews-12-lift-up-the-hands-which-hang-down-make-straight-paths-isaiah-35     (Tanakh)
+--   7983 hebrews-12-lest-any-root-of-bitterness-springing-up-deuteronomy-29            (Tanakh)
+--   7984 hebrews-12-esau-who-sold-his-birthright-for-one-morsel-genesis-25-27           (Tanakh)
+--   7985 hebrews-12-the-mount-that-burned-and-the-blood-better-than-abel-exodus-19      (Tanakh)
+--   7986 hebrews-12-yet-once-more-i-shake-and-our-elohim-a-consuming-fire-haggai-2      (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s222_h12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: hebrews-12-looking-unto-yahusha-set-down-at-the-right-hand-psalm-110
+  ('canon', 'hebrews', 12, 2, 'canon', 'psalms', 110, 1, 'free', E'*Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.* (Psalm 110:1). The runner is told to look away to the goal: *Looking unto Yahusha (Jesus) the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of Elohim (God)* (Hebrews 12:2). The enthronement at the close of his endurance is the very seat David saw — the Formed bidden by Yahuah (LORD) to *Sit thou at my right hand.* He ran the race first, despised the shame, and sat down at the right hand; the cloud of witnesses and the runners behind him follow the one who has already finished and is enthroned.'),
+  -- thread: hebrews-12-whom-yahuah-loveth-he-chasteneth-the-sons-corrected-proverbs-3
+  ('canon', 'hebrews', 12, 5, 'canon', 'proverbs', 3, 11, 'free', E'*My son, despise not the chastening of Yahuah (LORD); neither be weary of his correction:* (Proverbs 3:11). The exhortation Hebrews says they had forgotten is this proverb, quoted nearly word for word: *My son, despise not thou the chastening of Yahuah (Lord), nor faint when thou art rebuked of him* (Hebrews 12:5). The wisdom spoken to a son in the proverbs is read as the Father''s living word to the assembly — the chastening is not wrath but fatherly correction, not to be despised and not to be fainted under.'),
+  ('canon', 'hebrews', 12, 6, 'canon', 'proverbs', 3, 12, 'free', E'*For whom Yahuah (LORD) loveth he correcteth; even as a father the son in whom he delighteth.* (Proverbs 3:12). *For whom Yahuah (Lord) loveth he chasteneth, and scourgeth every son whom he receiveth* (Hebrews 12:6). The proverb supplies the very ground of the argument that follows — *what son is he whom the father chasteneth not?* (Hebrews 12:7). Correction is the mark of a received son, the token of the Father''s delight, not of his rejection; the love and the chastening are one motion, *even as a father the son in whom he delighteth.*'),
+  -- thread: hebrews-12-lift-up-the-hands-which-hang-down-make-straight-paths-isaiah-35
+  ('canon', 'hebrews', 12, 12, 'canon', 'isaiah', 35, 3, 'free', E'*Strengthen ye the weak hands, and confirm the feeble knees.* (Isaiah 35:3). *Wherefore lift up the hands which hang down, and the feeble knees;* (Hebrews 12:12). Hebrews takes up the prophet''s charge almost in his own words. Isaiah spoke it to the fearful-hearted on the way of holiness, the highway home where *the ransomed of Yahuah (LORD) shall return … to Zion with songs and everlasting joy* (Isaiah 35:10) — and Hebrews sets it on the lips of the assembly that has come *unto mount Sion* (Hebrews 12:22). The drooping hands and feeble knees of the weary runner are lifted by the same word that strengthened the returning remnant.'),
+  ('canon', 'hebrews', 12, 13, 'canon', 'proverbs', 4, 26, 'free', E'*Ponder the path of thy feet, and let all thy ways be established.* (Proverbs 4:26). *And make straight paths for your feet, lest that which is lame be turned out of the way; but let it rather be healed* (Hebrews 12:13). The making of straight paths is the proverb''s counsel to weigh and steady the path of the feet, the chapter that promises *the path of the just is as the shining light, that shineth more and more unto the perfect day* (Proverbs 4:18). The runner straightens his way so the lame limb is healed rather than turned out — the established path of the wise, walked under correction toward the goal.'),
+  -- thread: hebrews-12-lest-any-root-of-bitterness-springing-up-deuteronomy-29
+  ('canon', 'hebrews', 12, 15, 'canon', 'deuteronomy', 29, 18, 'free', E'*Lest there should be among you man, or woman, or family, or tribe, whose heart turneth away this day from Yahuah Eloheinu (the LORD our God), to go and serve the gods of these nations; lest there should be among you a root that beareth gall and wormwood;* (Deuteronomy 29:18). *Looking diligently lest any man fail of the grace of Elohim (God); lest any root of bitterness springing up trouble you, and thereby many be defiled* (Hebrews 12:15). The warning of the root is Moses'' own, spoken as the people stood to enter the covenant: a heart turning away becomes *a root that beareth gall and wormwood* — and the one poisoned root defiles the many. Hebrews sets the covenant assembly the same watch, to look diligently lest such a root spring up among them.'),
+  -- thread: hebrews-12-esau-who-sold-his-birthright-for-one-morsel-genesis-25-27
+  ('canon', 'hebrews', 12, 16, 'canon', 'genesis', 25, 33, 'free', E'*And Jacob said, Swear to me this day; and he sware unto him: and he sold his birthright unto Jacob.* (Genesis 25:33). *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright* (Hebrews 12:16). The profane despiser is named from the narrative itself: Esau came faint from the field, and for a bowl of pottage *sold his birthright unto Jacob* under oath. The inheritance of the firstborn — the covenant line of Abraham and Isaac — was bartered for a single meal; this is the profanity Hebrews holds up as the warning.'),
+  ('canon', 'hebrews', 12, 16, 'canon', 'genesis', 25, 34, 'free', E'*Then Jacob gave Esau bread and pottage of lentiles; and he did eat and drink, and rose up, and went his way: thus Esau despised his birthright.* (Genesis 25:34). *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright* (Hebrews 12:16). The verdict of the narrative is the word Hebrews leans on: *thus Esau despised his birthright.* He ate and drank and went his way, counting the inheritance as nothing — the *one morsel of meat* of Hebrews is the *bread and pottage of lentiles* of the account. To despise the birthright is the profanity warned against in the running of the race.'),
+  ('canon', 'hebrews', 12, 17, 'canon', 'genesis', 27, 34, 'free', E'*And when Esau heard the words of his father, he cried with a great and exceeding bitter cry, and said unto his father, Bless me, even me also, O my father.* (Genesis 27:34). *For ye know how that afterward, when he would have inherited the blessing, he was rejected: for he found no place of repentance, though he sought it carefully with tears* (Hebrews 12:17). The tears Hebrews names are the *great and exceeding bitter cry* of Esau when the blessing had already gone to Jacob. He sought the blessing he had bartered away, but the thing was done; the bitter weeping could not undo the despising. What was sold for a morsel could not be wept back.'),
+  ('canon', 'hebrews', 12, 17, 'canon', 'genesis', 27, 38, 'free', E'*And Esau said unto his father, Hast thou but one blessing, my father? bless me, even me also, O my father. And Esau lifted up his voice, and wept.* (Genesis 27:38). *For ye know how that afterward, when he would have inherited the blessing, he was rejected: for he found no place of repentance, though he sought it carefully with tears* (Hebrews 12:17). Esau *lifted up his voice, and wept,* pleading *bless me, even me also* — but the blessing was spoken and would stand. Hebrews reads this as finding *no place of repentance:* the careful tears could not recover the inheritance the profane man had already despised and sold.'),
+  -- thread: hebrews-12-the-mount-that-burned-and-the-blood-better-than-abel-exodus-19
+  ('canon', 'hebrews', 12, 18, 'canon', 'exodus', 19, 18, 'free', E'*And mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly.* (Exodus 19:18). *For ye are not come unto the mount that might be touched, and that burned with fire, nor unto blackness, and darkness, and tempest* (Hebrews 12:18). The mount that *burned with fire* is Sinai, *altogether on a smoke, because Yahuah (LORD) descended upon it in fire.* The burning and the quaking were real and holy — Yahuah (LORD) himself came down upon it; Hebrews sets that terror of approach against the access now opened, not against the holiness of the mount.'),
+  ('canon', 'hebrews', 12, 20, 'canon', 'exodus', 19, 12, 'free', E'*And thou shalt set bounds unto the people round about, saying, Take heed to yourselves, that ye go not up into the mount, or touch the border of it: whosoever toucheth the mount shall be surely put to death:* (Exodus 19:12). *(For they could not endure that which was commanded, And if so much as a beast touch the mountain, it shall be stoned, or thrust through with a dart:* (Hebrews 12:20). The commandment they could not endure is this charge to set bounds: *whosoever toucheth the mount shall be surely put to death.* The fence around the burning mount marked how unapproachable the holy fire was under that mediation — the very weight Hebrews recalls to magnify the nearness now given.'),
+  ('canon', 'hebrews', 12, 20, 'canon', 'exodus', 19, 13, 'free', E'*There shall not an hand touch it, but he shall surely be stoned, or shot through; whether it be beast or man, it shall not live: when the trumpet soundeth long, they shall come up to the mount.* (Exodus 19:13). *(For they could not endure that which was commanded, And if so much as a beast touch the mountain, it shall be stoned, or thrust through with a dart:* (Hebrews 12:20). Hebrews quotes the charge closely — *if so much as a beast touch the mountain, it shall be stoned, or thrust through* — straight from the command that *whether it be beast or man, it shall not live.* Even the brute that strayed across the border died; such was the guarded holiness of the mount that burned.'),
+  ('canon', 'hebrews', 12, 21, 'canon', 'deuteronomy', 9, 19, 'free', E'*For I was afraid of the anger and hot displeasure, wherewith Yahuah (LORD) was wroth against you to destroy you. But Yahuah (LORD) hearkened unto me at that time also.* (Deuteronomy 9:19). *And so terrible was the sight, that Moses said, I exceedingly fear and quake:* (Hebrews 12:21). Even Moses, the mediator on the mount, confessed his dread: *I was afraid of the anger and hot displeasure* of Yahuah (LORD). Hebrews gathers that fear into a single line — *I exceedingly fear and quake* — to set the trembling of the old approach beside the joy of those now come unto mount Sion.'),
+  ('canon', 'hebrews', 12, 24, 'canon', 'genesis', 4, 10, 'free', E'*And he said, What hast thou done? the voice of thy brother''s blood crieth unto me from the ground.* (Genesis 4:10). *And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24). Abel''s blood *crieth unto me from the ground* — a cry for justice against the one who shed it. The blood of sprinkling speaks *better things:* not vengeance crying up from the earth, but the blood of the mediator that brings the worshipper near. The two bloods both speak; the better blood speaks reconciliation where Abel''s cried for recompense.'),
+  -- thread: hebrews-12-yet-once-more-i-shake-and-our-elohim-a-consuming-fire-haggai-2
+  ('canon', 'hebrews', 12, 26, 'canon', 'haggai', 2, 6, 'free', E'*For thus saith Yahuah Tseva''ot (LORD of hosts); Yet once, it is a little while, and I will shake the heavens, and the earth, and the sea, and the dry land;* (Haggai 2:6). *Whose voice then shook the earth: but now he hath promised, saying, Yet once more I shake not the earth only, but also heaven* (Hebrews 12:26). The promise Hebrews cites is Haggai''s — *Yet once … I will shake the heavens, and the earth.* The voice that once shook the earth at Sinai will shake heaven too, *the removing of those things that are shaken … that those things which cannot be shaken may remain* (Hebrews 12:27). What remains is the kingdom which cannot be moved.'),
+  ('canon', 'hebrews', 12, 29, 'canon', 'deuteronomy', 4, 24, 'free', E'*For Yahuah Elohayka (the LORD thy God) is a consuming fire, even a jealous Elohim (God).* (Deuteronomy 4:24). *For our Elohim (God) is a consuming fire* (Hebrews 12:29). Hebrews closes by quoting Moses straight: *Yahuah Elohayka (the LORD thy God) is a consuming fire.* The fire that burned on Sinai is not left behind as a discarded terror — it is named approvingly as the unchanged character of the Elohim (God) whose unshakable kingdom we receive. We serve *with reverence and godly fear* (Hebrews 12:28) precisely because our Elohim is still the consuming fire of the mount.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s222_h12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s222_h12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-12-looking-unto-yahusha-set-down-at-the-right-hand-psalm-110',
+       E'Looking unto Yahusha, set down at the right hand — Psalm 110',
+       E'The cloud of witnesses of chapter 11 surrounds the runner, and the charge is to *lay aside every weight, and the sin which doth so easily beset us, and let us run with patience the race that is set before us* (Hebrews 12:1). The eyes do not turn to the witnesses but past them to the goal: *Looking unto Yahusha (Jesus) the author and finisher of our faith; who for the joy that was set before him endured the cross, despising the shame, and is set down at the right hand of the throne of Elohim (God)* (Hebrews 12:2). The seat at the close of his race is the throne David saw: *Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1). He is the one who ran first and finished — the Formed who endured the cross and was bidden by Yahuah (LORD) to sit at the right hand. The runner behind him fixes his eyes on the one already enthroned, and so does not grow *wearied and faint in his mind* (Hebrews 12:3).',
+       sv.verse_id, ev.verse_id, 'free', 7980
+  FROM _s222_h12_lookup sv, _s222_h12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=12 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-12-whom-yahuah-loveth-he-chasteneth-the-sons-corrected-proverbs-3',
+       E'Whom Yahuah loveth he chasteneth — the sons corrected (Proverbs 3)',
+       E'Hebrews says the assembly had forgotten *the exhortation which speaketh unto you as unto children* (Hebrews 12:5), and then quotes it nearly word for word: *My son, despise not thou the chastening of Yahuah (Lord), nor faint when thou art rebuked of him: For whom Yahuah (Lord) loveth he chasteneth, and scourgeth every son whom he receiveth* (Hebrews 12:5-6). The exhortation is the proverb: *My son, despise not the chastening of Yahuah (LORD); neither be weary of his correction: For whom Yahuah (LORD) loveth he correcteth; even as a father the son in whom he delighteth* (Proverbs 3:11-12). The wisdom a father speaks to a son becomes the living word of the Father to the whole house. The argument turns on it: *If ye endure chastening, Elohim (God) dealeth with you as with sons; for what son is he whom the father chasteneth not?* (Hebrews 12:7). Correction is the token of a received son and the proof of the Father''s delight, not the sign of his wrath — and it *yieldeth the peaceable fruit of righteousness unto them which are exercised thereby* (Hebrews 12:11).',
+       sv.verse_id, ev.verse_id, 'free', 7981
+  FROM _s222_h12_lookup sv, _s222_h12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=12 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-12-lift-up-the-hands-which-hang-down-make-straight-paths-isaiah-35',
+       E'Lift up the hands which hang down, make straight paths — Isaiah 35',
+       E'The weary runner is roused with the prophet''s own words: *Wherefore lift up the hands which hang down, and the feeble knees; And make straight paths for your feet, lest that which is lame be turned out of the way; but let it rather be healed* (Hebrews 12:12-13). Isaiah had spoken the charge to the fearful-hearted on the highway home: *Strengthen ye the weak hands, and confirm the feeble knees* (Isaiah 35:3) — the way of holiness on which *the ransomed of Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads* (Isaiah 35:10). And the making of straight paths is the counsel of the wise: *Ponder the path of thy feet, and let all thy ways be established* (Proverbs 4:26), the chapter whose just man walks the path that *is as the shining light, that shineth more and more unto the perfect day* (Proverbs 4:18). The drooping hands are lifted, the feeble knees confirmed, the path made straight — so the lame limb is healed rather than turned out, and the runner comes with the returning remnant unto mount Sion.',
+       sv.verse_id, ev.verse_id, 'free', 7982
+  FROM _s222_h12_lookup sv, _s222_h12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=12 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-12-lest-any-root-of-bitterness-springing-up-deuteronomy-29',
+       E'Lest any root of bitterness springing up — Deuteronomy 29',
+       E'The charge to *Follow peace with all men, and holiness, without which no man shall see Yahuah (Lord)* (Hebrews 12:14) carries a watch against one poisoned root: *Looking diligently lest any man fail of the grace of Elohim (God); lest any root of bitterness springing up trouble you, and thereby many be defiled* (Hebrews 12:15). The image is Moses'', spoken as Yashar''el (Israel) stood to enter the covenant: the warning *lest there should be among you man, or woman, or family, or tribe, whose heart turneth away this day from Yahuah Eloheinu (the LORD our God), to go and serve the gods of these nations; lest there should be among you a root that beareth gall and wormwood* (Deuteronomy 29:18). A heart turned away from the covenant becomes a bitter root, and the one root defiles the many. Hebrews sets the same watch on the assembly that has come unto mount Sion — to look diligently lest such a root spring up and trouble the whole.',
+       sv.verse_id, ev.verse_id, 'free', 7983
+  FROM _s222_h12_lookup sv, _s222_h12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=12 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-12-esau-who-sold-his-birthright-for-one-morsel-genesis-25-27',
+       E'Esau who sold his birthright for one morsel — Genesis 25 and 27',
+       E'The warning against the profane is named from the patriarchal account: *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright* (Hebrews 12:16). Esau came faint from the field, and *Jacob said, Swear to me this day; and he sware unto him: and he sold his birthright unto Jacob* (Genesis 25:33). The verdict of the narrative is the word Hebrews leans on: *Then Jacob gave Esau bread and pottage of lentiles; and he did eat and drink, and rose up, and went his way: thus Esau despised his birthright* (Genesis 25:34). The inheritance of the firstborn — the covenant line of Abraham and Isaac — was counted as nothing and bartered for a single meal. And the end of it was bitter: *For ye know how that afterward, when he would have inherited the blessing, he was rejected: for he found no place of repentance, though he sought it carefully with tears* (Hebrews 12:17). When the blessing had gone to Jacob, *Esau heard the words of his father, he cried with a great and exceeding bitter cry* (Genesis 27:34), and *lifted up his voice, and wept* (Genesis 27:38) — but the thing was done and would stand. The careful tears could not weep back what the profane man had already despised and sold. This is the warning held over the runner: do not, for a present appetite, despise the inheritance.',
+       sv.verse_id, ev.verse_id, 'free', 7984
+  FROM _s222_h12_lookup sv, _s222_h12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=12 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-12-the-mount-that-burned-and-the-blood-better-than-abel-exodus-19',
+       E'The mount that burned and the blood better than Abel — Exodus 19, Genesis 4',
+       E'Hebrews sets the terror of the old approach against the access now opened: *For ye are not come unto the mount that might be touched, and that burned with fire, nor unto blackness, and darkness, and tempest* (Hebrews 12:18). That mount is Sinai, *altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly* (Exodus 19:18). The bounds set around it marked how unapproachable the holy fire was: *Take heed to yourselves, that ye go not up into the mount, or touch the border of it: whosoever toucheth the mount shall be surely put to death* (Exodus 19:12) — *whether it be beast or man, it shall not live* (Exodus 19:13), which Hebrews echoes: *if so much as a beast touch the mountain, it shall be stoned, or thrust through with a dart* (Hebrews 12:20). Even Moses the mediator trembled: *I was afraid of the anger and hot displeasure, wherewith Yahuah (LORD) was wroth* (Deuteronomy 9:19), gathered into the one line *I exceedingly fear and quake* (Hebrews 12:21). The burning and the quaking were real and holy — Yahuah (LORD) himself came down upon the mount; what Hebrews contrasts is the mediation, not the holiness. For now *ye are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly Jerusalem* (Hebrews 12:22), *and to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24). Abel''s blood *crieth unto me from the ground* (Genesis 4:10) for justice against the one who shed it; the blood of the mediator speaks better — not vengeance crying up from the earth, but reconciliation that brings the worshipper near.',
+       sv.verse_id, ev.verse_id, 'free', 7985
+  FROM _s222_h12_lookup sv, _s222_h12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=12 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-12-yet-once-more-i-shake-and-our-elohim-a-consuming-fire-haggai-2',
+       E'Yet once more I shake, and our Elohim a consuming fire — Haggai 2, Deuteronomy 4',
+       E'The same voice that thundered at the mount has not fallen silent: *See that ye refuse not him that speaketh … if we turn away from him that speaketh from heaven* (Hebrews 12:25). *Whose voice then shook the earth: but now he hath promised, saying, Yet once more I shake not the earth only, but also heaven* (Hebrews 12:26) — the promise of Haggai: *Yet once, it is a little while, and I will shake the heavens, and the earth, and the sea, and the dry land* (Haggai 2:6). The shaking is *the removing of those things that are shaken, as of things that are made, that those things which cannot be shaken may remain* (Hebrews 12:27), and what remains is *a kingdom which cannot be moved* (Hebrews 12:28). The chapter closes by quoting Moses straight: *For our Elohim (God) is a consuming fire* (Hebrews 12:29) — *For Yahuah Elohayka (the LORD thy God) is a consuming fire, even a jealous Elohim (God)* (Deuteronomy 4:24). The fire that burned on Sinai is not a discarded terror but the unchanged character of the Elohim (God) whose unshakable kingdom we receive. We *serve Elohim (God) acceptably with reverence and godly fear* precisely because our Elohim is still the consuming fire of the mount.',
+       sv.verse_id, ev.verse_id, 'free', 7986
+  FROM _s222_h12_lookup sv, _s222_h12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=12 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: hebrews-12-looking-unto-yahusha-set-down-at-the-right-hand-psalm-110
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 110:1 — *Sit thou at my right hand, until I make thine enemies thy footstool* the seat at the close of his race is the throne David saw; Yahusha endured the cross and is *set down at the right hand* (Hebrews 12:2).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-looking-unto-yahusha-set-down-at-the-right-hand-psalm-110'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-12-whom-yahuah-loveth-he-chasteneth-the-sons-corrected-proverbs-3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 3:11 — *My son, despise not the chastening of Yahuah (LORD); neither be weary of his correction* the forgotten exhortation, quoted nearly word for word (Hebrews 12:5).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-whom-yahuah-loveth-he-chasteneth-the-sons-corrected-proverbs-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 3:12 — *whom Yahuah (LORD) loveth he correcteth; even as a father the son in whom he delighteth* correction is the token of a received son, the Father''s delight not his wrath (Hebrews 12:6).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-whom-yahuah-loveth-he-chasteneth-the-sons-corrected-proverbs-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-12-lift-up-the-hands-which-hang-down-make-straight-paths-isaiah-35
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 35:3 — *Strengthen ye the weak hands, and confirm the feeble knees* the prophet''s charge to the fearful on the way home, taken up for the weary runner (Hebrews 12:12).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-lift-up-the-hands-which-hang-down-make-straight-paths-isaiah-35'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 4:26 — *Ponder the path of thy feet, and let all thy ways be established* the making of straight paths is the wise man''s established way, so the lame is healed (Hebrews 12:13).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-lift-up-the-hands-which-hang-down-make-straight-paths-isaiah-35'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=4 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-12-lest-any-root-of-bitterness-springing-up-deuteronomy-29
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 29:18 — *lest there should be among you a root that beareth gall and wormwood* a heart turned from the covenant becomes a bitter root that defiles the many (Hebrews 12:15).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-lest-any-root-of-bitterness-springing-up-deuteronomy-29'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-12-esau-who-sold-his-birthright-for-one-morsel-genesis-25-27
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:33 — *he sware unto him: and he sold his birthright unto Jacob* the inheritance of the firstborn bartered under oath for a single meal (Hebrews 12:16).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-esau-who-sold-his-birthright-for-one-morsel-genesis-25-27'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:34 — *he did eat and drink, and rose up, and went his way: thus Esau despised his birthright* the verdict of the narrative Hebrews leans on — he counted the inheritance as nothing (Hebrews 12:16).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-esau-who-sold-his-birthright-for-one-morsel-genesis-25-27'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 27:34 — *he cried with a great and exceeding bitter cry* the tears Hebrews names — sought the blessing already given to Jacob (Hebrews 12:17).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-esau-who-sold-his-birthright-for-one-morsel-genesis-25-27'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=27 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 27:38 — *Esau lifted up his voice, and wept* the careful tears could not recover the inheritance the profane man had despised and sold — no place of repentance (Hebrews 12:17).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-esau-who-sold-his-birthright-for-one-morsel-genesis-25-27'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=27 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-12-the-mount-that-burned-and-the-blood-better-than-abel-exodus-19
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 19:18 — *mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire* the mount that *burned with fire* — real and holy, Yahuah himself came down (Hebrews 12:18).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-the-mount-that-burned-and-the-blood-better-than-abel-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 19:12 — *whosoever toucheth the mount shall be surely put to death* the commandment they could not endure; the fence marked the unapproachable holy fire (Hebrews 12:20).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-the-mount-that-burned-and-the-blood-better-than-abel-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 19:13 — *whether it be beast or man, it shall not live* Hebrews quotes it closely: *if so much as a beast touch the mountain, it shall be stoned, or thrust through* (Hebrews 12:20).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-the-mount-that-burned-and-the-blood-better-than-abel-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 9:19 — *I was afraid of the anger and hot displeasure, wherewith Yahuah (LORD) was wroth* even Moses the mediator trembled; Hebrews gathers it into *I exceedingly fear and quake* (Hebrews 12:21).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-the-mount-that-burned-and-the-blood-better-than-abel-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=9 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Genesis 4:10 — *the voice of thy brother''s blood crieth unto me from the ground* Abel''s blood cries for justice; the blood of sprinkling speaks better — reconciliation, not vengeance (Hebrews 12:24).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-the-mount-that-burned-and-the-blood-better-than-abel-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-12-yet-once-more-i-shake-and-our-elohim-a-consuming-fire-haggai-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Haggai 2:6 — *Yet once, it is a little while, and I will shake the heavens, and the earth* the promise Hebrews cites: the voice that shook the earth will shake heaven, removing the shakable (Hebrews 12:26).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-yet-once-more-i-shake-and-our-elohim-a-consuming-fire-haggai-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='haggai' AND tv.chapter_number=2 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 4:24 — *Yahuah Elohayka (the LORD thy God) is a consuming fire, even a jealous Elohim (God)* quoted approvingly: the fire of Sinai is the unchanged character of the Elohim of the unshakable kingdom (Hebrews 12:29).'
+  FROM cross_reference_threads t, cross_references x, _s222_h12_lookup sv, _s222_h12_lookup tv
+ WHERE t.slug='hebrews-12-yet-once-more-i-shake-and-our-elohim-a-consuming-fire-haggai-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=12 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_hebrews_13.sql (S222 Hebrews 13) -----
+-- =====================================================================
+-- S222 minion — HEBREWS 13 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: HEBREWS 13 (the closing exhortations).  Tag: h13 (temp view _s222_h13_lookup).
+-- Sort band: floor 7987, ceiling 7993, step 1 (sequential 7987..7991 used).
+-- Source is ALWAYS the canon Hebrews verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: chapter 13 is the writer's closing string of exhortations, and each is
+-- rooted in the Tanakh he has argued from all along. Brotherly love, hospitality, the marriage
+-- bed, contentment, courage, praise — none of these is a new ethic; each is the old covenant
+-- instruction now carried in a heart established by grace. WATCHPOINT v.9: *the heart be
+-- established with grace; not with meats, which have not profited them that have been occupied
+-- therein* — this is the false ascetic / sacrificial food-rules of the gainsayers (the
+-- ceremonial-meat scruple that *cannot* establish the heart), NOT the clean-food Torah; Hebrews
+-- never abolishes the dietary law. v.10-13: *we have an altar … the bodies of those beasts …
+-- are burned without the camp* is the Day-of-Atonement pattern (Leviticus 16:27) read forward to
+-- Yahusha who *suffered without the gate* — the sacrificial administration fulfilled in him, the
+-- pattern honoured, not erased. v.15-16 the sacrifice of praise is the prophets' own *calves of
+-- our lips* (Hosea 14:2). v.20 the *great shepherd … the blood of the everlasting covenant* is the
+-- Shepherd brought up from the sea (Isaiah 63:11), the blood of the covenant (Zechariah 9:11), the
+-- everlasting covenant of peace (Ezekiel 37:26). And v.8 holds the Christology: *Yahusha
+-- HaMashiach (Jesus Christ) the same yesterday, and to day, and for ever* — the Formed who does
+-- not change, the I-AM who took flesh and has a Father.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1     brotherly love continue
+--           Tanakh: none added (carried in prose of the hospitality thread)  Extras: none warranted  NT: none warranted
+--   v.2     entertain strangers / entertained angels unawares
+--           Tanakh: Genesis 18:1-2 (Abraham at Mamre), Genesis 19:1-2 (Lot at the gate)  Extras: none warranted (Jasher/Jubilees parallels carry editorial noise; clean witness preferred)  NT: none warranted
+--   v.3     remember them in bonds
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted
+--   v.4     marriage honourable, the bed undefiled, Elohim will judge
+--           Tanakh: none warranted (no single load-bearing quote)  Extras: none warranted  NT: none warranted
+--   v.5-6   I will never leave thee / Yahuah is my helper, I will not fear
+--           Tanakh: Deuteronomy 31:6, Joshua 1:5 (he will not fail nor forsake), Psalm 118:6 (Yahuah is on my side, I will not fear)  Extras: none warranted  NT: none warranted
+--   v.7     remember them which have the rule, whose faith follow
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted
+--   v.8     Yahusha the same yesterday and to day and for ever
+--           Tanakh: none added (the unchanging-One; carried in prose of the shepherd thread)  Extras: none warranted  NT: none warranted
+--   v.9     heart established with grace, not with meats
+--           Tanakh: none warranted (WATCHPOINT — the false ascetic food-scruple, not the clean-food Torah)  Extras: none warranted  NT: none warranted
+--   v.10-13 we have an altar / burned without the camp / suffered without the gate / go forth unto him
+--           Tanakh: Leviticus 16:27 (the sin-offering carried forth and burned without the camp)  Extras: none warranted  NT: none warranted
+--   v.14    here have we no continuing city, we seek one to come
+--           Tanakh: none warranted (carried in prose of the without-the-camp thread)  Extras: none warranted  NT: none warranted
+--   v.15-16 sacrifice of praise, the fruit of our lips / do good and communicate
+--           Tanakh: Hosea 14:2 (calves of our lips), Psalm 50:14 (offer thanksgiving), Psalm 50:23 (whoso offereth praise glorifieth me)  Extras: none warranted  NT: none warranted
+--   v.17-19 obey them that have the rule / pray for us
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted
+--   v.20-21 the Elohim of peace, the great shepherd, the blood of the everlasting covenant
+--           Tanakh: Isaiah 63:11 (brought up from the sea with the shepherd), Zechariah 9:11 (by the blood of thy covenant), Ezekiel 37:26 (an everlasting covenant of peace)  Extras: none warranted  NT: none warranted
+--   v.22-25 closing salutation, Timothy, Italy, grace be with you
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   7987 hebrews-13-entertain-strangers-some-have-entertained-angels-genesis-18          (Tanakh)
+--   7988 hebrews-13-i-will-never-leave-thee-nor-forsake-thee-deuteronomy-31              (Tanakh)
+--   7989 hebrews-13-without-the-camp-bearing-his-reproach-leviticus-16                   (Tanakh)
+--   7990 hebrews-13-the-sacrifice-of-praise-the-fruit-of-our-lips-hosea-14              (Tanakh)
+--   7991 hebrews-13-the-great-shepherd-the-blood-of-the-everlasting-covenant-isaiah-63  (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s222_h13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: hebrews-13-entertain-strangers-some-have-entertained-angels-genesis-18
+  ('canon', 'hebrews', 13, 2, 'canon', 'genesis', 18, 1, 'free', E'*And Yahuah (LORD) appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day;* (Genesis 18:1). When the writer says *be not forgetful to entertain strangers: for thereby some have entertained angels unawares* (Hebrews 13:2), this is the scene he has in hand. Abraham sat in the tent door and Yahuah (LORD) himself appeared in the plains of Mamre — the Formed One, come as a traveller. The hospitality of the covenant is no small courtesy; it received the visitation of Yahuah and his messengers, unawares.'),
+  ('canon', 'hebrews', 13, 2, 'canon', 'genesis', 18, 2, 'free', E'*And he lift up his eyes and looked, and, lo, three men stood by him: and when he saw them, he ran to meet them from the tent door, and bowed himself toward the ground,* (Genesis 18:2). Abraham *ran to meet them* and *bowed himself toward the ground* — he did not yet know whom he served. *Some have entertained angels unawares* (Hebrews 13:2): the three who stood by Abraham were no ordinary wayfarers, and the welcome he gave the stranger was, all unknowing, a welcome given to heaven''s own.'),
+  ('canon', 'hebrews', 13, 2, 'canon', 'genesis', 19, 1, 'free', E'*And there came two angels to Sodom at even; and Lot sat in the gate of Sodom: and Lot seeing them rose up to meet them; and he bowed himself with his face toward the ground;* (Genesis 19:1). The two who turned from Mamre came on to Sodom, and Lot too *rose up to meet them* at the gate. *Be not forgetful to entertain strangers* (Hebrews 13:2): twice in one account the welcome of strangers proved to be the welcome of angels, and the open door of the righteous became the door of their deliverance.'),
+  -- thread: hebrews-13-i-will-never-leave-thee-nor-forsake-thee-deuteronomy-31
+  ('canon', 'hebrews', 13, 5, 'canon', 'deuteronomy', 31, 6, 'free', E'*Be strong and of a good courage, fear not, nor be afraid of them: for Yahuah Elohayka (the LORD thy God), he it is that doth go with thee; he will not fail thee, nor forsake thee.* (Deuteronomy 31:6). The writer grounds contentment on a promise older than the epistle: *be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5). It is the very word Moses spoke to all Yashar''el (Israel) at the edge of the land — *he will not fail thee, nor forsake thee.* The covetous heart grasps because it fears abandonment; the contented heart rests on the One who said he would never leave.'),
+  ('canon', 'hebrews', 13, 5, 'canon', 'joshua', 1, 5, 'free', E'*There shall not any man be able to stand before thee all the days of thy life: as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee.* (Joshua 1:5). The same pledge Moses gave the people, Yahuah (LORD) gave again to Joshua at the crossing: *I will not fail thee, nor forsake thee.* When Hebrews says *he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5), it draws on a word spoken and re-spoken across the generations — the abiding presence that frees the heart from covetous fear.'),
+  ('canon', 'hebrews', 13, 6, 'canon', 'psalms', 118, 6, 'free', E'*Yahuah (LORD) is on my side; I will not fear: what can man do unto me?* (Psalm 118:6). Because the promise stands, the writer draws the psalmist''s own conclusion: *so that we may boldly say, Yahuah (Lord) is my helper, and I will not fear what man shall do unto me* (Hebrews 13:6). The One who will never forsake is the One on my side; with him as helper, the fear of man falls away. The bold confession of Hebrews is the psalm sung forward.'),
+  -- thread: hebrews-13-without-the-camp-bearing-his-reproach-leviticus-16
+  ('canon', 'hebrews', 13, 11, 'canon', 'leviticus', 16, 27, 'free', E'*And the bullock for the sin offering, and the goat for the sin offering, whose blood was brought in to make atonement in the holy place, shall one carry forth without the camp; and they shall burn in the fire their skins, and their flesh, and their dung.* (Leviticus 16:27). The writer reads the Day of Atonement exactly: *the bodies of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp* (Hebrews 13:11). The blood went into the holy place; the bodies went outside to be consumed. This is the ordained pattern Yahuah (LORD) gave, and the writer does not discard it — he reads it forward to its fulfilment.'),
+  ('canon', 'hebrews', 13, 12, 'canon', 'leviticus', 16, 27, 'free', E'*And the bullock for the sin offering, and the goat for the sin offering, whose blood was brought in to make atonement in the holy place, shall one carry forth without the camp; and they shall burn in the fire their skins, and their flesh, and their dung.* (Leviticus 16:27). As the sin-offering was carried *without the camp,* so *Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12). The pattern is not abolished but fulfilled: the body offered outside, the blood that sanctifies — Yahusha is both the high priest and the offering the atonement-day rite foreshadowed.'),
+  -- thread: hebrews-13-the-sacrifice-of-praise-the-fruit-of-our-lips-hosea-14
+  ('canon', 'hebrews', 13, 15, 'canon', 'hosea', 14, 2, 'free', E'*Take with you words, and turn to Yahuah (LORD): say unto him, Take away all iniquity, and receive us graciously: so will we render the calves of our lips.* (Hosea 14:2). *By him therefore let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15). The fruit of the lips is the prophet''s *calves of our lips* — the offering of words and thanksgiving Hosea called the returning people to bring. The praise that ascends is the prophets'' own appointed sacrifice, now offered through the Mediator.'),
+  ('canon', 'hebrews', 13, 15, 'canon', 'psalms', 50, 14, 'free', E'*Offer unto Elohim (God) thanksgiving; and pay thy vows unto the El Elyon (most High):* (Psalm 50:14). The *sacrifice of praise … the fruit of our lips giving thanks to his name* (Hebrews 13:15) is the very offering the psalm sets above slain beasts: *offer unto Elohim (God) thanksgiving.* What pleases the Most High is not the blood of bulls but the thankful heart and the paid vow — the sacrifice Hebrews calls the people to offer continually.'),
+  ('canon', 'hebrews', 13, 16, 'canon', 'psalms', 50, 23, 'free', E'*Whoso offereth praise glorifieth me: and to him that ordereth his conversation aright will I shew the salvation of Elohim (God).* (Psalm 50:23). *But to do good and to communicate forget not: for with such sacrifices Elohim (God) is well pleased* (Hebrews 13:16). The psalm joins the two the writer joins: the praise that glorifies, and the ordered walk that does good. Such are the sacrifices that please — the lips that thank and the hands that share.'),
+  -- thread: hebrews-13-the-great-shepherd-the-blood-of-the-everlasting-covenant-isaiah-63
+  ('canon', 'hebrews', 13, 20, 'canon', 'isaiah', 63, 11, 'free', E'*Then he remembered the days of old, Moses, and his people, saying, Where is he that brought them up out of the sea with the shepherd of his flock? where is he that put his holy Spirit within him?* (Isaiah 63:11). *Now the Elohim (God) of peace, that brought again from the dead our Lord Yahusha (Lord Jesus), that great shepherd of the sheep* (Hebrews 13:20). The prophet asked after the One who *brought them up out of the sea with the shepherd of his flock;* the writer answers with the greater bringing-up — the Shepherd himself brought again from the dead. The Elohim of peace who raised the great shepherd is the same who once led the flock through the sea.'),
+  ('canon', 'hebrews', 13, 20, 'canon', 'zechariah', 9, 11, 'free', E'*As for thee also, by the blood of thy covenant I have sent forth thy prisoners out of the pit wherein is no water.* (Zechariah 9:11). The *great shepherd of the sheep* was brought again from the dead *through the blood of the everlasting covenant* (Hebrews 13:20). The prophet had named that blood: *by the blood of thy covenant I have sent forth thy prisoners out of the pit.* The covenant-blood that frees the prisoner from the waterless pit is the same blood by which the Shepherd was raised — deliverance and resurrection sealed in one covenant.'),
+  ('canon', 'hebrews', 13, 20, 'canon', 'ezekiel', 37, 26, 'free', E'*Moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore.* (Ezekiel 37:26). The *blood of the everlasting covenant* (Hebrews 13:20) is the blood of the covenant the prophet promised: *an everlasting covenant … a covenant of peace.* And it is the Elohim *of peace* who raises the Shepherd — the everlasting covenant of peace, sealed in his blood, the sanctuary set in the midst of the gathered flock for evermore.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s222_h13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s222_h13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-13-entertain-strangers-some-have-entertained-angels-genesis-18',
+       E'Entertain strangers — some have entertained angels unawares',
+       E'*Be not forgetful to entertain strangers: for thereby some have entertained angels unawares* (Hebrews 13:2). The writer is not coining a new courtesy; he is pointing the reader back to a scene every covenant child knew. *And Yahuah (LORD) appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day* (Genesis 18:1) — and *lo, three men stood by him: and when he saw them, he ran to meet them from the tent door, and bowed himself toward the ground* (Genesis 18:2). Abraham did not yet know whom he served; he ran, he bowed, he set bread before strangers in the heat of the day, and the strangers were Yahuah (LORD) and his messengers. The same wayfarers turned on to Sodom: *and there came two angels to Sodom at even; and Lot sat in the gate of Sodom: and Lot seeing them rose up to meet them; and he bowed himself with his face toward the ground* (Genesis 19:1), and the open door of the righteous became the door of his deliverance. Twice in one account the welcome of the stranger proved to be the welcome of angels. So *be not forgetful* — the brotherly love that *continue[s]* (Hebrews 13:1) opens its door not knowing whom it receives, and heaven itself has walked through such doors before.',
+       sv.verse_id, ev.verse_id, 'free', 7987
+  FROM _s222_h13_lookup sv, _s222_h13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=13 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-13-i-will-never-leave-thee-nor-forsake-thee-deuteronomy-31',
+       E'I will never leave thee, nor forsake thee — Yahuah is my helper',
+       E'The writer grounds contentment on a word older than the epistle. *Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5). That word was spoken by Moses to all Yashar''el (Israel) at the edge of the land: *be strong and of a good courage, fear not, nor be afraid of them: for Yahuah Elohayka (the LORD thy God), he it is that doth go with thee; he will not fail thee, nor forsake thee* (Deuteronomy 31:6) — and given again to Joshua at the crossing: *as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee* (Joshua 1:5). The covetous heart grasps because it fears abandonment; the contented heart rests on the One who pledged he would never leave. And because that promise stands, the bold confession follows, drawn straight from the psalm: *so that we may boldly say, Yahuah (Lord) is my helper, and I will not fear what man shall do unto me* (Hebrews 13:6) — *Yahuah (LORD) is on my side; I will not fear: what can man do unto me?* (Psalm 118:6). The One who will never forsake is the One on my side; with him as helper, the fear of man falls away.',
+       sv.verse_id, ev.verse_id, 'free', 7988
+  FROM _s222_h13_lookup sv, _s222_h13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=13 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-13-without-the-camp-bearing-his-reproach-leviticus-16',
+       E'Without the camp, bearing his reproach — the sin-offering burned outside',
+       E'*We have an altar, whereof they have no right to eat which serve the tabernacle* (Hebrews 13:10). The writer is reading the Day of Atonement, and he reads it exactly. *For the bodies of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp* (Hebrews 13:11) — which is precisely the ordinance: *the bullock for the sin offering, and the goat for the sin offering, whose blood was brought in to make atonement in the holy place, shall one carry forth without the camp; and they shall burn in the fire their skins, and their flesh, and their dung* (Leviticus 16:27). The blood went into the holy place; the body went outside to be consumed. This ordained pattern the writer does not discard — he reads it forward to its fulfilment: *wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12). The sin-offering carried outside the camp is the Messiah crucified outside the gate, both high priest and offering at once. And so the call: *let us go forth therefore unto him without the camp, bearing his reproach* (Hebrews 13:13), *for here have we no continuing city, but we seek one to come* (Hebrews 13:14). The shadow is not erased; it is filled full, and the people follow the Offering outside the gate.',
+       sv.verse_id, ev.verse_id, 'free', 7989
+  FROM _s222_h13_lookup sv, _s222_h13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=13 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-13-the-sacrifice-of-praise-the-fruit-of-our-lips-hosea-14',
+       E'The sacrifice of praise, the fruit of our lips — the calves of our lips',
+       E'*By him therefore let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15). The *fruit of our lips* is the prophet''s own phrase for the offering the returning people bring: *take with you words, and turn to Yahuah (LORD): say unto him, Take away all iniquity, and receive us graciously: so will we render the calves of our lips* (Hosea 14:2). And it is the offering the psalm sets above slain beasts: *offer unto Elohim (God) thanksgiving; and pay thy vows unto the El Elyon (most High)* (Psalm 50:14); *whoso offereth praise glorifieth me: and to him that ordereth his conversation aright will I shew the salvation of Elohim (God)* (Psalm 50:23). The psalm binds the two the writer binds — the lips that thank and the walk that does good: *but to do good and to communicate forget not: for with such sacrifices Elohim (God) is well pleased* (Hebrews 13:16). This is no new worship. The thankful heart, the paid vow, the ordered walk, the open hand — these were always the sacrifices that please, and now they ascend continually through the Mediator.',
+       sv.verse_id, ev.verse_id, 'free', 7990
+  FROM _s222_h13_lookup sv, _s222_h13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=13 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-13-the-great-shepherd-the-blood-of-the-everlasting-covenant-isaiah-63',
+       E'The great shepherd, the blood of the everlasting covenant',
+       E'*Now the Elohim (God) of peace, that brought again from the dead our Lord Yahusha (Lord Jesus), that great shepherd of the sheep, through the blood of the everlasting covenant* (Hebrews 13:20). Every clause of the benediction is the prophets'' own. The prophet had asked after the Shepherd led through the waters: *then he remembered the days of old, Moses, and his people, saying, Where is he that brought them up out of the sea with the shepherd of his flock? where is he that put his holy Spirit within him?* (Isaiah 63:11) — and the writer answers with the greater bringing-up, the Shepherd himself brought again from the dead. The covenant-blood was named by the prophet too: *as for thee also, by the blood of thy covenant I have sent forth thy prisoners out of the pit wherein is no water* (Zechariah 9:11) — the blood that frees the prisoner from the waterless pit is the blood by which the Shepherd was raised. And it is an *everlasting* covenant, as the prophet foretold: *moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore* (Ezekiel 37:26). The Elohim *of peace* raises the great shepherd by the blood of the everlasting covenant of peace — and the same Shepherd is *Yahusha HaMashiach (Jesus Christ) the same yesterday, and to day, and for ever* (Hebrews 13:8), the unchanging One who led the flock through the sea and was brought up again from the dead to lead it home.',
+       sv.verse_id, ev.verse_id, 'free', 7991
+  FROM _s222_h13_lookup sv, _s222_h13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=13 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: hebrews-13-entertain-strangers-some-have-entertained-angels-genesis-18
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 18:1 — *Yahuah (LORD) appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day* Abraham''s welcome of strangers received the visitation of Yahuah himself (Hebrews 13:2).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-entertain-strangers-some-have-entertained-angels-genesis-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 18:2 — *he ran to meet them from the tent door, and bowed himself toward the ground* he entertained angels unawares (Hebrews 13:2).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-entertain-strangers-some-have-entertained-angels-genesis-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 19:1 — *there came two angels to Sodom at even; and Lot sat in the gate of Sodom … and he bowed himself* the same strangers, the same welcome, the door of deliverance (Hebrews 13:2).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-entertain-strangers-some-have-entertained-angels-genesis-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-13-i-will-never-leave-thee-nor-forsake-thee-deuteronomy-31
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 31:6 — *he will not fail thee, nor forsake thee* Moses'' word to all Yashar''el (Israel) is the promise that frees the heart from covetous fear (Hebrews 13:5).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-i-will-never-leave-thee-nor-forsake-thee-deuteronomy-31'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 1:5 — *as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee* the same pledge re-spoken at the crossing (Hebrews 13:5).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-i-will-never-leave-thee-nor-forsake-thee-deuteronomy-31'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 118:6 — *Yahuah (LORD) is on my side; I will not fear: what can man do unto me?* the bold confession Hebrews sings forward (Hebrews 13:6).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-i-will-never-leave-thee-nor-forsake-thee-deuteronomy-31'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-13-without-the-camp-bearing-his-reproach-leviticus-16
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 16:27 — *whose blood was brought in to make atonement in the holy place, shall one carry forth without the camp* the Day-of-Atonement pattern the writer reads exactly (Hebrews 13:11).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-without-the-camp-bearing-his-reproach-leviticus-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=16 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 16:27 — *shall one carry forth without the camp* so Yahusha *suffered without the gate,* the offering carried outside fulfilled (Hebrews 13:12).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-without-the-camp-bearing-his-reproach-leviticus-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=16 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-13-the-sacrifice-of-praise-the-fruit-of-our-lips-hosea-14
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 14:2 — *so will we render the calves of our lips* the fruit of the lips is the prophet''s appointed offering of words and thanksgiving (Hebrews 13:15).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-the-sacrifice-of-praise-the-fruit-of-our-lips-hosea-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=14 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 50:14 — *offer unto Elohim (God) thanksgiving; and pay thy vows unto the El Elyon (most High)* the thank-offering set above slain beasts (Hebrews 13:15).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-the-sacrifice-of-praise-the-fruit-of-our-lips-hosea-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=50 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 50:23 — *whoso offereth praise glorifieth me: and to him that ordereth his conversation aright* the praise and the ordered walk Hebrews binds together (Hebrews 13:16).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-the-sacrifice-of-praise-the-fruit-of-our-lips-hosea-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=50 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-13-the-great-shepherd-the-blood-of-the-everlasting-covenant-isaiah-63
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 63:11 — *Where is he that brought them up out of the sea with the shepherd of his flock?* the Shepherd led through the waters, now brought again from the dead (Hebrews 13:20).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-the-great-shepherd-the-blood-of-the-everlasting-covenant-isaiah-63'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=63 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Zechariah 9:11 — *by the blood of thy covenant I have sent forth thy prisoners out of the pit* the covenant-blood by which the Shepherd was raised (Hebrews 13:20).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-the-great-shepherd-the-blood-of-the-everlasting-covenant-isaiah-63'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=9 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 37:26 — *it shall be an everlasting covenant with them … a covenant of peace* the everlasting covenant of peace the Elohim of peace seals in the Shepherd''s blood (Hebrews 13:20).'
+  FROM cross_reference_threads t, cross_references x, _s222_h13_lookup sv, _s222_h13_lookup tv
+ WHERE t.slug='hebrews-13-the-great-shepherd-the-blood-of-the-everlasting-covenant-isaiah-63'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=13 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session222 — Hebrews cross-references complete.'
