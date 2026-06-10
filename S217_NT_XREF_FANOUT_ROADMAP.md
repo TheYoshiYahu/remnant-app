@@ -54,7 +54,7 @@ in the sandbox).
 | Luke | 24 | ✅ | ✅ | ⬜ | NT-to-NT parity pending |
 | John | 21 | ✅ | ✅ | ✅ | **complete** (the model) |
 | **Acts** | 28 | ✅ | ✅ | ✅ | **complete** — 1–28 full library, 130 threads/428 members live |
-| Romans | 16 | ✅ (canon-only) | ⬜ | ⬜ | full-library build (complements existing canon) |
+| **Romans** | 16 | ✅ | ✅ | ✅ | **complete** — 1–16 full library, 91 threads/285 members live (S219, band 6000–6381). 9–11 ON BLESSING LIST. |
 | Galatians | 6 | ✅ (canon-only) | ⬜ | ⬜ | full-library build — HIGH voice-risk |
 | Revelation | 22 | ✅ (canon-only) | ⬜ | ⬜ | full-library build — kaph carve-outs |
 | 1 Corinthians | 16 | ⬜ | ⬜ | ⬜ | greenfield |
@@ -110,7 +110,7 @@ Acts 5000s).
 
 | Book | Band | Suggested minion ranges | # |
 |------|-----:|-------------------------|--:|
-| Romans (16) | 6000 | 1–3 · 4–5 · 6–8 · **9–11 (olive tree, RL #11 critical)** · 12–13 · 14–16 | 6 |
+| ~~Romans (16)~~ | 6000 | ✅ COMPLETE (S219) — 4 packs: 1–5 · 6–8 · **9–11 (olive tree, blessing list)** · 12–16. 91 threads/285 members live (band 6000–6381). | ✅ |
 | 1 Corinthians (16) | 6600 | 1–4 · 5–7 · 8–10 · 11–12 · 13–14 · 15–16 (resurrection) | 6 |
 | 2 Corinthians (13) | 7000 | 1–4 · 5–7 · 8–9 · 10–13 | 4 |
 | Galatians (6) | 7200 | **1–2 · 3–4 · 5–6** (HIGH risk — *The Galatians Lie* terrain; works-of-law, curse=Deut 28) | 3 |
