@@ -974,13 +974,16 @@ body {
   margin: 0;
   padding: 0.6rem 0.75rem;
   border-radius: 8px;
-  border: 1px solid color-mix(in srgb, #FCECAF 22%, transparent);
-  background: color-mix(in srgb, #645028 14%, transparent);
+  /* Techelet strip — the gold lives only in the ✦ accent glyph below, never
+     as the dominant tone of the menu (Yoshi S225b: less gold in the menus). */
+  border: 1px solid color-mix(in srgb, #93C0FF 24%, transparent);
+  border-left: 2px solid color-mix(in srgb, #93C0FF 55%, transparent);
+  background: color-mix(in srgb, #0A2D84 18%, transparent);
 }
 .cal-notes li {
   font-size: 0.78rem;
   line-height: 1.5;
-  color: #FFF8E1; /* exact: .chrome-metal-gold text */
+  color: #E6F1FF; /* exact: .chrome-metal-techelet text */
 }
 .cal-notes li::before { content: "✦ "; color: var(--cal-gold); }
 

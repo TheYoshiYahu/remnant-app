@@ -374,7 +374,7 @@ function ReckoningControls({ reck, setReck, notes }: ControlsProps) {
                 <Pill
                   key={c}
                   active={reck.criterion === c}
-                  register="gold"
+                  register="techelet"
                   onClick={() => set({ criterion: c })}
                 >
                   {c === "odeh" ? "Odeh (2004)" : "Yallop (1997)"}
@@ -392,7 +392,7 @@ function ReckoningControls({ reck, setReck, notes }: ControlsProps) {
                 <Pill
                   key={m}
                   active={reck.crescentMode === m}
-                  register="gold"
+                  register="techelet"
                   onClick={() => set({ crescentMode: m })}
                 >
                   {lbl}
@@ -578,7 +578,7 @@ function OrientationMenu({
               <Pill
                 key={f.key}
                 active={o.feast === f.key}
-                register="gold"
+                register="techelet"
                 onClick={() => setO({ ...o, feast: f.key })}
               >
                 {f.label}
