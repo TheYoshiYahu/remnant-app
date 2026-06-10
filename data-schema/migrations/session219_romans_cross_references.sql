@@ -1561,6 +1561,914 @@ SELECT t.id, x.id, 2, E'2 Esdras 3:22 — *the law … in the heart of the peopl
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_romans_06.sql (S219 Romans 6) -----
+-- =====================================================================
+-- S219 minion — ROMANS 6 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 6.  Tag: r06 (temp view _s219_r06_lookup).  Sort band: 6125, step 3 (<6150).
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Red Lines #4/#5/#6/#10): Romans 6 is the anti-license core of the epistle.
+-- *Shall we continue in sin, that grace may abound? Elohim (God) forbid* (6:1-2); *shall we sin,
+-- because we are not under the law, but under grace? Elohim (God) forbid* (6:15). "Not under the
+-- law" (6:14) is NOT freedom to transgress — it is the believer no longer under the law's
+-- condemnation/penalty as a justifying system; the curse-verdict of death no longer holds dominion
+-- over the one made alive in Messiah. Grace is the MEANS OF RETURN to walking in obedience, never
+-- a license against the commandments. The dead-to-sin / alive-unto-Elohim reckoning issues in
+-- *servants of righteousness unto holiness* (6:16-22). The Tanakh roots of the new-heart, new-spirit
+-- walk — *I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27),
+-- *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33), the
+-- choose-life of Deuteronomy 30 — are exactly the obedience-unto-holiness Paul names. The Master's
+-- own *Whosoever committeth sin is the servant of sin* and *go, and sin no more* (John 8:34, 8:11)
+-- are the NT root of the servant-of-sin teaching. *The wages of sin is death* (6:23) is Ezekiel's
+-- *the soul that sinneth, it shall die* (18:4) and Deuteronomy's *life and death, blessing and
+-- cursing: therefore choose life* (30:19) — the operative consequence-system, never annulled.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-2   shall we continue in sin / dead to sin  Tanakh: Ezekiel 18:30-31, Deuteronomy 30:19  Extras: none warranted  NT: John 8:11 (go, and sin no more)
+--   v.3-5   baptized into his death / newness of life  Tanakh: Ezekiel 36:25 (sprinkle clean water)  Extras: none warranted  NT: Colossians 2:12 (buried with him in baptism, risen with him)
+--   v.6-7   old man crucified / body of sin destroyed  Tanakh: none warranted  Extras: none warranted  NT: Galatians 2:20, Colossians 3:9-10 (put off the old man, put on the new)
+--   v.8-11  dead with Messiah / alive unto Elohim     Tanakh: none added (carried at 6:3-5)  Extras: none warranted  NT: none added (carried at 6:3-5 baptism thread)
+--   v.12-15 not under law but under grace / shall we sin  Tanakh: Ezekiel 18:21, Deuteronomy 30:8  Extras: none warranted  NT: John 8:34 (whosoever committeth sin is the servant of sin)
+--   v.16-19 servants of righteousness unto holiness     Tanakh: Ezekiel 36:27, Jeremiah 31:33  Extras: none warranted  NT: John 8:36 (if the Son make you free, ye shall be free indeed)
+--   v.20-23 wages of sin is death / gift is eternal life  Tanakh: Ezekiel 18:4, Deuteronomy 30:19  Extras: none warranted  NT: John 8:51 (if a man keep my saying, he shall never see death)
+--
+-- Extras: NONE warranted for Romans 6. The chapter's weave is Tanakh new-heart/choose-life roots
+-- and the Master's own servant-of-sin teaching; no extra-canonical witness adds load-bearing weight
+-- over those. (Curated, not a dump — "none warranted" recorded per the brief.)
+--
+-- THREADS (slug -> target libraries):
+--   6125 romans-6-shall-we-continue-in-sin-that-grace-may-abound-god-forbid            (Tanakh + NT)
+--   6128 romans-6-baptized-into-his-death-buried-and-raised-to-walk-in-newness-of-life (Tanakh + NT)
+--   6131 romans-6-the-old-man-crucified-that-the-body-of-sin-might-be-destroyed        (NT)
+--   6134 romans-6-not-under-the-law-but-under-grace-shall-we-sin-god-forbid            (Tanakh + NT)
+--   6137 romans-6-servants-of-righteousness-unto-holiness-the-new-heart-walk          (Tanakh + NT)
+--   6140 romans-6-the-wages-of-sin-is-death-but-the-gift-of-elohim-is-eternal-life     (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-6-shall-we-continue-in-sin-that-grace-may-abound-god-forbid
+  ('canon', 'romans', 6, 2, 'canon', 'ezekiel', 18, 30, 'free', E'*Therefore I will judge you, O house of Yashar''el (Israel), every one according to his ways, saith Adonai Yahuah (the Lord GOD). Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin.* (Ezekiel 18:30). Paul answers his own question — *shall we continue in sin, that grace may abound?* (Romans 6:1) — with *Elohim (God) forbid. How shall we, that are dead to sin, live any longer therein?* (Romans 6:2). The prophet had already set the only true posture toward sin: not continuance under cover of mercy but *repent, and turn yourselves from all your transgressions.* Grace is the call to turn from iniquity, never the permission to abide in it.'),
+  ('canon', 'romans', 6, 2, 'canon', 'ezekiel', 18, 31, 'free', E'*Cast away from you all your transgressions, whereby ye have transgressed; and make you a new heart and a new spirit: for why will ye die, O house of Yashar''el (Israel)?* (Ezekiel 18:31). To be *dead to sin* and to *live any longer therein* (Romans 6:2) are contraries — and the prophet names the same contradiction: the one given a new heart casts away his transgressions, for clinging to them is to choose death. *Why will ye die?* is Yahuah''s (the LORD''s) own answer to anyone who would continue in sin that grace might abound.'),
+  ('canon', 'romans', 6, 2, 'canon', 'john', 8, 11, 'free', E'*She said, No man, Yahuah (Lord). And Yahusha (Jesus) said unto her, Neither do I condemn thee: go, and sin no more.* (John 8:11). The Master''s mercy to the woman is the very shape of Romans 6: the one not condemned is sent *to sin no more* — not loosed to continue. *How shall we, that are dead to sin, live any longer therein?* (Romans 6:2) unfolds what the King''s pardon already commanded; the grace that does not condemn is the grace that says sin no more.'),
+  -- thread: romans-6-baptized-into-his-death-buried-and-raised-to-walk-in-newness-of-life
+  ('canon', 'romans', 6, 4, 'canon', 'colossians', 2, 12, 'free', E'*Buried with him in baptism, wherein also ye are risen with him through the faith of the operation of Elohim (God), who hath raised him from the dead.* (Colossians 2:12). Paul says the same thing twice: *we are buried with him by baptism into death: that like as Messiah (Christ) was raised up from the dead by the glory of the Father, even so we also should walk in newness of life* (Romans 6:4). The burial and the rising are one passage — and the rising is unto a walk, *newness of life,* not a return to the old. Baptism is death to the old way and entrance on the new walk.'),
+  ('canon', 'romans', 6, 4, 'canon', 'ezekiel', 36, 25, 'free', E'*Then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you.* (Ezekiel 36:25). The cleansing water of the prophet stands behind the baptism Paul names: *we are buried with him by baptism into death … even so we also should walk in newness of life* (Romans 6:4). Yahuah (the LORD) promised to sprinkle clean water and cleanse from all filthiness — and the very next breath gives the new heart and the new spirit that walks in his statutes (Ezekiel 36:26-27). The washing is never an end in itself; it opens onto the new walk.'),
+  ('canon', 'romans', 6, 5, 'canon', 'colossians', 3, 1, 'free', E'*If ye then be risen with Messiah (Christ), seek those things which are above, where Messiah (Christ) sitteth on the right hand of Elohim (God).* (Colossians 3:1). *For if we have been planted together in the likeness of his death, we shall be also in the likeness of his resurrection* (Romans 6:5). The likeness of his resurrection is no idle status — Paul makes it the ground of a command: those risen with Messiah seek the things above. To share his rising is to be set on a new course, the affection lifted from the old life to the life now hid with Messiah in Elohim (God).'),
+  -- thread: romans-6-the-old-man-crucified-that-the-body-of-sin-might-be-destroyed
+  ('canon', 'romans', 6, 6, 'canon', 'galatians', 2, 20, 'free', E'*I am crucified with Messiah (Christ): nevertheless I live; yet not I, but Messiah (Christ) liveth in me: and the life which I now live in the flesh I live by the faith of the Son of Elohim (God), who loved me, and gave himself for me.* (Galatians 2:20). *Our old man is crucified with him, that the body of sin might be destroyed, that henceforth we should not serve sin* (Romans 6:6). The crucifixion of the old man is not the end of living but the beginning of a new life — *nevertheless I live; yet not I, but Messiah (Christ) liveth in me.* The self that served sin is put to death precisely so that the Formed One who took on flesh may live his life in the believer, the life lived by the faithfulness of the Son of Elohim.'),
+  ('canon', 'romans', 6, 6, 'canon', 'colossians', 3, 9, 'free', E'*Lie not one to another, seeing that ye have put off the old man with his deeds;* (Colossians 3:9). The *old man* who *is crucified with him, that the body of sin might be destroyed* (Romans 6:6) is the old man Paul elsewhere says is *put off* — and the putting off is concrete, naming the deeds laid down. The crucifixion of the old self is not an abstraction but the end of the old deeds: the lying, the wrath, the uncleanness left behind because the old man who did them is dead.'),
+  ('canon', 'romans', 6, 6, 'canon', 'colossians', 3, 10, 'free', E'*And have put on the new man, which is renewed in knowledge after the image of him that created him:* (Colossians 3:10). *That henceforth we should not serve sin* (Romans 6:6) is the destination Paul names again as putting on *the new man, which is renewed … after the image of him that created him.* The old man crucified and the new man put on are one motion: the body of sin destroyed so that the renewed self, remade after the Creator''s image, walks no longer in the service of sin.'),
+  -- thread: romans-6-not-under-the-law-but-under-grace-shall-we-sin-god-forbid
+  ('canon', 'romans', 6, 15, 'canon', 'ezekiel', 18, 21, 'free', E'*But if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die.* (Ezekiel 18:21). *Shall we sin, because we are not under the law, but under grace? Elohim (God) forbid* (Romans 6:15). To be under grace and not under the law''s condemnation is exactly the turning the prophet describes — the wicked who turns from his sins to *keep all my statutes, and do that which is lawful and right* and so lives. Grace does not loose the believer from the statutes; it is the mercy that turns him toward keeping them, that he may live and not die.'),
+  ('canon', 'romans', 6, 14, 'canon', 'deuteronomy', 30, 8, 'free', E'*And thou shalt return and obey the voice of Yahuah (LORD), and do all his commandments which I command thee this day.* (Deuteronomy 30:8). *Sin shall not have dominion over you: for ye are not under the law, but under grace* (Romans 6:14). When the heart is circumcised and the captivity turned (Deuteronomy 30:6), the fruit is the return that *obeys the voice of Yahuah (LORD), and does all his commandments* — sin no longer reigning. Being under grace, freed from sin''s dominion, is the very state in which the commandments are kept, not the state in which they are discarded.'),
+  ('canon', 'romans', 6, 15, 'canon', 'john', 8, 34, 'free', E'*Yahusha (Jesus) answered them, Verily, verily, I say unto you, Whosoever committeth sin is the servant of sin.* (John 8:34). The Master''s word exposes the lie behind *shall we sin, because we are not under the law, but under grace?* (Romans 6:15). The one who returns to sin does not enter freedom but bondage — *whosoever committeth sin is the servant of sin.* To sin under cover of grace is to crawl back under the very mastery grace delivered from; it is no liberty at all.'),
+  -- thread: romans-6-servants-of-righteousness-unto-holiness-the-new-heart-walk
+  ('canon', 'romans', 6, 16, 'canon', 'ezekiel', 36, 27, 'free', E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:27). *Being then made free from sin, ye became the servants of righteousness* (Romans 6:18) — and the service of righteousness is precisely the walk the prophet promised: the Spirit put within, causing the believer to *walk in my statutes,* to *keep my judgments, and do them.* The freedom from sin is freedom INTO obedience; the same Spirit who raises from sin''s death is the Spirit who writes and keeps the statutes in the walker.'),
+  ('canon', 'romans', 6, 17, 'canon', 'jeremiah', 31, 33, 'free', E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33). *Ye have obeyed from the heart that form of doctrine which was delivered you* (Romans 6:17). The obedience *from the heart* is the new-covenant promise come to pass: the law written in the inward parts, in the heart, so that obedience flows from within rather than from an outward yoke. The doctrine obeyed from the heart is the Torah inscribed there by the Spirit.'),
+  ('canon', 'romans', 6, 18, 'canon', 'john', 8, 36, 'free', E'*If the Son therefore shall make you free, ye shall be free indeed.* (John 8:36). *Being then made free from sin, ye became the servants of righteousness* (Romans 6:18). The freedom the Son gives is not freedom from all service but freedom from sin into the service of righteousness — the only true freedom, for the alternative is bondage to sin (John 8:34). To be made free indeed by the Son is to be loosed from sin''s mastery and bound to righteousness unto holiness.'),
+  -- thread: romans-6-the-wages-of-sin-is-death-but-the-gift-of-elohim-is-eternal-life
+  ('canon', 'romans', 6, 23, 'canon', 'ezekiel', 18, 4, 'free', E'*Behold, all souls are mine; as the soul of the father, so also the soul of the son is mine: the soul that sinneth, it shall die.* (Ezekiel 18:4). *For the wages of sin is death; but the gift of Elohim (God) is eternal life through Yahusha HaMashiach (Jesus Christ) our Lord* (Romans 6:23). Paul''s *wages of sin is death* is the prophet''s standing verdict — *the soul that sinneth, it shall die.* The consequence-system is not annulled by grace; it stands. What grace adds is the gift set over against the wage: eternal life given through the Master, where sin earns only death.'),
+  ('canon', 'romans', 6, 21, 'canon', 'deuteronomy', 30, 19, 'free', E'*I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19). *What fruit had ye then in those things whereof ye are now ashamed? for the end of those things is death* (Romans 6:21). The two ends Paul sets before his readers — death as the end of sin, everlasting life as the end of holiness (Romans 6:22) — are the very choice Moses laid before Yashar''el (Israel): *life and death, blessing and cursing: therefore choose life.* The gospel does not erase the two ways; it presses the same choice, that the seed may live.'),
+  ('canon', 'romans', 6, 22, 'canon', 'john', 8, 51, 'free', E'*Verily, verily, I say unto you, If a man keep my saying, he shall never see death.* (John 8:51). *But now being made free from sin, and become servants to Elohim (God), ye have your fruit unto holiness, and the end everlasting life* (Romans 6:22). The Master had already named the end of the keeping walk: the one who keeps his saying *shall never see death.* The fruit unto holiness whose end is everlasting life is the keeping of the King''s word — life, not death, the portion of the servant of Elohim (God).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-6-shall-we-continue-in-sin-that-grace-may-abound-god-forbid',
+       E'Shall we continue in sin, that grace may abound? Elohim (God) forbid',
+       E'Romans 6 opens by slamming the door on the lie that grace licenses sin: *What shall we say then? Shall we continue in sin, that grace may abound? Elohim (God) forbid. How shall we, that are dead to sin, live any longer therein?* (Romans 6:1-2). The question is not idle — it is the very abuse the false gospel makes of grace, and Paul answers it with horror. The prophets had already set the only true posture toward sin: not continuance under cover of mercy but turning. *Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin* (Ezekiel 18:30); *cast away from you all your transgressions … and make you a new heart and a new spirit: for why will ye die, O house of Yashar''el (Israel)?* (Ezekiel 18:31). To be dead to sin and to go on living in it are contraries — and the one given a new heart casts his transgressions away, for clinging to them is to choose death. The Master himself gave the shape of grace in one sentence to the woman not condemned: *Neither do I condemn thee: go, and sin no more* (John 8:11). The grace that does not condemn is the grace that says sin no more. Mercy is the call to turn, never the permission to abide.',
+       sv.verse_id, ev.verse_id, 'free', 6125
+  FROM _s219_r06_lookup sv, _s219_r06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=6 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-6-baptized-into-his-death-buried-and-raised-to-walk-in-newness-of-life',
+       E'Baptized into his death — buried and raised to walk in newness of life',
+       E'Paul grounds the death-to-sin in baptism: *so many of us as were baptized into Yahusha HaMashiach (Jesus Christ) were baptized into his death* (Romans 6:3), *therefore we are buried with him by baptism into death: that like as Messiah (Christ) was raised up from the dead by the glory of the Father, even so we also should walk in newness of life* (Romans 6:4), *for if we have been planted together in the likeness of his death, we shall be also in the likeness of his resurrection* (Romans 6:5). The burial and the rising are one passage, and the rising is unto a walk — *newness of life* — never a return to the old. The prophet''s cleansing water stands behind the washing: *then will I sprinkle clean water upon you, and ye shall be clean: from all your filthiness, and from all your idols, will I cleanse you* (Ezekiel 36:25), and the very next breath gives the new heart and the new spirit that walks in his statutes. Paul says the same thing twice elsewhere: *buried with him in baptism, wherein also ye are risen with him through the faith of the operation of Elohim (God)* (Colossians 2:12) — and the rising lays an obligation: *if ye then be risen with Messiah (Christ), seek those things which are above* (Colossians 3:1). The washing is never an end in itself; it is death to the old way and entrance on the new walk.',
+       sv.verse_id, ev.verse_id, 'free', 6128
+  FROM _s219_r06_lookup sv, _s219_r06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=6 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-6-the-old-man-crucified-that-the-body-of-sin-might-be-destroyed',
+       E'The old man crucified — that the body of sin might be destroyed',
+       E'*Knowing this, that our old man is crucified with him, that the body of sin might be destroyed, that henceforth we should not serve sin. For he that is dead is freed from sin* (Romans 6:6-7). The crucifixion of the old man is not the end of living but its beginning under a new master. Paul says it of himself: *I am crucified with Messiah (Christ): nevertheless I live; yet not I, but Messiah (Christ) liveth in me: and the life which I now live in the flesh I live by the faith of the Son of Elohim (God), who loved me, and gave himself for me* (Galatians 2:20). The self that served sin is put to death precisely so the Formed One who took on flesh may live his life in the believer. And the death is concrete, naming the deeds laid down: *seeing that ye have put off the old man with his deeds; and have put on the new man, which is renewed in knowledge after the image of him that created him* (Colossians 3:9-10). The old man crucified and the new man put on are one motion — the body of sin destroyed so the renewed self, remade after the Creator''s image, walks no longer in the service of sin.',
+       sv.verse_id, ev.verse_id, 'free', 6131
+  FROM _s219_r06_lookup sv, _s219_r06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=6 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-6-not-under-the-law-but-under-grace-shall-we-sin-god-forbid',
+       E'Not under the law but under grace — shall we sin? Elohim (God) forbid',
+       E'*Sin shall not have dominion over you: for ye are not under the law, but under grace* (Romans 6:14). The false gospel hears in this a license: *what then? shall we sin, because we are not under the law, but under grace? Elohim (God) forbid* (Romans 6:15). Paul recoils. To be *not under the law* is to be no longer under the law''s condemnation and death-penalty as a justifying system — not loosed to transgress. The prophet names the very turn that grace works: *if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die* (Ezekiel 18:21). And Moses had named the fruit of the circumcised heart and the turned captivity: *thou shalt return and obey the voice of Yahuah (LORD), and do all his commandments which I command thee this day* (Deuteronomy 30:8) — sin no longer reigning, the commandments kept, not discarded. The Master exposes the lie behind the question: *Whosoever committeth sin is the servant of sin* (John 8:34). To sin under cover of grace is to crawl back under the very mastery grace delivered from; it is no liberty at all. Grace breaks sin''s dominion so that the freed walk in the statutes.',
+       sv.verse_id, ev.verse_id, 'free', 6134
+  FROM _s219_r06_lookup sv, _s219_r06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=6 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-6-servants-of-righteousness-unto-holiness-the-new-heart-walk',
+       E'Servants of righteousness unto holiness — the new-heart walk',
+       E'Freedom from sin in Romans 6 is freedom INTO obedience, never freedom from the standard: *to whom ye yield yourselves servants to obey, his servants ye are to whom ye obey; whether of sin unto death, or of obedience unto righteousness* (Romans 6:16); *being then made free from sin, ye became the servants of righteousness* (Romans 6:18); *yield your members servants to righteousness unto holiness* (Romans 6:19). This service of righteousness is precisely the walk the prophets promised. *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27) — the same Spirit who raises from sin''s death is the Spirit who keeps the statutes in the walker. The obedience Paul praises is *from the heart*: *ye have obeyed from the heart that form of doctrine which was delivered you* (Romans 6:17), the new-covenant promise come to pass — *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33), so obedience flows from within rather than from an outward yoke. And the Son who frees does not free into idleness but into this very service: *if the Son therefore shall make you free, ye shall be free indeed* (John 8:36) — loosed from sin''s mastery, bound to righteousness unto holiness.',
+       sv.verse_id, ev.verse_id, 'free', 6137
+  FROM _s219_r06_lookup sv, _s219_r06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=6 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-6-the-wages-of-sin-is-death-but-the-gift-of-elohim-is-eternal-life',
+       E'The wages of sin is death — but the gift of Elohim (God) is eternal life',
+       E'The chapter closes by setting the two ends side by side: *what fruit had ye then in those things whereof ye are now ashamed? for the end of those things is death* (Romans 6:21); *but now being made free from sin, and become servants to Elohim (God), ye have your fruit unto holiness, and the end everlasting life* (Romans 6:22); *for the wages of sin is death; but the gift of Elohim (God) is eternal life through Yahusha HaMashiach (Jesus Christ) our Lord* (Romans 6:23). The wage of sin is the prophet''s standing verdict, not annulled by grace: *the soul that sinneth, it shall die* (Ezekiel 18:4). The consequence-system stands; what grace adds is the gift set over against the wage. Moses had laid the same two ways before Yashar''el (Israel): *I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). And the Master named the end of the keeping walk: *if a man keep my saying, he shall never see death* (John 8:51). The gospel does not erase the two ways or the death that sin earns; it presses the same choice the Torah and the prophets pressed — and holds out the gift of eternal life through the Master to the one who chooses life and bears fruit unto holiness.',
+       sv.verse_id, ev.verse_id, 'free', 6140
+  FROM _s219_r06_lookup sv, _s219_r06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=6 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-6-shall-we-continue-in-sin-that-grace-may-abound-god-forbid
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 18:30 — *Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin* the only true posture toward sin is turning, not continuance under cover of grace (Romans 6:2).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-shall-we-continue-in-sin-that-grace-may-abound-god-forbid'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 18:31 — *make you a new heart and a new spirit: for why will ye die, O house of Yashar''el (Israel)?* the new-heart soul casts away transgressions; to cling to them is to choose death (Romans 6:2).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-shall-we-continue-in-sin-that-grace-may-abound-god-forbid'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 8:11 — *Neither do I condemn thee: go, and sin no more* the Master''s pardon sends to sin no more; the grace that does not condemn says sin no more (Romans 6:2).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-shall-we-continue-in-sin-that-grace-may-abound-god-forbid'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-6-baptized-into-his-death-buried-and-raised-to-walk-in-newness-of-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Colossians 2:12 — *buried with him in baptism, wherein also ye are risen with him* the burial and rising are one passage, the rising unto a new walk (Romans 6:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-baptized-into-his-death-buried-and-raised-to-walk-in-newness-of-life'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 36:25 — *then will I sprinkle clean water upon you, and ye shall be clean* the prophet''s cleansing water, opening onto the new heart and the statute-walk (Romans 6:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-baptized-into-his-death-buried-and-raised-to-walk-in-newness-of-life'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Colossians 3:1 — *if ye then be risen with Messiah (Christ), seek those things which are above* the likeness of his resurrection grounds a command: seek the things above (Romans 6:5).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-baptized-into-his-death-buried-and-raised-to-walk-in-newness-of-life'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-6-the-old-man-crucified-that-the-body-of-sin-might-be-destroyed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Galatians 2:20 — *I am crucified with Messiah (Christ): nevertheless I live; yet not I, but Messiah (Christ) liveth in me* the old self put to death so the Formed One may live his life in the believer (Romans 6:6).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-the-old-man-crucified-that-the-body-of-sin-might-be-destroyed'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=2 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Colossians 3:9 — *ye have put off the old man with his deeds* the crucified old man is the old man put off, the old deeds left behind (Romans 6:6).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-the-old-man-crucified-that-the-body-of-sin-might-be-destroyed'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=3 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Colossians 3:10 — *have put on the new man, which is renewed in knowledge after the image of him that created him* the renewed self walks no longer in the service of sin (Romans 6:6).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-the-old-man-crucified-that-the-body-of-sin-might-be-destroyed'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=3 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-6-not-under-the-law-but-under-grace-shall-we-sin-god-forbid
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 18:21 — *if the wicked will turn from all his sins … and keep all my statutes … he shall surely live* grace is the mercy that turns toward keeping the statutes, that he may live and not die (Romans 6:15).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-not-under-the-law-but-under-grace-shall-we-sin-god-forbid'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:8 — *thou shalt return and obey the voice of Yahuah (LORD), and do all his commandments* the fruit of the circumcised heart: sin no longer reigning, the commandments kept (Romans 6:14).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-not-under-the-law-but-under-grace-shall-we-sin-god-forbid'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 8:34 — *Whosoever committeth sin is the servant of sin* to sin under cover of grace is to crawl back under sin''s mastery; it is no liberty (Romans 6:15).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-not-under-the-law-but-under-grace-shall-we-sin-god-forbid'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-6-servants-of-righteousness-unto-holiness-the-new-heart-walk
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 36:27 — *I will put my spirit within you, and cause you to walk in my statutes* the Spirit who frees from sin is the Spirit who keeps the statutes in the walker (Romans 6:16).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-servants-of-righteousness-unto-holiness-the-new-heart-walk'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 31:33 — *I will put my law in their inward parts, and write it in their hearts* obedience from the heart is the Torah inscribed there by the Spirit (Romans 6:17).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-servants-of-righteousness-unto-holiness-the-new-heart-walk'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 8:36 — *if the Son therefore shall make you free, ye shall be free indeed* the Son frees not into idleness but into the service of righteousness unto holiness (Romans 6:18).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-servants-of-righteousness-unto-holiness-the-new-heart-walk'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-6-the-wages-of-sin-is-death-but-the-gift-of-elohim-is-eternal-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 18:4 — *the soul that sinneth, it shall die* the prophet''s standing verdict; the wage of sin is death, not annulled by grace (Romans 6:23).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-the-wages-of-sin-is-death-but-the-gift-of-elohim-is-eternal-life'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:19 — *I have set before you life and death, blessing and cursing: therefore choose life* the same two ways Paul presses; the gospel does not erase the choice (Romans 6:21).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-the-wages-of-sin-is-death-but-the-gift-of-elohim-is-eternal-life'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 8:51 — *If a man keep my saying, he shall never see death* the fruit unto holiness whose end is everlasting life is the keeping of the King''s word (Romans 6:22).'
+  FROM cross_reference_threads t, cross_references x, _s219_r06_lookup sv, _s219_r06_lookup tv
+ WHERE t.slug='romans-6-the-wages-of-sin-is-death-but-the-gift-of-elohim-is-eternal-life'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=6 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=51
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_romans_07.sql (S219 Romans 7) -----
+-- =====================================================================
+-- S219 minion — ROMANS 7 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 7.  Tag: r07 (temp view _s219_r07_lookup).  Sort band: 6150, step 3 (<6175).
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Red Lines #4/#5/#6/#10): Romans 7 EXONERATES the law and locates the problem
+-- in the flesh/sin, never in Torah. *The law is holy, and the commandment holy, and just, and
+-- good* (7:12); *the law is spiritual* (7:14); *I delight in the law of Elohim (God) after the
+-- inward man* (7:22). The commandment Paul cites is *Thou shalt not covet* (7:7) = Exodus 20:17 /
+-- Deuteronomy 5:21 — the tenth word, the law itself naming the sin. The "dead to the law" /
+-- "married to another" (7:1-6) is release from the law's CONDEMNING VERDICT to serve *in newness
+-- of spirit* — NOT Torah-abolition; it is the believer freed to keep the law from the heart, the
+-- promise of Jeremiah 31:33 internalised. Delight-in-the-law echoes Psalm 119 / Psalm 1 / Psalm
+-- 40:8. The inner war — the wretched-man cry — is the war between the inward man that loves Torah
+-- and the flesh sold under sin; the Second-Temple library names the same diagnosis (the wicked
+-- heart of the first Adam, not the law). The cry resolves in Romans 8: the Spirit FULFILS the
+-- righteousness of the law in the walker. Never read this chapter as the law being the enemy.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-6   dead to the law / married to another / newness of spirit
+--           Tanakh: Jeremiah 31:33 (law written on the heart — the newness of spirit)
+--           Extras: none warranted
+--           NT: Romans 6:14 (not under the law as condemning system), Romans 8:2 (free from the law of sin and death)
+--   v.7-12  Is the law sin? God forbid / Thou shalt not covet / the law is holy and good
+--           Tanakh: Exodus 20:17, Deuteronomy 5:21 (the very commandment Paul cites)
+--           Extras: none warranted
+--           NT: none added (the vindication carried by the cited commandment + the delight thread)
+--   v.13-23 the law is spiritual / I delight in the law of Elohim after the inward man / inner war
+--           Tanakh: Psalm 1:2, Psalm 40:8, Psalm 119:97 (delight in the law)
+--           Extras: 2 Esdras 3:21-22 + 7:48 (the wicked heart of the first Adam is the problem, not the law)
+--           NT: none added (the inner-war resolution carried by the Romans 8 thread)
+--   v.24-25 O wretched man / who shall deliver me / the resolution
+--           Tanakh: none warranted
+--           Extras: none warranted
+--           NT: Romans 8:1, 8:2, 8:4 (no condemnation; the Spirit fulfils the righteousness of the law)
+--
+-- THREADS (slug -> target libraries):
+--   6150 romans-7-dead-to-the-law-to-serve-in-newness-of-spirit-the-law-written-on-the-heart   (Tanakh + NT)
+--   6153 romans-7-is-the-law-sin-god-forbid-thou-shalt-not-covet                                (Tanakh)
+--   6156 romans-7-the-law-is-holy-and-the-commandment-holy-and-just-and-good                    (Tanakh)
+--   6159 romans-7-i-delight-in-the-law-of-elohim-after-the-inward-man                           (Tanakh)
+--   6162 romans-7-the-wicked-heart-of-the-first-adam-not-the-law                                (Extras)
+--   6165 romans-7-o-wretched-man-who-shall-deliver-me-the-resolution-in-romans-8               (NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-7-dead-to-the-law-to-serve-in-newness-of-spirit-the-law-written-on-the-heart
+  ('canon', 'romans', 7, 6, 'canon', 'jeremiah', 31, 33, 'free', E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33). *But now we are delivered from the law, that being dead wherein we were held; that we should serve in newness of spirit, and not in the oldness of the letter* (Romans 7:6). The deliverance is not from the law but from the bondage of the letter that held and condemned; the *newness of spirit* is exactly the covenant the prophet promised — the law no longer outside as a verdict against the flesh but *in their inward parts,* written on the heart. To serve in newness of spirit is to keep the law from within, not to be loosed from it.'),
+  ('canon', 'romans', 7, 4, 'canon', 'romans', 6, 14, 'free', E'*For sin shall not have dominion over you: for ye are not under the law, but under grace.* (Romans 6:14). *Wherefore, my brethren, ye also are become dead to the law by the body of Messiah (Christ); that ye should be married to another, even to him who is raised from the dead, that we should bring forth fruit unto Elohim (God)* (Romans 7:4). To be *dead to the law* and *not under the law* is one thing said twice: released from the law''s condemning dominion over the flesh — its verdict of death against the transgressor — so that, joined to the risen One, the believer *should bring forth fruit unto Elohim.* It is not freedom to transgress but freedom from condemnation, that the law might be kept in fruitfulness instead of death.'),
+  ('canon', 'romans', 7, 4, 'canon', 'romans', 8, 2, 'free', E'*For the law of the Spirit of life in HaMashiach Yahusha (Christ Jesus) hath made me free from the law of sin and death.* (Romans 8:2). Joined *to him who is raised from the dead, that we should bring forth fruit unto Elohim (God)* (Romans 7:4), the believer is set free — but the freedom is named precisely: *free from the law of sin and death,* not free from the holy commandment. The dominion broken is sin''s death-grip on the flesh; the marriage is to the living One, that the fruit unto Elohim might come where only death came before.'),
+  -- thread: romans-7-is-the-law-sin-god-forbid-thou-shalt-not-covet
+  ('canon', 'romans', 7, 7, 'canon', 'exodus', 20, 17, 'free', E'*Thou shalt not covet thy neighbour''s house, thou shalt not covet thy neighbour''s wife, nor his manservant, nor his maidservant, nor his ox, nor his ass, nor any thing that is thy neighbour''s.* (Exodus 20:17). *Is the law sin? Elohim (God) forbid. Nay, I had not known sin, but by the law: for I had not known lust, except the law had said, Thou shalt not covet* (Romans 7:7). The very commandment Paul names is the tenth word spoken from Sinai. The law is not sin — it is the lamp that exposes sin; without *Thou shalt not covet* the covetousness in the flesh would never be known for what it is. The commandment diagnoses the disease; it does not cause it.'),
+  ('canon', 'romans', 7, 7, 'canon', 'deuteronomy', 5, 21, 'free', E'*Neither shalt thou desire thy neighbour''s wife, neither shalt thou covet thy neighbour''s house, his field, or his manservant, or his maidservant, his ox, or his ass, or any thing that is thy neighbour''s.* (Deuteronomy 5:21). Paul cites this same word — *except the law had said, Thou shalt not covet* (Romans 7:7) — the tenth commandment that reaches past the hand to the heart, naming desire itself. It is the commandment that lays the inward man bare; by it Paul *had not known lust.* The law that names the hidden sin is the law that is *holy, and the commandment holy, and just, and good* (Romans 7:12).'),
+  -- thread: romans-7-the-law-is-holy-and-the-commandment-holy-and-just-and-good
+  ('canon', 'romans', 7, 12, 'canon', 'psalms', 19, 7, 'free', E'*The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple.* (Psalm 19:7). *Wherefore the law is holy, and the commandment holy, and just, and good* (Romans 7:12). The verdict Paul reaches is the psalmist''s own: the law of Yahuah is *perfect,* the testimony *sure,* the statutes *right,* the commandment *pure* (Psalm 19:7-8). Where men would put the law on trial, both psalm and apostle acquit it utterly and put the flesh on trial instead — the law converts the soul; sin works death by that which is good.'),
+  ('canon', 'romans', 7, 14, 'canon', 'nehemiah', 9, 13, 'free', E'*Thou camest down also upon mount Sinai, and spakest with them from heaven, and gavest them right judgments, and true laws, good statutes and commandments:* (Nehemiah 9:13). *For we know that the law is spiritual: but I am carnal, sold under sin* (Romans 7:14). What came down at Sinai were *true laws, good statutes and commandments* — the law is spiritual because it is from heaven, given by the Spirit''s own hand. The fault Paul confesses is never in the law but in the carnal man *sold under sin;* the spiritual law meets the carnal flesh, and the flesh is found wanting, not the law.'),
+  -- thread: romans-7-i-delight-in-the-law-of-elohim-after-the-inward-man
+  ('canon', 'romans', 7, 22, 'canon', 'psalms', 1, 2, 'free', E'*But his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night.* (Psalm 1:2). *For I delight in the law of Elohim (God) after the inward man* (Romans 7:22). Paul''s inward man is the blessed man of the first psalm — the one whose *delight is in the law of Yahuah,* who meditates in it day and night, planted like a tree by the rivers of water. The Torah is not the enemy of the regenerate heart but its joy; the believer delights in the very law the flesh wars against.'),
+  ('canon', 'romans', 7, 22, 'canon', 'psalms', 40, 8, 'free', E'*I delight to do thy will, O my Elohim (God): yea, thy law is within my heart.* (Psalm 40:8). *For I delight in the law of Elohim (God) after the inward man* (Romans 7:22). The psalmist speaks Paul''s inward man exactly: *thy law is within my heart.* This is the law internalised, the delight of the renewed man — the same law-within-the-heart that Jeremiah promised and that Romans 7 confesses against the warring flesh. To delight in the law after the inward man is to carry the law within, not to stand outside it.'),
+  ('canon', 'romans', 7, 22, 'canon', 'psalms', 119, 97, 'free', E'*O how love I thy law! it is my meditation all the day.* (Psalm 119:97). *For I delight in the law of Elohim (God) after the inward man* (Romans 7:22). The whole of the great psalm is the inward man''s love of the Torah, and this verse is its cry: *O how love I thy law!* Paul''s delight is no new posture but the ancient love of the righteous for the commandment. The man at war in Romans 7 is at war precisely because he loves the law the flesh resists — the conflict proves the love, and the love proves the law good.'),
+  -- thread: romans-7-the-wicked-heart-of-the-first-adam-not-the-law
+  ('canon', 'romans', 7, 17, 'apocrypha', '2-esdras', 3, 21, 'extras', E'*For the first Adam bearing a wicked heart transgressed, and was overcome; and so be all they that are born of him.* (2 Esdras 3:21). *Now then it is no more I that do it, but sin that dwelleth in me* (Romans 7:17). The library names the same diagnosis Paul confesses: the wicked heart inherited from the first Adam, *and so be all they that are born of him* — the indwelling sin, the flesh sold under sin, not the law. The transgression came of the wicked heart that was *not taken away,* and that heart, not the holy commandment, is the thing that *dwelleth in me.*'),
+  ('canon', 'romans', 7, 18, 'apocrypha', '2-esdras', 3, 22, 'extras', E'*Thus infirmity was made permanent; and the law (also) in the heart of the people with the malignity of the root; so that the good departed away, and the evil abode still.* (2 Esdras 3:22). *For I know that in me (that is, in my flesh,) dwelleth no good thing: for to will is present with me; but how to perform that which is good I find not* (Romans 7:18). Here is Romans 7 in the older book: the law set in the heart, yet *the malignity of the root* remaining, *so that the good departed away, and the evil abode still.* The will to good is present; the flesh with its inherited root will not perform it. The law is good; the infirmity made permanent in the flesh is the failure.'),
+  ('canon', 'romans', 7, 24, 'apocrypha', '2-esdras', 7, 48, 'extras', E'*O you Adam, what have you done? for though it was you that sinned, you are not fallen alone, but we all that come of you.* (2 Esdras 7:48). *O wretched man that I am! who shall deliver me from the body of this death?* (Romans 7:24). The wretched cry has the same root the library names: the fall of the first Adam carried into all who come of him, *the body of this death.* It is not the law that holds the man captive to death but the Adamic flesh; the deliverance sought is from the body, not from the commandment — and the answer comes in the One who undoes what Adam did.'),
+  -- thread: romans-7-o-wretched-man-who-shall-deliver-me-the-resolution-in-romans-8
+  ('canon', 'romans', 7, 24, 'canon', 'romans', 8, 1, 'free', E'*There is therefore now no condemnation to them which are in HaMashiach Yahusha (Christ Jesus), who walk not after the flesh, but after the Spirit.* (Romans 8:1). *O wretched man that I am! who shall deliver me from the body of this death?* (Romans 7:24). The cry of the wretched man is answered in the next breath: the deliverance from *the body of this death* is that there is *now no condemnation* to those in the Messiah who *walk not after the flesh, but after the Spirit.* The captivity to the law of sin in the members is broken — not by abolishing the law of Elohim, but by the Spirit setting the man free to walk.'),
+  ('canon', 'romans', 7, 25, 'canon', 'romans', 8, 2, 'free', E'*For the law of the Spirit of life in HaMashiach Yahusha (Christ Jesus) hath made me free from the law of sin and death.* (Romans 8:2). *I thank Elohim (God) through Yahusha HaMashiach (Jesus Christ) our Lord. So then with the mind I myself serve the law of Elohim (God); but with the flesh the law of sin* (Romans 7:25). The thanks is the turn of the whole chapter: the divided man who serves the law of Elohim with the mind while the flesh serves the law of sin is set free by *the law of the Spirit of life* — freed from *the law of sin and death* that warred in his members. The Spirit does not loose him from the law of Elohim he loves but from the sin that captured him.'),
+  ('canon', 'romans', 7, 25, 'canon', 'romans', 8, 4, 'free', E'*That the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit.* (Romans 8:4). *So then with the mind I myself serve the law of Elohim (God); but with the flesh the law of sin* (Romans 7:25). The mind that serves *the law of Elohim* is brought through to its end in the Spirit: *the righteousness of the law … fulfilled in us, who walk … after the Spirit.* What the inward man delighted in but the flesh could not perform, the Spirit now fulfils in the walker. The Spirit and the Torah are one work — the chapter that confessed the war ends with the law of Elohim kept, not cast off.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-7-dead-to-the-law-to-serve-in-newness-of-spirit-the-law-written-on-the-heart',
+       E'Dead to the law — to serve in newness of spirit, the law written on the heart',
+       E'The opening of Romans 7 is the most twisted passage in the chapter, and the marriage figure governs it: as a woman is loosed from the law of her husband when he dies, so *ye also are become dead to the law by the body of Messiah (Christ); that ye should be married to another, even to him who is raised from the dead, that we should bring forth fruit unto Elohim (God)* (Romans 7:4). What is broken is not the holy commandment but the law''s condemning verdict against the flesh — the death-grip under which the transgressor stood. Paul says the same thing two ways: *for sin shall not have dominion over you: for ye are not under the law, but under grace* (Romans 6:14), and *the law of the Spirit of life in HaMashiach Yahusha (Christ Jesus) hath made me free from the law of sin and death* (Romans 8:2). The dominion broken is sin''s, the death-grip broken is death''s; the marriage is to the living One that fruit might come where only death came before. And the end of the matter is the covenant the prophet promised: *now we are delivered from the law, that being dead wherein we were held; that we should serve in newness of spirit, and not in the oldness of the letter* (Romans 7:6) — exactly *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). To serve in newness of spirit is not to be loosed from the law but to keep it from within, the letter that condemned now written on the heart that loves it.',
+       sv.verse_id, ev.verse_id, 'free', 6150
+  FROM _s219_r07_lookup sv, _s219_r07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=7 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-7-is-the-law-sin-god-forbid-thou-shalt-not-covet',
+       E'Is the law sin? Elohim (God) forbid — Thou shalt not covet',
+       E'Paul asks the question the antichrist reading wants answered yes, and he slams the door on it: *What shall we say then? Is the law sin? Elohim (God) forbid* (Romans 7:7). Far from being sin, the law is what reveals sin: *Nay, I had not known sin, but by the law: for I had not known lust, except the law had said, Thou shalt not covet* (Romans 7:7). The commandment he names is the tenth word spoken from Sinai — *Thou shalt not covet thy neighbour''s house, thou shalt not covet thy neighbour''s wife … nor any thing that is thy neighbour''s* (Exodus 20:17), repeated in the second giving: *neither shalt thou desire thy neighbour''s wife, neither shalt thou covet thy neighbour''s house … or any thing that is thy neighbour''s* (Deuteronomy 5:21). This is the commandment that reaches past the hand to the heart, naming desire itself. Sin took occasion *by the commandment* and wrought all manner of concupiscence, but the commandment did not make the sin — it exposed it. The lamp is not the darkness it reveals. The law that lays the inward man bare is the holy diagnostic of the disease in the flesh, never its cause.',
+       sv.verse_id, ev.verse_id, 'free', 6153
+  FROM _s219_r07_lookup sv, _s219_r07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=7 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-7-the-law-is-holy-and-the-commandment-holy-and-just-and-good',
+       E'The law is holy, and the commandment holy, and just, and good',
+       E'This is the verse the whole chapter is built to reach, and it is the verdict no twisting can overturn: *Wherefore the law is holy, and the commandment holy, and just, and good* (Romans 7:12). And again, lest it be missed: *for we know that the law is spiritual: but I am carnal, sold under sin* (Romans 7:14). Where men would put the Torah on trial, Paul acquits it utterly and arraigns the flesh instead. The psalmist had already pronounced the same acquittal: *the law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple* (Psalm 19:7). And the law is spiritual because of where it came from — *thou camest down also upon mount Sinai, and spakest with them from heaven, and gavest them right judgments, and true laws, good statutes and commandments* (Nehemiah 9:13). The law is holy because the One who gave it is holy; it is spiritual because it descended from heaven by the Spirit''s own hand. The fault is never in the commandment but in the carnal man sold under sin. Sin worked death *by that which is good* — and so the good is proved good, and sin proved exceeding sinful, the law standing innocent over the grave it never dug.',
+       sv.verse_id, ev.verse_id, 'free', 6156
+  FROM _s219_r07_lookup sv, _s219_r07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=7 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-7-i-delight-in-the-law-of-elohim-after-the-inward-man',
+       E'I delight in the law of Elohim (God) after the inward man',
+       E'At the heart of the inner war stands the line that settles which side the regenerate man is on: *I delight in the law of Elohim (God) after the inward man* (Romans 7:22). The man at war does not hate the law — he loves it; the war is between the inward man that delights in the Torah and *another law in my members, warring against the law of my mind* (Romans 7:23). This delight is the ancient posture of the righteous. The first psalm opens with it: *his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* (Psalm 1:2). David carried it within: *I delight to do thy will, O my Elohim (God): yea, thy law is within my heart* (Psalm 40:8) — the law internalised, the very law-in-the-heart Jeremiah promised. And the great psalm cries it outright: *O how love I thy law! it is my meditation all the day* (Psalm 119:97). The inward man of Romans 7 is the blessed man of Psalm 1, the law-loving heart of Psalm 40, the lover of the commandment in Psalm 119. The conflict proves the love, and the love proves the law good: a man does not war against his flesh to keep what is evil. He wars to keep what he delights in — the holy, just, and good law of Elohim.',
+       sv.verse_id, ev.verse_id, 'free', 6159
+  FROM _s219_r07_lookup sv, _s219_r07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=7 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-7-the-wicked-heart-of-the-first-adam-not-the-law',
+       E'The wicked heart of the first Adam — not the law',
+       E'Romans 7 locates the captivity precisely: *now then it is no more I that do it, but sin that dwelleth in me* (Romans 7:17); *for I know that in me (that is, in my flesh,) dwelleth no good thing* (Romans 7:18). The diagnosis is the indwelling sin of the flesh, never the law — and the restored library names the same root in the same terms. The wicked heart inherited from the first Adam is the thing that dwells in the man: *for the first Adam bearing a wicked heart transgressed, and was overcome; and so be all they that are born of him* (2 Esdras 3:21). The library even sets the law within the heart and still finds the flesh failing: *the law (also) in the heart of the people with the malignity of the root; so that the good departed away, and the evil abode still* (2 Esdras 3:22) — the will to good present, the flesh with its inherited root refusing to perform it, which is Romans 7:18 word for word in an older book. And the wretched cry has the same Adamic root: *O you Adam, what have you done? for though it was you that sinned, you are not fallen alone, but we all that come of you* (2 Esdras 7:48) — *the body of this death* (Romans 7:24) is the Adamic flesh carried into all who come of him. The law set in the heart is good; the malignity of the root is the failure; the deliverance sought is from the body of death, not from the commandment — and it comes in the One who undoes what the first Adam did.',
+       sv.verse_id, ev.verse_id, 'extras', 6162
+  FROM _s219_r07_lookup sv, _s219_r07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=7 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-7-o-wretched-man-who-shall-deliver-me-the-resolution-in-romans-8',
+       E'O wretched man — who shall deliver me — the resolution in Romans 8',
+       E'The chapter ends not in despair but in thanksgiving, and the cry is answered before the page turns: *O wretched man that I am! who shall deliver me from the body of this death? I thank Elohim (God) through Yahusha HaMashiach (Jesus Christ) our Lord. So then with the mind I myself serve the law of Elohim (God); but with the flesh the law of sin* (Romans 7:24-25). The divided man — mind serving the law of Elohim, flesh serving the law of sin — is delivered in the very next breath. *There is therefore now no condemnation to them which are in HaMashiach Yahusha (Christ Jesus), who walk not after the flesh, but after the Spirit* (Romans 8:1). The captivity to the law of sin in the members is broken: *the law of the Spirit of life in HaMashiach Yahusha (Christ Jesus) hath made me free from the law of sin and death* (Romans 8:2) — freed not from the law of Elohim he loves but from the sin that captured him. And the deliverance has a destination that vindicates the whole chapter: *that the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit* (Romans 8:4). What the inward man delighted in but the flesh could not perform, the Spirit now fulfils in the walker. The Spirit and the Torah are one work. The chapter that confessed the war ends with the law of Elohim kept — not cast off — by the power of the Spirit of life.',
+       sv.verse_id, ev.verse_id, 'free', 6165
+  FROM _s219_r07_lookup sv, _s219_r07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=7 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-7-dead-to-the-law-to-serve-in-newness-of-spirit-the-law-written-on-the-heart
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Romans 6:14 — *ye are not under the law, but under grace* the same thing as dead to the law: released from the law''s condemning dominion over the flesh, not freed to transgress (Romans 7:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-dead-to-the-law-to-serve-in-newness-of-spirit-the-law-written-on-the-heart'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=6 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 8:2 — *made me free from the law of sin and death* the freedom named precisely: from sin''s death-grip on the flesh, not from the holy commandment (Romans 7:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-dead-to-the-law-to-serve-in-newness-of-spirit-the-law-written-on-the-heart'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 31:33 — *I will put my law in their inward parts, and write it in their hearts* the newness of spirit is the law internalised, not abolished — the covenant promised (Romans 7:6).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-dead-to-the-law-to-serve-in-newness-of-spirit-the-law-written-on-the-heart'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-7-is-the-law-sin-god-forbid-thou-shalt-not-covet
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 20:17 — *Thou shalt not covet thy neighbour''s house … nor any thing that is thy neighbour''s* the tenth word from Sinai, the very commandment Paul cites; the law exposes sin, it is not sin (Romans 7:7).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-is-the-law-sin-god-forbid-thou-shalt-not-covet'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 5:21 — *neither shalt thou desire thy neighbour''s wife … or any thing that is thy neighbour''s* the same commandment in the second giving, reaching past the hand to the heart, naming desire itself (Romans 7:7).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-is-the-law-sin-god-forbid-thou-shalt-not-covet'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-7-the-law-is-holy-and-the-commandment-holy-and-just-and-good
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 19:7 — *the law of Yahuah (LORD) is perfect, converting the soul* the psalmist''s acquittal of the law that Paul reaches: holy, just, and good (Romans 7:12).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-the-law-is-holy-and-the-commandment-holy-and-just-and-good'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Nehemiah 9:13 — *gavest them … true laws, good statutes and commandments* the law is spiritual because it came down from heaven by the Spirit''s hand; the fault is in the carnal flesh (Romans 7:14).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-the-law-is-holy-and-the-commandment-holy-and-just-and-good'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-7-i-delight-in-the-law-of-elohim-after-the-inward-man
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 1:2 — *his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* the inward man of Romans 7 is the blessed man of the first psalm (Romans 7:22).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-i-delight-in-the-law-of-elohim-after-the-inward-man'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 40:8 — *I delight to do thy will, O my Elohim (God): yea, thy law is within my heart* the law internalised, the inward man''s delight Paul confesses (Romans 7:22).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-i-delight-in-the-law-of-elohim-after-the-inward-man'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 119:97 — *O how love I thy law! it is my meditation all the day* the ancient love of the righteous for the commandment; the war proves the love (Romans 7:22).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-i-delight-in-the-law-of-elohim-after-the-inward-man'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=97
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-7-the-wicked-heart-of-the-first-adam-not-the-law
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Esdras 3:21 — *the first Adam bearing a wicked heart transgressed … and so be all they that are born of him* the indwelling sin Paul confesses, the inherited wicked heart, not the law (Romans 7:17).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-the-wicked-heart-of-the-first-adam-not-the-law'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=17
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=3 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Esdras 3:22 — *the law (also) in the heart … with the malignity of the root; so that the good departed away, and the evil abode still* the will to good present, the flesh''s root refusing to perform it (Romans 7:18).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-the-wicked-heart-of-the-first-adam-not-the-law'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=18
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=3 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Esdras 7:48 — *O you Adam, what have you done? … you are not fallen alone, but we all that come of you* the Adamic flesh carried into all, the body of this death (Romans 7:24).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-the-wicked-heart-of-the-first-adam-not-the-law'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=24
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=7 AND tv.verse_number=48
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-7-o-wretched-man-who-shall-deliver-me-the-resolution-in-romans-8
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Romans 8:1 — *there is therefore now no condemnation to them which are in HaMashiach Yahusha (Christ Jesus), who walk not after the flesh, but after the Spirit* the wretched cry answered: deliverance from the body of this death (Romans 7:24).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-o-wretched-man-who-shall-deliver-me-the-resolution-in-romans-8'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 8:2 — *the law of the Spirit of life … hath made me free from the law of sin and death* the divided man freed from the sin that captured him, not from the law of Elohim he loves (Romans 7:25).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-o-wretched-man-who-shall-deliver-me-the-resolution-in-romans-8'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 8:4 — *that the righteousness of the law might be fulfilled in us, who walk … after the Spirit* what the inward man delighted in but the flesh could not perform, the Spirit fulfils; the law kept, not cast off (Romans 7:25).'
+  FROM cross_reference_threads t, cross_references x, _s219_r07_lookup sv, _s219_r07_lookup tv
+ WHERE t.slug='romans-7-o-wretched-man-who-shall-deliver-me-the-resolution-in-romans-8'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=7 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_romans_08.sql (S219 Romans 8) -----
+-- =====================================================================
+-- S219 minion — ROMANS 8 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 8.  Tag: r08 (temp view _s219_r08_lookup).  Sort band: 6175, step 3 (<6200).
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Red Lines #4/#5/#6/#7): Romans 8 is the chapter most weaponized against the
+-- law, and the weapon is the misreading of *no condemnation … who walk not after the flesh, but
+-- after the Spirit* (8:1) as freedom-from-Torah. The chapter says the opposite. *That the
+-- righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the
+-- Spirit* (8:4) — the Spirit WRITES and FULFILLS the Torah in the walker; the two are one work,
+-- never opposed. The carnal mind *is not subject to the law of Elohim (God)* (8:7) — the flesh is
+-- the enemy of the law, the Spirit its fulfilment. This is exactly the new-covenant promise of
+-- the prophets: *I will put my law in their inward parts, and write it in their hearts*
+-- (Jeremiah 31:33); *I will put my spirit within you, and cause you to walk in my statutes, and
+-- ye shall keep my judgments, and do them* (Ezekiel 36:27). Led by the Spirit = sons (8:14); the
+-- Spirit of adoption, heirs (8:15-17). Creation groans for the redemption / the manifestation of
+-- the sons (8:19-23) — the ground cursed at Eden (Genesis 3:17) waiting for the restoration the
+-- prophet saw (Isaiah 11). *For thy sake we are killed all the day long* (8:36) = Psalm 44:22,
+-- and the psalm names the slain as the covenant-faithful whose *steps declined* not from his way.
+-- Nothing separates from the love of Elohim (8:35-39).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-4   no condemnation / righteousness of the law fulfilled by the Spirit
+--           Tanakh: Jeremiah 31:33 (law in inward parts), Ezekiel 36:27 (Spirit causes walking)  Extras: none warranted  NT: none added (Romans 7:22-25 carried in prose; same hand)
+--   v.5-8   carnal mind enmity, not subject to the law of Elohim
+--           Tanakh: none added (carried at v.1-4)  Extras: none warranted  NT: none warranted
+--   v.9-14  Spirit dwells / quickens mortal bodies / led by the Spirit are sons
+--           Tanakh: Ezekiel 36:26 (new heart), Ezekiel 37:14 (Spirit put in you, ye shall live)  Extras: none warranted  NT: none added (Galatians carried at v.14-17)
+--   v.14-17 Spirit of adoption, Abba, heirs, joint-heirs
+--           Tanakh: none warranted  Extras: none warranted  NT: Galatians 4:6 (Spirit of his Son, Abba), Galatians 5:18 (led of the Spirit, not under the law)
+--   v.18-23 creation groaneth, waiteth for the manifestation of the sons / redemption of the body
+--           Tanakh: Genesis 3:17 (ground cursed), Isaiah 11:6 (the restored creation), Isaiah 11:9 (none hurt nor destroy)  Extras: none warranted  NT: none warranted
+--   v.24-30 hope, the Spirit's intercession, foreknown, predestinate, glorified
+--           Tanakh: none warranted (the chain is internal)  Extras: none warranted  NT: none warranted
+--   v.31-34 if Elohim be for us / who shall lay charge / who condemneth
+--           Tanakh: Isaiah 50:8 (who will contend with me), Isaiah 50:9 (who is he that shall condemn me)  Extras: none warranted  NT: none warranted
+--   v.35-39 killed all the day long / nothing separates from the love of Elohim
+--           Tanakh: Psalm 44:22 (quoted verbatim), Psalm 44:18 (steps declined not from thy way)  Extras: none warranted  NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   6175 romans-8-the-righteousness-of-the-law-fulfilled-in-us-by-the-spirit        (Tanakh)
+--   6178 romans-8-i-will-put-my-spirit-within-you-the-new-heart-that-walks          (Tanakh)
+--   6181 romans-8-the-spirit-of-adoption-led-by-the-spirit-are-sons                  (NT)
+--   6184 romans-8-the-whole-creation-groaneth-for-the-manifestation-of-the-sons      (Tanakh)
+--   6187 romans-8-who-shall-lay-charge-who-condemneth-isaiah                          (Tanakh)
+--   6190 romans-8-for-thy-sake-we-are-killed-all-the-day-long-psalm-44               (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-8-the-righteousness-of-the-law-fulfilled-in-us-by-the-spirit
+  ('canon', 'romans', 8, 4, 'canon', 'jeremiah', 31, 33, 'free', E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33). The whole purpose of the Son sent and sin condemned in the flesh is *that the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit* (Romans 8:4). This is the new covenant the prophet foretold: not the law abolished but the law *put in their inward parts* and *written in their hearts.* The Spirit who fulfils the righteousness of the law in the walker is the Spirit who writes that very law within — the two are one work, never opposed.'),
+  ('canon', 'romans', 8, 4, 'canon', 'ezekiel', 36, 27, 'free', E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:27). The Spirit-walk Paul names — *who walk not after the flesh, but after the Spirit* (Romans 8:4) — is exactly what the prophet promised the Spirit would do: *cause you to walk in my statutes,* that *ye shall keep my judgments, and do them.* The indwelling Spirit does not lead away from the commandments; he is given precisely to bring about their doing. The righteousness of the law fulfilled in us is the Spirit keeping the statutes through us.'),
+  ('canon', 'romans', 8, 7, 'canon', 'ezekiel', 36, 27, 'free', E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:27). *Because the carnal mind is enmity against Elohim (God): for it is not subject to the law of Elohim (God), neither indeed can be* (Romans 8:7). It is the flesh, not the Spirit, that cannot be subject to the law. The promised Spirit is the One who causes the walk in the statutes; the carnal mind is its enemy. The chapter pits the flesh against the law, never the Spirit against the law.'),
+  -- thread: romans-8-i-will-put-my-spirit-within-you-the-new-heart-that-walks
+  ('canon', 'romans', 8, 11, 'canon', 'ezekiel', 37, 14, 'free', E'*And shall put my spirit in you, and ye shall live, and I shall place you in your own land: then shall ye know that I Yahuah (LORD) have spoken it, and performed it, saith Yahuah (LORD).* (Ezekiel 37:14). *But if the Spirit of him that raised up Yahusha (Jesus) from the dead dwell in you, he that raised up Messiah (Christ) from the dead shall also quicken your mortal bodies by his Spirit that dwelleth in you* (Romans 8:11). The prophet stood in the valley of dry bones and heard the promise: *I will put my spirit in you, and ye shall live.* Paul names the same Spirit, now indwelling, who quickens the mortal body — the resurrection-life of the whole house of Yashar''el (Israel) the prophet saw, worked by the Spirit that raised the Messiah.'),
+  ('canon', 'romans', 8, 13, 'canon', 'ezekiel', 36, 26, 'free', E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.* (Ezekiel 36:26). *For if ye live after the flesh, ye shall die: but if ye through the Spirit do mortify the deeds of the body, ye shall live* (Romans 8:13). The mortifying of the deeds of the body *through the Spirit* is the new heart at work — the stony heart taken away, the heart of flesh given, the new spirit put within. Death follows the old flesh; life follows the Spirit that the prophet said Yahuah (LORD) would put within his people.'),
+  ('canon', 'romans', 8, 14, 'canon', 'ezekiel', 36, 27, 'free', E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them.* (Ezekiel 36:27). *For as many as are led by the Spirit of Elohim (God), they are the sons of Elohim (God)* (Romans 8:14). To be *led by the Spirit* is to be caused to *walk in my statutes* and to *keep my judgments, and do them.* The leading and the walking are one motion. The sons of Elohim are marked not by escape from the commandments but by the Spirit''s work of keeping them — the promise of the new heart bearing its fruit.'),
+  -- thread: romans-8-the-spirit-of-adoption-led-by-the-spirit-are-sons
+  ('canon', 'romans', 8, 15, 'canon', 'galatians', 4, 6, 'free', E'*And because ye are sons, Elohim (God) hath sent forth the Spirit of his Son into your hearts, crying, Abba, Father.* (Galatians 4:6). *For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father* (Romans 8:15). Paul says the same thing twice: the Spirit poured into the heart is the Spirit of the Son, and he cries *Abba, Father.* The order is the framework''s own — *because ye are sons,* the Spirit is sent; the Spirit reveals the sonship that was already true, the scattered seed brought to know the Father who was always theirs.'),
+  ('canon', 'romans', 8, 14, 'canon', 'galatians', 5, 18, 'free', E'*But if ye be led of the Spirit, ye are not under the law.* (Galatians 5:18). *For as many as are led by the Spirit of Elohim (God), they are the sons of Elohim (God)* (Romans 8:14). To be *led of the Spirit* is to be no longer *under the law* — under its condemnation and penalty as a system that holds the transgressor; it is never freedom to transgress. The same Spirit who leads the sons is the One who causes the walk in the statutes. Led by the Spirit, the son is lifted out from under the law''s sentence and set to keep it from the heart.'),
+  -- thread: romans-8-the-whole-creation-groaneth-for-the-manifestation-of-the-sons
+  ('canon', 'romans', 8, 20, 'canon', 'genesis', 3, 17, 'free', E'*And unto Adam he said, Because thou hast hearkened unto the voice of thy wife, and hast eaten of the tree, of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life;* (Genesis 3:17). *For the creature was made subject to vanity, not willingly, but by reason of him who hath subjected the same in hope* (Romans 8:20). The subjection of the creature to vanity is the curse spoken in the garden: *cursed is the ground for thy sake.* The ground was bound to thorn and sorrow not for its own fault but by reason of Adam''s fall — subjected, yet *in hope,* groaning toward the day the curse is lifted.'),
+  ('canon', 'romans', 8, 21, 'canon', 'isaiah', 11, 6, 'free', E'*The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them.* (Isaiah 11:6). *Because the creature itself also shall be delivered from the bondage of corruption into the glorious liberty of the children of Elohim (God)* (Romans 8:21). The deliverance of the creature from the bondage of corruption is the restored creation the prophet saw: wolf with lamb, leopard with kid, a little child leading them. The same root of Jesse who fulfils the law by the Spirit unbinds the very ground from the curse — the creation set free with the children of Elohim.'),
+  ('canon', 'romans', 8, 22, 'canon', 'isaiah', 11, 9, 'free', E'*They shall not hurt nor destroy in all my holy mountain: for the earth shall be full of the knowledge of Yahuah (LORD), as the waters cover the sea.* (Isaiah 11:9). *For we know that the whole creation groaneth and travaileth in pain together until now* (Romans 8:22). The travail of the whole creation strains toward the mountain where *they shall not hurt nor destroy,* where the earth is *full of the knowledge of Yahuah (LORD), as the waters cover the sea.* The groaning is birth-pain, not despair — the creation labouring toward the day the prophet promised, the manifestation of the sons.'),
+  -- thread: romans-8-who-shall-lay-charge-who-condemneth-isaiah
+  ('canon', 'romans', 8, 33, 'canon', 'isaiah', 50, 8, 'free', E'*He is near that justifieth me; who will contend with me? let us stand together: who is mine adversary? let him come near to me.* (Isaiah 50:8). *Who shall lay any thing to the charge of Elohim''s (God''s) elect? It is Elohim (God) that justifieth* (Romans 8:33). Paul presses the prophet''s own challenge: with Yahuah (LORD) *near that justifieth,* who dares contend? The adversary who would lay a charge is summoned to come near — and falls silent, for the One who justifies has spoken. The elect stand because Elohim himself is their justifier.'),
+  ('canon', 'romans', 8, 34, 'canon', 'isaiah', 50, 9, 'free', E'*Behold, Adonai Yahuah (the Lord GOD) will help me; who is he that shall condemn me? lo, they all shall wax old as a garment; the moth shall eat them up.* (Isaiah 50:9). *Who is he that condemneth? It is Messiah (Christ) that died, yea rather, that is risen again, who is even at the right hand of Elohim (God), who also maketh intercession for us* (Romans 8:34). The prophet''s cry — *who is he that shall condemn me?* — is answered in the risen Messiah at the right hand, interceding. The condemners *wax old as a garment;* the One who died and rose abides to plead for his own. No condemnation stands where he is the advocate.'),
+  -- thread: romans-8-for-thy-sake-we-are-killed-all-the-day-long-psalm-44
+  ('canon', 'romans', 8, 36, 'canon', 'psalms', 44, 22, 'free', E'*Yea, for thy sake are we killed all the day long; we are counted as sheep for the slaughter.* (Psalm 44:22). *As it is written, For thy sake we are killed all the day long; we are accounted as sheep for the slaughter* (Romans 8:36). Paul quotes the psalm word for word. The suffering of the faithful is not a sign of separation from the love of Elohim but the very portion of those who belong to him — slain *for thy sake,* counted as sheep for the slaughter, yet held fast.'),
+  ('canon', 'romans', 8, 35, 'canon', 'psalms', 44, 18, 'free', E'*Our heart is not turned back, neither have our steps declined from thy way;* (Psalm 44:18). *Who shall separate us from the love of Messiah (Christ)? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?* (Romans 8:35). The psalm Paul quotes names the slaughtered plainly: those whose *heart is not turned back, neither have our steps declined from thy way.* The sheep for the slaughter are the covenant-faithful walking in his way — not the lawless. Tribulation and sword fall on the faithful and cannot separate them; their steps had not declined, and the love of Messiah holds them through every peril.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-8-the-righteousness-of-the-law-fulfilled-in-us-by-the-spirit',
+       E'The righteousness of the law fulfilled in us by the Spirit',
+       E'This is the chapter most often turned into a weapon against the law, and the turning rests on misreading *who walk not after the flesh, but after the Spirit* (Romans 8:1) as freedom from the commandments. The chapter says the opposite. The Son was sent and sin was condemned in the flesh *that the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit* (Romans 8:4). The Spirit-walk is the law fulfilled, not the law set aside. And it is the carnal mind, not the Spirit, that stands against the commandments: *the carnal mind is enmity against Elohim (God): for it is not subject to the law of Elohim (God), neither indeed can be* (Romans 8:7). The flesh is the law''s enemy; the Spirit is its fulfilment. This is precisely the new covenant the prophets promised — not Torah abolished but Torah internalised: *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). And the Spirit given is given to do this very thing: *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The Spirit who writes the law within is the Spirit who keeps it through the walker. The Spirit and the Torah are one work, never opposed.',
+       sv.verse_id, ev.verse_id, 'free', 6175
+  FROM _s219_r08_lookup sv, _s219_r08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=8 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-8-i-will-put-my-spirit-within-you-the-new-heart-that-walks',
+       E'I will put my spirit within you — the new heart that walks',
+       E'The indwelling Spirit of Romans 8 is the Spirit the prophets said Yahuah (LORD) would put within his people. *But if the Spirit of him that raised up Yahusha (Jesus) from the dead dwell in you, he that raised up Messiah (Christ) from the dead shall also quicken your mortal bodies by his Spirit that dwelleth in you* (Romans 8:11) — and Ezekiel had stood in the valley of dry bones and heard the same promise to the whole house of Yashar''el (Israel): *I will put my spirit in you, and ye shall live* (Ezekiel 37:14). The mortifying of the deeds of the body is the new heart at work: *if ye through the Spirit do mortify the deeds of the body, ye shall live* (Romans 8:13) — the heart of stone taken away, the heart of flesh given, *a new heart also will I give you, and a new spirit will I put within you* (Ezekiel 36:26). And to be *led by the Spirit of Elohim (God)* and so be *the sons of Elohim (God)* (Romans 8:14) is to be caused to *walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The leading, the new heart, the resurrection-life, and the walking in the statutes are one promise — the Spirit given precisely to bring the commandments to their doing.',
+       sv.verse_id, ev.verse_id, 'free', 6178
+  FROM _s219_r08_lookup sv, _s219_r08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=8 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-8-the-spirit-of-adoption-led-by-the-spirit-are-sons',
+       E'The Spirit of adoption — led by the Spirit are sons',
+       E'*For as many as are led by the Spirit of Elohim (God), they are the sons of Elohim (God)* (Romans 8:14); *ye have received the Spirit of adoption, whereby we cry, Abba, Father* (Romans 8:15); *and if children, then heirs; heirs of Elohim (God), and joint-heirs with Messiah (Christ)* (Romans 8:17). Paul says the same in his letter to the Galatians, and the order there is the framework''s own: *because ye are sons, Elohim (God) hath sent forth the Spirit of his Son into your hearts, crying, Abba, Father* (Galatians 4:6). The Spirit is sent *because* they are sons — he reveals the sonship that was already theirs, the scattered seed brought home to the Father who was always their Father. And the leading of this Spirit is no licence: *if ye be led of the Spirit, ye are not under the law* (Galatians 5:18) — lifted out from under the law''s condemnation and penalty, the son is set to keep the law from the heart, for the same Spirit who leads is the One who causes the walk in the statutes. Led by the Spirit, crying Abba, the heir walks as a son.',
+       sv.verse_id, ev.verse_id, 'free', 6181
+  FROM _s219_r08_lookup sv, _s219_r08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=8 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-8-the-whole-creation-groaneth-for-the-manifestation-of-the-sons',
+       E'The whole creation groaneth for the manifestation of the sons',
+       E'*For the earnest expectation of the creature waiteth for the manifestation of the sons of Elohim (God)* (Romans 8:19); *the creature was made subject to vanity, not willingly, but by reason of him who hath subjected the same in hope* (Romans 8:20); *the whole creation groaneth and travaileth in pain together until now* (Romans 8:22). The subjection of the creation to vanity is the curse spoken over Adam in the garden: *cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life* (Genesis 3:17). The ground was bound to thorn and sorrow not for its own fault but by reason of the fall — subjected, yet in hope. And the hope is the restored creation the prophet saw under the root of Jesse: *the wolf also shall dwell with the lamb, and the leopard shall lie down with the kid … and a little child shall lead them* (Isaiah 11:6), the mountain where *they shall not hurt nor destroy … for the earth shall be full of the knowledge of Yahuah (LORD), as the waters cover the sea* (Isaiah 11:9). The groaning is birth-pain, not despair: *the creature itself also shall be delivered from the bondage of corruption into the glorious liberty of the children of Elohim (God)* (Romans 8:21). The same root of Jesse who fulfils the law by the Spirit will unbind the ground itself from the curse, and the creation labours toward that day — the manifestation of the sons.',
+       sv.verse_id, ev.verse_id, 'free', 6184
+  FROM _s219_r08_lookup sv, _s219_r08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=8 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-8-who-shall-lay-charge-who-condemneth-isaiah',
+       E'Who shall lay a charge, who condemneth — the prophet''s challenge answered',
+       E'*Who shall lay any thing to the charge of Elohim''s (God''s) elect? It is Elohim (God) that justifieth. Who is he that condemneth? It is Messiah (Christ) that died, yea rather, that is risen again, who is even at the right hand of Elohim (God), who also maketh intercession for us* (Romans 8:33-34). Paul is pressing the prophet''s own courtroom challenge. *He is near that justifieth me; who will contend with me? let us stand together: who is mine adversary? let him come near to me* (Isaiah 50:8) — with Yahuah (LORD) near to justify, the adversary who would lay a charge is summoned forward, and falls silent. *Behold, Adonai Yahuah (the Lord GOD) will help me; who is he that shall condemn me? lo, they all shall wax old as a garment; the moth shall eat them up* (Isaiah 50:9). The condemners wax old as a garment; the One who died and rose abides at the right hand, interceding for his own. There is therefore now no condemnation (Romans 8:1) — not because the law is silenced, but because the elect''s justifier is Elohim himself and their advocate is the risen Messiah.',
+       sv.verse_id, ev.verse_id, 'free', 6187
+  FROM _s219_r08_lookup sv, _s219_r08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=8 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-8-for-thy-sake-we-are-killed-all-the-day-long-psalm-44',
+       E'For thy sake we are killed all the day long — Psalm 44',
+       E'*Who shall separate us from the love of Messiah (Christ)? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?* (Romans 8:35). Paul answers with the psalm, quoted word for word: *As it is written, For thy sake we are killed all the day long; we are accounted as sheep for the slaughter* (Romans 8:36) — *Yea, for thy sake are we killed all the day long; we are counted as sheep for the slaughter* (Psalm 44:22). And the psalm names plainly who the slaughtered are: *our heart is not turned back, neither have our steps declined from thy way* (Psalm 44:18). The sheep for the slaughter are the covenant-faithful, those whose steps had not declined from his way — not the lawless. Suffering is no sign of separation from the love of Elohim; it is the very portion of those who belong to him and walk in his way. *Nay, in all these things we are more than conquerors through him that loved us* (Romans 8:37), and *neither death, nor life … nor any other creature, shall be able to separate us from the love of Elohim (God), which is in HaMashiach Yahusha (Christ Jesus) our Lord* (Romans 8:38-39). The faithful are slain and held fast at once — nothing severs them from his love.',
+       sv.verse_id, ev.verse_id, 'free', 6190
+  FROM _s219_r08_lookup sv, _s219_r08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=35
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=8 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-8-the-righteousness-of-the-law-fulfilled-in-us-by-the-spirit
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 31:33 — *I will put my law in their inward parts, and write it in their hearts* the new covenant is Torah internalised, not abolished; the Spirit fulfils the very law he writes within (Romans 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-the-righteousness-of-the-law-fulfilled-in-us-by-the-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 36:27 — *I will put my spirit within you, and cause you to walk in my statutes* the Spirit-walk Paul names is the Spirit causing the keeping of the statutes (Romans 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-the-righteousness-of-the-law-fulfilled-in-us-by-the-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 36:27 — *cause you to walk in my statutes, and ye shall keep my judgments, and do them* it is the carnal mind, not the Spirit, that *is not subject to the law of Elohim (God)* (Romans 8:7).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-the-righteousness-of-the-law-fulfilled-in-us-by-the-spirit'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-8-i-will-put-my-spirit-within-you-the-new-heart-that-walks
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 37:14 — *I will put my spirit in you, and ye shall live* the valley of dry bones: the indwelling Spirit quickens the mortal body (Romans 8:11).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-i-will-put-my-spirit-within-you-the-new-heart-that-walks'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 36:26 — *a new heart also will I give you … I will give you an heart of flesh* the mortifying of the deeds of the body through the Spirit is the new heart at work (Romans 8:13).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-i-will-put-my-spirit-within-you-the-new-heart-that-walks'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 36:27 — *cause you to walk in my statutes* to be led by the Spirit and be a son is to be caused to walk in the statutes (Romans 8:14).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-i-will-put-my-spirit-within-you-the-new-heart-that-walks'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-8-the-spirit-of-adoption-led-by-the-spirit-are-sons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Galatians 4:6 — *because ye are sons, Elohim (God) hath sent forth the Spirit of his Son into your hearts, crying, Abba, Father* the Spirit reveals the sonship already true, the scattered seed brought home (Romans 8:15).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-the-spirit-of-adoption-led-by-the-spirit-are-sons'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Galatians 5:18 — *if ye be led of the Spirit, ye are not under the law* led out from under the law''s sentence, the son is set to keep it from the heart — never freedom to transgress (Romans 8:14).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-the-spirit-of-adoption-led-by-the-spirit-are-sons'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=5 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-8-the-whole-creation-groaneth-for-the-manifestation-of-the-sons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:17 — *cursed is the ground for thy sake; in sorrow shalt thou eat of it* the creature subjected to vanity is the ground bound by the curse, in hope (Romans 8:20).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-the-whole-creation-groaneth-for-the-manifestation-of-the-sons'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 11:6 — *the wolf also shall dwell with the lamb … and a little child shall lead them* the deliverance of the creature from corruption is the restored creation under the root of Jesse (Romans 8:21).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-the-whole-creation-groaneth-for-the-manifestation-of-the-sons'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 11:9 — *they shall not hurt nor destroy in all my holy mountain … the earth shall be full of the knowledge of Yahuah (LORD)* the groaning is birth-pain straining toward that mountain (Romans 8:22).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-the-whole-creation-groaneth-for-the-manifestation-of-the-sons'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-8-who-shall-lay-charge-who-condemneth-isaiah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 50:8 — *He is near that justifieth me; who will contend with me?* the adversary who would lay a charge is summoned forward and falls silent (Romans 8:33).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-who-shall-lay-charge-who-condemneth-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=50 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 50:9 — *who is he that shall condemn me? lo, they all shall wax old as a garment* the condemners wax old; the risen Messiah at the right hand intercedes (Romans 8:34).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-who-shall-lay-charge-who-condemneth-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=50 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-8-for-thy-sake-we-are-killed-all-the-day-long-psalm-44
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 44:22 — *for thy sake are we killed all the day long; we are counted as sheep for the slaughter* quoted word for word; suffering is the portion of those who belong to him (Romans 8:36).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-for-thy-sake-we-are-killed-all-the-day-long-psalm-44'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=44 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 44:18 — *our heart is not turned back, neither have our steps declined from thy way* the slaughtered sheep are the covenant-faithful, not the lawless; the love of Messiah holds them through every peril (Romans 8:35).'
+  FROM cross_reference_threads t, cross_references x, _s219_r08_lookup sv, _s219_r08_lookup tv
+ WHERE t.slug='romans-8-for-thy-sake-we-are-killed-all-the-day-long-psalm-44'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=8 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=44 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session219 — Romans cross-references complete.'
