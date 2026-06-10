@@ -68,7 +68,7 @@ in the sandbox).
 | 2 Timothy | 4 | ⬜ | ⬜ | ⬜ | greenfield |
 | Titus | 3 | ⬜ | ⬜ | ⬜ | greenfield |
 | Philemon | 1 | ⬜ | ⬜ | ⬜ | greenfield |
-| Hebrews | 13 | ⬜ | ⬜ | ⬜ | greenfield — Tanakh-dense, Melek Tsadiq |
+| **Hebrews** | 13 | ✅ | ✅ | ✅ | **complete** — 1–13 full library, 66 threads/203 members live (S222, band 7900–7993). 7 (Melek Tsadiq) · 8 & 10 (new covenant) ON BLESSING LIST. |
 | James | 5 | ⬜ | ⬜ | ⬜ | greenfield |
 | 1 Peter | 5 | ⬜ | ⬜ | ⬜ | greenfield — ch3 descent-to-the-dead |
 | 2 Peter | 3 | ⬜ | ⬜ | ⬜ | greenfield |
@@ -123,7 +123,7 @@ Acts 5000s).
 | 2 Timothy (4) | 7760 | 1–4 | 1 |
 | Titus (3) | 7800 | 1–3 (grace→good-works, RL #10) | 1 |
 | Philemon (1) | 7820 | 1 | 1 |
-| Hebrews (13) | 7900 | 1–2 · 3–4 · **5–7 (Melek Tsadiq)** · 8–10 (new covenant/Jer 31) · 11–13 | 5 |
+| ~~Hebrews (13)~~ | 7900 | ✅ COMPLETE (S222) — 5 packs: 1–2 · 3–4 · **5–7 (Melek Tsadiq)** · **8–10 (new covenant/Jer 31)** · 11–13. 66 threads/203 members live (band 7900–7993, step 1 ~7-wide/ch since slot is only 7900–7999). 7/8/10 on blessing list. NOTE: per-chapter step-1 banding (not the Acts/Romans 25-wide) because James=8000. | ✅ |
 | James (5) | 8000 | 1–3 · 4–5 (faith-and-works, do NOT read in Reformation grammar) | 2 |
 | 1 Peter (5) | 8100 | 1–2 · 3–5 (ch3 descent-to-the-dead, RL #11) | 2 |
 | 2 Peter (3) | 8200 | 1–3 (Watcher-judgment → 1 Enoch/Jude) | 1 |
@@ -155,9 +155,20 @@ Lower priority; the canon layer already renders for these. NT-to-NT + extras par
 - **Phase 3 (parity backfills):** ~17 minions
 - **Grand total remaining: ~80 range-minions.**
 
-Suggested order: finish Acts → Romans → Hebrews → Galatians → Revelation (the doctrinally
-load-bearing, high-voice-risk books while attention is fresh) → the shorter epistles → Phase 3
-backfills last.
+Suggested order: ~~finish Acts~~ → ~~Romans~~ → ~~Hebrews~~ → **Galatians (NEXT, band 7200, HIGH voice-risk)** →
+Revelation (kaph carve-outs Rev 1:13/14:14, band 9000) → the shorter epistles → Phase 3 backfills last.
+
+**FOR YOSHI'S BLESSING (Hebrews, S222)** — landed, flag for review (verbatim summary_md in the S222
+minion-return transcripts):
+- **Hebrews 7** (Melek Tsadiq priesthood) — the priesthood-change of 7:12 read as the change of the
+  law *regulating who serves at the altar* (the carnal-descent ordinance; priest now from Judah after
+  Melek Tsadiq), NOT the moral Torah/Sabbath/feasts; centerpiece Gen 14 + Ps 110:4, with Zech 6:12–13
+  (the BRANCH priest-king joining king + priest).
+- **Hebrews 8** (new covenant) — Jer 31:31–34 quoted in full = the SAME Torah moved from tablets of
+  stone to mind/heart (+ Ezek 36:26–27, Deut 30:6); 8:13 "vanisheth away" = the old priestly/sacrificial
+  administration, sealed with Jer 31:35–36 (the ordinances of sun/moon/stars do not depart).
+- **Hebrews 10** ("taketh away the first") — 10:9 = the animal-sacrifice system replaced by the once-for-all
+  offering (Ps 40:8 *thy law is within my heart*; John 19:30), Jer 31 re-quoted (10:16–17), NOT Torah abolished.
 
 ### How to run it (from your phone, via Dispatch)
 - **One range:** *"Do the next range from the NT roadmap."* — I pick up the next unfinished row,
