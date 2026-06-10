@@ -64,10 +64,6 @@ export function sunsetBoundaries(daytime: Date, loc: ReckoningState["location"])
   };
 }
 
-/** Day-parity (0/1) of a sunset instant, for the alternating diagonal shade. */
-function sunsetParity(sunset: Date): 0 | 1 {
-  return (Math.floor(sunset.getTime() / DAY_MS) % 2) as 0 | 1;
-}
 
 function illumAt(instant: Date): { illum: number; waxing: boolean } {
   const a = moonIllumination(instant);
@@ -89,10 +85,6 @@ export interface LayerCell {
   weekday: number;
   /** Sunset boundaries of the daytime biblical day. */
   sunset: SunsetBoundaries;
-  /** Tint parity of the MORNING half (the daytime biblical day). */
-  morningParity: 0 | 1;
-  /** Tint parity of the EVENING half (the biblical day starting at sunset). */
-  eveningParity: 0 | 1;
   /** Morning half belongs to the weekly Sabbath (Saturday daytime). */
   morningSabbath: boolean;
   /** Evening half opens the weekly Sabbath (Friday evening → the 7th day). */
@@ -204,8 +196,6 @@ function makeCell(
     daytime,
     weekday,
     sunset,
-    morningParity: sunsetParity(sunset.opens),
-    eveningParity: sunsetParity(sunset.closes),
     morningSabbath: weekday === 6,
     eveningSabbath: weekday === 5,
     filler,

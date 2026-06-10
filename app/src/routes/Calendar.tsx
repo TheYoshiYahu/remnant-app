@@ -788,24 +788,28 @@ function CrescentWatch({ reck, result, now, setReck }: WatchProps) {
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-/** Techelet parity tints for the alternating diagonal sunset shade (no grey). */
-function halfTint(parity: 0 | 1, sabbath: boolean): string {
-  if (sabbath) return "rgba(46, 123, 214, 0.42)"; // spectral — the rest register
-  return parity === 0 ? "rgba(10, 45, 132, 0.66)" : "rgba(26, 111, 229, 0.30)";
-}
-
 /**
- * The diagonal sunset shade: morning half (left) → seam at sundown → evening
- * half (right). Because adjacent boxes share the seam sunset instant, a single
- * biblical day's evening-half and the next box's morning-half carry the same
- * tint and read as one diagonal band — and Fri-evening + Sat-morning form the
- * one Sabbath band.
+ * The diagonal sunset shade — UNIFORM on every box, so it always means the same
+ * thing: the lower/evening half (after the sundown seam) is shaded = "sunset has
+ * passed, the new Hebrew day has begun here." The upper/daytime half is left
+ * clear. A Hebrew day therefore reads as [shaded evening of box N] + [clear
+ * daytime of box N+1], and the next box's shaded evening marks where the
+ * following Hebrew day begins. No parity, no alternation.
+ *
+ * The one exception is colour, not position: the weekly Sabbath band — Friday's
+ * evening half + Saturday's daytime half — is tinted in the spectral rest
+ * register so it reads as a single Friday-evening→Saturday-day band.
  */
+const SHADE_TECHELET = "rgba(10, 45, 132, 0.6)"; // the post-sunset evening shade
+const SHADE_SABBATH = "rgba(46, 123, 214, 0.5)"; // spectral — the Sabbath band
+const SHADE_SEAM = "rgba(147, 192, 255, 0.5)"; // the sundown seam line
+
 function shadeBackground(cell: LayerCell): string {
-  const morn = halfTint(cell.morningParity, cell.morningSabbath);
-  const evening = halfTint(cell.eveningParity, cell.eveningSabbath);
-  const seam = "rgba(147, 192, 255, 0.55)";
-  return `linear-gradient(108deg, ${morn} 0 46.5%, ${seam} 46.5% 50.5%, ${evening} 50.5% 100%)`;
+  // Daytime (upper) half: clear, except Saturday daytime carries the Sabbath band.
+  const morning = cell.morningSabbath ? SHADE_SABBATH : "transparent";
+  // Evening (lower) half: always shaded — Friday evening opens the Sabbath band.
+  const evening = cell.eveningSabbath ? SHADE_SABBATH : SHADE_TECHELET;
+  return `linear-gradient(108deg, ${morning} 0 46.5%, ${SHADE_SEAM} 46.5% 50.5%, ${evening} 50.5% 100%)`;
 }
 
 function LayerGridView({
@@ -883,10 +887,10 @@ function LayerGridView({
       </div>
 
       <p className="cal-shade-caption">
-        Each box is split at <span className="cal-shade-seam-word">sundown</span>: the
-        evening-half spills into the next day&rsquo;s morning-half, so one biblical day
-        reads as a single diagonal band. The brighter band is the weekly Sabbath —
-        Friday evening through Saturday day.
+        The shaded lower half of every box is after{" "}
+        <span className="cal-shade-seam-word">sundown</span> — the new Hebrew day has
+        begun there, and runs on through the clear daytime of the next box. The
+        brighter band is the weekly Sabbath: Friday evening through Saturday day.
       </p>
 
       <GridLegend cells={grid.cells} />
@@ -920,7 +924,9 @@ function LayerDayCell({
         (moed ? " cal-cell-moed" : "")
       }
       style={{
-        background: shadeBackground(cell),
+        // backgroundImage (not the shorthand) so the cell's own surface shows
+        // through the clear daytime half.
+        backgroundImage: shadeBackground(cell),
         ...(theme
           ? {
               borderColor: hexA(theme.glow, 0.6),
