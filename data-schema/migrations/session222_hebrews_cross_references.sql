@@ -999,6 +999,639 @@ SELECT t.id, x.id, 2, E'Isaiah 53:4 — *Surely he hath borne our griefs, and ca
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_hebrews_05.sql (S222 Hebrews 5) -----
+-- =====================================================================
+-- S222 minion — HEBREWS 5 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: HEBREWS 5.  Tag: h05 (temp view _s222_h05_lookup).  Sort band: 7928, step 1 (<= 7934).
+-- Source is ALWAYS the canon Hebrews verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Hebrews 5 introduces the high-priesthood of Messiah. Every high priest is
+-- *taken from among men* and *called of Elohim (God), as was Aaron* (5:4) — the office is given,
+-- never seized. So *Messiah (Christ) glorified not himself to be made an high priest; but he that
+-- said unto him, Thou art my Son, to day have I begotten thee* (5:5) — the Father called and
+-- installed the Son. And the order is named: *Thou art a priest for ever after the order of Melek
+-- Tsadiq (Melchizedek)* (5:6,10). CHRISTOLOGY WATCHPOINT: the Son who *in the days of his flesh*
+-- *offered up prayers and supplications with strong crying and tears* (5:7) and *though he were a
+-- Son, yet learned he obedience by the things which he suffered* (5:8) is the Formed who took
+-- flesh truly — he has a Father who called him, perfected him, and heard him; he is not a co-equal
+-- second person and not the Father himself. MELEK TSADIQ WATCHPOINT: this chapter SETS UP chapter
+-- 7; the full Genesis 14 tithe-and-blessing weave belongs to ch7. Here the thread introduces the
+-- Psalm 110:4 priest-king order Hebrews actually quotes (5:6,10), with the Genesis 14:18 priest of
+-- El Elyon as its root only — the centerpiece Melchizedek weave is reserved for ch7.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-4   every high priest taken from among men, called of Elohim as was Aaron
+--           Tanakh: Psalm 2:7 (carried at v.5, the call)  Extras: none warranted  NT: none warranted
+--   v.5     Messiah glorified not himself; Thou art my Son, to day have I begotten thee
+--           Tanakh: Psalm 2:7 (quoted)  Extras: none warranted  NT: none warranted (Heb 1:5 same hand, carried in prose)
+--   v.6,10  Thou art a priest for ever after the order of Melek Tsadiq
+--           Tanakh: Psalm 110:4 (quoted), Genesis 14:18 (priest of El Elyon, root only)  Extras: deferred to ch7 (2 Enoch / Melchizedek tradition)  NT: none warranted (Heb 7 re-walks)
+--   v.7-8   in the days of his flesh, strong crying and tears; learned obedience by suffering
+--           Tanakh: none warranted  Extras: none warranted  NT: Luke 22:42-44 (the cup, the agony), Matthew 26:39 (not as I will)
+--   v.9     being made perfect, the author of eternal salvation to them that obey him
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted (carried at v.7-8)
+--   v.11-14 milk vs strong meat, unskilful in the word of righteousness, the babe
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted (no load-bearing pairing; left unwoven by design — see return note)
+--
+-- THREADS (slug -> target libraries):
+--   7928 hebrews-5-called-of-elohim-as-was-aaron-thou-art-my-son-psalm-2          (Tanakh)
+--   7929 hebrews-5-a-priest-for-ever-after-the-order-of-melchizedek-psalm-110     (Tanakh)
+--   7930 hebrews-5-in-the-days-of-his-flesh-strong-crying-and-tears-learned-obedience  (NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s222_h05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: hebrews-5-called-of-elohim-as-was-aaron-thou-art-my-son-psalm-2
+  ('canon', 'hebrews', 5, 5, 'canon', 'psalms', 2, 7, 'free', E'*I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee.* (Psalm 2:7). The high priest does not appoint himself — *no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron* (Hebrews 5:4). So the Son did not grasp the office: *Messiah (Christ) glorified not himself to be made an high priest; but he that said unto him, Thou art my Son, to day have I begotten thee* (Hebrews 5:5). The very word that installs him is the Father''s decree of Psalm 2 — the Father speaks, *Thou art my Son,* and the Son is the One spoken to. The Son has a Father who calls and installs him; he is the Formed answering the voice of the Formless, never the One who speaks the decree.'),
+  ('canon', 'hebrews', 5, 4, 'canon', 'psalms', 2, 7, 'free', E'*I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee.* (Psalm 2:7). *And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron* (Hebrews 5:4). The priesthood is a thing given, not seized — Aaron was called, and so was the Son, by the same decreeing voice: *Yahuah (LORD) hath said unto me, Thou art my Son.* The calling that makes the priest is the Father''s word over him; the office rests on being chosen, not on self-exaltation.'),
+  -- thread: hebrews-5-a-priest-for-ever-after-the-order-of-melchizedek-psalm-110
+  ('canon', 'hebrews', 5, 6, 'canon', 'psalms', 110, 4, 'free', E'*Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* (Psalm 110:4). Hebrews names the order plainly: *As he saith also in another place, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 5:6). This is no Levitical office, bound by descent and ended by death; it is the priesthood Yahuah swore by oath and *will not repent* — a priesthood *for ever.* The Son called *Thou art my Son* (Psalm 2:7) is the same One named *a priest for ever,* king and priest in one, after the order older than Aaron.'),
+  ('canon', 'hebrews', 5, 10, 'canon', 'psalms', 110, 4, 'free', E'*Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* (Psalm 110:4). *Called of Elohim (God) an high priest after the order of Melek Tsadiq (Melchizedek)* (Hebrews 5:10). The calling and the order are repeated together: the Father called him, and called him to a priesthood not of Levi but *after the order of Melek Tsadiq.* The sworn, unrepented oath of the psalm stands behind the title — a priest *for ever,* whose office no death cuts off.'),
+  ('canon', 'hebrews', 5, 6, 'canon', 'genesis', 14, 18, 'free', E'*And Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God).* (Genesis 14:18). The order Hebrews names — *after the order of Melek Tsadiq (Melchizedek)* (Hebrews 5:6) — reaches back to the priest-king who met Abram in the days of the patriarchs: king of Salem and *priest of the El Elyon (most high God),* a priesthood that stood before Aaron and outside Levi. Here the root is only named; the meeting in the valley, the bread and wine, the tithe and the blessing are unfolded where Hebrews takes them up at length.'),
+  -- thread: hebrews-5-in-the-days-of-his-flesh-strong-crying-and-tears-learned-obedience
+  ('canon', 'hebrews', 5, 7, 'canon', 'luke', 22, 42, 'free', E'*Saying, Father, if thou be willing, remove this cup from me: nevertheless not my will, but thine, be done.* (Luke 22:42). *Who in the days of his flesh, when he had offered up prayers and supplications with strong crying and tears unto him that was able to save him from death, and was heard in that he feared* (Hebrews 5:7). The prayer Hebrews remembers is the one heard in the garden: the Son on his knees before the Father, asking that the cup pass, and yielding — *not my will, but thine, be done.* He prays *unto him that was able to save him from death;* he has a Father to whom he cries, and the cry is the surrender of his own will to the Father''s. This is the Formed who took flesh truly, not a will co-equal and identical to the Father''s but a Son submitting to the One who sent him.'),
+  ('canon', 'hebrews', 5, 7, 'canon', 'luke', 22, 44, 'free', E'*And being in an agony he prayed more earnestly: and his sweat was as it were great drops of blood falling down to the ground.* (Luke 22:44). The *strong crying and tears* of Hebrews 5:7 are not figures of speech — Luke saw them: *being in an agony he prayed more earnestly,* his sweat *as it were great drops of blood.* The Son in the days of his flesh wept and bled in prayer before the Father who *was able to save him from death.* The high priest who intercedes for us first cried out himself, in real flesh, in real anguish.'),
+  ('canon', 'hebrews', 5, 7, 'canon', 'matthew', 26, 39, 'free', E'*And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt.* (Matthew 26:39). Hebrews says he *offered up prayers and supplications with strong crying and tears unto him that was able to save him from death* (Hebrews 5:7); Matthew shows him fallen on his face, crying *O my Father.* The Son addresses a Father distinct from himself and bends his own will to that Father''s — *not as I will, but as thou wilt.* It is by this very road — *though he were a Son, yet learned he obedience by the things which he suffered* (Hebrews 5:8) — that he was *made perfect* and *became the author of eternal salvation* (Hebrews 5:9).'),
+  ('canon', 'hebrews', 5, 8, 'canon', 'matthew', 26, 39, 'free', E'*And he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt.* (Matthew 26:39). *Though he were a Son, yet learned he obedience by the things which he suffered* (Hebrews 5:8). The learning of obedience is exactly this moment: the Son with a cup before him he would rather not drink, yielding it — *not as I will, but as thou wilt.* Obedience learned by suffering is no pretence in one who could not have done otherwise; it is the real submission of the Formed, in flesh, to the will of the Father who sent him.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s222_h05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s222_h05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-5-called-of-elohim-as-was-aaron-thou-art-my-son-psalm-2',
+       E'Called of Elohim, as was Aaron — Thou art my Son (Psalm 2)',
+       E'The priesthood is a thing given, never seized. *And no man taketh this honour unto himself, but he that is called of Elohim (God), as was Aaron* (Hebrews 5:4). So too the Son did not grasp the office: *Messiah (Christ) glorified not himself to be made an high priest; but he that said unto him, Thou art my Son, to day have I begotten thee* (Hebrews 5:5). The word that installs him as priest is the Father''s decree from the second psalm: *I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee* (Psalm 2:7). The Father speaks, *Thou art my Son,* and the Son is the One spoken to and called. This is the framework''s Christology in a single verse: the Son has a Father who calls and installs him — the Formed answering the voice of the Formless, never the One who speaks the decree, and never a self-appointed rival to the Father who appoints him.',
+       sv.verse_id, ev.verse_id, 'free', 7928
+  FROM _s222_h05_lookup sv, _s222_h05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=5 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-5-a-priest-for-ever-after-the-order-of-melchizedek-psalm-110',
+       E'A priest for ever after the order of Melek Tsadiq (Psalm 110)',
+       E'Twice in this chapter Hebrews names the order of Messiah''s priesthood: *As he saith also in another place, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 5:6), and again, *Called of Elohim (God) an high priest after the order of Melek Tsadiq (Melchizedek)* (Hebrews 5:10). The line is lifted whole from the psalm: *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4). This is no Levitical office bound by descent and cut off by death — it is a priesthood Yahuah established by sworn oath and *will not repent,* a priesthood *for ever.* And the order reaches back past Aaron to the priest-king who met Abram: *Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God)* (Genesis 14:18) — king and priest in one, standing before Levi and outside it. Here the chapter only names this order and lets the oath stand; the meeting in the king''s dale, the tithe, and the blessing are unfolded where Hebrews takes the priest-king up at length.',
+       sv.verse_id, ev.verse_id, 'free', 7929
+  FROM _s222_h05_lookup sv, _s222_h05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=5 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-5-in-the-days-of-his-flesh-strong-crying-and-tears-learned-obedience',
+       E'In the days of his flesh — strong crying and tears, obedience learned',
+       E'*Who in the days of his flesh, when he had offered up prayers and supplications with strong crying and tears unto him that was able to save him from death, and was heard in that he feared* (Hebrews 5:7); *though he were a Son, yet learned he obedience by the things which he suffered* (Hebrews 5:8); *and being made perfect, he became the author of eternal salvation unto all them that obey him* (Hebrews 5:9). The prayer Hebrews remembers is the one prayed in the garden. *Saying, Father, if thou be willing, remove this cup from me: nevertheless not my will, but thine, be done* (Luke 22:42); *and being in an agony he prayed more earnestly: and his sweat was as it were great drops of blood falling down to the ground* (Luke 22:44); *and he went a little further, and fell on his face, and prayed, saying, O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt* (Matthew 26:39). The *strong crying and tears* were real — sweat like blood, a face to the ground, a cup he would rather not drink. And the One he cries to is *him that was able to save him from death,* a Father distinct from himself, whose will he bends his own will to receive. This is the Formed who took flesh truly: not a will co-equal and identical to the Father''s, but a Son who *learned obedience by the things which he suffered,* and so was made perfect — the author of eternal salvation, who first cried out himself before he became the high priest who intercedes for us.',
+       sv.verse_id, ev.verse_id, 'free', 7930
+  FROM _s222_h05_lookup sv, _s222_h05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=5 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: hebrews-5-called-of-elohim-as-was-aaron-thou-art-my-son-psalm-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 2:7 — *Thou art my Son; this day have I begotten thee* the Father''s decree is the word that installs the Son as high priest (Hebrews 5:5).'
+  FROM cross_reference_threads t, cross_references x, _s222_h05_lookup sv, _s222_h05_lookup tv
+ WHERE t.slug='hebrews-5-called-of-elohim-as-was-aaron-thou-art-my-son-psalm-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 2:7 — *Yahuah (LORD) hath said unto me, Thou art my Son* the priesthood is called, not seized; the Son is called as Aaron was (Hebrews 5:4).'
+  FROM cross_reference_threads t, cross_references x, _s222_h05_lookup sv, _s222_h05_lookup tv
+ WHERE t.slug='hebrews-5-called-of-elohim-as-was-aaron-thou-art-my-son-psalm-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-5-a-priest-for-ever-after-the-order-of-melchizedek-psalm-110
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 110:4 — *Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* the sworn, unrepented oath behind the order Hebrews quotes (Hebrews 5:6).'
+  FROM cross_reference_threads t, cross_references x, _s222_h05_lookup sv, _s222_h05_lookup tv
+ WHERE t.slug='hebrews-5-a-priest-for-ever-after-the-order-of-melchizedek-psalm-110'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 110:4 — *Yahuah (LORD) hath sworn, and will not repent* the calling and the order repeated: an high priest for ever, not of Levi (Hebrews 5:10).'
+  FROM cross_reference_threads t, cross_references x, _s222_h05_lookup sv, _s222_h05_lookup tv
+ WHERE t.slug='hebrews-5-a-priest-for-ever-after-the-order-of-melchizedek-psalm-110'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 14:18 — *Melek Tsadiq (Melchizedek) king of Salem … the priest of the El Elyon (most high God)* the priest-king root of the order, before Aaron and outside Levi (Hebrews 5:6).'
+  FROM cross_reference_threads t, cross_references x, _s222_h05_lookup sv, _s222_h05_lookup tv
+ WHERE t.slug='hebrews-5-a-priest-for-ever-after-the-order-of-melchizedek-psalm-110'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-5-in-the-days-of-his-flesh-strong-crying-and-tears-learned-obedience
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 22:42 — *Father … not my will, but thine, be done* the garden prayer Hebrews remembers, the Son yielding to the Father (Hebrews 5:7).'
+  FROM cross_reference_threads t, cross_references x, _s222_h05_lookup sv, _s222_h05_lookup tv
+ WHERE t.slug='hebrews-5-in-the-days-of-his-flesh-strong-crying-and-tears-learned-obedience'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 22:44 — *being in an agony … his sweat was as it were great drops of blood* the strong crying and tears were real, in real flesh (Hebrews 5:7).'
+  FROM cross_reference_threads t, cross_references x, _s222_h05_lookup sv, _s222_h05_lookup tv
+ WHERE t.slug='hebrews-5-in-the-days-of-his-flesh-strong-crying-and-tears-learned-obedience'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=44
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 26:39 — *O my Father … not as I will, but as thou wilt* the Son addresses a Father distinct from himself and bends his will to his (Hebrews 5:7).'
+  FROM cross_reference_threads t, cross_references x, _s222_h05_lookup sv, _s222_h05_lookup tv
+ WHERE t.slug='hebrews-5-in-the-days-of-his-flesh-strong-crying-and-tears-learned-obedience'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 26:39 — *not as I will, but as thou wilt* the very road by which *he learned obedience by the things which he suffered* (Hebrews 5:8).'
+  FROM cross_reference_threads t, cross_references x, _s222_h05_lookup sv, _s222_h05_lookup tv
+ WHERE t.slug='hebrews-5-in-the-days-of-his-flesh-strong-crying-and-tears-learned-obedience'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=5 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_hebrews_06.sql (S222 Hebrews 6) -----
+-- =====================================================================
+-- S222 minion — HEBREWS 6 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: HEBREWS 6.  Tag: h06 (temp view _s222_h06_lookup).  Sort band: 7935, step 1 (<=7941).
+-- Source is ALWAYS the canon Hebrews verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Hebrews 6 turns on the solemn warning against falling away after enlightenment
+-- (6:4-6) and the ground-bearing-thorns parable (6:7-8). Read in the framework: this is the real
+-- peril of covenant-abandonment for the enlightened — faithfulness held to the end, not a
+-- once-saved-always-saved prooftext nor cheap grace. *They that through faith and patience inherit
+-- the promises* (6:12) is emunah — faith that endures and bears fruit. The ground that *bringeth
+-- forth herbs* receives blessing; the ground that *beareth thorns and briers is rejected, and is
+-- nigh unto cursing* (6:7-8) — the cursed ground of Eden (Genesis 3:17-18) and the vineyard that
+-- yielded wild grapes (Isaiah 5), the same tree-by-fruit test Yahusha (Jesus) gives (Matthew 7:19).
+-- The better things turn on the oath to Abraham (6:13-15 / Genesis 22:16-17), the two immutable
+-- things, the hope as *an anchor of the soul* entering *within the veil* where the forerunner has
+-- gone (6:19-20), the *high priest for ever after the order of Melek Tsadiq (Melchizedek)* (6:20 /
+-- Psalm 110:4), which Hebrews itself re-walks at 5:6 and 7:17.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-3   leaving first principles, going on unto perfection; baptisms, laying on of hands, resurrection, judgment
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted (catechetical list, no single load-bearing pull)
+--   v.4-6   the falling-away warning; crucify the Son afresh
+--           Tanakh: none warranted  Extras: none warranted  NT: Hebrews 10:26-27 (sin wilfully, no more sacrifice — Heb-internal re-walk of the same peril)
+--   v.7-8   the ground bearing herbs vs thorns; nigh unto cursing, end to be burned
+--           Tanakh: Genesis 3:17 + 3:18 (cursed ground, thorns), Isaiah 5:7 (vineyard yielded wild grapes)  Extras: none warranted  NT: Matthew 7:19 (every tree not bearing good fruit hewn down and cast into fire)
+--   v.9-12  better things; Elohim not unrighteous to forget your work and labour of love; through faith and patience inherit the promises
+--           Tanakh: none warranted  Extras: none warranted  NT: none warranted (woven into v.13-15 endurance prose)
+--   v.13-15 the oath to Abraham, surely blessing I will bless thee; patiently endured, obtained the promise
+--           Tanakh: Genesis 22:16 + 22:17 (the oath at the binding)  Extras: none warranted (clean witness preferred; Jasher/Jubilees parallels carry editorial framing)  NT: none warranted
+--   v.16-18 men swear by the greater; two immutable things; impossible for Elohim to lie; strong consolation
+--           Tanakh: none warranted (carried at v.13-15)  Extras: none warranted  NT: none warranted
+--   v.19-20 the hope as an anchor of the soul, within the veil; the forerunner entered, high priest for ever after the order of Melek Tsadiq
+--           Tanakh: Psalm 110:4 (priest for ever after the order of Melek Tsadiq)  Extras: none warranted  NT: Hebrews 9:24 (entered heaven itself for us), Hebrews 5:6 + 7:17 (Heb-internal re-walk of Psalm 110:4)
+--
+-- THREADS (slug -> target libraries):
+--   7935 hebrews-6-the-ground-that-beareth-thorns-is-nigh-unto-cursing                       (Tanakh + NT)
+--   7936 hebrews-6-surely-blessing-i-will-bless-thee-the-oath-to-abraham-genesis-22          (Tanakh)
+--   7937 hebrews-6-an-anchor-of-the-soul-within-the-veil-whither-the-forerunner-entered      (NT)
+--   7938 hebrews-6-an-high-priest-for-ever-after-the-order-of-melchizedek-psalm-110          (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s222_h06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: hebrews-6-the-ground-that-beareth-thorns-is-nigh-unto-cursing
+  ('canon', 'hebrews', 6, 8, 'canon', 'genesis', 3, 17, 'free', E'*And unto Adam he said, Because thou hast hearkened unto the voice of thy wife, and hast eaten of the tree, of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life;* (Genesis 3:17). The ground that *beareth thorns and briers is rejected, and is nigh unto cursing; whose end is to be burned* (Hebrews 6:8). The writer reaches straight back to the garden: the curse that bound the ground to thorn was spoken over disobedience, *cursed is the ground for thy sake.* The enlightened soul that bears no fruit after the rain of the heavenly gift stands under that same sentence — not blessed earth, but cursed ground.'),
+  ('canon', 'hebrews', 6, 8, 'canon', 'genesis', 3, 18, 'free', E'*Thorns also and thistles shall it bring forth to thee; and thou shalt eat the herb of the field;* (Genesis 3:18). Hebrews sets the herb-bearing ground that *receiveth blessing from Elohim (God)* (6:7) against the ground that *beareth thorns and briers* (6:8) — the very thorns and thistles the cursed ground brought forth after the fall. The same rain falls on both grounds; what each yields reveals what it is. The thorn-bearer is *nigh unto cursing,* the fruit of a heart that drank the rain and rendered nothing back.'),
+  ('canon', 'hebrews', 6, 8, 'canon', 'isaiah', 5, 7, 'free', E'*For the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel), and the men of Yahudah (Judah) his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry.* (Isaiah 5:7). The prophet sang of the vineyard tended with every care that yet *brought forth wild grapes,* and named it the house of Yashar''el (Israel). Hebrews presses the same picture onto the enlightened who fall away: ground watered by the rain that *bringeth forth herbs* is blessed; ground that returns thorns is *rejected, and is nigh unto cursing* (Hebrews 6:8). The tending was not in question; the fruit was.'),
+  ('canon', 'hebrews', 6, 8, 'canon', 'matthew', 7, 19, 'free', E'*Every tree that bringeth not forth good fruit is hewn down, and cast into the fire.* (Matthew 7:19). The ground that *beareth thorns and briers* has an end: *whose end is to be burned* (Hebrews 6:8). Yahusha (Jesus) gave the same verdict — the test is the fruit, and the tree that bears none is hewn down and *cast into the fire.* This is the peril Hebrews names for the enlightened: not a snatched-away security, but the real possibility that one who tasted the heavenly gift bears thorns and comes to the fire.'),
+  -- thread: hebrews-6-surely-blessing-i-will-bless-thee-the-oath-to-abraham-genesis-22
+  ('canon', 'hebrews', 6, 14, 'canon', 'genesis', 22, 16, 'free', E'*And said, By myself have I sworn, saith Yahuah (LORD), for because thou hast done this thing, and hast not withheld thy son, thine only son:* (Genesis 22:16). *When Elohim (God) made promise to Abraham, because he could swear by no greater, he sware by himself* (Hebrews 6:13). The writer quotes the oath sworn at the binding on the mountain: *By myself have I sworn.* There is none greater for Yahuah (LORD) to swear by, so he swears by himself — the immutable ground of the promise, given because Abraham *hast not withheld thy son.*'),
+  ('canon', 'hebrews', 6, 14, 'canon', 'genesis', 22, 17, 'free', E'*That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies;* (Genesis 22:17). Hebrews quotes the oath nearly word for word: *Surely blessing I will bless thee, and multiplying I will multiply thee* (Hebrews 6:14). The promise sworn at the binding is the seed multiplied as the stars and the sand — the covenant lineage of the twelve tribes carried forward. *And so, after he had patiently endured, he obtained the promise* (6:15): the oath is sure, and the heir inherits it through the same faith and patience.'),
+  -- thread: hebrews-6-an-anchor-of-the-soul-within-the-veil-whither-the-forerunner-entered
+  ('canon', 'hebrews', 6, 20, 'canon', 'hebrews', 9, 24, 'free', E'*For Messiah (Christ) is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of Elohim (God) for us:* (Hebrews 9:24). The hope is *an anchor of the soul, both sure and stedfast, and which entereth into that within the veil; whither the forerunner is for us entered, even Yahusha (Jesus)* (Hebrews 6:19-20). What *within the veil* means the writer says plainly a few chapters on: not the earthly holy place but *heaven itself,* where the forerunner appears *in the presence of Elohim (God) for us.* The anchor of the soul is fixed not in this world but in the heavenly sanctuary where Yahusha has already gone in.'),
+  -- thread: hebrews-6-an-high-priest-for-ever-after-the-order-of-melchizedek-psalm-110
+  ('canon', 'hebrews', 6, 20, 'canon', 'psalms', 110, 4, 'free', E'*Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* (Psalm 110:4). The forerunner entered within the veil, *made an high priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 6:20). The writer is quoting the psalm''s oath directly — and the oath stands alongside the oath to Abraham earlier in the chapter, for *Yahuah (LORD) hath sworn, and will not repent.* The priesthood after the order of Melek Tsadiq is not Levitical and not temporary; it is sworn by oath, *for ever,* the eternal priest-king the psalm foretold.'),
+  ('canon', 'hebrews', 6, 20, 'canon', 'hebrews', 5, 6, 'free', E'*As he saith also in another place, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* (Hebrews 5:6). The same psalm-oath the writer cited at the close of chapter five he sounds again here: the forerunner *made an high priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 6:20). Hebrews keeps returning to the one text, building toward the full exposition of the Melek Tsadiq priesthood — the priest-king who arises not by carnal descent but by the power of an endless life.'),
+  ('canon', 'hebrews', 6, 20, 'canon', 'hebrews', 7, 17, 'free', E'*For he testifieth, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* (Hebrews 7:17). The high priest *for ever after the order of Melek Tsadiq (Melchizedek)* named at 6:20 is the thread the writer takes up fully in chapter seven: *For he testifieth, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* The forerunner who entered within the veil and the eternal priest expounded from Genesis 14 and Psalm 110 are one — the same Yahusha (Jesus), priest by oath and *for ever.*')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s222_h06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s222_h06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-6-the-ground-that-beareth-thorns-is-nigh-unto-cursing',
+       E'The ground that beareth thorns is nigh unto cursing',
+       E'After the solemn warning against falling away — that it is *impossible for those who were once enlightened, and have tasted of the heavenly gift … if they shall fall away, to renew them again unto repentance* (Hebrews 6:4-6) — the writer draws a parable from the soil. *For the earth which drinketh in the rain that cometh oft upon it, and bringeth forth herbs meet for them by whom it is dressed, receiveth blessing from Elohim (God): but that which beareth thorns and briers is rejected, and is nigh unto cursing; whose end is to be burned* (Hebrews 6:7-8). The same rain falls on both grounds; the fruit reveals what each one is. This is not a once-saved-always-saved security and it is not cheap grace — it is the real peril of covenant-abandonment for the enlightened, faithfulness tested by what it bears. The picture reaches straight back to Eden, where the curse first bound the ground to thorn: *cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life* (Genesis 3:17), *thorns also and thistles shall it bring forth to thee* (Genesis 3:18). The prophet sang the same warning over the covenant people themselves — a vineyard tended with every care that yet yielded wild grapes: *For the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel), and the men of Yahudah (Judah) his pleasant plant: and he looked for judgment, but behold oppression* (Isaiah 5:7). And Yahusha (Jesus) gave the verdict in plainest words: *Every tree that bringeth not forth good fruit is hewn down, and cast into the fire* (Matthew 7:19). The tending was never in question. The fruit was. The thorn-bearer comes to the fire.',
+       sv.verse_id, ev.verse_id, 'free', 7935
+  FROM _s222_h06_lookup sv, _s222_h06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=6 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-6-surely-blessing-i-will-bless-thee-the-oath-to-abraham-genesis-22',
+       E'Surely blessing I will bless thee — the oath to Abraham',
+       E'Against the slothful and the fallen the writer sets *them who through faith and patience inherit the promises* (Hebrews 6:12), and the great pattern is Abraham. *For when Elohim (God) made promise to Abraham, because he could swear by no greater, he sware by himself, saying, Surely blessing I will bless thee, and multiplying I will multiply thee* (Hebrews 6:13-14). The words are quoted from the oath sworn on the mountain at the binding of Isaac, after Abraham had not withheld his son: *By myself have I sworn, saith Yahuah (LORD), for because thou hast done this thing, and hast not withheld thy son, thine only son: that in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore* (Genesis 22:16-17). There is none greater for Yahuah (LORD) to swear by, so he swears by himself — the promise made immutable. The seed multiplied as the stars and the sand is the covenant lineage carried forward through the twelve tribes, not a metaphor for any who believe. *And so, after he had patiently endured, he obtained the promise* (Hebrews 6:15): the oath is sure, and the heir inherits it through the same faith that endures and obeys — emunah that does not let go.',
+       sv.verse_id, ev.verse_id, 'free', 7936
+  FROM _s222_h06_lookup sv, _s222_h06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=6 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-6-an-anchor-of-the-soul-within-the-veil-whither-the-forerunner-entered',
+       E'An anchor of the soul within the veil, whither the forerunner entered',
+       E'By the oath and the promise — *two immutable things, in which it was impossible for Elohim (God) to lie* (Hebrews 6:18) — the heirs have a strong consolation, and the writer names its fixity: *which hope we have as an anchor of the soul, both sure and stedfast, and which entereth into that within the veil; whither the forerunner is for us entered, even Yahusha (Jesus)* (Hebrews 6:19-20). The anchor does not hold to anything in this world; it reaches *within the veil,* into the inner sanctuary itself, where Yahusha has already gone as the forerunner who opens the way. What that veil hides the writer says plainly a few chapters on: *For Messiah (Christ) is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of Elohim (God) for us* (Hebrews 9:24). The earthly holy place was the figure; the true is heaven, and there the Formed-one who took on flesh stands in the presence of the Father on behalf of his own. The soul''s anchor is fixed in the heavenly sanctuary where the forerunner has already entered in.',
+       sv.verse_id, ev.verse_id, 'free', 7937
+  FROM _s222_h06_lookup sv, _s222_h06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=6 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-6-an-high-priest-for-ever-after-the-order-of-melchizedek-psalm-110',
+       E'An high priest for ever after the order of Melek Tsadiq (Melchizedek)',
+       E'The chapter closes on the title that governs the whole epistle: the forerunner entered within the veil, *made an high priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 6:20). The words are the oath of the psalm, quoted directly: *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4). The oath stands beside the oath to Abraham earlier in the same chapter — Yahuah (LORD) swearing and not repenting, the immutable word made the ground of the priesthood. This is not the Levitical priesthood, bound by carnal descent and ended by death; it is the priesthood of the priest-king of Salem, eternal and sworn by oath, *for ever.* Hebrews keeps returning to this one text: at the close of chapter five — *As he saith also in another place, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 5:6) — and again in the full exposition of chapter seven — *For he testifieth, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 7:17). The forerunner who entered the heavenly sanctuary and the eternal priest the psalm foretold are one: the same Yahusha (Jesus), priest by oath and for ever.',
+       sv.verse_id, ev.verse_id, 'free', 7938
+  FROM _s222_h06_lookup sv, _s222_h06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=6 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: hebrews-6-the-ground-that-beareth-thorns-is-nigh-unto-cursing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:17 — *cursed is the ground for thy sake; in sorrow shalt thou eat of it* the Eden curse that bound the ground to thorn is the sentence over the thorn-bearing soul (Hebrews 6:8).'
+  FROM cross_reference_threads t, cross_references x, _s222_h06_lookup sv, _s222_h06_lookup tv
+ WHERE t.slug='hebrews-6-the-ground-that-beareth-thorns-is-nigh-unto-cursing'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:18 — *thorns also and thistles shall it bring forth to thee* the thorns the cursed ground brings forth are what the unfruitful heart returns for the rain it drank (Hebrews 6:8).'
+  FROM cross_reference_threads t, cross_references x, _s222_h06_lookup sv, _s222_h06_lookup tv
+ WHERE t.slug='hebrews-6-the-ground-that-beareth-thorns-is-nigh-unto-cursing'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 5:7 — *the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel)* the tended vineyard that yielded wild grapes is the same warning to the covenant people (Hebrews 6:8).'
+  FROM cross_reference_threads t, cross_references x, _s222_h06_lookup sv, _s222_h06_lookup tv
+ WHERE t.slug='hebrews-6-the-ground-that-beareth-thorns-is-nigh-unto-cursing'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 7:19 — *Every tree that bringeth not forth good fruit is hewn down, and cast into the fire* Yahusha''s (Jesus''s) verdict: the fruitless tree comes to the fire, the end of the thorn-bearing ground (Hebrews 6:8).'
+  FROM cross_reference_threads t, cross_references x, _s222_h06_lookup sv, _s222_h06_lookup tv
+ WHERE t.slug='hebrews-6-the-ground-that-beareth-thorns-is-nigh-unto-cursing'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-6-surely-blessing-i-will-bless-thee-the-oath-to-abraham-genesis-22
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 22:16 — *By myself have I sworn, saith Yahuah (LORD) … thou hast not withheld thy son* the oath at the binding: Yahuah swears by himself because there is none greater (Hebrews 6:13).'
+  FROM cross_reference_threads t, cross_references x, _s222_h06_lookup sv, _s222_h06_lookup tv
+ WHERE t.slug='hebrews-6-surely-blessing-i-will-bless-thee-the-oath-to-abraham-genesis-22'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 22:17 — *in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven* the oath Hebrews quotes; the seed-promise carried through the twelve tribes (Hebrews 6:14).'
+  FROM cross_reference_threads t, cross_references x, _s222_h06_lookup sv, _s222_h06_lookup tv
+ WHERE t.slug='hebrews-6-surely-blessing-i-will-bless-thee-the-oath-to-abraham-genesis-22'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-6-an-anchor-of-the-soul-within-the-veil-whither-the-forerunner-entered
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hebrews 9:24 — *but into heaven itself, now to appear in the presence of Elohim (God) for us* what is within the veil is heaven itself, where the forerunner appears for us (Hebrews 6:19-20).'
+  FROM cross_reference_threads t, cross_references x, _s222_h06_lookup sv, _s222_h06_lookup tv
+ WHERE t.slug='hebrews-6-an-anchor-of-the-soul-within-the-veil-whither-the-forerunner-entered'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-6-an-high-priest-for-ever-after-the-order-of-melchizedek-psalm-110
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 110:4 — *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* the psalm-oath Hebrews quotes; the priesthood sworn for ever (Hebrews 6:20).'
+  FROM cross_reference_threads t, cross_references x, _s222_h06_lookup sv, _s222_h06_lookup tv
+ WHERE t.slug='hebrews-6-an-high-priest-for-ever-after-the-order-of-melchizedek-psalm-110'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 5:6 — *As he saith also in another place, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* the same psalm-oath sounded at the close of chapter five (Hebrews 6:20).'
+  FROM cross_reference_threads t, cross_references x, _s222_h06_lookup sv, _s222_h06_lookup tv
+ WHERE t.slug='hebrews-6-an-high-priest-for-ever-after-the-order-of-melchizedek-psalm-110'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=5 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 7:17 — *For he testifieth, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* the title taken up in the full exposition of chapter seven (Hebrews 6:20).'
+  FROM cross_reference_threads t, cross_references x, _s222_h06_lookup sv, _s222_h06_lookup tv
+ WHERE t.slug='hebrews-6-an-high-priest-for-ever-after-the-order-of-melchizedek-psalm-110'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=6 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_hebrews_07.sql (S222 Hebrews 7) -----
+-- =====================================================================
+-- S222 minion — HEBREWS 7 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: HEBREWS 7 (the Melek Tsadiq chapter).  Tag: h07 (temp view _s222_h07_lookup).
+-- Sort band: floor 7942, ceiling 7949, step 1 (7942..7945 used).
+-- Source is ALWAYS the canon Hebrews verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (HIGH CARE — Red Lines #4/#5/#7; the priesthood-change watchpoint):
+-- Hebrews 7 does NOT abolish the Torah. It announces the change of the PRIESTLY administration
+-- — which tribe may serve, the requirement of Levitical/Aaronic carnal descent — because the
+-- priest now arises out of Yahudah (Judah) after the order of Melek Tsadiq (Melchizedek). When
+-- 7:12 says *the priesthood being changed, there is made of necessity a change also of the law,*
+-- the law in view is the ordinance regulating the priesthood and the altar (7:13-14, *of which
+-- tribe Moses spake nothing concerning priesthood*), NOT the moral Torah, the Sabbath, the
+-- feasts, or the dietary law. The *commandment going before* that is *disannulled* (7:18) is the
+-- specific *law of a carnal commandment* (7:16) establishing the Aaronic line by descent; the
+-- *better hope* (7:19) is *brought in* and by it *we draw nigh unto Elohim (God).* The eternal
+-- priest is confirmed by the oath (*Yahuah (Lord) sware and will not repent,* 7:21 / Psalm 110:4),
+-- *ever liveth to make intercession* (7:25), is *holy, harmless, undefiled, separate from
+-- sinners* (7:26), and offered *once, when he offered up himself* (7:27). Christology: Yahusha
+-- is the Formed priest-king, *made like unto the Son of Elohim (God)* (7:3), who has a Father and
+-- is *consecrated for evermore* by the word of the oath (7:28). The default trained reading —
+-- "Hebrews 7 does away with the old priesthood and its law" as license against the Torah — is the
+-- replacement reading and is held out.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-3   Melek Tsadiq, king of Salem, priest of El Elyon, blessed Abraham, tithes of all
+--           Tanakh: Genesis 14:18 (priest of El Elyon, bread and wine), 14:19 (blessed Abram),
+--                   14:20 (gave him tithes of all)  Extras: Jasher 16:11 (king of Jerusalem,
+--                   bread and wine), Jasher 16:12 (blessed Abram, gave a tenth, priest before
+--                   Elohim)  NT: none added (Hebrews 5:6,10 carried in prose; same hand)
+--   v.4-10  Abraham (and Levi in his loins) paid tithes to the greater priest
+--           Tanakh: Genesis 14:20 (carried at v.1-3)  Extras: Jasher 16:12 (carried at v.1-3)
+--           NT: none warranted
+--   v.11-19 the priesthood changed → a change of the (priestly/altar) law; priest from Judah;
+--           the disannulling of the carnal commandment; the better hope brings us nigh
+--           Tanakh: Psalm 110:4 (a priest for ever after the order of Melek Tsadiq, the oath),
+--                   Zechariah 6:12 (the BRANCH grows out of his place), Zechariah 6:13 (a priest
+--                   upon his throne, the counsel of peace) — the priest-king from outside the
+--                   Aaronic line  Extras: none warranted  NT: none warranted
+--   v.20-25 the oath that the Levitical priests never had; surety of a better testament;
+--           unchangeable priesthood; ever liveth to make intercession; able to save to the uttermost
+--           Tanakh: Psalm 110:4 (the oath, *Yahuah sware and will not repent*), Psalm 110:1 (sit
+--                   at my right hand)  Extras: none warranted  NT: none warranted
+--   v.26-28 holy, harmless, undefiled, separate from sinners; offered once, himself; the Son
+--           consecrated for evermore by the word of the oath
+--           Tanakh: Psalm 110:4 (the word of the oath that maketh the Son)  Extras: none warranted
+--           NT: none warranted (the once-for-all offering re-walked at Hebrews 9-10; same hand)
+--
+-- THREADS (slug -> target libraries):
+--   7942 hebrews-7-melchizedek-king-of-salem-priest-of-el-elyon-blessed-abraham-genesis-14   (Tanakh + Extras)
+--   7943 hebrews-7-the-priesthood-changed-a-priest-from-judah-after-the-order-of-melchizedek  (Tanakh)
+--   7944 hebrews-7-yahuah-sware-and-will-not-repent-the-oath-and-the-better-testament-psalm-110 (Tanakh)
+--   7945 hebrews-7-holy-harmless-undefiled-who-offered-up-himself-once                          (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s222_h07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: hebrews-7-melchizedek-king-of-salem-priest-of-el-elyon-blessed-abraham-genesis-14
+  ('canon', 'hebrews', 7, 1, 'canon', 'genesis', 14, 18, 'free', E'*And Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God).* (Genesis 14:18). The whole argument of the chapter rests on this one verse. *For this Melek Tsadiq (Melchizedek), king of Salem, priest of the El Elyon (most high God), who met Abraham returning from the slaughter of the kings, and blessed him* (Hebrews 7:1). The writer is reading Genesis word by word: the king of Salem, the priest of the El Elyon — a priesthood older than Aaron, older than Levi, standing before Yahuah (LORD) when Abraham was still a wanderer in the land.'),
+  ('canon', 'hebrews', 7, 1, 'canon', 'genesis', 14, 19, 'free', E'*And he blessed him, and said, Blessed be Abram of the El Elyon (most high God), possessor of heaven and earth* (Genesis 14:19). *Who met Abraham returning from the slaughter of the kings, and blessed him* (Hebrews 7:1). The blessing flows downward, from the greater to the lesser — *and without all contradiction the less is blessed of the better* (Hebrews 7:7). Abraham, the father of the faithful and the bearer of the promises, bows to receive a blessing from the priest of the El Elyon.'),
+  ('canon', 'hebrews', 7, 2, 'canon', 'genesis', 14, 20, 'free', E'*And blessed be the El Elyon (most high God), which hath delivered thine enemies into thy hand. And he gave him tithes of all.* (Genesis 14:20). *To whom also Abraham gave a tenth part of all* (Hebrews 7:2). The patriarch himself paid the tithe to this priest — *first being by interpretation King of righteousness, and after that also King of Salem, which is, King of peace* (Hebrews 7:2). The king of righteousness and the king of peace receives the tenth from the man who held the promises, marking him the greater priest.'),
+  ('canon', 'hebrews', 7, 1, 'jasher', 'jasher', 16, 11, 'extras', E'*And Adonizedek king of Jerusalem, the same was Shem, went out with his men to meet Abram and his people, with bread and wine, and they remained together in the valley of Melech.* (Jasher 16:11). The Hebrew library remembers the same meeting Hebrews builds upon: the king of Salem — Jerusalem — coming out with bread and wine to the returning Abram. *For this Melek Tsadiq (Melchizedek), king of Salem... who met Abraham returning from the slaughter of the kings, and blessed him* (Hebrews 7:1). The encounter at the king''s dale is no allegory; it stands witnessed in the record of the patriarchs.'),
+  ('canon', 'hebrews', 7, 2, 'jasher', 'jasher', 16, 12, 'extras', E'*And Adonizedek blessed Abram, and Abram gave him a tenth from all that he had brought from the spoil of his enemies, for Adonizedek was a priest before Elohim (God).* (Jasher 16:12). *To whom also Abraham gave a tenth part of all* (Hebrews 7:2). The Hebrew record names the very thing the writer of Hebrews presses: this king of Salem *was a priest before Elohim (God),* and Abraham gave him the tenth. The priesthood that stands before Yahuah (LORD) is older than the sons of Levi, and Abraham himself acknowledged it.'),
+  -- thread: hebrews-7-the-priesthood-changed-a-priest-from-judah-after-the-order-of-melchizedek
+  ('canon', 'hebrews', 7, 17, 'canon', 'psalms', 110, 4, 'free', E'*Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* (Psalm 110:4). *For he testifieth, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 7:17). The whole change turns on this sworn word. Because the promised priest rises *after the order of Melek Tsadiq (Melchizedek)* and not *after the order of Aaron* (Hebrews 7:11), the ordinance that bound the priesthood to the sons of Levi gives way — the priestly administration changes, not the righteous instruction of Yahuah (LORD).'),
+  ('canon', 'hebrews', 7, 14, 'canon', 'zechariah', 6, 12, 'free', E'*And speak unto him, saying, Thus speaketh Yahuah Tseva''ot (LORD of hosts), saying, Behold the man whose name is The BRANCH; and he shall grow up out of his place, and he shall build the temple of Yahuah (LORD)* (Zechariah 6:12). *For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood* (Hebrews 7:14). The prophet had already seen a priest who would not come of Aaron''s line — the BRANCH who *shall grow up out of his place,* the kingly stock of Yahudah (Judah), arising to build the house of Yahuah (LORD). The priest from Judah was no contradiction of the prophets but their fulfilment.'),
+  ('canon', 'hebrews', 7, 15, 'canon', 'zechariah', 6, 13, 'free', E'*Even he shall build the temple of Yahuah (LORD); and he shall bear the glory, and shall sit and rule upon his throne; and he shall be a priest upon his throne: and the counsel of peace shall be between them both.* (Zechariah 6:13). *And it is yet far more evident: for that after the similitude of Melek Tsadiq (Melchizedek) there ariseth another priest* (Hebrews 7:15). The prophet joined the two offices the Aaronic order kept apart: a king who is *a priest upon his throne.* This is the order of Melek Tsadiq (Melchizedek) himself — king of Salem and priest of the El Elyon at once — the priest-king in whom *the counsel of peace* is established.'),
+  -- thread: hebrews-7-yahuah-sware-and-will-not-repent-the-oath-and-the-better-testament-psalm-110
+  ('canon', 'hebrews', 7, 21, 'canon', 'psalms', 110, 4, 'free', E'*Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* (Psalm 110:4). *But this with an oath by him that said unto him, Yahuah (Lord) sware and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 7:21). The Levitical priests were made without an oath; this priest is established by the sworn word of Yahuah (LORD) himself — a word that *will not repent.* The oath is what makes the testament better and sure: *by so much was Yahusha (Jesus) made a surety of a better testament* (Hebrews 7:22).'),
+  ('canon', 'hebrews', 7, 25, 'canon', 'psalms', 110, 1, 'free', E'*Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.* (Psalm 110:1). *Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). The same psalm that swore the eternal priesthood seated this Lord at the right hand of Yahuah (LORD). Enthroned and undying, he *ever liveth* — and from that throne he makes intercession, able to save to the uttermost all who come to Elohim (God) through him.'),
+  -- thread: hebrews-7-holy-harmless-undefiled-who-offered-up-himself-once
+  ('canon', 'hebrews', 7, 28, 'canon', 'psalms', 110, 4, 'free', E'*Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* (Psalm 110:4). *For the law maketh men high priests which have infirmity; but the word of the oath, which was since the law, maketh the Son, who is consecrated for evermore* (Hebrews 7:28). The contrast is between men of infirmity made priests by ordinance, and the Son made priest by the sworn word — *the word of the oath.* That word *consecrates* him *for evermore,* the priest who needs no succession because he does not die.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s222_h07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s222_h07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-7-melchizedek-king-of-salem-priest-of-el-elyon-blessed-abraham-genesis-14',
+       E'Melek Tsadiq (Melchizedek), king of Salem, priest of the El Elyon — Genesis 14',
+       E'The chapter is built on a single passage of Genesis, read word by word. *And Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God)* (Genesis 14:18). *And he blessed him, and said, Blessed be Abram of the El Elyon (most high God), possessor of heaven and earth* (Genesis 14:19). *And he gave him tithes of all* (Genesis 14:20). The writer of Hebrews takes up each line: *For this Melek Tsadiq (Melchizedek), king of Salem, priest of the El Elyon (most high God), who met Abraham returning from the slaughter of the kings, and blessed him; to whom also Abraham gave a tenth part of all; first being by interpretation King of righteousness, and after that also King of Salem, which is, King of peace* (Hebrews 7:1-2). The point is the greatness of this priest. He stands *without father, without mother, without descent, having neither beginning of days, nor end of life; but made like unto the Son of Elohim (God); abideth a priest continually* (Hebrews 7:3) — the priest-king pattern in whom the eternal priest after the order of Melek Tsadiq (Melchizedek) is foreshown, the Formed one who has a Father and abides continually. And the proof of his greatness is that Abraham himself, who held the promises, paid him the tenth and received his blessing: *and without all contradiction the less is blessed of the better* (Hebrews 7:7). Even Levi, *yet in the loins of his father, when Melek Tsadiq (Melchizedek) met him* (Hebrews 7:10), paid tithes through Abraham — the Aaronic order acknowledging a priesthood older and greater than its own. The Hebrew library remembers the same meeting: *And Adonizedek king of Jerusalem... went out with his men to meet Abram and his people, with bread and wine... And Adonizedek blessed Abram, and Abram gave him a tenth from all... for Adonizedek was a priest before Elohim (God)* (Jasher 16:11-12). The encounter at the king''s dale is no allegory; it stands witnessed, and on it the whole argument of the eternal priesthood is raised.',
+       sv.verse_id, ev.verse_id, 'extras', 7942
+  FROM _s222_h07_lookup sv, _s222_h07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=7 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-7-the-priesthood-changed-a-priest-from-judah-after-the-order-of-melchizedek',
+       E'The priesthood changed — a priest from Judah after the order of Melek Tsadiq (Melchizedek)',
+       E'This is the verse the inherited reading turns into a weapon against the Torah, and the turning misreads what is being changed. *For the priesthood being changed, there is made of necessity a change also of the law* (Hebrews 7:12). Read the next breath, and the writer himself tells which law: *For he of whom these things are spoken pertaineth to another tribe, of which no man gave attendance at the altar. For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood* (Hebrews 7:13-14). The law that changes is the ordinance regulating who may serve at the altar — the requirement of Aaronic, Levitical descent — for the promised priest arises out of Yahudah (Judah), *after the order of Melek Tsadiq (Melchizedek), and not... after the order of Aaron* (Hebrews 7:11). He *is made, not after the law of a carnal commandment, but after the power of an endless life* (Hebrews 7:16); and *there is verily a disannulling of the commandment going before for the weakness and unprofitableness thereof. For the law made nothing perfect, but the bringing in of a better hope did; by the which we draw nigh unto Elohim (God)* (Hebrews 7:18-19). The *commandment going before* that is set aside is the carnal-descent ordinance establishing the Aaronic line; the priestly system that *could make nothing perfect* on its own gives way to the priest who can — the moral instruction of Yahuah (LORD), his Sabbath, his feasts, his ways, stand untouched. And the prophets had already seen it: the sworn word, *Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4), and Zechariah''s vision of a priest not of Aaron''s line — *Behold the man whose name is The BRANCH; and he shall grow up out of his place* (Zechariah 6:12), who *shall sit and rule upon his throne; and he shall be a priest upon his throne: and the counsel of peace shall be between them both* (Zechariah 6:13). The two offices Aaron''s order kept apart — king and priest — are joined in the order of Melek Tsadiq (Melchizedek), exactly as Genesis named him king of Salem and priest of the El Elyon at once. The administration changes; the better hope is brought in; we draw nigh.',
+       sv.verse_id, ev.verse_id, 'free', 7943
+  FROM _s222_h07_lookup sv, _s222_h07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=7 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-7-yahuah-sware-and-will-not-repent-the-oath-and-the-better-testament-psalm-110',
+       E'Yahuah (LORD) sware and will not repent — the oath and the better testament (Psalm 110)',
+       E'The Levitical priests held their office by ordinance and by birth; this priest holds his by the sworn word of Yahuah (LORD). *And inasmuch as not without an oath he was made priest: (for those priests were made without an oath; but this with an oath by him that said unto him, Yahuah (Lord) sware and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek):)* (Hebrews 7:20-21). The word is the psalm''s own: *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4). An oath that will not repent makes the testament sure: *by so much was Yahusha (Jesus) made a surety of a better testament* (Hebrews 7:22). And where the many Levitical priests *were not suffered to continue by reason of death* (Hebrews 7:23), this one *continueth ever, hath an unchangeable priesthood* (Hebrews 7:24). The same psalm that swore the priesthood had seated this Lord on high: *Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1). Enthroned and undying, *he ever liveth to make intercession* — *wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him* (Hebrews 7:25). The oath is the guarantee; the endless life is the power; the throne is the seat from which he pleads for his own.',
+       sv.verse_id, ev.verse_id, 'free', 7944
+  FROM _s222_h07_lookup sv, _s222_h07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=7 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'hebrews-7-holy-harmless-undefiled-who-offered-up-himself-once',
+       E'Holy, harmless, undefiled — who offered up himself once',
+       E'The chapter closes on the kind of priest who befits the eternal order. *For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens* (Hebrews 7:26). Unlike the high priests who had first to offer for their own sins, this one had none: *who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people''s: for this he did once, when he offered up himself* (Hebrews 7:27). The daily, repeated offerings of the Levitical order are gathered up and finished in a single offering — not the Torah annulled, but the sacrificial administration brought to its fulfilment in the priest who offered himself once for all. And the final word is the word of the oath: *for the law maketh men high priests which have infirmity; but the word of the oath, which was since the law, maketh the Son, who is consecrated for evermore* (Hebrews 7:28) — *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4). The law made men of infirmity priests; the sworn word makes the Son, consecrated for evermore — the Formed one who has a Father, the priest who does not die and so does not need to be replaced.',
+       sv.verse_id, ev.verse_id, 'free', 7945
+  FROM _s222_h07_lookup sv, _s222_h07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='hebrews' AND ev.chapter_number=7 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: hebrews-7-melchizedek-king-of-salem-priest-of-el-elyon-blessed-abraham-genesis-14
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 14:18 — *Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God)* the priesthood older than Aaron, on which the whole chapter is built (Hebrews 7:1).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-melchizedek-king-of-salem-priest-of-el-elyon-blessed-abraham-genesis-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 14:19 — *Blessed be Abram of the El Elyon (most high God), possessor of heaven and earth* the blessing flows from the greater priest to Abraham, *the less is blessed of the better* (Hebrews 7:1,7).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-melchizedek-king-of-salem-priest-of-el-elyon-blessed-abraham-genesis-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 14:20 — *And he gave him tithes of all* Abraham, holder of the promises, paid the tenth to the King of righteousness and King of peace (Hebrews 7:2).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-melchizedek-king-of-salem-priest-of-el-elyon-blessed-abraham-genesis-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jasher 16:11 — *Adonizedek king of Jerusalem... went out... with bread and wine* the Hebrew record of the same meeting at the valley of Melech (Hebrews 7:1).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-melchizedek-king-of-salem-priest-of-el-elyon-blessed-abraham-genesis-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=1
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jasher 16:12 — *Adonizedek blessed Abram, and Abram gave him a tenth... for Adonizedek was a priest before Elohim (God)* the Hebrew record names the priesthood older than Levi that Abraham acknowledged (Hebrews 7:2).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-melchizedek-king-of-salem-priest-of-el-elyon-blessed-abraham-genesis-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=2
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-7-the-priesthood-changed-a-priest-from-judah-after-the-order-of-melchizedek
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 110:4 — *Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* the sworn word on which the change of priestly order turns (Hebrews 7:17).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-the-priesthood-changed-a-priest-from-judah-after-the-order-of-melchizedek'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Zechariah 6:12 — *Behold the man whose name is The BRANCH; and he shall grow up out of his place* the prophet saw a priest from outside Aaron''s line, *our Lord sprang out of Juda* (Hebrews 7:14).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-the-priesthood-changed-a-priest-from-judah-after-the-order-of-melchizedek'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=6 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Zechariah 6:13 — *he shall be a priest upon his throne: and the counsel of peace shall be between them both* king and priest joined in one, the order of Melek Tsadiq (Melchizedek) (Hebrews 7:15).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-the-priesthood-changed-a-priest-from-judah-after-the-order-of-melchizedek'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=6 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-7-yahuah-sware-and-will-not-repent-the-oath-and-the-better-testament-psalm-110
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 110:4 — *Yahuah (LORD) hath sworn, and will not repent* the oath the Levitical priests never had, making the testament sure (Hebrews 7:21).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-yahuah-sware-and-will-not-repent-the-oath-and-the-better-testament-psalm-110'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 110:1 — *Sit thou at my right hand* the enthroned, undying Lord who *ever liveth to make intercession* (Hebrews 7:25).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-yahuah-sware-and-will-not-repent-the-oath-and-the-better-testament-psalm-110'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: hebrews-7-holy-harmless-undefiled-who-offered-up-himself-once
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 110:4 — *the word of the oath, which was since the law, maketh the Son, who is consecrated for evermore* the sworn word makes the priest who offered himself once (Hebrews 7:28).'
+  FROM cross_reference_threads t, cross_references x, _s222_h07_lookup sv, _s222_h07_lookup tv
+ WHERE t.slug='hebrews-7-holy-harmless-undefiled-who-offered-up-himself-once'
+   AND sv.edition_slug='canon' AND sv.book_slug='hebrews' AND sv.chapter_number=7 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session222 — Hebrews cross-references complete.'
