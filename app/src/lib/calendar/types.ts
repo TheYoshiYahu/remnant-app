@@ -93,6 +93,20 @@ export type ManualOverride =
       month: number;
       day: number;
       anchorInstant: Date;
+    }
+  /**
+   * Orientation anchor — the universal "I am sure of ONE thing" escape hatch.
+   * The user states that some Gregorian instant carries a known biblical
+   * MONTH/DAY (a feast date, today's date, a sighted month-start, the new year);
+   * the engine keeps its own computed YEAR and offset-propagates the rest. This
+   * is `fullDate` with the year left to the engine, so every orientation in the
+   * UI (feast / today / month-start / new-year) reduces to this one variant.
+   */
+  | {
+      kind: "dateAnchor";
+      month: number;
+      day: number;
+      anchorInstant: Date;
     };
 
 // ---------------------------------------------------------------------------

@@ -984,6 +984,68 @@ body {
 }
 .cal-notes li::before { content: "✦ "; color: var(--cal-gold); }
 
+/* Orientation menu — the manual "I am sure of ONE thing" anchor. Chrome-metal
+   registers, techelet edges, NO grey. */
+.cal-orient { display: flex; flex-direction: column; gap: 0.55rem; }
+.cal-orient-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-left: 0.25rem;
+  padding: 0.7rem 0.8rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--cal-edge);
+  border-left: 2px solid color-mix(in srgb, #93C0FF 55%, transparent);
+  background: var(--cal-surface-2);
+}
+.cal-orient-fields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.6rem 0.85rem;
+}
+.cal-field { display: inline-flex; flex-direction: column; gap: 0.28rem; }
+.cal-field-lbl {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cal-ink-soft);
+}
+.cal-date-input,
+.cal-select,
+.cal-num-input {
+  color-scheme: dark; /* native date popup + spinners render dark, no grey chrome */
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cal-ink);
+  background: color-mix(in srgb, #0A2D84 26%, #000);
+  border: 1px solid var(--cal-edge-bright);
+  border-radius: 8px;
+  padding: 0.34rem 0.55rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.cal-num-input { width: 4.5rem; }
+.cal-date-input:focus,
+.cal-select:focus,
+.cal-num-input:focus {
+  outline: none;
+  border-color: #93C0FF;
+  box-shadow: 0 0 0 2px color-mix(in srgb, #93C0FF 28%, transparent);
+}
+.cal-select option { background: #06122e; color: var(--cal-ink); }
+.cal-orient-hint {
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--cal-ink-soft);
+}
+.cal-orient-stub {
+  color: #FFF8E1;
+  opacity: 0.78;
+}
+.cal-orient-stub em { color: var(--cal-gold); font-style: italic; }
+
 /* Hero */
 .cal-hero {
   border: 1px solid var(--cal-edge-bright);

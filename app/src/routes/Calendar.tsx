@@ -22,7 +22,9 @@ import {
   moonLitPath,
   monthDisplayName,
   MOED_SHORT,
+  FEAST_ANCHORS,
   type MonthKind,
+  type Orientation,
   type ReckoningState,
 } from "../lib/calendar/view-model.ts";
 import {
@@ -95,10 +97,51 @@ function readQuery(): {
     }
     return null;
   };
+  const orient = q.get("orient");
+  if (orient) {
+    const o = parseOrientation(orient);
+    if (o) reck.orientation = o;
+  }
   const at = parseDate(q.get("at"));
   // `at` also seeds the focused month unless an explicit focus is given.
   const focus = parseDate(q.get("focus")) ?? at;
   return { base, reck, open: q.get("open"), focus, at };
+}
+
+/**
+ * Parse the `?orient=` deep-link into an Orientation. Compact `mode:args…`
+ * forms: `feast:passover:2026-03-25`, `today:7:1:2026-06-10`,
+ * `monthStart:1:2026-03-25`, `newYear:2026-03-25`, `source`. Missing dates
+ * default to today; malformed input yields no orientation.
+ */
+function parseOrientation(s: string): Orientation | undefined {
+  const isISO = (v: string | undefined): v is string => !!v && /^\d{4}-\d{2}-\d{2}$/.test(v);
+  const today = new Date().toISOString().slice(0, 10);
+  const clamp = (n: number, lo: number, hi: number) =>
+    Number.isFinite(n) ? Math.min(hi, Math.max(lo, Math.round(n))) : lo;
+  const [mode, a, b, c] = s.split(":");
+  switch (mode) {
+    case "feast":
+      return {
+        mode: "feast",
+        feast: FEAST_ANCHORS.find((f) => f.key === a)?.key ?? "passover",
+        greg: isISO(b) ? b : today,
+      };
+    case "today":
+      return {
+        mode: "today",
+        month: clamp(Number(a), 1, 12),
+        day: clamp(Number(b), 1, 30),
+        greg: isISO(c) ? c : today,
+      };
+    case "monthStart":
+      return { mode: "monthStart", month: clamp(Number(a), 1, 12), greg: isISO(b) ? b : today };
+    case "newYear":
+      return { mode: "newYear", greg: isISO(a) ? a : today };
+    case "source":
+      return { mode: "source" };
+  }
+  return undefined;
 }
 
 type InitialQuery = ReturnType<typeof readQuery>;
@@ -430,22 +473,7 @@ function ReckoningControls({ reck, setReck, notes }: ControlsProps) {
           ))}
         </ControlRow>
 
-        <ControlRow label="Override">
-          <Pill
-            active={!!reck.overrideMonthStart}
-            register="scarlet"
-            onClick={() =>
-              set({
-                overrideMonthStart: reck.overrideMonthStart
-                  ? undefined
-                  : mostRecentSunsetGuess(),
-              })
-            }
-            title="Set today as a new month-start — honored above every computed reckoning"
-          >
-            {reck.overrideMonthStart ? "Manual month ✓ (clear)" : "Set today as month 1"}
-          </Pill>
-        </ControlRow>
+        <OrientationMenu reck={reck} setReck={setReck} />
       </div>
 
       {notes.length > 0 && (
@@ -459,12 +487,264 @@ function ReckoningControls({ reck, setReck, notes }: ControlsProps) {
   );
 }
 
-/** Rough "today's sunset" anchor for the manual override (UTC evening). */
-function mostRecentSunsetGuess(): Date {
-  const d = new Date();
-  d.setUTCHours(16, 30, 0, 0); // ≈ Jerusalem sunset in UTC; honest-enough anchor
-  if (d.getTime() > Date.now()) d.setUTCDate(d.getUTCDate() - 1);
-  return d;
+// ───────────────────────────────────────────────────────────────────────
+// Orientation menu — the manual "I am sure of ONE thing" anchor. The user
+// supplies a single fact (a feast date, today's biblical date, a sighted
+// month-start, or the confirmed new year) and the engine derives the rest.
+// Every functional mode projects down to the engine's `dateAnchor` override.
+// ───────────────────────────────────────────────────────────────────────
+
+/** Today's Gregorian date as an ISO YYYY-MM-DD — the default anchor date. */
+function todayISO(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+const ORIENT_MODES: { key: Orientation["mode"]; label: string; register: string }[] = [
+  { key: "feast", label: "Anchor by feast", register: "gold" },
+  { key: "today", label: "Set today as…", register: "emerald" },
+  { key: "monthStart", label: "Anchor a month-start", register: "techelet" },
+  { key: "newYear", label: "Anchor the new year", register: "argaman" },
+  { key: "source", label: "Follow a source", register: "bronze" },
+];
+
+const ORIENT_MONTHS = [
+  "1 · Abib", "2nd", "3rd", "4th", "5th", "6th",
+  "7 · Ethanim", "8th", "9th", "10th", "11th", "12th",
+];
+
+function OrientationMenu({
+  reck,
+  setReck,
+}: {
+  reck: ReckoningState;
+  setReck: React.Dispatch<React.SetStateAction<ReckoningState>>;
+}) {
+  const o = reck.orientation;
+  const setO = (orientation: Orientation | undefined) =>
+    setReck((r) => ({ ...r, orientation }));
+
+  const selectMode = (mode: Orientation["mode"]) => {
+    if (o?.mode === mode) return;
+    switch (mode) {
+      case "feast":
+        setO({ mode: "feast", feast: "passover", greg: todayISO() });
+        break;
+      case "today": {
+        const bd = compute(reck, new Date()).biblicalDate;
+        setO({ mode: "today", month: bd.month, day: bd.day, greg: todayISO() });
+        break;
+      }
+      case "monthStart":
+        setO({ mode: "monthStart", month: 1, greg: todayISO() });
+        break;
+      case "newYear":
+        setO({ mode: "newYear", greg: todayISO() });
+        break;
+      case "source":
+        setO({ mode: "source" });
+        break;
+    }
+  };
+
+  return (
+    <div className="cal-orient">
+      <ControlRow label="Orient">
+        {ORIENT_MODES.map((m) => (
+          <Pill
+            key={m.key}
+            active={o?.mode === m.key}
+            register={m.register}
+            onClick={() => selectMode(m.key)}
+          >
+            {m.label}
+          </Pill>
+        ))}
+        {o && (
+          <Pill
+            active={false}
+            register="scarlet"
+            onClick={() => setO(undefined)}
+            title="Clear the manual anchor — return to the computed reckoning"
+          >
+            Clear ✕
+          </Pill>
+        )}
+      </ControlRow>
+
+      {o && o.mode === "feast" && (
+        <div className="cal-orient-body">
+          <ControlRow label="Feast">
+            {FEAST_ANCHORS.map((f) => (
+              <Pill
+                key={f.key}
+                active={o.feast === f.key}
+                register="gold"
+                onClick={() => setO({ ...o, feast: f.key })}
+              >
+                {f.label}
+              </Pill>
+            ))}
+          </ControlRow>
+          <div className="cal-orient-fields">
+            <DateField
+              label="falls on"
+              value={o.greg}
+              onChange={(greg) => setO({ ...o, greg })}
+            />
+          </div>
+          <p className="cal-orient-hint">
+            Orient the whole calendar so the chosen feast lands on the Gregorian date
+            you set, and every other date follows.
+          </p>
+        </div>
+      )}
+
+      {o && o.mode === "today" && (
+        <div className="cal-orient-body">
+          <div className="cal-orient-fields">
+            <MonthField
+              label="today is month"
+              value={o.month}
+              onChange={(month) => setO({ ...o, month })}
+            />
+            <NumField
+              label="day"
+              value={o.day}
+              onChange={(day) => setO({ ...o, day })}
+            />
+            <DateField
+              label="dated"
+              value={o.greg}
+              onChange={(greg) => setO({ ...o, greg })}
+            />
+          </div>
+          <p className="cal-orient-hint">
+            Declare today&rsquo;s biblical date and the calendar orients from now.
+          </p>
+        </div>
+      )}
+
+      {o && o.mode === "monthStart" && (
+        <div className="cal-orient-body">
+          <div className="cal-orient-fields">
+            <MonthField
+              label="the 1st of month"
+              value={o.month}
+              onChange={(month) => setO({ ...o, month })}
+            />
+            <DateField
+              label="is"
+              value={o.greg}
+              onChange={(greg) => setO({ ...o, greg })}
+            />
+          </div>
+          <p className="cal-orient-hint">
+            Anchor a sighted new moon: the 1st of that month falls on the date you set.
+          </p>
+        </div>
+      )}
+
+      {o && o.mode === "newYear" && (
+        <div className="cal-orient-body">
+          <div className="cal-orient-fields">
+            <DateField
+              label="the year began on"
+              value={o.greg}
+              onChange={(greg) => setO({ ...o, greg })}
+            />
+          </div>
+          <p className="cal-orient-hint">
+            Aviv confirmed: the first month begins on the date you set.
+          </p>
+        </div>
+      )}
+
+      {o && o.mode === "source" && (
+        <div className="cal-orient-body">
+          <p className="cal-orient-hint cal-orient-stub">
+            ✦ Follow a published calendar — inherit another body&rsquo;s reckoning.
+            <em> Coming soon.</em>
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DateField({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  return (
+    <label className="cal-field">
+      <span className="cal-field-lbl">{label}</span>
+      <input
+        type="date"
+        className="cal-date-input"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
+    </label>
+  );
+}
+
+function MonthField({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  onChange: (v: number) => void;
+}) {
+  return (
+    <label className="cal-field">
+      <span className="cal-field-lbl">{label}</span>
+      <select
+        className="cal-select"
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+      >
+        {ORIENT_MONTHS.map((n, i) => (
+          <option key={i} value={i + 1}>
+            {n}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+function NumField({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  onChange: (v: number) => void;
+}) {
+  return (
+    <label className="cal-field">
+      <span className="cal-field-lbl">{label}</span>
+      <input
+        type="number"
+        min={1}
+        max={30}
+        className="cal-num-input"
+        value={value}
+        onChange={(e) => {
+          const n = Number(e.target.value);
+          if (Number.isFinite(n)) onChange(Math.min(30, Math.max(1, Math.round(n))));
+        }}
+      />
+    </label>
+  );
 }
 
 // ───────────────────────────────────────────────────────────────────────

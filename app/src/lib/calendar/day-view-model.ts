@@ -64,7 +64,6 @@ export function sunsetBoundaries(daytime: Date, loc: ReckoningState["location"])
   };
 }
 
-
 function illumAt(instant: Date): { illum: number; waxing: boolean } {
   const a = moonIllumination(instant);
   const b = moonIllumination(new Date(instant.getTime() + 3 * 3600 * 1000));

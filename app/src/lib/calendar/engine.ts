@@ -402,40 +402,129 @@ function applyOverride(
     };
   }
 
-  // fullDate override — anchor the labels at a stated date.
-  const baseQ = computeCore(query, bare, deps);
+  if (override.kind === "fullDate") {
+    return anchorFullDate(query, bare, deps, loc, {
+      year: override.year,
+      month: override.month,
+      day: override.day,
+      anchorInstant: override.anchorInstant,
+      note: "Manual full-date override: labels are exact at the anchor and offset-propagated elsewhere.",
+    });
+  }
+
+  // dateAnchor — the user supplied a Gregorian instant carrying a known biblical
+  // MONTH/DAY; keep the engine's own computed year (yearShift = 0) and propagate
+  // the month/day offset, exactly like fullDate.
   const baseA = computeCore(override.anchorInstant, bare, deps);
-  const dayShift = override.day - baseA.biblicalDate.day;
-  const monthShift = override.month - baseA.biblicalDate.month;
-  const yearShift = override.year - baseA.biblicalDate.year;
+  return anchorFullDate(query, bare, deps, loc, {
+    year: baseA.biblicalDate.year,
+    month: override.month,
+    day: override.day,
+    anchorInstant: override.anchorInstant,
+    note: "Calendar oriented from a manual anchor: the stated biblical date is fixed at the anchor and offset-propagated elsewhere.",
+  });
+}
 
-  let month = baseQ.biblicalDate.month + monthShift;
-  let year = baseQ.biblicalDate.year + yearShift;
-  while (month > 12) {
-    month -= 12;
-    year += 1;
-  }
-  while (month < 1) {
-    month += 12;
-    year -= 1;
-  }
-  const day = baseQ.biblicalDate.day + dayShift;
+/** An engine month-start with the biblical month/year it opens. */
+interface MonthStartMark {
+  start: Date;
+  month: number;
+  year: number;
+}
 
-  // The user's day-of-month differs from the computed one by `dayShift`, which
-  // means their month boundary sits `dayShift` days earlier.
-  const baseStart = baseQ.monthStart.startInstant;
-  const startInstant =
-    dayShift >= 0
-      ? subBiblicalDays(baseStart, dayShift, loc)
-      : addBiblicalDays(baseStart, -dayShift, loc);
+/**
+ * The engine's own month-starts in a window around `query` (a few months either
+ * side), oldest-first. Each is found by re-reading the engine just inside the
+ * neighbouring month, so they follow the real (lunar / fixed) cadence.
+ */
+function monthStartsAround(
+  query: Date,
+  bare: CalendarConfig,
+  deps: CalendarDeps,
+): MonthStartMark[] {
+  const DAY = 86_400_000;
+  const markOf = (r: EngineResult): MonthStartMark => ({
+    start: r.monthStart.startInstant,
+    month: r.biblicalDate.month,
+    year: r.biblicalDate.year,
+  });
+  const cur = computeCore(query, bare, deps);
+  const marks: MonthStartMark[] = [markOf(cur)];
+
+  let s = cur.monthStart.startInstant;
+  for (let i = 0; i < 3; i++) {
+    // 2 days before a month-start lands in the previous month.
+    const prev = computeCore(new Date(s.getTime() - 2 * DAY), bare, deps);
+    marks.unshift(markOf(prev));
+    s = prev.monthStart.startInstant;
+  }
+  s = cur.monthStart.startInstant;
+  for (let i = 0; i < 3; i++) {
+    // ~32 days past a month-start lands in the next month.
+    const next = computeCore(new Date(s.getTime() + 32 * DAY), bare, deps);
+    marks.push(markOf(next));
+    s = next.monthStart.startInstant;
+  }
+  return marks;
+}
+
+/**
+ * Shared anchor-and-propagate core for the fullDate / dateAnchor overrides.
+ *
+ * The user declares that `anchorInstant` carries biblical (year, month, day).
+ * Rather than do arithmetic on the day-of-month (which can overflow into an
+ * impossible "day 33"), we slide the engine's OWN month boundaries so the
+ * declared day lands at the anchor, then count the day-of-month with the same
+ * sunset-stepping the engine uses — so the day is always a valid 1..(month
+ * length). The month-of-year + year are relabelled by a single ordinal offset
+ * fixed at the anchor. Labels are exact at the anchor and consistent far from
+ * it.
+ */
+function anchorFullDate(
+  query: Date,
+  bare: CalendarConfig,
+  deps: CalendarDeps,
+  loc: GeoLocation,
+  target: { year: number; month: number; day: number; anchorInstant: Date; note: string },
+): EngineResult {
+  const baseQ = computeCore(query, bare, deps);
+  const baseA = computeCore(target.anchorInstant, bare, deps);
+
+  // The user's month boundaries are the engine's, slid so the anchor reads as
+  // the declared day: a month-start E becomes E shifted later by (d0 − D) days
+  // (= subtracting k = D − d0). Counting from such a boundary makes the anchor's
+  // day come out to D exactly.
+  const k = target.day - baseA.biblicalDate.day;
+  const slide = (sunset: Date): Date =>
+    k <= 0 ? addBiblicalDays(sunset, -k, loc) : subBiblicalDays(sunset, k, loc);
+
+  // Pick the latest slid boundary on/before the query → the user's current
+  // month-start. Counting to the query then yields a valid day-of-month.
+  const marks = monthStartsAround(query, bare, deps);
+  let chosen = marks[0];
+  let chosenStart = slide(marks[0].start);
+  for (const m of marks) {
+    const us = slide(m.start);
+    if (us.getTime() <= query.getTime()) {
+      chosen = m;
+      chosenStart = us;
+    }
+  }
+  const day = biblicalDayNumber(chosenStart, query, loc);
+
+  // Relabel month-of-year + year by a single ordinal offset, fixed by the anchor
+  // (where the engine month is baseA's and the declared month is target.month).
+  const ordShift =
+    (target.year * 12 + (target.month - 1)) -
+    (baseA.biblicalDate.year * 12 + (baseA.biblicalDate.month - 1));
+  const ord = chosen.year * 12 + (chosen.month - 1) + ordShift;
+  const year = Math.floor(ord / 12);
+  const month = (((ord % 12) + 12) % 12) + 1;
 
   return {
     ...baseQ,
     biblicalDate: { year, month, day, monthName: baseQ.biblicalDate.monthName },
-    monthStart: { startInstant, status: "confirmed" },
-    notes: [
-      ...baseQ.notes,
-      "Manual full-date override: labels are exact at the anchor and offset-propagated elsewhere.",
-    ],
+    monthStart: { startInstant: chosenStart, status: "confirmed" },
+    notes: [...baseQ.notes, target.note],
   };
 }

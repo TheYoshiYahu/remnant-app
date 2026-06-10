@@ -432,6 +432,45 @@ function testOverride(): void {
   eq("fullDate override exact at anchor (y)", full.biblicalDate.year, 6000);
   eq("fullDate override exact at anchor (m)", full.biblicalDate.month, 8);
   eq("fullDate override exact at anchor (d)", full.biblicalDate.day, 3);
+
+  // dateAnchor override (the orientation menu's universal path): declare that at
+  // the anchor the biblical date is month 7 day 1 (Trumpets), with the YEAR left
+  // to the engine. Reading the anchor back must return month 7 / day 1, and the
+  // year must equal the engine's own computed year there (yearShift = 0).
+  const da = computeBiblicalDate(anchor, {
+    ...cfg,
+    override: { kind: "dateAnchor", month: 7, day: 1, anchorInstant: anchor },
+  });
+  eq("dateAnchor exact at anchor (m)", da.biblicalDate.month, 7);
+  eq("dateAnchor exact at anchor (d)", da.biblicalDate.day, 1);
+  eq("dateAnchor keeps engine year", da.biblicalDate.year, base.biblicalDate.year);
+  check(
+    "dateAnchor surfaces an orientation note",
+    da.notes.some((n) => n.toLowerCase().includes("oriented")),
+  );
+
+  // No day-overflow far from the anchor: declare Passover (1/14) at one date,
+  // then read ~80 days later. The day-of-month must stay a valid 1..30 (the bug
+  // was arithmetic propagation reporting impossible days like 33).
+  const passAnchor = new Date("2026-03-25T10:00:00Z");
+  const far = new Date("2026-06-14T10:00:00Z");
+  const farRes = computeBiblicalDate(far, {
+    ...cfg,
+    override: { kind: "dateAnchor", month: 1, day: 14, anchorInstant: passAnchor },
+  });
+  check(
+    "dateAnchor day stays in 1..30 far from anchor",
+    farRes.biblicalDate.day >= 1 && farRes.biblicalDate.day <= 30,
+  );
+  check("dateAnchor month stays in 1..12 far from anchor",
+    farRes.biblicalDate.month >= 1 && farRes.biblicalDate.month <= 12);
+  // And exact at the Passover anchor itself.
+  const atPass = computeBiblicalDate(passAnchor, {
+    ...cfg,
+    override: { kind: "dateAnchor", month: 1, day: 14, anchorInstant: passAnchor },
+  });
+  eq("dateAnchor Passover exact (m)", atPass.biblicalDate.month, 1);
+  eq("dateAnchor Passover exact (d)", atPass.biblicalDate.day, 14);
 }
 
 function isSortedAsc(xs: number[]): boolean {

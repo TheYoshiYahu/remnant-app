@@ -23,6 +23,7 @@ import {
   type EnochIntercalation,
   type FirstfruitsRule,
   type GeoLocation,
+  type ManualOverride,
   type Moed,
   type MoedKind,
   type YearReckoning,
@@ -38,6 +39,50 @@ const DAY_MS = 86_400_000;
 
 export type MonthKind = "conjunction" | "crescent" | "rabbinic" | "enoch";
 
+// ---------------------------------------------------------------------------
+// Orientation — the manual "I am sure of ONE thing" anchor menu. The user
+// supplies a single fact and the engine derives the rest. Every functional
+// mode collapses to a biblical MONTH/DAY pinned to a Gregorian instant — i.e.
+// the engine's `dateAnchor` override (year left to the engine).
+// ---------------------------------------------------------------------------
+
+/** Fixed-date feasts a user can anchor against (rule-independent month/day). */
+export type FeastKey =
+  | "passover"
+  | "unleavened-bread"
+  | "trumpets"
+  | "atonement"
+  | "tabernacles";
+
+export interface FeastAnchorDef {
+  key: FeastKey;
+  label: string;
+  /** Biblical month/day this feast always falls on. */
+  month: number;
+  day: number;
+}
+
+export const FEAST_ANCHORS: FeastAnchorDef[] = [
+  { key: "passover", label: "Passover", month: 1, day: 14 },
+  { key: "unleavened-bread", label: "Unleavened Bread", month: 1, day: 15 },
+  { key: "trumpets", label: "Trumpets", month: 7, day: 1 },
+  { key: "atonement", label: "Atonement", month: 7, day: 10 },
+  { key: "tabernacles", label: "Tabernacles", month: 7, day: 15 },
+];
+
+/**
+ * Orientation override. `greg` is an ISO `YYYY-MM-DD` Gregorian date (the one
+ * fact the user is sure of); for the `today` mode it is captured at the moment
+ * the user declares it. `source` is the stubbed "inherit a published calendar"
+ * slot — selectable, but not yet functional (it applies no override).
+ */
+export type Orientation =
+  | { mode: "feast"; feast: FeastKey; greg: string }
+  | { mode: "today"; month: number; day: number; greg: string }
+  | { mode: "monthStart"; month: number; greg: string }
+  | { mode: "newYear"; greg: string }
+  | { mode: "source" };
+
 export interface ReckoningState {
   month: MonthKind;
   /** crescent-only */
@@ -51,10 +96,40 @@ export interface ReckoningState {
   qumranFestivals: boolean;
   firstfruits: FirstfruitsRule;
   location: GeoLocation;
-  /** manual override of the current month's start (the universal escape hatch). */
-  overrideMonthStart?: Date;
+  /** manual orientation anchor (the universal escape hatch). */
+  orientation?: Orientation;
   /** evenings the partner has tapped "I sighted it" (local-confirm). */
   confirmedSightings: Date[];
+}
+
+/** Midday instant of an ISO `YYYY-MM-DD` — a stable daytime anchor for the day. */
+export function anchorInstantFromGreg(greg: string): Date {
+  return new Date(`${greg}T12:00:00Z`);
+}
+
+/**
+ * Project an orientation onto the engine's override. Every functional mode is a
+ * biblical month/day pinned to a Gregorian instant → a `dateAnchor`. The
+ * `source` stub (and any malformed date) yields no override.
+ */
+export function orientationToOverride(o: Orientation): ManualOverride | undefined {
+  if (o.mode === "source") return undefined;
+  const greg = o.greg;
+  if (!greg || !/^\d{4}-\d{2}-\d{2}$/.test(greg)) return undefined;
+  const anchorInstant = anchorInstantFromGreg(greg);
+  switch (o.mode) {
+    case "feast": {
+      const def = FEAST_ANCHORS.find((f) => f.key === o.feast);
+      if (!def) return undefined;
+      return { kind: "dateAnchor", month: def.month, day: def.day, anchorInstant };
+    }
+    case "today":
+      return { kind: "dateAnchor", month: o.month, day: o.day, anchorInstant };
+    case "monthStart":
+      return { kind: "dateAnchor", month: o.month, day: 1, anchorInstant };
+    case "newYear":
+      return { kind: "dateAnchor", month: 1, day: 1, anchorInstant };
+  }
 }
 
 export const DEFAULT_RECKONING: ReckoningState = {
@@ -92,8 +167,9 @@ export function buildConfig(s: ReckoningState): CalendarConfig {
     firstfruits: s.firstfruits,
     qumranFestivals: s.qumranFestivals,
   };
-  if (s.overrideMonthStart) {
-    cfg.override = { kind: "monthStart", startInstant: s.overrideMonthStart };
+  if (s.orientation) {
+    const override = orientationToOverride(s.orientation);
+    if (override) cfg.override = override;
   }
   return cfg;
 }
