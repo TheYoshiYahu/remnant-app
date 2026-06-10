@@ -558,9 +558,12 @@ function Reader() {
     }
   };
   // S214 — the partner-chosen Kingdom verse treatment ("quotes or
-  // underline" — Yoshi). Default "quotes": the original S205 two-tone
-  // quote pair. Persists per device at rop_kingdom_style_v1.
-  const [kingdomStyle, setKingdomStyle] = useState<KingdomStyle>("quotes");
+  // underline" — Yoshi). Default "underline": the two-tone gradient
+  // underline (S217 Yoshi: "I think I want the kingdom gospel to be
+  // underline by default instead of quotes"). The original S205 two-tone
+  // quote pair is still available via the style row. Persists per device
+  // at rop_kingdom_style_v1.
+  const [kingdomStyle, setKingdomStyle] = useState<KingdomStyle>("underline");
   useEffect(() => {
     if (typeof window === "undefined") return;
     const stored = window.localStorage.getItem("rop_kingdom_style_v1");
@@ -3263,25 +3266,56 @@ function Reader() {
               unfold the come-and-see card. FREE for every partner —
               the proclamation surface; no tier chip, ever. No dot
               glyph (Yoshi, S205 proof). S209: moved ABOVE the Witness
-              (Yoshi) — the Witness style row renders beneath the
-              Witness pill, so the Witness sits last in the stack.
+              (Yoshi) — the Witness sits last in the stack.
+
+              S217 (Yoshi, "option a"): the Kingdom and Witness each own
+              a w-full column group so each feature's style row sits
+              DIRECTLY beneath its OWN pill. Before this, both style rows
+              were full-width siblings below the shared pill strip, so the
+              Kingdom options visually fell under the Witness pill. The
+              w-full wrapper breaks each group onto its own line within
+              the justify-end strip; items-end keeps pill + options right-
+              aligned with the rest of the strip.
             */}
-            <button
-              type="button"
-              onClick={toggleKingdom}
-              aria-pressed={kingdomOn}
-              title="The Prophesied Kingdom Gospel — nothing in the new testament is new. Marks every teaching, act, and promise beside the scripture it was taught from. Tap a marked verse to see both sides quoted in full."
-              className="chrome-metal chrome-metal-kingdom !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
-            >
-              <span className="flex flex-col items-center leading-tight">
-                <span>
-                  {kingdomOn ? "Hide" : "Show"} the Prophesied Kingdom Gospel
+            <div className="flex w-full flex-col items-end gap-2">
+              <button
+                type="button"
+                onClick={toggleKingdom}
+                aria-pressed={kingdomOn}
+                title="The Prophesied Kingdom Gospel — nothing in the new testament is new. Marks every teaching, act, and promise beside the scripture it was taught from. Tap a marked verse to see both sides quoted in full."
+                className="chrome-metal chrome-metal-kingdom !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
+              >
+                <span className="flex flex-col items-center leading-tight">
+                  <span>
+                    {kingdomOn ? "Hide" : "Show"} the Prophesied Kingdom Gospel
+                  </span>
+                  <span className="mt-0.5 text-[0.6rem] font-normal normal-case tracking-normal opacity-85">
+                    (nothing new in the new testament)
+                  </span>
                 </span>
-                <span className="mt-0.5 text-[0.6rem] font-normal normal-case tracking-normal opacity-85">
-                  (nothing new in the new testament)
-                </span>
-              </span>
-            </button>
+              </button>
+              {/*
+                S214 — the Kingdom style row (Yoshi: "settings also of
+                quotes or underline"). Visible while the Kingdom is ON.
+                Default "underline" (S217 Yoshi). Persists at
+                rop_kingdom_style_v1.
+              */}
+              {kingdomOn && (
+                <div className="flex flex-wrap items-center justify-end gap-1.5 font-sans">
+                  {(["quotes", "underline"] as const).map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      className="kingdom-style-chip"
+                      aria-pressed={kingdomStyle === s}
+                      onClick={() => pickKingdomStyle(s)}
+                    >
+                      {KINGDOM_STYLE_LABELS[s]}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
             {/*
               S204 — The Witness toggle (working title: Red Pill), the
               ninth metallic register (dedicated witness red — proof
@@ -3295,65 +3329,44 @@ function Reader() {
               (S204c — the ◉ glyph was dropped from the pill, Yoshi:
               "why does it even have the white circle?").
             */}
-            <button
-              type="button"
-              onClick={toggleWitness}
-              aria-pressed={witnessOn}
-              title="The Red-Pill Witness — marks every verse where the Messiah claims what the Tanakh gives to Yahuah alone. Tap a marked verse to see both sides quoted in full."
-              className="chrome-metal chrome-metal-witness !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
-            >
-              {witnessOn
-                ? "Hide the Red-Pill Witness"
-                : "Show the Red-Pill Witness"}
-            </button>
+            <div className="flex w-full flex-col items-end gap-2">
+              <button
+                type="button"
+                onClick={toggleWitness}
+                aria-pressed={witnessOn}
+                title="The Red-Pill Witness — marks every verse where the Messiah claims what the Tanakh gives to Yahuah alone. Tap a marked verse to see both sides quoted in full."
+                className="chrome-metal chrome-metal-witness !px-4 !py-1.5 text-xs font-semibold uppercase tracking-wide"
+              >
+                {witnessOn
+                  ? "Hide the Red-Pill Witness"
+                  : "Show the Red-Pill Witness"}
+              </button>
+              {/*
+                S204b — the Witness style row ("red pill options and then
+                they choose" — Yoshi). Visible while the Witness is ON.
+                Default "text" (the inverted red-letter: red used to mean
+                "he speaks," now it means he claims the Name). Persists at
+                rop_witness_style_v1.
+              */}
+              {witnessOn && (
+                <div className="flex flex-wrap items-center justify-end gap-1.5 font-sans">
+                  {(
+                    ["text", "quotes", "highlight", "capsule"] as const
+                  ).map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      className="witness-style-chip"
+                      aria-pressed={witnessStyle === s}
+                      onClick={() => pickWitnessStyle(s)}
+                    >
+                      {WITNESS_STYLE_LABELS[s]}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-
-          {/*
-            S214 — the Kingdom style row (Yoshi: "settings also of quotes
-            or underline"). Visible while the Kingdom is ON. Default
-            "quotes" (the original S205 two-tone quote pair). Persists at
-            rop_kingdom_style_v1.
-          */}
-          {kingdomOn && (
-            <div className="mt-2 flex flex-wrap items-center justify-end gap-1.5 font-sans">
-              {(["quotes", "underline"] as const).map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  className="kingdom-style-chip"
-                  aria-pressed={kingdomStyle === s}
-                  onClick={() => pickKingdomStyle(s)}
-                >
-                  {KINGDOM_STYLE_LABELS[s]}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {/*
-            S204b — the Witness style row ("red pill options and then
-            they choose" — Yoshi). Visible while the Witness is ON.
-            Default "text" (the inverted red-letter: red used to mean
-            "he speaks," now it means he claims the Name). Persists at
-            rop_witness_style_v1.
-          */}
-          {witnessOn && (
-            <div className="mt-2 flex flex-wrap items-center justify-end gap-1.5 font-sans">
-              {(
-                ["text", "quotes", "highlight", "capsule"] as const
-              ).map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  className="witness-style-chip"
-                  aria-pressed={witnessStyle === s}
-                  onClick={() => pickWitnessStyle(s)}
-                >
-                  {WITNESS_STYLE_LABELS[s]}
-                </button>
-              ))}
-            </div>
-          )}
 
           {/*
             S205 — the Kingdom chapter-end card: every pairing in this
