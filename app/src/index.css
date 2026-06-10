@@ -1236,15 +1236,23 @@ body {
 .cal-cell {
   position: relative;
   min-height: 4.6rem;
-  border: 1px solid var(--cal-edge);
+  /* S225c — a restrained chrome-metal lift so each day reads as its own cell,
+     not a flat navy blur: a crisper techelet edge, a touch more surface contrast
+     vs the panel field, and a top inner-highlight bevel + soft drop for quiet
+     elevation. Subtle on purpose — special days (today/Sabbath/feast) still
+     out-glow these via their own outlines/box-shadows. NO grey. */
+  border: 1px solid color-mix(in srgb, #1A6FE5 30%, #000);
   border-radius: 8px;
-  background: var(--cal-surface-2);
+  background: color-mix(in srgb, #0A2D84 24%, #000);
+  box-shadow:
+    inset 0 1px 0 rgba(147, 192, 255, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.4);
   padding: 0.28rem 0.3rem 0.2rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
-.cal-cell-blank { background: transparent; border-color: transparent; }
+.cal-cell-blank { background: transparent; border-color: transparent; box-shadow: none; }
 .cal-cell-sabbath:not(.cal-cell-moed) {
   /* spectral deep (#0E2C50) → deep techelet — the seventh-day rest in the
      divine-illumination register. Both hexes from index.css. */
@@ -1263,6 +1271,8 @@ body {
   font-weight: 700;
   color: var(--cal-ink);
   line-height: 1;
+  /* Crisp over the sunset-shade gradient — a hair of depth, no grey. */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
 }
 .cal-cell-greg { font-size: 0.6rem; color: var(--cal-ink-soft); font-variant-numeric: tabular-nums; }
 .cal-cell-mid { flex: 1; display: flex; align-items: center; justify-content: center; }
