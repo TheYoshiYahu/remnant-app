@@ -8100,6 +8100,2247 @@ SELECT t.id, x.id, 2, E'Matthew 23:35 — *That upon you may come all the righte
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_revelation_19.sql (S224 Revelation 19) -----
+-- =====================================================================
+-- S224 minion — REVELATION 19 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 19 (21 verses) — the Hallelujahs, the marriage of the Lamb,
+--   the rider on the white horse called Faithful and True, the Word of Elohim, KING OF
+--   KINGS AND LORD OF LORDS, the supper of the great Elohim, the beast and false prophet
+--   cast into the lake of fire.
+-- Tag: rv19 (temp view _s224_rv19_lookup).
+-- Sort band: floor 9450, step 3 (9450, 9453, 9456, 9459, 9462, 9465, 9468 used; under 9475).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Revelation 19 is the consummation of the covenant story — the great whore
+-- (the harlot-city, the unfaithful one) judged, and the faithful Bride made ready; the same
+-- Yahuah (LORD) whom heaven praises with the ancient Hallelu-Yah of the Psalms is the rider on
+-- the white horse. CHRISTOLOGY (the Formed): the rider is Yahusha the Formed drawn from the
+-- Formless — *Faithful and True*, whose eyes are *as a flame of fire*, whose name is *The Word
+-- of Elohim (God)*, who treads the winepress of the wrath of El Shaddai (Almighty God), and who
+-- bears on his thigh the divine title *KING OF KINGS, AND LORD OF LORDS*. He is the one Isaiah saw
+-- coming from Bozrah with garments dyed red, the warrior who slays the wicked with the breath of
+-- his lips (Isaiah 11:4, 63:1-3) — Yahuah's own acting agency, who came in flesh and has a Father.
+-- The angel's twofold refusal of worship (19:10) keeps worship for the One: *worship Elohim
+-- (God): for the testimony of Yahusha (Jesus) is the spirit of prophecy* — no co-equal-persons
+-- grammar, no modalist collapse; the One alone is worshipped, and the testimony of Yahusha is
+-- the breath that carries all true prophecy. The marriage of the Lamb is the betrothal the
+-- prophets promised — *thy Maker is thine husband* (Isaiah 54:5), *I will betroth thee unto me
+-- for ever* (Hosea 2:19) — Yahuah taking back the people he had let go, the Bride arrayed in the
+-- *righteousness of saints*, not a self-selected church but the covenant people brought home and
+-- made ready. The supper of the great Elohim is Ezekiel's sacrificial feast on Gog re-spoken.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-6   the great Alleluia — Hallelu-Yah, salvation and glory unto Yahuah; her smoke rose up
+--           Tanakh: Psalm 104:35 (*Praise ye Yahuah*), Psalm 106:1 (*Praise ye Yahuah... his
+--                   mercy endureth*), Psalm 106:48 (the doxology *Praise ye Yahuah*), Psalm 113:1
+--                   (*Praise, O ye servants of Yahuah*), Psalm 146:1 (*Praise Yahuah, O my soul*),
+--                   Isaiah 34:10 (*the smoke thereof shall go up for ever*)
+--           Extras: none warranted   NT: none warranted (the praise is the Tanakh's own Hallel)
+--   v.7-9   the marriage of the Lamb, the Bride in fine linen, blessed are they called to the supper
+--           Tanakh: Isaiah 61:10 (*as a bride adorneth herself with her jewels*), Isaiah 54:5
+--                   (*thy Maker is thine husband*), Hosea 2:19 (*I will betroth thee unto me for
+--                   ever*), Psalm 45:13-14 (*the king's daughter is all glorious within... raiment
+--                   of needlework*)
+--           Extras: none warranted   NT: none warranted (carried in the Tanakh betrothal weave)
+--   v.10    the angel refuses worship — worship Elohim, the testimony of Yahusha the spirit of prophecy
+--           Tanakh: Exodus 34:14 (*thou shalt worship no other god*), Deuteronomy 6:13 (*fear
+--                   Yahuah... and serve him*)
+--           Extras: none warranted   NT: none warranted
+--   v.11-14 the rider Faithful and True, eyes as flame, the vesture dipped in blood, The Word of Elohim
+--           Tanakh: Isaiah 11:4-5 (*with righteousness shall he judge... faithfulness the girdle*),
+--                   Psalm 96:13 (*he cometh to judge the earth... with righteousness*), Psalm 45:3-4
+--                   (*ride prosperously because of truth and meekness and righteousness*), Isaiah
+--                   63:1-3 (*dyed garments from Bozrah... I have trodden the winepress alone*),
+--                   Genesis 49:11 (*he washed his garments in wine... in the blood of grapes*)
+--           Extras: Wisdom of Solomon 18:15-16 (*your Almighty word leaped down from heaven... a
+--                   sharp sword*), 2 Esdras 13:10 (*out of his mouth as it had been a blast of fire*)
+--           NT: none warranted
+--   v.15-16 the sharp sword, the rod of iron, the winepress, KING OF KINGS AND LORD OF LORDS
+--           Tanakh: Isaiah 11:4 (*the rod of his mouth... the breath of his lips*), Isaiah 49:2
+--                   (*my mouth like a sharp sword*), Psalm 2:9 (*break them with a rod of iron*),
+--                   Joel 3:13 (*put ye in the sickle... the press is full*), Deuteronomy 10:17
+--                   (*Lord of lords*), Daniel 2:47 (*a Lord of kings*), Psalm 136:3 (*the Lord of lords*)
+--           Extras: 2 Esdras 13:37-38 (*this my Son shall rebuke... destroy them... by the law
+--                   which is like to fire*)   NT: none warranted
+--   v.17-18 the supper of the great Elohim — come and gather to eat the flesh of kings
+--           Tanakh: Ezekiel 39:17 (*gather yourselves... to my sacrifice*), Ezekiel 39:18 (*ye
+--                   shall eat the flesh of the mighty*), Ezekiel 39:20 (*filled at my table*)
+--           Extras: none warranted   NT: none warranted
+--   v.19-21 the beast and false prophet taken, cast into the lake of fire
+--           Tanakh: Daniel 7:11 (*the beast was slain... given to the burning flame*)
+--           Extras: none warranted   NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   9450 revelation-19-the-great-alleluia-hallelu-yah-salvation-unto-yahuah-psalm-104-and-106  (Tanakh)
+--   9453 revelation-19-the-marriage-of-the-lamb-the-bride-in-fine-linen-isaiah-61-and-54-and-hosea-2  (Tanakh)
+--   9456 revelation-19-worship-elohim-the-angel-refuses-worship-exodus-34-deuteronomy-6  (Tanakh)
+--   9459 revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11  (Tanakh + Extras)
+--   9462 revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10  (Tanakh + Extras)
+--   9465 revelation-19-the-supper-of-the-great-elohim-the-sacrifice-on-gog-ezekiel-39  (Tanakh)
+--   9468 revelation-19-the-beast-and-false-prophet-cast-into-the-lake-of-fire-daniel-7  (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-19-the-great-alleluia-hallelu-yah-salvation-unto-yahuah-psalm-104-and-106
+  ('canon', 'revelation', 19, 1, 'canon', 'psalms', 104, 35, 'free', E'*Let the sinners be consumed out of the earth, and let the wicked be no more. Bless thou Yahuah (LORD), O my soul. Praise ye Yahuah (LORD).* (Psalm 104:35). Here is the first *Alleluia* in all scripture — *Hallelu-Yah*, *Praise ye Yahuah (LORD)* — and it stands at the close of the great creation psalm, the moment the wicked are consumed out of the earth. So heaven takes it up: *Alleluia; Salvation, and glory, and honour, and power, unto Yahuah Eloheinu (the Lord our God)* (Revelation 19:1). The praise is no new word; it is the ancient Hebrew Hallel, sung now over the judgment of the great whore that corrupted the earth — the same *Praise ye Yahuah (LORD)* the psalmist sang when the wicked were no more.'),
+  ('canon', 'revelation', 19, 1, 'canon', 'psalms', 106, 1, 'free', E'*Praise ye Yahuah (LORD). O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever.* (Psalm 106:1). The heavenly multitude cries *Alleluia* (Revelation 19:1) — the very *Praise ye Yahuah (LORD)* that opens the sixth psalm of the Hallel, the praise that confesses his goodness and his mercy that endureth for ever. The song of heaven is not invented for the occasion; it is the covenant people''s own praise, the *Hallelu-Yah* carried from the Psalms straight into the throne-room, *for true and righteous are his judgments* (Revelation 19:2).'),
+  ('canon', 'revelation', 19, 4, 'canon', 'psalms', 106, 48, 'free', E'*Blessed be Yahuah Elohim (the LORD God) of Yashar''el (Israel) from everlasting to everlasting: and let all the people say, Amen. Praise ye Yahuah (LORD).* (Psalm 106:48). This is the doxology that seals the psalm — *let all the people say, Amen. Praise ye Yahuah (LORD)* — and it is exactly what the four and twenty elders and the four beasts do: *and the four and twenty elders and the four beasts fell down and worshipped Elohim (God) that sat on the throne, saying, Amen; Alleluia* (Revelation 19:4). *Amen* and *Praise ye Yahuah (LORD)* — the *Amen; Alleluia* of heaven is the psalm''s own closing line, the people of Yashar''el (Israel) answering as they were taught to answer.'),
+  ('canon', 'revelation', 19, 5, 'canon', 'psalms', 113, 1, 'free', E'*Praise ye Yahuah (LORD). Praise, O ye servants of Yahuah (LORD), praise the name of Yahuah (LORD).* (Psalm 113:1). A voice comes out of the throne: *Praise our Elohim (God), all ye his servants, and ye that fear him, both small and great* (Revelation 19:5). It is the call of the thirteenth psalm of the Hallel — *Praise, O ye servants of Yahuah (LORD)* — the summons to the servants of the Most High to lift the name. Heaven''s voice does not improvise the call to praise; it speaks the Hallel''s own summons over the gathered servants, *both small and great*.'),
+  ('canon', 'revelation', 19, 6, 'canon', 'psalms', 146, 1, 'free', E'*Praise ye Yahuah (LORD). Praise Yahuah (LORD), O my soul.* (Psalm 146:1). The great multitude, *as the voice of many waters, and as the voice of mighty thunderings*, cries *Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth* (Revelation 19:6). This is *Hallelu-Yah* with its reason given — the reign of Yahuah (LORD) — and it is the praise that opens the last five psalms of the Psalter, each beginning and ending with *Praise ye Yahuah (LORD)*. The book of praise ends as heaven''s song begins: *Yahuah (LORD) shall reign for ever* (Psalm 146:10), and so the omnipotent One reigneth, and all the redeemed cry *Alleluia*.'),
+  ('canon', 'revelation', 19, 3, 'canon', 'isaiah', 34, 10, 'free', E'*It shall not be quenched night nor day; the smoke thereof shall go up for ever: from generation to generation it shall lie waste; none shall pass through it for ever and ever.* (Isaiah 34:10). When heaven cries *Alleluia* a second time, the reason is the rising smoke: *And again they said, Alleluia. And her smoke rose up for ever and ever* (Revelation 19:3). Isaiah saw the same smoke over Edom, the people of Yahuah''s (LORD''s) curse — *the smoke thereof shall go up for ever* — the unquenchable burning of the city under judgment. The smoke of the great whore is that smoke; the *Alleluia* is sung over a sentence the prophet already pronounced, *for ever and ever*.'),
+  -- thread: revelation-19-the-marriage-of-the-lamb-the-bride-in-fine-linen-isaiah-61-and-54-and-hosea-2
+  ('canon', 'revelation', 19, 7, 'canon', 'isaiah', 61, 10, 'free', E'*I will greatly rejoice in Yahuah (LORD), my soul shall be joyful in my Elohim (God); for he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness, as a bridegroom decketh himself with ornaments, and as a bride adorneth herself with her jewels.* (Isaiah 61:10). *Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7). Isaiah sang this marriage long before: the *robe of righteousness*, the bride who *adorneth herself with her jewels*. So the wife of the Lamb is *arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints* (Revelation 19:8) — the very robe of righteousness with which Yahuah (LORD) clothes his people. The Bride does not weave her own garment from nothing; she is clothed by the One who covers her, made ready for the marriage the prophet foresaw.'),
+  ('canon', 'revelation', 19, 7, 'canon', 'isaiah', 54, 5, 'free', E'*For thy Maker is thine husband; Yahuah Tseva''ot (LORD of hosts) is his name; and thy Redeemer the Holy One of Yashar''el (Israel); The Elohim (God) of the whole earth shall he be called.* (Isaiah 54:5). The marriage of the Lamb is not a new thing under heaven — it is the covenant the prophet named: *thy Maker is thine husband*. *The marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7). The Lamb who weds his Bride is the Maker who is her husband, the Redeemer, the Holy One of Yashar''el (Israel) — Yahuah (LORD) himself, come in flesh, taking back to himself the people he had for a small moment forsaken: *with great mercies will I gather thee* (Isaiah 54:7).'),
+  ('canon', 'revelation', 19, 7, 'canon', 'hosea', 2, 19, 'free', E'*And I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies.* (Hosea 2:19). The wife made ready for the Lamb is the wife of Hosea''s betrothal — the one who had played the harlot, brought into the wilderness, and wooed back: *I will betroth thee unto me for ever* (Hosea 2:19), *I will even betroth thee unto me in faithfulness: and thou shalt know Yahuah (LORD)* (Hosea 2:20). *The marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7); and the betrothal *in righteousness* is answered by the Bride *arrayed in fine linen... the righteousness of saints* (Revelation 19:8). The harlot-city is judged; the betrothed people, gathered home, are wed. *I will say to them which were not my people, Thou art my people* (Hosea 2:23) — the marriage is the homecoming.'),
+  ('canon', 'revelation', 19, 8, 'canon', 'psalms', 45, 13, 'free', E'*The king''s daughter is all glorious within: her clothing is of wrought gold. She shall be brought unto the king in raiment of needlework: the virgins her companions that follow her shall be brought unto thee.* (Psalm 45:13-14). The royal wedding-song shows the bride brought to the king *all glorious within*, in *clothing of wrought gold* and *raiment of needlework*. So the wife of the Lamb is *arrayed in fine linen, clean and white* (Revelation 19:8). The psalm''s bride and the Lamb''s Bride are clothed for the same marriage — the king greatly desiring her beauty, the people *brought unto the king*; and her glory is *within*, the *righteousness of saints* worn as her wedding garment.'),
+  -- thread: revelation-19-worship-elohim-the-angel-refuses-worship-exodus-34-deuteronomy-6
+  ('canon', 'revelation', 19, 10, 'canon', 'exodus', 34, 14, 'free', E'*For thou shalt worship no other god: for Yahuah (LORD), whose name is Jealous, is a jealous Elohim (God).* (Exodus 34:14). When John falls at the angel''s feet, the angel refuses: *See thou do it not: I am thy fellowservant... worship Elohim (God)* (Revelation 19:10). The refusal stands on the first word of the covenant: *thou shalt worship no other god*. Worship belongs to the One alone — not to an angel, not to a fellowservant — for Yahuah (LORD) is a jealous Elohim (God). The angel keeps the commandment by deflecting the worship straight back to the One to whom it is due.'),
+  ('canon', 'revelation', 19, 10, 'canon', 'deuteronomy', 6, 13, 'free', E'*Thou shalt fear Yahuah Elohayka (the LORD thy God), and serve him, and shalt swear by his name.* (Deuteronomy 6:13). *Worship Elohim (God): for the testimony of Yahusha (Jesus) is the spirit of prophecy* (Revelation 19:10). The angel speaks the Shema''s own charge — *thou shalt fear Yahuah Elohayka (the LORD thy God), and serve him* — the word that Yahusha (Jesus) himself wielded against the tempter. Service and worship are the One''s alone; and the testimony of Yahusha (Jesus), the angel adds, is *the spirit of prophecy* — the breath that has carried every true prophet''s word, all of it pointing to the One who is worshipped and to the Lamb who is his witness.'),
+  -- thread: revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11
+  ('canon', 'revelation', 19, 11, 'canon', 'isaiah', 11, 4, 'free', E'*But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked.* (Isaiah 11:4). The rider on the white horse is *called Faithful and True, and in righteousness he doth judge and make war* (Revelation 19:11). Isaiah named this righteous warrior — the Branch out of Jesse who judges *with righteousness* and slays the wicked *with the breath of his lips*, the very breath that becomes the *sharp sword* out of the rider''s mouth (Revelation 19:15). The One who judges in righteousness and makes war is the Root of Jesse come into his reign.'),
+  ('canon', 'revelation', 19, 11, 'canon', 'psalms', 96, 13, 'free', E'*Before Yahuah (LORD): for he cometh, for he cometh to judge the earth: he shall judge the world with righteousness, and the people with his truth.* (Psalm 96:13). *In righteousness he doth judge and make war* (Revelation 19:11). The psalm says it twice for joy — *he cometh, for he cometh to judge the earth* — and he comes to *judge the world with righteousness*. The rider called *Faithful and True* is the coming of Yahuah (LORD) the psalm awaited, the righteous judgment of the whole earth, the truth by which the peoples are judged at last.'),
+  ('canon', 'revelation', 19, 11, 'canon', 'psalms', 45, 3, 'free', E'*Gird thy sword upon thy thigh, O most mighty, with thy glory and thy majesty. And in thy majesty ride prosperously because of truth and meekness and righteousness; and thy right hand shall teach thee terrible things.* (Psalm 45:3-4). The same wedding-psalm that dresses the Bride first arms the King: *gird thy sword upon thy thigh* and *ride prosperously because of truth and meekness and righteousness*. The rider does exactly this — he sits the white horse and *in righteousness he doth judge and make war* (Revelation 19:11), and on his thigh is written his name (Revelation 19:16). The Bridegroom of Psalm 45 is the warrior-King who rides for *truth... and righteousness*, his sword girt upon his thigh.'),
+  ('canon', 'revelation', 19, 13, 'canon', 'isaiah', 63, 1, 'free', E'*Who is this that cometh from Edom, with dyed garments from Bozrah? this that is glorious in his apparel, travelling in the greatness of his strength? I that speak in righteousness, mighty to save.* (Isaiah 63:1). *And he was clothed with a vesture dipped in blood: and his name is called The Word of Elohim (God)* (Revelation 19:13). Isaiah saw him coming with *dyed garments from Bozrah*, his apparel red — and asked why: *Wherefore art thou red in thine apparel, and thy garments like him that treadeth in the winefat?* (Isaiah 63:2). The answer is the winepress: *I have trodden the winepress alone* (Isaiah 63:3). The rider in the blood-dipped vesture is the One Isaiah saw, *mighty to save*, who treads the winepress of the wrath of El Shaddai (Almighty God) (Revelation 19:15).'),
+  ('canon', 'revelation', 19, 13, 'canon', 'genesis', 49, 11, 'free', E'*Binding his foal unto the vine, and his ass''s colt unto the choice vine; he washed his garments in wine, and his clothes in the blood of grapes:* (Genesis 49:11). In the blessing of Yahudah (Judah) — the lion''s whelp from whom *the sceptre shall not depart... until Shiloh come* (Genesis 49:10) — the coming one *washed his garments in wine, and his clothes in the blood of grapes*. The rider whose *vesture dipped in blood* (Revelation 19:13) is the Lion of the tribe of Yahudah (Judah) come at last, his garments stained from the winepress, the blood of grapes of Jacob''s ancient prophecy now the blood of the treading of the nations.'),
+  ('canon', 'revelation', 19, 13, 'apocrypha', 'the-wisdom-of-solomon', 18, 15, 'extras', E'*Your Almighty word leaped down from heaven out of your royal throne, as a fierce man of war into the midst of a land of destruction, And brought your unfeigned commandment as a sharp sword, and standing up filled all things with death; and it touched the heaven, but it stood upon the earth.* (Wisdom of Solomon 18:15-16). The Hebrew library already knew the Word as a warrior who is a sharp sword. *His name is called The Word of Elohim (God)* (Revelation 19:13), and *out of his mouth goeth a sharp sword* (Revelation 19:15). Here the *Almighty word* leaps from the royal throne *as a fierce man of war*, bearing the commandment *as a sharp sword* — the Word that touches heaven and stands upon the earth. The rider called The Word of Elohim (God) is that all-powerful Word, the Formed drawn from the Formless, leaping from the throne to do judgment.'),
+  ('canon', 'revelation', 19, 15, 'apocrypha', '2-esdras', 13, 10, 'extras', E'*But only I saw that he sent out of his mouth as it had been a blast of fire, and out of his lips a flaming breath, and out of his tongue he cast out sparks and tempests.* (2 Esdras 13:10). Esdras saw the Man from the sea destroy the gathered nations not with any weapon of war but with the breath of his mouth: *he held neither sword, nor any instrument of war* (2 Esdras 13:28), only *a blast of fire... out of his lips a flaming breath*. So the rider smites the nations with the sword *out of his mouth* (Revelation 19:15), and the gathered armies are slain *with the sword of him that sat upon the horse, which sword proceeded out of his mouth* (Revelation 19:21). The same vision: the Son declared, standing on Sion, who destroys the assembled multitude with the fire of his own mouth.'),
+  -- thread: revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10
+  ('canon', 'revelation', 19, 15, 'canon', 'isaiah', 49, 2, 'free', E'*And he hath made my mouth like a sharp sword; in the shadow of his hand hath he hid me, and made me a polished shaft; in his quiver hath he hid me;* (Isaiah 49:2). *And out of his mouth goeth a sharp sword, that with it he should smite the nations* (Revelation 19:15). The servant of Isaiah 49 says it of himself: *he hath made my mouth like a sharp sword*. The weapon of the rider is no metal blade but his word — the mouth made a sharp sword, the same servant who is given *for a light to the Gentiles* (Isaiah 49:6) now wielding the word that smites the nations and gathers his own.'),
+  ('canon', 'revelation', 19, 15, 'canon', 'psalms', 2, 9, 'free', E'*Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel.* (Psalm 2:9). *And he shall rule them with a rod of iron* (Revelation 19:15). The decree of the second psalm is the rider''s warrant: the Son to whom Yahuah (LORD) said *Thou art my Son* (Psalm 2:7) is given the nations for his inheritance and breaks them *with a rod of iron*. The kings of the earth who *set themselves... against Yahuah (LORD), and against his anointed* (Psalm 2:2) are the kings gathered to make war against the rider (Revelation 19:19) — and they are dashed in pieces as the psalm decreed.'),
+  ('canon', 'revelation', 19, 15, 'canon', 'joel', 3, 13, 'free', E'*Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.* (Joel 3:13). *And he treadeth the winepress of the fierceness and wrath of El Shaddai (Almighty God)* (Revelation 19:15). Joel called the nations down to the valley of decision where *the press is full, the fats overflow* — the winepress of the day of Yahuah (LORD). The rider treads that very press, the wrath of El Shaddai (Almighty God) poured out on the gathered wickedness of the nations, the harvest ripe and the press trodden at last.'),
+  ('canon', 'revelation', 19, 16, 'canon', 'deuteronomy', 10, 17, 'free', E'*For Yahuah Elohaychem (the LORD your God) is Elohim (God) of gods, and Lord of lords, a great Elohim (God), a mighty, and a terrible, which regardeth not persons, nor taketh reward:* (Deuteronomy 10:17). On the rider''s vesture and thigh is written *KING OF KINGS, AND LORD OF LORDS* (Revelation 19:16). The title is Yahuah''s (LORD''s) own, declared in the Torah: *Yahuah Elohaychem (the LORD your God) is Elohim (God) of gods, and Lord of lords*. The rider bears the divine title because he is the Formed who is Yahuah (LORD) — the *Lord of lords* of Moses'' confession, come in flesh and riding to judge.'),
+  ('canon', 'revelation', 19, 16, 'canon', 'daniel', 2, 47, 'free', E'*The king answered unto Daniel, and said, Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets, seeing thou couldest reveal this secret.* (Daniel 2:47). Even Nebuchadnezzar confessed it: the Elohim (God) of Daniel is *a Yahuah (Lord) of kings*. The rider written *KING OF KINGS, AND LORD OF LORDS* (Revelation 19:16) bears that very title — the Lord of kings whom the Babylonian king named, the God of heaven whose kingdom *shall break in pieces and consume all these kingdoms, and it shall stand for ever* (Daniel 2:44). The stone cut without hands and the rider on the white horse are one reign.'),
+  ('canon', 'revelation', 19, 16, 'canon', 'psalms', 136, 3, 'free', E'*O give thanks to the Lord of lords: for his mercy endureth for ever.* (Psalm 136:3). The Hallel gives thanks *to the Lord of lords* — the title the great psalm of mercy lays upon Yahuah (LORD) alone. *And he hath on his vesture and on his thigh a name written, KING OF KINGS, AND LORD OF LORDS* (Revelation 19:16). The rider wears the name the psalmist sang to the One whose *mercy endureth for ever*; the *Lord of lords* of the Hallel rides as the slain Lamb who is also the warrior-King.'),
+  ('canon', 'revelation', 19, 15, 'apocrypha', '2-esdras', 13, 37, 'extras', E'*And this my Son shall rebuke the wicked inventions of those nations, which for their wicked life are fallen into the tempest; And shall lay before them their evil thoughts, and the torments with which they shall begin to be tormented, which are like to a flame: and he shall destroy them without labour by the law which is like to fire.* (2 Esdras 13:37-38). The Man whom the Highest keeps, declared as *my Son*, stands on mount Sion and *shall rebuke the wicked inventions of those nations* and *destroy them without labour by the law which is like to fire*. So the rider smites the nations with the sword of his mouth and rules them with a rod of iron (Revelation 19:15). The Son destroys the gathered nations not by armies but by the word — the law like fire, the breath of his mouth — the same judgment the rider executes on the kings of the earth gathered to war (Revelation 19:19).'),
+  -- thread: revelation-19-the-supper-of-the-great-elohim-the-sacrifice-on-gog-ezekiel-39
+  ('canon', 'revelation', 19, 17, 'canon', 'ezekiel', 39, 17, 'free', E'*And, thou son of Adam, thus saith Adonai Yahuah (the Lord GOD); Speak unto every feathered fowl, and to every beast of the field, Assemble yourselves, and come; gather yourselves on every side to my sacrifice that I do sacrifice for you, even a great sacrifice upon the mountains of Yashar''el (Israel), that ye may eat flesh, and drink blood.* (Ezekiel 39:17). The angel standing in the sun cries *to all the fowls that fly in the midst of heaven, Come and gather yourselves together unto the supper of the great Elohim (God)* (Revelation 19:17). It is Ezekiel''s summons word for word — the fowls and the beasts called to *my sacrifice*, the great sacrifice on the mountains of Yashar''el (Israel) when Gog is fallen. The supper of the great Elohim (God) is that sacrifice come, the gathered armies of the beast become the feast.'),
+  ('canon', 'revelation', 19, 18, 'canon', 'ezekiel', 39, 18, 'free', E'*Ye shall eat the flesh of the mighty, and drink the blood of the princes of the earth, of rams, of lambs, and of goats, of bullocks, all of them fatlings of Bashan.* (Ezekiel 39:18). *That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men... and the flesh of all men, both free and bond, both small and great* (Revelation 19:18). Ezekiel''s feast on Gog names the very fare — *the flesh of the mighty*, *the blood of the princes of the earth* — that the fowls eat at the supper of the great Elohim (God). The princes and mighty men of Ezekiel''s sacrifice are the kings and captains of the rider''s judgment; the prophet''s feast on the fallen host is re-spoken over the armies of the beast.'),
+  ('canon', 'revelation', 19, 18, 'canon', 'ezekiel', 39, 20, 'free', E'*Thus ye shall be filled at my table with horses and chariots, with mighty men, and with all men of war, saith Adonai Yahuah (the Lord GOD).* (Ezekiel 39:20). *The flesh of horses, and of them that sit on them, and the flesh of all men* (Revelation 19:18). Ezekiel''s table is filled *with horses and chariots, with mighty men, and with all men of war* — and the supper of the great Elohim (God) sets the same table, the flesh of horses and riders and all men. The gathered armies who came to make war against the rider (Revelation 19:19) become the feast at Yahuah''s (LORD''s) table, exactly as the prophet foresaw the fall of Gog.'),
+  -- thread: revelation-19-the-beast-and-false-prophet-cast-into-the-lake-of-fire-daniel-7
+  ('canon', 'revelation', 19, 20, 'canon', 'daniel', 7, 11, 'free', E'*I beheld then because of the voice of the great words which the horn spake: I beheld even till the beast was slain, and his body destroyed, and given to the burning flame.* (Daniel 7:11). *And the beast was taken... These both were cast alive into a lake of fire burning with brimstone* (Revelation 19:20). Daniel saw the end of the beast whose horn spake *great words* — the beast *slain, and his body destroyed, and given to the burning flame*. The fourth beast of Daniel''s vision and the beast of Revelation share one fate: the burning flame, the lake of fire. The mouth speaking great things (Daniel 7:8) and the false prophet who deceived by miracles are silenced together in the fire Daniel foresaw.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-19-the-great-alleluia-hallelu-yah-salvation-unto-yahuah-psalm-104-and-106',
+       E'The great Alleluia — Hallelu-Yah, salvation and glory unto Yahuah (LORD) (Psalm 104 and 106)',
+       E'Four times in these verses heaven cries *Alleluia* — and the word is no new coinage of the apocalypse; it is the ancient Hebrew Hallel, *Hallelu-Yah*, *Praise ye Yahuah (LORD)*, lifted straight out of the Psalms. *And after these things I heard a great voice of much people in heaven, saying, Alleluia; Salvation, and glory, and honour, and power, unto Yahuah Eloheinu (the Lord our God)* (Revelation 19:1). The first *Alleluia* in scripture stands at the close of the creation psalm, over the consuming of the wicked: *Let the sinners be consumed out of the earth, and let the wicked be no more. Bless thou Yahuah (LORD), O my soul. Praise ye Yahuah (LORD)* (Psalm 104:35). The praise that opens the Hallel is the same: *Praise ye Yahuah (LORD). O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever* (Psalm 106:1). And when the four and twenty elders and the four beasts fall down *saying, Amen; Alleluia* (Revelation 19:4), they speak the doxology that seals that psalm — *let all the people say, Amen. Praise ye Yahuah (LORD)* (Psalm 106:48). The voice from the throne — *Praise our Elohim (God), all ye his servants, and ye that fear him, both small and great* (Revelation 19:5) — is the Hallel''s own summons: *Praise, O ye servants of Yahuah (LORD), praise the name of Yahuah (LORD)* (Psalm 113:1). And the great multitude *as the voice of many waters* cries *Alleluia: for Yahuah Elohim (the Lord God) omnipotent reigneth* (Revelation 19:6) — the praise that opens the last psalms of the Psalter, *Praise Yahuah (LORD), O my soul* (Psalm 146:1), where *Yahuah (LORD) shall reign for ever* (Psalm 146:10). The second *Alleluia* is sung over the rising smoke — *And again they said, Alleluia. And her smoke rose up for ever and ever* (Revelation 19:3) — the smoke Isaiah saw over the city of Yahuah''s (LORD''s) curse: *the smoke thereof shall go up for ever* (Isaiah 34:10). Heaven does not invent its praise; it sings the covenant people''s own *Hallelu-Yah* over the judgment of the great whore and the reign of the One.',
+       sv.verse_id, ev.verse_id, 'free', 9450
+  FROM _s224_rv19_lookup sv, _s224_rv19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=19 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-19-the-marriage-of-the-lamb-the-bride-in-fine-linen-isaiah-61-and-54-and-hosea-2',
+       E'The marriage of the Lamb, the Bride arrayed in fine linen (Isaiah 61 and 54, Hosea 2)',
+       E'*Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready. And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints* (Revelation 19:7-8). This marriage is the covenant the prophets sang for centuries. Isaiah heard the Bride rejoice: *he hath covered me with the robe of righteousness, as a bridegroom decketh himself with ornaments, and as a bride adorneth herself with her jewels* (Isaiah 61:10) — the robe of righteousness is the very fine linen, *the righteousness of saints*, with which the wife of the Lamb is clothed; she does not weave it of herself, she is covered by the One who makes her ready. And the Bridegroom is no stranger: *thy Maker is thine husband; Yahuah Tseva''ot (LORD of hosts) is his name; and thy Redeemer the Holy One of Yashar''el (Israel)* (Isaiah 54:5). The Lamb who weds his Bride is her Maker and Redeemer, Yahuah (LORD) come in flesh, taking back the people he had for a small moment let go — *with great mercies will I gather thee* (Isaiah 54:7). She is the wife of Hosea''s betrothal, the one who had played the harlot, brought into the wilderness and wooed home: *I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies* (Hosea 2:19), *I will even betroth thee unto me in faithfulness: and thou shalt know Yahuah (LORD)* (Hosea 2:20). The betrothal *in righteousness* is answered by the Bride arrayed in the *righteousness of saints*; the great whore is judged and the betrothed people, gathered home, are wed — *I will say to them which were not my people, Thou art my people* (Hosea 2:23). The royal wedding-song shows her brought to the king: *the king''s daughter is all glorious within: her clothing is of wrought gold... she shall be brought unto the king in raiment of needlework* (Psalm 45:13-14). And then the word is sealed with a blessing: *Blessed are they which are called unto the marriage supper of the Lamb* (Revelation 19:9). The marriage is the homecoming the prophets promised, and the called are blessed.',
+       sv.verse_id, ev.verse_id, 'free', 9453
+  FROM _s224_rv19_lookup sv, _s224_rv19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=19 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-19-worship-elohim-the-angel-refuses-worship-exodus-34-deuteronomy-6',
+       E'Worship Elohim (God) — the angel refuses worship, the testimony of Yahusha the spirit of prophecy (Exodus 34, Deuteronomy 6)',
+       E'*And I fell at his feet to worship him. And he said unto me, See thou do it not: I am thy fellowservant, and of thy brethren that have the testimony of Yahusha (Jesus): worship Elohim (God): for the testimony of Yahusha (Jesus) is the spirit of prophecy* (Revelation 19:10). The angel will not take the worship John offers, and the refusal rests on the first word of the covenant. *For thou shalt worship no other god: for Yahuah (LORD), whose name is Jealous, is a jealous Elohim (God)* (Exodus 34:14). Worship belongs to the One alone — not to an angel, not to a fellowservant — and the angel keeps the commandment by deflecting it straight back: *worship Elohim (God)*. The charge is the Shema''s own: *Thou shalt fear Yahuah Elohayka (the LORD thy God), and serve him, and shalt swear by his name* (Deuteronomy 6:13) — the very word Yahusha (Jesus) wielded against the tempter, that service and worship are the One''s alone. This keeps the whole vision rightly ordered: on the throne sits the One who is worshipped; the Lamb is his faithful witness; the rider who is the Word of Elohim (God) is the Formed who is Yahuah (LORD) come in flesh and has a Father; and not even the mighty angel of the apocalypse will receive what is due to the One. And the testimony of Yahusha (Jesus), the angel adds, *is the spirit of prophecy* — the breath that has carried every true prophet''s word, all of it bearing witness to the One worshipped and to the Lamb who is his witness. Worship the One; hold the testimony; it is the spirit by which all prophecy was ever spoken.',
+       sv.verse_id, ev.verse_id, 'free', 9456
+  FROM _s224_rv19_lookup sv, _s224_rv19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=19 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11',
+       E'The rider Faithful and True, clothed in a vesture dipped in blood — The Word of Elohim (God) (Isaiah 63 and 11)',
+       E'*And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war* (Revelation 19:11). The rider is Yahusha the Formed, drawn from the Formless — *his eyes were as a flame of fire, and on his head were many crowns... And he was clothed with a vesture dipped in blood: and his name is called The Word of Elohim (God)* (Revelation 19:12-13). Isaiah named this righteous warrior long before — the Branch out of Jesse: *with righteousness shall he judge the poor... and with the breath of his lips shall he slay the wicked* (Isaiah 11:4), the very breath that becomes the sharp sword of his mouth. The psalm awaited his coming: *he cometh, for he cometh to judge the earth: he shall judge the world with righteousness* (Psalm 96:13). And the royal wedding-psalm that dressed the Bride first arms the King: *gird thy sword upon thy thigh, O most mighty... and in thy majesty ride prosperously because of truth and meekness and righteousness* (Psalm 45:3-4). But the vision''s deepest root is Isaiah 63, the one coming from Edom with garments dyed red: *Who is this that cometh from Edom, with dyed garments from Bozrah? this that is glorious in his apparel... I that speak in righteousness, mighty to save* (Isaiah 63:1). Why red? *I have trodden the winepress alone* (Isaiah 63:3). The *vesture dipped in blood* is the apparel Isaiah saw; the rider treads *the winepress of the fierceness and wrath of El Shaddai (Almighty God)* (Revelation 19:15). And the blood-stained garments reach back further still, to Jacob''s blessing of Yahudah (Judah): *he washed his garments in wine, and his clothes in the blood of grapes* (Genesis 49:11) — the Lion of the tribe of Yahudah (Judah), from whom the sceptre shall not depart, come at last. The Hebrew library knew this Word as a warrior who is a sharp sword: *your Almighty word leaped down from heaven out of your royal throne, as a fierce man of war... and brought your unfeigned commandment as a sharp sword* (Wisdom of Solomon 18:15-16). And Esdras saw the Son destroy the gathered nations with no weapon but his breath: *out of his mouth as it had been a blast of fire, and out of his lips a flaming breath* (2 Esdras 13:10). The rider called The Word of Elohim (God) is that all-powerful Word — the Formed, mighty to save, who came in flesh and rides to judge in righteousness.',
+       sv.verse_id, ev.verse_id, 'extras', 9459
+  FROM _s224_rv19_lookup sv, _s224_rv19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=19 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10',
+       E'The sharp sword and the rod of iron — KING OF KINGS, AND LORD OF LORDS (Isaiah 11, Psalm 2, Deuteronomy 10)',
+       E'*And out of his mouth goeth a sharp sword, that with it he should smite the nations: and he shall rule them with a rod of iron: and he treadeth the winepress of the fierceness and wrath of El Shaddai (Almighty God). And he hath on his vesture and on his thigh a name written, KING OF KINGS, AND LORD OF LORDS* (Revelation 19:15-16). Every word of this is the Tanakh''s own. The weapon is no metal blade but the word of his mouth — *with righteousness shall he judge the poor... and with the breath of his lips shall he slay the wicked* (Isaiah 11:4), and the servant''s own confession: *he hath made my mouth like a sharp sword* (Isaiah 49:2). The rod of iron is the decree of the second psalm to the Son: *thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel* (Psalm 2:9) — and the kings who *set themselves... against Yahuah (LORD), and against his anointed* (Psalm 2:2) are the very kings gathered to war against the rider (Revelation 19:19), dashed as the psalm decreed. The winepress is Joel''s valley of decision: *put ye in the sickle, for the harvest is ripe... for the press is full, the fats overflow* (Joel 3:13). And the title on his thigh is Yahuah''s (LORD''s) own, declared in the Torah: *Yahuah Elohaychem (the LORD your God) is Elohim (God) of gods, and Lord of lords, a great Elohim (God), a mighty, and a terrible* (Deuteronomy 10:17). Even the Babylonian king confessed it — *your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings* (Daniel 2:47) — and the Hallel sang it: *O give thanks to the Lord of lords: for his mercy endureth for ever* (Psalm 136:3). The rider bears the divine title because he is the Formed who is Yahuah (LORD). And the Hebrew library saw the same judgment: *this my Son shall rebuke the wicked inventions of those nations... and he shall destroy them without labour by the law which is like to fire* (2 Esdras 13:37-38) — the Son on mount Sion who destroys the gathered nations not by armies but by the word, the law like fire, the breath of his mouth.',
+       sv.verse_id, ev.verse_id, 'extras', 9462
+  FROM _s224_rv19_lookup sv, _s224_rv19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=19 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-19-the-supper-of-the-great-elohim-the-sacrifice-on-gog-ezekiel-39',
+       E'The supper of the great Elohim (God) — the sacrifice on Gog (Ezekiel 39)',
+       E'*And I saw an angel standing in the sun; and he cried with a loud voice, saying to all the fowls that fly in the midst of heaven, Come and gather yourselves together unto the supper of the great Elohim (God); That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men... and the flesh of all men, both free and bond, both small and great* (Revelation 19:17-18). This is Ezekiel''s summons word for word — the prophet''s vision of the fall of Gog, when the fowls and beasts are called to the sacrificial feast. *And, thou son of Adam, thus saith Adonai Yahuah (the Lord GOD); Speak unto every feathered fowl, and to every beast of the field, Assemble yourselves, and come; gather yourselves on every side to my sacrifice... that ye may eat flesh, and drink blood* (Ezekiel 39:17). The fare is the same: *ye shall eat the flesh of the mighty, and drink the blood of the princes of the earth* (Ezekiel 39:18) — the flesh of kings and captains and mighty men of the rider''s supper. And the table is the same: *thus ye shall be filled at my table with horses and chariots, with mighty men, and with all men of war, saith Adonai Yahuah (the Lord GOD)* (Ezekiel 39:20) — *the flesh of horses, and of them that sit on them, and the flesh of all men* (Revelation 19:18). The armies gathered *to make war against him that sat on the horse* (Revelation 19:19) become the feast at Yahuah''s (LORD''s) table, exactly as Ezekiel foresaw the end of Gog. The great supper of judgment is the prophet''s own sacrifice come at last.',
+       sv.verse_id, ev.verse_id, 'free', 9465
+  FROM _s224_rv19_lookup sv, _s224_rv19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=19 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-19-the-beast-and-false-prophet-cast-into-the-lake-of-fire-daniel-7',
+       E'The beast and the false prophet cast into the lake of fire (Daniel 7)',
+       E'*And the beast was taken, and with him the false prophet that wrought miracles before him, with which he deceived them that had received the mark of the beast, and them that worshipped his image. These both were cast alive into a lake of fire burning with brimstone* (Revelation 19:20). The end of the beast is the end Daniel saw. *I beheld then because of the voice of the great words which the horn spake: I beheld even till the beast was slain, and his body destroyed, and given to the burning flame* (Daniel 7:11). The fourth beast of Daniel''s night vision, whose little horn had *eyes like the eyes of man, and a mouth speaking great things* (Daniel 7:8), is slain and given to the burning flame — and the beast of Revelation shares that fate, the lake of fire burning with brimstone. The mouth speaking great things and the false prophet who deceived by miracles are silenced together in the fire Daniel foresaw, while *the remnant were slain with the sword of him that sat upon the horse, which sword proceeded out of his mouth* (Revelation 19:21). The word of the rider does what no horn''s great words could withstand; the burning flame of Daniel''s vision is the lake of fire of the apocalypse.',
+       sv.verse_id, ev.verse_id, 'free', 9468
+  FROM _s224_rv19_lookup sv, _s224_rv19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=19 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-19-the-great-alleluia-hallelu-yah-salvation-unto-yahuah-psalm-104-and-106
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 104:35 — *Let the sinners be consumed out of the earth... Praise ye Yahuah (LORD)* the first Hallelu-Yah in scripture, sung over the consuming of the wicked, taken up by heaven (Revelation 19:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-great-alleluia-hallelu-yah-salvation-unto-yahuah-psalm-104-and-106'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 106:1 — *Praise ye Yahuah (LORD)... for he is good: for his mercy endureth for ever* the Hallel''s praise of his goodness, the Alleluia of the heavenly multitude (Revelation 19:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-great-alleluia-hallelu-yah-salvation-unto-yahuah-psalm-104-and-106'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 106:48 — *let all the people say, Amen. Praise ye Yahuah (LORD)* the psalm''s sealing doxology, the *Amen; Alleluia* of the elders and the four beasts (Revelation 19:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-great-alleluia-hallelu-yah-salvation-unto-yahuah-psalm-104-and-106'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=48
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 113:1 — *Praise, O ye servants of Yahuah (LORD), praise the name of Yahuah (LORD)* the Hallel''s summons to the servants, spoken by the voice from the throne (Revelation 19:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-great-alleluia-hallelu-yah-salvation-unto-yahuah-psalm-104-and-106'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=113 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Psalm 146:1 — *Praise ye Yahuah (LORD). Praise Yahuah (LORD), O my soul* the praise opening the Psalter''s last songs, the Alleluia for the reign of the omnipotent One (Revelation 19:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-great-alleluia-hallelu-yah-salvation-unto-yahuah-psalm-104-and-106'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=146 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Isaiah 34:10 — *the smoke thereof shall go up for ever* the unquenchable smoke over the city of Yahuah''s curse, the smoke of the great whore rising for ever (Revelation 19:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-great-alleluia-hallelu-yah-salvation-unto-yahuah-psalm-104-and-106'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-19-the-marriage-of-the-lamb-the-bride-in-fine-linen-isaiah-61-and-54-and-hosea-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 61:10 — *as a bride adorneth herself with her jewels* the robe of righteousness foreseen, the fine linen of the Bride made ready (Revelation 19:7-8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-marriage-of-the-lamb-the-bride-in-fine-linen-isaiah-61-and-54-and-hosea-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 54:5 — *thy Maker is thine husband; Yahuah Tseva''ot (LORD of hosts) is his name* the Lamb who weds is the Maker and Redeemer, Yahuah come in flesh (Revelation 19:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-marriage-of-the-lamb-the-bride-in-fine-linen-isaiah-61-and-54-and-hosea-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hosea 2:19 — *I will betroth thee unto me for ever... in righteousness* the harlot wooed home and betrothed, the wife made ready in the righteousness of saints (Revelation 19:7-8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-marriage-of-the-lamb-the-bride-in-fine-linen-isaiah-61-and-54-and-hosea-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 45:13-14 — *the king''s daughter is all glorious within... raiment of needlework* the royal bride brought to the king, glorious within, clothed for the marriage (Revelation 19:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-marriage-of-the-lamb-the-bride-in-fine-linen-isaiah-61-and-54-and-hosea-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=45 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-19-worship-elohim-the-angel-refuses-worship-exodus-34-deuteronomy-6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 34:14 — *thou shalt worship no other god: for Yahuah (LORD)... is a jealous Elohim (God)* the covenant''s first word, on which the angel''s refusal of worship stands (Revelation 19:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-worship-elohim-the-angel-refuses-worship-exodus-34-deuteronomy-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 6:13 — *Thou shalt fear Yahuah Elohayka (the LORD thy God), and serve him* the Shema''s charge, worship and service the One''s alone; the testimony of Yahusha the spirit of prophecy (Revelation 19:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-worship-elohim-the-angel-refuses-worship-exodus-34-deuteronomy-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 11:4 — *with righteousness shall he judge... with the breath of his lips shall he slay the wicked* the Branch out of Jesse, the righteous warrior whose breath is the sword (Revelation 19:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 96:13 — *he cometh to judge the earth: he shall judge the world with righteousness* the coming of Yahuah to righteous judgment, the rider Faithful and True (Revelation 19:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=96 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 45:3-4 — *gird thy sword upon thy thigh... ride prosperously because of truth and... righteousness* the wedding-psalm arming the King who rides for righteousness (Revelation 19:11,16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=45 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 63:1 — *Who is this that cometh from Edom, with dyed garments from Bozrah?... mighty to save* the one whose blood-dipped vesture is the apparel of the winepress (Revelation 19:13,15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=63 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Genesis 49:11 — *he washed his garments in wine, and his clothes in the blood of grapes* the blessing of Yahudah (Judah), the Lion whose garments are blood-stained from the winepress (Revelation 19:13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Wisdom of Solomon 18:15-16 — *your Almighty word leaped down from heaven... as a sharp sword* the Word as a warrior, the Formed leaping from the throne, named The Word of Elohim (God) (Revelation 19:13,15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=13
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=18 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'2 Esdras 13:10 — *out of his mouth as it had been a blast of fire... a flaming breath* the Man from the sea destroying the nations with the breath of his mouth, the sword from the rider''s mouth (Revelation 19:15,21).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-rider-faithful-and-true-the-word-of-elohim-isaiah-63-and-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=13 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 49:2 — *he hath made my mouth like a sharp sword* the servant''s weapon is his word, the sharp sword out of the rider''s mouth (Revelation 19:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 2:9 — *Thou shalt break them with a rod of iron* the decree to the Son, the rod by which the rider rules the nations and dashes the gathered kings (Revelation 19:15,19).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joel 3:13 — *put ye in the sickle... the press is full, the fats overflow* the winepress of the day of Yahuah, trodden by the rider in the wrath of El Shaddai (Revelation 19:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 10:17 — *Yahuah Elohaychem (the LORD your God) is... Lord of lords* the Torah''s own divine title, written on the rider''s thigh KING OF KINGS AND LORD OF LORDS (Revelation 19:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Daniel 2:47 — *your Elohim (God) is... a Yahuah (Lord) of kings* the Lord of kings Nebuchadnezzar confessed, the title the rider bears (Revelation 19:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=47
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Psalm 136:3 — *O give thanks to the Lord of lords: for his mercy endureth for ever* the Hallel''s title for Yahuah, worn by the rider who is the slain Lamb and warrior-King (Revelation 19:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=136 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'2 Esdras 13:37-38 — *this my Son shall rebuke... destroy them... by the law which is like to fire* the Son on Sion destroying the nations by the word, not by armies (Revelation 19:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-sharp-sword-and-the-rod-of-iron-king-of-kings-isaiah-11-psalm-2-deuteronomy-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=13 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-19-the-supper-of-the-great-elohim-the-sacrifice-on-gog-ezekiel-39
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 39:17 — *gather yourselves on every side to my sacrifice... that ye may eat flesh* the prophet''s summons to the fowls and beasts, word for word the angel''s call (Revelation 19:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-supper-of-the-great-elohim-the-sacrifice-on-gog-ezekiel-39'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=39 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 39:18 — *ye shall eat the flesh of the mighty, and drink the blood of the princes of the earth* the feast on Gog, the flesh of kings and captains at the supper of the great Elohim (Revelation 19:18).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-supper-of-the-great-elohim-the-sacrifice-on-gog-ezekiel-39'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=39 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 39:20 — *filled at my table with horses and chariots, with mighty men* the table set with horses and riders, exactly the rider''s supper of all men of war (Revelation 19:18-19).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-supper-of-the-great-elohim-the-sacrifice-on-gog-ezekiel-39'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=39 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-19-the-beast-and-false-prophet-cast-into-the-lake-of-fire-daniel-7
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:11 — *the beast was slain, and his body destroyed, and given to the burning flame* the fourth beast''s end, the burning flame that is the lake of fire (Revelation 19:20).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv19_lookup sv, _s224_rv19_lookup tv
+ WHERE t.slug='revelation-19-the-beast-and-false-prophet-cast-into-the-lake-of-fire-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=19 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_20.sql (S224 Revelation 20) -----
+-- =====================================================================
+-- S224 minion — REVELATION 20 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 20 (15 verses) — the thousand years, the dragon bound and loosed,
+--          Gog and Magog, the first resurrection, the great white throne, the books opened,
+--          death and hell cast into the lake of fire (the second death).
+-- Tag: rv20 (temp view _s224_rv20_lookup).
+-- Sort band: floor 9475, step 3 (9475, 9478, 9481, 9484, 9487, 9490, 9493, 9496 used; under 9500).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (the whole-book frame — the consummation of the covenant story, the same
+-- Yahuah, the same Torah, the same Yashar'el brought to restoration; not a rapture-escape, not a
+-- replacement-church, not a Torah abolished). Revelation 20 is woven entirely out of Daniel,
+-- Ezekiel, Isaiah, Genesis — the seer has a Tanakh text in his ear at every verse and never says
+-- *it is written*. Read inside the frame:
+--   * 20:1-3 the dragon bound — he is named *that old serpent* of Genesis 3, the enmity-serpent
+--     whose head is bruised (Genesis 3:15); the *host of the high ones... gathered in the pit, and
+--     shut up in the prison* of Isaiah 24:21-22; the leviathan no man can bind but Yahuah (Job 41).
+--     The rebel-angel binding of 1 Enoch 10 is the same architecture (bind, cast into the abyss,
+--     reserved unto the day of judgement).
+--   * 20:4-6 the first resurrection and the thrones of judgment — Daniel 7:9,22 (the thrones set,
+--     judgment given to the saints), Ezekiel 37:10-12 (the slain raised, the graves opened), Isaiah
+--     26:19 (*thy dead men shall live*); the *blessed and holy* who reign are *priests of Elohim*,
+--     the Exodus-19 / Isaiah-61 kingdom of priests — the destination of the gathered seed, NOT a
+--     disembodied heaven.
+--   * 20:7-9 Gog and Magog gathered, the fire from heaven — Ezekiel 38-39 (the named Gog war), the
+--     *sand of the sea* of the Avrahamic promise inverted into the number of the deceived (Genesis
+--     22:17), the fire-and-brimstone of Ezekiel 38:22, the Elijah-fire of 2 Kings 1, the Sodom-fire
+--     of Genesis 19:24.
+--   * 20:11-15 the great white throne and the books — Daniel 7:10 (*the judgment was set, and the
+--     books were opened*), Daniel 12:1-2 (*written in the book*... *many that sleep... shall awake*),
+--     Psalm 69:28 (*blotted out of the book of the living*), Malachi 3:16 (the book of remembrance),
+--     Isaiah 65:6 (*it is written before me*); the great-image stone of Daniel 2:35 and the
+--     garment-heavens of Psalm 102 / Isaiah 51 for the fleeing earth; death swallowed up — Hosea
+--     13:14, Isaiah 25:8. Extras: 1 Enoch 47:3 and 90:12 (*the books of the living were opened before
+--     the Head of Days*), 2 Esdras 7:32 (*the earth shall restore those that are asleep in her*).
+-- Christology: the great white throne and *him that sat on it* is the One on the throne; the souls
+-- of the beheaded *lived and reigned with Messiah (Christ)* (the Father and the Formed Son in view
+-- together) — preserved as the pull gives. No co-equal-persons grammar; no modalist collapse. The
+-- *book of life* is *the book of life of the Lamb slain from the foundation of the world* (Rev 13:8)
+-- — names written before the foundation, blotted out but never added.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-3   the dragon, that old serpent, bound in the bottomless pit a thousand years
+--           Tanakh: Genesis 3:1 (the serpent more subtil), Genesis 3:15 (enmity, bruise thy head),
+--                   Isaiah 24:21-22 (the host of the high ones gathered in the pit, shut in the
+--                   prison, visited after many days), Job 41:1 (leviathan none can draw out / bind)
+--           Extras: 1 Enoch 10:12 (bind them fast... in the valleys of the earth, till the day of
+--                   their judgement), 1 Enoch 10:13 (led off to the abyss of fire... the prison)
+--           NT: Revelation 12:9 (the great dragon... that old serpent... the Devil, and Satan — the
+--               same titles, cast down before he is bound)
+--   v.4-5   thrones of judgment, the souls of the beheaded reigning, the first resurrection
+--           Tanakh: Daniel 7:9 (the thrones... the Ancient of days did sit), Daniel 7:22 (judgment
+--                   given to the saints... possessed the kingdom), Ezekiel 37:10 (the breath came...
+--                   they lived, and stood up... an exceeding great army), Isaiah 26:19 (thy dead
+--                   men shall live... awake and sing, ye that dwell in dust)
+--           Extras: 2 Esdras 7:32 (the earth shall restore those that are asleep in her... the
+--                   secret places shall deliver those souls)
+--           NT: 1 Corinthians 15:23 (every man in his own order: Messiah the firstfruits; afterward
+--               they that are Messiah's at his coming — the order of the resurrection)
+--   v.6     blessed and holy, priests of Elohim and of Messiah, reigning a thousand years
+--           Tanakh: Exodus 19:6 (a kingdom of priests, and an holy nation), Isaiah 61:6 (ye shall
+--                   be named the Priests of Yahuah)
+--           Extras: none warranted (the priesthood-of-the-reigning root is the Exodus-19 covenant
+--                   word; carried there)
+--           NT: none warranted (the priests-and-reign echo carried in the Rev-1:6 / 5:10 book frame)
+--   v.7-8   Satan loosed, Gog and Magog gathered, the number as the sand of the sea
+--           Tanakh: Ezekiel 38:2 (set thy face against Gog, the land of Magog), Ezekiel 38:15-16
+--                   (come from the north... against my people... in the latter days), Ezekiel 39:1
+--                   (prophesy against Gog), Genesis 22:17 (thy seed as the sand upon the sea shore —
+--                   the promise-number inverted into the number of the deceived)
+--           Extras: none warranted (the Gog war is the canon Ezekiel architecture)
+--           NT: none warranted
+--   v.9     fire came down from Elohim out of heaven and devoured them
+--           Tanakh: Ezekiel 38:22 (fire, and brimstone... rain upon him), Ezekiel 39:6 (a fire on
+--                   Magog), 2 Kings 1:10 (let fire come down from heaven, and consume), Genesis 19:24
+--                   (Yahuah rained upon Sodom... brimstone and fire from Yahuah out of heaven)
+--           Extras: none warranted   NT: none warranted
+--   v.10    the devil cast into the lake of fire — carried in the v.14 second-death thread
+--           Tanakh: none added (carried at v.14)   Extras: none warranted   NT: none warranted
+--   v.11    the great white throne; the earth and the heaven fled away
+--           Tanakh: Daniel 2:35 (the image... no place found for them... the stone filled the earth),
+--                   Psalm 102:25-26 (the heavens... shall wax old like a garment... be changed),
+--                   Isaiah 51:6 (the heavens shall vanish away like smoke... the earth wax old)
+--           Extras: none warranted   NT: none warranted
+--   v.12    the books opened; another book, the book of life; judged according to works
+--           Tanakh: Daniel 7:10 (the judgment was set, and the books were opened), Daniel 12:1-2
+--                   (every one found written in the book... many that sleep shall awake), Psalm 69:28
+--                   (blotted out of the book of the living), Malachi 3:16 (a book of remembrance),
+--                   Isaiah 65:6 (it is written before me... I will recompense)
+--           Extras: 1 Enoch 47:3 (the Head of Days... the books of the living were opened before
+--                   Him), 1 Enoch 90:12 (the Lord of the sheep opened the books of the living)
+--           NT: Revelation 13:8 (the book of life of the Lamb slain from the foundation of the world)
+--   v.13    the sea, death and hell delivered up the dead — carried in the v.14 second-death thread
+--           Tanakh: none added (carried at v.14)   Extras: none warranted   NT: none warranted
+--   v.14-15 death and hell cast into the lake of fire; the second death; not found written
+--           Tanakh: Hosea 13:14 (O death, I will be thy plagues; O grave, I will be thy destruction),
+--                   Isaiah 25:8 (He will swallow up death in victory)
+--           Extras: none warranted
+--           NT: 1 Corinthians 15:54 (Death is swallowed up in victory), 1 Corinthians 15:55 (O
+--               death, where is thy sting? O grave, where is thy victory?)
+--
+-- THREADS (slug -> target libraries):
+--   9475 revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24   (Tanakh + Extras + NT)
+--   9478 revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37          (Tanakh + Extras + NT)
+--   9481 revelation-20-priests-of-elohim-the-blessed-and-holy-who-reign-exodus-19                      (Tanakh)
+--   9484 revelation-20-gog-and-magog-gathered-the-number-as-the-sand-of-the-sea-ezekiel-38             (Tanakh)
+--   9487 revelation-20-fire-came-down-from-elohim-out-of-heaven-and-devoured-them-ezekiel-38           (Tanakh)
+--   9490 revelation-20-the-great-white-throne-the-earth-and-heaven-fled-away-daniel-2                  (Tanakh)
+--   9493 revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12                      (Tanakh + Extras + NT)
+--   9496 revelation-20-death-and-hell-cast-into-the-lake-of-fire-the-second-death-hosea-13             (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24
+  ('canon', 'revelation', 20, 2, 'canon', 'genesis', 3, 1, 'free', E'*Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made. And he said unto the woman, Yea, hath Elohim (God) said, Ye shall not eat of every tree of the garden?* (Genesis 3:1). When the angel *laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years* (Revelation 20:2), the seer names him by the oldest name in the book — *that old serpent.* He is the serpent of the garden, the one who first asked *hath Elohim said,* the deceiver from the beginning. The whole war that opened in Eden is here brought to its binding; the subtil one who beguiled the woman is laid hold of and shut up.'),
+  ('canon', 'revelation', 20, 2, 'canon', 'genesis', 3, 15, 'free', E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15). The first promise spoken over the serpent was that the seed of the woman would bruise his head; the binding of *that old serpent... a thousand years* (Revelation 20:2) is that bruising worked out in the consummation. The enmity declared at the gate of Eden runs the length of the canon and lands here — the head of the serpent under the heel of the seed, the dragon laid hold of and chained.'),
+  ('canon', 'revelation', 20, 3, 'canon', 'isaiah', 24, 22, 'free', E'*And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* (Isaiah 24:22). Isaiah saw the very shape of this binding — *Yahuah (LORD) shall punish the host of the high ones that are on high* (Isaiah 24:21), and they are *gathered in the pit... shut up in the prison... and after many days... visited.* So the dragon is *cast into the bottomless pit, and shut up... that he should deceive the nations no more, till the thousand years should be fulfilled: and after that he must be loosed a little season* (Revelation 20:3). The pit, the prison, the shutting-up, and the after-many-days visitation are the prophet''s own; the seer re-speaks them over the bound serpent.'),
+  ('canon', 'revelation', 20, 2, 'canon', 'job', 41, 1, 'free', E'*Canst thou draw out leviathan with an hook? or his tongue with a cord which thou lettest down?* (Job 41:1). Yahuah (LORD) asked Job whether any man could draw out or bind the great serpent of the deep — *wilt thou bind him for thy maidens?* (Job 41:5) — and the answer was no; *upon earth there is not his like* (Job 41:33). What no man could do, the angel from heaven does: *he laid hold on the dragon, that old serpent... and bound him a thousand years* (Revelation 20:2). The leviathan no mortal could chain is laid hold of and bound by the hand sent down from the throne.'),
+  ('canon', 'revelation', 20, 2, 'enoch', '1-enoch', 10, 12, 'extras', E'*And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated.* (1 Enoch 10:12). The Hebrew library carries the same architecture the seer re-speaks: the rebel powers *bound fast... in the valleys of the earth, till the day of their judgement.* So the dragon is *bound... a thousand years* (Revelation 20:2) and held until his loosing and his end — a binding that reserves the prisoner unto the judgment, not a destruction that ends him.'),
+  ('canon', 'revelation', 20, 3, 'enoch', '1-enoch', 10, 13, 'extras', E'*In those days they shall be led off to the abyss of fire: and to the torment and the prison in which they shall be confined for ever.* (1 Enoch 10:13). The abyss, the prison, the confining — Enoch saw them before John did. The dragon is *cast into the bottomless pit, and shut up* (Revelation 20:3), and at the last *the devil that deceived them was cast into the lake of fire and brimstone... and shall be tormented day and night for ever and ever* (Revelation 20:10). The prison that holds him for the season and the lake of fire that holds him for ever are the two stages the older witness already names — the confining, and then the torment for ever.'),
+  ('canon', 'revelation', 20, 2, 'canon', 'revelation', 12, 9, 'free', E'*And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him.* (Revelation 12:9). Earlier in the book the same four names are stacked on the same enemy — *the great dragon... that old serpent, called the Devil, and Satan* — when he is cast down out of heaven to the earth. Now the same one, named the same way, *the dragon, that old serpent, which is the Devil, and Satan* (Revelation 20:2), is laid hold of and bound. The casting-down of chapter 12 and the binding of chapter 20 are two strokes against one adversary, the deceiver of the whole world brought to his chain.'),
+  -- thread: revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37
+  ('canon', 'revelation', 20, 4, 'canon', 'daniel', 7, 9, 'free', E'*I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* (Daniel 7:9). When John writes *And I saw thrones, and they sat upon them, and judgment was given unto them* (Revelation 20:4), he is seeing Daniel''s vision again — the thrones set, the court seated for judgment. Daniel saw the thrones and the Ancient of days take his seat; the seer sees the thrones filled and the judgment given. The same heavenly assize opens in both.'),
+  ('canon', 'revelation', 20, 4, 'canon', 'daniel', 7, 22, 'free', E'*Until the Ancient of days came, and judgment was given to the saints of the El Elyon (most High); and the time came that the saints possessed the kingdom.* (Daniel 7:22). Daniel was shown that the judgment would be *given to the saints* and that they would *possess the kingdom* — and so it is: *judgment was given unto them... and they lived and reigned with Messiah (Christ) a thousand years* (Revelation 20:4). The ones who suffered under the beast are the ones who now sit on the thrones; the saints worn out by the horn are the saints given the kingdom. The reign of the thousand years is the saints possessing the kingdom Daniel foresaw.'),
+  ('canon', 'revelation', 20, 4, 'canon', 'ezekiel', 37, 10, 'free', E'*So I prophesied as he commanded me, and the breath came into them, and they lived, and stood up upon their feet, an exceeding great army.* (Ezekiel 37:10). The valley of dry bones stood up alive at the word of Yahuah (LORD) — *they lived, and stood up upon their feet.* So the souls of the slain *lived and reigned with Messiah (Christ) a thousand years* (Revelation 20:4), and *this is the first resurrection* (Revelation 20:5). What Ezekiel saw figured in the bones — the breath entering the slain, the dead made to live and stand — the seer sees in the souls of the beheaded raised to reign. The resurrection of the slain is the same hope in both.'),
+  ('canon', 'revelation', 20, 5, 'canon', 'ezekiel', 37, 12, 'free', E'*Therefore prophesy and say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, O my people, I will open your graves, and cause you to come up out of your graves, and bring you into the land of Yashar''el (Israel).* (Ezekiel 37:12). The opening of the graves and the bringing-up of the people is the promise behind *this is the first resurrection* (Revelation 20:5). Yahuah (LORD) swore to open the graves of his people and raise them; the first resurrection is that opening — the slain of the witness brought up to live and reign while *the rest of the dead lived not again until the thousand years were finished* (Revelation 20:5).'),
+  ('canon', 'revelation', 20, 4, 'canon', 'isaiah', 26, 19, 'free', E'*Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* (Isaiah 26:19). Isaiah''s word is the resurrection-hope in its clearest Tanakh voice — *thy dead men shall live... awake and sing, ye that dwell in dust.* The souls of the beheaded who *lived and reigned with Messiah (Christ)* (Revelation 20:4) are the dead made to live, the dwellers in dust awakened. The first resurrection is the casting-out of the dead from the earth that Isaiah sang.'),
+  ('canon', 'revelation', 20, 5, 'apocrypha', '2-esdras', 7, 32, 'extras', E'*And the earth shall restore those that are asleep in her, and so shall the dust those that dwell in silence, and the secret places shall deliver those souls that were committed to them.* (2 Esdras 7:32). The Hebrew library names the very thing the first resurrection accomplishes — *the earth shall restore those that are asleep in her... the secret places shall deliver those souls.* So *the rest of the dead lived not again until the thousand years were finished. This is the first resurrection* (Revelation 20:5): the earth gives back her sleepers, the secret places yield up the souls committed to them, and the dead stand to be judged. The seer''s first resurrection and the older witness''s restoring-earth are one expectation.'),
+  ('canon', 'revelation', 20, 4, 'canon', '1-corinthians', 15, 23, 'free', E'*But every man in his own order: Messiah (Christ) the firstfruits; afterward they that are Messiah''s (Christ''s) at his coming.* (1 Corinthians 15:23). Paul names the order of the resurrection — *Messiah the firstfruits; afterward they that are Messiah''s at his coming* — and Revelation shows that order kept: the slain who *lived and reigned with Messiah (Christ) a thousand years* (Revelation 20:4) in *the first resurrection,* and then *the rest of the dead* who *lived not again until the thousand years were finished* (Revelation 20:5). Every man in his own order: the firstfruits, those that are his, and then the rest — the resurrection comes in ranks, as Paul said.'),
+  -- thread: revelation-20-priests-of-elohim-the-blessed-and-holy-who-reign-exodus-19
+  ('canon', 'revelation', 20, 6, 'canon', 'exodus', 19, 6, 'free', E'*And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel).* (Exodus 19:6). The word spoken at Sinai over the gathered people — *a kingdom of priests, and an holy nation* — is the word fulfilled in *they shall be priests of Elohim (God) and of Messiah (Christ), and shall reign with him a thousand years* (Revelation 20:6). The *blessed and holy* who share the first resurrection are the holy nation come into its calling: the priesthood promised to Yashar''el (Israel) at the mountain, now reigning. The reign of the saints is the kingdom of priests Sinai named.'),
+  ('canon', 'revelation', 20, 6, 'canon', 'isaiah', 61, 6, 'free', E'*But ye shall be named the Priests of Yahuah (LORD): men shall call you the Ministers of our Elohim (God): ye shall eat the riches of the Gentiles, and in their glory shall ye boast yourselves.* (Isaiah 61:6). Isaiah names the gathered people *the Priests of Yahuah (LORD)... the Ministers of our Elohim (God)* — the priestly office the restored seed carry to the nations. So those in the first resurrection *shall be priests of Elohim (God) and of Messiah (Christ), and shall reign with him a thousand years* (Revelation 20:6). The priesthood Isaiah promised to the comforted of Zion is the priesthood of the *blessed and holy* who reign — the kingdom of priests over whom *the second death hath no power.*'),
+  -- thread: revelation-20-gog-and-magog-gathered-the-number-as-the-sand-of-the-sea-ezekiel-38
+  ('canon', 'revelation', 20, 8, 'canon', 'ezekiel', 38, 2, 'free', E'*Son of Adam, set thy face against Gog, the land of Magog, the chief prince of Meshech and Tubal, and prophesy against him,* (Ezekiel 38:2). The names the seer reaches for are Ezekiel''s own — *Gog and Magog* — when Satan is loosed to *deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle* (Revelation 20:8). Ezekiel was sent to set his face against Gog of the land of Magog; the last gathering of the deceived nations against the camp of the saints is named with the prophet''s names for the great hostile muster.'),
+  ('canon', 'revelation', 20, 8, 'canon', 'ezekiel', 38, 16, 'free', E'*And thou shalt come up against my people of Yashar''el (Israel), as a cloud to cover the land; it shall be in the latter days, and I will bring thee against my land, that the heathen may know me, when I shall be sanctified in thee, O Gog, before their eyes.* (Ezekiel 38:16). Ezekiel set the Gog war *in the latter days,* the great host coming up *against my people... as a cloud to cover the land.* So Satan loosed gathers the nations *to battle... and they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city* (Revelation 20:8-9). The latter-day muster against the people of Yahuah (LORD), the host covering the land, is the war the prophet foresaw against the gathered people.'),
+  ('canon', 'revelation', 20, 8, 'canon', 'ezekiel', 39, 1, 'free', E'*Therefore, thou son of Adam, prophesy against Gog, and say, Thus saith Adonai Yahuah (the Lord GOD); Behold, I am against thee, O Gog, the chief prince of Meshech and Tubal:* (Ezekiel 39:1). The second of Ezekiel''s two Gog oracles opens *Behold, I am against thee, O Gog* — and the end is sure: Gog falls on the mountains and the land is cleansed. So the gathered Gog-and-Magog of *to gather them together to battle* (Revelation 20:8) go up only to be devoured by fire; the prophet who was sent to prophesy against Gog already declared the One who stands against him.'),
+  ('canon', 'revelation', 20, 8, 'canon', 'genesis', 22, 17, 'free', E'*That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies;* (Genesis 22:17). The promise to Abraham measured his seed *as the sand which is upon the sea shore* — the blessing-number of the covenant people. The seer sets the deceived host against that promise: the gathered nations, *the number of whom is as the sand of the sea* (Revelation 20:8), the uncountable muster of the enemies of the seed. The sand-of-the-sea that named the multitude of the blessed names here the multitude of the deceived who compass the beloved city — and they are devoured.'),
+  -- thread: revelation-20-fire-came-down-from-elohim-out-of-heaven-and-devoured-them-ezekiel-38
+  ('canon', 'revelation', 20, 9, 'canon', 'ezekiel', 38, 22, 'free', E'*And I will plead against him with pestilence and with blood; and I will rain upon him, and upon his bands, and upon the many people that are with him, an overflowing rain, and great hailstones, fire, and brimstone.* (Ezekiel 38:22). The end of the Gog war in Ezekiel is *fire, and brimstone* rained from above — Yahuah (LORD) pleading against the host with fire. So when Gog and Magog compass the camp, *fire came down from Elohim (God) out of heaven, and devoured them* (Revelation 20:9). The seer''s fire from heaven is the prophet''s fire and brimstone upon Gog''s bands — the same judgment poured on the same gathered enemy.'),
+  ('canon', 'revelation', 20, 9, 'canon', 'ezekiel', 39, 6, 'free', E'*And I will send a fire on Magog, and among them that dwell carelessly in the isles: and they shall know that I am Yahuah (LORD).* (Ezekiel 39:6). Ezekiel''s word was *I will send a fire on Magog* — fire as the verdict on the land of the hostile host. So *fire came down from Elohim (God) out of heaven, and devoured them* (Revelation 20:9), the gathered Gog and Magog burned up before the camp of the saints. The fire on Magog the prophet announced is the fire from heaven the seer sees fall.'),
+  ('canon', 'revelation', 20, 9, 'canon', '2-kings', 1, 10, 'free', E'*And Elijah answered and said to the captain of fifty, If I be a man of Elohim (God), then let fire come down from heaven, and consume thee and thy fifty. And there came down fire from heaven, and consumed him and his fifty.* (2 Kings 1:10). Fire came down from heaven at Elijah''s word and consumed those sent against the prophet — *there came down fire from heaven, and consumed him.* The same heavenly fire falls on the host that compasses the camp of the saints: *fire came down from Elohim (God) out of heaven, and devoured them* (Revelation 20:9). The fire that defended the man of Elohim (God) on the hill defends the beloved city against the gathered nations.'),
+  ('canon', 'revelation', 20, 9, 'canon', 'genesis', 19, 24, 'free', E'*Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven;* (Genesis 19:24). The oldest fire-judgment in the canon is Sodom — *brimstone and fire from Yahuah (LORD) out of heaven.* When the deceived nations go up against the camp of the saints, *fire came down from Elohim (God) out of heaven, and devoured them* (Revelation 20:9). The fire-from-heaven that overthrew the cities of the plain is the same fire that devours the last muster of the enemies of the people of Yahuah (LORD).'),
+  -- thread: revelation-20-the-great-white-throne-the-earth-and-heaven-fled-away-daniel-2
+  ('canon', 'revelation', 20, 11, 'canon', 'daniel', 2, 35, 'free', E'*Then was the iron, the clay, the brass, the silver, and the gold, broken to pieces together, and became like the chaff of the summer threshingfloors; and the wind carried them away, that no place was found for them: and the stone that smote the image became a great mountain, and filled the whole earth.* (Daniel 2:35). When the great image was struck it was carried away *that no place was found for them.* So before the great white throne *the earth and the heaven fled away; and there was found no place for them* (Revelation 20:11). The kingdoms of man that no place could be found for, and the old earth and heaven for which no place is found, flee alike before the One who sits — and the stone-kingdom that filled the earth remains.'),
+  ('canon', 'revelation', 20, 11, 'canon', 'psalms', 102, 26, 'free', E'*They shall perish, but thou shalt endure: yea, all of them shall wax old like a garment; as a vesture shalt thou change them, and they shall be changed:* (Psalm 102:26). The psalm sets the perishing of the heavens against the enduring of Yahuah (LORD) — *all of them shall wax old like a garment... and they shall be changed,* while *thou art the same, and thy years shall have no end* (Psalm 102:27). So *from whose face the earth and the heaven fled away; and there was found no place for them* (Revelation 20:11): the garment-heavens pass, the One on the throne endures. The fleeing of earth and heaven is the changing of the garment the psalmist sang.'),
+  ('canon', 'revelation', 20, 11, 'canon', 'isaiah', 51, 6, 'free', E'*Lift up your eyes to the heavens, and look upon the earth beneath: for the heavens shall vanish away like smoke, and the earth shall wax old like a garment, and they that dwell therein shall die in like manner: but my salvation shall be for ever, and my righteousness shall not be abolished.* (Isaiah 51:6). Isaiah saw the heavens *vanish away like smoke* and the earth *wax old like a garment* — yet the salvation of Yahuah (LORD) standing for ever. So *the earth and the heaven fled away; and there was found no place for them* (Revelation 20:11) before the great white throne. The vanishing heavens and aging earth of the prophet are the fleeing earth and heaven of the seer; what abides is the One who sits and his everlasting salvation.'),
+  -- thread: revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12
+  ('canon', 'revelation', 20, 12, 'canon', 'daniel', 7, 10, 'free', E'*A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* (Daniel 7:10). Daniel saw the court of heaven seated and *the judgment was set, and the books were opened.* The seer sees the same: *the dead, small and great, stand before Elohim (God); and the books were opened* (Revelation 20:12). The opened books of Daniel''s assize are the opened books of the great white throne — the same court, the same record brought out, the dead judged from what is written.'),
+  ('canon', 'revelation', 20, 12, 'canon', 'daniel', 12, 1, 'free', E'*And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* (Daniel 12:1). Daniel was told deliverance comes to *every one that shall be found written in the book.* So at the throne *another book was opened, which is the book of life* (Revelation 20:12), and *whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15). The book in which the delivered are written is the book of life opened at the last; to be found written in it is to be delivered, as Daniel said.'),
+  ('canon', 'revelation', 20, 12, 'canon', 'daniel', 12, 2, 'free', E'*And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2). Daniel named the two awakenings — *some to everlasting life, and some to shame and everlasting contempt.* The great white throne is where that division falls: *the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12), some found written in the book of life and some cast into the lake of fire. The awakening of the sleepers in the dust to life or to contempt is the judgment of the dead, small and great, before the throne.'),
+  ('canon', 'revelation', 20, 12, 'canon', 'psalms', 69, 28, 'free', E'*Let them be blotted out of the book of the living, and not be written with the righteous.* (Psalm 69:28). The psalm knows *the book of the living* — and that a name can be blotted out of it, *not... written with the righteous.* So the throne opens *the book of life* (Revelation 20:12), and the verdict turns on whether a name is *found written* in it. The book of the living the psalmist appealed to is the book of life the dead are judged by; the names are written, and the warning of the psalm is that a name can be blotted out.'),
+  ('canon', 'revelation', 20, 12, 'canon', 'malachi', 3, 16, 'free', E'*Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* (Malachi 3:16). Malachi names *a book of remembrance... written before him* for those who feared Yahuah (LORD) — the record of the faithful kept in heaven. At the throne *the books were opened: and another book was opened, which is the book of life* (Revelation 20:12). The book of remembrance for them that feared the name and the book of life opened at the last are the same heavenly record: the works and the names of the faithful are not forgotten but written before him.'),
+  ('canon', 'revelation', 20, 12, 'canon', 'isaiah', 65, 6, 'free', E'*Behold, it is written before me: I will not keep silence, but will recompense, even recompense into their bosom,* (Isaiah 65:6). Isaiah heard Yahuah (LORD) say of the deeds of men *it is written before me... I will... recompense* — the works recorded and repaid. So *the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12). The writing-before-him and the recompense Isaiah announced is the books opened and the judgment according to works at the great white throne.'),
+  ('canon', 'revelation', 20, 12, 'enoch', '1-enoch', 47, 3, 'extras', E'*In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* (1 Enoch 47:3). The Hebrew library shows the very scene — *the Head of Days... seated Himself upon the throne of His glory, And the books of the living were opened before Him.* So at the great white throne *the books were opened: and another book was opened, which is the book of life* (Revelation 20:12). The seated One, the throne of glory, and the books of the living opened before him are in Enoch what they are in the Apocalypse — the judgment-court of heaven with its record laid bare.'),
+  ('canon', 'revelation', 20, 12, 'enoch', '1-enoch', 90, 12, 'extras', E'*And after that I saw in the vision that the Lord of the sheep opened the books of the living, and the books of the sinners were opened.* (1 Enoch 90:12). Enoch''s vision of the flock has the same two records — *the books of the living... and the books of the sinners* both opened before the Lord of the sheep, and the judgment falling. So *the books were opened: and another book was opened, which is the book of life... and the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12). The book of the living and the books of the deeds, opened together for the judgment, are the books of the great white throne.'),
+  ('canon', 'revelation', 20, 12, 'canon', 'revelation', 13, 8, 'free', E'*And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world.* (Revelation 13:8). Earlier the book names the book — *the book of life of the Lamb slain from the foundation of the world.* The names are written from the foundation, before ever the worship of the beast was offered. So at the throne *another book was opened, which is the book of life* (Revelation 20:12), and *whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15). The Lamb''s book of life, with its names written before the world was, is the book that decides the judgment of the dead.'),
+  -- thread: revelation-20-death-and-hell-cast-into-the-lake-of-fire-the-second-death-hosea-13
+  ('canon', 'revelation', 20, 14, 'canon', 'hosea', 13, 14, 'free', E'*I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction: repentance shall be hid from mine eyes.* (Hosea 13:14). Hosea heard Yahuah (LORD) speak death and the grave themselves under judgment — *O death, I will be thy plagues; O grave, I will be thy destruction.* So at the end *death and hell were cast into the lake of fire. This is the second death* (Revelation 20:14). The grave that swallowed the dead is itself destroyed; death is plagued and undone. The destruction Hosea pronounced over death and the grave is their casting into the lake of fire.'),
+  ('canon', 'revelation', 20, 14, 'canon', 'isaiah', 25, 8, 'free', E'*He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.* (Isaiah 25:8). Isaiah promised that *he will swallow up death in victory* — death itself undone, the tears wiped away. So *death and hell were cast into the lake of fire. This is the second death* (Revelation 20:14): death swallowed up, abolished, cast out. The victory over death Isaiah sang on the mountain is the casting of death and the grave into the lake of fire.'),
+  ('canon', 'revelation', 20, 14, 'canon', '1-corinthians', 15, 54, 'free', E'*So when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory.* (1 Corinthians 15:54). Paul names the saying brought to pass at the resurrection — *Death is swallowed up in victory* — quoting Isaiah''s own word. The bringing-to-pass is here: *death and hell were cast into the lake of fire. This is the second death* (Revelation 20:14). The swallowing-up of death Paul looked for is its casting into the lake of fire; the saying written is fulfilled when death itself is destroyed.'),
+  ('canon', 'revelation', 20, 14, 'canon', '1-corinthians', 15, 55, 'free', E'*O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:55). Paul''s taunt over a beaten enemy — *O death, where is thy sting? O grave, where is thy victory?* — echoes Hosea''s *O death... O grave* and finds its answer at the throne: *death and hell were cast into the lake of fire. This is the second death* (Revelation 20:14). The sting drawn and the victory taken away is death and hell themselves destroyed; the grave that held the dead delivers them up and is itself cast into the fire.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24',
+       E'The dragon, that old serpent, bound a thousand years and shut in the pit (Isaiah 24, Genesis 3)',
+       E'*And I saw an angel come down from heaven, having the key of the bottomless pit and a great chain in his hand. And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years* (Revelation 20:1-2). The seer names the enemy by the oldest name in the book — *that old serpent* — and the whole library answers. He is the serpent of the garden: *Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made* (Genesis 3:1), the one over whom the first promise was spoken — *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). The binding is that head-bruising worked out to its consummation. Isaiah saw its very shape: *Yahuah (LORD) shall punish the host of the high ones that are on high... And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited* (Isaiah 24:21-22) — the pit, the prison, the shutting-up, and the after-many-days visitation that the seer re-speaks: *And cast him into the bottomless pit, and shut him up... till the thousand years should be fulfilled: and after that he must be loosed a little season* (Revelation 20:3). He is the leviathan no man could chain — *Canst thou draw out leviathan with an hook?... wilt thou bind him for thy maidens?* (Job 41:1,5) — laid hold of and bound by the hand sent down from the throne. The Hebrew library carries the same architecture: the rebel powers *bind them fast... in the valleys of the earth, till the day of their judgement* (1 Enoch 10:12), *led off to the abyss of fire: and to the torment and the prison in which they shall be confined for ever* (1 Enoch 10:13) — the binding that reserves the prisoner unto judgment, then the torment for ever, the two stages the seer names in the chaining and then the lake of fire. And the four names stacked here are the four stacked earlier when he was cast down: *the great dragon... that old serpent, called the Devil, and Satan, which deceiveth the whole world* (Revelation 12:9). The casting-down and the binding are two strokes against one adversary — the deceiver of the whole world brought at last to his chain.',
+       sv.verse_id, ev.verse_id, 'extras', 9475
+  FROM _s224_rv20_lookup sv, _s224_rv20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=20 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37',
+       E'The thrones of judgment and the first resurrection (Daniel 7, Ezekiel 37, Isaiah 26)',
+       E'*And I saw thrones, and they sat upon them, and judgment was given unto them... and they lived and reigned with Messiah (Christ) a thousand years... This is the first resurrection* (Revelation 20:4-5). John is seeing Daniel''s court again: *I beheld till the thrones were cast down, and the Ancient of days did sit... his throne was like the fiery flame* (Daniel 7:9), and the verdict Daniel was shown is the verdict here — *judgment was given to the saints of the El Elyon (most High); and the time came that the saints possessed the kingdom* (Daniel 7:22). The ones worn out by the beast are the ones now on the thrones; the reign of the thousand years is the saints possessing the kingdom Daniel foresaw. And the raising of the slain is Ezekiel''s valley stood up alive: *the breath came into them, and they lived, and stood up upon their feet, an exceeding great army* (Ezekiel 37:10), for Yahuah (LORD) had sworn, *Behold, O my people, I will open your graves, and cause you to come up out of your graves* (Ezekiel 37:12). It is the hope Isaiah sang plainest: *Thy dead men shall live... Awake and sing, ye that dwell in dust... and the earth shall cast out the dead* (Isaiah 26:19). The Hebrew library names the same restoring: *the earth shall restore those that are asleep in her... and the secret places shall deliver those souls that were committed to them* (2 Esdras 7:32). And it comes in ranks, as Paul taught: *every man in his own order: Messiah (Christ) the firstfruits; afterward they that are Messiah''s (Christ''s) at his coming* (1 Corinthians 15:23) — the first resurrection of the slain who reign, and then *the rest of the dead* who *lived not again until the thousand years were finished* (Revelation 20:5). The thrones set, the graves opened, the dust awakened — the slain of the witness raised to reign.',
+       sv.verse_id, ev.verse_id, 'extras', 9478
+  FROM _s224_rv20_lookup sv, _s224_rv20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=20 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-20-priests-of-elohim-the-blessed-and-holy-who-reign-exodus-19',
+       E'Priests of Elohim (God) — the blessed and holy who reign (Exodus 19, Isaiah 61)',
+       E'*Blessed and holy is he that hath part in the first resurrection: on such the second death hath no power, but they shall be priests of Elohim (God) and of Messiah (Christ), and shall reign with him a thousand years* (Revelation 20:6). The reign of the saints is a priesthood, and the priesthood is the word spoken at Sinai over the gathered people: *And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel)* (Exodus 19:6). The *blessed and holy* are that holy nation come into its calling — the kingdom of priests Sinai named, now reigning. Isaiah carried the same promise forward to the comforted of Zion: *But ye shall be named the Priests of Yahuah (LORD): men shall call you the Ministers of our Elohim (God)* (Isaiah 61:6) — the priestly office the restored seed bear. So those in the first resurrection, over whom *the second death hath no power,* are priests of Elohim (God) and of Messiah (Christ): not a disembodied heaven, but the gathered seed brought into the priesthood promised at the mountain and renewed by the prophet, reigning with him.',
+       sv.verse_id, ev.verse_id, 'free', 9481
+  FROM _s224_rv20_lookup sv, _s224_rv20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=20 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-20-gog-and-magog-gathered-the-number-as-the-sand-of-the-sea-ezekiel-38',
+       E'Gog and Magog gathered, the number as the sand of the sea (Ezekiel 38, Genesis 22)',
+       E'*And when the thousand years are expired, Satan shall be loosed out of his prison, And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea* (Revelation 20:7-8). The names are Ezekiel''s own. The prophet was sent against them: *Son of Adam, set thy face against Gog, the land of Magog, the chief prince of Meshech and Tubal, and prophesy against him* (Ezekiel 38:2); and he set the war in the latter days, the great host coming up *against my people of Yashar''el (Israel), as a cloud to cover the land; it shall be in the latter days* (Ezekiel 38:16) — the very muster the seer sees go up *on the breadth of the earth* to compass *the camp of the saints... and the beloved city* (Revelation 20:9). Ezekiel''s second oracle declares the One who stands against the host: *Behold, I am against thee, O Gog, the chief prince of Meshech and Tubal* (Ezekiel 39:1). And the seer measures the deceived against the covenant promise itself: Abraham''s seed was promised *as the sand which is upon the sea shore* (Genesis 22:17) — the blessing-number of the people of Yahuah (LORD); here that number is turned to name the enemy, *the number of whom is as the sand of the sea,* the uncountable muster of the deceived who compass the beloved city. The promise-number that counted the blessed counts the nations gathered to battle — and they are devoured.',
+       sv.verse_id, ev.verse_id, 'free', 9484
+  FROM _s224_rv20_lookup sv, _s224_rv20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=20 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-20-fire-came-down-from-elohim-out-of-heaven-and-devoured-them-ezekiel-38',
+       E'Fire came down from Elohim (God) out of heaven and devoured them (Ezekiel 38, 2 Kings 1, Genesis 19)',
+       E'*And they went up on the breadth of the earth, and compassed the camp of the saints about, and the beloved city: and fire came down from Elohim (God) out of heaven, and devoured them* (Revelation 20:9). The fire that ends the Gog war is the prophet''s fire. Ezekiel heard Yahuah (LORD) say of Gog''s host, *I will rain upon him, and upon his bands... great hailstones, fire, and brimstone* (Ezekiel 38:22), and again, *I will send a fire on Magog, and among them that dwell carelessly in the isles: and they shall know that I am Yahuah (LORD)* (Ezekiel 39:6). The seer''s fire from heaven upon Gog and Magog is the prophet''s fire and brimstone upon the same gathered enemy. It is the fire that defended the man of Elohim (God) on the hill: *If I be a man of Elohim (God), then let fire come down from heaven, and consume thee and thy fifty. And there came down fire from heaven, and consumed him and his fifty* (2 Kings 1:10). And it is the oldest fire-judgment in the canon, Sodom: *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24). The brimstone-and-fire that overthrew the cities of the plain, the fire that defended Elijah, the fire on Magog the prophet announced — all are the one fire from heaven that devours the last muster of the enemies of the people of Yahuah (LORD) about the beloved city.',
+       sv.verse_id, ev.verse_id, 'free', 9487
+  FROM _s224_rv20_lookup sv, _s224_rv20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=20 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-20-the-great-white-throne-the-earth-and-heaven-fled-away-daniel-2',
+       E'The great white throne; the earth and the heaven fled away (Daniel 2, Psalm 102, Isaiah 51)',
+       E'*And I saw a great white throne, and him that sat on it, from whose face the earth and the heaven fled away; and there was found no place for them* (Revelation 20:11). The fleeing of earth and heaven re-speaks three Tanakh witnesses at once. When Daniel''s great image was struck, the kingdoms of man were carried away *that no place was found for them: and the stone that smote the image became a great mountain, and filled the whole earth* (Daniel 2:35) — the same *no place was found for them* the seer says of the old earth and heaven, while the stone-kingdom remains. The psalm sets the perishing of the heavens against the enduring of the One who sits: *all of them shall wax old like a garment; as a vesture shalt thou change them, and they shall be changed* (Psalm 102:26), for *thou art the same, and thy years shall have no end* (Psalm 102:27). And Isaiah saw the same: *the heavens shall vanish away like smoke, and the earth shall wax old like a garment... but my salvation shall be for ever* (Isaiah 51:6). The garment-heavens pass and the aging earth flees; what abides before the great white throne is *him that sat on it* and his everlasting salvation. The earth and heaven flee; the One on the throne endures, and the dead stand before him.',
+       sv.verse_id, ev.verse_id, 'free', 9490
+  FROM _s224_rv20_lookup sv, _s224_rv20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=20 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12',
+       E'The books were opened, and the book of life (Daniel 7 and 12, Malachi 3)',
+       E'*And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12). This is Daniel''s court of heaven: *the judgment was set, and the books were opened* (Daniel 7:10). Daniel was told deliverance comes to *every one that shall be found written in the book* (Daniel 12:1), and that *many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2) — the very division that falls at the throne, some found written in the book of life and some cast into the lake of fire. The book of the living the psalmist knew can be written in or blotted out — *Let them be blotted out of the book of the living, and not be written with the righteous* (Psalm 69:28) — names written, never added, but able to be blotted out. Malachi names the same heavenly record kept for the faithful: *a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name* (Malachi 3:16). And the works are recorded and repaid, as Isaiah heard: *Behold, it is written before me: I will not keep silence, but will recompense* (Isaiah 65:6). The Hebrew library shows the scene itself — *the Head of Days... seated Himself upon the throne of His glory, And the books of the living were opened before Him* (1 Enoch 47:3); *the Lord of the sheep opened the books of the living, and the books of the sinners were opened* (1 Enoch 90:12). And the book of life is named already in the Apocalypse: *the book of life of the Lamb slain from the foundation of the world* (Revelation 13:8) — the names written before the world was. The books of works and the book of life are opened together; *whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15).',
+       sv.verse_id, ev.verse_id, 'extras', 9493
+  FROM _s224_rv20_lookup sv, _s224_rv20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=20 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-20-death-and-hell-cast-into-the-lake-of-fire-the-second-death-hosea-13',
+       E'Death and hell cast into the lake of fire — the second death (Hosea 13, Isaiah 25)',
+       E'*And death and hell were cast into the lake of fire. This is the second death* (Revelation 20:14). Death and the grave that swallowed the dead are themselves swallowed up. Hosea heard Yahuah (LORD) speak death and the grave under judgment: *I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction* (Hosea 13:14). And Isaiah promised death itself undone on the mountain: *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces* (Isaiah 25:8). Paul gathered both into one shout, naming the saying brought to pass at the resurrection: *then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54), and the taunt over the beaten enemy — *O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:55), echoing Hosea''s own *O death... O grave.* The bringing-to-pass is here at the throne: the sea and *death and hell delivered up the dead which were in them* (Revelation 20:13), and then death and hell themselves are cast into the lake of fire. The destruction Hosea pronounced over the grave, the victory Isaiah sang over death, the sting drawn that Paul looked for — all are this: death itself destroyed, the second death.',
+       sv.verse_id, ev.verse_id, 'free', 9496
+  FROM _s224_rv20_lookup sv, _s224_rv20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=20 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:1 — *Now the serpent was more subtil than any beast of the field* the seer names the dragon *that old serpent*; he is the serpent of the garden, the first deceiver, now laid hold of (Revelation 20:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:15 — *it shall bruise thy head, and thou shalt bruise his heel* the first promise over the serpent; the binding is that head-bruising worked out to its consummation (Revelation 20:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 24:22 — *gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited* the prophet''s own pit, prison, shutting-up, and after-many-days visitation re-spoken over the bound dragon (Revelation 20:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Job 41:1 — *Canst thou draw out leviathan with an hook?* the leviathan no mortal could bind is laid hold of and chained by the hand sent down from the throne (Revelation 20:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=41 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 10:12 — *bind them fast... in the valleys of the earth, till the day of their judgement* the rebel-power binding that reserves the prisoner unto judgment, the architecture the seer re-speaks (Revelation 20:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'1 Enoch 10:13 — *led off to the abyss of fire: and to the torment and the prison in which they shall be confined for ever* the abyss and prison the seer names in the chaining and then the lake of fire (Revelation 20:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Revelation 12:9 — *the great dragon... that old serpent, called the Devil, and Satan* the same four names stacked when he was cast down; casting-down and binding are two strokes against one adversary (Revelation 20:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-dragon-bound-a-thousand-years-the-old-serpent-shut-in-the-pit-isaiah-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit* John sees Daniel''s court again, the thrones set and the judgment seated (Revelation 20:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:22 — *judgment was given to the saints... the saints possessed the kingdom* the reign of the thousand years is the saints possessing the kingdom Daniel foresaw (Revelation 20:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 37:10 — *the breath came into them, and they lived, and stood up upon their feet, an exceeding great army* the valley of dry bones stood up alive; the resurrection of the slain (Revelation 20:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 37:12 — *I will open your graves, and cause you to come up out of your graves* the opening of the graves behind *this is the first resurrection* (Revelation 20:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 26:19 — *Thy dead men shall live... Awake and sing, ye that dwell in dust* the resurrection-hope in its clearest Tanakh voice; the dust awakened to reign (Revelation 20:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'2 Esdras 7:32 — *the earth shall restore those that are asleep in her... the secret places shall deliver those souls* the restoring-earth the first resurrection accomplishes (Revelation 20:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=5
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=7 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'1 Corinthians 15:23 — *every man in his own order: Messiah the firstfruits; afterward they that are Messiah''s at his coming* the resurrection in ranks: the first resurrection, then the rest of the dead (Revelation 20:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-thrones-of-judgment-and-the-first-resurrection-daniel-7-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-20-priests-of-elohim-the-blessed-and-holy-who-reign-exodus-19
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 19:6 — *a kingdom of priests, and an holy nation* the Sinai word fulfilled in the *blessed and holy* who reign as priests of Elohim (God) and of Messiah (Christ) (Revelation 20:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-priests-of-elohim-the-blessed-and-holy-who-reign-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 61:6 — *ye shall be named the Priests of Yahuah (LORD): men shall call you the Ministers of our Elohim (God)* the priesthood promised to the comforted of Zion, the office the reigning *blessed and holy* carry (Revelation 20:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-priests-of-elohim-the-blessed-and-holy-who-reign-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-20-gog-and-magog-gathered-the-number-as-the-sand-of-the-sea-ezekiel-38
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 38:2 — *set thy face against Gog, the land of Magog* the seer reaches for the prophet''s own names for the great hostile muster (Revelation 20:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-gog-and-magog-gathered-the-number-as-the-sand-of-the-sea-ezekiel-38'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=38 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 38:16 — *thou shalt come up against my people... as a cloud to cover the land; it shall be in the latter days* the latter-day muster against the gathered people the seer sees compass the camp (Revelation 20:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-gog-and-magog-gathered-the-number-as-the-sand-of-the-sea-ezekiel-38'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=38 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 39:1 — *Behold, I am against thee, O Gog* the second oracle declares the One who stands against the host the seer sees gathered and devoured (Revelation 20:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-gog-and-magog-gathered-the-number-as-the-sand-of-the-sea-ezekiel-38'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=39 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 22:17 — *thy seed as the stars of the heaven, and as the sand which is upon the sea shore* the covenant blessing-number inverted to count the deceived, *the number of whom is as the sand of the sea* (Revelation 20:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-gog-and-magog-gathered-the-number-as-the-sand-of-the-sea-ezekiel-38'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-20-fire-came-down-from-elohim-out-of-heaven-and-devoured-them-ezekiel-38
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 38:22 — *I will rain upon him... great hailstones, fire, and brimstone* the fire-and-brimstone that ends the Gog war is the seer''s fire from heaven (Revelation 20:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-fire-came-down-from-elohim-out-of-heaven-and-devoured-them-ezekiel-38'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=38 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 39:6 — *I will send a fire on Magog* the fire on Magog the prophet announced is the fire from heaven the seer sees fall (Revelation 20:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-fire-came-down-from-elohim-out-of-heaven-and-devoured-them-ezekiel-38'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=39 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Kings 1:10 — *let fire come down from heaven, and consume thee and thy fifty* the fire that defended the man of Elohim (God) defends the beloved city (Revelation 20:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-fire-came-down-from-elohim-out-of-heaven-and-devoured-them-ezekiel-38'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 19:24 — *Yahuah (LORD) rained upon Sodom... brimstone and fire from Yahuah (LORD) out of heaven* the oldest fire-judgment, the same fire that devours the last muster of enemies (Revelation 20:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-fire-came-down-from-elohim-out-of-heaven-and-devoured-them-ezekiel-38'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-20-the-great-white-throne-the-earth-and-heaven-fled-away-daniel-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 2:35 — *the wind carried them away, that no place was found for them* the kingdoms of man and the old earth and heaven flee, *there was found no place for them*; the stone-kingdom remains (Revelation 20:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-great-white-throne-the-earth-and-heaven-fled-away-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 102:26 — *all of them shall wax old like a garment; as a vesture shalt thou change them* the garment-heavens pass while the One on the throne endures (Revelation 20:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-great-white-throne-the-earth-and-heaven-fled-away-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=102 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 51:6 — *the heavens shall vanish away like smoke, and the earth shall wax old like a garment... but my salvation shall be for ever* the vanishing heavens of the prophet, the fleeing earth and heaven of the seer; the salvation that abides (Revelation 20:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-great-white-throne-the-earth-and-heaven-fled-away-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:10 — *the judgment was set, and the books were opened* the opened books of Daniel''s assize are the opened books of the great white throne (Revelation 20:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:1 — *every one that shall be found written in the book* the book in which the delivered are written is the book of life opened at the last (Revelation 20:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 12:2 — *many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame* the two awakenings, the division that falls at the throne (Revelation 20:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 69:28 — *Let them be blotted out of the book of the living* the book of the living can be written in or blotted out; names written, never added (Revelation 20:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Malachi 3:16 — *a book of remembrance was written before him for them that feared Yahuah (LORD)* the heavenly record of the faithful, the same book of remembrance opened at the last (Revelation 20:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Isaiah 65:6 — *it is written before me... I will... recompense* the works recorded and repaid, the judgment according to works at the throne (Revelation 20:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'1 Enoch 47:3 — *the Head of Days... seated Himself upon the throne of His glory, And the books of the living were opened before Him* the very scene of the judgment-court with its record laid bare (Revelation 20:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=47 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'1 Enoch 90:12 — *the Lord of the sheep opened the books of the living, and the books of the sinners were opened* the two records opened together for the judgment, as at the great white throne (Revelation 20:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=90 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 9, E'Revelation 13:8 — *the book of life of the Lamb slain from the foundation of the world* the names written before the world was; the Lamb''s book that decides the judgment (Revelation 20:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-the-books-were-opened-and-the-book-of-life-daniel-7-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-20-death-and-hell-cast-into-the-lake-of-fire-the-second-death-hosea-13
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 13:14 — *O death, I will be thy plagues; O grave, I will be thy destruction* death and the grave themselves under judgment, cast into the lake of fire (Revelation 20:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-death-and-hell-cast-into-the-lake-of-fire-the-second-death-hosea-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=13 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 25:8 — *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears* death itself undone, the victory sung on the mountain, fulfilled in the lake of fire (Revelation 20:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-death-and-hell-cast-into-the-lake-of-fire-the-second-death-hosea-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Corinthians 15:54 — *Death is swallowed up in victory* Paul names the saying brought to pass at the resurrection; the swallowing-up is the casting into the lake of fire (Revelation 20:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-death-and-hell-cast-into-the-lake-of-fire-the-second-death-hosea-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=54
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Corinthians 15:55 — *O death, where is thy sting? O grave, where is thy victory?* the taunt over the beaten enemy; the sting drawn is death and hell destroyed (Revelation 20:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv20_lookup sv, _s224_rv20_lookup tv
+ WHERE t.slug='revelation-20-death-and-hell-cast-into-the-lake-of-fire-the-second-death-hosea-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=20 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=55
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_21.sql (S224 Revelation 21) -----
+-- =====================================================================
+-- S224 minion — REVELATION 21 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 21 (27 verses) — THE NEW HEAVEN AND NEW EARTH, THE NEW JERUSALEM.
+--          The RESTORATION BLESSING: Eden and Yashar'el (Israel) brought to their consummation,
+--          Elohim (God) tabernacling with men — the covenant promise *I will be their Elohim and
+--          they shall be my people* fulfilled — NOT a disembodied heaven, NOT a church replacing
+--          Israel. The new Jerusalem comes DOWN to a restored creation.
+-- Tag: rv21 (temp view _s224_rv21_lookup).
+-- Sort band: floor 9500, step 3 (9500, 9503, 9506, 9509, 9512, 9515, 9518, 9521 used; under 9525).
+-- Source is ALWAYS the canon Revelation 21 verse; targets span Tanakh + extra-canonical, woven.
+-- Tiers per-row: canon target (Tanakh) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (RESTORATION — BLESSING CHAPTER):
+-- Revelation 21 is the consummation of the whole covenant story. The seer never says "it is
+-- written," but every verse re-speaks Isaiah's new heavens and new earth and new Jerusalem (Isaiah
+-- 65, 66, 60, 54, 52, 61, 25), Ezekiel's tabernacling-with-his-people and the tribal gates of the
+-- restored city (Ezekiel 37, 48), the dwelling-promise of Leviticus 26 and Exodus 29, the
+-- in-the-midst-of-thee of Zechariah 2, the son-promise of 2 Samuel 7, and the gold-and-gemstone
+-- Jerusalem the Hebrew library remembers (Tobit 13) and the city that shall appear (2 Esdras 7). The
+-- centerpiece is the eternal Sukkot — *the tabernacle of Elohim (God) is with men, and he will dwell
+-- with them* (21:3), the covenant refrain *they shall be his people, and Elohim (God) himself shall
+-- be with them, and be their Elohim (God)* lifted straight out of Ezekiel 37:27 and Leviticus
+-- 26:11-12. The twelve gates named for *the twelve tribes of the children of Yashar'el (Israel)* and
+-- the twelve foundations named for the twelve apostles are read as THE ONE COVENANT PEOPLE — the
+-- tribes and the apostles together in one city, Israel not replaced, the gathering of all the
+-- scattered seed home, the city Ezekiel saw whose name is *Yahuah Shammah (The LORD is there).*
+-- Christology: on the throne sits *him that sat on the throne* (the Father) and the Lamb (the Formed
+-- Son) — *Yahuah Elohim (the Lord God) Almighty and the Lamb are the temple of it* (21:22); the One
+-- who is *Alpha and Omega, the beginning and the end* (21:6) is the first-and-last of Isaiah. No
+-- co-equal-persons grammar, no modalist collapse — preserve exactly what the pull gives.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1,5   a new heaven and a new earth; Behold, I make all things new
+--           Tanakh: Isaiah 65:17 (I create new heavens and a new earth), Isaiah 66:22 (the new
+--                   heavens and new earth shall remain), Isaiah 43:19 (I will do a new thing)
+--           Extras: none warranted (carried into later threads)   NT: none warranted (Rev-internal)
+--   v.2,9-10 the holy city new Jerusalem coming down, prepared as a bride
+--           Tanakh: Isaiah 52:1 (put on thy beautiful garments, O Jerusalem, the holy city),
+--                   Isaiah 61:10 (as a bride adorneth herself), Isaiah 54:5 (thy Maker is thine
+--                   husband)
+--           Extras: Tobit 13:10 (his tabernacle builded in thee again with joy)
+--           NT: none warranted
+--   v.3     CENTERPIECE — the tabernacle of Elohim is with men, he will dwell with them
+--           Tanakh: Ezekiel 37:27 (my tabernacle also shall be with them; I will be their Elohim,
+--                   they shall be my people), Leviticus 26:11-12 (I will set my tabernacle among
+--                   you... walk among you... be your Elohim, ye my people), Zechariah 2:10-11 (I
+--                   will dwell in the midst of thee... shall be my people), Exodus 29:45 (I will
+--                   dwell among the children of Yashar'el, and will be their Elohim)
+--           Extras: none warranted (the canon refrain is the load)   NT: none warranted
+--   v.4,6   wipe away all tears, no more death; the fountain of the water of life freely
+--           Tanakh: Isaiah 25:8 (he will swallow up death... wipe away tears from off all faces),
+--                   Isaiah 55:1 (every one that thirsteth, come ye to the waters)
+--           Extras: none warranted   NT: none warranted
+--   v.7     he that overcometh; I will be his Elohim, and he shall be my son
+--           Tanakh: 2 Samuel 7:14 (I will be his father, and he shall be my son)
+--           Extras: none warranted   NT: none warranted
+--   v.12-14 twelve gates of the twelve tribes; twelve foundations of the twelve apostles
+--           Tanakh: Ezekiel 48:31 (the gates of the city after the names of the tribes), Ezekiel
+--                   48:35 (the name of the city, Yahuah Shammah, The LORD is there), Ezekiel 37:19
+--                   (one stick — Judah and Joseph made one)
+--           Extras: none warranted   NT: none warranted
+--   v.18-21 the city pure gold, the wall of jasper, foundations of precious stones
+--           Tanakh: Isaiah 54:11-12 (I will lay thy stones with fair colours, thy foundations with
+--                   sapphires... thy gates of carbuncles)
+--           Extras: Tobit 13:16 (Jerusalem built with sapphires and emeralds and precious stone,
+--                   walls of pure gold), Tobit 13:17 (streets paved with beryl and carbuncle)
+--           NT: none warranted
+--   v.22-27 no temple (Yahuah and the Lamb are the temple), no sun (the glory of Elohim the light);
+--           the nations walk in the light, the gates not shut; only they in the Lamb's book of life
+--           Tanakh: Isaiah 60:19 (Yahuah an everlasting light, thy Elohim thy glory), Isaiah 60:3
+--                   (the Gentiles shall come to thy light, and kings), Isaiah 60:11 (thy gates open
+--                   continually... that men may bring the forces of the Gentiles, and their kings)
+--           Extras: 2 Esdras 7:26 (the bride shall appear, the city that is withdrawn shall be seen)
+--           NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   9500 revelation-21-a-new-heaven-and-a-new-earth-isaiah-65                              (Tanakh)
+--   9503 revelation-21-the-new-jerusalem-coming-down-as-a-bride-isaiah-52                  (Tanakh + Extras)
+--   9506 revelation-21-the-tabernacle-of-elohim-with-men-ezekiel-37                        (Tanakh)  [CENTERPIECE]
+--   9509 revelation-21-wipe-away-all-tears-no-more-death-isaiah-25                          (Tanakh)
+--   9512 revelation-21-he-shall-be-my-son-the-overcomer-inherits-2-samuel-7                (Tanakh)
+--   9515 revelation-21-twelve-gates-and-twelve-foundations-the-one-covenant-people-ezekiel-48  (Tanakh)  [BLESSING]
+--   9518 revelation-21-the-city-of-gold-and-precious-stones-isaiah-54                       (Tanakh + Extras)
+--   9521 revelation-21-no-temple-no-sun-the-glory-of-elohim-the-light-isaiah-60             (Tanakh + Extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-21-a-new-heaven-and-a-new-earth-isaiah-65
+  ('canon', 'revelation', 21, 1, 'canon', 'isaiah', 65, 17, 'free', E'*For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind.* (Isaiah 65:17). This is the word the seer has in his ear: *And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away* (Revelation 21:1). What John beholds is no novelty — it is the very thing Yahuah (LORD) promised through Isaiah, the renewing of the whole creation he made. The former things pass away because the Maker is making them new, not because he is abandoning the earth he formed; the new heaven and new earth come down to a restored creation, the consummation of the promise, not an escape from it.'),
+  ('canon', 'revelation', 21, 1, 'canon', 'isaiah', 66, 22, 'free', E'*For as the new heavens and the new earth, which I will make, shall remain before me, saith Yahuah (LORD), so shall your seed and your name remain.* (Isaiah 66:22). Isaiah binds the new creation to the permanence of the covenant seed: as the new heavens and new earth *shall remain,* so shall *your seed and your name remain.* When John sees *a new heaven and a new earth* (Revelation 21:1), he sees the enduring home of an enduring people — the seed of Yashar''el (Israel) not erased but kept, their name standing before Yahuah (LORD) as long as the new earth stands. The restoration is for a people, and that people abides.'),
+  ('canon', 'revelation', 21, 5, 'canon', 'isaiah', 43, 19, 'free', E'*Behold, I will do a new thing; now it shall spring forth; shall ye not know it? I will even make a way in the wilderness, and rivers in the desert.* (Isaiah 43:19). The One on the throne speaks the same word Isaiah heard from Yahuah (LORD): *Behold, I make all things new* (Revelation 21:5). The *new thing* Yahuah (LORD) declared — the way through the wilderness, the rivers in the desert, the regathering of his chosen — flowers at last into the making-new of all things. And he seals it: *Write: for these words are true and faithful* (Revelation 21:5) — the same faithfulness Isaiah praised, *thy counsels of old are faithfulness and truth* (Isaiah 25:1).'),
+  -- thread: revelation-21-the-new-jerusalem-coming-down-as-a-bride-isaiah-52
+  ('canon', 'revelation', 21, 2, 'canon', 'isaiah', 52, 1, 'free', E'*Awake, awake; put on thy strength, O Zion; put on thy beautiful garments, O Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean.* (Isaiah 52:1). John sees what Isaiah called to: *the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2). Isaiah summoned Zion to put on her beautiful garments as *the holy city,* into which nothing unclean comes; John beholds her descending, adorned, and at the chapter''s end the same purity holds — *there shall in no wise enter into it any thing that defileth* (Revelation 21:27). The city Isaiah bade awake is the city John sees come down.'),
+  ('canon', 'revelation', 21, 2, 'canon', 'isaiah', 61, 10, 'free', E'*I will greatly rejoice in Yahuah (LORD), my soul shall be joyful in my Elohim (God); for he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness, as a bridegroom decketh himself with ornaments, and as a bride adorneth herself with her jewels.* (Isaiah 61:10). The bridal image John uses is Isaiah''s own: the city comes *prepared as a bride adorned for her husband* (Revelation 21:2), even *as a bride adorneth herself with her jewels.* The garments of salvation and the robe of righteousness Isaiah sang of are the adornment of the new Jerusalem — Yashar''el (Israel) clothed by her Elohim (God), made ready for the covenant union the prophets promised.'),
+  ('canon', 'revelation', 21, 9, 'canon', 'isaiah', 54, 5, 'free', E'*For thy Maker is thine husband; Yahuah Tseva''ot (LORD of hosts) is his name; and thy Redeemer the Holy One of Yashar''el (Israel); The Elohim (God) of the whole earth shall he be called.* (Isaiah 54:5). The angel says *Come hither, I will shew thee the bride, the Lamb''s wife* (Revelation 21:9) — and the bride is the city, the covenant people. Isaiah named the marriage long before: *thy Maker is thine husband.* The forsaken wife of Isaiah 54, gathered with great mercies, is the bride the angel shows John; the new Jerusalem is Yashar''el (Israel) restored to her husband, the covenant union consummated, not a new people put in her place.'),
+  ('canon', 'revelation', 21, 10, 'apocrypha', 'tobit', 13, 10, 'extras', E'*Give praise to Yahuah (God), for he is good: and praise the everlasting King, that his tabernacle may be builded in you again with joy, and let him make joyful there in you those that are captives, and love in you for ever those that are miserable.* (Tobit 13:10). From the land of his captivity Tobit prayed for the very thing John is carried in the spirit to see: the holy Jerusalem with Elohim''s (God''s) *tabernacle builded in you again with joy.* John beholds *that great city, the holy Jerusalem, descending out of heaven from Elohim (God)* (Revelation 21:10) — the captives'' prayer answered, the dwelling of Yahuah (God) raised again in the city, joy restored to those who mourned in exile.'),
+  -- thread: revelation-21-the-tabernacle-of-elohim-with-men-ezekiel-37  [CENTERPIECE]
+  ('canon', 'revelation', 21, 3, 'canon', 'ezekiel', 37, 27, 'free', E'*My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people.* (Ezekiel 37:27). Here is the centerpiece, word for word. The great voice out of heaven says *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3) — and Ezekiel had already spoken it over the regathered house: *My tabernacle also shall be with them... I will be their Elohim (God), and they shall be my people.* This is the everlasting covenant of peace Ezekiel saw set in the midst of his people for evermore (Ezekiel 37:26); the new Jerusalem is its consummation — Elohim (God) tabernacling with man, the eternal Sukkot, the covenant refrain made forever true.'),
+  ('canon', 'revelation', 21, 3, 'canon', 'leviticus', 26, 11, 'free', E'*And I will set my tabernacle among you: and my soul shall not abhor you.* (Leviticus 26:11). The dwelling-promise runs all the way back to Sinai. Yahuah (LORD) pledged at the first, *I will set my tabernacle among you,* and now the voice from heaven proclaims it consummated: *the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3). What was spoken to the people in the wilderness is fulfilled in the new Jerusalem — the same Elohim (God), the same promise, brought home.'),
+  ('canon', 'revelation', 21, 3, 'canon', 'leviticus', 26, 12, 'free', E'*And I will walk among you, and will be your Elohim (God), and ye shall be my people.* (Leviticus 26:12). This is the covenant refrain the heavenly voice lifts verbatim: *they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). *I will be your Elohim (God), and ye shall be my people* — spoken in Leviticus, repeated through every prophet, and now sealed forever in the city come down. The whole law and the prophets bent toward this one sentence; in the new Jerusalem it stands fulfilled and unbreakable.'),
+  ('canon', 'revelation', 21, 3, 'canon', 'zechariah', 2, 10, 'free', E'*Sing and rejoice, O daughter of Zion: for, lo, I come, and I will dwell in the midst of thee, saith Yahuah (LORD).* (Zechariah 2:10). Zechariah heard Yahuah (LORD) promise to come and *dwell in the midst of thee* — the very dwelling the voice from heaven announces as accomplished: *he will dwell with them* (Revelation 21:3). The daughter of Zion is bidden to sing because her Elohim (God) is coming to tabernacle among his own; the new Jerusalem is where that dwelling becomes eternal, Yahuah (LORD) in the midst of his people and they his people for ever.'),
+  ('canon', 'revelation', 21, 3, 'canon', 'zechariah', 2, 11, 'free', E'*And many nations shall be joined to Yahuah (LORD) in that day, and shall be my people: and I will dwell in the midst of thee, and thou shalt know that Yahuah Tseva''ot (LORD of hosts) hath sent me unto thee.* (Zechariah 2:11). Zechariah binds the dwelling to the gathering — *I will dwell in the midst of thee* — the same indwelling the heavenly voice proclaims: *Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The scattered seed gathered home from among the nations become *my people,* and in their midst Yahuah (LORD) himself dwells; the new Jerusalem is the place of that joining, the covenant promise consummated.'),
+  ('canon', 'revelation', 21, 3, 'canon', 'exodus', 29, 45, 'free', E'*And I will dwell among the children of Yashar''el (Israel), and will be their Elohim (God).* (Exodus 29:45). When the tabernacle was first raised in the wilderness, this was the whole purpose of it: *I will dwell among the children of Yashar''el (Israel), and will be their Elohim (God).* The voice from heaven declares that purpose finished and eternal: *the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3). The Sukkot that began at Sinai — Elohim (God) pitching his tent among his people — reaches its everlasting form in the city come down, the dwelling that shall never be struck.'),
+  -- thread: revelation-21-wipe-away-all-tears-no-more-death-isaiah-25
+  ('canon', 'revelation', 21, 4, 'canon', 'isaiah', 25, 8, 'free', E'*He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it.* (Isaiah 25:8). John''s words are Isaiah''s fulfilled: *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4). Isaiah promised that Yahuah (LORD) would *swallow up death* and *wipe away tears from off all faces;* in the new Jerusalem it is done — death undone, every tear wiped, the rebuke of his people taken away for ever.'),
+  ('canon', 'revelation', 21, 6, 'canon', 'isaiah', 55, 1, 'free', E'*Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat; yea, come, buy wine and milk without money and without price.* (Isaiah 55:1). The One on the throne renews Isaiah''s open invitation: *I will give unto him that is athirst of the fountain of the water of life freely* (Revelation 21:6). Isaiah called the thirsty to the waters *without money and without price;* the new Jerusalem is where that fountain flows freely for ever. *It is done. I am Alpha and Omega, the beginning and the end* (Revelation 21:6) — the first and the last of Isaiah (44:6) gives the water of life to all who thirst and come.'),
+  -- thread: revelation-21-he-shall-be-my-son-the-overcomer-inherits-2-samuel-7
+  ('canon', 'revelation', 21, 7, 'canon', '2-samuel', 7, 14, 'free', E'*I will be his father, and he shall be my son. If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men:* (2 Samuel 7:14). The promise sworn to David''s seed is opened to every overcomer: *He that overcometh shall inherit all things; and I will be his Elohim (God), and he shall be my son* (Revelation 21:7). What Yahuah (LORD) pledged through Nathan — *I will be his father, and he shall be my son* — becomes the inheritance of all who overcome and are gathered into the city; the Davidic sonship widens to the whole covenant people, heirs of the everlasting throne, sons of the living Elohim (God).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-21-twelve-gates-and-twelve-foundations-the-one-covenant-people-ezekiel-48  [BLESSING]
+  ('canon', 'revelation', 21, 12, 'canon', 'ezekiel', 48, 31, 'free', E'*And the gates of the city shall be after the names of the tribes of Yashar''el (Israel): three gates northward; one gate of Reuben, one gate of Yahudah (Judah), one gate of Levi.* (Ezekiel 48:31). John sees the same gates Ezekiel saw: *twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12). Ezekiel''s city had its gates named for the tribes, three to each quarter; John''s new Jerusalem has the same — the twelve tribes written on the gates of the eternal city. Yashar''el (Israel) is not erased from the city of Elohim (God); her tribes are its very doors, named one by one, the gathered seed come home.'),
+  ('canon', 'revelation', 21, 12, 'canon', 'ezekiel', 37, 19, 'free', E'*Say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand.* (Ezekiel 37:19). The twelve gates bearing *the names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12) are the two houses made one at last. Ezekiel saw Yahuah (LORD) join the stick of Joseph and the stick of Yahudah (Judah) into one — the northern house and the southern house, Ephraim and Yahudah (Judah), no more two nations. In the new Jerusalem all twelve stand together on the gates, the regathering of all Yashar''el (Israel) complete, the divided kingdom healed into one covenant people.'),
+  ('canon', 'revelation', 21, 14, 'canon', 'ezekiel', 48, 35, 'free', E'*It was round about eighteen thousand measures: and the name of the city from that day shall be, Yahuah Shammah (The LORD is there).* (Ezekiel 48:35). Ezekiel''s vision of the tribal city ends with its name — *Yahuah Shammah (The LORD is there)* — and John''s vision shows why the name fits: the wall has *twelve foundations, and in them the names of the twelve apostles of the Lamb* (Revelation 21:14), and within, *Yahuah Elohim (the Lord God) Almighty and the Lamb are the temple of it* (Revelation 21:22). The city whose tribes name its gates is the city where Yahuah (LORD) himself dwells; the twelve tribes on the gates and the twelve apostles on the foundations are the one covenant people, and the One who is there is the Elohim (God) of the whole story.'),
+  -- thread: revelation-21-the-city-of-gold-and-precious-stones-isaiah-54
+  ('canon', 'revelation', 21, 18, 'canon', 'isaiah', 54, 11, 'free', E'*O thou afflicted, tossed with tempest, and not comforted, behold, I will lay thy stones with fair colours, and lay thy foundations with sapphires.* (Isaiah 54:11). The jewelled city John describes is the city Yahuah (LORD) promised the afflicted, forsaken wife: *the building of the wall of it was of jasper: and the city was pure gold, like unto clear glass* (Revelation 21:18), *the foundations of the wall of the city were garnished with all manner of precious stones... the second, sapphire* (Revelation 21:19). Isaiah''s comfort to the storm-tossed — *I will lay thy stones with fair colours, and lay thy foundations with sapphires* — becomes the very fabric of the new Jerusalem; the once-afflicted city is rebuilt in gems.'),
+  ('canon', 'revelation', 21, 19, 'canon', 'isaiah', 54, 12, 'free', E'*And I will make thy windows of agates, and thy gates of carbuncles, and all thy borders of pleasant stones.* (Isaiah 54:12). Isaiah promised the gates of carbuncle and borders of pleasant stones; John sees them: *the twelve gates were twelve pearls; every several gate was of one pearl: and the street of the city was pure gold* (Revelation 21:21), the foundations *garnished with all manner of precious stones* (Revelation 21:19). The new Jerusalem is the literal flowering of Isaiah''s gemstone promise to the comforted bride — gates of jewels, walls of precious stone, the city of Yahuah (LORD) built in beauty.'),
+  ('canon', 'revelation', 21, 18, 'apocrypha', 'tobit', 13, 16, 'extras', E'*For Jerusalem shall be built up with sapphires and emeralds, and precious stone: your walls and towers and battlements with pure gold.* (Tobit 13:16). The Hebrew library carried the same gold-and-gemstone Jerusalem John beholds. Tobit, praying in captivity, foresaw the city *built up with sapphires and emeralds, and precious stone,* her *walls... with pure gold* — and John sees it raised: *the city was pure gold, like unto clear glass* (Revelation 21:18), the foundations of sapphire and emerald and every precious stone (Revelation 21:19). The new Jerusalem John describes is the city the captives longed for, built at last in the splendour the prophets and the fathers were given to see.'),
+  ('canon', 'revelation', 21, 21, 'apocrypha', 'tobit', 13, 17, 'extras', E'*And the streets of Jerusalem shall be paved with beryl and carbuncle and stones of Ophir.* (Tobit 13:17). Tobit''s prayer named even the streets: *paved with beryl and carbuncle and stones of Ophir.* John sees the street of the new Jerusalem: *the street of the city was pure gold, as it were transparent glass* (Revelation 21:21), and beryl set among its foundations (Revelation 21:20). The same vision held the same city — the streets of the holy Jerusalem gleaming with precious stone and gold, the longing of the scattered seed fulfilled in the city come down from Elohim (God).'),
+  -- thread: revelation-21-no-temple-no-sun-the-glory-of-elohim-the-light-isaiah-60
+  ('canon', 'revelation', 21, 23, 'canon', 'isaiah', 60, 19, 'free', E'*The sun shall be no more thy light by day; neither for brightness shall the moon give light unto thee: but Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory.* (Isaiah 60:19). John''s city needs no light-bearer for the same reason Isaiah''s did not: *the city had no need of the sun, neither of the moon, to shine in it: for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* (Revelation 21:23). Isaiah promised Yahuah (LORD) himself as *an everlasting light, and thy Elohim (God) thy glory;* in the new Jerusalem the glory of Elohim (God) is the light, and the Lamb the lamp — the Formed Son shining with the Father''s own glory.'),
+  ('canon', 'revelation', 21, 24, 'canon', 'isaiah', 60, 3, 'free', E'*And the Gentiles shall come to thy light, and kings to the brightness of thy rising.* (Isaiah 60:3). John sees Isaiah''s pilgrimage of the nations fulfilled: *the nations of them which are saved shall walk in the light of it: and the kings of the earth do bring their glory and honour into it* (Revelation 21:24). Isaiah saw the nations and their kings drawn to Zion''s light; in the new Jerusalem they walk in the light of the glory of Elohim (God), the kings of the earth bringing their honour into the city — the nations left alive coming to the light that the gathered seed bear.'),
+  ('canon', 'revelation', 21, 25, 'canon', 'isaiah', 60, 11, 'free', E'*Therefore thy gates shall be open continually; they shall not be shut day nor night; that men may bring unto thee the forces of the Gentiles, and that their kings may be brought.* (Isaiah 60:11). The open gates of the new Jerusalem are Isaiah''s open gates: *the gates of it shall not be shut at all by day: for there shall be no night there* (Revelation 21:25), *and they shall bring the glory and honour of the nations into it* (Revelation 21:26). Isaiah saw gates that *shall not be shut day nor night* so the nations might bring their glory in; John sees them never shut, for there is no night — the city of perpetual day, secure, into which the honour of the nations is carried.'),
+  ('canon', 'revelation', 21, 27, 'apocrypha', '2-esdras', 7, 26, 'extras', E'*Behold, the time shall come, that these tokens which I have told you shall come to pass, and the bride shall appear, and she coming forth shall be seen, that now is withdrawn from the earth.* (2 Esdras 7:26). The Hebrew library knew of a city now hidden that would one day appear — *the bride shall appear... that now is withdrawn from the earth.* John sees her come forth: the new Jerusalem descending, into which *there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb''s book of life* (Revelation 21:27). The withdrawn bride is shown at last, the holy city revealed, open only to those whose names are in the book of life.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-21-a-new-heaven-and-a-new-earth-isaiah-65',
+       E'A new heaven and a new earth — the renewing of creation Yahuah (LORD) promised (Isaiah 65)',
+       E'John''s opening vision is not a novelty but the keeping of an old promise: *And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away; and there was no more sea* (Revelation 21:1). This is the word Yahuah (LORD) spoke through Isaiah: *For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind* (Isaiah 65:17). And Isaiah bound that new creation to the permanence of the covenant seed — *as the new heavens and the new earth, which I will make, shall remain before me, saith Yahuah (LORD), so shall your seed and your name remain* (Isaiah 66:22): the enduring home of an enduring people, the seed of Yashar''el (Israel) not erased but kept. So the One on the throne declares, *Behold, I make all things new* (Revelation 21:5), the same *new thing* Isaiah heard — *Behold, I will do a new thing; now it shall spring forth; shall ye not know it? I will even make a way in the wilderness, and rivers in the desert* (Isaiah 43:19) — the regathering and renewing flowering at last into the making-new of all things. *Write: for these words are true and faithful* (Revelation 21:5). The former things pass not because Yahuah (LORD) abandons the earth he formed, but because the Maker makes it new; the new heaven and new earth come down to a restored creation, the consummation of the promise, not an escape from it, and a people kept to dwell in it.',
+       sv.verse_id, ev.verse_id, 'free', 9500
+  FROM _s224_rv21_lookup sv, _s224_rv21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=21 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-21-the-new-jerusalem-coming-down-as-a-bride-isaiah-52',
+       E'The holy city, new Jerusalem, coming down as a bride adorned — Zion restored to her husband (Isaiah 52)',
+       E'*And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2). Every word is Isaiah''s. The *holy city* is the one Isaiah called to wake: *Awake, awake; put on thy strength, O Zion; put on thy beautiful garments, O Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean* (Isaiah 52:1) — and at the chapter''s end that purity holds, *there shall in no wise enter into it any thing that defileth* (Revelation 21:27). The *bride adorned* is the bride Isaiah sang: *he hath covered me with the robe of righteousness... as a bride adorneth herself with her jewels* (Isaiah 61:10). And the marriage was named long before: *thy Maker is thine husband; Yahuah Tseva''ot (LORD of hosts) is his name; and thy Redeemer the Holy One of Yashar''el (Israel)* (Isaiah 54:5). So when the angel says *Come hither, I will shew thee the bride, the Lamb''s wife* (Revelation 21:9) and shows John *that great city, the holy Jerusalem, descending out of heaven from Elohim (God)* (Revelation 21:10), the bride and the city are one: the forsaken wife of Isaiah 54, gathered with great mercies, restored to her husband. The Hebrew library prayed for this very descent from exile — *praise the everlasting King, that his tabernacle may be builded in you again with joy, and let him make joyful there in you those that are captives* (Tobit 13:10). The new Jerusalem is Yashar''el (Israel) restored to her Elohim (God), the covenant union consummated — not a new people put in her place.',
+       sv.verse_id, ev.verse_id, 'extras', 9503
+  FROM _s224_rv21_lookup sv, _s224_rv21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=21 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-21-the-tabernacle-of-elohim-with-men-ezekiel-37',
+       E'The tabernacle of Elohim (God) is with men — the covenant promise consummated, the eternal Sukkot (Ezekiel 37)',
+       E'This is the heart of the chapter, and it is quoted, almost word for word, out of the Tanakh. *And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). Ezekiel had already spoken it over the regathered house: *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27) — the everlasting covenant of peace set in the midst of his people for evermore. And it runs back further still, to the dwelling-promise of Sinai: *And I will set my tabernacle among you: and my soul shall not abhor you* (Leviticus 26:11), *And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12). The same refrain sounds in Zechariah — *Sing and rejoice, O daughter of Zion: for, lo, I come, and I will dwell in the midst of thee, saith Yahuah (LORD)* (Zechariah 2:10), and *many nations shall be joined to Yahuah (LORD) in that day, and shall be my people: and I will dwell in the midst of thee* (Zechariah 2:11) — the scattered seed gathered home from among the nations, and Yahuah (LORD) dwelling in their midst. It was the whole purpose of the first tabernacle: *And I will dwell among the children of Yashar''el (Israel), and will be their Elohim (God)* (Exodus 29:45). The covenant promise — *I will be their Elohim (God), and they shall be my people* — spoken at Sinai, repeated through every prophet, is here sealed for ever: Elohim (God) tabernacling with man, the eternal Sukkot, the dwelling that shall never be struck. The new Jerusalem is not a flight from earth to a disembodied heaven; it is Elohim (God) come DOWN to dwell with his people, the consummation of the whole covenant story.',
+       sv.verse_id, ev.verse_id, 'free', 9506
+  FROM _s224_rv21_lookup sv, _s224_rv21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=21 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-21-wipe-away-all-tears-no-more-death-isaiah-25',
+       E'Elohim (God) shall wipe away all tears, and there shall be no more death — the fountain of life freely (Isaiah 25)',
+       E'*And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4). John is quoting Isaiah''s promise as accomplished fact: *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it* (Isaiah 25:8). What Yahuah (LORD) pledged — to swallow up death and wipe every tear — is done in the new Jerusalem: death undone, sorrow gone, the rebuke of his people lifted for ever. Then the One on the throne renews Isaiah''s open invitation: *It is done. I am Alpha and Omega, the beginning and the end. I will give unto him that is athirst of the fountain of the water of life freely* (Revelation 21:6) — the very call of *Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat; yea, come, buy wine and milk without money and without price* (Isaiah 55:1). The first and the last, who swallowed up death, gives the water of life without price to all who thirst and come home.',
+       sv.verse_id, ev.verse_id, 'free', 9509
+  FROM _s224_rv21_lookup sv, _s224_rv21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=21 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-21-he-shall-be-my-son-the-overcomer-inherits-2-samuel-7',
+       E'He that overcometh shall inherit all things — I will be his Elohim (God), and he shall be my son (2 Samuel 7)',
+       E'*He that overcometh shall inherit all things; and I will be his Elohim (God), and he shall be my son* (Revelation 21:7). The promise once sworn to one — David''s seed — is opened to all who overcome. Yahuah (LORD) had said through Nathan, *I will be his father, and he shall be my son. If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men* (2 Samuel 7:14). That Davidic sonship, the everlasting throne established in David''s house, widens in the new Jerusalem to the whole gathered covenant people: every overcomer made son, heir of all things, brought into the inheritance of the kingdom that has no end. *I will be his Elohim (God), and he shall be my son* — the covenant refrain in its most intimate form, the people who are his made not servants only but sons of the living Elohim (God).',
+       sv.verse_id, ev.verse_id, 'free', 9512
+  FROM _s224_rv21_lookup sv, _s224_rv21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=21 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-21-twelve-gates-and-twelve-foundations-the-one-covenant-people-ezekiel-48',
+       E'Twelve gates of the twelve tribes, twelve foundations of the twelve apostles — the one covenant people (Ezekiel 48)',
+       E'The new Jerusalem is built of Yashar''el (Israel) and the apostles together — the one covenant people, the gathered seed come home. *And had a wall great and high, and had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12); *And the wall of the city had twelve foundations, and in them the names of the twelve apostles of the Lamb* (Revelation 21:14). The gates are Ezekiel''s gates: *And the gates of the city shall be after the names of the tribes of Yashar''el (Israel): three gates northward; one gate of Reuben, one gate of Yahudah (Judah), one gate of Levi* (Ezekiel 48:31) — the tribes named one by one, three to each quarter, the very doors of the eternal city. And those twelve tribes are the two houses made one at last, for Ezekiel had seen Yahuah (LORD) take *the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows... even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19) — the northern house and the southern house, Ephraim and Yahudah (Judah), no more two nations but one. Ezekiel''s tribal city ended with its name: *the name of the city from that day shall be, Yahuah Shammah (The LORD is there)* (Ezekiel 48:35) — and John shows why the name fits, for within this city *Yahuah Elohim (the Lord God) Almighty and the Lamb are the temple of it* (Revelation 21:22). The tribes on the gates and the apostles on the foundations are not two peoples but one: Yashar''el (Israel) is not replaced by the city of Elohim (God) — her tribes are its gates, the apostles its foundations, the whole scattered seed regathered and the One who is there dwelling in the midst of them for ever.',
+       sv.verse_id, ev.verse_id, 'free', 9515
+  FROM _s224_rv21_lookup sv, _s224_rv21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=21 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-21-the-city-of-gold-and-precious-stones-isaiah-54',
+       E'The city of pure gold and precious stones — the afflicted city rebuilt in gems (Isaiah 54, Tobit 13)',
+       E'The jewelled city John describes is the city Yahuah (LORD) promised the storm-tossed, forsaken wife. *And the building of the wall of it was of jasper: and the city was pure gold, like unto clear glass* (Revelation 21:18); *And the foundations of the wall of the city were garnished with all manner of precious stones* — sapphire, emerald, beryl, and the rest (Revelation 21:19); *And the twelve gates were twelve pearls... and the street of the city was pure gold, as it were transparent glass* (Revelation 21:21). This is Isaiah''s comfort made fabric: *O thou afflicted, tossed with tempest, and not comforted, behold, I will lay thy stones with fair colours, and lay thy foundations with sapphires* (Isaiah 54:11), *And I will make thy windows of agates, and thy gates of carbuncles, and all thy borders of pleasant stones* (Isaiah 54:12). The once-afflicted city is rebuilt in jewels. And the Hebrew library carried the same vision: Tobit, praying in captivity, foresaw *Jerusalem shall be built up with sapphires and emeralds, and precious stone: your walls and towers and battlements with pure gold* (Tobit 13:16), and even *the streets of Jerusalem shall be paved with beryl and carbuncle and stones of Ophir* (Tobit 13:17). The new Jerusalem John beholds is the city the prophets promised and the captives longed for — built at last in the splendour they were given to see, gold and gemstone, the work of Yahuah (LORD)''s own hand.',
+       sv.verse_id, ev.verse_id, 'extras', 9518
+  FROM _s224_rv21_lookup sv, _s224_rv21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=21 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-21-no-temple-no-sun-the-glory-of-elohim-the-light-isaiah-60',
+       E'No temple, no sun — Yahuah (LORD) and the Lamb the temple, the glory of Elohim (God) the light (Isaiah 60)',
+       E'In the new Jerusalem the dwelling-place and the light-bearer are one and the same — Elohim (God) himself. *And I saw no temple therein: for Yahuah Elohim (the Lord God) Almighty and the Lamb are the temple of it* (Revelation 21:22); *And the city had no need of the sun, neither of the moon, to shine in it: for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* (Revelation 21:23). This is Isaiah''s promise: *The sun shall be no more thy light by day; neither for brightness shall the moon give light unto thee: but Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory* (Isaiah 60:19) — and here the One on the throne and the Lamb (the Father and the Formed Son) are together the temple and the light, the glory of Elohim (God) lightening the city and the Lamb its lamp. Then the nations come, as Isaiah saw: *the nations of them which are saved shall walk in the light of it: and the kings of the earth do bring their glory and honour into it* (Revelation 21:24), fulfilling *the Gentiles shall come to thy light, and kings to the brightness of thy rising* (Isaiah 60:3); and the gates stand open as Isaiah promised — *Therefore thy gates shall be open continually; they shall not be shut day nor night; that men may bring unto thee the forces of the Gentiles, and that their kings may be brought* (Isaiah 60:11) — for in the city *the gates of it shall not be shut at all by day: for there shall be no night there* (Revelation 21:25). The Hebrew library knew this hidden city would one day appear: *the bride shall appear, and she coming forth shall be seen, that now is withdrawn from the earth* (2 Esdras 7:26). She is shown at last — the holy Jerusalem revealed, lit by the glory of Elohim (God), her gates never shut, into which nothing unclean enters, *but they which are written in the Lamb''s book of life* (Revelation 21:27).',
+       sv.verse_id, ev.verse_id, 'extras', 9521
+  FROM _s224_rv21_lookup sv, _s224_rv21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=21 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-21-a-new-heaven-and-a-new-earth-isaiah-65
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 65:17 — *behold, I create new heavens and a new earth: and the former shall not be remembered* the word the seer re-speaks; the renewing of the creation Yahuah (LORD) promised (Revelation 21:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-a-new-heaven-and-a-new-earth-isaiah-65'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 66:22 — *so shall your seed and your name remain* the new creation bound to the permanence of the covenant seed; the enduring home of an enduring people, Yashar''el (Israel) kept (Revelation 21:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-a-new-heaven-and-a-new-earth-isaiah-65'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 43:19 — *Behold, I will do a new thing; now it shall spring forth* the new thing of the regathering flowering into *Behold, I make all things new* (Revelation 21:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-a-new-heaven-and-a-new-earth-isaiah-65'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-21-the-new-jerusalem-coming-down-as-a-bride-isaiah-52
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 52:1 — *put on thy beautiful garments, O Jerusalem, the holy city* the holy city Isaiah bade awake is the city John sees come down, into which nothing unclean enters (Revelation 21:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-new-jerusalem-coming-down-as-a-bride-isaiah-52'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 61:10 — *as a bride adorneth herself with her jewels* the bridal adornment John uses; the garments of salvation are the adorning of the new Jerusalem (Revelation 21:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-new-jerusalem-coming-down-as-a-bride-isaiah-52'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 54:5 — *thy Maker is thine husband... thy Redeemer the Holy One of Yashar''el (Israel)* the bride the angel shows is the forsaken wife restored to her husband (Revelation 21:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-new-jerusalem-coming-down-as-a-bride-isaiah-52'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Tobit 13:10 — *his tabernacle may be builded in you again with joy... those that are captives* the captives'' prayer from exile answered in the city descending from Elohim (God) (Revelation 21:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-new-jerusalem-coming-down-as-a-bride-isaiah-52'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-21-the-tabernacle-of-elohim-with-men-ezekiel-37  [CENTERPIECE]
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 37:27 — *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* the centerpiece, quoted almost word for word; the covenant of peace consummated in the new Jerusalem (Revelation 21:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-tabernacle-of-elohim-with-men-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 26:11 — *And I will set my tabernacle among you* the dwelling-promise from Sinai, fulfilled in *the tabernacle of Elohim (God) is with men* (Revelation 21:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-tabernacle-of-elohim-with-men-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 26:12 — *I will walk among you, and will be your Elohim (God), and ye shall be my people* the covenant refrain lifted verbatim by the heavenly voice (Revelation 21:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-tabernacle-of-elohim-with-men-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Zechariah 2:10 — *I come, and I will dwell in the midst of thee, saith Yahuah (LORD)* the dwelling the daughter of Zion is bidden to sing for, accomplished: *he will dwell with them* (Revelation 21:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-tabernacle-of-elohim-with-men-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Zechariah 2:11 — *many nations shall be joined to Yahuah (LORD)... and shall be my people: and I will dwell in the midst of thee* the gathered seed made his people, Yahuah (LORD) dwelling in their midst (Revelation 21:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-tabernacle-of-elohim-with-men-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=2 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Exodus 29:45 — *I will dwell among the children of Yashar''el (Israel), and will be their Elohim (God)* the whole purpose of the first tabernacle, made eternal in the city come down (Revelation 21:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-tabernacle-of-elohim-with-men-ezekiel-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=29 AND tv.verse_number=45
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-21-wipe-away-all-tears-no-more-death-isaiah-25
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 25:8 — *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces* Isaiah''s promise accomplished: no more death, every tear wiped (Revelation 21:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-wipe-away-all-tears-no-more-death-isaiah-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 55:1 — *every one that thirsteth, come ye to the waters... without money and without price* the open invitation renewed: *the fountain of the water of life freely* (Revelation 21:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-wipe-away-all-tears-no-more-death-isaiah-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-21-he-shall-be-my-son-the-overcomer-inherits-2-samuel-7
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'2 Samuel 7:14 — *I will be his father, and he shall be my son* the Davidic sonship sworn through Nathan, widened to every overcomer in the city (Revelation 21:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-he-shall-be-my-son-the-overcomer-inherits-2-samuel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-21-twelve-gates-and-twelve-foundations-the-one-covenant-people-ezekiel-48  [BLESSING]
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 48:31 — *the gates of the city shall be after the names of the tribes of Yashar''el (Israel)* the tribes named one by one as the very doors of the eternal city; Yashar''el (Israel) not erased but its gates (Revelation 21:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-twelve-gates-and-twelve-foundations-the-one-covenant-people-ezekiel-48'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=48 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 37:19 — *the stick of Joseph... even with the stick of Yahudah (Judah)... and they shall be one in mine hand* the twelve tribes on the gates are the two houses made one, Ephraim and Yahudah (Judah) regathered (Revelation 21:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-twelve-gates-and-twelve-foundations-the-one-covenant-people-ezekiel-48'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 48:35 — *the name of the city from that day shall be, Yahuah Shammah (The LORD is there)* the tribal city''s name; within John''s city Yahuah and the Lamb are the temple, the One who is there (Revelation 21:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-twelve-gates-and-twelve-foundations-the-one-covenant-people-ezekiel-48'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=48 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-21-the-city-of-gold-and-precious-stones-isaiah-54
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 54:11 — *I will lay thy stones with fair colours, and lay thy foundations with sapphires* Isaiah''s comfort to the afflicted city made the very fabric of the new Jerusalem (Revelation 21:18).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-city-of-gold-and-precious-stones-isaiah-54'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 54:12 — *thy gates of carbuncles, and all thy borders of pleasant stones* the gemstone gates and borders Isaiah promised, seen as the twelve pearl gates (Revelation 21:19).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-city-of-gold-and-precious-stones-isaiah-54'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Tobit 13:16 — *Jerusalem shall be built up with sapphires and emeralds, and precious stone: your walls... with pure gold* the Hebrew library''s gold-and-gemstone Jerusalem, raised in the city pure gold (Revelation 21:18).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-city-of-gold-and-precious-stones-isaiah-54'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=18
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Tobit 13:17 — *the streets of Jerusalem shall be paved with beryl and carbuncle and stones of Ophir* the streets foreseen in captivity, seen as the street of pure gold (Revelation 21:21).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-the-city-of-gold-and-precious-stones-isaiah-54'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=21
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-21-no-temple-no-sun-the-glory-of-elohim-the-light-isaiah-60
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 60:19 — *Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory* no need of sun or moon, for the glory of Elohim (God) lightens the city and the Lamb is the lamp (Revelation 21:23).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-no-temple-no-sun-the-glory-of-elohim-the-light-isaiah-60'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 60:3 — *the Gentiles shall come to thy light, and kings to the brightness of thy rising* the nations and their kings drawn to the city''s light, bringing their glory in (Revelation 21:24).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-no-temple-no-sun-the-glory-of-elohim-the-light-isaiah-60'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 60:11 — *thy gates shall be open continually; they shall not be shut day nor night* the open gates of Isaiah''s Zion, never shut in the city where there is no night (Revelation 21:25).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-no-temple-no-sun-the-glory-of-elohim-the-light-isaiah-60'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Esdras 7:26 — *the bride shall appear... that now is withdrawn from the earth* the Hebrew library''s hidden city shown at last, open only to those in the Lamb''s book of life (Revelation 21:27).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv21_lookup sv, _s224_rv21_lookup tv
+ WHERE t.slug='revelation-21-no-temple-no-sun-the-glory-of-elohim-the-light-isaiah-60'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=21 AND sv.verse_number=27
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=7 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_22.sql (S224 Revelation 22) -----
+-- =====================================================================
+-- S224 minion — REVELATION 22 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 22 (21 verses) — THE RIVER AND THE TREE OF LIFE, THE RESTORATION
+--   COMPLETED, THE CLOSING WORDS. The final chapter of Revelation and of the build. A BLESSING
+--   chapter: Eden restored, and the 22:14 keep-the-commandments crown.
+-- Tag: rv22 (temp view _s224_rv22_lookup).
+-- Sort band: floor 9525, step 3 (9525, 9528, 9531, 9534, 9537, 9540, 9543, 9546 used; under 9550).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (the RESTORATION COMPLETED): Revelation closes not in a disembodied heaven but
+-- in the consummation of the covenant story — Eden brought home. The river of Genesis 2 that went
+-- out of Eden now proceeds from the throne (22:1 / Ezekiel 47, Zechariah 14:8); the tree of life
+-- that was guarded by the cherubim and the flaming sword (Genesis 3:22-24) now stands open in the
+-- midst of the city, its leaves *for the healing of the nations* (22:2 / Genesis 2:9, Ezekiel
+-- 47:12, 1 Enoch 24, 2 Esdras 8:52); the curse of Genesis 3:17 is undone (22:3 / Zechariah 14:11);
+-- what Moses could not see — the face of Yahuah (LORD) — the servants now see (22:4 / Exodus 33:20,
+-- Psalm 17:15), his name on their foreheads (the seal of Revelation 7:3, the Aaronic blessing of
+-- Numbers 6:25-27). He is *Alpha and Omega... the first and the last* (22:13 / Isaiah 44:6), *the
+-- root and the offspring of David, and the bright and morning star* (22:16 / Isaiah 11:1,10,
+-- Numbers 24:17) — the Formed, the slain-yet-reigning Lamb who shares the throne with *him that
+-- sat on the throne* (the Father and the Son distinguished, 22:1,3), and the angel AGAIN refuses
+-- worship: *worship Elohim* (22:9). And the crown of the book: **22:14 reads (exactly as the pull
+-- returns) *Blessed are they that do his commandments, that they may have right to the tree of
+-- life, and may enter in through the gates into the city.*** This is the THIRD great
+-- keep-the-commandments verse — woven heavily with 12:17 and 14:12, with Deuteronomy 30:14-16,
+-- Malachi 4:4, and Psalm 1:1-3 (the blessed man whose delight is the Torah, the tree planted by
+-- the rivers). The saints are the Torah-keepers; access to the tree of life that was barred to
+-- the disobedient (Genesis 3:24) is restored to *they that do his commandments*. The Spirit and
+-- the bride say *Come... take the water of life freely* (22:17 / Isaiah 55:1), and the closing
+-- warning guards the words as Moses guarded the Torah (22:18-19 / Deuteronomy 4:2, 12:32, Proverbs
+-- 30:5-6). NOT a Torah-abolished new covenant; the door home and the standing standard are one
+-- love. The inherited dispensational-escape / replacement-church / Torah-abolished reading
+-- surfaces nowhere.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1     a pure river of water of life proceeding out of the throne
+--           Tanakh: Ezekiel 47:1 (waters issued out from under the threshold), 47:9 (every thing
+--                   shall live whither the river cometh), Zechariah 14:8 (living waters go out from
+--                   Jerusalem), Genesis 2:10 (a river went out of Eden to water the garden)
+--           Extras: none warranted (carried at v.2 with the tree)   NT: Revelation 7:17 (the Lamb
+--                   shall lead them unto living fountains of waters)
+--   v.2     the tree of life, twelve manner of fruits, leaves for the healing of the nations
+--           Tanakh: Genesis 2:9 (the tree of life in the midst of the garden), Genesis 3:22-24
+--                   (the way to the tree of life guarded — now opened), Ezekiel 47:12 (the fruit
+--                   for meat and the leaf for medicine)
+--           Extras: 1 Enoch 24:4 (a tree with fragrance beyond all fragrance), 24:11 (its fruit
+--                   for life to the elect, transplanted to the holy place), 2 Esdras 8:52 (paradise
+--                   opened, the tree of life planted, a city builded)
+--           NT: Revelation 2:7 (to him that overcometh, to eat of the tree of life in the paradise
+--                   of Elohim — the ch2 Eden promise now fulfilled)
+--   v.3     there shall be no more curse
+--           Tanakh: Zechariah 14:11 (there shall be no more utter destruction), Genesis 3:17 (the
+--                   ground cursed for Adam's sake — now undone)
+--           Extras: 2 Esdras 8:53 (the root of evil sealed up, corruption fled), 8:54 (sorrows are
+--                   passed, the treasure of immortality)   NT: none warranted (curse-undone is the
+--                   Tanakh-and-extras weave)
+--   v.4     they shall see his face; his name in their foreheads
+--           Tanakh: Psalm 17:15 (I will behold thy face in righteousness), Exodus 33:20 (thou canst
+--                   not see my face... and live — now surpassed), Numbers 6:25-27 (Yahuah make his
+--                   face shine... they shall put my name upon the children of Yashar'el)
+--           Extras: none warranted   NT: Revelation 7:3 (the seal of Elohim in their foreheads)
+--   v.5     no night, no sun; Yahuah giveth them light; they shall reign for ever
+--           Tanakh: Isaiah 60:19 (Yahuah shall be unto thee an everlasting light), Daniel 7:18 (the
+--                   saints shall take the kingdom for ever), 7:27 (an everlasting kingdom)
+--           Extras: none warranted   NT: Revelation 21:23 (the glory of Elohim did lighten it),
+--                   21:25 (there shall be no night there)
+--   v.6-7   these sayings faithful and true; blessed is he that keepeth the sayings of the prophecy
+--           Tanakh: Daniel 12:4 (shut up the words, seal the book — now unsealed, v.10)
+--           Extras: none warranted   NT: none warranted (carried at v.14 keep-the-commandments)
+--   v.8-9   the angel refuses worship: worship Elohim
+--           Tanakh: none warranted (worship-of-the-One carried in prose at v.13/v.1 throne)
+--           Extras: none warranted   NT: none warranted (binds Revelation 19:10 by theme; left to
+--                   prose — the angel's twofold refusal)
+--   v.13,16 Alpha and Omega, the first and the last; the root and offspring of David, the morning star
+--           Tanakh: Isaiah 44:6 (I am the first, and I am the last; beside me no Elohim), Isaiah
+--                   11:1 (a rod out of the stem of Jesse, a Branch from his roots), 11:10 (a root of
+--                   Jesse for an ensign of the people), Numbers 24:17 (a Star out of Jacob, a
+--                   Sceptre out of Yashar'el)
+--           Extras: none warranted   NT: none warranted (the first-and-last is the Formed; held in prose)
+--   v.14    BLESSED ARE THEY THAT DO HIS COMMANDMENTS — the tree-of-life crown (the third keep-the-
+--           commandments verse of the book)
+--           Tanakh: Deuteronomy 30:14-16 (the word very nigh... to keep his commandments, that thou
+--                   mayest live), Malachi 4:4 (remember the law of Moses my servant), Psalm 1:1-3
+--                   (his delight in the law... like a tree planted by the rivers), Genesis 3:22-24
+--                   (the tree of life guarded — access restored to the obedient)
+--           Extras: 2 Esdras 8:52 (the tree of life planted, a city builded — for such as do
+--                   righteously)   NT: Revelation 12:17 (the remnant which keep the commandments of
+--                   Elohim), Revelation 14:12 (here are they that keep the commandments of Elohim)
+--   v.15    without are dogs, sorcerers, and whosoever loveth and maketh a lie
+--           Tanakh: Isaiah 52:1 (no more come into thee the uncircumcised and the unclean)
+--           Extras: none warranted   NT: none warranted (binds Revelation 21:27 by theme; left to prose)
+--   v.17    the Spirit and the bride say, Come; take the water of life freely
+--           Tanakh: Isaiah 55:1 (Ho, every one that thirsteth, come ye to the waters)
+--           Extras: none warranted   NT: none warranted (the come-and-take echoes v.1 river; prose)
+--   v.18-19 the warning against adding or taking away from the words of the prophecy
+--           Tanakh: Deuteronomy 4:2 (ye shall not add... neither diminish), Deuteronomy 12:32 (thou
+--                   shalt not add thereto, nor diminish from it), Proverbs 30:5-6 (add thou not unto
+--                   his words, lest thou be found a liar)
+--           Extras: none warranted   NT: none warranted
+--   v.20-21 Surely I come quickly... come, Lord Yahusha; the grace of our Lord
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted (the closing
+--                   benediction; no allusion warranted — recorded as a deliberate no-add)
+--
+-- THREADS (slug -> target libraries):
+--   9525 revelation-22-the-pure-river-of-water-of-life-from-the-throne-ezekiel-47          (Tanakh + NT)
+--   9528 revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2  (Tanakh + Extras + NT)  [BLESSING]
+--   9531 revelation-22-there-shall-be-no-more-curse-the-edenic-undoing-zechariah-14        (Tanakh + Extras)
+--   9534 revelation-22-they-shall-see-his-face-his-name-in-their-foreheads-exodus-33       (Tanakh + NT)
+--   9537 revelation-22-no-night-no-sun-yahuah-giveth-them-light-and-they-reign-isaiah-60   (Tanakh + NT)
+--   9540 revelation-22-i-am-alpha-and-omega-the-root-and-offspring-of-david-isaiah-44      (Tanakh)
+--   9543 revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30  (Tanakh + Extras + NT)  [BLESSING]
+--   9546 revelation-22-the-spirit-and-the-bride-say-come-and-the-warning-not-to-add-isaiah-55  (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-22-the-pure-river-of-water-of-life-from-the-throne-ezekiel-47
+  ('canon', 'revelation', 22, 1, 'canon', 'ezekiel', 47, 1, 'free', E'*Afterward he brought me again unto the door of the house; and, behold, waters issued out from under the threshold of the house eastward: for the forefront of the house stood toward the east, and the waters came down from under from the right side of the house, at the south side of the altar.* (Ezekiel 47:1). The seer''s vision of *a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1) is Ezekiel''s temple-river brought to its consummation. There the waters *issued out from under the threshold* of the measured house; here they proceed from the throne itself, for the city has no temple — *the Lord Elohim (God) Almighty and the Lamb are the temple of it.* The same living stream, now flowing from the seat of the One it always flowed from.'),
+  ('canon', 'revelation', 22, 1, 'canon', 'ezekiel', 47, 9, 'free', E'*And it shall come to pass, that every thing that liveth, which moveth, whithersoever the rivers shall come, shall live: and there shall be a very great multitude of fish, because these waters shall come thither: for they shall be healed; and every thing shall live whither the river cometh.* (Ezekiel 47:9). The river from the sanctuary is a river of LIFE — *every thing shall live whither the river cometh* — and so it is named outright in the seer''s vision: *a pure river of water of life* (Revelation 22:1). What Ezekiel saw heal the dead sea and quicken every living thing is the same water of life that flows from the throne, that the thirsty may *take the water of life freely* (Revelation 22:17).'),
+  ('canon', 'revelation', 22, 1, 'canon', 'zechariah', 14, 8, 'free', E'*And it shall be in that day, that living waters shall go out from Jerusalem; half of them toward the former sea, and half of them toward the hinder sea: in summer and in winter shall it be.* (Zechariah 14:8). Zechariah saw *living waters* go out from Jerusalem in the day of Yahuah (LORD), unceasing *in summer and in winter*; the seer sees them at their source — *a pure river of water of life, clear as crystal, proceeding out of the throne* (Revelation 22:1). The prophets saw the river flow from the city and the sanctuary; the Revelation shows the throne from which it pours, the living waters of the restored Jerusalem traced to their fountainhead.'),
+  ('canon', 'revelation', 22, 1, 'canon', 'genesis', 2, 10, 'free', E'*And a river went out of Eden to water the garden; and from thence it was parted, and became into four heads.* (Genesis 2:10). The river of life is the oldest river in scripture — *a river went out of Eden to water the garden.* The story closes where it opened: the garden-river that watered Eden, lost when the man was driven out, now flows again, *a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1). Eden is not abandoned but restored; the river returns, and the throne is its head.'),
+  ('canon', 'revelation', 22, 1, 'canon', 'revelation', 7, 17, 'free', E'*For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and Elohim (God) shall wipe away all tears from their eyes.* (Revelation 7:17). The promise made to the gathered multitude earlier in the book — that the Lamb *shall lead them unto living fountains of waters* — is the river now shown flowing: *a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1). The Lamb who leads them to the fountains is the Lamb from whose throne the fountain pours; the shepherd-promise of the seals is the standing reality of the restored city.'),
+  -- thread: revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2
+  ('canon', 'revelation', 22, 2, 'canon', 'genesis', 2, 9, 'free', E'*And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* (Genesis 2:9). The tree the seer sees — *in the midst of the street of it... was there the tree of life, which bare twelve manner of fruits* (Revelation 22:2) — is the very tree of Eden, *the tree of life also in the midst of the garden.* It stood *in the midst of the garden* at the first; it stands *in the midst of the street* of the city at the last. The same tree, the same life; the garden of the beginning has become the city of the end, and the tree is restored to its place.'),
+  ('canon', 'revelation', 22, 2, 'canon', 'genesis', 3, 22, 'free', E'*And Yahuah Elohim (the LORD God) said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:* (Genesis 3:22). After the fall the hand was stayed and the way to the tree was shut — *lest he put forth his hand, and take also of the tree of life.* Now the tree stands open in the street, *and the leaves of the tree were for the healing of the nations* (Revelation 22:2). What was guarded against the disobedient is restored to the obedient (Revelation 22:14); the long exile from the tree of life is ended, and the hand once stayed may now reach and eat.'),
+  ('canon', 'revelation', 22, 2, 'canon', 'genesis', 3, 24, 'free', E'*So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* (Genesis 3:24). The cherubim and *a flaming sword which turned every way* were set *to keep the way of the tree of life* — the way was barred. In the restored city the guard is withdrawn and the tree stands freely *in the midst of the street* with *the leaves of the tree... for the healing of the nations* (Revelation 22:2). The flaming sword that kept the way is gone; the way to the tree of life is open again, and the curse that drove the man out *shall be no more* (Revelation 22:3).'),
+  ('canon', 'revelation', 22, 2, 'canon', 'ezekiel', 47, 12, 'free', E'*And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12). Ezekiel saw the trees by the temple-river bear *new fruit according to his months* and yield *the leaf thereof for medicine.* The seer sees the one tree of life bear *twelve manner of fruits* and *yielded her fruit every month: and the leaves of the tree were for the healing of the nations* (Revelation 22:2). The monthly fruit and the healing leaf are Ezekiel''s vision fulfilled — the river of life and the tree of life flowing and growing together, the medicine of the leaf become the healing of the nations.'),
+  ('canon', 'revelation', 22, 2, 'enoch', '1-enoch', 24, 4, 'extras', E'*And amongst them was a tree such as I had never yet smelt, neither was any amongst them nor were others like it: it had a fragrance beyond all fragrance, and its leaves and blooms and wood wither not for ever: and its fruit is beautiful, and its fruit resembles the dates of a palm.* (1 Enoch 24:4). The Hebrew library remembers the tree of life as the one tree without peer — *its leaves and blooms and wood wither not for ever,* its fruit beautiful and abundant. The seer sees that very tree restored to the elect, *which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations* (Revelation 22:2). The unfading leaves of Enoch''s tree are the healing leaves of the city; the tree no mortal could yet touch is the tree now standing open in the street.'),
+  ('canon', 'revelation', 22, 2, 'enoch', '1-enoch', 24, 11, 'extras', E'*To the righteous it shall be given for food, and its fruit shall be for life to the elect; it shall be transplanted to the holy place, to the temple of Yahuah (God), the Eternal King.* (1 Enoch 24:11). Enoch was shown that the tree of life would be *transplanted to the holy place,* and *its fruit shall be for life to the elect.* The seer sees the transplanting accomplished — the tree standing *in the midst of the street* of the holy city, its fruit borne every month and *the leaves of the tree... for the healing of the nations* (Revelation 22:2). The tree once kept *till the great judgement* is given to the righteous for food at the last; the fruit reserved for the elect is now their everlasting portion, and *they that do his commandments... have right to the tree of life* (Revelation 22:14).'),
+  ('canon', 'revelation', 22, 2, 'apocrypha', '2-esdras', 8, 52, 'extras', E'*For to you is paradise opened, the tree of life is planted, the time to come is prepared, plenteousness is made ready, a city is builded, and rest is allowed, yes, perfect goodness and wisdom.* (2 Esdras 8:52). The same restored library names the whole vision in one breath — *paradise opened, the tree of life is planted... a city is builded.* That is exactly the seer''s sight: the tree of life *in the midst of the street* of the city, *and the leaves of the tree were for the healing of the nations* (Revelation 22:2). The paradise opened and the tree planted and the city builded are not three hopes but one — the garden become the city, Eden restored as the new Jerusalem, the tree of life standing in the midst of it.'),
+  ('canon', 'revelation', 22, 2, 'canon', 'revelation', 2, 7, 'free', E'*He that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God).* (Revelation 2:7). The promise sworn to the overcomer at the book''s opening — *to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* — is kept at its close: the tree of life standing *in the midst of the street* of the city, bearing twelve fruits, *and the leaves of the tree... for the healing of the nations* (Revelation 22:2). The paradise of Elohim (God) is the restored Eden; the overcomer who was promised the tree now eats of it freely, and the whole book bends from the promise to its fulfilment.'),
+  -- thread: revelation-22-there-shall-be-no-more-curse-the-edenic-undoing-zechariah-14
+  ('canon', 'revelation', 22, 3, 'canon', 'zechariah', 14, 11, 'free', E'*And men shall dwell in it, and there shall be no more utter destruction; but Jerusalem shall be safely inhabited.* (Zechariah 14:11). Zechariah''s word over the restored city — *there shall be no more utter destruction... Jerusalem shall be safely inhabited* — is the seer''s word made whole: *And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3). The Hebrew word Zechariah uses for *utter destruction* is the very word for the curse of devotion-to-destruction; its lifting is the lifting of the curse itself. The city that shall never again be given to destruction is the city where the curse is no more.'),
+  ('canon', 'revelation', 22, 3, 'canon', 'genesis', 3, 17, 'free', E'*And unto Adam he said, Because thou hast hearkened unto the voice of thy wife, and hast eaten of the tree, of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life;* (Genesis 3:17). The curse fell on the ground for Adam''s sake — *cursed is the ground... in sorrow shalt thou eat of it all the days of thy life.* The seer sees that curse undone at the last: *And there shall be no more curse* (Revelation 22:3). The whole arc closes the circle Genesis opened — the curse that came with the eating of the forbidden tree is lifted, and the tree of life stands open instead; the sorrow of the cursed ground gives way to the river and the tree of the restored garden.'),
+  ('canon', 'revelation', 22, 3, 'apocrypha', '2-esdras', 8, 53, 'extras', E'*The root of evil is sealed up from you, weakness and the moth is hid from you, and corruption is fled into hell to be forgotten:* (2 Esdras 8:53). The restored library names the same undoing — *the root of evil is sealed up... corruption is fled* — the very thing the seer sees when *there shall be no more curse* (Revelation 22:3). The curse was the fruit of the root of evil; with the root sealed away and corruption fled, what remains is the throne of Elohim (God) and of the Lamb, and his servants serving him with the curse forever behind them.'),
+  ('canon', 'revelation', 22, 3, 'apocrypha', '2-esdras', 8, 54, 'extras', E'*Sorrows are passed, and in the end is shewed the treasure of immortality.* (2 Esdras 8:54). *Sorrows are passed,* says the Hebrew library, *and in the end is shewed the treasure of immortality* — the same passing of sorrow the seer beholds when *there shall be no more curse* (Revelation 22:3) and the servants of Elohim (God) *shall reign for ever and ever* (Revelation 22:5). The sorrow that came with the curse of Genesis 3 is passed; the treasure of immortality shown at the end is the tree of life and the unending reign in the restored city.'),
+  -- thread: revelation-22-they-shall-see-his-face-his-name-in-their-foreheads-exodus-33
+  ('canon', 'revelation', 22, 4, 'canon', 'exodus', 33, 20, 'free', E'*And he said, Thou canst not see my face: for there shall no man see me, and live.* (Exodus 33:20). To Moses, who sought the glory, the word was *Thou canst not see my face: for there shall no man see me, and live.* That barrier is taken away in the restored city: *And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4). What Moses was denied, the servants of Elohim (God) are granted — to see the face that no man could see and live, now seen by those who live for ever. The veiled glory of Sinai becomes the open face of the throne.'),
+  ('canon', 'revelation', 22, 4, 'canon', 'psalms', 17, 15, 'free', E'*As for me, I will behold thy face in righteousness: I shall be satisfied, when I awake, with thy likeness.* (Psalm 17:15). David''s hope was to *behold thy face in righteousness* and to be *satisfied, when I awake, with thy likeness* — the waking from the dust into the sight of Elohim (God). The seer sees that hope fulfilled: *And they shall see his face* (Revelation 22:4). The face the psalmist longed to behold upon awaking is the face the servants now see in the restored city, satisfied at the last with the likeness of the One they serve.'),
+  ('canon', 'revelation', 22, 4, 'canon', 'numbers', 6, 25, 'free', E'*Yahuah (LORD) make his face shine upon thee, and be gracious unto thee:* (Numbers 6:25). The priestly blessing asked that *Yahuah (LORD) make his face shine upon thee* — and that the name be set upon the people, for *they shall put my name upon the children of Yashar''el (Israel); and I will bless them* (Numbers 6:27). Both halves of the blessing stand fulfilled in the city: *they shall see his face; and his name shall be in their foreheads* (Revelation 22:4). The shining face the priests invoked is now beheld; the name laid upon the people is now written on their foreheads — the Aaronic blessing become the everlasting estate of the servants of Elohim (God).'),
+  ('canon', 'revelation', 22, 4, 'canon', 'revelation', 7, 3, 'free', E'*Saying, Hurt not the earth, neither the sea, nor the trees, till we have sealed the servants of our Elohim (God) in their foreheads.* (Revelation 7:3). The servants were sealed *in their foreheads* before the winds were loosed — the mark of the living Elohim (God) set upon the gathered. That seal is now seen for what it is: *his name shall be in their foreheads* (Revelation 22:4). The seal of the seventh chapter is the name of the seventh: the sealing that protected the servants through the tribulation is the name they wear before the throne, the counter-sign to the mark of the beast, the name of the One they see face to face.'),
+  -- thread: revelation-22-no-night-no-sun-yahuah-giveth-them-light-and-they-reign-isaiah-60
+  ('canon', 'revelation', 22, 5, 'canon', 'isaiah', 60, 19, 'free', E'*The sun shall be no more thy light by day; neither for brightness shall the moon give light unto thee: but Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory.* (Isaiah 60:19). Isaiah promised the restored Zion a light that is not the sun: *Yahuah (LORD) shall be unto thee an everlasting light.* The seer sees it kept: *And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light* (Revelation 22:5). The everlasting light Isaiah named is Yahuah Elohim (the Lord God) himself giving light to the city — no created lamp needed where the glory of the Maker shines.'),
+  ('canon', 'revelation', 22, 5, 'canon', 'daniel', 7, 18, 'free', E'*But the saints of the El Elyon (most High) shall take the kingdom, and possess the kingdom for ever, even for ever and ever.* (Daniel 7:18). Daniel was shown that *the saints of the El Elyon (most High) shall... possess the kingdom for ever, even for ever and ever.* The seer sees the saints in possession: *and they shall reign for ever and ever* (Revelation 22:5). The everlasting kingdom given to the saints after the beasts are judged is the unending reign of the servants in the restored city — the same *for ever and ever,* the kingdom that shall not pass away now held by those who keep the commandments of Elohim (God).'),
+  ('canon', 'revelation', 22, 5, 'canon', 'daniel', 7, 27, 'free', E'*And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* (Daniel 7:27). The dominion *given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom* is the reign the seer sees fulfilled — *and they shall reign for ever and ever* (Revelation 22:5). Daniel''s vision of the saints receiving the everlasting kingdom finds its end in the city of light where the servants of Elohim (God) reign without night and without end.'),
+  ('canon', 'revelation', 22, 5, 'canon', 'revelation', 21, 23, 'free', E'*And the city had no need of the sun, neither of the moon, to shine in it: for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof.* (Revelation 21:23). The word over the new Jerusalem in the chapter before — *the city had no need of the sun... for the glory of Elohim (God) did lighten it* — is repeated over the river and the tree: *they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light* (Revelation 22:5). The light of the city is the glory of Elohim (God) and the Lamb; the restoration of the new Jerusalem and the restoration of the garden are one place, lit by one light.'),
+  ('canon', 'revelation', 22, 5, 'canon', 'revelation', 21, 25, 'free', E'*And the gates of it shall not be shut at all by day: for there shall be no night there.* (Revelation 21:25). *There shall be no night there* is said of the city''s open gates and again of the garden''s light: *And there shall be no night there; and they need no candle* (Revelation 22:5). The same endless day binds the new Jerusalem of the city-vision to the Eden of the river-and-tree vision — one restored creation where the gates are never shut and the night never falls, because the glory of Elohim (God) is its light.'),
+  -- thread: revelation-22-i-am-alpha-and-omega-the-root-and-offspring-of-david-isaiah-44
+  ('canon', 'revelation', 22, 13, 'canon', 'isaiah', 44, 6, 'free', E'*Thus saith Yahuah (LORD) the King of Yashar''el (Israel), and his redeemer Yahuah Tseva''ot (LORD of hosts); I am the first, and I am the last; and beside me there is no Elohim (God).* (Isaiah 44:6). The title the One on the throne speaks — *I am Alpha and Omega, the beginning and the end, the first and the last* (Revelation 22:13) — is the self-naming of Yahuah (LORD) in Isaiah: *I am the first, and I am the last; and beside me there is no Elohim (God).* The Formed who speaks in the Revelation bears the divine name of the redeemer of Yashar''el (Israel); the first-and-last of Isaiah and the Alpha-and-Omega of the closing vision are one — Yahusha (Jesus), the Formed drawn from the Formless, speaking in the name that is above every name.'),
+  ('canon', 'revelation', 22, 16, 'canon', 'isaiah', 11, 1, 'free', E'*And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:* (Isaiah 11:1). When he names himself *the root and the offspring of David, and the bright and morning star* (Revelation 22:16), he speaks Isaiah''s word of the Branch — *there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots.* He is both the root from which David''s line grew and the offspring that grew from it — the source and the heir at once, the Branch of Jesse who is also the root of Jesse, the Davidic King who is the Formed.'),
+  ('canon', 'revelation', 22, 16, 'canon', 'isaiah', 11, 10, 'free', E'*And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious.* (Isaiah 11:10). Isaiah named him *a root of Jesse, which shall stand for an ensign of the people* — the very title he claims: *I am the root and the offspring of David* (Revelation 22:16). The root of Jesse to which the gathered seek is the root of David lifted as the ensign for the regathering; the chapter that promised to *recover the remnant of his people... the second time* and *assemble the outcasts of Yashar''el (Israel)* names the one who calls *Come* to the thirsting at the last.'),
+  ('canon', 'revelation', 22, 16, 'canon', 'numbers', 24, 17, 'free', E'*I shall see him, but not now: I shall behold him, but not nigh: there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel), and shall smite the corners of Moab, and destroy all the children of Sheth.* (Numbers 24:17). Balaam saw from afar *a Star out of Jacob, and a Sceptre... out of Yashar''el (Israel)* — the star and the sceptre of the coming King. He names himself that star at the close: *the bright and morning star* (Revelation 22:16). The Star out of Jacob beheld *but not now, but not nigh* in the wilderness oracle has risen; the morning star that announces the day is the root and offspring of David standing in the restored city.'),
+  -- thread: revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30
+  ('canon', 'revelation', 22, 14, 'canon', 'deuteronomy', 30, 16, 'free', E'*In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.* (Deuteronomy 30:16). Moses set the keeping of the commandments and life together — *keep his commandments... that thou mayest live.* The seer crowns the book with the same bond: *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14). To do his commandments is the way to life, from Horeb to the new Jerusalem; the commandment-keeping that brought blessing in the land brings right to the tree of life in the city. The word is no burden — *the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deuteronomy 30:14).'),
+  ('canon', 'revelation', 22, 14, 'canon', 'malachi', 4, 4, 'free', E'*Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Yashar''el (Israel), with the statutes and judgments.* (Malachi 4:4). The last word of the prophets before the great and dreadful day was *Remember ye the law of Moses my servant... with the statutes and judgments.* The last beatitude of the Revelation is its echo: *Blessed are they that do his commandments, that they may have right to the tree of life* (Revelation 22:14). The Torah remembered at the close of the prophets is the Torah done at the close of the apocalypse; the commandment-keeping that marks the saints throughout the book (Revelation 12:17, 14:12) is the same charge Malachi laid on all Yashar''el (Israel) — not abolished but crowned with the tree of life.'),
+  ('canon', 'revelation', 22, 14, 'canon', 'psalms', 1, 2, 'free', E'*But his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night.* (Psalm 1:2). The blessed man of the first psalm is the one whose *delight is in the law of Yahuah (LORD)* — and he is *like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither* (Psalm 1:3). The last blessing of the Revelation gathers the figure home: *Blessed are they that do his commandments, that they may have right to the tree of life* (Revelation 22:14). The man whose delight is the Torah, planted like a tree by the rivers, is given right at the last to the tree of life itself, standing by the pure river of water of life — the blessed man become the citizen of the city, the unwithering leaf become the leaf for the healing of the nations.'),
+  ('canon', 'revelation', 22, 14, 'canon', 'genesis', 3, 24, 'free', E'*So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life.* (Genesis 3:24). The way to the tree of life was barred against the disobedient by *a flaming sword which turned every way.* The last beatitude opens it again to the obedient: *Blessed are they that do his commandments, that they may have right to the tree of life* (Revelation 22:14). The same tree, the same guarded way — but now *right* to it is given to *they that do his commandments.* The disobedience that lost the tree is answered by the commandment-keeping that regains it; the flaming sword is gone, and the door home stands open to the doers of his word.'),
+  ('canon', 'revelation', 22, 14, 'apocrypha', '2-esdras', 8, 52, 'extras', E'*For to you is paradise opened, the tree of life is planted, the time to come is prepared, plenteousness is made ready, a city is builded, and rest is allowed, yes, perfect goodness and wisdom.* (2 Esdras 8:52). The restored library says the paradise and the tree and the city together belong to the righteous — *to you is paradise opened, the tree of life is planted... a city is builded.* That is the threefold gift the last beatitude names in one line: *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14). Right to the tree of life and entrance through the gates into the city are the paradise opened and the city builded — the inheritance of those who do righteously, the doers of his commandments.'),
+  ('canon', 'revelation', 22, 14, 'canon', 'revelation', 12, 17, 'free', E'*And the dragon was wroth with the woman, and went to make war with the remnant of her seed, which keep the commandments of Elohim (God), and have the testimony of Yahusha HaMashiach (Jesus Christ).* (Revelation 12:17). The dragon made war on *the remnant of her seed, which keep the commandments of Elohim (God)* — the saints are named the commandment-keepers in the thick of the conflict. The book ends by blessing the same: *Blessed are they that do his commandments, that they may have right to the tree of life* (Revelation 22:14). The remnant the dragon could not overcome are the doers of the commandments who inherit the tree of life; the mark of the saints in the war is the crown of the saints in the city.'),
+  ('canon', 'revelation', 22, 14, 'canon', 'revelation', 14, 12, 'free', E'*Here is the patience of the saints: here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus).* (Revelation 14:12). Twice over the saints are defined by the commandments — *here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus).* The third and final naming is the closing beatitude: *Blessed are they that do his commandments, that they may have right to the tree of life* (Revelation 22:14). The patience of the saints under the beast and the blessing of the saints at the tree are one people — those in whom the commandments of Elohim (God) and the faith of Yahusha (Jesus) are joined, who keep his word and so come home to the tree of life.'),
+  -- thread: revelation-22-the-spirit-and-the-bride-say-come-and-the-warning-not-to-add-isaiah-55
+  ('canon', 'revelation', 22, 17, 'canon', 'isaiah', 55, 1, 'free', E'*Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat; yea, come, buy wine and milk without money and without price.* (Isaiah 55:1). Isaiah''s great invitation — *Ho, every one that thirsteth, come ye to the waters... without money and without price* — is the very call the Spirit and the bride take up at the close: *And the Spirit and the bride say, Come... And whosoever will, let him take the water of life freely* (Revelation 22:17). The free water of Isaiah is the water of life of the river from the throne; the thirsting summoned to the waters without price are the same thirsting bidden to take the water of life freely. The book ends as Isaiah called — come, and take, and drink.'),
+  ('canon', 'revelation', 22, 18, 'canon', 'deuteronomy', 4, 2, 'free', E'*Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* (Deuteronomy 4:2). The seer''s closing warning — *If any man shall add unto these things, Elohim (God) shall add unto him the plagues* (Revelation 22:18) — is the guard Moses set over the Torah: *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it.* The word of the prophecy is guarded as the word of the commandment was guarded; to add or to take away is the same offence against the same kind of word, and the warning that closed the giving of the law closes the giving of the Revelation.'),
+  ('canon', 'revelation', 22, 19, 'canon', 'deuteronomy', 12, 32, 'free', E'*What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it.* (Deuteronomy 12:32). *Thou shalt not add thereto, nor diminish from it* — Moses sealed the commandments against tampering twice over, and the seer seals the prophecy the same way: *if any man shall take away from the words of the book of this prophecy, Elohim (God) shall take away his part out of the book of life* (Revelation 22:19). The integrity of the word is one demand from Deuteronomy to the Revelation — observe to do it, and neither add nor diminish; the words of the prophecy are kept whole as the commandments were kept whole.'),
+  ('canon', 'revelation', 22, 18, 'canon', 'proverbs', 30, 6, 'free', E'*Add thou not unto his words, lest he reprove thee, and thou be found a liar.* (Proverbs 30:6). The wisdom of Agur warned *Add thou not unto his words, lest he reprove thee, and thou be found a liar* — for *every word of Elohim (God) is pure* (Proverbs 30:5). The seer''s warning carries the same weight: *If any man shall add unto these things, Elohim (God) shall add unto him the plagues that are written in this book* (Revelation 22:18). To add to the pure word of Elohim (God) is to be found a liar and to be reproved; the guard over the words of the prophecy is the guard over every word of Elohim (God) — they are not to be added to, and they are not to be diminished.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-22-the-pure-river-of-water-of-life-from-the-throne-ezekiel-47',
+       E'A pure river of water of life proceeding out of the throne (Ezekiel 47, Zechariah 14, Genesis 2)',
+       E'The last vision opens with a river: *And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1). It is the oldest river in scripture come home. *A river went out of Eden to water the garden; and from thence it was parted, and became into four heads* (Genesis 2:10) — the garden-river lost when the man was driven out, now flowing again from the throne. It is Ezekiel''s temple-river brought to its source: there *waters issued out from under the threshold of the house eastward* (Ezekiel 47:1), and wherever they ran they gave life — *every thing shall live whither the river cometh* (Ezekiel 47:9). The seer names outright what Ezekiel saw it do: this is *water of life.* It is Zechariah''s promise at its fountainhead — *living waters shall go out from Jerusalem... in summer and in winter shall it be* (Zechariah 14:8) — the unceasing stream of the restored city traced to the seat from which it pours. And it is the keeping of a word already spoken in the book: *the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters* (Revelation 7:17). The Lamb who leads the gathered to the fountains is the Lamb from whose throne the fountain flows. On the throne sit *him that sat on the throne* and the Lamb together (Revelation 22:1,3) — the Father and the Formed Son distinguished, the One from whom the water of life has always come, now giving it freely to all who thirst (Revelation 22:17).',
+       sv.verse_id, ev.verse_id, 'free', 9525
+  FROM _s224_rv22_lookup sv, _s224_rv22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=22 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2',
+       E'The tree of life, and the leaves for the healing of the nations — Eden restored (Genesis 2, Ezekiel 47, 1 Enoch 24, 2 Esdras 8)',
+       E'The story closes where it opened, in a garden — but the garden has become a city, and the tree once guarded stands open in the street: *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations* (Revelation 22:2). This is the very tree of Eden — *the tree of life also in the midst of the garden* (Genesis 2:9). It stood *in the midst of the garden* at the first; it stands *in the midst of the street* at the last. After the fall the way to it was shut: *lest he put forth his hand, and take also of the tree of life, and eat, and live for ever* (Genesis 3:22), and *Cherubims, and a flaming sword which turned every way* were set *to keep the way of the tree of life* (Genesis 3:24). Now the guard is withdrawn and the tree is restored to the obedient (Revelation 22:14). It is Ezekiel''s river-tree fulfilled — the trees by the temple-waters that bore *new fruit according to his months,* whose *fruit thereof shall be for meat, and the leaf thereof for medicine* (Ezekiel 47:12); the monthly fruit and the healing leaf are the seer''s twelve manner of fruits and the leaves for the healing of the nations. The restored library remembered this tree without peer: *its leaves and blooms and wood wither not for ever* (1 Enoch 24:4), and *its fruit shall be for life to the elect; it shall be transplanted to the holy place* (1 Enoch 24:11) — the transplanting now accomplished, the tree once kept till the great judgement now given to the righteous for food. And 2 Esdras names the whole vision in one breath: *to you is paradise opened, the tree of life is planted... a city is builded* (2 Esdras 8:52) — not three hopes but one, Eden become the new Jerusalem. So the promise sworn at the book''s opening is kept at its close: *To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* (Revelation 2:7). The paradise of Elohim (God) is the restored Eden; the overcomer eats of the tree at last, and the leaves of it heal the nations.',
+       sv.verse_id, ev.verse_id, 'extras', 9528
+  FROM _s224_rv22_lookup sv, _s224_rv22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=22 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-22-there-shall-be-no-more-curse-the-edenic-undoing-zechariah-14',
+       E'And there shall be no more curse — the Edenic undoing (Zechariah 14, Genesis 3, 2 Esdras 8)',
+       E'One short clause closes the wound the whole of scripture has carried since the third chapter of Genesis: *And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3). The curse fell on the ground for Adam''s sake — *cursed is the ground for thy sake; in sorrow shalt thou eat of it all the days of thy life* (Genesis 3:17). It is undone at the last. Zechariah saw the lifting of it over the restored city: *there shall be no more utter destruction; but Jerusalem shall be safely inhabited* (Zechariah 14:11) — the very word for the curse of devotion-to-destruction now spoken away, the city never again given to ruin. The restored library names the same undoing from the inside: *the root of evil is sealed up from you... and corruption is fled into hell to be forgotten* (2 Esdras 8:53), and *Sorrows are passed, and in the end is shewed the treasure of immortality* (2 Esdras 8:54). The curse was the fruit of the root of evil; with the root sealed away and corruption fled, what remains is the throne of Elohim (God) and of the Lamb, the servants serving him with the sorrow of the cursed ground forever behind them, reigning *for ever and ever* (Revelation 22:5). Eden''s loss is reversed: the river returns, the tree stands open, and the curse is no more.',
+       sv.verse_id, ev.verse_id, 'extras', 9531
+  FROM _s224_rv22_lookup sv, _s224_rv22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=22 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-22-they-shall-see-his-face-his-name-in-their-foreheads-exodus-33',
+       E'They shall see his face, and his name in their foreheads (Exodus 33, Psalm 17, Numbers 6)',
+       E'*And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4). What was denied to Moses is granted to the servants. To the one who sought the glory the word came: *Thou canst not see my face: for there shall no man see me, and live* (Exodus 33:20). That barrier is taken away in the restored city — the face no man could see and live is now seen by those who live for ever. David''s hope is fulfilled: *I will behold thy face in righteousness: I shall be satisfied, when I awake, with thy likeness* (Psalm 17:15) — the waking from the dust into the open sight of Elohim (God). And both halves of the priestly blessing stand complete: *Yahuah (LORD) make his face shine upon thee* (Numbers 6:25), and *they shall put my name upon the children of Yashar''el (Israel); and I will bless them* (Numbers 6:27). The shining face the priests invoked is now beheld; the name laid upon the people is now written on their foreheads. That name on the forehead is the seal already set in the seventh chapter — *till we have sealed the servants of our Elohim (God) in their foreheads* (Revelation 7:3) — the mark of the living Elohim (God) that carried the gathered through the tribulation, the counter-sign to the mark of the beast, now seen for what it always was: the name of the One they serve, worn before the face they see.',
+       sv.verse_id, ev.verse_id, 'free', 9534
+  FROM _s224_rv22_lookup sv, _s224_rv22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=22 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-22-no-night-no-sun-yahuah-giveth-them-light-and-they-reign-isaiah-60',
+       E'No night, no sun; Yahuah giveth them light, and they reign for ever (Isaiah 60, Daniel 7)',
+       E'*And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light: and they shall reign for ever and ever* (Revelation 22:5). Isaiah promised the restored Zion a light that is not the sun: *The sun shall be no more thy light by day; neither for brightness shall the moon give light unto thee: but Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory* (Isaiah 60:19). The everlasting light is Yahuah Elohim (the Lord God) himself giving light to the city — no created lamp needed where the glory of the Maker shines, as the new Jerusalem was already shown to have no need of the sun, *for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* (Revelation 21:23), and *there shall be no night there* (Revelation 21:25). The city-vision and the garden-vision are one restored creation, lit by one light. And the reign is Daniel''s vision fulfilled: *the saints of the El Elyon (most High) shall take the kingdom, and possess the kingdom for ever, even for ever and ever* (Daniel 7:18), the kingdom *given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom* (Daniel 7:27). The everlasting kingdom given to the saints after the beasts are judged is the unending reign of the servants in the city of light — the same *for ever and ever,* the kingdom that shall not pass away now held by those who keep the commandments of Elohim (God).',
+       sv.verse_id, ev.verse_id, 'free', 9537
+  FROM _s224_rv22_lookup sv, _s224_rv22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=22 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-22-i-am-alpha-and-omega-the-root-and-offspring-of-david-isaiah-44',
+       E'I am Alpha and Omega, the first and the last; the root and offspring of David, the morning star (Isaiah 44, Isaiah 11, Numbers 24)',
+       E'The One on the throne names himself, and the names are the names of Yahuah (LORD) and of the Davidic King at once: *I am Alpha and Omega, the beginning and the end, the first and the last* (Revelation 22:13), and *I am the root and the offspring of David, and the bright and morning star* (Revelation 22:16). The first title is Isaiah''s self-naming of Yahuah (LORD): *I am the first, and I am the last; and beside me there is no Elohim (God)* (Isaiah 44:6) — the redeemer of Yashar''el (Israel) speaking. The Formed who speaks in the Revelation bears that divine name; the first-and-last of Isaiah and the Alpha-and-Omega of the closing vision are one — Yahusha (Jesus), the Formed drawn from the Formless, who has a Father and yet speaks in the name above every name. The second title is Isaiah''s Branch: *there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1), *a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek* (Isaiah 11:10). He is both root and offspring — the source from which David''s line grew and the heir that grew from it, the root of Jesse lifted as the ensign for the regathering of the scattered. And he is Balaam''s far-off star come near: *there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel)* (Numbers 24:17) — *the bright and morning star* that announces the day. The first and the last who is also the root of David and the Star out of Jacob is the slain-yet-reigning Lamb, the Formed who shares the throne and to whom the angel will not let worship be given but says *worship Elohim* (Revelation 22:9): worship belongs to the One.',
+       sv.verse_id, ev.verse_id, 'free', 9540
+  FROM _s224_rv22_lookup sv, _s224_rv22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=22 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30',
+       E'Blessed are they that do his commandments — the tree-of-life crown (Deuteronomy 30, Malachi 4, Psalm 1, Genesis 3)',
+       E'The book sets its last and highest blessing on the doers of the commandments: *Blessed are they that do his commandments, that they may have right to the tree of life, and may enter in through the gates into the city* (Revelation 22:14). This is the third great keep-the-commandments verse of the Revelation, joined to the two before it — *the remnant of her seed, which keep the commandments of Elohim (God), and have the testimony of Yahusha HaMashiach (Jesus Christ)* (Revelation 12:17), and *here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus)* (Revelation 14:12). Three times over the saints are named by the commandments; the third naming is their crown. Moses bound the keeping of the commandments to life itself: *to keep his commandments and his statutes and his judgments, that thou mayest live and multiply* (Deuteronomy 30:16) — and the word is no burden, *the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deuteronomy 30:14). The last word of the prophets before the great and dreadful day was the same: *Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Yashar''el (Israel), with the statutes and judgments* (Malachi 4:4). And the first psalm drew the very figure of the tree: the blessed man whose *delight is in the law of Yahuah (LORD)* is *like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither* (Psalm 1:2-3) — the man whose delight is the Torah, planted by the rivers, given right at the last to the tree of life standing by the pure river of water of life, his unwithering leaf become the leaf for the healing of the nations. The way to that tree was barred against the disobedient by *a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24); now *right* to it is given to *they that do his commandments,* and the restored library names the gift in full — *to you is paradise opened, the tree of life is planted... a city is builded* (2 Esdras 8:52). The disobedience that lost the tree is answered by the commandment-keeping that regains it. This is no Torah abolished and no flesh-credential earned, but the door home and the standing standard held together as one love: the commandments kept are the way back to the tree of life, and the doers of his word enter in through the gates into the city.',
+       sv.verse_id, ev.verse_id, 'extras', 9543
+  FROM _s224_rv22_lookup sv, _s224_rv22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=22 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-22-the-spirit-and-the-bride-say-come-and-the-warning-not-to-add-isaiah-55',
+       E'The Spirit and the bride say, Come; and the warning not to add or take away (Isaiah 55, Deuteronomy 4, Proverbs 30)',
+       E'The book ends with an open invitation and a sealed word. The invitation: *And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely* (Revelation 22:17). It is Isaiah''s great call taken up at the close: *Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat... without money and without price* (Isaiah 55:1). The free water of Isaiah is the water of life of the river from the throne (Revelation 22:1); the thirsting summoned to the waters without price are the same thirsting bidden to take the water of life freely. And the sealed word: *If any man shall add unto these things, Elohim (God) shall add unto him the plagues that are written in this book* (Revelation 22:18), and *if any man shall take away from the words of the book of this prophecy, Elohim (God) shall take away his part out of the book of life* (Revelation 22:19). This is the guard Moses set over the Torah: *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God)* (Deuteronomy 4:2), and again *What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it* (Deuteronomy 12:32). The wisdom of Agur said the same over every word of Elohim (God): *Add thou not unto his words, lest he reprove thee, and thou be found a liar* (Proverbs 30:6), for *every word of Elohim (God) is pure* (Proverbs 30:5). The words of the prophecy are kept whole as the commandments were kept whole — come freely to the water of life, and neither add to nor diminish the pure word of the One who gives it.',
+       sv.verse_id, ev.verse_id, 'free', 9546
+  FROM _s224_rv22_lookup sv, _s224_rv22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=22 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-22-the-pure-river-of-water-of-life-from-the-throne-ezekiel-47
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 47:1 — *waters issued out from under the threshold of the house eastward* the temple-river brought to its source, now proceeding from the throne itself (Revelation 22:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-pure-river-of-water-of-life-from-the-throne-ezekiel-47'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 47:9 — *every thing shall live whither the river cometh* the river from the sanctuary is a river of life, named outright as *water of life* in the seer''s vision (Revelation 22:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-pure-river-of-water-of-life-from-the-throne-ezekiel-47'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Zechariah 14:8 — *living waters shall go out from Jerusalem... in summer and in winter* the unceasing stream of the restored city traced to its fountainhead at the throne (Revelation 22:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-pure-river-of-water-of-life-from-the-throne-ezekiel-47'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 2:10 — *a river went out of Eden to water the garden* the oldest river in scripture, lost at the fall, now flowing again from the throne; the garden restored (Revelation 22:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-pure-river-of-water-of-life-from-the-throne-ezekiel-47'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 7:17 — *the Lamb... shall lead them unto living fountains of waters* the shepherd-promise of the seals now shown flowing from the throne (Revelation 22:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-pure-river-of-water-of-life-from-the-throne-ezekiel-47'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:9 — *the tree of life also in the midst of the garden* the very tree of Eden, standing now *in the midst of the street* of the city (Revelation 22:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:22 — *lest he put forth his hand, and take also of the tree of life* the hand once stayed; the way to the tree now restored to the obedient (Revelation 22:2,14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 3:24 — *a flaming sword which turned every way, to keep the way of the tree of life* the guard now withdrawn, the tree standing open in the street (Revelation 22:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 47:12 — *the fruit thereof shall be for meat, and the leaf thereof for medicine* the river-tree''s monthly fruit and healing leaf fulfilled in the tree''s twelve fruits and the leaves for healing (Revelation 22:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 24:4 — *its leaves and blooms and wood wither not for ever* the tree of life without peer, its unfading leaves the healing leaves of the city (Revelation 22:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=24 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'1 Enoch 24:11 — *its fruit shall be for life to the elect; it shall be transplanted to the holy place* the transplanting now accomplished, the tree given to the righteous for food (Revelation 22:2,14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=24 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'2 Esdras 8:52 — *paradise opened, the tree of life is planted... a city is builded* the whole vision named in one breath; Eden become the new Jerusalem (Revelation 22:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=8 AND tv.verse_number=52
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'Revelation 2:7 — *to eat of the tree of life, which is in the midst of the paradise of Elohim (God)* the opening promise to the overcomer kept at the close (Revelation 22:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-tree-of-life-and-the-leaves-for-the-healing-of-the-nations-eden-restored-genesis-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-22-there-shall-be-no-more-curse-the-edenic-undoing-zechariah-14
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Zechariah 14:11 — *there shall be no more utter destruction; but Jerusalem shall be safely inhabited* the lifting of the devotion-to-destruction over the restored city; the curse no more (Revelation 22:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-there-shall-be-no-more-curse-the-edenic-undoing-zechariah-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:17 — *cursed is the ground for thy sake; in sorrow shalt thou eat of it* the curse on the ground for Adam''s sake, now undone (Revelation 22:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-there-shall-be-no-more-curse-the-edenic-undoing-zechariah-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Esdras 8:53 — *the root of evil is sealed up from you... and corruption is fled* the root of the curse sealed away; what remains is the throne of Elohim (God) and of the Lamb (Revelation 22:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-there-shall-be-no-more-curse-the-edenic-undoing-zechariah-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=8 AND tv.verse_number=53
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Esdras 8:54 — *Sorrows are passed, and in the end is shewed the treasure of immortality* the sorrow of the curse passed, the immortality of the unending reign shown (Revelation 22:3,5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-there-shall-be-no-more-curse-the-edenic-undoing-zechariah-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=8 AND tv.verse_number=54
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-22-they-shall-see-his-face-his-name-in-their-foreheads-exodus-33
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 33:20 — *Thou canst not see my face: for there shall no man see me, and live* what Moses was denied, the servants are granted in the restored city (Revelation 22:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-they-shall-see-his-face-his-name-in-their-foreheads-exodus-33'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 17:15 — *I will behold thy face in righteousness: I shall be satisfied, when I awake, with thy likeness* the psalmist''s hope of seeing the face upon awaking, now fulfilled (Revelation 22:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-they-shall-see-his-face-his-name-in-their-foreheads-exodus-33'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=17 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 6:25 — *Yahuah (LORD) make his face shine upon thee* the priestly blessing''s shining face and the name laid on the people (v.27) both fulfilled (Revelation 22:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-they-shall-see-his-face-his-name-in-their-foreheads-exodus-33'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 7:3 — *till we have sealed the servants of our Elohim (God) in their foreheads* the seal of the seventh chapter now seen as the name on the forehead (Revelation 22:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-they-shall-see-his-face-his-name-in-their-foreheads-exodus-33'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-22-no-night-no-sun-yahuah-giveth-them-light-and-they-reign-isaiah-60
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 60:19 — *Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory* the light that is not the sun, the Maker himself lighting the city (Revelation 22:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-no-night-no-sun-yahuah-giveth-them-light-and-they-reign-isaiah-60'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:18 — *the saints of the El Elyon (most High) shall... possess the kingdom for ever, even for ever and ever* the everlasting kingdom of the saints, the reign of the servants (Revelation 22:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-no-night-no-sun-yahuah-giveth-them-light-and-they-reign-isaiah-60'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 7:27 — *the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom* the dominion given to the saints, fulfilled in the unending reign (Revelation 22:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-no-night-no-sun-yahuah-giveth-them-light-and-they-reign-isaiah-60'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 21:23 — *the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* the new Jerusalem''s light is the garden''s light; one restored creation (Revelation 22:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-no-night-no-sun-yahuah-giveth-them-light-and-they-reign-isaiah-60'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 21:25 — *there shall be no night there* the endless day binds the city-vision to the garden-vision; one place (Revelation 22:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-no-night-no-sun-yahuah-giveth-them-light-and-they-reign-isaiah-60'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-22-i-am-alpha-and-omega-the-root-and-offspring-of-david-isaiah-44
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 44:6 — *I am the first, and I am the last; and beside me there is no Elohim (God)* the self-naming of Yahuah (LORD), spoken by the Formed in the closing vision (Revelation 22:13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-i-am-alpha-and-omega-the-root-and-offspring-of-david-isaiah-44'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 11:1 — *a rod out of the stem of Jesse, and a Branch shall grow out of his roots* the Branch of Jesse; he is both root and offspring of David (Revelation 22:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-i-am-alpha-and-omega-the-root-and-offspring-of-david-isaiah-44'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 11:10 — *a root of Jesse, which shall stand for an ensign of the people* the root of David lifted as the ensign for the regathering of the scattered (Revelation 22:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-i-am-alpha-and-omega-the-root-and-offspring-of-david-isaiah-44'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Numbers 24:17 — *there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel)* Balaam''s far-off star, now *the bright and morning star* risen (Revelation 22:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-i-am-alpha-and-omega-the-root-and-offspring-of-david-isaiah-44'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=24 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:16 — *to keep his commandments and his statutes and his judgments, that thou mayest live* Moses binds commandment-keeping to life; the word *very nigh... in thy mouth, and in thy heart* (v.14) (Revelation 22:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Malachi 4:4 — *Remember ye the law of Moses my servant... with the statutes and judgments* the last word of the prophets before the dreadful day; the Torah remembered, now crowned with the tree of life (Revelation 22:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 1:2 — *his delight is in the law of Yahuah (LORD)* the blessed man *like a tree planted by the rivers* (v.3), given right at last to the tree of life by the river of life (Revelation 22:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 3:24 — *a flaming sword which turned every way, to keep the way of the tree of life* the way barred against the disobedient, now opened to *they that do his commandments* (Revelation 22:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Esdras 8:52 — *paradise opened, the tree of life is planted... a city is builded* the threefold gift of the righteous, named in one line as the beatitude names it (Revelation 22:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=8 AND tv.verse_number=52
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Revelation 12:17 — *the remnant of her seed, which keep the commandments of Elohim (God)* the saints named the commandment-keepers in the war; now blessed at the tree of life (Revelation 22:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Revelation 14:12 — *here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus)* the second of the three keep-the-commandments verses; the third is this beatitude (Revelation 22:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-blessed-are-they-that-do-his-commandments-the-tree-of-life-crown-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-22-the-spirit-and-the-bride-say-come-and-the-warning-not-to-add-isaiah-55
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 55:1 — *Ho, every one that thirsteth, come ye to the waters... without money and without price* Isaiah''s free invitation taken up by the Spirit and the bride; the water of life freely (Revelation 22:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-spirit-and-the-bride-say-come-and-the-warning-not-to-add-isaiah-55'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 4:2 — *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it* the guard Moses set over the Torah, now set over the words of the prophecy (Revelation 22:18).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-spirit-and-the-bride-say-come-and-the-warning-not-to-add-isaiah-55'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 12:32 — *thou shalt not add thereto, nor diminish from it* the commandments sealed against tampering, as the prophecy is sealed (Revelation 22:19).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-spirit-and-the-bride-say-come-and-the-warning-not-to-add-isaiah-55'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 30:6 — *Add thou not unto his words, lest he reprove thee, and thou be found a liar* for *every word of Elohim (God) is pure* (v.5); the guard over the pure word (Revelation 22:18).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv22_lookup sv, _s224_rv22_lookup tv
+ WHERE t.slug='revelation-22-the-spirit-and-the-bride-say-come-and-the-warning-not-to-add-isaiah-55'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=22 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=30 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session224 — Revelation cross-references complete.'
