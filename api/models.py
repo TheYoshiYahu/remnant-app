@@ -1380,3 +1380,63 @@ class ChapterKingdomResponse(BaseModel):
     book: ChapterEndCardBookRef
     chapter: ChapterEndCardChapterRef
     entries: List[KingdomEntry]
+
+
+# ----- Compare-only versions (S221 data, S224 UI) -------------------------
+
+
+class CompareVersion(BaseModel):
+    """One comparison-only public-domain translation — a picker card.
+
+    Mirrors compare_versions. ``compare_only`` is CHECK-pinned TRUE in the
+    schema and never surfaced; the UI treats every row here as a comparison
+    lens, never a readable full Bible. ``is_septuagint`` is a derived flag
+    (slug == 'brenton-lxx') so the picker can badge Brenton as the LXX.
+    """
+
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    slug: str
+    title: str
+    abbreviation: str
+    year: Optional[str] = None
+    has_old_testament: bool
+    has_new_testament: bool
+    is_septuagint: bool = False
+    notes: Optional[str] = None
+
+
+class CompareVersionsResponse(BaseModel):
+    """GET /v1/compare/versions — every comparison version, display order."""
+
+    versions: List[CompareVersion]
+
+
+class CompareVerseRow(BaseModel):
+    """One comparison verse (or LXX lettered sub-verse). Mirrors compare_verses."""
+
+    chapter: int
+    verse: int
+    verse_suffix: str = ""
+    text: str
+
+
+class CompareChapterResponse(BaseModel):
+    """GET /v1/compare/{version_id}/{book_slug}/{chapter}[?verse=N].
+
+    A single verse or a single chapter of one comparison version, beside the
+    reader's primary text. ``chapter_count`` is the version/book's verified
+    chapter total — the PWA uses it only to confirm the bounds; the HARD CAP
+    is that this endpoint never returns more than ONE chapter per call and
+    exposes no paging. ``scope`` echoes which mode was served.
+    """
+
+    version: CompareVersion
+    book_code: str
+    book_name: str
+    book_slug: str
+    chapter: int
+    chapter_count: int
+    scope: Literal["verse", "chapter"]
+    verses: List[CompareVerseRow]

@@ -169,6 +169,10 @@ from models import (
     ChapterWitnessResponse,
     KingdomEntry,
     ChapterKingdomResponse,
+    CompareVersion,
+    CompareVersionsResponse,
+    CompareVerseRow,
+    CompareChapterResponse,
     UpdateHighlightLabelsRequest,
     UpdateNoteRequest,
     UpsertReadingPositionRequest,
@@ -3688,6 +3692,201 @@ async def get_nikkudot_verse(
         verse_key=row["verse_key"],
         pointed_text=row["pointed_text"],
         has_tetragrammaton=row["has_tetragrammaton"],
+    )
+
+
+# ----- Compare-only versions (S221 data, S224 UI) -------------------------
+#
+# A comparison LENS over the reader's primary text — never a readable full
+# Bible. Two hard guarantees enforced here, not just in the UI:
+#
+#   1. compare_only is CHECK-pinned TRUE in the schema; these rows can never
+#      be served by the canon reader endpoints above (different tables).
+#   2. The chapter endpoint returns AT MOST ONE CHAPTER per call and exposes
+#      no paging primitive — there is deliberately no "next chapter" affordance
+#      to build a full-Bible reader on top of. The caller addresses exactly
+#      one (version, book, chapter[, verse]); that is the ceiling.
+#
+# Companion-gated, same gate + 403 shape as the other S197 study tools so the
+# PWA's tier-locked card renders identically.
+
+# Identity bridge: the reader addresses books by slug ('matthew'); the compare
+# tables key on USFM-ish book_code ('MAT'). compare_books.book_number for the
+# protocanon version 1 (KJV) is identical to books.canonical_order (1-66), so
+# version 1 is the universal lookup table from slug → stable book_code, which
+# is then shared across every comparison version (book_code is consistent
+# cross-version; a version simply lacks rows for books it doesn't carry, e.g.
+# the LXX has no NT codes).
+COMPARE_REFERENCE_VERSION_ID = 1
+
+
+def _compare_version_from_row(row) -> CompareVersion:
+    return CompareVersion(
+        id=row["id"],
+        slug=row["slug"],
+        title=row["title"],
+        abbreviation=row["abbreviation"],
+        year=row["year"],
+        has_old_testament=row["has_old_testament"],
+        has_new_testament=row["has_new_testament"],
+        is_septuagint=(row["slug"] == "brenton-lxx"),
+        notes=row["notes"],
+    )
+
+
+@app.get("/v1/compare/versions", response_model=CompareVersionsResponse)
+async def list_compare_versions(
+    response: Response,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> CompareVersionsResponse:
+    """Every comparison-only public-domain version, in display order.
+
+    Drives the compare-panel version picker. Companion-gated like the rest of
+    the study-tool library; Brenton's LXX is flagged ``is_septuagint`` so the
+    picker can badge it as the Septuagint (Old Testament only).
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        await _require_tooling_tier(conn, current_user)
+        rows = await conn.fetch(
+            "SELECT id, slug, title, abbreviation, year, "
+            "       has_old_testament, has_new_testament, notes "
+            "  FROM compare_versions "
+            " WHERE compare_only IS TRUE "
+            " ORDER BY id ASC"
+        )
+    response.headers["Cache-Control"] = "public, max-age=86400"
+    return CompareVersionsResponse(
+        versions=[_compare_version_from_row(r) for r in rows]
+    )
+
+
+@app.get(
+    "/v1/compare/{version_id}/{book_slug}/{chapter}",
+    response_model=CompareChapterResponse,
+)
+async def get_compare_chapter(
+    version_id: int,
+    book_slug: str,
+    chapter: int,
+    response: Response,
+    verse: Optional[int] = None,
+    current_user: Optional[User] = Depends(get_current_user_optional),
+) -> CompareChapterResponse:
+    """One verse (``?verse=N``) or one whole chapter of a comparison version.
+
+    HARD CAP: never more than a single chapter. There is no paging — the
+    caller names exactly one (version, book, chapter); ``verse`` narrows that
+    to a single verse (plus any LXX lettered sub-verses sharing the number).
+
+    Resolves the reader's ``book_slug`` to a stable USFM ``book_code`` via the
+    protocanon reference version, then reads that code from the requested
+    comparison version. 404 if the version doesn't carry the book (e.g. a NT
+    book requested against the Septuagint), if the chapter is out of range, or
+    if the slug is outside the shared protocanon.
+    """
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        await _require_tooling_tier(conn, current_user)
+
+        version_row = await conn.fetchrow(
+            "SELECT id, slug, title, abbreviation, year, "
+            "       has_old_testament, has_new_testament, notes "
+            "  FROM compare_versions "
+            " WHERE id = $1 AND compare_only IS TRUE",
+            version_id,
+        )
+        if version_row is None:
+            raise HTTPException(
+                status_code=404, detail=f"Comparison version {version_id} not found."
+            )
+
+        # slug → book_code via the protocanon reference version (book_number
+        # there == books.canonical_order).
+        code_row = await conn.fetchrow(
+            "SELECT cb.book_code "
+            "  FROM books b "
+            "  JOIN compare_books cb "
+            "    ON cb.book_number = b.canonical_order "
+            "   AND cb.version_id = $2 "
+            " WHERE b.slug = $1",
+            book_slug,
+            COMPARE_REFERENCE_VERSION_ID,
+        )
+        if code_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"'{book_slug}' is outside the comparison protocanon.",
+            )
+        book_code = code_row["book_code"]
+
+        # The requested version's own inventory for this book — gives the
+        # display name + the chapter_count that bounds the one-chapter cap.
+        book_row = await conn.fetchrow(
+            "SELECT book_name, chapter_count "
+            "  FROM compare_books "
+            " WHERE version_id = $1 AND book_code = $2",
+            version_id,
+            book_code,
+        )
+        if book_row is None:
+            raise HTTPException(
+                status_code=404,
+                detail=f"{version_row['abbreviation']} does not carry this book.",
+            )
+        chapter_count = book_row["chapter_count"]
+        if chapter < 1 or chapter > chapter_count:
+            raise HTTPException(
+                status_code=404,
+                detail=(
+                    f"Chapter {chapter} out of range "
+                    f"(1–{chapter_count}) for {version_row['abbreviation']}."
+                ),
+            )
+
+        if verse is not None:
+            verse_rows = await conn.fetch(
+                "SELECT chapter, verse, verse_suffix, text "
+                "  FROM compare_verses "
+                " WHERE version_id = $1 AND book_code = $2 "
+                "   AND chapter = $3 AND verse = $4 "
+                " ORDER BY verse_suffix ASC",
+                version_id,
+                book_code,
+                chapter,
+                verse,
+            )
+            scope = "verse"
+        else:
+            verse_rows = await conn.fetch(
+                "SELECT chapter, verse, verse_suffix, text "
+                "  FROM compare_verses "
+                " WHERE version_id = $1 AND book_code = $2 AND chapter = $3 "
+                " ORDER BY verse ASC, verse_suffix ASC",
+                version_id,
+                book_code,
+                chapter,
+            )
+            scope = "chapter"
+
+    response.headers["Cache-Control"] = "public, max-age=86400"
+    return CompareChapterResponse(
+        version=_compare_version_from_row(version_row),
+        book_code=book_code,
+        book_name=book_row["book_name"],
+        book_slug=book_slug,
+        chapter=chapter,
+        chapter_count=chapter_count,
+        scope=scope,
+        verses=[
+            CompareVerseRow(
+                chapter=r["chapter"],
+                verse=r["verse"],
+                verse_suffix=r["verse_suffix"],
+                text=r["text"],
+            )
+            for r in verse_rows
+        ],
     )
 
 

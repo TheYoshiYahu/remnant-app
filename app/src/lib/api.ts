@@ -1579,6 +1579,73 @@ export function fetchVincentsVerse(
   );
 }
 
+// ── Compare-only versions (S221 data, S224 UI) ───────────────────────────────
+// A comparison LENS, never a reader. fetchCompareChapter pulls at most ONE
+// chapter (or a single verse via the `verse` arg) of one public-domain
+// version beside the reader's primary text; there is no paging client-side
+// because the endpoint exposes none. Companion-gated, so both fetchers return
+// the same tagged union as the other study tools (tier-locked / not-found / ok).
+export interface CompareVersion {
+  id: number;
+  slug: string;
+  title: string;
+  abbreviation: string;
+  year: string | null;
+  has_old_testament: boolean;
+  has_new_testament: boolean;
+  /** True only for Brenton's LXX — the picker badges it as the Septuagint. */
+  is_septuagint: boolean;
+  notes: string | null;
+}
+
+export interface CompareVersionsResponse {
+  versions: CompareVersion[];
+}
+
+export interface CompareVerseRow {
+  chapter: number;
+  verse: number;
+  /** LXX lettered sub-verse ('' for the base row, 'a'/'b' for continuations). */
+  verse_suffix: string;
+  text: string;
+}
+
+export interface CompareChapterResponse {
+  version: CompareVersion;
+  book_code: string;
+  book_name: string;
+  book_slug: string;
+  chapter: number;
+  /** The book's verified chapter total — bounds only; never a paging cursor. */
+  chapter_count: number;
+  scope: "verse" | "chapter";
+  verses: CompareVerseRow[];
+}
+
+/** Every comparison-only version, for the picker. Companion-gated. */
+export function fetchCompareVersions(): Promise<
+  ToolFetchResult<CompareVersionsResponse>
+> {
+  return fetchTagged<CompareVersionsResponse>("/compare/versions");
+}
+
+/**
+ * One verse (pass `verse`) or one whole chapter (omit it) of a comparison
+ * version. The HARD CAP — at most one chapter, no paging — lives server-side;
+ * this client only ever requests a single (version, book, chapter).
+ */
+export function fetchCompareChapter(
+  versionId: number,
+  bookSlug: string,
+  chapter: number,
+  verse?: number,
+): Promise<ToolFetchResult<CompareChapterResponse>> {
+  const q = verse != null ? `?verse=${verse}` : "";
+  return fetchTagged<CompareChapterResponse>(
+    `/compare/${versionId}/${encodeURIComponent(bookSlug)}/${chapter}${q}`,
+  );
+}
+
 // ── Nave's Topical ───────────────────────────────────────────────────────────
 export interface NavesTopicSummary {
   topic_slug: string;

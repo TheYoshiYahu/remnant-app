@@ -58,6 +58,7 @@ import NikkudotSheet from "./components/NikkudotSheet";
 import TskSheet from "./components/TskSheet";
 import NavesSheet from "./components/NavesSheet";
 import MapsSheet from "./components/MapsSheet";
+import CompareSheet from "./components/CompareSheet";
 import VerseActionMenu, {
   type MenuItem,
   type MenuSection,
@@ -796,6 +797,11 @@ function Reader() {
     null,
   );
   const [mapsOpen, setMapsOpen] = useState<boolean>(false);
+  // S224 — "Compare to another version" lens. Carries the anchor verse; the
+  // sheet itself owns the version picker + verse/chapter scope.
+  const [compareState, setCompareState] = useState<
+    { bookSlug: string; bookTitle: string; chapter: number; verse: number; verseLabel: string } | null
+  >(null);
 
   // S123 W4 — range-selection state + post-capture action picker target.
   // rangeState holds the shared mechanic per DESIGN_LANGUAGE.md §21:
@@ -3753,6 +3759,10 @@ function Reader() {
                 setMenuState(null);
                 setMapsOpen(true);
               },
+              onCompare: (ref) => {
+                setMenuState(null);
+                setCompareState(ref);
+              },
             },
             // S172 — text-transform passed in so the §24 share/copy
             // path inside buildMenuSections can apply the partner's
@@ -3842,6 +3852,21 @@ function Reader() {
         />
       )}
       {mapsOpen && <MapsSheet onClose={() => setMapsOpen(false)} />}
+      {compareState !== null && chapterDetail && (
+        <CompareSheet
+          bookSlug={compareState.bookSlug}
+          bookTitle={compareState.bookTitle}
+          chapter={compareState.chapter}
+          verse={compareState.verse}
+          verseLabel={compareState.verseLabel}
+          readerVerses={chapterDetail.verses.map((v) => ({
+            verse_number: v.verse_number,
+            text: v.text,
+          }))}
+          applySacredMask={applySacredMask}
+          onClose={() => setCompareState(null)}
+        />
+      )}
 
       {/*
         S123 W4 — RangeActionPicker opens automatically when the
@@ -4364,6 +4389,14 @@ function buildMenuSections(
     onNaves?: (initialQuery?: string) => void;
     /** S197 — Maps own-tile dispersion/gathering surface (standalone). */
     onMaps?: () => void;
+    /** S224 — "Compare to another version" lens for the long-pressed verse. */
+    onCompare?: (ref: {
+      bookSlug: string;
+      bookTitle: string;
+      chapter: number;
+      verse: number;
+      verseLabel: string;
+    }) => void;
   },
   /** S172 — sacred-name mask transform. Applied to verse text before
    *  the §24 share/copy pipeline paints. Pure function; no React. */
@@ -4627,6 +4660,39 @@ function buildMenuSections(
     );
   }
 
+  // ── Compare (verse scope, added S224) ────────────────────────────
+  // "Compare to another version" — opens the comparison lens (nine public-
+  // domain translations incl. Brenton's LXX) beside the reader's text for
+  // this verse or this chapter. Companion-gated like the other library tool
+  // surfaces; verse-scoped, so it only goes live on a resolved verse.
+  // Below-Companion partners see the tier-locked stub routing to /pricing.
+  const compare: MenuItem[] = [];
+  if (isCompanionTier && verse && handlers.onCompare) {
+    const v = verse;
+    compare.push({
+      key: "compare-versions",
+      label: "Compare to another version",
+      icon: "⇄",
+      onSelect: () =>
+        handlers.onCompare!({
+          bookSlug,
+          bookTitle,
+          chapter: chapterNumber,
+          verse: v.verse_number,
+          verseLabel: `${bookTitle} ${chapterNumber}:${v.verse_number}`,
+        }),
+    });
+  } else {
+    compare.push(
+      makeTierStub(
+        "compare-versions",
+        "Compare to another version",
+        "library",
+        partnerTier,
+      ),
+    );
+  }
+
   // ── Share (verse scope) ──────────────────────────────────────────
   // S127 W7 — Copy verse promoted from text-only clipboard to canvas-
   // PNG-with-text-fallback (same renderer as Share with watermark).
@@ -4722,6 +4788,7 @@ function buildMenuSections(
     { title: "Notes", items: notes },
     { title: "Cross-references", items: crossRefs },
     { title: "Reference tools", items: referenceTools },
+    { title: "Compare", items: compare },
     { title: "Share", items: share },
     { title: "Range", items: range },
   ];
