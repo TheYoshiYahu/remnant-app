@@ -2469,6 +2469,1140 @@ SELECT t.id, x.id, 2, E'Psalm 44:18 — *our heart is not turned back, neither h
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_romans_09.sql (S219 Romans 9) -----
+-- =====================================================================
+-- S219 minion — ROMANS 9 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 9.  Tag: r09 (temp view _s219_r09_lookup).  Sort band: 6200-6224, step 3.
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Red Lines #1/#3/#7/#11 — HIGHEST VOICE-RISK PASSAGE): Romans 9 is read
+-- as ISRAEL'S OWN — corporate/covenantal election, restoration not replacement, NEVER
+-- individual-soul predestination and NEVER a new people displacing Israel.
+--   * 9:4-5 — the adoption, the glory, the covenants, the law, the service, the promises
+--     belong to Yashar'el (Israel) and are NOT revoked. Paul grieves FOR his kinsmen — the
+--     proof Elohim has not finished with them.
+--   * The election of Isaac/Jacob over Ishmael/Esau, and the hardening of Pharaoh, is
+--     CORPORATE — which line carries the promise, which nation rises — read nation-level
+--     through *two nations are in thy womb* (Genesis 25:23) and Malachi 1:2-3 (Esau = Edom).
+--     NOT a decree of individual souls to heaven or hell.
+--   * 9:24 — vessels of mercy called *not of the Yahudim (Jews) only, but also of the
+--     Gentiles* = the TWO HOUSES, Yahudah and the scattered Yosef/Ephraim of the north.
+--   * 9:25-26 — *I will call them my people, which were not my people* (= Hosea 2:23) and
+--     *the children of the living Elohim (God)* (= Hosea 1:10) is the Lo-Ammi / Lo-Ruhamah
+--     of the DIVORCED NORTHERN HOUSE regathered — the once-cast-off seed reclaimed, NOT
+--     outsiders newly admitted by confession.
+--   * 9:27-29 — *a remnant shall be saved* (Isaiah 10:22-23); *except a seed, we had been
+--     as Sodoma* (Isaiah 1:9) — the faithful remnant of Israel preserved, the down-payment
+--     of the gathering.
+--   * 9:32-33 — the stumblingstone (Isaiah 8:14, 28:16) — Israel stumbled at the stone, but
+--     the stone is LAID IN ZION for them, a sanctuary and sure foundation, not against them.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-2   Paul's heaviness                       Tanakh: none added (carried at v.3-5)  Extras: none warranted  NT: none warranted (epistolary lament)
+--   v.3-5   covenants/law/promises pertain to Israel Tanakh: Exodus 4:22 (Israel my firstborn son), Deuteronomy 7:6 (a holy people, chosen)  Extras: 2 Esdras 8:16 (Israel my inheritance, for whom I mourn)  NT: none added
+--   v.6-9   In Isaac shall thy seed be called        Tanakh: Genesis 21:12 (in Isaac shall thy seed be called)  Extras: none warranted  NT: none added
+--   v.10-13 Jacob/Esau, the elder serve the younger  Tanakh: Genesis 25:23 (two nations in thy womb), Malachi 1:2-3 (Jacob loved, Esau hated = Edom)  Extras: none warranted  NT: none added
+--   v.14-18 mercy on whom I will; Pharaoh raised up   Tanakh: Exodus 33:19 (I will have mercy on whom I will), Exodus 9:16 (for this cause raised thee up)  Extras: Wisdom of Solomon 12:18, 12:16 (mastering power, gracious to all; longsuffering)  NT: none added
+--   v.19-23 the thing formed; potter over the clay    Tanakh: Isaiah 29:16 (shall the thing framed say...), Isaiah 45:9 (woe to him that striveth with his Maker), Jeremiah 18:6 (as clay in the potter's hand)  Extras: Wisdom of Solomon 15:7 (same clay, vessels for clean and contrary uses), 2 Esdras 8:2 (much mould for vessels, little dust for gold)  NT: none added
+--   v.24-26 not of the Jews only but also the Gentiles Tanakh: Hosea 2:23 (I will say to them which were not my people, Thou art my people), Hosea 1:10 (the sons of the living Elohim), Hosea 2:1 (Ammi, Ru-hamah)  Extras: none warranted  NT: none added (two-house gathering carried by Hosea targets)
+--   v.27-29 a remnant shall be saved / except a seed   Tanakh: Isaiah 10:22-23 (a remnant shall return), Isaiah 1:9 (except a remnant, as Sodom)  Extras: 2 Esdras 9:7-8 (saved by works and by faith, sanctified from the beginning), 2 Esdras 9:21-22 (a grape of the cluster kept)  NT: none added
+--   v.30-33 the stumblingstone laid in Zion            Tanakh: Isaiah 8:14 (a stone of stumbling to both houses), Isaiah 28:16 (I lay in Zion a sure foundation)  Extras: none warranted  NT: none added
+--
+-- THREADS (slug -> target libraries):
+--   6200 romans-9-to-them-pertain-the-covenants-paul-grieves-for-his-kinsmen-israel       (Tanakh + Extras)
+--   6203 romans-9-in-isaac-shall-thy-seed-be-called-the-corporate-election-of-the-line    (Tanakh)
+--   6206 romans-9-i-will-have-mercy-on-whom-i-will-have-mercy-the-sovereign-compassion    (Tanakh + Extras)
+--   6209 romans-9-the-thing-formed-and-the-potter-over-the-clay                            (Tanakh + Extras)
+--   6212 romans-9-i-will-call-them-my-people-which-were-not-my-people-lo-ammi-regathered   (Tanakh)
+--   6215 romans-9-a-remnant-shall-be-saved-except-a-seed-we-had-been-as-sodom              (Tanakh + Extras)
+--   6218 romans-9-the-stumblingstone-laid-in-zion-they-stumbled-at-the-stone               (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-9-to-them-pertain-the-covenants-paul-grieves-for-his-kinsmen-israel
+  ('canon', 'romans', 9, 4, 'canon', 'exodus', 4, 22, 'free', E'*And thou shalt say unto Pharaoh, Thus saith Yahuah (LORD), Yashar''el (Israel) is my son, even my firstborn:* (Exodus 4:22). Paul names his kinsmen *Israelites; to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of Elohim (God), and the promises* (Romans 9:4). The adoption is no new thing handed to outsiders — Yahuah called Yashar''el his firstborn son before Pharaoh, and that sonship is the first of the things that still *pertain* to them. Paul lists what is theirs to prove the word of Elohim has not failed.'),
+  ('canon', 'romans', 9, 4, 'canon', 'deuteronomy', 7, 6, 'free', E'*For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth.* (Deuteronomy 7:6). To Yashar''el *pertaineth the adoption, and the glory, and the covenants … and the promises* (Romans 9:4). Moses had already declared them chosen, a special people. Paul does not revoke that choosing — he grieves precisely because it stands, and his kinsmen according to the flesh have not yet known the day of their gathering.'),
+  ('canon', 'romans', 9, 4, 'apocrypha', '2-esdras', 8, 16, 'extras', E'*And for your inheritance, for whose cause I mourn; and for Yashar''el (Israel), for whom I am heavy; and for Jacob, for whose sake I am troubled;* (2 Esdras 8:16). *I have great heaviness and continual sorrow in my heart* (Romans 9:2), Paul says, *for my brethren, my kinsmen according to the flesh* (Romans 9:3). Esdras carried the same burden long before — heavy and troubled for Yashar''el, the inheritance, the seed of Jacob. The grief is the proof of love, not of rejection: the prophet and the apostle both mourn for the covenant people, certain Elohim will not abandon his own inheritance.'),
+  -- thread: romans-9-in-isaac-shall-thy-seed-be-called-the-corporate-election-of-the-line
+  ('canon', 'romans', 9, 7, 'canon', 'genesis', 21, 12, 'free', E'*And Elohim (God) said unto Abraham, Let it not be grievous in thy sight because of the lad, and because of thy bondwoman; in all that Sarah hath said unto thee, hearken unto her voice; for in Isaac shall thy seed be called.* (Genesis 21:12). *Neither, because they are the seed of Abraham, are they all children: but, In Isaac shall thy seed be called* (Romans 9:7). Paul quotes the word at Beer-sheba: the line of promise runs through Isaac, not Ishmael. This is the choosing of which seed carries the covenant — a corporate, generational election of the line, not a verdict on the eternal fate of one man''s soul.'),
+  ('canon', 'romans', 9, 12, 'canon', 'genesis', 25, 23, 'free', E'*And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* (Genesis 25:23). *It was said unto her, The elder shall serve the younger* (Romans 9:12). The word to Rebecca is spoken of *two nations* and *two manner of people* — not two individuals weighed for heaven. The election of the younger over the elder is the choosing of which people will carry the promise; the very verse Paul cites names them nations in the womb.'),
+  ('canon', 'romans', 9, 13, 'canon', 'malachi', 1, 2, 'free', E'*I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* (Malachi 1:2). *As it is written, Jacob have I loved, but Esau have I hated* (Romans 9:13). Paul quotes Malachi, and Malachi is speaking of nations: the next breath lays *his mountains and his heritage waste* and names *Edom* (Malachi 1:3-4). Esau is Edom, a people and a land under judgment — the love and the hatred are spoken over the houses the brothers fathered, the covenantal sorting of the lines, not the predestining of two souls.'),
+  ('canon', 'romans', 9, 13, 'canon', 'malachi', 1, 3, 'free', E'*And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness.* (Malachi 1:3). *Jacob have I loved, but Esau have I hated* (Romans 9:13). The hatred Paul cites is not abstract: Malachi names it as the laying waste of Esau''s mountains and heritage — the judgment that falls on Edom the nation. Read in its own context the word is corporate and territorial, the sorting of which people inherits and which is brought low, never a decree fixing the fate of individual souls before they were born.'),
+  -- thread: romans-9-i-will-have-mercy-on-whom-i-will-have-mercy-the-sovereign-compassion
+  ('canon', 'romans', 9, 15, 'canon', 'exodus', 33, 19, 'free', E'*And he said, I will make all my goodness pass before thee, and I will proclaim the name of Yahuah (LORD) before thee; and will be gracious to whom I will be gracious, and will shew mercy on whom I will shew mercy.* (Exodus 33:19). *For he saith to Moses, I will have mercy on whom I will have mercy, and I will have compassion on whom I will have compassion* (Romans 9:15). Paul quotes the word spoken at the mount, where Yahuah declared his name to be goodness and mercy. The setting is the renewal of the covenant after the calf — mercy proclaimed to a people who deserved consuming. The sovereign freedom to show mercy is named at the very moment Yashar''el is spared, not at a courtroom of damnation.'),
+  ('canon', 'romans', 9, 17, 'canon', 'exodus', 9, 16, 'free', E'*And in very deed for this cause have I raised thee up, for to shew in thee my power; and that my name may be declared throughout all the earth.* (Exodus 9:16). *For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth* (Romans 9:17). Pharaoh is raised up that the name might be declared in all the earth — the hardening serves the deliverance of Yashar''el and the spreading of the renown of Yahuah. The purpose is the redemption of the firstborn son out of Egypt; Pharaoh''s hardening is the dark backdrop against which the mercy on the covenant people is shown.'),
+  ('canon', 'romans', 9, 18, 'apocrypha', 'the-wisdom-of-solomon', 12, 18, 'extras', E'*But you, mastering your power, judgest with equity, and orderest us with great favour: for you may use power when you will.* (Wisdom of Solomon 12:18). *Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth* (Romans 9:18). The wisdom-writer holds the same truth Paul presses: the One who *may use power when he will* nonetheless *judgest with equity* and orders his own with great favour. The sovereign hand is never arbitrary cruelty — it is power mastered, mercy ordered, the same hand that hardens the oppressor showing favour to the people he loves.'),
+  ('canon', 'romans', 9, 15, 'apocrypha', 'the-wisdom-of-solomon', 12, 16, 'extras', E'*For your power is the beginning of righteousness, and because you are Yahuah (God) of all, it makes you to be gracious to all.* (Wisdom of Solomon 12:16). *I will have mercy on whom I will have mercy, and I will have compassion on whom I will have compassion* (Romans 9:15). The wisdom-writer roots the very freedom Paul names in righteousness: because Yahuah is Elohim of all, his power *makes him to be gracious.* Sovereign mercy is the outflow of a righteous heart, not a cold lottery — the freedom to show compassion is the freedom of the One whose power is *the beginning of righteousness.*'),
+  -- thread: romans-9-the-thing-formed-and-the-potter-over-the-clay
+  ('canon', 'romans', 9, 20, 'canon', 'isaiah', 29, 16, 'free', E'*Surely your turning of things upside down shall be esteemed as the potter''s clay: for shall the work say of him that made it, He made me not? or shall the thing framed say of him that framed it, He had no understanding?* (Isaiah 29:16). *Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20). Paul reaches straight for Isaiah''s image: the thing framed cannot arraign its Maker. And mark what frames it in Isaiah — the very next promise is that *the deaf hear the words of the book, and the eyes of the blind shall see* (Isaiah 29:18). The potter''s sovereignty is bent toward restoration, the opening of blind eyes in Yashar''el, not the breaking of the clay.'),
+  ('canon', 'romans', 9, 20, 'canon', 'isaiah', 45, 9, 'free', E'*Woe unto him that striveth with his Maker! Let the potsherd strive with the potsherds of the earth. Shall the clay say to him that fashioneth it, What makest thou? or thy work, He hath no hands?* (Isaiah 45:9). *Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20). Isaiah''s woe stands behind Paul''s rebuke. And in Isaiah the Maker''s purpose is named outright: *in Yahuah (LORD) shall all the seed of Yashar''el (Israel) be justified, and shall glory* (Isaiah 45:25). The potter who will not be questioned is the same who has sworn the justifying and the gathering of the seed — the clay is in the hand of One determined to save it.'),
+  ('canon', 'romans', 9, 21, 'canon', 'jeremiah', 18, 6, 'free', E'*O house of Yashar''el (Israel), cannot I do with you as this potter? saith Yahuah (LORD). Behold, as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel).* (Jeremiah 18:6). *Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21). The figure is Jeremiah''s, and Jeremiah names the clay: *the house of Yashar''el (Israel).* And the potter''s work there is remaking — *the vessel … was marred … so he made it again another vessel* (Jeremiah 18:4). The sovereignty over the clay is the sovereignty to reshape and restore the very house that was marred, conditioned on whether the nation turns (Jeremiah 18:8).'),
+  ('canon', 'romans', 9, 21, 'apocrypha', 'the-wisdom-of-solomon', 15, 7, 'extras', E'*For the potter, tempering soft earth, fashioneth every vessel with much labour for our service: yes, of the same clay he makes both the vessels that serve for clean uses, and likewise also all such as serve to the contrary: but what is the use of either sort, the potter himself is the judge.* (Wisdom of Solomon 15:7). *Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21). The wisdom-writer drew the exact image Paul draws — one clay, the same lump, vessels for clean uses and vessels to the contrary, and *the potter himself is the judge.* Paul is not inventing a new doctrine of arbitrary fate; he is pressing a figure already common in the library, the Maker''s rightful authority over what he forms.'),
+  ('canon', 'romans', 9, 23, 'apocrypha', '2-esdras', 8, 2, 'extras', E'*I will tell you a similitude, Esdras; As when you ask the earth, it shall say to you, that it gives much mould of which earthen vessels are made, but little dust that gold comes of: even so is the course of this present world.* (2 Esdras 8:2). *And that he might make known the riches of his glory on the vessels of mercy, which he had afore prepared unto glory* (Romans 9:23). Esdras too speaks of vessels formed from the earth and of the few of great worth drawn from the many — the much mould, the little gold. The vessels of mercy *afore prepared unto glory* are that precious remnant, the seed kept back from the lump for the riches of his glory, the down-payment of the gathering.'),
+  -- thread: romans-9-i-will-call-them-my-people-which-were-not-my-people-lo-ammi-regathered
+  ('canon', 'romans', 9, 25, 'canon', 'hosea', 2, 23, 'free', E'*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God).* (Hosea 2:23). *As he saith also in Osee, I will call them my people, which were not my people; and her beloved, which was not beloved* (Romans 9:25). This is the word Paul quotes, and it is spoken over the divorced northern house — Lo-Ruhamah, *her that had not obtained mercy,* and Lo-Ammi, *them which were not my people.* These are not strangers newly admitted by confession; they are the cast-off seed of Yashar''el reclaimed, *sown … in the earth* and gathered, the once-not-my-people made my people again.'),
+  ('canon', 'romans', 9, 26, 'canon', 'hosea', 1, 10, 'free', E'*Yet the number of the children of Yashar''el (Israel) shall be as the sand of the sea, which cannot be measured nor numbered; and it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God).* (Hosea 1:10). *And it shall come to pass, that in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God)* (Romans 9:26). Paul quotes Hosea word for word. The *children of the living Elohim* are *the children of Yashar''el* multiplied as the sand — the scattered seed of the north, dispersed among the nations until they were *not my people,* now reclaimed in the very place of their scattering. The vessels of mercy *also of the Gentiles* (Romans 9:24) are this dispersed house coming home, not a replacement people.'),
+  ('canon', 'romans', 9, 25, 'canon', 'hosea', 2, 1, 'free', E'*Say ye unto your brethren, Ammi; and to your sisters, Ru-hamah.* (Hosea 2:1). *I will call them my people, which were not my people; and her beloved, which was not beloved* (Romans 9:25). Hosea reverses the names of judgment: Lo-Ammi (not my people) becomes Ammi (my people), and Lo-Ruhamah (not beloved, not pitied) becomes Ru-hamah (beloved, having obtained mercy). Paul''s *my people, which were not my people* and *her beloved, which was not beloved* is exactly this undoing — the divorced house addressed again as brethren and sisters, the names of casting-off lifted from the scattered seed.'),
+  -- thread: romans-9-a-remnant-shall-be-saved-except-a-seed-we-had-been-as-sodom
+  ('canon', 'romans', 9, 27, 'canon', 'isaiah', 10, 22, 'free', E'*For though thy people Yashar''el (Israel) be as the sand of the sea, yet a remnant of them shall return: the consumption decreed shall overflow with righteousness.* (Isaiah 10:22). *Esaias also crieth concerning Yashar''el (Israel), Though the number of the children of Yashar''el (Israel) be as the sand of the sea, a remnant shall be saved* (Romans 9:27). Paul quotes Isaiah, and Isaiah''s word is hope, not abandonment: *the remnant shall return, even the remnant of Jacob, unto El Gibbor (the mighty God)* (Isaiah 10:21). The saved remnant is the kept seed of Yashar''el, the survivors of Jacob who lean again upon the Holy One — the gathering''s first sheaf, proof the whole harvest is coming.'),
+  ('canon', 'romans', 9, 28, 'canon', 'isaiah', 10, 23, 'free', E'*For Adonai Yahuah (the Lord GOD) of hosts shall make a consumption, even determined, in the midst of all the land.* (Isaiah 10:23). *For he will finish the work, and cut it short in righteousness: because a short work will Yahuah (Lord) make upon the earth* (Romans 9:28). Paul carries Isaiah''s next line: the determined consumption, the short and decisive work. Yet in Isaiah the very next breath comforts the remnant — *be not afraid of the Assyrian … for yet a very little while, and the indignation shall cease* (Isaiah 10:24-25). The cutting-short in righteousness clears the ground for the kept seed; the judgment is the threshing that preserves the wheat.'),
+  ('canon', 'romans', 9, 29, 'canon', 'isaiah', 1, 9, 'free', E'*Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah.* (Isaiah 1:9). *And as Esaias said before, Except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma, and been made like unto Gomorrha* (Romans 9:29). Paul quotes Isaiah''s confession: only the seed Yahuah left kept Yashar''el from the utter end of Sodom. The remnant is sheer mercy — a seed preserved when the whole deserved consuming. That kept seed is the pledge that the house is not finished; the gathering begins with the few who were spared.'),
+  ('canon', 'romans', 9, 27, 'apocrypha', '2-esdras', 9, 8, 'extras', E'*Shall be preserved from the said perils, and shall see my salvation in my land, and within my borders: for I have sanctified them for me from the beginning.* (2 Esdras 9:8). *Though the number of the children of Yashar''el (Israel) be as the sand of the sea, a remnant shall be saved* (Romans 9:27). Esdras names the saved as those *sanctified … from the beginning* — set apart before, not chosen after by their response. The remnant that *shall see my salvation in my land* is the kept seed, marked from the foundation and preserved through the perils; their salvation reveals what was already true, the covenant standing from of old.'),
+  ('canon', 'romans', 9, 29, 'apocrypha', '2-esdras', 9, 21, 'extras', E'*And I saw, and spared it greatly, and have kept me a grape of the cluster, and a plant of a great people.* (2 Esdras 9:21). *Except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma* (Romans 9:29). Esdras speaks the same mercy Paul confesses: out of the great people the Most High *kept me a grape of the cluster, and a plant* — the preserved few from among the many. The seed Yahuah left, the grape kept from the cluster, is the same remnant: spared greatly, kept by labour, the living root from which the whole gathered people will grow again.'),
+  -- thread: romans-9-the-stumblingstone-laid-in-zion-they-stumbled-at-the-stone
+  ('canon', 'romans', 9, 32, 'canon', 'isaiah', 8, 14, 'free', E'*And he shall be for a sanctuary; but for a stone of stumbling and for a rock of offence to both the houses of Yashar''el (Israel), for a gin and for a snare to the inhabitants of Jerusalem.* (Isaiah 8:14). *For they stumbled at that stumblingstone* (Romans 9:32). Paul draws on Isaiah, and Isaiah names the stone first a *sanctuary* — and only then *a stone of stumbling … to both the houses of Yashar''el.* The same stone is refuge and offence: a sanctuary to those who sanctify Yahuah and lean on him, a stumbling to those who would not. It is set for both houses, Yahudah and the scattered north — the stone of Yashar''el''s own, not a rock raised against them.'),
+  ('canon', 'romans', 9, 33, 'canon', 'isaiah', 28, 16, 'free', E'*Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste.* (Isaiah 28:16). *As it is written, Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed* (Romans 9:33). Paul binds Isaiah''s two stones into one: the rock of offence and the precious corner stone are the same stone, *laid in Zion* by Yahuah himself. He is a tried, sure foundation for his people — *whosoever believeth on him shall not be ashamed.* The stone is set in Zion FOR Yashar''el; they stumbled at him by seeking righteousness as it were by works, but the stone laid in Zion is laid for them to build upon, the cornerstone of the house being gathered.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-9-to-them-pertain-the-covenants-paul-grieves-for-his-kinsmen-israel',
+       E'To them pertain the covenants — Paul grieves for his kinsmen Yashar''el (Israel)',
+       E'Romans 9 opens not with a verdict against Yashar''el (Israel) but with grief for her: *I have great heaviness and continual sorrow in my heart* (Romans 9:2), *for my brethren, my kinsmen according to the flesh* (Romans 9:3). And the grief is built on what still stands — *who are Israelites; to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of Elohim (God), and the promises; whose are the fathers* (Romans 9:4-5). The verb is present: these things *pertain* to them yet, not once-upon-a-time. The adoption is no new thing handed to outsiders — Yahuah named Yashar''el his own before Pharaoh: *Yashar''el (Israel) is my son, even my firstborn* (Exodus 4:22). The choosing is old: *Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself* (Deuteronomy 7:6). And the heaviness Paul feels is the heaviness the prophets felt before him — *for Yashar''el (Israel), for whom I am heavy; and for Jacob, for whose sake I am troubled* (2 Esdras 8:16). Paul lists what is theirs and grieves over them precisely to prove the word of Elohim has not failed. He has not finished with his people; the apostle''s sorrow is the surest sign the covenant still holds.',
+       sv.verse_id, ev.verse_id, 'extras', 6200
+  FROM _s219_r09_lookup sv, _s219_r09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=9 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-9-in-isaac-shall-thy-seed-be-called-the-corporate-election-of-the-line',
+       E'In Isaac shall thy seed be called — the corporate election of the line',
+       E'*For they are not all Yashar''el (Israel), which are of Yashar''el (Israel)* (Romans 9:6) — and Paul proves it from the patriarchs, but the proof is the choosing of which line carries the promise, never a decree weighing individual souls for heaven or hell. *In Isaac shall thy seed be called* (Romans 9:7) is the word at Beer-sheba: *for in Isaac shall thy seed be called* (Genesis 21:12) — the covenant runs through Isaac, not Ishmael. So with the next generation: *the elder shall serve the younger* (Romans 9:12), and the word to Rebecca is spoken plainly of peoples — *two nations are in thy womb, and two manner of people shall be separated from thy bowels … and the elder shall serve the younger* (Genesis 25:23). When Paul writes *Jacob have I loved, but Esau have I hated* (Romans 9:13) he quotes Malachi, and Malachi is speaking nation to nation: *yet I loved Jacob, and I hated Esau, and laid his mountains and his heritage waste* (Malachi 1:2-3) — Esau is Edom, a people and a land brought low. From the womb to the wilderness of Edom, the election here is corporate and covenantal: which seed bears the promise, which house rises and which is humbled. It is not the predestining of two men''s eternal fates before they had done good or evil.',
+       sv.verse_id, ev.verse_id, 'free', 6203
+  FROM _s219_r09_lookup sv, _s219_r09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=9 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-9-i-will-have-mercy-on-whom-i-will-have-mercy-the-sovereign-compassion',
+       E'I will have mercy on whom I will have mercy — the sovereign compassion',
+       E'*For he saith to Moses, I will have mercy on whom I will have mercy, and I will have compassion on whom I will have compassion* (Romans 9:15). Paul quotes the word given at the mount, and the setting is everything: *I will make all my goodness pass before thee, and I will proclaim the name of Yahuah (LORD) before thee; and will be gracious to whom I will be gracious, and will shew mercy on whom I will shew mercy* (Exodus 33:19). This is mercy proclaimed to Yashar''el (Israel) just after the calf — the people spared who deserved consuming. The sovereign freedom to show mercy is named at the very moment the covenant is renewed, not at a tribunal of the damned. And the counterweight, Pharaoh, serves the same deliverance: *Even for this same purpose have I raised thee up, that I might shew my power in thee* (Romans 9:17), quoting *for this cause have I raised thee up, for to shew in thee my power; and that my name may be declared throughout all the earth* (Exodus 9:16) — the hardening of the oppressor is the dark ground against which the redemption of the firstborn son is shown. *Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth* (Romans 9:18). And this is never arbitrary cruelty: *you, mastering your power, judgest with equity, and orderest us with great favour* (Wisdom of Solomon 12:18), for *your power is the beginning of righteousness, and because you are Yahuah (God) of all, it makes you to be gracious to all* (Wisdom of Solomon 12:16). The hand that hardens Egypt is the same hand showing favour to the people he loves — power mastered, mercy ordered, the freedom of a righteous Elohim.',
+       sv.verse_id, ev.verse_id, 'extras', 6206
+  FROM _s219_r09_lookup sv, _s219_r09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=9 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-9-the-thing-formed-and-the-potter-over-the-clay',
+       E'The thing formed and the potter over the clay',
+       E'*Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20). Paul reaches for a figure already worn smooth in the library — and every place it is used, it bends toward restoration, not toward the breaking of the clay. Isaiah: *shall the thing framed say of him that framed it, He had no understanding?* (Isaiah 29:16) — and the very next promise is *the eyes of the blind shall see out of obscurity* (Isaiah 29:18). Isaiah again: *Woe unto him that striveth with his Maker! … Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9) — and that same chapter swears *in Yahuah (LORD) shall all the seed of Yashar''el (Israel) be justified, and shall glory* (Isaiah 45:25). Jeremiah names the clay outright: *as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (Jeremiah 18:6) — where the potter *made it again another vessel* (Jeremiah 18:4), remaking the marred house. So *hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21) is no novel decree of arbitrary fate. The wisdom-writer drew the same picture: *of the same clay he makes both the vessels that serve for clean uses, and likewise also all such as serve to the contrary: but … the potter himself is the judge* (Wisdom of Solomon 15:7). And the vessels of mercy *afore prepared unto glory* (Romans 9:23) are the precious few drawn from the lump — as Esdras saw, *much mould of which earthen vessels are made, but little dust that gold comes of* (2 Esdras 8:2). The potter''s sovereignty is the sovereignty to reshape, to keep back the gold, to remake the house that was marred.',
+       sv.verse_id, ev.verse_id, 'extras', 6209
+  FROM _s219_r09_lookup sv, _s219_r09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=9 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-9-i-will-call-them-my-people-which-were-not-my-people-lo-ammi-regathered',
+       E'I will call them my people, which were not my people — the Lo-Ammi regathered',
+       E'The vessels of mercy are *us, whom he hath called, not of the Yahudim (Jews) only, but also of the Gentiles* (Romans 9:24) — and this is the two houses, Yahudah and the scattered seed of the north, not a new people displacing Yashar''el (Israel). Paul proves it from Hosea, and Hosea''s words are spoken over the divorced northern house. *I will call them my people, which were not my people; and her beloved, which was not beloved* (Romans 9:25) quotes *I will say to them which were not my people, Thou art my people … I will have mercy upon her that had not obtained mercy* (Hosea 2:23) — Lo-Ammi (not my people) and Lo-Ruhamah (not pitied), the very children of judgment, reclaimed. Hosea had already reversed the names: *Say ye unto your brethren, Ammi; and to your sisters, Ru-hamah* (Hosea 2:1) — my people, beloved, the names of casting-off lifted off the scattered seed. And *in the place where it was said unto them, Ye are not my people; there shall they be called the children of the living Elohim (God)* (Romans 9:26) quotes Hosea word for word: *the number of the children of Yashar''el (Israel) shall be as the sand of the sea … there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10). The children of the living Elohim ARE the children of Yashar''el multiplied as the sand — the dispersed house, scattered among the nations until they were *not my people,* reclaimed in the very place of their scattering. The Gentiles of Romans 9:24 are this house coming home. Not outsiders newly admitted by confession — the once-cast-off seed of the north, made Ammi again.',
+       sv.verse_id, ev.verse_id, 'free', 6212
+  FROM _s219_r09_lookup sv, _s219_r09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=9 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-9-a-remnant-shall-be-saved-except-a-seed-we-had-been-as-sodom',
+       E'A remnant shall be saved — except a seed, we had been as Sodom',
+       E'*Esaias also crieth concerning Yashar''el (Israel), Though the number of the children of Yashar''el (Israel) be as the sand of the sea, a remnant shall be saved* (Romans 9:27). Paul quotes Isaiah, and Isaiah''s word is hope: *a remnant of them shall return … the remnant shall return, even the remnant of Jacob, unto El Gibbor (the mighty God)* (Isaiah 10:22, 10:21). The saved remnant is the kept seed of Yashar''el, the survivors of Jacob leaning again on the Holy One — the first sheaf of the gathering, proof the whole harvest is coming. *He will finish the work, and cut it short in righteousness* (Romans 9:28) carries Isaiah''s next line, *a consumption, even determined* (Isaiah 10:23) — yet the very next breath comforts the remnant: *be not afraid of the Assyrian … for yet a very little while, and the indignation shall cease* (Isaiah 10:24-25). The cutting-short is the threshing that preserves the wheat. And the remnant is sheer mercy: *Except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma* (Romans 9:29), quoting *except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom* (Isaiah 1:9). Only the seed Yahuah left kept the whole house from the end of Sodom. Esdras names this kept seed too — those *sanctified … from the beginning* who *shall see my salvation in my land* (2 Esdras 9:8), the *grape of the cluster, and a plant of a great people* the Most High *kept* and *spared greatly* (2 Esdras 9:21). The remnant is the living root, marked from old, from which the gathered people will grow again.',
+       sv.verse_id, ev.verse_id, 'extras', 6215
+  FROM _s219_r09_lookup sv, _s219_r09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=9 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-9-the-stumblingstone-laid-in-zion-they-stumbled-at-the-stone',
+       E'The stumblingstone laid in Zion — they stumbled at the stone',
+       E'*But Yashar''el (Israel), which followed after the law of righteousness, hath not attained to the law of righteousness. Wherefore? Because they sought it not by faith, but as it were by the works of the law. For they stumbled at that stumblingstone* (Romans 9:31-32). The failure is named exactly: not the law itself, but the seeking of righteousness as a system of flesh-performance apart from the faithfulness that should have clung to the stone. And the stone they stumbled at is, in Isaiah, first a refuge: *he shall be for a sanctuary; but for a stone of stumbling and for a rock of offence to both the houses of Yashar''el (Israel)* (Isaiah 8:14). The same stone is sanctuary and offence — refuge to those who sanctify Yahuah and lean on him, stumbling to those who would not. It is set for *both the houses,* Yahudah and the scattered north — the stone of Yashar''el''s own. And Paul binds it to Isaiah''s sure foundation: *Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed* (Romans 9:33), where Isaiah declared *Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16). The rock of offence and the precious corner stone are one stone, *laid in Zion* by Yahuah himself — laid FOR his people to build upon. They stumbled at him by seeking it by works; but the stone is set in Zion for them, the cornerstone of the house being gathered, and *whosoever believeth on him shall not be ashamed.*',
+       sv.verse_id, ev.verse_id, 'free', 6218
+  FROM _s219_r09_lookup sv, _s219_r09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=9 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-9-to-them-pertain-the-covenants-paul-grieves-for-his-kinsmen-israel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 4:22 — *Yashar''el (Israel) is my son, even my firstborn* the adoption that still pertains to them is no new thing; Yahuah named them his firstborn before Pharaoh (Romans 9:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-to-them-pertain-the-covenants-paul-grieves-for-his-kinsmen-israel'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=4 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 7:6 — *Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people* the choosing is old and stands; Paul does not revoke it but grieves that it holds (Romans 9:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-to-them-pertain-the-covenants-paul-grieves-for-his-kinsmen-israel'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Esdras 8:16 — *for Yashar''el (Israel), for whom I am heavy; and for Jacob, for whose sake I am troubled* the prophet''s grief is Paul''s grief; mourning for the covenant people is the proof of love, not rejection (Romans 9:2).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-to-them-pertain-the-covenants-paul-grieves-for-his-kinsmen-israel'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=4
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=8 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-9-in-isaac-shall-thy-seed-be-called-the-corporate-election-of-the-line
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 21:12 — *in Isaac shall thy seed be called* the line of promise runs through Isaac, not Ishmael; the choosing of which seed carries the covenant (Romans 9:7).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-in-isaac-shall-thy-seed-be-called-the-corporate-election-of-the-line'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 25:23 — *two nations are in thy womb … the elder shall serve the younger* the word to Rebecca is spoken of nations and peoples, not two souls weighed for heaven (Romans 9:12).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-in-isaac-shall-thy-seed-be-called-the-corporate-election-of-the-line'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 1:2 — *yet I loved Jacob* the love Paul quotes is spoken nation to nation, the covenantal sorting of the houses the brothers fathered (Romans 9:13).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-in-isaac-shall-thy-seed-be-called-the-corporate-election-of-the-line'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 1:3 — *I hated Esau, and laid his mountains and his heritage waste* the hatred is corporate and territorial, the judgment on Edom the nation, never a decree on an individual soul (Romans 9:13).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-in-isaac-shall-thy-seed-be-called-the-corporate-election-of-the-line'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-9-i-will-have-mercy-on-whom-i-will-have-mercy-the-sovereign-compassion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 33:19 — *will shew mercy on whom I will shew mercy* spoken at the mount as the covenant is renewed after the calf; sovereign mercy named at the moment Yashar''el is spared (Romans 9:15).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-i-will-have-mercy-on-whom-i-will-have-mercy-the-sovereign-compassion'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 9:16 — *for this cause have I raised thee up, for to shew in thee my power* Pharaoh''s hardening serves the deliverance of the firstborn son and the spreading of the name (Romans 9:17).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-i-will-have-mercy-on-whom-i-will-have-mercy-the-sovereign-compassion'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=9 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Wisdom of Solomon 12:16 — *because you are Yahuah (God) of all, it makes you to be gracious to all* sovereign mercy is the outflow of righteousness, not a cold lottery (Romans 9:15).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-i-will-have-mercy-on-whom-i-will-have-mercy-the-sovereign-compassion'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=12 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 12:18 — *mastering your power, judgest with equity, and orderest us with great favour* the hand that hardens the oppressor is power mastered and mercy ordered (Romans 9:18).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-i-will-have-mercy-on-whom-i-will-have-mercy-the-sovereign-compassion'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=18
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=12 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-9-the-thing-formed-and-the-potter-over-the-clay
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 29:16 — *shall the thing framed say of him that framed it, He had no understanding?* the image whose next breath is the opening of blind eyes; the potter bent toward restoration (Romans 9:20).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-the-thing-formed-and-the-potter-over-the-clay'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 45:9 — *Shall the clay say to him that fashioneth it, What makest thou?* the woe whose same chapter swears all the seed of Yashar''el justified and glorying (Romans 9:20).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-the-thing-formed-and-the-potter-over-the-clay'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 18:6 — *as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* the clay is named: the house itself, remade after it was marred (Romans 9:21).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-the-thing-formed-and-the-potter-over-the-clay'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=18 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 15:7 — *of the same clay he makes both the vessels that serve for clean uses, and likewise also all such as serve to the contrary* the exact figure Paul presses, already worn smooth in the library (Romans 9:21).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-the-thing-formed-and-the-potter-over-the-clay'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=21
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=15 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Esdras 8:2 — *much mould of which earthen vessels are made, but little dust that gold comes of* the vessels of mercy afore prepared unto glory are the precious few drawn from the lump (Romans 9:23).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-the-thing-formed-and-the-potter-over-the-clay'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=23
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=8 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-9-i-will-call-them-my-people-which-were-not-my-people-lo-ammi-regathered
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 2:23 — *I will say to them which were not my people, Thou art my people* the Lo-Ammi and Lo-Ruhamah of the divorced northern house reclaimed, sown again in the earth (Romans 9:25).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-i-will-call-them-my-people-which-were-not-my-people-lo-ammi-regathered'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hosea 1:10 — *Ye are the sons of the living Elohim (God)* the children of the living Elohim ARE the children of Yashar''el as the sand, the scattered north reclaimed in the place of their scattering (Romans 9:26).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-i-will-call-them-my-people-which-were-not-my-people-lo-ammi-regathered'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hosea 2:1 — *Say ye unto your brethren, Ammi; and to your sisters, Ru-hamah* the names of casting-off reversed: not-my-people made my-people, not-pitied made beloved (Romans 9:25).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-i-will-call-them-my-people-which-were-not-my-people-lo-ammi-regathered'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-9-a-remnant-shall-be-saved-except-a-seed-we-had-been-as-sodom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 10:22 — *yet a remnant of them shall return* the saved remnant is the kept seed of Yashar''el, the survivors of Jacob leaning again on the Holy One (Romans 9:27).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-a-remnant-shall-be-saved-except-a-seed-we-had-been-as-sodom'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=10 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 10:23 — *a consumption, even determined, in the midst of all the land* the cutting-short in righteousness is the threshing that preserves the wheat, comfort to the remnant (Romans 9:28).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-a-remnant-shall-be-saved-except-a-seed-we-had-been-as-sodom'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=10 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 1:9 — *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom* the remnant is sheer mercy, a seed preserved when the whole deserved consuming (Romans 9:29).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-a-remnant-shall-be-saved-except-a-seed-we-had-been-as-sodom'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Esdras 9:8 — *I have sanctified them for me from the beginning* the saved are set apart before, not chosen after by their response; their salvation reveals what was already true (Romans 9:27).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-a-remnant-shall-be-saved-except-a-seed-we-had-been-as-sodom'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=27
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=9 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Esdras 9:21 — *have kept me a grape of the cluster, and a plant of a great people* the seed Yahuah left, the grape kept from the cluster, the living root of the gathered people (Romans 9:29).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-a-remnant-shall-be-saved-except-a-seed-we-had-been-as-sodom'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=29
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=9 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-9-the-stumblingstone-laid-in-zion-they-stumbled-at-the-stone
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 8:14 — *he shall be for a sanctuary; but for a stone of stumbling … to both the houses of Yashar''el (Israel)* the same stone is refuge and offence, set for both houses, the stone of Israel''s own (Romans 9:32).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-the-stumblingstone-laid-in-zion-they-stumbled-at-the-stone'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 28:16 — *I lay in Zion for a foundation a stone … a sure foundation: he that believeth shall not make haste* the rock of offence and the precious corner stone are one stone, laid in Zion FOR his people (Romans 9:33).'
+  FROM cross_reference_threads t, cross_references x, _s219_r09_lookup sv, _s219_r09_lookup tv
+ WHERE t.slug='romans-9-the-stumblingstone-laid-in-zion-they-stumbled-at-the-stone'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=9 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_romans_10.sql (S219 Romans 10) -----
+-- =====================================================================
+-- S219 minion — ROMANS 10 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 10.  Tag: r10 (temp view _s219_r10_lookup).  Sort band: 6225-6249, step 3.
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Red Lines #2/#4/#5/#6/#7/#10/#11): Paul, a Torah-keeping Yashar'elite, pours
+-- out his heart for Yashar'el — *that they might be saved* (10:1). Their failure is not the Torah
+-- but a zeal *not according to knowledge* (10:2): *going about to establish their own righteousness*
+-- (10:3), a system of self-justification apart from the faithfulness of Messiah. The watchpoint
+-- verse — *Messiah (Christ) is the end of the law for righteousness to every one that believeth*
+-- (10:4) — is read with telos as GOAL / AIM / DESTINATION: Messiah is where the Torah was always
+-- leading, its fulfillment and purpose, NEVER its termination. Paul proves it by quoting the law
+-- itself: the word Moses gave about KEEPING the commandment (Deuteronomy 30:11-14) is *the word
+-- of faith* (10:8) — the Torah brought near, not replaced. Confession and belief (10:9-13) are the
+-- response of the covenant-faithful heart, not a magic formula; *whosoever shall call upon the
+-- name of Yahuah (Lord) shall be saved* (10:13) is Joel 2:32, the NT-Lord rule rendering Yahuah
+-- where the underlying Hebrew is YHWH. *No difference between the Yahudi (Jew) and the Greek*
+-- (10:12) is the two houses, one Master over both. The chapter closes with Yashar'el still longed
+-- for, not cast off: *all day long I have stretched forth my hands unto a disobedient and gainsaying
+-- people* (10:21 / Isaiah 65:2).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-3   zeal not by knowledge / their own righteousness  Tanakh: Isaiah 28:16 (the foundation stone, he that believeth shall not make haste)  Extras: none warranted  NT: none added (stone carried by Isaiah target)
+--   v.4     Messiah the end (goal) of the law                Tanakh: Psalm 19:7 (the law perfect, converting the soul — the goal it aims at); Leviticus 18:5 (which if a man do, he shall live in them)  Extras: none warranted  NT: none added (Torah-fulfilled carried at Rom 8 / 3:31 elsewhere)
+--   v.5-8   the word brought near (Deuteronomy 30)           Tanakh: Deuteronomy 30:11, 30:12, 30:14; Leviticus 18:5  Extras: Baruch 3:29, 3:30, 3:37 (the ascend/descend-for-wisdom rhetoric; wisdom given to Jacob, then he shewed himself upon earth)  NT: none warranted
+--   v.9-13  confess and believe / call upon the name         Tanakh: Joel 2:32 (whosoever shall call on the name shall be delivered); Isaiah 28:16 again (he that believeth shall not be ashamed, v.11)  Extras: none warranted  NT: none added
+--   v.15-16 beautiful feet / who believed our report          Tanakh: Isaiah 52:7 (beautiful feet, good tidings); Isaiah 53:1 (who hath believed our report)  Extras: none warranted  NT: none warranted
+--   v.18-21 heard? / jealousy / hands stretched forth         Tanakh: Psalm 19:4 (their sound went into all the earth); Deuteronomy 32:21 (provoke to jealousy by no-people); Isaiah 65:1 (found of them that sought me not), Isaiah 65:2 (stretched forth my hands unto a rebellious people)  Extras: none warranted  NT: none warranted
+--   v.14, 17  faith cometh by hearing / how shall they hear   none warranted (the preaching-chain is internal to the argument; load-bearing roots carried at 10:15-16)
+--
+-- THREADS (slug -> target libraries):
+--   6225 romans-10-going-about-to-establish-their-own-righteousness-the-foundation-stone   (Tanakh)
+--   6228 romans-10-messiah-the-goal-of-the-law-for-righteousness                            (Tanakh)
+--   6231 romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30       (Tanakh + Extras)
+--   6234 romans-10-whosoever-shall-call-upon-the-name-shall-be-saved-joel                   (Tanakh)
+--   6237 romans-10-how-beautiful-are-the-feet-who-hath-believed-our-report-isaiah           (Tanakh)
+--   6240 romans-10-i-have-stretched-forth-my-hands-yashar-el-provoked-to-jealousy-not-cast-off  (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-10-going-about-to-establish-their-own-righteousness-the-foundation-stone
+  ('canon', 'romans', 10, 3, 'canon', 'isaiah', 28, 16, 'free', E'*Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste.* (Isaiah 28:16). Paul mourns his people who, *being ignorant of Elohim''s (God''s) righteousness, and going about to establish their own righteousness, have not submitted themselves unto the righteousness of Elohim (God)* (Romans 10:3). The prophet had already laid the answer in Zion: a sure foundation, and *he that believeth shall not make haste* — shall not run about establishing his own. To build one''s own righteousness is to refuse the stone Yahuah himself laid; to rest on it is the submission Yashar''el lacked. The righteousness of Elohim is received at the foundation he set, not manufactured beside it.'),
+  ('canon', 'romans', 10, 2, 'canon', 'isaiah', 28, 12, 'free', E'*To whom he said, This is the rest wherewith ye may cause the weary to rest; and this is the refreshing: yet they would not hear.* (Isaiah 28:12). Paul bears his people record *that they have a zeal of Elohim (God), but not according to knowledge* (Romans 10:2). The prophet named the same wound centuries before: the rest and the refreshing were set before them, *yet they would not hear.* The zeal is real; the hearing is what fails. Yashar''el''s tragedy is not that she has no fervor for Elohim but that the fervor runs ahead of the knowledge the prophets pressed on her, the rest she would not enter.'),
+  -- thread: romans-10-messiah-the-goal-of-the-law-for-righteousness
+  ('canon', 'romans', 10, 4, 'canon', 'psalms', 19, 7, 'free', E'*The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple.* (Psalm 19:7). *For Messiah (Christ) is the end of the law for righteousness to every one that believeth* (Romans 10:4) — the end as the aim and destination the law was always pressing toward. The psalmist sang that *the law of Yahuah is perfect, converting the soul*: a perfect instruction does not abolish at its goal but arrives at it. The Torah converts the soul toward the very righteousness Messiah is and gives; he is where its every precept was pointing, the completion the perfect law was made to reach, not the cancellation of it.'),
+  ('canon', 'romans', 10, 4, 'canon', 'leviticus', 18, 5, 'free', E'*Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD).* (Leviticus 18:5). Paul sets Messiah as *the end of the law for righteousness to every one that believeth* (Romans 10:4) and then, in the next breath, quotes this very verse: *the man which doeth those things shall live by them* (Romans 10:5). The law''s own promise was life through the doing; Messiah is the destination that life always aimed at, the one in whom the doing and the living are joined and fulfilled. The end of the law is not the silencing of *live in them* but its arrival in the One who is the life the statutes promised.'),
+  -- thread: romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30
+  ('canon', 'romans', 10, 6, 'canon', 'deuteronomy', 30, 12, 'free', E'*It is not in heaven, that thou shouldest say, Who shall go up for us to heaven, and bring it unto us, that we may hear it, and do it?* (Deuteronomy 30:12). *But the righteousness which is of faith speaketh on this wise, Say not in thine heart, Who shall ascend into heaven? (that is, to bring Messiah (Christ) down from above:)* (Romans 10:6). Paul takes Moses'' own words about the commandment and reads them of Messiah. Moses said the commandment is not so far off that one must climb to heaven to fetch it; Paul says you need not ascend to fetch Messiah down, for the word is already here. The word of faith is the Torah brought near — the same nearness Moses preached, now embodied in the One the commandment was leading to.'),
+  ('canon', 'romans', 10, 7, 'canon', 'deuteronomy', 30, 13, 'free', E'*Neither is it beyond the sea, that thou shouldest say, Who shall go over the sea for us, and bring it unto us, that we may hear it, and do it?* (Deuteronomy 30:13). *Or, Who shall descend into the deep? (that is, to bring up Messiah (Christ) again from the dead.)* (Romans 10:7). Moses said no man need cross the sea to bring the commandment near; Paul says no man need descend into the deep to raise Messiah, for he is risen and the word is here. The structure is Moses'' structure exactly — not heaven, not the sea, not the deep — because Paul is preaching the very nearness of the word that Deuteronomy preached, the Torah''s own testimony that what Elohim asks is not unreachable but at hand.'),
+  ('canon', 'romans', 10, 8, 'canon', 'deuteronomy', 30, 14, 'free', E'*But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it.* (Deuteronomy 30:14). *But what saith it? The word is nigh thee, even in thy mouth, and in thy heart: that is, the word of faith, which we preach;* (Romans 10:8). Paul quotes Moses almost word for word. The clause Moses ends with — *that thou mayest do it* — is the whole point: the nearness is given so the word may be done, in the mouth and in the heart and then in the hand. *The word of faith* is not a different word that replaces the commandment; it is the same word brought near, the Torah in the mouth and the heart, that the faithful may walk in it.'),
+  ('canon', 'romans', 10, 8, 'canon', 'deuteronomy', 30, 11, 'free', E'*For this commandment which I command thee this day, it is not hidden from thee, neither is it far off.* (Deuteronomy 30:11). When Paul says *the word is nigh thee, even in thy mouth, and in thy heart* (Romans 10:8), he is preaching Moses'' own opening claim: *this commandment … is not hidden from thee, neither is it far off.* The thing Moses calls *this commandment* is the thing Paul calls *the word of faith* — not two opposed words but one. The righteousness of faith does not abolish the commandment that is near; it announces that the nearness Moses promised has come, the word at hand to be believed and done.'),
+  ('canon', 'romans', 10, 5, 'canon', 'leviticus', 18, 5, 'free', E'*Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD).* (Leviticus 18:5). *For Moses describeth the righteousness which is of the law, That the man which doeth those things shall live by them* (Romans 10:5). Paul cites the law''s own word — *which if a man do, he shall live in them* — not to set it against faith but to show that the doing and the living were always joined. The righteousness of faith that follows (Romans 10:6-8) is the same Deuteronomy promise of the word brought near *that thou mayest do it;* Moses'' two passages stand together, the doing-and-living of the statutes leading to the word of faith near at hand.'),
+  ('canon', 'romans', 10, 6, 'apocrypha', 'baruch-with-the-letter-of-jeremiah', 3, 29, 'extras', E'*Who has gone up into heaven, and taken her, and brought her down from the clouds?* (Baruch 3:29). *Say not in thine heart, Who shall ascend into heaven? (that is, to bring Messiah (Christ) down from above:)* (Romans 10:6). The wisdom-writer asked the very question Paul echoes — who shall go up to heaven to fetch what Elohim has near? — reading the same Deuteronomy logic generations before Rome. In Baruch the thing sought in heaven is wisdom; Paul names the One who is that wisdom in flesh. The library and the apostle stand on one Mosaic ground: what is sought as if it were far off has been brought near.'),
+  ('canon', 'romans', 10, 7, 'apocrypha', 'baruch-with-the-letter-of-jeremiah', 3, 30, 'extras', E'*Who has gone over the sea, and found her, and will bring her for pure gold?* (Baruch 3:30). *Or, Who shall descend into the deep? (that is, to bring up Messiah (Christ) again from the dead.)* (Romans 10:7). Baruch pairs the heaven-question with the sea-question, exactly as Deuteronomy paired them and exactly as Paul reaches for the deep. The point in Baruch is that no man crosses the sea to win wisdom by his own going; *he that knoweth all things knoweth her* and gives her. So Paul: no man descends to raise Messiah by his own striving; he is risen and given, the word brought near.'),
+  ('canon', 'romans', 10, 8, 'apocrypha', 'baruch-with-the-letter-of-jeremiah', 3, 37, 'extras', E'*Afterward did he shew himself upon earth, and conversed with men.* (Baruch 3:37). After Baruch declares that wisdom was *given … to Jacob his servant, and to Yashar''el (Israel) his beloved* (Baruch 3:36), it says *he shew himself upon earth, and conversed with men.* This is the very motion Paul preaches when he says *the word is nigh thee … that is, the word of faith, which we preach* (Romans 10:8): the wisdom of Elohim, near to Jacob in the commandment, came down and walked among men — the Formed who took on flesh, the word brought all the way near, no longer to be fetched from heaven or the deep.'),
+  -- thread: romans-10-whosoever-shall-call-upon-the-name-shall-be-saved-joel
+  ('canon', 'romans', 10, 13, 'canon', 'joel', 2, 32, 'free', E'*And it shall come to pass, that whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call.* (Joel 2:32). *For whosoever shall call upon the name of Yahuah (Lord) shall be saved* (Romans 10:13). Paul quotes Joel, and the name called upon is the name Joel named — Yahuah. The deliverance is *in mount Zion and in Jerusalem,* and *in the remnant whom Yahuah shall call:* the calling is two-directional, the people calling on his name and Yahuah calling out his remnant. This is no magic formula but the cry of the covenant-faithful heart, met by the One who summons his own home.'),
+  ('canon', 'romans', 10, 12, 'canon', 'joel', 2, 32, 'free', E'*And it shall come to pass, that whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call.* (Joel 2:32). *For there is no difference between the Yahudi (Jew) and the Greek: for the same Yahuah (Lord) over all is rich unto all that call upon him* (Romans 10:12). Joel''s *whosoever* is the ground of Paul''s *no difference:* the same Yahuah is over all, the one Master of both houses, *rich unto all that call.* The Yahudi and the Greek are not two peoples saved two ways but the house of Yahudah and the scattered seed of the north calling on one name, gathered to one Lord over both.'),
+  ('canon', 'romans', 10, 11, 'canon', 'isaiah', 28, 16, 'free', E'*Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste.* (Isaiah 28:16). *For the scripture saith, Whosoever believeth on him shall not be ashamed* (Romans 10:11). Paul cites the prophet''s stone again: the one who believes on the sure foundation Yahuah laid in Zion *shall not make haste,* shall not be put to shame. The believing of the heart unto righteousness (Romans 10:10) rests on the tried stone; the *whosoever* of this verse opens straight into the *whosoever* who calls on the name and is saved (Romans 10:13).'),
+  -- thread: romans-10-how-beautiful-are-the-feet-who-hath-believed-our-report-isaiah
+  ('canon', 'romans', 10, 15, 'canon', 'isaiah', 52, 7, 'free', E'*How beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace; that bringeth good tidings of good, that publisheth salvation; that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7). *And how shall they preach, except they be sent? as it is written, How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!* (Romans 10:15). Paul quotes Isaiah''s herald: the beautiful feet are the feet of the sent one who publishes peace and salvation and cries to Zion *Thy Elohim reigneth.* The gospel of peace Paul''s preachers carry is the very good tidings the prophet saw running over the mountains — the announcement to Zion that her Elohim reigns, the King come to gather and to save.'),
+  ('canon', 'romans', 10, 16, 'canon', 'isaiah', 53, 1, 'free', E'*Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1). *But they have not all obeyed the gospel. For Esaias saith, Yahuah (Lord), who hath believed our report?* (Romans 10:16). Paul answers the herald''s beautiful feet with the herald''s grief: the same prophet who saw the good tidings published also cried *who hath believed our report?* The good tidings of Isaiah 52 and the rejected report of Isaiah 53 are one passage — the herald announces, and the suffering Servant is despised and not esteemed (Isaiah 53:3). That not all obeyed is no surprise to the prophet; he wept the unbelief in the same breath he sang the salvation.'),
+  -- thread: romans-10-i-have-stretched-forth-my-hands-yashar-el-provoked-to-jealousy-not-cast-off
+  ('canon', 'romans', 10, 18, 'canon', 'psalms', 19, 4, 'free', E'*Their line is gone out through all the earth, and their words to the end of the world. In them hath he set a tabernacle for the sun,* (Psalm 19:4). *But I say, Have they not heard? Yes verily, their sound went into all the earth, and their words unto the ends of the world* (Romans 10:18). Paul borrows the psalmist''s words for the witness gone out: as the heavens'' *line is gone out through all the earth,* so the sound of the preaching has reached the ends of the world. The question is never whether the witness was given — like the silent testimony of the heavens, it has gone everywhere — but whether Yashar''el would hear what was placed before her.'),
+  ('canon', 'romans', 10, 19, 'canon', 'deuteronomy', 32, 21, 'free', E'*They have moved me to jealousy with that which is not Elohim (God); they have provoked me to anger with their vanities: and I will move them to jealousy with those which are not a people; I will provoke them to anger with a foolish nation.* (Deuteronomy 32:21). *But I say, Did not Yashar''el (Israel) know? First Moses saith, I will provoke you to jealousy by them that are no people, and by a foolish nation I will anger you* (Romans 10:19). Paul quotes Moses'' song. The *no people* and *foolish nation* who provoke Yashar''el to jealousy are not strangers admitted in her place but the scattered seed of the north — the house made Lo-Ammi, *not a people,* now stirring the jealousy of Yahudah as they turn back to the covenant. The provoking is the homecoming of the divorced house, meant to wake her own.'),
+  ('canon', 'romans', 10, 20, 'canon', 'isaiah', 65, 1, 'free', E'*I am sought of them that asked not for me; I am found of them that sought me not: I said, Behold me, behold me, unto a nation that was not called by my name.* (Isaiah 65:1). *But Esaias is very bold, and saith, I was found of them that sought me not; I was made manifest unto them that asked not after me* (Romans 10:20). Paul quotes Isaiah. The ones who *sought me not* and were yet found are the scattered who had lost the covenant identity, *a nation that was not called by my name* — the house of the north grown wild among the nations, now found by the One they had forgotten. Not outsiders newly admitted, but the lost sheep sought out and made manifest, the divorced seed gathered.'),
+  ('canon', 'romans', 10, 21, 'canon', 'isaiah', 65, 2, 'free', E'*I have spread out my hands all the day unto a rebellious people, which walketh in a way that was not good, after their own thoughts;* (Isaiah 65:2). *But to Yashar''el (Israel) he saith, All day long I have stretched forth my hands unto a disobedient and gainsaying people* (Romans 10:21). Paul lets the prophet have the last word, and it is a word of longing, not rejection: *all day long I have stretched forth my hands.* The hands are still spread out, all the day, unto Yashar''el — disobedient and gainsaying, yes, but never cast off. The posture of Elohim toward his people at the close of the chapter is the open arms of a Father who has not stopped reaching, which is why chapter eleven opens *Hath Elohim cast away his people? God forbid.*')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-10-going-about-to-establish-their-own-righteousness-the-foundation-stone',
+       E'Going about to establish their own righteousness — the foundation stone',
+       E'Paul''s heart''s desire and prayer for Yashar''el is *that they might be saved* (Romans 10:1), for he bears them record *that they have a zeal of Elohim (God), but not according to knowledge* (Romans 10:2). The wound is not the Torah but a fervor that runs ahead of hearing — exactly the wound the prophet named: *this is the rest wherewith ye may cause the weary to rest; and this is the refreshing: yet they would not hear* (Isaiah 28:12). And the failure has a precise shape: *being ignorant of Elohim''s (God''s) righteousness, and going about to establish their own righteousness, have not submitted themselves unto the righteousness of Elohim (God)* (Romans 10:3). To build one''s own righteousness is to refuse the stone Yahuah already laid in Zion. The prophet set the answer down long before: *Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16). The one who rests on the foundation Yahuah set does not run about establishing his own — does not make haste, is not put to shame. The righteousness of Elohim is received at the stone he laid, never manufactured beside it.',
+       sv.verse_id, ev.verse_id, 'free', 6225
+  FROM _s219_r10_lookup sv, _s219_r10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=10 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-10-messiah-the-goal-of-the-law-for-righteousness',
+       E'Messiah the goal of the law for righteousness',
+       E'*For Messiah (Christ) is the end of the law for righteousness to every one that believeth* (Romans 10:4). Read the end as the aim, the goal, the destination the law was always pressing toward — for the very next verses prove Paul means arrival, not abolition. The psalmist sang the law''s own perfection: *the law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple* (Psalm 19:7). A perfect instruction does not cancel at its goal; it converts the soul toward the righteousness it was made to reach. And Paul immediately quotes the law''s own promise of life: *the man which doeth those things shall live by them* (Romans 10:5), the very word of *Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD)* (Leviticus 18:5). The doing and the living were always joined; Messiah is where that life arrives, the One in whom the statutes'' promise is fulfilled. He is not the silencing of *live in them* but its destination — the goal toward which every precept of the perfect law was leading, the righteousness the Torah pointed to from the first.',
+       sv.verse_id, ev.verse_id, 'free', 6228
+  FROM _s219_r10_lookup sv, _s219_r10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=10 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30',
+       E'The word is nigh thee, in thy mouth and in thy heart — Deuteronomy 30',
+       E'When Paul describes the righteousness of faith, he does not reach for a new word — he quotes Moses, the very passage Moses gave about keeping the commandment. *Say not in thine heart, Who shall ascend into heaven? … Or, Who shall descend into the deep?* (Romans 10:6-7), *but the word is nigh thee, even in thy mouth, and in thy heart: that is, the word of faith, which we preach* (Romans 10:8). The structure is Deuteronomy''s exactly: *this commandment which I command thee this day, it is not hidden from thee, neither is it far off* (Deuteronomy 30:11); *it is not in heaven, that thou shouldest say, Who shall go up for us to heaven … ?* (Deuteronomy 30:12); *neither is it beyond the sea …* (Deuteronomy 30:13); *but the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deuteronomy 30:14). Moses ends with *that thou mayest do it* — the nearness is given for the doing. Paul calls that same near word *the word of faith;* it is not a different word replacing the commandment but the Torah brought near, in the mouth and the heart and then the hand. The Second-Temple library read Deuteronomy the same way: *Who has gone up into heaven, and taken her, and brought her down from the clouds? Who has gone over the sea …?* (Baruch 3:29-30) — the ascend-and-descend rhetoric pressed in search of wisdom, which *he hath given … to Jacob his servant, and to Yashar''el (Israel) his beloved* (Baruch 3:36), and then *afterward did he shew himself upon earth, and conversed with men* (Baruch 3:37). The wisdom near to Jacob in the commandment came down and walked among men — the Formed who took on flesh, the word brought all the way near, no longer to be fetched from heaven or the deep but believed and done.',
+       sv.verse_id, ev.verse_id, 'extras', 6231
+  FROM _s219_r10_lookup sv, _s219_r10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=10 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-10-whosoever-shall-call-upon-the-name-shall-be-saved-joel',
+       E'Whosoever shall call upon the name shall be saved — Joel',
+       E'The confession of the mouth and the belief of the heart (Romans 10:9-10) are not a magic formula but the response of the covenant-faithful, resting on the stone Yahuah laid: *the scripture saith, Whosoever believeth on him shall not be ashamed* (Romans 10:11) — the prophet''s sure foundation, *he that believeth shall not make haste* (Isaiah 28:16). And that *whosoever* opens onto the whole gathering: *for there is no difference between the Yahudi (Jew) and the Greek: for the same Yahuah (Lord) over all is rich unto all that call upon him* (Romans 10:12), *for whosoever shall call upon the name of Yahuah (Lord) shall be saved* (Romans 10:13). Paul is quoting the prophet word for word: *whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call* (Joel 2:32). The name called upon is Yahuah''s own. And the calling runs both ways — the people calling on his name, and Yahuah calling out his remnant. The *no difference* between the Yahudi and the Greek is not two peoples saved two ways but the house of Yahudah and the scattered seed of the north, both calling on one name, both gathered to the one Master over all.',
+       sv.verse_id, ev.verse_id, 'free', 6234
+  FROM _s219_r10_lookup sv, _s219_r10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=10 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-10-how-beautiful-are-the-feet-who-hath-believed-our-report-isaiah',
+       E'How beautiful are the feet — who hath believed our report — Isaiah',
+       E'The gathering needs a herald, and Paul reaches for the prophet who saw him: *how shall they preach, except they be sent? as it is written, How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!* (Romans 10:15). The herald is Isaiah''s: *how beautiful upon the mountains are the feet of him that bringeth good tidings, that publisheth peace … that saith unto Zion, Thy Elohim (God) reigneth!* (Isaiah 52:7). The gospel of peace carried by the sent ones is the very good tidings the prophet saw running over the mountains — the announcement to Zion that her Elohim reigns, the King come to gather and to save. But Paul knows the herald''s grief belongs to the same prophet: *they have not all obeyed the gospel. For Esaias saith, Yahuah (Lord), who hath believed our report?* (Romans 10:16) — *who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1). The good tidings published in Isaiah 52 and the report unbelieved in Isaiah 53 are one passage, and the One announced is the Servant *despised and rejected of men* (Isaiah 53:3). That not all obeyed was no surprise to the prophet; he wept the unbelief in the same breath he sang the salvation.',
+       sv.verse_id, ev.verse_id, 'free', 6237
+  FROM _s219_r10_lookup sv, _s219_r10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=10 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-10-i-have-stretched-forth-my-hands-yashar-el-provoked-to-jealousy-not-cast-off',
+       E'I have stretched forth my hands — Yashar''el provoked to jealousy, not cast off',
+       E'Paul closes the chapter not with rejection but with longing, and he builds it on a chain of Tanakh. *Have they not heard? Yes verily, their sound went into all the earth, and their words unto the ends of the world* (Romans 10:18) — the psalmist''s witness gone out, *their line is gone out through all the earth, and their words to the end of the world* (Psalm 19:4). The witness was given everywhere; the question is whether Yashar''el would hear it. *Did not Yashar''el (Israel) know? First Moses saith, I will provoke you to jealousy by them that are no people, and by a foolish nation I will anger you* (Romans 10:19), quoting *I will move them to jealousy with those which are not a people; I will provoke them to anger with a foolish nation* (Deuteronomy 32:21). The *no people* are not strangers admitted in her place but the scattered seed of the north — the house made Lo-Ammi, *not a people,* turning back to the covenant and stirring Yahudah''s jealousy; the provoking is the homecoming of the divorced house, meant to wake her own. *Esaias is very bold … I was found of them that sought me not* (Romans 10:20) — *I am found of them that sought me not … unto a nation that was not called by my name* (Isaiah 65:1), the lost sheep grown wild who forgot the covenant identity, now sought out and found. And the last word is open arms: *all day long I have stretched forth my hands unto a disobedient and gainsaying people* (Romans 10:21), Isaiah''s *I have spread out my hands all the day unto a rebellious people* (Isaiah 65:2). The hands are still spread out, all the day, unto Yashar''el — never cast off — which is why the next chapter opens *Hath Elohim cast away his people? God forbid.*',
+       sv.verse_id, ev.verse_id, 'free', 6240
+  FROM _s219_r10_lookup sv, _s219_r10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=10 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-10-going-about-to-establish-their-own-righteousness-the-foundation-stone
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 28:12 — *this is the rest wherewith ye may cause the weary to rest … yet they would not hear* the zeal that runs ahead of hearing, the rest Yashar''el would not enter (Romans 10:2).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-going-about-to-establish-their-own-righteousness-the-foundation-stone'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 28:16 — *I lay in Zion for a foundation a stone … he that believeth shall not make haste* the stone Yahuah laid; resting on it is the submission Yashar''el lacked (Romans 10:3).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-going-about-to-establish-their-own-righteousness-the-foundation-stone'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-10-messiah-the-goal-of-the-law-for-righteousness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 19:7 — *the law of Yahuah (LORD) is perfect, converting the soul* a perfect instruction arrives at its goal, it does not abolish; Messiah is the righteousness it converts the soul toward (Romans 10:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-messiah-the-goal-of-the-law-for-righteousness'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 18:5 — *which if a man do, he shall live in them* the law''s own promise of life through the doing; Messiah is the destination that life always aimed at (Romans 10:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-messiah-the-goal-of-the-law-for-righteousness'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 18:5 — *which if a man do, he shall live in them* the righteousness of the law Moses described, the doing and the living joined (Romans 10:5).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:12 — *Who shall go up for us to heaven … ?* Moses'' own heaven-question; Paul reads it of Messiah brought down (Romans 10:6).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Baruch 3:29 — *Who has gone up into heaven, and taken her, and brought her down from the clouds?* the library reading the same Deuteronomy logic, the heaven-question pressed for wisdom (Romans 10:6).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=3 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 30:13 — *Neither is it beyond the sea … ?* Moses'' own sea-question; Paul reads it of Messiah raised from the deep (Romans 10:7).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Baruch 3:30 — *Who has gone over the sea, and found her … ?* the sea-question paired with the heaven-question, exactly as Deuteronomy and Paul pair them (Romans 10:7).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=3 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Deuteronomy 30:11 — *this commandment … is not hidden from thee, neither is it far off* Moses'' opening claim; *this commandment* is what Paul calls *the word of faith* (Romans 10:8).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Deuteronomy 30:14 — *the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* the clause Paul quotes; the nearness given so the word may be done (Romans 10:8).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'Baruch 3:37 — *afterward did he shew himself upon earth, and conversed with men* wisdom given to Jacob came down and walked among men — the Formed in flesh, the word brought all the way near (Romans 10:8).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-the-word-is-nigh-thee-in-thy-mouth-and-in-thy-heart-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=8
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=3 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-10-whosoever-shall-call-upon-the-name-shall-be-saved-joel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 28:16 — *he that believeth shall not make haste* the believing of the heart rests on the tried stone; *whosoever believeth on him shall not be ashamed* (Romans 10:11).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-whosoever-shall-call-upon-the-name-shall-be-saved-joel'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joel 2:32 — *whosoever shall call on the name of Yahuah (LORD) shall be delivered* the ground of Paul''s *no difference:* one Yahuah over both houses, rich unto all that call (Romans 10:12).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-whosoever-shall-call-upon-the-name-shall-be-saved-joel'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joel 2:32 — *whosoever shall call on the name of Yahuah (LORD) shall be delivered … and in the remnant whom Yahuah (LORD) shall call* quoted word for word; the people call, and Yahuah calls out his remnant (Romans 10:13).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-whosoever-shall-call-upon-the-name-shall-be-saved-joel'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-10-how-beautiful-are-the-feet-who-hath-believed-our-report-isaiah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 52:7 — *how beautiful upon the mountains are the feet of him that bringeth good tidings … that saith unto Zion, Thy Elohim (God) reigneth!* the herald Paul quotes, the gospel of peace announcing the King come to gather (Romans 10:15).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-how-beautiful-are-the-feet-who-hath-believed-our-report-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 53:1 — *Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* the herald''s grief in the same prophet; the Servant despised, the report unbelieved (Romans 10:16).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-how-beautiful-are-the-feet-who-hath-believed-our-report-isaiah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-10-i-have-stretched-forth-my-hands-yashar-el-provoked-to-jealousy-not-cast-off
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 19:4 — *their line is gone out through all the earth, and their words to the end of the world* the witness gone out everywhere; the question is whether Yashar''el would hear (Romans 10:18).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-i-have-stretched-forth-my-hands-yashar-el-provoked-to-jealousy-not-cast-off'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:21 — *I will move them to jealousy with those which are not a people* the no-people are the scattered house made Lo-Ammi, turning home to wake Yahudah''s jealousy (Romans 10:19).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-i-have-stretched-forth-my-hands-yashar-el-provoked-to-jealousy-not-cast-off'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 65:1 — *I am found of them that sought me not … a nation that was not called by my name* the lost sheep grown wild, who forgot the covenant identity, now sought out and found (Romans 10:20).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-i-have-stretched-forth-my-hands-yashar-el-provoked-to-jealousy-not-cast-off'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 65:2 — *I have spread out my hands all the day unto a rebellious people* the open arms of the Father, still reaching, never cast off — why chapter eleven opens *Hath Elohim cast away his people? God forbid* (Romans 10:21).'
+  FROM cross_reference_threads t, cross_references x, _s219_r10_lookup sv, _s219_r10_lookup tv
+ WHERE t.slug='romans-10-i-have-stretched-forth-my-hands-yashar-el-provoked-to-jealousy-not-cast-off'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=10 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_romans_11.sql (S219 Romans 11) -----
+-- =====================================================================
+-- S219 minion — ROMANS 11 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: ROMANS 11.  Tag: r11 (temp view _s219_r11_lookup).  Sort band: 6250-6274, step 3.
+-- Source is ALWAYS the canon Romans verse; targets span Tanakh + extra-canonical + NT.
+-- Tiers per-row: canon target = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Red Lines #7 and #11 — the single highest voice-risk chapter in the NT):
+-- *Hath Elohim (God) cast away his people? Elohim (God) forbid* (11:1) is the chapter's thesis —
+-- Yashar'el (Israel) is NOT cast away. The olive tree is Yashar'el's own covenant tree, the tree
+-- Yahuah named *A green olive tree, fair, and of goodly fruit* (Jeremiah 11:16). The natural
+-- branches are the covenant lineage of the fathers — the line carried through Avraham, Yitschaq,
+-- and Ya'aqov into the twelve tribes — broken off in unbelief, asleep, awaiting the resurrection.
+-- The hardening is *in part* and *until* — *blindness in part is happened to Yashar'el (Israel),
+-- until the fulness of the Gentiles be come in* (11:25): not total, not final. *And so all
+-- Yashar'el (Israel) shall be saved* (11:26), as it is written = Isaiah 59:20-21. The wild-olive
+-- branches are US — the living descendants of the broken-off, the scattered/dispersed of
+-- Yashar'el being gathered home and *graffed contrary to nature into a good olive tree* (11:24),
+-- *grafted into their own olive tree* — RESTORATION of Yashar'el's own, never a replacement
+-- people, never outsiders supplanting Yashar'el. *The gifts and calling of Elohim (God) are
+-- without repentance* (11:29) — irrevocable. The grafted are warned NOT to boast against the
+-- natural branches (11:18-21) — Paul's own anti-supersessionist guardrail.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-5    cast away? / the reserved remnant   Tanakh: 1 Kings 19:10, 19:14, 19:18 (the 7000); Jeremiah 31:37 (never cast off)  Extras: none warranted  NT: none added (Elias intercession carried by 1 Kings)
+--   v.6      grace not of works                  Tanakh: none warranted  Extras: none warranted  NT: none warranted (carried in remnant thread)
+--   v.7-10   spirit of slumber / blinded in part  Tanakh: Isaiah 29:10, Deuteronomy 29:4 (the slumber); Psalm 69:22-23 (David's table-snare)  Extras: none warranted  NT: none added (Paul cites the Tanakh directly)
+--   v.11-15  through their fall / receiving = life Tanakh: Jeremiah 31:10 (he that scattered will gather)  Extras: Tobit 13:5 (gather us out of all nations)  NT: none added
+--   v.16-24  the olive tree / graffed into own    Tanakh: Jeremiah 11:16 (the green olive tree = Yashar'el); Jeremiah 31:18-20 (Ephraim grafted back)  Extras: none warranted  NT: none added (Romans-internal; root carried by Jeremiah)
+--   v.25-27  in part / until the fulness / all saved Tanakh: Isaiah 59:20, 59:21 (Paul's citation); Jeremiah 31:33, 31:34 (the covenant, sins taken away)  Extras: none warranted  NT: none added
+--   v.28-32  beloved for the fathers' sakes / mercy Tanakh: Jeremiah 31:3 (everlasting love); Jeremiah 31:20 (Ephraim my dear son)  Extras: Tobit 13:5 (scourge and have mercy again)  NT: none added
+--   v.33-36  O the depth / the unsearchable        Tanakh: Isaiah 40:13 (who hath known the mind); Job 41:11 (who hath first given)  Extras: none warranted  NT: none added (Paul cites the Tanakh directly)
+--
+-- THREADS (slug -> target libraries):
+--   6250 romans-11-hath-elohim-cast-away-his-people-elohim-forbid-the-reserved-remnant        (Tanakh)
+--   6253 romans-11-the-spirit-of-slumber-blindness-in-part-not-final                          (Tanakh)
+--   6256 romans-11-through-their-fall-the-receiving-of-them-life-from-the-dead                 (Tanakh + Extras)
+--   6259 romans-11-graffed-into-their-own-olive-tree-restoration-not-replacement              (Tanakh)
+--   6262 romans-11-blindness-in-part-until-the-fulness-and-so-all-israel-shall-be-saved       (Tanakh)
+--   6265 romans-11-the-gifts-and-calling-without-repentance-beloved-for-the-fathers-sakes     (Tanakh + Extras)
+--   6268 romans-11-o-the-depth-how-unsearchable-the-mind-of-yahuah                            (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s219_r11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: romans-11-hath-elohim-cast-away-his-people-elohim-forbid-the-reserved-remnant
+  ('canon', 'romans', 11, 2, 'canon', '1-kings', 19, 10, 'free', E'*And he said, I have been very jealous for Yahuah Elohim (the LORD God) of hosts: for the children of Yashar''el (Israel) have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword; and I, even I only, am left; and they seek my life, to take it away.* (1 Kings 19:10). Paul asks *Hath Elohim (God) cast away his people?* and answers *Elohim (God) forbid* (Romans 11:1), and to prove it he reaches for Elias, who *maketh intercession to Elohim (God) against Yashar''el (Israel)* (Romans 11:2). Elijah thought himself the last man standing — *I, even I only, am left* — the very cry Paul quotes to show how wrong that despair was. The faithful are never as few as they look.'),
+  ('canon', 'romans', 11, 3, 'canon', '1-kings', 19, 14, 'free', E'*And he said, I have been very jealous for Yahuah Elohim (the LORD God) of hosts: because the children of Yashar''el (Israel) have forsaken thy covenant, thrown down thine altars, and slain thy prophets with the sword; and I, even I only, am left; and they seek my life, to take it away.* (1 Kings 19:14). Paul puts Elijah''s words in his mouth almost verbatim: *Yahuah (Lord), they have killed thy prophets, and digged down thine altars; and I am left alone, and they seek my life* (Romans 11:3). The prophet was certain the covenant people had collapsed to one. The answer Yahuah gives him is the answer to the whole chapter''s fear.'),
+  ('canon', 'romans', 11, 4, 'canon', '1-kings', 19, 18, 'free', E'*Yet I have left me seven thousand in Yashar''el (Israel), all the knees which have not bowed unto Baal, and every mouth which hath not kissed him.* (1 Kings 19:18). Paul quotes the answer: *I have reserved to myself seven thousand men, who have not bowed the knee to the image of Baal* (Romans 11:4). Where Elijah saw himself alone, Yahuah had *left me seven thousand* — a hidden, reserved remnant. *Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). The remnant is always preserved; the people are never cast away.'),
+  ('canon', 'romans', 11, 1, 'canon', 'jeremiah', 31, 37, 'free', E'*Thus saith Yahuah (LORD); If heaven above can be measured, and the foundations of the earth searched out beneath, I will also cast off all the seed of Yashar''el (Israel) for all that they have done, saith Yahuah (LORD).* (Jeremiah 31:37). When Paul asks *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1), he stands on the oath Yahuah swore through Jeremiah: only if the heavens could be measured and the foundations of the earth searched out would he cast off the seed of Yashar''el — which is to say, never. The casting-away is impossible by Yahuah''s own word; the seed of Yashar''el cannot be undone.'),
+  -- thread: romans-11-the-spirit-of-slumber-blindness-in-part-not-final
+  ('canon', 'romans', 11, 8, 'canon', 'isaiah', 29, 10, 'free', E'*For Yahuah (LORD) hath poured out upon you the spirit of deep sleep, and hath closed your eyes: the prophets and your rulers, the seers hath he covered.* (Isaiah 29:10). Paul writes that *Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear* (Romans 11:8). The phrase is Isaiah''s *spirit of deep sleep* and *closed your eyes.* But the prophet himself bounds it: *in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity* (Isaiah 29:18). The slumber is real, but it is a slumber from which the deaf and blind are promised to wake.'),
+  ('canon', 'romans', 11, 8, 'canon', 'deuteronomy', 29, 4, 'free', E'*Yet Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day.* (Deuteronomy 29:4). Paul closes his citation with the very words *unto this day* (Romans 11:8), the close of Moses'' line: *eyes to see, and ears to hear, unto this day.* Moses speaks it inside the covenant — *that thou shouldest enter into covenant with Yahuah Elohayka (the LORD thy God)* (Deuteronomy 29:12) — to a people still wholly his. The unseeing is a condition under the covenant, not an expulsion from it; *unto this day* names a present blindness, not a closed door.'),
+  ('canon', 'romans', 11, 9, 'canon', 'psalms', 69, 22, 'free', E'*Let their table become a snare before them: and that which should have been for their welfare, let it become a trap.* (Psalm 69:22). *And David saith, Let their table be made a snare, and a trap, and a stumblingblock, and a recompence unto them* (Romans 11:9). Paul reaches for David''s psalm, where the very provision meant for *welfare* becomes a snare to those who reject the One they should have received. The table-turned-snare is judgment on the stumbling — but a stumbling, Paul has just said, that is not a fall: *Have they stumbled that they should fall? Elohim (God) forbid* (Romans 11:11).'),
+  ('canon', 'romans', 11, 10, 'canon', 'psalms', 69, 23, 'free', E'*Let their eyes be darkened, that they see not; and make their loins continually to shake.* (Psalm 69:23). *Let their eyes be darkened, that they may not see, and bow down their back alway* (Romans 11:10). Paul carries David''s line straight across: darkened eyes, a bowed-down back. It is the same darkening as the *spirit of slumber* — a judicial blindness on those who would not see. Yet Paul frames the whole of it as *in part* (Romans 11:25): a darkening that is partial and bounded, set within a chapter whose thesis is that the people are not cast away.'),
+  -- thread: romans-11-through-their-fall-the-receiving-of-them-life-from-the-dead
+  ('canon', 'romans', 11, 15, 'canon', 'jeremiah', 31, 10, 'free', E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock.* (Jeremiah 31:10). Paul asks, *if the casting away of them be the reconciling of the world, what shall the receiving of them be, but life from the dead?* (Romans 11:15). The receiving is the gathering Jeremiah proclaimed to the very nations and isles afar off: *He that scattered Yashar''el will gather him.* The same Yahuah who scattered is the One who gathers; the receiving of the scattered home is nothing less than life from the dead.'),
+  ('canon', 'romans', 11, 12, 'canon', 'jeremiah', 31, 8, 'free', E'*Behold, I will bring them from the north country, and gather them from the coasts of the earth, and with them the blind and the lame, the woman with child and her that travaileth with child together: a great company shall return thither.* (Jeremiah 31:8). Paul reaches past the present *diminishing of them* to *how much more their fulness?* (Romans 11:12). The fulness is the *great company* Jeremiah saw returning — brought from the north country, gathered from the coasts of the earth, the blind and the lame among them. The diminishing is not the end of the story; the prophet already saw the multitude coming home.'),
+  ('canon', 'romans', 11, 15, 'apocrypha', 'tobit', 13, 5, 'extras', E'*And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.* (Tobit 13:5). When Paul names *the receiving of them … life from the dead* (Romans 11:15), Tobit''s prayer holds the whole shape of it: Yahuah will *scourge us for our iniquities, and will have mercy again, and will gather us out of all nations.* The scattering and the gathering are one motion of one Father — the discipline is never abandonment, and the regathering of the dispersed of Yashar''el out of all nations is the mercy waiting on the far side of the scourge.'),
+  -- thread: romans-11-graffed-into-their-own-olive-tree-restoration-not-replacement  (CENTERPIECE)
+  ('canon', 'romans', 11, 16, 'canon', 'jeremiah', 11, 16, 'free', E'*Yahuah (LORD) called thy name, A green olive tree, fair, and of goodly fruit: with the noise of a great tumult he hath kindled fire upon it, and the branches of it are broken.* (Jeremiah 11:16). When Paul says *if the root be holy, so are the branches* (Romans 11:16) and builds the whole figure of the olive tree, he is not inventing a metaphor — he is reaching for the tree Yahuah himself planted and named. *Yahuah called thy name, A green olive tree* — the name is Yashar''el''s. *The branches of it are broken* is the very breaking Paul describes. The olive tree is Yashar''el''s own covenant tree; the branches broken from it are Yashar''el''s own.'),
+  ('canon', 'romans', 11, 24, 'canon', 'jeremiah', 31, 18, 'free', E'*I have surely heard Ephraim bemoaning himself thus; Thou hast chastised me, and I was chastised, as a bullock unaccustomed to the yoke: turn thou me, and I shall be turned; for thou art Yahuah Elohai (the LORD my God).* (Jeremiah 31:18). Paul says the wild branches are *graffed contrary to nature into a good olive tree* and asks *how much more shall these, which be the natural branches, be graffed into their own olive tree?* (Romans 11:24). Jeremiah already heard the scattered house of the north — Ephraim — bemoaning himself and turning home: *turn thou me, and I shall be turned.* The grafting-in is Ephraim''s homecoming to the tree that was always his; it is restoration of Yashar''el''s own, not the admission of a stranger people.'),
+  ('canon', 'romans', 11, 24, 'canon', 'jeremiah', 31, 20, 'free', E'*Is Ephraim my dear son? is he a pleasant child? for since I spake against him, I do earnestly remember him still: therefore my bowels are troubled for him; I will surely have mercy upon him, saith Yahuah (LORD).* (Jeremiah 31:20). Paul''s *graffed into their own olive tree* (Romans 11:24) is the mercy Yahuah swore over Ephraim — the broken-off, scattered house — *I will surely have mercy upon him.* Ephraim is no outsider grafted in for the first time; he is the *dear son,* the *pleasant child* Yahuah never stopped remembering. The grafting is the Father receiving his own son home to his own tree.'),
+  -- thread: romans-11-blindness-in-part-until-the-fulness-and-so-all-israel-shall-be-saved
+  ('canon', 'romans', 11, 26, 'canon', 'isaiah', 59, 20, 'free', E'*And the Redeemer shall come to Zion, and unto them that turn from transgression in Jacob, saith Yahuah (LORD).* (Isaiah 59:20). Paul writes *And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26) — and the writing he means is this. The Deliverer comes *to Zion,* to *them that turn from transgression in Jacob.* The salvation of all Yashar''el is not a substitution of another people for Jacob; it is the Redeemer coming to Jacob himself, to turn away his ungodliness.'),
+  ('canon', 'romans', 11, 27, 'canon', 'isaiah', 59, 21, 'free', E'*As for me, this is my covenant with them, saith Yahuah (LORD); My spirit that is upon thee, and my words which I have put in thy mouth, shall not depart out of thy mouth, nor out of the mouth of thy seed, nor out of the mouth of thy seed''s seed, saith Yahuah (LORD), from henceforth and for ever.* (Isaiah 59:21). Paul continues the citation: *For this is my covenant unto them, when I shall take away their sins* (Romans 11:27). The covenant Isaiah names is an everlasting one — the Spirit and the words that *shall not depart … from henceforth and for ever* — passed down through *thy seed, and … thy seed''s seed.* It is a covenant kept with a bloodline through the generations, not transferred away from it.'),
+  ('canon', 'romans', 11, 27, 'canon', 'jeremiah', 31, 33, 'free', E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33). *This is my covenant unto them, when I shall take away their sins* (Romans 11:27). The covenant by which all Yashar''el is saved is the one Jeremiah foretold — Yahuah''s law written *in their inward parts … in their hearts.* The new covenant is not the law set aside but the law internalized in the house of Yashar''el; the saving and the Torah-on-the-heart are one work.'),
+  ('canon', 'romans', 11, 27, 'canon', 'jeremiah', 31, 34, 'free', E'*And they shall teach no more every man his neighbour, and every man his brother, saying, Know Yahuah (LORD): for they shall all know me, from the least of them unto the greatest of them, saith Yahuah (LORD): for I will forgive their iniquity, and I will remember their sin no more.* (Jeremiah 31:34). Paul''s *when I shall take away their sins* (Romans 11:27) is Jeremiah''s *I will forgive their iniquity, and I will remember their sin no more.* The taking-away of sins that crowns the salvation of all Yashar''el is the very pardon the prophet promised the house — sins remembered no more, the whole house brought to know Yahuah from the least to the greatest.'),
+  -- thread: romans-11-the-gifts-and-calling-without-repentance-beloved-for-the-fathers-sakes
+  ('canon', 'romans', 11, 28, 'canon', 'jeremiah', 31, 3, 'free', E'*Yahuah (LORD) hath appeared of old unto me, saying, Yea, I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee.* (Jeremiah 31:3). Paul says that *as touching the election, they are beloved for the fathers'' sakes* (Romans 11:28), *for the gifts and calling of Elohim (God) are without repentance* (Romans 11:29). The being-beloved rests on the everlasting love Jeremiah heard Yahuah declare — *I have loved thee with an everlasting love.* A love that is everlasting cannot be repented of or withdrawn; the calling stands because the love that made it never changes.'),
+  ('canon', 'romans', 11, 28, 'canon', 'jeremiah', 31, 20, 'free', E'*Is Ephraim my dear son? is he a pleasant child? for since I spake against him, I do earnestly remember him still: therefore my bowels are troubled for him; I will surely have mercy upon him, saith Yahuah (LORD).* (Jeremiah 31:20). *They are beloved for the fathers'' sakes* (Romans 11:28) is the very disposition Yahuah confessed over the scattered house: even *since I spake against him, I do earnestly remember him still.* The judgment did not end the affection. Ephraim under chastisement is still the *dear son,* still earnestly remembered — the beloved-for-the-fathers''-sakes that Paul names, the love that survives the breaking.'),
+  ('canon', 'romans', 11, 30, 'apocrypha', 'tobit', 13, 5, 'extras', E'*And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us.* (Tobit 13:5). Paul writes that *Elohim (God) hath concluded them all in unbelief, that he might have mercy upon all* (Romans 11:32) — first the unbelief, then the mercy, *that through your mercy they also may obtain mercy* (Romans 11:31). Tobit''s prayer carries the same rhythm of one Father: he will *scourge us for our iniquities, and will have mercy again.* The concluding under judgment is never the last word; mercy is the appointed end, and the gathering out of all nations is mercy made visible.'),
+  -- thread: romans-11-o-the-depth-how-unsearchable-the-mind-of-yahuah
+  ('canon', 'romans', 11, 34, 'canon', 'isaiah', 40, 13, 'free', E'*Who hath directed the Spirit of Yahuah (LORD), or being his counsellor hath taught him?* (Isaiah 40:13). *For who hath known the mind of Yahuah (Lord)? or who hath been his counsellor?* (Romans 11:34). Paul quotes Isaiah word for word at the close of the olive-tree mystery. The prophet asked it of the One who measures the waters in his hand and gathers the lambs in his bosom; Paul asks it of the One whose hidden purpose has just reserved a remnant, bounded the blindness, and sworn to save all Yashar''el. No man counsels Yahuah; the depth of his mercy is past finding out.'),
+  ('canon', 'romans', 11, 35, 'canon', 'job', 41, 11, 'free', E'*Who hath prevented me, that I should repay him? whatsoever is under the whole heaven is mine.* (Job 41:11). *Or who hath first given to him, and it shall be recompensed unto him again?* (Romans 11:35). Paul reaches for the word Yahuah spoke out of the whirlwind: none has *prevented me, that I should repay him,* for *whatsoever is under the whole heaven is mine.* No creature puts Yahuah in his debt. The mercy that gathers Yashar''el home is wholly his free gift, owed to no one — *for of him, and through him, and to him, are all things* (Romans 11:36).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s219_r11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s219_r11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-11-hath-elohim-cast-away-his-people-elohim-forbid-the-reserved-remnant',
+       E'Hath Elohim (God) cast away his people? Elohim (God) forbid — the reserved remnant',
+       E'The whole chapter turns on one question and one answer: *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). Paul himself, seed of Abraham, is the living proof that the people are not cast away — and to seal it he reaches for Elias. The prophet was certain the covenant people had collapsed to a single man: *Yahuah (Lord), they have killed thy prophets, and digged down thine altars; and I am left alone, and they seek my life* (Romans 11:3), the very words of *I, even I only, am left* (1 Kings 19:10, 19:14). But the answer Yahuah gave him overturns the despair: *I have reserved to myself seven thousand men, who have not bowed the knee to the image of Baal* (Romans 11:4) — *Yet I have left me seven thousand in Yashar''el (Israel), all the knees which have not bowed unto Baal* (1 Kings 19:18). Where Elijah saw himself alone, Yahuah had kept a hidden remnant of thousands. *Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). The remnant is always preserved; the people are never cast away. And the impossibility of the casting-away was sworn long before: *If heaven above can be measured, and the foundations of the earth searched out beneath, I will also cast off all the seed of Yashar''el (Israel)* (Jeremiah 31:37) — which is to say, never. The seed of Yashar''el cannot be undone.',
+       sv.verse_id, ev.verse_id, 'free', 6250
+  FROM _s219_r11_lookup sv, _s219_r11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=11 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-11-the-spirit-of-slumber-blindness-in-part-not-final',
+       E'The spirit of slumber — a blindness in part, not final',
+       E'Paul explains the present unbelief of part of Yashar''el (Israel) not as a casting-off but as a slumber, and he proves it from the prophets: *Yashar''el (Israel) hath not obtained that which he seeketh for; but the election hath obtained it, and the rest were blinded* (Romans 11:7), *Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear; unto this day* (Romans 11:8). The phrase is Isaiah''s: *Yahuah (LORD) hath poured out upon you the spirit of deep sleep, and hath closed your eyes* (Isaiah 29:10) — yet the same prophet bounds the sleep with a promise, *in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity* (Isaiah 29:18). And the close of Paul''s citation, *unto this day,* is Moses'' own word spoken inside the covenant: *Yet Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day* (Deuteronomy 29:4) — a present blindness in a people still wholly his, not an expulsion. David adds the judgment on those who would not see: *Let their table be made a snare, and a trap, and a stumblingblock* (Romans 11:9), *let their eyes be darkened, that they may not see* (Romans 11:10), echoing *let their table become a snare before them* (Psalm 69:22) and *let their eyes be darkened, that they see not* (Psalm 69:23). The provision meant for welfare becomes a snare to those who reject the One they should have received. Yet Paul names the whole of it *in part* (Romans 11:25): real, but partial, bounded, and not the fall it seems — *Have they stumbled that they should fall? Elohim (God) forbid* (Romans 11:11).',
+       sv.verse_id, ev.verse_id, 'free', 6253
+  FROM _s219_r11_lookup sv, _s219_r11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=11 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-11-through-their-fall-the-receiving-of-them-life-from-the-dead',
+       E'Through their fall — the receiving of them, life from the dead',
+       E'Paul will not let the stumble be read as a fall: *Have they stumbled that they should fall? Elohim (God) forbid: but rather through their fall salvation is come unto the Gentiles, for to provoke them to jealousy* (Romans 11:11). The present *diminishing* is not the end; he presses past it: *if the fall of them be the riches of the world, and the diminishing of them the riches of the Gentiles; how much more their fulness?* (Romans 11:12). That fulness is the homecoming Jeremiah saw: *Behold, I will bring them from the north country, and gather them from the coasts of the earth … a great company shall return thither* (Jeremiah 31:8). And the climax — *if the casting away of them be the reconciling of the world, what shall the receiving of them be, but life from the dead?* (Romans 11:15) — is the gathering Jeremiah proclaimed to the very nations: *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). The same Yahuah who scattered is the One who gathers. Tobit''s prayer holds the whole shape of it in one breath: he will *scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us* (Tobit 13:5). The scattering and the gathering are one motion of one Father — the discipline never abandonment, the regathering of the dispersed of Yashar''el out of all nations nothing less than life from the dead.',
+       sv.verse_id, ev.verse_id, 'extras', 6256
+  FROM _s219_r11_lookup sv, _s219_r11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=11 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-11-graffed-into-their-own-olive-tree-restoration-not-replacement',
+       E'Graffed into their own olive tree — restoration, not replacement',
+       E'This is the heart of the chapter, and it must be read as the figure Paul actually builds. *If the firstfruit be holy, the lump is also holy: and if the root be holy, so are the branches* (Romans 11:16). The tree is no invented metaphor — it is the tree Yahuah himself planted and named: *Yahuah (LORD) called thy name, A green olive tree, fair, and of goodly fruit: with the noise of a great tumult he hath kindled fire upon it, and the branches of it are broken* (Jeremiah 11:16). The name is Yashar''el''s (Israel''s); the olive tree is Yashar''el''s own covenant tree, rooted in the fathers. The branches broken from it are Yashar''el''s own, broken off in unbelief — the covenant lineage carried through Avraham, Yitschaq, and Ya''aqov that fell when the houses fell. Then comes the warning to the grafted, the guardrail Paul himself builds against every supersession: *And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree; Boast not against the branches. But if thou boast, thou bearest not the root, but the root thee* (Romans 11:17-18). *Because of unbelief they were broken off, and thou standest by faith. Be not highminded, but fear: For if Elohim (God) spared not the natural branches, take heed lest he also spare not thee* (Romans 11:20-21). The wild branches are not a new people supplanting Yashar''el; they are the living descendants of the broken-off, the scattered seed grown wild among the nations, and they are warned never to boast against the natural branches whose root bears them. And the destination of the whole figure is restoration: *For if thou wert cut out of the olive tree which is wild by nature, and wert graffed contrary to nature into a good olive tree: how much more shall these, which be the natural branches, be graffed into their own olive tree?* (Romans 11:24). The natural branches — the fathers'' covenant line — Yahuah is able to graff *into their own olive tree.* Jeremiah already heard the scattered house turning home: *I have surely heard Ephraim bemoaning himself thus … turn thou me, and I shall be turned; for thou art Yahuah Elohai (the LORD my God)* (Jeremiah 31:18), and heard the Father''s answer over him, *Is Ephraim my dear son? is he a pleasant child? … I will surely have mercy upon him, saith Yahuah (LORD)* (Jeremiah 31:20). Ephraim is no stranger grafted in for the first time; he is the *dear son,* the *pleasant child* Yahuah never stopped remembering, coming home to the tree that was always his. The grafting is the Father receiving his own back to his own root — restoration of Yashar''el''s own, never a replacement people, never outsiders supplanting Yashar''el.',
+       sv.verse_id, ev.verse_id, 'free', 6259
+  FROM _s219_r11_lookup sv, _s219_r11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=11 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-11-blindness-in-part-until-the-fulness-and-so-all-israel-shall-be-saved',
+       E'Blindness in part, until the fulness — and so all Yashar''el (Israel) shall be saved',
+       E'Paul names the mystery plainly so no one mistakes the slumber for a permanent fate: *I would not, brethren, that ye should be ignorant of this mystery, lest ye should be wise in your own conceits; that blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* (Romans 11:25). The blindness is *in part* — not total — and it runs *until* a fixed term, not forever. And the term reached, the outcome is sworn: *And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26). The writing he means is Isaiah''s: *And the Redeemer shall come to Zion, and unto them that turn from transgression in Jacob, saith Yahuah (LORD)* (Isaiah 59:20). The Deliverer comes to Jacob himself — not a substitution of some other people for Jacob, but the Redeemer turning away the ungodliness of Jacob. The covenant behind it is everlasting and carried in a bloodline: *My spirit that is upon thee, and my words which I have put in thy mouth, shall not depart out of thy mouth, nor out of the mouth of thy seed, nor out of the mouth of thy seed''s seed … from henceforth and for ever* (Isaiah 59:21). And Paul''s closing line, *For this is my covenant unto them, when I shall take away their sins* (Romans 11:27), is Jeremiah''s new covenant with the house: *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33), *for I will forgive their iniquity, and I will remember their sin no more* (Jeremiah 31:34). The saving of all Yashar''el is the Torah written on the heart of the house and the sins remembered no more — not the law set aside, but the covenant brought home to the people it was always made with.',
+       sv.verse_id, ev.verse_id, 'free', 6262
+  FROM _s219_r11_lookup sv, _s219_r11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=11 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-11-the-gifts-and-calling-without-repentance-beloved-for-the-fathers-sakes',
+       E'The gifts and calling without repentance — beloved for the fathers'' sakes',
+       E'Paul grounds the certainty of the homecoming in the unchangeableness of Yahuah''s love: *As concerning the gospel, they are enemies for your sakes: but as touching the election, they are beloved for the fathers'' sakes. For the gifts and calling of Elohim (God) are without repentance* (Romans 11:28-29). The calling cannot be revoked because the love that made it cannot be revoked: *Yea, I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee* (Jeremiah 31:3). A love that is everlasting cannot be repented of. And the being-beloved-for-the-fathers''-sakes is the very disposition Yahuah confessed over the scattered house under judgment: *for since I spake against him, I do earnestly remember him still … I will surely have mercy upon him, saith Yahuah (LORD)* (Jeremiah 31:20). The judgment never ended the affection. Paul then lays the whole purpose bare: *For as ye in times past have not believed Elohim (God), yet have now obtained mercy through their unbelief: Even so have these also now not believed, that through your mercy they also may obtain mercy* (Romans 11:30-31) — *For Elohim (God) hath concluded them all in unbelief, that he might have mercy upon all* (Romans 11:32). Tobit''s prayer carries the same rhythm of one Father: he will *scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us* (Tobit 13:5). The concluding under judgment is never the last word; mercy is the appointed end, and the gathering of the dispersed out of all nations is that mercy made visible.',
+       sv.verse_id, ev.verse_id, 'extras', 6265
+  FROM _s219_r11_lookup sv, _s219_r11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=11 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'romans-11-o-the-depth-how-unsearchable-the-mind-of-yahuah',
+       E'O the depth — how unsearchable the mind of Yahuah (LORD)',
+       E'Having unfolded the whole mystery — a reserved remnant, a blindness in part and for a season, the scattered grafted home, all Yashar''el (Israel) saved — Paul can only worship: *O the depth of the riches both of the wisdom and knowledge of Elohim (God)! how unsearchable are his judgments, and his ways past finding out!* (Romans 11:33). And he closes with two questions straight from the Tanakh. The first is Isaiah''s: *For who hath known the mind of Yahuah (Lord)? or who hath been his counsellor?* (Romans 11:34), echoing *Who hath directed the Spirit of Yahuah (LORD), or being his counsellor hath taught him?* (Isaiah 40:13) — asked of the One who measures the waters in his hand and gathers the lambs in his bosom. The second is Yahuah''s own word out of the whirlwind: *Or who hath first given to him, and it shall be recompensed unto him again?* (Romans 11:35), echoing *Who hath prevented me, that I should repay him? whatsoever is under the whole heaven is mine* (Job 41:11). No man counsels Yahuah; no creature puts him in its debt. The mercy that bounds the blindness and gathers Yashar''el home is wholly his free gift, owed to no one — *For of him, and through him, and to him, are all things: to whom be glory for ever. Amen* (Romans 11:36).',
+       sv.verse_id, ev.verse_id, 'free', 6268
+  FROM _s219_r11_lookup sv, _s219_r11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=33
+   AND ev.edition_slug='canon' AND ev.book_slug='romans' AND ev.chapter_number=11 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: romans-11-hath-elohim-cast-away-his-people-elohim-forbid-the-reserved-remnant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Kings 19:10 — *I, even I only, am left; and they seek my life* Elijah''s despair, the cry Paul quotes to show the faithful are never as few as they look (Romans 11:2).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-hath-elohim-cast-away-his-people-elohim-forbid-the-reserved-remnant'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=19 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Kings 19:14 — *I, even I only, am left; and they seek my life, to take it away* the prophet certain the people had collapsed to one, almost verbatim in Paul''s mouth (Romans 11:3).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-hath-elohim-cast-away-his-people-elohim-forbid-the-reserved-remnant'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=19 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Kings 19:18 — *Yet I have left me seven thousand in Yashar''el (Israel), all the knees which have not bowed unto Baal* the reserved remnant Elijah could not see, the answer to the chapter''s fear (Romans 11:4).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-hath-elohim-cast-away-his-people-elohim-forbid-the-reserved-remnant'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 31:37 — *If heaven above can be measured … I will also cast off all the seed of Yashar''el (Israel)* the casting-away sworn impossible; the seed of Yashar''el cannot be undone (Romans 11:1).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-hath-elohim-cast-away-his-people-elohim-forbid-the-reserved-remnant'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-11-the-spirit-of-slumber-blindness-in-part-not-final
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 29:10 — *Yahuah (LORD) hath poured out upon you the spirit of deep sleep, and hath closed your eyes* the slumber Paul names, bounded by the prophet''s promise that the blind shall yet see (Romans 11:8).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-the-spirit-of-slumber-blindness-in-part-not-final'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 29:4 — *eyes to see, and ears to hear, unto this day* Moses'' words spoken inside the covenant; a present blindness in a people still wholly his (Romans 11:8).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-the-spirit-of-slumber-blindness-in-part-not-final'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 69:22 — *Let their table become a snare before them … let it become a trap* David''s line Paul carries; the provision become judgment on the stumbling (Romans 11:9).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-the-spirit-of-slumber-blindness-in-part-not-final'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 69:23 — *Let their eyes be darkened, that they see not* the same darkening as the spirit of slumber, framed by Paul as in part and bounded (Romans 11:10).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-the-spirit-of-slumber-blindness-in-part-not-final'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-11-through-their-fall-the-receiving-of-them-life-from-the-dead
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 31:8 — *I will bring them from the north country, and gather them from the coasts of the earth … a great company shall return* the fulness Paul reaches for, the multitude already seen coming home (Romans 11:12).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-through-their-fall-the-receiving-of-them-life-from-the-dead'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 31:10 — *He that scattered Yashar''el (Israel) will gather him … as a shepherd doth his flock* the receiving of them, the same Yahuah who scattered now gathering (Romans 11:15).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-through-their-fall-the-receiving-of-them-life-from-the-dead'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Tobit 13:5 — *will have mercy again, and will gather us out of all nations, among whom he has scattered us* the scattering and gathering one motion of one Father; life from the dead made visible (Romans 11:15).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-through-their-fall-the-receiving-of-them-life-from-the-dead'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-11-graffed-into-their-own-olive-tree-restoration-not-replacement
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 11:16 — *Yahuah (LORD) called thy name, A green olive tree, fair, and of goodly fruit … the branches of it are broken* the olive tree is Yashar''el''s (Israel''s) own, named by Yahuah; the broken branches are Yashar''el''s own (Romans 11:16).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-graffed-into-their-own-olive-tree-restoration-not-replacement'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=11 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 31:18 — *I have surely heard Ephraim bemoaning himself … turn thou me, and I shall be turned* the scattered house turning home; the grafting-in is Ephraim''s homecoming to his own tree (Romans 11:24).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-graffed-into-their-own-olive-tree-restoration-not-replacement'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 31:20 — *Is Ephraim my dear son? … I will surely have mercy upon him* the broken-off is no stranger but the dear son never forgotten; grafted into his own root (Romans 11:24).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-graffed-into-their-own-olive-tree-restoration-not-replacement'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-11-blindness-in-part-until-the-fulness-and-so-all-israel-shall-be-saved
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 59:20 — *the Redeemer shall come to Zion, and unto them that turn from transgression in Jacob* the writing Paul cites; the Deliverer comes to Jacob himself, not a substitute people (Romans 11:26).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-blindness-in-part-until-the-fulness-and-so-all-israel-shall-be-saved'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=59 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 59:21 — *my words … shall not depart out of … thy seed, nor … thy seed''s seed … for ever* an everlasting covenant carried in a bloodline, never transferred away (Romans 11:27).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-blindness-in-part-until-the-fulness-and-so-all-israel-shall-be-saved'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=59 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 31:33 — *I will put my law in their inward parts, and write it in their hearts … they shall be my people* the covenant by which all Yashar''el (Israel) is saved: Torah internalized, not set aside (Romans 11:27).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-blindness-in-part-until-the-fulness-and-so-all-israel-shall-be-saved'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 31:34 — *I will forgive their iniquity, and I will remember their sin no more* Paul''s *when I shall take away their sins*; the pardon promised the whole house (Romans 11:27).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-blindness-in-part-until-the-fulness-and-so-all-israel-shall-be-saved'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-11-the-gifts-and-calling-without-repentance-beloved-for-the-fathers-sakes
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 31:3 — *I have loved thee with an everlasting love: therefore with lovingkindness have I drawn thee* a love everlasting cannot be repented of; the calling stands because the love stands (Romans 11:28).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-the-gifts-and-calling-without-repentance-beloved-for-the-fathers-sakes'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 31:20 — *since I spake against him, I do earnestly remember him still … I will surely have mercy upon him* the judgment never ended the affection; beloved for the fathers'' sakes (Romans 11:28).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-the-gifts-and-calling-without-repentance-beloved-for-the-fathers-sakes'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Tobit 13:5 — *he will scourge us … and will have mercy again, and will gather us out of all nations* the concluding under judgment never the last word; mercy the appointed end (Romans 11:30).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-the-gifts-and-calling-without-repentance-beloved-for-the-fathers-sakes'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=30
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: romans-11-o-the-depth-how-unsearchable-the-mind-of-yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 40:13 — *Who hath directed the Spirit of Yahuah (LORD), or being his counsellor hath taught him?* quoted word for word; no man counsels the One whose mercy is past finding out (Romans 11:34).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-o-the-depth-how-unsearchable-the-mind-of-yahuah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 41:11 — *Who hath prevented me, that I should repay him? whatsoever is under the whole heaven is mine* no creature puts Yahuah in its debt; the gathering mercy is wholly his free gift (Romans 11:35).'
+  FROM cross_reference_threads t, cross_references x, _s219_r11_lookup sv, _s219_r11_lookup tv
+ WHERE t.slug='romans-11-o-the-depth-how-unsearchable-the-mind-of-yahuah'
+   AND sv.edition_slug='canon' AND sv.book_slug='romans' AND sv.chapter_number=11 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=41 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session219 — Romans cross-references complete.'
