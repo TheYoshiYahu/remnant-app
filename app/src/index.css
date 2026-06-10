@@ -1001,6 +1001,14 @@ body {
   border-left: 2px solid color-mix(in srgb, #93C0FF 55%, transparent);
   background: var(--cal-surface-2);
 }
+/* Each expanded override mode carries its own metal on the spine, matching the
+   mode pill in ORIENT_MODES — the color is the mode's identity, not decoration.
+   All hexes are exact chrome-metal register borders (index.css §chrome-metal). */
+.cal-orient-body.cal-accent-gold { border-left-color: color-mix(in srgb, #FCECAF 62%, transparent); }
+.cal-orient-body.cal-accent-emerald { border-left-color: color-mix(in srgb, #2EFFA1 55%, transparent); }
+.cal-orient-body.cal-accent-techelet { border-left-color: color-mix(in srgb, #93C0FF 55%, transparent); }
+.cal-orient-body.cal-accent-argaman { border-left-color: color-mix(in srgb, #D4B0E0 62%, transparent); }
+.cal-orient-body.cal-accent-bronze { border-left-color: color-mix(in srgb, #E8B98C 62%, transparent); }
 .cal-orient-fields {
   display: flex;
   flex-wrap: wrap;

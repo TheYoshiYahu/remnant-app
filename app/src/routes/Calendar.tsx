@@ -319,6 +319,7 @@ function pillEdge(register: string): string {
     scarlet: "#FFBFC5",
     bronze: "#E8B98C",
     spectral: "#9FD0FF",
+    silver: "#E5E7EB",
   };
   return m[register] ?? "#93C0FF";
 }
@@ -338,6 +339,17 @@ interface ControlsProps {
   notes: string[];
 }
 
+// Menu palette — each metal carries a consistent identity across every control,
+// and all eight single-color chrome-metal registers are present (S225d, Yoshi:
+// "more color in the menus — incorporate ALL our single metallic colors"):
+//   techelet — the appointed baseline (Dark Moon · Firstfruits · month-start)
+//   gold     — the sighted light (First Crescent · anchor-by-feast + feast list)
+//   argaman  — royal/rabbinic proclamation (Rabbinic · anchor-the-new-year)
+//   emerald  — the perfect/agricultural year (Enoch · intercalation · year-begins)
+//   bronze   — the ancient institution (Qumran extras · follow-a-source)
+//   spectral — the scientific apparatus (crescent criterion: Odeh/Yallop)
+//   silver   — the observer's confirmation (crescent sighting mode)
+//   scarlet  — the reset (Clear ✕)
 const MONTH_DIALS: { key: MonthKind; label: string; register: string }[] = [
   { key: "conjunction", label: "Dark Moon", register: "techelet" },
   { key: "crescent", label: "First Crescent", register: "gold" },
@@ -374,7 +386,7 @@ function ReckoningControls({ reck, setReck, notes }: ControlsProps) {
                 <Pill
                   key={c}
                   active={reck.criterion === c}
-                  register="techelet"
+                  register="spectral"
                   onClick={() => set({ criterion: c })}
                 >
                   {c === "odeh" ? "Odeh (2004)" : "Yallop (1997)"}
@@ -392,7 +404,7 @@ function ReckoningControls({ reck, setReck, notes }: ControlsProps) {
                 <Pill
                   key={m}
                   active={reck.crescentMode === m}
-                  register="techelet"
+                  register="silver"
                   onClick={() => set({ crescentMode: m })}
                 >
                   {lbl}
@@ -572,13 +584,13 @@ function OrientationMenu({
       </ControlRow>
 
       {o && o.mode === "feast" && (
-        <div className="cal-orient-body">
+        <div className="cal-orient-body cal-accent-gold">
           <ControlRow label="Feast">
             {FEAST_ANCHORS.map((f) => (
               <Pill
                 key={f.key}
                 active={o.feast === f.key}
-                register="techelet"
+                register="gold"
                 onClick={() => setO({ ...o, feast: f.key })}
               >
                 {f.label}
@@ -600,7 +612,7 @@ function OrientationMenu({
       )}
 
       {o && o.mode === "today" && (
-        <div className="cal-orient-body">
+        <div className="cal-orient-body cal-accent-emerald">
           <div className="cal-orient-fields">
             <MonthField
               label="today is month"
@@ -625,7 +637,7 @@ function OrientationMenu({
       )}
 
       {o && o.mode === "monthStart" && (
-        <div className="cal-orient-body">
+        <div className="cal-orient-body cal-accent-techelet">
           <div className="cal-orient-fields">
             <MonthField
               label="the 1st of month"
@@ -645,7 +657,7 @@ function OrientationMenu({
       )}
 
       {o && o.mode === "newYear" && (
-        <div className="cal-orient-body">
+        <div className="cal-orient-body cal-accent-argaman">
           <div className="cal-orient-fields">
             <DateField
               label="the year began on"
@@ -660,7 +672,7 @@ function OrientationMenu({
       )}
 
       {o && o.mode === "source" && (
-        <div className="cal-orient-body">
+        <div className="cal-orient-body cal-accent-bronze">
           <p className="cal-orient-hint cal-orient-stub">
             ✦ Follow a published calendar — inherit another body&rsquo;s reckoning.
             <em> Coming soon.</em>
