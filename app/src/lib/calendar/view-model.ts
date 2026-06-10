@@ -274,13 +274,18 @@ export function prevMonthFocus(grid: MonthGrid): Date {
 }
 
 // ---------------------------------------------------------------------------
-// Moedim — the Leviticus 23 color theology.
-//   emerald  — blessing / firstfruits / ingathering
-//   gold     — priestly register (unleavened, trumpets, new oil)
-//   scarlet  — blood / atonement memorial (Passover)
-//   argaman  — judgment / solemn assembly (Atonement, new wine)
-//   techelet — divine outpouring (Weeks, the eighth day)
-//   bronze   — the altar / wood offering
+// Moedim — the Leviticus 23 color theology. Carries the app's binary:
+// ARGAMAN (purple) = judgment/curse, EMERALD = blessing/hope. Purple marks
+// ONLY the judgment feast (the Day of Atonement — the affliction of soul);
+// every harvest/ingathering feast carries emerald (blessing). The remaining
+// registers are the app's established accents:
+//   emerald  — blessing / hope (Firstfruits, Tabernacles, New Wine)
+//   gold     — priestly register (Unleavened Bread, Trumpets, New Oil)
+//   scarlet  — blood / atonement memorial (Passover lamb)
+//   argaman  — JUDGMENT (Day of Atonement) — purple, and purple alone, here
+//   techelet — divine outpouring (Weeks/Shavuot, the eighth day)
+//   bronze   — the altar fire (Wood Offering)
+// All hexes below are the exact chrome-metal register values from index.css.
 // ---------------------------------------------------------------------------
 
 export type MoedRegister =
@@ -317,7 +322,7 @@ const MOED_REGISTER: Record<MoedKind, MoedRegister> = {
   atonement: "argaman",
   tabernacles: "emerald",
   "shemini-atzeret": "techelet",
-  "new-wine": "argaman",
+  "new-wine": "emerald", // a harvest blessing — NOT judgment, so never purple
   "new-oil": "gold",
   "wood-offering": "bronze",
 };

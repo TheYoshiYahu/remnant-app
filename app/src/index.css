@@ -881,24 +881,36 @@ body {
 /* ─── S220 — The Appointed Times (EPIC biblical calendar view) ─────────
  *
  * The calendar surface built on the configurable biblical-calendar engine.
- * Reuses the chrome-metal registers (gold/techelet/argaman/emerald/scarlet/
- * bronze) and the §3 color theology. NO GREY: every surface, border, and
- * muted tone is drawn from the sacred palette or the deep-navy night field
- * (#070b18 → #0b1020), never a neutral grey. Sans chrome for controls,
- * serif for the reverent display numerals.
+ * Reuses the chrome-metal registers and the color theology, with EVERY value
+ * traced to existing hexes — the reader tokens (--reader-bg #000000,
+ * --reader-surface #0a0a0a, --reader-text #ffffff) and the chrome-metal
+ * register colors above (techelet #0A2D84/#1A6FE5/#93C0FF, gold #FCECAF/
+ * #FFF8E1, emerald #2EFFA1, scarlet #FFBFC5/#FFE6E8, spectral #2E7BD6).
+ *
+ * NO GREY — Yoshi purged it. The night field is the reader's own pure black;
+ * depth comes from the TECHELET register ("divine illumination") mixed toward
+ * black, never a neutral grey. The purged grey tokens (--reader-rule #2a2a2a,
+ * --reader-muted #a3a3a3) are deliberately NOT used: borders are techelet,
+ * "muted" text is the techelet border tone #93C0FF. Sans for controls, serif
+ * for the reverent display numerals.
  */
 .cal-root {
-  --cal-night: #070b18;          /* the night field — deep techelet-black */
-  --cal-surface: #0b1224;        /* card surface, a hair above the field */
-  --cal-surface-2: #0e1730;      /* nested surface */
-  --cal-edge: #1b2747;           /* hairline borders — deep blue, not grey */
-  --cal-edge-bright: #2b3d6b;
-  --cal-ink: #EAF1FF;            /* primary ink (pale techelet-white) */
-  --cal-ink-soft: #9DB2E0;       /* secondary ink — soft blue, replaces grey */
-  --cal-gold: #FCECAF;
-  --cal-emerald: #2EFFA1;
+  /* Field + card surfaces — the reader's own tokens (pixel-consistent with
+     every other route). Depth tones mix the techelet register into black. */
+  --cal-night: var(--reader-bg);                          /* #000000 */
+  --cal-surface: color-mix(in srgb, #0A2D84 14%, #000);   /* deep techelet card */
+  --cal-surface-2: color-mix(in srgb, #0A2D84 20%, #000); /* nested surface */
+  /* Hairline borders — techelet mid (#1A6FE5), never the purged grey #2a2a2a. */
+  --cal-edge: color-mix(in srgb, #1A6FE5 22%, #000);
+  --cal-edge-bright: color-mix(in srgb, #1A6FE5 40%, #000);
+  /* Ink — reader white for primary; the techelet text + border tones for
+     secondary, standing in for the purged grey --reader-muted. */
+  --cal-ink: var(--reader-text);   /* #ffffff */
+  --cal-ink-soft: #93C0FF;         /* exact: .chrome-metal-techelet border */
+  --cal-gold: #FCECAF;             /* exact: .chrome-metal-gold border */
+  --cal-emerald: #2EFFA1;          /* exact: .chrome-metal-emerald border */
   background:
-    radial-gradient(1200px 600px at 50% -10%, #0d1838 0%, transparent 60%),
+    radial-gradient(1200px 600px at 50% -10%, color-mix(in srgb, #1A6FE5 16%, transparent) 0%, transparent 60%),
     var(--cal-night);
   font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
@@ -968,7 +980,7 @@ body {
 .cal-notes li {
   font-size: 0.78rem;
   line-height: 1.5;
-  color: #F3E6C2;
+  color: #FFF8E1; /* exact: .chrome-metal-gold text */
 }
 .cal-notes li::before { content: "✦ "; color: var(--cal-gold); }
 
@@ -977,10 +989,10 @@ body {
   border: 1px solid var(--cal-edge-bright);
   border-radius: 16px;
   background:
-    radial-gradient(700px 300px at 85% 0%, rgba(26, 111, 229, 0.16) 0%, transparent 60%),
-    linear-gradient(180deg, #0c1530 0%, #0a1124 100%);
+    radial-gradient(700px 300px at 85% 0%, color-mix(in srgb, #1A6FE5 16%, transparent) 0%, transparent 60%),
+    linear-gradient(180deg, color-mix(in srgb, #0A2D84 18%, #000) 0%, var(--cal-surface) 100%);
   padding: 1.25rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(147, 192, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 0 1px color-mix(in srgb, #93C0FF 8%, transparent);
 }
 .cal-hero-grid {
   display: grid;
@@ -1013,7 +1025,7 @@ body {
   margin-top: 0.8rem;
   height: 7px;
   border-radius: 999px;
-  background: #0a1430;
+  background: var(--cal-surface-2);
   border: 1px solid var(--cal-edge);
   overflow: hidden;
 }
@@ -1046,7 +1058,7 @@ body {
   margin-top: 0.4rem;
   font-size: 0.92rem;
   font-weight: 600;
-  color: #EAF1FF;
+  color: #E6F1FF; /* exact: .chrome-metal-techelet text */
 }
 .cal-moon-illum { font-size: 0.74rem; color: var(--cal-ink-soft); }
 
@@ -1071,7 +1083,7 @@ body {
   border: 1px solid var(--cal-edge);
   border-radius: 8px;
   padding: 0.35rem 0.2rem;
-  background: #0a1226;
+  background: var(--cal-surface-2);
 }
 .cal-count-n {
   font-family: Lora, Georgia, serif;
@@ -1095,13 +1107,15 @@ body {
   border-left: 3px solid var(--cal-gold);
   border-radius: 12px;
   padding: 0.9rem 1.1rem;
-  background: linear-gradient(180deg, rgba(100, 80, 40, 0.16) 0%, rgba(10, 17, 36, 0.4) 100%);
+  /* gold deep (#645028) wash → deep techelet field. Both from index.css. */
+  background: linear-gradient(180deg, color-mix(in srgb, #645028 26%, transparent) 0%, color-mix(in srgb, #0A2D84 30%, transparent) 100%);
 }
 .cal-watch-pending {
   border-color: color-mix(in srgb, #FFBFC5 48%, transparent);
-  border-left-color: #B82B36;
-  background: linear-gradient(180deg, rgba(184, 43, 54, 0.16) 0%, rgba(10, 17, 36, 0.4) 100%);
-  box-shadow: 0 0 22px rgba(184, 43, 54, 0.22);
+  border-left-color: #B82B36; /* exact: .chrome-metal-scarlet mid */
+  /* scarlet mid (#B82B36) wash → deep techelet field. */
+  background: linear-gradient(180deg, color-mix(in srgb, #B82B36 22%, transparent) 0%, color-mix(in srgb, #0A2D84 30%, transparent) 100%);
+  box-shadow: 0 0 22px color-mix(in srgb, #B82B36 28%, transparent);
 }
 .cal-watch-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
 .cal-watch-eyebrow { color: var(--cal-gold); }
@@ -1115,7 +1129,7 @@ body {
   margin: 0.5rem 0 0;
 }
 .cal-watch-body em { color: #FCECAF; font-style: italic; }
-.cal-watch-pending .cal-watch-body em { color: #FFD9DC; }
+.cal-watch-pending .cal-watch-body em { color: #FFE6E8; } /* exact: scarlet text */
 .cal-watch-actions { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.8rem; }
 .cal-confirm-btn { cursor: pointer; border-radius: 999px; font-size: 0.82rem; }
 .cal-watch-clear {
@@ -1135,11 +1149,11 @@ body {
 }
 .cal-nav-btn {
   width: 2.4rem; height: 2.4rem; border-radius: 999px;
-  border: 1px solid var(--cal-edge-bright); background: #0c1530;
+  border: 1px solid var(--cal-edge-bright); background: var(--cal-surface-2);
   color: #93C0FF; font-size: 1.5rem; line-height: 1; cursor: pointer;
   transition: background 0.15s ease;
 }
-.cal-nav-btn:hover { background: #122046; }
+.cal-nav-btn:hover { background: color-mix(in srgb, #1A6FE5 22%, #000); }
 .cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -1167,7 +1181,9 @@ body {
 }
 .cal-cell-blank { background: transparent; border-color: transparent; }
 .cal-cell-sabbath:not(.cal-cell-moed) {
-  background: linear-gradient(160deg, rgba(14, 44, 80, 0.6) 0%, rgba(11, 18, 36, 0.6) 100%);
+  /* spectral deep (#0E2C50) → deep techelet — the seventh-day rest in the
+     divine-illumination register. Both hexes from index.css. */
+  background: linear-gradient(160deg, color-mix(in srgb, #0E2C50 78%, transparent) 0%, color-mix(in srgb, #0A2D84 24%, transparent) 100%);
   border-color: color-mix(in srgb, #2E7BD6 35%, transparent);
 }
 .cal-cell-today {
@@ -1193,7 +1209,7 @@ body {
   letter-spacing: 0.02em;
   text-shadow: 0 0 8px currentColor;
 }
-.cal-cell-sab { font-size: 0.58rem; font-weight: 600; color: #7FA8E8; letter-spacing: 0.04em; }
+.cal-cell-sab { font-size: 0.58rem; font-weight: 600; color: var(--cal-ink-soft); letter-spacing: 0.04em; }
 
 .cal-legend { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px solid var(--cal-edge); }
 .cal-legend-item { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; font-weight: 600; }
@@ -1204,7 +1220,7 @@ body {
 .cal-compare {
   border: 1px solid var(--cal-edge-bright);
   border-radius: 14px;
-  background: linear-gradient(180deg, #0c1530 0%, #0a1124 100%);
+  background: linear-gradient(180deg, color-mix(in srgb, #0A2D84 18%, #000) 0%, var(--cal-surface) 100%);
   overflow: hidden;
 }
 .cal-compare-toggle {
