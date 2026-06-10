@@ -33,6 +33,7 @@ import Landing from "./routes/Landing";
 import Settings from "./routes/Settings";
 import Attributions from "./routes/Attributions";
 import AuthCallback from "./routes/AuthCallback";
+import Calendar from "./routes/Calendar";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
 import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
 import { hasSeenSigninAsk } from "./lib/signinAsk";
@@ -322,6 +323,11 @@ export default function App() {
     // time the partner is on `/read`, App remounts and this initializer
     // re-runs with pathname=/read — the modal surfaces there.
     if (window.location.pathname === "/") return false;
+    // S220 — suppress on /calendar. The Appointed Times is a standalone,
+    // auth-free surface (it doubles as the engine's live demo); the
+    // sacred-name / sign-in ask is a reader-time decision and would only
+    // talk over the calendar here.
+    if (window.location.pathname.startsWith("/calendar")) return false;
     return !hasStoredSacredNamePreference() || !hasSeenSigninAsk();
   });
   // initialStep captured once at mount; the modal manages step state
@@ -440,6 +446,12 @@ export default function App() {
   // STEPBible) per their CC-BY / ODbL attribution requirements.
   if (pathname === "/attributions" || pathname.startsWith("/attributions")) {
     return <>{welcomeModal}<Attributions /></>;
+  }
+  // S220 — The Appointed Times: the EPIC biblical-calendar view, built on
+  // the configurable calendar engine (lib/calendar). Standalone + auth-free,
+  // so it renders as a live demo without the reader backend.
+  if (pathname === "/calendar" || pathname.startsWith("/calendar")) {
+    return <>{welcomeModal}<Calendar /></>;
   }
   // S129 — Reader moves from `/` to `/read` so the bare bible
   // subdomain serves the new Landing surface instead of dropping

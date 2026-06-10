@@ -135,6 +135,19 @@ export default function Landing() {
             only appears once the .apk is actually live at /download/. */}
         <AndroidLandingAffordance />
 
+        {/* S220 — secondary door into The Appointed Times: the biblical
+            calendar reckoned every way at once. A chrome-metal gold pill
+            (the priestly / appointed-times register) so it reads as a
+            sacred utility, not a second primary CTA. */}
+        <a
+          href="/calendar"
+          className="chrome-metal chrome-metal-gold mt-4"
+          style={{ borderRadius: 999, padding: "0.45rem 1.1rem", fontSize: "0.95rem" }}
+          aria-label="Open The Appointed Times — the biblical calendar"
+        >
+          ☾ The Appointed Times — biblical calendar
+        </a>
+
         <div className="mb-12" />
 
         {/* Brief frame — three short lines, no bullets, no marketing
