@@ -4748,6 +4748,1519 @@ SELECT t.id, x.id, 4, E'Exodus 19:16 — *there were thunders and lightnings, an
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_revelation_12.sql (S224 Revelation 12) -----
+-- =====================================================================
+-- S224 minion — REVELATION 12 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 12 (17 verses) — the woman clothed with the sun, the man child, the great
+--   red dragon, war in heaven (Michael and the dragon), the woman fled into the wilderness on
+--   eagle's wings, and THE CENTERPIECE — 12:17 the remnant of her seed WHICH KEEP THE COMMANDMENTS
+--   of Elohim and have the testimony of Yahusha. THIS IS A BLESSING CHAPTER.
+-- Tag: rv12 (temp view _s224_rv12_lookup).
+-- Sort band: floor 9275, step 3 (9275, 9278, 9281, 9284, 9287, 9290, 9293 used; under 9300).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Revelation is the consummation of the covenant story — the same Yahuah, the same
+-- Torah, the same Yashar'el (Israel) brought to restoration; NOT a rapture-escape, NOT a church that
+-- replaced Israel, NOT a Torah abolished). Chapter 12 names the saints by the mark the prophets
+-- always named: those who KEEP THE COMMANDMENTS of Elohim (12:17), the Torah-keepers, covenant
+-- faithfulness and never legalism. The woman is Yashar'el — Joseph's sun-moon-stars dream (Genesis
+-- 37:9) — bearing the messianic deliverer, fled into the wilderness and borne on eagle's wings as at
+-- the exodus (Exodus 19:4), the dragon the old serpent of Genesis 3 cast down, the man child caught
+-- up to rule with the rod of iron (Psalm 2:9). Christology: the man child is Yahusha (Jesus) the
+-- Formed, the slain Lamb by whose blood the saints overcome (12:11). The 12:17 keep-the-commandments
+-- mark is woven heavily as the covenant faithfulness of the remnant the prophets named (Malachi 4:4
+-- *Remember ye the law of Moses my servant*; Deuteronomy 30:16).
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed per verse-block):
+--   v.1-2   the woman clothed with the sun, moon under her feet, crown of twelve stars; travailing
+--           Tanakh: Genesis 37:9 (sun, moon, eleven stars made obeisance — Joseph's dream, Israel),
+--                   Isaiah 54:1 (sing, O barren that didst not travail), Isaiah 54:5 (thy Maker thine
+--                   husband), Micah 4:10 (be in pain and labour, O daughter of Zion)
+--           Extras: none warranted (the woman-as-Zion 2 Esdras material not pulled; covered in Tanakh)
+--           NT: none warranted (carried in prose)
+--   v.2,5   she brought forth a man child to rule all nations with a rod of iron; caught up to the throne
+--           Tanakh: Isaiah 66:7 (before she travailed she brought forth a man child), Isaiah 66:8
+--                   (as soon as Zion travailed she brought forth her children), Micah 5:3 (until she
+--                   which travaileth hath brought forth), Psalm 2:9 (break them with a rod of iron)
+--           Extras: none warranted   NT: none warranted
+--   v.9-10  the great dragon cast out, that old serpent, the Devil and Satan, the accuser cast down
+--           Tanakh: Genesis 3:1 (the serpent more subtil), Genesis 3:15 (enmity, bruise thy head),
+--                   Job 1:6 (Satan among the sons of Elohim), Zechariah 3:1 (Satan at his right hand to resist)
+--           Extras: Wisdom of Solomon 2:24 (through envy of the devil came death into the world)
+--           NT: Luke 10:18 (I beheld Satan as lightning fall from heaven), John 12:31 (the prince of
+--               this world cast out), Romans 16:20 (the Elohim of peace shall bruise Satan), Revelation
+--               20:2 (laid hold on the dragon, that old serpent — the same captor, the final binding)
+--   v.7-8   war in heaven; Michael and his angels fought against the dragon
+--           Tanakh: Daniel 10:13 (Michael, one of the chief princes, came to help), Daniel 10:21
+--                   (Michael your prince), Daniel 12:1 (Michael shall stand up, the great prince)
+--           Extras: 1 Enoch 10:11 (Michael sent to bind Semjaza and his associates), 1 Enoch 20:5
+--                   (Michael, set over the best part of mankind and over chaos)
+--           NT: none warranted (the casting-down NT echoes carried in the serpent thread)
+--   v.11    they overcame him by the blood of the Lamb and the word of their testimony
+--           Tanakh: Exodus 12:13 (the blood a token; when I see the blood I will pass over you)
+--           Extras: none warranted   NT: none warranted
+--   v.6,14  the woman fled into the wilderness, nourished, given two wings of a great eagle
+--           Tanakh: Exodus 19:4 (I bare you on eagles' wings and brought you unto myself),
+--                   Deuteronomy 32:10 (he found him in the waste howling wilderness, kept him as the
+--                   apple of his eye), Deuteronomy 32:11 (as an eagle... beareth them on her wings),
+--                   Isaiah 40:31 (they shall mount up with wings as eagles), Hosea 2:14 (I will bring
+--                   her into the wilderness and speak comfortably unto her)
+--           Extras: none warranted   NT: none warranted
+--   v.17    THE CENTERPIECE — the remnant which keep the commandments of Elohim and have the testimony
+--           Tanakh: Malachi 4:4 (Remember ye the law of Moses my servant), Deuteronomy 30:16 (love
+--                   Yahuah, keep his commandments, that thou mayest live), Deuteronomy 30:14 (the word
+--                   is very nigh thee, in thy mouth and in thy heart, that thou mayest do it)
+--           Extras: none warranted (the keep-commandments extras carried at Rev 14 / elsewhere)
+--           NT: Revelation 14:12 (here are they that keep the commandments of Elohim and the faith of
+--               Yahusha — the chapter's twin), 1 John 5:3 (this is the love of Elohim, that we keep
+--               his commandments: and his commandments are not grievous)
+--
+-- THREADS (slug -> target libraries):
+--   9275 revelation-12-the-woman-clothed-with-the-sun-the-travail-of-zion-genesis-37            (Tanakh)
+--   9278 revelation-12-she-brought-forth-a-man-child-to-rule-with-a-rod-of-iron-psalm-2         (Tanakh)
+--   9281 revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3                 (Tanakh + Extras + NT)
+--   9284 revelation-12-michael-and-his-angels-fought-against-the-dragon-daniel-10-and-12        (Tanakh + Extras)
+--   9287 revelation-12-overcame-by-the-blood-of-the-lamb-and-the-word-of-their-testimony-exodus-12  (Tanakh)
+--   9290 revelation-12-two-wings-of-a-great-eagle-into-the-wilderness-nourished-exodus-19       (Tanakh)
+--   9293 revelation-12-the-remnant-which-keep-the-commandments-of-elohim-malachi-4              (Tanakh + NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-12-the-woman-clothed-with-the-sun-the-travail-of-zion-genesis-37
+  ('canon', 'revelation', 12, 1, 'canon', 'genesis', 37, 9, 'free', E'*And he dreamed yet another dream, and told it his brethren, and said, Behold, I have dreamed a dream more; and, behold, the sun and the moon and the eleven stars made obeisance to me.* (Genesis 37:9). The woman of the vision wears the very signs of Joseph''s dream — *a woman clothed with the sun, and the moon under her feet, and upon her head a crown of twelve stars* (Revelation 12:1). The sun, the moon, the stars: this is the house of Yashar''el (Israel), Jacob and Rachel and the twelve sons, the covenant family the dream first sketched. The woman is no new thing and no replacement; she is the people of the promise, clothed in the lights of heaven, carrying the seed.'),
+  ('canon', 'revelation', 12, 2, 'canon', 'isaiah', 54, 1, 'free', E'*Sing, O barren, thou that didst not bear; break forth into singing, and cry aloud, thou that didst not travail with child: for more are the children of the desolate than the children of the married wife, saith Yahuah (LORD).* (Isaiah 54:1). The woman *being with child cried, travailing in birth, and pained to be delivered* (Revelation 12:2). Isaiah set the figure long before: Zion as the travailing woman whose desolation turns to a multitude of children. The pangs are real and the deliverance is sure — the daughter of Zion in labour, bringing forth the seed of promise out of her affliction.'),
+  ('canon', 'revelation', 12, 1, 'canon', 'isaiah', 54, 5, 'free', E'*For thy Maker is thine husband; Yahuah Tseva''ot (LORD of hosts) is his name; and thy Redeemer the Holy One of Yashar''el (Israel); The Elohim (God) of the whole earth shall he be called.* (Isaiah 54:5). The woman *clothed with the sun* (Revelation 12:1) is the wife of Yahuah (LORD), the espoused of the covenant — *thy Maker is thine husband.* She is not an abstraction but the bride of the Holy One of Yashar''el (Israel), the people he took to himself; and it is from her, his own, that the deliverer comes.'),
+  ('canon', 'revelation', 12, 2, 'canon', 'micah', 4, 10, 'free', E'*Be in pain, and labour to bring forth, O daughter of Zion, like a woman in travail: for now shalt thou go forth out of the city, and thou shalt dwell in the field, and thou shalt go even to Babylon; there shalt thou be delivered; there Yahuah (LORD) shall redeem thee from the hand of thine enemies.* (Micah 4:10). The travail of the woman *pained to be delivered* (Revelation 12:2) is the travail Micah named — the daughter of Zion labouring through exile and dwelling in the field, yet promised deliverance and redemption from her enemies'' hand. Her labour ends not in loss but in the redeeming of the seed.'),
+  -- thread: revelation-12-she-brought-forth-a-man-child-to-rule-with-a-rod-of-iron-psalm-2
+  ('canon', 'revelation', 12, 5, 'canon', 'isaiah', 66, 7, 'free', E'*Before she travailed, she brought forth; before her pain came, she was delivered of a man child.* (Isaiah 66:7). John''s words are Isaiah''s words: *And she brought forth a man child* (Revelation 12:5). The seer reaches back to the prophet''s own astonishing sign — Zion delivered of *a man child* — and lays it over the woman of the vision. The deliverer she bears is the one Isaiah saw, brought forth out of the travailing people.'),
+  ('canon', 'revelation', 12, 5, 'canon', 'isaiah', 66, 8, 'free', E'*Who hath heard such a thing? who hath seen such things? Shall the earth be made to bring forth in one day? or shall a nation be born at once? for as soon as Zion travailed, she brought forth her children.* (Isaiah 66:8). The man child the woman *brought forth* (Revelation 12:5) comes from the same travail in which *Zion travailed, she brought forth her children.* The birth of the deliverer and the birth of the nation are one wonder — the people of the promise and the one who rules them, brought forth together out of Zion''s pangs.'),
+  ('canon', 'revelation', 12, 5, 'canon', 'micah', 5, 3, 'free', E'*Therefore will he give them up, until the time that she which travaileth hath brought forth: then the remnant of his brethren shall return unto the children of Yashar''el (Israel).* (Micah 5:3). Micah binds the travailing woman, the birth of the ruler, and the return of the remnant into one promise; the man child *brought forth* (Revelation 12:5) is the ruler whose coming is the hinge — *she which travaileth hath brought forth* — after which *the remnant of his brethren shall return unto the children of Yashar''el (Israel).* The birth opens the gathering home.'),
+  ('canon', 'revelation', 12, 5, 'canon', 'psalms', 2, 9, 'free', E'*Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel.* (Psalm 2:9). The man child *was to rule all nations with a rod of iron* (Revelation 12:5) — the very sceptre of the anointed Son of the second Psalm, to whom Yahuah (LORD) says *Ask of me, and I shall give thee the heathen for thine inheritance.* The deliverer caught up *unto Elohim (God), and to his throne* (Revelation 12:5) is the King set on the holy hill of Zion, the Formed Son who reigns; his throne is the Father''s throne, and the nations are his inheritance.'),
+  -- thread: revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3
+  ('canon', 'revelation', 12, 9, 'canon', 'genesis', 3, 1, 'free', E'*Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made. And he said unto the woman, Yea, hath Elohim (God) said, Ye shall not eat of every tree of the garden?* (Genesis 3:1). When the seer names the dragon *that old serpent, called the Devil, and Satan, which deceiveth the whole world* (Revelation 12:9), he reaches all the way back to the garden. The deceiver who whispered *hath Elohim (God) said* to the first woman is the same adversary now cast out — the lie that has run from Eden to the end is one lie, and its author is one and the same old serpent.'),
+  ('canon', 'revelation', 12, 9, 'canon', 'genesis', 3, 15, 'free', E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15). The war of *the dragon... with the remnant of her seed* (Revelation 12:9,17) is the enmity Yahuah Elohim (the LORD God) declared in the garden — *between thy seed and her seed.* The whole chapter is that first promise unfolding: the woman, her seed, the serpent, and the head that is bruised. The casting-down of the old serpent is the head-crushing begun, the ancient sentence coming to pass.'),
+  ('canon', 'revelation', 12, 10, 'canon', 'job', 1, 6, 'free', E'*Now there was a day when the sons of Elohim (God) came to present themselves before Yahuah (LORD), and Satan came also among them.* (Job 1:6). The loud voice cries that *the accuser of our brethren is cast down, which accused them before our Elohim (God) day and night* (Revelation 12:10). This is the accuser of Job''s day — Satan come among the sons of Elohim (God) to lay his charge against the righteous. His office was always the accusing; and the voice from heaven declares that office ended, the accuser thrown down.'),
+  ('canon', 'revelation', 12, 10, 'canon', 'zechariah', 3, 1, 'free', E'*And he shewed me Joshua the high priest standing before the angel of Yahuah (LORD), and Satan standing at his right hand to resist him.* (Zechariah 3:1). The *accuser of our brethren... cast down, which accused them before our Elohim (God) day and night* (Revelation 12:10) is the Satan of Zechariah''s vision, standing to resist the high priest and accuse him before Yahuah (LORD). There the answer was *Yahuah (LORD) rebuke thee, O Satan*; here the rebuke is final — the resister cast out of heaven, the brethren no longer accused.'),
+  ('canon', 'revelation', 12, 9, 'apocrypha', 'the-wisdom-of-solomon', 2, 24, 'extras', E'*Nevertheless through envy of the devil came death into the world: and they that do hold of his side do find it.* (Wisdom of Solomon 2:24). The Hebrew library knew the dragon by his oldest work: *through envy of the devil came death into the world.* So when *that old serpent, called the Devil, and Satan, which deceiveth the whole world* (Revelation 12:9) is cast out, the one cast down is death''s author — the envy that beguiled the garden and brought mortality on the children of Adam. To overcome him by the blood of the Lamb is to overturn the very death he loosed.'),
+  ('canon', 'revelation', 12, 9, 'canon', 'luke', 10, 18, 'free', E'*And he said unto them, I beheld Satan as lightning fall from heaven.* (Luke 10:18). Yahusha (Jesus) had already seen what the vision shows: *he was cast out into the earth, and his angels were cast out with him* (Revelation 12:9). The fall of the adversary is no late surprise but a thing the Master beheld — *I beheld Satan as lightning fall from heaven* — the dominion of the deceiver broken as the kingdom of Elohim (God) drew near.'),
+  ('canon', 'revelation', 12, 9, 'canon', 'john', 12, 31, 'free', E'*Now is the judgment of this world: now shall the prince of this world be cast out.* (John 12:31). The casting-out of *the great dragon... that old serpent* (Revelation 12:9) is the very sentence Yahusha (Jesus) pronounced as his hour came: *now shall the prince of this world be cast out.* The cross is the throwing-down; the man child caught up to the throne is the prince of this world undone, the usurper expelled from his place.'),
+  ('canon', 'revelation', 12, 10, 'canon', 'romans', 16, 20, 'free', E'*And the Elohim (God) of peace shall bruise Satan under your feet shortly. The grace of our Lord Yahusha HaMashiach (Lord Jesus Christ) be with you. Amen.* (Romans 16:20). The casting-down of the accuser and the coming of *salvation, and strength, and the kingdom of our Elohim (God)* (Revelation 12:10) is the bruising Paul promised the saints: *the Elohim (God) of peace shall bruise Satan under your feet shortly.* It is the Genesis 3:15 head-crushing reaching down to the feet of the seed — the people who overcome share in the victory of the man child.'),
+  ('canon', 'revelation', 12, 9, 'canon', 'revelation', 20, 2, 'free', E'*And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years,* (Revelation 20:2). The same fourfold name returns at the end of the book: the dragon *cast out into the earth* (Revelation 12:9) is *laid hold on... that old serpent, which is the Devil, and Satan, and bound* (Revelation 20:2). What chapter twelve begins — the throwing-down — chapter twenty completes in the binding; one adversary, one undoing, from his expulsion from heaven to his chaining in the pit.'),
+  -- thread: revelation-12-michael-and-his-angels-fought-against-the-dragon-daniel-10-and-12
+  ('canon', 'revelation', 12, 7, 'canon', 'daniel', 10, 13, 'free', E'*But the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Michael, one of the chief princes, came to help me; and I remained there with the kings of Persia.* (Daniel 10:13). *Michael and his angels fought against the dragon* (Revelation 12:7) — the same Michael who came to the aid of the messenger in Daniel''s vision, *one of the chief princes,* the warrior over against the princes of the kingdoms. The war in heaven is the unseen battle Daniel was shown, now brought to its decisive hour.'),
+  ('canon', 'revelation', 12, 7, 'canon', 'daniel', 10, 21, 'free', E'*But I will shew thee that which is noted in the scripture of truth: and there is none that holdeth with me in these things, but Michael your prince.* (Daniel 10:21). Michael who *fought against the dragon* (Revelation 12:7) is named in Daniel as *your prince* — the prince set for the people of Yashar''el (Israel). His battle against the dragon is a battle for the woman and her seed; the prince of the covenant people contends against the accuser of the brethren.'),
+  ('canon', 'revelation', 12, 7, 'canon', 'daniel', 12, 1, 'free', E'*And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* (Daniel 12:1). The rising of *Michael and his angels* (Revelation 12:7) is the standing-up Daniel foretold — *Michael... the great prince which standeth for the children of thy people* — and it brings the deliverance of all *found written in the book.* The war in heaven and the deliverance of the people are one event: Michael stands, the dragon falls, the saints are saved.'),
+  ('canon', 'revelation', 12, 7, 'enoch', '1-enoch', 10, 11, 'extras', E'*And Yahuah (God) said unto Michael: ''Go, bind Semjâzâ and his associates who have united themselves with women so as to have defiled themselves with them in all their uncleanness.* (1 Enoch 10:11). The restored library remembers Michael as the appointed warrior against the rebel powers: it was Michael whom Yahuah (God) sent to *bind* the chief of the fallen and his associates. So when *Michael and his angels fought against the dragon* (Revelation 12:7), it is the same archangel doing the same office — the binder of the rebels set against the great rebel himself.'),
+  ('canon', 'revelation', 12, 7, 'enoch', '1-enoch', 20, 5, 'extras', E'*Michael, one of the holy and honoured angels, who is set over the best part of mankind and over chaos.* (1 Enoch 20:5). The library names Michael''s very charge: *set over the best part of mankind* — over the people of the promise — *and over chaos.* That is exactly his work in the vision: *Michael and his angels fought against the dragon* (Revelation 12:7), the guardian of the covenant people warring against the chaos-serpent who would devour the woman''s child.'),
+  -- thread: revelation-12-overcame-by-the-blood-of-the-lamb-and-the-word-of-their-testimony-exodus-12
+  ('canon', 'revelation', 12, 11, 'canon', 'exodus', 12, 13, 'free', E'*And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt.* (Exodus 12:13). *And they overcame him by the blood of the Lamb* (Revelation 12:11) — the blood that overcomes is the Passover blood, the token on the door before which the destroyer must pass over. As the lamb''s blood shielded the houses of Yashar''el (Israel) in Egypt, so the blood of the Lamb shields the brethren from the accuser; the exodus deliverance is the pattern of the saints'' victory.'),
+  -- thread: revelation-12-two-wings-of-a-great-eagle-into-the-wilderness-nourished-exodus-19
+  ('canon', 'revelation', 12, 14, 'canon', 'exodus', 19, 4, 'free', E'*Ye have seen what I did unto the Egyptians, and how I bare you on eagles'' wings, and brought you unto myself.* (Exodus 19:4). *And to the woman were given two wings of a great eagle, that she might fly into the wilderness* (Revelation 12:14) — the very deliverance of the exodus, for Yahuah (LORD) bore his people out of Egypt *on eagles'' wings.* The woman carried into the wilderness is Yashar''el (Israel) carried again, the rescue of Sinai re-enacted; the eagle''s wings are the Father''s own bearing of his own.'),
+  ('canon', 'revelation', 12, 14, 'canon', 'deuteronomy', 32, 11, 'free', E'*As an eagle stirreth up her nest, fluttereth over her young, spreadeth abroad her wings, taketh them, beareth them on her wings:* (Deuteronomy 32:11). The *two wings of a great eagle* given the woman (Revelation 12:14) are the wings of the song of Moses — Yahuah (LORD) as the eagle who *spreadeth abroad her wings... beareth them on her wings.* The figure for the Father''s care of his people in the wilderness becomes the figure for the keeping of the woman; he who bore Yashar''el (Israel) of old bears her still.'),
+  ('canon', 'revelation', 12, 6, 'canon', 'deuteronomy', 32, 10, 'free', E'*He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye.* (Deuteronomy 32:10). *And the woman fled into the wilderness, where she hath a place prepared of Elohim (God), that they should feed her there* (Revelation 12:6). The wilderness is not abandonment but the place of keeping — where Yahuah (LORD) *found* his people and *kept him as the apple of his eye.* The woman nourished in the wilderness is the people sheltered and fed by the Father in the very wasteland, as he sheltered them of old.'),
+  ('canon', 'revelation', 12, 14, 'canon', 'isaiah', 40, 31, 'free', E'*But they that wait upon Yahuah (LORD) shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.* (Isaiah 40:31). The woman given *two wings of a great eagle* (Revelation 12:14) flies with the strength Isaiah promised to those who wait on Yahuah (LORD) — *they shall mount up with wings as eagles.* The eagle''s wings are the renewed strength of the waiting people, lifting the woman beyond the reach of the serpent''s flood.'),
+  ('canon', 'revelation', 12, 14, 'canon', 'hosea', 2, 14, 'free', E'*Therefore, behold, I will allure her, and bring her into the wilderness, and speak comfortably unto her.* (Hosea 2:14). The woman *nourished for a time, and times, and half a time* in the wilderness (Revelation 12:14) is the bride Hosea saw led there to be wooed: *I will allure her, and bring her into the wilderness, and speak comfortably unto her.* The wilderness is the place of betrothal and tenderness, where Yahuah (LORD) renews his covenant with his wife — the woman nourished there is the people brought back to her first love.'),
+  -- thread: revelation-12-the-remnant-which-keep-the-commandments-of-elohim-malachi-4
+  ('canon', 'revelation', 12, 17, 'canon', 'malachi', 4, 4, 'free', E'*Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Yashar''el (Israel), with the statutes and judgments.* (Malachi 4:4). The remnant of the woman''s seed are marked out by one thing — they *keep the commandments of Elohim (God), and have the testimony of Yahusha HaMashiach (Jesus Christ)* (Revelation 12:17). This is the charge with which the prophets closed the old covenant and opened the day of Yahuah (LORD): *Remember ye the law of Moses my servant... with the statutes and judgments.* The saints of the end are the keepers of that very law — the covenant faithfulness Malachi named, carried unbroken to the last generation.'),
+  ('canon', 'revelation', 12, 17, 'canon', 'deuteronomy', 30, 16, 'free', E'*In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.* (Deuteronomy 30:16). To *keep the commandments of Elohim (God)* (Revelation 12:17) is the way of life Moses set before the people — *to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments... that thou mayest live.* The remnant''s commandment-keeping is no burden and no legalism; it is love and life, the covenant walk that brings the blessing — the same choosing of life held out at the edge of the land.'),
+  ('canon', 'revelation', 12, 17, 'canon', 'deuteronomy', 30, 14, 'free', E'*But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it.* (Deuteronomy 30:14). The commandments the remnant *keep* (Revelation 12:17) are never far off or beyond reach — *the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it.* The keeping is the doing of a word already given and already near, written on the heart of the covenant people; the remnant simply hold fast what was always within reach.'),
+  ('canon', 'revelation', 12, 17, 'canon', 'revelation', 14, 12, 'free', E'*Here is the patience of the saints: here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus).* (Revelation 14:12). The book says it twice, and the second saying is the seal of the first: the remnant *which keep the commandments of Elohim (God), and have the testimony of Yahusha HaMashiach (Jesus Christ)* (Revelation 12:17) are *they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus)* (Revelation 14:12). Commandment-keeping and the faith of Yahusha (Jesus) are bound together as the two marks of one people — never set against each other, but joined as the patience of the saints.'),
+  ('canon', 'revelation', 12, 17, 'canon', '1-john', 5, 3, 'free', E'*For this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous.* (1 John 5:3). The remnant *which keep the commandments of Elohim (God)* (Revelation 12:17) keep them as the very shape of their love — *this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous.* The keeping is not a yoke laid against grace but the love of the saints answering the love of the Father; his commandments are not grievous to those who are his.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-12-the-woman-clothed-with-the-sun-the-travail-of-zion-genesis-37',
+       E'The woman clothed with the sun — the travail of Zion, the house of Yashar''el (Israel) (Genesis 37)',
+       E'*And there appeared a great wonder in heaven; a woman clothed with the sun, and the moon under her feet, and upon her head a crown of twelve stars* (Revelation 12:1). The signs are Joseph''s dream: *behold, the sun and the moon and the eleven stars made obeisance to me* (Genesis 37:9) — the sun and moon Jacob and Rachel, the stars the sons, the whole house of Yashar''el (Israel). The woman is no new thing and no replacement people; she is the covenant family of the promise, clothed in the lights of heaven, carrying the seed. And she travails: *she being with child cried, travailing in birth, and pained to be delivered* (Revelation 12:2). The prophets had drawn this woman long before. She is the Zion of Isaiah whose desolation turns to a multitude — *Sing, O barren, thou that didst not bear; break forth into singing, and cry aloud, thou that didst not travail with child: for more are the children of the desolate than the children of the married wife* (Isaiah 54:1) — the wife of Yahuah (LORD) himself: *thy Maker is thine husband; Yahuah Tseva''ot (LORD of hosts) is his name; and thy Redeemer the Holy One of Yashar''el (Israel)* (Isaiah 54:5). And she is the labouring daughter of Zion of Micah, brought through exile to deliverance: *Be in pain, and labour to bring forth, O daughter of Zion, like a woman in travail... there shalt thou be delivered; there Yahuah (LORD) shall redeem thee from the hand of thine enemies* (Micah 4:10). The pangs are real; the deliverance is sure. The woman in labour is the covenant people bringing forth, out of her affliction, the seed of promise.',
+       sv.verse_id, ev.verse_id, 'free', 9275
+  FROM _s224_rv12_lookup sv, _s224_rv12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=12 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-12-she-brought-forth-a-man-child-to-rule-with-a-rod-of-iron-psalm-2',
+       E'She brought forth a man child to rule with a rod of iron — the King of Zion caught up to the throne (Psalm 2)',
+       E'*And she brought forth a man child, who was to rule all nations with a rod of iron: and her child was caught up unto Elohim (God), and to his throne* (Revelation 12:5). Every phrase is a prophet''s word brought to its hour. The birth itself is Isaiah''s astonishing sign: *Before she travailed, she brought forth; before her pain came, she was delivered of a man child* (Isaiah 66:7), the same travail in which the nation is born — *as soon as Zion travailed, she brought forth her children* (Isaiah 66:8). The deliverer and the people come forth together out of Zion''s pangs. Micah binds the same birth to the gathering home: *until the time that she which travaileth hath brought forth: then the remnant of his brethren shall return unto the children of Yashar''el (Israel)* (Micah 5:3) — the birth opens the return. And the rule he is born to is the sceptre of the anointed Son of the second Psalm: *Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel* (Psalm 2:9), to whom Yahuah (LORD) says *Ask of me, and I shall give thee the heathen for thine inheritance.* The man child *caught up unto Elohim (God), and to his throne* is Yahusha (Jesus), the Formed Son, the King set on the holy hill of Zion — and the throne he is caught up to is the Father''s own throne, where he reigns with the nations for his inheritance.',
+       sv.verse_id, ev.verse_id, 'free', 9278
+  FROM _s224_rv12_lookup sv, _s224_rv12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=12 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3',
+       E'That old serpent, the Devil and Satan, cast down — the accuser thrown out of heaven (Genesis 3)',
+       E'*And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him* (Revelation 12:9). The seer names the dragon by his oldest name, and the name reaches back to the garden: *Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made. And he said unto the woman, Yea, hath Elohim (God) said* (Genesis 3:1). The deceiver who first whispered *hath Elohim (God) said* is the same adversary now thrown down — one lie running from Eden to the end. And the whole chapter is the first promise unfolding: *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15) — the woman, her seed, the serpent, the bruised head, all here. His office was accusing: *Now there was a day when the sons of Elohim (God) came to present themselves before Yahuah (LORD), and Satan came also among them* (Job 1:6); *Satan standing at his right hand to resist him* (Zechariah 3:1). And the voice from heaven declares that office ended — *the accuser of our brethren is cast down, which accused them before our Elohim (God) day and night* (Revelation 12:10). The Hebrew library knew him as death''s author: *through envy of the devil came death into the world* (Wisdom of Solomon 2:24). And the New Testament saw the throwing-down begin in the hour of the Messiah — *I beheld Satan as lightning fall from heaven* (Luke 10:18); *now shall the prince of this world be cast out* (John 12:31) — and reaching to the feet of the saints: *the Elohim (God) of peace shall bruise Satan under your feet shortly* (Romans 16:20). What begins here ends in the binding: *he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years* (Revelation 20:2). One adversary, one undoing, from his expulsion from heaven to his chaining in the pit.',
+       sv.verse_id, ev.verse_id, 'extras', 9281
+  FROM _s224_rv12_lookup sv, _s224_rv12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=12 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-12-michael-and-his-angels-fought-against-the-dragon-daniel-10-and-12',
+       E'Michael and his angels fought against the dragon — the prince who standeth for the people (Daniel 10 and 12)',
+       E'*And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels, And prevailed not; neither was their place found any more in heaven* (Revelation 12:7-8). Michael is the warrior Daniel was shown — the unseen battle behind the kingdoms of the earth. *Lo, Michael, one of the chief princes, came to help me* (Daniel 10:13); he is named *your prince* (Daniel 10:21), the prince set for the covenant people; and his rising is the deliverance of that people: *And at that time shall Michael stand up, the great prince which standeth for the children of thy people... and at that time thy people shall be delivered, every one that shall be found written in the book* (Daniel 12:1). The war in heaven and the saving of the saints are one event — Michael stands, the dragon falls, the people are delivered. The restored library remembers the same Michael at the same office, the appointed binder of the rebel powers: *And Yahuah (God) said unto Michael: ''Go, bind Semjâzâ and his associates''* (1 Enoch 10:11); *Michael, one of the holy and honoured angels, who is set over the best part of mankind and over chaos* (1 Enoch 20:5). Set over the best part of mankind — the people of the promise — and over chaos: that is exactly his work in the vision, the guardian of the woman warring against the chaos-serpent who would devour her child.',
+       sv.verse_id, ev.verse_id, 'extras', 9284
+  FROM _s224_rv12_lookup sv, _s224_rv12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=12 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-12-overcame-by-the-blood-of-the-lamb-and-the-word-of-their-testimony-exodus-12',
+       E'They overcame by the blood of the Lamb — the Passover blood on the door (Exodus 12)',
+       E'*And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death* (Revelation 12:11). The blood that overcomes the accuser is the Passover blood. *And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt* (Exodus 12:13). As the blood of the lamb on the door-posts shielded the houses of Yashar''el (Israel) so that the destroyer passed over, so the blood of the Lamb shields the brethren so that the accuser''s charge cannot destroy them. The exodus deliverance is the pattern of the saints'' victory — not their own strength but the blood, and the word of their testimony, and a love that did not cling to its own life. The same Lamb whose blood marked the doors in Egypt marks the people who overcome the dragon.',
+       sv.verse_id, ev.verse_id, 'free', 9287
+  FROM _s224_rv12_lookup sv, _s224_rv12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=12 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-12-two-wings-of-a-great-eagle-into-the-wilderness-nourished-exodus-19',
+       E'Two wings of a great eagle into the wilderness — Yashar''el (Israel) borne and nourished as at the exodus (Exodus 19)',
+       E'*And the woman fled into the wilderness, where she hath a place prepared of Elohim (God), that they should feed her there* (Revelation 12:6); *And to the woman were given two wings of a great eagle, that she might fly into the wilderness, into her place, where she is nourished for a time, and times, and half a time, from the face of the serpent* (Revelation 12:14). This is the exodus re-enacted. The eagle''s wings are the wings of Sinai: *Ye have seen what I did unto the Egyptians, and how I bare you on eagles'' wings, and brought you unto myself* (Exodus 19:4). They are the wings of the song of Moses: *As an eagle stirreth up her nest, fluttereth over her young, spreadeth abroad her wings... beareth them on her wings* (Deuteronomy 32:11). And the wilderness is not abandonment but the place of keeping, where Yahuah (LORD) found his people of old: *He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye* (Deuteronomy 32:10). The wings are the renewed strength of the waiting people — *they that wait upon Yahuah (LORD) shall renew their strength; they shall mount up with wings as eagles* (Isaiah 40:31) — and the wilderness is the place of betrothal and tenderness, where the bride is wooed back to her first love: *behold, I will allure her, and bring her into the wilderness, and speak comfortably unto her* (Hosea 2:14). He who bore Yashar''el (Israel) out of Egypt bears her still, shelters her, feeds her, and renews her beyond the serpent''s reach.',
+       sv.verse_id, ev.verse_id, 'free', 9290
+  FROM _s224_rv12_lookup sv, _s224_rv12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=12 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-12-the-remnant-which-keep-the-commandments-of-elohim-malachi-4',
+       E'The remnant which keep the commandments of Elohim (God) — the Torah-keepers the prophets named (Malachi 4)',
+       E'*And the dragon was wroth with the woman, and went to make war with the remnant of her seed, which keep the commandments of Elohim (God), and have the testimony of Yahusha HaMashiach (Jesus Christ)* (Revelation 12:17). Here the whole book lifts its banner over the saints, and marks them out by one thing: they *keep the commandments of Elohim (God).* This is the very charge with which the prophets closed the old covenant and opened the day of Yahuah (LORD): *Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Yashar''el (Israel), with the statutes and judgments* (Malachi 4:4). The remnant of the end are the keepers of that law — the covenant faithfulness Malachi named, carried unbroken to the last generation. And this keeping is no burden and no legalism; it is the way of life Moses set before the people at the edge of the land: *I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee* (Deuteronomy 30:16). It is love and life, the covenant walk that brings the blessing — and it is never far off, never beyond reach: *the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deuteronomy 30:14). The book seals it by saying the same thing twice: *Here is the patience of the saints: here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus)* (Revelation 14:12). Commandment-keeping and the faith of Yahusha (Jesus) are bound together as the two marks of one people, never set against each other. And the keeping is the very shape of their love: *this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous* (1 John 5:3). The remnant the dragon makes war on are the woman''s own seed — the covenant people, keeping the commandments their Father gave, holding the testimony of Yahusha (Jesus); and against them the old serpent cannot prevail.',
+       sv.verse_id, ev.verse_id, 'free', 9293
+  FROM _s224_rv12_lookup sv, _s224_rv12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=12 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-12-the-woman-clothed-with-the-sun-the-travail-of-zion-genesis-37
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 37:9 — *the sun and the moon and the eleven stars made obeisance to me* Joseph''s dream of the house of Yashar''el (Israel); the woman wears its signs, the covenant family clothed in the lights of heaven (Revelation 12:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-the-woman-clothed-with-the-sun-the-travail-of-zion-genesis-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 54:1 — *Sing, O barren... thou that didst not travail with child* Zion the travailing woman whose desolation turns to a multitude of children; the figure of the woman in labour (Revelation 12:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-the-woman-clothed-with-the-sun-the-travail-of-zion-genesis-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 54:5 — *thy Maker is thine husband... thy Redeemer the Holy One of Yashar''el (Israel)* the woman is the wife of Yahuah (LORD), the espoused covenant people from whom the deliverer comes (Revelation 12:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-the-woman-clothed-with-the-sun-the-travail-of-zion-genesis-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=54 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Micah 4:10 — *Be in pain, and labour to bring forth, O daughter of Zion... there Yahuah (LORD) shall redeem thee* the daughter of Zion labouring through exile to deliverance; her travail ends in redemption, not loss (Revelation 12:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-the-woman-clothed-with-the-sun-the-travail-of-zion-genesis-37'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=4 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-12-she-brought-forth-a-man-child-to-rule-with-a-rod-of-iron-psalm-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 66:7 — *Before she travailed, she brought forth... she was delivered of a man child* Isaiah''s sign of Zion delivered of a man child; John''s words are the prophet''s (Revelation 12:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-she-brought-forth-a-man-child-to-rule-with-a-rod-of-iron-psalm-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 66:8 — *as soon as Zion travailed, she brought forth her children* the deliverer and the nation born together out of Zion''s pangs (Revelation 12:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-she-brought-forth-a-man-child-to-rule-with-a-rod-of-iron-psalm-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Micah 5:3 — *until... she which travaileth hath brought forth: then the remnant of his brethren shall return* the birth of the ruler opens the gathering home of the remnant (Revelation 12:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-she-brought-forth-a-man-child-to-rule-with-a-rod-of-iron-psalm-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 2:9 — *Thou shalt break them with a rod of iron* the sceptre of the anointed Son; the man child caught up to the throne is the King of Zion, the Formed Son (Revelation 12:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-she-brought-forth-a-man-child-to-rule-with-a-rod-of-iron-psalm-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:1 — *the serpent was more subtil... Yea, hath Elohim (God) said* the deceiver of the garden is the same old serpent now cast out; one lie from Eden to the end (Revelation 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:15 — *enmity between... thy seed and her seed; it shall bruise thy head* the war of the dragon with the woman''s seed is the garden enmity unfolding, the head-crushing begun (Revelation 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Job 1:6 — *Satan came also among them* the accuser of Job''s day come among the sons of Elohim (God); his office of accusing now ended (Revelation 12:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Zechariah 3:1 — *Satan standing at his right hand to resist him* the resister of the high priest; here cast out, the brethren no longer accused (Revelation 12:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Wisdom of Solomon 2:24 — *through envy of the devil came death into the world* the Hebrew library knows the dragon as death''s author; the one cast down loosed the death the Lamb''s blood overturns (Revelation 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=2 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Luke 10:18 — *I beheld Satan as lightning fall from heaven* the Master had already seen the fall the vision shows; the deceiver''s dominion broken (Revelation 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=10 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'John 12:31 — *now shall the prince of this world be cast out* the casting-out is the sentence Yahusha (Jesus) pronounced as his hour came; the cross is the throwing-down (Revelation 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=12 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'Romans 16:20 — *the Elohim (God) of peace shall bruise Satan under your feet shortly* the Genesis 3:15 head-crushing reaching to the feet of the seed; the saints share the man child''s victory (Revelation 12:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=16 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 9, E'Revelation 20:2 — *laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him* the same fourfold name; what ch.12 begins in the casting-down, ch.20 completes in the binding (Revelation 12:9).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-that-old-serpent-the-devil-and-satan-cast-down-genesis-3'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-12-michael-and-his-angels-fought-against-the-dragon-daniel-10-and-12
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 10:13 — *Michael, one of the chief princes, came to help me* the warrior of Daniel''s vision, the unseen battle behind the kingdoms (Revelation 12:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-michael-and-his-angels-fought-against-the-dragon-daniel-10-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 10:21 — *Michael your prince* the prince set for the covenant people; his battle against the dragon is a battle for the woman and her seed (Revelation 12:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-michael-and-his-angels-fought-against-the-dragon-daniel-10-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=10 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 12:1 — *Michael... the great prince which standeth for the children of thy people... thy people shall be delivered* the war in heaven and the deliverance of the saints are one event (Revelation 12:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-michael-and-his-angels-fought-against-the-dragon-daniel-10-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 10:11 — *And Yahuah (God) said unto Michael: Go, bind Semjâzâ and his associates* the restored library''s Michael, the appointed binder of the rebel powers; the same archangel, the same office (Revelation 12:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-michael-and-his-angels-fought-against-the-dragon-daniel-10-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 20:5 — *Michael... set over the best part of mankind and over chaos* his very charge — guardian of the people of promise against the chaos-serpent who would devour the child (Revelation 12:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-michael-and-his-angels-fought-against-the-dragon-daniel-10-and-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=20 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-12-overcame-by-the-blood-of-the-lamb-and-the-word-of-their-testimony-exodus-12
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:13 — *when I see the blood, I will pass over you* the Passover blood on the door; the blood of the Lamb shields the brethren from the accuser as the lamb''s blood shielded the houses in Egypt (Revelation 12:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-overcame-by-the-blood-of-the-lamb-and-the-word-of-their-testimony-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-12-two-wings-of-a-great-eagle-into-the-wilderness-nourished-exodus-19
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 19:4 — *how I bare you on eagles'' wings, and brought you unto myself* the exodus deliverance; the woman carried into the wilderness is Yashar''el (Israel) carried again (Revelation 12:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-two-wings-of-a-great-eagle-into-the-wilderness-nourished-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:11 — *As an eagle... spreadeth abroad her wings... beareth them on her wings* the wings of the song of Moses; the Father''s bearing of his people becomes the keeping of the woman (Revelation 12:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-two-wings-of-a-great-eagle-into-the-wilderness-nourished-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 32:10 — *He found him... in the waste howling wilderness... kept him as the apple of his eye* the wilderness as the place of keeping, not abandonment; the woman sheltered and fed there (Revelation 12:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-two-wings-of-a-great-eagle-into-the-wilderness-nourished-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 40:31 — *they shall mount up with wings as eagles* the renewed strength of the waiting people, lifting the woman beyond the serpent''s flood (Revelation 12:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-two-wings-of-a-great-eagle-into-the-wilderness-nourished-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Hosea 2:14 — *I will allure her, and bring her into the wilderness, and speak comfortably unto her* the wilderness as the place of betrothal; the woman nourished there brought back to her first love (Revelation 12:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-two-wings-of-a-great-eagle-into-the-wilderness-nourished-exodus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-12-the-remnant-which-keep-the-commandments-of-elohim-malachi-4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 4:4 — *Remember ye the law of Moses my servant... with the statutes and judgments* the charge that closes the old covenant and opens the day of Yahuah (LORD); the remnant of the end are the keepers of that law (Revelation 12:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-the-remnant-which-keep-the-commandments-of-elohim-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:16 — *to keep his commandments... that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee* keeping the commandments is the way of life and blessing, never legalism (Revelation 12:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-the-remnant-which-keep-the-commandments-of-elohim-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 30:14 — *the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* the commandments are near and within reach; the remnant hold fast what was always given (Revelation 12:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-the-remnant-which-keep-the-commandments-of-elohim-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 14:12 — *here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus)* the book''s twin saying; commandment-keeping and the faith of Yahusha (Jesus) bound as one people''s two marks (Revelation 12:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-the-remnant-which-keep-the-commandments-of-elohim-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 John 5:3 — *this is the love of Elohim (God), that we keep his commandments: and his commandments are not grievous* the keeping is the shape of the saints'' love, not a yoke against grace (Revelation 12:17).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv12_lookup sv, _s224_rv12_lookup tv
+ WHERE t.slug='revelation-12-the-remnant-which-keep-the-commandments-of-elohim-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_13.sql (S224 Revelation 13) -----
+-- =====================================================================
+-- S224 minion — REVELATION 13 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 13 (18 verses) — the beast from the sea, the beast from the earth, the mark.
+-- Tag: rv13 (temp view _s224_rv13_lookup).
+-- Sort band: floor 9300, step 3 (9300, 9303, 9306, 9309, 9312, 9315, 9318 used; under 9325).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (Revelation = consummation of the covenant story; same Yahuah, same Torah, same
+-- Yashar'el): chapter 13 is the beast-system and its counterfeit. The seer re-speaks Daniel 7 — the
+-- four beasts (lion, bear, leopard, the dreadful fourth with ten horns) gathered into ONE composite
+-- beast; the mouth speaking great things and the forty-and-two months are Daniel's *time, times, and
+-- the dividing of time* and the horn that *think[s] to change times and laws*. The worship of the
+-- image is Daniel 3 re-spoken (the golden image all must worship on pain of the furnace). And the
+-- MARK in the right hand or forehead (13:16) is read as the deliberate COUNTERFEIT of the sign of
+-- covenant loyalty: the seal of Yahuah set on the forehead of those who grieve over abomination
+-- (Ezekiel 9:4) and the binding of the commandments *for a sign upon thine hand* and *as frontlets
+-- between thine eyes* (Deuteronomy 6:8). The beast-system parodies the sign of belonging to Yahuah
+-- and keeping his commandments; the faithful are those SEALED with Yahuah's own mark (ch7, ch14), the
+-- commandment-keepers — *Here is the patience and the faith of the saints* (13:10).
+-- Christology: the Lamb *slain from the foundation of the world* (13:8) is the Formed, the slain-yet-
+-- reigning One whose book of life holds the names; preserved as the pull gives.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-2   the beast from the sea, leopard/bear/lion, seven heads and ten horns
+--           Tanakh: Daniel 7:3 (four beasts from the sea), 7:4-6 (lion/bear/leopard), 7:7 (the
+--                   dreadful fourth with ten horns), 7:8 (the little horn), 7:23-24 (the fourth
+--                   kingdom and ten kings) — the four beasts gathered into one composite
+--           Extras: 2 Esdras 11:1 (an eagle from the sea, twelve wings and three heads, reigning),
+--                   2 Esdras 12:11 (the eagle IS Daniel's fourth-kingdom beast — explicit)
+--           NT: none warranted (the Daniel root carries it)
+--   v.3-4   the wounded head healed; all the world wondered and worshipped the dragon and the beast
+--           Tanakh: Daniel 3:5 (worship the image at the sound of music), 3:6-7 (all fall down and
+--                   worship on pain of the furnace) — the compelled worship of the image
+--           Extras: none warranted   NT: none warranted
+--   v.5-7   a mouth speaking great things and blasphemies; forty and two months; war with the saints
+--           Tanakh: Daniel 7:8 (a mouth speaking great things), 7:25 (great words against the Most
+--                   High, wear out the saints, change times and laws, a time and times and dividing
+--                   of time = the 42 months), 7:21 (the horn made war with the saints and prevailed),
+--                   Daniel 11:36 (the king magnifies himself, speaks marvellous things against Elohim)
+--           Extras: none warranted   NT: none warranted
+--   v.8     all worship him whose names are NOT written in the book of life of the Lamb slain
+--           Tanakh: Exodus 32:32 (blot me out of thy book), Psalm 69:28 (blotted out of the book of
+--                   the living), Daniel 12:1 (delivered, every one found written in the book)
+--           Extras: 1 Enoch 90:12 (the Lord of the sheep opened the books of the living and the books
+--                   of the sinners) — the two books at the judgment
+--           NT: none warranted (book-of-life echoes carried by the Tanakh roots)
+--   v.9-10  he that leadeth into captivity; the patience and faith of the saints
+--           Tanakh: Jeremiah 15:2 (such as are for the sword, to the sword; for the captivity, to the
+--                   captivity), Jeremiah 43:11 (such as are for captivity to captivity, for the sword
+--                   to the sword) — the measured judgment the saints endure
+--           Extras: none warranted   NT: none warranted
+--   v.11-15 the second beast like a lamb but speaking as a dragon; fire from heaven; the image
+--           Tanakh: Deuteronomy 13:1-3 (the prophet who gives a sign or wonder to draw after other
+--                   gods — Yahuah proving you), 1 Kings 18:24 (the Elohim that answereth by fire — the
+--                   TRUE fire contrasted with the false prophet's counterfeit), Daniel 3:5-6 (the
+--                   image all must worship or be slain)
+--           Extras: 1 Enoch 90:14 (the beasts cast into the fiery abyss — the false-prophet beast's end)
+--           NT: none warranted
+--   v.16-18 the mark in the right hand or forehead; none may buy or sell; the number of the beast
+--           Tanakh: Ezekiel 9:4 (the seal of Yahuah on the foreheads of those who sigh for the
+--                   abominations — the TRUE mark the beast counterfeits), Deuteronomy 6:8 (bind the
+--                   commandments for a sign upon thine hand and as frontlets between thine eyes — the
+--                   sign of covenant loyalty the mark parodies)
+--           Extras: none warranted   NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   9300 revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one   (Tanakh + Extras)
+--   9303 revelation-13-the-dragon-gave-him-his-power-all-the-world-wondered-and-worshipped  (Tanakh)
+--   9306 revelation-13-a-mouth-speaking-great-things-and-blasphemies-forty-and-two-months   (Tanakh)
+--   9309 revelation-13-names-not-written-in-the-book-of-life-of-the-lamb-slain              (Tanakh + Extras)
+--   9312 revelation-13-he-that-leadeth-into-captivity-the-patience-and-faith-of-the-saints  (Tanakh)
+--   9315 revelation-13-the-second-beast-like-a-lamb-the-false-prophet-and-the-fire          (Tanakh + Extras)
+--   9318 revelation-13-the-mark-in-the-hand-and-forehead-counterfeit-of-the-seal            (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one
+  ('canon', 'revelation', 13, 1, 'canon', 'daniel', 7, 3, 'free', E'*And four great beasts came up from the sea, diverse one from another.* (Daniel 7:3). The seer stands on the sand and sees *a beast rise up out of the sea, having seven heads and ten horns* (Revelation 13:1) — and Daniel''s four beasts come up *from the sea* before him. The waters are the seething nations, and out of them the kingdoms rise; what Daniel saw as four, John sees gathered into one. The sea-beast of Revelation is the long succession of beast-empires brought to its head in a single composite.'),
+  ('canon', 'revelation', 13, 2, 'canon', 'daniel', 7, 4, 'free', E'*The first was like a lion, and had eagle''s wings: I beheld till the wings thereof were plucked, and it was lifted up from the earth, and made stand upon the feet as a man, and a man''s heart was given to it.* (Daniel 7:4). Daniel''s first beast was *like a lion*; John''s beast has *his mouth as the mouth of a lion* (Revelation 13:2). The features Daniel saw spread across four beasts are folded into the one beast of Revelation — the lion''s mouth is the first of the three borrowed limbs, the empires of old gathered into the last.'),
+  ('canon', 'revelation', 13, 2, 'canon', 'daniel', 7, 5, 'free', E'*And behold another beast, a second, like to a bear, and it raised up itself on one side, and it had three ribs in the mouth of it between the teeth of it: and they said thus unto it, Arise, devour much flesh.* (Daniel 7:5). Daniel''s second beast was *like to a bear*; John''s beast has *his feet as the feet of a bear* (Revelation 13:2). The devouring strength of the bear becomes the feet of the composite — the second of the three limbs Revelation draws from Daniel''s vision, the kingdoms of the past standing up again in the beast of the end.'),
+  ('canon', 'revelation', 13, 2, 'canon', 'daniel', 7, 6, 'free', E'*After this I beheld, and lo another, like a leopard, which had upon the back of it four wings of a fowl; the beast had also four heads; and dominion was given to it.* (Daniel 7:6). Daniel''s third beast was *like a leopard*; John says *the beast which I saw was like unto a leopard* (Revelation 13:2). And as Daniel''s leopard had *dominion... given to it*, so the dragon *gave him his power, and his seat, and great authority* (Revelation 13:2). The body of the composite beast is the leopard''s; the three beasts of Daniel — lion, bear, leopard — are gathered into the one, and the dragon hands it the authority that was given to the kingdoms before.'),
+  ('canon', 'revelation', 13, 1, 'canon', 'daniel', 7, 7, 'free', E'*After this I saw in the night visions, and behold a fourth beast, dreadful and terrible, and strong exceedingly; and it had great iron teeth: it devoured and brake in pieces, and stamped the residue with the feet of it: and it was diverse from all the beasts that were before it; and it had ten horns.* (Daniel 7:7). Daniel''s dreadful fourth beast *had ten horns*; John''s beast has *ten horns, and upon his horns ten crowns* (Revelation 13:1). The ten horns are the mark that binds the two visions: the composite of Revelation carries the ten-horned terror of Daniel''s fourth kingdom, the last and worst of the beast-empires.'),
+  ('canon', 'revelation', 13, 1, 'canon', 'daniel', 7, 23, 'free', E'*Thus he said, The fourth beast shall be the fourth kingdom upon earth, which shall be diverse from all kingdoms, and shall devour the whole earth, and shall tread it down, and break it in pieces.* (Daniel 7:23). The angel told Daniel the fourth beast is *the fourth kingdom upon earth* that shall *devour the whole earth*; John sees that devouring reach completed — *power was given him over all kindreds, and tongues, and nations* (Revelation 13:7), the world-wide dominion of the one beast rising *out of the sea* (Revelation 13:1) with *seven heads and ten horns*.'),
+  ('canon', 'revelation', 13, 1, 'apocrypha', '2-esdras', 11, 1, 'extras', E'*Then saw I a dream, and, behold, there came up from the sea an eagle, which had twelve feathered wings, and three heads.* (2 Esdras 11:1). Ezra too saw a beast come up *from the sea* and reign *upon earth, and over them that dwelt in it* (2 Esdras 11:5), heads and wings and many crowns — the same seer''s grammar John speaks when *a beast rise[s] up out of the sea, having seven heads and ten horns* (Revelation 13:1). The restored library keeps the same vision: a sea-beast of many heads and horns, given dominion over all the earth, the empire that bestrides the nations until the Most High judges it.'),
+  ('canon', 'revelation', 13, 1, 'apocrypha', '2-esdras', 12, 11, 'extras', E'*The eagle, whom you sawest come up from the sea, is the kingdom which was seen in the vision of your brother Daniel.* (2 Esdras 12:11). The interpreting voice tells Ezra plainly that his sea-eagle IS the fourth kingdom of Daniel''s vision — the very beast John re-speaks when his own sea-beast rises *having seven heads and ten horns* (Revelation 13:1). All three seers are looking at one thing: the last beast-empire of Daniel 7, the dreadful fourth kingdom, shown again to Ezra as the eagle and to John as the composite beast. The library bears one witness across its books.'),
+  -- thread: revelation-13-the-dragon-gave-him-his-power-all-the-world-wondered-and-worshipped
+  ('canon', 'revelation', 13, 4, 'canon', 'daniel', 3, 5, 'free', E'*That at what time ye hear the sound of the cornet, flute, harp, sackbut, psaltery, dulcimer, and all kinds of musick, ye fall down and worship the golden image that Nebuchadnezzar the king hath set up* (Daniel 3:5). The compelled worship John sees — *they worshipped the beast, saying, Who is like unto the beast?* (Revelation 13:4) — is Nebuchadnezzar''s decree grown to fill the earth. There the herald commanded all to *fall down and worship the golden image*; here *all the world wondered after the beast* (Revelation 13:3). The beast-system has always demanded the worship that belongs to Yahuah (LORD) alone, and dressed its idol in music and majesty to win it.'),
+  ('canon', 'revelation', 13, 3, 'canon', 'daniel', 3, 7, 'free', E'*Therefore at that time, when all the people heard the sound of the cornet, flute, harp, sackbut, psaltery, and all kinds of musick, all the people, the nations, and the languages, fell down and worshipped the golden image that Nebuchadnezzar the king had set up.* (Daniel 3:7). *All the people, the nations, and the languages* fell down before the image on the plain of Dura; *all the world wondered after the beast* (Revelation 13:3) on the stage of the whole earth. The same words — peoples, nations, languages — measure the reach of the false worship in both visions. What was one image in one province becomes the worship of the beast over all kindreds; and as three men would not bow then, the saints will not bow now.'),
+  -- thread: revelation-13-a-mouth-speaking-great-things-and-blasphemies-forty-and-two-months
+  ('canon', 'revelation', 13, 5, 'canon', 'daniel', 7, 8, 'free', E'*I considered the horns, and, behold, there came up among them another little horn, before whom there were three of the first horns plucked up by the roots: and, behold, in this horn were eyes like the eyes of man, and a mouth speaking great things.* (Daniel 7:8). The beast is *given... a mouth speaking great things and blasphemies* (Revelation 13:5) — the very *mouth speaking great things* of Daniel''s little horn. John sees the horn''s arrogant mouth become the beast''s; the boasting power Daniel watched rise among the ten horns is the power that now opens its mouth *in blasphemy against Elohim (God)* (Revelation 13:6).'),
+  ('canon', 'revelation', 13, 5, 'canon', 'daniel', 7, 25, 'free', E'*And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* (Daniel 7:25). Here is the measure of the beast''s season: *power was given unto him to continue forty and two months* (Revelation 13:5) — Daniel''s *time, times, and the dividing of time.* And here is its character: it *speak[s] great words against the El Elyon (most High)* and *think[s] to change times and laws.* The beast-system makes war on the commandments of Yahuah (LORD), reaching to alter the very times and laws he appointed; that is the blasphemy John names, and the saints are *given into his hand* for the appointed season — but only the season.'),
+  ('canon', 'revelation', 13, 7, 'canon', 'daniel', 7, 21, 'free', E'*I beheld, and the same horn made war with the saints, and prevailed against them* (Daniel 7:21). *It was given unto him to make war with the saints, and to overcome them* (Revelation 13:7) — word for word the war Daniel saw the horn wage, and for a season win. But Daniel saw the end of it too: *until the Ancient of days came, and judgment was given to the saints of the El Elyon (most High); and the time came that the saints possessed the kingdom* (Daniel 7:22). The overcoming is real and it is bounded; the patience of the saints holds because the verdict has already been given in their favour.'),
+  ('canon', 'revelation', 13, 6, 'canon', 'daniel', 11, 36, 'free', E'*And the king shall do according to his will; and he shall exalt himself, and magnify himself above every god, and shall speak marvellous things against the Elohim (God) of gods, and shall prosper till the indignation be accomplished: for that that is determined shall be done.* (Daniel 11:36). The self-exalting king who *speak[s] marvellous things against the Elohim (God) of gods* is of one spirit with the beast that *opened his mouth in blasphemy against Elohim (God), to blaspheme his name, and his tabernacle* (Revelation 13:6). And the same limit is set on both: he prospers only *till the indignation be accomplished*, only for the *forty and two months* (Revelation 13:5). The mouth is loud, but the clock is the Father''s.'),
+  -- thread: revelation-13-names-not-written-in-the-book-of-life-of-the-lamb-slain
+  ('canon', 'revelation', 13, 8, 'canon', 'exodus', 32, 32, 'free', E'*Yet now, if thou wilt forgive their sin—; and if not, blot me, I pray thee, out of thy book which thou hast written.* (Exodus 32:32). The book John names — *the book of life of the Lamb slain* (Revelation 13:8) — is the book Moses pled over at Sinai, the register of Yahuah (LORD)''s own people written from of old. To have a name in it is to belong to the covenant from the first; those who *worship the beast* are *they whose names are not written* there. The book is no afterthought of belief — it was *written* before, and Moses knew its weight when he offered his own place in it for his people.'),
+  ('canon', 'revelation', 13, 8, 'canon', 'psalms', 69, 28, 'free', E'*Let them be blotted out of the book of the living, and not be written with the righteous.* (Psalm 69:28). The psalmist knew the same *book of the living* and the dreadful possibility of being *blotted out* of it — set over against being *written with the righteous.* John sees its reverse: *all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world* (Revelation 13:8). The names of the faithful were written from the foundation; the worshippers of the beast are those not found there, and the patience of the saints rests on the surety of that writing.'),
+  ('canon', 'revelation', 13, 8, 'canon', 'daniel', 12, 1, 'free', E'*And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* (Daniel 12:1). Daniel''s deliverance is by the book: *every one that shall be found written in the book* is delivered through the time of trouble. John''s beast holds sway over all *whose names are not written in the book of life of the Lamb slain* (Revelation 13:8). One book runs through the visions — the register of Yahuah (LORD)''s people — and to be found in it is to be kept; the war of the beast cannot touch the name that is written.'),
+  ('canon', 'revelation', 13, 8, 'enoch', '1-enoch', 90, 12, 'extras', E'*And after that I saw in the vision that the Lord of the sheep opened the books of the living, and the books of the sinners were opened.* (1 Enoch 90:12). The restored library keeps the same two books — *the books of the living* and *the books of the sinners* — opened at the judgment by the Lord of the sheep. John sees the worshippers of the beast as those *whose names are not written in the book of life of the Lamb slain* (Revelation 13:8): they stand in the books of the sinners, not the books of the living. The Lamb who opens the book is the Lord of the sheep who gathers his own; the writing of the name is the gathering, settled before the beast ever rose.'),
+  -- thread: revelation-13-he-that-leadeth-into-captivity-the-patience-and-faith-of-the-saints
+  ('canon', 'revelation', 13, 10, 'canon', 'jeremiah', 15, 2, 'free', E'*And it shall come to pass, if they say unto thee, Whither shall we go forth? then thou shalt tell them, Thus saith Yahuah (LORD); Such as are for death, to death; and such as are for the sword, to the sword; and such as are for the famine, to the famine; and such as are for the captivity, to the captivity.* (Jeremiah 15:2). John''s words *He that leadeth into captivity shall go into captivity: he that killeth with the sword must be killed with the sword* (Revelation 13:10) are spoken in the cadence of Jeremiah''s oracle — *such as are for the sword, to the sword... such as are for the captivity, to the captivity.* The measured, sovereign appointing of each to his portion is the frame in which the saints endure: the sword and the captivity are not chaos but a reckoning ordered by Yahuah (LORD), and so *here is the patience and the faith of the saints* (Revelation 13:10).'),
+  ('canon', 'revelation', 13, 10, 'canon', 'jeremiah', 43, 11, 'free', E'*And when he cometh, he shall smite the land of Egypt, and deliver such as are for death to death; and such as are for captivity to captivity; and such as are for the sword to the sword.* (Jeremiah 43:11). Jeremiah speaks it a second time over Egypt — *such as are for captivity to captivity; and such as are for the sword to the sword* — the same fixed apportioning John echoes: *He that leadeth into captivity shall go into captivity: he that killeth with the sword must be killed with the sword* (Revelation 13:10). The saints are not promised escape from the captivity or the sword in the beast''s season; they are given the assurance that every portion is measured by Yahuah (LORD), and the captor and the killer come under the same reckoning in their turn. That is where *the patience and the faith of the saints* is forged.'),
+  -- thread: revelation-13-the-second-beast-like-a-lamb-the-false-prophet-and-the-fire
+  ('canon', 'revelation', 13, 14, 'canon', 'deuteronomy', 13, 1, 'free', E'*If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder* (Deuteronomy 13:1). The second beast *had two horns like a lamb, and he spake as a dragon* (Revelation 13:11) and *deceiveth them that dwell on the earth by the means of those miracles which he had power to do* (Revelation 13:14) — exactly the prophet of Deuteronomy who *giveth thee a sign or a wonder.* The Torah warned that a true-seeming sign is no proof of a true prophet; *Yahuah Elohaychem (the LORD your God) proveth you, to know whether ye love Yahuah Elohaychem (the LORD your God) with all your heart* (Deuteronomy 13:3). The false prophet of Revelation is the sign-worker the Torah taught the people to refuse, and his wonders are the proving of the saints'' loyalty.'),
+  ('canon', 'revelation', 13, 13, 'canon', '1-kings', 18, 24, 'free', E'*And call ye on the name of your gods, and I will call on the name of Yahuah (LORD): and the Elohim (God) that answereth by fire, let him be Elohim (God). And all the people answered and said, It is well spoken.* (1 Kings 18:24). At Carmel the test was fire from heaven, and *the Elohim (God) that answereth by fire* was shown to be Yahuah (LORD) alone, when the false prophets'' altar stayed cold. The second beast counterfeits that very sign — he *maketh fire come down from heaven on the earth in the sight of men* (Revelation 13:13) — to claim the proof that belonged to the true Elohim (God). The false prophet apes Elijah''s sign to draw the worship Elijah turned back to Yahuah (LORD); the fire from heaven is now the deceiver''s costume, not the verdict of heaven.'),
+  ('canon', 'revelation', 13, 15, 'canon', 'daniel', 3, 6, 'free', E'*And whoso falleth not down and worshippeth shall the same hour be cast into the midst of a burning fiery furnace.* (Daniel 3:6). The image of the beast carries the same decree as Nebuchadnezzar''s golden image — *as many as would not worship the image of the beast should be killed* (Revelation 13:15), as on the plain of Dura *whoso falleth not down and worshippeth* was cast into the furnace. The beast-system always ends at the same edict: worship the image or die. And the three who would not bow stand as the type of the saints who will not worship the beast, trusting the Elohim (God) who is able to deliver, and faithful whether he delivers or not.'),
+  ('canon', 'revelation', 13, 15, 'enoch', '1-enoch', 90, 14, 'extras', E'*And the beasts and the birds began to tremble, and the Lord of the sheep cast them all into a fiery abyss.* (1 Enoch 90:14). The restored library shows the end appointed for the beasts: *the Lord of the sheep cast them all into a fiery abyss.* The second beast that compels worship of the image, *that... as many as would not worship the image of the beast should be killed* (Revelation 13:15), is heading to that abyss — the false prophet and the beast cast living into the fire (Revelation 19:20). The fire the false prophet calls down to deceive is not the fire that has the last word; the Lord of the sheep''s fire is, and into it the beasts go.'),
+  -- thread: revelation-13-the-mark-in-the-hand-and-forehead-counterfeit-of-the-seal
+  ('canon', 'revelation', 13, 16, 'canon', 'ezekiel', 9, 4, 'free', E'*And Yahuah (LORD) said unto him, Go through the midst of the city, through the midst of Jerusalem, and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof.* (Ezekiel 9:4). Here is the true mark the beast counterfeits: Yahuah (LORD) sets *a mark upon the foreheads* of those who grieve over abomination, and that mark is what spares them in the day of slaughter. The beast inverts it — he *causeth all... to receive a mark in their right hand, or in their foreheads* (Revelation 13:16), a forced mark of allegiance to the system, on the very forehead where Yahuah (LORD) seals his own. The faithful bear the seal of belonging to Yahuah (LORD); the beast brands the rest with the parody of it.'),
+  ('canon', 'revelation', 13, 16, 'canon', 'deuteronomy', 6, 8, 'free', E'*And thou shalt bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes.* (Deuteronomy 6:8). The commandments of Yahuah (LORD) are to be bound *for a sign upon thine hand* and *as frontlets between thine eyes* — the sign of covenant loyalty worn on the hand and the forehead, the love of Yahuah (LORD) and the keeping of his words made visible. The beast''s mark *in their right hand, or in their foreheads* (Revelation 13:16) is the deliberate counterfeit of that sign: where the faithful bind the Torah on hand and brow as the token of belonging to Yahuah (LORD), the beast-system stamps its own name on hand and brow as the token of belonging to it. The mark is the anti-Torah parody of the sign of the commandments; the saints are *they that keep the commandments of Elohim (God)* (Revelation 14:12), sealed with the Father''s name, not the beast''s.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one',
+       E'The beast from the sea — Daniel''s four beasts gathered into one (Daniel 7)',
+       E'John stands on the sand and sees *a beast rise up out of the sea, having seven heads and ten horns, and upon his horns ten crowns, and upon his heads the name of blasphemy* (Revelation 13:1), and the whole vision is Daniel 7 re-spoken. There *four great beasts came up from the sea, diverse one from another* (Daniel 7:3) — but where Daniel saw four, John sees them folded into one composite: *the beast which I saw was like unto a leopard, and his feet were as the feet of a bear, and his mouth as the mouth of a lion* (Revelation 13:2). The leopard is Daniel''s third beast (*lo another, like a leopard*, Daniel 7:6), the bear his second (*like to a bear*, Daniel 7:5), the lion his first (*the first was like a lion*, Daniel 7:4) — three kingdoms of old gathered into the body, feet, and mouth of the last beast. And the ten horns are the dreadful fourth: *a fourth beast, dreadful and terrible... and it had ten horns* (Daniel 7:7), *the fourth kingdom upon earth... [that] shall devour the whole earth* (Daniel 7:23). That world-wide reach John sees completed — *power was given him over all kindreds, and tongues, and nations* (Revelation 13:7). The restored library keeps the same vision: Ezra too saw *come up from the sea an eagle, which had twelve feathered wings, and three heads* (2 Esdras 11:1), reigning over all the earth, and the interpreting voice told him plainly, *The eagle, whom you sawest come up from the sea, is the kingdom which was seen in the vision of your brother Daniel* (2 Esdras 12:11). Three seers, one beast: the last and worst of the kingdoms that rise from the troubled sea of the nations, and *the dragon gave him his power, and his seat, and great authority* (Revelation 13:2). This is no new thing under the sun — it is the old beast-empire come to its head, and its end is already written in the same vision that named it.',
+       sv.verse_id, ev.verse_id, 'extras', 9300
+  FROM _s224_rv13_lookup sv, _s224_rv13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=13 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-13-the-dragon-gave-him-his-power-all-the-world-wondered-and-worshipped',
+       E'All the world wondered and worshipped — the image all must worship (Daniel 3)',
+       E'The wounded head is healed, *and all the world wondered after the beast. And they worshipped the dragon which gave power unto the beast: and they worshipped the beast, saying, Who is like unto the beast? who is able to make war with him?* (Revelation 13:3-4). The compelled worship of the whole earth is Nebuchadnezzar''s decree grown to fill the world. On the plain of Dura the herald commanded *that at what time ye hear the sound of the cornet, flute, harp, sackbut, psaltery, dulcimer, and all kinds of musick, ye fall down and worship the golden image that Nebuchadnezzar the king hath set up* (Daniel 3:5), and *all the people, the nations, and the languages, fell down and worshipped the golden image* (Daniel 3:7). The same peoples, nations, and languages that bowed at Dura are the world that wonders after the beast; the same demand stands — fall down and worship the image, or die. The beast-system has always coveted the worship that belongs to Yahuah (LORD) alone and dressed its idol in music and majesty to win it. And as three men would not bow before the golden image then, trusting the Elohim (God) who was able to deliver them and faithful whether he delivered or not, so the saints will not worship the beast now. *Who is like unto the beast?* the world cries — but the cry mocks the song of the redeemed, *Who is like unto thee, O Yahuah (LORD), among the gods?* The beast is a counterfeit even in the worship it demands.',
+       sv.verse_id, ev.verse_id, 'free', 9303
+  FROM _s224_rv13_lookup sv, _s224_rv13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=13 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-13-a-mouth-speaking-great-things-and-blasphemies-forty-and-two-months',
+       E'A mouth speaking great things, forty and two months, war with the saints (Daniel 7)',
+       E'*And there was given unto him a mouth speaking great things and blasphemies; and power was given unto him to continue forty and two months* (Revelation 13:5). Every phrase here is Daniel 7. The *mouth speaking great things* is the little horn''s — *in this horn were eyes like the eyes of man, and a mouth speaking great things* (Daniel 7:8). The *forty and two months* is Daniel''s *time, times, and the dividing of time* (Daniel 7:25). And that same verse names the beast''s deepest crime: *he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws.* This is the heart of it — the beast-system makes war on the commandments of Yahuah (LORD), reaching to alter the very times and laws he appointed, and that is the blasphemy John names when the beast *opened his mouth in blasphemy against Elohim (God), to blaspheme his name, and his tabernacle* (Revelation 13:6). The self-exalting king of Daniel 11 is of the same spirit: he *shall magnify himself above every god, and shall speak marvellous things against the Elohim (God) of gods* (Daniel 11:36). And the war is real — *it was given unto him to make war with the saints, and to overcome them* (Revelation 13:7), word for word *the same horn made war with the saints, and prevailed against them* (Daniel 7:21). But the overcoming is bounded twice over: bounded in time to the forty-and-two months, the season *till the indignation be accomplished* (Daniel 11:36); and bounded in outcome, for Daniel saw past it — *until the Ancient of days came, and judgment was given to the saints of the El Elyon (most High); and the time came that the saints possessed the kingdom* (Daniel 7:22). The mouth is loud, but the clock is the Father''s, and the verdict is already given for the saints.',
+       sv.verse_id, ev.verse_id, 'free', 9306
+  FROM _s224_rv13_lookup sv, _s224_rv13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=13 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-13-names-not-written-in-the-book-of-life-of-the-lamb-slain',
+       E'Names not written in the book of life of the Lamb slain (Exodus 32, Psalm 69, Daniel 12)',
+       E'*And all that dwell upon the earth shall worship him, whose names are not written in the book of life of the Lamb slain from the foundation of the world* (Revelation 13:8). The worshippers of the beast are marked by a book — and it is no new register opened on the day belief begins. It is the book *written* of old, the one Moses pled over at Sinai: *if not, blot me, I pray thee, out of thy book which thou hast written* (Exodus 32:32). It is the *book of the living* the psalmist knew, set over against the company of the saved — *let them be blotted out of the book of the living, and not be written with the righteous* (Psalm 69:28). It is the book that delivers Daniel''s people through the worst trouble — *at that time thy people shall be delivered, every one that shall be found written in the book* (Daniel 12:1). One book runs through all of it: the register of Yahuah (LORD)''s own, the names *written... from the foundation of the world.* And the restored library keeps the same two books opened at the judgment — *the Lord of the sheep opened the books of the living, and the books of the sinners were opened* (1 Enoch 90:12). To worship the beast is to be found not in the books of the living but in the books of the sinners; to belong to the Lamb is to have a name written in his book before ever the beast rose. This is the framework''s order, against every gospel that makes the name a thing earned by the right confession: the Lamb who opens the book is the Lord of the sheep who gathers his own, and the writing of the name is the gathering, settled before the foundation of the world. The patience of the saints rests on the surety of that writing — the beast can make war on the body, but it cannot reach the name that is written.',
+       sv.verse_id, ev.verse_id, 'extras', 9309
+  FROM _s224_rv13_lookup sv, _s224_rv13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=13 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-13-he-that-leadeth-into-captivity-the-patience-and-faith-of-the-saints',
+       E'He that leadeth into captivity — the patience and faith of the saints (Jeremiah 15, 43)',
+       E'*He that leadeth into captivity shall go into captivity: he that killeth with the sword must be killed with the sword. Here is the patience and the faith of the saints* (Revelation 13:10). The words are spoken in the cadence of Jeremiah''s oracle, where Yahuah (LORD) apportions each to his measured portion: *Such as are for death, to death; and such as are for the sword, to the sword; and such as are for the famine, to the famine; and such as are for the captivity, to the captivity* (Jeremiah 15:2). He speaks it again over Egypt — *such as are for captivity to captivity; and such as are for the sword to the sword* (Jeremiah 43:11). The saints in the beast''s season are not promised escape from the sword or the captivity; what they are given is the assurance that none of it is chaos. Every portion is measured by Yahuah (LORD), and the captor and the killer come under the very same reckoning in their turn — *he that leadeth into captivity shall go into captivity.* That is where *the patience and the faith of the saints* is forged: not in deliverance from the suffering, but in the certainty that the One who measures the portions has already weighed the beast''s, and that endurance under it is the faithfulness that holds to the end. *If any man have an ear, let him hear* (Revelation 13:9).',
+       sv.verse_id, ev.verse_id, 'free', 9312
+  FROM _s224_rv13_lookup sv, _s224_rv13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=13 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-13-the-second-beast-like-a-lamb-the-false-prophet-and-the-fire',
+       E'The second beast like a lamb, the false prophet and the fire (Deuteronomy 13, 1 Kings 18, Daniel 3)',
+       E'*And I beheld another beast coming up out of the earth; and he had two horns like a lamb, and he spake as a dragon* (Revelation 13:11). The second beast wears the costume of a lamb and speaks with the dragon''s voice — the false prophet, and the Torah named his kind long before. *If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder* (Deuteronomy 13:1), and the sign comes to pass, yet he draws you after other gods — *thou shalt not hearken*, for *Yahuah Elohaychem (the LORD your God) proveth you, to know whether ye love Yahuah Elohaychem (the LORD your God) with all your heart* (Deuteronomy 13:3). A true-seeming sign is no proof of a true prophet; it is the proving of your loyalty. So when this beast *doeth great wonders, so that he maketh fire come down from heaven on the earth in the sight of men* (Revelation 13:13) and *deceiveth them that dwell on the earth by the means of those miracles* (Revelation 13:14), he is the sign-worker the Torah taught the people to refuse. And the sign he chooses is the very one the true Elohim (God) once owned: at Carmel the test was *the Elohim (God) that answereth by fire, let him be Elohim (God)* (1 Kings 18:24), and Yahuah (LORD) alone answered while the false prophets'' altar stayed cold. Now the false prophet apes that fire from heaven to claim the proof that was Yahuah (LORD)''s — the deceiver''s costume, not the verdict of heaven. His end is to make an image and an edict: *as many as would not worship the image of the beast should be killed* (Revelation 13:15), the same decree as Nebuchadnezzar''s — *whoso falleth not down and worshippeth shall the same hour be cast into the midst of a burning fiery furnace* (Daniel 3:6). But the fire he calls down to deceive does not have the last word. The restored library shows the end appointed for the beasts: *the Lord of the sheep cast them all into a fiery abyss* (1 Enoch 90:14). The false prophet who calls fire from heaven is himself cast into the fire; the saints who refuse his sign, like the three who would not bow, are kept by the Elohim (God) who is faithful whether he delivers or not.',
+       sv.verse_id, ev.verse_id, 'extras', 9315
+  FROM _s224_rv13_lookup sv, _s224_rv13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=13 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-13-the-mark-in-the-hand-and-forehead-counterfeit-of-the-seal',
+       E'The mark in the hand and forehead — counterfeit of the seal of covenant loyalty (Ezekiel 9, Deuteronomy 6)',
+       E'*And he causeth all, both small and great, rich and poor, free and bond, to receive a mark in their right hand, or in their foreheads: and that no man might buy or sell, save he that had the mark, or the name of the beast, or the number of his name* (Revelation 13:16-17). The mark is no random brand — it is the deliberate counterfeit of the sign of belonging to Yahuah (LORD). For Yahuah (LORD) sets his own mark *upon the foreheads*: *Go through the midst of the city... and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof* (Ezekiel 9:4) — and that mark is what spares them in the day of slaughter, the seal of the faithful who grieve over the abomination the beast-system loves. And the sign is on the hand and the brow because that is where the covenant binds its loyalty: *thou shalt bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes* (Deuteronomy 6:8) — the commandments of Yahuah (LORD) worn on hand and forehead, the love of him and the keeping of his words made visible. The beast inverts exactly this. Where the faithful bind the Torah on hand and brow as the token of belonging to Yahuah (LORD), the beast stamps its own name on hand and brow as the token of belonging to it; the mark is the anti-Torah parody of the sign of the commandments, the system''s mockery of covenant loyalty. This is why the saints are defined over against it: *Here is the patience of the saints: here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus)* (Revelation 14:12). The two seals divide the whole earth — the Father''s name written in the foreheads of his own (Revelation 14:1), or the beast''s mark forced on the rest. *Here is wisdom. Let him that hath understanding count the number of the beast: for it is the number of a man; and his number is Six hundred threescore and six* (Revelation 13:18). The number is a man''s number; the seal of Yahuah (LORD) is the mark of those who are his, the commandment-keepers, sealed before the beast ever raised its mark.',
+       sv.verse_id, ev.verse_id, 'free', 9318
+  FROM _s224_rv13_lookup sv, _s224_rv13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=13 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:3 — *four great beasts came up from the sea, diverse one from another* the kingdoms rise from the troubled sea of the nations; John sees them gathered into one beast (Revelation 13:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:4 — *The first was like a lion* the lion''s mouth folded into the composite, *his mouth as the mouth of a lion* (Revelation 13:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 7:5 — *like to a bear... Arise, devour much flesh* the bear''s feet folded into the composite, *his feet were as the feet of a bear* (Revelation 13:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Daniel 7:6 — *another, like a leopard... dominion was given to it* the leopard''s body and given dominion, *like unto a leopard... the dragon gave him his power* (Revelation 13:2).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Daniel 7:7 — *a fourth beast, dreadful and terrible... and it had ten horns* the ten horns bind the visions, *seven heads and ten horns, and upon his horns ten crowns* (Revelation 13:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Daniel 7:23 — *the fourth kingdom... shall devour the whole earth* the world-wide reach John sees completed, *power... over all kindreds, and tongues, and nations* (Revelation 13:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'2 Esdras 11:1 — *there came up from the sea an eagle, which had twelve feathered wings, and three heads* the restored library''s sea-beast of many heads, reigning over all the earth (Revelation 13:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=11 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'2 Esdras 12:11 — *The eagle... is the kingdom which was seen in the vision of your brother Daniel* the interpreting voice ties the sea-eagle to Daniel''s fourth kingdom — the very beast John re-speaks (Revelation 13:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-beast-from-the-sea-the-four-beasts-of-daniel-gathered-into-one'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=12 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-13-the-dragon-gave-him-his-power-all-the-world-wondered-and-worshipped
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 3:5 — *ye fall down and worship the golden image that Nebuchadnezzar the king hath set up* the compelled worship of the image, grown to fill the earth, *they worshipped the beast* (Revelation 13:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-dragon-gave-him-his-power-all-the-world-wondered-and-worshipped'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=3 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 3:7 — *all the people, the nations, and the languages, fell down and worshipped the golden image* the same peoples, nations, languages that bowed at Dura, *all the world wondered after the beast* (Revelation 13:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-dragon-gave-him-his-power-all-the-world-wondered-and-worshipped'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-13-a-mouth-speaking-great-things-and-blasphemies-forty-and-two-months
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:8 — *in this horn were eyes like the eyes of man, and a mouth speaking great things* the little horn''s arrogant mouth becomes the beast''s, *a mouth speaking great things and blasphemies* (Revelation 13:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-a-mouth-speaking-great-things-and-blasphemies-forty-and-two-months'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:25 — *think to change times and laws... a time and times and the dividing of time* the 42 months and the war on the commandments; the beast reaches to alter Yahuah (LORD)''s appointed times and laws (Revelation 13:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-a-mouth-speaking-great-things-and-blasphemies-forty-and-two-months'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 7:21 — *the same horn made war with the saints, and prevailed against them* the war John re-speaks, bounded by the Ancient of days'' judgment for the saints, *to make war with the saints, and to overcome them* (Revelation 13:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-a-mouth-speaking-great-things-and-blasphemies-forty-and-two-months'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Daniel 11:36 — *he shall... speak marvellous things against the Elohim (God) of gods... till the indignation be accomplished* the self-exalting king of the same spirit, bounded to the appointed season, *opened his mouth in blasphemy against Elohim (God)* (Revelation 13:6).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-a-mouth-speaking-great-things-and-blasphemies-forty-and-two-months'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=11 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-13-names-not-written-in-the-book-of-life-of-the-lamb-slain
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 32:32 — *blot me, I pray thee, out of thy book which thou hast written* the book written of old that Moses pled over; the names are written, not earned (Revelation 13:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-names-not-written-in-the-book-of-life-of-the-lamb-slain'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 69:28 — *let them be blotted out of the book of the living, and not be written with the righteous* the book of the living, set over against the saved; the beast''s worshippers are not written there (Revelation 13:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-names-not-written-in-the-book-of-life-of-the-lamb-slain'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 12:1 — *thy people shall be delivered, every one that shall be found written in the book* the book that delivers through the worst trouble; to be found in it is to be kept (Revelation 13:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-names-not-written-in-the-book-of-life-of-the-lamb-slain'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 90:12 — *the Lord of the sheep opened the books of the living, and the books of the sinners were opened* the two books at the judgment; the beast''s worshippers stand in the books of the sinners (Revelation 13:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-names-not-written-in-the-book-of-life-of-the-lamb-slain'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=90 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-13-he-that-leadeth-into-captivity-the-patience-and-faith-of-the-saints
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 15:2 — *such as are for the sword, to the sword... such as are for the captivity, to the captivity* the measured apportioning by Yahuah (LORD); the frame in which the saints endure (Revelation 13:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-he-that-leadeth-into-captivity-the-patience-and-faith-of-the-saints'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=15 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 43:11 — *such as are for captivity to captivity; and such as are for the sword to the sword* the same fixed apportioning; the captor and killer come under the same reckoning in their turn (Revelation 13:10).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-he-that-leadeth-into-captivity-the-patience-and-faith-of-the-saints'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=43 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-13-the-second-beast-like-a-lamb-the-false-prophet-and-the-fire
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 13:1 — *a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder* the Torah''s false prophet whose sign proves loyalty, not truth; the second beast deceives by miracles (Revelation 13:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-second-beast-like-a-lamb-the-false-prophet-and-the-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Kings 18:24 — *the Elohim (God) that answereth by fire, let him be Elohim (God)* the true fire at Carmel that was Yahuah (LORD)''s alone; the false prophet apes it, *maketh fire come down from heaven* (Revelation 13:13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-second-beast-like-a-lamb-the-false-prophet-and-the-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=18 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 3:6 — *whoso falleth not down and worshippeth shall the same hour be cast into the midst of a burning fiery furnace* the same edict the image carries, *as many as would not worship the image of the beast should be killed* (Revelation 13:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-second-beast-like-a-lamb-the-false-prophet-and-the-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 90:14 — *the Lord of the sheep cast them all into a fiery abyss* the end appointed for the beasts; the false prophet''s fire is not the fire that has the last word (Revelation 13:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-second-beast-like-a-lamb-the-false-prophet-and-the-fire'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=15
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=90 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-13-the-mark-in-the-hand-and-forehead-counterfeit-of-the-seal
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 9:4 — *set a mark upon the foreheads of the men that sigh and that cry for all the abominations* the true seal of Yahuah (LORD) on the forehead that spares; the beast brands the parody of it (Revelation 13:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-mark-in-the-hand-and-forehead-counterfeit-of-the-seal'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=9 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 6:8 — *bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes* the commandments on hand and brow as the sign of covenant loyalty; the mark is its anti-Torah parody (Revelation 13:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv13_lookup sv, _s224_rv13_lookup tv
+ WHERE t.slug='revelation-13-the-mark-in-the-hand-and-forehead-counterfeit-of-the-seal'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=13 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_revelation_14.sql (S224 Revelation 14) -----
+-- =====================================================================
+-- S224 minion — REVELATION 14 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: REVELATION 14 (20 verses) — the 144,000 on mount Sion, the three angels,
+--   the keep-the-commandments verse (14:12), the SECOND KAPH carve-out (14:14), the
+--   harvest of the earth, the winepress of wrath.
+-- Tag: rv14 (temp view _s224_rv14_lookup).
+-- Sort band: floor 9325, step 3 (9325, 9328, 9331, 9334, 9337, 9340, 9343 used; under 9350).
+-- Source is ALWAYS the canon Revelation verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (HIGH BLESSING CHAPTER — three watchpoints live):
+--   * The Lamb on mount Sion with the 144,000 are the SAME regathered tribes of ch 7 — the
+--     two-house seed, Judah and Ephraim/Joseph reunited (Ezekiel 37:16-22), the dispersed
+--     gathered home. NOT a symbolic number erasing the tribes, NOT a gentile church replacing
+--     Yashar'el (Israel). They bear *his Father's name written in their foreheads* — the seal
+--     of Ezekiel 9:4, the deliverance promised in mount Zion (Joel 2:32).
+--   * 14:12 — *here are they that keep the commandments of Elohim (God), and the faith of
+--     Yahusha (Jesus)* — the second great Torah-keeping verse of the book, paired with 12:17;
+--     the saints are the Torah-keepers; the mark of the remnant. Woven heavily. [BLESSING]
+--   * 14:14 — THE SECOND KAPH CARVE-OUT: *one sat like unto the Son of Adam* on the white cloud.
+--     The kaph ("like unto") is PRESERVED exactly as the pull returns it — incarnation-honoring,
+--     not identity-opening; the harmonized figure is Yahusha (Jesus), the Formed cloud-rider,
+--     the same vision as 1:13, re-speaking Daniel 7:13 *one like the Son of Adam came with the
+--     clouds of heaven*. Never reduced to a bare *Son of man* title; never the *like* dropped.
+--     [BLESSING]
+-- Christology: Yahusha is the Formed cloud-rider who has a Father; on the throne are *him that
+--   sat on the throne* and the Lamb distinguished (the Father and the Formed Son). No
+--   Trinitarian co-equal-persons grammar; no modalist collapse. Preserved as the pull gives.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-3   The Lamb on mount Sion, the 144,000, his Father's name in their foreheads, the new song
+--           Tanakh: Joel 2:32 (in mount Zion shall be deliverance, the remnant Yahuah calls),
+--                   Ezekiel 9:4 (the mark set on the foreheads of the sealed), Psalm 2:6 (my king
+--                   on my holy hill of Zion), Psalm 33:3 (sing unto him a new song),
+--                   Psalm 40:3 (he hath put a new song in my mouth), Ezekiel 37:16 (the two
+--                   sticks, Judah and Joseph/Ephraim, made one — the two-house regathering)
+--           Extras: none warranted here (the throne/Son-of-Adam extras carried at 14:14)
+--           NT: Revelation 7:3-4 (the 144,000 sealed of all the tribes — the same regathered seed)
+--   v.4-5   The firstfruits unto Elohim and the Lamb; no guile in their mouth; without fault
+--           Tanakh: Leviticus 23:10 (the sheaf of firstfruits), Exodus 23:19 (the first of the
+--                   firstfruits), Jeremiah 2:3 (Yashar'el the firstfruits of his increase),
+--                   Zephaniah 3:13 (no deceitful tongue in their mouth), Isaiah 53:9 (no deceit
+--                   in his mouth — the spotless Lamb they follow)
+--           Extras: none warranted   NT: none warranted
+--   v.6-7   The everlasting gospel: fear Elohim, worship him that made heaven and earth
+--           Tanakh: Exodus 20:11 (the Sabbath-creation ground of worship — he made heaven and
+--                   earth), Psalm 146:6 (which made heaven and earth, the sea), Nehemiah 9:6
+--                   (thou hast made heaven... and worship thee)
+--           Extras: none warranted   NT: none warranted
+--   v.8     Babylon is fallen, is fallen
+--           Tanakh: Isaiah 21:9 (Babylon is fallen, is fallen), Jeremiah 51:7-8 (the golden cup,
+--                   Babylon suddenly fallen)
+--           Extras: none warranted   NT: none warranted
+--   v.9-13  The warning against the beast's mark; the patience of the saints who keep the
+--           commandments and the faith of Yahusha; blessed are the dead which die in Yahuah
+--           Tanakh: Isaiah 34:10 (the smoke ascending for ever), Malachi 4:4 (remember the law
+--                   of Moses — the Torah-keeping the saints are marked by)
+--           Extras: none warranted   NT: Revelation 12:17 (the remnant which keep the
+--                   commandments of Elohim and have the testimony of Yahusha — the paired verse)
+--   v.14    One sat LIKE UNTO the Son of Adam on the white cloud (KAPH carve-out)
+--           Tanakh: Daniel 7:13 (one like the Son of Adam came with the clouds of heaven)
+--           Extras: 1 Enoch 46:1 (the Head of Days and one whose countenance had the appearance
+--                   of a man), 1 Enoch 46:3 (this is the Son of Adam who hath righteousness),
+--                   1 Enoch 48:2 (that Son of Adam was named before the Head of Days),
+--                   1 Enoch 62:7 (this is the Son of Adam who is born unto righteousness)
+--           NT: Revelation 1:13 (one like unto the Son of Adam in the midst of the lampstands —
+--               the same kaph vision), Matthew 24:30 (the Son of Adam coming in the clouds),
+--               Mark 13:26 (the Son of Adam coming in the clouds with great power)
+--   v.15-20 The harvest of the earth reaped; the winepress of wrath trodden
+--           Tanakh: Joel 3:13 (put ye in the sickle, for the harvest is ripe), Isaiah 63:3
+--                   (I have trodden the winepress alone), Isaiah 63:6 (I will tread down the
+--                   people in mine anger), Lamentations 1:15 (Yahuah hath trodden the virgin
+--                   daughter of Yahudah as in a winepress)
+--           Extras: 2 Esdras 4:30 (the grain of evil seed... until the time of threshing come),
+--                   2 Esdras 4:32 (when the ears shall be cut down, how great a floor),
+--                   1 Enoch 100:3 (the horse shall walk up to the breast in the blood of sinners
+--                   — the blood unto the horse bridles)
+--           NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   9325 revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2          (Tanakh + NT)
+--   9328 revelation-14-the-firstfruits-unto-elohim-and-the-lamb-without-guile-leviticus-23       (Tanakh)
+--   9331 revelation-14-the-everlasting-gospel-worship-him-that-made-heaven-and-earth-exodus-20   (Tanakh)
+--   9334 revelation-14-babylon-is-fallen-is-fallen-isaiah-21-jeremiah-51                          (Tanakh)
+--   9337 revelation-14-here-are-they-that-keep-the-commandments-of-elohim-malachi-4              (Tanakh + NT)
+--   9340 revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7            (Tanakh + Extras + NT)
+--   9343 revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63      (Tanakh + Extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s224_rv14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2
+  ('canon', 'revelation', 14, 1, 'canon', 'joel', 2, 32, 'free', E'*And it shall come to pass, that whosoever shall call on the name of Yahuah (LORD) shall be delivered: for in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call.* (Joel 2:32). The seer looks and *lo, a Lamb stood on the mount Sion, and with him an hundred forty and four thousand* (Revelation 14:1) — and the prophet had marked the place long before: it is *in mount Zion* that *shall be deliverance.* The 144,000 standing there are *the remnant whom Yahuah (LORD) shall call* — the gathered seed, called by name and brought home to the mountain where deliverance was promised.'),
+  ('canon', 'revelation', 14, 1, 'canon', 'ezekiel', 9, 4, 'free', E'*And Yahuah (LORD) said unto him, Go through the midst of the city, through the midst of Jerusalem, and set a mark upon the foreheads of the men that sigh and that cry for all the abominations that be done in the midst thereof.* (Ezekiel 9:4). The 144,000 have *his Father''s name written in their foreheads* (Revelation 14:1) — the same seal Ezekiel saw set *upon the foreheads* of the faithful before the city was struck. The mark on the forehead is the Father''s own name, the sign that distinguishes those who are his; the saints are sealed where the prophet saw the righteous sealed, kept through the judgment that falls on all that is unmarked.'),
+  ('canon', 'revelation', 14, 1, 'canon', 'psalms', 2, 6, 'free', E'*Yet have I set my king upon my holy hill of Zion.* (Psalm 2:6). The Lamb stands *on the mount Sion* (Revelation 14:1) where Yahuah (LORD) declared he would set his king — *my holy hill of Zion.* The slain Lamb who reigns is the King enthroned on the holy hill, and the 144,000 gathered with him are his people about their King on the mountain that was always appointed for him.'),
+  ('canon', 'revelation', 14, 1, 'canon', 'ezekiel', 37, 16, 'free', E'*Moreover, thou son of Adam, take thee one stick, and write upon it, For Yahudah (Judah), and for the children of Yashar''el (Israel) his companions: then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions:* (Ezekiel 37:16). The 144,000 *of all the tribes of the children of Yashar''el (Israel)* gathered with the Lamb (Revelation 14:1; cf. 7:4) are the reunited houses the prophet was shown — the stick of Yahudah (Judah) and the stick of Joseph, the stick of Ephraim, *join them one to another into one stick; and they shall become one in thine hand* (Ezekiel 37:17). Both houses, the two-house seed, made one and brought home; the regathering of all Yashar''el (Israel), not a number that erases the tribes.'),
+  ('canon', 'revelation', 14, 3, 'canon', 'psalms', 33, 3, 'free', E'*Sing unto him a new song; play skilfully with a loud noise.* (Psalm 33:3). The 144,000 *sung as it were a new song before the throne* (Revelation 14:3), the very song the psalmist called for — *sing unto him a new song.* The redeemed sing the new song of the gathered, *and no man could learn that song but the hundred and forty and four thousand, which were redeemed from the earth* (Revelation 14:3); it is the song of those whom Yahuah (LORD) has brought through.'),
+  ('canon', 'revelation', 14, 3, 'canon', 'psalms', 40, 3, 'free', E'*And he hath put a new song in my mouth, even praise unto our Elohim (God): many shall see it, and fear, and shall trust in Yahuah (LORD).* (Psalm 40:3). The new song the 144,000 sing — *they sung as it were a new song before the throne* (Revelation 14:3) — is the song Yahuah (LORD) puts in the mouth of the redeemed, the *new song* of the soul drawn up out of the pit and set on the rock. It is praise unto Elohim (God) by those he has delivered, learned only by those who have been brought through.'),
+  ('canon', 'revelation', 14, 4, 'canon', 'revelation', 7, 4, 'free', E'*And I heard the number of them which were sealed: and there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel).* (Revelation 7:4). The 144,000 on mount Sion are the same sealed number the seer counted in chapter 7 — *of all the tribes of the children of Yashar''el (Israel),* the twelve tribes named one by one. They are *redeemed from among men, being the firstfruits unto Elohim (God) and to the Lamb* (Revelation 14:4); the sealed of ch 7 and the firstfruits of ch 14 are one company, the gathered seed of Yashar''el (Israel) brought home, kept and standing with the Lamb on the mountain.')
+  ,
+  -- thread: revelation-14-the-firstfruits-unto-elohim-and-the-lamb-without-guile-leviticus-23
+  ('canon', 'revelation', 14, 4, 'canon', 'leviticus', 23, 10, 'free', E'*Speak unto the children of Yashar''el (Israel), and say unto them, When ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest:* (Leviticus 23:10). The 144,000 are *the firstfruits unto Elohim (God) and to the Lamb* (Revelation 14:4) — the first sheaf of the great harvest, waved before Yahuah (LORD) and accepted, the appointed beginning that sanctifies the whole ingathering still to come. They are the firstfruits of the redeemed, gathered first and offered up to him.'),
+  ('canon', 'revelation', 14, 4, 'canon', 'exodus', 23, 19, 'free', E'*The first of the firstfruits of thy land thou shalt bring into the house of Yahuah Elohayka (the LORD thy God). Thou shalt not seethe a kid in his mother''s milk.* (Exodus 23:19). The redeemed are *the firstfruits unto Elohim (God) and to the Lamb* (Revelation 14:4), *the first of the firstfruits* brought into the house of Yahuah Elohayka (the LORD thy God). What the Torah appointed in the feast — the first and best given back to him — the 144,000 fulfil in their persons: the first portion of the harvest of the gathered, set apart and brought home to Elohim (God).'),
+  ('canon', 'revelation', 14, 4, 'canon', 'jeremiah', 2, 3, 'free', E'*Yashar''el (Israel) was holiness unto Yahuah (LORD), and the firstfruits of his increase: all that devour him shall offend; evil shall come upon them, saith Yahuah (LORD).* (Jeremiah 2:3). The prophet had named the people themselves *the firstfruits of his increase* — and the 144,000, *the firstfruits unto Elohim (God) and to the Lamb* (Revelation 14:4), are that very Yashar''el (Israel), holiness unto Yahuah (LORD), gathered and set apart. The firstfruits of ch 14 are the firstfruits Jeremiah named: the covenant seed, holy unto him, the beginning of his increase.'),
+  ('canon', 'revelation', 14, 5, 'canon', 'zephaniah', 3, 13, 'free', E'*The remnant of Yashar''el (Israel) shall not do iniquity, nor speak lies; neither shall a deceitful tongue be found in their mouth: for they shall feed and lie down, and none shall make them afraid.* (Zephaniah 3:13). *And in their mouth was found no guile: for they are without fault before the throne of Elohim (God)* (Revelation 14:5). This is the remnant Zephaniah saw — those in whose mouth *neither shall a deceitful tongue be found.* The 144,000 are that purified remnant of Yashar''el (Israel), without lie and without fault, the gathered seed in whom no guile is found.'),
+  ('canon', 'revelation', 14, 5, 'canon', 'isaiah', 53, 9, 'free', E'*And he made his grave with the wicked, and with the rich in his death; because he had done no violence, neither was any deceit in his mouth.* (Isaiah 53:9). Of the 144,000 it is said *in their mouth was found no guile* (Revelation 14:5) — the very word spoken of the Lamb himself, in whom was *no deceit in his mouth.* *These are they which follow the Lamb whithersoever he goeth* (Revelation 14:4); they bear the likeness of the One they follow, the spotless servant who had no deceit in his mouth, made like him who redeemed them.')
+  ,
+  -- thread: revelation-14-the-everlasting-gospel-worship-him-that-made-heaven-and-earth-exodus-20
+  ('canon', 'revelation', 14, 7, 'canon', 'exodus', 20, 11, 'free', E'*For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it.* (Exodus 20:11). The everlasting gospel cries *worship him that made heaven, and earth, and the sea, and the fountains of waters* (Revelation 14:7) — and the ground of that worship is the very word the fourth commandment gives: *Yahuah (LORD) made heaven and earth, the sea, and all that in them is.* The call to worship the Maker is the call to the One who made the heavens and the earth and hallowed the seventh day; the gospel sends the nations back to the Creator the Sabbath testifies of.'),
+  ('canon', 'revelation', 14, 7, 'canon', 'psalms', 146, 6, 'free', E'*Which made heaven, and earth, the sea, and all that therein is: which keepeth truth for ever:* (Psalm 146:6). The angel''s gospel names the One to be worshipped exactly as the psalm names him — *worship him that made heaven, and earth, and the sea, and the fountains of waters* (Revelation 14:7); *which made heaven, and earth, the sea, and all that therein is.* The Maker of heaven and earth and sea is the One the everlasting gospel summons all flesh to fear and to worship, *for the hour of his judgment is come* (Revelation 14:7).'),
+  ('canon', 'revelation', 14, 7, 'canon', 'nehemiah', 9, 6, 'free', E'*Thou, even thou, art Yahuah (LORD) alone; thou hast made heaven, the heaven of heavens, with all their host, the earth, and all things that are therein, the seas, and all that is therein, and thou preservest them all; and the host of heaven worshippeth thee.* (Nehemiah 9:6). The everlasting gospel''s summons — *worship him that made heaven, and earth, and the sea, and the fountains of waters* (Revelation 14:7) — is the confession the Levites raised: *thou hast made heaven... the earth... the seas... and the host of heaven worshippeth thee.* Worship belongs to the Maker alone, *thou art Yahuah (LORD) alone;* the gospel calls every nation to give that worship to the One who made all things and preserves them.')
+  ,
+  -- thread: revelation-14-babylon-is-fallen-is-fallen-isaiah-21-jeremiah-51
+  ('canon', 'revelation', 14, 8, 'canon', 'isaiah', 21, 9, 'free', E'*And, behold, here cometh a chariot of men, with a couple of horsemen. And he answered and said, Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground.* (Isaiah 21:9). The second angel takes up the watchman''s very cry: *Babylon is fallen, is fallen, that great city* (Revelation 14:8) — the same doubled word Isaiah heard from the watchtower, *Babylon is fallen, is fallen.* What the prophet saw of the first Babylon is spoken again over the great city of the last days: her fall is announced, and her graven gods are broken to the ground.'),
+  ('canon', 'revelation', 14, 8, 'canon', 'jeremiah', 51, 8, 'free', E'*Babylon is suddenly fallen and destroyed: howl for her; take balm for her pain, if so be she may be healed.* (Jeremiah 51:8). The angel''s announcement — *Babylon is fallen, is fallen* (Revelation 14:8) — re-speaks Jeremiah''s word over Babylon: *Babylon is suddenly fallen and destroyed.* And the charge is the same: *she made all nations drink of the wine of the wrath of her fornication* (Revelation 14:8), for Babylon was *a golden cup in the LORD''S hand, that made all the earth drunken* (Jeremiah 51:7). The cup of her fornication and the cup that intoxicated the nations are one; her fall is the fall the prophet foretold.')
+  ,
+  -- thread: revelation-14-here-are-they-that-keep-the-commandments-of-elohim-malachi-4
+  ('canon', 'revelation', 14, 12, 'canon', 'revelation', 12, 17, 'free', E'*And the dragon was wroth with the woman, and went to make war with the remnant of her seed, which keep the commandments of Elohim (God), and have the testimony of Yahusha HaMashiach (Jesus Christ).* (Revelation 12:17). Twice over the book defines the saints the same way, and here is its companion: *Here is the patience of the saints: here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus)* (Revelation 14:12). The remnant the dragon makes war on and the saints who endure the beast are one people, marked by one mark — *they that keep the commandments of Elohim (God)* and hold the faith of Yahusha (Jesus). The keeping of the commandments is not set against the faith; the two stand together as the single sign of the gathered remnant.'),
+  ('canon', 'revelation', 14, 12, 'canon', 'malachi', 4, 4, 'free', E'*Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Yashar''el (Israel), with the statutes and judgments.* (Malachi 4:4). When Revelation marks the saints as *they that keep the commandments of Elohim (God)* (Revelation 14:12), it names the very thing the last word of the prophets pressed on all Yashar''el (Israel): *remember ye the law of Moses my servant... with the statutes and judgments.* The patience of the saints is the patience of those who hold fast the commandments through the day of the beast — the same charge laid on the covenant people from Horeb, carried unbroken to the end.'),
+  ('canon', 'revelation', 14, 11, 'canon', 'isaiah', 34, 10, 'free', E'*It shall not be quenched night nor day; the smoke thereof shall go up for ever: from generation to generation it shall lie waste; none shall pass through it for ever and ever.* (Isaiah 34:10). The warning against worshipping the beast is spoken in the prophet''s own words of judgment: *and the smoke of their torment ascendeth up for ever and ever: and they have no rest day nor night* (Revelation 14:11). Isaiah saw the smoke that *shall go up for ever* and the fire *not quenched night nor day* over the land of Yahuah (LORD)''s controversy; the same unending smoke ascends over those who take the mark of the beast and worship his image.'),
+  ('canon', 'revelation', 14, 13, 'canon', 'malachi', 4, 4, 'free', E'*Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Yashar''el (Israel), with the statutes and judgments.* (Malachi 4:4). *Blessed are the dead which die in Yahuah (Lord) from henceforth: Yea, saith the Spirit, that they may rest from their labours; and their works do follow them* (Revelation 14:13). The works that follow the faithful dead are the works of those who remembered the law of Moses and kept it — the doing of the commandments named in the verse just before (Revelation 14:12). Their labour was the covenant walk, and *their works do follow them;* the keeping of the statutes and judgments is the very fruit that goes with them into their rest.')
+  ,
+  -- thread: revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7
+  ('canon', 'revelation', 14, 14, 'canon', 'daniel', 7, 13, 'free', E'*I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* (Daniel 7:13). The seer looks and *behold a white cloud, and upon the cloud one sat like unto the Son of Adam, having on his head a golden crown* (Revelation 14:14). This is Daniel''s vision again — *one like the Son of Adam came with the clouds of heaven.* The kaph is preserved in both: *one LIKE the Son of Adam,* not a bare title but the One who resembles a son of mortal-man because he took on flesh, while remaining the Formed cloud-rider who comes to the Ancient of days. The golden crown is upon him, the kingdom Daniel saw given; the cloud-rider of Daniel 7 sits enthroned for the harvest.'),
+  ('canon', 'revelation', 14, 14, 'canon', 'revelation', 1, 13, 'free', E'*And in the midst of the seven candlesticks one like unto the Son of Adam, clothed with a garment down to the foot, and girt about the paps with a golden girdle.* (Revelation 1:13). The cloud-rider of ch 14 is the same figure John saw at the first: *one like unto the Son of Adam* (Revelation 1:13), and now *one sat like unto the Son of Adam* upon the white cloud (Revelation 14:14). The book preserves the kaph in both visions — *like unto the Son of Adam* — the One who walked among the lampstands and the One who sits crowned upon the cloud are one and the same: Yahusha (Jesus), the Formed, who *was dead, and is alive for evermore,* resembling mortal-man in his flesh and bearing the divine glory.'),
+  ('canon', 'revelation', 14, 14, 'canon', 'matthew', 24, 30, 'free', E'*And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory.* (Matthew 24:30). When *one sat like unto the Son of Adam* on the white cloud (Revelation 14:14), it is the coming the King himself foretold — *the Son of Adam coming in the clouds of heaven with power and great glory.* Both re-speak Daniel 7:13; the cloud-rider crowned for the harvest is the Son of Adam whose appearing all the tribes of the earth shall see, the Formed who comes in the clouds in the glory the prophet was shown.'),
+  ('canon', 'revelation', 14, 14, 'canon', 'mark', 13, 26, 'free', E'*And then shall they see the Son of Adam coming in the clouds with great power and glory.* (Mark 13:26). The figure crowned upon the white cloud — *one sat like unto the Son of Adam* (Revelation 14:14) — is the One the Gospel says they shall see *coming in the clouds with great power and glory.* The cloud is his throne and his coming; the same Daniel-7 vision the King spoke of his own appearing is the vision the seer beholds enthroned for the reaping of the earth.'),
+  ('canon', 'revelation', 14, 14, 'enoch', '1-enoch', 46, 1, 'extras', E'*And there I saw One who had a head of days, and His head was white like wool, and with Him was another being whose countenance had the appearance of a man, and his face was full of graciousness, like one of the holy angels.* (1 Enoch 46:1). The restored library carries the same throne-vision Daniel and John were shown: the Head of Days, and beside him *another being whose countenance had the appearance of a man.* When *one sat like unto the Son of Adam* on the white cloud (Revelation 14:14), it is this figure — the one of manlike countenance who stands with the Head of Days, the Son of Adam named in the heavens before he appeared crowned for the harvest.'),
+  ('canon', 'revelation', 14, 14, 'enoch', '1-enoch', 46, 3, 'extras', E'*And he answered and said unto me: This is the Son of Adam who hath righteousness, with whom dwelleth righteousness, and who revealeth all the treasures of that which is hidden, because Yahuah (God) of Spirits hath chosen him, and whose lot hath the pre-eminence before Yahuah (God) of Spirits in uprightness for ever.* (1 Enoch 46:3). The angel names him plainly: *this is the Son of Adam who hath righteousness.* The figure crowned upon the white cloud — *one sat like unto the Son of Adam* (Revelation 14:14) — is the chosen One in whom righteousness dwells, the Elect of Yahuah (God) of Spirits enthroned over the harvest, the named Son of Adam of the heavenly vision come to reap the earth in righteousness.'),
+  ('canon', 'revelation', 14, 14, 'enoch', '1-enoch', 48, 2, 'extras', E'*And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days.* (1 Enoch 48:2). The Son of Adam was *named In the presence of Yahuah (God) of Spirits* — yea, *before the sun and the signs were created* (1 Enoch 48:3) his name was named. The One who sits *like unto the Son of Adam* crowned upon the cloud (Revelation 14:14) is no late-come figure but the One named from before the foundation of the world, the chosen and hidden One revealed at the harvest of the earth.'),
+  ('canon', 'revelation', 14, 14, 'enoch', '1-enoch', 62, 7, 'extras', E'*And Yahuah (God) of Spirits said: This is the Son of Adam who is born unto righteousness, And righteousness abides over him, And the righteousness of the Head of Days forsakes him not.* (1 Enoch 62:7). Yahuah (God) of Spirits himself names him: *this is the Son of Adam who is born unto righteousness.* The crowned cloud-rider — *one sat like unto the Son of Adam* (Revelation 14:14) — is the One over whom righteousness abides, whom the righteousness of the Head of Days never forsakes; the enthroned Son of Adam revealed for the judgment, the same the restored library saw seated to judge the kings and the mighty.')
+  ,
+  -- thread: revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63
+  ('canon', 'revelation', 14, 15, 'canon', 'joel', 3, 13, 'free', E'*Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.* (Joel 3:13). The angel cries to the cloud-rider, *Thrust in thy sickle, and reap: for the time is come for thee to reap; for the harvest of the earth is ripe* (Revelation 14:15) — the prophet''s very command, *put ye in the sickle, for the harvest is ripe.* And the doubled figure is also Joel''s: the sickle of the harvest and the press that is full and overflows; the reaping of the earth and the treading of the winepress are the one day of Yahuah (LORD)''s judgment Joel saw in the valley of decision.'),
+  ('canon', 'revelation', 14, 19, 'canon', 'isaiah', 63, 3, 'free', E'*I have trodden the winepress alone; and of the people there was none with me: for I will tread them in mine anger, and trample them in my fury; and their blood shall be sprinkled upon my garments, and I will stain all my raiment.* (Isaiah 63:3). The vine of the earth is gathered and *cast it into the great winepress of the wrath of Elohim (God)* (Revelation 14:19) — the very winepress Isaiah saw trodden: *I have trodden the winepress alone.* The treading of the grapes of wrath is the prophet''s vision of the day of vengeance, the One who comes from Edom with dyed garments, treading the press of the people in his fury.'),
+  ('canon', 'revelation', 14, 20, 'canon', 'isaiah', 63, 6, 'free', E'*And I will tread down the people in mine anger, and make them drunk in my fury, and I will bring down their strength to the earth.* (Isaiah 63:6). *And the winepress was trodden without the city, and blood came out of the winepress* (Revelation 14:20) — the treading Isaiah foretold, *I will tread down the people in mine anger.* The winepress trodden without the city, the blood that flows even to the horse bridles, is the day of vengeance the prophet named, when the strength of the people is brought down to the earth in the fury of Yahuah (LORD).'),
+  ('canon', 'revelation', 14, 20, 'canon', 'lamentations', 1, 15, 'free', E'*Yahuah (Lord) hath trodden under foot all my mighty men in the midst of me: he hath called an assembly against me to crush my young men: Yahuah (Lord) hath trodden the virgin, the daughter of Yahudah (Judah), as in a winepress.* (Lamentations 1:15). The image of the winepress trodden — *the winepress was trodden without the city* (Revelation 14:20) — is the figure of judgment Jeremiah lamented: *Yahuah (Lord) hath trodden the virgin, the daughter of Yahudah (Judah), as in a winepress.* The treading that once fell on the unfaithful city is poured out at the last upon the vine of the earth ripe for wrath; the winepress is Yahuah (LORD)''s own act of judgment.'),
+  ('canon', 'revelation', 14, 16, 'apocrypha', '2-esdras', 4, 30, 'extras', E'*For the grain of evil seed has been sown in the heart of Adam from the beginning, and how much ungodliness has it brought up to this time? and how much shall it yet bring forth until the time of threshing come?* (2 Esdras 4:30). The reaping of the earth — *and he that sat on the cloud thrust in his sickle on the earth; and the earth was reaped* (Revelation 14:16) — is *the time of threshing* the restored library foretold, when the grain of evil seed sown from the beginning is at last brought in to the floor. The harvest of the cloud-rider is the threshing-time, the end of the long sowing, when what was grown is gathered and judged.'),
+  ('canon', 'revelation', 14, 16, 'apocrypha', '2-esdras', 4, 32, 'extras', E'*And when the ears shall be cut down, which are without number, how great a floor shall they fill?* (2 Esdras 4:32). When *the earth was reaped* (Revelation 14:16), the ears beyond number are cut down and the great floor is filled — the very figure the restored library uses for the consummation, *the ears... cut down... how great a floor shall they fill.* The reaping of the earth is that filling of the floor, the gathering in of all that the long age sowed, brought to the threshing at the harvest of the age.'),
+  ('canon', 'revelation', 14, 20, 'enoch', '1-enoch', 100, 3, 'extras', E'*And the horse shall walk up to the breast in the blood of sinners, And the chariot shall be submerged to its height.* (1 Enoch 100:3). The blood of the winepress — *blood came out of the winepress, even unto the horse bridles* (Revelation 14:20) — is the very measure the restored library gives of the day of slaughter: *the horse shall walk up to the breast in the blood of sinners.* The blood rising to the horse bridles is the blood rising to the horse''s breast that 1 Enoch saw; one vision of the great day when the wickedness of the earth is trodden out in wrath.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s224_rv14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s224_rv14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2',
+       E'The Lamb on mount Sion, the 144,000 with the Father''s name in their foreheads — the regathering (Joel 2, Ezekiel 9, Ezekiel 37)',
+       E'*And I looked, and, lo, a Lamb stood on the mount Sion, and with him an hundred forty and four thousand, having his Father''s name written in their foreheads* (Revelation 14:1). The mountain was always the appointed place: *in mount Zion and in Jerusalem shall be deliverance, as Yahuah (LORD) hath said, and in the remnant whom Yahuah (LORD) shall call* (Joel 2:32) — the 144,000 standing there are that called remnant, gathered home to the hill where deliverance was promised. And *Yet have I set my king upon my holy hill of Zion* (Psalm 2:6): the slain Lamb who reigns is the King enthroned on the holy hill, his people about him. The name in their foreheads is the seal Ezekiel saw — *set a mark upon the foreheads of the men that sigh and that cry for all the abominations* (Ezekiel 9:4) — the Father''s own name, the sign of those who are his, kept through the judgment that falls on all that is unmarked. And these are no symbolic number erasing the tribes: they are *of all the tribes of the children of Yashar''el (Israel)* (cf. Revelation 7:4), the reunited houses the prophet was shown — *take thee one stick... For Yahudah (Judah)... then take another stick... For Joseph, the stick of Ephraim* (Ezekiel 37:16), *and they shall become one in thine hand* (Ezekiel 37:17). The two-house seed, Judah and Ephraim/Joseph, made one and brought home; the regathering of all Yashar''el (Israel), the same sealed company of chapter 7 — *there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4). And they *sung as it were a new song before the throne* (Revelation 14:3), the new song Yahuah (LORD) puts in the mouth of the redeemed — *sing unto him a new song* (Psalm 33:3); *he hath put a new song in my mouth, even praise unto our Elohim (God)* (Psalm 40:3) — a song *no man could learn... but the hundred and forty and four thousand, which were redeemed from the earth* (Revelation 14:3), the song of those alone whom he has brought through.',
+       sv.verse_id, ev.verse_id, 'free', 9325
+  FROM _s224_rv14_lookup sv, _s224_rv14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=14 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-14-the-firstfruits-unto-elohim-and-the-lamb-without-guile-leviticus-23',
+       E'The firstfruits unto Elohim (God) and to the Lamb, no guile in their mouth (Leviticus 23, Jeremiah 2, Zephaniah 3)',
+       E'*These were redeemed from among men, being the firstfruits unto Elohim (God) and to the Lamb* (Revelation 14:4). The firstfruits are the appointed first sheaf of the great harvest: *when ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest* (Leviticus 23:10), *the first of the firstfruits of thy land thou shalt bring into the house of Yahuah Elohayka (the LORD thy God)* (Exodus 23:19) — the first and best given back to him, the beginning that sanctifies the whole ingathering still to come. And the people themselves were named firstfruits long before: *Yashar''el (Israel) was holiness unto Yahuah (LORD), and the firstfruits of his increase* (Jeremiah 2:3). The 144,000 are that very Yashar''el (Israel), holiness unto Yahuah (LORD), the first portion of the redeemed set apart and brought home. *And in their mouth was found no guile: for they are without fault before the throne of Elohim (God)* (Revelation 14:5) — the purified remnant Zephaniah saw, in whom *neither shall a deceitful tongue be found in their mouth* (Zephaniah 3:13). And the word is the Lamb''s own: of him it was said *neither was any deceit in his mouth* (Isaiah 53:9), and *these are they which follow the Lamb whithersoever he goeth* (Revelation 14:4) — bearing the likeness of the spotless One they follow, made like him who redeemed them.',
+       sv.verse_id, ev.verse_id, 'free', 9328
+  FROM _s224_rv14_lookup sv, _s224_rv14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=14 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-14-the-everlasting-gospel-worship-him-that-made-heaven-and-earth-exodus-20',
+       E'The everlasting gospel: worship him that made heaven and earth — the Sabbath-creation ground (Exodus 20, Psalm 146, Nehemiah 9)',
+       E'*And I saw another angel fly in the midst of heaven, having the everlasting gospel to preach unto them that dwell on the earth... Saying with a loud voice, Fear Elohim (God), and give glory to him; for the hour of his judgment is come: and worship him that made heaven, and earth, and the sea, and the fountains of waters* (Revelation 14:6-7). The everlasting gospel''s summons is to worship the Maker — and the ground it stands on is the word of the fourth commandment: *For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11). The call to *worship him that made heaven, and earth, and the sea* is the call to the One whom the Sabbath testifies of, the Creator who made the heavens and the earth and hallowed the seventh day. It is the same confession the psalm raised — *which made heaven, and earth, the sea, and all that therein is* (Psalm 146:6) — and the same the Levites raised: *thou hast made heaven, the heaven of heavens, with all their host, the earth... the seas, and all that is therein... and the host of heaven worshippeth thee* (Nehemiah 9:6). Worship belongs to the Maker alone; the everlasting gospel sends every nation back to the Creator the Sabbath was given to remember, *for the hour of his judgment is come.*',
+       sv.verse_id, ev.verse_id, 'free', 9331
+  FROM _s224_rv14_lookup sv, _s224_rv14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=14 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-14-babylon-is-fallen-is-fallen-isaiah-21-jeremiah-51',
+       E'Babylon is fallen, is fallen — the watchman''s doubled cry (Isaiah 21, Jeremiah 51)',
+       E'*And there followed another angel, saying, Babylon is fallen, is fallen, that great city, because she made all nations drink of the wine of the wrath of her fornication* (Revelation 14:8). The angel takes up the watchman''s very cry from the tower: *and he answered and said, Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground* (Isaiah 21:9) — the same doubled word, spoken now over the great city of the last days. And the announcement re-speaks Jeremiah''s: *Babylon is suddenly fallen and destroyed: howl for her* (Jeremiah 51:8). The charge is the same charge the prophet brought, for Babylon was *a golden cup in the LORD''S hand, that made all the earth drunken: the nations have drunken of her wine* (Jeremiah 51:7) — and so she *made all nations drink of the wine of the wrath of her fornication.* The cup of her fornication and the cup that intoxicated the nations are one cup; her fall is the fall the prophets foretold, announced before it falls as a sure word, that the gathered may not drink of her wine.',
+       sv.verse_id, ev.verse_id, 'free', 9334
+  FROM _s224_rv14_lookup sv, _s224_rv14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=14 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-14-here-are-they-that-keep-the-commandments-of-elohim-malachi-4',
+       E'Here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus) (Revelation 12, Malachi 4)',
+       E'In the heart of the beast''s hour the saints are named — and named by the one mark that defines the remnant of this book twice over: *Here is the patience of the saints: here are they that keep the commandments of Elohim (God), and the faith of Yahusha (Jesus)* (Revelation 14:12). It is the same definition spoken of the woman''s seed: *the dragon was wroth with the woman, and went to make war with the remnant of her seed, which keep the commandments of Elohim (God), and have the testimony of Yahusha HaMashiach (Jesus Christ)* (Revelation 12:17). The remnant the dragon makes war on and the saints who endure the beast are one people, sealed by one sign — *they that keep the commandments of Elohim (God)* and hold the faith of Yahusha (Jesus). The keeping and the faith are not set against each other; they stand together as the single mark of the gathered. And this is the very charge the last word of the prophets pressed on the whole covenant people: *Remember ye the law of Moses my servant, which I commanded unto him in Horeb for all Yashar''el (Israel), with the statutes and judgments* (Malachi 4:4). The patience of the saints is the patience of those who hold fast the commandments through the day of the beast, while the smoke of the beast-worshippers'' torment *ascendeth up for ever and ever* (Revelation 14:11) — the smoke Isaiah saw, that *shall go up for ever* (Isaiah 34:10). And the word over the faithful dead seals it: *Blessed are the dead which die in Yahuah (Lord) from henceforth... that they may rest from their labours; and their works do follow them* (Revelation 14:13) — the works that follow them are the works of the commandment-keepers, the covenant walk carried with them into their rest.',
+       sv.verse_id, ev.verse_id, 'free', 9337
+  FROM _s224_rv14_lookup sv, _s224_rv14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=14 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7',
+       E'One sat like unto the Son of Adam on the white cloud — the kaph preserved (Daniel 7, Revelation 1, 1 Enoch 46-62)',
+       E'*And I looked, and behold a white cloud, and upon the cloud one sat like unto the Son of Adam, having on his head a golden crown, and in his hand a sharp sickle* (Revelation 14:14). This is Daniel''s night vision again: *behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days* (Daniel 7:13). The kaph — the *like* — is preserved in both, and it does its own work: he is *like* the Son of Adam, not a bare title flattened, but the One who resembles a son of mortal-man because he took on flesh, while remaining the Formed cloud-rider who comes to the Ancient of days. The golden crown upon him is the kingdom Daniel saw given; the cloud is his own, for the cloud-rider is consistently the divine One across the scriptures. And he is the same figure John saw at the first — *one like unto the Son of Adam* in the midst of the lampstands (Revelation 1:13) — the One who *was dead, and is alive for evermore.* The Gospels name his coming in the same words: *they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30); *they shall see the Son of Adam coming in the clouds with great power and glory* (Mark 13:26) — all re-speaking Daniel 7. And the restored library carries the same vision: beside the Head of Days stood *another being whose countenance had the appearance of a man* (1 Enoch 46:1), and the angel named him — *this is the Son of Adam who hath righteousness, with whom dwelleth righteousness... because Yahuah (God) of Spirits hath chosen him* (1 Enoch 46:3); *that Son of Adam was named In the presence of Yahuah (God) of Spirits... before the sun and the signs were created* (1 Enoch 48:2-3); *this is the Son of Adam who is born unto righteousness, And righteousness abides over him* (1 Enoch 62:7). When scripture is brought to bear on scripture, the One crowned upon the white cloud lands as Yahusha (Jesus) himself — the Formed cloud-rider, named before the foundation of the world, chosen and hidden and revealed, who took on flesh and remains who he was, and is, and is to come, enthroned now over the harvest of the earth.',
+       sv.verse_id, ev.verse_id, 'extras', 9340
+  FROM _s224_rv14_lookup sv, _s224_rv14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=14 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63',
+       E'The harvest of the earth and the winepress of wrath trodden (Joel 3, Isaiah 63, Lamentations 1, 2 Esdras 4)',
+       E'The reaping comes in two figures, both the prophets'': the harvest of the grain and the treading of the grapes. *Thrust in thy sickle, and reap: for the time is come for thee to reap; for the harvest of the earth is ripe* (Revelation 14:15) — the angel cries the prophet''s own command, *Put ye in the sickle, for the harvest is ripe... for the press is full, the fats overflow; for their wickedness is great* (Joel 3:13). And the restored library names this reaping the threshing-time: *the grain of evil seed has been sown in the heart of Adam from the beginning... how much shall it yet bring forth until the time of threshing come?* (2 Esdras 4:30); *when the ears shall be cut down, which are without number, how great a floor shall they fill?* (2 Esdras 4:32) — so *the earth was reaped* (Revelation 14:16), the floor filled with all the long age sowed. Then the second figure: the vine of the earth gathered and *cast it into the great winepress of the wrath of Elohim (God)* (Revelation 14:19), the winepress Isaiah saw trodden — *I have trodden the winepress alone; and of the people there was none with me: for I will tread them in mine anger* (Isaiah 63:3); *I will tread down the people in mine anger, and make them drunk in my fury* (Isaiah 63:6). It is the day of vengeance, the One who comes from Edom with dyed garments. *And the winepress was trodden without the city, and blood came out of the winepress, even unto the horse bridles* (Revelation 14:20) — the treading that once fell on the unfaithful city, *Yahuah (Lord) hath trodden the virgin, the daughter of Yahudah (Judah), as in a winepress* (Lamentations 1:15), poured out at the last upon the vine ripe for wrath; and the blood rising to the horse bridles is the measure the restored library gave: *the horse shall walk up to the breast in the blood of sinners* (1 Enoch 100:3). One vision of the great day when the wickedness of the earth is trodden out in the fury of Yahuah (LORD).',
+       sv.verse_id, ev.verse_id, 'extras', 9343
+  FROM _s224_rv14_lookup sv, _s224_rv14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='revelation' AND ev.chapter_number=14 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joel 2:32 — *in mount Zion and in Jerusalem shall be deliverance... and in the remnant whom Yahuah (LORD) shall call* the appointed place of deliverance; the 144,000 on mount Sion are the called remnant (Revelation 14:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 9:4 — *set a mark upon the foreheads of the men that sigh and that cry* the seal on the forehead; the Father''s name written in the foreheads of the 144,000 (Revelation 14:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=9 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 2:6 — *Yet have I set my king upon my holy hill of Zion* the King enthroned on the holy hill; the Lamb stands on mount Sion (Revelation 14:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 37:16 — *take thee one stick... For Yahudah (Judah)... another stick... For Joseph, the stick of Ephraim* the two-house seed made one; the 144,000 of all the tribes are the reunited houses regathered (Revelation 14:1).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Psalm 33:3 — *Sing unto him a new song* the new song the redeemed sing before the throne (Revelation 14:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Psalm 40:3 — *he hath put a new song in my mouth, even praise unto our Elohim (God)* the new song Yahuah (LORD) puts in the mouth of those he delivers (Revelation 14:3).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Revelation 7:4 — *there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* the same sealed company of ch 7, the gathered seed; the firstfruits with the Lamb (Revelation 14:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-lamb-on-mount-sion-the-144000-sealed-the-regathering-joel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-14-the-firstfruits-unto-elohim-and-the-lamb-without-guile-leviticus-23
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 23:10 — *ye shall bring a sheaf of the firstfruits of your harvest unto the priest* the first sheaf of the harvest; the 144,000 the firstfruits unto Elohim and the Lamb (Revelation 14:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-firstfruits-unto-elohim-and-the-lamb-without-guile-leviticus-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 23:19 — *The first of the firstfruits of thy land thou shalt bring into the house of Yahuah Elohayka (the LORD thy God)* the first and best given back; the redeemed offered up as firstfruits (Revelation 14:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-firstfruits-unto-elohim-and-the-lamb-without-guile-leviticus-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 2:3 — *Yashar''el (Israel) was holiness unto Yahuah (LORD), and the firstfruits of his increase* the people themselves named firstfruits; the 144,000 are that Yashar''el holy unto him (Revelation 14:4).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-firstfruits-unto-elohim-and-the-lamb-without-guile-leviticus-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=2 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Zephaniah 3:13 — *neither shall a deceitful tongue be found in their mouth* the purified remnant; no guile found in the mouth of the 144,000 (Revelation 14:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-firstfruits-unto-elohim-and-the-lamb-without-guile-leviticus-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=3 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 53:9 — *neither was any deceit in his mouth* the word of the spotless Lamb; the followers bear his likeness, no guile in their mouth (Revelation 14:5).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-firstfruits-unto-elohim-and-the-lamb-without-guile-leviticus-23'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-14-the-everlasting-gospel-worship-him-that-made-heaven-and-earth-exodus-20
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 20:11 — *in six days Yahuah (LORD) made heaven and earth, the sea... wherefore Yahuah (LORD) blessed the sabbath day* the Sabbath-creation ground of worship; worship him that made heaven and earth (Revelation 14:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-everlasting-gospel-worship-him-that-made-heaven-and-earth-exodus-20'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 146:6 — *Which made heaven, and earth, the sea, and all that therein is* the Maker the gospel summons all to worship (Revelation 14:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-everlasting-gospel-worship-him-that-made-heaven-and-earth-exodus-20'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=146 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Nehemiah 9:6 — *thou hast made heaven... the earth... the seas... and the host of heaven worshippeth thee* worship belongs to the Maker alone; the everlasting gospel calls all flesh to it (Revelation 14:7).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-everlasting-gospel-worship-him-that-made-heaven-and-earth-exodus-20'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-14-babylon-is-fallen-is-fallen-isaiah-21-jeremiah-51
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 21:9 — *Babylon is fallen, is fallen; and all the graven images of her gods he hath broken* the watchman''s doubled cry the angel takes up (Revelation 14:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-babylon-is-fallen-is-fallen-isaiah-21-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=21 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 51:8 — *Babylon is suddenly fallen and destroyed: howl for her* the prophet''s word re-spoken; with 51:7''s golden cup that made all nations drunk (Revelation 14:8).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-babylon-is-fallen-is-fallen-isaiah-21-jeremiah-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-14-here-are-they-that-keep-the-commandments-of-elohim-malachi-4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Revelation 12:17 — *the remnant of her seed, which keep the commandments of Elohim (God), and have the testimony of Yahusha HaMashiach (Jesus Christ)* the paired definition of the saints; one people, one mark (Revelation 14:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-here-are-they-that-keep-the-commandments-of-elohim-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Malachi 4:4 — *Remember ye the law of Moses my servant... with the statutes and judgments* the charge the saints keep; the Torah-keeping that marks the remnant (Revelation 14:12).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-here-are-they-that-keep-the-commandments-of-elohim-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 34:10 — *the smoke thereof shall go up for ever... none shall pass through it* the prophet''s smoke of judgment; the smoke of the beast-worshippers ascends for ever (Revelation 14:11).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-here-are-they-that-keep-the-commandments-of-elohim-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 4:4 — *Remember ye the law of Moses my servant* the works that follow the faithful dead are the covenant walk of the commandment-keepers (Revelation 14:13).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-here-are-they-that-keep-the-commandments-of-elohim-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:13 — *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days* the kaph preserved; the cloud-rider crowned for the harvest (Revelation 14:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 1:13 — *one like unto the Son of Adam* in the midst of the lampstands the same kaph vision; the One among the candlesticks and the One crowned on the cloud are one (Revelation 14:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 24:30 — *they shall see the Son of Adam coming in the clouds of heaven with power and great glory* the King''s own word of his coming, re-speaking Daniel 7 (Revelation 14:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Mark 13:26 — *they shall see the Son of Adam coming in the clouds with great power and glory* the cloud his throne and his coming, the Daniel-7 vision the King spoke (Revelation 14:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=13 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 46:1 — *with Him was another being whose countenance had the appearance of a man* the figure of manlike countenance beside the Head of Days; the One on the white cloud (Revelation 14:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=46 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'1 Enoch 46:3 — *This is the Son of Adam who hath righteousness... because Yahuah (God) of Spirits hath chosen him* the named Elect One in whom righteousness dwells, enthroned over the harvest (Revelation 14:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=46 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'1 Enoch 48:2 — *that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* named before the foundation of the world, revealed at the harvest (Revelation 14:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'1 Enoch 62:7 — *This is the Son of Adam who is born unto righteousness, And righteousness abides over him* named by Yahuah (God) of Spirits; the enthroned Son of Adam revealed for judgment (Revelation 14:14).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-one-sat-like-unto-the-son-of-adam-on-the-white-cloud-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=62 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joel 3:13 — *Put ye in the sickle, for the harvest is ripe... for the press is full* the prophet''s command of harvest and winepress in one (Revelation 14:15).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 63:3 — *I have trodden the winepress alone... for I will tread them in mine anger* the winepress trodden; the vine cast into the great winepress of wrath (Revelation 14:19).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=63 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 63:6 — *I will tread down the people in mine anger, and make them drunk in my fury* the day of vengeance; the winepress trodden without the city (Revelation 14:20).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=63 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Lamentations 1:15 — *Yahuah (Lord) hath trodden the virgin, the daughter of Yahudah (Judah), as in a winepress* the winepress figure of judgment poured out at the last (Revelation 14:20).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=1 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Esdras 4:30 — *the grain of evil seed has been sown in the heart of Adam... until the time of threshing come* the reaping of the earth is the threshing-time (Revelation 14:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=16
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=4 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'2 Esdras 4:32 — *when the ears shall be cut down, which are without number, how great a floor shall they fill?* the earth reaped, the floor filled with all the age sowed (Revelation 14:16).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=16
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='2-esdras' AND tv.chapter_number=4 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'1 Enoch 100:3 — *the horse shall walk up to the breast in the blood of sinners* the measure of the blood; the winepress blood unto the horse bridles (Revelation 14:20).'
+  FROM cross_reference_threads t, cross_references x, _s224_rv14_lookup sv, _s224_rv14_lookup tv
+ WHERE t.slug='revelation-14-the-harvest-of-the-earth-and-the-winepress-of-wrath-joel-3-isaiah-63'
+   AND sv.edition_slug='canon' AND sv.book_slug='revelation' AND sv.chapter_number=14 AND sv.verse_number=20
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=100 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session224 — Revelation cross-references complete.'
