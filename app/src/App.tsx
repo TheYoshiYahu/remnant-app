@@ -3087,9 +3087,10 @@ function Reader() {
             (ChapterCommentary) is no longer rendered. Per Yoshi: "take away
             all the deeper dives and just have the commentary." The reader now
             shows only the single free Commentary (chapter_intro).
-            S214 ordering (Yoshi): below the floral break the chapter-end stack
-            reads pills → Kingdom end card → Witness end card → Commentary →
-            cross-reference end card. The ChapterCommentary component + its
+            S217 ordering (Yoshi): below the floral break the chapter-end stack
+            reads pills → Kingdom end card → Witness end card → cross-reference
+            end card → Commentary. Commentary renders LAST, after the cross-
+            references. The ChapterCommentary component + its
             matt-N-short.md / matt-N.md sources are left in the tree (data
             untouched) so the tiered stack can be restored if wanted again.
           */}
@@ -3405,6 +3406,29 @@ function Reader() {
             />
           )}
 
+          {/*
+            Session 74 — chapter-end cross-reference card. Renders the
+            per-verse curated cross-references plus the framework-
+            diagnostic threads per api/CHAPTER_END_CARD_CONTRACT.md.
+            Every row is curated and framework-bearing; the TSK
+            comprehensive-baseline direction rolled back at S75. The
+            card hides itself silently when both lists come back empty.
+            S130: also gated by the App-level scripture-only toggle.
+            S217 (Yoshi): the chapter-end stack renders Kingdom → Witness
+            → cross-references → commentary. Cross-references sit ABOVE the
+            commentary; the commentary is the LAST block before the nav.
+          */}
+          {!hideCommentary && (
+            <ChapterEndCard
+              bookSlug={chapterDetail.book.slug}
+              chapterNumber={chapterDetail.chapter.chapter_number}
+              userTier={me?.tier ?? "free"}
+              onNavigate={jumpToVerseRef}
+              hideParentheticals={hideParentheticals}
+              sacredNameMask={sacredNameMask}
+            />
+          )}
+
           {!hideCommentary && chapterDetail.chapter_intro && (
             <aside className="mt-4 text-[var(--reader-text)]">
               {/*
@@ -3416,6 +3440,8 @@ function Reader() {
                 text color. Header recolored techelet #1A6FE5 → spectral
                 blue (var(--reader-accent)); techelet is divine-names-only
                 (S127 §3 lock), chrome headers carry the apparatus accent.
+                S217 (Yoshi): commentary renders LAST — below the cross-
+                reference card — as the final block before the nav arrows.
               */}
               <h3 className="mb-2 font-sans font-semibold uppercase tracking-wide text-xs text-[var(--reader-accent)]">
                 Commentary
@@ -3441,28 +3467,6 @@ function Reader() {
                 )}
               </div>
             </aside>
-          )}
-
-          {/*
-            Session 74 — chapter-end cross-reference card. Renders the
-            per-verse curated cross-references plus the framework-
-            diagnostic threads per api/CHAPTER_END_CARD_CONTRACT.md.
-            Every row is curated and framework-bearing; the TSK
-            comprehensive-baseline direction rolled back at S75. The
-            card hides itself silently when both lists come back empty.
-            S130: also gated by the App-level scripture-only toggle.
-            S214 (Yoshi): renders LAST in the chapter-end stack — the
-            "other end card" after the commentary, above the nav arrows.
-          */}
-          {!hideCommentary && (
-            <ChapterEndCard
-              bookSlug={chapterDetail.book.slug}
-              chapterNumber={chapterDetail.chapter.chapter_number}
-              userTier={me?.tier ?? "free"}
-              onNavigate={jumpToVerseRef}
-              hideParentheticals={hideParentheticals}
-              sacredNameMask={sacredNameMask}
-            />
           )}
 
           {/*
