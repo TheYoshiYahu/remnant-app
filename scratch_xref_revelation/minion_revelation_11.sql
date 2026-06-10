@@ -2,6 +2,17 @@
 -- =====================================================================
 -- S224 minion — REVELATION 11 FULL-LIBRARY cross-references
 -- =====================================================================
+-- *** FRAME CORRECTION (see session225_revelation11_two_witnesses_frame.sql) ***
+-- Per Yoshi's settled reading, the TWO WITNESSES (threads 9253/9256/9262) are the
+-- HOUSE OF YAHUDAH (Judah) and the HOUSE OF YASHAR'EL (Israel) — Ezekiel 37's two
+-- sticks joined / Zechariah 4's two olive trees — NOT two individual returned
+-- prophets (Moses + Elijah); the fire/shut-heaven/water-to-blood signs are the
+-- witness of the Law and the Prophets borne by the two houses. And 11:18's
+-- judgment of the dead is the great white throne AFTER the millennial reign
+-- (Rev 20:11-12). session225 is the authoritative live correction; the original
+-- INSERT text below is retained as the historical record (the live threads carry
+-- the session225 summaries).
+-- =====================================================================
 -- Chapter: REVELATION 11 (19 verses) — the measured temple, the two witnesses, the seventh trumpet.
 -- Tag: rv11 (temp view _s224_rv11_lookup).
 -- Sort band: floor 9250, step 3 (9250, 9253, 9256, 9259, 9262, 9265, 9268 used; under 9275).
