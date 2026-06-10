@@ -830,6 +830,42 @@ body {
   color: #F5E6FA;
 }
 
+/* S226 — book-picker section dividers. The picker is one native
+ * <select>; these style the disabled <option> rows woven between the
+ * witness-category optgroups (see App.tsx bookMenuNodes). Each register
+ * is a deep metallic field + its bright specular border tone for text —
+ * the same pairings as the .chrome-metal-* cluster, flattened to solids
+ * so they render in the Chromium select popup (gradients on <option> are
+ * not reliably painted). The colored text doubles as the rule so the
+ * boundary still reads even where a platform ignores option backgrounds.
+ *   emerald  Old Testament → New Testament
+ *   gold     New Testament → extra-canonical library
+ *   argaman  between extra-canonical sub-sections
+ *   techelet sets off the Josephus works
+ * No grey — every divider carries a source-class color. */
+.book-menu-divider {
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+.book-menu-divider-emerald {
+  background-color: #04321E;
+  color: #2EFFA1;
+}
+.book-menu-divider-gold {
+  background-color: #645028;
+  color: #FCECAF;
+}
+.book-menu-divider-argaman {
+  background-color: #3D1B5C;
+  color: #D4B0E0;
+}
+.book-menu-divider-techelet {
+  background-color: #0A2D84;
+  color: #93C0FF;
+}
+
 /* ─── S172.9 chapter-number "tabernacle veil" treatment ───────────────
  *
  * The chapter number renders as a miniature tabernacle veil that ties

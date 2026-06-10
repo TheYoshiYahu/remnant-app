@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   type BookChaptersResponse,
   type Bookmark,
@@ -99,7 +99,7 @@ import {
 import { renderMarkdownBody } from "./lib/markdown";
 import { useParentheticalsToggle } from "./lib/useParentheticalsToggle";
 import { useSacredNameMask } from "./lib/useSacredNameMask";
-import { bookPillClassName } from "./lib/book-source-class";
+import { bookPillClassName, classifyBookSlug } from "./lib/book-source-class";
 import { useStrongsSuperscriptsToggle } from "./lib/useStrongsSuperscriptsToggle";
 import {
   isAtCompanionTier,
@@ -1553,13 +1553,42 @@ function Reader() {
     if (!selectedBookSlug) return;
     setChaptersResp(null);
     listChapters(selectedBookSlug)
-      .then((r) => setChaptersResp(r))
+      .then((r) => {
+        setChaptersResp(r);
+        // S226 — snap to the book's first available chapter when the
+        // current selection isn't one of this book's chapters. The book
+        // picker (and cross-book nav) default a new selection to chapter
+        // 1, but not every book starts at 1: the Sonnini "Acts 29 — The
+        // Lost Chapter" book carries its sole chapter as number 29 (so it
+        // reads as the continuation of Acts 28). Without this snap,
+        // getChapter(slug, 1) 404s and the reader shows a broken chapter.
+        // selectedChapter is read from the closure captured when the book
+        // changed (the picker sets slug + chapter together), which is the
+        // value we want to validate; it is intentionally NOT a dep so the
+        // chapter list isn't re-fetched on every in-book chapter change.
+        const nums = r.chapters.map((c) => c.chapter_number);
+        if (nums.length > 0 && !nums.includes(selectedChapter)) {
+          setSelectedChapter(nums[0]);
+        }
+      })
       .catch((e) => setChapterError(String(e)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedBookSlug]);
 
   // Chapter detail reloads when book OR chapter changes.
+  //
+  // S226 — gate the fetch on this book's chapter list so we never
+  // request a chapter the book doesn't have. On a book change the
+  // listChapters effect above nulls chaptersResp first, so we wait for
+  // the new book's list (matched by slug to ignore the prior book's
+  // stale response) and only fetch once the selected chapter is known to
+  // exist. In-book chapter changes don't re-run listChapters, so
+  // chaptersResp is already loaded and the fetch fires immediately.
   useEffect(() => {
     if (!selectedBookSlug || !selectedChapter) return;
+    if (!chaptersResp || chaptersResp.book.slug !== selectedBookSlug) return;
+    if (!chaptersResp.chapters.some((c) => c.chapter_number === selectedChapter))
+      return;
     setChapterLoading(true);
     setChapterError(null);
     getChapter(selectedBookSlug, selectedChapter)
@@ -1571,7 +1600,7 @@ function Reader() {
         setChapterError(String(e));
         setChapterLoading(false);
       });
-  }, [selectedBookSlug, selectedChapter]);
+  }, [selectedBookSlug, selectedChapter, chaptersResp]);
 
   // S113: highlights reload alongside the chapter. Fetch is best-effort —
   // a 401 (anonymous caller) just leaves the map empty; the reader still
@@ -1886,6 +1915,103 @@ function Reader() {
     }
     return groups;
   }, [books]);
+
+  // S226 — color-coded section dividers for the book picker. The picker
+  // is one native <select>; its sections are <optgroup>s grouped by
+  // witness_category. We weave metallic divider rows (styled, disabled
+  // <option>s) between the sections, color-keyed to the same source-class
+  // palette the reader already uses (COLOR_PALETTE.md §9):
+  //
+  //   • emerald  — Old Testament → New Testament (the seam lives INSIDE
+  //                the canon group, which carries both testaments)
+  //   • gold     — New Testament → the extra-canonical library
+  //   • argaman  — between the extra-canonical sub-sections
+  //   • techelet — sets off the Josephus works (historical_witness)
+  //
+  // Categories render in the schema's witness_category order so the
+  // dividers land on the right boundaries regardless of API row order;
+  // any unknown category the API adds later falls in after the known
+  // ones (first-seen order) so nothing is silently dropped.
+  const bookMenuNodes = useMemo(() => {
+    const CATEGORY_ORDER = [
+      "canon",
+      "apocrypha",
+      "pseudepigrapha",
+      "apostolic_fathers",
+      "apocryphal_gospels",
+      "historical_witness",
+      "disputed_witness",
+    ];
+    const known = new Set(CATEGORY_ORDER);
+    const order = [
+      ...CATEGORY_ORDER.filter((c) => booksByCategory[c]?.length),
+      ...Object.keys(booksByCategory).filter((c) => !known.has(c)),
+    ];
+
+    const RULE = "————————————";
+    const divider = (key: string, tone: string, label?: string) => (
+      <option
+        key={key}
+        disabled
+        value=""
+        className={`book-menu-divider book-menu-divider-${tone}`}
+      >
+        {label ? `——  ${label}  ——` : RULE}
+      </option>
+    );
+
+    const nodes: ReactNode[] = [];
+    let goldUsed = false;
+    for (const cat of order) {
+      const list = booksByCategory[cat] ?? [];
+      if (cat === "canon") {
+        // Split the 66-book canon at the Old→New Testament seam with an
+        // emerald rule. The list is canonical-order sorted, so every
+        // Tanakh book precedes every NT book; the seam is the first NT.
+        const items: ReactNode[] = [];
+        let ntMarked = false;
+        for (const b of list) {
+          if (!ntMarked && classifyBookSlug(b.slug) === "nt") {
+            items.push(divider("div-ot-nt", "emerald", "New Testament"));
+            ntMarked = true;
+          }
+          items.push(
+            <option key={b.id} value={b.slug}>
+              {b.title}
+            </option>
+          );
+        }
+        nodes.push(
+          <optgroup key={cat} label={prettyCategory(cat)}>
+            {items}
+          </optgroup>
+        );
+        continue;
+      }
+      // Non-canon: a divider precedes each extra-canonical optgroup. The
+      // first one is the canon→extras boundary (gold); Josephus
+      // (historical_witness) gets its own techelet rule; the remaining
+      // extra-canonical sub-sections are parted by argaman rules.
+      if (cat === "historical_witness") {
+        nodes.push(divider(`div-${cat}`, "techelet", "Josephus"));
+      } else if (!goldUsed) {
+        nodes.push(divider(`div-${cat}`, "gold", "Extra-Canonical"));
+        goldUsed = true;
+      } else {
+        nodes.push(divider(`div-${cat}`, "argaman"));
+      }
+      nodes.push(
+        <optgroup key={cat} label={prettyCategory(cat)}>
+          {list.map((b) => (
+            <option key={b.id} value={b.slug}>
+              {b.title}
+            </option>
+          ))}
+        </optgroup>
+      );
+    }
+    return nodes;
+  }, [booksByCategory]);
 
   const chaptersForBook = chaptersResp?.chapters ?? [];
 
@@ -2378,24 +2504,15 @@ function Reader() {
             }}
             className="min-w-0 max-w-full rounded border border-[var(--reader-rule)] bg-[var(--reader-surface)] px-2 py-1 text-[var(--reader-text)]"
           >
-            {Object.entries(booksByCategory).map(([cat, list]) => (
-              <optgroup key={cat} label={prettyCategory(cat)}>
-                {list.map((b) => (
-                  // Session 40 fix: Session 35 widened books.slug UNIQUE to
-                  // composite (edition_id, slug); slugs like 'judith',
-                  // '1-esdras', 'tobit', '1-maccabees', '2-maccabees' now
-                  // appear in both apocrypha (KJV-1611) and
-                  // apocrypha-charles-vol1. b.id (numeric primary key) is
-                  // the unique React key. value={b.slug} stays for now —
-                  // the picker's downstream consumers still use slug, and
-                  // the duplicate value is a separate UX concern logged
-                  // for a later wheel.
-                  <option key={b.id} value={b.slug}>
-                    {b.title}
-                  </option>
-                ))}
-              </optgroup>
-            ))}
+            {/* S226 — metallic section dividers woven between the
+                witness-category optgroups; see the bookMenuNodes memo.
+                Each book stays keyed by b.id (Session 40 fix: Session 35
+                widened books.slug UNIQUE to composite (edition_id, slug),
+                so slugs like 'judith'/'tobit' recur across apocrypha
+                editions and only the numeric id is unique). value={b.slug}
+                stays — the picker's downstream consumers still key on
+                slug. */}
+            {bookMenuNodes}
           </select>
         </label>
 
