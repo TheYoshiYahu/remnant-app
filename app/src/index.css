@@ -1291,3 +1291,330 @@ body {
   margin: 0.9rem 0 0;
   font-style: italic;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   The Appointed Times — v2: base-layer toggle, sunset diagonal shading,
+   the tap-through planner day-view, and "on this day in biblical history".
+   Built on the v1 chrome-metal palette + color theology. NO GREY: depth is
+   the techelet register mixed into black; "rest" is the spectral register;
+   feasts keep their gold/emerald/scarlet/argaman/techelet/bronze tones.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Base-layer toggle bar */
+.cal-base-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.9rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--cal-edge);
+}
+.cal-base-toggle { display: inline-flex; gap: 0.4rem; }
+.cal-base-hint {
+  flex: 1;
+  min-width: 12rem;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  color: var(--cal-ink-soft);
+}
+
+/* The day cell is now a button — reset its chrome, keep the v1 layout. */
+.cal-cell-btn {
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: transform 0.1s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.cal-cell-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.12);
+  z-index: 2;
+}
+.cal-cell-btn:focus-visible {
+  outline: 2px solid #93C0FF;
+  outline-offset: 1px;
+}
+.cal-cell-filler { opacity: 0.5; }
+.cal-cell-flip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.05rem 0.4rem;
+  border-radius: 0 0 6px 6px;
+  color: #001026;
+  background: linear-gradient(90deg, #FCECAF, #93C0FF);
+  box-shadow: 0 0 10px rgba(147, 192, 255, 0.55);
+  z-index: 3;
+}
+.cal-cell-dot {
+  position: absolute;
+  bottom: 0.28rem;
+  right: 0.3rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: #2EFFA1;
+  box-shadow: 0 0 7px #2EFFA1;
+}
+
+/* Sunset-shade caption under the grid */
+.cal-shade-caption {
+  margin: 0.85rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.55;
+  color: var(--cal-ink-soft);
+}
+.cal-shade-seam-word { color: #93C0FF; font-weight: 700; }
+
+/* ── Day-view modal ─────────────────────────────────────────────────── */
+.cal-dayview-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.5rem 1rem;
+  overflow-y: auto;
+  background: radial-gradient(900px 500px at 50% 0%, rgba(10, 45, 132, 0.5) 0%, rgba(0, 0, 0, 0.86) 70%);
+  backdrop-filter: blur(3px);
+}
+.cal-dayview {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  border-radius: 18px;
+  border: 1px solid var(--cal-edge-bright);
+  background:
+    radial-gradient(600px 260px at 80% 0%, color-mix(in srgb, #1A6FE5 18%, transparent) 0%, transparent 60%),
+    linear-gradient(180deg, color-mix(in srgb, #0A2D84 22%, #000) 0%, var(--cal-surface) 100%);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7), inset 0 0 0 1px color-mix(in srgb, #93C0FF 9%, transparent);
+  padding: 1.4rem 1.3rem 1.6rem;
+}
+.cal-dayview-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid var(--cal-edge-bright);
+  background: var(--cal-surface-2);
+  color: #93C0FF;
+  font-size: 0.9rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.15s ease;
+}
+.cal-dayview-close:hover { background: color-mix(in srgb, #1A6FE5 24%, #000); }
+
+.cal-dv-head { padding-right: 2.2rem; }
+.cal-dv-bd { display: flex; align-items: baseline; gap: 0.6rem; margin-top: 0.3rem; }
+.cal-dv-day {
+  font-family: Lora, Georgia, serif;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 0.9;
+  color: #FFF8E1;
+  text-shadow: 0 0 22px rgba(252, 236, 175, 0.3);
+}
+.cal-dv-month { font-family: Lora, Georgia, serif; font-size: 1.4rem; font-weight: 600; color: #93C0FF; }
+.cal-dv-year { font-size: 0.8rem; color: var(--cal-ink-soft); margin-top: 0.2rem; }
+.cal-dv-year-num { color: var(--cal-gold); font-weight: 700; }
+
+/* Sunset boundaries card */
+.cal-dv-sunset {
+  margin-top: 1rem;
+  border: 1px solid color-mix(in srgb, #FCECAF 24%, transparent);
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
+  background: linear-gradient(180deg, color-mix(in srgb, #645028 18%, transparent) 0%, color-mix(in srgb, #0A2D84 26%, transparent) 100%);
+}
+.cal-dv-sunset-row { display: flex; align-items: center; gap: 0.7rem; }
+.cal-dv-sunset-ic { font-size: 1.05rem; color: #FCECAF; text-shadow: 0 0 12px rgba(252, 236, 175, 0.5); }
+.cal-dv-sunset-lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--cal-ink-soft); }
+.cal-dv-sunset-val { font-family: Lora, Georgia, serif; font-size: 0.96rem; color: var(--cal-ink); margin-top: 0.05rem; }
+.cal-dv-sunset-clock {
+  margin-left: auto;
+  font-family: Lora, Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FCECAF;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 12px rgba(252, 236, 175, 0.4);
+}
+.cal-dv-sunset-seam {
+  height: 1px;
+  margin: 0.55rem 0;
+  background: linear-gradient(90deg, transparent, rgba(147, 192, 255, 0.6), transparent);
+}
+
+/* Status chips */
+.cal-dv-status { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+.cal-dv-chip {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  text-shadow: 0 0 10px currentColor;
+}
+.cal-dv-status-none { margin: 0.9rem 0 0; font-size: 0.82rem; color: var(--cal-ink-soft); font-style: italic; }
+
+/* Sections (history, planner, slots) */
+.cal-dv-section { margin-top: 1.3rem; }
+.cal-dv-section-head { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; }
+.cal-dv-section-title {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #FFF8E1;
+  margin: 0;
+}
+.cal-dv-seed {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #001026;
+  background: #FCECAF;
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+.cal-dv-saved { font-size: 0.66rem; color: var(--cal-ink-soft); letter-spacing: 0.04em; }
+.cal-dv-empty { margin: 0; font-size: 0.8rem; line-height: 1.5; color: var(--cal-ink-soft); font-style: italic; }
+
+/* On-this-day list */
+.cal-dv-history { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+.cal-dv-hist {
+  border-left: 3px solid #93C0FF;
+  border-radius: 0 8px 8px 0;
+  padding: 0.4rem 0.7rem 0.55rem;
+  background: linear-gradient(90deg, color-mix(in srgb, #0A2D84 28%, transparent) 0%, transparent 100%);
+}
+.cal-dv-hist-title { font-family: Lora, Georgia, serif; font-size: 0.98rem; font-weight: 700; text-shadow: 0 0 10px currentColor; }
+.cal-dv-hist-ref { font-size: 0.72rem; color: #FCECAF; margin-top: 0.1rem; font-weight: 600; }
+.cal-dv-hist-sum { margin: 0.3rem 0 0; font-size: 0.82rem; line-height: 1.55; color: var(--cal-ink); }
+
+/* Planner */
+.cal-pl-group { margin-top: 0.9rem; }
+.cal-pl-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cal-ink-soft);
+  margin-bottom: 0.35rem;
+}
+.cal-pl-list { list-style: none; margin: 0 0 0.4rem; padding: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+.cal-pl-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.32rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--cal-edge);
+  background: var(--cal-surface-2);
+  font-size: 0.84rem;
+  color: var(--cal-ink);
+}
+.cal-pl-done .cal-pl-text { text-decoration: line-through; color: var(--cal-ink-soft); }
+.cal-pl-check {
+  flex: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid color-mix(in srgb, #2EFFA1 50%, transparent);
+  background: transparent;
+  color: #04321E;
+  font-size: 0.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.cal-pl-check-on { background: #2EFFA1; box-shadow: 0 0 8px rgba(46, 255, 161, 0.5); }
+.cal-pl-time {
+  flex: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #FCECAF;
+  font-variant-numeric: tabular-nums;
+}
+.cal-pl-text { flex: 1; word-break: break-word; }
+.cal-pl-del {
+  flex: none;
+  background: none;
+  border: none;
+  color: var(--cal-ink-soft);
+  cursor: pointer;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+.cal-pl-del:hover { opacity: 1; color: #FFBFC5; }
+.cal-pl-add { display: flex; gap: 0.4rem; }
+.cal-pl-input {
+  flex: 1;
+  min-width: 0;
+  border-radius: 8px;
+  border: 1px solid var(--cal-edge-bright);
+  background: var(--cal-surface-2);
+  color: var(--cal-ink);
+  font-size: 0.84rem;
+  padding: 0.4rem 0.6rem;
+  font-family: inherit;
+}
+.cal-pl-input::placeholder { color: color-mix(in srgb, #93C0FF 70%, transparent); }
+.cal-pl-input:focus { outline: none; border-color: #93C0FF; box-shadow: 0 0 0 2px rgba(147, 192, 255, 0.25); }
+.cal-pl-time-input { flex: none; width: 6.5rem; color-scheme: dark; }
+.cal-pl-addbtn {
+  flex: none;
+  width: 2.1rem;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, #2EFFA1 45%, transparent);
+  background: color-mix(in srgb, #04321E 60%, transparent);
+  color: #2EFFA1;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.cal-pl-addbtn:hover:not(:disabled) { background: color-mix(in srgb, #2EFFA1 22%, #000); }
+.cal-pl-addbtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Reading-plan / devotional placeholder slots */
+.cal-dv-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+@media (max-width: 480px) { .cal-dv-slots { grid-template-columns: 1fr; } }
+.cal-dv-slot {
+  border: 1px dashed color-mix(in srgb, #93C0FF 32%, transparent);
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+  background: color-mix(in srgb, #0A2D84 12%, transparent);
+}
+.cal-dv-slot-title { font-family: Lora, Georgia, serif; font-size: 0.95rem; font-weight: 700; color: #93C0FF; }
+.cal-dv-slot-body { margin: 0.3rem 0 0.5rem; font-size: 0.76rem; line-height: 1.45; color: var(--cal-ink-soft); }
+.cal-dv-slot-soon {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FCECAF;
+  border: 1px solid color-mix(in srgb, #FCECAF 30%, transparent);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
+/* Phone: tighten the grid + let the modal use the full height. */
+@media (max-width: 560px) {
+  .cal-cell { min-height: 4rem; padding: 0.22rem 0.24rem 0.18rem; }
+  .cal-dayview-backdrop { padding: 0; }
+  .cal-dayview { max-width: 100%; border-radius: 0; min-height: 100%; }
+}

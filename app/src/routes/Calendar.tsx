@@ -11,26 +11,38 @@ import {
 import { nextConjunction } from "../lib/calendar/astro.ts";
 import {
   buildCompare,
-  buildMonthGrid,
   compute,
   countdownTo,
   COMPARE_COLUMNS,
   DEFAULT_RECKONING,
   fmtEvening,
   fmtFull,
-  fmtOverlay,
   moedTheme,
   moonArt,
   moonLitPath,
   monthDisplayName,
   MOED_SHORT,
-  nextMonthFocus,
-  prevMonthFocus,
-  sabbathStatus,
-  type DayCell,
   type MonthKind,
   type ReckoningState,
 } from "../lib/calendar/view-model.ts";
+import {
+  buildDayDetail,
+  buildLayerGrid,
+  fmtSunsetBoundary,
+  fmtSunsetClock,
+  type BaseLayer,
+  type DayDetail,
+  type LayerCell,
+  type LayerGrid,
+} from "../lib/calendar/day-view-model.ts";
+import {
+  eventsOnBiblicalDate,
+  HISTORY_IS_SEED,
+  historyTone,
+  type BiblicalHistoryEvent,
+} from "../lib/calendar/biblical-history.ts";
+import { civilDayId, type PlannerItem, type PlannerItemKind } from "../lib/planner-store.ts";
+import { useDaysWithItems, usePlannerDay } from "../lib/usePlanner.ts";
 
 /**
  * The EPIC calendar — the configurable biblical-calendar engine made visible.
@@ -52,10 +64,71 @@ import {
  * gradient registers (emerald/gold/scarlet/techelet/argaman/bronze), the
  * purple-judgment / emerald-blessing color theology. No grey anywhere.
  */
+/**
+ * Read shareable deep-link state from the URL query — lets a calendar day be
+ * linked to directly (?base=…&reck=…&focus=YYYY-MM-DD&open=today|auto).
+ */
+function readQuery(): {
+  base: BaseLayer;
+  reck: ReckoningState;
+  open: string | null;
+  focus: Date | null;
+} {
+  const q =
+    typeof window !== "undefined"
+      ? new URLSearchParams(window.location.search)
+      : new URLSearchParams();
+  const base: BaseLayer = q.get("base") === "hebrew" ? "hebrew" : "gregorian";
+  const reck = { ...DEFAULT_RECKONING };
+  const r = q.get("reck");
+  if (r === "conjunction" || r === "crescent" || r === "rabbinic" || r === "enoch") {
+    reck.month = r;
+  }
+  let focus: Date | null = null;
+  const f = q.get("focus");
+  if (f && /^\d{4}-\d{2}-\d{2}$/.test(f)) {
+    const [y, m, d] = f.split("-").map(Number);
+    focus = new Date(Date.UTC(y, m - 1, d, 12));
+  }
+  return { base, reck, open: q.get("open"), focus };
+}
+
+type InitialQuery = ReturnType<typeof readQuery>;
+
+/**
+ * Resolve the deep-link day to auto-open (?open=today|auto), building the grid
+ * for the initial focus once. Returns null when no open param is set — the
+ * normal case — so the modal stays closed and no grid is built here.
+ */
+function resolveAutoOpen(initial: InitialQuery): LayerCell | null {
+  if (initial.open !== "today" && initial.open !== "auto") return null;
+  const at = initial.focus ?? new Date();
+  const grid = buildLayerGrid(initial.reck, at, at, initial.base);
+  if (initial.open === "today") {
+    return grid.cells.find((c) => c.isToday) ?? null;
+  }
+  // ?open=auto — the first notable day in view: a moed, else biblical history.
+  return (
+    grid.cells.find((c) => !c.filler && c.moedim.length > 0) ??
+    grid.cells.find(
+      (c) => !c.filler && eventsOnBiblicalDate(c.biblical.month, c.biblical.day).length > 0,
+    ) ??
+    null
+  );
+}
+
 export default function Calendar() {
-  const [reck, setReck] = useState<ReckoningState>(DEFAULT_RECKONING);
-  const [focus, setFocus] = useState<Date>(() => new Date());
+  const initial = useMemo(() => readQuery(), []);
+  const [reck, setReck] = useState<ReckoningState>(initial.reck);
+  const [focus, setFocus] = useState<Date>(() => initial.focus ?? new Date());
   const [now, setNow] = useState<Date>(() => new Date());
+  const [base, setBase] = useState<BaseLayer>(initial.base);
+  // Deep-link auto-open (?open=today|auto) resolves once, in the initializer —
+  // build the grid for the initial focus and pick the day to open. Avoids a
+  // setState-in-effect; returns null (no modal) for the normal, no-param case.
+  const [selected, setSelected] = useState<LayerCell | null>(() =>
+    resolveAutoOpen(initial),
+  );
   const [showCompare, setShowCompare] = useState(
     () =>
       typeof window !== "undefined" &&
@@ -76,11 +149,12 @@ export default function Calendar() {
 
   const todayResult = useMemo(() => compute(reck, today), [reck, today]);
   const grid = useMemo(
-    () => buildMonthGrid(reck, focus, today),
-    [reck, focus, today],
+    () => buildLayerGrid(reck, focus, today, base),
+    [reck, focus, today, base],
   );
 
   const todayCell = grid.cells.find((c) => c.isToday);
+  const todayIsSabbath = !!todayCell?.morningSabbath;
   const nextMoed = todayResult.moedim[0];
 
   return (
@@ -91,16 +165,19 @@ export default function Calendar() {
         <HeroToday
           reck={reck}
           result={todayResult}
-          todayCell={todayCell}
+          isSabbath={todayIsSabbath}
           now={now}
           nextMoed={nextMoed}
         />
         <CrescentWatch reck={reck} result={todayResult} now={now} setReck={setReck} />
-        <MonthGridView
+        <LayerGridView
           grid={grid}
-          onPrev={() => setFocus(prevMonthFocus(grid))}
-          onNext={() => setFocus(nextMonthFocus(grid))}
+          base={base}
+          onBase={setBase}
+          onPrev={() => setFocus(grid.prevFocus)}
+          onNext={() => setFocus(grid.nextFocus)}
           onToday={() => setFocus(new Date())}
+          onSelect={setSelected}
         />
         <CompareSection
           reck={reck}
@@ -113,6 +190,9 @@ export default function Calendar() {
           engine. Compute, don&rsquo;t scrape.
         </footer>
       </main>
+      {selected && (
+        <DayView reck={reck} cell={selected} onClose={() => setSelected(null)} />
+      )}
     </div>
   );
 }
@@ -382,15 +462,17 @@ function mostRecentSunsetGuess(): Date {
 interface HeroProps {
   reck: ReckoningState;
   result: ReturnType<typeof compute>;
-  todayCell: DayCell | undefined;
+  isSabbath: boolean;
   now: Date;
   nextMoed: Moed | undefined;
 }
 
-function HeroToday({ reck, result, todayCell, now, nextMoed }: HeroProps) {
+function HeroToday({ reck, result, isSabbath, now, nextMoed }: HeroProps) {
   const bd = result.biblicalDate;
   const art = moonArt(now, 50);
-  const sab = sabbathStatus(todayCell);
+  const sab = isSabbath
+    ? { active: true, label: "Sabbath — the seventh day. Rest." }
+    : { active: false, label: "A working day" };
   const yearFrac = yearPosition(bd.month, bd.day);
   const cd = nextMoed ? countdownTo(nextMoed.startInstant, now) : null;
   const moedThemeForNext = nextMoed ? moedTheme(nextMoed.kind) : null;
@@ -651,32 +733,76 @@ function CrescentWatch({ reck, result, now, setReck }: WatchProps) {
 }
 
 // ───────────────────────────────────────────────────────────────────────
-// Month grid
+// The layer grid — one grid, a base-layer toggle, sunset diagonal shading,
+// tap-through to the planner day-view.
 // ───────────────────────────────────────────────────────────────────────
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-function MonthGridView({
+/** Techelet parity tints for the alternating diagonal sunset shade (no grey). */
+function halfTint(parity: 0 | 1, sabbath: boolean): string {
+  if (sabbath) return "rgba(46, 123, 214, 0.42)"; // spectral — the rest register
+  return parity === 0 ? "rgba(10, 45, 132, 0.66)" : "rgba(26, 111, 229, 0.30)";
+}
+
+/**
+ * The diagonal sunset shade: morning half (left) → seam at sundown → evening
+ * half (right). Because adjacent boxes share the seam sunset instant, a single
+ * biblical day's evening-half and the next box's morning-half carry the same
+ * tint and read as one diagonal band — and Fri-evening + Sat-morning form the
+ * one Sabbath band.
+ */
+function shadeBackground(cell: LayerCell): string {
+  const morn = halfTint(cell.morningParity, cell.morningSabbath);
+  const evening = halfTint(cell.eveningParity, cell.eveningSabbath);
+  const seam = "rgba(147, 192, 255, 0.55)";
+  return `linear-gradient(108deg, ${morn} 0 46.5%, ${seam} 46.5% 50.5%, ${evening} 50.5% 100%)`;
+}
+
+function LayerGridView({
   grid,
+  base,
+  onBase,
   onPrev,
   onNext,
   onToday,
+  onSelect,
 }: {
-  grid: ReturnType<typeof buildMonthGrid>;
+  grid: LayerGrid;
+  base: BaseLayer;
+  onBase: (b: BaseLayer) => void;
   onPrev: () => void;
   onNext: () => void;
   onToday: () => void;
+  onSelect: (c: LayerCell) => void;
 }) {
+  const daysWithItems = useDaysWithItems();
   return (
     <section className="cal-panel mb-6">
+      <div className="cal-base-bar">
+        <div className="cal-base-toggle" role="group" aria-label="Base layer">
+          <Pill active={base === "gregorian"} register="techelet" onClick={() => onBase("gregorian")}>
+            Gregorian base
+          </Pill>
+          <Pill active={base === "hebrew"} register="gold" onClick={() => onBase("hebrew")}>
+            Hebrew base
+          </Pill>
+        </div>
+        <span className="cal-base-hint">
+          {base === "gregorian"
+            ? "Gregorian month owns the grid · biblical date + sunset ride on top"
+            : "Biblical month owns the grid · starts on the 1st · Gregorian rides on top"}
+        </span>
+      </div>
+
       <div className="cal-grid-head">
         <button type="button" className="cal-nav-btn" onClick={onPrev} aria-label="Previous month">
           ‹
         </button>
         <div className="cal-grid-title">
-          <div className="cal-grid-month">{grid.monthName}</div>
+          <div className="cal-grid-month">{grid.title}</div>
           <div className="cal-grid-year">
-            Year {grid.year} &middot; {grid.cells.length} days
+            {grid.subtitle}
             <button type="button" className="cal-today-link" onClick={onToday}>
               today
             </button>
@@ -697,40 +823,75 @@ function MonthGridView({
           <div key={"blank" + i} className="cal-cell cal-cell-blank" />
         ))}
         {grid.cells.map((c) => (
-          <DayCellView key={c.day} cell={c} />
+          <LayerDayCell
+            key={c.key}
+            cell={c}
+            base={base}
+            hasItems={daysWithItems.has(civilDayId(c.daytime))}
+            onSelect={onSelect}
+          />
         ))}
       </div>
+
+      <p className="cal-shade-caption">
+        Each box is split at <span className="cal-shade-seam-word">sundown</span>: the
+        evening-half spills into the next day&rsquo;s morning-half, so one biblical day
+        reads as a single diagonal band. The brighter band is the weekly Sabbath —
+        Friday evening through Saturday day.
+      </p>
 
       <GridLegend cells={grid.cells} />
     </section>
   );
 }
 
-function DayCellView({ cell }: { cell: DayCell }) {
+function LayerDayCell({
+  cell,
+  base,
+  hasItems,
+  onSelect,
+}: {
+  cell: LayerCell;
+  base: BaseLayer;
+  hasItems: boolean;
+  onSelect: (c: LayerCell) => void;
+}) {
   const moed = cell.moedim[0];
   const theme = moed ? moedTheme(moed.kind) : null;
-  const style: React.CSSProperties = theme
-    ? {
-        background: `linear-gradient(160deg, ${hexA(theme.deep, 0.92)} 0%, ${hexA(theme.deep, 0.45)} 100%)`,
-        borderColor: hexA(theme.glow, 0.55),
-        boxShadow: `0 0 14px ${hexA(theme.glow, 0.28)}, inset 0 0 10px ${hexA(theme.glow, 0.12)}`,
-      }
-    : {};
+  const sabbath = cell.morningSabbath || cell.eveningSabbath;
   return (
-    <div
+    <button
+      type="button"
+      onClick={() => onSelect(cell)}
+      aria-label={`Open ${cell.primaryLabel} (${cell.overlayLabel})`}
       className={
-        "cal-cell" +
-        (cell.isSabbath ? " cal-cell-sabbath" : "") +
+        "cal-cell cal-cell-btn" +
+        (cell.filler ? " cal-cell-filler" : "") +
         (cell.isToday ? " cal-cell-today" : "") +
         (moed ? " cal-cell-moed" : "")
       }
-      style={style}
+      style={{
+        background: shadeBackground(cell),
+        ...(theme
+          ? {
+              borderColor: hexA(theme.glow, 0.6),
+              boxShadow: `0 0 14px ${hexA(theme.glow, 0.3)}, inset 0 0 16px ${hexA(theme.deep, 0.5)}`,
+            }
+          : sabbath
+            ? { borderColor: "rgba(46, 123, 214, 0.5)" }
+            : {}),
+      }}
     >
+      {cell.overlayFlip && (
+        <span className="cal-cell-flip" title="overlay month changes here">
+          {base === "gregorian" ? overlayFlipMonth(cell) : overlayFlipGreg(cell)}
+        </span>
+      )}
       <div className="cal-cell-top">
         <span className="cal-cell-day" style={theme ? { color: theme.glow } : undefined}>
-          {cell.day}
+          {cell.primaryLabel}
         </span>
-        <span className="cal-cell-greg">{fmtOverlay(cell.civil)}</span>
+        <span className="cal-cell-greg">{cell.overlayLabel}</span>
       </div>
 
       <div className="cal-cell-mid">
@@ -743,15 +904,29 @@ function DayCellView({ cell }: { cell: DayCell }) {
             {MOED_SHORT[moed.kind]}
             {moed.endDay && moed.endDay !== moed.day ? "…" : ""}
           </span>
-        ) : cell.isSabbath ? (
+        ) : cell.morningSabbath ? (
           <span className="cal-cell-sab">Sabbath</span>
         ) : null}
       </div>
-    </div>
+
+      {hasItems && <span className="cal-cell-dot" aria-label="has planner items" />}
+    </button>
   );
 }
 
-function GridLegend({ cells }: { cells: DayCell[] }) {
+/** The biblical-month abbreviation shown on a Gregorian-base flip box. */
+function overlayFlipMonth(cell: LayerCell): string {
+  const name = cell.biblical.monthName;
+  return name ? name.split(" ")[0] : `M${cell.biblical.month}`;
+}
+/** The Gregorian-month short name shown on a Hebrew-base flip box. */
+function overlayFlipGreg(cell: LayerCell): string {
+  return new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "short" }).format(
+    cell.daytime,
+  );
+}
+
+function GridLegend({ cells }: { cells: { moedim: Moed[] }[] }) {
   const kinds: MoedKind[] = [];
   for (const c of cells)
     for (const m of c.moedim) if (!kinds.includes(m.kind)) kinds.push(m.kind);
@@ -773,6 +948,304 @@ function GridLegend({ cells }: { cells: DayCell[] }) {
         );
       })}
     </div>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Day-view — the comprehensive planner panel (tap a day to open).
+// ───────────────────────────────────────────────────────────────────────
+
+function DayView({
+  reck,
+  cell,
+  onClose,
+}: {
+  reck: ReckoningState;
+  cell: LayerCell;
+  onClose: () => void;
+}) {
+  const detail = useMemo(() => buildDayDetail(reck, cell), [reck, cell]);
+  const dayId = civilDayId(cell.daytime);
+
+  // Close on Escape.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  return (
+    <div className="cal-dayview-backdrop" onClick={onClose}>
+      <div
+        className="cal-dayview"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Day view"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button type="button" className="cal-dayview-close" onClick={onClose} aria-label="Close">
+          ✕
+        </button>
+
+        <DayViewHead detail={detail} />
+        <DayViewSunset detail={detail} />
+        <DayViewStatus detail={detail} />
+        <OnThisDay events={detail.history} />
+        <Planner dayId={dayId} />
+        <PlaceholderSlots />
+      </div>
+    </div>
+  );
+}
+
+function DayViewHead({ detail }: { detail: DayDetail }) {
+  const moedThemeForHead = detail.moedim[0] ? moedTheme(detail.moedim[0].kind) : null;
+  return (
+    <header className="cal-dv-head">
+      <div className="cal-eyebrow">{detail.gregorianFull}</div>
+      <div className="cal-dv-bd">
+        <span
+          className="cal-dv-day"
+          style={moedThemeForHead ? { color: moedThemeForHead.glow } : undefined}
+        >
+          {detail.biblical.day}
+        </span>
+        <span className="cal-dv-month">{detail.monthName}</span>
+      </div>
+      <div className="cal-dv-year">
+        Year <span className="cal-dv-year-num">{detail.biblical.year}</span> · biblical
+      </div>
+    </header>
+  );
+}
+
+function DayViewSunset({ detail }: { detail: DayDetail }) {
+  return (
+    <section className="cal-dv-sunset">
+      <div className="cal-dv-sunset-row">
+        <span className="cal-dv-sunset-ic">☉↓</span>
+        <div>
+          <div className="cal-dv-sunset-lbl">This day begins</div>
+          <div className="cal-dv-sunset-val">{fmtSunsetBoundary(detail.opensAt)}</div>
+        </div>
+        <div className="cal-dv-sunset-clock">{fmtSunsetClock(detail.opensAt)}</div>
+      </div>
+      <div className="cal-dv-sunset-seam" aria-hidden="true" />
+      <div className="cal-dv-sunset-row">
+        <span className="cal-dv-sunset-ic">☉↓</span>
+        <div>
+          <div className="cal-dv-sunset-lbl">…and ends at the next sunset</div>
+          <div className="cal-dv-sunset-val">{fmtSunsetBoundary(detail.closesAt)}</div>
+        </div>
+        <div className="cal-dv-sunset-clock">{fmtSunsetClock(detail.closesAt)}</div>
+      </div>
+    </section>
+  );
+}
+
+function DayViewStatus({ detail }: { detail: DayDetail }) {
+  if (!detail.isSabbath && detail.moedim.length === 0) {
+    return <p className="cal-dv-status-none">An ordinary day — no appointed time.</p>;
+  }
+  return (
+    <div className="cal-dv-status">
+      {detail.isSabbath && (
+        <span className="cal-dv-chip" style={{ color: "#93C0FF", borderColor: "rgba(46,123,214,0.6)" }}>
+          ✦ Weekly Sabbath
+        </span>
+      )}
+      {detail.moedim.map((m) => {
+        const t = moedTheme(m.kind);
+        return (
+          <span
+            key={m.kind}
+            className="cal-dv-chip"
+            style={{ color: t.glow, borderColor: hexA(t.glow, 0.55), background: hexA(t.deep, 0.4) }}
+          >
+            ✦ {m.name}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// On this day in biblical history
+// ───────────────────────────────────────────────────────────────────────
+
+function OnThisDay({ events }: { events: BiblicalHistoryEvent[] }) {
+  return (
+    <section className="cal-dv-section">
+      <div className="cal-dv-section-head">
+        <h3 className="cal-dv-section-title">On this day in biblical history</h3>
+        {HISTORY_IS_SEED && <span className="cal-dv-seed">seed set</span>}
+      </div>
+      {events.length === 0 ? (
+        <p className="cal-dv-empty">
+          No dated event anchored to this biblical date yet. The history set is a small,
+          accurate seed — to be expanded.
+        </p>
+      ) : (
+        <ul className="cal-dv-history">
+          {events.map((e) => {
+            const t = historyTone(e.category);
+            return (
+              <li key={e.id} className="cal-dv-hist" style={{ borderLeftColor: t.glow }}>
+                <div className="cal-dv-hist-title" style={{ color: t.glow }}>
+                  {e.title}
+                </div>
+                <div className="cal-dv-hist-ref">{e.scripture}</div>
+                <p className="cal-dv-hist-sum">{e.summary}</p>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </section>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Planner — events / tasks / notes, persisted to localStorage.
+// ───────────────────────────────────────────────────────────────────────
+
+function Planner({ dayId }: { dayId: string }) {
+  const { day, add, toggle, remove } = usePlannerDay(dayId);
+  return (
+    <section className="cal-dv-section">
+      <div className="cal-dv-section-head">
+        <h3 className="cal-dv-section-title">Planner</h3>
+        <span className="cal-dv-saved">saved on this device</span>
+      </div>
+
+      <PlannerGroup
+        kind="event"
+        label="Events"
+        items={day.events}
+        onAdd={add}
+        onToggle={toggle}
+        onRemove={remove}
+        withTime
+      />
+      <PlannerGroup
+        kind="task"
+        label="Tasks"
+        items={day.tasks}
+        onAdd={add}
+        onToggle={toggle}
+        onRemove={remove}
+      />
+      <PlannerGroup
+        kind="note"
+        label="Notes"
+        items={day.notes}
+        onAdd={add}
+        onToggle={toggle}
+        onRemove={remove}
+      />
+    </section>
+  );
+}
+
+function PlannerGroup({
+  kind,
+  label,
+  items,
+  onAdd,
+  onToggle,
+  onRemove,
+  withTime = false,
+}: {
+  kind: PlannerItemKind;
+  label: string;
+  items: PlannerItem[];
+  onAdd: (kind: PlannerItemKind, text: string, time?: string) => void;
+  onToggle: (item: PlannerItem) => void;
+  onRemove: (id: string) => void;
+  withTime?: boolean;
+}) {
+  const [text, setText] = useState("");
+  const [time, setTime] = useState("");
+  const submit = () => {
+    onAdd(kind, text, withTime && time ? time : undefined);
+    setText("");
+    setTime("");
+  };
+  return (
+    <div className="cal-pl-group">
+      <div className="cal-pl-label">{label}</div>
+      <ul className="cal-pl-list">
+        {items.map((it) => (
+          <li key={it.id} className={"cal-pl-item" + (it.done ? " cal-pl-done" : "")}>
+            {kind === "task" && (
+              <button
+                type="button"
+                className={"cal-pl-check" + (it.done ? " cal-pl-check-on" : "")}
+                onClick={() => onToggle(it)}
+                aria-label={it.done ? "Mark not done" : "Mark done"}
+              >
+                {it.done ? "✓" : ""}
+              </button>
+            )}
+            {it.time && <span className="cal-pl-time">{it.time}</span>}
+            <span className="cal-pl-text">{it.text}</span>
+            <button
+              type="button"
+              className="cal-pl-del"
+              onClick={() => onRemove(it.id)}
+              aria-label="Remove"
+            >
+              ✕
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className="cal-pl-add">
+        {withTime && (
+          <input
+            className="cal-pl-input cal-pl-time-input"
+            type="time"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+            aria-label="Event time"
+          />
+        )}
+        <input
+          className="cal-pl-input"
+          type="text"
+          value={text}
+          placeholder={`Add ${kind}…`}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") submit();
+          }}
+        />
+        <button type="button" className="cal-pl-addbtn" onClick={submit} disabled={!text.trim()}>
+          +
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/** Reading-plan + devotional — wired-but-empty slots for later features. */
+function PlaceholderSlots() {
+  return (
+    <section className="cal-dv-section cal-dv-slots">
+      <div className="cal-dv-slot">
+        <div className="cal-dv-slot-title">Reading plan</div>
+        <p className="cal-dv-slot-body">Your plan for this day will appear here.</p>
+        <span className="cal-dv-slot-soon">coming soon</span>
+      </div>
+      <div className="cal-dv-slot">
+        <div className="cal-dv-slot-title">Devotional</div>
+        <p className="cal-dv-slot-body">A devotional for this day will appear here.</p>
+        <span className="cal-dv-slot-soon">coming soon</span>
+      </div>
+    </section>
   );
 }
 

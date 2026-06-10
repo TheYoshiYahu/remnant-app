@@ -1,0 +1,160 @@
+{
+  "_meta": {
+    "title": "On This Day — biblical-history seed set",
+    "status": "SEED — small, accurate starter set. EXPAND + GATE before launch.",
+    "rule": "Only events with an explicit Scriptural date anchor (a stated biblical month + day). No fabricated or harmonised dates. Month/day are the biblical (Hebrew) month index (1 = Abib/Nisan) and day-of-month, which recur each year.",
+    "categories": {
+      "feast": "an appointed time of Leviticus 23 (gold)",
+      "blessing": "deliverance / covenant mercy (emerald)",
+      "judgment": "judgment / affliction (argaman — purple)",
+      "covenant": "covenant landmark / consecration (techelet)"
+    },
+    "todo": "Candidates to add once verified: Shavuot (count-derived, not fixed-date), Ezekiel's temple vision (Ezek 40:1), Solomon's temple foundation (1 Kgs 6:1 — month given, day not), dedication of the second temple (Ezra 6:15, Adar 3)."
+  },
+  "events": [
+    {
+      "id": "tabernacle-reared",
+      "month": 1,
+      "day": 1,
+      "title": "The Tabernacle is raised",
+      "scripture": "Exodus 40:2, 17",
+      "category": "covenant",
+      "summary": "On the first day of the first month the Dwelling Place was set up — God comes to dwell among His people."
+    },
+    {
+      "id": "flood-earth-dried",
+      "month": 1,
+      "day": 1,
+      "title": "The waters of the Flood are dried up",
+      "scripture": "Genesis 8:13",
+      "category": "blessing",
+      "summary": "On the first day of the first month the waters were dried from off the earth, and Noah removed the covering of the ark."
+    },
+    {
+      "id": "lamb-set-apart",
+      "month": 1,
+      "day": 10,
+      "title": "The Passover lamb is set apart",
+      "scripture": "Exodus 12:3",
+      "category": "covenant",
+      "summary": "On the tenth of the first month each household took a lamb, kept up until the fourteenth — the lamb chosen four days before it was slain."
+    },
+    {
+      "id": "passover",
+      "month": 1,
+      "day": 14,
+      "title": "Passover",
+      "scripture": "Exodus 12:6; Leviticus 23:5",
+      "category": "feast",
+      "summary": "The lamb is slain between the evenings on the fourteenth of the first month — the blood on the doorposts, the LORD's Passover."
+    },
+    {
+      "id": "exodus-unleavened",
+      "month": 1,
+      "day": 15,
+      "title": "Unleavened Bread / the Exodus from Egypt",
+      "scripture": "Leviticus 23:6; Numbers 33:3",
+      "category": "feast",
+      "summary": "On the fifteenth of the first month Israel went out from Rameses with a high hand, the day after the Passover — the Feast of Unleavened Bread begins."
+    },
+    {
+      "id": "firstfruits-manna-ceased",
+      "month": 1,
+      "day": 16,
+      "title": "Wave Sheaf — and the manna ceases in Canaan",
+      "scripture": "Leviticus 23:10-11; Joshua 5:11-12",
+      "category": "feast",
+      "summary": "The firstfruits sheaf is waved; in Joshua's day the manna ceased the morrow after the Passover, when Israel ate the old grain of the land."
+    },
+    {
+      "id": "flood-begins",
+      "month": 2,
+      "day": 17,
+      "title": "The Flood begins",
+      "scripture": "Genesis 7:11",
+      "category": "judgment",
+      "summary": "On the seventeenth day of the second month all the fountains of the great deep were broken up and the windows of heaven were opened."
+    },
+    {
+      "id": "earth-fully-dry",
+      "month": 2,
+      "day": 27,
+      "title": "The earth is fully dry after the Flood",
+      "scripture": "Genesis 8:14",
+      "category": "blessing",
+      "summary": "On the twenty-seventh day of the second month the earth was dry, and God commanded Noah to go forth from the ark."
+    },
+    {
+      "id": "jerusalem-wall-finished",
+      "month": 6,
+      "day": 25,
+      "title": "The wall of Jerusalem is finished",
+      "scripture": "Nehemiah 6:15",
+      "category": "covenant",
+      "summary": "The wall was completed on the twenty-fifth of Elul, in fifty-two days — the nations saw that the work was wrought of God."
+    },
+    {
+      "id": "trumpets",
+      "month": 7,
+      "day": 1,
+      "title": "The Day of Trumpets (Yom Teruah)",
+      "scripture": "Leviticus 23:24",
+      "category": "feast",
+      "summary": "On the first of the seventh month, a memorial of blowing of trumpets, a holy convocation — a sabbath-rest."
+    },
+    {
+      "id": "atonement",
+      "month": 7,
+      "day": 10,
+      "title": "The Day of Atonement (Yom Kippur)",
+      "scripture": "Leviticus 23:27",
+      "category": "judgment",
+      "summary": "On the tenth of the seventh month you shall afflict your souls — the one day of the year the high priest entered the Most Holy Place."
+    },
+    {
+      "id": "tabernacles",
+      "month": 7,
+      "day": 15,
+      "title": "The Feast of Tabernacles (Sukkot)",
+      "scripture": "Leviticus 23:34",
+      "category": "feast",
+      "summary": "On the fifteenth of the seventh month, the Feast of Booths for seven days — Israel dwells in tents, remembering the wilderness."
+    },
+    {
+      "id": "ararat-rest",
+      "month": 7,
+      "day": 17,
+      "title": "The ark rests on the mountains of Ararat",
+      "scripture": "Genesis 8:4",
+      "category": "blessing",
+      "summary": "On the seventeenth day of the seventh month the ark came to rest — the same biblical date as the later resurrection-season firstfruits."
+    },
+    {
+      "id": "shemini-atzeret",
+      "month": 7,
+      "day": 22,
+      "title": "The Eighth Day (Shemini Atzeret)",
+      "scripture": "Leviticus 23:36",
+      "category": "feast",
+      "summary": "On the eighth day a holy convocation and a solemn assembly — the great day that crowns the autumn feasts."
+    },
+    {
+      "id": "haggai-foundation",
+      "month": 9,
+      "day": 24,
+      "title": "Haggai's word: 'From this day I will bless you'",
+      "scripture": "Haggai 2:18-19",
+      "category": "blessing",
+      "summary": "On the twenty-fourth of the ninth month, the day the temple's foundation was considered, the LORD promised blessing from that day forward."
+    },
+    {
+      "id": "flood-mountains-seen",
+      "month": 10,
+      "day": 1,
+      "title": "The tops of the mountains are seen",
+      "scripture": "Genesis 8:5",
+      "category": "blessing",
+      "summary": "On the first day of the tenth month the tops of the mountains became visible as the Flood waters continued to abate."
+    }
+  ]
+}
