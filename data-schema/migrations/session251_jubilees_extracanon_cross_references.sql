@@ -2426,6 +2426,2088 @@ SELECT t.id, x.id, 2, E'Genesis 9:27 — *Elohim (God) shall enlarge Japheth, an
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jubilees_09.sql (session251 jubilees 9) -----
+-- Source anchor: jubilees/jubilees ch9. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju09 (view _session251_ju09_lookup). Sort band base 53200, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-9-division-table-of-nations
+  ('jubilees', 'jubilees', 9, 1, 'canon', 'genesis', 10, 1, 'free', E'Genesis 10:1 — *Now these are the generations of the sons of Noah, Shem, Ham, and Japheth: and unto them were sons born after the flood.* The same three sons of Noah whose portions Jubilees 9 is dividing by lot.'),
+  ('jubilees', 'jubilees', 9, 1, 'canon', 'genesis', 10, 6, 'free', E'Genesis 10:6 — *And the sons of Ham; Cush, and Mizraim, and Phut, and Canaan.* The very sons among whom Jubilees 9:1 says Ham divided his portion — Cush, Mizraim, Put, Canaan.'),
+  ('jubilees', 'jubilees', 9, 6, 'canon', 'genesis', 10, 32, 'free', E'Genesis 10:32 — *These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood.* Genesis seals its table of nations with the very division Jubilees 9 is narrating by lot.'),
+  ('jubilees', 'jubilees', 9, 1, 'jubilees', 'jubilees', 8, 8, 'extras', E'Jubilees 8:8 — *And in the sixth year thereof, she bare him a son, and he called his name Peleg; for in the days when he was born the children of Noah began to divide the earth amongst themselves: for this reason he called his name Peleg.* The division Jubilees 9 details was begun and named one chapter earlier.'),
+  -- thread: jubilees-9-isles-divided-by-tongue
+  ('jubilees', 'jubilees', 9, 9, 'canon', 'genesis', 10, 2, 'free', E'Genesis 10:2 — *The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras.* The same seven sons of Japheth whose island-portions Jubilees 9:8-12 distributes by lot.'),
+  ('jubilees', 'jubilees', 9, 10, 'canon', 'genesis', 10, 5, 'free', E'Genesis 10:5 — *By these were the isles of the Gentiles divided in their lands; every one after his tongue, after their families, in their nations.* Genesis already assigns the isles and coastlands to Japheth''s line, exactly as Jubilees 9:9-10 gives Madai and Javan the islands.'),
+  -- thread: jubilees-9-most-high-set-the-bounds
+  ('jubilees', 'jubilees', 9, 14, 'canon', 'deuteronomy', 32, 8, 'free', E'Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* The very dividing of the nations'' inheritance by lot that Jubilees 9:14 records, credited in the Torah to the Most High Himself.'),
+  ('jubilees', 'jubilees', 9, 14, 'canon', 'deuteronomy', 32, 9, 'free', E'Deuteronomy 32:9 — *For the LORD''S portion is his people; Jacob is the lot of his inheritance.* Out of all the portions divided in Jubilees 9, the Most High keeps one lot for Himself — Jacob, the elect seed.'),
+  ('jubilees', 'jubilees', 9, 15, 'canon', 'acts', 17, 26, 'free', E'Acts 17:26 — *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation.* Paul tells idolatrous Athens what Jubilees 9 enacts: the nations'' boundaries are Yahuah''s appointment, not chance.'),
+  -- thread: jubilees-9-oath-curse-day-of-judgment
+  ('jubilees', 'jubilees', 9, 14, 'canon', 'genesis', 9, 6, 'free', E'Genesis 9:6 — *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man.* The post-flood covenant of accountability behind the curse Noah lays on whoever seizes another''s portion in Jubilees 9:14.'),
+  ('jubilees', 'jubilees', 9, 15, 'enoch', '1-enoch', 10, 6, 'extras', E'1 Enoch 10:6 — *And on the day of the great judgement he shall be cast into the fire.* The same appointed day of judgment by fire that Jubilees 9:15 names — the reckoning the bound Watchers of the live Enoch apparatus await.'),
+  ('jubilees', 'jubilees', 9, 15, 'canon', 'acts', 17, 31, 'free', E'Acts 17:31 — *Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto all men, in that he hath raised him from the dead.* Paul names the very day of judgment Jubilees 9:15 swears the oath toward.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-9-division-table-of-nations',
+       E'The portions of the sons of Ham, Shem and Japheth — the table of nations',
+       E'Jubilees opens the chapter by parcelling the earth among Noah''s grandsons: *And Ham divided amongst his sons, and the first portion came forth for Cush towards the east, and to the west of him for Mizraim, and to the west . of him for Put, and to the west of him and to the west thereof on the sea for Canaan* (Jubilees 9:1), and likewise *And Sherri also divided amongst his sons, and the first portion came forth for Elam and his sons* (Jubilees 9:2) and *And Japheth also divided the land of his inheritance amongst his sons* (Jubilees 9:6). This is not a new genealogy — it is the SAME roster Genesis already laid down: *Now these are the generations of the sons of Noah, Shem, Ham, and Japheth: and unto them were sons born after the flood* (Genesis 10:1), and where Jubilees gives Cush and Mizraim and Canaan to Ham, Genesis answers *And the sons of Ham; Cush, and Mizraim, and Phut, and Canaan* (Genesis 10:6). The whole earth carved up by lot here closes the way Genesis closes its table: *These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood* (Genesis 10:32). The division itself began in the prior chapter, when Peleg was named for it — *the children of Noah began to divide the earth amongst themselves* (Jubilees 8:8). It ain''t new: Jubilees is reading you Genesis 10 from the inside.',
+       sv.verse_id, ev.verse_id, 'extras', 53200
+  FROM _session251_ju09_lookup sv, _session251_ju09_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=9 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-9-isles-divided-by-tongue',
+       E'The islands and coasts apportioned — divided in their lands, after their tongues',
+       E'Japheth''s sons receive the sea-board and the islands: *And for Madai came forth as his portion that he should possess from the west of his two brothers to the islands, and to the coasts of the islands* (Jubilees 9:9), *And for Javan came forth the fourth portion every island and the islands which are towards the border of Lud* (Jubilees 9:10), and *And for Tiras there came forth the seventh portion, four great islands in the midst of the sea* (Jubilees 9:12). Genesis had already filed this exact picture under Japheth: *The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras* (Genesis 10:2), and then summed their inheritance as the coastlands of the nations — *By these were the isles of the Gentiles divided in their lands; every one after his tongue, after their families, in their nations* (Genesis 10:5). The seven sons of Japheth, the islands, the dividing — Jubilees 9 is simply walking the reader verse-by-verse through Genesis 10. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53203
+  FROM _session251_ju09_lookup sv, _session251_ju09_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=8
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=9 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-9-most-high-set-the-bounds',
+       E'The bounds set by the Most High — the inheritance of the nations divided',
+       E'When the sons of Noah divide the earth and bind it for ever — *And they all said, "So be it; so be it," for themselves and their sons for ever throughout their generations* (Jubilees 9:15) — Jubilees is showing the human side of a division the Torah credits to Yahuah Himself. Moses sings it: *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8) — and out of all those portions Yahuah reserves one for Himself: *For the LORD''S portion is his people; Jacob is the lot of his inheritance* (Deuteronomy 32:9). Paul preaches the same architecture to the idolaters at Athens: *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26). The lots Noah''s sons cast in Jubilees 9 are the Most High''s bounds — election and the nations'' borders set together. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53206
+  FROM _session251_ju09_lookup sv, _session251_ju09_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=14
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=9 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-9-oath-curse-day-of-judgment',
+       E'The oath, the curse on the land-seizer, and the day of judgment by sword and fire',
+       E'Noah binds the division with an oath and a curse: *and he bound them all by an oath, imprecating a curse on every one that sought to seize the portion which had not fallen (to him) by his lot* (Jubilees 9:14), and the sons ratify it to the end of the age — *for themselves and their sons for ever throughout their generations till the day of judgment, on which Yahuah Elohim (the LORD God) shall judge them with a sword and with fire, for all the unclean wickedness of their errors* (Jubilees 9:15). The curse-on-the-bloodguilty reaches back to the covenant Yahuah cut with Noah''s house after the flood: *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man* (Genesis 9:6). The appointed day of judgment by fire is the same day the bound Watchers await in the live 1 Enoch apparatus — *And on the day of the great judgement he shall be cast into the fire* (1 Enoch 10:6) — and the day Paul proclaims to Athens: *Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained* (Acts 17:31). The oath, the curse, the appointed fire — all already written. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53209
+  FROM _session251_ju09_lookup sv, _session251_ju09_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=14
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=9 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-9-division-table-of-nations
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 10:1 — *Now these are the generations of the sons of Noah, Shem, Ham, and Japheth: and unto them were sons born after the flood.* The same three sons of Noah whose portions Jubilees 9 is dividing by lot.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-division-table-of-nations'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 10:6 — *And the sons of Ham; Cush, and Mizraim, and Phut, and Canaan.* The very sons among whom Jubilees 9:1 says Ham divided his portion — Cush, Mizraim, Put, Canaan.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-division-table-of-nations'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 10:32 — *These are the families of the sons of Noah, after their generations, in their nations: and by these were the nations divided in the earth after the flood.* Genesis seals its table of nations with the very division Jubilees 9 is narrating by lot.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-division-table-of-nations'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 8:8 — *And in the sixth year thereof, she bare him a son, and he called his name Peleg; for in the days when he was born the children of Noah began to divide the earth amongst themselves: for this reason he called his name Peleg.* The division Jubilees 9 details was begun and named one chapter earlier.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-division-table-of-nations'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=8 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-9-isles-divided-by-tongue
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 10:2 — *The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras.* The same seven sons of Japheth whose island-portions Jubilees 9:8-12 distributes by lot.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-isles-divided-by-tongue'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 10:5 — *By these were the isles of the Gentiles divided in their lands; every one after his tongue, after their families, in their nations.* Genesis already assigns the isles and coastlands to Japheth''s line, exactly as Jubilees 9:9-10 gives Madai and Javan the islands.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-isles-divided-by-tongue'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-9-most-high-set-the-bounds
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* The very dividing of the nations'' inheritance by lot that Jubilees 9:14 records, credited in the Torah to the Most High Himself.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-most-high-set-the-bounds'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:9 — *For the LORD''S portion is his people; Jacob is the lot of his inheritance.* Out of all the portions divided in Jubilees 9, the Most High keeps one lot for Himself — Jacob, the elect seed.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-most-high-set-the-bounds'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 17:26 — *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation.* Paul tells idolatrous Athens what Jubilees 9 enacts: the nations'' boundaries are Yahuah''s appointment, not chance.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-most-high-set-the-bounds'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-9-oath-curse-day-of-judgment
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 9:6 — *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man.* The post-flood covenant of accountability behind the curse Noah lays on whoever seizes another''s portion in Jubilees 9:14.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-oath-curse-day-of-judgment'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 10:6 — *And on the day of the great judgement he shall be cast into the fire.* The same appointed day of judgment by fire that Jubilees 9:15 names — the reckoning the bound Watchers of the live Enoch apparatus await.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-oath-curse-day-of-judgment'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 17:31 — *Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto all men, in that he hath raised him from the dead.* Paul names the very day of judgment Jubilees 9:15 swears the oath toward.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju09_lookup sv, _session251_ju09_lookup tv
+ WHERE t.slug='jubilees-9-oath-curse-day-of-judgment'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_10.sql (session251 jubilees 10) -----
+-- Source anchor: jubilees/jubilees ch10. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju10 (view _session251_ju10_lookup). Sort band base 53225, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-10-demons-lead-astray-noahs-prayer
+  ('jubilees', 'jubilees', 10, 1, 'enoch', '1-enoch', 15, 8, 'extras', E'1 Enoch 15:8 — *And now, the giants, who are produced from the spirits and flesh, shall be called evil spirits upon the earth, and on the earth shall be their dwelling.* The very demons leading Noah''s grandsons astray in Jubilees 10:1 are, in the live 1 Enoch apparatus, the disembodied spirits of the dead giants of the Watchers.'),
+  ('jubilees', 'jubilees', 10, 2, 'enoch', '1-enoch', 15, 10, 'extras', E'1 Enoch 15:10 — *And these spirits shall rise up against the children of men and against the women, because they have proceeded from them.* Enoch foretold the very assault Noah''s sons report in Jubilees 10:2 — the spirits rising up to lead astray and slay the sons of men.'),
+  ('jubilees', 'jubilees', 10, 3, 'canon', 'deuteronomy', 32, 17, 'free', E'Deuteronomy 32:17 — *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not.* Noah''s prayer in Jubilees 10:3 against the wicked spirits is the same seed-war the Song of Moses names — the nations drawn to sacrifice unto demons, not Elohim.'),
+  ('jubilees', 'jubilees', 10, 1, 'canon', 'matthew', 12, 43, 'free', E'Matthew 12:43 — *When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none.* The same restless, embodied-seeking unclean spirit Jubilees 10:1 describes leading men astray is the one Yahusha names — it ain''t new.'),
+  -- thread: jubilees-10-binding-spirits-mastema-tenth
+  ('jubilees', 'jubilees', 10, 7, 'enoch', '1-enoch', 10, 11, 'extras', E'1 Enoch 10:11 — *And Yahuah (God) said unto Michael: ''Go, bind Semjâzâ and his associates who have united themselves with women so as to have defiled themselves with them in all their uncleanness.* The binding Yahuah commands in Jubilees 10:7 is the same binding-of-the-spirits Enoch already records — it ain''t new.'),
+  ('jubilees', 'jubilees', 10, 11, 'enoch', '1-enoch', 10, 12, 'extras', E'1 Enoch 10:12 — *And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated.* The malignant ones bound in the place of condemnation in Jubilees 10:11 are held, as Enoch says, until the day of judgement.'),
+  ('jubilees', 'jubilees', 10, 8, 'enoch', '1-enoch', 10, 4, 'extras', E'1 Enoch 10:4 — *And again Yahuah (God) said to Raphael: ''Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dûdâêl, and cast him therein.* Mastema''s plea in Jubilees 10:8 that a tenth remain stands against this first decree — the chief spirits cast into the darkness and condemnation.'),
+  ('jubilees', 'jubilees', 10, 11, 'canon', 'matthew', 12, 29, 'free', E'Matthew 12:29 — *Or else how can one enter into a strong man''s house, and spoil his goods, except he first bind the strong man? and then he will spoil his house.* The binding of the spirits in Jubilees 10:11 is the pattern Yahusha claims for His own work — first bind the strong man, then spoil his house.'),
+  -- thread: jubilees-10-medicines-herbs-noah-book-shem
+  ('jubilees', 'jubilees', 10, 12, 'enoch', '1-enoch', 10, 7, 'extras', E'1 Enoch 10:7 — *And heal the earth which the angels have corrupted, and proclaim the healing of the earth, that they may heal the plague, and that all the children of men may not perish through all the secret things that the Watchers have disclosed and have taught their sons.* The medicines and herbs given Noah to heal in Jubilees 10:12 answer the very charge to heal the earth the Watchers corrupted — it ain''t new.'),
+  -- thread: jubilees-10-babel-tower-city-shinar
+  ('jubilees', 'jubilees', 10, 17, 'canon', 'genesis', 11, 1, 'free', E'Genesis 11:1 — *And the whole earth was of one language, and of one speech.* Jubilees 10:17 names the same moment in Peleg''s days — one people, evil in purpose, before the tongues were confounded.'),
+  ('jubilees', 'jubilees', 10, 19, 'canon', 'genesis', 11, 2, 'free', E'Genesis 11:2 — *And it came to pass, as they journeyed from the east, that they found a plain in the land of Shinar; and they dwelt there.* Jubilees 10:19 retells the eastward departure from Ararat to Shinar where they built the city and the tower.'),
+  ('jubilees', 'jubilees', 10, 20, 'canon', 'genesis', 11, 3, 'free', E'Genesis 11:3 — *And they said one to another, Go to, let us make brick, and burn them throughly. And they had brick for stone, and slime had they for morter.* Jubilees 10:20 carries the same detail — brick made with fire serving for stone — the Genesis source quoted beside its retelling.'),
+  ('jubilees', 'jubilees', 10, 19, 'canon', 'genesis', 11, 4, 'free', E'Genesis 11:4 — *And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth.* The very ascent into heaven Jubilees 10:19 quotes is the prideful purpose Genesis records — it ain''t new.'),
+  -- thread: jubilees-10-confounded-tongues-scattered-babel
+  ('jubilees', 'jubilees', 10, 22, 'canon', 'genesis', 11, 6, 'free', E'Genesis 11:6 — *And Yahuah (LORD) said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do.* Jubilees 10:22 quotes the same divine deliberation — one people, one speech, nothing withheld from them — before the descent to confound.'),
+  ('jubilees', 'jubilees', 10, 22, 'canon', 'genesis', 11, 7, 'free', E'Genesis 11:7 — *Go to, let us go down, and there confound their language, that they may not understand one another''s speech.* The ''let us go down and confound their language'' of Jubilees 10:22 is the Genesis word verbatim — it ain''t new.'),
+  ('jubilees', 'jubilees', 10, 25, 'canon', 'genesis', 11, 8, 'free', E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* Jubilees 10:25 retells the same dispersal — scattered from Shinar, each according to his language and nation.'),
+  ('jubilees', 'jubilees', 10, 25, 'canon', 'genesis', 11, 9, 'free', E'Genesis 11:9 — *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth: and from thence did Yahuah (LORD) scatter them abroad upon the face of all the earth.* Jubilees 10:25 names Babel for the same reason Genesis does — the confounding of the tongues at Shinar.'),
+  ('jubilees', 'jubilees', 10, 25, 'canon', 'deuteronomy', 32, 8, 'free', E'Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* The dispersal into cities and nations in Jubilees 10:25 is the very dividing of the nations the Song of Moses remembers — and election out of them follows.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-10-demons-lead-astray-noahs-prayer',
+       E'The unclean demons lead astray, and Noah prays',
+       E'Jubilees opens the chapter with the seed-war breaking out again after the flood: *And in the third week of this jubilee the unclean demons began to lead astray the children of the sons of Noah; and to make to err and destroy them* (Jubilees 10:1), so that Noah *prayed before Yahuah (God) his Elohim (God)* that *wicked spirits* not *rule over* his sons (Jubilees 10:3). The live 1 Enoch apparatus already tells us WHERE these spirits came from — the dead giants of the Watchers: *And now, the giants, who are produced from the spirits and flesh, shall be called evil spirits upon the earth, and on the earth shall be their dwelling* (1 Enoch 15:8), and *these spirits shall rise up against the children of men and against the women, because they have proceeded from them* (1 Enoch 15:10). It ain''t new — and the Torah names the practice exactly: *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not* (Deuteronomy 32:17). Yahusha (Jesus) speaks of the same wandering unclean spirit: *When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none* (Matthew 12:43).',
+       sv.verse_id, ev.verse_id, 'extras', 53225
+  FROM _session251_ju10_lookup sv, _session251_ju10_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=10 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-10-binding-spirits-mastema-tenth',
+       E'The spirits bound, and Mastema''s tenth part left',
+       E'Yahuah answers Noah''s prayer with a binding: *And Yahuah our Elohim (the LORD our God) bade us to bind all* (Jubilees 10:7) — but *the chief of the spirits, Mastêmâ* asks that *the tenth part of them remain before him* to *execute the power of my will on the sons of men* (Jubilees 10:8), and *a tenth part of them we left that they might be subject before Satan on the earth* (Jubilees 10:11). This is the seed-war handed forward under the accuser. The 1 Enoch apparatus carries the original binding word over the same spirits: *And Yahuah (God) said unto Michael: ''Go, bind Semjâzâ and his associates... bind them fast for seventy generations in the valleys of the earth, till the day of their judgement''* (1 Enoch 10:11-12), and Azazel cast *into the darkness* (1 Enoch 10:4). And Yahusha names the binding as the very pattern of His ministry: *Or else how can one enter into a strong man''s house, and spoil his goods, except he first bind the strong man? and then he will spoil his house* (Matthew 12:29).',
+       sv.verse_id, ev.verse_id, 'extras', 53228
+  FROM _session251_ju10_lookup sv, _session251_ju10_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=7
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=10 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-10-medicines-herbs-noah-book-shem',
+       E'The medicines and herbs given to Noah, the book to Shem',
+       E'Against the tenth left under Mastema, mercy is given: *And one of us He commanded that we should teach Noah all their medicines* (Jubilees 10:10), and *we explained to Noah all the medicines of their diseases, together with their seductions, how he might heal them with herbs of the earth* (Jubilees 10:12), so that *Noah wrote down all things in a book... And he gave all that he had written to Shem, his eldest son; for he loved him exceedingly above all his sons* (Jubilees 10:13). The healing of the earth is the same charge given in the live 1 Enoch apparatus: *And heal the earth which the angels have corrupted, and proclaim the healing of the earth, that they may heal the plague* (1 Enoch 10:7). The seed is kept and the knowledge handed down the chosen line to Shem — the line that will carry to Abraham.',
+       sv.verse_id, ev.verse_id, 'extras', 53231
+  FROM _session251_ju10_lookup sv, _session251_ju10_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=10
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=10 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-10-babel-tower-city-shinar',
+       E'Babel — the city and the tower in Shinar',
+       E'Jubilees retells Genesis directly: in Peleg''s days *the children of men have become evil through the wicked purpose of building for themselves a city and a tower in the land of Shinar* (Jubilees 10:17), *saying, ''Go to, let us ascend thereby into heaven''* (Jubilees 10:19), and *they made brick with fire, and the bricks served them for stone* (Jubilees 10:20). Set the Genesis source beside it and the retelling is unmistakable: *And the whole earth was of one language, and of one speech* (Genesis 11:1); *they found a plain in the land of Shinar; and they dwelt there* (Genesis 11:2); *Go to, let us make brick, and burn them throughly. And they had brick for stone, and slime had they for morter* (Genesis 11:3); *Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth* (Genesis 11:4).',
+       sv.verse_id, ev.verse_id, 'extras', 53234
+  FROM _session251_ju10_lookup sv, _session251_ju10_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=17
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=10 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-10-confounded-tongues-scattered-babel',
+       E'The tongues confounded, and the nations scattered',
+       E'The judgment falls exactly as Genesis tells it: Yahuah says *Go to, let us go down and confound their language, that they may not understand one another''s speech* (Jubilees 10:22), *He confounded their language* (Jubilees 10:24), and *the whole land of Shinar is called Babel, because Yahuah (God) did there confound all the language of the children of men, and from thence they were dispersed into their cities, each according to his language and his nation* (Jubilees 10:25). The Genesis source stands word for word beside it: *And Yahuah (LORD) said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them* (Genesis 11:6); *Go to, let us go down, and there confound their language* (Genesis 11:7); *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth* (Genesis 11:8); *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth* (Genesis 11:9). And the scattering sets the nations'' bounds the Torah remembers: *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8) — election out of the scattered nations begins here.',
+       sv.verse_id, ev.verse_id, 'extras', 53237
+  FROM _session251_ju10_lookup sv, _session251_ju10_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=22
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=10 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-10-demons-lead-astray-noahs-prayer
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 15:8 — *And now, the giants, who are produced from the spirits and flesh, shall be called evil spirits upon the earth, and on the earth shall be their dwelling.* The very demons leading Noah''s grandsons astray in Jubilees 10:1 are, in the live 1 Enoch apparatus, the disembodied spirits of the dead giants of the Watchers.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-demons-lead-astray-noahs-prayer'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=15 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 15:10 — *And these spirits shall rise up against the children of men and against the women, because they have proceeded from them.* Enoch foretold the very assault Noah''s sons report in Jubilees 10:2 — the spirits rising up to lead astray and slay the sons of men.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-demons-lead-astray-noahs-prayer'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=15 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 32:17 — *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not.* Noah''s prayer in Jubilees 10:3 against the wicked spirits is the same seed-war the Song of Moses names — the nations drawn to sacrifice unto demons, not Elohim.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-demons-lead-astray-noahs-prayer'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 12:43 — *When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none.* The same restless, embodied-seeking unclean spirit Jubilees 10:1 describes leading men astray is the one Yahusha names — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-demons-lead-astray-noahs-prayer'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-10-binding-spirits-mastema-tenth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 10:11 — *And Yahuah (God) said unto Michael: ''Go, bind Semjâzâ and his associates who have united themselves with women so as to have defiled themselves with them in all their uncleanness.* The binding Yahuah commands in Jubilees 10:7 is the same binding-of-the-spirits Enoch already records — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-binding-spirits-mastema-tenth'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=7
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 10:12 — *And when their sons have slain one another, and they have seen the destruction of their beloved ones, bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated.* The malignant ones bound in the place of condemnation in Jubilees 10:11 are held, as Enoch says, until the day of judgement.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-binding-spirits-mastema-tenth'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=11
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 10:4 — *And again Yahuah (God) said to Raphael: ''Bind Azâzêl hand and foot, and cast him into the darkness: and make an opening in the desert, which is in Dûdâêl, and cast him therein.* Mastema''s plea in Jubilees 10:8 that a tenth remain stands against this first decree — the chief spirits cast into the darkness and condemnation.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-binding-spirits-mastema-tenth'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=8
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 12:29 — *Or else how can one enter into a strong man''s house, and spoil his goods, except he first bind the strong man? and then he will spoil his house.* The binding of the spirits in Jubilees 10:11 is the pattern Yahusha claims for His own work — first bind the strong man, then spoil his house.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-binding-spirits-mastema-tenth'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-10-medicines-herbs-noah-book-shem
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 10:7 — *And heal the earth which the angels have corrupted, and proclaim the healing of the earth, that they may heal the plague, and that all the children of men may not perish through all the secret things that the Watchers have disclosed and have taught their sons.* The medicines and herbs given Noah to heal in Jubilees 10:12 answer the very charge to heal the earth the Watchers corrupted — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-medicines-herbs-noah-book-shem'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=12
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-10-babel-tower-city-shinar
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:1 — *And the whole earth was of one language, and of one speech.* Jubilees 10:17 names the same moment in Peleg''s days — one people, evil in purpose, before the tongues were confounded.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-babel-tower-city-shinar'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 11:2 — *And it came to pass, as they journeyed from the east, that they found a plain in the land of Shinar; and they dwelt there.* Jubilees 10:19 retells the eastward departure from Ararat to Shinar where they built the city and the tower.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-babel-tower-city-shinar'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 11:3 — *And they said one to another, Go to, let us make brick, and burn them throughly. And they had brick for stone, and slime had they for morter.* Jubilees 10:20 carries the same detail — brick made with fire serving for stone — the Genesis source quoted beside its retelling.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-babel-tower-city-shinar'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 11:4 — *And they said, Go to, let us build us a city and a tower, whose top may reach unto heaven; and let us make us a name, lest we be scattered abroad upon the face of the whole earth.* The very ascent into heaven Jubilees 10:19 quotes is the prideful purpose Genesis records — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-babel-tower-city-shinar'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-10-confounded-tongues-scattered-babel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:6 — *And Yahuah (LORD) said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do.* Jubilees 10:22 quotes the same divine deliberation — one people, one speech, nothing withheld from them — before the descent to confound.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-confounded-tongues-scattered-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 11:7 — *Go to, let us go down, and there confound their language, that they may not understand one another''s speech.* The ''let us go down and confound their language'' of Jubilees 10:22 is the Genesis word verbatim — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-confounded-tongues-scattered-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* Jubilees 10:25 retells the same dispersal — scattered from Shinar, each according to his language and nation.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-confounded-tongues-scattered-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 11:9 — *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth: and from thence did Yahuah (LORD) scatter them abroad upon the face of all the earth.* Jubilees 10:25 names Babel for the same reason Genesis does — the confounding of the tongues at Shinar.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-confounded-tongues-scattered-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* The dispersal into cities and nations in Jubilees 10:25 is the very dividing of the nations the Song of Moses remembers — and election out of them follows.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju10_lookup sv, _session251_ju10_lookup tv
+ WHERE t.slug='jubilees-10-confounded-tongues-scattered-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=10 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_11.sql (session251 jubilees 11) -----
+-- Source anchor: jubilees/jubilees ch11. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju11 (view _session251_ju11_lookup). Sort band base 53250, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-11-shem-to-terah-line
+  ('jubilees', 'jubilees', 11, 1, 'canon', 'genesis', 11, 20, 'free', E'Genesis 11:20 — *And Reu lived two and thirty years, and begat Serug:* the same father-son link Jubilees 11:1 records when Reu begets the one he names Sêrôḫ.'),
+  ('jubilees', 'jubilees', 11, 6, 'canon', 'genesis', 11, 22, 'free', E'Genesis 11:22 — *And Serug lived thirty years, and begat Nahor:* matching Jubilees 11:6-8 where Serug dwells in Ur and his wife bears him Nahor.'),
+  ('jubilees', 'jubilees', 11, 10, 'canon', 'genesis', 11, 24, 'free', E'Genesis 11:24 — *And Nahor lived nine and twenty years, and begat Terah:* the very birth Jubilees 11:10 dates when ''Îjâskâ bears Nahor a son named Terah.'),
+  ('jubilees', 'jubilees', 11, 14, 'canon', 'genesis', 11, 26, 'free', E'Genesis 11:26 — *And Terah lived seventy years, and begat Abram, Nahor, and Haran:* the climax of the line, Abram born to Terah exactly as Jubilees 11:14 narrates.'),
+  -- thread: jubilees-11-idolatry-bloodshed-babel
+  ('jubilees', 'jubilees', 11, 4, 'canon', 'joshua', 24, 2, 'free', E'Joshua 24:2 — *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Joshua names the very idolatry Jubilees 11:4 says Terah''s generation fell into.'),
+  ('jubilees', 'jubilees', 11, 2, 'canon', 'acts', 7, 2, 'free', E'Acts 7:2 — *The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,* Stephen placing the call in the blood-and-idol world Jubilees 11:2-4 describes.'),
+  ('jubilees', 'jubilees', 11, 4, 'canon', 'isaiah', 44, 9, 'free', E'Isaiah 44:9 — *They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed.* The prophetic verdict on the molten images Jubilees 11:4 says they worshipped.'),
+  -- thread: jubilees-11-mastema-seed-war
+  ('jubilees', 'jubilees', 11, 5, 'jubilees', 'jubilees', 10, 8, 'extras', E'Jubilees 10:8 — *And the chief of the spirits, Mastêmâ, came and said: “Yahuah (God), Creator, let some of them remain before me, and let them hearken to my voice, and do all that I shall say to them; for if some of them are not left to me, I shall not be able to execute the power of my will on the sons of men...”* the tenth-part of spirits whom Jubilees 11:5 now shows Mastêmâ sending out to corrupt and shed blood.'),
+  ('jubilees', 'jubilees', 11, 5, 'enoch', '1-enoch', 10, 9, 'extras', E'1 Enoch 10:9 — *Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men... send them one against the other that they may destroy each other in battle: for length of days shall they not have.* The Watcher-spawn whose mutual slaughter Jubilees 11:5 echoes as Mastêmâ''s bloodshed on the earth.'),
+  ('jubilees', 'jubilees', 11, 5, 'enoch', '1-enoch', 10, 15, 'extras', E'1 Enoch 10:15 — *And destroy all the spirits of the reprobate and the children of the Watchers, because they have wronged mankind.* The judgement on the very spirits Jubilees 11:5 says Mastêmâ unleashed to corrupt and destroy.'),
+  -- thread: jubilees-11-abraham-turns-from-idols
+  ('jubilees', 'jubilees', 11, 14, 'canon', 'joshua', 24, 3, 'free', E'Joshua 24:3 — *And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac.* The election Jubilees 11:14 dramatizes as the boy separating himself from his father''s idols.'),
+  ('jubilees', 'jubilees', 11, 17, 'canon', 'isaiah', 41, 8, 'free', E'Isaiah 41:8 — *But thou, Yashar''el (Israel), art my servant, Jacob whom I have chosen, the seed of Abraham my friend.* The friend-of-God title earned by the very turning-to-the-Creator Jubilees 11:17 records in Abraham''s prayer.'),
+  ('jubilees', 'jubilees', 11, 17, 'canon', 'acts', 7, 3, 'free', E'Acts 7:3 — *And said unto him, Get thee out of thy country, and from thy kindred, and come into the land which I shall shew thee.* The call out of the idolatrous house Jubilees 11:14-17 shows Abraham already straining toward as a child.'),
+  -- thread: jubilees-11-ravens-seed-plough
+  ('jubilees', 'jubilees', 11, 11, 'canon', 'genesis', 8, 22, 'free', E'Genesis 8:22 — *While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease.* The covenant of the seedtime Mastêmâ tries to break in Jubilees 11:11 by sending ravens against the sown seed.'),
+  ('jubilees', 'jubilees', 11, 23, 'enoch', '1-enoch', 10, 18, 'extras', E'1 Enoch 10:18 — *And then shall the whole earth be tilled in righteousness, and shall all be planted with trees and be full of blessing.* The tilled, freed land Jubilees 11:23 anticipates once Abram''s plough lets them sow without fear of the birds.'),
+  ('jubilees', 'jubilees', 11, 19, 'apocrypha', 'the-wisdom-of-solomon', 13, 1, 'extras', E'Wisdom of Solomon 13:1 — *Surely vain are all men by nature, who are ignorant of Yahuah (God), and could not out of the good things that are seen know him that is: neither by considering the works did they acknowledge the workmaster;* the idol-vanity Abram leaves behind in Jubilees 11:19 as he commands the ravens in the Creator''s name.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-11-shem-to-terah-line',
+       E'The line of Shem to Terah — the genealogy retold',
+       E'Jubilees walks the same descent Genesis records — *Reu took to himself a wife, and her name was ''Ôrâ... and she bare him a son, and he called his name Sêrôḫ* (Jubilees 11:1), Serug to Nahor to *Terah in the seventh year of this week* (Jubilees 11:10), down to *Abram, by the name of the father of his mother* (Jubilees 11:14). Lay it beside Genesis and the line is identical: *And Reu lived two and thirty years, and begat Serug* (Genesis 11:20), *And Serug lived thirty years, and begat Nahor* (Genesis 11:22), *And Terah lived seventy years, and begat Abram, Nahor, and Haran* (Genesis 11:26). It ain''t new — Jubilees is the Book of Division retelling Bereshit, the chosen seed traced one name at a time through the post-Babel world toward Abraham.',
+       sv.verse_id, ev.verse_id, 'extras', 53250
+  FROM _session251_ju11_lookup sv, _session251_ju11_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=11 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-11-idolatry-bloodshed-babel',
+       E'Idolatry and bloodshed spread — the fathers served other gods',
+       E'After Babel the sons of Noah turn on each other and on heaven: *they made for themselves molten images, and they worshipped each the idol... and malignant spirits assisted and seduced (them) into committing transgression and uncleanness* (Jubilees 11:4), warring *to shed the blood of men on the earth, and to eat blood* (Jubilees 11:2). This is the world Abraham is born into — and Scripture names it bluntly: *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham... and they served other gods* (Joshua 24:2). Stephen retells the same call out of that idolatry — *The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia* (Acts 7:2). And Isaiah exposes the molten images for the vanity they are: *They that make a graven image are all of them vanity... they see not, nor know; that they may be ashamed* (Isaiah 44:9). The seed is kept holy not because the line was pure, but because Yahuah chose out of the idol-house.',
+       sv.verse_id, ev.verse_id, 'extras', 53253
+  FROM _session251_ju11_lookup sv, _session251_ju11_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=11 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-11-mastema-seed-war',
+       E'Mastêmâ''s spirits — the seed-war loosed on the earth',
+       E'The prince of the demons drives the corruption: *the prince Mastêmâ exerted himself to do all this, and he sent forth other spirits, those which were put under his hand, to do all manner of wrong and sin... to corrupt and destroy, and to shed blood upon the earth* (Jubilees 11:5). This is the tenth-part of spirits left under his hand one chapter earlier — *let some of them remain before me... for if some of them are not left to me, I shall not be able to execute the power of my will on the sons of men* (Jubilees 10:8). The live 1 Enoch apparatus is the root: the Watchers'' bastard spirits set *one against the other that they may destroy each other in battle* (1 Enoch 10:9), and the charge to *destroy all the spirits of the reprobate and the children of the Watchers, because they have wronged mankind* (1 Enoch 10:15). Same seed-war, three witnesses — the demons left on earth wage Mastêmâ''s campaign against the chosen line, and against the very seed in the ground (Jubilees 11:11).',
+       sv.verse_id, ev.verse_id, 'extras', 53256
+  FROM _session251_ju11_lookup sv, _session251_ju11_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=5
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=11 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-11-abraham-turns-from-idols',
+       E'Abraham turns from idols — election out of the idolatrous line',
+       E'While still a boy in Ur, Abraham breaks from his father''s idol-house: *the child began to understand the errors of the earth that all went astray after graven images and after uncleanness... and he separated himself from his father that he might not worship idols with him* (Jubilees 11:14), and *he began to pray to the Creator of all things that He might save him from the errors of the children of men* (Jubilees 11:17). Election precedes confession, and Scripture frames it the same way: out of the fathers who *served other gods*, *I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan* (Joshua 24:3). Isaiah calls him by the name this choosing earns: *thou, Yashar''el (Israel), art my servant, Jacob whom I have chosen, the seed of Abraham my friend... I have taken from the ends of the earth, and called thee from the chief men thereof* (Isaiah 41:8-9). And Stephen: *Get thee out of thy country, and from thy kindred* (Acts 7:3). Abraham is chosen out of idolatry — not because the line was clean, but because Yahuah called him from it.',
+       sv.verse_id, ev.verse_id, 'extras', 53259
+  FROM _session251_ju11_lookup sv, _session251_ju11_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=11 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-11-ravens-seed-plough',
+       E'The ravens devour the seed — Abraham drives them off and invents the seed-plough',
+       E'Mastêmâ wages the seed-war in the dirt: *the prince Mastêmâ sent ravens and birds to devour the seed which was sown in the land, in order to destroy the land, and rob the children of men of their labours* (Jubilees 11:11). But the chosen child turns the tide — *Abram ran to meet them... and said, “Descend not: return to the place whence you came,” and they proceeded to turn back* (Jubilees 11:19), seventy times in a day, and then *Abram taught those who made implements for oxen... and they made a vessel above the ground, facing the frame of the plough, in order to put the seed thereon... and they no longer feared the ravens* (Jubilees 11:23). Set this against the covenant Yahuah swore over the earth after the flood: *While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease* (Genesis 8:22) — Mastêmâ assaults the seedtime; Yahuah''s word guarantees it. And the healed, fruitful earth is exactly what 1 Enoch promises after the Watchers are bound: *then shall the whole earth be tilled in righteousness, and shall all be planted with trees and be full of blessing* (1 Enoch 10:18). The vanity of the idols that could not protect a single field stands rebuked beside the living God: *vain are all men by nature, who are ignorant of Yahuah (God)... neither by considering the works did they acknowledge the workmaster* (Wisdom of Solomon 13:1).',
+       sv.verse_id, ev.verse_id, 'extras', 53262
+  FROM _session251_ju11_lookup sv, _session251_ju11_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=11
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=11 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-11-shem-to-terah-line
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:20 — *And Reu lived two and thirty years, and begat Serug:* the same father-son link Jubilees 11:1 records when Reu begets the one he names Sêrôḫ.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-shem-to-terah-line'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 11:22 — *And Serug lived thirty years, and begat Nahor:* matching Jubilees 11:6-8 where Serug dwells in Ur and his wife bears him Nahor.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-shem-to-terah-line'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 11:24 — *And Nahor lived nine and twenty years, and begat Terah:* the very birth Jubilees 11:10 dates when ''Îjâskâ bears Nahor a son named Terah.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-shem-to-terah-line'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 11:26 — *And Terah lived seventy years, and begat Abram, Nahor, and Haran:* the climax of the line, Abram born to Terah exactly as Jubilees 11:14 narrates.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-shem-to-terah-line'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-11-idolatry-bloodshed-babel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 24:2 — *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Joshua names the very idolatry Jubilees 11:4 says Terah''s generation fell into.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-idolatry-bloodshed-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:2 — *The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,* Stephen placing the call in the blood-and-idol world Jubilees 11:2-4 describes.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-idolatry-bloodshed-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 44:9 — *They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed.* The prophetic verdict on the molten images Jubilees 11:4 says they worshipped.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-idolatry-bloodshed-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-11-mastema-seed-war
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 10:8 — *And the chief of the spirits, Mastêmâ, came and said: “Yahuah (God), Creator, let some of them remain before me, and let them hearken to my voice, and do all that I shall say to them; for if some of them are not left to me, I shall not be able to execute the power of my will on the sons of men...”* the tenth-part of spirits whom Jubilees 11:5 now shows Mastêmâ sending out to corrupt and shed blood.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-mastema-seed-war'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=5
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=10 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 10:9 — *Proceed against the bastards and the reprobates, and against the children of fornication: and destroy [the children of fornication and] the children of the Watchers from amongst men... send them one against the other that they may destroy each other in battle: for length of days shall they not have.* The Watcher-spawn whose mutual slaughter Jubilees 11:5 echoes as Mastêmâ''s bloodshed on the earth.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-mastema-seed-war'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=5
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 10:15 — *And destroy all the spirits of the reprobate and the children of the Watchers, because they have wronged mankind.* The judgement on the very spirits Jubilees 11:5 says Mastêmâ unleashed to corrupt and destroy.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-mastema-seed-war'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=5
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-11-abraham-turns-from-idols
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 24:3 — *And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac.* The election Jubilees 11:14 dramatizes as the boy separating himself from his father''s idols.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-abraham-turns-from-idols'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 41:8 — *But thou, Yashar''el (Israel), art my servant, Jacob whom I have chosen, the seed of Abraham my friend.* The friend-of-God title earned by the very turning-to-the-Creator Jubilees 11:17 records in Abraham''s prayer.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-abraham-turns-from-idols'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:3 — *And said unto him, Get thee out of thy country, and from thy kindred, and come into the land which I shall shew thee.* The call out of the idolatrous house Jubilees 11:14-17 shows Abraham already straining toward as a child.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-abraham-turns-from-idols'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-11-ravens-seed-plough
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 8:22 — *While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease.* The covenant of the seedtime Mastêmâ tries to break in Jubilees 11:11 by sending ravens against the sown seed.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-ravens-seed-plough'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=8 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 10:18 — *And then shall the whole earth be tilled in righteousness, and shall all be planted with trees and be full of blessing.* The tilled, freed land Jubilees 11:23 anticipates once Abram''s plough lets them sow without fear of the birds.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-ravens-seed-plough'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=23
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Wisdom of Solomon 13:1 — *Surely vain are all men by nature, who are ignorant of Yahuah (God), and could not out of the good things that are seen know him that is: neither by considering the works did they acknowledge the workmaster;* the idol-vanity Abram leaves behind in Jubilees 11:19 as he commands the ravens in the Creator''s name.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju11_lookup sv, _session251_ju11_lookup tv
+ WHERE t.slug='jubilees-11-ravens-seed-plough'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=11 AND sv.verse_number=19
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=13 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_12.sql (session251 jubilees 12) -----
+-- Source anchor: jubilees/jubilees ch12. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju12 (view _session251_ju12_lookup). Sort band base 53275, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-12-idols-have-no-spirit
+  ('jubilees', 'jubilees', 12, 2, 'canon', 'deuteronomy', 4, 28, 'free', E'Deuteronomy 4:28 — *And there ye shall serve gods, the work of men''s hands, wood and stone, which neither see, nor hear, nor eat, nor smell.* The Torah''s verdict on idols is exactly Abram''s in Jubilees 12:2: they are the work of men''s hands with no spirit in them.'),
+  ('jubilees', 'jubilees', 12, 1, 'canon', 'joshua', 24, 2, 'free', E'Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Joshua names the very idolatry of Terah''s house that Abram confronts in Jubilees 12:1.'),
+  ('jubilees', 'jubilees', 12, 7, 'canon', 'acts', 7, 2, 'free', E'Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,* — the election of Abraham out of the idolatrous Chaldee line that frames all of Jubilees 12.'),
+  -- thread: jubilees-12-haran-burns-with-the-idols
+  ('jubilees', 'jubilees', 12, 14, 'canon', 'genesis', 11, 28, 'free', E'Genesis 11:28 — *And Haran died before his father Terah in the land of his nativity, in Ur of the Chaldees.* Genesis records only the fact of Haran''s death; Jubilees 12:14 supplies the idol-fire that killed him in that same Ur.'),
+  ('jubilees', 'jubilees', 12, 14, 'canon', 'genesis', 11, 31, 'free', E'Genesis 11:31 — *And Terah took Abram his son, and Lot the son of Haran his son''s son, and Sarai his daughter in law, his son Abram''s wife; and they went forth with them from Ur of the Chaldees, to go into the land of Canaan; and they came unto Haran, and dwelt there.* The family''s departure from Ur toward Canaan in Jubilees 12:14 is the same journey Genesis records.'),
+  -- thread: jubilees-12-signs-in-his-hand
+  ('jubilees', 'jubilees', 12, 17, 'canon', 'deuteronomy', 4, 19, 'free', E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* Abram''s realization in Jubilees 12:17 that the sun, moon, and stars are in Yahuah''s hand — not gods — is the Torah''s own guard against worshipping the host of heaven.'),
+  ('jubilees', 'jubilees', 12, 17, 'enoch', '1-enoch', 19, 1, 'extras', E'1 Enoch 19:1 — *And Uriel said to me: ''Here shall stand the angels who have connected themselves with women, and their spirits assuming many different forms are defiling mankind and shall lead them astray into sacrificing to demons as gods, here shall they stand, till the day of the great judgement in which they shall be judged till they are made an end of.* The evil spirits Abram prays to be delivered from in Jubilees 12:17 are the Watcher-spirits of the live 1 Enoch apparatus, who lead mankind astray into demon-worship.'),
+  ('jubilees', 'jubilees', 12, 17, 'enoch', '1-enoch', 10, 16, 'extras', E'1 Enoch 10:16 — *Destroy all wrong from the face of the earth and let every evil work come to an end: and let the plant of righteousness and truth appear: and it shall prove a blessing; the works of righteousness and truth'' shall be planted in truth and joy for evermore.* Abram''s plea to stablish him and his seed for ever in Jubilees 12:17 is the planting of the righteous seed against the seed-war that 1 Enoch 10 promises after the Watchers are bound.'),
+  -- thread: jubilees-12-get-thee-out-the-call
+  ('jubilees', 'jubilees', 12, 22, 'canon', 'genesis', 12, 1, 'free', E'Genesis 12:1 — *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee:* — the call Jubilees 12:22 retells nearly word for word as the angel delivers it to Abram.'),
+  ('jubilees', 'jubilees', 12, 22, 'canon', 'genesis', 12, 3, 'free', E'Genesis 12:3 — *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed.* The blessing-and-cursing and all-families promise of Jubilees 12:22 is Genesis 12:3 set side by side.'),
+  ('jubilees', 'jubilees', 12, 22, 'canon', 'acts', 7, 3, 'free', E'Acts 7:3 — *And said unto him, Get thee out of thy country, and from thy kindred, and come into the land which I shall shew thee.* Stephen quotes the same call to Abraham that Jubilees 12:22 records.'),
+  ('jubilees', 'jubilees', 12, 22, 'canon', 'romans', 4, 3, 'free', E'Romans 4:3 — *For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness.* The promise Abram receives in Jubilees 12:22 is met with the faith Paul names as counted for righteousness — election and promise, not law-as-curse.'),
+  -- thread: jubilees-12-hebrew-restored-after-babel
+  ('jubilees', 'jubilees', 12, 25, 'canon', 'genesis', 11, 7, 'free', E'Genesis 11:7 — *Go to, let us go down, and there confound their language, that they may not understand one another''s speech.* The confounding of language at Babel that Jubilees 12:25 says ceased the original tongue from all men is Genesis 11:7.'),
+  ('jubilees', 'jubilees', 12, 25, 'canon', 'genesis', 11, 9, 'free', E'Genesis 11:9 — *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth: and from thence did Yahuah (LORD) scatter them abroad upon the face of all the earth.* Jubilees 12:25 names this Babel overthrow as the moment the tongue of creation was lost — until it is restored to Abram.'),
+  ('jubilees', 'jubilees', 12, 27, 'canon', 'genesis', 11, 6, 'free', E'Genesis 11:6 — *And Yahuah (LORD) said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do.* The one original language of Genesis 11:6 is the Hebrew given back to Abram in Jubilees 12:26-27 so he can read the books of his fathers.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-12-idols-have-no-spirit',
+       E'They are dumb forms — Abram renounces the idols',
+       E'Jubilees opens the chapter with the young Abram pleading with his idolatrous father: *"What help and profit have we from those idols which you do worship, And before which you do bow yourself? For there is no spirit in them, For they are dumb forms, and a misleading of the heart. Worship them not: Worship the Elohim (God) of heaven, Who causes the rain and the dew to descend on the earth... For they are the work of (men''s) hands, And on your shoulders do you bear them, And you have no help from them"* (Jubilees 12:2). This is the same charge the Torah lays against idols: *"And there ye shall serve gods, the work of men''s hands, wood and stone, which neither see, nor hear, nor eat, nor smell"* (Deuteronomy 4:28). And it is Abraham''s election OUT of the idolatrous line — *"The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran"* (Acts 7:2) — the very fathers Joshua names: *"Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods"* (Joshua 24:2). The seed is chosen, separated from the nations, before it confesses. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53275
+  FROM _session251_ju12_lookup sv, _session251_ju12_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=12 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-12-haran-burns-with-the-idols',
+       E'He burned the house of the idols — Haran dies in Ur',
+       E'Abram does not merely reason against the idols; he ends them: *"Abram arose by night, and burned the house of the idols, and he burned all that was in the house, and no man knew it"* (Jubilees 12:12), and *"Haran hasted to save them, but the fire flamed over him, and he was burnt in the fire, and he died in Ur of the Chaldees before Terah his father, and they buried him in Ur of the Chaldees"* (Jubilees 12:14). Genesis records the bare death without the cause: *"And Haran died before his father Terah in the land of his nativity, in Ur of the Chaldees"* (Genesis 11:28) — Jubilees fills in the idol-fire behind it. And the migration follows exactly as Genesis tells it: *"And Terah took Abram his son, and Lot the son of Haran his son''s son, and Sarai his daughter in law, his son Abram''s wife; and they went forth with them from Ur of the Chaldees, to go into the land of Canaan; and they came unto Haran, and dwelt there"* (Genesis 11:31). The retelling and its source stand side by side. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53278
+  FROM _session251_ju12_lookup sv, _session251_ju12_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=12
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=12 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-12-signs-in-his-hand',
+       E'The stars are not gods — all the signs are in His hand',
+       E'Abram sits the whole night on the new moon of the seventh month to read the stars, and a word breaks in his heart: *"All the signs of the stars, and the signs of the moon and of the sun are all in the hand of Yahuah (God). Why do I search (them) out? If He desires, He causes it to rain, morning and evening; And if He desires, He withholds it, And all things are in His hand"* (Jubilees 12:17). This is the Torah''s exact guard against star-worship: *"And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven"* (Deuteronomy 4:19). And Abram''s prayer in the same breath names the seed-war — *"Deliver me from the hands of evil spirits who have sway over the thoughts of men''s hearts, And let them not lead me astray from You... And stablish You me and my seed for ever"* (Jubilees 12:17) — the very demons the live 1 Enoch apparatus binds: *"their spirits assuming many different forms are defiling mankind and shall lead them astray into sacrificing to demons as gods"* (1 Enoch 19:1). The Watcher-spirits drive the nations to idols; Abram prays to be kept, and his seed with him.',
+       sv.verse_id, ev.verse_id, 'extras', 53281
+  FROM _session251_ju12_lookup sv, _session251_ju12_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=16
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=12 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-12-get-thee-out-the-call',
+       E'Get you up from your country — the call of Abram',
+       E'The word of Yahuah comes to Abram and Jubilees gives the call almost word for word with Genesis: *"Get you up from your country, and from your kindred and from the house of your father to a land which I shall show you, and I shall make you a great and numerous nation. And I shall bless you And I shall make your name great... And in you will all families of the earth be blessed, And I shall bless them that bless you, And curse them that curse you"* (Jubilees 12:22). Set Genesis beside it: *"Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee"* (Genesis 12:1), and *"And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed"* (Genesis 12:3). Stephen preaches the same call: *"And said unto him, Get thee out of thy country, and from thy kindred, and come into the land which I shall shew thee"* (Acts 7:3). And this is the faith counted for righteousness — *"Abraham believed Elohim (God), and it was counted unto him for righteousness"* (Romans 4:3) — election and promise, not law-as-curse. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53284
+  FROM _session251_ju12_lookup sv, _session251_ju12_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=22
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=12 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-12-hebrew-restored-after-babel',
+       E'He spoke with him in Hebrew — the tongue of creation restored',
+       E'Once Abram is called, Yahuah restores to him the lost language: *"Open his mouth and his ears, that he may hear and speak with his mouth, with the language which has been revealed; for it had ceased from the mouths of all the children of men from the day of the overthrow (of Babel)"* (Jubilees 12:25), *"And I opened his mouth, and his ears and his lips, and I began to speak with him in Hebrew in the tongue of the creation"* (Jubilees 12:26). Jubilees anchors this in the Babel judgement of Genesis: *"And Yahuah (LORD) said, Behold, the people is one, and they have all one language... Go to, let us go down, and there confound their language, that they may not understand one another''s speech"* (Genesis 11:6-7), *"Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth"* (Genesis 11:9). The one tongue confounded at Babel is given back to the chosen seed, and with it the books of the fathers — the heavenly-tablet inheritance Abram studies (Jubilees 12:27). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53287
+  FROM _session251_ju12_lookup sv, _session251_ju12_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=25
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=12 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-12-idols-have-no-spirit
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 4:28 — *And there ye shall serve gods, the work of men''s hands, wood and stone, which neither see, nor hear, nor eat, nor smell.* The Torah''s verdict on idols is exactly Abram''s in Jubilees 12:2: they are the work of men''s hands with no spirit in them.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-idols-have-no-spirit'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Joshua names the very idolatry of Terah''s house that Abram confronts in Jubilees 12:1.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-idols-have-no-spirit'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,* — the election of Abraham out of the idolatrous Chaldee line that frames all of Jubilees 12.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-idols-have-no-spirit'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-12-haran-burns-with-the-idols
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:28 — *And Haran died before his father Terah in the land of his nativity, in Ur of the Chaldees.* Genesis records only the fact of Haran''s death; Jubilees 12:14 supplies the idol-fire that killed him in that same Ur.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-haran-burns-with-the-idols'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 11:31 — *And Terah took Abram his son, and Lot the son of Haran his son''s son, and Sarai his daughter in law, his son Abram''s wife; and they went forth with them from Ur of the Chaldees, to go into the land of Canaan; and they came unto Haran, and dwelt there.* The family''s departure from Ur toward Canaan in Jubilees 12:14 is the same journey Genesis records.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-haran-burns-with-the-idols'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-12-signs-in-his-hand
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* Abram''s realization in Jubilees 12:17 that the sun, moon, and stars are in Yahuah''s hand — not gods — is the Torah''s own guard against worshipping the host of heaven.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-signs-in-his-hand'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 19:1 — *And Uriel said to me: ''Here shall stand the angels who have connected themselves with women, and their spirits assuming many different forms are defiling mankind and shall lead them astray into sacrificing to demons as gods, here shall they stand, till the day of the great judgement in which they shall be judged till they are made an end of.* The evil spirits Abram prays to be delivered from in Jubilees 12:17 are the Watcher-spirits of the live 1 Enoch apparatus, who lead mankind astray into demon-worship.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-signs-in-his-hand'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 10:16 — *Destroy all wrong from the face of the earth and let every evil work come to an end: and let the plant of righteousness and truth appear: and it shall prove a blessing; the works of righteousness and truth'' shall be planted in truth and joy for evermore.* Abram''s plea to stablish him and his seed for ever in Jubilees 12:17 is the planting of the righteous seed against the seed-war that 1 Enoch 10 promises after the Watchers are bound.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-signs-in-his-hand'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=17
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-12-get-thee-out-the-call
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:1 — *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee:* — the call Jubilees 12:22 retells nearly word for word as the angel delivers it to Abram.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-get-thee-out-the-call'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 12:3 — *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed.* The blessing-and-cursing and all-families promise of Jubilees 12:22 is Genesis 12:3 set side by side.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-get-thee-out-the-call'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:3 — *And said unto him, Get thee out of thy country, and from thy kindred, and come into the land which I shall shew thee.* Stephen quotes the same call to Abraham that Jubilees 12:22 records.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-get-thee-out-the-call'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Romans 4:3 — *For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness.* The promise Abram receives in Jubilees 12:22 is met with the faith Paul names as counted for righteousness — election and promise, not law-as-curse.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-get-thee-out-the-call'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-12-hebrew-restored-after-babel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:7 — *Go to, let us go down, and there confound their language, that they may not understand one another''s speech.* The confounding of language at Babel that Jubilees 12:25 says ceased the original tongue from all men is Genesis 11:7.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-hebrew-restored-after-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 11:9 — *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth: and from thence did Yahuah (LORD) scatter them abroad upon the face of all the earth.* Jubilees 12:25 names this Babel overthrow as the moment the tongue of creation was lost — until it is restored to Abram.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-hebrew-restored-after-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 11:6 — *And Yahuah (LORD) said, Behold, the people is one, and they have all one language; and this they begin to do: and now nothing will be restrained from them, which they have imagined to do.* The one original language of Genesis 11:6 is the Hebrew given back to Abram in Jubilees 12:26-27 so he can read the books of his fathers.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju12_lookup sv, _session251_ju12_lookup tv
+ WHERE t.slug='jubilees-12-hebrew-restored-after-babel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=12 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_13.sql (session251 jubilees 13) -----
+-- Source anchor: jubilees/jubilees ch13. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju13 (view _session251_ju13_lookup). Sort band base 53300, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-13-bethel-altar-call-name
+  ('jubilees', 'jubilees', 13, 1, 'canon', 'genesis', 12, 6, 'free', E'Genesis 12:6 — *And Abram passed through the land unto the place of Sichem, unto the plain of Moreh. And the Canaanite was then in the land.* Jubilees 13:1 retells the same journey to Shechem by the lofty oak.'),
+  ('jubilees', 'jubilees', 13, 2, 'canon', 'genesis', 12, 7, 'free', E'Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him.* The land-and-seed promise and the altar of Jubilees 13:2,4 are Genesis verbatim.'),
+  ('jubilees', 'jubilees', 13, 7, 'canon', 'genesis', 12, 8, 'free', E'Genesis 12:8 — *And he removed from thence unto a mountain on the east of Beth-el, and pitched his tent, having Beth-el on the west, and Hai on the east: and there he builded an altar unto Yahuah (LORD), and called upon the name of Yahuah (LORD).* Jubilees 13:7 has Abram between Bethel and Ai building the altar and calling on the Name.'),
+  -- thread: jubilees-13-egypt-sarai-pharaoh-plagued
+  ('jubilees', 'jubilees', 13, 11, 'canon', 'genesis', 12, 10, 'free', E'Genesis 12:10 — *And there was a famine in the land: and Abram went down into Egypt to sojourn there; for the famine was grievous in the land.* Jubilees 13:11 sends Abram down to Egypt by the same famine.'),
+  ('jubilees', 'jubilees', 13, 12, 'canon', 'genesis', 12, 17, 'free', E'Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife.* Jubilees 13:12 carries the plaguing of Pharaoh''s house verbatim — Yahuah guards the seed-bearing wife.'),
+  ('jubilees', 'jubilees', 13, 15, 'canon', 'genesis', 12, 19, 'free', E'Genesis 12:19 — *Why saidst thou, She is my sister? so I might have taken her to me to wife: now therefore behold thy wife, take her, and go thy way.* The restoration of Sarai and Abram''s sending out of Egypt in Jubilees 13:15 answers this Genesis scene.'),
+  ('jubilees', 'jubilees', 13, 15, 'canon', 'genesis', 13, 4, 'free', E'Genesis 13:4 — *Unto the place of the altar, which he had made there at the first: and there Abram called on the name of Yahuah (LORD).* Jubilees 13:15 returns Abram to that same altar between Ai and Bethel where he again blesses and calls on the Name.'),
+  -- thread: jubilees-13-lot-parts-land-seed-promise-renewed
+  ('jubilees', 'jubilees', 13, 17, 'canon', 'genesis', 13, 11, 'free', E'Genesis 13:11 — *Then Lot chose him all the plain of Jordan; and Lot journeyed east: and they separated themselves the one from the other.* Jubilees 13:17 has Lot part and settle in Sodom.'),
+  ('jubilees', 'jubilees', 13, 19, 'canon', 'genesis', 13, 14, 'free', E'Genesis 13:14 — *And Yahuah (LORD) said unto Abram, after that Lot was separated from him, Lift up now thine eyes, and look from the place where thou art northward, and southward, and eastward, and westward.* Jubilees 13:19 renews the promise in these exact words once Lot has parted.'),
+  ('jubilees', 'jubilees', 13, 20, 'canon', 'genesis', 13, 15, 'free', E'Genesis 13:15 — *For all the land which thou seest, to thee will I give it, and to thy seed for ever.* The land-to-the-seed-for-ever of Jubilees 13:20 is the Genesis grant verbatim.'),
+  ('jubilees', 'jubilees', 13, 20, 'canon', 'galatians', 3, 16, 'free', E'Galatians 3:16 — *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ).* The seed-promise renewed in Jubilees 13:20 rides on the single Seed.'),
+  ('jubilees', 'jubilees', 13, 20, 'canon', 'romans', 4, 3, 'free', E'Romans 4:3 — *For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness.* Abram''s faith, not law-as-curse, secures the inheritance promised in Jubilees 13:20.'),
+  -- thread: jubilees-13-kings-war-lot-captive
+  ('jubilees', 'jubilees', 13, 20, 'canon', 'genesis', 14, 1, 'free', E'Genesis 14:1 — *And it came to pass in the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations.* Jubilees 13:20 names the same coalition of kings.'),
+  ('jubilees', 'jubilees', 13, 23, 'canon', 'genesis', 14, 12, 'free', E'Genesis 14:12 — *And they took Lot, Abram''s brother''s son, who dwelt in Sodom, and his goods, and departed.* Jubilees 13:23 has Lot taken captive with Sodom verbatim.'),
+  ('jubilees', 'jubilees', 13, 24, 'canon', 'genesis', 14, 13, 'free', E'Genesis 14:13 — *And there came one that had escaped, and told Abram the Hebrew; for he dwelt in the plain of Mamre the Amorite, brother of Eshcol, and brother of Aner: and these were confederate with Abram.* The escapee bringing word in Jubilees 13:24 is the Genesis account.'),
+  ('jubilees', 'jubilees', 13, 24, 'canon', 'genesis', 14, 14, 'free', E'Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* Abram arming his household in Jubilees 13:24 and pursuing to Dan matches Genesis exactly.'),
+  -- thread: jubilees-13-tithe-ordinance-for-ever
+  ('jubilees', 'jubilees', 13, 26, 'canon', 'genesis', 14, 20, 'free', E'Genesis 14:20 — *And blessed be the El Elyon (most high God), which hath delivered thine enemies into thy hand. And he gave him tithes of all.* Abram''s tenth in Jubilees 13:26 is the Genesis tithe to the priest of the Most High.'),
+  ('jubilees', 'jubilees', 13, 26, 'canon', 'leviticus', 27, 30, 'free', E'Leviticus 27:30 — *And all the tithe of the land, whether of the seed of the land, or of the fruit of the tree, is the LORD''S: it is holy unto Yahuah (LORD).* The Torah keeps the tenth of seed and fruit holy, the very ordinance Jubilees 13:26 calls for ever.'),
+  ('jubilees', 'jubilees', 13, 26, 'canon', 'numbers', 18, 21, 'free', E'Numbers 18:21 — *And, behold, I have given the children of Levi all the tenth in Yashar''el (Israel) for an inheritance, for their service which they serve, even the service of the tabernacle of the congregation.* The priestly tenth for ever in Jubilees 13:26 is given to Levi in the Torah.'),
+  ('jubilees', 'jubilees', 13, 26, 'canon', 'hebrews', 7, 2, 'free', E'Hebrews 7:2 — *To whom also Abraham gave a tenth part of all; first being by interpretation King of righteousness, and after that also King of Salem, which is, King of peace.* Hebrews reads Abram''s tithe of Jubilees 13:26 as the priesthood that foreshadows Messiah.'),
+  ('jubilees', 'jubilees', 13, 29, 'canon', 'genesis', 14, 23, 'free', E'Genesis 14:23 — *That I will not take from a thread even to a shoelatchet, and that I will not take any thing that is thine, lest thou shouldest say, I have made Abram rich.* Abram''s refusal of Sodom''s spoil in Jubilees 13:29 is the Genesis oath verbatim.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-13-bethel-altar-call-name',
+       E'Bethel, the altar, and calling on the Name — it ain''t new',
+       E'Jubilees opens Abram''s life in the land exactly where Genesis sets it: *And Abram journeyed from Haran, and he took Sarai, his wife, and Lot his brother Haran''s son, to the land of Canaan, and he came into Asshur, and proceeded to Shechem, and dwelt near a lofty oak* (Jubilees 13:1), and there *Yahuah (God) said to him: "To you and to your seed will I give this land"* (Jubilees 13:2), so *he built an altar there, and he offered thereon a burnt sacrifice to Yahuah (God), who had appeared to him* (Jubilees 13:4). This is the Genesis account retold word for word — *And Abram passed through the land unto the place of Sichem, unto the plain of Moreh* (Genesis 12:6), *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* (Genesis 12:7). Jubilees then plants Abram between Bethel and Ai and has him build a second altar and *called on the name of Yahuah (God)* (Jubilees 13:7) — the same posture Genesis records: *and there he builded an altar unto Yahuah (LORD), and called upon the name of Yahuah (LORD)* (Genesis 12:8). Worship at the altar, calling on the Name, the land-and-seed promise — none of it is later invention; it is the patriarch''s own walk, woven into the canon from the first.',
+       sv.verse_id, ev.verse_id, 'extras', 53300
+  FROM _session251_ju13_lookup sv, _session251_ju13_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=13 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-13-egypt-sarai-pharaoh-plagued',
+       E'Down to Egypt — Sarai taken, Pharaoh plagued, the wife restored',
+       E'The famine drives Abram down to Egypt in both books: *And Abram went into Egypt in the third year of the week, and he dwelt in Egypt five years before his wife was torn away from him* (Jubilees 13:11), which Genesis tells as *And there was a famine in the land: and Abram went down into Egypt to sojourn there; for the famine was grievous in the land* (Genesis 12:10). When Pharaoh seizes Sarai, Jubilees says *that Yahuah (God) plagued Pharaoh and his house with great plagues because of Sarai, Abram''s wife* (Jubilees 13:12) — the very wording of *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife* (Genesis 12:17). And the deliverance is the same: *And Pharaoh gave back Sarai, the wife of Abram, and he sent him out of the land of Egypt* (Jubilees 13:15) answers *Why saidst thou, She is my sister? so I might have taken her to me to wife: now therefore behold thy wife, take her, and go thy way* (Genesis 12:19). Yahuah guards the seed-bearing wife and brings Abram out of Egypt enriched — the first faint sketch of the Exodus pattern, kept and answered in the canon.',
+       sv.verse_id, ev.verse_id, 'extras', 53303
+  FROM _session251_ju13_lookup sv, _session251_ju13_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=10
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=13 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-13-lot-parts-land-seed-promise-renewed',
+       E'Lot parts and the land-and-seed promise is renewed',
+       E'Lot separates from Abram and chooses Sodom — *And in the fourth year of this week Lot parted from him, and Lot dwelt in Sodom, and the men of Sodom were sinners exceedingly* (Jubilees 13:17) — exactly as Genesis: *Then Lot chose him all the plain of Jordan; and Lot journeyed east: and they separated themselves the one from the other* (Genesis 13:11), *But the men of Sodom were wicked and sinners before Yahuah (LORD) exceedingly* (Genesis 13:13). With Lot gone, Yahuah renews the promise to the seed: *"Lift up your eyes from the place where you are dwelling, northward and southward, and westward and eastward* (Jubilees 13:19), *For all the land which you see I shall give to you and to your seed for ever, and I shall make your seed as the sand of the sea* (Jubilees 13:20) — the canon''s *Lift up now thine eyes... For all the land which thou seest, to thee will I give it, and to thy seed for ever. And I will make thy seed as the dust of the earth* (Genesis 13:14-16). The promise rides on a single Seed and on faith counted righteous: *Now to Abraham and his seed were the promises made... but as of one, And to thy seed, which is Messiah (Christ)* (Galatians 3:16), and *Abraham believed Elohim (God), and it was counted unto him for righteousness* (Romans 4:3). Election and faith, not later law-as-curse, secure the inheritance — *And if ye be Messiah''s (Christ''s), then are ye Abraham''s seed, and heirs according to the promise* (Galatians 3:29).',
+       sv.verse_id, ev.verse_id, 'extras', 53306
+  FROM _session251_ju13_lookup sv, _session251_ju13_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=17
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=13 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-13-kings-war-lot-captive',
+       E'The four kings, the war, and Lot taken captive',
+       E'Jubilees compresses the war of the kings into a single sweep: *And in this year came Chedorlaomer, king of Elam, and Amraphel, king of Shinar, and Arioch, king of Sêllâsar and Têrgâl, king of nations, and slew the king of Gomorrah, and the king of Sodom fled, and many fell through wounds in the vale of Siddim, by the Salt Sea* (Jubilees 13:20) — the same alliance Genesis names: *And it came to pass in the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations* (Genesis 14:1). Lot is swept up with Sodom — *And they took captive Sodom and Adam and Zeboim, and they took captive Lot also, the son of Abram''s brother, and all his possessions* (Jubilees 13:23), as in *And they took Lot, Abram''s brother''s son, who dwelt in Sodom, and his goods, and departed* (Genesis 14:12). One escapee brings word and Abram arms his house — *And one who had escaped came and told Abram that his brother''s son had been taken captive and (Abram) armed his household servants* (Jubilees 13:24) — the canon''s *And there came one that had escaped, and told Abram the Hebrew... And when Abram heard that his brother was taken captive, he armed his trained servants* (Genesis 14:13-14). The narrative is one with Genesis; Jubilees only frames it by jubilee and week.',
+       sv.verse_id, ev.verse_id, 'extras', 53309
+  FROM _session251_ju13_lookup sv, _session251_ju13_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=20
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=13 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-13-tithe-ordinance-for-ever',
+       E'The tithe ordained for ever — and Abram''s refusal of Sodom''s spoil',
+       E'Out of the rescue Jubilees grounds the tithe in the patriarch and the heavenly tablets: *a tenth of the first-fruits to Yahuah (God), and Yahuah (God) ordained it as an ordinance for ever that they should give it to the priests who served before Him, that they should possess it for ever* (Jubilees 13:25), *And to this law there is no limit of days; for He has ordained it for the generations for ever that they should give to Yahuah (God) the tenth of everything, of the seed and of the wine and of the oil and of the cattle and of the sheep* (Jubilees 13:26). This is the Genesis tithe to the priest-king — *And he gave him tithes of all* (Genesis 14:20) — read as an eternal ordinance, not a later levy. The Torah keeps it the same: *And all the tithe of the land, whether of the seed of the land, or of the fruit of the tree, is the LORD''S: it is holy unto Yahuah (LORD)* (Leviticus 27:30), and Numbers gives it to the priesthood for ever: *I have given the children of Levi all the tenth in Yashar''el (Israel) for an inheritance* (Numbers 18:21). The book of Hebrews reads Abram''s tithe as the older, greater priesthood foreshadowing Messiah: *To whom also Abraham gave a tenth part of all... made like unto the Son of Elohim (God); abideth a priest continually* (Hebrews 7:2-3). And Abram takes nothing of Sodom''s spoil — *"I lift up my hands to the El Elyon (Most High) Elohim (God), that from a thread to a shoe-latchet I shall not take aught that is your"* (Jubilees 13:29) — the canon''s *I will not take from a thread even to a shoelatchet... lest thou shouldest say, I have made Abram rich* (Genesis 14:23). The tithe and the patriarch''s holiness are ancient and engraved; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53312
+  FROM _session251_ju13_lookup sv, _session251_ju13_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=26
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=13 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-13-bethel-altar-call-name
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:6 — *And Abram passed through the land unto the place of Sichem, unto the plain of Moreh. And the Canaanite was then in the land.* Jubilees 13:1 retells the same journey to Shechem by the lofty oak.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-bethel-altar-call-name'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him.* The land-and-seed promise and the altar of Jubilees 13:2,4 are Genesis verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-bethel-altar-call-name'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 12:8 — *And he removed from thence unto a mountain on the east of Beth-el, and pitched his tent, having Beth-el on the west, and Hai on the east: and there he builded an altar unto Yahuah (LORD), and called upon the name of Yahuah (LORD).* Jubilees 13:7 has Abram between Bethel and Ai building the altar and calling on the Name.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-bethel-altar-call-name'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-13-egypt-sarai-pharaoh-plagued
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:10 — *And there was a famine in the land: and Abram went down into Egypt to sojourn there; for the famine was grievous in the land.* Jubilees 13:11 sends Abram down to Egypt by the same famine.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-egypt-sarai-pharaoh-plagued'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife.* Jubilees 13:12 carries the plaguing of Pharaoh''s house verbatim — Yahuah guards the seed-bearing wife.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-egypt-sarai-pharaoh-plagued'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 12:19 — *Why saidst thou, She is my sister? so I might have taken her to me to wife: now therefore behold thy wife, take her, and go thy way.* The restoration of Sarai and Abram''s sending out of Egypt in Jubilees 13:15 answers this Genesis scene.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-egypt-sarai-pharaoh-plagued'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 13:4 — *Unto the place of the altar, which he had made there at the first: and there Abram called on the name of Yahuah (LORD).* Jubilees 13:15 returns Abram to that same altar between Ai and Bethel where he again blesses and calls on the Name.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-egypt-sarai-pharaoh-plagued'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-13-lot-parts-land-seed-promise-renewed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 13:11 — *Then Lot chose him all the plain of Jordan; and Lot journeyed east: and they separated themselves the one from the other.* Jubilees 13:17 has Lot part and settle in Sodom.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-lot-parts-land-seed-promise-renewed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 13:14 — *And Yahuah (LORD) said unto Abram, after that Lot was separated from him, Lift up now thine eyes, and look from the place where thou art northward, and southward, and eastward, and westward.* Jubilees 13:19 renews the promise in these exact words once Lot has parted.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-lot-parts-land-seed-promise-renewed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 13:15 — *For all the land which thou seest, to thee will I give it, and to thy seed for ever.* The land-to-the-seed-for-ever of Jubilees 13:20 is the Genesis grant verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-lot-parts-land-seed-promise-renewed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Galatians 3:16 — *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ).* The seed-promise renewed in Jubilees 13:20 rides on the single Seed.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-lot-parts-land-seed-promise-renewed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Romans 4:3 — *For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness.* Abram''s faith, not law-as-curse, secures the inheritance promised in Jubilees 13:20.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-lot-parts-land-seed-promise-renewed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-13-kings-war-lot-captive
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 14:1 — *And it came to pass in the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations.* Jubilees 13:20 names the same coalition of kings.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-kings-war-lot-captive'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 14:12 — *And they took Lot, Abram''s brother''s son, who dwelt in Sodom, and his goods, and departed.* Jubilees 13:23 has Lot taken captive with Sodom verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-kings-war-lot-captive'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 14:13 — *And there came one that had escaped, and told Abram the Hebrew; for he dwelt in the plain of Mamre the Amorite, brother of Eshcol, and brother of Aner: and these were confederate with Abram.* The escapee bringing word in Jubilees 13:24 is the Genesis account.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-kings-war-lot-captive'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* Abram arming his household in Jubilees 13:24 and pursuing to Dan matches Genesis exactly.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-kings-war-lot-captive'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-13-tithe-ordinance-for-ever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 14:20 — *And blessed be the El Elyon (most high God), which hath delivered thine enemies into thy hand. And he gave him tithes of all.* Abram''s tenth in Jubilees 13:26 is the Genesis tithe to the priest of the Most High.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-tithe-ordinance-for-ever'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 27:30 — *And all the tithe of the land, whether of the seed of the land, or of the fruit of the tree, is the LORD''S: it is holy unto Yahuah (LORD).* The Torah keeps the tenth of seed and fruit holy, the very ordinance Jubilees 13:26 calls for ever.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-tithe-ordinance-for-ever'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=27 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 18:21 — *And, behold, I have given the children of Levi all the tenth in Yashar''el (Israel) for an inheritance, for their service which they serve, even the service of the tabernacle of the congregation.* The priestly tenth for ever in Jubilees 13:26 is given to Levi in the Torah.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-tithe-ordinance-for-ever'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 7:2 — *To whom also Abraham gave a tenth part of all; first being by interpretation King of righteousness, and after that also King of Salem, which is, King of peace.* Hebrews reads Abram''s tithe of Jubilees 13:26 as the priesthood that foreshadows Messiah.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-tithe-ordinance-for-ever'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Genesis 14:23 — *That I will not take from a thread even to a shoelatchet, and that I will not take any thing that is thine, lest thou shouldest say, I have made Abram rich.* Abram''s refusal of Sodom''s spoil in Jubilees 13:29 is the Genesis oath verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju13_lookup sv, _session251_ju13_lookup tv
+ WHERE t.slug='jubilees-13-tithe-ordinance-for-ever'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=13 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_14.sql (session251 jubilees 14) -----
+-- Source anchor: jubilees/jubilees ch14. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju14 (view _session251_ju14_lookup). Sort band base 53325, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-14-fear-not-i-am-thy-shield
+  ('jubilees', 'jubilees', 14, 1, 'canon', 'genesis', 15, 1, 'free', E'Genesis 15:1 — *After these things the word of Yahuah (LORD) came unto Abram in a vision, saying, Fear not, Abram: I am thy shield, and thy exceeding great reward.* The same word, the same vision, the same "Fear not" — Jubilees 14:1 retells Genesis 15 verbatim.'),
+  ('jubilees', 'jubilees', 14, 2, 'canon', 'genesis', 15, 2, 'free', E'Genesis 15:2 — *And Abram said, Yahuah (Lord) GOD, what wilt thou give me, seeing I go childless, and the steward of my house is this Eliezer of Damascus?* Abram''s childless complaint and the steward Eliezer stand in both Jubilees 14:2 and its Genesis source.'),
+  ('jubilees', 'jubilees', 14, 3, 'canon', 'genesis', 15, 4, 'free', E'Genesis 15:4 — *And, behold, the word of Yahuah (LORD) came unto him, saying, This shall not be thine heir; but he that shall come forth out of thine own bowels shall be thine heir.* The heir of the bowels, not of the house — Jubilees 14:3 carries the Genesis promise of a true seed.'),
+  -- thread: jubilees-14-count-the-stars-believed-righteousness
+  ('jubilees', 'jubilees', 14, 5, 'canon', 'genesis', 15, 5, 'free', E'Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.* The star-numbering sign of the seed is identical in Jubilees 14:4-5 and Genesis 15.'),
+  ('jubilees', 'jubilees', 14, 6, 'canon', 'genesis', 15, 6, 'free', E'Genesis 15:6 — *And he believed in Yahuah (LORD); and he counted it to him for righteousness.* Jubilees 14:6 preserves the founding word of faith-counted-righteousness exactly as Genesis records it.'),
+  ('jubilees', 'jubilees', 14, 6, 'canon', 'romans', 4, 3, 'free', E'Romans 4:3 — *For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness.* Sha''ul quotes the very verse Jubilees 14:6 retells — righteousness by faith ain''t new.'),
+  ('jubilees', 'jubilees', 14, 6, 'canon', 'galatians', 3, 6, 'free', E'Galatians 3:6 — *Even as Abraham believed Elohim (God), and it was accounted to him for righteousness.* The faith reckoned to Abram in Jubilees 14:6 is the ground on which Galatians names the children of faith.'),
+  ('jubilees', 'jubilees', 14, 6, 'canon', 'galatians', 3, 7, 'free', E'Galatians 3:7 — *Know ye therefore that they which are of faith, the same are the children of Abraham.* Those of Abram''s faith (Jubilees 14:6) are reckoned his children — the seed kept by faith, not flesh alone.'),
+  -- thread: jubilees-14-out-of-ur-land-promise
+  ('jubilees', 'jubilees', 14, 6, 'canon', 'genesis', 15, 7, 'free', E'Genesis 15:7 — *And he said unto him, I am Yahuah (LORD) that brought thee out of Ur of the Chaldees, to give thee this land to inherit it.* The self-naming by the deliverance out of Ur (Jubilees 14:6) is Abraham''s election out of the idolatrous nations.'),
+  ('jubilees', 'jubilees', 14, 8, 'canon', 'genesis', 15, 8, 'free', E'Genesis 15:8 — *And he said, Yahuah (Lord) GOD, whereby shall I know that I shall inherit it?* Abram''s request for surety of the inheritance stands word for word in Jubilees 14:8.'),
+  ('jubilees', 'jubilees', 14, 18, 'canon', 'genesis', 15, 18, 'free', E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* The land covenant from Egypt to the Euphrates is identical in Jubilees 14:18 and Genesis.'),
+  ('jubilees', 'jubilees', 14, 6, 'canon', 'genesis', 17, 7, 'free', E'Genesis 17:7 — *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim (God) unto thee, and to thy seed after thee.* The "to you and to your seed after you" of Jubilees 14:6 is the everlasting seed-covenant Genesis 17 seals with circumcision.'),
+  -- thread: jubilees-14-pieces-furnace-lamp-four-hundred-years
+  ('jubilees', 'jubilees', 14, 11, 'canon', 'genesis', 15, 10, 'free', E'Genesis 15:10 — *And he took unto him all these, and divided them in the midst, and laid each piece one against another: but the birds divided he not.* The dividing of the pieces with the birds undivided is the same rite in Jubilees 14:11.'),
+  ('jubilees', 'jubilees', 14, 13, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The four-hundred-year bondage foretold in Jubilees 14:13 is Genesis word for word.'),
+  ('jubilees', 'jubilees', 14, 16, 'canon', 'genesis', 15, 17, 'free', E'Genesis 15:17 — *And it came to pass, that, when the sun went down, and it was dark, behold a smoking furnace, and a burning lamp that passed between those pieces.* The smoking furnace and flame passing between the pieces (Jubilees 14:16) is the sign of Yahuah cutting the covenant alone.'),
+  ('jubilees', 'jubilees', 14, 13, 'canon', 'exodus', 12, 41, 'free', E'Exodus 12:41 — *And it came to pass at the end of the four hundred and thirty years, even the selfsame day it came to pass, that all the hosts of Yahuah (LORD) went out from the land of Egypt.* The affliction-word of Jubilees 14:13 came to pass to the very day — the tablets foretell history before it unfolds.'),
+  ('jubilees', 'jubilees', 14, 13, 'enoch', '1-enoch', 81, 1, 'extras', E'1 Enoch 81:1 — *And he said unto me: ''Observe, Enoch, these heavenly tablets, And read what is written thereon, And understand every single fact.''* The four-hundred-year word of Jubilees 14:13 is read off the same heavenly tablets Enoch is shown — the history pre-written.'),
+  -- thread: jubilees-14-covenant-with-noah-feast-renewed-for-ever
+  ('jubilees', 'jubilees', 14, 20, 'jubilees', 'jubilees', 6, 17, 'extras', E'Jubilees 6:17 — *For this reason it is ordained and written on the heavenly tables, that they should celebrate the feast of weeks in this month once a year, to renew the covenant every year. And this whole festival was celebrated in heaven from the day of creation till the days of Noah-twenty-six jubilees and five weeks of years: and Noah and his sons observed it for seven jubilees and one week of years, till the day of Noah''s death, and from the day of Noah''s death his sons did away with (it) until the days of Abraham, and they ate blood.* The covenant Abram renews "as we covenanted with Noah" (Jubilees 14:20) is the Feast of Weeks, engraved on the heavenly tablets and kept since creation.'),
+  ('jubilees', 'jubilees', 14, 20, 'jubilees', 'jubilees', 6, 19, 'extras', E'Jubilees 6:19 — *But Abraham observed it, and Isaac and Jacob and his children observed it up to your days, and in your days the children of Yashar''el (Israel) forgot it until you celebrated it anew on this mountain.* Jubilees 14:20 shows Abraham renewing the very feast 6:19 says he observed — the patriarchs kept the appointed times, it ain''t new.'),
+  ('jubilees', 'jubilees', 14, 20, 'canon', 'leviticus', 23, 15, 'free', E'Leviticus 23:15 — *And ye shall count unto you from the morrow after the sabbath, from the day that ye brought the sheaf of the wave offering; seven sabbaths shall be complete:* The festival ordinance Abram renews for ever (Jubilees 14:20) is the counted Feast of Weeks fixed in the Torah.'),
+  ('jubilees', 'jubilees', 14, 18, 'canon', 'genesis', 15, 18, 'free', E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* Jubilees 14:18-20 anchors the same "in that day" land-covenant of Genesis 15 in the recurring oath-feast.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-14-fear-not-i-am-thy-shield',
+       E'Fear not, Abram — the word in the vision, I am thy shield',
+       E'Jubilees opens the covenant of the pieces exactly where Genesis does: *"After these things, in the fourth year of this week, on the new moon of the third month, the word of Yahuah (God) came to Abram in a dream, saying: ''Fear not, Abram; I am your defender, and your reward will be exceeding great.''"* (Jubilees 14:1). It ain''t new — it is the *word that came unto Abram in a vision*: *"After these things the word of Yahuah (LORD) came unto Abram in a vision, saying, Fear not, Abram: I am thy shield, and thy exceeding great reward."* (Genesis 15:1). Abram answers out of his childlessness — *"Yahuah (God), Yahuah (God), what will you give me, seeing I go hence childless..."* (Jubilees 14:2) — the same complaint Genesis records: *"And Abram said, Yahuah (Lord) GOD, what wilt thou give me, seeing I go childless, and the steward of my house is this Eliezer of Damascus?"* (Genesis 15:2). And the heir is named not from the house but from the bowels: *"This (man) will not be your heir, but one that will come out of your own bowels; he will be your heir."* (Jubilees 14:3) answers to *"This shall not be thine heir; but he that shall come forth out of thine own bowels shall be thine heir."* (Genesis 15:4). The chosen line — Abram pulled out of Ur of the Chaldees, out of the idolatrous nations — is given the promise of a seed.',
+       sv.verse_id, ev.verse_id, 'extras', 53325
+  FROM _session251_ju14_lookup sv, _session251_ju14_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=14 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-14-count-the-stars-believed-righteousness',
+       E'Count the stars — he believed, and it was counted for righteousness',
+       E'Here is the hinge of the whole framework. Yahuah brings Abram out and bids him number the stars: *"And He brought him forth abroad, and said to him: ''Look toward heaven and number the stars, if you are able to number them.''"* (Jubilees 14:4), and *"And he looked toward heaven, and beheld the stars. And He said to him: ''So shall your seed be.''"* (Jubilees 14:5) — word for word the Genesis sign: *"And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be."* (Genesis 15:5). Then the verse the apostles built upon: *"And he believed in Yahuah (God), and it was counted to him for righteousness."* (Jubilees 14:6) — *"And he believed in Yahuah (LORD); and he counted it to him for righteousness."* (Genesis 15:6). Faith counted for righteousness ain''t new and it ain''t Paul''s invention; Sha''ul simply read it off the page: *"For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness."* (Romans 4:3). And those who walk in that faith are reckoned Abraham''s children: *"Even as Abraham believed Elohim (God), and it was accounted to him for righteousness. Know ye therefore that they which are of faith, the same are the children of Abraham."* (Galatians 3:6-7). The Torah does not become a curse here — election precedes the law, faith precedes the sign, and the seed promised is the seed kept.',
+       sv.verse_id, ev.verse_id, 'extras', 53328
+  FROM _session251_ju14_lookup sv, _session251_ju14_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=4
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=14 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-14-out-of-ur-land-promise',
+       E'Out of Ur of the Chaldees — election out of idolatry, the land covenant',
+       E'The God of the covenant identifies Himself by the election: *"...I am Yahuah (God) that brought you out of Ur of the Chaldees, to give you the land of the Canaanites to possess it for ever; and I shall be Elohim (God) to you and to your seed after you."* (Jubilees 14:6) — drawn out of the idolatrous Chaldean line, just as Genesis says: *"And he said unto him, I am Yahuah (LORD) that brought thee out of Ur of the Chaldees, to give thee this land to inherit it."* (Genesis 15:7). Abram asks for surety — *"Yahuah (God), Yahuah (God), whereby shall I know that I shall inherit (it)?"* (Jubilees 14:8) / *"And he said, Yahuah (Lord) GOD, whereby shall I know that I shall inherit it?"* (Genesis 15:8). And the land is bounded river to river: *"...To your seed will I give this land, from the river of Egypt to the great river, the river Euphrates..."* (Jubilees 14:18) — *"In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:"* (Genesis 15:18). This "to you and to your seed after you" is the same everlasting seed-covenant Genesis 17 seals: *"And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim (God) unto thee, and to thy seed after thee."* (Genesis 17:7). Election precedes confession; Yahuah chooses the line and keeps it.',
+       sv.verse_id, ev.verse_id, 'extras', 53331
+  FROM _session251_ju14_lookup sv, _session251_ju14_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=14 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-14-pieces-furnace-lamp-four-hundred-years',
+       E'The pieces, the deep sleep, the furnace and the lamp, the four hundred years',
+       E'The cutting of the covenant is retold piece for piece. Abram divides the beasts and drives off the birds: *"And he built there an altar, and sacrificed all these; and he poured their blood upon the altar, and divided them in the midst, and laid them over against each other; but the birds divided he not. And birds came down upon the pieces, and Abram drove them away..."* (Jubilees 14:11) — *"And he took unto him all these, and divided them in the midst, and laid each piece one against another: but the birds divided he not."* (Genesis 15:10). Then the dread sleep and the four-hundred-year word: *"...an horror of great darkness fell upon him, and it was said to Abram: ''Know of a surety that your seed shall be a stranger in a land (that is) not theirs, and they will bring them into bondage, and afflict them four hundred years."* (Jubilees 14:13) — *"And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;"* (Genesis 15:13). And the smoking furnace and flame pass between the pieces: *"...and there was a flame, and behold! a furnace was smoking, and a flame of fire passed between the pieces."* (Jubilees 14:16) — *"...behold a smoking furnace, and a burning lamp that passed between those pieces."* (Genesis 15:17). That bondage-word found its day exactly: *"And it came to pass at the end of the four hundred and thirty years, even the selfsame day it came to pass, that all the hosts of Yahuah (LORD) went out from the land of Egypt."* (Exodus 12:41) — the heavenly tablets foretold the affliction and the deliverance before either came to pass.',
+       sv.verse_id, ev.verse_id, 'extras', 53334
+  FROM _session251_ju14_lookup sv, _session251_ju14_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=11
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=14 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-14-covenant-with-noah-feast-renewed-for-ever',
+       E'As we covenanted with Noah — the feast renewed for ever, it ain''t new',
+       E'Here Jubilees does what only Jubilees does: it grounds the covenant of the pieces in the patriarchal FEAST. *"And on that day we made a covenant with Abram, according as we had covenanted with Noah in this month; and Abram renewed the festival and ordinance for himself for ever."* (Jubilees 14:20). The covenant comes "on the new moon of the third month" (14:1) — the third month, the month of the oath-feast, the Feast of Weeks. Jubilees elsewhere makes this explicit: the covenant-oath feast was kept by Noah and renewed by Abraham and engraved on the heavenly tablets — *"For this reason it is ordained and written on the heavenly tables, that they should celebrate the feast of weeks in this month once a year, to renew the covenant every year... and Noah and his sons observed it..."* (Jubilees 6:17), and *"But Abraham observed it, and Isaac and Jacob and his children observed it up to your days..."* (Jubilees 6:19). This is Yoshi''s Appointed Times: the feast Abram "renewed for himself for ever" is the Shavuot of Torah, the covenant-feast counted from the wave-sheaf — *"And ye shall count unto you from the morrow after the sabbath, from the day that ye brought the sheaf of the wave offering; seven sabbaths shall be complete:"* (Leviticus 23:15). It ain''t a later Jewish invention and it ain''t abolished — Abram kept it, the heavenly tablets carry it, and it stands for ever. The seed-promise here begins to bend toward Ishmael and Hagar (14:22-24), but the festival ordinance is fixed.',
+       sv.verse_id, ev.verse_id, 'extras', 53337
+  FROM _session251_ju14_lookup sv, _session251_ju14_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=18
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=14 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-14-fear-not-i-am-thy-shield
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 15:1 — *After these things the word of Yahuah (LORD) came unto Abram in a vision, saying, Fear not, Abram: I am thy shield, and thy exceeding great reward.* The same word, the same vision, the same "Fear not" — Jubilees 14:1 retells Genesis 15 verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-fear-not-i-am-thy-shield'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:2 — *And Abram said, Yahuah (Lord) GOD, what wilt thou give me, seeing I go childless, and the steward of my house is this Eliezer of Damascus?* Abram''s childless complaint and the steward Eliezer stand in both Jubilees 14:2 and its Genesis source.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-fear-not-i-am-thy-shield'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:4 — *And, behold, the word of Yahuah (LORD) came unto him, saying, This shall not be thine heir; but he that shall come forth out of thine own bowels shall be thine heir.* The heir of the bowels, not of the house — Jubilees 14:3 carries the Genesis promise of a true seed.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-fear-not-i-am-thy-shield'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-14-count-the-stars-believed-righteousness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.* The star-numbering sign of the seed is identical in Jubilees 14:4-5 and Genesis 15.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-count-the-stars-believed-righteousness'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:6 — *And he believed in Yahuah (LORD); and he counted it to him for righteousness.* Jubilees 14:6 preserves the founding word of faith-counted-righteousness exactly as Genesis records it.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-count-the-stars-believed-righteousness'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 4:3 — *For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness.* Sha''ul quotes the very verse Jubilees 14:6 retells — righteousness by faith ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-count-the-stars-believed-righteousness'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Galatians 3:6 — *Even as Abraham believed Elohim (God), and it was accounted to him for righteousness.* The faith reckoned to Abram in Jubilees 14:6 is the ground on which Galatians names the children of faith.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-count-the-stars-believed-righteousness'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Galatians 3:7 — *Know ye therefore that they which are of faith, the same are the children of Abraham.* Those of Abram''s faith (Jubilees 14:6) are reckoned his children — the seed kept by faith, not flesh alone.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-count-the-stars-believed-righteousness'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-14-out-of-ur-land-promise
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 15:7 — *And he said unto him, I am Yahuah (LORD) that brought thee out of Ur of the Chaldees, to give thee this land to inherit it.* The self-naming by the deliverance out of Ur (Jubilees 14:6) is Abraham''s election out of the idolatrous nations.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-out-of-ur-land-promise'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:8 — *And he said, Yahuah (Lord) GOD, whereby shall I know that I shall inherit it?* Abram''s request for surety of the inheritance stands word for word in Jubilees 14:8.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-out-of-ur-land-promise'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* The land covenant from Egypt to the Euphrates is identical in Jubilees 14:18 and Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-out-of-ur-land-promise'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 17:7 — *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim (God) unto thee, and to thy seed after thee.* The "to you and to your seed after you" of Jubilees 14:6 is the everlasting seed-covenant Genesis 17 seals with circumcision.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-out-of-ur-land-promise'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-14-pieces-furnace-lamp-four-hundred-years
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 15:10 — *And he took unto him all these, and divided them in the midst, and laid each piece one against another: but the birds divided he not.* The dividing of the pieces with the birds undivided is the same rite in Jubilees 14:11.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-pieces-furnace-lamp-four-hundred-years'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The four-hundred-year bondage foretold in Jubilees 14:13 is Genesis word for word.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-pieces-furnace-lamp-four-hundred-years'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:17 — *And it came to pass, that, when the sun went down, and it was dark, behold a smoking furnace, and a burning lamp that passed between those pieces.* The smoking furnace and flame passing between the pieces (Jubilees 14:16) is the sign of Yahuah cutting the covenant alone.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-pieces-furnace-lamp-four-hundred-years'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 12:41 — *And it came to pass at the end of the four hundred and thirty years, even the selfsame day it came to pass, that all the hosts of Yahuah (LORD) went out from the land of Egypt.* The affliction-word of Jubilees 14:13 came to pass to the very day — the tablets foretell history before it unfolds.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-pieces-furnace-lamp-four-hundred-years'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=41
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 81:1 — *And he said unto me: ''Observe, Enoch, these heavenly tablets, And read what is written thereon, And understand every single fact.''* The four-hundred-year word of Jubilees 14:13 is read off the same heavenly tablets Enoch is shown — the history pre-written.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-pieces-furnace-lamp-four-hundred-years'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=13
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=81 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-14-covenant-with-noah-feast-renewed-for-ever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 6:17 — *For this reason it is ordained and written on the heavenly tables, that they should celebrate the feast of weeks in this month once a year, to renew the covenant every year. And this whole festival was celebrated in heaven from the day of creation till the days of Noah-twenty-six jubilees and five weeks of years: and Noah and his sons observed it for seven jubilees and one week of years, till the day of Noah''s death, and from the day of Noah''s death his sons did away with (it) until the days of Abraham, and they ate blood.* The covenant Abram renews "as we covenanted with Noah" (Jubilees 14:20) is the Feast of Weeks, engraved on the heavenly tablets and kept since creation.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-covenant-with-noah-feast-renewed-for-ever'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=20
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 6:19 — *But Abraham observed it, and Isaac and Jacob and his children observed it up to your days, and in your days the children of Yashar''el (Israel) forgot it until you celebrated it anew on this mountain.* Jubilees 14:20 shows Abraham renewing the very feast 6:19 says he observed — the patriarchs kept the appointed times, it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-covenant-with-noah-feast-renewed-for-ever'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=20
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 23:15 — *And ye shall count unto you from the morrow after the sabbath, from the day that ye brought the sheaf of the wave offering; seven sabbaths shall be complete:* The festival ordinance Abram renews for ever (Jubilees 14:20) is the counted Feast of Weeks fixed in the Torah.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-covenant-with-noah-feast-renewed-for-ever'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates:* Jubilees 14:18-20 anchors the same "in that day" land-covenant of Genesis 15 in the recurring oath-feast.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju14_lookup sv, _session251_ju14_lookup tv
+ WHERE t.slug='jubilees-14-covenant-with-noah-feast-renewed-for-ever'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=14 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_15.sql (session251 jubilees 15) -----
+-- Source anchor: jubilees/jubilees ch15. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju15 (view _session251_ju15_lookup). Sort band base 53350, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-15-circumcision-eternal-sign
+  ('jubilees', 'jubilees', 15, 11, 'canon', 'genesis', 17, 11, 'free', E'Genesis 17:11 — *And ye shall circumcise the flesh of your foreskin; and it shall be a token of the covenant betwixt me and you.* Jubilees 15:11 carries the very words of the Genesis covenant — the foreskin circumcised as the token between Yahuah and Abraham''s seed.'),
+  ('jubilees', 'jubilees', 15, 13, 'canon', 'genesis', 17, 13, 'free', E'Genesis 17:13 — *He that is born in thy house, and he that is bought with thy money, must needs be circumcised: and my covenant shall be in your flesh for an everlasting covenant.* Jubilees 15:13 echoes it exactly: the covenant in the flesh "for an eternal ordinance," and the uncircumcised soul cut off.'),
+  ('jubilees', 'jubilees', 15, 12, 'canon', 'leviticus', 12, 3, 'free', E'Leviticus 12:3 — *And in the eighth day the flesh of his foreskin shall be circumcised.* Jubilees 15:12 fixes the same eighth-day timing the Torah commands — the sign given on the appointed day, never omitted.'),
+  ('jubilees', 'jubilees', 15, 11, 'canon', 'acts', 7, 8, 'free', E'Acts 7:8 — *And he gave him the covenant of circumcision: and so Abraham begat Isaac, and circumcised him the eighth day; and Isaac begat Jacob; and Jacob begat the twelve patriarchs.* Stephen calls it "the covenant of circumcision" — the same eternal token Jubilees 15:11 places in Abraham''s keeping.'),
+  ('jubilees', 'jubilees', 15, 13, 'canon', 'romans', 4, 11, 'free', E'Romans 4:11 — *And he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised: that he might be the father of all them that believe, though they be not circumcised; that righteousness might be imputed unto them also.* Paul reads the sign of Jubilees 15:13 as a seal upon a faith already counted — the token of an eternal covenant, not its undoing.'),
+  -- thread: jubilees-15-abram-to-abraham-covenant
+  ('jubilees', 'jubilees', 15, 3, 'canon', 'genesis', 17, 1, 'free', E'Genesis 17:1 — *And when Abram was ninety years old and nine, Yahuah (LORD) appeared to Abram, and said unto him, I am the El Shaddai (Almighty God); walk before me, and be thou perfect.* Jubilees 15:3 retells the same self-disclosure of El Shaddai and the call to be perfect.'),
+  ('jubilees', 'jubilees', 15, 5, 'canon', 'genesis', 17, 5, 'free', E'Genesis 17:5 — *Neither shall thy name any more be called Abram, but thy name shall be Abraham; for a father of many nations have I made thee.* Jubilees 15:5 carries the renaming word for word — Abram becomes Abraham, father of many nations forever.'),
+  ('jubilees', 'jubilees', 15, 5, 'canon', 'genesis', 17, 7, 'free', E'Genesis 17:7 — *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim (God) unto thee, and to thy seed after thee.* Jubilees 15:5 names the same everlasting covenant to Abraham and his seed throughout their generations.'),
+  ('jubilees', 'jubilees', 15, 10, 'canon', 'genesis', 17, 8, 'free', E'Genesis 17:8 — *And I will give unto thee, and to thy seed after thee, the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession; and I will be their Elohim (God).* Jubilees 15:10 grants the same land of Canaan to the seed for an everlasting possession.'),
+  ('jubilees', 'jubilees', 15, 5, 'canon', 'romans', 4, 17, 'free', E'Romans 4:17 — *(As it is written, I have made thee a father of many nations,) before him whom he believed, even Elohim (God), who quickeneth the dead, and calleth those things which be not as though they were.* Paul takes the "father of many nations" of Jubilees 15:5 as the seal of Abraham''s faith in the God who raises the dead.'),
+  -- thread: jubilees-15-isaac-promised-everlasting
+  ('jubilees', 'jubilees', 15, 15, 'canon', 'genesis', 17, 15, 'free', E'Genesis 17:15 — *And Elohim (God) said unto Abraham, As for Sarai thy wife, thou shalt not call her name Sarai, but Sarah shall her name be.* Jubilees 15:15 retells the renaming of Sarai to Sarah, the mother of the promised seed.'),
+  ('jubilees', 'jubilees', 15, 17, 'canon', 'genesis', 17, 17, 'free', E'Genesis 17:17 — *Then Abraham fell upon his face, and laughed, and said in his heart, Shall a child be born unto him that is an hundred years old? and shall Sarah, that is ninety years old, bear?* Jubilees 15:17 carries the same wonder of a hundred-year-old father and a ninety-year-old mother.'),
+  ('jubilees', 'jubilees', 15, 18, 'canon', 'genesis', 17, 19, 'free', E'Genesis 17:19 — *And Elohim (God) said, Sarah thy wife shall bear thee a son indeed; and thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant, and with his seed after him.* Jubilees 15:18 names Isaac and establishes the everlasting covenant in him exactly as Genesis does.'),
+  ('jubilees', 'jubilees', 15, 17, 'canon', 'romans', 4, 19, 'free', E'Romans 4:19 — *And being not weak in faith, he considered not his own body now dead, when he was about an hundred years old, neither yet the deadness of Sara''s womb.* Paul turns the impossibility Abraham marvels at in Jubilees 15:17 into the very ground of his faith.'),
+  -- thread: jubilees-15-abram-firstfruits-feast
+  ('jubilees', 'jubilees', 15, 1, 'canon', 'leviticus', 23, 10, 'free', E'Leviticus 23:10 — *Speak unto the children of Yashar''el (Israel), and say unto them, When ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest.* Abram''s feast of first-fruits in Jubilees 15:1 is the very harvest-offering the Torah later commands.'),
+  ('jubilees', 'jubilees', 15, 1, 'canon', 'leviticus', 23, 17, 'free', E'Leviticus 23:17 — *Ye shall bring out of your habitations two wave loaves of two tenth deals: they shall be of fine flour; they shall be baken with leaven; they are the firstfruits unto Yahuah (LORD).* The third-month grain first-fruits Abram keeps in Jubilees 15:1 is Shavuot, the feast of these wave-loaf firstfruits.'),
+  ('jubilees', 'jubilees', 15, 2, 'canon', 'leviticus', 23, 21, 'free', E'Leviticus 23:21 — *And ye shall proclaim on the selfsame day, that it may be an holy convocation unto you: ye shall do no servile work therein: it shall be a statute for ever in all your dwellings throughout your generations.* Abram''s new offerings of the first-fruits in Jubilees 15:2 keep the feast the Torah calls a statute for ever.'),
+  -- thread: jubilees-15-election-spirits-over-nations
+  ('jubilees', 'jubilees', 15, 30, 'canon', 'deuteronomy', 32, 8, 'free', E'Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* Jubilees 15:31''s apportioning of spirits over the many nations retells the Song of Moses'' division of the peoples.'),
+  ('jubilees', 'jubilees', 15, 32, 'canon', 'deuteronomy', 32, 9, 'free', E'Deuteronomy 32:9 — *For the LORD''s portion is his people; Jacob is the lot of his inheritance.* Jubilees 15:32 says Yahuah alone is Israel''s ruler, appointing no angel over them — Israel is His own portion as the Song declares.'),
+  ('jubilees', 'jubilees', 15, 31, 'enoch', '1-enoch', 99, 7, 'extras', E'1 Enoch 99:7 — *And they who worship stones, and grave images of gold and silver and wood [and stone] and clay, And those who worship impure spirits and demons, And all kinds of idols not according to knowledge, shall get no manner of help from them.* The spirits set over the nations to lead them astray in Jubilees 15:31 are the impure spirits and demons behind the idols in the live Enoch apparatus.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-15-circumcision-eternal-sign',
+       E'Circumcision — the token of an eternal covenant in the flesh',
+       E'Jubilees sets the covenant-sign in Abraham''s flesh as something that does not expire: *And Yahuah (God) said to Abraham: "And as for you, do you keep My Covenant, you and your seed after you, and circumcise you every male among you, and circumcise your foreskins, and it will be a token of an eternal covenant between Me and you. And the child on the eighth day you will circumcise, every male throughout your generations"* (Jubilees 15:11-12). This is Genesis 17 retold almost word for word — *And ye shall circumcise the flesh of your foreskin; and it shall be a token of the covenant betwixt me and you* (Genesis 17:11), *and my covenant shall be in your flesh for an everlasting covenant* (Genesis 17:13). The Torah fixes the eighth day as the very day it falls in the cycle of cleanness — *And in the eighth day the flesh of his foreskin shall be circumcised* (Leviticus 12:3). Stephen names it the standing covenant Abraham received and kept — *And he gave him the covenant of circumcision: and so Abraham begat Isaac, and circumcised him the eighth day* (Acts 7:8). And Paul, far from voiding it, makes the sign read what was already true — *And he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised* (Romans 4:11). It ain''t new: one everlasting sign, the same in Genesis, in the law, in the apostles.',
+       sv.verse_id, ev.verse_id, 'extras', 53350
+  FROM _session251_ju15_lookup sv, _session251_ju15_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=11
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=15 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-15-abram-to-abraham-covenant',
+       E'Abram made Abraham — father of many nations, the seed forever',
+       E'El Shaddai appears and renames the patriarch: *And Abram fell on his face, and Elohim (God) talked with him, and said: "Behold My ordinance is with you, And you will be the father of many nations. Neither will your name any more be called Abram, But your name from henceforth, even for ever, shall be Abraham... And I shall establish My covenant between Me and you, and your seed after you, throughout their generations, for an eternal covenant"* (Jubilees 15:5). This is the Genesis theophany retold — *I am the El Shaddai (Almighty God); walk before me, and be thou perfect* (Genesis 17:1) and *Neither shall thy name any more be called Abram, but thy name shall be Abraham; for a father of many nations have I made thee* (Genesis 17:5). The land-grant of Jubilees 15:10 likewise repeats *the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession* (Genesis 17:8). Paul presses the same naming as the gospel of the dead made alive — *(As it is written, I have made thee a father of many nations,) before him whom he believed, even Elohim (God), who quickeneth the dead* (Romans 4:17). The election of this seed is ancient and engraved: it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53353
+  FROM _session251_ju15_lookup sv, _session251_ju15_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=15 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-15-isaac-promised-everlasting',
+       E'Sarah shall bear Isaac — the covenant established with the promised seed',
+       E'The covenant is narrowed to a son not yet born: *And Elohim (God) said to Abraham: "As for Sarai your wife, her name will no more be called Sarai, but Sarah will be her name. And I shall bless her, and give you a son by her... you will call his name Isaac, and I shall establish My covenant with him, an everlasting covenant, and for his seed after him"* (Jubilees 15:15-18). It is Genesis 17 retold — *Sarah thy wife shall bear thee a son indeed; and thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant, and with his seed after him* (Genesis 17:19). Abraham''s laughing wonder is the same — *Shall a child be born unto him that is an hundred years old? and shall Sarah, that is ninety years old, bear?* (Genesis 17:17). Paul reads that very impossibility as Abraham''s faith — *And being not weak in faith, he considered not his own body now dead, when he was about an hundred years old, neither yet the deadness of Sara''s womb* (Romans 4:19). The seed is kept through the promised son: it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53356
+  FROM _session251_ju15_lookup sv, _session251_ju15_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=15
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=15 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-15-abram-firstfruits-feast',
+       E'Abram keeps the feast of first-fruits — the moedim kept by the fathers',
+       E'Before the covenant is renewed, Jubilees dates it to an appointed time the patriarch is already keeping: *And in the fifth year of the fourth week of this jubilee, in the third month, in the middle of the month, Abram celebrated the feast of the first-fruits of the grain harvest. And he offered new offerings on the altar, the first-fruits of the produce, to Yahuah (God)* (Jubilees 15:1-2). The third-month grain first-fruits is Shavuot — the very feast the Torah ordains: *When ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest* (Leviticus 23:10), and the wheat-harvest loaves fifty days on — *Ye shall bring out of your habitations two wave loaves of two tenth deals: they shall be of fine flour; they shall be baken with leaven; they are the firstfruits unto Yahuah (LORD)* (Leviticus 23:17). This is Yoshi''s Appointed Times spine: the feast is not a later Jewish invention but kept by Abraham himself. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53359
+  FROM _session251_ju15_lookup sv, _session251_ju15_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=15 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-15-election-spirits-over-nations',
+       E'Israel chosen as Yahuah''s own — spirits over the nations, none over Israel',
+       E'Jubilees grounds Israel''s election against the backdrop of the seed-war over the nations: *He chose Yashar''el (Israel) to be His people. And He sanctified it, and gathered it from amongst all the children of men; for there are many nations and many peoples, and all are His, and over all has He placed spirits in authority to lead them astray from Him. But over Yashar''el (Israel) He did not appoint any angel or spirit, for He alone is their ruler* (Jubilees 15:30-32). This is the apportioning of Deuteronomy 32 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* — and *the LORD''s portion is his people; Jacob is the lot of his inheritance* (Deuteronomy 32:8-9). The spirits set over the nations to lead them astray are the demonic powers of the live Enoch apparatus, where the idol-worshippers serve impure spirits — *And those who worship impure spirits and demons, And all kinds of idols not according to knowledge, shall get no manner of help from them* (1 Enoch 99:7). Election precedes confession; the seed is kept under Yahuah''s own hand. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 53362
+  FROM _session251_ju15_lookup sv, _session251_ju15_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=30
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=15 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-15-circumcision-eternal-sign
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 17:11 — *And ye shall circumcise the flesh of your foreskin; and it shall be a token of the covenant betwixt me and you.* Jubilees 15:11 carries the very words of the Genesis covenant — the foreskin circumcised as the token between Yahuah and Abraham''s seed.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-circumcision-eternal-sign'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 17:13 — *He that is born in thy house, and he that is bought with thy money, must needs be circumcised: and my covenant shall be in your flesh for an everlasting covenant.* Jubilees 15:13 echoes it exactly: the covenant in the flesh "for an eternal ordinance," and the uncircumcised soul cut off.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-circumcision-eternal-sign'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 12:3 — *And in the eighth day the flesh of his foreskin shall be circumcised.* Jubilees 15:12 fixes the same eighth-day timing the Torah commands — the sign given on the appointed day, never omitted.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-circumcision-eternal-sign'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:8 — *And he gave him the covenant of circumcision: and so Abraham begat Isaac, and circumcised him the eighth day; and Isaac begat Jacob; and Jacob begat the twelve patriarchs.* Stephen calls it "the covenant of circumcision" — the same eternal token Jubilees 15:11 places in Abraham''s keeping.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-circumcision-eternal-sign'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Romans 4:11 — *And he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised: that he might be the father of all them that believe, though they be not circumcised; that righteousness might be imputed unto them also.* Paul reads the sign of Jubilees 15:13 as a seal upon a faith already counted — the token of an eternal covenant, not its undoing.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-circumcision-eternal-sign'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-15-abram-to-abraham-covenant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 17:1 — *And when Abram was ninety years old and nine, Yahuah (LORD) appeared to Abram, and said unto him, I am the El Shaddai (Almighty God); walk before me, and be thou perfect.* Jubilees 15:3 retells the same self-disclosure of El Shaddai and the call to be perfect.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-abram-to-abraham-covenant'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 17:5 — *Neither shall thy name any more be called Abram, but thy name shall be Abraham; for a father of many nations have I made thee.* Jubilees 15:5 carries the renaming word for word — Abram becomes Abraham, father of many nations forever.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-abram-to-abraham-covenant'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 17:7 — *And I will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a Elohim (God) unto thee, and to thy seed after thee.* Jubilees 15:5 names the same everlasting covenant to Abraham and his seed throughout their generations.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-abram-to-abraham-covenant'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 17:8 — *And I will give unto thee, and to thy seed after thee, the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession; and I will be their Elohim (God).* Jubilees 15:10 grants the same land of Canaan to the seed for an everlasting possession.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-abram-to-abraham-covenant'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Romans 4:17 — *(As it is written, I have made thee a father of many nations,) before him whom he believed, even Elohim (God), who quickeneth the dead, and calleth those things which be not as though they were.* Paul takes the "father of many nations" of Jubilees 15:5 as the seal of Abraham''s faith in the God who raises the dead.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-abram-to-abraham-covenant'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-15-isaac-promised-everlasting
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 17:15 — *And Elohim (God) said unto Abraham, As for Sarai thy wife, thou shalt not call her name Sarai, but Sarah shall her name be.* Jubilees 15:15 retells the renaming of Sarai to Sarah, the mother of the promised seed.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-isaac-promised-everlasting'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 17:17 — *Then Abraham fell upon his face, and laughed, and said in his heart, Shall a child be born unto him that is an hundred years old? and shall Sarah, that is ninety years old, bear?* Jubilees 15:17 carries the same wonder of a hundred-year-old father and a ninety-year-old mother.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-isaac-promised-everlasting'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 17:19 — *And Elohim (God) said, Sarah thy wife shall bear thee a son indeed; and thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant, and with his seed after him.* Jubilees 15:18 names Isaac and establishes the everlasting covenant in him exactly as Genesis does.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-isaac-promised-everlasting'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Romans 4:19 — *And being not weak in faith, he considered not his own body now dead, when he was about an hundred years old, neither yet the deadness of Sara''s womb.* Paul turns the impossibility Abraham marvels at in Jubilees 15:17 into the very ground of his faith.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-isaac-promised-everlasting'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-15-abram-firstfruits-feast
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 23:10 — *Speak unto the children of Yashar''el (Israel), and say unto them, When ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest.* Abram''s feast of first-fruits in Jubilees 15:1 is the very harvest-offering the Torah later commands.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-abram-firstfruits-feast'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 23:17 — *Ye shall bring out of your habitations two wave loaves of two tenth deals: they shall be of fine flour; they shall be baken with leaven; they are the firstfruits unto Yahuah (LORD).* The third-month grain first-fruits Abram keeps in Jubilees 15:1 is Shavuot, the feast of these wave-loaf firstfruits.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-abram-firstfruits-feast'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 23:21 — *And ye shall proclaim on the selfsame day, that it may be an holy convocation unto you: ye shall do no servile work therein: it shall be a statute for ever in all your dwellings throughout your generations.* Abram''s new offerings of the first-fruits in Jubilees 15:2 keep the feast the Torah calls a statute for ever.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-abram-firstfruits-feast'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-15-election-spirits-over-nations
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* Jubilees 15:31''s apportioning of spirits over the many nations retells the Song of Moses'' division of the peoples.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-election-spirits-over-nations'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:9 — *For the LORD''s portion is his people; Jacob is the lot of his inheritance.* Jubilees 15:32 says Yahuah alone is Israel''s ruler, appointing no angel over them — Israel is His own portion as the Song declares.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-election-spirits-over-nations'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 99:7 — *And they who worship stones, and grave images of gold and silver and wood [and stone] and clay, And those who worship impure spirits and demons, And all kinds of idols not according to knowledge, shall get no manner of help from them.* The spirits set over the nations to lead them astray in Jubilees 15:31 are the impure spirits and demons behind the idols in the live Enoch apparatus.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju15_lookup sv, _session251_ju15_lookup tv
+ WHERE t.slug='jubilees-15-election-spirits-over-nations'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=15 AND sv.verse_number=31
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=99 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_16.sql (session251 jubilees 16) -----
+-- Source anchor: jubilees/jubilees ch16. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju16 (view _session251_ju16_lookup). Sort band base 53375, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-16-mamre-sarah-laughed
+  ('jubilees', 'jubilees', 16, 1, 'canon', 'genesis', 18, 1, 'free', E'Genesis 18:1 — *And Yahuah (LORD) appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day;* The Genesis source of Jubilees 16:1, the appearing at Mamre that opens the chapter.'),
+  ('jubilees', 'jubilees', 16, 1, 'canon', 'genesis', 18, 10, 'free', E'Genesis 18:10 — *And he said, I will certainly return unto thee according to the time of life; and, lo, Sarah thy wife shall have a son. And Sarah heard it in the tent door, which was behind him.* The very promise Jubilees 16:1 announces — a son by Sarah his wife.'),
+  ('jubilees', 'jubilees', 16, 2, 'canon', 'genesis', 18, 15, 'free', E'Genesis 18:15 — *Then Sarah denied, saying, I laughed not; for she was afraid. And he said, Nay; but thou didst laugh.* The laugh, the fear, and the denial of Jubilees 16:2 are kept verbatim from the Torah account.'),
+  ('jubilees', 'jubilees', 16, 3, 'canon', 'genesis', 17, 19, 'free', E'Genesis 17:19 — *And Elohim (God) said, Sarah thy wife shall bear thee a son indeed; and thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant, and with his seed after him.* Jubilees 16:3 says the name Isaac was ordained and written before his birth — Yahuah had already named him at the covenant of circumcision.'),
+  -- thread: jubilees-16-sodom-overthrown-lot-delivered
+  ('jubilees', 'jubilees', 16, 5, 'canon', 'genesis', 19, 24, 'free', E'Genesis 19:24 — *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven;* The fire and brimstone of Jubilees 16:5 is the Torah''s own overthrow of the cities of the plain.'),
+  ('jubilees', 'jubilees', 16, 5, 'canon', 'genesis', 19, 25, 'free', E'Genesis 19:25 — *And he overthrew those cities, and all the plain, and all the inhabitants of the cities, and that which grew upon the ground.* Jubilees 16:5 names Sodom, Gomorrah, Zeboim and all the region of the Jordan — the same total overthrow.'),
+  ('jubilees', 'jubilees', 16, 6, 'canon', 'genesis', 19, 29, 'free', E'Genesis 19:29 — *And it came to pass, when Elohim (God) destroyed the cities of the plain, that Elohim (God) remembered Abraham, and sent Lot out of the midst of the overthrow, when he overthrew the cities in the which Lot dwelt.* Lot is saved because Elohim remembered Abraham — Jubilees 16:6 keeps this Torah reason verbatim.'),
+  ('jubilees', 'jubilees', 16, 9, 'enoch', '1-enoch', 10, 13, 'extras', E'1 Enoch 10:13 — *In those days they shall be led off to the abyss of fire: and to the torment and the prison in which they shall be confined for ever.* Jubilees 16:9 says the judgment of Sodom was commanded and engraven on the heavenly tables — the same pre-written doom of the wicked the Watchers apparatus testifies to.'),
+  -- thread: jubilees-16-isaac-born-circumcised-eighth-day
+  ('jubilees', 'jubilees', 16, 12, 'canon', 'genesis', 21, 1, 'free', E'Genesis 21:1 — *And Yahuah (LORD) visited Sarah as he had said, and Yahuah (LORD) did unto Sarah as he had spoken.* Jubilees 16:12 keeps the Torah''s exact wording — Yahuah visited Sarah and did to her as He had spoken.'),
+  ('jubilees', 'jubilees', 16, 12, 'canon', 'genesis', 21, 2, 'free', E'Genesis 21:2 — *For Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him.* The set time of which Yahuah had spoken to Abraham is the same set time Jubilees 16:12 records for Isaac''s birth.'),
+  ('jubilees', 'jubilees', 16, 14, 'canon', 'genesis', 21, 4, 'free', E'Genesis 21:4 — *And Abraham circumcised his son Isaac being eight days old, as Elohim (God) had commanded him.* The eighth-day circumcision of Jubilees 16:14 is Abraham''s Torah obedience to the covenant command.'),
+  ('jubilees', 'jubilees', 16, 14, 'jubilees', 'jubilees', 15, 25, 'extras', E'Jubilees 15:25 — *This law is for all the generations for ever, and there is no circumcision of the days, and no omission of one day out of the eight days; for it is an eternal ordinance, ordained and written on the heavenly tables.* The covenant Jubilees 16:14 calls ordained for ever is engraved on the heavenly tables — the eternal sign in the flesh of the seed.'),
+  -- thread: jubilees-16-holy-seed-kingdom-of-priests
+  ('jubilees', 'jubilees', 16, 16, 'canon', 'genesis', 21, 12, 'free', E'Genesis 21:12 — *And Elohim (God) said unto Abraham, Let it not be grievous in thy sight because of the lad, and because of thy bondwoman; in all that Sarah hath said unto thee, hearken unto her voice; for in Isaac shall thy seed be called.* Jubilees 16:16 quotes this Torah word — in Isaac his name and seed are called, narrowing the line of election.'),
+  ('jubilees', 'jubilees', 16, 17, 'canon', 'exodus', 19, 6, 'free', E'Exodus 19:6 — *And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel).* The kingdom and priests and holy nation Jubilees 16:17 sees in Abraham''s holy seed is Sinai''s own charter for Israel.'),
+  ('jubilees', 'jubilees', 16, 17, 'canon', '1-peter', 2, 9, 'free', E'1 Peter 2:9 — *But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light:* The portion of the Most High, the kingdom and priests of Jubilees 16:17, is the same calling the apostle lays on the regathered remnant.'),
+  ('jubilees', 'jubilees', 16, 17, 'canon', 'galatians', 3, 16, 'free', E'Galatians 3:16 — *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ).* The holy seed of Jubilees 16:17 narrows to the one Seed, Messiah, in whom the promise to Abraham is fulfilled.'),
+  -- thread: jubilees-16-abraham-keeps-tabernacles-it-aint-new
+  ('jubilees', 'jubilees', 16, 21, 'canon', 'leviticus', 23, 42, 'free', E'Leviticus 23:42 — *Ye shall dwell in booths seven days; all that are Israelites born shall dwell in booths:* The booths Abraham built in Jubilees 16:21 are the very booths the Torah later commands Israel to dwell in seven days — it ain''t new.'),
+  ('jubilees', 'jubilees', 16, 30, 'canon', 'leviticus', 23, 40, 'free', E'Leviticus 23:40 — *And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before Yahuah Elohaychem (the LORD your God) seven days.* The leafy boughs and willows from the brook of Jubilees 16:30 are the Torah''s own four species of the feast.'),
+  ('jubilees', 'jubilees', 16, 20, 'canon', 'deuteronomy', 16, 13, 'free', E'Deuteronomy 16:13 — *Thou shalt observe the feast of tabernacles seven days, after that thou hast gathered in thy corn and thy wine:* Abraham''s seven-day festival of joy in Jubilees 16:20 is the feast of tabernacles the Torah commands for seven days after the harvest.'),
+  ('jubilees', 'jubilees', 16, 29, 'canon', 'nehemiah', 8, 17, 'free', E'Nehemiah 8:17 — *And all the congregation of them that were come again out of the captivity made booths, and sat under the booths: for since the days of Jeshua the son of Nun unto that day had not the children of Yashar''el (Israel) done so. And there was very great gladness.* The statute for ever of Jubilees 16:29 is the same feast the returning remnant keeps with great gladness.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-16-mamre-sarah-laughed',
+       E'The Visit at Mamre — a son for Sarah, and the laugh',
+       E'Jubilees opens chapter 16 with the visit at the oak of Mamre: *And on the new moon of the fourth month we appeared to Abraham, at the oak of Mamre, and we talked with him, and we announced to him that a son would be given to him by Sarah his wife* (Jubilees 16:1). This is the Genesis scene retold from the angels'' own mouth: *And Yahuah (LORD) appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day* (Genesis 18:1), where the promise is spoken plainly — *and, lo, Sarah thy wife shall have a son* (Genesis 18:10). Jubilees keeps Sarah''s laugh and her fear: *And Sarah laughed, for she heard that we had spoken these words with Abraham... and she became afraid, and denied that she had laughed* (Jubilees 16:2), exactly as Genesis tells it — *Then Sarah denied, saying, I laughed not; for she was afraid. And he said, Nay; but thou didst laugh* (Genesis 18:15). And Jubilees fixes the name on the heavenly tables before the child is conceived — *And we told her the name of her son, as his name is ordained and written in the heavenly tables (i.e.) Isaac* (Jubilees 16:3) — the same name Yahuah had already given in the circumcision covenant: *thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant* (Genesis 17:19). It ain''t new — the laugh, the fear, the named son are all in the Torah.',
+       sv.verse_id, ev.verse_id, 'extras', 53375
+  FROM _session251_ju16_lookup sv, _session251_ju16_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=16 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-16-sodom-overthrown-lot-delivered',
+       E'Sodom overthrown, Lot delivered — judgment engraved on the tables',
+       E'In the same month judgment falls: *And in this month Yahuah (God) executed his judgments on Sodom, and Gomorrah, and Zeboim, and all the region of the Jordan, and He burned them with fire and brimstone, and destroyed them until this day* (Jubilees 16:5). This is the Genesis overthrow retold — *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven; And he overthrew those cities, and all the plain* (Genesis 19:24-25). Jubilees keeps the deliverance of Lot for Abraham''s sake exactly as Genesis does: *But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow* (Jubilees 16:6) — word for word the Torah''s *and it came to pass, when Elohim (God) destroyed the cities of the plain, that Elohim (God) remembered Abraham, and sent Lot out of the midst of the overthrow* (Genesis 19:29). But Jubilees adds the heavenly-tables verdict the framework leans on — the uncleanness of Sodom is *commanded and engraven concerning all his seed, on the heavenly tables, to remove them and root them out* (Jubilees 16:9): the judgment of the wicked was written before it fell, as in the books of the Watchers'' doom (1 Enoch 10:14).',
+       sv.verse_id, ev.verse_id, 'extras', 53378
+  FROM _session251_ju16_lookup sv, _session251_ju16_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=5
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=16 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-16-isaac-born-circumcised-eighth-day',
+       E'Isaac born and circumcised the eighth day — the first of the covenant',
+       E'Yahuah keeps the word: *And in the middle of the sixth month Yahuah (God) visited Sarah and did to her as He had spoken, and she conceived... on the festival of the first-fruits of the harvest, Isaac was born* (Jubilees 16:12). This is the Torah''s *And Yahuah (LORD) visited Sarah as he had said, and Yahuah (LORD) did unto Sarah as he had spoken. For Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him* (Genesis 21:1-2), the son named *Isaac* (Genesis 21:3). Then the eternal sign: *And Abraham circumcised his son on the eighth day: he was the first that was circumcised according to the covenant which is ordained for ever* (Jubilees 16:14) — the obedience Genesis records, *And Abraham circumcised his son Isaac being eight days old, as Elohim (God) had commanded him* (Genesis 21:4). Jubilees binds the eighth-day circumcision to the heavenly tables as an eternal ordinance in the previous chapter — *This law is for all the generations for ever... for it is an eternal ordinance, ordained and written on the heavenly tables* (Jubilees 15:25). Circumcision is the covenant SIGN kept in the flesh of the seed — it ain''t new, and it ain''t abolished.',
+       sv.verse_id, ev.verse_id, 'extras', 53381
+  FROM _session251_ju16_lookup sv, _session251_ju16_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=12
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=16 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-16-holy-seed-kingdom-of-priests',
+       E'A holy seed — the portion of the Most High, a kingdom and priests',
+       E'The angels announce the election that runs through the whole framework: of all Abraham''s offspring, *from the sons of Isaac one should become a holy seed, and should not be reckoned among the nations. For he should become the portion of the El Elyon (Most High)... that it should become a kingdom and priests and a holy nation* (Jubilees 16:17). This separation began with the word kept in the covenant — *in Isaac should his name and seed be called* (Jubilees 16:16) — the Torah''s *for in Isaac shall thy seed be called* (Genesis 21:12). The same language Yahuah spoke over Israel at Sinai is laid here over Abraham''s holy seed: *ye shall be unto me a kingdom of priests, and an holy nation* (Exodus 19:6). And the apostle carries it forward to the regathered remnant — *But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9). The seed is kept and chosen out of the nations — election precedes confession, and the one true Seed in whom it all narrows is named in the gospel: *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ)* (Galatians 3:16).',
+       sv.verse_id, ev.verse_id, 'extras', 53384
+  FROM _session251_ju16_lookup sv, _session251_ju16_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=16 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-16-abraham-keeps-tabernacles-it-aint-new',
+       E'Abraham keeps the Feast of Tabernacles — the first on the earth',
+       E'Here is the calendar heart of the chapter, and the clearest ''it ain''t new'' in the book: *And he built there an altar to Yahuah (God) who had delivered him... and he celebrated a festival of joy in this month seven days, near the altar which he had built at the Well of the Oath. And he built booths for himself and for his servants on this festival, and he was the first to celebrate the feast of tabernacles on the earth* (Jubilees 16:20-21). Abraham keeps Sukkot — booths, branches, seven days of joy — long before Sinai, before Moses, before the Levitical statute. And what Abraham did, the Torah later commands in the very same shape: *Ye shall dwell in booths seven days... that your generations may know that I made the children of Yashar''el (Israel) to dwell in booths* (Leviticus 23:42-43), with the very boughs Jubilees names — *take leafy boughs, and willows from the brook* (Jubilees 16:30) — *And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before Yahuah Elohaychem... seven days* (Leviticus 23:40). Deuteronomy commands the same seven days of joy: *Thou shalt observe the feast of tabernacles seven days, after that thou hast gathered in thy corn and thy wine* (Deuteronomy 16:13). And when the remnant returns from exile and rediscovers it, they keep it exactly so — *And all the congregation of them that were come again out of the captivity made booths, and sat under the booths... And there was very great gladness* (Nehemiah 8:17). Jubilees writes it onto the heavenly tables as a statute for ever: *For this reason it is ordained on the heavenly tables concerning Yashar''el (Israel), that they shall celebrate the feast of tabernacles seven days with joy, in the seventh month* (Jubilees 16:29). The Appointed Times were kept by Abraham — they are ancient, engraved before they were written, and never abolished.',
+       sv.verse_id, ev.verse_id, 'extras', 53387
+  FROM _session251_ju16_lookup sv, _session251_ju16_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=20
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=16 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-16-mamre-sarah-laughed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 18:1 — *And Yahuah (LORD) appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day;* The Genesis source of Jubilees 16:1, the appearing at Mamre that opens the chapter.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-mamre-sarah-laughed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 18:10 — *And he said, I will certainly return unto thee according to the time of life; and, lo, Sarah thy wife shall have a son. And Sarah heard it in the tent door, which was behind him.* The very promise Jubilees 16:1 announces — a son by Sarah his wife.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-mamre-sarah-laughed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 18:15 — *Then Sarah denied, saying, I laughed not; for she was afraid. And he said, Nay; but thou didst laugh.* The laugh, the fear, and the denial of Jubilees 16:2 are kept verbatim from the Torah account.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-mamre-sarah-laughed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 17:19 — *And Elohim (God) said, Sarah thy wife shall bear thee a son indeed; and thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant, and with his seed after him.* Jubilees 16:3 says the name Isaac was ordained and written before his birth — Yahuah had already named him at the covenant of circumcision.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-mamre-sarah-laughed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-16-sodom-overthrown-lot-delivered
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 19:24 — *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven;* The fire and brimstone of Jubilees 16:5 is the Torah''s own overthrow of the cities of the plain.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-sodom-overthrown-lot-delivered'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 19:25 — *And he overthrew those cities, and all the plain, and all the inhabitants of the cities, and that which grew upon the ground.* Jubilees 16:5 names Sodom, Gomorrah, Zeboim and all the region of the Jordan — the same total overthrow.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-sodom-overthrown-lot-delivered'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 19:29 — *And it came to pass, when Elohim (God) destroyed the cities of the plain, that Elohim (God) remembered Abraham, and sent Lot out of the midst of the overthrow, when he overthrew the cities in the which Lot dwelt.* Lot is saved because Elohim remembered Abraham — Jubilees 16:6 keeps this Torah reason verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-sodom-overthrown-lot-delivered'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 10:13 — *In those days they shall be led off to the abyss of fire: and to the torment and the prison in which they shall be confined for ever.* Jubilees 16:9 says the judgment of Sodom was commanded and engraven on the heavenly tables — the same pre-written doom of the wicked the Watchers apparatus testifies to.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-sodom-overthrown-lot-delivered'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=9
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-16-isaac-born-circumcised-eighth-day
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 21:1 — *And Yahuah (LORD) visited Sarah as he had said, and Yahuah (LORD) did unto Sarah as he had spoken.* Jubilees 16:12 keeps the Torah''s exact wording — Yahuah visited Sarah and did to her as He had spoken.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-isaac-born-circumcised-eighth-day'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 21:2 — *For Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him.* The set time of which Yahuah had spoken to Abraham is the same set time Jubilees 16:12 records for Isaac''s birth.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-isaac-born-circumcised-eighth-day'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 21:4 — *And Abraham circumcised his son Isaac being eight days old, as Elohim (God) had commanded him.* The eighth-day circumcision of Jubilees 16:14 is Abraham''s Torah obedience to the covenant command.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-isaac-born-circumcised-eighth-day'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 15:25 — *This law is for all the generations for ever, and there is no circumcision of the days, and no omission of one day out of the eight days; for it is an eternal ordinance, ordained and written on the heavenly tables.* The covenant Jubilees 16:14 calls ordained for ever is engraved on the heavenly tables — the eternal sign in the flesh of the seed.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-isaac-born-circumcised-eighth-day'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=15 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-16-holy-seed-kingdom-of-priests
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 21:12 — *And Elohim (God) said unto Abraham, Let it not be grievous in thy sight because of the lad, and because of thy bondwoman; in all that Sarah hath said unto thee, hearken unto her voice; for in Isaac shall thy seed be called.* Jubilees 16:16 quotes this Torah word — in Isaac his name and seed are called, narrowing the line of election.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-holy-seed-kingdom-of-priests'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=21 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 19:6 — *And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel).* The kingdom and priests and holy nation Jubilees 16:17 sees in Abraham''s holy seed is Sinai''s own charter for Israel.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-holy-seed-kingdom-of-priests'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Peter 2:9 — *But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light:* The portion of the Most High, the kingdom and priests of Jubilees 16:17, is the same calling the apostle lays on the regathered remnant.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-holy-seed-kingdom-of-priests'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Galatians 3:16 — *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ).* The holy seed of Jubilees 16:17 narrows to the one Seed, Messiah, in whom the promise to Abraham is fulfilled.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-holy-seed-kingdom-of-priests'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-16-abraham-keeps-tabernacles-it-aint-new
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 23:42 — *Ye shall dwell in booths seven days; all that are Israelites born shall dwell in booths:* The booths Abraham built in Jubilees 16:21 are the very booths the Torah later commands Israel to dwell in seven days — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-abraham-keeps-tabernacles-it-aint-new'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 23:40 — *And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before Yahuah Elohaychem (the LORD your God) seven days.* The leafy boughs and willows from the brook of Jubilees 16:30 are the Torah''s own four species of the feast.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-abraham-keeps-tabernacles-it-aint-new'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=40
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 16:13 — *Thou shalt observe the feast of tabernacles seven days, after that thou hast gathered in thy corn and thy wine:* Abraham''s seven-day festival of joy in Jubilees 16:20 is the feast of tabernacles the Torah commands for seven days after the harvest.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-abraham-keeps-tabernacles-it-aint-new'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=16 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Nehemiah 8:17 — *And all the congregation of them that were come again out of the captivity made booths, and sat under the booths: for since the days of Jeshua the son of Nun unto that day had not the children of Yashar''el (Israel) done so. And there was very great gladness.* The statute for ever of Jubilees 16:29 is the same feast the returning remnant keeps with great gladness.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju16_lookup sv, _session251_ju16_lookup tv
+ WHERE t.slug='jubilees-16-abraham-keeps-tabernacles-it-aint-new'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=16 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session251 — Jubilees cross-references complete.'

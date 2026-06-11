@@ -1,0 +1,100 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 16,
+  "session": "session251",
+  "tag": "ju16",
+  "base_band": 53375,
+  "threads": [
+    {
+      "slug": "jubilees-16-mamre-sarah-laughed",
+      "title": "The Visit at Mamre — a son for Sarah, and the laugh",
+      "summary_md": "Jubilees opens chapter 16 with the visit at the oak of Mamre: *And on the new moon of the fourth month we appeared to Abraham, at the oak of Mamre, and we talked with him, and we announced to him that a son would be given to him by Sarah his wife* (Jubilees 16:1). This is the Genesis scene retold from the angels' own mouth: *And Yahuah (LORD) appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day* (Genesis 18:1), where the promise is spoken plainly — *and, lo, Sarah thy wife shall have a son* (Genesis 18:10). Jubilees keeps Sarah's laugh and her fear: *And Sarah laughed, for she heard that we had spoken these words with Abraham... and she became afraid, and denied that she had laughed* (Jubilees 16:2), exactly as Genesis tells it — *Then Sarah denied, saying, I laughed not; for she was afraid. And he said, Nay; but thou didst laugh* (Genesis 18:15). And Jubilees fixes the name on the heavenly tables before the child is conceived — *And we told her the name of her son, as his name is ordained and written in the heavenly tables (i.e.) Isaac* (Jubilees 16:3) — the same name Yahuah had already given in the circumcision covenant: *thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant* (Genesis 17:19). It ain't new — the laugh, the fear, the named son are all in the Torah.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 18, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 18:1 — *And Yahuah (LORD) appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day;* The Genesis source of Jubilees 16:1, the appearing at Mamre that opens the chapter."},
+        {"src_ch": 16, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 18, "tgt_v": 10, "tier": "free",
+         "note": "Genesis 18:10 — *And he said, I will certainly return unto thee according to the time of life; and, lo, Sarah thy wife shall have a son. And Sarah heard it in the tent door, which was behind him.* The very promise Jubilees 16:1 announces — a son by Sarah his wife."},
+        {"src_ch": 16, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 18, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 18:15 — *Then Sarah denied, saying, I laughed not; for she was afraid. And he said, Nay; but thou didst laugh.* The laugh, the fear, and the denial of Jubilees 16:2 are kept verbatim from the Torah account."},
+        {"src_ch": 16, "src_v": 3, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 17, "tgt_v": 19, "tier": "free",
+         "note": "Genesis 17:19 — *And Elohim (God) said, Sarah thy wife shall bear thee a son indeed; and thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant, and with his seed after him.* Jubilees 16:3 says the name Isaac was ordained and written before his birth — Yahuah had already named him at the covenant of circumcision."}
+      ]
+    },
+    {
+      "slug": "jubilees-16-sodom-overthrown-lot-delivered",
+      "title": "Sodom overthrown, Lot delivered — judgment engraved on the tables",
+      "summary_md": "In the same month judgment falls: *And in this month Yahuah (God) executed his judgments on Sodom, and Gomorrah, and Zeboim, and all the region of the Jordan, and He burned them with fire and brimstone, and destroyed them until this day* (Jubilees 16:5). This is the Genesis overthrow retold — *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven; And he overthrew those cities, and all the plain* (Genesis 19:24-25). Jubilees keeps the deliverance of Lot for Abraham's sake exactly as Genesis does: *But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow* (Jubilees 16:6) — word for word the Torah's *and it came to pass, when Elohim (God) destroyed the cities of the plain, that Elohim (God) remembered Abraham, and sent Lot out of the midst of the overthrow* (Genesis 19:29). But Jubilees adds the heavenly-tables verdict the framework leans on — the uncleanness of Sodom is *commanded and engraven concerning all his seed, on the heavenly tables, to remove them and root them out* (Jubilees 16:9): the judgment of the wicked was written before it fell, as in the books of the Watchers' doom (1 Enoch 10:14).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 19, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 19:24 — *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven;* The fire and brimstone of Jubilees 16:5 is the Torah's own overthrow of the cities of the plain."},
+        {"src_ch": 16, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 19, "tgt_v": 25, "tier": "free",
+         "note": "Genesis 19:25 — *And he overthrew those cities, and all the plain, and all the inhabitants of the cities, and that which grew upon the ground.* Jubilees 16:5 names Sodom, Gomorrah, Zeboim and all the region of the Jordan — the same total overthrow."},
+        {"src_ch": 16, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 19, "tgt_v": 29, "tier": "free",
+         "note": "Genesis 19:29 — *And it came to pass, when Elohim (God) destroyed the cities of the plain, that Elohim (God) remembered Abraham, and sent Lot out of the midst of the overthrow, when he overthrew the cities in the which Lot dwelt.* Lot is saved because Elohim remembered Abraham — Jubilees 16:6 keeps this Torah reason verbatim."},
+        {"src_ch": 16, "src_v": 9, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 10, "tgt_v": 13, "tier": "extras",
+         "note": "1 Enoch 10:13 — *In those days they shall be led off to the abyss of fire: and to the torment and the prison in which they shall be confined for ever.* Jubilees 16:9 says the judgment of Sodom was commanded and engraven on the heavenly tables — the same pre-written doom of the wicked the Watchers apparatus testifies to."}
+      ]
+    },
+    {
+      "slug": "jubilees-16-isaac-born-circumcised-eighth-day",
+      "title": "Isaac born and circumcised the eighth day — the first of the covenant",
+      "summary_md": "Yahuah keeps the word: *And in the middle of the sixth month Yahuah (God) visited Sarah and did to her as He had spoken, and she conceived... on the festival of the first-fruits of the harvest, Isaac was born* (Jubilees 16:12). This is the Torah's *And Yahuah (LORD) visited Sarah as he had said, and Yahuah (LORD) did unto Sarah as he had spoken. For Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him* (Genesis 21:1-2), the son named *Isaac* (Genesis 21:3). Then the eternal sign: *And Abraham circumcised his son on the eighth day: he was the first that was circumcised according to the covenant which is ordained for ever* (Jubilees 16:14) — the obedience Genesis records, *And Abraham circumcised his son Isaac being eight days old, as Elohim (God) had commanded him* (Genesis 21:4). Jubilees binds the eighth-day circumcision to the heavenly tables as an eternal ordinance in the previous chapter — *This law is for all the generations for ever... for it is an eternal ordinance, ordained and written on the heavenly tables* (Jubilees 15:25). Circumcision is the covenant SIGN kept in the flesh of the seed — it ain't new, and it ain't abolished.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 12, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 21, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 21:1 — *And Yahuah (LORD) visited Sarah as he had said, and Yahuah (LORD) did unto Sarah as he had spoken.* Jubilees 16:12 keeps the Torah's exact wording — Yahuah visited Sarah and did to her as He had spoken."},
+        {"src_ch": 16, "src_v": 12, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 21, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 21:2 — *For Sarah conceived, and bare Abraham a son in his old age, at the set time of which Elohim (God) had spoken to him.* The set time of which Yahuah had spoken to Abraham is the same set time Jubilees 16:12 records for Isaac's birth."},
+        {"src_ch": 16, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 21, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 21:4 — *And Abraham circumcised his son Isaac being eight days old, as Elohim (God) had commanded him.* The eighth-day circumcision of Jubilees 16:14 is Abraham's Torah obedience to the covenant command."},
+        {"src_ch": 16, "src_v": 14, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 15, "tgt_v": 25, "tier": "extras",
+         "note": "Jubilees 15:25 — *This law is for all the generations for ever, and there is no circumcision of the days, and no omission of one day out of the eight days; for it is an eternal ordinance, ordained and written on the heavenly tables.* The covenant Jubilees 16:14 calls ordained for ever is engraved on the heavenly tables — the eternal sign in the flesh of the seed."}
+      ]
+    },
+    {
+      "slug": "jubilees-16-holy-seed-kingdom-of-priests",
+      "title": "A holy seed — the portion of the Most High, a kingdom and priests",
+      "summary_md": "The angels announce the election that runs through the whole framework: of all Abraham's offspring, *from the sons of Isaac one should become a holy seed, and should not be reckoned among the nations. For he should become the portion of the El Elyon (Most High)... that it should become a kingdom and priests and a holy nation* (Jubilees 16:17). This separation began with the word kept in the covenant — *in Isaac should his name and seed be called* (Jubilees 16:16) — the Torah's *for in Isaac shall thy seed be called* (Genesis 21:12). The same language Yahuah spoke over Israel at Sinai is laid here over Abraham's holy seed: *ye shall be unto me a kingdom of priests, and an holy nation* (Exodus 19:6). And the apostle carries it forward to the regathered remnant — *But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9). The seed is kept and chosen out of the nations — election precedes confession, and the one true Seed in whom it all narrows is named in the gospel: *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ)* (Galatians 3:16).",
+      "anchor_start_v": 16,
+      "anchor_end_v": 17,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 16, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 21, "tgt_v": 12, "tier": "free",
+         "note": "Genesis 21:12 — *And Elohim (God) said unto Abraham, Let it not be grievous in thy sight because of the lad, and because of thy bondwoman; in all that Sarah hath said unto thee, hearken unto her voice; for in Isaac shall thy seed be called.* Jubilees 16:16 quotes this Torah word — in Isaac his name and seed are called, narrowing the line of election."},
+        {"src_ch": 16, "src_v": 17, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 19, "tgt_v": 6, "tier": "free",
+         "note": "Exodus 19:6 — *And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar'el (Israel).* The kingdom and priests and holy nation Jubilees 16:17 sees in Abraham's holy seed is Sinai's own charter for Israel."},
+        {"src_ch": 16, "src_v": 17, "tgt_edition": "canon", "tgt_book": "1-peter", "tgt_ch": 2, "tgt_v": 9, "tier": "free",
+         "note": "1 Peter 2:9 — *But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light:* The portion of the Most High, the kingdom and priests of Jubilees 16:17, is the same calling the apostle lays on the regathered remnant."},
+        {"src_ch": 16, "src_v": 17, "tgt_edition": "canon", "tgt_book": "galatians", "tgt_ch": 3, "tgt_v": 16, "tier": "free",
+         "note": "Galatians 3:16 — *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ).* The holy seed of Jubilees 16:17 narrows to the one Seed, Messiah, in whom the promise to Abraham is fulfilled."}
+      ]
+    },
+    {
+      "slug": "jubilees-16-abraham-keeps-tabernacles-it-aint-new",
+      "title": "Abraham keeps the Feast of Tabernacles — the first on the earth",
+      "summary_md": "Here is the calendar heart of the chapter, and the clearest 'it ain't new' in the book: *And he built there an altar to Yahuah (God) who had delivered him... and he celebrated a festival of joy in this month seven days, near the altar which he had built at the Well of the Oath. And he built booths for himself and for his servants on this festival, and he was the first to celebrate the feast of tabernacles on the earth* (Jubilees 16:20-21). Abraham keeps Sukkot — booths, branches, seven days of joy — long before Sinai, before Moses, before the Levitical statute. And what Abraham did, the Torah later commands in the very same shape: *Ye shall dwell in booths seven days... that your generations may know that I made the children of Yashar'el (Israel) to dwell in booths* (Leviticus 23:42-43), with the very boughs Jubilees names — *take leafy boughs, and willows from the brook* (Jubilees 16:30) — *And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before Yahuah Elohaychem... seven days* (Leviticus 23:40). Deuteronomy commands the same seven days of joy: *Thou shalt observe the feast of tabernacles seven days, after that thou hast gathered in thy corn and thy wine* (Deuteronomy 16:13). And when the remnant returns from exile and rediscovers it, they keep it exactly so — *And all the congregation of them that were come again out of the captivity made booths, and sat under the booths... And there was very great gladness* (Nehemiah 8:17). Jubilees writes it onto the heavenly tables as a statute for ever: *For this reason it is ordained on the heavenly tables concerning Yashar'el (Israel), that they shall celebrate the feast of tabernacles seven days with joy, in the seventh month* (Jubilees 16:29). The Appointed Times were kept by Abraham — they are ancient, engraved before they were written, and never abolished.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 31,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 16, "src_v": 21, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 23, "tgt_v": 42, "tier": "free",
+         "note": "Leviticus 23:42 — *Ye shall dwell in booths seven days; all that are Israelites born shall dwell in booths:* The booths Abraham built in Jubilees 16:21 are the very booths the Torah later commands Israel to dwell in seven days — it ain't new."},
+        {"src_ch": 16, "src_v": 30, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 23, "tgt_v": 40, "tier": "free",
+         "note": "Leviticus 23:40 — *And ye shall take you on the first day the boughs of goodly trees, branches of palm trees, and the boughs of thick trees, and willows of the brook; and ye shall rejoice before Yahuah Elohaychem (the LORD your God) seven days.* The leafy boughs and willows from the brook of Jubilees 16:30 are the Torah's own four species of the feast."},
+        {"src_ch": 16, "src_v": 20, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 16, "tgt_v": 13, "tier": "free",
+         "note": "Deuteronomy 16:13 — *Thou shalt observe the feast of tabernacles seven days, after that thou hast gathered in thy corn and thy wine:* Abraham's seven-day festival of joy in Jubilees 16:20 is the feast of tabernacles the Torah commands for seven days after the harvest."},
+        {"src_ch": 16, "src_v": 29, "tgt_edition": "canon", "tgt_book": "nehemiah", "tgt_ch": 8, "tgt_v": 17, "tier": "free",
+         "note": "Nehemiah 8:17 — *And all the congregation of them that were come again out of the captivity made booths, and sat under the booths: for since the days of Jeshua the son of Nun unto that day had not the children of Yashar'el (Israel) done so. And there was very great gladness.* The statute for ever of Jubilees 16:29 is the same feast the returning remnant keeps with great gladness."}
+      ]
+    }
+  ]
+}
