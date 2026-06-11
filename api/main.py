@@ -541,6 +541,19 @@ async def get_chapter(
 # ----- Chapter-end cross-reference card (Session 74 wheel) ---------------
 
 
+def _first_paragraph(md: str) -> str:
+    """Return only the first paragraph of a markdown body.
+
+    Matches the client's locked-thread teaser boundary exactly
+    (ChapterEndCard.tsx ``LockedThreadCallout``: ``summary_md.split(
+    /\\n{2,}/)[0]``), so the trimmed payload renders identically to
+    what the locked callout would have shown — the rest of the
+    framework reading is withheld server-side rather than shipped in
+    the JSON and merely hidden by the component.
+    """
+    return re.split(r"\n{2,}", md)[0]
+
+
 @app.get(
     "/v1/books/{book_slug}/chapters/{chapter_number}/cross-references",
     response_model=ChapterEndCardResponse,
@@ -727,10 +740,42 @@ async def get_chapter_cross_references(
     baseline = [baseline_by_verse[k] for k in sorted(baseline_by_verse.keys())]
 
     # --- Aggregate thread rows ---------------------------------------
+    # PAYWALL ENFORCEMENT (server-side). The thread query above returns
+    # every thread in the chapter with its FULL multi-paragraph
+    # summary_md and EVERY member (full member_note + target verse
+    # preview), with no tier filter — only the book is gated (404). But
+    # the locked-thread render (ChapterEndCard.tsx LockedThreadCallout,
+    # S201) shows ONLY the first paragraph of summary_md plus a member
+    # COUNT — it never renders the rest of the summary or any member
+    # row. Shipping the full body + members and trusting the component
+    # to "decline to render" them is a client-side-only paywall: the
+    # complete_study ($9.99 Companion) framework reading sat in the JSON
+    # for any devtools/curl caller and was cached locally by the offline
+    # download. We enforce the render boundary here, mirroring the way
+    # get_chapter_commentary nulls `body` for locked rows.
+    #
+    # The tier_rank lattice mirrors get_chapter_commentary (the schema's
+    # tier_satisfies() encoded in Python so we can shape the payload
+    # rather than drop rows). `tier` is resolved server-side from the DB
+    # via user_tier() (anonymous → 'free') and is unforgeable by the
+    # client.
+    #
+    # Baseline (Layer 1) is intentionally NOT trimmed: the client
+    # renders the locked baseline preview at full readability (S201,
+    # TargetRow blockquote) — it does not "decline to render" it — so
+    # the payload already matches that render boundary. The leak is the
+    # thread (Layer 2) path only.
+    tier_rank = {
+        "free": 0, "study_notes": 1, "extras": 2,
+        "complete_study": 3, "everything": 4,
+    }
+    user_rank = tier_rank.get(tier, 0)
+
     threads_by_id: dict[int, ChapterEndThread] = {}
     thread_order: list[int] = []  # preserve sort order from SQL
     for r in thread_member_rows:
         t_id = r["thread_id"]
+        locked = user_rank < tier_rank.get(r["thread_tier"], 4)
         if t_id not in threads_by_id:
             anchor: Optional[ThreadAnchor] = None
             if (
@@ -745,15 +790,29 @@ async def get_chapter_cross_references(
                     verse_start=r["anchor_v_start"],
                     verse_end=r["anchor_v_end"],
                 )
+            # Locked threads ship only the first-paragraph teaser the
+            # client actually renders; the rest of the framework reading
+            # is withheld. Unlocked callers get the full body.
+            summary_md = (
+                _first_paragraph(r["thread_summary_md"])
+                if locked
+                else r["thread_summary_md"]
+            )
             threads_by_id[t_id] = ChapterEndThread(
                 slug=r["thread_slug"],
                 title=r["thread_title"],
-                summary_md=r["thread_summary_md"],
+                summary_md=summary_md,
                 anchor=anchor,
                 tier_required=r["thread_tier"],
                 members_in_chapter=[],
             )
             thread_order.append(t_id)
+        # For locked threads the member rows are NOT rendered — the
+        # callout shows only their count ("Full summary + N verse
+        # pairings"). Keep the lightweight row so that count stays
+        # accurate, but null the paid content: Yoshi's framework
+        # member_note and the target verse-text preview. Unlocked
+        # callers get the full member.
         threads_by_id[t_id].members_in_chapter.append(
             ThreadMember(
                 sort_order=r["member_sort"],
@@ -762,9 +821,9 @@ async def get_chapter_cross_references(
                     book_slug=r["member_target_book_slug"],
                     chapter_number=r["member_target_chapter"],
                     verse_number=r["member_target_verse_number"],
-                    preview=r["member_target_text"],
+                    preview="" if locked else r["member_target_text"],
                 ),
-                member_note=r["member_note"],
+                member_note=None if locked else r["member_note"],
             )
         )
     threads = [threads_by_id[t_id] for t_id in thread_order]
@@ -2668,10 +2727,25 @@ async def get_verse_words(
     """
     pool = get_pool()
     is_companion = _is_at_companion_tier(current_user)
+    tier = user_tier(current_user)
     async with pool.acquire() as conn:
+        # Book-level tier gate, mirroring every other reading route
+        # (404 hides existence when the caller's tier can't reach the
+        # book). The tagged-token corpus is canon-only/free today, so no
+        # content that was being served stops being served; the gate
+        # simply brings these two routes in line with the rest of the
+        # API (gated books now 404 for unentitled callers) so a future
+        # gated-book interlinear load can't leak tagged tokens.
         verse_exists = await conn.fetchval(
-            "SELECT EXISTS (SELECT 1 FROM verses WHERE id = $1)",
+            "SELECT EXISTS ("
+            "  SELECT 1 FROM verses v "
+            "    JOIN chapters c ON c.id = v.chapter_id "
+            "    JOIN books b    ON b.id = c.book_id "
+            "   WHERE v.id = $1 "
+            "     AND tier_satisfies($2::content_tier, b.tier_required)"
+            ")",
             verse_id,
+            tier,
         )
         if not verse_exists:
             raise HTTPException(status_code=404, detail="verse not found")
@@ -2744,14 +2818,24 @@ async def get_chapter_words(
     """
     pool = get_pool()
     is_companion = _is_at_companion_tier(current_user)
+    tier = user_tier(current_user)
     async with pool.acquire() as conn:
+        # Book-level tier gate, mirroring every other reading route
+        # (404 hides existence when the caller's tier can't reach the
+        # book). The tagged-token corpus is canon-only/free today, so no
+        # content that was being served stops being served; the gate
+        # simply brings these two routes in line with the rest of the
+        # API (gated books now 404 for unentitled callers) so a future
+        # gated-book interlinear load can't leak tagged tokens.
         chapter_row = await conn.fetchrow(
             "SELECT c.id, c.chapter_number "
             "  FROM chapters c "
             "  JOIN books b ON b.id = c.book_id "
-            " WHERE b.slug = $1 AND c.chapter_number = $2",
+            " WHERE b.slug = $1 AND c.chapter_number = $2 "
+            "   AND tier_satisfies($3::content_tier, b.tier_required)",
             book_slug,
             chapter_number,
+            tier,
         )
         if chapter_row is None:
             raise HTTPException(
