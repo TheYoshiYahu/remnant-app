@@ -114,3 +114,38 @@ creation; 51=resurrection), Pack 7 ch52-62, Pack 8 ch63-71. KAPH discipline now 
   minions correctly reserved the cloud-coming kaph for ch46/62; Head-of-Days=Father, Elect-One=Formed
   Son; four presences framed as created servants (not-a-created-angel boundary guarded).
 - Push still keychain-blocked. origin/main 47a9e48; local HEAD `3c4c785`. Prod authoritative.
+
+## RECEIPT — Pack 6 (1 Enoch ch45–51, Son-of-Adam CENTERPIECE) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **206 threads / 781 members**, band 50000–51265, 0 orphans.
+  per-ch(45-51) 6/4/5/5/4/5/6. +35/147. Commit `bb525ab`. Five gates green (fidelity 781/781,
+  FULL-LIBRARY PASS, resolve 0 unresolved).
+- ch46 Son of Adam beside the Head of Days — Dan 7:9-14 kaph "one LIKE the Son of Adam" kept VERBATIM
+  and explicitly distinguished from Enoch's NAMING (both land on Yahusha); Matt 26:64/Rev 1:13-14.
+  ch48 named before creation→John 1/Rev 13:8/Prov 8/Isa 49/Mic 5:2. ch47 books of the living→Dan
+  7:10/Rev 6:9-11/20:12. ch51 resurrection→Dan 12:2/John 5:28-29/Isa 26:19/Ezek 37/Hos 13:14.
+  Head-of-Days=formless Father, Elect-One=Formed Son ordered under Him; modalism/created-angel/
+  mere-man all guarded; election-before-creation. ⚑ ch45:1 reads "third parable" (Charles="second")
+  — source-edition text variant flagged.
+- Push still keychain-blocked. origin/main 47a9e48; local HEAD `bb525ab`. Prod authoritative.
+
+## ▶️ RESUME POINT (session wrap @ Pack 6): 1 Enoch ch1-51 LIVE (206 threads/781 members).
+NEXT = Pack 7 ch52-62, Pack 8 ch63-71 (finish Similitudes: 52 metals melt, 54-56 valley of
+judgement/Azazel's host, 60-62 Noah+the Son of Adam judges the kings, 62-63 kings too late→Isa 53/
+Rev 6:15-17, 69 the oath/hidden name, 70-71 Enoch translated→Gen 5:24/Heb 11:5). Then Astronomical
+72-82 (moedim by the lights→Gen 1:14/Jub 6), Dream Visions 83-90 (Animal Apocalypse, 70 shepherds,
+white bull→Ezek 34/37/Dan 7), Epistle 91-108 (Apocalypse of Weeks→Dan 2:44/9, two ways→Deut 30,
+woes→Isa 5/James 5, resurrection→Dan 12, birth of Noah 106-107→Gen 5:28-29/6:8). Relaunch a Workflow
+pack using the pack6 script pattern (per-chapter CONTEXT map + the Son-of-Adam/kaph framework block;
+KEEP authoring from the literal dumped text — this edition's chapter numbering can shift vs Charles).
+Then Jubilees (session251 @53000), Jasher (session252 @55000), Apocrypha (@58000+), etc.
+
+## RECEIPT — Pack 7 (1 Enoch ch52–62) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **248 threads / 930 members**, band 50000–51531, 0 orphans.
+  per-ch(52-62) 4/3/3/4/5/3/4/3/4/5/4. +42/149. Commit `b6c55aa`. Five gates green (fidelity 930/930,
+  FULL-LIBRARY PASS, resolve 0 unresolved).
+- Metals melt→Dan 2:35/44 stone-kingdom (52); valley of judgement/Azazel's host→Rev 20:10/Jude 6
+  (53-54, Noachic fragments noted); no-second-flood oath→Gen 8:21/9:11 (55); the dispersion regathered
+  →Isa 11:11-12/27:13/43:5-6/Ezek 37 TWO-HOUSE (57); eternal light→Isa 60:19/Dan 12:3 (58);
+  Leviathan & Behemoth→Job 40-41/Isa 27:1/2Esd 6 (60); measuring cords→Zech 2/Rev 11 (61); kings see
+  the Son of Adam too late, righteous eat with him→Isa 53/Rev 1:7/6:15-17/19:9, Dan 7:13 kaph kept (62).
+- Push still keychain-blocked. origin/main 47a9e48; local HEAD `b6c55aa` (8 commits ahead). Prod authoritative.
