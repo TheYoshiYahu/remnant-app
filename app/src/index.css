@@ -2306,3 +2306,163 @@ body {
 .today-history-title { font-family: Lora, Georgia, serif; font-weight: 700; color: var(--today-ink); }
 .today-history-ref { font-size: 0.72rem; font-weight: 700; color: var(--ev-glow, #FCECAF); }
 .today-history-summary { font-size: 0.86rem; line-height: 1.55; color: var(--today-soft); margin: 0.2rem 0 0; }
+
+/* ─── S228b — Today hub progressive disclosure (onboarding) ─────────────── */
+/* Onboarding card: turn on the biblical calendar, or one-tap HebCal default. */
+.today-onboard {
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--today-rule);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.today-onboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.today-onboard-copy { flex: 1; min-width: 13rem; }
+.today-onboard-title {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--today-gold-cream);
+}
+.today-onboard-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--today-soft);
+  margin: 0.2rem 0 0;
+}
+
+/* The toggle button — a switch + label, gold when it reads as "on offer". */
+.today-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: color-mix(in srgb, #0A2D84 28%, #000);
+  border: 1px solid var(--today-gold);
+  border-radius: 999px;
+  padding: 0.35rem 0.5rem 0.35rem 0.4rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.today-toggle:hover { transform: translateY(-1px); }
+.today-toggle-track {
+  width: 2.2rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, #93C0FF 22%, transparent);
+  position: relative;
+  display: inline-block;
+  flex: none;
+}
+.today-toggle-knob {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: calc(1.25rem - 4px);
+  height: calc(1.25rem - 4px);
+  border-radius: 999px;
+  background: var(--today-gold);
+  box-shadow: 0 0 8px color-mix(in srgb, #FCECAF 60%, transparent);
+  transition: left 0.15s ease;
+}
+.today-toggle-label {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--today-gold-cream);
+  padding-right: 0.35rem;
+}
+
+.today-onboard-unsure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+  background: linear-gradient(135deg, color-mix(in srgb, #645028 20%, #000) 0%, color-mix(in srgb, #0A2D84 22%, #000) 100%);
+  border: 1px solid color-mix(in srgb, #FCECAF 28%, transparent);
+}
+.today-onboard-unsure-q {
+  font-family: Lora, Georgia, serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--today-gold-cream);
+}
+.today-hebcal-btn { border-radius: 999px !important; padding: 0.5rem 1rem !important; font-size: 0.92rem !important; }
+.today-onboard-unsure-note { font-size: 0.76rem; color: var(--today-soft); }
+
+/* Biblical-layer top bar (status + turn off) and reckoning dials. */
+.today-day-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--today-rule);
+}
+.today-turnoff {
+  background: transparent;
+  border: 1px solid color-mix(in srgb, #93C0FF 38%, transparent);
+  color: var(--today-soft);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.today-turnoff:hover { opacity: 0.8; }
+
+.today-dials {
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--today-rule);
+  padding-top: 0.9rem;
+}
+.today-dials-head { margin-bottom: 0.6rem; }
+.today-dials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+@media (min-width: 640px) { .today-dials-grid { grid-template-columns: repeat(4, 1fr); } }
+.today-dial {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  cursor: pointer;
+  background: color-mix(in srgb, #0A2D84 20%, #000);
+  border: 1px solid color-mix(in srgb, #93C0FF 26%, transparent);
+  transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+.today-dial:hover { transform: translateY(-1px); }
+.today-dial-on {
+  background: linear-gradient(135deg, color-mix(in srgb, #645028 26%, #000) 0%, color-mix(in srgb, #0A2D84 24%, #000) 100%);
+  border-color: var(--today-gold);
+}
+.today-dial-label {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--today-ink);
+}
+.today-dial-on .today-dial-label { color: var(--today-gold); }
+.today-dial-blurb { font-size: 0.7rem; line-height: 1.35; color: var(--today-soft); }
+.today-dials-more {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--today-gold);
+  text-decoration: none;
+}
+.today-dials-more:hover { text-decoration: underline; text-underline-offset: 3px; }

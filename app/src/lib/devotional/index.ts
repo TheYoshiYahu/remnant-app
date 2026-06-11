@@ -95,6 +95,22 @@ export interface TodaysContent {
 }
 
 /**
+ * The day's devotional + prayer for any stable per-day ordinal. The hub uses a
+ * biblical-day ordinal when the biblical-calendar layer is on (it turns over at
+ * sunset), and a Gregorian-day ordinal when the hub is in its simple default
+ * state (turns over at local midnight). Same rotation either way.
+ */
+export function contentForOrdinal(ordinal: number): TodaysContent {
+  const theme = getActiveTheme();
+  return {
+    theme,
+    entry: entryForDay(theme, ordinal),
+    entryNumber: entryNumberForDay(theme, ordinal),
+    prayer: prayerForDay(ordinal),
+  };
+}
+
+/**
  * The day's devotional + prayer for a biblical date. The hub computes the
  * biblical date from the calendar engine and passes its year/month/day here.
  */
@@ -103,12 +119,5 @@ export function todaysContent(bd: {
   month: number;
   day: number;
 }): TodaysContent {
-  const ordinal = biblicalDayOrdinal(bd.year, bd.month, bd.day);
-  const theme = getActiveTheme();
-  return {
-    theme,
-    entry: entryForDay(theme, ordinal),
-    entryNumber: entryNumberForDay(theme, ordinal),
-    prayer: prayerForDay(ordinal),
-  };
+  return contentForOrdinal(biblicalDayOrdinal(bd.year, bd.month, bd.day));
 }

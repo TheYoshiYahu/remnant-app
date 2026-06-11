@@ -5,17 +5,23 @@
  * Reader and never saw a daily gathering surface. This is it — the first thing
  * the app opens to, with the Reader one clear tap away.
  *
- * It pulls LIVE from the biblical-calendar engine (lib/calendar): today's
- * biblical date, the Sabbath / feast status, the Omer count when the season is
- * running, and "on this day in biblical history" from the same seed the calendar
- * day-view uses. Beneath the day it surfaces the day's devotional and the day's
- * prayer from the seeded content system (lib/devotional), and offers quick doors
- * into the Reader, The Appointed Times, and My Study.
+ * S228b — PROGRESSIVE DISCLOSURE (Yoshi). New users shouldn't be dropped into
+ * the reckoning debate (dark moon / crescent / rabbinic / Enoch) on first open.
+ * So the hub has three states, persisted in localStorage:
  *
- * Standalone + auth-free, like /calendar — it computes everything locally and
- * needs no backend, so it renders as a live surface for every partner and as a
- * screenshottable demo. Aesthetic per DESIGN_LANGUAGE: chrome-metal on the
- * techelet-black field, feast-gold and emerald accents, NO grey anywhere.
+ *   1. DEFAULT — opens on today's plain GREGORIAN date with the devotional and
+ *      prayer. Simple and familiar. No biblical reckoning forced.
+ *   2. BIBLICAL LAYER ON — a toggle reveals the biblical date / feast / Sabbath
+ *      / Omer layer AND the reckoning dials, to explore freely.
+ *   3. ONE-TAP HEBCAL — for the unsure: a single button sets up the calculated
+ *      rabbinic (HebCal) calendar as a sensible working default and turns the
+ *      layer on. The full reckoning choices stay available for those who dig in.
+ *
+ * Everything is computed locally from the calendar engine (lib/calendar); the
+ * day's devotional + prayer come from the seeded content system (lib/devotional).
+ * Standalone + auth-free, like /calendar. Aesthetic per DESIGN_LANGUAGE:
+ * chrome-metal on the techelet-black field, feast-gold + emerald accents, NO
+ * grey anywhere.
  */
 
 import { useEffect, useMemo, useState } from "react";
@@ -23,6 +29,8 @@ import {
   DEFAULT_RECKONING,
   compute,
   moedTheme,
+  type MonthKind,
+  type ReckoningState,
 } from "../lib/calendar/view-model.ts";
 import {
   buildDayDetail,
@@ -39,17 +47,40 @@ import {
 import type { Moed } from "../lib/calendar/types.ts";
 import {
   DEVOTIONAL_IS_SEED,
+  biblicalDayOrdinal,
+  contentForOrdinal,
   listThemes,
   setActiveTheme,
-  todaysContent,
   type TodaysContent,
 } from "../lib/devotional/index.ts";
 
-const reck = DEFAULT_RECKONING;
+// localStorage keys — the onboarding choice persists once the partner sets it.
+const BIBLICAL_ON_KEY = "rop_today_biblical_on_v1";
+const RECKONING_KEY = "rop_today_reckoning_v1";
+
+interface ReckoningOption {
+  kind: MonthKind;
+  label: string;
+  blurb: string;
+}
+
+// The four headline month-reckonings, in the language Yoshi names them. The
+// finer dials (crescent criterion, year rule, Enoch intercalation, orientation,
+// and the notes-against each) live on the full Appointed Times surface.
+const RECKONINGS: ReckoningOption[] = [
+  { kind: "conjunction", label: "Dark moon", blurb: "the month begins at the conjunction" },
+  { kind: "crescent", label: "First crescent", blurb: "the month begins at the first visible sliver" },
+  { kind: "rabbinic", label: "Calculated · HebCal", blurb: "the fixed rabbinic calendar most calendars use" },
+  { kind: "enoch", label: "Enoch", blurb: "the fixed 364-day count" },
+];
+
+function reckoningFor(kind: MonthKind): ReckoningState {
+  return { ...DEFAULT_RECKONING, month: kind };
+}
 
 export default function Today() {
   // Live "now", re-derived to the minute — enough to keep the date honest and
-  // flip content at the sunset boundary without a per-second tick.
+  // flip content at the day boundary without a per-second tick.
   const [now, setNow] = useState<Date>(() => new Date());
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 60_000);
@@ -58,25 +89,73 @@ export default function Today() {
   const minuteBucket = Math.floor(now.getTime() / 60_000);
   const today = useMemo(() => new Date(minuteBucket * 60_000), [minuteBucket]);
 
+  // Onboarding state, hydrated from localStorage in the initializer (lazy
+  // useState — no setState-in-effect). Default is the simple Gregorian state.
+  const [biblicalOn, setBiblicalOn] = useState<boolean>(
+    () =>
+      typeof window !== "undefined" &&
+      window.localStorage.getItem(BIBLICAL_ON_KEY) === "true",
+  );
+  const [monthKind, setMonthKind] = useState<MonthKind>(() => {
+    if (typeof window === "undefined") return "crescent";
+    const stored = window.localStorage.getItem(RECKONING_KEY);
+    return stored && RECKONINGS.some((r) => r.kind === stored)
+      ? (stored as MonthKind)
+      : "crescent";
+  });
+
+  function persistBiblicalOn(on: boolean) {
+    setBiblicalOn(on);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(BIBLICAL_ON_KEY, String(on));
+    }
+  }
+  function persistReckoning(kind: MonthKind) {
+    setMonthKind(kind);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(RECKONING_KEY, kind);
+    }
+  }
+  // The unsure-user one-tap: a sensible working biblical calendar in one click.
+  function useHebcalDefault() {
+    persistReckoning("rabbinic");
+    persistBiblicalOn(true);
+  }
+
   // Theme selection lives in localStorage; this bump re-reads it after a change.
   const [themeTick, setThemeTick] = useState(0);
 
+  const reck = useMemo(() => reckoningFor(monthKind), [monthKind]);
+
+  // The biblical layer is only computed when it's turned on — the default state
+  // stays simple and does no astronomy.
   const detail = useMemo<DayDetail | null>(() => {
+    if (!biblicalOn) return null;
     const grid = buildLayerGrid(reck, today, today, "gregorian");
     const cell = grid.cells.find((c) => c.isToday);
     return cell ? buildDayDetail(reck, cell) : null;
-  }, [today]);
+  }, [biblicalOn, reck, today]);
 
-  const todayResult = useMemo(() => compute(reck, today), [today]);
-  const nextMoed: Moed | undefined = todayResult.moedim[0];
-  const omer = useMemo<OmerStatus | null>(() => computeOmer(reck, today), [today]);
+  const nextMoed = useMemo<Moed | undefined>(
+    () => (biblicalOn ? compute(reck, today).moedim[0] : undefined),
+    [biblicalOn, reck, today],
+  );
+  const omer = useMemo<OmerStatus | null>(
+    () => (biblicalOn ? computeOmer(reck, today) : null),
+    [biblicalOn, reck, today],
+  );
 
-  const content = useMemo<TodaysContent | null>(() => {
-    if (!detail) return null;
-    return todaysContent(detail.biblical);
+  // The devotional + prayer rotate every day in BOTH states: by the biblical day
+  // (turns at sunset) when the layer is on, by the Gregorian day otherwise.
+  const content = useMemo<TodaysContent>(() => {
+    const ordinal =
+      biblicalOn && detail
+        ? biblicalDayOrdinal(detail.biblical.year, detail.biblical.month, detail.biblical.day)
+        : biblicalDayOrdinal(today.getFullYear(), today.getMonth() + 1, today.getDate());
+    return contentForOrdinal(ordinal);
     // themeTick forces a recompute after the reader changes themes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [detail, themeTick]);
+  }, [biblicalOn, detail, today, themeTick]);
 
   const feastsToday = detail?.moedim ?? [];
   const history = detail?.history ?? [];
@@ -86,30 +165,38 @@ export default function Today() {
       <main className="mx-auto w-full max-w-4xl px-4 py-7 sm:px-6 sm:py-10">
         <HubHeader />
 
-        {detail && (
-          <DayPanel
+        {biblicalOn && detail ? (
+          <BiblicalDayPanel
             detail={detail}
             nextMoed={nextMoed}
             omer={omer}
             feasts={feastsToday}
+            now={today}
+            monthKind={monthKind}
+            onPickReckoning={persistReckoning}
+            onTurnOff={() => persistBiblicalOn(false)}
+          />
+        ) : (
+          <GregorianPanel
+            now={today}
+            onTurnOn={() => persistBiblicalOn(true)}
+            onHebcal={useHebcalDefault}
           />
         )}
 
         <DoorRow />
 
-        {content && (
-          <DevotionalCard
-            content={content}
-            onPickTheme={(id) => {
-              setActiveTheme(id);
-              setThemeTick((t) => t + 1);
-            }}
-          />
-        )}
+        <DevotionalCard
+          content={content}
+          onPickTheme={(id) => {
+            setActiveTheme(id);
+            setThemeTick((t) => t + 1);
+          }}
+        />
 
-        {content && <PrayerCard prayer={content.prayer} />}
+        <PrayerCard prayer={content.prayer} />
 
-        {history.length > 0 && <OnThisDay events={history} />}
+        {biblicalOn && history.length > 0 && <OnThisDay events={history} />}
 
         <footer className="mt-12 border-t border-[color:rgba(252,236,175,0.18)] pt-5 text-center font-sans text-xs leading-relaxed today-muted">
           {DEVOTIONAL_IS_SEED && (
@@ -119,8 +206,9 @@ export default function Today() {
             </p>
           )}
           <p>
-            The day is computed locally, offline, from the biblical-calendar
-            engine. Compute, don&rsquo;t scrape.
+            {biblicalOn
+              ? "The day is computed locally, offline, from the biblical-calendar engine. Compute, don’t scrape."
+              : "Turn on the biblical calendar above to see the appointed times for today."}
           </p>
         </footer>
       </main>
@@ -140,36 +228,131 @@ function HubHeader() {
         Today
       </h1>
       <p className="today-subtitle mt-2 max-w-xl font-sans text-sm sm:text-base">
-        A place to gather before the day begins — the appointed time, the Word,
-        and a prayer to carry with you.
+        A place to gather before the day begins — the Word, a prayer to carry
+        with you, and the appointed time when you want it.
       </p>
     </header>
   );
 }
 
 // ───────────────────────────────────────────────────────────────────────
-// The day panel — biblical date, Sabbath/feast status, next moed, Omer
+// Gregorian panel — the simple DEFAULT state + the onboarding affordances
 // ───────────────────────────────────────────────────────────────────────
 
-function DayPanel({
+function fmtLocal(d: Date, opts: Intl.DateTimeFormatOptions): string {
+  return new Intl.DateTimeFormat("en-US", opts).format(d);
+}
+
+function GregorianPanel({
+  now,
+  onTurnOn,
+  onHebcal,
+}: {
+  now: Date;
+  onTurnOn: () => void;
+  onHebcal: () => void;
+}) {
+  return (
+    <section className="today-day mb-7">
+      <div className="today-date">
+        <div className="today-eyebrow">Today</div>
+        <div className="today-date-big">
+          <span className="today-date-day">{fmtLocal(now, { day: "numeric" })}</span>
+          <span className="today-date-month">{fmtLocal(now, { month: "long" })}</span>
+        </div>
+        <div className="today-date-year">
+          <span className="today-date-yearnum">{fmtLocal(now, { year: "numeric" })}</span>
+          {" · "}
+          {fmtLocal(now, { weekday: "long" })}
+        </div>
+      </div>
+
+      {/* The progressive-disclosure card: turn on the biblical calendar, or the
+          one-tap HebCal default for the unsure. */}
+      <div className="today-onboard">
+        <div className="today-onboard-row">
+          <div className="today-onboard-copy">
+            <div className="today-onboard-title">The biblical calendar</div>
+            <p className="today-onboard-text">
+              Want today&rsquo;s biblical date, the Sabbath, and the feasts? Turn
+              it on to reveal the appointed-times layer — and to explore how the
+              months are reckoned.
+            </p>
+          </div>
+          <button
+            type="button"
+            className="today-toggle"
+            onClick={onTurnOn}
+            aria-label="Turn on the biblical calendar"
+          >
+            <span className="today-toggle-track" aria-hidden="true">
+              <span className="today-toggle-knob" />
+            </span>
+            <span className="today-toggle-label">Turn on</span>
+          </button>
+        </div>
+
+        <div className="today-onboard-unsure">
+          <span className="today-onboard-unsure-q">
+            Not sure which calendar to follow?
+          </span>
+          <button
+            type="button"
+            className="chrome-metal chrome-metal-gold today-hebcal-btn"
+            onClick={onHebcal}
+          >
+            <span aria-hidden="true">✓</span>
+            <span>Use the calculated (HebCal) calendar</span>
+          </button>
+          <span className="today-onboard-unsure-note">
+            the one most calendars use — a sensible default you can change anytime
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Biblical day panel — revealed when the layer is ON
+// ───────────────────────────────────────────────────────────────────────
+
+function BiblicalDayPanel({
   detail,
   nextMoed,
   omer,
   feasts,
+  now,
+  monthKind,
+  onPickReckoning,
+  onTurnOff,
 }: {
   detail: DayDetail;
   nextMoed: Moed | undefined;
   omer: OmerStatus | null;
   feasts: Moed[];
+  now: Date;
+  monthKind: MonthKind;
+  onPickReckoning: (kind: MonthKind) => void;
+  onTurnOff: () => void;
 }) {
   const bd = detail.biblical;
   const sabbath = detail.isSabbath;
   return (
     <section className="today-day mb-7">
+      <div className="today-day-topbar">
+        <span className="today-eyebrow">Biblical calendar · on</span>
+        <button type="button" className="today-turnoff" onClick={onTurnOff}>
+          Turn off
+        </button>
+      </div>
+
       <div className="today-day-grid">
         {/* The date */}
         <div className="today-date">
-          <div className="today-eyebrow">Today &middot; Jerusalem reckoning</div>
+          <div className="today-eyebrow today-eyebrow-gold">
+            Today &middot; Jerusalem reckoning
+          </div>
           <div className="today-date-big">
             <span className="today-date-day">{bd.day}</span>
             <span className="today-date-month">{detail.monthName}</span>
@@ -178,7 +361,9 @@ function DayPanel({
             Year <span className="today-date-yearnum">{bd.year}</span> from
             creation
           </div>
-          <div className="today-greg">{detail.gregorianFull}</div>
+          <div className="today-greg">
+            {fmtLocal(now, { weekday: "long", month: "long", day: "numeric", year: "numeric" })}
+          </div>
           <div className="today-sunset">
             ☼ this day runs sunset to sunset &middot; closes{" "}
             {fmtSunsetClock(detail.closesAt)}
@@ -213,9 +398,7 @@ function DayPanel({
           ) : (
             <div className="today-status-badge today-status-working">
               <span className="today-status-label">A working day</span>
-              <span className="today-status-sub">
-                walk it with Him
-              </span>
+              <span className="today-status-sub">walk it with Him</span>
             </div>
           )}
 
@@ -243,7 +426,42 @@ function DayPanel({
       </div>
 
       {omer && <OmerStrip omer={omer} />}
+
+      <ReckoningDials selected={monthKind} onPick={onPickReckoning} />
     </section>
+  );
+}
+
+function ReckoningDials({
+  selected,
+  onPick,
+}: {
+  selected: MonthKind;
+  onPick: (kind: MonthKind) => void;
+}) {
+  return (
+    <div className="today-dials">
+      <div className="today-eyebrow today-dials-head">How the months are reckoned</div>
+      <div className="today-dials-grid">
+        {RECKONINGS.map((r) => (
+          <button
+            key={r.kind}
+            type="button"
+            className={
+              "today-dial" + (selected === r.kind ? " today-dial-on" : "")
+            }
+            onClick={() => onPick(r.kind)}
+            aria-pressed={selected === r.kind}
+          >
+            <span className="today-dial-label">{r.label}</span>
+            <span className="today-dial-blurb">{r.blurb}</span>
+          </button>
+        ))}
+      </div>
+      <a href="/calendar" className="today-dials-more">
+        Open The Appointed Times for the full dials &amp; the case for each →
+      </a>
+    </div>
   );
 }
 
@@ -399,11 +617,7 @@ function DevotionalCard({
 // The day's prayer
 // ───────────────────────────────────────────────────────────────────────
 
-function PrayerCard({
-  prayer,
-}: {
-  prayer: TodaysContent["prayer"];
-}) {
+function PrayerCard({ prayer }: { prayer: TodaysContent["prayer"] }) {
   return (
     <section className="today-card today-card-prayer mb-7">
       <div className="today-card-head">
