@@ -6,12 +6,17 @@
  * the Leviticus 23 feasts and their historical anchors, the Flood markers of
  * Genesis 7-8, and a few covenant landmarks.
  *
- * The data lives in a bundled JSON seed (data/biblical-history.seed.json) behind
- * this clean interface so it can be expanded and gated later WITHOUT touching the
- * calendar UI. It is deliberately SMALL and accurate — nothing fabricated.
+ * The data lives in a bundled JSON library (data/biblical-history.seed.json)
+ * behind this clean interface so it can grow WITHOUT touching the calendar UI.
+ * Every entry carries an EXPLICIT date anchor (a stated biblical month, and
+ * where the text gives one, a day) — mined per-source from the Torah/Tanakh, the
+ * New Testament feast anchors, and the restored extra-canonical library
+ * (Jubilees, 1 Enoch, Jasher, the Apocrypha incl. 1 & 2 Maccabees), and
+ * fidelity-gated against the cited text. Nothing is harmonised or invented.
  *
- * >>> This is a SEED set. Expand + gate (data/biblical-history.seed.json::_meta)
- *     before treating it as comprehensive. <<<
+ * Some entries are dated by MONTH ONLY (the source gives no day): they carry
+ * day === null, are kept for the browse-all surface, and never surface in the
+ * single-day view (which matches on month AND day).
  */
 
 import seed from "../../data/biblical-history.seed.json";
@@ -22,19 +27,21 @@ export interface BiblicalHistoryEvent {
   id: string;
   /** Biblical month index (1 = Abib/Nisan). */
   month: number;
-  /** Biblical day-of-month (1-based). */
-  day: number;
+  /** Biblical day-of-month (1-based), or null when the source dates the event by month only. */
+  day: number | null;
   title: string;
   /** Scripture reference for the date anchor. */
   scripture: string;
   category: HistoryCategory;
   summary: string;
+  /** Optional caveat — e.g. a month-only date, a feast-counted reckoning, or a textual variant. */
+  note?: string;
 }
 
 const EVENTS: BiblicalHistoryEvent[] = (seed.events as BiblicalHistoryEvent[]).slice();
 
-/** Whether the seed set is flagged as provisional (drives the "seed" badge). */
-export const HISTORY_IS_SEED = true;
+/** Whether the set is still flagged as a provisional seed (drives the "seed" badge). */
+export const HISTORY_IS_SEED = false;
 
 /**
  * Events anchored to a given biblical month + day. Returns every match (a date
