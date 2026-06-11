@@ -505,3 +505,25 @@ script + per-ch CONTEXT + blob-verse + paren + legend-caution warnings) → rend
 jasher + pglast + verify_fidelity + resolve_check jasher jasher → fold → audit → recon.py jasher jasher jasher.
 ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from /tmp/extracanon-xref-wt with keychain unlocked
 — 26 commits (85b660c..0a45aa1) need to land on origin/main (still at 47a9e48); prod is authoritative meanwhile.
+
+## RECEIPT — Jasher Pack 8 (ch57–64, the wars + bondage prologue) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **338 `jasher-*` threads / 1188 members**, band 55000–56575,
+  per-ch(57-64) 4/4/4/2/4/3/5/3, 0 orphans. +29/113 (fewer threads — legendary-war chapters honestly
+  small). Commit `83b70a1`. SIX GATES GREEN FIRST PASS. ★ Jasher ~70% (64/91 ch).
+  ★★ EXTRA-CANON TOTAL crossed 1000 threads: 1025 threads / 3712 members live.
+- Esau vs the Horites of Seir + the EDOM king-list matching Gen 36:31-34 name-for-name (57-58→Gen36/
+  Obad1:10/Mal1:2-4/Deut2:12/Jub38); Joseph reigns/seed multiplies (58→Gen39:2/Exod1:7/Jub46); the seventy
+  souls + JOSEPH'S DEATH & BONES-OATH + the visitation + the bondage opens (59→Gen50:24-25/Exod13:19/Heb11:22/
+  Gen15:13/Acts7:6/Jub46); more wars/bondage deepens (60-64, legend with sparse anchors, honest). Minions
+  correctly distinguished Bela son of Beor (Edom king, Gen 36) from Balaam son of Beor (Numbers) — no false weave.
+- Push blocked. origin/main 47a9e48; local HEAD `83b70a1` (27 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 1 ENOCH + JUBILEES COMPLETE + JASHER ch1-64 all LIVE = 1025 threads/3712
+members. NEXT = Jasher Pack 9 ch65-72 (the bondage deepens; MOSES' birth + early life + flight to Midian;
+the burning bush approaches → Exod1-3 — VERIFY vs dump; the Zepho/Chittim wars may also continue here, keep
+legend-caution). Then J10 ch73-80, J11 ch81-91 (~2-3 more packs) FINISH JASHER. Then Apocrypha (session253
+@58000). METHOD: workflow (pack-8 script + broad HINT + blob-verse + paren + legend-caution warnings) →
+render → anchor_check.py jasher jasher + pglast + verify_fidelity + resolve_check jasher jasher → fold →
+audit → recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
+/tmp/extracanon-xref-wt with keychain unlocked — 27 commits (85b660c..83b70a1) need to land on origin/main
+(still at 47a9e48); prod is authoritative meanwhile.

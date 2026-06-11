@@ -1,0 +1,131 @@
+{
+  "edition": "jasher", "book": "jasher", "chapter": 71,
+  "session": "session252", "tag": "ja71", "base_band": 56750,
+  "threads": [
+    {
+      "slug": "jasher-71-slays-the-egyptian",
+      "title": "Moses goes out to his brethren and slays the Egyptian",
+      "summary_md": "Jasher 71 opens with the grown Moses going down to his enslaved kin: *And when Moses was eighteen years old, he desired to see his father and mother and he went to them to Goshen, and when Moses had come near Goshen, he came to the place where the children of Israel were engaged in work, and he observed their burdens, and he saw an Egyptian smiting one of his Hebrew brethren* (Jasher 71:1), and *when he saw there was no man there he smote the Egyptian and hid him in the sand, and delivered the Hebrew from the hand of him that smote him* (Jasher 71:3). It ain't new — this is the Exodus scene itself: *And it came to pass in those days, when Moses was grown, that he went out unto his brethren, and looked on their burdens: and he spied an Egyptian smiting an Hebrew, one of his brethren* (Exodus 2:11), *and when he saw that there was no man, he slew the Egyptian, and hid him in the sand* (Exodus 2:12). Stephen reads the same act as the deliverer's hand reached out: *And seeing one of them suffer wrong, he defended him, and avenged him that was oppressed, and smote the Egyptian* (Acts 7:24). The faith behind it is named in Hebrews — Moses *refused to be called the son of Pharaoh's daughter* (Hebrews 11:24), the chosen seed turning from the kingdom-of-man to his own afflicted people. Jubilees narrates the very same: *you did go forth from the royal court and did see an Egyptian smiting your friend who was of the children of Yashar'el (Israel), and you did slay him and hide him in the sand* (Jubilees 47:10).",
+      "anchor_start_v": 1, "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 71, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 2, "tgt_v": 11,
+         "tier": "free",
+         "note": "Exodus 2:11 — *And it came to pass in those days, when Moses was grown, that he went out unto his brethren, and looked on their burdens: and he spied an Egyptian smiting an Hebrew, one of his brethren.* The same going-out to see his kin's burdens that Jasher 71:1 sets at Goshen."},
+        {"src_ch": 71, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 2, "tgt_v": 12,
+         "tier": "free",
+         "note": "Exodus 2:12 — *And he looked this way and that way, and when he saw that there was no man, he slew the Egyptian, and hid him in the sand.* Word for word the deed of Jasher 71:3 — he saw no man, smote the Egyptian, hid him in the sand."},
+        {"src_ch": 71, "src_v": 3,
+         "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 24,
+         "tier": "free",
+         "note": "Acts 7:24 — *And seeing one of them suffer wrong, he defended him, and avenged him that was oppressed, and smote the Egyptian.* Stephen retells Jasher 71:3 as Moses delivering the oppressed Hebrew from his smiter."},
+        {"src_ch": 71, "src_v": 1,
+         "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 24,
+         "tier": "free",
+         "note": "Hebrews 11:24 — *By faith Moses, when he was come to years, refused to be called the son of Pharaoh's daughter.* The faith that drives Jasher's Moses out of the king's house and down to his brethren's burdens (Jasher 71:1)."},
+        {"src_ch": 71, "src_v": 3,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 47, "tgt_v": 10,
+         "tier": "extras",
+         "note": "Jubilees 47:10 — *And you were three weeks of years at court until the time when you did go forth from the royal court and did see an Egyptian smiting your friend who was of the children of Yashar'el (Israel), and you did slay him and hide him in the sand.* Jubilees carries the identical scene that Jasher 71:1-3 expands."}
+      ]
+    },
+    {
+      "slug": "jasher-71-who-made-thee-judge",
+      "title": "The second day: who set thee for a prince and judge",
+      "summary_md": "On the second day the rejection of the deliverer is spoken aloud: *And on the second day Moses went forth to his brethren, and saw, and behold two men were quarreling, and he said to the wicked one, Why dost you smite your neighbor?* (Jasher 71:7), and the man throws it back — *Who has set you for a prince and judge over us? dost you think to slay me as you did slay the Egyptian? and Moses was afraid and he said, Surely the thing is known?* (Jasher 71:8). The Exodus source matches: *And when he went out the second day, behold, two men of the Hebrews strove together: and he said to him that did the wrong, Wherefore smitest thou thy fellow?* (Exodus 2:13), *And he said, Who made thee a prince and a judge over us? intendest thou to kill me, as thou killedst the Egyptian? And Moses feared, and said, Surely this thing is known* (Exodus 2:14). Stephen weighs the words: they refused the very ruler God was raising — *But he that did his neighbour wrong thrust him away, saying, Who made thee a ruler and a judge over us?* (Acts 7:27). Jubilees tells it the same: *Who made you a prince and a judge over us? Thinkest you to kill me as you killedst the Egyptian yesterday? And you did fear and flee on account of these words* (Jubilees 47:11). The deliverer rejected by his own — it ain't new.",
+      "anchor_start_v": 7, "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 71, "src_v": 7,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 2, "tgt_v": 13,
+         "tier": "free",
+         "note": "Exodus 2:13 — *And when he went out the second day, behold, two men of the Hebrews strove together: and he said to him that did the wrong, Wherefore smitest thou thy fellow?* The second-day quarrel of Jasher 71:7, the same reproof to the wrongdoer."},
+        {"src_ch": 71, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 2, "tgt_v": 14,
+         "tier": "free",
+         "note": "Exodus 2:14 — *And he said, Who made thee a prince and a judge over us? intendest thou to kill me, as thou killedst the Egyptian? And Moses feared, and said, Surely this thing is known.* Almost verbatim the retort and Moses' fear of Jasher 71:8."},
+        {"src_ch": 71, "src_v": 8,
+         "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 27,
+         "tier": "free",
+         "note": "Acts 7:27 — *But he that did his neighbour wrong thrust him away, saying, Who made thee a ruler and a judge over us?* Stephen's witness to the rejection Jasher 71:8 records — the deliverer refused by his own."},
+        {"src_ch": 71, "src_v": 8,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 47, "tgt_v": 11,
+         "tier": "extras",
+         "note": "Jubilees 47:11 — *And on the second day you did find two of the children of Yashar'el (Israel) striving together, and you did say to him who was doing the wrong: \"Why do you smite your brother? And he was angry and indignant, and said “Who made you a prince and a judge over us? Thinkest you to kill me as you killedst the Egyptian yesterday?” And you did fear and flee on account of these words.* Jubilees gives the same exchange and the flight that follows Jasher 71:8."}
+      ]
+    },
+    {
+      "slug": "jasher-71-pharaoh-seeks-to-slay-moses",
+      "title": "Pharaoh seeks Moses' life; he is brought out of Egypt",
+      "summary_md": "The kingdom-of-man moves to kill the chosen man: *And Pharaoh heard of this affair, and he ordered Moses to be slain, so Elohim (God) sent his angel* (Jasher 71:9), and *the angel of Yahuah (the Lord) took hold of the right hand of Moses, and brought him forth from Egypt, and placed him from without the borders of Egypt, a distance of forty days' journey* (Jasher 71:11). The canon names the same threat and flight plainly: *Now when Pharaoh heard this thing, he sought to slay Moses. But Moses fled from the face of Pharaoh, and dwelt in the land of Midian: and he sat down by a well* (Exodus 2:15). Stephen: *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons* (Acts 7:29). Hebrews reads the flight as faith, not cowardice — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible* (Hebrews 11:27). Where Jasher dresses the rescue with an angel, the pattern is the old one: Pharaoh, like Nimrod and Herod after, seeks to slay the chosen child and the LORD preserves him. Jubilees sets the same departure: *you did depart and dwell in the land of Midian* (Jubilees 48:1).",
+      "anchor_start_v": 9, "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 71, "src_v": 9,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 2, "tgt_v": 15,
+         "tier": "free",
+         "note": "Exodus 2:15 — *Now when Pharaoh heard this thing, he sought to slay Moses. But Moses fled from the face of Pharaoh, and dwelt in the land of Midian: and he sat down by a well.* The threat Jasher 71:9 records — Pharaoh hears and seeks Moses' life — with the flight that Jasher 71:11 frames as an angel-led exit."},
+        {"src_ch": 71, "src_v": 11,
+         "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 29,
+         "tier": "free",
+         "note": "Acts 7:29 — *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.* Moses brought out beyond Egypt's borders in Jasher 71:11 becomes the stranger in Midian."},
+        {"src_ch": 71, "src_v": 11,
+         "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 27,
+         "tier": "free",
+         "note": "Hebrews 11:27 — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.* The departure from Egypt in Jasher 71:11 read as faith that does not fear Pharaoh's wrath."},
+        {"src_ch": 71, "src_v": 11,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 48, "tgt_v": 1,
+         "tier": "extras",
+         "note": "Jubilees 48:1 — *And in the sixth year of the third week of the forty-ninth jubilee you did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt in the second week in the second year in the fiftieth jubilee.* Jubilees marks the same departure out of Egypt to Midian that Jasher 71:11 narrates."}
+      ]
+    },
+    {
+      "slug": "jasher-71-aaron-cast-away-idols-of-egypt",
+      "title": "Aaron prophesies: cast away the idols of Egypt",
+      "summary_md": "With Moses gone, Aaron carries the word: *And Aaron his brother alone remained in the land of Egypt, and he prophesied to the children of Israel, saying, Thus says Yahuah Elohim (the Lord God) of your ancestors, Throw away, each man, the abominations of his eyes, and do not defile yourselves with the idols of Egypt* (Jasher 71:13), but *the children of Israel rebelled and would not hearken to Aaron at that time* (Jasher 71:14). It ain't new — Ezekiel records this very call and rebellion in Egypt almost word for word: *Then said I unto them, Cast ye away every man the abominations of his eyes, and defile not yourselves with the idols of Egypt: I am Yahuah Elohaychem (the LORD your God)* (Ezekiel 20:7), *But they rebelled against me, and would not hearken unto me: they did not every man cast away the abominations of their eyes, neither did they forsake the idols of Egypt* (Ezekiel 20:8). Torah-before-Sinai: the fathers were called to put away Egypt's host-of-heaven idolatry and keep the way of their ancestors' God — the same idolatry Stephen says they later carried into the wilderness (*gave them up to worship the host of heaven*, Acts 7:42).",
+      "anchor_start_v": 13, "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 71, "src_v": 13,
+         "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 20, "tgt_v": 7,
+         "tier": "free",
+         "note": "Ezekiel 20:7 — *Then said I unto them, Cast ye away every man the abominations of his eyes, and defile not yourselves with the idols of Egypt: I am Yahuah Elohaychem (the LORD your God).* Nearly verbatim the prophetic call Aaron speaks in Jasher 71:13 — throw away the abominations of the eyes and the idols of Egypt."},
+        {"src_ch": 71, "src_v": 14,
+         "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 20, "tgt_v": 8,
+         "tier": "free",
+         "note": "Ezekiel 20:8 — *But they rebelled against me, and would not hearken unto me: they did not every man cast away the abominations of their eyes, neither did they forsake the idols of Egypt: then I said, I will pour out my fury upon them, to accomplish my anger against them in the midst of the land of Egypt.* The very rebellion of Jasher 71:14 — they rebelled and would not hearken."},
+        {"src_ch": 71, "src_v": 13,
+         "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 42,
+         "tier": "free",
+         "note": "Acts 7:42 — *Then Elohim (God) turned, and gave them up to worship the host of heaven; as it is written in the book of the prophets, O ye house of Yashar'el (Israel), have ye offered to me slain beasts and sacrifices by the space of forty years in the wilderness?* The same Egypt-bred idolatry Aaron warns against in Jasher 71:13, carried on into the wilderness."}
+      ]
+    },
+    {
+      "slug": "jasher-71-covenant-bondage-remembered",
+      "title": "The covenant remembered; the bondage foretold to Abraham",
+      "summary_md": "The chapter closes on the covenant holding fast under deepening bondage: *And Yahuah (the Lord) thought to destroy them, were it not that Yahuah (the Lord) remembered the covenant which he had made with Abraham, Isaac and Jacob* (Jasher 71:15); *In those days the hand of Pharaoh continued to be severe against the children of Israel, and he crushed and oppressed them until the time when Elohim sent forth his word and took notice of them* (Jasher 71:16). The Exodus source says it the same: *And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob* (Exodus 2:24), the bondage being *hard bondage, in morter, and in brick* (Exodus 1:14). And it was no surprise — it was foretold to Abraham generations before: *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13), which Stephen repeats — *that they should bring them into bondage, and entreat them evil four hundred years* (Acts 7:6). The covenant kept the seed alive in Egypt; election precedes deliverance. It ain't new.",
+      "anchor_start_v": 15, "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 71, "src_v": 15,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 2, "tgt_v": 24,
+         "tier": "free",
+         "note": "Exodus 2:24 — *And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob.* The same covenant-remembrance with the three patriarchs that stays the LORD's hand in Jasher 71:15."},
+        {"src_ch": 71, "src_v": 16,
+         "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 14,
+         "tier": "free",
+         "note": "Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The severe crushing and oppression of Jasher 71:16, named in mortar and brick."},
+        {"src_ch": 71, "src_v": 16,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 13,
+         "tier": "free",
+         "note": "Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The bondage of Jasher 71:16 was foretold to Abraham — the affliction is no accident but the covenant word standing."},
+        {"src_ch": 71, "src_v": 16,
+         "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 6,
+         "tier": "free",
+         "note": "Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen repeats the foretold bondage that Jasher 71:16 shows pressing hardest before deliverance."}
+      ]
+    }
+  ]
+}

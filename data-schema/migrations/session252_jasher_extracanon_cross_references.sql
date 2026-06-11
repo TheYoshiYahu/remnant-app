@@ -17418,6 +17418,2024 @@ SELECT t.id, x.id, 5, E'Jude 1:11 — *Woe unto them! for they have gone in the 
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jasher_65.sql (session252 jasher 65) -----
+-- Source anchor: jasher/jasher ch65. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja65 (view _session252_ja65_lookup). Sort band base 56600, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja65_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-65-counsel-against-the-seed
+  ('jasher', 'jasher', 65, 3, 'canon', 'exodus', 1, 9, 'free', E'Exodus 1:9 — *And he said unto his people, Behold, the people of the children of Yashar''el (Israel) are more and mightier than we:* the very alarm Jasher 65:3 puts in the elders'' mouths.'),
+  ('jasher', 'jasher', 65, 6, 'canon', 'exodus', 1, 10, 'free', E'Exodus 1:10 — *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.* the fear of Jasher 65:6 that Israel would join an enemy in war is the canon counsel verbatim.'),
+  ('jasher', 'jasher', 65, 5, 'canon', 'acts', 7, 18, 'free', E'Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen names the king behind Jasher 65''s whole scheme of destruction.'),
+  ('jasher', 'jasher', 65, 3, 'jubilees', 'jubilees', 46, 13, 'extras', E'Jubilees 46:13 — *“Behold the people of the children of Yashar’el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many, and let us afflict them with slavery before war come upon us and before they too fight against us; else they will join themselves to our enemies and get them up out of our land, for their hearts and faces are towards the land of Canaan.”* Jubilees retells the identical council of Jasher 65:3-6.'),
+  -- thread: jasher-65-pithom-rameses-taskmasters
+  ('jasher', 'jasher', 65, 8, 'canon', 'exodus', 1, 11, 'free', E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* the same two cities Jasher 65:8 names as the pretext for the bondage.'),
+  ('jasher', 'jasher', 65, 35, 'canon', 'exodus', 1, 13, 'free', E'Exodus 1:13 — *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour:* the very ''rigor'' of Jasher 65:35.'),
+  ('jasher', 'jasher', 65, 36, 'canon', 'exodus', 1, 14, 'free', E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* matches Jasher 65:36''s embittered lives in mortar, bricks, and field-work to the word.'),
+  ('jasher', 'jasher', 65, 8, 'jubilees', 'jubilees', 46, 14, 'extras', E'Jubilees 46:14 — *And he set over them taskmasters to afflict them with slavery; and they built strong 2 cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* Jubilees names the same Pithom and Raamses and the same taskmasters of Jasher 65:8,26.'),
+  -- thread: jasher-65-bondage-foretold-to-abraham
+  ('jasher', 'jasher', 65, 31, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* the affliction Jasher 65:31 says lasted ''many years'' was promised to Abraham beforehand.'),
+  ('jasher', 'jasher', 65, 31, 'canon', 'acts', 7, 6, 'free', E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen names the bondage of Jasher 65 as the very thing Elohim had foretold to Abraham.'),
+  -- thread: jasher-65-more-afflicted-more-multiplied
+  ('jasher', 'jasher', 65, 38, 'canon', 'exodus', 1, 12, 'free', E'Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel).* the identical reversal of Jasher 65:38: affliction only increases the seed.'),
+  ('jasher', 'jasher', 65, 38, 'jubilees', 'jubilees', 46, 15, 'extras', E'Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* Jubilees carries the same paradox of Jasher 65:38 — rigour breeds growth.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja65_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja65_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-65-counsel-against-the-seed',
+       E'The counsel against the multiplying seed',
+       E'Jasher opens the bondage with Pharaoh''s council in dread of the covenant seed: *Behold the people of the children of Israel is greater and mightier than we are... Now therefore give us counsel what to do with them, until we gradually destroy them from amongst us, lest they become too numerous for us in the land* (Jasher 65:3,5). It ain''t new — this is the exact counsel of Exodus: *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land* (Exodus 1:10). Stephen names the new king who set it in motion — *Till another king arose, which knew not Joseph* (Acts 7:18) — and Jubilees retells the same speech word for word: *Behold the people of the children of Yashar’el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many...* (Jubilees 46:13). The kingdom of man, like Nimrod before and Herod after, plots against the chosen seed it cannot out-breed.',
+       sv.verse_id, ev.verse_id, 'extras', 56600
+  FROM _session252_ja65_lookup sv, _session252_ja65_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=3
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=65 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-65-pithom-rameses-taskmasters',
+       E'Pithom and Rameses; taskmasters and rigour',
+       E'The plot becomes brick and mortar. Jasher: *Behold in the land are Pithom and Rameses, cities unfortified against battle, it behooves you and us to build them, and to fortify them* (Jasher 65:8); and once the wages cease, *after all the Egyptians had withdrawn from the children of Israel they returned and became oppressors and officers over them, and some of them stood over the children of Israel as task masters* (Jasher 65:26), until *the Egyptians made the children of Israel work with rigor* (Jasher 65:35). Exodus tells it in two verses: *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses* (Exodus 1:11), and *the Egyptians made the children of Yashar''el (Israel) to serve with rigour* (Exodus 1:13). Jubilees names the same two cities and the same word: *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses* (Jubilees 46:14). The two cities, the taskmasters, the rigour — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56603
+  FROM _session252_ja65_lookup sv, _session252_ja65_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=65 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-65-bondage-foretold-to-abraham',
+       E'The bondage foretold to Abraham',
+       E'Jasher marks the long endurance of the affliction with a promise of its end: *the children of Israel were engaged in work for many years, until the time came when Yahuah (the Lord) remembered them and brought them out of Egypt* (Jasher 65:31). This is no surprise to the covenant — Yahuah had told Abram the whole arc by night: *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). Stephen preaches it as the announced plan of Elohim: *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years* (Acts 7:6). The bondage was foretold, the deliverance certain — the seed kept through the affliction Abraham was shown in advance.',
+       sv.verse_id, ev.verse_id, 'extras', 56606
+  FROM _session252_ja65_lookup sv, _session252_ja65_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=31
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=65 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-65-more-afflicted-more-multiplied',
+       E'The more afflicted, the more they multiplied',
+       E'Egypt''s whole strategy backfires. Jasher: *all the work wherein the Egyptians made the children of Israel labor, they exacted with rigor, in order to afflict the children of Israel, but the more they afflicted them, the more they increased and grew, and the Egyptians were grieved because of the children of Israel* (Jasher 65:38). Exodus says it in one breath: *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel)* (Exodus 1:12). Jubilees too: *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied* (Jubilees 46:15). The kingdom of man cannot out-afflict the blessing of multiplication on the chosen seed — the harder Pharaoh presses, the more Yahuah grows the nation He swore to Abraham.',
+       sv.verse_id, ev.verse_id, 'extras', 56609
+  FROM _session252_ja65_lookup sv, _session252_ja65_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=38
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=65 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-65-counsel-against-the-seed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:9 — *And he said unto his people, Behold, the people of the children of Yashar''el (Israel) are more and mightier than we:* the very alarm Jasher 65:3 puts in the elders'' mouths.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-counsel-against-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:10 — *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.* the fear of Jasher 65:6 that Israel would join an enemy in war is the canon counsel verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-counsel-against-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen names the king behind Jasher 65''s whole scheme of destruction.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-counsel-against-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:13 — *“Behold the people of the children of Yashar’el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many, and let us afflict them with slavery before war come upon us and before they too fight against us; else they will join themselves to our enemies and get them up out of our land, for their hearts and faces are towards the land of Canaan.”* Jubilees retells the identical council of Jasher 65:3-6.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-counsel-against-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-65-pithom-rameses-taskmasters
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* the same two cities Jasher 65:8 names as the pretext for the bondage.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-pithom-rameses-taskmasters'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:13 — *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour:* the very ''rigor'' of Jasher 65:35.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-pithom-rameses-taskmasters'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* matches Jasher 65:36''s embittered lives in mortar, bricks, and field-work to the word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-pithom-rameses-taskmasters'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:14 — *And he set over them taskmasters to afflict them with slavery; and they built strong 2 cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* Jubilees names the same Pithom and Raamses and the same taskmasters of Jasher 65:8,26.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-pithom-rameses-taskmasters'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=8
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-65-bondage-foretold-to-abraham
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* the affliction Jasher 65:31 says lasted ''many years'' was promised to Abraham beforehand.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-bondage-foretold-to-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen names the bondage of Jasher 65 as the very thing Elohim had foretold to Abraham.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-bondage-foretold-to-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-65-more-afflicted-more-multiplied
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel).* the identical reversal of Jasher 65:38: affliction only increases the seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-more-afflicted-more-multiplied'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=38
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* Jubilees carries the same paradox of Jasher 65:38 — rigour breeds growth.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja65_lookup sv, _session252_ja65_lookup tv
+ WHERE t.slug='jasher-65-more-afflicted-more-multiplied'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=65 AND sv.verse_number=38
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_66.sql (session252 jasher 66) -----
+-- Source anchor: jasher/jasher ch66. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja66 (view _session252_ja66_lookup). Sort band base 56625, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja66_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-66-edom-kings-samlah
+  ('jasher', 'jasher', 66, 1, 'canon', 'genesis', 36, 36, 'free', E'Genesis 36:36 — *And Hadad died, and Samlah of Masrekah reigned in his stead.* The Torah''s Edomite king-list names the very succession Jasher 66:1 retells — Hadad dies, Samlah of Masrekah/Mesrekah reigns.'),
+  ('jasher', 'jasher', 66, 1, 'canon', 'genesis', 36, 35, 'free', E'Genesis 36:35 — *And Husham died, and Hadad the son of Bedad, who smote Midian in the field of Moab, reigned in his stead: and the name of his city was Avith.* The Hadad son of Bedad whose death Jasher 66:1 records is the same king Genesis already named.'),
+  ('jasher', 'jasher', 66, 1, 'canon', 'genesis', 36, 31, 'free', E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* Esau''s kings rise while Israel is still a bondaged seed — the frame against which Jasher 66:1 sets Edom''s succession.'),
+  -- thread: jasher-66-esau-brethren-war-fear
+  ('jasher', 'jasher', 66, 7, 'canon', 'exodus', 1, 10, 'free', E'Exodus 1:10 — *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.* The very war-dread Jasher 66:6-7 dramatizes is the canon''s own stated reason for Egypt''s rigour.'),
+  -- thread: jasher-66-seed-multiplies-affliction
+  ('jasher', 'jasher', 66, 9, 'canon', 'exodus', 1, 12, 'free', E'Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel).* The canon''s line is nearly identical to Jasher 66:9 — labor increased, the seed multiplied all the more.'),
+  ('jasher', 'jasher', 66, 9, 'canon', 'exodus', 1, 7, 'free', E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* Israel filling the land of Egypt, as Jasher 66:9-10 records.'),
+  ('jasher', 'jasher', 66, 9, 'canon', 'acts', 7, 17, 'free', E'Acts 7:17 — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt.* Stephen reads the multiplying seed of Jasher 66:9 as the promise to Abraham ripening.'),
+  ('jasher', 'jasher', 66, 8, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The bondage Jasher 66:8 describes was foretold to Abraham — the affliction is no accident but covenant prophecy.'),
+  ('jasher', 'jasher', 66, 9, 'jubilees', 'jubilees', 46, 15, 'extras', E'Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* Jubilees carries the same paradox as Jasher 66:9 — rigour met with multiplication.'),
+  -- thread: jasher-66-pharaoh-counsel-wise-men
+  ('jasher', 'jasher', 66, 14, 'canon', 'exodus', 1, 9, 'free', E'Exodus 1:9 — *And he said unto his people, Behold, the people of the children of Yashar''el (Israel) are more and mightier than we:* Pharaoh''s dread of a more-numerous Israel is the seed of the council Jasher 66:14 stages in full.'),
+  ('jasher', 'jasher', 66, 12, 'canon', 'exodus', 1, 8, 'free', E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The king Jasher 66:11-12 shows taking counsel is the canon''s new Pharaoh who knew not Joseph.'),
+  ('jasher', 'jasher', 66, 12, 'canon', 'acts', 7, 18, 'free', E'Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen''s summary of the king behind the bondage Jasher 66 narrates.'),
+  ('jasher', 'jasher', 66, 14, 'jubilees', 'jubilees', 46, 13, 'extras', E'Jubilees 46:13 — *"Behold the people of the children of Yashar''el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many, and let us afflict them with slavery before war come upon us and before they too fight against us; else they will join themselves to our enemies and get them up out of our land, for their hearts and faces are towards the land of Canaan."* Jubilees stages the same royal counsel against Israel that Jasher 66:12-14 dramatizes.'),
+  -- thread: jasher-66-decree-slay-male-children
+  ('jasher', 'jasher', 66, 22, 'canon', 'exodus', 1, 22, 'free', E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* The canon''s decree against the male children is the law Job counsels into being in Jasher 66:21-22.'),
+  ('jasher', 'jasher', 66, 22, 'canon', 'acts', 7, 19, 'free', E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen''s witness to the very decree Jasher 66:21-22 records.'),
+  ('jasher', 'jasher', 66, 21, 'canon', 'matthew', 2, 16, 'free', E'Matthew 2:16 — *Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.* Herod''s slaughter of the infants mirrors the Egyptian decree of Jasher 66:21 — the kingdom of man slaying the male child to kill the deliverer.'),
+  ('jasher', 'jasher', 66, 22, 'canon', 'revelation', 12, 4, 'free', E'Revelation 12:4 — *And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.* The dragon at the birth is the same war on the seed Jasher 66:22 shows Pharaoh waging.'),
+  ('jasher', 'jasher', 66, 21, 'jubilees', 'jubilees', 47, 2, 'extras', E'Jubilees 47:2 — *And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river.* Jubilees records the same river-decree against the male children that Jasher 66:21 has Job propose.'),
+  -- thread: jasher-66-midwives-feared-elohim
+  ('jasher', 'jasher', 66, 23, 'canon', 'exodus', 1, 15, 'free', E'Exodus 1:15 — *And the king of Egypt spake to the Hebrew midwives, of which the name of the one was Shiphrah, and the name of the other Puah:* The canon names the same two midwives Jasher 66:23 summons before the king.'),
+  ('jasher', 'jasher', 66, 25, 'canon', 'exodus', 1, 16, 'free', E'Exodus 1:16 — *And he said, When ye do the office of a midwife to the Hebrew women, and see them upon the stools; if it be a son, then ye shall kill him: but if it be a daughter, then she shall live.* The king''s command in Jasher 66:25 matches the canon''s word for word — kill the son, spare the daughter.'),
+  ('jasher', 'jasher', 66, 27, 'canon', 'exodus', 1, 17, 'free', E'Exodus 1:17 — *But the midwives feared Elohim (God), and did not as the king of Egypt commanded them, but saved the men children alive.* The midwives'' fear of Elohim over Pharaoh, exactly as Jasher 66:27 tells it.'),
+  ('jasher', 'jasher', 66, 31, 'canon', 'exodus', 1, 20, 'free', E'Exodus 1:20 — *Therefore Elohim (God) dealt well with the midwives: and the people multiplied, and waxed very mighty.* Elohim''s reward to the midwives and the multiplying people closes both Exodus 1 and Jasher 66:31.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja66_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja66_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-66-edom-kings-samlah',
+       E'Samlah reigns in Edom — the kings of Esau before Israel had a king',
+       E'Jasher opens the bondage chapter with a note of Edom''s succession: *"At that time died Hadad the son of Bedad king of Edom, and Samlah from Mesrekah, from the country of the children of the east, reigned in his place"* (Jasher 66:1). This is Jasher carrying the same Edomite king-list Moses set down: *"And Husham died, and Hadad the son of Bedad, who smote Midian in the field of Moab, reigned in his stead: and the name of his city was Avith"* (Genesis 36:35), and then *"And Hadad died, and Samlah of Masrekah reigned in his stead"* (Genesis 36:36). The Torah marks these as *"the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel)"* (Genesis 36:31) — Esau''s line crowns kings while the chosen seed is still under the rod in Egypt, election running its quiet course beneath the kingdoms of men. It ain''t new; Jasher only puts flesh on the genealogy already written.',
+       sv.verse_id, ev.verse_id, 'extras', 56625
+  FROM _session252_ja66_lookup sv, _session252_ja66_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=66 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-66-esau-brethren-war-fear',
+       E'Esau the brother — and Egypt''s dread of the Hebrews joining a war',
+       E'Samlah marches against Zepho son of Eliphaz and the children of Chittim, *"But he did not engage with him, for the children of Esau prevented him, saying, He was their brother"* (Jasher 66:4) — Esau''s house held back by the bond of brotherhood, the recurring Jacob-and-Esau tie. Pharaoh, hearing of it, *"increased the labor upon the children of Israel, lest the Israelites should do to them as they did to them in their war with the children of Esau"* (Jasher 66:6), and the Egyptians said *"strengthen the land, lest the children of Esau your brethren should come to fight against us"* (Jasher 66:7). This is Jasher''s legendary expansion, but it lands exactly on the canon''s stated motive for the bondage: *"Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land"* (Exodus 1:10). The kingdom of man enslaves the chosen seed out of fear of a war — the same dread Pharaoh confesses in Exodus.',
+       sv.verse_id, ev.verse_id, 'extras', 56628
+  FROM _session252_ja66_lookup sv, _session252_ja66_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=66 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-66-seed-multiplies-affliction',
+       E'The more they afflicted them, the more they multiplied — the seed kept',
+       E'*"But as the Egyptians increased the labor upon the children of Israel, so did the children of Israel increase and multiply, and all Egypt was filled with the children of Israel"* (Jasher 66:9). Jasher echoes the canon almost word for word: *"But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel)"* (Exodus 1:12); and earlier, *"the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them"* (Exodus 1:7). Stephen reads it as promise ripening: *"But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt"* (Acts 7:17) — for this affliction was foretold to Abraham himself: *"Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years"* (Genesis 15:13). Jubilees tells the same: *"And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied"* (Jubilees 46:15). The covenant seed cannot be crushed out; affliction only enlarges it.',
+       sv.verse_id, ev.verse_id, 'extras', 56631
+  FROM _session252_ja66_lookup sv, _session252_ja66_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=66 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-66-pharaoh-counsel-wise-men',
+       E'Pharaoh takes counsel of his wise men to deal wisely with Israel',
+       E'The elders and wise men of Egypt come before the king: *"Now therefore our Lord and king, the eyes of all Egypt are upon you to give them advice with your wisdom, by which they may prevail over Israel to destroy them, or to diminish them from the land"* (Jasher 66:14). This is Jasher unfolding the canon''s single dense sentence: *"And he said unto his people, Behold, the people of the children of Yashar''el (Israel) are more and mightier than we"* (Exodus 1:9), *"Come on, let us deal wisely with them"* (Exodus 1:10) — and behind the new king is the canon''s note, *"Now there arose up a new king over Egypt, which knew not Joseph"* (Exodus 1:8), which Stephen echoes: *"Till another king arose, which knew not Joseph"* (Acts 7:18). Jubilees tells it the same way: *"Behold the people of the children of Yashar''el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many"* (Jubilees 46:13). Jasher simply convenes the council the canon implies — the kingdom of man plotting against the seed it cannot out-number.',
+       sv.verse_id, ev.verse_id, 'extras', 56634
+  FROM _session252_ja66_lookup sv, _session252_ja66_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=11
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=66 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-66-decree-slay-male-children',
+       E'The decree to spill the blood of every male child — the dragon at the manger',
+       E'Job of Mesopotamia counsels the king: *"If it please the king, let a royal decree go forth, and let it be written in the laws of Egypt which shall not be revoked, that every male child born to the Israelites, his blood shall be spilled upon the ground"* (Jasher 66:21), *"And by your doing this, when all the male children of Israel shall have died, the evil of their wars will cease"* (Jasher 66:22). The canon issues the decree plainly: *"And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive"* (Exodus 1:22), and Stephen names its cruelty: *"The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live"* (Acts 7:19). Jubilees fixes the same edict: *"And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river"* (Jubilees 47:2). This is the antichrist pattern — the kingdom of man slaying the chosen male child to break the seed-line, the same hand Nimrod stretched toward the infant Abraham, that Herod stretched toward the infant Messiah (*"slew all the children that were in Bethlehem"*, Matthew 2:16), that the dragon stretches in the last day: *"and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born"* (Revelation 12:4). It ain''t new; the war on the seed is one war.',
+       sv.verse_id, ev.verse_id, 'extras', 56637
+  FROM _session252_ja66_lookup sv, _session252_ja66_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=21
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=66 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-66-midwives-feared-elohim',
+       E'Shephrah and Puah feared Elohim — the midwives who would not kill',
+       E'*"And the king sent for the Hebrew midwives to be called, of which the name of one was Shephrah, and the name of the other Puah"* (Jasher 66:23); commanded to kill every son, *"But the midwives feared Elohim (God) and did not hearken to the king of Egypt nor to his words... then did the midwife do all that was necessary to the child and let it live"* (Jasher 66:27); and *"Elohim dealt well with them, and the people multiplied and waxed exceedingly"* (Jasher 66:31). This is the canon scene quoted almost name for name: *"And the king of Egypt spake to the Hebrew midwives, of which the name of the one was Shiphrah, and the name of the other Puah"* (Exodus 1:15); *"But the midwives feared Elohim (God), and did not as the king of Egypt commanded them, but saved the men children alive"* (Exodus 1:17); *"Therefore Elohim (God) dealt well with the midwives: and the people multiplied, and waxed very mighty"* (Exodus 1:20). The fear of Elohim outranks the decree of Pharaoh — Torah-faithfulness against the kingdom of man, and the seed kept alive by it. It ain''t new; Jasher only sets the canon''s two righteous women side by side with their reward.',
+       sv.verse_id, ev.verse_id, 'extras', 56640
+  FROM _session252_ja66_lookup sv, _session252_ja66_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=23
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=66 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-66-edom-kings-samlah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:36 — *And Hadad died, and Samlah of Masrekah reigned in his stead.* The Torah''s Edomite king-list names the very succession Jasher 66:1 retells — Hadad dies, Samlah of Masrekah/Mesrekah reigns.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-edom-kings-samlah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:35 — *And Husham died, and Hadad the son of Bedad, who smote Midian in the field of Moab, reigned in his stead: and the name of his city was Avith.* The Hadad son of Bedad whose death Jasher 66:1 records is the same king Genesis already named.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-edom-kings-samlah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* Esau''s kings rise while Israel is still a bondaged seed — the frame against which Jasher 66:1 sets Edom''s succession.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-edom-kings-samlah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-66-esau-brethren-war-fear
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:10 — *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.* The very war-dread Jasher 66:6-7 dramatizes is the canon''s own stated reason for Egypt''s rigour.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-esau-brethren-war-fear'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-66-seed-multiplies-affliction
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel).* The canon''s line is nearly identical to Jasher 66:9 — labor increased, the seed multiplied all the more.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-seed-multiplies-affliction'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* Israel filling the land of Egypt, as Jasher 66:9-10 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-seed-multiplies-affliction'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:17 — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt.* Stephen reads the multiplying seed of Jasher 66:9 as the promise to Abraham ripening.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-seed-multiplies-affliction'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The bondage Jasher 66:8 describes was foretold to Abraham — the affliction is no accident but covenant prophecy.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-seed-multiplies-affliction'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* Jubilees carries the same paradox as Jasher 66:9 — rigour met with multiplication.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-seed-multiplies-affliction'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=9
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-66-pharaoh-counsel-wise-men
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:9 — *And he said unto his people, Behold, the people of the children of Yashar''el (Israel) are more and mightier than we:* Pharaoh''s dread of a more-numerous Israel is the seed of the council Jasher 66:14 stages in full.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-pharaoh-counsel-wise-men'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The king Jasher 66:11-12 shows taking counsel is the canon''s new Pharaoh who knew not Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-pharaoh-counsel-wise-men'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen''s summary of the king behind the bondage Jasher 66 narrates.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-pharaoh-counsel-wise-men'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:13 — *"Behold the people of the children of Yashar''el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many, and let us afflict them with slavery before war come upon us and before they too fight against us; else they will join themselves to our enemies and get them up out of our land, for their hearts and faces are towards the land of Canaan."* Jubilees stages the same royal counsel against Israel that Jasher 66:12-14 dramatizes.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-pharaoh-counsel-wise-men'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=14
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-66-decree-slay-male-children
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* The canon''s decree against the male children is the law Job counsels into being in Jasher 66:21-22.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-decree-slay-male-children'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen''s witness to the very decree Jasher 66:21-22 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-decree-slay-male-children'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 2:16 — *Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.* Herod''s slaughter of the infants mirrors the Egyptian decree of Jasher 66:21 — the kingdom of man slaying the male child to kill the deliverer.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-decree-slay-male-children'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=2 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 12:4 — *And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.* The dragon at the birth is the same war on the seed Jasher 66:22 shows Pharaoh waging.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-decree-slay-male-children'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 47:2 — *And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river.* Jubilees records the same river-decree against the male children that Jasher 66:21 has Job propose.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-decree-slay-male-children'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=21
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-66-midwives-feared-elohim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:15 — *And the king of Egypt spake to the Hebrew midwives, of which the name of the one was Shiphrah, and the name of the other Puah:* The canon names the same two midwives Jasher 66:23 summons before the king.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-midwives-feared-elohim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:16 — *And he said, When ye do the office of a midwife to the Hebrew women, and see them upon the stools; if it be a son, then ye shall kill him: but if it be a daughter, then she shall live.* The king''s command in Jasher 66:25 matches the canon''s word for word — kill the son, spare the daughter.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-midwives-feared-elohim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:17 — *But the midwives feared Elohim (God), and did not as the king of Egypt commanded them, but saved the men children alive.* The midwives'' fear of Elohim over Pharaoh, exactly as Jasher 66:27 tells it.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-midwives-feared-elohim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 1:20 — *Therefore Elohim (God) dealt well with the midwives: and the people multiplied, and waxed very mighty.* Elohim''s reward to the midwives and the multiplying people closes both Exodus 1 and Jasher 66:31.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja66_lookup sv, _session252_ja66_lookup tv
+ WHERE t.slug='jasher-66-midwives-feared-elohim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=66 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_67.sql (session252 jasher 67) -----
+-- Source anchor: jasher/jasher ch67. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja67 (view _session252_ja67_lookup). Sort band base 56650, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja67_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-67-levi-house-amram
+  ('jasher', 'jasher', 67, 1, 'canon', 'exodus', 2, 1, 'free', E'Exodus 2:1 — *And there went a man of the house of Levi, and took to wife a daughter of Levi.* The Torah''s bare notice of Moses'' Levite parents is the very lineage Jasher 67:1-2 names as Amram son of Kehath and Jochebed.'),
+  ('jasher', 'jasher', 67, 3, 'canon', 'exodus', 1, 14, 'free', E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The embittering that Jasher 67:3 makes the reason for Miriam''s name is the Exodus bondage itself.'),
+  ('jasher', 'jasher', 67, 4, 'canon', 'exodus', 1, 22, 'free', E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* The blood-spilling of the male children that frames Aaron''s birth in Jasher 67:4 is Pharaoh''s river-edict.'),
+  -- thread: jasher-67-bondage-foretold-to-abraham
+  ('jasher', 'jasher', 67, 51, 'canon', 'exodus', 1, 22, 'free', E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* Jasher 67:51-52 retells this proclamation word for word — sons to the river, daughters spared.'),
+  ('jasher', 'jasher', 67, 50, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The affliction Pharaoh enacts on Balaam''s counsel in Jasher 67:50 was foretold to Abraham as the covenant''s own appointed sojourn.'),
+  ('jasher', 'jasher', 67, 51, 'canon', 'acts', 7, 6, 'free', E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen names the same four-hundred-year bondage that Jasher 67:51 shows reaching its cruelest hour at the river.'),
+  ('jasher', 'jasher', 67, 52, 'canon', 'acts', 7, 19, 'free', E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* The casting-out of the Hebrew sons in Jasher 67:52 is exactly the subtlety Stephen lays to the king who knew not Joseph.'),
+  ('jasher', 'jasher', 67, 49, 'jubilees', 'jubilees', 47, 2, 'extras', E'Jubilees 47:2 — *And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river.* The Jubilees apparatus carries the same decree that Balaam counsels in Jasher 67:49 — the male children into the river.'),
+  -- thread: jasher-67-way-of-balaam
+  ('jasher', 'jasher', 67, 8, 'canon', 'numbers', 22, 5, 'free', E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me.* The Balaam son of Beor whom Pharaoh makes counsellor in Jasher 67:8 is the very diviner Moab will hire against Israel.'),
+  ('jasher', 'jasher', 67, 49, 'canon', '2-peter', 2, 15, 'free', E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness.* Balaam''s river-counsel for honor and presents in Jasher 67:49 is the same wages-loving way Peter names.'),
+  ('jasher', 'jasher', 67, 49, 'canon', 'jude', 1, 11, 'free', E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* The error of Balaam for reward that Jude pronounces woe upon is the counsel Jasher 67:49 puts in Balaam''s mouth before Pharaoh.'),
+  -- thread: jasher-67-reuel-jethro-defends
+  ('jasher', 'jasher', 67, 30, 'canon', 'genesis', 12, 17, 'free', E'Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife.* Reuel''s first proof in Jasher 67:30 — the former Pharaoh smitten over Sarah — is this Genesis plague.'),
+  ('jasher', 'jasher', 67, 31, 'canon', 'genesis', 20, 18, 'free', E'Genesis 20:18 — *For Yahuah (LORD) had fast closed up all the wombs of the house of Abimelech, because of Sarah Abraham''s wife.* The stopped wombs of Gerar that Jasher 67:31 cites are the Torah''s judgment on Abimelech for Sarah.'),
+  ('jasher', 'jasher', 67, 28, 'canon', 'genesis', 22, 13, 'free', E'Genesis 22:13 — *And Abraham lifted up his eyes, and looked, and behold behind him a ram caught in a thicket by his horns: and Abraham went and took the ram, and offered him up for a burnt offering in the stead of his son.* The chosen inheritance Reuel pleads for in Jasher 67:28 is the same Isaac-line the ram redeemed at the binding — election kept by Yahuah''s own hand.'),
+  -- thread: jasher-67-seed-multiplies
+  ('jasher', 'jasher', 67, 59, 'canon', 'exodus', 1, 12, 'free', E'Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel).* The plough that cannot hurt the infants in Jasher 67:59 dramatizes this Exodus paradox of affliction breeding increase.'),
+  ('jasher', 'jasher', 67, 55, 'canon', 'exodus', 1, 7, 'free', E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The oath to multiply that Jasher 67:55 invokes is the very multiplying Exodus records filling the land.'),
+  ('jasher', 'jasher', 67, 59, 'jubilees', 'jubilees', 46, 15, 'extras', E'Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* The Jubilees apparatus carries the same wonder Jasher 67:59 stages — evil dealing only multiplies the chosen seed.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja67_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja67_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-67-levi-house-amram',
+       E'A man of the house of Levi — Amram, Jochebed, and the children of the bondage',
+       E'Jasher opens the deliverer''s lineage exactly where Exodus does: *There was a man in the land of Egypt of the seed of Levi, whose name was Amram, the son of Kehath, the son of Levi, the son of Israel* (Jasher 67:1), who *took a wife, namely Jochebed* (Jasher 67:2) and *bare a daughter, and she called her name Miriam, because in those days the Egyptians had embittered the lives of the children of Israel* (Jasher 67:3). The Torah carries the same house, plain and unadorned: *And there went a man of the house of Levi, and took to wife a daughter of Levi* (Exodus 2:1). The Levite house and the embittered lives are no new tale — Jasher only fills in the names around the source. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56650
+  FROM _session252_ja67_lookup sv, _session252_ja67_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=67 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-67-bondage-foretold-to-abraham',
+       E'The seed multiplies and the river-edict — bondage foretold to Abraham',
+       E'When Pharaoh decrees *Every male child born to the Hebrews from this day forward shall be thrown into the water* (Jasher 67:51) and that *every son born to the Hebrews shall be cast into the river, but every daughter you shall let live* (Jasher 67:52), Jasher is retelling the Exodus edict — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river* (Exodus 1:22). But the deeper root is the word given to Abraham generations earlier: *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). Stephen preaches the same foretelling — *that they should bring them into bondage, and entreat them evil four hundred years* (Acts 7:6) — and names the king *which knew not Joseph* who *cast out their young children* (Acts 7:19). The kingdom-of-man slays the chosen child; the covenant word stands above it. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56653
+  FROM _session252_ja67_lookup sv, _session252_ja67_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=49
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=67 AND ev.verse_number=52
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-67-way-of-balaam',
+       E'Balaam son of Beor, Pharaoh''s counsellor — the way of Balaam',
+       E'Jasher seats the diviner at Pharaoh''s elbow: *Balaam the son of Beor fled from the land of Chittim, and he went and came to Egypt to Pharaoh king of Egypt* (Jasher 67:8), and it is he who advises *let him order all their children which shall be born from this day forward, to be thrown into the water, for by this can you wipe away their name* (Jasher 67:49). This is the same Balaam son of Beor the Torah will summon against Israel — *He sent messengers therefore unto Balaam the son of Beor to Pethor* (Numbers 22:5). The apostles name his road the proverb of false counsel sold for reward: *following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15), they *ran greedily after the error of Balaam for reward* (Jude 1:11). The counsel to slay the chosen seed is the way of Balaam from the first.',
+       sv.verse_id, ev.verse_id, 'extras', 56656
+  FROM _session252_ja67_lookup sv, _session252_ja67_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=67 AND ev.verse_number=49
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-67-reuel-jethro-defends',
+       E'Reuel the Midianite''s plea — none stretch a hand against the chosen seed',
+       E'Against Balaam''s malice, Pharaoh''s counsellor Reuel pleads for the Hebrews: *these are they whom Yahuah (the Lord) chose in days of old, and took as the lot of his inheritance from amongst all the nations of the earth... and who is there that stretched his hand against them with impunity?* (Jasher 67:28). His proof is the patriarchs preserved. When Pharaoh took Sarah, *Elohim smote him and his household with heavy plagues* (Jasher 67:30) — the Torah''s own *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife* (Genesis 12:17). When Abimelech took her, every womb was stopped (Jasher 67:31) — *For Yahuah (LORD) had fast closed up all the wombs of the house of Abimelech, because of Sarah Abraham''s wife* (Genesis 20:18). Jethro reads the election rightly: the seed is chosen and kept, and no king touches it with impunity. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56659
+  FROM _session252_ja67_lookup sv, _session252_ja67_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=28
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=67 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-67-seed-multiplies',
+       E'The more they afflict, the more they multiply — the seed kept',
+       E'Pharaoh ploughs the fields to crush the hidden infants, yet *when they ploughed they were unable to hurt the infants of the children of Israel, so the people increased and waxed exceedingly* (Jasher 67:59), for Yahuah *had sworn to their ancestors to multiply them* (Jasher 67:55). This is the Exodus paradox set on the page: *But the more they afflicted them, the more they multiplied and grew* (Exodus 1:12), because *the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7). Jubilees preserves the same wonder — *the more they dealt evilly with them, the more they increased and multiplied* (Jubilees 46:15). The covenant oath to multiply the seed cannot be ploughed under. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56662
+  FROM _session252_ja67_lookup sv, _session252_ja67_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=55
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=67 AND ev.verse_number=59
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-67-levi-house-amram
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:1 — *And there went a man of the house of Levi, and took to wife a daughter of Levi.* The Torah''s bare notice of Moses'' Levite parents is the very lineage Jasher 67:1-2 names as Amram son of Kehath and Jochebed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-levi-house-amram'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The embittering that Jasher 67:3 makes the reason for Miriam''s name is the Exodus bondage itself.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-levi-house-amram'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* The blood-spilling of the male children that frames Aaron''s birth in Jasher 67:4 is Pharaoh''s river-edict.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-levi-house-amram'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-67-bondage-foretold-to-abraham
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* Jasher 67:51-52 retells this proclamation word for word — sons to the river, daughters spared.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-bondage-foretold-to-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=51
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The affliction Pharaoh enacts on Balaam''s counsel in Jasher 67:50 was foretold to Abraham as the covenant''s own appointed sojourn.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-bondage-foretold-to-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen names the same four-hundred-year bondage that Jasher 67:51 shows reaching its cruelest hour at the river.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-bondage-foretold-to-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=51
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* The casting-out of the Hebrew sons in Jasher 67:52 is exactly the subtlety Stephen lays to the king who knew not Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-bondage-foretold-to-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 47:2 — *And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river.* The Jubilees apparatus carries the same decree that Balaam counsels in Jasher 67:49 — the male children into the river.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-bondage-foretold-to-abraham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=49
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-67-way-of-balaam
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me.* The Balaam son of Beor whom Pharaoh makes counsellor in Jasher 67:8 is the very diviner Moab will hire against Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-way-of-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness.* Balaam''s river-counsel for honor and presents in Jasher 67:49 is the same wages-loving way Peter names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-way-of-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* The error of Balaam for reward that Jude pronounces woe upon is the counsel Jasher 67:49 puts in Balaam''s mouth before Pharaoh.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-way-of-balaam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-67-reuel-jethro-defends
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife.* Reuel''s first proof in Jasher 67:30 — the former Pharaoh smitten over Sarah — is this Genesis plague.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-reuel-jethro-defends'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 20:18 — *For Yahuah (LORD) had fast closed up all the wombs of the house of Abimelech, because of Sarah Abraham''s wife.* The stopped wombs of Gerar that Jasher 67:31 cites are the Torah''s judgment on Abimelech for Sarah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-reuel-jethro-defends'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=20 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 22:13 — *And Abraham lifted up his eyes, and looked, and behold behind him a ram caught in a thicket by his horns: and Abraham went and took the ram, and offered him up for a burnt offering in the stead of his son.* The chosen inheritance Reuel pleads for in Jasher 67:28 is the same Isaac-line the ram redeemed at the binding — election kept by Yahuah''s own hand.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-reuel-jethro-defends'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-67-seed-multiplies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel).* The plough that cannot hurt the infants in Jasher 67:59 dramatizes this Exodus paradox of affliction breeding increase.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=59
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The oath to multiply that Jasher 67:55 invokes is the very multiplying Exodus records filling the land.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=55
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* The Jubilees apparatus carries the same wonder Jasher 67:59 stages — evil dealing only multiplies the chosen seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja67_lookup sv, _session252_ja67_lookup tv
+ WHERE t.slug='jasher-67-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=67 AND sv.verse_number=59
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_68.sql (session252 jasher 68) -----
+-- Source anchor: jasher/jasher ch68. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja68 (view _session252_ja68_lookup). Sort band base 56675, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja68_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-68-pharaoh-casts-into-river
+  ('jasher', 'jasher', 68, 11, 'canon', 'exodus', 1, 22, 'free', E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* The canon edict that Jasher 68:11 dramatizes as Pharaoh''s officers hunting the Hebrew infants house by house.'),
+  ('jasher', 'jasher', 68, 6, 'canon', 'acts', 7, 19, 'free', E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen''s summary of the very conspiracy Jasher 68:6 records, the Egyptians plotting to destroy all the Hebrews.'),
+  ('jasher', 'jasher', 68, 6, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The affliction Yahuah foretold to Abraham, now come upon his seed in the bondage Jasher 68 deepens.'),
+  ('jasher', 'jasher', 68, 11, 'jubilees', 'jubilees', 47, 2, 'extras', E'Jubilees 47:2 — *And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river.* The Jubilees apparatus carries the identical decree behind Jasher 68:11.'),
+  ('jasher', 'jasher', 68, 11, 'canon', 'revelation', 12, 4, 'free', E'Revelation 12:4 — *And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.* Pharaoh''s slaughter of the male children in Jasher 68:11 is the same kingdom-of-man pattern: the serpent waiting to devour the chosen seed at birth.'),
+  -- thread: jasher-68-birth-of-moses-goodly-child
+  ('jasher', 'jasher', 68, 5, 'canon', 'exodus', 2, 2, 'free', E'Exodus 2:2 — *And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months.* The canon source Jasher 68:5 retells, the mother seeing the child good and hiding him three months.'),
+  ('jasher', 'jasher', 68, 4, 'canon', 'acts', 7, 20, 'free', E'Acts 7:20 — *In which time Moses was born, and was exceeding fair, and nourished up in his father''s house three months:* Stephen''s witness to the birth and the three months that Jasher 68:4-5 narrates.'),
+  ('jasher', 'jasher', 68, 5, 'canon', 'hebrews', 11, 23, 'free', E'Hebrews 11:23 — *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment.* The hiding in Jasher 68:5 read as faith — the parents unafraid of Pharaoh''s edict.'),
+  ('jasher', 'jasher', 68, 5, 'jubilees', 'jubilees', 47, 3, 'extras', E'Jubilees 47:3 — *And they cast them in for seven months until the day that you were born. And your mother hid you for three months, and they told regarding her.* The Jubilees parallel keeps the same seven-month bondage of casting-in and the three-month hiding behind Jasher 68:5.'),
+  -- thread: jasher-68-ark-of-bulrushes
+  ('jasher', 'jasher', 68, 13, 'canon', 'exodus', 2, 3, 'free', E'Exodus 2:3 — *And when she could not longer hide him, she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child therein; and she laid it in the flags by the river''s brink.* The canon ark Jasher 68:13 retells almost verbatim, slime and pitch and the flags by the river.'),
+  ('jasher', 'jasher', 68, 14, 'canon', 'exodus', 2, 4, 'free', E'Exodus 2:4 — *And his sister stood afar off, to wit what would be done to him.* The watching Miriam of Jasher 68:14 is the sister standing afar off in the canon scene.'),
+  ('jasher', 'jasher', 68, 13, 'jubilees', 'jubilees', 47, 4, 'extras', E'Jubilees 47:4 — *And she made an ark for you, and covered it with pitch and asphalt, and placed it in the flags on the bank of the river, and she placed you in it seven days, and your mother came by night and suckled you, and by day Miriam, your sister, guarded you from the birds.* The Jubilees ark and watching Miriam set beside Jasher 68:13-14.'),
+  -- thread: jasher-68-drawn-out-by-pharaohs-daughter
+  ('jasher', 'jasher', 68, 18, 'canon', 'exodus', 2, 5, 'free', E'Exodus 2:5 — *And the daughter of Pharaoh came down to wash herself at the river; and her maidens walked along by the river''s side; and when she saw the ark among the flags, she sent her maid to fetch it.* The canon scene of Pharaoh''s daughter sending her maid for the ark, retold in Jasher 68:18.'),
+  ('jasher', 'jasher', 68, 19, 'canon', 'exodus', 2, 6, 'free', E'Exodus 2:6 — *And when she had opened it, she saw the child: and, behold, the babe wept. And she had compassion on him, and said, This is one of the Hebrews'' children.* Jasher 68:19 carries the same weeping babe, the same compassion, the same words ''one of the Hebrew children.'''),
+  ('jasher', 'jasher', 68, 21, 'canon', 'exodus', 2, 7, 'free', E'Exodus 2:7 — *Then said his sister to Pharaoh''s daughter, Shall I go and call to thee a nurse of the Hebrew women, that she may nurse the child for thee?* The sister''s offer in Jasher 68:21 is the canon''s word for word.'),
+  ('jasher', 'jasher', 68, 18, 'jubilees', 'jubilees', 47, 5, 'extras', E'Jubilees 47:5 — *And in those days Tharmuth, the daughter of Pharaoh, came to bathe in the river, and she heard your voice crying, and she told her maidens to bring you forth, and they brought you to her.* The Jubilees apparatus names Pharaoh''s daughter coming to bathe and lifting the crying child, parallel to Jasher 68:18-19.'),
+  ('jasher', 'jasher', 68, 23, 'canon', 'exodus', 2, 9, 'free', E'Exodus 2:9 — *And Pharaoh''s daughter said unto her, Take this child away, and nurse it for me, and I will give thee thy wages. And the woman took the child, and nursed it.* The wages-for-nursing of Jasher 68:23 (''two bits of silver daily'') is the canon''s commission of the child''s own mother.'),
+  -- thread: jasher-68-named-moses-grew-in-pharaohs-house
+  ('jasher', 'jasher', 68, 24, 'canon', 'exodus', 2, 10, 'free', E'Exodus 2:10 — *And the child grew, and she brought him unto Pharaoh''s daughter, and he became her son. And she called his name Moses: and she said, Because I drew him out of the water.* The naming in Jasher 68:24 is the canon''s own, the same ''drew him out of the water.'''),
+  ('jasher', 'jasher', 68, 32, 'canon', 'acts', 7, 21, 'free', E'Acts 7:21 — *And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son.* Stephen''s witness that Pharaoh''s daughter raised the cast-out child as her own, matching Jasher 68:32.'),
+  ('jasher', 'jasher', 68, 32, 'canon', 'acts', 7, 22, 'free', E'Acts 7:22 — *And Moses was learned in all the wisdom of the Egyptians, and was mighty in words and in deeds.* The Egyptian rearing of Jasher 68:32, Moses grown amongst the king''s children, becomes Stephen''s ''learned in all the wisdom of the Egyptians.'''),
+  ('jasher', 'jasher', 68, 24, 'jubilees', 'jubilees', 47, 9, 'extras', E'Jubilees 47:9 — *And afterwards, when you were grown up, they brought you to the daughter of Pharaoh, and you did become her son, and Amram your father taught you writing, and after you had completed three weeks they brought you into the royal court.* The Jubilees parallel to Jasher 68:24, the grown child made the daughter''s son and brought into Pharaoh''s court.'),
+  ('jasher', 'jasher', 68, 32, 'canon', 'matthew', 2, 16, 'free', E'Matthew 2:16 — *Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.* As Moses grows safe in Pharaoh''s house (Jasher 68:32) while the king slays the male children, so Herod''s slaughter repeats the pattern — the kingdom-of-man hunts the chosen child while the true deliverer is preserved.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja68_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja68_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-68-pharaoh-casts-into-river',
+       E'Every son into the river — the kingdom-of-man hunts the chosen child',
+       E'Jasher shows the bondage at its deepest, the Egyptians hunting the Hebrew infants house by house: *In those days the Egyptians conspired to destroy all the Hebrews there.* (Jasher 68:6) and *And Pharaoh sent his officers to take the children and slay them; thus did the Egyptians to the Hebrew women all the days.* (Jasher 68:11). This is the canon''s own edict retold — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* (Exodus 1:22). Stephen names the same king and his cruelty: *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* (Acts 7:19). It was the affliction foretold to Abraham — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* (Genesis 15:13). Jubilees carries the identical command: *And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river.* (Jubilees 47:2). It ain''t new — Pharaoh, like Nimrod and later Herod and the dragon, is the kingdom-of-man seeking to devour the chosen child the moment he is born.',
+       sv.verse_id, ev.verse_id, 'extras', 56675
+  FROM _session252_ja68_lookup sv, _session252_ja68_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=68 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-68-birth-of-moses-goodly-child',
+       E'A son born, the house filled with light — hid three months',
+       E'Jasher tells the birth: *And at the end of seven months from her conception she brought forth a son, and the whole house was filled with great light as of the light of the sun and moon at the time of their shining.* (Jasher 68:4) and *And when the woman saw the child that it was good and pleasing to the sight, she hid it for three months in an inner room.* (Jasher 68:5). The canon''s own words stand beside it — *And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months.* (Exodus 2:2). Stephen: *In which time Moses was born, and was exceeding fair, and nourished up in his father''s house three months:* (Acts 7:20). And it was an act of faith, not of fear — *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment.* (Hebrews 11:23). Jubilees keeps the same three months: *And they cast them in for seven months until the day that you were born. And your mother hid you for three months, and they told regarding her.* (Jubilees 47:3). It ain''t new — the deliverer is preserved by the faith of his parents against the king''s commandment.',
+       sv.verse_id, ev.verse_id, 'extras', 56678
+  FROM _session252_ja68_lookup sv, _session252_ja68_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=68 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-68-ark-of-bulrushes',
+       E'The ark of bulrushes — the deliverer set in the river',
+       E'Jasher records the ark: *And the woman hastened to take away her son before the officers came, and she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child in it, and she laid it in the flags by the river''s brink.* (Jasher 68:13) and the watching sister *And his sister Miriam stood afar off to know what would be done to him, and what would become of her words.* (Jasher 68:14). This is Exodus quoted nearly word for word — *And when she could not longer hide him, she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child therein; and she laid it in the flags by the river''s brink.* (Exodus 2:3) and *And his sister stood afar off, to wit what would be done to him.* (Exodus 2:4). Jubilees keeps the same ark and the same watching sister: *And she made an ark for you, and covered it with pitch and asphalt, and placed it in the flags on the bank of the river, and she placed you in it seven days, and your mother came by night and suckled you, and by day Miriam, your sister, guarded you from the birds.* (Jubilees 47:4). It ain''t new — the chosen seed is sealed in pitch and committed to the water, kept alive against the kingdom that would drown him.',
+       sv.verse_id, ev.verse_id, 'extras', 56681
+  FROM _session252_ja68_lookup sv, _session252_ja68_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=68 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-68-drawn-out-by-pharaohs-daughter',
+       E'Drawn out of the water — Pharaoh''s daughter and the Hebrew nurse',
+       E'Jasher tells the drawing-out: *And Bathia lifted up her eyes to the river, and she saw the ark upon the water, and sent her maid to fetch it.* (Jasher 68:18), *And she opened it and saw the child, and behold the babe wept, and she had compassion on him, and she said, This is one of the Hebrew children.* (Jasher 68:19), and the sister''s offer *And Miriam his sister was at that time amongst the Egyptian women at the river side, and she saw this thing and she said to Pharaoh''s daughter, Shall I go and fetch a nurse of the Hebrew women, that she may nurse the child for you?* (Jasher 68:21). The canon stands beside it — *And the daughter of Pharaoh came down to wash herself at the river; and her maidens walked along by the river''s side; and when she saw the ark among the flags, she sent her maid to fetch it.* (Exodus 2:5) and *And when she had opened it, she saw the child: and, behold, the babe wept. And she had compassion on him, and said, This is one of the Hebrews'' children.* (Exodus 2:6). Jubilees: *And in those days Tharmuth, the daughter of Pharaoh, came to bathe in the river, and she heard your voice crying, and she told her maidens to bring you forth, and they brought you to her.* (Jubilees 47:5). It ain''t new — the very house that decreed his death draws the deliverer out and pays his own mother to nurse him.',
+       sv.verse_id, ev.verse_id, 'extras', 56684
+  FROM _session252_ja68_lookup sv, _session252_ja68_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=18
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=68 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-68-named-moses-grew-in-pharaohs-house',
+       E'She called his name Moses — the deliverer grown in Pharaoh''s house',
+       E'Jasher gives the naming and the upbringing: *And at the end of two years, when the child grew up, she brought him to the daughter of Pharaoh, and he was to her as a son, and she called his name Moses, for she said, Because I drew him out of the water.* (Jasher 68:24) and *And Moses was in Pharaoh''s house, and was to Bathia, Pharaoh''s daughter, as a son, and Moses grew up amongst the king''s children.* (Jasher 68:32). The canon names him in the same words — *And the child grew, and she brought him unto Pharaoh''s daughter, and he became her son. And she called his name Moses: and she said, Because I drew him out of the water.* (Exodus 2:10). Stephen on his Egyptian rearing: *And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son.* (Acts 7:21) and *And Moses was learned in all the wisdom of the Egyptians, and was mighty in words and in deeds.* (Acts 7:22). Jubilees keeps the household: *And afterwards, when you were grown up, they brought you to the daughter of Pharaoh, and you did become her son, and Amram your father taught you writing, and after you had completed three weeks they brought you into the royal court.* (Jubilees 47:9). It ain''t new — the deliverer is preserved and raised in the very court of the kingdom-of-man, drawn out of the water that was meant to drown him.',
+       sv.verse_id, ev.verse_id, 'extras', 56687
+  FROM _session252_ja68_lookup sv, _session252_ja68_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=24
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=68 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-68-pharaoh-casts-into-river
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* The canon edict that Jasher 68:11 dramatizes as Pharaoh''s officers hunting the Hebrew infants house by house.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-pharaoh-casts-into-river'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen''s summary of the very conspiracy Jasher 68:6 records, the Egyptians plotting to destroy all the Hebrews.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-pharaoh-casts-into-river'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The affliction Yahuah foretold to Abraham, now come upon his seed in the bondage Jasher 68 deepens.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-pharaoh-casts-into-river'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 47:2 — *And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river.* The Jubilees apparatus carries the identical decree behind Jasher 68:11.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-pharaoh-casts-into-river'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=11
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 12:4 — *And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.* Pharaoh''s slaughter of the male children in Jasher 68:11 is the same kingdom-of-man pattern: the serpent waiting to devour the chosen seed at birth.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-pharaoh-casts-into-river'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-68-birth-of-moses-goodly-child
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:2 — *And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months.* The canon source Jasher 68:5 retells, the mother seeing the child good and hiding him three months.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-birth-of-moses-goodly-child'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:20 — *In which time Moses was born, and was exceeding fair, and nourished up in his father''s house three months:* Stephen''s witness to the birth and the three months that Jasher 68:4-5 narrates.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-birth-of-moses-goodly-child'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:23 — *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment.* The hiding in Jasher 68:5 read as faith — the parents unafraid of Pharaoh''s edict.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-birth-of-moses-goodly-child'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 47:3 — *And they cast them in for seven months until the day that you were born. And your mother hid you for three months, and they told regarding her.* The Jubilees parallel keeps the same seven-month bondage of casting-in and the three-month hiding behind Jasher 68:5.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-birth-of-moses-goodly-child'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=5
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-68-ark-of-bulrushes
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:3 — *And when she could not longer hide him, she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child therein; and she laid it in the flags by the river''s brink.* The canon ark Jasher 68:13 retells almost verbatim, slime and pitch and the flags by the river.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-ark-of-bulrushes'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 2:4 — *And his sister stood afar off, to wit what would be done to him.* The watching Miriam of Jasher 68:14 is the sister standing afar off in the canon scene.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-ark-of-bulrushes'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 47:4 — *And she made an ark for you, and covered it with pitch and asphalt, and placed it in the flags on the bank of the river, and she placed you in it seven days, and your mother came by night and suckled you, and by day Miriam, your sister, guarded you from the birds.* The Jubilees ark and watching Miriam set beside Jasher 68:13-14.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-ark-of-bulrushes'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=13
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-68-drawn-out-by-pharaohs-daughter
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:5 — *And the daughter of Pharaoh came down to wash herself at the river; and her maidens walked along by the river''s side; and when she saw the ark among the flags, she sent her maid to fetch it.* The canon scene of Pharaoh''s daughter sending her maid for the ark, retold in Jasher 68:18.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-drawn-out-by-pharaohs-daughter'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 2:6 — *And when she had opened it, she saw the child: and, behold, the babe wept. And she had compassion on him, and said, This is one of the Hebrews'' children.* Jasher 68:19 carries the same weeping babe, the same compassion, the same words ''one of the Hebrew children.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-drawn-out-by-pharaohs-daughter'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 2:7 — *Then said his sister to Pharaoh''s daughter, Shall I go and call to thee a nurse of the Hebrew women, that she may nurse the child for thee?* The sister''s offer in Jasher 68:21 is the canon''s word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-drawn-out-by-pharaohs-daughter'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 47:5 — *And in those days Tharmuth, the daughter of Pharaoh, came to bathe in the river, and she heard your voice crying, and she told her maidens to bring you forth, and they brought you to her.* The Jubilees apparatus names Pharaoh''s daughter coming to bathe and lifting the crying child, parallel to Jasher 68:18-19.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-drawn-out-by-pharaohs-daughter'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=18
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Exodus 2:9 — *And Pharaoh''s daughter said unto her, Take this child away, and nurse it for me, and I will give thee thy wages. And the woman took the child, and nursed it.* The wages-for-nursing of Jasher 68:23 (''two bits of silver daily'') is the canon''s commission of the child''s own mother.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-drawn-out-by-pharaohs-daughter'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-68-named-moses-grew-in-pharaohs-house
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:10 — *And the child grew, and she brought him unto Pharaoh''s daughter, and he became her son. And she called his name Moses: and she said, Because I drew him out of the water.* The naming in Jasher 68:24 is the canon''s own, the same ''drew him out of the water.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-named-moses-grew-in-pharaohs-house'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:21 — *And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son.* Stephen''s witness that Pharaoh''s daughter raised the cast-out child as her own, matching Jasher 68:32.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-named-moses-grew-in-pharaohs-house'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:22 — *And Moses was learned in all the wisdom of the Egyptians, and was mighty in words and in deeds.* The Egyptian rearing of Jasher 68:32, Moses grown amongst the king''s children, becomes Stephen''s ''learned in all the wisdom of the Egyptians.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-named-moses-grew-in-pharaohs-house'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 47:9 — *And afterwards, when you were grown up, they brought you to the daughter of Pharaoh, and you did become her son, and Amram your father taught you writing, and after you had completed three weeks they brought you into the royal court.* The Jubilees parallel to Jasher 68:24, the grown child made the daughter''s son and brought into Pharaoh''s court.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-named-moses-grew-in-pharaohs-house'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=24
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Matthew 2:16 — *Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.* As Moses grows safe in Pharaoh''s house (Jasher 68:32) while the king slays the male children, so Herod''s slaughter repeats the pattern — the kingdom-of-man hunts the chosen child while the true deliverer is preserved.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja68_lookup sv, _session252_ja68_lookup tv
+ WHERE t.slug='jasher-68-named-moses-grew-in-pharaohs-house'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=68 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=2 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_69.sql (session252 jasher 69) -----
+-- Source anchor: jasher/jasher ch69. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja69 (view _session252_ja69_lookup). Sort band base 56700, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja69_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-69-saul-of-edom
+  ('jasher', 'jasher', 69, 2, 'canon', 'genesis', 36, 37, 'free', E'Genesis 36:37 — *And Samlah died, and Saul of Rehoboth by the river reigned in his stead.* The Torah''s Edomite king-list names the same Saul-by-the-river succeeding the same Samlah that Jasher 69:2 records.'),
+  ('jasher', 'jasher', 69, 1, 'canon', 'genesis', 36, 31, 'free', E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* The dying king of Edom in Jasher 69:1 belongs to this very dynasty of Esau, kings already enthroned while Israel had none.'),
+  -- thread: jasher-69-seed-still-multiplies
+  ('jasher', 'jasher', 69, 4, 'canon', 'exodus', 1, 7, 'free', E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The fruitful, multiplying, increasing seed of Jasher 69:4 is Exodus'' own word for the nation Pharaoh''s counsel could not check.'),
+  ('jasher', 'jasher', 69, 4, 'canon', 'exodus', 1, 12, 'free', E'Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel).* This is exactly why Pharaoh''s counsel ''did not succeed'' in Jasher 69:4 — affliction only multiplied the seed.'),
+  ('jasher', 'jasher', 69, 4, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The bondage Pharaoh is deepening in Jasher 69:4 is the very affliction the LORD foretold to Abraham.'),
+  ('jasher', 'jasher', 69, 4, 'canon', 'acts', 7, 17, 'free', E'Acts 7:17 — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt,* Stephen names the same growing, multiplying people of Jasher 69:4 as the promise to Abraham drawing near.'),
+  ('jasher', 'jasher', 69, 4, 'jubilees', 'jubilees', 46, 1, 'extras', E'Jubilees 46:1 — *And it came to pass that after Jacob died the children of Yashar''el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* Jubilees records the same multiplying nation in Egypt that Jasher 69:4 says Pharaoh''s counsel could not stop.'),
+  -- thread: jasher-69-rigour-of-bondage
+  ('jasher', 'jasher', 69, 7, 'canon', 'exodus', 1, 14, 'free', E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The mortar-and-brick labor strengthened upon Israel in Jasher 69:7 is the very ''morter, and brick... with rigour'' of the Exodus bondage.'),
+  ('jasher', 'jasher', 69, 5, 'canon', 'exodus', 1, 11, 'free', E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* Pharaoh''s daily-labor proclamation in Jasher 69:5 is the taskmaster-burden of the Exodus building decree.'),
+  ('jasher', 'jasher', 69, 6, 'canon', 'exodus', 5, 8, 'free', E'Exodus 5:8 — *And the tale of the bricks, which they did make heretofore, ye shall lay upon them; ye shall not diminish ought thereof: for they be idle; therefore they cry, saying, Let us go and sacrifice to our Elohim (God).* Pharaoh''s ''no man shall diminish'' brick-quota in Jasher 69:6 matches the unyielding ''ye shall not diminish ought'' brick decree of Exodus.'),
+  ('jasher', 'jasher', 69, 7, 'canon', 'acts', 7, 19, 'free', E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* The taking of the youngest sons by force in Jasher 69:7 is the same evil-entreating of Israel''s young children Stephen recounts.'),
+  ('jasher', 'jasher', 69, 5, 'jubilees', 'jubilees', 46, 15, 'extras', E'Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* Jubilees gives the same rigorous bondage Jasher 69:5 decrees, with the same paradox — the seed multiplies under the lash.'),
+  -- thread: jasher-69-taskmasters-and-counsel
+  ('jasher', 'jasher', 69, 8, 'canon', 'exodus', 1, 8, 'free', E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The Egypt that grinds Israel day by day in Jasher 69:8 is the realm of the new king who knew not Joseph.'),
+  ('jasher', 'jasher', 69, 8, 'canon', 'exodus', 1, 10, 'free', E'Exodus 1:10 — *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.* The relentless daily labor of Jasher 69:8 is the outworking of Pharaoh''s ''deal wisely with them'' counsel against the multiplying seed.'),
+  ('jasher', 'jasher', 69, 8, 'canon', 'acts', 7, 18, 'free', E'Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen marks the same regime change behind the unending bondage of Jasher 69:8.'),
+  ('jasher', 'jasher', 69, 8, 'jubilees', 'jubilees', 46, 14, 'extras', E'Jubilees 46:14 — *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* Jubilees names the taskmasters and Pharaoh''s building-cities behind the long, daily Egyptian labor of Jasher 69:8.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja69_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja69_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-69-saul-of-edom',
+       E'Saul reigns over Edom in Samlah''s place',
+       E'Jasher follows the kings of Esau: *And the king of Edom died in those days, in the eighteenth year of his reign, and was buried in his temple which he had built for himself as his royal residence in the land of Edom.* (Jasher 69:1) *And the children of Esau sent to Pethor, which is upon the river, and they fetched from there a young man of beautiful eyes and comely aspect, whose name was Saul, and they made him king over them in the place of Samlah.* (Jasher 69:2) This is no invention — it is the very succession Moses set down in the Edomite king-list. The Torah names the same man stepping into the same throne: *And Samlah died, and Saul of Rehoboth by the river reigned in his stead.* (Genesis 36:37) Jasher''s ''Pethor upon the river'' is Genesis'' ''Rehoboth by the river''; the kingdom of Esau/Edom runs on, the line the LORD said He had hated set against the chosen seed (Malachi 1:2-3), while Israel groans in Egypt. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56700
+  FROM _session252_ja69_lookup sv, _session252_ja69_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=69 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-69-seed-still-multiplies',
+       E'The counsel fails — the seed still multiplies',
+       E'*And when Pharaoh king of Egypt saw that the counsel which Balaam had advised respecting the children of Israel did not succeed, but that still they were fruitful, multiplied and increased throughout the land of Egypt,* (Jasher 69:4) Jasher only retells what Exodus already declares: the kingdom of man schemes against the chosen seed and the seed grows anyway. *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* (Exodus 1:7) Pharaoh''s whole ''wise'' design was to halt that increase — *Come on, let us deal wisely with them; lest they multiply* (Exodus 1:10) — yet *the more they afflicted them, the more they multiplied and grew.* (Exodus 1:12) This is the bondage foretold to Abraham long before: *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* (Genesis 15:13). Stephen tells it the same way — the promise drawing near, the people growing (Acts 7:17). Jubilees too: the children of Israel a great nation in Egypt (Jubilees 46:1). The kingdom of man cannot extinguish the covenant seed. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56703
+  FROM _session252_ja69_lookup sv, _session252_ja69_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=69 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-69-rigour-of-bondage',
+       E'The brick and mortar rigour — the bondage deepens',
+       E'Jasher details the cruelty of the decree: *Then Pharaoh commanded in those days that a proclamation should be issued throughout Egypt to the children of Israel, saying, No man shall diminish any thing of his daily labor.* (Jasher 69:5) *And the man who shall be found deficient in his labor which he performs daily, whether in mortar or in bricks, then his youngest son shall be put in their place.* (Jasher 69:6) *And the labor of Egypt strengthened upon the children of Israel in those days, and behold if one brick was deficient in any man''s daily labor, the Egyptians took his youngest boy by force from his mother, and put him into the building in the place of the brick which his father had left wanting.* (Jasher 69:7) This is the very rigour Exodus names: *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* (Exodus 1:11), and *they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* (Exodus 1:14). Pharaoh''s brick-quota decree is the same as the later straw decree: *And the tale of the bricks, which they did make heretofore, ye shall lay upon them; ye shall not diminish ought thereof* (Exodus 5:8). Jubilees tells it word for word: *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* (Jubilees 46:15). The kingdom of man grinds the chosen seed in mortar and brick — and the seed only grows. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56706
+  FROM _session252_ja69_lookup sv, _session252_ja69_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=5
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=69 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-69-taskmasters-and-counsel',
+       E'The new king''s counsel and the taskmasters',
+       E'Behind Jasher''s brick-decree stands the older scene Jasher and Exodus share — a king who knew not Joseph taking ''wise'' counsel against the seed. Jasher shows the labor falling ''day by day, all the days for a long period'': *And the men of Egypt did so to all the children of Israel day by day, all the days for a long period.* (Jasher 69:8) Exodus names the new king and his fear: *Now there arose up a new king over Egypt, which knew not Joseph.* (Exodus 1:8) and *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.* (Exodus 1:10). Stephen marks the same turn: *Till another king arose, which knew not Joseph.* (Acts 7:18). Jubilees records the same wicked device and the same taskmasters: *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* (Jubilees 46:14). Pharaoh is the kingdom-of-man pattern — Nimrod, Herod, the dragon — scheming against the chosen child-people. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56709
+  FROM _session252_ja69_lookup sv, _session252_ja69_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=69 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-69-saul-of-edom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:37 — *And Samlah died, and Saul of Rehoboth by the river reigned in his stead.* The Torah''s Edomite king-list names the same Saul-by-the-river succeeding the same Samlah that Jasher 69:2 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-saul-of-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* The dying king of Edom in Jasher 69:1 belongs to this very dynasty of Esau, kings already enthroned while Israel had none.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-saul-of-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-69-seed-still-multiplies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The fruitful, multiplying, increasing seed of Jasher 69:4 is Exodus'' own word for the nation Pharaoh''s counsel could not check.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-seed-still-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel).* This is exactly why Pharaoh''s counsel ''did not succeed'' in Jasher 69:4 — affliction only multiplied the seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-seed-still-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The bondage Pharaoh is deepening in Jasher 69:4 is the very affliction the LORD foretold to Abraham.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-seed-still-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:17 — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt,* Stephen names the same growing, multiplying people of Jasher 69:4 as the promise to Abraham drawing near.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-seed-still-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 46:1 — *And it came to pass that after Jacob died the children of Yashar''el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* Jubilees records the same multiplying nation in Egypt that Jasher 69:4 says Pharaoh''s counsel could not stop.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-seed-still-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=4
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-69-rigour-of-bondage
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The mortar-and-brick labor strengthened upon Israel in Jasher 69:7 is the very ''morter, and brick... with rigour'' of the Exodus bondage.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-rigour-of-bondage'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* Pharaoh''s daily-labor proclamation in Jasher 69:5 is the taskmaster-burden of the Exodus building decree.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-rigour-of-bondage'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 5:8 — *And the tale of the bricks, which they did make heretofore, ye shall lay upon them; ye shall not diminish ought thereof: for they be idle; therefore they cry, saying, Let us go and sacrifice to our Elohim (God).* Pharaoh''s ''no man shall diminish'' brick-quota in Jasher 69:6 matches the unyielding ''ye shall not diminish ought'' brick decree of Exodus.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-rigour-of-bondage'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* The taking of the youngest sons by force in Jasher 69:7 is the same evil-entreating of Israel''s young children Stephen recounts.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-rigour-of-bondage'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* Jubilees gives the same rigorous bondage Jasher 69:5 decrees, with the same paradox — the seed multiplies under the lash.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-rigour-of-bondage'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=5
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-69-taskmasters-and-counsel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The Egypt that grinds Israel day by day in Jasher 69:8 is the realm of the new king who knew not Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-taskmasters-and-counsel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:10 — *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.* The relentless daily labor of Jasher 69:8 is the outworking of Pharaoh''s ''deal wisely with them'' counsel against the multiplying seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-taskmasters-and-counsel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen marks the same regime change behind the unending bondage of Jasher 69:8.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-taskmasters-and-counsel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:14 — *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* Jubilees names the taskmasters and Pharaoh''s building-cities behind the long, daily Egyptian labor of Jasher 69:8.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja69_lookup sv, _session252_ja69_lookup tv
+ WHERE t.slug='jasher-69-taskmasters-and-counsel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=69 AND sv.verse_number=8
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_70.sql (session252 jasher 70) -----
+-- Source anchor: jasher/jasher ch70. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja70 (view _session252_ja70_lookup). Sort band base 56725, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja70_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-70-balaam-counsel-slay-the-child
+  ('jasher', 'jasher', 70, 5, 'canon', 'numbers', 22, 5, 'free', E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* The Torah''s Balaam son of Beor is the same magician Jasher seats at Pharaoh''s table, hired again against the seed.'),
+  ('jasher', 'jasher', 70, 19, 'canon', '2-peter', 2, 15, 'free', E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* Balaam''s counsel to spill the child''s blood for the king''s favor is the very wages-of-unrighteousness way Peter names.'),
+  ('jasher', 'jasher', 70, 19, 'canon', 'jude', 1, 11, 'free', E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* Jude pronounces woe on the error of Balaam for reward — the same reward Jasher''s Balaam seeks in advising Moses'' murder.'),
+  -- thread: jasher-70-bondage-foretold-seed-multiplies
+  ('jasher', 'jasher', 70, 15, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* Joseph''s descent into Egypt, which Balaam recounts, is the door into the affliction foretold to Abram at the covenant of the pieces.'),
+  ('jasher', 'jasher', 70, 19, 'canon', 'exodus', 1, 8, 'free', E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The Pharaoh whose counsellors plot the child''s death is the new king of Exodus who forgot Joseph and turned on the seed.'),
+  ('jasher', 'jasher', 70, 19, 'canon', 'exodus', 1, 7, 'free', E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The very multiplying of the seed is what makes Egypt fear and Balaam counsel murder.'),
+  ('jasher', 'jasher', 70, 19, 'canon', 'acts', 7, 19, 'free', E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen names the casting-out of the children that frames Jasher''s whole scene — the kingdom of man against the seed.'),
+  ('jasher', 'jasher', 70, 19, 'canon', 'matthew', 2, 16, 'free', E'Matthew 2:16 — *Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.* Pharaoh seeking the chosen child''s blood is the same pattern Herod repeats — the dragon ever seeking to slay the deliverer.'),
+  -- thread: jasher-70-moses-preserved-coal-and-angel
+  ('jasher', 'jasher', 70, 31, 'canon', 'exodus', 2, 2, 'free', E'Exodus 2:2 — *And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months.* The canon''s plain account of the child kept alive stands beneath Jasher''s coal-legend of why the king spared him.'),
+  ('jasher', 'jasher', 70, 31, 'canon', 'hebrews', 11, 23, 'free', E'Hebrews 11:23 — *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment.* Hebrews reads Moses'' preservation as faith that did not fear the king''s commandment — the same deliverer Jasher shows kept in Pharaoh''s house.'),
+  ('jasher', 'jasher', 70, 31, 'canon', 'acts', 7, 21, 'free', E'Acts 7:21 — *And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son.* Stephen names the favor that keeps Moses in the king''s house — Jasher''s *Yahuah was with him* in Pharaoh''s hall.'),
+  -- thread: jasher-70-drawn-out-nursed-jubilees
+  ('jasher', 'jasher', 70, 33, 'canon', 'exodus', 2, 10, 'free', E'Exodus 2:10 — *And the child grew, and she brought him unto Pharaoh''s daughter, and he became her son. And she called his name Moses: and she said, Because I drew him out of the water.* Jasher''s Bathia who considers the grown boy a son is Exodus'' daughter of Pharaoh who drew Moses out and made him her son.'),
+  ('jasher', 'jasher', 70, 33, 'canon', 'acts', 7, 22, 'free', E'Acts 7:22 — *And Moses was learned in all the wisdom of the Egyptians, and was mighty in words and in deeds.* Stephen names the wisdom Moses gained growing in the king''s house, the very upbringing Jasher narrates.'),
+  ('jasher', 'jasher', 70, 33, 'jubilees', 'jubilees', 47, 9, 'extras', E'Jubilees 47:9 — *And afterwards, when you were grown up, they brought you to the daughter of Pharaoh, and you did become her son, and Amram your father taught you writing, and after you had completed three weeks they brought you into the royal court.* The Jubilees apparatus narrates the same grown-in-the-court scene, the Angel of the Presence telling Moses his own preservation.'),
+  -- thread: jasher-70-moses-sees-the-burdens
+  ('jasher', 'jasher', 70, 34, 'canon', 'exodus', 2, 11, 'free', E'Exodus 2:11 — *And it came to pass in those days, when Moses was grown, that he went out unto his brethren, and looked on their burdens: and he spied an Egyptian smiting an Hebrew, one of his brethren.* Jasher''s daily going-forth to see the burdens is the going-out Exodus records, the prince claiming the slaves as his brethren.'),
+  ('jasher', 'jasher', 70, 41, 'canon', 'acts', 7, 23, 'free', E'Acts 7:23 — *And when he was full forty years old, it came into his heart to visit his brethren the children of Yashar''el (Israel).* Stephen names the heart that turns to visit the brethren — the grief Jasher shows Moses bearing over their hard labor.'),
+  ('jasher', 'jasher', 70, 41, 'canon', 'acts', 7, 25, 'free', E'Acts 7:25 — *For he supposed his brethren would have understood how that Elohim (God) by his hand would deliver them: but they understood not.* The deliverer''s heart is already set on his people, the very compassion Jasher narrates before the slaying and the flight.'),
+  -- thread: jasher-70-sabbath-rest-granted
+  ('jasher', 'jasher', 70, 47, 'canon', 'genesis', 2, 2, 'free', E'Genesis 2:2 — *And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made.* The seventh-day rest Moses obtains for Israel is the rest set in creation, kept long before Sinai.'),
+  ('jasher', 'jasher', 70, 47, 'canon', 'exodus', 20, 8, 'free', E'Exodus 20:8 — *Remember the sabbath day, to keep it holy.* The command later graven in stone is the same six-days-labor, seventh-day-rest Jasher shows proclaimed in Goshen.'),
+  ('jasher', 'jasher', 70, 47, 'canon', 'exodus', 20, 10, 'free', E'Exodus 20:10 — *But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God): in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates:* The proclamation''s seventh-day rest from all work is the Sabbath of the fourth word, here kept before Sinai.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja70_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja70_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-70-balaam-counsel-slay-the-child',
+       E'Balaam the son of Beor counsels Pharaoh to slay the Hebrew child',
+       E'*And Balaam the son of Beor the magician answered before the king and princes, and he said, Remember now, O my Lord and king, the dream which you did dream many days since, and that which your servant interpreted to you.* (Jasher 70:5) Jasher names the man at Pharaoh''s right hand: not a homonym but *Balaam the son of Beor*, the same magician the Torah will name when Moab and Midian send for him to curse the seed — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* (Numbers 22:5). Jasher shows the man''s character from the start: *If it please the king, let us now spill his blood upon the ground, lest he grow up and take away the government from your hand, and the hope of Egypt perish after he shall have reigned.* (Jasher 70:19) — counsel of murder for the wages of the king''s favor. The apostles weigh that way and find it cursed: *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* (2 Peter 2:15), and *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* (Jude 1:11). It ain''t new — the way of Balaam is the way of the kingdom of man, hired against the chosen seed.',
+       sv.verse_id, ev.verse_id, 'extras', 56725
+  FROM _session252_ja70_lookup sv, _session252_ja70_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=5
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=70 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-70-bondage-foretold-seed-multiplies',
+       E'The seed multiplies, the new king casts the male children into the river',
+       E'Behind Jasher''s Balaam-scene stands the bondage itself, foretold to Abraham and now come upon the seed. Balaam recounts the fathers'' history — *His sons sold their brother Joseph, who went down into Egypt and became a slave, and was placed in the prison house for twelve years.* (Jasher 70:15) — the very story Jasher retells from Genesis, leading into the affliction Yahuah named at the covenant of the pieces: *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* (Genesis 15:13). Exodus opens the bondage Jasher''s chapter assumes: *Now there arose up a new king over Egypt, which knew not Joseph.* (Exodus 1:8) — and the seed grows the more it is crushed: *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* (Exodus 1:7). Stephen sets the same scene before the council: *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* (Acts 7:19). The kingdom of man casts the chosen seed into the river — the same pattern Herod will repeat: *Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem...* (Matthew 2:16). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56728
+  FROM _session252_ja70_lookup sv, _session252_ja70_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=15
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=70 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-70-moses-preserved-coal-and-angel',
+       E'The child preserved: the angel turns Moses'' hand to the coal',
+       E'*And they placed the boy before them, and the lad endeavored to stretch forth his hand to the onyx stone, but the angel of Yahuah (the Lord) took his hand and placed it upon the coal, and the coal became extinguished in his hand, and he lifted it up and put it into his mouth, and burned part of his lips and part of his tongue, and he became heavy in mouth and tongue.* (Jasher 70:29) Here is Jasher''s legend for why Moses was *slow of speech* — and beneath the legend, the canon''s bedrock truth: the chosen child is kept alive against the king''s intent. *So the king and princes refrained from slaying the child, so Moses remained in Pharaoh''s house, growing up, and Yahuah (the Lord) was with him.* (Jasher 70:31). Exodus tells the keeping plainly: *And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months.* (Exodus 2:2). The writer to the Hebrews reads it as faith: *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment.* (Hebrews 11:23). And Stephen names the favor on the preserved child: *And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son.* (Acts 7:21). The deliverer is preserved in the house of the very king who sought his death.',
+       sv.verse_id, ev.verse_id, 'extras', 56731
+  FROM _session252_ja70_lookup sv, _session252_ja70_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=29
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=70 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-70-drawn-out-nursed-jubilees',
+       E'Drawn out, nursed, and grown in Pharaoh''s house',
+       E'*And whilst the boy was in the king''s house, he was robed in purple and he grew amongst the children of the king.* (Jasher 70:32) — *And when Moses grew up in the king''s house, Bathia the daughter of Pharaoh considered him as a son, and all the household of Pharaoh honored him, and all the men of Egypt were afraid of him.* (Jasher 70:33). Jasher''s growing-up scene retells Exodus 2: *And the child grew, and she brought him unto Pharaoh''s daughter, and he became her son. And she called his name Moses: and she said, Because I drew him out of the water.* (Exodus 2:10). Stephen rolls the same education into one verse: *And Moses was learned in all the wisdom of the Egyptians, and was mighty in words and in deeds.* (Acts 7:22). And the SAME scene stands in the Jubilees apparatus, told as the Angel of the Presence to Moses himself: *And afterwards, when you were grown up, they brought you to the daughter of Pharaoh, and you did become her son, and Amram your father taught you writing, and after you had completed three weeks they brought you into the royal court.* (Jubilees 47:9). Three witnesses, one preserved deliverer — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56734
+  FROM _session252_ja70_lookup sv, _session252_ja70_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=32
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=70 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-70-moses-sees-the-burdens',
+       E'Moses goes out to his brethren and sees their burdens',
+       E'*And he daily went forth and came into the land of Goshen, where his brethren the children of Israel were, and Moses saw them daily in shortness of breath and hard labor.* (Jasher 70:34) — *And the day arrived when Moses went to Goshen to see his brethren, that he saw the children of Israel in their burdens and hard labor, and Moses was grieved on their account.* (Jasher 70:41). This is the turning of Moses'' heart that Exodus records in a single verse: *And it came to pass in those days, when Moses was grown, that he went out unto his brethren, and looked on their burdens: and he spied an Egyptian smiting an Hebrew, one of his brethren.* (Exodus 2:11). Stephen frames it as the visiting of a deliverer: *And when he was full forty years old, it came into his heart to visit his brethren the children of Yashar''el (Israel).* (Acts 7:23) — *For he supposed his brethren would have understood how that Elohim (God) by his hand would deliver them: but they understood not.* (Acts 7:25). The prince of Egypt owns the slaves as his brethren; the deliverer is grieved with the afflicted seed.',
+       sv.verse_id, ev.verse_id, 'extras', 56737
+  FROM _session252_ja70_lookup sv, _session252_ja70_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=34
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=70 AND ev.verse_number=41
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-70-sabbath-rest-granted',
+       E'Moses obtains a day of rest for Israel — the seventh day',
+       E'*And Moses said to Pharaoh, Let there be given to your servants the children of Israel who are in Goshen, one day to rest in it from their labor.* (Jasher 70:44) — and the proclamation that follows is Sabbath itself: *To you, all the children of Israel, thus says the king, for six days you shall do your work and labor, but on the seventh day you shall rest, and shall not preform any work, thus shall you do all the days, as the king and Moses the son of Bathia have commanded.* (Jasher 70:47). The seventh-day rest is no new commandment given at Sinai — it is the rest set in the creation, *And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made.* (Genesis 2:2), and the word later graven in stone: *Remember the sabbath day, to keep it holy.* (Exodus 20:8) — *But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God): in it thou shalt not do any work...* (Exodus 20:10). Jasher reckons it from Yahuah''s own remembering: *For this thing was from Yahuah (the Lord) to the children of Israel, for Yahuah (the Lord) had begun to remember the children of Israel to save them for the sake of their fathers.* (Jasher 70:49). Torah-before-Sinai — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56740
+  FROM _session252_ja70_lookup sv, _session252_ja70_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=44
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=70 AND ev.verse_number=49
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-70-balaam-counsel-slay-the-child
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* The Torah''s Balaam son of Beor is the same magician Jasher seats at Pharaoh''s table, hired again against the seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-balaam-counsel-slay-the-child'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* Balaam''s counsel to spill the child''s blood for the king''s favor is the very wages-of-unrighteousness way Peter names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-balaam-counsel-slay-the-child'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* Jude pronounces woe on the error of Balaam for reward — the same reward Jasher''s Balaam seeks in advising Moses'' murder.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-balaam-counsel-slay-the-child'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-70-bondage-foretold-seed-multiplies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* Joseph''s descent into Egypt, which Balaam recounts, is the door into the affliction foretold to Abram at the covenant of the pieces.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-bondage-foretold-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The Pharaoh whose counsellors plot the child''s death is the new king of Exodus who forgot Joseph and turned on the seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-bondage-foretold-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The very multiplying of the seed is what makes Egypt fear and Balaam counsel murder.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-bondage-foretold-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen names the casting-out of the children that frames Jasher''s whole scene — the kingdom of man against the seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-bondage-foretold-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Matthew 2:16 — *Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.* Pharaoh seeking the chosen child''s blood is the same pattern Herod repeats — the dragon ever seeking to slay the deliverer.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-bondage-foretold-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=2 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-70-moses-preserved-coal-and-angel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:2 — *And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months.* The canon''s plain account of the child kept alive stands beneath Jasher''s coal-legend of why the king spared him.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-moses-preserved-coal-and-angel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:23 — *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment.* Hebrews reads Moses'' preservation as faith that did not fear the king''s commandment — the same deliverer Jasher shows kept in Pharaoh''s house.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-moses-preserved-coal-and-angel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:21 — *And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son.* Stephen names the favor that keeps Moses in the king''s house — Jasher''s *Yahuah was with him* in Pharaoh''s hall.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-moses-preserved-coal-and-angel'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-70-drawn-out-nursed-jubilees
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:10 — *And the child grew, and she brought him unto Pharaoh''s daughter, and he became her son. And she called his name Moses: and she said, Because I drew him out of the water.* Jasher''s Bathia who considers the grown boy a son is Exodus'' daughter of Pharaoh who drew Moses out and made him her son.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-drawn-out-nursed-jubilees'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:22 — *And Moses was learned in all the wisdom of the Egyptians, and was mighty in words and in deeds.* Stephen names the wisdom Moses gained growing in the king''s house, the very upbringing Jasher narrates.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-drawn-out-nursed-jubilees'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 47:9 — *And afterwards, when you were grown up, they brought you to the daughter of Pharaoh, and you did become her son, and Amram your father taught you writing, and after you had completed three weeks they brought you into the royal court.* The Jubilees apparatus narrates the same grown-in-the-court scene, the Angel of the Presence telling Moses his own preservation.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-drawn-out-nursed-jubilees'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=33
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-70-moses-sees-the-burdens
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:11 — *And it came to pass in those days, when Moses was grown, that he went out unto his brethren, and looked on their burdens: and he spied an Egyptian smiting an Hebrew, one of his brethren.* Jasher''s daily going-forth to see the burdens is the going-out Exodus records, the prince claiming the slaves as his brethren.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-moses-sees-the-burdens'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:23 — *And when he was full forty years old, it came into his heart to visit his brethren the children of Yashar''el (Israel).* Stephen names the heart that turns to visit the brethren — the grief Jasher shows Moses bearing over their hard labor.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-moses-sees-the-burdens'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:25 — *For he supposed his brethren would have understood how that Elohim (God) by his hand would deliver them: but they understood not.* The deliverer''s heart is already set on his people, the very compassion Jasher narrates before the slaying and the flight.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-moses-sees-the-burdens'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-70-sabbath-rest-granted
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:2 — *And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made.* The seventh-day rest Moses obtains for Israel is the rest set in creation, kept long before Sinai.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-sabbath-rest-granted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 20:8 — *Remember the sabbath day, to keep it holy.* The command later graven in stone is the same six-days-labor, seventh-day-rest Jasher shows proclaimed in Goshen.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-sabbath-rest-granted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 20:10 — *But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God): in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates:* The proclamation''s seventh-day rest from all work is the Sabbath of the fourth word, here kept before Sinai.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja70_lookup sv, _session252_ja70_lookup tv
+ WHERE t.slug='jasher-70-sabbath-rest-granted'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=70 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_71.sql (session252 jasher 71) -----
+-- Source anchor: jasher/jasher ch71. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja71 (view _session252_ja71_lookup). Sort band base 56750, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja71_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-71-slays-the-egyptian
+  ('jasher', 'jasher', 71, 1, 'canon', 'exodus', 2, 11, 'free', E'Exodus 2:11 — *And it came to pass in those days, when Moses was grown, that he went out unto his brethren, and looked on their burdens: and he spied an Egyptian smiting an Hebrew, one of his brethren.* The same going-out to see his kin''s burdens that Jasher 71:1 sets at Goshen.'),
+  ('jasher', 'jasher', 71, 3, 'canon', 'exodus', 2, 12, 'free', E'Exodus 2:12 — *And he looked this way and that way, and when he saw that there was no man, he slew the Egyptian, and hid him in the sand.* Word for word the deed of Jasher 71:3 — he saw no man, smote the Egyptian, hid him in the sand.'),
+  ('jasher', 'jasher', 71, 3, 'canon', 'acts', 7, 24, 'free', E'Acts 7:24 — *And seeing one of them suffer wrong, he defended him, and avenged him that was oppressed, and smote the Egyptian.* Stephen retells Jasher 71:3 as Moses delivering the oppressed Hebrew from his smiter.'),
+  ('jasher', 'jasher', 71, 1, 'canon', 'hebrews', 11, 24, 'free', E'Hebrews 11:24 — *By faith Moses, when he was come to years, refused to be called the son of Pharaoh''s daughter.* The faith that drives Jasher''s Moses out of the king''s house and down to his brethren''s burdens (Jasher 71:1).'),
+  ('jasher', 'jasher', 71, 3, 'jubilees', 'jubilees', 47, 10, 'extras', E'Jubilees 47:10 — *And you were three weeks of years at court until the time when you did go forth from the royal court and did see an Egyptian smiting your friend who was of the children of Yashar''el (Israel), and you did slay him and hide him in the sand.* Jubilees carries the identical scene that Jasher 71:1-3 expands.'),
+  -- thread: jasher-71-who-made-thee-judge
+  ('jasher', 'jasher', 71, 7, 'canon', 'exodus', 2, 13, 'free', E'Exodus 2:13 — *And when he went out the second day, behold, two men of the Hebrews strove together: and he said to him that did the wrong, Wherefore smitest thou thy fellow?* The second-day quarrel of Jasher 71:7, the same reproof to the wrongdoer.'),
+  ('jasher', 'jasher', 71, 8, 'canon', 'exodus', 2, 14, 'free', E'Exodus 2:14 — *And he said, Who made thee a prince and a judge over us? intendest thou to kill me, as thou killedst the Egyptian? And Moses feared, and said, Surely this thing is known.* Almost verbatim the retort and Moses'' fear of Jasher 71:8.'),
+  ('jasher', 'jasher', 71, 8, 'canon', 'acts', 7, 27, 'free', E'Acts 7:27 — *But he that did his neighbour wrong thrust him away, saying, Who made thee a ruler and a judge over us?* Stephen''s witness to the rejection Jasher 71:8 records — the deliverer refused by his own.'),
+  ('jasher', 'jasher', 71, 8, 'jubilees', 'jubilees', 47, 11, 'extras', E'Jubilees 47:11 — *And on the second day you did find two of the children of Yashar''el (Israel) striving together, and you did say to him who was doing the wrong: "Why do you smite your brother? And he was angry and indignant, and said “Who made you a prince and a judge over us? Thinkest you to kill me as you killedst the Egyptian yesterday?” And you did fear and flee on account of these words.* Jubilees gives the same exchange and the flight that follows Jasher 71:8.'),
+  -- thread: jasher-71-pharaoh-seeks-to-slay-moses
+  ('jasher', 'jasher', 71, 9, 'canon', 'exodus', 2, 15, 'free', E'Exodus 2:15 — *Now when Pharaoh heard this thing, he sought to slay Moses. But Moses fled from the face of Pharaoh, and dwelt in the land of Midian: and he sat down by a well.* The threat Jasher 71:9 records — Pharaoh hears and seeks Moses'' life — with the flight that Jasher 71:11 frames as an angel-led exit.'),
+  ('jasher', 'jasher', 71, 11, 'canon', 'acts', 7, 29, 'free', E'Acts 7:29 — *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.* Moses brought out beyond Egypt''s borders in Jasher 71:11 becomes the stranger in Midian.'),
+  ('jasher', 'jasher', 71, 11, 'canon', 'hebrews', 11, 27, 'free', E'Hebrews 11:27 — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.* The departure from Egypt in Jasher 71:11 read as faith that does not fear Pharaoh''s wrath.'),
+  ('jasher', 'jasher', 71, 11, 'jubilees', 'jubilees', 48, 1, 'extras', E'Jubilees 48:1 — *And in the sixth year of the third week of the forty-ninth jubilee you did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt in the second week in the second year in the fiftieth jubilee.* Jubilees marks the same departure out of Egypt to Midian that Jasher 71:11 narrates.'),
+  -- thread: jasher-71-aaron-cast-away-idols-of-egypt
+  ('jasher', 'jasher', 71, 13, 'canon', 'ezekiel', 20, 7, 'free', E'Ezekiel 20:7 — *Then said I unto them, Cast ye away every man the abominations of his eyes, and defile not yourselves with the idols of Egypt: I am Yahuah Elohaychem (the LORD your God).* Nearly verbatim the prophetic call Aaron speaks in Jasher 71:13 — throw away the abominations of the eyes and the idols of Egypt.'),
+  ('jasher', 'jasher', 71, 14, 'canon', 'ezekiel', 20, 8, 'free', E'Ezekiel 20:8 — *But they rebelled against me, and would not hearken unto me: they did not every man cast away the abominations of their eyes, neither did they forsake the idols of Egypt: then I said, I will pour out my fury upon them, to accomplish my anger against them in the midst of the land of Egypt.* The very rebellion of Jasher 71:14 — they rebelled and would not hearken.'),
+  ('jasher', 'jasher', 71, 13, 'canon', 'acts', 7, 42, 'free', E'Acts 7:42 — *Then Elohim (God) turned, and gave them up to worship the host of heaven; as it is written in the book of the prophets, O ye house of Yashar''el (Israel), have ye offered to me slain beasts and sacrifices by the space of forty years in the wilderness?* The same Egypt-bred idolatry Aaron warns against in Jasher 71:13, carried on into the wilderness.'),
+  -- thread: jasher-71-covenant-bondage-remembered
+  ('jasher', 'jasher', 71, 15, 'canon', 'exodus', 2, 24, 'free', E'Exodus 2:24 — *And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob.* The same covenant-remembrance with the three patriarchs that stays the LORD''s hand in Jasher 71:15.'),
+  ('jasher', 'jasher', 71, 16, 'canon', 'exodus', 1, 14, 'free', E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The severe crushing and oppression of Jasher 71:16, named in mortar and brick.'),
+  ('jasher', 'jasher', 71, 16, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The bondage of Jasher 71:16 was foretold to Abraham — the affliction is no accident but the covenant word standing.'),
+  ('jasher', 'jasher', 71, 16, 'canon', 'acts', 7, 6, 'free', E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen repeats the foretold bondage that Jasher 71:16 shows pressing hardest before deliverance.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja71_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja71_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-71-slays-the-egyptian',
+       E'Moses goes out to his brethren and slays the Egyptian',
+       E'Jasher 71 opens with the grown Moses going down to his enslaved kin: *And when Moses was eighteen years old, he desired to see his father and mother and he went to them to Goshen, and when Moses had come near Goshen, he came to the place where the children of Israel were engaged in work, and he observed their burdens, and he saw an Egyptian smiting one of his Hebrew brethren* (Jasher 71:1), and *when he saw there was no man there he smote the Egyptian and hid him in the sand, and delivered the Hebrew from the hand of him that smote him* (Jasher 71:3). It ain''t new — this is the Exodus scene itself: *And it came to pass in those days, when Moses was grown, that he went out unto his brethren, and looked on their burdens: and he spied an Egyptian smiting an Hebrew, one of his brethren* (Exodus 2:11), *and when he saw that there was no man, he slew the Egyptian, and hid him in the sand* (Exodus 2:12). Stephen reads the same act as the deliverer''s hand reached out: *And seeing one of them suffer wrong, he defended him, and avenged him that was oppressed, and smote the Egyptian* (Acts 7:24). The faith behind it is named in Hebrews — Moses *refused to be called the son of Pharaoh''s daughter* (Hebrews 11:24), the chosen seed turning from the kingdom-of-man to his own afflicted people. Jubilees narrates the very same: *you did go forth from the royal court and did see an Egyptian smiting your friend who was of the children of Yashar''el (Israel), and you did slay him and hide him in the sand* (Jubilees 47:10).',
+       sv.verse_id, ev.verse_id, 'extras', 56750
+  FROM _session252_ja71_lookup sv, _session252_ja71_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=71 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-71-who-made-thee-judge',
+       E'The second day: who set thee for a prince and judge',
+       E'On the second day the rejection of the deliverer is spoken aloud: *And on the second day Moses went forth to his brethren, and saw, and behold two men were quarreling, and he said to the wicked one, Why dost you smite your neighbor?* (Jasher 71:7), and the man throws it back — *Who has set you for a prince and judge over us? dost you think to slay me as you did slay the Egyptian? and Moses was afraid and he said, Surely the thing is known?* (Jasher 71:8). The Exodus source matches: *And when he went out the second day, behold, two men of the Hebrews strove together: and he said to him that did the wrong, Wherefore smitest thou thy fellow?* (Exodus 2:13), *And he said, Who made thee a prince and a judge over us? intendest thou to kill me, as thou killedst the Egyptian? And Moses feared, and said, Surely this thing is known* (Exodus 2:14). Stephen weighs the words: they refused the very ruler God was raising — *But he that did his neighbour wrong thrust him away, saying, Who made thee a ruler and a judge over us?* (Acts 7:27). Jubilees tells it the same: *Who made you a prince and a judge over us? Thinkest you to kill me as you killedst the Egyptian yesterday? And you did fear and flee on account of these words* (Jubilees 47:11). The deliverer rejected by his own — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56753
+  FROM _session252_ja71_lookup sv, _session252_ja71_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=7
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=71 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-71-pharaoh-seeks-to-slay-moses',
+       E'Pharaoh seeks Moses'' life; he is brought out of Egypt',
+       E'The kingdom-of-man moves to kill the chosen man: *And Pharaoh heard of this affair, and he ordered Moses to be slain, so Elohim (God) sent his angel* (Jasher 71:9), and *the angel of Yahuah (the Lord) took hold of the right hand of Moses, and brought him forth from Egypt, and placed him from without the borders of Egypt, a distance of forty days'' journey* (Jasher 71:11). The canon names the same threat and flight plainly: *Now when Pharaoh heard this thing, he sought to slay Moses. But Moses fled from the face of Pharaoh, and dwelt in the land of Midian: and he sat down by a well* (Exodus 2:15). Stephen: *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons* (Acts 7:29). Hebrews reads the flight as faith, not cowardice — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible* (Hebrews 11:27). Where Jasher dresses the rescue with an angel, the pattern is the old one: Pharaoh, like Nimrod and Herod after, seeks to slay the chosen child and the LORD preserves him. Jubilees sets the same departure: *you did depart and dwell in the land of Midian* (Jubilees 48:1).',
+       sv.verse_id, ev.verse_id, 'extras', 56756
+  FROM _session252_ja71_lookup sv, _session252_ja71_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=9
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=71 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-71-aaron-cast-away-idols-of-egypt',
+       E'Aaron prophesies: cast away the idols of Egypt',
+       E'With Moses gone, Aaron carries the word: *And Aaron his brother alone remained in the land of Egypt, and he prophesied to the children of Israel, saying, Thus says Yahuah Elohim (the Lord God) of your ancestors, Throw away, each man, the abominations of his eyes, and do not defile yourselves with the idols of Egypt* (Jasher 71:13), but *the children of Israel rebelled and would not hearken to Aaron at that time* (Jasher 71:14). It ain''t new — Ezekiel records this very call and rebellion in Egypt almost word for word: *Then said I unto them, Cast ye away every man the abominations of his eyes, and defile not yourselves with the idols of Egypt: I am Yahuah Elohaychem (the LORD your God)* (Ezekiel 20:7), *But they rebelled against me, and would not hearken unto me: they did not every man cast away the abominations of their eyes, neither did they forsake the idols of Egypt* (Ezekiel 20:8). Torah-before-Sinai: the fathers were called to put away Egypt''s host-of-heaven idolatry and keep the way of their ancestors'' God — the same idolatry Stephen says they later carried into the wilderness (*gave them up to worship the host of heaven*, Acts 7:42).',
+       sv.verse_id, ev.verse_id, 'extras', 56759
+  FROM _session252_ja71_lookup sv, _session252_ja71_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=71 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-71-covenant-bondage-remembered',
+       E'The covenant remembered; the bondage foretold to Abraham',
+       E'The chapter closes on the covenant holding fast under deepening bondage: *And Yahuah (the Lord) thought to destroy them, were it not that Yahuah (the Lord) remembered the covenant which he had made with Abraham, Isaac and Jacob* (Jasher 71:15); *In those days the hand of Pharaoh continued to be severe against the children of Israel, and he crushed and oppressed them until the time when Elohim sent forth his word and took notice of them* (Jasher 71:16). The Exodus source says it the same: *And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob* (Exodus 2:24), the bondage being *hard bondage, in morter, and in brick* (Exodus 1:14). And it was no surprise — it was foretold to Abraham generations before: *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13), which Stephen repeats — *that they should bring them into bondage, and entreat them evil four hundred years* (Acts 7:6). The covenant kept the seed alive in Egypt; election precedes deliverance. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56762
+  FROM _session252_ja71_lookup sv, _session252_ja71_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=15
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=71 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-71-slays-the-egyptian
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:11 — *And it came to pass in those days, when Moses was grown, that he went out unto his brethren, and looked on their burdens: and he spied an Egyptian smiting an Hebrew, one of his brethren.* The same going-out to see his kin''s burdens that Jasher 71:1 sets at Goshen.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-slays-the-egyptian'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 2:12 — *And he looked this way and that way, and when he saw that there was no man, he slew the Egyptian, and hid him in the sand.* Word for word the deed of Jasher 71:3 — he saw no man, smote the Egyptian, hid him in the sand.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-slays-the-egyptian'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:24 — *And seeing one of them suffer wrong, he defended him, and avenged him that was oppressed, and smote the Egyptian.* Stephen retells Jasher 71:3 as Moses delivering the oppressed Hebrew from his smiter.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-slays-the-egyptian'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 11:24 — *By faith Moses, when he was come to years, refused to be called the son of Pharaoh''s daughter.* The faith that drives Jasher''s Moses out of the king''s house and down to his brethren''s burdens (Jasher 71:1).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-slays-the-egyptian'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 47:10 — *And you were three weeks of years at court until the time when you did go forth from the royal court and did see an Egyptian smiting your friend who was of the children of Yashar''el (Israel), and you did slay him and hide him in the sand.* Jubilees carries the identical scene that Jasher 71:1-3 expands.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-slays-the-egyptian'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-71-who-made-thee-judge
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:13 — *And when he went out the second day, behold, two men of the Hebrews strove together: and he said to him that did the wrong, Wherefore smitest thou thy fellow?* The second-day quarrel of Jasher 71:7, the same reproof to the wrongdoer.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-who-made-thee-judge'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 2:14 — *And he said, Who made thee a prince and a judge over us? intendest thou to kill me, as thou killedst the Egyptian? And Moses feared, and said, Surely this thing is known.* Almost verbatim the retort and Moses'' fear of Jasher 71:8.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-who-made-thee-judge'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:27 — *But he that did his neighbour wrong thrust him away, saying, Who made thee a ruler and a judge over us?* Stephen''s witness to the rejection Jasher 71:8 records — the deliverer refused by his own.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-who-made-thee-judge'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 47:11 — *And on the second day you did find two of the children of Yashar''el (Israel) striving together, and you did say to him who was doing the wrong: "Why do you smite your brother? And he was angry and indignant, and said “Who made you a prince and a judge over us? Thinkest you to kill me as you killedst the Egyptian yesterday?” And you did fear and flee on account of these words.* Jubilees gives the same exchange and the flight that follows Jasher 71:8.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-who-made-thee-judge'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=8
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-71-pharaoh-seeks-to-slay-moses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:15 — *Now when Pharaoh heard this thing, he sought to slay Moses. But Moses fled from the face of Pharaoh, and dwelt in the land of Midian: and he sat down by a well.* The threat Jasher 71:9 records — Pharaoh hears and seeks Moses'' life — with the flight that Jasher 71:11 frames as an angel-led exit.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-pharaoh-seeks-to-slay-moses'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:29 — *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.* Moses brought out beyond Egypt''s borders in Jasher 71:11 becomes the stranger in Midian.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-pharaoh-seeks-to-slay-moses'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:27 — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.* The departure from Egypt in Jasher 71:11 read as faith that does not fear Pharaoh''s wrath.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-pharaoh-seeks-to-slay-moses'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 48:1 — *And in the sixth year of the third week of the forty-ninth jubilee you did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt in the second week in the second year in the fiftieth jubilee.* Jubilees marks the same departure out of Egypt to Midian that Jasher 71:11 narrates.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-pharaoh-seeks-to-slay-moses'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=11
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-71-aaron-cast-away-idols-of-egypt
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 20:7 — *Then said I unto them, Cast ye away every man the abominations of his eyes, and defile not yourselves with the idols of Egypt: I am Yahuah Elohaychem (the LORD your God).* Nearly verbatim the prophetic call Aaron speaks in Jasher 71:13 — throw away the abominations of the eyes and the idols of Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-aaron-cast-away-idols-of-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=20 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 20:8 — *But they rebelled against me, and would not hearken unto me: they did not every man cast away the abominations of their eyes, neither did they forsake the idols of Egypt: then I said, I will pour out my fury upon them, to accomplish my anger against them in the midst of the land of Egypt.* The very rebellion of Jasher 71:14 — they rebelled and would not hearken.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-aaron-cast-away-idols-of-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=20 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:42 — *Then Elohim (God) turned, and gave them up to worship the host of heaven; as it is written in the book of the prophets, O ye house of Yashar''el (Israel), have ye offered to me slain beasts and sacrifices by the space of forty years in the wilderness?* The same Egypt-bred idolatry Aaron warns against in Jasher 71:13, carried on into the wilderness.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-aaron-cast-away-idols-of-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-71-covenant-bondage-remembered
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:24 — *And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob.* The same covenant-remembrance with the three patriarchs that stays the LORD''s hand in Jasher 71:15.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-covenant-bondage-remembered'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The severe crushing and oppression of Jasher 71:16, named in mortar and brick.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-covenant-bondage-remembered'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The bondage of Jasher 71:16 was foretold to Abraham — the affliction is no accident but the covenant word standing.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-covenant-bondage-remembered'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen repeats the foretold bondage that Jasher 71:16 shows pressing hardest before deliverance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja71_lookup sv, _session252_ja71_lookup tv
+ WHERE t.slug='jasher-71-covenant-bondage-remembered'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=71 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_72.sql (session252 jasher 72) -----
+-- Source anchor: jasher/jasher ch72. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja72 (view _session252_ja72_lookup). Sort band base 56775, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja72_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-72-moses-flees-egypt
+  ('jasher', 'jasher', 72, 21, 'canon', 'exodus', 2, 12, 'free', E'Exodus 2:12 — *And he looked this way and that way, and when he saw that there was no man, he slew the Egyptian, and hid him in the sand.* The slaying for which Pharaoh sought Moses'' life in Jasher 72:21 is the canon scene Jasher''s war-flight expands.'),
+  ('jasher', 'jasher', 72, 21, 'canon', 'exodus', 2, 15, 'free', E'Exodus 2:15 — *Now when Pharaoh heard this thing, he sought to slay Moses. But Moses fled from the face of Pharaoh, and dwelt in the land of Midian: and he sat down by a well.* Exodus, like Jasher 72:21-22, has Pharaoh seek Moses'' life and Moses flee Egypt''s presence.'),
+  ('jasher', 'jasher', 72, 22, 'canon', 'acts', 7, 24, 'free', E'Acts 7:24 — *And seeing one of them suffer wrong, he defended him, and avenged him that was oppressed, and smote the Egyptian:* Stephen names the very deed behind Moses'' flight in Jasher 72:22.'),
+  ('jasher', 'jasher', 72, 22, 'canon', 'acts', 7, 29, 'free', E'Acts 7:29 — *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.* The flight from Egypt in Jasher 72:22 is the same flight Acts records, ending in Midian.'),
+  ('jasher', 'jasher', 72, 22, 'canon', 'hebrews', 11, 27, 'free', E'Hebrews 11:27 — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.* Hebrews reads Moses'' flight in Jasher 72:22 as faith forsaking Pharaoh''s kingdom, the deliverer preserved.'),
+  ('jasher', 'jasher', 72, 21, 'jubilees', 'jubilees', 47, 10, 'extras', E'Jubilees 47:10 — *And you were three weeks of years at court until the time when you did go forth from the royal court and did see an Egyptian smiting your friend who was of the children of Yashar''el (Israel), and you did slay him and hide him in the sand.* The Jubilees apparatus retells the same slaying that drives Moses'' flight in Jasher 72:21.'),
+  ('jasher', 'jasher', 72, 22, 'jubilees', 'jubilees', 48, 1, 'extras', E'Jubilees 48:1 — *And in the sixth year of the third week of the forty-ninth jubilee you did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt in the second week in the second year in the fiftieth jubilee.* Jubilees has Moses depart to Midian where Jasher 72:22 has him flee Egypt — the same exile.'),
+  -- thread: jasher-72-balaam-son-of-beor
+  ('jasher', 'jasher', 72, 6, 'canon', 'numbers', 22, 5, 'free', E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* The canon names the same Balaam the son of Beor that Jasher 72:6 makes a sorcerer-king of Cush.'),
+  ('jasher', 'jasher', 72, 6, 'canon', '2-peter', 2, 15, 'free', E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* Peter''s way of Balaam fits the treacherous self-exalting Balaam of Jasher 72:6 who seizes a throne by revolt.'),
+  ('jasher', 'jasher', 72, 6, 'canon', 'jude', 1, 11, 'free', E'Jude 11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* Jude''s error of Balaam matches the grasping rebel of Jasher 72:6.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja72_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja72_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-72-moses-flees-egypt',
+       E'Moses flees Egypt for the slain Egyptian — by faith he forsook the king',
+       E'Jasher cuts away from the legendary Cushite war to fix a single canon hinge: *At that time that the war and the siege were against Cush, Moses fled from Egypt from Pharaoh who sought to kill him for having slain the Egyptian* (Jasher 72:21), and *Moses was eighteen years old when he fled from Egypt from the presence of Pharaoh, and he fled and escaped to the camp of Kikianus, which at that time was besieging Cush* (Jasher 72:22). The flight is canon; the Cushite kingship that follows is Jasher''s own legendary expansion — but the SCENE Jasher is expanding stands written in Exodus, where Moses *spied an Egyptian smiting an Hebrew, one of his brethren* and *slew the Egyptian, and hid him in the sand* (Exodus 2:11-12), and then *when Pharaoh heard this thing, he sought to slay Moses. But Moses fled from the face of Pharaoh, and dwelt in the land of Midian* (Exodus 2:15). Stephen tells it the same: Moses, *seeing one of them suffer wrong, he defended him, and avenged him that was oppressed, and smote the Egyptian* (Acts 7:24), and *Then fled Moses at this saying, and was a stranger in the land of Madian* (Acts 7:29). Hebrews reads the flight not as cowardice but as faith refusing the kingdom-of-man: *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible* (Hebrews 11:27) — the deliverer preserved out of Pharaoh''s hand, the same pattern as the child kept from Nimrod and from Herod. Jubilees carries the identical scene: *you did see an Egyptian smiting your friend who was of the children of Yashar''el (Israel), and you did slay him and hide him in the sand* (Jubilees 47:10), and afterward *you did depart and dwell in the land of Midian five weeks and one year* (Jubilees 48:1). It ain''t new — three witnesses and two extra-canon retellings stand behind Jasher''s one verse.',
+       sv.verse_id, ev.verse_id, 'extras', 56775
+  FROM _session252_ja72_lookup sv, _session252_ja72_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=21
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=72 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-72-balaam-son-of-beor',
+       E'Balaam the son of Beor — the way of Balaam, named before Numbers',
+       E'Jasher leaves Balaam to guard Cush — *And when Kikianus went out, he left Balaam the magician, with his two sons, to guard the city, and the lowest sort of the people of the land* (Jasher 72:3) — and Balaam seizes the throne by treachery: *And Balaam the son of Beor, when the king of Cush had left him to guard the city and the poor of the city, he rose up and advised with the people of the land to rebel against king Kikianus, not to let him enter the city when he should come home* (Jasher 72:6). Jasher''s portrait of Balaam as a Cushite sorcerer-king is its own legendary expansion, but the name is the canon''s name: *Balaam the son of Beor* (Jasher 72:6) is the very diviner Balak hires in Numbers, where *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him* (Numbers 22:5). The apostles make him the type of the hireling who trades the right way for reward — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness* (2 Peter 2:15) — and *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* (Jude 11). Here in Jasher he is already the magician who grasps a kingdom not his own by enchantment and revolt — the way of Balaam read backward into Cush. The fidelity caution holds: this is genuinely *Balaam the son of Beor*, not a homonym, so the canonical Balaam thread is honestly anchored, even where the surrounding Cushite war is pure legend.',
+       sv.verse_id, ev.verse_id, 'extras', 56778
+  FROM _session252_ja72_lookup sv, _session252_ja72_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=3
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=72 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-72-moses-flees-egypt
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:12 — *And he looked this way and that way, and when he saw that there was no man, he slew the Egyptian, and hid him in the sand.* The slaying for which Pharaoh sought Moses'' life in Jasher 72:21 is the canon scene Jasher''s war-flight expands.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja72_lookup sv, _session252_ja72_lookup tv
+ WHERE t.slug='jasher-72-moses-flees-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 2:15 — *Now when Pharaoh heard this thing, he sought to slay Moses. But Moses fled from the face of Pharaoh, and dwelt in the land of Midian: and he sat down by a well.* Exodus, like Jasher 72:21-22, has Pharaoh seek Moses'' life and Moses flee Egypt''s presence.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja72_lookup sv, _session252_ja72_lookup tv
+ WHERE t.slug='jasher-72-moses-flees-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:24 — *And seeing one of them suffer wrong, he defended him, and avenged him that was oppressed, and smote the Egyptian:* Stephen names the very deed behind Moses'' flight in Jasher 72:22.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja72_lookup sv, _session252_ja72_lookup tv
+ WHERE t.slug='jasher-72-moses-flees-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:29 — *Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.* The flight from Egypt in Jasher 72:22 is the same flight Acts records, ending in Midian.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja72_lookup sv, _session252_ja72_lookup tv
+ WHERE t.slug='jasher-72-moses-flees-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Hebrews 11:27 — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.* Hebrews reads Moses'' flight in Jasher 72:22 as faith forsaking Pharaoh''s kingdom, the deliverer preserved.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja72_lookup sv, _session252_ja72_lookup tv
+ WHERE t.slug='jasher-72-moses-flees-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Jubilees 47:10 — *And you were three weeks of years at court until the time when you did go forth from the royal court and did see an Egyptian smiting your friend who was of the children of Yashar''el (Israel), and you did slay him and hide him in the sand.* The Jubilees apparatus retells the same slaying that drives Moses'' flight in Jasher 72:21.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja72_lookup sv, _session252_ja72_lookup tv
+ WHERE t.slug='jasher-72-moses-flees-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=21
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Jubilees 48:1 — *And in the sixth year of the third week of the forty-ninth jubilee you did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt in the second week in the second year in the fiftieth jubilee.* Jubilees has Moses depart to Midian where Jasher 72:22 has him flee Egypt — the same exile.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja72_lookup sv, _session252_ja72_lookup tv
+ WHERE t.slug='jasher-72-moses-flees-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=22
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-72-balaam-son-of-beor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* The canon names the same Balaam the son of Beor that Jasher 72:6 makes a sorcerer-king of Cush.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja72_lookup sv, _session252_ja72_lookup tv
+ WHERE t.slug='jasher-72-balaam-son-of-beor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* Peter''s way of Balaam fits the treacherous self-exalting Balaam of Jasher 72:6 who seizes a throne by revolt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja72_lookup sv, _session252_ja72_lookup tv
+ WHERE t.slug='jasher-72-balaam-son-of-beor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jude 11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* Jude''s error of Balaam matches the grasping rebel of Jasher 72:6.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja72_lookup sv, _session252_ja72_lookup tv
+ WHERE t.slug='jasher-72-balaam-son-of-beor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=72 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session252 — Jasher cross-references complete.'

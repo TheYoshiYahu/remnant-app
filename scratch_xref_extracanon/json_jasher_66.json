@@ -1,0 +1,92 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 66,
+  "session": "session252",
+  "tag": "ja66",
+  "base_band": 56625,
+  "threads": [
+    {
+      "slug": "jasher-66-edom-kings-samlah",
+      "title": "Samlah reigns in Edom — the kings of Esau before Israel had a king",
+      "summary_md": "Jasher opens the bondage chapter with a note of Edom's succession: *\"At that time died Hadad the son of Bedad king of Edom, and Samlah from Mesrekah, from the country of the children of the east, reigned in his place\"* (Jasher 66:1). This is Jasher carrying the same Edomite king-list Moses set down: *\"And Husham died, and Hadad the son of Bedad, who smote Midian in the field of Moab, reigned in his stead: and the name of his city was Avith\"* (Genesis 36:35), and then *\"And Hadad died, and Samlah of Masrekah reigned in his stead\"* (Genesis 36:36). The Torah marks these as *\"the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar'el (Israel)\"* (Genesis 36:31) — Esau's line crowns kings while the chosen seed is still under the rod in Egypt, election running its quiet course beneath the kingdoms of men. It ain't new; Jasher only puts flesh on the genealogy already written.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 66, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 36, "tgt_v": 36, "tier": "free", "note": "Genesis 36:36 — *And Hadad died, and Samlah of Masrekah reigned in his stead.* The Torah's Edomite king-list names the very succession Jasher 66:1 retells — Hadad dies, Samlah of Masrekah/Mesrekah reigns."},
+        {"src_ch": 66, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 36, "tgt_v": 35, "tier": "free", "note": "Genesis 36:35 — *And Husham died, and Hadad the son of Bedad, who smote Midian in the field of Moab, reigned in his stead: and the name of his city was Avith.* The Hadad son of Bedad whose death Jasher 66:1 records is the same king Genesis already named."},
+        {"src_ch": 66, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 36, "tgt_v": 31, "tier": "free", "note": "Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar'el (Israel).* Esau's kings rise while Israel is still a bondaged seed — the frame against which Jasher 66:1 sets Edom's succession."}
+      ]
+    },
+    {
+      "slug": "jasher-66-esau-brethren-war-fear",
+      "title": "Esau the brother — and Egypt's dread of the Hebrews joining a war",
+      "summary_md": "Samlah marches against Zepho son of Eliphaz and the children of Chittim, *\"But he did not engage with him, for the children of Esau prevented him, saying, He was their brother\"* (Jasher 66:4) — Esau's house held back by the bond of brotherhood, the recurring Jacob-and-Esau tie. Pharaoh, hearing of it, *\"increased the labor upon the children of Israel, lest the Israelites should do to them as they did to them in their war with the children of Esau\"* (Jasher 66:6), and the Egyptians said *\"strengthen the land, lest the children of Esau your brethren should come to fight against us\"* (Jasher 66:7). This is Jasher's legendary expansion, but it lands exactly on the canon's stated motive for the bondage: *\"Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land\"* (Exodus 1:10). The kingdom of man enslaves the chosen seed out of fear of a war — the same dread Pharaoh confesses in Exodus.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 66, "src_v": 7, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 10, "tier": "free", "note": "Exodus 1:10 — *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.* The very war-dread Jasher 66:6-7 dramatizes is the canon's own stated reason for Egypt's rigour."}
+      ]
+    },
+    {
+      "slug": "jasher-66-seed-multiplies-affliction",
+      "title": "The more they afflicted them, the more they multiplied — the seed kept",
+      "summary_md": "*\"But as the Egyptians increased the labor upon the children of Israel, so did the children of Israel increase and multiply, and all Egypt was filled with the children of Israel\"* (Jasher 66:9). Jasher echoes the canon almost word for word: *\"But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar'el (Israel)\"* (Exodus 1:12); and earlier, *\"the children of Yashar'el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them\"* (Exodus 1:7). Stephen reads it as promise ripening: *\"But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt\"* (Acts 7:17) — for this affliction was foretold to Abraham himself: *\"Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years\"* (Genesis 15:13). Jubilees tells the same: *\"And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied\"* (Jubilees 46:15). The covenant seed cannot be crushed out; affliction only enlarges it.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 66, "src_v": 9, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 12, "tier": "free", "note": "Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar'el (Israel).* The canon's line is nearly identical to Jasher 66:9 — labor increased, the seed multiplied all the more."},
+        {"src_ch": 66, "src_v": 9, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 7, "tier": "free", "note": "Exodus 1:7 — *And the children of Yashar'el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* Israel filling the land of Egypt, as Jasher 66:9-10 records."},
+        {"src_ch": 66, "src_v": 9, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 17, "tier": "free", "note": "Acts 7:17 — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt.* Stephen reads the multiplying seed of Jasher 66:9 as the promise to Abraham ripening."},
+        {"src_ch": 66, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 13, "tier": "free", "note": "Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The bondage Jasher 66:8 describes was foretold to Abraham — the affliction is no accident but covenant prophecy."},
+        {"src_ch": 66, "src_v": 9, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 46, "tgt_v": 15, "tier": "extras", "note": "Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* Jubilees carries the same paradox as Jasher 66:9 — rigour met with multiplication."}
+      ]
+    },
+    {
+      "slug": "jasher-66-pharaoh-counsel-wise-men",
+      "title": "Pharaoh takes counsel of his wise men to deal wisely with Israel",
+      "summary_md": "The elders and wise men of Egypt come before the king: *\"Now therefore our Lord and king, the eyes of all Egypt are upon you to give them advice with your wisdom, by which they may prevail over Israel to destroy them, or to diminish them from the land\"* (Jasher 66:14). This is Jasher unfolding the canon's single dense sentence: *\"And he said unto his people, Behold, the people of the children of Yashar'el (Israel) are more and mightier than we\"* (Exodus 1:9), *\"Come on, let us deal wisely with them\"* (Exodus 1:10) — and behind the new king is the canon's note, *\"Now there arose up a new king over Egypt, which knew not Joseph\"* (Exodus 1:8), which Stephen echoes: *\"Till another king arose, which knew not Joseph\"* (Acts 7:18). Jubilees tells it the same way: *\"Behold the people of the children of Yashar'el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many\"* (Jubilees 46:13). Jasher simply convenes the council the canon implies — the kingdom of man plotting against the seed it cannot out-number.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 66, "src_v": 14, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 9, "tier": "free", "note": "Exodus 1:9 — *And he said unto his people, Behold, the people of the children of Yashar'el (Israel) are more and mightier than we:* Pharaoh's dread of a more-numerous Israel is the seed of the council Jasher 66:14 stages in full."},
+        {"src_ch": 66, "src_v": 12, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 8, "tier": "free", "note": "Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The king Jasher 66:11-12 shows taking counsel is the canon's new Pharaoh who knew not Joseph."},
+        {"src_ch": 66, "src_v": 12, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 18, "tier": "free", "note": "Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen's summary of the king behind the bondage Jasher 66 narrates."},
+        {"src_ch": 66, "src_v": 14, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 46, "tgt_v": 13, "tier": "extras", "note": "Jubilees 46:13 — *\"Behold the people of the children of Yashar'el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many, and let us afflict them with slavery before war come upon us and before they too fight against us; else they will join themselves to our enemies and get them up out of our land, for their hearts and faces are towards the land of Canaan.\"* Jubilees stages the same royal counsel against Israel that Jasher 66:12-14 dramatizes."}
+      ]
+    },
+    {
+      "slug": "jasher-66-decree-slay-male-children",
+      "title": "The decree to spill the blood of every male child — the dragon at the manger",
+      "summary_md": "Job of Mesopotamia counsels the king: *\"If it please the king, let a royal decree go forth, and let it be written in the laws of Egypt which shall not be revoked, that every male child born to the Israelites, his blood shall be spilled upon the ground\"* (Jasher 66:21), *\"And by your doing this, when all the male children of Israel shall have died, the evil of their wars will cease\"* (Jasher 66:22). The canon issues the decree plainly: *\"And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive\"* (Exodus 1:22), and Stephen names its cruelty: *\"The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live\"* (Acts 7:19). Jubilees fixes the same edict: *\"And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river\"* (Jubilees 47:2). This is the antichrist pattern — the kingdom of man slaying the chosen male child to break the seed-line, the same hand Nimrod stretched toward the infant Abraham, that Herod stretched toward the infant Messiah (*\"slew all the children that were in Bethlehem\"*, Matthew 2:16), that the dragon stretches in the last day: *\"and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born\"* (Revelation 12:4). It ain't new; the war on the seed is one war.",
+      "anchor_start_v": 21,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 66, "src_v": 22, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 22, "tier": "free", "note": "Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* The canon's decree against the male children is the law Job counsels into being in Jasher 66:21-22."},
+        {"src_ch": 66, "src_v": 22, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 19, "tier": "free", "note": "Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen's witness to the very decree Jasher 66:21-22 records."},
+        {"src_ch": 66, "src_v": 21, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 2, "tgt_v": 16, "tier": "free", "note": "Matthew 2:16 — *Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.* Herod's slaughter of the infants mirrors the Egyptian decree of Jasher 66:21 — the kingdom of man slaying the male child to kill the deliverer."},
+        {"src_ch": 66, "src_v": 22, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 12, "tgt_v": 4, "tier": "free", "note": "Revelation 12:4 — *And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.* The dragon at the birth is the same war on the seed Jasher 66:22 shows Pharaoh waging."},
+        {"src_ch": 66, "src_v": 21, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 47, "tgt_v": 2, "tier": "extras", "note": "Jubilees 47:2 — *And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river.* Jubilees records the same river-decree against the male children that Jasher 66:21 has Job propose."}
+      ]
+    },
+    {
+      "slug": "jasher-66-midwives-feared-elohim",
+      "title": "Shephrah and Puah feared Elohim — the midwives who would not kill",
+      "summary_md": "*\"And the king sent for the Hebrew midwives to be called, of which the name of one was Shephrah, and the name of the other Puah\"* (Jasher 66:23); commanded to kill every son, *\"But the midwives feared Elohim (God) and did not hearken to the king of Egypt nor to his words... then did the midwife do all that was necessary to the child and let it live\"* (Jasher 66:27); and *\"Elohim dealt well with them, and the people multiplied and waxed exceedingly\"* (Jasher 66:31). This is the canon scene quoted almost name for name: *\"And the king of Egypt spake to the Hebrew midwives, of which the name of the one was Shiphrah, and the name of the other Puah\"* (Exodus 1:15); *\"But the midwives feared Elohim (God), and did not as the king of Egypt commanded them, but saved the men children alive\"* (Exodus 1:17); *\"Therefore Elohim (God) dealt well with the midwives: and the people multiplied, and waxed very mighty\"* (Exodus 1:20). The fear of Elohim outranks the decree of Pharaoh — Torah-faithfulness against the kingdom of man, and the seed kept alive by it. It ain't new; Jasher only sets the canon's two righteous women side by side with their reward.",
+      "anchor_start_v": 23,
+      "anchor_end_v": 31,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 66, "src_v": 23, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 15, "tier": "free", "note": "Exodus 1:15 — *And the king of Egypt spake to the Hebrew midwives, of which the name of the one was Shiphrah, and the name of the other Puah:* The canon names the same two midwives Jasher 66:23 summons before the king."},
+        {"src_ch": 66, "src_v": 25, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 16, "tier": "free", "note": "Exodus 1:16 — *And he said, When ye do the office of a midwife to the Hebrew women, and see them upon the stools; if it be a son, then ye shall kill him: but if it be a daughter, then she shall live.* The king's command in Jasher 66:25 matches the canon's word for word — kill the son, spare the daughter."},
+        {"src_ch": 66, "src_v": 27, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 17, "tier": "free", "note": "Exodus 1:17 — *But the midwives feared Elohim (God), and did not as the king of Egypt commanded them, but saved the men children alive.* The midwives' fear of Elohim over Pharaoh, exactly as Jasher 66:27 tells it."},
+        {"src_ch": 66, "src_v": 31, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 20, "tier": "free", "note": "Exodus 1:20 — *Therefore Elohim (God) dealt well with the midwives: and the people multiplied, and waxed very mighty.* Elohim's reward to the midwives and the multiplying people closes both Exodus 1 and Jasher 66:31."}
+      ]
+    }
+  ]
+}
