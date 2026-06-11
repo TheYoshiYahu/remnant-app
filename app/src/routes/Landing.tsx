@@ -44,22 +44,25 @@ const ANDROID_APK_LIVE = true;
 
 export default function Landing() {
   // S175.1 — in the native Capacitor shell, skip Landing entirely and
-  // bounce the partner straight into the reader. Two reasons: (1) the
+  // bounce the partner straight into the app. Two reasons: (1) the
   // partner already committed to the journey when they tapped Install
   // on the .apk, so the framing surface is redundant; (2) without
-  // this, the Android back button on /read pops history back to /
-  // (Landing), which feels like a leak — the reader is the home
-  // surface in the native app. window.location.replace() does NOT
-  // push a history entry, so the back button from /read has nothing
-  // to pop and Android treats that as "exit the app" (the native
-  // expected behavior for a back-press from the root surface).
+  // this, the Android back button pops history back to / (Landing),
+  // which feels like a leak — the home hub is the home surface in the
+  // native app. window.location.replace() does NOT push a history
+  // entry, so the back button from the hub has nothing to pop and
+  // Android treats that as "exit the app" (the native expected
+  // behavior for a back-press from the root surface).
+  // S228 — the bounce target is now /today (the Today home hub), not
+  // /read. The hub is the daily front door; the Reader is one tap away
+  // from it via the prominent "Read" door.
   if (
     typeof window !== "undefined" &&
     (window as unknown as {
       Capacitor?: { isNativePlatform?: () => boolean };
     }).Capacitor?.isNativePlatform?.() === true
   ) {
-    window.location.replace("/read");
+    window.location.replace("/today");
     return null;
   }
 
@@ -113,19 +116,30 @@ export default function Landing() {
           covenant story.
         </p>
 
-        {/* Single primary CTA into the reader at /read. Bordered-chrome
+        {/* Primary CTA into the Today home hub at /today. Bordered-chrome
             button family per DESIGN_LANGUAGE §1, with the gold accent
-            border carrying the priestly-witness register. */}
+            border carrying the priestly-witness register.
+            S228 — the front door is now the Today hub (the daily gathering
+            surface), with the Reader one tap away from it via the "Read"
+            door. A secondary plain link below keeps a direct path straight
+            into the Reader for partners who want it. */}
         <a
-          href="/read"
-          className="mb-6 inline-block rounded border-2 px-8 py-3 text-lg font-medium text-[var(--reader-bg)] transition hover:opacity-90"
+          href="/today"
+          className="mb-3 inline-block rounded border-2 px-8 py-3 text-lg font-medium text-[var(--reader-bg)] transition hover:opacity-90"
           style={{
             backgroundColor: TECHELET,
             borderColor: GOLD,
           }}
-          aria-label="Enter the study Bible"
+          aria-label="Enter the study Bible — open Today, the home hub"
         >
           Enter the study Bible →
+        </a>
+        <a
+          href="/read"
+          className="mb-6 inline-block text-sm font-medium text-[var(--reader-accent)] underline-offset-4 hover:underline"
+          aria-label="Go straight to the reader"
+        >
+          or go straight to the reader →
         </a>
 
         {/* S175 — Android-app affordance. Renders only on Android web

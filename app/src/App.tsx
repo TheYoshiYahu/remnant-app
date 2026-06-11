@@ -34,6 +34,7 @@ import Settings from "./routes/Settings";
 import Attributions from "./routes/Attributions";
 import AuthCallback from "./routes/AuthCallback";
 import Calendar from "./routes/Calendar";
+import Today from "./routes/Today";
 import SacredNameWelcomeModal from "./components/SacredNameWelcomeModal";
 import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
 import { hasSeenSigninAsk } from "./lib/signinAsk";
@@ -329,6 +330,12 @@ export default function App() {
     // sacred-name / sign-in ask is a reader-time decision and would only
     // talk over the calendar here.
     if (window.location.pathname.startsWith("/calendar")) return false;
+    // S228 — suppress on /today, the home hub and post-auth front door. Same
+    // rationale as `/` and /calendar: the sacred-name / sign-in ask is a
+    // reader-time decision and would only talk over the daily gathering
+    // surface. The modal surfaces when the partner taps into /read (App
+    // remounts there and this initializer re-runs with pathname=/read).
+    if (window.location.pathname.startsWith("/today")) return false;
     return !hasStoredSacredNamePreference() || !hasSeenSigninAsk();
   });
   // initialStep captured once at mount; the modal manages step state
@@ -453,6 +460,16 @@ export default function App() {
   // so it renders as a live demo without the reader backend.
   if (pathname === "/calendar" || pathname.startsWith("/calendar")) {
     return <>{welcomeModal}<Calendar /></>;
+  }
+  // S228 — the "Today" home hub: the post-authentication landing and the daily
+  // front door. Surfaces the live biblical day (date, Sabbath/feast status, the
+  // Omer in season, on-this-day history) plus the day's devotional + prayer, and
+  // quick doors into the Reader, The Appointed Times, and My Study. Standalone +
+  // auth-free like /calendar — computed locally, no backend. The native shell
+  // (Landing) and the post-sign-in flow (AuthCallback) both land here; the
+  // Reader stays fully reachable at /read via the prominent "Read" door.
+  if (pathname === "/today" || pathname.startsWith("/today")) {
+    return <>{welcomeModal}<Today /></>;
   }
   // S129 — Reader moves from `/` to `/read` so the bare bible
   // subdomain serves the new Landing surface instead of dropping
@@ -862,7 +879,14 @@ function Reader() {
   // /v1/study/index per open; App supplies books (canonical ordering),
   // the navigate callback, and visibility. Every tier opens it — the
   // free partner sees the capped home with the Study Notes lever.
-  const [myStudyOpen, setMyStudyOpen] = useState<boolean>(false);
+  // S228 — the Today hub's "My Study / Journal" door deep-links here as
+  // /read?study=1 (the hub is a separate route and can't reach into the
+  // Reader's modal state), so honor that param on first mount.
+  const [myStudyOpen, setMyStudyOpen] = useState<boolean>(
+    () =>
+      typeof window !== "undefined" &&
+      new URLSearchParams(window.location.search).get("study") === "1",
+  );
 
   // S125 W6 — Search V1 UI state per DESIGN_LANGUAGE.md §23. Single
   // boolean drives the SearchModal render branch; the modal owns its
@@ -2396,6 +2420,21 @@ function Reader() {
               <span aria-hidden="true">✎</span>
               <span>Notes</span>
             </button>
+            {/* S228 — door back to the Today home hub. The hub is now the
+                app's post-auth landing, so the Reader needs a one-tap way
+                home (peer to The Appointed Times and Settings — same
+                full-page <a href> navigation, not a modal). Gold register
+                (the feast-gold front-door light), ☼ glyph for the new day.
+                Free at all tiers — the hub needs no backend. */}
+            <a
+              href="/today"
+              aria-label="Go to Today — the home hub"
+              title="Today"
+              className="chrome-metal chrome-metal-gold"
+            >
+              <span aria-hidden="true">☼</span>
+              <span>Today</span>
+            </a>
             {/* S227 — chrome entry point to The Appointed Times (the
                 biblical-calendar surface at /calendar). The calendar was
                 built as a standalone, auth-free route (it doubles as the

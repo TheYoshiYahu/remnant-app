@@ -1946,3 +1946,363 @@ body {
   word-break: break-word;
 }
 .cal-jrnl-del { position: absolute; top: 0.35rem; right: 0.4rem; }
+
+/* ════════════════════════════════════════════════════════════════════════
+ * S228 — The Today hub (/today). The daily front door.
+ *
+ * Reuses the calendar's exact no-grey palette (techelet-black field, soft
+ * techelet ink instead of grey, feast-gold + emerald accents). Every value
+ * traces to an existing chrome-metal register or reader token. ABSOLUTE: no
+ * grey anywhere — the "muted" register is techelet-blue (#93C0FF), never a
+ * neutral grey.
+ * ════════════════════════════════════════════════════════════════════════ */
+.today-root {
+  /* The techelet-black field — a deep firmament glow rising from the floor. */
+  background:
+    radial-gradient(120% 80% at 50% 0%, color-mix(in srgb, #0A2D84 22%, #000) 0%, #000 62%);
+  --today-ink: #ffffff;
+  --today-soft: #93C0FF;            /* techelet — the no-grey muted register */
+  --today-gold: #FCECAF;
+  --today-gold-cream: #FFF8E1;
+  --today-emerald: #2EFFA1;
+  --today-argaman: #D4B0E0;
+  --today-surface: color-mix(in srgb, #0A2D84 14%, #000);
+  --today-surface-2: color-mix(in srgb, #0A2D84 22%, #000);
+  --today-rule: color-mix(in srgb, #FCECAF 18%, transparent);
+}
+
+.today-muted { color: var(--today-soft); }
+
+.today-eyebrow {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--today-soft);
+}
+.today-eyebrow-gold { color: var(--today-gold); }
+.today-eyebrow-emerald { color: var(--today-emerald); }
+
+.today-title {
+  color: var(--today-gold-cream);
+  text-shadow: 0 0 24px color-mix(in srgb, #FCECAF 35%, transparent);
+}
+.today-subtitle { color: var(--today-soft); }
+
+/* ── The day panel ─────────────────────────────────────────────────────── */
+.today-day {
+  border: 1px solid var(--today-rule);
+  border-radius: 16px;
+  padding: 1.25rem 1.4rem;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #0A2D84 20%, #000) 0%, var(--today-surface) 100%);
+  box-shadow: 0 10px 40px -16px color-mix(in srgb, #0A2D84 60%, transparent);
+}
+.today-day-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+}
+@media (min-width: 640px) {
+  .today-day-grid { grid-template-columns: 1.3fr 1fr; align-items: stretch; }
+}
+.today-date-big { display: flex; align-items: baseline; gap: 0.6rem; margin-top: 0.5rem; }
+.today-date-day {
+  font-family: Lora, Georgia, serif;
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--today-gold-cream);
+  text-shadow: 0 0 26px color-mix(in srgb, #FCECAF 30%, transparent);
+}
+.today-date-month {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--today-ink);
+}
+.today-date-year { margin-top: 0.4rem; font-size: 0.84rem; color: var(--today-soft); }
+.today-date-yearnum { color: var(--today-gold); font-weight: 700; }
+.today-greg { margin-top: 0.35rem; font-size: 0.82rem; color: var(--today-soft); }
+.today-sunset {
+  margin-top: 0.7rem;
+  font-size: 0.74rem;
+  color: color-mix(in srgb, #FCECAF 78%, #fff);
+  letter-spacing: 0.01em;
+}
+
+.today-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: center;
+}
+.today-status-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  border-radius: 12px;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--badge-glow, var(--today-rule));
+}
+.today-status-mark { font-size: 0.95rem; }
+.today-status-label {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.today-status-sub { font-size: 0.76rem; color: var(--today-soft); }
+.today-status-sabbath {
+  background: linear-gradient(135deg, color-mix(in srgb, #645028 30%, #000) 0%, color-mix(in srgb, #0A2D84 24%, #000) 100%);
+  border-color: var(--today-gold);
+}
+.today-status-sabbath .today-status-mark,
+.today-status-sabbath .today-status-label { color: var(--today-gold); }
+.today-status-feast {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--badge-glow) 22%, #000) 0%, color-mix(in srgb, #0A2D84 24%, #000) 100%);
+}
+.today-status-feast .today-status-mark,
+.today-status-feast .today-status-label { color: var(--badge-glow, var(--today-gold)); }
+.today-status-working {
+  background: color-mix(in srgb, #0A2D84 22%, #000);
+  border-color: color-mix(in srgb, #93C0FF 32%, transparent);
+}
+.today-status-working .today-status-label { color: var(--today-soft); }
+
+.today-next {
+  border-top: 1px solid var(--today-rule);
+  padding-top: 0.7rem;
+}
+.today-next-name {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 0.15rem;
+}
+.today-next-when { font-size: 0.76rem; color: var(--today-soft); margin-top: 0.1rem; }
+
+/* ── The Omer strip ────────────────────────────────────────────────────── */
+.today-omer {
+  margin-top: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border-radius: 12px;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid color-mix(in srgb, #2EFFA1 45%, transparent);
+  background: linear-gradient(90deg, color-mix(in srgb, #04321E 55%, #000) 0%, color-mix(in srgb, #0A2D84 22%, #000) 100%);
+}
+.today-omer-crown { border-color: var(--today-gold); }
+.today-omer-mark { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.today-omer-n {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: var(--today-gold);
+}
+.today-omer-of { font-size: 0.62rem; color: var(--today-soft); letter-spacing: 0.05em; }
+.today-omer-body { flex: 1; min-width: 0; }
+.today-omer-title { font-family: Lora, Georgia, serif; font-size: 1.02rem; font-weight: 700; color: var(--today-emerald); }
+.today-omer-sub { font-size: 0.76rem; color: var(--today-soft); margin-top: 0.1rem; }
+.today-omer-track {
+  margin-top: 0.45rem;
+  height: 5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, #93C0FF 18%, transparent);
+  overflow: hidden;
+}
+.today-omer-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #15A86A 0%, #2EFFA1 100%);
+}
+.today-omer-ref { font-size: 0.66rem; color: var(--today-soft); white-space: nowrap; }
+
+/* ── Quick doors ───────────────────────────────────────────────────────── */
+.today-doors { display: flex; flex-direction: column; gap: 0.8rem; }
+.today-doors-row { display: grid; grid-template-columns: 1fr; gap: 0.8rem; }
+@media (min-width: 560px) { .today-doors-row { grid-template-columns: 1fr 1fr; } }
+
+.today-door {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-radius: 14px;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid var(--today-rule);
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.today-door:hover { transform: translateY(-1px); }
+.today-door-glyph { font-size: 1.5rem; line-height: 1; }
+.today-door-text { display: flex; flex-direction: column; gap: 0.1rem; flex: 1; min-width: 0; }
+.today-door-title { font-family: Lora, Georgia, serif; font-size: 1.1rem; font-weight: 700; color: var(--today-ink); }
+.today-door-sub { font-size: 0.76rem; color: var(--today-soft); }
+.today-door-arrow { font-size: 1.2rem; color: var(--today-gold); }
+
+.today-door-read {
+  background: linear-gradient(120deg, color-mix(in srgb, #0A2D84 55%, #000) 0%, color-mix(in srgb, #1A6FE5 28%, #000) 100%);
+  border-color: var(--today-gold);
+  box-shadow: 0 8px 30px -14px color-mix(in srgb, #FCECAF 50%, transparent);
+}
+.today-door-read .today-door-glyph { color: var(--today-gold); }
+.today-door-read:hover { box-shadow: 0 12px 34px -12px color-mix(in srgb, #FCECAF 65%, transparent); }
+.today-door-cal {
+  background: color-mix(in srgb, #0A2D84 28%, #000);
+  border-color: color-mix(in srgb, #93C0FF 40%, transparent);
+}
+.today-door-cal .today-door-glyph { color: var(--today-gold); }
+.today-door-study {
+  background: color-mix(in srgb, #3D1B5C 30%, #000);
+  border-color: color-mix(in srgb, #D4B0E0 40%, transparent);
+}
+.today-door-study .today-door-glyph { color: var(--today-argaman); }
+
+/* ── Cards (devotional / prayer / history) ─────────────────────────────── */
+.today-card {
+  border-radius: 16px;
+  padding: 1.3rem 1.4rem;
+  border: 1px solid var(--today-rule);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #0A2D84 16%, #000) 0%, var(--today-surface) 100%);
+}
+.today-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+.today-card-series {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--today-ink);
+  margin-top: 0.1rem;
+}
+.today-card-counter {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--today-gold);
+  white-space: nowrap;
+  border: 1px solid color-mix(in srgb, #FCECAF 30%, transparent);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+}
+.today-card-anchor, .today-card-prayer .today-card-anchor {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--today-emerald);
+  white-space: nowrap;
+}
+
+.today-card-devo { border-left: 3px solid var(--today-gold); }
+.today-card-prayer { border-left: 3px solid var(--today-emerald); }
+
+.today-devo-title {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--today-gold-cream);
+  line-height: 1.15;
+}
+.today-devo-subtitle { color: var(--today-soft); font-size: 0.9rem; margin-top: 0.25rem; }
+
+.today-passage {
+  margin: 1rem 0;
+  padding: 0.85rem 1.05rem;
+  border-left: 3px solid var(--today-gold);
+  border-radius: 0 10px 10px 0;
+  background: linear-gradient(90deg, color-mix(in srgb, #645028 18%, transparent) 0%, transparent 100%);
+}
+.today-passage-text {
+  font-family: Lora, Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--today-ink);
+  margin: 0;
+}
+.today-passage-ref {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--today-gold);
+}
+
+.today-devo-body p {
+  font-family: Lora, Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.68;
+  color: color-mix(in srgb, #ffffff 92%, #93C0FF);
+  margin: 0 0 0.9rem;
+}
+.today-devo-invite {
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  background: color-mix(in srgb, #0A2D84 26%, #000);
+  border: 1px solid color-mix(in srgb, #93C0FF 28%, transparent);
+}
+.today-devo-invite-mark { color: var(--today-gold); font-weight: 700; font-style: italic; }
+.today-devo-closing {
+  font-style: italic;
+  color: var(--today-gold-cream) !important;
+  font-size: 1.05rem !important;
+}
+
+.today-theme-pick {
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.today-theme-pick-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--today-soft);
+}
+.today-theme-select {
+  background: color-mix(in srgb, #0A2D84 30%, #000);
+  color: var(--today-ink);
+  border: 1px solid color-mix(in srgb, #FCECAF 32%, transparent);
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+}
+.today-theme-select option { background: #06122e; color: var(--today-ink); }
+
+/* ── Prayer ────────────────────────────────────────────────────────────── */
+.today-prayer-subtitle { color: var(--today-soft); font-size: 0.88rem; margin-bottom: 0.6rem; }
+.today-prayer-body {
+  font-family: Lora, Georgia, serif;
+  font-size: 1.04rem;
+  line-height: 1.72;
+  color: color-mix(in srgb, #ffffff 94%, #2EFFA1);
+}
+
+/* ── On this day ───────────────────────────────────────────────────────── */
+.today-history-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+.today-history-item {
+  border-left: 2px solid var(--ev-glow, #FCECAF);
+  border-radius: 0 8px 8px 0;
+  padding: 0.45rem 0.75rem;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--ev-glow, #FCECAF) 12%, transparent) 0%, transparent 100%);
+}
+.today-history-head { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+.today-history-dot {
+  width: 0.5rem; height: 0.5rem; border-radius: 999px;
+  background: var(--ev-glow, #FCECAF);
+  display: inline-block;
+  box-shadow: 0 0 8px var(--ev-glow, #FCECAF);
+}
+.today-history-title { font-family: Lora, Georgia, serif; font-weight: 700; color: var(--today-ink); }
+.today-history-ref { font-size: 0.72rem; font-weight: 700; color: var(--ev-glow, #FCECAF); }
+.today-history-summary { font-size: 0.86rem; line-height: 1.55; color: var(--today-soft); margin: 0.2rem 0 0; }

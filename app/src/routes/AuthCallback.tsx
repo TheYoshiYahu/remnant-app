@@ -95,12 +95,14 @@ export default function AuthCallback() {
         // anything (Capacitor history, browser back stack) holds onto
         // location.href. window.history.replaceState swaps the URL
         // without firing popstate; then window.location.assign forces
-        // a full navigation to /read so the Reader's mount effects
-        // (getSubscriptionMe, hydrateReadingPosition, etc.) fire fresh
-        // with the new auth header in place.
+        // a full navigation so mount effects fire fresh with the new
+        // auth header in place.
+        // S228 — land the signed-in partner on /today (the home hub),
+        // not /read. The hub is the post-auth front door; its mount
+        // computes the day locally, and the Reader is one tap away.
         if (typeof window !== "undefined") {
-          window.history.replaceState({}, "", "/read");
-          window.location.assign("/read");
+          window.history.replaceState({}, "", "/today");
+          window.location.assign("/today");
         }
       })
       .catch(() => {
@@ -126,7 +128,7 @@ export default function AuthCallback() {
             Signed in
           </h1>
           <p className="mt-3 text-base text-[var(--reader-muted)]">
-            Taking you to the reader…
+            Taking you home…
           </p>
         </div>
       )}
