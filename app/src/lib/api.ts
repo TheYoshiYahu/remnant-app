@@ -104,6 +104,13 @@ export interface BookSummary {
   witness_category: WitnessCategory;
   tier_required: ContentTier;
   abstract: string | null;
+  // S232 — the owning edition's slug. The API has always returned this
+  // (api/models.py BookSummary.edition_slug); the field was simply absent
+  // from this interface. It is now load-bearing: the reader keys
+  // paragraph_starts.json by `edition::slug` (so two same-slug books in
+  // different editions can't collide), and the book-picker suppresses the
+  // duplicate apocrypha edition by edition_slug.
+  edition_slug: string;
 }
 
 export interface BookDetail extends BookSummary {

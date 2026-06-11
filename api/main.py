@@ -379,7 +379,15 @@ async def get_book(
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
             " WHERE b.slug = $1 "
-            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            "   AND tier_satisfies($2::content_tier, b.tier_required) "
+            # S232 — slugs are unique only per edition (composite UNIQUE on
+            # books.(edition_id, slug)), so five apocrypha slugs collide across
+            # the KJV `apocrypha` and `apocrypha-charles-vol1` editions. The
+            # reader suppresses the Charles-vol1 duplicates, and this
+            # deterministic ORDER BY guarantees the colliding slugs always
+            # resolve to the kept KJV edition (lowest book id) instead of
+            # whatever heap order fetchrow happened to return.
+            " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             tier,
         )
@@ -412,7 +420,15 @@ async def list_chapters(
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
             " WHERE b.slug = $1 "
-            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            "   AND tier_satisfies($2::content_tier, b.tier_required) "
+            # S232 — slugs are unique only per edition (composite UNIQUE on
+            # books.(edition_id, slug)), so five apocrypha slugs collide across
+            # the KJV `apocrypha` and `apocrypha-charles-vol1` editions. The
+            # reader suppresses the Charles-vol1 duplicates, and this
+            # deterministic ORDER BY guarantees the colliding slugs always
+            # resolve to the kept KJV edition (lowest book id) instead of
+            # whatever heap order fetchrow happened to return.
+            " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             tier,
         )
@@ -469,7 +485,15 @@ async def get_chapter(
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
             " WHERE b.slug = $1 "
-            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            "   AND tier_satisfies($2::content_tier, b.tier_required) "
+            # S232 — slugs are unique only per edition (composite UNIQUE on
+            # books.(edition_id, slug)), so five apocrypha slugs collide across
+            # the KJV `apocrypha` and `apocrypha-charles-vol1` editions. The
+            # reader suppresses the Charles-vol1 duplicates, and this
+            # deterministic ORDER BY guarantees the colliding slugs always
+            # resolve to the kept KJV edition (lowest book id) instead of
+            # whatever heap order fetchrow happened to return.
+            " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             tier,
         )

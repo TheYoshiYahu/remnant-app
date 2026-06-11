@@ -215,6 +215,23 @@ function ThemeToggle() {
 // one giant run-on paragraph.
 const paragraphStarts = paragraphStartsData as Record<string, Record<string, number[]>>;
 
+// S232 — apocrypha de-duplication. Two apocrypha editions are live: the KJV
+// 1611 `apocrypha` edition and the Charles-1913 `apocrypha-charles-vol1`
+// edition. They overlap on every book except 3 Maccabees (Charles-only) and
+// 2 Esdras (KJV-only), so the reader was listing two Tobits / Judiths /
+// Maccabees / etc. The KJV edition is consistently the more complete text
+// (more verses on every shared book), so we KEEP `apocrypha` and suppress the
+// Charles-vol1 duplicates from the picker/nav — keeping only its unique book,
+// 3 Maccabees. This is a SAFE, reversible display filter: the DB rows are
+// untouched (deleting the filter restores them), and the API still resolves
+// the five literally-colliding slugs (1-esdras, 1/2-maccabees, judith, tobit)
+// to the KJV edition (lowest book id; see api/main.py ORDER BY b.id).
+function isSuppressedDuplicate(b: BookSummary): boolean {
+  return (
+    b.edition_slug === "apocrypha-charles-vol1" && b.slug !== "3-maccabees"
+  );
+}
+
 // S204b — the four partner-choosable Witness verse treatments.
 type WitnessStyle = "text" | "quotes" | "highlight" | "capsule";
 
@@ -1489,7 +1506,7 @@ function Reader() {
       listBooks()
         .then((bs) => {
           if (cancelled) return;
-          setBooks(bs);
+          setBooks(bs.filter((b) => !isSuppressedDuplicate(b)));
           setBooksError(null);
         })
         .catch((e) => {
@@ -3100,8 +3117,16 @@ function Reader() {
           */}
           <div className="mt-4 leading-relaxed text-[1.05rem] text-[var(--reader-text)]">
             {(() => {
+              // S232 — paragraph_starts.json is now keyed `edition::slug`
+              // (so two same-slug books in different editions — e.g. the KJV
+              // apocrypha `judith` and the Charles-vol1 `judith` — get their
+              // own break maps and can't collide). Fall back to the bare
+              // `slug` key for any book whose edition-qualified entry hasn't
+              // been written yet (canon books stay bare-slug keyed).
+              const editionKey = `${chapterDetail.book.edition_slug}::${chapterDetail.book.slug}`;
               const bookStarts =
-                paragraphStarts[chapterDetail.book.slug]?.[
+                (paragraphStarts[editionKey] ??
+                  paragraphStarts[chapterDetail.book.slug])?.[
                   String(chapterDetail.chapter.chapter_number)
                 ] || [];
               const startsSet = new Set(bookStarts);
