@@ -1,0 +1,160 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 58,
+  "session": "session250",
+  "tag": "en58",
+  "base_band": 51425,
+  "threads": [
+    {
+      "slug": "1-enoch-58-everlasting-light",
+      "title": "Yahuah Their Everlasting Light — the Sun No More Goes Down",
+      "summary_md": "The third Parable opens on the inheritance of the righteous: *And the righteous shall be in the light of the sun, And the elect in the light of eternal life: The days of their life shall be unending, And the days of the holy and elect shall be without number.* (1 Enoch 58:3). Enoch's vision of a light that is no created sun but eternal life itself is Isaiah's promise made plain — *The sun shall be no more thy light by day; neither for brightness shall the moon give light unto thee: but Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory.* (Isaiah 60:19), with its seal *Thy sun shall no more go down; neither shall thy moon withdraw itself: for Yahuah (LORD) shall be thine everlasting light, and the days of thy mourning shall be ended.* (Isaiah 60:20). The same city John saw at the end — *And the city had no need of the sun, neither of the moon, to shine in it: for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof.* (Revelation 21:23) — and *And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light: and they shall reign for ever and ever.* (Revelation 22:5). It ain't new: Enoch already saw the unending day.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 58,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 60,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Isaiah 60:19 — *The sun shall be no more thy light by day; neither for brightness shall the moon give light unto thee: but Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory.* The very light of eternal life Enoch grants the elect at 58:3 is Yahuah Himself become their everlasting light."
+        },
+        {
+          "src_ch": 58,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 60,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Isaiah 60:20 — *Thy sun shall no more go down; neither shall thy moon withdraw itself: for Yahuah (LORD) shall be thine everlasting light, and the days of thy mourning shall be ended.* The sun that never sets answers Enoch's days of life that are unending and without number (58:3)."
+        },
+        {
+          "src_ch": 58,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Revelation 21:23 — *And the city had no need of the sun, neither of the moon, to shine in it: for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof.* John sees the same uncreated light that lights the elect in Enoch 58:3, now shining as the glory of Elohim and the Lamb."
+        },
+        {
+          "src_ch": 58,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Revelation 22:5 — *And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light: and they shall reign for ever and ever.* The light of eternal life and the days without number of Enoch 58:3 close in John's no-night reign forever and ever."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-58-righteous-shine",
+      "title": "The Righteous Shine Forth as the Sun",
+      "summary_md": "Enoch declares the elect's destiny in light — *And the righteous shall be in the light of the sun, And the elect in the light of eternal life* (1 Enoch 58:3) — and that radiance of the righteous is exactly what Daniel and Yahusha foretell. Daniel: *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* (Daniel 12:3). Yahusha, interpreting the seed-war harvest: *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* (Matthew 13:43). And the apocryphal witness keeps the same image — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* (The Wisdom of Solomon 3:7). The righteous do not merely stand in the light; they become luminaries, just as Enoch saw.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 58,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* The elect who stand in the light of eternal life (Enoch 58:3) are Daniel's wise who shine as stars for ever and ever."
+        },
+        {
+          "src_ch": 58,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 43,
+          "tier": "free",
+          "note": "Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha sets the righteous shining as the sun in the Father's kingdom, the very picture of Enoch's righteous in the light of the sun (58:3)."
+        },
+        {
+          "src_ch": 58,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 3,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "The Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* A parallel extra-canonical witness that the righteous shine at their vindication, echoing the light of the elect in Enoch 58:3."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-58-peace-in-the-name",
+      "title": "Peace to the Righteous in the Name of Yahuah of Spirits",
+      "summary_md": "Enoch joins light to peace: *And they shall seek the light and find righteousness with Yahuah (God) of Spirits: There shall be peace to the righteous in the name of Yahuah (God) of Spirits for ever and ever.* (1 Enoch 58:4). This is the same covenant peace Enoch declared at the very head of the book — *But with the righteous He will make peace, And will protect the elect, And mercy shall be upon them... And light shall appear unto them, And He will make peace with them.* (1 Enoch 1:8) — a self-link binding the first and third Parables: the righteous are an elect people whom Yahuah preserves, not a self-chosen class. Election precedes their seeking; they seek the light because they already belong to the One who named them.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 58,
+          "src_v": 4,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 1,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "1 Enoch 1:8 — *But with the righteous He will make peace, And will protect the elect, And mercy shall be upon them, And they shall all belong to Elohim (God), And they shall be prospered, And they shall all be blessed, And He will help them all, And light shall appear unto them, And He will make peace with them.* The peace and light promised to the elect at the book's opening returns as the third Parable's peace in the name of Yahuah of Spirits (58:4)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-58-darkness-destroyed",
+      "title": "The Darkness Past — the Light Established Forever",
+      "summary_md": "The Parable ends in unending day: *And there shall be no limit to the light Which shall never cease; For the darkness shall be destroyed, And the light established for ever and ever before Yahuah (God) of Spirits.* (1 Enoch 58:6), the secrets of righteousness having *become bright as the sun upon earth, And the darkness is past.* (1 Enoch 58:5). John seals the same end of night — *And the gates of it shall not be shut at all by day: for there shall be no night there.* (Revelation 21:25) — and Isaiah's everlasting light that never goes down stands behind both — *Thy sun shall no more go down; neither shall thy moon withdraw itself: for Yahuah (LORD) shall be thine everlasting light, and the days of thy mourning shall be ended.* (Isaiah 60:20). The destruction of darkness is the same judgement that ends the Watchers' night and establishes the order Yahuah set from the beginning.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 58,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 21,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Revelation 21:25 — *And the gates of it shall not be shut at all by day: for there shall be no night there.* The light established for ever before Yahuah of Spirits, with darkness destroyed (Enoch 58:6), is John's city of perpetual day with no night."
+        },
+        {
+          "src_ch": 58,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 60,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Isaiah 60:20 — *Thy sun shall no more go down; neither shall thy moon withdraw itself: for Yahuah (LORD) shall be thine everlasting light, and the days of thy mourning shall be ended.* Isaiah's light that never sets stands behind Enoch's secrets become bright as the sun with the darkness past (58:5)."
+        },
+        {
+          "src_ch": 58,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Revelation 22:5 — *And there shall be no night there; and they need no candle, neither light of the sun; for Yahuah Elohim (the Lord God) giveth them light: and they shall reign for ever and ever.* The light with no limit that shall never cease (Enoch 58:6) is John's no-night reign where Yahuah Elohim Himself gives them light."
+        }
+      ]
+    }
+  ]
+}

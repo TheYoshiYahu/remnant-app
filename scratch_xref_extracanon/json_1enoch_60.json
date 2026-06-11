@@ -1,0 +1,220 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 60,
+  "session": "session250",
+  "tag": "en60",
+  "base_band": 51475,
+  "threads": [
+    {
+      "slug": "1-enoch-60-leviathan-behemoth-divided",
+      "title": "Leviathan and Behemoth — the two monsters parted",
+      "summary_md": "The Book-of-Noah fragment lodged in Enoch's frame divides the two primal monsters: *And on that day were two monsters parted, a female monster whose name is Leviathan, dwelling in the abysses of the ocean over the fountains of the waters* (1 Enoch 60:7), and *But the male is named Behemoth, who occupies with his breast a waste wilderness named †Dûdâîn†, east of the garden where the elect and righteous dwell* (1 Enoch 60:8). This is no novelty — it is the canon's own pair. Yahuah parades Behemoth before Job: *Behold now behemoth, which I made with thee; he eateth grass as an ox* (Job 40:15), *He is the chief of the ways of Elohim (God): he that made him can make his sword to approach unto him* (Job 40:19); and Leviathan: *Canst thou draw out leviathan with an hook? or his tongue with a cord which thou lettest down?* (Job 41:1). The Psalmist sings the same dividing hand — *Thou brakest the heads of leviathan in pieces, and gavest him to be meat to the people inhabiting the wilderness* (Psalm 74:14), *There go the ships: there is that leviathan, whom thou hast made to play therein* (Psalm 104:26) — and Isaiah seals the end of the sea-dragon: *In that day Yahuah (LORD) with his sore and great and strong sword shall punish leviathan the piercing serpent, even leviathan that crooked serpent; and he shall slay the dragon that is in the sea* (Isaiah 27:1). The apocalyptic apocrypha keeps the very same separation, sea from dry land: *Then did you ordain two living creatures, the one you calledst Enoch, and the other Leviathan; And did separate the one from the other* (2 Esdras 6:49-50). The Creator's order stands; the monsters are His, parted and held until the day of judgement.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 60,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 40,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Job 40:15 — *Behold now behemoth, which I made with thee; he eateth grass as an ox.* The same male land-monster Enoch sets in the wilderness of Dûdâîn is the beast Yahuah names to Job as His own handiwork."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 40,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Job 40:19 — *He is the chief of the ways of Elohim (God): he that made him can make his sword to approach unto him.* Behemoth is a creature under the Creator's sword, matching Enoch's monster reserved for the day of parting and judgement."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 41,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Job 41:1 — *Canst thou draw out leviathan with an hook? or his tongue with a cord which thou lettest down?* The female sea-monster of the abyss in Enoch 60:7 is the very Leviathan Yahuah holds out to Job as beyond all human mastery."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 74,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Psalm 74:14 — *Thou brakest the heads of leviathan in pieces, and gavest him to be meat to the people inhabiting the wilderness.* Enoch's parting of the monsters \"to become food\" (60:9) echoes the Psalm where Leviathan is given as meat at Yahuah's victory."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 27,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 27:1 — *In that day Yahuah (LORD) with his sore and great and strong sword shall punish leviathan the piercing serpent, even leviathan that crooked serpent; and he shall slay the dragon that is in the sea.* Enoch's sea-monster is bound for that same day of reckoning when Yahuah slays the dragon of the deep."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 7,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "2-esdras",
+          "tgt_ch": 6,
+          "tgt_v": 50,
+          "tier": "extras",
+          "note": "2 Esdras 6:50 — *And did separate the one from the other: for the seventh part, namely, where the water was gathered together, might not hold them both.* The parallel apocalypse keeps the identical Creation-ordinance of dividing the two monsters, sea from dry land, that Enoch 60:7-8 assumes."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-60-head-of-days-throne-of-glory",
+      "title": "The great quaking and the Head of Days on His throne",
+      "summary_md": "The fragment opens in the throne-room with heaven itself shaking: *I saw how a mighty quaking made the heaven of heavens to quake, and the host of the Most High, and the angels, a thousand thousands and ten thousand times ten thousand, were disquieted with a great disquiet* (1 Enoch 60:1), and then *the Head of Days sat on the throne of His glory, and the angels and the righteous stood around Him* (1 Enoch 60:2). This is Daniel's vision, named: the Head of Days is the formless Father, the Ancient of days — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool* (Daniel 7:9) — and Daniel counts the very host Enoch counts: *thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened* (Daniel 7:10). The quaking is the prelude to the judgement Michael explains: *He hath been merciful and long-suffering... And when the day, and the power, and the punishment, and the judgement come, which Yahuah (God) of Spirits hath prepared for those who worship not the righteous law* (1 Enoch 60:5-6) — the day of mercy ending, the covenant for the elect and the inquisition for sinners. Torah stands; the judgement falls on those who deny the righteous law, not on the law itself.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 60,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Daniel 7:9 — *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire.* Enoch's Head of Days seated on the throne of His glory is Daniel's Ancient of days — the formless Father enthroned."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Daniel 7:10 — *A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened.* Daniel numbers the throng exactly as Enoch does — a thousand thousands and ten thousand times ten thousand — the same court convened for judgement."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people... and at that time thy people shall be delivered, every one that shall be found written in the book.* The Michael who raises Enoch and unfolds the day of judgement (60:4-6) is Daniel's great prince who stands up for the elect when the books decide."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-60-son-of-adam-enoch-taken-up",
+      "title": "\"Thou son of Adam\" — the seventh from Adam taken up",
+      "summary_md": "When Enoch presses the angel to show him the might of the monsters, the answer addresses him by title: *And he said to me: 'Thou son of Adam, herein thou dost seek to know what is hidden'* (1 Enoch 60:10) — and the chapter has just named his own translation: *east of the garden where the elect and righteous dwell, where my great-grandfather was taken up, the seventh from Adam, the first man whom Yahuah (God) of Spirits created* (1 Enoch 60:8). That taking-up is the canon's own terse witness: *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24), and Jude names him by the same generation: *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints* (Jude 1:14) — the very ten-thousands-host that quaked before the throne in 60:1. Here \"son of Adam\" falls on Enoch the man, mortal-man seeking hidden things; it is the same title that, in the Parables proper, is borne by the Elect One beside the Head of Days. Daniel keeps the kaph — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him* (Daniel 7:13): Daniel sees one *like* the Son of Adam, resembling mortal-man because the Formed Son took on flesh; Enoch's Parables name that same enthroned One outright. The title's plain creaturely sense here (Enoch, born of Adam) and its exalted sense there are not to be flattened together.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 60,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 5,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* The \"my great-grandfather was taken up\" of Enoch 60:8 is the canon's own account of Enoch's translation, the seventh from Adam removed by Elohim."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Jude 1:14 — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints,* Jude names Enoch \"the seventh from Adam\" exactly as 60:8 does, and quotes the very ten-thousands-host that Enoch numbers shaking before the throne in 60:1."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Daniel 7:13 — *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.* Daniel keeps the kaph — one *like* the Son of Adam, resembling mortal-man because the Formed Son took on flesh — while the title falls plainly on Enoch the mortal in 60:10; the same words, two senses not to be collapsed."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-60-secrets-of-winds-thunder-dew",
+      "title": "The secret chambers of the winds, thunder, and dew",
+      "summary_md": "The angel unveils the storehouses of the cosmos: *And he showed me all the secrets of the lightning and thunder, and showed me the secrets of the winds, how they are divided to blow over the earth, and the secrets of the clouds and dew, and there I saw from whence they proceed in that place and from whence they saturate the dusty earth* (1 Enoch 60:13), and *closed chambers out of which the winds are divided, the chamber of the hail and winds, the chamber of the mist, and of the clouds* (1 Enoch 60:14). Enoch himself records this same revelation earlier almost word for word: *And there mine eyes saw the secrets of the lightning and of the thunder, and the secrets of the winds, how they are divided to blow over the earth, and the secrets of the clouds and dew* (1 Enoch 41:3). The canon keeps these very treasuries: Yahuah challenges Job — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail* (Job 38:22), *Who hath divided a watercourse for the overflowing of waters, or a way for the lightning of thunder* (Job 38:25) — and the Psalmist and prophet name the wind-chambers outright: *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries* (Psalm 135:7); *he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures* (Jeremiah 10:13). The hidden order Enoch is shown is the Creator's order the whole canon confesses.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 60,
+          "src_v": 13,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 41,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 41:3 — *And there mine eyes saw the secrets of the lightning and of the thunder, and the secrets of the winds, how they are divided to blow over the earth, and the secrets of the clouds and dew, and there I saw from whence they proceed in that place and from whence they saturate the dusty earth.* Enoch's earlier vision states 60:13 almost verbatim — the same storehouse-secrets shown twice across the book."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 38,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* Yahuah's challenge to Job names the very chamber of hail Enoch is shown in 60:14 — the hidden treasuries of the sky."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 38,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Job 38:25 — *Who hath divided a watercourse for the overflowing of waters, or a way for the lightning of thunder;* the dividing of the lightning-and-thunder paths in 60:13 is Yahuah's own ordering of the storm in His answer to Job."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 135,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The Psalm names the wind-treasuries and lightning-for-rain that Enoch sees divided in their closed chambers in 60:13-14."
+        },
+        {
+          "src_ch": 60,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Jeremiah 10:13 — *When he uttereth his voice, there is a multitude of waters in the heavens, and he causeth the vapours to ascend from the ends of the earth; he maketh lightnings with rain, and bringeth forth the wind out of his treasures.* The prophet confesses the same wind-out-of-the-treasuries order that the angel shows Enoch in the closed chambers of 60:14."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+-- ----- fragment: minion_1enoch_56.sql (session250 1-enoch 56) -----
+-- Source anchor: enoch/1-enoch ch56. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en56 (view _session250_en56_lookup). Sort band base 51375, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en56_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-56-angels-of-punishment-scourges-chains
+  ('enoch', '1-enoch', 56, 1, 'enoch', '1-enoch', 53, 4, 'extras', E'1 Enoch 53:4 — *And I saw there all the angels of punishment abiding (there) And preparing all the instruments of Satan.* The same hosts of punishing angels Enoch saw being readied in ch53 now go forth bearing their scourges and chains in 56:1.'),
+  ('enoch', '1-enoch', 56, 3, 'enoch', '1-enoch', 54, 5, 'extras', E'1 Enoch 54:5 — *And he said unto me: ‘These are being prepared for the hosts of Azâzêl, so that they may take them and cast them into the abyss of complete condemnation, and they shall cover their jaws with rough stones as Yahuah (God) of Spirits commanded.* The chains of iron and bronze and the chasm of the abyss in 56:1-3 are the very instruments prepared in ch54 for the Watcher Azazel''s hosts.'),
+  -- thread: 1-enoch-56-gog-from-the-north-against-the-land
+  ('enoch', '1-enoch', 56, 5, 'canon', 'ezekiel', 38, 15, 'free', E'Ezekiel 38:15 — *And thou shalt come from thy place out of the north parts, thou, and many people with thee, all of them riding upon horses, a great company, and a mighty army:* The kings roused like lions in 56:5 are Gog''s mounted hordes stirred up from the north.'),
+  ('enoch', '1-enoch', 56, 6, 'canon', 'ezekiel', 38, 16, 'free', E'Ezekiel 38:16 — *And thou shalt come up against my people of Yashar''el (Israel), as a cloud to cover the land; it shall be in the latter days, and I will bring thee against my land, that the heathen may know me, when I shall be sanctified in thee, O Gog, before their eyes.* The treading-down of the land of His elect ones in 56:6 is Gog''s latter-day march against Yahuah''s own land.'),
+  ('enoch', '1-enoch', 56, 6, 'canon', 'ezekiel', 39, 2, 'free', E'Ezekiel 39:2 — *And I will turn thee back, and leave but the sixth part of thee, and will cause thee to come up from the north parts, and will bring thee upon the mountains of Yashar''el (Israel):* As in 56:6 the invader goes up against the elect''s land only to be turned and broken upon the mountains of Israel.'),
+  ('enoch', '1-enoch', 56, 6, 'canon', 'ezekiel', 39, 4, 'free', E'Ezekiel 39:4 — *Thou shalt fall upon the mountains of Yashar''el (Israel), thou, and all thy bands, and the people that is with thee: I will give thee unto the ravenous birds of every sort, and to the beasts of the field to be devoured.* The host that treads down the land in 56:6 falls and is devoured, just as Enoch''s slaughtered corpses lie without number in 56:7.'),
+  ('enoch', '1-enoch', 56, 5, 'canon', 'revelation', 20, 8, 'free', E'Revelation 20:8 — *And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea.* The angels stirring the kings to war in 56:5 are the same end-time gathering of Gog and Magog against the camp of the elect.'),
+  -- thread: 1-enoch-56-nations-rush-rebuked-at-the-city
+  ('enoch', '1-enoch', 56, 7, 'canon', 'isaiah', 17, 12, 'free', E'Isaiah 17:12 — *Woe to the multitude of many people, which make a noise like the noise of the seas; and to the rushing of nations, that make a rushing like the rushing of mighty waters!* The horde whose horses are halted by the city in 56:7 is Isaiah''s rushing multitude of many peoples.'),
+  ('enoch', '1-enoch', 56, 7, 'canon', 'isaiah', 17, 13, 'free', E'Isaiah 17:13 — *The nations shall rush like the rushing of many waters: but Elohim (God) shall rebuke them, and they shall flee far off, and shall be chased as the chaff of the mountains before the wind, and like a rolling thing before the whirlwind.* The city''s hindrance in 56:7 is the rebuke that scatters the rushing nations as chaff.'),
+  ('enoch', '1-enoch', 56, 7, 'canon', 'isaiah', 17, 14, 'free', E'Isaiah 17:14 — *And behold at eveningtide trouble; and before the morning he is not. This is the portion of them that spoil us, and the lot of them that rob us.* The spoilers stopped at the city of the righteous in 56:7 vanish overnight, exactly as Isaiah''s plunderers are gone before morning.'),
+  ('enoch', '1-enoch', 56, 7, 'canon', 'zechariah', 14, 2, 'free', E'Zechariah 14:2 — *For I will gather all nations against Jerusalem to battle; and the city shall be taken, and the houses rifled, and the women ravished; and half of the city shall go forth into captivity, and the residue of the people shall not be cut off from the city.* The city against which the horses press in 56:7 is the Jerusalem all nations are gathered against in Zechariah''s final battle.'),
+  ('enoch', '1-enoch', 56, 7, 'canon', 'zechariah', 14, 3, 'free', E'Zechariah 14:3 — *Then shall Yahuah (LORD) go forth, and fight against those nations, as when he fought in the day of battle.* The city''s hindrance in 56:7 is no mere wall but Yahuah Himself going forth to fight the gathered nations.'),
+  -- thread: 1-enoch-56-the-invaders-turn-sword-on-each-other
+  ('enoch', '1-enoch', 56, 7, 'canon', 'haggai', 2, 22, 'free', E'Haggai 2:22 — *And I will overthrow the throne of kingdoms, and I will destroy the strength of the kingdoms of the heathen; and I will overthrow the chariots, and those that ride in them; and the horses and their riders shall come down, every one by the sword of his brother.* The invaders turning their right hand against themselves in 56:7 fall exactly as Haggai''s horsemen, every one by his brother''s sword.'),
+  ('enoch', '1-enoch', 56, 7, 'canon', 'zechariah', 14, 3, 'free', E'Zechariah 14:3 — *Then shall Yahuah (LORD) go forth, and fight against those nations, as when he fought in the day of battle.* The self-destroying slaughter of 56:7 is Yahuah''s own battle against the gathered nations, fought as in days of old.'),
+  -- thread: 1-enoch-56-sheol-opens-its-jaws-on-the-sinners
+  ('enoch', '1-enoch', 56, 8, 'canon', 'numbers', 16, 30, 'free', E'Numbers 16:30 — *But if Yahuah (LORD) make a new thing, and the earth open her mouth, and swallow them up, with all that appertain unto them, and they go down quick into the pit; then ye shall understand that these men have provoked Yahuah (LORD).* The opening jaws of Sheol in 56:8 echo the earth''s mouth swallowing the rebels of Korah alive into the pit.'),
+  ('enoch', '1-enoch', 56, 8, 'canon', 'numbers', 16, 33, 'free', E'Numbers 16:33 — *They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation.* As in 56:8, the sinners are swallowed whole into the pit and perish from before the congregation of the elect.'),
+  ('enoch', '1-enoch', 56, 8, 'canon', 'isaiah', 5, 14, 'free', E'Isaiah 5:14 — *Therefore hell hath enlarged herself, and opened her mouth without measure: and their glory, and their multitude, and their pomp, and he that rejoiceth, shall descend into it.* Sheol opening its jaws to devour the sinners in 56:8 is Isaiah''s grave enlarging her mouth without measure for the proud multitude.'),
+  ('enoch', '1-enoch', 56, 8, 'canon', 'joel', 3, 2, 'free', E'Joel 3:2 — *I will also gather all nations, and will bring them down into the valley of Jehoshaphat, and will plead with them there for my people and for my heritage Yashar''el (Israel), whom they have scattered among the nations, and parted my land.* The sinners swallowed in 56:8 are the gathered nations Yahuah judges for scattering His heritage Israel.'),
+  ('enoch', '1-enoch', 56, 8, 'canon', 'joel', 3, 12, 'free', E'Joel 3:12 — *Let the heathen be wakened, and come up to the valley of Jehoshaphat: for there will I sit to judge all the heathen round about.* The devouring of the sinners in the presence of the elect in 56:8 is Yahuah seated to judge all the heathen gathered round about.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en56_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en56_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-56-angels-of-punishment-scourges-chains',
+       E'The angels of punishment go forth with scourges and chains',
+       E'Enoch sees the executioners of judgement set out: *And I saw there the hosts of the angels of punishment going, and they held scourges and chains of iron and bronze* (1 Enoch 56:1), bound for *their elect and beloved ones, that they may be cast into the chasm of the abyss of the valley* (1 Enoch 56:3) — the false ''elect'' of the rebel powers, whose end mirrors the chains prepared two visions earlier. There Enoch had already watched *all the angels of punishment abiding (there) And preparing all the instruments of Satan* (1 Enoch 53:4), and learned their purpose: *These are being prepared for the hosts of Azâzêl, so that they may take them and cast them into the abyss of complete condemnation, and they shall cover their jaws with rough stones as Yahuah (God) of Spirits commanded* (1 Enoch 54:5). The same iron chains and the same valley reappear here against the gathered nations — the Watchers'' binding (the canon''s Genesis 6 rebellion) is the pattern for the final clearing of the earth. The judgement falls on rebellion against the Creator''s order, never on covenant-keeping.',
+       sv.verse_id, ev.verse_id, 'extras', 51375
+  FROM _session250_en56_lookup sv, _session250_en56_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=56 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-56-gog-from-the-north-against-the-land',
+       E'The last assault stirred up from the north against the elect''s land',
+       E'The angels return and provoke the great war: *And in those days the angels shall return And hurl themselves to the east upon the Parthians and Medes: They shall stir up the kings, so that a spirit of unrest shall come upon them, And they shall rouse them from their thrones, That they may break forth as lions from their lairs* (1 Enoch 56:5), and *they shall go up and tread under foot the land of His elect ones* (1 Enoch 56:6). This is Ezekiel''s Gog stirred from the north against the regathered tribes: *And thou shalt come from thy place out of the north parts, thou, and many people with thee, all of them riding upon horses, a great company, and a mighty army* (Ezekiel 38:15), *And thou shalt come up against my people of Yashar''el (Israel), as a cloud to cover the land; it shall be in the latter days, and I will bring thee against my land, that the heathen may know me, when I shall be sanctified in thee, O Gog, before their eyes* (Ezekiel 38:16). Yahuah turns the invader: *And I will turn thee back, and leave but the sixth part of thee, and will cause thee to come up from the north parts, and will bring thee upon the mountains of Yashar''el (Israel)* (Ezekiel 39:2), and the army falls — *Thou shalt fall upon the mountains of Yashar''el (Israel), thou, and all thy bands, and the people that is with thee: I will give thee unto the ravenous birds of every sort, and to the beasts of the field to be devoured* (Ezekiel 39:4). Revelation gathers the same host one last time: *And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea* (Revelation 20:8). The land assaulted is the land of His elect — the inheritance of the twelve tribes regathered (Ezekiel 37), never a church displacing Israel.',
+       sv.verse_id, ev.verse_id, 'extras', 51378
+  FROM _session250_en56_lookup sv, _session250_en56_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=56 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-56-nations-rush-rebuked-at-the-city',
+       E'The city a hindrance — the rushing nations rebuked',
+       E'The flood of armies breaks upon the holy city: *But the city of my righteous shall be a hindrance to their horses* (1 Enoch 56:7). Isaiah heard the same roar of the gathered peoples and its swift rebuke: *Woe to the multitude of many people, which make a noise like the noise of the seas; and to the rushing of nations, that make a rushing like the rushing of mighty waters!* (Isaiah 17:12), *The nations shall rush like the rushing of many waters: but Elohim (God) shall rebuke them, and they shall flee far off, and shall be chased as the chaff of the mountains before the wind, and like a rolling thing before the whirlwind* (Isaiah 17:13), *And behold at eveningtide trouble; and before the morning he is not. This is the portion of them that spoil us, and the lot of them that rob us* (Isaiah 17:14). Zechariah names the city itself as the place of the gathering and Yahuah''s own going-forth: *For I will gather all nations against Jerusalem to battle; and the city shall be taken, and the houses rifled, and the women ravished; and half of the city shall go forth into captivity, and the residue of the people shall not be cut off from the city* (Zechariah 14:2), *Then shall Yahuah (LORD) go forth, and fight against those nations, as when he fought in the day of battle* (Zechariah 14:3). The same nations that rush in pride against the city of the righteous are checked and chased away as chaff.',
+       sv.verse_id, ev.verse_id, 'extras', 51381
+  FROM _session250_en56_lookup sv, _session250_en56_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=56 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-56-the-invaders-turn-sword-on-each-other',
+       E'Brother slays brother — the host destroys itself',
+       E'The assault collapses into self-slaughter: *And they shall begin to fight among themselves, And their right hand shall be strong against themselves, And a man shall not know his brother, Nor a son his father or his mother, Till there be no number of the corpses through their slaughter, And their punishment be not in vain* (1 Enoch 56:7). This is the very mode of judgement Haggai foretold for the heathen kingdoms — Yahuah turns their own hands against one another: *And I will overthrow the throne of kingdoms, and I will destroy the strength of the kingdoms of the heathen; and I will overthrow the chariots, and those that ride in them; and the horses and their riders shall come down, every one by the sword of his brother* (Haggai 2:22). Zechariah likewise has Yahuah Himself go forth against the gathered nations: *Then shall Yahuah (LORD) go forth, and fight against those nations, as when he fought in the day of battle* (Zechariah 14:3). The elect lift no sword; the rebellion devours itself before the face of the Creator whose order it defied.',
+       sv.verse_id, ev.verse_id, 'extras', 51384
+  FROM _session250_en56_lookup sv, _session250_en56_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=56 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-56-sheol-opens-its-jaws-on-the-sinners',
+       E'Sheol opens its jaws and swallows the sinners',
+       E'The chapter closes with the pit itself opening: *In those days Sheol shall open its jaws, And they shall be swallowed up therein, And their destruction shall be at an end; Sheol shall devour the sinners in the presence of the elect* (1 Enoch 56:8). The earth''s swallowing mouth is the canon''s judgement upon Korah''s rebellion: *But if Yahuah (LORD) make a new thing, and the earth open her mouth, and swallow them up, with all that appertain unto them, and they go down quick into the pit; then ye shall understand that these men have provoked Yahuah (LORD)* (Numbers 16:30), *They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation* (Numbers 16:33). Isaiah saw the same insatiable jaws of the grave open against the proud: *Therefore hell hath enlarged herself, and opened her mouth without measure: and their glory, and their multitude, and their pomp, and he that rejoiceth, shall descend into it* (Isaiah 5:14). And Joel sets this devouring in the day of decision, where Yahuah gathers and judges the nations for scattering His people: *I will also gather all nations, and will bring them down into the valley of Jehoshaphat, and will plead with them there for my people and for my heritage Yashar''el (Israel), whom they have scattered among the nations, and parted my land* (Joel 3:2), *Let the heathen be wakened, and come up to the valley of Jehoshaphat: for there will I sit to judge all the heathen round about* (Joel 3:12). Sheol devours the sinners in the presence of the elect — judgement is for breaking covenant and scattering Yahuah''s heritage, not for the righteous who keep His way.',
+       sv.verse_id, ev.verse_id, 'extras', 51387
+  FROM _session250_en56_lookup sv, _session250_en56_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=56 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-56-angels-of-punishment-scourges-chains
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 53:4 — *And I saw there all the angels of punishment abiding (there) And preparing all the instruments of Satan.* The same hosts of punishing angels Enoch saw being readied in ch53 now go forth bearing their scourges and chains in 56:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-angels-of-punishment-scourges-chains'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=1
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=53 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 54:5 — *And he said unto me: ‘These are being prepared for the hosts of Azâzêl, so that they may take them and cast them into the abyss of complete condemnation, and they shall cover their jaws with rough stones as Yahuah (God) of Spirits commanded.* The chains of iron and bronze and the chasm of the abyss in 56:1-3 are the very instruments prepared in ch54 for the Watcher Azazel''s hosts.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-angels-of-punishment-scourges-chains'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=54 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-56-gog-from-the-north-against-the-land
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 38:15 — *And thou shalt come from thy place out of the north parts, thou, and many people with thee, all of them riding upon horses, a great company, and a mighty army:* The kings roused like lions in 56:5 are Gog''s mounted hordes stirred up from the north.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-gog-from-the-north-against-the-land'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=38 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 38:16 — *And thou shalt come up against my people of Yashar''el (Israel), as a cloud to cover the land; it shall be in the latter days, and I will bring thee against my land, that the heathen may know me, when I shall be sanctified in thee, O Gog, before their eyes.* The treading-down of the land of His elect ones in 56:6 is Gog''s latter-day march against Yahuah''s own land.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-gog-from-the-north-against-the-land'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=38 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 39:2 — *And I will turn thee back, and leave but the sixth part of thee, and will cause thee to come up from the north parts, and will bring thee upon the mountains of Yashar''el (Israel):* As in 56:6 the invader goes up against the elect''s land only to be turned and broken upon the mountains of Israel.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-gog-from-the-north-against-the-land'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=39 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 39:4 — *Thou shalt fall upon the mountains of Yashar''el (Israel), thou, and all thy bands, and the people that is with thee: I will give thee unto the ravenous birds of every sort, and to the beasts of the field to be devoured.* The host that treads down the land in 56:6 falls and is devoured, just as Enoch''s slaughtered corpses lie without number in 56:7.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-gog-from-the-north-against-the-land'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=39 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Revelation 20:8 — *And shall go out to deceive the nations which are in the four quarters of the earth, Gog and Magog, to gather them together to battle: the number of whom is as the sand of the sea.* The angels stirring the kings to war in 56:5 are the same end-time gathering of Gog and Magog against the camp of the elect.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-gog-from-the-north-against-the-land'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-56-nations-rush-rebuked-at-the-city
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 17:12 — *Woe to the multitude of many people, which make a noise like the noise of the seas; and to the rushing of nations, that make a rushing like the rushing of mighty waters!* The horde whose horses are halted by the city in 56:7 is Isaiah''s rushing multitude of many peoples.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-nations-rush-rebuked-at-the-city'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=17 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 17:13 — *The nations shall rush like the rushing of many waters: but Elohim (God) shall rebuke them, and they shall flee far off, and shall be chased as the chaff of the mountains before the wind, and like a rolling thing before the whirlwind.* The city''s hindrance in 56:7 is the rebuke that scatters the rushing nations as chaff.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-nations-rush-rebuked-at-the-city'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=17 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 17:14 — *And behold at eveningtide trouble; and before the morning he is not. This is the portion of them that spoil us, and the lot of them that rob us.* The spoilers stopped at the city of the righteous in 56:7 vanish overnight, exactly as Isaiah''s plunderers are gone before morning.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-nations-rush-rebuked-at-the-city'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=17 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Zechariah 14:2 — *For I will gather all nations against Jerusalem to battle; and the city shall be taken, and the houses rifled, and the women ravished; and half of the city shall go forth into captivity, and the residue of the people shall not be cut off from the city.* The city against which the horses press in 56:7 is the Jerusalem all nations are gathered against in Zechariah''s final battle.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-nations-rush-rebuked-at-the-city'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Zechariah 14:3 — *Then shall Yahuah (LORD) go forth, and fight against those nations, as when he fought in the day of battle.* The city''s hindrance in 56:7 is no mere wall but Yahuah Himself going forth to fight the gathered nations.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-nations-rush-rebuked-at-the-city'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-56-the-invaders-turn-sword-on-each-other
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Haggai 2:22 — *And I will overthrow the throne of kingdoms, and I will destroy the strength of the kingdoms of the heathen; and I will overthrow the chariots, and those that ride in them; and the horses and their riders shall come down, every one by the sword of his brother.* The invaders turning their right hand against themselves in 56:7 fall exactly as Haggai''s horsemen, every one by his brother''s sword.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-the-invaders-turn-sword-on-each-other'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='haggai' AND tv.chapter_number=2 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Zechariah 14:3 — *Then shall Yahuah (LORD) go forth, and fight against those nations, as when he fought in the day of battle.* The self-destroying slaughter of 56:7 is Yahuah''s own battle against the gathered nations, fought as in days of old.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-the-invaders-turn-sword-on-each-other'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-56-sheol-opens-its-jaws-on-the-sinners
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 16:30 — *But if Yahuah (LORD) make a new thing, and the earth open her mouth, and swallow them up, with all that appertain unto them, and they go down quick into the pit; then ye shall understand that these men have provoked Yahuah (LORD).* The opening jaws of Sheol in 56:8 echo the earth''s mouth swallowing the rebels of Korah alive into the pit.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-sheol-opens-its-jaws-on-the-sinners'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 16:33 — *They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation.* As in 56:8, the sinners are swallowed whole into the pit and perish from before the congregation of the elect.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-sheol-opens-its-jaws-on-the-sinners'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 5:14 — *Therefore hell hath enlarged herself, and opened her mouth without measure: and their glory, and their multitude, and their pomp, and he that rejoiceth, shall descend into it.* Sheol opening its jaws to devour the sinners in 56:8 is Isaiah''s grave enlarging her mouth without measure for the proud multitude.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-sheol-opens-its-jaws-on-the-sinners'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joel 3:2 — *I will also gather all nations, and will bring them down into the valley of Jehoshaphat, and will plead with them there for my people and for my heritage Yashar''el (Israel), whom they have scattered among the nations, and parted my land.* The sinners swallowed in 56:8 are the gathered nations Yahuah judges for scattering His heritage Israel.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-sheol-opens-its-jaws-on-the-sinners'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Joel 3:12 — *Let the heathen be wakened, and come up to the valley of Jehoshaphat: for there will I sit to judge all the heathen round about.* The devouring of the sinners in the presence of the elect in 56:8 is Yahuah seated to judge all the heathen gathered round about.'
+  FROM cross_reference_threads t, cross_references x, _session250_en56_lookup sv, _session250_en56_lookup tv
+ WHERE t.slug='1-enoch-56-sheol-opens-its-jaws-on-the-sinners'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=56 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+

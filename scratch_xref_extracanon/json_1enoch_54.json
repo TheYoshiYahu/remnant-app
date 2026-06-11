@@ -1,0 +1,150 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 54,
+  "session": "session250",
+  "tag": "en54",
+  "base_band": 51325,
+  "threads": [
+    {
+      "slug": "1-enoch-54-burning-valley-lake-of-fire",
+      "title": "The deep valley of burning fire — the lake of fire prepared",
+      "summary_md": "Enoch is shown the doom of the rebel host and the kings who served them: *And I looked and turned to another part of the earth, and saw there a deep valley with burning fire.* (1 Enoch 54:1) — *And they brought the kings and the mighty, and began to cast them into this deep valley.* (1 Enoch 54:2). This is the burning end John names plainly. The same furnace receives the deceiver and his servants: *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* (Revelation 20:10), and the kings' captains of deception go in first — *These both were cast alive into a lake of fire burning with brimstone.* (Revelation 19:20). Yahusha (Jesus) had already declared the fire was not made for men but for the rebel powers: *Then shall he say also unto them on the left hand, Depart from me, ye cursed, into everlasting fire, prepared for the devil and his angels* (Matthew 25:41). Enoch sees the valley; the Gospels and Revelation name the One who pronounces the sentence and the fire that was prepared. It ain't new.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 54,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Revelation 20:10 — *And the devil that deceived them was cast into the lake of fire and brimstone, where the beast and the false prophet are, and shall be tormented day and night for ever and ever.* John's lake of fire is Enoch's deep valley of burning fire, the appointed end of the rebel host."
+        },
+        {
+          "src_ch": 54,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 19,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Revelation 19:20 — *And the beast was taken, and with him the false prophet that wrought miracles before him, with which he deceived them that had received the mark of the beast, and them that worshipped his image. These both were cast alive into a lake of fire burning with brimstone.* As Enoch sees the kings and the mighty cast into the valley, John sees the deceiving powers cast alive into the same burning."
+        },
+        {
+          "src_ch": 54,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 25,
+          "tgt_v": 41,
+          "tier": "free",
+          "note": "Matthew 25:41 — *Then shall he say also unto them on the left hand, Depart from me, ye cursed, into everlasting fire, prepared for the devil and his angels:* Yahusha names the burning valley as fire prepared beforehand for the rebel angels, exactly the host Enoch watches being consigned to it."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-54-chains-prepared-host-of-azazel",
+      "title": "Iron chains prepared for the hosts of Azazel — reserved unto judgement",
+      "summary_md": "Enoch asks about the fetters being forged: *And there mine eyes saw how they made these their instruments, iron chains of immeasurable weight.* (1 Enoch 54:3), and the angel answers — *These are being prepared for the hosts of Azâzêl, so that they may take them and cast them into the abyss of complete condemnation... as Yahuah (God) of Spirits commanded.* (1 Enoch 54:5), to be executed by the archangels who *shall take hold of them on that great day, and cast them on that day into the burning furnace* (1 Enoch 54:6). This is the canon's own doctrine of the bound Watchers: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6) — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). Isaiah saw the same host shut up: *And it shall come to pass in that day, that Yahuah (LORD) shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.* (Isaiah 24:21), *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* (Isaiah 24:22). Enoch's own earlier vision already gave the sentence on the chief: Yahuah told Raphael, *Bind Azâzêl hand and foot, and cast him into the darkness... And on the day of the great judgement he shall be cast into the fire.* (1 Enoch 10:4, 6). The judgement is for rebellion against the Creator's order, not for keeping His way — and Jude and Peter carry this binding straight into the canon. It ain't new.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 54,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude's everlasting chains reserved unto the great day are Enoch's iron chains prepared for the host of Azazel, kept for the great day of judgement."
+        },
+        {
+          "src_ch": 54,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter's chains of darkness reserved unto judgment match the iron chains forged for Azazel's hosts to be cast into the abyss of complete condemnation."
+        },
+        {
+          "src_ch": 54,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 24,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Isaiah 24:22 — *And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.* Isaiah's host of the high ones gathered as prisoners and shut up until visited is the same reserving-until-the-great-day that the archangels execute upon Azazel's hosts in Enoch."
+        },
+        {
+          "src_ch": 54,
+          "src_v": 6,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "1 Enoch 10:6 — *And on the day of the great judgement he shall be cast into the fire.* Enoch's earlier sentence on Azazel — bound now, cast into the fire on the great judgement day — is fulfilled in this vision where the archangels cast his hosts into the burning furnace on that great day."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-54-chambers-of-waters-the-flood",
+      "title": "The chambers of waters opened — the Flood as the former judgement",
+      "summary_md": "The Noachic fragment recalls the first world-judgement, the judgement of water: *And in those days shall punishment come from Yahuah (God) of Spirits, and He will open all the chambers of waters which are above the heavens, and of the fountains which are beneath the earth.* (1 Enoch 54:7), so that *all the waters shall be joined with the waters* (1 Enoch 54:8) and *shall destroy all who dwell on the earth* (1 Enoch 54:9). This is Genesis told from heaven's side: *In the six hundredth year of Noah's life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* (Genesis 7:11) — the very pairing of fountains beneath and waters above — and its end, *And all flesh died that moved upon the earth* (Genesis 7:21). Peter sets that water-judgement as the pattern of the fire to come: *Whereby the world that then was, being overflowed with water, perished* (2 Peter 3:6). Enoch's own Watcher vision had already announced the deluge to Noah: *the whole earth will be destroyed, and a deluge is about to come upon the whole earth, and will destroy all that is on it.* (1 Enoch 10:2). The men perish by their own unrighteousness recognized too late (54:10) — the Flood stands in the canon as the first witness that the Judge of Spirits has judged a rebellious world before, and will again. It ain't new.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 54,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 7,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Genesis 7:11 — *In the six hundredth year of Noah's life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* Enoch's chambers of waters above the heavens and fountains beneath the earth are Genesis' windows of heaven opened and fountains of the great deep broken up — the same Flood, named from both sides."
+        },
+        {
+          "src_ch": 54,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 7,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Genesis 7:21 — *And all flesh died that moved upon the earth, both of fowl, and of cattle, and of beast, and of every creeping thing that creepeth upon the earth, and every man:* Genesis records the outcome Enoch foresees — the joined waters destroying all who dwell on the earth."
+        },
+        {
+          "src_ch": 54,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 3,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "2 Peter 3:6 — *Whereby the world that then was, being overflowed with water, perished:* Peter names the Flood as the former world-judgement and pattern of the judgement to come, the very framing of Enoch's Noachic fragment on the first world judgement."
+        },
+        {
+          "src_ch": 54,
+          "src_v": 7,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 10,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "1 Enoch 10:2 — *Go to Noah and tell him in My Name “Hide thyself!” and reveal to him the end that is approaching: that the whole earth will be destroyed, and a deluge is about to come upon the whole earth, and will destroy all that is on it.* Enoch's earlier announcement of the deluge to Noah is the same first water-judgement this chapter recalls as Yahuah of Spirits opens the chambers of waters."
+        }
+      ]
+    }
+  ]
+}
