@@ -1,0 +1,122 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 5,
+  "session": "session251",
+  "tag": "ju05",
+  "base_band": 53100,
+  "threads": [
+    {
+      "slug": "jubilees-5-watchers-giants",
+      "title": "The angels took wives, and the earth was corrupted — it ain't new",
+      "summary_md": "Jubilees opens chapter 5 with the descent of the Watchers: *And it came to pass when the children of men began to multiply on the face of the earth and daughters were born to them, that the angels of Elohim (God) saw them on a certain year of this jubilee, that they were beautiful to look upon; and they took themselves wives of all whom they chose, and they bare to them sons and they were giants* (Jubilees 5:1). This is the very same scene Moses set down in Genesis: *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose* (Genesis 6:2), and *There were giants in the earth in those days... the same became mighty men which were of old, men of renown* (Genesis 6:4). Jubilees then tells how *lawlessness increased on the earth and all flesh corrupted its way... and they began to devour each other* (Jubilees 5:2) — Genesis names the same ruin: *the earth was filled with violence... for all flesh had corrupted his way upon the earth* (Genesis 6:11-12). The live 1 Enoch apparatus tells the identical story from the angels' side: *the angels, the children of the heaven, saw and lusted after them* (1 Enoch 6:2) and *they became pregnant, and they bare great giants... the giants turned against them and devoured mankind* (1 Enoch 7:2-3). One Flood, one Watcher-rebellion, three witnesses agreeing word for word — it ain't new.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* The angels who took wives in Jubilees 5:1 are the sons of Elohim Moses recorded in Genesis."},
+        {"src_ch": 5, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 6:4 — *There were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown.* The giants Jubilees 5:1 names are Genesis' giants, the offspring of that union."},
+        {"src_ch": 5, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 11, "tier": "free",
+         "note": "Genesis 6:11 — *The earth also was corrupt before Elohim (God), and the earth was filled with violence.* The increase of lawlessness and devouring in Jubilees 5:2 is Genesis' earth filled with violence."},
+        {"src_ch": 5, "src_v": 2, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 7, "tgt_v": 3, "tier": "extras",
+         "note": "1 Enoch 7:3 — *Who consumed all the acquisitions of men. And when men could no longer sustain them, the giants turned against them and devoured mankind.* The mutual devouring of Jubilees 5:2 is the giants' cannibal violence in the live Enoch apparatus."},
+        {"src_ch": 5, "src_v": 3, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 12, "tier": "free",
+         "note": "Genesis 6:12 — *And Elohim (God) looked upon the earth, and, behold, it was corrupt; for all flesh had corrupted his way upon the earth.* Jubilees 5:3 ('Elohim looked upon the earth, and behold it was corrupt') quotes Genesis almost verbatim."}
+      ]
+    },
+    {
+      "slug": "jubilees-5-noah-found-grace",
+      "title": "But Noah found grace — the one man kept",
+      "summary_md": "Against the whole corrupted world Jubilees lifts up a single righteous man: *But Noah found grace before the eyes of Yahuah (God)* (Jubilees 5:5) — the same six words Moses wrote: *But Noah found grace in the eyes of Yahuah (LORD)* (Genesis 6:8). Jubilees explains why the seed was kept through him: *no man's person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account; for his heart was righteous in all his ways* (Jubilees 5:19). Peter reads the Flood as the pattern of judgement and rescue together: *And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly* (2 Peter 2:5). And in the live 1 Enoch apparatus the warning to Noah is spoken plainly: *Go to Noah and tell him in My Name 'Hide thyself!'... that he may escape and his seed may be preserved for all the generations of the world* (1 Enoch 10:2-3). The seed is kept; the righteous remnant is carried through the waters — it ain't new.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 6:7 — *And Yahuah (LORD) said, I will destroy man whom I have created from the face of the earth; both man, and beast, and the creeping thing, and the fowls of the air; for it repenteth me that I have made them.* Jubilees 5:4 ('I shall destroy man and all flesh') is Genesis' sentence of judgement word for word."},
+        {"src_ch": 5, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 6:8 — *But Noah found grace in the eyes of Yahuah (LORD).* Jubilees 5:5 carries Genesis' line nearly unchanged — the one man kept while the world is judged."},
+        {"src_ch": 5, "src_v": 5, "tgt_edition": "canon", "tgt_book": "2-peter", "tgt_ch": 2, "tgt_v": 5, "tier": "free",
+         "note": "2 Peter 2:5 — *And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly.* Peter reads the grace of Jubilees 5:5 as the pattern of judgement-with-rescue that runs the whole canon."},
+        {"src_ch": 5, "src_v": 5, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 10, "tgt_v": 3, "tier": "extras",
+         "note": "1 Enoch 10:3 — *And now instruct him that he may escape and his seed may be preserved for all the generations of the world.* The grace Noah found in Jubilees 5:5 is, in the Enoch apparatus, the seed preserved through the Flood."}
+      ]
+    },
+    {
+      "slug": "jubilees-5-angels-bound",
+      "title": "Bound in the depths until the day of the great condemnation",
+      "summary_md": "Jubilees tells what was done to the rebel angels: *And against the angels whom He had sent upon the earth, He was exceedingly wroth... and He bade us to bind them in the depths of the earth, and behold they are bound in the midst of them, and are (kept) separate* (Jubilees 5:6), and they remain *bound in the depths of the earth for ever, until the day of the great condemnation when judgment is executed on all those who have corrupted their ways* (Jubilees 5:10). The apostles preach exactly this binding: *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day* (Jude 1:6), and *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). The live 1 Enoch apparatus gives the command itself: *bind them fast for seventy generations in the valleys of the earth, till the day of their judgement* (1 Enoch 10:12). Their giant sons are slain by the sword among themselves: *He sent His sword into their midst that each should slay his neighbour* (Jubilees 5:9) answers 1 Enoch 10:9. Jude and Peter are not inventing a doctrine — they are quoting the apparatus the fathers already had. It ain't new.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 6, "tgt_edition": "canon", "tgt_book": "jude", "tgt_ch": 1, "tgt_v": 6, "tier": "free",
+         "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude preaches the very binding Jubilees 5:6 records — angels chained until the great day."},
+        {"src_ch": 5, "src_v": 6, "tgt_edition": "canon", "tgt_book": "2-peter", "tgt_ch": 2, "tgt_v": 4, "tier": "free",
+         "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment.* Peter's chains of darkness are the depths of the earth Jubilees 5:6 binds the Watchers in."},
+        {"src_ch": 5, "src_v": 9, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 10, "tgt_v": 9, "tier": "extras",
+         "note": "1 Enoch 10:9 — *Proceed against the bastards and the reprobates, and against the children of fornication... send them one against the other that they may destroy each other in battle: for length of days shall they not have.* The sword turning the giants against each other in Jubilees 5:9 is this command in the Enoch apparatus."},
+        {"src_ch": 5, "src_v": 10, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 10, "tgt_v": 12, "tier": "extras",
+         "note": "1 Enoch 10:12 — *bind them fast for seventy generations in the valleys of the earth, till the day of their judgement and of their consummation, till the judgement that is for ever and ever is consummated.* The binding 'until the day of the great condemnation' in Jubilees 5:10 is this same reserved judgement."}
+      ]
+    },
+    {
+      "slug": "jubilees-5-heavenly-tables-judgment",
+      "title": "Ordained and engraved on the heavenly tables — and no respecter of persons",
+      "summary_md": "Jubilees grounds the coming judgement not in caprice but in writing already engraved: *And the judgment of all is ordained and written on the heavenly tables in righteousness* (Jubilees 5:13), and *all their judgments are ordained and written and engraved* (Jubilees 5:14). This is Yoshi's heavenly-tablets framework — the history and the verdict pre-written before they unfold. Scripture knows these books: *and in thy book all my members were written, which in continuance were fashioned, when as yet there was none of them* (Psalm 139:16); *a book of remembrance was written before him for them that feared Yahuah (LORD)* (Malachi 3:16); *thy people shall be delivered, every one that shall be found written in the book* (Daniel 12:1). And the Judge of those tablets shows no favor: *He is not one who will regard the person (of any), nor is He one who will receive gifts... for He is a righteous judge* (Jubilees 5:16) is the Torah's own character — *which regardeth not persons, nor taketh reward* (Deuteronomy 10:17) — which Paul presses on Jew and Gentile alike: *For there is no respect of persons with Elohim (God)* (Romans 2:11). The verdict was written before the Watchers ever fell. It ain't new.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 13, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 139, "tgt_v": 16, "tier": "free",
+         "note": "Psalm 139:16 — *Thine eyes did see my substance, yet being unperfect; and in thy book all my members were written, which in continuance were fashioned, when as yet there was none of them.* The judgement 'written on the heavenly tables' in Jubilees 5:13 is the same pre-written book David knew."},
+        {"src_ch": 5, "src_v": 13, "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 3, "tgt_v": 16, "tier": "free",
+         "note": "Malachi 3:16 — *a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The heavenly tables of Jubilees 5:13 are this book of remembrance kept before Yahuah."},
+        {"src_ch": 5, "src_v": 14, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 12, "tgt_v": 1, "tier": "free",
+         "note": "Daniel 12:1 — *and at that time thy people shall be delivered, every one that shall be found written in the book.* The judgements 'ordained and written and engraved' in Jubilees 5:14 are the book by which Daniel's people are delivered at the end."},
+        {"src_ch": 5, "src_v": 16, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 10, "tgt_v": 17, "tier": "free",
+         "note": "Deuteronomy 10:17 — *For Yahuah Elohaychem (the LORD your God) is Elohim (God) of gods, and Lord of lords, a great Elohim (God), a mighty, and a terrible, which regardeth not persons, nor taketh reward.* The impartial judge of Jubilees 5:16 is the Torah's own Elohim, who takes no gifts."},
+        {"src_ch": 5, "src_v": 16, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 2, "tgt_v": 11, "tier": "free",
+         "note": "Romans 2:11 — *For there is no respect of persons with Elohim (God).* Paul presses the same impartiality Jubilees 5:16 declares onto Jew and Gentile alike at the judgement."}
+      ]
+    },
+    {
+      "slug": "jubilees-5-once-a-year-atonement",
+      "title": "Mercy to all who turn, once each year — the Day of Atonement engraved",
+      "summary_md": "Woven into the judgement is the appointed time of mercy: *It is written and ordained that He will show mercy to all who turn from all their guilt once each year* (Jubilees 5:18). This is the Day of Atonement, and Jubilees grounds it — like the Sabbath of chapter 2 and the Feast of Weeks of chapter 6 — in what is *written and ordained*, engraved on the tablets, not in a later invention. The Torah sets the same day: *in the seventh month, on the tenth day of the month, ye shall afflict your souls... For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before Yahuah (LORD)* (Leviticus 16:29-30), and *Also on the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation unto you* (Leviticus 23:27). The annual cleansing 'once each year' is the Appointed Time Yahuah set from the beginning. It ain't new.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 18, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 16, "tgt_v": 30, "tier": "free",
+         "note": "Leviticus 16:30 — *For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before Yahuah (LORD).* The mercy 'once each year' in Jubilees 5:18 is the Day of Atonement cleansing the Torah commands."},
+        {"src_ch": 5, "src_v": 18, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 23, "tgt_v": 27, "tier": "free",
+         "note": "Leviticus 23:27 — *Also on the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation unto you; and ye shall afflict your souls, and offer an offering made by fire unto Yahuah (LORD).* The yearly turning of Jubilees 5:18 is fixed as a moed in the Torah's feast calendar."},
+        {"src_ch": 5, "src_v": 16, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 16, "tgt_v": 29, "tier": "free",
+         "note": "Leviticus 16:29 — *And this shall be a statute for ever unto you: that in the seventh month, on the tenth day of the month, ye shall afflict your souls, and do no work at all.* Jubilees 5:16 promises Israel forgiveness if they turn — the Torah fixes the 'statute for ever' on which that yearly pardon hangs."}
+      ]
+    },
+    {
+      "slug": "jubilees-5-the-flood",
+      "title": "The ark, the flood-gates, the forty days — the Flood retold",
+      "summary_md": "Jubilees retells the Flood from Genesis, dated to the heavens. *And Yahuah (God) said that He would destroy everything which was upon the earth... And He commanded Noah to make him an ark, that he might save himself from the waters of the flood* (Jubilees 5:20) is Genesis' command: *And Elohim (God) said unto Noah, The end of all flesh is come before me... Make thee an ark of gopher wood* (Genesis 6:13-14). Jubilees fixes the very day Genesis fixes — *he entered in the sixth (year) thereof, in the second month, on the new moon of the second month* (Jubilees 5:23) beside *In the six hundredth year of Noah's life, in the second month, the seventeenth day of the month... were all the fountains of the great deep broken up, and the windows of heaven were opened* (Genesis 7:11). The waters obey the same count: *forty days and forty nights* (Jubilees 5:23) is *the rain was upon the earth forty days and forty nights* (Genesis 7:12); *Fifteen cubits did the waters rise above all the high mountains* (Jubilees 5:23) is *Fifteen cubits upward did the waters prevail; and the mountains were covered* (Genesis 7:20); the *five months-one hundred and fifty days* (Jubilees 5:23) is *the waters prevailed upon the earth an hundred and fifty days* (Genesis 7:24). One Flood, dated to the new moons of the heavenly calendar — it ain't new.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 31,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 20, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 13, "tier": "free",
+         "note": "Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* Jubilees 5:20 retells this sentence of destruction with the command to build the ark."},
+        {"src_ch": 5, "src_v": 20, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 14, "tier": "free",
+         "note": "Genesis 6:14 — *Make thee an ark of gopher wood; rooms shalt thou make in the ark, and shalt pitch it within and without with pitch.* The ark Noah is commanded to make in Jubilees 5:20 is Genesis' ark of gopher wood."},
+        {"src_ch": 5, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 11, "tier": "free",
+         "note": "Genesis 7:11 — *In the six hundredth year of Noah's life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* Jubilees 5:23 dates the flood-gates to the second month exactly as Genesis dates the great deep."},
+        {"src_ch": 5, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 12, "tier": "free",
+         "note": "Genesis 7:12 — *And the rain was upon the earth forty days and forty nights.* The forty days and forty nights of Jubilees 5:23 are Genesis' forty-day rain."},
+        {"src_ch": 5, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 7:24 — *And the waters prevailed upon the earth an hundred and fifty days.* The 'five months-one hundred and fifty days' of Jubilees 5:23 is Genesis' hundred and fifty days exactly."}
+      ]
+    }
+  ]
+}
