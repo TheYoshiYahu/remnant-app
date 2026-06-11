@@ -58,6 +58,7 @@ import {
   type ContentTier,
   getChapterCommentary,
 } from "../lib/api";
+import { readThrough } from "../lib/contentCache";
 import { renderMarkdownBody } from "../lib/markdown";
 import { applyParentheticalsToggle } from "../lib/useParentheticalsToggle";
 import {
@@ -116,24 +117,26 @@ export default function ChapterCommentary({
   const [, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    let cancelled = false;
     setData(null);
     setLoading(true);
     setError(null);
-    getChapterCommentary(bookSlug, chapterNumber)
-      .then((r) => {
-        if (cancelled) return;
-        setData(r);
-        setLoading(false);
-      })
-      .catch((e) => {
-        if (cancelled) return;
-        setError(String(e));
-        setLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
+    // Read-through cache (stale-while-revalidate): a revisited chapter's
+    // commentary stack paints from IndexedDB instantly, then revalidates.
+    const handle = readThrough(
+      { layer: "commentary", book: bookSlug, chapter: chapterNumber },
+      () => getChapterCommentary(bookSlug, chapterNumber),
+      {
+        onData: (r) => {
+          setData(r);
+          setLoading(false);
+        },
+        onError: (e) => {
+          setError(String(e));
+          setLoading(false);
+        },
+      },
+    );
+    return () => handle.cancel();
   }, [bookSlug, chapterNumber]);
 
   // Silent on loading / error / no-data — chapter still renders fine

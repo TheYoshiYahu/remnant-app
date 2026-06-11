@@ -40,6 +40,7 @@ import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
 import { hasSeenSigninAsk } from "./lib/signinAsk";
 import { hasJwtCookie } from "./lib/display-prefs-sync";
 import { loadStoredNativeToken } from "./lib/native-auth";
+import { readThrough, setContentCacheScope } from "./lib/contentCache";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ReaderDivider from "./components/ReaderDivider";
 import WitnessCard from "./components/WitnessCard";
@@ -1537,6 +1538,21 @@ function Reader() {
     };
   }, []);
 
+  // Read-through cache scope. The content cache keys static reading
+  // payloads by the caller's tier so a free reader and a paid reader
+  // never read each other's entries (some payloads vary by tier — §28
+  // interlinear fields, locked commentary bodies, book-level 200-vs-404).
+  // Until /me resolves the cache stays in pass-through mode and stores
+  // nothing; the server computes entitlement from the JWT, so committing
+  // a payload to a tier key before the tier is known could mis-file a
+  // paid response under "free". meChecked flips true even for anonymous
+  // callers (tier → "free"), so this always activates the cache exactly
+  // once the entitlement is settled.
+  useEffect(() => {
+    if (!meChecked) return;
+    setContentCacheScope(me?.tier ?? "free");
+  }, [meChecked, me?.tier]);
+
   // S116 — hydrate saved reading position on mount. Resolution order
   // (handled inside loadInitialPosition): API row → localStorage row
   // → null (caller stays at the Genesis/1/1 defaults). When a saved
@@ -1594,26 +1610,32 @@ function Reader() {
   useEffect(() => {
     if (!selectedBookSlug) return;
     setChaptersResp(null);
-    listChapters(selectedBookSlug)
-      .then((r) => {
-        setChaptersResp(r);
-        // S226 — snap to the book's first available chapter when the
-        // current selection isn't one of this book's chapters. The book
-        // picker (and cross-book nav) default a new selection to chapter
-        // 1, but not every book starts at 1: the Sonnini "Acts 29 — The
-        // Lost Chapter" book carries its sole chapter as number 29 (so it
-        // reads as the continuation of Acts 28). Without this snap,
-        // getChapter(slug, 1) 404s and the reader shows a broken chapter.
-        // selectedChapter is read from the closure captured when the book
-        // changed (the picker sets slug + chapter together), which is the
-        // value we want to validate; it is intentionally NOT a dep so the
-        // chapter list isn't re-fetched on every in-book chapter change.
-        const nums = r.chapters.map((c) => c.chapter_number);
-        if (nums.length > 0 && !nums.includes(selectedChapter)) {
-          setSelectedChapter(nums[0]);
-        }
-      })
-      .catch((e) => setChapterError(String(e)));
+    const handle = readThrough(
+      { layer: "chapters", book: selectedBookSlug, chapter: 0 },
+      () => listChapters(selectedBookSlug),
+      {
+        onData: (r) => {
+          setChaptersResp(r);
+          // S226 — snap to the book's first available chapter when the
+          // current selection isn't one of this book's chapters. The book
+          // picker (and cross-book nav) default a new selection to chapter
+          // 1, but not every book starts at 1: the Sonnini "Acts 29 — The
+          // Lost Chapter" book carries its sole chapter as number 29 (so it
+          // reads as the continuation of Acts 28). Without this snap,
+          // getChapter(slug, 1) 404s and the reader shows a broken chapter.
+          // selectedChapter is read from the closure captured when the book
+          // changed (the picker sets slug + chapter together), which is the
+          // value we want to validate; it is intentionally NOT a dep so the
+          // chapter list isn't re-fetched on every in-book chapter change.
+          const nums = r.chapters.map((c) => c.chapter_number);
+          if (nums.length > 0 && !nums.includes(selectedChapter)) {
+            setSelectedChapter(nums[0]);
+          }
+        },
+        onError: (e) => setChapterError(String(e)),
+      },
+    );
+    return () => handle.cancel();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedBookSlug]);
 
@@ -1633,15 +1655,24 @@ function Reader() {
       return;
     setChapterLoading(true);
     setChapterError(null);
-    getChapter(selectedBookSlug, selectedChapter)
-      .then((d) => {
-        setChapterDetail(d);
-        setChapterLoading(false);
-      })
-      .catch((e) => {
-        setChapterError(String(e));
-        setChapterLoading(false);
-      });
+    // Read-through cache: a revisited chapter paints instantly from
+    // IndexedDB, then revalidates in the background. The error path only
+    // fires when nothing was served from cache (a true cold failure).
+    const handle = readThrough(
+      { layer: "chapter", book: selectedBookSlug, chapter: selectedChapter },
+      () => getChapter(selectedBookSlug, selectedChapter),
+      {
+        onData: (d) => {
+          setChapterDetail(d);
+          setChapterLoading(false);
+        },
+        onError: (e) => {
+          setChapterError(String(e));
+          setChapterLoading(false);
+        },
+      },
+    );
+    return () => handle.cancel();
   }, [selectedBookSlug, selectedChapter, chaptersResp]);
 
   // S113: highlights reload alongside the chapter. Fetch is best-effort —
@@ -1683,17 +1714,21 @@ function Reader() {
     setWitnessByVerse({});
     setExpandedWitnessVerseId(null);
     if (!witnessOn) return;
-    getChapterWitness(selectedBookSlug, selectedChapter)
-      .then((r) => {
-        const map: Record<number, WitnessEntry> = {};
-        for (const entry of r.entries) {
-          map[entry.verse_id] = entry;
-        }
-        setWitnessByVerse(map);
-      })
-      .catch(() => {
-        // Transient failure — leave the map empty.
-      });
+    const handle = readThrough(
+      { layer: "witness", book: selectedBookSlug, chapter: selectedChapter },
+      () => getChapterWitness(selectedBookSlug, selectedChapter),
+      {
+        onData: (r) => {
+          const map: Record<number, WitnessEntry> = {};
+          for (const entry of r.entries) {
+            map[entry.verse_id] = entry;
+          }
+          setWitnessByVerse(map);
+        },
+        // Best-effort — a transient failure leaves the map empty.
+      },
+    );
+    return () => handle.cancel();
   }, [selectedBookSlug, selectedChapter, witnessOn]);
 
   // S205 — Kingdom marks reload alongside the chapter, same pattern as
@@ -1704,17 +1739,21 @@ function Reader() {
     setKingdomByVerse({});
     setExpandedKingdomVerseId(null);
     if (!kingdomOn) return;
-    getChapterKingdom(selectedBookSlug, selectedChapter)
-      .then((r) => {
-        const map: Record<number, KingdomEntry> = {};
-        for (const entry of r.entries) {
-          map[entry.verse_id] = entry;
-        }
-        setKingdomByVerse(map);
-      })
-      .catch(() => {
-        // Transient failure — leave the map empty.
-      });
+    const handle = readThrough(
+      { layer: "kingdom", book: selectedBookSlug, chapter: selectedChapter },
+      () => getChapterKingdom(selectedBookSlug, selectedChapter),
+      {
+        onData: (r) => {
+          const map: Record<number, KingdomEntry> = {};
+          for (const entry of r.entries) {
+            map[entry.verse_id] = entry;
+          }
+          setKingdomByVerse(map);
+        },
+        // Best-effort — a transient failure leaves the map empty.
+      },
+    );
+    return () => handle.cancel();
   }, [selectedBookSlug, selectedChapter, kingdomOn]);
 
   // S124 W5 — bookmarks reload alongside the chapter. Same best-effort
@@ -1781,18 +1820,22 @@ function Reader() {
   useEffect(() => {
     if (!selectedBookSlug || !selectedChapter) return;
     setWordsByVerse({});
-    getChapterWords(selectedBookSlug, selectedChapter)
-      .then((r: ChapterWordsResponse) => {
-        const map: Record<number, VerseWord[]> = {};
-        for (const v of r.verses) {
-          map[v.verse_id] = v.words;
-        }
-        setWordsByVerse(map);
-      })
-      .catch(() => {
-        // Network / 404 / transient — leave the map empty; verses
-        // render plain text until the next chapter load.
-      });
+    const handle = readThrough(
+      { layer: "words", book: selectedBookSlug, chapter: selectedChapter },
+      () => getChapterWords(selectedBookSlug, selectedChapter),
+      {
+        onData: (r: ChapterWordsResponse) => {
+          const map: Record<number, VerseWord[]> = {};
+          for (const v of r.verses) {
+            map[v.verse_id] = v.words;
+          }
+          setWordsByVerse(map);
+        },
+        // Network / 404 / transient — leave the map empty; verses render
+        // plain text until the next chapter load.
+      },
+    );
+    return () => handle.cancel();
   }, [selectedBookSlug, selectedChapter]);
 
   // S116 — IntersectionObserver attach. Recreates the observer each

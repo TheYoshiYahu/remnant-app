@@ -46,6 +46,7 @@ import {
   type ThreadMember,
   getChapterCrossReferences,
 } from "../lib/api";
+import { readThrough } from "../lib/contentCache";
 import { applyParentheticalsToggle } from "../lib/useParentheticalsToggle";
 import {
   applySacredNameMask,
@@ -113,24 +114,26 @@ export default function ChapterEndCard({
   const [, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    let cancelled = false;
     setData(null);
     setLoading(true);
     setError(null);
-    getChapterCrossReferences(bookSlug, chapterNumber)
-      .then((r) => {
-        if (cancelled) return;
-        setData(r);
-        setLoading(false);
-      })
-      .catch((e) => {
-        if (cancelled) return;
-        setError(String(e));
-        setLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
+    // Read-through cache (stale-while-revalidate): a revisited chapter's
+    // card paints from IndexedDB instantly, then revalidates.
+    const handle = readThrough(
+      { layer: "xrefs", book: bookSlug, chapter: chapterNumber },
+      () => getChapterCrossReferences(bookSlug, chapterNumber),
+      {
+        onData: (r) => {
+          setData(r);
+          setLoading(false);
+        },
+        onError: (e) => {
+          setError(String(e));
+          setLoading(false);
+        },
+      },
+    );
+    return () => handle.cancel();
   }, [bookSlug, chapterNumber]);
 
   // Silent on loading / error / no-data — the card is a quiet overlay,

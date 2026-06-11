@@ -247,6 +247,35 @@ def _book_summary_from_row(row) -> BookSummary:
     )
 
 
+# ----- Reading-path HTTP caching -----------------------------------------
+#
+# The static reading content — verse text, the chapters list, the books
+# list, and the four chapter apparatus layers (cross-references, witness,
+# kingdom, words, commentary) — carried NO Cache-Control until this
+# session, so every chapter navigation (including back-button revisits)
+# re-fetched everything from the origin. These payloads are static and
+# versioned, so a browser-cache max-age is a free speed win for every
+# caller, online or off.
+#
+# This matches the existing convention already on the public-domain tool
+# routes (lexicon / TSK / Naves / maps, all "public, max-age=86400").
+# The reading apparatus is actively curated under the publish-then-edit
+# posture, so it gets a shorter 6-hour window — long enough to collapse
+# the round-trips on a reading session, short enough that an apparatus
+# edit propagates the same day. The client's IndexedDB read-through cache
+# (app/src/lib/contentCache.ts) is the instant-paint layer on top of this
+# and revalidates in the background; this header is the origin-offload
+# backstop underneath it.
+#
+# `public` is consistent with the tier-gated tool routes above it: there
+# is no shared CDN in front of the API (Render direct service), so the
+# only cache is each browser's private store. Tier gating stays enforced
+# at the application layer on every request — the header only governs how
+# long a browser may reuse the exact payload the origin already returned
+# to that same client.
+READING_CACHE_CONTROL = "public, max-age=21600"  # 6 hours
+
+
 # ----- Health -------------------------------------------------------------
 
 
@@ -282,6 +311,7 @@ async def health() -> HealthResponse:
 
 @app.get("/v1/books", response_model=List[BookSummary])
 async def list_books(
+    response: Response,
     witness_category: Optional[str] = Query(
         default=None,
         description=(
@@ -322,12 +352,14 @@ async def list_books(
 
     async with pool.acquire() as conn:
         rows = await conn.fetch(sql, *params)
+    response.headers["Cache-Control"] = READING_CACHE_CONTROL
     return [_book_summary_from_row(r) for r in rows]
 
 
 @app.get("/v1/books/{book_slug}", response_model=BookDetail)
 async def get_book(
     book_slug: str,
+    response: Response,
     current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> BookDetail:
     """One book — by slug — with a chapter count for the reader UI.
@@ -354,12 +386,14 @@ async def get_book(
     if row is None:
         raise HTTPException(status_code=404, detail=f"Book '{book_slug}' not found.")
     summary = _book_summary_from_row(row)
+    response.headers["Cache-Control"] = READING_CACHE_CONTROL
     return BookDetail(**summary.model_dump(), chapter_count=row["chapter_count"])
 
 
 @app.get("/v1/books/{book_slug}/chapters", response_model=BookChaptersResponse)
 async def list_chapters(
     book_slug: str,
+    response: Response,
     current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> BookChaptersResponse:
     """All chapters for a book, with verse counts. No verse text.
@@ -402,6 +436,7 @@ async def list_chapters(
         )
         for r in chapter_rows
     ]
+    response.headers["Cache-Control"] = READING_CACHE_CONTROL
     return BookChaptersResponse(
         book=_book_summary_from_row(book_row),
         chapters=chapters,
@@ -415,6 +450,7 @@ async def list_chapters(
 async def get_chapter(
     book_slug: str,
     chapter_number: int,
+    response: Response,
     current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> ChapterDetail:
     """One chapter — full verse list, in verse_number order.
@@ -464,6 +500,7 @@ async def get_chapter(
         Verse(id=r["id"], verse_number=r["verse_number"], text=r["text"])
         for r in verse_rows
     ]
+    response.headers["Cache-Control"] = READING_CACHE_CONTROL
     return ChapterDetail(
         book=_book_summary_from_row(book_row),
         chapter=ChapterSummary(
@@ -487,6 +524,7 @@ async def get_chapter(
 async def get_chapter_cross_references(
     book_slug: str,
     chapter_number: int,
+    response: Response,
     current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> ChapterEndCardResponse:
     """Chapter-end cross-reference card per ``api/CHAPTER_END_CARD_CONTRACT.md``.
@@ -707,6 +745,7 @@ async def get_chapter_cross_references(
         )
     threads = [threads_by_id[t_id] for t_id in thread_order]
 
+    response.headers["Cache-Control"] = READING_CACHE_CONTROL
     return ChapterEndCardResponse(
         book=ChapterEndCardBookRef(
             slug=book_row["slug"],
@@ -732,6 +771,7 @@ async def get_chapter_cross_references(
 async def get_chapter_witness(
     book_slug: str,
     chapter_number: int,
+    response: Response,
     current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> ChapterWitnessResponse:
     """The Witness marks for one chapter — the inverted red-letter overlay.
@@ -792,6 +832,7 @@ async def get_chapter_witness(
             chapter_row["id"],
         )
 
+    response.headers["Cache-Control"] = READING_CACHE_CONTROL
     return ChapterWitnessResponse(
         book=ChapterEndCardBookRef(
             slug=book_row["slug"],
@@ -827,6 +868,7 @@ async def get_chapter_witness(
 async def get_chapter_kingdom(
     book_slug: str,
     chapter_number: int,
+    response: Response,
     current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> ChapterKingdomResponse:
     """The Kingdom marks for one chapter — the nothing-new overlay.
@@ -889,6 +931,7 @@ async def get_chapter_kingdom(
             chapter_row["id"],
         )
 
+    response.headers["Cache-Control"] = READING_CACHE_CONTROL
     return ChapterKingdomResponse(
         book=ChapterEndCardBookRef(
             slug=book_row["slug"],
@@ -924,6 +967,7 @@ async def get_chapter_kingdom(
 async def get_chapter_commentary(
     book_slug: str,
     chapter_number: int,
+    response: Response,
     current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> ChapterCommentaryResponse:
     """Tiered commentary entries for a chapter.
@@ -1033,6 +1077,7 @@ async def get_chapter_commentary(
             )
         )
 
+    response.headers["Cache-Control"] = READING_CACHE_CONTROL
     return ChapterCommentaryResponse(
         book=ChapterEndCardBookRef(
             slug=book_row["slug"],
@@ -2643,6 +2688,7 @@ async def get_verse_words(
 async def get_chapter_words(
     book_slug: str,
     chapter_number: int,
+    response: Response,
     current_user: Optional[User] = Depends(get_current_user_optional),
 ) -> ChapterWordsResponse:
     """Batched Strong's-tagged-token alignment for an entire chapter
@@ -2748,6 +2794,7 @@ async def get_chapter_words(
             )
         )
 
+    response.headers["Cache-Control"] = READING_CACHE_CONTROL
     return ChapterWordsResponse(
         chapter_id=chapter_row["id"],
         verses=[
