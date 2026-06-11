@@ -1,0 +1,160 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 77,
+  "session": "session250",
+  "tag": "en77",
+  "base_band": 51900,
+  "threads": [
+    {
+      "slug": "1-enoch-77-four-quarters-of-the-earth",
+      "title": "The four quarters of the earth and the garden in the north",
+      "summary_md": "Enoch surveys the whole frame of creation by its directions: *And the first quarter is called the east, because it is the first: and the second, the south, because the Most High descends there, yea, there in quite a special sense He who is blessed for ever comes down.* (1 Enoch 77:1), and *the fourth quarter, called the north, is divided into three parts: one of them is for the habitation of men, the second for the great seas, with the valleys and forests and rivers, and darkness and clouds; and the third part with the garden of righteousness.* (1 Enoch 77:3). This is the canon's own ordered cosmos. The garden was set in the east of Eden — *And Yahuah Elohim (the LORD God) planted a garden eastward in Eden; and there he put the man whom he had formed.* (Genesis 2:8) — and the same four-fold earth stands when judgement is marshalled: *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* (Revelation 7:1). The Creator's order is one order from Genesis to Revelation: not invented by men, but laid into the world He made.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 77,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Genesis 2:8 — *And Yahuah Elohim (the LORD God) planted a garden eastward in Eden; and there he put the man whom he had formed.* Enoch's \"garden of righteousness\" set in a quarter of the earth is the same Edenic garden of the Torah's creation account."
+        },
+        {
+          "src_ch": 77,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 7,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John sees the same four-quartered earth Enoch maps, the Creator's fixed frame held by His angels."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-77-tree-of-wisdom-paradise",
+      "title": "The tree of wisdom in the paradise of righteousness",
+      "summary_md": "In the north quarter Enoch comes to the garden: *And I saw the paradise of righteousness, and the tree of wisdom, of whose fruit if one eats he becomes wise, and his eyes are opened.* (1 Enoch 77:7), *And this tree is in the north, and its fruit is like clusters of the vine, very beautiful: and the fragrance of the tree penetrates far beyond the tree.* (1 Enoch 77:8). This is Eden's own tree — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* (Genesis 2:9) — and Enoch's very phrase \"his eyes are opened\" echoes the fall: *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* (Genesis 3:7). Yet the garden of righteousness is not lost forever; the tree of life stands again in the restored city — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* (Revelation 22:2) — and Ezekiel saw it lining the river from the sanctuary: *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12). It ain't new: Enoch's paradise is the canon's Eden, lost and restored.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 77,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* Enoch's \"tree of wisdom\" in the paradise of righteousness is the Torah's tree set in the midst of the garden."
+        },
+        {
+          "src_ch": 77,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 3,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* Enoch's words \"his eyes are opened\" repeat Eden's account of the fruit that opened the eyes of Adam and his wife."
+        },
+        {
+          "src_ch": 77,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 22,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The fruitful tree of the paradise of righteousness stands restored in the New Jerusalem."
+        },
+        {
+          "src_ch": 77,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 47,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel's tree by the river from the sanctuary matches Enoch's beautiful, far-fragrant tree of the garden."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-77-prison-stars-transgressed-times",
+      "title": "The prison of the stars that did not come forth at their appointed times",
+      "summary_md": "Opposite the garden Enoch sees a waste place that is a prison for the host of heaven: *And I saw seven stars like great burning mountains, and to me, when I inquired regarding them, the angel said: 'This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* (1 Enoch 77:10), and the charge against them is precise — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) of Spirits in the beginning of their rising, because they did not come forth at their appointed times.* (1 Enoch 77:11). Their sin is a calendar sin: they broke the moedim, the appointed times set into the lights at creation — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14). The Astronomical Book speaks the same warning twice before: *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* (1 Enoch 21:6). The New Testament carries the very same bound-and-reserved hosts forward: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* (2 Peter 2:4), and Jude names them as the lawless lights — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* (Jude 1:13). And the same lights that men are warned never to worship as gods are the host that Enoch sees judged: *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* (Deuteronomy 4:19). The reckoning is the Creator's covenant — Jubilees commands the very 364-day order whose neglect disturbs every feast: *And command you the children of Yashar'el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts...* (Jubilees 6:32). The transgressing stars are the cosmic emblem of a perverted calendar; the right reckoning is fidelity, and it ain't new.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 77,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The stars Enoch sees imprisoned failed the very task creation gave the lights — to mark the appointed times (the moedim); the stars that \"did not come forth at their appointed times\" broke this order."
+        },
+        {
+          "src_ch": 77,
+          "src_v": 11,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 21,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "1 Enoch 21:6 — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* The Astronomical Book repeats word for word the earlier vision of the prison of the transgressing stars."
+        },
+        {
+          "src_ch": 77,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter carries forward the same host bound in a prison and reserved for judgement that Enoch sees in the waste place."
+        },
+        {
+          "src_ch": 77,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude names the lawless as \"wandering stars\" reserved for darkness — the very imagery of Enoch's stars that strayed from their appointed times."
+        },
+        {
+          "src_ch": 77,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 4,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The host of heaven men are forbidden to worship is the same host Enoch sees judged — creatures set under the Creator's order, never gods."
+        },
+        {
+          "src_ch": 77,
+          "src_v": 11,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 6,
+          "tgt_v": 32,
+          "tier": "extras",
+          "note": "Jubilees 6:32 — *And command you the children of Yashar'el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts. But if they do neglect and do not observe them according to His commandment, then they will disturb all their seasons, and the years will be dislodged from this (order), and they will disturb the seasons and the years will be dislodged and they will neglect their ordinances.* Jubilees commands the 364-day solar reckoning whose neglect disturbs every feast — the human counterpart to Enoch's stars that abandoned their appointed times."
+        }
+      ]
+    }
+  ]
+}

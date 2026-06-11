@@ -15771,6 +15771,1967 @@ SELECT t.id, x.id, 3, E'Psalms 104:19 — *He appointed the moon for seasons: th
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1enoch_72.sql (session250 1-enoch 72) -----
+-- Source anchor: enoch/1-enoch ch72. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en72 (view _session250_en72_lookup). Sort band base 51775, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en72_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-72-luminaries-set-for-laws-and-seasons
+  ('enoch', '1-enoch', 72, 1, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The fourth-day decree is the charter behind Uriel''s book — the luminaries set for the seasons (moedim) and years that 1 Enoch 72:1 catalogues as their laws.'),
+  ('enoch', '1-enoch', 72, 1, 'canon', 'psalms', 104, 19, 'free', E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The same ordering hand that 1 Enoch 72:1 says fixed the luminaries'' laws appoints the moon for the seasons and the sun''s own setting.'),
+  ('enoch', '1-enoch', 72, 1, 'jubilees', 'jubilees', 6, 32, 'extras', E'Jubilees 6:32 — *And command you the children of Yashar’el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* Jubilees engraves on the heavenly tables the very 364-day solar reckoning whose laws Uriel shows Enoch in 72:1 — the calendar is the Creator''s covenant, not an invention of men.'),
+  -- thread: 1-enoch-72-the-sun-rising-going-forth-his-circuit
+  ('enoch', '1-enoch', 72, 4, 'canon', 'genesis', 1, 16, 'free', E'Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* The sun Enoch names as the great luminary and leader in 72:4 is Genesis''s greater light made to rule the day.'),
+  ('enoch', '1-enoch', 72, 2, 'canon', 'psalms', 19, 5, 'free', E'Psalm 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* The sun''s rising from the eastern portals in 1 Enoch 72:2 is the bridegroom coming forth that David sings.'),
+  ('enoch', '1-enoch', 72, 2, 'canon', 'psalms', 19, 6, 'free', E'Psalm 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* The sun''s rising in the eastern portals and setting in the western (1 Enoch 72:2) is precisely the going-forth-and-circuit from end to end that the Psalm describes.'),
+  -- thread: 1-enoch-72-ordinances-of-sun-and-moon-fixed-forever
+  ('enoch', '1-enoch', 72, 3, 'canon', 'jeremiah', 31, 35, 'free', E'Jeremiah 31:35 — *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva''ot (LORD of hosts) is his name:* The fixed laws of sun, moon, and the leaders of the stars in 1 Enoch 72:3 are the ordinances Yahuah swears are as sure as His covenant with Yashar''el.'),
+  ('enoch', '1-enoch', 72, 1, 'canon', 'deuteronomy', 4, 19, 'free', E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The luminaries whose laws Uriel reveals in 72:1 are given to be read for the moedim and reckoning, never worshipped as the host of heaven.'),
+  ('enoch', '1-enoch', 72, 1, 'jubilees', 'jubilees', 6, 36, 'extras', E'Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* Jubilees names the very drift the luminary-book guards against — the lunar reckoning falling ten days behind the solar order whose laws Enoch is shown in 72:1.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en72_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en72_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-72-luminaries-set-for-laws-and-seasons',
+       E'The luminaries set for laws, seasons, and years',
+       E'Uriel opens the Book of the Luminaries by naming what the lights are FOR: *The book of the courses of the luminaries of the heaven, the relations of each, according to their classes, their dominion and their seasons, according to their names and places of origin, and according to their months, which Uriel, the holy angel who was with me, who was their leader, showed me; and he showed me all their laws exactly as they are, and how it is with regard to all the years of the world and unto eternity, till the new creation is accomplished which dureth till eternity* (1 Enoch 72:1). This is not new — it is the fourth-day decree spoken from the beginning: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14). The appointed times (moedim) are written into creation by the lights themselves; the year, the seasons, the feasts are the Creator''s order, not men''s invention. The Psalmist keeps the same reckoning: *He appointed the moon for seasons: the sun knoweth his going down* (Psalm 104:19). And Jubilees, the chief calendar witness, places these very laws on the heavenly tables: *And command you the children of Yashar’el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts* (Jubilees 6:32). Enoch''s 364-day solar order of whole solar days is the same covenant order Genesis decreed and Jubilees engraved — the Appointed Times of the Creator.',
+       sv.verse_id, ev.verse_id, 'extras', 51775
+  FROM _session250_en72_lookup sv, _session250_en72_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=72 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-72-the-sun-rising-going-forth-his-circuit',
+       E'The great luminary: the sun''s rising, its chariot, and its circuit',
+       E'Enoch watches the sun named as ruler of the day and traces its course: *And the great one is their leader, the great luminary which is named the Sun, and its chariot on which it ascends is driven by the wind, and its chariot descends with wind* (1 Enoch 72:4), beginning from *the luminary the Sun has its rising in the eastern portals of the heaven, and its setting in the western portals of the heaven* (1 Enoch 72:2). Genesis already crowned this greater light: *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also* (Genesis 1:16). David sings the sun''s same daily circuit through its portals: *In them hath he set a tabernacle for the sun, Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race. His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof* (Psalm 19:4–6). Enoch''s portal-tables are the technical map of the going-forth and the circuit the Psalmist praises — one and the same ordained run of the great luminary that rules the day.',
+       sv.verse_id, ev.verse_id, 'extras', 51778
+  FROM _session250_en72_lookup sv, _session250_en72_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=72 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-72-ordinances-of-sun-and-moon-fixed-forever',
+       E'The fixed ordinances of sun, moon, and stars — kept, not changed',
+       E'Uriel shows the luminaries'' laws *exactly as they are, and how it is with regard to all the years of the world and unto eternity, till the new creation is accomplished* (1 Enoch 72:1), and the portals are governed by *the leaders of the stars and those whom they lead: six in the east and six in the west following them closely* (1 Enoch 72:3). These are the unbreakable ordinances Yahuah set: *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva''ot (LORD of hosts) is his name* (Jeremiah 31:35). Because the order is the Creator''s, its keeping is covenant fidelity — and the lights are given to be reckoned, never to be worshipped: *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven* (Deuteronomy 4:19). Jubilees warns of the very perversion the later luminary-chapters foretell — the moon-reckoning that drifts off the solar order: *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon* (Jubilees 6:36). Enoch''s tables are given so the children of Yashar''el keep the reckoning fixed, the solar order primary, the appointed feasts undisturbed.',
+       sv.verse_id, ev.verse_id, 'extras', 51781
+  FROM _session250_en72_lookup sv, _session250_en72_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=72 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-72-luminaries-set-for-laws-and-seasons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The fourth-day decree is the charter behind Uriel''s book — the luminaries set for the seasons (moedim) and years that 1 Enoch 72:1 catalogues as their laws.'
+  FROM cross_reference_threads t, cross_references x, _session250_en72_lookup sv, _session250_en72_lookup tv
+ WHERE t.slug='1-enoch-72-luminaries-set-for-laws-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The same ordering hand that 1 Enoch 72:1 says fixed the luminaries'' laws appoints the moon for the seasons and the sun''s own setting.'
+  FROM cross_reference_threads t, cross_references x, _session250_en72_lookup sv, _session250_en72_lookup tv
+ WHERE t.slug='1-enoch-72-luminaries-set-for-laws-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:32 — *And command you the children of Yashar’el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* Jubilees engraves on the heavenly tables the very 364-day solar reckoning whose laws Uriel shows Enoch in 72:1 — the calendar is the Creator''s covenant, not an invention of men.'
+  FROM cross_reference_threads t, cross_references x, _session250_en72_lookup sv, _session250_en72_lookup tv
+ WHERE t.slug='1-enoch-72-luminaries-set-for-laws-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-72-the-sun-rising-going-forth-his-circuit
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* The sun Enoch names as the great luminary and leader in 72:4 is Genesis''s greater light made to rule the day.'
+  FROM cross_reference_threads t, cross_references x, _session250_en72_lookup sv, _session250_en72_lookup tv
+ WHERE t.slug='1-enoch-72-the-sun-rising-going-forth-his-circuit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* The sun''s rising from the eastern portals in 1 Enoch 72:2 is the bridegroom coming forth that David sings.'
+  FROM cross_reference_threads t, cross_references x, _session250_en72_lookup sv, _session250_en72_lookup tv
+ WHERE t.slug='1-enoch-72-the-sun-rising-going-forth-his-circuit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* The sun''s rising in the eastern portals and setting in the western (1 Enoch 72:2) is precisely the going-forth-and-circuit from end to end that the Psalm describes.'
+  FROM cross_reference_threads t, cross_references x, _session250_en72_lookup sv, _session250_en72_lookup tv
+ WHERE t.slug='1-enoch-72-the-sun-rising-going-forth-his-circuit'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-72-ordinances-of-sun-and-moon-fixed-forever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 31:35 — *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva''ot (LORD of hosts) is his name:* The fixed laws of sun, moon, and the leaders of the stars in 1 Enoch 72:3 are the ordinances Yahuah swears are as sure as His covenant with Yashar''el.'
+  FROM cross_reference_threads t, cross_references x, _session250_en72_lookup sv, _session250_en72_lookup tv
+ WHERE t.slug='1-enoch-72-ordinances-of-sun-and-moon-fixed-forever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The luminaries whose laws Uriel reveals in 72:1 are given to be read for the moedim and reckoning, never worshipped as the host of heaven.'
+  FROM cross_reference_threads t, cross_references x, _session250_en72_lookup sv, _session250_en72_lookup tv
+ WHERE t.slug='1-enoch-72-ordinances-of-sun-and-moon-fixed-forever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* Jubilees names the very drift the luminary-book guards against — the lunar reckoning falling ten days behind the solar order whose laws Enoch is shown in 72:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en72_lookup sv, _session250_en72_lookup tv
+ WHERE t.slug='1-enoch-72-ordinances-of-sun-and-moon-fixed-forever'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=72 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_73.sql (session250 1-enoch 73) -----
+-- Source anchor: enoch/1-enoch ch73. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en73 (view _session250_en73_lookup). Sort band base 51800, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en73_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-73-lesser-light-for-seasons
+  ('enoch', '1-enoch', 73, 1, 'canon', 'genesis', 1, 16, 'free', E'Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* Enoch''s "smaller luminary, which is named the Moon" is the fourth-day lesser light set to rule the night.'),
+  ('enoch', '1-enoch', 73, 1, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The moon Enoch charts is one of the lights ordained for signs and seasons — the moedim are written into creation by the luminaries.'),
+  ('enoch', '1-enoch', 73, 4, 'canon', 'psalms', 104, 19, 'free', E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* As the moon''s light "waxes and wanes according to the number of days," she keeps the seasons she was appointed to mark.'),
+  -- thread: 1-enoch-73-moon-faithful-witness
+  ('enoch', '1-enoch', 73, 3, 'canon', 'psalms', 89, 37, 'free', E'Psalm 89:37 — *It shall be established for ever as the moon, and as a faithful witness in heaven. Selah.* The moon Enoch watches wax from a horn to full is the heaven''s faithful witness — her steady cycle pledges the steadiness of the covenant.'),
+  ('enoch', '1-enoch', 73, 4, 'apocrypha', 'ecclesiasticus', 43, 6, 'extras', E'Ecclesiasticus 43:6 — *He made the moon also to serve in her season for a declaration of times, and a sign of the world.* The waxing and waning Enoch numbers is the moon serving "in her season" as the declared sign of the times.'),
+  -- thread: 1-enoch-73-borrowed-light-solar-order
+  ('enoch', '1-enoch', 73, 7, 'apocrypha', 'ecclesiasticus', 43, 7, 'extras', E'Ecclesiasticus 43:7 — *From the moon is the sign of feasts, a light that decreaseth in her perfection.* Enoch''s moon, receiving "the half of one part of light" from the sun, is just such a decreasing, dependent light — the sign of the feasts, not the master of the count.'),
+  ('enoch', '1-enoch', 73, 7, 'jubilees', 'jubilees', 6, 36, 'extras', E'Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* Enoch''s careful charting of the moon''s lag behind the sun is why Jubilees warns that reckoning by the moon alone disturbs the seasons.'),
+  ('enoch', '1-enoch', 73, 5, 'jubilees', 'jubilees', 6, 32, 'extras', E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* The moon''s fractional light Enoch measures is held inside the 364-day solar reckoning Jubilees commands Israel to keep.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en73_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en73_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-73-lesser-light-for-seasons',
+       E'The Moon — the lesser light, set for the appointed times',
+       E'Enoch turns from the sun to *the smaller luminary, which is named the Moon* (1 Enoch 73:1), and from the first day of creation this is exactly the office the moon is given: *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* (Genesis 1:16) — the very word *smaller* / *lesser* binds Enoch''s second luminary to the fourth day. And the lights were not hung for ornament but for reckoning: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14) — the seasons here are the moedim, the appointed times, written into creation by the lights and not invented by men. The Psalmist says the same of this lesser light: *He appointed the moon for seasons: the sun knoweth his going down.* (Psalm 104:19). It ain''t new: when Enoch measures the moon''s courses he is reading the Creator''s own calendar, the order set on the fourth day.',
+       sv.verse_id, ev.verse_id, 'extras', 51800
+  FROM _session250_en73_lookup sv, _session250_en73_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=73 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-73-moon-faithful-witness',
+       E'Her light waxing and waning — the moon, a faithful witness',
+       E'Enoch describes the moon''s monthly cycle: *And her form is like a horn when she is new, and when she is fourteen days old her light is full* (1 Enoch 73:3), *and her light waxes and wanes according to the number of days* (1 Enoch 73:4). That very regularity — the horn-thin new moon swelling to fullness and back, month after month without fail — is what makes her in Scripture a guarantor of covenant faithfulness: *It shall be established for ever as the moon, and as a faithful witness in heaven. Selah.* (Psalm 89:37). The moon''s unbroken reckoning is the visible pledge that Yahuah''s word stands; the apocryphal sage reads the same waxing horn as the appointed sign of the feasts: *He made the moon also to serve in her season for a declaration of times, and a sign of the world.* (Ecclesiasticus 43:6). The order is the Creator''s covenant — to keep the reckoning is to keep faith with the One who set the witness in the sky.',
+       sv.verse_id, ev.verse_id, 'extras', 51803
+  FROM _session250_en73_lookup sv, _session250_en73_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=73 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-73-borrowed-light-solar-order',
+       E'Her light borrowed from the sun — the 364-day reckoning',
+       E'Enoch shows the moon''s light is not her own but received: *And she sets with the sun, and when the sun rises the moon rises with him and receives the half of one part of light* (1 Enoch 73:7) — her brightness is borrowed, measured out in sevenths and fourteenths against the sun''s. The Astronomical Book makes the solar year of whole days primary, and the apocryphal sage names exactly the moon''s office in that order: *From the moon is the sign of feasts, a light that decreaseth in her perfection.* (Ecclesiasticus 43:7) — a light that *decreaseth*, dependent, marking the feasts but not ruling the count. Jubilees presses the warning that flows from this: where men reckon by the lunar count alone the times slip — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* (Jubilees 6:36) — and so the charge is to hold the solar reckoning: *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days... and they will not leave out any day nor disturb any feasts.* (Jubilees 6:32). It ain''t new: Enoch''s lunar tables, the sun lending her light, are the same Creator''s order Jubilees guards — keep the reckoning, keep the feasts.',
+       sv.verse_id, ev.verse_id, 'extras', 51806
+  FROM _session250_en73_lookup sv, _session250_en73_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=73 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-73-lesser-light-for-seasons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* Enoch''s "smaller luminary, which is named the Moon" is the fourth-day lesser light set to rule the night.'
+  FROM cross_reference_threads t, cross_references x, _session250_en73_lookup sv, _session250_en73_lookup tv
+ WHERE t.slug='1-enoch-73-lesser-light-for-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The moon Enoch charts is one of the lights ordained for signs and seasons — the moedim are written into creation by the luminaries.'
+  FROM cross_reference_threads t, cross_references x, _session250_en73_lookup sv, _session250_en73_lookup tv
+ WHERE t.slug='1-enoch-73-lesser-light-for-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* As the moon''s light "waxes and wanes according to the number of days," she keeps the seasons she was appointed to mark.'
+  FROM cross_reference_threads t, cross_references x, _session250_en73_lookup sv, _session250_en73_lookup tv
+ WHERE t.slug='1-enoch-73-lesser-light-for-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-73-moon-faithful-witness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 89:37 — *It shall be established for ever as the moon, and as a faithful witness in heaven. Selah.* The moon Enoch watches wax from a horn to full is the heaven''s faithful witness — her steady cycle pledges the steadiness of the covenant.'
+  FROM cross_reference_threads t, cross_references x, _session250_en73_lookup sv, _session250_en73_lookup tv
+ WHERE t.slug='1-enoch-73-moon-faithful-witness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ecclesiasticus 43:6 — *He made the moon also to serve in her season for a declaration of times, and a sign of the world.* The waxing and waning Enoch numbers is the moon serving "in her season" as the declared sign of the times.'
+  FROM cross_reference_threads t, cross_references x, _session250_en73_lookup sv, _session250_en73_lookup tv
+ WHERE t.slug='1-enoch-73-moon-faithful-witness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=4
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=43 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-73-borrowed-light-solar-order
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ecclesiasticus 43:7 — *From the moon is the sign of feasts, a light that decreaseth in her perfection.* Enoch''s moon, receiving "the half of one part of light" from the sun, is just such a decreasing, dependent light — the sign of the feasts, not the master of the count.'
+  FROM cross_reference_threads t, cross_references x, _session250_en73_lookup sv, _session250_en73_lookup tv
+ WHERE t.slug='1-enoch-73-borrowed-light-solar-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=43 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* Enoch''s careful charting of the moon''s lag behind the sun is why Jubilees warns that reckoning by the moon alone disturbs the seasons.'
+  FROM cross_reference_threads t, cross_references x, _session250_en73_lookup sv, _session250_en73_lookup tv
+ WHERE t.slug='1-enoch-73-borrowed-light-solar-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* The moon''s fractional light Enoch measures is held inside the 364-day solar reckoning Jubilees commands Israel to keep.'
+  FROM cross_reference_threads t, cross_references x, _session250_en73_lookup sv, _session250_en73_lookup tv
+ WHERE t.slug='1-enoch-73-borrowed-light-solar-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=73 AND sv.verse_number=5
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_74.sql (session250 1-enoch 74) -----
+-- Source anchor: enoch/1-enoch ch74. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en74 (view _session250_en74_lookup). Sort band base 51825, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en74_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-74-uriel-luminaries-signs-and-seasons
+  ('enoch', '1-enoch', 74, 1, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The luminaries Uriel shows Enoch are the very lights set for the appointed times (moedim) on the fourth day.'),
+  ('enoch', '1-enoch', 74, 3, 'canon', 'psalms', 104, 19, 'free', E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The moon''s return through her portals to complete her light is the Creator''s own appointment of the seasons, not a man-made scheme.'),
+  ('enoch', '1-enoch', 74, 1, 'canon', 'psalms', 19, 1, 'free', E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The orderly circuit of the moon through the six portals is the firmament preaching the Maker''s handiwork, the same witness Uriel unfolds to Enoch.'),
+  -- thread: 1-enoch-74-solar-year-364-days
+  ('enoch', '1-enoch', 74, 10, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The 364-day year of whole solar days is the Genesis decree of lights for days and years worked out in full.'),
+  ('enoch', '1-enoch', 74, 11, 'jubilees', 'jubilees', 6, 36, 'extras', E'Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* Jubilees names the same shortfall Enoch records — the lunar 354 against the solar 364, ten days short each year.'),
+  ('enoch', '1-enoch', 74, 12, 'jubilees', 'jubilees', 6, 37, 'extras', E'Jubilees 6:37 — *...so that they will not make the year three hundred and sixty-four days only, and for this reason they will go wrong as to the new moons and seasons and sabbaths and festivals...* Because the moon falls behind, Jubilees commands the fixed 364-day count so the feasts do not drift, guarding the same order Enoch 74 sets down.'),
+  -- thread: 1-enoch-74-stations-not-transgress-the-feasts
+  ('enoch', '1-enoch', 74, 13, 'canon', 'leviticus', 23, 4, 'free', E'Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* The stations that must not transgress their reckoning are the moedim — the feasts proclaimed in their seasons, fixed by the lights Enoch is shown.'),
+  ('enoch', '1-enoch', 74, 13, 'jubilees', 'jubilees', 6, 35, 'extras', E'Jubilees 6:35 — *...for the book (lies) written before me, and on the heavenly tables the division of days is ordained, lest they forget the feasts of the covenant and walk according to the feasts of the nations after their error and after their ignorance.* The heavenly tables ordain the division of days so the covenant feasts are kept — the same righteousness Enoch 74:13 demands of the year.'),
+  -- thread: 1-enoch-74-change-not-the-order-against-the-times-changer
+  ('enoch', '1-enoch', 74, 13, 'enoch', '1-enoch', 82, 3, 'extras', E'1 Enoch 82:3 — *And in those days the sinners shall alter the order, And shall set aside all the commandments of Yahuah (God) of Spirits, And shall say that they are from the hand of Elohim (God), And they shall alter the times, And the seasons, And the new moons, And the sabbaths, And the festivals, And they shall eat blood with all kinds of flesh.* The charge that the lights must not change their order is set against the sinners who alter the times and festivals — the very perversion of the reckoning Enoch 74:13 guards against.'),
+  ('enoch', '1-enoch', 74, 13, 'canon', 'daniel', 7, 25, 'free', E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* To change the order of the lights is the enemy''s work — the horn who thinks to change the very times and laws Enoch 74:13 says must not be changed.'),
+  ('enoch', '1-enoch', 74, 13, 'canon', 'deuteronomy', 4, 19, 'free', E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The luminaries that mark the reckoning are servants of the appointed times, never to be worshipped — the host of heaven is the Creator''s order, not a god to serve.'),
+  ('enoch', '1-enoch', 74, 13, 'enoch', '1-enoch', 82, 5, 'extras', E'1 Enoch 82:5 — *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* To complete the years ''with righteousness'' (74:13) is the very blessing on those who keep the reckoning and complete their years in truth.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en74_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en74_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-74-uriel-luminaries-signs-and-seasons',
+       E'Uriel completes the moon''s course — the lights for signs and seasons',
+       E'Enoch is shown the moon''s whole circuit by the archangel of the lights: *And afterwards the course of the moon was also completed in the six portals, as was shown to me there by the angel Uriel, who is the leader of all the luminaries.* (1 Enoch 74:1). This is not novel cosmology but the unfolding of the fourth-day decree: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14) — the moedim, the appointed times, are written into creation by the luminaries themselves. The Psalmist sings the same order, that the moon''s reckoning is the Creator''s own appointment, not man''s invention: *He appointed the moon for seasons: the sun knoweth his going down.* (Psalm 104:19). And the heavens keep no silence about it: *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* (Psalm 19:1). It ain''t new — Enoch only spells out by name what Genesis sets in the sky and the Psalms confess.',
+       sv.verse_id, ev.verse_id, 'extras', 51825
+  FROM _session250_en74_lookup sv, _session250_en74_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=74 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-74-solar-year-364-days',
+       E'The sun and the moon complete the year in 364 days',
+       E'Here the Astronomical Book states the reckoning plainly: *And the sun and the moon complete the year in three hundred and sixty-four days.* (1 Enoch 74:10), and shows where the lunar count falls short: *And therefore the days are deficient in the intercalated months by thirty days, for the lunar year is three hundred and fifty-four days, and the solar year three hundred and sixty-four days.* (1 Enoch 74:11) — the moon trailing the sun: *And the moon falls behind the sun and the stars by thirty days in the course of one year.* (1 Enoch 74:12). This is the 364-day solar order of whole days that Genesis sets up when the lights are given for *days, and years* (Genesis 1:14). Jubilees guards the very same number and warns against letting the moon set the feasts: *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* (Jubilees 6:36) — the lunar 354 against the solar 364, ten days short each year, exactly Enoch''s deficit. So that the feasts not drift, Jubilees commands the fixed count: *...so that they will not make the year three hundred and sixty-four days only, and for this reason they will go wrong as to the new moons and seasons and sabbaths and festivals...* (Jubilees 6:37). The solar reckoning is primary; the moon is read against it, never over it.',
+       sv.verse_id, ev.verse_id, 'extras', 51828
+  FROM _session250_en74_lookup sv, _session250_en74_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=74 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-74-stations-not-transgress-the-feasts',
+       E'That they transgress not their stations — the feasts kept in righteousness',
+       E'The chapter closes on covenant, not arithmetic: *And the moon brings in all the years exactly, that their stations may come, and that they may not transgress their reckoned stations, and that they may not change their order, but complete the years with righteousness, three hundred and sixty-four days.* (1 Enoch 74:13). The whole point of the reckoning is that the appointed times arrive on time — the feasts of Yahuah are fixed by the lights, not invented by men: *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* (Leviticus 23:4). Jubilees seals it with the warning that the heavenly tables ordain the division of days precisely so the covenant feasts are not forgotten: *...for the book (lies) written before me, and on the heavenly tables the division of days is ordained, lest they forget the feasts of the covenant and walk according to the feasts of the nations after their error and after their ignorance.* (Jubilees 6:35). To complete the years ''with righteousness'' is covenant fidelity — the order is the Creator''s, and keeping the right reckoning is keeping His appointed times. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51831
+  FROM _session250_en74_lookup sv, _session250_en74_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=13
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=74 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-74-change-not-the-order-against-the-times-changer',
+       E'Change not their order — against the one who thinks to change times',
+       E'Enoch''s charge that the lights *may not change their order* (1 Enoch 74:13) stands against the great perversion the Astronomical Book later names, when sinners tamper with the reckoning itself: *And in those days the sinners shall alter the order, And shall set aside all the commandments of Yahuah (God) of Spirits... And they shall alter the times, And the seasons, And the new moons, And the sabbaths, And the festivals...* (1 Enoch 82:3). That is the very work Daniel sees in the horn who wars on the saints: *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* (Daniel 7:25) — to change the times is to fight the Creator''s order. The same temptation is idolatry of the host of heaven, forbidden at Sinai: *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them...* (Deuteronomy 4:19) — the lights are servants of the appointed times, never gods, and never men''s to re-order. Against all of it stands the blessing on those who keep the reckoning: *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* (1 Enoch 82:5). Torah stands; the order is covenant, never curse.',
+       sv.verse_id, ev.verse_id, 'extras', 51834
+  FROM _session250_en74_lookup sv, _session250_en74_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=13
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=74 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-74-uriel-luminaries-signs-and-seasons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The luminaries Uriel shows Enoch are the very lights set for the appointed times (moedim) on the fourth day.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-uriel-luminaries-signs-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The moon''s return through her portals to complete her light is the Creator''s own appointment of the seasons, not a man-made scheme.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-uriel-luminaries-signs-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The orderly circuit of the moon through the six portals is the firmament preaching the Maker''s handiwork, the same witness Uriel unfolds to Enoch.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-uriel-luminaries-signs-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-74-solar-year-364-days
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The 364-day year of whole solar days is the Genesis decree of lights for days and years worked out in full.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-solar-year-364-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* Jubilees names the same shortfall Enoch records — the lunar 354 against the solar 364, ten days short each year.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-solar-year-364-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=11
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:37 — *...so that they will not make the year three hundred and sixty-four days only, and for this reason they will go wrong as to the new moons and seasons and sabbaths and festivals...* Because the moon falls behind, Jubilees commands the fixed 364-day count so the feasts do not drift, guarding the same order Enoch 74 sets down.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-solar-year-364-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=12
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-74-stations-not-transgress-the-feasts
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* The stations that must not transgress their reckoning are the moedim — the feasts proclaimed in their seasons, fixed by the lights Enoch is shown.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-stations-not-transgress-the-feasts'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 6:35 — *...for the book (lies) written before me, and on the heavenly tables the division of days is ordained, lest they forget the feasts of the covenant and walk according to the feasts of the nations after their error and after their ignorance.* The heavenly tables ordain the division of days so the covenant feasts are kept — the same righteousness Enoch 74:13 demands of the year.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-stations-not-transgress-the-feasts'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=13
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-74-change-not-the-order-against-the-times-changer
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 82:3 — *And in those days the sinners shall alter the order, And shall set aside all the commandments of Yahuah (God) of Spirits, And shall say that they are from the hand of Elohim (God), And they shall alter the times, And the seasons, And the new moons, And the sabbaths, And the festivals, And they shall eat blood with all kinds of flesh.* The charge that the lights must not change their order is set against the sinners who alter the times and festivals — the very perversion of the reckoning Enoch 74:13 guards against.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-change-not-the-order-against-the-times-changer'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=13
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=82 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* To change the order of the lights is the enemy''s work — the horn who thinks to change the very times and laws Enoch 74:13 says must not be changed.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-change-not-the-order-against-the-times-changer'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The luminaries that mark the reckoning are servants of the appointed times, never to be worshipped — the host of heaven is the Creator''s order, not a god to serve.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-change-not-the-order-against-the-times-changer'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 82:5 — *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* To complete the years ''with righteousness'' (74:13) is the very blessing on those who keep the reckoning and complete their years in truth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en74_lookup sv, _session250_en74_lookup tv
+ WHERE t.slug='1-enoch-74-change-not-the-order-against-the-times-changer'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=74 AND sv.verse_number=13
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=82 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_75.sql (session250 1-enoch 75) -----
+-- Source anchor: enoch/1-enoch ch75. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en75 (view _session250_en75_lookup). Sort band base 51850, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en75_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-75-leaders-over-the-seasons
+  ('enoch', '1-enoch', 75, 1, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The luminary-captains over creation and the stars in Enoch 75:1 simply administer the order Elohim spoke on the fourth day, the lights set for signs and the appointed seasons.'),
+  ('enoch', '1-enoch', 75, 6, 'canon', 'psalms', 104, 19, 'free', E'Psalms 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The leaders set over the seasons in Enoch 75:6 keep the very appointment the Psalmist celebrates — the moon for the moedim, the sun for its setting.'),
+  ('enoch', '1-enoch', 75, 4, 'canon', '1-chronicles', 27, 1, 'free', E'1 Chronicles 27:1 — *Now the children of Yashar''el (Israel) after their number, to wit, the chief fathers and captains of thousands and hundreds, and their officers that served the king in any matter of the courses, which came in and went out month by month throughout all the months of the year, of every course were twenty and four thousand.* The captains of thousands serving by months in Enoch 75:4 are mirrored on earth by Israel''s monthly courses of captains of thousands — the heavenly ranks ordering time as the priestly ranks order service.'),
+  ('enoch', '1-enoch', 75, 1, 'canon', 'psalms', 148, 6, 'free', E'Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The stars over which Enoch''s leaders are placed (75:1) stand by an unbreakable decree, the same fixed order that summons sun, moon and stars to praise their Maker.'),
+  -- thread: 1-enoch-75-the-four-intercalary-days
+  ('enoch', '1-enoch', 75, 12, 'jubilees', 'jubilees', 6, 32, 'extras', E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts. But if they do neglect and do not observe them according to His commandment, then they will disturb all their seasons, and the years will be dislodged from this (order), and they will disturb the seasons and the years will be dislodged and they will neglect their ordinances.* The three-hundred-and-sixty-four-day year Enoch completes with four intercalary days (75:12) is the exact reckoning Jubilees commands Israel to keep, lest the feasts be dislodged.'),
+  ('enoch', '1-enoch', 75, 13, 'jubilees', 'jubilees', 6, 35, 'extras', E'Jubilees 6:35 — *For I know and from henceforth shall I declare it to you, and it is not of my own devising; for the book (lies) written before me, and on the heavenly tables the division of days is ordained, lest they forget the feasts of the covenant and walk according to the feasts of the nations after their error and after their ignorance.* The year *completed in righteousness* by the four days (Enoch 75:13) is the same division of days written on the heavenly tables, given so the feasts of the covenant are not forgotten for the feasts of the nations.'),
+  ('enoch', '1-enoch', 75, 12, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The full count of three hundred and sixty-four days (Enoch 75:12) is the reckoning of the very *days, and years* the lights were appointed to mark — the calendar is the Creator''s order, not man''s device.'),
+  ('enoch', '1-enoch', 75, 13, 'canon', 'leviticus', 23, 4, 'free', E'Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* The seasons completed in righteousness by the four added days (Enoch 75:13) are the very *seasons* in which the feasts of Yahuah are to be proclaimed — keep the reckoning and the moedim fall in their appointed places.'),
+  -- thread: 1-enoch-75-luminaries-keep-their-courses
+  ('enoch', '1-enoch', 75, 15, 'enoch', '1-enoch', 2, 1, 'extras', E'1 Enoch 2:1 — *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* The sun, moon and stars completing their courses according to the law (75:15) echo Enoch''s opening call to behold the luminaries that never transgress their appointed order.'),
+  ('enoch', '1-enoch', 75, 15, 'canon', 'jeremiah', 33, 25, 'free', E'Jeremiah 33:25 — *Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth;* The luminaries that *do not transgress their commandments* (Enoch 75:15) are the very ordinances of heaven Yahuah names as His unbreakable covenant, surety of His promise to His people.'),
+  ('enoch', '1-enoch', 75, 15, 'canon', 'psalms', 148, 6, 'free', E'Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The lights completing their courses according to the law (Enoch 75:15) stand by the decree that shall not pass, the fixed order of sun, moon and stars established for ever.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en75_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en75_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-75-leaders-over-the-seasons',
+       E'The leaders set over the seasons — the moedim written into creation',
+       E'Enoch sees an ordered hierarchy of luminary-captains set over every division of time: *And the leaders of the heads of the thousands, who are placed over the whole creation and over all the stars, also have their special stations, and they serve Yahuah (God) of Spirits in their appointed places.* (1 Enoch 75:1), down through *the four parts of the year* (75:2), *the seven days* (75:3), *the months* (75:4), *the years* (75:5), and *the seasons* (75:6). This is not invention but the Creator''s own order: from the fourth day the lights were appointed to mark out the times — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14) — so the appointed feasts (Leviticus 23) are fixed by the luminaries, not declared by men. The Psalmist names the same governance, *He appointed the moon for seasons: the sun knoweth his going down.* (Psalms 104:19), and earthly Israel mirrored the heavenly ranks in the priestly *courses, which came in and went out month by month throughout all the months of the year* (1 Chronicles 27:1). The stars themselves are summoned to bless the One who set them: *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* (Psalms 148:6). The appointed times are the Creator''s covenant order — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51850
+  FROM _session250_en75_lookup sv, _session250_en75_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=75 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-75-the-four-intercalary-days',
+       E'The four intercalary days that complete the 364-day year',
+       E'Here is the heart of the Enoch reckoning, the whole solar order men so often neglect: *And the leaders of the heads of the thousands who are over the four parts of the year, and over the four intercalary days, serve Yahuah (God) of Spirits in their appointed places.* (1 Enoch 75:2), named as *Melkî''êl... Hel''emmelêk... Nêlê''êl... and Nârêl* (75:11), *And the days of the year are three hundred and sixty-four, and these four intercalary days are added to complete the year.* (75:12), *And because of these four days the seasons are changed, and the year is completed in righteousness.* (75:13). Jubilees gives the very same command and the very same warning that men would drop these days: *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts. But if they do neglect and do not observe them according to His commandment, then they will disturb all their seasons, and the years will be dislodged from this (order), and they will disturb the seasons and the years will be dislodged and they will neglect their ordinances.* (Jubilees 6:32) — the reckoning is set down *lest they forget the feasts of the covenant and walk according to the feasts of the nations* (Jubilees 6:35). The 364-day solar year of whole days, completed by these four added days, is the Creator''s calendar; to omit them is to dislodge the feasts. It ain''t new — Genesis appointed the lights *for seasons, and for days, and years* (Genesis 1:14), the moedim of Leviticus 23 hang upon this order.',
+       sv.verse_id, ev.verse_id, 'extras', 51853
+  FROM _session250_en75_lookup sv, _session250_en75_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=75 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-75-luminaries-keep-their-courses',
+       E'The sun, moon and stars transgress not — covenant order in the heavens',
+       E'The chapter closes on the obedience of the lights: *And the sun and the moon and the stars serve Yahuah (God) of Spirits in their appointed places, And they do not transgress their commandments, And they complete their courses according to the law.* (1 Enoch 75:15). This is the same testimony Enoch opens with — *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* (1 Enoch 2:1) — and it is the covenant the prophets appeal to as the surest thing in creation: *Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth;* (Jeremiah 33:25), an ordinance so fixed it cannot be broken, *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* (Psalms 148:6). The lights keeping the law is the standing rebuke to men who would change the times: where the luminaries never transgress their commandments, the order they trace out is the Creator''s covenant, never law-as-curse. It ain''t new — the heavens keep the reckoning faithfully, and men are called to do the same.',
+       sv.verse_id, ev.verse_id, 'extras', 51856
+  FROM _session250_en75_lookup sv, _session250_en75_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=15
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=75 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-75-leaders-over-the-seasons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The luminary-captains over creation and the stars in Enoch 75:1 simply administer the order Elohim spoke on the fourth day, the lights set for signs and the appointed seasons.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-leaders-over-the-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The leaders set over the seasons in Enoch 75:6 keep the very appointment the Psalmist celebrates — the moon for the moedim, the sun for its setting.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-leaders-over-the-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Chronicles 27:1 — *Now the children of Yashar''el (Israel) after their number, to wit, the chief fathers and captains of thousands and hundreds, and their officers that served the king in any matter of the courses, which came in and went out month by month throughout all the months of the year, of every course were twenty and four thousand.* The captains of thousands serving by months in Enoch 75:4 are mirrored on earth by Israel''s monthly courses of captains of thousands — the heavenly ranks ordering time as the priestly ranks order service.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-leaders-over-the-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=27 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The stars over which Enoch''s leaders are placed (75:1) stand by an unbreakable decree, the same fixed order that summons sun, moon and stars to praise their Maker.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-leaders-over-the-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-75-the-four-intercalary-days
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts. But if they do neglect and do not observe them according to His commandment, then they will disturb all their seasons, and the years will be dislodged from this (order), and they will disturb the seasons and the years will be dislodged and they will neglect their ordinances.* The three-hundred-and-sixty-four-day year Enoch completes with four intercalary days (75:12) is the exact reckoning Jubilees commands Israel to keep, lest the feasts be dislodged.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-the-four-intercalary-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=12
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 6:35 — *For I know and from henceforth shall I declare it to you, and it is not of my own devising; for the book (lies) written before me, and on the heavenly tables the division of days is ordained, lest they forget the feasts of the covenant and walk according to the feasts of the nations after their error and after their ignorance.* The year *completed in righteousness* by the four days (Enoch 75:13) is the same division of days written on the heavenly tables, given so the feasts of the covenant are not forgotten for the feasts of the nations.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-the-four-intercalary-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=13
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The full count of three hundred and sixty-four days (Enoch 75:12) is the reckoning of the very *days, and years* the lights were appointed to mark — the calendar is the Creator''s order, not man''s device.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-the-four-intercalary-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* The seasons completed in righteousness by the four added days (Enoch 75:13) are the very *seasons* in which the feasts of Yahuah are to be proclaimed — keep the reckoning and the moedim fall in their appointed places.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-the-four-intercalary-days'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-75-luminaries-keep-their-courses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 2:1 — *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* The sun, moon and stars completing their courses according to the law (75:15) echo Enoch''s opening call to behold the luminaries that never transgress their appointed order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-luminaries-keep-their-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=15
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=2 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 33:25 — *Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth;* The luminaries that *do not transgress their commandments* (Enoch 75:15) are the very ordinances of heaven Yahuah names as His unbreakable covenant, surety of His promise to His people.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-luminaries-keep-their-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=33 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The lights completing their courses according to the law (Enoch 75:15) stand by the decree that shall not pass, the fixed order of sun, moon and stars established for ever.'
+  FROM cross_reference_threads t, cross_references x, _session250_en75_lookup sv, _session250_en75_lookup tv
+ WHERE t.slug='1-enoch-75-luminaries-keep-their-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=75 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_76.sql (session250 1-enoch 76) -----
+-- Source anchor: enoch/1-enoch ch76. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en76 (view _session250_en76_lookup). Sort band base 51875, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en76_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-76-twelve-portals-winds
+  ('enoch', '1-enoch', 76, 1, 'canon', 'psalms', 135, 7, 'free', E'Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The same treasury-gates at the ends of the earth from which Enoch sees the twelve winds issue.'),
+  ('enoch', '1-enoch', 76, 1, 'canon', 'job', 38, 24, 'free', E'Job 38:24 — *By what way is the light parted, which scattereth the east wind upon the earth?* Yahuah''s question to Job names the very east wind Enoch traces back to its appointed eastern portal.'),
+  ('enoch', '1-enoch', 76, 1, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years.* The lights and the winds keep one created order of signs and seasons — the moedim written into creation, not invented by men.'),
+  ('enoch', '1-enoch', 76, 1, 'jubilees', 'jubilees', 2, 2, 'extras', E'Jubilees 2:2 — *For on the first day He created the heavens which are above and the earth and the waters and all the spirits which serve before Him–the angels of the presence, and the angels of sanctification, and the angels of the spirit of fire and the angels of the spirit of the winds, and the angels of the spirit of the clouds, and of darkness, and of snow and of hail and of hoar frost...* Jubilees sets angels over the winds and weather at creation, the same ordered powers Enoch sees gated at the earth''s ends.'),
+  -- thread: 1-enoch-76-blessing-and-curse-winds
+  ('enoch', '1-enoch', 76, 9, 'canon', 'job', 37, 9, 'free', E'Job 37:9 — *Out of the south cometh the whirlwind: and cold out of the north.* Job sorts the winds by quarter just as Enoch''s southern and northern portals send heat-and-drought against cold-and-drought.'),
+  -- thread: 1-enoch-76-four-winds-four-quarters
+  ('enoch', '1-enoch', 76, 14, 'canon', 'jeremiah', 49, 36, 'free', E'Jeremiah 49:36 — *And upon Elam will I bring the four winds from the four quarters of heaven, and will scatter them toward all those winds; and there shall be no nation whither the outcasts of Elam shall not come.* The four winds from the four quarters of heaven that Enoch resolves the twelve portals into are Yahuah''s instrument of judgment over the nations.'),
+  ('enoch', '1-enoch', 76, 14, 'canon', 'daniel', 7, 2, 'free', E'Daniel 7:2 — *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* Daniel''s beast-vision opens on the same four winds of heaven whose ordered laws Enoch has just catalogued.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en76_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en76_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-76-twelve-portals-winds',
+       E'Twelve portals at the ends of the earth — the winds in their treasuries',
+       E'Uriel shows Enoch the order at the world''s edge: *And at the ends of the earth I saw twelve portals: out of the east three portals for blessing and prosperity, and three for cursing and destruction* (1 Enoch 76:1) — the winds do not blow at random but issue from appointed gates by the Creator''s reckoning. This is the same honest geography the Tanakh confesses: *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries* (Psalm 135:7) — the wind kept in a treasury, brought out by Yahuah''s hand, not summoned by men. Job hears the order spoken from the same edge of creation: *By what way is the light parted, which scattereth the east wind upon the earth?* (Job 38:24). The lights of Genesis 1 are *for signs, and for seasons, and for days, and years* (Genesis 1:14), and so too the winds keep their stations — the Creator''s covenant order written into the world. Jubilees names the very angels set over these powers at the first day: *and the angels of the spirit of the winds, and the angels of the spirit of the clouds, and of darkness, and of snow and of hail and of hoar frost... and the angels of the spirits of cold and of heat* (Jubilees 2:2). It ain''t new: the gates, the treasuries, the appointed winds — one order, one Maker.',
+       sv.verse_id, ev.verse_id, 'extras', 51875
+  FROM _session250_en76_lookup sv, _session250_en76_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=76 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=76 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-76-blessing-and-curse-winds',
+       E'Winds of blessing and prosperity, winds of cold and drought',
+       E'Each portal carries its own charge: *And through the third portal the north-east wind comes forth, bringing cold and drought and destruction* (1 Enoch 76:4), while *through the first the west wind comes forth, bringing dew and rain and prosperity and blessing* (1 Enoch 76:5) — the winds are sorted to blessing and to curse, dew-and-rain against cold-and-drought, exactly the two roads the covenant sets before a people. Job knows this sorting by quarter: *Out of the south cometh the whirlwind: and cold out of the north* (Job 37:9) — the directions are not neutral but assigned. The order stands under one Maker, and the curse is never arbitrary law-as-curse but the withholding that follows broken covenant; the dew and the rain are the blessing-wind of His treasuries. Enoch is shown the whole catalogue so the reckoning can be kept, not so men may control the sky.',
+       sv.verse_id, ev.verse_id, 'extras', 51878
+  FROM _session250_en76_lookup sv, _session250_en76_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=76 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=76 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-76-four-winds-four-quarters',
+       E'The twelve completed — the four winds from the four quarters',
+       E'Uriel closes the survey: *And after these the twelve winds are completed, and all their laws and all their plagues and all their benefactions have I shown to thee, my son Methuselah* (1 Enoch 76:14) — twelve gates resolving into the four cardinal quarters, each wind bearing its law, its plague, and its benefaction. The prophets reckon by these same four quarters when Yahuah moves in judgment: *And upon Elam will I bring the four winds from the four quarters of heaven, and will scatter them toward all those winds* (Jeremiah 49:36). Daniel''s vision opens on the same fourfold order stirred over the deep: *I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea* (Daniel 7:2) — the winds out of which the beast-kingdoms rise are the very ordered powers Enoch catalogues. The winds keep their stations under the Creator; their laws and their plagues alike are His to deploy, and to read the order rightly is part of keeping the covenant reckoning.',
+       sv.verse_id, ev.verse_id, 'extras', 51881
+  FROM _session250_en76_lookup sv, _session250_en76_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=76 AND sv.verse_number=14
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=76 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-76-twelve-portals-winds
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The same treasury-gates at the ends of the earth from which Enoch sees the twelve winds issue.'
+  FROM cross_reference_threads t, cross_references x, _session250_en76_lookup sv, _session250_en76_lookup tv
+ WHERE t.slug='1-enoch-76-twelve-portals-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=76 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=135 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Job 38:24 — *By what way is the light parted, which scattereth the east wind upon the earth?* Yahuah''s question to Job names the very east wind Enoch traces back to its appointed eastern portal.'
+  FROM cross_reference_threads t, cross_references x, _session250_en76_lookup sv, _session250_en76_lookup tv
+ WHERE t.slug='1-enoch-76-twelve-portals-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=76 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=38 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years.* The lights and the winds keep one created order of signs and seasons — the moedim written into creation, not invented by men.'
+  FROM cross_reference_threads t, cross_references x, _session250_en76_lookup sv, _session250_en76_lookup tv
+ WHERE t.slug='1-enoch-76-twelve-portals-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=76 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 2:2 — *For on the first day He created the heavens which are above and the earth and the waters and all the spirits which serve before Him–the angels of the presence, and the angels of sanctification, and the angels of the spirit of fire and the angels of the spirit of the winds, and the angels of the spirit of the clouds, and of darkness, and of snow and of hail and of hoar frost...* Jubilees sets angels over the winds and weather at creation, the same ordered powers Enoch sees gated at the earth''s ends.'
+  FROM cross_reference_threads t, cross_references x, _session250_en76_lookup sv, _session250_en76_lookup tv
+ WHERE t.slug='1-enoch-76-twelve-portals-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=76 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=2 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-76-blessing-and-curse-winds
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Job 37:9 — *Out of the south cometh the whirlwind: and cold out of the north.* Job sorts the winds by quarter just as Enoch''s southern and northern portals send heat-and-drought against cold-and-drought.'
+  FROM cross_reference_threads t, cross_references x, _session250_en76_lookup sv, _session250_en76_lookup tv
+ WHERE t.slug='1-enoch-76-blessing-and-curse-winds'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=76 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=37 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-76-four-winds-four-quarters
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 49:36 — *And upon Elam will I bring the four winds from the four quarters of heaven, and will scatter them toward all those winds; and there shall be no nation whither the outcasts of Elam shall not come.* The four winds from the four quarters of heaven that Enoch resolves the twelve portals into are Yahuah''s instrument of judgment over the nations.'
+  FROM cross_reference_threads t, cross_references x, _session250_en76_lookup sv, _session250_en76_lookup tv
+ WHERE t.slug='1-enoch-76-four-winds-four-quarters'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=76 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=49 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:2 — *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* Daniel''s beast-vision opens on the same four winds of heaven whose ordered laws Enoch has just catalogued.'
+  FROM cross_reference_threads t, cross_references x, _session250_en76_lookup sv, _session250_en76_lookup tv
+ WHERE t.slug='1-enoch-76-four-winds-four-quarters'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=76 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_77.sql (session250 1-enoch 77) -----
+-- Source anchor: enoch/1-enoch ch77. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en77 (view _session250_en77_lookup). Sort band base 51900, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en77_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-77-four-quarters-of-the-earth
+  ('enoch', '1-enoch', 77, 3, 'canon', 'genesis', 2, 8, 'free', E'Genesis 2:8 — *And Yahuah Elohim (the LORD God) planted a garden eastward in Eden; and there he put the man whom he had formed.* Enoch''s "garden of righteousness" set in a quarter of the earth is the same Edenic garden of the Torah''s creation account.'),
+  ('enoch', '1-enoch', 77, 1, 'canon', 'revelation', 7, 1, 'free', E'Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John sees the same four-quartered earth Enoch maps, the Creator''s fixed frame held by His angels.'),
+  -- thread: 1-enoch-77-tree-of-wisdom-paradise
+  ('enoch', '1-enoch', 77, 7, 'canon', 'genesis', 2, 9, 'free', E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* Enoch''s "tree of wisdom" in the paradise of righteousness is the Torah''s tree set in the midst of the garden.'),
+  ('enoch', '1-enoch', 77, 7, 'canon', 'genesis', 3, 7, 'free', E'Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* Enoch''s words "his eyes are opened" repeat Eden''s account of the fruit that opened the eyes of Adam and his wife.'),
+  ('enoch', '1-enoch', 77, 8, 'canon', 'revelation', 22, 2, 'free', E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The fruitful tree of the paradise of righteousness stands restored in the New Jerusalem.'),
+  ('enoch', '1-enoch', 77, 8, 'canon', 'ezekiel', 47, 12, 'free', E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel''s tree by the river from the sanctuary matches Enoch''s beautiful, far-fragrant tree of the garden.'),
+  -- thread: 1-enoch-77-prison-stars-transgressed-times
+  ('enoch', '1-enoch', 77, 11, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The stars Enoch sees imprisoned failed the very task creation gave the lights — to mark the appointed times (the moedim); the stars that "did not come forth at their appointed times" broke this order.'),
+  ('enoch', '1-enoch', 77, 11, 'enoch', '1-enoch', 21, 6, 'extras', E'1 Enoch 21:6 — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* The Astronomical Book repeats word for word the earlier vision of the prison of the transgressing stars.'),
+  ('enoch', '1-enoch', 77, 10, 'canon', '2-peter', 2, 4, 'free', E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter carries forward the same host bound in a prison and reserved for judgement that Enoch sees in the waste place.'),
+  ('enoch', '1-enoch', 77, 11, 'canon', 'jude', 1, 13, 'free', E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude names the lawless as "wandering stars" reserved for darkness — the very imagery of Enoch''s stars that strayed from their appointed times.'),
+  ('enoch', '1-enoch', 77, 11, 'canon', 'deuteronomy', 4, 19, 'free', E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The host of heaven men are forbidden to worship is the same host Enoch sees judged — creatures set under the Creator''s order, never gods.'),
+  ('enoch', '1-enoch', 77, 11, 'jubilees', 'jubilees', 6, 32, 'extras', E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts. But if they do neglect and do not observe them according to His commandment, then they will disturb all their seasons, and the years will be dislodged from this (order), and they will disturb the seasons and the years will be dislodged and they will neglect their ordinances.* Jubilees commands the 364-day solar reckoning whose neglect disturbs every feast — the human counterpart to Enoch''s stars that abandoned their appointed times.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en77_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en77_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-77-four-quarters-of-the-earth',
+       E'The four quarters of the earth and the garden in the north',
+       E'Enoch surveys the whole frame of creation by its directions: *And the first quarter is called the east, because it is the first: and the second, the south, because the Most High descends there, yea, there in quite a special sense He who is blessed for ever comes down.* (1 Enoch 77:1), and *the fourth quarter, called the north, is divided into three parts: one of them is for the habitation of men, the second for the great seas, with the valleys and forests and rivers, and darkness and clouds; and the third part with the garden of righteousness.* (1 Enoch 77:3). This is the canon''s own ordered cosmos. The garden was set in the east of Eden — *And Yahuah Elohim (the LORD God) planted a garden eastward in Eden; and there he put the man whom he had formed.* (Genesis 2:8) — and the same four-fold earth stands when judgement is marshalled: *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* (Revelation 7:1). The Creator''s order is one order from Genesis to Revelation: not invented by men, but laid into the world He made.',
+       sv.verse_id, ev.verse_id, 'extras', 51900
+  FROM _session250_en77_lookup sv, _session250_en77_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=77 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-77-tree-of-wisdom-paradise',
+       E'The tree of wisdom in the paradise of righteousness',
+       E'In the north quarter Enoch comes to the garden: *And I saw the paradise of righteousness, and the tree of wisdom, of whose fruit if one eats he becomes wise, and his eyes are opened.* (1 Enoch 77:7), *And this tree is in the north, and its fruit is like clusters of the vine, very beautiful: and the fragrance of the tree penetrates far beyond the tree.* (1 Enoch 77:8). This is Eden''s own tree — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* (Genesis 2:9) — and Enoch''s very phrase "his eyes are opened" echoes the fall: *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* (Genesis 3:7). Yet the garden of righteousness is not lost forever; the tree of life stands again in the restored city — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* (Revelation 22:2) — and Ezekiel saw it lining the river from the sanctuary: *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* (Ezekiel 47:12). It ain''t new: Enoch''s paradise is the canon''s Eden, lost and restored.',
+       sv.verse_id, ev.verse_id, 'extras', 51903
+  FROM _session250_en77_lookup sv, _session250_en77_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=77 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-77-prison-stars-transgressed-times',
+       E'The prison of the stars that did not come forth at their appointed times',
+       E'Opposite the garden Enoch sees a waste place that is a prison for the host of heaven: *And I saw seven stars like great burning mountains, and to me, when I inquired regarding them, the angel said: ''This place is the end of heaven and earth: this has become a prison for the stars and the host of heaven.* (1 Enoch 77:10), and the charge against them is precise — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) of Spirits in the beginning of their rising, because they did not come forth at their appointed times.* (1 Enoch 77:11). Their sin is a calendar sin: they broke the moedim, the appointed times set into the lights at creation — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14). The Astronomical Book speaks the same warning twice before: *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* (1 Enoch 21:6). The New Testament carries the very same bound-and-reserved hosts forward: *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* (2 Peter 2:4), and Jude names them as the lawless lights — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* (Jude 1:13). And the same lights that men are warned never to worship as gods are the host that Enoch sees judged: *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* (Deuteronomy 4:19). The reckoning is the Creator''s covenant — Jubilees commands the very 364-day order whose neglect disturbs every feast: *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts...* (Jubilees 6:32). The transgressing stars are the cosmic emblem of a perverted calendar; the right reckoning is fidelity, and it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51906
+  FROM _session250_en77_lookup sv, _session250_en77_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=77 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-77-four-quarters-of-the-earth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:8 — *And Yahuah Elohim (the LORD God) planted a garden eastward in Eden; and there he put the man whom he had formed.* Enoch''s "garden of righteousness" set in a quarter of the earth is the same Edenic garden of the Torah''s creation account.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-four-quarters-of-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 7:1 — *And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree.* John sees the same four-quartered earth Enoch maps, the Creator''s fixed frame held by His angels.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-four-quarters-of-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-77-tree-of-wisdom-paradise
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:9 — *And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.* Enoch''s "tree of wisdom" in the paradise of righteousness is the Torah''s tree set in the midst of the garden.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-tree-of-wisdom-paradise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 3:7 — *And the eyes of them both were opened, and they knew that they were naked; and they sewed fig leaves together, and made themselves aprons.* Enoch''s words "his eyes are opened" repeat Eden''s account of the fruit that opened the eyes of Adam and his wife.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-tree-of-wisdom-paradise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 22:2 — *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations.* The fruitful tree of the paradise of righteousness stands restored in the New Jerusalem.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-tree-of-wisdom-paradise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 47:12 — *And by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine.* Ezekiel''s tree by the river from the sanctuary matches Enoch''s beautiful, far-fragrant tree of the garden.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-tree-of-wisdom-paradise'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-77-prison-stars-transgressed-times
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The stars Enoch sees imprisoned failed the very task creation gave the lights — to mark the appointed times (the moedim); the stars that "did not come forth at their appointed times" broke this order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-prison-stars-transgressed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 21:6 — *And the stars which roll over the fire are they which have transgressed the commandment of Yahuah (God) in the beginning of their rising, because they did not come forth at their appointed times.* The Astronomical Book repeats word for word the earlier vision of the prison of the transgressing stars.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-prison-stars-transgressed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=11
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=21 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter carries forward the same host bound in a prison and reserved for judgement that Enoch sees in the waste place.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-prison-stars-transgressed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jude 1:13 — *Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.* Jude names the lawless as "wandering stars" reserved for darkness — the very imagery of Enoch''s stars that strayed from their appointed times.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-prison-stars-transgressed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The host of heaven men are forbidden to worship is the same host Enoch sees judged — creatures set under the Creator''s order, never gods.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-prison-stars-transgressed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts. But if they do neglect and do not observe them according to His commandment, then they will disturb all their seasons, and the years will be dislodged from this (order), and they will disturb the seasons and the years will be dislodged and they will neglect their ordinances.* Jubilees commands the 364-day solar reckoning whose neglect disturbs every feast — the human counterpart to Enoch''s stars that abandoned their appointed times.'
+  FROM cross_reference_threads t, cross_references x, _session250_en77_lookup sv, _session250_en77_lookup tv
+ WHERE t.slug='1-enoch-77-prison-stars-transgressed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=77 AND sv.verse_number=11
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_78.sql (session250 1-enoch 78) -----
+-- Source anchor: enoch/1-enoch ch78. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en78 (view _session250_en78_lookup). Sort band base 51925, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en78_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-78-two-great-lights
+  ('enoch', '1-enoch', 78, 1, 'canon', 'genesis', 1, 16, 'free', E'Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* Enoch''s "great luminary" and "lesser luminary" are simply Moses'' greater and lesser light named out — the same two great lights of creation week.'),
+  ('enoch', '1-enoch', 78, 2, 'canon', 'psalms', 148, 3, 'free', E'Psalm 148:3 — *Praise ye him, sun and moon: praise him, all ye stars of light.* The luminaries Enoch names are creatures under command, called to praise their Maker — not deities, the witness against all host-of-heaven worship.'),
+  ('enoch', '1-enoch', 78, 3, 'canon', 'psalms', 148, 5, 'free', E'Psalm 148:5 — *Let them praise the name of Yahuah (LORD): for he commanded, and they were created.* Enoch frames the names "according to the law and the reckoning of their light"; Psalm 148 grounds that law in the Creator''s command that made them.'),
+  -- thread: 1-enoch-78-364-day-solar-order
+  ('enoch', '1-enoch', 78, 4, 'enoch', '1-enoch', 74, 10, 'extras', E'1 Enoch 74:10 — *And the sun and the moon complete the year in three hundred and sixty-four days.* Enoch''s own luminary book fixes the same solar reckoning Enoch 78:4 gives to the sun''s revolution.'),
+  ('enoch', '1-enoch', 78, 5, 'enoch', '1-enoch', 74, 11, 'extras', E'1 Enoch 74:11 — *And therefore the days are deficient in the intercalated months by thirty days, for the lunar year is three hundred and fifty-four days, and the solar year three hundred and sixty-four days.* This names the very 354-versus-364 gap Enoch 78:4-5 records, showing the lunar count falling behind the solar order.'),
+  ('enoch', '1-enoch', 78, 4, 'jubilees', 'jubilees', 6, 32, 'extras', E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* The 364-day revolution of Enoch 78:4 is the very reckoning Jubilees commands Israel keep so the feasts are not disturbed.'),
+  -- thread: 1-enoch-78-waxing-waning-new-moon
+  ('enoch', '1-enoch', 78, 6, 'canon', 'psalms', 81, 3, 'free', E'Psalm 81:3 — *Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day.* The moon''s waxing and waning that Enoch 78:6 counts marks the new moon Israel is commanded to keep as an appointed feast.'),
+  ('enoch', '1-enoch', 78, 6, 'canon', 'isaiah', 66, 23, 'free', E'Isaiah 66:23 — *And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD).* The phases of the moon Enoch tracks set the new-moon cycle by which all flesh will one day come to worship — the moedim written into the lights.'),
+  -- thread: 1-enoch-78-courses-in-righteousness-signs-seasons
+  ('enoch', '1-enoch', 78, 12, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years.* Enoch 78:12 quotes the fourth-day mandate almost word for word — the lights set for signs, seasons (the moedim), days, and years.'),
+  ('enoch', '1-enoch', 78, 12, 'canon', 'psalms', 104, 19, 'free', E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The moon and sun Enoch sets for seasons and days are the same lights the Psalm appoints for the seasons — the Creator''s order of the moedim.'),
+  ('enoch', '1-enoch', 78, 9, 'canon', 'psalms', 19, 1, 'free', E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The luminaries that complete their courses in righteousness (Enoch 78:9) are the firmament preaching its Maker''s order without a word.'),
+  ('enoch', '1-enoch', 78, 11, 'canon', 'daniel', 7, 25, 'free', E'Daniel 7:25 — *And he shall speak great words against the most High, and shall wear out the saints of the most High, and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* Where Enoch''s lights do not change their courses, the enemy thinks to change the times — the perversion of the reckoning Enoch''s luminary book warns against.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en78_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en78_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-78-two-great-lights',
+       E'The names of the sun and moon — the two great lights',
+       E'Enoch names the luminaries: *And the names of the sun are these: the great luminary, the hot one, the shining one, the giver of light. And the moon has four names: the lesser luminary, the pale one, the light-giver, the blessed one* (1 Enoch 78:1-2), and again *the sun is called the great luminary, and the moon the lesser luminary* (1 Enoch 78:10). It ain''t new — this is creation week itself: *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also* (Genesis 1:16). The naming is no idle catalogue; it is the order the heavens keep so they can sing it back: *Praise ye him, sun and moon: praise him, all ye stars of light* (Psalm 148:3), for *he commanded, and they were created* (Psalm 148:5). The lights belong to the Creator and bear His reckoning; they are servants set in their stations, never powers to be feared or worshipped.',
+       sv.verse_id, ev.verse_id, 'extras', 51925
+  FROM _session250_en78_lookup sv, _session250_en78_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=78 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-78-364-day-solar-order',
+       E'The 364-day solar reckoning — the moon falls behind',
+       E'Enoch sets the solar year as the primary measure: *And the sun rises and sets, and returns to his place, and makes one revolution in three hundred and sixty-four days, and is thus always at his station* (1 Enoch 78:4), while *the moon also revolves and completes her light in three hundred and fifty-four days* (1 Enoch 78:5). The ten-day gap is the whole point: the lunar count runs behind the solar order, and Enoch elsewhere fixes the reckoning by the sun — *the sun and the moon complete the year in three hundred and sixty-four days* and *complete the years with righteousness, three hundred and sixty-four days* (1 Enoch 74:10,13). Jubilees lays the same charge on Israel: *command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts* (Jubilees 6:32). The 364-day order is whole solar days, the Creator''s calendar set at the fourth day; the appointed times stand or fall by it. It ain''t new — to keep the reckoning is covenant fidelity, not a later invention of men.',
+       sv.verse_id, ev.verse_id, 'extras', 51928
+  FROM _session250_en78_lookup sv, _session250_en78_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=78 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-78-waxing-waning-new-moon',
+       E'Her light waxes and wanes — the new moon appointed for worship',
+       E'Enoch measures the moon''s fullness: *And in the days of her waxing she completes her light in fourteen days, and in the days of her waning she completes her light in fourteen days* (1 Enoch 78:6). The waxing and waning are not chaos but appointment — the moon is set for the times Israel keeps. So the Psalm fixes the trumpet to the moon''s renewal: *Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day* (Psalm 81:3), and the prophet sees worship itself ordered by that cycle: *it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23). The phases Enoch reckons are the Creator''s clock for the moedim; the new moon is an appointed time written into the light, and keeping it is covenant worship — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51931
+  FROM _session250_en78_lookup sv, _session250_en78_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=78 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-78-courses-in-righteousness-signs-seasons',
+       E'Their courses in righteousness — set for signs and seasons',
+       E'The luminaries do not stray: *And the sun and the moon complete their courses in righteousness, and they do not transgress their commandments... and they do not change their courses* (1 Enoch 78:9,11), for *the sun and the moon are for signs and for seasons and for days and for years* (1 Enoch 78:12). This is the fourth-day charge spoken back: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14) — the very "seasons" being the moedim, the appointed times. The Psalm seals it: *He appointed the moon for seasons: the sun knoweth his going down* (Psalm 104:19), and the heavens preach their Maker''s order: *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork* (Psalm 19:1). The lights keep their commandments in righteousness; men are called to keep the reckoning they mark. To neglect or change the order is the enemy''s work who *think to change times and laws* (Daniel 7:25) — but the Creator''s calendar stands, fixed in the lights. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51934
+  FROM _session250_en78_lookup sv, _session250_en78_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=78 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-78-two-great-lights
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* Enoch''s "great luminary" and "lesser luminary" are simply Moses'' greater and lesser light named out — the same two great lights of creation week.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-two-great-lights'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 148:3 — *Praise ye him, sun and moon: praise him, all ye stars of light.* The luminaries Enoch names are creatures under command, called to praise their Maker — not deities, the witness against all host-of-heaven worship.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-two-great-lights'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 148:5 — *Let them praise the name of Yahuah (LORD): for he commanded, and they were created.* Enoch frames the names "according to the law and the reckoning of their light"; Psalm 148 grounds that law in the Creator''s command that made them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-two-great-lights'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-78-364-day-solar-order
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 74:10 — *And the sun and the moon complete the year in three hundred and sixty-four days.* Enoch''s own luminary book fixes the same solar reckoning Enoch 78:4 gives to the sun''s revolution.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-364-day-solar-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=4
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=74 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 74:11 — *And therefore the days are deficient in the intercalated months by thirty days, for the lunar year is three hundred and fifty-four days, and the solar year three hundred and sixty-four days.* This names the very 354-versus-364 gap Enoch 78:4-5 records, showing the lunar count falling behind the solar order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-364-day-solar-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=5
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=74 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* The 364-day revolution of Enoch 78:4 is the very reckoning Jubilees commands Israel keep so the feasts are not disturbed.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-364-day-solar-order'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=4
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-78-waxing-waning-new-moon
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 81:3 — *Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day.* The moon''s waxing and waning that Enoch 78:6 counts marks the new moon Israel is commanded to keep as an appointed feast.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-waxing-waning-new-moon'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=81 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 66:23 — *And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD).* The phases of the moon Enoch tracks set the new-moon cycle by which all flesh will one day come to worship — the moedim written into the lights.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-waxing-waning-new-moon'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-78-courses-in-righteousness-signs-seasons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years.* Enoch 78:12 quotes the fourth-day mandate almost word for word — the lights set for signs, seasons (the moedim), days, and years.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-courses-in-righteousness-signs-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The moon and sun Enoch sets for seasons and days are the same lights the Psalm appoints for the seasons — the Creator''s order of the moedim.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-courses-in-righteousness-signs-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The luminaries that complete their courses in righteousness (Enoch 78:9) are the firmament preaching its Maker''s order without a word.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-courses-in-righteousness-signs-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Daniel 7:25 — *And he shall speak great words against the most High, and shall wear out the saints of the most High, and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* Where Enoch''s lights do not change their courses, the enemy thinks to change the times — the perversion of the reckoning Enoch''s luminary book warns against.'
+  FROM cross_reference_threads t, cross_references x, _session250_en78_lookup sv, _session250_en78_lookup tv
+ WHERE t.slug='1-enoch-78-courses-in-righteousness-signs-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=78 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_79.sql (session250 1-enoch 79) -----
+-- Source anchor: enoch/1-enoch ch79. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en79 (view _session250_en79_lookup). Sort band base 51950, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en79_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-79-luminaries-set-for-the-moedim
+  ('enoch', '1-enoch', 79, 3, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The lights are appointed for the seasons (moedim) — Enoch 79 simply unfolds the law Genesis sets at creation.'),
+  ('enoch', '1-enoch', 79, 2, 'canon', 'psalms', 104, 19, 'free', E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The reckoning of months and signs Enoch lists is the same appointment of sun and moon David sings.'),
+  ('enoch', '1-enoch', 79, 3, 'canon', 'jeremiah', 31, 35, 'free', E'Jeremiah 31:35 — *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva''ot (LORD of hosts) is his name:* The ordinances of moon and stars Enoch shows are Yahuah''s own fixed ordinances, sworn by His name.'),
+  -- thread: 1-enoch-79-hosts-keep-their-appointed-courses
+  ('enoch', '1-enoch', 79, 4, 'canon', 'psalms', 148, 6, 'free', E'Psalm 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The decree that holds the host in their courses is the same reason Enoch''s luminaries do not change their order.'),
+  ('enoch', '1-enoch', 79, 4, 'canon', 'psalms', 148, 3, 'free', E'Psalm 148:3 — *Praise ye him, sun and moon: praise him, all ye stars of light.* Sun, moon and stars serving Yahuah (God) of Spirits in Enoch 79:4 is the same chorus the Psalm calls to praise.'),
+  ('enoch', '1-enoch', 79, 4, 'canon', 'psalms', 19, 1, 'free', E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The hosts completing their revolutions in righteousness is the firmament''s wordless declaration of its Maker.'),
+  ('enoch', '1-enoch', 79, 7, 'canon', 'jeremiah', 33, 25, 'free', E'Jeremiah 33:25 — *Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth;* The unbroken courses of the luminaries are the surety of Yahuah''s covenant — the lights keep their law so that His covenant stands.'),
+  ('enoch', '1-enoch', 79, 4, 'canon', 'deuteronomy', 4, 19, 'free', E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The host serve Yahuah in their places (Enoch 79:4); Torah forbids reversing that to serve the host — the host-of-heaven idolatry.'),
+  -- thread: 1-enoch-79-the-364-day-solar-reckoning
+  ('enoch', '1-enoch', 79, 5, 'enoch', '1-enoch', 74, 11, 'extras', E'1 Enoch 74:11 — *And therefore the days are deficient in the intercalated months by thirty days, for the lunar year is three hundred and fifty-four days, and the solar year three hundred and sixty-four days.* The same 364-vs-354 reckoning Enoch already gave in the courses of the moon — the solar year is the primary order.'),
+  ('enoch', '1-enoch', 79, 5, 'jubilees', 'jubilees', 6, 32, 'extras', E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* The 364-day year Enoch completes is the same reckoning Jubilees commands Israel to keep so the feasts are not disturbed.'),
+  ('enoch', '1-enoch', 79, 5, 'jubilees', 'jubilees', 6, 36, 'extras', E'Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* The very ten-day gap Enoch records — the moon falling behind by ten days — is the disturbance Jubilees warns of when men reckon by the moon alone.'),
+  -- thread: 1-enoch-79-keep-the-reckoning-blessing
+  ('enoch', '1-enoch', 79, 10, 'canon', 'leviticus', 23, 2, 'free', E'Leviticus 23:2 — *Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* The years completed in truth carry the feasts of Yahuah — the moedim fixed by the lights and proclaimed in Torah.'),
+  ('enoch', '1-enoch', 79, 10, 'enoch', '1-enoch', 82, 5, 'extras', E'1 Enoch 82:5 — *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* Enoch''s own closing benediction repeats the blessing of 79:10 word for word and adds its reward — eternal life.'),
+  ('enoch', '1-enoch', 79, 9, 'canon', 'daniel', 7, 25, 'free', E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* The spirits of error that lead men to transgress the commandments are the same hand that thinks to change the times and laws — the perversion of the reckoning Enoch keeps.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en79_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en79_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-79-luminaries-set-for-the-moedim',
+       E'The luminaries set for signs and seasons — it ain''t new',
+       E'Uriel''s recap closes the Book of the Luminaries by declaring the *law* of the lights: *And now I have shown thee the vision of all the luminaries of the heaven, how they go forth and how they return, and how they complete their courses, and how they do not transgress their commandments* (1 Enoch 79:3). The moedim — the appointed times — are not invented by men; they are written into creation by the lights on the fourth day: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14). The same order is sung in *He appointed the moon for seasons: the sun knoweth his going down.* (Psalm 104:19), and it is the very fabric the prophet swears by: *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva''ot (LORD of hosts) is his name:* (Jeremiah 31:35). The calendar is the Creator''s covenant order — the Appointed Times stand because the lights stand.',
+       sv.verse_id, ev.verse_id, 'extras', 51950
+  FROM _session250_en79_lookup sv, _session250_en79_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=79 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-79-hosts-keep-their-appointed-courses',
+       E'The host of heaven serve in their appointed places',
+       E'The lights are obedient servants, never autonomous powers: *And the sun and the moon and the stars and the leaders of the stars, and all the hosts of heaven, serve Yahuah (God) of Spirits in their appointed places, and they do not change their courses, and they complete their revolutions in righteousness* (1 Enoch 79:4). They do not stray because *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* (Psalm 148:6) — the very heavens commanded to *Praise ye him, sun and moon: praise him, all ye stars of light.* (Psalm 148:3). Their silent obedience preaches: *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* (Psalm 19:1). And because they keep their order, they become the surety of the covenant itself: *Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth;* (Jeremiah 33:25). The hosts serve their Maker — which is exactly why Torah forbids serving *them*: *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* (Deuteronomy 4:19).',
+       sv.verse_id, ev.verse_id, 'extras', 51953
+  FROM _session250_en79_lookup sv, _session250_en79_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=79 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-79-the-364-day-solar-reckoning',
+       E'The 364-day solar order and the moon ten days behind',
+       E'Enoch fixes the primary reckoning precisely: *And the year is completed in three hundred and sixty-four days, and the moon completes her light in three hundred and fifty-four days, and falls behind by ten days* (1 Enoch 79:5), so that *the moon brings in all the years exactly, that their stations may come, and that they may not transgress their reckoned stations, and that they may not change their order, but complete the years with righteousness* (1 Enoch 79:6). The solar order is primary; the lunar year lags and must be brought back into line — Enoch says it himself earlier: *And therefore the days are deficient in the intercalated months by thirty days, for the lunar year is three hundred and fifty-four days, and the solar year three hundred and sixty-four days.* (1 Enoch 74:12). The same 364-day reckoning is commanded in Jubilees, with the identical ten-day diagnosis of the moon: *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* (Jubilees 6:32) — and the very lag Enoch names: *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* (Jubilees 6:36). The whole-day solar order completes the year in righteousness — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51956
+  FROM _session250_en79_lookup sv, _session250_en79_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=79 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-79-keep-the-reckoning-blessing',
+       E'Keep and observe the law — blessed are those who keep the commandments',
+       E'The luminary-laws are handed down to be kept, not catalogued: *And these are the laws and the commandments which I have shown thee, my son Methuselah, that thou mayest show them to thy children after thee, and that they may keep them and observe them, and that they may not be led astray by the spirits of error* (1 Enoch 79:8), for *the spirits of error lead astray the sons of men, and cause them to transgress the commandments of Yahuah (God) of Spirits* (1 Enoch 79:9), and the chapter ends in benediction: *But blessed are those who keep the commandments of Yahuah (God) of Spirits, and walk in righteousness, and complete their years in truth* (1 Enoch 79:10). The feasts these years carry are the moedim Torah fixes: *Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* (Leviticus 23:2). Enoch echoes his own closing blessing: *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* (1 Enoch 82:5). But when sinners refuse the order it is the enemy''s work — to change the very times: *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* (Daniel 7:25). To keep the right reckoning is covenant fidelity; to change the times is rebellion against the Creator''s order.',
+       sv.verse_id, ev.verse_id, 'extras', 51959
+  FROM _session250_en79_lookup sv, _session250_en79_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=79 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-79-luminaries-set-for-the-moedim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The lights are appointed for the seasons (moedim) — Enoch 79 simply unfolds the law Genesis sets at creation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-luminaries-set-for-the-moedim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The reckoning of months and signs Enoch lists is the same appointment of sun and moon David sings.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-luminaries-set-for-the-moedim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 31:35 — *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva''ot (LORD of hosts) is his name:* The ordinances of moon and stars Enoch shows are Yahuah''s own fixed ordinances, sworn by His name.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-luminaries-set-for-the-moedim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-79-hosts-keep-their-appointed-courses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* The decree that holds the host in their courses is the same reason Enoch''s luminaries do not change their order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-hosts-keep-their-appointed-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 148:3 — *Praise ye him, sun and moon: praise him, all ye stars of light.* Sun, moon and stars serving Yahuah (God) of Spirits in Enoch 79:4 is the same chorus the Psalm calls to praise.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-hosts-keep-their-appointed-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The hosts completing their revolutions in righteousness is the firmament''s wordless declaration of its Maker.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-hosts-keep-their-appointed-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 33:25 — *Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth;* The unbroken courses of the luminaries are the surety of Yahuah''s covenant — the lights keep their law so that His covenant stands.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-hosts-keep-their-appointed-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=33 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The host serve Yahuah in their places (Enoch 79:4); Torah forbids reversing that to serve the host — the host-of-heaven idolatry.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-hosts-keep-their-appointed-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-79-the-364-day-solar-reckoning
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 74:11 — *And therefore the days are deficient in the intercalated months by thirty days, for the lunar year is three hundred and fifty-four days, and the solar year three hundred and sixty-four days.* The same 364-vs-354 reckoning Enoch already gave in the courses of the moon — the solar year is the primary order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-the-364-day-solar-reckoning'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=5
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=74 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* The 364-day year Enoch completes is the same reckoning Jubilees commands Israel to keep so the feasts are not disturbed.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-the-364-day-solar-reckoning'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=5
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* The very ten-day gap Enoch records — the moon falling behind by ten days — is the disturbance Jubilees warns of when men reckon by the moon alone.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-the-364-day-solar-reckoning'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=5
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-79-keep-the-reckoning-blessing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 23:2 — *Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* The years completed in truth carry the feasts of Yahuah — the moedim fixed by the lights and proclaimed in Torah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-keep-the-reckoning-blessing'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 82:5 — *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* Enoch''s own closing benediction repeats the blessing of 79:10 word for word and adds its reward — eternal life.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-keep-the-reckoning-blessing'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=10
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=82 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* The spirits of error that lead men to transgress the commandments are the same hand that thinks to change the times and laws — the perversion of the reckoning Enoch keeps.'
+  FROM cross_reference_threads t, cross_references x, _session250_en79_lookup sv, _session250_en79_lookup tv
+ WHERE t.slug='1-enoch-79-keep-the-reckoning-blessing'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=79 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_80.sql (session250 1-enoch 80) -----
+-- Source anchor: enoch/1-enoch ch80. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en80 (view _session250_en80_lookup). Sort band base 51975, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en80_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-80-host-of-heaven-idolatry
+  ('enoch', '1-enoch', 80, 1, 'canon', 'deuteronomy', 4, 19, 'free', E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* When Enoch''s lights fall out of order, men err and worship the host of heaven — the very driving-away Moses forbade.'),
+  ('enoch', '1-enoch', 80, 1, 'canon', 'jeremiah', 8, 2, 'free', E'Jeremiah 8:2 — *And they shall spread them before the sun, and the moon, and all the host of heaven, whom they have loved, and whom they have served, and after whom they have walked, and whom they have sought, and whom they have worshipped: they shall not be gathered, nor be buried; they shall be for dung upon the face of the earth.* Jeremiah''s idolaters loved and served the same sun, moon, and host that Enoch 80:1 says men come to mistake for gods.'),
+  ('enoch', '1-enoch', 80, 1, 'canon', 'romans', 1, 25, 'free', E'Romans 1:25 — *Who changed the truth of Elohim (God) into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen.* Paul names the root of Enoch 80:1''s star-worship: the created luminary served in place of the Creator who appointed it.'),
+  -- thread: 1-enoch-80-change-the-times-and-laws
+  ('enoch', '1-enoch', 80, 10, 'canon', 'daniel', 7, 25, 'free', E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* Enoch 80:10''s shortened year and altered months are the enemy of Daniel 7:25 making good on his design to change the times.'),
+  ('enoch', '1-enoch', 80, 10, 'canon', 'isaiah', 24, 5, 'free', E'Isaiah 24:5 — *The earth also is defiled under the inhabitants thereof; because they have transgressed the laws, changed the ordinance, broken the everlasting covenant.* The altering of the whole order of the stations in Enoch 80:10 is Isaiah''s changed ordinance and broken everlasting covenant that defiles the earth.'),
+  ('enoch', '1-enoch', 80, 10, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The year and months that Enoch 80:10 sees shortened and altered were written into the lights at creation as the fixed reckoning of signs and seasons.'),
+  -- thread: 1-enoch-80-err-as-to-new-moons-feasts-jubilees
+  ('enoch', '1-enoch', 80, 12, 'canon', 'leviticus', 23, 4, 'free', E'Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* Enoch 80:12 warns men will err as to the very festivals Yahuah here fixes in their appointed seasons — the moedim are His, not ours to move.'),
+  ('enoch', '1-enoch', 80, 12, 'canon', 'psalms', 104, 19, 'free', E'Psalms 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The new moons and seasons men err over in Enoch 80:12 are governed by the very luminaries Yahuah appointed for that reckoning.'),
+  ('enoch', '1-enoch', 80, 12, 'jubilees', 'jubilees', 6, 37, 'extras', E'Jubilees 6:37 — *For this reason the years will come upon them when they will disturb (the order), and make an abominable (day) the day of testimony, and an unclean day a feast day, and they will confound all the days, the holy with the unclean, and the unclean day with the holy; for they will go wrong as to the months and sabbaths and feasts and jubilees. For this reason I command and testify to you that you may testify to them; for after your death your children will disturb (them), so that they will not make the year three hundred and sixty-four days only, and for this reason they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* Jubilees foretells the same erring over new moons, sabbaths, festivals, and jubilees as Enoch 80:12, naming the abandoned 364-day year as the cause.'),
+  -- thread: 1-enoch-80-fruits-withheld-judgment
+  ('enoch', '1-enoch', 80, 4, 'canon', 'isaiah', 24, 4, 'free', E'Isaiah 24:4 — *The earth mourneth and fadeth away, the world languisheth and fadeth away, the haughty people of the earth do languish.* The earth''s fruits held back in Enoch 80:4 are Isaiah''s mourning, fading world languishing under inhabitants who broke the everlasting covenant.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en80_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en80_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-80-host-of-heaven-idolatry',
+       E'Men take the stars for gods — the host of heaven',
+       E'Enoch sees the luminaries themselves thrown out of order in the days of the sinners: *And in those days the sun shall be seen going forth at evening, And the moon rising at morning, And the moon shall alter her order, And not appear at her time.* (1 Enoch 80:1). When the lights no longer keep their appointed reckoning, men do not return to the Creator who set them — they bow to the lights as if the lights were gods. That is the very snare Moses warned against on the plains of Moab: *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* (Deuteronomy 4:19). Jeremiah names the same apostasy when the bones of the idolaters are spread out before the very host they served: *And they shall spread them before the sun, and the moon, and all the host of heaven, whom they have loved, and whom they have served, and after whom they have walked, and whom they have sought, and whom they have worshipped...* (Jeremiah 8:2). Paul names the root of it: the creature exalted over the Creator — *Who changed the truth of Elohim (God) into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen.* (Romans 1:25). The sun and moon are servants set for signs and seasons; to take the servant for the Master is the oldest lie. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51975
+  FROM _session250_en80_lookup sv, _session250_en80_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=80 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-80-change-the-times-and-laws',
+       E'The enemy thinks to change the times and laws',
+       E'The deepest corruption in Enoch''s vision is not famine or sword but the violence done to the calendar itself: *And the year shall be shortened, And the months and their days and their weeks shall be altered, And the whole order of their stations shall be altered.* (1 Enoch 80:10), so that *men shall be at fault, And shall not reckon them correctly* (1 Enoch 80:11). This is exactly the little horn''s signature in Daniel''s night vision — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* (Daniel 7:25). The enemy''s aim is the appointed times themselves; if he can shorten the year and shift the order of the stations, the moedim drift and the people keep the wrong days. Isaiah shows the cost when a people lets the ordinance be moved: *The earth also is defiled under the inhabitants thereof; because they have transgressed the laws, changed the ordinance, broken the everlasting covenant.* (Isaiah 24:5). The Creator wrote the reckoning into the lights — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14) — so to alter the year is to assault creation''s own covenant. Torah is not the curse here; breaking the order is.',
+       sv.verse_id, ev.verse_id, 'extras', 51978
+  FROM _session250_en80_lookup sv, _session250_en80_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=80 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-80-err-as-to-new-moons-feasts-jubilees',
+       E'They err as to the new moons, sabbaths, festivals, and jubilees',
+       E'The perverted reckoning lands precisely on the moedim: *For they shall err as to the new moons, And sabbaths, And festivals, And jubilees.* (1 Enoch 80:12). The feasts are not human inventions to be set by convenience; they are Yahuah''s own, fixed in their seasons — *Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* (Leviticus 23:2), *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* (Leviticus 23:4). And those seasons hang on the luminaries the Creator appointed — *He appointed the moon for seasons: the sun knoweth his going down.* (Psalm 104:19). Jubilees, the great calendar-witness, foretells the identical drift almost word for word, naming the failure to keep the 364-day year as the cause: *For this reason the years will come upon them when they will disturb (the order), and make an abominable (day) the day of testimony, and an unclean day a feast day, and they will confound all the days, the holy with the unclean, and the unclean day with the holy; for they will go wrong as to the months and sabbaths and feasts and jubilees. For this reason I command and testify to you that you may testify to them; for after your death your children will disturb (them), so that they will not make the year three hundred and sixty-four days only, and for this reason they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* (Jubilees 6:37). The Creator''s reckoning of whole solar days is the standard; to lose it is to lose His feasts. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 51981
+  FROM _session250_en80_lookup sv, _session250_en80_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=12
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=80 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-80-fruits-withheld-judgment',
+       E'The fruits withheld and the sinners by the sword',
+       E'When the order is perverted, the ground itself answers: *And in those days the fruits of the earth shall be backward, And shall not grow in their time, And the fruits of the trees shall be withheld in their time.* (1 Enoch 80:4), and the judgment falls — *And in those days the sinners shall be consumed by the sword, And the beasts of the field shall be consumed by the sword, And the birds of the heaven shall be consumed by the sword.* (1 Enoch 80:6). This is covenant cause and effect: defile the everlasting covenant and the earth withers — *The earth mourneth and fadeth away, the world languisheth and fadeth away, the haughty people of the earth do languish.* (Isaiah 24:4). The sword that sweeps man and beast and bird together echoes the great judgment of the prophets against a land that broke faith with its Maker. The drought and the famine are not arbitrary; the same hand that set the lights for the harvest seasons withholds the increase when men forsake His reckoning. The remedy is never to abandon the order but to keep it.',
+       sv.verse_id, ev.verse_id, 'extras', 51984
+  FROM _session250_en80_lookup sv, _session250_en80_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=80 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-80-host-of-heaven-idolatry
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* When Enoch''s lights fall out of order, men err and worship the host of heaven — the very driving-away Moses forbade.'
+  FROM cross_reference_threads t, cross_references x, _session250_en80_lookup sv, _session250_en80_lookup tv
+ WHERE t.slug='1-enoch-80-host-of-heaven-idolatry'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 8:2 — *And they shall spread them before the sun, and the moon, and all the host of heaven, whom they have loved, and whom they have served, and after whom they have walked, and whom they have sought, and whom they have worshipped: they shall not be gathered, nor be buried; they shall be for dung upon the face of the earth.* Jeremiah''s idolaters loved and served the same sun, moon, and host that Enoch 80:1 says men come to mistake for gods.'
+  FROM cross_reference_threads t, cross_references x, _session250_en80_lookup sv, _session250_en80_lookup tv
+ WHERE t.slug='1-enoch-80-host-of-heaven-idolatry'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=8 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 1:25 — *Who changed the truth of Elohim (God) into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen.* Paul names the root of Enoch 80:1''s star-worship: the created luminary served in place of the Creator who appointed it.'
+  FROM cross_reference_threads t, cross_references x, _session250_en80_lookup sv, _session250_en80_lookup tv
+ WHERE t.slug='1-enoch-80-host-of-heaven-idolatry'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-80-change-the-times-and-laws
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* Enoch 80:10''s shortened year and altered months are the enemy of Daniel 7:25 making good on his design to change the times.'
+  FROM cross_reference_threads t, cross_references x, _session250_en80_lookup sv, _session250_en80_lookup tv
+ WHERE t.slug='1-enoch-80-change-the-times-and-laws'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 24:5 — *The earth also is defiled under the inhabitants thereof; because they have transgressed the laws, changed the ordinance, broken the everlasting covenant.* The altering of the whole order of the stations in Enoch 80:10 is Isaiah''s changed ordinance and broken everlasting covenant that defiles the earth.'
+  FROM cross_reference_threads t, cross_references x, _session250_en80_lookup sv, _session250_en80_lookup tv
+ WHERE t.slug='1-enoch-80-change-the-times-and-laws'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The year and months that Enoch 80:10 sees shortened and altered were written into the lights at creation as the fixed reckoning of signs and seasons.'
+  FROM cross_reference_threads t, cross_references x, _session250_en80_lookup sv, _session250_en80_lookup tv
+ WHERE t.slug='1-enoch-80-change-the-times-and-laws'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-80-err-as-to-new-moons-feasts-jubilees
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* Enoch 80:12 warns men will err as to the very festivals Yahuah here fixes in their appointed seasons — the moedim are His, not ours to move.'
+  FROM cross_reference_threads t, cross_references x, _session250_en80_lookup sv, _session250_en80_lookup tv
+ WHERE t.slug='1-enoch-80-err-as-to-new-moons-feasts-jubilees'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The new moons and seasons men err over in Enoch 80:12 are governed by the very luminaries Yahuah appointed for that reckoning.'
+  FROM cross_reference_threads t, cross_references x, _session250_en80_lookup sv, _session250_en80_lookup tv
+ WHERE t.slug='1-enoch-80-err-as-to-new-moons-feasts-jubilees'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:37 — *For this reason the years will come upon them when they will disturb (the order), and make an abominable (day) the day of testimony, and an unclean day a feast day, and they will confound all the days, the holy with the unclean, and the unclean day with the holy; for they will go wrong as to the months and sabbaths and feasts and jubilees. For this reason I command and testify to you that you may testify to them; for after your death your children will disturb (them), so that they will not make the year three hundred and sixty-four days only, and for this reason they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* Jubilees foretells the same erring over new moons, sabbaths, festivals, and jubilees as Enoch 80:12, naming the abandoned 364-day year as the cause.'
+  FROM cross_reference_threads t, cross_references x, _session250_en80_lookup sv, _session250_en80_lookup tv
+ WHERE t.slug='1-enoch-80-err-as-to-new-moons-feasts-jubilees'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=12
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-80-fruits-withheld-judgment
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 24:4 — *The earth mourneth and fadeth away, the world languisheth and fadeth away, the haughty people of the earth do languish.* The earth''s fruits held back in Enoch 80:4 are Isaiah''s mourning, fading world languishing under inhabitants who broke the everlasting covenant.'
+  FROM cross_reference_threads t, cross_references x, _session250_en80_lookup sv, _session250_en80_lookup tv
+ WHERE t.slug='1-enoch-80-fruits-withheld-judgment'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=80 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_81.sql (session250 1-enoch 81) -----
+-- Source anchor: enoch/1-enoch ch81. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en81 (view _session250_en81_lookup). Sort band base 52000, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en81_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-81-heavenly-tablets-books-of-men
+  ('enoch', '1-enoch', 81, 2, 'enoch', '1-enoch', 47, 3, 'extras', E'1 Enoch 47:3 — *In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* The heavenly tablets Enoch reads in 81:2 are the same books of the living opened before the Head of Days.'),
+  ('enoch', '1-enoch', 81, 2, 'canon', 'psalms', 139, 16, 'free', E'Psalm 139:16 — *Thine eyes did see my substance, yet being unperfect; and in thy book all my members were written, which in continuance were fashioned, when as yet there was none of them.* The works of men written on Enoch''s tablets (81:2) match the book where our members were written before there was one of them — election before confession.'),
+  ('enoch', '1-enoch', 81, 2, 'canon', 'daniel', 12, 1, 'free', E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* Deliverance turns on being found in the book Enoch reads in 81:2.'),
+  ('enoch', '1-enoch', 81, 2, 'canon', 'revelation', 20, 12, 'free', E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The same tablets of the works of men (81:2) are opened at the white-throne judgement.'),
+  -- thread: 1-enoch-81-scribe-teach-thy-children
+  ('enoch', '1-enoch', 81, 3, 'canon', 'deuteronomy', 6, 7, 'free', E'Deuteronomy 6:7 — *And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.* Enoch''s charge to tell his children and the children of his children (81:3) is the Shema''s command to teach the next generation diligently.'),
+  ('enoch', '1-enoch', 81, 5, 'canon', 'deuteronomy', 6, 6, 'free', E'Deuteronomy 6:6 — *And these words, which I command thee this day, shall be in thine heart:* The words of truth Enoch writes for Methuselah to preserve (81:5) are the commanded words kept in the heart so they are not lost.'),
+  ('enoch', '1-enoch', 81, 5, 'canon', 'proverbs', 3, 3, 'free', E'Proverbs 3:3 — *Let not mercy and truth forsake thee: bind them about thy neck; write them upon the table of thine heart:* Enoch writes the wisdom down lest it be lost (81:5); the canon writes the same on the tablet of the heart.'),
+  -- thread: 1-enoch-81-altering-the-times-and-seasons
+  ('enoch', '1-enoch', 81, 7, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The times, seasons, new moons and festivals the perverse generation alters (81:7) are fixed by the luminaries at creation, not by men.'),
+  ('enoch', '1-enoch', 81, 7, 'canon', 'daniel', 7, 25, 'free', E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* To alter the times and the festivals (81:7) is to do the work of the horn who thinks to change times and laws.'),
+  ('enoch', '1-enoch', 81, 7, 'jubilees', 'jubilees', 6, 34, 'extras', E'Jubilees 6:34 — *And all the children of Yashar''el (Israel) will forget, and will not find the path of the years, and will forget the new moons, and seasons, and sabbaths, and they will go wrong as to all the order of the years.* Jubilees describes the identical drift Enoch foretells in 81:7 — forgetting the new moons, seasons and sabbaths of the 364-day order.'),
+  ('enoch', '1-enoch', 81, 7, 'jubilees', 'jubilees', 6, 37, 'extras', E'Jubilees 6:37 — *For this reason the years will come upon them when they will disturb (the order), and make an abominable (day) the day of testimony, and an unclean day a feast day, and they will confound all the days, the holy with the unclean, and the unclean day with the holy; for they will go wrong as to the months and sabbaths and feasts and jubilees. For this reason I command and testify to you that you may testify to them; for after your death your children will disturb (them), so that they will not make the year three hundred and sixty-four days only, and for this reason they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* Jubilees even ends with Enoch''s exact pairing — going wrong as to new moons, seasons, sabbaths and festivals, and eating blood with all kinds of flesh (81:7).'),
+  -- thread: 1-enoch-81-blessed-who-keep-the-commandments
+  ('enoch', '1-enoch', 81, 10, 'canon', 'leviticus', 23, 2, 'free', E'Leviticus 23:2 — *Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* To complete the years in truth (81:10) is to keep the feasts that are Yahuah''s own appointed times, fixed by the lights.'),
+  ('enoch', '1-enoch', 81, 10, 'enoch', '1-enoch', 82, 7, 'extras', E'1 Enoch 82:7 — *And thou shalt preserve them, And thou shalt not alter them, For the luminaries do not alter their courses, And the earth does not alter her seasons, And the sea does not alter her boundaries.* The blessing on those who keep the commandments (81:10) is sealed in the next chapter: preserve the reckoning, for the luminaries themselves do not alter their courses.'),
+  ('enoch', '1-enoch', 81, 10, 'enoch', '1-enoch', 82, 5, 'extras', E'1 Enoch 82:5 — *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* The identical blessing is restated as the standing word of the luminaries, confirming 81:10 as the keep-the-reckoning charge.'),
+  ('enoch', '1-enoch', 81, 9, 'canon', 'psalms', 1, 1, 'free', E'Psalm 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* Enoch''s few righteous who refuse the paths of unrighteousness (81:9) are the blessed man of the two ways who will not walk in the counsel of the ungodly.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en81_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en81_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-81-heavenly-tablets-books-of-men',
+       E'The heavenly tablets — all the works of men written',
+       E'Enoch is set before the heavenly tablets and reads the whole record of mankind: *And he said unto me: ''Observe, Enoch, these heavenly tablets, And read what is written thereon, And understand every single fact.''* (1 Enoch 81:1), *And I observed everything on the heavenly tablets, And read everything which was written (thereon), And understood everything, And read the book and everything that was written in it, All the works of men.* (1 Enoch 81:2). This is the canon''s own book of the living, opened before the throne — Enoch had already seen it in the Similitudes: *In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* (1 Enoch 47:3). The same books anchor election before confession: *Thine eyes did see my substance, yet being unperfect; and in thy book all my members were written, which in continuance were fashioned, when as yet there was none of them.* (Psalm 139:16); *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* (Daniel 12:1). John sees the same tablets opened at the end: *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* (Revelation 20:12). It ain''t new — the deeds and the names are recorded before ever a man speaks.',
+       sv.verse_id, ev.verse_id, 'extras', 52000
+  FROM _session250_en81_lookup sv, _session250_en81_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=81 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-81-scribe-teach-thy-children',
+       E'Scribe of righteousness — tell it to thy children',
+       E'Having read the tablets, Enoch is commissioned to teach and to write for the generations: *And in those days the Lord called me, And said to me: ''Enoch, thou scribe of righteousness, Go tell thy children and the children of thy children All the works of righteousness which thou hast seen, And the words of truth which thou hast heard.* (1 Enoch 81:3), and he writes it down so the wisdom is not lost: *And now, my son Methuselah, I tell thee all these things, And write them down for thee, That thou mayest preserve them, And hand them down to thy children after thee, And that this wisdom may not be lost from the world.* (1 Enoch 81:5). This is the Shema''s own charge to pass the order down the generations: *And these words, which I command thee this day, shall be in thine heart:* (Deuteronomy 6:6); *And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.* (Deuteronomy 6:7). Wisdom literature gives the same instruction to bind the commandments and inscribe them: *Let not mercy and truth forsake thee: bind them about thy neck; write them upon the table of thine heart:* (Proverbs 3:3) — the heavenly tablet written upon the heart of the children. Torah stands; the way is kept by being handed down, not invented.',
+       sv.verse_id, ev.verse_id, 'extras', 52003
+  FROM _session250_en81_lookup sv, _session250_en81_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=81 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-81-altering-the-times-and-seasons',
+       E'The perverse generation that alters the times and the moedim',
+       E'Enoch foretells the generation that forsakes the Creator''s reckoning: *For in the generation after thee there shall arise a perverse generation, And many shall be the sinners, And they shall transgress the commandments of Yahuah (God) of Spirits, And they shall forget the commandments which I have commanded thee.* (1 Enoch 81:6), *And they shall alter the times, And the seasons, And the new moons, And the sabbaths, And the festivals, And they shall eat blood with all kinds of flesh.* (1 Enoch 81:7). The appointed times are not invented by men — they are written into creation by the lights: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14). To alter the seasons and festivals is to do the enemy''s own work, the horn who *shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* (Daniel 7:25). Jubilees, the great calendar parallel, warns of the very same drift away from the 364-day solar order: *And all the children of Yashar''el (Israel) will forget, and will not find the path of the years, and will forget the new moons, and seasons, and sabbaths, and they will go wrong as to all the order of the years.* (Jubilees 6:34); and that they will *go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* (Jubilees 6:37). It ain''t new: the Appointed Times are the Creator''s covenant order; to change them is rebellion, not reform.',
+       sv.verse_id, ev.verse_id, 'extras', 52006
+  FROM _session250_en81_lookup sv, _session250_en81_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=81 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-81-blessed-who-keep-the-commandments',
+       E'Blessed are those who keep the commandments and complete their years in truth',
+       E'Against the perverse generation Enoch sets the blessing on those who keep the order: *And the righteous shall be few in number, And the sinners shall be many, And they shall walk in the paths of unrighteousness.* (1 Enoch 81:9), *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* (1 Enoch 81:10). To complete the years in truth is to keep the moedim by the lights — the feasts that belong to the Creator, not to men: *Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* (Leviticus 23:2). The very next chapter seals it as the standing charge of the luminaries: *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* (1 Enoch 82:5), *And thou shalt preserve them, And thou shalt not alter them, For the luminaries do not alter their courses, And the earth does not alter her seasons, And the sea does not alter her boundaries.* (1 Enoch 82:7). This is the two-ways blessing of the first Psalm: *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* (Psalm 1:1). The righteous are few because they refuse to alter the reckoning — the calendar is covenant fidelity, and it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 52009
+  FROM _session250_en81_lookup sv, _session250_en81_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=81 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-81-heavenly-tablets-books-of-men
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 47:3 — *In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* The heavenly tablets Enoch reads in 81:2 are the same books of the living opened before the Head of Days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-heavenly-tablets-books-of-men'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=47 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 139:16 — *Thine eyes did see my substance, yet being unperfect; and in thy book all my members were written, which in continuance were fashioned, when as yet there was none of them.* The works of men written on Enoch''s tablets (81:2) match the book where our members were written before there was one of them — election before confession.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-heavenly-tablets-books-of-men'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=139 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* Deliverance turns on being found in the book Enoch reads in 81:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-heavenly-tablets-books-of-men'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The same tablets of the works of men (81:2) are opened at the white-throne judgement.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-heavenly-tablets-books-of-men'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-81-scribe-teach-thy-children
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 6:7 — *And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.* Enoch''s charge to tell his children and the children of his children (81:3) is the Shema''s command to teach the next generation diligently.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-scribe-teach-thy-children'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 6:6 — *And these words, which I command thee this day, shall be in thine heart:* The words of truth Enoch writes for Methuselah to preserve (81:5) are the commanded words kept in the heart so they are not lost.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-scribe-teach-thy-children'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 3:3 — *Let not mercy and truth forsake thee: bind them about thy neck; write them upon the table of thine heart:* Enoch writes the wisdom down lest it be lost (81:5); the canon writes the same on the tablet of the heart.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-scribe-teach-thy-children'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-81-altering-the-times-and-seasons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The times, seasons, new moons and festivals the perverse generation alters (81:7) are fixed by the luminaries at creation, not by men.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-altering-the-times-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* To alter the times and the festivals (81:7) is to do the work of the horn who thinks to change times and laws.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-altering-the-times-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:34 — *And all the children of Yashar''el (Israel) will forget, and will not find the path of the years, and will forget the new moons, and seasons, and sabbaths, and they will go wrong as to all the order of the years.* Jubilees describes the identical drift Enoch foretells in 81:7 — forgetting the new moons, seasons and sabbaths of the 364-day order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-altering-the-times-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 6:37 — *For this reason the years will come upon them when they will disturb (the order), and make an abominable (day) the day of testimony, and an unclean day a feast day, and they will confound all the days, the holy with the unclean, and the unclean day with the holy; for they will go wrong as to the months and sabbaths and feasts and jubilees. For this reason I command and testify to you that you may testify to them; for after your death your children will disturb (them), so that they will not make the year three hundred and sixty-four days only, and for this reason they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* Jubilees even ends with Enoch''s exact pairing — going wrong as to new moons, seasons, sabbaths and festivals, and eating blood with all kinds of flesh (81:7).'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-altering-the-times-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-81-blessed-who-keep-the-commandments
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 23:2 — *Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* To complete the years in truth (81:10) is to keep the feasts that are Yahuah''s own appointed times, fixed by the lights.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-blessed-who-keep-the-commandments'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 82:7 — *And thou shalt preserve them, And thou shalt not alter them, For the luminaries do not alter their courses, And the earth does not alter her seasons, And the sea does not alter her boundaries.* The blessing on those who keep the commandments (81:10) is sealed in the next chapter: preserve the reckoning, for the luminaries themselves do not alter their courses.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-blessed-who-keep-the-commandments'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=10
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=82 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 82:5 — *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* The identical blessing is restated as the standing word of the luminaries, confirming 81:10 as the keep-the-reckoning charge.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-blessed-who-keep-the-commandments'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=10
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=82 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* Enoch''s few righteous who refuse the paths of unrighteousness (81:9) are the blessed man of the two ways who will not walk in the counsel of the ungodly.'
+  FROM cross_reference_threads t, cross_references x, _session250_en81_lookup sv, _session250_en81_lookup tv
+ WHERE t.slug='1-enoch-81-blessed-who-keep-the-commandments'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=81 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_82.sql (session250 1-enoch 82) -----
+-- Source anchor: enoch/1-enoch ch82. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en82 (view _session250_en82_lookup). Sort band base 52025, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en82_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-82-altering-the-times-and-seasons
+  ('enoch', '1-enoch', 82, 3, 'canon', 'daniel', 7, 25, 'free', E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* Enoch''s sinners who "alter the times, and the seasons" are Daniel''s horn that thinks to change times and laws.'),
+  ('enoch', '1-enoch', 82, 3, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* the times and seasons the sinners alter were written into creation by the lights, not invented by men.'),
+  ('enoch', '1-enoch', 82, 3, 'canon', 'psalms', 104, 19, 'free', E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The new moons and seasons that sinners try to alter are appointed by the luminaries themselves.'),
+  ('enoch', '1-enoch', 82, 3, 'canon', 'deuteronomy', 4, 19, 'free', E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* Perverting the order of the lights bends men toward the host-of-heaven idolatry Torah forbade.'),
+  ('enoch', '1-enoch', 82, 3, 'jubilees', 'jubilees', 6, 37, 'extras', E'Jubilees 6:37 — *...they will go wrong as to the months and sabbaths and feasts and jubilees. For this reason I command and testify to you that you may testify to them; for after your death your children will disturb (them), so that they will not make the year three hundred and sixty-four days only, and for this reason they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* Jubilees and Enoch describe the same coming apostasy from the reckoning, down to eating blood with flesh.'),
+  -- thread: 1-enoch-82-blessed-who-keep-the-reckoning
+  ('enoch', '1-enoch', 82, 5, 'canon', 'psalms', 1, 1, 'free', E'Psalm 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* Enoch''s "blessed are those who keep the commandments... and walk in righteousness" is the blessing of the man who does not walk in the way of sinners.'),
+  ('enoch', '1-enoch', 82, 5, 'canon', 'psalms', 1, 2, 'free', E'Psalm 1:2 — *But his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night.* The blessed keep the commandments of Yahuah of Spirits because their delight is in His law.'),
+  ('enoch', '1-enoch', 82, 5, 'canon', 'leviticus', 23, 4, 'free', E'Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* To "complete their years in truth" is to keep the appointed feasts in their seasons, as the lights ordain them.'),
+  -- thread: 1-enoch-82-luminaries-do-not-alter-their-courses
+  ('enoch', '1-enoch', 82, 7, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* the luminaries do not alter their courses because their Maker fixed them for signs and seasons from creation.'),
+  ('enoch', '1-enoch', 82, 7, 'canon', 'psalms', 104, 19, 'free', E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The earth does not alter her seasons because the moon and sun keep their appointed courses.'),
+  ('enoch', '1-enoch', 82, 6, 'jubilees', 'jubilees', 6, 32, 'extras', E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts...* The law of the luminaries Enoch writes on the heavenly tablets is the same 364-day reckoning Jubilees commands Israel to keep.'),
+  -- thread: 1-enoch-82-the-leaders-of-the-seasons-keep-the-feast
+  ('enoch', '1-enoch', 82, 8, 'canon', 'leviticus', 23, 2, 'free', E'Leviticus 23:2 — *Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* The chiefs of the four quarters and the feasts Enoch numbers are the appointed feasts of Yahuah, proclaimed by the lights.'),
+  ('enoch', '1-enoch', 82, 11, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* the leaders of the stars who do not transgress their commandments keep the very signs and seasons set at creation.'),
+  ('enoch', '1-enoch', 82, 8, 'jubilees', 'jubilees', 6, 17, 'extras', E'Jubilees 6:17 — *For this reason it is ordained and written on the heavenly tables, that they should celebrate the feast of weeks in this month once a year, to renew the covenant every year...* The feasts governed by Enoch''s leaders of the seasons are the heavenly-tablet appointments by which the covenant is renewed.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en82_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en82_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-82-altering-the-times-and-seasons',
+       E'Sinners alter the times, seasons, new moons, sabbaths and festivals',
+       E'Enoch foresees the great perversion of the order: *And in those days the sinners shall alter the order, And shall set aside all the commandments of Yahuah (God) of Spirits, And shall say that they are from the hand of Elohim (God), And they shall alter the times, And the seasons, And the new moons, And the sabbaths, And the festivals, And they shall eat blood with all kinds of flesh* (1 Enoch 82:3). This is the same enemy Daniel names — the horn that *shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time* (Daniel 7:25). The lights themselves were never invented by men to be altered: *Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14), and *He appointed the moon for seasons: the sun knoweth his going down* (Psalm 104:19). To bow to the host of heaven rather than read the order set by their Maker is the very idolatry Torah forbade — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven* (Deuteronomy 4:19). Jubilees names the same falling-away as a future apostasy from the reckoning: *they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh* (Jubilees 6:37). It ain''t new: the times and laws stand; only sinners think to change them.',
+       sv.verse_id, ev.verse_id, 'extras', 52025
+  FROM _session250_en82_lookup sv, _session250_en82_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=82 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-82-blessed-who-keep-the-reckoning',
+       E'Blessed are those who keep the commandments and complete their years in truth',
+       E'Against the perversion stands the blessing on those who hold the order: *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life* (1 Enoch 82:5), repeated over the leaders who never stray — *And blessed are those who observe these things, And keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth* (1 Enoch 82:12). This is the very blessing of Psalm 1, hung on the man whose reckoning is the Creator''s: *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful* (Psalm 1:1), *But his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* (Psalm 1:2). And the years are kept "in truth" because the moedim are the Creator''s own appointments, not man''s: *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons* (Leviticus 23:4). To complete one''s years in truth is to keep the feasts in their seasons — Torah stands, and the keeping of it is covenant blessing, never curse.',
+       sv.verse_id, ev.verse_id, 'extras', 52028
+  FROM _session250_en82_lookup sv, _session250_en82_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=82 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-82-luminaries-do-not-alter-their-courses',
+       E'The heavenly tablets and the law of the luminaries that do not alter their courses',
+       E'Enoch hands Methuselah the whole order written in the sky: *And now, my son Methuselah, I have shown thee the whole vision of the heavenly tablets, And all the commandments of the luminaries, And the law of the stars, And the law of the sun and the moon, And the law of the winds, And the law of the earth, And the law of the sea* (1 Enoch 82:6), with the charge — *And thou shalt preserve them, And thou shalt not alter them, For the luminaries do not alter their courses, And the earth does not alter her seasons, And the sea does not alter her boundaries* (1 Enoch 82:7). The lights keep their law because their Maker set them to: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14), *He appointed the moon for seasons: the sun knoweth his going down* (Psalm 104:19). Jubilees writes the same fixed measure onto the heavenly tables and binds Israel to it: *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts...* (Jubilees 6:32). The 364-day reckoning of whole solar days is the Creator''s covenant order; man preserves it, he does not author it.',
+       sv.verse_id, ev.verse_id, 'extras', 52031
+  FROM _session250_en82_lookup sv, _session250_en82_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=82 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-82-the-leaders-of-the-seasons-keep-the-feast',
+       E'The four leaders of the intercalary days and the feast of weeks of the testimony',
+       E'Enoch numbers the chiefs that govern the year — *And now I have shown thee the chiefs of the stars, And the leaders of the luminaries, And the chiefs of the four quarters of the year, And the chiefs of the intercalary days, And the chiefs of the months...* (1 Enoch 82:8), the four who complete the year — *And the four leaders of the intercalary days are Melkî''êl, Hel''emmelêk, Nêlê''êl, Nârêl* (1 Enoch 82:10) — and they keep their charge without straying: *And the leaders of the stars are the chiefs of the thousands, And they serve Yahuah (God) of Spirits in their appointed places, And they do not transgress their commandments* (1 Enoch 82:11). These appointed quarters and feasts are exactly what Leviticus names as the Creator''s own: *Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts* (Leviticus 23:2), fixed by the lights of Genesis 1:14 — *...and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14). Jubilees ties the same heavenly tables to the keeping of the feast of weeks as a perpetual testimony: *For this reason it is ordained and written on the heavenly tables, that they should celebrate the feast of weeks in this month once a year, to renew the covenant every year...* (Jubilees 6:17). The leaders of the seasons keep the moedim because keeping the moedim is the renewing of the covenant; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 52034
+  FROM _session250_en82_lookup sv, _session250_en82_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=82 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-82-altering-the-times-and-seasons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* Enoch''s sinners who "alter the times, and the seasons" are Daniel''s horn that thinks to change times and laws.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-altering-the-times-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* the times and seasons the sinners alter were written into creation by the lights, not invented by men.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-altering-the-times-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The new moons and seasons that sinners try to alter are appointed by the luminaries themselves.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-altering-the-times-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* Perverting the order of the lights bends men toward the host-of-heaven idolatry Torah forbade.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-altering-the-times-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 6:37 — *...they will go wrong as to the months and sabbaths and feasts and jubilees. For this reason I command and testify to you that you may testify to them; for after your death your children will disturb (them), so that they will not make the year three hundred and sixty-four days only, and for this reason they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* Jubilees and Enoch describe the same coming apostasy from the reckoning, down to eating blood with flesh.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-altering-the-times-and-seasons'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-82-blessed-who-keep-the-reckoning
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* Enoch''s "blessed are those who keep the commandments... and walk in righteousness" is the blessing of the man who does not walk in the way of sinners.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-blessed-who-keep-the-reckoning'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 1:2 — *But his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night.* The blessed keep the commandments of Yahuah of Spirits because their delight is in His law.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-blessed-who-keep-the-reckoning'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* To "complete their years in truth" is to keep the appointed feasts in their seasons, as the lights ordain them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-blessed-who-keep-the-reckoning'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-82-luminaries-do-not-alter-their-courses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* the luminaries do not alter their courses because their Maker fixed them for signs and seasons from creation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-luminaries-do-not-alter-their-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The earth does not alter her seasons because the moon and sun keep their appointed courses.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-luminaries-do-not-alter-their-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:32 — *And command you the children of Yashar''el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts...* The law of the luminaries Enoch writes on the heavenly tablets is the same 364-day reckoning Jubilees commands Israel to keep.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-luminaries-do-not-alter-their-courses'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-82-the-leaders-of-the-seasons-keep-the-feast
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 23:2 — *Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* The chiefs of the four quarters and the feasts Enoch numbers are the appointed feasts of Yahuah, proclaimed by the lights.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-the-leaders-of-the-seasons-keep-the-feast'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* the leaders of the stars who do not transgress their commandments keep the very signs and seasons set at creation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-the-leaders-of-the-seasons-keep-the-feast'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:17 — *For this reason it is ordained and written on the heavenly tables, that they should celebrate the feast of weeks in this month once a year, to renew the covenant every year...* The feasts governed by Enoch''s leaders of the seasons are the heavenly-tablet appointments by which the covenant is renewed.'
+  FROM cross_reference_threads t, cross_references x, _session250_en82_lookup sv, _session250_en82_lookup tv
+ WHERE t.slug='1-enoch-82-the-leaders-of-the-seasons-keep-the-feast'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=82 AND sv.verse_number=8
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session250 — 1 Enoch cross-references complete.'

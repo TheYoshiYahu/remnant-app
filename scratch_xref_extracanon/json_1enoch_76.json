@@ -1,0 +1,110 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 76,
+  "session": "session250",
+  "tag": "en76",
+  "base_band": 51875,
+  "threads": [
+    {
+      "slug": "1-enoch-76-twelve-portals-winds",
+      "title": "Twelve portals at the ends of the earth — the winds in their treasuries",
+      "summary_md": "Uriel shows Enoch the order at the world's edge: *And at the ends of the earth I saw twelve portals: out of the east three portals for blessing and prosperity, and three for cursing and destruction* (1 Enoch 76:1) — the winds do not blow at random but issue from appointed gates by the Creator's reckoning. This is the same honest geography the Tanakh confesses: *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries* (Psalm 135:7) — the wind kept in a treasury, brought out by Yahuah's hand, not summoned by men. Job hears the order spoken from the same edge of creation: *By what way is the light parted, which scattereth the east wind upon the earth?* (Job 38:24). The lights of Genesis 1 are *for signs, and for seasons, and for days, and years* (Genesis 1:14), and so too the winds keep their stations — the Creator's covenant order written into the world. Jubilees names the very angels set over these powers at the first day: *and the angels of the spirit of the winds, and the angels of the spirit of the clouds, and of darkness, and of snow and of hail and of hoar frost... and the angels of the spirits of cold and of heat* (Jubilees 2:2). It ain't new: the gates, the treasuries, the appointed winds — one order, one Maker.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 76,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 135,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The same treasury-gates at the ends of the earth from which Enoch sees the twelve winds issue."
+        },
+        {
+          "src_ch": 76,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 38,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Job 38:24 — *By what way is the light parted, which scattereth the east wind upon the earth?* Yahuah's question to Job names the very east wind Enoch traces back to its appointed eastern portal."
+        },
+        {
+          "src_ch": 76,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years.* The lights and the winds keep one created order of signs and seasons — the moedim written into creation, not invented by men."
+        },
+        {
+          "src_ch": 76,
+          "src_v": 1,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 2,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "Jubilees 2:2 — *For on the first day He created the heavens which are above and the earth and the waters and all the spirits which serve before Him–the angels of the presence, and the angels of sanctification, and the angels of the spirit of fire and the angels of the spirit of the winds, and the angels of the spirit of the clouds, and of darkness, and of snow and of hail and of hoar frost...* Jubilees sets angels over the winds and weather at creation, the same ordered powers Enoch sees gated at the earth's ends."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-76-blessing-and-curse-winds",
+      "title": "Winds of blessing and prosperity, winds of cold and drought",
+      "summary_md": "Each portal carries its own charge: *And through the third portal the north-east wind comes forth, bringing cold and drought and destruction* (1 Enoch 76:4), while *through the first the west wind comes forth, bringing dew and rain and prosperity and blessing* (1 Enoch 76:5) — the winds are sorted to blessing and to curse, dew-and-rain against cold-and-drought, exactly the two roads the covenant sets before a people. Job knows this sorting by quarter: *Out of the south cometh the whirlwind: and cold out of the north* (Job 37:9) — the directions are not neutral but assigned. The order stands under one Maker, and the curse is never arbitrary law-as-curse but the withholding that follows broken covenant; the dew and the rain are the blessing-wind of His treasuries. Enoch is shown the whole catalogue so the reckoning can be kept, not so men may control the sky.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 76,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 37,
+          "tgt_v": 9,
+          "tier": "free",
+          "note": "Job 37:9 — *Out of the south cometh the whirlwind: and cold out of the north.* Job sorts the winds by quarter just as Enoch's southern and northern portals send heat-and-drought against cold-and-drought."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-76-four-winds-four-quarters",
+      "title": "The twelve completed — the four winds from the four quarters",
+      "summary_md": "Uriel closes the survey: *And after these the twelve winds are completed, and all their laws and all their plagues and all their benefactions have I shown to thee, my son Methuselah* (1 Enoch 76:14) — twelve gates resolving into the four cardinal quarters, each wind bearing its law, its plague, and its benefaction. The prophets reckon by these same four quarters when Yahuah moves in judgment: *And upon Elam will I bring the four winds from the four quarters of heaven, and will scatter them toward all those winds* (Jeremiah 49:36). Daniel's vision opens on the same fourfold order stirred over the deep: *I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea* (Daniel 7:2) — the winds out of which the beast-kingdoms rise are the very ordered powers Enoch catalogues. The winds keep their stations under the Creator; their laws and their plagues alike are His to deploy, and to read the order rightly is part of keeping the covenant reckoning.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 76,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 49,
+          "tgt_v": 36,
+          "tier": "free",
+          "note": "Jeremiah 49:36 — *And upon Elam will I bring the four winds from the four quarters of heaven, and will scatter them toward all those winds; and there shall be no nation whither the outcasts of Elam shall not come.* The four winds from the four quarters of heaven that Enoch resolves the twelve portals into are Yahuah's instrument of judgment over the nations."
+        },
+        {
+          "src_ch": 76,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 7,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 7:2 — *Daniel spake and said, I saw in my vision by night, and, behold, the four winds of the heaven strove upon the great sea.* Daniel's beast-vision opens on the same four winds of heaven whose ordered laws Enoch has just catalogued."
+        }
+      ]
+    }
+  ]
+}

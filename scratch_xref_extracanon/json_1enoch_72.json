@@ -1,0 +1,130 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 72,
+  "session": "session250",
+  "tag": "en72",
+  "base_band": 51775,
+  "threads": [
+    {
+      "slug": "1-enoch-72-luminaries-set-for-laws-and-seasons",
+      "title": "The luminaries set for laws, seasons, and years",
+      "summary_md": "Uriel opens the Book of the Luminaries by naming what the lights are FOR: *The book of the courses of the luminaries of the heaven, the relations of each, according to their classes, their dominion and their seasons, according to their names and places of origin, and according to their months, which Uriel, the holy angel who was with me, who was their leader, showed me; and he showed me all their laws exactly as they are, and how it is with regard to all the years of the world and unto eternity, till the new creation is accomplished which dureth till eternity* (1 Enoch 72:1). This is not new — it is the fourth-day decree spoken from the beginning: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14). The appointed times (moedim) are written into creation by the lights themselves; the year, the seasons, the feasts are the Creator's order, not men's invention. The Psalmist keeps the same reckoning: *He appointed the moon for seasons: the sun knoweth his going down* (Psalm 104:19). And Jubilees, the chief calendar witness, places these very laws on the heavenly tables: *And command you the children of Yashar’el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts* (Jubilees 6:32). Enoch's 364-day solar order of whole solar days is the same covenant order Genesis decreed and Jubilees engraved — the Appointed Times of the Creator.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 72,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The fourth-day decree is the charter behind Uriel's book — the luminaries set for the seasons (moedim) and years that 1 Enoch 72:1 catalogues as their laws."
+        },
+        {
+          "src_ch": 72,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The same ordering hand that 1 Enoch 72:1 says fixed the luminaries' laws appoints the moon for the seasons and the sun's own setting."
+        },
+        {
+          "src_ch": 72,
+          "src_v": 1,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 6,
+          "tgt_v": 32,
+          "tier": "extras",
+          "note": "Jubilees 6:32 — *And command you the children of Yashar’el (Israel) that they observe the years according to this reckoning-three hundred and sixty-four days, and (these) will constitute a complete year, and they will not disturb its time from its days and from its feasts; for everything will fall out in them according to their testimony, and they will not leave out any day nor disturb any feasts.* Jubilees engraves on the heavenly tables the very 364-day solar reckoning whose laws Uriel shows Enoch in 72:1 — the calendar is the Creator's covenant, not an invention of men."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-72-the-sun-rising-going-forth-his-circuit",
+      "title": "The great luminary: the sun's rising, its chariot, and its circuit",
+      "summary_md": "Enoch watches the sun named as ruler of the day and traces its course: *And the great one is their leader, the great luminary which is named the Sun, and its chariot on which it ascends is driven by the wind, and its chariot descends with wind* (1 Enoch 72:4), beginning from *the luminary the Sun has its rising in the eastern portals of the heaven, and its setting in the western portals of the heaven* (1 Enoch 72:2). Genesis already crowned this greater light: *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also* (Genesis 1:16). David sings the sun's same daily circuit through its portals: *In them hath he set a tabernacle for the sun, Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race. His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof* (Psalm 19:4–6). Enoch's portal-tables are the technical map of the going-forth and the circuit the Psalmist praises — one and the same ordained run of the great luminary that rules the day.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 72,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Genesis 1:16 — *And Elohim (God) made two great lights; the greater light to rule the day, and the lesser light to rule the night: he made the stars also.* The sun Enoch names as the great luminary and leader in 72:4 is Genesis's greater light made to rule the day."
+        },
+        {
+          "src_ch": 72,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Psalm 19:5 — *Which is as a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race.* The sun's rising from the eastern portals in 1 Enoch 72:2 is the bridegroom coming forth that David sings."
+        },
+        {
+          "src_ch": 72,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalm 19:6 — *His going forth is from the end of the heaven, and his circuit unto the ends of it: and there is nothing hid from the heat thereof.* The sun's rising in the eastern portals and setting in the western (1 Enoch 72:2) is precisely the going-forth-and-circuit from end to end that the Psalm describes."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-72-ordinances-of-sun-and-moon-fixed-forever",
+      "title": "The fixed ordinances of sun, moon, and stars — kept, not changed",
+      "summary_md": "Uriel shows the luminaries' laws *exactly as they are, and how it is with regard to all the years of the world and unto eternity, till the new creation is accomplished* (1 Enoch 72:1), and the portals are governed by *the leaders of the stars and those whom they lead: six in the east and six in the west following them closely* (1 Enoch 72:3). These are the unbreakable ordinances Yahuah set: *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva'ot (LORD of hosts) is his name* (Jeremiah 31:35). Because the order is the Creator's, its keeping is covenant fidelity — and the lights are given to be reckoned, never to be worshipped: *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven* (Deuteronomy 4:19). Jubilees warns of the very perversion the later luminary-chapters foretell — the moon-reckoning that drifts off the solar order: *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon* (Jubilees 6:36). Enoch's tables are given so the children of Yashar'el keep the reckoning fixed, the solar order primary, the appointed feasts undisturbed.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 72,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 31,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Jeremiah 31:35 — *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva'ot (LORD of hosts) is his name:* The fixed laws of sun, moon, and the leaders of the stars in 1 Enoch 72:3 are the ordinances Yahuah swears are as sure as His covenant with Yashar'el."
+        },
+        {
+          "src_ch": 72,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 4,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven.* The luminaries whose laws Uriel reveals in 72:1 are given to be read for the moedim and reckoning, never worshipped as the host of heaven."
+        },
+        {
+          "src_ch": 72,
+          "src_v": 1,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 6,
+          "tgt_v": 36,
+          "tier": "extras",
+          "note": "Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* Jubilees names the very drift the luminary-book guards against — the lunar reckoning falling ten days behind the solar order whose laws Enoch is shown in 72:1."
+        }
+      ]
+    }
+  ]
+}
