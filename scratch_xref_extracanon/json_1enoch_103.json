@@ -1,0 +1,260 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 103,
+  "session": "session250",
+  "tag": "en103",
+  "base_band": 52550,
+  "threads": [
+    {
+      "slug": "1-enoch-103-oath-righteous-dead-shall-live",
+      "title": "The oath: the righteous dead shall live and shine",
+      "summary_md": "Enoch swears it on oath — the righteous who died in faith are not lost: *\"And the righteous shall be victorious in the name of Yahuah (God) of Spirits: And He will cause His light to appear on them, And He will make peace for them\"* (1 Enoch 103:4), *\"And as for the righteous, they shall be satisfied with life, And their spirits shall not perish\"* (1 Enoch 103:7). This is the canon's own resurrection hope. Daniel saw the same awakening: *\"And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt\"* (Daniel 12:2), and the wise *\"shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever\"* (Daniel 12:3). Yahusha sealed it: *\"Then shall the righteous shine forth as the sun in the kingdom of their Father\"* (Matthew 13:43). And the wisdom of the fathers said it plainly — *\"But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them\"* (The Wisdom of Solomon 3:1), *\"For though they be punished in the sight of men, yet is their hope full of immortality\"* (The Wisdom of Solomon 3:4). It ain't new — the light that appears on Enoch's righteous is the same firmament-brightness Daniel and Yahusha promised.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 103,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The awakening Daniel sees is the very life Enoch swears the righteous spirits shall not lose."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 12,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* The light Yahuah causes to appear on Enoch's righteous (103:4) is Daniel's firmament-shining."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 43,
+          "tier": "free",
+          "note": "Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha confirms the same shining of the righteous Enoch promises under oath."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 7,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 3,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "The Wisdom of Solomon 3:1 — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* The same safekeeping of the righteous spirits that Enoch swears shall not perish."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 7,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 3,
+          "tgt_v": 4,
+          "tier": "extras",
+          "note": "The Wisdom of Solomon 3:4 — *For though they be punished in the sight of men, yet is their hope full of immortality.* The hope full of immortality is the satisfied life Enoch swears the righteous shall have (103:7)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-103-names-written-books-of-life",
+      "title": "Names written in the books of life — election before confession",
+      "summary_md": "Enoch beholds the heavenly register: *\"And I have beheld the books of life\"* (1 Enoch 103:2), and the righteous are already there — *\"your names are written in the books of life before the Most High\"* (1 Enoch 103:3), *\"their name shall not be blotted out\"* (1 Enoch 103:8). The name is not earned at the end; it is written before, never added, only kept or blotted. Malachi saw the same book: *\"a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name\"* (Malachi 3:16). The book stands behind the judgement scene of Revelation: *\"another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works\"* (Revelation 20:12). And in the blessed-dead vision John heard, *\"Blessed are the dead which die in Yahuah (Lord) from henceforth... that they may rest from their labours; and their works do follow them\"* (Revelation 14:13). Enoch's own closing seals which way the leaf turns — names are blotted, never inscribed late (1 Enoch 108:3). It ain't new: election runs through the seed-line, written before the Most High, and the memorial of the righteous stands before Him.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 103,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 3,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The book of remembrance is the same heavenly register where Enoch sees the righteous already written (103:3)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The same opening of the books of the living and of the unrighteous that Enoch witnesses (103:9)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 14,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Revelation 14:13 — *And I heard a voice from heaven saying unto me, Write, Blessed are the dead which die in Yahuah (Lord) from henceforth: Yea, saith the Spirit, that they may rest from their labours; and their works do follow them.* The blessing on the righteous dead, whose names stand in the books of life (103:3)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 8,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 108,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 108:3 — *Wait ye in patience until sin has passed away, For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever, And their spirits shall be slain, And they shall cry and lament in a waste place that has no water, And in the fire shall they burn.* Enoch's own closing names what 103:8 promises the righteous will never suffer — the blotting falls only on the sinner."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-103-sinners-lot-darkness-sheol",
+      "title": "The sinners' lot: darkness and lament in Sheol",
+      "summary_md": "Over against the light made to appear on the righteous, Enoch sets the sinner's portion: *\"But woe to you, ye sinners, who are dead in your sins! Ye shall have no peace\"* (1 Enoch 103:6), and *\"their spirits shall be cast into darkness and destruction, And they shall cry out and lament in Sheol. And their cry shall not be heard, And their lamentation shall not ascend to heaven\"* (1 Enoch 103:10-11). Yahusha drew the same hollow of Sheol in the rich man and Lazarus: *\"And in hell he lift up his eyes, being in torments, and seeth Abraham afar off, and Lazarus in his bosom\"* (Luke 16:23), *\"I am tormented in this flame\"* (Luke 16:24) — the cry that does not ascend. Revelation seals the end of the name not found: *\"And whosoever was not found written in the book of life was cast into the lake of fire\"* (Revelation 20:15). The contrast is not arbitrary cruelty but covenant requital — *\"their deeds shall be requited according to their works\"* (1 Enoch 103:12). The righteous enter peace; the sinner, dead in his sins, finds none.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 103,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 16,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Luke 16:23 — *And in hell he lift up his eyes, being in torments, and seeth Abraham afar off, and Lazarus in his bosom.* The torment-side of Sheol where Enoch sees the sinners' spirits cast into darkness (103:10)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 16,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Luke 16:24 — *And he cried and said, Father Abraham, have mercy on me, and send Lazarus, that he may dip the tip of his finger in water, and cool my tongue; for I am tormented in this flame.* The cry from Sheol that Enoch says shall not be heard nor ascend to heaven (103:10-11)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Revelation 20:15 — *And whosoever was not found written in the book of life was cast into the lake of fire.* The end of the names found in the books of the unrighteous that Enoch witnesses opened (103:9)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-103-woes-on-the-rich-oppressors",
+      "title": "Woes on the rich and the oppressors of the righteous",
+      "summary_md": "Enoch turns the woes on the unjust systems of wealth: *\"Woe to you who eat all the best food, And drink wine in large bowls, And tread upon the righteous with your might\"* (1 Enoch 103:14), *\"Woe to you who acquire gold and silver in unrighteousness... Woe to you, O sinners! For your riches shall not endure, And your glory shall not last\"* (1 Enoch 103:15, 24). The prophets and the brother of Yahusha sound the identical alarm against the same oppression — not against persons, but against the heaping of treasure and the defrauding of labourers. Isaiah: *\"Woe unto them that join house to house, that lay field to field, till there be no place\"* (Isaiah 5:8). James: *\"Go to now, ye rich men, weep and howl for your miseries that shall come upon you\"* (James 5:1), *\"Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth\"* (James 5:4). And the fathers' wisdom, of those whose riches profited nothing: *\"What has pride profited us? or what good has riches with our vaunting brought us?\"* (The Wisdom of Solomon 5:8). It ain't new — the woe falls on injustice and the systems that tread the righteous, and the riches gathered in unrighteousness do not endure.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 103,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah's woe on land-grabbing greed matches Enoch's woe on those who acquire gold and silver in unrighteousness (103:14-15)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James opens the very woe Enoch pronounces on the rich whose glory shall not last (103:15, 24)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The defrauded labourers' cry answers Enoch's woe on those who tread upon the righteous with their might (103:14)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 24,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "The Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The unmasked confession of the rich whose riches do not endure, just as Enoch declares (103:24)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-103-two-paths-righteousness",
+      "title": "The two paths: the way of righteousness and the way cut off",
+      "summary_md": "Enoch closes the chapter with the choice that frames the whole Epistle: *\"And now, my sons, listen to me, And I will show you the paths of righteousness, And the paths of unrighteousness, And I will show you how the paths of unrighteousness Shall be cut off\"* (1 Enoch 103:25). This is the Torah's set-before-you-life-and-death, the two ways. Moses laid it down: *\"See, I have set before thee this day life and good, and death and evil\"* (Deuteronomy 30:15), *\"I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live\"* (Deuteronomy 30:19). The Psalter opens on the same fork — the way of the righteous and the way that perishes (Psalm 1:6). And the wisdom of the fathers shows where the path of righteousness ends: *\"But the righteous live for evermore; their reward also is with Yahuah (God), and the care of them is with the Most High\"* (The Wisdom of Solomon 5:15). It ain't new — Enoch's two paths are Moses' choose-life, the way of life that is the Torah, never the curse.",
+      "anchor_start_v": 25,
+      "anchor_end_v": 25,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 103,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* Moses' two ways are the very paths of righteousness and unrighteousness Enoch sets before his sons (103:25)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* The choose-life command underlies Enoch's path of righteousness over the path that is cut off (103:25)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 25,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalter's two ways are Enoch's two paths, the way of unrighteousness that shall be cut off (103:25)."
+        },
+        {
+          "src_ch": 103,
+          "src_v": 25,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 15,
+          "tier": "extras",
+          "note": "The Wisdom of Solomon 5:15 — *But the righteous live for evermore; their reward also is with Yahuah (God), and the care of them is with the Most High.* Where the path of righteousness ends — the everlasting life Enoch points his sons toward (103:25)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 98,
+  "session": "session250",
+  "tag": "en98",
+  "base_band": 52425,
+  "threads": [
+    {
+      "slug": "1-enoch-98-woe-to-the-rich-poured-out-like-water",
+      "title": "The luxury that perishes — woe to the adorned and the rich",
+      "summary_md": "Enoch opens the woe by swearing to wise and foolish alike and describing the doomed splendour of the oppressor: *For ye men shall put on more adornments than a woman, And coloured garments more than a virgin: In royalty and in grandeur and in power, And in silver and in gold and in purple, And in splendour and in food they shall be poured out as water* (1 Enoch 98:2), whose end is that *they shall perish thereby together with their possessions* (1 Enoch 98:3). This is not a new complaint — it is the prophets' and James' woe on systems of injustice. James pronounces it on the hoarders: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1), for *your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days* (James 5:3). Yahusha tells it as a parable against the man whose barns are full: *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). Enoch's own next woes name the same crowd — *Woe to you who acquire gold and silver in unrighteousness And say: 'We have become rich with riches and have possessions'* (1 Enoch 94:7) — and Ben Sira mocks the same false rest: *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die* (Ecclesiasticus 11:19). The judgement falls on the structure of plunder, not on flesh as such.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 98,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James opens the same woe Enoch swears, calling the adorned rich to mourn the destruction already coming on their splendour."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The silver, gold and splendour that perish with their owners in Enoch 98:3 become the very witness that devours them."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "luke",
+          "tgt_ch": 12,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* Yahusha's parable of the rich fool echoes Enoch's verdict that the wealthy perish together with their possessions."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 2,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 94,
+          "tgt_v": 7,
+          "tier": "extras",
+          "note": "1 Enoch 94:7 — *Woe to you who acquire gold and silver in unrighteousness And say: 'We have become rich with riches and have possessions; And we have acquired everything that we have desired.* Enoch's earlier woe names the same gold-and-silver pride that 98:2 dresses in royal purple."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 11,
+          "tgt_v": 19,
+          "tier": "extras",
+          "note": "Ecclesiasticus 11:19 — *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die.* Ben Sira's self-satisfied hoarder dies just as Enoch's splendid ones perish with all their glory."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-98-man-made-the-sin-himself",
+      "title": "Sin was not sent — man made it himself",
+      "summary_md": "Against any plea that wickedness is fate, Enoch swears the opposite: *as a mountain has not become a slave, And a hill does not become the handmaid of a woman, Even so sin has not been sent upon the earth, But man of himself has created it, And under a great curse shall they fall who commit it* (1 Enoch 98:4). The curse is not Torah but the self-made fruit of breaking it — exactly the two-ways covenant Moses set before the people: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15), with the charge, *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). The choice is real; the death is chosen, not decreed. The prophets say it of Israel's idols too: *They have set up kings, but not by me... of their silver and their gold have they made them idols, that they may be cut off* (Hosea 8:4) — the people fashion the very thing that destroys them. Torah stands as the way of life throughout; man, not the law, manufactures his own ruin.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 98,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* Enoch's oath that sin was not sent but self-created restates Moses' two ways: the curse falls only on those who choose death over the offered life."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 30,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* As Moses calls heaven and earth to witness the choice, Enoch swears that the great curse is freely incurred by those who commit the sin they themselves made."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "hosea",
+          "tgt_ch": 8,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Hosea 8:4 — *They have set up kings, but not by me: they have made princes, and I knew it not: of their silver and their gold have they made them idols, that they may be cut off.* Hosea shows the same dynamic Enoch names: the people fashion with their own hands the thing that brings them under the curse."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-98-every-sin-recorded-in-heaven",
+      "title": "All your deeds are written down in heaven",
+      "summary_md": "Enoch strips away the sinner's secrecy: *all your evil deeds are revealed in the heavens, And that none of your deeds of oppression are covered and hidden* (1 Enoch 98:6); let none say *that ye do not know and that ye do not see That every sin is every day recorded in heaven in the presence of the Most High* (1 Enoch 98:7), for *all your oppression wherewith ye oppress is written down every day Till the day of your judgement* (1 Enoch 98:8). This heavenly ledger is the canon's own book of remembrance: *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name* (Malachi 3:16) — the righteous are recorded for life, the oppressor for judgement. Enoch's later vision opens those very ledgers: *I saw the books of the living, And the books of the unrighteous were opened, And the names of the sinners were found therein* (1 Enoch 104:9). The oppressors James names think their fraud is hidden, yet *the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4) — nothing of the oppression of the poor escapes the heavenly record.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 98,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 3,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The same heaven that records every sin daily keeps a book of remembrance for the righteous — election written, never improvised."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The oppression Enoch says is written down daily reaches heaven as the cry of the defrauded reapers."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 7,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 104,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "1 Enoch 104:9 — *And I saw the books of the living, And the books of the unrighteous were opened, And the names of the sinners were found therein.* Enoch later sees the very ledgers that 98:7 says record every sin in the presence of the Most High."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-98-woe-to-those-who-eat-blood",
+      "title": "Woe to the obstinate who eat blood",
+      "summary_md": "The woe turns on those who profane the table of the oppressed: *Woe to you, ye obstinate of heart, who work wickedness and eat blood: Whence have ye good things to eat and to drink and to be filled? From all the good things which Yahuah (God) the Most High has placed in abundance on the earth; Therefore ye shall have no peace* (1 Enoch 98:11). Eating blood is no minor matter; it is the covenant boundary set from Noah onward: *But flesh with the life thereof, which is the blood thereof, shall ye not eat* (Genesis 9:4), and Torah makes it a cutting-off sin: *whatsoever man there be of the house of Yashar'el (Israel)... that eateth any manner of blood; I will even set my face against that soul that eateth blood, and will cut him off from among his people* (Leviticus 17:10), *for the life of the flesh is in the blood* (Leviticus 17:11). Torah stands; the oppressor who devours the Creator's abundance while trampling the poor breaks the law of life itself, and so has no peace.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 98,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 9,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Genesis 9:4 — *But flesh with the life thereof, which is the blood thereof, shall ye not eat.* Enoch's woe on those who eat blood invokes the oldest covenant boundary, given to Noah for all flesh."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 17,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Leviticus 17:10 — *And whatsoever man there be of the house of Yashar'el (Israel), or of the strangers that sojourn among you, that eateth any manner of blood; I will even set my face against that soul that eateth blood, and will cut him off from among his people.* Torah makes blood-eating a cutting-off sin, so Enoch's blood-eaters rightly have no peace."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 17,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Leviticus 17:11 — *For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul.* The life that is in the blood, reserved for atonement, is what the obstinate consume — profaning the very thing Torah set apart."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-98-woe-to-the-writers-of-lying-words",
+      "title": "Woe to those who write down lying and godless words",
+      "summary_md": "The chapter's sharpest woe falls on the corrupters of the text itself: *Woe to you who write down lying and godless words; For they write down their lies that men may hear them and act godlessly towards their neighbour. Therefore they shall have no peace but die a sudden death* (1 Enoch 98:15-16), set beside *Woe to you who set at nought the words of the righteous; For ye shall have no hope of life* (1 Enoch 98:14). The prophets already aimed this at the scribes who falsify what is written: *How do ye say, We are wise, and the law of Yahuah (LORD) is with us? Lo, certainly in vain made he it; the pen of the scribes is in vain* (Jeremiah 8:8) — the lying pen perverts Torah. Isaiah's woe binds folly to inversion: *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness* (Isaiah 5:20), *Woe unto them that are wise in their own eyes, and prudent in their own sight!* (Isaiah 5:21) — which is exactly Enoch's *ye fools... ye transgress against the wise* (1 Enoch 98:9). And Isaiah's woe on those who legislate injustice in writing fits the godless scribe precisely: *Woe unto them that decree unrighteous decrees, and that write grievousness which they have prescribed* (Isaiah 10:1). Enoch himself names the crime again in the next chapter: *Woe to them who pervert the words of uprightness, And transgress the eternal law* (1 Enoch 99:2) — the eternal law (Torah) stands, and those who falsify it die a sudden death.",
+      "anchor_start_v": 14,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 98,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 8,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Jeremiah 8:8 — *How do ye say, We are wise, and the law of Yahuah (LORD) is with us? Lo, certainly in vain made he it; the pen of the scribes is in vain.* The lying pen of the scribes is exactly Enoch's woe on those who write down godless words to make men act wickedly."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Isaiah 5:20 — *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!* Isaiah's woe on moral inversion underlies the folly Enoch says will slay the fools who transgress against the wise."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "Isaiah 5:21 — *Woe unto them that are wise in their own eyes, and prudent in their own sight!* The self-wise fool of Isaiah's woe is Enoch's fool who perishes through his own folly and transgresses against the wise."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 15,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 10,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Isaiah 10:1 — *Woe unto them that decree unrighteous decrees, and that write grievousness which they have prescribed.* Isaiah's woe on those who write injustice into law matches Enoch's woe on those who write down lying and godless words."
+        },
+        {
+          "src_ch": 98,
+          "src_v": 15,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 99,
+          "tgt_v": 2,
+          "tier": "extras",
+          "note": "1 Enoch 99:2 — *Woe to them who pervert the words of uprightness, And transgress the eternal law, And transform themselves into what they were not [into sinners]: They shall be trodden under foot upon the earth.* Enoch's very next woe names the same crime — perverting the eternal law in writing — confirming that Torah stands and its falsifiers fall."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 100,
+  "session": "session250",
+  "tag": "en100",
+  "base_band": 52475,
+  "threads": [
+    {
+      "slug": "1-enoch-100-blood-to-the-bridle",
+      "title": "The blood to the horse's breast — the day of slaughter",
+      "summary_md": "Enoch sees the day of judgement run with blood: *And the horse shall walk up to the breast in the blood of sinners, And the chariot shall be submerged to its height.* (1 Enoch 100:3) — the kindred fall on one another from dawn till sunset until *the streams flow with their blood.* (1 Enoch 100:1) John sees the very same winepress at the end: *And the winepress was trodden without the city, and blood came out of the winepress, even unto the horse bridles, by the space of a thousand and six hundred furlongs.* (Revelation 14:20) — blood to the bridle, the exact measure Enoch gives. Joel had already set the harvest and the place: *Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.* (Joel 3:13) — and named the place of reckoning: *Multitudes, multitudes in the valley of decision: for the day of Yahuah (LORD) is near in the valley of decision.* (Joel 3:14) Isaiah saw the same slaughter-mountains: *Their slain also shall be cast out, and their stink shall come up out of their carcases, and the mountains shall be melted with their blood.* (Isaiah 34:3) It ain't new — the day Enoch foresaw is the day the prophets and the Revelation alike measure by blood.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 100,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 14,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Revelation 14:20 — *And the winepress was trodden without the city, and blood came out of the winepress, even unto the horse bridles, by the space of a thousand and six hundred furlongs.* John's winepress runs blood to the horse bridle, the very measure Enoch gives when the horse walks up to its breast in the blood of sinners (100:3)."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 3,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Joel 3:13 — *Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.* Joel's overflowing winepress is the harvest of judgement whose streams flow with blood in Enoch 100:1."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "joel",
+          "tgt_ch": 3,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Joel 3:14 — *Multitudes, multitudes in the valley of decision: for the day of Yahuah (LORD) is near in the valley of decision.* The valley of decision names the place where the slaying from dawn till sunset (100:2) falls."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 34,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "Isaiah 34:3 — *Their slain also shall be cast out, and their stink shall come up out of their carcases, and the mountains shall be melted with their blood.* Isaiah's mountains melted with blood match Enoch's streams flowing with the blood of the smitten (100:1)."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-100-supper-of-the-great-elohim",
+      "title": "The Most High arises — the supper of the great Elohim",
+      "summary_md": "When the slaughter is full, judgement comes from above: *In those days the angels shall descend into the secret places And gather together into one place all those who brought down sin, And the Most High will arise on that day of judgement To execute great judgement amongst sinners.* (1 Enoch 100:4) The same gathering-angel stands in Revelation, summoning the carrion-feast over the fallen: *And I saw an angel standing in the sun; and he cried with a loud voice, saying to all the fowls that fly in the midst of heaven, Come and gather yourselves together unto the supper of the great Elohim (God);* (Revelation 19:17) — *That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men, and the flesh of horses, and of them that sit on them, and the flesh of all men, both free and bond, both small and great.* (Revelation 19:18) Zephaniah had already pronounced the day on the same terms: *And I will bring distress upon men, that they shall walk like blind men, because they have sinned against Yahuah (LORD): and their blood shall be poured out as dust, and their flesh as the dung.* (Zephaniah 1:17) — and Isaiah named the sentence the angels carry down: *For the indignation of Yahuah (LORD) is upon all nations, and his fury upon all their armies: he hath utterly destroyed them, he hath delivered them to the slaughter.* (Isaiah 34:2) The judgement falls on the systems of sin gathered into one place, not on a scattered conscience — the Most High rises to break the unrighteous order He has long borne.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 100,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 19,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Revelation 19:17 — *And I saw an angel standing in the sun; and he cried with a loud voice, saying to all the fowls that fly in the midst of heaven, Come and gather yourselves together unto the supper of the great Elohim (God);* John's gathering angel matches the angels who descend to gather all the workers of sin into one place for the great judgement of Enoch 100:4."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 19,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Revelation 19:18 — *That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men, and the flesh of horses, and of them that sit on them, and the flesh of all men, both free and bond, both small and great.* The feast over kings and mighty is the end of the sinners gathered for the Most High's judgement in Enoch 100:4."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 34,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Isaiah 34:2 — *For the indignation of Yahuah (LORD) is upon all nations, and his fury upon all their armies: he hath utterly destroyed them, he hath delivered them to the slaughter.* Isaiah's indignation delivered to the slaughter is the great judgement the Most High arises to execute in Enoch 100:4."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "zephaniah",
+          "tgt_ch": 1,
+          "tgt_v": 17,
+          "tier": "free",
+          "note": "Zephaniah 1:17 — *And I will bring distress upon men, that they shall walk like blind men, because they have sinned against Yahuah (LORD): and their blood shall be poured out as dust, and their flesh as the dung.* The day of distress on those who sinned is the day of judgement the Most High rises for in Enoch 100:4."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-100-apple-of-an-eye",
+      "title": "Guardians for the righteous — kept as the apple of an eye",
+      "summary_md": "In the day of slaughter the righteous are not abandoned: *And over all the righteous and holy He will appoint guardians from amongst the holy angels To guard them as the apple of an eye, Until He makes an end of all wickedness and all sin, And though the righteous sleep a long sleep, they have nought to fear.* (1 Enoch 100:5) The phrase is Moses' own picture of Yahuah's covenant care: *He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye.* (Deuteronomy 32:10) — and the prophet's warning that to touch the elect is to touch Him: *For thus saith Yahuah Tseva'ot (LORD of hosts); After the glory hath he sent me unto the nations which spoiled you: for he that toucheth you toucheth the apple of his eye.* (Zechariah 2:8) The angelic charge is the Psalm's promise: *For he shall give his angels charge over thee, to keep thee in all thy ways.* (Psalm 91:11) And the long sleep with nought to fear is no annihilation but a guarded rest the dead will wake from — the same hope the apocrypha holds: *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* (Wisdom of Solomon 3:1) The elect are a guarded people, kept through the judgement, never a self-selected class.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 100,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 32,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Deuteronomy 32:10 — *He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye.* Moses' picture of Yahuah guarding His people as the apple of His eye is the very care the holy-angel guardians give the righteous in Enoch 100:5."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "zechariah",
+          "tgt_ch": 2,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Zechariah 2:8 — *For thus saith Yahuah Tseva'ot (LORD of hosts); After the glory hath he sent me unto the nations which spoiled you: for he that toucheth you toucheth the apple of his eye.* To touch the guarded righteous is to touch the apple of Yahuah's eye, the protection Enoch 100:5 assigns the angels to keep."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 91,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Psalms 91:11 — *For he shall give his angels charge over thee, to keep thee in all thy ways.* The angelic charge to keep the faithful is exactly the guardians from among the holy angels appointed over the righteous in Enoch 100:5."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 5,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 3,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 3:1 — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Wisdom's guarded souls in the hand of Elohim match the long sleep with nought to fear of the righteous in Enoch 100:5."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-100-riches-shall-not-save",
+      "title": "Woe to the rich oppressor — riches shall not save",
+      "summary_md": "The children of the earth will see plainly that wealth is no refuge: *And shall understand all the words of this book, And recognize that their riches shall not be able to save them In the overthrow of their sins.* (1 Enoch 100:6) — and the woe falls on those who burned the righteous: *Woe to you, Sinners, on the day of strong anguish, Ye who afflict the righteous and burn them with fire: Ye shall be requited according to your works.* (1 Enoch 100:7) James pronounces the identical woe on the hoarding rich: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* (James 5:1) — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* (James 5:3) Isaiah's woe is the same indictment of the land-engrossers: *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* (Isaiah 5:8) — and Yahusha (Jesus) speaks it from the mountain: *But woe unto you that are rich! for ye have received your consolation.* (Luke 6:24) Zephaniah seals it: *Neither their silver nor their gold shall be able to deliver them in the day of the LORD'S wrath; but the whole land shall be devoured by the fire of his jealousy* (Zephaniah 1:18) — and Wisdom asks the empty question: *What has pride profited us? or what good has riches with our vaunting brought us?* (Wisdom of Solomon 5:8) The woes fall on the system of oppression and the riches built on it, not on persons as such — dismantle the injustice; requital is according to works.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 100,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "zephaniah",
+          "tgt_ch": 1,
+          "tgt_v": 18,
+          "tier": "free",
+          "note": "Zephaniah 1:18 — *Neither their silver nor their gold shall be able to deliver them in the day of the LORD'S wrath; but the whole land shall be devoured by the fire of his jealousy: for he shall make even a speedy riddance of all them that dwell in the land.* Silver and gold that cannot deliver in the day of wrath is the very lesson the children of the earth learn in Enoch 100:6 — riches shall not save."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James' woe to the rich on the coming miseries is the same woe Enoch sounds on the sinners on the day of strong anguish (100:7)."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "free",
+          "note": "James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The hoarded riches that eat the flesh like fire match Enoch's burning requital on those who burned the righteous with fire (100:7)."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah's woe on the land-engrossers names the oppression for which Enoch's sinners are requited according to their works (100:7)."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 6,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 5,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The vain question of the rich at judgement echoes the children of the earth recognizing their riches cannot save them in Enoch 100:6."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-100-rain-withheld-witness",
+      "title": "Heaven testifies — the rain and dew withheld",
+      "summary_md": "Enoch declares that the very lights and waters will testify against the sinners: *And now, know ye that from the angels He will inquire as to your deeds in heaven, from the sun and from the moon and from the stars in reference to your sins because upon the earth ye execute judgement on the righteous.* (1 Enoch 100:10) — and the sky itself becomes a witness and a plague: *And He will summon to testify against you every cloud and mist and dew and rain; for they shall all be withheld because of you from descending upon you, and they shall be mindful of your sins.* (1 Enoch 100:11) The covenant curse spoke this long before: *And thy heaven that is over thy head shall be brass, and the earth that is under thee shall be iron.* (Deuteronomy 28:23) — *Yahuah (LORD) shall make the rain of thy land powder and dust: from heaven shall it come down upon thee, until thou be destroyed.* (Deuteronomy 28:24) Leviticus binds the same sentence to broken covenant: *And I will break the pride of your power; and I will make your heaven as iron, and your earth as brass:* (Leviticus 26:19) The withheld rain is no arbitrary wrath but the Torah's own curse for the covenant broken against the righteous — the bribe Enoch mocks (presents to the rain, gold and silver to buy the dew, 100:12) cannot reverse it. Torah stands; the heavens keep its terms.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 100,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 28,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Deuteronomy 28:23 — *And thy heaven that is over thy head shall be brass, and the earth that is under thee shall be iron.* The brass heaven that yields no rain is the covenant curse standing behind the cloud, dew, and rain withheld from the sinners in Enoch 100:11."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 28,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Deuteronomy 28:24 — *Yahuah (LORD) shall make the rain of thy land powder and dust: from heaven shall it come down upon thee, until thou be destroyed.* The rain turned to powder and the destroying weather match the snow-storms and plagues the sinners cannot stand before in Enoch 100:13."
+        },
+        {
+          "src_ch": 100,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "leviticus",
+          "tgt_ch": 26,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Leviticus 26:19 — *And I will break the pride of your power; and I will make your heaven as iron, and your earth as brass:* The iron heaven for a broken covenant is the Torah ground of the rain and dew withheld as a witness against the sinners in Enoch 100:11."
+        }
+      ]
+    }
+  ]
+}

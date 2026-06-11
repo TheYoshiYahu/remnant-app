@@ -19759,6 +19759,3855 @@ SELECT t.id, x.id, 5, E'Genesis 1:26 — *And Elohim (God) said, Let us make man
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1enoch_92.sql (session250 1-enoch 92) -----
+-- Source anchor: enoch/1-enoch ch92. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en92 (view _session250_en92_lookup). Sort band base 52275, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en92_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-92-preserve-the-books
+  ('enoch', '1-enoch', 92, 2, 'canon', 'deuteronomy', 6, 6, 'free', E'Deuteronomy 6:6 — *And these words, which I command thee this day, shall be in thine heart:* Enoch''s charge to keep the books in the heart (92:2) is the Shema''s command to set the words in the heart.'),
+  ('enoch', '1-enoch', 92, 2, 'canon', 'deuteronomy', 6, 7, 'free', E'Deuteronomy 6:7 — *And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.* The generation-to-generation teaching of 92:2 is the Torah''s own diligent-teaching mandate.'),
+  ('enoch', '1-enoch', 92, 1, 'canon', 'deuteronomy', 4, 2, 'free', E'Deuteronomy 4:2 — *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* The books preserved untouched (92:1) keep the Torah''s no-add-no-subtract fence around the word.'),
+  ('enoch', '1-enoch', 92, 14, 'canon', 'revelation', 22, 18, 'free', E'Revelation 22:18 — *For I testify unto every man that heareth the words of the prophecy of this book, If any man shall add unto these things, Elohim (God) shall add unto him the plagues that are written in this book:* Writing the words in a book for a testimony (92:14) is sealed by Revelation''s same warning against tampering with the testimony.'),
+  -- thread: 1-enoch-92-altering-the-appointed-times
+  ('enoch', '1-enoch', 92, 3, 'canon', 'daniel', 7, 25, 'free', E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* The sinners who alter the times and seasons (92:3) are Daniel''s horn who thinks to change times and laws.'),
+  ('enoch', '1-enoch', 92, 3, 'jubilees', 'jubilees', 6, 37, 'extras', E'Jubilees 6:37 — *...they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* Jubilees, from the same Sinai mountain, names the identical corruption of 92:3 — the moedim confounded and blood eaten with all flesh.'),
+  ('enoch', '1-enoch', 92, 3, 'jubilees', 'jubilees', 6, 36, 'extras', E'Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* The altering of the seasons and new moons (92:3) is Jubilees'' warning that the moon-reckoning will pull the year ten days off the appointed order.'),
+  ('enoch', '1-enoch', 92, 3, 'canon', 'genesis', 9, 4, 'free', E'Genesis 9:4 — *But flesh with the life thereof, which is the blood thereof, shall ye not eat.* The blood-eating Enoch condemns (92:3) breaks the Noahic prohibition given before Sinai itself.'),
+  ('enoch', '1-enoch', 92, 3, 'canon', 'leviticus', 17, 14, 'free', E'Leviticus 17:14 — *For it is the life of all flesh; the blood of it is for the life thereof: therefore I said unto the children of Yashar''el (Israel), Ye shall eat the blood of no manner of flesh: for the life of all flesh is the blood thereof: whosoever eateth it shall be cut off.* Eating blood with all flesh (92:3) is the very sin Torah seals with cutting-off, the life of the flesh being the blood.'),
+  -- thread: 1-enoch-92-two-ways-inherit-eternal-life
+  ('enoch', '1-enoch', 92, 5, 'canon', 'deuteronomy', 30, 15, 'free', E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Enoch''s blessing on those who keep the commandments (92:5) sets the same two ways Moses placed before Israel: life and good against death and evil.'),
+  ('enoch', '1-enoch', 92, 5, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* To keep the commandments and inherit eternal life (92:5) is to choose life as Moses charged, that the seed may live.'),
+  ('enoch', '1-enoch', 92, 5, 'canon', 'psalms', 1, 6, 'free', E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The blessing on the righteous and ruin of the sinner in 92:5 is the Psalter''s two paths: the way of the righteous known, the way of the ungodly perishing.'),
+  ('enoch', '1-enoch', 92, 5, 'canon', 'john', 17, 3, 'free', E'John 17:3 — *And this is life eternal, that they might know thee the only true Elohim (God), and Yahusha HaMashiach (Jesus Christ), whom thou hast sent.* The eternal life Enoch promises the commandment-keepers (92:5) is the knowing of the Father and Yahusha whom He sent.'),
+  -- thread: 1-enoch-92-the-law-of-the-luminaries
+  ('enoch', '1-enoch', 92, 7, 'canon', 'genesis', 1, 14, 'free', E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The luminaries that do not alter their courses (92:7) are the fourth-day lights set for signs, seasons, days, and years.'),
+  ('enoch', '1-enoch', 92, 6, 'canon', 'psalms', 104, 19, 'free', E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The law of the sun and the moon Enoch shows (92:6) is the Psalter''s fixed order: the moon appointed for seasons, the sun knowing its setting.'),
+  ('enoch', '1-enoch', 92, 6, 'canon', 'leviticus', 23, 4, 'free', E'Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* The seasons governed by the luminaries'' law (92:6) are the feasts of Yahuah proclaimed in their appointed seasons.'),
+  ('enoch', '1-enoch', 92, 7, 'canon', 'psalms', 19, 1, 'free', E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The luminaries that never alter their courses (92:7) are the heavens declaring the glory of their Maker.'),
+  -- thread: 1-enoch-92-woe-to-those-who-lead-astray
+  ('enoch', '1-enoch', 92, 13, 'canon', 'daniel', 12, 2, 'free', E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The woe on those who lead men astray (92:13) is answered by the resurrection that sorts the righteous to everlasting life and the deceivers to everlasting contempt.'),
+  ('enoch', '1-enoch', 92, 11, 'canon', 'daniel', 12, 3, 'free', E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* The star-leaders who never transgress (92:11) prefigure the wise who shine as stars — those who turn many to righteousness rather than lead them astray.'),
+  ('enoch', '1-enoch', 92, 11, 'canon', 'malachi', 4, 2, 'free', E'Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* The star-leaders who serve in their appointed places (92:11) point to the Sun of righteousness rising over those who fear the Name.'),
+  ('enoch', '1-enoch', 92, 13, 'canon', 'psalms', 19, 2, 'free', E'Psalm 19:2 — *Day unto day uttereth speech, and night unto night sheweth knowledge.* The faithful luminaries (92:11-13) preach the Maker''s order day and night, a standing witness against those who alter the times and lead men astray.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en92_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en92_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-92-preserve-the-books',
+       E'Preserve these books, add not, diminish not — a testimony for the generations',
+       E'Enoch hands the wisdom to his son: *And now, my son Methuselah, All that I have recounted and preserved for thee, I have given into thy hands, And thou shalt preserve the books from the hand of thy father, And thou shalt commit them to the memory of thy sons, And to the sons of thy sons who shall come after thee, That they may preserve this wisdom which is greater than all the wisdom of the world.* (1 Enoch 92:1), and again *Preserve these books in thy heart... thou shalt teach them to thy sons, And thy sons shall teach them to their sons, From generation to generation for ever.* (1 Enoch 92:2). This is not a new commission but the Torah pattern of transmission: *And these words, which I command thee this day, shall be in thine heart:* (Deuteronomy 6:6) — *And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.* (Deuteronomy 6:7). The words are kept whole, never tampered: *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* (Deuteronomy 4:2), a fence the Revelator seals on the last book: *For I testify unto every man that heareth the words of the prophecy of this book, If any man shall add unto these things, Elohim (God) shall add unto him the plagues that are written in this book:* (Revelation 22:18). To write the words in a book *for a testimony for the generations of the world* (1 Enoch 92:14) is the very office Moses kept — the deposit guarded, handed down, untouched.',
+       sv.verse_id, ev.verse_id, 'extras', 52275
+  FROM _session250_en92_lookup sv, _session250_en92_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=92 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-92-altering-the-appointed-times',
+       E'The sinners alter the times, the seasons, the new moons, the sabbaths, the festivals',
+       E'Enoch foresees the assault on the appointed times: *And in those days the sinners shall alter the order, And shall set aside all the commandments of Yahuah (God) of Spirits... And they shall alter the times, And the seasons, And the new moons, And the sabbaths, And the festivals, And they shall eat blood with all kinds of flesh.* (1 Enoch 92:3). Daniel names the same horn who *shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* (Daniel 7:25) — to change the times is to assault the moedim, not the clock. Jubilees, given on the same Sinai mountain, warns of this exact corruption almost word-for-word: *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* (Jubilees 6:36) and *they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* (Jubilees 6:37). The blood-eating Enoch warns of is the standing prohibition from the days of Noah: *But flesh with the life thereof, which is the blood thereof, shall ye not eat.* (Genesis 9:4), set in Torah with a covenant penalty: *For it is the life of all flesh; the blood of it is for the life thereof: therefore I said unto the children of Yashar''el (Israel), Ye shall eat the blood of no manner of flesh...* (Leviticus 17:14). The sin here is not Torah as curse — it is the dismantling of the Creator''s order: the feasts, the new moons, the Sabbath, the blood.',
+       sv.verse_id, ev.verse_id, 'extras', 52278
+  FROM _session250_en92_lookup sv, _session250_en92_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=92 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-92-two-ways-inherit-eternal-life',
+       E'The two ways — blessed who keep the commandments and inherit eternal life',
+       E'Against the corruption of the order Enoch sets the blessing: *But blessed are those who keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth, For they shall inherit eternal life.* (1 Enoch 92:5), repeated for those who keep the calendar order: *And blessed are those who observe these things, And keep the commandments of Yahuah (God) of Spirits, And walk in righteousness, And complete their years in truth.* (1 Enoch 92:12). This is the two ways laid before Israel at the Jordan: *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15) — *In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments...* (Deuteronomy 30:16) — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19). The Psalter draws the same two paths: *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* (Psalm 1:6). And the eternal life Enoch promises is no abstraction but the knowing of the Father and the Son: *And this is life eternal, that they might know thee the only true Elohim (God), and Yahusha HaMashiach (Jesus Christ), whom thou hast sent.* (John 17:3). The way of life is to keep the commandments and walk in righteousness — Torah is the way, never the curse.',
+       sv.verse_id, ev.verse_id, 'extras', 52281
+  FROM _session250_en92_lookup sv, _session250_en92_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=92 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-92-the-law-of-the-luminaries',
+       E'The law of the luminaries — the heavenly tablets do not alter their courses',
+       E'Enoch shows Methuselah the whole order of the lights: *I have shown thee the whole vision of the heavenly tablets, And all the commandments of the luminaries, And the law of the stars, And the law of the sun and the moon...* (1 Enoch 92:6), charging him to keep it unaltered, *For the luminaries do not alter their courses, And the earth does not alter her seasons, And the sea does not alter her boundaries.* (1 Enoch 92:7). This is the fourth-day decree of creation: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14) — the lights are set for the moedim, the appointed seasons. The Psalter echoes the same fixed order: *He appointed the moon for seasons: the sun knoweth his going down.* (Psalm 104:19). Those seasons the lights govern are the feasts of Yahuah: *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* (Leviticus 23:4). And the luminaries that do not alter their courses preach their Maker without a word: *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* (Psalm 19:1). The calendar is not a private opinion but a law written in the sky — to keep it is to keep faith with the Creator''s order.',
+       sv.verse_id, ev.verse_id, 'extras', 52284
+  FROM _session250_en92_lookup sv, _session250_en92_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=92 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-92-woe-to-those-who-lead-astray',
+       E'The star-leaders transgress not — woe to those who lead the sons of men astray',
+       E'The chiefs of the stars keep their stations in perfect obedience: *And the leaders of the stars are the chiefs of the thousands, And they serve Yahuah (God) of Spirits in their appointed places, And they do not transgress their commandments.* (1 Enoch 92:11) — and against them stands the woe: *And woe to those who alter these things, And lead the sons of men astray, And cause them to transgress the commandments of Yahuah (God) of Spirits.* (1 Enoch 92:13). The woe of the Epistle falls on those who pervert the order and lead the people off the way; but those who turn many to righteousness shine like the very luminaries Enoch describes: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2) — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* (Daniel 12:3). The Sun of righteousness Himself rises over those who fear the Name: *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* (Malachi 4:2). The same heavens that declare glory rebuke the deceivers: *Day unto day uttereth speech, and night unto night sheweth knowledge.* (Psalm 19:2). Woe falls on the system that leads astray; the righteous who keep and teach the order are made to shine as the stars forever.',
+       sv.verse_id, ev.verse_id, 'extras', 52287
+  FROM _session250_en92_lookup sv, _session250_en92_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=11
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=92 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-92-preserve-the-books
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 6:6 — *And these words, which I command thee this day, shall be in thine heart:* Enoch''s charge to keep the books in the heart (92:2) is the Shema''s command to set the words in the heart.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-preserve-the-books'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 6:7 — *And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up.* The generation-to-generation teaching of 92:2 is the Torah''s own diligent-teaching mandate.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-preserve-the-books'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 4:2 — *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* The books preserved untouched (92:1) keep the Torah''s no-add-no-subtract fence around the word.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-preserve-the-books'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 22:18 — *For I testify unto every man that heareth the words of the prophecy of this book, If any man shall add unto these things, Elohim (God) shall add unto him the plagues that are written in this book:* Writing the words in a book for a testimony (92:14) is sealed by Revelation''s same warning against tampering with the testimony.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-preserve-the-books'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-92-altering-the-appointed-times
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:25 — *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time.* The sinners who alter the times and seasons (92:3) are Daniel''s horn who thinks to change times and laws.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-altering-the-appointed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 6:37 — *...they will go wrong as to the new moons and seasons and sabbaths and festivals, and they will eat all kinds of blood with all kinds of flesh.* Jubilees, from the same Sinai mountain, names the identical corruption of 92:3 — the moedim confounded and blood eaten with all flesh.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-altering-the-appointed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 6:36 — *For there will be those who will assuredly make observations of the moon–now (it) disturbs the seasons and comes in from year to year ten days too soon.* The altering of the seasons and new moons (92:3) is Jubilees'' warning that the moon-reckoning will pull the year ten days off the appointed order.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-altering-the-appointed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 9:4 — *But flesh with the life thereof, which is the blood thereof, shall ye not eat.* The blood-eating Enoch condemns (92:3) breaks the Noahic prohibition given before Sinai itself.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-altering-the-appointed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Leviticus 17:14 — *For it is the life of all flesh; the blood of it is for the life thereof: therefore I said unto the children of Yashar''el (Israel), Ye shall eat the blood of no manner of flesh: for the life of all flesh is the blood thereof: whosoever eateth it shall be cut off.* Eating blood with all flesh (92:3) is the very sin Torah seals with cutting-off, the life of the flesh being the blood.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-altering-the-appointed-times'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-92-two-ways-inherit-eternal-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Enoch''s blessing on those who keep the commandments (92:5) sets the same two ways Moses placed before Israel: life and good against death and evil.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-two-ways-inherit-eternal-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* To keep the commandments and inherit eternal life (92:5) is to choose life as Moses charged, that the seed may live.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-two-ways-inherit-eternal-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The blessing on the righteous and ruin of the sinner in 92:5 is the Psalter''s two paths: the way of the righteous known, the way of the ungodly perishing.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-two-ways-inherit-eternal-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'John 17:3 — *And this is life eternal, that they might know thee the only true Elohim (God), and Yahusha HaMashiach (Jesus Christ), whom thou hast sent.* The eternal life Enoch promises the commandment-keepers (92:5) is the knowing of the Father and Yahusha whom He sent.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-two-ways-inherit-eternal-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=17 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-92-the-law-of-the-luminaries
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The luminaries that do not alter their courses (92:7) are the fourth-day lights set for signs, seasons, days, and years.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-the-law-of-the-luminaries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The law of the sun and the moon Enoch shows (92:6) is the Psalter''s fixed order: the moon appointed for seasons, the sun knowing its setting.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-the-law-of-the-luminaries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 23:4 — *These are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons.* The seasons governed by the luminaries'' law (92:6) are the feasts of Yahuah proclaimed in their appointed seasons.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-the-law-of-the-luminaries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The luminaries that never alter their courses (92:7) are the heavens declaring the glory of their Maker.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-the-law-of-the-luminaries'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-92-woe-to-those-who-lead-astray
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The woe on those who lead men astray (92:13) is answered by the resurrection that sorts the righteous to everlasting life and the deceivers to everlasting contempt.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-woe-to-those-who-lead-astray'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* The star-leaders who never transgress (92:11) prefigure the wise who shine as stars — those who turn many to righteousness rather than lead them astray.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-woe-to-those-who-lead-astray'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* The star-leaders who serve in their appointed places (92:11) point to the Sun of righteousness rising over those who fear the Name.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-woe-to-those-who-lead-astray'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 19:2 — *Day unto day uttereth speech, and night unto night sheweth knowledge.* The faithful luminaries (92:11-13) preach the Maker''s order day and night, a standing witness against those who alter the times and lead men astray.'
+  FROM cross_reference_threads t, cross_references x, _session250_en92_lookup sv, _session250_en92_lookup tv
+ WHERE t.slug='1-enoch-92-woe-to-those-who-lead-astray'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=92 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=19 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_93.sql (session250 1-enoch 93) -----
+-- Source anchor: enoch/1-enoch ch93. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en93 (view _session250_en93_lookup). Sort band base 52300, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en93_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-93-two-ways-choose-life
+  ('enoch', '1-enoch', 93, 7, 'canon', 'deuteronomy', 30, 15, 'free', E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses sets the same two ways Enoch sets before his sons in 93:7.'),
+  ('enoch', '1-enoch', 93, 7, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch''s "choose... that ye may live... and that your seed may be multiplied" (93:7) is Moses'' choose-life-and-thy-seed-may-live verbatim in substance.'),
+  ('enoch', '1-enoch', 93, 2, 'canon', 'psalms', 1, 1, 'free', E'Psalms 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* The Psalter''s two ways match Enoch''s "seek not the counsel of the ungodly" in 93:2.'),
+  ('enoch', '1-enoch', 93, 4, 'canon', 'matthew', 7, 13, 'free', E'Matthew 7:13 — *Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:* Yahusha shows the very two paths Enoch shows in 93:4, the way of unrighteousness "cut off."'),
+  ('enoch', '1-enoch', 93, 7, 'apocrypha', 'ecclesiasticus', 15, 17, 'extras', E'Ecclesiasticus 15:17 — *Before man is life and death; and whether him liketh shall be given him.* Sirach sets life and death before man exactly as Enoch bids his sons choose in 93:7.'),
+  -- thread: 1-enoch-93-perish-way-of-wicked
+  ('enoch', '1-enoch', 93, 3, 'canon', 'psalms', 1, 6, 'free', E'Psalms 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalter ends where Enoch begins: all who walk in unrighteousness shall perish (93:3).'),
+  ('enoch', '1-enoch', 93, 4, 'canon', 'proverbs', 4, 18, 'free', E'Proverbs 4:18 — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* Solomon''s path of the just is Enoch''s path of righteousness in 93:4.'),
+  ('enoch', '1-enoch', 93, 4, 'canon', 'proverbs', 4, 19, 'free', E'Proverbs 4:19 — *The way of the wicked is as darkness: they know not at what they stumble.* The way of the wicked stumbling in the dark is the path of unrighteousness "cut off" in 93:4.'),
+  ('enoch', '1-enoch', 93, 4, 'canon', 'matthew', 7, 14, 'free', E'Matthew 7:14 — *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* The narrow way that leadeth unto life is Enoch''s path of righteousness chosen in 93:4.'),
+  ('enoch', '1-enoch', 93, 3, 'apocrypha', 'the-wisdom-of-solomon', 5, 7, 'extras', E'Wisdom of Solomon 5:7 — *We wearied ourselves in the way of wickedness and destruction: yes, we have gone through deserts, where there lay no way: but as for the way of Yahuah (God), we have not known it.* The ungodly''s own confession that those who walk in unrighteousness perish (93:3).'),
+  -- thread: 1-enoch-93-love-god-love-neighbour
+  ('enoch', '1-enoch', 93, 9, 'canon', 'deuteronomy', 6, 5, 'free', E'Deuteronomy 6:5 — *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* The Shema''s love-command is the heart of Enoch''s path of righteousness in 93:9.'),
+  ('enoch', '1-enoch', 93, 9, 'canon', 'matthew', 22, 37, 'free', E'Matthew 22:37 — *Yahusha (Jesus) said unto him, Thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart, and with all thy soul, and with all thy mind.* Yahusha names the first great commandment Enoch already names in 93:9.'),
+  ('enoch', '1-enoch', 93, 9, 'canon', 'matthew', 22, 39, 'free', E'Matthew 22:39 — *And the second is like unto it, Thou shalt love thy neighbour as thyself.* The second commandment is Enoch''s "love your neighbour as yourself" in 93:9, verbatim in substance.'),
+  ('enoch', '1-enoch', 93, 9, 'jubilees', 'jubilees', 20, 2, 'extras', E'Jubilees 20:2 — *And he commanded them that they should observe the way of Yahuah (God); that they should work righteousness, and love each his neighbour, and act on this manner amongst all men; that they should each so walk with regard to them as to do judgment and righteousness on the earth.* Abraham charges his house with the same love-neighbour way Enoch sets in 93:9.'),
+  ('enoch', '1-enoch', 93, 9, 'jubilees', 'jubilees', 7, 20, 'extras', E'Jubilees 7:20 — *And in the twenty-eighth jubilee Noah began to enjoin upon his sons'' sons the ordinances and commandments, and all the judgments that he knew, and he exhorted his sons to observe righteousness, and to cover the shame of their flesh, and to bless their Creator, and honour father and mother, and love their neighbour, and guard their souls from fornication and uncleanness and all iniquity.* Noah enjoins the love-neighbour way Enoch defines in 93:9.'),
+  -- thread: 1-enoch-93-do-justice-walk-humbly
+  ('enoch', '1-enoch', 93, 5, 'canon', 'micah', 6, 8, 'free', E'Micah 6:8 — *He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* Micah''s do-justly, love-mercy, walk-humbly is Enoch''s path of righteousness in 93:5 line for line.'),
+  ('enoch', '1-enoch', 93, 6, 'enoch', '1-enoch', 94, 6, 'extras', E'1 Enoch 94:6 — *Woe to you who eat all the best food, And drink wine in large bowls, And tread upon the righteous with your might.* The very violence and oppression of Enoch''s wicked path (93:6) is the woe the next chapter sentences.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en93_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en93_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-93-two-ways-choose-life',
+       E'Choose the paths of righteousness — life set before the sons',
+       E'Enoch sets the two ways before his sons as a deliberate choice unto life: *And now, my sons, choose for yourselves The paths of righteousness, And walk therein, That ye may live and prosper, And that your seed may be multiplied upon the earth.* (1 Enoch 93:7). This is Moses'' own farewell charge, word for word in spirit: *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15), and the sealing call, *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19). The way of life is the Torah kept, never the curse — life *and* multiplied seed for those who walk it. The Psalter opens on the same fork — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* (Psalms 1:1) — which is why Enoch warns *And seek not the counsel of the ungodly* (1 Enoch 93:2). Yahusha gives the two ways their narrow-gate edge: *Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:* (Matthew 7:13). The extra-canon witnesses speak in one voice — Sirach, *Before man is life and death; and whether him liketh shall be given him.* (Ecclesiasticus 15:17). It ain''t new: choose life is the oldest commandment, and the seed that walks it is multiplied upon the earth.',
+       sv.verse_id, ev.verse_id, 'extras', 52300
+  FROM _session250_en93_lookup sv, _session250_en93_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=93 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-93-perish-way-of-wicked',
+       E'The paths of unrighteousness shall be cut off',
+       E'Over and again Enoch names the end of the wicked road: *And I will show you the paths of righteousness, And the paths of unrighteousness, And I will show you how the paths of unrighteousness Shall be cut off.* (1 Enoch 93:4), warning that *all who walk in unrighteousness shall perish* (1 Enoch 93:3). The Psalter''s closing line is the same verdict: *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* (Psalms 1:6). Solomon draws the two roads as light against darkness — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* (Proverbs 4:18), and *The way of the wicked is as darkness: they know not at what they stumble.* (Proverbs 4:19). Yahusha''s narrow gate carries the life-end of it: *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* (Matthew 7:14). And the ungodly''s own confession at the judgment is in the Wisdom of Solomon — *We wearied ourselves in the way of wickedness and destruction: yes, we have gone through deserts, where there lay no way: but as for the way of Yahuah (God), we have not known it.* (Wisdom of Solomon 5:7). The way of unrighteousness is not punished arbitrarily; it self-destructs — it is *cut off*.',
+       sv.verse_id, ev.verse_id, 'extras', 52303
+  FROM _session250_en93_lookup sv, _session250_en93_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=93 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-93-love-god-love-neighbour',
+       E'Fear Yahuah, love Him with all the heart, love your neighbour',
+       E'Enoch defines the way of life as the two great commandments themselves: *The paths of righteousness are these: To fear Yahuah (God) of Spirits, To love Him with all your heart, With all your soul, With all your strength, And to love your neighbour as yourself.* (1 Enoch 93:9). This is the Shema and its companion, Torah quoted straight: *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* (Deuteronomy 6:5). Yahusha names these two as the whole law: *Yahusha (Jesus) said unto him, Thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart, and with all thy soul, and with all thy mind.* (Matthew 22:37), and *And the second is like unto it, Thou shalt love thy neighbour as thyself.* (Matthew 22:39). The contrary path Enoch names — *To hate Yahuah (God) of Spirits, To love idols and false gods, To hate your neighbour* (1 Enoch 93:10) — is the precise inversion. The patriarchs carried this same charge: Jubilees has Noah enjoin his sons'' sons *to bless their Creator, and honour father and mother, and love their neighbour* (Jubilees 7:20), and Abraham command his house *that they should observe the way of Yahuah (God); that they should work righteousness, and love each his neighbour* (Jubilees 20:2). It ain''t new — love of Elohim and neighbour is the eternal Torah, kept from Enoch to Noah to Abraham to Yahusha.',
+       sv.verse_id, ev.verse_id, 'extras', 52306
+  FROM _session250_en93_lookup sv, _session250_en93_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=93 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-93-do-justice-walk-humbly',
+       E'Do judgment and righteousness, love mercy, walk humbly',
+       E'Enoch''s way of life is justice, mercy, and humility before Elohim: *The paths of righteousness are these: To walk in truth and righteousness, To love mercy and truth, To do judgment and righteousness, To walk humbly with Yahuah (God) of Spirits.* (1 Enoch 93:5), against the way *To love violence and oppression, To do injustice and wickedness, To walk proudly and haughtily* (1 Enoch 93:6). This is Micah''s summary of all the LORD requires: *He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8) — "do justly, love mercy, walk humbly" is Enoch''s "do judgment and righteousness, love mercy and truth, walk humbly" line for line. The oppressors of Enoch''s wicked path are the very rich and violent the woes will sentence in the next chapter — *Woe to you who eat all the best food, And drink wine in large bowls, And tread upon the righteous with your might.* (1 Enoch 94:6) — so the two ways here are not abstract but social: the system of violence and oppression is dismantled, the humble walk preserved.',
+       sv.verse_id, ev.verse_id, 'extras', 52309
+  FROM _session250_en93_lookup sv, _session250_en93_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=93 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-93-two-ways-choose-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses sets the same two ways Enoch sets before his sons in 93:7.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch''s "choose... that ye may live... and that your seed may be multiplied" (93:7) is Moses'' choose-life-and-thy-seed-may-live verbatim in substance.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* The Psalter''s two ways match Enoch''s "seek not the counsel of the ungodly" in 93:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 7:13 — *Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:* Yahusha shows the very two paths Enoch shows in 93:4, the way of unrighteousness "cut off."'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Ecclesiasticus 15:17 — *Before man is life and death; and whether him liketh shall be given him.* Sirach sets life and death before man exactly as Enoch bids his sons choose in 93:7.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=15 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-93-perish-way-of-wicked
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalms 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalter ends where Enoch begins: all who walk in unrighteousness shall perish (93:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-perish-way-of-wicked'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Proverbs 4:18 — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* Solomon''s path of the just is Enoch''s path of righteousness in 93:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-perish-way-of-wicked'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=4 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 4:19 — *The way of the wicked is as darkness: they know not at what they stumble.* The way of the wicked stumbling in the dark is the path of unrighteousness "cut off" in 93:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-perish-way-of-wicked'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 7:14 — *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* The narrow way that leadeth unto life is Enoch''s path of righteousness chosen in 93:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-perish-way-of-wicked'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Wisdom of Solomon 5:7 — *We wearied ourselves in the way of wickedness and destruction: yes, we have gone through deserts, where there lay no way: but as for the way of Yahuah (God), we have not known it.* The ungodly''s own confession that those who walk in unrighteousness perish (93:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-perish-way-of-wicked'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-93-love-god-love-neighbour
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 6:5 — *And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* The Shema''s love-command is the heart of Enoch''s path of righteousness in 93:9.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-love-god-love-neighbour'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 22:37 — *Yahusha (Jesus) said unto him, Thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart, and with all thy soul, and with all thy mind.* Yahusha names the first great commandment Enoch already names in 93:9.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-love-god-love-neighbour'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=22 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 22:39 — *And the second is like unto it, Thou shalt love thy neighbour as thyself.* The second commandment is Enoch''s "love your neighbour as yourself" in 93:9, verbatim in substance.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-love-god-love-neighbour'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=22 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 20:2 — *And he commanded them that they should observe the way of Yahuah (God); that they should work righteousness, and love each his neighbour, and act on this manner amongst all men; that they should each so walk with regard to them as to do judgment and righteousness on the earth.* Abraham charges his house with the same love-neighbour way Enoch sets in 93:9.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-love-god-love-neighbour'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=9
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=20 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 7:20 — *And in the twenty-eighth jubilee Noah began to enjoin upon his sons'' sons the ordinances and commandments, and all the judgments that he knew, and he exhorted his sons to observe righteousness, and to cover the shame of their flesh, and to bless their Creator, and honour father and mother, and love their neighbour, and guard their souls from fornication and uncleanness and all iniquity.* Noah enjoins the love-neighbour way Enoch defines in 93:9.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-love-god-love-neighbour'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=9
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=7 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-93-do-justice-walk-humbly
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Micah 6:8 — *He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* Micah''s do-justly, love-mercy, walk-humbly is Enoch''s path of righteousness in 93:5 line for line.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-do-justice-walk-humbly'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=6 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Enoch 94:6 — *Woe to you who eat all the best food, And drink wine in large bowls, And tread upon the righteous with your might.* The very violence and oppression of Enoch''s wicked path (93:6) is the woe the next chapter sentences.'
+  FROM cross_reference_threads t, cross_references x, _session250_en93_lookup sv, _session250_en93_lookup tv
+ WHERE t.slug='1-enoch-93-do-justice-walk-humbly'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=93 AND sv.verse_number=6
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=94 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_94.sql (session250 1-enoch 94) -----
+-- Source anchor: enoch/1-enoch ch94. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en94 (view _session250_en94_lookup). Sort band base 52325, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en94_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-94-two-ways-choose-life
+  ('enoch', '1-enoch', 94, 1, 'canon', 'deuteronomy', 30, 15, 'free', E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses sets the very same two ways before Israel that Enoch sets before his sons in 94:1.'),
+  ('enoch', '1-enoch', 94, 23, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch''s closing charge to choose the path of righteousness ''that ye may live... and that your seed may be multiplied'' echoes Moses'' ''choose life... that thou and thy seed may live'' word for word in theme (94:23).'),
+  ('enoch', '1-enoch', 94, 2, 'canon', 'jeremiah', 21, 8, 'free', E'Jeremiah 21:8 — *And unto this people thou shalt say, Thus saith Yahuah (LORD); Behold, I set before you the way of life, and the way of death.* The prophet names the same fork — the way of life against the path of death revealed to a generation in 94:2.'),
+  ('enoch', '1-enoch', 94, 1, 'canon', 'psalms', 1, 6, 'free', E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalter''s two-way opening matches Enoch''s promise that the paths of righteousness endure while the paths of unrighteousness ''shall suddenly be destroyed and vanish'' (94:1).'),
+  ('enoch', '1-enoch', 94, 1, 'canon', 'proverbs', 4, 18, 'free', E'Proverbs 4:18 — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* Solomon''s shining path of the just is Enoch''s ''paths of righteousness worthy of acceptance'' (94:1).'),
+  ('enoch', '1-enoch', 94, 2, 'canon', 'matthew', 7, 13, 'free', E'Matthew 7:13 — *Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:* Yahusha''s broad road to destruction is Enoch''s ''paths of violence and death'' that many hold to instead of righteousness (94:2).'),
+  ('enoch', '1-enoch', 94, 23, 'canon', 'matthew', 7, 14, 'free', E'Matthew 7:14 — *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* The narrow way that leads to life is the path Enoch charges his sons to choose, ''that ye may live'' (94:23).'),
+  -- thread: 1-enoch-94-woe-to-the-rich-trust
+  ('enoch', '1-enoch', 94, 3, 'canon', 'psalms', 49, 6, 'free', E'Psalm 49:6 — *They that trust in their wealth, and boast themselves in the multitude of their riches;* the very posture Enoch condemns — trusting in riches instead of remembering the God of Spirits (94:3).'),
+  ('enoch', '1-enoch', 94, 5, 'canon', 'psalms', 49, 7, 'free', E'Psalm 49:7 — *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him:* riches cannot ransom a man in the day of affliction, exactly as Enoch says they ''shall not deliver you'' (94:5).'),
+  ('enoch', '1-enoch', 94, 3, 'canon', 'psalms', 49, 17, 'free', E'Psalm 49:17 — *For when he dieth he shall carry nothing away: his glory shall not descend after him.* The rich man departs from his riches at death, just as Enoch warns ''from your riches shall you depart'' (94:3).'),
+  ('enoch', '1-enoch', 94, 4, 'canon', 'luke', 12, 20, 'free', E'Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* Yahusha''s rich fool who boasts ''we have become great and glorious'' meets the same reckoning Enoch announces (94:4).'),
+  ('enoch', '1-enoch', 94, 3, 'canon', 'james', 5, 1, 'free', E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James pronounces Enoch''s identical woe on the rich whose wealth will fail them (94:3).'),
+  ('enoch', '1-enoch', 94, 5, 'apocrypha', 'the-wisdom-of-solomon', 5, 8, 'extras', E'Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The rich confess at the judgement that their wealth could not save them, the very helplessness Enoch foretells in the day of affliction (94:5).'),
+  -- thread: 1-enoch-94-riches-shall-not-endure-grass
+  ('enoch', '1-enoch', 94, 8, 'apocrypha', 'ecclesiasticus', 11, 19, 'extras', E'Ecclesiasticus 11:19 — *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die.* Sirach mocks the hoarder''s ''let us do what we purposed'' plan with the very ignorance of his end that Enoch exposes (94:8).'),
+  ('enoch', '1-enoch', 94, 12, 'canon', 'psalms', 37, 2, 'free', E'Psalm 37:2 — *For they shall soon be cut down like the grass, and wither as the green herb.* The Psalter''s withering-grass image of the wicked is exactly Enoch''s ''destroyed like grass... like the young grass that withers'' (94:12).'),
+  ('enoch', '1-enoch', 94, 16, 'canon', 'psalms', 37, 20, 'free', E'Psalm 37:20 — *But the wicked shall perish, and the enemies of Yahuah (LORD) shall be as the fat of lambs: they shall consume; into smoke shall they consume away.* The sinner''s riches and glory do not last but consume away, the fate Enoch pronounces (94:16).'),
+  ('enoch', '1-enoch', 94, 12, 'canon', 'james', 5, 3, 'free', E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* James''s hoarded gold turned to fire-witness matches Enoch''s sinners cast into the fiery furnace (94:12).'),
+  -- thread: 1-enoch-94-woe-luxury-tread-on-poor
+  ('enoch', '1-enoch', 94, 6, 'canon', 'isaiah', 5, 8, 'free', E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah''s woe on those who seize land and tread out the poor is Enoch''s woe on those who ''tread upon the righteous with your might'' (94:6).'),
+  ('enoch', '1-enoch', 94, 18, 'canon', 'isaiah', 5, 22, 'free', E'Isaiah 5:22 — *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink:* the mighty wine-drinkers Isaiah condemns are Enoch''s who ''drink the finest wine, And tread upon the poor with your might'' (94:18).'),
+  ('enoch', '1-enoch', 94, 6, 'canon', 'amos', 6, 6, 'free', E'Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* Amos''s ''wine in bowls'' indifferent to the afflicted is verbatim the picture Enoch draws — ''drink wine in large bowls, And tread upon the righteous'' (94:6).'),
+  ('enoch', '1-enoch', 94, 19, 'canon', 'luke', 6, 25, 'free', E'Luke 6:25 — *Woe unto you that are full! for ye shall hunger. Woe unto you that laugh now! for ye shall mourn and weep.* Yahusha''s woe on the full who shall hunger is word-for-word Enoch''s ''Woe to you who are full of fatness! For you shall be hungry'' (94:19).'),
+  ('enoch', '1-enoch', 94, 18, 'canon', 'james', 5, 5, 'free', E'James 5:5 — *Ye have lived in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter.* James condemns the same self-indulgent feasting on the backs of others that Enoch pronounces woe upon (94:18).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en94_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en94_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-94-two-ways-choose-life',
+       E'The two ways — choose the paths of righteousness, that ye may live',
+       E'Enoch frames the whole Epistle as a choice between two roads: *And now I say unto you, my sons, love righteousness and walk therein; For the paths of righteousness are worthy of acceptance, But the paths of unrighteousness shall suddenly be destroyed and vanish* (1 Enoch 94:1), closing with the charge *And now, my sons, choose for yourselves The paths of righteousness, And walk therein, That ye may live and prosper, And that your seed may be multiplied upon the earth* (1 Enoch 94:23). It ain''t new — this is Moses'' covenant summons at the edge of the land: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15), *therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). The same two roads stand in Jeremiah''s mouth: *Thus saith Yahuah (LORD); Behold, I set before you the way of life, and the way of death* (Jeremiah 21:8). Torah is the way of life, never the curse: the Psalter opens on it — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6) — and Proverbs paints the two paths in light and dark: *But the path of the just is as the shining light, that shineth more and more unto the perfect day* (Proverbs 4:18) against *The way of the wicked is as darkness: they know not at what they stumble* (Proverbs 4:19). Yahusha set the same fork before the crowds: *Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat* (Matthew 7:13), *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:14). One ancient summons, from Sinai to Enoch to the Sermon on the Mount: walk the way that leads to life.',
+       sv.verse_id, ev.verse_id, 'extras', 52325
+  FROM _session250_en94_lookup sv, _session250_en94_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=94 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-94-woe-to-the-rich-trust',
+       E'Woe to you who trust in your riches — they will not deliver in the day of affliction',
+       E'The first woe falls not on persons but on the system of misplaced trust: *Woe to you who are rich! For you have trusted in your riches, And from your riches shall you depart, Because you have not remembered Yahuah (God) of Spirits in the days of your riches* (1 Enoch 94:3), for *in the day of your affliction you shall not be able to save yourselves; And your riches shall not deliver you* (1 Enoch 94:5). The Tanakh already weighed this exact futility: *They that trust in their wealth, and boast themselves in the multitude of their riches* (Psalm 49:6) yet *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him* (Psalm 49:7), for *when he dieth he shall carry nothing away: his glory shall not descend after him* (Psalm 49:17). Yahusha told the parable of just such a man, whose granaries Enoch will picture in the next breath: *Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry* (Luke 12:19) — to whom *Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). James thunders the same woe over the same departing wealth: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1). And the Wisdom of Solomon puts the lament in the mouths of the rich themselves at the judgement: *What has pride profited us? or what good has riches with our vaunting brought us?* (Wisdom of Solomon 5:8). The wealth does not save — only the God of Spirits, unremembered in the days of plenty, judges in the day of affliction.',
+       sv.verse_id, ev.verse_id, 'extras', 52328
+  FROM _session250_en94_lookup sv, _session250_en94_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=94 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-94-riches-shall-not-endure-grass',
+       E'Your riches shall not endure — you shall wither like grass',
+       E'Enoch answers the rich man''s boast with its end: he says *We have become rich with riches and have possessions; And we have acquired everything that we have desired* (1 Enoch 94:7) and lays plans, *let us do what we purposed* (1 Enoch 94:8), but the verdict comes — *But you shall be destroyed like grass, And like the young grass that withers, And you shall be cast into the fiery furnace* (1 Enoch 94:12), and again, *Woe to you, O sinners! For your riches shall not endure, And your glory shall not last* (1 Enoch 94:16). The boast and its swift undoing are an old refrain. Ecclesiasticus already mocked the hoarder''s plan: *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die* (Ecclesiasticus 11:19). The withering-grass figure is the Psalter''s standing image of the wicked''s end: *For they shall soon be cut down like the grass, and wither as the green herb* (Psalm 37:2), and *the wicked shall perish... into smoke shall they consume away* (Psalm 37:20). James names the rust on the hoarded wealth as a witness of fire: *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days* (James 5:3). The riches gathered in unrighteousness do not endure; the glory the sinner claims withers like cut grass and is cast into the furnace.',
+       sv.verse_id, ev.verse_id, 'extras', 52331
+  FROM _session250_en94_lookup sv, _session250_en94_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=94 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-94-woe-luxury-tread-on-poor',
+       E'Woe to you who feast in luxury and tread upon the poor',
+       E'The woes turn to those who feast on the backs of the oppressed: *Woe to you who eat all the best food, And drink wine in large bowls, And tread upon the righteous with your might* (1 Enoch 94:6), and again *Woe to you who eat the marrow of wheat, And drink the finest wine, And tread upon the poor with your might* (1 Enoch 94:18). This dismantles a system of luxury built on injustice — and Isaiah pronounced the identical woe: *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* (Isaiah 5:8), *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink* (Isaiah 5:22). Amos draws the very picture of bowls of wine and feasting indifferent to the afflicted: *That lie upon beds of ivory, and stretch themselves upon their couches, and eat the lambs out of the flock* (Amos 6:4), *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph* (Amos 6:6). Yahusha sets the same woe over against the Beatitudes: *But woe unto you that are rich! for ye have received your consolation* (Luke 6:24), *Woe unto you that are full! for ye shall hunger* (Luke 6:25) — which is Enoch''s own sentence, *Woe to you who are full of fatness! For you shall be hungry, And you shall thirst* (1 Enoch 94:19). And James seals it: *Ye have lived in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter* (James 5:5). The judgement targets the oppression, not the persons; the poor and the righteous trodden under foot are the victims the God of Spirits will vindicate.',
+       sv.verse_id, ev.verse_id, 'extras', 52334
+  FROM _session250_en94_lookup sv, _session250_en94_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=94 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-94-two-ways-choose-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses sets the very same two ways before Israel that Enoch sets before his sons in 94:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch''s closing charge to choose the path of righteousness ''that ye may live... and that your seed may be multiplied'' echoes Moses'' ''choose life... that thou and thy seed may live'' word for word in theme (94:23).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 21:8 — *And unto this people thou shalt say, Thus saith Yahuah (LORD); Behold, I set before you the way of life, and the way of death.* The prophet names the same fork — the way of life against the path of death revealed to a generation in 94:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=21 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalter''s two-way opening matches Enoch''s promise that the paths of righteousness endure while the paths of unrighteousness ''shall suddenly be destroyed and vanish'' (94:1).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Proverbs 4:18 — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* Solomon''s shining path of the just is Enoch''s ''paths of righteousness worthy of acceptance'' (94:1).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=4 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Matthew 7:13 — *Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat:* Yahusha''s broad road to destruction is Enoch''s ''paths of violence and death'' that many hold to instead of righteousness (94:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Matthew 7:14 — *Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it.* The narrow way that leads to life is the path Enoch charges his sons to choose, ''that ye may live'' (94:23).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-94-woe-to-the-rich-trust
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 49:6 — *They that trust in their wealth, and boast themselves in the multitude of their riches;* the very posture Enoch condemns — trusting in riches instead of remembering the God of Spirits (94:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-to-the-rich-trust'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 49:7 — *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him:* riches cannot ransom a man in the day of affliction, exactly as Enoch says they ''shall not deliver you'' (94:5).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-to-the-rich-trust'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 49:17 — *For when he dieth he shall carry nothing away: his glory shall not descend after him.* The rich man departs from his riches at death, just as Enoch warns ''from your riches shall you depart'' (94:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-to-the-rich-trust'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* Yahusha''s rich fool who boasts ''we have become great and glorious'' meets the same reckoning Enoch announces (94:4).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-to-the-rich-trust'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James pronounces Enoch''s identical woe on the rich whose wealth will fail them (94:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-to-the-rich-trust'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The rich confess at the judgement that their wealth could not save them, the very helplessness Enoch foretells in the day of affliction (94:5).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-to-the-rich-trust'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=5
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-94-riches-shall-not-endure-grass
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ecclesiasticus 11:19 — *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die.* Sirach mocks the hoarder''s ''let us do what we purposed'' plan with the very ignorance of his end that Enoch exposes (94:8).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-riches-shall-not-endure-grass'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=8
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=11 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 37:2 — *For they shall soon be cut down like the grass, and wither as the green herb.* The Psalter''s withering-grass image of the wicked is exactly Enoch''s ''destroyed like grass... like the young grass that withers'' (94:12).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-riches-shall-not-endure-grass'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 37:20 — *But the wicked shall perish, and the enemies of Yahuah (LORD) shall be as the fat of lambs: they shall consume; into smoke shall they consume away.* The sinner''s riches and glory do not last but consume away, the fate Enoch pronounces (94:16).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-riches-shall-not-endure-grass'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* James''s hoarded gold turned to fire-witness matches Enoch''s sinners cast into the fiery furnace (94:12).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-riches-shall-not-endure-grass'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-94-woe-luxury-tread-on-poor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah''s woe on those who seize land and tread out the poor is Enoch''s woe on those who ''tread upon the righteous with your might'' (94:6).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-luxury-tread-on-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 5:22 — *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink:* the mighty wine-drinkers Isaiah condemns are Enoch''s who ''drink the finest wine, And tread upon the poor with your might'' (94:18).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-luxury-tread-on-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* Amos''s ''wine in bowls'' indifferent to the afflicted is verbatim the picture Enoch draws — ''drink wine in large bowls, And tread upon the righteous'' (94:6).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-luxury-tread-on-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=6 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Luke 6:25 — *Woe unto you that are full! for ye shall hunger. Woe unto you that laugh now! for ye shall mourn and weep.* Yahusha''s woe on the full who shall hunger is word-for-word Enoch''s ''Woe to you who are full of fatness! For you shall be hungry'' (94:19).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-luxury-tread-on-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'James 5:5 — *Ye have lived in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter.* James condemns the same self-indulgent feasting on the backs of others that Enoch pronounces woe upon (94:18).'
+  FROM cross_reference_threads t, cross_references x, _session250_en94_lookup sv, _session250_en94_lookup tv
+ WHERE t.slug='1-enoch-94-woe-luxury-tread-on-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=94 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_95.sql (session250 1-enoch 95) -----
+-- Source anchor: enoch/1-enoch ch95. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en95 (view _session250_en95_lookup). Sort band base 52350, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en95_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-95-woe-pervert-the-words
+  ('enoch', '1-enoch', 95, 2, 'canon', 'isaiah', 5, 20, 'free', E'Isaiah 5:20 — *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!* — Isaiah''s woe against inverting the moral order is Enoch''s woe on those who alter the words of uprightness and write unrighteousness in 95:2.'),
+  ('enoch', '1-enoch', 95, 1, 'canon', 'isaiah', 5, 21, 'free', E'Isaiah 5:21 — *Woe unto them that are wise in their own eyes, and prudent in their own sight!* — the self-wise who glory in their own lying are the godless of Enoch 95:1 who shall find no good.'),
+  ('enoch', '1-enoch', 95, 1, 'canon', 'luke', 6, 24, 'free', E'Luke 6:24 — *But woe unto you that are rich! for ye have received your consolation.* — Yahusha (Jesus) takes up the same prophetic woe-form Enoch uses, pronouncing loss on those whose consolation is already spent.'),
+  -- thread: 1-enoch-95-woe-to-the-rich-oppressor
+  ('enoch', '1-enoch', 95, 6, 'canon', 'amos', 6, 6, 'free', E'Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* — Amos''s woe on those who drink wine in bowls is verbatim Enoch''s woe on those who drink wine in large bowls and tread upon the poor in 95:6.'),
+  ('enoch', '1-enoch', 95, 7, 'canon', 'amos', 6, 7, 'free', E'Amos 6:7 — *Therefore now shall they go captive with the first that go captive, and the banquet of them that stretched themselves shall be removed.* — the banquet removed and the feasters led captive is the cutting-off of the rich oppressor''s might in Enoch 95:4,7.'),
+  ('enoch', '1-enoch', 95, 8, 'canon', 'james', 5, 4, 'free', E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* — the many husbandmen and labourers of Enoch 95:8-10 are James''s defrauded reapers whose cry reaches Yahuah.'),
+  ('enoch', '1-enoch', 95, 7, 'canon', 'jeremiah', 17, 11, 'free', E'Jeremiah 17:11 — *As the partridge sitteth on eggs, and hatcheth them not; so he that getteth riches, and not by right, shall leave them in the midst of his days, and at his end shall be a fool.* — riches acquired in unrighteousness (Enoch 95:7) end in folly and loss.'),
+  -- thread: 1-enoch-95-vanishing-riches-fiery-furnace
+  ('enoch', '1-enoch', 95, 13, 'canon', 'luke', 12, 19, 'free', E'Luke 12:19 — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* — the rich fool''s boast is the gathered-silver self-talk of Enoch 95:7-8 that the reckoning of 95:13 silences.'),
+  ('enoch', '1-enoch', 95, 13, 'canon', 'luke', 12, 20, 'free', E'Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* — ''where are your riches now?'' (Enoch 95:13) is the night the soul is required and the hoard left behind.'),
+  ('enoch', '1-enoch', 95, 15, 'apocrypha', 'the-wisdom-of-solomon', 5, 8, 'extras', E'Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* — the parallel extra-canon witness puts Enoch''s pride-filled heart (95:15) in the perished proud man''s own too-late confession.'),
+  ('enoch', '1-enoch', 95, 12, 'apocrypha', 'the-wisdom-of-solomon', 5, 9, 'extras', E'Wisdom of Solomon 5:9 — *All those things are passed away like a shadow, and as a post that hasted by;* — wealth passing like a shadow matches Enoch''s rich man destroyed like withering grass in 95:12.'),
+  -- thread: 1-enoch-95-two-paths-choose-righteousness
+  ('enoch', '1-enoch', 95, 18, 'canon', 'deuteronomy', 30, 15, 'free', E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* — Moses'' two-ways charge is precisely Enoch''s paths of righteousness and unrighteousness set before the sons in 95:17-18.'),
+  ('enoch', '1-enoch', 95, 18, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* — ''choose for yourselves the paths of righteousness... that ye may live and that your seed may be multiplied'' (Enoch 95:18) is Moses'' choose-life so thy seed may live.'),
+  ('enoch', '1-enoch', 95, 19, 'canon', 'psalms', 1, 6, 'free', E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* — the Psalter''s two ways match Enoch''s path of unrighteousness that ''shall be cut off'' in 95:17,19.'),
+  ('enoch', '1-enoch', 95, 17, 'canon', 'proverbs', 4, 18, 'free', E'Proverbs 4:18 — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* — the path of righteousness Enoch shows his sons (95:17) is wisdom''s shining path of the just.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en95_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en95_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-95-woe-pervert-the-words',
+       E'Woe to those who alter the words of uprightness',
+       E'Enoch''s first woes fall not on persons but on the systems of deceit that pervert the eternal law: *Woe to you who work godlessness, And glory in lying and oppression: You are lost, and no good shall you find.* (1 Enoch 95:1), and *Woe to you who alter the words of uprightness, And who write the words of unrighteousness and lying: They write their own judgment* (1 Enoch 95:2). This is the catalogue of Isaiah''s woes against those who invert God''s order — *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!* (Isaiah 5:20) and *Woe unto them that are wise in their own eyes, and prudent in their own sight!* (Isaiah 5:21). Yahusha (Jesus) turns the very same woe against the self-satisfied: *But woe unto you that are rich! for ye have received your consolation.* (Luke 6:24). Torah is the standard they twist — to rewrite the words of uprightness is to write one''s own sentence.',
+       sv.verse_id, ev.verse_id, 'extras', 52350
+  FROM _session250_en95_lookup sv, _session250_en95_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=95 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-95-woe-to-the-rich-oppressor',
+       E'Woe to those who tread upon the poor and acquire gold in unrighteousness',
+       E'The heart of the chapter is the woe on the rich oppressor who feasts while crushing the poor: *Woe to you who are full of fatness! For you shall be hungry, And you shall thirst.* (1 Enoch 95:5), *Woe to you who drink wine in large bowls, And tread upon the poor with your might.* (1 Enoch 95:6), *Woe to you who acquire gold and silver in unrighteousness And say: ''We have become rich with riches and have possessions; And we have acquired everything that we have desired.* (1 Enoch 95:7). Amos pronounced the identical sentence on the luxuriating elite of his day: *Woe to them that are at ease in Zion... That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph. Therefore now shall they go captive with the first that go captive* (Amos 6:1,6,7). James carries it into the last days: *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* (James 5:4) — the same gathered silver and many husbandmen of Enoch 95:8-9, indicted. The systems of fraud are dismantled, not the persons; wealth gotten by injustice cannot stand, *for he that getteth riches, and not by right... at his end shall be a fool.* (Jeremiah 17:11).',
+       sv.verse_id, ev.verse_id, 'extras', 52353
+  FROM _session250_en95_lookup sv, _session250_en95_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=95 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-95-vanishing-riches-fiery-furnace',
+       E'Where are your riches now? — the rich man''s wealth perishes',
+       E'Enoch stages the reckoning where the hoarded glory evaporates: *But you shall be destroyed like grass, And like the young grass that withers, And you shall be cast into the fiery furnace.* (1 Enoch 95:12), *And they shall say to you: ''Where are your riches now, And where are your possessions, And where is your glory, And where is your power?''* (1 Enoch 95:13). Yahusha (Jesus) tells exactly this scene in the parable of the rich fool: *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry. But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:19-20) — the very boast of Enoch 95:7-8 (''we have gathered silver... let us do what we purposed'') answered by the night of demand. And the Wisdom of Solomon puts the same confession in the mouths of the perished proud: *What has pride profited us? or what good has riches with our vaunting brought us? All those things are passed away like a shadow* (Wisdom of Solomon 5:8-9) — the heart full of pride (95:15) seeing too late that the grass withers.',
+       sv.verse_id, ev.verse_id, 'extras', 52356
+  FROM _session250_en95_lookup sv, _session250_en95_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=12
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=95 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-95-two-paths-choose-righteousness',
+       E'The two paths — choose the way of righteousness and live',
+       E'After the woes, Enoch sets the great choice that governs the whole Epistle (the two ways of chs 91 and 94): *And now, my sons, listen to me, And I will show you the paths of righteousness, And the paths of unrighteousness, And I will show you how the paths of unrighteousness Shall be cut off.* (1 Enoch 95:17), *And now, my sons, choose for yourselves The paths of righteousness, And walk therein, That ye may live and prosper, And that your seed may be multiplied upon the earth.* (1 Enoch 95:18). This is Moses'' covenant charge word for word — life set against death, with the seed''s blessing hanging on the choice: *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15) and *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19). Torah is the path of life, never the curse. The Psalter opens on the same two ways — *Blessed is the man that walketh not in the counsel of the ungodly... For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* (Psalm 1:1,6) — and Proverbs lights the contrast: *But the path of the just is as the shining light, that shineth more and more unto the perfect day. The way of the wicked is as darkness* (Proverbs 4:18-19). Enoch shows the unrighteous path ''cut off''; the elect walk the way that endures.',
+       sv.verse_id, ev.verse_id, 'extras', 52359
+  FROM _session250_en95_lookup sv, _session250_en95_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=17
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=95 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-95-woe-pervert-the-words
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 5:20 — *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!* — Isaiah''s woe against inverting the moral order is Enoch''s woe on those who alter the words of uprightness and write unrighteousness in 95:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-woe-pervert-the-words'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 5:21 — *Woe unto them that are wise in their own eyes, and prudent in their own sight!* — the self-wise who glory in their own lying are the godless of Enoch 95:1 who shall find no good.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-woe-pervert-the-words'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 6:24 — *But woe unto you that are rich! for ye have received your consolation.* — Yahusha (Jesus) takes up the same prophetic woe-form Enoch uses, pronouncing loss on those whose consolation is already spent.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-woe-pervert-the-words'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-95-woe-to-the-rich-oppressor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* — Amos''s woe on those who drink wine in bowls is verbatim Enoch''s woe on those who drink wine in large bowls and tread upon the poor in 95:6.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-woe-to-the-rich-oppressor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=6 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Amos 6:7 — *Therefore now shall they go captive with the first that go captive, and the banquet of them that stretched themselves shall be removed.* — the banquet removed and the feasters led captive is the cutting-off of the rich oppressor''s might in Enoch 95:4,7.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-woe-to-the-rich-oppressor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=6 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* — the many husbandmen and labourers of Enoch 95:8-10 are James''s defrauded reapers whose cry reaches Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-woe-to-the-rich-oppressor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 17:11 — *As the partridge sitteth on eggs, and hatcheth them not; so he that getteth riches, and not by right, shall leave them in the midst of his days, and at his end shall be a fool.* — riches acquired in unrighteousness (Enoch 95:7) end in folly and loss.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-woe-to-the-rich-oppressor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=17 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-95-vanishing-riches-fiery-furnace
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 12:19 — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* — the rich fool''s boast is the gathered-silver self-talk of Enoch 95:7-8 that the reckoning of 95:13 silences.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-vanishing-riches-fiery-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* — ''where are your riches now?'' (Enoch 95:13) is the night the soul is required and the hoard left behind.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-vanishing-riches-fiery-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* — the parallel extra-canon witness puts Enoch''s pride-filled heart (95:15) in the perished proud man''s own too-late confession.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-vanishing-riches-fiery-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 5:9 — *All those things are passed away like a shadow, and as a post that hasted by;* — wealth passing like a shadow matches Enoch''s rich man destroyed like withering grass in 95:12.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-vanishing-riches-fiery-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=12
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-95-two-paths-choose-righteousness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* — Moses'' two-ways charge is precisely Enoch''s paths of righteousness and unrighteousness set before the sons in 95:17-18.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-two-paths-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* — ''choose for yourselves the paths of righteousness... that ye may live and that your seed may be multiplied'' (Enoch 95:18) is Moses'' choose-life so thy seed may live.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-two-paths-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* — the Psalter''s two ways match Enoch''s path of unrighteousness that ''shall be cut off'' in 95:17,19.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-two-paths-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 4:18 — *But the path of the just is as the shining light, that shineth more and more unto the perfect day.* — the path of righteousness Enoch shows his sons (95:17) is wisdom''s shining path of the just.'
+  FROM cross_reference_threads t, cross_references x, _session250_en95_lookup sv, _session250_en95_lookup tv
+ WHERE t.slug='1-enoch-95-two-paths-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=95 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=4 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_96.sql (session250 1-enoch 96) -----
+-- Source anchor: enoch/1-enoch ch96. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en96 (view _session250_en96_lookup). Sort band base 52375, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en96_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-96-woe-treading-on-the-poor
+  ('enoch', '1-enoch', 96, 1, 'canon', 'amos', 5, 11, 'free', E'Amos 5:11 — *Forasmuch therefore as your treading is upon the poor, and ye take from him burdens of wheat: ye have built houses of hewn stone, but ye shall not dwell in them; ye have planted pleasant vineyards, but ye shall not drink wine of them.* The prophet''s word for the very treading-and-feasting Enoch condemns in 96:1, and the houses the oppressors shall not keep.'),
+  ('enoch', '1-enoch', 96, 4, 'canon', 'amos', 5, 12, 'free', E'Amos 5:12 — *For I know your manifold transgressions and your mighty sins: they afflict the just, they take a bribe, and they turn aside the poor in the gate from their right.* The afflicting of the just stands behind Enoch''s repeated charge that they tread upon the poor with their might (96:4).'),
+  ('enoch', '1-enoch', 96, 1, 'canon', 'isaiah', 3, 14, 'free', E'Isaiah 3:14 — *Yahuah (LORD) will enter into judgment with the ancients of his people, and the princes thereof: for ye have eaten up the vineyard; the spoil of the poor is in your houses.* Those who devour the might of others and eat the best food (96:1) are the very princes who have eaten up the vineyard.'),
+  ('enoch', '1-enoch', 96, 4, 'canon', 'isaiah', 3, 15, 'free', E'Isaiah 3:15 — *What mean ye that ye beat my people to pieces, and grind the faces of the poor? saith Adonai Yahuah (the Lord GOD) of hosts.* Grinding the faces of the poor is Isaiah''s image for the trampling Enoch denounces in 96:4.'),
+  ('enoch', '1-enoch', 96, 4, 'canon', 'proverbs', 22, 23, 'free', E'Proverbs 22:23 — *For Yahuah (LORD) will plead their cause, and spoil the soul of those that spoiled them.* Torah''s guarantee that Yahuah avenges the oppressed poor is the ground of every woe Enoch pronounces in 96:1-4.'),
+  -- thread: 1-enoch-96-woe-to-the-rich-and-full
+  ('enoch', '1-enoch', 96, 2, 'canon', 'luke', 6, 24, 'free', E'Luke 6:24 — *But woe unto you that are rich! for ye have received your consolation.* Yahusha''s woe on the rich is the same sentence Enoch pronounces on the mighty in unrighteousness whose might shall be cut off (96:2).'),
+  ('enoch', '1-enoch', 96, 3, 'canon', 'luke', 6, 25, 'free', E'Luke 6:25 — *Woe unto you that are full! for ye shall hunger. Woe unto you that laugh now! for ye shall mourn and weep.* Nearly verbatim with Enoch 96:3 — the full shall be hungry and thirst.'),
+  ('enoch', '1-enoch', 96, 2, 'canon', 'james', 5, 1, 'free', E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James opens his woe on the rich exactly where Enoch does — the mighty in unrighteousness facing the cutting-off of their might (96:2).'),
+  ('enoch', '1-enoch', 96, 2, 'canon', 'james', 5, 3, 'free', E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The cankering of hoarded wealth is how James shows the might cut off that Enoch warns of in 96:2.'),
+  ('enoch', '1-enoch', 96, 3, 'apocrypha', 'the-wisdom-of-solomon', 5, 8, 'extras', E'Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* Wisdom voices the doomed rich confessing the emptiness of the fatness Enoch says shall turn to hunger (96:3).'),
+  -- thread: 1-enoch-96-granaries-gold-rich-fool
+  ('enoch', '1-enoch', 96, 7, 'canon', 'luke', 12, 18, 'free', E'Luke 12:18 — *And he said, This will I do: I will pull down my barns, and build greater; and there will I bestow all my fruits and my goods.* The rich fool''s brimming barns are the very granaries Enoch''s hoarders boast of in 96:7.'),
+  ('enoch', '1-enoch', 96, 5, 'canon', 'luke', 12, 19, 'free', E'Luke 12:19 — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* The fool''s self-talk matches the boast Enoch puts in the rich man''s mouth — we have acquired everything we desired (96:5).'),
+  ('enoch', '1-enoch', 96, 5, 'canon', 'luke', 12, 20, 'free', E'Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* Elohim''s verdict on the rich fool is the destruction Enoch foretells for those who gathered gold in unrighteousness (96:5).'),
+  ('enoch', '1-enoch', 96, 5, 'canon', 'amos', 8, 5, 'free', E'Amos 8:5 — *Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* Amos shows the rigged scales by which the gold of 96:5 was acquired in unrighteousness.'),
+  ('enoch', '1-enoch', 96, 7, 'canon', 'amos', 8, 6, 'free', E'Amos 8:6 — *That we may buy the poor for silver, and the needy for a pair of shoes; yea, and sell the refuse of the wheat?* The wheat hoarded in Enoch''s full granaries (96:7) is the same refuse Amos says was sold by defrauding the needy.'),
+  -- thread: 1-enoch-96-labourers-hire-grass-furnace
+  ('enoch', '1-enoch', 96, 8, 'canon', 'james', 5, 4, 'free', E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The many labourers of Enoch 96:8 are James'' reapers whose withheld wages cry to Yahuah of hosts.'),
+  ('enoch', '1-enoch', 96, 10, 'canon', 'james', 5, 6, 'free', E'James 5:6 — *Ye have condemned and killed the just; and he doth not resist you.* The proud exalted as gods (96:9) who are then cast into the furnace (96:10) are those James says condemned and killed the just.'),
+  ('enoch', '1-enoch', 96, 8, 'apocrypha', 'ecclesiasticus', 34, 22, 'extras', E'Ecclesiasticus 34:22 — *He that takes away his neighbour''s living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder.* Ben Sira makes defrauding the many labourers of Enoch 96:8 a deed of blood, the very crime drawing the woe.'),
+  ('enoch', '1-enoch', 96, 10, 'apocrypha', 'the-wisdom-of-solomon', 5, 14, 'extras', E'Wisdom of Solomon 5:14 — *For the hope of the ungodly is like dust that is blown away with the wind; like a thin froth that is driven away with the storm; like as the smoke which is dispersed here and there with a tempest, and passeth away as the remembrance of a guest that tarrieth but a day.* Wisdom''s vanishing chaff is Enoch''s withering grass cast into the fiery furnace (96:10).'),
+  -- thread: 1-enoch-96-two-paths-choose-righteousness
+  ('enoch', '1-enoch', 96, 15, 'canon', 'deuteronomy', 30, 15, 'free', E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses'' two ways are the paths of righteousness and unrighteousness Enoch sets before his sons in 96:15.'),
+  ('enoch', '1-enoch', 96, 16, 'canon', 'deuteronomy', 30, 16, 'free', E'Deuteronomy 30:16 — *In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.* Walking in Yahuah''s ways to live and multiply is the very life-and-prosperity Enoch promises those who walk the path of righteousness (96:16) — Torah is the way of life.'),
+  ('enoch', '1-enoch', 96, 16, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *therefore choose life, that both thou and thy seed may live:* Moses'' call to choose life and the seed live is exactly Enoch''s call to choose the paths of righteousness that the seed be multiplied (96:16).'),
+  ('enoch', '1-enoch', 96, 17, 'canon', 'psalms', 1, 6, 'free', E'Psalms 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalmist''s perishing way of the ungodly is the path of unrighteousness Enoch says shall be cut off (96:17).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en96_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en96_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-96-woe-treading-on-the-poor',
+       E'Woe to those who tread on the poor with their might',
+       E'Enoch''s first woe falls on the system of oppression, not on a class of persons: *Woe to you who devour the might of others, And live in wickedness and oppression, And eat the best food and drink wine in large bowls, And tread upon the righteous with your might.* (1 Enoch 96:1) — repeated against those who *drink wine in large bowls, And tread upon the poor with your might.* (1 Enoch 96:4) This is the prophets'' own indictment of injustice. Amos names the very crime — *Forasmuch therefore as your treading is upon the poor, and ye take from him burdens of wheat: ye have built houses of hewn stone, but ye shall not dwell in them; ye have planted pleasant vineyards, but ye shall not drink wine of them.* (Amos 5:11) — and *they afflict the just, they take a bribe, and they turn aside the poor in the gate from their right.* (Amos 5:12) Isaiah carries the same word to the rulers who devour the vineyard — *Yahuah (LORD) will enter into judgment with the ancients of his people, and the princes thereof: for ye have eaten up the vineyard; the spoil of the poor is in your houses.* (Isaiah 3:14) — and asks *What mean ye that ye beat my people to pieces, and grind the faces of the poor? saith Adonai Yahuah (the Lord GOD) of hosts.* (Isaiah 3:15) Torah''s own protection of the afflicted stands behind every woe — *Rob not the poor, because he is poor: neither oppress the afflicted in the gate:* (Proverbs 22:22) — for *Yahuah (LORD) will plead their cause, and spoil the soul of those that spoiled them.* (Proverbs 22:23) It ain''t new: Enoch is reading the same Torah and the same prophets, dismantling the machinery of injustice.',
+       sv.verse_id, ev.verse_id, 'extras', 52375
+  FROM _session250_en96_lookup sv, _session250_en96_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=96 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-96-woe-to-the-rich-and-full',
+       E'Woe to the mighty and the full — your might shall be cut off',
+       E'Enoch turns the woe upon the proud strong and the sated: *Woe to you who are mighty in unrighteousness! For your might shall be cut off.* (1 Enoch 96:2) and *Woe to you who are full of fatness! For you shall be hungry, And you shall thirst.* (1 Enoch 96:3) Yahusha speaks this same reversal almost word for word — *But woe unto you that are rich! for ye have received your consolation.* (Luke 6:24) and *Woe unto you that are full! for ye shall hunger. Woe unto you that laugh now! for ye shall mourn and weep.* (Luke 6:25) James thunders the same against the hoarding rich — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* (James 5:1) — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* (James 5:3) And Wisdom puts the despairing confession of the doomed in their own mouths — *What has pride profited us? or what good has riches with our vaunting brought us?* (Wisdom of Solomon 5:8) — *All those things are passed away like a shadow, and as a post that hasted by;* (Wisdom of Solomon 5:9) the same fading Enoch foretells. It ain''t new: the great reversal of the fat and the famished, the proud cut down, runs straight from Enoch into the Beatitudes'' woes.',
+       sv.verse_id, ev.verse_id, 'extras', 52378
+  FROM _session250_en96_lookup sv, _session250_en96_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=96 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-96-granaries-gold-rich-fool',
+       E'Gold gotten in unrighteousness — the boast of full granaries',
+       E'Enoch mocks the boast of the unjust rich: *Woe to you who acquire gold and silver in unrighteousness And say: ''We have become rich with riches and have possessions; And we have acquired everything that we have desired.* (1 Enoch 96:5) — *And our granaries are (brimful) as with water, And your husbandmen shall be many.* (1 Enoch 96:7) Yahusha''s parable of the rich fool answers that very swagger — *And he said, This will I do: I will pull down my barns, and build greater; and there will I bestow all my fruits and my goods.* (Luke 12:18) — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* (Luke 12:19) — yet *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20) Amos exposes how the brimming granaries were filled — by cheating the needy — *Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* (Amos 8:5) — *That we may buy the poor for silver, and the needy for a pair of shoes; yea, and sell the refuse of the wheat?* (Amos 8:6) It ain''t new: full barns built on fraud are condemned from Amos to Enoch to the Gospel.',
+       sv.verse_id, ev.verse_id, 'extras', 52381
+  FROM _session250_en96_lookup sv, _session250_en96_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=96 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-96-labourers-hire-grass-furnace',
+       E'The defrauded labourers and the grass cast into the furnace',
+       E'Enoch sets the multiplied labourers against the doom of the proud: *And your labourers shall be many, Even though they be few.* (1 Enoch 96:8) — *And they shall exalt you like a king, And they shall call you gods.* (1 Enoch 96:9) — *But you shall be destroyed like grass, And like the young grass that withers, And you shall be cast into the fiery furnace.* (1 Enoch 96:10) James cries out for those very labourers — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* (James 5:4) — and condemns the slaughter of the just — *Ye have condemned and killed the just; and he doth not resist you.* (James 5:6) Ben Sira makes withholding the labourer''s wage a capital crime — *He that takes away his neighbour''s living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder.* (Ecclesiasticus 34:22) And Wisdom describes the proud who were called gods passing away — *For the hope of the ungodly is like dust that is blown away with the wind; like a thin froth that is driven away with the storm; like as the smoke which is dispersed here and there with a tempest, and passeth away as the remembrance of a guest that tarrieth but a day.* (Wisdom of Solomon 5:14) — the very withering grass of Enoch''s furnace. It ain''t new: the cry of the cheated reaper and the burning of the proud chaff are one witness from Sirach to Enoch to James.',
+       sv.verse_id, ev.verse_id, 'extras', 52384
+  FROM _session250_en96_lookup sv, _session250_en96_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=96 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-96-two-paths-choose-righteousness',
+       E'The two paths — choose righteousness, that ye may live',
+       E'After the woes Enoch lays the two ways before his sons: *And now, my sons, listen to me, And I will show you the paths of righteousness, And the paths of unrighteousness, And I will show you how the paths of unrighteousness Shall be cut off.* (1 Enoch 96:15) — *And now, my sons, choose for yourselves The paths of righteousness, And walk therein, That ye may live and prosper, And that your seed may be multiplied upon the earth.* (1 Enoch 96:16) This is Moses'' covenant charge word for word. Torah is the way of life, never the curse — *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15) — *In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.* (Deuteronomy 30:16) — *therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19) Enoch''s promise that the seed may be multiplied upon the earth is Moses'' that thou and thy seed may live. The Psalter sets the same two roads — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* (Psalms 1:1) — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* (Psalms 1:6) — the path of unrighteousness that Enoch says shall be cut off. It ain''t new: the choice between life and death is the heart of the Torah, and Enoch sets it before his sons unchanged.',
+       sv.verse_id, ev.verse_id, 'extras', 52387
+  FROM _session250_en96_lookup sv, _session250_en96_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=15
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=96 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-96-woe-treading-on-the-poor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Amos 5:11 — *Forasmuch therefore as your treading is upon the poor, and ye take from him burdens of wheat: ye have built houses of hewn stone, but ye shall not dwell in them; ye have planted pleasant vineyards, but ye shall not drink wine of them.* The prophet''s word for the very treading-and-feasting Enoch condemns in 96:1, and the houses the oppressors shall not keep.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-woe-treading-on-the-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Amos 5:12 — *For I know your manifold transgressions and your mighty sins: they afflict the just, they take a bribe, and they turn aside the poor in the gate from their right.* The afflicting of the just stands behind Enoch''s repeated charge that they tread upon the poor with their might (96:4).'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-woe-treading-on-the-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 3:14 — *Yahuah (LORD) will enter into judgment with the ancients of his people, and the princes thereof: for ye have eaten up the vineyard; the spoil of the poor is in your houses.* Those who devour the might of others and eat the best food (96:1) are the very princes who have eaten up the vineyard.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-woe-treading-on-the-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=3 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 3:15 — *What mean ye that ye beat my people to pieces, and grind the faces of the poor? saith Adonai Yahuah (the Lord GOD) of hosts.* Grinding the faces of the poor is Isaiah''s image for the trampling Enoch denounces in 96:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-woe-treading-on-the-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=3 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Proverbs 22:23 — *For Yahuah (LORD) will plead their cause, and spoil the soul of those that spoiled them.* Torah''s guarantee that Yahuah avenges the oppressed poor is the ground of every woe Enoch pronounces in 96:1-4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-woe-treading-on-the-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=22 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-96-woe-to-the-rich-and-full
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 6:24 — *But woe unto you that are rich! for ye have received your consolation.* Yahusha''s woe on the rich is the same sentence Enoch pronounces on the mighty in unrighteousness whose might shall be cut off (96:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-woe-to-the-rich-and-full'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 6:25 — *Woe unto you that are full! for ye shall hunger. Woe unto you that laugh now! for ye shall mourn and weep.* Nearly verbatim with Enoch 96:3 — the full shall be hungry and thirst.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-woe-to-the-rich-and-full'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James opens his woe on the rich exactly where Enoch does — the mighty in unrighteousness facing the cutting-off of their might (96:2).'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-woe-to-the-rich-and-full'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The cankering of hoarded wealth is how James shows the might cut off that Enoch warns of in 96:2.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-woe-to-the-rich-and-full'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* Wisdom voices the doomed rich confessing the emptiness of the fatness Enoch says shall turn to hunger (96:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-woe-to-the-rich-and-full'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-96-granaries-gold-rich-fool
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 12:18 — *And he said, This will I do: I will pull down my barns, and build greater; and there will I bestow all my fruits and my goods.* The rich fool''s brimming barns are the very granaries Enoch''s hoarders boast of in 96:7.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-granaries-gold-rich-fool'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 12:19 — *And I will say to my soul, Soul, thou hast much goods laid up for many years; take thine ease, eat, drink, and be merry.* The fool''s self-talk matches the boast Enoch puts in the rich man''s mouth — we have acquired everything we desired (96:5).'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-granaries-gold-rich-fool'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* Elohim''s verdict on the rich fool is the destruction Enoch foretells for those who gathered gold in unrighteousness (96:5).'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-granaries-gold-rich-fool'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Amos 8:5 — *Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* Amos shows the rigged scales by which the gold of 96:5 was acquired in unrighteousness.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-granaries-gold-rich-fool'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Amos 8:6 — *That we may buy the poor for silver, and the needy for a pair of shoes; yea, and sell the refuse of the wheat?* The wheat hoarded in Enoch''s full granaries (96:7) is the same refuse Amos says was sold by defrauding the needy.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-granaries-gold-rich-fool'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-96-labourers-hire-grass-furnace
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The many labourers of Enoch 96:8 are James'' reapers whose withheld wages cry to Yahuah of hosts.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-labourers-hire-grass-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 5:6 — *Ye have condemned and killed the just; and he doth not resist you.* The proud exalted as gods (96:9) who are then cast into the furnace (96:10) are those James says condemned and killed the just.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-labourers-hire-grass-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ecclesiasticus 34:22 — *He that takes away his neighbour''s living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder.* Ben Sira makes defrauding the many labourers of Enoch 96:8 a deed of blood, the very crime drawing the woe.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-labourers-hire-grass-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=8
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=34 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 5:14 — *For the hope of the ungodly is like dust that is blown away with the wind; like a thin froth that is driven away with the storm; like as the smoke which is dispersed here and there with a tempest, and passeth away as the remembrance of a guest that tarrieth but a day.* Wisdom''s vanishing chaff is Enoch''s withering grass cast into the fiery furnace (96:10).'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-labourers-hire-grass-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=10
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-96-two-paths-choose-righteousness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses'' two ways are the paths of righteousness and unrighteousness Enoch sets before his sons in 96:15.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-two-paths-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:16 — *In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.* Walking in Yahuah''s ways to live and multiply is the very life-and-prosperity Enoch promises those who walk the path of righteousness (96:16) — Torah is the way of life.'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-two-paths-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 30:19 — *therefore choose life, that both thou and thy seed may live:* Moses'' call to choose life and the seed live is exactly Enoch''s call to choose the paths of righteousness that the seed be multiplied (96:16).'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-two-paths-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalms 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalmist''s perishing way of the ungodly is the path of unrighteousness Enoch says shall be cut off (96:17).'
+  FROM cross_reference_threads t, cross_references x, _session250_en96_lookup sv, _session250_en96_lookup tv
+ WHERE t.slug='1-enoch-96-two-paths-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=96 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_97.sql (session250 1-enoch 97) -----
+-- Source anchor: enoch/1-enoch ch97. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en97 (view _session250_en97_lookup). Sort band base 52400, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en97_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-97-riches-witness-against-them
+  ('enoch', '1-enoch', 97, 7, 'canon', 'james', 5, 3, 'free', E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The hoarded silver and gold of Enoch 97:7-8 becomes the very witness that eats the flesh of those who gathered it in unrighteousness.'),
+  ('enoch', '1-enoch', 97, 8, 'canon', 'habakkuk', 2, 6, 'free', E'Habakkuk 2:6 — *Shall not all these take up a parable against him, and a taunting proverb against him, and say, Woe to him that increaseth that which is not his! how long? and to him that ladeth himself with thick clay!* Habakkuk''s taunting woe against the man who increases what is not his is the same charge Enoch 97:8 lays on those who say ''let us do what we purposed.'''),
+  ('enoch', '1-enoch', 97, 14, 'canon', 'luke', 12, 20, 'free', E'Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* The rich man''s boast of acquired riches and glory in Enoch 97:14 is answered exactly as Yahusha answers the fool whose soul is required the same night.'),
+  ('enoch', '1-enoch', 97, 15, 'canon', 'proverbs', 11, 4, 'free', E'Proverbs 11:4 — *Riches profit not in the day of wrath: but righteousness delivereth from death.* The unrighteous wealth and proud heart exposed in Enoch 97:15 cannot profit in the day of wrath; only righteousness, the way Enoch will set out, delivers from death.'),
+  -- thread: 1-enoch-97-wine-bowls-tread-the-poor
+  ('enoch', '1-enoch', 97, 6, 'canon', 'amos', 6, 6, 'free', E'Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* Amos names the same wine-in-bowls feasting that Enoch 97:6 condemns, indifferent to the poor it treads down.'),
+  ('enoch', '1-enoch', 97, 6, 'canon', 'isaiah', 5, 22, 'free', E'Isaiah 5:22 — *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink:* Isaiah''s woe on those mighty to drink wine is the same indictment Enoch 97:6 brings against the wine-drinkers who tread upon the poor with their might.'),
+  ('enoch', '1-enoch', 97, 6, 'canon', 'james', 5, 4, 'free', E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The poor trodden in Enoch 97:6 are James''s defrauded reapers, whose cry has already entered the ears of Yahuah.'),
+  -- thread: 1-enoch-97-grass-that-withers-fiery-furnace
+  ('enoch', '1-enoch', 97, 12, 'apocrypha', 'the-wisdom-of-solomon', 5, 8, 'extras', E'Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The ungodly''s own lament in Wisdom echoes the proud rich of Enoch 97:11-12, whose vaunting riches profit nothing when they wither like grass.'),
+  ('enoch', '1-enoch', 97, 12, 'apocrypha', 'the-wisdom-of-solomon', 5, 14, 'extras', E'Wisdom of Solomon 5:14 — *For the hope of the ungodly is like dust that is blown away with the wind; like a thin froth that is driven away with the storm; like as the smoke which is dispersed here and there with a tempest, and passeth away as the remembrance of a guest that tarrieth but a day.* Wisdom''s image of the ungodly''s hope as wind-blown dust is Enoch 97:12''s young grass that withers and is cast into the fire.'),
+  ('enoch', '1-enoch', 97, 11, 'enoch', '1-enoch', 94, 4, 'extras', E'1 Enoch 94:4 — *Woe to you who are rich in unrighteousness! For your riches shall not last, And your glory shall not endure; And in your hearts you have said: ''We have acquired riches and power, And we have become great and glorious.''* Enoch''s own earlier woe is the matching scene to 97:11, the exalted rich whose glory will not endure.'),
+  -- thread: 1-enoch-97-two-ways-choose-righteousness
+  ('enoch', '1-enoch', 97, 18, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch 97:18''s call to choose the paths of righteousness ''that ye may live... and that your seed may be multiplied'' is Moses'' own ''choose life, that both thou and thy seed may live.'''),
+  ('enoch', '1-enoch', 97, 17, 'canon', 'deuteronomy', 30, 15, 'free', E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* The two paths Enoch shows his sons in 97:17 are the life-and-good versus death-and-evil that Moses set before Israel.'),
+  ('enoch', '1-enoch', 97, 18, 'canon', 'psalms', 1, 3, 'free', E'Psalms 1:3 — *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.* The one who walks the path of righteousness and prospers in Enoch 97:18 is the Psalmist''s planted tree whose leaf does not wither — over against the rich who wither like grass (97:12).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en97_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en97_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-97-riches-witness-against-them',
+       E'We have become rich — the riches that testify against the rich',
+       E'Enoch turns the boast of the unrighteous rich into the very evidence that condemns them: *Woe to you who acquire gold and silver in unrighteousness And say: ''We have become rich with riches and have possessions; And we have acquired everything that we have desired.* (1 Enoch 97:7), and again *And you shall say: ''We have acquired riches and possessions, And we have become great and glorious.''* (1 Enoch 97:14) — to which the answer comes, *But they shall say: ''You have acquired them in unrighteousness, And your heart is full of pride.''* (1 Enoch 97:15). James hears the same indictment and lets the hoard itself cry out: *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* (James 5:3). The prophet had already raised the taunt: *Shall not all these take up a parable against him, and a taunting proverb against him, and say, Woe to him that increaseth that which is not his! how long? and to him that ladeth himself with thick clay!* (Habakkuk 2:6). Yahusha frames it as folly that the day of judgement exposes: *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). And the proverb seals the verdict Enoch is pronouncing: *Riches profit not in the day of wrath: but righteousness delivereth from death.* (Proverbs 11:4). The judgement falls on the system of unrighteous gain, not on possession as such — the wealth witnesses against the heart that gathered it apart from the way of righteousness.',
+       sv.verse_id, ev.verse_id, 'extras', 52400
+  FROM _session250_en97_lookup sv, _session250_en97_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=97 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-97-wine-bowls-tread-the-poor',
+       E'Wine in large bowls, treading on the poor',
+       E'Enoch''s woe lands on the luxury of the oppressor who feasts on the backs of the afflicted: *Woe to you who are full of fatness! For you shall be hungry, And you shall thirst.* (1 Enoch 97:5), *Woe to you who drink wine in large bowls, And tread upon the poor with your might.* (1 Enoch 97:6). Amos had named the very picture — the couch, the feast, the bowl of wine, all while the poor go uncared-for: *That lie upon beds of ivory, and stretch themselves upon their couches, and eat the lambs out of the flock, and the calves out of the midst of the stall;* (Amos 6:4) and *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* (Amos 6:6). Isaiah binds the drunken strong-man to the cry of the oppressed: *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink:* (Isaiah 5:22), having already wept that the vineyard yielded *oppression... a cry* instead of judgement (Isaiah 5:7). James gives the labourer his voice: *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* (James 5:4). The woe falls to dismantle the system that treads the poor — Enoch''s husbandmen and labourers (97:8-10) are the very reapers whose cry rises.',
+       sv.verse_id, ev.verse_id, 'extras', 52403
+  FROM _session250_en97_lookup sv, _session250_en97_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=97 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-97-grass-that-withers-fiery-furnace',
+       E'Called gods, destroyed like grass — the hope of the ungodly',
+       E'The exaltation of the rich is exposed as the briefest of vanities: *And they shall exalt you like a king, And they shall call you gods.* (1 Enoch 97:11) — *But you shall be destroyed like grass, And like the young grass that withers, And you shall be cast into the fiery furnace.* (1 Enoch 97:12). Wisdom of Solomon puts the same lament in the mouths of the perished ungodly: *What has pride profited us? or what good has riches with our vaunting brought us?* (Wisdom of Solomon 5:8), and likens their hope to vanishing dust: *For the hope of the ungodly is like dust that is blown away with the wind; like a thin froth that is driven away with the storm; like as the smoke which is dispersed here and there with a tempest, and passeth away as the remembrance of a guest that tarrieth but a day.* (Wisdom of Solomon 5:14). Enoch himself has already sounded the warning in the preceding woe: *Woe to you who are rich in unrighteousness! For your riches shall not last, And your glory shall not endure; And in your hearts you have said: ''We have acquired riches and power, And we have become great and glorious.''* (1 Enoch 94:4). The riches do not last; the proud who are called gods wither like grass and are cast into the fire — the judgement is on the system that idolized them, not a denial that the righteous dead will rise.',
+       sv.verse_id, ev.verse_id, 'extras', 52406
+  FROM _session250_en97_lookup sv, _session250_en97_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=11
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=97 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-97-two-ways-choose-righteousness',
+       E'Choose the paths of righteousness, that ye may live',
+       E'After the woes, Enoch sets the two ways before his sons and calls them to choose life: *And now, my sons, listen to me, And I will show you the paths of righteousness, And the paths of unrighteousness, And I will show you how the paths of unrighteousness Shall be cut off.* (1 Enoch 97:17), *And now, my sons, choose for yourselves The paths of righteousness, And walk therein, That ye may live and prosper, And that your seed may be multiplied upon the earth.* (1 Enoch 97:18). This is Moses'' covenant charge, word for word in substance: *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15) and *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19) — the very promise that the one who walks in the way will *live and multiply* and his seed prosper. The Psalm draws the same two roads, the way that prospers against the chaff that the wind drives away: *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* (Psalm 1:1), *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.* (Psalm 1:3). The way of righteousness is the way of life and Torah; the path of unrighteousness, the woes just pronounced, is cut off. Choose life.',
+       sv.verse_id, ev.verse_id, 'extras', 52409
+  FROM _session250_en97_lookup sv, _session250_en97_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=17
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=97 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-97-riches-witness-against-them
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The hoarded silver and gold of Enoch 97:7-8 becomes the very witness that eats the flesh of those who gathered it in unrighteousness.'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-riches-witness-against-them'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Habakkuk 2:6 — *Shall not all these take up a parable against him, and a taunting proverb against him, and say, Woe to him that increaseth that which is not his! how long? and to him that ladeth himself with thick clay!* Habakkuk''s taunting woe against the man who increases what is not his is the same charge Enoch 97:8 lays on those who say ''let us do what we purposed.'''
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-riches-witness-against-them'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* The rich man''s boast of acquired riches and glory in Enoch 97:14 is answered exactly as Yahusha answers the fool whose soul is required the same night.'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-riches-witness-against-them'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 11:4 — *Riches profit not in the day of wrath: but righteousness delivereth from death.* The unrighteous wealth and proud heart exposed in Enoch 97:15 cannot profit in the day of wrath; only righteousness, the way Enoch will set out, delivers from death.'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-riches-witness-against-them'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=11 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-97-wine-bowls-tread-the-poor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* Amos names the same wine-in-bowls feasting that Enoch 97:6 condemns, indifferent to the poor it treads down.'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-wine-bowls-tread-the-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=6 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 5:22 — *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink:* Isaiah''s woe on those mighty to drink wine is the same indictment Enoch 97:6 brings against the wine-drinkers who tread upon the poor with their might.'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-wine-bowls-tread-the-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The poor trodden in Enoch 97:6 are James''s defrauded reapers, whose cry has already entered the ears of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-wine-bowls-tread-the-poor'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-97-grass-that-withers-fiery-furnace
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The ungodly''s own lament in Wisdom echoes the proud rich of Enoch 97:11-12, whose vaunting riches profit nothing when they wither like grass.'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-grass-that-withers-fiery-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=12
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Wisdom of Solomon 5:14 — *For the hope of the ungodly is like dust that is blown away with the wind; like a thin froth that is driven away with the storm; like as the smoke which is dispersed here and there with a tempest, and passeth away as the remembrance of a guest that tarrieth but a day.* Wisdom''s image of the ungodly''s hope as wind-blown dust is Enoch 97:12''s young grass that withers and is cast into the fire.'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-grass-that-withers-fiery-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=12
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 94:4 — *Woe to you who are rich in unrighteousness! For your riches shall not last, And your glory shall not endure; And in your hearts you have said: ''We have acquired riches and power, And we have become great and glorious.''* Enoch''s own earlier woe is the matching scene to 97:11, the exalted rich whose glory will not endure.'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-grass-that-withers-fiery-furnace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=11
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=94 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-97-two-ways-choose-righteousness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch 97:18''s call to choose the paths of righteousness ''that ye may live... and that your seed may be multiplied'' is Moses'' own ''choose life, that both thou and thy seed may live.'''
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-two-ways-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* The two paths Enoch shows his sons in 97:17 are the life-and-good versus death-and-evil that Moses set before Israel.'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-two-ways-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 1:3 — *And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper.* The one who walks the path of righteousness and prospers in Enoch 97:18 is the Psalmist''s planted tree whose leaf does not wither — over against the rich who wither like grass (97:12).'
+  FROM cross_reference_threads t, cross_references x, _session250_en97_lookup sv, _session250_en97_lookup tv
+ WHERE t.slug='1-enoch-97-two-ways-choose-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=97 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_98.sql (session250 1-enoch 98) -----
+-- Source anchor: enoch/1-enoch ch98. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en98 (view _session250_en98_lookup). Sort band base 52425, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en98_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-98-woe-to-the-rich-poured-out-like-water
+  ('enoch', '1-enoch', 98, 2, 'canon', 'james', 5, 1, 'free', E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James opens the same woe Enoch swears, calling the adorned rich to mourn the destruction already coming on their splendour.'),
+  ('enoch', '1-enoch', 98, 3, 'canon', 'james', 5, 3, 'free', E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The silver, gold and splendour that perish with their owners in Enoch 98:3 become the very witness that devours them.'),
+  ('enoch', '1-enoch', 98, 3, 'canon', 'luke', 12, 20, 'free', E'Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* Yahusha''s parable of the rich fool echoes Enoch''s verdict that the wealthy perish together with their possessions.'),
+  ('enoch', '1-enoch', 98, 2, 'enoch', '1-enoch', 94, 7, 'extras', E'1 Enoch 94:7 — *Woe to you who acquire gold and silver in unrighteousness And say: ''We have become rich with riches and have possessions; And we have acquired everything that we have desired.* Enoch''s earlier woe names the same gold-and-silver pride that 98:2 dresses in royal purple.'),
+  ('enoch', '1-enoch', 98, 3, 'apocrypha', 'ecclesiasticus', 11, 19, 'extras', E'Ecclesiasticus 11:19 — *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die.* Ben Sira''s self-satisfied hoarder dies just as Enoch''s splendid ones perish with all their glory.'),
+  -- thread: 1-enoch-98-man-made-the-sin-himself
+  ('enoch', '1-enoch', 98, 4, 'canon', 'deuteronomy', 30, 15, 'free', E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* Enoch''s oath that sin was not sent but self-created restates Moses'' two ways: the curse falls only on those who choose death over the offered life.'),
+  ('enoch', '1-enoch', 98, 4, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* As Moses calls heaven and earth to witness the choice, Enoch swears that the great curse is freely incurred by those who commit the sin they themselves made.'),
+  ('enoch', '1-enoch', 98, 4, 'canon', 'hosea', 8, 4, 'free', E'Hosea 8:4 — *They have set up kings, but not by me: they have made princes, and I knew it not: of their silver and their gold have they made them idols, that they may be cut off.* Hosea shows the same dynamic Enoch names: the people fashion with their own hands the thing that brings them under the curse.'),
+  -- thread: 1-enoch-98-every-sin-recorded-in-heaven
+  ('enoch', '1-enoch', 98, 7, 'canon', 'malachi', 3, 16, 'free', E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The same heaven that records every sin daily keeps a book of remembrance for the righteous — election written, never improvised.'),
+  ('enoch', '1-enoch', 98, 8, 'canon', 'james', 5, 4, 'free', E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The oppression Enoch says is written down daily reaches heaven as the cry of the defrauded reapers.'),
+  ('enoch', '1-enoch', 98, 7, 'enoch', '1-enoch', 104, 9, 'extras', E'1 Enoch 104:9 — *And I saw the books of the living, And the books of the unrighteous were opened, And the names of the sinners were found therein.* Enoch later sees the very ledgers that 98:7 says record every sin in the presence of the Most High.'),
+  -- thread: 1-enoch-98-woe-to-those-who-eat-blood
+  ('enoch', '1-enoch', 98, 11, 'canon', 'genesis', 9, 4, 'free', E'Genesis 9:4 — *But flesh with the life thereof, which is the blood thereof, shall ye not eat.* Enoch''s woe on those who eat blood invokes the oldest covenant boundary, given to Noah for all flesh.'),
+  ('enoch', '1-enoch', 98, 11, 'canon', 'leviticus', 17, 10, 'free', E'Leviticus 17:10 — *And whatsoever man there be of the house of Yashar''el (Israel), or of the strangers that sojourn among you, that eateth any manner of blood; I will even set my face against that soul that eateth blood, and will cut him off from among his people.* Torah makes blood-eating a cutting-off sin, so Enoch''s blood-eaters rightly have no peace.'),
+  ('enoch', '1-enoch', 98, 11, 'canon', 'leviticus', 17, 11, 'free', E'Leviticus 17:11 — *For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul.* The life that is in the blood, reserved for atonement, is what the obstinate consume — profaning the very thing Torah set apart.'),
+  -- thread: 1-enoch-98-woe-to-the-writers-of-lying-words
+  ('enoch', '1-enoch', 98, 15, 'canon', 'jeremiah', 8, 8, 'free', E'Jeremiah 8:8 — *How do ye say, We are wise, and the law of Yahuah (LORD) is with us? Lo, certainly in vain made he it; the pen of the scribes is in vain.* The lying pen of the scribes is exactly Enoch''s woe on those who write down godless words to make men act wickedly.'),
+  ('enoch', '1-enoch', 98, 9, 'canon', 'isaiah', 5, 20, 'free', E'Isaiah 5:20 — *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!* Isaiah''s woe on moral inversion underlies the folly Enoch says will slay the fools who transgress against the wise.'),
+  ('enoch', '1-enoch', 98, 9, 'canon', 'isaiah', 5, 21, 'free', E'Isaiah 5:21 — *Woe unto them that are wise in their own eyes, and prudent in their own sight!* The self-wise fool of Isaiah''s woe is Enoch''s fool who perishes through his own folly and transgresses against the wise.'),
+  ('enoch', '1-enoch', 98, 15, 'canon', 'isaiah', 10, 1, 'free', E'Isaiah 10:1 — *Woe unto them that decree unrighteous decrees, and that write grievousness which they have prescribed.* Isaiah''s woe on those who write injustice into law matches Enoch''s woe on those who write down lying and godless words.'),
+  ('enoch', '1-enoch', 98, 15, 'enoch', '1-enoch', 99, 2, 'extras', E'1 Enoch 99:2 — *Woe to them who pervert the words of uprightness, And transgress the eternal law, And transform themselves into what they were not [into sinners]: They shall be trodden under foot upon the earth.* Enoch''s very next woe names the same crime — perverting the eternal law in writing — confirming that Torah stands and its falsifiers fall.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en98_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en98_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-98-woe-to-the-rich-poured-out-like-water',
+       E'The luxury that perishes — woe to the adorned and the rich',
+       E'Enoch opens the woe by swearing to wise and foolish alike and describing the doomed splendour of the oppressor: *For ye men shall put on more adornments than a woman, And coloured garments more than a virgin: In royalty and in grandeur and in power, And in silver and in gold and in purple, And in splendour and in food they shall be poured out as water* (1 Enoch 98:2), whose end is that *they shall perish thereby together with their possessions* (1 Enoch 98:3). This is not a new complaint — it is the prophets'' and James'' woe on systems of injustice. James pronounces it on the hoarders: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1), for *your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days* (James 5:3). Yahusha tells it as a parable against the man whose barns are full: *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). Enoch''s own next woes name the same crowd — *Woe to you who acquire gold and silver in unrighteousness And say: ''We have become rich with riches and have possessions''* (1 Enoch 94:7) — and Ben Sira mocks the same false rest: *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die* (Ecclesiasticus 11:19). The judgement falls on the structure of plunder, not on flesh as such.',
+       sv.verse_id, ev.verse_id, 'extras', 52425
+  FROM _session250_en98_lookup sv, _session250_en98_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=98 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-98-man-made-the-sin-himself',
+       E'Sin was not sent — man made it himself',
+       E'Against any plea that wickedness is fate, Enoch swears the opposite: *as a mountain has not become a slave, And a hill does not become the handmaid of a woman, Even so sin has not been sent upon the earth, But man of himself has created it, And under a great curse shall they fall who commit it* (1 Enoch 98:4). The curse is not Torah but the self-made fruit of breaking it — exactly the two-ways covenant Moses set before the people: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15), with the charge, *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). The choice is real; the death is chosen, not decreed. The prophets say it of Israel''s idols too: *They have set up kings, but not by me... of their silver and their gold have they made them idols, that they may be cut off* (Hosea 8:4) — the people fashion the very thing that destroys them. Torah stands as the way of life throughout; man, not the law, manufactures his own ruin.',
+       sv.verse_id, ev.verse_id, 'extras', 52428
+  FROM _session250_en98_lookup sv, _session250_en98_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=98 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-98-every-sin-recorded-in-heaven',
+       E'All your deeds are written down in heaven',
+       E'Enoch strips away the sinner''s secrecy: *all your evil deeds are revealed in the heavens, And that none of your deeds of oppression are covered and hidden* (1 Enoch 98:6); let none say *that ye do not know and that ye do not see That every sin is every day recorded in heaven in the presence of the Most High* (1 Enoch 98:7), for *all your oppression wherewith ye oppress is written down every day Till the day of your judgement* (1 Enoch 98:8). This heavenly ledger is the canon''s own book of remembrance: *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name* (Malachi 3:16) — the righteous are recorded for life, the oppressor for judgement. Enoch''s later vision opens those very ledgers: *I saw the books of the living, And the books of the unrighteous were opened, And the names of the sinners were found therein* (1 Enoch 104:9). The oppressors James names think their fraud is hidden, yet *the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4) — nothing of the oppression of the poor escapes the heavenly record.',
+       sv.verse_id, ev.verse_id, 'extras', 52431
+  FROM _session250_en98_lookup sv, _session250_en98_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=98 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-98-woe-to-those-who-eat-blood',
+       E'Woe to the obstinate who eat blood',
+       E'The woe turns on those who profane the table of the oppressed: *Woe to you, ye obstinate of heart, who work wickedness and eat blood: Whence have ye good things to eat and to drink and to be filled? From all the good things which Yahuah (God) the Most High has placed in abundance on the earth; Therefore ye shall have no peace* (1 Enoch 98:11). Eating blood is no minor matter; it is the covenant boundary set from Noah onward: *But flesh with the life thereof, which is the blood thereof, shall ye not eat* (Genesis 9:4), and Torah makes it a cutting-off sin: *whatsoever man there be of the house of Yashar''el (Israel)... that eateth any manner of blood; I will even set my face against that soul that eateth blood, and will cut him off from among his people* (Leviticus 17:10), *for the life of the flesh is in the blood* (Leviticus 17:11). Torah stands; the oppressor who devours the Creator''s abundance while trampling the poor breaks the law of life itself, and so has no peace.',
+       sv.verse_id, ev.verse_id, 'extras', 52434
+  FROM _session250_en98_lookup sv, _session250_en98_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=11
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=98 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-98-woe-to-the-writers-of-lying-words',
+       E'Woe to those who write down lying and godless words',
+       E'The chapter''s sharpest woe falls on the corrupters of the text itself: *Woe to you who write down lying and godless words; For they write down their lies that men may hear them and act godlessly towards their neighbour. Therefore they shall have no peace but die a sudden death* (1 Enoch 98:15-16), set beside *Woe to you who set at nought the words of the righteous; For ye shall have no hope of life* (1 Enoch 98:14). The prophets already aimed this at the scribes who falsify what is written: *How do ye say, We are wise, and the law of Yahuah (LORD) is with us? Lo, certainly in vain made he it; the pen of the scribes is in vain* (Jeremiah 8:8) — the lying pen perverts Torah. Isaiah''s woe binds folly to inversion: *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness* (Isaiah 5:20), *Woe unto them that are wise in their own eyes, and prudent in their own sight!* (Isaiah 5:21) — which is exactly Enoch''s *ye fools... ye transgress against the wise* (1 Enoch 98:9). And Isaiah''s woe on those who legislate injustice in writing fits the godless scribe precisely: *Woe unto them that decree unrighteous decrees, and that write grievousness which they have prescribed* (Isaiah 10:1). Enoch himself names the crime again in the next chapter: *Woe to them who pervert the words of uprightness, And transgress the eternal law* (1 Enoch 99:2) — the eternal law (Torah) stands, and those who falsify it die a sudden death.',
+       sv.verse_id, ev.verse_id, 'extras', 52437
+  FROM _session250_en98_lookup sv, _session250_en98_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=14
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=98 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-98-woe-to-the-rich-poured-out-like-water
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James opens the same woe Enoch swears, calling the adorned rich to mourn the destruction already coming on their splendour.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-the-rich-poured-out-like-water'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The silver, gold and splendour that perish with their owners in Enoch 98:3 become the very witness that devours them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-the-rich-poured-out-like-water'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 12:20 — *But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* Yahusha''s parable of the rich fool echoes Enoch''s verdict that the wealthy perish together with their possessions.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-the-rich-poured-out-like-water'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 94:7 — *Woe to you who acquire gold and silver in unrighteousness And say: ''We have become rich with riches and have possessions; And we have acquired everything that we have desired.* Enoch''s earlier woe names the same gold-and-silver pride that 98:2 dresses in royal purple.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-the-rich-poured-out-like-water'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=2
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=94 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Ecclesiasticus 11:19 — *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die.* Ben Sira''s self-satisfied hoarder dies just as Enoch''s splendid ones perish with all their glory.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-the-rich-poured-out-like-water'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=11 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-98-man-made-the-sin-himself
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* Enoch''s oath that sin was not sent but self-created restates Moses'' two ways: the curse falls only on those who choose death over the offered life.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-man-made-the-sin-himself'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* As Moses calls heaven and earth to witness the choice, Enoch swears that the great curse is freely incurred by those who commit the sin they themselves made.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-man-made-the-sin-himself'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hosea 8:4 — *They have set up kings, but not by me: they have made princes, and I knew it not: of their silver and their gold have they made them idols, that they may be cut off.* Hosea shows the same dynamic Enoch names: the people fashion with their own hands the thing that brings them under the curse.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-man-made-the-sin-himself'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=8 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-98-every-sin-recorded-in-heaven
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The same heaven that records every sin daily keeps a book of remembrance for the righteous — election written, never improvised.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-every-sin-recorded-in-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The oppression Enoch says is written down daily reaches heaven as the cry of the defrauded reapers.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-every-sin-recorded-in-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 104:9 — *And I saw the books of the living, And the books of the unrighteous were opened, And the names of the sinners were found therein.* Enoch later sees the very ledgers that 98:7 says record every sin in the presence of the Most High.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-every-sin-recorded-in-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=7
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=104 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-98-woe-to-those-who-eat-blood
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 9:4 — *But flesh with the life thereof, which is the blood thereof, shall ye not eat.* Enoch''s woe on those who eat blood invokes the oldest covenant boundary, given to Noah for all flesh.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-those-who-eat-blood'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 17:10 — *And whatsoever man there be of the house of Yashar''el (Israel), or of the strangers that sojourn among you, that eateth any manner of blood; I will even set my face against that soul that eateth blood, and will cut him off from among his people.* Torah makes blood-eating a cutting-off sin, so Enoch''s blood-eaters rightly have no peace.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-those-who-eat-blood'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 17:11 — *For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul.* The life that is in the blood, reserved for atonement, is what the obstinate consume — profaning the very thing Torah set apart.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-those-who-eat-blood'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-98-woe-to-the-writers-of-lying-words
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 8:8 — *How do ye say, We are wise, and the law of Yahuah (LORD) is with us? Lo, certainly in vain made he it; the pen of the scribes is in vain.* The lying pen of the scribes is exactly Enoch''s woe on those who write down godless words to make men act wickedly.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-the-writers-of-lying-words'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=8 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 5:20 — *Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!* Isaiah''s woe on moral inversion underlies the folly Enoch says will slay the fools who transgress against the wise.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-the-writers-of-lying-words'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 5:21 — *Woe unto them that are wise in their own eyes, and prudent in their own sight!* The self-wise fool of Isaiah''s woe is Enoch''s fool who perishes through his own folly and transgresses against the wise.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-the-writers-of-lying-words'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 10:1 — *Woe unto them that decree unrighteous decrees, and that write grievousness which they have prescribed.* Isaiah''s woe on those who write injustice into law matches Enoch''s woe on those who write down lying and godless words.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-the-writers-of-lying-words'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=10 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 99:2 — *Woe to them who pervert the words of uprightness, And transgress the eternal law, And transform themselves into what they were not [into sinners]: They shall be trodden under foot upon the earth.* Enoch''s very next woe names the same crime — perverting the eternal law in writing — confirming that Torah stands and its falsifiers fall.'
+  FROM cross_reference_threads t, cross_references x, _session250_en98_lookup sv, _session250_en98_lookup tv
+ WHERE t.slug='1-enoch-98-woe-to-the-writers-of-lying-words'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=98 AND sv.verse_number=15
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=99 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_99.sql (session250 1-enoch 99) -----
+-- Source anchor: enoch/1-enoch ch99. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en99 (view _session250_en99_lookup). Sort band base 52450, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en99_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-99-pervert-the-eternal-law
+  ('enoch', '1-enoch', 99, 2, 'canon', 'isaiah', 5, 24, 'free', E'Isaiah 5:24 — *Therefore as the fire devoureth the stubble, and the flame consumeth the chaff, so their root shall be as rottenness, and their blossom shall go up as dust: because they have cast away the law of Yahuah Tseva''ot (LORD of hosts), and despised the word of the Holy One of Yashar''el (Israel).* The same eternal law Enoch''s woe defends is the law Isaiah''s woe says they have cast away.'),
+  ('enoch', '1-enoch', 99, 2, 'canon', 'deuteronomy', 27, 18, 'free', E'Deuteronomy 27:18 — *Cursed be he that maketh the blind to wander out of the way. And all the people shall say, Amen.* Enoch''s woe on those who pervert uprightness and lead others into sin is the amen-bound Sinai curse on whoever misleads the blind.'),
+  ('enoch', '1-enoch', 99, 2, 'canon', 'proverbs', 22, 28, 'free', E'Proverbs 22:28 — *Remove not the ancient landmark, which thy fathers have set.* To transgress the eternal law is to move the boundary the fathers laid; the righteous keep the inheritance, they do not transform it.'),
+  -- thread: 1-enoch-99-idols-not-according-to-knowledge
+  ('enoch', '1-enoch', 99, 7, 'canon', 'jeremiah', 10, 14, 'free', E'Jeremiah 10:14 — *Every man is brutish in his knowledge: every founder is confounded by the graven image: for his molten image is falsehood, and there is no breath in them.* Enoch''s idols "not according to knowledge" are Jeremiah''s breathless, false molten images that confound their makers.'),
+  ('enoch', '1-enoch', 99, 9, 'canon', 'jeremiah', 10, 15, 'free', E'Jeremiah 10:15 — *They are vanity, and the work of errors: in the time of their visitation they shall perish.* As Enoch says the idol-worshippers "in an instant shall they perish," Jeremiah says the idols themselves shall perish in the time of visitation.'),
+  ('enoch', '1-enoch', 99, 7, 'canon', 'habakkuk', 2, 19, 'free', E'Habakkuk 2:19 — *Woe unto him that saith to the wood, Awake; to the dumb stone, Arise, it shall teach! Behold, it is laid over with gold and silver, and there is no breath at all in the midst of it.* Habakkuk''s woe on the breathless gold-and-silver idol matches Enoch''s woe on those who worship stone and grave images of gold and silver and wood.'),
+  ('enoch', '1-enoch', 99, 9, 'canon', 'revelation', 14, 11, 'free', E'Revelation 14:11 — *And the smoke of their torment ascendeth up for ever and ever: and they have no rest day nor night, who worship the beast and his image, and whosoever receiveth the mark of his name.* The end-judgement on idol-worship under the beast carries Enoch''s woe forward — the idolaters "shall get no manner of help" and find no rest.'),
+  -- thread: 1-enoch-99-blessed-who-walk-the-paths
+  ('enoch', '1-enoch', 99, 10, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch''s blessing on those who walk the paths of the Most High and "become not godless with the godless" is the Deuteronomic choosing of life over death.'),
+  ('enoch', '1-enoch', 99, 10, 'canon', 'psalms', 1, 1, 'free', E'Psalm 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* The Psalter''s two-ways blessing uses Enoch''s own contrast: blessed are they who do not become godless with the godless.'),
+  ('enoch', '1-enoch', 99, 10, 'canon', 'psalms', 1, 6, 'free', E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* Enoch''s "they shall be saved" against the godless who "in an instant shall perish" is the same divided end of the two ways.'),
+  -- thread: 1-enoch-99-woe-oppressors-false-measures
+  ('enoch', '1-enoch', 99, 12, 'canon', 'amos', 8, 5, 'free', E'Amos 8:5 — *Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* Enoch''s "deceitful and false measures" are Amos''s small ephah and great shekel — the falsified balance against the poor.'),
+  ('enoch', '1-enoch', 99, 13, 'canon', 'james', 5, 4, 'free', E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* Enoch''s woe on houses built through "the grievous toil of others" is James''s woe on the rich who withheld the laborer''s hire.'),
+  ('enoch', '1-enoch', 99, 15, 'canon', 'james', 5, 6, 'free', E'James 5:6 — *Ye have condemned and killed the just; and he doth not resist you.* As Enoch''s woe falls on those who "slay their neighbours until the day of the great judgement," James names the rich who have condemned and killed the just.'),
+  ('enoch', '1-enoch', 99, 15, 'apocrypha', 'ecclesiasticus', 34, 22, 'extras', E'Ecclesiasticus 34:22 — *He that takes away his neighbour''s living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder.* Ben Sira makes Enoch''s own equation: building on others'' toil and slaying neighbours are the same crime of bloodshed.'),
+  -- thread: 1-enoch-99-prayers-memorial-before-the-most-high
+  ('enoch', '1-enoch', 99, 3, 'canon', 'revelation', 8, 3, 'free', E'Revelation 8:3 — *And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne.* Enoch''s prayers raised "as a memorial... before the angels" are John''s saints'' prayers offered by the angel before the throne.'),
+  ('enoch', '1-enoch', 99, 3, 'canon', 'revelation', 8, 4, 'free', E'Revelation 8:4 — *And the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim (God) out of the angel''s hand.* The prayers ascending before Elohim are Enoch''s testimony placed "for a memorial before the Most High."'),
+  ('enoch', '1-enoch', 99, 3, 'apocrypha', 'the-wisdom-of-solomon', 3, 7, 'extras', E'Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The day Enoch''s righteous prepare for is the day of visitation when the righteous dead are vindicated and shine.'),
+  ('enoch', '1-enoch', 99, 3, 'apocrypha', 'the-wisdom-of-solomon', 3, 10, 'extras', E'Wisdom of Solomon 3:10 — *But the ungodly shall be punished according to their own imaginations, which have neglected the righteous, and forsaken Yahuah (God).* As Enoch stores the sin of the sinners for a memorial of judgement, Wisdom says the ungodly are punished for neglecting the righteous and forsaking Yahuah.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en99_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en99_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-99-pervert-the-eternal-law',
+       E'Woe to those who transgress the eternal law',
+       E'Enoch''s woe falls on the lawbreaker: *Woe to them who pervert the words of uprightness, And transgress the eternal law, And transform themselves into what they were not [into sinners]: They shall be trodden under foot upon the earth.* (1 Enoch 99:2) — the law here is *eternal*, the way of life, and the judgement is for trampling it, never the law itself being a curse. Isaiah names the same crime against the same Torah: *because they have cast away the law of Yahuah Tseva''ot (LORD of hosts), and despised the word of the Holy One of Yashar''el (Israel)* (Isaiah 5:24). Enoch''s curse on those who lead others astray echoes Sinai''s own amen-bound curse: *Cursed be he that maketh the blind to wander out of the way. And all the people shall say, Amen.* (Deuteronomy 27:18) Set against this is the everlasting plant-line''s inheritance, marked by the boundary the fathers laid down: *Remove not the ancient landmark, which thy fathers have set.* (Proverbs 22:28) The eternal law stands; those who transform it perish.',
+       sv.verse_id, ev.verse_id, 'extras', 52450
+  FROM _session250_en99_lookup sv, _session250_en99_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=99 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-99-idols-not-according-to-knowledge',
+       E'They worship a stone, and in an instant shall perish',
+       E'The woe turns to idolatry: *And they who worship stones, and grave images of gold and silver and wood [and stone] and clay, And those who worship impure spirits and demons, And all kinds of idols not according to knowledge, shall get no manner of help from them.* (1 Enoch 99:7) — the idols are dumb, dead, breathless, exactly as Jeremiah names them: *Every man is brutish in his knowledge: every founder is confounded by the graven image: for his molten image is falsehood, and there is no breath in them.* (Jeremiah 10:14) — *They are vanity, and the work of errors: in the time of their visitation they shall perish.* (Jeremiah 10:15) Habakkuk''s own woe mocks the same trust in a breathless thing overlaid with gold and silver: *Woe unto him that saith to the wood, Awake; to the dumb stone, Arise, it shall teach! Behold, it is laid over with gold and silver, and there is no breath at all in the midst of it.* (Habakkuk 2:19) And the last book carries the woe to its end, where idol-worship under the beast brings unceasing torment with no rest: *And the smoke of their torment ascendeth up for ever and ever: and they have no rest day nor night, who worship the beast and his image, and whosoever receiveth the mark of his name.* (Revelation 14:11) The stone gives no help; *in an instant shall they perish.*',
+       sv.verse_id, ev.verse_id, 'extras', 52453
+  FROM _session250_en99_lookup sv, _session250_en99_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=7
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=99 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-99-blessed-who-walk-the-paths',
+       E'Blessed are they who walk in the path of His righteousness',
+       E'Against the woes Enoch sets the blessing — the two ways laid side by side: *But in those days blessed are all they who accept the words of wisdom, and understand them, And observe the paths of the Most High, and walk in the path of His righteousness, And become not godless with the godless; For they shall be saved.* (1 Enoch 99:10) This is the Deuteronomic choice itself, life set against death: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15) — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). The Psalter opens on the same two ways with the very word Enoch uses: *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful* (Psalm 1:1) — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish* (Psalm 1:6). To walk the path of His righteousness is the way of life; Torah is never the curse, only the road of the saved.',
+       sv.verse_id, ev.verse_id, 'extras', 52456
+  FROM _session250_en99_lookup sv, _session250_en99_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=99 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-99-woe-oppressors-false-measures',
+       E'Woe to the false measure and the house built on others'' toil',
+       E'The woes fall on the systems of injustice — false weights, houses built on stolen labor, the bloodshed of neighbours: *Woe to you who make deceitful and false measures, And (to them) who cause bitterness on the earth; For they shall thereby be utterly consumed.* (1 Enoch 99:12) — *Woe to you who build your houses through the grievous toil of others, And all their building materials are the bricks and stones of sin; I tell you ye shall have no peace.* (1 Enoch 99:13) Amos names the same falsified balance and the swallowing of the needy: *making the ephah small, and the shekel great, and falsifying the balances by deceit* (Amos 8:5) — *That we may buy the poor for silver, and the needy for a pair of shoes* (Amos 8:6). James lays the whole woe on the rich whose wealth was built by defrauding the laborer: *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4) — *Ye have condemned and killed the just; and he doth not resist you* (James 5:6). And Ben Sira makes the equation Enoch makes, defrauding the laborer is bloodshed: *He that takes away his neighbour''s living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder* (Ecclesiasticus 34:22). The judgement dismantles the unjust system; the righteous keep the measure.',
+       sv.verse_id, ev.verse_id, 'extras', 52459
+  FROM _session250_en99_lookup sv, _session250_en99_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=12
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=99 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-99-prayers-memorial-before-the-most-high',
+       E'The prayers of the righteous as a memorial before the Most High',
+       E'Before the judgement Enoch charges the righteous to lift up their prayers as a witness: *In those days make ready, ye righteous, to raise your prayers as a memorial, And place them as a testimony before the angels, That they may place the sin of the sinners for a memorial before the Most High.* (1 Enoch 99:3) John sees that very scene at the altar, the saints'' prayers carried up by an angel: *And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne* (Revelation 8:3) — *And the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim (God) out of the angel''s hand* (Revelation 8:4). And the day Enoch points to is the day the righteous dead are vindicated and shine, while the godless are repaid — the resurrection parallel that runs through the Epistle: *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble* (Wisdom of Solomon 3:7) — *But the ungodly shall be punished according to their own imaginations, which have neglected the righteous, and forsaken Yahuah (God)* (Wisdom of Solomon 3:10). Election runs through the memorial: the names of the righteous stand before the Most High, the sin of the sinners stored for the day of judgement.',
+       sv.verse_id, ev.verse_id, 'extras', 52462
+  FROM _session250_en99_lookup sv, _session250_en99_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=99 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-99-pervert-the-eternal-law
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 5:24 — *Therefore as the fire devoureth the stubble, and the flame consumeth the chaff, so their root shall be as rottenness, and their blossom shall go up as dust: because they have cast away the law of Yahuah Tseva''ot (LORD of hosts), and despised the word of the Holy One of Yashar''el (Israel).* The same eternal law Enoch''s woe defends is the law Isaiah''s woe says they have cast away.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-pervert-the-eternal-law'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 27:18 — *Cursed be he that maketh the blind to wander out of the way. And all the people shall say, Amen.* Enoch''s woe on those who pervert uprightness and lead others into sin is the amen-bound Sinai curse on whoever misleads the blind.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-pervert-the-eternal-law'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 22:28 — *Remove not the ancient landmark, which thy fathers have set.* To transgress the eternal law is to move the boundary the fathers laid; the righteous keep the inheritance, they do not transform it.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-pervert-the-eternal-law'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=22 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-99-idols-not-according-to-knowledge
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 10:14 — *Every man is brutish in his knowledge: every founder is confounded by the graven image: for his molten image is falsehood, and there is no breath in them.* Enoch''s idols "not according to knowledge" are Jeremiah''s breathless, false molten images that confound their makers.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-idols-not-according-to-knowledge'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 10:15 — *They are vanity, and the work of errors: in the time of their visitation they shall perish.* As Enoch says the idol-worshippers "in an instant shall they perish," Jeremiah says the idols themselves shall perish in the time of visitation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-idols-not-according-to-knowledge'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Habakkuk 2:19 — *Woe unto him that saith to the wood, Awake; to the dumb stone, Arise, it shall teach! Behold, it is laid over with gold and silver, and there is no breath at all in the midst of it.* Habakkuk''s woe on the breathless gold-and-silver idol matches Enoch''s woe on those who worship stone and grave images of gold and silver and wood.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-idols-not-according-to-knowledge'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 14:11 — *And the smoke of their torment ascendeth up for ever and ever: and they have no rest day nor night, who worship the beast and his image, and whosoever receiveth the mark of his name.* The end-judgement on idol-worship under the beast carries Enoch''s woe forward — the idolaters "shall get no manner of help" and find no rest.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-idols-not-according-to-knowledge'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-99-blessed-who-walk-the-paths
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch''s blessing on those who walk the paths of the Most High and "become not godless with the godless" is the Deuteronomic choosing of life over death.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-blessed-who-walk-the-paths'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 1:1 — *Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful.* The Psalter''s two-ways blessing uses Enoch''s own contrast: blessed are they who do not become godless with the godless.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-blessed-who-walk-the-paths'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* Enoch''s "they shall be saved" against the godless who "in an instant shall perish" is the same divided end of the two ways.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-blessed-who-walk-the-paths'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-99-woe-oppressors-false-measures
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Amos 8:5 — *Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* Enoch''s "deceitful and false measures" are Amos''s small ephah and great shekel — the falsified balance against the poor.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-woe-oppressors-false-measures'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* Enoch''s woe on houses built through "the grievous toil of others" is James''s woe on the rich who withheld the laborer''s hire.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-woe-oppressors-false-measures'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 5:6 — *Ye have condemned and killed the just; and he doth not resist you.* As Enoch''s woe falls on those who "slay their neighbours until the day of the great judgement," James names the rich who have condemned and killed the just.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-woe-oppressors-false-measures'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ecclesiasticus 34:22 — *He that takes away his neighbour''s living slayeth him; and he that defraudeth the labourer of his hire is a bloodshedder.* Ben Sira makes Enoch''s own equation: building on others'' toil and slaying neighbours are the same crime of bloodshed.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-woe-oppressors-false-measures'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=15
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=34 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-99-prayers-memorial-before-the-most-high
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Revelation 8:3 — *And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne.* Enoch''s prayers raised "as a memorial... before the angels" are John''s saints'' prayers offered by the angel before the throne.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-prayers-memorial-before-the-most-high'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=8 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 8:4 — *And the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim (God) out of the angel''s hand.* The prayers ascending before Elohim are Enoch''s testimony placed "for a memorial before the Most High."'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-prayers-memorial-before-the-most-high'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=8 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The day Enoch''s righteous prepare for is the day of visitation when the righteous dead are vindicated and shine.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-prayers-memorial-before-the-most-high'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 3:10 — *But the ungodly shall be punished according to their own imaginations, which have neglected the righteous, and forsaken Yahuah (God).* As Enoch stores the sin of the sinners for a memorial of judgement, Wisdom says the ungodly are punished for neglecting the righteous and forsaking Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en99_lookup sv, _session250_en99_lookup tv
+ WHERE t.slug='1-enoch-99-prayers-memorial-before-the-most-high'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=99 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_100.sql (session250 1-enoch 100) -----
+-- Source anchor: enoch/1-enoch ch100. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en100 (view _session250_en100_lookup). Sort band base 52475, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en100_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-100-blood-to-the-bridle
+  ('enoch', '1-enoch', 100, 3, 'canon', 'revelation', 14, 20, 'free', E'Revelation 14:20 — *And the winepress was trodden without the city, and blood came out of the winepress, even unto the horse bridles, by the space of a thousand and six hundred furlongs.* John''s winepress runs blood to the horse bridle, the very measure Enoch gives when the horse walks up to its breast in the blood of sinners (100:3).'),
+  ('enoch', '1-enoch', 100, 1, 'canon', 'joel', 3, 13, 'free', E'Joel 3:13 — *Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.* Joel''s overflowing winepress is the harvest of judgement whose streams flow with blood in Enoch 100:1.'),
+  ('enoch', '1-enoch', 100, 2, 'canon', 'joel', 3, 14, 'free', E'Joel 3:14 — *Multitudes, multitudes in the valley of decision: for the day of Yahuah (LORD) is near in the valley of decision.* The valley of decision names the place where the slaying from dawn till sunset (100:2) falls.'),
+  ('enoch', '1-enoch', 100, 1, 'canon', 'isaiah', 34, 3, 'free', E'Isaiah 34:3 — *Their slain also shall be cast out, and their stink shall come up out of their carcases, and the mountains shall be melted with their blood.* Isaiah''s mountains melted with blood match Enoch''s streams flowing with the blood of the smitten (100:1).'),
+  -- thread: 1-enoch-100-supper-of-the-great-elohim
+  ('enoch', '1-enoch', 100, 4, 'canon', 'revelation', 19, 17, 'free', E'Revelation 19:17 — *And I saw an angel standing in the sun; and he cried with a loud voice, saying to all the fowls that fly in the midst of heaven, Come and gather yourselves together unto the supper of the great Elohim (God);* John''s gathering angel matches the angels who descend to gather all the workers of sin into one place for the great judgement of Enoch 100:4.'),
+  ('enoch', '1-enoch', 100, 4, 'canon', 'revelation', 19, 18, 'free', E'Revelation 19:18 — *That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men, and the flesh of horses, and of them that sit on them, and the flesh of all men, both free and bond, both small and great.* The feast over kings and mighty is the end of the sinners gathered for the Most High''s judgement in Enoch 100:4.'),
+  ('enoch', '1-enoch', 100, 4, 'canon', 'isaiah', 34, 2, 'free', E'Isaiah 34:2 — *For the indignation of Yahuah (LORD) is upon all nations, and his fury upon all their armies: he hath utterly destroyed them, he hath delivered them to the slaughter.* Isaiah''s indignation delivered to the slaughter is the great judgement the Most High arises to execute in Enoch 100:4.'),
+  ('enoch', '1-enoch', 100, 4, 'canon', 'zephaniah', 1, 17, 'free', E'Zephaniah 1:17 — *And I will bring distress upon men, that they shall walk like blind men, because they have sinned against Yahuah (LORD): and their blood shall be poured out as dust, and their flesh as the dung.* The day of distress on those who sinned is the day of judgement the Most High rises for in Enoch 100:4.'),
+  -- thread: 1-enoch-100-apple-of-an-eye
+  ('enoch', '1-enoch', 100, 5, 'canon', 'deuteronomy', 32, 10, 'free', E'Deuteronomy 32:10 — *He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye.* Moses'' picture of Yahuah guarding His people as the apple of His eye is the very care the holy-angel guardians give the righteous in Enoch 100:5.'),
+  ('enoch', '1-enoch', 100, 5, 'canon', 'zechariah', 2, 8, 'free', E'Zechariah 2:8 — *For thus saith Yahuah Tseva''ot (LORD of hosts); After the glory hath he sent me unto the nations which spoiled you: for he that toucheth you toucheth the apple of his eye.* To touch the guarded righteous is to touch the apple of Yahuah''s eye, the protection Enoch 100:5 assigns the angels to keep.'),
+  ('enoch', '1-enoch', 100, 5, 'canon', 'psalms', 91, 11, 'free', E'Psalms 91:11 — *For he shall give his angels charge over thee, to keep thee in all thy ways.* The angelic charge to keep the faithful is exactly the guardians from among the holy angels appointed over the righteous in Enoch 100:5.'),
+  ('enoch', '1-enoch', 100, 5, 'apocrypha', 'the-wisdom-of-solomon', 3, 1, 'extras', E'Wisdom of Solomon 3:1 — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Wisdom''s guarded souls in the hand of Elohim match the long sleep with nought to fear of the righteous in Enoch 100:5.'),
+  -- thread: 1-enoch-100-riches-shall-not-save
+  ('enoch', '1-enoch', 100, 6, 'canon', 'zephaniah', 1, 18, 'free', E'Zephaniah 1:18 — *Neither their silver nor their gold shall be able to deliver them in the day of the LORD''S wrath; but the whole land shall be devoured by the fire of his jealousy: for he shall make even a speedy riddance of all them that dwell in the land.* Silver and gold that cannot deliver in the day of wrath is the very lesson the children of the earth learn in Enoch 100:6 — riches shall not save.'),
+  ('enoch', '1-enoch', 100, 7, 'canon', 'james', 5, 1, 'free', E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James'' woe to the rich on the coming miseries is the same woe Enoch sounds on the sinners on the day of strong anguish (100:7).'),
+  ('enoch', '1-enoch', 100, 7, 'canon', 'james', 5, 3, 'free', E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The hoarded riches that eat the flesh like fire match Enoch''s burning requital on those who burned the righteous with fire (100:7).'),
+  ('enoch', '1-enoch', 100, 7, 'canon', 'isaiah', 5, 8, 'free', E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah''s woe on the land-engrossers names the oppression for which Enoch''s sinners are requited according to their works (100:7).'),
+  ('enoch', '1-enoch', 100, 6, 'apocrypha', 'the-wisdom-of-solomon', 5, 8, 'extras', E'Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The vain question of the rich at judgement echoes the children of the earth recognizing their riches cannot save them in Enoch 100:6.'),
+  -- thread: 1-enoch-100-rain-withheld-witness
+  ('enoch', '1-enoch', 100, 11, 'canon', 'deuteronomy', 28, 23, 'free', E'Deuteronomy 28:23 — *And thy heaven that is over thy head shall be brass, and the earth that is under thee shall be iron.* The brass heaven that yields no rain is the covenant curse standing behind the cloud, dew, and rain withheld from the sinners in Enoch 100:11.'),
+  ('enoch', '1-enoch', 100, 13, 'canon', 'deuteronomy', 28, 24, 'free', E'Deuteronomy 28:24 — *Yahuah (LORD) shall make the rain of thy land powder and dust: from heaven shall it come down upon thee, until thou be destroyed.* The rain turned to powder and the destroying weather match the snow-storms and plagues the sinners cannot stand before in Enoch 100:13.'),
+  ('enoch', '1-enoch', 100, 11, 'canon', 'leviticus', 26, 19, 'free', E'Leviticus 26:19 — *And I will break the pride of your power; and I will make your heaven as iron, and your earth as brass:* The iron heaven for a broken covenant is the Torah ground of the rain and dew withheld as a witness against the sinners in Enoch 100:11.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en100_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en100_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-100-blood-to-the-bridle',
+       E'The blood to the horse''s breast — the day of slaughter',
+       E'Enoch sees the day of judgement run with blood: *And the horse shall walk up to the breast in the blood of sinners, And the chariot shall be submerged to its height.* (1 Enoch 100:3) — the kindred fall on one another from dawn till sunset until *the streams flow with their blood.* (1 Enoch 100:1) John sees the very same winepress at the end: *And the winepress was trodden without the city, and blood came out of the winepress, even unto the horse bridles, by the space of a thousand and six hundred furlongs.* (Revelation 14:20) — blood to the bridle, the exact measure Enoch gives. Joel had already set the harvest and the place: *Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.* (Joel 3:13) — and named the place of reckoning: *Multitudes, multitudes in the valley of decision: for the day of Yahuah (LORD) is near in the valley of decision.* (Joel 3:14) Isaiah saw the same slaughter-mountains: *Their slain also shall be cast out, and their stink shall come up out of their carcases, and the mountains shall be melted with their blood.* (Isaiah 34:3) It ain''t new — the day Enoch foresaw is the day the prophets and the Revelation alike measure by blood.',
+       sv.verse_id, ev.verse_id, 'extras', 52475
+  FROM _session250_en100_lookup sv, _session250_en100_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=100 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-100-supper-of-the-great-elohim',
+       E'The Most High arises — the supper of the great Elohim',
+       E'When the slaughter is full, judgement comes from above: *In those days the angels shall descend into the secret places And gather together into one place all those who brought down sin, And the Most High will arise on that day of judgement To execute great judgement amongst sinners.* (1 Enoch 100:4) The same gathering-angel stands in Revelation, summoning the carrion-feast over the fallen: *And I saw an angel standing in the sun; and he cried with a loud voice, saying to all the fowls that fly in the midst of heaven, Come and gather yourselves together unto the supper of the great Elohim (God);* (Revelation 19:17) — *That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men, and the flesh of horses, and of them that sit on them, and the flesh of all men, both free and bond, both small and great.* (Revelation 19:18) Zephaniah had already pronounced the day on the same terms: *And I will bring distress upon men, that they shall walk like blind men, because they have sinned against Yahuah (LORD): and their blood shall be poured out as dust, and their flesh as the dung.* (Zephaniah 1:17) — and Isaiah named the sentence the angels carry down: *For the indignation of Yahuah (LORD) is upon all nations, and his fury upon all their armies: he hath utterly destroyed them, he hath delivered them to the slaughter.* (Isaiah 34:2) The judgement falls on the systems of sin gathered into one place, not on a scattered conscience — the Most High rises to break the unrighteous order He has long borne.',
+       sv.verse_id, ev.verse_id, 'extras', 52478
+  FROM _session250_en100_lookup sv, _session250_en100_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=100 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-100-apple-of-an-eye',
+       E'Guardians for the righteous — kept as the apple of an eye',
+       E'In the day of slaughter the righteous are not abandoned: *And over all the righteous and holy He will appoint guardians from amongst the holy angels To guard them as the apple of an eye, Until He makes an end of all wickedness and all sin, And though the righteous sleep a long sleep, they have nought to fear.* (1 Enoch 100:5) The phrase is Moses'' own picture of Yahuah''s covenant care: *He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye.* (Deuteronomy 32:10) — and the prophet''s warning that to touch the elect is to touch Him: *For thus saith Yahuah Tseva''ot (LORD of hosts); After the glory hath he sent me unto the nations which spoiled you: for he that toucheth you toucheth the apple of his eye.* (Zechariah 2:8) The angelic charge is the Psalm''s promise: *For he shall give his angels charge over thee, to keep thee in all thy ways.* (Psalm 91:11) And the long sleep with nought to fear is no annihilation but a guarded rest the dead will wake from — the same hope the apocrypha holds: *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* (Wisdom of Solomon 3:1) The elect are a guarded people, kept through the judgement, never a self-selected class.',
+       sv.verse_id, ev.verse_id, 'extras', 52481
+  FROM _session250_en100_lookup sv, _session250_en100_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=100 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-100-riches-shall-not-save',
+       E'Woe to the rich oppressor — riches shall not save',
+       E'The children of the earth will see plainly that wealth is no refuge: *And shall understand all the words of this book, And recognize that their riches shall not be able to save them In the overthrow of their sins.* (1 Enoch 100:6) — and the woe falls on those who burned the righteous: *Woe to you, Sinners, on the day of strong anguish, Ye who afflict the righteous and burn them with fire: Ye shall be requited according to your works.* (1 Enoch 100:7) James pronounces the identical woe on the hoarding rich: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* (James 5:1) — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* (James 5:3) Isaiah''s woe is the same indictment of the land-engrossers: *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* (Isaiah 5:8) — and Yahusha (Jesus) speaks it from the mountain: *But woe unto you that are rich! for ye have received your consolation.* (Luke 6:24) Zephaniah seals it: *Neither their silver nor their gold shall be able to deliver them in the day of the LORD''S wrath; but the whole land shall be devoured by the fire of his jealousy* (Zephaniah 1:18) — and Wisdom asks the empty question: *What has pride profited us? or what good has riches with our vaunting brought us?* (Wisdom of Solomon 5:8) The woes fall on the system of oppression and the riches built on it, not on persons as such — dismantle the injustice; requital is according to works.',
+       sv.verse_id, ev.verse_id, 'extras', 52484
+  FROM _session250_en100_lookup sv, _session250_en100_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=100 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-100-rain-withheld-witness',
+       E'Heaven testifies — the rain and dew withheld',
+       E'Enoch declares that the very lights and waters will testify against the sinners: *And now, know ye that from the angels He will inquire as to your deeds in heaven, from the sun and from the moon and from the stars in reference to your sins because upon the earth ye execute judgement on the righteous.* (1 Enoch 100:10) — and the sky itself becomes a witness and a plague: *And He will summon to testify against you every cloud and mist and dew and rain; for they shall all be withheld because of you from descending upon you, and they shall be mindful of your sins.* (1 Enoch 100:11) The covenant curse spoke this long before: *And thy heaven that is over thy head shall be brass, and the earth that is under thee shall be iron.* (Deuteronomy 28:23) — *Yahuah (LORD) shall make the rain of thy land powder and dust: from heaven shall it come down upon thee, until thou be destroyed.* (Deuteronomy 28:24) Leviticus binds the same sentence to broken covenant: *And I will break the pride of your power; and I will make your heaven as iron, and your earth as brass:* (Leviticus 26:19) The withheld rain is no arbitrary wrath but the Torah''s own curse for the covenant broken against the righteous — the bribe Enoch mocks (presents to the rain, gold and silver to buy the dew, 100:12) cannot reverse it. Torah stands; the heavens keep its terms.',
+       sv.verse_id, ev.verse_id, 'extras', 52487
+  FROM _session250_en100_lookup sv, _session250_en100_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=100 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-100-blood-to-the-bridle
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Revelation 14:20 — *And the winepress was trodden without the city, and blood came out of the winepress, even unto the horse bridles, by the space of a thousand and six hundred furlongs.* John''s winepress runs blood to the horse bridle, the very measure Enoch gives when the horse walks up to its breast in the blood of sinners (100:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-blood-to-the-bridle'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joel 3:13 — *Put ye in the sickle, for the harvest is ripe: come, get you down; for the press is full, the fats overflow; for their wickedness is great.* Joel''s overflowing winepress is the harvest of judgement whose streams flow with blood in Enoch 100:1.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-blood-to-the-bridle'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joel 3:14 — *Multitudes, multitudes in the valley of decision: for the day of Yahuah (LORD) is near in the valley of decision.* The valley of decision names the place where the slaying from dawn till sunset (100:2) falls.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-blood-to-the-bridle'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 34:3 — *Their slain also shall be cast out, and their stink shall come up out of their carcases, and the mountains shall be melted with their blood.* Isaiah''s mountains melted with blood match Enoch''s streams flowing with the blood of the smitten (100:1).'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-blood-to-the-bridle'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-100-supper-of-the-great-elohim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Revelation 19:17 — *And I saw an angel standing in the sun; and he cried with a loud voice, saying to all the fowls that fly in the midst of heaven, Come and gather yourselves together unto the supper of the great Elohim (God);* John''s gathering angel matches the angels who descend to gather all the workers of sin into one place for the great judgement of Enoch 100:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-supper-of-the-great-elohim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 19:18 — *That ye may eat the flesh of kings, and the flesh of captains, and the flesh of mighty men, and the flesh of horses, and of them that sit on them, and the flesh of all men, both free and bond, both small and great.* The feast over kings and mighty is the end of the sinners gathered for the Most High''s judgement in Enoch 100:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-supper-of-the-great-elohim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 34:2 — *For the indignation of Yahuah (LORD) is upon all nations, and his fury upon all their armies: he hath utterly destroyed them, he hath delivered them to the slaughter.* Isaiah''s indignation delivered to the slaughter is the great judgement the Most High arises to execute in Enoch 100:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-supper-of-the-great-elohim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Zephaniah 1:17 — *And I will bring distress upon men, that they shall walk like blind men, because they have sinned against Yahuah (LORD): and their blood shall be poured out as dust, and their flesh as the dung.* The day of distress on those who sinned is the day of judgement the Most High rises for in Enoch 100:4.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-supper-of-the-great-elohim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-100-apple-of-an-eye
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:10 — *He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye.* Moses'' picture of Yahuah guarding His people as the apple of His eye is the very care the holy-angel guardians give the righteous in Enoch 100:5.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-apple-of-an-eye'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Zechariah 2:8 — *For thus saith Yahuah Tseva''ot (LORD of hosts); After the glory hath he sent me unto the nations which spoiled you: for he that toucheth you toucheth the apple of his eye.* To touch the guarded righteous is to touch the apple of Yahuah''s eye, the protection Enoch 100:5 assigns the angels to keep.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-apple-of-an-eye'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=2 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 91:11 — *For he shall give his angels charge over thee, to keep thee in all thy ways.* The angelic charge to keep the faithful is exactly the guardians from among the holy angels appointed over the righteous in Enoch 100:5.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-apple-of-an-eye'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 3:1 — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Wisdom''s guarded souls in the hand of Elohim match the long sleep with nought to fear of the righteous in Enoch 100:5.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-apple-of-an-eye'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=5
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-100-riches-shall-not-save
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Zephaniah 1:18 — *Neither their silver nor their gold shall be able to deliver them in the day of the LORD''S wrath; but the whole land shall be devoured by the fire of his jealousy: for he shall make even a speedy riddance of all them that dwell in the land.* Silver and gold that cannot deliver in the day of wrath is the very lesson the children of the earth learn in Enoch 100:6 — riches shall not save.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-riches-shall-not-save'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James'' woe to the rich on the coming miseries is the same woe Enoch sounds on the sinners on the day of strong anguish (100:7).'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-riches-shall-not-save'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The hoarded riches that eat the flesh like fire match Enoch''s burning requital on those who burned the righteous with fire (100:7).'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-riches-shall-not-save'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah''s woe on the land-engrossers names the oppression for which Enoch''s sinners are requited according to their works (100:7).'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-riches-shall-not-save'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The vain question of the rich at judgement echoes the children of the earth recognizing their riches cannot save them in Enoch 100:6.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-riches-shall-not-save'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=6
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-100-rain-withheld-witness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 28:23 — *And thy heaven that is over thy head shall be brass, and the earth that is under thee shall be iron.* The brass heaven that yields no rain is the covenant curse standing behind the cloud, dew, and rain withheld from the sinners in Enoch 100:11.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-rain-withheld-witness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 28:24 — *Yahuah (LORD) shall make the rain of thy land powder and dust: from heaven shall it come down upon thee, until thou be destroyed.* The rain turned to powder and the destroying weather match the snow-storms and plagues the sinners cannot stand before in Enoch 100:13.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-rain-withheld-witness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 26:19 — *And I will break the pride of your power; and I will make your heaven as iron, and your earth as brass:* The iron heaven for a broken covenant is the Torah ground of the rain and dew withheld as a witness against the sinners in Enoch 100:11.'
+  FROM cross_reference_threads t, cross_references x, _session250_en100_lookup sv, _session250_en100_lookup tv
+ WHERE t.slug='1-enoch-100-rain-withheld-witness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=100 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_102.sql (session250 1-enoch 102) -----
+-- Source anchor: enoch/1-enoch ch102. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en102 (view _session250_en102_lookup). Sort band base 52525, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en102_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-102-souls-in-the-hand-of-elohim
+  ('enoch', '1-enoch', 102, 3, 'apocrypha', 'the-wisdom-of-solomon', 3, 1, 'extras', E'Wisdom of Solomon 3:1 — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Almost verbatim with Enoch 102:3 — the righteous dead rest in Elohim''s hand, untouched by torment, while only the sinners are held in Sheol.'),
+  ('enoch', '1-enoch', 102, 1, 'apocrypha', 'the-wisdom-of-solomon', 3, 2, 'extras', E'Wisdom of Solomon 3:2 — *In the sight of the unwise they seemed to die: and their departure is taken for misery,* matching the very taunt Enoch''s sinners raise at 102:5-6 — the world reads the righteous death as defeat and cannot see the path that runs through it.'),
+  ('enoch', '1-enoch', 102, 3, 'apocrypha', 'the-wisdom-of-solomon', 3, 4, 'extras', E'Wisdom of Solomon 3:4 — *For though they be punished in the sight of men, yet is their hope full of immortality.* The no-torment promise of Enoch 102:3 is the hope of immortality — the righteous suffer in the world''s eyes but are kept whole in Elohim''s hand.'),
+  ('enoch', '1-enoch', 102, 1, 'canon', 'daniel', 12, 1, 'free', E'Daniel 12:1 — *...and at that time thy people shall be delivered, every one that shall be found written in the book.* Enoch''s separation of righteous from sinners (102:1-2) is Daniel''s deliverance — the deciding line is the name already written, election before any confession.'),
+  -- thread: 1-enoch-102-righteous-shine-sinners-taunt
+  ('enoch', '1-enoch', 102, 7, 'canon', 'daniel', 12, 3, 'free', E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* Enoch''s righteous *shining like the sun* (102:7) is Daniel''s resurrection-radiance of the wise.'),
+  ('enoch', '1-enoch', 102, 2, 'canon', 'daniel', 12, 2, 'free', E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The separation of the righteous dead from the sinners in Enoch 102:2 is the two-fold awakening — life for the one, shame for the other.'),
+  ('enoch', '1-enoch', 102, 7, 'canon', 'matthew', 13, 43, 'free', E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha''s own words for the harvest''s end exactly render Enoch 102:7 — the righteous shining like the sun.'),
+  ('enoch', '1-enoch', 102, 6, 'apocrypha', 'the-wisdom-of-solomon', 5, 3, 'extras', E'Wisdom of Solomon 5:3 — *And they repenting and groaning for anguish of spirit shall say within themselves, This was he, whom we had sometimes in derision, and a proverb of reproach:* the mockers of Enoch 102:6 (“these are they who have despised us”) seen now from the other side — the despisers confessing too late.'),
+  ('enoch', '1-enoch', 102, 7, 'apocrypha', 'the-wisdom-of-solomon', 5, 5, 'extras', E'Wisdom of Solomon 5:5 — *How is he numbered among the children of Yahuah (God), and his lot is among the saints!* The sinners'' astonishment at the shining righteous in Enoch 102:7 is this very cry — the despised are found among the elect.'),
+  -- thread: 1-enoch-102-woes-on-the-rich-oppressors
+  ('enoch', '1-enoch', 102, 10, 'canon', 'isaiah', 5, 8, 'free', E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Enoch''s woe on those who tread the poor and amass possessions (102:10,13) is Isaiah''s woe on land-grabbing greed.'),
+  ('enoch', '1-enoch', 102, 12, 'canon', 'isaiah', 5, 22, 'free', E'Isaiah 5:22 — *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink:* the strong who drink wine in large bowls while treading the poor (Enoch 102:12) stand under Isaiah''s same woe.'),
+  ('enoch', '1-enoch', 102, 12, 'canon', 'amos', 6, 6, 'free', E'Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* Enoch''s drinkers of wine in large bowls (102:12) are Amos''s feasters indifferent to the suffering of the people.'),
+  ('enoch', '1-enoch', 102, 13, 'canon', 'james', 5, 4, 'free', E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The many husbandmen and labourers in the rich man''s houses (Enoch 102:14-16) cry out against the fraud that gathered the gold and silver in unrighteousness (102:13).'),
+  -- thread: 1-enoch-102-furnace-riches-do-not-endure
+  ('enoch', '1-enoch', 102, 18, 'canon', 'matthew', 13, 42, 'free', E'Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* Yahusha''s harvest-end furnace is Enoch''s *fiery furnace* (102:18) — the same fate for those whose unrighteous glory withers like grass.'),
+  ('enoch', '1-enoch', 102, 18, 'canon', 'malachi', 4, 1, 'free', E'Malachi 4:1 — *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up...* Enoch''s proud destroyed like withering grass and cast into the furnace (102:18) are Malachi''s proud burned up as stubble.'),
+  ('enoch', '1-enoch', 102, 7, 'canon', 'malachi', 4, 2, 'free', E'Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* The righteous shining like the sun in Enoch 102:7 meet the Sun of righteousness who rises for those who fear Yahuah''s name — the other end from the furnace.'),
+  ('enoch', '1-enoch', 102, 13, 'canon', 'malachi', 3, 14, 'free', E'Malachi 3:14 — *Ye have said, It is vain to serve Elohim (God): and what profit is it that we have kept his ordinance, and that we have walked mournfully before Yahuah Tseva''ot (LORD of hosts)?* This is the sinners'' boast of Enoch 102:13 — that wealth, not service, is gain — answered when Yahuah writes the book of remembrance for them that fear Him (Malachi 3:16).'),
+  ('enoch', '1-enoch', 102, 22, 'canon', 'psalms', 49, 16, 'free', E'Psalm 49:16 — *Be not thou afraid when one is made rich, when the glory of his house is increased;* the Psalmist''s counsel answers Enoch 102:22 — the rich man''s riches and glory shall not endure, so the righteous need not fear them.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en102_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en102_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-102-souls-in-the-hand-of-elohim',
+       E'The souls of the righteous in the hand of Elohim — no torment touches them',
+       E'Enoch separates the two ends in the day of judgement: *And the souls of the righteous shall be in the hand of Elohim (God), And no torment shall touch them.* (1 Enoch 102:3), while *the souls of the sinners shall be in Sheol* lamenting (102:4). This is not a new comfort — Wisdom says it almost word for word: *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* (Wisdom of Solomon 3:1), and answers the world''s misreading of their death — *In the sight of the unwise they seemed to die: and their departure is taken for misery* (Wisdom of Solomon 3:2) — *but they are in peace* (Wisdom of Solomon 3:3) and *their hope full of immortality* (Wisdom of Solomon 3:4). The righteous keep the way and are kept; Sheol holds only those who broke the covenant. The keeping precedes the deliverance: *every one that shall be found written in the book* (Daniel 12:1) is the one already named among the elect, not added by a deathbed verdict.',
+       sv.verse_id, ev.verse_id, 'extras', 52525
+  FROM _session250_en102_lookup sv, _session250_en102_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=102 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-102-righteous-shine-sinners-taunt',
+       E'Shining like the sun — the dead righteous answered, the sinners'' taunt undone',
+       E'The sinners in Sheol see the vindicated righteous and recoil: *And they shall see the righteous shining like the sun, And they shall say: “These are they who have walked in righteousness before Yahuah (God) of Spirits.”* (1 Enoch 102:7). This is the resurrection-shining of Daniel — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* (Daniel 12:3) — after *many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2), which Yahusha seals: *Then shall the righteous shine forth as the sun in the kingdom of their Father.* (Matthew 13:43). Wisdom stages the very scene of 102:6-7 — the mockers turned witnesses: *This was he, whom we had sometimes in derision, and a proverb of reproach* (Wisdom of Solomon 5:3), *We fools accounted his life madness, and his end to be without honour* (Wisdom of Solomon 5:4), *How is he numbered among the children of Yahuah (God), and his lot is among the saints!* (Wisdom of Solomon 5:5). And Malachi names the ledger that decides who shines: *a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* (Malachi 3:16) — over against the world''s complaint that *It is vain to serve Elohim (God)* (Malachi 3:14). It ain''t new: the despised righteous of Enoch 102 are the wise-who-shine, written in the book of remembrance.',
+       sv.verse_id, ev.verse_id, 'extras', 52528
+  FROM _session250_en102_lookup sv, _session250_en102_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=102 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-102-woes-on-the-rich-oppressors',
+       E'Woe to the strong in unrighteousness who tread the poor — the eternal law unbroken',
+       E'Enoch turns the woes against the systems of injustice, not the persons caught in them: *Woe to you who eat the marrow of wheat, And drink the finest wine, And tread upon the poor with your might!* (1 Enoch 102:10) and *Woe to you who acquire gold and silver in unrighteousness* (102:13). This is the prophets'' own indictment of luxury wrung from the oppressed. Isaiah: *Woe unto them that join house to house, that lay field to field, till there be no place* (Isaiah 5:8), and *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink* (Isaiah 5:22) — the vineyard owner who *looked for judgment, but behold oppression; for righteousness, but behold a cry* (Isaiah 5:7). Amos names the same banquet: *That drink wine in bowls... but they are not grieved for the affliction of Joseph.* (Amos 6:6). And the apostle Yahaqov carries it whole into the last days: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* (James 5:1), for *the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth* (James 5:4). The woe falls on the fraud, the hoarding, the trampling — the perversion of the eternal law — never on the poor, and never on Torah, which is the way of life the oppressor abandoned.',
+       sv.verse_id, ev.verse_id, 'extras', 52531
+  FROM _session250_en102_lookup sv, _session250_en102_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=102 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-102-furnace-riches-do-not-endure',
+       E'Cast into the fiery furnace — where are your riches now?',
+       E'The flattery that crowned the rich as gods is unmasked: they exalt you *like a king... And they shall call you gods* (1 Enoch 102:17), *But ye shall be destroyed like grass, And like the young grass that withers, And ye shall be cast into the fiery furnace.* (102:18), and the mocking question follows — *Where are your riches now?* (102:19) — answered, *For your riches shall not endure, And your glory shall not last.* (102:22). Yahusha sets the same furnace at the end of the age: *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* (Matthew 13:42). Malachi paints the same withering: *the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble* (Malachi 4:1), while *unto you that fear my name shall the Sun of righteousness arise with healing in his wings* (Malachi 4:2) — the same two ends as Enoch''s shining righteous and consumed sinners, sealed with *Remember ye the law of Moses my servant* (Malachi 4:4): Torah stands through the fire. And the Psalmist already answered the boast: *Be not thou afraid when one is made rich, when the glory of his house is increased;* (Psalm 49:16). The riches that do not endure (102:22) are stubble; the path of righteousness alone is not cut off.',
+       sv.verse_id, ev.verse_id, 'extras', 52534
+  FROM _session250_en102_lookup sv, _session250_en102_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=17
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=102 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-102-souls-in-the-hand-of-elohim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Wisdom of Solomon 3:1 — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* Almost verbatim with Enoch 102:3 — the righteous dead rest in Elohim''s hand, untouched by torment, while only the sinners are held in Sheol.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-souls-in-the-hand-of-elohim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Wisdom of Solomon 3:2 — *In the sight of the unwise they seemed to die: and their departure is taken for misery,* matching the very taunt Enoch''s sinners raise at 102:5-6 — the world reads the righteous death as defeat and cannot see the path that runs through it.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-souls-in-the-hand-of-elohim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Wisdom of Solomon 3:4 — *For though they be punished in the sight of men, yet is their hope full of immortality.* The no-torment promise of Enoch 102:3 is the hope of immortality — the righteous suffer in the world''s eyes but are kept whole in Elohim''s hand.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-souls-in-the-hand-of-elohim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=3
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Daniel 12:1 — *...and at that time thy people shall be delivered, every one that shall be found written in the book.* Enoch''s separation of righteous from sinners (102:1-2) is Daniel''s deliverance — the deciding line is the name already written, election before any confession.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-souls-in-the-hand-of-elohim'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-102-righteous-shine-sinners-taunt
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* Enoch''s righteous *shining like the sun* (102:7) is Daniel''s resurrection-radiance of the wise.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-righteous-shine-sinners-taunt'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The separation of the righteous dead from the sinners in Enoch 102:2 is the two-fold awakening — life for the one, shame for the other.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-righteous-shine-sinners-taunt'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha''s own words for the harvest''s end exactly render Enoch 102:7 — the righteous shining like the sun.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-righteous-shine-sinners-taunt'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 5:3 — *And they repenting and groaning for anguish of spirit shall say within themselves, This was he, whom we had sometimes in derision, and a proverb of reproach:* the mockers of Enoch 102:6 (“these are they who have despised us”) seen now from the other side — the despisers confessing too late.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-righteous-shine-sinners-taunt'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=6
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Wisdom of Solomon 5:5 — *How is he numbered among the children of Yahuah (God), and his lot is among the saints!* The sinners'' astonishment at the shining righteous in Enoch 102:7 is this very cry — the despised are found among the elect.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-righteous-shine-sinners-taunt'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-102-woes-on-the-rich-oppressors
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Enoch''s woe on those who tread the poor and amass possessions (102:10,13) is Isaiah''s woe on land-grabbing greed.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-woes-on-the-rich-oppressors'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 5:22 — *Woe unto them that are mighty to drink wine, and men of strength to mingle strong drink:* the strong who drink wine in large bowls while treading the poor (Enoch 102:12) stand under Isaiah''s same woe.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-woes-on-the-rich-oppressors'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Amos 6:6 — *That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the affliction of Joseph.* Enoch''s drinkers of wine in large bowls (102:12) are Amos''s feasters indifferent to the suffering of the people.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-woes-on-the-rich-oppressors'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=6 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The many husbandmen and labourers in the rich man''s houses (Enoch 102:14-16) cry out against the fraud that gathered the gold and silver in unrighteousness (102:13).'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-woes-on-the-rich-oppressors'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-102-furnace-riches-do-not-endure
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* Yahusha''s harvest-end furnace is Enoch''s *fiery furnace* (102:18) — the same fate for those whose unrighteous glory withers like grass.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-furnace-riches-do-not-endure'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Malachi 4:1 — *For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up...* Enoch''s proud destroyed like withering grass and cast into the furnace (102:18) are Malachi''s proud burned up as stubble.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-furnace-riches-do-not-endure'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* The righteous shining like the sun in Enoch 102:7 meet the Sun of righteousness who rises for those who fear Yahuah''s name — the other end from the furnace.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-furnace-riches-do-not-endure'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 3:14 — *Ye have said, It is vain to serve Elohim (God): and what profit is it that we have kept his ordinance, and that we have walked mournfully before Yahuah Tseva''ot (LORD of hosts)?* This is the sinners'' boast of Enoch 102:13 — that wealth, not service, is gain — answered when Yahuah writes the book of remembrance for them that fear Him (Malachi 3:16).'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-furnace-riches-do-not-endure'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Psalm 49:16 — *Be not thou afraid when one is made rich, when the glory of his house is increased;* the Psalmist''s counsel answers Enoch 102:22 — the rich man''s riches and glory shall not endure, so the righteous need not fear them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en102_lookup sv, _session250_en102_lookup tv
+ WHERE t.slug='1-enoch-102-furnace-riches-do-not-endure'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=102 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_103.sql (session250 1-enoch 103) -----
+-- Source anchor: enoch/1-enoch ch103. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en103 (view _session250_en103_lookup). Sort band base 52550, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en103_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-103-oath-righteous-dead-shall-live
+  ('enoch', '1-enoch', 103, 4, 'canon', 'daniel', 12, 2, 'free', E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The awakening Daniel sees is the very life Enoch swears the righteous spirits shall not lose.'),
+  ('enoch', '1-enoch', 103, 4, 'canon', 'daniel', 12, 3, 'free', E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* The light Yahuah causes to appear on Enoch''s righteous (103:4) is Daniel''s firmament-shining.'),
+  ('enoch', '1-enoch', 103, 4, 'canon', 'matthew', 13, 43, 'free', E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha confirms the same shining of the righteous Enoch promises under oath.'),
+  ('enoch', '1-enoch', 103, 7, 'apocrypha', 'the-wisdom-of-solomon', 3, 1, 'extras', E'The Wisdom of Solomon 3:1 — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* The same safekeeping of the righteous spirits that Enoch swears shall not perish.'),
+  ('enoch', '1-enoch', 103, 7, 'apocrypha', 'the-wisdom-of-solomon', 3, 4, 'extras', E'The Wisdom of Solomon 3:4 — *For though they be punished in the sight of men, yet is their hope full of immortality.* The hope full of immortality is the satisfied life Enoch swears the righteous shall have (103:7).'),
+  -- thread: 1-enoch-103-names-written-books-of-life
+  ('enoch', '1-enoch', 103, 3, 'canon', 'malachi', 3, 16, 'free', E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The book of remembrance is the same heavenly register where Enoch sees the righteous already written (103:3).'),
+  ('enoch', '1-enoch', 103, 9, 'canon', 'revelation', 20, 12, 'free', E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The same opening of the books of the living and of the unrighteous that Enoch witnesses (103:9).'),
+  ('enoch', '1-enoch', 103, 3, 'canon', 'revelation', 14, 13, 'free', E'Revelation 14:13 — *And I heard a voice from heaven saying unto me, Write, Blessed are the dead which die in Yahuah (Lord) from henceforth: Yea, saith the Spirit, that they may rest from their labours; and their works do follow them.* The blessing on the righteous dead, whose names stand in the books of life (103:3).'),
+  ('enoch', '1-enoch', 103, 8, 'enoch', '1-enoch', 108, 3, 'extras', E'1 Enoch 108:3 — *Wait ye in patience until sin has passed away, For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever, And their spirits shall be slain, And they shall cry and lament in a waste place that has no water, And in the fire shall they burn.* Enoch''s own closing names what 103:8 promises the righteous will never suffer — the blotting falls only on the sinner.'),
+  -- thread: 1-enoch-103-sinners-lot-darkness-sheol
+  ('enoch', '1-enoch', 103, 10, 'canon', 'luke', 16, 23, 'free', E'Luke 16:23 — *And in hell he lift up his eyes, being in torments, and seeth Abraham afar off, and Lazarus in his bosom.* The torment-side of Sheol where Enoch sees the sinners'' spirits cast into darkness (103:10).'),
+  ('enoch', '1-enoch', 103, 10, 'canon', 'luke', 16, 24, 'free', E'Luke 16:24 — *And he cried and said, Father Abraham, have mercy on me, and send Lazarus, that he may dip the tip of his finger in water, and cool my tongue; for I am tormented in this flame.* The cry from Sheol that Enoch says shall not be heard nor ascend to heaven (103:10-11).'),
+  ('enoch', '1-enoch', 103, 9, 'canon', 'revelation', 20, 15, 'free', E'Revelation 20:15 — *And whosoever was not found written in the book of life was cast into the lake of fire.* The end of the names found in the books of the unrighteous that Enoch witnesses opened (103:9).'),
+  -- thread: 1-enoch-103-woes-on-the-rich-oppressors
+  ('enoch', '1-enoch', 103, 14, 'canon', 'isaiah', 5, 8, 'free', E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah''s woe on land-grabbing greed matches Enoch''s woe on those who acquire gold and silver in unrighteousness (103:14-15).'),
+  ('enoch', '1-enoch', 103, 15, 'canon', 'james', 5, 1, 'free', E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James opens the very woe Enoch pronounces on the rich whose glory shall not last (103:15, 24).'),
+  ('enoch', '1-enoch', 103, 14, 'canon', 'james', 5, 4, 'free', E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The defrauded labourers'' cry answers Enoch''s woe on those who tread upon the righteous with their might (103:14).'),
+  ('enoch', '1-enoch', 103, 24, 'apocrypha', 'the-wisdom-of-solomon', 5, 8, 'extras', E'The Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The unmasked confession of the rich whose riches do not endure, just as Enoch declares (103:24).'),
+  -- thread: 1-enoch-103-two-paths-righteousness
+  ('enoch', '1-enoch', 103, 25, 'canon', 'deuteronomy', 30, 15, 'free', E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* Moses'' two ways are the very paths of righteousness and unrighteousness Enoch sets before his sons (103:25).'),
+  ('enoch', '1-enoch', 103, 25, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* The choose-life command underlies Enoch''s path of righteousness over the path that is cut off (103:25).'),
+  ('enoch', '1-enoch', 103, 25, 'canon', 'psalms', 1, 6, 'free', E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalter''s two ways are Enoch''s two paths, the way of unrighteousness that shall be cut off (103:25).'),
+  ('enoch', '1-enoch', 103, 25, 'apocrypha', 'the-wisdom-of-solomon', 5, 15, 'extras', E'The Wisdom of Solomon 5:15 — *But the righteous live for evermore; their reward also is with Yahuah (God), and the care of them is with the Most High.* Where the path of righteousness ends — the everlasting life Enoch points his sons toward (103:25).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en103_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en103_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-103-oath-righteous-dead-shall-live',
+       E'The oath: the righteous dead shall live and shine',
+       E'Enoch swears it on oath — the righteous who died in faith are not lost: *"And the righteous shall be victorious in the name of Yahuah (God) of Spirits: And He will cause His light to appear on them, And He will make peace for them"* (1 Enoch 103:4), *"And as for the righteous, they shall be satisfied with life, And their spirits shall not perish"* (1 Enoch 103:7). This is the canon''s own resurrection hope. Daniel saw the same awakening: *"And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt"* (Daniel 12:2), and the wise *"shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever"* (Daniel 12:3). Yahusha sealed it: *"Then shall the righteous shine forth as the sun in the kingdom of their Father"* (Matthew 13:43). And the wisdom of the fathers said it plainly — *"But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them"* (The Wisdom of Solomon 3:1), *"For though they be punished in the sight of men, yet is their hope full of immortality"* (The Wisdom of Solomon 3:4). It ain''t new — the light that appears on Enoch''s righteous is the same firmament-brightness Daniel and Yahusha promised.',
+       sv.verse_id, ev.verse_id, 'extras', 52550
+  FROM _session250_en103_lookup sv, _session250_en103_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=103 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-103-names-written-books-of-life',
+       E'Names written in the books of life — election before confession',
+       E'Enoch beholds the heavenly register: *"And I have beheld the books of life"* (1 Enoch 103:2), and the righteous are already there — *"your names are written in the books of life before the Most High"* (1 Enoch 103:3), *"their name shall not be blotted out"* (1 Enoch 103:8). The name is not earned at the end; it is written before, never added, only kept or blotted. Malachi saw the same book: *"a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name"* (Malachi 3:16). The book stands behind the judgement scene of Revelation: *"another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works"* (Revelation 20:12). And in the blessed-dead vision John heard, *"Blessed are the dead which die in Yahuah (Lord) from henceforth... that they may rest from their labours; and their works do follow them"* (Revelation 14:13). Enoch''s own closing seals which way the leaf turns — names are blotted, never inscribed late (1 Enoch 108:3). It ain''t new: election runs through the seed-line, written before the Most High, and the memorial of the righteous stands before Him.',
+       sv.verse_id, ev.verse_id, 'extras', 52553
+  FROM _session250_en103_lookup sv, _session250_en103_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=103 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-103-sinners-lot-darkness-sheol',
+       E'The sinners'' lot: darkness and lament in Sheol',
+       E'Over against the light made to appear on the righteous, Enoch sets the sinner''s portion: *"But woe to you, ye sinners, who are dead in your sins! Ye shall have no peace"* (1 Enoch 103:6), and *"their spirits shall be cast into darkness and destruction, And they shall cry out and lament in Sheol. And their cry shall not be heard, And their lamentation shall not ascend to heaven"* (1 Enoch 103:10-11). Yahusha drew the same hollow of Sheol in the rich man and Lazarus: *"And in hell he lift up his eyes, being in torments, and seeth Abraham afar off, and Lazarus in his bosom"* (Luke 16:23), *"I am tormented in this flame"* (Luke 16:24) — the cry that does not ascend. Revelation seals the end of the name not found: *"And whosoever was not found written in the book of life was cast into the lake of fire"* (Revelation 20:15). The contrast is not arbitrary cruelty but covenant requital — *"their deeds shall be requited according to their works"* (1 Enoch 103:12). The righteous enter peace; the sinner, dead in his sins, finds none.',
+       sv.verse_id, ev.verse_id, 'extras', 52556
+  FROM _session250_en103_lookup sv, _session250_en103_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=103 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-103-woes-on-the-rich-oppressors',
+       E'Woes on the rich and the oppressors of the righteous',
+       E'Enoch turns the woes on the unjust systems of wealth: *"Woe to you who eat all the best food, And drink wine in large bowls, And tread upon the righteous with your might"* (1 Enoch 103:14), *"Woe to you who acquire gold and silver in unrighteousness... Woe to you, O sinners! For your riches shall not endure, And your glory shall not last"* (1 Enoch 103:15, 24). The prophets and the brother of Yahusha sound the identical alarm against the same oppression — not against persons, but against the heaping of treasure and the defrauding of labourers. Isaiah: *"Woe unto them that join house to house, that lay field to field, till there be no place"* (Isaiah 5:8). James: *"Go to now, ye rich men, weep and howl for your miseries that shall come upon you"* (James 5:1), *"Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth"* (James 5:4). And the fathers'' wisdom, of those whose riches profited nothing: *"What has pride profited us? or what good has riches with our vaunting brought us?"* (The Wisdom of Solomon 5:8). It ain''t new — the woe falls on injustice and the systems that tread the righteous, and the riches gathered in unrighteousness do not endure.',
+       sv.verse_id, ev.verse_id, 'extras', 52559
+  FROM _session250_en103_lookup sv, _session250_en103_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=13
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=103 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-103-two-paths-righteousness',
+       E'The two paths: the way of righteousness and the way cut off',
+       E'Enoch closes the chapter with the choice that frames the whole Epistle: *"And now, my sons, listen to me, And I will show you the paths of righteousness, And the paths of unrighteousness, And I will show you how the paths of unrighteousness Shall be cut off"* (1 Enoch 103:25). This is the Torah''s set-before-you-life-and-death, the two ways. Moses laid it down: *"See, I have set before thee this day life and good, and death and evil"* (Deuteronomy 30:15), *"I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live"* (Deuteronomy 30:19). The Psalter opens on the same fork — the way of the righteous and the way that perishes (Psalm 1:6). And the wisdom of the fathers shows where the path of righteousness ends: *"But the righteous live for evermore; their reward also is with Yahuah (God), and the care of them is with the Most High"* (The Wisdom of Solomon 5:15). It ain''t new — Enoch''s two paths are Moses'' choose-life, the way of life that is the Torah, never the curse.',
+       sv.verse_id, ev.verse_id, 'extras', 52562
+  FROM _session250_en103_lookup sv, _session250_en103_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=25
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=103 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-103-oath-righteous-dead-shall-live
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The awakening Daniel sees is the very life Enoch swears the righteous spirits shall not lose.'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-oath-righteous-dead-shall-live'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* The light Yahuah causes to appear on Enoch''s righteous (103:4) is Daniel''s firmament-shining.'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-oath-righteous-dead-shall-live'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha confirms the same shining of the righteous Enoch promises under oath.'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-oath-righteous-dead-shall-live'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'The Wisdom of Solomon 3:1 — *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them.* The same safekeeping of the righteous spirits that Enoch swears shall not perish.'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-oath-righteous-dead-shall-live'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'The Wisdom of Solomon 3:4 — *For though they be punished in the sight of men, yet is their hope full of immortality.* The hope full of immortality is the satisfied life Enoch swears the righteous shall have (103:7).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-oath-righteous-dead-shall-live'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-103-names-written-books-of-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The book of remembrance is the same heavenly register where Enoch sees the righteous already written (103:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-names-written-books-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* The same opening of the books of the living and of the unrighteous that Enoch witnesses (103:9).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-names-written-books-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 14:13 — *And I heard a voice from heaven saying unto me, Write, Blessed are the dead which die in Yahuah (Lord) from henceforth: Yea, saith the Spirit, that they may rest from their labours; and their works do follow them.* The blessing on the righteous dead, whose names stand in the books of life (103:3).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-names-written-books-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 108:3 — *Wait ye in patience until sin has passed away, For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever, And their spirits shall be slain, And they shall cry and lament in a waste place that has no water, And in the fire shall they burn.* Enoch''s own closing names what 103:8 promises the righteous will never suffer — the blotting falls only on the sinner.'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-names-written-books-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=8
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=108 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-103-sinners-lot-darkness-sheol
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 16:23 — *And in hell he lift up his eyes, being in torments, and seeth Abraham afar off, and Lazarus in his bosom.* The torment-side of Sheol where Enoch sees the sinners'' spirits cast into darkness (103:10).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-sinners-lot-darkness-sheol'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=16 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 16:24 — *And he cried and said, Father Abraham, have mercy on me, and send Lazarus, that he may dip the tip of his finger in water, and cool my tongue; for I am tormented in this flame.* The cry from Sheol that Enoch says shall not be heard nor ascend to heaven (103:10-11).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-sinners-lot-darkness-sheol'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=16 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 20:15 — *And whosoever was not found written in the book of life was cast into the lake of fire.* The end of the names found in the books of the unrighteous that Enoch witnesses opened (103:9).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-sinners-lot-darkness-sheol'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-103-woes-on-the-rich-oppressors
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah''s woe on land-grabbing greed matches Enoch''s woe on those who acquire gold and silver in unrighteousness (103:14-15).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-woes-on-the-rich-oppressors'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James opens the very woe Enoch pronounces on the rich whose glory shall not last (103:15, 24).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-woes-on-the-rich-oppressors'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The defrauded labourers'' cry answers Enoch''s woe on those who tread upon the righteous with their might (103:14).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-woes-on-the-rich-oppressors'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'The Wisdom of Solomon 5:8 — *What has pride profited us? or what good has riches with our vaunting brought us?* The unmasked confession of the rich whose riches do not endure, just as Enoch declares (103:24).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-woes-on-the-rich-oppressors'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=24
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-103-two-paths-righteousness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil.* Moses'' two ways are the very paths of righteousness and unrighteousness Enoch sets before his sons (103:25).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-two-paths-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live.* The choose-life command underlies Enoch''s path of righteousness over the path that is cut off (103:25).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-two-paths-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The Psalter''s two ways are Enoch''s two paths, the way of unrighteousness that shall be cut off (103:25).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-two-paths-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'The Wisdom of Solomon 5:15 — *But the righteous live for evermore; their reward also is with Yahuah (God), and the care of them is with the Most High.* Where the path of righteousness ends — the everlasting life Enoch points his sons toward (103:25).'
+  FROM cross_reference_threads t, cross_references x, _session250_en103_lookup sv, _session250_en103_lookup tv
+ WHERE t.slug='1-enoch-103-two-paths-righteousness'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=103 AND sv.verse_number=25
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_104.sql (session250 1-enoch 104) -----
+-- Source anchor: enoch/1-enoch ch104. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en104 (view _session250_en104_lookup). Sort band base 52575, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en104_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-104-righteous-shine
+  ('enoch', '1-enoch', 104, 4, 'canon', 'daniel', 12, 2, 'free', E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The awakening of the dust-sleepers is the very resurrection Enoch promises the righteous in 104:2-5.'),
+  ('enoch', '1-enoch', 104, 4, 'canon', 'daniel', 12, 3, 'free', E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* Yahuah causing His light to appear on the righteous (104:4) is Daniel''s wise shining as the firmament.'),
+  ('enoch', '1-enoch', 104, 4, 'canon', 'matthew', 13, 43, 'free', E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha seals Enoch''s promise: the righteous shine in the Father''s kingdom.'),
+  ('enoch', '1-enoch', 104, 5, 'apocrypha', 'the-wisdom-of-solomon', 3, 7, 'extras', E'the Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The same extra-canonical resurrection-shining: the righteous vindicated and luminous at their visitation.'),
+  -- thread: 1-enoch-104-names-written-books-of-life
+  ('enoch', '1-enoch', 104, 3, 'canon', 'malachi', 3, 16, 'free', E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The book of remembrance is the same heavenly register where the righteous names of 104:3 are written before the Most High.'),
+  ('enoch', '1-enoch', 104, 3, 'canon', 'daniel', 12, 1, 'free', E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* Deliverance belongs to every one written in the book — Enoch''s elect whose names stand before the Most High.'),
+  ('enoch', '1-enoch', 104, 8, 'canon', 'psalms', 69, 28, 'free', E'Psalm 69:28 — *Let them be blotted out of the book of the living, and not be written with the righteous.* Enoch''s righteous name shall NOT be blotted out (104:8); the wicked are blotted, never the elect written-in.'),
+  ('enoch', '1-enoch', 104, 8, 'canon', 'revelation', 3, 5, 'free', E'Revelation 3:5 — *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.* Yahusha''s promise not to blot the overcomer''s name is Enoch''s name that shall not be blotted out.'),
+  ('enoch', '1-enoch', 104, 8, 'enoch', '1-enoch', 108, 3, 'extras', E'1 Enoch 108:3 — *Wait ye in patience until sin has passed away, For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever, And their spirits shall be slain, And they shall cry and lament in a waste place that has no water, And in the fire shall they burn.* Enoch''s own closing book confirms the asymmetry: the wicked are blotted out, while the righteous name of 104:8 endures.'),
+  -- thread: 1-enoch-104-books-opened-judgment
+  ('enoch', '1-enoch', 104, 9, 'canon', 'revelation', 20, 12, 'free', E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* John''s opened books are Enoch''s books of the living and of the unrighteous opened in 104:9.'),
+  ('enoch', '1-enoch', 104, 12, 'canon', 'revelation', 20, 15, 'free', E'Revelation 20:15 — *And whosoever was not found written in the book of life was cast into the lake of fire.* The fire that receives the unwritten is the darkness and destruction into which Enoch''s sinners are cast (104:10-12).'),
+  -- thread: 1-enoch-104-woe-to-the-rich
+  ('enoch', '1-enoch', 104, 15, 'canon', 'isaiah', 5, 8, 'free', E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah''s woe on the land-engrossers matches Enoch''s woe on those who acquire gold and silver in unrighteousness (104:15).'),
+  ('enoch', '1-enoch', 104, 14, 'canon', 'james', 5, 1, 'free', E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James echoes Enoch''s woe on the rich who tread upon the righteous with their might (104:14).'),
+  ('enoch', '1-enoch', 104, 17, 'canon', 'james', 5, 4, 'free', E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The defrauded labourers'' cry is the very system Enoch indicts — the many husbandmen and labourers feeding the granaries of the rich (104:16-18).'),
+  -- thread: 1-enoch-104-paths-of-righteousness-two-ways
+  ('enoch', '1-enoch', 104, 25, 'canon', 'deuteronomy', 30, 15, 'free', E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses sets the same two ways Enoch shows his sons — the paths of righteousness and of unrighteousness (104:25).'),
+  ('enoch', '1-enoch', 104, 25, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* The call to choose life is the choice Enoch lays out in showing the paths and how unrighteousness shall be cut off (104:25).'),
+  ('enoch', '1-enoch', 104, 25, 'canon', 'psalms', 1, 6, 'free', E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The two ways of the Psalter — and the perishing of the ungodly way — is the cutting off of the path of unrighteousness in 104:25.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en104_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en104_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-104-righteous-shine',
+       E'The righteous shall shine — companions of the host of heaven',
+       E'Enoch sees the destiny of the elect dead: *And the righteous shall be victorious in the name of Yahuah (God) of Spirits: And He will cause His light to appear on them, And He will make peace for them.* (1 Enoch 104:4). This is the resurrection-glory of Daniel: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* (Daniel 12:2), where *they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* (Daniel 12:3). Yahusha names the same hope: *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* (Matthew 13:43). And the parallel extra-canonical witness, the Wisdom of Solomon, sees the persecuted righteous vindicated: *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* (the Wisdom of Solomon 3:7). The light is not earned but caused to appear — election precedes the shining.',
+       sv.verse_id, ev.verse_id, 'extras', 52575
+  FROM _session250_en104_lookup sv, _session250_en104_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=104 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-104-names-written-books-of-life',
+       E'Your names are written in the books of life — never blotted out',
+       E'Election runs through the seed-line and is recorded before confession: *And your spirits have been found worthy of the lot of the righteous, And your names are written in the books of life before the Most High.* (1 Enoch 104:3), and again *And their memorial shall be before the Most High, And their name shall not be blotted out.* (1 Enoch 104:8). This is the canon''s book of remembrance: *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* (Malachi 3:16). Daniel ties deliverance to that same book — *and at that time thy people shall be delivered, every one that shall be found written in the book.* (Daniel 12:1). The names are blotted, never added: *Let them be blotted out of the book of the living, and not be written with the righteous.* (Psalm 69:28), which Yahusha confirms — *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.* (Revelation 3:5). Enoch''s own closing seals the warning for the wicked: *their names shall be blotted out of the book of life* (1 Enoch 108:3).',
+       sv.verse_id, ev.verse_id, 'extras', 52578
+  FROM _session250_en104_lookup sv, _session250_en104_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=104 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-104-books-opened-judgment',
+       E'The books of the living opened — judged according to their works',
+       E'Enoch sees the heavenly assize: *And I saw the books of the living, And the books of the unrighteous were opened, And the names of the sinners were found therein.* (1 Enoch 104:9), and their *deeds shall be requited according to their works, And according to the measure of their unrighteousness.* (1 Enoch 104:12). This is the white-throne scene John saw — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* (Revelation 20:12), where *whosoever was not found written in the book of life was cast into the lake of fire.* (Revelation 20:15). The wicked spirits *shall be cast into darkness and destruction* (1 Enoch 104:10) — judged for breaking the covenant, by the measure of their own deeds; the books, not arbitrary verdict, do the work.',
+       sv.verse_id, ev.verse_id, 'extras', 52581
+  FROM _session250_en104_lookup sv, _session250_en104_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=104 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-104-woe-to-the-rich',
+       E'Woe to you who acquire gold and silver in unrighteousness',
+       E'The woes of the Epistle fall on the systems of oppression — the rich who trample the poor: *Woe to you who acquire gold and silver in unrighteousness, And say: "We have become rich with riches and have possessions; And we have acquired everything that we have desired."* (1 Enoch 104:15), who *tread upon the righteous with your might.* (1 Enoch 104:14). Isaiah cried the same woe against the land-grabbers — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* (Isaiah 5:8). James turns it on the hoarders of the last days: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* (James 5:1), for *the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* (James 5:4). The woe targets the unjust system — wealth wrung from the labourers (104:17-18) — not the persons; their riches *shall not endure* (1 Enoch 104:24).',
+       sv.verse_id, ev.verse_id, 'extras', 52584
+  FROM _session250_en104_lookup sv, _session250_en104_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=13
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=104 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-104-paths-of-righteousness-two-ways',
+       E'I will show you the paths of righteousness — the two ways',
+       E'Enoch closes the chapter as a father setting the two ways before his sons: *And now, my sons, listen to me, And I will show you the paths of righteousness, And the paths of unrighteousness, And I will show you how the paths of unrighteousness Shall be cut off.* (1 Enoch 104:25). This is Moses'' charge — *See, I have set before thee this day life and good, and death and evil;* (Deuteronomy 30:15), pressed to its choice: *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* (Deuteronomy 30:19). The Psalter frames the same fork — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* (Psalm 1:6) — and the path of unrighteousness shall be cut off. Torah is the way of life, never the curse; the righteous keep it, and the satisfied life of 104:7 is its reward.',
+       sv.verse_id, ev.verse_id, 'extras', 52587
+  FROM _session250_en104_lookup sv, _session250_en104_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=25
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=104 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-104-righteous-shine
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* The awakening of the dust-sleepers is the very resurrection Enoch promises the righteous in 104:2-5.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-righteous-shine'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* Yahuah causing His light to appear on the righteous (104:4) is Daniel''s wise shining as the firmament.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-righteous-shine'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha seals Enoch''s promise: the righteous shine in the Father''s kingdom.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-righteous-shine'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'the Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The same extra-canonical resurrection-shining: the righteous vindicated and luminous at their visitation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-righteous-shine'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=5
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-104-names-written-books-of-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The book of remembrance is the same heavenly register where the righteous names of 104:3 are written before the Most High.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-names-written-books-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* Deliverance belongs to every one written in the book — Enoch''s elect whose names stand before the Most High.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-names-written-books-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 69:28 — *Let them be blotted out of the book of the living, and not be written with the righteous.* Enoch''s righteous name shall NOT be blotted out (104:8); the wicked are blotted, never the elect written-in.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-names-written-books-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 3:5 — *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.* Yahusha''s promise not to blot the overcomer''s name is Enoch''s name that shall not be blotted out.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-names-written-books-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 108:3 — *Wait ye in patience until sin has passed away, For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever, And their spirits shall be slain, And they shall cry and lament in a waste place that has no water, And in the fire shall they burn.* Enoch''s own closing book confirms the asymmetry: the wicked are blotted out, while the righteous name of 104:8 endures.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-names-written-books-of-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=8
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=108 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-104-books-opened-judgment
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* John''s opened books are Enoch''s books of the living and of the unrighteous opened in 104:9.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-books-opened-judgment'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Revelation 20:15 — *And whosoever was not found written in the book of life was cast into the lake of fire.* The fire that receives the unwritten is the darkness and destruction into which Enoch''s sinners are cast (104:10-12).'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-books-opened-judgment'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-104-woe-to-the-rich
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah''s woe on the land-engrossers matches Enoch''s woe on those who acquire gold and silver in unrighteousness (104:15).'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-woe-to-the-rich'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James echoes Enoch''s woe on the rich who tread upon the righteous with their might (104:14).'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-woe-to-the-rich'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 5:4 — *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth.* The defrauded labourers'' cry is the very system Enoch indicts — the many husbandmen and labourers feeding the granaries of the rich (104:16-18).'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-woe-to-the-rich'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-104-paths-of-righteousness-two-ways
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:15 — *See, I have set before thee this day life and good, and death and evil;* Moses sets the same two ways Enoch shows his sons — the paths of righteousness and of unrighteousness (104:25).'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-paths-of-righteousness-two-ways'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* The call to choose life is the choice Enoch lays out in showing the paths and how unrighteousness shall be cut off (104:25).'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-paths-of-righteousness-two-ways'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 1:6 — *For Yahuah (LORD) knoweth the way of the righteous: but the way of the ungodly shall perish.* The two ways of the Psalter — and the perishing of the ungodly way — is the cutting off of the path of unrighteousness in 104:25.'
+  FROM cross_reference_threads t, cross_references x, _session250_en104_lookup sv, _session250_en104_lookup tv
+ WHERE t.slug='1-enoch-104-paths-of-righteousness-two-ways'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=104 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_105.sql (session250 1-enoch 105) -----
+-- Source anchor: enoch/1-enoch ch105. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en105 (view _session250_en105_lookup). Sort band base 52600, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en105_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-105-names-known-memorial
+  ('enoch', '1-enoch', 105, 2, 'canon', 'malachi', 3, 16, 'free', E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The Most High knowing the names of the righteous (Enoch 105:2) is the book of remembrance kept for those who fear Him.'),
+  ('enoch', '1-enoch', 105, 2, 'canon', 'daniel', 12, 1, 'free', E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* The memorial before Him (Enoch 105:2) is deliverance for every name already written in the book — election before the trouble, not after.'),
+  ('enoch', '1-enoch', 105, 1, 'canon', 'matthew', 13, 42, 'free', E'Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* The sinner''s end as the lake of fire (Enoch 105:1) is the canon''s furnace into which the tares of the seed-war are gathered.'),
+  -- thread: 1-enoch-105-righteous-inherit-the-earth
+  ('enoch', '1-enoch', 105, 3, 'canon', 'psalms', 37, 29, 'free', E'Psalm 37:29 — *The righteous shall inherit the land, and dwell therein for ever.* Word for word the promise of Enoch 105:3 — the righteous inherit and dwell in the land for ever and ever.'),
+  ('enoch', '1-enoch', 105, 3, 'canon', 'psalms', 37, 9, 'free', E'Psalm 37:9 — *For evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth.* The inheritance of Enoch 105:3 is for those who wait on Yahuah, set against the evildoers who are cut off.'),
+  ('enoch', '1-enoch', 105, 3, 'canon', 'matthew', 5, 5, 'free', E'Matthew 5:5 — *Blessed are the meek: for they shall inherit the earth.* Yahusha''s beatitude is Enoch''s promise (105:3) spoken from the mount — the same inheritance for the same kept people.'),
+  ('enoch', '1-enoch', 105, 3, 'canon', 'daniel', 7, 27, 'free', E'Daniel 7:27 — *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* The forever-and-ever dwelling of Enoch 105:3 is the everlasting kingdom handed to the saints of the Most High.'),
+  -- thread: 1-enoch-105-shine-as-the-lights-of-heaven
+  ('enoch', '1-enoch', 105, 4, 'canon', 'daniel', 12, 3, 'free', E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* The righteous shining as the lights of heaven (Enoch 105:4) is Daniel''s wise shining as the firmament and the stars.'),
+  ('enoch', '1-enoch', 105, 4, 'canon', 'daniel', 12, 2, 'free', E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* Before they shine (Enoch 105:4) the righteous dead must awake from the dust — the resurrection underwriting the glory.'),
+  ('enoch', '1-enoch', 105, 4, 'canon', 'matthew', 13, 43, 'free', E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha names the same shining the righteous of Enoch 105:4 are promised, in the kingdom of the Father.'),
+  ('enoch', '1-enoch', 105, 4, 'canon', 'isaiah', 26, 19, 'free', E'Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* The glory of Enoch 105:4 rests on the dust giving back its dead, that they who dwell in dust awake and sing.'),
+  ('enoch', '1-enoch', 105, 4, 'apocrypha', 'the-wisdom-of-solomon', 3, 7, 'extras', E'the Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The parallel extra-canon witness gives the same image as Enoch 105:4 — the righteous shining at their visitation.'),
+  -- thread: 1-enoch-105-most-high-arises-in-wrath
+  ('enoch', '1-enoch', 105, 6, 'canon', 'isaiah', 66, 15, 'free', E'Isaiah 66:15 — *For, behold, Yahuah (LORD) will come with fire, and with his chariots like a whirlwind, to render his anger with fury, and his rebuke with flames of fire.* The Most High arising in wrath (Enoch 105:6) is Yahuah coming with fire and the chariots of His fury.'),
+  ('enoch', '1-enoch', 105, 6, 'canon', 'isaiah', 66, 16, 'free', E'Isaiah 66:16 — *For by fire and by his sword will Yahuah (LORD) plead with all flesh: and the slain of Yahuah (LORD) shall be many.* Judgement executed upon all flesh (Enoch 105:6) is Yahuah pleading by fire and sword with all flesh.'),
+  ('enoch', '1-enoch', 105, 6, 'canon', '2-thessalonians', 1, 8, 'free', E'2 Thessalonians 1:8 — *In flaming fire taking vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ).* The destruction of the ungodly from off the earth (Enoch 105:6) is the flaming-fire vengeance at the revealing of Yahusha.'),
+  ('enoch', '1-enoch', 105, 5, 'canon', 'jude', 1, 14, 'free', E'Jude 1:14 — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints.* The near day of the sinners (Enoch 105:5) is the coming Enoch himself prophesied, which Jude quotes as Scripture — it ain''t new.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en105_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en105_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-105-names-known-memorial',
+       E'Your names are known, your memorial is before Him',
+       E'Enoch comforts the elect dead and the living righteous: *Fear not, ye righteous, For Yahuah (God) of Spirits knows your names, And your memorial is before Him* (1 Enoch 105:2). Election precedes confession — the righteous are not a self-selected class but a people whose names are already kept. This is the framework''s book of remembrance: *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name* (Malachi 3:16) — and the deliverance written in the book, *at that time thy people shall be delivered, every one that shall be found written in the book* (Daniel 12:1). The sinner''s opposite is *their memorial is destruction, And their end is the lake of fire* (1 Enoch 105:1), the same furnace the canon names in *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth* (Matthew 13:42). The righteous are remembered; the wicked are forgotten.',
+       sv.verse_id, ev.verse_id, 'extras', 52600
+  FROM _session250_en105_lookup sv, _session250_en105_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=105 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-105-righteous-inherit-the-earth',
+       E'The righteous shall inherit the earth forever',
+       E'The inheritance of the meek runs straight from Enoch through the Psalter into the Gospel: *And the righteous shall inherit the earth, And they shall dwell therein forever and ever* (1 Enoch 105:3). This is no church-replacing-Israel hope; it is the covenant land-inheritance of the elect seed-line. The Psalter says it twice over: *For evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth* (Psalm 37:9) and *The righteous shall inherit the land, and dwell therein for ever* (Psalm 37:29). Yahusha sets it as a beatitude — *Blessed are the meek: for they shall inherit the earth* (Matthew 5:5) — and the everlasting kingdom is given to the very people Enoch names: *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him* (Daniel 7:27). Torah''s promise of the land stands; the meek do not earn it — they wait on Yahuah and are kept.',
+       sv.verse_id, ev.verse_id, 'extras', 52603
+  FROM _session250_en105_lookup sv, _session250_en105_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=3
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=105 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-105-shine-as-the-lights-of-heaven',
+       E'They shall shine as the lights of heaven',
+       E'Here is the resurrection-glory of the righteous dead, the Epistle''s great hope: *And their glory shall be great, And they shall shine as the lights of heaven, And they shall be companions of the holy ones* (1 Enoch 105:4). Daniel says it of the awakened sleepers: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2), *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3). Yahusha repeats it exactly — *Then shall the righteous shine forth as the sun in the kingdom of their Father* (Matthew 13:43) — and Isaiah promises the dust will give back its dead: *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead* (Isaiah 26:19). The parallel extra-canon witness shines with the same light: *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble* (the Wisdom of Solomon 3:7). Election precedes confession; the names are written first, then they wake and shine.',
+       sv.verse_id, ev.verse_id, 'extras', 52606
+  FROM _session250_en105_lookup sv, _session250_en105_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=105 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-105-most-high-arises-in-wrath',
+       E'The Most High arises in wrath against all flesh',
+       E'The chapter closes on the day of judgement against the oppressor: *And fear not the sinners, For their day is near, And their destruction is at hand* (1 Enoch 105:5), *And the Most High will arise in His wrath, And execute judgment upon all flesh, And destroy the ungodly from off the earth* (1 Enoch 105:6). The judgement falls not on persons for personhood but on the ungodly systems that pervert the eternal order — and it comes in the fire the prophets foresaw: *For, behold, Yahuah (LORD) will come with fire, and with his chariots like a whirlwind, to render his anger with fury, and his rebuke with flames of fire* (Isaiah 66:15), *For by fire and by his sword will Yahuah (LORD) plead with all flesh: and the slain of Yahuah (LORD) shall be many* (Isaiah 66:16). The New Testament binds it to the revealing of Yahusha: *And to you who are troubled rest with us, when the Lord Yahusha (Lord Jesus) shall be revealed from heaven with his mighty angels* (2 Thessalonians 1:7), *In flaming fire taking vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ)* (2 Thessalonians 1:8). This is the very coming Enoch himself prophesied, quoted in the canon: *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints* (Jude 1:14). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 52609
+  FROM _session250_en105_lookup sv, _session250_en105_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=105 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-105-names-known-memorial
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The Most High knowing the names of the righteous (Enoch 105:2) is the book of remembrance kept for those who fear Him.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-names-known-memorial'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* The memorial before Him (Enoch 105:2) is deliverance for every name already written in the book — election before the trouble, not after.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-names-known-memorial'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* The sinner''s end as the lake of fire (Enoch 105:1) is the canon''s furnace into which the tares of the seed-war are gathered.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-names-known-memorial'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-105-righteous-inherit-the-earth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 37:29 — *The righteous shall inherit the land, and dwell therein for ever.* Word for word the promise of Enoch 105:3 — the righteous inherit and dwell in the land for ever and ever.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-righteous-inherit-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 37:9 — *For evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth.* The inheritance of Enoch 105:3 is for those who wait on Yahuah, set against the evildoers who are cut off.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-righteous-inherit-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 5:5 — *Blessed are the meek: for they shall inherit the earth.* Yahusha''s beatitude is Enoch''s promise (105:3) spoken from the mount — the same inheritance for the same kept people.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-righteous-inherit-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Daniel 7:27 — *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* The forever-and-ever dwelling of Enoch 105:3 is the everlasting kingdom handed to the saints of the Most High.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-righteous-inherit-the-earth'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-105-shine-as-the-lights-of-heaven
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* The righteous shining as the lights of heaven (Enoch 105:4) is Daniel''s wise shining as the firmament and the stars.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-shine-as-the-lights-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* Before they shine (Enoch 105:4) the righteous dead must awake from the dust — the resurrection underwriting the glory.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-shine-as-the-lights-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha names the same shining the righteous of Enoch 105:4 are promised, in the kingdom of the Father.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-shine-as-the-lights-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 26:19 — *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.* The glory of Enoch 105:4 rests on the dust giving back its dead, that they who dwell in dust awake and sing.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-shine-as-the-lights-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'the Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The parallel extra-canon witness gives the same image as Enoch 105:4 — the righteous shining at their visitation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-shine-as-the-lights-of-heaven'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=4
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-105-most-high-arises-in-wrath
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 66:15 — *For, behold, Yahuah (LORD) will come with fire, and with his chariots like a whirlwind, to render his anger with fury, and his rebuke with flames of fire.* The Most High arising in wrath (Enoch 105:6) is Yahuah coming with fire and the chariots of His fury.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-most-high-arises-in-wrath'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 66:16 — *For by fire and by his sword will Yahuah (LORD) plead with all flesh: and the slain of Yahuah (LORD) shall be many.* Judgement executed upon all flesh (Enoch 105:6) is Yahuah pleading by fire and sword with all flesh.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-most-high-arises-in-wrath'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Thessalonians 1:8 — *In flaming fire taking vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ).* The destruction of the ungodly from off the earth (Enoch 105:6) is the flaming-fire vengeance at the revealing of Yahusha.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-most-high-arises-in-wrath'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jude 1:14 — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints.* The near day of the sinners (Enoch 105:5) is the coming Enoch himself prophesied, which Jude quotes as Scripture — it ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session250_en105_lookup sv, _session250_en105_lookup tv
+ WHERE t.slug='1-enoch-105-most-high-arises-in-wrath'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=105 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_107.sql (session250 1-enoch 107) -----
+-- Source anchor: enoch/1-enoch ch107. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en107 (view _session250_en107_lookup). Sort band base 52650, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en107_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-107-noah-sign-of-salvation
+  ('enoch', '1-enoch', 107, 5, 'canon', 'genesis', 6, 8, 'free', E'Genesis 6:8 — *But Noah found grace in the eyes of Yahuah (LORD).* The child born as a sign of salvation in Enoch 107:5 is the same Noah on whom grace already rests before the Flood falls.'),
+  ('enoch', '1-enoch', 107, 7, 'canon', 'genesis', 6, 9, 'free', E'Genesis 6:9 — *These are the generations of Noah: Noah was a just man and perfect in his generations, and Noah walked with Elohim (God).* Enoch''s "he is righteous, And Elohim (God) has chosen him" (107:7) is Genesis'' "just man and perfect" — election precedes preservation.'),
+  ('enoch', '1-enoch', 107, 7, 'canon', 'genesis', 7, 1, 'free', E'Genesis 7:1 — *And Yahuah (LORD) said unto Noah, Come thou and all thy house into the ark; for thee have I seen righteous before me in this generation.* Enoch''s "chosen him to be preserved When the earth is cleansed by water" (107:7) is the LORD''s own "thee have I seen righteous."'),
+  ('enoch', '1-enoch', 107, 5, 'jubilees', 'jubilees', 5, 19, 'extras', E'Jubilees 5:19 — *And as for all those who corrupted their ways and their thoughts before the flood, no man''s person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account; for his heart was righteous in all his ways, according as it was commanded regarding him, and he had not departed from aught that was ordained for him.* The same chosen-one-through-the-waters that Enoch announces at 107:5, with Noah''s sons preserved on his account.'),
+  -- thread: 1-enoch-107-plant-of-righteousness-remnant
+  ('enoch', '1-enoch', 107, 6, 'enoch', '1-enoch', 10, 16, 'extras', E'1 Enoch 10:16 — *Destroy all wrong from the face of the earth and let every evil work come to an end: and let the plant of righteousness and truth appear: and it shall prove a blessing; the works of righteousness and truth'' shall be planted in truth and joy for evermore.* The "plant of righteousness" promised at the Watchers'' judgement is the very seed Enoch now sees preserved in Noah (107:6).'),
+  ('enoch', '1-enoch', 107, 9, 'canon', 'matthew', 24, 37, 'free', E'Matthew 24:37 — *But as the days of Noe were, so shall also the coming of the Son of Adam be.* Noah''s preserved remnant repopulating the earth with righteousness (107:9) becomes the Messiah''s sign of His own coming judgement and rescue.'),
+  ('enoch', '1-enoch', 107, 6, 'canon', '2-peter', 2, 5, 'free', E'2 Peter 2:5 — *And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly;* Noah preserved with his seed as a righteous remnant (107:6) is the canon''s "preacher of righteousness" saved through the flood.'),
+  -- thread: 1-enoch-107-watchers-violence-judgment
+  ('enoch', '1-enoch', 107, 8, 'canon', 'genesis', 6, 11, 'free', E'Genesis 6:11 — *The earth also was corrupt before Elohim (God), and the earth was filled with violence.* Enoch''s "the earth is filled with violence because of them" (107:8) is Genesis'' identical indictment of the Watcher-corrupted world.'),
+  ('enoch', '1-enoch', 107, 8, 'canon', 'genesis', 6, 13, 'free', E'Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* The "judgment comes upon them and upon all flesh" of Enoch 107:8 is the LORD''s sentence of "the end of all flesh."'),
+  ('enoch', '1-enoch', 107, 8, 'jubilees', 'jubilees', 5, 2, 'extras', E'Jubilees 5:2 — *And lawlessness increased on the earth and all flesh corrupted its way, alike men and cattle and beasts and birds and everything that walks on the earth-all of them corrupted their ways and their orders, and they began to devour each other, and lawlessness increased on the earth and every imagination of the thoughts of all men (was) thus evil continually.* The violence the Watchers bred in Enoch 107:8 is Jubilees'' rising lawlessness that triggers the Flood.'),
+  -- thread: 1-enoch-107-this-one-shall-comfort-us
+  ('enoch', '1-enoch', 107, 10, 'canon', 'genesis', 5, 29, 'free', E'Genesis 5:29 — *And he called his name Noah, saying, This same shall comfort us concerning our work and toil of our hands, because of the ground which Yahuah (LORD) hath cursed.* Lamech''s naming-speech in Enoch 107:10 is verbatim the Genesis naming of Noah.'),
+  ('enoch', '1-enoch', 107, 10, 'jubilees', 'jubilees', 4, 28, 'extras', E'Jubilees 4:28 — *And in the fifteenth jubilee in the third week Lamech took to himself a wife, and her name was Bêtênôs the daughter of Bârâkî''îl, the daughter of his father''s brother, and in this week she bare him a son and he called his name Noah, saying, "This one will comfort me for my trouble and all my work, and for the ground which Yahuah (God) has cursed."* Jubilees gives the same Lamech naming-speech that crowns Enoch 107:10.'),
+  ('enoch', '1-enoch', 107, 7, 'canon', 'hebrews', 11, 7, 'free', E'Hebrews 11:7 — *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith.* The righteous child chosen to be preserved (107:7) is the Noah Hebrews names "heir of the righteousness which is by faith."')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en107_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en107_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-107-noah-sign-of-salvation',
+       E'A sign of salvation: the child preserved through the destruction',
+       E'Enoch sends word back to Lamech through Methuselah: *"For this child is born to you as a sign of salvation, And he shall be preserved in the midst of the destruction Which is coming upon the whole earth because of all the sin And all the unrighteousness which shall be wrought upon it"* (1 Enoch 107:5). The strange wondrous child is no cause for fear but the very vessel of deliverance — the preserved righteous seed kept through the Flood. Genesis names the same grace: *"But Noah found grace in the eyes of Yahuah (LORD)"* (Genesis 6:8), and *"These are the generations of Noah: Noah was a just man and perfect in his generations, and Noah walked with Elohim (God)"* (Genesis 6:9). The verdict is pronounced over him face to face: *"And Yahuah (LORD) said unto Noah, Come thou and all thy house into the ark; for thee have I seen righteous before me in this generation"* (Genesis 7:1). Election precedes the rescue — Elohim chooses the righteous one and keeps him through the water, never frames the keeping as merit added after, but as grace already seen. Jubilees holds the same: *"no man''s person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account; for his heart was righteous in all his ways"* (Jubilees 5:19).',
+       sv.verse_id, ev.verse_id, 'extras', 52650
+  FROM _session250_en107_lookup sv, _session250_en107_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=107 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-107-plant-of-righteousness-remnant',
+       E'A righteous remnant and a plant of righteousness',
+       E'Enoch names the child and his destiny in one breath: *"And the child shall be called Noah, And he shall be preserved, And his seed shall be preserved for generations, And from him shall come forth a righteous remnant And a plant of righteousness, And the earth shall be cleansed from all corruption"* (1 Enoch 107:6), and again *"But Noah and his seed shall be a remnant, And from them shall the earth be repopulated with righteousness"* (107:9). This is the eternal plant of righteousness already declared at the Watchers'' judgement: *"Destroy all wrong from the face of the earth and let every evil work come to an end: and let the plant of righteousness and truth appear: and it shall prove a blessing; the works of righteousness and truth'' shall be planted in truth and joy for evermore"* (1 Enoch 10:16). The seed-line of the elect runs through Noah — the remnant kept across the judgement, the line by which the earth is replanted. It is the same hope the Messiah set against His own coming: *"But as the days of Noe were, so shall also the coming of the Son of Adam be"* (Matthew 24:37) — one righteous house preserved while the flood takes all the rest.',
+       sv.verse_id, ev.verse_id, 'extras', 52653
+  FROM _session250_en107_lookup sv, _session250_en107_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=6
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=107 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-107-watchers-violence-judgment',
+       E'The Watchers taught unrighteousness; the earth filled with violence',
+       E'Enoch gives the reason the judgement must come: *"And the Watchers have taught unrighteousness, And the earth is filled with violence because of them, Therefore judgment comes upon them and upon all flesh"* (1 Enoch 107:8). This is the canon''s own Genesis 6 verdict, word for word in substance: *"The earth also was corrupt before Elohim (God), and the earth was filled with violence"* (Genesis 6:11), and the sentence that follows: *"And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth"* (Genesis 6:13). The Flood is not arbitrary wrath but the answer to the Watchers'' rebellion against the Creator''s order — the forbidden teaching that corrupted all flesh. Jubilees names the same flood-tide of lawlessness: *"And lawlessness increased on the earth and all flesh corrupted its way... and they began to devour each other, and lawlessness increased on the earth"* (Jubilees 5:2). The judgement falls on the corrupting system, and the one righteous house is kept through it.',
+       sv.verse_id, ev.verse_id, 'extras', 52656
+  FROM _session250_en107_lookup sv, _session250_en107_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=107 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-107-this-one-shall-comfort-us',
+       E'This one shall comfort us: Lamech names Noah',
+       E'When Methuselah carries Enoch''s word, Lamech''s fear turns to comfort and he names the child: *"And Methuselah went and told Lamech all that Enoch had spoken, And Lamech was comforted, And he named the child Noah, saying: ''This one shall comfort us concerning our work And the toil of our hands, Because of the ground which Yahuah (God) has cursed''"* (1 Enoch 107:10). This is the naming straight out of Genesis: *"And he called his name Noah, saying, This same shall comfort us concerning our work and toil of our hands, because of the ground which Yahuah (LORD) hath cursed"* (Genesis 5:29). Jubilees records the same words from Lamech''s mouth: *"and he called his name Noah, saying, ''This one will comfort me for my trouble and all my work, and for the ground which Yahuah (God) has cursed''"* (Jubilees 4:28). The righteous seed preserved through the Flood is also the comfort of the cursed ground — the line by which Hebrews says the world was condemned and the heir of righteousness named: *"By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith"* (Hebrews 11:7).',
+       sv.verse_id, ev.verse_id, 'extras', 52659
+  FROM _session250_en107_lookup sv, _session250_en107_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=10
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=107 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-107-noah-sign-of-salvation
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 6:8 — *But Noah found grace in the eyes of Yahuah (LORD).* The child born as a sign of salvation in Enoch 107:5 is the same Noah on whom grace already rests before the Flood falls.'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-noah-sign-of-salvation'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 6:9 — *These are the generations of Noah: Noah was a just man and perfect in his generations, and Noah walked with Elohim (God).* Enoch''s "he is righteous, And Elohim (God) has chosen him" (107:7) is Genesis'' "just man and perfect" — election precedes preservation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-noah-sign-of-salvation'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 7:1 — *And Yahuah (LORD) said unto Noah, Come thou and all thy house into the ark; for thee have I seen righteous before me in this generation.* Enoch''s "chosen him to be preserved When the earth is cleansed by water" (107:7) is the LORD''s own "thee have I seen righteous."'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-noah-sign-of-salvation'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 5:19 — *And as for all those who corrupted their ways and their thoughts before the flood, no man''s person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account; for his heart was righteous in all his ways, according as it was commanded regarding him, and he had not departed from aught that was ordained for him.* The same chosen-one-through-the-waters that Enoch announces at 107:5, with Noah''s sons preserved on his account.'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-noah-sign-of-salvation'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=5
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-107-plant-of-righteousness-remnant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Enoch 10:16 — *Destroy all wrong from the face of the earth and let every evil work come to an end: and let the plant of righteousness and truth appear: and it shall prove a blessing; the works of righteousness and truth'' shall be planted in truth and joy for evermore.* The "plant of righteousness" promised at the Watchers'' judgement is the very seed Enoch now sees preserved in Noah (107:6).'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-plant-of-righteousness-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=6
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=10 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 24:37 — *But as the days of Noe were, so shall also the coming of the Son of Adam be.* Noah''s preserved remnant repopulating the earth with righteousness (107:9) becomes the Messiah''s sign of His own coming judgement and rescue.'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-plant-of-righteousness-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Peter 2:5 — *And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly;* Noah preserved with his seed as a righteous remnant (107:6) is the canon''s "preacher of righteousness" saved through the flood.'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-plant-of-righteousness-remnant'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-107-watchers-violence-judgment
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 6:11 — *The earth also was corrupt before Elohim (God), and the earth was filled with violence.* Enoch''s "the earth is filled with violence because of them" (107:8) is Genesis'' identical indictment of the Watcher-corrupted world.'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-watchers-violence-judgment'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* The "judgment comes upon them and upon all flesh" of Enoch 107:8 is the LORD''s sentence of "the end of all flesh."'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-watchers-violence-judgment'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 5:2 — *And lawlessness increased on the earth and all flesh corrupted its way, alike men and cattle and beasts and birds and everything that walks on the earth-all of them corrupted their ways and their orders, and they began to devour each other, and lawlessness increased on the earth and every imagination of the thoughts of all men (was) thus evil continually.* The violence the Watchers bred in Enoch 107:8 is Jubilees'' rising lawlessness that triggers the Flood.'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-watchers-violence-judgment'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=8
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=5 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-107-this-one-shall-comfort-us
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 5:29 — *And he called his name Noah, saying, This same shall comfort us concerning our work and toil of our hands, because of the ground which Yahuah (LORD) hath cursed.* Lamech''s naming-speech in Enoch 107:10 is verbatim the Genesis naming of Noah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-this-one-shall-comfort-us'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=5 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 4:28 — *And in the fifteenth jubilee in the third week Lamech took to himself a wife, and her name was Bêtênôs the daughter of Bârâkî''îl, the daughter of his father''s brother, and in this week she bare him a son and he called his name Noah, saying, "This one will comfort me for my trouble and all my work, and for the ground which Yahuah (God) has cursed."* Jubilees gives the same Lamech naming-speech that crowns Enoch 107:10.'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-this-one-shall-comfort-us'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=10
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=4 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:7 — *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith.* The righteous child chosen to be preserved (107:7) is the Noah Hebrews names "heir of the righteousness which is by faith."'
+  FROM cross_reference_threads t, cross_references x, _session250_en107_lookup sv, _session250_en107_lookup tv
+ WHERE t.slug='1-enoch-107-this-one-shall-comfort-us'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=107 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1enoch_108.sql (session250 1-enoch 108) -----
+-- Source anchor: enoch/1-enoch ch108. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en108 (view _session250_en108_lookup). Sort band base 52675, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en108_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-108-book-of-life-names-blotted
+  ('enoch', '1-enoch', 108, 3, 'canon', 'malachi', 3, 16, 'free', E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The book of remembrance for the righteous is the obverse of Enoch''s blotting — the elect are written before they are tested.'),
+  ('enoch', '1-enoch', 108, 3, 'canon', 'daniel', 12, 1, 'free', E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* End-time deliverance belongs only to those already on the roll, the same register Enoch says cannot be augmented, only blotted.'),
+  ('enoch', '1-enoch', 108, 3, 'canon', 'psalms', 69, 28, 'free', E'Psalm 69:28 — *Let them be blotted out of the book of the living, and not be written with the righteous.* The exact verb Enoch uses for the sinners'' names blotted from the book of life stands here in David''s prayer.'),
+  ('enoch', '1-enoch', 108, 3, 'canon', 'revelation', 3, 5, 'free', E'Revelation 3:5 — *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.* The kept name and the blotted name are the two outcomes of Enoch''s single book of life; the overcomer''s name is never erased.'),
+  ('enoch', '1-enoch', 108, 3, 'enoch', '1-enoch', 48, 3, 'extras', E'1 Enoch 48:3 — *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* Enoch''s own apparatus of names-named-before-creation grounds 108''s blotting — the roll is fixed before the world, never added to.'),
+  -- thread: 1-enoch-108-spirits-of-the-righteous-shine
+  ('enoch', '1-enoch', 108, 9, 'canon', 'deuteronomy', 32, 10, 'free', E'Deuteronomy 32:10 — *He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye.* Enoch''s angelic guardians keep the righteous *as the apple of an eye* in the very words of the Song of Moses over Israel.'),
+  ('enoch', '1-enoch', 108, 9, 'canon', 'psalms', 17, 8, 'free', E'Psalm 17:8 — *Keep me as the apple of the eye, hide me under the shadow of thy wings,* the believer''s prayer for exactly the guarding Enoch promises the holy ones.'),
+  ('enoch', '1-enoch', 108, 9, 'canon', 'daniel', 12, 2, 'free', E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* Enoch''s *long sleep* with *nought to fear* is Daniel''s dust-sleep ending in everlasting life for the kept righteous.'),
+  ('enoch', '1-enoch', 108, 10, 'canon', 'daniel', 12, 3, 'free', E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* Enoch''s *wise* seen *in security* are Daniel''s wise who shine as the firmament.'),
+  ('enoch', '1-enoch', 108, 10, 'canon', 'matthew', 13, 43, 'free', E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha gives the same shining-righteous resurrection that closes Enoch''s book.'),
+  ('enoch', '1-enoch', 108, 9, 'apocrypha', 'the-wisdom-of-solomon', 3, 7, 'extras', E'Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The parallel extra-canon resurrection hope matches Enoch''s wise shining in security after the long sleep.'),
+  -- thread: 1-enoch-108-woe-to-the-sinners-fire
+  ('enoch', '1-enoch', 108, 13, 'canon', 'isaiah', 66, 24, 'free', E'Isaiah 66:24 — *And they shall go forth, and look upon the carcases of the men that have transgressed against me: for their worm shall not die, neither shall their fire be quenched; and they shall be an abhorring unto all flesh.* The unquenchable fire that closes Isaiah is the *blazing flames burning worse than fire* that close Enoch.'),
+  ('enoch', '1-enoch', 108, 13, 'canon', 'matthew', 13, 42, 'free', E'Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* The furnace for the tares answers Enoch''s sinners burning *worse than fire* — the dark half of the parable whose light half shines the righteous.'),
+  ('enoch', '1-enoch', 108, 11, 'enoch', '1-enoch', 104, 6, 'extras', E'1 Enoch 104:6 — *But woe to you, ye sinners, who are dead in your sins! Ye shall have no peace.* Enoch''s own running refrain of woe over the sinners frames the closing woes of 108.'),
+  -- thread: 1-enoch-108-two-ways-choose-life
+  ('enoch', '1-enoch', 108, 1, 'canon', 'deuteronomy', 30, 19, 'free', E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch''s book for those who *observe the law in the last days* is the choosing of life over death, the two ways of the whole Epistle.'),
+  ('enoch', '1-enoch', 108, 16, 'canon', 'james', 5, 1, 'free', E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James pronounces the same woe on the rich whose riches Enoch says *shall not be able to save them In the overthrow of their sins.*'),
+  ('enoch', '1-enoch', 108, 16, 'canon', 'james', 5, 3, 'free', E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The very gold and silver Enoch''s sinners bribe the rain with becomes the fire that eats them, witnessing against them in the last days.'),
+  ('enoch', '1-enoch', 108, 10, 'canon', 'isaiah', 5, 8, 'free', E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah''s woe on the land-grabbing rich is the system Enoch judges, whose riches cannot save in the overthrow of their sins.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en108_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en108_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-108-book-of-life-names-blotted',
+       E'The names blotted from the book of life',
+       E'The closing book of Enoch opens with a register kept in heaven: *Wait ye in patience until sin has passed away, For their names shall be blotted out of the book of life, And out of the books of the holy ones, And their seed shall be destroyed forever* (1 Enoch 108:3). Election runs the other way — the names are written first, never added, only blotted. The same ledger stands across the canon. The remnant who feared Yahuah are inscribed before they ever speak: *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name* (Malachi 3:16). Deliverance at the end belongs only to those already on the roll — *at that time thy people shall be delivered, every one that shall be found written in the book* (Daniel 12:1). The wicked are struck out: *Let them be blotted out of the book of the living, and not be written with the righteous* (Psalm 69:28). And the overcomer''s name is kept and confessed, never erased: *I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels* (Revelation 3:5) — election precedes confession, exactly as Enoch frames it.',
+       sv.verse_id, ev.verse_id, 'extras', 52675
+  FROM _session250_en108_lookup sv, _session250_en108_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=2
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=108 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-108-spirits-of-the-righteous-shine',
+       E'The righteous sleep, awake, and shine in light',
+       E'Enoch''s mystery turns from the fiery abyss for the sinners to the security of the righteous: *And over all the righteous and holy He will appoint guardians from amongst the holy angels To guard them as the apple of an eye... And though the righteous sleep a long sleep, they have nought to fear. And (then) the children of the earth shall see the wise in security* (1 Enoch 108:9-10). The guardianship is Yahuah''s own covenant figure for Israel: *He found him in a desert land... he kept him as the apple of his eye* (Deuteronomy 32:10), the cry the psalmist makes his own — *Keep me as the apple of the eye, hide me under the shadow of thy wings* (Psalm 17:8). The long sleep is the dust-sleep that ends in resurrection: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life... And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever* (Daniel 12:2-3) — the very wise of 108:10. The Master gives the same picture: *Then shall the righteous shine forth as the sun in the kingdom of their Father* (Matthew 13:43). And the parallel extra-canon resurrection oracle seals it — *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom of Solomon 3:1), *In the time of their visitation they shall shine, and run to and fro like sparks among the stubble* (Wisdom of Solomon 3:7). The righteous dead live and shine; this is no replacement of Israel but the awakening of the kept remnant.',
+       sv.verse_id, ev.verse_id, 'extras', 52678
+  FROM _session250_en108_lookup sv, _session250_en108_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=9
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=108 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-108-woe-to-the-sinners-fire',
+       E'Woe to the sinners — burned worse than fire',
+       E'The book ends in the woes of the Epistle: *Woe to you, ye sinners, on the day of strong anguish, Ye who afflict the righteous and burn them with fire: Ye shall be requited according to your works* (1 Enoch 108:11); *Woe to you, ye sinners, on account of the words of your mouth, And on account of the deeds of your hands... In blazing flames burning worse than fire shall ye burn* (1 Enoch 108:13). The fire that never quenches is the canon''s own last picture — *they shall go forth, and look upon the carcases of the men that have transgressed against me: for their worm shall not die, neither shall their fire be quenched* (Isaiah 66:24), the verse Yahusha pressed three times. The furnace of fire for the tares matches it precisely — Enoch''s *blazing flames* burning the sinner is the Master''s *furnace of fire: there shall be wailing and gnashing of teeth* (Matthew 13:42), the dark half of the same parable whose other half (13:43) lights the righteous. And Enoch''s own closing oath says the same of the unrepentant — *woe to you, ye sinners, who are dead in your sins! Ye shall have no peace* (1 Enoch 104:6). The woes fall on the oppressor who *afflicts the righteous and burns them*, requited *according to your works* — judgement of the system of cruelty, not arbitrary wrath.',
+       sv.verse_id, ev.verse_id, 'extras', 52681
+  FROM _session250_en108_lookup sv, _session250_en108_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=11
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=108 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-108-two-ways-choose-life',
+       E'The two ways — the good keep the law to the end',
+       E'The closing book is written for the doers of Torah: *Another book which Enoch wrote for his son Methuselah and for those who will come after him, And observe the law in the last days. Ye who have done good shall wait for those days in which the evil-doers are consumed* (1 Enoch 108:1-2). This is the two ways of the whole Epistle, set down once at Sinai''s gate: *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). The good *observe the law* and *wait* while the wicked are consumed — Torah is the way of life, never the curse. The other half of the page is the woe on the rich who afflict the righteous: Enoch''s *give presents to the rain... when it has received gold and silver from you that it may descend* (108:16) is the bribery the prophets damn, and the hoarder''s ruin James names plainly — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1), *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days* (James 5:3). Isaiah pronounces the same woe on the land-grabbing systems — *Woe unto them that join house to house, that lay field to field, till there be no place* (Isaiah 5:8). The riches *shall not be able to save them In the overthrow of their sins* (108:10): the two ways divide the keeper of the law from the oppressor whose gold burns him.',
+       sv.verse_id, ev.verse_id, 'extras', 52684
+  FROM _session250_en108_lookup sv, _session250_en108_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=108 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-108-book-of-life-names-blotted
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* The book of remembrance for the righteous is the obverse of Enoch''s blotting — the elect are written before they are tested.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-book-of-life-names-blotted'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 12:1 — *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.* End-time deliverance belongs only to those already on the roll, the same register Enoch says cannot be augmented, only blotted.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-book-of-life-names-blotted'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 69:28 — *Let them be blotted out of the book of the living, and not be written with the righteous.* The exact verb Enoch uses for the sinners'' names blotted from the book of life stands here in David''s prayer.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-book-of-life-names-blotted'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 3:5 — *He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels.* The kept name and the blotted name are the two outcomes of Enoch''s single book of life; the overcomer''s name is never erased.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-book-of-life-names-blotted'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'1 Enoch 48:3 — *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits.* Enoch''s own apparatus of names-named-before-creation grounds 108''s blotting — the roll is fixed before the world, never added to.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-book-of-life-names-blotted'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=3
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-108-spirits-of-the-righteous-shine
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:10 — *He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye.* Enoch''s angelic guardians keep the righteous *as the apple of an eye* in the very words of the Song of Moses over Israel.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-spirits-of-the-righteous-shine'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 17:8 — *Keep me as the apple of the eye, hide me under the shadow of thy wings,* the believer''s prayer for exactly the guarding Enoch promises the holy ones.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-spirits-of-the-righteous-shine'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=17 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* Enoch''s *long sleep* with *nought to fear* is Daniel''s dust-sleep ending in everlasting life for the kept righteous.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-spirits-of-the-righteous-shine'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Daniel 12:3 — *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever.* Enoch''s *wise* seen *in security* are Daniel''s wise who shine as the firmament.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-spirits-of-the-righteous-shine'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Matthew 13:43 — *Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear.* Yahusha gives the same shining-righteous resurrection that closes Enoch''s book.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-spirits-of-the-righteous-shine'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Wisdom of Solomon 3:7 — *And in the time of their visitation they shall shine, and run to and fro like sparks among the stubble.* The parallel extra-canon resurrection hope matches Enoch''s wise shining in security after the long sleep.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-spirits-of-the-righteous-shine'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=9
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-108-woe-to-the-sinners-fire
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 66:24 — *And they shall go forth, and look upon the carcases of the men that have transgressed against me: for their worm shall not die, neither shall their fire be quenched; and they shall be an abhorring unto all flesh.* The unquenchable fire that closes Isaiah is the *blazing flames burning worse than fire* that close Enoch.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-woe-to-the-sinners-fire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* The furnace for the tares answers Enoch''s sinners burning *worse than fire* — the dark half of the parable whose light half shines the righteous.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-woe-to-the-sinners-fire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 104:6 — *But woe to you, ye sinners, who are dead in your sins! Ye shall have no peace.* Enoch''s own running refrain of woe over the sinners frames the closing woes of 108.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-woe-to-the-sinners-fire'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=11
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=104 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-108-two-ways-choose-life
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:19 — *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live:* Enoch''s book for those who *observe the law in the last days* is the choosing of life over death, the two ways of the whole Epistle.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'James 5:1 — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you.* James pronounces the same woe on the rich whose riches Enoch says *shall not be able to save them In the overthrow of their sins.*'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'James 5:3 — *Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.* The very gold and silver Enoch''s sinners bribe the rain with becomes the fire that eats them, witnessing against them in the last days.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 5:8 — *Woe unto them that join house to house, that lay field to field, till there be no place, that they may be placed alone in the midst of the earth!* Isaiah''s woe on the land-grabbing rich is the system Enoch judges, whose riches cannot save in the overthrow of their sins.'
+  FROM cross_reference_threads t, cross_references x, _session250_en108_lookup sv, _session250_en108_lookup tv
+ WHERE t.slug='1-enoch-108-two-ways-choose-life'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=108 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session250 — 1 Enoch cross-references complete.'
