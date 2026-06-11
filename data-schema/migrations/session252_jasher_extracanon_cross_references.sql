@@ -13576,6 +13576,2186 @@ SELECT t.id, x.id, 2, E'Daniel 2:28 — *But there is a Elohim (God) in heaven t
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jasher_49.sql (session252 jasher 49) -----
+-- Source anchor: jasher/jasher ch49. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja49 (view _session252_ja49_lookup). Sort band base 56200, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja49_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-49-spirit-of-god-discreet-and-wise
+  ('jasher', 'jasher', 49, 8, 'canon', 'genesis', 41, 38, 'free', E'Genesis 41:38 — *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* Pharaoh''s reasoning in Jasher 49:8, that Elohim has made all known to the Hebrew, is the canon''s own ground for the elevation.'),
+  ('jasher', 'jasher', 49, 20, 'canon', 'genesis', 41, 39, 'free', E'Genesis 41:39 — *And Pharaoh said unto Joseph, Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art:* the king''s words to Joseph in Jasher 49:20 echo Genesis verbatim, ''there is not throughout the land a discreet and wise man like to you.'''),
+  ('jasher', 'jasher', 49, 8, 'jubilees', 'jubilees', 40, 5, 'extras', E'Jubilees 40:5 — *And Yahuah (God) gave Joseph favour and mercy in the eyes of Pharaoh, and Pharaoh said to his servants: “We shall not find such a wise and discreet man as this man, for the spirit of Yahuah (God) is with him.”* Jubilees narrates the identical Pharaoh-speech that opens Jasher 49:8.'),
+  ('jasher', 'jasher', 49, 20, 'canon', 'acts', 7, 10, 'free', E'Acts 7:10 — *And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.* Stephen reads Joseph''s elevation in Jasher 49 as Elohim''s own deliverance and gift of wisdom.'),
+  -- thread: jasher-49-second-to-pharaoh-ring-and-chain
+  ('jasher', 'jasher', 49, 23, 'canon', 'genesis', 41, 42, 'free', E'Genesis 41:42 — *And Pharaoh took off his ring from his hand, and put it upon Joseph’s hand, and arrayed him in vestures of fine linen, and put a gold chain about his neck;* the investiture of Jasher 49:23 (ring, princely garment, gold chain) is Genesis detail for detail.'),
+  ('jasher', 'jasher', 49, 22, 'canon', 'genesis', 41, 40, 'free', E'Genesis 41:40 — *Thou shalt be over my house, and according unto thy word shall all my people be ruled: only in the throne will I be greater than thou.* Pharaoh''s reservation in Jasher 49:22, ''only in my throne will I be greater than you,'' is the canon''s exact word.'),
+  ('jasher', 'jasher', 49, 24, 'canon', 'genesis', 41, 43, 'free', E'Genesis 41:43 — *And he made him to ride in the second chariot which he had; and they cried before him, Bow the knee: and he made him ruler over all the land of Egypt.* The second chariot opposite the king''s in Jasher 49:24 retells Genesis'' very procession.'),
+  ('jasher', 'jasher', 49, 22, 'jubilees', 'jubilees', 40, 8, 'extras', E'Jubilees 40:8 — *And Joseph ruled over all the land of Egypt, and all the princes of Pharaoh, and all his servants, and all who did the king’s business loved him, for he walked in uprightness, for he was without pride and arrogance, and he had no respect of persons, and did not accept gifts, but he judged in uprightness all the people of the land.* Jubilees gives the righteous character of the second-to-Pharaoh that Jasher 49:22 establishes.'),
+  -- thread: jasher-49-zaphnath-paaneah-osnath-thirty-years
+  ('jasher', 'jasher', 49, 21, 'canon', 'genesis', 41, 45, 'free', E'Genesis 41:45 — *And Pharaoh called Joseph’s name Zaphnath-paaneah; and he gave him to wife Asenath the daughter of Poti-pherah priest of On. And Joseph went out over all the land of Egypt.* The renaming of Jasher 49:21 and the marriage of 49:36 are Genesis'' own record (Zaphnath-paaneah; daughter of the priest of On).'),
+  ('jasher', 'jasher', 49, 38, 'canon', 'genesis', 41, 46, 'free', E'Genesis 41:46 — *And Joseph was thirty years old when he stood before Pharaoh king of Egypt. And Joseph went out from the presence of Pharaoh, and went throughout all the land of Egypt.* Jasher 49:38 reckons the identical thirty years at Joseph''s standing before Pharaoh.'),
+  ('jasher', 'jasher', 49, 21, 'jubilees', 'jubilees', 40, 10, 'extras', E'Jubilees 40:10 — *And the king called Joseph’s name Sĕphânṭîphâns, 2 and gave Joseph to wife the daughter of Potiphar, the daughter of the priest of Heliopolis, the chief cook. 3 11. And on the day that Joseph stood before Pharaoh he was thirty years old when he stood before Pharaoh.* Jubilees gives the same new name, the priest''s-daughter wife, and the thirty years that Jasher 49:21,36,38 record.'),
+  -- thread: jasher-49-raised-from-the-dungeon-poor-from-the-dust
+  ('jasher', 'jasher', 49, 30, 'canon', 'psalms', 105, 17, 'free', E'Psalm 105:17 — *He sent a man before them, even Joseph, who was sold for a servant:* Joseph''s praise in Jasher 49:30, that Yahuah raises the poor from the dust, sings the same providence Psalm 105 ascribes to the whole story.'),
+  ('jasher', 'jasher', 49, 13, 'canon', 'psalms', 105, 18, 'free', E'Psalm 105:18 — *Whose feet they hurt with fetters: he was laid in iron:* the dungeon of Jasher 49:13, where Joseph lay the night before his exaltation, is the iron Psalm 105 remembers.'),
+  ('jasher', 'jasher', 49, 30, 'canon', 'psalms', 105, 20, 'free', E'Psalm 105:20 — *The king sent and loosed him; even the ruler of the people, and let him go free.* The very day Jasher 49:30 celebrates, the king''s loosing of Joseph from the prison to the rule, is Psalm 105''s word.'),
+  ('jasher', 'jasher', 49, 30, 'canon', 'acts', 7, 9, 'free', E'Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* Stephen names the Elohim who was with Joseph from the pit, the same Yahuah Joseph praises in Jasher 49:30.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-49-spirit-of-god-discreet-and-wise',
+       E'None So Discreet and Wise — the Spirit of Elohim in Joseph',
+       E'Pharaoh sets the elevation in motion on the ground that Elohim has spoken through Joseph: *And the king said to all the officers: I have thought that since Elohim (God) has made known to the Hebrew man all that he has spoken, there is none so discreet and wise in the whole land as he is; if it seem good in your sight I will place him over the land, for he will save the land with his wisdom.* (Jasher 49:8). It ain''t new — this is the very word Genesis records: *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* (Genesis 41:38), and to Joseph himself, *Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art* (Genesis 41:39). The book of Jubilees narrates the same scene with the same words: *And Yahuah (God) gave Joseph favour and mercy in the eyes of Pharaoh, and Pharaoh said to his servants: “We shall not find such a wise and discreet man as this man, for the spirit of Yahuah (God) is with him.”* (Jubilees 40:5). And Stephen reads the whole rise as Elohim''s own doing: *And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.* (Acts 7:10). The wisdom is not Egypt''s discovery but the chosen seed kept and exalted by his Elohim.',
+       sv.verse_id, ev.verse_id, 'extras', 56200
+  FROM _session252_ja49_lookup sv, _session252_ja49_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=49 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-49-second-to-pharaoh-ring-and-chain',
+       E'Second to Pharaoh — the Ring, the Garment, the Gold Chain',
+       E'Pharaoh invests Joseph with the marks of the second throne: *And the king took off his ring from his hand and put it upon the hand of Joseph, and the king dressed Joseph in a princely garment, and he put a golden crown upon his head, and he put a golden chain upon his neck.* (Jasher 49:23), and *only in my throne will I be greater than you* (Jasher 49:22). It ain''t new — every detail stands in Genesis: *And Pharaoh took off his ring from his hand, and put it upon Joseph’s hand, and arrayed him in vestures of fine linen, and put a gold chain about his neck;* (Genesis 41:42), with the same reserved word, *only in the throne will I be greater than thou* (Genesis 41:40). And the second chariot of Jasher 49:24 is Genesis'' own: *And he made him to ride in the second chariot which he had; and they cried before him, Bow the knee: and he made him ruler over all the land of Egypt.* (Genesis 41:43). Jubilees seals the rule with the same uprightness the chosen seed carries: *And Joseph ruled over all the land of Egypt, and all the princes of Pharaoh, and all his servants, and all who did the king’s business loved him, for he walked in uprightness, for he was without pride and arrogance, and he had no respect of persons, and did not accept gifts, but he judged in uprightness all the people of the land.* (Jubilees 40:8).',
+       sv.verse_id, ev.verse_id, 'extras', 56203
+  FROM _session252_ja49_lookup sv, _session252_ja49_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=21
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=49 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-49-zaphnath-paaneah-osnath-thirty-years',
+       E'Zaphnath Paaneah — the New Name, the Wife, the Thirty Years',
+       E'The king crowns the elevation with a new name: *And your name no more shall be called Joseph, but Zaphnath Paaneah shall be your name; you shall be second to me, and according to your word shall be all the affairs of my government, and at your word shall my people go out and come in.* (Jasher 49:21). Pharaoh then gives him a wife and the years are reckoned: *And the king sent to Potiphera, the son of Ahiram priest of On, and he took his young daughter Osnath and gave her to Joseph for a wife.* (Jasher 49:36), and *And Joseph was thirty years old when he stood before Pharaoh, and Joseph went out from before the king, and he became the king’s second in Egypt.* (Jasher 49:38). It ain''t new — Genesis records every part: *And Pharaoh called Joseph’s name Zaphnath-paaneah; and he gave him to wife Asenath the daughter of Poti-pherah priest of On. And Joseph went out over all the land of Egypt.* (Genesis 41:45), and *And Joseph was thirty years old when he stood before Pharaoh king of Egypt. And Joseph went out from the presence of Pharaoh, and went throughout all the land of Egypt.* (Genesis 41:46). Jubilees carries the same name and marriage: *And the king called Joseph’s name Sĕphânṭîphâns, 2 and gave Joseph to wife the daughter of Potiphar, the daughter of the priest of Heliopolis, the chief cook. 3 11. And on the day that Joseph stood before Pharaoh he was thirty years old when he stood before Pharaoh.* (Jubilees 40:10).',
+       sv.verse_id, ev.verse_id, 'extras', 56206
+  FROM _session252_ja49_lookup sv, _session252_ja49_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=21
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=49 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-49-raised-from-the-dungeon-poor-from-the-dust',
+       E'He Raises the Poor from the Dust — from the Dungeon to the Throne',
+       E'On the day of his exaltation Joseph lifts his eyes to heaven and ascribes the whole rise to Yahuah: *And Joseph upon his horse lifted up his eyes to heaven, and called out and said, He raises the poor man from the dust, He lifts up the needy from the dunghill. O Yahuah (O Lord) of Hosts, happy is the man who trusts in you.* (Jasher 49:30). The night before, Joseph had still been in the prison: *behold Joseph was lying in the bed at night in his master’s house in the dungeon, for his master had put him back into the dungeon on account of his wife.* (Jasher 49:13). It ain''t new — Psalm 105 sings this exact arc, prison to rule: *He sent a man before them, even Joseph, who was sold for a servant:* (Psalm 105:17), *Whose feet they hurt with fetters: he was laid in iron:* (Psalm 105:18), *The king sent and loosed him; even the ruler of the people, and let him go free.* (Psalm 105:20), *He made him lord of his house, and ruler of all his substance:* (Psalm 105:21). And the apostolic record names the same Elohim who was with him from the selling to the rule: *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* (Acts 7:9). The chosen seed is kept through the pit and raised from the dust.',
+       sv.verse_id, ev.verse_id, 'extras', 56209
+  FROM _session252_ja49_lookup sv, _session252_ja49_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=49 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-49-spirit-of-god-discreet-and-wise
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:38 — *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* Pharaoh''s reasoning in Jasher 49:8, that Elohim has made all known to the Hebrew, is the canon''s own ground for the elevation.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-spirit-of-god-discreet-and-wise'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 41:39 — *And Pharaoh said unto Joseph, Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art:* the king''s words to Joseph in Jasher 49:20 echo Genesis verbatim, ''there is not throughout the land a discreet and wise man like to you.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-spirit-of-god-discreet-and-wise'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 40:5 — *And Yahuah (God) gave Joseph favour and mercy in the eyes of Pharaoh, and Pharaoh said to his servants: “We shall not find such a wise and discreet man as this man, for the spirit of Yahuah (God) is with him.”* Jubilees narrates the identical Pharaoh-speech that opens Jasher 49:8.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-spirit-of-god-discreet-and-wise'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=8
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=40 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:10 — *And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.* Stephen reads Joseph''s elevation in Jasher 49 as Elohim''s own deliverance and gift of wisdom.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-spirit-of-god-discreet-and-wise'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-49-second-to-pharaoh-ring-and-chain
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:42 — *And Pharaoh took off his ring from his hand, and put it upon Joseph’s hand, and arrayed him in vestures of fine linen, and put a gold chain about his neck;* the investiture of Jasher 49:23 (ring, princely garment, gold chain) is Genesis detail for detail.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-second-to-pharaoh-ring-and-chain'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=42
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 41:40 — *Thou shalt be over my house, and according unto thy word shall all my people be ruled: only in the throne will I be greater than thou.* Pharaoh''s reservation in Jasher 49:22, ''only in my throne will I be greater than you,'' is the canon''s exact word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-second-to-pharaoh-ring-and-chain'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=40
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 41:43 — *And he made him to ride in the second chariot which he had; and they cried before him, Bow the knee: and he made him ruler over all the land of Egypt.* The second chariot opposite the king''s in Jasher 49:24 retells Genesis'' very procession.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-second-to-pharaoh-ring-and-chain'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=43
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 40:8 — *And Joseph ruled over all the land of Egypt, and all the princes of Pharaoh, and all his servants, and all who did the king’s business loved him, for he walked in uprightness, for he was without pride and arrogance, and he had no respect of persons, and did not accept gifts, but he judged in uprightness all the people of the land.* Jubilees gives the righteous character of the second-to-Pharaoh that Jasher 49:22 establishes.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-second-to-pharaoh-ring-and-chain'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=22
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=40 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-49-zaphnath-paaneah-osnath-thirty-years
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:45 — *And Pharaoh called Joseph’s name Zaphnath-paaneah; and he gave him to wife Asenath the daughter of Poti-pherah priest of On. And Joseph went out over all the land of Egypt.* The renaming of Jasher 49:21 and the marriage of 49:36 are Genesis'' own record (Zaphnath-paaneah; daughter of the priest of On).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-zaphnath-paaneah-osnath-thirty-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=45
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 41:46 — *And Joseph was thirty years old when he stood before Pharaoh king of Egypt. And Joseph went out from the presence of Pharaoh, and went throughout all the land of Egypt.* Jasher 49:38 reckons the identical thirty years at Joseph''s standing before Pharaoh.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-zaphnath-paaneah-osnath-thirty-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=38
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=46
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 40:10 — *And the king called Joseph’s name Sĕphânṭîphâns, 2 and gave Joseph to wife the daughter of Potiphar, the daughter of the priest of Heliopolis, the chief cook. 3 11. And on the day that Joseph stood before Pharaoh he was thirty years old when he stood before Pharaoh.* Jubilees gives the same new name, the priest''s-daughter wife, and the thirty years that Jasher 49:21,36,38 record.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-zaphnath-paaneah-osnath-thirty-years'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=21
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=40 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-49-raised-from-the-dungeon-poor-from-the-dust
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 105:17 — *He sent a man before them, even Joseph, who was sold for a servant:* Joseph''s praise in Jasher 49:30, that Yahuah raises the poor from the dust, sings the same providence Psalm 105 ascribes to the whole story.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-raised-from-the-dungeon-poor-from-the-dust'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 105:18 — *Whose feet they hurt with fetters: he was laid in iron:* the dungeon of Jasher 49:13, where Joseph lay the night before his exaltation, is the iron Psalm 105 remembers.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-raised-from-the-dungeon-poor-from-the-dust'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 105:20 — *The king sent and loosed him; even the ruler of the people, and let him go free.* The very day Jasher 49:30 celebrates, the king''s loosing of Joseph from the prison to the rule, is Psalm 105''s word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-raised-from-the-dungeon-poor-from-the-dust'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* Stephen names the Elohim who was with Joseph from the pit, the same Yahuah Joseph praises in Jasher 49:30.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja49_lookup sv, _session252_ja49_lookup tv
+ WHERE t.slug='jasher-49-raised-from-the-dungeon-poor-from-the-dust'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=49 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_50.sql (session252 jasher 50) -----
+-- Source anchor: jasher/jasher ch50. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja50 (view _session252_ja50_lookup). Sort band base 56225, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja50_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-50-corn-laid-up
+  ('jasher', 'jasher', 50, 7, 'canon', 'genesis', 41, 29, 'free', E'Genesis 41:29 — *Behold, there come seven years of great plenty throughout all the land of Egypt:* the seven plenteous years Jasher 50:7 says Yahuah gave throughout the land are Joseph''s interpreted dream in Genesis.'),
+  ('jasher', 'jasher', 50, 8, 'canon', 'genesis', 41, 35, 'free', E'Genesis 41:35 — *And let them gather all the food of those good years that come, and lay up corn under the hand of Pharaoh, and let them keep food in the cities.* Joseph''s officers collecting and heaping the corn year by year in Jasher 50:8 is Joseph''s own counsel to Pharaoh in Genesis.'),
+  ('jasher', 'jasher', 50, 10, 'canon', 'genesis', 41, 49, 'free', E'Genesis 41:49 — *And Joseph gathered corn as the sand of the sea, very much, until he left numbering; for it was without number.* Jasher 50:10''s corn ''like the sand of the sea for abundance... could not be numbered'' is the same numberless store.'),
+  ('jasher', 'jasher', 50, 7, 'jubilees', 'jubilees', 40, 8, 'extras', E'Jubilees 40:8 — *And Joseph ruled over all the land of Egypt, and all the princes of Pharaoh, and all his servants, and all who did the king’s business loved him, for he walked in uprightness, for he was without pride and arrogance, and he had no respect of persons, and did not accept gifts, but he judged in uprightness all the people of the land.* The Jubilees apparatus carries the same provider-Joseph reigning over Egypt that Jasher 50:7 opens.'),
+  -- thread: jasher-50-manasseh-ephraim
+  ('jasher', 'jasher', 50, 15, 'canon', 'genesis', 41, 50, 'free', E'Genesis 41:50 — *And unto Joseph were born two sons before the years of famine came, which Asenath the daughter of Poti-pherah priest of On bare unto him.* Jasher 50:15''s two sons by Osnath daughter of Potiphera, born before the famine, are the same birth Genesis sets down.'),
+  ('jasher', 'jasher', 50, 15, 'canon', 'genesis', 41, 51, 'free', E'Genesis 41:51 — *And Joseph called the name of the firstborn Manasseh: For Elohim (God), said he, hath made me forget all my toil, and all my father’s house.* Jasher 50:15 names Manasseh as the elder of the two; Genesis gives the meaning of his name.'),
+  ('jasher', 'jasher', 50, 15, 'canon', 'genesis', 41, 52, 'free', E'Genesis 41:52 — *And the name of the second called he Ephraim: For Elohim (God) hath caused me to be fruitful in the land of my affliction.* Ephraim, the second son of Jasher 50:15, becomes the great tribe of the northern house — the seed made fruitful in affliction.'),
+  -- thread: jasher-50-famine-came
+  ('jasher', 'jasher', 50, 18, 'canon', 'genesis', 41, 53, 'free', E'Genesis 41:53 — *And the seven years of plenteousness, that was in the land of Egypt, were ended.* Jasher 50:18''s seven years of plenty ''at an end'' is the same hinge Genesis marks before the dearth.'),
+  ('jasher', 'jasher', 50, 18, 'canon', 'genesis', 41, 54, 'free', E'Genesis 41:54 — *And the seven years of dearth began to come, according as Joseph had said: and the dearth was in all lands; but in all the land of Egypt there was bread.* Jasher 50:18''s famine coming ''as Joseph had spoken'' matches Genesis''s ''according as Joseph had said.'''),
+  ('jasher', 'jasher', 50, 25, 'canon', 'genesis', 41, 55, 'free', E'Genesis 41:55 — *And when all the land of Egypt was famished, the people cried to Pharaoh for bread: and Pharaoh said unto all the Egyptians, Go unto Joseph; what he saith to you, do.* Pharaoh''s answer in Jasher 50:25 sending the people to Joseph to do whatever he says is the same command Genesis records.'),
+  -- thread: jasher-50-stores-opened-nations-come
+  ('jasher', 'jasher', 50, 27, 'canon', 'genesis', 41, 56, 'free', E'Genesis 41:56 — *And the famine was over all the face of the earth: and Joseph opened all the storehouses, and sold unto the Egyptians; and the famine waxed sore in the land of Egypt.* Joseph opening all his stores and selling to the people of Egypt in Jasher 50:27 is the same act Genesis records.'),
+  ('jasher', 'jasher', 50, 30, 'canon', 'genesis', 41, 57, 'free', E'Genesis 41:57 — *And all countries came into Egypt to Joseph for to buy corn; because that the famine was so sore in all lands.* Canaan, the Philistines, those beyond the Jordan and the children of the east coming to Egypt in Jasher 50:30 is Genesis''s ''all countries.'''),
+  ('jasher', 'jasher', 50, 30, 'canon', 'genesis', 42, 5, 'free', E'Genesis 42:5 — *And the sons of Yashar''el (Israel) came to buy corn among those that came: for the famine was in the land of Canaan.* The inhabitants of Canaan coming for corn in Jasher 50:30 include the covenant seed — Israel''s own sons going down for bread.'),
+  -- thread: jasher-50-statutes-for-the-brethren
+  ('jasher', 'jasher', 50, 32, 'canon', 'genesis', 42, 3, 'free', E'Genesis 42:3 — *And Joseph’s ten brethren went down to buy corn in Egypt.* The brethren Joseph foresaw and laid his gate-statutes to detect in Jasher 50:32 are the ten who go down in Genesis.'),
+  ('jasher', 'jasher', 50, 37, 'canon', 'genesis', 42, 6, 'free', E'Genesis 42:6 — *And Joseph was the governor over the land, and he it was that sold to all the people of the land: and Joseph’s brethren came, and bowed down themselves before him with their faces to the earth.* Joseph''s whole apparatus of statutes in Jasher 50:37 ''that he might know when his brethren should come'' culminates in this bowing — the dream fulfilled.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja50_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja50_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-50-corn-laid-up',
+       E'Joseph heaps up corn in the seven years of plenty',
+       E'Jasher tells the years of abundance: *And at the revolution of the year, in the second year of Joseph’s reigning over Egypt, Yahuah (the Lord) gave great plenty throughout the land for seven years as Joseph had spoken, for Yahuah (the Lord) blessed all the produce of the earth in those days for seven years, and they ate and were greatly satisfied.* (Jasher 50:7) — and Joseph *heaped up corn like the sand of the sea for abundance* (Jasher 50:10), securing it against the famine to come. This is the same scene Genesis sets down: *Behold, there come seven years of great plenty throughout all the land of Egypt* (Genesis 41:29); *And let them gather all the food of those good years that come, and lay up corn under the hand of Pharaoh, and let them keep food in the cities* (Genesis 41:35); *And Joseph gathered corn as the sand of the sea, very much, until he left numbering; for it was without number* (Genesis 41:49). The fathers'' provider walks in the upright way — the Jubilees apparatus names it: *And Joseph ruled over all the land of Egypt... for he walked in uprightness, for he was without pride and arrogance... but he judged in uprightness all the people of the land* (Jubilees 40:8). It ain''t new: the same plenty, the same storing, the seed kept alive by Yahuah''s blessing.',
+       sv.verse_id, ev.verse_id, 'extras', 56225
+  FROM _session252_ja50_lookup sv, _session252_ja50_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=7
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=50 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-50-manasseh-ephraim',
+       E'Manasseh and Ephraim born to Joseph',
+       E'Jasher records the two sons given before the famine: *And Joseph’s wife Osnath the daughter of Potiphera bare him two sons, Manasseh and Ephraim, and Joseph was thirty-four years old when he begat them.* (Jasher 50:15) — and *the lads grew up and they went in his ways and in his instructions, they did not deviate from the way which their father taught them, either to the right or left.* (Jasher 50:16). Genesis names the same two sons and the same mother: *And unto Joseph were born two sons before the years of famine came, which Asenath the daughter of Poti-pherah priest of On bare unto him* (Genesis 41:50); *And Joseph called the name of the firstborn Manasseh: For Elohim (God), said he, hath made me forget all my toil, and all my father’s house* (Genesis 41:51); *And the name of the second called he Ephraim: For Elohim (God) hath caused me to be fruitful in the land of my affliction* (Genesis 41:52). These are the two tribes that fill out the twelve — the seed multiplying in the land of affliction, the inheritance carried forward. It ain''t new: the same household, the sons walking in the father''s way (Torah-before-Sinai), neither to the right nor the left.',
+       sv.verse_id, ev.verse_id, 'extras', 56228
+  FROM _session252_ja50_lookup sv, _session252_ja50_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=15
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=50 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-50-famine-came',
+       E'The seven years of famine come upon the land',
+       E'Jasher turns to the dearth: *And the seven years of plenty that were throughout the land were at an end, and the seven years of famine came after them as Joseph had spoken, and the famine was throughout the land.* (Jasher 50:18) — and when the Egyptians opened their own stores they *found all the food that was in their stores, full of vermin and not fit to eat* (Jasher 50:20), crying before Pharaoh. Genesis sets the same turn: *And the seven years of plenteousness, that was in the land of Egypt, were ended* (Genesis 41:53); *And the seven years of dearth began to come, according as Joseph had said: and the dearth was in all lands; but in all the land of Egypt there was bread* (Genesis 41:54); *And when all the land of Egypt was famished, the people cried to Pharaoh for bread: and Pharaoh said unto all the Egyptians, Go unto Joseph; what he saith to you, do* (Genesis 41:55). It ain''t new: the famine comes exactly ''as Joseph had spoken'' — the word of Yahuah''s seer stands, and only Joseph''s storehouse holds bread.',
+       sv.verse_id, ev.verse_id, 'extras', 56231
+  FROM _session252_ja50_lookup sv, _session252_ja50_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=18
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=50 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-50-stores-opened-nations-come',
+       E'Joseph opens the stores; all nations come to buy corn',
+       E'Jasher shows the storehouse thrown open: *And when Joseph heard all the words of the people of Egypt and what had befallen them, Joseph opened all his stores of the produce and he sold it to the people of Egypt.* (Jasher 50:27) — and the hunger reaching past Egypt: *And all the inhabitants of the land of Canaan and the Philistines, and those beyond the Jordan, and the children of the east and all the cities of the lands far and nigh heard that there was corn in Egypt, and they all came to Egypt to buy corn, for the famine prevailed over them.* (Jasher 50:30). Genesis sets the same: *And the famine was over all the face of the earth: and Joseph opened all the storehouses, and sold unto the Egyptians; and the famine waxed sore in the land of Egypt* (Genesis 41:56); *And all countries came into Egypt to Joseph for to buy corn; because that the famine was so sore in all lands* (Genesis 41:57). Among those countries is Canaan, the seed of Jacob: *And the sons of Yashar''el (Israel) came to buy corn among those that came: for the famine was in the land of Canaan* (Genesis 42:5). It ain''t new — the famine drives all the earth, and the brethren among them, down to the brother they sold.',
+       sv.verse_id, ev.verse_id, 'extras', 56234
+  FROM _session252_ja50_lookup sv, _session252_ja50_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=27
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=50 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-50-statutes-for-the-brethren',
+       E'Joseph''s gate-statutes to catch his brethren coming for corn',
+       E'Jasher gives a detail the canon only implies — Joseph foreseeing his brethren and setting watchmen at the gates: *And Joseph knew that his brethren also would come to Egypt to buy corn, for the famine prevailed throughout the earth. And Joseph commanded all his people that they should cause it to be proclaimed throughout the land of Egypt, saying,* (Jasher 50:32) — that every buyer''s name and his father''s name be written down: *And Joseph placed sentinels at the gates of Egypt, and commanded them, saying, Any person who may come to buy corn, suffer him not to enter until his name, and the name of his father, and the name of his father’s father be written down, and whatever is written by day, send their names to me in the evening that I may know their names.* (Jasher 50:35). All these statutes were *in order that he might know when his brethren should come to Egypt to buy corn* (Jasher 50:37). Genesis carries the meeting these statutes were laid to catch: *And Joseph’s ten brethren went down to buy corn in Egypt* (Genesis 42:3); *And Joseph was the governor over the land, and he it was that sold to all the people of the land: and Joseph’s brethren came, and bowed down themselves before him with their faces to the earth* (Genesis 42:6). It ain''t new — Jasher amplifies the providence: the brother they cast out now governs the bread, and the dreams bow before him.',
+       sv.verse_id, ev.verse_id, 'extras', 56237
+  FROM _session252_ja50_lookup sv, _session252_ja50_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=32
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=50 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-50-corn-laid-up
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:29 — *Behold, there come seven years of great plenty throughout all the land of Egypt:* the seven plenteous years Jasher 50:7 says Yahuah gave throughout the land are Joseph''s interpreted dream in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-corn-laid-up'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 41:35 — *And let them gather all the food of those good years that come, and lay up corn under the hand of Pharaoh, and let them keep food in the cities.* Joseph''s officers collecting and heaping the corn year by year in Jasher 50:8 is Joseph''s own counsel to Pharaoh in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-corn-laid-up'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 41:49 — *And Joseph gathered corn as the sand of the sea, very much, until he left numbering; for it was without number.* Jasher 50:10''s corn ''like the sand of the sea for abundance... could not be numbered'' is the same numberless store.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-corn-laid-up'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=49
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 40:8 — *And Joseph ruled over all the land of Egypt, and all the princes of Pharaoh, and all his servants, and all who did the king’s business loved him, for he walked in uprightness, for he was without pride and arrogance, and he had no respect of persons, and did not accept gifts, but he judged in uprightness all the people of the land.* The Jubilees apparatus carries the same provider-Joseph reigning over Egypt that Jasher 50:7 opens.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-corn-laid-up'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=40 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-50-manasseh-ephraim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:50 — *And unto Joseph were born two sons before the years of famine came, which Asenath the daughter of Poti-pherah priest of On bare unto him.* Jasher 50:15''s two sons by Osnath daughter of Potiphera, born before the famine, are the same birth Genesis sets down.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-manasseh-ephraim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=50
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 41:51 — *And Joseph called the name of the firstborn Manasseh: For Elohim (God), said he, hath made me forget all my toil, and all my father’s house.* Jasher 50:15 names Manasseh as the elder of the two; Genesis gives the meaning of his name.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-manasseh-ephraim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=51
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 41:52 — *And the name of the second called he Ephraim: For Elohim (God) hath caused me to be fruitful in the land of my affliction.* Ephraim, the second son of Jasher 50:15, becomes the great tribe of the northern house — the seed made fruitful in affliction.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-manasseh-ephraim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=52
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-50-famine-came
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:53 — *And the seven years of plenteousness, that was in the land of Egypt, were ended.* Jasher 50:18''s seven years of plenty ''at an end'' is the same hinge Genesis marks before the dearth.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-famine-came'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=53
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 41:54 — *And the seven years of dearth began to come, according as Joseph had said: and the dearth was in all lands; but in all the land of Egypt there was bread.* Jasher 50:18''s famine coming ''as Joseph had spoken'' matches Genesis''s ''according as Joseph had said.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-famine-came'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=54
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 41:55 — *And when all the land of Egypt was famished, the people cried to Pharaoh for bread: and Pharaoh said unto all the Egyptians, Go unto Joseph; what he saith to you, do.* Pharaoh''s answer in Jasher 50:25 sending the people to Joseph to do whatever he says is the same command Genesis records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-famine-came'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=55
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-50-stores-opened-nations-come
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:56 — *And the famine was over all the face of the earth: and Joseph opened all the storehouses, and sold unto the Egyptians; and the famine waxed sore in the land of Egypt.* Joseph opening all his stores and selling to the people of Egypt in Jasher 50:27 is the same act Genesis records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-stores-opened-nations-come'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=56
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 41:57 — *And all countries came into Egypt to Joseph for to buy corn; because that the famine was so sore in all lands.* Canaan, the Philistines, those beyond the Jordan and the children of the east coming to Egypt in Jasher 50:30 is Genesis''s ''all countries.'''
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-stores-opened-nations-come'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=57
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 42:5 — *And the sons of Yashar''el (Israel) came to buy corn among those that came: for the famine was in the land of Canaan.* The inhabitants of Canaan coming for corn in Jasher 50:30 include the covenant seed — Israel''s own sons going down for bread.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-stores-opened-nations-come'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-50-statutes-for-the-brethren
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:3 — *And Joseph’s ten brethren went down to buy corn in Egypt.* The brethren Joseph foresaw and laid his gate-statutes to detect in Jasher 50:32 are the ten who go down in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-statutes-for-the-brethren'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:6 — *And Joseph was the governor over the land, and he it was that sold to all the people of the land: and Joseph’s brethren came, and bowed down themselves before him with their faces to the earth.* Joseph''s whole apparatus of statutes in Jasher 50:37 ''that he might know when his brethren should come'' culminates in this bowing — the dream fulfilled.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja50_lookup sv, _session252_ja50_lookup tv
+ WHERE t.slug='jasher-50-statutes-for-the-brethren'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=50 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_51.sql (session252 jasher 51) -----
+-- Source anchor: jasher/jasher ch51. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja51 (view _session252_ja51_lookup). Sort band base 56250, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja51_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-51-down-to-egypt-for-corn
+  ('jasher', 'jasher', 51, 1, 'canon', 'genesis', 42, 1, 'free', E'Genesis 42:1 — *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* The same famine that opens Jasher 51:1 sends Jacob''s sons down in the canon''s own account.'),
+  ('jasher', 'jasher', 51, 3, 'canon', 'genesis', 42, 3, 'free', E'Genesis 42:3 — *And Joseph’s ten brethren went down to buy corn in Egypt.* Jasher 51:3-5 numbers the same ten brethren going down to buy corn in Egypt.'),
+  ('jasher', 'jasher', 51, 5, 'canon', 'genesis', 42, 4, 'free', E'Genesis 42:4 — *But Benjamin, Joseph’s brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him.* Jacob''s fear in Jasher 51:5 that Benjamin meet the road-mischief of his brother is the very reason Genesis gives for keeping him home.'),
+  ('jasher', 'jasher', 51, 1, 'jubilees', 'jubilees', 42, 4, 'extras', E'Jubilees 42:4 — *(Now the famine was very sore in the land of Canaan), and Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send.* The live Jubilees apparatus carries the identical descent of the ten in famine, Benjamin withheld.'),
+  -- thread: jasher-51-joseph-knew-them-spies
+  ('jasher', 'jasher', 51, 20, 'canon', 'genesis', 42, 8, 'free', E'Genesis 42:8 — *And Joseph knew his brethren, but they knew not him.* Word for word the recognition of Jasher 51:20 — the brother they sold stands ruling, unrecognized.'),
+  ('jasher', 'jasher', 51, 24, 'canon', 'genesis', 42, 9, 'free', E'Genesis 42:9 — *And Joseph remembered the dreams which he dreamed of them, and said unto them, Ye are spies; to see the nakedness of the land ye are come.* Joseph''s spy-charge and "nakedness of the land" in Jasher 51:24 is the canon''s own accusation.'),
+  ('jasher', 'jasher', 51, 33, 'canon', 'genesis', 42, 15, 'free', E'Genesis 42:15 — *Hereby ye shall be proved: By the life of Pharaoh ye shall not go forth hence, except your youngest brother come hither.* The demand that the youngest be brought as proof, sworn by Pharaoh''s life, matches Joseph''s test in Jasher 51:33.'),
+  ('jasher', 'jasher', 51, 20, 'jubilees', 'jubilees', 42, 5, 'extras', E'Jubilees 42:5 — *And Joseph recognized them, but they did not recognize him, and he spake to them and questioned them, and he said to them: “Are you not spies, and have you not come to explore the approaches of the land?” And he put them in ward.* The live Jubilees layer carries the same recognition and spy-charge as Jasher 51:20-24.'),
+  -- thread: jasher-51-guilty-concerning-our-brother
+  ('jasher', 'jasher', 51, 51, 'canon', 'genesis', 42, 21, 'free', E'Genesis 42:21 — *And they said one to another, We are verily guilty concerning our brother, in that we saw the anguish of his soul, when he besought us, and we would not hear; therefore is this distress come upon us.* Judah''s confession in Jasher 51:51 of guilt for selling their own flesh is the canon''s own road-side reckoning.'),
+  ('jasher', 'jasher', 51, 52, 'canon', 'genesis', 42, 22, 'free', E'Genesis 42:22 — *And Reuben answered them, saying, Spake I not unto you, saying, Do not sin against the child; and ye would not hear? therefore, behold, also his blood is required.* Reuben''s "said I not... do not sin against the lad" in Jasher 51:52 is verbatim the canon''s Reuben.'),
+  ('jasher', 'jasher', 51, 51, 'canon', 'genesis', 37, 26, 'free', E'Genesis 37:26 — *And Yahudah (Judah) said unto his brethren, What profit is it if we slay our brother, and conceal his blood?* The sin Judah confesses in Jasher 51:51 was his own earlier counsel to sell rather than slay Joseph.'),
+  ('jasher', 'jasher', 51, 51, 'canon', 'genesis', 37, 28, 'free', E'Genesis 37:28 — *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt.* "Having sold our brother" (Jasher 51:51) points back to this selling into Egypt that now stands ruling over them.'),
+  -- thread: jasher-51-simeon-bound-joseph-wept
+  ('jasher', 'jasher', 51, 37, 'canon', 'genesis', 42, 24, 'free', E'Genesis 42:24 — *And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes.* Joseph''s chamber-weeping and the taking of Simeon in Jasher 51:37 is the canon''s own turning-aside to weep.'),
+  ('jasher', 'jasher', 51, 39, 'canon', 'genesis', 42, 19, 'free', E'Genesis 42:19 — *If ye be true men, let one of your brethren be bound in the house of your prison: go ye, carry corn for the famine of your houses.* The order to confine one brother in prison while the rest carry corn home (Jasher 51:39, 46) is Joseph''s third-day verdict in Genesis.'),
+  ('jasher', 'jasher', 51, 37, 'jubilees', 'jubilees', 42, 6, 'extras', E'Jubilees 42:6 — *And after that he set them free again, and detained Simeon alone and sent off his nine brothers. And he filled their sacks with corn, and he put their gold in their sacks, and they did not know.* The live Jubilees layer keeps Simeon detained and the gold secretly restored, as Jasher 51:37-45.'),
+  -- thread: jasher-51-smiting-of-shechem
+  ('jasher', 'jasher', 51, 32, 'canon', 'genesis', 34, 25, 'free', E'Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* The "two of your brethren smote Shechem... on account of your sister" that Joseph cites in Jasher 51:32 is this Genesis deed.'),
+  ('jasher', 'jasher', 51, 32, 'canon', 'genesis', 34, 24, 'free', E'Genesis 34:24 — *And unto Hamor and unto Shechem his son hearkened all that went out of the gate of his city; and every male was circumcised, all that went out of the gate of his city.* The circumcision that left Shechem''s men "sore" sets up the very smiting Joseph recalls in Jasher 51:32.'),
+  -- thread: jasher-51-money-restored-hand-of-god
+  ('jasher', 'jasher', 51, 49, 'canon', 'genesis', 42, 28, 'free', E'Genesis 42:28 — *And he said unto his brethren, My money is restored; and, lo, it is even in my sack: and their heart failed them, and they were afraid, saying one to another, What is this that Elohim (God) hath done unto us?* The restored silver and the very cry of Jasher 51:49 are the canon''s own inn-scene, word for word.'),
+  ('jasher', 'jasher', 51, 50, 'canon', 'genesis', 50, 20, 'free', E'Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The brothers'' fearful "what has Elohim done to us?" (Jasher 51:49-50) is the providence Joseph will later name as good for the saving of the covenant seed.'),
+  ('jasher', 'jasher', 51, 50, 'canon', 'genesis', 50, 24, 'free', E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* The kindness with Abraham, Isaac and Jacob the brothers fear is lost (Jasher 51:50) is the very covenant Joseph confesses Elohim will keep by the visitation.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja51_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja51_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-51-down-to-egypt-for-corn',
+       E'The ten go down to buy corn',
+       E'Jasher opens exactly where Genesis 42 opens — the famine drives Jacob to send his sons down to Egypt: *And Jacob afterward heard that there was corn in Egypt, and he called to his sons to go to Egypt to buy corn, for upon them also did the famine prevail* (Jasher 51:1), and ten go while Benjamin is kept back lest *an accident might befall him on the road like his brother* (Jasher 51:5). It ain''t new — this is the canon''s own scene, retold. Genesis sets it down first: *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* (Genesis 42:1), and again *And Joseph’s ten brethren went down to buy corn in Egypt* (Genesis 42:3), with *But Benjamin, Joseph’s brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him* (Genesis 42:4). Jubilees narrates the same descent of the covenant seed in famine: *(Now the famine was very sore in the land of Canaan), and Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send* (Jubilees 42:4).',
+       sv.verse_id, ev.verse_id, 'extras', 56250
+  FROM _session252_ja51_lookup sv, _session252_ja51_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=51 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-51-joseph-knew-them-spies',
+       E'Joseph knew them; they knew him not — "ye are spies"',
+       E'Brought before the throne, the brothers bow and Joseph recognizes them while they remain blind to him: *And Joseph saw his brethren, and he knew them, but they knew him not, for Joseph was very great in their eyes, therefore they knew him not* (Jasher 51:20). He presses the same charge the canon records — *That is the thing which I spoke to you, you have come to spy through the land... you have come to see the nakedness of the land* (Jasher 51:24) — and demands the youngest be fetched as proof: *if you will send home one from amongst you to fetch your youngest brother from your father, and to bring him here to me... I will know that you are right* (Jasher 51:33). This is Genesis 42 unfolded. The source: *And Joseph saw his brethren, and he knew them, but made himself strange unto them, and spake roughly unto them* (Genesis 42:7); *And Joseph knew his brethren, but they knew not him* (Genesis 42:8); *And Joseph remembered the dreams which he dreamed of them, and said unto them, Ye are spies; to see the nakedness of the land ye are come* (Genesis 42:9); *Hereby ye shall be proved: By the life of Pharaoh ye shall not go forth hence, except your youngest brother come hither* (Genesis 42:15). Jubilees keeps the same testing: *“Are you not spies, and have you not come to explore the approaches of the land?” And he put them in ward* (Jubilees 42:5).',
+       sv.verse_id, ev.verse_id, 'extras', 56253
+  FROM _session252_ja51_lookup sv, _session252_ja51_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=20
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=51 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-51-guilty-concerning-our-brother',
+       E'The brothers'' guilt: "we sold our brother, our own flesh"',
+       E'On the road the conscience of Genesis 37 returns upon them. Judah and Reuben name the old sin outright: *Surely we are guilty sinners before Yahuah our Elohim (the Lord our God) in having sold our brother, our own flesh* (Jasher 51:51), and Reuben answers, *Said I not to you, do not sin against the lad, and you would not listen to me? now Elohim requires him from us* (Jasher 51:52). The canon places the very same confession at this moment: *And they said one to another, We are verily guilty concerning our brother, in that we saw the anguish of his soul, when he besought us, and we would not hear; therefore is this distress come upon us* (Genesis 42:21), and Reuben''s rebuke — *Spake I not unto you, saying, Do not sin against the child; and ye would not hear? therefore, behold, also his blood is required* (Genesis 42:22). The sin they confess was Judah''s own counsel back in Genesis: *And Yahudah (Judah) said unto his brethren, What profit is it if we slay our brother, and conceal his blood?* (Genesis 37:26), the selling itself — *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt* (Genesis 37:28). It ain''t new: the seed is chastened but kept, the guilt confessed before the throne it could not see.',
+       sv.verse_id, ev.verse_id, 'extras', 56256
+  FROM _session252_ja51_lookup sv, _session252_ja51_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=49
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=51 AND ev.verse_number=52
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-51-simeon-bound-joseph-wept',
+       E'Simeon bound; Joseph turns aside and weeps',
+       E'Joseph keeps one brother behind and slips away to weep before binding Simeon: *And Joseph went out from them and came into the chamber, and wept a great weeping, for his pity was excited for them, and he washed his face, and returned to them again, and he took Simeon from them and ordered him to be bound* (Jasher 51:37); *Seize this man and confine him in prison until his brethren come to him* (Jasher 51:39). Genesis records the same tears and the same detained brother: *And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes* (Genesis 42:24), the third-day verdict being *If ye be true men, let one of your brethren be bound in the house of your prison: go ye, carry corn for the famine of your houses* (Genesis 42:19). Jasher adds its own legendary color — Simeon too strong to bind until Manasseh subdues him, and Simeon''s word *None of you must say that this is the smiting of an Egyptian, but it is the smiting of the house of my father* (Jasher 51:44) — but anchored to the canon''s true scene. Jubilees keeps the same detention: *And after that he set them free again, and detained Simeon alone and sent off his nine brothers* (Jubilees 42:6).',
+       sv.verse_id, ev.verse_id, 'extras', 56259
+  FROM _session252_ja51_lookup sv, _session252_ja51_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=37
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=51 AND ev.verse_number=44
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-51-smiting-of-shechem',
+       E'"Two of your brethren smote Shechem" — Simeon and Levi remembered',
+       E'Joseph throws their own history at them as ground for the spy-charge: *for we heard that two of your brethren smote all the inhabitants of Shechem, in the land of Canaan, on account of your sister, and you now come to do the like in Egypt on account of your brother* (Jasher 51:32). The deed he names is fixed in Genesis: *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males* (Genesis 34:25), after *every male was circumcised, all that went out of the gate of his city* (Genesis 34:24). Jasher''s expansion is honest memory of the canon''s own Dinah-vengeance, woven here to sharpen Joseph''s pressure on the brothers — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56262
+  FROM _session252_ja51_lookup sv, _session252_ja51_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=31
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=51 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-51-money-restored-hand-of-god',
+       E'The money restored — "What is this that Elohim has done to us?"',
+       E'At the inn the silver is found back in the sack, and the brothers read the hand of Elohim in it: *My money is restored, and lo, it is even in my sack... What is this that Elohim (God) has done to us?* (Jasher 51:49), and they ask *where is Yahuah (the Lord)’s kindness with our fathers, with Abraham, Isaac, and Jacob* (Jasher 51:50). Genesis records the identical discovery and the identical confession of the divine hand: *And he said unto his brethren, My money is restored; and, lo, it is even in my sack: and their heart failed them, and they were afraid, saying one to another, What is this that Elohim (God) hath done unto us?* (Genesis 42:28). The whole testing is the providence Joseph himself later names — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). The covenant seed is preserved through famine toward the visitation Joseph will promise: *I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24). Election kept; the kindness with the fathers does not fail.',
+       sv.verse_id, ev.verse_id, 'extras', 56265
+  FROM _session252_ja51_lookup sv, _session252_ja51_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=48
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=51 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-51-down-to-egypt-for-corn
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:1 — *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* The same famine that opens Jasher 51:1 sends Jacob''s sons down in the canon''s own account.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-down-to-egypt-for-corn'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:3 — *And Joseph’s ten brethren went down to buy corn in Egypt.* Jasher 51:3-5 numbers the same ten brethren going down to buy corn in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-down-to-egypt-for-corn'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 42:4 — *But Benjamin, Joseph’s brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him.* Jacob''s fear in Jasher 51:5 that Benjamin meet the road-mischief of his brother is the very reason Genesis gives for keeping him home.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-down-to-egypt-for-corn'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 42:4 — *(Now the famine was very sore in the land of Canaan), and Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send.* The live Jubilees apparatus carries the identical descent of the ten in famine, Benjamin withheld.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-down-to-egypt-for-corn'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-51-joseph-knew-them-spies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:8 — *And Joseph knew his brethren, but they knew not him.* Word for word the recognition of Jasher 51:20 — the brother they sold stands ruling, unrecognized.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-joseph-knew-them-spies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:9 — *And Joseph remembered the dreams which he dreamed of them, and said unto them, Ye are spies; to see the nakedness of the land ye are come.* Joseph''s spy-charge and "nakedness of the land" in Jasher 51:24 is the canon''s own accusation.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-joseph-knew-them-spies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 42:15 — *Hereby ye shall be proved: By the life of Pharaoh ye shall not go forth hence, except your youngest brother come hither.* The demand that the youngest be brought as proof, sworn by Pharaoh''s life, matches Joseph''s test in Jasher 51:33.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-joseph-knew-them-spies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 42:5 — *And Joseph recognized them, but they did not recognize him, and he spake to them and questioned them, and he said to them: “Are you not spies, and have you not come to explore the approaches of the land?” And he put them in ward.* The live Jubilees layer carries the same recognition and spy-charge as Jasher 51:20-24.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-joseph-knew-them-spies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=20
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-51-guilty-concerning-our-brother
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:21 — *And they said one to another, We are verily guilty concerning our brother, in that we saw the anguish of his soul, when he besought us, and we would not hear; therefore is this distress come upon us.* Judah''s confession in Jasher 51:51 of guilt for selling their own flesh is the canon''s own road-side reckoning.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-guilty-concerning-our-brother'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=51
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:22 — *And Reuben answered them, saying, Spake I not unto you, saying, Do not sin against the child; and ye would not hear? therefore, behold, also his blood is required.* Reuben''s "said I not... do not sin against the lad" in Jasher 51:52 is verbatim the canon''s Reuben.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-guilty-concerning-our-brother'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 37:26 — *And Yahudah (Judah) said unto his brethren, What profit is it if we slay our brother, and conceal his blood?* The sin Judah confesses in Jasher 51:51 was his own earlier counsel to sell rather than slay Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-guilty-concerning-our-brother'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=51
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 37:28 — *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt.* "Having sold our brother" (Jasher 51:51) points back to this selling into Egypt that now stands ruling over them.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-guilty-concerning-our-brother'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=51
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-51-simeon-bound-joseph-wept
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:24 — *And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes.* Joseph''s chamber-weeping and the taking of Simeon in Jasher 51:37 is the canon''s own turning-aside to weep.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-simeon-bound-joseph-wept'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:19 — *If ye be true men, let one of your brethren be bound in the house of your prison: go ye, carry corn for the famine of your houses.* The order to confine one brother in prison while the rest carry corn home (Jasher 51:39, 46) is Joseph''s third-day verdict in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-simeon-bound-joseph-wept'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=39
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 42:6 — *And after that he set them free again, and detained Simeon alone and sent off his nine brothers. And he filled their sacks with corn, and he put their gold in their sacks, and they did not know.* The live Jubilees layer keeps Simeon detained and the gold secretly restored, as Jasher 51:37-45.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-simeon-bound-joseph-wept'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=37
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-51-smiting-of-shechem
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* The "two of your brethren smote Shechem... on account of your sister" that Joseph cites in Jasher 51:32 is this Genesis deed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-smiting-of-shechem'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 34:24 — *And unto Hamor and unto Shechem his son hearkened all that went out of the gate of his city; and every male was circumcised, all that went out of the gate of his city.* The circumcision that left Shechem''s men "sore" sets up the very smiting Joseph recalls in Jasher 51:32.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-smiting-of-shechem'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-51-money-restored-hand-of-god
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:28 — *And he said unto his brethren, My money is restored; and, lo, it is even in my sack: and their heart failed them, and they were afraid, saying one to another, What is this that Elohim (God) hath done unto us?* The restored silver and the very cry of Jasher 51:49 are the canon''s own inn-scene, word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-money-restored-hand-of-god'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The brothers'' fearful "what has Elohim done to us?" (Jasher 51:49-50) is the providence Joseph will later name as good for the saving of the covenant seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-money-restored-hand-of-god'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* The kindness with Abraham, Isaac and Jacob the brothers fear is lost (Jasher 51:50) is the very covenant Joseph confesses Elohim will keep by the visitation.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja51_lookup sv, _session252_ja51_lookup tv
+ WHERE t.slug='jasher-51-money-restored-hand-of-god'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=51 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_52.sql (session252 jasher 52) -----
+-- Source anchor: jasher/jasher ch52. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja52 (view _session252_ja52_lookup). Sort band base 56275, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja52_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-52-returned-money-terror
+  ('jasher', 'jasher', 52, 1, 'canon', 'genesis', 42, 35, 'free', E'Genesis 42:35 — *And it came to pass as they emptied their sacks, that, behold, every man’s bundle of money was in his sack: and when both they and their father saw the bundles of money, they were afraid.* The terror over the returned money in Jasher 52:1 is the canon scene retold.'),
+  ('jasher', 'jasher', 52, 5, 'canon', 'genesis', 42, 38, 'free', E'Genesis 42:38 — *And he said, My son shall not go down with you; for his brother is dead, and he is left alone: if mischief befall him by the way in the which ye go, then shall ye bring down my gray hairs with sorrow to the grave.* Jacob''s refusal to send Benjamin in Jasher 52:5 is the same word given to Genesis.'),
+  ('jasher', 'jasher', 52, 5, 'jubilees', 'jubilees', 42, 10, 'extras', E'Jubilees 42:10 — *And Jacob said: “Me have you bereaved of my children! Joseph is not and Simeon also is not, and you will take Benjamin away. On me has your wickedness come.”* Jubilees records the same grieving father at the same moment as Jasher 52:5.'),
+  ('jasher', 'jasher', 52, 4, 'jubilees', 'jubilees', 42, 11, 'extras', E'Jubilees 42:11 — *And he said: “My son will not go down with you lest perchance he fall sick; for their mother gave birth to two sons, and one has perished, and this one also you will take from me. If perchance he took a fever on the road, you would bring down my old age with sorrow to death.” For he saw that their money had been returned to every man in his sack, and for this reason he feared to send him.* Jasher 52:4 carries Jacob''s same fear of losing the last son of Rachel.'),
+  -- thread: jasher-52-judah-surety-benjamin
+  ('jasher', 'jasher', 52, 19, 'canon', 'genesis', 43, 9, 'free', E'Genesis 43:9 — *I will be surety for him; of my hand shalt thou require him: if I bring him not unto thee, and set him before thee, then let me bear the blame for ever:* Judah''s pledge in Jasher 52:19 is the canon''s own word, nearly verbatim.'),
+  ('jasher', 'jasher', 52, 19, 'canon', 'genesis', 44, 32, 'free', E'Genesis 44:32 — *For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever.* Before Joseph''s throne Judah makes good the very surety he gives in Jasher 52:19.'),
+  ('jasher', 'jasher', 52, 11, 'canon', 'genesis', 43, 5, 'free', E'Genesis 43:5 — *But if thou wilt not send him, we will not go down: for the man said unto us, Ye shall not see my face, except your brother be with you.* The condition Judah reports in Jasher 52:11 — no Benjamin, no audience — is the man''s word in Genesis.'),
+  ('jasher', 'jasher', 52, 19, 'jubilees', 'jubilees', 43, 13, 'extras', E'Jubilees 43:13 — *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever.* Jubilees carries Judah''s surety to its climax — offering himself a bondsman — the same pledge first given in Jasher 52:19.'),
+  ('jasher', 'jasher', 52, 19, 'canon', 'genesis', 49, 10, 'free', E'Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* Judah who bears the blame for his brother in Jasher 52:19 is the tribe of the sceptre, foreshadowing the Surety to come.'),
+  -- thread: jasher-52-reuben-pledge-sons
+  ('jasher', 'jasher', 52, 5, 'canon', 'genesis', 42, 37, 'free', E'Genesis 42:37 — *And Reuben spake unto his father, saying, Slay my two sons, if I bring him not to thee: deliver him into my hand, and I will bring him to thee again.* Reuben''s pledge of his two sons in Jasher 52:5 is the canon scene, word for word.'),
+  ('jasher', 'jasher', 52, 5, 'jubilees', 'jubilees', 42, 18, 'extras', E'Jubilees 42:18 — *And Reuben said: “Give him into my hand, and if I do not bring him back to you, slay my two sons instead of his soul.” And he said to him He will not go with you."* Jubilees likewise records the firstborn''s rejected surety before Judah''s, matching Jasher 52:5.'),
+  -- thread: jasher-52-jacob-prayer-covenant
+  ('jasher', 'jasher', 52, 23, 'canon', 'genesis', 43, 14, 'free', E'Genesis 43:14 — *And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved.* Jacob''s El Shaddai blessing in Jasher 52:23 is the patriarchal benediction the canon records.'),
+  ('jasher', 'jasher', 52, 26, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The covenant Jacob pleads in Jasher 52:26 is the one that already foretold this going-down and the bondage to come.'),
+  ('jasher', 'jasher', 52, 26, 'canon', 'genesis', 15, 14, 'free', E'Genesis 15:14 — *And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance.* The affliction Jacob fears in Jasher 52:26 is bounded by the same covenant''s promise of judgment and deliverance.'),
+  -- thread: jasher-52-famine-seed-to-egypt
+  ('jasher', 'jasher', 52, 7, 'jubilees', 'jubilees', 42, 4, 'extras', E'Jubilees 42:4 — *(Now the famine was very sore in the land of Canaan), and Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send, and (the ten sons of Jacob) arrived (in Egypt) among those that went (there.)* Jubilees opens the same famine and sending that drives Jasher 52:7.'),
+  ('jasher', 'jasher', 52, 7, 'canon', 'psalms', 105, 16, 'free', E'Psalm 105:16 — *Moreover he called for a famine upon the land: he brake the whole staff of bread.* The psalm reads the famine of Jasher 52:7 as Yahuah''s own deliberate act.'),
+  ('jasher', 'jasher', 52, 7, 'canon', 'psalms', 105, 17, 'free', E'Psalm 105:17 — *He sent a man before them, even Joseph, who was sold for a servant:* The famine that bends the seed toward Egypt in Jasher 52:7 is the providence that set Joseph ahead of them.'),
+  ('jasher', 'jasher', 52, 10, 'canon', 'acts', 7, 12, 'free', E'Acts 7:12 — *But when Jacob heard that there was corn in Egypt, he sent out our fathers first.* Stephen retells the same sending for bread that Jacob commands in Jasher 52:10.'),
+  -- thread: jasher-52-jacob-letter-fathers-deeds
+  ('jasher', 'jasher', 52, 36, 'canon', 'genesis', 34, 25, 'free', E'Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* The deed of Simeon and Levi that Jacob recalls in his letter (Jasher 52:36) is the Genesis scene at Shechem.'),
+  ('jasher', 'jasher', 52, 35, 'canon', 'genesis', 14, 14, 'free', E'Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* Abraham smiting the kings with a few men, recalled in Jasher 52:35, is the canon''s own account of the rescue of Lot.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja52_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja52_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-52-returned-money-terror',
+       E'The money returned in the sacks — and Jacob''s grief',
+       E'Jasher 52 opens not with legend but with the canon''s own Joseph scene: *And they entered their house, and every man opened his sack and they saw and behold every man’s bundle of money was there, at which they and their father were greatly terrified.* (Jasher 52:1). This is Genesis retold almost word for word — *And it came to pass as they emptied their sacks, that, behold, every man’s bundle of money was in his sack: and when both they and their father saw the bundles of money, they were afraid.* (Genesis 42:35). Jacob''s anguish over his lost sons is the same in both books: *And Jacob said to his sons, Abide you here and do not go down to Egypt, for my son shall not go down with you to Egypt, nor die like his brother.* (Jasher 52:5) carries *And he said, My son shall not go down with you; for his brother is dead, and he is left alone: if mischief befall him by the way in the which ye go, then shall ye bring down my gray hairs with sorrow to the grave.* (Genesis 42:38). Jubilees narrates the very same hour: *And Jacob said: “Me have you bereaved of my children! Joseph is not and Simeon also is not, and you will take Benjamin away. On me has your wickedness come.”* (Jubilees 42:10). It ain''t new — three witnesses tell one story.',
+       sv.verse_id, ev.verse_id, 'extras', 56275
+  FROM _session252_ja52_lookup sv, _session252_ja52_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=52 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-52-judah-surety-benjamin',
+       E'Judah''s surety for Benjamin',
+       E'When Jacob will not let Benjamin go, it is Judah who stands surety — the tribe of the sceptre stepping forward for the brother: *And Judah said to Jacob his father, Give the lad into my care and we will rise up and go down to Egypt and buy corn, and then return, and it shall be when we return if the lad be not with us, then let me bear your blame forever.* (Jasher 52:19). This is Genesis spoken back to us: *And Yahudah (Judah) said unto Yashar''el (Israel) his father, Send the lad with me, and we will arise and go; that we may live, and not die, both we, and thou, and also our little ones.* (Genesis 43:8) — *I will be surety for him; of my hand shalt thou require him: if I bring him not unto thee, and set him before thee, then let me bear the blame for ever* (Genesis 43:9). Judah will make good that surety before Joseph''s throne: *For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever.* (Genesis 44:32). Jubilees names the same man giving the same pledge: *And Yahudah (Judah) came near and said: “Send him with me, and if I do not bring him back to you, let me bear the blame before you all the days of my life.”* (Jubilees 42:19). The one who stands for his brother is the one of whom it is written, *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* (Genesis 49:10) — Judah''s surety here foreshadows the Surety who would bear the blame forever.',
+       sv.verse_id, ev.verse_id, 'extras', 56278
+  FROM _session252_ja52_lookup sv, _session252_ja52_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=18
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=52 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-52-reuben-pledge-sons',
+       E'Reuben''s rash pledge of his two sons',
+       E'Before Judah, the firstborn tries his own surety — and it is rejected: *And Reuben said to his father, You shall slay my two sons if I do not bring your son and place him before you; and Jacob said to his sons, Abide you here and do not go down to Egypt, for my son shall not go down with you to Egypt, nor die like his brother.* (Jasher 52:5). Genesis gives the same offer and the same refusal: *And Reuben spake unto his father, saying, Slay my two sons, if I bring him not to thee: deliver him into my hand, and I will bring him to thee again.* (Genesis 42:37). Jubilees, too, records Reuben''s failed bid before Judah succeeds: *And Reuben said: “Give him into my hand, and if I do not bring him back to you, slay my two sons instead of his soul.” And he said to him He will not go with you."* (Jubilees 42:18). The firstborn''s word does not carry; the surety that holds is Judah''s — the seed-line''s order quietly turning toward the sceptre tribe.',
+       sv.verse_id, ev.verse_id, 'extras', 56281
+  FROM _session252_ja52_lookup sv, _session252_ja52_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=5
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=52 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-52-jacob-prayer-covenant',
+       E'Jacob''s prayer — the covenant with Abraham remembered, the seed going down',
+       E'Jasher expands the bare Genesis sending into a scene of intercession: *And Jacob rose up from his sons and spread forth his hands and he prayed to Yahuah (the Lord) on account of his sons, saying, O Yahuah Elohim (O Lord God) of heaven and earth, remember your covenant with our father Abraham, remember it with my father Isaac and deal kindly with my sons and deliver them not into the hands of the king of Egypt* (Jasher 52:26). The blessing Jacob speaks over them is the El Shaddai of the patriarchs: *Now therefore rise up and go to the man... and may the El Shaddai (Almighty God) give you mercy before him that he may send Benjamin and Simeon your brethren with you.* (Jasher 52:23) — the very benediction Genesis puts in Jacob''s mouth: *And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved.* (Genesis 43:14). And the covenant Jacob pleads is the one cut with Abraham, which already foretold this descent into Egypt and the bondage to follow: *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* (Genesis 15:13). The fathers'' going-down for bread is the first step into the affliction promised — and into the great deliverance: *And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance.* (Genesis 15:14). The covenant stands; the seed is kept; Torah-before-Sinai prays in the spread hands of Jacob.',
+       sv.verse_id, ev.verse_id, 'extras', 56284
+  FROM _session252_ja52_lookup sv, _session252_ja52_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=22
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=52 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-52-famine-seed-to-egypt',
+       E'The famine drives the seed down to Egypt',
+       E'The engine that moves the whole chapter is the famine that empties Canaan and bends the chosen seed toward Egypt: *And in those days the famine was sore throughout the land, and all the people of the earth went and came to Egypt to buy food, for the famine prevailed greatly amongst them, and the sons of Jacob remained in Canaan a year and two months until their corn was finished.* (Jasher 52:7). Jubilees opens the same scene: *(Now the famine was very sore in the land of Canaan), and Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send, and (the ten sons of Jacob) arrived (in Egypt) among those that went (there.)* (Jubilees 42:4). The psalmist reads this famine as Yahuah''s own hand setting His servant ahead of the seed: *Moreover he called for a famine upon the land: he brake the whole staff of bread.* (Psalm 105:16) — *He sent a man before them, even Joseph, who was sold for a servant:* (Psalm 105:17). Stephen tells it as the opening of Israel''s whole Egyptian sojourn: *Now there came a dearth over all the land of Egypt and Chanaan, and great affliction: and our fathers found no sustenance.* (Acts 7:11) — *But when Jacob heard that there was corn in Egypt, he sent out our fathers first.* (Acts 7:12). The hunger that drives Jacob''s sons down in Jasher 52:7 is the same hand that will plant the seventy in Egypt to multiply into the nation — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56287
+  FROM _session252_ja52_lookup sv, _session252_ja52_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=7
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=52 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-52-jacob-letter-fathers-deeds',
+       E'Jacob''s letter — the fathers'' deeds recalled as warning',
+       E'Jasher uniquely furnishes the letter Jacob sends to the king of Egypt, in which the old man recites the covenant power that has always guarded his house — each deed a genuine Genesis scene: *And also what my two sons Simeon and Levi did to the eight cities of the Amorites, how they destroyed them on account of their sister Dinah?* (Jasher 52:36). That is Genesis remembered: *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* (Genesis 34:25). Jacob also recalls Abraham''s rescue of Lot from the eastern kings: *and also what our father Abraham did to the nine kings of Elam, how he smote them all with a few men that were with him?* (Jasher 52:35) — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* (Genesis 14:14). The point of the letter is the seed-keeping covenant itself: *Dost you not know, O king of Egypt, that the power of Elohim is with us, and that also Elohim ever hears our prayers and forsakes us not all the days?* (Jasher 52:38). The fathers'' deeds Jasher recalls are the canon''s own — the chosen line kept and defended generation by generation.',
+       sv.verse_id, ev.verse_id, 'extras', 56290
+  FROM _session252_ja52_lookup sv, _session252_ja52_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=35
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=52 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-52-returned-money-terror
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:35 — *And it came to pass as they emptied their sacks, that, behold, every man’s bundle of money was in his sack: and when both they and their father saw the bundles of money, they were afraid.* The terror over the returned money in Jasher 52:1 is the canon scene retold.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-returned-money-terror'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:38 — *And he said, My son shall not go down with you; for his brother is dead, and he is left alone: if mischief befall him by the way in the which ye go, then shall ye bring down my gray hairs with sorrow to the grave.* Jacob''s refusal to send Benjamin in Jasher 52:5 is the same word given to Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-returned-money-terror'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 42:10 — *And Jacob said: “Me have you bereaved of my children! Joseph is not and Simeon also is not, and you will take Benjamin away. On me has your wickedness come.”* Jubilees records the same grieving father at the same moment as Jasher 52:5.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-returned-money-terror'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=5
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 42:11 — *And he said: “My son will not go down with you lest perchance he fall sick; for their mother gave birth to two sons, and one has perished, and this one also you will take from me. If perchance he took a fever on the road, you would bring down my old age with sorrow to death.” For he saw that their money had been returned to every man in his sack, and for this reason he feared to send him.* Jasher 52:4 carries Jacob''s same fear of losing the last son of Rachel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-returned-money-terror'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=4
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-52-judah-surety-benjamin
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 43:9 — *I will be surety for him; of my hand shalt thou require him: if I bring him not unto thee, and set him before thee, then let me bear the blame for ever:* Judah''s pledge in Jasher 52:19 is the canon''s own word, nearly verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-judah-surety-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 44:32 — *For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever.* Before Joseph''s throne Judah makes good the very surety he gives in Jasher 52:19.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-judah-surety-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 43:5 — *But if thou wilt not send him, we will not go down: for the man said unto us, Ye shall not see my face, except your brother be with you.* The condition Judah reports in Jasher 52:11 — no Benjamin, no audience — is the man''s word in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-judah-surety-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 43:13 — *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever.* Jubilees carries Judah''s surety to its climax — offering himself a bondsman — the same pledge first given in Jasher 52:19.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-judah-surety-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=19
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* Judah who bears the blame for his brother in Jasher 52:19 is the tribe of the sceptre, foreshadowing the Surety to come.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-judah-surety-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-52-reuben-pledge-sons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:37 — *And Reuben spake unto his father, saying, Slay my two sons, if I bring him not to thee: deliver him into my hand, and I will bring him to thee again.* Reuben''s pledge of his two sons in Jasher 52:5 is the canon scene, word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-reuben-pledge-sons'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 42:18 — *And Reuben said: “Give him into my hand, and if I do not bring him back to you, slay my two sons instead of his soul.” And he said to him He will not go with you."* Jubilees likewise records the firstborn''s rejected surety before Judah''s, matching Jasher 52:5.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-reuben-pledge-sons'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=5
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-52-jacob-prayer-covenant
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 43:14 — *And El Shaddai (God Almighty) give you mercy before the man, that he may send away your other brother, and Benjamin. If I be bereaved of my children, I am bereaved.* Jacob''s El Shaddai blessing in Jasher 52:23 is the patriarchal benediction the canon records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-jacob-prayer-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The covenant Jacob pleads in Jasher 52:26 is the one that already foretold this going-down and the bondage to come.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-jacob-prayer-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:14 — *And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance.* The affliction Jacob fears in Jasher 52:26 is bounded by the same covenant''s promise of judgment and deliverance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-jacob-prayer-covenant'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-52-famine-seed-to-egypt
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 42:4 — *(Now the famine was very sore in the land of Canaan), and Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send, and (the ten sons of Jacob) arrived (in Egypt) among those that went (there.)* Jubilees opens the same famine and sending that drives Jasher 52:7.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-famine-seed-to-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 105:16 — *Moreover he called for a famine upon the land: he brake the whole staff of bread.* The psalm reads the famine of Jasher 52:7 as Yahuah''s own deliberate act.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-famine-seed-to-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 105:17 — *He sent a man before them, even Joseph, who was sold for a servant:* The famine that bends the seed toward Egypt in Jasher 52:7 is the providence that set Joseph ahead of them.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-famine-seed-to-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:12 — *But when Jacob heard that there was corn in Egypt, he sent out our fathers first.* Stephen retells the same sending for bread that Jacob commands in Jasher 52:10.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-famine-seed-to-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-52-jacob-letter-fathers-deeds
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* The deed of Simeon and Levi that Jacob recalls in his letter (Jasher 52:36) is the Genesis scene at Shechem.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-jacob-letter-fathers-deeds'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* Abraham smiting the kings with a few men, recalled in Jasher 52:35, is the canon''s own account of the rescue of Lot.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja52_lookup sv, _session252_ja52_lookup tv
+ WHERE t.slug='jasher-52-jacob-letter-fathers-deeds'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=52 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_53.sql (session252 jasher 53) -----
+-- Source anchor: jasher/jasher ch53. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja53 (view _session252_ja53_lookup). Sort band base 56300, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja53_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-53-benjamin-brought-down
+  ('jasher', 'jasher', 53, 1, 'canon', 'genesis', 43, 15, 'free', E'Genesis 43:15 — *And the men took that present, and they took double money in their hand, and Benjamin; and rose up, and went down to Egypt, and stood before Joseph.* The canon records the very descent Jasher 53:1 retells, Benjamin and the presents carried down to stand before Joseph.'),
+  ('jasher', 'jasher', 53, 6, 'canon', 'genesis', 43, 26, 'free', E'Genesis 43:26 — *And when Joseph came home, they brought him the present which was in their hand into the house, and bowed themselves to him to the earth.* Judah leading Benjamin to bow before Joseph in Jasher 53:6 is the same obeisance the canon records, the dream fulfilled.'),
+  ('jasher', 'jasher', 53, 1, 'jubilees', 'jubilees', 42, 21, 'extras', E'Jubilees 42:21 — *And they went and stood before Joseph, and he saw Benjamin his brother, and he knew him, and said to them: “Is this your youngest brother?” And they said to him: “It is he.” And he said: “Yahuah (God) be gracious to you, my son!”* Jubilees narrates the same arrival with Benjamin that Jasher 53:1 opens, the parallel patriarchal record.'),
+  -- thread: jasher-53-joseph-weeps-over-benjamin
+  ('jasher', 'jasher', 53, 9, 'canon', 'genesis', 43, 29, 'free', E'Genesis 43:29 — *And he lifted up his eyes, and saw his brother Benjamin, his mother’s son, and said, Is this your younger brother, of whom ye spake unto me? And he said, Elohim (God) be gracious unto thee, my son.* Joseph''s blessing over Benjamin in Jasher 53:9 is the canon''s own line restored.'),
+  ('jasher', 'jasher', 53, 10, 'canon', 'genesis', 43, 30, 'free', E'Genesis 43:30 — *And Joseph made haste; for his bowels did yearn upon his brother: and he sought where to weep; and he entered into his chamber, and wept there.* Jasher 53:10''s entering the chamber to weep over Benjamin matches Genesis exactly.'),
+  ('jasher', 'jasher', 53, 10, 'canon', 'genesis', 43, 31, 'free', E'Genesis 43:31 — *And he washed his face, and went out, and refrained himself, and said, Set on bread.* The washing of the face and refraining from weeping in Jasher 53:10 is the canon''s same gesture before the meal.'),
+  -- thread: jasher-53-the-feast-benjamin-portion
+  ('jasher', 'jasher', 53, 12, 'canon', 'genesis', 43, 33, 'free', E'Genesis 43:33 — *And they sat before him, the firstborn according to his birthright, and the youngest according to his youth: and the men marvelled one at another.* Joseph seating the brethren by their births in Jasher 53:12 is the canon''s own astonishing arrangement.'),
+  ('jasher', 'jasher', 53, 14, 'canon', 'genesis', 43, 34, 'free', E'Genesis 43:34 — *And he took and sent messes unto them from before him: but Benjamin’s mess was five times so much as any of theirs. And they drank, and were merry with him.* Benjamin''s heaped gifts in Jasher 53:14 echo the canon''s fivefold portion at the same feast.'),
+  ('jasher', 'jasher', 53, 14, 'jubilees', 'jubilees', 42, 23, 'extras', E'Jubilees 42:23 — *And they ate before him and he gave them all a portion, but the portion of Benjamin was seven times larger than that of any of theirs.* Jubilees, like Jasher 53:14, marks Benjamin''s portion as far greater than his brothers'' at Joseph''s table.'),
+  -- thread: jasher-53-silver-cup-hidden
+  ('jasher', 'jasher', 53, 23, 'canon', 'genesis', 44, 1, 'free', E'Genesis 44:1 — *And he commanded the steward of his house, saying, Fill the men’s sacks with food, as much as they can carry, and put every man’s money in his sack’s mouth.* Joseph''s command to fill the sacks and return the money in Jasher 53:23 is the canon''s same order to his steward.'),
+  ('jasher', 'jasher', 53, 23, 'canon', 'genesis', 44, 2, 'free', E'Genesis 44:2 — *And put my cup, the silver cup, in the sack’s mouth of the youngest, and his corn money. And he did according to the word that Joseph had spoken.* The hiding of the cup in Benjamin''s sack in Jasher 53:23 is the canon''s silver-cup test verbatim.'),
+  ('jasher', 'jasher', 53, 27, 'canon', 'genesis', 44, 12, 'free', E'Genesis 44:12 — *And he searched, and began at the eldest, and left at the youngest: and the cup was found in Benjamin’s sack.* The cup found in Benjamin''s bag in Jasher 53:27 is the canon''s own discovery, eldest to youngest.'),
+  ('jasher', 'jasher', 53, 23, 'jubilees', 'jubilees', 43, 1, 'extras', E'Jubilees 43:1 — *And he did as Joseph had told him, and filled all their sacks for them with food and put their money in their sacks, and put the cup in Benjamin’s sack.* Jubilees narrates the same hidden cup that Jasher 53:23 sets in Benjamin''s sack.'),
+  -- thread: jasher-53-judah-confession
+  ('jasher', 'jasher', 53, 31, 'canon', 'genesis', 44, 16, 'free', E'Genesis 44:16 — *And Yahudah (Judah) said, What shall we say unto my lord? what shall we speak? or how shall we clear ourselves? Elohim (God) hath found out the iniquity of thy servants: behold, we are my lord’s servants, both we, and he also with whom the cup is found.* Judah''s confession in Jasher 53:31 is the canon''s own word, Elohim finding out the iniquity of the servants.'),
+  ('jasher', 'jasher', 53, 29, 'canon', 'genesis', 44, 14, 'free', E'Genesis 44:14 — *And Yahudah (Judah) and his brethren came to Joseph’s house; for he was yet there: and they fell before him on the ground.* The brethren coming to Joseph''s house and standing before his throne in Jasher 53:29 is the canon''s same return after the cup was found.'),
+  ('jasher', 'jasher', 53, 31, 'canon', 'genesis', 49, 10, 'free', E'Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* Judah stepping forward to speak and stand surety for his brethren in Jasher 53:31 foreshadows the sceptre-bearing tribe whose line runs to Shiloh the Messiah.'),
+  ('jasher', 'jasher', 53, 31, 'jubilees', 'jubilees', 43, 13, 'extras', E'Jubilees 43:13 — *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever.* Jubilees keeps Judah''s surety-plea that Jasher 53:31 begins, the same intercession before Joseph.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja53_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja53_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-53-benjamin-brought-down',
+       E'The brethren come down with Benjamin and stand before Joseph',
+       E'Jasher opens not with legendary war but with the heart of the Joseph story: *And the sons of Jacob rose up and took Benjamin and the whole of the presents, and they went and came to Egypt and they stood before Joseph* (Jasher 53:1). This is Genesis told again. The canon records the same descent — *And the men took that present, and they took double money in their hand, and Benjamin; and rose up, and went down to Egypt, and stood before Joseph* (Genesis 43:15) — and the same bowing of the brethren foretold in Joseph''s dreams — *And when Joseph came home, they brought him the present which was in their hand into the house, and bowed themselves to him to the earth* (Genesis 43:26). Jubilees carries the identical scene, naming Benjamin and Joseph''s blessing over him — *And they went and stood before Joseph, and he saw Benjamin his brother, and he knew him, and said to them: “Is this your youngest brother?” And they said to him: “It is he.” And he said: “Yahuah (God) be gracious to you, my son!”* (Jubilees 42:21). The seed-line of Israel is kept and carried down into Egypt; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56300
+  FROM _session252_ja53_lookup sv, _session252_ja53_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=53 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-53-joseph-weeps-over-benjamin',
+       E'Joseph beholds Benjamin and weeps in the inner chamber',
+       E'Jasher lingers on the brother''s bowels yearning: *And he lifted up his eyes and beheld his brother Benjamin, and he said, Is this your brother of whom you spoke to me? And Benjamin approached Joseph, and Joseph placed his hand upon his head and he said to him, May Elohim (God) be gracious to you my son* (Jasher 53:9), and then *And when Joseph saw his brother, the son of his mother, he again wished to weep, and he entered the chamber, and he wept there, and he washed his face, and went out and refrained from weeping, and he said, Prepare food* (Jasher 53:10). Genesis tells it word for word: *And he lifted up his eyes, and saw his brother Benjamin, his mother’s son, and said, Is this your younger brother, of whom ye spake unto me? And he said, Elohim (God) be gracious unto thee, my son* (Genesis 43:29), and *And Joseph made haste; for his bowels did yearn upon his brother: and he sought where to weep; and he entered into his chamber, and wept there* (Genesis 43:30), and *And he washed his face, and went out, and refrained himself, and said, Set on bread* (Genesis 43:31). The retelling adds nothing the canon withholds — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56303
+  FROM _session252_ja53_lookup sv, _session252_ja53_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=53 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-53-the-feast-benjamin-portion',
+       E'The brethren seated by birth, Benjamin''s portion the greatest',
+       E'At the meal Joseph seats his brothers as the canon does, and singles out Benjamin: *And he also placed the others according to their births, and he said, I know that this your youngest brother has no brother, and I, like him, have no brother, he shall therefore sit down to eat with me* (Jasher 53:13). Genesis sets the same table — *And they sat before him, the firstborn according to his birthright, and the youngest according to his youth: and the men marvelled one at another* (Genesis 43:33) — and gives Benjamin the larger share — *And he took and sent messes unto them from before him: but Benjamin’s mess was five times so much as any of theirs. And they drank, and were merry with him* (Genesis 43:34). Jubilees keeps the same favored portion — *And they ate before him and he gave them all a portion, but the portion of Benjamin was seven times larger than that of any of theirs* (Jubilees 42:23). The same scene carried by three witnesses; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56306
+  FROM _session252_ja53_lookup sv, _session252_ja53_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=12
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=53 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-53-silver-cup-hidden',
+       E'The silver cup hidden in Benjamin''s sack',
+       E'Joseph''s test is set exactly as Genesis frames it: *At that time Joseph commanded his officer to fill their sacks with food, and to put each man’s money into his sack, and to put the cup in the sack of Benjamin, and to give them provision for the road, and they did so to them* (Jasher 53:23), and on pursuit *they looked in their bags and the cup was found in Benjamin’s bag* (Jasher 53:27). The canon commands the same — *And he commanded the steward of his house, saying, Fill the men’s sacks with food, as much as they can carry, and put every man’s money in his sack’s mouth* (Genesis 44:1), and *And put my cup, the silver cup, in the sack’s mouth of the youngest, and his corn money. And he did according to the word that Joseph had spoken* (Genesis 44:2), and the cup is found — *And he searched, and began at the eldest, and left at the youngest: and the cup was found in Benjamin’s sack* (Genesis 44:12). Jubilees carries the identical instruction — *And he did as Joseph had told him, and filled all their sacks for them with food and put their money in their sacks, and put the cup in Benjamin’s sack* (Jubilees 43:1). One scene, three records; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56309
+  FROM _session252_ja53_lookup sv, _session252_ja53_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=23
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=53 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-53-judah-confession',
+       E'Judah confesses before Joseph; Elohim has found the iniquity',
+       E'Brought back to the house, Judah speaks for them all: *And Judah said, What shall we say to our Lord, what shall we speak and how shall we justify ourselves, Elohim has this day found the iniquity of all your servants, therefore has he done this thing to us this day* (Jasher 53:31). Genesis gives the same confession on Judah''s lips — *And Yahudah (Judah) said, What shall we say unto my lord? what shall we speak? or how shall we clear ourselves? Elohim (God) hath found out the iniquity of thy servants: behold, we are my lord’s servants, both we, and he also with whom the cup is found* (Genesis 44:16), preceded by the brethren falling before him — *And Yahudah (Judah) and his brethren came to Joseph’s house; for he was yet there: and they fell before him on the ground* (Genesis 44:14). It is Judah — the sceptre-bearing tribe (Genesis 49:10) — who steps forward as surety and pleads, and Jubilees keeps that same surety-pledge — *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever.* (Jubilees 43:13). Judah''s intercession runs straight to the Lion of the tribe of Judah; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56312
+  FROM _session252_ja53_lookup sv, _session252_ja53_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=28
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=53 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-53-benjamin-brought-down
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 43:15 — *And the men took that present, and they took double money in their hand, and Benjamin; and rose up, and went down to Egypt, and stood before Joseph.* The canon records the very descent Jasher 53:1 retells, Benjamin and the presents carried down to stand before Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-benjamin-brought-down'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 43:26 — *And when Joseph came home, they brought him the present which was in their hand into the house, and bowed themselves to him to the earth.* Judah leading Benjamin to bow before Joseph in Jasher 53:6 is the same obeisance the canon records, the dream fulfilled.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-benjamin-brought-down'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 42:21 — *And they went and stood before Joseph, and he saw Benjamin his brother, and he knew him, and said to them: “Is this your youngest brother?” And they said to him: “It is he.” And he said: “Yahuah (God) be gracious to you, my son!”* Jubilees narrates the same arrival with Benjamin that Jasher 53:1 opens, the parallel patriarchal record.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-benjamin-brought-down'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-53-joseph-weeps-over-benjamin
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 43:29 — *And he lifted up his eyes, and saw his brother Benjamin, his mother’s son, and said, Is this your younger brother, of whom ye spake unto me? And he said, Elohim (God) be gracious unto thee, my son.* Joseph''s blessing over Benjamin in Jasher 53:9 is the canon''s own line restored.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-joseph-weeps-over-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 43:30 — *And Joseph made haste; for his bowels did yearn upon his brother: and he sought where to weep; and he entered into his chamber, and wept there.* Jasher 53:10''s entering the chamber to weep over Benjamin matches Genesis exactly.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-joseph-weeps-over-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 43:31 — *And he washed his face, and went out, and refrained himself, and said, Set on bread.* The washing of the face and refraining from weeping in Jasher 53:10 is the canon''s same gesture before the meal.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-joseph-weeps-over-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-53-the-feast-benjamin-portion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 43:33 — *And they sat before him, the firstborn according to his birthright, and the youngest according to his youth: and the men marvelled one at another.* Joseph seating the brethren by their births in Jasher 53:12 is the canon''s own astonishing arrangement.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-the-feast-benjamin-portion'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 43:34 — *And he took and sent messes unto them from before him: but Benjamin’s mess was five times so much as any of theirs. And they drank, and were merry with him.* Benjamin''s heaped gifts in Jasher 53:14 echo the canon''s fivefold portion at the same feast.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-the-feast-benjamin-portion'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 42:23 — *And they ate before him and he gave them all a portion, but the portion of Benjamin was seven times larger than that of any of theirs.* Jubilees, like Jasher 53:14, marks Benjamin''s portion as far greater than his brothers'' at Joseph''s table.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-the-feast-benjamin-portion'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=14
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=42 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-53-silver-cup-hidden
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 44:1 — *And he commanded the steward of his house, saying, Fill the men’s sacks with food, as much as they can carry, and put every man’s money in his sack’s mouth.* Joseph''s command to fill the sacks and return the money in Jasher 53:23 is the canon''s same order to his steward.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-silver-cup-hidden'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 44:2 — *And put my cup, the silver cup, in the sack’s mouth of the youngest, and his corn money. And he did according to the word that Joseph had spoken.* The hiding of the cup in Benjamin''s sack in Jasher 53:23 is the canon''s silver-cup test verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-silver-cup-hidden'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 44:12 — *And he searched, and began at the eldest, and left at the youngest: and the cup was found in Benjamin’s sack.* The cup found in Benjamin''s bag in Jasher 53:27 is the canon''s own discovery, eldest to youngest.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-silver-cup-hidden'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 43:1 — *And he did as Joseph had told him, and filled all their sacks for them with food and put their money in their sacks, and put the cup in Benjamin’s sack.* Jubilees narrates the same hidden cup that Jasher 53:23 sets in Benjamin''s sack.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-silver-cup-hidden'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=23
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-53-judah-confession
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 44:16 — *And Yahudah (Judah) said, What shall we say unto my lord? what shall we speak? or how shall we clear ourselves? Elohim (God) hath found out the iniquity of thy servants: behold, we are my lord’s servants, both we, and he also with whom the cup is found.* Judah''s confession in Jasher 53:31 is the canon''s own word, Elohim finding out the iniquity of the servants.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-judah-confession'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 44:14 — *And Yahudah (Judah) and his brethren came to Joseph’s house; for he was yet there: and they fell before him on the ground.* The brethren coming to Joseph''s house and standing before his throne in Jasher 53:29 is the canon''s same return after the cup was found.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-judah-confession'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* Judah stepping forward to speak and stand surety for his brethren in Jasher 53:31 foreshadows the sceptre-bearing tribe whose line runs to Shiloh the Messiah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-judah-confession'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 43:13 — *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever.* Jubilees keeps Judah''s surety-plea that Jasher 53:31 begins, the same intercession before Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja53_lookup sv, _session252_ja53_lookup tv
+ WHERE t.slug='jasher-53-judah-confession'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=53 AND sv.verse_number=31
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_54.sql (session252 jasher 54) -----
+-- Source anchor: jasher/jasher ch54. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja54 (view _session252_ja54_lookup). Sort band base 56325, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja54_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-54-judah-surety-benjamin
+  ('jasher', 'jasher', 54, 57, 'canon', 'genesis', 44, 32, 'free', E'Genesis 44:32 — *For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever.* The same surety-oath Jasher 54:57 puts in Yahudah''s mouth before Joseph.'),
+  ('jasher', 'jasher', 54, 58, 'canon', 'genesis', 44, 33, 'free', E'Genesis 44:33 — *Now therefore, I pray thee, let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren.* Yahudah''s offer in Jasher 54:58 to remain as a substitute for Benjamin is the canon''s own substitution plea.'),
+  ('jasher', 'jasher', 54, 57, 'jubilees', 'jubilees', 43, 13, 'extras', E'Jubilees 43:13 — *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever.* The Jubilees apparatus carries Yahudah''s surety-plea word for word beside Jasher 54:57-58.'),
+  -- thread: jasher-54-joseph-made-known
+  ('jasher', 'jasher', 54, 69, 'canon', 'genesis', 45, 3, 'free', E'Genesis 45:3 — *And Joseph said unto his brethren, I am Joseph; doth my father yet live? And his brethren could not answer him; for they were troubled at his presence.* Joseph''s self-disclosure in Jasher 54:69 is the canon''s own "I am Joseph."'),
+  ('jasher', 'jasher', 54, 69, 'canon', 'genesis', 45, 7, 'free', E'Genesis 45:7 — *And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance.* The providence Jasher 54:69 confesses — Elohim sent him before them — kept the covenant seed alive through the famine.'),
+  ('jasher', 'jasher', 54, 69, 'canon', 'genesis', 45, 8, 'free', E'Genesis 45:8 — *So now it was not you that sent me hither, but Elohim (God): and he hath made me a father to Pharaoh, and lord of all his house, and a ruler throughout all the land of Egypt.* Jasher 54:69 names the same hand: not the brothers but Elohim set Joseph before them.'),
+  ('jasher', 'jasher', 54, 69, 'jubilees', 'jubilees', 43, 14, 'extras', E'Jubilees 43:14 — *And Joseph saw that they were all accordant in goodness one with another, and he could not refrain himself, and he told them that he was Joseph.* The Jubilees apparatus times the disclosure exactly as Jasher 54:69 does.'),
+  ('jasher', 'jasher', 54, 69, 'canon', 'acts', 7, 13, 'free', E'Acts 7:13 — *And at the second time Joseph was made known to his brethren; and Joseph''s kindred was made known unto Pharaoh.* Stephen rehearses the very making-known Jasher 54:69 dramatizes.'),
+  -- thread: jasher-54-judah-lion-strength
+  ('jasher', 'jasher', 54, 6, 'canon', 'genesis', 49, 8, 'free', E'Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee.* Jasher 54:6 magnifies the very might Jacob blessed onto the sceptre-tribe.'),
+  ('jasher', 'jasher', 54, 46, 'canon', 'genesis', 49, 9, 'free', E'Genesis 49:9 — *Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* Yahudah roaring like a lion in Jasher 54:46 is the canon''s own lion''s-whelp blessing made vivid.'),
+  -- thread: jasher-54-twenty-pieces-silver
+  ('jasher', 'jasher', 54, 19, 'canon', 'genesis', 37, 28, 'free', E'Genesis 37:28 — *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt.* Jasher 54:19 names the same twenty pieces of silver Genesis records.'),
+  ('jasher', 'jasher', 54, 24, 'canon', 'acts', 7, 9, 'free', E'Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* The selling Joseph throws back at his brothers in Jasher 54:24 is the patriarchs'' sin Stephen names.'),
+  ('jasher', 'jasher', 54, 24, 'canon', 'genesis', 50, 20, 'free', E'Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The crime rehearsed in Jasher 54:24 is the evil Elohim bent to keep the seed alive.'),
+  -- thread: jasher-54-sarah-pharaoh-plagues
+  ('jasher', 'jasher', 54, 7, 'canon', 'genesis', 12, 17, 'free', E'Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife.* The plaguing of Pharaoh "on account of Sarah" that Yahudah cites in Jasher 54:7 is this Genesis scene.'),
+  ('jasher', 'jasher', 54, 7, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The covenant with Abraham that Yahudah trusts Elohim to remember in Jasher 54:7 is the same covenant that foretold the bondage in Egypt.'),
+  -- thread: jasher-54-jacobs-spirit-revived
+  ('jasher', 'jasher', 54, 103, 'canon', 'genesis', 45, 26, 'free', E'Genesis 45:26 — *And told him, saying, Joseph is yet alive, and he is governor over all the land of Egypt. And Jacob''s heart fainted, for he believed them not.* Jacob''s heart palpitating and his disbelief in Jasher 54:103 is the canon''s own "his heart fainted, for he believed them not."'),
+  ('jasher', 'jasher', 54, 103, 'canon', 'genesis', 45, 27, 'free', E'Genesis 45:27 — *And they told him all the words of Joseph, which he had said unto them: and when he saw the wagons which Joseph had sent to carry him, the spirit of Jacob their father revived:* Jacob believing only when he saw what Joseph sent (Jasher 54:103) is the reviving of his spirit Genesis records.'),
+  ('jasher', 'jasher', 54, 105, 'canon', 'genesis', 45, 28, 'free', E'Genesis 45:28 — *And Yashar''el (Israel) said, It is enough; Joseph my son is yet alive: I will go and see him before I die.* Jacob''s resolve in Jasher 54:105 is the canon''s own "It is enough... I will go and see him before I die."'),
+  -- thread: jasher-54-abraham-smote-the-kings
+  ('jasher', 'jasher', 54, 60, 'canon', 'genesis', 14, 14, 'free', E'Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* Abraham''s rescue Yahudah recalls in Jasher 54:60 is this Genesis muster of the fathers'' strength.'),
+  ('jasher', 'jasher', 54, 60, 'canon', 'genesis', 14, 15, 'free', E'Genesis 14:15 — *And he divided himself against them, he and his servants, by night, and smote them, and pursued them unto Hobah, which is on the left hand of Damascus.* The night-victory "in one night" Yahudah cites in Jasher 54:60 is Genesis''s own account of Abram smiting the kings by night.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja54_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja54_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-54-judah-surety-benjamin',
+       E'Yahudah stands surety for the lad',
+       E'Jasher gives Judah''s own words: *And Judah answered Joseph, saying, Surely you must know that I was security for the lad to his father, saying, If I brought him not to him I should bear his blame forever* (Jasher 54:57), and he offers himself in the boy''s place — *now therefore may I find grace in your sight that you shall send him to go with us, and behold I will remain as a substitute for him, to serve you in whatever you desire* (Jasher 54:58). This is the very plea Genesis sets on the page: *For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever* (Genesis 44:32), and *Now therefore, I pray thee, let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren* (Genesis 44:33). The Jubilees apparatus narrates the same offer: *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever.* (Jubilees 43:13). It ain''t new — Judah''s substitution for his brother is the canon''s own scene, the sceptre-tribe already standing in another''s place.',
+       sv.verse_id, ev.verse_id, 'extras', 56325
+  FROM _session252_ja54_lookup sv, _session252_ja54_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=57
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=54 AND ev.verse_number=58
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-54-joseph-made-known',
+       E'I am Joseph — sent before you to preserve',
+       E'The crisis breaks when Joseph can hold back no longer: *I am Joseph whom you sold to Egypt, now therefore let it not grieve you that you sold me, for as a support during the famine did Elohim send me before you* (Jasher 54:69). Genesis sets the same revelation and the same theology of providence on the page: *And Joseph said unto his brethren, I am Joseph; doth my father yet live? And his brethren could not answer him; for they were troubled at his presence* (Genesis 45:3), and *And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* (Genesis 45:7), for *it was not you that sent me hither, but Elohim (God): and he hath made me a father to Pharaoh, and lord of all his house, and a ruler throughout all the land of Egypt* (Genesis 45:8). Jubilees tells it the same: *And Joseph saw that they were all accordant in goodness one with another, and he could not refrain himself, and he told them that he was Joseph* (Jubilees 43:14). And Stephen rehearses it in Acts: *And at the second time Joseph was made known to his brethren; and Joseph''s kindred was made known unto Pharaoh* (Acts 7:13). The evil meant against the seed Elohim bends to keep the seed alive — election standing.',
+       sv.verse_id, ev.verse_id, 'extras', 56328
+  FROM _session252_ja54_lookup sv, _session252_ja54_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=69
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=54 AND ev.verse_number=69
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-54-judah-lion-strength',
+       E'The lion''s whelp — Yahudah''s might over his brethren',
+       E'Jasher''s legendary expansion magnifies Judah''s strength against Egypt — *I with my strength, who am greater and mightier than both of them, come this day upon you and your land if you are unwilling to send our brother* (Jasher 54:6) — and the brothers fear his roaring: *Judah again sat before Joseph and roared at him like a lion, and gave a great and tremendous shriek at him* (Jasher 54:46). This is Jasher amplifying the canon''s own blessing on the sceptre-tribe. Jacob had already named Yahudah the lion whom his brethren praise and before whom they bow: *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee* (Genesis 49:8), *Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9). The legend is honestly an expansion of a real blessing — the same sceptre-line whose hand is on the enemies'' neck, the lion who will not be roused. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56331
+  FROM _session252_ja54_lookup sv, _session252_ja54_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=54 AND ev.verse_number=46
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-54-twenty-pieces-silver',
+       E'Sold for twenty pieces of silver',
+       E'Joseph throws their old crime back at them: *And why did you forsake your brother and sell him for twenty pieces of silver to this day* (Jasher 54:19), naming the sum again — *all of you sold him to the Midianites for twenty pieces of silver, and you all denied it to your father and said to him, An evil beast has devoured him* (Jasher 54:24). Genesis fixes the price and the buyers exactly: *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt* (Genesis 37:28). Stephen names the sin plainly: *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9). The brothers'' guilt is real, yet Joseph reads it as Elohim''s keeping — *ye thought evil against me; but Elohim (God) meant it unto good* (Genesis 50:20). The seed was sold, but the seed was kept.',
+       sv.verse_id, ev.verse_id, 'extras', 56334
+  FROM _session252_ja54_lookup sv, _session252_ja54_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=19
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=54 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-54-sarah-pharaoh-plagues',
+       E'What Elohim did to Pharaoh on account of Sarah',
+       E'Judah warns Joseph by invoking the fathers'' history: *Have you not heard what our Elohim (God) who made choice of us did to Pharaoh on account of Sarah our mother, whom he took away from our father, that he smote him and his household with heavy plagues... so will our Elohim do to you on account of Benjamin* (Jasher 54:7). Jasher leans on a canon scene the reader can turn to: *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife* (Genesis 12:17). The same covenant-keeping Elohim who guarded Sarah will, Judah argues, remember His covenant with Abraham — the bondage and deliverance already promised: *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). Election precedes the threat: the God who *made choice of us* keeps His own.',
+       sv.verse_id, ev.verse_id, 'extras', 56337
+  FROM _session252_ja54_lookup sv, _session252_ja54_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=7
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=54 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-54-jacobs-spirit-revived',
+       E'It is enough — Jacob''s spirit revives',
+       E'When the sons reach Canaan and prove Joseph lives, *Jacob heard all the words of his sons, and his heart palpitated at their words, for he could not believe them until he saw all that Joseph had given them* (Jasher 54:103), and then resolves, *It is enough for me that my son Joseph is still living, I will go and see him before I die* (Jasher 54:105). Genesis sets the same disbelief, the same reviving, and the same resolve on the page: *And told him, saying, Joseph is yet alive, and he is governor over all the land of Egypt. And Jacob''s heart fainted, for he believed them not* (Genesis 45:26); *And they told him all the words of Joseph, which he had said unto them: and when he saw the wagons which Joseph had sent to carry him, the spirit of Jacob their father revived* (Genesis 45:27); *And Yashar''el (Israel) said, It is enough; Joseph my son is yet alive: I will go and see him before I die* (Genesis 45:28). Jasher''s Serach-with-the-harp is added color, but the father''s reviving and resolve are the canon''s own — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56340
+  FROM _session252_ja54_lookup sv, _session252_ja54_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=103
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=54 AND ev.verse_number=105
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-54-abraham-smote-the-kings',
+       E'Abraham smote the kings — the fathers'' strength inherited',
+       E'Judah grounds the family''s might in Abraham''s victory: *Dost you not know or have you not heard that our father Abraham with his servant Eliezer smote all the kings of Elam with their hosts in one night, they left not one remaining? and ever since that day our father''s strength was given to us for an inheritance, for us and our seed forever* (Jasher 54:60). Genesis records that night-battle exactly: *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan* (Genesis 14:14), *And he divided himself against them, he and his servants, by night, and smote them, and pursued them unto Hobah, which is on the left hand of Damascus* (Genesis 14:15). Jasher claims the patriarch''s strength as a covenant inheritance for the seed — the same chosen line, kept and equipped from the fathers.',
+       sv.verse_id, ev.verse_id, 'extras', 56343
+  FROM _session252_ja54_lookup sv, _session252_ja54_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=60
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=54 AND ev.verse_number=60
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-54-judah-surety-benjamin
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 44:32 — *For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever.* The same surety-oath Jasher 54:57 puts in Yahudah''s mouth before Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-judah-surety-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=57
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 44:33 — *Now therefore, I pray thee, let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren.* Yahudah''s offer in Jasher 54:58 to remain as a substitute for Benjamin is the canon''s own substitution plea.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-judah-surety-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=58
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 43:13 — *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father, and if I do not bring him back, your servant will bear the blame to our father for ever.* The Jubilees apparatus carries Yahudah''s surety-plea word for word beside Jasher 54:57-58.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-judah-surety-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=57
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-54-joseph-made-known
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 45:3 — *And Joseph said unto his brethren, I am Joseph; doth my father yet live? And his brethren could not answer him; for they were troubled at his presence.* Joseph''s self-disclosure in Jasher 54:69 is the canon''s own "I am Joseph."'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-joseph-made-known'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=69
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 45:7 — *And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance.* The providence Jasher 54:69 confesses — Elohim sent him before them — kept the covenant seed alive through the famine.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-joseph-made-known'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=69
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 45:8 — *So now it was not you that sent me hither, but Elohim (God): and he hath made me a father to Pharaoh, and lord of all his house, and a ruler throughout all the land of Egypt.* Jasher 54:69 names the same hand: not the brothers but Elohim set Joseph before them.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-joseph-made-known'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=69
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 43:14 — *And Joseph saw that they were all accordant in goodness one with another, and he could not refrain himself, and he told them that he was Joseph.* The Jubilees apparatus times the disclosure exactly as Jasher 54:69 does.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-joseph-made-known'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=69
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=43 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Acts 7:13 — *And at the second time Joseph was made known to his brethren; and Joseph''s kindred was made known unto Pharaoh.* Stephen rehearses the very making-known Jasher 54:69 dramatizes.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-joseph-made-known'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=69
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-54-judah-lion-strength
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee.* Jasher 54:6 magnifies the very might Jacob blessed onto the sceptre-tribe.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-judah-lion-strength'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:9 — *Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* Yahudah roaring like a lion in Jasher 54:46 is the canon''s own lion''s-whelp blessing made vivid.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-judah-lion-strength'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=46
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-54-twenty-pieces-silver
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 37:28 — *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt.* Jasher 54:19 names the same twenty pieces of silver Genesis records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-twenty-pieces-silver'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him,* The selling Joseph throws back at his brothers in Jasher 54:24 is the patriarchs'' sin Stephen names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-twenty-pieces-silver'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The crime rehearsed in Jasher 54:24 is the evil Elohim bent to keep the seed alive.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-twenty-pieces-silver'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-54-sarah-pharaoh-plagues
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife.* The plaguing of Pharaoh "on account of Sarah" that Yahudah cites in Jasher 54:7 is this Genesis scene.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-sarah-pharaoh-plagues'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The covenant with Abraham that Yahudah trusts Elohim to remember in Jasher 54:7 is the same covenant that foretold the bondage in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-sarah-pharaoh-plagues'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-54-jacobs-spirit-revived
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 45:26 — *And told him, saying, Joseph is yet alive, and he is governor over all the land of Egypt. And Jacob''s heart fainted, for he believed them not.* Jacob''s heart palpitating and his disbelief in Jasher 54:103 is the canon''s own "his heart fainted, for he believed them not."'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-jacobs-spirit-revived'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=103
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 45:27 — *And they told him all the words of Joseph, which he had said unto them: and when he saw the wagons which Joseph had sent to carry him, the spirit of Jacob their father revived:* Jacob believing only when he saw what Joseph sent (Jasher 54:103) is the reviving of his spirit Genesis records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-jacobs-spirit-revived'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=103
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 45:28 — *And Yashar''el (Israel) said, It is enough; Joseph my son is yet alive: I will go and see him before I die.* Jacob''s resolve in Jasher 54:105 is the canon''s own "It is enough... I will go and see him before I die."'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-jacobs-spirit-revived'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=105
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-54-abraham-smote-the-kings
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* Abraham''s rescue Yahudah recalls in Jasher 54:60 is this Genesis muster of the fathers'' strength.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-abraham-smote-the-kings'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=60
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 14:15 — *And he divided himself against them, he and his servants, by night, and smote them, and pursued them unto Hobah, which is on the left hand of Damascus.* The night-victory "in one night" Yahudah cites in Jasher 54:60 is Genesis''s own account of Abram smiting the kings by night.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja54_lookup sv, _session252_ja54_lookup tv
+ WHERE t.slug='jasher-54-abraham-smote-the-kings'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=54 AND sv.verse_number=60
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_55.sql (session252 jasher 55) -----
+-- Source anchor: jasher/jasher ch55. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja55 (view _session252_ja55_lookup). Sort band base 56350, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja55_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-55-go-down-into-egypt
+  ('jasher', 'jasher', 55, 2, 'canon', 'genesis', 46, 3, 'free', E'Genesis 46:3 — *And he said, I am Elohim (God), the Elohim (God) of thy father: fear not to go down into Egypt; for I will there make of thee a great nation:* The very word Jasher 55:2 puts on Yahuah''s lips — fear not, go down, be made a great nation.'),
+  ('jasher', 'jasher', 55, 2, 'canon', 'genesis', 46, 4, 'free', E'Genesis 46:4 — *I will go down with thee into Egypt; and I will also surely bring thee up again: and Joseph shall put his hand upon thine eyes.* The descent of Jasher 55:2 carries the promise of the bringing-up — the visitation already pledged.'),
+  ('jasher', 'jasher', 55, 5, 'jubilees', 'jubilees', 45, 1, 'extras', E'Jubilees 45:1 — *And Yashar''el (Israel) went into the country of Egypt, 2172 A M. into the land of Goshen, on the new moon of the fourth month, in the second year of the third week of the forty-fifth jubilee.* Jubilees dates the same going-out-from-Canaan that Jasher 55:5 narrates from Beersheba into Goshen.'),
+  -- thread: jasher-55-judah-sent-and-joseph-meets-jacob
+  ('jasher', 'jasher', 55, 6, 'canon', 'genesis', 46, 28, 'free', E'Genesis 46:28 — *And he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen; and they came into the land of Goshen.* Genesis names the same sceptre-tribe Jasher 55:6 sends ahead to ready Goshen.'),
+  ('jasher', 'jasher', 55, 15, 'canon', 'genesis', 46, 29, 'free', E'Genesis 46:29 — *And Joseph made ready his chariot, and went up to meet Yashar''el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while.* The fall-upon-the-neck embrace of Jasher 55:15 is Genesis verbatim in substance.'),
+  ('jasher', 'jasher', 55, 16, 'canon', 'genesis', 46, 30, 'free', E'Genesis 46:30 — *And Yashar''el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive.* Jacob''s now-let-me-die in Jasher 55:16 is the same word — the father content having seen his living son.'),
+  -- thread: jasher-55-before-pharaoh-settled-in-goshen
+  ('jasher', 'jasher', 55, 19, 'canon', 'genesis', 47, 1, 'free', E'Genesis 47:1 — *Then Joseph came and told Pharaoh, and said, My father and my brethren, and their flocks, and their herds, and all that they have, are come out of the land of Canaan; and, behold, they are in the land of Goshen.* The report Jasher 55:19 has Joseph plan is Genesis word for word.'),
+  ('jasher', 'jasher', 55, 22, 'canon', 'genesis', 47, 6, 'free', E'Genesis 47:6 — *The land of Egypt is before thee; in the best of the land make thy father and brethren to dwell; in the land of Goshen let them dwell: and if thou knowest any men of activity among them, then make them rulers over my cattle.* Pharaoh''s best-of-the-land grant in Jasher 55:22 is the same decree.'),
+  ('jasher', 'jasher', 55, 25, 'canon', 'genesis', 47, 7, 'free', E'Genesis 47:7 — *And Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh.* Jacob blessing Pharaoh in Jasher 55:25 — the patriarch''s blessing over the king of Egypt — stands in Genesis verbatim.'),
+  ('jasher', 'jasher', 55, 26, 'jubilees', 'jubilees', 45, 6, 'extras', E'Jubilees 45:6 — *And Joseph had given to his father and to his brothers as a gift the right of dwelling in the land of Goshen and in Rameses and all the region round about, which he ruled over before Pharaoh. And Yashar''el (Israel) and his sons dwelt in the land of Goshen, the best part of the land of Egypt; and Yashar''el (Israel) was one hundred and thirty years old when he came into Egypt, And Joseph nourished his father and his brethren and also their possessions with bread as much as sufficed them for the seven years of the famine.* Jubilees carries the same Goshen grant and the same hundred-and-thirtieth year Jasher 55:26 records.'),
+  -- thread: jasher-55-joseph-gathers-the-silver-and-gold
+  ('jasher', 'jasher', 55, 30, 'canon', 'genesis', 47, 26, 'free', E'Genesis 47:26 — *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part; except the land of the priests only, which became not Pharaoh''s.* The famine purchase Jasher 55:30 narrates is the same Genesis transaction that ends in Pharaoh''s fifth.'),
+  ('jasher', 'jasher', 55, 30, 'jubilees', 'jubilees', 45, 11, 'extras', E'Jubilees 45:11 — *And this was the first year of the fourth week of the forty-fifth jubilee. And Joseph took of the corn of the harvest the fifth part for the king and left four parts for them for food and for seed, and Joseph made it an ordinance for the land of Egypt until this day.* Jubilees keeps the same fifth-part ordinance behind Joseph''s gathering in Jasher 55:30.'),
+  -- thread: jasher-55-fruitful-and-multiplied-bondage-foretold
+  ('jasher', 'jasher', 55, 36, 'canon', 'exodus', 1, 7, 'free', E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The fruitful-and-multiplied of Jasher 55:36 is the exact verse that opens Exodus and the bondage.'),
+  ('jasher', 'jasher', 55, 36, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The Goshen settlement of Jasher 55:36 is the seed becoming the stranger Abraham was forewarned of.'),
+  ('jasher', 'jasher', 55, 36, 'canon', 'acts', 7, 6, 'free', E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen reads the same sojourn-and-bondage that begins as Jasher 55:36 settles the seed in Egypt.'),
+  ('jasher', 'jasher', 55, 36, 'canon', 'exodus', 1, 11, 'free', E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* The multiplying of Jasher 55:36 is the very growth that draws the taskmasters once Joseph''s generation passes.'),
+  ('jasher', 'jasher', 55, 35, 'canon', 'exodus', 1, 14, 'free', E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* While Jasher 55:35 has the seed learning Yahuah''s law, the bitter bondage of Exodus is the affliction the elect line is about to enter.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja55_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja55_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-55-go-down-into-egypt',
+       E'Fear not to go down to Egypt — Yahuah commands the descent',
+       E'Jasher sets Jacob at the threshold: *And Jacob said within himself, I will go and see my son whether the fear of his Elohim is yet in his heart amidst all the inhabitants of Egypt* (Jasher 55:3), and *Behold the word of Yahuah (the Lord) came to him, saying, Go down to Egypt with all your household and remain there, fear not to go down to Egypt for I will there make you a great nation* (Jasher 55:2). It ain''t new — this is Genesis at Beersheba: *And he said, I am Elohim (God), the Elohim (God) of thy father: fear not to go down into Egypt; for I will there make of thee a great nation* (Genesis 46:3), with the promise of return, *I will go down with thee into Egypt; and I will also surely bring thee up again: and Joseph shall put his hand upon thine eyes* (Genesis 46:4). Jubilees fixes the same descent on the calendar: *And Yashar''el (Israel) went into the country of Egypt, 2172 A M. into the land of Goshen, on the new moon of the fourth month, in the second year of the third week of the forty-fifth jubilee* (Jubilees 45:1). The elect seed goes down by the word of Yahuah, kept and chosen, to be made a great nation.',
+       sv.verse_id, ev.verse_id, 'extras', 56350
+  FROM _session252_ja55_lookup sv, _session252_ja55_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=2
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=55 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-55-judah-sent-and-joseph-meets-jacob',
+       E'Judah sent before to Goshen — Joseph falls on his father''s neck',
+       E'Jasher: *And it came to pass when they came near Egypt, Jacob sent Judah before him to Joseph that he might show him a situation in Egypt, and Judah did according to the word of his father... and they assigned for them a place in the land of Goshen* (Jasher 55:6). Yahudah the sceptre-tribe runs ahead to prepare the way — and Genesis says it the same way: *And he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen; and they came into the land of Goshen* (Genesis 46:28). Then the reunion: *And behold Jacob ran and hastened to his son Joseph and fell upon his neck and kissed him, and they wept* (Jasher 55:15), and *Jacob said to Joseph, Now I will die cheerfully after I have seen your face, that you are still living and with glory* (Jasher 55:16) — exactly Genesis: *And Joseph made ready his chariot, and went up to meet Yashar''el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while* (Genesis 46:29), *And Yashar''el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive* (Genesis 46:30). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56353
+  FROM _session252_ja55_lookup sv, _session252_ja55_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=55 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-55-before-pharaoh-settled-in-goshen',
+       E'Before Pharaoh — the best of the land, dwelling in Goshen',
+       E'Joseph stations the household and presents them: *And Joseph said to his father and to his brethren, I will go up and tell Pharaoh, saying, My brethren and my father''s household... have come to me, and behold they are in the land of Goshen* (Jasher 55:19), and Pharaoh answers, *Place your father and brethren in the best part of the land, withhold not from them all that is good, and cause them to eat of the fat of the land* (Jasher 55:22). Then the patriarch blesses the king: *And Jacob came and bowed down to Pharaoh, and Jacob blessed Pharaoh, and he then went out; and Jacob and all his sons, and all his household dwelt in the land of Goshen* (Jasher 55:25). It ain''t new — Genesis: *Then Joseph came and told Pharaoh, and said, My father and my brethren... are come out of the land of Canaan; and, behold, they are in the land of Goshen* (Genesis 47:1); *The land of Egypt is before thee; in the best of the land make thy father and brethren to dwell; in the land of Goshen let them dwell* (Genesis 47:6); *And Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh* (Genesis 47:7). Jubilees keeps the same grant: *And Joseph had given to his father and to his brothers as a gift the right of dwelling in the land of Goshen and in Rameses... the best part of the land of Egypt; and Yashar''el (Israel) was one hundred and thirty years old when he came into Egypt* (Jubilees 45:6).',
+       sv.verse_id, ev.verse_id, 'extras', 56356
+  FROM _session252_ja55_lookup sv, _session252_ja55_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=19
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=55 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-55-joseph-gathers-the-silver-and-gold',
+       E'Joseph gathers all Egypt''s silver and gold for Pharaoh',
+       E'Jasher tells the famine economy: *And Joseph purchased all the lands and fields of Egypt for bread on the account of Pharaoh, and Joseph supplied all Egypt with bread all the days of the famine, and Joseph collected all the silver and gold that came to him for the corn which they bought throughout the land* (Jasher 55:30). Where Jasher then adds its own legendary detail — *Joseph went and concealed them in four parts... near the Red sea... by the river Perath... opposite to the wilderness of Persia and Media* (Jasher 55:31) — Genesis keeps the genuine kernel: the land made over to Pharaoh and the fixed fifth: *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part; except the land of the priests only, which became not Pharaoh''s* (Genesis 47:26). Jubilees records the same ordinance of the fifth: *And Joseph took of the corn of the harvest the fifth part for the king and left four parts for them for food and for seed, and Joseph made it an ordinance for the land of Egypt until this day* (Jubilees 45:11). The hidden treasure is Jasher''s expansion; anchor only the true Genesis parallel beneath it.',
+       sv.verse_id, ev.verse_id, 'extras', 56359
+  FROM _session252_ja55_lookup sv, _session252_ja55_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=30
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=55 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-55-fruitful-and-multiplied-bondage-foretold',
+       E'Fruitful and multiplied in Goshen — the bondage foretold to Abraham',
+       E'The chapter closes on the seed: *And Jacob and his sons dwelt in the land of Egypt in the land of Goshen, and they took possession in it, and they were fruitful and multiplied in it* (Jasher 55:36) — and the sons of Joseph kept in the way: *his two sons, Ephraim and Manasseh, remained constantly in the house of Jacob... to learn the ways of Yahuah (the Lord) and his law* (Jasher 55:35). Torah-before-Sinai, the seed kept and taught. It ain''t new — Exodus opens on this very increase: *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7). But the increase in Goshen is the increase already foretold to Abraham, and the bondage with it: *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13); Stephen says it again, *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years* (Acts 7:6). The taskmasters come after Joseph: *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses* (Exodus 1:11), *And they made their lives bitter with hard bondage, in morter, and in brick* (Exodus 1:14). Election precedes the affliction; the seed multiplies on the threshold of the promised bondage and the promised visitation.',
+       sv.verse_id, ev.verse_id, 'extras', 56362
+  FROM _session252_ja55_lookup sv, _session252_ja55_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=35
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=55 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-55-go-down-into-egypt
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 46:3 — *And he said, I am Elohim (God), the Elohim (God) of thy father: fear not to go down into Egypt; for I will there make of thee a great nation:* The very word Jasher 55:2 puts on Yahuah''s lips — fear not, go down, be made a great nation.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-go-down-into-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 46:4 — *I will go down with thee into Egypt; and I will also surely bring thee up again: and Joseph shall put his hand upon thine eyes.* The descent of Jasher 55:2 carries the promise of the bringing-up — the visitation already pledged.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-go-down-into-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 45:1 — *And Yashar''el (Israel) went into the country of Egypt, 2172 A M. into the land of Goshen, on the new moon of the fourth month, in the second year of the third week of the forty-fifth jubilee.* Jubilees dates the same going-out-from-Canaan that Jasher 55:5 narrates from Beersheba into Goshen.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-go-down-into-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=5
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=45 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-55-judah-sent-and-joseph-meets-jacob
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 46:28 — *And he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen; and they came into the land of Goshen.* Genesis names the same sceptre-tribe Jasher 55:6 sends ahead to ready Goshen.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-judah-sent-and-joseph-meets-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 46:29 — *And Joseph made ready his chariot, and went up to meet Yashar''el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while.* The fall-upon-the-neck embrace of Jasher 55:15 is Genesis verbatim in substance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-judah-sent-and-joseph-meets-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 46:30 — *And Yashar''el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive.* Jacob''s now-let-me-die in Jasher 55:16 is the same word — the father content having seen his living son.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-judah-sent-and-joseph-meets-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-55-before-pharaoh-settled-in-goshen
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 47:1 — *Then Joseph came and told Pharaoh, and said, My father and my brethren, and their flocks, and their herds, and all that they have, are come out of the land of Canaan; and, behold, they are in the land of Goshen.* The report Jasher 55:19 has Joseph plan is Genesis word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-before-pharaoh-settled-in-goshen'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 47:6 — *The land of Egypt is before thee; in the best of the land make thy father and brethren to dwell; in the land of Goshen let them dwell: and if thou knowest any men of activity among them, then make them rulers over my cattle.* Pharaoh''s best-of-the-land grant in Jasher 55:22 is the same decree.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-before-pharaoh-settled-in-goshen'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 47:7 — *And Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh.* Jacob blessing Pharaoh in Jasher 55:25 — the patriarch''s blessing over the king of Egypt — stands in Genesis verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-before-pharaoh-settled-in-goshen'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 45:6 — *And Joseph had given to his father and to his brothers as a gift the right of dwelling in the land of Goshen and in Rameses and all the region round about, which he ruled over before Pharaoh. And Yashar''el (Israel) and his sons dwelt in the land of Goshen, the best part of the land of Egypt; and Yashar''el (Israel) was one hundred and thirty years old when he came into Egypt, And Joseph nourished his father and his brethren and also their possessions with bread as much as sufficed them for the seven years of the famine.* Jubilees carries the same Goshen grant and the same hundred-and-thirtieth year Jasher 55:26 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-before-pharaoh-settled-in-goshen'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=26
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=45 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-55-joseph-gathers-the-silver-and-gold
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 47:26 — *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part; except the land of the priests only, which became not Pharaoh''s.* The famine purchase Jasher 55:30 narrates is the same Genesis transaction that ends in Pharaoh''s fifth.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-joseph-gathers-the-silver-and-gold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 45:11 — *And this was the first year of the fourth week of the forty-fifth jubilee. And Joseph took of the corn of the harvest the fifth part for the king and left four parts for them for food and for seed, and Joseph made it an ordinance for the land of Egypt until this day.* Jubilees keeps the same fifth-part ordinance behind Joseph''s gathering in Jasher 55:30.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-joseph-gathers-the-silver-and-gold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=30
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=45 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-55-fruitful-and-multiplied-bondage-foretold
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The fruitful-and-multiplied of Jasher 55:36 is the exact verse that opens Exodus and the bondage.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-fruitful-and-multiplied-bondage-foretold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The Goshen settlement of Jasher 55:36 is the seed becoming the stranger Abraham was forewarned of.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-fruitful-and-multiplied-bondage-foretold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen reads the same sojourn-and-bondage that begins as Jasher 55:36 settles the seed in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-fruitful-and-multiplied-bondage-foretold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* The multiplying of Jasher 55:36 is the very growth that draws the taskmasters once Joseph''s generation passes.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-fruitful-and-multiplied-bondage-foretold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* While Jasher 55:35 has the seed learning Yahuah''s law, the bitter bondage of Exodus is the affliction the elect line is about to enter.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja55_lookup sv, _session252_ja55_lookup tv
+ WHERE t.slug='jasher-55-fruitful-and-multiplied-bondage-foretold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=55 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_56.sql (session252 jasher 56) -----
+-- Source anchor: jasher/jasher ch56. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja56 (view _session252_ja56_lookup). Sort band base 56375, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja56_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-56-jacob-dies-the-visitation
+  ('jasher', 'jasher', 56, 1, 'canon', 'genesis', 47, 28, 'free', E'Genesis 47:28 — *And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was an hundred forty and seven years.* Genesis gives the identical seventeen years and 147-year lifespan that opens Jasher 56:1.'),
+  ('jasher', 'jasher', 56, 6, 'canon', 'genesis', 49, 1, 'free', E'Genesis 49:1 — *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days.* The gathering of the sons to be blessed in Jasher 56:6 is the deathbed assembly of Genesis 49.'),
+  ('jasher', 'jasher', 56, 3, 'canon', 'genesis', 49, 29, 'free', E'Genesis 49:29 — *And he charged them, and said unto them, I am to be gathered unto my people: bury me with my fathers in the cave that is in the field of Ephron the Hittite,* Jacob''s charge to bury him at Machpelah in Jasher 56:3 is the Genesis charge verbatim in substance.'),
+  ('jasher', 'jasher', 56, 22, 'canon', 'genesis', 49, 33, 'free', E'Genesis 49:33 — *And when Jacob had made an end of commanding his sons, he gathered up his feet into the bed, and yielded up the ghost, and was gathered unto his people.* The death scene of Jasher 56:22, feet drawn into the bed and gathered to his people, is Genesis 49:33.'),
+  ('jasher', 'jasher', 56, 1, 'jubilees', 'jubilees', 45, 13, 'extras', E'Jubilees 45:13 — *And Yashar''el (Israel) lived in the land of Egypt seventeen years, and all the days which he lived were three jubilees, one hundred and forty-seven years, and he died in the fourth year of the fifth week of the forty-fifth jubilee.* Jubilees keeps the same seventeen years and 147-year total that frames Jasher 56:1, with the deathbed blessing of the sons.'),
+  ('jasher', 'jasher', 56, 3, 'canon', 'genesis', 50, 24, 'free', E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* The visitation Jacob promises in Jasher 56:3 is the same sworn deliverance Joseph repeats in Genesis.'),
+  -- thread: jasher-56-judah-the-sceptre
+  ('jasher', 'jasher', 56, 8, 'canon', 'genesis', 49, 8, 'free', E'Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee.* Jacob''s word that Judah shall reign over his brethren (Jasher 56:8) is the Genesis blessing of dominion over Judah.'),
+  ('jasher', 'jasher', 56, 8, 'canon', 'genesis', 49, 10, 'free', E'Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* The everlasting reign Jacob gives Judah in Jasher 56:8 is the undeparting sceptre held until Shiloh.'),
+  ('jasher', 'jasher', 56, 9, 'canon', 'numbers', 24, 17, 'free', E'Numbers 24:17 — *I shall see him, but not now: I shall behold him, but not nigh: there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel), and shall smite the corners of Moab, and destroy all the children of Sheth.* The battle-ready ruler over his enemies in Jasher 56:9 is the Sceptre Balaam foresaw rising out of Israel.'),
+  ('jasher', 'jasher', 56, 8, 'canon', 'hebrews', 7, 14, 'free', E'Hebrews 7:14 — *For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood.* The forever-reign Jacob speaks over Judah in Jasher 56:8 lands on the Lord sprung from Judah.'),
+  -- thread: jasher-56-embalming-and-burial-procession
+  ('jasher', 'jasher', 56, 29, 'canon', 'genesis', 50, 2, 'free', E'Genesis 50:2 — *And Joseph commanded his servants the physicians to embalm his father: and the physicians embalmed Yashar''el (Israel).* Joseph''s command to the doctors to embalm Jacob in Jasher 56:29 is the Genesis embalming verbatim.'),
+  ('jasher', 'jasher', 56, 28, 'canon', 'genesis', 50, 3, 'free', E'Genesis 50:3 — *And forty days were fulfilled for him; for so are fulfilled the days of those which are embalmed: and the Egyptians mourned for him threescore and ten days.* The seventy days of weeping in Jasher 56:28 are the threescore and ten days the Egyptians mourned in Genesis.'),
+  ('jasher', 'jasher', 56, 34, 'canon', 'genesis', 50, 7, 'free', E'Genesis 50:7 — *And Joseph went up to bury his father: and with him went up all the servants of Pharaoh, the elders of his house, and all the elders of the land of Egypt,* The caravan of Pharaoh''s servants and the elders of Egypt going up in Jasher 56:34 is the Genesis burial procession.'),
+  ('jasher', 'jasher', 56, 42, 'canon', 'genesis', 50, 10, 'free', E'Genesis 50:10 — *And they came to the threshingfloor of Atad, which is beyond Jordan, and there they mourned with a great and very sore lamentation: and he made a mourning for his father seven days.* The great mourning at the threshing floor of Atad beyond Jordan in Jasher 56:42 is the same Atad lamentation in Genesis.'),
+  ('jasher', 'jasher', 56, 66, 'canon', 'genesis', 50, 13, 'free', E'Genesis 50:13 — *For his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah, which Abraham bought with the field for a possession of a buryingplace of Ephron the Hittite, before Mamre.* Jacob buried by his sons in the cave of Machpelah that Abraham bought (Jasher 56:66) is the Genesis burial.'),
+  -- thread: jasher-56-esau-contests-the-cave
+  ('jasher', 'jasher', 56, 50, 'canon', 'genesis', 25, 23, 'free', E'Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* Esau standing against Jacob''s sons at the cave (Jasher 56:50) plays out the two-nations division spoken from the womb.'),
+  ('jasher', 'jasher', 56, 50, 'canon', 'malachi', 1, 2, 'free', E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* Esau''s claim on the cave against Jacob (Jasher 56:50) sets the very brothers Malachi distinguishes as loved and not chosen.'),
+  ('jasher', 'jasher', 56, 64, 'canon', 'obadiah', 1, 10, 'free', E'Obadiah 10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* Esau cut down at the cave by Chushim in Jasher 56:64 prefigures Edom cut off for his violence against his brother Jacob.'),
+  ('jasher', 'jasher', 56, 65, 'canon', 'hebrews', 11, 21, 'free', E'Hebrews 11:21 — *By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff.* The sons burying Jacob by force despite Esau (Jasher 56:65) carries out the faith of the dying Jacob the New Testament honors.'),
+  -- thread: jasher-56-joseph-bones-foretold
+  ('jasher', 'jasher', 56, 20, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The grievous troubles Jacob foresees in the latter days (Jasher 56:20) are the affliction sworn to Abraham at the covenant of the pieces.'),
+  ('jasher', 'jasher', 56, 21, 'canon', 'exodus', 1, 8, 'free', E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The deliverance from affliction Jacob promises in Jasher 56:21 answers the new king of Exodus under whom the bondage begins.'),
+  ('jasher', 'jasher', 56, 21, 'canon', 'exodus', 13, 19, 'free', E'Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* The servant Yahuah raises to bring them out of Egypt (Jasher 56:21) is Moses, who carries Joseph''s bones at the visitation.'),
+  ('jasher', 'jasher', 56, 21, 'canon', 'hebrews', 11, 22, 'free', E'Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones.* The bringing-out-of-Egypt Jacob foresees in Jasher 56:21 is the very departing Joseph foretold by faith over his bones.'),
+  ('jasher', 'jasher', 56, 20, 'jubilees', 'jubilees', 46, 6, 'extras', E'Jubilees 46:6 — *And he made them swear regarding his bones, for he knew that the Egyptians would not again bring forth and bury him in the land of Canaan...* The latter-day troubles and visitation Jacob foretells in Jasher 56:20 are framed in Jubilees by Joseph''s sworn oath over his bones as the affliction nears.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja56_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja56_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-56-jacob-dies-the-visitation',
+       E'Jacob''s death — the 147 years and the promised visitation',
+       E'Jasher closes Jacob''s life exactly where Genesis does: *And Jacob lived in the land of Egypt seventeen years, and the days of Jacob, and the years of his life were a hundred and forty seven years* (Jasher 56:1), and dying he tells his sons, *Behold I die, and the Elohim (God) of your ancestors will visit you, and bring you back to the land, which Yahuah (the Lord) sware to give to you and to your children after you* (Jasher 56:3). Genesis carries the same count to the year — *And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was an hundred forty and seven years* (Genesis 47:28) — and the same gathering of the sons, *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days* (Genesis 49:1). The charge to bury him at Machpelah is Genesis 49:29 word for word, *And he charged them, and said unto them, I am to be gathered unto my people: bury me with my fathers in the cave that is in the field of Ephron the Hittite,* (Genesis 49:29), and the death itself, *And when Jacob had made an end of commanding his sons, he gathered up his feet into the bed, and yielded up the ghost, and was gathered unto his people* (Genesis 49:33), is what Jasher renders, *and he drew his feet into the bed, he died and was gathered to his people* (Jasher 56:22). Jubilees keeps the very same three-jubilee reckoning — *And Yashar''el (Israel) lived in the land of Egypt seventeen years, and all the days which he lived were three jubilees, one hundred and forty-seven years* (Jubilees 45:13). The visitation Jacob names is the covenant promise Joseph will repeat — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24). It ain''t new: the seed is kept, the oath stands, the visitation is coming.',
+       sv.verse_id, ev.verse_id, 'extras', 56375
+  FROM _session252_ja56_lookup sv, _session252_ja56_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=56 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-56-judah-the-sceptre',
+       E'Judah shall reign — the sceptre to Shiloh',
+       E'When Jacob blesses his sons Jasher singles out Judah for the kingship: *And Jacob said to Judah, I know my son that you are a mighty man for your brethren; reign over them, and your sons shall reign over their sons forever* (Jasher 56:8), adding *Only teach your sons the bow and all the weapons of war, in order that they may fight the battles of their brother who will rule over his enemies* (Jasher 56:9). This is Genesis 49''s Shiloh oracle: *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee* (Genesis 49:8), the lion''s whelp, and *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). Balaam saw the same sceptre rising — *there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel)* (Numbers 24:17) — and the New Testament names where it lands: *For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood* (Hebrews 7:14). The everlasting reign Jacob speaks over Judah in Jasher 56:8 is the Messianic line kept, the gathering of the people to Shiloh. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56378
+  FROM _session252_ja56_lookup sv, _session252_ja56_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=56 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-56-embalming-and-burial-procession',
+       E'The embalming and the procession to Machpelah',
+       E'Jasher gives the funeral in full: *Joseph commanded his servants the doctors to embalm his father with myrrh and frankincense and all manner of incense and perfume* (Jasher 56:29), the seventy days of weeping (Jasher 56:28), and the great company that *came to the threshing floor of Atad, which was on the other side of Jordan, and they mourned an exceeding great and heavy mourning in that place* (Jasher 56:42). Genesis records the same embalming — *And Joseph commanded his servants the physicians to embalm his father: and the physicians embalmed Yashar''el (Israel)* (Genesis 50:2) — the same seventy days, *And forty days were fulfilled for him; for so are fulfilled the days of those which are embalmed: and the Egyptians mourned for him threescore and ten days* (Genesis 50:3); the same caravan of Pharaoh''s elders, *And Joseph went up to bury his father: and with him went up all the servants of Pharaoh, the elders of his house, and all the elders of the land of Egypt,* (Genesis 50:7); and the same Atad mourning, *And they came to the threshingfloor of Atad, which is beyond Jordan, and there they mourned with a great and very sore lamentation: and he made a mourning for his father seven days* (Genesis 50:10). The burial lands where Abraham first bought it — *For his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah, which Abraham bought with the field for a possession of a buryingplace of Ephron the Hittite, before Mamre* (Genesis 50:13) — exactly as Jasher 56:66 says. The seven-day mourning that ends Jasher 56:68 is Genesis 50:10. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56381
+  FROM _session252_ja56_lookup sv, _session252_ja56_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=28
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=56 AND ev.verse_number=49
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-56-esau-contests-the-cave',
+       E'Esau contests the cave — Edom set apart from the elect',
+       E'Jasher''s legendary expansion brings Esau himself to block the burial: *Esau stood with his sons against Joseph and his brethren as a hindrance in the cave, saying, Jacob shall not be buried in it, for it belongs to us and to our father* (Jasher 56:50). The dispute breaks into battle, and *Chushim the son of Dan... slew Esau with a sword, and he cut off his head* (Jasher 56:64). Genesis foretold the two brothers as two nations divided from the womb — *Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger* (Genesis 25:23) — and Scripture sets Esau outside the elect line by name: *Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob, And I hated Esau, and laid his mountains and his heritage waste* (Malachi 1:2-3). Obadiah pronounces the same end on Edom''s violence against his brother — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever* (Obadiah 10). Even Esau''s quarrel cannot keep Jacob from the grave of the fathers; the faith Hebrews names stands — *By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff* (Hebrews 11:21). Election precedes the contest: the elder serves the younger, and Edom is set apart from the kept seed.',
+       sv.verse_id, ev.verse_id, 'extras', 56384
+  FROM _session252_ja56_lookup sv, _session252_ja56_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=50
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=56 AND ev.verse_number=65
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-56-joseph-bones-foretold',
+       E'The bondage foretold and the bones to be carried up',
+       E'Through the dying Jacob Jasher names the affliction ahead and the deliverer to come: *For I know that many and grievous troubles will befall you in the latter days in the land, yea your children and children''s children, only serve Yahuah (the Lord) and he will save you from all trouble* (Jasher 56:20), and *then will Yahuah (the Lord) raise up to you and your children a servant from amongst your children, and Yahuah (the Lord) will deliver you through his hand from all affliction, and bring you out of Egypt and bring you back to the land of your fathers* (Jasher 56:21). This is the word sworn to Abraham — *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13) — the affliction that begins when *there arose up a new king over Egypt, which knew not Joseph* (Exodus 1:8). The deliverer Jacob foresees is the visitation tied to Joseph''s oath: *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25), which Moses keeps — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel)* (Exodus 13:19) — and which Hebrews crowns, *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). Jubilees keeps the same oath over the bones — *And he made them swear regarding his bones, for he knew that the Egyptians would not again bring forth and bury him in the land of Canaan* (Jubilees 46:6). The bondage is foretold, the visitation promised, the seed kept. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 56387
+  FROM _session252_ja56_lookup sv, _session252_ja56_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=20
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=56 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-56-jacob-dies-the-visitation
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 47:28 — *And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was an hundred forty and seven years.* Genesis gives the identical seventeen years and 147-year lifespan that opens Jasher 56:1.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-jacob-dies-the-visitation'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:1 — *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days.* The gathering of the sons to be blessed in Jasher 56:6 is the deathbed assembly of Genesis 49.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-jacob-dies-the-visitation'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 49:29 — *And he charged them, and said unto them, I am to be gathered unto my people: bury me with my fathers in the cave that is in the field of Ephron the Hittite,* Jacob''s charge to bury him at Machpelah in Jasher 56:3 is the Genesis charge verbatim in substance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-jacob-dies-the-visitation'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 49:33 — *And when Jacob had made an end of commanding his sons, he gathered up his feet into the bed, and yielded up the ghost, and was gathered unto his people.* The death scene of Jasher 56:22, feet drawn into the bed and gathered to his people, is Genesis 49:33.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-jacob-dies-the-visitation'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 45:13 — *And Yashar''el (Israel) lived in the land of Egypt seventeen years, and all the days which he lived were three jubilees, one hundred and forty-seven years, and he died in the fourth year of the fifth week of the forty-fifth jubilee.* Jubilees keeps the same seventeen years and 147-year total that frames Jasher 56:1, with the deathbed blessing of the sons.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-jacob-dies-the-visitation'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=45 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* The visitation Jacob promises in Jasher 56:3 is the same sworn deliverance Joseph repeats in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-jacob-dies-the-visitation'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-56-judah-the-sceptre
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee.* Jacob''s word that Judah shall reign over his brethren (Jasher 56:8) is the Genesis blessing of dominion over Judah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-judah-the-sceptre'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* The everlasting reign Jacob gives Judah in Jasher 56:8 is the undeparting sceptre held until Shiloh.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-judah-the-sceptre'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 24:17 — *I shall see him, but not now: I shall behold him, but not nigh: there shall come a Star out of Jacob, and a Sceptre shall rise out of Yashar''el (Israel), and shall smite the corners of Moab, and destroy all the children of Sheth.* The battle-ready ruler over his enemies in Jasher 56:9 is the Sceptre Balaam foresaw rising out of Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-judah-the-sceptre'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=24 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 7:14 — *For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood.* The forever-reign Jacob speaks over Judah in Jasher 56:8 lands on the Lord sprung from Judah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-judah-the-sceptre'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-56-embalming-and-burial-procession
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 50:2 — *And Joseph commanded his servants the physicians to embalm his father: and the physicians embalmed Yashar''el (Israel).* Joseph''s command to the doctors to embalm Jacob in Jasher 56:29 is the Genesis embalming verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-embalming-and-burial-procession'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 50:3 — *And forty days were fulfilled for him; for so are fulfilled the days of those which are embalmed: and the Egyptians mourned for him threescore and ten days.* The seventy days of weeping in Jasher 56:28 are the threescore and ten days the Egyptians mourned in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-embalming-and-burial-procession'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 50:7 — *And Joseph went up to bury his father: and with him went up all the servants of Pharaoh, the elders of his house, and all the elders of the land of Egypt,* The caravan of Pharaoh''s servants and the elders of Egypt going up in Jasher 56:34 is the Genesis burial procession.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-embalming-and-burial-procession'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 50:10 — *And they came to the threshingfloor of Atad, which is beyond Jordan, and there they mourned with a great and very sore lamentation: and he made a mourning for his father seven days.* The great mourning at the threshing floor of Atad beyond Jordan in Jasher 56:42 is the same Atad lamentation in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-embalming-and-burial-procession'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=42
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Genesis 50:13 — *For his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah, which Abraham bought with the field for a possession of a buryingplace of Ephron the Hittite, before Mamre.* Jacob buried by his sons in the cave of Machpelah that Abraham bought (Jasher 56:66) is the Genesis burial.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-embalming-and-burial-procession'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=66
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-56-esau-contests-the-cave
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* Esau standing against Jacob''s sons at the cave (Jasher 56:50) plays out the two-nations division spoken from the womb.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-esau-contests-the-cave'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=25 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* Esau''s claim on the cave against Jacob (Jasher 56:50) sets the very brothers Malachi distinguishes as loved and not chosen.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-esau-contests-the-cave'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Obadiah 10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* Esau cut down at the cave by Chushim in Jasher 56:64 prefigures Edom cut off for his violence against his brother Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-esau-contests-the-cave'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=64
+   AND tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 11:21 — *By faith Jacob, when he was a dying, blessed both the sons of Joseph; and worshipped, leaning upon the top of his staff.* The sons burying Jacob by force despite Esau (Jasher 56:65) carries out the faith of the dying Jacob the New Testament honors.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-esau-contests-the-cave'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=65
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-56-joseph-bones-foretold
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The grievous troubles Jacob foresees in the latter days (Jasher 56:20) are the affliction sworn to Abraham at the covenant of the pieces.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-joseph-bones-foretold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The deliverance from affliction Jacob promises in Jasher 56:21 answers the new king of Exodus under whom the bondage begins.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-joseph-bones-foretold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* The servant Yahuah raises to bring them out of Egypt (Jasher 56:21) is Moses, who carries Joseph''s bones at the visitation.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-joseph-bones-foretold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones.* The bringing-out-of-Egypt Jacob foresees in Jasher 56:21 is the very departing Joseph foretold by faith over his bones.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-joseph-bones-foretold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 46:6 — *And he made them swear regarding his bones, for he knew that the Egyptians would not again bring forth and bury him in the land of Canaan...* The latter-day troubles and visitation Jacob foretells in Jasher 56:20 are framed in Jubilees by Joseph''s sworn oath over his bones as the affliction nears.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja56_lookup sv, _session252_ja56_lookup tv
+ WHERE t.slug='jasher-56-joseph-bones-foretold'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=56 AND sv.verse_number=20
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session252 — Jasher cross-references complete.'
