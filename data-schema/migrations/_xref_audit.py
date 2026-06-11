@@ -240,7 +240,8 @@ COVERAGE_GLOBS = ['session1*matt*extras_cross_references.sql',
     'session2*_1corinthians_cross_references.sql',
     'session2*_2corinthians_cross_references.sql',
     'session2*_ephesians_cross_references.sql',
-    'session3*_cross_references.sql']
+    'session3*_cross_references.sql',
+    'session2*_*_extracanon_cross_references.sql']
 cov_files = []
 for gpat in COVERAGE_GLOBS:
     cov_files += glob.glob(os.path.join(MIG, gpat))
