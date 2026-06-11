@@ -179,3 +179,43 @@ Then Jubilees (session251 @53000), Jasher (session252 @55000), Apocrypha (@58000
   ("deficient in the intercalated months by thirty days"); fidelity flagged it, fixed tgt_v 12→11
   before apply. (Validates the gate; this edition's ch74 lunar figures are tangled — see ch74 notes.)
 - Push blocked. origin/main 47a9e48; local HEAD `670a8d9` (10 commits ahead). Prod authoritative.
+
+## RECEIPT — Pack 10 (1 Enoch ch83–90, ANIMAL APOCALYPSE) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **356 threads / 1343 members**, band 50000–52262, 0 orphans.
+  per-ch(83-90) 4/4/4/[86 SKIP]/3/4/7/7. +33/147. Commit `5960e6c`. Five gates green (fidelity
+  1343/1343, FULL-LIBRARY PASS, resolve 0 unresolved).
+- Flood from heaven + Enoch intercessor (83-84→Gen6-8/Amos7/Dan4); white bull Adam/seed-war
+  (85→Gen2/Matt13:25-38/1Jn3:12); Watchers as fallen stars + giants (87-88→Gen6/Jude6/Rev9:1);
+  the long vision (89 sheep=Israel, the house/temple, sheep blinded+scattered, 70 shepherds=false
+  shepherds→2Kgs17/Ezek34/Jer23/Zech11; 90 opened eyes, great horn, books opened→Dan7:10, NEW
+  HOUSE=New Jerusalem→Rev21, the great WHITE BULL=Messiah + all made white→Ezek34:23/37:21-28/
+  Isa11:6/65:25 — two-house restoration, highest-value).
+- ⚑ ch86 SKIPPED (corrupted in this parse): the genuine Watchers-descent content (star falls,
+  fallen stars become bulls, giants as elephants/camels/asses) is MISSING — replaced by misplaced
+  ch90 ravens/lambs filler with v3-v10 byte-for-byte duplicates of v1. Minion returned a structured
+  `_blocked` analysis (in json_1enoch_86.json) rather than build false apparatus. Flagged for Track B
+  repair; re-run the ch86 minion after the source is fixed from a clean Charles edition.
+- Push blocked. origin/main 47a9e48; local HEAD `5960e6c` (11 commits ahead). Prod authoritative.
+
+## ✅✅ RECEIPT — Pack 11 (1 Enoch ch91–108, EPISTLE) — 1 ENOCH COMPLETE-LIVE IN PROD
+- Applied 2026-06-11. FINAL 1 ENOCH: **423 `1-enoch-*` threads / 1613 members**, band 50000–52675,
+  0 orphans, 0 unresolved. 104 chapters with apparatus. Commit `e2cbf8b`. Five gates green
+  (fidelity 1613/1613, FULL-LIBRARY PASS, resolve 0).
+- Epistle: calendar/books + alter-not-the-times (92→Dan7:25/Jub6:36); two ways (93-94→Deut30/Ps1/
+  Matt7:13); woes on oppressors/rich/idolaters/word-perverters (95-99→Isa5/Amos/James5/Jer8:8);
+  day of slaughter (100→Rev14:20/Joel3); dead-righteous-vs-sinners + resurrection (102-104→Mal3-4/
+  Dan12:2-3/Wisdom3/Matt13:43, names-written-never-added election); Noah's remnant (107→Gen6:8-9/
+  2Pet2:5); book of the righteous (108→Mal3:16/Dan12:1/Ps69:28/Rev3:5).
+- ⚑ 4 CHAPTERS SKIPPED (corrupt in this enoch.json parse — all flagged for Track B repair):
+  ch86 (genuine Watchers-descent missing, replaced by misplaced ch90 ravens/lambs + byte-dup filler);
+  ch101 (vv4-100 cyclic byte-for-byte duplicates; only vv1-3 coherent); ch106 (birth-of-Noah missing,
+  replaced by misplaced Watchers cosmic-journey material); ch91 (the WHOLE chapter collapsed into one
+  run-on verse 1 — the minion HALLUCINATED vv11-19; the resolve_check gate caught all 13 fabricated
+  source anchors before apply). The Epistle's chapter NUMBERING is also shifted vs Charles throughout
+  (minions authored honestly from the literal dumped text of each chapter).
+- ⚑ GATE VALUE PROVEN: resolve_check (src+tgt must exist in live DB) is the catch for minion
+  hallucination of source anchors; verify_fidelity (target quote must match parsed text) is the catch
+  for paraphrase/wrong-verse. Both are essential — fidelity alone passed the hallucinated ch91.
+- Push blocked. origin/main 47a9e48; local HEAD `e2cbf8b` (12 commits ahead). Prod authoritative.
+
+## ▶️ NEXT BOOK = JUBILEES (session251 @ band 53000; edition 'jubilees' book 'jubilees', 50 ch).

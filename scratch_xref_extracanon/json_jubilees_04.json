@@ -1,0 +1,96 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 4,
+  "session": "session251",
+  "tag": "ju04",
+  "base_band": 53075,
+  "threads": [
+    {
+      "slug": "jubilees-4-cain-abel-blood",
+      "title": "Cain and Abel — the blood that cries from the ground",
+      "summary_md": "Jubilees opens Adam's line with the first murder and the first martyr's blood: *And in the first (year) of the third jubilee, Cain slew Abel because Elohim (God) accepted the sacrifice of Abel, and did not accept the offering of Cain* (Jubilees 4:2), *And he slew him in the field: and his blood cried from the ground to heaven, complaining because he had slain him* (Jubilees 4:3). This is the Genesis source retold word for word: *And in process of time it came to pass, that Cain brought of the fruit of the ground an offering unto Yahuah (LORD)* (Genesis 4:3) and *And he said, What hast thou done? the voice of thy brother's blood crieth unto me from the ground* (Genesis 4:10). It ain't new — the Renewed Covenant reads the same scene back: Abel's accepted sacrifice was faith, *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh* (Hebrews 11:4), and his crying blood becomes the type that the blood of Messiah surpasses, *And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel* (Hebrews 12:24).",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 3, "tier": "free",
+         "note": "Genesis 4:3 — *And in process of time it came to pass, that Cain brought of the fruit of the ground an offering unto Yahuah (LORD).* Jubilees 4:2 retells the rejected ground-offering exactly as Genesis frames it."},
+        {"src_ch": 4, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 4:4 — *And Abel, he also brought of the firstlings of his flock and of the fat thereof. And Yahuah (LORD) had respect unto Abel and to his offering:* This is the accepted sacrifice Jubilees 4:2 names as the reason Cain rose up."},
+        {"src_ch": 4, "src_v": 3, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 10, "tier": "free",
+         "note": "Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother's blood crieth unto me from the ground.* The Genesis source of the blood that, in Jubilees 4:3, cried from the ground to heaven."},
+        {"src_ch": 4, "src_v": 2, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 4, "tier": "free",
+         "note": "Hebrews 11:4 — *By faith Abel offered unto Elohim (God) a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, Elohim (God) testifying of his gifts: and by it he being dead yet speaketh.* The Renewed Covenant names Abel's accepted offering of Jubilees 4:2 as faith that still speaks."},
+        {"src_ch": 4, "src_v": 3, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 12, "tgt_v": 24, "tier": "free",
+         "note": "Hebrews 12:24 — *And to Yahusha (Jesus) the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel.* Abel's crying blood in Jubilees 4:3 becomes the very type the blood of Messiah surpasses."}
+      ]
+    },
+    {
+      "slug": "jubilees-4-heavenly-tablets-judgment",
+      "title": "Written on the heavenly tablets — life for life, measure for measure",
+      "summary_md": "Jubilees grounds the law of bloodguilt not in Sinai-as-novelty but in the heavenly tablets engraved before the deed: *And on this account it is written on the heavenly tables, “Cursed is he who smites his neighbour treacherously, and let all who have seen and heard say, So be it; and the man who has seen and not declared (it), let him be accursed as the other.”* (Jubilees 4:4). Cain's own end seals it — *At the close of this jubilee Cain was killed after him in the same year; for his house fell upon him and he died in the midst of his house, and he was killed by its stones, for with a stone he had killed Abel, and by a stone was he killed in righteous judgment* (Jubilees 4:31) — *For this reason it was ordained on the heavenly tables: “With the instrument with which a man kills his neighbour with the same shall he be killed; after the manner that he wounded him, in like manner shall they deal with him.”* (Jubilees 4:32). It ain't new: the same measure-for-measure justice stands in the Torah, *Breach for breach, eye for eye, tooth for tooth: as he hath caused a blemish in a man, so shall it be done to him again* (Leviticus 24:20) and *And he that killeth any man shall surely be put to death* (Leviticus 24:17) — Torah and the heavenly tablets agree, the covenant's justice eternal, never abolished. Even Cain's protective mark belongs to the same ordered judgment, *And Yahuah (LORD) said unto him, Therefore whosoever slayeth Cain, vengeance shall be taken on him sevenfold. And Yahuah (LORD) set a mark upon Cain, lest any finding him should kill him* (Genesis 4:15).",
+      "anchor_start_v": 4,
+      "anchor_end_v": 32,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 32, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 24, "tgt_v": 20, "tier": "free",
+         "note": "Leviticus 24:20 — *Breach for breach, eye for eye, tooth for tooth: as he hath caused a blemish in a man, so shall it be done to him again.* The Torah carries the same measure-for-measure law Jubilees 4:32 says was ordained on the heavenly tablets."},
+        {"src_ch": 4, "src_v": 31, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 24, "tgt_v": 17, "tier": "free",
+         "note": "Leviticus 24:17 — *And he that killeth any man shall surely be put to death.* Cain killed by stones in Jubilees 4:31 is the life-for-life sentence Torah lays down."},
+        {"src_ch": 4, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 4:15 — *And Yahuah (LORD) said unto him, Therefore whosoever slayeth Cain, vengeance shall be taken on him sevenfold. And Yahuah (LORD) set a mark upon Cain, lest any finding him should kill him.* The Genesis judgment on Cain matches the heavenly-tablet curse of Jubilees 4:4."}
+      ]
+    },
+    {
+      "slug": "jubilees-4-seth-second-seed",
+      "title": "Seth — the second seed raised up, the line kept",
+      "summary_md": "Where Cain's line is cursed, Jubilees keeps the elect seed alive through Seth: *Adam knew his wife again, and she bare him a son, and he called his name Seth; for he said “Elohim (God) has raised up a second seed to us on the earth instead of Abel; for Cain slew him.”* (Jubilees 4:7), and through his son the worship begins, *He began to call on the name of Yahuah (God) on the earth* (Jubilees 4:12). This is Genesis 5 and the close of Genesis 4 retold: *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew* (Genesis 4:25) and *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD)* (Genesis 4:26). The genealogy that carries the seed forward is the very book Jubilees is unrolling, *And Adam lived an hundred and thirty years, and begat a son in his own likeness, after his image; and called his name Seth* (Genesis 5:3) — the seed kept separate and called by the Name, election running through the chosen line. It ain't new.",
+      "anchor_start_v": 7,
+      "anchor_end_v": 12,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 25, "tier": "free",
+         "note": "Genesis 4:25 — *And Adam knew his wife again; and she bare a son, and called his name Seth: For Elohim (God), said she, hath appointed me another seed instead of Abel, whom Cain slew.* Jubilees 4:7 retells the raising up of the second seed almost word for word."},
+        {"src_ch": 4, "src_v": 12, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 4, "tgt_v": 26, "tier": "free",
+         "note": "Genesis 4:26 — *And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD).* The calling on the Name Jubilees 4:12 attributes to Enos is the Genesis source."},
+        {"src_ch": 4, "src_v": 7, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 5, "tgt_v": 3, "tier": "free",
+         "note": "Genesis 5:3 — *And Adam lived an hundred and thirty years, and begat a son in his own likeness, after his image; and called his name Seth.* The genealogy of the kept seed that Jubilees 4:7 is unrolling jubilee by jubilee."}
+      ]
+    },
+    {
+      "slug": "jubilees-4-enoch-scribe-witness",
+      "title": "Enoch — the first scribe, the witness, taken to the Garden",
+      "summary_md": "Jubilees gives Enoch his fullest portrait: the first to learn writing and to read the heavens, the scribe and witness who recounted the appointed times. *And he was the first among men that are born on earth who learnt writing and knowledge and wisdom and who wrote down the signs of heaven according to the order of their months in a book, that men might know the seasons of the years according to the order of their separate months. And he was the first to write a testimony, and he testified to the sons of men among the generations of the earth, and recounted the weeks of the jubilees, and made known to them the days of the years, and set in order the months and recounted the Sabbaths of the years as we made (them) known to him* (Jubilees 4:17). He was taken alive — *And he was taken from amongst the children of men, and we conducted him into the Garden of Eden in majesty and honour, and behold there he writes down the condemnation and judgment of the world, and all the wickedness of the children of men* (Jubilees 4:23). The Torah genealogy says the same in fewer words, *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him* (Genesis 5:24), and the Renewed Covenant confirms the translation, *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God)* (Hebrews 11:5). His office as the prophet of judgment is quoted in the canon itself, *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints* (Jude 1:14). And the live 1 Enoch apparatus shows the very scribe Jubilees describes: *And I Enoch was blessing Yahuah (God) of majesty and the King of the ages, and lo! the Watchers called me—Enoch the scribe—and said to me:* (1 Enoch 12:3) and *And behold a dream came to me, and visions fell upon me, and I saw visions of chastisement, and a voice came to me saying: ‘Speak to the sons of heaven, and reprimand them.’* (1 Enoch 13:8). It ain't new — the calendar of the heavenly tablets, the months and Sabbaths of the years, is the same Appointed Times engraved before the patriarchs ever kept them.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 25,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 17, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 5, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 5:24 — *And Enoch walked with Elohim (God): and he was not; for Elohim (God) took him.* The Torah's terse note is what Jubilees 4:23 expands into Enoch being conducted into the Garden of Eden."},
+        {"src_ch": 4, "src_v": 23, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 5, "tier": "free",
+         "note": "Hebrews 11:5 — *By faith Enoch was translated that he should not see death; and was not found, because Elohim (God) had translated him: for before his translation he had this testimony, that he pleased Elohim (God).* The Renewed Covenant confirms the taking-alive Jubilees 4:23 narrates."},
+        {"src_ch": 4, "src_v": 17, "tgt_edition": "canon", "tgt_book": "jude", "tgt_ch": 1, "tgt_v": 14, "tier": "free",
+         "note": "Jude 1:14 — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints.* The canon itself names Enoch the testifying prophet Jubilees 4:17 calls the first to write a testimony."},
+        {"src_ch": 4, "src_v": 17, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 12, "tgt_v": 3, "tier": "extras",
+         "note": "1 Enoch 12:3 — *And I Enoch was blessing Yahuah (God) of majesty and the King of the ages, and lo! the Watchers called me—Enoch the scribe—and said to me:* The living 1 Enoch text shows the scribe-of-righteousness office Jubilees 4:17 ascribes to him."},
+        {"src_ch": 4, "src_v": 23, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 13, "tgt_v": 8, "tier": "extras",
+         "note": "1 Enoch 13:8 — *And behold a dream came to me, and visions fell upon me, and I saw visions of chastisement, and a voice came to me saying: ‘Speak to the sons of heaven, and reprimand them.’* The vision-and-witness commission of Jubilees 4:23 unfolds in the parallel Enoch apparatus."}
+      ]
+    },
+    {
+      "slug": "jubilees-4-watchers-descended-jared",
+      "title": "The Watchers descended in the days of Jared",
+      "summary_md": "Jubilees fixes the descent of the Watchers to a generation in Adam's line: *and he called his name Jared; for in his days the angels of Yahuah (God) descended on the earth, those who are named the Watchers, that they should instruct the children of men, and that they should do judgment and uprightness on the earth* (Jubilees 4:15) — and what they became is what Enoch testified against, *And he testified to the Watchers, who had sinned with the daughters of men; for these had begun to unite themselves, so as to be defiled, with the daughters of men, and Enoch testified against (them) all* (Jubilees 4:22). This is the Genesis 6 corruption read alongside its source, *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose* (Genesis 6:2). The live 1 Enoch apparatus ties the descent to the very name Jared, *And they were in all two hundred; who descended in the days of Yered (Jared) on the summit of Mount Hermon, and they called it Mount Hermon, because they had sworn and bound themselves by mutual imprecations upon it* (1 Enoch 6:6). The seed-war is one story across the witnesses — the defilement of the daughters of men, the Watchers' sin, and the Flood that answers it, all engraved on the heavenly tablets long before Genesis was written down. It ain't new.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 22,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 4, "src_v": 22, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 6:2 — *That the sons of Elohim (God) saw the daughters of men that they were fair; and they took them wives of all which they chose.* The Genesis source of the Watchers defiling themselves with the daughters of men that Enoch testifies against in Jubilees 4:22."},
+        {"src_ch": 4, "src_v": 15, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 6, "tgt_v": 6, "tier": "extras",
+         "note": "1 Enoch 6:6 — *And they were in all two hundred; who descended in the days of Yered (Jared) on the summit of Mount Hermon, and they called it Mount Hermon, because they had sworn and bound themselves by mutual imprecations upon it.* The 1 Enoch apparatus fixes the Watchers' descent to the same generation of Jared that Jubilees 4:15 names."}
+      ]
+    }
+  ]
+}

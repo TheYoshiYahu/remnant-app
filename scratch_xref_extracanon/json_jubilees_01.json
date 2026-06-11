@@ -1,0 +1,81 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 1,
+  "session": "session251",
+  "tag": "ju01",
+  "base_band": 53000,
+  "threads": [
+    {
+      "slug": "jubilees-1-sinai-tables-retold",
+      "title": "Moses on the Mount — the Exodus account retold",
+      "summary_md": "Jubilees opens at Sinai, retelling the Exodus narrative almost word for word: *\"And it came to pass in the first year of the exodus of the children of Yashar'el (Israel) out of Egypt, in the third month... 'Come up to Me on the Mount, and I will give you two tables of stone of the law and of the commandment, which I have written, that you may teach them.'\"* (Jubilees 1:1). This is no new revelation — it is Exodus quoted back. The summons and the written tables are Exodus 24:12, the third month is Exodus 19:1, and the six days of cloud with the seventh-day call is Exodus 24:16. **It ain't new** — the Book of Division is Sinai itself, told again.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 1, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 24, "tgt_v": 12, "tier": "free", "note": "Exodus 24:12 — *And Yahuah (LORD) said unto Moses, Come up to me into the mount, and be there: and I will give thee tables of stone, and a law, and commandments which I have written; that thou mayest teach them.* Jubilees 1:1 reproduces this summons verbatim — the tables, the writing, and the charge to teach are the Exodus original, not a new word."},
+        {"src_ch": 1, "src_v": 1, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 19, "tgt_v": 1, "tier": "free", "note": "Exodus 19:1 — *In the third month, when the children of Yashar'el (Israel) were gone forth out of the land of Egypt, the same day came they into the wilderness of Sinai.* Jubilees 1:1 dates the dictation to that same third month of the first year of the exodus, anchoring its calendar in the Sinai chronology of Exodus."},
+        {"src_ch": 1, "src_v": 2, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 24, "tgt_v": 16, "tier": "free", "note": "Exodus 24:16 — *And the glory of Yahuah (LORD) abode upon mount Sinai, and the cloud covered it six days: and the seventh day he called unto Moses out of the midst of the cloud.* Jubilees 1:2-3 retells exactly this — the glory abiding, the six-day cloud, and the seventh-day call out of its midst."},
+        {"src_ch": 1, "src_v": 4, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 34, "tgt_v": 28, "tier": "free", "note": "Exodus 34:28 — *And he was there with Yahuah (LORD) forty days and forty nights; he did neither eat bread, nor drink water. And he wrote upon the tables the words of the covenant, the ten commandments.* Jubilees 1:4 keeps the forty days and forty nights of Exodus while widening the dictation to the whole division of days — the same Mount, the same scribe."}
+      ]
+    },
+    {
+      "slug": "jubilees-1-apostasy-feasts-forgotten",
+      "title": "They will forsake My festivals and sabbaths — the curse foretold",
+      "summary_md": "Yahuah foretells the apostasy in Jubilees' own calendar idiom: *\"because they have forsaken My ordinances and My commandments, and the festivals of My covenant, and My sabbaths, and My holy place\"* (Jubilees 1:10), and *\"they will... go astray as to new moons, and sabbaths, and festivals, and jubilees, and ordinances\"* (Jubilees 1:14). What is forsaken is the **Appointed Times** — the moedim, the sabbaths, the new moons. This is the very curse Leviticus 26 spelled out for despising the covenant, and Deuteronomy 30:1 names it as the blessing-and-curse set before them. The feasts are not later inventions to be discarded; they are the covenant itself, and to lose them is the exile.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 10, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 26, "tgt_v": 31, "tier": "free", "note": "Leviticus 26:31 — *And I will make your cities waste, and bring your sanctuaries unto desolation, and I will not smell the savour of your sweet odours.* Jubilees 1:10 echoes this covenant curse — forsaking the holy place and sanctuary brings the desolation Leviticus 26 foretold."},
+        {"src_ch": 1, "src_v": 13, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 26, "tgt_v": 33, "tier": "free", "note": "Leviticus 26:33 — *And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste.* Jubilees 1:13 — *I shall scatter them amongst the nations* — is the same scattering-curse of Leviticus 26, the covenant penalty for transgression."},
+        {"src_ch": 1, "src_v": 14, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 26, "tgt_v": 2, "tier": "free", "note": "Leviticus 26:2 — *Ye shall keep my sabbaths, and reverence my sanctuary: I am Yahuah (LORD).* The sabbaths and festivals Jubilees 1:14 says they will forget are the standing commandment of Leviticus 26 — the Appointed Times that ground the whole covenant blessing."},
+        {"src_ch": 1, "src_v": 9, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 1, "tier": "free", "note": "Deuteronomy 30:1 — *And it shall come to pass, when all these things are come upon thee, the blessing and the curse, which I have set before thee, and thou shalt call them to mind among all the nations, whither Yahuah Elohayka (the LORD thy God) hath driven thee,* Jubilees 1:9 walks the same path — forsaking the commandments and walking after the nations triggers the curse Deuteronomy 30 sets before them."}
+      ]
+    },
+    {
+      "slug": "jubilees-1-circumcise-heart-restoration",
+      "title": "I will circumcise their hearts — the two-house restoration",
+      "summary_md": "After the exile comes the turning: *\"And after this they will turn to Me from amongst the nations with all their heart... and I shall gather them from amongst all the nations\"* (Jubilees 1:15), and the promise deepens: *\"I shall circumcise the foreskin of their heart and the foreskin of the heart of their seed, and I shall create in them a holy spirit\"* (Jubilees 1:23). This is the regathering and heart-circumcision of **Deuteronomy 30:3-6** word for word; the **new covenant written on the inward parts** of Jeremiah 31:33; the **new heart and new spirit** of Ezekiel 36:26. Paul carries it forward — the true circumcision *is that of the heart, in the spirit* (Romans 2:29). The two houses gathered, the heart cut, the Spirit given: **it ain't new** — Jubilees is quoting the prophets of restoration.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 25,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 15, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 3, "tier": "free", "note": "Deuteronomy 30:3 — *That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee.* Jubilees 1:15 — *I shall gather them from amongst all the nations* — is this regathering promise, the two-house ingathering out of every nation."},
+        {"src_ch": 1, "src_v": 23, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 6, "tier": "free", "note": "Deuteronomy 30:6 — *And Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live.* Jubilees 1:23 follows it precisely — the heart and the seed's heart circumcised — the restoration is the heart-cutting Moses already promised."},
+        {"src_ch": 1, "src_v": 23, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 36, "tgt_v": 26, "tier": "free", "note": "Ezekiel 36:26 — *A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh.* Jubilees 1:23 — *I shall create in them a holy spirit* — is the new heart and new spirit of Ezekiel's restoration vision."},
+        {"src_ch": 1, "src_v": 24, "tgt_edition": "canon", "tgt_book": "jeremiah", "tgt_ch": 31, "tgt_v": 33, "tier": "free", "note": "Jeremiah 31:33 — *But this shall be the covenant that I will make with the house of Yashar'el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* Jubilees 1:24 — *they will fulfil My commandments, and I shall be their Father and they will be My children* — is the new covenant with the law in the inward parts."},
+        {"src_ch": 1, "src_v": 23, "tgt_edition": "canon", "tgt_book": "romans", "tgt_ch": 2, "tgt_v": 29, "tier": "free", "note": "Romans 2:29 — *But he is a Yahudi (Jew), which is one inwardly; and circumcision is that of the heart, in the spirit, and not in the letter; whose praise is not of men, but of Elohim (God).* Paul names the very thing Jubilees 1:23 promises — circumcision of the heart by the Spirit — confirming the restoration was always the inward cutting, not a new law."}
+      ]
+    },
+    {
+      "slug": "jubilees-1-dwell-among-them",
+      "title": "I will dwell with them and be their Elohim — tabernacle restored",
+      "summary_md": "The restoration culminates in indwelling: *\"And I shall build My sanctuary in their midst, and I shall dwell with them, and I shall be their Elohim (God) and they will be My people in truth and righteousness\"* (Jubilees 1:17). This is the covenant formula of **Leviticus 26:11-12** — *I will set my tabernacle among you... and will be your Elohim, and ye shall be my people* — gathered up into Ezekiel's restored land (Ezekiel 36:28) and carried to its end in the new Jerusalem, where *the tabernacle of Elohim is with men* (Revelation 21:3). The dwelling-promise threads unbroken from Sinai to Zion.",
+      "anchor_start_v": 17,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 17, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 26, "tgt_v": 11, "tier": "free", "note": "Leviticus 26:11 — *And I will set my tabernacle among you: and my soul shall not abhor you.* Jubilees 1:17 — *I shall build My sanctuary in their midst, and I shall dwell with them* — repeats the tabernacle-among-you promise of Leviticus 26."},
+        {"src_ch": 1, "src_v": 17, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 26, "tgt_v": 12, "tier": "free", "note": "Leviticus 26:12 — *And I will walk among you, and will be your Elohim (God), and ye shall be my people.* Jubilees 1:17 quotes this covenant formula directly — I shall be their Elohim and they will be My people — the heart of the everlasting covenant."},
+        {"src_ch": 1, "src_v": 17, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 36, "tgt_v": 28, "tier": "free", "note": "Ezekiel 36:28 — *And ye shall dwell in the land that I gave to your fathers; and ye shall be my people, and I will be your Elohim (God).* Jubilees 1:17 sets the same people-and-God bond in the regathered land of Ezekiel's restoration."},
+        {"src_ch": 1, "src_v": 18, "tgt_edition": "canon", "tgt_book": "revelation", "tgt_ch": 21, "tgt_v": 3, "tier": "free", "note": "Revelation 21:3 — *And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God).* Jubilees 1:18 — *I am Yahuah their Elohim* — reaches its consummation here, the eternal dwelling of God with His people."}
+      ]
+    },
+    {
+      "slug": "jubilees-1-heavenly-tablets-election",
+      "title": "The tables of the divisions — heavenly tablets and the elect of Israel",
+      "summary_md": "The chapter closes with the Angel of the Presence taking up *\"the tables of the divisions of the years –from the time of the creation–of the law and of the testimony of the weeks, of the jubilees... for all the elect of Yashar'el (Israel)\"* (Jubilees 1:29), and Moses is told to write *\"from the beginning of creation till My sanctuary has been built among them for all eternity\"* (Jubilees 1:25). This is the **heavenly tablets** motif — history and ordinance pre-written before they unfold — the *book of remembrance written before him* (Malachi 3:16) and the days *written* before there was one of them (Psalm 139:16). Enoch saw the same tablets and read all that was written (1 Enoch 81:1-2). And the gathering is for *the elect of Yashar'el* — the **chosen, special people** of Deuteronomy 7:6, election preceding confession.",
+      "anchor_start_v": 25,
+      "anchor_end_v": 29,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 1, "src_v": 29, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 81, "tgt_v": 1, "tier": "extras", "note": "1 Enoch 81:1 — *And he said unto me: 'Observe, Enoch, these heavenly tablets, And read what is written thereon, And understand every single fact.'* The tables of the divisions Jubilees 1:29 describes are the same heavenly tablets Enoch was shown — the pre-written record of all the years."},
+        {"src_ch": 1, "src_v": 25, "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 3, "tgt_v": 16, "tier": "free", "note": "Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* Jubilees 1:25's charge to write the first and the last echoes the book of remembrance written before Yahuah."},
+        {"src_ch": 1, "src_v": 25, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 139, "tgt_v": 16, "tier": "free", "note": "Psalm 139:16 — *Thine eyes did see my substance, yet being unperfect; and in thy book all my members were written, which in continuance were fashioned, when as yet there was none of them.* The pre-written divisions of days in Jubilees 1:25-29 match the days written in Yahuah's book before any of them existed."},
+        {"src_ch": 1, "src_v": 29, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 7, "tgt_v": 6, "tier": "free", "note": "Deuteronomy 7:6 — *For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth.* The *elect of Yashar'el* gathered in Jubilees 1:29 are the chosen, special people of Deuteronomy 7 — election grounds the restoration."}
+      ]
+    }
+  ]
+}
