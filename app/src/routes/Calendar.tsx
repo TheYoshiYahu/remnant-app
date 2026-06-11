@@ -79,13 +79,19 @@ function readQuery(): {
   open: string | null;
   focus: Date | null;
   at: Date | null;
+  /** True when the URL carries any biblical-reckoning intent — open straight
+   *  into the biblical view, bypassing the Gregorian-first landing. */
+  wantsBiblical: boolean;
 } {
   const q =
     typeof window !== "undefined"
       ? new URLSearchParams(window.location.search)
       : new URLSearchParams();
   const base: BaseLayer = q.get("base") === "hebrew" ? "hebrew" : "gregorian";
-  const reck = { ...DEFAULT_RECKONING };
+  // The ministry follows the dark new moon (conjunction) — so the biblical view
+  // opens on conjunction by default (the position note explains why). Every
+  // reckoning stays selectable; a ?reck= deep-link still overrides this.
+  const reck: ReckoningState = { ...DEFAULT_RECKONING, month: "conjunction" };
   const r = q.get("reck");
   if (r === "conjunction" || r === "crescent" || r === "rabbinic" || r === "enoch") {
     reck.month = r;
@@ -105,7 +111,36 @@ function readQuery(): {
   const at = parseDate(q.get("at"));
   // `at` also seeds the focused month unless an explicit focus is given.
   const focus = parseDate(q.get("focus")) ?? at;
-  return { base, reck, open: q.get("open"), focus, at };
+  // Any biblical-reckoning param (or ?view=biblical) lands straight in the
+  // biblical view; a bare /calendar honors the saved choice (Gregorian-first).
+  const wantsBiblical =
+    q.get("view") === "biblical" ||
+    !!r ||
+    !!orient ||
+    base === "hebrew" ||
+    q.get("compare") === "1" ||
+    q.get("open") === "today" ||
+    q.get("open") === "auto";
+  return { base, reck, open: q.get("open"), focus, at, wantsBiblical };
+}
+
+// localStorage key — remembers the user's choice once they cross into the
+// biblical view, matching the Today hub's Gregorian-first onboarding.
+const BIBLICAL_VIEW_KEY = "cal.biblicalView";
+
+/**
+ * The opening view. Gregorian-first by default (familiar, un-intimidating); a
+ * URL with biblical intent forces the biblical view; otherwise the remembered
+ * choice from localStorage wins.
+ */
+function readBiblicalView(initial: InitialQuery): boolean {
+  if (initial.wantsBiblical) return true;
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem(BIBLICAL_VIEW_KEY) === "1";
+  } catch {
+    return false;
+  }
 }
 
 /**
@@ -185,6 +220,17 @@ export default function Calendar() {
       typeof window !== "undefined" &&
       new URLSearchParams(window.location.search).get("compare") === "1",
   );
+  // Gregorian-first landing. Default false (plain Gregorian) unless the URL
+  // carries biblical intent or the user has crossed over before. The choice is
+  // persisted so the biblical view sticks once chosen.
+  const [biblicalView, setBiblicalView] = useState<boolean>(() => readBiblicalView(initial));
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(BIBLICAL_VIEW_KEY, biblicalView ? "1" : "0");
+    } catch {
+      /* private mode — the choice just won't persist */
+    }
+  }, [biblicalView]);
 
   // Live tick — drives the countdown and keeps "today" honest. Frozen when the
   // view is time-travelled to a fixed instant via ?at=.
@@ -227,32 +273,45 @@ export default function Calendar() {
   return (
     <div className="cal-root min-h-screen bg-[var(--reader-bg)] text-[var(--reader-text)]">
       <main className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-6 sm:py-9">
-        <Header />
-        <ReckoningControls reck={reck} setReck={setReck} notes={todayResult.notes} />
-        <HeroToday
-          reck={reck}
-          result={todayResult}
-          isSabbath={todayIsSabbath}
-          now={now}
-          nextMoed={nextMoed}
-          omer={omer}
-        />
-        <CrescentWatch reck={dReck} result={todayResult} now={now} setReck={setReck} />
-        <LayerGridView
-          grid={grid}
-          base={base}
-          onBase={setBase}
-          onPrev={() => setFocus(grid.prevFocus)}
-          onNext={() => setFocus(grid.nextFocus)}
-          onToday={() => setFocus(new Date())}
-          onSelect={setSelected}
-        />
-        <CompareSection
-          reck={dReck}
-          now={now}
-          open={showCompare}
-          onToggle={() => setShowCompare((v) => !v)}
-        />
+        <Header biblicalView={biblicalView} onPlainGregorian={() => setBiblicalView(false)} />
+        {biblicalView ? (
+          <>
+            <ReckoningControls reck={reck} setReck={setReck} notes={todayResult.notes} />
+            <HeroToday
+              reck={reck}
+              result={todayResult}
+              isSabbath={todayIsSabbath}
+              now={now}
+              nextMoed={nextMoed}
+              omer={omer}
+            />
+            <CrescentWatch reck={dReck} result={todayResult} now={now} setReck={setReck} />
+            <LayerGridView
+              grid={grid}
+              base={base}
+              onBase={setBase}
+              onPrev={() => setFocus(grid.prevFocus)}
+              onNext={() => setFocus(grid.nextFocus)}
+              onToday={() => setFocus(new Date())}
+              onSelect={setSelected}
+            />
+            <CompareSection
+              reck={dReck}
+              now={now}
+              open={showCompare}
+              onToggle={() => setShowCompare((v) => !v)}
+            />
+          </>
+        ) : (
+          <GregorianView
+            grid={grid}
+            onReveal={() => setBiblicalView(true)}
+            onPrev={() => setFocus(grid.prevFocus)}
+            onNext={() => setFocus(grid.nextFocus)}
+            onToday={() => setFocus(new Date())}
+            onSelect={setSelected}
+          />
+        )}
         <footer className="mt-10 border-t border-[var(--reader-rule)] pt-4 text-center font-sans text-xs text-[var(--reader-muted)]">
           Computed locally — offline, for any year — from the biblical-calendar
           engine. Compute, don&rsquo;t scrape.
@@ -269,23 +328,133 @@ export default function Calendar() {
 // Header
 // ───────────────────────────────────────────────────────────────────────
 
-function Header() {
+function Header({
+  biblicalView,
+  onPlainGregorian,
+}: {
+  biblicalView: boolean;
+  onPlainGregorian: () => void;
+}) {
   return (
     <header className="mb-6">
-      <a
-        href="/read"
-        className="font-sans text-xs font-medium uppercase tracking-wider text-[var(--reader-accent)] hover:opacity-80"
-      >
-        ← Back to reading
-      </a>
+      <div className="flex items-center justify-between gap-3">
+        <a
+          href="/read"
+          className="font-sans text-xs font-medium uppercase tracking-wider text-[var(--reader-accent)] hover:opacity-80"
+        >
+          ← Back to reading
+        </a>
+        {biblicalView && (
+          <button type="button" className="cal-view-back" onClick={onPlainGregorian}>
+            ☼ Plain Gregorian view
+          </button>
+        )}
+      </div>
       <h1 className="cal-title mt-3 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
         The Appointed Times
       </h1>
       <p className="mt-1 max-w-2xl font-sans text-sm text-[var(--reader-muted)]">
-        The moedim of Scripture, reckoned every way at once. Toggle the dials —
-        the whole calendar recomputes live.
+        {biblicalView
+          ? "The moedim of Scripture, reckoned every way at once. Toggle the dials — the whole calendar recomputes live."
+          : "A familiar month at a glance — with the appointed times of Scripture one tap away."}
       </p>
     </header>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Gregorian view — the plain, familiar month the calendar OPENS on. No dials,
+// no biblical overlay; just the Gregorian grid with today marked, and one
+// inviting door into the biblical reckonings (the choice is then remembered).
+// ───────────────────────────────────────────────────────────────────────
+
+function GregorianView({
+  grid,
+  onReveal,
+  onPrev,
+  onNext,
+  onToday,
+  onSelect,
+}: {
+  grid: LayerGrid;
+  onReveal: () => void;
+  onPrev: () => void;
+  onNext: () => void;
+  onToday: () => void;
+  onSelect: (c: LayerCell) => void;
+}) {
+  const daysWithItems = useDaysWithItems();
+  // The grid is built Gregorian-base, so `title` is "April 2026" and each
+  // cell's primaryLabel is the Gregorian day-of-month.
+  const gregTitle = new Intl.DateTimeFormat("en-US", {
+    timeZone: "UTC",
+    month: "long",
+    year: "numeric",
+  }).format(grid.cells.find((c) => !c.filler)?.daytime ?? grid.cells[0]?.daytime ?? new Date());
+  return (
+    <>
+      <section className="cal-panel mb-6">
+        <div className="cal-grid-head">
+          <button type="button" className="cal-nav-btn" onClick={onPrev} aria-label="Previous month">
+            ‹
+          </button>
+          <div className="cal-grid-title">
+            <div className="cal-grid-month">{gregTitle}</div>
+            <div className="cal-grid-year">
+              <button type="button" className="cal-today-link" onClick={onToday}>
+                today
+              </button>
+            </div>
+          </div>
+          <button type="button" className="cal-nav-btn" onClick={onNext} aria-label="Next month">
+            ›
+          </button>
+        </div>
+
+        <div className="cal-grid">
+          {WEEKDAYS.map((w) => (
+            <div key={w} className="cal-weekday">
+              {w}
+            </div>
+          ))}
+          {Array.from({ length: grid.leadBlanks }).map((_, i) => (
+            <div key={"blank" + i} className="cal-cell cal-cell-blank" />
+          ))}
+          {grid.cells.map((c) => (
+            <button
+              key={c.key}
+              type="button"
+              onClick={() => onSelect(c)}
+              aria-label={`Open ${gregTitle} ${c.primaryLabel}`}
+              className={
+                "cal-cell cal-cell-btn cal-cell-plain" +
+                (c.filler ? " cal-cell-filler" : "") +
+                (c.isToday ? " cal-cell-today" : "")
+              }
+            >
+              <div className="cal-cell-top">
+                <span className="cal-cell-day">{c.primaryLabel}</span>
+              </div>
+              {daysWithItems.has(civilDayId(c.daytime)) && (
+                <span className="cal-cell-dot" aria-label="has planner items" />
+              )}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <button type="button" className="cal-reveal" onClick={onReveal}>
+        <span className="cal-reveal-moon">☾</span>
+        <span className="cal-reveal-text">
+          <span className="cal-reveal-title">View the biblical calendars</span>
+          <span className="cal-reveal-sub">
+            See the appointed times, the weekly Sabbath, the Omer count, and the
+            new-moon reckonings laid over this month.
+          </span>
+        </span>
+        <span className="cal-reveal-arrow">→</span>
+      </button>
+    </>
   );
 }
 
@@ -370,6 +539,26 @@ const MONTH_DIALS: { key: MonthKind; label: string; register: string }[] = [
   { key: "enoch", label: "Enoch · 364", register: "emerald" },
 ];
 
+/**
+ * The ministry's position — a gentle, confident statement of conviction (not a
+ * disclaimer). The Remnant of Promise keeps the dark new moon (conjunction);
+ * every other reckoning stays selectable, for unity and inclusion. Techelet
+ * spine, gold ✦ glyph, emerald on the welcome — the calendar palette, no grey.
+ */
+function MinistryCreed() {
+  return (
+    <p className="cal-creed">
+      <span className="cal-creed-mark">✦</span>
+      <span>
+        <strong className="cal-creed-lead">
+          The Remnant of Promise follows the dark new moon (conjunction)
+        </strong>{" "}
+        — <span className="cal-creed-welcome">but we offer all calendars for unity and inclusion.</span>
+      </span>
+    </p>
+  );
+}
+
 function ReckoningControls({ reck, setReck, notes }: ControlsProps) {
   const set = (patch: Partial<ReckoningState>) => setReck((r) => ({ ...r, ...patch }));
   const isCrescent = reck.month === "crescent";
@@ -391,6 +580,8 @@ function ReckoningControls({ reck, setReck, notes }: ControlsProps) {
             </Pill>
           ))}
         </ControlRow>
+
+        <MinistryCreed />
 
         {isCrescent && (
           <>

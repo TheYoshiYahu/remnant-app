@@ -1343,6 +1343,82 @@ body {
 }
 .cal-cell-sab { font-size: 0.58rem; font-weight: 600; color: var(--cal-ink-soft); letter-spacing: 0.04em; }
 
+/* Gregorian-first landing — the plain view the calendar opens on. ─────────── */
+/* "Plain Gregorian view" return control in the header (biblical view only). */
+.cal-view-back {
+  flex-shrink: 0;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  color: color-mix(in srgb, #93C0FF 90%, white);
+  border: 1px solid color-mix(in srgb, #93C0FF 38%, transparent);
+  background: transparent;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.cal-view-back:hover {
+  border-color: color-mix(in srgb, #93C0FF 70%, transparent);
+  background: color-mix(in srgb, #93C0FF 10%, transparent);
+}
+/* Plain Gregorian day cell — just the number, today, and a planner dot. */
+.cal-cell-plain { justify-content: flex-start; }
+.cal-cell-plain .cal-cell-day { font-size: 1.05rem; }
+/* The one inviting door from the plain view into the biblical reckonings. A
+   moedim-toned banner button (techelet body, gold moon, emerald welcome). */
+.cal-reveal {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 0.9rem 1.05rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  border: 1px solid color-mix(in srgb, #93C0FF 36%, transparent);
+  border-left: 3px solid color-mix(in srgb, #FCECAF 60%, transparent);
+  background:
+    radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, #1A6FE5 18%, transparent) 0%, transparent 60%),
+    var(--cal-surface);
+  box-shadow: inset 0 1px 0 rgba(147, 192, 255, 0.1), 0 2px 12px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+.cal-reveal:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, #93C0FF 60%, transparent);
+  box-shadow: inset 0 1px 0 rgba(147, 192, 255, 0.14), 0 0 18px color-mix(in srgb, #1A6FE5 30%, transparent);
+}
+.cal-reveal-moon { font-size: 1.5rem; line-height: 1; color: var(--cal-gold); text-shadow: 0 0 12px color-mix(in srgb, #FCECAF 60%, transparent); }
+.cal-reveal-text { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; }
+.cal-reveal-title { font-size: 0.95rem; font-weight: 700; color: #FFF8E1; }
+.cal-reveal-sub { font-size: 0.76rem; line-height: 1.45; color: var(--cal-ink-soft); }
+.cal-reveal-arrow { font-size: 1.1rem; color: var(--cal-emerald); text-shadow: 0 0 10px color-mix(in srgb, #2EFFA1 50%, transparent); }
+
+/* The ministry's position note — a confident statement, not a disclaimer.
+   Techelet strip + gold ✦ glyph + emerald welcome clause. NO grey. */
+.cal-creed {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.15rem 0 0.1rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  border: 1px solid color-mix(in srgb, #93C0FF 26%, transparent);
+  border-left: 3px solid color-mix(in srgb, #FCECAF 60%, transparent);
+  background:
+    radial-gradient(140% 160% at 0% 0%, color-mix(in srgb, #1A6FE5 16%, transparent) 0%, transparent 62%),
+    color-mix(in srgb, #0A2D84 20%, transparent);
+  color: #E6F1FF;
+}
+.cal-creed-mark { color: var(--cal-gold); flex-shrink: 0; text-shadow: 0 0 10px color-mix(in srgb, #FCECAF 55%, transparent); }
+.cal-creed-lead { color: #FFF8E1; font-weight: 700; }
+.cal-creed-welcome { color: var(--cal-emerald); }
+
 .cal-legend { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px solid var(--cal-edge); }
 .cal-legend-item { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; font-weight: 600; }
 .cal-legend-dot { width: 0.55rem; height: 0.55rem; border-radius: 999px; display: inline-block; }
