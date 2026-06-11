@@ -1,0 +1,94 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 34,
+  "session": "session251",
+  "tag": "ju34",
+  "base_band": 53825,
+  "threads": [
+    {
+      "slug": "jubilees-34-amorite-kings-sword-and-bow",
+      "title": "The seven Amorite kings — the portion taken by sword and bow",
+      "summary_md": "Jubilees opens this chapter with a war Genesis names only in passing: *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey* (Jubilees 34:2). Jacob arms his house — *he and his three sons and all the servants of his father, and his own servants, and he went against them with six thousand men, who carried swords. And he slew them in the pastures of Shechem* (Jubilees 34:6). This is the hidden backstory behind Jacob's deathbed word to Joseph, *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow* (Genesis 48:22). It ain't new — Jubilees fills in the very battle Genesis presumes its readers already know.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 34, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 48, "tgt_v": 22, "tier": "free",
+         "note": "Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* Jacob's dying word names the Amorite war by sword and bow that Jubilees 34:2-6 narrates in full."},
+        {"src_ch": 34, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 48, "tgt_v": 21, "tier": "free",
+         "note": "Genesis 48:21 — *And Yashar'el (Israel) said unto Joseph, Behold, I die: but Elohim (God) shall be with you, and bring you again unto the land of your fathers.* The same Jacob who slew the Amorites in the pastures of Shechem (Jubilees 34:6) blesses Joseph with the portion he won there."}
+      ]
+    },
+    {
+      "slug": "jubilees-34-joseph-sold-into-egypt",
+      "title": "Joseph sold into Egypt — the patriarchs moved with envy",
+      "summary_md": "Jubilees compresses the whole of Genesis 37 into a single verse: *And they dealt treacherously with him, and formed a plot against him to slay him, but changing their minds, they sold him to Ishmaelite merchants, and they brought him down into Egypt, and they sold him to Potiphar* (Jubilees 34:11). Genesis tells it slowly — *Come, and let us sell him to the Ishmeelites, and let not our hand be upon him; for he is our brother and our flesh. And his brethren were content* (Genesis 37:27), and *they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt* (Genesis 37:28). Stephen reads the meaning aloud before the council — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9) — and the Psalmist sings it as the hand of Yahuah turning evil to deliverance: *He sent a man before them, even Joseph, who was sold for a servant* (Psalm 105:17). The righteous one cast down into the pit and raised to save many is a Messiah type, and it ain't new.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 34, "src_v": 11, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 28, "tier": "free",
+         "note": "Genesis 37:28 — *Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt.* The sale to the Ishmaelite merchants of Jubilees 34:11 is the very act Genesis records, twenty pieces of silver and all."},
+        {"src_ch": 34, "src_v": 11, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 27, "tier": "free",
+         "note": "Genesis 37:27 — *Come, and let us sell him to the Ishmeelites, and let not our hand be upon him; for he is our brother and our flesh. And his brethren were content.* This is the change of mind from murder to sale that Jubilees 34:11 compresses into 'changing their minds, they sold him to Ishmaelite merchants.'"},
+        {"src_ch": 34, "src_v": 11, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 9, "tier": "free",
+         "note": "Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him.* Stephen names the envy beneath the treachery of Jubilees 34:11 and answers it with the refrain that Elohim was with the one cast down."},
+        {"src_ch": 34, "src_v": 10, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 17, "tier": "free",
+         "note": "Psalm 105:17 — *He sent a man before them, even Joseph, who was sold for a servant.* The errand to his brothers in Jubilees 34:10 is, in the Psalmist's reading, Yahuah sending a man ahead to save the house — the righteous one raised from the pit, a Messiah type."}
+      ]
+    },
+    {
+      "slug": "jubilees-34-bloodied-coat-jacob-mourns",
+      "title": "The bloodied coat and Jacob's refusal to be comforted",
+      "summary_md": "The brothers stage the lie exactly as Genesis tells it: *And the sons of Jacob slaughtered a kid, and dipped the coat of Joseph in the blood, and sent (it) to Jacob their father* (Jubilees 34:11) — *And they took Joseph's coat, and killed a kid of the goats, and dipped the coat in the blood* (Genesis 37:31). Jacob's grief in Jubilees, *An evil beast has devoured Joseph* (Jubilees 34:13), is the very cry Genesis records: *It is my son's coat; an evil beast hath devoured him; Joseph is without doubt rent in pieces* (Genesis 37:33). And the father who *refused to be comforted for his son* (Jubilees 34:14) is the same broken Jacob of *but he refused to be comforted; and he said, For I will go down into the grave unto my son mourning* (Genesis 37:35). It ain't new — the retelling sits exactly atop its source.",
+      "anchor_start_v": 11,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 34, "src_v": 11, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 31, "tier": "free",
+         "note": "Genesis 37:31 — *And they took Joseph's coat, and killed a kid of the goats, and dipped the coat in the blood.* The slaughtered kid and the dipped coat of Jubilees 34:11 match Genesis stitch for stitch."},
+        {"src_ch": 34, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 33, "tier": "free",
+         "note": "Genesis 37:33 — *And he knew it, and said, It is my son's coat; an evil beast hath devoured him; Joseph is without doubt rent in pieces.* Jacob's word 'An evil beast has devoured Joseph' in Jubilees 34:13 is the same cry Genesis puts in his mouth over the bloodied coat."},
+        {"src_ch": 34, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 35, "tier": "free",
+         "note": "Genesis 37:35 — *And all his sons and all his daughters rose up to comfort him; but he refused to be comforted; and he said, For I will go down into the grave unto my son mourning. Thus his father wept for him.* The sons and daughter who rise to comfort him and the father who refuses in Jubilees 34:14 are drawn straight from this verse."},
+        {"src_ch": 34, "src_v": 16, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 37, "tgt_v": 35, "tier": "free",
+         "note": "Genesis 37:35 — *And all his sons and all his daughters rose up to comfort him; but he refused to be comforted; and he said, For I will go down into the grave unto my son mourning. Thus his father wept for him.* Jacob's vow in Jubilees 34:16, 'Let me go down to the grave mourning for my son,' echoes Genesis word for word."}
+      ]
+    },
+    {
+      "slug": "jubilees-34-yom-kippur-grounded-in-jacobs-mourning",
+      "title": "The Day of Atonement grounded in Jacob's mourning — it ain't new",
+      "summary_md": "Here is Jubilees' signature move: the tenth of the seventh month, the day the bloodied coat reached Jacob, becomes the eternal Day of Atonement. *For this reason it is ordained for the children of Yashar'el (Israel) that they should afflict themselves on the tenth of the seventh month... that they should make atonement for themselves thereon with a young goat on the tenth of the seventh month, once a year, for their sins* (Jubilees 34:18). The feast is not a later Jewish invention — Jubilees roots it in the patriarchs and the heavenly tablets, the same statute Leviticus engraves: *And this shall be a statute for ever unto you: that in the seventh month, on the tenth day of the month, ye shall afflict your souls* (Leviticus 16:29), *For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before Yahuah (LORD)* (Leviticus 16:30), and *Also on the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation unto you; and ye shall afflict your souls* (Leviticus 23:27). The young goat, the affliction, the once-a-year cleansing — Jubilees 34:19 says they cleanse themselves 'on that day once a year' — all of it is Yom Kippur, kept from the fathers forward. It ain't new.",
+      "anchor_start_v": 18,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 34, "src_v": 18, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 16, "tgt_v": 29, "tier": "free",
+         "note": "Leviticus 16:29 — *And this shall be a statute for ever unto you: that in the seventh month, on the tenth day of the month, ye shall afflict your souls, and do no work at all, whether it be one of your own country, or a stranger that sojourneth among you.* The very date and the affliction Jubilees 34:18 ordains is the eternal Yom Kippur statute of the Torah."},
+        {"src_ch": 34, "src_v": 18, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 16, "tgt_v": 30, "tier": "free",
+         "note": "Leviticus 16:30 — *For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before Yahuah (LORD).* The 'atonement... for their sins' of Jubilees 34:18 is this cleansing-from-all-sins of the Day of Atonement."},
+        {"src_ch": 34, "src_v": 18, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 23, "tgt_v": 27, "tier": "free",
+         "note": "Leviticus 23:27 — *Also on the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation unto you; and ye shall afflict your souls, and offer an offering made by fire unto Yahuah (LORD).* Leviticus names the tenth of the seventh month a day of atonement — the appointed time Jubilees 34:18 grounds in the patriarchs, not a late invention."},
+        {"src_ch": 34, "src_v": 19, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 23, "tgt_v": 29, "tier": "free",
+         "note": "Leviticus 23:29 — *For whatsoever soul it be that shall not be afflicted in that same day, he shall be cut off from among his people.* The grief and cleansing 'once a year' that Jubilees 34:19 ordains carries the same weight the Torah gives the affliction of this day."}
+      ]
+    },
+    {
+      "slug": "jubilees-34-the-wives-seed-kept-holy",
+      "title": "The wives of the twelve — the seed kept, the nations warned off",
+      "summary_md": "Jubilees closes by naming the wives of Jacob's sons: *the name of Levi's wife is Mêlkâ, of the daughters of Aram, of the seed of the sons of Terah... and the name of Joseph's wife, Asenath, the Egyptian* (Jubilees 34:19), and *And Simeon repented, and took a second wife from Mesopotamia as his brothers* (Jubilees 34:21). The roster is not idle genealogy — it marks who married within the line of Terah and who took Canaanite wives, the very concern the patriarchs guarded: *that thou shalt not take a wife unto my son of the daughters of the Canaanites, among whom I dwell* (Genesis 24:3), and *Thou shalt not take a wife of the daughters of Canaan* (Genesis 28:1). Jubilees itself makes the law explicit and writes it on the heavenly tablets — *And do you, Moses, command the children of Yashar'el (Israel)... not to give their daughters to the nations, and not to take for their sons any of the daughters of the nations, for this is abominable before Yahuah (God)* (Jubilees 30:11). This is the framework's paternal-seed separation — election keeping the seed holy, not racism, not a church replacing Israel. Simeon's repentance and second wife from Mesopotamia is the line turning back toward the kept seed.",
+      "anchor_start_v": 19,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 34, "src_v": 19, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 24, "tgt_v": 3, "tier": "free",
+         "note": "Genesis 24:3 — *And I will make thee swear by Yahuah (LORD), the Elohim (God) of heaven, and the Elohim (God) of the earth, that thou shalt not take a wife unto my son of the daughters of the Canaanites, among whom I dwell.* Abraham's oath frames Jubilees 34:19's careful naming of which wives were Canaanite and which were of the line of Terah."},
+        {"src_ch": 34, "src_v": 19, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 28, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 28:1 — *And Isaac called Jacob, and blessed him, and charged him, and said unto him, Thou shalt not take a wife of the daughters of Canaan.* Isaac's charge to Jacob is the seed-kept concern that the wife-roster of Jubilees 34:19 quietly measures."},
+        {"src_ch": 34, "src_v": 21, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 30, "tgt_v": 11, "tier": "extras",
+         "note": "Jubilees 30:11 — *And do you, Moses, command the children of Yashar'el (Israel) and exhort them not to give their daughters to the nations, and not to take for their sons any of the daughters of the nations, for this is abominable before Yahuah (God)...* Simeon's repentance and second wife from Mesopotamia in Jubilees 34:21 turns back toward this law of the kept seed, written on the heavenly tablets."}
+      ]
+    }
+  ]
+}
