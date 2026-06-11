@@ -1,3 +1,4 @@
+import DownloadsSettings from "../components/DownloadsSettings";
 import { useTheme } from "../lib/theme";
 import { useParentheticalsToggle } from "../lib/useParentheticalsToggle";
 import { useSacredNameMask } from "../lib/useSacredNameMask";
@@ -123,6 +124,11 @@ export default function Settings() {
             ariaLabel="Reader theme"
           />
         </SettingsCard>
+
+        {/* 4. Downloads — Phase 2 offline. Its own self-contained card
+            (resolves the partner tier + content-cache scope internally,
+            since Settings renders outside the Reader). */}
+        <DownloadsSettings />
 
         {/* Scaffolded for follow-up wheels — surfaced as Coming soon
             so partners know the preferences will land here.

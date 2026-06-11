@@ -40,6 +40,7 @@ import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
 import { hasSeenSigninAsk } from "./lib/signinAsk";
 import { hasJwtCookie } from "./lib/display-prefs-sync";
 import { loadStoredNativeToken } from "./lib/native-auth";
+import OfflineDownloadPrompt from "./components/OfflineDownloadPrompt";
 import { readThrough, setContentCacheScope } from "./lib/contentCache";
 import ChapterEndCard from "./components/ChapterEndCard";
 import ReaderDivider from "./components/ReaderDivider";
@@ -443,6 +444,14 @@ export default function App() {
     />
   ) : null;
 
+  // Phase 2 offline — the one-time "download for offline" onboarding banner.
+  // Self-gates on its localStorage seen-flag, restricts itself to the home
+  // surfaces (/today, /read, /), and stays hidden while the welcome modal is
+  // up so the partner faces a single ask at a time.
+  const offlinePrompt = (
+    <OfflineDownloadPrompt pathname={pathname} welcomeOpen={welcomeOpen} />
+  );
+
   if (pathname === "/manage" || pathname.startsWith("/manage")) {
     return <>{welcomeModal}<Manage /></>;
   }
@@ -488,7 +497,7 @@ export default function App() {
   // (Landing) and the post-sign-in flow (AuthCallback) both land here; the
   // Reader stays fully reachable at /read via the prominent "Read" door.
   if (pathname === "/today" || pathname.startsWith("/today")) {
-    return <>{welcomeModal}<Today /></>;
+    return <>{welcomeModal}{offlinePrompt}<Today /></>;
   }
   // S129 — Reader moves from `/` to `/read` so the bare bible
   // subdomain serves the new Landing surface instead of dropping
@@ -498,9 +507,9 @@ export default function App() {
   // position rehydrates from the API/localStorage on mount, so the
   // path swap doesn't break bookmarked positions.
   if (pathname === "/read" || pathname.startsWith("/read")) {
-    return <>{welcomeModal}<Reader /></>;
+    return <>{welcomeModal}{offlinePrompt}<Reader /></>;
   }
-  return <>{welcomeModal}<Landing /></>;
+  return <>{welcomeModal}{offlinePrompt}<Landing /></>;
 }
 
 function Reader() {

@@ -279,3 +279,155 @@ export function readThrough<T>(
     },
   };
 }
+
+// ----- Bulk maintenance (Phase 2 — download / storage view) --------------
+//
+// The "Download for offline" screen needs to (a) report how much is stored
+// and (b) let the partner clear it — per content area or all at once. These
+// helpers operate ONLY on the current scope (the partner's resolved tier),
+// so clearing never touches another tier's entries on a shared device. They
+// degrade to the in-memory store when IndexedDB is unavailable, same as the
+// rest of this module.
+
+/** Decoded form of a composite key — see keyFor(). */
+function parseKey(
+  key: string,
+): { scope: string; version: string; book: string; chapter: string; layer: string } | null {
+  const parts = key.split("|");
+  if (parts.length !== 5) return null;
+  return {
+    scope: parts[0],
+    version: parts[1],
+    book: parts[2],
+    chapter: parts[3],
+    layer: parts[4],
+  };
+}
+
+/** Approx serialized size of a record's payload, in bytes (UTF-8-ish). */
+function approxBytes(data: unknown): number {
+  try {
+    // Byte length, not char length — multi-byte chars (Hebrew/Greek) count
+    // correctly. Falls back to char length if TextEncoder is missing.
+    const json = JSON.stringify(data) ?? "";
+    if (typeof TextEncoder !== "undefined") {
+      return new TextEncoder().encode(json).length;
+    }
+    return json.length;
+  } catch {
+    return 0;
+  }
+}
+
+export interface CacheLayerStat {
+  records: number;
+  bytes: number;
+}
+
+export interface CacheStats {
+  records: number;
+  bytes: number;
+  /** Per-layer breakdown, keyed by ContentLayer. */
+  byLayer: Partial<Record<ContentLayer, CacheLayerStat>>;
+}
+
+/**
+ * Count records + approximate bytes stored under the CURRENT scope, broken
+ * down by layer. Returns zeros in pass-through mode (no scope yet) or on any
+ * storage error — the storage view reads that as "nothing downloaded."
+ */
+export async function getCacheStats(): Promise<CacheStats> {
+  const empty: CacheStats = { records: 0, bytes: 0, byLayer: {} };
+  if (scope === null) return empty;
+
+  const add = (stats: CacheStats, layer: string, bytes: number) => {
+    stats.records += 1;
+    stats.bytes += bytes;
+    const l = layer as ContentLayer;
+    const cur = stats.byLayer[l] ?? { records: 0, bytes: 0 };
+    cur.records += 1;
+    cur.bytes += bytes;
+    stats.byLayer[l] = cur;
+  };
+
+  const db = await openDb();
+  if (!db) {
+    const stats: CacheStats = { records: 0, bytes: 0, byLayer: {} };
+    for (const [key, rec] of memoryStore) {
+      const parsed = parseKey(key);
+      if (!parsed || parsed.scope !== scope) continue;
+      add(stats, parsed.layer, approxBytes(rec.data));
+    }
+    return stats;
+  }
+
+  return new Promise<CacheStats>((resolve) => {
+    const stats: CacheStats = { records: 0, bytes: 0, byLayer: {} };
+    try {
+      const tx = db.transaction(STORE, "readonly");
+      const req = tx.objectStore(STORE).openCursor();
+      req.onsuccess = () => {
+        const cursor = req.result;
+        if (!cursor) {
+          resolve(stats);
+          return;
+        }
+        const rec = cursor.value as CacheRecord<unknown>;
+        const parsed = parseKey(rec.key);
+        if (parsed && parsed.scope === scope) {
+          add(stats, parsed.layer, approxBytes(rec.data));
+        }
+        cursor.continue();
+      };
+      req.onerror = () => resolve(stats);
+    } catch {
+      resolve(stats);
+    }
+  });
+}
+
+/** Internal: delete every record under the current scope matching `keep`. */
+async function deleteWhere(
+  keep: (parsed: NonNullable<ReturnType<typeof parseKey>>) => boolean,
+): Promise<void> {
+  if (scope === null) return;
+  const db = await openDb();
+  if (!db) {
+    for (const key of [...memoryStore.keys()]) {
+      const parsed = parseKey(key);
+      if (parsed && parsed.scope === scope && keep(parsed)) memoryStore.delete(key);
+    }
+    return;
+  }
+  return new Promise<void>((resolve) => {
+    try {
+      const tx = db.transaction(STORE, "readwrite");
+      const store = tx.objectStore(STORE);
+      const req = store.openCursor();
+      req.onsuccess = () => {
+        const cursor = req.result;
+        if (!cursor) return; // tx.oncomplete resolves
+        const rec = cursor.value as CacheRecord<unknown>;
+        const parsed = parseKey(rec.key);
+        if (parsed && parsed.scope === scope && keep(parsed)) cursor.delete();
+        cursor.continue();
+      };
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => resolve();
+      tx.onabort = () => resolve();
+    } catch {
+      resolve();
+    }
+  });
+}
+
+/** Delete every record for the given layers under the current scope. */
+export async function clearByLayers(layers: ContentLayer[]): Promise<void> {
+  const set = new Set<string>(layers);
+  await deleteWhere((p) => set.has(p.layer));
+}
+
+/** Delete every record under the current scope (all downloaded content). */
+export async function clearAll(): Promise<void> {
+  await deleteWhere(() => true);
+}
