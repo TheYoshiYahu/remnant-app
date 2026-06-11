@@ -4045,6 +4045,1771 @@ SELECT t.id, cr.id, 8, E'*Abram... knew Yahuah (the Lord) from three years old..
  WHERE t.slug='genesis-11-terah-took-abram-from-ur-the-call-out-of-idolatry'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_genesis_12.sql (Genesis 12) -----
+-- Chapter: Genesis 12 (the call of Abram — the Abrahamic covenant inaugurated; get thee out; I will make of thee a great nation and in thee shall all families of the earth be blessed; Abram obeys and goes; the altars at Shechem and Bethel, calling on the Name; unto thy seed will I give this land; the famine, Egypt, Sarai taken by Pharaoh, Yahuah plagues Pharaoh's house)
+-- Tag: ge12   Temp view: _s301_ge12_lookup
+-- Sort band: base 20275, step 3 -> threads at 20275, 20278, 20281 (3 threads)
+-- Source of EVERY row: 'canon','genesis',12,v
+--
+-- Genesis 12 coverage:
+--   ★★ v.1-3 (Get thee out of thy country, and from thy kindred, and from thy father's house; I will make of thee a great nation, and I will bless thee, and make thy name great; and in thee shall all families of the earth be blessed) — the Abrahamic covenant, the seed-promise begun
+--        NT:     Galatians 3:8 (the scripture, foreseeing that Elohim would justify the heathen through faith, preached before the gospel unto Abraham, In thee shall all nations be blessed); Galatians 3:16 (to thy seed... which is Messiah — the seed singular); Galatians 3:29 (if ye be Messiah's, then are ye Abraham's seed); Acts 3:25 (the children of the covenant... in thy seed shall all the kindreds of the earth be blessed); Hebrews 11:8 (by faith Abraham, when he was called... obeyed) — THREAD 1 (load-bearing)
+--        Extras: Jubilees 12:22 (the call delivered through the angel: Get you up from your country... and in you will all families of the earth be blessed); Jasher 13:23 (Go forth from your land... in you shall the families of the earth be blessed) — THREAD 1
+--        Tanakh: Isaiah 51:2 (Look unto Abraham your father, and unto Sarah... for I called him alone, and blessed him, and increased him); Jeremiah 31:10 (He that scattered Yashar'el will gather him — the seed scattered through the nations, gathered home: the mechanism of the all-families blessing) — THREAD 1
+--   ★ v.4-9 (So Abram departed, as Yahuah had spoken; Lot went with him; into Canaan they came; Yahuah appeared, Unto thy seed will I give this land; he builded an altar at Sichem; removed to Beth-el, builded an altar, and called upon the name of Yahuah) — the obedience, the land-promise to the seed, the first altars, calling on the Name
+--        NT:     Hebrews 11:9 (by faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles); Hebrews 11:10 (he looked for a city which hath foundations, whose builder and maker is Elohim); Acts 7:5 (he gave him none inheritance in it... yet he promised that he would give it to him for a possession, and to his seed after him) — THREAD 2
+--        Extras: Jubilees 13:1 (Abram journeyed from Haran... and proceeded to Shechem); Jubilees 13:7 (he built an altar... and called on the name of Yahuah); Jasher 13:7 (This is the land which I gave to you and to your seed after you forever); Jasher 13:8 (Abram built an altar... and called upon the name of Yahuah); Jasher 13:28 (To your seed will I give this land; and he there built an altar) — THREAD 2
+--        Tanakh: Genesis 15:18 (Unto thy seed have I given this land, from the river of Egypt unto the great river Euphrates — the land-grant confirmed by covenant-cutting); Genesis 22:18 (in thy seed shall all the nations of the earth be blessed; because thou hast obeyed my voice — the oath sealing the call); Psalm 105:8-11 (he hath remembered his covenant... Unto thee will I give the land of Canaan) — THREAD 2
+--   v.10-20 (a famine in the land; Abram went down into Egypt; Sarai a fair woman, taken into Pharaoh's house; Yahuah plagued Pharaoh and his house with great plagues because of Sarai; Pharaoh sends them away) — the seed-bearer preserved; the foreshadow of the later Egypt descent and the exodus plagues
+--        NT:     Hebrews 11:11 (through faith also Sara herself received strength to conceive seed... because she judged him faithful who had promised — the womb that carries the promise, here preserved in Pharaoh's house) — THREAD 3
+--        Extras: Jubilees 13:11 (Abram went into Egypt... before his wife was torn away from him); Jubilees 13:12 (when Pharaoh seized Sarai... Yahuah plagued Pharaoh and his house with great plagues because of Sarai, Abram's wife) — THREAD 3
+--        Tanakh: Psalm 105:13-15 (He suffered no man to do them wrong: yea, he reproved kings for their sakes; Touch not mine anointed, and do my prophets no harm — the covenant line shielded against kings, this very episode read as a pattern) — THREAD 3
+--        Note: the Egypt-descent / Pharaoh-plagued episode is the SEED of the later Exodus pattern (the chosen line goes down to Egypt, is endangered, and Yahuah strikes Pharaoh with plagues to deliver them); framed here as the preservation of the promise against threat, not yet pulled forward to Exodus 12 as a member (that fulfilment belongs to the Genesis 15:13 / Exodus chapters proper). Recorded so no library is silently skipped.
+--
+-- Threads (slug — target libraries):
+--   1. genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed — NT (Galatians, Acts, Hebrews) + Extras (Jubilees, Jasher) + Tanakh (Isaiah, Jeremiah) [extras] (CENTERPIECE)
+--   2. genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name — NT (Hebrews, Acts) + Extras (Jubilees, Jasher) + Tanakh (Genesis, Psalm) [extras]
+--   3. genesis-12-the-seed-bearer-preserved-sarai-pharaoh-and-the-plagues — NT (Hebrews) + Extras (Jubilees) + Tanakh (Psalm) [extras]
+--
+-- Framing notes:
+--   ★★ THE CALL OF ABRAM — ALL FAMILIES BLESSED IN THE SEED (THREAD 1, load-bearing; the careful 12:3 framing):
+--   The promise *in thee shall all families of the earth be blessed* (12:3) is NOT the false-inclusion graft
+--   of non-seed peoples into Yashar'el by faith-confession. It is the seed-of-promise — narrowed to ONE,
+--   *to thy seed... which is Messiah* (Galatians 3:16) — through whom the blessing flows out; the scattered
+--   covenant line (*He that scattered Yashar'el will gather him*, Jeremiah 31:10) gathered home, and the
+--   nations blessed THROUGH the seed. Galatians 3:8's *all nations be blessed* and Acts 3:25's *all the
+--   kindreds of the earth* are read in exactly this register: the heathen blessed BY being brought into the
+--   one seed (those who *be of faith are blessed with faithful Abraham*, Gal 3:9; *if ye be Messiah's, then
+--   are ye Abraham's seed, and heirs according to the promise*, Gal 3:29) — incorporation into the seed-line,
+--   never replacement of it, never a parallel people grafted in by confession alone. The seed is singular and
+--   personal (Messiah), and through him the many. Abraham's part is FAITH-THAT-OBEYS: *by faith Abraham, when
+--   he was called... obeyed* (Hebrews 11:8) — the obedience the brief's 1 John 2:3-4 filter requires, not
+--   bare confession. "MAKE THY NAME GREAT" (12:2): Yahuah MAKES the name — the deliberate answer to Babel,
+--   where men said *let us make us a name* (Genesis 11:4) and grasped it by their own brick; here the name is
+--   GIVEN by promise to the one He calls (carried in this Genesis cross-pack at the Gen 11 thread; surfaced
+--   again in the summary here).
+--   ★ UNTO THY SEED THIS LAND — THE ALTARS AND THE NAME (THREAD 2): the land-promise is to the SEED
+--   (*unto thy seed will I give this land*, 12:7), confirmed by covenant-cutting (Genesis 15:18) and sworn by
+--   oath (Genesis 22:18); Abram receives *none inheritance in it* (Acts 7:5) and dwells as a sojourner
+--   *looking for a city which hath foundations* (Hebrews 11:10) — the land-promise held by faith, not yet
+--   possessed. The first altars and the *calling upon the name of Yahuah* (12:8) are the worship the wandering
+--   covenant-man plants in the land.
+--   THE SEED-BEARER PRESERVED (THREAD 3): Sarai — the womb that carries the promise (Hebrews 11:11) — is
+--   protected in Pharaoh's house by the plagues Yahuah brings; Psalm 105:14-15 reads the very episode as the
+--   pattern, *he reproved kings for their sakes; Touch not mine anointed*. The Egypt-descent and Pharaoh-
+--   plagued deliverance are the SEED of the Exodus pattern (recorded in coverage; framed as preservation of
+--   the covenant line against threat).
+--   Jubilees double-written 'jubilees','jubilees'; Jasher double-written 'jasher','jasher'. All extras pulls
+--   verified clean (Jubilees 12-13, Jasher 13 — no apparatus noise in the quoted verses).
+
+CREATE TEMP VIEW _s301_ge12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (CENTERPIECE): get thee out — the call of Abram and the seed in whom all families are blessed
+    ('canon','genesis',12,3,'canon','galatians',3,8,'free',
+      E'*And the scripture, foreseeing that Elohim (God) would justify the heathen through faith, preached before the gospel unto Abraham, saying, In thee shall all nations be blessed* (Galatians 3:8). The word over Abram — *in thee shall all families of the earth be blessed* (Genesis 12:3) — is named here as the gospel preached BEFOREHAND: the heathen are blessed by being justified through the faith of Abraham, brought INTO the one seed-line, not grafted in as a second people. The blessing of all families is the seed of promise flowing out to the nations, never a replacement of the seed by confession.'),
+    ('canon','genesis',12,3,'canon','galatians',3,16,'free',
+      E'*Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ)* (Galatians 3:16). The *thee* of *in thee shall all families of the earth be blessed* (Genesis 12:3) is read with exact care: the promise runs to a SEED, and that seed is singular — *to thy seed, which is Messiah*. All families are blessed through the one seed, the personal Messiah drawn out of the covenant line, and not through any opening of the line to many seeds by another door.'),
+    ('canon','genesis',12,3,'canon','galatians',3,29,'free',
+      E'*And if ye be Messiah''s (Christ''s), then are ye Abraham''s seed, and heirs according to the promise* (Galatians 3:29). How the nations come into the blessing of *in thee shall all families of the earth be blessed* (Genesis 12:3) is told plainly: they become *Abraham''s seed* — incorporated INTO the one seed-line in Messiah, *heirs according to the promise*. The blessing of all families is membership in the seed, the scattered gathered and the heathen brought in, never a parallel people standing beside Yashar''el.'),
+    ('canon','genesis',12,3,'canon','acts',3,25,'free',
+      E'*Ye are the children of the prophets, and of the covenant which Elohim (God) made with our fathers, saying unto Abraham, And in thy seed shall all the kindreds of the earth be blessed* (Acts 3:25). Peter sets the covenant of Genesis 12:3 — *in thee shall all families of the earth be blessed* — before the children of the covenant, and reads it *in thy SEED*: the kindreds of the earth are blessed in the seed of Abraham, the covenant line carried forward to those who are its children, the blessing flowing through the seed to the nations.'),
+    ('canon','genesis',12,1,'canon','hebrews',11,8,'free',
+      E'*By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* (Hebrews 11:8). The call of *Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee* (Genesis 12:1) is answered by faith THAT OBEYS — Abraham *obeyed; and he went out*. The covenant is entered not by confession but by the obedience of faith: he left all and went, *not knowing whither he went*, on the bare word of Yahuah.'),
+    ('canon','genesis',12,1,'jubilees','jubilees',12,22,'extras',
+      E'*"Get you up from your country, and from your kindred and from the house of your father to a land which I shall show you, and I shall make you a great and numerous nation. And I shall bless you And I shall make your name great, And you will be blessed in the earth, And in you will all families of the earth be blessed..."* (Jubilees 12:22). The restored witness delivers the very call of Genesis 12:1-3 — *Get thee out of thy country... and in thee shall all families of the earth be blessed* — word for word, set after Abram has already turned from his fathers'' idols, so the call falls on a man already given wholly to Yahuah.'),
+    ('canon','genesis',12,3,'jasher','jasher',13,23,'extras',
+      E'*Behold, I spoke to you these twenty years back saying, Go forth from your land, from your birth-place and from your father''s house, to the land which I have shown you to give it to you and to your children, for there in that land will I bless you, and make you a great nation, and make your name great, and in you shall the families of the earth be blessed* (Jasher 13:23). The restored witness repeats the covenant of Genesis 12:1-3 and binds it to the SEED — *to give it to you and to your children* — the blessing of *the families of the earth* riding on the line of promise, the made name and the great nation given by Yahuah.'),
+    ('canon','genesis',12,2,'canon','isaiah',51,2,'free',
+      E'*Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him* (Isaiah 51:2). The prophet sends the scattered remnant back to the call of Genesis 12:2 — *I will make of thee a great nation, and I will bless thee* — and reads it as their own origin: Abraham was *called alone* and *blessed and increased*. The great nation is not a metaphor for the world at large; it is the seed of the one man, the covenant people hewn from the rock of Abraham.'),
+    ('canon','genesis',12,3,'canon','jeremiah',31,10,'free',
+      E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). This is the mechanism behind *in thee shall all families of the earth be blessed* (Genesis 12:3): the seed of promise is scattered THROUGH the nations and then gathered home — *He that scattered Yashar''el will gather him* — and the nations, who hear the word and see the gathering, are blessed in and through the regathered seed, not in place of it.')
+    ,
+    -- THREAD 2: unto thy seed will I give this land — the altars and the name
+    ('canon','genesis',12,7,'canon','acts',7,5,'free',
+      E'*And he gave him none inheritance in it, no, not so much as to set his foot on: yet he promised that he would give it to him for a possession, and to his seed after him, when as yet he had no child* (Acts 7:5). When Yahuah said *Unto thy seed will I give this land* (Genesis 12:7), Abram held not a foot of it; Stephen marks the gap — *he gave him none inheritance* — *yet he promised* it to him and *to his seed after him*. The land is the seed''s by promise long before it is possessed, given to a man who *as yet had no child*.'),
+    ('canon','genesis',12,8,'canon','hebrews',11,9,'free',
+      E'*By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise* (Hebrews 11:9). Abram pitching his tent and building altars between Beth-el and Hai (Genesis 12:8) is read as faith''s sojourn: he dwelt *in the land of promise, as in a strange country*, in tents — a man who owned the promise and not the soil, the same promise his son and grandson would inherit.'),
+    ('canon','genesis',12,8,'canon','hebrews',11,10,'free',
+      E'*For he looked for a city which hath foundations, whose builder and maker is Elohim (God)* (Hebrews 11:10). The altar and the tent of Genesis 12:8 — *he builded an altar unto Yahuah (LORD), and called upon the name of Yahuah (LORD)* — belong to a man who looked past the land itself: *he looked for a city which hath foundations, whose builder and maker is Elohim*. The land-promise to the seed opens onto a deeper inheritance the wandering worshipper already sought.'),
+    ('canon','genesis',12,7,'canon','genesis',15,18,'free',
+      E'*In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18). The word *Unto thy seed will I give this land* (Genesis 12:7) is sealed three chapters on by covenant-cutting — *Yahuah made a covenant with Abram* — and the bounds are drawn out, *from the river of Egypt unto the great river Euphrates*. The land-grant to the seed, first spoken at the altar, is now sworn in blood between the pieces.'),
+    ('canon','genesis',12,3,'canon','genesis',22,18,'free',
+      E'*And in thy seed shall all the nations of the earth be blessed; because thou hast obeyed my voice* (Genesis 22:18). The covenant of Genesis 12:3 — *in thee shall all families of the earth be blessed* — is sworn by oath after the binding of Isaac, and now precisely *in thy SEED*: the blessing of all the nations runs through the seed, and the reason given is obedience — *because thou hast obeyed my voice* — the same faith-that-obeys the call began with.'),
+    ('canon','genesis',12,7,'canon','psalms',105,11,'free',
+      E'*Saying, Unto thee will I give the land of Canaan, the lot of your inheritance* (Psalm 105:11). The psalmist gathers the land-promise of Genesis 12:7 into the song of the covenant *remembered for ever* (Psalm 105:8): *Unto thee will I give the land of Canaan, the lot of your inheritance*. What was spoken to Abram at the altar is sung over Yashar''el as their settled, sworn inheritance.'),
+    ('canon','genesis',12,1,'jubilees','jubilees',13,1,'extras',
+      E'*And Abram journeyed from Haran, and he took Sarai, his wife, and Lot his brother Haran''s son, to the land of Canaan, and he came into Asshur, and proceeded to Shechem, and dwelt near a lofty oak* (Jubilees 13:1). The obedience of *So Abram departed, as Yahuah (LORD) had spoken unto him* (Genesis 12:4) and the arrival *unto the place of Sichem* (Genesis 12:6) are carried in the restored witness step for step — Abram journeys from Haran with Sarai and Lot and comes to Shechem.'),
+    ('canon','genesis',12,7,'jubilees','jubilees',13,7,'extras',
+      E'*And he blessed Yahuah (God) who had led him out of Ur of the Chaldees, and had brought him to this land... he built an altar on this mountain, and called on the name of Yahuah (God): "You, the eternal Elohim (God), are my Elohim (God)."* (Jubilees 13:7). The altar of Genesis 12:7-8 — *there builded he an altar unto Yahuah (LORD)... and called upon the name of Yahuah (LORD)* — is given voice in the restored witness: the worship is a confession, *You, the eternal Elohim, are my Elohim*, the covenant-man planting the Name in the land.'),
+    ('canon','genesis',12,7,'jasher','jasher',13,7,'extras',
+      E'*And Yahuah (the Lord) appeared to Abram when he came to the land of Canaan, and said to him, This is the land which I gave to you and to your seed after you forever, and I will make your seed like the stars of heaven, and I will give to your seed for an inheritance all the lands which you see* (Jasher 13:7). The restored witness expands *Unto thy seed will I give this land* (Genesis 12:7): the land is to the seed *forever*, and the seed itself is multiplied *like the stars of heaven* — the land-promise and the seed-promise spoken together at the entering of Canaan.'),
+    ('canon','genesis',12,8,'jasher','jasher',13,8,'extras',
+      E'*And Abram built an altar in the place where Elohim (God) had spoken to him, and Abram there called upon the name of Yahuah (the Lord)* (Jasher 13:8). The first altars and the *calling upon the name of Yahuah* of Genesis 12:7-8 are matched exactly in the restored witness — Abram builds the altar *in the place where Elohim had spoken to him* and calls upon the Name there.'),
+    ('canon','genesis',12,7,'jasher','jasher',13,28,'extras',
+      E'*And Yahuah (the Lord) again appeared to Abram and said, To your seed will I give this land; and he there built an altar to Yahuah (the Lord) who appeared to him, which is still to this day in the plains of Mamre* (Jasher 13:28). The restored witness echoes Genesis 12:7 nearly word for word — *To your seed will I give this land* followed by the building of an altar *to Yahuah who appeared to him* — the appearing, the land-word to the seed, and the altar bound together as in the canon.')
+    ,
+    -- THREAD 3: the seed-bearer preserved — Sarai, Pharaoh, and the plagues
+    ('canon','genesis',12,17,'canon','hebrews',11,11,'free',
+      E'*Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised* (Hebrews 11:11). Sarai taken into Pharaoh''s house (Genesis 12:15) is the womb that must yet *conceive seed* — and when *Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife* (Genesis 12:17), it is the seed-bearer being guarded: the promise hangs on this woman, and Yahuah strikes a king to keep her free for the child of promise.'),
+    ('canon','genesis',12,11,'jubilees','jubilees',13,11,'extras',
+      E'*And Abram went into Egypt in the third year of the week, and he dwelt in Egypt five years before his wife was torn away from him* (Jubilees 13:11). The descent of *Abram went down into Egypt to sojourn there* (Genesis 12:10) and the danger near Egypt''s border (Genesis 12:11-13) are carried in the restored witness — the sojourn in Egypt and the seizing of his wife, *before his wife was torn away from him* — the covenant household imperilled in a foreign land.'),
+    ('canon','genesis',12,17,'jubilees','jubilees',13,12,'extras',
+      E'*And it came to pass when Pharaoh seized Sarai, the wife of Abram, that Yahuah (God) plagued Pharaoh and his house with great plagues because of Sarai, Abram''s wife* (Jubilees 13:12). The restored witness preserves Genesis 12:17 almost verbatim — *Yahuah plagued Pharaoh and his house with great plagues because of Sarai* — confirming the episode as the protection of the seed-bearer: Pharaoh seizes her, and Yahuah''s plagues pry her loose, a first sketch of the Egypt-and-plagues deliverance to come.'),
+    ('canon','genesis',12,17,'canon','psalms',105,14,'free',
+      E'*He suffered no man to do them wrong: yea, he reproved kings for their sakes* (Psalm 105:14). The psalm reads this very episode — *Yahuah (LORD) plagued Pharaoh and his house... because of Sarai* (Genesis 12:17) — as the settled pattern of the covenant line''s protection: while they were *strangers* and *few* in the land, Yahuah *suffered no man to do them wrong* and *reproved kings for their sakes*, Pharaoh among them, struck for laying hold of the promise-bearer.'),
+    ('canon','genesis',12,17,'canon','psalms',105,15,'free',
+      E'*Saying, Touch not mine anointed, and do my prophets no harm* (Psalm 105:15). The plagues on Pharaoh''s house of Genesis 12:17 are the enforcement of this word: Abram and Sarai are *mine anointed* and *my prophets*, the carriers of the covenant, and the king who took the seed-bearer learns by great plagues that to *touch* them is to fall under Yahuah''s own hand.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (CENTERPIECE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed',
+       E'Get thee out — the call of Abram and the seed in whom all families are blessed',
+       E'The covenant of the whole library begins here. *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee* (Genesis 12:1); *And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing* (Genesis 12:2); *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). Read *in thee shall all families of the earth be blessed* with care, against the false-inclusion reading. The blessing to all families is not a second people grafted into Yashar''el by confession; it is the seed of promise — *Now to Abraham and his seed were the promises made. He saith not, And to seeds, as of many; but as of one, And to thy seed, which is Messiah (Christ)* (Galatians 3:16). The seed is singular and personal, and through that one seed the many: *And the scripture, foreseeing that Elohim (God) would justify the heathen through faith, preached before the gospel unto Abraham, saying, In thee shall all nations be blessed* (Galatians 3:8), so that *if ye be Messiah''s (Christ''s), then are ye Abraham''s seed, and heirs according to the promise* (Galatians 3:29) — the heathen are blessed by being brought INTO the seed, not beside it. Peter says the same to the children of the covenant: *in thy seed shall all the kindreds of the earth be blessed* (Acts 3:25). And the mechanism is the scattering and the regathering: *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10) — the covenant line dispersed through the nations and drawn home, the nations blessed in and through the gathered seed. Abram''s part is faith that obeys — *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* (Hebrews 11:8) — and the restored witnesses repeat the call as it fell: *"Get you up from your country... And in you will all families of the earth be blessed"* (Jubilees 12:22); *Go forth from your land... and in you shall the families of the earth be blessed* (Jasher 13:23). Note too the answer to Babel folded into verse 2: where the builders said *let us make us a name* (Genesis 11:4), Yahuah here says *make thy name great* — what man grasps at on a tower, Yahuah gives by promise to the one He calls. The prophet sends the remnant back to its root: *Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him* (Isaiah 51:2).',
+       sv.verse_id, ev.verse_id, 'extras', 20275
+  FROM _s301_ge12_lookup sv, _s301_ge12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=12 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name',
+       E'Unto thy seed will I give this land — the altars and the name',
+       E'Abram obeys and goes: *So Abram departed, as Yahuah (LORD) had spoken unto him; and Lot went with him* (Genesis 12:4), *and into the land of Canaan they came* (Genesis 12:5). At Sichem the word comes: *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* (Genesis 12:7); and at Beth-el *there he builded an altar unto Yahuah (LORD), and called upon the name of Yahuah (LORD)* (Genesis 12:8). The land is the seed''s by promise long before it is held. Stephen marks the gap: *And he gave him none inheritance in it, no, not so much as to set his foot on: yet he promised that he would give it to him for a possession, and to his seed after him, when as yet he had no child* (Acts 7:5). Abram dwells as a stranger on his own inheritance — *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles* (Hebrews 11:9) — because *he looked for a city which hath foundations, whose builder and maker is Elohim (God)* (Hebrews 11:10). The land-word at the altar is later sealed by covenant-cutting: *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18); and sworn by oath after the binding of Isaac, *And in thy seed shall all the nations of the earth be blessed; because thou hast obeyed my voice* (Genesis 22:18); and sung over Yashar''el as their settled inheritance, *Saying, Unto thee will I give the land of Canaan, the lot of your inheritance* (Psalm 105:11). The restored witnesses walk the same ground: Abram *journeyed from Haran... and proceeded to Shechem* (Jubilees 13:1); he *built an altar... and called on the name of Yahuah (God): "You, the eternal Elohim (God), are my Elohim (God)"* (Jubilees 13:7); *To your seed will I give this land... and I will make your seed like the stars of heaven* (Jasher 13:7); *Abram built an altar in the place where Elohim (God) had spoken to him, and Abram there called upon the name of Yahuah (the Lord)* (Jasher 13:8); *To your seed will I give this land; and he there built an altar to Yahuah (the Lord) who appeared to him* (Jasher 13:28). The land-promise to the seed and the first worship in the land are one act of faith.',
+       sv.verse_id, ev.verse_id, 'extras', 20278
+  FROM _s301_ge12_lookup sv, _s301_ge12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=12 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-12-the-seed-bearer-preserved-sarai-pharaoh-and-the-plagues',
+       E'The seed-bearer preserved — Sarai, Pharaoh, and the plagues',
+       E'*And there was a famine in the land: and Abram went down into Egypt to sojourn there* (Genesis 12:10), and at the border he fears for his life because of Sarai''s beauty (Genesis 12:11-13). *The princes also of Pharaoh saw her, and commended her before Pharaoh: and the woman was taken into Pharaoh''s house* (Genesis 12:15). The promise now hangs on a woman inside a king''s house — and Yahuah moves to guard her: *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife* (Genesis 12:17), and Pharaoh sends them away (Genesis 12:19-20). This is the preservation of the seed-bearer. Sarai is the womb that must yet bear the child of promise — *Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised* (Hebrews 11:11) — and Yahuah strikes a king to keep her free for that seed. The restored witness confirms it: Abram *dwelt in Egypt five years before his wife was torn away from him* (Jubilees 13:11), and *when Pharaoh seized Sarai, the wife of Abram, that Yahuah (God) plagued Pharaoh and his house with great plagues because of Sarai, Abram''s wife* (Jubilees 13:12). The psalmist reads the episode as the fixed pattern of the covenant line''s shielding while it was *few* and *strangers*: *He suffered no man to do them wrong: yea, he reproved kings for their sakes* (Psalm 105:14), *Saying, Touch not mine anointed, and do my prophets no harm* (Psalm 105:15). Pharaoh laid hold of the promise-bearer and was struck — a first sketch of the greater Egypt-descent and the plagues that would one day pry the whole seed free.',
+       sv.verse_id, ev.verse_id, 'extras', 20281
+  FROM _s301_ge12_lookup sv, _s301_ge12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=12 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (CENTERPIECE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*In thee shall all nations be blessed* (Galatians 3:8) — the gospel preached beforehand to Abraham: the heathen blessed by being justified into the one seed, the seed flowing out to the nations.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And to thy seed, which is Messiah (Christ)* (Galatians 3:16) — the *thee* of 12:3 is a SEED, and that seed is singular; all families blessed through the one personal Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Then are ye Abraham''s seed, and heirs according to the promise* (Galatians 3:29) — the nations come into the blessing by being incorporated INTO the seed, never as a parallel people.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*In thy seed shall all the kindreds of the earth be blessed* (Acts 3:25) — Peter reads the covenant to the children of the covenant: the blessing rides on the seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=3 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*By faith Abraham, when he was called... obeyed; and he went out* (Hebrews 11:8) — the call of 12:1 answered by faith THAT OBEYS, not bare confession.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*"Get you up from your country... And in you will all families of the earth be blessed"* (Jubilees 12:22) — the restored witness delivers the call word for word, after Abram has already left the idols.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Go forth from your land... and in you shall the families of the earth be blessed* (Jasher 13:23) — the restored witness binds the blessing to the seed, *to you and to your children*.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=13 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*I called him alone, and blessed him, and increased him* (Isaiah 51:2) — the great nation of 12:2 is the seed of the one man, the rock the remnant is hewn from.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*He that scattered Yashar''el (Israel) will gather him* (Jeremiah 31:10) — the mechanism of 12:3: the seed scattered through the nations and gathered home, the nations blessed through the regathered seed.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-get-thee-out-the-call-of-abram-and-the-seed-in-whom-all-families-are-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He gave him none inheritance in it... yet he promised that he would give it to him... and to his seed after him* (Acts 7:5) — the land is the seed''s by promise before a foot of it is held.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles* (Hebrews 11:9) — the tent of 12:8: he owned the promise, not the soil.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He looked for a city which hath foundations, whose builder and maker is Elohim (God)* (Hebrews 11:10) — the altar-builder of 12:8 looked past the land to a deeper inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Unto thy seed have I given this land, from the river of Egypt unto the great river Euphrates* (Genesis 15:18) — the land-word of 12:7 sealed by covenant-cutting, the bounds drawn out.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*In thy seed shall all the nations of the earth be blessed; because thou hast obeyed my voice* (Genesis 22:18) — the call of 12:3 sworn by oath, precisely *in thy SEED*, sealed by obedience.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Unto thee will I give the land of Canaan, the lot of your inheritance* (Psalm 105:11) — the land-promise of 12:7 sung over Yashar''el as their settled inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Abram journeyed from Haran... and proceeded to Shechem* (Jubilees 13:1) — the obedience and arrival of 12:4-6 walked step for step in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*He built an altar... and called on the name of Yahuah (God): "You, the eternal Elohim (God), are my Elohim (God)"* (Jubilees 13:7) — the altar-worship of 12:7-8 given voice as confession.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*This is the land which I gave to you and to your seed after you forever, and I will make your seed like the stars of heaven* (Jasher 13:7) — 12:7 expanded: land AND seed-multiplied, spoken together.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=13 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*Abram built an altar in the place where Elohim (God) had spoken to him, and Abram there called upon the name of Yahuah (the Lord)* (Jasher 13:8) — the first altars and calling on the Name of 12:7-8.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=13 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*To your seed will I give this land; and he there built an altar to Yahuah (the Lord) who appeared to him* (Jasher 13:28) — 12:7 nearly word for word: appearing, land-word to the seed, and altar bound together.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=13 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-unto-thy-seed-will-i-give-this-land-the-altars-and-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Sara herself received strength to conceive seed... because she judged him faithful who had promised* (Hebrews 11:11) — Sarai in Pharaoh''s house is the womb of the promise, guarded by the plagues of 12:17.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=17
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-the-seed-bearer-preserved-sarai-pharaoh-and-the-plagues'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Abram went into Egypt... before his wife was torn away from him* (Jubilees 13:11) — the descent and danger of 12:10-15 in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=11
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-the-seed-bearer-preserved-sarai-pharaoh-and-the-plagues'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*When Pharaoh seized Sarai... Yahuah (God) plagued Pharaoh and his house with great plagues* (Jubilees 13:12) — 12:17 almost verbatim: the seed-bearer pried loose by the plagues.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=17
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-the-seed-bearer-preserved-sarai-pharaoh-and-the-plagues'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*He suffered no man to do them wrong: yea, he reproved kings for their sakes* (Psalm 105:14) — the psalm reads 12:17 as the pattern: Pharaoh struck for laying hold of the promise-bearer.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=17
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-the-seed-bearer-preserved-sarai-pharaoh-and-the-plagues'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Touch not mine anointed, and do my prophets no harm* (Psalm 105:15) — Abram and Sarai are the anointed carriers of the covenant; to touch the seed is to fall under Yahuah''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=12 AND sv.verse_number=17
+  JOIN _s301_ge12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-12-the-seed-bearer-preserved-sarai-pharaoh-and-the-plagues'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_13.sql (Genesis 13) -----
+-- Chapter: Genesis 13 (Abram comes up out of Egypt rich; the strife and the generous separation from Lot; Lot's choice by sight toward Sodom; the land-promise and the seed renewed; walk through the land; the altar at Mamre/Hebron)
+-- Tag: ge13   Temp view: _s301_ge13_lookup
+-- Sort band: base 20300, step 3 -> threads at 20300, 20303, 20306, 20309, 20312, 20315 (6 threads)
+-- Source of EVERY row: 'canon','genesis',13,v
+--
+-- Genesis 13 coverage:
+--   v.1-4 (Abram up out of Egypt very rich; back to Beth-el, to the place of the altar made at the first; there Abram called on the name of Yahuah)
+--        NT:     none warranted distinct (the call-on-the-Name forward weave is the patriarchal worship at THREAD 6; the riches are narrative setup)
+--        Extras: Jubilees 13:15 (returned to the place of the altar... called on the name of Yahuah: "You, the most high Elohim, are my Elohim for ever and ever") — THREAD 6
+--        Tanakh: Genesis 12:8 (the same altar between Beth-el and Hai where he called on the name of Yahuah at the first); Genesis 4:26 (then began men to call upon the name of Yahuah) — THREAD 6
+--   v.5-9 (the land could not bear them both; strife between the herdmen; Canaanite and Perizzite in the land; Abram: let there be no strife, we be brethren; is not the whole land before thee? — gives Lot first choice)
+--        NT:     Romans 4:13 (the promise that he should be the HEIR OF THE WORLD — Abram can yield the choicest plain because the WHOLE land is already promised him by faith) — THREAD 1 (load-bearing for the framing of the generosity)
+--        Extras: none warranted as distinct MEMBER (Jubilees 13:17-18 carries the parting at THREAD 2; the strife/peace-making itself has no clean distinct extras witness here)
+--        Tanakh: none warranted distinct (the generosity is framed by the promise via Romans 4:13; no Tanakh lateral adds without dumping)
+--   ★ v.10-13 (Lot lifted up his eyes, beheld all the plain of Jordan well watered, even as the garden of Yahuah, like the land of Egypt; chose the plain; pitched toward Sodom; the men of Sodom were wicked and sinners before Yahuah exceedingly)
+--        NT:     2 Peter 2:7-8 (just Lot, vexed with the filthy conversation of the wicked; that righteous man vexed his righteous soul from day to day) — THREAD 2 (load-bearing); 2 Peter 2:6 (turning Sodom and Gomorrha into ashes, an ensample) — THREAD 2
+--        Extras: Jubilees 13:17 (Lot parted from him, and Lot dwelt in Sodom, and the men of Sodom were sinners exceedingly) — THREAD 2
+--        Tanakh: Genesis 19:24-25 (Yahuah rained upon Sodom and Gomorrah brimstone and fire... overthrew those cities, and all the plain) — THREAD 2 (the doom of the well-watered land Lot chose by sight)
+--   ★★ v.14-15 (Yahuah to Abram after Lot was separated: lift up thine eyes... all the land which thou seest, to thee will I give it, and to thy seed FOR EVER)
+--        NT:     Romans 4:13 (heir of the world); Romans 4:16-17 (the promise sure to ALL the seed... a father of many nations); Hebrews 11:8-10 (called to an inheritance, sojourned in the land of promise, looked for a CITY which hath foundations) — THREAD 3 (centerpiece)
+--        Extras: Jubilees 13:20 (all the land which you see I shall give to you and to your seed for ever); Jasher 13:7 (this is the land which I gave to you and to your seed after you forever); Jasher 13:18 (to you and to your seed I will give this land for an inheritance) — THREAD 3
+--        Tanakh: Genesis 12:7 (unto thy seed will I give this land); Genesis 15:18 (unto thy seed have I given this land); Genesis 17:8 (the land... for an everlasting possession) — THREAD 3
+--   ★ v.16 (I will make thy seed AS THE DUST OF THE EARTH: so that if a man can number the dust... then shall thy seed also be numbered — innumerable)
+--        NT:     Romans 4:18 (who against hope believed in hope, that he might become the father of many nations); Hebrews 11:12 (so many as the stars of the sky in multitude, and as the sand by the sea shore innumerable) — THREAD 4
+--        Extras: Jubilees 13:20 (I shall make your seed as the sand of the sea: though a man may number the dust of the earth, yet your seed shall not be numbered) — THREAD 4 (note: SAME Jubilees verse anchors THREAD 3 and THREAD 4, distinct source verses 15 vs 16 — distinct cross_reference rows)
+--        Tanakh: Genesis 15:5 (look toward heaven, tell the stars... so shall thy seed be); Genesis 22:17 (multiply thy seed as the stars of the heaven, and as the sand upon the sea shore) — THREAD 4
+--   ★ v.17 (Arise, walk through the land in the length of it and in the breadth of it; for I will give it unto thee — possession by faith, the walking-out of the inheritance)
+--        NT:     Hebrews 11:9 (he sojourned in the land of promise, as in a strange country, dwelling in tabernacles); Hebrews 11:13 (died in faith, not having received the promises, strangers and pilgrims on the earth); Hebrews 11:16 (they desire a better country... he hath prepared for them a city) — THREAD 5 (the "for ever" reaches past this life — the resurrection-hope)
+--        Extras: Jubilees 13:20 (Arise, walk through the land in the length of it and the breadth of it... for to your seed shall I give it); Jasher 13:18-19 (walk before me and be perfect... and shall inherit it forever) — THREAD 5
+--        Tanakh: none warranted distinct (the walk-by-faith forward weave is Hebrews 11; the land-grant lateral is carried at THREAD 3)
+--   v.18 (Abram removed his tent, dwelt in the plain of Mamre, in Hebron, and built there an altar unto Yahuah)
+--        NT:     none warranted (patriarchal worship; the city-looked-for forward weave is at THREAD 5)
+--        Extras: Jubilees 13:4 (he built an altar there, and offered a burnt sacrifice to Yahuah, who had appeared to him); Jasher 13:28 (he there built an altar to Yahuah who appeared to him, which is still to this day in the plains of Mamre) — THREAD 6
+--        Tanakh: Genesis 12:7-8 (the altars at Sichem and between Beth-el and Hai); Genesis 4:26 (men began to call upon the name of Yahuah) — THREAD 6
+--
+-- Threads (slug — target libraries):
+--   1. genesis-13-let-there-be-no-strife-abrams-generous-peace — NT (Romans) [free]
+--   2. genesis-13-lot-lifted-up-his-eyes-the-choice-by-sight — NT (2 Peter) + Tanakh (Genesis 19) + Extras (Jubilees) [extras]
+--   3. genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed — NT (Romans, Hebrews) + Tanakh (Genesis) + Extras (Jubilees, Jasher) [extras] (CENTERPIECE)
+--   4. genesis-13-thy-seed-as-the-dust-of-the-earth — NT (Romans, Hebrews) + Tanakh (Genesis) + Extras (Jubilees) [extras]
+--   5. genesis-13-walk-through-the-land-possession-by-faith — NT (Hebrews) + Extras (Jubilees, Jasher) [extras]
+--   6. genesis-13-the-altar-at-mamre-calling-on-the-name — Tanakh (Genesis) + Extras (Jubilees, Jasher) [extras]
+--
+-- Framing notes:
+--   THREAD 1 — ABRAM'S GENEROUS PEACE (free): the elder yields the choice to the younger — *Is not the whole land
+--   before thee? separate thyself, I pray thee, from me* (13:9). The generosity is NOT mere temperament: Abram can
+--   surrender the choicest plain because *the promise, that he should be the heir of the world* (Romans 4:13) is
+--   already his by faith — he holds the WHOLE land in promise, so he need not grasp a portion by sight. Walk-by-
+--   promise frees the hand to give. (Kept tight: no TSK live-peaceably dump; the one load-bearing weave is the
+--   heir-of-the-world logic that grounds the open hand.)
+--   ★ THREAD 2 — THE CHOICE BY SIGHT (extras): *Lot lifted up his eyes, and beheld all the plain of Jordan, that
+--   it was well watered every where... even as the garden of Yahuah, like the land of Egypt* (13:10) — Eden-like and
+--   Egypt-like to the eye, yet *before Yahuah destroyed Sodom and Gomorrah*; the narrator already names the doom.
+--   The contrast is walk-by-sight (Lot, *pitched his tent toward Sodom*, 13:12) vs walk-by-promise (Abram, lifting
+--   his eyes only when Yahuah says lift them, 13:14). 2 Peter holds Lot as *just Lot, vexed* (2:7) — saved, but
+--   vexed day by day in the land his eyes chose; Sodom *turned into ashes* an *ensample* (2:6); Genesis 19:24-25
+--   the fire that fell. The well-watered-like-Eden-yet-doomed plain is the whole warning.
+--   ★★ THREAD 3 — THE LAND AND THE SEED RENEWED (CENTERPIECE, extras): *all the land which thou seest, to thee
+--   will I give it, and to thy seed FOR EVER* (13:15). The "for ever" is load-bearing — it reaches past this life:
+--   Abram *looked for a city which hath foundations, whose builder and maker is Elohim* (Hebrews 11:10), the
+--   everlasting inheritance held by RESURRECTION-hope, not by this lifetime's deed. Romans reads the grant as the
+--   promise that Abram should be *the heir of the world* (4:13) and *a father of many nations* (4:17). Jubilees and
+--   Jasher renew the same land-and-seed grant word for word. The land-FOREVER is possessed by faith now and in the
+--   body raised.
+--   ★ THREAD 4 — SEED AS THE DUST OF THE EARTH (extras): *I will make thy seed as the dust of the earth* (13:16) —
+--   the FIRST of the great innumerability figures, paired with the seed-as-STARS of Genesis 15:5 and 22:17 and the
+--   sand of the sea. Romans 4:18 — *who against hope believed in hope, that he might become the father of many
+--   nations* — and Hebrews 11:12 — *so many as the stars of the sky in multitude, and as the sand which is by the
+--   sea shore innumerable* — gather dust, stars, and sand into the one promised multitude of the seed. (NOTE: the
+--   single Jubilees 13:20 verse legitimately anchors BOTH this thread and THREAD 3 — distinct SOURCE verses, 13:15
+--   land vs 13:16 dust — so they are two distinct cross_reference rows, not a double-write collision.)
+--   ★ THREAD 5 — WALK THROUGH THE LAND, POSSESSION BY FAITH (extras): *Arise, walk through the land in the length
+--   of it and in the breadth of it; for I will give it unto thee* (13:17). Abram walks the land he does not yet
+--   hold by deed — possession by faith. Hebrews 11 reads the whole patriarchal walk: he *sojourned in the land of
+--   promise, as in a strange country* (11:9), *died in faith, not having received the promises... strangers and
+--   pilgrims on the earth* (11:13), desiring *a better country, that is, an heavenly* (11:16). The walking is the
+--   inheriting-in-hope.
+--   THREAD 6 — THE ALTAR AT MAMRE, CALLING ON THE NAME (extras): *there Abram called on the name of Yahuah* (13:4);
+--   *built there an altar unto Yahuah* (13:18) — the patriarchal worship that began when *men began to call upon
+--   the name of Yahuah* (Genesis 4:26) and ran through Abram's altars (Genesis 12:7-8). Jubilees and Jasher remember
+--   the altars and the confession: *"You, the eternal Elohim, are my Elohim"* (Jubilees 13:7).
+--   PARSE/TRAP NOTES: Jubilees double-written 'jubilees','jubilees'; Jasher double-written 'jasher','jasher' (every
+--   VALUES row 10 cols). Jasher's Abram/Lot land material is in JASHER 13 (the call, the land-grant, the altars at
+--   Mamre, seed-as-stars) — JASHER 14 is the Rikayon/Egyptian-tax tale, UNRELATED, so it is NOT pulled. Jubilees 13
+--   is clean for the verses used (v.4, 7, 15, 17, 20); v.2-3 run together in the parse but v.20 carries the land/
+--   seed/walk grant cleanly at its front clause.
+
+CREATE TEMP VIEW _s301_ge13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: let there be no strife — Abram's generous peace
+    ('canon','genesis',13,9,'canon','romans',4,13,'free',
+      E'*For the promise, that he should be the heir of the world, was not to Abraham, or to his seed, through the law, but through the righteousness of faith* (Romans 4:13). When Abram says *Is not the whole land before thee? separate thyself, I pray thee, from me: if thou wilt take the left hand, then I will go to the right* (Genesis 13:9), he gives away the choicest plain without grasping — because the WHOLE land is already his by promise. The open hand is the fruit of walking by the promise, not by sight: a man who is *heir of the world* by faith need not seize a portion by his own eyes.'),
+    -- THREAD 2: Lot lifted up his eyes — the choice by sight
+    ('canon','genesis',13,10,'canon','2-peter',2,8,'extras',
+      E'*(For that righteous man dwelling among them, in seeing and hearing, vexed his righteous soul from day to day with their unlawful deeds;)* (2 Peter 2:8). Lot *lifted up his eyes, and beheld all the plain of Jordan, that it was well watered every where... even as the garden of Yahuah (LORD), like the land of Egypt* (Genesis 13:10) — Eden-like and Egypt-like to the eye, and he chose it. The end of the choice-by-sight is a righteous soul vexed *from day to day* in the city his eyes desired; what looked like the garden becomes the daily grief of the just man.'),
+    ('canon','genesis',13,12,'canon','2-peter',2,7,'extras',
+      E'*And delivered just Lot, vexed with the filthy conversation of the wicked* (2 Peter 2:7). *Lot dwelled in the cities of the plain, and pitched his tent toward Sodom* (Genesis 13:12) — the tent turned by inches toward the wicked city. Scripture still calls him *just Lot*: saved, yet vexed, the believer who chose his dwelling by sight and paid for it in vexation, drawn out at the last only by mercy.'),
+    ('canon','genesis',13,13,'canon','2-peter',2,6,'extras',
+      E'*And turning the cities of Sodom and Gomorrha into ashes condemned them with an overthrow, making them an ensample unto those that after should live ungodly* (2 Peter 2:6). The narrator marks the plain Lot chose: *But the men of Sodom were wicked and sinners before Yahuah (LORD) exceedingly* (Genesis 13:13). The well-watered land was already under sentence; its end is *ashes* set up as an *ensample* — the warning written into the very ground Lot beheld.'),
+    ('canon','genesis',13,10,'canon','genesis',19,24,'free',
+      E'*Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24). The plain was *well watered every where... even as the garden of Yahuah (LORD)* — *before Yahuah (LORD) destroyed Sodom and Gomorrah* (Genesis 13:10); the narrator names the doom in the same breath as the beauty. The garden-to-the-eye becomes fire-from-heaven: the choice by sight chose a land already marked for the overthrow.'),
+    ('canon','genesis',13,13,'jubilees','jubilees',13,17,'extras',
+      E'*And in the fourth year of this week Lot parted from him, and Lot dwelt in Sodom, and the men of Sodom were sinners exceedingly* (Jubilees 13:17). The restored witness tells the same parting and the same indictment as *the men of Sodom were wicked and sinners before Yahuah (LORD) exceedingly* (Genesis 13:13) — Lot lodged among a people Yahuah had already weighed and found *sinners exceedingly*.'),
+    -- THREAD 3 (CENTERPIECE): to thee and to thy seed for ever — the land renewed
+    ('canon','genesis',13,15,'canon','romans',4,13,'free',
+      E'*For the promise, that he should be the heir of the world, was not to Abraham, or to his seed, through the law, but through the righteousness of faith* (Romans 4:13). *All the land which thou seest, to thee will I give it, and to thy seed for ever* (Genesis 13:15) — Romans reads the land-grant as nothing less than the world inherited, and inherited *through the righteousness of faith*. The seest-it-all-given becomes heir-of-the-world: the promise opens past one plot to the whole earth held by the faith of Abram and his seed.'),
+    ('canon','genesis',13,15,'canon','romans',4,17,'free',
+      E'*(As it is written, I have made thee a father of many nations,) before him whom he believed, even Elohim (God), who quickeneth the dead, and calleth those things which be not as though they were* (Romans 4:17). The land given *to thy seed for ever* (Genesis 13:15) is a promise made before the seed exists — and Elohim *calleth those things which be not as though they were*. The everlasting grant rests on the Elohim *who quickeneth the dead*: a forever-inheritance can only be kept by the One who raises the dead to hold it.'),
+    ('canon','genesis',13,15,'canon','hebrews',11,10,'free',
+      E'*For he looked for a city which hath foundations, whose builder and maker is Elohim (God)* (Hebrews 11:10). When Yahuah says *to thy seed for ever* (Genesis 13:15), the *for ever* reaches past Abram''s lifetime and past this age: he held the land-promise by looking for *a city which hath foundations*, the everlasting inheritance secured by resurrection-hope, not by a deed signed in his own years. The land FOREVER is possessed by faith now and in the body raised.'),
+    ('canon','genesis',13,15,'canon','genesis',12,7,'free',
+      E'*And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* (Genesis 12:7). The grant first spoken at the entrance to Canaan is now renewed after Lot departs: *all the land which thou seest, to thee will I give it, and to thy seed for ever* (Genesis 13:15). The same word — *unto thy seed... this land* — said again and enlarged with *for ever*: the promise does not move, it deepens.'),
+    ('canon','genesis',13,15,'canon','genesis',15,18,'free',
+      E'*In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18). What is promised in Genesis 13:15 — *to thee will I give it, and to thy seed for ever* — is cut into covenant two chapters on, the boundaries named, the gift sworn. The renewed land-word here is the seed of the sworn covenant there.'),
+    ('canon','genesis',13,15,'canon','genesis',17,8,'free',
+      E'*And I will give unto thee, and to thy seed after thee, the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession; and I will be their Elohim (God)* (Genesis 17:8). The *for ever* of Genesis 13:15 is spelled out as *an everlasting possession* — and bound to the covenant bond *I will be their Elohim*. The land-forever and the Elohim-forever are one promise: the inheritance is held in the One who gives it.'),
+    ('canon','genesis',13,15,'jubilees','jubilees',13,20,'extras',
+      E'*For all the land which you see I shall give to you and to your seed for ever, and I shall make your seed as the sand of the sea* (Jubilees 13:20). The restored witness renews the land-grant word for word with *all the land which thou seest, to thee will I give it, and to thy seed for ever* (Genesis 13:15) — the same *all the land which you see*, the same *to your seed for ever*. The forever-inheritance stands in both the canon and the witness.'),
+    ('canon','genesis',13,15,'jasher','jasher',13,7,'extras',
+      E'*This is the land which I gave to you and to your seed after you forever, and I will make your seed like the stars of heaven, and I will give to your seed for an inheritance all the lands which you see* (Jasher 13:7). Jasher renews the same grant as *all the land which thou seest, to thee will I give it, and to thy seed for ever* (Genesis 13:15) — the land *which you see* given *to your seed after you forever*, joined to the seed-as-stars that Genesis 15 will speak.'),
+    ('canon','genesis',13,14,'canon','hebrews',11,8,'free',
+      E'*By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* (Hebrews 11:8). When Yahuah says *Lift up now thine eyes, and look from the place where thou art northward, and southward, and eastward, and westward* (Genesis 13:14), Abram looks on the inheritance he was called to but does not yet hold. Hebrews names the posture: an inheritance received by faith, walked toward in obedience before it is possessed by hand.'),
+    -- THREAD 4: thy seed as the dust of the earth
+    ('canon','genesis',13,16,'canon','genesis',15,5,'free',
+      E'*And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* (Genesis 15:5). The dust-figure of *I will make thy seed as the dust of the earth: so that if a man can number the dust of the earth, then shall thy seed also be numbered* (Genesis 13:16) is matched by the star-figure: dust below, stars above, both past counting. The innumerable seed is promised first as the dust, then as the stars.'),
+    ('canon','genesis',13,16,'canon','genesis',22,17,'free',
+      E'*That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies* (Genesis 22:17). The dust of *as the dust of the earth... then shall thy seed also be numbered* (Genesis 13:16) is gathered with the stars of heaven and the sand of the sea — three figures of one innumerable seed, here sworn by oath after the binding of Isaac.'),
+    ('canon','genesis',13,16,'canon','romans',4,18,'free',
+      E'*Who against hope believed in hope, that he might become the father of many nations; according to that which was spoken, So shall thy seed be* (Romans 4:18). The promise *I will make thy seed as the dust of the earth... then shall thy seed also be numbered* (Genesis 13:16) is the very *so shall thy seed be* Abram believed *against hope* — childless, yet trusting the One who counts a seed as numberless as dust. The faith that took the dust-promise is the faith counted for righteousness.'),
+    ('canon','genesis',13,16,'canon','hebrews',11,12,'free',
+      E'*Therefore sprang there even of one, and him as good as dead, so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable* (Hebrews 11:12). The dust-promise of Genesis 13:16 — *so that if a man can number the dust of the earth, then shall thy seed also be numbered* — comes true *of one, and him as good as dead*: the innumerable seed, *stars... and... sand... innumerable*, sprung from the one man who believed the dust could not be counted.'),
+    ('canon','genesis',13,16,'jubilees','jubilees',13,20,'extras',
+      E'*I shall make your seed as the sand of the sea: though a man may number the dust of the earth, yet your seed shall not be numbered* (Jubilees 13:20). The restored witness carries the same innumerable-seed word as *I will make thy seed as the dust of the earth: so that if a man can number the dust of the earth, then shall thy seed also be numbered* (Genesis 13:16) — *though a man may number the dust... yet your seed shall not be numbered*. The seed past counting stands in canon and witness alike.'),
+    -- THREAD 5: walk through the land — possession by faith
+    ('canon','genesis',13,17,'canon','hebrews',11,9,'extras',
+      E'*By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise* (Hebrews 11:9). *Arise, walk through the land in the length of it and in the breadth of it; for I will give it unto thee* (Genesis 13:17) — Abram is told to walk a land he will hold only by promise; Hebrews names the walk a SOJOURN *as in a strange country*, dwelling in tents in the very land deeded to his seed. The walking-through is the possessing-in-hope.'),
+    ('canon','genesis',13,17,'canon','hebrews',11,13,'extras',
+      E'*These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). Abram walks *the length of it and... the breadth of it* (Genesis 13:17) and yet dies *not having received the promises* — he possesses by faith, *strangers and pilgrims on the earth*, the land seen *afar off* and embraced. The walk measures an inheritance held in hope past this life.'),
+    ('canon','genesis',13,17,'canon','hebrews',11,16,'extras',
+      E'*But now they desire a better country, that is, an heavenly: wherefore Elohim (God) is not ashamed to be called their Elohim (God): for he hath prepared for them a city* (Hebrews 11:16). The land Abram walks at *Arise, walk through the land... for I will give it unto thee* (Genesis 13:17) opens onto *a better country, that is, an heavenly* — the *for ever* of the grant reaching to the prepared *city*. The walking-out of the land is the first step of an inheritance kept in the resurrection.'),
+    ('canon','genesis',13,17,'jubilees','jubilees',13,20,'extras',
+      E'*Arise, walk (through the land) in the length of it and the breadth of it, and see it all; for to your seed shall I give it* (Jubilees 13:20). The restored witness gives the same command as *Arise, walk through the land in the length of it and in the breadth of it; for I will give it unto thee* (Genesis 13:17) — the land walked in *the length... and the breadth*, given to the seed. The possession-by-walking stands in both.'),
+    ('canon','genesis',13,17,'jasher','jasher',13,18,'extras',
+      E'*Now therefore walk before me and be perfect and keep my commands, for to you and to your seed I will give this land for an inheritance, from the river Mitzraim to the great river Euphrates* (Jasher 13:18). Jasher binds the walk of *Arise, walk through the land... for I will give it unto thee* (Genesis 13:17) to covenant-walk: *walk before me and be perfect and keep my commands* — the land-inheritance and the keeping of the commands are one path. The walking is faith-and-obedience together, never one without the other.'),
+    -- THREAD 6: the altar at Mamre — calling on the name
+    ('canon','genesis',13,4,'canon','genesis',4,26,'free',
+      E'*And to Seth, to him also there was born a son; and he called his name Enos: then began men to call upon the name of Yahuah (LORD)* (Genesis 4:26). When *Abram called on the name of Yahuah (LORD)* (Genesis 13:4) at the altar he had made at the first, he keeps the worship that began in the line of Seth — *then began men to call upon the name of Yahuah*. The patriarchal altar is the old true worship carried down the seed-line of promise.'),
+    ('canon','genesis',13,4,'canon','genesis',12,8,'free',
+      E'*And he removed from thence unto a mountain on the east of Beth-el, and pitched his tent, having Beth-el on the west, and Hai on the east: and there he builded an altar unto Yahuah (LORD), and called upon the name of Yahuah (LORD)* (Genesis 12:8). Abram returns *unto the place of the altar, which he had made there at the first: and there Abram called on the name of Yahuah (LORD)* (Genesis 13:4) — the very altar between Beth-el and Hai. He comes back from Egypt to the place of worship he had left, and calls on the Name again.'),
+    ('canon','genesis',13,18,'canon','genesis',12,7,'free',
+      E'*And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* (Genesis 12:7). At Mamre Abram *built there an altar unto Yahuah (LORD)* (Genesis 13:18), as he did at Sichem when the land was first promised. Each renewal of the land-word is answered with an altar: the promise heard, the worship raised, the Name confessed in the land of the promise.'),
+    ('canon','genesis',13,4,'jubilees','jubilees',13,15,'extras',
+      E'*he journeyed to the place where he had pitched his tent at the beginning, to the place of the altar... and called on the name of Yahuah (God), and said: "You, the most high Elohim (God), are my Elohim (God) for ever and ever."* (Jubilees 13:15). The restored witness fills the confession behind *there Abram called on the name of Yahuah (LORD)* (Genesis 13:4): returning to the first altar, he names Yahuah his Elohim *for ever and ever* — the calling-on-the-Name is a covenant confession, not a bare invocation.'),
+    ('canon','genesis',13,18,'jubilees','jubilees',13,4,'extras',
+      E'*And he built an altar there, and he offered thereon a burnt sacrifice to Yahuah (God), who had appeared to him* (Jubilees 13:4). The same altar-building as *built there an altar unto Yahuah (LORD)* (Genesis 13:18) is remembered with the sacrifice and the reason — *to Yahuah, who had appeared to him*. The altar answers the appearing: Yahuah shows Himself, Abram builds and offers.'),
+    ('canon','genesis',13,18,'jasher','jasher',13,28,'extras',
+      E'*And Yahuah (the Lord) again appeared to Abram and said, To your seed will I give this land; and he there built an altar to Yahuah (the Lord) who appeared to him, which is still to this day in the plains of Mamre* (Jasher 13:28). Jasher names the very place of *dwelt in the plain of Mamre, which is in Hebron, and built there an altar unto Yahuah (LORD)* (Genesis 13:18) — *an altar... in the plains of Mamre*, raised when Yahuah appeared and renewed *to your seed will I give this land*. The altar at Mamre marks the land-promise renewed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-13-let-there-be-no-strife-abrams-generous-peace',
+       E'Let there be no strife — Abram''s generous peace',
+       E'The land cannot hold both households: *the land was not able to bear them, that they might dwell together: for their substance was great* (Genesis 13:6), and *there was a strife between the herdmen of Abram''s cattle and the herdmen of Lot''s cattle* (Genesis 13:7). The elder, who holds the promise, refuses to contend: *Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen; for we be brethren* (Genesis 13:8). Then he gives the choice away — *Is not the whole land before thee? separate thyself, I pray thee, from me: if thou wilt take the left hand, then I will go to the right; or if thou depart to the right hand, then I will go to the left* (Genesis 13:9). This open hand is not mere mildness; it is the fruit of faith. *For the promise, that he should be the heir of the world, was not to Abraham, or to his seed, through the law, but through the righteousness of faith* (Romans 4:13). Abram can surrender the choicest plain because the WHOLE land is already his by promise — a man who is heir of the world by faith need not grasp a portion by sight. Walk-by-promise frees the hand to give.',
+       sv.verse_id, ev.verse_id, 'free', 20300
+  FROM _s301_ge13_lookup sv, _s301_ge13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=13 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-13-lot-lifted-up-his-eyes-the-choice-by-sight',
+       E'Lot lifted up his eyes — the choice by sight',
+       E'Where Abram waits on the promise, Lot chooses by his eyes: *And Lot lifted up his eyes, and beheld all the plain of Jordan, that it was well watered every where, before Yahuah (LORD) destroyed Sodom and Gomorrah, even as the garden of Yahuah (LORD), like the land of Egypt* (Genesis 13:10). Eden-like and Egypt-like to the eye — and in the same breath the narrator names the doom: *before Yahuah destroyed Sodom and Gomorrah*. He *chose him all the plain of Jordan* (Genesis 13:11) and *pitched his tent toward Sodom* (Genesis 13:12), the tent turned by inches toward the wicked city — *But the men of Sodom were wicked and sinners before Yahuah (LORD) exceedingly* (Genesis 13:13). The restored witness tells it the same: *Lot dwelt in Sodom, and the men of Sodom were sinners exceedingly* (Jubilees 13:17). The end of the choice-by-sight is written ahead. Scripture still calls him *just Lot, vexed with the filthy conversation of the wicked* (2 Peter 2:7) — saved, yet *that righteous man dwelling among them, in seeing and hearing, vexed his righteous soul from day to day with their unlawful deeds* (2 Peter 2:8). And the land itself is *turned into ashes... an ensample unto those that after should live ungodly* (2 Peter 2:6), for *Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24). Well-watered like Eden, yet doomed: the warning is in the very ground his eyes desired.',
+       sv.verse_id, ev.verse_id, 'extras', 20303
+  FROM _s301_ge13_lookup sv, _s301_ge13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=13 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (CENTERPIECE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed',
+       E'To thee and to thy seed for ever — the land renewed',
+       E'After Lot is gone, Yahuah lifts Abram''s eyes — not by his own choosing now, but at the word: *And Yahuah (LORD) said unto Abram, after that Lot was separated from him, Lift up now thine eyes, and look from the place where thou art northward, and southward, and eastward, and westward* (Genesis 13:14). Then the grant: *For all the land which thou seest, to thee will I give it, and to thy seed for ever* (Genesis 13:15). It is the word first spoken at the entrance to Canaan — *Unto thy seed will I give this land* (Genesis 12:7) — now renewed and enlarged with *for ever*, and cut into covenant two chapters on: *Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18); *all the land of Canaan, for an everlasting possession; and I will be their Elohim (God)* (Genesis 17:8). The restored witnesses renew it word for word: *all the land which you see I shall give to you and to your seed for ever* (Jubilees 13:20); *this is the land which I gave to you and to your seed after you forever* (Jasher 13:7). Now hear how far the *for ever* reaches. Romans reads the grant as *the promise, that he should be the heir of the world... through the righteousness of faith* (Romans 4:13), a promise to one *who quickeneth the dead, and calleth those things which be not as though they were* (Romans 4:17) — for a forever-inheritance can only be kept by the One who raises the dead to hold it. And Abram knew it: *he looked for a city which hath foundations, whose builder and maker is Elohim (God)* (Hebrews 11:10), for *by faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed* (Hebrews 11:8). The *for ever* of Genesis 13:15 does not stop at this lifetime or this age — it is the everlasting land held by resurrection-hope, possessed by faith now and in the body raised.',
+       sv.verse_id, ev.verse_id, 'extras', 20306
+  FROM _s301_ge13_lookup sv, _s301_ge13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=13 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-13-thy-seed-as-the-dust-of-the-earth',
+       E'Thy seed as the dust of the earth',
+       E'With the land comes the seed, and the seed is past counting: *And I will make thy seed as the dust of the earth: so that if a man can number the dust of the earth, then shall thy seed also be numbered* (Genesis 13:16). This is the FIRST of the great innumerability figures, and the others answer it. Yahuah will bring Abram out under the night and say *Look now toward heaven, and tell the stars, if thou be able to number them... So shall thy seed be* (Genesis 15:5); and after the binding of Isaac He swears *I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore* (Genesis 22:17). Dust of the earth, stars of heaven, sand of the sea — three figures of one numberless seed. The restored witness joins them: *I shall make your seed as the sand of the sea: though a man may number the dust of the earth, yet your seed shall not be numbered* (Jubilees 13:20). And this is the very promise Abram believed against all sight: *Who against hope believed in hope, that he might become the father of many nations; according to that which was spoken, So shall thy seed be* (Romans 4:18). It came true from one as good as dead: *Therefore sprang there even of one, and him as good as dead, so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable* (Hebrews 11:12). The dust-promise, taken by faith, became the innumerable seed.',
+       sv.verse_id, ev.verse_id, 'extras', 20309
+  FROM _s301_ge13_lookup sv, _s301_ge13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=13 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-13-walk-through-the-land-possession-by-faith',
+       E'Walk through the land — possession by faith',
+       E'The grant ends with a command to walk: *Arise, walk through the land in the length of it and in the breadth of it; for I will give it unto thee* (Genesis 13:17). Abram is told to walk a land he holds only by promise — to measure with his feet an inheritance no deed has yet given him. This is possession by faith, and Hebrews reads the whole patriarchal walk by it: *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise* (Hebrews 11:9). He walked it and dwelt in tents in it and yet *died in faith, not having received the promises, but having seen them afar off... and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). The walking measures an inheritance held in hope past this life: *they desire a better country, that is, an heavenly: wherefore Elohim (God) is not ashamed to be called their Elohim (God): for he hath prepared for them a city* (Hebrews 11:16). The restored witnesses give the same command, and Jasher binds it to covenant-walk: *Arise, walk (through the land) in the length of it and the breadth of it... for to your seed shall I give it* (Jubilees 13:20); *Now therefore walk before me and be perfect and keep my commands, for to you and to your seed I will give this land for an inheritance* (Jasher 13:18). To walk the land is to walk before Yahuah in faith and obedience together — the inheriting-in-hope is never the keeping-of-commands set aside, but the two as one path.',
+       sv.verse_id, ev.verse_id, 'extras', 20312
+  FROM _s301_ge13_lookup sv, _s301_ge13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=13 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-13-the-altar-at-mamre-calling-on-the-name',
+       E'The altar at Mamre — calling on the name',
+       E'The chapter is framed by worship. Coming up from Egypt, Abram returns *unto the place of the altar, which he had made there at the first: and there Abram called on the name of Yahuah (LORD)* (Genesis 13:4) — the very altar between Beth-el and Hai where *he builded an altar unto Yahuah (LORD), and called upon the name of Yahuah (LORD)* (Genesis 12:8). And at the chapter''s close, with the land renewed, *Abram removed his tent, and came and dwelt in the plain of Mamre, which is in Hebron, and built there an altar unto Yahuah (LORD)* (Genesis 13:18). This is the old true worship of the seed-line: *then began men to call upon the name of Yahuah (LORD)* (Genesis 4:26), carried down through Abram''s altars, each one answering an appearing of Yahuah — *Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* (Genesis 12:7). The restored witnesses remember the altars and fill in the confession: *he built an altar there, and he offered thereon a burnt sacrifice to Yahuah (God), who had appeared to him* (Jubilees 13:4); returning to the first altar he *called on the name of Yahuah (God), and said: "You, the most high Elohim (God), are my Elohim (God) for ever and ever"* (Jubilees 13:15); and Jasher names the place — *he there built an altar to Yahuah (the Lord) who appeared to him, which is still to this day in the plains of Mamre* (Jasher 13:28). The calling-on-the-Name is no bare invocation but a covenant confession: Yahuah appears, renews the land, and Abram raises an altar and names Him his Elohim for ever.',
+       sv.verse_id, ev.verse_id, 'extras', 20315
+  FROM _s301_ge13_lookup sv, _s301_ge13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=13 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the promise, that he should be the heir of the world... through the righteousness of faith* (Romans 4:13) — Abram yields the choicest plain (*separate thyself, I pray thee, from me*, 13:9) because the WHOLE land is already his by faith.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=9
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-let-there-be-no-strife-abrams-generous-peace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*that righteous man... vexed his righteous soul from day to day* (2 Peter 2:8) — the end of Lot''s choice-by-sight (*beheld all the plain of Jordan... even as the garden of Yahuah*, 13:10) is a soul vexed daily in the land his eyes desired.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=10
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-lot-lifted-up-his-eyes-the-choice-by-sight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And delivered just Lot, vexed with the filthy conversation of the wicked* (2 Peter 2:7) — saved yet vexed, the believer who *pitched his tent toward Sodom* (13:12) by sight.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=12
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-lot-lifted-up-his-eyes-the-choice-by-sight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*turning the cities of Sodom and Gomorrha into ashes... an ensample* (2 Peter 2:6) — the plain of *the men of Sodom were wicked and sinners before Yahuah exceedingly* (13:13) was already under sentence.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=13
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-lot-lifted-up-his-eyes-the-choice-by-sight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Then Yahuah rained upon Sodom and upon Gomorrah brimstone and fire* (Genesis 19:24) — the doom named in the same breath as the beauty (*well watered... before Yahuah destroyed Sodom and Gomorrah*, 13:10) falls on the land chosen by sight.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=10
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-lot-lifted-up-his-eyes-the-choice-by-sight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Lot dwelt in Sodom, and the men of Sodom were sinners exceedingly* (Jubilees 13:17) — the restored witness names the same parting and indictment as *the men of Sodom were wicked and sinners before Yahuah exceedingly* (13:13).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=13
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-lot-lifted-up-his-eyes-the-choice-by-sight'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (CENTERPIECE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed* (Hebrews 11:8) — Abram looks where Yahuah says *Lift up now thine eyes... northward, and southward, and eastward, and westward* (13:14) upon an inheritance held by faith.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Unto thy seed will I give this land: and there builded he an altar* (Genesis 12:7) — the grant first spoken at the entrance to Canaan, now renewed and enlarged with *for ever* (13:15).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Unto thy seed have I given this land, from the river of Egypt unto the great river* (Genesis 15:18) — the *to thy seed for ever* of 13:15 cut into sworn covenant, the boundaries named.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*all the land of Canaan, for an everlasting possession; and I will be their Elohim* (Genesis 17:8) — the *for ever* of 13:15 spelled out as an everlasting possession bound to the covenant bond.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the promise, that he should be the heir of the world... through the righteousness of faith* (Romans 4:13) — the land-grant of 13:15 read as nothing less than the world inherited by faith.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Elohim, who quickeneth the dead, and calleth those things which be not as though they were* (Romans 4:17) — the *for ever* grant rests on the One who raises the dead to keep it.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*he looked for a city which hath foundations, whose builder and maker is Elohim* (Hebrews 11:10) — the *for ever* of 13:15 reaches past this life to the everlasting city, held by resurrection-hope.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*all the land which you see I shall give to you and to your seed for ever* (Jubilees 13:20) — the restored witness renews *to thy seed for ever* (13:15) word for word.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*This is the land which I gave to you and to your seed after you forever* (Jasher 13:7) — Jasher renews the same grant, the land *which you see* given *to your seed after you forever*.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=13 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-to-thee-and-to-thy-seed-for-ever-the-land-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Look now toward heaven, and tell the stars... So shall thy seed be* (Genesis 15:5) — the dust-figure of 13:16 matched by the star-figure, both past counting.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=16
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-thy-seed-as-the-dust-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore* (Genesis 22:17) — dust, stars, and sand gathered as one innumerable seed, sworn by oath after the binding of Isaac.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=16
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-thy-seed-as-the-dust-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Who against hope believed in hope... So shall thy seed be* (Romans 4:18) — the dust-promise of 13:16 is the very word Abram believed against all sight.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=16
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-thy-seed-as-the-dust-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable* (Hebrews 11:12) — the dust-promise of 13:16 come true from one as good as dead.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=16
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-thy-seed-as-the-dust-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*though a man may number the dust of the earth, yet your seed shall not be numbered* (Jubilees 13:20) — the restored witness carries the same innumerable-seed word as 13:16 (distinct row from THREAD 3: source 13:16, not 13:15).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=16
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-thy-seed-as-the-dust-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles* (Hebrews 11:9) — Abram walks (*walk through the land in the length of it and in the breadth of it*, 13:17) a land held only by promise.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=17
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-walk-through-the-land-possession-by-faith'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*These all died in faith, not having received the promises... strangers and pilgrims on the earth* (Hebrews 11:13) — the walk of 13:17 measures an inheritance held in hope past this life.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=17
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-walk-through-the-land-possession-by-faith'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they desire a better country, that is, an heavenly... he hath prepared for them a city* (Hebrews 11:16) — the walked land of 13:17 opens onto the heavenly country, the *for ever* reaching to the prepared city.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=17
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-walk-through-the-land-possession-by-faith'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Arise, walk (through the land) in the length of it and the breadth of it... for to your seed shall I give it* (Jubilees 13:20) — the restored witness gives the same possession-by-walking command as 13:17.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=17
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-walk-through-the-land-possession-by-faith'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*walk before me and be perfect and keep my commands, for to you and to your seed I will give this land for an inheritance* (Jasher 13:18) — Jasher binds the walk of 13:17 to covenant-walk: faith and obedience as one path, never commands set aside.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=17
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=13 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-walk-through-the-land-possession-by-faith'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*then began men to call upon the name of Yahuah* (Genesis 4:26) — Abram''s *called on the name of Yahuah* (13:4) keeps the worship begun in the line of Seth.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=4
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-the-altar-at-mamre-calling-on-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there he builded an altar unto Yahuah, and called upon the name of Yahuah* (Genesis 12:8) — the very altar between Beth-el and Hai Abram returns to at 13:4.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=4
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-the-altar-at-mamre-calling-on-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Unto thy seed will I give this land: and there builded he an altar unto Yahuah, who appeared unto him* (Genesis 12:7) — at Mamre Abram builds an altar (13:18) as at Sichem; each renewed land-word answered by worship.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=18
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-the-altar-at-mamre-calling-on-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*called on the name of Yahuah... "You, the most high Elohim, are my Elohim for ever and ever"* (Jubilees 13:15) — the restored witness fills the covenant confession behind *Abram called on the name of Yahuah* (13:4).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=4
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-the-altar-at-mamre-calling-on-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*he built an altar there, and he offered thereon a burnt sacrifice to Yahuah, who had appeared to him* (Jubilees 13:4) — the same altar-building as *built there an altar unto Yahuah* (13:18), the altar answering the appearing.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=18
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-the-altar-at-mamre-calling-on-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*he there built an altar to Yahuah who appeared to him, which is still to this day in the plains of Mamre* (Jasher 13:28) — Jasher names the very place of *dwelt in the plain of Mamre... and built there an altar* (13:18).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=13 AND sv.verse_number=18
+  JOIN _s301_ge13_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=13 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-13-the-altar-at-mamre-calling-on-the-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_14.sql (Genesis 14) -----
+-- Chapter: Genesis 14 (the war of the four kings against five; Lot captured; Abram's rescue with 318 trained servants; ★★ Melek Tsadiq king of Salem, priest of El Elyon, brings bread and wine and blesses Abram, who gives him tithes of all; Abram refuses the king of Sodom's goods)
+-- Tag: ge14   Temp view: _s301_ge14_lookup
+-- Sort band: base 20325, step 3 -> threads at 20325, 20328, 20331, 20334 (4 threads)
+-- Source of EVERY row: 'canon','genesis',14,v
+--
+-- Genesis 14 coverage:
+--   v.1-12 (the four kings — Amraphel, Arioch, Chedorlaomer, Tidal — make war on the five kings of Sodom and the plain; the vale of Siddim full of slimepits; Sodom plundered; Lot, Abram's brother's son, taken captive with his goods)
+--        NT:     none warranted (the war's forward weave is borne by the rescue/Melek-Tsadiq threads; no NT passage takes up the four-vs-five war itself)
+--        Extras: Jubilees 13:23 (they took captive Lot also, the son of Abram's brother, and all his possessions); Jasher 16:1-6 (the nine kings, the valley of Siddim, the lime pits, Lot and his property taken) — THREAD 1
+--        Tanakh: none warranted distinct (the players are named only here; Deut/Sodom-judgment weave belongs to Gen 18-19, not this war)
+--   v.13-16 (one that escaped told Abram the Hebrew; Abram armed his 318 trained servants born in his house, pursued by night unto Dan, divided himself against them, smote them, brought back all the goods and Lot)
+--        NT:     none warranted as a clean MEMBER (the deliverer-type is carried forward christologically at THREAD 3; Hebrews 7:1 names "the slaughter of the kings" but is woven there)
+--        Extras: Jasher 16:7-8 (Abram rose up with about three hundred and eighteen men, that night pursued and smote the kings, recovered Lot and all his property) — THREAD 2
+--        Tanakh: Genesis 15:1 (the reward closing the rescue arc — folded into THREAD 4); the covenant-man-as-deliverer prefigure framed in THREAD 2 prose
+--   ★★ v.17-20 (the king of Sodom comes out; Melek Tsadiq (Melchizedek) king of Salem brings forth bread and wine, priest of El Elyon; he blesses Abram of the El Elyon, possessor of heaven and earth; blessed be El Elyon who delivered thine enemies; Abram gives him tithes of all) — THE CENTERPIECE
+--        NT:     Hebrews 7:1-3 (this Melek Tsadiq, king of Salem, priest of El Elyon... without father, without mother... made like unto the Son of Elohim; abideth a priest continually); Hebrews 7:4 (the patriarch Abraham gave the tenth of the spoils — greater than Levi); Hebrews 6:20 / 5:6 (Yahusha made an high priest for ever after the order of Melek Tsadiq); Matthew 26:26-28 (the bread and the cup — the Melek-Tsadiq priest-king's table fulfilled at the Supper) — THREAD 3 (load-bearing)
+--        Extras: Jasher 16:11-12 (Adonizedek king of Jerusalem, the same was Shem, went out with bread and wine, a priest before Elohim, and Abram gave him a tenth); Jubilees 13:26-27 (the tithe ordained an ordinance for ever, of seed and wine and oil and cattle, given to His priests to eat and drink with joy before Him) — THREAD 3
+--        Tanakh: Psalm 110:4 (Yahuah hath sworn... Thou art a priest for ever after the order of Melek Tsadiq); Psalm 76:2 (in Salem also is his tabernacle, and his dwelling place in Zion — Salem = Jerusalem/Zion); Genesis 28:22 (Jacob: of all that thou shalt give me I will surely give the tenth unto thee — the tithe rooted in the patriarchs) — THREAD 3
+--   v.21-24 (the king of Sodom says, Give me the persons, take the goods; Abram: I have lift up mine hand unto Yahuah, the El Elyon, possessor of heaven and earth, that I will not take from a thread to a shoelatchet, lest thou shouldest say I have made Abram rich; save only the young men's portion)
+--        NT:     none warranted (the refusal's reward-frame is OT-internal; Gen 15:1 is the immediate answer — THREAD 4)
+--        Extras: Jasher 16:14-16 (As Yahuah lives... I will not take anything belonging to you, that you may not boast... I will not take from a shoetie or thread); Jubilees 13:29 (I lift up my hands to the El Elyon Elohim, that from a thread to a shoe-latchet I shall not take aught that is your, lest you should say I have made Abram rich) — THREAD 4
+--        Tanakh: Genesis 15:1 (Fear not, Abram: I am thy shield, and thy exceeding great reward — the refused riches answered by Yahuah Himself as the reward) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. genesis-14-the-war-of-the-kings-and-lot-taken-captive — Extras (Jubilees, Jasher) [extras]
+--   2. genesis-14-abram-the-deliverer-the-318-and-the-night-pursuit — Extras (Jasher) [extras]
+--   3. genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe — NT (Hebrews, Matthew) + Tanakh (Psalm 110, Psalm 76, Genesis 28) + Extras (Jasher, Jubilees) [extras] (★★ CENTERPIECE)
+--   4. genesis-14-i-have-lift-up-mine-hand-unto-el-elyon-abrams-reward-is-yahuah-himself — Tanakh (Genesis 15) + Extras (Jasher, Jubilees) [extras]
+--
+-- Framing notes:
+--   ★★ MELEK TSADIQ — THE ETERNAL PRIESTHOOD (THREAD 3, the heaviest): the priest-king of Salem who meets
+--   Abram with *bread and wine* (Genesis 14:18) and blesses him *of the El Elyon (most high God), possessor of
+--   heaven and earth* (14:19), receiving *tithes of all* (14:20), is the great Christological type of the
+--   Tanakh. Psalm 110:4 makes the oath — *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for
+--   ever after the order of Melek Tsadiq (Melchizedek)* — and Hebrews unfolds it: *without father, without
+--   mother, without descent, having neither beginning of days, nor end of life; but made like unto the Son of
+--   Elohim (God); abideth a priest continually* (Hebrews 7:3). Messiah's priesthood is NOT Levitical/Aaronic but
+--   of the order of Melek Tsadiq — older than Levi (who *payed tithes in Abraham*, Hebrews 7:9-10), sworn by
+--   oath, eternal, and priest-AND-king together. The bread and wine prefigure the Supper (Matthew 26:26-28: *Take,
+--   eat; this is my body... this is my blood*). Salem is Jerusalem/Zion (Psalm 76:2: *in Salem also is his
+--   tabernacle*). The Melek Tsadiq (Melchizedek) parenthetical convention kept on every mention.
+--   THE DELIVERER (THREAD 2): Abram the covenant-man arms his own household and rescues his kin — the seed-of-
+--   promise man who pursues by night and brings back the captive; the covenant defends its own. Framed as the
+--   deliverer-prefigure without forcing a single NT member (the christological weight rides THREAD 3).
+--   ABRAM'S REWARD IS YAHUAH (THREAD 4): Abram refuses the king of Sodom's goods with hand lifted to *Yahuah, the
+--   El Elyon, possessor of heaven and earth* (14:22) — and the very next word of the story answers him: *I am thy
+--   shield, and thy exceeding great reward* (Genesis 15:1). He will not be made rich by Sodom because Yahuah
+--   Himself is his portion. Jubilees double-written 'jubilees','jubilees'; Jasher double-written 'jasher','jasher'.
+--   AVOIDED: Jubilees 13:25 is a run-together/apparatus-dotted parse (the tithe institution swallowed with
+--   "25….….") — used the clean Jubilees 13:26-27 and 13:29 instead. Jasher 14 (the Rikayon/Pharaoh tale) is
+--   unrelated to this chapter and not used; the war/Melchizedek material is in Jasher 16.
+
+CREATE TEMP VIEW _s301_ge14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the war of the kings and Lot taken captive
+    ('canon','genesis',14,12,'jubilees','jubilees',13,23,'extras',
+      E'*And they took captive Sodom and Adam and Zeboim, and they took captive Lot also, the son of Abram''s brother, and all his possessions, and they went to Dan* (Jubilees 13:23). The restored witness carries the same capture as *And they took Lot, Abram''s brother''s son, who dwelt in Sodom, and his goods, and departed* (Genesis 14:12) — the kinsman of the covenant-man swept off with the spoil of Sodom, the captivity that the rescue will answer.'),
+    ('canon','genesis',14,9,'jasher','jasher',16,3,'extras',
+      E'*And the five kings of Sodom and Gomorrah, Shinab king of Admah, Shemeber king of Zeboyim, Bera king of Sodom, Bersha king of Gomorrah, and Bela king of Zoar, went out to meet them, and they all joined together in the valley of Siddim* (Jasher 16:3). The same five kings and the same field of *four kings with five* (Genesis 14:9) are named in the restored witness — the war joined in the vale of Siddim, exactly as the chapter records.'),
+    ('canon','genesis',14,11,'jasher','jasher',16,6,'extras',
+      E'*And they plundered all the cities of Sodom and Gomorrah, and they also took Lot, Abram''s brother''s son, and his property... and Unic, Abram''s servant, who was in the battle... told Abram all that the kings had done* (Jasher 16:6). Genesis 14:11 says only *they took all the goods of Sodom and Gomorrah, and all their victuals, and went their way*; Jasher fills in how the news reached Abram — the escaped servant who told him Lot was taken, setting the rescue in motion.'),
+
+    -- THREAD 2: Abram the deliverer — the 318 and the night pursuit
+    ('canon','genesis',14,14,'jasher','jasher',16,7,'extras',
+      E'*And Abram heard this, and he rose up with about three hundred and eighteen men that were with him, and he that night pursued these kings and smote them, and they all fell before Abram and his men* (Jasher 16:7). The restored witness keeps the very number and the night-strike of *he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan... by night, and smote them* (Genesis 14:14-15) — the covenant-man taking his own household to deliver his captive kin.'),
+    ('canon','genesis',14,16,'jasher','jasher',16,8,'extras',
+      E'*And Abram recovered all the property of Sodom, and he also recovered Lot and his property, his wives and little ones and all belonging to him, so that Lot lacked nothing* (Jasher 16:8). The full recovery of *he brought back all the goods, and also brought again his brother Lot, and his goods, and the women also, and the people* (Genesis 14:16) is told again in the restored witness — the deliverer brings every captive home; Lot lacked nothing.'),
+
+    -- ★★ THREAD 3 (CENTERPIECE): Melek Tsadiq — king of Salem, priest of El Elyon, bread and wine, and the tithe
+    ('canon','genesis',14,18,'canon','hebrews',7,1,'free',
+      E'*For this Melek Tsadiq (Melchizedek), king of Salem, priest of the El Elyon (most high God), who met Abraham returning from the slaughter of the kings, and blessed him* (Hebrews 7:1). The apostle takes up *Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God)* (Genesis 14:18) exactly — the same king, the same Salem, the same priest of El Elyon, the same blessing after the slaughter of the kings — and makes him the figure of Messiah''s priesthood.'),
+    ('canon','genesis',14,18,'canon','hebrews',7,3,'free',
+      E'*Without father, without mother, without descent, having neither beginning of days, nor end of life; but made like unto the Son of Elohim (God); abideth a priest continually* (Hebrews 7:3). Melek Tsadiq enters the story in Genesis 14:18 with no genealogy, no birth, no death recorded — *priest of the El Elyon* appearing and vanishing — and the apostle reads that silence as the type: a priesthood with *neither beginning of days, nor end of life*, made like the Son of Elohim, who *abideth a priest continually*.'),
+    ('canon','genesis',14,18,'canon','matthew',26,26,'free',
+      E'*And as they were eating, Yahusha (Jesus) took bread, and blessed it, and brake it, and gave it to the disciples, and said, Take, eat; this is my body* (Matthew 26:26). The priest-king of Salem *brought forth bread and wine* (Genesis 14:18) and blessed; at the table the priest after his order takes the bread, blesses, and gives it as his own body — the bread and wine of Melek Tsadiq carried forward to the Supper.'),
+    ('canon','genesis',14,18,'canon','matthew',26,28,'free',
+      E'*For this is my blood of the new testament, which is shed for many for the remission of sins* (Matthew 26:28). The *wine* the priest of El Elyon brought forth to bless Abram (Genesis 14:18) finds its meaning at the cup: the blood of the covenant. The Melek-Tsadiq table — bread and wine in the hand of the eternal priest-king — is filled when Messiah names the cup his own blood for the remission of sins.'),
+    ('canon','genesis',14,20,'canon','hebrews',7,4,'free',
+      E'*Now consider how great this man was, unto whom even the patriarch Abraham gave the tenth of the spoils* (Hebrews 7:4). When *he gave him tithes of all* (Genesis 14:20), Abraham — the father of the faithful, carrier of the promises — paid a tenth to Melek Tsadiq; and the apostle weighs it: *the less is blessed of the better* (Hebrews 7:7), so that even Levi, *in the loins of his father* (Hebrews 7:10), tithed in Abraham. The Melek-Tsadiq priesthood stands above the Levitical.'),
+    ('canon','genesis',14,18,'canon','hebrews',6,20,'free',
+      E'*Whither the forerunner is for us entered, even Yahusha (Jesus), made an high priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 6:20). The priest of El Elyon who met Abram (Genesis 14:18) names the order of Messiah''s priesthood: Yahusha is *made an high priest for ever after the order of Melek Tsadiq* — not the dying Aaronic line but the eternal priest-king who entered within the veil as our forerunner.'),
+    ('canon','genesis',14,18,'canon','psalms',110,4,'free',
+      E'*Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4). The lone appearance of the priest-king of Salem in Genesis 14:18 becomes an oath in the psalm: Yahuah swears an everlasting priesthood *after the order of Melek Tsadiq* for the One who sits at His right hand — David''s Lord, priest and king together, the order older and higher than Levi''s.'),
+    ('canon','genesis',14,18,'canon','psalms',76,2,'free',
+      E'*In Salem also is his tabernacle, and his dwelling place in Zion* (Psalm 76:2). The *Salem* over which Melek Tsadiq reigned as priest-king (Genesis 14:18) is named by the psalm as the place of Yahuah''s own dwelling — Salem is Zion, Jerusalem. The city of the bread-and-wine priest-king is the city where Yahuah sets His tabernacle.'),
+    ('canon','genesis',14,20,'canon','genesis',28,22,'free',
+      E'*And this stone, which I have set for a pillar, shall be Elohim''s (God''s) house: and of all that thou shalt give me I will surely give the tenth unto thee* (Genesis 28:22). The tithe Abram gives the priest of El Elyon — *he gave him tithes of all* (Genesis 14:20) — is taken up by his grandson Jacob at Bethel, who vows the tenth to Yahuah. The tithe is not first a Levitical law but a patriarchal worship, given to the priest-king of Salem and renewed at the house of Elohim.'),
+    ('canon','genesis',14,18,'jasher','jasher',16,11,'extras',
+      E'*And Adonizedek king of Jerusalem, the same was Shem, went out with his men to meet Abram and his people, with bread and wine, and they remained together in the valley of Melech* (Jasher 16:11). The restored witness remembers the priest-king of Salem under the name Adonizedek and identifies him as Shem, the surviving son of Noah — coming out with the same *bread and wine* of Genesis 14:18 to meet Abram in the king''s dale. The tradition seats the eternal-priesthood type in the oldest living covenant-father.'),
+    ('canon','genesis',14,20,'jasher','jasher',16,12,'extras',
+      E'*And Adonizedek blessed Abram, and Abram gave him a tenth from all that he had brought from the spoil of his enemies, for Adonizedek was a priest before Elohim (God)* (Jasher 16:12). The blessing and the tithe of *And he blessed him... And he gave him tithes of all* (Genesis 14:19-20) are kept in the restored witness — the priest before Elohim blesses Abram, and Abram renders him a tenth of the spoil.'),
+    ('canon','genesis',14,20,'jubilees','jubilees',13,26,'extras',
+      E'*And to this law there is no limit of days; for He has ordained it for the generations for ever that they should give to Yahuah (God) the tenth of everything, of the seed and of the wine and of the oil and of the cattle and of the sheep* (Jubilees 13:26). Where Genesis 14:20 records the single act — *he gave him tithes of all* — the restored witness reads it as the founding of a perpetual ordinance: the tithe of all increase given to Yahuah, set in the patriarch''s deed at Salem.'),
+    ('canon','genesis',14,20,'jubilees','jubilees',13,27,'extras',
+      E'*And He gave (it) to His priests to eat and to drink with joy before Him* (Jubilees 13:27). The tithe of *he gave him tithes of all* (Genesis 14:20) is given, in the restored witness, to the priests of Yahuah to eat and drink with joy before Him — the priestly portion of Melek Tsadiq''s bread and wine, the worship of the tenth carried to the table of the priest.'),
+
+    -- THREAD 4: I have lift up mine hand unto El Elyon — Abram's reward is Yahuah Himself
+    ('canon','genesis',14,23,'canon','genesis',15,1,'free',
+      E'*After these things the word of Yahuah (LORD) came unto Abram in a vision, saying, Fear not, Abram: I am thy shield, and thy exceeding great reward* (Genesis 15:1). Abram has just refused Sodom''s wealth — *I will not take from a thread even to a shoelatchet... lest thou shouldest say, I have made Abram rich* (Genesis 14:23) — and the next word of the story is Yahuah''s answer to that refusal: He Himself is the *exceeding great reward*. Abram would not be enriched by the king of Sodom because his portion is Yahuah.'),
+    ('canon','genesis',14,22,'jasher','jasher',16,14,'extras',
+      E'*And Abram answered the kings of Sodom, saying, As Yahuah (the Lord) lives who created heaven and earth... I will not take anything belonging to you, that you may not boast tomorrow, saying, Abram became rich from our property that he saved* (Jasher 16:14). The oath of *I have lift up mine hand unto Yahuah (LORD), the El Elyon (most high God), the possessor of heaven and earth* (Genesis 14:22) is kept in the restored witness — Abram swears by Yahuah who made heaven and earth that Sodom shall not be able to claim it made him rich.'),
+    ('canon','genesis',14,23,'jasher','jasher',16,16,'extras',
+      E'*as Yahuah (the Lord) lives I will not take from you from a living soul down to a shoetie or thread, excepting the expense of the food of those who went out with me to battle... the portions of the men who went with me, Anar, Ashcol, and Mamre* (Jasher 16:16). The refusal *from a thread even to a shoelatchet* and the reservation of the men''s portion (Genesis 14:23-24) are kept verbatim in sense in the restored witness — nothing of Sodom''s for Abram, only the share of those who fought.'),
+    ('canon','genesis',14,22,'jubilees','jubilees',13,29,'extras',
+      E'*And Abram said to him: "I lift up my hands to the El Elyon (Most High) Elohim (God), that from a thread to a shoe-latchet I shall not take aught that is your, lest you should say I have made Abram rich; save only what the young men have eaten, and the portion of the men who went with me–Aner, Eschol, and Mamre."* (Jubilees 13:29). The lifted hand and oath of Genesis 14:22-24 are preserved almost word for word — Abram binds himself before the El Elyon to take nothing of Sodom''s, that no man might say Sodom made him rich.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-14-the-war-of-the-kings-and-lot-taken-captive',
+       E'The war of the kings — and Lot taken captive',
+       E'The chapter opens on a war among kings: *Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations* (Genesis 14:1) make war against the five kings of the plain, *four kings with five* (Genesis 14:9), and *the vale of Siddim was full of slimepits; and the kings of Sodom and Gomorrah fled, and fell there* (Genesis 14:10). The victors *took all the goods of Sodom and Gomorrah... and went their way* (Genesis 14:11) — and with the spoil they *took Lot, Abram''s brother''s son, who dwelt in Sodom, and his goods, and departed* (Genesis 14:12). Lot, who had pitched toward Sodom, is swept off with Sodom''s judgment. The restored witnesses tell the same war. Jasher names the five: *Shinab king of Admah, Shemeber king of Zeboyim, Bera king of Sodom, Bersha king of Gomorrah, and Bela king of Zoar... joined together in the valley of Siddim* (Jasher 16:3), and *they plundered all the cities of Sodom and Gomorrah, and they also took Lot, Abram''s brother''s son, and his property... and Unic, Abram''s servant... told Abram all that the kings had done* (Jasher 16:6) — adding the escaped servant who carried word to Abram. Jubilees records the capture: *they took captive Lot also, the son of Abram''s brother, and all his possessions, and they went to Dan* (Jubilees 13:23). The covenant-man''s kin is in chains; the captivity sets up the rescue, and the rescue sets up the meeting with the priest-king of Salem.',
+       sv.verse_id, ev.verse_id, 'extras', 20325
+  FROM _s301_ge14_lookup sv, _s301_ge14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=14 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-14-abram-the-deliverer-the-318-and-the-night-pursuit',
+       E'Abram the deliverer — the 318 and the night pursuit',
+       E'Word reaches the covenant-man: *there came one that had escaped, and told Abram the Hebrew* (Genesis 14:13). Abram does not bargain or wait — *when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan* (Genesis 14:14). He strikes by night: *he divided himself against them, he and his servants, by night, and smote them, and pursued them unto Hobah* (Genesis 14:15), and *he brought back all the goods, and also brought again his brother Lot, and his goods, and the women also, and the people* (Genesis 14:16). The seed-of-promise man takes his own household and delivers his captive kin — the covenant defends its own; the deliverer pursues into the dark and brings every captive home. The restored witness keeps the very number and the night-strike: *Abram... rose up with about three hundred and eighteen men that were with him, and he that night pursued these kings and smote them, and they all fell before Abram and his men* (Jasher 16:7); *and Abram recovered all the property of Sodom, and he also recovered Lot and his property, his wives and little ones and all belonging to him, so that Lot lacked nothing* (Jasher 16:8). The man through whom all families of the earth will be blessed is first shown as a rescuer of the captive — a deliverer-figure who leaves none behind.',
+       sv.verse_id, ev.verse_id, 'extras', 20328
+  FROM _s301_ge14_lookup sv, _s301_ge14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=14 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- ★★ THREAD 3 (CENTERPIECE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe',
+       E'Melek Tsadiq — king of Salem, priest of El Elyon, bread and wine, and the tithe',
+       E'Returning from the slaughter, Abram is met by a figure who appears once and vanishes, yet carries the whole canon''s priesthood: *And Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God). And he blessed him, and said, Blessed be Abram of the El Elyon (most high God), possessor of heaven and earth... And he gave him tithes of all* (Genesis 14:18-20). A priest-king — king of Salem and priest of El Elyon together — bread and wine in his hand, a blessing on his lips, a tithe in his receiving. The order of David''s Lord is sworn here. *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4) — an everlasting priesthood for the One at Yahuah''s right hand, priest and king as Melek Tsadiq was. And Salem is no obscure town: *In Salem also is his tabernacle, and his dwelling place in Zion* (Psalm 76:2) — Salem is Jerusalem, the city of Yahuah''s dwelling. The apostle takes the silence of Genesis 14 as the type: *this Melek Tsadiq (Melchizedek), king of Salem, priest of the El Elyon (most high God), who met Abraham returning from the slaughter of the kings, and blessed him* (Hebrews 7:1), is *without father, without mother, without descent, having neither beginning of days, nor end of life; but made like unto the Son of Elohim (God); abideth a priest continually* (Hebrews 7:3). This priesthood stands above Levi''s: *consider how great this man was, unto whom even the patriarch Abraham gave the tenth of the spoils* (Hebrews 7:4) — and Levi, yet in Abraham''s loins, tithed in him. So Messiah is *made an high priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 6:20) — not the dying Aaronic line but an eternal priest-king. The bread and wine reach their meaning at the Supper: *Take, eat; this is my body* (Matthew 26:26); *this is my blood of the new testament, which is shed for many for the remission of sins* (Matthew 26:28). The tithe, too, is patriarchal worship before it is law — Jacob vows *of all that thou shalt give me I will surely give the tenth unto thee* (Genesis 28:22). The restored witnesses guard the scene: *Adonizedek king of Jerusalem, the same was Shem, went out with his men to meet Abram... with bread and wine* (Jasher 16:11), and *Adonizedek blessed Abram, and Abram gave him a tenth... for Adonizedek was a priest before Elohim (God)* (Jasher 16:12) — seating the eternal-priesthood type in Shem, the oldest living covenant-father; while Jubilees reads the deed as a perpetual ordinance, the tithe *of the seed and of the wine and of the oil and of the cattle and of the sheep* (Jubilees 13:26), given *to His priests to eat and to drink with joy before Him* (Jubilees 13:27). One mind holds it: the priest-king of Salem, the bread and wine, the tithe — Messiah''s eternal priesthood, above the Levitical, prefigured in a single meeting after a battle.',
+       sv.verse_id, ev.verse_id, 'extras', 20331
+  FROM _s301_ge14_lookup sv, _s301_ge14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=14 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-14-i-have-lift-up-mine-hand-unto-el-elyon-abrams-reward-is-yahuah-himself',
+       E'I have lift up mine hand unto El Elyon — Abram''s reward is Yahuah Himself',
+       E'The king of Sodom offers Abram the spoils: *Give me the persons, and take the goods to thyself* (Genesis 14:21). Abram refuses with an oath: *I have lift up mine hand unto Yahuah (LORD), the El Elyon (most high God), the possessor of heaven and earth, That I will not take from a thread even to a shoelatchet, and that I will not take any thing that is thine, lest thou shouldest say, I have made Abram rich* (Genesis 14:22-23) — reserving only the portion of the men who fought (Genesis 14:24). He will owe Sodom nothing; no pagan king will be able to claim he made the covenant-man rich. And the story''s next word answers the refusal: *After these things the word of Yahuah (LORD) came unto Abram in a vision, saying, Fear not, Abram: I am thy shield, and thy exceeding great reward* (Genesis 15:1). Abram turned down Sodom''s wealth because his reward is Yahuah Himself — the *exceeding great reward* given to the man who would not be enriched by the world. The restored witnesses keep the oath: *As Yahuah (the Lord) lives who created heaven and earth... I will not take anything belonging to you, that you may not boast tomorrow, saying, Abram became rich from our property* (Jasher 16:14); *I will not take from you from a living soul down to a shoetie or thread* (Jasher 16:16); *I lift up my hands to the El Elyon (Most High) Elohim (God), that from a thread to a shoe-latchet I shall not take aught that is your* (Jubilees 13:29). The hand lifted to El Elyon, possessor of heaven and earth, lets go of Sodom''s gold to hold fast to Yahuah, who is the reward.',
+       sv.verse_id, ev.verse_id, 'extras', 20334
+  FROM _s301_ge14_lookup sv, _s301_ge14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=14 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the five kings of Sodom and Gomorrah... went out to meet them, and they all joined together in the valley of Siddim* (Jasher 16:3) — the same five kings of *four kings with five* (14:9), the war joined in the vale of Siddim.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=9
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-the-war-of-the-kings-and-lot-taken-captive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they plundered all the cities of Sodom and Gomorrah, and they also took Lot... and Unic, Abram''s servant... told Abram* (Jasher 16:6) — the plunder of 14:11 and the escaped servant who carried word to Abram.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=11
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-the-war-of-the-kings-and-lot-taken-captive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they took captive Lot also, the son of Abram''s brother, and all his possessions, and they went to Dan* (Jubilees 13:23) — the capture of 14:12, the covenant-man''s kin swept off with Sodom''s spoil.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=12
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-the-war-of-the-kings-and-lot-taken-captive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Abram... rose up with about three hundred and eighteen men... and he that night pursued these kings and smote them* (Jasher 16:7) — the very 318 and the night-strike of 14:14-15.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-abram-the-deliverer-the-318-and-the-night-pursuit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Abram recovered all the property of Sodom, and he also recovered Lot and his property... so that Lot lacked nothing* (Jasher 16:8) — the full recovery of 14:16, the deliverer leaving no captive behind.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=16
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-abram-the-deliverer-the-318-and-the-night-pursuit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ★★ THREAD 3 members (CENTERPIECE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*this Melek Tsadiq (Melchizedek), king of Salem, priest of the El Elyon (most high God), who met Abraham... and blessed him* (Hebrews 7:1) — the apostle takes up 14:18 exactly: same king, same Salem, same priest of El Elyon.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*without father, without mother, without descent... but made like unto the Son of Elohim (God); abideth a priest continually* (Hebrews 7:3) — the no-genealogy silence of 14:18 read as the eternal-priesthood type.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) hath sworn... Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4) — the lone appearance of 14:18 sworn as an everlasting priesthood for David''s Lord.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*made an high priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 6:20) — the priest of El Elyon (14:18) names the order of Messiah''s eternal priesthood.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*In Salem also is his tabernacle, and his dwelling place in Zion* (Psalm 76:2) — the Salem of the priest-king (14:18) is Jerusalem/Zion, Yahuah''s dwelling.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=76 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Take, eat; this is my body* (Matthew 26:26) — the *bread* the priest-king brought forth (14:18) carried to the Supper''s table.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*this is my blood of the new testament, which is shed for many for the remission of sins* (Matthew 26:28) — the *wine* of the priest of El Elyon (14:18) filled at the cup of the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*consider how great this man was, unto whom even the patriarch Abraham gave the tenth of the spoils* (Hebrews 7:4) — the tithe of 14:20 weighed: the Melek-Tsadiq priesthood above Levi, who tithed in Abraham''s loins.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=20
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*of all that thou shalt give me I will surely give the tenth unto thee* (Genesis 28:22) — the tithe of 14:20 renewed by Jacob at Bethel: patriarchal worship, not first Levitical law.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=20
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*Adonizedek king of Jerusalem, the same was Shem, went out... with bread and wine* (Jasher 16:11) — the restored witness names the priest-king of Salem (14:18) as Shem, the oldest living covenant-father.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=18
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*Adonizedek blessed Abram, and Abram gave him a tenth... for Adonizedek was a priest before Elohim (God)* (Jasher 16:12) — the blessing and tithe of 14:19-20 kept in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=20
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 12, E'*they should give to Yahuah (God) the tenth of everything, of the seed and of the wine and of the oil and of the cattle and of the sheep* (Jubilees 13:26) — the act of 14:20 read as a perpetual tithe-ordinance.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=20
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 13, E'*He gave (it) to His priests to eat and to drink with joy before Him* (Jubilees 13:27) — the tithe of 14:20 as the priestly portion, the worship of the tenth at the priest''s table.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=20
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-melek-tsadiq-king-of-salem-priest-of-el-elyon-bread-and-wine-and-the-tithe'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Fear not, Abram: I am thy shield, and thy exceeding great reward* (Genesis 15:1) — the next word after the refusal (14:23): Yahuah Himself the reward of the man who would not be enriched by Sodom.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=23
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-i-have-lift-up-mine-hand-unto-el-elyon-abrams-reward-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*As Yahuah (the Lord) lives who created heaven and earth... I will not take anything belonging to you, that you may not boast... Abram became rich from our property* (Jasher 16:14) — the oath of 14:22 kept in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=22
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-i-have-lift-up-mine-hand-unto-el-elyon-abrams-reward-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will not take from you from a living soul down to a shoetie or thread, excepting... the portions of the men who went with me, Anar, Ashcol, and Mamre* (Jasher 16:16) — the *thread to a shoelatchet* refusal and the men''s reserved portion of 14:23-24.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=23
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=16 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-i-have-lift-up-mine-hand-unto-el-elyon-abrams-reward-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I lift up my hands to the El Elyon (Most High) Elohim (God), that from a thread to a shoe-latchet I shall not take aught that is your* (Jubilees 13:29) — the lifted hand and oath of 14:22-24 preserved almost word for word.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=14 AND sv.verse_number=22
+  JOIN _s301_ge14_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-14-i-have-lift-up-mine-hand-unto-el-elyon-abrams-reward-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_genesis_15.sql (Genesis 15) -----
+-- Chapter: Genesis 15 (the word of Yahuah comes in a vision — I am thy shield and thy exceeding great reward; the childless Abram and the promised heir of his own bowels; the seed as the stars; "he believed in Yahuah and it was counted to him for righteousness"; the covenant cut — the pieces divided, the smoking furnace and burning lamp passing between; the 400-year sojourn-affliction prophesied; the land-grant from the river of Egypt to the Euphrates)
+-- Tag: ge15   Temp view: _s301_ge15_lookup
+-- Sort band: base 20350, step 3 -> threads at 20350, 20353, 20356, 20359, 20362 (5 threads)
+-- Source of EVERY row: 'canon','genesis',15,v
+--
+-- Genesis 15 coverage:
+--   v.1 (After these things the word of Yahuah came unto Abram in a vision, saying, Fear not, Abram: I am thy shield, and thy exceeding great reward)
+--        NT:     none warranted as MEMBER (the reward/inheritance forward-weave is carried by Heb 11:8-10,16 at THREAD 4 the covenant-cut; the "fear not / Yahuah himself the reward" theophany is held in the Tanakh laterals here)
+--        Extras: Jubilees 14:1 (the word of Yahuah came to Abram in a dream: "Fear not, Abram; I am your defender, and your reward will be exceeding great") — THREAD 1
+--        Tanakh: Genesis 14:22-23 (Abram refusing the goods of the king of Sodom — "I will not take... lest thou shouldest say, I have made Abram rich"); Psalm 16:5 (Yahuah the portion of mine inheritance); Deuteronomy 33:29 (Yahuah the shield of thy help); Psalm 84:11 (Yahuah Elohim is a sun and shield) — THREAD 1
+--   v.2-4 (Abram childless, Eliezer of Damascus his steward/heir; the word of Yahuah: he that shall come forth out of thine own bowels shall be thine heir)
+--        NT:     Romans 4:18-21 (against hope believed in hope... considered not his own body now dead... staggered not at the promise) — folded into THREAD 2 (the promise against barrenness/deadness)
+--        Extras: Jubilees 14:2-3 (the son of Mâsêq... Dammasek Eliezer my heir... "This will not be your heir, but one that will come out of your own bowels") — folded into THREAD 1/2 framing (present at THREAD 2 via Jub 14:4-5)
+--        Tanakh: none warranted distinct (the childless-to-heir movement is carried into THREAD 2 the seed-as-stars)
+--   ★ v.5 (Look now toward heaven, and tell the stars, if thou be able to number them... So shall thy seed be)
+--        NT:     Romans 4:18 (according to that which was spoken, So shall thy seed be); Hebrews 11:12 (so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable) — THREAD 2 (load-bearing)
+--        Extras: Jubilees 14:4-5 ("Look toward heaven and number the stars, if you are able to number them"... "So shall your seed be") — THREAD 2
+--        Tanakh: Genesis 13:16 (I will make thy seed as the dust of the earth); Genesis 22:17 (I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore); Genesis 26:4 (I will make thy seed to multiply as the stars of heaven) — THREAD 2
+--   ★★ v.6 (And he believed in Yahuah; and he counted it to him for righteousness) — THE MOST-DISTORTED VERSE
+--        NT:     Romans 4:3 (Abraham believed Elohim, and it was counted unto him for righteousness); Romans 4:9 (faith was reckoned to Abraham for righteousness); Romans 4:22 (therefore it was imputed to him for righteousness); Galatians 3:6 (Even as Abraham believed Elohim, and it was accounted to him for righteousness); James 2:23 (Abraham believed Elohim, and it was imputed unto him for righteousness: and he was called the Friend of Elohim — read WITH works, James 2:21-22) — THREAD 3 (load-bearing CENTERPIECE)
+--        Extras: Jubilees 14:6 (And he believed in Yahuah, and it was counted to him for righteousness) — THREAD 3
+--        Tanakh: ★ Genesis 26:5 (Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws) — FRAMEWORK ANCHOR that completes the sentence; the SAME Abraham whose trust was reckoned righteous is the obedient covenant-keeper — THREAD 3
+--   v.7-8 (I am Yahuah that brought thee out of Ur of the Chaldees to give thee this land; whereby shall I know that I shall inherit it?)
+--        NT:     none warranted (the Ur-bringing-out is carried at Gen 11/12 packs; the "whereby shall I know" opens the covenant-cut, THREAD 4)
+--        Extras: Jubilees 14:6 (I am Yahuah that brought you out of Ur of the Chaldees... for ever); Jubilees 14:8 (whereby shall I know that I shall inherit it?) — folded into THREAD 4 framing (present via Jub 14:11/16/18)
+--        Tanakh: none warranted distinct (the land-oath is carried into THREAD 4)
+--   ★ v.9-12,17-21 (the heifer/she-goat/ram/turtledove/pigeon divided; the deep sleep and horror of great darkness; the smoking furnace and burning lamp passing between the pieces; the covenant made; the land-grant boundaries and the ten nations)
+--        NT:     none warranted as distinct member (Hebrews 11:8-10,16 the inheritance-by-faith / city with foundations folds in at THREAD 4) — see note
+--        Extras: Jubilees 14:9-11 (Take Me an heifer of three years... and he divided them in the midst... but the birds divided he not); Jubilees 14:16 (a furnace was smoking, and a flame of fire passed between the pieces); Jubilees 14:18 (Yahuah made a covenant with Abram: to your seed will I give this land, from the river of Egypt to the great river, the Euphrates) — THREAD 4 (load-bearing)
+--        Tanakh: Jeremiah 34:18 (the men that... passed between the parts of the calf — the cutting-covenant rite named); Genesis 17:7-8 (the everlasting covenant, the land of Canaan for an everlasting possession); Nehemiah 9:8 (thou madest a covenant with him to give the land... and hast performed thy words; for thou art righteous) — THREAD 4
+--   ★ v.13-16 (thy seed shall be a stranger in a land that is not theirs... they shall afflict them four hundred years; and also that nation will I judge: and afterward shall they come out with great substance; in the fourth generation they shall come hither again, for the iniquity of the Amorites is not yet full)
+--        NT:     Acts 7:6-7 (Stephen: his seed should sojourn in a strange land... four hundred years; and the nation to whom they shall be in bondage will I judge... after that shall they come forth, and serve me in this place) — THREAD 5 (load-bearing)
+--        Extras: Jubilees 14:13-14 (your seed shall be a stranger in a land not theirs... afflict them four hundred years; the nation also to whom they will be in bondage shall I judge, and after that they will come forth thence with much substance) — THREAD 5
+--        Tanakh: Exodus 12:40-41 (the sojourning of the children of Yashar'el... four hundred and thirty years... the selfsame day... all the hosts of Yahuah went out from the land of Egypt) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. genesis-15-i-am-thy-shield-and-thy-exceeding-great-reward — Tanakh (Genesis, Psalm, Deuteronomy) + Extras (Jubilees) [extras]
+--   2. genesis-15-so-shall-thy-seed-be-the-stars-of-heaven — NT (Romans, Hebrews) + Tanakh (Genesis) + Extras (Jubilees) [extras]
+--   3. genesis-15-he-believed-and-it-was-counted-for-righteousness — NT (Romans, Galatians, James) + Tanakh (Genesis 26:5 anchor) + Extras (Jubilees) [extras] (★★ CENTERPIECE — MOST-CONTESTED VERSE)
+--   4. genesis-15-the-covenant-cut-the-formed-passed-between-the-pieces — Tanakh (Jeremiah, Genesis, Nehemiah) + Extras (Jubilees) [extras]
+--   5. genesis-15-thy-seed-a-stranger-four-hundred-years — NT (Acts) + Tanakh (Exodus) + Extras (Jubilees) [extras]
+--
+-- Framing notes:
+--   ★★ GENESIS 15:6 — "And he believed in Yahuah; and he counted it to him for righteousness" (THREAD 3, the
+--   most-contested verse in the whole pack). NON-NEGOTIABLE FRAMING (Red Lines #5, #10; 1 John 2:3-4 filter):
+--   Abram's TRUST in Yahuah's promise was reckoned to him as righteousness — this is covenant-trust that RECEIVES
+--   the promise, NOT a sola-fide formula set AGAINST Torah-keeping. The verse is NOT pitting faith against the
+--   commandments. The thread completes the sentence with the FRAMEWORK ANCHOR Genesis 26:5 — *Abraham obeyed my
+--   voice, and kept my charge, my commandments, my statutes, and my laws* — the SAME Abraham whose belief was
+--   counted righteous is named the keeper of Yahuah's charge and laws. Faith and covenant-faithfulness are ONE
+--   walk: James 2:21-23 reads 15:6 WITH the offering of Isaac (*by works was faith made perfect... and the
+--   scripture was fulfilled which saith, Abraham believed Elohim*) and calls him *the Friend of Elohim*. Romans
+--   4:3,9,22 and Galatians 3:6 are quoted as the trust that receives, never as freedom-from-Torah. The default
+--   Christian sola-fide-against-the-Law reading is deliberately OVERRIDDEN — trust reckoned righteous that THEN
+--   walks in obedience, never instead of it.
+--   ★ THE SEED AS THE STARS (THREAD 2): *Look now toward heaven, and tell the stars... So shall thy seed be*
+--   (15:5) — the innumerable seed, joined with seed-as-dust (13:16) and seed-as-sand (22:17). Romans 4:18 and
+--   Hebrews 11:12 weave it forward; framed as the seed-of-promise multitude carried by bloodline-AND-covenant-word
+--   (never lineage-alone, never word-alone), the trust that believes the promise against a dead body and barren womb.
+--   ★ THE COVENANT CUT (THREAD 4): *a smoking furnace, and a burning lamp that passed between those pieces*
+--   (15:17) — the self-maledictory covenant. Abram is put in a deep sleep; YAHUAH ALONE — the Formed, the visible
+--   Glory who appeared and spoke — passes between the divided pieces, binding HIMSELF to the oath (Jeremiah 34:18
+--   names the rite; Nehemiah 9:8 names Him faithful who performed it). The Formed-and-the-Formless lens (Red Line
+--   #4): the One who passes through the pieces is the Formed Son who bears the Name, never a co-equal-persons or
+--   modalist grammar. The land-grant (15:18-21) is the everlasting-possession oath (Genesis 17:7-8).
+--   ★ THE 400 YEARS (THREAD 5): *thy seed shall be a stranger in a land that is not theirs... four hundred years...
+--   and afterward shall they come out with great substance* (15:13-14) — the sojourn-and-exodus foretold; Stephen
+--   quotes it (Acts 7:6-7); Exodus 12:40-41 records the *selfsame day* fulfillment. The affliction is judgment-
+--   bearing prophecy, the bondage and the deliverance both sworn before the seed exists.
+--   EXTRAS: Jubilees 14 closely parallels Genesis 15 verse-for-verse (clean parse; vv.7,12,17,21 absent from this
+--   parse, AVOIDED — used only present clean verses 14:1,4,5,6,9,11,13,14,16,18). Jubilees DOUBLE-WRITTEN
+--   'jubilees','jubilees'. Jasher: NONE WARRANTED — Jasher's Abram material (ch 9 idolatry, ch 15 the Egypt/Sarai
+--   famine episode and Lot separation) is the Genesis 11-13 narrative, NOT the covenant-cut of Genesis 15; no
+--   distinct Genesis-15 parallel exists in this Jasher parse, so it is deliberately omitted rather than forced.
+
+CREATE TEMP VIEW _s301_ge15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: I am thy shield, and thy exceeding great reward (Yahuah himself the reward)
+    ('canon','genesis',15,1,'canon','genesis',14,23,'free',
+      E'*That I will not take from a thread even to a shoelatchet, and that I will not take any thing that is thine, lest thou shouldest say, I have made Abram rich* (Genesis 14:23). Just before the vision, Abram refuses every spoil of the king of Sodom, that no man''s hand but Yahuah''s might enrich him. Then comes the word: *I am thy shield, and thy exceeding great reward* (Genesis 15:1). Having turned down Sodom''s goods, Abram is given Yahuah HIMSELF as his reward — not riches the Formed grants, but the Giver.'),
+    ('canon','genesis',15,1,'canon','psalms',16,5,'free',
+      E'*Yahuah (LORD) is the portion of mine inheritance and of my cup: thou maintainest my lot* (Psalm 16:5). When Yahuah tells Abram *I am... thy exceeding great reward* (Genesis 15:1), He gives Himself as the inheritance — the very thing the psalmist later sings: not lands or spoil as the portion, but *Yahuah is the portion of mine inheritance*. The reward of the covenant is the covenant-Maker.'),
+    ('canon','genesis',15,1,'canon','psalms',84,11,'free',
+      E'*For Yahuah Elohim (the LORD God) is a sun and shield: Yahuah (LORD) will give grace and glory: no good thing will he withhold from them that walk uprightly* (Psalm 84:11). The first word to Abram in the vision is *Fear not... I am thy shield* (Genesis 15:1); the psalm gathers the same confession — Yahuah Himself is *a sun and shield* who withholds *no good thing from them that walk uprightly*. The shield is not a thing given but a Person who guards.'),
+    ('canon','genesis',15,1,'canon','deuteronomy',33,29,'free',
+      E'*Happy art thou, O Yashar''el (Israel): who is like unto thee, O people saved by Yahuah (LORD), the shield of thy help, and who is the sword of thy excellency!* (Deuteronomy 33:29). What Yahuah says to the one man — *I am thy shield* (Genesis 15:1) — Mosheh (Moses) sings over the whole nation that came of his seed: Yahuah is *the shield of thy help*. The promise to Abram becomes the standing confession of Yashar''el.'),
+    ('canon','genesis',15,1,'jubilees','jubilees',14,1,'extras',
+      E'*After these things, in the fourth year of this week, on the new moon of the third month, the word of Yahuah (God) came to Abram in a dream, saying: "Fear not, Abram; I am your defender, and your reward will be exceeding great."* (Jubilees 14:1). The restored witness carries the opening word verse-for-verse with Genesis 15:1 — *Fear not, Abram: I am thy shield, and thy exceeding great reward* — and dates it to the new moon of the third month, the very season of the covenant Yahuah is about to cut.'),
+
+    -- THREAD 2: So shall thy seed be — the stars of heaven (the innumerable seed)
+    ('canon','genesis',15,5,'canon','romans',4,18,'free',
+      E'*Who against hope believed in hope, that he might become the father of many nations; according to that which was spoken, So shall thy seed be* (Romans 4:18). Sha''ul (Paul) quotes this very verse: when Yahuah brought Abram out and said *Look now toward heaven, and tell the stars... So shall thy seed be* (Genesis 15:5), Abram *against hope believed in hope*. The star-promise is the ground of the seed of promise — believed before a single child was born.'),
+    ('canon','genesis',15,5,'canon','hebrews',11,12,'free',
+      E'*Therefore sprang there even of one, and him as good as dead, so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable* (Hebrews 11:12). The star-count of Genesis 15:5 — *tell the stars, if thou be able to number them* — is read as fulfilled out of *one, and him as good as dead*: the innumerable seed, *as the stars of the sky... and as the sand which is by the sea shore*, gathering the heaven-promise of 15:5 with the sand-promise of 22:17 into one multitude.'),
+    ('canon','genesis',15,5,'canon','genesis',13,16,'free',
+      E'*And I will make thy seed as the dust of the earth: so that if a man can number the dust of the earth, then shall thy seed also be numbered* (Genesis 13:16). Two chapters before the stars, Yahuah had already set the seed beyond counting as *the dust of the earth*. Now He lifts Abram''s eyes from the dust to the heaven: *tell the stars, if thou be able to number them: ... So shall thy seed be* (Genesis 15:5). Dust below and stars above — the same innumerable seed measured against earth and sky.'),
+    ('canon','genesis',15,5,'canon','genesis',22,17,'free',
+      E'*That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies* (Genesis 22:17). On the mount, after the binding of Isaac, the star-promise of *So shall thy seed be* (Genesis 15:5) is sworn again and joined to the sand: *as the stars of the heaven, and as the sand which is upon the sea shore*. The promise believed in chapter 15 is confirmed by oath in chapter 22 — and now carries the gate of the enemies, the seed-war victory.'),
+    ('canon','genesis',15,5,'canon','genesis',26,4,'free',
+      E'*And I will make thy seed to multiply as the stars of heaven, and will give unto thy seed all these countries; and in thy seed shall all the nations of the earth be blessed* (Genesis 26:4). The star-promise of Genesis 15:5 is handed down to Isaac: *I will make thy seed to multiply as the stars of heaven*. The innumerable-seed word is not a single saying but the covenant refrain carried to the next generation — and joined to the blessing of all nations in the one seed.'),
+    ('canon','genesis',15,5,'jubilees','jubilees',14,5,'extras',
+      E'*And he looked toward heaven, and beheld the stars. And He said to him: "So shall your seed be."* (Jubilees 14:5). The restored witness keeps the scene whole — Abram lifting his eyes, beholding the stars, and the word *So shall your seed be* — the same star-reckoning of *Look now toward heaven, and tell the stars... So shall thy seed be* (Genesis 15:5).'),
+
+    -- THREAD 3 (★★ CENTERPIECE): He believed in Yahuah, and it was counted to him for righteousness
+    ('canon','genesis',15,6,'canon','romans',4,3,'free',
+      E'*For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness* (Romans 4:3). Sha''ul (Paul) reaches back to this exact verse — *he believed in Yahuah; and he counted it to him for righteousness* (Genesis 15:6) — to say that Abram''s trust in the promise was reckoned as righteousness. This is covenant-trust RECEIVING the promise, the believing that lays hold of what Yahuah swore; it is not faith set against the commandments, for the same Abraham *kept my charge, my commandments, my statutes, and my laws* (Genesis 26:5).'),
+    ('canon','genesis',15,6,'canon','romans',4,9,'free',
+      E'*Cometh this blessedness then upon the circumcision only, or upon the uncircumcision also? for we say that faith was reckoned to Abraham for righteousness* (Romans 4:9). The reckoning of Genesis 15:6 came while Abram was yet uncircumcised — so the righteousness of *he believed in Yahuah; and he counted it to him for righteousness* rests on trust, not on the mark of flesh as a boast. The order is trust first, then the sign, then the walk — never trust instead of the walk.'),
+    ('canon','genesis',15,6,'canon','romans',4,22,'free',
+      E'*And therefore it was imputed to him for righteousness* (Romans 4:22). Sha''ul closes the argument on the same verse: because Abram *staggered not at the promise... but was strong in faith* (Romans 4:20), *it was imputed to him for righteousness* — the imputing of Genesis 15:6. The faith that is reckoned righteous is the faith *fully persuaded that, what he had promised, he was able also to perform* (Romans 4:21): trust that holds Yahuah''s word, which then obeys His voice.'),
+    ('canon','genesis',15,6,'canon','galatians',3,6,'free',
+      E'*Even as Abraham believed Elohim (God), and it was accounted to him for righteousness* (Galatians 3:6). Sha''ul quotes Genesis 15:6 a second time to name *they which are of faith* as *the children of Abraham* (Galatians 3:7). The childship is by sharing Abraham''s trust — but Abraham''s trust was never trust-alone-against-Torah: it is *faithful Abraham* (Galatians 3:9), the believing that obeyed when called and kept Yahuah''s charge (Genesis 26:5).'),
+    ('canon','genesis',15,6,'canon','james',2,23,'free',
+      E'*And the scripture was fulfilled which saith, Abraham believed Elohim (God), and it was imputed unto him for righteousness: and he was called the Friend of Elohim (God)* (James 2:23). Ya''aqob (James) reads Genesis 15:6 WITH the works, not against them: the verse was *fulfilled* when Abraham *offered Isaac his son upon the altar* (James 2:21), for *by works was faith made perfect* (James 2:22). The believing of 15:6 and the obeying of the binding are one walk — the trust reckoned righteous is the trust that acts, and Abraham is named *the Friend of Elohim*.'),
+    ('canon','genesis',15,6,'canon','genesis',26,5,'free',
+      E'*Because that Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws* (Genesis 26:5). This is the sentence Genesis 15:6 begins and Genesis 26:5 completes. The SAME Abraham whose *believed in Yahuah* was *counted to him for righteousness* (Genesis 15:6) is the man Yahuah names as the one who *obeyed my voice, and kept my charge, my commandments, my statutes, and my laws*. Trust reckoned righteous and a life of covenant-keeping are not two roads but one — faith that receives the promise and then walks in obedience, never freedom from the commandments.'),
+    ('canon','genesis',15,6,'jubilees','jubilees',14,6,'extras',
+      E'*And he believed in Yahuah (God), and it was counted to him for righteousness* (Jubilees 14:6). The restored witness carries Genesis 15:6 word for word — *he believed in Yahuah; and he counted it to him for righteousness* — and sets it in the mouth of the covenant: in the same breath Yahuah says *"I am Yahuah that brought you out of Ur of the Chaldees, to give you the land... and I shall be Elohim to you and to your seed after you."* The reckoned trust stands inside the covenant, not outside it.'),
+
+    -- THREAD 4: The covenant cut — the Formed passed between the pieces
+    ('canon','genesis',15,17,'canon','jeremiah',34,18,'free',
+      E'*And I will give the men that have transgressed my covenant, which have not performed the words of the covenant which they had made before me, when they cut the calf in twain, and passed between the parts thereof* (Jeremiah 34:18). The prophet names the very rite of Genesis 15: a beast cut in two, the parties passing *between the parts* — a self-maledictory oath, calling the fate of the divided animal upon any who break the word. But at Abram''s covenant only *a smoking furnace, and a burning lamp... passed between those pieces* (Genesis 15:17): Yahuah ALONE walks the path, binding Himself, not Abram, to the curse.'),
+    ('canon','genesis',15,18,'canon','genesis',17,8,'free',
+      E'*And I will give unto thee, and to thy seed after thee, the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession; and I will be their Elohim (God)* (Genesis 17:8). The land-grant cut here — *Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18) — is sealed two chapters on as *an everlasting possession*. The covenant of the pieces and the covenant of circumcision are one oath, the land given to the seed for ever.'),
+    ('canon','genesis',15,18,'canon','nehemiah',9,8,'free',
+      E'*And foundest his heart faithful before thee, and madest a covenant with him to give the land of the Canaanites... to give it, I say, to his seed, and hast performed thy words; for thou art righteous* (Nehemiah 9:8). Centuries later Yashar''el remembers this very covenant — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land* (Genesis 15:18) — and confesses that Yahuah *hast performed thy words; for thou art righteous*. The self-bound oath of the burning lamp was kept; the One who passed between the pieces proved faithful.'),
+    ('canon','genesis',15,17,'jubilees','jubilees',14,16,'extras',
+      E'*And you will go to your fathers in peace, and be buried in a good old age. But in the fourth generation they will return hither; for the iniquity of the Amorites is not yet full." And he awoke from his sleep, and he arose, and the sun had set; and there was a flame, and behold! a furnace was smoking, and a flame of fire passed between the pieces* (Jubilees 14:16). The restored witness keeps the heart of the sign: *a furnace was smoking, and a flame of fire passed between the pieces* — the smoking furnace and burning lamp of *passed between those pieces* (Genesis 15:17), Yahuah alone moving through the divided sacrifice.'),
+    ('canon','genesis',15,9,'jubilees','jubilees',14,11,'extras',
+      E'*And he built there an altar, and sacrificed all these; and he poured their blood upon the altar, and divided them in the midst, and laid them over against each other; but the birds divided he not. And birds came down upon the pieces, and Abram drove them away* (Jubilees 14:11). The restored witness gathers the cutting of the covenant-beasts — *divided them in the midst... but the birds divided he not* — matching *divided them in the midst, and laid each piece one against another: but the birds divided he not* (Genesis 15:10), and Abram driving off the fowls that came down (Genesis 15:11).'),
+    ('canon','genesis',15,18,'jubilees','jubilees',14,18,'extras',
+      E'*And on that day Yahuah (God) made a covenant with Abram, saying: "To your seed will I give this land, from the river of Egypt to the great river, the river Euphrates..."* (Jubilees 14:18). The land-grant of the covenant is preserved entire — *To your seed will I give this land, from the river of Egypt to the great river, the river Euphrates* — the same boundaries and the same oath of *Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18).'),
+
+    -- THREAD 5: Thy seed a stranger four hundred years — the sojourn and exodus foretold
+    ('canon','genesis',15,13,'canon','acts',7,6,'free',
+      E'*And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years* (Acts 7:6). Stephen quotes the prophecy spoken over the sleeping Abram — *thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13) — naming it as the word Yahuah had sworn before the seed existed: the bondage in Egypt foretold to Abram in the horror of great darkness.'),
+    ('canon','genesis',15,14,'canon','acts',7,7,'free',
+      E'*And the nation to whom they shall be in bondage will I judge, said Elohim (God): and after that shall they come forth, and serve me in this place* (Acts 7:7). The second half of the oath — *also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:14) — is read forward by Stephen to the exodus: the judging of Egypt and the coming-forth of the seed to *serve me in this place*. The affliction was sworn, and so was the deliverance.'),
+    ('canon','genesis',15,13,'canon','exodus',12,40,'free',
+      E'*Now the sojourning of the children of Yashar''el (Israel), who dwelt in Egypt, was four hundred and thirty years* (Exodus 12:40). The word over the sleeping Abram — *thy seed shall be a stranger in a land that is not theirs... four hundred years* (Genesis 15:13) — comes due: *the sojourning of the children of Yashar''el... was four hundred and thirty years*. What was prophesied to one childless man in a vision is dated and fulfilled to the very generation.'),
+    ('canon','genesis',15,14,'canon','exodus',12,41,'free',
+      E'*And it came to pass at the end of the four hundred and thirty years, even the selfsame day it came to pass, that all the hosts of Yahuah (LORD) went out from the land of Egypt* (Exodus 12:41). The promise *afterward shall they come out with great substance* (Genesis 15:14) is kept *the selfsame day*: the hosts of Yahuah marching out of Egypt, the seed coming forth from the bondage Abram was shown — the oath of the burning lamp performed to the day.'),
+    ('canon','genesis',15,13,'jubilees','jubilees',14,13,'extras',
+      E'*Know of a surety that your seed shall be a stranger in a land (that is) not theirs, and they will bring them into bondage, and afflict them four hundred years* (Jubilees 14:13). The restored witness keeps the prophecy of the great darkness — *your seed shall be a stranger in a land not theirs... and afflict them four hundred years* — verse-for-verse with *thy seed shall be a stranger in a land that is not theirs... they shall afflict them four hundred years* (Genesis 15:13).'),
+    ('canon','genesis',15,14,'jubilees','jubilees',14,14,'extras',
+      E'*And the nation also to whom they will be in bondage shall I judge, and after that they will come forth thence with much substance* (Jubilees 14:14). The deliverance half of the oath is carried entire — *the nation... shall I judge, and after that they will come forth... with much substance* — matching *that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:14).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-15-i-am-thy-shield-and-thy-exceeding-great-reward',
+       E'I am thy shield, and thy exceeding great reward',
+       E'After Abram refuses every spoil of the king of Sodom — *I will not take any thing that is thine, lest thou shouldest say, I have made Abram rich* (Genesis 14:23) — the word of Yahuah comes to him in a vision: *Fear not, Abram: I am thy shield, and thy exceeding great reward* (Genesis 15:1). This is the Formed appearing and speaking — the visible Glory who bears the Name, the One who met Abram. And the reward He names is not riches the Formed would grant; it is Yahuah HIMSELF. Having turned down Sodom''s goods, Abram is given the Giver. The psalmist sings the same portion: *Yahuah (LORD) is the portion of mine inheritance and of my cup* (Psalm 16:5), and *Yahuah Elohim (the LORD God) is a sun and shield... no good thing will he withhold from them that walk uprightly* (Psalm 84:11). What is spoken to the one man becomes the standing confession of his seed: *who is like unto thee, O people saved by Yahuah (LORD), the shield of thy help* (Deuteronomy 33:29). The restored witness keeps the opening word and dates it to the season of the covenant: *the word of Yahuah (God) came to Abram in a dream, saying: "Fear not, Abram; I am your defender, and your reward will be exceeding great"* (Jubilees 14:1). The shield is not a thing given but a Person who guards; the reward is the covenant-Maker Himself.',
+       sv.verse_id, ev.verse_id, 'extras', 20350
+  FROM _s301_ge15_lookup sv, _s301_ge15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=15 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-15-so-shall-thy-seed-be-the-stars-of-heaven',
+       E'So shall thy seed be — the stars of heaven',
+       E'Abram is childless, and reckons his steward Eliezer his heir; but the word of Yahuah answers, *he that shall come forth out of thine own bowels shall be thine heir* (Genesis 15:4). Then Yahuah brings him outside: *Look now toward heaven, and tell the stars, if thou be able to number them... So shall thy seed be* (Genesis 15:5). The seed of promise is set beyond all counting — and this is the same innumerable seed measured already against the earth, *I will make thy seed as the dust of the earth* (Genesis 13:16), and sworn again on the mount, *as the stars of the heaven, and as the sand which is upon the sea shore* (Genesis 22:17), and handed to Isaac, *I will make thy seed to multiply as the stars of heaven* (Genesis 26:4). It is one promise, carried by paternal bloodline and covenant-word together. Now weave forward. Sha''ul (Paul) quotes this very verse: Abram *against hope believed in hope... according to that which was spoken, So shall thy seed be* (Romans 4:18). And the writer to the Hebrews names the count fulfilled out of one as-good-as-dead man: *so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable* (Hebrews 11:12). The restored witness keeps the scene whole — *he looked toward heaven, and beheld the stars. And He said to him: "So shall your seed be"* (Jubilees 14:5). The star-promise is believed before a single child is born; it is the ground the next verse rests on.',
+       sv.verse_id, ev.verse_id, 'extras', 20353
+  FROM _s301_ge15_lookup sv, _s301_ge15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=15 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★ CENTERPIECE — MOST-CONTESTED VERSE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-15-he-believed-and-it-was-counted-for-righteousness',
+       E'He believed in Yahuah — and it was counted to him for righteousness',
+       E'*And he believed in Yahuah (LORD); and he counted it to him for righteousness* (Genesis 15:6). This is the most-distorted verse in the Scriptures, and the framework reads it exactly as it stands. Abram TRUSTED Yahuah''s promise of the innumerable seed, and that trust was reckoned to him as righteousness. This is covenant-trust that RECEIVES the promise — the believing that lays hold of what Yahuah swore — not a sola-fide formula set against the commandments. The verse does not pit faith against Torah; it begins a sentence that the same Abraham''s life completes: *Because that Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws* (Genesis 26:5). The man whose belief was counted righteous is the very man Yahuah names as the keeper of His charge and His laws. Trust reckoned righteous and a life of covenant-keeping are one walk, never two roads. Sha''ul (Paul) reaches back to this verse three times — *Abraham believed Elohim (God), and it was counted unto him for righteousness* (Romans 4:3), *faith was reckoned to Abraham for righteousness* (Romans 4:9), *and therefore it was imputed to him for righteousness* (Romans 4:22) — to show that the reckoning rested on trust in the promise, while Abram was yet uncircumcised, the trust *fully persuaded that, what he had promised, he was able also to perform* (Romans 4:21). He quotes it again in Galatians — *Even as Abraham believed Elohim (God), and it was accounted to him for righteousness* (Galatians 3:6) — naming *they which are of faith* the children of *faithful Abraham* (Galatians 3:9): the faith that obeyed when called. And Ya''aqob (James) reads the verse WITH the works, not against them: *the scripture was fulfilled which saith, Abraham believed Elohim (God), and it was imputed unto him for righteousness* when he *offered Isaac his son upon the altar*, for *by works was faith made perfect* — *and he was called the Friend of Elohim (God)* (James 2:21-23). The restored witness sets the reckoning inside the covenant itself: *And he believed in Yahuah (God), and it was counted to him for righteousness* (Jubilees 14:6), in the same breath as the land-oath and *I shall be Elohim to you and to your seed after you*. Abram''s trust receives the promise — and then walks in obedience. Never freedom from the commandments; the believing and the keeping are one.',
+       sv.verse_id, ev.verse_id, 'extras', 20356
+  FROM _s301_ge15_lookup sv, _s301_ge15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=15 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-15-the-covenant-cut-the-formed-passed-between-the-pieces',
+       E'The covenant cut — the Formed passed between the pieces',
+       E'*Whereby shall I know that I shall inherit it?* (Genesis 15:8), Abram asks — and Yahuah answers not with an argument but with a covenant. He commands the beasts taken and cut: *an heifer of three years old, and a she goat of three years old, and a ram of three years old, and a turtledove, and a young pigeon* (Genesis 15:9), and Abram *divided them in the midst, and laid each piece one against another: but the birds divided he not* (Genesis 15:10). This is the cutting-rite the prophet later names — *when they cut the calf in twain, and passed between the parts thereof* (Jeremiah 34:18) — a self-maledictory oath: the one who passes between the pieces calls the fate of the divided animal upon himself if he breaks the word. Then *a deep sleep fell upon Abram; and, lo, an horror of great darkness fell upon him* (Genesis 15:12) — Abram is put OUT, made only a witness. And when the sun is down, *behold a smoking furnace, and a burning lamp that passed between those pieces* (Genesis 15:17). YAHUAH ALONE walks the bloody path — the Formed, the visible Glory who bears the Name, binding HIMSELF, not Abram, to the curse. The oath is His to keep: *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18), sealed two chapters on *for an everlasting possession* (Genesis 17:8). The restored witness keeps the sign — *a furnace was smoking, and a flame of fire passed between the pieces* (Jubilees 14:16) — and the land-grant entire (Jubilees 14:18). And Yashar''el confesses, long after, that the self-bound oath was kept: *thou... madest a covenant with him to give the land... and hast performed thy words; for thou art righteous* (Nehemiah 9:8). The One who passed between the pieces proved faithful.',
+       sv.verse_id, ev.verse_id, 'extras', 20359
+  FROM _s301_ge15_lookup sv, _s301_ge15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=15 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'genesis-15-thy-seed-a-stranger-four-hundred-years',
+       E'Thy seed a stranger four hundred years — the sojourn and exodus foretold',
+       E'Into the horror of great darkness Yahuah speaks the whole future of the seed: *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). The bondage in Egypt is foretold to a still-childless man — and so is the deliverance: *also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:14), and *in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full* (Genesis 15:16). Affliction and exodus are both sworn before the seed exists. Stephen quotes the oath entire: *his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years* (Acts 7:6), and *the nation to whom they shall be in bondage will I judge... and after that shall they come forth, and serve me in this place* (Acts 7:7). And Exodus dates the fulfillment to the day: *the sojourning of the children of Yashar''el (Israel), who dwelt in Egypt, was four hundred and thirty years* (Exodus 12:40), and *at the end of the four hundred and thirty years, even the selfsame day... all the hosts of Yahuah (LORD) went out from the land of Egypt* (Exodus 12:41). The restored witness carries the prophecy verse-for-verse — *your seed shall be a stranger in a land not theirs... and afflict them four hundred years* (Jubilees 14:13), *the nation... shall I judge, and after that they will come forth... with much substance* (Jubilees 14:14). What was shown to Abram in a vision was performed to the generation, the selfsame day.',
+       sv.verse_id, ev.verse_id, 'extras', 20362
+  FROM _s301_ge15_lookup sv, _s301_ge15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='genesis' AND ev.chapter_number=15 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will not take any thing that is thine, lest thou shouldest say, I have made Abram rich* (Genesis 14:23) — Abram refuses Sodom''s goods just before *I am thy... exceeding great reward* (15:1) gives him the Giver instead.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-i-am-thy-shield-and-thy-exceeding-great-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) is the portion of mine inheritance and of my cup* (Psalm 16:5) — the reward of *I am... thy exceeding great reward* (15:1) is Yahuah Himself, the portion the psalmist sings.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-i-am-thy-shield-and-thy-exceeding-great-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah Elohim (the LORD God) is a sun and shield... no good thing will he withhold from them that walk uprightly* (Psalm 84:11) — the *shield* of 15:1 is a Person who guards.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=84 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-i-am-thy-shield-and-thy-exceeding-great-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*who is like unto thee, O people saved by Yahuah (LORD), the shield of thy help* (Deuteronomy 33:29) — what is said to Abram (*I am thy shield*, 15:1) becomes the confession of his seed Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-i-am-thy-shield-and-thy-exceeding-great-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the word of Yahuah (God) came to Abram in a dream... "Fear not, Abram; I am your defender, and your reward will be exceeding great"* (Jubilees 14:1) — the opening word of 15:1 carried verse-for-verse, dated to the covenant season.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-i-am-thy-shield-and-thy-exceeding-great-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*against hope believed in hope... according to that which was spoken, So shall thy seed be* (Romans 4:18) — Sha''ul quotes the star-promise of 15:5 as the ground of Abram''s faith.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-so-shall-thy-seed-be-the-stars-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable* (Hebrews 11:12) — the star-count of 15:5 fulfilled out of one as-good-as-dead man, joined to the sand of 22:17.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-so-shall-thy-seed-be-the-stars-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will make thy seed as the dust of the earth* (Genesis 13:16) — the same innumerable seed measured against the dust below before the stars above (15:5).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-so-shall-thy-seed-be-the-stars-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore* (Genesis 22:17) — the star-promise of 15:5 sworn again by oath on the mount, joined to the sand.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-so-shall-thy-seed-be-the-stars-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will make thy seed to multiply as the stars of heaven* (Genesis 26:4) — the star-promise of 15:5 handed down to Isaac, the covenant refrain carried on.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-so-shall-thy-seed-be-the-stars-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*he looked toward heaven, and beheld the stars. And He said to him: "So shall your seed be"* (Jubilees 14:5) — the restored witness keeps the star-scene of 15:5 whole.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=5
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-so-shall-thy-seed-be-the-stars-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★ CENTERPIECE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Abraham believed Elohim (God), and it was counted unto him for righteousness* (Romans 4:3) — Sha''ul quotes 15:6: trust in the promise reckoned righteous, the believing that receives, not faith against the commandments.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-he-believed-and-it-was-counted-for-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*faith was reckoned to Abraham for righteousness* (Romans 4:9) — the reckoning of 15:6 came while Abram was yet uncircumcised: trust first, then sign, then walk.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-he-believed-and-it-was-counted-for-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And therefore it was imputed to him for righteousness* (Romans 4:22) — the imputing of 15:6, resting on the trust *fully persuaded that, what he had promised, he was able also to perform* (Romans 4:21).'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-he-believed-and-it-was-counted-for-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Even as Abraham believed Elohim (God), and it was accounted to him for righteousness* (Galatians 3:6) — *faithful Abraham* (Galatians 3:9), the believing that obeyed when called; the children of faith share his trust, not trust-against-Torah.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-he-believed-and-it-was-counted-for-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the scripture was fulfilled... Abraham believed Elohim... and he was called the Friend of Elohim (God)* (James 2:23) — Ya''aqob reads 15:6 WITH the works: faith made perfect by offering Isaac (James 2:21-22), the believing and the obeying one walk.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-he-believed-and-it-was-counted-for-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws* (Genesis 26:5) — the framework anchor that COMPLETES 15:6: the same Abraham whose trust was reckoned righteous is the covenant-keeper. Faith and faithfulness, one walk.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-he-believed-and-it-was-counted-for-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*And he believed in Yahuah (God), and it was counted to him for righteousness* (Jubilees 14:6) — the restored witness sets the reckoning of 15:6 inside the covenant itself, beside *I shall be Elohim to you and to your seed after you*.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-he-believed-and-it-was-counted-for-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*divided them in the midst, and laid them over against each other; but the birds divided he not... And birds came down upon the pieces, and Abram drove them away* (Jubilees 14:11) — the cutting of the covenant-beasts of 15:10-11 carried in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=9
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-the-covenant-cut-the-formed-passed-between-the-pieces'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*when they cut the calf in twain, and passed between the parts thereof* (Jeremiah 34:18) — the prophet names the self-maledictory cutting-rite of 15:17, the oath called down on the one who passes between.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=17
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=34 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-the-covenant-cut-the-formed-passed-between-the-pieces'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*a furnace was smoking, and a flame of fire passed between the pieces* (Jubilees 14:16) — the smoking furnace and burning lamp of 15:17, Yahuah alone moving through the divided sacrifice.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=17
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-the-covenant-cut-the-formed-passed-between-the-pieces'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession* (Genesis 17:8) — the land-grant of 15:18 sealed as an everlasting possession; the pieces-covenant and circumcision-covenant one oath.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=18
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-the-covenant-cut-the-formed-passed-between-the-pieces'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*To your seed will I give this land, from the river of Egypt to the great river, the river Euphrates* (Jubilees 14:18) — the land-grant boundaries of 15:18 preserved entire in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=18
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-the-covenant-cut-the-formed-passed-between-the-pieces'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*madest a covenant with him to give the land... and hast performed thy words; for thou art righteous* (Nehemiah 9:8) — Yashar''el confesses the self-bound oath of 15:18 was kept; the One who passed between the pieces proved faithful.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=18
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-the-covenant-cut-the-formed-passed-between-the-pieces'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*his seed should sojourn in a strange land... entreat them evil four hundred years* (Acts 7:6) — Stephen quotes the prophecy of 15:13, the bondage foretold to the still-childless Abram.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=13
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-thy-seed-a-stranger-four-hundred-years'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the nation to whom they shall be in bondage will I judge... after that shall they come forth, and serve me in this place* (Acts 7:7) — the deliverance half of the oath of 15:14, read forward to the exodus.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=14
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-thy-seed-a-stranger-four-hundred-years'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the sojourning of the children of Yashar''el (Israel), who dwelt in Egypt, was four hundred and thirty years* (Exodus 12:40) — the *four hundred years* of 15:13 come due, dated to the generation.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=13
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-thy-seed-a-stranger-four-hundred-years'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the selfsame day... all the hosts of Yahuah (LORD) went out from the land of Egypt* (Exodus 12:41) — *afterward shall they come out with great substance* (15:14) kept to the day.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=14
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-thy-seed-a-stranger-four-hundred-years'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*your seed shall be a stranger in a land not theirs... and afflict them four hundred years* (Jubilees 14:13) — the prophecy of 15:13 carried verse-for-verse in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=13
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-thy-seed-a-stranger-four-hundred-years'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the nation... shall I judge, and after that they will come forth... with much substance* (Jubilees 14:14) — the deliverance of 15:14 carried entire in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s301_ge15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='genesis' AND sv.chapter_number=15 AND sv.verse_number=14
+  JOIN _s301_ge15_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='genesis-15-thy-seed-a-stranger-four-hundred-years'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session301 — Genesis cross-references complete.'

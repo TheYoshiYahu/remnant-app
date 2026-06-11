@@ -49,7 +49,7 @@ half and the standing minion protocol; this file governs the Tanakh half.
 
 | # | Book | Ch | Verses | Band base | Session | Status |
 |--:|------|---:|-------:|----------:|--------:|--------|
-| 1 | Genesis | 50 | 1533 | 20000 | 301 | ⬜ greenfield — IN PROGRESS |
+| 1 | Genesis | 50 | 1533 | 20000 | 301 | 🔄 Packs 1-4 LIVE (ch1-15, 69 threads/343 members); RESUME Pack 5 (ch16-19) |
 | 2 | Exodus | 40 | 1213 | 21500 | 302 | ⬜ |
 | 3 | Leviticus | 27 | 859 | 22700 | 303 | ⬜ (Lev 23 appointed times — load-bearing) |
 | 4 | Numbers | 36 | 1288 | 23500 | 304 | ⬜ |
