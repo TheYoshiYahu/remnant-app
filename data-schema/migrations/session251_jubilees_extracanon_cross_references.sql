@@ -10794,6 +10794,2660 @@ SELECT t.id, x.id, 4, E'Genesis 45:7 — *And Elohim (God) sent me before you to
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jubilees_41.sql (session251 jubilees 41) -----
+-- Source anchor: jubilees/jubilees ch41. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju41 (view _session251_ju41_lookup). Sort band base 54000, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju41_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-41-er-and-onan-slain
+  ('jubilees', 'jubilees', 41, 1, 'canon', 'genesis', 38, 6, 'free', E'Genesis 38:6 — *And Yahudah (Judah) took a wife for Er his firstborn, whose name was Tamar.* The same marriage that opens Jubilees 41:1 opens the Genesis source.'),
+  ('jubilees', 'jubilees', 41, 3, 'canon', 'genesis', 38, 7, 'free', E'Genesis 38:7 — *And Er, Yahudah''s (Judah’s) firstborn, was wicked in the sight of Yahuah (LORD); and Yahuah (LORD) slew him.* Jubilees 41:3 quotes the verdict on Er almost word for word.'),
+  ('jubilees', 'jubilees', 41, 4, 'canon', 'genesis', 38, 8, 'free', E'Genesis 38:8 — *And Yahudah (Judah) said unto Onan, Go in unto thy brother’s wife, and marry her, and raise up seed to thy brother.* The levirate charge in Jubilees 41:4 is the same charge Judah gives in Genesis.'),
+  ('jubilees', 'jubilees', 41, 5, 'canon', 'genesis', 38, 10, 'free', E'Genesis 38:10 — *And the thing which he did displeased Yahuah (LORD): wherefore he slew him also.* Onan''s death in Jubilees 41:5 matches Genesis exactly.'),
+  ('jubilees', 'jubilees', 41, 4, 'canon', 'deuteronomy', 25, 5, 'free', E'Deuteronomy 25:5 — *If brethren dwell together, and one of them die, and have no child, the wife of the dead shall not marry without unto a stranger: her husband’s brother shall go in unto her, and take her to him to wife, and perform the duty of an husband’s brother unto her.* The duty Judah lays on Onan in Jubilees 41:4 is the Torah''s own levirate ordinance.'),
+  -- thread: jubilees-41-tamar-withheld-and-the-veil
+  ('jubilees', 'jubilees', 41, 6, 'canon', 'genesis', 38, 11, 'free', E'Genesis 38:11 — *Then said Yahudah (Judah) to Tamar his daughter in law, Remain a widow at thy father’s house, till Shelah my son be grown: for he said, Lest peradventure he die also, as his brethren did. And Tamar went and dwelt in her father’s house.* Judah''s word to Tamar in Jubilees 41:6 is the same withholding.'),
+  ('jubilees', 'jubilees', 41, 9, 'canon', 'genesis', 38, 14, 'free', E'Genesis 38:14 — *And she put her widow’s garments off from her, and covered her with a vail, and wrapped herself, and sat in an open place, which is by the way to Timnath; for she saw that Shelah was grown, and she was not given unto him to wife.* The veil and the wayside seat of Jubilees 41:9 are drawn straight from Genesis.'),
+  ('jubilees', 'jubilees', 41, 11, 'canon', 'genesis', 38, 18, 'free', E'Genesis 38:18 — *And he said, What pledge shall I give thee? And she said, Thy signet, and thy bracelets, and thy staff that is in thine hand. And he gave it her, and came in unto her, and she conceived by him.* The ring, necklace, and staff of Jubilees 41:11 are the signet, bracelets, and staff of Genesis.'),
+  ('jubilees', 'jubilees', 41, 6, 'canon', 'leviticus', 18, 15, 'free', E'Leviticus 18:15 — *Thou shalt not uncover the nakedness of thy daughter in law: she is thy son’s wife; thou shalt not uncover her nakedness.* Tamar is named Judah''s daughter-in-law in Jubilees 41:6 — the very relation Torah forbids.'),
+  -- thread: jubilees-41-she-is-more-righteous-than-i
+  ('jubilees', 'jubilees', 41, 16, 'canon', 'genesis', 38, 24, 'free', E'Genesis 38:24 — *And it came to pass about three months after, that it was told Yahudah (Judah), saying, Tamar thy daughter in law hath played the harlot; and also, behold, she is with child by whoredom. And Yahudah (Judah) said, Bring her forth, and let her be burnt.* The three-month report and the sentence of burning in Jubilees 41:16 are Genesis.'),
+  ('jubilees', 'jubilees', 41, 18, 'canon', 'genesis', 38, 25, 'free', E'Genesis 38:25 — *When she was brought forth, she sent to her father in law, saying, By the man, whose these are, am I with child: and she said, Discern, I pray thee, whose are these, the signet, and bracelets, and staff.* Tamar''s sending of the pledge in Jubilees 41:18 matches Genesis word for word.'),
+  ('jubilees', 'jubilees', 41, 19, 'canon', 'genesis', 38, 26, 'free', E'Genesis 38:26 — *And Yahudah (Judah) acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son. And he knew her again no more.* Judah''s “Tamar is more righteous than I am” in Jubilees 41:19 is the very confession of Genesis.'),
+  ('jubilees', 'jubilees', 41, 21, 'canon', 'genesis', 38, 29, 'free', E'Genesis 38:29 — *And it came to pass, as he drew back his hand, that, behold, his brother came out: and she said, How hast thou broken forth? this breach be upon thee: therefore his name was called Pharez.* The birth of Perez in Jubilees 41:21 is the breach-birth of Genesis.'),
+  -- thread: jubilees-41-the-messianic-seed-through-perez
+  ('jubilees', 'jubilees', 41, 21, 'canon', 'matthew', 1, 3, 'free', E'Matthew 1:3 — *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;* The Perez and Zerah born in Jubilees 41:21 stand by Tamar''s name in the genealogy of the Messiah.'),
+  ('jubilees', 'jubilees', 41, 21, 'canon', 'ruth', 4, 12, 'free', E'Ruth 4:12 — *And let thy house be like the house of Pharez, whom Tamar bare unto Yahudah (Judah), of the seed which Yahuah (LORD) shall give thee of this young woman.* The Pharez of Jubilees 41:21 becomes Israel''s blessing-name for a fruitful house.'),
+  ('jubilees', 'jubilees', 41, 21, 'canon', 'ruth', 4, 18, 'free', E'Ruth 4:18 — *Now these are the generations of Pharez: Pharez begat Hezron,* The genealogy to David opens with the Perez born in Jubilees 41:21.'),
+  ('jubilees', 'jubilees', 41, 26, 'canon', 'ruth', 4, 17, 'free', E'Ruth 4:17 — *And the women her neighbours gave it a name, saying, There is a son born to Naomi; and they called his name Obed: he is the father of Jesse, the father of David.* The seed “not rooted out” in Jubilees 41:26 runs through Perez down to David.'),
+  -- thread: jubilees-41-judahs-repentance-and-forgiveness
+  ('jubilees', 'jubilees', 41, 23, 'canon', 'leviticus', 18, 15, 'free', E'Leviticus 18:15 — *Thou shalt not uncover the nakedness of thy daughter in law: she is thy son’s wife; thou shalt not uncover her nakedness.* The transgression Judah laments in Jubilees 41:23 is the Torah ordinance he had broken.'),
+  ('jubilees', 'jubilees', 41, 25, 'canon', 'matthew', 1, 3, 'free', E'Matthew 1:3 — *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;* The Judah who receives forgiveness in Jubilees 41:25 is the Judah carried into the Messianic line.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju41_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju41_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-41-er-and-onan-slain',
+       E'Er and Onan — the wicked sons whom Yahuah slew',
+       E'Jubilees opens the Judah-and-Tamar account exactly as Genesis tells it: *And in the forty-fifth jubilee, in the second week, (and) in the second year, Yahudah (Judah) took for his first-born Er, a wife from the daughters of Aram, named Tamar.* (Jubilees 41:1) — then *And this Er, the first-born of Yahudah (Judah), was wicked, and Yahuah (God) slew him.* (Jubilees 41:3). Genesis is the source being retold: *And Er, Yahudah''s (Judah’s) firstborn, was wicked in the sight of Yahuah (LORD); and Yahuah (LORD) slew him.* (Genesis 38:7). When Onan refuses to raise up seed for his brother, the same judgement falls — *And the thing which he did displeased Yahuah (LORD): wherefore he slew him also.* (Genesis 38:10) — for the levirate duty Judah invokes is Torah itself: *If brethren dwell together, and one of them die, and have no child, the wife of the dead shall not marry without unto a stranger: her husband’s brother shall go in unto her, and take her to him to wife, and perform the duty of an husband’s brother unto her.* (Deuteronomy 25:5). It ain''t new — Jubilees and Genesis stand on the same page.',
+       sv.verse_id, ev.verse_id, 'extras', 54000
+  FROM _session251_ju41_lookup sv, _session251_ju41_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=41 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-41-tamar-withheld-and-the-veil',
+       E'Tamar withheld, the veil, and the pledge',
+       E'Judah holds Tamar back from his last son: *And Yahudah (Judah) said to Tamar, his daughter-in-law: “Remain in your father’s house as a widow till Shelah my son be grown up, and I shall give you to him to wife.”* (Jubilees 41:6) — the same dismissal as Genesis: *Then said Yahudah (Judah) to Tamar his daughter in law, Remain a widow at thy father’s house, till Shelah my son be grown* (Genesis 38:11). So she takes the veil and waits in the gate: *And she put off her widow’s clothes, and put on a veil, and adorned herself, and sat in the gate adjoining the way to Timnah.* (Jubilees 41:9) — *And she put her widow’s garments off from her, and covered her with a vail... and sat in an open place, which is by the way to Timnath* (Genesis 38:14). The pledge Judah surrenders — ring, necklace, staff (Jubilees 41:11) — is the signet, bracelets, and staff of Genesis: *And he gave it her, and came in unto her, and she conceived by him.* (Genesis 38:18). And the very relation Judah will violate is named in Torah''s forbidden list: *Thou shalt not uncover the nakedness of thy daughter in law: she is thy son’s wife* (Leviticus 18:15).',
+       sv.verse_id, ev.verse_id, 'extras', 54003
+  FROM _session251_ju41_lookup sv, _session251_ju41_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=6
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=41 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-41-she-is-more-righteous-than-i',
+       E'“Tamar is more righteous than I” — the pledge revealed',
+       E'Condemned to the fire, Tamar sends back the pledge: *And it came to pass when they brought her forth to bum her that she sent to her father-in-law the ring and the necklace, and the staff, saying: “Discern whose are these, for by him am I with child.”* (Jubilees 41:18) — word for word with Genesis: *she sent to her father in law, saying, By the man, whose these are, am I with child: and she said, Discern, I pray thee, whose are these, the signet, and bracelets, and staff.* (Genesis 38:25). Judah''s confession is the heart of both texts: *And Yahudah (Judah) acknowledged, and said: “Tamar is more righteous than I am. And therefore let them burn her not.”* (Jubilees 41:19) — *And Yahudah (Judah) acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son. And he knew her again no more.* (Genesis 38:26). The death sentence had been the same: *And Yahudah (Judah) said, Bring her forth, and let her be burnt.* (Genesis 38:24). Out of this unlikely vindication the twins are born — *behold, his brother came out... therefore his name was called Pharez.* (Genesis 38:29).',
+       sv.verse_id, ev.verse_id, 'extras', 54006
+  FROM _session251_ju41_lookup sv, _session251_ju41_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=16
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=41 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-41-the-messianic-seed-through-perez',
+       E'Perez and Zerah — the seed kept, the line to David and Messiah',
+       E'*And after that she bare two sons, Perez and Zerah, in the seventh year of this second week.* (Jubilees 41:21). This is no footnote: through this unexpected birth the Messianic seed is carried. Ruth''s blessing names it: *And let thy house be like the house of Pharez, whom Tamar bare unto Yahudah (Judah), of the seed which Yahuah (LORD) shall give thee of this young woman.* (Ruth 4:12), and the genealogy that closes Ruth runs straight from him: *Now these are the generations of Pharez: Pharez begat Hezron,* (Ruth 4:18) — on to David: *he is the father of Jesse, the father of David.* (Ruth 4:17). And Matthew sets Tamar by name in the line of the Messiah: *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;* (Matthew 1:3). The seed war could not root out the promise — *for this reason his seed was established for a second generation, and would not be rooted out.* (Jubilees 41:26). The seed kept through the unlikeliest of mothers: it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 54009
+  FROM _session251_ju41_lookup sv, _session251_ju41_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=21
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=41 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-41-judahs-repentance-and-forgiveness',
+       E'Judah''s repentance — forgiven because he turned',
+       E'Jubilees adds what Genesis leaves unspoken — Judah''s grief and forgiveness: *And Yahudah (Judah) acknowledged that the deed which he had done was evil... and he began to lament and to supplicate before Yahuah (God) because of his transgression.* (Jubilees 41:23), and the answer comes: *And we told him in a dream that it was forgiven him because he supplicated earnestly, and lamented, and did not again commit it.* (Jubilees 41:24) — *And he received forgiveness because he turned from his sin and from his ignorance* (Jubilees 41:25). The sin he laments is the one Torah names by relation: *Thou shalt not uncover the nakedness of thy daughter in law: she is thy son’s wife; thou shalt not uncover her nakedness.* (Leviticus 18:15). Yet the repentant Judah is the same Judah set in the Messianic line — *And Judas begat Phares and Zara of Thamar* (Matthew 1:3): grace meets the turned heart, and the seed is kept.',
+       sv.verse_id, ev.verse_id, 'extras', 54012
+  FROM _session251_ju41_lookup sv, _session251_ju41_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=23
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=41 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-41-er-and-onan-slain
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 38:6 — *And Yahudah (Judah) took a wife for Er his firstborn, whose name was Tamar.* The same marriage that opens Jubilees 41:1 opens the Genesis source.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-er-and-onan-slain'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 38:7 — *And Er, Yahudah''s (Judah’s) firstborn, was wicked in the sight of Yahuah (LORD); and Yahuah (LORD) slew him.* Jubilees 41:3 quotes the verdict on Er almost word for word.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-er-and-onan-slain'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 38:8 — *And Yahudah (Judah) said unto Onan, Go in unto thy brother’s wife, and marry her, and raise up seed to thy brother.* The levirate charge in Jubilees 41:4 is the same charge Judah gives in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-er-and-onan-slain'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 38:10 — *And the thing which he did displeased Yahuah (LORD): wherefore he slew him also.* Onan''s death in Jubilees 41:5 matches Genesis exactly.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-er-and-onan-slain'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Deuteronomy 25:5 — *If brethren dwell together, and one of them die, and have no child, the wife of the dead shall not marry without unto a stranger: her husband’s brother shall go in unto her, and take her to him to wife, and perform the duty of an husband’s brother unto her.* The duty Judah lays on Onan in Jubilees 41:4 is the Torah''s own levirate ordinance.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-er-and-onan-slain'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-41-tamar-withheld-and-the-veil
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 38:11 — *Then said Yahudah (Judah) to Tamar his daughter in law, Remain a widow at thy father’s house, till Shelah my son be grown: for he said, Lest peradventure he die also, as his brethren did. And Tamar went and dwelt in her father’s house.* Judah''s word to Tamar in Jubilees 41:6 is the same withholding.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-tamar-withheld-and-the-veil'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 38:14 — *And she put her widow’s garments off from her, and covered her with a vail, and wrapped herself, and sat in an open place, which is by the way to Timnath; for she saw that Shelah was grown, and she was not given unto him to wife.* The veil and the wayside seat of Jubilees 41:9 are drawn straight from Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-tamar-withheld-and-the-veil'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 38:18 — *And he said, What pledge shall I give thee? And she said, Thy signet, and thy bracelets, and thy staff that is in thine hand. And he gave it her, and came in unto her, and she conceived by him.* The ring, necklace, and staff of Jubilees 41:11 are the signet, bracelets, and staff of Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-tamar-withheld-and-the-veil'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Leviticus 18:15 — *Thou shalt not uncover the nakedness of thy daughter in law: she is thy son’s wife; thou shalt not uncover her nakedness.* Tamar is named Judah''s daughter-in-law in Jubilees 41:6 — the very relation Torah forbids.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-tamar-withheld-and-the-veil'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-41-she-is-more-righteous-than-i
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 38:24 — *And it came to pass about three months after, that it was told Yahudah (Judah), saying, Tamar thy daughter in law hath played the harlot; and also, behold, she is with child by whoredom. And Yahudah (Judah) said, Bring her forth, and let her be burnt.* The three-month report and the sentence of burning in Jubilees 41:16 are Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-she-is-more-righteous-than-i'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 38:25 — *When she was brought forth, she sent to her father in law, saying, By the man, whose these are, am I with child: and she said, Discern, I pray thee, whose are these, the signet, and bracelets, and staff.* Tamar''s sending of the pledge in Jubilees 41:18 matches Genesis word for word.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-she-is-more-righteous-than-i'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 38:26 — *And Yahudah (Judah) acknowledged them, and said, She hath been more righteous than I; because that I gave her not to Shelah my son. And he knew her again no more.* Judah''s “Tamar is more righteous than I am” in Jubilees 41:19 is the very confession of Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-she-is-more-righteous-than-i'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 38:29 — *And it came to pass, as he drew back his hand, that, behold, his brother came out: and she said, How hast thou broken forth? this breach be upon thee: therefore his name was called Pharez.* The birth of Perez in Jubilees 41:21 is the breach-birth of Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-she-is-more-righteous-than-i'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-41-the-messianic-seed-through-perez
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 1:3 — *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;* The Perez and Zerah born in Jubilees 41:21 stand by Tamar''s name in the genealogy of the Messiah.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-the-messianic-seed-through-perez'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ruth 4:12 — *And let thy house be like the house of Pharez, whom Tamar bare unto Yahudah (Judah), of the seed which Yahuah (LORD) shall give thee of this young woman.* The Pharez of Jubilees 41:21 becomes Israel''s blessing-name for a fruitful house.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-the-messianic-seed-through-perez'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ruth 4:18 — *Now these are the generations of Pharez: Pharez begat Hezron,* The genealogy to David opens with the Perez born in Jubilees 41:21.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-the-messianic-seed-through-perez'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ruth 4:17 — *And the women her neighbours gave it a name, saying, There is a son born to Naomi; and they called his name Obed: he is the father of Jesse, the father of David.* The seed “not rooted out” in Jubilees 41:26 runs through Perez down to David.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-the-messianic-seed-through-perez'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-41-judahs-repentance-and-forgiveness
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 18:15 — *Thou shalt not uncover the nakedness of thy daughter in law: she is thy son’s wife; thou shalt not uncover her nakedness.* The transgression Judah laments in Jubilees 41:23 is the Torah ordinance he had broken.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-judahs-repentance-and-forgiveness'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 1:3 — *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;* The Judah who receives forgiveness in Jubilees 41:25 is the Judah carried into the Messianic line.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju41_lookup sv, _session251_ju41_lookup tv
+ WHERE t.slug='jubilees-41-judahs-repentance-and-forgiveness'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=41 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_42.sql (session251 jubilees 42) -----
+-- Source anchor: jubilees/jubilees ch42. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju42 (view _session251_ju42_lookup). Sort band base 54025, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju42_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-42-famine-ten-go-down
+  ('jubilees', 'jubilees', 42, 1, 'canon', 'genesis', 42, 1, 'free', E'Genesis 42:1 — *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* The famine that opens Jubilees 42:1 is the same that drives Jacob to send his sons in Genesis.'),
+  ('jubilees', 'jubilees', 42, 4, 'canon', 'genesis', 42, 3, 'free', E'Genesis 42:3 — *And Joseph’s ten brethren went down to buy corn in Egypt.* Jubilees 42:4''s ten sons sent for food are Genesis'' ten brethren going down.'),
+  ('jubilees', 'jubilees', 42, 4, 'canon', 'genesis', 42, 4, 'free', E'Genesis 42:4 — *But Benjamin, Joseph’s brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him.* The held-back Benjamin of Jubilees 42:4 is Genesis'' Benjamin kept home against mischief.'),
+  ('jubilees', 'jubilees', 42, 4, 'jasher', 'jasher', 51, 5, 'extras', E'Jasher 51:5 — *And the sons of Jacob went forth and they went to Egypt, and the sons of Jacob did all as their father had commanded them, and Jacob did not send Benjamin, for he said, Lest an accident might befall him on the road like his brother; and ten of Jacob’s sons went forth.* Jasher matches Jubilees 42:4 down to Benjamin held back and the ten going.'),
+  -- thread: jubilees-42-joseph-knew-them-spies
+  ('jubilees', 'jubilees', 42, 5, 'canon', 'genesis', 42, 8, 'free', E'Genesis 42:8 — *And Joseph knew his brethren, but they knew not him.* This is exactly the recognition asymmetry of Jubilees 42:5, where Joseph recognizes them and they do not recognize him.'),
+  ('jubilees', 'jubilees', 42, 5, 'canon', 'genesis', 42, 9, 'free', E'Genesis 42:9 — *And Joseph remembered the dreams which he dreamed of them, and said unto them, Ye are spies; to see the nakedness of the land ye are come.* The spy-accusation of Jubilees 42:5 is Joseph''s charge in Genesis, rooted in the dreams now fulfilled.'),
+  ('jubilees', 'jubilees', 42, 5, 'jasher', 'jasher', 51, 20, 'extras', E'Jasher 51:20 — *And Joseph saw his brethren, and he knew them, but they knew him not, for Joseph was very great in their eyes, therefore they knew him not.* Jasher gives the reason behind Jubilees 42:5: his greatness blinded them to the brother they had cast off.'),
+  ('jubilees', 'jubilees', 42, 5, 'canon', 'acts', 7, 9, 'free', E'Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him.* Stephen frames the man now accusing them in Jubilees 42:5 as the rejected one whom Elohim was with — the deliverer pattern.'),
+  -- thread: jubilees-42-simeon-bound-money-returned
+  ('jubilees', 'jubilees', 42, 6, 'canon', 'genesis', 42, 24, 'free', E'Genesis 42:24 — *And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes.* The detained Simeon of Jubilees 42:6 is Genesis'' Simeon bound, with Joseph''s secret weeping behind it.'),
+  ('jubilees', 'jubilees', 42, 6, 'canon', 'genesis', 42, 25, 'free', E'Genesis 42:25 — *Then Joseph commanded to fill their sacks with corn, and to restore every man’s money into his sack, and to give them provision for the way: and thus did he unto them.* The gold put back in the sacks unknown in Jubilees 42:6 is Genesis'' restored money.'),
+  ('jubilees', 'jubilees', 42, 9, 'canon', 'genesis', 42, 30, 'free', E'Genesis 42:30 — *The man, who is the lord of the land, spake roughly to us, and took us for spies of the country.* The report carried back to the father in Jubilees 42:9 is the brothers'' own telling in Genesis.'),
+  -- thread: jubilees-42-jacob-grief-against-me
+  ('jubilees', 'jubilees', 42, 10, 'canon', 'genesis', 42, 36, 'free', E'Genesis 42:36 — *And Jacob their father said unto them, Me have ye bereaved of my children: Joseph is not, and Simeon is not, and ye will take Benjamin away: all these things are against me.* This is verbatim the lament Jubilees 42:10 puts on Jacob — bereaved, and all against him.'),
+  ('jubilees', 'jubilees', 42, 11, 'canon', 'genesis', 42, 35, 'free', E'Genesis 42:35 — *And it came to pass as they emptied their sacks, that, behold, every man’s bundle of money was in his sack: and when both they and their father saw the bundles of money, they were afraid.* The returned money that makes Jacob fear to send Benjamin in Jubilees 42:11 is the silver discovered in Genesis.'),
+  ('jubilees', 'jubilees', 42, 11, 'canon', 'genesis', 42, 38, 'free', E'Genesis 42:38 — *And he said, My son shall not go down with you; for his brother is dead, and he is left alone: if mischief befall him by the way in the which ye go, then shall ye bring down my gray hairs with sorrow to the grave.* Jacob''s refusal in Jubilees 42:11 is his very words in Genesis, dreading sorrow to death.'),
+  -- thread: jubilees-42-judah-surety-benjamin
+  ('jubilees', 'jubilees', 42, 19, 'canon', 'genesis', 43, 8, 'free', E'Genesis 43:8 — *And Yahudah (Judah) said unto Yashar''el (Israel) his father, Send the lad with me, and we will arise and go; that we may live, and not die, both we, and thou, and also our little ones.* Judah''s surety in Jubilees 42:19 is the kingly tribe''s pledge in Genesis to live and not die.'),
+  ('jubilees', 'jubilees', 42, 18, 'canon', 'genesis', 42, 37, 'free', E'Genesis 42:37 — *And Reuben spake unto his father, saying, Slay my two sons, if I bring him not to thee: deliver him into my hand, and I will bring him to thee again.* Reuben''s rejected offer in Jubilees 42:18 is his very pledge in Genesis, set against Judah''s accepted surety.'),
+  ('jubilees', 'jubilees', 42, 15, 'canon', 'genesis', 42, 2, 'free', E'Genesis 42:2 — *And he said, Behold, I have heard that there is corn in Egypt: get you down thither, and buy for us from thence; that we may live, and not die.* Israel''s renewed sending in Jubilees 42:15, that we die not, repeats Jacob''s command in Genesis to live and not die.'),
+  ('jubilees', 'jubilees', 42, 19, 'canon', 'matthew', 1, 3, 'free', E'Matthew 1:3 — *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;* The Judah who stands surety in Jubilees 42:19 is the Judah of the Messianic line, Perez of Tamar carried down to Messiah.'),
+  -- thread: jubilees-42-benjamin-feast-portion
+  ('jubilees', 'jubilees', 42, 21, 'canon', 'genesis', 43, 29, 'free', E'Genesis 43:29 — *And he lifted up his eyes, and saw his brother Benjamin, his mother’s son, and said, Is this your younger brother, of whom ye spake unto me? And he said, Elohim (God) be gracious unto thee, my son.* Joseph''s gracious word over Benjamin in Jubilees 42:21 is his blessing in Genesis.'),
+  ('jubilees', 'jubilees', 42, 20, 'jasher', 'jasher', 51, 19, 'extras', E'Jasher 51:19 — *And the sons of Jacob saw Joseph, and his figure and comeliness and dignity of countenance seemed wonderful in their eyes, and they again bowed down to him to the ground.* The brothers standing before Joseph in Jubilees 42:20-21 bow before the throne in Jasher, the dreams fulfilled.'),
+  ('jubilees', 'jubilees', 42, 21, 'canon', 'genesis', 50, 20, 'free', E'Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The feast Joseph spreads in Jubilees 42:21 foreshadows his final word: the evil done him was meant by Elohim for good, to save much people alive.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju42_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju42_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-42-famine-ten-go-down',
+       E'The famine, and the ten go down to Egypt',
+       E'Jubilees dates and retells the opening of Genesis 42: *And in the first year of the third week of the forty-fifth jubilee the famine began to come into the land, and the rain refused to be given to the earth, for none whatever fell* (Jubilees 42:1), so that *Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send* (Jubilees 42:4). This is the Genesis account told beside itself — *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* (Genesis 42:1), and *Joseph''s ten brethren went down to buy corn in Egypt* (Genesis 42:3), while *Benjamin, Joseph''s brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him* (Genesis 42:4). Jasher tells the same descent, even adding the brothers'' secret hope: *And the sons of Jacob went forth and they went to Egypt... and Jacob did not send Benjamin, for he said, Lest an accident might befall him on the road like his brother; and ten of Jacob''s sons went forth* (Jasher 51:5). It ain''t new — Jubilees, Genesis, and Jasher carry one famine and one company of ten.',
+       sv.verse_id, ev.verse_id, 'extras', 54025
+  FROM _session251_ju42_lookup sv, _session251_ju42_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=42 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-42-joseph-knew-them-spies',
+       E'Joseph knew them, but they knew not him',
+       E'The rejected brother now stands exalted and unrecognized: *And Joseph recognized them, but they did not recognize him, and he spake to them and questioned them, and he said to them: “Are you not spies, and have you not come to explore the approaches of the land?” And he put them in ward* (Jubilees 42:5). Genesis tells it twice over — *And Joseph saw his brethren, and he knew them, but made himself strange unto them, and spake roughly unto them* (Genesis 42:7), and plainly: *And Joseph knew his brethren, but they knew not him* (Genesis 42:8); *And Joseph remembered the dreams which he dreamed of them, and said unto them, Ye are spies; to see the nakedness of the land ye are come* (Genesis 42:9). Jasher carries the same charge: *And Joseph saw his brethren, and he knew them, but they knew him not, for Joseph was very great in their eyes, therefore they knew him not* (Jasher 51:20). This is the framework''s deliverer rejected then exalted — the patriarchs who once sold him now bow before him and do not see him; Stephen names the wound by name: *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9).',
+       sv.verse_id, ev.verse_id, 'extras', 54028
+  FROM _session251_ju42_lookup sv, _session251_ju42_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=5
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=42 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-42-simeon-bound-money-returned',
+       E'Simeon detained, the money in the sacks',
+       E'Joseph keeps one brother as a pledge and secretly restores their silver: *And after that he set them free again, and detained Simeon alone and sent off his nine brothers. And he filled their sacks with corn, and he put their gold in their sacks, and they did not know* (Jubilees 42:6); and at home *they told their father all that had befallen them, and how the lord of the country had spoken roughly to them, and had seized Simeon till they should bring Benjamin* (Jubilees 42:9). Genesis tells the binding and the hidden money: *And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes* (Genesis 42:24); *Then Joseph commanded to fill their sacks with corn, and to restore every man''s money into his sack, and to give them provision for the way: and thus did he unto them* (Genesis 42:25). The brothers'' dread is the deliverer''s hidden providence at work — the very mercy looks like a trap.',
+       sv.verse_id, ev.verse_id, 'extras', 54031
+  FROM _session251_ju42_lookup sv, _session251_ju42_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=6
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=42 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-42-jacob-grief-against-me',
+       E'Jacob''s grief: on me your wickedness has come',
+       E'The father''s lament is one of Scripture''s bitterest: *And Jacob said: “Me have you bereaved of my children! Joseph is not and Simeon also is not, and you will take Benjamin away. On me has your wickedness come.”* (Jubilees 42:10), and he refuses Benjamin *For he saw that their money had been returned to every man in his sack, and for this reason he feared to send him* (Jubilees 42:11). Genesis sets the same words on Jacob''s lips: *And Jacob their father said unto them, Me have ye bereaved of my children: Joseph is not, and Simeon is not, and ye will take Benjamin away: all these things are against me* (Genesis 42:36). And Reuben''s desperate pledge stands in both books — *And Reuben said: “Give him into my hand, and if I do not bring him back to you, slay my two sons instead of his soul.”* (Jubilees 42:18) answers *And Reuben spake unto his father, saying, Slay my two sons, if I bring him not to thee: deliver him into my hand, and I will bring him to thee again* (Genesis 42:37). Jacob, blind to the providence, cries that all is against him — yet the famine is bending the whole house toward the deliverer it does not recognize.',
+       sv.verse_id, ev.verse_id, 'extras', 54034
+  FROM _session251_ju42_lookup sv, _session251_ju42_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=10
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=42 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-42-judah-surety-benjamin',
+       E'Judah''s surety: send him with me',
+       E'Where Reuben fails, the Messianic son steps forward: *And Yahudah (Judah) came near and said: “Send him with me, and if I do not bring him back to you, let me bear the blame before you all the days of my life.”* (Jubilees 42:19). This is Genesis'' Judah, the one through whom the seed runs to David and to Messiah, standing surety: *And Yahudah (Judah) said unto Yashar''el (Israel) his father, Send the lad with me, and we will arise and go; that we may live, and not die, both we, and thou, and also our little ones* (Genesis 43:8). It is the same Judah who in the chapter before (Jubilees 41 / Genesis 38) carried the line through Tamar to Perez — and from Perez to David and to Messiah (Matthew 1:3). When Israel relents in Jubilees 42:15 — *Go again, and procure food for us that we die not* — he echoes Judah''s own plea that we live and not die. The pledge that frees Benjamin is borne by the kingly tribe; the seed that saves is carried by the one who offers himself as surety.',
+       sv.verse_id, ev.verse_id, 'extras', 54037
+  FROM _session251_ju42_lookup sv, _session251_ju42_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=15
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=42 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-42-benjamin-feast-portion',
+       E'Benjamin brought, the feast and the seven-fold portion',
+       E'Benjamin comes, and the hidden deliverer blesses him: *And they went and stood before Joseph, and he saw Benjamin his brother, and he knew him, and said to them: “Is this your youngest brother?”... And he said: “Yahuah (God) be gracious to you, my son!”... and he made a feast for them* (Jubilees 42:21), and *the portion of Benjamin was seven times larger than that of any of theirs* (Jubilees 42:23). Genesis matches the gracious word and the favored portion in the chapter that follows — *And he lifted up his eyes, and saw his brother Benjamin... and said, Elohim (God) be gracious unto thee, my son* (Genesis 43:29). Jasher tells the same descent and standing before the throne: *And the sons of Jacob saw Joseph, and his figure and comeliness and dignity of countenance seemed wonderful in their eyes, and they again bowed down to him to the ground* (Jasher 51:19). The brothers bow, the dreams stand fulfilled, and the deliverer feasts the ones who sold him — the table of the rejected-then-exalted brother.',
+       sv.verse_id, ev.verse_id, 'extras', 54040
+  FROM _session251_ju42_lookup sv, _session251_ju42_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=20
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=42 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-42-famine-ten-go-down
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:1 — *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* The famine that opens Jubilees 42:1 is the same that drives Jacob to send his sons in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-famine-ten-go-down'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:3 — *And Joseph’s ten brethren went down to buy corn in Egypt.* Jubilees 42:4''s ten sons sent for food are Genesis'' ten brethren going down.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-famine-ten-go-down'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 42:4 — *But Benjamin, Joseph’s brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him.* The held-back Benjamin of Jubilees 42:4 is Genesis'' Benjamin kept home against mischief.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-famine-ten-go-down'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jasher 51:5 — *And the sons of Jacob went forth and they went to Egypt, and the sons of Jacob did all as their father had commanded them, and Jacob did not send Benjamin, for he said, Lest an accident might befall him on the road like his brother; and ten of Jacob’s sons went forth.* Jasher matches Jubilees 42:4 down to Benjamin held back and the ten going.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-famine-ten-go-down'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=4
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=51 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-42-joseph-knew-them-spies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:8 — *And Joseph knew his brethren, but they knew not him.* This is exactly the recognition asymmetry of Jubilees 42:5, where Joseph recognizes them and they do not recognize him.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-joseph-knew-them-spies'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:9 — *And Joseph remembered the dreams which he dreamed of them, and said unto them, Ye are spies; to see the nakedness of the land ye are come.* The spy-accusation of Jubilees 42:5 is Joseph''s charge in Genesis, rooted in the dreams now fulfilled.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-joseph-knew-them-spies'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jasher 51:20 — *And Joseph saw his brethren, and he knew them, but they knew him not, for Joseph was very great in their eyes, therefore they knew him not.* Jasher gives the reason behind Jubilees 42:5: his greatness blinded them to the brother they had cast off.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-joseph-knew-them-spies'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=5
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=51 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him.* Stephen frames the man now accusing them in Jubilees 42:5 as the rejected one whom Elohim was with — the deliverer pattern.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-joseph-knew-them-spies'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-42-simeon-bound-money-returned
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:24 — *And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes.* The detained Simeon of Jubilees 42:6 is Genesis'' Simeon bound, with Joseph''s secret weeping behind it.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-simeon-bound-money-returned'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:25 — *Then Joseph commanded to fill their sacks with corn, and to restore every man’s money into his sack, and to give them provision for the way: and thus did he unto them.* The gold put back in the sacks unknown in Jubilees 42:6 is Genesis'' restored money.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-simeon-bound-money-returned'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 42:30 — *The man, who is the lord of the land, spake roughly to us, and took us for spies of the country.* The report carried back to the father in Jubilees 42:9 is the brothers'' own telling in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-simeon-bound-money-returned'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-42-jacob-grief-against-me
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 42:36 — *And Jacob their father said unto them, Me have ye bereaved of my children: Joseph is not, and Simeon is not, and ye will take Benjamin away: all these things are against me.* This is verbatim the lament Jubilees 42:10 puts on Jacob — bereaved, and all against him.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-jacob-grief-against-me'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:35 — *And it came to pass as they emptied their sacks, that, behold, every man’s bundle of money was in his sack: and when both they and their father saw the bundles of money, they were afraid.* The returned money that makes Jacob fear to send Benjamin in Jubilees 42:11 is the silver discovered in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-jacob-grief-against-me'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 42:38 — *And he said, My son shall not go down with you; for his brother is dead, and he is left alone: if mischief befall him by the way in the which ye go, then shall ye bring down my gray hairs with sorrow to the grave.* Jacob''s refusal in Jubilees 42:11 is his very words in Genesis, dreading sorrow to death.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-jacob-grief-against-me'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-42-judah-surety-benjamin
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 43:8 — *And Yahudah (Judah) said unto Yashar''el (Israel) his father, Send the lad with me, and we will arise and go; that we may live, and not die, both we, and thou, and also our little ones.* Judah''s surety in Jubilees 42:19 is the kingly tribe''s pledge in Genesis to live and not die.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-judah-surety-benjamin'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 42:37 — *And Reuben spake unto his father, saying, Slay my two sons, if I bring him not to thee: deliver him into my hand, and I will bring him to thee again.* Reuben''s rejected offer in Jubilees 42:18 is his very pledge in Genesis, set against Judah''s accepted surety.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-judah-surety-benjamin'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=37
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 42:2 — *And he said, Behold, I have heard that there is corn in Egypt: get you down thither, and buy for us from thence; that we may live, and not die.* Israel''s renewed sending in Jubilees 42:15, that we die not, repeats Jacob''s command in Genesis to live and not die.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-judah-surety-benjamin'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=42 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 1:3 — *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;* The Judah who stands surety in Jubilees 42:19 is the Judah of the Messianic line, Perez of Tamar carried down to Messiah.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-judah-surety-benjamin'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-42-benjamin-feast-portion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 43:29 — *And he lifted up his eyes, and saw his brother Benjamin, his mother’s son, and said, Is this your younger brother, of whom ye spake unto me? And he said, Elohim (God) be gracious unto thee, my son.* Joseph''s gracious word over Benjamin in Jubilees 42:21 is his blessing in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-benjamin-feast-portion'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=43 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jasher 51:19 — *And the sons of Jacob saw Joseph, and his figure and comeliness and dignity of countenance seemed wonderful in their eyes, and they again bowed down to him to the ground.* The brothers standing before Joseph in Jubilees 42:20-21 bow before the throne in Jasher, the dreams fulfilled.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-benjamin-feast-portion'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=20
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=51 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The feast Joseph spreads in Jubilees 42:21 foreshadows his final word: the evil done him was meant by Elohim for good, to save much people alive.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju42_lookup sv, _session251_ju42_lookup tv
+ WHERE t.slug='jubilees-42-benjamin-feast-portion'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=42 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_43.sql (session251 jubilees 43) -----
+-- Source anchor: jubilees/jubilees ch43. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju43 (view _session251_ju43_lookup). Sort band base 54050, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju43_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-43-silver-cup-benjamin
+  ('jubilees', 'jubilees', 43, 1, 'canon', 'genesis', 44, 2, 'free', E'Genesis 44:2 — *And put my cup, the silver cup, in the sack’s mouth of the youngest, and his corn money. And he did according to the word that Joseph had spoken* — the Genesis command behind Jubilees 43:1, the cup planted in Benjamin''s sack.'),
+  ('jubilees', 'jubilees', 43, 2, 'canon', 'genesis', 44, 3, 'free', E'Genesis 44:3 — *As soon as the morning was light, the men were sent away, they and their asses* — the dawn departure that Jubilees 43:2 retells before Joseph sends the steward in pursuit.'),
+  ('jubilees', 'jubilees', 43, 5, 'canon', 'genesis', 44, 9, 'free', E'Genesis 44:9 — *With whomsoever of thy servants it be found, both let him die, and we also will be my lord’s bondmen* — the brothers'' rash oath of innocence echoed in Jubilees 43:5.'),
+  ('jubilees', 'jubilees', 43, 6, 'canon', 'genesis', 44, 12, 'free', E'Genesis 44:12 — *And he searched, and began at the eldest, and left at the youngest: and the cup was found in Benjamin’s sack* — the same search order and discovery that Jubilees 43:6 records.'),
+  -- thread: jubilees-43-judah-offers-himself-surety
+  ('jubilees', 'jubilees', 43, 13, 'canon', 'genesis', 44, 33, 'free', E'Genesis 44:33 — *Now therefore, I pray thee, let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren* — Yahudah''s offer of himself, retold verbatim in Jubilees 43:13.'),
+  ('jubilees', 'jubilees', 43, 13, 'canon', 'genesis', 44, 32, 'free', E'Genesis 44:32 — *For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever* — the surety-bond Jubilees 43:13 names as the ground of Yahudah''s plea.'),
+  ('jubilees', 'jubilees', 43, 11, 'canon', 'genesis', 44, 30, 'free', E'Genesis 44:30 — *Now therefore when I come to thy servant my father, and the lad be not with us; seeing that his life is bound up in the lad’s life* — the father''s life bound to Benjamin''s, as Jubilees 43:11 has it.'),
+  -- thread: jubilees-43-joseph-made-known
+  ('jubilees', 'jubilees', 43, 14, 'canon', 'genesis', 45, 1, 'free', E'Genesis 45:1 — *Then Joseph could not refrain himself before all them that stood by him; and he cried, Cause every man to go out from me. And there stood no man with him, while Joseph made himself known unto his brethren* — the source for Jubilees 43:14, Joseph unable to hold back.'),
+  ('jubilees', 'jubilees', 43, 14, 'canon', 'genesis', 45, 3, 'free', E'Genesis 45:3 — *And Joseph said unto his brethren, I am Joseph; doth my father yet live? And his brethren could not answer him; for they were troubled at his presence* — the unveiling Jubilees 43:14 records.'),
+  ('jubilees', 'jubilees', 43, 15, 'canon', 'genesis', 45, 14, 'free', E'Genesis 45:14 — *And he fell upon his brother Benjamin’s neck, and wept; and Benjamin wept upon his neck* — the embrace and weeping of Jubilees 43:15.'),
+  ('jubilees', 'jubilees', 43, 16, 'canon', 'genesis', 45, 12, 'free', E'Genesis 45:12 — *And, behold, your eyes see, and the eyes of my brother Benjamin, that it is my mouth that speaketh unto you* — the very words Jubilees 43:16 puts in Joseph''s mouth.'),
+  -- thread: jubilees-43-god-meant-it-for-good
+  ('jubilees', 'jubilees', 43, 18, 'canon', 'genesis', 45, 5, 'free', E'Genesis 45:5 — *Now therefore be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim (God) did send me before you to preserve life* — the forgiveness and providence that Jubilees 43:18 carries.'),
+  ('jubilees', 'jubilees', 43, 18, 'canon', 'genesis', 45, 7, 'free', E'Genesis 45:7 — *And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* — the great deliverance behind Jubilees 43:18, ''that many people might live.'''),
+  ('jubilees', 'jubilees', 43, 18, 'canon', 'genesis', 50, 20, 'free', E'Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* — the full statement of the theme Jubilees 43:18 sounds: harm overruled for life.'),
+  ('jubilees', 'jubilees', 43, 18, 'canon', 'psalms', 105, 17, 'free', E'Psalm 105:17 — *He sent a man before them, even Joseph, who was sold for a servant* — the Psalmist reading Joseph''s descent as Elohim sending him ahead, as Jubilees 43:18 does.'),
+  ('jubilees', 'jubilees', 43, 19, 'canon', 'acts', 7, 9, 'free', E'Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* — Stephen''s witness that Elohim stood with the rejected Joseph who Jubilees 43:19 says was made father to Pharaoh.'),
+  -- thread: jubilees-43-rejected-then-exalted-deliverer
+  ('jubilees', 'jubilees', 43, 19, 'jubilees', 'jubilees', 34, 10, 'extras', E'Jubilees 34:10 — *And in the seventh year of this week he sent Joseph to learn about the welfare of his brothers from his house to the land of Shechem, and he found them in the land of Dothan* — the earlier Jubilees account of Joseph sent to the brothers who would sell him, now exalted in Jubilees 43:19.'),
+  ('jubilees', 'jubilees', 43, 19, 'canon', 'acts', 3, 13, 'free', E'Acts 3:13 — *The Elohim (God) of Abraham, and of Isaac, and of Jacob, the Elohim (God) of our fathers, hath glorified his Son Yahusha (Jesus); whom ye delivered up, and denied him in the presence of Pilate* — the rejected-then-glorified Deliverer whose pattern Joseph foreshadows in Jubilees 43:19.'),
+  ('jubilees', 'jubilees', 43, 18, 'canon', 'luke', 23, 34, 'free', E'Luke 23:34 — *Then said Yahusha (Jesus), Father, forgive them; for they know not what they do. And they parted his raiment, and cast lots* — the forgiving of those who rejected Him, the very heart Joseph shows in Jubilees 43:18.'),
+  ('jubilees', 'jubilees', 43, 18, 'canon', 'romans', 8, 28, 'free', E'Romans 8:28 — *And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose* — Paul''s gospel-statement of the truth Jubilees 43:18 enacts: evil overruled for good.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju43_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju43_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-43-silver-cup-benjamin',
+       E'The silver cup hidden in Benjamin''s sack',
+       E'Jubilees retells the testing of the brothers exactly as Genesis tells it: *And he did as Joseph had told him, and filled all their sacks for them with food and put their money in their sacks, and put the cup in Benjamin’s sack* (Jubilees 43:1). Genesis frames the same command — *And put my cup, the silver cup, in the sack’s mouth of the youngest, and his corn money. And he did according to the word that Joseph had spoken* (Genesis 44:2) — and the same dawn pursuit, *As soon as the morning was light, the men were sent away, they and their asses* (Genesis 44:3). The brothers stake their lives on their innocence, *Behold here are we and our sacks; search, and wherever you find the cup in the sack of any man amongst us, let him be slain* (Jubilees 43:5), and the search runs down from eldest to youngest until *it was found in Benjamin’s sack* (Jubilees 43:6) — word for word the Genesis source, *And he searched, and began at the eldest, and left at the youngest: and the cup was found in Benjamin’s sack* (Genesis 44:12). It ain''t new: the Joseph cycle stands in Jubilees as it stands in the Torah.',
+       sv.verse_id, ev.verse_id, 'extras', 54050
+  FROM _session251_ju43_lookup sv, _session251_ju43_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=43 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-43-judah-offers-himself-surety',
+       E'Judah''s plea — himself as bondsman for the lad',
+       E'Yahudah steps forward and offers his own freedom for Benjamin''s: *Now rather let me, your servant, abide instead of the boy as a bondsman to my lord, and let the lad go with his brethren, for I became surety for him at the hand of your servant our father* (Jubilees 43:13). Genesis carries the same surety-speech, *Now therefore, I pray thee, let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren* (Genesis 44:33), grounded in the bond Yahudah swore to Jacob, *For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever* (Genesis 44:32). The father''s life hangs on the boy — *his life also is bound up with the life of this (lad)* (Jubilees 43:11) — as Genesis says, *seeing that his life is bound up in the lad’s life* (Genesis 44:30). This is the same Yahudah of chapter 41 (Judah and Tamar, Perez born), through whom the Messianic seed is kept — here he becomes the substitute who lays his own liberty down for his brother, the kingly line learning to stand surety.',
+       sv.verse_id, ev.verse_id, 'extras', 54053
+  FROM _session251_ju43_lookup sv, _session251_ju43_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=11
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=43 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-43-joseph-made-known',
+       E'''I am Joseph'' — he could not refrain himself',
+       E'Seeing the brothers of one accord in goodness, *he could not refrain himself, and he told them that he was Joseph* (Jubilees 43:14), and *fell on their neck and wept* (Jubilees 43:15). Genesis tells it the same way: *Then Joseph could not refrain himself before all them that stood by him... while Joseph made himself known unto his brethren* (Genesis 45:1), and *Joseph said unto his brethren, I am Joseph; doth my father yet live?* (Genesis 45:3). The weeping over Benjamin''s neck is shared — *And he fell upon his brother Benjamin’s neck, and wept; and Benjamin wept upon his neck* (Genesis 45:14). Joseph''s word of comfort, *Weep not over me, but hasten and bring my father to me; and you see that it is my mouth that speaks and the eyes of my brother Benjamin see* (Jubilees 43:16), matches Genesis, *And, behold, your eyes see, and the eyes of my brother Benjamin, that it is my mouth that speaketh unto you* (Genesis 45:12).',
+       sv.verse_id, ev.verse_id, 'extras', 54056
+  FROM _session251_ju43_lookup sv, _session251_ju43_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=14
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=43 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-43-god-meant-it-for-good',
+       E'''God sent me before you'' — meant for good, to save lives',
+       E'Here is the high note of the chapter, the rejected brother revealing the hidden hand of Elohim: *do not be grieved for your possessions, for Yahuah (God) sent me before you to set things in order that many people might live* (Jubilees 43:18). Genesis says it plainly twice — *be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim (God) did send me before you to preserve life* (Genesis 45:5), and *And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* (Genesis 45:7). It reaches its full weight when Joseph forgives outright at his father''s death: *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). The Psalmist reads the whole arc as Elohim''s providence — *He sent a man before them, even Joseph, who was sold for a servant* (Psalm 105:17) — and Stephen preaches it to Israel: *the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9). What men meant for harm, Elohim wove for life.',
+       sv.verse_id, ev.verse_id, 'extras', 54059
+  FROM _session251_ju43_lookup sv, _session251_ju43_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=18
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=43 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-43-rejected-then-exalted-deliverer',
+       E'The rejected-then-exalted deliverer — a type of Messiah',
+       E'Joseph''s story bears a shape the whole canon will return to: the brother sold by his own — *And in the seventh year of this week he sent Joseph to learn about the welfare of his brothers from his house to the land of Shechem... and they sold him to Ishmaelite merchants, and they brought him down into Egypt* (Jubilees 34:10) — is the one Elohim lifts to rule and to save, *Yahuah (God) has made me as a father to Pharaoh, and ruler over his house and over all the land of Egypt* (Jubilees 43:19). The apostles preach Messiah in just this pattern: *whom ye delivered up, and denied him in the presence of Pilate, when he was determined to let him go* (Acts 3:13) — rejected by His own, then glorified. And where Joseph holds no grudge against the brothers who sold him, Yahusha prays for those who crucify Him, *Father, forgive them; for they know not what they do* (Luke 23:34). The promise the whole type rests on is Paul''s: *And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose* (Romans 8:28). It ain''t new — the rejected-then-exalted deliverer who forgives is written into the patriarchs.',
+       sv.verse_id, ev.verse_id, 'extras', 54062
+  FROM _session251_ju43_lookup sv, _session251_ju43_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=18
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=43 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-43-silver-cup-benjamin
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 44:2 — *And put my cup, the silver cup, in the sack’s mouth of the youngest, and his corn money. And he did according to the word that Joseph had spoken* — the Genesis command behind Jubilees 43:1, the cup planted in Benjamin''s sack.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-silver-cup-benjamin'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 44:3 — *As soon as the morning was light, the men were sent away, they and their asses* — the dawn departure that Jubilees 43:2 retells before Joseph sends the steward in pursuit.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-silver-cup-benjamin'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 44:9 — *With whomsoever of thy servants it be found, both let him die, and we also will be my lord’s bondmen* — the brothers'' rash oath of innocence echoed in Jubilees 43:5.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-silver-cup-benjamin'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 44:12 — *And he searched, and began at the eldest, and left at the youngest: and the cup was found in Benjamin’s sack* — the same search order and discovery that Jubilees 43:6 records.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-silver-cup-benjamin'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-43-judah-offers-himself-surety
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 44:33 — *Now therefore, I pray thee, let thy servant abide instead of the lad a bondman to my lord; and let the lad go up with his brethren* — Yahudah''s offer of himself, retold verbatim in Jubilees 43:13.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-judah-offers-himself-surety'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 44:32 — *For thy servant became surety for the lad unto my father, saying, If I bring him not unto thee, then I shall bear the blame to my father for ever* — the surety-bond Jubilees 43:13 names as the ground of Yahudah''s plea.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-judah-offers-himself-surety'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 44:30 — *Now therefore when I come to thy servant my father, and the lad be not with us; seeing that his life is bound up in the lad’s life* — the father''s life bound to Benjamin''s, as Jubilees 43:11 has it.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-judah-offers-himself-surety'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=44 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-43-joseph-made-known
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 45:1 — *Then Joseph could not refrain himself before all them that stood by him; and he cried, Cause every man to go out from me. And there stood no man with him, while Joseph made himself known unto his brethren* — the source for Jubilees 43:14, Joseph unable to hold back.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-joseph-made-known'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 45:3 — *And Joseph said unto his brethren, I am Joseph; doth my father yet live? And his brethren could not answer him; for they were troubled at his presence* — the unveiling Jubilees 43:14 records.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-joseph-made-known'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 45:14 — *And he fell upon his brother Benjamin’s neck, and wept; and Benjamin wept upon his neck* — the embrace and weeping of Jubilees 43:15.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-joseph-made-known'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 45:12 — *And, behold, your eyes see, and the eyes of my brother Benjamin, that it is my mouth that speaketh unto you* — the very words Jubilees 43:16 puts in Joseph''s mouth.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-joseph-made-known'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-43-god-meant-it-for-good
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 45:5 — *Now therefore be not grieved, nor angry with yourselves, that ye sold me hither: for Elohim (God) did send me before you to preserve life* — the forgiveness and providence that Jubilees 43:18 carries.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-god-meant-it-for-good'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 45:7 — *And Elohim (God) sent me before you to preserve you a posterity in the earth, and to save your lives by a great deliverance* — the great deliverance behind Jubilees 43:18, ''that many people might live.'''
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-god-meant-it-for-good'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=45 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* — the full statement of the theme Jubilees 43:18 sounds: harm overruled for life.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-god-meant-it-for-good'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 105:17 — *He sent a man before them, even Joseph, who was sold for a servant* — the Psalmist reading Joseph''s descent as Elohim sending him ahead, as Jubilees 43:18 does.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-god-meant-it-for-good'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* — Stephen''s witness that Elohim stood with the rejected Joseph who Jubilees 43:19 says was made father to Pharaoh.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-god-meant-it-for-good'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-43-rejected-then-exalted-deliverer
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 34:10 — *And in the seventh year of this week he sent Joseph to learn about the welfare of his brothers from his house to the land of Shechem, and he found them in the land of Dothan* — the earlier Jubilees account of Joseph sent to the brothers who would sell him, now exalted in Jubilees 43:19.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-rejected-then-exalted-deliverer'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=19
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 3:13 — *The Elohim (God) of Abraham, and of Isaac, and of Jacob, the Elohim (God) of our fathers, hath glorified his Son Yahusha (Jesus); whom ye delivered up, and denied him in the presence of Pilate* — the rejected-then-glorified Deliverer whose pattern Joseph foreshadows in Jubilees 43:19.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-rejected-then-exalted-deliverer'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=3 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 23:34 — *Then said Yahusha (Jesus), Father, forgive them; for they know not what they do. And they parted his raiment, and cast lots* — the forgiving of those who rejected Him, the very heart Joseph shows in Jubilees 43:18.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-rejected-then-exalted-deliverer'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=23 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Romans 8:28 — *And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose* — Paul''s gospel-statement of the truth Jubilees 43:18 enacts: evil overruled for good.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju43_lookup sv, _session251_ju43_lookup tv
+ WHERE t.slug='jubilees-43-rejected-then-exalted-deliverer'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=43 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_44.sql (session251 jubilees 44) -----
+-- Source anchor: jubilees/jubilees ch44. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju44 (view _session251_ju44_lookup). Sort band base 54075, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju44_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-44-beersheba-vision
+  ('jubilees', 'jubilees', 44, 5, 'canon', 'genesis', 46, 2, 'free', E'Genesis 46:2 — *And Elohim (God) spake unto Yashar''el (Israel) in the visions of the night, and said, Jacob, Jacob. And he said, Here am I.* The Genesis source of the night-vision Jubilees 44:5 retells, the same doubled name and ''Here am I'' answer.'),
+  ('jubilees', 'jubilees', 44, 5, 'canon', 'genesis', 46, 3, 'free', E'Genesis 46:3 — *And he said, I am Elohim (God), the Elohim (God) of thy father: fear not to go down into Egypt; for I will there make of thee a great nation:* The exact promise Jubilees 44:5 carries word for word — fear not, a great nation made in Egypt.'),
+  ('jubilees', 'jubilees', 44, 6, 'canon', 'genesis', 46, 4, 'free', E'Genesis 46:4 — *I will go down with thee into Egypt; and I will also surely bring thee up again: and Joseph shall put his hand upon thine eyes.* Genesis behind Jubilees 44:6 — I go down with you, I bring you up, Joseph closes your eyes.'),
+  ('jubilees', 'jubilees', 44, 6, 'canon', 'genesis', 15, 14, 'free', E'Genesis 15:14 — *And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance.* The Abrahamic covenant that the ''bring you up again'' of Jubilees 44:6 is fulfilling — the descent and the exodus were promised long before.'),
+  ('jubilees', 'jubilees', 44, 2, 'jubilees', 'jubilees', 27, 24, 'extras', E'Jubilees 27:24 — *And behold, I shall be with you, and shall keep you whithersoever you go, and I shall bring you again into this land in peace; for I shall not leave you until I do everything that I told you of.* The Bethel dream Jacob ''remembered'' in Jubilees 44:2 — the same ''I shall bring you again'' that steadies him now.'),
+  -- thread: jubilees-44-firstfruits-calendar
+  ('jubilees', 'jubilees', 44, 1, 'canon', 'genesis', 46, 1, 'free', E'Genesis 46:1 — *And Yashar''el (Israel) took his journey with all that he had, and came to Beer-sheba, and offered sacrifices unto the Elohim (God) of his father Isaac.* The Genesis source of Jubilees 44:1 — the sacrifice at Beer-sheba (the Well of the Oath) to the God of Isaac, which Jubilees dates to the new moon and the seventh of the third month.'),
+  -- thread: jubilees-44-judah-sent-goshen
+  ('jubilees', 'jubilees', 44, 9, 'canon', 'genesis', 46, 28, 'free', E'Genesis 46:28 — *And he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen; and they came into the land of Goshen.* The Genesis source of Jubilees 44:9 — Judah, the kingly tribe, sent ahead to Goshen.'),
+  ('jubilees', 'jubilees', 44, 9, 'canon', 'genesis', 46, 29, 'free', E'Genesis 46:29 — *And Joseph made ready his chariot, and went up to meet Yashar''el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while.* The reunion that completes the descent Jubilees 44:9 sets up — the rejected-then-exalted brother weeping over his father''s neck.'),
+  -- thread: jubilees-44-seventy-souls
+  ('jubilees', 'jubilees', 44, 33, 'canon', 'genesis', 46, 27, 'free', E'Genesis 46:27 — *And the sons of Joseph, which were born him in Egypt, were two souls: all the souls of the house of Jacob, which came into Egypt, were threescore and ten.* The Genesis tally Jubilees 44:33 reproduces — seventy souls of the house of Jacob.'),
+  ('jubilees', 'jubilees', 44, 11, 'canon', 'exodus', 1, 1, 'free', E'Exodus 1:1 — *Now these are the names of the children of Yashar''el (Israel), which came into Egypt; every man and his household came with Jacob.* The Exodus roll-call of names that Jubilees 44:11 opens — ''these are the names of the sons of Jacob who went into Egypt.'''),
+  ('jubilees', 'jubilees', 44, 33, 'canon', 'exodus', 1, 5, 'free', E'Exodus 1:5 — *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already.* The same seventy souls of Jubilees 44:33, now standing at the head of the book of the Exodus.'),
+  ('jubilees', 'jubilees', 44, 33, 'canon', 'deuteronomy', 10, 22, 'free', E'Deuteronomy 10:22 — *Thy fathers went down into Egypt with threescore and ten persons; and now Yahuah Elohayka (the LORD thy God) hath made thee as the stars of heaven for multitude.* Moses'' reading of the seventy of Jubilees 44:33 — the embryo nation grown into the star-multitude promised at Beer-sheba.'),
+  ('jubilees', 'jubilees', 44, 33, 'canon', 'acts', 7, 14, 'free', E'Acts 7:14 — *Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls.* Stephen still preaching the descent of Jubilees 44:33 — the household called down to Joseph in Egypt.'),
+  -- thread: jubilees-44-judah-line-er-onan-perez
+  ('jubilees', 'jubilees', 44, 34, 'canon', 'genesis', 46, 12, 'free', E'Genesis 46:12 — *And the sons of Yahudah (Judah); Er, and Onan, and Shelah, and Pharez, and Zerah: but Er and Onan died in the land of Canaan. And the sons of Pharez were Hezron and Hamul.* The Genesis source of Jubilees 44:15 and 44:34 — Judah''s sons, with Er and Onan dead in Canaan and Perez carrying on.'),
+  ('jubilees', 'jubilees', 44, 15, 'canon', 'matthew', 1, 3, 'free', E'Matthew 1:3 — *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram.* The Perez and Zerah of Jubilees 44:15 set in the Messiah''s own genealogy — the kept Judah-seed running to Yahusha.'),
+  ('jubilees', 'jubilees', 44, 15, 'canon', 'ruth', 4, 18, 'free', E'Ruth 4:18 — *Now these are the generations of Pharez: Pharez begat Hezron.* The Perez of Jubilees 44:15 opening the genealogy that runs to David''s throne.'),
+  ('jubilees', 'jubilees', 44, 34, 'jubilees', 'jubilees', 41, 1, 'extras', E'Jubilees 41:1 — *And in the forty-fifth jubilee, in the second week, (and) in the second year, Yahudah (Judah) took for his first-born Er, a wife from the daughters of Aram, named Tamar.* Jubilees'' own earlier telling of the Er-and-Tamar story behind the deaths noted in Jubilees 44:34 — the Tamar-Perez chapter that secured the line.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju44_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju44_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-44-beersheba-vision',
+       E'The vision at the Well of the Oath — fear not to go down into Egypt',
+       E'Jubilees sets the descent into Egypt on the heavenly-tablet calendar and quotes the Genesis vision almost word for word: *And on the sixteenth Yahuah (God) appeared to him, and said to him, “Jacob, Jacob”; and he said, “Here am I.” And He said to him: “I am the Elohim (God) of your fathers, the Elohim (God) of Abraham and Isaac; fear not to go down into Egypt, for I will there make of you a great nation”* (Jubilees 44:5). This is the retelling of *And Elohim (God) spake unto Yashar''el (Israel) in the visions of the night, and said, Jacob, Jacob. And he said, Here am I* (Genesis 46:2) and *fear not to go down into Egypt; for I will there make of thee a great nation* (Genesis 46:3). The promise to come up again — *I will go down with thee into Egypt; and I will also surely bring thee up again: and Joseph shall put his hand upon thine eyes* (Genesis 46:4) — reaches back to Abraham’s covenant of the four hundred years: *and afterward shall they come out with great substance* (Genesis 15:14). The nation is going down in embryo, and Yahuah is already carrying it.',
+       sv.verse_id, ev.verse_id, 'extras', 54075
+  FROM _session251_ju44_lookup sv, _session251_ju44_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=44 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-44-firstfruits-calendar',
+       E'He kept the festival of first-fruits at the Well of the Oath',
+       E'Even in famine and fear Jacob keeps the appointed time: *And he celebrated the harvest festival of the first-fruits with old grain, for in all the land of Canaan there was not a handful of seed (in the land), for the famine was over all the beasts and cattle and birds, and also over man* (Jubilees 44:4). And the journey itself is dated to the moedim — *And Yashar’el (Israel) took his journey from Haran from his house on the new moon of the third month, and he went on the way of the Well of the Oath, and he offered a sacrifice to the Elohim (God) of his father Isaac on the seventh of this month* (Jubilees 44:1). This is Jubilees'' spine: the harvest-of-first-fruits feast (Shavuot, the third-month covenant feast) is no late invention but is kept by the fathers, exactly as Jubilees grounds it in Noah and the heavenly tablets. It ain''t new — the patriarchs kept the feasts.',
+       sv.verse_id, ev.verse_id, 'extras', 54078
+  FROM _session251_ju44_lookup sv, _session251_ju44_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=44 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-44-judah-sent-goshen',
+       E'Judah sent ahead to Goshen',
+       E'Jubilees keeps the detail that the tribe of kingship leads the way down: *And Yashar’el (Israel) sent Yahudah (Judah) before him to his son Joseph to examine the Land of Goshen, for Joseph had told his brothers that they should come and dwell there that they might be near him* (Jubilees 44:9). This is the retelling of *And he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen; and they came into the land of Goshen* (Genesis 46:28), and the reunion that follows: *And Joseph made ready his chariot, and went up to meet Yashar''el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while* (Genesis 46:29). Judah goes first — the same Judah whose line Jubilees has just carried through Tamar and Perez (Jubilees 41) toward the throne.',
+       sv.verse_id, ev.verse_id, 'extras', 54081
+  FROM _session251_ju44_lookup sv, _session251_ju44_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=8
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=44 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-44-seventy-souls',
+       E'Seventy souls went down — the nation in embryo, now as the stars',
+       E'Jubilees gives the same census and the same number that the Torah and the New Testament fix as the seed of the nation: *And all the souls of Jacob which went into Egypt were seventy souls. These are his children and his children’s children, in all seventy* (Jubilees 44:33). It is the retelling of *And all the souls of the house of Jacob, which came into Egypt, were threescore and ten* (Genesis 46:27) and of the Exodus roll-call: *Now these are the names of the children of Yashar''el (Israel), which came into Egypt; every man and his household came with Jacob* (Exodus 1:1) ... *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already* (Exodus 1:5). Moses turns the seventy into the great-nation promise: *Thy fathers went down into Egypt with threescore and ten persons; and now Yahuah Elohayka (the LORD thy God) hath made thee as the stars of heaven for multitude* (Deuteronomy 10:22). And Stephen tells it still in Acts: *Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls* (Acts 7:14). The nation goes down small to come up a multitude — ''I will there make of you a great nation'' kept exactly.',
+       sv.verse_id, ev.verse_id, 'extras', 54084
+  FROM _session251_ju44_lookup sv, _session251_ju44_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=11
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=44 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-44-judah-line-er-onan-perez',
+       E'Er and Onan died, but Perez stands — the kept Messianic seed',
+       E'In the very census of those who went down, Jubilees marks both the broken branches and the surviving heir of Judah: *Yahudah (Judah) and his sons; and these are the names of his sons: Shela, and Perez, and Zerah–four* (Jubilees 44:15), and then notes the deaths in Canaan — *And in the land of Canaan two sons of Yahudah (Judah) died, Er and Onan, and they had no children* (Jubilees 44:34). This is the line Jubilees has just told through Tamar (*Yahudah (Judah) took for his first-born Er, a wife from the daughters of Aram, named Tamar*, Jubilees 41:1), and it is the line Genesis records: *And the sons of Yahudah (Judah); Er, and Onan, and Shelah, and Pharez, and Zerah: but Er and Onan died in the land of Canaan* (Genesis 46:12). The New Testament carries the same survivors straight to the Messiah: *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram* (Matthew 1:3), and Ruth confirms the throne-road: *Now these are the generations of Pharez: Pharez begat Hezron* (Ruth 4:18). The wicked sons fall, but the seed Yahuah keeps for the throne goes down to Egypt and comes up again.',
+       sv.verse_id, ev.verse_id, 'extras', 54087
+  FROM _session251_ju44_lookup sv, _session251_ju44_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=15
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=44 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-44-beersheba-vision
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 46:2 — *And Elohim (God) spake unto Yashar''el (Israel) in the visions of the night, and said, Jacob, Jacob. And he said, Here am I.* The Genesis source of the night-vision Jubilees 44:5 retells, the same doubled name and ''Here am I'' answer.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-beersheba-vision'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 46:3 — *And he said, I am Elohim (God), the Elohim (God) of thy father: fear not to go down into Egypt; for I will there make of thee a great nation:* The exact promise Jubilees 44:5 carries word for word — fear not, a great nation made in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-beersheba-vision'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 46:4 — *I will go down with thee into Egypt; and I will also surely bring thee up again: and Joseph shall put his hand upon thine eyes.* Genesis behind Jubilees 44:6 — I go down with you, I bring you up, Joseph closes your eyes.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-beersheba-vision'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 15:14 — *And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance.* The Abrahamic covenant that the ''bring you up again'' of Jubilees 44:6 is fulfilling — the descent and the exodus were promised long before.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-beersheba-vision'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 27:24 — *And behold, I shall be with you, and shall keep you whithersoever you go, and I shall bring you again into this land in peace; for I shall not leave you until I do everything that I told you of.* The Bethel dream Jacob ''remembered'' in Jubilees 44:2 — the same ''I shall bring you again'' that steadies him now.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-beersheba-vision'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=2
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=27 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-44-firstfruits-calendar
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 46:1 — *And Yashar''el (Israel) took his journey with all that he had, and came to Beer-sheba, and offered sacrifices unto the Elohim (God) of his father Isaac.* The Genesis source of Jubilees 44:1 — the sacrifice at Beer-sheba (the Well of the Oath) to the God of Isaac, which Jubilees dates to the new moon and the seventh of the third month.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-firstfruits-calendar'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-44-judah-sent-goshen
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 46:28 — *And he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen; and they came into the land of Goshen.* The Genesis source of Jubilees 44:9 — Judah, the kingly tribe, sent ahead to Goshen.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-judah-sent-goshen'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 46:29 — *And Joseph made ready his chariot, and went up to meet Yashar''el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while.* The reunion that completes the descent Jubilees 44:9 sets up — the rejected-then-exalted brother weeping over his father''s neck.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-judah-sent-goshen'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-44-seventy-souls
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 46:27 — *And the sons of Joseph, which were born him in Egypt, were two souls: all the souls of the house of Jacob, which came into Egypt, were threescore and ten.* The Genesis tally Jubilees 44:33 reproduces — seventy souls of the house of Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-seventy-souls'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:1 — *Now these are the names of the children of Yashar''el (Israel), which came into Egypt; every man and his household came with Jacob.* The Exodus roll-call of names that Jubilees 44:11 opens — ''these are the names of the sons of Jacob who went into Egypt.'''
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-seventy-souls'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:5 — *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already.* The same seventy souls of Jubilees 44:33, now standing at the head of the book of the Exodus.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-seventy-souls'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 10:22 — *Thy fathers went down into Egypt with threescore and ten persons; and now Yahuah Elohayka (the LORD thy God) hath made thee as the stars of heaven for multitude.* Moses'' reading of the seventy of Jubilees 44:33 — the embryo nation grown into the star-multitude promised at Beer-sheba.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-seventy-souls'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Acts 7:14 — *Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls.* Stephen still preaching the descent of Jubilees 44:33 — the household called down to Joseph in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-seventy-souls'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-44-judah-line-er-onan-perez
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 46:12 — *And the sons of Yahudah (Judah); Er, and Onan, and Shelah, and Pharez, and Zerah: but Er and Onan died in the land of Canaan. And the sons of Pharez were Hezron and Hamul.* The Genesis source of Jubilees 44:15 and 44:34 — Judah''s sons, with Er and Onan dead in Canaan and Perez carrying on.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-judah-line-er-onan-perez'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 1:3 — *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram.* The Perez and Zerah of Jubilees 44:15 set in the Messiah''s own genealogy — the kept Judah-seed running to Yahusha.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-judah-line-er-onan-perez'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ruth 4:18 — *Now these are the generations of Pharez: Pharez begat Hezron.* The Perez of Jubilees 44:15 opening the genealogy that runs to David''s throne.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-judah-line-er-onan-perez'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 41:1 — *And in the forty-fifth jubilee, in the second week, (and) in the second year, Yahudah (Judah) took for his first-born Er, a wife from the daughters of Aram, named Tamar.* Jubilees'' own earlier telling of the Er-and-Tamar story behind the deaths noted in Jubilees 44:34 — the Tamar-Perez chapter that secured the line.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju44_lookup sv, _session251_ju44_lookup tv
+ WHERE t.slug='jubilees-44-judah-line-er-onan-perez'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=44 AND sv.verse_number=34
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=41 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_45.sql (session251 jubilees 45) -----
+-- Source anchor: jubilees/jubilees ch45. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju45 (view _session251_ju45_lookup). Sort band base 54100, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju45_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-45-goshen-reunion
+  ('jubilees', 'jubilees', 45, 1, 'canon', 'genesis', 46, 28, 'free', E'Genesis 46:28 — *And he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen; and they came into the land of Goshen.* Jubilees 45:1 opens with Israel entering the land of Goshen exactly as Genesis sends Judah ahead to mark the way.'),
+  ('jubilees', 'jubilees', 45, 2, 'canon', 'genesis', 46, 29, 'free', E'Genesis 46:29 — *And Joseph made ready his chariot, and went up to meet Yashar''el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while.* This is the very scene Jubilees 45:2 retells — Joseph falling on his father''s neck and weeping.'),
+  ('jubilees', 'jubilees', 45, 3, 'canon', 'genesis', 46, 30, 'free', E'Genesis 46:30 — *And Yashar''el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive.* Jubilees 45:3 quotes Israel''s cry verbatim, the rejected-then-exalted son restored alive to his father.'),
+  -- thread: jubilees-45-jacob-before-pharaoh-bethel
+  ('jubilees', 'jubilees', 45, 4, 'canon', 'genesis', 28, 13, 'free', E'Genesis 28:13 — *And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed.* The Bethel vision Jacob recalls as "true" in Jubilees 45:4 is this covenant word given to him over the ladder.'),
+  ('jubilees', 'jubilees', 45, 4, 'canon', 'genesis', 28, 14, 'free', E'Genesis 28:14 — *And thy seed shall be as the dust of the earth, and thou shalt spread abroad to the west, and to the east, and to the north, and to the south: and in thee and in thy seed shall all the families of the earth be blessed.* The seed-multiplying promise of Bethel, which Jubilees 45:4 calls a true vision, is the very increase the Goshen chapter sets in motion.'),
+  ('jubilees', 'jubilees', 45, 6, 'canon', 'genesis', 47, 7, 'free', E'Genesis 47:7 — *And Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh.* Jubilees 45:6 places Israel and his sons in Goshen by Joseph''s grant; Genesis adds the patriarch blessing the king of Egypt before settling there.'),
+  ('jubilees', 'jubilees', 45, 6, 'canon', 'genesis', 47, 11, 'free', E'Genesis 47:11 — *And Joseph placed his father and his brethren, and gave them a possession in the land of Egypt, in the best of the land, in the land of Rameses, as Pharaoh had commanded.* Jubilees 45:6 names Goshen and Rameses as the best part of Egypt — the same grant Genesis records.'),
+  -- thread: jubilees-45-famine-fifth-part-ordinance
+  ('jubilees', 'jubilees', 45, 8, 'canon', 'genesis', 47, 20, 'free', E'Genesis 47:20 — *And Joseph bought all the land of Egypt for Pharaoh; for the Egyptians sold every man his field, because the famine prevailed over them: so the land became Pharaoh’s.* Jubilees 45:8 says Joseph acquired all the land of Egypt for Pharaoh in return for food — Genesis spells out the same purchase.'),
+  ('jubilees', 'jubilees', 45, 11, 'canon', 'genesis', 47, 24, 'free', E'Genesis 47:24 — *And it shall come to pass in the increase, that ye shall give the fifth part unto Pharaoh, and four parts shall be your own, for seed of the field, and for your food, and for them of your households, and for food for your little ones.* The fifth-for-the-king, four-parts-for-the-people split of Jubilees 45:11 is taken straight from Joseph''s decree here.'),
+  ('jubilees', 'jubilees', 45, 11, 'canon', 'genesis', 47, 26, 'free', E'Genesis 47:26 — *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part; except the land of the priests only, which became not Pharaoh’s.* Jubilees 45:11 calls it an ordinance for Egypt "until this day" — the very phrasing of Genesis.'),
+  -- thread: jubilees-45-jacob-years-last-days-burial
+  ('jubilees', 'jubilees', 45, 13, 'canon', 'genesis', 47, 28, 'free', E'Genesis 47:28 — *And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was an hundred forty and seven years.* Jubilees 45:13 gives the identical seventeen years and 147-year total, reckoned as three jubilees.'),
+  ('jubilees', 'jubilees', 45, 13, 'canon', 'genesis', 49, 1, 'free', E'Genesis 49:1 — *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days.* Jubilees 45:13 says Israel made known to his sons what would come upon them in the last days — this is that deathbed prophecy.'),
+  ('jubilees', 'jubilees', 45, 15, 'canon', 'genesis', 49, 30, 'free', E'Genesis 49:30 — *In the cave that is in the field of Machpelah, which is before Mamre, in the land of Canaan, which Abraham bought with the field of Ephron the Hittite for a possession of a buryingplace.* The "double cave near Abraham" of Jubilees 45:15 is Machpelah, the burying-place Jacob charged his sons to use.'),
+  ('jubilees', 'jubilees', 45, 15, 'canon', 'genesis', 50, 13, 'free', E'Genesis 50:13 — *For his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah, which Abraham bought with the field for a possession of a buryingplace of Ephron the Hittite, before Mamre.* Jubilees 45:15 records the burial in the double cave near Abraham that Genesis here carries out.'),
+  -- thread: jubilees-45-levi-the-books-seed-multiplied
+  ('jubilees', 'jubilees', 45, 15, 'jubilees', 'jubilees', 31, 13, 'extras', E'Jubilees 31:13 — *And he turned to Levi first, and began to bless him first, and said to him:, ’May the Elohim (God) of all, the very Yahuah (God) of all the ages, bless you and your children throughout all the ages. And may Yahuah (God) give to you and to your seed greatness and great glory, and cause you and your seed, from among all flesh, to approach Him to serve in His sanctuary as the angels of the presence and as the holy ones.* Jubilees 45:15 entrusts the books to Levi — the very priestly line Isaac blessed to serve in the sanctuary.'),
+  ('jubilees', 'jubilees', 45, 13, 'canon', 'exodus', 1, 7, 'free', E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The multiplying seed that Jubilees 45 tracks from Goshen onward reaches its fullness here, opening the Exodus.'),
+  ('jubilees', 'jubilees', 45, 13, 'canon', 'acts', 7, 17, 'free', E'Acts 7:17 — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt.* Stephen reads the same seed-multiplying that Jubilees 45 sets in motion as the fulfilling of the oath to Abraham.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju45_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju45_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-45-goshen-reunion',
+       E'Israel comes down to Goshen — "now let me die since I have seen you"',
+       E'Jubilees retells the reunion of father and son word for word from Genesis: *And Joseph went to meet his father Jacob, to the land of Goshen, and he fell on his father’s neck and wept* (Jubilees 45:2), and the old man''s cry, *Now let me die since I have seen you* (Jubilees 45:3). It ain''t new — this is Genesis spoken back: *And Joseph made ready his chariot, and went up to meet Yashar''el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while* (Genesis 46:29), and *And Yashar''el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive* (Genesis 46:30). The seed that was carried down into Egypt now settles in the best of the land — *And Yashar''el (Israel) dwelt in the land of Egypt, in the country of Goshen; and they had possessions therein, and grew, and multiplied exceedingly* (Genesis 47:27) — the multiplying that the closing chapters of Jubilees keep before us.',
+       sv.verse_id, ev.verse_id, 'extras', 54100
+  FROM _session251_ju45_lookup sv, _session251_ju45_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=45 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-45-jacob-before-pharaoh-bethel',
+       E'Jacob before Pharaoh, dwelling in Rameses — the Bethel vision come true',
+       E'Jubilees grounds Israel''s settling in Egypt and Jacob''s confidence in the promise. *It is enough for me that I have seen your face whilst I am yet alive; yea, true is the vision which I saw at Bethel* (Jubilees 45:4) — the old man reads his life by the covenant word given at Bethel. *And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed* (Genesis 28:13), and *And thy seed shall be as the dust of the earth, and thou shalt spread abroad to the west, and to the east, and to the north, and to the south* (Genesis 28:14) — the seed-multiplying promise is exactly what Goshen begins to fulfill. The dwelling-place of Jubilees 45:6 is Genesis 47: *And Joseph placed his father and his brethren, and gave them a possession in the land of Egypt, in the best of the land, in the land of Rameses, as Pharaoh had commanded* (Genesis 47:11), and Jacob standing before Pharaoh to bless him — *And Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh* (Genesis 47:7).',
+       sv.verse_id, ev.verse_id, 'extras', 54103
+  FROM _session251_ju45_lookup sv, _session251_ju45_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=45 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-45-famine-fifth-part-ordinance',
+       E'Joseph and the famine — the land to Pharaoh, the fifth-part ordinance',
+       E'Jubilees compresses the whole famine economy of Genesis 47 into a few verses. *And the land of Egypt suffered by reason of the famine, and Joseph acquired all the land of Egypt for Pharaoh in return for food* (Jubilees 45:8) — *And Joseph bought all the land of Egypt for Pharaoh; for the Egyptians sold every man his field, because the famine prevailed over them: so the land became Pharaoh’s* (Genesis 47:20). And the lasting statute: *And Joseph took of the corn of the harvest the fifth part for the king and left four parts for them for food and for seed, and Joseph made it an ordinance for the land of Egypt until this day* (Jubilees 45:11) — Genesis says the same: *And it shall come to pass in the increase, that ye shall give the fifth part unto Pharaoh, and four parts shall be your own, for seed of the field, and for your food* (Genesis 47:24), and *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part* (Genesis 47:26). The rejected brother now feeds the world and keeps the seed alive — "it ain''t new."',
+       sv.verse_id, ev.verse_id, 'extras', 54106
+  FROM _session251_ju45_lookup sv, _session251_ju45_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=8
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=45 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-45-jacob-years-last-days-burial',
+       E'Jacob''s years, the last-days blessing, and burial in the double cave',
+       E'The patriarch''s life closes on the covenant numbers and the covenant grave. *And Yashar’el (Israel) lived in the land of Egypt seventeen years, and all the days which he lived were three jubilees, one hundred and forty-seven years* (Jubilees 45:13) — *And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was an hundred forty and seven years* (Genesis 47:28). Before he dies he tells his sons "what would come upon them in the last days" (Jubilees 45:13), which is Genesis 49 verbatim: *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days* (Genesis 49:1). And he is laid in the double cave of the fathers — *And he slept with his fathers, and he was buried in the double cave in the land of Canaan, near Abraham his father* (Jubilees 45:15) — *In the cave that is in the field of Machpelah... which Abraham bought... for a possession of a buryingplace* (Genesis 49:30), where his sons carried him: *For his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah* (Genesis 50:13).',
+       sv.verse_id, ev.verse_id, 'extras', 54109
+  FROM _session251_ju45_lookup sv, _session251_ju45_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=13
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=45 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-45-levi-the-books-seed-multiplied',
+       E'Levi keeper of the books; the seed multiplies in Egypt',
+       E'Jubilees closes the Joseph cycle with two threads it will not let the reader miss. First, the heavenly-tablets line of transmission: *And he gave all his books and the books of his fathers to Levi his son that he might preserve them and renew them for his children until this day* (Jubilees 45:15). This is the priestly line Isaac had already blessed — *And he turned to Levi first, and began to bless him first... cause you and your seed, from among all flesh, to approach Him to serve in His sanctuary* (Jubilees 31:13) — Levi as guardian of the law and the books, the priesthood that carries the covenant forward. Second, the seed multiplying that the whole chapter has been tracking now bursts out at the threshold of the Exodus: *And the children of Yashar’el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7), echoed by Stephen — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt* (Acts 7:17). It ain''t new: the Bethel promise of dust-like seed is being kept.',
+       sv.verse_id, ev.verse_id, 'extras', 54112
+  FROM _session251_ju45_lookup sv, _session251_ju45_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=13
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=45 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-45-goshen-reunion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 46:28 — *And he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen; and they came into the land of Goshen.* Jubilees 45:1 opens with Israel entering the land of Goshen exactly as Genesis sends Judah ahead to mark the way.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-goshen-reunion'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 46:29 — *And Joseph made ready his chariot, and went up to meet Yashar''el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while.* This is the very scene Jubilees 45:2 retells — Joseph falling on his father''s neck and weeping.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-goshen-reunion'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 46:30 — *And Yashar''el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive.* Jubilees 45:3 quotes Israel''s cry verbatim, the rejected-then-exalted son restored alive to his father.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-goshen-reunion'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-45-jacob-before-pharaoh-bethel
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 28:13 — *And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed.* The Bethel vision Jacob recalls as "true" in Jubilees 45:4 is this covenant word given to him over the ladder.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-jacob-before-pharaoh-bethel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 28:14 — *And thy seed shall be as the dust of the earth, and thou shalt spread abroad to the west, and to the east, and to the north, and to the south: and in thee and in thy seed shall all the families of the earth be blessed.* The seed-multiplying promise of Bethel, which Jubilees 45:4 calls a true vision, is the very increase the Goshen chapter sets in motion.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-jacob-before-pharaoh-bethel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 47:7 — *And Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh.* Jubilees 45:6 places Israel and his sons in Goshen by Joseph''s grant; Genesis adds the patriarch blessing the king of Egypt before settling there.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-jacob-before-pharaoh-bethel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 47:11 — *And Joseph placed his father and his brethren, and gave them a possession in the land of Egypt, in the best of the land, in the land of Rameses, as Pharaoh had commanded.* Jubilees 45:6 names Goshen and Rameses as the best part of Egypt — the same grant Genesis records.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-jacob-before-pharaoh-bethel'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-45-famine-fifth-part-ordinance
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 47:20 — *And Joseph bought all the land of Egypt for Pharaoh; for the Egyptians sold every man his field, because the famine prevailed over them: so the land became Pharaoh’s.* Jubilees 45:8 says Joseph acquired all the land of Egypt for Pharaoh in return for food — Genesis spells out the same purchase.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-famine-fifth-part-ordinance'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 47:24 — *And it shall come to pass in the increase, that ye shall give the fifth part unto Pharaoh, and four parts shall be your own, for seed of the field, and for your food, and for them of your households, and for food for your little ones.* The fifth-for-the-king, four-parts-for-the-people split of Jubilees 45:11 is taken straight from Joseph''s decree here.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-famine-fifth-part-ordinance'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 47:26 — *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part; except the land of the priests only, which became not Pharaoh’s.* Jubilees 45:11 calls it an ordinance for Egypt "until this day" — the very phrasing of Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-famine-fifth-part-ordinance'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-45-jacob-years-last-days-burial
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 47:28 — *And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was an hundred forty and seven years.* Jubilees 45:13 gives the identical seventeen years and 147-year total, reckoned as three jubilees.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-jacob-years-last-days-burial'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:1 — *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days.* Jubilees 45:13 says Israel made known to his sons what would come upon them in the last days — this is that deathbed prophecy.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-jacob-years-last-days-burial'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 49:30 — *In the cave that is in the field of Machpelah, which is before Mamre, in the land of Canaan, which Abraham bought with the field of Ephron the Hittite for a possession of a buryingplace.* The "double cave near Abraham" of Jubilees 45:15 is Machpelah, the burying-place Jacob charged his sons to use.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-jacob-years-last-days-burial'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 50:13 — *For his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah, which Abraham bought with the field for a possession of a buryingplace of Ephron the Hittite, before Mamre.* Jubilees 45:15 records the burial in the double cave near Abraham that Genesis here carries out.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-jacob-years-last-days-burial'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-45-levi-the-books-seed-multiplied
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 31:13 — *And he turned to Levi first, and began to bless him first, and said to him:, ’May the Elohim (God) of all, the very Yahuah (God) of all the ages, bless you and your children throughout all the ages. And may Yahuah (God) give to you and to your seed greatness and great glory, and cause you and your seed, from among all flesh, to approach Him to serve in His sanctuary as the angels of the presence and as the holy ones.* Jubilees 45:15 entrusts the books to Levi — the very priestly line Isaac blessed to serve in the sanctuary.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-levi-the-books-seed-multiplied'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=15
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=31 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The multiplying seed that Jubilees 45 tracks from Goshen onward reaches its fullness here, opening the Exodus.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-levi-the-books-seed-multiplied'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:17 — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt.* Stephen reads the same seed-multiplying that Jubilees 45 sets in motion as the fulfilling of the oath to Abraham.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju45_lookup sv, _session251_ju45_lookup tv
+ WHERE t.slug='jubilees-45-levi-the-books-seed-multiplied'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=45 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_46.sql (session251 jubilees 46) -----
+-- Source anchor: jubilees/jubilees ch46. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju46 (view _session251_ju46_lookup). Sort band base 54125, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju46_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-46-joseph-died-generation
+  ('jubilees', 'jubilees', 46, 4, 'canon', 'exodus', 1, 6, 'free', E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Jubilees 46:4 retells Exodus'' opening line verbatim as the patriarchal age closes.'),
+  ('jubilees', 'jubilees', 46, 1, 'canon', 'exodus', 1, 7, 'free', E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The exceeding multiplication of Jubilees 46:1 is Exodus'' own account of the kept seed.'),
+  ('jubilees', 'jubilees', 46, 1, 'canon', 'exodus', 1, 5, 'free', E'Exodus 1:5 — *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already.* The seventy of Jacob''s house are the few who, by Jubilees 46:1, become a great nation.'),
+  -- thread: jubilees-46-josephs-bones-oath
+  ('jubilees', 'jubilees', 46, 5, 'canon', 'genesis', 50, 25, 'free', E'Genesis 50:25 — *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* Jubilees 46:5-6 retells the very oath Joseph sealed in Genesis.'),
+  ('jubilees', 'jubilees', 46, 5, 'canon', 'genesis', 50, 24, 'free', E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* The bones-oath of Jubilees 46:5 rests on this sworn visitation and return to the land.'),
+  ('jubilees', 'jubilees', 46, 6, 'canon', 'hebrews', 11, 22, 'free', E'Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones.* The swearing of Jubilees 46:6 is named by the NT as Joseph''s act of faith in the Exodus to come.'),
+  -- thread: jubilees-46-new-king-knew-not-joseph
+  ('jubilees', 'jubilees', 46, 6, 'canon', 'exodus', 1, 8, 'free', E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The stronger new king of Jubilees 46:6 is Exodus'' king who knew not Joseph.'),
+  ('jubilees', 'jubilees', 46, 13, 'canon', 'acts', 7, 18, 'free', E'Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen names the same new king whose evil device against Israel Jubilees 46:13 records.'),
+  ('jubilees', 'jubilees', 46, 13, 'canon', 'acts', 7, 17, 'free', E'Acts 7:17 — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt.* The growth that provokes the king''s device in Jubilees 46:13 is set by Stephen against the nearing promise.'),
+  -- thread: jubilees-46-deal-wisely-afflict
+  ('jubilees', 'jubilees', 46, 13, 'canon', 'exodus', 1, 9, 'free', E'Exodus 1:9 — *And he said unto his people, Behold, the people of the children of Yashar''el (Israel) are more and mightier than we.* Jubilees 46:13 opens the king''s speech with Pharaoh''s own words.'),
+  ('jubilees', 'jubilees', 46, 13, 'canon', 'exodus', 1, 10, 'free', E'Exodus 1:10 — *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.* The ''deal wisely'' / war / join-the-enemy plot of Jubilees 46:13 is Exodus verbatim.'),
+  ('jubilees', 'jubilees', 46, 13, 'canon', 'acts', 7, 19, 'free', E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen names as subtilty the very wise dealing Jubilees 46:13 records.'),
+  -- thread: jubilees-46-taskmasters-pithom-raamses
+  ('jubilees', 'jubilees', 46, 14, 'canon', 'exodus', 1, 11, 'free', E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* Jubilees 46:14 names the same taskmasters and the same two store-cities.'),
+  ('jubilees', 'jubilees', 46, 15, 'canon', 'exodus', 1, 12, 'free', E'Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel).* The thriving-under-affliction of Jubilees 46:15 is Exodus'' own paradox.'),
+  ('jubilees', 'jubilees', 46, 14, 'canon', 'exodus', 1, 13, 'free', E'Exodus 1:13 — *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour.* The serving ''with rigour'' of Jubilees 46:14-15 is Exodus'' exact phrase for the bondage.'),
+  ('jubilees', 'jubilees', 46, 14, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The slavery imposed in Jubilees 46:14 is the affliction Yahuah foretold to Abram, written before it unfolded.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju46_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju46_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-46-joseph-died-generation',
+       E'Joseph died, and all that generation — the seed multiplied',
+       E'Jubilees draws the curtain on the patriarchs: *And he died and all his brethren and all that generation* (Jubilees 46:4), the close of the seventy who came down into Egypt. This is Exodus'' opening word for word — *And Joseph died, and all his brethren, and all that generation* (Exodus 1:6) — the retold Torah laid right beside its source. And the increase Jubilees describes, *they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph* (Jubilees 46:1), is Exodus'' own: *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7). The seed kept and multiplied — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 54125
+  FROM _session251_ju46_lookup sv, _session251_ju46_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=46 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-46-josephs-bones-oath',
+       E'Carry up my bones — Joseph''s oath and the visitation promised',
+       E'Before he dies Joseph binds Israel: *And he commanded the children of Yashar''el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt* (Jubilees 46:5), *And he made them swear regarding his bones* (Jubilees 46:6). This is Genesis word for word — *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25) — and it rests on the promise *Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24). The New Testament names this as faith: *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). The oath looks past the bondage to a deliverance already sworn — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 54128
+  FROM _session251_ju46_lookup sv, _session251_ju46_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=5
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=46 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-46-new-king-knew-not-joseph',
+       E'A new king, stronger than he — the favour ends',
+       E'Jubilees marks the turning: *another, a new king, had become king of Egypt, and he was stronger than he* (Jubilees 46:6), and where once *all the Egyptians honoured the children of Yashar''el (Israel) all the days of the life of Joseph* (Jubilees 46:2), now *the king of Canaan was victorious over the king of Egypt, and he closed the gates of Egypt. And he devised an evil device against the children of Yashar''el (Israel)* (Jubilees 46:11). Exodus names the man and his ignorance: *Now there arose up a new king over Egypt, which knew not Joseph* (Exodus 1:8). Stephen preaches the same hinge — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt, Till another king arose, which knew not Joseph* (Acts 7:17-18). The favour that protected the seed gives way exactly as the canon tells it.',
+       sv.verse_id, ev.verse_id, 'extras', 54131
+  FROM _session251_ju46_lookup sv, _session251_ju46_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=2
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=46 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-46-deal-wisely-afflict',
+       E'Come, let us deal wisely — the bondage devised',
+       E'The king''s counsel in Jubilees is Pharaoh''s counsel: *Behold the people of the children of Yashar''el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many, and let us afflict them with slavery before war come upon us... else they will join themselves to our enemies* (Jubilees 46:13). Exodus has it nearly word for word — *And he said unto his people, Behold, the people of the children of Yashar''el (Israel) are more and mightier than we: Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us* (Exodus 1:9-10). Stephen sums the cunning: *The same dealt subtilly with our kindred, and evil entreated our fathers* (Acts 7:19). The fear of the multiplying seed births the affliction — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 54134
+  FROM _session251_ju46_lookup sv, _session251_ju46_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=13
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=46 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-46-taskmasters-pithom-raamses',
+       E'Taskmasters, Pithom and Raamses — bondage with rigour',
+       E'Jubilees names the works and the cruelty: *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses* (Jubilees 46:14), *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied* (Jubilees 46:15). Exodus matches each stroke — the taskmasters and the same two cities, *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses* (Exodus 1:11); the paradox of the thriving oppressed, *But the more they afflicted them, the more they multiplied and grew* (Exodus 1:12); and the rigour, *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour* (Exodus 1:13). This is the affliction Yahuah foretold to Abram four centuries before: *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). The bondage was on the heavenly tablets before a single brick was laid — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 54137
+  FROM _session251_ju46_lookup sv, _session251_ju46_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=14
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=46 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-46-joseph-died-generation
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Jubilees 46:4 retells Exodus'' opening line verbatim as the patriarchal age closes.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-joseph-died-generation'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The exceeding multiplication of Jubilees 46:1 is Exodus'' own account of the kept seed.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-joseph-died-generation'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:5 — *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already.* The seventy of Jacob''s house are the few who, by Jubilees 46:1, become a great nation.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-joseph-died-generation'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-46-josephs-bones-oath
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 50:25 — *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* Jubilees 46:5-6 retells the very oath Joseph sealed in Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-josephs-bones-oath'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* The bones-oath of Jubilees 46:5 rests on this sworn visitation and return to the land.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-josephs-bones-oath'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones.* The swearing of Jubilees 46:6 is named by the NT as Joseph''s act of faith in the Exodus to come.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-josephs-bones-oath'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-46-new-king-knew-not-joseph
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The stronger new king of Jubilees 46:6 is Exodus'' king who knew not Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-new-king-knew-not-joseph'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen names the same new king whose evil device against Israel Jubilees 46:13 records.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-new-king-knew-not-joseph'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:17 — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt.* The growth that provokes the king''s device in Jubilees 46:13 is set by Stephen against the nearing promise.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-new-king-knew-not-joseph'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-46-deal-wisely-afflict
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:9 — *And he said unto his people, Behold, the people of the children of Yashar''el (Israel) are more and mightier than we.* Jubilees 46:13 opens the king''s speech with Pharaoh''s own words.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-deal-wisely-afflict'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:10 — *Come on, let us deal wisely with them; lest they multiply, and it come to pass, that, when there falleth out any war, they join also unto our enemies, and fight against us, and so get them up out of the land.* The ''deal wisely'' / war / join-the-enemy plot of Jubilees 46:13 is Exodus verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-deal-wisely-afflict'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen names as subtilty the very wise dealing Jubilees 46:13 records.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-deal-wisely-afflict'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-46-taskmasters-pithom-raamses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* Jubilees 46:14 names the same taskmasters and the same two store-cities.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-taskmasters-pithom-raamses'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:12 — *But the more they afflicted them, the more they multiplied and grew. And they were grieved because of the children of Yashar''el (Israel).* The thriving-under-affliction of Jubilees 46:15 is Exodus'' own paradox.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-taskmasters-pithom-raamses'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:13 — *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour.* The serving ''with rigour'' of Jubilees 46:14-15 is Exodus'' exact phrase for the bondage.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-taskmasters-pithom-raamses'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 15:13 — *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The slavery imposed in Jubilees 46:14 is the affliction Yahuah foretold to Abram, written before it unfolded.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju46_lookup sv, _session251_ju46_lookup tv
+ WHERE t.slug='jubilees-46-taskmasters-pithom-raamses'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=46 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_47.sql (session251 jubilees 47) -----
+-- Source anchor: jubilees/jubilees ch47. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju47 (view _session251_ju47_lookup). Sort band base 54150, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju47_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-47-river-decree-tribulation
+  ('jubilees', 'jubilees', 47, 2, 'canon', 'exodus', 1, 22, 'free', E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* Jubilees 47:2 retells Pharaoh''s drowning-decree verbatim from the Exodus source it is unfolding.'),
+  ('jubilees', 'jubilees', 47, 3, 'canon', 'exodus', 2, 2, 'free', E'Exodus 2:2 — *And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months.* The three-month hiding of the goodly child in Jubilees 47:3 is the Exodus 2 birth-narrative it quotes.'),
+  ('jubilees', 'jubilees', 47, 2, 'canon', 'acts', 7, 19, 'free', E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen preaches the same casting-out of the male children that Jubilees 47:2 records.'),
+  ('jubilees', 'jubilees', 47, 3, 'canon', 'hebrews', 11, 23, 'free', E'Hebrews 11:23 — *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment.* Jochebed''s three-month hiding in Jubilees 47:3 is the faith that defied Pharaoh''s commandment.'),
+  ('jubilees', 'jubilees', 47, 2, 'jasher', 'jasher', 67, 52, 'extras', E'Jasher 67:52 — *And Pharaoh called to all his servants, saying, Go now and seek throughout the land of Goshen where the children of Israel are, and see that every son born to the Hebrews shall be cast into the river, but every daughter you shall let live.* Jasher preserves the same river-decree Jubilees 47:2 reports.'),
+  -- thread: jubilees-47-ark-of-bulrushes-drawn-out
+  ('jubilees', 'jubilees', 47, 4, 'canon', 'exodus', 2, 3, 'free', E'Exodus 2:3 — *And when she could not longer hide him, she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child therein; and she laid it in the flags by the river''s brink.* The pitch-daubed ark in the flags of Jubilees 47:4 is the Exodus ark of bulrushes itself.'),
+  ('jubilees', 'jubilees', 47, 5, 'canon', 'exodus', 2, 5, 'free', E'Exodus 2:5 — *And the daughter of Pharaoh came down to wash herself at the river; and her maidens walked along by the river''s side; and when she saw the ark among the flags, she sent her maid to fetch it.* Tharmuth bathing and sending for the ark in Jubilees 47:5 is Pharaoh''s daughter in Exodus 2:5.'),
+  ('jubilees', 'jubilees', 47, 6, 'canon', 'exodus', 2, 6, 'free', E'Exodus 2:6 — *And when she had opened it, she saw the child: and, behold, the babe wept. And she had compassion on him, and said, This is one of the Hebrews'' children.* Her compassion on the crying babe in Jubilees 47:6 matches Exodus 2:6 exactly.'),
+  ('jubilees', 'jubilees', 47, 6, 'canon', 'acts', 7, 21, 'free', E'Acts 7:21 — *And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son.* Stephen condenses the drawing-out and adoption that Jubilees 47:5-6 narrates in detail.'),
+  ('jubilees', 'jubilees', 47, 4, 'jasher', 'jasher', 68, 13, 'extras', E'Jasher 68:13 — *And the woman hastened to take away her son before the officers came, and she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child in it, and she laid it in the flags by the river''s brink.* Jasher preserves the same pitch-daubed ark in the flags that Jubilees 47:4 describes.'),
+  -- thread: jubilees-47-nursed-by-his-own-mother
+  ('jubilees', 'jubilees', 47, 8, 'canon', 'exodus', 2, 9, 'free', E'Exodus 2:9 — *And Pharaoh''s daughter said unto her, Take this child away, and nurse it for me, and I will give thee thy wages. And the woman took the child, and nursed it.* The wages paid to Jochebed to nurse her own son in Jubilees 47:8 is Exodus 2:9 word for word.'),
+  ('jubilees', 'jubilees', 47, 9, 'canon', 'exodus', 2, 10, 'free', E'Exodus 2:10 — *And the child grew, and she brought him unto Pharaoh''s daughter, and he became her son. And she called his name Moses: and she said, Because I drew him out of the water.* Jubilees 47:9, the grown child brought to Pharaoh''s daughter to become her son, is the close of the Exodus 2:10 drawing-out.'),
+  -- thread: jubilees-47-moses-grown-learned-refused-court
+  ('jubilees', 'jubilees', 47, 9, 'canon', 'acts', 7, 22, 'free', E'Acts 7:22 — *And Moses was learned in all the wisdom of the Egyptians, and was mighty in words and in deeds.* The royal-court education and Amram''s teaching of writing in Jubilees 47:9 is the wisdom Stephen credits to Moses.'),
+  ('jubilees', 'jubilees', 47, 9, 'canon', 'hebrews', 11, 24, 'free', E'Hebrews 11:24 — *By faith Moses, when he was come to years, refused to be called the son of Pharaoh''s daughter.* The boy made son of Pharaoh''s daughter in Jubilees 47:9 is the very title Hebrews says the grown Moses refused by faith.'),
+  ('jubilees', 'jubilees', 47, 9, 'canon', 'hebrews', 11, 26, 'free', E'Hebrews 11:26 — *Esteeming the reproach of Messiah (Christ) greater riches than the treasures in Egypt: for he had respect unto the recompence of the reward.* The royal court Moses enters in Jubilees 47:9 is the Egyptian treasure he later counted less than the reproach of Messiah.'),
+  -- thread: jubilees-47-slays-egyptian-flees-midian
+  ('jubilees', 'jubilees', 47, 10, 'canon', 'exodus', 2, 12, 'free', E'Exodus 2:12 — *And he looked this way and that way, and when he saw that there was no man, he slew the Egyptian, and hid him in the sand.* The slaying of the Egyptian and hiding him in the sand in Jubilees 47:10 is Exodus 2:12 itself.'),
+  ('jubilees', 'jubilees', 47, 11, 'canon', 'exodus', 2, 14, 'free', E'Exodus 2:14 — *And he said, Who made thee a prince and a judge over us? intendest thou to kill me, as thou killedst the Egyptian? And Moses feared, and said, Surely this thing is known.* The rebuke and the fearful flight in Jubilees 47:11 quote Exodus 2:14 nearly verbatim.'),
+  ('jubilees', 'jubilees', 47, 11, 'canon', 'acts', 7, 25, 'free', E'Acts 7:25 — *For he supposed his brethren would have understood how that Elohim (God) by his hand would deliver them: but they understood not.* The brother who turns on Moses in Jubilees 47:11 is Stephen''s portrait of the deliverer rejected by his own.'),
+  ('jubilees', 'jubilees', 47, 11, 'canon', 'hebrews', 11, 27, 'free', E'Hebrews 11:27 — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.* The flight from Pharaoh''s wrath in Jubilees 47:11 is the faith Hebrews credits to Moses'' forsaking of Egypt.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju47_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju47_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-47-river-decree-tribulation',
+       E'The time of tribulation — every male child cast into the river',
+       E'Jubilees turns from Joseph to the deliverer''s hour: *And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river. And they cast them in for seven months until the day that you were born. And your mother hid you for three months, and they told regarding her* (Jubilees 47:2-3). This is Exodus 1 word for word — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive* (Exodus 1:22) — and the goodly child hidden three months: *And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months* (Exodus 2:2). Stephen preaches the same dragnet — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live* (Acts 7:19) — and Hebrews names the parents'' faith that defied it: *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment* (Hebrews 11:23). Jasher remembers the very edict: *And Pharaoh called to all his servants, saying, Go now and seek throughout the land of Goshen where the children of Israel are, and see that every son born to the Hebrews shall be cast into the river, but every daughter you shall let live* (Jasher 67:52). The same satan that warred on the seed in Genesis now hunts the deliverer — the seed kept through the slaughter. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 54150
+  FROM _session251_ju47_lookup sv, _session251_ju47_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=47 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-47-ark-of-bulrushes-drawn-out',
+       E'The ark of bulrushes — drawn out by Pharaoh''s daughter',
+       E'*And she made an ark for you, and covered it with pitch and asphalt, and placed it in the flags on the bank of the river, and she placed you in it seven days, and your mother came by night and suckled you, and by day Miriam, your sister, guarded you from the birds* (Jubilees 47:4). The Exodus source is the same ark and the same pitch: *And when she could not longer hide him, she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child therein; and she laid it in the flags by the river''s brink* (Exodus 2:3). Pharaoh''s own daughter draws him out — *And the daughter of Pharaoh came down to wash herself at the river... and when she saw the ark among the flags, she sent her maid to fetch it. And when she had opened it, she saw the child: and, behold, the babe wept. And she had compassion on him, and said, This is one of the Hebrews'' children* (Exodus 2:5-6) — exactly Jubilees 47:5-6, *she heard your voice crying... she took you out of the ark, and she had compassion on you.* Stephen sums it: *And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son* (Acts 7:21). Jasher remembers the identical ark: *And the woman hastened to take away her son before the officers came, and she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child in it, and she laid it in the flags by the river''s brink* (Jasher 68:13). The deliverer is hidden in an ark on the waters of death and drawn out alive — the same God who shut Noah in the ark draws Moses out of the river.',
+       sv.verse_id, ev.verse_id, 'extras', 54153
+  FROM _session251_ju47_lookup sv, _session251_ju47_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=4
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=47 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-47-nursed-by-his-own-mother',
+       E'Jochebed nursed her own son — and was paid wages for it',
+       E'Providence turns Pharaoh''s house into Jochebed''s: *And she went and called your mother Jochebed, and she gave her wages, and she nursed you* (Jubilees 47:8). Exodus tells the same overturning — the mother is hired to raise her own child: *And Pharaoh''s daughter said unto her, Take this child away, and nurse it for me, and I will give thee thy wages. And the woman took the child, and nursed it* (Exodus 2:9). And the naming follows: *And the child grew, and she brought him unto Pharaoh''s daughter, and he became her son. And she called his name Moses: and she said, Because I drew him out of the water* (Exodus 2:10). The one decreed for the river is drawn out of it, returned to his own mother''s arms, and named for the deliverance — the deliverer preserved by the very court that sought his death.',
+       sv.verse_id, ev.verse_id, 'extras', 54156
+  FROM _session251_ju47_lookup sv, _session251_ju47_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=8
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=47 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-47-moses-grown-learned-refused-court',
+       E'Moses grown — learned in the court, yet refusing it',
+       E'*And afterwards, when you were grown up, they brought you to the daughter of Pharaoh, and you did become her son, and Amram your father taught you writing, and after you had completed three weeks they brought you into the royal court* (Jubilees 47:9). Stephen''s Moses is the same court-schooled man: *And Moses was learned in all the wisdom of the Egyptians, and was mighty in words and in deeds* (Acts 7:22). But Hebrews names the refusal at the heart of it — the deliverer would not keep the title the river-court gave him: *By faith Moses, when he was come to years, refused to be called the son of Pharaoh''s daughter; choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season* (Hebrews 11:24-25), *esteeming the reproach of Messiah (Christ) greater riches than the treasures in Egypt: for he had respect unto the recompence of the reward* (Hebrews 11:26). The reproach of Messiah was already in view at the cradle: the rejected-then-exalted deliverer chooses his afflicted brethren over Egypt''s throne.',
+       sv.verse_id, ev.verse_id, 'extras', 54159
+  FROM _session251_ju47_lookup sv, _session251_ju47_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=9
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=47 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-47-slays-egyptian-flees-midian',
+       E'He slew the Egyptian, and fled — the deliverer not yet received',
+       E'*And you were three weeks of years at court until the time when you did go forth from the royal court and did see an Egyptian smiting your friend who was of the children of Yashar''el (Israel), and you did slay him and hide him in the sand* (Jubilees 47:10). Exodus tells it the same: *And he spied an Egyptian smiting an Hebrew, one of his brethren... and he slew the Egyptian, and hid him in the sand* (Exodus 2:11-12). The next day the rebuke comes — *And he said, Who made thee a prince and a judge over us? intendest thou to kill me, as thou killedst the Egyptian? And Moses feared* (Exodus 2:14) — exactly Jubilees 47:11, *Who made you a prince and a judge over us?... And you did fear and flee.* Stephen draws out the deliverer rejected by his own: *For he supposed his brethren would have understood how that Elohim (God) by his hand would deliver them: but they understood not* (Acts 7:25). And Hebrews names the faith of the flight: *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible* (Hebrews 11:27). The deliverer is refused before he delivers — God meant it for good, and Midian becomes the waiting-place until the bush.',
+       sv.verse_id, ev.verse_id, 'extras', 54162
+  FROM _session251_ju47_lookup sv, _session251_ju47_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=10
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=47 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-47-river-decree-tribulation
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:22 — *And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river, and every daughter ye shall save alive.* Jubilees 47:2 retells Pharaoh''s drowning-decree verbatim from the Exodus source it is unfolding.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-river-decree-tribulation'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 2:2 — *And the woman conceived, and bare a son: and when she saw him that he was a goodly child, she hid him three months.* The three-month hiding of the goodly child in Jubilees 47:3 is the Exodus 2 birth-narrative it quotes.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-river-decree-tribulation'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* Stephen preaches the same casting-out of the male children that Jubilees 47:2 records.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-river-decree-tribulation'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 11:23 — *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment.* Jochebed''s three-month hiding in Jubilees 47:3 is the faith that defied Pharaoh''s commandment.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-river-decree-tribulation'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jasher 67:52 — *And Pharaoh called to all his servants, saying, Go now and seek throughout the land of Goshen where the children of Israel are, and see that every son born to the Hebrews shall be cast into the river, but every daughter you shall let live.* Jasher preserves the same river-decree Jubilees 47:2 reports.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-river-decree-tribulation'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=2
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=67 AND tv.verse_number=52
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-47-ark-of-bulrushes-drawn-out
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:3 — *And when she could not longer hide him, she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child therein; and she laid it in the flags by the river''s brink.* The pitch-daubed ark in the flags of Jubilees 47:4 is the Exodus ark of bulrushes itself.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-ark-of-bulrushes-drawn-out'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 2:5 — *And the daughter of Pharaoh came down to wash herself at the river; and her maidens walked along by the river''s side; and when she saw the ark among the flags, she sent her maid to fetch it.* Tharmuth bathing and sending for the ark in Jubilees 47:5 is Pharaoh''s daughter in Exodus 2:5.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-ark-of-bulrushes-drawn-out'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 2:6 — *And when she had opened it, she saw the child: and, behold, the babe wept. And she had compassion on him, and said, This is one of the Hebrews'' children.* Her compassion on the crying babe in Jubilees 47:6 matches Exodus 2:6 exactly.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-ark-of-bulrushes-drawn-out'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:21 — *And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son.* Stephen condenses the drawing-out and adoption that Jubilees 47:5-6 narrates in detail.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-ark-of-bulrushes-drawn-out'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jasher 68:13 — *And the woman hastened to take away her son before the officers came, and she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child in it, and she laid it in the flags by the river''s brink.* Jasher preserves the same pitch-daubed ark in the flags that Jubilees 47:4 describes.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-ark-of-bulrushes-drawn-out'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=4
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=68 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-47-nursed-by-his-own-mother
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:9 — *And Pharaoh''s daughter said unto her, Take this child away, and nurse it for me, and I will give thee thy wages. And the woman took the child, and nursed it.* The wages paid to Jochebed to nurse her own son in Jubilees 47:8 is Exodus 2:9 word for word.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-nursed-by-his-own-mother'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 2:10 — *And the child grew, and she brought him unto Pharaoh''s daughter, and he became her son. And she called his name Moses: and she said, Because I drew him out of the water.* Jubilees 47:9, the grown child brought to Pharaoh''s daughter to become her son, is the close of the Exodus 2:10 drawing-out.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-nursed-by-his-own-mother'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-47-moses-grown-learned-refused-court
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 7:22 — *And Moses was learned in all the wisdom of the Egyptians, and was mighty in words and in deeds.* The royal-court education and Amram''s teaching of writing in Jubilees 47:9 is the wisdom Stephen credits to Moses.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-moses-grown-learned-refused-court'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:24 — *By faith Moses, when he was come to years, refused to be called the son of Pharaoh''s daughter.* The boy made son of Pharaoh''s daughter in Jubilees 47:9 is the very title Hebrews says the grown Moses refused by faith.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-moses-grown-learned-refused-court'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:26 — *Esteeming the reproach of Messiah (Christ) greater riches than the treasures in Egypt: for he had respect unto the recompence of the reward.* The royal court Moses enters in Jubilees 47:9 is the Egyptian treasure he later counted less than the reproach of Messiah.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-moses-grown-learned-refused-court'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-47-slays-egyptian-flees-midian
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 2:12 — *And he looked this way and that way, and when he saw that there was no man, he slew the Egyptian, and hid him in the sand.* The slaying of the Egyptian and hiding him in the sand in Jubilees 47:10 is Exodus 2:12 itself.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-slays-egyptian-flees-midian'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 2:14 — *And he said, Who made thee a prince and a judge over us? intendest thou to kill me, as thou killedst the Egyptian? And Moses feared, and said, Surely this thing is known.* The rebuke and the fearful flight in Jubilees 47:11 quote Exodus 2:14 nearly verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-slays-egyptian-flees-midian'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:25 — *For he supposed his brethren would have understood how that Elohim (God) by his hand would deliver them: but they understood not.* The brother who turns on Moses in Jubilees 47:11 is Stephen''s portrait of the deliverer rejected by his own.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-slays-egyptian-flees-midian'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 11:27 — *By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.* The flight from Pharaoh''s wrath in Jubilees 47:11 is the faith Hebrews credits to Moses'' forsaking of Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju47_lookup sv, _session251_ju47_lookup tv
+ WHERE t.slug='jubilees-47-slays-egyptian-flees-midian'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=47 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_48.sql (session251 jubilees 48) -----
+-- Source anchor: jubilees/jubilees ch48. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju48 (view _session251_ju48_lookup). Sort band base 54175, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju48_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-48-bush-and-the-lodging-place
+  ('jubilees', 'jubilees', 48, 2, 'canon', 'exodus', 4, 24, 'free', E'Exodus 4:24 — *And it came to pass by the way in the inn, that Yahuah (LORD) met him, and sought to kill him.* This is the lodging-place ambush Jubilees 48:2 names, unveiling prince Mastêmâ as the one who ''sought to slay you'' on the road back to Egypt.'),
+  ('jubilees', 'jubilees', 48, 1, 'canon', 'exodus', 3, 2, 'free', E'Exodus 3:2 — *And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed.* The bush at Sinai is where the return-from-Midian of Jubilees 48:1 begins in the source.'),
+  ('jubilees', 'jubilees', 48, 3, 'canon', 'exodus', 3, 10, 'free', E'Exodus 3:10 — *Come now therefore, and I will send thee unto Pharaoh, that thou mayest bring forth my people the children of Yashar''el (Israel) out of Egypt.* This is the sending ''to execute judgment and vengeance on the Egyptians'' that Mastêmâ sought to abort in Jubilees 48:3.'),
+  -- thread: jubilees-48-ten-plagues
+  ('jubilees', 'jubilees', 48, 5, 'canon', 'exodus', 12, 29, 'free', E'Exodus 12:29 — *And it came to pass, that at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh that sat on his throne unto the firstborn of the captive that was in the dungeon; and all the firstborn of cattle.* This is the tenth plague, ''the death of the first-born of men and animals,'' that closes the list in Jubilees 48:5.'),
+  ('jubilees', 'jubilees', 48, 7, 'canon', 'romans', 9, 17, 'free', E'Romans 9:17 — *For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth.* Paul reads the ''ten great and terrible judgments'' of Jubilees 48:7 as Yahuah declaring His name through Pharaoh.'),
+  ('jubilees', 'jubilees', 48, 4, 'canon', 'exodus', 3, 12, 'free', E'Exodus 3:12 — *And he said, Certainly I will be with thee; and this shall be a token unto thee, that I have sent thee: When thou hast brought forth the people out of Egypt, ye shall serve Elohim (God) upon this mountain.* This is the promise behind ''I delivered you out of his hand, and you did perform the signs and wonders'' in Jubilees 48:4.'),
+  ('jubilees', 'jubilees', 48, 7, 'jubilees', 'jubilees', 49, 2, 'extras', E'Jubilees 49:2 — *For on this night–the beginning of the festival and the beginning of the joy–you were eating the passover in Egypt, when all the powers of Mastêmâ had been let loose to slay all the first-born in the land of Egypt, from the firstborn of Pharaoh to the first-born of the captive maidservant in the mill, and to the cattle.* The next chapter ties the tenth of these ten judgments (Jubilees 48:7) to the eternal Passover night.'),
+  -- thread: jubilees-48-mastema-and-the-magicians
+  ('jubilees', 'jubilees', 48, 9, 'canon', 'exodus', 7, 11, 'free', E'Exodus 7:11 — *Then Pharaoh also called the wise men and the sorcerers: now the magicians of Egypt, they also did in like manner with their enchantments.* These are the ''Egyptian sorcerers'' Mastêmâ helped to stand and work before Moses in Jubilees 48:9.'),
+  ('jubilees', 'jubilees', 48, 11, 'canon', 'exodus', 9, 11, 'free', E'Exodus 9:11 — *And the magicians could not stand before Moses because of the boils; for the boil was upon the magicians, and upon all the Egyptians.* This is the ''malignant ulcers'' that left the sorcerers unable to stand in Jubilees 48:11.'),
+  ('jubilees', 'jubilees', 48, 9, 'canon', 'exodus', 7, 12, 'free', E'Exodus 7:12 — *For they cast down every man his rod, and they became serpents: but Aaron’s rod swallowed up their rods.* The sorcerers ''wrought before you'' (Jubilees 48:9), yet their signs were swallowed — heaven permitted the evil but not the victory (Jubilees 48:10).'),
+  -- thread: jubilees-48-red-sea-host-drowned
+  ('jubilees', 'jubilees', 48, 12, 'canon', 'exodus', 14, 19, 'free', E'Exodus 14:19 — *And the angel of Elohim (God), which went before the camp of Yashar''el (Israel), removed and went behind them; and the pillar of the cloud went from before their face, and stood behind them.* This is the ''I stood between the Egyptians and Yashar''el'' of Jubilees 48:12.'),
+  ('jubilees', 'jubilees', 48, 12, 'canon', 'exodus', 14, 21, 'free', E'Exodus 14:21 — *And Moses stretched out his hand over the sea; and Yahuah (LORD) caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided.* This is the sea crossed ''as if it were dry land'' in Jubilees 48:12.'),
+  ('jubilees', 'jubilees', 48, 14, 'canon', 'exodus', 14, 28, 'free', E'Exodus 14:28 — *And the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh that came into the sea after them; there remained not so much as one of them.* This is the host Yahuah ''cast into the midst of the sea, into the depths of the abyss'' in Jubilees 48:14.'),
+  ('jubilees', 'jubilees', 48, 14, 'apocrypha', 'the-wisdom-of-solomon', 18, 5, 'extras', E'Wisdom of Solomon 18:5 — *And when they had determined to slay the babes of the saints, one child being cast forth, and saved, to reprove them, you tookest away the multitude of their children, and destroyedst them altogether in a mighty water.* The ''mighty water'' measure-for-measure matches Jubilees 48:14, where the host drowns because Egypt had cast Israel''s children into the river.'),
+  -- thread: jubilees-48-mastema-bound-and-the-spoiling
+  ('jubilees', 'jubilees', 48, 17, 'canon', 'exodus', 4, 21, 'free', E'Exodus 4:21 — *And Yahuah (LORD) said unto Moses, When thou goest to return into Egypt, see that thou do all those wonders before Pharaoh, which I have put in thine hand: but I will harden his heart, that he shall not let the people go.* This is the ''device devised by Yahuah our Elohim'' that hardened Egypt''s heart in Jubilees 48:17.'),
+  ('jubilees', 'jubilees', 48, 19, 'canon', 'exodus', 12, 36, 'free', E'Exodus 12:36 — *And Yahuah (LORD) gave the people favour in the sight of the Egyptians, so that they lent unto them such things as they required. And they spoiled the Egyptians.* This is why Israel went out ''not empty handed'' in Jubilees 48:19 — spoiling Egypt in return for the bondage.'),
+  ('jubilees', 'jubilees', 48, 19, 'canon', 'exodus', 12, 35, 'free', E'Exodus 12:35 — *And the children of Yashar''el (Israel) did according to the word of Moses; and they borrowed of the Egyptians jewels of silver, and jewels of gold, and raiment.* These are the ''vessels of silver, and vessels of gold, and vessels of bronze'' of Jubilees 48:17, the despoiling that left Israel not empty-handed (Jubilees 48:19).'),
+  ('jubilees', 'jubilees', 48, 16, 'canon', 'revelation', 15, 3, 'free', E'Revelation 15:3 — *And they sing the song of Moses the servant of Elohim (God), and the song of the Lamb, saying, Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints.* The deliverance through the sea, with the accuser bound and the host drowned (Jubilees 48:15-16), is the victory the redeemed sing forever.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju48_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju48_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-48-bush-and-the-lodging-place',
+       E'Sent from Midian — Mastema at the lodging-place',
+       E'Jubilees opens the deliverance where Exodus does, with Moses returning from Midian to a hostile road: *And in the sixth year of the third week of the forty-ninth jubilee you did depart and dwell in the land of Midian five weeks and one year. And you did return into Egypt in the second week in the second year in the fiftieth jubilee* (Jubilees 48:1). And it names the adversary on that road — *what prince Mastêmâ desired to do with you when you were returning into Egypt on the way when you did meet him at the lodging-place* (Jubilees 48:2). It ain''t new: Genesis-Exodus carries the same midnight ambush at the inn — *And it came to pass by the way in the inn, that Yahuah (LORD) met him, and sought to kill him* (Exodus 4:24) — Jubilees simply unveils the prince behind it. The same chapter sends him: *Come now therefore, and I will send thee unto Pharaoh, that thou mayest bring forth my people the children of Yashar''el (Israel) out of Egypt* (Exodus 3:10), with the bush as the sign — *And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush* (Exodus 3:2).',
+       sv.verse_id, ev.verse_id, 'extras', 54175
+  FROM _session251_ju48_lookup sv, _session251_ju48_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=48 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-48-ten-plagues',
+       E'The signs and the ten great judgments',
+       E'Jubilees lists the plagues in a single breath: *and smote them through (the plagues of) blood and frogs, lice and dog-flies, and malignant boils breaking forth in blains; and their cattle by death; and by hail-stones... and by locusts... and by darkness; and (by the death) of the first-born of men and animals* (Jubilees 48:5), summing them — *ten great and terrible judgments came on the land of Egypt* (Jubilees 48:7). It grounds the vengeance in covenant, not caprice — *according to His covenant, which He had ordained with Abraham* (Jubilees 48:7). And the climactic blow is Exodus 12''s midnight — *And it came to pass, that at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh that sat on his throne unto the firstborn of the captive that was in the dungeon; and all the firstborn of cattle* (Exodus 12:29). Paul reads the whole drama as Yahuah''s self-revelation through Pharaoh — *Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth* (Romans 9:17). It ain''t new; the apostle is reading Exodus aloud.',
+       sv.verse_id, ev.verse_id, 'extras', 54178
+  FROM _session251_ju48_lookup sv, _session251_ju48_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=4
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=48 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-48-mastema-and-the-magicians',
+       E'Mastema helps the sorcerers — and is shamed',
+       E'Jubilees lifts the veil on Pharaoh''s magicians: *And the prince of the Mastêmâ stood up against you, and sought to cast you into the hands of Pharaoh, and he helped the Egyptian sorcerers, and they stood up and wrought before you* (Jubilees 48:9). The duel of signs is Exodus 7 — *Then Pharaoh also called the wise men and the sorcerers: now the magicians of Egypt, they also did in like manner with their enchantments* (Exodus 7:11). But Jubilees names heaven''s limit on them — *The evils indeed we permitted them to work, but the remedies we did not allow to be wrought by their hands* (Jubilees 48:10) — and their collapse — *And Yahuah (God) smote them with malignant ulcers, and they were not able to stand* (Jubilees 48:11), exactly Exodus 9 — *And the magicians could not stand before Moses because of the boils; for the boil was upon the magicians, and upon all the Egyptians* (Exodus 9:11). Mastema is no rival power; he is the satan permitted to oppose, and bounded.',
+       sv.verse_id, ev.verse_id, 'extras', 54181
+  FROM _session251_ju48_lookup sv, _session251_ju48_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=9
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=48 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-48-red-sea-host-drowned',
+       E'The sea — Pharaoh''s host cast into the deep',
+       E'Mastema''s last device drives Pharaoh to the water: *he took courage and cried to the Egyptians to pursue after you with all the powers of the Egyptians, with their chariots, and with their horses... And I stood between the Egyptians and Yashar''el (Israel)... and Yahuah (God) brought them through the midst of the sea as if it were dry land* (Jubilees 48:12). The standing-between is Exodus 14 — *And the angel of Elohim (God), which went before the camp of Yashar''el (Israel), removed and went behind them* (Exodus 14:19) — and the dry path — *and made the sea dry land, and the waters were divided* (Exodus 14:21). Jubilees presses the measure-for-measure vengeance — *even as the people of Egypt had cast their children into the river* (Jubilees 48:14) — which the host''s drowning answers — *there remained not so much as one of them* (Exodus 14:28). The apocrypha sings the same justice: *one child being cast forth, and saved... you tookest away the multitude of their children, and destroyedst them altogether in a mighty water* (Wisdom of Solomon 18:5).',
+       sv.verse_id, ev.verse_id, 'extras', 54184
+  FROM _session251_ju48_lookup sv, _session251_ju48_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=12
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=48 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-48-mastema-bound-and-the-spoiling',
+       E'Mastema bound — Israel spoils Egypt, not empty-handed',
+       E'Jubilees gives the calendar of the binding: *And on the fourteenth day and on the fifteenth and on the sixteenth and on the seventeenth and on the eighteenth the prince of the Mastêmâ was bound and imprisoned behind the children of Yashar''el (Israel) that he might not accuse them* (Jubilees 48:15), loosed again to drive Egypt to ruin — *And on the nineteenth we let them loose that they might help the Egyptians and pursue the children of Yashar''el (Israel)* (Jubilees 48:16). The hardening is Yahuah''s own device — *And he hardened their hearts and made them stubborn, and the device was devised by Yahuah our Elohim (the LORD our God)* (Jubilees 48:17), as Exodus foretold — *I will harden his heart, that he shall not let the people go* (Exodus 4:21). And while the accuser is bound, Israel plunders Egypt — *We did not lead forth the children of Yashar''el (Israel) from Egypt empty handed* (Jubilees 48:19) — fulfilling Exodus 12 — *And they spoiled the Egyptians* (Exodus 12:36). The final word of the Exodus is the song the redeemed still sing — *And they sing the song of Moses the servant of Elohim (God), and the song of the Lamb* (Revelation 15:3).',
+       sv.verse_id, ev.verse_id, 'extras', 54187
+  FROM _session251_ju48_lookup sv, _session251_ju48_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=15
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=48 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-48-bush-and-the-lodging-place
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 4:24 — *And it came to pass by the way in the inn, that Yahuah (LORD) met him, and sought to kill him.* This is the lodging-place ambush Jubilees 48:2 names, unveiling prince Mastêmâ as the one who ''sought to slay you'' on the road back to Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-bush-and-the-lodging-place'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=4 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 3:2 — *And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed.* The bush at Sinai is where the return-from-Midian of Jubilees 48:1 begins in the source.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-bush-and-the-lodging-place'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 3:10 — *Come now therefore, and I will send thee unto Pharaoh, that thou mayest bring forth my people the children of Yashar''el (Israel) out of Egypt.* This is the sending ''to execute judgment and vengeance on the Egyptians'' that Mastêmâ sought to abort in Jubilees 48:3.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-bush-and-the-lodging-place'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-48-ten-plagues
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:29 — *And it came to pass, that at midnight Yahuah (LORD) smote all the firstborn in the land of Egypt, from the firstborn of Pharaoh that sat on his throne unto the firstborn of the captive that was in the dungeon; and all the firstborn of cattle.* This is the tenth plague, ''the death of the first-born of men and animals,'' that closes the list in Jubilees 48:5.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-ten-plagues'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 9:17 — *For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth.* Paul reads the ''ten great and terrible judgments'' of Jubilees 48:7 as Yahuah declaring His name through Pharaoh.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-ten-plagues'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 3:12 — *And he said, Certainly I will be with thee; and this shall be a token unto thee, that I have sent thee: When thou hast brought forth the people out of Egypt, ye shall serve Elohim (God) upon this mountain.* This is the promise behind ''I delivered you out of his hand, and you did perform the signs and wonders'' in Jubilees 48:4.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-ten-plagues'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 49:2 — *For on this night–the beginning of the festival and the beginning of the joy–you were eating the passover in Egypt, when all the powers of Mastêmâ had been let loose to slay all the first-born in the land of Egypt, from the firstborn of Pharaoh to the first-born of the captive maidservant in the mill, and to the cattle.* The next chapter ties the tenth of these ten judgments (Jubilees 48:7) to the eternal Passover night.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-ten-plagues'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=49 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-48-mastema-and-the-magicians
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 7:11 — *Then Pharaoh also called the wise men and the sorcerers: now the magicians of Egypt, they also did in like manner with their enchantments.* These are the ''Egyptian sorcerers'' Mastêmâ helped to stand and work before Moses in Jubilees 48:9.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-mastema-and-the-magicians'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=7 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 9:11 — *And the magicians could not stand before Moses because of the boils; for the boil was upon the magicians, and upon all the Egyptians.* This is the ''malignant ulcers'' that left the sorcerers unable to stand in Jubilees 48:11.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-mastema-and-the-magicians'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=9 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 7:12 — *For they cast down every man his rod, and they became serpents: but Aaron’s rod swallowed up their rods.* The sorcerers ''wrought before you'' (Jubilees 48:9), yet their signs were swallowed — heaven permitted the evil but not the victory (Jubilees 48:10).'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-mastema-and-the-magicians'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=7 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-48-red-sea-host-drowned
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 14:19 — *And the angel of Elohim (God), which went before the camp of Yashar''el (Israel), removed and went behind them; and the pillar of the cloud went from before their face, and stood behind them.* This is the ''I stood between the Egyptians and Yashar''el'' of Jubilees 48:12.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-red-sea-host-drowned'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 14:21 — *And Moses stretched out his hand over the sea; and Yahuah (LORD) caused the sea to go back by a strong east wind all that night, and made the sea dry land, and the waters were divided.* This is the sea crossed ''as if it were dry land'' in Jubilees 48:12.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-red-sea-host-drowned'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 14:28 — *And the waters returned, and covered the chariots, and the horsemen, and all the host of Pharaoh that came into the sea after them; there remained not so much as one of them.* This is the host Yahuah ''cast into the midst of the sea, into the depths of the abyss'' in Jubilees 48:14.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-red-sea-host-drowned'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 18:5 — *And when they had determined to slay the babes of the saints, one child being cast forth, and saved, to reprove them, you tookest away the multitude of their children, and destroyedst them altogether in a mighty water.* The ''mighty water'' measure-for-measure matches Jubilees 48:14, where the host drowns because Egypt had cast Israel''s children into the river.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-red-sea-host-drowned'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=14
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=18 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-48-mastema-bound-and-the-spoiling
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 4:21 — *And Yahuah (LORD) said unto Moses, When thou goest to return into Egypt, see that thou do all those wonders before Pharaoh, which I have put in thine hand: but I will harden his heart, that he shall not let the people go.* This is the ''device devised by Yahuah our Elohim'' that hardened Egypt''s heart in Jubilees 48:17.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-mastema-bound-and-the-spoiling'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=4 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 12:36 — *And Yahuah (LORD) gave the people favour in the sight of the Egyptians, so that they lent unto them such things as they required. And they spoiled the Egyptians.* This is why Israel went out ''not empty handed'' in Jubilees 48:19 — spoiling Egypt in return for the bondage.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-mastema-bound-and-the-spoiling'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 12:35 — *And the children of Yashar''el (Israel) did according to the word of Moses; and they borrowed of the Egyptians jewels of silver, and jewels of gold, and raiment.* These are the ''vessels of silver, and vessels of gold, and vessels of bronze'' of Jubilees 48:17, the despoiling that left Israel not empty-handed (Jubilees 48:19).'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-mastema-bound-and-the-spoiling'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Revelation 15:3 — *And they sing the song of Moses the servant of Elohim (God), and the song of the Lamb, saying, Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints.* The deliverance through the sea, with the accuser bound and the host drowned (Jubilees 48:15-16), is the victory the redeemed sing forever.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju48_lookup sv, _session251_ju48_lookup tv
+ WHERE t.slug='jubilees-48-mastema-bound-and-the-spoiling'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=48 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=15 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_49.sql (session251 jubilees 49) -----
+-- Source anchor: jubilees/jubilees ch49. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju49 (view _session251_ju49_lookup). Sort band base 54200, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju49_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-49-passover-fourteenth-appointed-time
+  ('jubilees', 'jubilees', 49, 1, 'canon', 'exodus', 12, 2, 'free', E'Exodus 12:2 — *This month shall be unto you the beginning of months: it shall be the first month of the year to you.* Jubilees'' "fourteenth of the first month" counts from the very head-of-months the LORD fixed in Egypt.'),
+  ('jubilees', 'jubilees', 49, 1, 'canon', 'leviticus', 23, 5, 'free', E'Leviticus 23:5 — *In the fourteenth day of the first month at even is the LORD''S passover.* The same day and the same evening Jubilees commands, listed among the LORD''s appointed feasts.'),
+  ('jubilees', 'jubilees', 49, 1, 'canon', 'deuteronomy', 16, 6, 'free', E'Deuteronomy 16:6 — *But at the place which Yahuah Elohayka (the LORD thy God) shall choose to place his name in, there thou shalt sacrifice the passover at even, at the going down of the sun, at the season that thou camest forth out of Egypt.* "From the time of the setting of the sun" in Jubilees is the Torah''s own "at the going down of the sun."'),
+  -- thread: jubilees-49-blood-on-the-lintels-passover
+  ('jubilees', 'jubilees', 49, 3, 'canon', 'exodus', 12, 13, 'free', E'Exodus 12:13 — *And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt.* Jubilees'' "sign of the blood was on its lintels" is Exodus'' very token that turns the destroyer aside.'),
+  ('jubilees', 'jubilees', 49, 2, 'canon', 'exodus', 12, 12, 'free', E'Exodus 12:12 — *For I will pass through the land of Egypt this night, and will smite all the firstborn in the land of Egypt, both man and beast; and against all the gods of Egypt I will execute judgment: I am Yahuah (LORD).* The "powers of Mastêmâ" loosed against the firstborn in Jubilees execute the LORD''s own night-judgment on Egypt.'),
+  -- thread: jubilees-49-eternal-ordinance-heavenly-tablets
+  ('jubilees', 'jubilees', 49, 8, 'canon', 'exodus', 12, 14, 'free', E'Exodus 12:14 — *And this day shall be unto you for a memorial; and ye shall keep it a feast to Yahuah (LORD) throughout your generations; ye shall keep it a feast by an ordinance for ever.* Jubilees'' "eternal ordinance... ordained for ever" is the Torah''s own "feast by an ordinance for ever."'),
+  ('jubilees', 'jubilees', 49, 9, 'canon', 'numbers', 9, 13, 'free', E'Numbers 9:13 — *But the man that is clean, and is not in a journey, and forbeareth to keep the passover, even the same soul shall be cut off from among his people: because he brought not the offering of Yahuah (LORD) in his appointed season, that man shall bear his sin.* Jubilees'' clean man cut off who "will take the guilt upon himself" is Numbers'' law word for word.'),
+  -- thread: jubilees-49-not-a-bone-broken-passover-lamb
+  ('jubilees', 'jubilees', 49, 13, 'canon', 'exodus', 12, 46, 'free', E'Exodus 12:46 — *In one house shall it be eaten; thou shalt not carry forth ought of the flesh abroad out of the house; neither shall ye break a bone thereof.* Jubilees'' "not break any bone thereof" is the Torah''s passover ordinance exactly.'),
+  ('jubilees', 'jubilees', 49, 13, 'canon', 'numbers', 9, 12, 'free', E'Numbers 9:12 — *They shall leave none of it unto the morning, nor break any bone of it: according to all the ordinances of the passover they shall keep it.* The same unbroken-bone law Jubilees presses, repeated in the wilderness Passover.'),
+  ('jubilees', 'jubilees', 49, 13, 'canon', 'john', 19, 36, 'free', E'John 19:36 — *For these things were done, that the scripture should be fulfilled, A bone of him shall not be broken.* The Passover law Jubilees guards — no bone crushed — is fulfilled in the crucified Messiah, the true Lamb.'),
+  ('jubilees', 'jubilees', 49, 14, 'canon', '1-corinthians', 5, 7, 'free', E'1 Corinthians 5:7 — *Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us.* Paul names the Lamb Jubilees'' ordinance was always pointing to — Messiah our Passover.'),
+  -- thread: jubilees-49-a-memorial-no-plague-passover-kept
+  ('jubilees', 'jubilees', 49, 15, 'canon', 'exodus', 12, 21, 'free', E'Exodus 12:21 — *Then Moses called for all the elders of Yashar''el (Israel), and said unto them, Draw out and take you a lamb according to your families, and kill the passover.* Jubilees commands the same perpetual keeping Moses first ordered to the elders.'),
+  ('jubilees', 'jubilees', 49, 16, 'canon', '1-corinthians', 5, 8, 'free', E'1 Corinthians 5:8 — *Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.* Jubilees'' command to celebrate Passover "in its appointed season" is the apostle''s own "let us keep the feast."'),
+  -- thread: jubilees-49-feast-of-unleavened-bread-haste-shur
+  ('jubilees', 'jubilees', 49, 21, 'canon', 'exodus', 12, 15, 'free', E'Exodus 12:15 — *Seven days shall ye eat unleavened bread; even the first day ye shall put away leaven out of your houses: for whosoever eateth leavened bread from the first day until the seventh day, that soul shall be cut off from Yashar''el (Israel).* Jubilees'' "unleavened bread seven days" is the Torah''s seven-day feast joined to Passover.'),
+  ('jubilees', 'jubilees', 49, 23, 'canon', 'deuteronomy', 16, 3, 'free', E'Deuteronomy 16:3 — *Thou shalt eat no leavened bread with it; seven days shalt thou eat unleavened bread therewith, even the bread of affliction; for thou camest forth out of the land of Egypt in haste.* Jubilees'' "celebrated this festival with haste when you went forth from Egypt" is Moses'' own reason for the unleavened bread.'),
+  ('jubilees', 'jubilees', 49, 23, 'canon', 'exodus', 15, 22, 'free', E'Exodus 15:22 — *So Moses brought Yashar''el (Israel) from the Red sea, and they went out into the wilderness of Shur; and they went three days in the wilderness, and found no water.* The wilderness of Shur where Jubilees says they "completed it" is the very place Exodus names just past the sea.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju49_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju49_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-49-passover-fourteenth-appointed-time',
+       E'The Passover in its season — the fourteenth at evening',
+       E'Jubilees opens its closing law with the Passover fixed to its day: *Remember the commandment which Yahuah (God) commanded you concerning the passover, that you should celebrate it in its season on the fourteenth of the first month, that you should kill it before it is evening, and that they should eat it by night on the evening of the fifteenth from the time of the setting of the sun* (Jubilees 49:1). This is no late addition — it is the Torah''s own reckoning. Yahuah set the very month as the head of the year: *This month shall be unto you the beginning of months: it shall be the first month of the year to you* (Exodus 12:2), and named the day: *In the fourteenth day of the first month at even is the LORD''S passover* (Leviticus 23:5). Moses spells out the same evening at sundown: *But at the place which Yahuah Elohayka (the LORD thy God) shall choose to place his name in, there thou shalt sacrifice the passover at even, at the going down of the sun, at the season that thou camest forth out of Egypt* (Deuteronomy 16:6). It ain''t new — Jubilees is binding Israel to the Appointed Time already engraved in the Law.',
+       sv.verse_id, ev.verse_id, 'extras', 54200
+  FROM _session251_ju49_lookup sv, _session251_ju49_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=49 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-49-blood-on-the-lintels-passover',
+       E'The blood on the lintels — the destroyer passes by',
+       E'Jubilees retells the first Passover night exactly as Exodus tells it: *For on this night–the beginning of the festival and the beginning of the joy–you were eating the passover in Egypt, when all the powers of Mastêmâ had been let loose to slay all the first-born in the land of Egypt* (Jubilees 49:2), and the saving sign: *And this is the sign which Yahuah (God) gave them: Into every house on the lintels of which they saw the blood of a lamb of the first year, into (that) house they should not enter to slay, but should pass by (it), that all those should be saved that were in the house because the sign of the blood was on its lintels* (Jubilees 49:3). Set Exodus beside it: *And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt* (Exodus 12:13). Jubilees'' "powers of Mastêmâ" let loose to slay is the satan-figure executing the judgment the LORD threatened: *and against all the gods of Egypt I will execute judgment: I am Yahuah (LORD)* (Exodus 12:12) — the same Exodus/Mastema frame the apparatus carries through Jubilees 48. The blood of the lamb, not the worthiness of the house, is what turns the destroyer aside.',
+       sv.verse_id, ev.verse_id, 'extras', 54203
+  FROM _session251_ju49_lookup sv, _session251_ju49_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=2
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=49 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-49-eternal-ordinance-heavenly-tablets',
+       E'An eternal ordinance engraven on the heavenly tablets',
+       E'For Jubilees the Passover is no temporary rite but a statute written before the world unfolds: *For it is an eternal ordinance, and engraven on the heavenly tables regarding all the children of Yashar''el (Israel) that they should observe it every year on its day once a year, throughout all their generations; and there is no limit of days, for this is ordained for ever* (Jubilees 49:8). And the one who neglects it bears his own guilt — *that man who is clean and close at hand will be cut off; because he offered not the oblation of Yahuah (God) in its appointed season, he will take the guilt upon himself* (Jubilees 49:9). This is the heavenly-tablets framework reading straight out of the Torah''s own "for ever": *And this day shall be unto you for a memorial; and ye shall keep it a feast to Yahuah (LORD) throughout your generations; ye shall keep it a feast by an ordinance for ever* (Exodus 12:14). And the cutting-off Jubilees warns of is Numbers'' law verbatim: *But the man that is clean, and is not in a journey, and forbeareth to keep the passover, even the same soul shall be cut off from among his people: because he brought not the offering of Yahuah (LORD) in his appointed season, that man shall bear his sin* (Numbers 9:13). The feast is eternal — never abolished, never a curse.',
+       sv.verse_id, ev.verse_id, 'extras', 54206
+  FROM _session251_ju49_lookup sv, _session251_ju49_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=8
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=49 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-49-not-a-bone-broken-passover-lamb',
+       E'Not a bone broken — the Passover-Lamb is Messiah',
+       E'Here is the highest weave of the chapter. Jubilees commands the lamb roasted whole and uncrushed: *they shall eat it with diligence, its head with the inwards thereof and its feet they shall roast with fire, and not break any bone thereof; for of the children of Yashar''el (Israel) no bone shall be crushed* (Jubilees 49:13), and presses it as the reason the feast is fixed: *For this reason Yahuah (God) commanded the children of Yashar''el (Israel) to observe the passover on the day of its fixed time, and they shall not break a bone thereof* (Jubilees 49:14). This is the Torah''s ordinance — *In one house shall it be eaten; thou shalt not carry forth ought of the flesh abroad out of the house; neither shall ye break a bone thereof* (Exodus 12:46) — and *They shall leave none of it unto the morning, nor break any bone of it: according to all the ordinances of the passover they shall keep it* (Numbers 9:12). And the New Testament shows what the unbroken bone was always pointing to: at the cross the soldiers *brake not his legs* (John 19:33), and John names the law fulfilled — *For these things were done, that the scripture should be fulfilled, A bone of him shall not be broken* (John 19:36). Paul seals it: *For even Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7). The lamb without a broken bone was Messiah from the start. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 54209
+  FROM _session251_ju49_lookup sv, _session251_ju49_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=13
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=49 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-49-a-memorial-no-plague-passover-kept',
+       E'A memorial well-pleasing — keep it and no plague comes',
+       E'Jubilees presses the perpetual keeping as a memorial that shields Israel: *And do you command the children of Yashar''el (Israel) to observe the passover throughout their days, every year, once a year on the day of its fixed time, and it will come for a memorial well pleasing before Yahuah (God), and no plague will come upon them to slay or to smite in that year in which they celebrate the passover in its season in every respect according to His command* (Jubilees 49:15). This is the memorial the LORD himself named in Egypt: *And this day shall be unto you for a memorial; and ye shall keep it a feast to Yahuah (LORD) throughout your generations* (Exodus 12:14), and the very ordinance restated to the elders: *Then Moses called for all the elders of Yashar''el (Israel), and said unto them, Draw out and take you a lamb according to your families, and kill the passover* (Exodus 12:21). The leaven that must be purged for the feast Jubilees calls "unleavened bread seven days" — Paul gives its meaning: *Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). Keep the feast — Torah and apostle agree.',
+       sv.verse_id, ev.verse_id, 'extras', 54212
+  FROM _session251_ju49_lookup sv, _session251_ju49_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=15
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=49 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-49-feast-of-unleavened-bread-haste-shur',
+       E'Seven days unleavened — kept in haste to the wilderness of Shur',
+       E'Jubilees binds Passover to the seven-day feast that follows and to the haste of the Exodus march: *the festival of unleavened bread, that they should eat unleavened bread seven days, (and) that they should observe its festival* (Jubilees 49:21), closing the chapter with the memory of the flight itself: *For you celebrated this festival with haste when you went forth from Egypt till you entered into the wilderness of Shur; for on the shore of the sea you completed it* (Jubilees 49:23). The Torah set the seven days: *Seven days shall ye eat unleavened bread; even the first day ye shall put away leaven out of your houses* (Exodus 12:15), and named the haste as the reason: *Thou shalt eat no leavened bread with it; seven days shalt thou eat unleavened bread therewith, even the bread of affliction; for thou camest forth out of the land of Egypt in haste* (Deuteronomy 16:3). And the very wilderness Jubilees names is in Exodus: *So Moses brought Yashar''el (Israel) from the Red sea, and they went out into the wilderness of Shur* (Exodus 15:22). Jubilees walks the same road Exodus walked — and the book of feasts closes where the Law began.',
+       sv.verse_id, ev.verse_id, 'extras', 54215
+  FROM _session251_ju49_lookup sv, _session251_ju49_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=21
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=49 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-49-passover-fourteenth-appointed-time
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:2 — *This month shall be unto you the beginning of months: it shall be the first month of the year to you.* Jubilees'' "fourteenth of the first month" counts from the very head-of-months the LORD fixed in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-passover-fourteenth-appointed-time'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 23:5 — *In the fourteenth day of the first month at even is the LORD''S passover.* The same day and the same evening Jubilees commands, listed among the LORD''s appointed feasts.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-passover-fourteenth-appointed-time'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 16:6 — *But at the place which Yahuah Elohayka (the LORD thy God) shall choose to place his name in, there thou shalt sacrifice the passover at even, at the going down of the sun, at the season that thou camest forth out of Egypt.* "From the time of the setting of the sun" in Jubilees is the Torah''s own "at the going down of the sun."'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-passover-fourteenth-appointed-time'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=16 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-49-blood-on-the-lintels-passover
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:13 — *And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt.* Jubilees'' "sign of the blood was on its lintels" is Exodus'' very token that turns the destroyer aside.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-blood-on-the-lintels-passover'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 12:12 — *For I will pass through the land of Egypt this night, and will smite all the firstborn in the land of Egypt, both man and beast; and against all the gods of Egypt I will execute judgment: I am Yahuah (LORD).* The "powers of Mastêmâ" loosed against the firstborn in Jubilees execute the LORD''s own night-judgment on Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-blood-on-the-lintels-passover'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-49-eternal-ordinance-heavenly-tablets
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:14 — *And this day shall be unto you for a memorial; and ye shall keep it a feast to Yahuah (LORD) throughout your generations; ye shall keep it a feast by an ordinance for ever.* Jubilees'' "eternal ordinance... ordained for ever" is the Torah''s own "feast by an ordinance for ever."'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-eternal-ordinance-heavenly-tablets'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 9:13 — *But the man that is clean, and is not in a journey, and forbeareth to keep the passover, even the same soul shall be cut off from among his people: because he brought not the offering of Yahuah (LORD) in his appointed season, that man shall bear his sin.* Jubilees'' clean man cut off who "will take the guilt upon himself" is Numbers'' law word for word.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-eternal-ordinance-heavenly-tablets'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=9 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-49-not-a-bone-broken-passover-lamb
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:46 — *In one house shall it be eaten; thou shalt not carry forth ought of the flesh abroad out of the house; neither shall ye break a bone thereof.* Jubilees'' "not break any bone thereof" is the Torah''s passover ordinance exactly.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-not-a-bone-broken-passover-lamb'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=46
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 9:12 — *They shall leave none of it unto the morning, nor break any bone of it: according to all the ordinances of the passover they shall keep it.* The same unbroken-bone law Jubilees presses, repeated in the wilderness Passover.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-not-a-bone-broken-passover-lamb'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=9 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'John 19:36 — *For these things were done, that the scripture should be fulfilled, A bone of him shall not be broken.* The Passover law Jubilees guards — no bone crushed — is fulfilled in the crucified Messiah, the true Lamb.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-not-a-bone-broken-passover-lamb'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=19 AND tv.verse_number=36
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Corinthians 5:7 — *Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us.* Paul names the Lamb Jubilees'' ordinance was always pointing to — Messiah our Passover.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-not-a-bone-broken-passover-lamb'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-49-a-memorial-no-plague-passover-kept
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:21 — *Then Moses called for all the elders of Yashar''el (Israel), and said unto them, Draw out and take you a lamb according to your families, and kill the passover.* Jubilees commands the same perpetual keeping Moses first ordered to the elders.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-a-memorial-no-plague-passover-kept'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Corinthians 5:8 — *Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth.* Jubilees'' command to celebrate Passover "in its appointed season" is the apostle''s own "let us keep the feast."'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-a-memorial-no-plague-passover-kept'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-49-feast-of-unleavened-bread-haste-shur
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:15 — *Seven days shall ye eat unleavened bread; even the first day ye shall put away leaven out of your houses: for whosoever eateth leavened bread from the first day until the seventh day, that soul shall be cut off from Yashar''el (Israel).* Jubilees'' "unleavened bread seven days" is the Torah''s seven-day feast joined to Passover.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-feast-of-unleavened-bread-haste-shur'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 16:3 — *Thou shalt eat no leavened bread with it; seven days shalt thou eat unleavened bread therewith, even the bread of affliction; for thou camest forth out of the land of Egypt in haste.* Jubilees'' "celebrated this festival with haste when you went forth from Egypt" is Moses'' own reason for the unleavened bread.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-feast-of-unleavened-bread-haste-shur'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=16 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 15:22 — *So Moses brought Yashar''el (Israel) from the Red sea, and they went out into the wilderness of Shur; and they went three days in the wilderness, and found no water.* The wilderness of Shur where Jubilees says they "completed it" is the very place Exodus names just past the sea.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju49_lookup sv, _session251_ju49_lookup tv
+ WHERE t.slug='jubilees-49-feast-of-unleavened-bread-haste-shur'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=49 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jubilees_50.sql (session251 jubilees 50) -----
+-- Source anchor: jubilees/jubilees ch50. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ju50 (view _session251_ju50_lookup). Sort band base 54225, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session251_ju50_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jubilees-50-sabbath-of-the-land-and-jubilee
+  ('jubilees', 'jubilees', 50, 2, 'canon', 'leviticus', 25, 2, 'free', E'Leviticus 25:2 — *Speak unto the children of Yashar''el (Israel), and say unto them, When ye come into the land which I give you, then shall the land keep a sabbath unto Yahuah (LORD).* Jubilees says the Sabbaths of the land were told on Sinai but the jubilee year withheld ''till you enter the land'' — exactly Leviticus'' ''when ye come into the land.'''),
+  ('jubilees', 'jubilees', 50, 3, 'canon', 'leviticus', 25, 4, 'free', E'Leviticus 25:4 — *But in the seventh year shall be a sabbath of rest unto the land, a sabbath for Yahuah (LORD): thou shalt neither sow thy field, nor prune thy vineyard.* Jubilees'' ''the land also will keep its sabbaths while they dwell upon it'' is the seventh-year land-rest of the Torah.'),
+  ('jubilees', 'jubilees', 50, 4, 'canon', 'leviticus', 25, 8, 'free', E'Leviticus 25:8 — *And thou shalt number seven sabbaths of years unto thee, seven times seven years; and the space of the seven sabbaths of years shall be unto thee forty and nine years.* Jubilees'' ''forty-nine jubilees from the days of Adam'' counts the same seven-times-seven that the Torah numbers to the jubilee.'),
+  -- thread: jubilees-50-proclaim-liberty-land-cleansed
+  ('jubilees', 'jubilees', 50, 5, 'canon', 'leviticus', 25, 10, 'free', E'Leviticus 25:10 — *And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family.* Jubilees'' jubilees passing until the land is ''clean from that time for evermore'' is the Torah''s proclaimed liberty carried to its end.'),
+  ('jubilees', 'jubilees', 50, 5, 'canon', 'isaiah', 58, 14, 'free', E'Isaiah 58:14 — *Then shalt thou delight thyself in Yahuah (LORD); and I will cause thee to ride upon the high places of the earth, and feed thee with the heritage of Jacob thy father: for the mouth of Yahuah (LORD) hath spoken it.* The Sabbath-keeper''s inheritance of the heritage of Jacob is the same ''dwells with confidence in all the land'' Jubilees promises the cleansed Israel.'),
+  -- thread: jubilees-50-six-days-labour-seventh-rest
+  ('jubilees', 'jubilees', 50, 7, 'canon', 'exodus', 20, 8, 'free', E'Exodus 20:8 — *Remember the sabbath day, to keep it holy.* Jubilees 50:7''s ''six days will you labour, but on the seventh day is the Sabbath'' is the fourth commandment delivered at the same Sinai.'),
+  ('jubilees', 'jubilees', 50, 7, 'canon', 'exodus', 20, 10, 'free', E'Exodus 20:10 — *But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God): in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates.* Jubilees names the identical household — sons, men-servants, maid-servants, cattle, the sojourner — that the commandment binds to the rest.'),
+  ('jubilees', 'jubilees', 50, 7, 'canon', 'leviticus', 23, 3, 'free', E'Leviticus 23:3 — *Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of Yahuah (LORD) in all your dwellings.* The Sabbath stands at the head of the feasts of Yahuah — Jubilees'' ''a day of festival, and a holy day'' is this holy convocation.'),
+  ('jubilees', 'jubilees', 50, 9, 'canon', 'genesis', 2, 2, 'free', E'Genesis 2:2 — *And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made.* Jubilees roots the seventh-day rest where ch2 rooted it — in the creation Sabbath, not in a later Jewish invention.'),
+  -- thread: jubilees-50-no-work-kindle-no-fire
+  ('jubilees', 'jubilees', 50, 8, 'canon', 'exodus', 31, 14, 'free', E'Exodus 31:14 — *Ye shall keep the sabbath therefore; for it is holy unto you: every one that defileth it shall surely be put to death: for whosoever doeth any work therein, that soul shall be cut off from among his people.* Jubilees'' ''the man that does any work on it shall die'' is this commandment, holding the Sabbath holy on pain of death.'),
+  ('jubilees', 'jubilees', 50, 12, 'canon', 'exodus', 35, 2, 'free', E'Exodus 35:2 — *Six days shall work be done, but on the seventh day there shall be to you an holy day, a sabbath of rest to Yahuah (LORD): whosoever doeth work therein shall be put to death.* Jubilees 50:12''s death-sentence on the Sabbath-worker repeats this six-days/seventh-day decree.'),
+  ('jubilees', 'jubilees', 50, 12, 'canon', 'exodus', 35, 3, 'free', E'Exodus 35:3 — *Ye shall kindle no fire throughout your habitations upon the sabbath day.* Jubilees'' ''whoever lights a fire... on the Sabbaths'' names the very prohibition the Torah set against kindling fire on the day.'),
+  -- thread: jubilees-50-sign-for-ever-heavenly-tablets
+  ('jubilees', 'jubilees', 50, 9, 'canon', 'exodus', 31, 13, 'free', E'Exodus 31:13 — *Speak thou also unto the children of Yashar''el (Israel), saying, Verily my sabbaths ye shall keep: for it is a sign between me and you throughout your generations; that ye may know that I am Yahuah (LORD) that doth sanctify you.* Jubilees'' ''a day of the holy kingdom for all Yashar''el is this day... for ever'' is the Sabbath kept as the sanctifying sign of Sinai.'),
+  ('jubilees', 'jubilees', 50, 13, 'canon', 'exodus', 31, 16, 'free', E'Exodus 31:16 — *Wherefore the children of Yashar''el (Israel) shall keep the sabbath, to observe the sabbath throughout their generations, for a perpetual covenant.* Jubilees 50:13''s charge that ''the children of Yashar''el shall observe the Sabbaths... as it is written in the tables'' is this perpetual covenant written down.'),
+  ('jubilees', 'jubilees', 50, 13, 'canon', 'exodus', 31, 17, 'free', E'Exodus 31:17 — *It is a sign between me and the children of Yashar''el (Israel) for ever: for in six days Yahuah (LORD) made heaven and earth, and on the seventh day he rested, and was refreshed.* The eternal sign ''written in the tables'' that Jubilees closes with is the Sabbath sign of creation grounded in Exodus.'),
+  ('jubilees', 'jubilees', 50, 9, 'jubilees', 'jubilees', 2, 19, 'extras', E'Jubilees 2:19 — *And He said to us: “Behold, I will separate to Myself a people from among all the peoples, and these will keep the Sabbath day, and I will sanctify them to Myself as My people, and will bless them...* The book that closes on the Sabbath ''for ever'' opened on this same heavenly Sabbath — the inclusio of the whole Book of Division.'),
+  ('jubilees', 'jubilees', 50, 9, 'canon', 'hebrews', 4, 9, 'free', E'Hebrews 4:9 — *There remaineth therefore a rest to the people of Elohim (God).* Jubilees'' eternal ''day of the holy kingdom... for ever'' is the abiding Sabbath-rest the apostle says still stands open for the people of Elohim.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session251_ju50_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session251_ju50_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-50-sabbath-of-the-land-and-jubilee',
+       E'The Sabbaths of the land and the jubilee years — counted from Sinai',
+       E'The Book of Division closes on the very thing it opened with: the Sabbath. *And I told you of the Sabbaths of the land on Mount Sinai, and I told you of the jubilee years in the sabbaths of years: but the year thereof have I not told you till you enter the land which you are to possess* (Jubilees 50:2). *And the land also will keep its sabbaths while they dwell upon it, and they will know the jubilee year* (Jubilees 50:3). This is not a new ordinance handed to Moses — it is Leviticus 25 spoken at the same mountain: *Speak unto the children of Yashar''el (Israel), and say unto them, When ye come into the land which I give you, then shall the land keep a sabbath unto Yahuah (LORD)* (Leviticus 25:2). The seventh year rests the field — *But in the seventh year shall be a sabbath of rest unto the land, a sabbath for Yahuah (LORD): thou shalt neither sow thy field, nor prune thy vineyard* (Leviticus 25:4) — and seven sevens are counted to the fiftieth: *And thou shalt number seven sabbaths of years unto thee, seven times seven years; and the space of the seven sabbaths of years shall be unto thee forty and nine years* (Leviticus 25:8). Jubilees'' whole reckoning — *there are forty-nine jubilees from the days of Adam until this day* (Jubilees 50:4) — is the Torah''s own jubilee clock running from creation. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 54225
+  FROM _session251_ju50_lookup sv, _session251_ju50_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=2
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=50 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-50-proclaim-liberty-land-cleansed',
+       E'Proclaim liberty — the land cleansed, no more Satan, the Sabbath a delight',
+       E'Jubilees sets the jubilee toward a final cleansing: *And the jubilees will pass by, until Yashar’el (Israel) is cleansed from all guilt of fornication, and uncleanness, and pollution, and sin, and error, and dwells with confidence in all the land, and there will be no more a Satan or any evil one, and the land will be clean from that time for evermore* (Jubilees 50:5). The Torah''s jubilee is the seed of this hope: *And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family* (Leviticus 25:10). And the prophet names the reward of the kept Sabbath in the very terms Jubilees uses for the festival rest: *Then shalt thou delight thyself in Yahuah (LORD); and I will cause thee to ride upon the high places of the earth, and feed thee with the heritage of Jacob thy father: for the mouth of Yahuah (LORD) hath spoken it* (Isaiah 58:14). Liberty proclaimed, the land clean for ever — the restoration the whole book has been pointing to.',
+       sv.verse_id, ev.verse_id, 'extras', 54228
+  FROM _session251_ju50_lookup sv, _session251_ju50_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=5
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=50 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-50-six-days-labour-seventh-rest',
+       E'Six days labour, the seventh the Sabbath of Yahuah your Elohim',
+       E'Jubilees gives the Sabbath command word for word with the fourth commandment: *Six days will you labour, but on the seventh day is the Sabbath of Yahuah your Elohim (the LORD your God). In it you shall do no manner of work, you and your sons, and your men-servants and your maid-servants, and all your cattle and the sojourner also who is with you* (Jubilees 50:7). That is Sinai: *Remember the sabbath day, to keep it holy* (Exodus 20:8) — *But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God): in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates* (Exodus 20:10). It is the appointed feast of Leviticus 23: *Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of Yahuah (LORD) in all your dwellings* (Leviticus 23:3). And it reaches back past Sinai to creation, where Jubilees ch2 began: *And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made* (Genesis 2:2). Same command, same list of household and stranger, same seventh day. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 54231
+  FROM _session251_ju50_lookup sv, _session251_ju50_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=7
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=50 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-50-no-work-kindle-no-fire',
+       E'Do no work on the Sabbath — kindle no fire, carry no burden',
+       E'Jubilees lists the forbidden Sabbath labours with deadly seriousness: *And the man that does any work on it shall die... and whoever takes up any burden to carry it out of his tent or out of his house shall die* (Jubilees 50:8), and again *And every man who does any work thereon... and whoever lights a fire, or rides on any beast, or travels by ship on the sea... or makes war on the Sabbaths* (Jubilees 50:12). Every one of these has its Torah source. The death-penalty for desecration: *Ye shall keep the sabbath therefore; for it is holy unto you: every one that defileth it shall surely be put to death: for whosoever doeth any work therein, that soul shall be cut off from among his people* (Exodus 31:14), and *Six days shall work be done, but on the seventh day there shall be to you an holy day, a sabbath of rest to Yahuah (LORD): whosoever doeth work therein shall be put to death* (Exodus 35:2). The kindling of fire is named directly: *Ye shall kindle no fire throughout your habitations upon the sabbath day* (Exodus 35:3). Jubilees is not inventing rigor — it is reciting the written law. Torah stands.',
+       sv.verse_id, ev.verse_id, 'extras', 54234
+  FROM _session251_ju50_lookup sv, _session251_ju50_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=8
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=50 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jubilees-50-sign-for-ever-heavenly-tablets',
+       E'A sign for ever, written in the tables — the book closes where it began',
+       E'Jubilees ends by sealing the Sabbath as an eternal sign written on the heavenly tablets: *a day of the holy kingdom for all Yashar’el (Israel) is this day among their days for ever* (Jubilees 50:9), and *so that the children of Yashar’el (Israel) shall observe the Sabbaths according to the commandments regarding the Sabbaths of the land, as it is written in the tables, which He gave into my hands that I should write out for you* (Jubilees 50:13). This is the sign-language of Sinai: *Speak thou also unto the children of Yashar''el (Israel), saying, Verily my sabbaths ye shall keep: for it is a sign between me and you throughout your generations; that ye may know that I am Yahuah (LORD) that doth sanctify you* (Exodus 31:13) — *Wherefore the children of Yashar''el (Israel) shall keep the sabbath, to observe the sabbath throughout their generations, for a perpetual covenant* (Exodus 31:16) — *It is a sign between me and the children of Yashar''el (Israel) for ever* (Exodus 31:17). And it shuts the inclusio of the whole book, returning to the heavenly Sabbath of ch2: *Behold, I will separate to Myself a people from among all the peoples, and these will keep the Sabbath day, and I will sanctify them to Myself as My people* (Jubilees 2:19). The rest is not abolished but stands open ahead — *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). The Book of Division closes on its first word: the eternal Sabbath. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 54237
+  FROM _session251_ju50_lookup sv, _session251_ju50_lookup ev
+ WHERE sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=9
+   AND ev.edition_slug='jubilees' AND ev.book_slug='jubilees' AND ev.chapter_number=50 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jubilees-50-sabbath-of-the-land-and-jubilee
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 25:2 — *Speak unto the children of Yashar''el (Israel), and say unto them, When ye come into the land which I give you, then shall the land keep a sabbath unto Yahuah (LORD).* Jubilees says the Sabbaths of the land were told on Sinai but the jubilee year withheld ''till you enter the land'' — exactly Leviticus'' ''when ye come into the land.'''
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-sabbath-of-the-land-and-jubilee'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 25:4 — *But in the seventh year shall be a sabbath of rest unto the land, a sabbath for Yahuah (LORD): thou shalt neither sow thy field, nor prune thy vineyard.* Jubilees'' ''the land also will keep its sabbaths while they dwell upon it'' is the seventh-year land-rest of the Torah.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-sabbath-of-the-land-and-jubilee'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 25:8 — *And thou shalt number seven sabbaths of years unto thee, seven times seven years; and the space of the seven sabbaths of years shall be unto thee forty and nine years.* Jubilees'' ''forty-nine jubilees from the days of Adam'' counts the same seven-times-seven that the Torah numbers to the jubilee.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-sabbath-of-the-land-and-jubilee'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-50-proclaim-liberty-land-cleansed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 25:10 — *And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family.* Jubilees'' jubilees passing until the land is ''clean from that time for evermore'' is the Torah''s proclaimed liberty carried to its end.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-proclaim-liberty-land-cleansed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 58:14 — *Then shalt thou delight thyself in Yahuah (LORD); and I will cause thee to ride upon the high places of the earth, and feed thee with the heritage of Jacob thy father: for the mouth of Yahuah (LORD) hath spoken it.* The Sabbath-keeper''s inheritance of the heritage of Jacob is the same ''dwells with confidence in all the land'' Jubilees promises the cleansed Israel.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-proclaim-liberty-land-cleansed'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=58 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-50-six-days-labour-seventh-rest
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 20:8 — *Remember the sabbath day, to keep it holy.* Jubilees 50:7''s ''six days will you labour, but on the seventh day is the Sabbath'' is the fourth commandment delivered at the same Sinai.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-six-days-labour-seventh-rest'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 20:10 — *But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God): in it thou shalt not do any work, thou, nor thy son, nor thy daughter, thy manservant, nor thy maidservant, nor thy cattle, nor thy stranger that is within thy gates.* Jubilees names the identical household — sons, men-servants, maid-servants, cattle, the sojourner — that the commandment binds to the rest.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-six-days-labour-seventh-rest'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 23:3 — *Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of Yahuah (LORD) in all your dwellings.* The Sabbath stands at the head of the feasts of Yahuah — Jubilees'' ''a day of festival, and a holy day'' is this holy convocation.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-six-days-labour-seventh-rest'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 2:2 — *And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made.* Jubilees roots the seventh-day rest where ch2 rooted it — in the creation Sabbath, not in a later Jewish invention.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-six-days-labour-seventh-rest'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-50-no-work-kindle-no-fire
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 31:14 — *Ye shall keep the sabbath therefore; for it is holy unto you: every one that defileth it shall surely be put to death: for whosoever doeth any work therein, that soul shall be cut off from among his people.* Jubilees'' ''the man that does any work on it shall die'' is this commandment, holding the Sabbath holy on pain of death.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-no-work-kindle-no-fire'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 35:2 — *Six days shall work be done, but on the seventh day there shall be to you an holy day, a sabbath of rest to Yahuah (LORD): whosoever doeth work therein shall be put to death.* Jubilees 50:12''s death-sentence on the Sabbath-worker repeats this six-days/seventh-day decree.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-no-work-kindle-no-fire'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=35 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 35:3 — *Ye shall kindle no fire throughout your habitations upon the sabbath day.* Jubilees'' ''whoever lights a fire... on the Sabbaths'' names the very prohibition the Torah set against kindling fire on the day.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-no-work-kindle-no-fire'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=35 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jubilees-50-sign-for-ever-heavenly-tablets
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 31:13 — *Speak thou also unto the children of Yashar''el (Israel), saying, Verily my sabbaths ye shall keep: for it is a sign between me and you throughout your generations; that ye may know that I am Yahuah (LORD) that doth sanctify you.* Jubilees'' ''a day of the holy kingdom for all Yashar''el is this day... for ever'' is the Sabbath kept as the sanctifying sign of Sinai.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-sign-for-ever-heavenly-tablets'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 31:16 — *Wherefore the children of Yashar''el (Israel) shall keep the sabbath, to observe the sabbath throughout their generations, for a perpetual covenant.* Jubilees 50:13''s charge that ''the children of Yashar''el shall observe the Sabbaths... as it is written in the tables'' is this perpetual covenant written down.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-sign-for-ever-heavenly-tablets'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 31:17 — *It is a sign between me and the children of Yashar''el (Israel) for ever: for in six days Yahuah (LORD) made heaven and earth, and on the seventh day he rested, and was refreshed.* The eternal sign ''written in the tables'' that Jubilees closes with is the Sabbath sign of creation grounded in Exodus.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-sign-for-ever-heavenly-tablets'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 2:19 — *And He said to us: “Behold, I will separate to Myself a people from among all the peoples, and these will keep the Sabbath day, and I will sanctify them to Myself as My people, and will bless them...* The book that closes on the Sabbath ''for ever'' opened on this same heavenly Sabbath — the inclusio of the whole Book of Division.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-sign-for-ever-heavenly-tablets'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=9
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=2 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Hebrews 4:9 — *There remaineth therefore a rest to the people of Elohim (God).* Jubilees'' eternal ''day of the holy kingdom... for ever'' is the abiding Sabbath-rest the apostle says still stands open for the people of Elohim.'
+  FROM cross_reference_threads t, cross_references x, _session251_ju50_lookup sv, _session251_ju50_lookup tv
+ WHERE t.slug='jubilees-50-sign-for-ever-heavenly-tablets'
+   AND sv.edition_slug='jubilees' AND sv.book_slug='jubilees' AND sv.chapter_number=50 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session251 — Jubilees cross-references complete.'

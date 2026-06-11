@@ -1,0 +1,112 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 42,
+  "session": "session251",
+  "tag": "ju42",
+  "base_band": 54025,
+  "threads": [
+    {
+      "slug": "jubilees-42-famine-ten-go-down",
+      "title": "The famine, and the ten go down to Egypt",
+      "summary_md": "Jubilees dates and retells the opening of Genesis 42: *And in the first year of the third week of the forty-fifth jubilee the famine began to come into the land, and the rain refused to be given to the earth, for none whatever fell* (Jubilees 42:1), so that *Jacob heard that there was food in Egypt, and he sent his ten sons that they should procure food for him in Egypt; but Benjamin he did not send* (Jubilees 42:4). This is the Genesis account told beside itself — *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* (Genesis 42:1), and *Joseph's ten brethren went down to buy corn in Egypt* (Genesis 42:3), while *Benjamin, Joseph's brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him* (Genesis 42:4). Jasher tells the same descent, even adding the brothers' secret hope: *And the sons of Jacob went forth and they went to Egypt... and Jacob did not send Benjamin, for he said, Lest an accident might befall him on the road like his brother; and ten of Jacob's sons went forth* (Jasher 51:5). It ain't new — Jubilees, Genesis, and Jasher carry one famine and one company of ten.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 42:1 — *Now when Jacob saw that there was corn in Egypt, Jacob said unto his sons, Why do ye look one upon another?* The famine that opens Jubilees 42:1 is the same that drives Jacob to send his sons in Genesis."},
+        {"src_ch": 42, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 3, "tier": "free",
+         "note": "Genesis 42:3 — *And Joseph’s ten brethren went down to buy corn in Egypt.* Jubilees 42:4's ten sons sent for food are Genesis' ten brethren going down."},
+        {"src_ch": 42, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 42:4 — *But Benjamin, Joseph’s brother, Jacob sent not with his brethren; for he said, Lest peradventure mischief befall him.* The held-back Benjamin of Jubilees 42:4 is Genesis' Benjamin kept home against mischief."},
+        {"src_ch": 42, "src_v": 4, "tgt_edition": "jasher", "tgt_book": "jasher", "tgt_ch": 51, "tgt_v": 5, "tier": "extras",
+         "note": "Jasher 51:5 — *And the sons of Jacob went forth and they went to Egypt, and the sons of Jacob did all as their father had commanded them, and Jacob did not send Benjamin, for he said, Lest an accident might befall him on the road like his brother; and ten of Jacob’s sons went forth.* Jasher matches Jubilees 42:4 down to Benjamin held back and the ten going."}
+      ]
+    },
+    {
+      "slug": "jubilees-42-joseph-knew-them-spies",
+      "title": "Joseph knew them, but they knew not him",
+      "summary_md": "The rejected brother now stands exalted and unrecognized: *And Joseph recognized them, but they did not recognize him, and he spake to them and questioned them, and he said to them: “Are you not spies, and have you not come to explore the approaches of the land?” And he put them in ward* (Jubilees 42:5). Genesis tells it twice over — *And Joseph saw his brethren, and he knew them, but made himself strange unto them, and spake roughly unto them* (Genesis 42:7), and plainly: *And Joseph knew his brethren, but they knew not him* (Genesis 42:8); *And Joseph remembered the dreams which he dreamed of them, and said unto them, Ye are spies; to see the nakedness of the land ye are come* (Genesis 42:9). Jasher carries the same charge: *And Joseph saw his brethren, and he knew them, but they knew him not, for Joseph was very great in their eyes, therefore they knew him not* (Jasher 51:20). This is the framework's deliverer rejected then exalted — the patriarchs who once sold him now bow before him and do not see him; Stephen names the wound by name: *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him* (Acts 7:9).",
+      "anchor_start_v": 5,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 42:8 — *And Joseph knew his brethren, but they knew not him.* This is exactly the recognition asymmetry of Jubilees 42:5, where Joseph recognizes them and they do not recognize him."},
+        {"src_ch": 42, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 9, "tier": "free",
+         "note": "Genesis 42:9 — *And Joseph remembered the dreams which he dreamed of them, and said unto them, Ye are spies; to see the nakedness of the land ye are come.* The spy-accusation of Jubilees 42:5 is Joseph's charge in Genesis, rooted in the dreams now fulfilled."},
+        {"src_ch": 42, "src_v": 5, "tgt_edition": "jasher", "tgt_book": "jasher", "tgt_ch": 51, "tgt_v": 20, "tier": "extras",
+         "note": "Jasher 51:20 — *And Joseph saw his brethren, and he knew them, but they knew him not, for Joseph was very great in their eyes, therefore they knew him not.* Jasher gives the reason behind Jubilees 42:5: his greatness blinded them to the brother they had cast off."},
+        {"src_ch": 42, "src_v": 5, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 9, "tier": "free",
+         "note": "Acts 7:9 — *And the patriarchs, moved with envy, sold Joseph into Egypt: but Elohim (God) was with him.* Stephen frames the man now accusing them in Jubilees 42:5 as the rejected one whom Elohim was with — the deliverer pattern."}
+      ]
+    },
+    {
+      "slug": "jubilees-42-simeon-bound-money-returned",
+      "title": "Simeon detained, the money in the sacks",
+      "summary_md": "Joseph keeps one brother as a pledge and secretly restores their silver: *And after that he set them free again, and detained Simeon alone and sent off his nine brothers. And he filled their sacks with corn, and he put their gold in their sacks, and they did not know* (Jubilees 42:6); and at home *they told their father all that had befallen them, and how the lord of the country had spoken roughly to them, and had seized Simeon till they should bring Benjamin* (Jubilees 42:9). Genesis tells the binding and the hidden money: *And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes* (Genesis 42:24); *Then Joseph commanded to fill their sacks with corn, and to restore every man's money into his sack, and to give them provision for the way: and thus did he unto them* (Genesis 42:25). The brothers' dread is the deliverer's hidden providence at work — the very mercy looks like a trap.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 42:24 — *And he turned himself about from them, and wept; and returned to them again, and communed with them, and took from them Simeon, and bound him before their eyes.* The detained Simeon of Jubilees 42:6 is Genesis' Simeon bound, with Joseph's secret weeping behind it."},
+        {"src_ch": 42, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 25, "tier": "free",
+         "note": "Genesis 42:25 — *Then Joseph commanded to fill their sacks with corn, and to restore every man’s money into his sack, and to give them provision for the way: and thus did he unto them.* The gold put back in the sacks unknown in Jubilees 42:6 is Genesis' restored money."},
+        {"src_ch": 42, "src_v": 9, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 30, "tier": "free",
+         "note": "Genesis 42:30 — *The man, who is the lord of the land, spake roughly to us, and took us for spies of the country.* The report carried back to the father in Jubilees 42:9 is the brothers' own telling in Genesis."}
+      ]
+    },
+    {
+      "slug": "jubilees-42-jacob-grief-against-me",
+      "title": "Jacob's grief: on me your wickedness has come",
+      "summary_md": "The father's lament is one of Scripture's bitterest: *And Jacob said: “Me have you bereaved of my children! Joseph is not and Simeon also is not, and you will take Benjamin away. On me has your wickedness come.”* (Jubilees 42:10), and he refuses Benjamin *For he saw that their money had been returned to every man in his sack, and for this reason he feared to send him* (Jubilees 42:11). Genesis sets the same words on Jacob's lips: *And Jacob their father said unto them, Me have ye bereaved of my children: Joseph is not, and Simeon is not, and ye will take Benjamin away: all these things are against me* (Genesis 42:36). And Reuben's desperate pledge stands in both books — *And Reuben said: “Give him into my hand, and if I do not bring him back to you, slay my two sons instead of his soul.”* (Jubilees 42:18) answers *And Reuben spake unto his father, saying, Slay my two sons, if I bring him not to thee: deliver him into my hand, and I will bring him to thee again* (Genesis 42:37). Jacob, blind to the providence, cries that all is against him — yet the famine is bending the whole house toward the deliverer it does not recognize.",
+      "anchor_start_v": 10,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 10, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 36, "tier": "free",
+         "note": "Genesis 42:36 — *And Jacob their father said unto them, Me have ye bereaved of my children: Joseph is not, and Simeon is not, and ye will take Benjamin away: all these things are against me.* This is verbatim the lament Jubilees 42:10 puts on Jacob — bereaved, and all against him."},
+        {"src_ch": 42, "src_v": 11, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 35, "tier": "free",
+         "note": "Genesis 42:35 — *And it came to pass as they emptied their sacks, that, behold, every man’s bundle of money was in his sack: and when both they and their father saw the bundles of money, they were afraid.* The returned money that makes Jacob fear to send Benjamin in Jubilees 42:11 is the silver discovered in Genesis."},
+        {"src_ch": 42, "src_v": 11, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 38, "tier": "free",
+         "note": "Genesis 42:38 — *And he said, My son shall not go down with you; for his brother is dead, and he is left alone: if mischief befall him by the way in the which ye go, then shall ye bring down my gray hairs with sorrow to the grave.* Jacob's refusal in Jubilees 42:11 is his very words in Genesis, dreading sorrow to death."}
+      ]
+    },
+    {
+      "slug": "jubilees-42-judah-surety-benjamin",
+      "title": "Judah's surety: send him with me",
+      "summary_md": "Where Reuben fails, the Messianic son steps forward: *And Yahudah (Judah) came near and said: “Send him with me, and if I do not bring him back to you, let me bear the blame before you all the days of my life.”* (Jubilees 42:19). This is Genesis' Judah, the one through whom the seed runs to David and to Messiah, standing surety: *And Yahudah (Judah) said unto Yashar'el (Israel) his father, Send the lad with me, and we will arise and go; that we may live, and not die, both we, and thou, and also our little ones* (Genesis 43:8). It is the same Judah who in the chapter before (Jubilees 41 / Genesis 38) carried the line through Tamar to Perez — and from Perez to David and to Messiah (Matthew 1:3). When Israel relents in Jubilees 42:15 — *Go again, and procure food for us that we die not* — he echoes Judah's own plea that we live and not die. The pledge that frees Benjamin is borne by the kingly tribe; the seed that saves is carried by the one who offers himself as surety.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 19,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 19, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 43, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 43:8 — *And Yahudah (Judah) said unto Yashar'el (Israel) his father, Send the lad with me, and we will arise and go; that we may live, and not die, both we, and thou, and also our little ones.* Judah's surety in Jubilees 42:19 is the kingly tribe's pledge in Genesis to live and not die."},
+        {"src_ch": 42, "src_v": 18, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 37, "tier": "free",
+         "note": "Genesis 42:37 — *And Reuben spake unto his father, saying, Slay my two sons, if I bring him not to thee: deliver him into my hand, and I will bring him to thee again.* Reuben's rejected offer in Jubilees 42:18 is his very pledge in Genesis, set against Judah's accepted surety."},
+        {"src_ch": 42, "src_v": 15, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 42, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 42:2 — *And he said, Behold, I have heard that there is corn in Egypt: get you down thither, and buy for us from thence; that we may live, and not die.* Israel's renewed sending in Jubilees 42:15, that we die not, repeats Jacob's command in Genesis to live and not die."},
+        {"src_ch": 42, "src_v": 19, "tgt_edition": "canon", "tgt_book": "matthew", "tgt_ch": 1, "tgt_v": 3, "tier": "free",
+         "note": "Matthew 1:3 — *And Judas begat Phares and Zara of Thamar; and Phares begat Esrom; and Esrom begat Aram;* The Judah who stands surety in Jubilees 42:19 is the Judah of the Messianic line, Perez of Tamar carried down to Messiah."}
+      ]
+    },
+    {
+      "slug": "jubilees-42-benjamin-feast-portion",
+      "title": "Benjamin brought, the feast and the seven-fold portion",
+      "summary_md": "Benjamin comes, and the hidden deliverer blesses him: *And they went and stood before Joseph, and he saw Benjamin his brother, and he knew him, and said to them: “Is this your youngest brother?”... And he said: “Yahuah (God) be gracious to you, my son!”... and he made a feast for them* (Jubilees 42:21), and *the portion of Benjamin was seven times larger than that of any of theirs* (Jubilees 42:23). Genesis matches the gracious word and the favored portion in the chapter that follows — *And he lifted up his eyes, and saw his brother Benjamin... and said, Elohim (God) be gracious unto thee, my son* (Genesis 43:29). Jasher tells the same descent and standing before the throne: *And the sons of Jacob saw Joseph, and his figure and comeliness and dignity of countenance seemed wonderful in their eyes, and they again bowed down to him to the ground* (Jasher 51:19). The brothers bow, the dreams stand fulfilled, and the deliverer feasts the ones who sold him — the table of the rejected-then-exalted brother.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 42, "src_v": 21, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 43, "tgt_v": 29, "tier": "free",
+         "note": "Genesis 43:29 — *And he lifted up his eyes, and saw his brother Benjamin, his mother’s son, and said, Is this your younger brother, of whom ye spake unto me? And he said, Elohim (God) be gracious unto thee, my son.* Joseph's gracious word over Benjamin in Jubilees 42:21 is his blessing in Genesis."},
+        {"src_ch": 42, "src_v": 20, "tgt_edition": "jasher", "tgt_book": "jasher", "tgt_ch": 51, "tgt_v": 19, "tier": "extras",
+         "note": "Jasher 51:19 — *And the sons of Jacob saw Joseph, and his figure and comeliness and dignity of countenance seemed wonderful in their eyes, and they again bowed down to him to the ground.* The brothers standing before Joseph in Jubilees 42:20-21 bow before the throne in Jasher, the dreams fulfilled."},
+        {"src_ch": 42, "src_v": 21, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 20, "tier": "free",
+         "note": "Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* The feast Joseph spreads in Jubilees 42:21 foreshadows his final word: the evil done him was meant by Elohim for good, to save much people alive."}
+      ]
+    }
+  ]
+}
