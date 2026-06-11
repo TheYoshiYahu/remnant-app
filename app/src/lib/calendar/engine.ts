@@ -15,6 +15,7 @@ import type {
   EngineResult,
   FirstfruitsRule,
   GeoLocation,
+  Moed,
   MonthStart,
 } from "./types.ts";
 import { type CalendarDeps, NULL_AVIV_FEED, NULL_SIGHTING_FEED } from "./feeds.ts";
@@ -525,6 +526,106 @@ function anchorFullDate(
     ...baseQ,
     biblicalDate: { year, month, day, monthName: baseQ.biblicalDate.monthName },
     monthStart: { startInstant: chosenStart, status: "confirmed" },
+    // The feasts must follow the ORIENTED labelling too, or "next appointed
+    // time", its countdown and the Omer would keep showing the bare reckoning's
+    // dates while the hero date reads the anchor (the reported bug). Rebuild the
+    // moedim in the oriented frame so they stay consistent with the shown date.
+    moedim: anchorMoedim(query, bare, deps, loc, slide, ordShift, year),
     notes: [...baseQ.notes, target.note],
   };
+}
+
+/**
+ * Moedim in the ORIENTED (override) frame. An anchor slides the engine's own
+ * month boundaries by a uniform whole-day offset (`slide`) and relabels the
+ * month-of-year by `ordShift`; the eight Lev 23 feasts therefore sit at their
+ * canonical biblical (month, day) IN THAT relabelled frame, not at the bare
+ * engine's positions. We re-derive them across the displayed year ±1 with a
+ * resolve that maps an oriented (year, month, day) onto the slid boundary at the
+ * matching engine ordinal, then keep only the upcoming ones — so the hero's next
+ * feast, countdown and Omer all track the anchor, exactly like its date.
+ */
+function anchorMoedim(
+  query: Date,
+  bare: CalendarConfig,
+  deps: CalendarDeps,
+  loc: GeoLocation,
+  slide: (sunset: Date) => Date,
+  ordShift: number,
+  displayedYear: number,
+): Moed[] {
+  const DAY = 86_400_000;
+  // The engine's own month-starts keyed by engine month-ordinal, walked wide
+  // enough (≈ ±15 months from the query) to span the displayed year ±1 once
+  // relabelled. Probing follows the real (lunar / fixed) cadence per family.
+  const startByOrd = new Map<number, Date>();
+  const ordOf = (r: EngineResult) =>
+    r.biblicalDate.year * 12 + (r.biblicalDate.month - 1);
+  const center = computeCore(query, bare, deps);
+  startByOrd.set(ordOf(center), center.monthStart.startInstant);
+  let s = center.monthStart.startInstant;
+  for (let i = 0; i < 15; i++) {
+    // 2 days before a month-start lands in the previous month.
+    const prev = computeCore(new Date(s.getTime() - 2 * DAY), bare, deps);
+    startByOrd.set(ordOf(prev), prev.monthStart.startInstant);
+    s = prev.monthStart.startInstant;
+  }
+  s = center.monthStart.startInstant;
+  for (let i = 0; i < 15; i++) {
+    // ~32 days past a month-start lands in the next month.
+    const next = computeCore(new Date(s.getTime() + 32 * DAY), bare, deps);
+    startByOrd.set(ordOf(next), next.monthStart.startInstant);
+    s = next.monthStart.startInstant;
+  }
+
+  // Oriented month-start for an oriented (year, month): the slid engine boundary
+  // at the matching engine ordinal (engineOrd = orientedOrd − ordShift).
+  const orientedStart = (yr: number, mo: number): Date | null => {
+    const es = startByOrd.get(yr * 12 + (mo - 1) - ordShift);
+    return es ? slide(es) : null;
+  };
+
+  // Label an arbitrary instant in the oriented frame (used for Shavuot, whose
+  // day lands ~7 weeks past Firstfruits and so needs naming, not a fixed M/D).
+  const slidStarts = [...startByOrd.entries()]
+    .map(([o, st]) => ({ ord: o, start: slide(st) }))
+    .sort((a, b) => a.start.getTime() - b.start.getTime());
+  const orientedLabel = (instant: Date): { month: number; day: number } => {
+    let best: { ord: number; start: Date } | null = null;
+    for (const e of slidStarts) {
+      if (e.start.getTime() <= instant.getTime()) best = e;
+      else break;
+    }
+    if (!best) return { month: 1, day: 1 };
+    const uOrd = best.ord + ordShift;
+    return {
+      month: (((uOrd % 12) + 12) % 12) + 1,
+      day: biblicalDayNumber(best.start, instant, loc),
+    };
+  };
+
+  const isEnoch = bare.month.kind === "enoch";
+  const ffRule: FirstfruitsRule = bare.firstfruits ?? "fixed-16";
+
+  const all: Moed[] = [];
+  for (const yr of [displayedYear - 1, displayedYear, displayedYear + 1]) {
+    const resolve = (mo: number, day: number): Date | null => {
+      const ms = orientedStart(yr, mo);
+      return ms ? addBiblicalDays(ms, day - 1, loc) : null;
+    };
+    // Skip a year whose spring/autumn anchors fell outside the walked window.
+    if (!resolve(1, 1) || !resolve(7, 1)) continue;
+    all.push(
+      ...buildMoedimForYear({
+        resolve: (m, d) => resolve(m, d)!,
+        daytimeWeekday: (m, d) => daytimeWeekdayOf(resolve(m, d)!),
+        labelOf: orientedLabel,
+        firstfruitsRule: isEnoch ? "after-weekly-sabbath" : ffRule,
+        fixedFirstfruitsDay: isEnoch ? 26 : undefined,
+        includeQumran: isEnoch ? (bare.qumranFestivals ?? false) : false,
+        loc,
+      }),
+    );
+  }
+  return upcomingMoedim(all, query);
 }
