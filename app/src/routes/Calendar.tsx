@@ -599,14 +599,15 @@ function OrientationMenu({
           </ControlRow>
           <div className="cal-orient-fields">
             <DateField
-              label="falls on"
+              label="begins the evening of"
               value={o.greg}
               onChange={(greg) => setO({ ...o, greg })}
             />
           </div>
           <p className="cal-orient-hint">
-            Orient the whole calendar so the chosen feast lands on the Gregorian date
-            you set, and every other date follows.
+            A biblical day runs sunset to sunset, so the feast opens the evening of
+            the Gregorian date you set. Orient the whole calendar to that evening and
+            every other date follows.
           </p>
         </div>
       )}
@@ -645,13 +646,14 @@ function OrientationMenu({
               onChange={(month) => setO({ ...o, month })}
             />
             <DateField
-              label="is"
+              label="begins the evening of"
               value={o.greg}
               onChange={(greg) => setO({ ...o, greg })}
             />
           </div>
           <p className="cal-orient-hint">
-            Anchor a sighted new moon: the 1st of that month falls on the date you set.
+            Anchor a sighted new moon: the 1st of that month begins the evening of
+            the date you set (sunset opens the day).
           </p>
         </div>
       )}
@@ -660,13 +662,14 @@ function OrientationMenu({
         <div className="cal-orient-body cal-accent-argaman">
           <div className="cal-orient-fields">
             <DateField
-              label="the year began on"
+              label="begins the evening of"
               value={o.greg}
               onChange={(greg) => setO({ ...o, greg })}
             />
           </div>
           <p className="cal-orient-hint">
-            Aviv confirmed: the first month begins on the date you set.
+            Aviv confirmed: the first month begins the evening of the date you set
+            (sunset opens the day).
           </p>
         </div>
       )}
@@ -1770,7 +1773,8 @@ function CompareSection({
           <p className="cal-compare-lede">
             One Scripture. Four reckonings. The engine computes them all at once —
             and they land on <strong>different days</strong>. Next feast cycle:{" "}
-            <strong>{data.cycleYear}</strong>.
+            <strong>{data.cycleYear}</strong>. Each date is the{" "}
+            <strong>evening</strong> the feast begins (sunset opens the day).
           </p>
           <div className="cal-compare-scroll">
             <table className="cal-compare-table">

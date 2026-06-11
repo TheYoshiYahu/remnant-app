@@ -213,6 +213,13 @@ export interface CrescentPrediction {
   evenings: VisibilityEvaluation[];
 }
 
+// The crescent prediction is the single most expensive thing the engine does:
+// six evenings, each a topocentric sun+moon solve plus a moonset search. But it
+// depends only on (conjunction, location, criterion) — and a month grid re-runs
+// the SAME conjunction's prediction on every cell. Memoising it (keyed by those
+// three) collapses dozens of identical sweeps to one. Pure in → pure out.
+const predictionCache = new Map<string, CrescentPrediction>();
+
 /**
  * Predict the first crescent visibility after a conjunction. Walks up to six
  * successive evenings from the first sunset after conjunction.
@@ -222,6 +229,10 @@ export function predictFirstCrescent(
   loc: GeoLocation,
   criterion: CrescentCriterion,
 ): CrescentPrediction {
+  const key = `${conjunction.getTime()}@${loc.latitudeDeg},${loc.longitudeDeg},${loc.elevationM}@${criterion}`;
+  const cached = predictionCache.get(key);
+  if (cached) return cached;
+
   const evenings: VisibilityEvaluation[] = [];
   let evening = nextSunset(conjunction, loc);
   for (let i = 0; i < 6; i++) {
@@ -240,7 +251,7 @@ export function predictFirstCrescent(
   const prior = idx > 0 ? evenings[idx - 1] : undefined;
   const marginal = prior && prior.category === "possible" ? prior : undefined;
 
-  return {
+  const prediction: CrescentPrediction = {
     conjunction,
     firstVisibleEvening: firstVisibleEval.eveningSunset,
     firstVisibleEval,
@@ -248,4 +259,6 @@ export function predictFirstCrescent(
     marginalEval: marginal,
     evenings,
   };
+  predictionCache.set(key, prediction);
+  return prediction;
 }

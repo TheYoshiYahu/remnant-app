@@ -108,27 +108,60 @@ export function anchorInstantFromGreg(greg: string): Date {
 }
 
 /**
+ * Evening anchor for an ISO `YYYY-MM-DD`. A biblical day runs sunset→sunset, so
+ * a feast / month / year that "begins the evening of" a Gregorian date opens at
+ * that date's sunset. 21:00 UTC lands after Jerusalem sunset (~16:00 UTC) yet
+ * before the next day's, so it falls squarely inside the biblical day that
+ * STARTS that evening — exactly the day the anchor should pin the feast to.
+ */
+export function eveningAnchorInstant(greg: string): Date {
+  return new Date(`${greg}T21:00:00Z`);
+}
+
+/**
  * Project an orientation onto the engine's override. Every functional mode is a
- * biblical month/day pinned to a Gregorian instant → a `dateAnchor`. The
- * `source` stub (and any malformed date) yields no override.
+ * biblical month/day pinned to a Gregorian instant → a `dateAnchor`. Boundary
+ * anchors (a feast, a month's 1st, the new year) all OPEN at sunset, so their
+ * date is read as the evening the period begins; `today` is a within-day fact,
+ * so it keeps the daytime (midday) anchor. The `source` stub (and any malformed
+ * date) yields no override.
  */
 export function orientationToOverride(o: Orientation): ManualOverride | undefined {
   if (o.mode === "source") return undefined;
   const greg = o.greg;
   if (!greg || !/^\d{4}-\d{2}-\d{2}$/.test(greg)) return undefined;
-  const anchorInstant = anchorInstantFromGreg(greg);
   switch (o.mode) {
     case "feast": {
       const def = FEAST_ANCHORS.find((f) => f.key === o.feast);
       if (!def) return undefined;
-      return { kind: "dateAnchor", month: def.month, day: def.day, anchorInstant };
+      return {
+        kind: "dateAnchor",
+        month: def.month,
+        day: def.day,
+        anchorInstant: eveningAnchorInstant(greg),
+      };
     }
     case "today":
-      return { kind: "dateAnchor", month: o.month, day: o.day, anchorInstant };
+      return {
+        kind: "dateAnchor",
+        month: o.month,
+        day: o.day,
+        anchorInstant: anchorInstantFromGreg(greg),
+      };
     case "monthStart":
-      return { kind: "dateAnchor", month: o.month, day: 1, anchorInstant };
+      return {
+        kind: "dateAnchor",
+        month: o.month,
+        day: 1,
+        anchorInstant: eveningAnchorInstant(greg),
+      };
     case "newYear":
-      return { kind: "dateAnchor", month: 1, day: 1, anchorInstant };
+      return {
+        kind: "dateAnchor",
+        month: 1,
+        day: 1,
+        anchorInstant: eveningAnchorInstant(greg),
+      };
   }
 }
 
