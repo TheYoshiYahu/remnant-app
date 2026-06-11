@@ -219,3 +219,47 @@ Then Jubilees (session251 @53000), Jasher (session252 @55000), Apocrypha (@58000
 - Push blocked. origin/main 47a9e48; local HEAD `e2cbf8b` (12 commits ahead). Prod authoritative.
 
 ## ▶️ NEXT BOOK = JUBILEES (session251 @ band 53000; edition 'jubilees' book 'jubilees', 50 ch).
+
+## RECEIPT — Jubilees Pack J1 (ch1–8) ✅ LIVE IN PROD  [NEW BOOK, session251]
+- Applied 2026-06-11. EXACT: **46 `jubilees-*` threads / 168 members**, band 53000–53187, per-ch
+  5/5/7/5/6/6/7/5, 0 orphans. Migration `session251_jubilees_extracanon_cross_references.sql` (232
+  stmts). Commit `f94f71e`. Five gates green (fidelity 168/168, FULL-LIBRARY PASS, resolve 0).
+- Sinai prologue + two-house RESTORATION (1→Deut30/Jer31/Ezek36/Rom2:29); creation+Sabbath eternal
+  sign (2→Gen1-2/Exod20:11/31:13-17); Eden-as-sanctuary (3→Gen2-3/Lev12); Adam's line+Enoch scribe
+  (4→Gen4-5/Jude14); Watchers+Flood (5→Gen6/1En6-10); NOAH'S FEAST OF WEEKS + 364-day year + no-blood
+  (6→Gen9/Lev23:15/Exod19/Dan7:25); Noah's vineyard (7→Gen9:18-27); Shem the centre/Zion (8→Gen10/
+  Ezek5:5/1En26). Genuine live-1-Enoch self-links throughout (the "It Ain't New" cross-weave).
+- ⚑ GATE CAUGHT 2 edition-verse-gap anchors (jub6:7→6:6 no-blood, jub8:19→8:18 Shem-centre — those
+  verse numbers are GAPS in this parsed Jubilees edition; many chapters skip numbers where clauses are
+  merged). Minions must cite ONLY verse numbers present in the dump; resolve_check is the backstop.
+- Push blocked (keychain). origin/main 47a9e48; local HEAD `f94f71e` (13 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 1 ENOCH COMPLETE (423/1613) + JUBILEES ch1-8 (46/168) all LIVE.
+NEXT = Jubilees Pack J2 ch9-16 (Babel/Mastema 10→Gen11/1En10; Abraham birth/idolatry/call 11-12→
+Gen11-12; Canaan/Egypt/covenant-of-pieces 13-14→Gen12-15; CIRCUMCISION eternal sign 15→Gen17; Isaac
+promised/Sodom/Tabernacles-instituted-by-Abraham 16→Gen18-21/Lev23:34). Then J3 ch17-24, J4 25-32
+(ch30 seed-kept-separate/no-intermarriage→Gen34; ch31 Levi+Judah blessed), J5 33-40, J6 41-50 (ch49
+PASSOVER→Exod12, ch50 Sabbath/Jubilee laws). Then Jasher (session252 @55000, 91 ch, edition jasher
+book jasher — narratives retold from Genesis/Exodus), then Apocrypha (@58000), adam-eve-conflict,
+apocalypse-of-abraham, ascension-isaiah, sonnini, apostolic-fathers (@70000), mrjames, josephus(defer).
+SKIP the 6 corrupt pseudepigrapha books. METHOD: pack-J1 workflow script pattern + per-chapter CONTEXT
+map + MINION_BRIEF_JUBILEES.md; gate render→pglast→verify_fidelity→resolve_check jubilees jubilees→fold→
+audit→recon.py jubilees jubilees jubilees. ⚠️ FIRST: retry `git push origin HEAD:main` from the worktree
+with keychain unlocked — 13 commits (85b660c..f94f71e) need to land on origin/main (still at 47a9e48).
+
+## RECEIPT — Jubilees Pack J2 (ch9–16) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **85 `jubilees-*` threads / 311 members**, band 53000–53387,
+  per-ch(9-16) 4/5/5/5/5/5/5/5, 0 orphans. +39/143. Commits `238d0ca` + anchor-fix `f450132`.
+  Five gates green (fidelity 311/311, FULL-LIBRARY PASS, resolve 0).
+- Division/bounds (9→Gen10/Deut32:8/Acts17:26); Babel + Mastema/demons-from-giants (10→Gen11/1En10+15
+  seed-war self-links); Abraham's election out of idolatry (11-12→Josh24:2/Acts7:2/Gen12:1); Bethel/
+  Egypt/Lot + Melchizedek tithe-for-ever (13→Gen12-14/Heb7:2); COVENANT OF THE PIECES faith→righteousness
+  (14→Gen15/Rom4/Gal3); CIRCUMCISION eternal sign (15→Gen17/Lev12:3/Rom4:11); Isaac born + Abraham keeps
+  SUKKOT (16→Gen18-21/Lev23:33-43).
+- ⚑ GATE LESSON (new): resolve_check validates member src/tgt but NOT thread anchor verses. The ch15
+  circumcision thread anchored on jub15:14 (a verse-number GAP) → its INSERT...SELECT matched no row and
+  the thread silently dropped (DB 84 vs migration 85 caught it at reconcile). FIX = re-anchor 14→13 +
+  rebuild. NEW GATE: `anchor_check.py <edfile> <book> <jsons>` verifies all thread anchors exist in the
+  parse — RUN IT EVERY PACK before folding (esp. for editions with merged/gapped verse numbers like this
+  Jubilees parse). Also fixed jub13:25→13:26 (member src gap, caught by resolve_check) this pack.
+- Push blocked. origin/main 47a9e48; local HEAD `f450132` (15 commits ahead). Prod authoritative.

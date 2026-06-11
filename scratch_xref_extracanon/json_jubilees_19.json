@@ -1,0 +1,290 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 19,
+  "session": "session251",
+  "tag": "ju19",
+  "base_band": 53450,
+  "threads": [
+    {
+      "slug": "jubilees-19-sarah-machpelah",
+      "title": "Sarah dies at Hebron; the cave of Machpelah bought in full",
+      "summary_md": "Jubilees retells Genesis 23 nearly clause for clause: *And in the first year of the third week of this jubilee the days of the life of Sarah were accomplished, and she died in Hebron* (Jubilees 19:2), and Abraham goes *to mourn over her and bury her* (Jubilees 19:3). Genesis names the same place — *And Sarah died in Kirjath-arba; the same is Hebron in the land of Canaan: and Abraham came to mourn for Sarah, and to weep for her* (Genesis 23:2). Jubilees keeps the exact accounting of her years (one hundred and twenty-seven) and the exact price, *for four hundred pieces of silver* (Jubilees 19:5), matching *the land is worth four hundred shekels of silver* (Genesis 23:15). And Abraham refuses the gift and pays in full — *he would not take it from their hands for nothing, for he gave the price of the place, the money in full* (Jubilees 19:6) — exactly as Genesis records the deed *made sure unto Abraham for a possession of a buryingplace by the sons of Heth* (Genesis 23:20). It ain't new: the patriarch's title to the land of promise was bought, weighed, and witnessed.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 19,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 23,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Genesis 23:1 — *And Sarah was an hundred and seven and twenty years old: these were the years of the life of Sarah.* Jubilees 19:6 keeps the same count to the year — one hundred and twenty-seven years of Sarah's life."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 23,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 23:2 — *And Sarah died in Kirjath-arba; the same is Hebron in the land of Canaan: and Abraham came to mourn for Sarah, and to weep for her.* This is the source Jubilees 19:2 is retelling — Sarah dies in Hebron and Abraham comes to mourn her."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 23,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 23:15 — *My lord, hearken unto me: the land is worth four hundred shekels of silver; what is that betwixt me and thee? bury therefore thy dead.* Jubilees 19:5 names the identical price — four hundred pieces of silver for the cave at Hebron."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 23,
+          "tgt_v": 20,
+          "tier": "free",
+          "note": "Genesis 23:20 — *And the field, and the cave that is therein, were made sure unto Abraham for a possession of a buryingplace by the sons of Heth.* Jubilees 19:6 makes the same point: Abraham would take nothing for nothing but paid in full and bought the double cave outright."
+        }
+      ]
+    },
+    {
+      "slug": "jubilees-19-tenth-trial-friend-of-god",
+      "title": "The tenth trial — Abraham found faithful, the friend of Elohim",
+      "summary_md": "Jubilees frames Sarah's burial as a test: *And Abraham went to mourn over her and bury her, and we tried him to see if his spirit were patient... and he was found patient in this, and was not disturbed* (Jubilees 19:3). It calls it plainly — *This is the tenth trial wherewith Abraham was tried, and he was found faithful, patient in spirit* (Jubilees 19:8) — and records the verdict on the tablets: *he was found faithful, and was recorded on the heavenly tables as the friend of Elohim (God)* (Jubilees 19:9). This is the same Abraham whose great trial Jubilees told one chapter back, when *the prince of the Mastêmâ was put to shame* at the binding of Isaac (Jubilees 18:12). The canon ratifies both the works and the title: *Was not Abraham our father justified by works, when he had offered Isaac his son upon the altar?* (James 2:21), and the very phrase Jubilees engraves — *the scripture was fulfilled which saith, Abraham believed Elohim (God), and it was imputed unto him for righteousness: and he was called the Friend of Elohim (God)* (James 2:23). The prophets keep the name: *But thou, Yashar'el (Israel), art my servant, Jacob whom I have chosen, the seed of Abraham my friend* (Isaiah 41:8). Faith and works are one cloth, and the heavenly tablets already carry the verdict.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 19,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 2,
+          "tgt_v": 21,
+          "tier": "free",
+          "note": "James 2:21 — *Was not Abraham our father justified by works, when he had offered Isaac his son upon the altar?* Jubilees 19:8 calls the patient burial of Sarah the tenth trial in which Abraham was found faithful — faith proven by deed."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "james",
+          "tgt_ch": 2,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "James 2:23 — *And the scripture was fulfilled which saith, Abraham believed Elohim (God), and it was imputed unto him for righteousness: and he was called the Friend of Elohim (God).* Jubilees 19:9 records the very same title on the heavenly tables — Abraham the friend of Elohim."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "isaiah",
+          "tgt_ch": 41,
+          "tgt_v": 8,
+          "tier": "free",
+          "note": "Isaiah 41:8 — *But thou, Yashar'el (Israel), art my servant, Jacob whom I have chosen, the seed of Abraham my friend.* The prophet keeps the name Jubilees 19:9 inscribes: Abraham the friend, his seed chosen."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 8,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 18,
+          "tgt_v": 12,
+          "tier": "extras",
+          "note": "Jubilees 18:12 — *And the prince of the Mastêmâ was put to shame; and Abraham lifted up his eyes and looked, and, behold, a single ram caught … by his horns.* The tenth trial of 19:8 stands in line with the Akedah of the chapter before — Abraham tested and found faithful, the satan shamed."
+        }
+      ]
+    },
+    {
+      "slug": "jubilees-19-rebekah-keturah-line",
+      "title": "Rebekah taken for Isaac; Keturah and the sons sent east",
+      "summary_md": "Jubilees compresses two Genesis chapters into a line: *And in the fourth year thereof he took a wife for his son Isaac and her name was Rebecca the daughter of Bethuel, the son of Nahor, the brother of Abraham* (Jubilees 19:10). Genesis tells it in full — the servant sworn by oath, the well, the answered prayer — and names her the same way: *behold, Rebekah came out, who was born to Bethuel, son of Milcah, the wife of Nahor, Abraham's brother* (Genesis 24:15), and ends *And Isaac brought her into his mother Sarah's tent, and took Rebekah, and she became his wife; and he loved her* (Genesis 24:67). Then Jubilees gathers Abraham's last household: *And Abraham took to himself a third wife, and her name was Keturah... And she bare him six sons, Zimram, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah* (Jubilees 19:11) — the very roster of *Then again Abraham took a wife, and her name was Keturah. And she bare him Zimran, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah* (Genesis 25:1-2). The promised line narrows to Isaac; the rest are sent away. It ain't new.",
+      "anchor_start_v": 9,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 19,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 24,
+          "tgt_v": 15,
+          "tier": "free",
+          "note": "Genesis 24:15 — *And it came to pass, before he had done speaking, that, behold, Rebekah came out, who was born to Bethuel, son of Milcah, the wife of Nahor, Abraham's brother, with her pitcher upon her shoulder.* Jubilees 19:9 names her by the same lineage — Rebecca daughter of Bethuel, son of Nahor, brother of Abraham."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 24,
+          "tgt_v": 67,
+          "tier": "free",
+          "note": "Genesis 24:67 — *And Isaac brought her into his mother Sarah's tent, and took Rebekah, and she became his wife; and he loved her: and Isaac was comforted after his mother's death.* This is the marriage Jubilees 19:9 records — Abraham takes a wife for his son Isaac."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 25,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Genesis 25:1 — *Then again Abraham took a wife, and her name was Keturah.* Jubilees 19:11 matches: Abraham takes a third wife Keturah after Hagar had died before Sarah."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 11,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 25,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Genesis 25:2 — *And she bare him Zimran, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah.* Jubilees 19:11 lists the identical six sons of Keturah, Zimram through Shuah."
+        }
+      ]
+    },
+    {
+      "slug": "jubilees-19-jacob-esau-born",
+      "title": "Jacob and Esau born — the smooth man and the man of the field",
+      "summary_md": "Jubilees retells the birth of the twins and their two natures: *Rebecca bare to Isaac two sons, Jacob and Esau, and Jacob was a smooth and upright man, and Esau was fierce, a man of the field, and hairy, and Jacob dwelt in tents* (Jubilees 19:13). Genesis frames them the same way — *And the boys grew: and Esau was a cunning hunter, a man of the field; and Jacob was a plain man, dwelling in tents* (Genesis 25:27). And it sets the divided love that drives the whole patriarchal struggle: *And Abraham loved Jacob, but Isaac loved Esau* (Jubilees 19:14), echoing *And Isaac loved Esau, because he did eat of his venison: but Rebekah loved Jacob* (Genesis 25:28). Even before they were born the oracle had divided them — *Two nations are in thy womb... and the elder shall serve the younger* (Genesis 25:23). The election is set in the cradle.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 19,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 25,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Genesis 25:27 — *And the boys grew: and Esau was a cunning hunter, a man of the field; and Jacob was a plain man, dwelling in tents.* Jubilees 19:13 draws the same two natures — Jacob smooth and dwelling in tents, Esau a fierce man of the field."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 13,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 25,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Genesis 25:23 — *And Yahuah (LORD) said unto her, Two nations are in thy womb, and two manner of people shall be separated from thy bowels; and the one people shall be stronger than the other people; and the elder shall serve the younger.* The two sons of Jubilees 19:13 are the two nations divided from the womb."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 14,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 25,
+          "tgt_v": 28,
+          "tier": "free",
+          "note": "Genesis 25:28 — *And Isaac loved Esau, because he did eat of his venison: but Rebekah loved Jacob.* Jubilees 19:14 carries the same divided love — Abraham loved Jacob, Isaac loved Esau."
+        }
+      ]
+    },
+    {
+      "slug": "jubilees-19-jacob-chosen-seed",
+      "title": "Jacob chosen — the seed numberless, the blessing of the fathers",
+      "summary_md": "Abraham, seeing the deeds of Esau, knows where the line runs: *he knew that in Jacob should his name and seed be called* (Jubilees 19:16), and charges Rebekah, *For I know that Yahuah (God) will choose him to be a people for possession to Himself, above all peoples that are upon the face of the earth* (Jubilees 19:17). Paul reads the same election back into this very womb: *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;) It was said unto her, The elder shall serve the younger* (Romans 9:11-12), sealing it — *Jacob have I loved, but Esau have I hated* (Romans 9:13), the word the prophet keeps: *yet I loved Jacob, And I hated Esau* (Malachi 1:2-3). Abraham's promise to Jacob — *His seed will fill the whole earth. If a man can number the sand of the earth, His seed also will be numbered* (Jubilees 19:19) — is the old covenant word spoken to Abraham himself: *I will make thy seed as the dust of the earth: so that if a man can number the dust of the earth, then shall thy seed also be numbered* (Genesis 13:16). And the name is blessed through Shem, Noah, Enoch, back to Adam (Jubilees 19:24) — the seed kept, the election running through the chosen line. This is the framework's seed-kept-separate, election before confession; the same election Jubilees presses into law against intermarriage in ch20 and ch22. It ain't new.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 24,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 19,
+          "src_v": 17,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 9,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Romans 9:11 — *(For the children being not yet born, neither having done any good or evil, that the purpose of Elohim (God) according to election might stand, not of works, but of him that calleth;)* Paul grounds election in this very Rebekah-womb that Jubilees 19:16-17 describes — Jacob chosen for a people of possession."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 9,
+          "tgt_v": 13,
+          "tier": "free",
+          "note": "Romans 9:13 — *As it is written, Jacob have I loved, but Esau have I hated.* Jubilees 19:16 says it in narrative: in Jacob the name and seed would be called, not in Esau."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 16,
+          "tgt_edition": "canon",
+          "tgt_book": "malachi",
+          "tgt_ch": 1,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob's brother? saith Yahuah (LORD): yet I loved Jacob,* The prophet keeps the choice Abraham foresees in Jubilees 19:16 — Jacob over Esau."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 19,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 13,
+          "tgt_v": 16,
+          "tier": "free",
+          "note": "Genesis 13:16 — *And I will make thy seed as the dust of the earth: so that if a man can number the dust of the earth, then shall thy seed also be numbered.* Abraham's blessing on Jacob in Jubilees 19:19 — seed numberless as the sand — is the very promise spoken to Abraham himself."
+        }
+      ]
+    },
+    {
+      "slug": "jubilees-19-mastema-firstborn-son",
+      "title": "Mastema shall not rule; Jacob the firstborn son to Yahuah",
+      "summary_md": "Abraham's blessing over Jacob turns the satan back: *And the spirits of Mastêmâ shall not rule over you or over your seed to turn you from Yahuah (God), who is your Elohim (God) from henceforth for ever* (Jubilees 19:28) — the same Mastema Jubilees 18 showed *put to shame* at the binding of Isaac (Jubilees 18:12), the accuser who provokes but cannot prevail over the kept seed. Then the patriarch names the relationship that the whole framework rests on: *And may Yahuah Elohim (the LORD God) be a father to you and you the first-born son, and to the people alway* (Jubilees 19:29). That sonship-firstborn word is exactly how Yahuah names Israel before Pharaoh: *Thus saith Yahuah (LORD), Yashar'el (Israel) is my son, even my firstborn* (Exodus 4:22). Election is adoption — Yahuah a father, Israel the firstborn son. It ain't new.",
+      "anchor_start_v": 28,
+      "anchor_end_v": 29,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 19,
+          "src_v": 29,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 4,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Exodus 4:22 — *And thou shalt say unto Pharaoh, Thus saith Yahuah (LORD), Yashar'el (Israel) is my son, even my firstborn:* Abraham's blessing in Jubilees 19:29 — Yahuah a father, Jacob the first-born son — is the very sonship Yahuah claims over Israel at the Exodus."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 28,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 18,
+          "tgt_v": 12,
+          "tier": "extras",
+          "note": "Jubilees 18:12 — *And the prince of the Mastêmâ was put to shame; and Abraham lifted up his eyes and looked, and, behold, a single ram caught … by his horns.* The Mastema who shall not rule over Jacob's seed in 19:28 is the same accuser shamed at the altar one chapter back."
+        },
+        {
+          "src_ch": 19,
+          "src_v": 28,
+          "tgt_edition": "canon",
+          "tgt_book": "romans",
+          "tgt_ch": 9,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "Romans 9:4 — *Who are Israelites; to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of Elohim (God), and the promises;* The fatherhood and firstborn-sonship Abraham blesses onto Jacob in Jubilees 19:29 is the adoption Paul says still pertains to Israel."
+        }
+      ]
+    }
+  ]
+}

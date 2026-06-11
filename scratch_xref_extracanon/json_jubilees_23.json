@@ -1,0 +1,92 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 23,
+  "session": "session251",
+  "tag": "ju23",
+  "base_band": 53550,
+  "threads": [
+    {
+      "slug": "jubilees-23-abraham-gathered-to-his-fathers",
+      "title": "Abraham slept the sleep of eternity — the burial in the double cave",
+      "summary_md": "Jubilees closes Abraham's life over the sleeping Jacob: *“And he placed two fingers of Jacob on his eyes, and he blessed the Elohim (God) of gods, and he covered his face and stretched out his feet and slept the sleep of eternity, and was gathered to his fathers.”* (Jubilees 23:1), and the sons gather to bury him: *“And his sons Isaac and Ishmael buried him in the double cave, near Sarah his wife”* (Jubilees 23:6). This is Genesis retold, not invented — Genesis already records *“Then Abraham gave up the ghost, and died in a good old age, an old man, and full of years; and was gathered to his people”* (Genesis 25:8), and *“And his sons Isaac and Ishmael buried him in the cave of Machpelah”* (Genesis 25:9). It ain't new — the double cave is the cave of Machpelah, the two sons are the same two sons. Jubilees only sets the same death beside the boy Jacob who would carry the seed.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 23, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 25:8 — *Then Abraham gave up the ghost, and died in a good old age, an old man, and full of years; and was gathered to his people.* Jubilees' “slept the sleep of eternity, and was gathered to his fathers” is Genesis' “gathered to his people” retold."},
+        {"src_ch": 23, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 9, "tier": "free",
+         "note": "Genesis 25:9 — *And his sons Isaac and Ishmael buried him in the cave of Machpelah, in the field of Ephron the son of Zohar the Hittite, which is before Mamre;* the same two sons, the same cave — Jubilees' “double cave” is Machpelah."},
+        {"src_ch": 23, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 25, "tgt_v": 10, "tier": "free",
+         "note": "Genesis 25:10 — *The field which Abraham purchased of the sons of Heth: there was Abraham buried, and Sarah his wife.* Jubilees buries him “near Sarah his wife” — exactly Genesis' burial beside Sarah."}
+      ]
+    },
+    {
+      "slug": "jubilees-23-days-shortened-for-sin",
+      "title": "Their days grew few — the shortening of human life for the wickedness of their ways",
+      "summary_md": "Jubilees marks Abraham's span and then the decline: *“For the days of the forefathers, of their life, were nineteen jubilees; and after the Flood they began to grow less than nineteen jubilees... by reason of manifold tribulation and the wickedness of their ways”* (Jubilees 23:8). The shortening of days is no accident of biology — the Torah already fixes the bound at the threshold of the Flood: *“And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years”* (Genesis 6:3). And when Jubilees says that in those evil days a man's span is *“three score years and ten, and, if he is strong, four score years”* (Jubilees 23:15), it is quoting the prayer of Moses: *“The days of our years are threescore years and ten; and if by reason of strength they be fourscore years, yet is their strength labour and sorrow”* (Psalm 90:10). It ain't new — Jubilees is reading the same Scripture, the days cut short for sin.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 23, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 3, "tier": "free",
+         "note": "Genesis 6:3 — *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years.* Jubilees' “after the Flood they began to grow less” is the Torah's bounding of human days at the Flood."},
+        {"src_ch": 23, "src_v": 15, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 90, "tgt_v": 10, "tier": "free",
+         "note": "Psalm 90:10 — *The days of our years are threescore years and ten; and if by reason of strength they be fourscore years, yet is their strength labour and sorrow; for it is soon cut off, and we fly away.* Jubilees' “three score years and ten... four score years, and those evil” quotes the prayer of Moses almost word for word."}
+      ]
+    },
+    {
+      "slug": "jubilees-23-forsaking-covenant-feasts-evil-generation",
+      "title": "They have forgotten commandment, covenant, feasts, months, Sabbaths and jubilees",
+      "summary_md": "Jubilees names the sin of the evil generation precisely: they have abandoned the appointed times. *“they have forgotten commandment, and covenant, and feasts, and months, and Sabbaths, and jubilees, and all judgments”* (Jubilees 23:19), having *“forsaken the covenant which Yahuah (God) made between them and Him, that they should observe and do all His commandments and His ordinances and all His laws”* (Jubilees 23:16). This is not a new charge — it is the prophets' charge. Malachi names the same turning away from the ordinances and the same call back: *“Even from the days of your fathers ye are gone away from mine ordinances, and have not kept them. Return unto me, and I will return unto you, saith Yahuah Tseva'ot (LORD of hosts)”* (Malachi 3:7). The feasts and Sabbaths Jubilees grounds in the patriarchs and the heavenly tablets are the very things this generation forgot — to forget the moedim is to forsake the covenant. It ain't new, and it ain't abolished; it is forgotten, and the prophet calls it back.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 21,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 23, "src_v": 16, "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 3, "tgt_v": 7, "tier": "free",
+         "note": "Malachi 3:7 — *Even from the days of your fathers ye are gone away from mine ordinances, and have not kept them. Return unto me, and I will return unto you, saith Yahuah Tseva'ot (LORD of hosts).* Jubilees' generation “forsaking the covenant” is Malachi's nation gone away from the ordinances — and the same word “return” answers it."},
+        {"src_ch": 23, "src_v": 17, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 65, "tgt_v": 12, "tier": "free",
+         "note": "Isaiah 65:12 — *Therefore will I number you to the sword, and ye shall all bow down to the slaughter: because when I called, ye did not answer; when I spake, ye did not hear; but did evil before mine eyes, and did choose that wherein I delighted not.* Jubilees' faithless generation handed “over to the sword” is Isaiah's people numbered to the sword for refusing to hear."},
+        {"src_ch": 23, "src_v": 19, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 23, "tgt_v": 2, "tier": "free",
+         "note": "Leviticus 23:2 — *Speak unto the children of Yashar'el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts.* The “feasts, and months, and Sabbaths” Jubilees says they forgot are Yahuah's own appointed feasts — not later inventions but His."}
+      ]
+    },
+    {
+      "slug": "jubilees-23-children-return-to-the-way-restoration",
+      "title": "The children begin to study the law and return to the path of righteousness — the awakening",
+      "summary_md": "This is the hinge of the chapter and the heart of the framework. After the wars that try and fail *“to turn them back into the way”* (Jubilees 23:20), the turning comes from the children themselves: *“And in those days the children will begin to study the laws, And to seek the commandments, And to return to the path of righteousness”* (Jubilees 23:25). This is the second recovery, the awakening — and it is the Torah's own promise of regathering: *“And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice according to all that I command thee this day, thou and thy children”* (Deuteronomy 30:2), *“That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations”* (Deuteronomy 30:3). It is Malachi's promise that *“he shall turn the heart of the fathers to the children, and the heart of the children to their fathers”* (Malachi 4:6) — here the children convict the fathers (Jubilees 23:16) and then return. It is Jeremiah's regathered remnant: *“He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock”* (Jeremiah 31:10). The return-to-the-way is happening now.",
+      "anchor_start_v": 20,
+      "anchor_end_v": 27,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 23, "src_v": 25, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 2, "tier": "free",
+         "note": "Deuteronomy 30:2 — *And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice according to all that I command thee this day, thou and thy children, with all thine heart, and with all thy soul;* Jubilees' children who “seek the commandments, and return to the path of righteousness” are the children the Torah promised would return and obey."},
+        {"src_ch": 23, "src_v": 25, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 30, "tgt_v": 3, "tier": "free",
+         "note": "Deuteronomy 30:3 — *That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee.* The lengthening days and healing of Jubilees 23 follow exactly on the Torah's “return” — the regathering after the return-to-the-way."},
+        {"src_ch": 23, "src_v": 16, "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 4, "tgt_v": 6, "tier": "free",
+         "note": "Malachi 4:6 — *And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse.* Jubilees has the sons convict the fathers (23:16) and then the children turn back — Malachi's turning of the hearts between the generations."},
+        {"src_ch": 23, "src_v": 27, "tgt_edition": "canon", "tgt_book": "jeremiah", "tgt_ch": 31, "tgt_v": 10, "tier": "free",
+         "note": "Jeremiah 31:10 — *Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar'el (Israel) will gather him, and keep him, as a shepherd doth his flock.* The restoration Jubilees foresees is the prophet's promised regathering of the scattered flock — the awakening of the two-house remnant."}
+      ]
+    },
+    {
+      "slug": "jubilees-23-new-heavens-days-of-a-tree-healing",
+      "title": "Their days draw nigh to a thousand years — the days of a tree, the resurrection, the heavenly tables",
+      "summary_md": "The restoration unfolds toward a thousand years of peace: *“And the days will begin to grow many and increase amongst those children of men, Till their days draw nigh to one thousand years”* (Jubilees 23:27), and *“there will be no old man Nor one who is not satisfied with his days”* (Jubilees 23:28). This is the very new-creation Isaiah saw: *“There shall be no more thence an infant of days, nor an old man that hath not filled his days”* (Isaiah 65:20), where *“as the days of a tree are the days of my people”* (Isaiah 65:22). Then comes the healing and the rising: *“And at that time Yahuah (God) will heal His servants, And they will rise up and see great peace... And their bones will rest in the earth, And their spirits will have much joy”* (Jubilees 23:30) — the resurrection Daniel sealed: *“And many of them that sleep in the dust of the earth shall awake, some to everlasting life”* (Daniel 12:2). And Jubilees closes as it began, on the heavenly tablets: *“thus are they written, and they record (them) on the heavenly tables for a testimony for the generations for ever”* (Jubilees 23:30) — the book of remembrance: *“a book of remembrance was written before him for them that feared Yahuah (LORD)”* (Malachi 3:16). It ain't new — it was written before it unfolded.",
+      "anchor_start_v": 27,
+      "anchor_end_v": 30,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 23, "src_v": 28, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 65, "tgt_v": 20, "tier": "free",
+         "note": "Isaiah 65:20 — *There shall be no more thence an infant of days, nor an old man that hath not filled his days: for the child shall die an hundred years old; but the sinner being an hundred years old shall be accursed.* Jubilees' “no old man Nor one who is not satisfied with his days” is Isaiah's new heavens, where none dies short of his days."},
+        {"src_ch": 23, "src_v": 27, "tgt_edition": "canon", "tgt_book": "isaiah", "tgt_ch": 65, "tgt_v": 22, "tier": "free",
+         "note": "Isaiah 65:22 — *They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands.* Jubilees' days drawing “nigh to one thousand years” are Isaiah's “days of a tree” for the lengthened life of the restored people."},
+        {"src_ch": 23, "src_v": 30, "tgt_edition": "canon", "tgt_book": "daniel", "tgt_ch": 12, "tgt_v": 2, "tier": "free",
+         "note": "Daniel 12:2 — *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt.* Jubilees' servants who “rise up” while “their bones will rest in the earth, And their spirits will have much joy” is Daniel's awakening of those who sleep in the dust."},
+        {"src_ch": 23, "src_v": 30, "tgt_edition": "canon", "tgt_book": "malachi", "tgt_ch": 3, "tgt_v": 16, "tier": "free",
+         "note": "Malachi 3:16 — *Then they that feared Yahuah (LORD) spake often one to another: and Yahuah (LORD) hearkened, and heard it, and a book of remembrance was written before him for them that feared Yahuah (LORD), and that thought upon his name.* Jubilees' closing “record on the heavenly tables for a testimony” is Malachi's book of remembrance written before Yahuah — the law and the history pre-written."}
+      ]
+    }
+  ]
+}

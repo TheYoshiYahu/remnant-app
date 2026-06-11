@@ -1,0 +1,98 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 21,
+  "session": "session251",
+  "tag": "ju21",
+  "base_band": 53500,
+  "threads": [
+    {
+      "slug": "jubilees-21-abraham-kept-torah",
+      "title": "Abraham kept the charge — before Sinai",
+      "summary_md": "Abraham's deathbed testament to Isaac opens with a life of obedience: *And do you, my son, observe His commandments and His ordinances and His judgments, and walk not after the abominations and after the graven images and after the molten images* (Jubilees 21:5). This is the spine of \"it ain't new.\" Genesis itself testifies that the patriarch kept the whole Torah generations before it was given at Sinai: *Because that Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws* (Genesis 26:5) — the same fourfold \"charge, commandments, statutes, laws.\" And the whole counsel hangs on the character of the One who gave it: *For He is the living Elohim (God), and He is holy and faithful, and He is righteous beyond all* (Jubilees 21:4). The Torah Abraham hands Isaac is not law-as-curse but the way of the living Elohim, engraved before it was ever spoken from the mountain.",
+      "anchor_start_v": 4,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 21, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 26, "tgt_v": 5, "tier": "free",
+         "note": "Genesis 26:5 — *Because that Abraham obeyed my voice, and kept my charge, my commandments, my statutes, and my laws.* Yahuah's own word that Abraham kept the whole Torah — its commandments, statutes, and judgments — long before Sinai, exactly as Jubilees 21:5 has him passing them to Isaac."}
+      ]
+    },
+    {
+      "slug": "jubilees-21-eat-no-blood",
+      "title": "Eat no blood — for it is the soul",
+      "summary_md": "Abraham's first command on the altar is the blood: *And eat no blood at all of animals or cattle, or of any bird which flies in the heaven* (Jubilees 21:6), and again *And do not eat any blood, for it is the soul; eat no blood whatever* (Jubilees 21:18). This is the same law Yahuah engraves through Moses, with the same reason — the life: *For the life of the flesh is in the blood... No soul of you shall eat blood, neither shall any stranger that sojourneth among you eat blood* (Leviticus 17:11,12). It is named a *perpetual statute for your generations throughout all your dwellings, that ye eat neither fat nor blood* (Leviticus 3:17), and Deuteronomy gives the heart of it: *Only be sure that thou eat not the blood: for the blood is the life; and thou mayest not eat the life with the flesh* (Deuteronomy 12:23). And it ain't new even to Abraham — Jubilees grounds it in the oath sworn by Noah: *And Noah and his sons swore that they would not eat any blood that was in any flesh* (Jubilees 6:10). One law, from the Flood to the fathers to Sinai.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 21, "src_v": 18, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 17, "tgt_v": 11, "tier": "free",
+         "note": "Leviticus 17:11 — *For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul.* The very reason Abraham gives — the blood is the soul — is the reason Yahuah seals at Sinai."},
+        {"src_ch": 21, "src_v": 6, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 3, "tgt_v": 17, "tier": "free",
+         "note": "Leviticus 3:17 — *It shall be a perpetual statute for your generations throughout all your dwellings, that ye eat neither fat nor blood.* The perpetual statute against blood that Abraham hands Isaac is written into the Torah as a forever ordinance, never abolished."},
+        {"src_ch": 21, "src_v": 18, "tgt_edition": "canon", "tgt_book": "deuteronomy", "tgt_ch": 12, "tgt_v": 23, "tier": "free",
+         "note": "Deuteronomy 12:23 — *Only be sure that thou eat not the blood: for the blood is the life; and thou mayest not eat the life with the flesh.* Abraham's words \"eat no blood, for it is the soul\" are Moses' words \"the blood is the life\" — the same revelation across the centuries."},
+        {"src_ch": 21, "src_v": 18, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 6, "tgt_v": 10, "tier": "extras",
+         "note": "Jubilees 6:10 — *And Noah and his sons swore that they would not eat any blood that was in any flesh, and he made a covenant before Yahuah Elohim (the LORD God) for ever throughout all the generations of the earth in this month.* Abraham's blood-law to Isaac descends from the everlasting covenant Noah swore — it ain't new even to the patriarchs."}
+      ]
+    },
+    {
+      "slug": "jubilees-21-the-burnt-offering",
+      "title": "The order of the offering — the altar, the fat, the sweet savour",
+      "summary_md": "Abraham instructs Isaac in the exact order of the peace-offering: *slay you it, and pour out its blood upon the altar, and all the fat of the offering offer on the altar... it is a sweet savour before Yahuah (God)* (Jubilees 21:6), naming *the fat which is on the belly, and all the fat on the inwards and the two kidneys... and upon the loins and liver* (Jubilees 21:8). This is the Levitical peace-offering rite to the letter: *the fat that covereth the inwards... And the two kidneys, and the fat that is on them, which is by the flanks, and the caul above the liver, with the kidneys* (Leviticus 3:3,4), burnt for *a sweet savour unto Yahuah (LORD)* (Leviticus 1:9). The patriarch knows the order of the altar before Aaron is born — and the same \"sweet savour\" rose from Noah's altar at the first: *And Yahuah (LORD) smelled a sweet savour* (Genesis 8:21). The sacrificial system is not a Mosaic novelty; it is the ancient way of approach.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 21, "src_v": 8, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 3, "tgt_v": 4, "tier": "free",
+         "note": "Leviticus 3:4 — *And the two kidneys, and the fat that is on them, which is by the flanks, and the caul above the liver, with the kidneys, it shall he take away.* The fat, the two kidneys, and the caul above the liver that Abraham names in Jubilees 21:8 are the very portions the peace-offering law specifies."},
+        {"src_ch": 21, "src_v": 6, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 1, "tgt_v": 9, "tier": "free",
+         "note": "Leviticus 1:9 — *But his inwards and his legs shall he wash in water: and the priest shall burn all on the altar, to be a burnt sacrifice, an offering made by fire, of a sweet savour unto Yahuah (LORD).* Abraham's \"sweet savour before Yahuah\" upon the altar is the Torah's own phrase for the accepted burnt offering."},
+        {"src_ch": 21, "src_v": 9, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 8, "tgt_v": 21, "tier": "free",
+         "note": "Genesis 8:21 — *And Yahuah (LORD) smelled a sweet savour; and Yahuah (LORD) said in his heart, I will not again curse the ground any more for man's sake.* The same sweet savour Abraham seeks first rose from Noah's altar after the Flood — the order of offering is older than Sinai."}
+      ]
+    },
+    {
+      "slug": "jubilees-21-blood-for-blood",
+      "title": "Blood for blood — the land defiled, the man's life required",
+      "summary_md": "Turning from the altar to the shedding of man's blood, Abraham warns: *And take no gifts for the blood of man, lest it be shed with impunity, without judgment; for it is the blood that is shed that causes the earth to sin, and the earth cannot be cleansed from the blood of man save by the blood of him who shed it* (Jubilees 21:19), and *blood for blood, that you may be accepted before Yahuah (God)* (Jubilees 21:20). This is the covenant given to Noah after the Flood, the foundation of all justice: *And surely your blood of your lives will I require... Whoso sheddeth man's blood, by man shall his blood be shed: for in the image of Elohim (God) made he man* (Genesis 9:5,6). The defilement of the land by unavenged blood is the same teaching the Torah carries forward — and Jubilees grounds the whole law of blood in the Noahic oath: *Whoso sheds man's blood by man shall his blood be shed; for in the image of Elohim (God) made He man* (Jubilees 6:8).",
+      "anchor_start_v": 19,
+      "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 21, "src_v": 19, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 9, "tgt_v": 6, "tier": "free",
+         "note": "Genesis 9:6 — *Whoso sheddeth man's blood, by man shall his blood be shed: for in the image of Elohim (God) made he man.* Abraham's \"blood for blood\" and the land cleansed only by the blood of him who shed it is the Noahic covenant of justice, given because man bears Elohim's image."},
+        {"src_ch": 21, "src_v": 20, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 9, "tgt_v": 5, "tier": "free",
+         "note": "Genesis 9:5 — *And surely your blood of your lives will I require; at the hand of every beast will I require it, and at the hand of man; at the hand of every man's brother will I require the life of man.* Yahuah requiring the life for the blood of man is the root of Abraham's charge that no gift may ransom murder."},
+        {"src_ch": 21, "src_v": 19, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 6, "tgt_v": 8, "tier": "extras",
+         "note": "Jubilees 6:8 — *Whoso sheds man's blood by man shall his blood be shed; for in the image of Elohim (God) made He man.* The law Abraham presses on Isaac is the same word Jubilees records was given to Noah — the seamless witness across the patriarchs."}
+      ]
+    },
+    {
+      "slug": "jubilees-21-be-clean-wash",
+      "title": "Be clean — wash before you approach the altar",
+      "summary_md": "Abraham binds purity to the priestly approach: *And at all times be clean in your body, and wash yourself with water before you approach to offer on the altar, and wash your hands and your feet before you draw near to the altar* (Jubilees 21:16). This is the priestly washing the Torah ordains, and the hunter's covering of blood with dust: *he shall even pour out the blood thereof, and cover it with dust* (Leviticus 17:13) — the very command Abraham echoes, *be on your guard, my son, against blood... cover it with dust* (Jubilees 21:16). Clean hands and a clean body before the altar are not Levitical innovations but the ancient discipline of drawing near, kept by the father of the faithful.",
+      "anchor_start_v": 16,
+      "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 21, "src_v": 16, "tgt_edition": "canon", "tgt_book": "leviticus", "tgt_ch": 17, "tgt_v": 13, "tier": "free",
+         "note": "Leviticus 17:13 — *And whatsoever man there be of the children of Yashar'el (Israel), or of the strangers that sojourn among you, which hunteth and catcheth any beast or fowl that may be eaten; he shall even pour out the blood thereof, and cover it with dust.* Abraham's \"cover it with dust\" is the Torah's own command for the blood of the hunt — kept centuries before Moses wrote it."}
+      ]
+    },
+    {
+      "slug": "jubilees-21-plant-of-righteousness",
+      "title": "The plant of righteousness — turn from their ways, and be blessed",
+      "summary_md": "Abraham's testament closes with the separation of the seed and the promise of restoration: *Beware, lest you should walk in their ways And tread in their paths, And sin a sin to death before the El Elyon (Most High) Elohim (God)* (Jubilees 21:22), then the turning: *Turn away from all their deeds and all their uncleanness, And observe the ordinance of the El Elyon (Most High) Elohim (God)* (Jubilees 21:23), and the blessing: *And He will bless you in all your deeds, And will raise up from you the plant of righteousness through all the earth, throughout all generations of the earth* (Jubilees 21:24). \"The plant of righteousness\" is Enoch's own phrase for the restored seed: *let the plant of righteousness and truth appear: and it shall prove a blessing; the works of righteousness and truth shall be planted in truth and joy for evermore* (1 Enoch 10:16). And Abraham's parting word — *May He bless all your seed and the residue of your seed for the generations for ever... That you may be a blessing on all the earth* (Jubilees 21:25) — is the Genesis promise of the seed kept holy and made a blessing to the nations: *And in thy seed shall all the nations of the earth be blessed; Because that Abraham obeyed my voice* (Genesis 26:4,5).",
+      "anchor_start_v": 22,
+      "anchor_end_v": 25,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 21, "src_v": 24, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 10, "tgt_v": 16, "tier": "extras",
+         "note": "1 Enoch 10:16 — *let the plant of righteousness and truth appear: and it shall prove a blessing; the works of righteousness and truth' shall be planted in truth and joy for evermore.* Abraham's \"plant of righteousness\" raised up through all the earth is Enoch's restored seed — Jubilees 21:10 names Enoch's own words as Abraham's source."},
+        {"src_ch": 21, "src_v": 25, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 26, "tgt_v": 4, "tier": "free",
+         "note": "Genesis 26:4 — *And I will make thy seed to multiply as the stars of heaven, and will give unto thy seed all these countries; and in thy seed shall all the nations of the earth be blessed.* Abraham's prayer that Isaac's seed be a blessing on all the earth is the Genesis promise to the kept and separated seed."}
+      ]
+    }
+  ]
+}
