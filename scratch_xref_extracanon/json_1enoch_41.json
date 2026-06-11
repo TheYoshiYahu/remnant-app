@@ -1,0 +1,200 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 41,
+  "session": "session250",
+  "tag": "en41",
+  "base_band": 51000,
+  "threads": [
+    {
+      "slug": "1-enoch-41-deeds-weighed-balance",
+      "title": "The actions of men weighed in the balance",
+      "summary_md": "Enoch is shown the most sober secret of heaven: *And after that I saw all the secrets of the heavens, and how the kingdom is divided, and how the actions of men are weighed in the balance.* (1 Enoch 41:1). This is no novel image — the same scale hangs over Belshazzar's feast: *TEKEL; Thou art weighed in the balances, and art found wanting.* (Daniel 5:27), the hand-writing that reckons a king's deeds against the standard he had spurned. The balance itself belongs to the Creator, not to men who would rig it: *A just weight and balance are the LORD'S: all the weights of the bag are his work.* (Proverbs 16:11). And the weighing is no mere metaphor for the conscience — within Enoch's own Parables the angel shows him the mechanism plainly: *...and how the weighing in the balance is done, and how the fountains of the spirits are reckoned, each according to the power of the spirit...* (1 Enoch 60:11). The judgement falls on deeds because the covenant was given to be kept; the balance vindicates the righteous who walked in the way and exposes the sinner who deny the name of Yahuah of Spirits.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 41,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "daniel",
+          "tgt_ch": 5,
+          "tgt_v": 27,
+          "tier": "free",
+          "note": "Daniel 5:27 — *TEKEL; Thou art weighed in the balances, and art found wanting.* The very scale Enoch sees over all men is the one the hand wrote against Belshazzar, weighing a king's deeds and finding them short."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "proverbs",
+          "tgt_ch": 16,
+          "tgt_v": 11,
+          "tier": "free",
+          "note": "Proverbs 16:11 — *A just weight and balance are the LORD'S: all the weights of the bag are his work.* The balance in which men's actions are weighed is Yahuah's own, never a scale that fraud can tilt."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 1,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 60,
+          "tgt_v": 11,
+          "tier": "extras",
+          "note": "1 Enoch 60:11 — *And the other angel who went with me and showed me what was hidden told me what is first and last in the heaven in the height, and beneath the earth in the depth, and at the ends of the heaven, and on the foundation of the heaven, and in the chamber of the winds, and how the spirits are divided, and how the weighing in the balance is done, and how the fountains of the spirits are reckoned, each according to the power of the spirit, the power of the lights of the moon, and according to the power that is in righteousness.* Enoch's own Parables expand the balance of 41:1, showing the weighing reckoned spirit by spirit beside the chambers of the winds."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-41-chambers-winds-lightning",
+      "title": "The closed chambers of the winds, lightning, and thunder",
+      "summary_md": "Enoch is led through the storehouses of the weather: *And there mine eyes saw the secrets of the lightning and of the thunder, and the secrets of the winds, how they are divided to blow over the earth, and the secrets of the clouds and dew...* (1 Enoch 41:3), and then *And there I saw closed chambers out of which the winds are divided, the chamber of the hail and winds, the chamber of the mist, and of the clouds...* (1 Enoch 41:4). This is the same tour Yahuah gives Job out of the whirlwind: *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* (Job 38:22) — sealed treasuries opened only at the Creator's word. The Psalmist names the same chambers: *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* (Psalm 135:7). The witness runs on into the apocrypha, where Sirach sings the same storehouses: *Through this the treasures are opened: and clouds fly forth as fowls.* (Ecclesiasticus 43:14). It ain't new — Enoch's closed chambers are the canon's own treasuries of hail, wind, and lightning, all held under one ordering hand.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 4,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 41,
+          "src_v": 4,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 38,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Job 38:22 — *Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,* The closed chambers of hail Enoch is shown are the sealed treasuries Yahuah challenges Job to find."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 135,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Psalm 135:7 — *He causeth the vapours to ascend from the ends of the earth; he maketh lightnings for the rain; he bringeth the wind out of his treasuries.* The secrets of the lightning and the chambers of the winds Enoch sees are the very treasuries the Psalm says Yahuah draws the wind from."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 4,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 43,
+          "tgt_v": 14,
+          "tier": "extras",
+          "note": "Ecclesiasticus 43:14 — *Through this the treasures are opened: and clouds fly forth as fowls.* Sirach names the same opened storehouses of cloud and storm that Enoch is led through in the closed chambers of the winds."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-41-luminary-order-division-light",
+      "title": "The chambers of sun and moon: the kept orbit and the divided light",
+      "summary_md": "Enoch sees the luminaries hold their appointed course: *And I saw the chambers of the sun and moon, whence they proceed and whither they come again... and how they do not leave their orbit, and they add nothing to their orbit and they do not take away from it, and they keep faith one with another: and in accordance with an oath they set and they rise.* (1 Enoch 41:5), the moon keeping *the monthly revolution by day and by night* (1 Enoch 41:6), Yahuah *who made a division between the light and the darkness* (1 Enoch 41:7). This is Genesis 1 read back to us: *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* (Genesis 1:14) — lights set for the moedim, the appointed times, the moon *appointed... for seasons* (Psalm 104:19). Their fixed, faithful course is the covenant guarantee: *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night... Yahuah Tseva'ot (LORD of hosts) is his name:* (Jeremiah 31:35), so sure that if those ordinances fail, then so would Israel. Jubilees ties the same fourth-day lights straight to the feast-calendar: *And on the fourth day He created the sun and the moon and the stars... to rule over the day and the night, and divide the light from the darkness.* (Jubilees 2:8). The luminaries keep faith by oath; the feasts are appointed by the lights — Torah's order, not a new one.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 41,
+          "src_v": 7,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* Enoch's division of light from darkness and his ordered sun and moon are the fourth-day lights set for signs and seasons — the moedim."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 6,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The moon that accomplishes her monthly revolution and sets by oath in Enoch is the moon Yahuah appointed for the seasons."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 5,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 31,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Jeremiah 31:35 — *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva'ot (LORD of hosts) is his name:* The sun and moon that keep faith and never leave their orbit in Enoch are the fixed ordinances Yahuah swears by as surety for Israel."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 7,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 2,
+          "tgt_v": 8,
+          "tier": "extras",
+          "note": "Jubilees 2:8 — *And on the fourth day He created the sun and the moon and the stars, and set them in the firmament of the heaven, to give light upon all the earth, and to rule over the day and the night, and divide the light from the darkness.* Jubilees sets the same dividing of light from darkness on the fourth day, the lights that govern Enoch's faithful orbit and the appointed feasts."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-41-no-angel-intercedes-He-judges",
+      "title": "No angel can intercede: He Himself is the judge of all",
+      "summary_md": "At the heart of the chapter stands a startling word: *And no angel here has power to intercede for man, nor yet is any angel able to hear the prayer of man.* (1 Enoch 41:8), *But He Himself is the judge of all, and He judges all according to their deeds.* (1 Enoch 41:9). No angel mediates — and the canon agrees, naming the one Mediator who is not an angel: *For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus);* (1 Timothy 2:5). The intercession Enoch denies to angels belongs to the Son alone, who *ever liveth to make intercession for them* (Hebrews 7:25). And the judgement according to deeds is the scene of the opened books: *And I saw the dead, small and great, stand before Elohim (God); and the books were opened... and the dead were judged out of those things which were written in the books, according to their works.* (Revelation 20:12) — the same books Enoch's own Parables saw the Head of Days open (1 Enoch 47:3). The chapter then closes with the sentence Yahusha Himself will speak: the sinners *cast into the furnace of fire* (1 Enoch 41:10) — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* (Matthew 13:42). The judge of all is Yahuah of Spirits; the one mediator who carries man's prayer is His Formed Son, not any angel.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 10,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 41,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "1-timothy",
+          "tgt_ch": 2,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "1 Timothy 2:5 — *For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus);* No angel can intercede, says Enoch; the one mediator who can is not an angel but the Formed Son come in flesh."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 8,
+          "tgt_edition": "canon",
+          "tgt_book": "hebrews",
+          "tgt_ch": 7,
+          "tgt_v": 25,
+          "tier": "free",
+          "note": "Hebrews 7:25 — *Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them.* The intercession Enoch withholds from every angel is the living intercession the Son alone makes for those who come to the Father by Him."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 9,
+          "tgt_edition": "canon",
+          "tgt_book": "revelation",
+          "tgt_ch": 20,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Revelation 20:12 — *And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works.* He who judges all according to their deeds in Enoch is the One whose opened books judge the dead by their works."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 10,
+          "tgt_edition": "canon",
+          "tgt_book": "matthew",
+          "tgt_ch": 13,
+          "tgt_v": 42,
+          "tier": "free",
+          "note": "Matthew 13:42 — *And shall cast them into a furnace of fire: there shall be wailing and gnashing of teeth.* The sinners cast into the furnace of fire at the close of Enoch 41 is the very sentence Yahusha pronounces on the workers of iniquity at the end of the age."
+        },
+        {
+          "src_ch": 41,
+          "src_v": 9,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 47,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 47:3 — *In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him.* Enoch's own Parables show the Head of Days opening the books of the living, the throne-scene behind the judgement-according-to-deeds of 41:9."
+        }
+      ]
+    }
+  ]
+}
