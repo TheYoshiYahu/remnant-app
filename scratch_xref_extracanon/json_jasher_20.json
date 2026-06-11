@@ -1,0 +1,84 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 20,
+  "session": "session252",
+  "tag": "ja20",
+  "base_band": 55475,
+  "threads": [
+    {
+      "slug": "jasher-20-journey-to-gerar",
+      "title": "Abraham journeys to Gerar (between Kadesh and Shur)",
+      "summary_md": "Jasher opens the Gerar episode: *And at that time Abraham journeyed from the plain of Mamre, and he went to the land of the Philistines, and he dwelt in Gerar; it was in the twenty-fifth year of Abraham’s being in the land of Canaan, and the hundredth year of the life of Abraham, that he came to Gerar in the land of the Philistines.* (Jasher 20:1). This is no new tale — it carries the canon's own account: *And Abraham journeyed from thence toward the south country, and dwelled between Kadesh and Shur, and sojourned in Gerar.* (Genesis 20:1). The same patriarchal event stands engraven in the Jubilees apparatus: *And in this month Abraham moved from Hebron, and departed and dwelt between Kadesh and Shur in the mountains of Gerar.* (Jubilees 16:9). The sojourner in the kingdom of man's land is the called seed kept and passing through.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 20, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 20, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 20:1 — *And Abraham journeyed from thence toward the south country, and dwelled between Kadesh and Shur, and sojourned in Gerar.* The canon source Jasher 20:1 retells: Abraham settling at Gerar in the Philistines' land."},
+        {"src_ch": 20, "src_v": 1, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 16, "tgt_v": 9, "tier": "extras",
+         "note": "Jubilees 16:9 — *And in this month Abraham moved from Hebron, and departed and dwelt between Kadesh and Shur in the mountains of Gerar.* The Jubilees apparatus records the same move to Gerar that opens Jasher 20:1."}
+      ]
+    },
+    {
+      "slug": "jasher-20-she-is-my-sister",
+      "title": "“Say you are my sister” — the recurring word at Gerar",
+      "summary_md": "Entering the land, Abraham instructs Sarah: *And when they entered the land he said to Sarah his wife, Say you are my sister, to any one that shall ask you, in order that we may escape the evil of the inhabitants of the land.* (Jasher 20:2). The canon gives the same word: *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah.* (Genesis 20:2). This is the second time the patriarch speaks it — he had said it first in Egypt: *Say, I pray thee, thou art my sister: that it may be well with me for thy sake; and my soul shall live because of thee.* (Genesis 12:13). And the same word would pass to the chosen seed after him, when Isaac dwelt in the same Gerar: *And the men of the place asked him of his wife; and he said, She is my sister: for he feared to say, She is my wife; lest, said he, the men of the place should kill me for Rebekah; because she was fair to look upon.* (Genesis 26:7). The seed-line is traced through the very pattern of its fathers — it ain't new.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 20, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 20, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 20:2 — *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah.* The canon scene Jasher 20:2 retells: the sister-word and Abimelech's taking of Sarah."},
+        {"src_ch": 20, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 13, "tier": "free",
+         "note": "Genesis 12:13 — *Say, I pray thee, thou art my sister: that it may be well with me for thy sake; and my soul shall live because of thee.* The earlier Egypt instance of the same sister-word Abraham repeats in Jasher 20:2."},
+        {"src_ch": 20, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 26, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 26:7 — *And the men of the place asked him of his wife; and he said, She is my sister: for he feared to say, She is my wife; lest, said he, the men of the place should kill me for Rebekah; because she was fair to look upon.* Isaac repeats the same word in the same Gerar — the seed-line carrying its father's pattern beyond Jasher 20:2."}
+      ]
+    },
+    {
+      "slug": "jasher-20-abimelech-takes-sarah",
+      "title": "Abimelech sends and takes Sarah to the king's house",
+      "summary_md": "The king of the Philistines, hearing of her beauty, sends for her: *And Abimelech heard the words of his servants who praised Sarah to him, and Abimelech sent his officers, and they brought Sarah to the king.* (Jasher 20:5), and *And Sarah came to the house of Abimelech, and the king saw that Sarah was beautiful, and she pleased him exceedingly.* (Jasher 20:6). The canon names the same taking: *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah.* (Genesis 20:2). Yet the canon adds what Jasher's narrative confirms — the king never came near her, for Elohim withheld him: *And Elohim (God) said unto him in a dream, Yea, I know that thou didst this in the integrity of thy heart; for I also withheld thee from sinning against me: therefore suffered I thee not to touch her.* (Genesis 20:6). The mother of the promised seed is kept by Yahuah's own hand.",
+      "anchor_start_v": 5,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 20, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 20, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 20:2 — *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah.* The canon's bare statement that Jasher 20:5 expands into the servants praising Sarah and the king's officers bringing her."},
+        {"src_ch": 20, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 20, "tgt_v": 6, "tier": "free",
+         "note": "Genesis 20:6 — *And Elohim (God) said unto him in a dream, Yea, I know that thou didst this in the integrity of thy heart; for I also withheld thee from sinning against me: therefore suffered I thee not to touch her.* Elohim withholds the king who, in Jasher 20:6, saw that Sarah pleased him exceedingly — the promised seed's mother kept."}
+      ]
+    },
+    {
+      "slug": "jasher-20-dream-angel-drawn-sword",
+      "title": "The dream by night — the angel with the drawn sword",
+      "summary_md": "Jasher tells of the deep sleep that fell on the king and the dream of judgment: *As at evening time, before men lie down to rest, the king was sitting upon his throne, and a deep sleep fell upon him, and he lay upon the throne and slept till morning.* (Jasher 20:12), and *And he dreamed that an angel of Yahuah (the Lord) came to him with a drawn sword in his hand, and the angel stood over Abimelech, and wished to slay him with the sword...* (Jasher 20:13). The canon carries the same dream of death: *But Elohim (God) came to Abimelech in a dream by night, and said to him, Behold, thou art but a dead man, for the woman which thou hast taken; for she is a man’s wife.* (Genesis 20:3). And the canon gives the remedy the dream demands — the patriarch is a prophet whose prayer is heard: *Now therefore restore the man his wife; for he is a prophet, and he shall pray for thee, and thou shalt live: and if thou restore her not, know thou that thou shalt surely die, thou, and all that are thine.* (Genesis 20:7). The word of warning by night is no later invention; it stands in Torah.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 20, "src_v": 12, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 20, "tgt_v": 3, "tier": "free",
+         "note": "Genesis 20:3 — *But Elohim (God) came to Abimelech in a dream by night, and said to him, Behold, thou art but a dead man, for the woman which thou hast taken; for she is a man’s wife.* The dream by night Jasher 20:12 sets up as the deep sleep falls on the king."},
+        {"src_ch": 20, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 20, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 20:7 — *Now therefore restore the man his wife; for he is a prophet, and he shall pray for thee, and thou shalt live: and if thou restore her not, know thou that thou shalt surely die, thou, and all that are thine.* The canon's warning behind the angel of Jasher 20:13 who would slay the king lest he restore the wife."}
+      ]
+    },
+    {
+      "slug": "jasher-20-pharaoh-precedent-and-healing",
+      "title": "The Pharaoh precedent recalled, and Abraham's prayer heals the land",
+      "summary_md": "Within this same record Jasher's servants recall the earlier deliverance in Egypt and urge restoration — *for the like happened to the king of Egypt when this man came to Egypt... and Yahuah (the Lord) brought upon him grievous plagues until he returned the woman to her husband* — and the chapter closes with Abraham interceding so the land is healed (Jasher 20:13's record, vv. 19–30 inline). The canon furnishes the Egypt precedent verbatim: *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram’s wife.* (Genesis 12:17), and Pharaoh's rebuke, *And Pharaoh called Abram, and said, What is this that thou hast done unto me? why didst thou not tell me that she was thy wife?* (Genesis 12:18). And the canon gives the healing of Gerar that crowns the chapter: *So Abraham prayed unto Elohim (God): and Elohim (God) healed Abimelech, and his wife, and his maidservants; and they bare children.* (Genesis 20:17). The prophet's intercession turns away the plague — Torah-before-Sinai, it ain't new.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 13,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 20, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 17, "tier": "free",
+         "note": "Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram’s wife.* The Egypt precedent the servants recall within Jasher 20:13's record to urge the king to restore Sarah."},
+        {"src_ch": 20, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 18, "tier": "free",
+         "note": "Genesis 12:18 — *And Pharaoh called Abram, and said, What is this that thou hast done unto me? why didst thou not tell me that she was thy wife?* Pharaoh's rebuke, mirrored when Abimelech likewise calls Abraham to account within Jasher 20:13's record."},
+        {"src_ch": 20, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 20, "tgt_v": 17, "tier": "free",
+         "note": "Genesis 20:17 — *So Abraham prayed unto Elohim (God): and Elohim (God) healed Abimelech, and his wife, and his maidservants; and they bare children.* The healing intercession that closes Jasher 20's record — the prophet's prayer lifts the plague from the land."}
+      ]
+    }
+  ]
+}

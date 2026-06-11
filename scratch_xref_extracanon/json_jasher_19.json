@@ -1,0 +1,102 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 19,
+  "session": "session252",
+  "tag": "ja19",
+  "base_band": 55450,
+  "threads": [
+    {
+      "slug": "jasher-19-sodoms-cruelty-to-the-poor",
+      "title": "The beds of Sodom — the kingdom of man that would not feed the poor",
+      "summary_md": "Jasher opens the Sodom cycle with the cities' studied cruelty: *And by desire of their four judges the people of Sodom and Gomorrah had beds erected in the streets of the cities, and if a man came to these places they laid hold of him and brought him to one of their beds, and by force made him to lie in them.* (Jasher 19:3). And the deeper sin — *And when a poor man came to their land they would give him silver and gold, and cause a proclamation in the whole city not to give him a morsel of bread to eat* (Jasher 19:8). This is the kingdom-of-man pattern Jasher sets against the chosen seed: abundance hoarded, the stranger destroyed. The prophets name this very iniquity as Sodom's: *Behold, this was the iniquity of thy sister Sodom, pride, fulness of bread, and abundance of idleness was in her and in her daughters, neither did she strengthen the hand of the poor and needy.* (Ezekiel 16:49). It ain't new — the canon already weighs Sodom on the scale of how it treated the needy, not only on the sin of the gate.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 8,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 19, "src_v": 8, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 16, "tgt_v": 49, "tier": "free",
+         "note": "Ezekiel 16:49 — *Behold, this was the iniquity of thy sister Sodom, pride, fulness of bread, and abundance of idleness was in her and in her daughters, neither did she strengthen the hand of the poor and needy.* The canon's own verdict matches Jasher's portrait — Sodom's guilt was its refusal to feed the poor it had in abundance (Jasher 19:8)."}
+      ]
+    },
+    {
+      "slug": "jasher-19-war-of-kings-lot-rescued",
+      "title": "The kings of Elam take Lot — Abraham makes war and recovers all",
+      "summary_md": "Jasher compresses the war of the kings into a single verse: *And when the kings of Elam had made war with the kings of Sodom, the kings of Elam captured all the property of Sodom, and they took Lot captive, with his property, and when it was told to Abraham he went and made war with the kings of Elam, and he recovered from their hands all the property of Lot as well as the property of Sodom.* (Jasher 19:23). This is the Genesis war retold — *And they took Lot, Abram's brother's son, who dwelt in Sodom, and his goods, and departed.* (Genesis 14:12) — and Abraham the called seed arming to deliver his kin: *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* (Genesis 14:14), *And he brought back all the goods, and also brought again his brother Lot, and his goods, and the women also, and the people.* (Genesis 14:16). Jasher carries the same deliverance the Torah records.",
+      "anchor_start_v": 23,
+      "anchor_end_v": 23,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 19, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 14, "tgt_v": 12, "tier": "free",
+         "note": "Genesis 14:12 — *And they took Lot, Abram's brother's son, who dwelt in Sodom, and his goods, and departed.* The Genesis source of the captivity Jasher records when the kings of Elam took Lot with his property (Jasher 19:23)."},
+        {"src_ch": 19, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 14, "tgt_v": 14, "tier": "free",
+         "note": "Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* Abraham arming to make war is the canon scene Jasher summarizes in his going out against the kings of Elam (Jasher 19:23)."},
+        {"src_ch": 19, "src_v": 23, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 14, "tgt_v": 16, "tier": "free",
+         "note": "Genesis 14:16 — *And he brought back all the goods, and also brought again his brother Lot, and his goods, and the women also, and the people.* The recovery Jasher names — Abraham recovered from their hands all the property of Lot and of Sodom (Jasher 19:23)."}
+      ]
+    },
+    {
+      "slug": "jasher-19-paltith-burned-for-feeding-the-poor",
+      "title": "Paltith daughter of Lot — burned for the mercy Sodom forbade",
+      "summary_md": "Jasher's most searing addition: Lot's own daughter shows the mercy her city outlawed. *And Paltith the daughter of Lot saw this man lying in the streets starved with hunger, and no one would give him any thing to keep him alive, and he was just upon the point of death.* (Jasher 19:26); *And her soul was filled with pity on account of the man, and she fed him secretly with bread for many days, and the soul of this man was revived.* (Jasher 19:27). For this she is killed — *And the people of Sodom and Gomorrah assembled and kindled a fire in the street of the city, and they took the woman and cast her into the fire and she was burned to ashes.* (Jasher 19:35). This is the cry that fills up Sodom's measure. The Torah records that very outcry reaching heaven — *And Yahuah (LORD) said, Because the cry of Sodom and Gomorrah is great, and because their sin is very grievous* (Genesis 18:20). Jasher gives the cry a face: the righteous within the city judged for keeping the way, Torah-before-Sinai mercy condemned as transgression of Sodom's law.",
+      "anchor_start_v": 26,
+      "anchor_end_v": 35,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 19, "src_v": 35, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 18, "tgt_v": 20, "tier": "free",
+         "note": "Genesis 18:20 — *And Yahuah (LORD) said, Because the cry of Sodom and Gomorrah is great, and because their sin is very grievous;* Jasher gives that great cry a face — Paltith burned to ashes for feeding the starving (Jasher 19:35)."},
+        {"src_ch": 19, "src_v": 27, "tgt_edition": "canon", "tgt_book": "ezekiel", "tgt_ch": 16, "tgt_v": 49, "tier": "free",
+         "note": "Ezekiel 16:49 — *Behold, this was the iniquity of thy sister Sodom, pride, fulness of bread, and abundance of idleness was in her and in her daughters, neither did she strengthen the hand of the poor and needy.* Paltith strengthening the hand of the poor and needy is the very mercy Sodom's iniquity refused (Jasher 19:27)."}
+      ]
+    },
+    {
+      "slug": "jasher-19-the-cry-provokes-yahuah",
+      "title": "Yahuah provoked — the cry of the abused poor ascends to heaven",
+      "summary_md": "The woman of Admah is anointed with honey and given to the bees, and *her cries ascended to heaven.* (Jasher 19:43); then Jasher names the cause of the judgment exactly: *And Yahuah (the Lord) was provoked at this and at all the works of the cities of Sodom, for they had abundance of food, and had tranquility amongst them, and still would not sustain the poor and the needy, and in those days their evil doings and sins became great before Yahuah (the Lord).* (Jasher 19:44). The judgment of Sodom is the kingdom-of-man's cities falling, and the NT holds it up as the standing example: *Even as Sodom and Gomorrha, and the cities about them in like manner, giving themselves over to fornication, and going after strange flesh, are set forth for an example, suffering the vengeance of eternal fire.* (Jude 1:7); *And turning the cities of Sodom and Gomorrha into ashes condemned them with an overthrow, making them an ensample unto those that after should live ungodly* (2 Peter 2:6). It ain't new — Sodom is fixed in scripture as the pattern of the judged city.",
+      "anchor_start_v": 43,
+      "anchor_end_v": 44,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 19, "src_v": 44, "tgt_edition": "canon", "tgt_book": "jude", "tgt_ch": 1, "tgt_v": 7, "tier": "free",
+         "note": "Jude 1:7 — *Even as Sodom and Gomorrha, and the cities about them in like manner, giving themselves over to fornication, and going after strange flesh, are set forth for an example, suffering the vengeance of eternal fire.* The cities whose works provoked Yahuah in Jasher stand in the NT as the set example of judgment (Jasher 19:44)."},
+        {"src_ch": 19, "src_v": 44, "tgt_edition": "canon", "tgt_book": "2-peter", "tgt_ch": 2, "tgt_v": 6, "tier": "free",
+         "note": "2 Peter 2:6 — *And turning the cities of Sodom and Gomorrha into ashes condemned them with an overthrow, making them an ensample unto those that after should live ungodly;* the abundance-without-mercy that provoked Yahuah in Jasher is the ungodliness made an ensample (Jasher 19:44)."}
+      ]
+    },
+    {
+      "slug": "jasher-19-angels-deliver-lot-sodom-destroyed",
+      "title": "The two angels deliver Lot — brimstone and fire on the cities",
+      "summary_md": "Jasher follows the Genesis rescue closely: *And the angels said to Lot, Arise, go forth from this place, you and all belonging to you, lest you be consumed in the iniquity of this city, for Yahuah (the Lord) will destroy this place.* (Jasher 19:48); *Then Yahuah (the Lord) rained upon Sodom and upon Gomorrah and upon all these cities brimstone and fire from Yahuah (the Lord) out of heaven.* (Jasher 19:51); and Lot's wife — *And when she looked back she became a pillar of salt, and it is yet in that place to this day.* (Jasher 19:53). The Torah is the source quoted beside it: *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven* (Genesis 19:24); *But his wife looked back from behind him, and she became a pillar of salt.* (Genesis 19:26). The Messiah seals it as the sign of His day — *But the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all.* (Luke 17:29). And Jubilees narrates the same overthrow: *And in this month Yahuah (God) executed his judgments on Sodom, and Gomorrah, and Zeboim, and all the region of the Jordan, and He burned them with fire and brimstone, and destroyed them until this day...* (Jubilees 16:5). One event, three witnesses.",
+      "anchor_start_v": 48,
+      "anchor_end_v": 53,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 19, "src_v": 51, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 19, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 19:24 — *Then Yahuah (LORD) rained upon Sodom and upon Gomorrah brimstone and fire from Yahuah (LORD) out of heaven;* the Torah source of the brimstone and fire Jasher records raining on the cities (Jasher 19:51)."},
+        {"src_ch": 19, "src_v": 53, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 19, "tgt_v": 26, "tier": "free",
+         "note": "Genesis 19:26 — *But his wife looked back from behind him, and she became a pillar of salt.* Genesis gives the source of Lot's wife turned to a pillar of salt that Jasher says stands yet in that place (Jasher 19:53)."},
+        {"src_ch": 19, "src_v": 51, "tgt_edition": "canon", "tgt_book": "luke", "tgt_ch": 17, "tgt_v": 29, "tier": "free",
+         "note": "Luke 17:29 — *But the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all.* The Messiah makes the fire and brimstone of Jasher's overthrow the sign of the day of His revealing (Jasher 19:51)."},
+        {"src_ch": 19, "src_v": 51, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 16, "tgt_v": 5, "tier": "extras",
+         "note": "Jubilees 16:5 — *And in this month Yahuah (God) executed his judgments on Sodom, and Gomorrah, and Zeboim, and all the region of the Jordan, and He burned them with fire and brimstone, and destroyed them until this day, even as lo I have declared to you all their works, that they are wicked and sinners exceedingly, and that they defile themselves and commit fornication in their flesh, and work uncleanness on the earth.* Jubilees narrates the identical fire-and-brimstone overthrow Jasher records, the same patriarchal event from another witness (Jasher 19:51)."}
+      ]
+    },
+    {
+      "slug": "jasher-19-lot-saved-moab-and-ammon",
+      "title": "Lot delivered for Abraham's sake — Moab and Ammon from the cave",
+      "summary_md": "Jasher closes with the cave at Adullam and the daughters: *And Lot and his two daughters remained in the cave, and they made their father drink wine, and they lay with him, for they said there was no man upon earth that could raise up seed from them, for they thought that the whole earth was destroyed.* (Jasher 19:57); *And the younger also called her son Benami; he is the father of the children of Ammon to this day.* (Jasher 19:59). The Torah gives the same line of nations: *And the firstborn bare a son, and called his name Moab: the same is the father of the Moabites unto this day.* (Genesis 19:37); *And the younger, she also bare a son, and called his name Ben-ammi: the same is the father of the children of Ammon unto this day.* (Genesis 19:38). And Lot was spared only for Abraham's sake — the NT names him righteous, *And delivered just Lot, vexed with the filthy conversation of the wicked* (2 Peter 2:7) — while Jubilees ties the deliverance to the covenant seed: *But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow.* (Jubilees 16:6). Election precedes the rescue: Lot is brought out because Elohim remembered Abraham.",
+      "anchor_start_v": 57,
+      "anchor_end_v": 59,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 19, "src_v": 58, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 19, "tgt_v": 37, "tier": "free",
+         "note": "Genesis 19:37 — *And the firstborn bare a son, and called his name Moab: the same is the father of the Moabites unto this day.* The Torah source of the Moab line Jasher records the firstborn bearing in the cave (Jasher 19:58)."},
+        {"src_ch": 19, "src_v": 59, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 19, "tgt_v": 38, "tier": "free",
+         "note": "Genesis 19:38 — *And the younger, she also bare a son, and called his name Ben-ammi: the same is the father of the children of Ammon unto this day.* Genesis names the Ammon line that Jasher calls Benami, father of the children of Ammon (Jasher 19:59)."},
+        {"src_ch": 19, "src_v": 57, "tgt_edition": "canon", "tgt_book": "2-peter", "tgt_ch": 2, "tgt_v": 7, "tier": "free",
+         "note": "2 Peter 2:7 — *And delivered just Lot, vexed with the filthy conversation of the wicked:* the NT names as righteous the Lot whom Jasher leaves grieving in the cave, delivered from the overthrow (Jasher 19:57)."},
+        {"src_ch": 19, "src_v": 57, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 16, "tgt_v": 6, "tier": "extras",
+         "note": "Jubilees 16:6 — *And, in like manner, Elohim (God) will execute judgment on the places where they have done according to the uncleanness of the Sodomites, like to the judgment of Sodom. But Lot we saved; for Elohim (God) remembered Abraham, and sent him out from the midst of the overthrow.* Jubilees grounds Lot's deliverance, which Jasher records, in election — Elohim remembered Abraham (Jasher 19:57)."}
+      ]
+    }
+  ]
+}

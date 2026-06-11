@@ -361,3 +361,32 @@ jasher + pglast + verify_fidelity + resolve_check jasher jasher → fold → aud
 jasher. Brief = MINION_BRIEF_JASHER.md. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
 /tmp/extracanon-xref-wt with keychain unlocked — 20 commits (85b660c..2baf39f) need to land on
 origin/main (still at 47a9e48); prod is authoritative meanwhile.
+
+## RECEIPT — Jasher Pack 2 (ch9–16, Nimrod vs Abraham) ✅ LIVE IN PROD
+- Applied 2026-06-11. EXACT: cumulative **91 `jasher-*` threads / 338 members**, band 55000–55387,
+  per-ch(9-16) 4/6/6/5/6/4/6/5, 0 orphans. +42/148. Commit `f115506`. Six gates green.
+- Abram in Noah & Shem's house/election out of idols (9→Gen11:29/Gen9:26/Josh24/Isa51:2/Acts7:2/Deut4:19/
+  Jub12:17); table of nations/bounds (10→Gen10/Deut32:8/Acts17:26/Jub8-10); Nimrod rebuilds Babel + Abram
+  breaks the idols (11→Gen10:8/Ps115/Isa44/Jer10/Jub12); the FURNACE + Nimrod's seed-war dream=Pharaoh/
+  Herod/dragon (12→Dan3/Isa43:2/Heb11:34/Exod1:16/Matt2:13/Rev12:4); idol-polemic (13); witness-who-won't-
+  bow (14→Dan3/Eccl8:8); delivered from fire (15→Dan3:27/Heb11:34); the CALL to Canaan (16→Gen12/Heb11:8).
+- ⚑ JASHER PARSE DEFECT (new): this edition BLOBS some chapters' later verses into one giant record —
+  **ch9 has only 7 addressable verses; standard Jasher 9:7-39 (Terah's idols, Abram's star-reasoning,
+  Nimrod, Babel) is all concatenated INSIDE verse 7** (with inline "8.", "9."…"39." markers). A minion
+  HALLUCINATED verses 8-39 (claimed "1-39 present"); anchor_check + resolve_check caught all 7 bad anchors
+  + 14 bad src refs before apply. Re-authored ch9 on addressable vv1-7 (the blob content is properly
+  versified in ch8/ch11 anyway). LESSON: warn Jasher minions that some chapters blob verses — only cite
+  verse numbers that appear as SEPARATE records in the dump; anchor_check is the backstop. Also fixed
+  Eccl8:9→8:8 (fidelity) + dropped a stale jub13:25 self-link (Jubilees gap).
+- Push blocked. origin/main 47a9e48; local HEAD `f115506` (21 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 1 ENOCH + JUBILEES COMPLETE + JASHER ch1-16 all LIVE = 778 threads/2862
+members. NEXT = Jasher Pack 3 ch17-24 (Abraham's life: the wars of the kings/Chedorlaomer + Melchizedek
+→Gen14; the covenant of pieces→Gen15; Hagar/Ishmael→Gen16/21; Sodom→Gen18-19; the binding of Isaac→Gen22;
+Sarah's death→Gen23 — VERIFY each chapter's actual content vs the dump, Jasher numbering can differ +
+some chapters blob verses). Then J4 ch25-32 … through ch91 (~9-10 more packs). Then Apocrypha (session253
+@58000). METHOD: workflow (pack-2 script + per-ch CONTEXT, ADD the blob-verse warning) → render →
+anchor_check.py jasher jasher + pglast + verify_fidelity + resolve_check jasher jasher → fold → audit →
+recon.py jasher jasher jasher. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
+/tmp/extracanon-xref-wt with keychain unlocked — 21 commits (85b660c..f115506) need to land on
+origin/main (still at 47a9e48); prod is authoritative meanwhile.
