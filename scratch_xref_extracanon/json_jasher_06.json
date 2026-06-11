@@ -1,0 +1,93 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 6,
+  "session": "session252",
+  "tag": "ja06",
+  "base_band": 55125,
+  "threads": [
+    {
+      "slug": "jasher-6-gathering-of-the-beasts",
+      "title": "Two and two, and the clean by sevens — the beasts gather to the ark",
+      "summary_md": "Jasher tells how the creatures came to Noah of their own accord: *And Noah brought into the ark from all living creatures that were upon earth, so that there was none left but which Noah brought into the ark* (Jasher 6:8), and *Two and two came to Noah into the ark, but from the clean animals, and clean fowls, he brought seven couples, as Elohim (God) had commanded him* (Jasher 6:9). This is the retelling of the Genesis command itself — *Of every clean beast thou shalt take to thee by sevens, the male and his female: and of beasts that are not clean by two, the male and his female* (Genesis 7:2) — and its doing: *There went in two and two unto Noah into the ark, the male and the female, as Elohim (God) had commanded Noah* (Genesis 7:9). Jubilees keeps the same record of the gathering: *he entered, and all that we brought to him, into the ark* (Jubilees 5:23). It ain't new — the clean-and-unclean distinction stands before Sinai, the Torah carried in the fathers.",
+      "anchor_start_v": 8,
+      "anchor_end_v": 9,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 9, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 2, "tier": "free", "note": "Genesis 7:2 — *Of every clean beast thou shalt take to thee by sevens, the male and his female: and of beasts that are not clean by two, the male and his female.* The clean-by-sevens command Jasher 6:9 retells, the Torah distinction kept before Sinai."},
+        {"src_ch": 6, "src_v": 9, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 9, "tier": "free", "note": "Genesis 7:9 — *There went in two and two unto Noah into the ark, the male and the female, as Elohim (God) had commanded Noah.* The two-and-two ingathering of Jasher 6:9, the same scene quoted beside its source."},
+        {"src_ch": 6, "src_v": 8, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 5, "tgt_v": 23, "tier": "extras", "note": "Jubilees 5:23 — *he entered, and all that we brought to him, into the ark, and Yahuah (God) closed it from without on the seventeenth evening.* Jubilees keeps the same record of the creatures brought in that Jasher 6:8 narrates, both witnesses now live."}
+      ]
+    },
+    {
+      "slug": "jasher-6-fountains-of-the-deep-broken-up",
+      "title": "The fountains of the deep broken up — the waters of the flood come",
+      "summary_md": "Jasher dates the storm to the very year Genesis does: *And at the end of seven days, in the six hundredth year of the life of Noah, the waters of the flood were upon the earth* (Jasher 6:13), and *And all the fountains of the deep were broken up, and the windows of heaven were opened, and the rain was upon the earth forty days and forty nights* (Jasher 6:14). This is Genesis word for word — *In the six hundredth year of Noah's life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened* (Genesis 7:11) — and *the rain was upon the earth forty days and forty nights* (Genesis 7:12). The Animal Apocalypse of Enoch saw the same flood as a vision: *And I saw again and behold fountains were opened on the earth, in that great enclosure, and that water began to swell and rise upon the earth* (1 Enoch 89:3). Jubilees agrees the very fountains were opened: *And the mouths of the fountains of the great deep, seven mouths in number* (Jubilees 5:23). It ain't new — three witnesses, one flood.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 14,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 11, "tier": "free", "note": "Genesis 7:11 — *In the six hundredth year of Noah's life, in the second month, the seventeenth day of the month, the same day were all the fountains of the great deep broken up, and the windows of heaven were opened.* The fountains and windows of Jasher 6:14, the Genesis source dated to the day."},
+        {"src_ch": 6, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 12, "tier": "free", "note": "Genesis 7:12 — *And the rain was upon the earth forty days and forty nights.* The forty days and nights Jasher 6:14 carries verbatim from its source."},
+        {"src_ch": 6, "src_v": 14, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 89, "tgt_v": 3, "tier": "extras", "note": "1 Enoch 89:3 — *And I saw again and behold fountains were opened on the earth, in that great enclosure, and that water began to swell and rise upon the earth, and I saw that enclosure till all its surface was covered with water.* Enoch's Animal Apocalypse sees the same fountains opened that Jasher 6:14 names, the flood-vision live beside it."},
+        {"src_ch": 6, "src_v": 14, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 5, "tgt_v": 23, "tier": "extras", "note": "Jubilees 5:23 — *And Yahuah (God) opened seven flood-gates of heaven, And the mouths of the fountains of the great deep, seven mouths in number.* Jubilees keeps the same fountains-of-the-deep that Jasher 6:14 reports, the patriarchal record self-linked."}
+      ]
+    },
+    {
+      "slug": "jasher-6-yahuah-shut-him-in",
+      "title": "Yahuah shut him in — the men shut out, all flesh died",
+      "summary_md": "Jasher records the shutting of the door and the perishing of all flesh: *And Noah and his household, and all the living creatures that were with him, came into the ark on account of the waters of the flood, and Yahuah (the Lord) shut him in* (Jasher 6:15), and *all flesh that was upon the earth or in the waters died, whether men, animals, beasts, creeping things or birds of the air, and there only remained Noah and those that were with him in the ark* (Jasher 6:26). Genesis is the same shutting and the same death: *and Yahuah (LORD) shut him in* (Genesis 7:16), and *And every living substance was destroyed which was upon the face of the ground… and Noah only remained alive, and they that were with him in the ark* (Genesis 7:23). Jasher adds the seven hundred thousand who begged at the door (Jasher 6:17) — the rebellion that said *that he does not exist* (Jasher 6:19) — but the verdict is the canon's: the door of mercy was shut after a hundred and twenty years of warning. The flood is judgment on the corrupted earth that the Watchers (Jasher 4, 1 Enoch, Jubilees 5) defiled.",
+      "anchor_start_v": 15,
+      "anchor_end_v": 26,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 15, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 16, "tier": "free", "note": "Genesis 7:16 — *And they that went in, went in male and female of all flesh, as Elohim (God) had commanded him: and Yahuah (LORD) shut him in.* The very shutting-in of Jasher 6:15, quoted beside its source."},
+        {"src_ch": 6, "src_v": 26, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 23, "tier": "free", "note": "Genesis 7:23 — *And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.* The death of all flesh and the remnant of Jasher 6:26, the Genesis verdict beside it."},
+        {"src_ch": 6, "src_v": 26, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 89, "tgt_v": 6, "tier": "extras", "note": "1 Enoch 89:6 — *But that vessel floated on the water, while all the oxen and elephants and camels and asses sank to the bottom with all the animals, so that I could no longer see them, and they were not able to escape, (but) perished and sank into the depths.* Enoch's vision of all the beasts drowned while the vessel floats matches the all-flesh-died of Jasher 6:26."},
+        {"src_ch": 6, "src_v": 15, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 5, "tgt_v": 19, "tier": "extras", "note": "Jubilees 5:19 — *no man's person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account; for his heart was righteous in all his ways.* Jubilees names the same righteous remnant shut into the ark of Jasher 6:15, the election of the seed-line kept."}
+      ]
+    },
+    {
+      "slug": "jasher-6-ark-borne-up-and-rested",
+      "title": "The ark borne up and the wind passes — the waters abate on Ararat",
+      "summary_md": "Jasher tells how the waters lifted the ark and then stilled: *And the waters prevailed and they greatly increased upon the earth, and they lifted up the ark and it was raised from the earth* (Jasher 6:27), and after Noah's prayer *a wind passed over the earth, and the waters were still and the ark rested* (Jasher 6:33), till *the ark rested upon the mountains of Ararat* (Jasher 6:35). Genesis bears the same lifting, the same wind, the same resting place: *and the waters increased, and bare up the ark, and it was lift up above the earth* (Genesis 7:17); *And Elohim (God) made a wind to pass over the earth, and the waters asswaged* (Genesis 8:1); *And the ark rested in the seventh month, on the seventeenth day of the month, upon the mountains of Ararat* (Genesis 8:4). Enoch's Animal Apocalypse saw the vessel float and then settle: *But that vessel floated on the water* (1 Enoch 89:6) and *that vessel settled on the earth, and the darkness retired and light appeared* (1 Enoch 89:8). It ain't new — Yahuah remembered Noah, and the same wind that hovered over the deep at creation passes over it again.",
+      "anchor_start_v": 27,
+      "anchor_end_v": 35,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 27, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 17, "tier": "free", "note": "Genesis 7:17 — *And the flood was forty days upon the earth; and the waters increased, and bare up the ark, and it was lift up above the earth.* The ark borne up of Jasher 6:27, the Genesis source quoted beside it."},
+        {"src_ch": 6, "src_v": 33, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 8, "tgt_v": 1, "tier": "free", "note": "Genesis 8:1 — *And Elohim (God) remembered Noah, and every living thing, and all the cattle that was with him in the ark: and Elohim (God) made a wind to pass over the earth, and the waters asswaged.* The wind passing and the waters stilling of Jasher 6:33, the canon's I-remembered-him beside it."},
+        {"src_ch": 6, "src_v": 35, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 8, "tgt_v": 4, "tier": "free", "note": "Genesis 8:4 — *And the ark rested in the seventh month, on the seventeenth day of the month, upon the mountains of Ararat.* The resting on Ararat of Jasher 6:35, dated to the day in its Genesis source."},
+        {"src_ch": 6, "src_v": 27, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 89, "tgt_v": 8, "tier": "extras", "note": "1 Enoch 89:8 — *Then the water began to run down into these, till the earth became visible; but that vessel settled on the earth, and the darkness retired and light appeared.* Enoch's vessel settling as the waters run down matches the ark borne up and resting of Jasher 6:27, 6:35."}
+      ]
+    },
+    {
+      "slug": "jasher-6-go-forth-blessed-fruitful",
+      "title": "Go forth and be fruitful — Noah leaves the ark blessed",
+      "summary_md": "Jasher closes the flood with the going-forth and the blessing: *the earth was dry, but Noah and his sons, and those that were with him, did not go out from the ark until Yahuah (the Lord) told them* (Jasher 6:39); *they all went out from the ark* (Jasher 6:40); *Yahuah (the Lord) blessed Noah and his sons on their going out from the ark* (Jasher 6:41); *And he said to them, Be fruitful and fill all the earth; become strong and increase abundantly in the earth and multiply in it* (Jasher 6:42). Genesis carries the same command to go forth and the same blessing: *Go forth of the ark, thou, and thy wife, and thy sons, and thy sons' wives with thee* (Genesis 8:16), and *And Elohim (God) blessed Noah and his sons, and said unto them, Be fruitful, and multiply, and replenish the earth* (Genesis 9:1). Jubilees keeps the blessing in the very words: *And you, increase you and multiply upon the earth, and become many upon it, and be a blessing upon it* (Jubilees 6:5). The seed-line goes on — Adam to Seth to Noah to Shem — the chosen line through whom the earth is overspread.",
+      "anchor_start_v": 39,
+      "anchor_end_v": 42,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 40, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 8, "tgt_v": 16, "tier": "free", "note": "Genesis 8:16 — *Go forth of the ark, thou, and thy wife, and thy sons, and thy sons' wives with thee.* The command to go out that Jasher 6:40 obeys, the Genesis source beside it."},
+        {"src_ch": 6, "src_v": 42, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 9, "tgt_v": 1, "tier": "free", "note": "Genesis 9:1 — *And Elohim (God) blessed Noah and his sons, and said unto them, Be fruitful, and multiply, and replenish the earth.* The be-fruitful blessing of Jasher 6:42, the Genesis charge to the renewed seed-line."},
+        {"src_ch": 6, "src_v": 42, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 6, "tgt_v": 5, "tier": "extras", "note": "Jubilees 6:5 — *And you, increase you and multiply upon the earth, and become many upon it, and be a blessing upon it.* Jubilees keeps the same multiply-and-be-a-blessing word that Jasher 6:42 carries, the patriarchal record self-linked."}
+      ]
+    },
+    {
+      "slug": "jasher-6-altar-covenant-bow",
+      "title": "The altar, the I-will-not-again, and the bow — the covenant after the flood",
+      "summary_md": "Though Jasher 6 ends at the going-forth and the be-fruitful blessing, its scene of Noah preserved and sent out to fill the earth opens directly upon the altar, the sweet savour, and the bow of the covenant in the canon and in Jubilees. Where Jasher records Noah *served Yahuah (the Lord) all their days* (Jasher 6:41) on leaving the ark, Genesis shows what that service was: *And Noah builded an altar unto Yahuah (LORD); and took of every clean beast… and offered burnt offerings on the altar* (Genesis 8:20), and Yahuah's pledge *I will not again curse the ground any more for man's sake* (Genesis 8:21), sealed with *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth* (Genesis 9:13). Jubilees keeps the altar and the same goodly savour and bow: *And Yahuah (God) smelt the goodly savour, and He made a covenant with him that there should not be any more a flood to destroy the earth* (Jubilees 6:4), and *He set His bow in the cloud for a sign of the eternal covenant* (Jubilees 6:16). The clean-beast altar before Sinai — Torah stands; the fathers kept the way.",
+      "anchor_start_v": 41,
+      "anchor_end_v": 41,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 6, "src_v": 41, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 8, "tgt_v": 20, "tier": "free", "note": "Genesis 8:20 — *And Noah builded an altar unto Yahuah (LORD); and took of every clean beast, and of every clean fowl, and offered burnt offerings on the altar.* The service of Yahuah that Jasher 6:41 records is the clean-beast altar of Genesis, Torah-worship before Sinai."},
+        {"src_ch": 6, "src_v": 41, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 8, "tgt_v": 21, "tier": "free", "note": "Genesis 8:21 — *And Yahuah (LORD) smelled a sweet savour; and Yahuah (LORD) said in his heart, I will not again curse the ground any more for man's sake; for the imagination of man's heart is evil from his youth; neither will I again smite any more every thing living, as I have done.* The mercy that follows Noah's altar in Jasher 6:41, the I-will-not-again of the covenant."},
+        {"src_ch": 6, "src_v": 41, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 9, "tgt_v": 13, "tier": "free", "note": "Genesis 9:13 — *I do set my bow in the cloud, and it shall be for a token of a covenant between me and the earth.* The bow sealing the covenant that crowns Noah's service in Jasher 6:41."},
+        {"src_ch": 6, "src_v": 41, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 6, "tgt_v": 4, "tier": "extras", "note": "Jubilees 6:4 — *And Yahuah (God) smelt the goodly savour, and He made a covenant with him that there should not be any more a flood to destroy the earth.* Jubilees keeps the same altar-savour and no-more-flood covenant that follows the service of Jasher 6:41."},
+        {"src_ch": 6, "src_v": 41, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 6, "tgt_v": 16, "tier": "extras", "note": "Jubilees 6:16 — *He set His bow in the cloud for a sign of the eternal covenant that there should not again be a flood on the earth to destroy it all the days of the earth.* Jubilees keeps the bow of the eternal covenant that crowns Noah's going-forth in Jasher 6:41, self-linked."}
+      ]
+    }
+  ]
+}

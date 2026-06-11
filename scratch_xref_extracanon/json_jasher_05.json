@@ -1,0 +1,118 @@
+{
+  "edition": "jasher",
+  "book": "jasher",
+  "chapter": 5,
+  "session": "session252",
+  "tag": "ja05",
+  "base_band": 55100,
+  "threads": [
+    {
+      "slug": "jasher-5-seed-line-fathers-die",
+      "title": "The chosen line dies away — Seth's sons buried before the flood",
+      "summary_md": "Jasher opens by burying the seed-line generation by generation: *And it was in the eighty-fourth year of the life of Noah, that Enoch the son of Seth died, he was nine hundred and five years old at his death* (Jasher 5:1), then Cainan, Mahlallel, and Jared, *And all who followed Yahuah (the Lord) died in those days, before they saw the evil which Elohim (God) declared to do upon earth* (Jasher 5:5). This is the very roll-call of Genesis 5, the book of the chosen seed Adam→Seth→Noah. Genesis gives the same line and the same lifespans: *And all the days of Cainan were nine hundred and ten years: and he died* (Genesis 5:14), and traces it to Noah's father Lamech — *And he called his name Noah, saying, This same shall comfort us concerning our work and toil of our hands, because of the ground which Yahuah (LORD) hath cursed* (Genesis 5:29). Jubilees keeps the same righteous remnant frame, that of all the corrupt generation *no man's person was accepted save that of Noah alone* (Jubilees 5:19). It ain't new — the election precedes the flood; the righteous are gathered home before the judgment falls.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 5,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 5, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 5:8 — *And all the days of Seth were nine hundred and twelve years: and he died.* Jasher's dying patriarchs are the same chosen Sethite line Genesis numbers and buries before the flood."},
+        {"src_ch": 5, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 5, "tgt_v": 14, "tier": "free",
+         "note": "Genesis 5:14 — *And all the days of Cainan were nine hundred and ten years: and he died.* Genesis gives Cainan's exact nine hundred and ten years that Jasher 5:2 repeats."},
+        {"src_ch": 5, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 5, "tgt_v": 20, "tier": "free",
+         "note": "Genesis 5:20 — *And all the days of Jared were nine hundred sixty and two years: and he died.* Jared's nine hundred sixty-two years in Jasher 5:4 stand verbatim with the canon roll of the seed-line."},
+        {"src_ch": 5, "src_v": 5, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 5, "tgt_v": 19, "tier": "extras",
+         "note": "Jubilees 5:19 — *And as for all those who corrupted their ways and their thoughts before the flood, no man's person was accepted save that of Noah alone; for his person was accepted in behalf of his sons, whom Elohim (God) saved from the waters of the flood on his account...* The fathers who followed Yahuah die out (Jasher 5:5), leaving Noah alone as the accepted remnant."}
+      ]
+    },
+    {
+      "slug": "jasher-5-hundred-twenty-years-warning",
+      "title": "The hundred and twenty years — Noah and Methuselah preach repentance",
+      "summary_md": "Elohim sends a herald's grace before the sword: *For thus says Yahuah (the Lord), Behold I give you a period of one hundred and twenty years; if you will turn to me and forsake your evil ways, then will I also turn away from the evil which I told you* (Jasher 5:8), and *Noah and Methuselah spoke all the words of Yahuah (the Lord) to the sons of men, day after day, constantly speaking to them* (Jasher 5:9). This is Genesis 6:3 unfolded into a preaching ministry — *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years* (Genesis 6:3). The New Testament names the office Jasher dramatizes: God *spared not the old world, but saved Noah the eighth person, a preacher of righteousness* (2 Peter 2:5). Jubilees frames the same hundred and twenty years against the corrupted flesh — *Your spirit will not always abide on man; for they also are flesh and their days shall be one hundred and twenty years* (Jubilees 5:8). The longsuffering call goes out first; the door stays open a hundred and twenty years before it shuts.",
+      "anchor_start_v": 6,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 3, "tier": "free",
+         "note": "Genesis 6:3 — *And Yahuah (LORD) said, My spirit shall not always strive with man, for that he also is flesh: yet his days shall be an hundred and twenty years.* Jasher 5:8 unfolds this same hundred and twenty year reprieve as a spoken call to repent."},
+        {"src_ch": 5, "src_v": 9, "tgt_edition": "canon", "tgt_book": "2-peter", "tgt_ch": 2, "tgt_v": 5, "tier": "free",
+         "note": "2 Peter 2:5 — *And spared not the old world, but saved Noah the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly.* The apostle names the preaching office Jasher 5:9 shows Noah and Methuselah filling day after day."},
+        {"src_ch": 5, "src_v": 8, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 5, "tgt_v": 8, "tier": "extras",
+         "note": "Jubilees 5:8 — *And He said \"Your spirit will not always abide on man; for they also are flesh and their days shall be one hundred and twenty years.\"* The same hundred and twenty year decree against corrupted flesh stands in the live Jubilees apparatus beside Jasher 5:8."}
+      ]
+    },
+    {
+      "slug": "jasher-5-noah-just-and-perfect-chosen",
+      "title": "Noah a just man, perfect — chosen to raise up seed",
+      "summary_md": "The election is stated plainly: *And Noah was a just man, he was perfect in his generation, and Yahuah (the Lord) chose him to raise up seed from his seed upon the face of the earth* (Jasher 5:13), and the LORD commands him to marry and beget — *Take to you a wife, and beget children, for I have seen you righteous before me in this generation* (Jasher 5:14). This is Genesis 6:8-9 carried into Jasher's narrative: *But Noah found grace in the eyes of Yahuah (LORD)... Noah was a just man and perfect in his generations, and Noah walked with Elohim (God)* (Genesis 6:8-9). The Companion of faith records it as the founding act of trust: *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house... and became heir of the righteousness which is by faith* (Hebrews 11:7). Jasher even names the sons — *he called his name Shem, saying, Elohim has made me a remnant, to raise up seed in the midst of the earth* (Jasher 5:17) — the very triad of Genesis 6:10. Election precedes the ark: God chooses the righteous seed, then preserves it.",
+      "anchor_start_v": 12,
+      "anchor_end_v": 18,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 9, "tier": "free",
+         "note": "Genesis 6:9 — *These are the generations of Noah: Noah was a just man and perfect in his generations, and Noah walked with Elohim (God).* Jasher 5:13 repeats the canon's just-and-perfect verdict that grounds Noah's election."},
+        {"src_ch": 5, "src_v": 14, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 6:8 — *But Noah found grace in the eyes of Yahuah (LORD).* The grace Genesis names is the choosing Jasher 5:14 voices when the LORD bids Noah beget seed."},
+        {"src_ch": 5, "src_v": 13, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 7, "tier": "free",
+         "note": "Hebrews 11:7 — *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith.* The faith-righteousness of the Companion is the same just man Jasher 5:13 says God chose to raise seed."},
+        {"src_ch": 5, "src_v": 17, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 10, "tier": "free",
+         "note": "Genesis 6:10 — *And Noah begat three sons, Shem, Ham, and Japheth.* Jasher 5:17 names the same sons through whom the remnant seed is carried past the flood."}
+      ]
+    },
+    {
+      "slug": "jasher-5-command-build-the-ark",
+      "title": "Make a large ark of gopher wood — the flood decreed",
+      "summary_md": "The judgment-word and the building command come together: *The end of all flesh is come before me, on account of their evil deeds, and behold I will destroy the earth* (Jasher 5:25), *And do you take to you gopher wood, and go to a certain place and make a large ark... three hundred cubits its length, fifty cubits broad and thirty cubits high* (Jasher 5:26-27). Jasher quotes Genesis almost word for word: *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth* (Genesis 6:13), *Make thee an ark of gopher wood... The length of the ark shall be three hundred cubits, the breadth of it fifty cubits, and the height of it thirty cubits* (Genesis 6:14-15). The covenant of preservation belongs to this same word: *But with thee will I establish my covenant; and thou shalt come into the ark* (Genesis 6:18). It ain't new — the dimensions, the gopher wood, the pitch, the door all stand in the Torah Jasher is retelling.",
+      "anchor_start_v": 25,
+      "anchor_end_v": 29,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 25, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 13, "tier": "free",
+         "note": "Genesis 6:13 — *And Elohim (God) said unto Noah, The end of all flesh is come before me; for the earth is filled with violence through them; and, behold, I will destroy them with the earth.* Jasher 5:25 carries the canon's end-of-all-flesh decree nearly word for word."},
+        {"src_ch": 5, "src_v": 26, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 14, "tier": "free",
+         "note": "Genesis 6:14 — *Make thee an ark of gopher wood; rooms shalt thou make in the ark, and shalt pitch it within and without with pitch.* The gopher-wood ark Jasher 5:26 commands is the very ark of the Torah."},
+        {"src_ch": 5, "src_v": 27, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 6:15 — *And this is the fashion which thou shalt make it of: The length of the ark shall be three hundred cubits, the breadth of it fifty cubits, and the height of it thirty cubits.* Jasher 5:27 gives the identical three-hundred-by-fifty-by-thirty cubit measure."},
+        {"src_ch": 5, "src_v": 29, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 17, "tier": "free",
+         "note": "Genesis 6:17 — *And, behold, I, even I, do bring a flood of waters upon the earth, to destroy all flesh, wherein is the breath of life, from under heaven; and every thing that is in the earth shall die.* Jasher 5:29's flood of waters destroying all flesh matches the canon's own threat."},
+        {"src_ch": 5, "src_v": 25, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 18, "tier": "free",
+         "note": "Genesis 6:18 — *But with thee will I establish my covenant; and thou shalt come into the ark, thou, and thy sons, and thy wife, and thy sons' wives with thee.* The covenant of preservation rides on the same word of judgment Jasher 5:25 reports."}
+      ]
+    },
+    {
+      "slug": "jasher-5-two-of-every-sort-and-food",
+      "title": "Two couple of all living things — gather them and their food",
+      "summary_md": "Noah is told to preserve the living seed of the world: *And you and your household shall go and gather two couple of all living things, male and female, and shall bring them to the ark, to raise up seed from them upon earth* (Jasher 5:30), *And gather to you all food that is eaten by all the animals, that there may be food for you and for them* (Jasher 5:31). Genesis gives the same charge: *And of every living thing of all flesh, two of every sort shalt thou bring into the ark, to keep them alive with thee; they shall be male and female* (Genesis 6:19), and *take thou unto thee of all food that is eaten, and thou shalt gather it to thee; and it shall be for food for thee, and for them* (Genesis 6:21). Jubilees records the obedient builder behind it: *And Noah made the ark in all respects as He commanded him, in the twenty-seventh jubilee of years* (Jubilees 5:22). The same ark, the same pairs, the same provision — preservation of the seed against the day of waters.",
+      "anchor_start_v": 30,
+      "anchor_end_v": 33,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 30, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 19, "tier": "free",
+         "note": "Genesis 6:19 — *And of every living thing of all flesh, two of every sort shalt thou bring into the ark, to keep them alive with thee; they shall be male and female.* Jasher 5:30's two couple of all living things, male and female, is the Torah's own command to preserve the seed."},
+        {"src_ch": 5, "src_v": 31, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 21, "tier": "free",
+         "note": "Genesis 6:21 — *And take thou unto thee of all food that is eaten, and thou shalt gather it to thee; and it shall be for food for thee, and for them.* The provisioning Jasher 5:31 records is the canon's identical charge to gather food for man and beast."},
+        {"src_ch": 5, "src_v": 33, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 6, "tgt_v": 22, "tier": "free",
+         "note": "Genesis 6:22 — *Thus did Noah; according to all that Elohim (God) commanded him, so did he.* Jasher 5:33's obedient ark-building is the Torah's summary verdict that Noah did all as commanded."},
+        {"src_ch": 5, "src_v": 33, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 5, "tgt_v": 22, "tier": "extras",
+         "note": "Jubilees 5:22 — *And Noah made the ark in all respects as He commanded him, in the twenty-seventh jubilee of years, in the fifth week in the fifth year (on the new moon of the first month).* The live Jubilees apparatus dates the same obedient ark-building Jasher 5:33 narrates."}
+      ]
+    },
+    {
+      "slug": "jasher-5-righteous-seen-before-me",
+      "title": "Seen righteous before me — the call to come into the ark",
+      "summary_md": "Twice the LORD names Noah's righteousness as the ground of his salvation: *for I have seen you righteous before me in this generation* (Jasher 5:14), and the household is gathered with the maidens chosen for the sons, *as Yahuah (the Lord) had commanded Noah* (Jasher 5:35), down to Methuselah's death as the waters near (Jasher 5:36). This is Genesis 7's threshold-word: *And Yahuah (LORD) said unto Noah, Come thou and all thy house into the ark; for thee have I seen righteous before me in this generation* (Genesis 7:1). The clean and unclean enter as the Torah-before-Sinai already distinguished them — *Of every clean beast thou shalt take to thee by sevens, the male and his female: and of beasts that are not clean by two* (Genesis 7:2) — and Noah obeys: *And Noah did according unto all that Yahuah (LORD) commanded him* (Genesis 7:5). 1 Enoch preserves the same warning sent ahead of the deluge: *Go to Noah and tell him in My Name \"Hide thyself!\" and reveal to him the end that is approaching* (1 Enoch 10:2). The righteous remnant is warned, gathered, and shut in before the world of the ungodly is swept away.",
+      "anchor_start_v": 32,
+      "anchor_end_v": 36,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 5, "src_v": 35, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 7:1 — *And Yahuah (LORD) said unto Noah, Come thou and all thy house into the ark; for thee have I seen righteous before me in this generation.* Jasher's seen-righteous verdict and household-gathering (5:14, 5:35) lead straight into the canon's call to enter the ark."},
+        {"src_ch": 5, "src_v": 30, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 7:2 — *Of every clean beast thou shalt take to thee by sevens, the male and his female: and of beasts that are not clean by two, the male and his female.* The clean/unclean distinction stands before Sinai — Torah already in force as Jasher 5:30 gathers the living kinds."},
+        {"src_ch": 5, "src_v": 33, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 7, "tgt_v": 5, "tier": "free",
+         "note": "Genesis 7:5 — *And Noah did according unto all that Yahuah (LORD) commanded him.* The obedient Noah of Jasher 5:33 is the canon's same man who did all the LORD commanded."},
+        {"src_ch": 5, "src_v": 25, "tgt_edition": "enoch", "tgt_book": "1-enoch", "tgt_ch": 10, "tgt_v": 2, "tier": "extras",
+         "note": "1 Enoch 10:2 — *And said to him: 'Go to Noah and tell him in My Name \"Hide thyself!\" and reveal to him the end that is approaching: that the whole earth will be destroyed, and a deluge is about to come upon the whole earth, and will destroy all that is on it.* The live Enoch apparatus carries the same end-is-coming warning to Noah that Jasher 5:25 reports."}
+      ]
+    }
+  ]
+}
