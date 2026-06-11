@@ -2396,6 +2396,32 @@ function Reader() {
               <span aria-hidden="true">✎</span>
               <span>Notes</span>
             </button>
+            {/* S227 — chrome entry point to The Appointed Times (the
+                biblical-calendar surface at /calendar). The calendar was
+                built as a standalone, auth-free route (it doubles as the
+                engine's live demo), but the app drops authenticated
+                partners straight into the reader and never shows the
+                website Landing page — so before this there was NO in-app
+                door to it. It sits in the main chrome cluster alongside
+                the other feature buttons (a top-level destination, peer
+                to ⚙ Settings — hence the same `<a href>` full-page
+                navigation, not a modal). The calendar's own Header
+                carries a "← Back to reading" link to /read, so the round
+                trip lands the partner back in the reader, not a dead end.
+                Its dedicated `moedim` register (techelet firmament body,
+                gold feast frame) previews the calendar surface and stays
+                distinct from Search (techelet) and Listen (gold). ☾ glyph
+                for the moon-reckoned moedim. Free at all tiers — the
+                calendar needs no backend. */}
+            <a
+              href="/calendar"
+              aria-label="Open The Appointed Times calendar"
+              title="The Appointed Times"
+              className="chrome-metal chrome-metal-moedim"
+            >
+              <span aria-hidden="true">☾</span>
+              <span>The Appointed Times</span>
+            </a>
             <ThemeToggle />
             {/* S172 — Settings entry in the top-right chrome cluster.
                 Slots between the Theme toggle (display chrome) and the

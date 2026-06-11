@@ -443,6 +443,19 @@ body {
   border-color: #9FD0FF;
   color: #EAF4FF;
 }
+/* S227 — The Appointed Times chrome register. The calendar's own
+ * signature made into a button: a techelet-blue firmament body (the
+ * heavens that carry the lights for signs and moedim, Gen 1:14) framed
+ * in the feast-gold border + warm gold-cream label. Mirrors the
+ * calendar surface itself (cal-notes is a techelet strip with a gold ✦
+ * accent) so this front-door previews the room it opens. Distinct from
+ * techelet (Search — blue border) and gold (Listen — gold body); NO
+ * grey. Used by the chrome-cluster "The Appointed Times" entry point. */
+.chrome-metal-moedim {
+  background-image: linear-gradient(to right, #0A2D84 0%, #1A6FE5 50%, #0A2D84 100%);
+  border-color: #FCECAF;
+  color: #FFF8E1;
+}
 
 /* ─── S204 — The Witness (working title: Red Pill) ────────────────────
  *
