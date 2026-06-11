@@ -134,3 +134,35 @@ unresolved, pglast 68 stmts on the assembled migration).
   Psalm 24:1. NT-Lord rule preserved: 10:21–22,26,28 titular/citation *Yahuah (Lord)* kept verbatim.
 - **Extras discipline:** ch8 Wisdom 13–14 (idols nothing), ch9 Sirach 18:30 (the temperate athlete),
   ch10 Wisdom 14:12/27 (idolatry+fornication). All clean apocrypha pulls, load-bearing.
+
+---
+
+## PACK 4 (ch11–12) — LIVE in prod, applied 2026-06-11.
+5 threads / 24 cross_refs / 24 members, per-ch 2/3, band 6850–6881.
+
+### Load-bearing / framework-sensitive decisions:
+- **★ 11:23–25 *this cup is the new covenant in my blood* (slug `1-corinthians-11-this-cup-is-the-new-covenant-in-my-blood-exodus-24-jeremiah-31`)**
+  — built on Exodus 24:8 (blood of the covenant at Sinai) + Jeremiah 31:31,33 (new covenant WITH the
+  house of Israel AND the house of Judah, law written on the heart) + Exodus 12:14 (Passover memorial
+  for ever) + Luke 22:19–20 / Matthew 26:26–28. DECISION: **the supper is the covenant-Passover
+  memorial of Israel's Elohim renewed in the Messiah's blood — NOT a new rite that left Israel
+  behind; the new covenant of Jer 31 is made WITH the two houses, not replacing them; it writes the
+  law on the heart (a law-written people, not a people released from the commandments).** Sibling of
+  the ch5 keep-the-feast Passover framing. Summary surfaced to Yoshi.
+- **11:3,7–9 head-covering / creation order (slug `...the-head-of-the-woman-and-the-glory-of-creation-order-genesis-1-2`)**
+  — built on Genesis 1:26–27, 2:18,21,23. DECISION: order of glory, NOT ranking of worth; held in
+  balance by the 11:11–12 counterweight (*neither is the man without the woman... in the Lord... all
+  things of Elohim*). 11:3 *the head of Messiah is Elohim* = the Formed Son ordered under the Father
+  (no co-equal-persons grammar). NT-Lord rule: supper *Lord* = Yahusha titular throughout; 11:32
+  chastening *Yahuah (the Lord)* — both preserved verbatim.
+- **★ 12:13 *by one Spirit baptized into one body, whether Jews or Gentiles* (slug `1-corinthians-12-by-one-spirit-baptized-into-one-body-jews-and-gentiles-made-one-ezekiel-37`)**
+  — built on **Ezekiel 37:19,22 (the two sticks made one nation)** + Romans 12:5 + Ephesians 4:4.
+  DECISION: **the one body = Israel-and-the-grafted made ONE, the two-house regathering, NOT a
+  replacement people.** This is the canonical two-house framing for the "one body" figure across the
+  letters (sibling: Ephesians 2 middle-wall, the next book's ch2 watchpoint). Honest Tanakh anchoring
+  on the one genuine root rather than forcing OT verses onto the NT-internal gift-lists.
+- **12:3 Spirit-given confession** — Matthew 16:16–17 + Romans 10:9. **12:4–11 gift-triad
+  deliberately carries NO forced Shema/OT root** (the chapter is not mounting a one-Elohim argument);
+  honest "none warranted" rather than a weak verbal coincidence.
+- **Extras:** ch11 and ch12 both correctly carry ZERO extras (creation-order, supper, and one-body
+  are Tanakh+NT weaves; no load-bearing extra-canonical witness). Recorded honestly.
