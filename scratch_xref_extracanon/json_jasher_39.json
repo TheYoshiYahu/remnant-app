@@ -1,0 +1,120 @@
+{
+  "edition": "jasher", "book": "jasher", "chapter": 39,
+  "session": "session252", "tag": "ja39", "base_band": 55950,
+  "threads": [
+    {
+      "slug": "jasher-39-amorite-portion-sword-and-bow",
+      "title": "The land taken out of the hand of the Amorite — with sword and with bow",
+      "summary_md": "Jasher 39 is the long war of Jacob's sons against the Amorite cities — Tapnach, Arbelan, and the triple-walled Gaash: *\"And the sons of Jacob did to Machnaymah as they had done to Tapnach, to Chazar and to Shiloh, and they turned from there and went away\"* (Jasher 39:13). The canon does not tell the campaign in full, but it carries the deed in a single line Jacob speaks to Joseph on his deathbed — *\"Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow\"* (Genesis 48:22). That one verse is the seed; Jasher is the field it grew into. The taking was not theft but the covenant clock running out on a people: *\"But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full\"* (Genesis 15:16). It ain't new — the patriarchs already wielded the sword and bow Jacob would name.",
+      "anchor_start_v": 13, "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 39, "src_v": 13,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 48, "tgt_v": 22,
+         "tier": "free",
+         "note": "Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* Jacob's lone canonical line about taking land from the Amorite is the whole campaign Jasher 39 narrates city by city."},
+        {"src_ch": 39, "src_v": 15,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 15, "tgt_v": 16,
+         "tier": "free",
+         "note": "Genesis 15:16 — *But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full.* The Amorites of Gaash whom the sons of Jacob smite are the same people whose iniquity Yahuah told Abram would one day be full."}
+      ]
+    },
+    {
+      "slug": "jasher-39-jubilees-seven-kings-of-the-amorites",
+      "title": "The seven kings of the Amorites — Jubilees tells the same war",
+      "summary_md": "Jasher's roll of besieged cities is no invention: Jubilees narrates the identical event, the assembling of the Amorite kings against Jacob's house — *\"And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey\"* (Jubilees 34:2). The very city-names match across the two books — *\"And there came the kings of Tâphû, and the kings of ’Arêsa, and the kings of Sêragân, and the kings of Sêlô, and the kings of Gâ’as, and the king of Bêthôrôn...\"* (Jubilees 34:4): Tâphû is Jasher's Tapnach, Gâ’as is Gaash, Sêlô is Shiloh, Bêthôrôn is Bethchorin (Jasher 39:51). And the outcome Jubilees gives is exactly Jasher's spoil and conquest — *\"And he prevailed over them, and imposed tribute on them that they should pay him tribute, five fruit products of their land\"* (Jubilees 34:8). Two witnesses, one war — the canon's hidden campaign, kept.",
+      "anchor_start_v": 14, "anchor_end_v": 16,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 39, "src_v": 14,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 34, "tgt_v": 2,
+         "tier": "extras",
+         "note": "Jubilees 34:2 — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey.* Jubilees compresses into one verse the gathering of the Amorite cities that Jasher 39 unfolds at Tapnach, Arbelan and Gaash."},
+        {"src_ch": 39, "src_v": 15,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 34, "tgt_v": 4,
+         "tier": "extras",
+         "note": "Jubilees 34:4 — *And there came the kings of Tâphû, and the kings of ’Arêsa, and the kings of Sêragân, and the kings of Sêlô, and the kings of Gâ’as, and the king of Bêthôrôn, and the king of Ma’anîsâkîr, and all those who dwell in these mountains (and) who dwell in the woods in the land of Canaan.* Tâphû, Gâ’as and Sêlô are Jasher's Tapnach, Gaash and Shiloh — the same Amorite kings, named in both books."},
+        {"src_ch": 39, "src_v": 16,
+         "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 34, "tgt_v": 8,
+         "tier": "extras",
+         "note": "Jubilees 34:8 — *And he prevailed over them, and imposed tribute on them that they should pay him tribute, five fruit products of their land, and he built Rôbêl and Tamnâtârês.* The victory and tribute Jubilees records is the same conquest Jasher 39 wins city by fortified city."}
+      ]
+    },
+    {
+      "slug": "jasher-39-judah-the-lion-on-the-wall",
+      "title": "Judah's shriek and the lion's whelp",
+      "summary_md": "When Gaash held the gate and reviled Israel's Elohim, Judah leaped the wall alone: *\"And he ran at a distance with all his might, with his drawn sword in his hand, and he sprang from the earth and by dint of his strength, mounted the wall, and his sword fell from his hand\"* (Jasher 39:29), and at his cry men fell from the wall — for the men of Gaash *\"were terrified at the voice of Judah’s cry\"* (Jasher 39:19). This is the lion the canon names: *\"Yahudah (Judah) is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?\"* (Genesis 49:9), the brother whose hand is on the neck of his enemies — *\"Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee\"* (Genesis 49:8). And it was zeal, not bravado: *\"Judah was jealous of his Elohim (God) in this matter, and he called out and said, O Yahuah (O Lord), help, send help to us and our brothers\"* (Jasher 39:28). The favored royal seed already walks here — it ain't new.",
+      "anchor_start_v": 19, "anchor_end_v": 34,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 39, "src_v": 19,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 9,
+         "tier": "free",
+         "note": "Genesis 49:9 — *Yahudah (Judah) is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* Judah's roar that topples men from the wall of Gaash is the lion's whelp Jacob's blessing names."},
+        {"src_ch": 39, "src_v": 34,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 8,
+         "tier": "free",
+         "note": "Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee.* Judah seizing the fallen swords and slaying twenty upon the wall is the hand-on-the-enemies'-neck the blessing foretells."}
+      ]
+    },
+    {
+      "slug": "jasher-39-simeon-levi-instruments-of-war",
+      "title": "Simeon and Levi — the swords that divide a man in two",
+      "summary_md": "Through the whole siege the brothers fight in pairs, and twice it is Simeon and Levi whose two swords meet inside the body of a mighty man: *\"And Simeon and Levi ran upon the powerful man with their swords and struck at him forcibly with their swords, and the two swords entered the body of the powerful man and divided it in two, length-wise\"* (Jasher 39:63). The canon already knew these two as the brothers of the sword — Jacob's blessing turns elegy into prophecy: *\"Simeon and Levi are brethren; instruments of cruelty are in their habitations\"* (Genesis 49:5), *\"for in their anger they slew a man, and in their selfwill they digged down a wall\"* (Genesis 49:6). The wall they digged down at Shechem in Genesis 34 is the same fierce zeal that mounts and breaches walls all through Jasher 39 — *\"And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males\"* (Genesis 34:25).",
+      "anchor_start_v": 59, "anchor_end_v": 63,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 39, "src_v": 63,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 5,
+         "tier": "free",
+         "note": "Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* The two brothers whose swords together cleave the mighty man of Gaash are the sword-brothers Jacob names as one pair."},
+        {"src_ch": 39, "src_v": 59,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 6,
+         "tier": "free",
+         "note": "Genesis 49:6 — *O my soul, come not thou into their secret; unto their assembly, mine honour, be not thou united: for in their anger they slew a man, and in their selfwill they digged down a wall.* Simeon and Levi felling the powerful man with the sword is the very anger and wall-breaking Jacob's blessing recalls."},
+        {"src_ch": 39, "src_v": 49,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 34, "tgt_v": 25,
+         "tier": "free",
+         "note": "Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* The zeal that took Shechem at the start is the same Simeon-and-Levi fury that scales and storms the cities of Jasher 39."}
+      ]
+    },
+    {
+      "slug": "jasher-39-cry-to-yahuah-saved-by-his-arm",
+      "title": "They cried to Yahuah and gained strength — not their own bow",
+      "summary_md": "At Arbelan the brothers nearly perished until they turned to heaven: *\"And the sons of Jacob could not prevail over them, and the sons of Jacob had almost perished in that battle, and the sons of Jacob cried to Yahuah (the Lord) and greatly gained strength toward evening\"* (Jasher 39:10); and on the wall of Gaash Judah cried, *\"O Yahuah (O Lord) help us, O Yahuah (O Lord) deliver us\"* (Jasher 39:32), and Yahuah Himself fought — *\"Yahuah (the Lord) impressed the fear of Judah in their hearts, that they were unable to approach him\"* (Jasher 39:35). The psalmist will sing this exact theology of the conquest centuries on: *\"For they got not the land in possession by their own sword, neither did their own arm save them: but thy right hand, and thine arm, and the light of thy countenance, because thou hadst a favour unto them\"* (Psalm 44:3), *\"For I will not trust in my bow, neither shall my sword save me\"* (Psalm 44:6). And the bow Jacob and his sons draw from under the wall (Jasher 39:32, 36) is the very thing the canon says is taught from this book — *\"(Also he bade them teach the children of Yahudah (Judah) the use of the bow: behold, it is written in the book of Jasher.)\"* (2 Samuel 1:18).",
+      "anchor_start_v": 10, "anchor_end_v": 36,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 39, "src_v": 10,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 44, "tgt_v": 3,
+         "tier": "free",
+         "note": "Psalm 44:3 — *For they got not the land in possession by their own sword, neither did their own arm save them: but thy right hand, and thine arm, and the light of thy countenance, because thou hadst a favour unto them.* The sons of Jacob nearly perish until they cry to Yahuah and gain strength — not their own arm, but His, exactly as the psalm confesses."},
+        {"src_ch": 39, "src_v": 32,
+         "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 44, "tgt_v": 6,
+         "tier": "free",
+         "note": "Psalm 44:6 — *For I will not trust in my bow, neither shall my sword save me.* Judah's drawn sword falls from his hand on the wall and he cries to Yahuah to deliver — the bow does not save, the Name does."},
+        {"src_ch": 39, "src_v": 36,
+         "tgt_edition": "canon", "tgt_book": "2-samuel", "tgt_ch": 1, "tgt_v": 18,
+         "tier": "free",
+         "note": "2 Samuel 1:18 — *(Also he bade them teach the children of Yahudah (Judah) the use of the bow: behold, it is written in the book of Jasher.)* The very bow Jacob and his sons draw from beneath the wall of Gaash is the bow-craft the canon points to this book to record."}
+      ]
+    },
+    {
+      "slug": "jasher-39-dan-and-naphtali-mount-the-wall",
+      "title": "Dan and Naphtali scale the wall — the tribes in their blessing",
+      "summary_md": "When Judah is beaten and bleeding on the wall, his brothers come up one by one in their own strength: *\"And Dan came upon the wall near to Judah\"* (Jasher 39:42) with *\"his wrath-excited strength\"* (Jasher 39:41), and then *\"Naphtali leaped from the first wall to the second, and came to assist his brothers\"* (Jasher 39:48). Each acts as the blessing of Jacob frames his tribe — Dan the judge who comes to defend — *\"Dan shall judge his people, as one of the tribes of Yashar'el (Israel)\"* (Genesis 49:16) — and Naphtali the swift hind, let loose to bound between the walls — *\"Naphtali is a hind let loose: he giveth goodly words\"* (Genesis 49:21). The twelve-tribe people is already forming and fighting as one body here, each son carrying the inheritance Jacob will speak over him.",
+      "anchor_start_v": 41, "anchor_end_v": 48,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 39, "src_v": 41,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 16,
+         "tier": "free",
+         "note": "Genesis 49:16 — *Dan shall judge his people, as one of the tribes of Yashar'el (Israel).* Dan rising in wrath to mount the wall and defend Judah is the tribe that judges and contends for its people."},
+        {"src_ch": 39, "src_v": 48,
+         "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 21,
+         "tier": "free",
+         "note": "Genesis 49:21 — *Naphtali is a hind let loose: he giveth goodly words.* Naphtali leaping from the first wall to the second to reach his brothers is the swift hind set loose that Jacob's blessing names."}
+      ]
+    }
+  ]
+}

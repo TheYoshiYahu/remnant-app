@@ -9098,6 +9098,2178 @@ SELECT t.id, x.id, 4, E'Jubilees 29:11 — *And on that day Esau, his brother, c
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jasher_33.sql (session252 jasher 33) -----
+-- Source anchor: jasher/jasher ch33. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja33 (view _session252_ja33_lookup). Sort band base 55800, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja33_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-33-succoth-shalem-shechem
+  ('jasher', 'jasher', 33, 1, 'canon', 'genesis', 33, 18, 'free', E'Genesis 33:18 — *And Jacob came to Shalem, a city of Shechem, which is in the land of Canaan, when he came from Padan-aram; and pitched his tent before the city.* Jasher 33:1 is this same arrival at Shechem, resting before the city.'),
+  ('jasher', 'jasher', 33, 2, 'canon', 'genesis', 33, 19, 'free', E'Genesis 33:19 — *And he bought a parcel of a field, where he had spread his tent, at the hand of the children of Hamor, Shechem''s father, for an hundred pieces of money.* Jasher 33:2 retells the purchase of the field from the children of Hamor.'),
+  ('jasher', 'jasher', 33, 3, 'canon', 'genesis', 33, 17, 'free', E'Genesis 33:17 — *And Jacob journeyed to Succoth, and built him an house, and made booths for his cattle: therefore the name of the place is called Succoth.* Jasher 33:3 names Succoth from the same booths Jacob made for his cattle.'),
+  ('jasher', 'jasher', 33, 1, 'jubilees', 'jubilees', 30, 1, 'extras', E'Jubilees 30:1 — *And in the first year of the sixth week he went up to Salem, to the east of Shechem, in peace, in the fourth month.* Jubilees fixes Jacob''s coming to Shalem/Shechem in its calendar, the same scene Jasher 33:1 opens with.'),
+  -- thread: jasher-33-dinah-defiled
+  ('jasher', 'jasher', 33, 10, 'canon', 'genesis', 34, 3, 'free', E'Genesis 34:3 — *And his soul clave unto Dinah the daughter of Jacob, and he loved the damsel, and spake kindly unto the damsel.* Jasher 33:10''s ''his soul became fixed upon Dinah'' is the same clinging of Shechem''s soul to her.'),
+  ('jasher', 'jasher', 33, 11, 'canon', 'genesis', 34, 2, 'free', E'Genesis 34:2 — *And when Shechem the son of Hamor the Hivite, prince of the country, saw her, he took her, and lay with her, and defiled her.* Jasher 33:11 expands the seizing and defiling of Dinah by Shechem the prince.'),
+  ('jasher', 'jasher', 33, 6, 'canon', 'genesis', 34, 1, 'free', E'Genesis 34:1 — *And Dinah the daughter of Leah, which she bare unto Jacob, went out to see the daughters of the land.* Jasher 33:6 has Dinah going out to see the daughters of the city, the very going-forth Genesis records.'),
+  ('jasher', 'jasher', 33, 11, 'jubilees', 'jubilees', 30, 2, 'extras', E'Jubilees 30:2 — *And there they carried off Dinah, the daughter of Jacob, into the house of Shechem, the son of Hamor, the Hivite, the prince of the land, and he lay with her and defiled her, and she was a little girl, a child of twelve years.* Jubilees, like Jasher 33:11, has Dinah carried into Shechem''s house and defiled.'),
+  -- thread: jasher-33-deceit-circumcision-condition
+  ('jasher', 'jasher', 33, 29, 'canon', 'genesis', 34, 13, 'free', E'Genesis 34:13 — *And the sons of Jacob answered Shechem and Hamor his father deceitfully, and said, because he had defiled Dinah their sister:* Jasher 33:29 has Simeon and Levi answering Hamor and Shechem deceitfully in the very same words.'),
+  ('jasher', 'jasher', 33, 43, 'canon', 'genesis', 34, 14, 'free', E'Genesis 34:14 — *And they said unto them, We cannot do this thing, to give our sister to one that is uncircumcised; for that were a reproach unto us:* Jasher 33:43 echoes that giving the daughter to an uncircumcised man is a disgrace.'),
+  ('jasher', 'jasher', 33, 37, 'canon', 'genesis', 34, 15, 'free', E'Genesis 34:15 — *But in this will we consent unto you: If ye will be as we be, that every male of you be circumcised;* Jasher 33:37 is Simeon''s counsel to make them circumcise every male as the condition.'),
+  ('jasher', 'jasher', 33, 44, 'canon', 'deuteronomy', 7, 3, 'free', E'Deuteronomy 7:3 — *Neither shalt thou make marriages with them; thy daughter thou shalt not give unto his son, nor his daughter shalt thou take unto thy son.* The pretext in Jasher 33:44 rests on the Torah''s standing separation of the seed from the nations.'),
+  -- thread: jasher-33-defilement-judgment-noah
+  ('jasher', 'jasher', 33, 21, 'canon', 'genesis', 9, 6, 'free', E'Genesis 9:6 — *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man.* Jasher 33:21 grounds the death-verdict in this very charge that Yahuah commanded Noah and his children.'),
+  ('jasher', 'jasher', 33, 35, 'canon', 'genesis', 34, 7, 'free', E'Genesis 34:7 — *And the sons of Jacob came out of the field when they heard it: and the men were grieved, and they were very wroth, because he had wrought folly in Yashar''el (Israel) in lying with Jacob''s daughter; which thing ought not to be done.* Jasher 33:35''s ''such vileness shall never be done amongst us'' is this same folly-in-Israel that ought not be done.'),
+  ('jasher', 'jasher', 33, 35, 'canon', 'deuteronomy', 22, 21, 'free', E'Deuteronomy 22:21 — *Then they shall bring out the damsel to the door of her father''s house, and the men of her city shall stone her with stones that she die: because she hath wrought folly in Yashar''el (Israel), to play the whore in her father''s house: so shalt thou put evil away from among you.* The Torah names sexual defilement folly in Israel, the same charge the brothers raise in Jasher 33:35.'),
+  ('jasher', 'jasher', 33, 34, 'jubilees', 'jubilees', 30, 5, 'extras', E'Jubilees 30:5 — *And thus let it not again be done from henceforth that a daughter of Yashar''el (Israel) be defiled; for judgment is ordained in heaven against them that they should destroy with the sword all the men of the Shechemites because they had wrought shame in Yashar''el (Israel).* Jubilees draws from this scene the same standing judgment Jasher 33:34 invokes against the city.'),
+  -- thread: jasher-33-zeal-of-levi-from-yahuah
+  ('jasher', 'jasher', 33, 52, 'jubilees', 'jubilees', 30, 6, 'extras', E'Jubilees 30:6 — *And Yahuah (God) delivered them into the hands of the sons of Jacob that they might exterminate them with the sword and execute judgment upon them, and that it might not thus again be done in Yashar''el (Israel) that a virgin of Yashar''el (Israel) should be defiled.* Jubilees names the same hand that Jasher 33:52 names — Yahuah delivering Shechem into the sons of Jacob.'),
+  ('jasher', 'jasher', 33, 39, 'jubilees', 'jubilees', 30, 18, 'extras', E'Jubilees 30:18 — *And the seed of Levi was chosen for the priesthood, and to be Levites, that they might minister before Yahuah (God), as we, continually, and that Levi and his sons may be blessed for ever; for he was zealous to execute righteousness and judgment and vengeance on all those who arose against Yashar''el (Israel).* Jubilees reads Levi''s resolve in Jasher 33:39 as the zeal that won him the priesthood.'),
+  ('jasher', 'jasher', 33, 52, 'canon', 'genesis', 49, 7, 'free', E'Genesis 49:7 — *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel).* Jacob''s blessing answers the slaughter of Jasher 33:52 with a curse on the brothers'' fierce anger.'),
+  ('jasher', 'jasher', 33, 39, 'canon', 'genesis', 49, 5, 'free', E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* The two brothers who resolve to slay the city in Jasher 33:39 are the Simeon and Levi Jacob names together in his blessing.'),
+  ('jasher', 'jasher', 33, 52, 'canon', 'numbers', 25, 11, 'free', E'Numbers 25:11 — *Phinehas, the son of Eleazar, the son of Aaron the priest, hath turned my wrath away from the children of Yashar''el (Israel), while he was zealous for my sake among them, that I consumed not the children of Yashar''el (Israel) in my jealousy.* The Levitical zeal that Jasher 33:52 calls ''from Yahuah'' is the same zeal Numbers later vindicates in Phinehas of Levi''s house.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja33_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja33_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-33-succoth-shalem-shechem',
+       E'Succoth and the city of Shechem — Jacob comes to Canaan',
+       E'Jasher opens where Genesis leaves Jacob: *And in some time after Jacob went away from the borders of the land, and he came to the land of Shalem, that is the city of Shechem, which is in the land of Canaan, and he rested in front of the city* (Jasher 33:1). This is the same arrival the Torah records — *And Jacob came to Shalem, a city of Shechem, which is in the land of Canaan, when he came from Padan-aram; and pitched his tent before the city* (Genesis 33:18). The field he buys is the canon''s field: *And he bought a parcel of the field which was there, from the children of Hamor the people of the land, for five shekels* (Jasher 33:2) beside *And he bought a parcel of a field, where he had spread his tent, at the hand of the children of Hamor, Shechem''s father, for an hundred pieces of money* (Genesis 33:19). And the booths name the place exactly as Genesis does — *therefore he called the name of that place Succoth* (Jasher 33:3); *therefore the name of the place is called Succoth* (Genesis 33:17). Jubilees sets the same scene in its calendar: *And in the first year of the sixth week he went up to Salem, to the east of Shechem, in peace, in the fourth month* (Jubilees 30:1). It ain''t new — Jasher only fills in the canon''s own ground.',
+       sv.verse_id, ev.verse_id, 'extras', 55800
+  FROM _session252_ja33_lookup sv, _session252_ja33_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=33 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-33-dinah-defiled',
+       E'Dinah defiled by Shechem — the seed dishonored',
+       E'Dinah goes out to the rejoicing and Shechem''s eye fastens on her: *And Shechem beheld Dinah the daughter of Jacob, and when he looked at her his soul became fixed upon Dinah* (Jasher 33:10), and *he sent and had her taken by force, and Dinah came to the house of Shechem and he seized her forcibly and lay with her and humbled her* (Jasher 33:11). Genesis tells it in fewer words but the same shape — *And Dinah the daughter of Leah, which she bare unto Jacob, went out to see the daughters of the land* (Genesis 34:1), and *when Shechem the son of Hamor the Hivite, prince of the country, saw her, he took her, and lay with her, and defiled her* (Genesis 34:2), and *his soul clave unto Dinah the daughter of Jacob* (Genesis 34:3). Jubilees marks her as a child and names the act a defiling of the seed of Israel — *And there they carried off Dinah, the daughter of Jacob, into the house of Shechem, the son of Hamor, the Hivite, the prince of the land, and he lay with her and defiled her, and she was a little girl, a child of twelve years* (Jubilees 30:2). The covenant daughter is dishonored by the nations; the election is profaned — and that profaning is what the next scenes answer.',
+       sv.verse_id, ev.verse_id, 'extras', 55803
+  FROM _session252_ja33_lookup sv, _session252_ja33_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=10
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=33 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-33-deceit-circumcision-condition',
+       E'The deceit of the sons of Jacob — circumcise every male',
+       E'The brothers answer with a snare worded as covenant: *And Simeon and Levi answered Hamor and Shechem his son deceitfully, saying, All you have spoken to us we will do for you* (Jasher 33:29), and Simeon frames the condition — *tell them to circumcise every male amongst them as we are circumcised, and if they do not wish to do this, we shall take our daughter from them and go away* (Jasher 33:37). They set the line that the seed will not be given to the uncircumcised — *we cannot do this of which you spoke to us, to give our daughter to an uncircumcised man, for it is a disgrace to us* (Jasher 33:43). Genesis carries the identical deceit and demand — *And the sons of Jacob answered Shechem and Hamor his father deceitfully* (Genesis 34:13); *We cannot do this thing, to give our sister to one that is uncircumcised; for that were a reproach unto us* (Genesis 34:14); *But in this will we consent unto you: If ye will be as we be, that every male of you be circumcised* (Genesis 34:15). Beneath the pretext stands the Torah''s later command against intermarrying with the nations — *Neither shalt thou make marriages with them; thy daughter thou shalt not give unto his son, nor his daughter shalt thou take unto thy son* (Deuteronomy 7:3). The separation of the seed is the law spoken before Sinai; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55806
+  FROM _session252_ja33_lookup sv, _session252_ja33_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=29
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=33 AND ev.verse_number=44
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-33-defilement-judgment-noah',
+       E'Death is due — the Noahide blood-law and folly in Israel',
+       E'The sons ground their verdict in a law older than Sinai: *Surely death is due to this man and to his household, because Yahuah Elohim (the Lord God) of the whole earth commanded Noah and his children that man shall never rob, nor commit adultery* (Jasher 33:21), and again *death is due to these wicked ones and to their city, because they transgressed that which Elohim (God) had commanded to Noah and his children and his seed after them* (Jasher 33:34). That command to Noah is the canon''s blood-charge — *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man* (Genesis 9:6), and *surely your blood of your lives will I require... at the hand of every man''s brother will I require the life of man* (Genesis 9:5). The defiling of Dinah is named the very thing the Torah calls folly in Israel — *for such vileness shall never be done amongst us* (Jasher 33:35), the canon''s *which thing ought not to be done* (Genesis 34:7) and the law''s verdict on the defiled virgin, *because she hath wrought folly in Yashar''el (Israel)... so shalt thou put evil away from among you* (Deuteronomy 22:21). Jubilees draws the same ordinance from this scene — *And thus let it not again be done from henceforth that a daughter of Yashar''el (Israel) be defiled* (Jubilees 30:5).',
+       sv.verse_id, ev.verse_id, 'extras', 55809
+  FROM _session252_ja33_lookup sv, _session252_ja33_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=21
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=33 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-33-zeal-of-levi-from-yahuah',
+       E'From Yahuah against Shechem — the zeal of Levi',
+       E'The chapter ends naming the slaughter''s author: *for this thing was from Yahuah (the Lord) against the city of Shechem, and from Yahuah (the Lord) was Simeon''s counsel in this matter, in order that Yahuah (the Lord) might deliver the city of Shechem into the hands of Jacob''s two sons* (Jasher 33:52). Jubilees says the same — *And Yahuah (God) delivered them into the hands of the sons of Jacob that they might exterminate them with the sword* (Jubilees 30:6) — and reads the act as Levi''s priestly zeal: *And the seed of Levi was chosen for the priesthood... for he was zealous to execute righteousness and judgment and vengeance on all those who arose against Yashar''el (Israel)* (Jubilees 30:18). Yet the canon holds the harder word in tension: Jacob''s blessing curses the brothers'' wrath — *Simeon and Levi are brethren; instruments of cruelty are in their habitations* (Genesis 49:5), *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (Genesis 49:7). The same zeal that scatters Levi here is the zeal Numbers later vindicates in Phinehas — *while he was zealous for my sake among them, that I consumed not the children of Yashar''el (Israel) in my jealousy* (Numbers 25:11). Election and zeal, judgment and mercy, run together over the defiled seed.',
+       sv.verse_id, ev.verse_id, 'extras', 55812
+  FROM _session252_ja33_lookup sv, _session252_ja33_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=39
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=33 AND ev.verse_number=52
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-33-succoth-shalem-shechem
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 33:18 — *And Jacob came to Shalem, a city of Shechem, which is in the land of Canaan, when he came from Padan-aram; and pitched his tent before the city.* Jasher 33:1 is this same arrival at Shechem, resting before the city.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-succoth-shalem-shechem'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 33:19 — *And he bought a parcel of a field, where he had spread his tent, at the hand of the children of Hamor, Shechem''s father, for an hundred pieces of money.* Jasher 33:2 retells the purchase of the field from the children of Hamor.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-succoth-shalem-shechem'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 33:17 — *And Jacob journeyed to Succoth, and built him an house, and made booths for his cattle: therefore the name of the place is called Succoth.* Jasher 33:3 names Succoth from the same booths Jacob made for his cattle.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-succoth-shalem-shechem'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 30:1 — *And in the first year of the sixth week he went up to Salem, to the east of Shechem, in peace, in the fourth month.* Jubilees fixes Jacob''s coming to Shalem/Shechem in its calendar, the same scene Jasher 33:1 opens with.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-succoth-shalem-shechem'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-33-dinah-defiled
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 34:3 — *And his soul clave unto Dinah the daughter of Jacob, and he loved the damsel, and spake kindly unto the damsel.* Jasher 33:10''s ''his soul became fixed upon Dinah'' is the same clinging of Shechem''s soul to her.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-dinah-defiled'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 34:2 — *And when Shechem the son of Hamor the Hivite, prince of the country, saw her, he took her, and lay with her, and defiled her.* Jasher 33:11 expands the seizing and defiling of Dinah by Shechem the prince.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-dinah-defiled'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 34:1 — *And Dinah the daughter of Leah, which she bare unto Jacob, went out to see the daughters of the land.* Jasher 33:6 has Dinah going out to see the daughters of the city, the very going-forth Genesis records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-dinah-defiled'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 30:2 — *And there they carried off Dinah, the daughter of Jacob, into the house of Shechem, the son of Hamor, the Hivite, the prince of the land, and he lay with her and defiled her, and she was a little girl, a child of twelve years.* Jubilees, like Jasher 33:11, has Dinah carried into Shechem''s house and defiled.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-dinah-defiled'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=11
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-33-deceit-circumcision-condition
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 34:13 — *And the sons of Jacob answered Shechem and Hamor his father deceitfully, and said, because he had defiled Dinah their sister:* Jasher 33:29 has Simeon and Levi answering Hamor and Shechem deceitfully in the very same words.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-deceit-circumcision-condition'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 34:14 — *And they said unto them, We cannot do this thing, to give our sister to one that is uncircumcised; for that were a reproach unto us:* Jasher 33:43 echoes that giving the daughter to an uncircumcised man is a disgrace.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-deceit-circumcision-condition'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=43
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 34:15 — *But in this will we consent unto you: If ye will be as we be, that every male of you be circumcised;* Jasher 33:37 is Simeon''s counsel to make them circumcise every male as the condition.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-deceit-circumcision-condition'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 7:3 — *Neither shalt thou make marriages with them; thy daughter thou shalt not give unto his son, nor his daughter shalt thou take unto thy son.* The pretext in Jasher 33:44 rests on the Torah''s standing separation of the seed from the nations.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-deceit-circumcision-condition'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=44
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-33-defilement-judgment-noah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 9:6 — *Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man.* Jasher 33:21 grounds the death-verdict in this very charge that Yahuah commanded Noah and his children.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-defilement-judgment-noah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 34:7 — *And the sons of Jacob came out of the field when they heard it: and the men were grieved, and they were very wroth, because he had wrought folly in Yashar''el (Israel) in lying with Jacob''s daughter; which thing ought not to be done.* Jasher 33:35''s ''such vileness shall never be done amongst us'' is this same folly-in-Israel that ought not be done.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-defilement-judgment-noah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 22:21 — *Then they shall bring out the damsel to the door of her father''s house, and the men of her city shall stone her with stones that she die: because she hath wrought folly in Yashar''el (Israel), to play the whore in her father''s house: so shalt thou put evil away from among you.* The Torah names sexual defilement folly in Israel, the same charge the brothers raise in Jasher 33:35.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-defilement-judgment-noah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=22 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 30:5 — *And thus let it not again be done from henceforth that a daughter of Yashar''el (Israel) be defiled; for judgment is ordained in heaven against them that they should destroy with the sword all the men of the Shechemites because they had wrought shame in Yashar''el (Israel).* Jubilees draws from this scene the same standing judgment Jasher 33:34 invokes against the city.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-defilement-judgment-noah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=34
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-33-zeal-of-levi-from-yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 30:6 — *And Yahuah (God) delivered them into the hands of the sons of Jacob that they might exterminate them with the sword and execute judgment upon them, and that it might not thus again be done in Yashar''el (Israel) that a virgin of Yashar''el (Israel) should be defiled.* Jubilees names the same hand that Jasher 33:52 names — Yahuah delivering Shechem into the sons of Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-zeal-of-levi-from-yahuah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=52
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 30:18 — *And the seed of Levi was chosen for the priesthood, and to be Levites, that they might minister before Yahuah (God), as we, continually, and that Levi and his sons may be blessed for ever; for he was zealous to execute righteousness and judgment and vengeance on all those who arose against Yashar''el (Israel).* Jubilees reads Levi''s resolve in Jasher 33:39 as the zeal that won him the priesthood.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-zeal-of-levi-from-yahuah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=39
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 49:7 — *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel).* Jacob''s blessing answers the slaughter of Jasher 33:52 with a curse on the brothers'' fierce anger.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-zeal-of-levi-from-yahuah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* The two brothers who resolve to slay the city in Jasher 33:39 are the Simeon and Levi Jacob names together in his blessing.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-zeal-of-levi-from-yahuah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=39
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Numbers 25:11 — *Phinehas, the son of Eleazar, the son of Aaron the priest, hath turned my wrath away from the children of Yashar''el (Israel), while he was zealous for my sake among them, that I consumed not the children of Yashar''el (Israel) in my jealousy.* The Levitical zeal that Jasher 33:52 calls ''from Yahuah'' is the same zeal Numbers later vindicates in Phinehas of Levi''s house.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja33_lookup sv, _session252_ja33_lookup tv
+ WHERE t.slug='jasher-33-zeal-of-levi-from-yahuah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=33 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_34.sql (session252 jasher 34) -----
+-- Source anchor: jasher/jasher ch34. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja34 (view _session252_ja34_lookup). Sort band base 55825, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja34_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-34-zeal-of-levi-avenged
+  ('jasher', 'jasher', 34, 28, 'canon', 'genesis', 34, 25, 'free', E'Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* Moses'' verse is the bare event Jasher 34:23-28 expands into the oath, the hidden young men, and the house-to-house sweep.'),
+  ('jasher', 'jasher', 34, 28, 'canon', 'genesis', 34, 26, 'free', E'Genesis 34:26 — *And they slew Hamor and Shechem his son with the edge of the sword, and took Dinah out of Shechem’s house, and went out.* The same two deaths and the same rescue of Dinah stand word-for-word behind Jasher 34:28.'),
+  ('jasher', 'jasher', 34, 34, 'canon', 'genesis', 34, 31, 'free', E'Genesis 34:31 — *And they said, Should he deal with our sister as with an harlot?* The brothers'' closing retort in Jasher 34:34 quotes this canon line almost exactly — the defilement of the covenant seed is the grievance.'),
+  ('jasher', 'jasher', 34, 23, 'canon', 'genesis', 49, 5, 'free', E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* Jacob''s later blessing-oracle names the very zeal Jasher 34:23 records as an oath.'),
+  ('jasher', 'jasher', 34, 25, 'jubilees', 'jubilees', 30, 4, 'extras', E'Jubilees 30:4 — *And Simeon and Levi came unexpectedly to Shechem and executed judgment on all the men of Shechem, and slew all the men whom they found in it, and left not a single one remaining in it: they slew all in torments because they had dishonoured their sister Dinah.* The same scene Jasher 34:25 tells, read in Jubilees as judgment for the defiled seed.'),
+  -- thread: jasher-34-spoil-captives-jacob-feared
+  ('jasher', 'jasher', 34, 31, 'canon', 'genesis', 34, 28, 'free', E'Genesis 34:28 — *They took their sheep, and their oxen, and their asses, and that which was in the city, and that which was in the field.* The catalogue of spoil Jasher 34:31 leads out of the gate is Moses'' own list.'),
+  ('jasher', 'jasher', 34, 33, 'canon', 'genesis', 34, 30, 'free', E'Genesis 34:30 — *And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house.* Jacob''s fear in Jasher 34:33 — few in number, the land assembling — is this canon verse retold.'),
+  ('jasher', 'jasher', 34, 31, 'jubilees', 'jubilees', 30, 24, 'extras', E'Jubilees 30:24 — *And they brought Dinah, their sister, out of the house of Shechem, and they took captive everything that was in Shechem, their sheep and their oxen and their asses, and all their wealth, and all their flocks, and brought them all to Jacob their father.* The same flocks and captives Jasher 34:31 leads home to Jacob.'),
+  ('jasher', 'jasher', 34, 33, 'jubilees', 'jubilees', 30, 25, 'extras', E'Jubilees 30:25 — *And he reproached them because they had put the city to the sword; for he feared those who dwelt in the land, the Canaanites and the Perizzites.* Jacob''s reproach and fear of the Canaanites and Perizzites in Jasher 34:33 stands word-for-word in Jubilees.'),
+  -- thread: jasher-34-seven-kings-gather
+  ('jasher', 'jasher', 34, 50, 'canon', 'genesis', 35, 5, 'free', E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The canon''s reason the gathered Amorite kings of Jasher 34:50 never overrun Jacob''s household — the dread of Elohim guards the seed.'),
+  ('jasher', 'jasher', 34, 50, 'jubilees', 'jubilees', 30, 26, 'extras', E'Jubilees 30:26 — *And the dread of Yahuah (God) was upon all the cities which are around about Shechem, and they did not rise to pursue after the sons of Jacob; for terror had fallen upon them.* Jubilees turns the surrounding cities'' terror into the same shield over the sons of Jacob that blunts the seven kings of Jasher 34:50.'),
+  -- thread: jasher-34-yahuah-delivers-the-uncircumcised
+  ('jasher', 'jasher', 34, 60, 'canon', 'exodus', 23, 27, 'free', E'Exodus 23:27 — *I will send my fear before thee, and will destroy all the people to whom thou shalt come, and I will make all thine enemies turn their backs unto thee.* The terror Judah counts on in Jasher 34:55-60 is the conquest-promise Yahuah will keep before Israel.'),
+  ('jasher', 'jasher', 34, 60, 'canon', 'deuteronomy', 20, 1, 'free', E'Deuteronomy 20:1 — *When thou goest out to battle against thine enemies, and seest horses, and chariots, and a people more than thou, be not afraid of them: for Yahuah Elohayka (the LORD thy God) is with thee, which brought thee up out of the land of Egypt.* Judah''s ''do not fear them'' in Jasher 34:59-60 is the Torah''s own war-law before the battle.'),
+  ('jasher', 'jasher', 34, 60, 'canon', 'deuteronomy', 11, 25, 'free', E'Deuteronomy 11:25 — *There shall no man be able to stand before you: for Yahuah Elohaychem (the LORD your God) shall lay the fear of you and the dread of you upon all the land that ye shall tread upon, as he hath said unto you.* The dread Judah expects to fall on the Canaanite kings (Jasher 34:55) is the laid-on fear Moses promises the land.'),
+  ('jasher', 'jasher', 34, 55, 'canon', 'joshua', 2, 9, 'free', E'Joshua 2:9 — *And she said unto the men, I know that Yahuah (LORD) hath given you the land, and that your terror is fallen upon us, and that all the inhabitants of the land faint because of you.* Rahab voices from the other side the very terror Judah trusts will fall on the kings in Jasher 34:55.'),
+  ('jasher', 'jasher', 34, 56, 'canon', '2-chronicles', 20, 15, 'free', E'2 Chronicles 20:15 — *And he said, Hearken ye, all Yahudah (Judah), and ye inhabitants of Jerusalem, and thou king Jehoshaphat, Thus saith Yahuah (LORD) unto you, Be not afraid nor dismayed by reason of this great multitude; for the battle is not yours, but Elohim''s (God’s).* Judah''s call to cast away fear and trust Yahuah in Jasher 34:56 is the same word later spoken to all Judah.'),
+  -- thread: jasher-34-isaac-jacob-prayer-seed-as-stars
+  ('jasher', 'jasher', 34, 65, 'canon', 'genesis', 15, 5, 'free', E'Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.* The ''seed as the stars of heaven'' Isaac pleads in Jasher 34:65 is this word first spoken to Abraham.'),
+  ('jasher', 'jasher', 34, 65, 'canon', 'genesis', 22, 17, 'free', E'Genesis 22:17 — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies.* The sworn promise Isaac leans on in Jasher 34:65 even names the seed possessing the gate of its enemies — exactly the war at hand.'),
+  ('jasher', 'jasher', 34, 69, 'canon', 'genesis', 48, 22, 'free', E'Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* Jacob''s deathbed word recalls the very Amorite war of Jasher 34, the portion taken by the sword and bow Judah bids each man gird on (34:60).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja34_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja34_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-34-zeal-of-levi-avenged',
+       E'The zeal of Simeon and Levi — Dinah avenged at the sword',
+       E'Jasher draws the brothers'' oath and the slaughter of Shechem out long: *And Simeon and Levi swore and said, As Yahuah (the Lord) lives, the Elohim (God) of the whole earth, by this time tomorrow, there shall not be a remnant left in the whole city* (Jasher 34:23), and *And they slew Hamor and Shechem his son at the edge of the sword, and they brought away Dinah from the house of Shechem and they went from there* (Jasher 34:28). When their father rebukes them they answer with the chapter''s hot word: *and shall he deal with our sister as with a harlot in the streets?* (Jasher 34:34). It is the canon scene amplified, not a new one — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males* (Genesis 34:25), and Jacob''s daughters'' brothers say the same in Moses'' text: *And they said, Should he deal with our sister as with an harlot?* (Genesis 34:31). Jacob''s deathbed verdict names the zeal a cruelty — *Simeon and Levi are brethren; instruments of cruelty are in their habitations* (Genesis 49:5) — yet Jubilees reads the very same act as righteousness kept for the seed: *And Simeon and Levi came unexpectedly to Shechem and executed judgment on all the men of Shechem, and slew all the men whom they found in it, and left not a single one remaining in it: they slew all in torments because they had dishonoured their sister Dinah* (Jubilees 30:4). It ain''t new — the seed defiled by the nations, and the line guarded.',
+       sv.verse_id, ev.verse_id, 'extras', 55825
+  FROM _session252_ja34_lookup sv, _session252_ja34_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=23
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=34 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-34-spoil-captives-jacob-feared',
+       E'The spoil, the captives, and Jacob''s fear of the land',
+       E'Jasher follows the brothers back out of the gate laden: *And they took away their sheep and their oxen and their cattle, and also the remainder of the women and little ones, and they led all these away, and they opened a gate and went out and came to their father Jacob with vigor* (Jasher 34:31), and then the father''s dread — *and I am but of a small number, and they will all assemble against me and slay me when they hear of your work with their brethren, and I and my household will be destroyed* (Jasher 34:33). This is the canon line by line: *They took their sheep, and their oxen, and their asses, and that which was in the city, and that which was in the field* (Genesis 34:28), and Jacob''s identical fear — *And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house* (Genesis 34:30). Jubilees gathers the same spoil — *And they brought Dinah, their sister, out of the house of Shechem, and they took captive everything that was in Shechem, their sheep and their oxen and their asses, and all their wealth, and all their flocks, and brought them all to Jacob their father* (Jubilees 30:24) — and the same rebuke: *And he reproached them because they had put the city to the sword; for he feared those who dwelt in the land, the Canaanites and the Perizzites* (Jubilees 30:25). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55828
+  FROM _session252_ja34_lookup sv, _session252_ja34_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=29
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=34 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-34-seven-kings-gather',
+       E'The nations gather — the seven Amorite kings come against Jacob''s sons',
+       E'Here Jasher swells past the canon into the legendary wars: two survivors carry the news, *And the seven kings of the Amorites assembled with all their armies, about ten thousand men with drawn swords, and they came to fight against the sons of Jacob; and Jacob heard that the kings of the Amorites had assembled to fight against his sons, and Jacob was greatly afraid, and it distressed him* (Jasher 34:50), so awed by Simeon and Levi that the king of Tapnach marvels, *For the like has not been from the days of Nimrod, and not even from the remotest time, has the like taken place* (Jasher 34:43). The chapter even measures the seed against Nimrod''s kingdom-of-man — the rebel king-builder is the yardstick of dread the nations reach for. Yet the canon already declares why the gathering nations cannot prevail: when Jacob''s house journeyed, *the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob* (Genesis 35:5). Jubilees frames the wars'' aftermath the same way: *And the dread of Yahuah (God) was upon all the cities which are around about Shechem, and they did not rise to pursue after the sons of Jacob; for terror had fallen upon them* (Jubilees 30:26). The kings assemble; the elect seed is kept.',
+       sv.verse_id, ev.verse_id, 'extras', 55831
+  FROM _session252_ja34_lookup sv, _session252_ja34_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=43
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=34 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-34-yahuah-delivers-the-uncircumcised',
+       E'Judah''s charge — Yahuah delivers the uncircumcised into their hand',
+       E'Against the gathered kings Judah preaches faith, not flight: *Surely our Elohim who delivered into their hand the city of Shechem and its people, he will also deliver into our hands all the Canaanitish kings who are coming against us* (Jasher 34:55), and *Stand forth each man, girt with his weapons of war, his bow and his sword, and we will go and fight against these uncircumcised men; Yahuah (the Lord) is our Elohim, He will save us* (Jasher 34:60). The Torah''s war-law speaks in the same voice — *When thou goest out to battle against thine enemies, and seest horses, and chariots, and a people more than thou, be not afraid of them: for Yahuah Elohayka (the LORD thy God) is with thee* (Deuteronomy 20:1) — and the conquest runs on the very promise Judah trusts: *I will send my fear before thee, and will destroy all the people to whom thou shalt come, and I will make all thine enemies turn their backs unto thee* (Exodus 23:27), *There shall no man be able to stand before you: for Yahuah Elohaychem (the LORD your God) shall lay the fear of you and the dread of you upon all the land that ye shall tread upon, as he hath said unto you* (Deuteronomy 11:25). Rahab confesses the same terror long after — *I know that Yahuah (LORD) hath given you the land, and that your terror is fallen upon us, and that all the inhabitants of the land faint because of you* (Joshua 2:9) — and Jehoshaphat hears it again: *Be not afraid nor dismayed by reason of this great multitude; for the battle is not yours, but Elohim''s (God’s)* (2 Chronicles 20:15). It ain''t new — Yahuah fights for the kept seed.',
+       sv.verse_id, ev.verse_id, 'extras', 55834
+  FROM _session252_ja34_lookup sv, _session252_ja34_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=55
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=34 AND ev.verse_number=60
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-34-isaac-jacob-prayer-seed-as-stars',
+       E'Isaac and Jacob pray — the seed as the stars, the portion of the Amorite',
+       E'Before the battle Jasher has both Isaac and Jacob plead the covenant: *O Yahuah (O Lord) Elohim, you did promise my father, saying, I will multiply your seed as the stars of heaven, and you did also promise me, and establish you your word* (Jasher 34:65), and Jacob — *O Yahuah Elohim, powerful and exalted Elohim, who has reigned from days of old... You are He who stirs up wars and causes them to cease, in your hand are power and might to exalt and to bring down* (Jasher 34:69-70). The promise they hold is the canon''s own oath to Abraham: *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* (Genesis 15:5), *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies* (Genesis 22:17). And the wars Jasher narrates are the very ground Jacob will later will to Joseph: *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow* (Genesis 48:22) — the Amorite of this chapter, taken by the sword and the bow Judah bids each man gird on. Election precedes the battle; the seed is kept.',
+       sv.verse_id, ev.verse_id, 'extras', 55837
+  FROM _session252_ja34_lookup sv, _session252_ja34_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=65
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=34 AND ev.verse_number=70
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-34-zeal-of-levi-avenged
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* Moses'' verse is the bare event Jasher 34:23-28 expands into the oath, the hidden young men, and the house-to-house sweep.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-zeal-of-levi-avenged'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 34:26 — *And they slew Hamor and Shechem his son with the edge of the sword, and took Dinah out of Shechem’s house, and went out.* The same two deaths and the same rescue of Dinah stand word-for-word behind Jasher 34:28.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-zeal-of-levi-avenged'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 34:31 — *And they said, Should he deal with our sister as with an harlot?* The brothers'' closing retort in Jasher 34:34 quotes this canon line almost exactly — the defilement of the covenant seed is the grievance.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-zeal-of-levi-avenged'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* Jacob''s later blessing-oracle names the very zeal Jasher 34:23 records as an oath.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-zeal-of-levi-avenged'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 30:4 — *And Simeon and Levi came unexpectedly to Shechem and executed judgment on all the men of Shechem, and slew all the men whom they found in it, and left not a single one remaining in it: they slew all in torments because they had dishonoured their sister Dinah.* The same scene Jasher 34:25 tells, read in Jubilees as judgment for the defiled seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-zeal-of-levi-avenged'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=25
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-34-spoil-captives-jacob-feared
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 34:28 — *They took their sheep, and their oxen, and their asses, and that which was in the city, and that which was in the field.* The catalogue of spoil Jasher 34:31 leads out of the gate is Moses'' own list.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-spoil-captives-jacob-feared'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 34:30 — *And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house.* Jacob''s fear in Jasher 34:33 — few in number, the land assembling — is this canon verse retold.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-spoil-captives-jacob-feared'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 30:24 — *And they brought Dinah, their sister, out of the house of Shechem, and they took captive everything that was in Shechem, their sheep and their oxen and their asses, and all their wealth, and all their flocks, and brought them all to Jacob their father.* The same flocks and captives Jasher 34:31 leads home to Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-spoil-captives-jacob-feared'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=31
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 30:25 — *And he reproached them because they had put the city to the sword; for he feared those who dwelt in the land, the Canaanites and the Perizzites.* Jacob''s reproach and fear of the Canaanites and Perizzites in Jasher 34:33 stands word-for-word in Jubilees.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-spoil-captives-jacob-feared'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=33
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-34-seven-kings-gather
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The canon''s reason the gathered Amorite kings of Jasher 34:50 never overrun Jacob''s household — the dread of Elohim guards the seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-seven-kings-gather'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 30:26 — *And the dread of Yahuah (God) was upon all the cities which are around about Shechem, and they did not rise to pursue after the sons of Jacob; for terror had fallen upon them.* Jubilees turns the surrounding cities'' terror into the same shield over the sons of Jacob that blunts the seven kings of Jasher 34:50.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-seven-kings-gather'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=50
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=30 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-34-yahuah-delivers-the-uncircumcised
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 23:27 — *I will send my fear before thee, and will destroy all the people to whom thou shalt come, and I will make all thine enemies turn their backs unto thee.* The terror Judah counts on in Jasher 34:55-60 is the conquest-promise Yahuah will keep before Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-yahuah-delivers-the-uncircumcised'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=60
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 20:1 — *When thou goest out to battle against thine enemies, and seest horses, and chariots, and a people more than thou, be not afraid of them: for Yahuah Elohayka (the LORD thy God) is with thee, which brought thee up out of the land of Egypt.* Judah''s ''do not fear them'' in Jasher 34:59-60 is the Torah''s own war-law before the battle.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-yahuah-delivers-the-uncircumcised'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=60
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=20 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 11:25 — *There shall no man be able to stand before you: for Yahuah Elohaychem (the LORD your God) shall lay the fear of you and the dread of you upon all the land that ye shall tread upon, as he hath said unto you.* The dread Judah expects to fall on the Canaanite kings (Jasher 34:55) is the laid-on fear Moses promises the land.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-yahuah-delivers-the-uncircumcised'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=60
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 2:9 — *And she said unto the men, I know that Yahuah (LORD) hath given you the land, and that your terror is fallen upon us, and that all the inhabitants of the land faint because of you.* Rahab voices from the other side the very terror Judah trusts will fall on the kings in Jasher 34:55.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-yahuah-delivers-the-uncircumcised'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=55
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Chronicles 20:15 — *And he said, Hearken ye, all Yahudah (Judah), and ye inhabitants of Jerusalem, and thou king Jehoshaphat, Thus saith Yahuah (LORD) unto you, Be not afraid nor dismayed by reason of this great multitude; for the battle is not yours, but Elohim''s (God’s).* Judah''s call to cast away fear and trust Yahuah in Jasher 34:56 is the same word later spoken to all Judah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-yahuah-delivers-the-uncircumcised'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=56
+   AND tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=20 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-34-isaac-jacob-prayer-seed-as-stars
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.* The ''seed as the stars of heaven'' Isaac pleads in Jasher 34:65 is this word first spoken to Abraham.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-isaac-jacob-prayer-seed-as-stars'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=65
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 22:17 — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies.* The sworn promise Isaac leans on in Jasher 34:65 even names the seed possessing the gate of its enemies — exactly the war at hand.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-isaac-jacob-prayer-seed-as-stars'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=65
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* Jacob''s deathbed word recalls the very Amorite war of Jasher 34, the portion taken by the sword and bow Judah bids each man gird on (34:60).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja34_lookup sv, _session252_ja34_lookup tv
+ WHERE t.slug='jasher-34-isaac-jacob-prayer-seed-as-stars'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=34 AND sv.verse_number=69
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=48 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_35.sql (session252 jasher 35) -----
+-- Source anchor: jasher/jasher ch35. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja35 (view _session252_ja35_lookup). Sort band base 55850, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja35_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-35-shechem-terror-of-elohim
+  ('jasher', 'jasher', 35, 1, 'canon', 'genesis', 35, 5, 'free', E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The canon supplies exactly the dread Jasher 35:1-2 narrates the Amorite kings consulting under — the cities round about do not pursue.'),
+  ('jasher', 'jasher', 35, 2, 'canon', 'exodus', 23, 27, 'free', E'Exodus 23:27 — *I will send my fear before thee, and will destroy all the people to whom thou shalt come, and I will make all thine enemies turn their backs unto thee.* The fear Yahuah pours into the kings'' advisers in Jasher 35:2 is the same covenant weapon He promises Israel.'),
+  -- thread: jasher-35-abraham-nimrod-fire
+  ('jasher', 'jasher', 35, 7, 'jasher', 'jasher', 12, 24, 'extras', E'Jasher 12:24 — *And Yahuah (the Lord) loved Abram and he had compassion over him, and Yahuah (the Lord) came down and delivered Abram from the fire and he was not burned.* The deliverance the counsellors cite in Jasher 35:7 is the very rescue Jasher''s own earlier chapter narrates.'),
+  ('jasher', 'jasher', 35, 6, 'canon', 'joshua', 24, 2, 'free', E'Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* The canon frames Abraham''s call as the seed drawn out of Nimrod''s idolatry that Jasher 35:6 recalls.'),
+  -- thread: jasher-35-abraham-smote-kings-elam
+  ('jasher', 'jasher', 35, 9, 'canon', 'genesis', 14, 14, 'free', E'Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* The few faithful men of Abraham''s house pursuing by night in Jasher 35:9 is the canon''s own account of the war on the kings.'),
+  ('jasher', 'jasher', 35, 8, 'canon', 'genesis', 14, 16, 'free', E'Genesis 14:16 — *And he brought back all the goods, and also brought again his brother Lot, and his goods, and the women also, and the people.* Jasher 35:8-9 names the rescued kinsman in Sodom and his restored property exactly as Genesis records of Lot.'),
+  -- thread: jasher-35-binding-of-isaac-oath
+  ('jasher', 'jasher', 35, 11, 'canon', 'genesis', 22, 12, 'free', E'Genesis 22:12 — *And he said, Lay not thine hand upon the lad, neither do thou any thing unto him: for now I know that thou fearest Elohim (God), seeing thou hast not withheld thy son, thine only son from me.* Jasher 35:11''s note that Elohim prevented the offering matches the canon''s stayed hand and tested fear of Elohim.'),
+  ('jasher', 'jasher', 35, 12, 'canon', 'genesis', 22, 17, 'free', E'Genesis 22:17 — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies.* The promise to deliver Abraham''s seed from every trouble in Jasher 35:12 is the canon''s sworn blessing on the akedah.'),
+  ('jasher', 'jasher', 35, 11, 'jubilees', 'jubilees', 17, 16, 'extras', E'Jubilees 17:16 — *And the prince Mastêmâ came and said before Elohim (God), "Behold, Abraham loves Isaac his son, and he delights in him above all things else; bid him offer him as a burnt-offering on the altar, and You will see if he will do this command, and You will know if he is faithful in everything wherein You do try him."* Jasher 35:11''s love-driven offering of the only son is the same trial Jubilees frames as the testing of Abraham''s faithfulness.'),
+  -- thread: jasher-35-sister-pharaoh-abimelech
+  ('jasher', 'jasher', 35, 13, 'canon', 'genesis', 12, 17, 'free', E'Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife.* Jasher 35:13''s memory of what Elohim did to Pharaoh over Abraham''s wife is the canon''s plague-judgment on Egypt''s house.'),
+  ('jasher', 'jasher', 35, 13, 'canon', 'genesis', 20, 2, 'free', E'Genesis 20:2 — *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah.* The ''she is my sister'' and the king of Gerar named in Jasher 35:13 are taken straight from Genesis.'),
+  ('jasher', 'jasher', 35, 13, 'canon', 'genesis', 20, 17, 'free', E'Genesis 20:17 — *So Abraham prayed unto Elohim (God): and Elohim (God) healed Abimelech, and his wife, and his maidservants; and they bare children.* The judgment on Abimelech''s people that Jasher 35:13 alludes to is the canon''s affliction lifted only by Abraham''s prayer.'),
+  -- thread: jasher-35-esau-four-hundred-men
+  ('jasher', 'jasher', 35, 14, 'canon', 'genesis', 32, 6, 'free', E'Genesis 32:6 — *And the messengers returned to Jacob, saying, We came to thy brother Esau, and also he cometh to meet thee, and four hundred men with him.* The four hundred men coming with Esau in Jasher 35:14 is the canon''s own report to Jacob.'),
+  ('jasher', 'jasher', 35, 15, 'canon', 'genesis', 33, 1, 'free', E'Genesis 33:1 — *And Jacob lifted up his eyes, and looked, and, behold, Esau came, and with him four hundred men. And he divided the children unto Leah, and unto Rachel, and unto the two handmaids.* The deliverance from Esau''s hand that Jasher 35:15 cites is the canon''s encounter where the four hundred do no harm.'),
+  -- thread: jasher-35-war-with-their-elohim
+  ('jasher', 'jasher', 35, 19, 'canon', 'exodus', 23, 27, 'free', E'Exodus 23:27 — *I will send my fear before thee, and will destroy all the people to whom thou shalt come, and I will make all thine enemies turn their backs unto thee.* The kings warring against Israel''s Elohim in Jasher 35:19 face the very dread Yahuah promises to send before His people.'),
+  ('jasher', 'jasher', 35, 23, 'canon', 'joshua', 2, 9, 'free', E'Joshua 2:9 — *And she said unto the men, I know that Yahuah (LORD) hath given you the land, and that your terror is fallen upon us, and that all the inhabitants of the land faint because of you.* The Amorite kings'' melting hearts in Jasher 35:23 are Rahab''s confession in advance — the inhabitants faint before the chosen seed.'),
+  ('jasher', 'jasher', 35, 24, 'canon', 'genesis', 35, 5, 'free', E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* That the kings'' restraint proceeded from Yahuah in Jasher 35:24 is the canon''s same statement that the terror of Elohim, not the sons'' strength, stayed the cities.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja35_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja35_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-35-shechem-terror-of-elohim',
+       E'Two slew Shechem, and the terror of Elohim fell on the cities',
+       E'The Amorite kings take counsel against Jacob''s sons after the slaughter at Shechem, and Yahuah turns their hearts to fear: *And all the kings of the Amorites came and took their stand in the field to consult with their counsellors what was to be done with the sons of Jacob, for they were still afraid of them, saying, Behold, two of them slew the whole of the city of Shechem* (Jasher 35:1); *And Yahuah (the Lord) heard the prayers of Isaac and Jacob, and he filled the hearts of all these kings'' advisers with great fear and terror* (Jasher 35:2). It ain''t new — this is the canon''s own scene drawn out. Genesis names the two who took Shechem and the dread that fell after: *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob* (Genesis 35:5). The same supernatural fear that guards the seed at the Exodus and the conquest is already at work around the patriarch.',
+       sv.verse_id, ev.verse_id, 'extras', 55850
+  FROM _session252_ja35_lookup sv, _session252_ja35_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=35 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-35-abraham-nimrod-fire',
+       E'He delivered Abraham from Nimrod and from the fire',
+       E'The counsellors recount the seed''s whole deliverance-history to dissuade the kings: *Surely he delivered their father Abraham, the Hebrew, from the hand of Nimrod, and from the hand of all his people who had many times sought to slay him* (Jasher 35:6); *He delivered him also from the fire in which king Nimrod had cast him, and his Elohim delivered him from it* (Jasher 35:7). Jasher tells the furnace-rescue at length earlier in its own scroll: *And Yahuah (the Lord) loved Abram and he had compassion over him, and Yahuah (the Lord) came down and delivered Abram from the fire and he was not burned* (Jasher 12:25). The canon itself remembers the line as called out of idolatry — the kingdom of man (Nimrod, Babel) versus the chosen seed: *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2). Election, not the church; the seed kept from the tyrant''s hand.',
+       sv.verse_id, ev.verse_id, 'extras', 55853
+  FROM _session252_ja35_lookup sv, _session252_ja35_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=35 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-35-abraham-smote-kings-elam',
+       E'Abraham slew the kings of Elam and rescued his brother''s son',
+       E'The advisers press on with the war against the eastern kings: *surely it was Abraham who slew the five kings of Elam, when they had touched his brother''s son who in those days dwelt in Sodom* (Jasher 35:8); *And took his servant that was faithful in his house and a few of his men, and they pursued the kings of Elam in one night and killed them, and restored to his brother''s son all his property which they had taken from him* (Jasher 35:9). This is Genesis 14 retold — the night pursuit, the few men, the recovered captive: *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan* (Genesis 14:14); *And he brought back all the goods, and also brought again his brother Lot, and his goods, and the women also, and the people* (Genesis 14:16). The argument is plain — a handful with their Elohim already overthrew kings; how shall the Amorites stand?',
+       sv.verse_id, ev.verse_id, 'extras', 55856
+  FROM _session252_ja35_lookup sv, _session252_ja35_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=35 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-35-binding-of-isaac-oath',
+       E'The only son offered, and the oath sworn over the seed',
+       E'The counsellors reach the akedah as the supreme proof of Yahuah''s bond with this seed: *And behold through his love toward his Elohim, Abraham took his only and precious son and intended to bring him up as a burnt offering to his Elohim* (Jasher 35:11); *And Elohim saw all his works, and swore to him, and promised him that he would deliver his sons and all his seed from every trouble that would befall them* (Jasher 35:12). Genesis records both the stayed hand and the sworn deliverance: *And he said, Lay not thine hand upon the lad, neither do thou any thing unto him: for now I know that thou fearest Elohim (God), seeing thou hast not withheld thy son, thine only son from me* (Genesis 22:12); *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven... and thy seed shall possess the gate of his enemies* (Genesis 22:17). The Jubilees apparatus tells the same trial as a faithfulness tested before the heavenly court: *And the prince Mastêmâ came and said before Elohim (God), "Behold, Abraham loves Isaac his son, and he delights in him above all things else; bid him offer him as a burnt-offering on the altar, and You will see if he will do this command..."* (Jubilees 17:14). The oath over the seed is why the kings dare not touch the sons of Jacob.',
+       sv.verse_id, ev.verse_id, 'extras', 55859
+  FROM _session252_ja35_lookup sv, _session252_ja35_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=11
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=35 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-35-sister-pharaoh-abimelech',
+       E'She is my sister — what Elohim did to Pharaoh and Abimelech',
+       E'The counsellors recall the protection of the matriarch in foreign courts: *And have you not heard what their Elohim did to Pharaoh king of Egypt, and to Abimelech king of Gerar, through taking Abraham''s wife, who said of her, She is my sister, lest they might slay him on account of her... and Elohim did to them and their people all that you heard of* (Jasher 35:13). Both episodes stand in Genesis. Of Pharaoh: *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife* (Genesis 12:17). Of Abimelech: *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah* (Genesis 20:2), and the healing only when Abraham prayed — *So Abraham prayed unto Elohim (God): and Elohim (God) healed Abimelech, and his wife, and his maidservants; and they bare children* (Genesis 20:17). Kings who reached for what guarded the seed were struck; the Amorite kings are warned by it.',
+       sv.verse_id, ev.verse_id, 'extras', 55862
+  FROM _session252_ja35_lookup sv, _session252_ja35_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=35 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-35-esau-four-hundred-men',
+       E'Esau came with four hundred men, and Elohim delivered Jacob',
+       E'The freshest proof in the counsellors'' mouths is Esau''s failed ambush: *And behold, we ourselves saw with our eyes that Esau, the brother of Jacob, came to him with four hundred men, with the intention of slaying him, for he called to mind that he had taken away from him his father''s blessing* (Jasher 35:14); *and who delivered him from his hands but his Elohim in whom he trusted? he delivered him from the hand of his brother and also from the hands of his enemies, and surely he again will protect them* (Jasher 35:15). Genesis sets the four hundred and the dread: *And the messengers returned to Jacob, saying, We came to thy brother Esau, and also he cometh to meet thee, and four hundred men with him* (Genesis 32:6); *And Jacob lifted up his eyes, and looked, and, behold, Esau came, and with him four hundred men* (Genesis 33:1). The brother who came to smite turned to embrace — the seed kept again, and the kings reason from it.',
+       sv.verse_id, ev.verse_id, 'extras', 55865
+  FROM _session252_ja35_lookup sv, _session252_ja35_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=35 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-35-war-with-their-elohim',
+       E'You war not with men but with their Elohim who chose them',
+       E'The counsellors'' conclusion turns the whole recital into a warning, and the kings melt: *Surely you know and understand that you do not come to fight with them, but you come to war with their Elohim who made choice of them, and you have therefore all come this day to be destroyed* (Jasher 35:19); *And the kings turned and refrained from the sons of Jacob, for they durst not approach them to make war with them, for they were greatly afraid of them, and their hearts melted within them from their fear of them* (Jasher 35:23); *For this proceeded from Yahuah (the Lord) to them, for he heard the prayers of his servants Isaac and Jacob* (Jasher 35:24). This is the conquest-pattern before the conquest: the dread that empties the enemy''s heart is Yahuah''s own gift — *I will send my fear before thee... and I will make all thine enemies turn their backs unto thee* (Exodus 23:27), and Rahab confesses it of Israel: *I know that Yahuah (LORD) hath given you the land, and that your terror is fallen upon us, and that all the inhabitants of the land faint because of you* (Joshua 2:9). The election precedes the confession — to war with the chosen seed is to war with their Elohim.',
+       sv.verse_id, ev.verse_id, 'extras', 55868
+  FROM _session252_ja35_lookup sv, _session252_ja35_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=19
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=35 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-35-shechem-terror-of-elohim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The canon supplies exactly the dread Jasher 35:1-2 narrates the Amorite kings consulting under — the cities round about do not pursue.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-shechem-terror-of-elohim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 23:27 — *I will send my fear before thee, and will destroy all the people to whom thou shalt come, and I will make all thine enemies turn their backs unto thee.* The fear Yahuah pours into the kings'' advisers in Jasher 35:2 is the same covenant weapon He promises Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-shechem-terror-of-elohim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-35-abraham-nimrod-fire
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jasher 12:24 — *And Yahuah (the Lord) loved Abram and he had compassion over him, and Yahuah (the Lord) came down and delivered Abram from the fire and he was not burned.* The deliverance the counsellors cite in Jasher 35:7 is the very rescue Jasher''s own earlier chapter narrates.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-abraham-nimrod-fire'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=7
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=12 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* The canon frames Abraham''s call as the seed drawn out of Nimrod''s idolatry that Jasher 35:6 recalls.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-abraham-nimrod-fire'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-35-abraham-smote-kings-elam
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* The few faithful men of Abraham''s house pursuing by night in Jasher 35:9 is the canon''s own account of the war on the kings.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-abraham-smote-kings-elam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 14:16 — *And he brought back all the goods, and also brought again his brother Lot, and his goods, and the women also, and the people.* Jasher 35:8-9 names the rescued kinsman in Sodom and his restored property exactly as Genesis records of Lot.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-abraham-smote-kings-elam'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-35-binding-of-isaac-oath
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 22:12 — *And he said, Lay not thine hand upon the lad, neither do thou any thing unto him: for now I know that thou fearest Elohim (God), seeing thou hast not withheld thy son, thine only son from me.* Jasher 35:11''s note that Elohim prevented the offering matches the canon''s stayed hand and tested fear of Elohim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-binding-of-isaac-oath'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 22:17 — *That in blessing I will bless thee, and in multiplying I will multiply thy seed as the stars of the heaven, and as the sand which is upon the sea shore; and thy seed shall possess the gate of his enemies.* The promise to deliver Abraham''s seed from every trouble in Jasher 35:12 is the canon''s sworn blessing on the akedah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-binding-of-isaac-oath'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 17:16 — *And the prince Mastêmâ came and said before Elohim (God), "Behold, Abraham loves Isaac his son, and he delights in him above all things else; bid him offer him as a burnt-offering on the altar, and You will see if he will do this command, and You will know if he is faithful in everything wherein You do try him."* Jasher 35:11''s love-driven offering of the only son is the same trial Jubilees frames as the testing of Abraham''s faithfulness.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-binding-of-isaac-oath'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=11
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=17 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-35-sister-pharaoh-abimelech
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife.* Jasher 35:13''s memory of what Elohim did to Pharaoh over Abraham''s wife is the canon''s plague-judgment on Egypt''s house.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-sister-pharaoh-abimelech'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 20:2 — *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah.* The ''she is my sister'' and the king of Gerar named in Jasher 35:13 are taken straight from Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-sister-pharaoh-abimelech'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=20 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 20:17 — *So Abraham prayed unto Elohim (God): and Elohim (God) healed Abimelech, and his wife, and his maidservants; and they bare children.* The judgment on Abimelech''s people that Jasher 35:13 alludes to is the canon''s affliction lifted only by Abraham''s prayer.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-sister-pharaoh-abimelech'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=20 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-35-esau-four-hundred-men
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:6 — *And the messengers returned to Jacob, saying, We came to thy brother Esau, and also he cometh to meet thee, and four hundred men with him.* The four hundred men coming with Esau in Jasher 35:14 is the canon''s own report to Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-esau-four-hundred-men'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 33:1 — *And Jacob lifted up his eyes, and looked, and, behold, Esau came, and with him four hundred men. And he divided the children unto Leah, and unto Rachel, and unto the two handmaids.* The deliverance from Esau''s hand that Jasher 35:15 cites is the canon''s encounter where the four hundred do no harm.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-esau-four-hundred-men'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-35-war-with-their-elohim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 23:27 — *I will send my fear before thee, and will destroy all the people to whom thou shalt come, and I will make all thine enemies turn their backs unto thee.* The kings warring against Israel''s Elohim in Jasher 35:19 face the very dread Yahuah promises to send before His people.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-war-with-their-elohim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 2:9 — *And she said unto the men, I know that Yahuah (LORD) hath given you the land, and that your terror is fallen upon us, and that all the inhabitants of the land faint because of you.* The Amorite kings'' melting hearts in Jasher 35:23 are Rahab''s confession in advance — the inhabitants faint before the chosen seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-war-with-their-elohim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* That the kings'' restraint proceeded from Yahuah in Jasher 35:24 is the canon''s same statement that the terror of Elohim, not the sons'' strength, stayed the cities.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja35_lookup sv, _session252_ja35_lookup tv
+ WHERE t.slug='jasher-35-war-with-their-elohim'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=35 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_36.sql (session252 jasher 36) -----
+-- Source anchor: jasher/jasher ch36. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja36 (view _session252_ja36_lookup). Sort band base 55875, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja36_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-36-bethel-altar
+  ('jasher', 'jasher', 36, 1, 'canon', 'genesis', 35, 1, 'free', E'Genesis 35:1 — *And Elohim (God) said unto Jacob, Arise, go up to Beth-el, and dwell there: and make there an altar unto Elohim (God), that appeared unto thee when thou fleddest from the face of Esau thy brother.* The canon command Jasher 36:1 retells word for word.'),
+  ('jasher', 'jasher', 36, 3, 'canon', 'genesis', 35, 6, 'free', E'Genesis 35:6 — *So Jacob came to Luz, which is in the land of Canaan, that is, Beth-el, he and all the people that were with him.* The same Luz/Bethel arrival where Jasher 36:3 has Jacob remain six months.'),
+  ('jasher', 'jasher', 36, 3, 'canon', 'genesis', 35, 7, 'free', E'Genesis 35:7 — *And he built there an altar, and called the place El-beth-el: because there Elohim (God) appeared unto him, when he fled from the face of his brother.* The altar Jasher 36:3 records Jacob building to Yahuah who appeared to him.'),
+  ('jasher', 'jasher', 36, 1, 'jubilees', 'jubilees', 32, 1, 'extras', E'Jubilees 32:1 — *And he abode that night at Bethel, and Levi dreamed that they had ordained and made him the priest of the El Elyon (Most High) Elohim (God), him and his sons for ever; and he awoke from his sleep and blessed Yahuah (God).* The live Jubilees apparatus narrates the same Bethel night that Jasher 36:1 opens.'),
+  -- thread: jasher-36-deaths-deborah-rebecca-laban
+  ('jasher', 'jasher', 36, 4, 'canon', 'genesis', 35, 8, 'free', E'Genesis 35:8 — *But Deborah Rebekah''s nurse died, and she was buried beneath Beth-el under an oak: and the name of it was called Allon-bachuth.* The same nurse, oak and name Jasher 36:4,6 retells.'),
+  ('jasher', 'jasher', 36, 6, 'jubilees', 'jubilees', 32, 30, 'extras', E'Jubilees 32:30 — *And in the night, on the twenty-third of this month, Deborah Rebecca''s nurse died, and they buried her beneath the city under the oak of the river, and he called the name of this place, ''The river of Deborah,'' and the oak, ''The oak of the mourning of Deborah.'' And Rebecca went and returned to her house to his father Isaac...* The live Jubilees apparatus narrates the same death and mourning-oak as Jasher 36:4-6.'),
+  -- thread: jasher-36-name-israel-rachel-benjamin
+  ('jasher', 'jasher', 36, 8, 'canon', 'genesis', 35, 10, 'free', E'Genesis 35:10 — *Thy name is Jacob: thy name shall not be called any more Jacob, but Yashar''el (Israel) shall be thy name: and he called his name Yashar''el (Israel).* The renaming Jasher 36:8 records as the hundred-year-old Jacob being blessed and called Israel.'),
+  ('jasher', 'jasher', 36, 8, 'canon', 'genesis', 35, 11, 'free', E'Genesis 35:11 — *I am El Shaddai (God Almighty): be fruitful and multiply; a nation and a company of nations shall be of thee, and kings shall come out of thy loins.* The kings-and-nations promise on the elect line whose new name Jasher 36:8 announces.'),
+  ('jasher', 'jasher', 36, 12, 'canon', 'genesis', 35, 18, 'free', E'Genesis 35:18 — *And it came to pass, as her soul was in departing, (for she died) that she called his name Ben-oni: but his father called him Benjamin.* The same father''s naming of Benjamin that Jasher 36:12 gives.'),
+  ('jasher', 'jasher', 36, 11, 'canon', 'genesis', 35, 19, 'free', E'Genesis 35:19 — *And Rachel died, and was buried in the way to Ephrath, which is Beth-lehem.* The same death and Bethlehem grave Jasher 36:11 records with its pillar.'),
+  ('jasher', 'jasher', 36, 8, 'jubilees', 'jubilees', 32, 17, 'extras', E'Jubilees 32:17 — *Your name shall not be called Jacob, but Yashar''el (Israel) shall they name your name.* The live Jubilees apparatus gives the same renaming Jasher 36:8 records.'),
+  ('jasher', 'jasher', 36, 11, 'jubilees', 'jubilees', 32, 34, 'extras', E'Jubilees 32:34 — *And Rachel died there and she was buried in the land of Ephrath, the same is Bethlehem, and Jacob built a pillar on the grave of Rachel, on the road above her grave.* The same Ephrath/Bethlehem grave and pillar of Jasher 36:11.'),
+  -- thread: jasher-36-reuben-birthright-offices
+  ('jasher', 'jasher', 36, 14, 'canon', 'genesis', 35, 22, 'free', E'Genesis 35:22 — *And it came to pass, when Yashar''el (Israel) dwelt in that land, that Reuben went and lay with Bilhah his father''s concubine: and Yashar''el (Israel) heard it. Now the sons of Jacob were twelve:* The deed Jasher 36:14 retells as Reuben removing his father''s bed.'),
+  ('jasher', 'jasher', 36, 15, 'canon', 'genesis', 49, 4, 'free', E'Genesis 49:4 — *Unstable as water, thou shalt not excel; because thou wentest up to thy father''s bed; then defiledst thou it: he went up to my couch.* Jacob''s blessing pronouncing the very forfeiture Jasher 36:15 records.'),
+  ('jasher', 'jasher', 36, 15, 'canon', '1-chronicles', 5, 1, 'free', E'1 Chronicles 5:1 — *Now the sons of Reuben the firstborn of Yashar''el (Israel), (for he was the firstborn; but, forasmuch as he defiled his father''s bed, his birthright was given unto the sons of Joseph the son of Yashar''el (Israel): and the genealogy is not to be reckoned after the birthright.)* The canon names the birthright passing to Joseph exactly as Jasher 36:15.'),
+  ('jasher', 'jasher', 36, 15, 'canon', '1-chronicles', 5, 2, 'free', E'1 Chronicles 5:2 — *For Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler; but the birthright was Joseph''s:)* The kingly office to Judah and birthright to Joseph that Jasher 36:15 sets out.'),
+  ('jasher', 'jasher', 36, 14, 'jubilees', 'jubilees', 33, 2, 'extras', E'Jubilees 33:2 — *And Reuben saw Bilhah, Rachel''s maid, the concubine of his father, bathing in water in a secret place, and he loved her.* The live Jubilees apparatus narrates the same Reuben-and-Bilhah sin Jasher 36:14 records.'),
+  -- thread: jasher-36-twelve-sons
+  ('jasher', 'jasher', 36, 17, 'canon', 'genesis', 35, 23, 'free', E'Genesis 35:23 — *The sons of Leah; Reuben, Jacob''s firstborn, and Simeon, and Levi, and Yahudah (Judah), and Issachar, and Zebulun:* The same sons of Leah Jasher 36:17 lists.'),
+  ('jasher', 'jasher', 36, 17, 'canon', 'genesis', 35, 24, 'free', E'Genesis 35:24 — *The sons of Rachel; Joseph, and Benjamin:* The same sons of Rachel Jasher 36:17 names.'),
+  ('jasher', 'jasher', 36, 16, 'jubilees', 'jubilees', 33, 22, 'extras', E'Jubilees 33:22 — *And these were the names of the sons of Jacob: the first-born Reuben, Simeon, Levi, Yahudah (Judah), Issachar, Zebulon, the sons of Leah; and the sons of Rachel, Joseph and Benjamin; and the sons of Bilhah, Dan and Naphtali, and the sons of Zilpah, Gad and Asher; and Dinah, the daughter of Leah, the only daughter of Jacob.* The live Jubilees apparatus gives the same twelve-and-Dinah roster as Jasher 36:16-18.'),
+  ('jasher', 'jasher', 36, 16, 'canon', 'ezekiel', 37, 21, 'free', E'Ezekiel 37:21 — *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* The regathering of the twelve-tribe nation Jasher 36:16 sees first forming.'),
+  -- thread: jasher-36-esau-edom-seir-set-apart
+  ('jasher', 'jasher', 36, 21, 'canon', 'genesis', 36, 1, 'free', E'Genesis 36:1 — *Now these are the generations of Esau, who is Edom.* The canon heading for the very Esau-genealogy Jasher 36:21-25 retells.'),
+  ('jasher', 'jasher', 36, 20, 'canon', 'genesis', 36, 8, 'free', E'Genesis 36:8 — *Thus dwelt Esau in mount Seir: Esau is Edom.* The same dwelling in Seir that Jasher 36:20 records of Esau and his sons.'),
+  ('jasher', 'jasher', 36, 20, 'canon', 'malachi', 1, 2, 'free', E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* The election that sets Esau, dwelling apart in Seir (Jasher 36:20), outside the chosen line.'),
+  ('jasher', 'jasher', 36, 20, 'canon', 'malachi', 1, 3, 'free', E'Malachi 1:3 — *And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness.* The prophet''s verdict on Esau/Edom whose Seir settlement Jasher 36:20 narrates.'),
+  ('jasher', 'jasher', 36, 20, 'canon', 'hebrews', 12, 16, 'free', E'Hebrews 12:16 — *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright.* The New Testament names why Esau, settling in Seir (Jasher 36:20), stands apart from the seed kept in Jacob.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja36_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja36_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-36-bethel-altar',
+       E'Arise, go to Bethel and build an altar',
+       E'Jasher opens this chapter at Bethel: *At that time Yahuah (the Lord) appeared to Jacob saying, Arise, go to Bethel and remain there, and make there an altar to Yahuah (the Lord) who appears to you, who delivered you and your sons from affliction* (Jasher 36:1), and Jacob *built an altar to Yahuah (the Lord) who appeared to him* (Jasher 36:3). It ain''t new — this is Genesis retold. The canon gives the same command, *And Elohim (God) said unto Jacob, Arise, go up to Beth-el, and dwell there: and make there an altar unto Elohim (God), that appeared unto thee when thou fleddest from the face of Esau thy brother* (Genesis 35:1), and the same obedience at Luz, *So Jacob came to Luz, which is in the land of Canaan, that is, Beth-el, he and all the people that were with him* (Genesis 35:6); *And he built there an altar, and called the place El-beth-el: because there Elohim (God) appeared unto him, when he fled from the face of his brother* (Genesis 35:7). The Jubilees apparatus narrates the very same night and the priesthood that rose from it, *And he abode that night at Bethel, and Levi dreamed that they had ordained and made him the priest of the El Elyon (Most High) Elohim (God), him and his sons for ever; and he awoke from his sleep and blessed Yahuah (God)* (Jubilees 32:1) — the fathers building altars and calling on the Name, Torah-before-Sinai kept in the chosen seed.',
+       sv.verse_id, ev.verse_id, 'extras', 55875
+  FROM _session252_ja36_lookup sv, _session252_ja36_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=36 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-36-deaths-deborah-rebecca-laban',
+       E'Deborah, Rebecca, and Laban die',
+       E'At Bethel the deaths come: *At that time died Deborah the daughter of Uz, the nurse of Rebecca, who had been with Jacob; and Jacob buried her beneath Bethel under an oak that was there* (Jasher 36:4), and *he called the name of that place Allon-bachuth* (Jasher 36:6) as he mourned both Deborah and his mother Rebecca, who *died at that time in Hebron... and she was buried in the cave of Machpelah which Abraham had bought from the children of Heth* (Jasher 36:5). It ain''t new — Genesis records the same oak of weeping, *But Deborah Rebekah''s nurse died, and she was buried beneath Beth-el under an oak: and the name of it was called Allon-bachuth* (Genesis 35:8). Jasher then adds what the canon leaves untold, the death of Laban under the broken covenant, *And Laban the Syrian died in those days, for Elohim (God) smote him because he transgressed the covenant that existed between him and Jacob* (Jasher 36:7) — the legendary detail anchored to the canon scene it expands. The Jubilees apparatus carries the same burial and the named place of mourning, *And in the night, on the twenty-third of this month, Deborah Rebecca''s nurse died, and they buried her beneath the city under the oak of the river, and he called the name of this place, ''The river of Deborah,'' and the oak, ''The oak of the mourning of Deborah.'' And Rebecca went and returned to her house to his father Isaac* (Jubilees 32:30).',
+       sv.verse_id, ev.verse_id, 'extras', 55878
+  FROM _session252_ja36_lookup sv, _session252_ja36_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=36 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-36-name-israel-rachel-benjamin',
+       E'The name Israel; Rachel dies bearing Benjamin',
+       E'Jasher records the blessing of the new name and the grief that follows: *And Jacob was a hundred years old when Yahuah (the Lord) appeared to him, and blessed him and called his name Israel, and Rachel the wife of Jacob conceived in those days* (Jasher 36:8). On the road to Ephrath *Rachel bare a son and she had hard labor and she died* (Jasher 36:10), and *Jacob called the name of his son that was born to him, which Rachel bare to him, Benjamin, for he was born to him in the land on the right hand* (Jasher 36:12). It ain''t new — Genesis gives the same naming, *but his father called him Benjamin* (Genesis 35:18), the same death and grave, *And Rachel died, and was buried in the way to Ephrath, which is Beth-lehem* (Genesis 35:19), and the same renaming with the kings-promise of the elect line, *Thy name is Jacob: thy name shall not be called any more Jacob, but Yashar''el (Israel) shall be thy name: and he called his name Yashar''el (Israel)* (Genesis 35:10); *I am El Shaddai (God Almighty): be fruitful and multiply; a nation and a company of nations shall be of thee, and kings shall come out of thy loins* (Genesis 35:11). The Jubilees apparatus carries the same name-giving and the same Bethlehem grave, *Your name shall not be called Jacob, but Yashar''el (Israel) shall they name your name* (Jubilees 32:17); *And Rachel died there and she was buried in the land of Ephrath, the same is Bethlehem, and Jacob built a pillar on the grave of Rachel* (Jubilees 32:34) — the covenant seed named and kept.',
+       sv.verse_id, ev.verse_id, 'extras', 55881
+  FROM _session252_ja36_lookup sv, _session252_ja36_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=36 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-36-reuben-birthright-offices',
+       E'Reuben profanes the bed; birthright, kingship, priesthood divided',
+       E'Jasher tells the sin and its cost: *And it was after the death of Rachel, that Jacob pitched his tent in the tent of her handmaid Bilhah* (Jasher 36:13), and Reuben *rose up in his anger and went and entered the tent of Bilhah and he from there removed his father''s bed* (Jasher 36:14). Then comes the verdict Jasher spells out where Genesis only hints: *At that time the portion of birthright, together with the kingly and priestly offices, was removed from the sons of Reuben, for he had profaned his father''s bed, and the birthright was given to Joseph, the kingly office to Judah, and the priesthood to Levi, because Reuben had defiled his father''s bed* (Jasher 36:15). It ain''t new — Genesis records the deed, *Reuben went and lay with Bilhah his father''s concubine: and Yashar''el (Israel) heard it* (Genesis 35:22); Jacob''s blessing pronounces the loss, *Unstable as water, thou shalt not excel; because thou wentest up to thy father''s bed; then defiledst thou it: he went up to my couch* (Genesis 49:4); and Chronicles names the very transfer Jasher describes, *but, forasmuch as he defiled his father''s bed, his birthright was given unto the sons of Joseph the son of Yashar''el (Israel)* (1 Chronicles 5:1); *For Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler; but the birthright was Joseph''s* (1 Chronicles 5:2). The Jubilees apparatus carries the same scene of Bilhah defiled. Election precedes the offices, and the firstborn forfeits — the seed is kept, but kept in righteousness.',
+       sv.verse_id, ev.verse_id, 'extras', 55884
+  FROM _session252_ja36_lookup sv, _session252_ja36_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=36 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-36-twelve-sons',
+       E'The twelve sons of Jacob — the tribes',
+       E'Jasher numbers the covenant people: *And these are the generations of Jacob who were born to him in Padan-aram, and the sons of Jacob were twelve* (Jasher 36:16); *The sons of Leah were Reuben the first born, and Simeon, Levi, Judah, Issachar, Zebulun, and their sister Dinah; and the sons of Rachel were Joseph and Benjamin* (Jasher 36:17), with Gad, Asher, Dan and Naphtali from the handmaids (Jasher 36:18). It ain''t new — Genesis lists the same twelve, *The sons of Leah; Reuben, Jacob''s firstborn, and Simeon, and Levi, and Yahudah (Judah), and Issachar, and Zebulun* (Genesis 35:23); *The sons of Rachel; Joseph, and Benjamin* (Genesis 35:24). The Jubilees apparatus carries the same roster with the daughter named, *And these were the names of the sons of Jacob: the first-born Reuben, Simeon, Levi, Yahudah (Judah), Issachar, Zebulon, the sons of Leah; and the sons of Rachel, Joseph and Benjamin; and the sons of Bilhah, Dan and Naphtali, and the sons of Zilpah, Gad and Asher; and Dinah, the daughter of Leah, the only daughter of Jacob* (Jubilees 33:22). This is the twelve-tribe nation forming — the people the prophets promise to regather, *Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21).',
+       sv.verse_id, ev.verse_id, 'extras', 55887
+  FROM _session252_ja36_lookup sv, _session252_ja36_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=16
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=36 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-36-esau-edom-seir-set-apart',
+       E'Esau dwells in Seir — Edom set apart from the elect line',
+       E'Jasher closes by parting Esau from the chosen seed: *And his brother Esau and his sons, and all belonging to him went to the land of Seir and dwelt there, and had possessions in the land of Seir, and the children of Esau were fruitful and multiplied exceedingly in the land of Seir* (Jasher 36:20), then lists the generations of Esau and the families *according to their dukedoms in the land of Seir* (Jasher 36:25). It ain''t new — Genesis heads the same record, *Now these are the generations of Esau, who is Edom* (Genesis 36:1), and seats him on the same mountain, *Thus dwelt Esau in mount Seir: Esau is Edom* (Genesis 36:8). The election was spoken before either was born, *And he hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness* — no, the word stands, *Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob* (Malachi 1:2); *And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness* (Malachi 1:3). And the New Testament names why Esau forfeited, *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright* (Hebrews 12:16). Election precedes confession: the elder serves the younger, and Edom is set apart from the seed kept in Jacob — not a people destroyed, but a line not chosen for the covenant.',
+       sv.verse_id, ev.verse_id, 'extras', 55890
+  FROM _session252_ja36_lookup sv, _session252_ja36_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=20
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=36 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-36-bethel-altar
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 35:1 — *And Elohim (God) said unto Jacob, Arise, go up to Beth-el, and dwell there: and make there an altar unto Elohim (God), that appeared unto thee when thou fleddest from the face of Esau thy brother.* The canon command Jasher 36:1 retells word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-bethel-altar'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 35:6 — *So Jacob came to Luz, which is in the land of Canaan, that is, Beth-el, he and all the people that were with him.* The same Luz/Bethel arrival where Jasher 36:3 has Jacob remain six months.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-bethel-altar'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 35:7 — *And he built there an altar, and called the place El-beth-el: because there Elohim (God) appeared unto him, when he fled from the face of his brother.* The altar Jasher 36:3 records Jacob building to Yahuah who appeared to him.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-bethel-altar'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 32:1 — *And he abode that night at Bethel, and Levi dreamed that they had ordained and made him the priest of the El Elyon (Most High) Elohim (God), him and his sons for ever; and he awoke from his sleep and blessed Yahuah (God).* The live Jubilees apparatus narrates the same Bethel night that Jasher 36:1 opens.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-bethel-altar'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=32 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-36-deaths-deborah-rebecca-laban
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 35:8 — *But Deborah Rebekah''s nurse died, and she was buried beneath Beth-el under an oak: and the name of it was called Allon-bachuth.* The same nurse, oak and name Jasher 36:4,6 retells.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-deaths-deborah-rebecca-laban'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 32:30 — *And in the night, on the twenty-third of this month, Deborah Rebecca''s nurse died, and they buried her beneath the city under the oak of the river, and he called the name of this place, ''The river of Deborah,'' and the oak, ''The oak of the mourning of Deborah.'' And Rebecca went and returned to her house to his father Isaac...* The live Jubilees apparatus narrates the same death and mourning-oak as Jasher 36:4-6.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-deaths-deborah-rebecca-laban'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=32 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-36-name-israel-rachel-benjamin
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 35:10 — *Thy name is Jacob: thy name shall not be called any more Jacob, but Yashar''el (Israel) shall be thy name: and he called his name Yashar''el (Israel).* The renaming Jasher 36:8 records as the hundred-year-old Jacob being blessed and called Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-name-israel-rachel-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 35:11 — *I am El Shaddai (God Almighty): be fruitful and multiply; a nation and a company of nations shall be of thee, and kings shall come out of thy loins.* The kings-and-nations promise on the elect line whose new name Jasher 36:8 announces.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-name-israel-rachel-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 35:18 — *And it came to pass, as her soul was in departing, (for she died) that she called his name Ben-oni: but his father called him Benjamin.* The same father''s naming of Benjamin that Jasher 36:12 gives.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-name-israel-rachel-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 35:19 — *And Rachel died, and was buried in the way to Ephrath, which is Beth-lehem.* The same death and Bethlehem grave Jasher 36:11 records with its pillar.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-name-israel-rachel-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 32:17 — *Your name shall not be called Jacob, but Yashar''el (Israel) shall they name your name.* The live Jubilees apparatus gives the same renaming Jasher 36:8 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-name-israel-rachel-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=8
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=32 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Jubilees 32:34 — *And Rachel died there and she was buried in the land of Ephrath, the same is Bethlehem, and Jacob built a pillar on the grave of Rachel, on the road above her grave.* The same Ephrath/Bethlehem grave and pillar of Jasher 36:11.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-name-israel-rachel-benjamin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=11
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=32 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-36-reuben-birthright-offices
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 35:22 — *And it came to pass, when Yashar''el (Israel) dwelt in that land, that Reuben went and lay with Bilhah his father''s concubine: and Yashar''el (Israel) heard it. Now the sons of Jacob were twelve:* The deed Jasher 36:14 retells as Reuben removing his father''s bed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-reuben-birthright-offices'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:4 — *Unstable as water, thou shalt not excel; because thou wentest up to thy father''s bed; then defiledst thou it: he went up to my couch.* Jacob''s blessing pronouncing the very forfeiture Jasher 36:15 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-reuben-birthright-offices'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Chronicles 5:1 — *Now the sons of Reuben the firstborn of Yashar''el (Israel), (for he was the firstborn; but, forasmuch as he defiled his father''s bed, his birthright was given unto the sons of Joseph the son of Yashar''el (Israel): and the genealogy is not to be reckoned after the birthright.)* The canon names the birthright passing to Joseph exactly as Jasher 36:15.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-reuben-birthright-offices'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=5 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Chronicles 5:2 — *For Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler; but the birthright was Joseph''s:)* The kingly office to Judah and birthright to Joseph that Jasher 36:15 sets out.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-reuben-birthright-offices'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=5 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 33:2 — *And Reuben saw Bilhah, Rachel''s maid, the concubine of his father, bathing in water in a secret place, and he loved her.* The live Jubilees apparatus narrates the same Reuben-and-Bilhah sin Jasher 36:14 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-reuben-birthright-offices'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=14
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=33 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-36-twelve-sons
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 35:23 — *The sons of Leah; Reuben, Jacob''s firstborn, and Simeon, and Levi, and Yahudah (Judah), and Issachar, and Zebulun:* The same sons of Leah Jasher 36:17 lists.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-twelve-sons'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 35:24 — *The sons of Rachel; Joseph, and Benjamin:* The same sons of Rachel Jasher 36:17 names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-twelve-sons'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 33:22 — *And these were the names of the sons of Jacob: the first-born Reuben, Simeon, Levi, Yahudah (Judah), Issachar, Zebulon, the sons of Leah; and the sons of Rachel, Joseph and Benjamin; and the sons of Bilhah, Dan and Naphtali, and the sons of Zilpah, Gad and Asher; and Dinah, the daughter of Leah, the only daughter of Jacob.* The live Jubilees apparatus gives the same twelve-and-Dinah roster as Jasher 36:16-18.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-twelve-sons'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=16
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=33 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ezekiel 37:21 — *And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land:* The regathering of the twelve-tribe nation Jasher 36:16 sees first forming.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-twelve-sons'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-36-esau-edom-seir-set-apart
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:1 — *Now these are the generations of Esau, who is Edom.* The canon heading for the very Esau-genealogy Jasher 36:21-25 retells.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-esau-edom-seir-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:8 — *Thus dwelt Esau in mount Seir: Esau is Edom.* The same dwelling in Seir that Jasher 36:20 records of Esau and his sons.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-esau-edom-seir-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* The election that sets Esau, dwelling apart in Seir (Jasher 36:20), outside the chosen line.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-esau-edom-seir-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 1:3 — *And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness.* The prophet''s verdict on Esau/Edom whose Seir settlement Jasher 36:20 narrates.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-esau-edom-seir-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Hebrews 12:16 — *Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright.* The New Testament names why Esau, settling in Seir (Jasher 36:20), stands apart from the seed kept in Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja36_lookup sv, _session252_ja36_lookup tv
+ WHERE t.slug='jasher-36-esau-edom-seir-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=36 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_37.sql (session252 jasher 37) -----
+-- Source anchor: jasher/jasher ch37. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja37 (view _session252_ja37_lookup). Sort band base 55900, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja37_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-37-kings-of-canaan-gather-against-the-seed
+  ('jasher', 'jasher', 37, 6, 'canon', 'genesis', 34, 25, 'free', E'Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* The smiting of Shechem in Genesis is the wound the kings of Canaan now rise to avenge in Jasher 37:6.'),
+  ('jasher', 'jasher', 37, 11, 'canon', 'genesis', 34, 30, 'free', E'Genesis 34:30 — *And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house.* Jacob''s very fear in Genesis — the land gathering against his few — is the war the kings declare in Jasher 37:11.'),
+  ('jasher', 'jasher', 37, 8, 'canon', 'genesis', 48, 22, 'free', E'Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* The canon keeps the memory of these very Amorite wars Jasher 37:8 expands, in Jacob''s dying word to Joseph.'),
+  ('jasher', 'jasher', 37, 6, 'jubilees', 'jubilees', 34, 2, 'extras', E'Jubilees 34:2 — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey.* Jubilees narrates the identical gathering of the Amorite kings against the sons of Jacob that Jasher 37:6 sets at Shechem.'),
+  -- thread: jasher-37-jacob-prays-the-few-from-the-many
+  ('jasher', 'jasher', 37, 14, 'canon', 'genesis', 32, 11, 'free', E'Genesis 32:11 — *Deliver me, I pray thee, from the hand of my brother, from the hand of Esau: for I fear him, lest he will come and smite me, and the mother with the children.* The same Jacob who prayed for deliverance at the Jabbok spreads his hands again in Jasher 37:14 to save his sons from the hand of the kings.'),
+  ('jasher', 'jasher', 37, 14, 'canon', 'deuteronomy', 20, 4, 'free', E'Deuteronomy 20:4 — *For Yahuah Elohaychem (the LORD your God) is he that goeth with you, to fight for you against your enemies, to save you.* Jacob''s confession that power to save the few from the many is in Yahuah''s hand (Jasher 37:14) is the Torah law of battle.'),
+  ('jasher', 'jasher', 37, 16, 'canon', '2-chronicles', 14, 11, 'free', E'2 Chronicles 14:11 — *And Asa cried unto Yahuah Elohav (the LORD his God), and said, Yahuah (LORD), it is nothing with thee to help, whether with many, or with them that have no power: help us, O Yahuah (LORD) our Elohim (God); for we rest on thee, and in thy name we go against this multitude. O Yahuah (LORD), thou art our Elohim (God); let not man prevail against thee.* Asa''s cry repeats Jacob''s surrender in Jasher 37:16 — the outnumbered seed resting wholly on Yahuah.'),
+  ('jasher', 'jasher', 37, 14, 'canon', 'psalms', 33, 16, 'free', E'Psalms 33:16 — *There is no king saved by the multitude of an host: a mighty man is not delivered by much strength.* The Psalm states plainly the truth Jacob prays in Jasher 37:14 — Yahuah, not the size of the army, saves.'),
+  -- thread: jasher-37-terror-of-elohim-on-the-nations
+  ('jasher', 'jasher', 37, 17, 'canon', 'genesis', 35, 5, 'free', E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The canon''s terror of Elohim on the cities around Shechem is the very consternation that seizes the kings when Jacob ceases praying in Jasher 37:17.'),
+  ('jasher', 'jasher', 37, 19, 'canon', 'exodus', 15, 16, 'free', E'Exodus 15:16 — *Fear and dread shall fall upon them; by the greatness of thine arm they shall be as still as a stone; till thy people pass over, O Yahuah (LORD), till the people pass over, which thou hast purchased.* The dread Yahuah pours on the kings by the phantom voice of chariots in Jasher 37:19 is the same fear the Song of the Sea sings over Canaan.'),
+  ('jasher', 'jasher', 37, 19, 'canon', 'joshua', 24, 12, 'free', E'Joshua 24:12 — *And I sent the hornet before you, which drave them out from before you, even the two kings of the Amorites; but not with thy sword, nor with thy bow.* Joshua''s witness that the Amorite kings fell by Yahuah''s terror, not the seed''s blade, matches the unearthly army-voice of Jasher 37:19.'),
+  -- thread: jasher-37-judah-runs-first-the-lion
+  ('jasher', 'jasher', 37, 26, 'canon', 'genesis', 49, 8, 'free', E'Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee.* Jacob''s blessing that Judah''s hand would be on the neck of his enemies is enacted as Judah runs first before his brethren against the kings in Jasher 37:26.'),
+  ('jasher', 'jasher', 37, 39, 'canon', 'genesis', 49, 9, 'free', E'Genesis 49:9 — *Yahudah (Judah) is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* The lion''s whelp risen from the prey is Judah felling and beheading Jashub king of Tapnach in Jasher 37:39-40.'),
+  ('jasher', 'jasher', 37, 40, 'canon', 'revelation', 5, 5, 'free', E'Revelation 5:5 — *And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.* The same tribe of the lion that triumphs through Judah in Jasher 37:40 prevails at the last as the Lion of the tribe of Judah.'),
+  ('jasher', 'jasher', 37, 26, 'canon', 'psalms', 60, 12, 'free', E'Psalms 60:12 — *Through Elohim (God) we shall do valiantly: for he it is that shall tread down our enemies.* Judah''s valor before the kings in Jasher 37:26 is the doing-valiantly the Psalm credits to Elohim treading down the enemy.'),
+  -- thread: jasher-37-levi-guards-the-rear-the-zeal
+  ('jasher', 'jasher', 37, 49, 'canon', 'genesis', 49, 5, 'free', E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* The Levi who again takes up the sword against Elon in Jasher 37:49 is the same brother whose fierceness Jacob marks in the blessing.'),
+  ('jasher', 'jasher', 37, 50, 'canon', 'genesis', 49, 7, 'free', E'Genesis 49:7 — *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel).* Levi''s fierce slaughter of Elon and his captains in Jasher 37:50 is the wrath Jacob prophesied would be divided and scattered, yet kept within the covenant nation.'),
+  ('jasher', 'jasher', 37, 50, 'jubilees', 'jubilees', 34, 6, 'extras', E'Jubilees 34:6 — *And he arose from his housel he and his three sons and all the servants of his father, and his own servants, and he went against them with six thousand men, who carried swords. And he slew them in the pastures of Shechem, and pursued those who fled, and he slew them with the edge of the sword, and he slew ’Arêsa and Tâphû and Sarêgân and Sêlô and ’Amânîsakîr and Gâgâ’as, and he recovered his herds.* Jubilees compresses the whole battle Jasher 37:50 narrates king by king into one rout of the Amorite kings in the pastures of Shechem.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja37_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja37_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-37-kings-of-canaan-gather-against-the-seed',
+       E'The kings of Canaan gather against the sons of Jacob at Shechem',
+       E'Jasher returns to Shechem after Dinah and the sword of Simeon and Levi, and the nations gather to avenge that city: *And all the kings of Canaan again assembled, and they came together to make war with Jacob and his sons* (Jasher 37:6) — *And they sent a declaration to Jacob and his son, saying, Come you all forth to us that we may have an interview together in the plain, and revenge the cause of the men of Shechem whom you slew in their city* (Jasher 37:11). This is the canon''s own Shechem set on the page beside its expansion: *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males* (Genesis 34:25). Jacob had feared this very gathering: *And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house* (Genesis 34:30). The canon even keeps the memory of these wars in Jacob''s own dying word: *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow* (Genesis 48:22). And Jubilees tells the very same scene — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey* (Jubilees 34:2). It ain''t new: the seed is hated and surrounded by the nations, and yet kept.',
+       sv.verse_id, ev.verse_id, 'extras', 55900
+  FROM _session252_ja37_lookup sv, _session252_ja37_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=37 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-37-jacob-prays-the-few-from-the-many',
+       E'Jacob spreads his hands — the few delivered from the many',
+       E'Before the battle Jacob lifts his hands as his fathers did: *And Jacob prayed to Yahuah (the Lord) for his sons, and he spread forth his hands to Yahuah (the Lord), and he said, O Elohim (God), you are an El Shaddai (Almighty God), you are our father, you did form us and we are the works of your hands... for in your hand is power and might, to save the few from the many* (Jasher 37:14). This is the same Jacob who prayed at the Jabbok crossing: *And Jacob said, O Elohim (God) of my father Abraham, and Elohim (God) of my father Isaac, Yahuah (LORD) which saidst unto me, Return unto thy country, and to thy kindred, and I will deal well with thee* (Genesis 32:9), pleading *Deliver me, I pray thee, from the hand of my brother* (Genesis 32:11). The confession that the few are saved not by their own arm is Torah''s own: *For Yahuah Elohaychem (the LORD your God) is he that goeth with you, to fight for you against your enemies, to save you* (Deuteronomy 20:4); and the song of Asa is the same cry — *Yahuah (LORD), it is nothing with thee to help, whether with many, or with them that have no power: help us, O Yahuah (LORD) our Elohim (God); for we rest on thee... let not man prevail against thee* (2 Chronicles 14:11). The Psalmist seals it: *There is no king saved by the multitude of an host: a mighty man is not delivered by much strength* (Psalms 33:16). It ain''t new — election and deliverance are by Yahuah''s hand, not the number of the host.',
+       sv.verse_id, ev.verse_id, 'extras', 55903
+  FROM _session252_ja37_lookup sv, _session252_ja37_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=37 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-37-terror-of-elohim-on-the-nations',
+       E'The terror of Elohim falls on the kings — chariots heard',
+       E'When Jacob ceased praying the dread of Yahuah fell on the host: *And when Jacob ceased praying to Yahuah (the Lord) the earth shook from its place, and the sun darkened, and all these kings were terrified and a great consternation seized them* (Jasher 37:17) — *For Yahuah (the Lord) caused them to hear the voice of chariots, and the voice of mighty horses from the sons of Jacob, and the voice of a great army accompanying them* (Jasher 37:19). The canon names this same terror at the very journey out of Shechem: *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob* (Genesis 35:5). The Song of the Sea sings it over the nations of Canaan: *Fear and dread shall fall upon them; by the greatness of thine arm they shall be as still as a stone; till thy people pass over, O Yahuah (LORD)* (Exodus 15:16). And Joshua confesses the conquest was never won by the seed''s own blade: *And I sent the hornet before you, which drave them out from before you, even the two kings of the Amorites; but not with thy sword, nor with thy bow* (Joshua 24:12). It ain''t new — the LORD himself goes before the seed and melts the nations.',
+       sv.verse_id, ev.verse_id, 'extras', 55906
+  FROM _session252_ja37_lookup sv, _session252_ja37_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=17
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=37 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-37-judah-runs-first-the-lion',
+       E'Judah runs first — the lion''s whelp from the prey',
+       E'Out before all his brethren goes Judah, and the king of Tapnach falls under his hand: *And Judah, the son of Jacob, ran first before his brethren, and ten of his servants with him, and he went toward these kings* (Jasher 37:26); *And when Judah saw that his shield was split, he hastily drew his sword and smote Jashub at his ankles, and cut off his feet that Jashub fell upon the ground... And Judah hastily picked up Jashub’s spear, with which he severed his head and cast it next to his feet* (Jasher 37:39-40). Jacob''s blessing already crowned Judah for exactly this: *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee* (Genesis 49:8) — *Yahudah (Judah) is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion* (Genesis 49:9). The whelp rising from the prey is the same tribe whose Root prevails at the end: *behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book* (Revelation 5:5). And the victory is Yahuah''s giving: *Through Elohim (God) we shall do valiantly: for he it is that shall tread down our enemies* (Psalms 60:12). It ain''t new — Judah the foremost, the favored war-seed, carries the Messianic line.',
+       sv.verse_id, ev.verse_id, 'extras', 55909
+  FROM _session252_ja37_lookup sv, _session252_ja37_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=26
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=37 AND ev.verse_number=40
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-37-levi-guards-the-rear-the-zeal',
+       E'Levi turns and smites in the rear — the brothers divided in Jacob',
+       E'As Judah leads, Levi is set upon from behind and turns to cut down Elon king of Gaash: *And Levi saw Elon, king of Gaash, advancing toward him, with his fourteen captains to smite him, but Levi did not know it for certain* (Jasher 37:49); *And Elon with his captains approached nearer, and Levi looked back and saw that battle was given him in the rear, and Levi ran with twelve of his servants, and they went and slew Elon and his captains with the edge of the sword* (Jasher 37:50). This is the same Levi whose sword at Shechem drew Jacob''s prophecy: *Simeon and Levi are brethren; instruments of cruelty are in their habitations* (Genesis 49:5) — *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (Genesis 49:7). Jubilees gathers the whole war into one line of deliverance: *And he arose... and he went against them with six thousand men, who carried swords. And he slew them in the pastures of Shechem, and pursued those who fled, and he slew them with the edge of the sword* (Jubilees 34:6). It ain''t new — the zeal of Levi, even when scattered as a tribe, defends the kept seed.',
+       sv.verse_id, ev.verse_id, 'extras', 55912
+  FROM _session252_ja37_lookup sv, _session252_ja37_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=49
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=37 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-37-kings-of-canaan-gather-against-the-seed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* The smiting of Shechem in Genesis is the wound the kings of Canaan now rise to avenge in Jasher 37:6.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-kings-of-canaan-gather-against-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 34:30 — *And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house.* Jacob''s very fear in Genesis — the land gathering against his few — is the war the kings declare in Jasher 37:11.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-kings-of-canaan-gather-against-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* The canon keeps the memory of these very Amorite wars Jasher 37:8 expands, in Jacob''s dying word to Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-kings-of-canaan-gather-against-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=48 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 34:2 — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey.* Jubilees narrates the identical gathering of the Amorite kings against the sons of Jacob that Jasher 37:6 sets at Shechem.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-kings-of-canaan-gather-against-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-37-jacob-prays-the-few-from-the-many
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 32:11 — *Deliver me, I pray thee, from the hand of my brother, from the hand of Esau: for I fear him, lest he will come and smite me, and the mother with the children.* The same Jacob who prayed for deliverance at the Jabbok spreads his hands again in Jasher 37:14 to save his sons from the hand of the kings.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-jacob-prays-the-few-from-the-many'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 20:4 — *For Yahuah Elohaychem (the LORD your God) is he that goeth with you, to fight for you against your enemies, to save you.* Jacob''s confession that power to save the few from the many is in Yahuah''s hand (Jasher 37:14) is the Torah law of battle.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-jacob-prays-the-few-from-the-many'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=20 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Chronicles 14:11 — *And Asa cried unto Yahuah Elohav (the LORD his God), and said, Yahuah (LORD), it is nothing with thee to help, whether with many, or with them that have no power: help us, O Yahuah (LORD) our Elohim (God); for we rest on thee, and in thy name we go against this multitude. O Yahuah (LORD), thou art our Elohim (God); let not man prevail against thee.* Asa''s cry repeats Jacob''s surrender in Jasher 37:16 — the outnumbered seed resting wholly on Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-jacob-prays-the-few-from-the-many'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=14 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalms 33:16 — *There is no king saved by the multitude of an host: a mighty man is not delivered by much strength.* The Psalm states plainly the truth Jacob prays in Jasher 37:14 — Yahuah, not the size of the army, saves.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-jacob-prays-the-few-from-the-many'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-37-terror-of-elohim-on-the-nations
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The canon''s terror of Elohim on the cities around Shechem is the very consternation that seizes the kings when Jacob ceases praying in Jasher 37:17.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-terror-of-elohim-on-the-nations'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 15:16 — *Fear and dread shall fall upon them; by the greatness of thine arm they shall be as still as a stone; till thy people pass over, O Yahuah (LORD), till the people pass over, which thou hast purchased.* The dread Yahuah pours on the kings by the phantom voice of chariots in Jasher 37:19 is the same fear the Song of the Sea sings over Canaan.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-terror-of-elohim-on-the-nations'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 24:12 — *And I sent the hornet before you, which drave them out from before you, even the two kings of the Amorites; but not with thy sword, nor with thy bow.* Joshua''s witness that the Amorite kings fell by Yahuah''s terror, not the seed''s blade, matches the unearthly army-voice of Jasher 37:19.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-terror-of-elohim-on-the-nations'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-37-judah-runs-first-the-lion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee.* Jacob''s blessing that Judah''s hand would be on the neck of his enemies is enacted as Judah runs first before his brethren against the kings in Jasher 37:26.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-judah-runs-first-the-lion'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:9 — *Yahudah (Judah) is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* The lion''s whelp risen from the prey is Judah felling and beheading Jashub king of Tapnach in Jasher 37:39-40.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-judah-runs-first-the-lion'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=39
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 5:5 — *And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.* The same tribe of the lion that triumphs through Judah in Jasher 37:40 prevails at the last as the Lion of the tribe of Judah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-judah-runs-first-the-lion'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=40
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalms 60:12 — *Through Elohim (God) we shall do valiantly: for he it is that shall tread down our enemies.* Judah''s valor before the kings in Jasher 37:26 is the doing-valiantly the Psalm credits to Elohim treading down the enemy.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-judah-runs-first-the-lion'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=60 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-37-levi-guards-the-rear-the-zeal
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* The Levi who again takes up the sword against Elon in Jasher 37:49 is the same brother whose fierceness Jacob marks in the blessing.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-levi-guards-the-rear-the-zeal'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:7 — *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel).* Levi''s fierce slaughter of Elon and his captains in Jasher 37:50 is the wrath Jacob prophesied would be divided and scattered, yet kept within the covenant nation.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-levi-guards-the-rear-the-zeal'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 34:6 — *And he arose from his housel he and his three sons and all the servants of his father, and his own servants, and he went against them with six thousand men, who carried swords. And he slew them in the pastures of Shechem, and pursued those who fled, and he slew them with the edge of the sword, and he slew ’Arêsa and Tâphû and Sarêgân and Sêlô and ’Amânîsakîr and Gâgâ’as, and he recovered his herds.* Jubilees compresses the whole battle Jasher 37:50 narrates king by king into one rout of the Amorite kings in the pastures of Shechem.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja37_lookup sv, _session252_ja37_lookup tv
+ WHERE t.slug='jasher-37-levi-guards-the-rear-the-zeal'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=37 AND sv.verse_number=50
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_38.sql (session252 jasher 38) -----
+-- Source anchor: jasher/jasher ch38. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja38 (view _session252_ja38_lookup). Sort band base 55925, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja38_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-38-jacobs-bow-amorite
+  ('jasher', 'jasher', 38, 1, 'canon', 'genesis', 48, 22, 'free', E'Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* The canon''s own word for Jacob''s sword-and-bow against the Amorite is exactly the bow that drops Ihuri and the kings in Jasher 38:1, 5.'),
+  ('jasher', 'jasher', 38, 5, 'canon', 'joshua', 24, 12, 'free', E'Joshua 24:12 — *And I sent the hornet before you, which drave them out from before you, even the two kings of the Amorites; but not with thy sword, nor with thy bow.* Joshua frames the same Amorite-kings warfare of Jasher 38:5 as ultimately Yahuah''s deliverance of the elect seed, not the bow''s own strength.'),
+  ('jasher', 'jasher', 38, 6, 'jubilees', 'jubilees', 34, 6, 'extras', E'Jubilees 34:6 — *And he arose from his housel he and his three sons and all the servants of his father, and his own servants, and he went against them with six thousand men, who carried swords. And he slew them in the pastures of Shechem, and pursued those who fled, and he slew them with the edge of the sword.* Jubilees tells the identical war of Jacob slaying the Amorite kings that Jasher 38:6 details king by king.'),
+  -- thread: jasher-38-simeon-levi-zeal
+  ('jasher', 'jasher', 38, 15, 'canon', 'genesis', 49, 5, 'free', E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* Jacob''s deathbed word over the very pair who lead the slaughter at Chazar in Jasher 38:15.'),
+  ('jasher', 'jasher', 38, 14, 'canon', 'genesis', 49, 6, 'free', E'Genesis 49:6 — *O my soul, come not thou into their secret; unto their assembly, mine honour, be not thou united: for in their anger they slew a man, and in their selfwill they digged down a wall.* The brothers spring and breach the wall of Chazar in Jasher 38:14, the very wall-digging Genesis names of Simeon and Levi.'),
+  ('jasher', 'jasher', 38, 39, 'canon', 'genesis', 49, 7, 'free', E'Genesis 49:7 — *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel).* The fierce wrath that lets Levi sever his attacker''s head in Jasher 38:39 is the very anger Jacob both rebukes and divides among the tribes.'),
+  -- thread: jasher-38-one-chase-a-thousand
+  ('jasher', 'jasher', 38, 50, 'canon', 'leviticus', 26, 8, 'free', E'Leviticus 26:8 — *And five of you shall chase an hundred, and an hundred of you shall put ten thousand to flight: and your enemies shall fall before you by the sword.* The covenant proportion of Torah underlies the very ''one would pursue a thousand'' boast of the men of Sarton in Jasher 38:50.'),
+  ('jasher', 'jasher', 38, 50, 'canon', 'deuteronomy', 32, 30, 'free', E'Deuteronomy 32:30 — *How should one chase a thousand, and two put ten thousand to flight, except their Rock had sold them, and Yahuah (LORD) had shut them up?* The Song of Moses names the same one-chasing-a-thousand measure of Jasher 38:50 and ties it to the Rock''s hand, not mere strength.'),
+  ('jasher', 'jasher', 38, 52, 'canon', 'leviticus', 26, 7, 'free', E'Leviticus 26:7 — *And ye shall chase your enemies, and they shall fall before you by the sword.* The sword-falling of Jasher 38:52, where the sons of Jacob smite Sarton as they did Chazar, is the covenant chase Torah pledges.'),
+  -- thread: jasher-38-amorite-kings-vs-seed
+  ('jasher', 'jasher', 38, 2, 'jubilees', 'jubilees', 34, 2, 'extras', E'Jubilees 34:2 — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey.* Jubilees gives the gathering of the Amorite kings against the seed that Jasher 38:2 shows already breaking and fleeing.'),
+  ('jasher', 'jasher', 38, 6, 'jubilees', 'jubilees', 34, 4, 'extras', E'Jubilees 34:4 — *And there came the kings of Tâphû, and the kings of ''Arêsa, and the kings of Sêragân, and the kings of Sêlô, and the kings of Gâ''as, and the king of Bêthôrôn, and the king of Ma''anîsâkîr, and all those who dwell in these mountains (and) who dwell in the woods in the land of Canaan.* The king-roster of Sêlô and Bêthôrôn matches Jasher 38:6''s Ihuri of Shiloh and Laban of Bethchorin slain by the bow.'),
+  ('jasher', 'jasher', 38, 22, 'canon', 'genesis', 35, 5, 'free', E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The canon''s register that the surrounding cities cannot finally prevail against the seed stands behind the terrified, broken Amorites of Jasher 38:22.'),
+  -- thread: jasher-38-jacob-prayed-prevailed
+  ('jasher', 'jasher', 38, 45, 'canon', 'psalms', 44, 5, 'free', E'Psalm 44:5 — *Through thee will we push down our enemies: through thy name will we tread them under that rise up against us.* Jacob''s prayer to Yahuah before he goes against the mighty men in Jasher 38:45 is the very through-thy-name warfare of the covenant Psalm.'),
+  ('jasher', 'jasher', 38, 46, 'canon', 'psalms', 44, 6, 'free', E'Psalm 44:6 — *For I will not trust in my bow, neither shall my sword save me.* Jacob draws his bow only after praying in Jasher 38:46, the Psalm''s refusal to trust the bow apart from Yahuah.'),
+  ('jasher', 'jasher', 38, 47, 'canon', 'psalms', 44, 7, 'free', E'Psalm 44:7 — *But thou hast saved us from our enemies, and hast put them to shame that hated us.* The rout and slaughter of the remaining mighty men in Jasher 38:47 is the Psalm''s salvation from the enemies who hated the seed.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja38_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja38_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-38-jacobs-bow-amorite',
+       E'Jacob''s bow against the Amorite kings',
+       E'Jasher 38 opens mid-battle, the sons of Jacob warring the Amorite kings, and Jacob himself working his bow: *And Ihuri king of Shiloh came up to assist Elon, and he approached Jacob, when Jacob drew his bow that was in his hand and with an arrow struck Ihuri which caused his death* (Jasher 38:1), and again *whilst they were smiting the army of the kings, Jacob was occupied with his bow confining himself to smiting the kings, and he slew them all* (Jasher 38:5). The canon names this very weapon when the dying Jacob deeds Joseph the spoil he took from these same nations: *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow* (Genesis 48:22). Joshua reminds Israel the land was finally won not by their own arm but by Yahuah''s hornet: *And I sent the hornet before you, which drave them out from before you, even the two kings of the Amorites; but not with thy sword, nor with thy bow* (Joshua 24:12) — the elect seed kept, the victory the Lord''s. Jubilees narrates the identical battle: *And he arose from his housel he and his three sons and all the servants of his father, and his own servants, and he went against them with six thousand men, who carried swords. And he slew them in the pastures of Shechem, and pursued those who fled, and he slew them with the edge of the sword* (Jubilees 34:6). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55925
+  FROM _session252_ja38_lookup sv, _session252_ja38_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=38 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-38-simeon-levi-zeal',
+       E'Simeon and Levi, the two zealous brothers',
+       E'Throughout Jasher 38 it is Simeon and Levi who breach the walls and bear the fiercest of the fighting: *And Simeon and Levi slew all the men who ran for safety into the city, and also the inhabitants of the city with their wives and little ones, they slew with the edge of the sword, and the cries of the city ascended up to heaven* (Jasher 38:15), and when the twelve mighty men press them hard, *one of them struck at Levi''s head with his sword, when Levi hastily placed his hand to his head, for he was afraid of the sword, and the sword struck Levi''s hand* (Jasher 38:38), yet Levi wrests the very blade away — *And Levi seized the sword of the valiant man in his hand, and took it forcibly from the man, and with it he struck at the head of the powerful man, and he severed his head* (Jasher 38:39). This is the same pair the dying Jacob marks in the canon: *Simeon and Levi are brethren; instruments of cruelty are in their habitations* (Genesis 49:5), *for in their anger they slew a man, and in their selfwill they digged down a wall* (Genesis 49:6) — and Jasher''s brothers do exactly that, springing the wall and digging the city down — *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (Genesis 49:7). The zeal that defends the seed is the same zeal the canon both honors and disciplines. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55928
+  FROM _session252_ja38_lookup sv, _session252_ja38_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=38 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-38-one-chase-a-thousand',
+       E'One chasing a thousand — the covenant defense',
+       E'Jasher 38 closes on the prowess of the men of Sarton, and the proportion of the fight rings straight out of the covenant promises: *And all the inhabitants of the city of Sarton were powerful men, one of them would pursue a thousand, and two of them would not flee from ten thousand of the rest of men* (Jasher 38:50). That is the very measure Torah sets for Yahuah''s people when they keep His way: *And five of you shall chase an hundred, and an hundred of you shall put ten thousand to flight: and your enemies shall fall before you by the sword* (Leviticus 26:8), the chasing pledged in *And ye shall chase your enemies, and they shall fall before you by the sword* (Leviticus 26:7). The Song of Moses makes plain the arithmetic is never mere muscle but the Rock''s hand: *How should one chase a thousand, and two put ten thousand to flight, except their Rock had sold them, and Yahuah (LORD) had shut them up?* (Deuteronomy 32:30). The seed kept and fought for — Torah-before-Sinai, it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55931
+  FROM _session252_ja38_lookup sv, _session252_ja38_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=50
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=38 AND ev.verse_number=52
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-38-amorite-kings-vs-seed',
+       E'The kings of the nations against the chosen seed',
+       E'The whole of Jasher 38 is the assembled Amorite cities making war on Jacob''s house — *the four remaining kings fled from their station with the rest of the captains... saying, We have no more strength with the Hebrews after their having killed the three kings and their captains* (Jasher 38:2), and city by city the inhabitants of Chazar and Sarton rise against them and are broken. Jubilees tells the same gathering of the nations against the seed: *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey* (Jubilees 34:2), naming the very kings — *the kings of Sêlô... and the king of Bêthôrôn* (Jubilees 34:4) — that Jasher carries as Ihuri king of Shiloh and Laban king of Bethchorin. The canon''s own register is that no nation finally prevails over the chosen line: *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob* (Genesis 35:5). The seed-war runs through, the wheat kept against the tares — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55934
+  FROM _session252_ja38_lookup sv, _session252_ja38_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=2
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=38 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-38-jacob-prayed-prevailed',
+       E'Jacob prayed to Yahuah and prevailed',
+       E'When the eleven mighty men of Sarton cannot be overcome and his sons fight from morning to sunset in vain, Jacob does not trust the bow alone — *And this was told to Jacob, and he was sorely grieved, and he prayed to Yahuah (the Lord), and he and Naphtali his son went against these mighty men* (Jasher 38:45), and only then *Jacob approached and drew his bow, and came nigh to the mighty men, and slew three of their men with the bow* (Jasher 38:46). This is the posture of the covenant Psalm of war: *Through thee will we push down our enemies: through thy name will we tread them under that rise up against us* (Psalm 44:5), *For I will not trust in my bow, neither shall my sword save me* (Psalm 44:6), *But thou hast saved us from our enemies, and hast put them to shame that hated us* (Psalm 44:7). The father calls on the Name before he draws the bow — calling on Yahuah before the sword, Torah-before-Sinai. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55937
+  FROM _session252_ja38_lookup sv, _session252_ja38_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=44
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=38 AND ev.verse_number=47
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-38-jacobs-bow-amorite
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* The canon''s own word for Jacob''s sword-and-bow against the Amorite is exactly the bow that drops Ihuri and the kings in Jasher 38:1, 5.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-jacobs-bow-amorite'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=48 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 24:12 — *And I sent the hornet before you, which drave them out from before you, even the two kings of the Amorites; but not with thy sword, nor with thy bow.* Joshua frames the same Amorite-kings warfare of Jasher 38:5 as ultimately Yahuah''s deliverance of the elect seed, not the bow''s own strength.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-jacobs-bow-amorite'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 34:6 — *And he arose from his housel he and his three sons and all the servants of his father, and his own servants, and he went against them with six thousand men, who carried swords. And he slew them in the pastures of Shechem, and pursued those who fled, and he slew them with the edge of the sword.* Jubilees tells the identical war of Jacob slaying the Amorite kings that Jasher 38:6 details king by king.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-jacobs-bow-amorite'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-38-simeon-levi-zeal
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* Jacob''s deathbed word over the very pair who lead the slaughter at Chazar in Jasher 38:15.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-simeon-levi-zeal'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:6 — *O my soul, come not thou into their secret; unto their assembly, mine honour, be not thou united: for in their anger they slew a man, and in their selfwill they digged down a wall.* The brothers spring and breach the wall of Chazar in Jasher 38:14, the very wall-digging Genesis names of Simeon and Levi.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-simeon-levi-zeal'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 49:7 — *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel).* The fierce wrath that lets Levi sever his attacker''s head in Jasher 38:39 is the very anger Jacob both rebukes and divides among the tribes.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-simeon-levi-zeal'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=39
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-38-one-chase-a-thousand
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 26:8 — *And five of you shall chase an hundred, and an hundred of you shall put ten thousand to flight: and your enemies shall fall before you by the sword.* The covenant proportion of Torah underlies the very ''one would pursue a thousand'' boast of the men of Sarton in Jasher 38:50.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-one-chase-a-thousand'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:30 — *How should one chase a thousand, and two put ten thousand to flight, except their Rock had sold them, and Yahuah (LORD) had shut them up?* The Song of Moses names the same one-chasing-a-thousand measure of Jasher 38:50 and ties it to the Rock''s hand, not mere strength.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-one-chase-a-thousand'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 26:7 — *And ye shall chase your enemies, and they shall fall before you by the sword.* The sword-falling of Jasher 38:52, where the sons of Jacob smite Sarton as they did Chazar, is the covenant chase Torah pledges.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-one-chase-a-thousand'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=52
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-38-amorite-kings-vs-seed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 34:2 — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey.* Jubilees gives the gathering of the Amorite kings against the seed that Jasher 38:2 shows already breaking and fleeing.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-amorite-kings-vs-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=2
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 34:4 — *And there came the kings of Tâphû, and the kings of ''Arêsa, and the kings of Sêragân, and the kings of Sêlô, and the kings of Gâ''as, and the king of Bêthôrôn, and the king of Ma''anîsâkîr, and all those who dwell in these mountains (and) who dwell in the woods in the land of Canaan.* The king-roster of Sêlô and Bêthôrôn matches Jasher 38:6''s Ihuri of Shiloh and Laban of Bethchorin slain by the bow.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-amorite-kings-vs-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The canon''s register that the surrounding cities cannot finally prevail against the seed stands behind the terrified, broken Amorites of Jasher 38:22.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-amorite-kings-vs-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-38-jacob-prayed-prevailed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 44:5 — *Through thee will we push down our enemies: through thy name will we tread them under that rise up against us.* Jacob''s prayer to Yahuah before he goes against the mighty men in Jasher 38:45 is the very through-thy-name warfare of the covenant Psalm.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-jacob-prayed-prevailed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=45
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=44 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 44:6 — *For I will not trust in my bow, neither shall my sword save me.* Jacob draws his bow only after praying in Jasher 38:46, the Psalm''s refusal to trust the bow apart from Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-jacob-prayed-prevailed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=46
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=44 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 44:7 — *But thou hast saved us from our enemies, and hast put them to shame that hated us.* The rout and slaughter of the remaining mighty men in Jasher 38:47 is the Psalm''s salvation from the enemies who hated the seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja38_lookup sv, _session252_ja38_lookup tv
+ WHERE t.slug='jasher-38-jacob-prayed-prevailed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=38 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=44 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_39.sql (session252 jasher 39) -----
+-- Source anchor: jasher/jasher ch39. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja39 (view _session252_ja39_lookup). Sort band base 55950, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja39_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-39-amorite-portion-sword-and-bow
+  ('jasher', 'jasher', 39, 13, 'canon', 'genesis', 48, 22, 'free', E'Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* Jacob''s lone canonical line about taking land from the Amorite is the whole campaign Jasher 39 narrates city by city.'),
+  ('jasher', 'jasher', 39, 15, 'canon', 'genesis', 15, 16, 'free', E'Genesis 15:16 — *But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full.* The Amorites of Gaash whom the sons of Jacob smite are the same people whose iniquity Yahuah told Abram would one day be full.'),
+  -- thread: jasher-39-jubilees-seven-kings-of-the-amorites
+  ('jasher', 'jasher', 39, 14, 'jubilees', 'jubilees', 34, 2, 'extras', E'Jubilees 34:2 — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey.* Jubilees compresses into one verse the gathering of the Amorite cities that Jasher 39 unfolds at Tapnach, Arbelan and Gaash.'),
+  ('jasher', 'jasher', 39, 15, 'jubilees', 'jubilees', 34, 4, 'extras', E'Jubilees 34:4 — *And there came the kings of Tâphû, and the kings of ’Arêsa, and the kings of Sêragân, and the kings of Sêlô, and the kings of Gâ’as, and the king of Bêthôrôn, and the king of Ma’anîsâkîr, and all those who dwell in these mountains (and) who dwell in the woods in the land of Canaan.* Tâphû, Gâ’as and Sêlô are Jasher''s Tapnach, Gaash and Shiloh — the same Amorite kings, named in both books.'),
+  ('jasher', 'jasher', 39, 16, 'jubilees', 'jubilees', 34, 8, 'extras', E'Jubilees 34:8 — *And he prevailed over them, and imposed tribute on them that they should pay him tribute, five fruit products of their land, and he built Rôbêl and Tamnâtârês.* The victory and tribute Jubilees records is the same conquest Jasher 39 wins city by fortified city.'),
+  -- thread: jasher-39-judah-the-lion-on-the-wall
+  ('jasher', 'jasher', 39, 19, 'canon', 'genesis', 49, 9, 'free', E'Genesis 49:9 — *Yahudah (Judah) is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* Judah''s roar that topples men from the wall of Gaash is the lion''s whelp Jacob''s blessing names.'),
+  ('jasher', 'jasher', 39, 34, 'canon', 'genesis', 49, 8, 'free', E'Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee.* Judah seizing the fallen swords and slaying twenty upon the wall is the hand-on-the-enemies''-neck the blessing foretells.'),
+  -- thread: jasher-39-simeon-levi-instruments-of-war
+  ('jasher', 'jasher', 39, 63, 'canon', 'genesis', 49, 5, 'free', E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* The two brothers whose swords together cleave the mighty man of Gaash are the sword-brothers Jacob names as one pair.'),
+  ('jasher', 'jasher', 39, 59, 'canon', 'genesis', 49, 6, 'free', E'Genesis 49:6 — *O my soul, come not thou into their secret; unto their assembly, mine honour, be not thou united: for in their anger they slew a man, and in their selfwill they digged down a wall.* Simeon and Levi felling the powerful man with the sword is the very anger and wall-breaking Jacob''s blessing recalls.'),
+  ('jasher', 'jasher', 39, 49, 'canon', 'genesis', 34, 25, 'free', E'Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* The zeal that took Shechem at the start is the same Simeon-and-Levi fury that scales and storms the cities of Jasher 39.'),
+  -- thread: jasher-39-cry-to-yahuah-saved-by-his-arm
+  ('jasher', 'jasher', 39, 10, 'canon', 'psalms', 44, 3, 'free', E'Psalm 44:3 — *For they got not the land in possession by their own sword, neither did their own arm save them: but thy right hand, and thine arm, and the light of thy countenance, because thou hadst a favour unto them.* The sons of Jacob nearly perish until they cry to Yahuah and gain strength — not their own arm, but His, exactly as the psalm confesses.'),
+  ('jasher', 'jasher', 39, 32, 'canon', 'psalms', 44, 6, 'free', E'Psalm 44:6 — *For I will not trust in my bow, neither shall my sword save me.* Judah''s drawn sword falls from his hand on the wall and he cries to Yahuah to deliver — the bow does not save, the Name does.'),
+  ('jasher', 'jasher', 39, 36, 'canon', '2-samuel', 1, 18, 'free', E'2 Samuel 1:18 — *(Also he bade them teach the children of Yahudah (Judah) the use of the bow: behold, it is written in the book of Jasher.)* The very bow Jacob and his sons draw from beneath the wall of Gaash is the bow-craft the canon points to this book to record.'),
+  -- thread: jasher-39-dan-and-naphtali-mount-the-wall
+  ('jasher', 'jasher', 39, 41, 'canon', 'genesis', 49, 16, 'free', E'Genesis 49:16 — *Dan shall judge his people, as one of the tribes of Yashar''el (Israel).* Dan rising in wrath to mount the wall and defend Judah is the tribe that judges and contends for its people.'),
+  ('jasher', 'jasher', 39, 48, 'canon', 'genesis', 49, 21, 'free', E'Genesis 49:21 — *Naphtali is a hind let loose: he giveth goodly words.* Naphtali leaping from the first wall to the second to reach his brothers is the swift hind set loose that Jacob''s blessing names.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja39_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja39_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-39-amorite-portion-sword-and-bow',
+       E'The land taken out of the hand of the Amorite — with sword and with bow',
+       E'Jasher 39 is the long war of Jacob''s sons against the Amorite cities — Tapnach, Arbelan, and the triple-walled Gaash: *"And the sons of Jacob did to Machnaymah as they had done to Tapnach, to Chazar and to Shiloh, and they turned from there and went away"* (Jasher 39:13). The canon does not tell the campaign in full, but it carries the deed in a single line Jacob speaks to Joseph on his deathbed — *"Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow"* (Genesis 48:22). That one verse is the seed; Jasher is the field it grew into. The taking was not theft but the covenant clock running out on a people: *"But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full"* (Genesis 15:16). It ain''t new — the patriarchs already wielded the sword and bow Jacob would name.',
+       sv.verse_id, ev.verse_id, 'extras', 55950
+  FROM _session252_ja39_lookup sv, _session252_ja39_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=39 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-39-jubilees-seven-kings-of-the-amorites',
+       E'The seven kings of the Amorites — Jubilees tells the same war',
+       E'Jasher''s roll of besieged cities is no invention: Jubilees narrates the identical event, the assembling of the Amorite kings against Jacob''s house — *"And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey"* (Jubilees 34:2). The very city-names match across the two books — *"And there came the kings of Tâphû, and the kings of ’Arêsa, and the kings of Sêragân, and the kings of Sêlô, and the kings of Gâ’as, and the king of Bêthôrôn..."* (Jubilees 34:4): Tâphû is Jasher''s Tapnach, Gâ’as is Gaash, Sêlô is Shiloh, Bêthôrôn is Bethchorin (Jasher 39:51). And the outcome Jubilees gives is exactly Jasher''s spoil and conquest — *"And he prevailed over them, and imposed tribute on them that they should pay him tribute, five fruit products of their land"* (Jubilees 34:8). Two witnesses, one war — the canon''s hidden campaign, kept.',
+       sv.verse_id, ev.verse_id, 'extras', 55953
+  FROM _session252_ja39_lookup sv, _session252_ja39_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=39 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-39-judah-the-lion-on-the-wall',
+       E'Judah''s shriek and the lion''s whelp',
+       E'When Gaash held the gate and reviled Israel''s Elohim, Judah leaped the wall alone: *"And he ran at a distance with all his might, with his drawn sword in his hand, and he sprang from the earth and by dint of his strength, mounted the wall, and his sword fell from his hand"* (Jasher 39:29), and at his cry men fell from the wall — for the men of Gaash *"were terrified at the voice of Judah’s cry"* (Jasher 39:19). This is the lion the canon names: *"Yahudah (Judah) is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?"* (Genesis 49:9), the brother whose hand is on the neck of his enemies — *"Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee"* (Genesis 49:8). And it was zeal, not bravado: *"Judah was jealous of his Elohim (God) in this matter, and he called out and said, O Yahuah (O Lord), help, send help to us and our brothers"* (Jasher 39:28). The favored royal seed already walks here — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55956
+  FROM _session252_ja39_lookup sv, _session252_ja39_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=19
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=39 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-39-simeon-levi-instruments-of-war',
+       E'Simeon and Levi — the swords that divide a man in two',
+       E'Through the whole siege the brothers fight in pairs, and twice it is Simeon and Levi whose two swords meet inside the body of a mighty man: *"And Simeon and Levi ran upon the powerful man with their swords and struck at him forcibly with their swords, and the two swords entered the body of the powerful man and divided it in two, length-wise"* (Jasher 39:63). The canon already knew these two as the brothers of the sword — Jacob''s blessing turns elegy into prophecy: *"Simeon and Levi are brethren; instruments of cruelty are in their habitations"* (Genesis 49:5), *"for in their anger they slew a man, and in their selfwill they digged down a wall"* (Genesis 49:6). The wall they digged down at Shechem in Genesis 34 is the same fierce zeal that mounts and breaches walls all through Jasher 39 — *"And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males"* (Genesis 34:25).',
+       sv.verse_id, ev.verse_id, 'extras', 55959
+  FROM _session252_ja39_lookup sv, _session252_ja39_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=59
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=39 AND ev.verse_number=63
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-39-cry-to-yahuah-saved-by-his-arm',
+       E'They cried to Yahuah and gained strength — not their own bow',
+       E'At Arbelan the brothers nearly perished until they turned to heaven: *"And the sons of Jacob could not prevail over them, and the sons of Jacob had almost perished in that battle, and the sons of Jacob cried to Yahuah (the Lord) and greatly gained strength toward evening"* (Jasher 39:10); and on the wall of Gaash Judah cried, *"O Yahuah (O Lord) help us, O Yahuah (O Lord) deliver us"* (Jasher 39:32), and Yahuah Himself fought — *"Yahuah (the Lord) impressed the fear of Judah in their hearts, that they were unable to approach him"* (Jasher 39:35). The psalmist will sing this exact theology of the conquest centuries on: *"For they got not the land in possession by their own sword, neither did their own arm save them: but thy right hand, and thine arm, and the light of thy countenance, because thou hadst a favour unto them"* (Psalm 44:3), *"For I will not trust in my bow, neither shall my sword save me"* (Psalm 44:6). And the bow Jacob and his sons draw from under the wall (Jasher 39:32, 36) is the very thing the canon says is taught from this book — *"(Also he bade them teach the children of Yahudah (Judah) the use of the bow: behold, it is written in the book of Jasher.)"* (2 Samuel 1:18).',
+       sv.verse_id, ev.verse_id, 'extras', 55962
+  FROM _session252_ja39_lookup sv, _session252_ja39_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=10
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=39 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-39-dan-and-naphtali-mount-the-wall',
+       E'Dan and Naphtali scale the wall — the tribes in their blessing',
+       E'When Judah is beaten and bleeding on the wall, his brothers come up one by one in their own strength: *"And Dan came upon the wall near to Judah"* (Jasher 39:42) with *"his wrath-excited strength"* (Jasher 39:41), and then *"Naphtali leaped from the first wall to the second, and came to assist his brothers"* (Jasher 39:48). Each acts as the blessing of Jacob frames his tribe — Dan the judge who comes to defend — *"Dan shall judge his people, as one of the tribes of Yashar''el (Israel)"* (Genesis 49:16) — and Naphtali the swift hind, let loose to bound between the walls — *"Naphtali is a hind let loose: he giveth goodly words"* (Genesis 49:21). The twelve-tribe people is already forming and fighting as one body here, each son carrying the inheritance Jacob will speak over him.',
+       sv.verse_id, ev.verse_id, 'extras', 55965
+  FROM _session252_ja39_lookup sv, _session252_ja39_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=41
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=39 AND ev.verse_number=48
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-39-amorite-portion-sword-and-bow
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* Jacob''s lone canonical line about taking land from the Amorite is the whole campaign Jasher 39 narrates city by city.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-amorite-portion-sword-and-bow'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=48 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:16 — *But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full.* The Amorites of Gaash whom the sons of Jacob smite are the same people whose iniquity Yahuah told Abram would one day be full.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-amorite-portion-sword-and-bow'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-39-jubilees-seven-kings-of-the-amorites
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 34:2 — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey.* Jubilees compresses into one verse the gathering of the Amorite cities that Jasher 39 unfolds at Tapnach, Arbelan and Gaash.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-jubilees-seven-kings-of-the-amorites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=14
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 34:4 — *And there came the kings of Tâphû, and the kings of ’Arêsa, and the kings of Sêragân, and the kings of Sêlô, and the kings of Gâ’as, and the king of Bêthôrôn, and the king of Ma’anîsâkîr, and all those who dwell in these mountains (and) who dwell in the woods in the land of Canaan.* Tâphû, Gâ’as and Sêlô are Jasher''s Tapnach, Gaash and Shiloh — the same Amorite kings, named in both books.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-jubilees-seven-kings-of-the-amorites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=15
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 34:8 — *And he prevailed over them, and imposed tribute on them that they should pay him tribute, five fruit products of their land, and he built Rôbêl and Tamnâtârês.* The victory and tribute Jubilees records is the same conquest Jasher 39 wins city by fortified city.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-jubilees-seven-kings-of-the-amorites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=16
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-39-judah-the-lion-on-the-wall
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:9 — *Yahudah (Judah) is a lion’s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* Judah''s roar that topples men from the wall of Gaash is the lion''s whelp Jacob''s blessing names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-judah-the-lion-on-the-wall'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father’s children shall bow down before thee.* Judah seizing the fallen swords and slaying twenty upon the wall is the hand-on-the-enemies''-neck the blessing foretells.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-judah-the-lion-on-the-wall'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-39-simeon-levi-instruments-of-war
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* The two brothers whose swords together cleave the mighty man of Gaash are the sword-brothers Jacob names as one pair.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-simeon-levi-instruments-of-war'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=63
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:6 — *O my soul, come not thou into their secret; unto their assembly, mine honour, be not thou united: for in their anger they slew a man, and in their selfwill they digged down a wall.* Simeon and Levi felling the powerful man with the sword is the very anger and wall-breaking Jacob''s blessing recalls.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-simeon-levi-instruments-of-war'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=59
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 34:25 — *And it came to pass on the third day, when they were sore, that two of the sons of Jacob, Simeon and Levi, Dinah’s brethren, took each man his sword, and came upon the city boldly, and slew all the males.* The zeal that took Shechem at the start is the same Simeon-and-Levi fury that scales and storms the cities of Jasher 39.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-simeon-levi-instruments-of-war'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=49
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-39-cry-to-yahuah-saved-by-his-arm
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 44:3 — *For they got not the land in possession by their own sword, neither did their own arm save them: but thy right hand, and thine arm, and the light of thy countenance, because thou hadst a favour unto them.* The sons of Jacob nearly perish until they cry to Yahuah and gain strength — not their own arm, but His, exactly as the psalm confesses.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-cry-to-yahuah-saved-by-his-arm'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=44 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 44:6 — *For I will not trust in my bow, neither shall my sword save me.* Judah''s drawn sword falls from his hand on the wall and he cries to Yahuah to deliver — the bow does not save, the Name does.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-cry-to-yahuah-saved-by-his-arm'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=44 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Samuel 1:18 — *(Also he bade them teach the children of Yahudah (Judah) the use of the bow: behold, it is written in the book of Jasher.)* The very bow Jacob and his sons draw from beneath the wall of Gaash is the bow-craft the canon points to this book to record.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-cry-to-yahuah-saved-by-his-arm'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=1 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-39-dan-and-naphtali-mount-the-wall
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 49:16 — *Dan shall judge his people, as one of the tribes of Yashar''el (Israel).* Dan rising in wrath to mount the wall and defend Judah is the tribe that judges and contends for its people.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-dan-and-naphtali-mount-the-wall'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 49:21 — *Naphtali is a hind let loose: he giveth goodly words.* Naphtali leaping from the first wall to the second to reach his brothers is the swift hind set loose that Jacob''s blessing names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja39_lookup sv, _session252_ja39_lookup tv
+ WHERE t.slug='jasher-39-dan-and-naphtali-mount-the-wall'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=39 AND sv.verse_number=48
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_40.sql (session252 jasher 40) -----
+-- Source anchor: jasher/jasher ch40. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja40 (view _session252_ja40_lookup). Sort band base 55975, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja40_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-40-yahuah-confusion-bethchorin
+  ('jasher', 'jasher', 40, 5, 'canon', 'exodus', 14, 14, 'free', E'Exodus 14:14 — *Yahuah (LORD) shall fight for you, and ye shall hold your peace.* As at the Red Sea, the sons of Jacob cry to the Name and Yahuah Himself routs Bethchorin while they hold their place (Jasher 40:5).'),
+  ('jasher', 'jasher', 40, 5, 'canon', 'judges', 7, 22, 'free', E'Judges 7:22 — *And the three hundred blew the trumpets, and Yahuah (LORD) set every man''s sword against his fellow, even throughout all the host: and the host fled to Beth-shittah in Zererath, and to the border of Abel-meholah, unto Tabbath.* The same hand that turned Midian''s swords inward sets the men of Bethchorin smiting each other in the dark (Jasher 40:5).'),
+  ('jasher', 'jasher', 40, 7, 'canon', '2-chronicles', 20, 23, 'free', E'2 Chronicles 20:23 — *For the children of Ammon and Moab stood up against the inhabitants of mount Seir, utterly to slay and destroy them: and when they had made an end of the inhabitants of Seir, every one helped to destroy another.* Jehoshaphat''s enemies, like the Chorinites who fought the whole night one man with his brother, destroy themselves once Yahuah sends confusion among them (Jasher 40:7).'),
+  -- thread: jasher-40-terror-of-elohim-on-the-cities
+  ('jasher', 'jasher', 40, 21, 'canon', 'genesis', 35, 5, 'free', E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The very dread Genesis names is what Jasher shows spreading over all the land so none dares pursue or attack Jacob''s sons (Jasher 40:21).'),
+  ('jasher', 'jasher', 40, 10, 'canon', 'exodus', 23, 27, 'free', E'Exodus 23:27 — *I will send my fear before thee, and will destroy all the people to whom thou shalt come, and I will make all thine enemies turn their backs unto thee.* The Canaanites and those beyond Jordan, seized with fear that the same will be done to them, are living out the promise Yahuah later seals for the conquest (Jasher 40:10).'),
+  -- thread: jasher-40-few-in-number-elect
+  ('jasher', 'jasher', 40, 45, 'canon', 'genesis', 34, 30, 'free', E'Genesis 34:30 — *And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house.* The dread Jacob spoke after Shechem is exactly the war Jasher 40 narrates — yet the few are not destroyed but feared, no man able to stand before them (Jasher 40:45).'),
+  ('jasher', 'jasher', 40, 36, 'canon', 'deuteronomy', 7, 7, 'free', E'Deuteronomy 7:7 — *Yahuah (LORD) did not set his love upon you, nor choose you, because ye were more in number than any people; for ye were the fewest of all people.* That Jacob''s sons send out only sixty-two men against twenty-one kings shows the chosen line preserved while few — the election Moses names (Jasher 40:36).'),
+  -- thread: jasher-40-canaanite-kings-sue-for-peace
+  ('jasher', 'jasher', 40, 22, 'canon', 'joshua', 9, 1, 'free', E'Joshua 9:1 — *And it came to pass, when all the kings which were on this side Jordan, in the hills, and in the valleys, and in all the coasts of the great sea over against Lebanon, the Hittite, and the Amorite, the Canaanite, the Perizzite, the Hivite, and the Jebusite, heard thereof.* The same roll of Canaanite kings that musters before Joshua is already mustering before Jacob''s sons, hearing of their power and afraid for their lives (Jasher 40:22).'),
+  ('jasher', 'jasher', 40, 46, 'canon', 'joshua', 9, 15, 'free', E'Joshua 9:15 — *And Joshua made peace with them, and made a league with them, to let them live: and the princes of the congregation sware unto them.* As Joshua''s generation swears a league of peace with frightened Canaanites, so the sons of Jacob form a covenant of peace and truth at the kings'' plea (Jasher 40:46).'),
+  ('jasher', 'jasher', 40, 22, 'canon', 'joshua', 9, 2, 'free', E'Joshua 9:2 — *That they gathered themselves together, to fight with Joshua and with Yashar''el (Israel), with one accord.* The seven and then twenty-one kings who assemble over Jacob''s sons foreshadow the one-accord gathering of Canaan''s kings in Joshua''s day (Jasher 40:22).'),
+  -- thread: jasher-40-jubilees-amorite-wars-self-link
+  ('jasher', 'jasher', 40, 22, 'jubilees', 'jubilees', 34, 2, 'extras', E'Jubilees 34:2 — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey.* Jubilees narrates the identical war — the seven kings against Jacob''s sons that Jasher draws out into the Bethchorin campaign and the kings'' surrender (Jasher 40:22).'),
+  ('jasher', 'jasher', 40, 48, 'jubilees', 'jubilees', 34, 8, 'extras', E'Jubilees 34:8 — *And he prevailed over them, and imposed tribute on them that they should pay him tribute, five fruit products of their land, and he built Rôbêl and Tamnâtârês.* The same imposed tribute Jasher records when the sons of Jacob make the Canaanite kings tributary from that day forward (Jasher 40:48).'),
+  ('jasher', 'jasher', 40, 52, 'jubilees', 'jubilees', 34, 9, 'extras', E'Jubilees 34:9 — *And he returned in peace, and made peace with them, and they became his servants, until the day that he and his sons went down into Egypt.* Jubilees seals the war with the same lasting peace and servitude that Jasher carries until Israel inherits Canaan (Jasher 40:52).'),
+  ('jasher', 'jasher', 40, 19, 'canon', 'genesis', 33, 19, 'free', E'Genesis 33:19 — *And he bought a parcel of a field, where he had spread his tent, at the hand of the children of Hamor, Shechem''s father, for an hundred pieces of money.* The portion of field where Jacob and his sons camp with all the spoil is the very parcel Genesis records him buying from Hamor at Shechem (Jasher 40:19).'),
+  ('jasher', 'jasher', 40, 19, 'canon', 'genesis', 48, 22, 'free', E'Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* Jacob''s deathbed grant of the Shechem portion won from the Amorite is the very war Jasher 40 narrates at length around that field (Jasher 40:19).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja40_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja40_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-40-yahuah-confusion-bethchorin',
+       E'Yahuah sets every man''s sword against his fellow',
+       E'When the mighty men of Bethchorin press them in the dark, the sons of Jacob do not trust their own arm: *And all the sons of Jacob were afraid of those men, as they were not accustomed to fight in the dark, and they were greatly confounded, and the sons of Jacob cried to Yahuah (the Lord), saying, Give help to us O Yahuah (O Lord), deliver us that we may not die by the hands of these uncircumcised men* (Jasher 40:4). The answer is not reinforcements but a spirit of perverseness: *And Yahuah (the Lord) hearkened to the voice of the sons of Jacob, and Yahuah (the Lord) caused great terror and confusion to seize the people of Bethchorin, and they fought amongst themselves the one with the other in the darkness of night, and smote each other in great numbers* (Jasher 40:5). It ain''t new — this is the canon''s own war-pattern, where Yahuah fights and the enemy turns the sword on itself. *Yahuah (LORD) shall fight for you, and ye shall hold your peace* (Exodus 14:14); *And the three hundred blew the trumpets, and Yahuah (LORD) set every man''s sword against his fellow, even throughout all the host* (Judges 7:22); *every one helped to destroy another* (2 Chronicles 20:23). The chosen seed cries the Name and the battle is the LORD''s.',
+       sv.verse_id, ev.verse_id, 'extras', 55975
+  FROM _session252_ja40_lookup sv, _session252_ja40_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=40 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-40-terror-of-elohim-on-the-cities',
+       E'The terror of Elohim upon the surrounding cities',
+       E'After the slaughter, the whole land looks on in dread: *And the inhabitants of the land observed them from afar, and all the inhabitants of the land were afraid of the sons of Jacob who had done this thing, for no king from the days of old had ever done the like* (Jasher 40:21). Even the far nations across the Jordan tremble: *And all the inhabitants of the cities of the Canaanites, and all those who were on the other side of the Jordan, were greatly afraid of the sons of Jacob, for they said, Behold the same will be done to us as was done to those cities, for who can stand against their mighty strength?* (Jasher 40:10). This is Genesis 35 unfolded — the supernatural dread that protected the same sons after the Shechem affair, now spread over a whole war. *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob* (Genesis 35:5); the promise stands, *I will send my fear before thee, and will destroy all the people to whom thou shalt come* (Exodus 23:27). The fear of the nations is the LORD''s hedge around the elect line.',
+       sv.verse_id, ev.verse_id, 'extras', 55978
+  FROM _session252_ja40_lookup sv, _session252_ja40_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=10
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=40 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-40-few-in-number-elect',
+       E'Few in number, yet none can stand before them',
+       E'Jacob feared exactly this war when his sons first drew the sword at Shechem: *And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house* (Genesis 34:30). Jasher answers the fear — the few are kept. The kings marvel: *We have heard all that you did to the kings of the Amorites with your sword and exceedingly mighty arm, so that no man could stand up before you* (Jasher 40:45), and Jacob''s sons, knowing the enemy few, do not even all go out: *in the morning the sons of Jacob rose up and chose sixty two of their men, and ten of the sons of Jacob went with them* (Jasher 40:36). This is the election Torah confesses — chosen not for greatness but kept by the Name. *Yahuah (LORD) did not set his love upon you, nor choose you, because ye were more in number than any people; for ye were the fewest of all people* (Deuteronomy 7:7). The seed is small and the seed is sure.',
+       sv.verse_id, ev.verse_id, 'extras', 55981
+  FROM _session252_ja40_lookup sv, _session252_ja40_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=36
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=40 AND ev.verse_number=45
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-40-canaanite-kings-sue-for-peace',
+       E'The kings of Canaan gather and beg a covenant of peace',
+       E'The whole league of Canaan, terrified, sends word to assemble and submit: *And the seven kings of the Canaanites resolved to make peace with the sons of Jacob, for they were greatly afraid of their lives, on account of the sons of Jacob* (Jasher 40:22). They come and plead: *So we have come to you to form a treaty of peace between us, and now therefore contract with us a covenant of peace and truth, that you will not meddle with us, inasmuch as we have not meddled with you* (Jasher 40:46), and Jacob''s sons grant it and make them tributary (Jasher 40:48). This is the canon''s own scene of Canaan''s kings reacting to Israel — and the very league Joshua later faces. *And it came to pass, when all the kings which were on this side Jordan... the Hittite, and the Amorite, the Canaanite, the Perizzite, the Hivite, and the Jebusite, heard thereof* (Joshua 9:1); *That they gathered themselves together, to fight with Joshua and with Yashar''el (Israel), with one accord* (Joshua 9:2); and as with the sons of Jacob, so with Joshua: *And Joshua made peace with them, and made a league with them, to let them live* (Joshua 9:15). It ain''t new — the kings of Canaan have always sued for peace before the elect.',
+       sv.verse_id, ev.verse_id, 'extras', 55984
+  FROM _session252_ja40_lookup sv, _session252_ja40_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=22
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=40 AND ev.verse_number=48
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-40-jubilees-amorite-wars-self-link',
+       E'The seven Amorite kings, the tribute, the field at Shechem',
+       E'Jasher 40 closes the war the same way the canon and Jubilees do — tribute imposed and a lasting peace: *And the sons of Jacob swore to them that they would not meddle with them, and all the kings of the Canaanites swore also to them, and the sons of Jacob made them tributary from that day forward* (Jasher 40:48); *And there was peace from that day forward between the sons of Jacob and the kings of the Canaanites, until the children of Israel came to inherit the land of Canaan* (Jasher 40:52). The whole campaign is staged from the parcel Jacob bought at Shechem: *And Jacob and his sons and their servants remained on that night and the next day in the portion of the field which Jacob had purchased from Hamor for five shekels* (Jasher 40:19). Jubilees tells the identical event — the same seven Amorite kings, the same tribute, the same peace. *And the seven kings of the Amorites assembled themselves together against them, to slay them* (Jubilees 34:2); *And he prevailed over them, and imposed tribute on them that they should pay him tribute* (Jubilees 34:8); *And he returned in peace, and made peace with them, and they became his servants, until the day that he and his sons went down into Egypt* (Jubilees 34:9). And the canon names the very ground: *And he bought a parcel of a field, where he had spread his tent, at the hand of the children of Hamor, Shechem''s father* (Genesis 33:19) — the field Jacob bequeaths as won *out of the hand of the Amorite with my sword and with my bow* (Genesis 48:22). Three witnesses, one war: it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55987
+  FROM _session252_ja40_lookup sv, _session252_ja40_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=19
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=40 AND ev.verse_number=52
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-40-yahuah-confusion-bethchorin
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 14:14 — *Yahuah (LORD) shall fight for you, and ye shall hold your peace.* As at the Red Sea, the sons of Jacob cry to the Name and Yahuah Himself routs Bethchorin while they hold their place (Jasher 40:5).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-yahuah-confusion-bethchorin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Judges 7:22 — *And the three hundred blew the trumpets, and Yahuah (LORD) set every man''s sword against his fellow, even throughout all the host: and the host fled to Beth-shittah in Zererath, and to the border of Abel-meholah, unto Tabbath.* The same hand that turned Midian''s swords inward sets the men of Bethchorin smiting each other in the dark (Jasher 40:5).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-yahuah-confusion-bethchorin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=7 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Chronicles 20:23 — *For the children of Ammon and Moab stood up against the inhabitants of mount Seir, utterly to slay and destroy them: and when they had made an end of the inhabitants of Seir, every one helped to destroy another.* Jehoshaphat''s enemies, like the Chorinites who fought the whole night one man with his brother, destroy themselves once Yahuah sends confusion among them (Jasher 40:7).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-yahuah-confusion-bethchorin'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=20 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-40-terror-of-elohim-on-the-cities
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 35:5 — *And they journeyed: and the terror of Elohim (God) was upon the cities that were round about them, and they did not pursue after the sons of Jacob.* The very dread Genesis names is what Jasher shows spreading over all the land so none dares pursue or attack Jacob''s sons (Jasher 40:21).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-terror-of-elohim-on-the-cities'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=35 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 23:27 — *I will send my fear before thee, and will destroy all the people to whom thou shalt come, and I will make all thine enemies turn their backs unto thee.* The Canaanites and those beyond Jordan, seized with fear that the same will be done to them, are living out the promise Yahuah later seals for the conquest (Jasher 40:10).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-terror-of-elohim-on-the-cities'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-40-few-in-number-elect
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 34:30 — *And Jacob said to Simeon and Levi, Ye have troubled me to make me to stink among the inhabitants of the land, among the Canaanites and the Perizzites: and I being few in number, they shall gather themselves together against me, and slay me; and I shall be destroyed, I and my house.* The dread Jacob spoke after Shechem is exactly the war Jasher 40 narrates — yet the few are not destroyed but feared, no man able to stand before them (Jasher 40:45).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-few-in-number-elect'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=45
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=34 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 7:7 — *Yahuah (LORD) did not set his love upon you, nor choose you, because ye were more in number than any people; for ye were the fewest of all people.* That Jacob''s sons send out only sixty-two men against twenty-one kings shows the chosen line preserved while few — the election Moses names (Jasher 40:36).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-few-in-number-elect'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-40-canaanite-kings-sue-for-peace
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 9:1 — *And it came to pass, when all the kings which were on this side Jordan, in the hills, and in the valleys, and in all the coasts of the great sea over against Lebanon, the Hittite, and the Amorite, the Canaanite, the Perizzite, the Hivite, and the Jebusite, heard thereof.* The same roll of Canaanite kings that musters before Joshua is already mustering before Jacob''s sons, hearing of their power and afraid for their lives (Jasher 40:22).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-canaanite-kings-sue-for-peace'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=9 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Joshua 9:15 — *And Joshua made peace with them, and made a league with them, to let them live: and the princes of the congregation sware unto them.* As Joshua''s generation swears a league of peace with frightened Canaanites, so the sons of Jacob form a covenant of peace and truth at the kings'' plea (Jasher 40:46).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-canaanite-kings-sue-for-peace'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=46
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=9 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 9:2 — *That they gathered themselves together, to fight with Joshua and with Yashar''el (Israel), with one accord.* The seven and then twenty-one kings who assemble over Jacob''s sons foreshadow the one-accord gathering of Canaan''s kings in Joshua''s day (Jasher 40:22).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-canaanite-kings-sue-for-peace'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=9 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-40-jubilees-amorite-wars-self-link
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 34:2 — *And the seven kings of the Amorites assembled themselves together against them, to slay them, hiding themselves under the trees, and to take their cattle as a prey.* Jubilees narrates the identical war — the seven kings against Jacob''s sons that Jasher draws out into the Bethchorin campaign and the kings'' surrender (Jasher 40:22).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-jubilees-amorite-wars-self-link'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=22
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 34:8 — *And he prevailed over them, and imposed tribute on them that they should pay him tribute, five fruit products of their land, and he built Rôbêl and Tamnâtârês.* The same imposed tribute Jasher records when the sons of Jacob make the Canaanite kings tributary from that day forward (Jasher 40:48).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-jubilees-amorite-wars-self-link'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=48
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 34:9 — *And he returned in peace, and made peace with them, and they became his servants, until the day that he and his sons went down into Egypt.* Jubilees seals the war with the same lasting peace and servitude that Jasher carries until Israel inherits Canaan (Jasher 40:52).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-jubilees-amorite-wars-self-link'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=52
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=34 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 33:19 — *And he bought a parcel of a field, where he had spread his tent, at the hand of the children of Hamor, Shechem''s father, for an hundred pieces of money.* The portion of field where Jacob and his sons camp with all the spoil is the very parcel Genesis records him buying from Hamor at Shechem (Jasher 40:19).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-jubilees-amorite-wars-self-link'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=33 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Genesis 48:22 — *Moreover I have given to thee one portion above thy brethren, which I took out of the hand of the Amorite with my sword and with my bow.* Jacob''s deathbed grant of the Shechem portion won from the Amorite is the very war Jasher 40 narrates at length around that field (Jasher 40:19).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja40_lookup sv, _session252_ja40_lookup tv
+ WHERE t.slug='jasher-40-jubilees-amorite-wars-self-link'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=40 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=48 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session252 — Jasher cross-references complete.'
