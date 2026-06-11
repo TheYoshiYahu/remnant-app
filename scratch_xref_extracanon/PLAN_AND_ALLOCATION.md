@@ -334,3 +334,30 @@ anchor_check (gapped editions silently drop gap-anchored threads). ⚠️ FIRST 
 ## ▶️ NEXT BOOK = JASHER (session252 @ band 55000; edition 'jasher' book 'jasher', 91 ch / 3828 v —
 the LARGEST book). ch N band = 55000 + (N-1)*25 → ch1=55000 … ch91=57250. Brief = MINION_BRIEF_JASHER.md.
 ~12 packs of 8 chapters. Then Apocrypha (@58000), then the smaller books per the allocation table.
+
+## RECEIPT — Jasher Pack 1 (ch1–8) ✅ LIVE IN PROD  [NEW BOOK, session252]
+- Applied 2026-06-11. EXACT: **49 `jasher-*` threads / 190 members**, band 55000–55187, per-ch
+  7/6/6/6/6/6/7/5, 0 orphans. Migration `session252_jasher_extracanon_cross_references.sql`. Commit
+  `2baf39f`. Six gates green FIRST PASS. **Jasher parse is CLEAN (continuous verses, no gaps)** —
+  unlike Jubilees; packs should move faster.
+- Creation/Adam/fall/Cain-Abel (1→Gen1-4/Heb11:4/1Jn3:12); Seth+Cainite lines/Lamech-slays-Cain (2→
+  Gen4-5/Rom1:23/Jub4:31); ENOCH translated in chariots of fire (3→Gen5:24/Heb11:5/Jude14 + STRONG
+  self-links 1En12/14/70/Jub4); corruption/Watchers pre-Flood (4→Gen6/1En6-8/Jub5); Noah/the ark (5→
+  Gen6-7/Heb11:7/2Pet2:5/Jub5); THE FLOOD+bow covenant (6→Gen7-9/1En89/Jub5-6); the nations divided
+  (7→Gen10/Deut32:8/Jub7-9); Babel+NIMROD the rebel kingdom-of-man (8→Gen10:8/Gen11/Mic5:6/Jub10).
+- The "It Ain't New" cross-weave is RICHEST here: Jasher narrates the same events as the now-live
+  1 Enoch + Jubilees, so genuine self-links abound (Enoch's whirlwind↔1En14/70, Cain-by-stone↔Jub4:31).
+- Push blocked. origin/main 47a9e48; local HEAD `2baf39f` (20 commits ahead). Prod authoritative.
+
+## ▶️ RESUME (session wrap): 1 ENOCH COMPLETE + JUBILEES COMPLETE + JASHER ch1-8 all LIVE =
+736 threads / 2714 members. NEXT = Jasher Pack 2 ch9-16 (Nimrod's reign/the war of the kings; ABRAHAM's
+birth + the star the wise men see + Nimrod seeks to kill the child; Abraham hidden in a cave; Abraham
+at Noah/Shem's school; Abraham breaks Terah's idols; cast into Nimrod's FURNACE and delivered → Gen11-12
++ the Nimrod-vs-Abraham kingdom-of-man-vs-chosen-seed legends). Then J3 ch17-24 … through ch91 (~11 more
+packs of 8). Then Apocrypha (session253 @58000), adam-eve-conflict, apocalypse-of-abraham, ascension-
+isaiah, sonnini, apostolic-fathers(@70000), mrjames, josephus(defer). SKIP 6 corrupt pseudepigrapha.
+METHOD per pack: workflow (pack-1 script pattern + per-ch CONTEXT map) → render → anchor_check.py jasher
+jasher + pglast + verify_fidelity + resolve_check jasher jasher → fold → audit → recon.py jasher jasher
+jasher. Brief = MINION_BRIEF_JASHER.md. ⚠️ FIRST NEXT SESSION: retry `git push origin HEAD:main` from
+/tmp/extracanon-xref-wt with keychain unlocked — 20 commits (85b660c..2baf39f) need to land on
+origin/main (still at 47a9e48); prod is authoritative meanwhile.

@@ -1,0 +1,201 @@
+-- ----- fragment: minion_jasher_14.sql (session252 jasher 14) -----
+-- Source anchor: jasher/jasher ch14. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja14 (view _session252_ja14_lookup). Sort band base 55325, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-14-wisdom-grace-before-the-king
+  ('jasher', 'jasher', 14, 26, 'canon', 'genesis', 41, 38, 'free', E'Genesis 41:38 — *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* The canon''s true wise man before Pharaoh is filled with the Spirit of Elohim, where Rikayon of Jasher 14:26 is filled only with the cunning that finds grace in a king''s sight.'),
+  ('jasher', 'jasher', 14, 26, 'canon', 'genesis', 41, 39, 'free', E'Genesis 41:39 — *And Pharaoh said unto Joseph, Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art* — the same finding-of-grace by wisdom that lifts Rikayon in Jasher 14:26, but the discernment is given by Elohim, not seized from the rabble.'),
+  ('jasher', 'jasher', 14, 1, 'canon', 'genesis', 10, 10, 'free', E'Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar* — Rikayon arises out of that same land of Shinar (Jasher 14:1), the seedbed of Nimrod''s kingdom-of-man, and carries its scheming down into Egypt.'),
+  -- thread: jasher-14-tax-upon-the-dead
+  ('jasher', 'jasher', 14, 19, 'canon', 'proverbs', 28, 15, 'free', E'Proverbs 28:15 — *As a roaring lion, and a ranging bear; so is a wicked ruler over the poor people* — exactly Rikayon, who in Jasher 14:19 exacts a tax even from the dead, the wicked ruler preying on a city he has ruined.'),
+  ('jasher', 'jasher', 14, 14, 'canon', 'genesis', 47, 26, 'free', E'Genesis 47:26 — *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part; except the land of the priests only, which became not Pharaoh''s* — the lawful Egyptian tax "unto this day" set by Joseph to preserve life, the mirror-image of Rikayon''s grave-tax in Jasher 14:14 set only to enrich himself.'),
+  ('jasher', 'jasher', 14, 20, 'canon', 'genesis', 47, 20, 'free', E'Genesis 47:20 — *And Joseph bought all the land of Egypt for Pharaoh; for the Egyptians sold every man his field, because the famine prevailed over them: so the land became Pharaoh''s* — the throne Rikayon founds will swallow all Egypt into Pharaoh''s hand, the people crying "the whole city is ruined" already in Jasher 14:20.'),
+  -- thread: jasher-14-name-called-pharaoh
+  ('jasher', 'jasher', 14, 27, 'canon', 'genesis', 41, 45, 'free', E'Genesis 41:45 — *And Pharaoh called Joseph''s name Zaphnath-paaneah; and he gave him to wife Asenath the daughter of Poti-pherah priest of On. And Joseph went out over all the land of Egypt* — the canon''s renaming of the exalted man, the same gesture by which Rikayon is renamed Pharaoh in Jasher 14:27.'),
+  ('jasher', 'jasher', 14, 33, 'canon', 'exodus', 1, 8, 'free', E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph* — the line of Pharaohs founded in Jasher 14:33 runs on "to this day" until one of them turns the kingdom-of-man against the covenant seed.'),
+  ('jasher', 'jasher', 14, 33, 'canon', 'exodus', 1, 11, 'free', E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses* — the title Pharaoh, established by Rikayon''s tax in Jasher 14:33, becomes the name of the taskmaster-king who oppresses Yashar''el.'),
+  ('jasher', 'jasher', 14, 30, 'jasher', 'jasher', 15, 2, 'extras', E'Jasher 15:2 — *And Abram and all belonging to him rose and went down to Egypt on account of the famine, and when they were at the brook Mitzraim they remained there some time to rest from the fatigue of the road* — the very throne of Pharaoh founded in Jasher 14:30 is the throne the chosen seed Abram meets in the next chapter, the kingdom-of-man and the seed brought face to face.'),
+  -- thread: jasher-14-poor-mans-cunning-and-vanity
+  ('jasher', 'jasher', 14, 31, 'canon', 'psalms', 49, 16, 'free', E'Psalm 49:16 — *Be not thou afraid when one is made rich, when the glory of his house is increased* — the warning over Rikayon, who in Jasher 14:31 cunningly usurps Egypt and is made rich at the people''s cost.'),
+  ('jasher', 'jasher', 14, 15, 'canon', 'psalms', 49, 17, 'free', E'Psalm 49:17 — *For when he dieth he shall carry nothing away: his glory shall not descend after him* — the silver and gold Rikayon gathers in Jasher 14:15 is the very riches the Psalm says a man carries nothing of into death.'),
+  ('jasher', 'jasher', 14, 31, 'canon', 'ecclesiastes', 8, 8, 'free', E'Ecclesiastes 8:8 — *There is no man that hath power over the spirit to retain the spirit; neither hath he power in the day of death: and there is no discharge in that war; neither shall wickedness deliver those that are given to it* — the preacher''s verdict on the man like Rikayon (Jasher 14:31) who rules over others to their hurt, yet has no power in the day of death.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-14-wisdom-grace-before-the-king',
+       E'The wise man finds grace before the king of Egypt',
+       E'Jasher opens not with Nimrod''s furnace but with the etiology of Egypt''s throne: *In those days there was in the land of Shinar a wise man who had understanding in all wisdom, and of a beautiful appearance, but he was poor and indigent; his name was Rikayon and he was hard set to support himself* (Jasher 14:1). A man of wisdom comes out of Shinar to stand before the king of Egypt, and the king''s heart turns to him: *And when the king heard the words of Rikayon and his wisdom, Rikayon found grace in his sight, and he met with grace and kindness from all the servants of the king and from all the inhabitants of Egypt, on account of his wisdom and excellent speeches, and from that time they loved him exceedingly* (Jasher 14:26). It ain''t new — the canon will run this same architecture through Joseph: *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* (Genesis 41:38), *Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art* (Genesis 41:39). But mark the difference the framework demands: Rikayon''s wisdom is the cunning of the rabble lifting itself, while Joseph''s is the Spirit of Elohim setting the chosen seed over the kingdom-of-man — election, not contrivance, exalts the seed.',
+       sv.verse_id, ev.verse_id, 'extras', 55325
+  FROM _session252_ja14_lookup sv, _session252_ja14_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=14 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-14-tax-upon-the-dead',
+       E'The death-tax: a wicked ruler over the poor people',
+       E'Rikayon''s scheme is to set armed men over the graves of Egypt and exact silver from the grieving: *And he commanded them, saying, Thus says the king, Strengthen yourselves and be valiant men, and let no man be buried here until two hundred pieces of silver be given, and then he may be buried* (Jasher 14:14). The people cry out against the burden no former king ever laid: *We know it to be the custom of kings to take a yearly tax from the living, but you dost not only do this, but from the dead also you exact a tax day by day* (Jasher 14:19). This is the kingdom-of-man at its purest — the strong-man devouring the poor — and the prophets name it for what it is: *As a roaring lion, and a ranging bear; so is a wicked ruler over the poor people* (Proverbs 28:15). The canon shows the lawful counterpart in Joseph''s fifth-part, made by famine-mercy and not by extortion: *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part* (Genesis 47:26) — a fifth taken to keep a people alive, against Rikayon''s tax taken to bleed them in their grief.',
+       sv.verse_id, ev.verse_id, 'extras', 55328
+  FROM _session252_ja14_lookup sv, _session252_ja14_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=14 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-14-name-called-pharaoh',
+       E'The renaming: how the title Pharaoh began',
+       E'The king crowns Rikayon''s cunning by giving him a new name and making it the name of every king to follow: *And the king answered and said to Rikayon, Your name shall no more be called Rikayon but Pharaoh shall be your name, since you did exact a tax from the dead; and he called his name Pharaoh* (Jasher 14:27), *Therefore all the kings that reigned in Egypt from that time forward were called Pharaoh to this day* (Jasher 14:33). The renaming of the exalted man is the canon''s own pattern — *And Pharaoh called Joseph''s name Zaphnath-paaneah* (Genesis 41:45) — but here the name itself is born of extortion, and it becomes the standing title of the kingdom-of-man that will one day turn against the seed: *Now there arose up a new king over Egypt, which knew not Joseph* (Exodus 1:8), the Pharaoh who enslaves Yashar''el and is named here at its founding. Jasher carries the thread forward at once, for the very next chapter brings the chosen seed down to this throne: *And Abram and all belonging to him rose and went down to Egypt on account of the famine* (Jasher 15:2).',
+       sv.verse_id, ev.verse_id, 'extras', 55331
+  FROM _session252_ja14_lookup sv, _session252_ja14_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=27
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=14 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-14-poor-mans-cunning-and-vanity',
+       E'The poor man''s cunning and the vanity of stolen glory',
+       E'Rikayon begins poor and pinched with hunger, sleeping in a ruined bake house: *And in the evening Rikayon went out and found a house in ruins, formerly a bake house in Egypt, and he abode there all night in bitterness of soul and pinched with hunger, and sleep was removed from his eyes* (Jasher 14:6). From that bitterness he devises not righteousness but a scheme, and *in eight months time Rikayon and his men gathered great riches of silver and gold* (Jasher 14:15), until *Rikayon Pharaoh cunningly usurped the government of Egypt, and he exacted a tax from all the inhabitants of Egypt* (Jasher 14:31). This is the kingdom-of-man''s whole career in miniature — riches and rule seized by craft — and the Psalm pronounces its end: *Be not thou afraid when one is made rich, when the glory of his house is increased; For when he dieth he shall carry nothing away: his glory shall not descend after him* (Psalm 49:16-17). The wisdom that is only cunning gathers gold over the graves of others, and is itself carried to the grave.',
+       sv.verse_id, ev.verse_id, 'extras', 55334
+  FROM _session252_ja14_lookup sv, _session252_ja14_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=14 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-14-wisdom-grace-before-the-king
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:38 — *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* The canon''s true wise man before Pharaoh is filled with the Spirit of Elohim, where Rikayon of Jasher 14:26 is filled only with the cunning that finds grace in a king''s sight.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-wisdom-grace-before-the-king'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 41:39 — *And Pharaoh said unto Joseph, Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art* — the same finding-of-grace by wisdom that lifts Rikayon in Jasher 14:26, but the discernment is given by Elohim, not seized from the rabble.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-wisdom-grace-before-the-king'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar* — Rikayon arises out of that same land of Shinar (Jasher 14:1), the seedbed of Nimrod''s kingdom-of-man, and carries its scheming down into Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-wisdom-grace-before-the-king'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-14-tax-upon-the-dead
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 28:15 — *As a roaring lion, and a ranging bear; so is a wicked ruler over the poor people* — exactly Rikayon, who in Jasher 14:19 exacts a tax even from the dead, the wicked ruler preying on a city he has ruined.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-tax-upon-the-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=28 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 47:26 — *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part; except the land of the priests only, which became not Pharaoh''s* — the lawful Egyptian tax "unto this day" set by Joseph to preserve life, the mirror-image of Rikayon''s grave-tax in Jasher 14:14 set only to enrich himself.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-tax-upon-the-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 47:20 — *And Joseph bought all the land of Egypt for Pharaoh; for the Egyptians sold every man his field, because the famine prevailed over them: so the land became Pharaoh''s* — the throne Rikayon founds will swallow all Egypt into Pharaoh''s hand, the people crying "the whole city is ruined" already in Jasher 14:20.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-tax-upon-the-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-14-name-called-pharaoh
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:45 — *And Pharaoh called Joseph''s name Zaphnath-paaneah; and he gave him to wife Asenath the daughter of Poti-pherah priest of On. And Joseph went out over all the land of Egypt* — the canon''s renaming of the exalted man, the same gesture by which Rikayon is renamed Pharaoh in Jasher 14:27.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-name-called-pharaoh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=45
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph* — the line of Pharaohs founded in Jasher 14:33 runs on "to this day" until one of them turns the kingdom-of-man against the covenant seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-name-called-pharaoh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses* — the title Pharaoh, established by Rikayon''s tax in Jasher 14:33, becomes the name of the taskmaster-king who oppresses Yashar''el.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-name-called-pharaoh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jasher 15:2 — *And Abram and all belonging to him rose and went down to Egypt on account of the famine, and when they were at the brook Mitzraim they remained there some time to rest from the fatigue of the road* — the very throne of Pharaoh founded in Jasher 14:30 is the throne the chosen seed Abram meets in the next chapter, the kingdom-of-man and the seed brought face to face.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-name-called-pharaoh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=30
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=15 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-14-poor-mans-cunning-and-vanity
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 49:16 — *Be not thou afraid when one is made rich, when the glory of his house is increased* — the warning over Rikayon, who in Jasher 14:31 cunningly usurps Egypt and is made rich at the people''s cost.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-poor-mans-cunning-and-vanity'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 49:17 — *For when he dieth he shall carry nothing away: his glory shall not descend after him* — the silver and gold Rikayon gathers in Jasher 14:15 is the very riches the Psalm says a man carries nothing of into death.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-poor-mans-cunning-and-vanity'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ecclesiastes 8:8 — *There is no man that hath power over the spirit to retain the spirit; neither hath he power in the day of death: and there is no discharge in that war; neither shall wickedness deliver those that are given to it* — the preacher''s verdict on the man like Rikayon (Jasher 14:31) who rules over others to their hurt, yet has no power in the day of death.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-poor-mans-cunning-and-vanity'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=8 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+

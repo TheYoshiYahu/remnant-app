@@ -1,0 +1,102 @@
+{
+  "edition": "jasher", "book": "jasher", "chapter": 15,
+  "session": "session252", "tag": "ja15", "base_band": 55350,
+  "threads": [
+    {
+      "slug": "jasher-15-famine-down-to-egypt",
+      "title": "The famine drives Abram down to Egypt",
+      "summary_md": "Jasher opens the cycle exactly where Genesis does: *And in that year there was a heavy famine throughout the land of Canaan, and the inhabitants of the land could not remain on account of the famine for it was very grievous. And Abram and all belonging to him rose and went down to Egypt on account of the famine* (Jasher 15:1-2). Genesis carries the same scene unembellished — *And there was a famine in the land: and Abram went down into Egypt to sojourn there; for the famine was grievous in the land* (Genesis 12:10). The very same famine recurs over Isaac a generation later — *And there was a famine in the land, beside the first famine that was in the days of Abraham. And Isaac went unto Abimelech king of the Philistines unto Gerar* (Genesis 26:1) — the chosen seed sojourning among the nations is a pattern, not a one-off. Hebrews names the posture: *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise* (Hebrews 11:9). And Jubilees retells the identical descent — *And Abram went into Egypt in the third year of the week, and he dwelt in Egypt five years before his wife was torn away from him* (Jubilees 13:11). It ain't new — Jasher is repeating the canon's own famine-and-sojourn.",
+      "anchor_start_v": 1, "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 10, "tier": "free",
+         "note": "Genesis 12:10 — *And there was a famine in the land: and Abram went down into Egypt to sojourn there; for the famine was grievous in the land.* The Genesis source of Jasher 15:1-2, the grievous Canaan famine that sends Abram to Egypt."},
+        {"src_ch": 15, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 26, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 26:1 — *And there was a famine in the land, beside the first famine that was in the days of Abraham. And Isaac went unto Abimelech king of the Philistines unto Gerar.* The same famine-driven sojourn recurs over Isaac, showing Jasher 15:1's scene is a covenant pattern."},
+        {"src_ch": 15, "src_v": 2, "tgt_edition": "canon", "tgt_book": "hebrews", "tgt_ch": 11, "tgt_v": 9, "tier": "free",
+         "note": "Hebrews 11:9 — *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise.* Names the faith-posture of Abram's descent in Jasher 15:2 — the elect seed sojourning among the nations."},
+        {"src_ch": 15, "src_v": 2, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 13, "tgt_v": 11, "tier": "extras",
+         "note": "Jubilees 13:11 — *And Abram went into Egypt in the third year of the week, and he dwelt in Egypt five years before his wife was torn away from him.* Jubilees retells the identical descent into Egypt that opens Jasher 15."}
+      ]
+    },
+    {
+      "slug": "jasher-15-she-is-my-sister",
+      "title": "Say you are my sister — fear of the nations",
+      "summary_md": "On the border of Egypt Abram, fearing the godless land, instructs Sarai: *And Abram said to his wife Sarai, Since Elohim (God) has created you with such a beautiful countenance, I am afraid of the Egyptians lest they should slay me and take you away, for the fear of Elohim is not in these places. Surely then you shall do this, Say you are my sister to all that may ask you* (Jasher 15:4-5). This is Genesis 12 word-for-word in substance — *Behold now, I know that thou art a fair woman to look upon... Say, I pray thee, thou art my sister: that it may be well with me for thy sake; and my soul shall live because of thee* (Genesis 12:11,13). The same stratagem returns at Gerar with Abimelech — *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah* (Genesis 20:2) — and again over Isaac and Rebekah — *and he said, She is my sister: for he feared to say, She is my wife; lest, said he, the men of the place should kill me for Rebekah* (Genesis 26:7). The patriarch's fear of the nations who have no fear of Elohim is the recurring danger over the chosen seed; it ain't new.",
+      "anchor_start_v": 3, "anchor_end_v": 7,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 11, "tier": "free",
+         "note": "Genesis 12:11 — *And it came to pass, when he was come near to enter into Egypt, that he said unto Sarai his wife, Behold now, I know that thou art a fair woman to look upon.* The Genesis source of Abram's fear in Jasher 15:4 as Egypt nears."},
+        {"src_ch": 15, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 13, "tier": "free",
+         "note": "Genesis 12:13 — *Say, I pray thee, thou art my sister: that it may be well with me for thy sake; and my soul shall live because of thee.* The exact instruction Jasher 15:5 expands — call yourself sister that it may be well with me."},
+        {"src_ch": 15, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 20, "tgt_v": 2, "tier": "free",
+         "note": "Genesis 20:2 — *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah.* The same sister-stratagem returns at Gerar, showing Jasher 15:6's command is a recurring pattern over the seed."},
+        {"src_ch": 15, "src_v": 5, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 26, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 26:7 — *And the men of the place asked him of his wife; and he said, She is my sister: for he feared to say, She is my wife; lest, said he, the men of the place should kill me for Rebekah; because she was fair to look upon.* Isaac repeats the very fear and stratagem of Jasher 15:5."}
+      ]
+    },
+    {
+      "slug": "jasher-15-prayer-and-the-angel-delivers-sarai",
+      "title": "Sarai taken — Abram prays and the angel delivers",
+      "summary_md": "Sarai is carried into Pharaoh's house and Abram cries out: *And the woman was then brought to Pharaoh's house, and Abram grieved on account of his wife, and he prayed to Yahuah (the Lord) to deliver her from the hands of Pharaoh* (Jasher 15:16), and Yahuah answers — *And Yahuah (the Lord) hearkened to the voice of Sarai, and Yahuah (the Lord) sent an angel to deliver Sarai from the power of Pharaoh* (Jasher 15:19). Genesis states the taking plainly — *The princes also of Pharaoh saw her, and commended her before Pharaoh: and the woman was taken into Pharaoh's house* (Genesis 12:15) — and the Psalms supply the deliverance Jasher dramatizes as an angel: *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalms 34:7). The 105th Psalm makes it the very charter of Abram's protection among the kings — *He suffered no man to do them wrong: yea, he reproved kings for their sakes; Saying, Touch not mine anointed, and do my prophets no harm* (Psalms 105:14-15). Where Jasher adds the standing angel, the canon already carries the deliverance: it ain't new.",
+      "anchor_start_v": 16, "anchor_end_v": 20,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 16, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 12:15 — *The princes also of Pharaoh saw her, and commended her before Pharaoh: and the woman was taken into Pharaoh's house.* The Genesis source of Sarai being brought to Pharaoh's house in Jasher 15:16."},
+        {"src_ch": 15, "src_v": 19, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 34, "tgt_v": 7, "tier": "free",
+         "note": "Psalms 34:7 — *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them.* The canon's word for the delivering angel Jasher 15:19 sends to rescue Sarai."},
+        {"src_ch": 15, "src_v": 16, "tgt_edition": "canon", "tgt_book": "psalms", "tgt_ch": 105, "tgt_v": 15, "tier": "free",
+         "note": "Psalms 105:15 — *Saying, Touch not mine anointed, and do my prophets no harm.* The covenant charter that guards Abram in Pharaoh's house, the protection his prayer in Jasher 15:16 appeals to."}
+      ]
+    },
+    {
+      "slug": "jasher-15-pharaoh-plagued-sarai-restored",
+      "title": "Pharaoh plagued; Sarai restored with gifts",
+      "summary_md": "The angel's strokes fall on Pharaoh's whole house until the king relents: *And Pharaoh knew that he was smitten on account of Sarai... in the morning the king called for Abram and said to him, What is this you have done to me?... Now therefore here is your wife, take her and go from our land lest we all die on her account* (Jasher 15:28-30), and the king loads Abram with cattle, servants, silver and gold (Jasher 15:30,33). Genesis is the spare original — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram's wife* (Genesis 12:17), and *now therefore behold thy wife, take her, and go thy way* (Genesis 12:19). Jubilees narrates the same plague and restoration — *it came to pass when Pharaoh seized Sarai, the wife of Abram, that Yahuah (God) plagued Pharaoh and his house with great plagues because of Sarai, Abram's wife* (Jubilees 13:12), and *And Pharaoh gave back Sarai, the wife of Abram, and he sent him out of the land of Egypt* (Jubilees 13:15). The kings-of-man are reproved for the seed's sake; the same architecture runs through every retelling.",
+      "anchor_start_v": 28, "anchor_end_v": 33,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 28, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 17, "tier": "free",
+         "note": "Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram's wife.* The Genesis source of the plague on Pharaoh's house in Jasher 15:28."},
+        {"src_ch": 15, "src_v": 30, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 12, "tgt_v": 19, "tier": "free",
+         "note": "Genesis 12:19 — *Why saidst thou, She is my sister? so I might have taken her to me to wife: now therefore behold thy wife, take her, and go thy way.* Pharaoh's dismissal of Abram and Sarai, expanded in Jasher 15:30."},
+        {"src_ch": 15, "src_v": 28, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 13, "tgt_v": 12, "tier": "extras",
+         "note": "Jubilees 13:12 — *And it came to pass when Pharaoh seized Sarai, the wife of Abram, that Yahuah (God) plagued Pharaoh and his house with great plagues because of Sarai, Abram's wife.* Jubilees retells the very plague Jasher 15:28 says smote Pharaoh on Sarai's account."},
+        {"src_ch": 15, "src_v": 30, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 13, "tgt_v": 15, "tier": "extras",
+         "note": "Jubilees 13:15 — *And Pharaoh gave back Sarai, the wife of Abram, and he sent him out of the land of Egypt, and he journeyed to the place where he had pitched his tent at the beginning.* The restoration and sending-out that Jasher 15:30 narrates."}
+      ]
+    },
+    {
+      "slug": "jasher-15-abram-and-lot-separate",
+      "title": "Abram and Lot separate in peace",
+      "summary_md": "Back in Canaan the substance grows too great and strife breaks out: *And when Abram was dwelling in the land the herdsmen of Lot quarrelled with the herdsmen of Abram, for their property was too great for them to remain together in the land* (Jasher 15:36), and Abram makes peace — *Now I beseech you let there be no more quarrelling between us, for we are kinsmen. But I pray you separate from me, go and choose a place where you may dwell* (Jasher 15:41-42). Genesis is the source, nearly verbatim — *And there was a strife between the herdmen of Abram's cattle and the herdmen of Lot's cattle* (Genesis 13:7), *Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen; for we be brethren* (Genesis 13:8). Lot lifts his eyes to Jordan and chooses Sodom — *Then Lot chose him all the plain of Jordan; and Lot journeyed east: and they separated themselves the one from the other* (Genesis 13:11) — and Jubilees marks it: *And in the fourth year of this week Lot parted from him, and Lot dwelt in Sodom, and the men of Sodom were sinners exceedingly* (Jubilees 13:17).",
+      "anchor_start_v": 36, "anchor_end_v": 46,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 36, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 13, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 13:7 — *And there was a strife between the herdmen of Abram's cattle and the herdmen of Lot's cattle: and the Canaanite and the Perizzite dwelled then in the land.* The Genesis source of the herdsmen's quarrel in Jasher 15:36."},
+        {"src_ch": 15, "src_v": 41, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 13, "tgt_v": 8, "tier": "free",
+         "note": "Genesis 13:8 — *And Abram said unto Lot, Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen; for we be brethren.* Abram's peace-making appeal, expanded in Jasher 15:41."},
+        {"src_ch": 15, "src_v": 46, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 13, "tgt_v": 11, "tier": "free",
+         "note": "Genesis 13:11 — *Then Lot chose him all the plain of Jordan; and Lot journeyed east: and they separated themselves the one from the other.* Lot's choice of the well-watered plain and departure, as in Jasher 15:46."},
+        {"src_ch": 15, "src_v": 46, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 13, "tgt_v": 17, "tier": "extras",
+         "note": "Jubilees 13:17 — *And in the fourth year of this week Lot parted from him, and Lot dwelt in Sodom, and the men of Sodom were sinners exceedingly.* Jubilees records the same parting of Lot to Sodom that closes Jasher 15:46."}
+      ]
+    },
+    {
+      "slug": "jasher-15-abram-dwells-in-mamre-hebron",
+      "title": "Abram dwells in the plain of Mamre at Hebron",
+      "summary_md": "The chapter closes with Abram settled in the land of promise: *And Abram dwelt in the plain of Mamre, which is in Hebron, and he pitched his tent there, and Abram remained in that place many years* (Jasher 15:47). Genesis ends the Lot account in the very same place — *Then Abram removed his tent, and came and dwelt in the plain of Mamre, which is in Hebron, and built there an altar unto Yahuah (LORD)* (Genesis 13:18). And just after Lot's departure the land-promise to the seed is renewed — *For all the land which thou seest, to thee will I give it, and to thy seed for ever. And I will make thy seed as the dust of the earth* (Genesis 13:15-16). The elect seed dwells in the land deeded forever; the promise to the fathers is the same promise carried through every telling — it ain't new.",
+      "anchor_start_v": 47, "anchor_end_v": 47,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 15, "src_v": 47, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 13, "tgt_v": 18, "tier": "free",
+         "note": "Genesis 13:18 — *Then Abram removed his tent, and came and dwelt in the plain of Mamre, which is in Hebron, and built there an altar unto Yahuah (LORD).* The exact Genesis place-note that Jasher 15:47 records — Mamre in Hebron."},
+        {"src_ch": 15, "src_v": 47, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 13, "tgt_v": 15, "tier": "free",
+         "note": "Genesis 13:15 — *For all the land which thou seest, to thee will I give it, and to thy seed for ever.* The land-promise renewed to the seed just as Abram settles in the place where Jasher 15:47 leaves him dwelling."}
+      ]
+    }
+  ]
+}

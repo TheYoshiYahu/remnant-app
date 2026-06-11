@@ -2682,6 +2682,2174 @@ SELECT t.id, x.id, 3, E'Jubilees 12:7 — *And if I tell them the truth, they wi
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jasher_09.sql (session252 jasher 9) -----
+-- Source anchor: jasher/jasher ch9. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja09 (view _session252_ja09_lookup). Sort band base 55200, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-9-haran-family-and-the-birth-of-sarai
+  ('jasher', 'jasher', 9, 3, 'canon', 'genesis', 11, 29, 'free', E'Genesis 11:29 — *And Abram and Nahor took them wives: the name of Abram’s wife was Sarai; and the name of Nahor’s wife, Milcah, the daughter of Haran, the father of Milcah, and the father of Iscah.* the canon names the same daughters of Haran''s house that Jasher records, Milcah and Sarai (Jasher 9:3).'),
+  -- thread: jasher-9-abram-in-the-house-of-noah-and-shem-knew-yahuah
+  ('jasher', 'jasher', 9, 5, 'canon', 'genesis', 9, 26, 'free', E'Genesis 9:26 — *And he said, Blessed be Yahuah Elohim (the LORD God) of Shem; and Canaan shall be his servant.* Abram learns the way of Yahuah in the house of Shem, the blessed line in whose tents the knowledge of the Creator was kept (Jasher 9:5).'),
+  ('jasher', 'jasher', 9, 6, 'canon', 'isaiah', 51, 2, 'free', E'Isaiah 51:2 — *Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him.* the prophet names the lone calling that Jasher shows beginning in the hidden boy who knew Yahuah from three years old (Jasher 9:6).'),
+  ('jasher', 'jasher', 9, 6, 'canon', 'acts', 7, 2, 'free', E'Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,* Stephen sets the call in Mesopotamia, the land of the idol-houses Jasher describes, before ever Abram reached Haran (Jasher 9:6).'),
+  ('jasher', 'jasher', 9, 5, 'canon', 'joshua', 24, 3, 'free', E'Joshua 24:3 — *And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac.* Yahuah''s own testimony that He took Abraham out, the deliverance Jasher shows beginning in the house of Noah and Shem (Jasher 9:5).'),
+  -- thread: jasher-9-the-generation-serves-gods-of-wood-and-stone
+  ('jasher', 'jasher', 9, 7, 'canon', 'joshua', 24, 2, 'free', E'Joshua 24:2 — *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* the canon names Terah the idolater exactly as Jasher does — the first of the idol-servers (Jasher 9:7).'),
+  ('jasher', 'jasher', 9, 6, 'canon', 'psalms', 115, 4, 'free', E'Psalm 115:4 — *Their idols are silver and gold, the work of men’s hands.* the gods of wood and stone that could neither speak nor hear nor deliver (Jasher 9:6) are the very dumb idols the psalm derides.'),
+  ('jasher', 'jasher', 9, 6, 'canon', 'jeremiah', 10, 14, 'free', E'Jeremiah 10:14 — *Every man is brutish in his knowledge: every founder is confounded by the graven image: for his molten image is falsehood, and there is no breath in them.* the prophet''s verdict on the breathless idols Jasher''s generation served (Jasher 9:6).'),
+  -- thread: jasher-9-abram-reasons-from-the-sun-and-moon-to-the-creator
+  ('jasher', 'jasher', 9, 7, 'canon', 'deuteronomy', 4, 19, 'free', E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them,* Moses forbids the host-of-heaven worship that Abram reasons his way out of, finding sun and moon are servants, not gods (Jasher 9:7).'),
+  ('jasher', 'jasher', 9, 7, 'jubilees', 'jubilees', 12, 17, 'extras', E'Jubilees 12:17 — *All the signs of the stars, and the signs of the moon and of the sun are all in the hand of Yahuah (God). Why do I search (them) out?* Jubilees records the same reasoning — Abram turning from the host of heaven to the One in whose hand they are (Jasher 9:7).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-9-haran-family-and-the-birth-of-sarai',
+       E'Haran''s house and the birth of Sarai',
+       E'Jasher names the household from which the chosen seed will take its wife: *And Haran, the son of Terah, Abram’s oldest brother, took a wife in those days* (Jasher 9:1), and *she conceived again and bare a daughter... she called her name Sarai* (Jasher 9:3). The canon names the same marriages: *And Abram and Nahor took them wives: the name of Abram’s wife was Sarai; and the name of Nahor’s wife, Milcah, the daughter of Haran, the father of Milcah, and the father of Iscah* (Genesis 11:29). The line is being drawn toward the seed of promise.',
+       sv.verse_id, ev.verse_id, 'extras', 55200
+  FROM _session252_ja09_lookup sv, _session252_ja09_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=9 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-9-abram-in-the-house-of-noah-and-shem-knew-yahuah',
+       E'Abram in the house of Noah and Shem — he knew Yahuah',
+       E'The chosen child is hidden in the one righteous house left on the earth: *when Abram came out from the cave, he went to Noah and his son Shem, and he remained with them to learn the instruction of Yahuah (the Lord) and his ways* (Jasher 9:5), *and Abram knew Yahuah (the Lord) from three years old, and he went in the ways of Yahuah (the Lord) until the day of his death, as Noah and his son Shem had taught him* (Jasher 9:6). It is the school of Shem — *Blessed be Yahuah Elohim (the LORD God) of Shem* (Genesis 9:26) — from which the prophet says Yahuah drew him alone: *Look unto Abraham your father... for I called him alone, and blessed him, and increased him* (Isaiah 51:2). Stephen tells it the same way: *The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2), and Yahuah testifies *I took your father Abraham from the other side of the flood... and multiplied his seed* (Joshua 24:3). The election is before the confession — the seed kept and chosen out of the idolatrous world.',
+       sv.verse_id, ev.verse_id, 'extras', 55203
+  FROM _session252_ja09_lookup sv, _session252_ja09_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=5
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=9 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-9-the-generation-serves-gods-of-wood-and-stone',
+       E'The generation serves gods of wood and stone',
+       E'Abram is the one knower of Yahuah in a world wholly turned to idols: *all the sons of the earth in those days greatly transgressed against Yahuah (the Lord)... and the inhabitants of the earth made to themselves, at that time, every man his god; gods of wood and stone which could neither speak, hear, nor deliver* (Jasher 9:6), *and the king and all his servants, and Terah with all his household were then the first of those that served gods of wood and stone* (Jasher 9:7). Joshua names the same fathers: *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham... and they served other gods* (Joshua 24:2). The prophets mock the dumb idol Jasher describes: *Their idols are silver and gold, the work of men’s hands* (Psalm 115:4), *his molten image is falsehood, and there is no breath in them* (Jeremiah 10:14). The seed is chosen out of a house of idols.',
+       sv.verse_id, ev.verse_id, 'extras', 55206
+  FROM _session252_ja09_lookup sv, _session252_ja09_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=9 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-9-abram-reasons-from-the-sun-and-moon-to-the-creator',
+       E'Abram reasons from the sun and moon to the Creator',
+       E'Given an understanding heart, Abram tests the host of heaven and finds them servants, not gods: he served the sun, *and when evening came the sun set as usual, and Abram said within himself, Surely this cannot be Elohim?* then *Abram saw the stars and moon... Surely this is the Elohim... and behold these his servants are gods around him*, until at dawn *Surely these are not gods that made the earth and all mankind, but these are the servants of Elohim* (Jasher 9:7). Moses had warned against the very worship Abram reasons his way out of: *lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them* (Deuteronomy 4:19). Jubilees tells the same turning: *All the signs of the stars, and the signs of the moon and of the sun are all in the hand of Yahuah (God). Why do I search (them) out?* (Jubilees 12:17). The host of heaven points past itself to the One who made it.',
+       sv.verse_id, ev.verse_id, 'extras', 55209
+  FROM _session252_ja09_lookup sv, _session252_ja09_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=9 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-9-haran-family-and-the-birth-of-sarai
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:29 — *And Abram and Nahor took them wives: the name of Abram’s wife was Sarai; and the name of Nahor’s wife, Milcah, the daughter of Haran, the father of Milcah, and the father of Iscah.* the canon names the same daughters of Haran''s house that Jasher records, Milcah and Sarai (Jasher 9:3).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja09_lookup sv, _session252_ja09_lookup tv
+ WHERE t.slug='jasher-9-haran-family-and-the-birth-of-sarai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-9-abram-in-the-house-of-noah-and-shem-knew-yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 9:26 — *And he said, Blessed be Yahuah Elohim (the LORD God) of Shem; and Canaan shall be his servant.* Abram learns the way of Yahuah in the house of Shem, the blessed line in whose tents the knowledge of the Creator was kept (Jasher 9:5).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja09_lookup sv, _session252_ja09_lookup tv
+ WHERE t.slug='jasher-9-abram-in-the-house-of-noah-and-shem-knew-yahuah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 51:2 — *Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him.* the prophet names the lone calling that Jasher shows beginning in the hidden boy who knew Yahuah from three years old (Jasher 9:6).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja09_lookup sv, _session252_ja09_lookup tv
+ WHERE t.slug='jasher-9-abram-in-the-house-of-noah-and-shem-knew-yahuah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran,* Stephen sets the call in Mesopotamia, the land of the idol-houses Jasher describes, before ever Abram reached Haran (Jasher 9:6).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja09_lookup sv, _session252_ja09_lookup tv
+ WHERE t.slug='jasher-9-abram-in-the-house-of-noah-and-shem-knew-yahuah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 24:3 — *And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac.* Yahuah''s own testimony that He took Abraham out, the deliverance Jasher shows beginning in the house of Noah and Shem (Jasher 9:5).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja09_lookup sv, _session252_ja09_lookup tv
+ WHERE t.slug='jasher-9-abram-in-the-house-of-noah-and-shem-knew-yahuah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-9-the-generation-serves-gods-of-wood-and-stone
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 24:2 — *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* the canon names Terah the idolater exactly as Jasher does — the first of the idol-servers (Jasher 9:7).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja09_lookup sv, _session252_ja09_lookup tv
+ WHERE t.slug='jasher-9-the-generation-serves-gods-of-wood-and-stone'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 115:4 — *Their idols are silver and gold, the work of men’s hands.* the gods of wood and stone that could neither speak nor hear nor deliver (Jasher 9:6) are the very dumb idols the psalm derides.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja09_lookup sv, _session252_ja09_lookup tv
+ WHERE t.slug='jasher-9-the-generation-serves-gods-of-wood-and-stone'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 10:14 — *Every man is brutish in his knowledge: every founder is confounded by the graven image: for his molten image is falsehood, and there is no breath in them.* the prophet''s verdict on the breathless idols Jasher''s generation served (Jasher 9:6).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja09_lookup sv, _session252_ja09_lookup tv
+ WHERE t.slug='jasher-9-the-generation-serves-gods-of-wood-and-stone'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-9-abram-reasons-from-the-sun-and-moon-to-the-creator
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 4:19 — *And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them,* Moses forbids the host-of-heaven worship that Abram reasons his way out of, finding sun and moon are servants, not gods (Jasher 9:7).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja09_lookup sv, _session252_ja09_lookup tv
+ WHERE t.slug='jasher-9-abram-reasons-from-the-sun-and-moon-to-the-creator'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 12:17 — *All the signs of the stars, and the signs of the moon and of the sun are all in the hand of Yahuah (God). Why do I search (them) out?* Jubilees records the same reasoning — Abram turning from the host of heaven to the One in whose hand they are (Jasher 9:7).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja09_lookup sv, _session252_ja09_lookup tv
+ WHERE t.slug='jasher-9-abram-reasons-from-the-sun-and-moon-to-the-creator'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_10.sql (session252 jasher 10) -----
+-- Source anchor: jasher/jasher ch10. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja10 (view _session252_ja10_lookup). Sort band base 55225, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-10-peleg-eber-seedline
+  ('jasher', 'jasher', 10, 1, 'canon', 'genesis', 10, 25, 'free', E'Genesis 10:25 — *And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother’s name was Joktan.* Jasher 10:1 dates Peleg''s death in Abram''s lifetime; Genesis names him for the very dividing of the earth this chapter recounts.'),
+  ('jasher', 'jasher', 10, 1, 'canon', 'genesis', 11, 16, 'free', E'Genesis 11:16 — *And Eber lived four and thirty years, and begat Peleg:* the canon''s lifespan register carrying the seed-line Shem-Eber-Peleg that Jasher 10:1 is counting toward Abram.'),
+  ('jasher', 'jasher', 10, 1, 'canon', 'genesis', 11, 17, 'free', E'Genesis 11:17 — *And Eber lived after he begat Peleg four hundred and thirty years, and begat sons and daughters.* The chosen line is kept generation by generation, the same chain Jasher 10:1 measures by Peleg''s two hundred and thirty-nine years.'),
+  ('jasher', 'jasher', 10, 1, 'jubilees', 'jubilees', 8, 8, 'extras', E'Jubilees 8:8 — *And in the sixth year thereof, she bare him a son, and he called his name Peleg; for in the days when he was born the children of Noah began to divide the earth amongst themselves: for this reason he called his name Peleg.* The Jubilees apparatus names Peleg by the identical dividing of the earth Jasher 10:1 stands at the head of.'),
+  -- thread: jasher-10-babel-scattered-nations
+  ('jasher', 'jasher', 10, 2, 'canon', 'genesis', 11, 8, 'free', E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* The very scattering Jasher 10:2 recounts as the sons of men dispersed into the four corners of the earth.'),
+  ('jasher', 'jasher', 10, 3, 'canon', 'genesis', 11, 9, 'free', E'Genesis 11:9 — *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth: and from thence did Yahuah (LORD) scatter them abroad upon the face of all the earth.* Genesis names the confusion of tongues that Jasher 10:3 describes as each family according to its language.'),
+  ('jasher', 'jasher', 10, 4, 'canon', 'deuteronomy', 32, 8, 'free', E'Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* The scattering and city-building of Jasher 10:4 is the Most High bounding the nations around the chosen seed.'),
+  ('jasher', 'jasher', 10, 5, 'canon', 'acts', 17, 26, 'free', E'Acts 17:26 — *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation;* Paul preaches the same divine ordering of the nations and their dwellings that Jasher 10:5 narrates after the tower.'),
+  ('jasher', 'jasher', 10, 2, 'jubilees', 'jubilees', 10, 25, 'extras', E'Jubilees 10:25 — *For this reason the whole land of Shinar is called Babel, because Yahuah (God) did there confound all the language of the children of men, and from thence they were dispersed into their cities, each according to his language and his nation.* The Jubilees apparatus seals the same dispersal-into-cities that Jasher 10:2 opens this chapter with.'),
+  -- thread: jasher-10-sons-of-japheth
+  ('jasher', 'jasher', 10, 7, 'canon', 'genesis', 10, 2, 'free', E'Genesis 10:2 — *The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras.* The identical roll of Japheth''s seven sons that Jasher 10:7 names according to their generations.'),
+  ('jasher', 'jasher', 10, 6, 'canon', 'genesis', 10, 5, 'free', E'Genesis 10:5 — *By these were the isles of the Gentiles divided in their lands; every one after his tongue, after their families, in their nations.* Genesis records the same division of Japheth''s line into lands and languages that Jasher 10:6 recounts as they built cities where they were scattered.'),
+  ('jasher', 'jasher', 10, 7, 'jubilees', 'jubilees', 9, 8, 'extras', E'Jubilees 9:8 — *And the first portion came forth for Gomer to the east from the north side to the river Tînâ; and in the north there came forth for Magog all the inner portions of the north until it reaches to the sea of Mê’at.* The Jubilees apparatus apportions by lot the same sons of Japheth — Gomer and Magog — that Jasher 10:7 lists.'),
+  -- thread: jasher-10-sons-of-ham-philistines
+  ('jasher', 'jasher', 10, 19, 'canon', 'genesis', 10, 6, 'free', E'Genesis 10:6 — *And the sons of Ham; Cush, and Mizraim, and Phut, and Canaan.* The same four sons of Ham that Jasher 10:19 names according to their generation and cities.'),
+  ('jasher', 'jasher', 10, 21, 'canon', 'genesis', 10, 13, 'free', E'Genesis 10:13 — *And Mizraim begat Ludim, and Anamim, and Lehabim, and Naphtuhim,* the identical Egyptian families Jasher 10:21 lists as the children of Mitzraim.'),
+  ('jasher', 'jasher', 10, 23, 'canon', 'genesis', 10, 14, 'free', E'Genesis 10:14 — *And Pathrusim, and Casluhim, (out of whom came Philistim,) and Caphtorim.* Genesis names the same Philistine origin that Jasher 10:23 records as the Pelishtim going forth from Pathros and Casloch.'),
+  ('jasher', 'jasher', 10, 19, 'jubilees', 'jubilees', 9, 1, 'extras', E'Jubilees 9:1 — *And Ham divided amongst his sons, and the first portion came forth for Cush towards the east, and to the west of him for Mizraim, and to the west . of him for Put, and to the west of him and to the west thereof on the sea for Canaan.* The Jubilees apparatus apportions by lot the same four sons of Ham that Jasher 10:19 names.'),
+  -- thread: jasher-10-cities-of-the-plain-sodom
+  ('jasher', 'jasher', 10, 25, 'canon', 'genesis', 10, 19, 'free', E'Genesis 10:19 — *And the border of the Canaanites was from Sidon, as thou comest to Gerar, unto Gaza; as thou goest, unto Sodom, and Gomorrah, and Admah, and Zeboim, even unto Lasha.* Genesis sets the Canaanite border at the very four cities of the plain Jasher 10:25 says four men of Ham founded.'),
+  ('jasher', 'jasher', 10, 26, 'canon', 'genesis', 14, 2, 'free', E'Genesis 14:2 — *That these made war with Bera king of Sodom, and with Birsha king of Gomorrah, Shinab king of Admah, and Shemeber king of Zeboiim, and the king of Bela, which is Zoar.* The canon names the same four plain-cities by their kings that Jasher 10:26 records being built and named after their founders.'),
+  -- thread: jasher-10-shem-asshur-nineveh
+  ('jasher', 'jasher', 10, 31, 'canon', 'genesis', 10, 22, 'free', E'Genesis 10:22 — *The children of Shem; Elam, and Asshur, and Arphaxad, and Lud, and Aram.* The identical five sons of Shem that Jasher 10:31 names, the father-stock of the chosen line.'),
+  ('jasher', 'jasher', 10, 30, 'canon', 'genesis', 10, 21, 'free', E'Genesis 10:21 — *Unto Shem also, the father of all the children of Eber, the brother of Japheth the elder, even to him were children born.* Genesis marks Shem as father of Eber''s line — the seed Jasher 10:30 traces as it builds cities after the scattering.'),
+  ('jasher', 'jasher', 10, 33, 'canon', 'genesis', 10, 11, 'free', E'Genesis 10:11 — *Out of that land went forth Asshur, and builded Nineveh, and the city Rehoboth, and Calah,* the same Asshur founding the same cities — Nineveh, Rehoboth, Calah — that Jasher 10:33 names among Asshur''s four.'),
+  ('jasher', 'jasher', 10, 32, 'jubilees', 'jubilees', 9, 3, 'extras', E'Jubilees 9:3 — *And for Asshur came forth the second portion, all the land of Asshur and Nineveh and Shinar and to the border of India, and it ascends and skirts the river.* The Jubilees apparatus apportions Asshur the same Nineveh-and-Shinar territory that Jasher 10:32 says Asshur went forth to build.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-10-peleg-eber-seedline',
+       E'Peleg dies in Abram''s day — the seed-line kept through Eber',
+       E'Jasher opens chapter ten on the seed-line clock: *And Peleg the son of Eber died in those days, in the forty-eighth year of the life of Abram son of Terah, and all the days of Peleg were two hundred and thirty-nine years* (Jasher 10:1). The chosen line runs Shem → Arphaxad → Eber → Peleg toward Abram, and Genesis keeps the very same register: *And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother’s name was Joktan* (Genesis 10:25). The lifespan-by-lifespan chain that carries the covenant seed is set down in *And Eber lived four and thirty years, and begat Peleg* and *And Eber lived after he begat Peleg four hundred and thirty years, and begat sons and daughters* (Genesis 11:16-17). Jubilees names Peleg by the same dividing of the earth: *And in the sixth year thereof, she bare him a son, and he called his name Peleg; for in the days when he was born the children of Noah began to divide the earth amongst themselves: for this reason he called his name Peleg* (Jubilees 8:8). Election precedes confession; the line is kept and chosen, generation by generation. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55225
+  FROM _session252_ja10_lookup sv, _session252_ja10_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=10 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-10-babel-scattered-nations',
+       E'Scattered from Babel — the nations divided and bounded',
+       E'After the tower, Jasher shows the LORD dispersing mankind across the earth: *And when Yahuah (the Lord) had scattered the sons of men on account of their sin at the tower, behold they spread forth into many divisions, and all the sons of men were dispersed into the four corners of the earth* (Jasher 10:2), so that *all the families became each according to its language, its land, or its city* (Jasher 10:3), and they *built many cities according to their families, in all the places where they went, and throughout the earth where Yahuah (the Lord) had scattered them* (Jasher 10:4). This is Genesis verbatim in its architecture: *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city* (Genesis 11:8), *because Yahuah (LORD) did there confound the language of all the earth* (Genesis 11:9). The scattering is no accident but a bounding: *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8). Paul preaches the same to Athens: *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26). Jubilees seals it: *For this reason the whole land of Shinar is called Babel, because Yahuah (God) did there confound all the language of the children of men, and from thence they were dispersed into their cities, each according to his language and his nation* (Jubilees 10:25). The kingdom-of-man''s tower is broken; the nations are set in their bounds around the elect seed. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55228
+  FROM _session252_ja10_lookup sv, _session252_ja10_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=2
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=10 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-10-sons-of-japheth',
+       E'The sons of Japheth divided in their lands',
+       E'Jasher expands the table of nations with Japheth''s line settling the isles: *And the sons of Japheth the son of Noah went and built themselves cities in the places where they were scattered... and the sons of Japheth were divided upon the face of the earth into many divisions and languages* (Jasher 10:6), naming *Gomer, Magog, Medai, Javan, Tubal, Meshech and Tiras; these are the children of Japheth according to their generations* (Jasher 10:7). This is Genesis 10 retold: *The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras* (Genesis 10:2), of whom *By these were the isles of the Gentiles divided in their lands; every one after his tongue, after their families, in their nations* (Genesis 10:5). Jubilees apportions the very same sons by lot: *And the first portion came forth for Gomer to the east from the north side to the river Tînâ; and in the north there came forth for Magog all the inner portions of the north until it reaches to the sea of Mê’at* (Jubilees 9:8). The same seventy nations, the same bounds. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55231
+  FROM _session252_ja10_lookup sv, _session252_ja10_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=10 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-10-sons-of-ham-philistines',
+       E'The sons of Ham — Mizraim, Canaan, and the Philistines come forth',
+       E'Jasher traces Ham''s line: *And the children of Ham were Cush, Mitzraim, Phut and Canaan according to their generation and cities* (Jasher 10:19), then *the children of Mitzraim are the Ludim, Anamim, Lehabim, Naphtuchim, Pathrusim, Casluchim and Caphturim, seven families* (Jasher 10:21), out of whom *from them went forth the Pelishtim* (Jasher 10:23). Genesis sets down the same fathers: *And the sons of Ham; Cush, and Mizraim, and Phut, and Canaan* (Genesis 10:6), *And Mizraim begat Ludim, and Anamim, and Lehabim, and Naphtuhim* (Genesis 10:13), and the Philistine origin: *And Pathrusim, and Casluhim, (out of whom came Philistim,) and Caphtorim* (Genesis 10:14). Jubilees gives Ham''s same fourfold inheritance: *And Ham divided amongst his sons, and the first portion came forth for Cush towards the east, and to the west of him for Mizraim, and to the west . of him for Put, and to the west of him and to the west thereof on the sea for Canaan* (Jubilees 9:1). The nations of the world springing from Noah''s sons — the same table, three witnesses deep. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55234
+  FROM _session252_ja10_lookup sv, _session252_ja10_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=19
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=10 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-10-cities-of-the-plain-sodom',
+       E'Four men of Ham build Sodom and the cities of the plain',
+       E'Jasher seeds the coming judgment-story of Sodom: *And four men from the family of Ham went to the land of the plain; these are the names of the four men, Sodom, Gomorrah, Admah and Zeboyim* (Jasher 10:25), who *built themselves four cities in the land of the plain, and they called the names of their cities after their own names* (Jasher 10:26), and *they were fruitful and multiplied greatly and dwelt peaceably* (Jasher 10:27) — the brief peace before the fire. Genesis sets the border of Ham''s Canaan exactly there: *And the border of the Canaanites was from Sidon, as thou comest to Gerar, unto Gaza; as thou goest, unto Sodom, and Gomorrah, and Admah, and Zeboim, even unto Lasha* (Genesis 10:19), and names these same four cities by their kings: *That these made war with Bera king of Sodom, and with Birsha king of Gomorrah, Shinab king of Admah, and Shemeber king of Zeboiim, and the king of Bela, which is Zoar* (Genesis 14:2). The cities Jasher founds here are the ones the canon will overthrow — the kingdom-of-man''s prosperity standing under judgment. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55237
+  FROM _session252_ja10_lookup sv, _session252_ja10_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=25
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=10 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-10-shem-asshur-nineveh',
+       E'The sons of Shem and Asshur''s Nineveh — kept apart from Nimrod''s seat',
+       E'Jasher closes with the elect line''s father-stock and Asshur''s cities: *And the sons of Shem were Elam, Ashur, Arpachshad, Lud and Aram* (Jasher 10:31), and *Ashur son of Shem and his children and household went forth at that time... and they built themselves four cities* (Jasher 10:32), namely *Ninevah, Resen, Calach and Rehobother; and the children of Ashur dwell there to this day* (Jasher 10:33). Genesis carries Shem''s same sons, and marks him as the seed-bearer: *The children of Shem; Elam, and Asshur, and Arphaxad, and Lud, and Aram* (Genesis 10:22), *the father of all the children of Eber* (Genesis 10:21). And Genesis shows Asshur''s cities going forth out of Nimrod''s Shinar — the elect stock settling apart from the kingdom-of-man''s seat: *Out of that land went forth Asshur, and builded Nineveh, and the city Rehoboth, and Calah* (Genesis 10:11). Jubilees apportions Asshur the same northern land: *And for Asshur came forth the second portion, all the land of Asshur and Nineveh and Shinar and to the border of India, and it ascends and skirts the river* (Jubilees 9:3). Shem the father of Eber — the seed kept toward Abraham. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55240
+  FROM _session252_ja10_lookup sv, _session252_ja10_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=30
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=10 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-10-peleg-eber-seedline
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 10:25 — *And unto Eber were born two sons: the name of one was Peleg; for in his days was the earth divided; and his brother’s name was Joktan.* Jasher 10:1 dates Peleg''s death in Abram''s lifetime; Genesis names him for the very dividing of the earth this chapter recounts.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-peleg-eber-seedline'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 11:16 — *And Eber lived four and thirty years, and begat Peleg:* the canon''s lifespan register carrying the seed-line Shem-Eber-Peleg that Jasher 10:1 is counting toward Abram.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-peleg-eber-seedline'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 11:17 — *And Eber lived after he begat Peleg four hundred and thirty years, and begat sons and daughters.* The chosen line is kept generation by generation, the same chain Jasher 10:1 measures by Peleg''s two hundred and thirty-nine years.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-peleg-eber-seedline'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 8:8 — *And in the sixth year thereof, she bare him a son, and he called his name Peleg; for in the days when he was born the children of Noah began to divide the earth amongst themselves: for this reason he called his name Peleg.* The Jubilees apparatus names Peleg by the identical dividing of the earth Jasher 10:1 stands at the head of.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-peleg-eber-seedline'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=8 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-10-babel-scattered-nations
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* The very scattering Jasher 10:2 recounts as the sons of men dispersed into the four corners of the earth.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-babel-scattered-nations'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 11:9 — *Therefore is the name of it called Babel; because Yahuah (LORD) did there confound the language of all the earth: and from thence did Yahuah (LORD) scatter them abroad upon the face of all the earth.* Genesis names the confusion of tongues that Jasher 10:3 describes as each family according to its language.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-babel-scattered-nations'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel).* The scattering and city-building of Jasher 10:4 is the Most High bounding the nations around the chosen seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-babel-scattered-nations'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 17:26 — *And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation;* Paul preaches the same divine ordering of the nations and their dwellings that Jasher 10:5 narrates after the tower.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-babel-scattered-nations'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 10:25 — *For this reason the whole land of Shinar is called Babel, because Yahuah (God) did there confound all the language of the children of men, and from thence they were dispersed into their cities, each according to his language and his nation.* The Jubilees apparatus seals the same dispersal-into-cities that Jasher 10:2 opens this chapter with.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-babel-scattered-nations'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=2
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=10 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-10-sons-of-japheth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 10:2 — *The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras.* The identical roll of Japheth''s seven sons that Jasher 10:7 names according to their generations.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-sons-of-japheth'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 10:5 — *By these were the isles of the Gentiles divided in their lands; every one after his tongue, after their families, in their nations.* Genesis records the same division of Japheth''s line into lands and languages that Jasher 10:6 recounts as they built cities where they were scattered.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-sons-of-japheth'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 9:8 — *And the first portion came forth for Gomer to the east from the north side to the river Tînâ; and in the north there came forth for Magog all the inner portions of the north until it reaches to the sea of Mê’at.* The Jubilees apparatus apportions by lot the same sons of Japheth — Gomer and Magog — that Jasher 10:7 lists.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-sons-of-japheth'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=9 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-10-sons-of-ham-philistines
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 10:6 — *And the sons of Ham; Cush, and Mizraim, and Phut, and Canaan.* The same four sons of Ham that Jasher 10:19 names according to their generation and cities.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-sons-of-ham-philistines'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 10:13 — *And Mizraim begat Ludim, and Anamim, and Lehabim, and Naphtuhim,* the identical Egyptian families Jasher 10:21 lists as the children of Mitzraim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-sons-of-ham-philistines'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 10:14 — *And Pathrusim, and Casluhim, (out of whom came Philistim,) and Caphtorim.* Genesis names the same Philistine origin that Jasher 10:23 records as the Pelishtim going forth from Pathros and Casloch.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-sons-of-ham-philistines'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 9:1 — *And Ham divided amongst his sons, and the first portion came forth for Cush towards the east, and to the west of him for Mizraim, and to the west . of him for Put, and to the west of him and to the west thereof on the sea for Canaan.* The Jubilees apparatus apportions by lot the same four sons of Ham that Jasher 10:19 names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-sons-of-ham-philistines'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=19
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=9 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-10-cities-of-the-plain-sodom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 10:19 — *And the border of the Canaanites was from Sidon, as thou comest to Gerar, unto Gaza; as thou goest, unto Sodom, and Gomorrah, and Admah, and Zeboim, even unto Lasha.* Genesis sets the Canaanite border at the very four cities of the plain Jasher 10:25 says four men of Ham founded.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-cities-of-the-plain-sodom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 14:2 — *That these made war with Bera king of Sodom, and with Birsha king of Gomorrah, Shinab king of Admah, and Shemeber king of Zeboiim, and the king of Bela, which is Zoar.* The canon names the same four plain-cities by their kings that Jasher 10:26 records being built and named after their founders.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-cities-of-the-plain-sodom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-10-shem-asshur-nineveh
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 10:22 — *The children of Shem; Elam, and Asshur, and Arphaxad, and Lud, and Aram.* The identical five sons of Shem that Jasher 10:31 names, the father-stock of the chosen line.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-shem-asshur-nineveh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 10:21 — *Unto Shem also, the father of all the children of Eber, the brother of Japheth the elder, even to him were children born.* Genesis marks Shem as father of Eber''s line — the seed Jasher 10:30 traces as it builds cities after the scattering.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-shem-asshur-nineveh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 10:11 — *Out of that land went forth Asshur, and builded Nineveh, and the city Rehoboth, and Calah,* the same Asshur founding the same cities — Nineveh, Rehoboth, Calah — that Jasher 10:33 names among Asshur''s four.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-shem-asshur-nineveh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 9:3 — *And for Asshur came forth the second portion, all the land of Asshur and Nineveh and Shinar and to the border of India, and it ascends and skirts the river.* The Jubilees apparatus apportions Asshur the same Nineveh-and-Shinar territory that Jasher 10:32 says Asshur went forth to build.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja10_lookup sv, _session252_ja10_lookup tv
+ WHERE t.slug='jasher-10-shem-asshur-nineveh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=10 AND sv.verse_number=32
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=9 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_11.sql (session252 jasher 11) -----
+-- Source anchor: jasher/jasher ch11. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja11 (view _session252_ja11_lookup). Sort band base 55250, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-11-nimrod-babel-cities
+  ('jasher', 'jasher', 11, 1, 'canon', 'genesis', 10, 8, 'free', E'Genesis 10:8 — *And Cush begat Nimrod: he began to be a mighty one in the earth.* Jasher''s Nimrod reigning and building in Shinar is the same mighty one Genesis names — the kingdom-of-man founder.'),
+  ('jasher', 'jasher', 11, 3, 'canon', 'genesis', 10, 10, 'free', E'Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar.* Jasher names the same four cities (Babel, Erech, Eched, Calnah) after the tower''s fall, expanding the canon''s bare list.'),
+  ('jasher', 'jasher', 11, 3, 'canon', 'genesis', 11, 8, 'free', E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* Jasher names Babel for this confounding and dispersing — the cities are monuments to the judgment Genesis records.'),
+  ('jasher', 'jasher', 11, 7, 'canon', 'romans', 1, 22, 'free', E'Romans 1:22 — *Professing themselves to be wise, they became fools,* — Nimrod teaching wickedness to the sons of men is Paul''s whole-earth idolatry diagnosis, the kingdom of man rebelling against its Maker.'),
+  -- thread: jasher-11-war-of-kings
+  ('jasher', 'jasher', 11, 11, 'canon', 'genesis', 14, 4, 'free', E'Genesis 14:4 — *Twelve years they served Chedorlaomer, and in the thirteenth year they rebelled.* Jasher''s twelve-year tax to Chedorlaomer is the exact servitude Genesis names, the seed of the war of kings that Abram will enter.'),
+  -- thread: jasher-11-abram-elect-out-of-idolatry
+  ('jasher', 'jasher', 11, 15, 'canon', 'joshua', 24, 2, 'free', E'Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Jasher''s Terah serving strange gods is the very idolatry Joshua names — the house Abram is called out of.'),
+  ('jasher', 'jasher', 11, 14, 'canon', 'isaiah', 51, 2, 'free', E'Isaiah 51:2 — *Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him.* Abram knowing Yahuah amid idols is the elect seed Isaiah names — called alone, not a church, the covenant line kept and chosen.'),
+  ('jasher', 'jasher', 11, 13, 'canon', 'acts', 7, 2, 'free', E'Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran.* Stephen places Abram''s call in idolatrous Mesopotamia — exactly where Jasher has him come forth knowing Yahuah.'),
+  ('jasher', 'jasher', 11, 14, 'jubilees', 'jubilees', 12, 17, 'extras', E'Jubilees 12:17 — *All the signs of the stars, and the signs of the moon and of the sun are all in the hand of Yahuah (God).* Jubilees has the same Abram turning from the host of heaven to the Maker, the elect heart that Jasher shows knowing Yahuah.'),
+  -- thread: jasher-11-idols-cannot-speak
+  ('jasher', 'jasher', 11, 32, 'canon', 'psalms', 115, 5, 'free', E'Psalm 115:5 — *They have mouths, but they speak not: eyes have they, but they see not:* Abram''s cry that the idols have mouths without speech and eyes without sight is the Psalmist''s idol-polemic exactly.'),
+  ('jasher', 'jasher', 11, 32, 'canon', 'psalms', 115, 6, 'free', E'Psalm 115:6 — *They have ears, but they hear not: noses have they, but they smell not:* Jasher''s ears without hearing and idols that can neither smell carries the same line of the Psalm''s rebuke.'),
+  ('jasher', 'jasher', 11, 26, 'canon', 'isaiah', 44, 9, 'free', E'Isaiah 44:9 — *They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed.* The gods that cannot stretch a hand to eat are Isaiah''s blind, profitless graven images.'),
+  ('jasher', 'jasher', 11, 32, 'canon', 'jeremiah', 10, 3, 'free', E'Jeremiah 10:3 — *For the customs of the people are vain: for one cutteth a tree out of the forest, the work of the hands of the workman, with the axe.* Abram''s idols of wood, like them are those that made them, is Jeremiah''s tree cut and shaped by the workman''s axe.'),
+  -- thread: jasher-11-abram-breaks-the-idols
+  ('jasher', 'jasher', 11, 43, 'canon', 'habakkuk', 2, 18, 'free', E'Habakkuk 2:18 — *What profiteth the graven image that the maker thereof hath graven it; the molten image, and a teacher of lies, that the maker of his work trusteth therein, to make dumb idols?* Abram asking what power is in idols that cannot deliver is Habakkuk''s exact charge against the dumb, profitless image.'),
+  ('jasher', 'jasher', 11, 33, 'canon', 'jeremiah', 10, 14, 'free', E'Jeremiah 10:14 — *Every man is brutish in his knowledge: every founder is confounded by the graven image: for his molten image is falsehood, and there is no breath in them.* Abram breaking the breathless idols confounds the founder exactly as Jeremiah says — there is no breath in them.'),
+  ('jasher', 'jasher', 11, 43, 'canon', 'isaiah', 44, 17, 'free', E'Isaiah 44:17 — *And the residue thereof he maketh a god, even his graven image: he falleth down unto it, and worshippeth it, and prayeth unto it, and saith, Deliver me; for thou art my god.* Abram mocks idols that cannot hear prayer or deliver — the very cry Isaiah shows the maker raising to dead wood.'),
+  ('jasher', 'jasher', 11, 33, 'jubilees', 'jubilees', 12, 12, 'extras', E'Jubilees 12:12 — *Abram arose by night, and burned the house of the idols, and he burned all that was in the house, and no man knew it.* Jubilees tells the same deed Jasher tells with the hatchet — the called seed destroying his father''s gods, a second witness to the legend.'),
+  -- thread: jasher-11-abram-before-nimrod
+  ('jasher', 'jasher', 11, 58, 'canon', 'genesis', 7, 23, 'free', E'Genesis 7:23 — *And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.* Abram warns Nimrod by the flood that destroyed the whole earth — the very judgment Genesis records standing against the kingdom of man.'),
+  ('jasher', 'jasher', 11, 61, 'canon', 'genesis', 11, 8, 'free', E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* Abram''s closing word that Yahuah sees and judges the wicked is the same judgment that scattered Nimrod''s Babel.'),
+  ('jasher', 'jasher', 11, 53, 'jubilees', 'jubilees', 12, 7, 'extras', E'Jubilees 12:7 — *And if I tell them the truth, they will slay me; for their soul cleaves to them to worship them and honour them. Keep silent, my son, lest they slay you.* Jubilees gives the fearful father where Jasher gives the fearless son before Nimrod — the same idol-people who would slay the witness of truth.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-11-nimrod-babel-cities',
+       E'Nimrod rebuilds in Shinar — the kingdom of man after Babel',
+       E'Jasher 11 opens with the tyrant rebuilding: *And Nimrod son of Cush was still in the land of Shinar, and he reigned over it and dwelt there, and he built cities in the land of Shinar* (Jasher 11:1), and *Nimrod dwelt in Babel, and he there renewed his reign over the rest of his subjects, and he reigned securely* (Jasher 11:6). This is the Genesis Nimrod expanded: *And Cush begat Nimrod: he began to be a mighty one in the earth* (Genesis 10:8), whose kingdom is named: *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar* (Genesis 10:10) — the very Babel that Jasher names *Because Yahuah (the Lord) there confounded the language of the whole earth* (Jasher 11:3), retelling *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city* (Genesis 11:8). Jasher reads the man''s heart honestly: *Nimrod did not return to Yahuah (the Lord), and he continued in wickedness and teaching wickedness to the sons of men* (Jasher 11:7) — the kingdom of man rebuilt on the same rebellion, it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55250
+  FROM _session252_ja11_lookup sv, _session252_ja11_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=11 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-11-war-of-kings',
+       E'Chedorlaomer subdues the cities of the plain',
+       E'Jasher sets the stage for Genesis 14 in advance: *And Chedorlaomer, king of Elam, went away from the families of the children of Ham, and he fought with them and he subdued them, and he went to the five cities of the plain and he fought against them and he subdued them, and they were under his control* (Jasher 11:10), and *they served him twelve years, and they gave him a yearly tax* (Jasher 11:11). This is the very servitude Genesis records as the trigger of the war Abram will later fight: *Twelve years they served Chedorlaomer, and in the thirteenth year they rebelled* (Genesis 14:4). Jasher carries the canon''s narrative spine — the kingdoms of men warring among themselves while the chosen seed is being raised up unseen — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55253
+  FROM _session252_ja11_lookup sv, _session252_ja11_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=9
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=11 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-11-abram-elect-out-of-idolatry',
+       E'Abram comes forth knowing Yahuah — the seed called out of his father''s house',
+       E'Against Terah''s idol-temple Jasher sets the called seed: *And Abram knew Yahuah (the Lord), and he went in his ways and instructions, and Yahuah his Elohim (the Lord his God) was with him* (Jasher 11:14), while *Terah his father was in those days, still captain of the host of king Nimrod, and he still followed strange gods* (Jasher 11:15), with *twelve gods standing there in their temples* (Jasher 11:16). The canon names this same house of idols: *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2). Abram is the elect drawn out, not a convert who chose first: *Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him* (Isaiah 51:2), and Stephen tells it the same way: *The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2). Election precedes confession — Yahuah called him alone out of the idolatrous world, it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55256
+  FROM _session252_ja11_lookup sv, _session252_ja11_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=11 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-11-idols-cannot-speak',
+       E'The idol-polemic — wood and stone that cannot eat, hear, or speak',
+       E'Abram lays the offering before the gods and they do nothing: *Abram saw on the day when he was sitting amongst them, that they had no voice, no hearing, no motion, and not one of them could stretch forth his hand to eat* (Jasher 11:26), and clothed with the Spirit he cries: *who serve these idols of wood and stone which can neither eat, smell, hear nor speak, who have mouths without speech, eyes without sight, ears without hearing, hands without feeling, and legs which cannot move; like them are those that made them and that trust in them* (Jasher 11:32). This is the prophets'' own idol-polemic, word for word in pattern: *They have mouths, but they speak not: eyes have they, but they see not* (Psalm 115:5), *They have ears, but they hear not: noses have they, but they smell not* (Psalm 115:6). Isaiah mocks the same dead craft: *They that make a graven image are all of them vanity... they see not, nor know; that they may be ashamed* (Isaiah 44:9), and Jeremiah: *For the customs of the people are vain: for one cutteth a tree out of the forest, the work of the hands of the workman, with the axe* (Jeremiah 10:3). Jasher''s young Abram preaches the Tanakh''s idol-rebuke before it was written — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55259
+  FROM _session252_ja11_lookup sv, _session252_ja11_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=26
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=11 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-11-abram-breaks-the-idols',
+       E'Abram takes the hatchet and breaks his father''s gods',
+       E'The legend''s heart: *he hastened and took a hatchet in his hand, and came to the chamber of the gods, and he broke all his father''s gods* (Jasher 11:33), then *placed the hatchet in the hand of the great god which was there before them* (Jasher 11:34). Confronted, he presses the polemic home: *And how can you then serve these idols in whom there is no power to do any thing? Can those idols in which you trust deliver you? can they hear your prayers when you call upon them?* (Jasher 11:43). This breaking is Habakkuk''s verdict enacted: *What profiteth the graven image that the maker thereof hath graven it... to make dumb idols?* (Habakkuk 2:18), and Jeremiah''s: *every founder is confounded by the graven image: for his molten image is falsehood, and there is no breath in them* (Jeremiah 10:14). Isaiah names the absurd cry the broken god cannot answer: *Deliver me; for thou art my god* (Isaiah 44:17). And Jubilees tells the same deed: *Abram arose by night, and burned the house of the idols, and he burned all that was in the house, and no man knew it* (Jubilees 12:12) — two witnesses to the seed who shatters the false gods, it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55262
+  FROM _session252_ja11_lookup sv, _session252_ja11_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=33
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=11 AND ev.verse_number=49
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-11-abram-before-nimrod',
+       E'Abram before Nimrod — the flood-warning to the tyrant-king',
+       E'Terah hands his son to the tyrant: *the king sent three men of his servants, and they went and brought Abram before the king. And Nimrod and all his princes and servants were that day sitting before him* (Jasher 11:52). Abram preaches to Nimrod''s face, warning by the flood: *Dost you not know... that this evil which you do, our ancestors sinned in it in days of old, and the eternal Elohim brought the waters of the flood upon them and destroyed them all, and also destroyed the whole earth on their account?* (Jasher 11:58). This is Genesis'' flood set as the standing witness against the kingdom of man: *And every living substance was destroyed which was upon the face of the ground... and Noah only remained alive, and they that were with him in the ark* (Genesis 7:23). Abram closes lifting his eyes: *Yahuah (the Lord) sees all the wicked, and he will judge them* (Jasher 11:61) — the same Yahuah who scattered Babel and drowned the old world. Jubilees gives the parallel of the father who dares not speak truth to the idol-people: *if I tell them the truth, they will slay me* (Jubilees 12:7). The chosen seed stands witness before the kingdom of man — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55265
+  FROM _session252_ja11_lookup sv, _session252_ja11_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=52
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=11 AND ev.verse_number=61
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-11-nimrod-babel-cities
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 10:8 — *And Cush begat Nimrod: he began to be a mighty one in the earth.* Jasher''s Nimrod reigning and building in Shinar is the same mighty one Genesis names — the kingdom-of-man founder.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-nimrod-babel-cities'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar.* Jasher names the same four cities (Babel, Erech, Eched, Calnah) after the tower''s fall, expanding the canon''s bare list.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-nimrod-babel-cities'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* Jasher names Babel for this confounding and dispersing — the cities are monuments to the judgment Genesis records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-nimrod-babel-cities'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Romans 1:22 — *Professing themselves to be wise, they became fools,* — Nimrod teaching wickedness to the sons of men is Paul''s whole-earth idolatry diagnosis, the kingdom of man rebelling against its Maker.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-nimrod-babel-cities'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-11-war-of-kings
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 14:4 — *Twelve years they served Chedorlaomer, and in the thirteenth year they rebelled.* Jasher''s twelve-year tax to Chedorlaomer is the exact servitude Genesis names, the seed of the war of kings that Abram will enter.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-war-of-kings'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-11-abram-elect-out-of-idolatry
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* Jasher''s Terah serving strange gods is the very idolatry Joshua names — the house Abram is called out of.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-elect-out-of-idolatry'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 51:2 — *Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him.* Abram knowing Yahuah amid idols is the elect seed Isaiah names — called alone, not a church, the covenant line kept and chosen.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-elect-out-of-idolatry'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran.* Stephen places Abram''s call in idolatrous Mesopotamia — exactly where Jasher has him come forth knowing Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-elect-out-of-idolatry'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 12:17 — *All the signs of the stars, and the signs of the moon and of the sun are all in the hand of Yahuah (God).* Jubilees has the same Abram turning from the host of heaven to the Maker, the elect heart that Jasher shows knowing Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-elect-out-of-idolatry'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-11-idols-cannot-speak
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 115:5 — *They have mouths, but they speak not: eyes have they, but they see not:* Abram''s cry that the idols have mouths without speech and eyes without sight is the Psalmist''s idol-polemic exactly.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-idols-cannot-speak'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 115:6 — *They have ears, but they hear not: noses have they, but they smell not:* Jasher''s ears without hearing and idols that can neither smell carries the same line of the Psalm''s rebuke.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-idols-cannot-speak'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 44:9 — *They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed.* The gods that cannot stretch a hand to eat are Isaiah''s blind, profitless graven images.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-idols-cannot-speak'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 10:3 — *For the customs of the people are vain: for one cutteth a tree out of the forest, the work of the hands of the workman, with the axe.* Abram''s idols of wood, like them are those that made them, is Jeremiah''s tree cut and shaped by the workman''s axe.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-idols-cannot-speak'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=32
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-11-abram-breaks-the-idols
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Habakkuk 2:18 — *What profiteth the graven image that the maker thereof hath graven it; the molten image, and a teacher of lies, that the maker of his work trusteth therein, to make dumb idols?* Abram asking what power is in idols that cannot deliver is Habakkuk''s exact charge against the dumb, profitless image.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-breaks-the-idols'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=43
+   AND tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 10:14 — *Every man is brutish in his knowledge: every founder is confounded by the graven image: for his molten image is falsehood, and there is no breath in them.* Abram breaking the breathless idols confounds the founder exactly as Jeremiah says — there is no breath in them.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-breaks-the-idols'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=10 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 44:17 — *And the residue thereof he maketh a god, even his graven image: he falleth down unto it, and worshippeth it, and prayeth unto it, and saith, Deliver me; for thou art my god.* Abram mocks idols that cannot hear prayer or deliver — the very cry Isaiah shows the maker raising to dead wood.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-breaks-the-idols'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=43
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 12:12 — *Abram arose by night, and burned the house of the idols, and he burned all that was in the house, and no man knew it.* Jubilees tells the same deed Jasher tells with the hatchet — the called seed destroying his father''s gods, a second witness to the legend.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-breaks-the-idols'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=33
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-11-abram-before-nimrod
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 7:23 — *And every living substance was destroyed which was upon the face of the ground, both man, and cattle, and the creeping things, and the fowl of the heaven; and they were destroyed from the earth: and Noah only remained alive, and they that were with him in the ark.* Abram warns Nimrod by the flood that destroyed the whole earth — the very judgment Genesis records standing against the kingdom of man.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-before-nimrod'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=58
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city.* Abram''s closing word that Yahuah sees and judges the wicked is the same judgment that scattered Nimrod''s Babel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-before-nimrod'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=61
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 12:7 — *And if I tell them the truth, they will slay me; for their soul cleaves to them to worship them and honour them. Keep silent, my son, lest they slay you.* Jubilees gives the fearful father where Jasher gives the fearless son before Nimrod — the same idol-people who would slay the witness of truth.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja11_lookup sv, _session252_ja11_lookup tv
+ WHERE t.slug='jasher-11-abram-before-nimrod'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=11 AND sv.verse_number=53
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_12.sql (session252 jasher 12) -----
+-- Source anchor: jasher/jasher ch12. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja12 (view _session252_ja12_lookup). Sort band base 55275, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-12-furnace-deliverance
+  ('jasher', 'jasher', 12, 6, 'canon', 'daniel', 3, 6, 'free', E'Daniel 3:6 — *And whoso falleth not down and worshippeth shall the same hour be cast into the midst of a burning fiery furnace.* Nimrod''s brick furnace prepared three days and nights (Jasher 12:6) is the same king-of-man instrument Nebuchadnezzar wields against those who will not worship the image.'),
+  ('jasher', 'jasher', 12, 26, 'canon', 'daniel', 3, 22, 'free', E'Daniel 3:22 — *Therefore because the king''s commandment was urgent, and the furnace exceeding hot, the flame of the fire slew those men that took up Shadrach, Meshach, and Abed-nego.* As the flame slays Nebuchadnezzar''s executioners, so the fire spreads over Nimrod''s servants and twelve of them die while Abram walks unharmed (Jasher 12:26).'),
+  ('jasher', 'jasher', 12, 27, 'canon', 'daniel', 3, 27, 'free', E'Daniel 3:27 — *And the princes, governors, and captains, and the king''s counsellors, being gathered together, saw these men, upon whose bodies the fire had no power, nor was an hair of their head singed, neither were their coats changed, nor the smell of fire had passed on them.* The same wonder the king''s princes report of Abram, whose garments are unburned though the binding cord is consumed (Jasher 12:27).'),
+  ('jasher', 'jasher', 12, 25, 'canon', 'isaiah', 43, 2, 'free', E'Isaiah 43:2 — *When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee.* The covenant word the legend dramatizes as Abram remains and walks about in the fire (Jasher 12:25).'),
+  ('jasher', 'jasher', 12, 24, 'canon', 'hebrews', 11, 34, 'free', E'Hebrews 11:34 — *Quenched the violence of fire, escaped the edge of the sword, out of weakness were made strong, waxed valiant in fight, turned to flight the armies of the aliens.* The faith-roll''s quenched fire, the same deliverance Yahuah works for Abram when he came down and the man was not burned (Jasher 12:24).'),
+  -- thread: jasher-12-nimrod-slay-the-seed
+  ('jasher', 'jasher', 12, 16, 'canon', 'exodus', 1, 16, 'free', E'Exodus 1:16 — *And he said, When ye do the office of a midwife to the Hebrew women, and see them upon the stools; if it be a son, then ye shall kill him: but if it be a daughter, then she shall live.* Pharaoh''s decree against the Hebrew sons is the same king-of-man terror that made Nimrod kill the substituted child and seek Abram''s death (Jasher 12:10, 16).'),
+  ('jasher', 'jasher', 12, 58, 'canon', 'matthew', 2, 13, 'free', E'Matthew 2:13 — *Arise, and take the young child and his mother, and flee into Egypt, and be thou there until I bring thee word: for Herod will seek the young child to destroy him.* Herod''s hunt for the child mirrors Nimrod sending servants in secret to seize Abram and put him to death (Jasher 12:58).'),
+  ('jasher', 'jasher', 12, 55, 'canon', 'revelation', 12, 4, 'free', E'Revelation 12:4 — *And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.* The dragon waiting to devour the child is the same star-and-slaughter pattern Nimrod''s seers read, the seed of Abram that will slay the king in latter days (Jasher 12:55).'),
+  ('jasher', 'jasher', 12, 53, 'canon', 'psalms', 105, 14, 'free', E'Psalm 105:14 — *He suffered no man to do them wrong: yea, he reproved kings for their sakes.* Yahuah''s guard over the patriarchs against kings answers the counsellor''s threat that Abram''s seed will war with and smite the king''s hosts (Jasher 12:53).'),
+  -- thread: jasher-12-haran-dies-ur
+  ('jasher', 'jasher', 12, 26, 'canon', 'genesis', 11, 28, 'free', E'Genesis 11:28 — *And Haran died before his father Terah in the land of his nativity, in Ur of the Chaldees.* The bare canon record that Jasher fills out — Haran burned to ashes in the fire of Casdim because his heart was not perfect with Yahuah (Jasher 12:26).'),
+  ('jasher', 'jasher', 12, 44, 'canon', 'genesis', 11, 29, 'free', E'Genesis 11:29 — *And Abram and Nahor took them wives: the name of Abram''s wife was Sarai; and the name of Nahor''s wife, Milcah, the daughter of Haran, the father of Milcah, and the father of Iscah.* The same double marriage of the brothers to Haran''s daughters that Jasher records (Jasher 12:44).'),
+  ('jasher', 'jasher', 12, 44, 'canon', 'genesis', 11, 30, 'free', E'Genesis 11:30 — *But Sarai was barren; she had no child.* The same note Jasher carries, that Sarai was barren and had no offspring in those days (Jasher 12:44).'),
+  -- thread: jasher-12-abram-called-out-of-ur
+  ('jasher', 'jasher', 12, 65, 'canon', 'joshua', 24, 2, 'free', E'Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* The idolatrous land Abram begs Terah to leave for Canaan (Jasher 12:65) is the very world Joshua names — the fathers served other gods beyond the river.'),
+  ('jasher', 'jasher', 12, 42, 'canon', 'isaiah', 51, 2, 'free', E'Isaiah 51:2 — *Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him.* Called alone — election before confession, the same Abram who from that day served Yahuah all his days and inclined men''s hearts to Him (Jasher 12:42-43).'),
+  ('jasher', 'jasher', 12, 68, 'canon', 'acts', 7, 2, 'free', E'Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran.* Stephen sets the call in Mesopotamia before Haran, the same flight from Nimrod''s reach toward Canaan that Abram urges on Terah (Jasher 12:68).'),
+  ('jasher', 'jasher', 12, 68, 'canon', 'genesis', 12, 1, 'free', E'Genesis 12:1 — *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee.* The canon call that Jasher dramatizes as Abram''s plea to leave the land of Nimrod and go to Canaan (Jasher 12:68).'),
+  ('jasher', 'jasher', 12, 42, 'canon', 'hebrews', 11, 8, 'free', E'Hebrews 11:8 — *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went.* The faith that walked in Yahuah''s ways and followed His law all Abram''s days (Jasher 12:42) is the faith that obeyed the call.'),
+  -- thread: jasher-12-jubilees-self-link
+  ('jasher', 'jasher', 12, 26, 'jubilees', 'jubilees', 12, 14, 'extras', E'Jubilees 12:14 — *And Haran hasted to save them, but the fire flamed over him, and he was burnt in the fire, and he died in Ur of the Chaldees before Terah his father, and they buried him in Ur of the Chaldees...* The same death of Haran by fire in the Chaldees that Jasher records, his heart not perfect with Yahuah (Jasher 12:26).'),
+  ('jasher', 'jasher', 12, 44, 'jubilees', 'jubilees', 12, 9, 'extras', E'Jubilees 12:9 — *And in the fortieth jubilee, in the second week, in the seventh year thereof, Abram took to himself a wife, and her name was Sarai, the daughter of his father, and she became his wife.* The same marriage of Abram to Sarai that Jasher records alongside Nahor''s to Milca (Jasher 12:44).'),
+  ('jasher', 'jasher', 12, 68, 'jubilees', 'jubilees', 12, 2, 'extras', E'Jubilees 12:2 — *What help and profit have we from those idols which you do worship, And before which you do bow yourself? For there is no spirit in them, For they are dumb forms, and a misleading of the heart. Worship them not: Worship the Elohim (God) of heaven, Who causes the rain and the dew to descend on the earth...* Abram''s idol-polemic to his father, the same plea Jasher gives him to cast away the vain things and serve Yahuah (Jasher 12:68).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-12-furnace-deliverance',
+       E'Cast into the fire and not burned — the refuse-to-bow witness',
+       E'Nimrod''s sages decree the chosen man must die in the flames: *And they all answered the king saying, The man who reviles the king should be hanged upon a tree; but having done all the things that he said, and having despised our gods, he must therefore be burned to death, for this is the law in this matter.* (Jasher 12:5). They bind Abram and cast him in — *And they bound their hands and feet with linen cords, and the servants of the king lifted them up and cast them both into the furnace.* (Jasher 12:23) — but Yahuah comes down and Abram walks unharmed: *And Abram walked in the midst of the fire three days and three nights... and even the lower garments which are upon him are not burned, but the cord with which he was bound is burned.* (Jasher 12:27). It ain''t new — the same architecture recurs in Babylon, where a later king-of-man builds an idol, decrees the furnace, and three who will not bow are cast in: *And whoso falleth not down and worshippeth shall the same hour be cast into the midst of a burning fiery furnace.* (Daniel 3:6); *Therefore because the king''s commandment was urgent, and the furnace exceeding hot, the flame of the fire slew those men that took up Shadrach, Meshach, and Abed-nego.* (Daniel 3:22), exactly as the flame here slays twelve of Nimrod''s men (Jasher 12:26); and the deliverance is identical: *And the princes, governors, and captains, and the king''s counsellors, being gathered together, saw these men, upon whose bodies the fire had no power, nor was an hair of their head singed, neither were their coats changed, nor the smell of fire had passed on them.* (Daniel 3:27). The prophets name the covenant promise the legend dramatizes — *when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee.* (Isaiah 43:2) — and the faith-roll counts it among the elect: *Quenched the violence of fire, escaped the edge of the sword, out of weakness were made strong, waxed valiant in fight, turned to flight the armies of the aliens.* (Hebrews 11:34). The kingdom-of-man commands worship and the chosen seed refuses; the fire bows, not the witness.',
+       sv.verse_id, ev.verse_id, 'extras', 55275
+  FROM _session252_ja12_lookup sv, _session252_ja12_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=5
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=12 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-12-nimrod-slay-the-seed',
+       E'Nimrod''s dream — the king-of-man who would slay the chosen seed',
+       E'Two years later the tyrant dreams of a man like Abram coming forth from the furnace with a drawn sword, and his counsellor reads it as the seed-war: *And behold the day will come when Abram and his seed and the children of his household will war with my king, and they will smite all the king''s hosts and his troops.* (Jasher 12:53). So Nimrod resolves what every kingdom-of-man resolves against the seed — *And Nimrod hearkened to the voice of Anuki, and he sent some of his servants in secret to go and seize Abram, and bring him before the king to suffer death.* (Jasher 12:58). It ain''t new: it is the antichrist pattern that runs the whole canon. Pharaoh decrees the death of the Hebrew sons — *And he said, When ye do the office of a midwife to the Hebrew women, and see them upon the stools; if it be a son, then ye shall kill him: but if it be a daughter, then she shall live.* (Exodus 1:16); Herod hunts the child — *Arise, and take the young child and his mother, and flee into Egypt, and be thou there until I bring thee word: for Herod will seek the young child to destroy him.* (Matthew 2:13); and behind every throne stands the dragon — *And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.* (Revelation 12:4), the same star-and-slaughter omen Nimrod''s conjurors first read at Abram''s birth. But Yahuah guards the seed against the kings: *He suffered no man to do them wrong: yea, he reproved kings for their sakes.* (Psalm 105:14). The tyrant slays the seed; the seed is kept.',
+       sv.verse_id, ev.verse_id, 'extras', 55278
+  FROM _session252_ja12_lookup sv, _session252_ja12_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=45
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=12 AND ev.verse_number=58
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-12-haran-dies-ur',
+       E'Haran dead in Ur, Sarai barren — Jasher fills out Genesis 11',
+       E'Where Jasher gives the legend, Genesis gives the bare record it expands. Abram''s brother dies in the fire of the Chaldees: *And Haran died when they had cast him into the fire, and he was burned to ashes, for his heart was not perfect with Yahuah (the Lord)... and twelve men of them died.* (Jasher 12:26), and Abram and Nahor marry: *And at that time Nahor and Abram took to themselves wives, the daughters of their brother Haran; the wife of Nahor was Milca and the name of Abram''s wife was Sarai. And Sarai, wife of Abram, was barren; she had no offspring in those days.* (Jasher 12:44). It ain''t new — this is Genesis told straight: *Now these are the generations of Terah: Terah begat Abram, Nahor, and Haran; and Haran begat Lot.* (Genesis 11:27); *And Haran died before his father Terah in the land of his nativity, in Ur of the Chaldees.* (Genesis 11:28) — Jasher only tells us how Haran died and why; *And Abram and Nahor took them wives: the name of Abram''s wife was Sarai; and the name of Nahor''s wife, Milcah, the daughter of Haran, the father of Milcah, and the father of Iscah.* (Genesis 11:29); *But Sarai was barren; she had no child.* (Genesis 11:30). The retelling carries the canon, name for name.',
+       sv.verse_id, ev.verse_id, 'extras', 55281
+  FROM _session252_ja12_lookup sv, _session252_ja12_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=26
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=12 AND ev.verse_number=44
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-12-abram-called-out-of-ur',
+       E'Get thee out — the election of Abram from the idolatrous world',
+       E'Delivered from the fire, Abram does not found a religion; he serves Yahuah and draws others, then urges his father to leave the land of the tyrant: *And Abram returned on that day and went to his father''s house, he and the men that followed him, and Abram served Yahuah his Elohim (the Lord his God) all the days of his life, and he walked in his ways and followed his law.* (Jasher 12:42); *Now therefore hearken to my voice, and let us arise and go to the land of Canaan, out of the reach of injury from Nimrod; and serve you Yahuah (the Lord) who created you in the earth and it will be well with you; and cast away all the vain things which you pursue.* (Jasher 12:68). It ain''t new — this is the election the canon names: Yahuah took Abram out of the world that served other gods, *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods. And I took your father Abraham from the other side of the flood* (Joshua 24:2-3); *Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him.* (Isaiah 51:2) — called alone, election before any confession; *The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2); and the call itself: *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee* (Genesis 12:1). The seed is chosen and kept out of the idolatrous world — not a church, the covenant line.',
+       sv.verse_id, ev.verse_id, 'extras', 55284
+  FROM _session252_ja12_lookup sv, _session252_ja12_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=42
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=12 AND ev.verse_number=68
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-12-jubilees-self-link',
+       E'The same events in Jubilees — Haran in the fire, the wife, the call',
+       E'Jasher narrates the very events the Jubilees apparatus carries, and the two confirm each other. Haran dies in the fire of the Chaldees: *And Haran died when they had cast him into the fire, and he was burned to ashes, for his heart was not perfect with Yahuah (the Lord)* (Jasher 12:26) — Jubilees gives the same death by fire in Ur: *And Haran hasted to save them, but the fire flamed over him, and he was burnt in the fire, and he died in Ur of the Chaldees before Terah his father, and they buried him in Ur of the Chaldees...* (Jubilees 12:14). Abram takes Sarai to wife: *the wife of Nahor was Milca and the name of Abram''s wife was Sarai* (Jasher 12:44) — *And in the fortieth jubilee, in the second week, in the seventh year thereof, Abram took to himself a wife, and her name was Sarai, the daughter of his father, and she became his wife.* (Jubilees 12:9). And Abram urges Terah to forsake the idols and follow Yahuah — *serve you Yahuah (the Lord) who created you in the earth... and cast away all the vain things which you pursue* (Jasher 12:68) — exactly as Jubilees has him plead: *Worship the Elohim (God) of heaven, Who causes the rain and the dew to descend on the earth... Why do you worship things that have no spirit in them? For they are the work of (men''s) hands...* (Jubilees 12:2). Two witnesses to the one covenant story — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55287
+  FROM _session252_ja12_lookup sv, _session252_ja12_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=26
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=12 AND ev.verse_number=68
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-12-furnace-deliverance
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 3:6 — *And whoso falleth not down and worshippeth shall the same hour be cast into the midst of a burning fiery furnace.* Nimrod''s brick furnace prepared three days and nights (Jasher 12:6) is the same king-of-man instrument Nebuchadnezzar wields against those who will not worship the image.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-furnace-deliverance'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=3 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 3:22 — *Therefore because the king''s commandment was urgent, and the furnace exceeding hot, the flame of the fire slew those men that took up Shadrach, Meshach, and Abed-nego.* As the flame slays Nebuchadnezzar''s executioners, so the fire spreads over Nimrod''s servants and twelve of them die while Abram walks unharmed (Jasher 12:26).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-furnace-deliverance'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=3 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 3:27 — *And the princes, governors, and captains, and the king''s counsellors, being gathered together, saw these men, upon whose bodies the fire had no power, nor was an hair of their head singed, neither were their coats changed, nor the smell of fire had passed on them.* The same wonder the king''s princes report of Abram, whose garments are unburned though the binding cord is consumed (Jasher 12:27).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-furnace-deliverance'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=3 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 43:2 — *When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee.* The covenant word the legend dramatizes as Abram remains and walks about in the fire (Jasher 12:25).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-furnace-deliverance'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Hebrews 11:34 — *Quenched the violence of fire, escaped the edge of the sword, out of weakness were made strong, waxed valiant in fight, turned to flight the armies of the aliens.* The faith-roll''s quenched fire, the same deliverance Yahuah works for Abram when he came down and the man was not burned (Jasher 12:24).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-furnace-deliverance'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-12-nimrod-slay-the-seed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:16 — *And he said, When ye do the office of a midwife to the Hebrew women, and see them upon the stools; if it be a son, then ye shall kill him: but if it be a daughter, then she shall live.* Pharaoh''s decree against the Hebrew sons is the same king-of-man terror that made Nimrod kill the substituted child and seek Abram''s death (Jasher 12:10, 16).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-nimrod-slay-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Matthew 2:13 — *Arise, and take the young child and his mother, and flee into Egypt, and be thou there until I bring thee word: for Herod will seek the young child to destroy him.* Herod''s hunt for the child mirrors Nimrod sending servants in secret to seize Abram and put him to death (Jasher 12:58).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-nimrod-slay-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=58
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=2 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Revelation 12:4 — *And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.* The dragon waiting to devour the child is the same star-and-slaughter pattern Nimrod''s seers read, the seed of Abram that will slay the king in latter days (Jasher 12:55).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-nimrod-slay-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=55
+   AND tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 105:14 — *He suffered no man to do them wrong: yea, he reproved kings for their sakes.* Yahuah''s guard over the patriarchs against kings answers the counsellor''s threat that Abram''s seed will war with and smite the king''s hosts (Jasher 12:53).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-nimrod-slay-the-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=53
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-12-haran-dies-ur
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 11:28 — *And Haran died before his father Terah in the land of his nativity, in Ur of the Chaldees.* The bare canon record that Jasher fills out — Haran burned to ashes in the fire of Casdim because his heart was not perfect with Yahuah (Jasher 12:26).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-haran-dies-ur'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 11:29 — *And Abram and Nahor took them wives: the name of Abram''s wife was Sarai; and the name of Nahor''s wife, Milcah, the daughter of Haran, the father of Milcah, and the father of Iscah.* The same double marriage of the brothers to Haran''s daughters that Jasher records (Jasher 12:44).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-haran-dies-ur'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=44
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 11:30 — *But Sarai was barren; she had no child.* The same note Jasher carries, that Sarai was barren and had no offspring in those days (Jasher 12:44).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-haran-dies-ur'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=44
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-12-abram-called-out-of-ur
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods.* The idolatrous land Abram begs Terah to leave for Canaan (Jasher 12:65) is the very world Joshua names — the fathers served other gods beyond the river.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-abram-called-out-of-ur'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=65
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 51:2 — *Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him.* Called alone — election before confession, the same Abram who from that day served Yahuah all his days and inclined men''s hearts to Him (Jasher 12:42-43).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-abram-called-out-of-ur'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=42
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran.* Stephen sets the call in Mesopotamia before Haran, the same flight from Nimrod''s reach toward Canaan that Abram urges on Terah (Jasher 12:68).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-abram-called-out-of-ur'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=68
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 12:1 — *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father''s house, unto a land that I will shew thee.* The canon call that Jasher dramatizes as Abram''s plea to leave the land of Nimrod and go to Canaan (Jasher 12:68).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-abram-called-out-of-ur'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=68
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Hebrews 11:8 — *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went.* The faith that walked in Yahuah''s ways and followed His law all Abram''s days (Jasher 12:42) is the faith that obeyed the call.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-abram-called-out-of-ur'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=42
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-12-jubilees-self-link
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jubilees 12:14 — *And Haran hasted to save them, but the fire flamed over him, and he was burnt in the fire, and he died in Ur of the Chaldees before Terah his father, and they buried him in Ur of the Chaldees...* The same death of Haran by fire in the Chaldees that Jasher records, his heart not perfect with Yahuah (Jasher 12:26).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-jubilees-self-link'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=26
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 12:9 — *And in the fortieth jubilee, in the second week, in the seventh year thereof, Abram took to himself a wife, and her name was Sarai, the daughter of his father, and she became his wife.* The same marriage of Abram to Sarai that Jasher records alongside Nahor''s to Milca (Jasher 12:44).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-jubilees-self-link'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=44
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 12:2 — *What help and profit have we from those idols which you do worship, And before which you do bow yourself? For there is no spirit in them, For they are dumb forms, and a misleading of the heart. Worship them not: Worship the Elohim (God) of heaven, Who causes the rain and the dew to descend on the earth...* Abram''s idol-polemic to his father, the same plea Jasher gives him to cast away the vain things and serve Yahuah (Jasher 12:68).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja12_lookup sv, _session252_ja12_lookup tv
+ WHERE t.slug='jasher-12-jubilees-self-link'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=12 AND sv.verse_number=68
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_13.sql (session252 jasher 13) -----
+-- Source anchor: jasher/jasher ch13. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja13 (view _session252_ja13_lookup). Sort band base 55300, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-13-out-of-haran
+  ('jasher', 'jasher', 13, 1, 'canon', 'acts', 7, 2, 'free', E'Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* — Stephen sets the same Ur-to-Haran migration that opens Jasher 13:1 at the head of the gospel story.'),
+  ('jasher', 'jasher', 13, 1, 'canon', 'acts', 7, 4, 'free', E'Acts 7:4 — *Then came he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell* — the very Ur-Casdim-to-Haran-to-Canaan route Terah''s household travels in Jasher 13:1.'),
+  ('jasher', 'jasher', 13, 2, 'canon', 'joshua', 24, 2, 'free', E'Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* — names the idolatry the seed Abram teaches against in Haran (Jasher 13:2) was called out of.'),
+  ('jasher', 'jasher', 13, 5, 'canon', 'joshua', 24, 3, 'free', E'Joshua 24:3 — *And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac* — election precedes confession: the same going-up to Canaan Abram makes at Yahuah''s word in Jasher 13:5.'),
+  ('jasher', 'jasher', 13, 1, 'jubilees', 'jubilees', 12, 28, 'extras', E'Jubilees 12:28 — *And it came to pass in the seventh year of the sixth week that he spoke to his father, and informed him that he would leave Haran to go into the land of Canaan to see it and return to him...* — the Jubilees apparatus keeps the same Haran stop on the road to Canaan that opens Jasher 13:1.'),
+  -- thread: jasher-13-keep-my-commandments
+  ('jasher', 'jasher', 13, 4, 'canon', 'genesis', 15, 5, 'free', E'Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* — the seed-like-the-stars promise Yahuah binds to keeping his commandments in Jasher 13:4.'),
+  ('jasher', 'jasher', 13, 4, 'canon', 'genesis', 15, 6, 'free', E'Genesis 15:6 — *And he believed in Yahuah (LORD); and he counted it to him for righteousness* — Abram''s faith answers the same star-multiplied promise spoken over him in Jasher 13:4.'),
+  ('jasher', 'jasher', 13, 4, 'canon', 'hebrews', 11, 8, 'free', E'Hebrews 11:8 — *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* — the obedience to Yahuah''s voice that Jasher 13:4 lays as the condition of the blessing.'),
+  ('jasher', 'jasher', 13, 8, 'canon', 'genesis', 12, 7, 'free', E'Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* — the same altar Abram builds and calls on the Name in Jasher 13:8.'),
+  -- thread: jasher-13-this-land-to-thy-seed
+  ('jasher', 'jasher', 13, 7, 'canon', 'genesis', 12, 7, 'free', E'Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* — the same land-to-your-seed word Yahuah speaks at Abram''s entry into Canaan in Jasher 13:7.'),
+  ('jasher', 'jasher', 13, 7, 'canon', 'genesis', 13, 15, 'free', E'Genesis 13:15 — *For all the land which thou seest, to thee will I give it, and to thy seed for ever* — the all-the-lands-which-you-see inheritance forever of Jasher 13:7.'),
+  ('jasher', 'jasher', 13, 18, 'canon', 'genesis', 15, 18, 'free', E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* — the very river-to-river boundary Yahuah draws for the seed in Jasher 13:18.'),
+  ('jasher', 'jasher', 13, 7, 'jubilees', 'jubilees', 13, 2, 'extras', E'Jubilees 13:2 — *...And Yahuah (God) said to him: “To you and to your seed will I give this land.”* — the Jubilees apparatus carries the same land-grant to the seed at Abram''s entry that Jasher 13:7 records.'),
+  -- thread: jasher-13-nimrod-chedorlaomer-war
+  ('jasher', 'jasher', 13, 12, 'canon', 'genesis', 10, 8, 'free', E'Genesis 10:8 — *And Cush begat Nimrod: he began to be a mighty one in the earth* — the canon names Nimrod the first tyrant-king of Shinar whose war Jasher 13:12 recounts.'),
+  ('jasher', 'jasher', 13, 13, 'canon', 'genesis', 11, 8, 'free', E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city* — the dispersal of the tower-host that Jasher 13:13 says scattered Chedorlaomer to Elam.'),
+  ('jasher', 'jasher', 13, 11, 'canon', 'genesis', 14, 4, 'free', E'Genesis 14:4 — *Twelve years they served Chedorlaomer, and in the thirteenth year they rebelled* — the same twelve-year service and thirteenth-year revolt against Chedorlaomer that Jasher 13:11 dates to Abram''s fifth year in Canaan.'),
+  ('jasher', 'jasher', 13, 16, 'canon', 'genesis', 14, 1, 'free', E'Genesis 14:1 — *And it came to pass in the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations* — the same Arioch and Tidal Chedorlaomer covenants with in Jasher 13:16.'),
+  -- thread: jasher-13-go-forth-great-nation
+  ('jasher', 'jasher', 13, 23, 'canon', 'genesis', 12, 1, 'free', E'Genesis 12:1 — *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father’s house, unto a land that I will shew thee* — the founding go-forth call Yahuah renews in Jasher 13:23.'),
+  ('jasher', 'jasher', 13, 23, 'canon', 'genesis', 12, 2, 'free', E'Genesis 12:2 — *And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing* — the great-nation, great-name blessing Jasher 13:23 quotes back to Abram.'),
+  ('jasher', 'jasher', 13, 23, 'canon', 'genesis', 12, 3, 'free', E'Genesis 12:3 — *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* — the families-of-the-earth blessing Jasher 13:23 carries verbatim.'),
+  ('jasher', 'jasher', 13, 26, 'canon', 'genesis', 12, 4, 'free', E'Genesis 12:4 — *So Abram departed, as Yahuah (LORD) had spoken unto him; and Lot went with him: and Abram was seventy and five years old when he departed out of Haran* — the same seventy-five-year-old Abram leaving Haran with Lot in Jasher 13:26.'),
+  -- thread: jasher-13-death-of-noah
+  ('jasher', 'jasher', 13, 9, 'canon', 'genesis', 9, 28, 'free', E'Genesis 9:28 — *And Noah lived after the flood three hundred and fifty years* — the canon''s count that closes Noah''s nine hundred and fifty years just as Jasher 13:9 marks his death in Abram''s fifty-eighth year.'),
+  ('jasher', 'jasher', 13, 9, 'canon', 'hebrews', 11, 7, 'free', E'Hebrews 11:7 — *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* — keeps the same Noah whose death Jasher 13:9 records in the roll of faith that runs into Abram''s call.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-13-out-of-haran',
+       E'Out of Haran — the call to go to Canaan',
+       E'Jasher opens with the chosen seed pulled out of the idol-world: *And Terah took his son Abram and his grandson Lot, the son of Haran, and Sarai his daughter-in-law, the wife of his son Abram, and all the souls of his household and went with them from Ur Casdim to go to the land of Canaan. And when they came as far as the land of Haran they remained there, for it was exceedingly good land for pasture* (Jasher 13:1). This is the very migration Stephen sets at the head of the whole story: *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* (Acts 7:2), and *Then came he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell* (Acts 7:4). Joshua names the idolatry the seed was called out of: *Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* (Joshua 24:2). Election precedes confession — Yahuah took Abram out before he could choose: *And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac* (Joshua 24:3). Jubilees keeps the same stop at Haran and the father''s blessing to go: *And it came to pass in the seventh year of the sixth week that he spoke to his father, and informed him that he would leave Haran to go into the land of Canaan to see it and return to him* (Jubilees 12:28). It ain''t new — the canon already carries the call out of Chaldea.',
+       sv.verse_id, ev.verse_id, 'extras', 55300
+  FROM _session252_ja13_lookup sv, _session252_ja13_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=13 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-13-keep-my-commandments',
+       E'Hearken to my voice and keep my commandments — Torah before Sinai',
+       E'Yahuah meets Abram in Haran and binds the promise to obedience long before Sinai: *And now therefore if you will hearken to my voice and keep my commandments, my statutes and my laws, then will I cause your enemies to fall before you, and I will multiply your seed like the stars of heaven, and I will send my blessing upon all the works of your hands, and you shall lack nothing* (Jasher 13:4). The fathers kept the way; the law was not a curse hung on Israel at Horeb but the path the chosen seed already walked — it ain''t new. And the seed-like-the-stars word is the canon''s own: *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* (Genesis 15:5), which Abram answered with the faith that anchors the whole covenant: *And he believed in Yahuah (LORD); and he counted it to him for righteousness* (Genesis 15:6). Jasher''s altar-builder is the canon''s: *And Abram built an altar in the place where Elohim had spoken to him, and Abram there called upon the name of Yahuah (the Lord)* (Jasher 13:8) — *and there builded he an altar unto Yahuah (LORD), who appeared unto him* (Genesis 12:7). Hebrews names the faith that obeyed the call: *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* (Hebrews 11:8).',
+       sv.verse_id, ev.verse_id, 'extras', 55303
+  FROM _session252_ja13_lookup sv, _session252_ja13_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=13 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-13-this-land-to-thy-seed',
+       E'This is the land I give to your seed forever',
+       E'Arriving in Canaan, Abram receives the land-grant that frames the whole Torah: *And Yahuah (the Lord) appeared to Abram when he came to the land of Canaan, and said to him, This is the land which I gave to you and to your seed after you forever, and I will make your seed like the stars of heaven, and I will give to your seed for an inheritance all the lands which you see* (Jasher 13:7). The canon speaks it word for word: *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land* (Genesis 12:7), and again *For all the land which thou seest, to thee will I give it, and to thy seed for ever* (Genesis 13:15). The boundaries Jasher draws — *Now therefore walk before me and be perfect and keep my commands, for to you and to your seed I will give this land for an inheritance, from the river Mitzraim to the great river Euphrates* (Jasher 13:18) — are the cut-covenant of Genesis: *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18). This is the twelve-tribe inheritance kept and chosen, not a spiritual category. Jubilees holds the same grant on the same hill: *And Yahuah (God) said to him: “To you and to your seed will I give this land”* (Jubilees 13:2).',
+       sv.verse_id, ev.verse_id, 'extras', 55306
+  FROM _session252_ja13_lookup sv, _session252_ja13_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=7
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=13 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-13-nimrod-chedorlaomer-war',
+       E'Nimrod king of Shinar wars with Chedorlaomer — the kingdom of man',
+       E'Jasher fills in the back-story of the war Genesis only names: *And in the tenth year of Abram’s dwelling in the land of Canaan there was war between Nimrod king of Shinar and Chedorlaomer king of Elam, and Nimrod came to fight with Chedorlaomer and to subdue him* (Jasher 13:12). This is the rebel kingdom-of-man at its own throat — the Babel-builder whose tower-host scattered: *For Chedorlaomer was at that time one of the princes of the hosts of Nimrod, and when all the people at the tower were dispersed and those that remained were also scattered upon the face of the earth, Chedorlaomer went to the land of Elam and reigned over it and rebelled against his Lord* (Jasher 13:13). The canon names Nimrod the first tyrant-king: *And Cush begat Nimrod: he began to be a mighty one in the earth* (Genesis 10:8), *He was a mighty hunter before Yahuah (LORD): wherefore it is said, Even as Nimrod the mighty hunter before Yahuah (LORD)* (Genesis 10:9) — and scatters his tower: *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city* (Genesis 11:8). Genesis carries the same Chedorlaomer revolt Jasher times to Abram''s fifth year (Jasher 13:11): *Twelve years they served Chedorlaomer, and in the thirteenth year they rebelled* (Genesis 14:4), with the same Arioch and Tidal of Jasher 13:16: *And it came to pass in the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations* (Genesis 14:1). The kingdom of man rises and tears itself; the seed sits quiet in Canaan.',
+       sv.verse_id, ev.verse_id, 'extras', 55309
+  FROM _session252_ja13_lookup sv, _session252_ja13_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=11
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=13 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-13-go-forth-great-nation',
+       E'Go forth from your land — in you shall the families of the earth be blessed',
+       E'After the war and the altars, Yahuah renews the founding call of Genesis 12, which Jasher quotes almost word for word: *Behold, I spoke to you these twenty years back saying, Go forth from your land, from your birth-place and from your father’s house, to the land which I have shown you to give it to you and to your children, for there in that land will I bless you, and make you a great nation, and make your name great, and in you shall the families of the earth be blessed* (Jasher 13:22-23). The canon''s own first words to Abram: *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father’s house, unto a land that I will shew thee* (Genesis 12:1), *And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing* (Genesis 12:2), *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). And Jasher''s seventy-five-year-old who returns to Canaan with Lot — *and Abram was seventy-five years old when he went forth from Haran to return to the land of Canaan* (Jasher 13:26) — is the canon''s exactly: *So Abram departed, as Yahuah (LORD) had spoken unto him; and Lot went with him: and Abram was seventy and five years old when he departed out of Haran* (Genesis 12:4). It ain''t new — the families-of-the-earth blessing was already spoken over the chosen seed.',
+       sv.verse_id, ev.verse_id, 'extras', 55312
+  FROM _session252_ja13_lookup sv, _session252_ja13_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=22
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=13 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-13-death-of-noah',
+       E'Noah died — nine hundred and fifty years',
+       E'Jasher marks the seed-line''s generations by their deaths, and here the ark-father passes in Abram''s lifetime: *At that time, at the end of three years of Abram’s dwelling in the land of Canaan, in that year Noah died, which was the fifty-eighth year of the life of Abram; and all the days that Noah lived were nine hundred and fifty years and he died* (Jasher 13:9). The canon closes Noah''s nine-hundred-fifty exactly there: *And Noah lived after the flood three hundred and fifty years* (Genesis 9:28) — the same total the genealogy of the chosen line records. And Hebrews keeps Noah in the very roll of faith that runs straight into Abram''s call, the seed kept generation to generation: *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* (Hebrews 11:7). Adam to Seth to Noah to Shem to Abraham — Jasher traces the line death by death; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55315
+  FROM _session252_ja13_lookup sv, _session252_ja13_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=13 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-13-out-of-haran
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Acts 7:2 — *And he said, Men, brethren, and fathers, hearken; The Elohim (God) of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in Charran* — Stephen sets the same Ur-to-Haran migration that opens Jasher 13:1 at the head of the gospel story.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-out-of-haran'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:4 — *Then came he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell* — the very Ur-Casdim-to-Haran-to-Canaan route Terah''s household travels in Jasher 13:1.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-out-of-haran'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Joshua 24:2 — *And Joshua said unto all the people, Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), Your fathers dwelt on the other side of the flood in old time, even Terah, the father of Abraham, and the father of Nachor: and they served other gods* — names the idolatry the seed Abram teaches against in Haran (Jasher 13:2) was called out of.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-out-of-haran'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Joshua 24:3 — *And I took your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and gave him Isaac* — election precedes confession: the same going-up to Canaan Abram makes at Yahuah''s word in Jasher 13:5.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-out-of-haran'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 12:28 — *And it came to pass in the seventh year of the sixth week that he spoke to his father, and informed him that he would leave Haran to go into the land of Canaan to see it and return to him...* — the Jubilees apparatus keeps the same Haran stop on the road to Canaan that opens Jasher 13:1.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-out-of-haran'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=12 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-13-keep-my-commandments
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* — the seed-like-the-stars promise Yahuah binds to keeping his commandments in Jasher 13:4.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-keep-my-commandments'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:6 — *And he believed in Yahuah (LORD); and he counted it to him for righteousness* — Abram''s faith answers the same star-multiplied promise spoken over him in Jasher 13:4.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-keep-my-commandments'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:8 — *By faith Abraham, when he was called to go out into a place which he should after receive for an inheritance, obeyed; and he went out, not knowing whither he went* — the obedience to Yahuah''s voice that Jasher 13:4 lays as the condition of the blessing.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-keep-my-commandments'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* — the same altar Abram builds and calls on the Name in Jasher 13:8.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-keep-my-commandments'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-13-this-land-to-thy-seed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:7 — *And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land: and there builded he an altar unto Yahuah (LORD), who appeared unto him* — the same land-to-your-seed word Yahuah speaks at Abram''s entry into Canaan in Jasher 13:7.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-this-land-to-thy-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 13:15 — *For all the land which thou seest, to thee will I give it, and to thy seed for ever* — the all-the-lands-which-you-see inheritance forever of Jasher 13:7.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-this-land-to-thy-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* — the very river-to-river boundary Yahuah draws for the seed in Jasher 13:18.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-this-land-to-thy-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 13:2 — *...And Yahuah (God) said to him: “To you and to your seed will I give this land.”* — the Jubilees apparatus carries the same land-grant to the seed at Abram''s entry that Jasher 13:7 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-this-land-to-thy-seed'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=7
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-13-nimrod-chedorlaomer-war
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 10:8 — *And Cush begat Nimrod: he began to be a mighty one in the earth* — the canon names Nimrod the first tyrant-king of Shinar whose war Jasher 13:12 recounts.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-nimrod-chedorlaomer-war'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 11:8 — *So Yahuah (LORD) scattered them abroad from thence upon the face of all the earth: and they left off to build the city* — the dispersal of the tower-host that Jasher 13:13 says scattered Chedorlaomer to Elam.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-nimrod-chedorlaomer-war'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=11 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 14:4 — *Twelve years they served Chedorlaomer, and in the thirteenth year they rebelled* — the same twelve-year service and thirteenth-year revolt against Chedorlaomer that Jasher 13:11 dates to Abram''s fifth year in Canaan.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-nimrod-chedorlaomer-war'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 14:1 — *And it came to pass in the days of Amraphel king of Shinar, Arioch king of Ellasar, Chedorlaomer king of Elam, and Tidal king of nations* — the same Arioch and Tidal Chedorlaomer covenants with in Jasher 13:16.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-nimrod-chedorlaomer-war'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-13-go-forth-great-nation
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:1 — *Now Yahuah (LORD) had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father’s house, unto a land that I will shew thee* — the founding go-forth call Yahuah renews in Jasher 13:23.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-go-forth-great-nation'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 12:2 — *And I will make of thee a great nation, and I will bless thee, and make thy name great; and thou shalt be a blessing* — the great-nation, great-name blessing Jasher 13:23 quotes back to Abram.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-go-forth-great-nation'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 12:3 — *And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* — the families-of-the-earth blessing Jasher 13:23 carries verbatim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-go-forth-great-nation'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 12:4 — *So Abram departed, as Yahuah (LORD) had spoken unto him; and Lot went with him: and Abram was seventy and five years old when he departed out of Haran* — the same seventy-five-year-old Abram leaving Haran with Lot in Jasher 13:26.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-go-forth-great-nation'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-13-death-of-noah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 9:28 — *And Noah lived after the flood three hundred and fifty years* — the canon''s count that closes Noah''s nine hundred and fifty years just as Jasher 13:9 marks his death in Abram''s fifty-eighth year.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-death-of-noah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 11:7 — *By faith Noah, being warned of Elohim (God) of things not seen as yet, moved with fear, prepared an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith* — keeps the same Noah whose death Jasher 13:9 records in the roll of faith that runs into Abram''s call.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja13_lookup sv, _session252_ja13_lookup tv
+ WHERE t.slug='jasher-13-death-of-noah'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=13 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_14.sql (session252 jasher 14) -----
+-- Source anchor: jasher/jasher ch14. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja14 (view _session252_ja14_lookup). Sort band base 55325, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-14-wisdom-grace-before-the-king
+  ('jasher', 'jasher', 14, 26, 'canon', 'genesis', 41, 38, 'free', E'Genesis 41:38 — *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* The canon''s true wise man before Pharaoh is filled with the Spirit of Elohim, where Rikayon of Jasher 14:26 is filled only with the cunning that finds grace in a king''s sight.'),
+  ('jasher', 'jasher', 14, 26, 'canon', 'genesis', 41, 39, 'free', E'Genesis 41:39 — *And Pharaoh said unto Joseph, Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art* — the same finding-of-grace by wisdom that lifts Rikayon in Jasher 14:26, but the discernment is given by Elohim, not seized from the rabble.'),
+  ('jasher', 'jasher', 14, 1, 'canon', 'genesis', 10, 10, 'free', E'Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar* — Rikayon arises out of that same land of Shinar (Jasher 14:1), the seedbed of Nimrod''s kingdom-of-man, and carries its scheming down into Egypt.'),
+  -- thread: jasher-14-tax-upon-the-dead
+  ('jasher', 'jasher', 14, 19, 'canon', 'proverbs', 28, 15, 'free', E'Proverbs 28:15 — *As a roaring lion, and a ranging bear; so is a wicked ruler over the poor people* — exactly Rikayon, who in Jasher 14:19 exacts a tax even from the dead, the wicked ruler preying on a city he has ruined.'),
+  ('jasher', 'jasher', 14, 14, 'canon', 'genesis', 47, 26, 'free', E'Genesis 47:26 — *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part; except the land of the priests only, which became not Pharaoh''s* — the lawful Egyptian tax "unto this day" set by Joseph to preserve life, the mirror-image of Rikayon''s grave-tax in Jasher 14:14 set only to enrich himself.'),
+  ('jasher', 'jasher', 14, 20, 'canon', 'genesis', 47, 20, 'free', E'Genesis 47:20 — *And Joseph bought all the land of Egypt for Pharaoh; for the Egyptians sold every man his field, because the famine prevailed over them: so the land became Pharaoh''s* — the throne Rikayon founds will swallow all Egypt into Pharaoh''s hand, the people crying "the whole city is ruined" already in Jasher 14:20.'),
+  -- thread: jasher-14-name-called-pharaoh
+  ('jasher', 'jasher', 14, 27, 'canon', 'genesis', 41, 45, 'free', E'Genesis 41:45 — *And Pharaoh called Joseph''s name Zaphnath-paaneah; and he gave him to wife Asenath the daughter of Poti-pherah priest of On. And Joseph went out over all the land of Egypt* — the canon''s renaming of the exalted man, the same gesture by which Rikayon is renamed Pharaoh in Jasher 14:27.'),
+  ('jasher', 'jasher', 14, 33, 'canon', 'exodus', 1, 8, 'free', E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph* — the line of Pharaohs founded in Jasher 14:33 runs on "to this day" until one of them turns the kingdom-of-man against the covenant seed.'),
+  ('jasher', 'jasher', 14, 33, 'canon', 'exodus', 1, 11, 'free', E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses* — the title Pharaoh, established by Rikayon''s tax in Jasher 14:33, becomes the name of the taskmaster-king who oppresses Yashar''el.'),
+  ('jasher', 'jasher', 14, 30, 'jasher', 'jasher', 15, 2, 'extras', E'Jasher 15:2 — *And Abram and all belonging to him rose and went down to Egypt on account of the famine, and when they were at the brook Mitzraim they remained there some time to rest from the fatigue of the road* — the very throne of Pharaoh founded in Jasher 14:30 is the throne the chosen seed Abram meets in the next chapter, the kingdom-of-man and the seed brought face to face.'),
+  -- thread: jasher-14-poor-mans-cunning-and-vanity
+  ('jasher', 'jasher', 14, 31, 'canon', 'psalms', 49, 16, 'free', E'Psalm 49:16 — *Be not thou afraid when one is made rich, when the glory of his house is increased* — the warning over Rikayon, who in Jasher 14:31 cunningly usurps Egypt and is made rich at the people''s cost.'),
+  ('jasher', 'jasher', 14, 15, 'canon', 'psalms', 49, 17, 'free', E'Psalm 49:17 — *For when he dieth he shall carry nothing away: his glory shall not descend after him* — the silver and gold Rikayon gathers in Jasher 14:15 is the very riches the Psalm says a man carries nothing of into death.'),
+  ('jasher', 'jasher', 14, 31, 'canon', 'ecclesiastes', 8, 8, 'free', E'Ecclesiastes 8:8 — *There is no man that hath power over the spirit to retain the spirit; neither hath he power in the day of death: and there is no discharge in that war; neither shall wickedness deliver those that are given to it* — the preacher''s verdict on the man like Rikayon (Jasher 14:31) who rules over others to their hurt, yet has no power in the day of death.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-14-wisdom-grace-before-the-king',
+       E'The wise man finds grace before the king of Egypt',
+       E'Jasher opens not with Nimrod''s furnace but with the etiology of Egypt''s throne: *In those days there was in the land of Shinar a wise man who had understanding in all wisdom, and of a beautiful appearance, but he was poor and indigent; his name was Rikayon and he was hard set to support himself* (Jasher 14:1). A man of wisdom comes out of Shinar to stand before the king of Egypt, and the king''s heart turns to him: *And when the king heard the words of Rikayon and his wisdom, Rikayon found grace in his sight, and he met with grace and kindness from all the servants of the king and from all the inhabitants of Egypt, on account of his wisdom and excellent speeches, and from that time they loved him exceedingly* (Jasher 14:26). It ain''t new — the canon will run this same architecture through Joseph: *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* (Genesis 41:38), *Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art* (Genesis 41:39). But mark the difference the framework demands: Rikayon''s wisdom is the cunning of the rabble lifting itself, while Joseph''s is the Spirit of Elohim setting the chosen seed over the kingdom-of-man — election, not contrivance, exalts the seed.',
+       sv.verse_id, ev.verse_id, 'extras', 55325
+  FROM _session252_ja14_lookup sv, _session252_ja14_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=14 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-14-tax-upon-the-dead',
+       E'The death-tax: a wicked ruler over the poor people',
+       E'Rikayon''s scheme is to set armed men over the graves of Egypt and exact silver from the grieving: *And he commanded them, saying, Thus says the king, Strengthen yourselves and be valiant men, and let no man be buried here until two hundred pieces of silver be given, and then he may be buried* (Jasher 14:14). The people cry out against the burden no former king ever laid: *We know it to be the custom of kings to take a yearly tax from the living, but you dost not only do this, but from the dead also you exact a tax day by day* (Jasher 14:19). This is the kingdom-of-man at its purest — the strong-man devouring the poor — and the prophets name it for what it is: *As a roaring lion, and a ranging bear; so is a wicked ruler over the poor people* (Proverbs 28:15). The canon shows the lawful counterpart in Joseph''s fifth-part, made by famine-mercy and not by extortion: *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part* (Genesis 47:26) — a fifth taken to keep a people alive, against Rikayon''s tax taken to bleed them in their grief.',
+       sv.verse_id, ev.verse_id, 'extras', 55328
+  FROM _session252_ja14_lookup sv, _session252_ja14_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=14 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-14-name-called-pharaoh',
+       E'The renaming: how the title Pharaoh began',
+       E'The king crowns Rikayon''s cunning by giving him a new name and making it the name of every king to follow: *And the king answered and said to Rikayon, Your name shall no more be called Rikayon but Pharaoh shall be your name, since you did exact a tax from the dead; and he called his name Pharaoh* (Jasher 14:27), *Therefore all the kings that reigned in Egypt from that time forward were called Pharaoh to this day* (Jasher 14:33). The renaming of the exalted man is the canon''s own pattern — *And Pharaoh called Joseph''s name Zaphnath-paaneah* (Genesis 41:45) — but here the name itself is born of extortion, and it becomes the standing title of the kingdom-of-man that will one day turn against the seed: *Now there arose up a new king over Egypt, which knew not Joseph* (Exodus 1:8), the Pharaoh who enslaves Yashar''el and is named here at its founding. Jasher carries the thread forward at once, for the very next chapter brings the chosen seed down to this throne: *And Abram and all belonging to him rose and went down to Egypt on account of the famine* (Jasher 15:2).',
+       sv.verse_id, ev.verse_id, 'extras', 55331
+  FROM _session252_ja14_lookup sv, _session252_ja14_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=27
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=14 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-14-poor-mans-cunning-and-vanity',
+       E'The poor man''s cunning and the vanity of stolen glory',
+       E'Rikayon begins poor and pinched with hunger, sleeping in a ruined bake house: *And in the evening Rikayon went out and found a house in ruins, formerly a bake house in Egypt, and he abode there all night in bitterness of soul and pinched with hunger, and sleep was removed from his eyes* (Jasher 14:6). From that bitterness he devises not righteousness but a scheme, and *in eight months time Rikayon and his men gathered great riches of silver and gold* (Jasher 14:15), until *Rikayon Pharaoh cunningly usurped the government of Egypt, and he exacted a tax from all the inhabitants of Egypt* (Jasher 14:31). This is the kingdom-of-man''s whole career in miniature — riches and rule seized by craft — and the Psalm pronounces its end: *Be not thou afraid when one is made rich, when the glory of his house is increased; For when he dieth he shall carry nothing away: his glory shall not descend after him* (Psalm 49:16-17). The wisdom that is only cunning gathers gold over the graves of others, and is itself carried to the grave.',
+       sv.verse_id, ev.verse_id, 'extras', 55334
+  FROM _session252_ja14_lookup sv, _session252_ja14_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=14 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-14-wisdom-grace-before-the-king
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:38 — *And Pharaoh said unto his servants, Can we find such a one as this is, a man in whom the Spirit of Elohim (God) is?* The canon''s true wise man before Pharaoh is filled with the Spirit of Elohim, where Rikayon of Jasher 14:26 is filled only with the cunning that finds grace in a king''s sight.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-wisdom-grace-before-the-king'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 41:39 — *And Pharaoh said unto Joseph, Forasmuch as Elohim (God) hath shewed thee all this, there is none so discreet and wise as thou art* — the same finding-of-grace by wisdom that lifts Rikayon in Jasher 14:26, but the discernment is given by Elohim, not seized from the rabble.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-wisdom-grace-before-the-king'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 10:10 — *And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar* — Rikayon arises out of that same land of Shinar (Jasher 14:1), the seedbed of Nimrod''s kingdom-of-man, and carries its scheming down into Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-wisdom-grace-before-the-king'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-14-tax-upon-the-dead
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 28:15 — *As a roaring lion, and a ranging bear; so is a wicked ruler over the poor people* — exactly Rikayon, who in Jasher 14:19 exacts a tax even from the dead, the wicked ruler preying on a city he has ruined.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-tax-upon-the-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=28 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 47:26 — *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part; except the land of the priests only, which became not Pharaoh''s* — the lawful Egyptian tax "unto this day" set by Joseph to preserve life, the mirror-image of Rikayon''s grave-tax in Jasher 14:14 set only to enrich himself.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-tax-upon-the-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 47:20 — *And Joseph bought all the land of Egypt for Pharaoh; for the Egyptians sold every man his field, because the famine prevailed over them: so the land became Pharaoh''s* — the throne Rikayon founds will swallow all Egypt into Pharaoh''s hand, the people crying "the whole city is ruined" already in Jasher 14:20.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-tax-upon-the-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=47 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-14-name-called-pharaoh
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 41:45 — *And Pharaoh called Joseph''s name Zaphnath-paaneah; and he gave him to wife Asenath the daughter of Poti-pherah priest of On. And Joseph went out over all the land of Egypt* — the canon''s renaming of the exalted man, the same gesture by which Rikayon is renamed Pharaoh in Jasher 14:27.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-name-called-pharaoh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=41 AND tv.verse_number=45
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph* — the line of Pharaohs founded in Jasher 14:33 runs on "to this day" until one of them turns the kingdom-of-man against the covenant seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-name-called-pharaoh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses* — the title Pharaoh, established by Rikayon''s tax in Jasher 14:33, becomes the name of the taskmaster-king who oppresses Yashar''el.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-name-called-pharaoh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=33
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jasher 15:2 — *And Abram and all belonging to him rose and went down to Egypt on account of the famine, and when they were at the brook Mitzraim they remained there some time to rest from the fatigue of the road* — the very throne of Pharaoh founded in Jasher 14:30 is the throne the chosen seed Abram meets in the next chapter, the kingdom-of-man and the seed brought face to face.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-name-called-pharaoh'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=30
+   AND tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=15 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-14-poor-mans-cunning-and-vanity
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 49:16 — *Be not thou afraid when one is made rich, when the glory of his house is increased* — the warning over Rikayon, who in Jasher 14:31 cunningly usurps Egypt and is made rich at the people''s cost.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-poor-mans-cunning-and-vanity'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 49:17 — *For when he dieth he shall carry nothing away: his glory shall not descend after him* — the silver and gold Rikayon gathers in Jasher 14:15 is the very riches the Psalm says a man carries nothing of into death.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-poor-mans-cunning-and-vanity'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ecclesiastes 8:8 — *There is no man that hath power over the spirit to retain the spirit; neither hath he power in the day of death: and there is no discharge in that war; neither shall wickedness deliver those that are given to it* — the preacher''s verdict on the man like Rikayon (Jasher 14:31) who rules over others to their hurt, yet has no power in the day of death.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja14_lookup sv, _session252_ja14_lookup tv
+ WHERE t.slug='jasher-14-poor-mans-cunning-and-vanity'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=14 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=8 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_15.sql (session252 jasher 15) -----
+-- Source anchor: jasher/jasher ch15. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja15 (view _session252_ja15_lookup). Sort band base 55350, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-15-famine-down-to-egypt
+  ('jasher', 'jasher', 15, 1, 'canon', 'genesis', 12, 10, 'free', E'Genesis 12:10 — *And there was a famine in the land: and Abram went down into Egypt to sojourn there; for the famine was grievous in the land.* The Genesis source of Jasher 15:1-2, the grievous Canaan famine that sends Abram to Egypt.'),
+  ('jasher', 'jasher', 15, 1, 'canon', 'genesis', 26, 1, 'free', E'Genesis 26:1 — *And there was a famine in the land, beside the first famine that was in the days of Abraham. And Isaac went unto Abimelech king of the Philistines unto Gerar.* The same famine-driven sojourn recurs over Isaac, showing Jasher 15:1''s scene is a covenant pattern.'),
+  ('jasher', 'jasher', 15, 2, 'canon', 'hebrews', 11, 9, 'free', E'Hebrews 11:9 — *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise.* Names the faith-posture of Abram''s descent in Jasher 15:2 — the elect seed sojourning among the nations.'),
+  ('jasher', 'jasher', 15, 2, 'jubilees', 'jubilees', 13, 11, 'extras', E'Jubilees 13:11 — *And Abram went into Egypt in the third year of the week, and he dwelt in Egypt five years before his wife was torn away from him.* Jubilees retells the identical descent into Egypt that opens Jasher 15.'),
+  -- thread: jasher-15-she-is-my-sister
+  ('jasher', 'jasher', 15, 4, 'canon', 'genesis', 12, 11, 'free', E'Genesis 12:11 — *And it came to pass, when he was come near to enter into Egypt, that he said unto Sarai his wife, Behold now, I know that thou art a fair woman to look upon.* The Genesis source of Abram''s fear in Jasher 15:4 as Egypt nears.'),
+  ('jasher', 'jasher', 15, 5, 'canon', 'genesis', 12, 13, 'free', E'Genesis 12:13 — *Say, I pray thee, thou art my sister: that it may be well with me for thy sake; and my soul shall live because of thee.* The exact instruction Jasher 15:5 expands — call yourself sister that it may be well with me.'),
+  ('jasher', 'jasher', 15, 6, 'canon', 'genesis', 20, 2, 'free', E'Genesis 20:2 — *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah.* The same sister-stratagem returns at Gerar, showing Jasher 15:6''s command is a recurring pattern over the seed.'),
+  ('jasher', 'jasher', 15, 5, 'canon', 'genesis', 26, 7, 'free', E'Genesis 26:7 — *And the men of the place asked him of his wife; and he said, She is my sister: for he feared to say, She is my wife; lest, said he, the men of the place should kill me for Rebekah; because she was fair to look upon.* Isaac repeats the very fear and stratagem of Jasher 15:5.'),
+  -- thread: jasher-15-prayer-and-the-angel-delivers-sarai
+  ('jasher', 'jasher', 15, 16, 'canon', 'genesis', 12, 15, 'free', E'Genesis 12:15 — *The princes also of Pharaoh saw her, and commended her before Pharaoh: and the woman was taken into Pharaoh''s house.* The Genesis source of Sarai being brought to Pharaoh''s house in Jasher 15:16.'),
+  ('jasher', 'jasher', 15, 19, 'canon', 'psalms', 34, 7, 'free', E'Psalms 34:7 — *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them.* The canon''s word for the delivering angel Jasher 15:19 sends to rescue Sarai.'),
+  ('jasher', 'jasher', 15, 16, 'canon', 'psalms', 105, 15, 'free', E'Psalms 105:15 — *Saying, Touch not mine anointed, and do my prophets no harm.* The covenant charter that guards Abram in Pharaoh''s house, the protection his prayer in Jasher 15:16 appeals to.'),
+  -- thread: jasher-15-pharaoh-plagued-sarai-restored
+  ('jasher', 'jasher', 15, 28, 'canon', 'genesis', 12, 17, 'free', E'Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife.* The Genesis source of the plague on Pharaoh''s house in Jasher 15:28.'),
+  ('jasher', 'jasher', 15, 30, 'canon', 'genesis', 12, 19, 'free', E'Genesis 12:19 — *Why saidst thou, She is my sister? so I might have taken her to me to wife: now therefore behold thy wife, take her, and go thy way.* Pharaoh''s dismissal of Abram and Sarai, expanded in Jasher 15:30.'),
+  ('jasher', 'jasher', 15, 28, 'jubilees', 'jubilees', 13, 12, 'extras', E'Jubilees 13:12 — *And it came to pass when Pharaoh seized Sarai, the wife of Abram, that Yahuah (God) plagued Pharaoh and his house with great plagues because of Sarai, Abram''s wife.* Jubilees retells the very plague Jasher 15:28 says smote Pharaoh on Sarai''s account.'),
+  ('jasher', 'jasher', 15, 30, 'jubilees', 'jubilees', 13, 15, 'extras', E'Jubilees 13:15 — *And Pharaoh gave back Sarai, the wife of Abram, and he sent him out of the land of Egypt, and he journeyed to the place where he had pitched his tent at the beginning.* The restoration and sending-out that Jasher 15:30 narrates.'),
+  -- thread: jasher-15-abram-and-lot-separate
+  ('jasher', 'jasher', 15, 36, 'canon', 'genesis', 13, 7, 'free', E'Genesis 13:7 — *And there was a strife between the herdmen of Abram''s cattle and the herdmen of Lot''s cattle: and the Canaanite and the Perizzite dwelled then in the land.* The Genesis source of the herdsmen''s quarrel in Jasher 15:36.'),
+  ('jasher', 'jasher', 15, 41, 'canon', 'genesis', 13, 8, 'free', E'Genesis 13:8 — *And Abram said unto Lot, Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen; for we be brethren.* Abram''s peace-making appeal, expanded in Jasher 15:41.'),
+  ('jasher', 'jasher', 15, 46, 'canon', 'genesis', 13, 11, 'free', E'Genesis 13:11 — *Then Lot chose him all the plain of Jordan; and Lot journeyed east: and they separated themselves the one from the other.* Lot''s choice of the well-watered plain and departure, as in Jasher 15:46.'),
+  ('jasher', 'jasher', 15, 46, 'jubilees', 'jubilees', 13, 17, 'extras', E'Jubilees 13:17 — *And in the fourth year of this week Lot parted from him, and Lot dwelt in Sodom, and the men of Sodom were sinners exceedingly.* Jubilees records the same parting of Lot to Sodom that closes Jasher 15:46.'),
+  -- thread: jasher-15-abram-dwells-in-mamre-hebron
+  ('jasher', 'jasher', 15, 47, 'canon', 'genesis', 13, 18, 'free', E'Genesis 13:18 — *Then Abram removed his tent, and came and dwelt in the plain of Mamre, which is in Hebron, and built there an altar unto Yahuah (LORD).* The exact Genesis place-note that Jasher 15:47 records — Mamre in Hebron.'),
+  ('jasher', 'jasher', 15, 47, 'canon', 'genesis', 13, 15, 'free', E'Genesis 13:15 — *For all the land which thou seest, to thee will I give it, and to thy seed for ever.* The land-promise renewed to the seed just as Abram settles in the place where Jasher 15:47 leaves him dwelling.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-15-famine-down-to-egypt',
+       E'The famine drives Abram down to Egypt',
+       E'Jasher opens the cycle exactly where Genesis does: *And in that year there was a heavy famine throughout the land of Canaan, and the inhabitants of the land could not remain on account of the famine for it was very grievous. And Abram and all belonging to him rose and went down to Egypt on account of the famine* (Jasher 15:1-2). Genesis carries the same scene unembellished — *And there was a famine in the land: and Abram went down into Egypt to sojourn there; for the famine was grievous in the land* (Genesis 12:10). The very same famine recurs over Isaac a generation later — *And there was a famine in the land, beside the first famine that was in the days of Abraham. And Isaac went unto Abimelech king of the Philistines unto Gerar* (Genesis 26:1) — the chosen seed sojourning among the nations is a pattern, not a one-off. Hebrews names the posture: *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise* (Hebrews 11:9). And Jubilees retells the identical descent — *And Abram went into Egypt in the third year of the week, and he dwelt in Egypt five years before his wife was torn away from him* (Jubilees 13:11). It ain''t new — Jasher is repeating the canon''s own famine-and-sojourn.',
+       sv.verse_id, ev.verse_id, 'extras', 55350
+  FROM _session252_ja15_lookup sv, _session252_ja15_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=15 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-15-she-is-my-sister',
+       E'Say you are my sister — fear of the nations',
+       E'On the border of Egypt Abram, fearing the godless land, instructs Sarai: *And Abram said to his wife Sarai, Since Elohim (God) has created you with such a beautiful countenance, I am afraid of the Egyptians lest they should slay me and take you away, for the fear of Elohim is not in these places. Surely then you shall do this, Say you are my sister to all that may ask you* (Jasher 15:4-5). This is Genesis 12 word-for-word in substance — *Behold now, I know that thou art a fair woman to look upon... Say, I pray thee, thou art my sister: that it may be well with me for thy sake; and my soul shall live because of thee* (Genesis 12:11,13). The same stratagem returns at Gerar with Abimelech — *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah* (Genesis 20:2) — and again over Isaac and Rebekah — *and he said, She is my sister: for he feared to say, She is my wife; lest, said he, the men of the place should kill me for Rebekah* (Genesis 26:7). The patriarch''s fear of the nations who have no fear of Elohim is the recurring danger over the chosen seed; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55353
+  FROM _session252_ja15_lookup sv, _session252_ja15_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=3
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=15 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-15-prayer-and-the-angel-delivers-sarai',
+       E'Sarai taken — Abram prays and the angel delivers',
+       E'Sarai is carried into Pharaoh''s house and Abram cries out: *And the woman was then brought to Pharaoh''s house, and Abram grieved on account of his wife, and he prayed to Yahuah (the Lord) to deliver her from the hands of Pharaoh* (Jasher 15:16), and Yahuah answers — *And Yahuah (the Lord) hearkened to the voice of Sarai, and Yahuah (the Lord) sent an angel to deliver Sarai from the power of Pharaoh* (Jasher 15:19). Genesis states the taking plainly — *The princes also of Pharaoh saw her, and commended her before Pharaoh: and the woman was taken into Pharaoh''s house* (Genesis 12:15) — and the Psalms supply the deliverance Jasher dramatizes as an angel: *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalms 34:7). The 105th Psalm makes it the very charter of Abram''s protection among the kings — *He suffered no man to do them wrong: yea, he reproved kings for their sakes; Saying, Touch not mine anointed, and do my prophets no harm* (Psalms 105:14-15). Where Jasher adds the standing angel, the canon already carries the deliverance: it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55356
+  FROM _session252_ja15_lookup sv, _session252_ja15_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=16
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=15 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-15-pharaoh-plagued-sarai-restored',
+       E'Pharaoh plagued; Sarai restored with gifts',
+       E'The angel''s strokes fall on Pharaoh''s whole house until the king relents: *And Pharaoh knew that he was smitten on account of Sarai... in the morning the king called for Abram and said to him, What is this you have done to me?... Now therefore here is your wife, take her and go from our land lest we all die on her account* (Jasher 15:28-30), and the king loads Abram with cattle, servants, silver and gold (Jasher 15:30,33). Genesis is the spare original — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife* (Genesis 12:17), and *now therefore behold thy wife, take her, and go thy way* (Genesis 12:19). Jubilees narrates the same plague and restoration — *it came to pass when Pharaoh seized Sarai, the wife of Abram, that Yahuah (God) plagued Pharaoh and his house with great plagues because of Sarai, Abram''s wife* (Jubilees 13:12), and *And Pharaoh gave back Sarai, the wife of Abram, and he sent him out of the land of Egypt* (Jubilees 13:15). The kings-of-man are reproved for the seed''s sake; the same architecture runs through every retelling.',
+       sv.verse_id, ev.verse_id, 'extras', 55359
+  FROM _session252_ja15_lookup sv, _session252_ja15_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=28
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=15 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-15-abram-and-lot-separate',
+       E'Abram and Lot separate in peace',
+       E'Back in Canaan the substance grows too great and strife breaks out: *And when Abram was dwelling in the land the herdsmen of Lot quarrelled with the herdsmen of Abram, for their property was too great for them to remain together in the land* (Jasher 15:36), and Abram makes peace — *Now I beseech you let there be no more quarrelling between us, for we are kinsmen. But I pray you separate from me, go and choose a place where you may dwell* (Jasher 15:41-42). Genesis is the source, nearly verbatim — *And there was a strife between the herdmen of Abram''s cattle and the herdmen of Lot''s cattle* (Genesis 13:7), *Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen; for we be brethren* (Genesis 13:8). Lot lifts his eyes to Jordan and chooses Sodom — *Then Lot chose him all the plain of Jordan; and Lot journeyed east: and they separated themselves the one from the other* (Genesis 13:11) — and Jubilees marks it: *And in the fourth year of this week Lot parted from him, and Lot dwelt in Sodom, and the men of Sodom were sinners exceedingly* (Jubilees 13:17).',
+       sv.verse_id, ev.verse_id, 'extras', 55362
+  FROM _session252_ja15_lookup sv, _session252_ja15_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=36
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=15 AND ev.verse_number=46
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-15-abram-dwells-in-mamre-hebron',
+       E'Abram dwells in the plain of Mamre at Hebron',
+       E'The chapter closes with Abram settled in the land of promise: *And Abram dwelt in the plain of Mamre, which is in Hebron, and he pitched his tent there, and Abram remained in that place many years* (Jasher 15:47). Genesis ends the Lot account in the very same place — *Then Abram removed his tent, and came and dwelt in the plain of Mamre, which is in Hebron, and built there an altar unto Yahuah (LORD)* (Genesis 13:18). And just after Lot''s departure the land-promise to the seed is renewed — *For all the land which thou seest, to thee will I give it, and to thy seed for ever. And I will make thy seed as the dust of the earth* (Genesis 13:15-16). The elect seed dwells in the land deeded forever; the promise to the fathers is the same promise carried through every telling — it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55365
+  FROM _session252_ja15_lookup sv, _session252_ja15_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=47
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=15 AND ev.verse_number=47
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-15-famine-down-to-egypt
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:10 — *And there was a famine in the land: and Abram went down into Egypt to sojourn there; for the famine was grievous in the land.* The Genesis source of Jasher 15:1-2, the grievous Canaan famine that sends Abram to Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-famine-down-to-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 26:1 — *And there was a famine in the land, beside the first famine that was in the days of Abraham. And Isaac went unto Abimelech king of the Philistines unto Gerar.* The same famine-driven sojourn recurs over Isaac, showing Jasher 15:1''s scene is a covenant pattern.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-famine-down-to-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:9 — *By faith he sojourned in the land of promise, as in a strange country, dwelling in tabernacles with Isaac and Jacob, the heirs with him of the same promise.* Names the faith-posture of Abram''s descent in Jasher 15:2 — the elect seed sojourning among the nations.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-famine-down-to-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 13:11 — *And Abram went into Egypt in the third year of the week, and he dwelt in Egypt five years before his wife was torn away from him.* Jubilees retells the identical descent into Egypt that opens Jasher 15.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-famine-down-to-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=2
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-15-she-is-my-sister
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:11 — *And it came to pass, when he was come near to enter into Egypt, that he said unto Sarai his wife, Behold now, I know that thou art a fair woman to look upon.* The Genesis source of Abram''s fear in Jasher 15:4 as Egypt nears.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-she-is-my-sister'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 12:13 — *Say, I pray thee, thou art my sister: that it may be well with me for thy sake; and my soul shall live because of thee.* The exact instruction Jasher 15:5 expands — call yourself sister that it may be well with me.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-she-is-my-sister'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 20:2 — *And Abraham said of Sarah his wife, She is my sister: and Abimelech king of Gerar sent, and took Sarah.* The same sister-stratagem returns at Gerar, showing Jasher 15:6''s command is a recurring pattern over the seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-she-is-my-sister'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=20 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 26:7 — *And the men of the place asked him of his wife; and he said, She is my sister: for he feared to say, She is my wife; lest, said he, the men of the place should kill me for Rebekah; because she was fair to look upon.* Isaac repeats the very fear and stratagem of Jasher 15:5.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-she-is-my-sister'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-15-prayer-and-the-angel-delivers-sarai
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:15 — *The princes also of Pharaoh saw her, and commended her before Pharaoh: and the woman was taken into Pharaoh''s house.* The Genesis source of Sarai being brought to Pharaoh''s house in Jasher 15:16.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-prayer-and-the-angel-delivers-sarai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalms 34:7 — *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them.* The canon''s word for the delivering angel Jasher 15:19 sends to rescue Sarai.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-prayer-and-the-angel-delivers-sarai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalms 105:15 — *Saying, Touch not mine anointed, and do my prophets no harm.* The covenant charter that guards Abram in Pharaoh''s house, the protection his prayer in Jasher 15:16 appeals to.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-prayer-and-the-angel-delivers-sarai'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-15-pharaoh-plagued-sarai-restored
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 12:17 — *And Yahuah (LORD) plagued Pharaoh and his house with great plagues because of Sarai Abram''s wife.* The Genesis source of the plague on Pharaoh''s house in Jasher 15:28.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-pharaoh-plagued-sarai-restored'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 12:19 — *Why saidst thou, She is my sister? so I might have taken her to me to wife: now therefore behold thy wife, take her, and go thy way.* Pharaoh''s dismissal of Abram and Sarai, expanded in Jasher 15:30.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-pharaoh-plagued-sarai-restored'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 13:12 — *And it came to pass when Pharaoh seized Sarai, the wife of Abram, that Yahuah (God) plagued Pharaoh and his house with great plagues because of Sarai, Abram''s wife.* Jubilees retells the very plague Jasher 15:28 says smote Pharaoh on Sarai''s account.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-pharaoh-plagued-sarai-restored'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=28
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 13:15 — *And Pharaoh gave back Sarai, the wife of Abram, and he sent him out of the land of Egypt, and he journeyed to the place where he had pitched his tent at the beginning.* The restoration and sending-out that Jasher 15:30 narrates.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-pharaoh-plagued-sarai-restored'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=30
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-15-abram-and-lot-separate
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 13:7 — *And there was a strife between the herdmen of Abram''s cattle and the herdmen of Lot''s cattle: and the Canaanite and the Perizzite dwelled then in the land.* The Genesis source of the herdsmen''s quarrel in Jasher 15:36.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-abram-and-lot-separate'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 13:8 — *And Abram said unto Lot, Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen; for we be brethren.* Abram''s peace-making appeal, expanded in Jasher 15:41.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-abram-and-lot-separate'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 13:11 — *Then Lot chose him all the plain of Jordan; and Lot journeyed east: and they separated themselves the one from the other.* Lot''s choice of the well-watered plain and departure, as in Jasher 15:46.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-abram-and-lot-separate'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=46
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 13:17 — *And in the fourth year of this week Lot parted from him, and Lot dwelt in Sodom, and the men of Sodom were sinners exceedingly.* Jubilees records the same parting of Lot to Sodom that closes Jasher 15:46.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-abram-and-lot-separate'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=46
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-15-abram-dwells-in-mamre-hebron
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 13:18 — *Then Abram removed his tent, and came and dwelt in the plain of Mamre, which is in Hebron, and built there an altar unto Yahuah (LORD).* The exact Genesis place-note that Jasher 15:47 records — Mamre in Hebron.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-abram-dwells-in-mamre-hebron'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 13:15 — *For all the land which thou seest, to thee will I give it, and to thy seed for ever.* The land-promise renewed to the seed just as Abram settles in the place where Jasher 15:47 leaves him dwelling.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja15_lookup sv, _session252_ja15_lookup tv
+ WHERE t.slug='jasher-15-abram-dwells-in-mamre-hebron'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=15 AND sv.verse_number=47
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_16.sql (session252 jasher 16) -----
+-- Source anchor: jasher/jasher ch16. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja16 (view _session252_ja16_lookup). Sort band base 55375, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-16-war-of-kings-lot-rescued
+  ('jasher', 'jasher', 16, 3, 'canon', 'genesis', 14, 2, 'free', E'Genesis 14:2 — *That these made war with Bera king of Sodom, and with Birsha king of Gomorrah, Shinab king of Admah, and Shemeber king of Zeboiim, and the king of Bela, which is Zoar.* The canon names the very five kings of Sodom Jasher 16:3 gathers in the valley of Siddim.'),
+  ('jasher', 'jasher', 16, 6, 'canon', 'genesis', 14, 12, 'free', E'Genesis 14:12 — *And they took Lot, Abram’s brother’s son, who dwelt in Sodom, and his goods, and departed.* This is the captivity of Lot that Jasher 16:6 reports through Unic, Abram''s servant who saw the battle.'),
+  ('jasher', 'jasher', 16, 7, 'canon', 'genesis', 14, 14, 'free', E'Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* The same three hundred and eighteen men of Abram''s household that Jasher 16:7 musters for the night pursuit.'),
+  ('jasher', 'jasher', 16, 6, 'jubilees', 'jubilees', 13, 23, 'extras', E'Jubilees 13:23 — *And they took captive Sodom and Adam and Zeboim, and they took captive Lot also, the son of Abram’s brother, and all his possessions, and they went to Dan.* Jubilees retells the identical capture of Lot, confirming Jasher 16:6 across the patriarchal record.'),
+  -- thread: jasher-16-melchizedek-shem-tithe
+  ('jasher', 'jasher', 16, 11, 'canon', 'genesis', 14, 18, 'free', E'Genesis 14:18 — *And Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God).* The same priest-king with bread and wine whom Jasher 16:11 identifies as Shem, king of Jerusalem.'),
+  ('jasher', 'jasher', 16, 12, 'canon', 'hebrews', 7, 3, 'free', E'Hebrews 7:3 — *Without father, without mother, without descent, having neither beginning of days, nor end of life; but made like unto the Son of Elohim (God); abideth a priest continually.* The priesthood before Elohim that Jasher 16:12 honors is read as the abiding order foreshadowing the Messiah.'),
+  ('jasher', 'jasher', 16, 12, 'canon', 'psalms', 110, 4, 'free', E'Psalm 110:4 — *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* The tithe Abram pays this priest in Jasher 16:12 is the order the Messiah will hold for ever.'),
+  -- thread: jasher-16-not-a-thread-no-spoil
+  ('jasher', 'jasher', 16, 16, 'canon', 'genesis', 14, 23, 'free', E'Genesis 14:23 — *That I will not take from a thread even to a shoelatchet, and that I will not take any thing that is thine, lest thou shouldest say, I have made Abram rich.* The very oath Abram swears in Jasher 16:16, refusing a thread or shoetie of Sodom''s spoil.'),
+  ('jasher', 'jasher', 16, 16, 'canon', 'genesis', 14, 24, 'free', E'Genesis 14:24 — *Save only that which the young men have eaten, and the portion of the men which went with me, Aner, Eshcol, and Mamre; let them take their portion.* The same exception Jasher 16:16 makes for the food and for Anar, Ashcol, and Mamre.'),
+  ('jasher', 'jasher', 16, 16, 'jubilees', 'jubilees', 13, 29, 'extras', E'Jubilees 13:29 — *I lift up my hands to the El Elyon (Most High) Elohim (God), that from a thread to a shoe-latchet I shall not take aught that is your, lest you should say I have made Abram rich; save only what the young men have eaten, and the portion of the men who went with me–Aner, Eschol, and Mamre.* Jubilees renders Abram''s refusal in Jasher 16:16 with the same thread-to-shoe-latchet oath.'),
+  -- thread: jasher-16-seed-as-stars-covenant-land
+  ('jasher', 'jasher', 16, 20, 'canon', 'genesis', 15, 5, 'free', E'Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.* The star-promise that cannot be measured nor numbered, exactly as Jasher 16:20 renews it in Hebron.'),
+  ('jasher', 'jasher', 16, 21, 'canon', 'genesis', 15, 18, 'free', E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates.* The covenant of the land for an inheritance forever that Jasher 16:21 promises to Abram''s seed.'),
+  ('jasher', 'jasher', 16, 20, 'canon', 'romans', 4, 3, 'free', E'Romans 4:3 — *For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness.* The faith that receives the star-promise of Jasher 16:20 is election counted as righteousness, not works.'),
+  ('jasher', 'jasher', 16, 20, 'jubilees', 'jubilees', 14, 5, 'extras', E'Jubilees 14:5 — *And he looked toward heaven, and beheld the stars. And He said to him: “So shall your seed be.”* Jubilees carries the same seed-as-stars vision that Jasher 16:20 sets in Hebron.'),
+  -- thread: jasher-16-hagar-ishmael
+  ('jasher', 'jasher', 16, 26, 'canon', 'genesis', 16, 2, 'free', E'Genesis 16:2 — *And Sarai said unto Abram, Behold now, Yahuah (LORD) hath restrained me from bearing: I pray thee, go in unto my maid; it may be that I may obtain children by her. And Abram hearkened to the voice of Sarai.* The canon''s form of Sarai''s proposal that Jasher 16:26 records, to obtain children through Hagar.'),
+  ('jasher', 'jasher', 16, 34, 'canon', 'genesis', 16, 9, 'free', E'Genesis 16:9 — *And the angel of Yahuah (LORD) said unto her, Return to thy mistress, and submit thyself under her hands.* The angel''s same charge to the fleeing Hagar that Jasher 16:34 gives at the well.'),
+  ('jasher', 'jasher', 16, 34, 'canon', 'genesis', 16, 11, 'free', E'Genesis 16:11 — *And the angel of Yahuah (LORD) said unto her, Behold, thou art with child, and shalt bear a son, and shalt call his name Ishmael; because Yahuah (LORD) hath heard thy affliction.* The naming of Ishmael the angel announces in Jasher 16:34, the son of the affliction heard.'),
+  ('jasher', 'jasher', 16, 24, 'canon', 'galatians', 4, 22, 'free', E'Galatians 4:22 — *For it is written, that Abraham had two sons, the one by a bondmaid, the other by a freewoman.* Paul''s reading of the bondwoman''s son begun in Jasher 16:24, where Hagar is given to Abram for a wife.'),
+  ('jasher', 'jasher', 16, 36, 'jubilees', 'jubilees', 14, 24, 'extras', E'Jubilees 14:24 — *And he went in to her, and she conceived and bare him a son, and he called his name Ishmael, in the fifth year of this week; and this was the eighty-sixth year in the life of Abram.* Jubilees gives the same birth and the same eighty-sixth year of Abram''s life that Jasher 16:36 records.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-16-war-of-kings-lot-rescued',
+       E'The war of the four kings and the rescue of Lot',
+       E'Jasher opens this chapter on the war of the kings — *And these four kings went up with all their camps, about eight hundred thousand men, and they went as they were, and smote every man they found in their road* (Jasher 16:2) — and when Lot is carried off, Abram arms his own household and pursues: *And Abram heard this, and he rose up with about three hundred and eighteen men that were with him, and he that night pursued these kings and smote them, and they all fell before Abram and his men* (Jasher 16:7). This is Genesis 14 told over again. The canon names the same coalition — *That these made war with Bera king of Sodom, and with Birsha king of Gomorrah, Shinab king of Admah, and Shemeber king of Zeboiim, and the king of Bela, which is Zoar* (Genesis 14:2) — the same captive — *And they took Lot, Abram’s brother’s son, who dwelt in Sodom, and his goods, and departed* (Genesis 14:12) — and the same numbered band: *he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan* (Genesis 14:14). Jubilees carries the identical scene, naming Chedorlaomer and the rest and Lot taken to Dan (Jubilees 13:23). It ain''t new: the called seed does not flee the kingdom of man — he goes out by night against eight hundred thousand for the sake of one captive, and wins.',
+       sv.verse_id, ev.verse_id, 'extras', 55375
+  FROM _session252_ja16_lookup sv, _session252_ja16_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=16 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-16-melchizedek-shem-tithe',
+       E'Adonizedek the same was Shem — the priest who blessed Abram',
+       E'Returning from the slaughter, Abram is met by the priest-king of Salem: *And Adonizedek king of Jerusalem, the same was Shem, went out with his men to meet Abram and his people, with bread and wine, and they remained together in the valley of Melech* (Jasher 16:11), *And Adonizedek blessed Abram, and Abram gave him a tenth from all that he had brought from the spoil of his enemies, for Adonizedek was a priest before Elohim (God)* (Jasher 16:12). Genesis names him Melchizedek and shows the same bread, wine, blessing and tithe — *And Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God)* (Genesis 14:18). Jasher''s gloss "the same was Shem" places this priesthood in the chosen seed-line itself — Shem the father of the elect line still living and serving as priest. The Spirit reads this priest as the very pattern of the Messiah''s eternal order: *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek)* (Psalm 110:4), and Hebrews unfolds him — *Without father, without mother, without descent, having neither beginning of days, nor end of life; but made like unto the Son of Elohim (God); abideth a priest continually* (Hebrews 7:3). The tithe to the priest is Torah-before-Sinai; Jubilees seals it as an everlasting ordinance (Jubilees 13:25). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55378
+  FROM _session252_ja16_lookup sv, _session252_ja16_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=11
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=16 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-16-not-a-thread-no-spoil',
+       E'Not a thread nor a shoetie — Abram refuses the spoil of Sodom',
+       E'When the kings of Sodom press him to keep the recovered goods, Abram swears by the Name and takes nothing: *And now therefore behold, here is all belonging to you, take it and go; as Yahuah (the Lord) lives I will not take from you from a living soul down to a shoetie or thread, excepting the expense of the food of those who went out with me to battle, as also the portions of the men who went with me, Anar, Ashcol, and Mamre* (Jasher 16:16). His reason is stated in the verse before — *For Yahuah my Elohim (the Lord my God) in whom I trust said to me, You shall lack nothing, for I will bless you in all the works of your hands* (Jasher 16:15). Genesis preserves the same oath nearly word for word — *That I will not take from a thread even to a shoelatchet, and that I will not take any thing that is thine, lest thou shouldest say, I have made Abram rich: Save only that which the young men have eaten, and the portion of the men which went with me, Aner, Eshcol, and Mamre; let them take their portion* (Genesis 14:23-24). Jubilees carries it too (Jubilees 13:29). The called seed will not be enriched by the kingdom of man''s plunder; his blessing comes from Yahuah, not from Sodom. It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55381
+  FROM _session252_ja16_lookup sv, _session252_ja16_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=14
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=16 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-16-seed-as-stars-covenant-land',
+       E'Thy seed like the stars — the covenant of the land',
+       E'After the war Yahuah appears again and renews the promise of seed and land: *At that time Yahuah (the Lord) again appeared to Abram in Hebron, and he said to him, Do not fear, your reward is very great before me, for I will not leave you, until I shall have multiplied you, and blessed you and made your seed like the stars in heaven, which cannot be measured nor numbered* (Jasher 16:20), *And I will give to your seed all these lands that you see with your eyes, to them will I give them for an inheritance forever, only be strong and do not fear, walk before me and be perfect* (Jasher 16:21). This is the vision of Genesis 15. The canon''s word and the star-promise stand on the page — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be* (Genesis 15:5) — and the land-grant — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18). The seed is election kept, not earned — *For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness* (Romans 4:3). Jubilees holds the same star-vision and reckoning (Jubilees 14:5). The chosen line is multiplied and the land given for an inheritance forever; it ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55384
+  FROM _session252_ja16_lookup sv, _session252_ja16_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=20
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=16 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-16-hagar-ishmael',
+       E'Sarai gives Hagar — the bondwoman and Ishmael',
+       E'Sarai being barren, she gives her handmaid to Abram: *And Sarai said to Abram, Behold here is my handmaid Hagar, go to her that she may bring forth upon my knees, that I may also obtain children through her* (Jasher 16:26), and at the well the angel turns the fleeing Hagar back — *And an angel of Yahuah (the Lord) found her in the place where she had fled, by a well, and he said to her, Do not fear, for I will multiply your seed, for you shall bear a son and you shall call his name Ishmael; now then return to Sarai your mistress, and submit thyself under her hands* (Jasher 16:34). This is Genesis 16. The canon gives Sarai''s same proposal — *And Sarai said unto Abram, Behold now, Yahuah (LORD) hath restrained me from bearing: I pray thee, go in unto my maid; it may be that I may obtain children by her. And Abram hearkened to the voice of Sarai* (Genesis 16:2) — and the angel''s same word at the well — *And the angel of Yahuah (LORD) said unto her, Return to thy mistress, and submit thyself under her hands* (Genesis 16:9) — naming the son for the affliction heard — *and shalt call his name Ishmael; because Yahuah (LORD) hath heard thy affliction* (Genesis 16:11). Paul reads the two sons as the figure of bondage and freedom — *For it is written, that Abraham had two sons, the one by a bondmaid, the other by a freewoman* (Galatians 4:22). Jubilees keeps the same handmaid and the same naming (Jubilees 14:24). It ain''t new.',
+       sv.verse_id, ev.verse_id, 'extras', 55387
+  FROM _session252_ja16_lookup sv, _session252_ja16_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=23
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=16 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-16-war-of-kings-lot-rescued
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 14:2 — *That these made war with Bera king of Sodom, and with Birsha king of Gomorrah, Shinab king of Admah, and Shemeber king of Zeboiim, and the king of Bela, which is Zoar.* The canon names the very five kings of Sodom Jasher 16:3 gathers in the valley of Siddim.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-war-of-kings-lot-rescued'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 14:12 — *And they took Lot, Abram’s brother’s son, who dwelt in Sodom, and his goods, and departed.* This is the captivity of Lot that Jasher 16:6 reports through Unic, Abram''s servant who saw the battle.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-war-of-kings-lot-rescued'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 14:14 — *And when Abram heard that his brother was taken captive, he armed his trained servants, born in his own house, three hundred and eighteen, and pursued them unto Dan.* The same three hundred and eighteen men of Abram''s household that Jasher 16:7 musters for the night pursuit.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-war-of-kings-lot-rescued'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 13:23 — *And they took captive Sodom and Adam and Zeboim, and they took captive Lot also, the son of Abram’s brother, and all his possessions, and they went to Dan.* Jubilees retells the identical capture of Lot, confirming Jasher 16:6 across the patriarchal record.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-war-of-kings-lot-rescued'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-16-melchizedek-shem-tithe
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 14:18 — *And Melek Tsadiq (Melchizedek) king of Salem brought forth bread and wine: and he was the priest of the El Elyon (most high God).* The same priest-king with bread and wine whom Jasher 16:11 identifies as Shem, king of Jerusalem.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-melchizedek-shem-tithe'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Hebrews 7:3 — *Without father, without mother, without descent, having neither beginning of days, nor end of life; but made like unto the Son of Elohim (God); abideth a priest continually.* The priesthood before Elohim that Jasher 16:12 honors is read as the abiding order foreshadowing the Messiah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-melchizedek-shem-tithe'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 110:4 — *Yahuah (LORD) hath sworn, and will not repent, Thou art a priest for ever after the order of Melek Tsadiq (Melchizedek).* The tithe Abram pays this priest in Jasher 16:12 is the order the Messiah will hold for ever.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-melchizedek-shem-tithe'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-16-not-a-thread-no-spoil
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 14:23 — *That I will not take from a thread even to a shoelatchet, and that I will not take any thing that is thine, lest thou shouldest say, I have made Abram rich.* The very oath Abram swears in Jasher 16:16, refusing a thread or shoetie of Sodom''s spoil.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-not-a-thread-no-spoil'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 14:24 — *Save only that which the young men have eaten, and the portion of the men which went with me, Aner, Eshcol, and Mamre; let them take their portion.* The same exception Jasher 16:16 makes for the food and for Anar, Ashcol, and Mamre.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-not-a-thread-no-spoil'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 13:29 — *I lift up my hands to the El Elyon (Most High) Elohim (God), that from a thread to a shoe-latchet I shall not take aught that is your, lest you should say I have made Abram rich; save only what the young men have eaten, and the portion of the men who went with me–Aner, Eschol, and Mamre.* Jubilees renders Abram''s refusal in Jasher 16:16 with the same thread-to-shoe-latchet oath.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-not-a-thread-no-spoil'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=13 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-16-seed-as-stars-covenant-land
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 15:5 — *And he brought him forth abroad, and said, Look now toward heaven, and tell the stars, if thou be able to number them: and he said unto him, So shall thy seed be.* The star-promise that cannot be measured nor numbered, exactly as Jasher 16:20 renews it in Hebron.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-seed-as-stars-covenant-land'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 15:18 — *In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates.* The covenant of the land for an inheritance forever that Jasher 16:21 promises to Abram''s seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-seed-as-stars-covenant-land'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 4:3 — *For what saith the scripture? Abraham believed Elohim (God), and it was counted unto him for righteousness.* The faith that receives the star-promise of Jasher 16:20 is election counted as righteousness, not works.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-seed-as-stars-covenant-land'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 14:5 — *And he looked toward heaven, and beheld the stars. And He said to him: “So shall your seed be.”* Jubilees carries the same seed-as-stars vision that Jasher 16:20 sets in Hebron.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-seed-as-stars-covenant-land'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=20
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-16-hagar-ishmael
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 16:2 — *And Sarai said unto Abram, Behold now, Yahuah (LORD) hath restrained me from bearing: I pray thee, go in unto my maid; it may be that I may obtain children by her. And Abram hearkened to the voice of Sarai.* The canon''s form of Sarai''s proposal that Jasher 16:26 records, to obtain children through Hagar.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-hagar-ishmael'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=16 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 16:9 — *And the angel of Yahuah (LORD) said unto her, Return to thy mistress, and submit thyself under her hands.* The angel''s same charge to the fleeing Hagar that Jasher 16:34 gives at the well.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-hagar-ishmael'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=16 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 16:11 — *And the angel of Yahuah (LORD) said unto her, Behold, thou art with child, and shalt bear a son, and shalt call his name Ishmael; because Yahuah (LORD) hath heard thy affliction.* The naming of Ishmael the angel announces in Jasher 16:34, the son of the affliction heard.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-hagar-ishmael'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=34
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=16 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Galatians 4:22 — *For it is written, that Abraham had two sons, the one by a bondmaid, the other by a freewoman.* Paul''s reading of the bondwoman''s son begun in Jasher 16:24, where Hagar is given to Abram for a wife.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-hagar-ishmael'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 14:24 — *And he went in to her, and she conceived and bare him a son, and he called his name Ishmael, in the fifth year of this week; and this was the eighty-sixth year in the life of Abram.* Jubilees gives the same birth and the same eighty-sixth year of Abram''s life that Jasher 16:36 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja16_lookup sv, _session252_ja16_lookup tv
+ WHERE t.slug='jasher-16-hagar-ishmael'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=16 AND sv.verse_number=36
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=14 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session252 — Jasher cross-references complete.'
