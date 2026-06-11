@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import {
   predictFirstCrescent,
   type CrescentCriterion,
@@ -200,16 +200,29 @@ export default function Calendar() {
   const minuteBucket = Math.floor(now.getTime() / 60000);
   const today = useMemo(() => new Date(minuteBucket * 60000), [minuteBucket]);
 
-  const todayResult = useMemo(() => compute(reck, today), [reck, today]);
+  // INTERACTION RESPONSIVENESS: the engine is fast now (memoized astronomy),
+  // but a cold reckoning still costs ~100ms to recompute the whole grid + hero,
+  // and that runs synchronously in render — enough to swallow a tap on a slow
+  // device. Deferring the *inputs* to the heavy memos lets React paint the
+  // urgent UI first (the pressed pill flips, the modal opens) and recompute the
+  // grid in a follow-up render, so the tap always registers instantly and the
+  // result fills in a beat later instead of freezing. The control pills read the
+  // urgent `reck`/`base`/`focus`, so their pressed state is immediate; only the
+  // expensive derived views ride the deferred values.
+  const dReck = useDeferredValue(reck);
+  const dFocus = useDeferredValue(focus);
+  const dBase = useDeferredValue(base);
+
+  const todayResult = useMemo(() => compute(dReck, today), [dReck, today]);
   const grid = useMemo(
-    () => buildLayerGrid(reck, focus, today, base),
-    [reck, focus, today, base],
+    () => buildLayerGrid(dReck, dFocus, today, dBase),
+    [dReck, dFocus, today, dBase],
   );
 
   const todayCell = grid.cells.find((c) => c.isToday);
   const todayIsSabbath = !!todayCell?.morningSabbath;
   const nextMoed = todayResult.moedim[0];
-  const omer = useMemo(() => computeOmer(reck, today), [reck, today]);
+  const omer = useMemo(() => computeOmer(dReck, today), [dReck, today]);
 
   return (
     <div className="cal-root min-h-screen bg-[var(--reader-bg)] text-[var(--reader-text)]">
@@ -224,7 +237,7 @@ export default function Calendar() {
           nextMoed={nextMoed}
           omer={omer}
         />
-        <CrescentWatch reck={reck} result={todayResult} now={now} setReck={setReck} />
+        <CrescentWatch reck={dReck} result={todayResult} now={now} setReck={setReck} />
         <LayerGridView
           grid={grid}
           base={base}
@@ -235,7 +248,7 @@ export default function Calendar() {
           onSelect={setSelected}
         />
         <CompareSection
-          reck={reck}
+          reck={dReck}
           now={now}
           open={showCompare}
           onToggle={() => setShowCompare((v) => !v)}
