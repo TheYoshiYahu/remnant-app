@@ -1,0 +1,11 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 86,
+  "session": "session250",
+  "tag": "en86",
+  "base_band": 52125,
+  "threads": [],
+  "_blocked": true,
+  "_blocked_reason": "Source text for 1-enoch ch86 is CORRUPTED in source-texts/parsed/enoch.json. The stored chapter does NOT contain the genuine ch86 content (the Watchers' descent: a star falling from heaven, fallen stars becoming bulls, the giants born as elephants/camels/asses). Instead it holds: v1 = a ravens/lambs/sheep line that belongs to ch90's end-times movement; v2 = a single distinct (but misplaced) Animal-Apocalypse line about horns growing on lambs and ravens casting down their horns; v3-v10 = byte-for-byte duplicates of the v1 ravens line used as filler. Authoring Genesis-6 / Watchers cross-references onto this filler would produce false apparatus (prose describing the fallen-star descent while quoting a verse about ravens eating lambs). No threads built. Repair the ch86 source from a clean Charles edition (see Track B repair runbook), then re-run this minion."
+}
