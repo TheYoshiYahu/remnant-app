@@ -1,0 +1,180 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 2,
+  "session": "session250",
+  "tag": "en02",
+  "base_band": 50025,
+  "threads": [
+    {
+      "slug": "1-enoch-2-luminaries-appointed-order",
+      "title": "The luminaries transgress not their appointed order",
+      "summary_md": "Enoch begins the great exhortation by sending the eye upward: *Observe ye everything that takes place in the heaven, how they do not change their orbits, and the luminaries which are in the heaven, how they all rise and set in order each in its season, and transgress not against their appointed order.* (1 Enoch 2:1). It ain't new — this is Genesis 1's fourth day, where Yahuah set the lights *to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14). The prophets read the same heavens as a covenant decree: *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night* (Jeremiah 31:35); the Psalmist hears them preach, *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork* (Psalm 19:1); and Job is asked, *Knowest thou the ordinances of heaven?* (Job 38:33). Enoch will press the same summons again in the next chapter, *Observe ye how the trees cover themselves with green leaves and bear fruit; wherefore give ye heed and know with regard to all His works, and recognize how He that liveth for ever hath made them so* (1 Enoch 5:1). The Watchers transgressed their appointed order; the luminaries never do — the witness against the rebel is the obedient sky.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 1,
+          "tgt_v": 14,
+          "tier": "free",
+          "note": "Genesis 1:14 — *And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years:* The luminaries that Enoch watches rising and setting in season are the same fourth-day lights Yahuah appointed for signs and seasons and moedim."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 31,
+          "tgt_v": 35,
+          "tier": "free",
+          "note": "Jeremiah 31:35 — *Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva'ot (LORD of hosts) is his name:* Enoch's \"appointed order\" of sun, moon, and stars is exactly the fixed ordinance Jeremiah binds to Yahuah's name and to the endurance of Yashar'el."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 19,
+          "tgt_v": 1,
+          "tier": "free",
+          "note": "Psalm 19:1 — *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork.* The orbits that never change are the Psalmist's wordless sermon, preaching the Maker to everyone who will \"observe.\""
+        },
+        {
+          "src_ch": 2,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "job",
+          "tgt_ch": 38,
+          "tgt_v": 33,
+          "tier": "free",
+          "note": "Job 38:33 — *Knowest thou the ordinances of heaven? canst thou set the dominion thereof in the earth?* Yahuah's challenge to Job over the fixed ordinances of heaven is the very lesson Enoch draws — man did not appoint the order he is told to behold."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 1,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 5,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 5:1 — *Observe ye how the trees cover themselves with green leaves and bear fruit: wherefore give ye heed and know with regard to all His works, and recognize how He that liveth for ever hath made them so.* The same imperative \"observe\" carries through the exhortation — sky, earth, and tree all rebuke the rebel by their obedience."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-2-earth-steadfast-creation-obeys",
+      "title": "Behold the earth: the works of Elohim change not",
+      "summary_md": "Enoch turns the eye down: *Behold ye the earth, and give heed to the things which take place upon it from first to last, how steadfast they are, how none of the things upon earth change, but all the works of Elohim (God) appear to you.* (1 Enoch 2:2). The decree that holds them steadfast is the Psalmist's: *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* (Psalm 148:6). Ben Sira says the works keep ranks without rebellion — *None of them hindereth another, and they shall never disobey his word.* (Sirach 16:28) — and the indictment writes itself: the creation never disobeys, but man does. Jeremiah lays the irony bare, *Yea, the stork in the heaven knoweth her appointed times; and the turtle and the crane and the swallow observe the time of their coming; but my people know not the judgment of Yahuah (LORD).* (Jeremiah 8:7). Enoch makes the same contrast plain a chapter on, holding up the sea and rivers that *accomplish and change not their tasks from His commandments* (1 Enoch 5:3). Torah stands and the cosmos keeps it — the Watchers' sin was rebellion against this very order, not a flaw in the order itself.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 148,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Psalm 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* What Enoch calls \"how steadfast they are\" the Psalmist names a decree that shall not pass — the works of Elohim are fixed by command."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 8,
+          "tgt_v": 7,
+          "tier": "free",
+          "note": "Jeremiah 8:7 — *Yea, the stork in the heaven knoweth her appointed times; and the turtle and the crane and the swallow observe the time of their coming; but my people know not the judgment of Yahuah (LORD).* Enoch's \"none of the things upon earth change\" becomes Jeremiah's indictment: creation keeps its appointed times while the covenant people forget theirs."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 16,
+          "tgt_v": 28,
+          "tier": "extras",
+          "note": "Sirach 16:28 — *None of them hindereth another, and they shall never disobey his word.* Ben Sira makes Enoch's point exactly — the works of Elohim keep their ranks and never disobey, which is why their steadfastness testifies against every rebel."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 2,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 5,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "1 Enoch 5:3 — *And behold how the sea and the rivers in like manner accomplish and change not their tasks from His commandments.* Enoch's own next chapter adds sea and rivers to the unchanging earth, sharpening the exhortation toward the sinners who did change their way."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-2-summer-winter-appointed-seasons",
+      "title": "Summer and winter: the appointed seasons keep their times",
+      "summary_md": "The exhortation closes on the turning year: *Behold the summer and the winter, how the whole earth is filled with water, and clouds and dew and rain lie upon it.* (1 Enoch 2:3). This is the covenant Yahuah swore after the Flood — *While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease.* (Genesis 8:22) — the very judgement Enoch's book moves toward, yet the seasons it secures roll on undisturbed. The Psalmist ties the rhythm to the lights, *He appointed the moon for seasons: the sun knoweth his going down* (Psalm 104:19), and Jeremiah names the rain that fills the earth as Yahuah's faithful gift, the One *that giveth rain, both the former and the latter, in his season: he reserveth unto us the appointed weeks of the harvest* (Jeremiah 5:24). The extra-canonical witnesses say the same: the sun and moon were set *for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years* (Jubilees 2:9), and the moon serves *in her season for a declaration of times, and a sign of the world* (Sirach 43:6). The appointed times are not invented by men or by confession — they are written into the summer and winter, the moedim kept by the lights themselves.",
+      "anchor_start_v": 3,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 2,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 8,
+          "tgt_v": 22,
+          "tier": "free",
+          "note": "Genesis 8:22 — *While the earth remaineth, seedtime and harvest, and cold and heat, and summer and winter, and day and night shall not cease.* Enoch's \"summer and the winter\" is Yahuah's post-Flood oath that the seasons shall not cease — the steadfast order the rest of the book sets against the Watchers' rebellion."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "psalms",
+          "tgt_ch": 104,
+          "tgt_v": 19,
+          "tier": "free",
+          "note": "Psalm 104:19 — *He appointed the moon for seasons: the sun knoweth his going down.* The seasons Enoch tells the reader to behold are appointed by the lights, just as the Psalmist sings of the moon set for the moedim."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 3,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 5,
+          "tgt_v": 24,
+          "tier": "free",
+          "note": "Jeremiah 5:24 — *Neither say they in their heart, Let us now fear Yahuah Eloheinu (the LORD our God), that giveth rain, both the former and the latter, in his season: he reserveth unto us the appointed weeks of the harvest.* The clouds, dew, and rain that fill Enoch's earth are Jeremiah's former and latter rains, given in season by the One whom the people forget to fear."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 3,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 2,
+          "tgt_v": 9,
+          "tier": "extras",
+          "note": "Jubilees 2:9 — *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* Jubilees spells out what Enoch's summer and winter imply — the appointed times, feasts, and sabbaths are fixed by the lights, not by men."
+        },
+        {
+          "src_ch": 2,
+          "src_v": 3,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "ecclesiasticus",
+          "tgt_ch": 43,
+          "tgt_v": 6,
+          "tier": "extras",
+          "note": "Sirach 43:6 — *He made the moon also to serve in her season for a declaration of times, and a sign of the world.* Ben Sira joins Enoch's seasonal witness: the moon serves in her season as a declaration of times, the calendar God hung in the sky."
+        }
+      ]
+    }
+  ]
+}

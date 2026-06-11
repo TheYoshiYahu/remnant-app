@@ -1,0 +1,231 @@
+-- ----- fragment: minion_1enoch_05.sql (session250 1-enoch 5) -----
+-- Source anchor: enoch/1-enoch ch5. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: en05 (view _session250_en05_lookup). Sort band base 50100, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session250_en05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-enoch-5-ordinances-that-change-not
+  ('enoch', '1-enoch', 5, 3, 'canon', 'jeremiah', 5, 22, 'free', E'Jeremiah 5:22 — *Fear ye not me? saith Yahuah (LORD): will ye not tremble at my presence, which have placed the sand for the bound of the sea by a perpetual decree, that it cannot pass it: and though the waves thereof toss themselves, yet can they not prevail; though they roar, yet can they not pass over it?* The very sea and rivers that Enoch says change not their tasks are here held up by Yahuah as the bound that cannot pass His decree.'),
+  ('enoch', '1-enoch', 5, 2, 'canon', 'jeremiah', 33, 25, 'free', E'Jeremiah 33:25 — *Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth;* the same unbroken ordering of the works "from year to year for ever" is the surety Yahuah pledges for His covenant with His people.'),
+  ('enoch', '1-enoch', 5, 2, 'canon', 'psalms', 148, 6, 'free', E'Psalm 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* Enoch''s "according as Elohim (God) hath ordained so is it done" is this decree that the heavens cannot overstep.'),
+  ('enoch', '1-enoch', 5, 1, 'apocrypha', 'ecclesiasticus', 16, 28, 'extras', E'Ecclesiasticus 16:28 — *None of them hindereth another, and they shall never disobey his word.* Sirach makes the obedient creation the exact mirror Enoch holds up: the works never disobey, so the hard-hearted man stands self-condemned.'),
+  ('enoch', '1-enoch', 5, 2, 'jubilees', 'jubilees', 2, 9, 'extras', E'Jubilees 2:9 — *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* The tasks that "change not" are the appointed times themselves — the lights keep the moedim Yahuah ordained.'),
+  -- thread: 1-enoch-5-hard-hearted-find-no-peace
+  ('enoch', '1-enoch', 5, 4, 'canon', 'jeremiah', 5, 3, 'free', E'Jeremiah 5:3 — *O Yahuah (LORD), are not thine eyes upon the truth? thou hast stricken them, but they have not grieved; thou hast consumed them, but they have refused to receive correction: they have made their faces harder than a rock; they have refused to return.* Enoch''s "ye hard-hearted" who speak hard words is Jeremiah''s people whose faces are harder than rock.'),
+  ('enoch', '1-enoch', 5, 4, 'canon', 'isaiah', 48, 22, 'free', E'Isaiah 48:22 — *There is no peace, saith Yahuah (LORD), unto the wicked.* Enoch''s verdict on the hard-hearted, "ye shall find no peace," is the prophet''s standing sentence on the wicked.'),
+  ('enoch', '1-enoch', 5, 4, 'canon', 'isaiah', 57, 21, 'free', E'Isaiah 57:21 — *There is no peace, saith my Elohim (God), to the wicked.* The same refrain doubled — the no-peace pronounced over those who turned away from the commandments.'),
+  -- thread: 1-enoch-5-elect-granted-light-godless-too-late
+  ('enoch', '1-enoch', 5, 7, 'canon', 'isaiah', 60, 1, 'free', E'Isaiah 60:1 — *Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee.* The "light shall appear unto them" of the elect is the risen glory called over the regathered people of Yahuah.'),
+  ('enoch', '1-enoch', 5, 7, 'canon', 'malachi', 4, 2, 'free', E'Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* The peace and light granted to the elect rise as the Sun of righteousness on those who fear His name.'),
+  ('enoch', '1-enoch', 5, 6, 'apocrypha', 'the-wisdom-of-solomon', 2, 12, 'extras', E'Wisdom of Solomon 2:12 — *Therefore let us lie in wait for the righteous; because he is not for our turn, and he is clean contrary to our doings: he upbraideth us with our offending the law, and objecteth to our infamy the transgressings of our education.* These are Enoch''s godless who curse and imprecate by the righteous, plotting against the man whose keeping of the law reproves them.'),
+  ('enoch', '1-enoch', 5, 7, 'apocrypha', 'the-wisdom-of-solomon', 5, 6, 'extras', E'Wisdom of Solomon 5:6 — *Therefore have we erred from the way of truth, and the light of righteousness has not shined to us, and the sun of righteousness rose not upon us.* The light that appears unto the elect is the very light the godless confess, too late, never shined on them.'),
+  -- thread: 1-enoch-5-he-cometh-with-ten-thousands
+  ('enoch', '1-enoch', 5, 8, 'canon', 'jude', 1, 14, 'free', E'Jude 1:14 — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints,* the New Testament names Enoch and quotes this very verse — proof the apparatus is no new thing but canon''s own citation.'),
+  ('enoch', '1-enoch', 5, 8, 'canon', 'jude', 1, 15, 'free', E'Jude 1:15 — *To execute judgment upon all, and to convince all that are ungodly among them of all their ungodly deeds which they have ungodly committed, and of all their hard speeches which ungodly sinners have spoken against him.* The convicting of all flesh for ungodly works and hard words is Jude''s near-verbatim echo of Enoch 5:8.'),
+  ('enoch', '1-enoch', 5, 8, 'canon', 'deuteronomy', 33, 2, 'free', E'Deuteronomy 33:2 — *And he said, Yahuah (LORD) came from Sinai, and rose up from Seir unto them; he shined forth from mount Paran, and he came with ten thousands of saints: from his right hand went a fiery law for them.* The Judge who comes with ten thousands is the same who came to Sinai with the fiery law — Torah and judgement issue from one hand.'),
+  ('enoch', '1-enoch', 5, 8, 'enoch', '1-enoch', 1, 9, 'extras', E'1 Enoch 1:9 — *And behold! He cometh with ten thousands of His set-apart ones To execute judgement upon all, And to destroy all the ungodly: And to convict all flesh Of all the works of their ungodliness which they have ungodly committed, And of all the hard things which ungodly sinners have spoken against Him.* Enoch frames his prophecy with this advent twice over, and it is 1:9 that Jude quotes by name.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session250_en05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session250_en05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-5-ordinances-that-change-not',
+       E'The Works That Change Not Their Tasks',
+       E'Enoch turns the reader to the obedient creation as a witness against the disobedient: *Observe ye how the trees cover themselves with green leaves and bear fruit: wherefore give ye heed and know with regard to all His works, and recognize how He that liveth for ever hath made them so* (1 Enoch 5:1), and *all His works go on thus from year to year for ever... but according as Elohim (God) hath ordained so is it done* (1 Enoch 5:2), even the sea and rivers that *accomplish and change not their tasks from His commandments* (1 Enoch 5:3). The Tanakh sets the same fixed decree before us: Yahuah *placed the sand for the bound of the sea by a perpetual decree, that it cannot pass it* (Jeremiah 5:22), and binds His covenant with Yashar''el (Israel) to that same order — *If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth* (Jeremiah 33:25). The Psalm hears the command spoken: *for he commanded, and they were created. He hath also stablished them for ever and ever: he hath made a decree which shall not pass* (Psalm 148:5-6). The extra-canonical witnesses say it plainest of all — *None of them hindereth another, and they shall never disobey his word* (Ecclesiasticus 16:28) — and Jubilees grounds the lights themselves in the appointed times: *Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years* (Jubilees 2:9). Torah stands: the same Creator who fixed the seasons fixed the commandments, and the creation that keeps its order shames the man who will not keep his.',
+       sv.verse_id, ev.verse_id, 'extras', 50100
+  FROM _session250_en05_lookup sv, _session250_en05_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=5 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-5-hard-hearted-find-no-peace',
+       E'Hard Words, Hard Hearts, No Peace',
+       E'Against the creation that never disobeys, Enoch sets the rebel: *But ye—ye have not been steadfast, nor done the commandments of Yahuah (God), but ye have turned away and spoken proud and hard words with your impure mouths against His greatness. Oh, ye hard-hearted, ye shall find no peace* (1 Enoch 5:4). The sin is not weakness but the deliberate breaking of the commandments — the Watchers'' same rebellion against the Creator''s order, now in human mouths. Jeremiah indicts exactly this hardness: *they have made their faces harder than a rock; they have refused to return* (Jeremiah 5:3). And the verdict "ye shall find no peace" is the very sentence the prophets pronounce twice over: *There is no peace, saith Yahuah (LORD), unto the wicked* (Isaiah 48:22) and again *There is no peace, saith my Elohim (God), to the wicked* (Isaiah 57:21). Torah is never the curse here; the curse is for forsaking it. The man who will not do the commandments has cut himself off from the peace the creation keeps.',
+       sv.verse_id, ev.verse_id, 'extras', 50103
+  FROM _session250_en05_lookup sv, _session250_en05_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=5 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-5-elect-granted-light-godless-too-late',
+       E'Light for the Elect, the Godless Cursed by Their Own Name',
+       E'Enoch divides the two ends. The rebels'' names become *an eternal execration unto all the righteous, and by you shall the godless be cursed* (1 Enoch 5:6), while *to the righteous and holy He will grant peace, and He will protect the elect, and compassion shall be upon them; and they shall all belong to Elohim (God)... and light shall appear unto them, and He will make peace with them* (1 Enoch 5:7). This is election before confession — "the elect" are protected as a people already His, not a class that selects itself. The Tanakh promise of light to the gathered ones answers it: *Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee* (Isaiah 60:1), and to those who fear His name *shall the Sun of righteousness arise with healing in his wings* (Malachi 4:2). The Wisdom of Solomon dramatizes both halves in one scene — first the godless plotting against the righteous man (*Therefore let us lie in wait for the righteous; because he is not for our turn, and he is clean contrary to our doings* — Wisdom 2:12), then their late and useless confession when they see his vindication: *Therefore have we erred from the way of truth, and the light of righteousness has not shined to us, and the sun of righteousness rose not upon us* (Wisdom 5:6). The very light Enoch says appears unto the elect is the light the godless confess, too late, never shined on them.',
+       sv.verse_id, ev.verse_id, 'extras', 50106
+  FROM _session250_en05_lookup sv, _session250_en05_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=5 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-enoch-5-he-cometh-with-ten-thousands',
+       E'He Cometh With Ten Thousands of His Set-Apart Ones',
+       E'Chapter 5 closes on the theophany of judgement: *And behold! He cometh with ten thousands of His set-apart ones to execute judgement upon all, and to destroy all the ungodly: and to convict all flesh of all the works of their ungodliness which they have ungodly committed, and of all the hard things which ungodly sinners have spoken against Him* (1 Enoch 5:8). It Ain''t New — Jude lifts this line almost word for word and names its author: *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints, To execute judgment upon all, and to convince all that are ungodly among them of all their ungodly deeds which they have ungodly committed, and of all their hard speeches which ungodly sinners have spoken against him* (Jude 1:14-15). The same coming-with-myriads stands at Sinai in the Torah: *Yahuah (LORD) came from Sinai, and rose up from Seir unto them; he shined forth from mount Paran, and he came with ten thousands of saints: from his right hand went a fiery law for them* (Deuteronomy 33:2) — the Lawgiver and the Judge are one. And Enoch himself has already spoken this verse once, almost identically: *And behold! He cometh with ten thousands of His set-apart ones To execute judgement upon all* (1 Enoch 1:9), framing the whole Book of Watchers with the advent of the One who judges the Watchers'' rebellion and all who spoke hard words against Him.',
+       sv.verse_id, ev.verse_id, 'extras', 50109
+  FROM _session250_en05_lookup sv, _session250_en05_lookup ev
+ WHERE sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=8
+   AND ev.edition_slug='enoch' AND ev.book_slug='1-enoch' AND ev.chapter_number=5 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-enoch-5-ordinances-that-change-not
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 5:22 — *Fear ye not me? saith Yahuah (LORD): will ye not tremble at my presence, which have placed the sand for the bound of the sea by a perpetual decree, that it cannot pass it: and though the waves thereof toss themselves, yet can they not prevail; though they roar, yet can they not pass over it?* The very sea and rivers that Enoch says change not their tasks are here held up by Yahuah as the bound that cannot pass His decree.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-ordinances-that-change-not'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=5 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 33:25 — *Thus saith Yahuah (LORD); If my covenant be not with day and night, and if I have not appointed the ordinances of heaven and earth;* the same unbroken ordering of the works "from year to year for ever" is the surety Yahuah pledges for His covenant with His people.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-ordinances-that-change-not'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=33 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 148:6 — *He hath also stablished them for ever and ever: he hath made a decree which shall not pass.* Enoch''s "according as Elohim (God) hath ordained so is it done" is this decree that the heavens cannot overstep.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-ordinances-that-change-not'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=148 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ecclesiasticus 16:28 — *None of them hindereth another, and they shall never disobey his word.* Sirach makes the obedient creation the exact mirror Enoch holds up: the works never disobey, so the hard-hearted man stands self-condemned.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-ordinances-that-change-not'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=16 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 2:9 — *And Elohim (God) appointed the sun to be a great sign on the earth for days and for sabbaths and for months and for feasts and for years and for sabbaths of years and for jubilees and for all seasons of the years.* The tasks that "change not" are the appointed times themselves — the lights keep the moedim Yahuah ordained.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-ordinances-that-change-not'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=2
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=2 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-5-hard-hearted-find-no-peace
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 5:3 — *O Yahuah (LORD), are not thine eyes upon the truth? thou hast stricken them, but they have not grieved; thou hast consumed them, but they have refused to receive correction: they have made their faces harder than a rock; they have refused to return.* Enoch''s "ye hard-hearted" who speak hard words is Jeremiah''s people whose faces are harder than rock.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-hard-hearted-find-no-peace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=5 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 48:22 — *There is no peace, saith Yahuah (LORD), unto the wicked.* Enoch''s verdict on the hard-hearted, "ye shall find no peace," is the prophet''s standing sentence on the wicked.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-hard-hearted-find-no-peace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=48 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 57:21 — *There is no peace, saith my Elohim (God), to the wicked.* The same refrain doubled — the no-peace pronounced over those who turned away from the commandments.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-hard-hearted-find-no-peace'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=57 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-5-elect-granted-light-godless-too-late
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 60:1 — *Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee.* The "light shall appear unto them" of the elect is the risen glory called over the regathered people of Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-elect-granted-light-godless-too-late'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Malachi 4:2 — *But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall.* The peace and light granted to the elect rise as the Sun of righteousness on those who fear His name.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-elect-granted-light-godless-too-late'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Wisdom of Solomon 2:12 — *Therefore let us lie in wait for the righteous; because he is not for our turn, and he is clean contrary to our doings: he upbraideth us with our offending the law, and objecteth to our infamy the transgressings of our education.* These are Enoch''s godless who curse and imprecate by the righteous, plotting against the man whose keeping of the law reproves them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-elect-granted-light-godless-too-late'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=2 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 5:6 — *Therefore have we erred from the way of truth, and the light of righteousness has not shined to us, and the sun of righteousness rose not upon us.* The light that appears unto the elect is the very light the godless confess, too late, never shined on them.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-elect-granted-light-godless-too-late'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-enoch-5-he-cometh-with-ten-thousands
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jude 1:14 — *And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, Yahuah (Lord) cometh with ten thousands of his saints,* the New Testament names Enoch and quotes this very verse — proof the apparatus is no new thing but canon''s own citation.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-he-cometh-with-ten-thousands'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jude 1:15 — *To execute judgment upon all, and to convince all that are ungodly among them of all their ungodly deeds which they have ungodly committed, and of all their hard speeches which ungodly sinners have spoken against him.* The convicting of all flesh for ungodly works and hard words is Jude''s near-verbatim echo of Enoch 5:8.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-he-cometh-with-ten-thousands'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 33:2 — *And he said, Yahuah (LORD) came from Sinai, and rose up from Seir unto them; he shined forth from mount Paran, and he came with ten thousands of saints: from his right hand went a fiery law for them.* The Judge who comes with ten thousands is the same who came to Sinai with the fiery law — Torah and judgement issue from one hand.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-he-cometh-with-ten-thousands'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Enoch 1:9 — *And behold! He cometh with ten thousands of His set-apart ones To execute judgement upon all, And to destroy all the ungodly: And to convict all flesh Of all the works of their ungodliness which they have ungodly committed, And of all the hard things which ungodly sinners have spoken against Him.* Enoch frames his prophecy with this advent twice over, and it is 1:9 that Jude quotes by name.'
+  FROM cross_reference_threads t, cross_references x, _session250_en05_lookup sv, _session250_en05_lookup tv
+ WHERE t.slug='1-enoch-5-he-cometh-with-ten-thousands'
+   AND sv.edition_slug='enoch' AND sv.book_slug='1-enoch' AND sv.chapter_number=5 AND sv.verse_number=8
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=1 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+

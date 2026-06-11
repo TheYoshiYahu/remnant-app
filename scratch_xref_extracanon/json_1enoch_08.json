@@ -1,0 +1,190 @@
+{
+  "edition": "enoch",
+  "book": "1-enoch",
+  "chapter": 8,
+  "session": "session250",
+  "tag": "en08",
+  "base_band": 50175,
+  "threads": [
+    {
+      "slug": "1-enoch-8-azazel-craft-and-adornment",
+      "title": "Azâzêl's forbidden craft — weapons, metals, and painted eyes",
+      "summary_md": "Enoch names the first teacher of war and vanity: *And Azâzêl taught men to make swords, and knives, and shields, and breastplates, and made known to them the metals of the earth and the art of working them, and bracelets, and ornaments, and the use of antimony, and the beautifying of the eyelids, and all kinds of costly stones, and all colouring tinctures.* (1 Enoch 8:1). This is no neutral arts-and-crafts; it is rebellion against the Creator's order — the instruments of bloodshed and the apparatus of seduction handed down together. The Tanakh remembers the painted eye as the harlot's mark: Jezebel *painted her face, and tired her head, and looked out at a window* (2 Kings 9:30); the prophet rebukes the city that *rentest thy face with painting* (Jeremiah 4:30); and Oholibah for whom men came when *thou didst wash thyself, paintedst thy eyes, and deckedst thyself with ornaments* (Ezekiel 23:40). The Wisdom of Solomon traces the worship of the work of hands back to this same fount, *the devising of idols was the beginning of spiritual fornication, and the invention of them the corruption of life* (The Wisdom of Solomon 14:12) — the antimony, the costly stones, the colouring tinctures of Enoch 8:1 are the seedbed of that fornication. Torah stands: the abomination is the rebellion, not the metal — the same hands that could have built the tabernacle were taught instead to forge the sword.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 1,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "2-kings",
+          "tgt_ch": 9,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "2 Kings 9:30 — *And when Jehu was come to Jezreel, Jezebel heard of it; and she painted her face, and tired her head, and looked out at a window.* The painting of the face and the beautifying of the eyelids that Azâzêl taught in 1 Enoch 8:1 becomes the mark of the harlot-queen at the window."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 4,
+          "tgt_v": 30,
+          "tier": "free",
+          "note": "Jeremiah 4:30 — *And when thou art spoiled, what wilt thou do? Though thou clothest thyself with crimson, though thou deckest thee with ornaments of gold, though thou rentest thy face with painting, in vain shalt thou make thyself fair; thy lovers will despise thee, they will seek thy life.* The ornaments of gold and the painting of the face that the Watcher taught in 1 Enoch 8:1 cannot save the spoiled city."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "ezekiel",
+          "tgt_ch": 23,
+          "tgt_v": 40,
+          "tier": "free",
+          "note": "Ezekiel 23:40 — *And furthermore, that ye have sent for men to come from far, unto whom a messenger was sent; and, lo, they came: for whom thou didst wash thyself, paintedst thy eyes, and deckedst thyself with ornaments,* — the painted eyes and the ornaments Azâzêl handed down in 1 Enoch 8:1 are here the dress of covenant-breaking adultery."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 1,
+          "tgt_edition": "apocrypha",
+          "tgt_book": "the-wisdom-of-solomon",
+          "tgt_ch": 14,
+          "tgt_v": 12,
+          "tier": "extras",
+          "note": "The Wisdom of Solomon 14:12 — *For the devising of idols was the beginning of spiritual fornication, and the invention of them the corruption of life.* The costly stones and colouring tinctures Azâzêl taught in 1 Enoch 8:1 are the very craft Wisdom names as the beginning of spiritual fornication."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-8-forbidden-arts-divination",
+      "title": "Enchantments, root-cuttings, and the reading of the heavens",
+      "summary_md": "The roll of the Watchers' schools is the roll of every forbidden art Torah will later forbid by name: *Semjâzâ taught enchantments, and root-cuttings, Armârôs the resolving of enchantments, Barâqîjâl taught astrology, Kôkabêl the constellations, Ezêqêêl the knowledge of the clouds, Araqiêl the signs of the earth, Shamsiêl the signs of the sun, and Sariêl the course of the moon.* (1 Enoch 8:2). The covenant draws the line straight through this list: *There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch,* (Deuteronomy 18:10) — the enchanter and the observer of times are the disciples of Semjâzâ and the star-readers. The prophet sets the sign-reading apart from the fear of the Creator: *Thus saith Yahuah (LORD), Learn not the way of the heathen, and be not dismayed at the signs of heaven; for the heathen are dismayed at them.* (Jeremiah 10:2). And Jubilees remembers this exact lore as the Watchers' own surviving tablet: *And he found a writing which former (generations) had carved on the rock, and he read what was thereon, and he transcribed it and sinned owing to it; for it contained the teaching of the Watchers in accordance with which they used to observe the omens of the sun and moon and stars in all the signs of heaven.* (Jubilees 8:3) — the astrology, the signs of the sun, the course of the moon of Enoch 8:2 carried down on a carved rock. It ain't new: what Enoch names, Moses forbids and Jubilees traces.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "deuteronomy",
+          "tgt_ch": 18,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Deuteronomy 18:10 — *There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch,* — Torah forbids by name the enchantments and observing-of-times that Semjâzâ and his fellows teach in 1 Enoch 8:2."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "jeremiah",
+          "tgt_ch": 10,
+          "tgt_v": 2,
+          "tier": "free",
+          "note": "Jeremiah 10:2 — *Thus saith Yahuah (LORD), Learn not the way of the heathen, and be not dismayed at the signs of heaven; for the heathen are dismayed at them.* The astrology and the signs of the sun and moon that the Watchers teach in 1 Enoch 8:2 are exactly the signs of heaven the prophet warns Yashar'el not to learn."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 2,
+          "tgt_edition": "jubilees",
+          "tgt_book": "jubilees",
+          "tgt_ch": 8,
+          "tgt_v": 3,
+          "tier": "extras",
+          "note": "Jubilees 8:3 — *And he found a writing which former (generations) had carved on the rock, and he read what was thereon, and he transcribed it and sinned owing to it; for it contained the teaching of the Watchers in accordance with which they used to observe the omens of the sun and moon and stars in all the signs of heaven.* Jubilees traces the very star-lore of 1 Enoch 8:2 to a surviving Watcher-tablet that re-corrupted men after the Flood."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-8-watchers-corruption-of-flesh",
+      "title": "Much godlessness — the Watchers' rebellion and Genesis 6",
+      "summary_md": "Enoch sums the fruit of the descent: *And there arose much godlessness, and they committed fornication, and they were led astray, and became corrupt in all their ways.* (1 Enoch 8:2). This is the canon's own Genesis 6 read from the inside — the same corruption the LORD will judge in the Flood: *And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually.* (Genesis 6:5), for *all flesh had corrupted his way upon the earth* (Genesis 6:12). The New Testament carries the Watchers forward unbroken: Jude remembers *the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* (Jude 1:6), and Peter that *Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment* (2 Peter 2:4). Enoch's own previous chapter set the scene the apostles inherit: *And all the others together with them took unto themselves wives... and they taught them charms and enchantments, and the cutting of roots, and made them acquainted with plants.* (1 Enoch 7:1). The seed-war — tares sown among the wheat — runs from this rebellion against the Creator's order; the sin is the Watchers' lawlessness, and the Flood is the judgement for breaking the covenant of creation.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 5,
+          "tier": "free",
+          "note": "Genesis 6:5 — *And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually.* The much godlessness and corruption of all ways in 1 Enoch 8:2 is the very wickedness Genesis names as the cause of the Flood."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 6,
+          "tgt_v": 12,
+          "tier": "free",
+          "note": "Genesis 6:12 — *And Elohim (God) looked upon the earth, and, behold, it was corrupt; for all flesh had corrupted his way upon the earth.* The becoming-corrupt-in-all-their-ways of 1 Enoch 8:2 is Genesis's all flesh corrupting its way."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "jude",
+          "tgt_ch": 1,
+          "tgt_v": 6,
+          "tier": "free",
+          "note": "Jude 1:6 — *And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains under darkness unto the judgment of the great day.* Jude carries the Watchers of 1 Enoch 8 forward by name — the rebel angels reserved in chains for judgement."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 1,
+          "tgt_edition": "canon",
+          "tgt_book": "2-peter",
+          "tgt_ch": 2,
+          "tgt_v": 4,
+          "tier": "free",
+          "note": "2 Peter 2:4 — *For if Elohim (God) spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;* Peter binds the sinning angels of 1 Enoch 8 to their chains of darkness, reserved for the day of judgement."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 1,
+          "tgt_edition": "enoch",
+          "tgt_book": "1-enoch",
+          "tgt_ch": 7,
+          "tgt_v": 1,
+          "tier": "extras",
+          "note": "1 Enoch 7:1 — *And all the others together with them took unto themselves wives, and each chose for himself one, and they began to go in unto them and to defile themselves with them, and they taught them charms and enchantments, and the cutting of roots, and made them acquainted with plants.* The teaching of forbidden arts that erupts in 1 Enoch 8:1-2 began in the previous chapter with the Watchers' defiling descent."
+        }
+      ]
+    },
+    {
+      "slug": "1-enoch-8-cry-went-up-to-heaven",
+      "title": "And their cry went up to heaven",
+      "summary_md": "The chapter ends with the voice of the devoured: *And as men perished, they cried, and their cry went up to heaven.* (1 Enoch 8:2). This cry is the canon's recurring witness that the blood of the oppressed is heard above. From the first murder: *And he said, What hast thou done? the voice of thy brother's blood crieth unto me from the ground.* (Genesis 4:10) — Abel's blood cries from the very earth the giants defiled. And in the bondage of Egypt the same ascent: *And it came to pass in process of time, that the king of Egypt died: and the children of Yashar'el (Israel) sighed by reason of the bondage, and they cried, and their cry came up unto Elohim (God) by reason of the bondage.* (Exodus 2:23) — the cry that comes up unto Elohim is the cry that will be answered with deliverance and judgement. So here, the cry of those perishing under the Watchers' violence rises to heaven, and the next chapters of Enoch will show the holy angels carrying that cry before the Most High. The victims, not the systems, are heard; the dismantling that follows is of the rebellion, and the gathering of the righteous is the answer to the cry.",
+      "anchor_start_v": 2,
+      "anchor_end_v": 2,
+      "tier": "extras",
+      "members": [
+        {
+          "src_ch": 8,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "genesis",
+          "tgt_ch": 4,
+          "tgt_v": 10,
+          "tier": "free",
+          "note": "Genesis 4:10 — *And he said, What hast thou done? the voice of thy brother's blood crieth unto me from the ground.* The cry of those perishing that goes up to heaven in 1 Enoch 8:2 is the same cry of innocent blood that the LORD hears from the ground."
+        },
+        {
+          "src_ch": 8,
+          "src_v": 2,
+          "tgt_edition": "canon",
+          "tgt_book": "exodus",
+          "tgt_ch": 2,
+          "tgt_v": 23,
+          "tier": "free",
+          "note": "Exodus 2:23 — *And it came to pass in process of time, that the king of Egypt died: and the children of Yashar'el (Israel) sighed by reason of the bondage, and they cried, and their cry came up unto Elohim (God) by reason of the bondage.* The cry going up to heaven in 1 Enoch 8:2 is the same cry of the oppressed that comes up unto Elohim and moves Him to deliver."
+        }
+      ]
+    }
+  ]
+}
