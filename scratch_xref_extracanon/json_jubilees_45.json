@@ -1,0 +1,94 @@
+{
+  "edition": "jubilees",
+  "book": "jubilees",
+  "chapter": 45,
+  "session": "session251",
+  "tag": "ju45",
+  "base_band": 54100,
+  "threads": [
+    {
+      "slug": "jubilees-45-goshen-reunion",
+      "title": "Israel comes down to Goshen — \"now let me die since I have seen you\"",
+      "summary_md": "Jubilees retells the reunion of father and son word for word from Genesis: *And Joseph went to meet his father Jacob, to the land of Goshen, and he fell on his father’s neck and wept* (Jubilees 45:2), and the old man's cry, *Now let me die since I have seen you* (Jubilees 45:3). It ain't new — this is Genesis spoken back: *And Joseph made ready his chariot, and went up to meet Yashar'el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while* (Genesis 46:29), and *And Yashar'el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive* (Genesis 46:30). The seed that was carried down into Egypt now settles in the best of the land — *And Yashar'el (Israel) dwelt in the land of Egypt, in the country of Goshen; and they had possessions therein, and grew, and multiplied exceedingly* (Genesis 47:27) — the multiplying that the closing chapters of Jubilees keep before us.",
+      "anchor_start_v": 1,
+      "anchor_end_v": 3,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 45, "src_v": 1, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 46, "tgt_v": 28, "tier": "free",
+         "note": "Genesis 46:28 — *And he sent Yahudah (Judah) before him unto Joseph, to direct his face unto Goshen; and they came into the land of Goshen.* Jubilees 45:1 opens with Israel entering the land of Goshen exactly as Genesis sends Judah ahead to mark the way."},
+        {"src_ch": 45, "src_v": 2, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 46, "tgt_v": 29, "tier": "free",
+         "note": "Genesis 46:29 — *And Joseph made ready his chariot, and went up to meet Yashar'el (Israel) his father, to Goshen, and presented himself unto him; and he fell on his neck, and wept on his neck a good while.* This is the very scene Jubilees 45:2 retells — Joseph falling on his father's neck and weeping."},
+        {"src_ch": 45, "src_v": 3, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 46, "tgt_v": 30, "tier": "free",
+         "note": "Genesis 46:30 — *And Yashar'el (Israel) said unto Joseph, Now let me die, since I have seen thy face, because thou art yet alive.* Jubilees 45:3 quotes Israel's cry verbatim, the rejected-then-exalted son restored alive to his father."}
+      ]
+    },
+    {
+      "slug": "jubilees-45-jacob-before-pharaoh-bethel",
+      "title": "Jacob before Pharaoh, dwelling in Rameses — the Bethel vision come true",
+      "summary_md": "Jubilees grounds Israel's settling in Egypt and Jacob's confidence in the promise. *It is enough for me that I have seen your face whilst I am yet alive; yea, true is the vision which I saw at Bethel* (Jubilees 45:4) — the old man reads his life by the covenant word given at Bethel. *And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed* (Genesis 28:13), and *And thy seed shall be as the dust of the earth, and thou shalt spread abroad to the west, and to the east, and to the north, and to the south* (Genesis 28:14) — the seed-multiplying promise is exactly what Goshen begins to fulfill. The dwelling-place of Jubilees 45:6 is Genesis 47: *And Joseph placed his father and his brethren, and gave them a possession in the land of Egypt, in the best of the land, in the land of Rameses, as Pharaoh had commanded* (Genesis 47:11), and Jacob standing before Pharaoh to bless him — *And Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh* (Genesis 47:7).",
+      "anchor_start_v": 4,
+      "anchor_end_v": 6,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 45, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 28, "tgt_v": 13, "tier": "free",
+         "note": "Genesis 28:13 — *And, behold, Yahuah (LORD) stood above it, and said, I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed.* The Bethel vision Jacob recalls as \"true\" in Jubilees 45:4 is this covenant word given to him over the ladder."},
+        {"src_ch": 45, "src_v": 4, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 28, "tgt_v": 14, "tier": "free",
+         "note": "Genesis 28:14 — *And thy seed shall be as the dust of the earth, and thou shalt spread abroad to the west, and to the east, and to the north, and to the south: and in thee and in thy seed shall all the families of the earth be blessed.* The seed-multiplying promise of Bethel, which Jubilees 45:4 calls a true vision, is the very increase the Goshen chapter sets in motion."},
+        {"src_ch": 45, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 47, "tgt_v": 7, "tier": "free",
+         "note": "Genesis 47:7 — *And Joseph brought in Jacob his father, and set him before Pharaoh: and Jacob blessed Pharaoh.* Jubilees 45:6 places Israel and his sons in Goshen by Joseph's grant; Genesis adds the patriarch blessing the king of Egypt before settling there."},
+        {"src_ch": 45, "src_v": 6, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 47, "tgt_v": 11, "tier": "free",
+         "note": "Genesis 47:11 — *And Joseph placed his father and his brethren, and gave them a possession in the land of Egypt, in the best of the land, in the land of Rameses, as Pharaoh had commanded.* Jubilees 45:6 names Goshen and Rameses as the best part of Egypt — the same grant Genesis records."}
+      ]
+    },
+    {
+      "slug": "jubilees-45-famine-fifth-part-ordinance",
+      "title": "Joseph and the famine — the land to Pharaoh, the fifth-part ordinance",
+      "summary_md": "Jubilees compresses the whole famine economy of Genesis 47 into a few verses. *And the land of Egypt suffered by reason of the famine, and Joseph acquired all the land of Egypt for Pharaoh in return for food* (Jubilees 45:8) — *And Joseph bought all the land of Egypt for Pharaoh; for the Egyptians sold every man his field, because the famine prevailed over them: so the land became Pharaoh’s* (Genesis 47:20). And the lasting statute: *And Joseph took of the corn of the harvest the fifth part for the king and left four parts for them for food and for seed, and Joseph made it an ordinance for the land of Egypt until this day* (Jubilees 45:11) — Genesis says the same: *And it shall come to pass in the increase, that ye shall give the fifth part unto Pharaoh, and four parts shall be your own, for seed of the field, and for your food* (Genesis 47:24), and *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part* (Genesis 47:26). The rejected brother now feeds the world and keeps the seed alive — \"it ain't new.\"",
+      "anchor_start_v": 8,
+      "anchor_end_v": 11,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 45, "src_v": 8, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 47, "tgt_v": 20, "tier": "free",
+         "note": "Genesis 47:20 — *And Joseph bought all the land of Egypt for Pharaoh; for the Egyptians sold every man his field, because the famine prevailed over them: so the land became Pharaoh’s.* Jubilees 45:8 says Joseph acquired all the land of Egypt for Pharaoh in return for food — Genesis spells out the same purchase."},
+        {"src_ch": 45, "src_v": 11, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 47, "tgt_v": 24, "tier": "free",
+         "note": "Genesis 47:24 — *And it shall come to pass in the increase, that ye shall give the fifth part unto Pharaoh, and four parts shall be your own, for seed of the field, and for your food, and for them of your households, and for food for your little ones.* The fifth-for-the-king, four-parts-for-the-people split of Jubilees 45:11 is taken straight from Joseph's decree here."},
+        {"src_ch": 45, "src_v": 11, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 47, "tgt_v": 26, "tier": "free",
+         "note": "Genesis 47:26 — *And Joseph made it a law over the land of Egypt unto this day, that Pharaoh should have the fifth part; except the land of the priests only, which became not Pharaoh’s.* Jubilees 45:11 calls it an ordinance for Egypt \"until this day\" — the very phrasing of Genesis."}
+      ]
+    },
+    {
+      "slug": "jubilees-45-jacob-years-last-days-burial",
+      "title": "Jacob's years, the last-days blessing, and burial in the double cave",
+      "summary_md": "The patriarch's life closes on the covenant numbers and the covenant grave. *And Yashar’el (Israel) lived in the land of Egypt seventeen years, and all the days which he lived were three jubilees, one hundred and forty-seven years* (Jubilees 45:13) — *And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was an hundred forty and seven years* (Genesis 47:28). Before he dies he tells his sons \"what would come upon them in the last days\" (Jubilees 45:13), which is Genesis 49 verbatim: *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days* (Genesis 49:1). And he is laid in the double cave of the fathers — *And he slept with his fathers, and he was buried in the double cave in the land of Canaan, near Abraham his father* (Jubilees 45:15) — *In the cave that is in the field of Machpelah... which Abraham bought... for a possession of a buryingplace* (Genesis 49:30), where his sons carried him: *For his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah* (Genesis 50:13).",
+      "anchor_start_v": 13,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 45, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 47, "tgt_v": 28, "tier": "free",
+         "note": "Genesis 47:28 — *And Jacob lived in the land of Egypt seventeen years: so the whole age of Jacob was an hundred forty and seven years.* Jubilees 45:13 gives the identical seventeen years and 147-year total, reckoned as three jubilees."},
+        {"src_ch": 45, "src_v": 13, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 1, "tier": "free",
+         "note": "Genesis 49:1 — *And Jacob called unto his sons, and said, Gather yourselves together, that I may tell you that which shall befall you in the last days.* Jubilees 45:13 says Israel made known to his sons what would come upon them in the last days — this is that deathbed prophecy."},
+        {"src_ch": 45, "src_v": 15, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 49, "tgt_v": 30, "tier": "free",
+         "note": "Genesis 49:30 — *In the cave that is in the field of Machpelah, which is before Mamre, in the land of Canaan, which Abraham bought with the field of Ephron the Hittite for a possession of a buryingplace.* The \"double cave near Abraham\" of Jubilees 45:15 is Machpelah, the burying-place Jacob charged his sons to use."},
+        {"src_ch": 45, "src_v": 15, "tgt_edition": "canon", "tgt_book": "genesis", "tgt_ch": 50, "tgt_v": 13, "tier": "free",
+         "note": "Genesis 50:13 — *For his sons carried him into the land of Canaan, and buried him in the cave of the field of Machpelah, which Abraham bought with the field for a possession of a buryingplace of Ephron the Hittite, before Mamre.* Jubilees 45:15 records the burial in the double cave near Abraham that Genesis here carries out."}
+      ]
+    },
+    {
+      "slug": "jubilees-45-levi-the-books-seed-multiplied",
+      "title": "Levi keeper of the books; the seed multiplies in Egypt",
+      "summary_md": "Jubilees closes the Joseph cycle with two threads it will not let the reader miss. First, the heavenly-tablets line of transmission: *And he gave all his books and the books of his fathers to Levi his son that he might preserve them and renew them for his children until this day* (Jubilees 45:15). This is the priestly line Isaac had already blessed — *And he turned to Levi first, and began to bless him first... cause you and your seed, from among all flesh, to approach Him to serve in His sanctuary* (Jubilees 31:13) — Levi as guardian of the law and the books, the priesthood that carries the covenant forward. Second, the seed multiplying that the whole chapter has been tracking now bursts out at the threshold of the Exodus: *And the children of Yashar’el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7), echoed by Stephen — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt* (Acts 7:17). It ain't new: the Bethel promise of dust-like seed is being kept.",
+      "anchor_start_v": 13,
+      "anchor_end_v": 15,
+      "tier": "extras",
+      "members": [
+        {"src_ch": 45, "src_v": 15, "tgt_edition": "jubilees", "tgt_book": "jubilees", "tgt_ch": 31, "tgt_v": 13, "tier": "extras",
+         "note": "Jubilees 31:13 — *And he turned to Levi first, and began to bless him first, and said to him:, ’May the Elohim (God) of all, the very Yahuah (God) of all the ages, bless you and your children throughout all the ages. And may Yahuah (God) give to you and to your seed greatness and great glory, and cause you and your seed, from among all flesh, to approach Him to serve in His sanctuary as the angels of the presence and as the holy ones.* Jubilees 45:15 entrusts the books to Levi — the very priestly line Isaac blessed to serve in the sanctuary."},
+        {"src_ch": 45, "src_v": 13, "tgt_edition": "canon", "tgt_book": "exodus", "tgt_ch": 1, "tgt_v": 7, "tier": "free",
+         "note": "Exodus 1:7 — *And the children of Yashar'el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The multiplying seed that Jubilees 45 tracks from Goshen onward reaches its fullness here, opening the Exodus."},
+        {"src_ch": 45, "src_v": 13, "tgt_edition": "canon", "tgt_book": "acts", "tgt_ch": 7, "tgt_v": 17, "tier": "free",
+         "note": "Acts 7:17 — *But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt.* Stephen reads the same seed-multiplying that Jubilees 45 sets in motion as the fulfilling of the oath to Abraham."}
+      ]
+    }
+  ]
+}
