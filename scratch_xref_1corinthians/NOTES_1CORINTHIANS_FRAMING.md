@@ -166,3 +166,32 @@ unresolved, pglast 68 stmts on the assembled migration).
   honest "none warranted" rather than a weak verbal coincidence.
 - **Extras:** ch11 and ch12 both correctly carry ZERO extras (creation-order, supper, and one-body
   are Tanakh+NT weaves; no load-bearing extra-canonical witness). Recorded honestly.
+
+---
+
+## PACK 5 (ch13–14) — LIVE in prod, applied 2026-06-11.
+4 threads / 17 cross_refs / 17 members, per-ch 2/2, band 6900–6928.
+
+### Load-bearing / framework-sensitive decisions:
+- **★ 13:4–8,13 *charity is the fulfilling of the law* (slug `1-corinthians-13-charity-is-the-fulfilling-of-the-law-leviticus-19`)**
+  — built on **Leviticus 19:18 (love thy neighbour as thyself)** + Romans 13:8,9,10 (love is the
+  fulfilling of the law, worketh no ill) + Matthew 22:39–40 (on these hang all the law and prophets)
+  + Sirach 40:17 (extras: mercy endureth for ever). DECISION: **charity is the FULFILLING of Torah —
+  the shape the keeping-of-the-commandments takes — explicitly NOT a replacement for the
+  commandments.** Sibling of the 7:19 keeping-the-commandments framing and Galatians 5:14 / Romans
+  13:8–10. Sirach 18:11 (LORD's mercy toward sinners, not the assembly's charity) deliberately
+  dropped as not load-bearing for the hymn.
+- **13:12 *through a glass, darkly*** — Numbers 12:8 (Yahuah spoke to Moses *mouth to mouth... not in
+  dark speeches*). The now-in-part / then-face-to-face seeing.
+- **★ 14:21 tongues-a-sign, *Paul calls Isaiah "the law"* (slug `1-corinthians-14-tongues-a-sign-and-paul-calls-isaiah-the-law-isaiah-28`)**
+  — built on Isaiah 28:11–12 (the actual cited verse — strange speech as a judgment-sign to an
+  unhearing people). DECISION: **Torah = the whole living authority of the Tanakh, the undivided word
+  of Yahuah — Paul calls the PROPHET "the law" because it is binding covenant instruction, NOT a
+  fenced-off five books and NOT abrogated.** This is the canonical "law as living authority" framing
+  for the letter. Summary surfaced to Yoshi. NT-Lord rule: 14:21,37 render *Yahuah (Lord)* (titular
+  form) — preserved exactly as the pull gave them.
+- **14:34 *as also saith the law* (slug `...the-order-of-the-assembly-as-also-saith-the-law-genesis-2-3-numbers-30`)**
+  — Genesis 3:16 + Genesis 2:7,18,22 (creation order) + Numbers 30:13 (the Torah on vows/order).
+  DECISION: Paul's authority for assembly order IS the law — Torah as living authority for the
+  gathered. Long pastoral middle (14:1–20, 22–32, 36–40) honestly "none warranted."
+- **Extras:** ch13 one clean add (Sirach 40:17); ch14 zero (assembly-order is Tanakh-rooted).
