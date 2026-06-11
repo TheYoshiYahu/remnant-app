@@ -15756,6 +15756,1668 @@ SELECT t.id, x.id, 5, E'Jubilees 46:6 — *And he made them swear regarding his 
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jasher_57.sql (session252 jasher 57) -----
+-- Source anchor: jasher/jasher ch57. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja57 (view _session252_ja57_lookup). Sort band base 56400, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja57_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-57-esau-wars-jacob
+  ('jasher', 'jasher', 57, 1, 'canon', 'obadiah', 1, 10, 'free', E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* Esau lying dead and his sons smitten at Hebron in Jasher 57:1 is the brother-violence Obadiah indicts against Edom.'),
+  ('jasher', 'jasher', 57, 2, 'canon', 'obadiah', 1, 18, 'free', E'Obadiah 1:18 — *And the house of Jacob shall be a fire, and the house of Joseph a flame, and the house of Esau for stubble, and they shall kindle in them, and devour them; and there shall not be any remaining of the house of Esau; for Yahuah (LORD) hath spoken it.* Joseph''s hand prevailing over all the people of Esau in Jasher 57:2 is the flame of Joseph that devours Esau for stubble.'),
+  ('jasher', 'jasher', 57, 2, 'jubilees', 'jubilees', 38, 8, 'extras', E'Jubilees 38:8 — *And Simeon and Benjamin and Enoch, Reuben’s son, went forth on the west side of the tower, and fifty (men) with them, and they slew of Edom and of the Horites four hundred men, stout warriors; and six hundred fled, and four of the sons of Esau fled with them, and left their father lying slain, as he had fallen on the hill which is in ’Adûrâm.* The Jubilees apparatus records the very same battle and the slaying of the sons of Esau that Jasher 57:2 retells.'),
+  ('jasher', 'jasher', 57, 1, 'canon', 'malachi', 1, 2, 'free', E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob,* The Esau-against-Jacob war of Jasher 57:1 stands inside the election divide Malachi names — the two brothers, the two heritages.'),
+  -- thread: jasher-57-esau-buried-seir-edom
+  ('jasher', 'jasher', 57, 4, 'canon', 'genesis', 36, 8, 'free', E'Genesis 36:8 — *Thus dwelt Esau in mount Seir: Esau is Edom.* Jasher 57:4 buries Esau in the very mount Seir that Genesis assigns to him as Edom.'),
+  ('jasher', 'jasher', 57, 3, 'canon', 'malachi', 1, 3, 'free', E'Malachi 1:3 — *And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness.* The flight of Esau''s sons to the mountains of Seir with their father''s body in Jasher 57:3 leads to the wasted heritage Malachi pronounces on Esau.'),
+  ('jasher', 'jasher', 57, 4, 'canon', 'malachi', 1, 4, 'free', E'Malachi 1:4 — *Whereas Edom saith, We are impoverished, but we will return and build the desolate places; thus saith Yahuah Tseva''ot (LORD of hosts), They shall build, but I will throw down; and they shall call them, The border of wickedness, and, The people against whom Yahuah (LORD) hath indignation for ever.* Esau settled and buried in Seir (Jasher 57:4) is the Edom on whom Yahuah''s lasting indignation rests.'),
+  -- thread: jasher-57-esau-dispossess-horites
+  ('jasher', 'jasher', 57, 36, 'canon', 'genesis', 36, 20, 'free', E'Genesis 36:20 — *These are the sons of Seir the Horite, who inhabited the land; Lotan, and Shobal, and Zibeon, and Anah,* The children of Seir whom Esau dispossesses in Jasher 57:36 are the Horite house Genesis names as the land''s first inhabitants.'),
+  ('jasher', 'jasher', 57, 37, 'canon', 'genesis', 36, 21, 'free', E'Genesis 36:21 — *And Dishon, and Ezer, and Dishan: these are the dukes of the Horites, the children of Seir in the land of Edom.* Jasher 57:37 has Esau seizing all that belonged to these very children of Seir the Horite in the land of Edom.'),
+  ('jasher', 'jasher', 57, 36, 'canon', 'deuteronomy', 2, 12, 'free', E'Deuteronomy 2:12 — *The Horims also dwelt in Seir beforetime; but the children of Esau succeeded them, when they had destroyed them from before them, and dwelt in their stead; as Yashar''el (Israel) did unto the land of his possession, which Yahuah (LORD) gave unto them.* Moses records the exact dispossession Jasher 57:36 narrates — Esau destroying the Horim and dwelling in their stead in Seir.'),
+  ('jasher', 'jasher', 57, 37, 'canon', 'deuteronomy', 2, 22, 'free', E'Deuteronomy 2:22 — *As he did to the children of Esau, which dwelt in Seir, when he destroyed the Horims from before them; and they succeeded them, and dwelt in their stead even unto this day:* The canon''s ''even unto this day'' matches Jasher 57:37''s ''to this day'' — Esau possessing Seir in the Horites'' stead.'),
+  ('jasher', 'jasher', 57, 35, 'jubilees', 'jubilees', 38, 10, 'extras', E'Jubilees 38:10 — *And the sons of Jacob pressed hard upon the sons of Esau in the mountains of Seir, and bowed their necks so that they became servants of the sons of Jacob.* The Jubilees apparatus binds the same Seir conflict that Jasher 57:35 carries into the slaughter and resettling of the Horite land.'),
+  -- thread: jasher-57-bela-son-of-beor-edom-king
+  ('jasher', 'jasher', 57, 41, 'canon', 'genesis', 36, 32, 'free', E'Genesis 36:32 — *And Bela the son of Beor reigned in Edom: and the name of his city was Dinhabah.* Jasher 57:41 names the same first king of Edom, Bela son of Beor, even fixing his city as Dinhabah exactly as Genesis does.'),
+  ('jasher', 'jasher', 57, 42, 'canon', 'genesis', 36, 31, 'free', E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* The crowning of Bela in Jasher 57:42 begins the very Edomite kingship Genesis dates before Israel ever had a king.'),
+  ('jasher', 'jasher', 57, 42, 'jubilees', 'jubilees', 38, 16, 'extras', E'Jubilees 38:16 — *And Bâlâq, the son of Beor, reigned in Edom, and the name of his city was Danâbâ.* The Jubilees apparatus opens the Edom king-list with the same son of Beor and the same city that Jasher 57:42 crowns over Esau.'),
+  ('jasher', 'jasher', 57, 40, 'jubilees', 'jubilees', 38, 14, 'extras', E'Jubilees 38:14 — *And the sons of Edom have not got quit of the yoke of servitude which the twelve sons of Jacob had imposed on them until this day. And these are the kings that reigned in Edom before there reigned any king over the children of Yashar’el (Israel) until this day in the land of Edom.* Jasher 57:40''s vow to take a king ''from a strange land to this day'' frames the same Edomite king-list Jubilees opens here.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja57_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja57_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-57-esau-wars-jacob',
+       E'The sons of Esau war with the sons of Jacob — Joseph a flame, Esau stubble',
+       E'*And it was after this that the sons of Esau waged war with the sons of Jacob, and the sons of Esau fought with the sons of Jacob in Hebron, and Esau was still lying dead, and not buried* (Jasher 57:1) — and *the sons of Jacob slew of the sons of Esau eighty men, and not one died of the people of the sons of Jacob; and the hand of Joseph prevailed over all the people of the sons of Esau* (Jasher 57:2). This is the brother-war the prophets name: *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever* (Obadiah 1:10), and the very picture of Joseph''s prevailing hand — *And the house of Jacob shall be a fire, and the house of Joseph a flame, and the house of Esau for stubble, and they shall kindle in them, and devour them; and there shall not be any remaining of the house of Esau; for Yahuah (LORD) hath spoken it* (Obadiah 1:18). The Jubilees apparatus narrates the same battle and the same slaughter: *And Simeon and Benjamin and Enoch, Reuben’s son, went forth on the west side of the tower, and fifty (men) with them, and they slew of Edom and of the Horites four hundred men, stout warriors; and six hundred fled, and four of the sons of Esau fled with them, and left their father lying slain, as he had fallen on the hill which is in ’Adûrâm* (Jubilees 38:8). It ain''t new: the elder serving the younger, the heritage of Esau and the heritage of Jacob set apart — *Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob* (Malachi 1:2).',
+       sv.verse_id, ev.verse_id, 'extras', 56400
+  FROM _session252_ja57_lookup sv, _session252_ja57_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=57 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-57-esau-buried-seir-edom',
+       E'Esau buried in Seir — thus dwelt Esau in mount Seir, he is Edom',
+       E'*And it came to pass when the sons of Esau had fled from before the sons of Jacob... they all fled with Eliphaz the son of Esau and his people, with Esau’s body, and they went on their road to Mount Seir* (drawn from Jasher 57:3), *And they came to Mount Seir and they buried Esau in Seir, but they had not brought his head with them to Seir, for it was buried in that place where the battle had been in Hebron* (Jasher 57:4). Genesis fixes Esau in that same land and seals his name: *Thus dwelt Esau in mount Seir: Esau is Edom* (Genesis 36:8). And the seed-line is divided there once for all — not a church replacing a people but the elder set outside the chosen seed: *And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness* (Malachi 1:3). *Whereas Edom saith, We are impoverished, but we will return and build the desolate places; thus saith Yahuah Tseva''ot (LORD of hosts), They shall build, but I will throw down; and they shall call them, The border of wickedness, and, The people against whom Yahuah (LORD) hath indignation for ever* (Malachi 1:4). It ain''t new — Jasher buries Esau in the very Seir the canon assigns him.',
+       sv.verse_id, ev.verse_id, 'extras', 56403
+  FROM _session252_ja57_lookup sv, _session252_ja57_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=3
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=57 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-57-esau-dispossess-horites',
+       E'The children of Esau dispossess the Horites and dwell in Seir in their stead',
+       E'*And the children of Esau dwelt in Seir in the place of the children of Seir, and they inherited their land and took possession of it* (Jasher 57:36), and *the children of Esau took all belonging in the land to the children of Seir... and the children of Esau dwelt in Seir in the place of the children of Seir to this day* (Jasher 57:37). The canon names that displaced people exactly — *These are the sons of Seir the Horite, who inhabited the land; Lotan, and Shobal, and Zibeon, and Anah* (Genesis 36:20), *And Dishon, and Ezer, and Dishan: these are the dukes of the Horites, the children of Seir in the land of Edom* (Genesis 36:21). And Moses preaches the very dispossession Jasher narrates: *The Horims also dwelt in Seir beforetime; but the children of Esau succeeded them, when they had destroyed them from before them, and dwelt in their stead; as Yashar''el (Israel) did unto the land of his possession, which Yahuah (LORD) gave unto them* (Deuteronomy 2:12), *As he did to the children of Esau, which dwelt in Seir, when he destroyed the Horims from before them; and they succeeded them, and dwelt in their stead even unto this day* (Deuteronomy 2:22). Jubilees keeps the same yoke: *And the sons of Jacob pressed hard upon the sons of Esau in the mountains of Seir, and bowed their necks so that they became servants of the sons of Jacob* (Jubilees 38:10). It ain''t new — Deuteronomy itself testifies that Esau took the Horites'' land and dwelt in their stead.',
+       sv.verse_id, ev.verse_id, 'extras', 56406
+  FROM _session252_ja57_lookup sv, _session252_ja57_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=35
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=57 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-57-bela-son-of-beor-edom-king',
+       E'Bela the son of Beor crowned first king of Edom in Dinhabah',
+       E'Embittered against their own brethren, *the sons of Esau swore, saying, From that day forward they would not choose a king from their brethren, but one from a strange land to this day* (Jasher 57:40); so *And all the children of Esau took him and anointed him and they crowned him for a king, and they bowed down to him, and they said to him, May the king live, may the king live* (Jasher 57:42) — the man being *Bela the son of Beor, who was a very valiant man* of the people of Angeas king of Dinhabah (drawn from Jasher 57:41). This is precisely the canon''s Edomite king-list, named before Israel ever had a king: *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel)* (Genesis 36:31), *And Bela the son of Beor reigned in Edom: and the name of his city was Dinhabah* (Genesis 36:32). Jubilees carries the identical roll: *And the sons of Edom have not got quit of the yoke of servitude which the twelve sons of Jacob had imposed on them until this day. And these are the kings that reigned in Edom before there reigned any king over the children of Yashar’el (Israel) until this day in the land of Edom* (Jubilees 38:14), *And Bâlâq, the son of Beor, reigned in Edom, and the name of his city was Danâbâ* (Jubilees 38:16). It ain''t new — Jasher even fixes the same city Dinhabah that Genesis records.',
+       sv.verse_id, ev.verse_id, 'extras', 56409
+  FROM _session252_ja57_lookup sv, _session252_ja57_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=40
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=57 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-57-esau-wars-jacob
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* Esau lying dead and his sons smitten at Hebron in Jasher 57:1 is the brother-violence Obadiah indicts against Edom.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-wars-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Obadiah 1:18 — *And the house of Jacob shall be a fire, and the house of Joseph a flame, and the house of Esau for stubble, and they shall kindle in them, and devour them; and there shall not be any remaining of the house of Esau; for Yahuah (LORD) hath spoken it.* Joseph''s hand prevailing over all the people of Esau in Jasher 57:2 is the flame of Joseph that devours Esau for stubble.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-wars-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 38:8 — *And Simeon and Benjamin and Enoch, Reuben’s son, went forth on the west side of the tower, and fifty (men) with them, and they slew of Edom and of the Horites four hundred men, stout warriors; and six hundred fled, and four of the sons of Esau fled with them, and left their father lying slain, as he had fallen on the hill which is in ’Adûrâm.* The Jubilees apparatus records the very same battle and the slaying of the sons of Esau that Jasher 57:2 retells.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-wars-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=2
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=38 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob,* The Esau-against-Jacob war of Jasher 57:1 stands inside the election divide Malachi names — the two brothers, the two heritages.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-wars-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-57-esau-buried-seir-edom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:8 — *Thus dwelt Esau in mount Seir: Esau is Edom.* Jasher 57:4 buries Esau in the very mount Seir that Genesis assigns to him as Edom.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-buried-seir-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Malachi 1:3 — *And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness.* The flight of Esau''s sons to the mountains of Seir with their father''s body in Jasher 57:3 leads to the wasted heritage Malachi pronounces on Esau.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-buried-seir-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 1:4 — *Whereas Edom saith, We are impoverished, but we will return and build the desolate places; thus saith Yahuah Tseva''ot (LORD of hosts), They shall build, but I will throw down; and they shall call them, The border of wickedness, and, The people against whom Yahuah (LORD) hath indignation for ever.* Esau settled and buried in Seir (Jasher 57:4) is the Edom on whom Yahuah''s lasting indignation rests.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-buried-seir-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-57-esau-dispossess-horites
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:20 — *These are the sons of Seir the Horite, who inhabited the land; Lotan, and Shobal, and Zibeon, and Anah,* The children of Seir whom Esau dispossesses in Jasher 57:36 are the Horite house Genesis names as the land''s first inhabitants.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-dispossess-horites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:21 — *And Dishon, and Ezer, and Dishan: these are the dukes of the Horites, the children of Seir in the land of Edom.* Jasher 57:37 has Esau seizing all that belonged to these very children of Seir the Horite in the land of Edom.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-dispossess-horites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 2:12 — *The Horims also dwelt in Seir beforetime; but the children of Esau succeeded them, when they had destroyed them from before them, and dwelt in their stead; as Yashar''el (Israel) did unto the land of his possession, which Yahuah (LORD) gave unto them.* Moses records the exact dispossession Jasher 57:36 narrates — Esau destroying the Horim and dwelling in their stead in Seir.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-dispossess-horites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=2 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 2:22 — *As he did to the children of Esau, which dwelt in Seir, when he destroyed the Horims from before them; and they succeeded them, and dwelt in their stead even unto this day:* The canon''s ''even unto this day'' matches Jasher 57:37''s ''to this day'' — Esau possessing Seir in the Horites'' stead.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-dispossess-horites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=2 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 38:10 — *And the sons of Jacob pressed hard upon the sons of Esau in the mountains of Seir, and bowed their necks so that they became servants of the sons of Jacob.* The Jubilees apparatus binds the same Seir conflict that Jasher 57:35 carries into the slaughter and resettling of the Horite land.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-esau-dispossess-horites'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=35
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=38 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-57-bela-son-of-beor-edom-king
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:32 — *And Bela the son of Beor reigned in Edom: and the name of his city was Dinhabah.* Jasher 57:41 names the same first king of Edom, Bela son of Beor, even fixing his city as Dinhabah exactly as Genesis does.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-bela-son-of-beor-edom-king'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* The crowning of Bela in Jasher 57:42 begins the very Edomite kingship Genesis dates before Israel ever had a king.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-bela-son-of-beor-edom-king'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=42
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 38:16 — *And Bâlâq, the son of Beor, reigned in Edom, and the name of his city was Danâbâ.* The Jubilees apparatus opens the Edom king-list with the same son of Beor and the same city that Jasher 57:42 crowns over Esau.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-bela-son-of-beor-edom-king'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=42
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=38 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 38:14 — *And the sons of Edom have not got quit of the yoke of servitude which the twelve sons of Jacob had imposed on them until this day. And these are the kings that reigned in Edom before there reigned any king over the children of Yashar’el (Israel) until this day in the land of Edom.* Jasher 57:40''s vow to take a king ''from a strange land to this day'' frames the same Edomite king-list Jubilees opens here.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja57_lookup sv, _session252_ja57_lookup tv
+ WHERE t.slug='jasher-57-bela-son-of-beor-edom-king'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=57 AND sv.verse_number=40
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=38 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_58.sql (session252 jasher 58) -----
+-- Source anchor: jasher/jasher ch58. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja58 (view _session252_ja58_lookup). Sort band base 56425, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja58_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-58-joseph-reigns-yahuah-with-him
+  ('jasher', 'jasher', 58, 11, 'canon', 'genesis', 39, 2, 'free', E'Genesis 39:2 — *And Yahuah (LORD) was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian.* The same refrain — Yahuah with Joseph, prospering all his ways — that Jasher 58:11 carries into his forty-year reign over Egypt.'),
+  ('jasher', 'jasher', 58, 11, 'canon', 'acts', 7, 10, 'free', E'Acts 7:10 — *And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.* Stephen names the favor and wisdom and governorship that Jasher 58:11 says Yahuah gave Joseph over all the land.'),
+  -- thread: jasher-58-seed-multiplies-secure-in-egypt
+  ('jasher', 'jasher', 58, 13, 'canon', 'exodus', 1, 7, 'free', E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The very increase Jasher 58:13 records of the sons of Jacob multiplying exceedingly in the land all the days of Joseph.'),
+  ('jasher', 'jasher', 58, 13, 'jubilees', 'jubilees', 46, 1, 'extras', E'Jubilees 46:1 — *And it came to pass that after Jacob died the children of Yashar’el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* Jubilees tells the same multiplying-and-secure years of Jasher 58:13 — the seed growing into a nation while Joseph lives.'),
+  -- thread: jasher-58-edomite-king-list-bela-jobab-husham
+  ('jasher', 'jasher', 58, 20, 'canon', 'genesis', 36, 32, 'free', E'Genesis 36:32 — *And Bela the son of Beor reigned in Edom: and the name of his city was Dinhabah.* The same Bela son of Beor, king of the children of Esau, whose fall Jasher 58:20 records in battle against the sons of Jacob.'),
+  ('jasher', 'jasher', 58, 26, 'canon', 'genesis', 36, 33, 'free', E'Genesis 36:33 — *And Bela died, and Jobab the son of Zerah of Bozrah reigned in his stead.* Genesis names the very succession Jasher 58:26 narrates — Jobab the son of Zarach from Botzrah set up to reign over Edom after Bela''s death.'),
+  ('jasher', 'jasher', 58, 29, 'canon', 'genesis', 36, 34, 'free', E'Genesis 36:34 — *And Jobab died, and Husham of the land of Temani reigned in his stead.* The same third king, Chusham of the land of Teman, whom Jasher 58:29 raises over Edom after Jobab''s death.'),
+  ('jasher', 'jasher', 58, 20, 'canon', 'genesis', 36, 31, 'free', E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* The heading over the very king-list — Bela, Jobab, Husham — whose deaths and reigns Jasher 58:20-29 unfolds as war-history.'),
+  -- thread: jasher-58-esau-perpetual-hatred-of-jacob
+  ('jasher', 'jasher', 58, 28, 'canon', 'genesis', 27, 41, 'free', E'Genesis 27:41 — *And Esau hated Jacob because of the blessing wherewith his father blessed him: and Esau said in his heart, The days of mourning for my father are at hand; then will I slay my brother Jacob.* The root of the hatred Jasher 58:28 says grew very strong between Esau''s children and Jacob''s all the days.'),
+  ('jasher', 'jasher', 58, 28, 'canon', 'obadiah', 1, 10, 'free', E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* The prophet''s verdict on the very Esau-against-Jacob enmity Jasher 58:28 records as enduring to this day.'),
+  ('jasher', 'jasher', 58, 28, 'canon', 'malachi', 1, 2, 'free', E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob,* Yahuah''s word of election standing over the brother-enmity Jasher 58:28 fixes between Esau and Jacob.'),
+  ('jasher', 'jasher', 58, 28, 'canon', 'malachi', 1, 3, 'free', E'Malachi 1:3 — *And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness.* The final answer to Edom''s strong and lasting hatred of Jacob that Jasher 58:28 records — Esau set apart from the elect seed.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja58_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja58_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-58-joseph-reigns-yahuah-with-him',
+       E'Joseph governs Egypt — and Yahuah was with him',
+       E'When Pharaoh dies and his son Magron takes the throne, the whole government devolves on Joseph: *And Joseph was successful in all his ways, and Yahuah (the Lord) was with him, and Yahuah (the Lord) gave Joseph additional wisdom, and honor, and glory, and love toward him in the hearts of the Egyptians and throughout the land, and Joseph reigned over the whole country forty years.* (Jasher 58:11). This is the same favor Genesis names from his very first days in Egypt — *And Yahuah (LORD) was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian.* (Genesis 39:2) — and that Stephen rehearses before the council: *And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.* (Acts 7:10). It ain''t new: the wisdom and the rule are gifts of Yahuah, not the man''s own arm.',
+       sv.verse_id, ev.verse_id, 'extras', 56425
+  FROM _session252_ja58_lookup sv, _session252_ja58_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=11
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=58 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-58-seed-multiplies-secure-in-egypt',
+       E'The sons of Jacob fruitful and multiplying in the land',
+       E'While Joseph reigns, his brethren flourish: *And also all his brethren the sons of Jacob dwelt securely in the land, all the days of Joseph, and they were fruitful and multiplied exceedingly in the land, and they served Yahuah (the Lord) all their days, as their father Jacob had commanded them.* (Jasher 58:13). This is the seed of Abraham swelling into the nation, exactly as Exodus opens — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* (Exodus 1:7) — and exactly as Jubilees tells it of these same years: *And it came to pass that after Jacob died the children of Yashar’el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* (Jubilees 46:1). Three witnesses to one promise kept; and Jasher adds that they served Yahuah all their days — Torah before Sinai, the fathers keeping the way.',
+       sv.verse_id, ev.verse_id, 'extras', 56428
+  FROM _session252_ja58_lookup sv, _session252_ja58_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=13
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=58 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-58-edomite-king-list-bela-jobab-husham',
+       E'The kings of Edom — Bela, then Jobab of Bozrah, then Husham of Teman',
+       E'Jasher names the succession of Edom''s kings in war and death: their king *Bela the son of Beor fell with them in the battle* (Jasher 58:20); then *they hastened and took a man from the people of the children of the east; his name was Jobab the son of Zarach, from the land of Botzrah, and they caused him to reign over them instead of Bela their king* (Jasher 58:26); and after ten years *the children of Esau took a man whose name was Chusham, from the land of Teman, and they made him king over them instead of Jobab* (Jasher 58:29). This is precisely the Edomite king-list Genesis preserves — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* (Genesis 36:31); *And Bela the son of Beor reigned in Edom: and the name of his city was Dinhabah.* (Genesis 36:32); *And Bela died, and Jobab the son of Zerah of Bozrah reigned in his stead.* (Genesis 36:33); *And Jobab died, and Husham of the land of Temani reigned in his stead.* (Genesis 36:34). It ain''t new — Jasher''s legendary war is hung on the canon''s own roll of Edom''s kings, the line of Esau set apart from the elect seed.',
+       sv.verse_id, ev.verse_id, 'extras', 56431
+  FROM _session252_ja58_lookup sv, _session252_ja58_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=20
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=58 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-58-esau-perpetual-hatred-of-jacob',
+       E'From that day the children of Esau hated the sons of Jacob',
+       E'When Edom is beaten back, Jasher fixes the old enmity in place: *But from that day forward the children of Esau hated the sons of Jacob, and the hatred and enmity were very strong between them all the days, to this day.* (Jasher 58:28). This is the grudge born at the stolen blessing — *And Esau hated Jacob because of the blessing wherewith his father blessed him: and Esau said in his heart, The days of mourning for my father are at hand; then will I slay my brother Jacob.* (Genesis 27:41) — that the prophets carry to its end: *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* (Obadiah 1:10), and the word that frames election itself, *Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob, And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness.* (Malachi 1:2-3). Esau set apart from the elect; the seed kept; the hatred answered by Yahuah''s own choosing.',
+       sv.verse_id, ev.verse_id, 'extras', 56434
+  FROM _session252_ja58_lookup sv, _session252_ja58_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=28
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=58 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-58-joseph-reigns-yahuah-with-him
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 39:2 — *And Yahuah (LORD) was with Joseph, and he was a prosperous man; and he was in the house of his master the Egyptian.* The same refrain — Yahuah with Joseph, prospering all his ways — that Jasher 58:11 carries into his forty-year reign over Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-joseph-reigns-yahuah-with-him'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=39 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:10 — *And delivered him out of all his afflictions, and gave him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.* Stephen names the favor and wisdom and governorship that Jasher 58:11 says Yahuah gave Joseph over all the land.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-joseph-reigns-yahuah-with-him'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-58-seed-multiplies-secure-in-egypt
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The very increase Jasher 58:13 records of the sons of Jacob multiplying exceedingly in the land all the days of Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-seed-multiplies-secure-in-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jubilees 46:1 — *And it came to pass that after Jacob died the children of Yashar’el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* Jubilees tells the same multiplying-and-secure years of Jasher 58:13 — the seed growing into a nation while Joseph lives.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-seed-multiplies-secure-in-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=13
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-58-edomite-king-list-bela-jobab-husham
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:32 — *And Bela the son of Beor reigned in Edom: and the name of his city was Dinhabah.* The same Bela son of Beor, king of the children of Esau, whose fall Jasher 58:20 records in battle against the sons of Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-edomite-king-list-bela-jobab-husham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:33 — *And Bela died, and Jobab the son of Zerah of Bozrah reigned in his stead.* Genesis names the very succession Jasher 58:26 narrates — Jobab the son of Zarach from Botzrah set up to reign over Edom after Bela''s death.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-edomite-king-list-bela-jobab-husham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 36:34 — *And Jobab died, and Husham of the land of Temani reigned in his stead.* The same third king, Chusham of the land of Teman, whom Jasher 58:29 raises over Edom after Jobab''s death.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-edomite-king-list-bela-jobab-husham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* The heading over the very king-list — Bela, Jobab, Husham — whose deaths and reigns Jasher 58:20-29 unfolds as war-history.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-edomite-king-list-bela-jobab-husham'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-58-esau-perpetual-hatred-of-jacob
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 27:41 — *And Esau hated Jacob because of the blessing wherewith his father blessed him: and Esau said in his heart, The days of mourning for my father are at hand; then will I slay my brother Jacob.* The root of the hatred Jasher 58:28 says grew very strong between Esau''s children and Jacob''s all the days.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-esau-perpetual-hatred-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=27 AND tv.verse_number=41
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* The prophet''s verdict on the very Esau-against-Jacob enmity Jasher 58:28 records as enduring to this day.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-esau-perpetual-hatred-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob,* Yahuah''s word of election standing over the brother-enmity Jasher 58:28 fixes between Esau and Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-esau-perpetual-hatred-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 1:3 — *And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness.* The final answer to Edom''s strong and lasting hatred of Jacob that Jasher 58:28 records — Esau set apart from the elect seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja58_lookup sv, _session252_ja58_lookup tv
+ WHERE t.slug='jasher-58-esau-perpetual-hatred-of-jacob'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=58 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_59.sql (session252 jasher 59) -----
+-- Source anchor: jasher/jasher ch59. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja59 (view _session252_ja59_lookup). Sort band base 56450, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja59_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-59-seventy-souls
+  ('jasher', 'jasher', 59, 1, 'canon', 'exodus', 1, 1, 'free', E'Exodus 1:1 — *Now these are the names of the children of Yashar''el (Israel), which came into Egypt; every man and his household came with Jacob.* Exodus opens its bondage account with the same muster-formula Jasher 59:1 uses to head the chapter.'),
+  ('jasher', 'jasher', 59, 19, 'canon', 'genesis', 46, 27, 'free', E'Genesis 46:27 — *And the sons of Joseph, which were born him in Egypt, were two souls: all the souls of the house of Jacob, which came into Egypt, were threescore and ten.* The seventy-soul total of Jasher 59:19 is lifted straight from the Genesis census.'),
+  ('jasher', 'jasher', 59, 19, 'canon', 'exodus', 1, 5, 'free', E'Exodus 1:5 — *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already.* Exodus echoes the same seventy-from-the-loins count that closes Jasher''s roll in 59:19.'),
+  ('jasher', 'jasher', 59, 19, 'canon', 'acts', 7, 14, 'free', E'Acts 7:14 — *Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls.* Stephen rehearses the very household-of-Jacob that Jasher 59:19 numbers in Egypt.'),
+  -- thread: jasher-59-josephs-bones-oath
+  ('jasher', 'jasher', 59, 22, 'canon', 'genesis', 50, 24, 'free', E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* Joseph''s dying declaration of the visitation in Jasher 59:22 reproduces this Genesis charge nearly word for word.'),
+  ('jasher', 'jasher', 59, 24, 'canon', 'genesis', 50, 25, 'free', E'Genesis 50:25 — *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* The bones-oath Joseph binds in Jasher 59:24 is the same oath Genesis records.'),
+  ('jasher', 'jasher', 59, 23, 'canon', 'exodus', 13, 19, 'free', E'Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* The charge Joseph gives in Jasher 59:23 is fulfilled when Moses lifts the bones at the Exodus.'),
+  ('jasher', 'jasher', 59, 22, 'canon', 'hebrews', 11, 22, 'free', E'Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones.* The dying word and bone-commandment of Jasher 59:22 is the faith the writer of Hebrews honours.'),
+  ('jasher', 'jasher', 59, 24, 'jubilees', 'jubilees', 46, 5, 'extras', E'Jubilees 46:5 — *And he commanded the children of Yashar''el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt.* Jubilees records the very bones-charge Joseph swears the seed to in Jasher 59:24.'),
+  -- thread: jasher-59-joseph-dies
+  ('jasher', 'jasher', 59, 26, 'canon', 'genesis', 50, 26, 'free', E'Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* The hundred-and-ten-year death and embalming of Jasher 59:26 is the closing verse of Genesis itself.'),
+  ('jasher', 'jasher', 59, 25, 'canon', 'exodus', 1, 6, 'free', E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Joseph''s death in Jasher 59:25 is the hinge Exodus uses to turn from the patriarchs to the bondage.'),
+  ('jasher', 'jasher', 59, 26, 'jubilees', 'jubilees', 46, 3, 'extras', E'Jubilees 46:3 — *And Joseph died being a hundred and ten years old; seventeen years he lived in the land of Canaan, and ten years he was a servant, and three years in prison, and eighty years he was under the king, ruling all the land of Egypt.* Jubilees gives the same hundred-and-ten-year reckoning of Joseph''s life that Jasher 59:26 records at his death.'),
+  -- thread: jasher-59-bondage-begins
+  ('jasher', 'jasher', 59, 28, 'canon', 'exodus', 1, 8, 'free', E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The Egyptians beginning to rule over Israel in Jasher 59:28 is the same turn Exodus marks with the new king who knew not Joseph.'),
+  ('jasher', 'jasher', 59, 28, 'canon', 'exodus', 1, 11, 'free', E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* The rule-over-Israel of Jasher 59:28 hardens into the taskmasters and burdens Exodus names.'),
+  ('jasher', 'jasher', 59, 28, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The bondage that begins in Jasher 59:28 was sworn to Abraham long before, the affliction foretold and counted.'),
+  ('jasher', 'jasher', 59, 28, 'canon', 'acts', 7, 6, 'free', E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen preaches the very bondage-foretelling that opens in Jasher 59:28.'),
+  ('jasher', 'jasher', 59, 28, 'jubilees', 'jubilees', 46, 14, 'extras', E'Jubilees 46:14 — *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* Jubilees opens the same Egyptian affliction that begins in Jasher 59:28.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja59_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja59_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-59-seventy-souls',
+       E'The seventy souls who came with Jacob — the tribal census',
+       E'Jasher opens with the muster of the house of Jacob: *And these are the names of the sons of Israel who dwelt in Egypt, who had come with Jacob, all the sons of Jacob came to Egypt, every man with his household* (Jasher 59:1), totalling *And all the souls that went forth from the loins of Jacob, were seventy souls; these are they who came with Jacob their father to Egypt to dwell there: and Joseph and all his brethren dwelt securely in Egypt, and they ate of the best of Egypt all the days of the life of Joseph* (Jasher 59:19). It ain''t new — this is the Genesis census set down word for word: *And all the souls of the house of Jacob, which came into Egypt, were threescore and ten* (Genesis 46:27). Exodus repeats the very roll: *Now these are the names of the children of Yashar''el (Israel), which came into Egypt; every man and his household came with Jacob* (Exodus 1:1) and *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already* (Exodus 1:5). Stephen carries the same count into the Acts of the apostles: *Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls* (Acts 7:14). The seed-line is kept and numbered — the twelve-tribe nation forming in Egypt exactly as the canon recorded.',
+       sv.verse_id, ev.verse_id, 'extras', 56450
+  FROM _session252_ja59_lookup sv, _session252_ja59_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=59 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-59-josephs-bones-oath',
+       E'Elohim will surely visit you — Joseph''s bones and the promised visitation',
+       E'Dying, Joseph gathers the brethren and swears them to the visitation: *And Joseph said to his brethren and to the whole of his father''s household, Behold I die, and Elohim (God) will surely visit you and bring you up from this land to the land which he swore to your fathers to give to them* (Jasher 59:22), *And it shall be when Elohim shall visit you to bring you up from here to the land of your fathers, then bring up my bones with you from here* (Jasher 59:23), *And Joseph made the sons of Israel to swear for their seed after them, saying, Elohim will surely visit you and you shall bring up my bones with you from here* (Jasher 59:24). It ain''t new — Genesis carries the same dying charge: *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24) and *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25). The oath is kept centuries later: *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you* (Exodus 13:19). The apostle names it faith: *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). Jubilees sets down the same swearing: *And he commanded the children of Yashar''el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt* (Jubilees 46:5). The visitation promised to the fathers stands — the seed will be brought up, and the bones go with them.',
+       sv.verse_id, ev.verse_id, 'extras', 56453
+  FROM _session252_ja59_lookup sv, _session252_ja59_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=22
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=59 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-59-joseph-dies',
+       E'Joseph died, an hundred and ten years old — embalmed and mourned',
+       E'The patriarch passes: *And it came to pass after this that Joseph died in that year, the seventy-first year of the Israelites going down to Egypt* (Jasher 59:25), *And Joseph was one hundred and ten years old when he died in the land of Egypt, and all his brethren and all his servants rose up and they embalmed Joseph, as was their custom, and his brethren and all Egypt mourned over him for seventy days* (Jasher 59:26). It ain''t new — Genesis closes the same way: *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt* (Genesis 50:26). Exodus marks the generation''s end: *And Joseph died, and all his brethren, and all that generation* (Exodus 1:6). Jubilees gives the matching span of his years: *And Joseph died being a hundred and ten years old; seventeen years he lived in the land of Canaan, and ten years he was a servant, and three years in prison, and eighty years he was under the king, ruling all the land of Egypt* (Jubilees 46:3). The same death, the same hundred-and-ten years, the same coffin in Egypt — the seed carried forward to the bondage that follows.',
+       sv.verse_id, ev.verse_id, 'extras', 56456
+  FROM _session252_ja59_lookup sv, _session252_ja59_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=25
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=59 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-59-bondage-begins',
+       E'The Egyptians began to rule over Israel — the bondage foretold to Abraham',
+       E'With Joseph gone the affliction begins: *And it came to pass after the death of Joseph, all the Egyptians began in those days to rule over the children of Israel, and Pharaoh, king of Egypt, who reigned in his father''s stead, took all the laws of Egypt and conducted the whole government of Egypt under his counsel, and he reigned securely over his people* (Jasher 59:28). It ain''t new — this is the opening of Exodus'' bondage: *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7), then *Now there arose up a new king over Egypt, which knew not Joseph* (Exodus 1:8) and *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses* (Exodus 1:11). And it ain''t even new to Exodus — the bondage was sworn to Abraham generations before: *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). Stephen preaches the same foretelling: *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years* (Acts 7:6). Jubilees opens the same affliction: *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt* (Jubilees 46:14). The kingdom of man rises over the chosen seed — yet the affliction itself was promised and counted, and the visitation already sworn.',
+       sv.verse_id, ev.verse_id, 'extras', 56459
+  FROM _session252_ja59_lookup sv, _session252_ja59_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=28
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=59 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-59-seventy-souls
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:1 — *Now these are the names of the children of Yashar''el (Israel), which came into Egypt; every man and his household came with Jacob.* Exodus opens its bondage account with the same muster-formula Jasher 59:1 uses to head the chapter.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-seventy-souls'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 46:27 — *And the sons of Joseph, which were born him in Egypt, were two souls: all the souls of the house of Jacob, which came into Egypt, were threescore and ten.* The seventy-soul total of Jasher 59:19 is lifted straight from the Genesis census.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-seventy-souls'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:5 — *And all the souls that came out of the loins of Jacob were seventy souls: for Joseph was in Egypt already.* Exodus echoes the same seventy-from-the-loins count that closes Jasher''s roll in 59:19.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-seventy-souls'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:14 — *Then sent Joseph, and called his father Jacob to him, and all his kindred, threescore and fifteen souls.* Stephen rehearses the very household-of-Jacob that Jasher 59:19 numbers in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-seventy-souls'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-59-josephs-bones-oath
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* Joseph''s dying declaration of the visitation in Jasher 59:22 reproduces this Genesis charge nearly word for word.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-josephs-bones-oath'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 50:25 — *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* The bones-oath Joseph binds in Jasher 59:24 is the same oath Genesis records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-josephs-bones-oath'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* The charge Joseph gives in Jasher 59:23 is fulfilled when Moses lifts the bones at the Exodus.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-josephs-bones-oath'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones.* The dying word and bone-commandment of Jasher 59:22 is the faith the writer of Hebrews honours.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-josephs-bones-oath'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 46:5 — *And he commanded the children of Yashar''el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt.* Jubilees records the very bones-charge Joseph swears the seed to in Jasher 59:24.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-josephs-bones-oath'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=24
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-59-joseph-dies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* The hundred-and-ten-year death and embalming of Jasher 59:26 is the closing verse of Genesis itself.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-joseph-dies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Joseph''s death in Jasher 59:25 is the hinge Exodus uses to turn from the patriarchs to the bondage.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-joseph-dies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jubilees 46:3 — *And Joseph died being a hundred and ten years old; seventeen years he lived in the land of Canaan, and ten years he was a servant, and three years in prison, and eighty years he was under the king, ruling all the land of Egypt.* Jubilees gives the same hundred-and-ten-year reckoning of Joseph''s life that Jasher 59:26 records at his death.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-joseph-dies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=26
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-59-bondage-begins
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* The Egyptians beginning to rule over Israel in Jasher 59:28 is the same turn Exodus marks with the new king who knew not Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* The rule-over-Israel of Jasher 59:28 hardens into the taskmasters and burdens Exodus names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* The bondage that begins in Jasher 59:28 was sworn to Abraham long before, the affliction foretold and counted.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* Stephen preaches the very bondage-foretelling that opens in Jasher 59:28.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 46:14 — *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* Jubilees opens the same Egyptian affliction that begins in Jasher 59:28.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja59_lookup sv, _session252_ja59_lookup tv
+ WHERE t.slug='jasher-59-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=59 AND sv.verse_number=28
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_60.sql (session252 jasher 60) -----
+-- Source anchor: jasher/jasher ch60. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja60 (view _session252_ja60_lookup). Sort band base 56475, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja60_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-60-zepho-eliphaz-esau-edom
+  ('jasher', 'jasher', 60, 1, 'canon', 'genesis', 36, 11, 'free', E'Genesis 36:11 — *And the sons of Eliphaz were Teman, Omar, Zepho, and Gatam, and Kenaz.* Jasher''s war-captain Zepho son of Eliphaz son of Esau is named here in the canon''s own roll of Edom, so the legend hangs on a genuine genealogy.'),
+  ('jasher', 'jasher', 60, 1, 'canon', 'genesis', 36, 10, 'free', E'Genesis 36:10 — *These are the names of Esau''s sons; Eliphaz the son of Adah the wife of Esau, Reuel the son of Bashemath the wife of Esau.* Jasher''s "son of Eliphaz, the son of Esau" matches the canon line: Zepho descends through Eliphaz, Esau''s firstborn by Adah.'),
+  ('jasher', 'jasher', 60, 4, 'canon', 'malachi', 1, 2, 'free', E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* Zepho''s enticing Angeas to war against the sons of Jacob is the old Esau-against-Jacob enmity, which the canon reads as election dividing the two brothers.'),
+  ('jasher', 'jasher', 60, 30, 'canon', 'obadiah', 1, 10, 'free', E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* Jasher''s Zepho riding out continually to spoil and to war on Jacob''s sons is the very violence of Edom against his brother that the prophet says shall be cut off.'),
+  -- thread: jasher-60-seventy-second-year-after-joseph
+  ('jasher', 'jasher', 60, 1, 'canon', 'genesis', 50, 26, 'free', E'Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* Jasher reckons its seventy-second year "after the death of Joseph," dating from the very death the canon records as the close of Genesis.'),
+  ('jasher', 'jasher', 60, 1, 'canon', 'exodus', 1, 6, 'free', E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Jasher''s clock begins where Exodus begins — Joseph and his generation gone — the hinge just before the bondage opens.'),
+  ('jasher', 'jasher', 60, 1, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* Jasher''s counting of the years "from the Israelites going down to Egypt" is the running of the very sojourn Yahuah foretold to Abraham.'),
+  ('jasher', 'jasher', 60, 1, 'jubilees', 'jubilees', 46, 1, 'extras', E'Jubilees 46:1 — *And it came to pass that after Jacob died the children of Yashar''el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* Jubilees narrates the very years Jasher dates by, the seed multiplying in Egypt after Joseph — the same window from a parallel hand.'),
+  ('jasher', 'jasher', 60, 1, 'jubilees', 'jubilees', 46, 3, 'extras', E'Jubilees 46:3 — *And Joseph died being a hundred and ten years old; seventeen years he lived in the land of Canaan, and ten years he was a servant, and three years in prison, and eighty years he was under the king, ruling all the land of Egypt.* Jasher and Jubilees both reckon "after the death of Joseph," agreeing with Genesis on his hundred and ten years.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja60_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja60_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-60-zepho-eliphaz-esau-edom',
+       E'Zepho son of Eliphaz — the line of Esau set apart',
+       E'Jasher names the war-captain who drives this whole chapter, and the canon already knows his pedigree: *And when the year came round, being the seventy-second year from the Israelites going down to Egypt, after the death of Joseph, Zepho, the son of Eliphaz, the son of Esau, fled from Egypt, he and his men, and they went away* (Jasher 60:1). Genesis set this name in Esau''s house generations earlier — *And the sons of Eliphaz were Teman, Omar, Zepho, and Gatam, and Kenaz* (Genesis 36:11) — sons of *Eliphaz the son of Adah the wife of Esau* (Genesis 36:10), for *these are the generations of Esau the father of the Edomites in mount Seir* (Genesis 36:9). It ain''t new: Zepho is no invention but a son of Edom, and Jasher''s legend traces him *enticing Angeas king of Africa to collect all his army to go and fight with the Egyptians, and with the sons of Jacob* (Jasher 60:4) — the ancient grudge of Esau against Jacob carried forward. From that day forward *Zepho the captain of the host of Angeas would go with them* (Jasher 60:30) to spoil. The prophets read this division as election: *Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob, And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness* (Malachi 1:2-3), and Edom''s violence is judged — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever* (Obadiah 1:10). The seed is kept; the rival line, however great its captains rise, is set outside the covenant.',
+       sv.verse_id, ev.verse_id, 'extras', 56475
+  FROM _session252_ja60_lookup sv, _session252_ja60_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=60 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-60-seventy-second-year-after-joseph',
+       E'The seventy-second year in Egypt — the sojourn clock running after Joseph''s death',
+       E'Jasher dates its war-legend by the covenant clock: *And when the year came round, being the seventy-second year from the Israelites going down to Egypt, after the death of Joseph* (Jasher 60:1). The canon marks the same turn — Joseph''s death and the generation passing — as the hinge before the bondage: *And Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt* (Genesis 50:26), *And Joseph died, and all his brethren, and all that generation* (Exodus 1:6). This is the appointed window Yahuah foretold to Abraham: *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). Jubilees, narrating the very same years, agrees that after Jacob died the seed multiplied through Joseph''s lifetime — *And it came to pass that after Jacob died the children of Yashar''el (Israel) multiplied in the land of Egypt, and they became a great nation* (Jubilees 46:1) — and that *Joseph died being a hundred and ten years old* (Jubilees 46:3), *And he died and all his brethren and all that generation* (Jubilees 46:4). It ain''t new: while Jasher''s eye wanders off to the wars of Africa and Chittim, the date-line quietly keeps the canon''s countdown — the seed kept and growing toward the promised visitation.',
+       sv.verse_id, ev.verse_id, 'extras', 56478
+  FROM _session252_ja60_lookup sv, _session252_ja60_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=60 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-60-zepho-eliphaz-esau-edom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:11 — *And the sons of Eliphaz were Teman, Omar, Zepho, and Gatam, and Kenaz.* Jasher''s war-captain Zepho son of Eliphaz son of Esau is named here in the canon''s own roll of Edom, so the legend hangs on a genuine genealogy.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja60_lookup sv, _session252_ja60_lookup tv
+ WHERE t.slug='jasher-60-zepho-eliphaz-esau-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:10 — *These are the names of Esau''s sons; Eliphaz the son of Adah the wife of Esau, Reuel the son of Bashemath the wife of Esau.* Jasher''s "son of Eliphaz, the son of Esau" matches the canon line: Zepho descends through Eliphaz, Esau''s firstborn by Adah.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja60_lookup sv, _session252_ja60_lookup tv
+ WHERE t.slug='jasher-60-zepho-eliphaz-esau-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* Zepho''s enticing Angeas to war against the sons of Jacob is the old Esau-against-Jacob enmity, which the canon reads as election dividing the two brothers.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja60_lookup sv, _session252_ja60_lookup tv
+ WHERE t.slug='jasher-60-zepho-eliphaz-esau-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* Jasher''s Zepho riding out continually to spoil and to war on Jacob''s sons is the very violence of Edom against his brother that the prophet says shall be cut off.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja60_lookup sv, _session252_ja60_lookup tv
+ WHERE t.slug='jasher-60-zepho-eliphaz-esau-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-60-seventy-second-year-after-joseph
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* Jasher reckons its seventy-second year "after the death of Joseph," dating from the very death the canon records as the close of Genesis.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja60_lookup sv, _session252_ja60_lookup tv
+ WHERE t.slug='jasher-60-seventy-second-year-after-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Jasher''s clock begins where Exodus begins — Joseph and his generation gone — the hinge just before the bondage opens.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja60_lookup sv, _session252_ja60_lookup tv
+ WHERE t.slug='jasher-60-seventy-second-year-after-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years.* Jasher''s counting of the years "from the Israelites going down to Egypt" is the running of the very sojourn Yahuah foretold to Abraham.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja60_lookup sv, _session252_ja60_lookup tv
+ WHERE t.slug='jasher-60-seventy-second-year-after-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:1 — *And it came to pass that after Jacob died the children of Yashar''el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* Jubilees narrates the very years Jasher dates by, the seed multiplying in Egypt after Joseph — the same window from a parallel hand.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja60_lookup sv, _session252_ja60_lookup tv
+ WHERE t.slug='jasher-60-seventy-second-year-after-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 46:3 — *And Joseph died being a hundred and ten years old; seventeen years he lived in the land of Canaan, and ten years he was a servant, and three years in prison, and eighty years he was under the king, ruling all the land of Egypt.* Jasher and Jubilees both reckon "after the death of Joseph," agreeing with Genesis on his hundred and ten years.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja60_lookup sv, _session252_ja60_lookup tv
+ WHERE t.slug='jasher-60-seventy-second-year-after-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=60 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_61.sql (session252 jasher 61) -----
+-- Source anchor: jasher/jasher ch61. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja61 (view _session252_ja61_lookup). Sort band base 56500, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja61_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-61-bondage-begins
+  ('jasher', 'jasher', 61, 1, 'canon', 'exodus', 1, 8, 'free', E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* Jasher''s Pharaoh who presses the sons of Jacob into building his palace is Exodus''s new king who knew not Joseph — the turn from welcome to bondage.'),
+  ('jasher', 'jasher', 61, 2, 'canon', 'exodus', 1, 11, 'free', E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* The sons of Jacob assisting in Pharaoh''s building (Jasher 61:2) is the labor Exodus names as the taskmasters'' affliction and the store-cities.'),
+  ('jasher', 'jasher', 61, 2, 'canon', 'exodus', 1, 13, 'free', E'Exodus 1:13 — *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour:* Jasher''s conscription of Jacob''s sons to build for Pharaoh (61:2) is the rigorous service Exodus records as the heart of the bondage.'),
+  ('jasher', 'jasher', 61, 2, 'jubilees', 'jubilees', 46, 14, 'extras', E'Jubilees 46:14 — *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* Jubilees carries the identical scene — Israel pressed to build Pharaoh''s cities — confirming Jasher''s opening of the bondage. It ain''t new.'),
+  -- thread: jasher-61-sons-of-jacob-die
+  ('jasher', 'jasher', 61, 4, 'canon', 'exodus', 1, 6, 'free', E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Jasher''s deaths of Zebulun and Simeon (61:3-4) are the one-line passing Exodus records of Joseph and all his brethren and that whole generation.'),
+  ('jasher', 'jasher', 61, 3, 'canon', 'genesis', 50, 26, 'free', E'Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* Zebulun put into a coffin and given to his children (Jasher 61:3) mirrors the coffin in Egypt with which Genesis closes over Joseph.'),
+  ('jasher', 'jasher', 61, 3, 'canon', 'genesis', 50, 24, 'free', E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* As the fathers die in Egypt (Jasher 61:3-4), Joseph''s word of the sworn visitation stands over their coffins — the seed will be brought out.'),
+  ('jasher', 'jasher', 61, 4, 'jubilees', 'jubilees', 46, 4, 'extras', E'Jubilees 46:4 — *And he died and all his brethren and all that generation.* Jubilees seals the dying generation in the same words, beside which Jasher''s death-roll of Jacob''s sons (61:3-4) takes its place. It ain''t new.'),
+  -- thread: jasher-61-balaam-son-of-beor
+  ('jasher', 'jasher', 61, 8, 'canon', 'numbers', 22, 5, 'free', E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* Jasher''s youthful Balaam son of Beor the diviner (61:8) is the same son of Beor Numbers will hire to curse Israel.'),
+  ('jasher', 'jasher', 61, 9, 'canon', '2-peter', 2, 15, 'free', E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* Angeas hiring Balaam to conjure the battle''s outcome (Jasher 61:9) is the wages-loving way of Balaam Peter warns against.'),
+  ('jasher', 'jasher', 61, 9, 'canon', 'jude', 1, 11, 'free', E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* The divination-for-hire Jasher shows in Balaam''s youth (61:9) is the error of Balaam for reward Jude pronounces woe upon.'),
+  ('jasher', 'jasher', 61, 8, 'canon', 'numbers', 31, 8, 'free', E'Numbers 31:8 — *And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword.* The sorcerer Jasher introduces (61:8) meets the end Numbers records — Balaam the son of Beor slain with the sword.'),
+  -- thread: jasher-61-zepho-esau-edom
+  ('jasher', 'jasher', 61, 5, 'canon', 'genesis', 36, 11, 'free', E'Genesis 36:11 — *And the sons of Eliphaz were Teman, Omar, Zepho, and Gatam, and Kenaz.* Jasher''s Zepho son of Eliphaz son of Esau (61:5) is the very Zepho Genesis lists among Eliphaz''s sons in Edom''s line.'),
+  ('jasher', 'jasher', 61, 12, 'canon', 'genesis', 36, 9, 'free', E'Genesis 36:9 — *And these are the generations of Esau the father of the Edomites in mount Seir:* Zepho the son of Esau fleeing to Chittim (Jasher 61:12) belongs to the generations of Esau, the Edomite line Genesis sets apart from the chosen seed.'),
+  ('jasher', 'jasher', 61, 24, 'canon', 'genesis', 10, 4, 'free', E'Genesis 10:4 — *And the sons of Javan; Elishah, and Tarshish, Kittim, and Dodanim.* The children of Chittim who make Zepho king (Jasher 61:24) are the Kittim Genesis names among Javan''s sons in the table of nations.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja61_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja61_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-61-bondage-begins',
+       E'Pharaoh builds, and the sons of Jacob are pressed — the bondage begins',
+       E'Jasher opens the long Egyptian night: *And it came to pass at that time Pharaoh king of Egypt commanded all his people to make for him a strong palace in Egypt* (Jasher 61:1), *And he also commanded the sons of Jacob to assist the Egyptians in the building, and the Egyptians made a beautiful and elegant palace for a royal habitation, and he dwelt in it and he renewed his government and he reigned securely* (Jasher 61:2). This is the very seam where Genesis hands off to Exodus — Joseph''s generation passing and a king rising who owns Israel''s labor. Exodus names the turn: *Now there arose up a new king over Egypt, which knew not Joseph* (Exodus 1:8), and then the affliction Jasher only begins to sketch: *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses* (Exodus 1:11), *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour:* (Exodus 1:13). It ain''t new — Jubilees tells the same conscription with the same store-cities: *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt* (Jubilees 46:14). The forced building of Pharaoh''s house is the seed-people''s affliction foretold to Abraham, the bondage that election will carry through to the visitation.',
+       sv.verse_id, ev.verse_id, 'extras', 56500
+  FROM _session252_ja61_lookup sv, _session252_ja61_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=61 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-61-sons-of-jacob-die',
+       E'Zebulun and Simeon die in Egypt — Joseph''s generation passing',
+       E'The tribal fathers begin to die in the land of their sojourn: *And Zebulun the son of Jacob died in that year, that is the seventy-second year of the going down of the Israelites to Egypt, and Zebulun died a hundred and fourteen years old, and was put into a coffin and given into the hands of his children* (Jasher 61:3), *And in the seventy-fifth year died his brother Simeon, he was a hundred and twenty years old at his death, and he was also put into a coffin and given into the hands of his children* (Jasher 61:4). The coffins given into the children''s hands echo the great coffin Genesis set down to close its book: *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt* (Genesis 50:26). Exodus seals the whole generation in a single line — *And Joseph died, and all his brethren, and all that generation* (Exodus 1:6) — and Jubilees keeps the same reckoning: *And he died and all his brethren and all that generation* (Jubilees 46:4). Yet the coffins are not the end; the dying fathers carry forward Joseph''s word of the visitation: *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob* (Genesis 50:24). The seed is kept even as its fathers are laid in Egyptian coffins.',
+       sv.verse_id, ev.verse_id, 'extras', 56503
+  FROM _session252_ja61_lookup sv, _session252_ja61_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=3
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=61 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-61-balaam-son-of-beor',
+       E'Balaam son of Beor the sorcerer — the way of Balaam, far off in Africa',
+       E'Jasher introduces a name the Torah will make infamous, here a fifteen-year-old diviner in Angeas''s court: *And amongst the servants of Angeas was a youth fifteen years old, Balaam the son of Beor was his name and the youth was very wise and understood the are of witchcraft* (Jasher 61:8), *And Angeas said to Balaam, Conjure for us, I pray you, with the witchcraft, that we may know who will prevail in this battle to which we are now proceeding* (Jasher 61:9). This is the legendary youth of the man Numbers will hire to curse Israel: *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* (Numbers 22:5). The wax-and-water divination Jasher shows is exactly the trade the apostles name as a way and a wage: *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* (2 Peter 2:15), and Jude''s woe — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core* (Jude 1:11). His end is already written: *And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword* (Numbers 31:8). Jasher sets the sorcerer-for-hire in the legend long before he meets the chosen seed.',
+       sv.verse_id, ev.verse_id, 'extras', 56506
+  FROM _session252_ja61_lookup sv, _session252_ja61_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=61 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-61-zepho-esau-edom',
+       E'Zepho son of Eliphaz son of Esau — Edom''s line set apart',
+       E'The chapter''s war-legend turns on a son of Esau: *And Zepho the son of Eliphaz the son of Esau, captain of the host to Angeas king of Dinhabah, was still daily enticing Angeas to prepare for battle to fight with the sons of Jacob in Egypt* (Jasher 61:5), and when his war fails he flees: *And when Zepho the son of Eliphaz saw that Angeas despaired of going forth to battle with the Egyptians, Zepho fled from Angeas from Africa, and he went and came to Chittim* (Jasher 61:12). Genesis already named this exact line — Esau, Eliphaz, and a son Zepho — when it set Edom apart from the elect: *And these are the generations of Esau the father of the Edomites in mount Seir:* (Genesis 36:9), *And the sons of Eliphaz were Teman, Omar, Zepho, and Gatam, and Kenaz* (Genesis 36:11). Jasher''s whole Zepho saga grows out of that one genealogical name. The seed-war runs underneath the legend: Esau''s children, who hated Jacob''s, carried to Chittim and Italia (Jasher 61:24) — the Kittim that Genesis lists among Javan''s sons in the table of nations: *And the sons of Javan; Elishah, and Tarshish, Kittim, and Dodanim* (Genesis 10:4). Election precedes the nations; Edom is set off from the chosen line even as Jasher follows its wandering captain.',
+       sv.verse_id, ev.verse_id, 'extras', 56509
+  FROM _session252_ja61_lookup sv, _session252_ja61_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=5
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=61 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-61-bondage-begins
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* Jasher''s Pharaoh who presses the sons of Jacob into building his palace is Exodus''s new king who knew not Joseph — the turn from welcome to bondage.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:11 — *Therefore they did set over them taskmasters to afflict them with their burdens. And they built for Pharaoh treasure cities, Pithom and Raamses.* The sons of Jacob assisting in Pharaoh''s building (Jasher 61:2) is the labor Exodus names as the taskmasters'' affliction and the store-cities.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:13 — *And the Egyptians made the children of Yashar''el (Israel) to serve with rigour:* Jasher''s conscription of Jacob''s sons to build for Pharaoh (61:2) is the rigorous service Exodus records as the heart of the bondage.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:14 — *And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* Jubilees carries the identical scene — Israel pressed to build Pharaoh''s cities — confirming Jasher''s opening of the bondage. It ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=2
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-61-sons-of-jacob-die
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Jasher''s deaths of Zebulun and Simeon (61:3-4) are the one-line passing Exodus records of Joseph and all his brethren and that whole generation.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-sons-of-jacob-die'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* Zebulun put into a coffin and given to his children (Jasher 61:3) mirrors the coffin in Egypt with which Genesis closes over Joseph.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-sons-of-jacob-die'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* As the fathers die in Egypt (Jasher 61:3-4), Joseph''s word of the sworn visitation stands over their coffins — the seed will be brought out.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-sons-of-jacob-die'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:4 — *And he died and all his brethren and all that generation.* Jubilees seals the dying generation in the same words, beside which Jasher''s death-roll of Jacob''s sons (61:3-4) takes its place. It ain''t new.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-sons-of-jacob-die'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=4
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-61-balaam-son-of-beor
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* Jasher''s youthful Balaam son of Beor the diviner (61:8) is the same son of Beor Numbers will hire to curse Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-balaam-son-of-beor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* Angeas hiring Balaam to conjure the battle''s outcome (Jasher 61:9) is the wages-loving way of Balaam Peter warns against.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-balaam-son-of-beor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* The divination-for-hire Jasher shows in Balaam''s youth (61:9) is the error of Balaam for reward Jude pronounces woe upon.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-balaam-son-of-beor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Numbers 31:8 — *And they slew the kings of Midian, beside the rest of them that were slain; namely, Evi, and Rekem, and Zur, and Hur, and Reba, five kings of Midian: Balaam also the son of Beor they slew with the sword.* The sorcerer Jasher introduces (61:8) meets the end Numbers records — Balaam the son of Beor slain with the sword.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-balaam-son-of-beor'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=31 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-61-zepho-esau-edom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:11 — *And the sons of Eliphaz were Teman, Omar, Zepho, and Gatam, and Kenaz.* Jasher''s Zepho son of Eliphaz son of Esau (61:5) is the very Zepho Genesis lists among Eliphaz''s sons in Edom''s line.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-zepho-esau-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:9 — *And these are the generations of Esau the father of the Edomites in mount Seir:* Zepho the son of Esau fleeing to Chittim (Jasher 61:12) belongs to the generations of Esau, the Edomite line Genesis sets apart from the chosen seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-zepho-esau-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 10:4 — *And the sons of Javan; Elishah, and Tarshish, Kittim, and Dodanim.* The children of Chittim who make Zepho king (Jasher 61:24) are the Kittim Genesis names among Javan''s sons in the table of nations.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja61_lookup sv, _session252_ja61_lookup tv
+ WHERE t.slug='jasher-61-zepho-esau-edom'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=61 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=10 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_62.sql (session252 jasher 62) -----
+-- Source anchor: jasher/jasher ch62. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja62 (view _session252_ja62_lookup). Sort band base 56525, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja62_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-62-sons-die-coffins-egypt
+  ('jasher', 'jasher', 62, 1, 'canon', 'exodus', 1, 6, 'free', E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Jasher 62 unfolds this single verse into a year-by-year roll-call of the brothers'' deaths in Egypt.'),
+  ('jasher', 'jasher', 62, 1, 'canon', 'genesis', 50, 26, 'free', E'Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* Joseph''s coffin in Egypt is the exact image Jasher repeats over each brother — embalmed, coffined, not yet carried home.'),
+  ('jasher', 'jasher', 62, 23, 'canon', 'genesis', 49, 33, 'free', E'Genesis 49:33 — *And when Jacob had made an end of commanding his sons, he gathered up his feet into the bed, and yielded up the ghost, and was gathered unto his people.* As Jacob was gathered to his people, so Judah and his brethren in Jasher 62 die into the hands of their children, the seed-line kept across the deaths.'),
+  ('jasher', 'jasher', 62, 1, 'canon', 'acts', 7, 15, 'free', E'Acts 7:15 — *So Jacob went down into Egypt, and died, he, and our fathers,* Stephen names the same Egypt-deaths of the fathers that Jasher 62 records year by year.'),
+  ('jasher', 'jasher', 62, 23, 'jubilees', 'jubilees', 46, 8, 'extras', E'Jubilees 46:8 — *And Joseph died in the forty-sixth jubilee, in the sixth week, in the second year, and they buried him in the land of Egypt, and his brethren died after him.* The Jubilees apparatus tells the same passing — Joseph buried, then his brethren dying after — that Jasher 62 spreads across its dated obituaries.'),
+  -- thread: jasher-62-hadad-bedad-smote-midian-moab
+  ('jasher', 'jasher', 62, 6, 'canon', 'genesis', 36, 35, 'free', E'Genesis 36:35 — *And Husham died, and Hadad the son of Bedad, who smote Midian in the field of Moab, reigned in his stead: and the name of his city was Avith.* Jasher 62 expands this one verse into the full campaign — Hadad son of Bedad smiting Midian in the field of Moab, exactly as Genesis records it.'),
+  ('jasher', 'jasher', 62, 3, 'canon', 'genesis', 36, 34, 'free', E'Genesis 36:34 — *And Jobab died, and Husham of the land of Temani reigned in his stead.* Jasher''s Chusham king of Edom, dying just before Hadad reigns, is the Husham of Genesis'' Edomite king-list.'),
+  ('jasher', 'jasher', 62, 3, 'canon', 'genesis', 36, 31, 'free', E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* Jasher 62''s Edomite kings warring while Israel sits in Egypt is this verse in motion — Edom crowned before Israel was.'),
+  -- thread: jasher-62-esau-edom-set-apart-seed-multiplies
+  ('jasher', 'jasher', 62, 25, 'canon', 'malachi', 1, 2, 'free', E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* Jasher 62 sets the children of Esau (Zepho, Hadad) over against the sons of Jacob in Egypt — the very election Malachi names.'),
+  ('jasher', 'jasher', 62, 25, 'canon', 'obadiah', 1, 10, 'free', E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* The endless Edomite warring of Jasher 62 is the violence Obadiah lays against Edom''s account.'),
+  ('jasher', 'jasher', 62, 1, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The years Jasher counts — the seventy-ninth and onward of the going-down to Egypt — are the four hundred years foretold to Abram running their course.'),
+  ('jasher', 'jasher', 62, 1, 'jubilees', 'jubilees', 46, 1, 'extras', E'Jubilees 46:1 — *And it came to pass that after Jacob died the children of Yashar''el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* The Jubilees apparatus marks the same season Jasher 62 counts through — the fathers dying, the seed multiplying toward the bondage.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja62_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja62_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-62-sons-die-coffins-egypt',
+       E'The sons of Jacob die in Egypt — into coffins, one generation passing',
+       E'Jasher counts off the deaths of Jacob''s sons year by year in Egypt: *In that year, being the seventy-ninth year of the Israelites going down to Egypt, died Reuben the son of Jacob, in the land of Egypt; Reuben was a hundred and twenty-five years old when he died, and they put him into a coffin, and he was given into the hands of his children.* (Jasher 62:1) — and so Dan, Issachar, Asher, Gad, Judah, and Naphtali follow, each *put into a coffin in Egypt, and given into the hands of his children* (Jasher 62:3, 23). This is the canon''s own closing of the patriarchal age, only slowed to a roll-call. Exodus seals the whole generation in a single breath: *And Joseph died, and all his brethren, and all that generation.* (Exodus 1:6) Stephen tells it the same way before the council: *So Jacob went down into Egypt, and died, he, and our fathers,* (Acts 7:15). Jasher''s repeated coffin is Joseph''s own ending carried back onto every brother: *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* (Genesis 50:26) — the embalmed body, the coffin, the land not yet left. And the fathers do not die as men cut off but *gathered unto their people*, the way Jacob did: *And when Jacob had made an end of commanding his sons, he gathered up his feet into the bed, and yielded up the ghost, and was gathered unto his people.* (Genesis 49:33) The Jubilees apparatus narrates the very same passing: *And Joseph died in the forty-sixth jubilee, in the sixth week, in the second year, and they buried him in the land of Egypt, and his brethren died after him.* (Jubilees 46:8) It ain''t new — Jasher only names, one by one, the brethren Scripture buries together.',
+       sv.verse_id, ev.verse_id, 'extras', 56525
+  FROM _session252_ja62_lookup sv, _session252_ja62_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=62 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-62-hadad-bedad-smote-midian-moab',
+       E'Hadad son of Bedad, who smote Midian in the field of Moab — Genesis 36 expanded',
+       E'Jasher names the kings of Edom and the war they fought: *And in that year died Chusham king of Edom, and after him reigned Hadad the son of Bedad, for thirty-five years* (Jasher 62:3), and then *Hadad assembled all the children of Esau... and he directed his way to the land of Moab, and he went to fight with Moab* (Jasher 62:6) — a campaign Jasher draws out for fifteen verses of Edom against Moab and Midian. This is no invention floating free of the canon: it is the unfolding of one of the briefest lines in Genesis'' king-list of Edom. *And Husham died, and Hadad the son of Bedad, who smote Midian in the field of Moab, reigned in his stead: and the name of his city was Avith.* (Genesis 36:35) — Chusham/Husham, Hadad son of Bedad, and the smiting of Midian in the field of Moab, all three sit verbatim in Genesis, and Jasher simply tells the battle the verse only mentions. The king-list itself belongs to the line set outside the covenant promise: *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* (Genesis 36:31) — Edom had its crowns and its conquests before Israel ever had a king. It ain''t new: Jasher''s whole Edomite war is Genesis 36:35 read slowly.',
+       sv.verse_id, ev.verse_id, 'extras', 56528
+  FROM _session252_ja62_lookup sv, _session252_ja62_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=3
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=62 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-62-esau-edom-set-apart-seed-multiplies',
+       E'Esau set apart, the bondage clock running, the seed multiplying',
+       E'Jasher keeps a running count by the years of *the Israelites going down to Egypt* (Jasher 62:1) — the seventy-ninth, the eightieth, the ninety-first — and across the same years it traces Edom''s wars and the rise of Zepho and the children of Esau. The two houses are held apart on the page exactly as the prophets hold them apart. Esau is the brother loved and the brother passed over: *Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob, And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness.* (Malachi 1:2-3) Edom''s violence against the brother is named for judgment: *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* (Obadiah 1:10) Election precedes everything here — the seed is set apart before any deed. And the very clock Jasher counts by is the clock Yahuah set to Abram: *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* (Genesis 15:13) The Jubilees apparatus marks the same turning — the fathers dead, the nation swelling under the affliction to come: *And it came to pass that after Jacob died the children of Yashar''el (Israel) multiplied in the land of Egypt, and they became a great nation* (Jubilees 46:1). It ain''t new — Jasher''s obituaries and wars are the years of Abraham''s promised four hundred running out.',
+       sv.verse_id, ev.verse_id, 'extras', 56531
+  FROM _session252_ja62_lookup sv, _session252_ja62_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=62 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-62-sons-die-coffins-egypt
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Jasher 62 unfolds this single verse into a year-by-year roll-call of the brothers'' deaths in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-sons-die-coffins-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* Joseph''s coffin in Egypt is the exact image Jasher repeats over each brother — embalmed, coffined, not yet carried home.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-sons-die-coffins-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 49:33 — *And when Jacob had made an end of commanding his sons, he gathered up his feet into the bed, and yielded up the ghost, and was gathered unto his people.* As Jacob was gathered to his people, so Judah and his brethren in Jasher 62 die into the hands of their children, the seed-line kept across the deaths.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-sons-die-coffins-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Acts 7:15 — *So Jacob went down into Egypt, and died, he, and our fathers,* Stephen names the same Egypt-deaths of the fathers that Jasher 62 records year by year.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-sons-die-coffins-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 46:8 — *And Joseph died in the forty-sixth jubilee, in the sixth week, in the second year, and they buried him in the land of Egypt, and his brethren died after him.* The Jubilees apparatus tells the same passing — Joseph buried, then his brethren dying after — that Jasher 62 spreads across its dated obituaries.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-sons-die-coffins-egypt'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=23
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-62-hadad-bedad-smote-midian-moab
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:35 — *And Husham died, and Hadad the son of Bedad, who smote Midian in the field of Moab, reigned in his stead: and the name of his city was Avith.* Jasher 62 expands this one verse into the full campaign — Hadad son of Bedad smiting Midian in the field of Moab, exactly as Genesis records it.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-hadad-bedad-smote-midian-moab'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:34 — *And Jobab died, and Husham of the land of Temani reigned in his stead.* Jasher''s Chusham king of Edom, dying just before Hadad reigns, is the Husham of Genesis'' Edomite king-list.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-hadad-bedad-smote-midian-moab'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* Jasher 62''s Edomite kings warring while Israel sits in Egypt is this verse in motion — Edom crowned before Israel was.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-hadad-bedad-smote-midian-moab'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-62-esau-edom-set-apart-seed-multiplies
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* Jasher 62 sets the children of Esau (Zepho, Hadad) over against the sons of Jacob in Egypt — the very election Malachi names.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-esau-edom-set-apart-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* The endless Edomite warring of Jasher 62 is the violence Obadiah lays against Edom''s account.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-esau-edom-set-apart-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* The years Jasher counts — the seventy-ninth and onward of the going-down to Egypt — are the four hundred years foretold to Abram running their course.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-esau-edom-set-apart-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:1 — *And it came to pass that after Jacob died the children of Yashar''el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* The Jubilees apparatus marks the same season Jasher 62 counts through — the fathers dying, the seed multiplying toward the bondage.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja62_lookup sv, _session252_ja62_lookup tv
+ WHERE t.slug='jasher-62-esau-edom-set-apart-seed-multiplies'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=62 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_63.sql (session252 jasher 63) -----
+-- Source anchor: jasher/jasher ch63. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja63 (view _session252_ja63_lookup). Sort band base 56550, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja63_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-63-brethren-die-bondage-begins
+  ('jasher', 'jasher', 63, 2, 'canon', 'exodus', 1, 6, 'free', E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* The canon marks the very hinge Jasher names — once the brethren of Joseph were dead, Egypt turned on Israel (Jasher 63:2).'),
+  ('jasher', 'jasher', 63, 3, 'canon', 'exodus', 1, 14, 'free', E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The same embittering Jasher reports that wearied Israel of their lives (Jasher 63:3).'),
+  ('jasher', 'jasher', 63, 2, 'canon', 'genesis', 15, 13, 'free', E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* the affliction ''from that day to the day of their going forth'' (Jasher 63:2) is the bondage foretold to Abraham.'),
+  ('jasher', 'jasher', 63, 3, 'jubilees', 'jubilees', 46, 15, 'extras', E'Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* Jubilees tells the same affliction after Joseph''s generation passed that Jasher 63:3 records.'),
+  -- thread: jasher-63-new-king-knew-not-joseph
+  ('jasher', 'jasher', 63, 4, 'canon', 'exodus', 1, 8, 'free', E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* Jasher 63:4 names him Melol son of the dead Pharaoh, the generation that knew Joseph having passed.'),
+  ('jasher', 'jasher', 63, 5, 'canon', 'acts', 7, 18, 'free', E'Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen names the same risen generation Jasher 63:5 describes as not knowing the sons of Jacob.'),
+  ('jasher', 'jasher', 63, 6, 'canon', 'acts', 7, 19, 'free', E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* The embittering Jasher 63:6 says began ''from that day forth'' against the sons of Jacob.'),
+  ('jasher', 'jasher', 63, 6, 'jubilees', 'jubilees', 46, 13, 'extras', E'Jubilees 46:13 — *“Behold the people of the children of Yashar’el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many, and let us afflict them with slavery before war come upon us and before they too fight against us; else they will join themselves to our enemies and get them up out of our land, for their hearts and faces are towards the land of Canaan.”* The same forgetting-king''s counsel to afflict the seed Jasher 63:6 records.'),
+  -- thread: jasher-63-yahuah-purposes-the-affliction
+  ('jasher', 'jasher', 63, 7, 'canon', 'genesis', 50, 20, 'free', E'Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* Joseph''s evil-meant-for-good is the same reading Jasher 63:7 gives the bondage itself.'),
+  ('jasher', 'jasher', 63, 8, 'canon', 'acts', 7, 6, 'free', E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* The bondage Jasher 63:8 says was ''from Yahuah'' to teach Israel His wonders is the sojourn foretold to Abraham.'),
+  -- thread: jasher-63-bones-of-the-fathers
+  ('jasher', 'jasher', 63, 1, 'canon', 'genesis', 50, 26, 'free', E'Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* Joseph''s coffin in Egypt mirrors Levi laid in a coffin and given to his children (Jasher 63:1).'),
+  ('jasher', 'jasher', 63, 1, 'canon', 'exodus', 13, 19, 'free', E'Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* The fathers'' coffins Jasher 63:1 records are the bones carried up at the visitation.'),
+  ('jasher', 'jasher', 63, 1, 'canon', 'hebrews', 11, 22, 'free', E'Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones.* The faith that keeps a coffin against the visitation, of which Levi''s coffin (Jasher 63:1) is one.'),
+  ('jasher', 'jasher', 63, 1, 'jubilees', 'jubilees', 46, 5, 'extras', E'Jubilees 46:5 — *And he commanded the children of Yashar’el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt.* The same bones-oath that frames the fathers'' burials in Jasher 63:1.'),
+  -- thread: jasher-63-esau-edom-set-apart
+  ('jasher', 'jasher', 63, 19, 'canon', 'genesis', 36, 31, 'free', E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* The Edomite kingship Jasher 63:19 dates ''from the days of Bela the first king'' is the canon''s record of Edom''s kings before Israel''s.'),
+  ('jasher', 'jasher', 63, 19, 'canon', 'genesis', 36, 32, 'free', E'Genesis 36:32 — *And Bela the son of Beor reigned in Edom: and the name of his city was Dinhabah.* The very ''Bela the first king'' of Edom whom Jasher 63:19 names as the founder of Esau''s covenant of peace.'),
+  ('jasher', 'jasher', 63, 16, 'canon', 'malachi', 1, 2, 'free', E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob,* the election that sets apart the children of Esau (Jasher 63:16) from the chosen seed.'),
+  ('jasher', 'jasher', 63, 16, 'canon', 'obadiah', 1, 10, 'free', E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* The prophetic word over the Edom/Esau line whose kings Jasher 63:16 sets among the nations.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja63_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja63_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-63-brethren-die-bondage-begins',
+       E'The brethren die and the bondage begins',
+       E'Jasher closes the generation of Jacob''s sons and opens the affliction: *And it came to pass after the death of Levi, when all Egypt saw that the sons of Jacob the brethren of Joseph were dead, all the Egyptians began to afflict the children of Jacob, and to embitter their lives from that day to the day of their going forth from Egypt* (Jasher 63:2), and *the Egyptians injured the Israelites until the children of Israel were wearied of their lives on account of the Egyptians* (Jasher 63:3). This is Exodus 1 told from the inside. The canon marks the same hinge — the death of the founding generation: *And Joseph died, and all his brethren, and all that generation* (Exodus 1:6) — and then the same bitterness: *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour* (Exodus 1:14). Jubilees narrates the identical turn after Joseph''s death: *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied* (Jubilees 46:15). It ain''t new — the affliction Jasher dates ''from that day to the day of their going forth'' is the four-hundred-year bondage Yahuah had already sworn to Abram: *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). The covenant seed is kept even under the lash.',
+       sv.verse_id, ev.verse_id, 'extras', 56550
+  FROM _session252_ja63_lookup sv, _session252_ja63_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=2
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=63 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-63-new-king-knew-not-joseph',
+       E'A generation that knew not the sons of Jacob',
+       E'Jasher names the king and the forgetting: *that Pharaoh king of Egypt died, and Melol his son reigned in his stead, and all the mighty men of Egypt and all that generation which knew Joseph and his brethren died in those days* (Jasher 63:4), *And another generation rose up in their stead, which had not known the sons of Jacob and all the good which they had done to them, and all their might in Egypt* (Jasher 63:5). The canon says it in one stroke: *Now there arose up a new king over Egypt, which knew not Joseph* (Exodus 1:8). Stephen rehearses the same in Acts: *Till another king arose, which knew not Joseph* (Acts 7:18), and *The same dealt subtilly with our kindred, and evil entreated our fathers* (Acts 7:19) — Jasher''s ''began from that day forth to embitter the lives of the sons of Jacob'' (63:6). Jubilees too marks the new king and the wise dealing: *Behold the people of the children of Yashar''el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many, and let us afflict them with slavery before war come upon us...* (Jubilees 46:13). The kingdom of man forgets the seed it once welcomed; the covenant does not forget.',
+       sv.verse_id, ev.verse_id, 'extras', 56553
+  FROM _session252_ja63_lookup sv, _session252_ja63_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=4
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=63 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-63-yahuah-purposes-the-affliction',
+       E'The affliction was also from Yahuah, to His people''s good',
+       E'Jasher reads the bondage with the eyes of faith: *And this was also from Yahuah (the Lord), for the children of Israel, to benefit them in their latter days, in order that all the children of Israel might know Yahuah their Elohim (the Lord their God)* (Jasher 63:7), *And in order to know the signs and mighty wonders which Yahuah (the Lord) would do in Egypt on account of his people Israel...that the children of Israel might fear Yahuah Elohim (the Lord God) of their ancestors, and walk in all his ways, they and their seed after them all the days* (Jasher 63:8). This is Joseph''s own theology of evil-meant-for-good carried forward: *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). And it is the affliction Abram was shown would end in deliverance, that the seed might fear and walk in His ways — *that his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years* (Acts 7:6). Even the iron furnace is election keeping its people; Torah and the walk in His ways stand on the far side of it.',
+       sv.verse_id, ev.verse_id, 'extras', 56556
+  FROM _session252_ja63_lookup sv, _session252_ja63_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=7
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=63 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-63-bones-of-the-fathers',
+       E'Levi laid in a coffin, the fathers'' bones kept for the visitation',
+       E'Jasher opens with a burial: *And in the ninety-third year died Levi, the son of Jacob, in Egypt...and they put him into a coffin and he was given into the hands of his children* (Jasher 63:1). Joseph''s own burial in the canon ends the same way, and binds the bones to the promised visitation: *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt* (Genesis 50:26), having charged — *Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25). The oath was kept at the Exodus: *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you* (Exodus 13:19). The letter to the Hebrews crowns it as faith reaching past the grave to the promise: *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). Jubilees keeps the same oath: *And he commanded the children of Yashar’el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt* (Jubilees 46:5). The coffin in Egypt is not an ending — it is a deposit on the visitation.',
+       sv.verse_id, ev.verse_id, 'extras', 56559
+  FROM _session252_ja63_lookup sv, _session252_ja63_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=1
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=63 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-63-esau-edom-set-apart',
+       E'The children of Esau and Edom''s kings, set apart',
+       E'Jasher''s long war-legend (Zepho son of Eliphaz, Angeas of Africa, the children of Chittim) is its own expansion with no canon scene behind it; but where it touches the line of Esau it touches genuine canon. Zepho appeals to Edom: *And the children of Esau sent a letter to the children of Chittim and to Zepho their king, saying, We cannot fight against Angeas and his people for a covenant of peace has been between us these many years, from the days of Bela the first king...* (Jasher 63:19) — and the canon already records that Edom had crowned kings before Israel did: *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel)* (Genesis 36:31), *And Bela the son of Beor reigned in Edom: and the name of his city was Dinhabah* (Genesis 36:32). This is the line of Esau set apart from the elect seed — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob,* (Malachi 1:2) — and reserved for the prophets'' word against Edom: *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever* (Obadiah 1:10). Election precedes the wars: the seed Jasher follows into Egypt is Jacob''s, not Esau''s.',
+       sv.verse_id, ev.verse_id, 'extras', 56562
+  FROM _session252_ja63_lookup sv, _session252_ja63_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=16
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=63 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-63-brethren-die-bondage-begins
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* The canon marks the very hinge Jasher names — once the brethren of Joseph were dead, Egypt turned on Israel (Jasher 63:2).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-brethren-die-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 1:14 — *And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field: all their service, wherein they made them serve, was with rigour.* The same embittering Jasher reports that wearied Israel of their lives (Jasher 63:3).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-brethren-die-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Genesis 15:13 — *And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* the affliction ''from that day to the day of their going forth'' (Jasher 63:2) is the bondage foretold to Abraham.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-brethren-die-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:15 — *And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* Jubilees tells the same affliction after Joseph''s generation passed that Jasher 63:3 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-brethren-die-bondage-begins'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=3
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-63-new-king-knew-not-joseph
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 1:8 — *Now there arose up a new king over Egypt, which knew not Joseph.* Jasher 63:4 names him Melol son of the dead Pharaoh, the generation that knew Joseph having passed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-new-king-knew-not-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:18 — *Till another king arose, which knew not Joseph.* Stephen names the same risen generation Jasher 63:5 describes as not knowing the sons of Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-new-king-knew-not-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Acts 7:19 — *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* The embittering Jasher 63:6 says began ''from that day forth'' against the sons of Jacob.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-new-king-knew-not-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:13 — *“Behold the people of the children of Yashar’el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many, and let us afflict them with slavery before war come upon us and before they too fight against us; else they will join themselves to our enemies and get them up out of our land, for their hearts and faces are towards the land of Canaan.”* The same forgetting-king''s counsel to afflict the seed Jasher 63:6 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-new-king-knew-not-joseph'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=6
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-63-yahuah-purposes-the-affliction
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 50:20 — *But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive.* Joseph''s evil-meant-for-good is the same reading Jasher 63:7 gives the bondage itself.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-yahuah-purposes-the-affliction'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Acts 7:6 — *And Elohim (God) spake on this wise, That his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat them evil four hundred years.* The bondage Jasher 63:8 says was ''from Yahuah'' to teach Israel His wonders is the sojourn foretold to Abraham.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-yahuah-purposes-the-affliction'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-63-bones-of-the-fathers
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 50:26 — *So Joseph died, being an hundred and ten years old: and they embalmed him, and he was put in a coffin in Egypt.* Joseph''s coffin in Egypt mirrors Levi laid in a coffin and given to his children (Jasher 63:1).'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-bones-of-the-fathers'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 13:19 — *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you.* The fathers'' coffins Jasher 63:1 records are the bones carried up at the visitation.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-bones-of-the-fathers'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Hebrews 11:22 — *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones.* The faith that keeps a coffin against the visitation, of which Levi''s coffin (Jasher 63:1) is one.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-bones-of-the-fathers'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jubilees 46:5 — *And he commanded the children of Yashar’el (Israel) before he died that they should carry his bones with them when they went forth from the land of Egypt.* The same bones-oath that frames the fathers'' burials in Jasher 63:1.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-bones-of-the-fathers'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=1
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-63-esau-edom-set-apart
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 36:31 — *And these are the kings that reigned in the land of Edom, before there reigned any king over the children of Yashar''el (Israel).* The Edomite kingship Jasher 63:19 dates ''from the days of Bela the first king'' is the canon''s record of Edom''s kings before Israel''s.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-esau-edom-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:32 — *And Bela the son of Beor reigned in Edom: and the name of his city was Dinhabah.* The very ''Bela the first king'' of Edom whom Jasher 63:19 names as the founder of Esau''s covenant of peace.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-esau-edom-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob’s brother? saith Yahuah (LORD): yet I loved Jacob,* the election that sets apart the children of Esau (Jasher 63:16) from the chosen seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-esau-edom-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* The prophetic word over the Edom/Esau line whose kings Jasher 63:16 sets among the nations.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja63_lookup sv, _session252_ja63_lookup tv
+ WHERE t.slug='jasher-63-esau-edom-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=63 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jasher_64.sql (session252 jasher 64) -----
+-- Source anchor: jasher/jasher ch64. Targets span Tanakh + NT (canon) + extra-canonical.
+-- Tag: ja64 (view _session252_ja64_lookup). Sort band base 56575, step 3. Idempotent ON CONFLICT.
+
+CREATE TEMP VIEW _session252_ja64_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29','josephus','lightfoot-apostolic-fathers','mrjames-apocryphal-nt');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: jasher-64-joseph-and-his-brethren-dead
+  ('jasher', 'jasher', 64, 8, 'canon', 'genesis', 50, 24, 'free', E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* Joseph''s dying word of the promised visitation stands behind Jasher 64:8''s report that Joseph and his brethren were dead.'),
+  ('jasher', 'jasher', 64, 8, 'canon', 'genesis', 50, 25, 'free', E'Genesis 50:25 — *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* The oath over Joseph''s bones is the canon promise that frames the death Jasher 64:8 records.'),
+  ('jasher', 'jasher', 64, 8, 'canon', 'exodus', 1, 6, 'free', E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Exodus'' own seam matches Jasher 64:8 word for word — Joseph and his brethren dead, the generation passed.'),
+  ('jasher', 'jasher', 64, 8, 'canon', 'exodus', 1, 7, 'free', E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The seed kept and multiplying in Egypt is the canon backdrop to Jasher 64:8''s note that all their children remained in Egypt.'),
+  ('jasher', 'jasher', 64, 8, 'jubilees', 'jubilees', 46, 8, 'extras', E'Jubilees 46:8 — *And Joseph died in the forty-sixth jubilee, in the sixth week, in the second year, and they buried him in the land of Egypt, and his brethren died after him.* The Jubilees apparatus narrates the same passing of Joseph and his brethren that Jasher 64:8 reports.'),
+  -- thread: jasher-64-esau-edom-set-apart
+  ('jasher', 'jasher', 64, 5, 'canon', '1-samuel', 24, 13, 'free', E'1 Samuel 24:13 — *As saith the proverb of the ancients, Wickedness proceedeth from the wicked: but mine hand shall not be upon thee.* The very proverb Jasher 64:5 quotes over Zepho and the wicked children of Esau is the ancient canon proverb David spoke.'),
+  ('jasher', 'jasher', 64, 9, 'canon', 'genesis', 36, 8, 'free', E'Genesis 36:8 — *Thus dwelt Esau in mount Seir: Esau is Edom.* Genesis already set Esau-Edom apart from the elect line, the house whose cause Zepho rises to avenge in Jasher 64:9.'),
+  ('jasher', 'jasher', 64, 13, 'canon', 'obadiah', 1, 10, 'free', E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* Edom''s vow in Jasher 64:13 to avenge his cause against the children of Jacob is the very violence against his brother Obadiah indicts.'),
+  ('jasher', 'jasher', 64, 14, 'canon', 'malachi', 1, 2, 'free', E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* As the children of Esau gather to war in Jasher 64:14, Malachi declares the election that set Jacob''s line apart from Esau''s.'),
+  -- thread: jasher-64-balaam-divination-confounded
+  ('jasher', 'jasher', 64, 27, 'canon', 'numbers', 22, 5, 'free', E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* The same Balaam son of Beor hired against Israel is the diviner Zepho summons in Jasher 64:27.'),
+  ('jasher', 'jasher', 64, 29, 'canon', 'numbers', 23, 23, 'free', E'Numbers 23:23 — *Surely there is no enchantment against Jacob, neither is there any divination against Yashar''el (Israel): according to this time it shall be said of Jacob and of Yashar''el (Israel), What hath Elohim (God) wrought!* The canon''s verdict is Jasher 64:29''s whole point — the divination is destroyed in Balaam''s hand because no enchantment stands against the seed.'),
+  ('jasher', 'jasher', 64, 29, 'canon', 'deuteronomy', 23, 5, 'free', E'Deuteronomy 23:5 — *Nevertheless Yahuah Elohayka (the LORD thy God) would not hearken unto Balaam; but Yahuah Elohayka (the LORD thy God) turned the curse into a blessing unto thee, because Yahuah Elohayka (the LORD thy God) loved thee.* Yahuah confounding Balaam in Jasher 64:29 is the same love-driven turning the canon records over Israel.'),
+  ('jasher', 'jasher', 64, 28, 'canon', '2-peter', 2, 15, 'free', E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* The hireling diviner of Jasher 64:28 is the very way of Balaam the NT marks as the road of those who love the wages of unrighteousness.'),
+  ('jasher', 'jasher', 64, 28, 'canon', 'jude', 1, 11, 'free', E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* Jude names the error of Balaam for reward — the hired counsel against the seed that fails in Balaam''s hand in Jasher 64:28.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _session252_ja64_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _session252_ja64_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-64-joseph-and-his-brethren-dead',
+       E'Joseph and his brethren are dead — the generation passes',
+       E'Jasher reports the hinge that opens the bondage: *For Zepho heard that the mighty men of Egypt were dead and that Joseph and his brethren the sons at Jacob were dead, and that all their children the children of Israel remained in Egypt.* (Jasher 64:8). This is the very seam of Exodus 1, where the canon turns the page from the patriarchs to the affliction — it ain''t new. Genesis already set the oath in Joseph''s mouth: *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* (Genesis 50:24), and *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* (Genesis 50:25) — the visitation and the bones promised. Exodus picks up exactly where Jasher stands: *And Joseph died, and all his brethren, and all that generation.* (Exodus 1:6), and the seed kept and multiplying: *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* (Exodus 1:7). The Jubilees apparatus narrates the same passing: *And Joseph died in the forty-sixth jubilee, in the sixth week, in the second year, and they buried him in the land of Egypt, and his brethren died after him.* (Jubilees 46:8).',
+       sv.verse_id, ev.verse_id, 'extras', 56575
+  FROM _session252_ja64_lookup sv, _session252_ja64_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=8
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=64 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-64-esau-edom-set-apart',
+       E'Esau and Edom set apart — from the wicked goes forth wickedness',
+       E'Jasher names the old grudge of Edom against the elect line. Zepho the son of Eliphaz, son of Esau, *still walked in the ways of the children of Chittim and the wicked children of Esau, to serve other gods which his brethren the children of Esau had taught him; it is therefore said, From the wicked goes forth wickedness.* (Jasher 64:5), and he calls his brethren the children of Esau to *avenge the cause of our brethren* (Jasher 64:9, 13). The proverb Jasher quotes is the canon''s own: *As saith the proverb of the ancients, Wickedness proceedeth from the wicked: but mine hand shall not be upon thee.* (1 Samuel 24:13). Genesis already set Esau apart in his own mountain: *Thus dwelt Esau in mount Seir: Esau is Edom.* (Genesis 36:8). The prophets read the grudge as Edom''s perpetual violence against his brother: *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* (Obadiah 1:10), and election standing fast: *Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* (Malachi 1:2). Election precedes confession — the chosen seed is kept and Edom is set outside it, not a people erased but a line not chosen.',
+       sv.verse_id, ev.verse_id, 'extras', 56578
+  FROM _session252_ja64_lookup sv, _session252_ja64_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=5
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=64 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jasher-64-balaam-divination-confounded',
+       E'Balaam the diviner confounded — no enchantment against Yashar''el',
+       E'Balaam the son of Beor appears here as Zepho''s hired counselor against Israel, and Yahuah breaks his art in his hand. *And Zepho said to Balaam, Try by divination for us that we may know who will prevail in the battle, we or the Egyptians.* (Jasher 64:27); *And Balaam rose up and tried the are of divination, and he was skillful in the knowledge of it, but he was confused and the work was destroyed in his hand.* (Jasher 64:28); *And he tried it again but it did not succeed... for this was from Yahuah (the Lord), in order to cause Zepho and his people to fall into the hand of the children of Israel, who had trusted in Yahuah (the Lord), the Elohim (God) of their ancestors, in their war.* (Jasher 64:29). This is the same Balaam the canon names: *He sent messengers therefore unto Balaam the son of Beor to Pethor... to call him* (Numbers 22:5), and the canon''s verdict over his art against the seed is exactly Jasher''s: *Surely there is no enchantment against Jacob, neither is there any divination against Yashar''el (Israel)...* (Numbers 23:23), for *Yahuah Elohayka (the LORD thy God) turned the curse into a blessing unto thee, because Yahuah Elohayka (the LORD thy God) loved thee.* (Deuteronomy 23:5). The NT seals the way of Balaam as the hireling road: *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* (2 Peter 2:15), and *Woe unto them!... and ran greedily after the error of Balaam for reward...* (Jude 11). It ain''t new — the seed is kept, the divination falls.',
+       sv.verse_id, ev.verse_id, 'extras', 56581
+  FROM _session252_ja64_lookup sv, _session252_ja64_lookup ev
+ WHERE sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=27
+   AND ev.edition_slug='jasher' AND ev.book_slug='jasher' AND ev.chapter_number=64 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: jasher-64-joseph-and-his-brethren-dead
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 50:24 — *And Joseph said unto his brethren, I die: and Elohim (God) will surely visit you, and bring you out of this land unto the land which he sware to Abraham, to Isaac, and to Jacob.* Joseph''s dying word of the promised visitation stands behind Jasher 64:8''s report that Joseph and his brethren were dead.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-joseph-and-his-brethren-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 50:25 — *And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence.* The oath over Joseph''s bones is the canon promise that frames the death Jasher 64:8 records.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-joseph-and-his-brethren-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 1:6 — *And Joseph died, and all his brethren, and all that generation.* Exodus'' own seam matches Jasher 64:8 word for word — Joseph and his brethren dead, the generation passed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-joseph-and-his-brethren-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 1:7 — *And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them.* The seed kept and multiplying in Egypt is the canon backdrop to Jasher 64:8''s note that all their children remained in Egypt.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-joseph-and-his-brethren-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=1 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jubilees 46:8 — *And Joseph died in the forty-sixth jubilee, in the sixth week, in the second year, and they buried him in the land of Egypt, and his brethren died after him.* The Jubilees apparatus narrates the same passing of Joseph and his brethren that Jasher 64:8 reports.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-joseph-and-his-brethren-dead'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=8
+   AND tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-64-esau-edom-set-apart
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'1 Samuel 24:13 — *As saith the proverb of the ancients, Wickedness proceedeth from the wicked: but mine hand shall not be upon thee.* The very proverb Jasher 64:5 quotes over Zepho and the wicked children of Esau is the ancient canon proverb David spoke.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-esau-edom-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=24 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 36:8 — *Thus dwelt Esau in mount Seir: Esau is Edom.* Genesis already set Esau-Edom apart from the elect line, the house whose cause Zepho rises to avenge in Jasher 64:9.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-esau-edom-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=36 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Obadiah 1:10 — *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.* Edom''s vow in Jasher 64:13 to avenge his cause against the children of Jacob is the very violence against his brother Obadiah indicts.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-esau-edom-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 1:2 — *I have loved you, saith Yahuah (LORD). Yet ye say, Wherein hast thou loved us? Was not Esau Jacob''s brother? saith Yahuah (LORD): yet I loved Jacob,* As the children of Esau gather to war in Jasher 64:14, Malachi declares the election that set Jacob''s line apart from Esau''s.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-esau-edom-set-apart'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: jasher-64-balaam-divination-confounded
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 22:5 — *He sent messengers therefore unto Balaam the son of Beor to Pethor, which is by the river of the land of the children of his people, to call him, saying, Behold, there is a people come out from Egypt: behold, they cover the face of the earth, and they abide over against me:* The same Balaam son of Beor hired against Israel is the diviner Zepho summons in Jasher 64:27.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-balaam-divination-confounded'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=22 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 23:23 — *Surely there is no enchantment against Jacob, neither is there any divination against Yashar''el (Israel): according to this time it shall be said of Jacob and of Yashar''el (Israel), What hath Elohim (God) wrought!* The canon''s verdict is Jasher 64:29''s whole point — the divination is destroyed in Balaam''s hand because no enchantment stands against the seed.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-balaam-divination-confounded'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=23 AND tv.verse_number=23
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 23:5 — *Nevertheless Yahuah Elohayka (the LORD thy God) would not hearken unto Balaam; but Yahuah Elohayka (the LORD thy God) turned the curse into a blessing unto thee, because Yahuah Elohayka (the LORD thy God) loved thee.* Yahuah confounding Balaam in Jasher 64:29 is the same love-driven turning the canon records over Israel.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-balaam-divination-confounded'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Peter 2:15 — *Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;* The hireling diviner of Jasher 64:28 is the very way of Balaam the NT marks as the road of those who love the wages of unrighteousness.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-balaam-divination-confounded'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jude 1:11 — *Woe unto them! for they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.* Jude names the error of Balaam for reward — the hired counsel against the seed that fails in Balaam''s hand in Jasher 64:28.'
+  FROM cross_reference_threads t, cross_references x, _session252_ja64_lookup sv, _session252_ja64_lookup tv
+ WHERE t.slug='jasher-64-balaam-divination-confounded'
+   AND sv.edition_slug='jasher' AND sv.book_slug='jasher' AND sv.chapter_number=64 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session252 — Jasher cross-references complete.'
