@@ -1689,6 +1689,838 @@ SELECT t.id, x.id, 4, E'Malachi 2:15 — *did not he make one?... That he might 
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1corinthians_08.sql (S228 1 Corinthians 8) -----
+-- =====================================================================
+-- S228 minion — 1 CORINTHIANS 8 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 1 CORINTHIANS 8 (13 verses) — idol-food, the weak conscience, and the one Elohim.
+-- Tag: co08 (temp view _s228_co08_lookup).
+-- Sort band: floor 6775, step 3 (6775, 6778, 6781 used; under 6800).
+-- Source is ALWAYS the canon 1 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: this chapter is Paul on meat sacrificed to IDOLS and the weak conscience — it is
+-- NOT a repeal of the clean/unclean food law (Leviticus 11), and it must not read as dietary-law
+-- abolition. *Knowledge puffeth up, but charity edifieth* (8:1). The centerpiece is the confession
+-- that *there is none other Elohim (God) but one... to us there is but one Elohim (God), the Father,
+-- of whom are all things... and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all
+-- things* (8:4-6) — the Shema (Deuteronomy 6:4) and *Yahuah (LORD) he is Elohim (God)... there is
+-- none else* (Deuteronomy 4:35,39). CHRISTOLOGY (the Formed): the Father is the One, Yahusha is the
+-- Formed Son through whom are all things, bearing the divine name — NOT a co-equal-persons second
+-- person, NOT a modalist collapse, NOT a mere man. Preserve the pull's distinction. The idols are
+-- nothing in the world (8:4) → the idol-polemic of Psalm 115:4-8 and Isaiah 44 (idols of wood and
+-- stone, nothing). The weak brother for whom Messiah died (8:11) is the same charge as Romans 14 —
+-- the meat is not the issue; the conscience of the brother is.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-3   knowledge puffeth up, but charity edifieth; if any man love Elohim, the same is known
+--           Tanakh: none warranted (the charity/knowledge contrast is carried in the prose; no single
+--                   load-bearing Tanakh verse is quoted, not forced)
+--           Extras: none warranted   NT: none warranted
+--   v.4-6   an idol is nothing; none other Elohim but one; one Elohim the Father, one Lord Yahusha
+--           Tanakh: Deuteronomy 6:4 (Hear, O Yashar'el: Yahuah our Elohim is one Yahuah),
+--                   Deuteronomy 4:35 (Yahuah he is Elohim; there is none else beside him),
+--                   Deuteronomy 4:39 (Yahuah he is Elohim in heaven above and upon the earth; none else)
+--           Extras: none warranted (the idols-nothing extras carried in the idol-polemic thread)
+--           NT: Mark 12:29 (the first commandment: Hear, O Yashar'el; Yahuah our Elohim is one Yahuah),
+--               Mark 12:32 (there is one Elohim; and there is none other but he)
+--   v.4-5   an idol is nothing in the world; though there be that are called gods, gods many
+--           Tanakh: Psalm 115:4 (their idols are silver and gold, the work of men's hands),
+--                   Psalm 115:8 (they that make them are like unto them), Isaiah 44:9 (they that make
+--                   a graven image are all of them vanity), Isaiah 44:17 (Deliver me; for thou art my god)
+--           Extras: Wisdom of Solomon 13:10 (in dead things is their hope, who call them gods, the
+--                   works of men's hands), Wisdom of Solomon 14:8 (that which is made with hands is
+--                   cursed... being corruptible, it was called god)
+--           NT: carried in the Shema thread
+--   v.7-13  the weak conscience defiled; meat commendeth us not; the stumblingblock; the weak brother
+--           for whom Messiah died; I will eat no flesh while the world standeth
+--           Tanakh: none warranted (the temple/idol-food root carried at v.4; the weak-brother charge
+--                   is a NT-internal apostolic matter, no load-bearing Tanakh verse)
+--           Extras: none warranted
+--           NT: Romans 14:13 (no man put a stumblingblock in his brother's way), Romans 14:15
+--               (Destroy not him with thy meat, for whom Messiah died), Romans 14:21 (it is good
+--               neither to eat flesh... whereby thy brother stumbleth)
+--
+-- THREADS (slug -> target libraries):
+--   6775 1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6   (Tanakh + NT)  [CHRISTOLOGY CENTERPIECE]
+--   6778 1-corinthians-8-an-idol-is-nothing-in-the-world-the-gods-of-wood-and-stone-psalm-115   (Tanakh + Extras)
+--   6781 1-corinthians-8-the-weak-brother-for-whom-messiah-died-the-stumblingblock-romans-14    (NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s228_co08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6  [CHRISTOLOGY CENTERPIECE]
+  ('canon', '1-corinthians', 8, 4, 'canon', 'deuteronomy', 6, 4, 'free', E'*Hear, O Yashar''el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD):* (Deuteronomy 6:4). The Shema is the ground of Paul''s whole argument about idol-food: *we know that an idol is nothing in the world, and that there is none other Elohim (God) but one* (1 Corinthians 8:4). The assembly at Corinth confesses what Yashar''el (Israel) was commanded to hear and keep — Yahuah (LORD) is one. The idol is nothing precisely because the one Yahuah (LORD) is the only Elohim (God); to confess the Shema is to know that the meat laid before a no-god has been laid before nothing.'),
+  ('canon', '1-corinthians', 8, 6, 'canon', 'deuteronomy', 6, 4, 'free', E'*Hear, O Yashar''el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD):* (Deuteronomy 6:4). Paul confesses the one Yahuah (LORD) of the Shema in the fulness of the Formed: *to us there is but one Elohim (God), the Father, of whom are all things, and we in him; and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things, and we by him* (1 Corinthians 8:6). The Father is the One of whom are all things; Yahusha HaMashiach (Jesus Christ) is the Formed Son through whom are all things, bearing the divine name. This does not break the oneness of the Shema but unfolds it — the one Yahuah (LORD) and the Formed who came from him by whom all things were made, the Rock that followed Yashar''el (Israel), not a second separate God and not a mere man.'),
+  ('canon', '1-corinthians', 8, 4, 'canon', 'deuteronomy', 4, 35, 'free', E'*Unto thee it was shewed, that thou mightest know that Yahuah (LORD) he is Elohim (God); there is none else beside him.* (Deuteronomy 4:35). At Horeb Yashar''el (Israel) was made to know *that Yahuah (LORD) he is Elohim (God); there is none else beside him* — the very knowledge Paul presses: *there is none other Elohim (God) but one* (1 Corinthians 8:4). The called-out ones at Corinth stand on the same revelation Yashar''el (Israel) received in the fire: beside the one Yahuah (LORD) there is no other, so the so-called gods of the idol-temple are nothing.'),
+  ('canon', '1-corinthians', 8, 6, 'canon', 'deuteronomy', 4, 39, 'free', E'*Know therefore this day, and consider it in thine heart, that Yahuah (LORD) he is Elohim (God) in heaven above, and upon the earth beneath: there is none else.* (Deuteronomy 4:39). Moses charged Yashar''el (Israel) to know *that Yahuah (LORD) he is Elohim (God) in heaven above, and upon the earth beneath: there is none else* — and Paul answers the many so-called gods *in heaven or in earth* with the same confession: *to us there is but one Elohim (God), the Father, of whom are all things* (1 Corinthians 8:6). Whatever be named god in heaven above or earth beneath, there is none else; the one Elohim (God) of Deuteronomy is the one Elohim (God) the Father, and the one Lord through whom are all things.'),
+  ('canon', '1-corinthians', 8, 4, 'canon', 'mark', 12, 29, 'free', E'*And Yahusha (Jesus) answered him, The first of all the commandments is, Hear, O Yashar''el (Israel); Yahuah Eloheinu (The Lord our God) is one Yahuah (Lord):* (Mark 12:29). Yahusha (Jesus) himself names the Shema the first of all the commandments — *Yahuah Eloheinu (The Lord our God) is one Yahuah (Lord)* — the same oneness Paul rests the idol-food teaching upon: *there is none other Elohim (God) but one* (1 Corinthians 8:4). The Messiah did not set aside the confession of the one Yahuah (LORD); he laid it down as the first commandment, and Paul builds the whole chapter on it.'),
+  ('canon', '1-corinthians', 8, 6, 'canon', 'mark', 12, 32, 'free', E'*And the scribe said unto him, Well, Master, thou hast said the truth: for there is one Elohim (God); and there is none other but he:* (Mark 12:32). The scribe answers Yahusha (Jesus) rightly — *there is one Elohim (God); and there is none other but he* — and Yahusha (Jesus) commends him as not far from the kingdom. Paul speaks the same creed to Corinth: *to us there is but one Elohim (God), the Father, of whom are all things... and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things* (1 Corinthians 8:6). The one Elohim (God) the Father and the one Lord the Formed Son are confessed without breaking the oneness the scribe and the Messiah affirmed: there is none other but he.'),
+  -- thread: 1-corinthians-8-an-idol-is-nothing-in-the-world-the-gods-of-wood-and-stone-psalm-115
+  ('canon', '1-corinthians', 8, 4, 'canon', 'psalms', 115, 4, 'free', E'*Their idols are silver and gold, the work of men''s hands.* (Psalm 115:4). The psalm names the idols for what they are — *silver and gold, the work of men''s hands* — which is why Paul can say *we know that an idol is nothing in the world* (1 Corinthians 8:4). A thing fashioned by a craftsman''s hand is no god; it is nothing, because beside the one Yahuah (LORD) there is no other Elohim (God).'),
+  ('canon', '1-corinthians', 8, 5, 'canon', 'psalms', 115, 8, 'free', E'*They that make them are like unto them; so is every one that trusteth in them.* (Psalm 115:8). The idols *have mouths, but they speak not; eyes have they, but they see not* — and *they that make them are like unto them.* So though Paul grants *there be that are called gods... as there be gods many, and lords many* (1 Corinthians 8:5), these are the lifeless works the psalm derides; the many so-called gods are no gods at all, and they that trust them are made as empty as the stone they bow to.'),
+  ('canon', '1-corinthians', 8, 4, 'canon', 'isaiah', 44, 9, 'free', E'*They that make a graven image are all of them vanity; and their delectable things shall not profit; and they are their own witnesses; they see not, nor know; that they may be ashamed.* (Isaiah 44:9). Isaiah strips the idol bare: *they that make a graven image are all of them vanity.* The smith forges it, the carpenter shapes it after the figure of a man, half the tree he burns for warmth and of the residue he makes a god — and it is nothing. This is the *idol* Paul says *is nothing in the world* (1 Corinthians 8:4); the workman''s vanity cannot be a rival to the one Elohim (God) who formed Yashar''el (Israel) from the womb.'),
+  ('canon', '1-corinthians', 8, 5, 'canon', 'isaiah', 44, 17, 'free', E'*And the residue thereof he maketh a god, even his graven image: he falleth down unto it, and worshippeth it, and prayeth unto it, and saith, Deliver me; for thou art my god.* (Isaiah 44:17). The idolater bows to the leftover wood — *Deliver me; for thou art my god* — to a block that cannot save. These are the *gods many, and lords many* that *are called gods* (1 Corinthians 8:5), the no-gods of Isaiah''s mockery; for the called-out ones there is but one Elohim (God), and the carved residue of a tree is nothing in the world.'),
+  ('canon', '1-corinthians', 8, 4, 'apocrypha', 'the-wisdom-of-solomon', 13, 10, 'extras', E'*But miserable are they, and in dead things is their hope, who call them gods, which are the works of men''s hands, gold and silver, to shew art in, and resemblances of beasts, or a stone good for nothing, the work of an ancient hand.* (Wisdom of Solomon 13:10). The restored library joins the same polemic: those who *call them gods* set their hope *in dead things... the works of men''s hands... a stone good for nothing.* This is precisely Paul''s ground — *an idol is nothing in the world* (1 Corinthians 8:4) — for a stone good for nothing cannot be a god, and the meat set before it has been set before nothing at all.'),
+  ('canon', '1-corinthians', 8, 5, 'apocrypha', 'the-wisdom-of-solomon', 14, 8, 'extras', E'*But that which is made with hands is cursed, as well it, as he that made it: he, because he made it; and it, because, being corruptible, it was called god.* (Wisdom of Solomon 14:8). The library names the absurdity: a corruptible thing made with hands *was called god.* These are the *gods many, and lords many* that are merely *called gods* (1 Corinthians 8:5) — a name laid on a perishable image, no true divinity. The one Elohim (God) the Father, of whom are all things, is no work of hands; beside him the made-with-hands god is nothing.'),
+  -- thread: 1-corinthians-8-the-weak-brother-for-whom-messiah-died-the-stumblingblock-romans-14
+  ('canon', '1-corinthians', 8, 9, 'canon', 'romans', 14, 13, 'free', E'*Let us not therefore judge one another any more: but judge this rather, that no man put a stumblingblock or an occasion to fall in his brother''s way.* (Romans 14:13). To the same kind of dispute over meat Paul gives the same charge in Romans: *that no man put a stumblingblock... in his brother''s way.* So here he warns *take heed lest by any means this liberty of yours become a stumblingblock to them that are weak* (1 Corinthians 8:9). The knowledge that the idol is nothing is true, but love, not liberty, governs the table; the brother''s conscience, not the meat, is the matter.'),
+  ('canon', '1-corinthians', 8, 11, 'canon', 'romans', 14, 15, 'free', E'*But if thy brother be grieved with thy meat, now walkest thou not charitably. Destroy not him with thy meat, for whom Messiah (Christ) died.* (Romans 14:15). The words are nearly Paul''s own here: *through thy knowledge shall the weak brother perish, for whom Messiah (Christ) died* (1 Corinthians 8:11). In both letters the weight is the same — *Destroy not him with thy meat, for whom Messiah (Christ) died.* The brother is one for whom the Messiah gave his life; to wound his conscience over food is to set knowledge above the love that *edifieth* (8:1), and to sin against the Messiah himself (8:12).'),
+  ('canon', '1-corinthians', 8, 13, 'canon', 'romans', 14, 21, 'free', E'*It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.* (Romans 14:21). Paul''s resolve in Corinth answers his rule in Rome: *if meat make my brother to offend, I will eat no flesh while the world standeth, lest I make my brother to offend* (1 Corinthians 8:13). It is good, says Romans, to forgo *flesh... or any thing whereby thy brother stumbleth.* This is not the abolishing of any food-law — the question is never whether the meat is clean, but whether the eating wounds a weak brother; love lays down the liberty for his sake.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s228_co08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s228_co08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6',
+       E'But to us one Elohim (God) the Father, and one Lord Yahusha HaMashiach (Jesus Christ) — the Shema (Deuteronomy 6, 4)',
+       E'Paul settles the question of idol-food on the bedrock of the Shema. *We know that an idol is nothing in the world, and that there is none other Elohim (God) but one* (1 Corinthians 8:4); and though the nations name *gods many, and lords many* (8:5), *to us there is but one Elohim (God), the Father, of whom are all things, and we in him; and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things, and we by him* (8:6). This is the confession Yashar''el (Israel) was commanded to hear: *Hear, O Yashar''el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)* (Deuteronomy 6:4), and to know *that Yahuah (LORD) he is Elohim (God); there is none else beside him* (Deuteronomy 4:35), *in heaven above, and upon the earth beneath: there is none else* (Deuteronomy 4:39). The many so-called gods *in heaven or in earth* are answered by the one Yahuah (LORD) who fills heaven above and earth beneath. Yahusha (Jesus) himself laid this same Shema down as *the first of all the commandments* — *Yahuah Eloheinu (The Lord our God) is one Yahuah (Lord)* (Mark 12:29) — and commended the scribe who confessed *there is one Elohim (God); and there is none other but he* (Mark 12:32). Mark the Christology, and do not flatten it: the Father is the One *of whom are all things,* and Yahusha HaMashiach (Jesus Christ) is the Formed Son *by whom are all things,* bearing the divine name and the divine making. This is not a second separate God set beside the Father, nor the Father wearing a mask, nor a mere man exalted — it is the one Yahuah (LORD) of the Shema confessed in the fulness of the Formed, the One and the Son who came from him by whom the worlds were made and through whom the called-out ones are gathered home. The oneness is not broken; it is unfolded.',
+       sv.verse_id, ev.verse_id, 'free', 6775
+  FROM _s228_co08_lookup sv, _s228_co08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=8 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-8-an-idol-is-nothing-in-the-world-the-gods-of-wood-and-stone-psalm-115',
+       E'An idol is nothing in the world — the gods of wood and stone (Psalm 115, Isaiah 44)',
+       E'When Paul says *an idol is nothing in the world* (1 Corinthians 8:4), and grants only that there *be that are called gods... as there be gods many, and lords many* (8:5), he stands in the long Tanakh polemic against the lifeless idol. The psalmist mocked them: *their idols are silver and gold, the work of men''s hands* (Psalm 115:4) — they have mouths and speak not, eyes and see not — and *they that make them are like unto them; so is every one that trusteth in them* (Psalm 115:8). Isaiah drew it out further: *they that make a graven image are all of them vanity* (Isaiah 44:9); the smith forges, the carpenter shapes a block after the figure of a man, burns half the tree for warmth, and of the residue *maketh a god... and prayeth unto it, and saith, Deliver me; for thou art my god* (Isaiah 44:17) — to a thing that cannot save. The restored library presses the same scorn: those who *call them gods* set their hope *in dead things... the works of men''s hands... a stone good for nothing* (Wisdom of Solomon 13:10), for *that which is made with hands is cursed... being corruptible, it was called god* (Wisdom of Solomon 14:8). A name laid on perishable wood and stone makes no god. This is why the idol is nothing and the meat set before it has been set before nothing — for beside the one Yahuah (LORD) there is no other Elohim (God).',
+       sv.verse_id, ev.verse_id, 'extras', 6778
+  FROM _s228_co08_lookup sv, _s228_co08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=8 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-8-the-weak-brother-for-whom-messiah-died-the-stumblingblock-romans-14',
+       E'The weak brother for whom Messiah (Christ) died — the stumblingblock, not the meat (Romans 14)',
+       E'Knowing the idol is nothing, the strong at Corinth ate freely; but Paul will not let liberty trample the conscience of the weak. *Take heed lest by any means this liberty of yours become a stumblingblock to them that are weak* (1 Corinthians 8:9); for *through thy knowledge shall the weak brother perish, for whom Messiah (Christ) died* (8:11), and to wound his weak conscience is to *sin against Messiah (Christ)* (8:12). It is the very rule Paul gives the assembly at Rome over the same kind of dispute about meat: *judge this rather, that no man put a stumblingblock or an occasion to fall in his brother''s way* (Romans 14:13), and *Destroy not him with thy meat, for whom Messiah (Christ) died* (Romans 14:15), and *It is good neither to eat flesh... nor any thing whereby thy brother stumbleth, or is offended, or is made weak* (Romans 14:21). So Paul resolves: *if meat make my brother to offend, I will eat no flesh while the world standeth, lest I make my brother to offend* (1 Corinthians 8:13). Read this rightly: it is no abolishing of any food-law, no setting aside of clean and unclean — the question is never whether the meat is lawful, but whether the eating wounds a brother for whom the Messiah died. *Knowledge puffeth up, but charity edifieth* (8:1); here love lays down its liberty for the sake of the weak, and that is the higher law of the table.',
+       sv.verse_id, ev.verse_id, 'free', 6781
+  FROM _s228_co08_lookup sv, _s228_co08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=8 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 6:4 — *Hear, O Yashar''el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)* the Shema, the ground for *there is none other Elohim (God) but one* (1 Corinthians 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 6:4 — *Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)* the Shema unfolded in the Formed: *one Elohim (God), the Father... and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things* (1 Corinthians 8:6).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 4:35 — *that Yahuah (LORD) he is Elohim (God); there is none else beside him* the Horeb revelation behind *there is none other Elohim (God) but one* (1 Corinthians 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=35
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 4:39 — *Yahuah (LORD) he is Elohim (God) in heaven above, and upon the earth beneath: there is none else* answering the gods-many *in heaven or in earth* with *one Elohim (God), the Father, of whom are all things* (1 Corinthians 8:6).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Mark 12:29 — *The first of all the commandments is, Hear, O Yashar''el (Israel); Yahuah Eloheinu (The Lord our God) is one Yahuah (Lord)* Yahusha (Jesus) laying down the Shema as first; Paul builds the idol-food teaching on it (1 Corinthians 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=12 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Mark 12:32 — *there is one Elohim (God); and there is none other but he* the scribe''s creed Yahusha (Jesus) commends; the same confessed to Corinth as *one Elohim (God), the Father... and one Lord Yahusha HaMashiach (Lord Jesus Christ)* (1 Corinthians 8:6).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=12 AND tv.verse_number=32
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-8-an-idol-is-nothing-in-the-world-the-gods-of-wood-and-stone-psalm-115
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 115:4 — *their idols are silver and gold, the work of men''s hands* why *an idol is nothing in the world* (1 Corinthians 8:4): a thing made by hands is no god.'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-an-idol-is-nothing-in-the-world-the-gods-of-wood-and-stone-psalm-115'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 115:8 — *they that make them are like unto them; so is every one that trusteth in them* the lifeless *gods many, and lords many* that *are called gods* (1 Corinthians 8:5).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-an-idol-is-nothing-in-the-world-the-gods-of-wood-and-stone-psalm-115'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 44:9 — *they that make a graven image are all of them vanity... they see not, nor know* the workman''s vanity behind *an idol is nothing in the world* (1 Corinthians 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-an-idol-is-nothing-in-the-world-the-gods-of-wood-and-stone-psalm-115'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 44:17 — *the residue thereof he maketh a god... and saith, Deliver me; for thou art my god* the carved block that cannot save, the no-gods only *called gods* (1 Corinthians 8:5).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-an-idol-is-nothing-in-the-world-the-gods-of-wood-and-stone-psalm-115'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Wisdom of Solomon 13:10 — *in dead things is their hope, who call them gods, which are the works of men''s hands... a stone good for nothing* the library''s witness that *an idol is nothing in the world* (1 Corinthians 8:4).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-an-idol-is-nothing-in-the-world-the-gods-of-wood-and-stone-psalm-115'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=4
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=13 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Wisdom of Solomon 14:8 — *that which is made with hands is cursed... being corruptible, it was called god* a name laid on perishable wood, the *gods many* only *called gods* (1 Corinthians 8:5).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-an-idol-is-nothing-in-the-world-the-gods-of-wood-and-stone-psalm-115'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=5
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=14 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-8-the-weak-brother-for-whom-messiah-died-the-stumblingblock-romans-14
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Romans 14:13 — *that no man put a stumblingblock or an occasion to fall in his brother''s way* the same charge as *take heed lest... this liberty of yours become a stumblingblock to them that are weak* (1 Corinthians 8:9).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-the-weak-brother-for-whom-messiah-died-the-stumblingblock-romans-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=14 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Romans 14:15 — *Destroy not him with thy meat, for whom Messiah (Christ) died* nearly verbatim with *the weak brother perish, for whom Messiah (Christ) died* (1 Corinthians 8:11).'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-the-weak-brother-for-whom-messiah-died-the-stumblingblock-romans-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=14 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Romans 14:21 — *It is good neither to eat flesh... nor any thing whereby thy brother stumbleth* the rule Paul keeps: *I will eat no flesh while the world standeth, lest I make my brother to offend* (1 Corinthians 8:13) — love laying down liberty, not abolishing a food-law.'
+  FROM cross_reference_threads t, cross_references x, _s228_co08_lookup sv, _s228_co08_lookup tv
+ WHERE t.slug='1-corinthians-8-the-weak-brother-for-whom-messiah-died-the-stumblingblock-romans-14'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=8 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=14 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1corinthians_09.sql (S228 1 Corinthians 9) -----
+-- =====================================================================
+-- S228 minion — 1 CORINTHIANS 9 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 1 CORINTHIANS 9 (27 verses) — apostolic rights grounded in the law of Moses;
+--          all things to all men (missionary accommodation, NOT Torah-abandonment); the race/crown.
+-- Tag: co09 (temp view _s228_co09_lookup).
+-- Sort band: floor 6800, step 3 (6800, 6803, 6806, 6809 used; under 6825).
+-- Source is ALWAYS the canon 1 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Paul defends his apostolic right to material support, and he grounds the right
+-- in TORAH, not against it: *saith not the law the same also? For it is written in the law of Moses,
+-- Thou shalt not muzzle the mouth of the ox that treadeth out the corn* (9:8-9). The Levitical
+-- portion is the model — *they which minister about holy things live of the things of the temple*
+-- (9:13) — and the Lord ordained the same for the gospel (9:14 / Luke 10:7). 9:20-21 is the
+-- HIGH-SENSITIVITY frame: *unto the Yahudim (Jews) I became as a Yahudi (Jew)... to them that are
+-- under the law, as under the law... To them that are without law, as without law (being not without
+-- law to Elohim (God), but under the law to Messiah (Christ))* — read as MISSIONARY ACCOMMODATION,
+-- NOT Torah-abandonment. Paul is explicit: he is *not without law to Elohim (God)* but *under the law
+-- to Messiah (Christ)* (ennomos Christou — Torah-bound TO the Messiah, never Torah-free). The frame is
+-- anchored on the Tanakh Torah-from-within: *thy law is within my heart* (Psalm 40:8) and the
+-- new-covenant Torah-internalized *I will put my law in their inward parts, and write it in their
+-- hearts* (Jeremiah 31:33). The closing race/crown (9:24-27) — temperance, the body kept under,
+-- the incorruptible crown — echoes the Hebrew library's call to refrain from the appetites.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-7   the apostle's rights: eat, drink, lead a wife, forbear working; the soldier/vineyard/flock
+--           Tanakh: none warranted (the rights are argued; the Torah ground arrives at v.8-9 and the
+--                   vineyard/flock images are illustrative, not a quoted root)
+--           Extras: none warranted   NT: none warranted (carried in the law-of-Moses thread at v.8)
+--   v.8-12  saith not the law the same? Thou shalt not muzzle the ox that treadeth out the corn
+--           Tanakh: Deuteronomy 25:4 (Thou shalt not muzzle the ox when he treadeth out the corn)
+--           Extras: none warranted   NT: none warranted
+--   v.13-14 they which minister of the temple live of the temple; the Lord ordained gospel-support
+--           Tanakh: Numbers 18:8-24 (the priests' and Levites' portion of the offerings/tithe),
+--                   Deuteronomy 18:1-4 (the priests the Levites... shall eat the offerings of Yahuah)
+--           Extras: none warranted   NT: Luke 10:7 (the labourer is worthy of his hire)
+--   v.15-19 I have used none of these; necessity is laid upon me; made myself servant unto all
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted (apostolic apologia)
+--   v.20-23 to the Jews a Jew; under the law as under the law; not without law to Elohim, under law to Messiah
+--           Tanakh: Psalm 40:8 (thy law is within my heart), Jeremiah 31:33 (I will put my law in
+--                   their inward parts, and write it in their hearts)
+--           Extras: none warranted   NT: none warranted (the frame is the Torah-from-within root)
+--   v.24-27 the race, the prize, the incorruptible crown, the temperate athlete, the body kept under
+--           Tanakh: none warranted (the athletic figure has no quoted Tanakh root)
+--           Extras: Sirach (Ecclesiasticus) 18:30 (refrain thyself from your appetites)
+--           NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   6800 1-corinthians-9-the-law-of-moses-and-the-unmuzzled-ox-deuteronomy-25       (Tanakh)
+--   6803 1-corinthians-9-they-which-minister-of-the-temple-live-of-the-altar-numbers-18  (Tanakh + NT)
+--   6806 1-corinthians-9-not-without-law-to-elohim-but-under-the-law-to-messiah-psalm-40 (Tanakh)
+--   6809 1-corinthians-9-the-race-the-incorruptible-crown-and-the-temperate-athlete-sirach-18  (Extras)
+-- =====================================================================
+
+CREATE TEMP VIEW _s228_co09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-corinthians-9-the-law-of-moses-and-the-unmuzzled-ox-deuteronomy-25
+  ('canon', '1-corinthians', 9, 9, 'canon', 'deuteronomy', 25, 4, 'free', E'*Thou shalt not muzzle the ox when he treadeth out the corn.* (Deuteronomy 25:4). Paul grounds the apostle''s right to be supported by those he serves not in human reasoning but in the Torah itself: *Say I these things as a man? or saith not the law the same also? For it is written in the law of Moses, Thou shalt not muzzle the mouth of the ox that treadeth out the corn* (1 Corinthians 9:8-9). The mercy that lets the threshing ox eat of the grain it works is, Paul argues, *altogether for our sakes* — *that he that ploweth should plow in hope* (1 Corinthians 9:10). Far from setting the law aside, Paul reads it as living instruction for the assembly: the law of Moses is his authority and his proof.'),
+  -- thread: 1-corinthians-9-they-which-minister-of-the-temple-live-of-the-altar-numbers-18
+  ('canon', '1-corinthians', 9, 13, 'canon', 'numbers', 18, 8, 'free', E'*And Yahuah (LORD) spake unto Aaron, Behold, I also have given thee the charge of mine heave offerings of all the hallowed things of the children of Yashar''el (Israel); unto thee have I given them by reason of the anointing, and to thy sons, by an ordinance for ever.* (Numbers 18:8). Yahuah (LORD) gave the priests their living from the altar — the heave offerings, the most holy things, the tithe of Yashar''el (Israel) — *I am thy part and thine inheritance* (Numbers 18:20). On exactly this Torah pattern Paul reasons: *Do ye not know that they which minister about holy things live of the things of the temple? and they which wait at the altar are partakers with the altar?* (1 Corinthians 9:13). The Levitical portion is the model for the right he claims; the order of the temple stands as his proof.'),
+  ('canon', '1-corinthians', 9, 13, 'canon', 'deuteronomy', 18, 1, 'free', E'*The priests the Levites, and all the tribe of Levi, shall have no part nor inheritance with Yashar''el (Israel): they shall eat the offerings of Yahuah (LORD) made by fire, and his inheritance.* (Deuteronomy 18:1). The tribe of Levi held no land; *they shall eat the offerings of Yahuah (LORD) made by fire,* and the priest''s due was the shoulder and the cheeks and the firstfruits of corn and wine and oil (Deuteronomy 18:3-4). This is the very thing Paul invokes — *they which wait at the altar are partakers with the altar* (1 Corinthians 9:13). The Torah''s provision for those who serve the sanctuary is the ground on which Paul stands; he honors the order even as he chooses to forgo the right.'),
+  ('canon', '1-corinthians', 9, 14, 'canon', 'luke', 10, 7, 'free', E'*And in the same house remain, eating and drinking such things as they give: for the labourer is worthy of his hire. Go not from house to house.* (Luke 10:7). When Yahusha (Jesus) sent out the seventy he laid down the rule Paul now cites — *the labourer is worthy of his hire.* So Paul writes, *Even so hath Yahuah (Lord) ordained that they which preach the gospel should live of the gospel* (1 Corinthians 9:14). The Levitical portion of the temple and the word of the Lord to his sent ones are one continuous ordinance: the one who labors in holy things lives of holy things. Paul will not use the right, but the right is real and ordained.'),
+  -- thread: 1-corinthians-9-not-without-law-to-elohim-but-under-the-law-to-messiah-psalm-40
+  ('canon', '1-corinthians', 9, 21, 'canon', 'psalms', 40, 8, 'free', E'*I delight to do thy will, O my Elohim (God): yea, thy law is within my heart.* (Psalm 40:8). When Paul says he became *to them that are without law, as without law,* he immediately guards the words: *being not without law to Elohim (God), but under the law to Messiah (Christ)* (1 Corinthians 9:21). This is no Torah-abandonment but the Servant''s own posture — *thy law is within my heart.* Paul is Torah-bound to the Messiah, not Torah-free; he accommodates himself to win the nations without law, yet he himself carries the law of Elohim (God) within, delighting to do his will. The law has not been set aside; it has been written where it belongs.'),
+  ('canon', '1-corinthians', 9, 21, 'canon', 'jeremiah', 31, 33, 'free', E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people.* (Jeremiah 31:33). The new covenant is not the abolishing of the law but its inscribing on the heart — *I will put my law in their inward parts.* This is what Paul means when he calls himself *not without law to Elohim (God), but under the law to Messiah (Christ)* (1 Corinthians 9:21): the Torah-bound man of the renewed covenant, the law no longer only on tablets but written within. His freedom toward men *that I might gain the more* (1 Corinthians 9:19) never makes him lawless toward Elohim (God); the law is in his inward parts.'),
+  -- thread: 1-corinthians-9-the-race-the-incorruptible-crown-and-the-temperate-athlete-sirach-18
+  ('canon', '1-corinthians', 9, 25, 'apocrypha', 'ecclesiasticus', 18, 30, 'extras', E'*Go not after your lusts, but refrain thyself from your appetites.* (Sirach 18:30). The Hebrew library''s call to master the appetites stands behind Paul''s figure of the disciplined runner: *every man that striveth for the mastery is temperate in all things* (1 Corinthians 9:25), *But I keep under my body, and bring it into subjection* (1 Corinthians 9:27). As the athlete refrains for a corruptible crown, the servant of the gospel refrains for an incorruptible one — *refrain thyself from your appetites* is the wisdom Paul lives, lest *when I have preached to others, I myself should be a castaway* (1 Corinthians 9:27).')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s228_co09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s228_co09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-9-the-law-of-moses-and-the-unmuzzled-ox-deuteronomy-25',
+       E'Saith not the law the same also? The unmuzzled ox (Deuteronomy 25)',
+       E'Defending the apostle''s right to be supported, Paul does not appeal to human custom but to the Torah: *Say I these things as a man? or saith not the law the same also? For it is written in the law of Moses, Thou shalt not muzzle the mouth of the ox that treadeth out the corn* (1 Corinthians 9:8-9). The command is Moses'' own: *Thou shalt not muzzle the ox when he treadeth out the corn* (Deuteronomy 25:4) — the working beast must be free to eat of the grain it threshes. Paul presses the mercy of the law toward its deeper intent: *Doth Elohim (God) take care for oxen? Or saith he it altogether for our sakes? For our sakes, no doubt, this is written: that he that ploweth should plow in hope; and that he that thresheth in hope should be partaker of his hope* (1 Corinthians 9:9-10). The law of Moses is not a dead letter Paul reasons around; it is living instruction, his authority and his proof, written *for our sakes* — so that the one who labors in the gospel may, like the threshing ox, partake of the harvest he serves.',
+       sv.verse_id, ev.verse_id, 'free', 6800
+  FROM _s228_co09_lookup sv, _s228_co09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=9 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-9-they-which-minister-of-the-temple-live-of-the-altar-numbers-18',
+       E'They which minister of the temple live of the temple (Numbers 18, Deuteronomy 18)',
+       E'Paul''s second proof for gospel-support is the Levitical portion: *Do ye not know that they which minister about holy things live of the things of the temple? and they which wait at the altar are partakers with the altar?* (1 Corinthians 9:13). This is the Torah''s own provision. Yahuah (LORD) gave the priesthood its living from the altar: *Behold, I also have given thee the charge of mine heave offerings of all the hallowed things of the children of Yashar''el (Israel); unto thee have I given them by reason of the anointing... by an ordinance for ever* (Numbers 18:8), and the tithe of Yashar''el (Israel) to the Levites for their service, for *I am thy part and thine inheritance* (Numbers 18:20). So too in Moses'' last words: *The priests the Levites, and all the tribe of Levi, shall have no part nor inheritance with Yashar''el (Israel): they shall eat the offerings of Yahuah (LORD) made by fire, and his inheritance* (Deuteronomy 18:1), the priest''s due being the shoulder and the firstfruits of corn and wine and oil. And the same ordinance carries forward in the word of Yahusha (Jesus) to the seventy: *the labourer is worthy of his hire* (Luke 10:7) — on which Paul concludes, *Even so hath Yahuah (Lord) ordained that they which preach the gospel should live of the gospel* (1 Corinthians 9:14). Temple, altar, and gospel are one continuous order: the one who serves holy things lives of holy things. Paul will forgo the right *lest we should hinder the gospel of Messiah (Christ)* (1 Corinthians 9:12), but the right is real and Yahuah (Lord)-ordained.',
+       sv.verse_id, ev.verse_id, 'free', 6803
+  FROM _s228_co09_lookup sv, _s228_co09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=9 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-9-not-without-law-to-elohim-but-under-the-law-to-messiah-psalm-40',
+       E'Not without law to Elohim, but under the law to Messiah (Psalm 40, Jeremiah 31)',
+       E'Paul becomes all things to all men *that I might by all means save some* (1 Corinthians 9:22): *unto the Yahudim (Jews) I became as a Yahudi (Jew)... to them that are under the law, as under the law... To them that are without law, as without law* (1 Corinthians 9:20-21). But read the parenthesis he sets in the very middle of those words, for it governs the whole: *being not without law to Elohim (God), but under the law to Messiah (Christ)* (1 Corinthians 9:21). This is missionary accommodation, never Torah-abandonment. Paul does not discard the law to win the lawless; he bends his manner of life to reach them while remaining himself Torah-bound — *under the law to Messiah (Christ),* Torah-bound to the Messiah, never Torah-free. His posture is the Servant''s own: *I delight to do thy will, O my Elohim (God): yea, thy law is within my heart* (Psalm 40:8). And it is the shape of the renewed covenant, which abolishes nothing but writes the law where it could not be erased: *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). To be *without law* toward the nations for the sake of the gospel is one thing; to be *without law to Elohim (God)* is what Paul explicitly denies. The man who *made myself servant unto all* (1 Corinthians 9:19) carries the law of Elohim (God) in his inward parts, under the law to the Messiah.',
+       sv.verse_id, ev.verse_id, 'free', 6806
+  FROM _s228_co09_lookup sv, _s228_co09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=9 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-9-the-race-the-incorruptible-crown-and-the-temperate-athlete-sirach-18',
+       E'So run, that ye may obtain: the incorruptible crown and the temperate athlete (Sirach 18)',
+       E'Paul closes the chapter with the figure of the games: *Know ye not that they which run in a race run all, but one receiveth the prize? So run, that ye may obtain. And every man that striveth for the mastery is temperate in all things. Now they do it to obtain a corruptible crown; but we an incorruptible* (1 Corinthians 9:24-25). The athlete''s self-mastery is the wisdom of the Hebrew library, which had long taught the servant of Elohim (God) to rule his desires: *Go not after your lusts, but refrain thyself from your appetites* (Sirach 18:30). Paul does the same, but for a crown that does not fade: *I therefore so run, not as uncertainly; so fight I, not as one that beateth the air: But I keep under my body, and bring it into subjection: lest that by any means, when I have preached to others, I myself should be a castaway* (1 Corinthians 9:26-27). The discipline that refrains from the appetites is no mere athletic conceit; it is the watchful temperance of the one who would finish the race and not be disqualified — the body kept under, the appetites refused, the incorruptible crown in view.',
+       sv.verse_id, ev.verse_id, 'extras', 6809
+  FROM _s228_co09_lookup sv, _s228_co09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=9 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-corinthians-9-the-law-of-moses-and-the-unmuzzled-ox-deuteronomy-25
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 25:4 — *Thou shalt not muzzle the ox when he treadeth out the corn* the law of Moses Paul cites as his proof; *saith not the law the same also?* (1 Corinthians 9:8-9), written *for our sakes.*'
+  FROM cross_reference_threads t, cross_references x, _s228_co09_lookup sv, _s228_co09_lookup tv
+ WHERE t.slug='1-corinthians-9-the-law-of-moses-and-the-unmuzzled-ox-deuteronomy-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-9-they-which-minister-of-the-temple-live-of-the-altar-numbers-18
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 18:8 — *I also have given thee the charge of mine heave offerings of all the hallowed things... by an ordinance for ever* the priests'' living from the altar; *they which wait at the altar are partakers with the altar* (1 Corinthians 9:13).'
+  FROM cross_reference_threads t, cross_references x, _s228_co09_lookup sv, _s228_co09_lookup tv
+ WHERE t.slug='1-corinthians-9-they-which-minister-of-the-temple-live-of-the-altar-numbers-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 18:1 — *The priests the Levites... shall eat the offerings of Yahuah (LORD) made by fire, and his inheritance* the Levitical portion; *they which minister about holy things live of the things of the temple* (1 Corinthians 9:13).'
+  FROM cross_reference_threads t, cross_references x, _s228_co09_lookup sv, _s228_co09_lookup tv
+ WHERE t.slug='1-corinthians-9-they-which-minister-of-the-temple-live-of-the-altar-numbers-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Luke 10:7 — *the labourer is worthy of his hire* the word of Yahusha (Jesus) to the seventy; *Yahuah (Lord) ordained that they which preach the gospel should live of the gospel* (1 Corinthians 9:14).'
+  FROM cross_reference_threads t, cross_references x, _s228_co09_lookup sv, _s228_co09_lookup tv
+ WHERE t.slug='1-corinthians-9-they-which-minister-of-the-temple-live-of-the-altar-numbers-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=10 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-9-not-without-law-to-elohim-but-under-the-law-to-messiah-psalm-40
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 40:8 — *I delight to do thy will, O my Elohim (God): yea, thy law is within my heart* the Servant''s Torah-from-within; Paul is *not without law to Elohim (God), but under the law to Messiah (Christ)* (1 Corinthians 9:21).'
+  FROM cross_reference_threads t, cross_references x, _s228_co09_lookup sv, _s228_co09_lookup tv
+ WHERE t.slug='1-corinthians-9-not-without-law-to-elohim-but-under-the-law-to-messiah-psalm-40'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 31:33 — *I will put my law in their inward parts, and write it in their hearts* the renewed covenant that abolishes nothing but internalizes the law; Paul Torah-bound, *under the law to Messiah (Christ)* (1 Corinthians 9:21).'
+  FROM cross_reference_threads t, cross_references x, _s228_co09_lookup sv, _s228_co09_lookup tv
+ WHERE t.slug='1-corinthians-9-not-without-law-to-elohim-but-under-the-law-to-messiah-psalm-40'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-9-the-race-the-incorruptible-crown-and-the-temperate-athlete-sirach-18
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Sirach 18:30 — *Go not after your lusts, but refrain thyself from your appetites* the library''s self-mastery; *every man that striveth for the mastery is temperate in all things... I keep under my body* (1 Corinthians 9:25,27).'
+  FROM cross_reference_threads t, cross_references x, _s228_co09_lookup sv, _s228_co09_lookup tv
+ WHERE t.slug='1-corinthians-9-the-race-the-incorruptible-crown-and-the-temperate-athlete-sirach-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=9 AND sv.verse_number=25
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=18 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1corinthians_10.sql (S228 1 Corinthians 10) -----
+-- =====================================================================
+-- S228 minion — 1 CORINTHIANS 10 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 1 CORINTHIANS 10 (33 verses) — the wilderness as binding types; the table of the Lord.
+-- Tag: co10 (temp view _s228_co10_lookup).
+-- Sort band: floor 6825, step 3 (6825, 6828, 6831, 6834, 6837 used; under 6850).
+-- Source is ALWAYS the canon 1 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME (HIGH BLESSING WATCHPOINT). Paul reads the wilderness narrative as binding type for
+-- this assembly. He calls the redeemed generation *our fathers* (10:1) to a largely nations-background
+-- congregation: the grafted-in are made ONE with Yashar'el (Israel), the scattered seed gathered home
+-- — NOT a church that replaced Israel. *All our fathers were under the cloud, and all passed through
+-- the sea... did all eat the same spiritual meat... drank of that spiritual Rock that followed them:
+-- and that Rock was Messiah (Christ)* (10:1-4). The Rock is the Messiah — the Formed who was already
+-- with Yashar'el (Israel) in the wilderness, the God of the Tanakh interactions come in the flesh
+-- (Christology; not a co-equal-persons second person, not a mere man). The TYPES are Torah narrative
+-- read as binding: idolatry (10:7 / Exodus 32:6, the golden calf), fornication (10:8 / Numbers 25,
+-- Peor), tempting Messiah (10:9 / Numbers 21:5-6, the serpents), murmuring (10:10 / Numbers 14, 16) —
+-- *all these things happened unto them for ensamples: and they are written for our admonition* (10:11):
+-- the Torah is not abrogated history but instruction for the assembly. *Flee from idolatry* (10:14);
+-- the cup and table of the Lord cannot be shared with the cup and table of devils (10:20-21 /
+-- Deuteronomy 32:17, *they sacrificed unto devils, not to Elohim (God)*); *the earth is Yahuah's
+-- (Lord's), and the fulness thereof* (10:26, citing Psalm 24:1). NT-Lord rule observed exactly as the
+-- pull renders it: 10:21,22 *the cup of Yahuah (Lord)... Yahuah's (Lord's) table... provoke Yahuah
+-- (Lord) to jealousy* is titular-Lord (Yahusha context, the supper), kept as the pull gives; 10:26,28
+-- *the earth is Yahuah's (Lord's)* is the Psalm 24:1 citation, again kept exactly as the pull gives.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-4   our fathers under the cloud, through the sea, the spiritual meat/drink, the Rock = Messiah
+--           Tanakh: Exodus 13:21 (Yahuah went before them in a pillar of a cloud), Exodus 14:22 (the
+--                   children of Yashar'el went into the midst of the sea upon dry ground), Exodus 16:15
+--                   (the manna, the bread Yahuah hath given you to eat), Exodus 17:6 (smite the rock,
+--                   water out of it), Numbers 20:11 (Moses smote the rock... the congregation drank)
+--           Extras: none warranted   NT: none warranted (the Rock-Christology carried in prose)
+--   v.5-6   overthrown in the wilderness; these things were our examples
+--           Tanakh: carried in v.1-4 thread / the types thread   Extras: none warranted   NT: none
+--   v.7     idolatry — the people sat down to eat and drink, and rose up to play (cites Exodus 32:6)
+--           Tanakh: Exodus 32:6 (the people sat down to eat and to drink, and rose up to play)
+--           Extras: none warranted   NT: none warranted
+--   v.8     fornication — fell in one day three and twenty thousand
+--           Tanakh: Numbers 25:1 (began to commit whoredom with the daughters of Moab), 25:9 (those
+--                   that died in the plague were twenty and four thousand)
+--           Extras: Wisdom of Solomon 14:12 (the devising of idols was the beginning of spiritual
+--                   fornication) — idolatry-and-fornication coupled, as Paul couples 10:7-8
+--   v.9     tempting Messiah — destroyed of serpents
+--           Tanakh: Numbers 21:5-6 (the people spake against Elohim... Yahuah sent fiery serpents)
+--           Extras: none warranted   NT: none warranted
+--   v.10    murmuring — destroyed of the destroyer
+--           Tanakh: Numbers 14:2 (all the children of Yashar'el murmured against Moses), Numbers 16:41
+--                   /16:49 (the congregation murmured... the plague, fourteen thousand seven hundred)
+--           Extras: none warranted   NT: none warranted
+--   v.11    all these things happened for ensamples, written for our admonition
+--           Tanakh: carried as the spine of the types thread   Extras: none   NT: none warranted
+--   v.12-13 take heed lest he fall; Elohim is faithful, will make a way to escape
+--           Tanakh: none warranted (no load-bearing single root)   Extras: none   NT: none warranted
+--   v.14    flee from idolatry
+--           Tanakh: Deuteronomy 32:17 (they sacrificed unto devils, not to Elohim)
+--           Extras: Wisdom of Solomon 14:27 (the worshipping of idols... the beginning, the cause,
+--                   and the end, of all evil)   NT: none warranted
+--   v.16-17 the cup of blessing, the communion of the blood/body; one bread, one body
+--           Tanakh: none warranted (the covenant-Passover root is the supper institution)
+--           Extras: none warranted   NT: Luke 22:19-20 (this is my body... this cup is the new
+--                   testament in my blood), Matthew 26:26-28 (take, eat; this is my body... my blood)
+--   v.18    Yashar'el after the flesh — they which eat of the sacrifices partakers of the altar
+--           Tanakh: carried in prose (the altar-portion principle, Leviticus)   Extras: none   NT: none
+--   v.20-22 they sacrifice to devils; cup/table of the Lord vs cup/table of devils; provoke to jealousy
+--           Tanakh: Deuteronomy 32:17 (sacrificed unto devils, not to Elohim), 32:21 (moved me to
+--                   jealousy with that which is not Elohim)
+--           Extras: none warranted   NT: none warranted
+--   v.23-25 all things lawful but not expedient; eat what is sold in the shambles
+--           Tanakh: none warranted (no single load-bearing root)   Extras: none   NT: none warranted
+--   v.26,28 the earth is Yahuah's (Lord's), and the fulness thereof (cites Psalm 24:1)
+--           Tanakh: Psalm 24:1 (the earth is the LORD'S, and the fulness thereof)
+--           Extras: none warranted   NT: none warranted
+--   v.31-33 do all to the glory of Elohim; give none offence
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   6825 1-corinthians-10-our-fathers-under-the-cloud-and-the-rock-that-was-messiah-exodus-17  (Tanakh)  [BLESSING CENTERPIECE]
+--   6828 1-corinthians-10-the-wilderness-types-written-for-our-admonition-exodus-32-numbers-25  (Tanakh + Extras)
+--   6831 1-corinthians-10-flee-from-idolatry-the-cup-and-table-of-the-lord-not-of-devils-deuteronomy-32  (Tanakh + Extras)
+--   6834 1-corinthians-10-the-communion-of-the-body-and-blood-one-bread-one-body-luke-22  (NT)
+--   6837 1-corinthians-10-the-earth-is-the-lords-and-the-fulness-thereof-psalm-24  (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s228_co10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-corinthians-10-our-fathers-under-the-cloud-and-the-rock-that-was-messiah-exodus-17  [BLESSING CENTERPIECE]
+  ('canon', '1-corinthians', 10, 1, 'canon', 'exodus', 13, 21, 'free', E'*And Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night:* (Exodus 13:21). This is the cloud Paul names when he says *all our fathers were under the cloud* (1 Corinthians 10:1) — and he says *our fathers* to this assembly of the grafted-in, making them one with Yashar''el (Israel), the gathered seed. The pillar that led the redeemed out of Egypt is the cloud beneath which the whole congregation walked; Paul reckons the nations-background Corinthians under that same cloud, heirs of the same exodus.'),
+  ('canon', '1-corinthians', 10, 1, 'canon', 'exodus', 14, 22, 'free', E'*And the children of Yashar''el (Israel) went into the midst of the sea upon the dry ground: and the waters were a wall unto them on their right hand, and on their left.* (Exodus 14:22). When Paul says our fathers *all passed through the sea* (1 Corinthians 10:1) and were *all baptized unto Moses in the cloud and in the sea* (10:2), this is the passage: the redeemed walking *upon the dry ground* with the waters a wall on either hand. The deliverance through the divided sea is read as the type of baptism into the leader Elohim (God) gave them, and the assembly is bound into that same passage.'),
+  ('canon', '1-corinthians', 10, 3, 'canon', 'exodus', 16, 15, 'free', E'*And when the children of Yashar''el (Israel) saw it, they said one to another, It is manna: for they wist not what it was. And Moses said unto them, This is the bread which Yahuah (LORD) hath given you to eat.* (Exodus 16:15). The manna is the *same spiritual meat* of which Paul says our fathers *did all eat* (1 Corinthians 10:3) — *the bread which Yahuah (LORD) hath given you to eat,* rained from heaven in the wilderness. The bread Elohim (God) gave Yashar''el (Israel) in the desert is the food Paul names as a binding type for the gathered assembly.'),
+  ('canon', '1-corinthians', 10, 4, 'canon', 'exodus', 17, 6, 'free', E'*Behold, I will stand before thee there upon the rock in Horeb; and thou shalt smite the rock, and there shall come water out of it, that the people may drink. And Moses did so in the sight of the elders of Yashar''el (Israel).* (Exodus 17:6). Here is the Rock Paul names: our fathers *did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). Mark whom Yahuah (LORD) says stands *upon the rock in Horeb* — *I will stand before thee there.* The One who stood on the rock and gave the water is the Formed, the Messiah who was already with Yashar''el (Israel) in the wilderness, the God of the Tanakh interactions come in the flesh.'),
+  ('canon', '1-corinthians', 10, 4, 'canon', 'numbers', 20, 11, 'free', E'*And Moses lifted up his hand, and with his rod he smote the rock twice: and the water came out abundantly, and the congregation drank, and their beasts also.* (Numbers 20:11). A second time in the wilderness water is drawn from the rock: *the water came out abundantly, and the congregation drank.* This is the Rock that *followed them* through the journey — and Paul names it: *that Rock was Messiah (Christ)* (1 Corinthians 10:4). The drink that sustained the fathers from Horeb to Meribah was the Messiah''s own provision; the Formed who gave them water is the One the assembly now confesses.'),
+  -- thread: 1-corinthians-10-the-wilderness-types-written-for-our-admonition-exodus-32-numbers-25
+  ('canon', '1-corinthians', 10, 7, 'canon', 'exodus', 32, 6, 'free', E'*And they rose up early on the morrow, and offered burnt offerings, and brought peace offerings; and the people sat down to eat and to drink, and rose up to play.* (Exodus 32:6). Paul quotes this verse word for word: *Neither be ye idolaters, as were some of them; as it is written, The people sat down to eat and drink, and rose up to play* (1 Corinthians 10:7). The golden-calf revel — the eating, the drinking, the rising up to play before the molten image — is the first of the wilderness types, written down as binding warning against idolatry for the assembly.'),
+  ('canon', '1-corinthians', 10, 8, 'canon', 'numbers', 25, 1, 'free', E'*And Yashar''el (Israel) abode in Shittim, and the people began to commit whoredom with the daughters of Moab.* (Numbers 25:1). When Paul says *Neither let us commit fornication, as some of them committed* (1 Corinthians 10:8), this is the sin he means: the whoredom at Shittim, Yashar''el (Israel) joined to Baal-peor through the daughters of Moab. The harlotry that bound idolatry and fornication together at Peor is set down as a type, that the assembly should flee the same snare.'),
+  ('canon', '1-corinthians', 10, 8, 'canon', 'numbers', 25, 9, 'free', E'*And those that died in the plague were twenty and four thousand.* (Numbers 25:9). Paul recalls the toll of Peor: the fornicators *fell in one day three and twenty thousand* (1 Corinthians 10:8). He names the number to make the warning weighty — the plague that struck Yashar''el (Israel) for the whoredom at Shittim is written for the assembly''s admonition, that they not presume upon Elohim (God)''s patience.'),
+  ('canon', '1-corinthians', 10, 8, 'apocrypha', 'the-wisdom-of-solomon', 14, 12, 'extras', E'*For the devising of idols was the beginning of spiritual fornication, and the invention of them the corruption of life.* (Wisdom of Solomon 14:12). The Hebrew library names the very link Paul draws — idolatry and fornication bound together. Paul sets the golden calf (*rose up to play,* 1 Corinthians 10:7) beside the whoredom of Peor (*Neither let us commit fornication,* 10:8) as twin wilderness types; the wisdom-witness already taught that *the devising of idols was the beginning of spiritual fornication.* Where the idol goes up, the harlotry follows, and the assembly is warned to flee both.'),
+  ('canon', '1-corinthians', 10, 9, 'canon', 'numbers', 21, 6, 'free', E'*And Yahuah (LORD) sent fiery serpents among the people, and they bit the people; and much people of Yashar''el (Israel) died.* (Numbers 21:6). Paul warns *Neither let us tempt Messiah (Christ), as some of them also tempted, and were destroyed of serpents* (1 Corinthians 10:9) — the *fiery serpents* sent when the people *spake against Elohim (God), and against Moses,* loathing the bread of heaven. Note whom Paul says they tempted: *Messiah (Christ)* — the One they provoked in the wilderness is the Rock, the Formed who was with them, and the destroying serpents answered their contempt of him.'),
+  ('canon', '1-corinthians', 10, 10, 'canon', 'numbers', 16, 49, 'free', E'*Now they that died in the plague were fourteen thousand and seven hundred, beside them that died about the matter of Korah.* (Numbers 16:49). Paul writes *Neither murmur ye, as some of them also murmured, and were destroyed of the destroyer* (1 Corinthians 10:10). When the congregation murmured against Moses and Aaron after Korah''s judgment, a plague broke out and *fourteen thousand and seven hundred* died until Aaron *stood between the dead and the living* (Numbers 16:48). The murmuring that drew down the destroyer is the last of the types, written that the assembly should not murmur.'),
+  -- thread: 1-corinthians-10-flee-from-idolatry-the-cup-and-table-of-the-lord-not-of-devils-deuteronomy-32
+  ('canon', '1-corinthians', 10, 20, 'canon', 'deuteronomy', 32, 17, 'free', E'*They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not.* (Deuteronomy 32:17). Paul reasons straight out of the Song of Moses: *the things which the Gentiles sacrifice, they sacrifice to devils, and not to Elohim (God): and I would not that ye should have fellowship with devils* (1 Corinthians 10:20). The idol is nothing, but behind it stands a devil; what Yashar''el (Israel) did when *they sacrificed unto devils, not to Elohim (God)* is the very fellowship Paul forbids the assembly, *Wherefore... flee from idolatry* (10:14).'),
+  ('canon', '1-corinthians', 10, 21, 'canon', 'deuteronomy', 32, 17, 'free', E'*They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not.* (Deuteronomy 32:17). The table of devils is no empty figure: Moses sang of those who *sacrificed unto devils, not to Elohim (God).* So Paul: *Ye cannot drink the cup of Yahuah (Lord), and the cup of devils: ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils* (1 Corinthians 10:21). The cup and table of the Lord — the communion of the Messiah''s blood and body — cannot be joined to the cup and table that feed the devils behind the idols.'),
+  ('canon', '1-corinthians', 10, 22, 'canon', 'deuteronomy', 32, 21, 'free', E'*They have moved me to jealousy with that which is not Elohim (God); they have provoked me to anger with their vanities: and I will move them to jealousy with those which are not a people; I will provoke them to anger with a foolish nation.* (Deuteronomy 32:21). Paul asks *Do we provoke Yahuah (Lord) to jealousy? are we stronger than he?* (1 Corinthians 10:22) — and the word jealousy is taken straight from the Song of Moses, where Yashar''el (Israel) *moved me to jealousy with that which is not Elohim (God).* To eat at the table of devils is to provoke the same jealousy that burned in the wilderness; the assembly is asked whether they are stronger than the Yahuah (LORD) they would provoke.'),
+  ('canon', '1-corinthians', 10, 14, 'apocrypha', 'the-wisdom-of-solomon', 14, 27, 'extras', E'*For the worshipping of idols not to be named is the beginning, the cause, and the end, of all evil.* (Wisdom of Solomon 14:27). Paul''s command *Wherefore, my dearly beloved, flee from idolatry* (1 Corinthians 10:14) rests on the same judgment the Hebrew library renders: idolatry is *the beginning, the cause, and the end, of all evil.* It is no small or neutral thing, no mere meat in a market; the idol is the root from which murder, harlotry, and falsehood spring, and so the assembly is told not to manage it but to flee it.'),
+  -- thread: 1-corinthians-10-the-communion-of-the-body-and-blood-one-bread-one-body-luke-22
+  ('canon', '1-corinthians', 10, 16, 'canon', 'luke', 22, 19, 'free', E'*And he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me.* (Luke 22:19). Paul''s *The bread which we break, is it not the communion of the body of Messiah (Christ)?* (1 Corinthians 10:16) is the supper Yahusha (Jesus) instituted at the Passover table: *he took bread... brake it... This is my body which is given for you.* The breaking of bread in the assembly is the participation in that same body given; what Paul received of the Lord he sets against the table of devils as its holy opposite.'),
+  ('canon', '1-corinthians', 10, 16, 'canon', 'luke', 22, 20, 'free', E'*Likewise also the cup after supper, saying, This cup is the new testament in my blood, which is shed for you.* (Luke 22:20). The cup Paul names — *The cup of blessing which we bless, is it not the communion of the blood of Messiah (Christ)?* (1 Corinthians 10:16) — is the cup Yahusha (Jesus) lifted after supper: *This cup is the new testament in my blood, which is shed for you.* To drink it is to share in the covenant blood; this is why one cannot drink it and the cup of devils too — the communion of the Messiah''s blood admits no rival table.'),
+  ('canon', '1-corinthians', 10, 16, 'canon', 'matthew', 26, 28, 'free', E'*For this is my blood of the new testament, which is shed for many for the remission of sins.* (Matthew 26:28). The communion of the blood of the Messiah (1 Corinthians 10:16) is the cup of which Yahusha (Jesus) said *this is my blood of the new testament, which is shed for many for the remission of sins.* The cup of blessing the assembly blesses is participation in that shed covenant-blood; it is the table of the Lord, set over against the table of devils as the one fellowship that excludes the other.'),
+  ('canon', '1-corinthians', 10, 17, 'canon', 'matthew', 26, 26, 'free', E'*And as they were eating, Yahusha (Jesus) took bread, and blessed it, and brake it, and gave it to the disciples, and said, Take, eat; this is my body.* (Matthew 26:26). Paul reasons from the one loaf to the one body: *For we being many are one bread, and one body: for we are all partakers of that one bread* (1 Corinthians 10:17). The bread Yahusha (Jesus) blessed and brake and gave — *Take, eat; this is my body* — gathers the many partakers into one body. The shared loaf of the supper is the figure and the bond of the gathered seed made one.'),
+  -- thread: 1-corinthians-10-the-earth-is-the-lords-and-the-fulness-thereof-psalm-24
+  ('canon', '1-corinthians', 10, 26, 'canon', 'psalms', 24, 1, 'free', E'*The earth is the LORD''S, and the fulness thereof; the world, and they that dwell therein.* (Psalm 24:1). Paul settles the question of meat sold in the market by quoting the psalm outright: *For the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:26). Because all the earth and its fulness belong to Yahuah (LORD), the food itself is clean — the believer may eat what is set before him, *asking no question for conscience sake,* for nothing in the creation is the idol''s. The whole earth is the Maker''s, not the devil''s.'),
+  ('canon', '1-corinthians', 10, 28, 'canon', 'psalms', 24, 1, 'free', E'*The earth is the LORD''S, and the fulness thereof; the world, and they that dwell therein.* (Psalm 24:1). Paul repeats the citation when conscience comes into view: if a man says *This is offered in sacrifice unto idols, eat not for his sake... for the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:28). The same truth that frees the eater — all things are the Maker''s — also guards the weaker brother: the food is forgone not because the idol owns it, but for the other man''s conscience, since the earth and its fulness are Yahuah''s (LORD''s) alone.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s228_co10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s228_co10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-10-our-fathers-under-the-cloud-and-the-rock-that-was-messiah-exodus-17',
+       E'Our fathers under the cloud, and the Rock that was Messiah (Exodus 17, Numbers 20)',
+       E'Paul gathers the whole exodus into four verses and binds the Corinthian assembly into it: *Moreover, brethren, I would not that ye should be ignorant, how that all our fathers were under the cloud, and all passed through the sea; And were all baptized unto Moses in the cloud and in the sea; And did all eat the same spiritual meat; And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:1-4). Mark first the word *our fathers.* He writes to a largely nations-background congregation and calls the redeemed wilderness generation theirs — the grafted-in are made one with Yashar''el (Israel), the scattered seed gathered home; this is no church that replaced Israel but the commonwealth of Israel enlarged. The cloud is the pillar of Exodus: *Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire* (Exodus 13:21). The sea is the deliverance of Exodus 14: *the children of Yashar''el (Israel) went into the midst of the sea upon the dry ground: and the waters were a wall unto them on their right hand, and on their left* (Exodus 14:22) — the passage Paul reads as a baptism *unto Moses.* The spiritual meat is the manna: *This is the bread which Yahuah (LORD) hath given you to eat* (Exodus 16:15). And the spiritual drink is the water from the rock — first at Horeb, where Yahuah (LORD) himself said *Behold, I will stand before thee there upon the rock in Horeb; and thou shalt smite the rock, and there shall come water out of it* (Exodus 17:6), and again at Meribah, where *Moses lifted up his hand, and with his rod he smote the rock twice: and the water came out abundantly, and the congregation drank* (Numbers 20:11). Then comes the weight of it: *that Rock was Messiah (Christ).* The One who stood on the rock in Horeb and gave Yashar''el (Israel) the water is the Formed — the Messiah who was already with his people in the wilderness, the God of the Tanakh interactions come in the flesh. He is not a second co-equal person nor a mere man, but the Formed drawn from the Formless, who fed and watered the fathers and now feeds the gathered assembly. The grafted-in drink of the same Rock; the exodus is their story, and the Rock is their Messiah.',
+       sv.verse_id, ev.verse_id, 'free', 6825
+  FROM _s228_co10_lookup sv, _s228_co10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=10 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-10-the-wilderness-types-written-for-our-admonition-exodus-32-numbers-25',
+       E'The wilderness types written for our admonition: the calf, Peor, the serpents, the murmuring (Exodus 32, Numbers 25)',
+       E'Having bound the assembly to the fathers, Paul reads the wilderness failures as binding instruction: *Now these things were our examples, to the intent we should not lust after evil things, as they also lusted* (1 Corinthians 10:6), and again *Now all these things happened unto them for ensamples: and they are written for our admonition, upon whom the ends of the world are come* (10:11). The Torah narratives are not abrogated history but living warning for the gathered. He names four. First, idolatry, quoted word for word from the golden calf: *as it is written, The people sat down to eat and drink, and rose up to play* (10:7) — *they rose up early on the morrow, and offered burnt offerings... and the people sat down to eat and to drink, and rose up to play* (Exodus 32:6). Second, fornication: *Neither let us commit fornication, as some of them committed, and fell in one day three and twenty thousand* (10:8) — the whoredom of Peor, where *the people began to commit whoredom with the daughters of Moab* (Numbers 25:1) and *those that died in the plague were twenty and four thousand* (Numbers 25:9). Third, the tempting of the Messiah: *Neither let us tempt Messiah (Christ), as some of them also tempted, and were destroyed of serpents* (10:9) — when the people loathed the bread of heaven, *Yahuah (LORD) sent fiery serpents among the people, and they bit the people; and much people of Yashar''el (Israel) died* (Numbers 21:6). Mark whom Paul says they tempted: the Messiah — the Rock who was with them, provoked by their contempt. Fourth, murmuring: *Neither murmur ye, as some of them also murmured, and were destroyed of the destroyer* (10:10) — the congregation that murmured after Korah, of whom *they that died in the plague were fourteen thousand and seven hundred* (Numbers 16:49). The Hebrew library teaches the same coupling Paul draws between the calf and Peor: *the devising of idols was the beginning of spiritual fornication, and the invention of them the corruption of life* (Wisdom of Solomon 14:12) — where the idol rises, the harlotry follows. These four are written down that the assembly *that thinketh he standeth take heed lest he fall* (10:12).',
+       sv.verse_id, ev.verse_id, 'extras', 6828
+  FROM _s228_co10_lookup sv, _s228_co10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=10 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-10-flee-from-idolatry-the-cup-and-table-of-the-lord-not-of-devils-deuteronomy-32',
+       E'Flee from idolatry: the cup and table of the Lord, not of devils (Deuteronomy 32)',
+       E'*Wherefore, my dearly beloved, flee from idolatry* (1 Corinthians 10:14). Paul does not tell the assembly to manage the idol but to flee it, and his reasoning comes straight out of the Song of Moses. The idol is nothing in itself, but a devil stands behind it: *the things which the Gentiles sacrifice, they sacrifice to devils, and not to Elohim (God): and I would not that ye should have fellowship with devils* (10:20) — exactly the indictment Moses sang of Yashar''el (Israel), *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not* (Deuteronomy 32:17). So the two tables cannot be shared: *Ye cannot drink the cup of Yahuah (Lord), and the cup of devils: ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils* (10:21). The cup of blessing and the bread the assembly breaks are the communion of the Messiah''s blood and body; they admit no rival. And Paul presses the jealousy of Elohim (God): *Do we provoke Yahuah (Lord) to jealousy? are we stronger than he?* (10:22) — the very word of the Song, where Yashar''el (Israel) *moved me to jealousy with that which is not Elohim (God)* (Deuteronomy 32:21). To eat at the table of devils is to provoke the jealousy that burned in the wilderness. The Hebrew library renders the same verdict on idolatry that Paul does: *the worshipping of idols not to be named is the beginning, the cause, and the end, of all evil* (Wisdom of Solomon 14:27). It is the root of all evil, not a neutral matter of meat — therefore flee it.',
+       sv.verse_id, ev.verse_id, 'extras', 6831
+  FROM _s228_co10_lookup sv, _s228_co10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=10 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-10-the-communion-of-the-body-and-blood-one-bread-one-body-luke-22',
+       E'The communion of the body and blood: one bread, one body (Luke 22, Matthew 26)',
+       E'Against the table of devils Paul sets the table of the Lord: *The cup of blessing which we bless, is it not the communion of the blood of Messiah (Christ)? The bread which we break, is it not the communion of the body of Messiah (Christ)? For we being many are one bread, and one body: for we are all partakers of that one bread* (1 Corinthians 10:16-17). This is the supper Yahusha (Jesus) instituted at the Passover table, the same he received of the Lord and delivered to the assembly. He took the bread: *he took bread, and gave thanks, and brake it, and gave unto them, saying, This is my body which is given for you: this do in remembrance of me* (Luke 22:19); *Take, eat; this is my body* (Matthew 26:26). He took the cup: *This cup is the new testament in my blood, which is shed for you* (Luke 22:20); *this is my blood of the new testament, which is shed for many for the remission of sins* (Matthew 26:28). To bless the cup is to share in the covenant blood; to break the bread is to share in the body given. And the one loaf makes the many one: *we being many are one bread, and one body.* The shared loaf of the supper is the bond of the gathered seed, Israel and the grafted-in made one body in the Messiah. This communion is why the cup of the Lord and the cup of devils cannot be drunk together — the one fellowship excludes the other.',
+       sv.verse_id, ev.verse_id, 'free', 6834
+  FROM _s228_co10_lookup sv, _s228_co10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=10 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-10-the-earth-is-the-lords-and-the-fulness-thereof-psalm-24',
+       E'The earth is Yahuah''s (Lord''s), and the fulness thereof (Psalm 24)',
+       E'Paul settles the question of meat bought in the market by quoting the psalm: *Whatsoever is sold in the shambles, that eat, asking no question for conscience sake: For the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:25-26) — *The earth is the LORD''S, and the fulness thereof; the world, and they that dwell therein* (Psalm 24:1). Because the whole earth and all its fulness belong to Yahuah (LORD), the food itself is clean; nothing in the creation is the idol''s, for the Maker owns it all, not the devil. So the believer may eat freely. Paul cites the psalm a second time when conscience enters: *But if any man say unto you, This is offered in sacrifice unto idols, eat not for his sake that shewed it, and for conscience sake: for the earth is Yahuah''s (Lord''s), and the fulness thereof* (10:28). The same truth that frees the eater also guards the weaker brother — the food is forgone not because the idol has any claim on it, but for the other man''s conscience. The earth and its fulness are Yahuah''s (LORD''s) alone, and all eating and drinking is to be done *to the glory of Elohim (God)* (10:31).',
+       sv.verse_id, ev.verse_id, 'free', 6837
+  FROM _s228_co10_lookup sv, _s228_co10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=10 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-corinthians-10-our-fathers-under-the-cloud-and-the-rock-that-was-messiah-exodus-17
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 13:21 — *Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way* the cloud our fathers were *all... under* (1 Corinthians 10:1), binding the grafted-in into the exodus.'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-our-fathers-under-the-cloud-and-the-rock-that-was-messiah-exodus-17'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 14:22 — *the children of Yashar''el (Israel) went into the midst of the sea upon the dry ground: and the waters were a wall unto them* the passage our fathers *all passed through* and were *baptized unto Moses* (1 Corinthians 10:1-2).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-our-fathers-under-the-cloud-and-the-rock-that-was-messiah-exodus-17'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 16:15 — *This is the bread which Yahuah (LORD) hath given you to eat* the manna, the *same spiritual meat* our fathers *did all eat* (1 Corinthians 10:3).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-our-fathers-under-the-cloud-and-the-rock-that-was-messiah-exodus-17'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=16 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 17:6 — *Behold, I will stand before thee there upon the rock in Horeb... and there shall come water out of it* Yahuah (LORD) himself on the rock; the *spiritual Rock* that *was Messiah (Christ)* (1 Corinthians 10:4), the Formed already with Yashar''el (Israel).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-our-fathers-under-the-cloud-and-the-rock-that-was-messiah-exodus-17'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Numbers 20:11 — *Moses... smote the rock twice: and the water came out abundantly, and the congregation drank* the Rock that *followed them,* whose drink Paul names: *that Rock was Messiah (Christ)* (1 Corinthians 10:4).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-our-fathers-under-the-cloud-and-the-rock-that-was-messiah-exodus-17'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=20 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-10-the-wilderness-types-written-for-our-admonition-exodus-32-numbers-25
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 32:6 — *the people sat down to eat and to drink, and rose up to play* the golden-calf revel, quoted word for word: *as it is written, The people sat down to eat and drink, and rose up to play* (1 Corinthians 10:7).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-wilderness-types-written-for-our-admonition-exodus-32-numbers-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 25:1 — *the people began to commit whoredom with the daughters of Moab* the harlotry of Peor, the fornication Paul warns against (1 Corinthians 10:8).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-wilderness-types-written-for-our-admonition-exodus-32-numbers-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 25:9 — *those that died in the plague were twenty and four thousand* the Peor toll; Paul names it: the fornicators *fell in one day three and twenty thousand* (1 Corinthians 10:8).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-wilderness-types-written-for-our-admonition-exodus-32-numbers-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 14:12 — *the devising of idols was the beginning of spiritual fornication* the library''s same coupling of idolatry and fornication that Paul sets side by side (1 Corinthians 10:7-8).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-wilderness-types-written-for-our-admonition-exodus-32-numbers-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=8
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=14 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Numbers 21:6 — *Yahuah (LORD) sent fiery serpents among the people* the serpents sent when they loathed the bread of heaven; Paul: they *tempt[ed] Messiah (Christ)... and were destroyed of serpents* (1 Corinthians 10:9).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-wilderness-types-written-for-our-admonition-exodus-32-numbers-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=9
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Numbers 16:49 — *they that died in the plague were fourteen thousand and seven hundred* the murmuring after Korah; Paul: *murmur[ed]... and were destroyed of the destroyer* (1 Corinthians 10:10).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-wilderness-types-written-for-our-admonition-exodus-32-numbers-25'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=49
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-10-flee-from-idolatry-the-cup-and-table-of-the-lord-not-of-devils-deuteronomy-32
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 32:17 — *They sacrificed unto devils, not to Elohim (God)* the Song of Moses, Paul''s ground: the Gentiles *sacrifice to devils, and not to Elohim (God)* (1 Corinthians 10:20).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-flee-from-idolatry-the-cup-and-table-of-the-lord-not-of-devils-deuteronomy-32'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 32:17 — *They sacrificed unto devils, not to Elohim (God)* the table of devils is no empty figure; *ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils* (1 Corinthians 10:21).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-flee-from-idolatry-the-cup-and-table-of-the-lord-not-of-devils-deuteronomy-32'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 32:21 — *They have moved me to jealousy with that which is not Elohim (God)* the jealousy Paul invokes: *Do we provoke Yahuah (Lord) to jealousy? are we stronger than he?* (1 Corinthians 10:22).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-flee-from-idolatry-the-cup-and-table-of-the-lord-not-of-devils-deuteronomy-32'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 14:27 — *the worshipping of idols... the beginning, the cause, and the end, of all evil* the library''s verdict undergirding *flee from idolatry* (1 Corinthians 10:14): not a neutral matter but the root of all evil.'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-flee-from-idolatry-the-cup-and-table-of-the-lord-not-of-devils-deuteronomy-32'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=14
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=14 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-10-the-communion-of-the-body-and-blood-one-bread-one-body-luke-22
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Luke 22:19 — *This is my body which is given for you: this do in remembrance of me* the bread Paul breaks is *the communion of the body of Messiah (Christ)* (1 Corinthians 10:16).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-communion-of-the-body-and-blood-one-bread-one-body-luke-22'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Luke 22:20 — *This cup is the new testament in my blood, which is shed for you* the cup of blessing is *the communion of the blood of Messiah (Christ)* (1 Corinthians 10:16).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-communion-of-the-body-and-blood-one-bread-one-body-luke-22'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Matthew 26:28 — *this is my blood of the new testament, which is shed for many for the remission of sins* the shed covenant-blood of the cup the assembly blesses (1 Corinthians 10:16).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-communion-of-the-body-and-blood-one-bread-one-body-luke-22'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=28
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Matthew 26:26 — *Take, eat; this is my body* the one loaf Yahusha (Jesus) gave, that makes the many one: *we being many are one bread, and one body* (1 Corinthians 10:17).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-communion-of-the-body-and-blood-one-bread-one-body-luke-22'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-10-the-earth-is-the-lords-and-the-fulness-thereof-psalm-24
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 24:1 — *The earth is the LORD''S, and the fulness thereof* cited to free the eater: *whatsoever is sold in the shambles, that eat... for the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:25-26).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-earth-is-the-lords-and-the-fulness-thereof-psalm-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=26
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=24 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 24:1 — *The earth is the LORD''S, and the fulness thereof* cited a second time, now guarding the weaker brother''s conscience: *eat not for his sake... for the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:28).'
+  FROM cross_reference_threads t, cross_references x, _s228_co10_lookup sv, _s228_co10_lookup tv
+ WHERE t.slug='1-corinthians-10-the-earth-is-the-lords-and-the-fulness-thereof-psalm-24'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=10 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=24 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session228 — 1 Corinthians cross-references complete.'

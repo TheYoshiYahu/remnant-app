@@ -94,3 +94,43 @@ unresolved, pglast 68 stmts on the assembled migration).
   NOT used — distinct frame; Daniel 7 carries it directly.
 - **Extras discipline:** ch5/ch6 correctly carry ZERO extras (discipline + body-temple are wholly
   canon-rooted); ch7 one clean extras add (Sirach 15:15). No forced parallels.
+
+---
+
+## PACK 3 (ch8–10) — LIVE in prod, applied 2026-06-11. HIGH-watchpoint pack (idol-food, wilderness types).
+12 threads / 43 cross_refs / 43 members, per-ch 3/4/5, band 6775–6837.
+
+### Load-bearing / framework-sensitive decisions:
+- **★ Christology — 8:4–6 one Elohim the Father / one Lord Yahusha (slug `1-corinthians-8-but-to-us-one-elohim-the-father-and-one-lord-the-shema-deuteronomy-6`)**
+  — built on the Shema (Deut 6:4) + Deut 4:35,39 + Mark 12:29,32. DECISION: the Father is the One
+  *of whom are all things*; Yahusha is the Formed Son *by whom are all things* — explicitly **NOT a
+  second separate God, NOT the Father in a mask (modalism), NOT a mere man exalted.** "The oneness is
+  not broken; it is unfolded." This is the canonical Formed-Christology framing for the letter (cf.
+  10:4 Rock=Messiah, 15:24–28 the Son delivers the kingdom to the Father). Summary surfaced to Yoshi.
+- **★ 8:1–13 idol-food NOT dietary-law abolition (slug `...the-weak-brother-for-whom-messiah-died-the-stumblingblock-romans-14`)**
+  — DECISION the chapter is about meat sacrificed to idols + the weak conscience; the thread prose
+  **explicitly states "no abolishing of any food-law, no setting aside of clean and unclean."**
+  Guards the Leviticus-11 clean/unclean law. **Sibling: ch10 cup/table-of-devils, Romans 14, Acts
+  15 — the idol-food cluster; if Yoshi reviews one, this is the controlling framing.**
+- **★ 9:20–21 *not without law to Elohim, but under the law to Messiah* (slug `1-corinthians-9-not-without-law-to-elohim-but-under-the-law-to-messiah-psalm-40`)**
+  — built on Psalm 40:8 (thy law within my heart) + Jeremiah 31:33 (law written on the heart).
+  DECISION: **missionary accommodation, NEVER Torah-abandonment** — the governing parenthesis is
+  *being not without law to Elohim,* *ennomos Christou* (Torah-bound to the Messiah). This is the
+  single most abuse-prone verse in the chapter; the framing pins it. Summary surfaced to Yoshi.
+- **9:8–14 apostolic support from the law** — Deut 25:4 (unmuzzled ox) + Numbers 18:8 / Deut 18:1
+  (Levitical portion) + Luke 10:7. DECISION: Paul grounds gospel-support IN the law of Moses — Torah
+  as living authority, not abrogated.
+- **★ BLESSING — 10:1–4 *our fathers... the Rock was Messiah* (slug `1-corinthians-10-our-fathers-under-the-cloud-and-the-rock-that-was-messiah-exodus-17`)**
+  — built on Exodus 13:21, 14:22, 16:15, 17:6, Numbers 20:11. DECISION: *our fathers* to a
+  nations-background assembly = **the grafted-in made ONE with Israel, the commonwealth enlarged, NOT
+  a church that replaced Israel** (two-house/grafting frame); the Rock = the Formed Messiah already
+  with Israel in the wilderness. Summary surfaced to Yoshi.
+- **10:7–11 the wilderness types *written for our admonition*** — Exodus 32:6 (calf), Numbers 25
+  (Peor), Numbers 21:5–6 (serpents), Numbers 14/16 (murmuring) + Wisdom 14:12 (idolatry-with-
+  fornication). DECISION: **the Torah narratives are BINDING instruction for the assembly, not
+  abrogated history** (10:11 *ensamples... written for our admonition*).
+- **10:21 cup/table of the Lord vs of devils** — Deut 32:17 (sacrificed unto devils not Elohim) +
+  Wisdom 14:27 (idolatry the beginning/cause/end of all evil). 10:26 *the earth is Yahuah's* on
+  Psalm 24:1. NT-Lord rule preserved: 10:21–22,26,28 titular/citation *Yahuah (Lord)* kept verbatim.
+- **Extras discipline:** ch8 Wisdom 13–14 (idols nothing), ch9 Sirach 18:30 (the temperate athlete),
+  ch10 Wisdom 14:12/27 (idolatry+fornication). All clean apocrypha pulls, load-bearing.
