@@ -797,6 +797,9 @@ function HeroToday({ reck, result, isSabbath, now, nextMoed, omer }: HeroProps) 
   const yearFrac = yearPosition(bd.month, bd.day);
   const cd = nextMoed ? countdownTo(nextMoed.startInstant, now) : null;
   const moedThemeForNext = nextMoed ? moedTheme(nextMoed.kind) : null;
+  // Enoch's appointed days are fixed whole solar days, not sunset-opened — so the
+  // hero frames the next moed as the day itself (its daytime date), not an evening.
+  const sunsetLayout = reck.month !== "enoch";
 
   return (
     <section className="cal-hero mb-6">
@@ -849,7 +852,9 @@ function HeroToday({ reck, result, isSabbath, now, nextMoed, omer }: HeroProps) 
                 {nextMoed.name}
               </div>
               <div className="cal-next-when">
-                begins at sunset &middot; {fmtEvening(nextMoed.startInstant)}
+                {sunsetLayout
+                  ? `begins at sunset · ${fmtEvening(nextMoed.startInstant)}`
+                  : `the whole day · ${fmtEvening(moedDaytime(nextMoed.startInstant))}`}
               </div>
               <div className="cal-countdown">
                 <Count n={cd.days} unit="days" glow={moedThemeForNext.glow} />
@@ -1111,8 +1116,22 @@ const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const SHADE_TECHELET = "rgba(10, 45, 132, 0.6)"; // the post-sunset evening shade
 const SHADE_SABBATH = "rgba(46, 123, 214, 0.5)"; // spectral — the Sabbath band
 const SHADE_SEAM = "rgba(147, 192, 255, 0.5)"; // the sundown seam line
+// Enoch's whole-day Sabbath: a soft full-cell rest wash (no seam, no diagonal).
+const SHADE_SABBATH_WHOLE =
+  "linear-gradient(180deg, rgba(46, 123, 214, 0.30) 0%, rgba(46, 123, 214, 0.16) 100%)";
 
-function shadeBackground(cell: LayerCell): string {
+/**
+ * The cell background. `sunsetLayout` true for the LUNAR reckonings (dark moon /
+ * first crescent / rabbinic), whose biblical day runs sunset→sunset and so reads
+ * as the diagonal seam + evening half. For ENOCH it is false: the 364-day solar
+ * calendar reckons fixed WHOLE days (Gen 1:14-19), not sunset to sunset, so the
+ * cell is clean — no seam, no evening shade — and only the weekly Sabbath carries
+ * a soft full-cell wash.
+ */
+function shadeBackground(cell: LayerCell, sunsetLayout: boolean): string {
+  if (!sunsetLayout) {
+    return cell.morningSabbath ? SHADE_SABBATH_WHOLE : "transparent";
+  }
   // Daytime (upper) half: clear, except Saturday daytime carries the Sabbath band.
   const morning = cell.morningSabbath ? SHADE_SABBATH : "transparent";
   // Evening (lower) half: always shaded — Friday evening opens the Sabbath band.
@@ -1138,6 +1157,9 @@ function LayerGridView({
   onSelect: (c: LayerCell) => void;
 }) {
   const daysWithItems = useDaysWithItems();
+  // The sunset-to-sunset layout is a LUNAR concept. Enoch's 364-day solar
+  // calendar reckons whole fixed-weekday days, so it drops the diagonal seam.
+  const sunsetLayout = grid.result.config.month.kind !== "enoch";
   return (
     <section className="cal-panel mb-6">
       <div className="cal-base-bar">
@@ -1188,18 +1210,28 @@ function LayerGridView({
             key={c.key}
             cell={c}
             base={base}
+            sunsetLayout={sunsetLayout}
             hasItems={daysWithItems.has(civilDayId(c.daytime))}
             onSelect={onSelect}
           />
         ))}
       </div>
 
-      <p className="cal-shade-caption">
-        The shaded lower half of every box is after{" "}
-        <span className="cal-shade-seam-word">sundown</span> — the new Hebrew day has
-        begun there, and runs on through the clear daytime of the next box. The
-        brighter band is the weekly Sabbath: Friday evening through Saturday day.
-      </p>
+      {sunsetLayout ? (
+        <p className="cal-shade-caption">
+          The shaded lower half of every box is after{" "}
+          <span className="cal-shade-seam-word">sundown</span> — the new Hebrew day has
+          begun there, and runs on through the clear daytime of the next box. The
+          brighter band is the weekly Sabbath: Friday evening through Saturday day.
+        </p>
+      ) : (
+        <p className="cal-shade-caption">
+          Enoch reckons{" "}
+          <span className="cal-shade-seam-word">whole solar days</span> on a fixed
+          364-day week (Gen 1:14-19) — no sundown seam. Each box is one complete day,
+          the same weekday every year; the brighter cell is the weekly Sabbath.
+        </p>
+      )}
 
       <GridLegend cells={grid.cells} />
     </section>
@@ -1209,17 +1241,21 @@ function LayerGridView({
 function LayerDayCell({
   cell,
   base,
+  sunsetLayout,
   hasItems,
   onSelect,
 }: {
   cell: LayerCell;
   base: BaseLayer;
+  sunsetLayout: boolean;
   hasItems: boolean;
   onSelect: (c: LayerCell) => void;
 }) {
   const moed = cell.moedim[0];
   const theme = moed ? moedTheme(moed.kind) : null;
-  const sabbath = cell.morningSabbath || cell.eveningSabbath;
+  // Under Enoch (no sunset layout) the Sabbath is the whole Saturday day, so the
+  // Friday-evening half never reads as the Sabbath band.
+  const sabbath = sunsetLayout ? cell.morningSabbath || cell.eveningSabbath : cell.morningSabbath;
   return (
     <button
       type="button"
@@ -1234,7 +1270,7 @@ function LayerDayCell({
       style={{
         // backgroundImage (not the shorthand) so the cell's own surface shows
         // through the clear daytime half.
-        backgroundImage: shadeBackground(cell),
+        backgroundImage: shadeBackground(cell, sunsetLayout),
         ...(theme
           ? {
               borderColor: hexA(theme.glow, 0.6),
@@ -1329,6 +1365,9 @@ function DayView({
 }) {
   const detail = useMemo(() => buildDayDetail(reck, cell), [reck, cell]);
   const dayId = civilDayId(cell.daytime);
+  // Enoch days are whole fixed solar days — not sunset-bounded — so the modal
+  // shows a whole-day card rather than the two-sunset boundary card.
+  const sunsetLayout = reck.month !== "enoch";
 
   // Close on Escape.
   useEffect(() => {
@@ -1353,7 +1392,11 @@ function DayView({
         </button>
 
         <DayViewHead detail={detail} />
-        <DayViewSunset detail={detail} />
+        {sunsetLayout ? (
+          <DayViewSunset detail={detail} />
+        ) : (
+          <DayViewWholeDay detail={detail} />
+        )}
         <DayViewStatus detail={detail} />
         <OnThisDay events={detail.history} />
         <DayViewTabs dayId={dayId} detail={detail} />
@@ -1438,6 +1481,30 @@ function DayViewSunset({ detail }: { detail: DayDetail }) {
         </div>
         <div className="cal-dv-sunset-clock">{fmtSunsetClock(detail.closesAt)}</div>
       </div>
+    </section>
+  );
+}
+
+/**
+ * The Enoch whole-day card — the 364-day solar calendar reckons fixed days, not
+ * sunset→sunset, so there is no opening/closing sunset to show. The day runs the
+ * full civil day and falls on the same weekday every year.
+ */
+function DayViewWholeDay({ detail }: { detail: DayDetail }) {
+  return (
+    <section className="cal-dv-sunset cal-dv-wholeday">
+      <div className="cal-dv-sunset-row">
+        <span className="cal-dv-sunset-ic">☀</span>
+        <div>
+          <div className="cal-dv-sunset-lbl">A whole solar day</div>
+          <div className="cal-dv-sunset-val">{detail.gregorianFull}</div>
+        </div>
+      </div>
+      <p className="cal-dv-wholeday-note">
+        Enoch&rsquo;s 364-day calendar reckons fixed whole days (Gen 1:14-19), not
+        sunset to sunset — this day runs the full day and keeps the same weekday
+        every year.
+      </p>
     </section>
   );
 }
@@ -1843,6 +1910,16 @@ function CompareSection({
 // ───────────────────────────────────────────────────────────────────────
 // small helpers
 // ───────────────────────────────────────────────────────────────────────
+
+/**
+ * The civil DAYTIME date of a moed. The engine reports a moed's `startInstant` as
+ * the opening sunset (the evening before the daytime), which the lunar reckonings
+ * display as "begins the evening of". Enoch reckons whole solar days, so it shows
+ * the day itself: nudge ~18h past the opening sunset to land in that day's daytime.
+ */
+function moedDaytime(startInstant: Date): Date {
+  return new Date(startInstant.getTime() + 18 * 3_600_000);
+}
 
 /** Hex (#RRGGBB) + alpha → rgba() string. */
 function hexA(hex: string, a: number): string {

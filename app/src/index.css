@@ -1590,6 +1590,13 @@ body {
   margin: 0.55rem 0;
   background: linear-gradient(90deg, transparent, rgba(147, 192, 255, 0.6), transparent);
 }
+/* Enoch whole-day card — no sunset boundary, a fixed solar day. */
+.cal-dv-wholeday-note {
+  margin: 0.55rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--cal-ink-soft);
+}
 
 /* Status chips */
 .cal-dv-status { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
