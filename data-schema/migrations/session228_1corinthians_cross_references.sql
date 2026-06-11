@@ -943,6 +943,752 @@ SELECT t.id, x.id, 7, E'Romans 12:14 — *Bless them which persecute you: bless,
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1corinthians_05.sql (S228 1 Corinthians 5) -----
+-- =====================================================================
+-- S228 minion — 1 CORINTHIANS 5 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 1 CORINTHIANS 5 (13 verses) — THE KEEP-THE-FEAST / PASSOVER BLESSING WATCHPOINT.
+-- Tag: co05 (temp view _s228_co05_lookup).
+-- Sort band: floor 6700, step 3 (6700, 6703, 6706, 6709 used; under 6725).
+-- Source is ALWAYS the canon 1 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME. Paul disciplines a fleshly assembly of called-out ones — Israel and the grafted-in
+-- seed gathered at Corinth — and he does it ON TORAH GROUND, not against Torah. (1) The sin he names
+-- is the one Torah curses by name: *one should have his father''s wife* (5:1) is *the nakedness of thy
+-- father''s wife* Torah forbids (Leviticus 18:8) and *Cursed be he that lieth with his father''s wife*
+-- (Deuteronomy 27:20). (2) The CENTERPIECE: *Purge out therefore the old leaven... For even Messiah
+-- (Christ) our passover is sacrificed for us: Therefore let us keep the feast* (5:7-8). Paul does NOT
+-- abolish the feast — he commands the assembly to KEEP it. Messiah is the Passover LAMB (Exodus 12 —
+-- the lamb without blemish, the blood that turns the destroyer aside), the putting-away of leaven is
+-- the Feast of Unleavened Bread (Exodus 12:15-20, Leviticus 23:5-8, Deuteronomy 16:3-4, Exodus 13:7),
+-- and the unleavened bread is now read as *sincerity and truth.* The feast is affirmed and fulfilled,
+-- never repealed. (3) The DISCIPLINE: *put away from among yourselves that wicked person* (5:13) is the
+-- recurring Torah judgment formula *so shalt thou put the evil away from among you* (Deuteronomy 13:5,
+-- 17:7, 19:19, 21:21, 22:21, 24:7) — Paul settles the case BY the law. No law-vs-grace antithesis, no
+-- church-replacing-Israel; the discipline of the gathered seed is the discipline of the congregation
+-- of Yashar''el (Israel) carried forward. Lord-rule: where *Lord* is Yahusha titular (*our Lord Yahusha
+-- HaMashiach,* *the day of the Lord Yahusha*) the pull keeps *Lord* — preserved exactly.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-2   the fornication named: one should have his father''s wife; ye are puffed up
+--           Tanakh: Leviticus 18:8 (the nakedness of thy father''s wife shalt thou not uncover),
+--                   Deuteronomy 22:30 (a man shall not take his father''s wife), Deuteronomy 27:20
+--                   (Cursed be he that lieth with his father''s wife)
+--           Extras: none warranted   NT: none warranted (the root is the Torah prohibition)
+--   v.3-5   deliver such an one unto Satan for the destruction of the flesh, that the spirit be saved
+--           Tanakh: none warranted   Extras: none warranted
+--           NT: Matthew 18:17 (tell it unto the church... let him be as an heathen man) — the
+--               assembly''s judgment of the unrepentant brother
+--   v.6-8   a little leaven leaveneth the whole lump; Messiah our passover; let us keep the feast [BLESSING]
+--           Tanakh: Exodus 12:5 (lamb without blemish), Exodus 12:13 (when I see the blood, I will
+--                   pass over you), Exodus 12:15 (the first day ye shall put away leaven out of your
+--                   houses), Exodus 12:8 (unleavened bread), Exodus 13:7 (no leaven seen in all thy
+--                   quarters), Leviticus 23:5-6 (the LORD''S passover... the feast of unleavened bread),
+--                   Deuteronomy 16:3 (no leavened bread... seven days unleavened bread)
+--           Extras: none warranted (the Torah feast is the whole load-bearing root)
+--           NT: John 1:29 (Behold the Lamb of Elohim), 1 Peter 1:19 (the precious blood of Messiah,
+--               as of a lamb without blemish)
+--   v.9-13  keep no company with a fornicator... them that are without Elohim judgeth; put away that
+--           wicked person
+--           Tanakh: Deuteronomy 13:5, 17:7, 19:19, 21:21, 22:21, 24:7 (so shalt thou put the evil
+--                   away from among you — the recurring discipline formula)
+--           Extras: none warranted   NT: carried in the discipline thread (Matthew 18:17)
+--
+-- THREADS (slug -> target libraries):
+--   6700 1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12         (Tanakh + NT)  [BLESSING CENTERPIECE]
+--   6703 1-corinthians-5-put-away-the-wicked-person-from-among-you-deuteronomy-13  (Tanakh)
+--   6706 1-corinthians-5-the-fornication-torah-curses-the-fathers-wife-leviticus-18  (Tanakh)
+--   6709 1-corinthians-5-deliver-such-an-one-unto-satan-and-judge-them-within-matthew-18  (NT)
+-- =====================================================================
+
+CREATE TEMP VIEW _s228_co05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12  [BLESSING CENTERPIECE]
+  ('canon', '1-corinthians', 5, 7, 'canon', 'exodus', 12, 5, 'free', E'*Your lamb shall be without blemish, a male of the first year: ye shall take it out from the sheep, or from the goats:* (Exodus 12:5). The Passover lamb of Egypt had to be *without blemish* — and Paul names the One it always pointed to: *For even Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7). The unblemished lamb chosen on the tenth day and slain on the fourteenth is the Messiah; the feast is not abolished but filled, its lamb revealed. Paul does not loose the assembly from the Passover — he tells them whose blood the lamb foretold.'),
+  ('canon', '1-corinthians', 5, 7, 'canon', 'exodus', 12, 13, 'free', E'*And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt.* (Exodus 12:13). The blood on the door turned the destroyer aside; Yahuah (LORD) passed over the houses marked by the lamb. *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7) — the blood that now stands between the gathered seed and judgment is the blood the door-posts foretold. The Passover is the same Passover; the Lamb is the Messiah.'),
+  ('canon', '1-corinthians', 5, 7, 'canon', 'exodus', 12, 15, 'free', E'*Seven days shall ye eat unleavened bread; even the first day ye shall put away leaven out of your houses: for whosoever eateth leavened bread from the first day until the seventh day, that soul shall be cut off from Yashar''el (Israel).* (Exodus 12:15). The Feast of Unleavened Bread begins with putting leaven out of the house. Paul speaks the very command to the assembly: *Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened* (1 Corinthians 5:7). The literal sweeping-out of leaven becomes the sweeping-out of *malice and wickedness* — but the feast that taught it stands; Paul keeps it and tells them to keep it.'),
+  ('canon', '1-corinthians', 5, 8, 'canon', 'exodus', 12, 8, 'free', E'*And they shall eat the flesh in that night, roast with fire, and unleavened bread; and with bitter herbs they shall eat it.* (Exodus 12:8). The lamb was eaten with *unleavened bread* — and Paul reads that very bread as the shape of the redeemed life: *Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). *Let us keep the feast* — the Feast of Unleavened Bread is affirmed, and its bread is now sincerity and truth. The feast is not severed from the assembly; it is fulfilled in them.'),
+  ('canon', '1-corinthians', 5, 7, 'canon', 'exodus', 13, 7, 'free', E'*Unleavened bread shall be eaten seven days; and there shall no leavened bread be seen with thee, neither shall there be leaven seen with thee in all thy quarters.* (Exodus 13:7). No leaven was to be seen in all the borders of Yashar''el (Israel) through the seven feast-days. Paul presses the same total purge upon the assembly: *a little leaven leaveneth the whole lump. Purge out therefore the old leaven* (1 Corinthians 5:6-7). The thoroughness Torah required of the houses of Yashar''el (Israel) is the thoroughness the gathered seed owes — the leaven of wickedness wholly put away.'),
+  ('canon', '1-corinthians', 5, 8, 'canon', 'leviticus', 23, 6, 'free', E'*And on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread.* (Leviticus 23:6). Among the appointed feasts of Yahuah (LORD), the fifteenth day opens *the feast of unleavened bread.* This is the very feast Paul commands the assembly to keep: *Therefore let us keep the feast... with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). The feast of unleavened bread is named in the calendar of Yahuah''s (LORD''s) own appointed times; Paul does not abolish that appointment but binds the assembly to it, its meaning now full.'),
+  ('canon', '1-corinthians', 5, 7, 'canon', 'leviticus', 23, 5, 'free', E'*In the fourteenth day of the first month at even is the LORD''S passover.* (Leviticus 23:5). The Passover stands first among the feasts of Yahuah (LORD), kept on the fourteenth at even. *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7): the appointed Passover of Yahuah''s (LORD''s) calendar finds its Lamb. The feast is not a shadow discarded but an appointment kept and filled — the day Yahuah (LORD) set apart now bearing the name of the One it foretold.'),
+  ('canon', '1-corinthians', 5, 8, 'canon', 'deuteronomy', 16, 3, 'free', E'*Thou shalt eat no leavened bread with it; seven days shalt thou eat unleavened bread therewith, even the bread of affliction; for thou camest forth out of the land of Egypt in haste: that thou mayest remember the day when thou camest forth out of the land of Egypt all the days of thy life.* (Deuteronomy 16:3). The unleavened bread is the *bread of affliction,* eaten to remember the deliverance out of Egypt all the days of one''s life. Paul keeps the remembrance and gives it its fullness: *let us keep the feast... with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). The feast that remembers the first redemption now remembers the greater — *Messiah (Christ) our passover* — and the bread of affliction becomes the bread of sincerity and truth.'),
+  ('canon', '1-corinthians', 5, 7, 'canon', 'john', 1, 29, 'free', E'*The next day John seeth Yahusha (Jesus) coming unto him, and saith, Behold the Lamb of Elohim (God), which taketh away the sin of the world.* (John 1:29). John the Immerser names Yahusha (Jesus) *the Lamb of Elohim (God)* — the Passover lamb in person. Paul says the same: *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7). The lamb of Exodus 12, the Lamb of Elohim (God) pointed out at the Jordan, and the Passover sacrificed for the assembly are one and the same — Yahusha (Jesus), the unblemished Lamb whose blood turns the destroyer aside.'),
+  ('canon', '1-corinthians', 5, 7, 'canon', '1-peter', 1, 19, 'free', E'*But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot:* (1 Peter 1:19). The Passover lamb had to be *without blemish* (Exodus 12:5), and Peter names the redemption-price by that very pattern: *the precious blood of Messiah (Christ), as of a lamb without blemish and without spot.* It is the same confession Paul makes — *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7). The unblemished lamb of the feast is the Messiah, his blood the ransom; the apostolic witness reads the Passover not as abolished but as fulfilled in him.'),
+  -- thread: 1-corinthians-5-put-away-the-wicked-person-from-among-you-deuteronomy-13
+  ('canon', '1-corinthians', 5, 13, 'canon', 'deuteronomy', 13, 5, 'free', E'*And that prophet, or that dreamer of dreams, shall be put to death; because he hath spoken to turn you away from Yahuah Elohaychem (the LORD your God)... So shalt thou put the evil away from the midst of thee.* (Deuteronomy 13:5). Paul closes the discipline of the assembly with a Torah formula: *Therefore put away from among yourselves that wicked person* (1 Corinthians 5:13). It is the recurring judgment-word of Deuteronomy — *so shalt thou put the evil away from the midst of thee.* Paul settles the case by the law; the discipline of the gathered seed is the discipline of the congregation of Yashar''el (Israel) carried forward, not set aside.'),
+  ('canon', '1-corinthians', 5, 13, 'canon', 'deuteronomy', 17, 7, 'free', E'*The hands of the witnesses shall be first upon him to put him to death, and afterward the hands of all the people. So thou shalt put the evil away from among you.* (Deuteronomy 17:7). The Torah''s charge against the idolater ends with the words Paul takes up almost verbatim: *put away from among yourselves that wicked person* (1 Corinthians 5:13). *So thou shalt put the evil away from among you* — the formula that purged Yashar''el (Israel) of the corrupting evil is the formula by which Paul purges the assembly. The leaven and the evil-person are the same charge: a little corruption left in leavens the whole.'),
+  ('canon', '1-corinthians', 5, 13, 'canon', 'deuteronomy', 19, 19, 'free', E'*Then shall ye do unto him, as he had thought to have done unto his brother: so shalt thou put the evil away from among you.* (Deuteronomy 19:19). Against the false witness Torah repeats the standing word, *so shalt thou put the evil away from among you* — the same word Paul speaks over the unrepentant fornicator: *put away from among yourselves that wicked person* (1 Corinthians 5:13). The assembly that judges *them that are within* (1 Corinthians 5:12) does so on the authority of the law that purged the camp of evil.'),
+  ('canon', '1-corinthians', 5, 13, 'canon', 'deuteronomy', 21, 21, 'free', E'*And all the men of his city shall stone him with stones, that he die: so shalt thou put evil away from among you; and all Yashar''el (Israel) shall hear, and fear.* (Deuteronomy 21:21). The stubborn and rebellious son is judged that *all Yashar''el (Israel) shall hear, and fear* — and the evil put away. Paul''s *put away from among yourselves that wicked person* (1 Corinthians 5:13) carries the same purpose: the leaven removed *that ye may be a new lump* (1 Corinthians 5:7). The discipline is not cruelty but the keeping of the assembly clean, the very logic of the Torah formula.'),
+  ('canon', '1-corinthians', 5, 13, 'canon', 'deuteronomy', 22, 21, 'free', E'*Then they shall bring out the damsel to the door of her father''s house, and the men of her city shall stone her with stones that she die: because she hath wrought folly in Yashar''el (Israel), to play the whore in her father''s house: so shalt thou put evil away from among you.* (Deuteronomy 22:21). The sexual-sin case in Torah closes with *so shalt thou put evil away from among you* — and it is a sexual sin Paul is judging, *such fornication as is not so much as named among the Gentiles* (1 Corinthians 5:1). His verdict is the Torah verdict: *put away from among yourselves that wicked person* (1 Corinthians 5:13). The folly wrought is purged from the assembly as it was purged from Yashar''el (Israel).'),
+  ('canon', '1-corinthians', 5, 13, 'canon', 'deuteronomy', 24, 7, 'free', E'*If a man be found stealing any of his brethren of the children of Yashar''el (Israel), and maketh merchandise of him, or selleth him; then that thief shall die; and thou shalt put evil away from among you.* (Deuteronomy 24:7). Once more the Torah closes its judgment with *thou shalt put evil away from among you.* Across the offences of Deuteronomy the formula stands unchanged, and Paul speaks it over the Corinthian assembly: *put away from among yourselves that wicked person* (1 Corinthians 5:13). The apostle does not improvise a new church-order; he applies the law''s own enduring command to the gathered seed.'),
+  -- thread: 1-corinthians-5-the-fornication-torah-curses-the-fathers-wife-leviticus-18
+  ('canon', '1-corinthians', 5, 1, 'canon', 'leviticus', 18, 8, 'free', E'*The nakedness of thy father''s wife shalt thou not uncover: it is thy father''s nakedness.* (Leviticus 18:8). The sin Paul reports is named in the Torah by the very relation: *that one should have his father''s wife* (1 Corinthians 5:1) is *the nakedness of thy father''s wife* the law forbids. What the assembly tolerated and was *puffed up* over (1 Corinthians 5:2), Torah had already marked as forbidden — Paul judges by the standard of holiness Yahuah (LORD) gave Yashar''el (Israel), not by the leniency of the nations.'),
+  ('canon', '1-corinthians', 5, 1, 'canon', 'deuteronomy', 22, 30, 'free', E'*A man shall not take his father''s wife, nor discover his father''s skirt.* (Deuteronomy 22:30). The law is plain: *a man shall not take his father''s wife.* Yet the Corinthian assembly harboured exactly this — *one should have his father''s wife* (1 Corinthians 5:1) — and gloried instead of mourning. Paul holds the Torah''s line: the relationship is not a matter of opinion but a thing the law of Yahuah (LORD) had long forbidden to Yashar''el (Israel) and to the stranger grafted among them.'),
+  ('canon', '1-corinthians', 5, 1, 'canon', 'deuteronomy', 27, 20, 'free', E'*Cursed be he that lieth with his father''s wife; because he uncovereth his father''s skirt. And all the people shall say, Amen.* (Deuteronomy 27:20). From Mount Ebal the curse was pronounced and all the people answered *Amen* over the man who *lieth with his father''s wife.* This is the sin Paul finds in the assembly — *that one should have his father''s wife* (1 Corinthians 5:1) — and the boasting over it is boasting over what stands under the covenant curse. Paul''s judgment to *deliver such an one unto Satan for the destruction of the flesh* (1 Corinthians 5:5) honours the seriousness the Torah-curse already declared.'),
+  -- thread: 1-corinthians-5-deliver-such-an-one-unto-satan-and-judge-them-within-matthew-18
+  ('canon', '1-corinthians', 5, 5, 'canon', 'matthew', 18, 17, 'free', E'*And if he shall neglect to hear them, tell it unto the church: but if he neglect to hear the church, let him be unto thee as an heathen man and a publican.* (Matthew 18:17). Yahusha (Jesus) gave the assembly authority to judge the unrepentant brother: the final step is to *tell it unto the church,* and the one who will not hear is put outside. Paul exercises that very authority — *To deliver such an one unto Satan for the destruction of the flesh, that the spirit may be saved in the day of the Lord Yahusha (Lord Jesus)* (1 Corinthians 5:5) — for *do not ye judge them that are within?* (1 Corinthians 5:12). The discipline is the Master''s own ordinance for his gathered people, aimed not at destruction but that *the spirit may be saved.*')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s228_co05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s228_co05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12',
+       E'Messiah our passover — purge the old leaven and keep the feast (Exodus 12)',
+       E'Paul does not abolish the feast; he commands the assembly to keep it. *Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us: Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth* (1 Corinthians 5:7-8). Every word rests on the Passover of Egypt. The lamb was *without blemish, a male of the first year* (Exodus 12:5), and *Messiah (Christ) our passover* is that unblemished Lamb — *Behold the Lamb of Elohim (God), which taketh away the sin of the world* (John 1:29), *the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:19). The blood marked the door, *and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you* (Exodus 12:13) — the blood that now stands between the gathered seed and judgment. And the purging of leaven is the Feast of Unleavened Bread itself: *even the first day ye shall put away leaven out of your houses* (Exodus 12:15), *there shall no leavened bread be seen with thee... in all thy quarters* (Exodus 13:7); for these are the appointed feasts of Yahuah (LORD) — *In the fourteenth day of the first month at even is the LORD''S passover. And on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:5-6), *the bread of affliction... that thou mayest remember the day when thou camest forth out of the land of Egypt* (Deuteronomy 16:3). Paul takes the whole appointment and tells the assembly to keep it — *let us keep the feast.* The lamb is revealed as the Messiah; the literal leaven swept from the house becomes *malice and wickedness* swept from the assembly; the unleavened bread becomes *sincerity and truth.* The feast is not a shadow discarded but an appointed time of Yahuah (LORD) kept and filled in the gathered seed — Israel and the grafted-in — who eat the Passover whose Lamb has come.',
+       sv.verse_id, ev.verse_id, 'free', 6700
+  FROM _s228_co05_lookup sv, _s228_co05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=5 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-5-put-away-the-wicked-person-from-among-you-deuteronomy-13',
+       E'Put away from among yourselves that wicked person (Deuteronomy''s "put the evil away")',
+       E'Paul ends the chapter with a Torah formula, word for word: *Therefore put away from among yourselves that wicked person* (1 Corinthians 5:13). Throughout Deuteronomy the judgment of a corrupting offence closes with the same charge — *So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5, against the prophet who turns the people from Yahuah Elohaychem, the LORD your God); *So thou shalt put the evil away from among you* (Deuteronomy 17:7, against the idolater); *so shalt thou put the evil away from among you* (Deuteronomy 19:19, against the false witness); *so shalt thou put evil away from among you; and all Yashar''el (Israel) shall hear, and fear* (Deuteronomy 21:21, against the rebellious son); *so shalt thou put evil away from among you* (Deuteronomy 22:21, against the one who wrought folly in Yashar''el, Israel); *and thou shalt put evil away from among you* (Deuteronomy 24:7, against the man-stealer). Paul is judging exactly this kind of corrupting sin — *such fornication as is not so much as named among the Gentiles* (1 Corinthians 5:1) — and he settles it on the law''s own authority: *do not ye judge them that are within?* (1 Corinthians 5:12). This is the same logic as the leaven — *a little leaven leaveneth the whole lump* (1 Corinthians 5:6) — the corruption left in the camp spreads. The discipline of the gathered seed is not a new church-order invented against Torah but the enduring command of the law carried forward into the assembly: the evil purged that the whole lump be kept clean.',
+       sv.verse_id, ev.verse_id, 'free', 6703
+  FROM _s228_co05_lookup sv, _s228_co05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=5 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-5-the-fornication-torah-curses-the-fathers-wife-leviticus-18',
+       E'The fornication Torah curses — his father''s wife (Leviticus 18, Deuteronomy 27)',
+       E'The sin that opens the chapter is the one the Torah had already named and cursed. *It is reported commonly that there is fornication among you... that one should have his father''s wife* (1 Corinthians 5:1) — and the law forbids it by the very relation: *The nakedness of thy father''s wife shalt thou not uncover: it is thy father''s nakedness* (Leviticus 18:8); *A man shall not take his father''s wife, nor discover his father''s skirt* (Deuteronomy 22:30); and from Mount Ebal the covenant curse: *Cursed be he that lieth with his father''s wife; because he uncovereth his father''s skirt. And all the people shall say, Amen* (Deuteronomy 27:20). The assembly was *puffed up* (1 Corinthians 5:2) over a thing that stands under the curse of the law — they boasted where they should have mourned. Paul measures the case not by the leniency of the nations but by the holiness Yahuah (LORD) gave Yashar''el (Israel); and his sentence, *to deliver such an one unto Satan for the destruction of the flesh, that the spirit may be saved in the day of the Lord Yahusha (Lord Jesus)* (1 Corinthians 5:5), honours the gravity the Torah-curse already declared, while aiming at the man''s final salvation.',
+       sv.verse_id, ev.verse_id, 'free', 6706
+  FROM _s228_co05_lookup sv, _s228_co05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=5 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-5-deliver-such-an-one-unto-satan-and-judge-them-within-matthew-18',
+       E'Deliver such an one unto Satan — the assembly judges them that are within (Matthew 18)',
+       E'Paul exercises an authority Yahusha (Jesus) had given the assembly to judge an unrepentant brother. *In the name of our Lord Yahusha HaMashiach (Lord Jesus Christ), when ye are gathered together... To deliver such an one unto Satan for the destruction of the flesh, that the spirit may be saved in the day of the Lord Yahusha (Lord Jesus)* (1 Corinthians 5:4-5); for *do not ye judge them that are within?* (1 Corinthians 5:12). This is the last step of the Master''s own order of discipline: *if he shall neglect to hear them, tell it unto the church: but if he neglect to hear the church, let him be unto thee as an heathen man and a publican* (Matthew 18:17). The one who will not be reclaimed is put outside the fellowship of the gathered — *with such an one no not to eat* (1 Corinthians 5:11) — yet the aim is not destruction but restoration, *that the spirit may be saved.* The same chapter binds this to the feast: the offender is the *old leaven* that must be purged *that ye may be a new lump* (1 Corinthians 5:7); the assembly keeps itself unleavened by putting the unrepentant out, on the Master''s authority and the law''s.',
+       sv.verse_id, ev.verse_id, 'free', 6709
+  FROM _s228_co05_lookup sv, _s228_co05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=5 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 12:5 — *Your lamb shall be without blemish, a male of the first year* the Passover lamb the feast required; *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 12:13 — *when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you* the blood that turns the destroyer aside; the blood of *Messiah (Christ) our passover* (1 Corinthians 5:7).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 12:15 — *even the first day ye shall put away leaven out of your houses* the Feast of Unleavened Bread begins; *Purge out therefore the old leaven, that ye may be a new lump* (1 Corinthians 5:7).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 12:8 — *roast with fire, and unleavened bread* the lamb eaten with unleavened bread; *with the unleavened bread of sincerity and truth* (1 Corinthians 5:8).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Exodus 13:7 — *there shall no leavened bread be seen with thee... in all thy quarters* the total purge Torah required; *a little leaven leaveneth the whole lump* (1 Corinthians 5:6).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Leviticus 23:5 — *In the fourteenth day of the first month at even is the LORD''S passover* the Passover among Yahuah''s (LORD''s) appointed feasts; *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Leviticus 23:6 — *the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* the appointed feast; *Therefore let us keep the feast* (1 Corinthians 5:8).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 8, E'Deuteronomy 16:3 — *seven days shalt thou eat unleavened bread therewith, even the bread of affliction... that thou mayest remember the day when thou camest forth out of the land of Egypt* the feast of remembrance; now kept *with the unleavened bread of sincerity and truth* (1 Corinthians 5:8).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=16 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 9, E'John 1:29 — *Behold the Lamb of Elohim (God), which taketh away the sin of the world* Yahusha (Jesus) named the Passover Lamb; *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=29
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 10, E'1 Peter 1:19 — *the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* the unblemished Passover lamb of Exodus 12:5 fulfilled; *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-christ-our-passover-keep-the-feast-exodus-12'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-5-put-away-the-wicked-person-from-among-you-deuteronomy-13
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 13:5 — *So shalt thou put the evil away from the midst of thee* the formula against the prophet who turns the people away; *put away from among yourselves that wicked person* (1 Corinthians 5:13).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-put-away-the-wicked-person-from-among-you-deuteronomy-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 17:7 — *So thou shalt put the evil away from among you* the formula against the idolater, almost word for word; *put away from among yourselves that wicked person* (1 Corinthians 5:13).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-put-away-the-wicked-person-from-among-you-deuteronomy-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 19:19 — *so shalt thou put the evil away from among you* the formula against the false witness; the assembly that *judge[s] them that are within* (1 Corinthians 5:12) on this authority.'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-put-away-the-wicked-person-from-among-you-deuteronomy-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Deuteronomy 21:21 — *so shalt thou put evil away from among you; and all Yashar''el (Israel) shall hear, and fear* the formula against the rebellious son; the leaven removed *that ye may be a new lump* (1 Corinthians 5:7,13).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-put-away-the-wicked-person-from-among-you-deuteronomy-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=21 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Deuteronomy 22:21 — *so shalt thou put evil away from among you* the formula against the sexual sin in Yashar''el (Israel); Paul judges a sexual sin, *put away from among yourselves that wicked person* (1 Corinthians 5:1,13).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-put-away-the-wicked-person-from-among-you-deuteronomy-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=22 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Deuteronomy 24:7 — *thou shalt put evil away from among you* the formula against the man-stealer; the enduring command applied to the assembly, *put away from among yourselves that wicked person* (1 Corinthians 5:13).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-put-away-the-wicked-person-from-among-you-deuteronomy-13'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=24 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-5-the-fornication-torah-curses-the-fathers-wife-leviticus-18
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 18:8 — *The nakedness of thy father''s wife shalt thou not uncover: it is thy father''s nakedness* the relation the law forbids; *that one should have his father''s wife* (1 Corinthians 5:1).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-the-fornication-torah-curses-the-fathers-wife-leviticus-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 22:30 — *A man shall not take his father''s wife, nor discover his father''s skirt* the plain prohibition; the assembly harboured *one should have his father''s wife* (1 Corinthians 5:1).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-the-fornication-torah-curses-the-fathers-wife-leviticus-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=22 AND tv.verse_number=30
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 27:20 — *Cursed be he that lieth with his father''s wife... And all the people shall say, Amen* the covenant curse from Ebal; the assembly *puffed up* over what stands cursed (1 Corinthians 5:1-2).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-the-fornication-torah-curses-the-fathers-wife-leviticus-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=20
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-5-deliver-such-an-one-unto-satan-and-judge-them-within-matthew-18
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Matthew 18:17 — *tell it unto the church: but if he neglect to hear the church, let him be unto thee as an heathen man and a publican* the Master''s order of discipline; *To deliver such an one unto Satan... that the spirit may be saved* (1 Corinthians 5:5).'
+  FROM cross_reference_threads t, cross_references x, _s228_co05_lookup sv, _s228_co05_lookup tv
+ WHERE t.slug='1-corinthians-5-deliver-such-an-one-unto-satan-and-judge-them-within-matthew-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=18 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1corinthians_06.sql (S228 1 Corinthians 6) -----
+-- =====================================================================
+-- S228 minion — 1 CORINTHIANS 6 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 1 CORINTHIANS 6 (20 verses) — lawsuits among saints; the body a temple.
+-- Tag: co06 (temp view _s228_co06_lookup).
+-- Sort band: floor 6725, step 3 (6725, 6728, 6731, 6734 used; under 6750).
+-- Source is ALWAYS the canon 1 Corinthians 6 verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME: Paul rebukes a fleshly assembly going to law before the unjust when *the saints
+-- shall judge the world* (6:2) — the Daniel-7 promise that *judgment was given to the saints of the
+-- El Elyon (most High); and the time came that the saints possessed the kingdom* (Daniel 7:22). The
+-- unrighteous *shall not inherit the kingdom of Elohim (God)* (6:9-10) — yet *such were some of you:
+-- but ye are washed, but ye are sanctified, but ye are justified* (6:11): justification language read
+-- per the brief's works-of-law note — the redeemed are WASHED in the name of the Lord Yahusha (Lord
+-- Jesus) and by the Spirit, not a flesh-credential earned. Sexual holiness is grounded in the Tanakh:
+-- *he which is joined to an harlot is one body... for two, saith he, shall be one flesh* (6:16) cites
+-- Genesis 2:24; *flee fornication* (6:18) breathes Leviticus 18 (the sexual-holiness law) and Joseph
+-- who *fled, and got him out* (Genesis 39:12). And *your body is the temple of the Ruach HaKodesh
+-- (Holy Spirit)... glorify Elohim (God) in your body* (6:19-20) re-speaks the SAME tabernacle root as
+-- 3:16 — Leviticus 26:11-12, Exodus 25:8 (the indwelling Yahuah making his house among his people),
+-- now brought down to the individual body. No law-vs-grace antithesis; Torah is the air the rebuke
+-- breathes.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-8   go to law before the unjust; the saints shall judge the world; we shall judge angels
+--           Tanakh: Daniel 7:22 (judgment given to the saints; the saints possessed the kingdom),
+--                   Daniel 7:27 (the kingdom given to the people of the saints of the El Elyon)
+--           Extras: none warranted (the saints-judging weight is carried by Daniel 7 itself)
+--           NT:     none warranted (Matthew 19:28 thrones-judging is Israel-tribes, a different frame)
+--   v.9-11  the unrighteous shall not inherit the kingdom; but ye are washed, sanctified, justified
+--           Tanakh: none warranted (no cited root; the washing/justification weight carried in prose
+--                   and bound to the temple-holiness of vv.19-20 — the redeemed washed, not earned)
+--           Extras: none warranted   NT: none warranted
+--   v.12-14 all things lawful but not expedient; the body not for fornication but for Yahuah
+--           Tanakh: none warranted (the body-holiness root surfaces fully at vv.18-20)
+--           Extras: none warranted   NT: none warranted
+--   v.15-17 members of Messiah; joined to an harlot is one body; two shall be one flesh
+--           Tanakh: Genesis 2:24 (they shall be one flesh — Paul's explicit citation, *saith he*)
+--           Extras: none warranted   NT: none warranted
+--   v.18    flee fornication; he that committeth fornication sinneth against his own body
+--           Tanakh: Leviticus 18:24-30 (the sexual-holiness law, defile not yourselves),
+--                   Genesis 39:12 (Joseph fled, and got him out)
+--           Extras: none warranted   NT: none warranted
+--   v.19-20 your body is the temple of the Ruach HaKodesh; glorify Elohim in your body
+--           Tanakh: Leviticus 26:11-12 (I will set my tabernacle among you; walk among you),
+--                   Exodus 25:8 (let them make me a sanctuary; that I may dwell among them)
+--           Extras: none warranted   NT: none warranted (SAME root as 3:16 — framing kept consistent)
+--
+-- THREADS (slug -> target libraries):
+--   6725 1-corinthians-6-the-saints-shall-judge-the-world-daniel-7              (Tanakh)
+--   6728 1-corinthians-6-joined-to-an-harlot-or-one-flesh-with-his-wife-genesis-2  (Tanakh)
+--   6731 1-corinthians-6-flee-fornication-the-sexual-holiness-of-the-law-leviticus-18  (Tanakh)
+--   6734 1-corinthians-6-your-body-is-the-temple-of-the-holy-spirit-leviticus-26  (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s228_co06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-corinthians-6-the-saints-shall-judge-the-world-daniel-7
+  ('canon', '1-corinthians', 6, 2, 'canon', 'daniel', 7, 22, 'free', E'*Until the Ancient of days came, and judgment was given to the saints of the El Elyon (most High); and the time came that the saints possessed the kingdom.* (Daniel 7:22). This is the ground Paul stands on when he asks, *Do ye not know that the saints shall judge the world?* (1 Corinthians 6:2). Daniel saw the Ancient of days give *judgment... to the saints,* and the time when *the saints possessed the kingdom* — so the assembly that will judge the world has no business dragging brother against brother *to law before the unjust* (1 Corinthians 6:1). The destiny of the gathered seed is to share the judgment of the El Elyon (most High); to run to the courts of the unbelievers is to forget the kingdom they are promised.'),
+  ('canon', '1-corinthians', 6, 3, 'canon', 'daniel', 7, 27, 'free', E'*And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him.* (Daniel 7:27). The everlasting kingdom *given to the people of the saints* — with *all dominions* made to *serve and obey* — is the warrant for Paul''s greater claim: *Know ye not that we shall judge angels?* (1 Corinthians 6:3). If the saints are to receive the dominion under the whole heaven, that all powers serve them, then how much more *things that pertain to this life;* the smallest disputes of the assembly are beneath those appointed to the dominion of the El Elyon (most High).'),
+  -- thread: 1-corinthians-6-joined-to-an-harlot-or-one-flesh-with-his-wife-genesis-2
+  ('canon', '1-corinthians', 6, 16, 'canon', 'genesis', 2, 24, 'free', E'*Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.* (Genesis 2:24). Paul reasons sexual ethics straight from the creation word, and quotes it — *for two, saith he, shall be one flesh* (1 Corinthians 6:16). The *one flesh* spoken over the man and his wife in the garden is the very union that makes joining to a harlot so grave: *he which is joined to an harlot is one body* (1 Corinthians 6:16). The Genesis word is not abolished but pressed as binding instruction — the body is made for the one-flesh covenant Yahuah (LORD) ordained, not for fornication; *he that is joined unto Yahuah (Lord) is one spirit* (1 Corinthians 6:17).'),
+  -- thread: 1-corinthians-6-flee-fornication-the-sexual-holiness-of-the-law-leviticus-18
+  ('canon', '1-corinthians', 6, 18, 'canon', 'leviticus', 18, 24, 'free', E'*Defile not ye yourselves in any of these things: for in all these the nations are defiled which I cast out before you:* (Leviticus 18:24). The whole sexual-holiness law of Leviticus 18 stands behind *Flee fornication* (1 Corinthians 6:18). Yahuah (LORD) set Yashar''el (Israel) apart from the defilements of the nations — *defile not ye yourselves in any of these things* — and warned that the land itself *vomiteth out her inhabitants* for them. Paul presses the same holiness on the gathered seed: the body that sins in fornication *sinneth against his own body,* defiling the very vessel set apart for Yahuah (LORD). The Torah''s sexual ethic is not behind the assembly but binding upon it.'),
+  ('canon', '1-corinthians', 6, 18, 'canon', 'genesis', 39, 12, 'free', E'*And she caught him by his garment, saying, Lie with me: and he left his garment in her hand, and fled, and got him out.* (Genesis 39:12). Joseph is the Tanakh''s living picture of *Flee fornication* (1 Corinthians 6:18). Pressed *day by day* by his master''s wife, he would not *sin against Elohim (God)* (Genesis 39:9); when she seized him, *he left his garment in her hand, and fled, and got him out.* Paul does not say resist or reason but flee — and Joseph fled the room rather than the temptation, the same posture toward the sin that sins *against his own body.* The righteous man of Genesis embodies the command Paul lays on the assembly.'),
+  -- thread: 1-corinthians-6-your-body-is-the-temple-of-the-holy-spirit-leviticus-26
+  ('canon', '1-corinthians', 6, 19, 'canon', 'leviticus', 26, 11, 'free', E'*And I will set my tabernacle among you: and my soul shall not abhor you.* (Leviticus 26:11). The covenant promise of Sinai — Yahuah (LORD) dwelling in the midst of his people, *I will set my tabernacle among you* — is the same indwelling Paul names of the individual body: *know ye not that your body is the temple of the Ruach HaKodesh (Holy Spirit) which is in you, which ye have of Elohim (God)* (1 Corinthians 6:19). The tabernacle set among Yashar''el (Israel) and the Spirit dwelling in the believer''s body are one indwelling — the same root Paul pressed on the whole assembly, *ye are the temple of Elohim (God)* (1 Corinthians 3:16), now brought down to the body of each one bought with a price.'),
+  ('canon', '1-corinthians', 6, 19, 'canon', 'leviticus', 26, 12, 'free', E'*And I will walk among you, and will be your Elohim (God), and ye shall be my people.* (Leviticus 26:12). Yahuah (LORD) promised to *walk among you, and will be your Elohim (God), and ye shall be my people* — the heart of the covenant. That walking-among is now the Ruach HaKodesh (Holy Spirit) indwelling the body: *your body is the temple of the Ruach HaKodesh (Holy Spirit) which is in you... and ye are not your own* (1 Corinthians 6:19). Because the body is the dwelling-place of his own Spirit, it is no longer one''s own to give to a harlot; the command follows, *glorify Elohim (God) in your body* (1 Corinthians 6:20) — to honor the house in which he walks.'),
+  ('canon', '1-corinthians', 6, 19, 'canon', 'exodus', 25, 8, 'free', E'*And let them make me a sanctuary; that I may dwell among them.* (Exodus 25:8). The whole purpose Yahuah (LORD) named for the tabernacle — *let them make me a sanctuary; that I may dwell among them* — is fulfilled not in cut stone but in the living body of the redeemed: *your body is the temple of the Ruach HaKodesh (Holy Spirit) which is in you* (1 Corinthians 6:19). The sanctuary built so Yahuah (LORD) might dwell among Yashar''el (Israel) becomes the body indwelt by his Spirit; therefore *ye are not your own. For ye are bought with a price: therefore glorify Elohim (God) in your body* (1 Corinthians 6:19-20). The dwelling makes the house holy, and the body of him in whom the Spirit dwells is the sanctuary he must not defile.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s228_co06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s228_co06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-6-the-saints-shall-judge-the-world-daniel-7',
+       E'The saints shall judge the world (Daniel 7)',
+       E'Paul is appalled that the assembly drags brother against brother *to law before the unjust, and not before the saints* (1 Corinthians 6:1), and he names the destiny they have forgotten: *Do ye not know that the saints shall judge the world? and if the world shall be judged by you, are ye unworthy to judge the smallest matters? Know ye not that we shall judge angels?* (1 Corinthians 6:2-3). The whole claim rests on Daniel''s night-vision. The Ancient of days came, *and judgment was given to the saints of the El Elyon (most High); and the time came that the saints possessed the kingdom* (Daniel 7:22) — the saints judge the world because the judgment of the El Elyon (most High) is given to them. And more: *the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him* (Daniel 7:27) — if *all dominions* are to serve the saints, then they shall *judge angels,* and *things that pertain to this life* are beneath them. The gathered seed is appointed to the everlasting kingdom and its judgment-seat; to run to the courts of the unbelievers over the smallest matters is to despise the dominion Daniel saw given them. There is *utterly a fault* (1 Corinthians 6:7) in a people who will judge the world yet cannot bear to *take wrong* from a brother.',
+       sv.verse_id, ev.verse_id, 'free', 6725
+  FROM _s228_co06_lookup sv, _s228_co06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=6 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-6-joined-to-an-harlot-or-one-flesh-with-his-wife-genesis-2',
+       E'Joined to an harlot, or one flesh with his wife (Genesis 2)',
+       E'Paul reasons the body''s holiness straight out of the creation word, and quotes it. *Know ye not that your bodies are the members of Messiah (Christ)? shall I then take the members of Messiah (Christ), and make them the members of an harlot? Elohim (God) forbid. What? know ye not that he which is joined to an harlot is one body? for two, saith he, shall be one flesh* (1 Corinthians 6:15-16). The *saith he* is the Genesis word over the man and his wife: *Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh* (Genesis 2:24). The one-flesh union Yahuah (LORD) ordained in the garden is precisely what makes joining to a harlot so grave — it is not a passing act but a one-body joining, and the body that belongs to Messiah (Christ) cannot be made one with a harlot. Paul does not set the creation order aside; he presses it as binding. The body is made for the one-flesh covenant, and above it the spiritual union: *he that is joined unto Yahuah (Lord) is one spirit* (1 Corinthians 6:17). The members of Messiah (Christ) are kept for the holy joining, not the defiling one.',
+       sv.verse_id, ev.verse_id, 'free', 6728
+  FROM _s228_co06_lookup sv, _s228_co06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=6 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-6-flee-fornication-the-sexual-holiness-of-the-law-leviticus-18',
+       E'Flee fornication — the sexual holiness of the law (Leviticus 18, Genesis 39)',
+       E'*Flee fornication. Every sin that a man doeth is without the body; but he that committeth fornication sinneth against his own body* (1 Corinthians 6:18). The command breathes the Torah''s sexual-holiness law and the Tanakh''s own picture of obedience to it. In Leviticus 18 Yahuah (LORD) set Yashar''el (Israel) apart from the defilements of the nations: *Defile not ye yourselves in any of these things: for in all these the nations are defiled which I cast out before you* (Leviticus 18:24), warning that the land itself *vomiteth out her inhabitants* for such abominations. Paul presses that same holiness on the gathered seed — the body is set apart for Yahuah (LORD), and fornication defiles the very vessel he claims. And the Tanakh shows what *flee* looks like in the flesh: when his master''s wife *caught him by his garment, saying, Lie with me,* Joseph *left his garment in her hand, and fled, and got him out* (Genesis 39:12), refusing to *do this great wickedness, and sin against Elohim (God)* (Genesis 39:9). Paul does not say argue or resist but flee — and Joseph fled the room rather than risk the sin. The law''s sexual ethic and the righteous man who kept it stand together behind the apostle''s charge.',
+       sv.verse_id, ev.verse_id, 'free', 6731
+  FROM _s228_co06_lookup sv, _s228_co06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=6 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-6-your-body-is-the-temple-of-the-holy-spirit-leviticus-26',
+       E'Your body is the temple of the Ruach HaKodesh (Leviticus 26, Exodus 25)',
+       E'*What? know ye not that your body is the temple of the Ruach HaKodesh (Holy Spirit) which is in you, which ye have of Elohim (God), and ye are not your own? For ye are bought with a price: therefore glorify Elohim (God) in your body, and in your spirit, which are Elohim''s (God''s)* (1 Corinthians 6:19-20). This is the same indwelling Paul named over the whole assembly — *ye are the temple of Elohim (God), and... the Spirit of Elohim (God) dwelleth in you* (1 Corinthians 3:16) — now brought down to the individual body, and it rests on the same covenant root. Yahuah (LORD) gave the tabernacle for one purpose: *let them make me a sanctuary; that I may dwell among them* (Exodus 25:8). And the heart of the covenant was his dwelling in the midst of his people: *I will set my tabernacle among you: and my soul shall not abhor you. And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:11-12). That walking-among is now the Ruach HaKodesh (Holy Spirit) indwelling the body of the redeemed. Because the body is the very dwelling-place of his Spirit, it is no longer one''s own to give to a harlot — it is bought with a price, the sanctuary in which he walks. The same indwelling Yahuah (LORD), the same covenant presence that hallowed the tabernacle, now makes the believer''s body holy; therefore *glorify Elohim (God) in your body.*',
+       sv.verse_id, ev.verse_id, 'free', 6734
+  FROM _s228_co06_lookup sv, _s228_co06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=6 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-corinthians-6-the-saints-shall-judge-the-world-daniel-7
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Daniel 7:22 — *judgment was given to the saints of the El Elyon (most High); and the time came that the saints possessed the kingdom* the warrant for *the saints shall judge the world* (1 Corinthians 6:2).'
+  FROM cross_reference_threads t, cross_references x, _s228_co06_lookup sv, _s228_co06_lookup tv
+ WHERE t.slug='1-corinthians-6-the-saints-shall-judge-the-world-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Daniel 7:27 — *the kingdom and dominion... shall be given to the people of the saints of the El Elyon (most High)... all dominions shall serve and obey him* if all powers serve the saints, *we shall judge angels* (1 Corinthians 6:3).'
+  FROM cross_reference_threads t, cross_references x, _s228_co06_lookup sv, _s228_co06_lookup tv
+ WHERE t.slug='1-corinthians-6-the-saints-shall-judge-the-world-daniel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-6-joined-to-an-harlot-or-one-flesh-with-his-wife-genesis-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:24 — *they shall be one flesh* the creation word Paul quotes (*for two, saith he, shall be one flesh*); the one-body joining that makes union with a harlot grave (1 Corinthians 6:16).'
+  FROM cross_reference_threads t, cross_references x, _s228_co06_lookup sv, _s228_co06_lookup tv
+ WHERE t.slug='1-corinthians-6-joined-to-an-harlot-or-one-flesh-with-his-wife-genesis-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-6-flee-fornication-the-sexual-holiness-of-the-law-leviticus-18
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 18:24 — *Defile not ye yourselves in any of these things: for in all these the nations are defiled which I cast out before you* the sexual-holiness law behind *Flee fornication* (1 Corinthians 6:18).'
+  FROM cross_reference_threads t, cross_references x, _s228_co06_lookup sv, _s228_co06_lookup tv
+ WHERE t.slug='1-corinthians-6-flee-fornication-the-sexual-holiness-of-the-law-leviticus-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 39:12 — *he left his garment in her hand, and fled, and got him out* Joseph the living picture of *Flee fornication;* he fled the room rather than *sin against Elohim (God)* (1 Corinthians 6:18).'
+  FROM cross_reference_threads t, cross_references x, _s228_co06_lookup sv, _s228_co06_lookup tv
+ WHERE t.slug='1-corinthians-6-flee-fornication-the-sexual-holiness-of-the-law-leviticus-18'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=39 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-6-your-body-is-the-temple-of-the-holy-spirit-leviticus-26
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Leviticus 26:11 — *I will set my tabernacle among you: and my soul shall not abhor you* the Sinai indwelling, now the Spirit in the body: *your body is the temple of the Ruach HaKodesh (Holy Spirit)* (1 Corinthians 6:19).'
+  FROM cross_reference_threads t, cross_references x, _s228_co06_lookup sv, _s228_co06_lookup tv
+ WHERE t.slug='1-corinthians-6-your-body-is-the-temple-of-the-holy-spirit-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Leviticus 26:12 — *I will walk among you, and will be your Elohim (God), and ye shall be my people* the covenant walking-among, now the indwelt body that is *not your own* (1 Corinthians 6:19).'
+  FROM cross_reference_threads t, cross_references x, _s228_co06_lookup sv, _s228_co06_lookup tv
+ WHERE t.slug='1-corinthians-6-your-body-is-the-temple-of-the-holy-spirit-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 25:8 — *let them make me a sanctuary; that I may dwell among them* the tabernacle''s purpose fulfilled in the living body; therefore *glorify Elohim (God) in your body* (1 Corinthians 6:19-20).'
+  FROM cross_reference_threads t, cross_references x, _s228_co06_lookup sv, _s228_co06_lookup tv
+ WHERE t.slug='1-corinthians-6-your-body-is-the-temple-of-the-holy-spirit-leviticus-26'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=6 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1corinthians_07.sql (S228 1 Corinthians 7) -----
+-- =====================================================================
+-- S228 minion — 1 CORINTHIANS 7 FULL-LIBRARY cross-references
+-- =====================================================================
+-- Chapter: 1 CORINTHIANS 7 (40 verses) — the Torah-affirming watchpoint chapter.
+-- Tag: co07 (temp view _s228_co07_lookup).
+-- Sort band: floor 6750, step 3 (6750, 6753, 6756 used; under 6775).
+-- Source is ALWAYS the canon 1 Corinthians verse; targets span Tanakh + extra-canonical + NT, woven.
+-- Tiers per-row: canon target (Tanakh + NT) = 'free'; extra-canonical target = 'extras'.
+--
+-- GOVERNING FRAME. Chapter 7 is long and largely pastoral counsel — much of it Paul's own judgment
+-- ("none warranted" for most of the marriage casuistry). But it carries the load-bearing thesis of
+-- the whole letter and the whole framework: *Circumcision is nothing, and uncircumcision is nothing,
+-- but the keeping of the commandments of Elohim (God)* (7:19). The outward flesh-credential — the
+-- mark in the flesh — counts for nothing; what counts is the keeping of the commandments. This is
+-- NOT a law-vs-grace antithesis and NOT the abolition of Torah; it is the very opposite — the
+-- commandments are named as the thing that matters when the flesh-boast is stripped away. Paul binds
+-- it to *Let every man abide in the same calling wherein he was called* (7:20,24): the distinction of
+-- Yashar'el (Israel) and the nations is not erased — *let him not become uncircumcised... let him not
+-- be circumcised* (7:18) — each abides where he was called, with Elohim (God). Marriage is grounded
+-- in the creation order and the one-flesh bond (Genesis 2:24, the wife of the covenant of Malachi 2).
+-- Concentrate the threads on 7:19 (commandments), abide-in-calling, and marriage/one-flesh; record
+-- "none warranted" for the verse-blocks that are pastoral counsel without a genuine library root.
+--
+-- PER-CHAPTER LIBRARY-COVERAGE CHECKLIST (all three weighed for every verse-block):
+--   v.1-9   marriage as the remedy against fornication; render due benevolence; better to marry than burn
+--           Tanakh: Genesis 2:24 (one flesh — carried in the marriage thread at v.2-4)
+--           Extras: none warranted (pastoral counsel)   NT: none warranted
+--   v.10-16 the married not to depart; the unbelieving spouse sanctified; called to peace
+--           Tanakh: Malachi 2:14-16 (the wife of thy covenant, deal not treacherously — marriage thread)
+--           Extras: none warranted   NT: none warranted (Yahusha's own divorce word is Paul's *not I,
+--                   but Yahuah (Lord)* in v.10; left in prose, no separate gospel member forced)
+--   v.17-24 abide in the calling; circumcised/uncircumcised stay as called; commandments are what counts
+--           Tanakh: Deuteronomy 30:8 (do all his commandments — abide-in-calling), Deuteronomy 13:4
+--                   (keep his commandments... cleave unto him), Deuteronomy 30:11-16 + 30:14 (the
+--                   commandment near, do it — the 7:19 commandments thread), Ecclesiastes 12:13
+--                   (fear Elohim and keep his commandments — the whole duty of man)
+--           Extras: Ecclesiasticus (Sirach) 15:15 (if thou wilt, to keep the commandments)
+--           NT: none warranted (the keeping-the-commandments weave is Tanakh + extras)
+--   v.25-38 virgins, the present distress, the time is short, marrying doeth well
+--           Tanakh: none warranted   Extras: none warranted   NT: none warranted (Paul's judgment)
+--   v.39-40 the wife bound by the law while her husband liveth; happier if she abide
+--           Tanakh: Genesis 2:24 (the one-flesh bond — marriage thread), Malachi 2:14 (carried)
+--           Extras: none warranted   NT: none warranted
+--
+-- THREADS (slug -> target libraries):
+--   6750 1-corinthians-7-circumcision-is-nothing-but-the-keeping-of-the-commandments-deuteronomy-30  (Tanakh + Extras)  [BLESSING CENTERPIECE]
+--   6753 1-corinthians-7-let-every-man-abide-in-the-calling-wherein-he-was-called-deuteronomy-30     (Tanakh)
+--   6756 1-corinthians-7-they-shall-be-one-flesh-the-wife-of-the-covenant-genesis-2-malachi-2        (Tanakh)
+-- =====================================================================
+
+CREATE TEMP VIEW _s228_co07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- thread: 1-corinthians-7-circumcision-is-nothing-but-the-keeping-of-the-commandments-deuteronomy-30  [BLESSING CENTERPIECE]
+  ('canon', '1-corinthians', 7, 19, 'canon', 'deuteronomy', 30, 11, 'free', E'*For this commandment which I command thee this day, it is not hidden from thee, neither is it far off.* (Deuteronomy 30:11). When Paul says *Circumcision is nothing, and uncircumcision is nothing, but the keeping of the commandments of Elohim (God)* (1 Corinthians 7:19), he speaks of the very commandment Moses set before Yashar''el (Israel) — not a buried or impossible thing, *not hidden from thee, neither is it far off.* The outward mark in the flesh counts for nothing; the keeping of the commandment that is near is what counts. Paul does not abolish the commandment; he names it as the one thing that matters once the flesh-credential is stripped away.'),
+  ('canon', '1-corinthians', 7, 19, 'canon', 'deuteronomy', 30, 14, 'free', E'*But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it.* (Deuteronomy 30:14). The commandment is *very nigh... in thy mouth, and in thy heart, that thou mayest do it* — given to be done, not admired. This is the keeping that Paul sets over against every flesh-mark: *Circumcision is nothing, and uncircumcision is nothing, but the keeping of the commandments of Elohim (God)* (1 Corinthians 7:19). The word near in the mouth and heart is the word to be kept; the doing of it, not the cutting of the flesh, is the measure of the called.'),
+  ('canon', '1-corinthians', 7, 19, 'canon', 'deuteronomy', 30, 16, 'free', E'*In that I command thee this day to love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments and his statutes and his judgments, that thou mayest live and multiply: and Yahuah Elohayka (the LORD thy God) shall bless thee in the land whither thou goest to possess it.* (Deuteronomy 30:16). The life set before Yashar''el (Israel) is to *keep his commandments and his statutes and his judgments, that thou mayest live.* Paul holds the same standard over the divided assembly: not the flesh-credential of circumcision or uncircumcision, but *the keeping of the commandments of Elohim (God)* (1 Corinthians 7:19). What was life in the land is the shape of the redeemed life now — the commandments kept, the flesh-mark set aside.'),
+  ('canon', '1-corinthians', 7, 19, 'canon', 'ecclesiastes', 12, 13, 'free', E'*Let us hear the conclusion of the whole matter: Fear Elohim (God), and keep his commandments: for this is the whole duty of man.* (Ecclesiastes 12:13). The Preacher''s whole conclusion is Paul''s thesis: *Fear Elohim (God), and keep his commandments: for this is the whole duty of man.* Against the boast of the flesh — circumcised or uncircumcised — Paul sets the same one thing: *the keeping of the commandments of Elohim (God)* (1 Corinthians 7:19). The whole duty of man is not the mark in the flesh but the commandment kept; the outward sign is nothing, the keeping is everything.'),
+  ('canon', '1-corinthians', 7, 19, 'apocrypha', 'ecclesiasticus', 15, 15, 'extras', E'*If you will, to keep the commandments, and to perform acceptable faithfulness.* (Ecclesiasticus 15:15). The Hebrew library names the same measure: man is left *in the hand of his counsel,* and the path set before him is *to keep the commandments, and to perform acceptable faithfulness.* This is exactly what Paul calls the one thing that counts: *Circumcision is nothing, and uncircumcision is nothing, but the keeping of the commandments of Elohim (God)* (1 Corinthians 7:19). Not the flesh-credential but the kept commandment and the faithfulness performed — the wisdom-tradition and the apostle speak with one voice.'),
+  -- thread: 1-corinthians-7-let-every-man-abide-in-the-calling-wherein-he-was-called-deuteronomy-30
+  ('canon', '1-corinthians', 7, 24, 'canon', 'deuteronomy', 30, 8, 'free', E'*And thou shalt return and obey the voice of Yahuah (LORD), and do all his commandments which I command thee this day.* (Deuteronomy 30:8). The calling Paul bids each man abide in is the calling to obey: *thou shalt return and obey the voice of Yahuah (LORD), and do all his commandments.* So Paul says *Brethren, let every man, wherein he is called, therein abide with Elohim (God)* (1 Corinthians 7:24) — to abide in the calling is to abide with Elohim (God), doing his commandments where one stands, whether circumcised or uncircumcised, bond or free.'),
+  ('canon', '1-corinthians', 7, 18, 'canon', 'deuteronomy', 13, 4, 'free', E'*Ye shall walk after Yahuah Elohaychem (the LORD your God), and fear him, and keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him.* (Deuteronomy 13:4). The walk Moses commands is to *keep his commandments... and cleave unto him* — and Paul keeps the distinction of the called intact precisely so each may so walk: *Is any man called being circumcised? let him not become uncircumcised. Is any called in uncircumcision? let him not be circumcised* (1 Corinthians 7:18). The mark of Yashar''el (Israel) is not erased and the nations are not forced under it; each abides as called, all alike cleaving unto Yahuah (LORD) and keeping his commandments.'),
+  -- thread: 1-corinthians-7-they-shall-be-one-flesh-the-wife-of-the-covenant-genesis-2-malachi-2
+  ('canon', '1-corinthians', 7, 2, 'canon', 'genesis', 2, 24, 'free', E'*Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.* (Genesis 2:24). Paul grounds marriage where the Maker set it at creation: a man cleaves unto his wife and *they shall be one flesh.* So *let every man have his own wife, and let every woman have her own husband* (1 Corinthians 7:2), and *the wife hath not power of her own body, but the husband: and likewise also the husband hath not power of his own body, but the wife* (1 Corinthians 7:4) — the one-flesh bond of Eden, where the two are no longer two separate powers but one.'),
+  ('canon', '1-corinthians', 7, 4, 'canon', 'genesis', 2, 24, 'free', E'*Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.* (Genesis 2:24). The mutual claim Paul lays down — *the wife hath not power of her own body, but the husband... the husband hath not power of his own body, but the wife* (1 Corinthians 7:4) — is the one-flesh of the garden, where *they shall be one flesh.* Because the two are one body, neither owns the body alone; the creation order, not custom, is the root of the rendering of *due benevolence* each to the other.'),
+  ('canon', '1-corinthians', 7, 10, 'canon', 'malachi', 2, 14, 'free', E'*Yet ye say, Wherefore? Because Yahuah (LORD) hath been witness between thee and the wife of thy youth, against whom thou hast dealt treacherously: yet is she thy companion, and the wife of thy covenant.* (Malachi 2:14). Yahuah (LORD) is *witness between thee and the wife of thy youth,* who is *the wife of thy covenant* — and so Paul commands, *not I, but Yahuah (Lord), Let not the wife depart from her husband... and let not the husband put away his wife* (1 Corinthians 7:10-11). The marriage is a covenant Yahuah (LORD) witnesses; to depart or put away is to deal treacherously against the companion of the covenant.'),
+  ('canon', '1-corinthians', 7, 39, 'canon', 'malachi', 2, 15, 'free', E'*And did not he make one? Yet had he the residue of the spirit. And wherefore one? That he might seek a godly seed. Therefore take heed to your spirit, and let none deal treacherously against the wife of his youth.* (Malachi 2:15). The Maker *made one* and seeks *a godly seed,* binding the wife to her husband while he lives; so *the wife is bound by the law as long as her husband liveth; but if her husband be dead, she is at liberty to be married to whom she will; only in Yahuah (Lord)* (1 Corinthians 7:39). The bond is the covenant-bond Malachi guards, loosed only by death, and her liberty is *only in Yahuah (Lord)* — the godly seed and the witnessed covenant honored to the end.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _s228_co07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s228_co07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ----- threads -----
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-7-circumcision-is-nothing-but-the-keeping-of-the-commandments-deuteronomy-30',
+       E'Circumcision is nothing, but the keeping of the commandments of Elohim (Deuteronomy 30, Ecclesiastes 12)',
+       E'Here Paul lays down the thesis of the whole letter and the whole framework in a single line: *Circumcision is nothing, and uncircumcision is nothing, but the keeping of the commandments of Elohim (God)* (1 Corinthians 7:19). The outward mark in the flesh — the great flesh-credential of the divided assembly — counts for nothing. What counts is the keeping of the commandments. This is no abolition of Torah and no law-against-grace antithesis; it is the very opposite. When every flesh-boast is stripped away, the one thing Paul names as mattering is the commandment kept. And the commandment he means is the commandment Moses set before Yashar''el (Israel): *For this commandment which I command thee this day, it is not hidden from thee, neither is it far off* (Deuteronomy 30:11) — *But the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deuteronomy 30:14). It was never given to be admired from afar but to be done; the life set before the people is *to keep his commandments and his statutes and his judgments, that thou mayest live and multiply* (Deuteronomy 30:16). The Preacher reaches the same conclusion of the whole matter: *Fear Elohim (God), and keep his commandments: for this is the whole duty of man* (Ecclesiastes 12:13). The whole duty of man is not the sign in the flesh but the commandment kept. And the Hebrew wisdom-library names the same measure — man is left in the hand of his own counsel, and the path before him is *to keep the commandments, and to perform acceptable faithfulness* (Ecclesiasticus 15:15). Moses, the Preacher, the wisdom-tradition, and the apostle speak with one voice: the flesh-credential is nothing; the keeping of the commandments of Elohim (God) is everything.',
+       sv.verse_id, ev.verse_id, 'extras', 6750
+  FROM _s228_co07_lookup sv, _s228_co07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=7 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-7-let-every-man-abide-in-the-calling-wherein-he-was-called-deuteronomy-30',
+       E'Let every man abide in the calling wherein he was called (Deuteronomy 30, 13)',
+       E'Around the thesis of 7:19 Paul wraps a counsel that guards the distinction of the called: *Is any man called being circumcised? let him not become uncircumcised. Is any called in uncircumcision? let him not be circumcised* (1 Corinthians 7:18); *Let every man abide in the same calling wherein he was called* (1 Corinthians 7:20); *Brethren, let every man, wherein he is called, therein abide with Elohim (God)* (1 Corinthians 7:24). The mark of Yashar''el (Israel) is not to be undone, and the nations are not to be driven under it — each abides where he was called, and the abiding is *with Elohim (God).* For the calling is a calling to obey: *thou shalt return and obey the voice of Yahuah (LORD), and do all his commandments which I command thee this day* (Deuteronomy 30:8); the walk is *to keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him* (Deuteronomy 13:4). To abide in the calling is to abide doing the commandments, cleaving unto Yahuah (LORD), whether circumcised or uncircumcised, bond or free. The distinction is preserved; the obedience is the same for all.',
+       sv.verse_id, ev.verse_id, 'free', 6753
+  FROM _s228_co07_lookup sv, _s228_co07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=7 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-corinthians-7-they-shall-be-one-flesh-the-wife-of-the-covenant-genesis-2-malachi-2',
+       E'They shall be one flesh — the wife of the covenant (Genesis 2, Malachi 2)',
+       E'Paul''s counsel on marriage is not bare pragmatism; it rests on the creation order and the covenant the Maker witnesses. *Let every man have his own wife, and let every woman have her own husband* (1 Corinthians 7:2), and *the wife hath not power of her own body, but the husband: and likewise also the husband hath not power of his own body, but the wife* (1 Corinthians 7:4) — because at the beginning *a man... shall cleave unto his wife: and they shall be one flesh* (Genesis 2:24). The two are one body, and so neither holds the body alone. Upon that one-flesh bond Paul lays the command against departing: *not I, but Yahuah (Lord), Let not the wife depart from her husband... and let not the husband put away his wife* (1 Corinthians 7:10-11) — for Yahuah (LORD) *hath been witness between thee and the wife of thy youth... yet is she thy companion, and the wife of thy covenant* (Malachi 2:14). To depart is to deal treacherously against the wife of the covenant. And the bond holds while life lasts: *the wife is bound by the law as long as her husband liveth; but if her husband be dead, she is at liberty to be married to whom she will; only in Yahuah (Lord)* (1 Corinthians 7:39) — the Maker who *made one... that he might seek a godly seed* (Malachi 2:15) guards the marriage to the end, and her liberty, when it comes, is *only in Yahuah (Lord).*',
+       sv.verse_id, ev.verse_id, 'free', 6756
+  FROM _s228_co07_lookup sv, _s228_co07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='1-corinthians' AND ev.chapter_number=7 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+-- ----- thread_members -----
+-- members: 1-corinthians-7-circumcision-is-nothing-but-the-keeping-of-the-commandments-deuteronomy-30
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 30:11 — *this commandment which I command thee this day, it is not hidden from thee, neither is it far off* the commandment Paul means by *the keeping of the commandments of Elohim (God),* near and given to be kept (1 Corinthians 7:19).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-circumcision-is-nothing-but-the-keeping-of-the-commandments-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:14 — *the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* the commandment given to be done; the keeping, not the flesh-mark, is the measure (1 Corinthians 7:19).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-circumcision-is-nothing-but-the-keeping-of-the-commandments-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Deuteronomy 30:16 — *to keep his commandments and his statutes and his judgments, that thou mayest live* the life set before Yashar''el (Israel); the same standard Paul sets over the assembly in place of the flesh-credential (1 Corinthians 7:19).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-circumcision-is-nothing-but-the-keeping-of-the-commandments-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Ecclesiastes 12:13 — *Fear Elohim (God), and keep his commandments: for this is the whole duty of man* the Preacher''s conclusion is Paul''s thesis; not the flesh-mark but the kept commandment is the whole duty (1 Corinthians 7:19).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-circumcision-is-nothing-but-the-keeping-of-the-commandments-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=12 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Ecclesiasticus 15:15 — *If you will, to keep the commandments, and to perform acceptable faithfulness* the wisdom-library''s same measure; the kept commandment and faithfulness performed, not the flesh-credential (1 Corinthians 7:19).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-circumcision-is-nothing-but-the-keeping-of-the-commandments-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=19
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=15 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-7-let-every-man-abide-in-the-calling-wherein-he-was-called-deuteronomy-30
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 13:4 — *keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him* the walk of the called; the distinction of circumcised/uncircumcised kept so each may so cleave (1 Corinthians 7:18).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-let-every-man-abide-in-the-calling-wherein-he-was-called-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 30:8 — *thou shalt return and obey the voice of Yahuah (LORD), and do all his commandments* the calling is a calling to obey; *abide with Elohim (God)* is to abide doing the commandments where one stands (1 Corinthians 7:24).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-let-every-man-abide-in-the-calling-wherein-he-was-called-deuteronomy-30'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=24
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- members: 1-corinthians-7-they-shall-be-one-flesh-the-wife-of-the-covenant-genesis-2-malachi-2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 2:24 — *shall cleave unto his wife: and they shall be one flesh* the creation-order ground for each having his own wife and husband (1 Corinthians 7:2).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-they-shall-be-one-flesh-the-wife-of-the-covenant-genesis-2-malachi-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Genesis 2:24 — *they shall be one flesh* the two are one body, so neither holds the body alone: *the wife hath not power of her own body, but the husband* (1 Corinthians 7:4).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-they-shall-be-one-flesh-the-wife-of-the-covenant-genesis-2-malachi-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 2:14 — *Yahuah (LORD) hath been witness between thee and the wife of thy youth... the wife of thy covenant* the witnessed covenant behind the command not to depart or put away (1 Corinthians 7:10-11).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-they-shall-be-one-flesh-the-wife-of-the-covenant-genesis-2-malachi-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 2:15 — *did not he make one?... That he might seek a godly seed* the Maker who guards the marriage; the wife *bound by the law as long as her husband liveth... only in Yahuah (Lord)* (1 Corinthians 7:39).'
+  FROM cross_reference_threads t, cross_references x, _s228_co07_lookup sv, _s228_co07_lookup tv
+ WHERE t.slug='1-corinthians-7-they-shall-be-one-flesh-the-wife-of-the-covenant-genesis-2-malachi-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='1-corinthians' AND sv.chapter_number=7 AND sv.verse_number=39
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session228 — 1 Corinthians cross-references complete.'
